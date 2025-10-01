@@ -3073,8 +3073,8 @@
         }
       },
       "images": {
-        "small": "/drivers/dimmer_switch_1gang_ac/assets/images/small.png",
-        "large": "/drivers/dimmer_switch_1gang_ac/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "Tuya",
@@ -3324,8 +3324,8 @@
         }
       },
       "images": {
-        "small": "/drivers/dimmer_switch_3gang_ac/assets/images/small.png",
-        "large": "/drivers/dimmer_switch_3gang_ac/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -3568,8 +3568,8 @@
         }
       },
       "images": {
-        "small": "/drivers/dimmer_switch_moes_timer/assets/images/small.png",
-        "large": "/drivers/dimmer_switch_moes_timer/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "MOES",
@@ -6439,8 +6439,8 @@
         }
       },
       "images": {
-        "small": "/drivers/garage_door_controller/assets/images/small.png",
-        "large": "/drivers/garage_door_controller/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "manufacturerName": "MOES",
       "platforms": [
@@ -8295,8 +8295,8 @@
         }
       },
       "images": {
-        "small": "/drivers/milight_controller/assets/images/small.png",
-        "large": "/drivers/milight_controller/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
@@ -9705,7 +9705,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/motion_sensor_hobeian/assets/images/large.png",
+          "image": "./assets/images/large.png",
           "instruction": {
             "en": "Press the pairing button until LED blinks rapidly",
             "fr": "Appuyez sur le bouton d'appairage jusqu'à ce que la LED clignote rapidement"
@@ -9713,8 +9713,8 @@
         }
       },
       "images": {
-        "small": "/drivers/motion_sensor_hobeian/assets/images/small.png",
-        "large": "/drivers/motion_sensor_hobeian/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
@@ -11080,8 +11080,8 @@
         }
       },
       "images": {
-        "small": "/drivers/pir_sensor_advanced/assets/images/small.png",
-        "large": "/drivers/pir_sensor_advanced/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
@@ -11663,8 +11663,8 @@
         }
       },
       "images": {
-        "small": "/drivers/pool_pump_controller/assets/images/small.png",
-        "large": "/drivers/pool_pump_controller/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "MOES",
@@ -12762,8 +12762,8 @@
         }
       },
       "images": {
-        "small": "/drivers/radar_motion_sensor_advanced/assets/images/small.png",
-        "large": "/drivers/radar_motion_sensor_advanced/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "Tuya",
@@ -12955,7 +12955,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/radar_motion_sensor_mmwave/assets/images/large.png",
+          "image": "./assets/images/large.png",
           "instruction": {
             "en": "Press and hold pairing button for 5 seconds until LED blinks rapidly",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
@@ -12963,8 +12963,8 @@
         }
       },
       "images": {
-        "small": "/drivers/radar_motion_sensor_mmwave/assets/images/small.png",
-        "large": "/drivers/radar_motion_sensor_mmwave/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
@@ -13141,8 +13141,8 @@
         }
       },
       "images": {
-        "small": "/drivers/radar_sensor_2aaelwxk/assets/images/small.png",
-        "large": "/drivers/radar_sensor_2aaelwxk/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "MOES",
@@ -14409,8 +14409,8 @@
         }
       },
       "images": {
-        "small": "/drivers/roller_shutter_controller/assets/images/small.png",
-        "large": "/drivers/roller_shutter_controller/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
@@ -14595,8 +14595,8 @@
         }
       },
       "images": {
-        "small": "/drivers/roller_shutter_switch/assets/images/small.png",
-        "large": "/drivers/roller_shutter_switch/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "windowcoverings_set": {
@@ -14801,8 +14801,8 @@
         }
       },
       "images": {
-        "small": "/drivers/roller_shutter_switch_advanced/assets/images/small.png",
-        "large": "/drivers/roller_shutter_switch_advanced/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "windowcoverings_set": {
@@ -14838,8 +14838,8 @@
       "class": "other",
       "capabilities": [],
       "images": {
-        "small": "/drivers/scene_controller/assets/images/small.png",
-        "large": "/drivers/scene_controller/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -17691,8 +17691,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_dimmer_module_1gang/assets/images/small.png",
-        "large": "/drivers/smart_dimmer_module_1gang/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
@@ -18357,8 +18357,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_irrigation_controller/assets/images/small.png",
-        "large": "/drivers/smart_irrigation_controller/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "Tuya",
@@ -19723,8 +19723,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_smoke_detector_advanced/assets/images/small.png",
-        "large": "/drivers/smart_smoke_detector_advanced/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "manufacturerName": "Lonsonho",
       "platforms": [
@@ -22863,8 +22863,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smoke_temp_humid_sensor/assets/images/small.png",
-        "large": "/drivers/smoke_temp_humid_sensor/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -23381,8 +23381,8 @@
         }
       },
       "images": {
-        "small": "/drivers/soil_moisture_temperature_sensor/assets/images/small.png",
-        "large": "/drivers/soil_moisture_temperature_sensor/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
@@ -23617,8 +23617,8 @@
         }
       },
       "images": {
-        "small": "/drivers/soil_tester_temp_humid/assets/images/small.png",
-        "large": "/drivers/soil_tester_temp_humid/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -23826,8 +23826,8 @@
         }
       },
       "images": {
-        "small": "/drivers/solar_panel_controller/assets/images/small.png",
-        "large": "/drivers/solar_panel_controller/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
@@ -24015,8 +24015,8 @@
         }
       },
       "images": {
-        "small": "/drivers/sos_emergency_button/assets/images/small.png",
-        "large": "/drivers/sos_emergency_button/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
@@ -24205,8 +24205,8 @@
         }
       },
       "images": {
-        "small": "/drivers/switch_1gang_battery/assets/images/small.png",
-        "large": "/drivers/switch_1gang_battery/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
@@ -24397,8 +24397,8 @@
         }
       },
       "images": {
-        "small": "/drivers/switch_2gang_ac/assets/images/small.png",
-        "large": "/drivers/switch_2gang_ac/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -24608,8 +24608,8 @@
         }
       },
       "images": {
-        "small": "/drivers/switch_2gang_hybrid/assets/images/small.png",
-        "large": "/drivers/switch_2gang_hybrid/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -24831,8 +24831,8 @@
         }
       },
       "images": {
-        "small": "/drivers/switch_3gang_battery/assets/images/small.png",
-        "large": "/drivers/switch_3gang_battery/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -25036,8 +25036,8 @@
         }
       },
       "images": {
-        "small": "/drivers/switch_4gang_ac/assets/images/small.png",
-        "large": "/drivers/switch_4gang_ac/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
@@ -25229,8 +25229,8 @@
         }
       },
       "images": {
-        "small": "/drivers/switch_4gang_girier/assets/images/small.png",
-        "large": "/drivers/switch_4gang_girier/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
@@ -25424,8 +25424,8 @@
         }
       },
       "images": {
-        "small": "/drivers/switch_5gang_battery/assets/images/small.png",
-        "large": "/drivers/switch_5gang_battery/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "Tuya",
@@ -25612,8 +25612,8 @@
         }
       },
       "images": {
-        "small": "/drivers/switch_6gang_ac/assets/images/small.png",
-        "large": "/drivers/switch_6gang_ac/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "MOES",
@@ -25802,8 +25802,8 @@
         }
       },
       "images": {
-        "small": "/drivers/switch_8gang_ac/assets/images/small.png",
-        "large": "/drivers/switch_8gang_ac/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "MOES",
@@ -25991,8 +25991,8 @@
         }
       },
       "images": {
-        "small": "/drivers/tank_level_monitor/assets/images/small.png",
-        "large": "/drivers/tank_level_monitor/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
@@ -26241,8 +26241,8 @@
         }
       },
       "images": {
-        "small": "/drivers/temp_humid_sensor_advanced/assets/images/small.png",
-        "large": "/drivers/temp_humid_sensor_advanced/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -26511,8 +26511,8 @@
         }
       },
       "images": {
-        "small": "/drivers/temperature_humidity_sensor_ewelink/assets/images/small.png",
-        "large": "/drivers/temperature_humidity_sensor_ewelink/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -26777,8 +26777,8 @@
         }
       },
       "images": {
-        "small": "/drivers/temp_humid_sensor_v1w2k9dd/assets/images/small.png",
-        "large": "/drivers/temp_humid_sensor_v1w2k9dd/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -28141,8 +28141,8 @@
         }
       },
       "images": {
-        "small": "/drivers/temp_sensor_owon/assets/images/small.png",
-        "large": "/drivers/temp_sensor_owon/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -28933,8 +28933,8 @@
         }
       },
       "images": {
-        "small": "/drivers/touch_dimmer_1gang/assets/images/small.png",
-        "large": "/drivers/touch_dimmer_1gang/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "Lonsonho",
@@ -30266,8 +30266,8 @@
         }
       },
       "images": {
-        "small": "/drivers/tvoc_sensor_advanced/assets/images/small.png",
-        "large": "/drivers/tvoc_sensor_advanced/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -30719,8 +30719,8 @@
         }
       },
       "images": {
-        "small": "/drivers/usb_outlet_advanced/assets/images/small.png",
-        "large": "/drivers/usb_outlet_advanced/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "measure_power": {
@@ -33767,8 +33767,8 @@
         }
       },
       "images": {
-        "small": "/drivers/water_leak_detector_advanced/assets/images/small.png",
-        "large": "/drivers/water_leak_detector_advanced/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -33960,8 +33960,8 @@
         }
       },
       "images": {
-        "small": "/drivers/water_leak_detector_ewelink/assets/images/small.png",
-        "large": "/drivers/water_leak_detector_ewelink/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
@@ -34587,8 +34587,8 @@
         }
       },
       "images": {
-        "small": "/drivers/water_valve_smart/assets/images/small.png",
-        "large": "/drivers/water_valve_smart/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "MOES",
@@ -35967,7 +35967,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wireless_switch_4gang_cr2450/assets/images/large.png",
+          "image": "./assets/images/large.png",
           "instruction": {
             "en": "Press any button 3 times rapidly",
             "fr": "Appuyez sur n'importe quel bouton 3 fois rapidement"
@@ -35975,8 +35975,8 @@
         }
       },
       "images": {
-        "small": "/drivers/wireless_switch_4gang_cr2450/assets/images/small.png",
-        "large": "/drivers/wireless_switch_4gang_cr2450/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
@@ -36834,8 +36834,8 @@
         }
       },
       "images": {
-        "small": "/drivers/zigbee_gateway_hub/assets/images/small.png",
-        "large": "/drivers/zigbee_gateway_hub/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "Tuya",
