@@ -181,8 +181,8 @@
     }
   },
   "images": {
-    "small": "/drivers/tvoc_sensor_advanced/assets/images/small.png",
-    "large": "/drivers/tvoc_sensor_advanced/assets/images/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/images/large.png"
   },
   "capabilitiesOptions": {
     "measure_temperature": {

@@ -181,8 +181,8 @@
     }
   },
   "images": {
-    "small": "/drivers/switch_4gang_girier/assets/images/small.png",
-    "large": "/drivers/switch_4gang_girier/assets/images/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/images/large.png"
   },
   "capabilitiesOptions": {},
   "manufacturerName": "BSEED",
