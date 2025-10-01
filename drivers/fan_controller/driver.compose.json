@@ -5,7 +5,7 @@
   "class": "other",
   "capabilities": [
     "onoff",
-    "fan_speed"
+    "dim"
   ],
   "zigbee": {
     "manufacturerName": [
