@@ -2,10 +2,10 @@
   "name": {
     "en": "Fan Controller"
   },
-  "class": "fan",
+  "class": "other",
   "capabilities": [
     "onoff",
-    "dim"
+    "fan_speed"
   ],
   "zigbee": {
     "manufacturerName": [
