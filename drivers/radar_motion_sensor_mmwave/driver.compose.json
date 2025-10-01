@@ -189,8 +189,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/radar_motion_sensor_mmwave/assets/images/small.png",
+    "large": "/drivers/radar_motion_sensor_mmwave/assets/images/large.png"
   },
   "manufacturerName": "Tuya",
   "platforms": [

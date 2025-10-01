@@ -178,8 +178,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/switch_1gang_battery/assets/images/small.png",
+    "large": "/drivers/switch_1gang_battery/assets/images/large.png"
   },
   "capabilitiesOptions": {},
   "manufacturerName": "BSEED",
