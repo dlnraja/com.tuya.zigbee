@@ -234,8 +234,8 @@
     }
   },
   "images": {
-    "small": "/drivers/dimmer_switch_3gang_ac/assets/images/small.png",
-    "large": "/drivers/dimmer_switch_3gang_ac/assets/images/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/images/large.png"
   },
   "capabilitiesOptions": {
     "onoff": {

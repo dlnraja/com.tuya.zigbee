@@ -262,8 +262,8 @@
     }
   },
   "images": {
-    "small": "/drivers/soil_moisture_temperature_sensor/assets/images/small.png",
-    "large": "/drivers/soil_moisture_temperature_sensor/assets/images/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/images/large.png"
   },
   "manufacturerName": "Tuya",
   "platforms": [
