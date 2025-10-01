@@ -6,8 +6,8 @@
   "class": "other",
   "capabilities": [],
   "images": {
-    "small": "/drivers/scene_controller/assets/images/small.png",
-    "large": "/drivers/scene_controller/assets/images/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [

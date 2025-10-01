@@ -182,8 +182,8 @@
     }
   },
   "images": {
-    "small": "/drivers/motion_sensor_hobeian/assets/images/small.png",
-    "large": "/drivers/motion_sensor_hobeian/assets/images/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/images/large.png"
   },
   "manufacturerName": "Tuya",
   "platforms": [
