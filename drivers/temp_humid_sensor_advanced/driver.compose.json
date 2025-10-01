@@ -238,8 +238,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/temp_humid_sensor_advanced/assets/images/small.png",
+    "large": "/drivers/temp_humid_sensor_advanced/assets/images/large.png"
   },
   "capabilitiesOptions": {
     "measure_temperature": {

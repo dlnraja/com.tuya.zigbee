@@ -168,8 +168,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/zigbee_gateway_hub/assets/images/small.png",
+    "large": "/drivers/zigbee_gateway_hub/assets/images/large.png"
   },
   "capabilitiesOptions": {},
   "manufacturerName": "Tuya",
