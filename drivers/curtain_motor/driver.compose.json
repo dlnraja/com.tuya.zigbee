@@ -10,28 +10,9 @@
     "measure_battery"
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_l13erpv4",
-      "_TZ3000_fvhunhxb",
-      "_TZ3000_eg7awg6a",
-      "_TZ3000_j1xl73iw",
-      "_TZ3000_ltiqubue",
-      "_TZ3000_1ddOd5yi",
-      "_TZ3000_e3vhyirx",
-      "_TZ3000_1dd0d5yi",
-      "_TZ3000_fccpjz5z",
-      "_TZ3000_vd43bbfq",
-      "_TZ3000_xzqbrqk1",
-      "_TZ3210_zana8d08",
-      "_TZ3210_ol1uhvza",
-      "_TZE200_xuzcvlku",
-      "_TZE200_rddyvrci",
-      "_TZE200_mcxw5ehu",
-      "_TZE200_6ygjfyll"
-    ],
+    "manufacturerName": "_TZ3000_1dd0d5yi",
     "productId": [
-      "TS0001",
-      "TS130F"
+      "TS0001"
     ],
     "endpoints": {
       "1": {
@@ -58,7 +39,7 @@
     "productIds": []
   },
   "images": {
-    "large": "./assets/large.png",
+    "large": "./assets/images/large.png",
     "small": "./assets/small.png"
   },
   "pair": [
