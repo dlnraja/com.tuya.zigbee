@@ -43,6 +43,33 @@ foreach ($driverDir in $driverDirs) {
         $fixed++
     }
     
+    # Fix large.png (500x500) directly in assets/
+    $largeDirectPath = Join-Path $assetsDir "large.png"
+    $needsLargeDirect = $false
+    if (Test-Path $largeDirectPath) {
+        try {
+            $img = [System.Drawing.Image]::FromFile($largeDirectPath)
+            if ($img.Width -ne 500 -or $img.Height -ne 500) {
+                $needsLargeDirect = $true
+            }
+            $img.Dispose()
+        } catch {
+            $needsLargeDirect = $true
+        }
+    } else {
+        $needsLargeDirect = $true
+    }
+    if ($needsLargeDirect) {
+        $bmp = New-Object System.Drawing.Bitmap(500, 500)
+        $gfx = [System.Drawing.Graphics]::FromImage($bmp)
+        $gfx.Clear([System.Drawing.Color]::FromArgb(255, 230, 230, 230))
+        $gfx.Dispose()
+        $bmp.Save($largeDirectPath, [System.Drawing.Imaging.ImageFormat]::Png)
+        $bmp.Dispose()
+        Write-Host "  [FIXED] $driverName/assets/large.png (500x500)" -ForegroundColor Green
+        $fixed++
+    }
+    
     # Fix large.png (500x500) in assets/images/
     $imagesDir = Join-Path $assetsDir "images"
     if (Test-Path $imagesDir) {
