@@ -34,5 +34,10 @@
   "manufacturerName": "Tuya",
   "platforms": [
     "local"
-  ]
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  }
 }

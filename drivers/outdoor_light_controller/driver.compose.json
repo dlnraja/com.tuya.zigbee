@@ -79,5 +79,10 @@
     "zigbee"
   ],
   "capabilitiesOptions": {},
-  "manufacturerName": "BSEED"
+  "manufacturerName": "BSEED",
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  }
 }

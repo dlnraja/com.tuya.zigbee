@@ -104,5 +104,10 @@
     "zigbee"
   ],
   "capabilitiesOptions": {},
-  "manufacturerName": "Tuya"
+  "manufacturerName": "Tuya",
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  }
 }
