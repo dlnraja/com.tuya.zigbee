@@ -1,0 +1,3962 @@
+{
+  "errors": [
+    {
+      "type": "git",
+      "hash": "2c61c5332",
+      "msg": "fix: final corrections for SDK3 compliance - images and capabilities",
+      "date": "Wed Oct 1 23:08:04 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "4b0568c8e",
+      "msg": "fix: correct all driver image paths and capabilities for SDK3 compliance",
+      "date": "Wed Oct 1 22:41:26 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "5958544d1",
+      "msg": "fix: correct all image paths and capabilities for SDK3 compliance",
+      "date": "Wed Oct 1 21:09:31 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "797505990",
+      "msg": "fix: replace fan_speed with dim and update image paths to 75x75 assets",
+      "date": "Wed Oct 1 19:42:13 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "f25919b4b",
+      "msg": "fix: resolve all cascade errors",
+      "date": "Wed Oct 1 18:28:05 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "ad598f570",
+      "msg": "fix: cascade errors resolved",
+      "date": "Wed Oct 1 05:00:59 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "38138d587",
+      "msg": "fix(fan_controller): replace fan_speed with dim; set class fan",
+      "date": "Wed Oct 1 03:38:00 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "1c34e5e5f",
+      "msg": "fix(images): use per-driver 75x75 small.png and paths",
+      "date": "Wed Oct 1 02:09:14 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "fc67116c3",
+      "msg": "unbranded: per-driver fixes (classes, capabilities, images 75x75, manufacturer/product)",
+      "date": "Wed Oct 1 01:32:47 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "07c564f67",
+      "msg": "unbranded: per-driver fixes (images 75x75, classes, capabilities, manufacturer/product), bump to 2.0.2",
+      "date": "Wed Oct 1 01:19:45 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "0288fcb43",
+      "msg": "Bump version to v2.0.1",
+      "date": "Wed Oct 1 01:10:32 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "4883855e4",
+      "msg": "fix(drivers): platforms+fan capability+images aligned",
+      "date": "Tue Sep 30 23:08:21 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "76d468d22",
+      "msg": "🎯 v2.1.5 - NPM environment fixed, ready for publication",
+      "date": "Tue Sep 30 10:45:34 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "97b73eb5a",
+      "msg": "🎯 FUSION COMPLÈTE: Système unifié sans suffixes",
+      "date": "Tue Sep 30 02:29:39 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "d6873eafd",
+      "msg": "🚀 Comprehensive Driver Enrichment V25 - 147/164 drivers enhanced",
+      "date": "Mon Sep 29 16:20:54 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "f58b40d94",
+      "msg": "💪 ALL CORRECTED - 4 Cascade sessions fixed, all drivers corrected, ready for production",
+      "date": "Mon Sep 29 06:35:08 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "dcfcb1042",
+      "msg": "🔄 RESTART ALL SIMPLE - Fixed errors, enriched drivers, ready",
+      "date": "Mon Sep 29 06:23:04 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "33774630f",
+      "msg": "🔧 ULTIMATE Driver categorization fixed v2.0.0 - Unique IDs per category",
+      "date": "Fri Sep 26 06:52:11 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "37297d70d",
+      "msg": "🎨 Images fixed SDK3 - Version 2.0.0",
+      "date": "Fri Sep 26 01:21:50 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "7aa7941fe",
+      "msg": "🔧 Fix permissions validation error v2.0.3",
+      "date": "Thu Sep 25 20:00:25 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "7aaebc788",
+      "msg": "🔧 Fix Homey validation errors - Settings structure v2.0.2",
+      "date": "Thu Sep 25 19:45:45 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "40abffeeb",
+      "msg": "🔧 Fix GitHub Actions errors - Homey App Store publish ready v2.0.1",
+      "date": "Thu Sep 25 19:40:39 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "80707d073",
+      "msg": "🔧 Official Homey Actions integration - App Store publishing fix",
+      "date": "Thu Sep 25 19:11:15 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "0242d3e78",
+      "msg": "🔧 Johan Bendz settings fix + complete manufacturer IDs v4.0.7",
+      "date": "Thu Sep 25 18:48:16 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "be75f13b9",
+      "msg": "🔧 Forum Analysis: Applied all Homey Community fixes v4.0.6",
+      "date": "Thu Sep 25 18:13:52 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "4f92a67b1",
+      "msg": "🏭 Ultimate fix v4.0.0",
+      "date": "Thu Sep 25 15:04:24 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "1313d5f30",
+      "msg": "🔧 Ultra fix + enrich v2.8.0",
+      "date": "Thu Sep 25 12:03:54 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "a61571512",
+      "msg": "🚀 Quick fix publish v2.7.0",
+      "date": "Thu Sep 25 11:51:02 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "587bfaf47",
+      "msg": "🔧 NPM fixes",
+      "date": "Thu Sep 25 00:23:06 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "d1c4fbba4",
+      "msg": "­ƒöº Auto-fix attempt 1",
+      "date": "Wed Sep 24 21:31:31 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "706770c66",
+      "msg": "🔧 Pre-publish fixes",
+      "date": "Wed Sep 24 21:04:10 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "486250390",
+      "msg": "🔄 HOMEY MONITOR 20: Auto-fix cycle",
+      "date": "Wed Sep 24 17:21:17 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "2a8dfb314",
+      "msg": "🔄 HOMEY MONITOR 19: Auto-fix cycle",
+      "date": "Wed Sep 24 17:19:10 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "e4a7438f8",
+      "msg": "🔄 HOMEY MONITOR 18: Auto-fix cycle",
+      "date": "Wed Sep 24 17:17:02 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "8e472f2ad",
+      "msg": "🔄 HOMEY MONITOR 17: Auto-fix cycle",
+      "date": "Wed Sep 24 17:14:52 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "c325eeb74",
+      "msg": "🔄 HOMEY MONITOR 16: Auto-fix cycle",
+      "date": "Wed Sep 24 17:12:44 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "5eb54ef07",
+      "msg": "🔄 HOMEY MONITOR 15: Auto-fix cycle",
+      "date": "Wed Sep 24 17:10:36 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "228d70700",
+      "msg": "🔄 HOMEY MONITOR 14: Auto-fix cycle",
+      "date": "Wed Sep 24 17:08:27 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "9ad56bcea",
+      "msg": "🔄 HOMEY MONITOR 13: Auto-fix cycle",
+      "date": "Wed Sep 24 17:06:10 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "0b75e91d7",
+      "msg": "🔄 HOMEY MONITOR 12: Auto-fix cycle",
+      "date": "Wed Sep 24 17:03:54 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "e8e337031",
+      "msg": "🔄 HOMEY MONITOR 11: Auto-fix cycle",
+      "date": "Wed Sep 24 17:01:33 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "e0eae7227",
+      "msg": "🔧 AUTO-FIX 1: Applied 1 fixes",
+      "date": "Wed Sep 24 17:01:09 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "21b4873f8",
+      "msg": "🔄 HOMEY MONITOR 10: Auto-fix cycle",
+      "date": "Wed Sep 24 16:59:23 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "9cdd72948",
+      "msg": "🔄 HOMEY MONITOR 9: Auto-fix cycle",
+      "date": "Wed Sep 24 16:57:10 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "c0372a338",
+      "msg": "🔄 HOMEY MONITOR 8: Auto-fix cycle",
+      "date": "Wed Sep 24 16:54:56 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "cfb016092",
+      "msg": "🔄 HOMEY MONITOR 6: Auto-fix cycle",
+      "date": "Wed Sep 24 16:50:35 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "e881a48f8",
+      "msg": "🔄 HOMEY MONITOR 5: Auto-fix cycle",
+      "date": "Wed Sep 24 16:48:20 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "8e4579779",
+      "msg": "🔄 HOMEY MONITOR 4: Auto-fix cycle",
+      "date": "Wed Sep 24 16:46:07 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "ebd80ded6",
+      "msg": "🔄 HOMEY MONITOR 3: Auto-fix cycle",
+      "date": "Wed Sep 24 16:43:53 2025 +0200"
+    },
+    {
+      "type": "git",
+      "hash": "24db5fb6a",
+      "msg": "🔄 HOMEY MONITOR 2: Auto-fix cycle",
+      "date": "Wed Sep 24 16:41:34 2025 +0200"
+    }
+  ],
+  "todos": [
+    {
+      "file": "./app.json",
+      "line": 4637,
+      "text": "\"_TZ3000_xxxxx\","
+    },
+    {
+      "file": "./app.json",
+      "line": 4884,
+      "text": "\"_TZ3000_xxxxx\","
+    },
+    {
+      "file": "./app.json",
+      "line": 5126,
+      "text": "\"_TZ3000_xxxxx\","
+    },
+    {
+      "file": "./app.json",
+      "line": 5368,
+      "text": "\"_TZ3000_xxxxx\","
+    },
+    {
+      "file": "./app.json",
+      "line": 11752,
+      "text": "\"_TZ3000_xxxxx\","
+    },
+    {
+      "file": "./app.json",
+      "line": 18861,
+      "text": "\"_TZ3000_xxxxx\","
+    },
+    {
+      "file": "./app.json",
+      "line": 19135,
+      "text": "\"_TZ3000_xxxxx\","
+    },
+    {
+      "file": "./app.json",
+      "line": 32041,
+      "text": "\"_TZ3000_xxxxxxxx\","
+    },
+    {
+      "file": "./app.json",
+      "line": 32314,
+      "text": "\"_TZ3000_xxxxxxxx\","
+    },
+    {
+      "file": "./CLASSIFIED.json",
+      "line": 2006,
+      "text": "\"_TZ3000_xxxxx\","
+    },
+    {
+      "file": "./CLASSIFIED.json",
+      "line": 2216,
+      "text": "\"_TZ3000_xxxxx\","
+    },
+    {
+      "file": "./CLASSIFIED.json",
+      "line": 5314,
+      "text": "\"_TZ3000_xxxxx\","
+    },
+    {
+      "file": "./CLASSIFIED.json",
+      "line": 7343,
+      "text": "\"_TZ3000_xxxxx\","
+    },
+    {
+      "file": "./CLASSIFIED.json",
+      "line": 9818,
+      "text": "\"_TZ3000_xxxxxxxx\","
+    },
+    {
+      "file": "./drivers/energy_monitoring_plug/driver.compose.json",
+      "line": 49,
+      "text": "\"_TZ3000_xxxxx\","
+    },
+    {
+      "file": "./drivers/wall_switch_1gang_ac/driver.compose.json",
+      "line": 69,
+      "text": "\"_TZ3000_xxxxxxxx\","
+    },
+    {
+      "file": "./ERROR_HANDLER.js",
+      "line": 3,
+      "text": "* ERROR_HANDLER.js - Analyse des échecs et TODO"
+    },
+    {
+      "file": "./ERROR_HANDLER.js",
+      "line": 10,
+      "text": "console.log('🔍 ERROR_HANDLER - Analyse échecs et TODO');"
+    },
+    {
+      "file": "./ERROR_HANDLER.js",
+      "line": 14,
+      "text": "todos: [],"
+    },
+    {
+      "file": "./ERROR_HANDLER.js",
+      "line": 33,
+      "text": "// 2. Scanner TODO/FIXME dans code"
+    },
+    {
+      "file": "./ERROR_HANDLER.js",
+      "line": 34,
+      "text": "function scanTodos(dir, exclude = ['.git', 'node_modules', 'backup', '.homeybuild']) {"
+    },
+    {
+      "file": "./ERROR_HANDLER.js",
+      "line": 41,
+      "text": "scanTodos(fullPath, exclude);"
+    },
+    {
+      "file": "./ERROR_HANDLER.js",
+      "line": 45,
+      "text": "if (line.match(/TODO|FIXME|XXX|HACK/i)) {"
+    },
+    {
+      "file": "./ERROR_HANDLER.js",
+      "line": 46,
+      "text": "results.todos.push({"
+    },
+    {
+      "file": "./ERROR_HANDLER.js",
+      "line": 59,
+      "text": "scanTodos('.');"
+    },
+    {
+      "file": "./ERROR_HANDLER.js",
+      "line": 76,
+      "text": "console.log(`✅ ${results.todos.length} TODO trouvés`);"
+    },
+    {
+      "file": "./MANUFACTURERS_DATABASE.json",
+      "line": 226,
+      "text": "\"_TZ3000_xxxxx\","
+    },
+    {
+      "file": "./MANUFACTURERS_DATABASE.json",
+      "line": 227,
+      "text": "\"_TZ3000_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/config/MEGA_ORCHESTRATOR_REPORT_2025-08-16T03-32-24-325Z.json",
+      "line": 13,
+      "text": "\"stderr\": \"⚠️ Fichier compose invalide: C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\drivers\\\\zigbee\\\\models\\\\gen"
+    },
+    {
+      "file": "./ultimate_system/all/docs/config/MEGA_ORCHESTRATOR_REPORT_2025-08-16T10-28-07-649Z.json",
+      "line": 13,
+      "text": "\"stderr\": \"⚠️ Fichier compose invalide: C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\drivers\\\\generic\\\\cover\\\\dri"
+    },
+    {
+      "file": "./ultimate_system/all/docs/config/MEGA_ORCHESTRATOR_REPORT_2025-08-16T13-33-56-381Z.json",
+      "line": 13,
+      "text": "\"stderr\": \"⚠️ Fichier compose invalide: C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\drivers\\\\generic\\\\cover\\\\dri"
+    },
+    {
+      "file": "./ultimate_system/all/docs/config/MEGA_ORCHESTRATOR_REPORT_2025-08-16T14-32-57-556Z.json",
+      "line": 13,
+      "text": "\"stderr\": \"⚠️ Fichier compose invalide: C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\drivers\\\\generic\\\\cover\\\\dri"
+    },
+    {
+      "file": "./ultimate_system/all/docs/dev-tools/scraping/johan-benz-comprehensive-scraper.js",
+      "line": 687,
+      "text": "title: \"Button connectivity issues with _TZ3000_xxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/architecture.md",
+      "line": 1,
+      "text": "# 🏗️ **Architecture Technique**## 🎯 **Vue d'ensemble**Ce document décrit l'architecture technique "
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/DEVICE_COMPATIBILITY.md",
+      "line": 156,
+      "text": "- _TZ3000_xxxx / TS004F"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/DEVICE_COMPATIBILITY.md",
+      "line": 157,
+      "text": "- _TZE200_xxxx / TS0601"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/enhanced/es.md",
+      "line": 1,
+      "text": "# Tuya Zigbee Project - Español## 🎯 Objetivo Principal**Integración local máxima de dispositivos Tu"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/enhanced/ETAT_AVANCEMENT_CURSOR.md",
+      "line": 1,
+      "text": "# Rapport d’état Cursor – Universal TUYA Zigbee Device## 🕒 Planification et estimations d’avancemen"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/enhanced/INDEX.md",
+      "line": 1,
+      "text": "# Documentation Universal Universal TUYA Zigbee Device## Structure des fichiers Markdown### Document"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/enhanced/RAPPORT_FINAL_COMPLETION.md",
+      "line": 1,
+      "text": "# RAPPORT FINAL COMPLETION - Tuya Zigbee Project (2025-07-26)## 🎉 **TOUTES LES TÂCHES MANQUANTES CO"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/enhanced/RAPPORT_FINAL_ZIGBEE_ENRICHMENT.md",
+      "line": 1,
+      "text": "# 🚀 RAPPORT FINAL - ENRICHISSEMENT COMPLET AVEC RÉFÉRENTIEL ZIGBEE## 📊 **Résumé Exécutif****Date**"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/enhanced/RAPPORT_REORGANISATION_COMPLETE.md",
+      "line": 1,
+      "text": "# 📁 RAPPORT DE RÉORGANISATION COMPLÈTE## 🎯 **RÉSUMÉ EXÉCUTIF****✅ RÉORGANISATION COMPLÈTE RÉALISÉE"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/enhanced/RESUME_FINAL_CURSOR.md",
+      "line": 1,
+      "text": "# 🚀 RÉSUMÉ FINAL CURSOR - PROJET TUYA ZIGBEE**Date : 24/07/2025 23:15 UTC** **Statut : ✅ MISSION AC"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/enhanced/TASK_TRACKER_REPORT_20250725.md",
+      "line": 1,
+      "text": "# Task Tracker Report - Tuya Zigbee Project**Date:** 2025-07-25 00:48:43**Generated by:** Task Track"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/enhanced/TODO_COMPLETE_FIX.md",
+      "line": 1,
+      "text": "# TODO SYNCHRONISE - Universal Universal TUYA Zigbee Device## METRIQUES ACTUELLES (2025-07-25_15-12-"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/enhanced/TODO_CURSOR_COMPLET.md",
+      "line": 1,
+      "text": "# TODO SYNCHRONISE - Universal Universal TUYA Zigbee Device## METRIQUES ACTUELLES (2025-07-25_15-12-"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/enhanced/TODO_CURSOR_INCREMENTAL.md",
+      "line": 1,
+      "text": "# TODO SYNCHRONISE - Universal Universal TUYA Zigbee Device## METRIQUES ACTUELLES (2025-07-25_15-12-"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/enhanced/TODO_CURSOR_NATIVE.md",
+      "line": 1,
+      "text": "# TODO SYNCHRONISE - Universal TUYA Zigbee Device## METRIQUES ACTUELLES (2025-07-25_21-35-00)### Dri"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/enhanced/TODO_ENRICHISSEMENT_COMPLET.md",
+      "line": 1,
+      "text": "# TODO ENRICHISSEMENT COMPLET - Tuya Zigbee Project## 🚀 **TÂCHES ACCOMPLIES (2025-01-27)**### ✅ **P"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/enhanced/TODO_PROJET.md",
+      "line": 1,
+      "text": "# TODO SYNCHRONISE - Universal Universal TUYA Zigbee Device## METRIQUES ACTUELLES (2025-07-25_15-12-"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/enhanced/TODO_REPRISE_49H.md",
+      "line": 1,
+      "text": "# TODO REPRISE 49 DERNIÈRES HEURES - Tuya Zigbee Project## 🚀 **TÂCHES PRIORITAIRES À REPRENDRE**###"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/enhanced/tuya-zigbee-features-list.md",
+      "line": 1,
+      "text": "# 🚀 FEATURES TUYA/ZIGBEE SPÉCIFIQUES - Universal TUYA Zigbee Device## 📊 ANALYSE DES FEATURES TUYA/"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/enhanced/workflow-enhancement-plan.md",
+      "line": 1,
+      "text": "# 🚀 PLAN D'ENRICHISSEMENT WORKFLOWS - features Tuya/Zigbee## 📊 ANALYSE DES 60 WORKFLOWS EXISTANTS#"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/enhanced/workflow-test-20250726-164442.md",
+      "line": 1,
+      "text": "# Workflow Test Report - 2025-07-26 16:44:42# Mode enrichissement additif## Workflow Validation Resu"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/external/cursor_global_policy (2).md",
+      "line": 14,
+      "text": "- Load `cursor_todo_queue.md` on launch"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/external/cursor_global_policy (2).md",
+      "line": 35,
+      "text": "3. 🧠 Ouvre `cursor_todo_queue.md` et exécute chaque tâche `- [ ]` une par une."
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/external/cursor_global_policy (2).md",
+      "line": 48,
+      "text": "- `TODO_TRACKER.md`"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/external/cursor_global_policy (2).md",
+      "line": 58,
+      "text": "- Toujours relancer `cursor_todo_queue.md`"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/external/cursor_prompt_auto.md",
+      "line": 5,
+      "text": "🧠 Cursor must refer to cursor_todo_queue.md before executing or suggesting anything."
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/external/cursor_todo_queue.md",
+      "line": 8,
+      "text": "- [ ] Scanner tous les TODO, FIXME, NOTE: dans les fichiers sources"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/HOMEY_COMMUNITY_FIXES.md",
+      "line": 1,
+      "text": "# 🔧 Corrections Automatiques Homey Community## 🎯 Problèmes Identifiés et Solutions### 📋 Problème "
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/i18n/README_ES.md",
+      "line": 1,
+      "text": "# Integración Universal de Dispositivos Tuya ZigBee para Homey## Descripción GeneralIntegración Univ"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/mega_prompt_checklist.md",
+      "line": 35,
+      "text": "- [ ] 8. Centraliser TODOs"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/mega_prompt_full.md",
+      "line": 43,
+      "text": "8. Centraliser les TODO listées dans les anciens commits."
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/PHASE_1_SOCLE.md",
+      "line": 373,
+      "text": "// TODO: Implement error reporting service integration"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/prompts-72h-analysis.json",
+      "line": 72,
+      "text": "\"content\": \"recuepre toute la todolist qui a été mis en place dasn ce projket\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/prompts-72h-analysis.json",
+      "line": 77,
+      "text": "\"Récupération de la TODO list complète\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/prompts-72h-analysis.json",
+      "line": 78,
+      "text": "\"Analyse des fichiers TODO\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/prompts-72h-analysis.md",
+      "line": 1,
+      "text": "# 📝 Analyse des Prompts - 72 Dernières Heures## 📅 **PÉRIODE D'ANALYSE**- **Début** : 26/07/2025 01"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/RAPPORT_FINAL_COMPLET.md",
+      "line": 1,
+      "text": "# 🎉 RAPPORT FINAL COMPLET - RECONSTRUCTION MAÎTRE `com.tuya.zigbee`**Date**: 31/07/2025 19:25 **Sta"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/RAPPORT_FINAL_ETAT_PROJET.md",
+      "line": 1,
+      "text": "# RAPPORT FINAL - ÉTAT ACTUEL DU PROJET## 🎯 **RÉSUMÉ EXÉCUTIF**Le projet `com.tuya.zigbee` a été **"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/RAPPORT_FINAL_RECUPERATION_COMPLETE.md",
+      "line": 1,
+      "text": "# 🎉 RAPPORT FINAL - RÉCUPÉRATION COMPLÈTE ET MEGA-PIPELINE ULTIME**Date**: 31/07/2025 21:15 **Statu"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/README_megaproject_full_multilang.md",
+      "line": 1,
+      "text": "# Universal Tuya & Zigbee Device App – Mega Project (SDK3+, JS-only, Fully Autonomous)## 📌 ENGLISH "
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/reports/analysis/ETAT_AVANCEMENT_CURSOR.md",
+      "line": 1,
+      "text": "# Rapport d’état Cursor – Universal TUYA Zigbee Device## 🕒 Planification et estimations d’avancemen"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/reports/analysis/TASK_TRACKER_REPORT_20250725.md",
+      "line": 1,
+      "text": "# Task Tracker Report - Tuya Zigbee Project**Date:** 2025-07-25 00:48:43**Generated by:** Task Track"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/reports/final/RAPPORT_FINAL_COMPLETION.md",
+      "line": 1,
+      "text": "# RAPPORT FINAL COMPLETION - Tuya Zigbee Project (2025-07-26)## 🎉 **TOUTES LES TÂCHES MANQUANTES CO"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/reports/final/RAPPORT_FINAL_ZIGBEE_ENRICHMENT.md",
+      "line": 1,
+      "text": "# 🚀 RAPPORT FINAL - ENRICHISSEMENT COMPLET AVEC RÉFÉRENTIEL ZIGBEE## 📊 **Résumé Exécutif****Date**"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/reports/final/RAPPORT_REORGANISATION_COMPLETE.md",
+      "line": 1,
+      "text": "# 📁 RAPPORT DE RÉORGANISATION COMPLÈTE## 🎯 **RÉSUMÉ EXÉCUTIF****✅ RÉORGANISATION COMPLÈTE RÉALISÉE"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/reports/final/RESUME_FINAL_CURSOR.md",
+      "line": 1,
+      "text": "# 🚀 RÉSUMÉ FINAL CURSOR - PROJET TUYA ZIGBEE**Date : 24/07/2025 23:15 UTC** **Statut : ✅ MISSION AC"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/reports/workflow-test-20250726-164442.md",
+      "line": 1,
+      "text": "# Workflow Test Report - 2025-07-26 16:44:42# Mode enrichissement additif## Workflow Validation Resu"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/structure.md",
+      "line": 35,
+      "text": "📄 cursor_todo_queue.md (703 Bytes)"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/subjects.md",
+      "line": 40,
+      "text": "- **todo**"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/tasks-72h-complete-analysis.md",
+      "line": 1,
+      "text": "# 📊 ANALYSE COMPLÈTE DES TÂCHES 72H - Tuya Zigbee Project## 📅 **PÉRIODE D'ANALYSE**- **Début** : 2"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/todo/current/TODO_ENRICHISSEMENT_COMPLET.md",
+      "line": 1,
+      "text": "# TODO ENRICHISSEMENT COMPLET - Tuya Zigbee Project## 🚀 **TÂCHES ACCOMPLIES (2025-01-27)**### ✅ **P"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/todo/current/TODO_REPRISE_49H.md",
+      "line": 1,
+      "text": "# TODO REPRISE 49 DERNIÈRES HEURES - Tuya Zigbee Project## 🚀 **TÂCHES PRIORITAIRES À REPRENDRE**###"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/todo/TODO_COMPLETE_FIX.md",
+      "line": 1,
+      "text": "# TODO SYNCHRONISE - Universal Universal TUYA Zigbee Device## METRIQUES ACTUELLES (2025-07-25_15-12-"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/todo/TODO_CURSOR_COMPLET.md",
+      "line": 1,
+      "text": "# TODO SYNCHRONISE - Universal Universal TUYA Zigbee Device## METRIQUES ACTUELLES (2025-07-25_15-12-"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/todo/TODO_CURSOR_INCREMENTAL.md",
+      "line": 1,
+      "text": "# TODO SYNCHRONISE - Universal Universal TUYA Zigbee Device## METRIQUES ACTUELLES (2025-07-25_15-12-"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/todo/TODO_CURSOR_NATIVE.md",
+      "line": 1,
+      "text": "# TODO SYNCHRONISE - Universal TUYA Zigbee Device## METRIQUES ACTUELLES (2025-07-25_21-35-00)### Dri"
+    },
+    {
+      "file": "./ultimate_system/all/docs/documentation/docs/todo/TODO_PROJET.md",
+      "line": 1,
+      "text": "# TODO SYNCHRONISE - Universal Universal TUYA Zigbee Device## METRIQUES ACTUELLES (2025-07-25_15-12-"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/comprehensive-review-report.json",
+      "line": 187,
+      "text": "\"todo\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/exhaustive-github-analysis.json",
+      "line": 1349,
+      "text": "\"body\": \"* Copy of lcdtemphumidsensor but configureAttributeReporting removed since device doesn't s"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/exhaustive-github-analysis.json",
+      "line": 1367,
+      "text": "\"body\": \"* Added device as new device copied from water_leak_sensor_tuya\\r\\n* Added new images\\r\\n* "
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/exhaustive-github-analysis.json",
+      "line": 2112,
+      "text": "\"body\": \"### Prerequisites:\\n\\n- Before requesting a device addition, please ensure there is not alr"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/exhaustive-github-analysis.json",
+      "line": 2129,
+      "text": "\"body\": \"### Prerequisites:\\n\\n- Before requesting a device addition, please ensure there is not alr"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/github-pr-issues-comprehensive-extraction.json",
+      "line": 1140,
+      "text": "\"body\": \"* Copy of lcdtemphumidsensor but configureAttributeReporting removed since device doesn't s"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/github-pr-issues-comprehensive-extraction.json",
+      "line": 1155,
+      "text": "\"body\": \"* Added device as new device copied from water_leak_sensor_tuya\\r\\n* Added new images\\r\\n* "
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/github-pr-issues-comprehensive-extraction.json",
+      "line": 2748,
+      "text": "\"body\": \"### Prerequisites:\\n\\n- Before requesting a device addition, please ensure there is not alr"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/github-pr-issues-comprehensive-extraction.json",
+      "line": 2762,
+      "text": "\"body\": \"### Prerequisites:\\n\\n- Before requesting a device addition, please ensure there is not alr"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/github-pr-issues-comprehensive-extraction.json",
+      "line": 5468,
+      "text": "\"_TZE20X_xxxxxxxx\""
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/johan-benz-comprehensive-analysis.json",
+      "line": 159,
+      "text": "\"title\": \"Button connectivity issues with _TZ3000_xxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/johan-benz-comprehensive-analysis.json",
+      "line": 171,
+      "text": "\"_TZ3000_xxxxxxx\""
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/johan-benz-comprehensive-analysis.json",
+      "line": 231,
+      "text": "\"title\": \"Button connectivity issues with _TZ3000_xxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/johan-benz-comprehensive-analysis.json",
+      "line": 243,
+      "text": "\"_TZ3000_xxxxxxx\""
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/johan-benz-comprehensive-analysis.json",
+      "line": 313,
+      "text": "\"identifier\": \"_TZ3000_xxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/johan-benz-comprehensive-analysis.json",
+      "line": 317,
+      "text": "\"Issue #457: Button connectivity issues with _TZ3000_xxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/johan-benz-comprehensive-analysis.json",
+      "line": 318,
+      "text": "\"Issue #457: Button connectivity issues with _TZ3000_xxxxxxx\""
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225148,
+      "text": "\"name\": \"TODO_COMPLETE_FIX.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225150,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_COMPLETE_FIX.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225156,
+      "text": "\"name\": \"TODO_CURSOR_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225158,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_CURSOR_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225164,
+      "text": "\"name\": \"TODO_CURSOR_INCREMENTAL.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225166,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_CURSOR_INCREMENTAL.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225172,
+      "text": "\"name\": \"TODO_CURSOR_NATIVE.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225174,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_CURSOR_NATIVE.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225180,
+      "text": "\"name\": \"TODO_ENRICHISSEMENT_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225182,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_ENRICHISSEMENT_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225188,
+      "text": "\"name\": \"TODO_PROJET.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225190,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_PROJET.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225196,
+      "text": "\"name\": \"TODO_REplug_49H.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225198,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_REplug_49H.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225524,
+      "text": "\"name\": \"cursor_todo_queue.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225526,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\external\\\\cursor_todo_queue.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228111,
+      "text": "\"name\": \"todo\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228113,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228118,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\current\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228121,
+      "text": "\"name\": \"TODO_ENRICHISSEMENT_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228123,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\current\\\\TODO_ENRICHISSEMENT_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228129,
+      "text": "\"name\": \"TODO_REplug_49H.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228131,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\current\\\\TODO_REplug_49H.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228140,
+      "text": "\"name\": \"TODO_COMPLETE_FIX.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228142,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\TODO_COMPLETE_FIX.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228148,
+      "text": "\"name\": \"TODO_CURSOR_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228150,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\TODO_CURSOR_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228156,
+      "text": "\"name\": \"TODO_CURSOR_INCREMENTAL.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228158,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\TODO_CURSOR_INCREMENTAL.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228164,
+      "text": "\"name\": \"TODO_CURSOR_NATIVE.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228166,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\TODO_CURSOR_NATIVE.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228172,
+      "text": "\"name\": \"TODO_PROJET.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228174,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\TODO_PROJET.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349435,
+      "text": "\"name\": \"TODO_COMPLETE_FIX.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349437,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349443,
+      "text": "\"name\": \"TODO_CURSOR_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349445,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349451,
+      "text": "\"name\": \"TODO_CURSOR_INCREMENTAL.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349453,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349459,
+      "text": "\"name\": \"TODO_CURSOR_NATIVE.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349461,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349467,
+      "text": "\"name\": \"TODO_ENRICHISSEMENT_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349469,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349475,
+      "text": "\"name\": \"TODO_PROJET.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349477,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349483,
+      "text": "\"name\": \"TODO_REplug_49H.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349485,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351838,
+      "text": "\"name\": \"todo\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351840,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351845,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351848,
+      "text": "\"name\": \"TODO_ENRICHISSEMENT_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351850,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351856,
+      "text": "\"name\": \"TODO_REplug_49H.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351858,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351867,
+      "text": "\"name\": \"TODO_COMPLETE_FIX.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351869,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351875,
+      "text": "\"name\": \"TODO_CURSOR_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351877,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351883,
+      "text": "\"name\": \"TODO_CURSOR_INCREMENTAL.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351885,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351891,
+      "text": "\"name\": \"TODO_CURSOR_NATIVE.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351893,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351899,
+      "text": "\"name\": \"TODO_PROJET.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351901,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 357274,
+      "text": "\"name\": \"process-all-todos-and-logs.ps1\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 357276,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\process-all-todos-and-logs.ps1\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 359207,
+      "text": "\"name\": \"process-all-todos-and-logs.ps1.backup\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 359209,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\script-conversion\\\\process-all-todos-and-logs.ps1."
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 458027,
+      "text": "\"async function updateTodoQueue\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 525341,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_COMPLETE_FIX.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 525347,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_CURSOR_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 525353,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_CURSOR_INCREMENTAL.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 525359,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_CURSOR_NATIVE.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 525365,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_ENRICHISSEMENT_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 525371,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_PROJET.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 525377,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_REplug_49H.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 525581,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\external\\\\cursor_todo_queue.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 527087,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\current\\\\TODO_ENRICHISSEMENT_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 527093,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\current\\\\TODO_REplug_49H.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 527099,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\TODO_COMPLETE_FIX.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 527105,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\TODO_CURSOR_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 527111,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\TODO_CURSOR_INCREMENTAL.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 527117,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\TODO_CURSOR_NATIVE.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 527123,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\TODO_PROJET.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 542273,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 542279,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 542285,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 542291,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 542297,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 542303,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 542309,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 543617,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 543623,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 543629,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 543635,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 543641,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 543647,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 543653,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 548335,
+      "text": "\"async function updateTodoQueue\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/data/enhanced_sources/scraped_data.json",
+      "line": 2777,
+      "text": "\"body\": \"### Prerequisites:\\n\\n- Before requesting a device addition, please ensure there is not alr"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/data/enhanced_sources/scraped_data.json",
+      "line": 2860,
+      "text": "\"body\": \"### Prerequisites:\\n\\n- Before requesting a device addition, please ensure there is not alr"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/data/enhanced_sources/scraped_data.json",
+      "line": 51543,
+      "text": "\"body\": \"* Copy of lcdtemphumidsensor but configureAttributeReporting removed since device doesn't s"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/data/enhanced_sources/scraped_data.json",
+      "line": 51909,
+      "text": "\"body\": \"* Added device as new device copied from water_leak_sensor_tuya\\r\\n* Added new images\\r\\n* "
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/data/enhanced_sources/scraped_data.json",
+      "line": 54530,
+      "text": "\"body\": \"### Prerequisites:\\n\\n- Before requesting a device addition, please ensure there is not alr"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/data/matrices/driver_matrix.json",
+      "line": 13857,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/data/matrices/driver_matrix.json",
+      "line": 14621,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/data/matrices/driver_matrix.json",
+      "line": 15392,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/data/matrices/driver_matrix.json",
+      "line": 16156,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/data/matrices/driver_matrix.json",
+      "line": 16927,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/data/matrices/driver_matrix.json",
+      "line": 17691,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/data/matrices/driver_matrix.json",
+      "line": 18462,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/data/matrices/driver_matrix.json",
+      "line": 19226,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/data/matrices/driver_matrix.json",
+      "line": 19997,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/data/matrices/driver_matrix.json",
+      "line": 20761,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/data/matrices/driver_matrix.json",
+      "line": 21532,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/data/matrices/driver_matrix.json",
+      "line": 22296,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/data/matrices/driver_matrix.json",
+      "line": 23067,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/data/matrices/driver_matrix.json",
+      "line": 23831,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/data/matrices/driver_matrix.json",
+      "line": 24603,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/data/matrices/driver_matrix.json",
+      "line": 25370,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/data/matrices/manufacturer_matrix.json",
+      "line": 8638,
+      "text": "\"name\": \"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/matrices/driver_matrix.json",
+      "line": 13857,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/matrices/driver_matrix.json",
+      "line": 14621,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/matrices/driver_matrix.json",
+      "line": 15392,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/matrices/driver_matrix.json",
+      "line": 16156,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/matrices/driver_matrix.json",
+      "line": 16927,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/matrices/driver_matrix.json",
+      "line": 17691,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/matrices/driver_matrix.json",
+      "line": 18462,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/matrices/driver_matrix.json",
+      "line": 19226,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/matrices/driver_matrix.json",
+      "line": 19997,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/matrices/driver_matrix.json",
+      "line": 20761,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/matrices/driver_matrix.json",
+      "line": 21532,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/matrices/driver_matrix.json",
+      "line": 22296,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/matrices/driver_matrix.json",
+      "line": 23067,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/matrices/driver_matrix.json",
+      "line": 23831,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/matrices/driver_matrix.json",
+      "line": 24603,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/matrices/driver_matrix.json",
+      "line": 25370,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/analysis/mega-analysis-report.json",
+      "line": 3388,
+      "text": "\"todoDriver\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/analysis/mega-analysis-report.json",
+      "line": 3399,
+      "text": "\"todoTracker\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/analysis/mega-analysis-report.json",
+      "line": 10753,
+      "text": "\"todoDriver\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/analysis/mega-analysis-report.json",
+      "line": 10764,
+      "text": "\"todoTracker\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/analysis/mega-analysis-report.json",
+      "line": 12574,
+      "text": "\"path\": \"scripts\\\\process-all-todos-and-logs.ps1\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/analysis/mega-analysis-report.json",
+      "line": 305634,
+      "text": "\"todoDriver\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/analysis/mega-analysis-report.json",
+      "line": 305645,
+      "text": "\"todoTracker\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/analysis/mega-analysis-report.json",
+      "line": 305717,
+      "text": "\"todoDriver\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/analysis/mega-analysis-report.json",
+      "line": 305728,
+      "text": "\"todoTracker\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 3387,
+      "text": "\"todoDriver\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 3398,
+      "text": "\"todoTracker\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 10752,
+      "text": "\"todoDriver\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 10763,
+      "text": "\"todoTracker\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 12573,
+      "text": "\"path\": \"scripts\\\\process-all-todos-and-logs.ps1\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 305633,
+      "text": "\"todoDriver\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 305644,
+      "text": "\"todoTracker\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 305716,
+      "text": "\"todoDriver\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 305727,
+      "text": "\"todoTracker\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 322510,
+      "text": "\"hacktoberfest\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 322530,
+      "text": "\"hacktoberfest\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 322531,
+      "text": "\"hacktoberfest2022\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 322615,
+      "text": "\"body\": \"### What happened?\\n\\nLong press of the bottom right button generates an invalid action cha"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 322949,
+      "text": "\"body\": \"### What happened?\\n\\nI'm getting recurrent messages on Z2M for device Thermostat Moes ZHT-"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 323996,
+      "text": "\"body\": \"### The problem\\n\\nThe opower integration with PG&E won't connect anymore. I've confirmed t"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 324151,
+      "text": "\"body\": \"### The problem\\n\\nI have 3 brel screens on a brel hub-03.\\nIf I send a close or open comma"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 324549,
+      "text": "\"body\": \"### The problem\\n\\nper 2025.9.3 these were in the logs\\n\\nfor 1 core and 1 custom integrati"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 324656,
+      "text": "\"body\": \"### The problem\\n\\nRejestrator: homeassistant.config_entries\\nŹródło: config_entries.py:751"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 326281,
+      "text": "\"body\": \"### Does the issue really belong here?\\n\\n- [x] I definitively want to report a bug within "
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 326492,
+      "text": "\"body\": \"Update DDF for Aqara Single Switch Module T1 (with Neutral).\\r\\n- Use Xiaomi special attrib"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 328446,
+      "text": "\"body\": \"<!--\\r\\n  You are amazing! Thanks for contributing to our project!\\r\\n  Please, DO NOT DELE"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 328454,
+      "text": "\"body\": \"<!--\\r\\n  You are amazing! Thanks for contributing to our project!\\r\\n  Please, DO NOT DELE"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 329606,
+      "text": "\"body\": \"Update DDF for Aqara Single Switch Module T1 (with Neutral).\\r\\n- Use Xiaomi special attrib"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 330070,
+      "text": "\"body\": \"The database can contain reachable = true entries but for older timestamps. Fix this on loa"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 330257,
+      "text": "\"body\": \"# Notes\\r\\n- Bosch BMCT-SLZ: due to some changes, the device needs to be reconfigured. This"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 330409,
+      "text": "\"body\": \"- Add multiple NICs in govee_light_local (@itewk - #128123)\\r\\n- Ignore errors when PlaySta"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 330465,
+      "text": "\"body\": \"- Fix PG&E and Duquesne Light Company in Opower (@tronikos - #149658)\\r\\n- Deprecate MQTT v"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/organized/automation/orchestration-report.json",
+      "line": 330753,
+      "text": "\"body\": \"# Contributors:\\r\\nThe following users have been contributing to this release. Thank you fo"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/releases/v1.0.0/README.md",
+      "line": 41,
+      "text": "# Traiter les TODO et mettre à jour les README"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/releases/v1.0.0/README.md",
+      "line": 42,
+      "text": "node tools/todo-processor-and-readme-updater.js"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/releases/v1.1.0/README.md",
+      "line": 41,
+      "text": "# Traiter les TODO et mettre à jour les README"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/releases/v1.1.0/README.md",
+      "line": 42,
+      "text": "node tools/todo-processor-and-readme-updater.js"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/releases/v1.2.0/README.md",
+      "line": 41,
+      "text": "# Traiter les TODO et mettre à jour les README"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/releases/v1.2.0/README.md",
+      "line": 42,
+      "text": "node tools/todo-processor-and-readme-updater.js"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/releases/v1.3.0/README.md",
+      "line": 41,
+      "text": "# Traiter les TODO et mettre à jour les README"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/releases/v1.3.0/README.md",
+      "line": 42,
+      "text": "node tools/todo-processor-and-readme-updater.js"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/releases/v1.4.0/README.md",
+      "line": 41,
+      "text": "# Traiter les TODO et mettre à jour les README"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/releases/v1.4.0/README.md",
+      "line": 42,
+      "text": "node tools/todo-processor-and-readme-updater.js"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 9,
+      "text": "\"todo\": 0,"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 47,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\forum-homey-community-device-1\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 54,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\forum-homey-community-device-2\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 61,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\homey-apps-device-1\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 68,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\homey-apps-device-2\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 75,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\homey-apps-device-3\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 82,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\zigbee2mqtt-devices-device-1\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 89,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\zigbee2mqtt-devices-device-2\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 96,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\zigbee2mqtt-devices-device-3\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4818,
+      "text": "\"path\": \"drivers\\\\todo-devices\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4826,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\forum-homey-community-device-1\\\\assets\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4834,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\forum-homey-community-device-1\\\\assets\\\\images\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4842,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\forum-homey-community-device-2\\\\assets\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4850,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\forum-homey-community-device-2\\\\assets\\\\images\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4858,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\homey-apps-device-1\\\\assets\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4866,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\homey-apps-device-1\\\\assets\\\\images\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4874,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\homey-apps-device-2\\\\assets\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4882,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\homey-apps-device-2\\\\assets\\\\images\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4890,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\homey-apps-device-3\\\\assets\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4898,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\homey-apps-device-3\\\\assets\\\\images\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4906,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\zigbee2mqtt-devices-device-1\\\\assets\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4914,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\zigbee2mqtt-devices-device-1\\\\assets\\\\images\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4922,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\zigbee2mqtt-devices-device-2\\\\assets\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4930,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\zigbee2mqtt-devices-device-2\\\\assets\\\\images\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4938,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\zigbee2mqtt-devices-device-3\\\\assets\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4946,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\zigbee2mqtt-devices-device-3\\\\assets\\\\images\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 35185,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\forum-homey-community-device-1\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 35190,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\forum-homey-community-device-2\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 35195,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\homey-apps-device-1\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 35200,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\homey-apps-device-2\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 35205,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\homey-apps-device-3\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 35210,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\zigbee2mqtt-devices-device-1\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 35215,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\zigbee2mqtt-devices-device-2\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 35220,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\zigbee2mqtt-devices-device-3\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/external-folder-analysis.json",
+      "line": 50,
+      "text": "\"path\": \"cursor_todo_queue.md\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/external-folder-analysis.md",
+      "line": 57,
+      "text": "- **todo**"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/fetch-report.json",
+      "line": 18,
+      "text": "\"status\": \"todo\""
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/fetch-report.json",
+      "line": 28,
+      "text": "\"status\": \"todo\""
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/fetch-report.json",
+      "line": 38,
+      "text": "\"status\": \"todo\""
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/fetch-report.json",
+      "line": 48,
+      "text": "\"status\": \"todo\""
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/fetch-report.json",
+      "line": 58,
+      "text": "\"status\": \"todo\""
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/fetch-report.json",
+      "line": 68,
+      "text": "\"status\": \"todo\""
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/fetch-report.json",
+      "line": 79,
+      "text": "\"status\": \"todo\""
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/fetch-report.json",
+      "line": 89,
+      "text": "\"status\": \"todo\""
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/fix-new-forum-bugs-report.json",
+      "line": 36,
+      "text": "\"resolve_todo\": false"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/forum-errors-fix-report.json",
+      "line": 36,
+      "text": "\"resolve_todo\": false"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/master-optimization-pipeline-report.json",
+      "line": 19,
+      "text": "\"output\": \"[2025-07-30T15:48:04.639Z] [INFO] 🚀 === DÉMARRAGE COMPLÉTION 657 DRIVERS ===\\n[2025-07-3"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/master-optimization-pipeline-report.json",
+      "line": 49,
+      "text": "\"output\": \"\\u001b[36m[2025-07-30T15:49:12.391Z] [INFO] 🚀 === DÉMARRAGE MÉGA PIPELINE ===\\u001b[0m\\n"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/master-rebuild-final-report.json",
+      "line": 234,
+      "text": "\"message\": \"Exécution: step7_resolveTodoDrivers\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/master-rebuild-final-report.json",
+      "line": 239,
+      "text": "\"step\": \"STEP7_TODO_DRIVERS\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/master-rebuild-final-report.json",
+      "line": 240,
+      "text": "\"message\": \"📝 Résolution des drivers TODO\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/master-rebuild-final-report.json",
+      "line": 245,
+      "text": "\"step\": \"STEP7_TODO_DRIVERS\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/master-rebuild-final-report.json",
+      "line": 246,
+      "text": "\"message\": \"0 drivers TODO résolus\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/master-rebuild-final-report.json",
+      "line": 252,
+      "text": "\"message\": \"✅ step7_resolveTodoDrivers terminé avec succès\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/mega-pipeline-results.json",
+      "line": 137,
+      "text": "\"todo\": {"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/mega-pipeline-results.json",
+      "line": 140,
+      "text": "\"todoDevices\": 15,"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/new-forum-post-analysis.json",
+      "line": 125,
+      "text": "\"implementation\": \"resolveTodoDevices\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/new-forum-post-analysis.json",
+      "line": 203,
+      "text": "\"title\": \"Mettre à jour resolveTodoDevices\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/reports/analysis/new-forum-post-analysis.json",
+      "line": 206,
+      "text": "\"scripts/resolve-todo-devices.js\""
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/tools/analyze-and-enrich-drivers.js",
+      "line": 93,
+      "text": "// TODO: Add more analysis (code quality, test coverage, etc.)"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/tools/analyze-and-enrich-drivers.js",
+      "line": 131,
+      "text": "// TODO: Extract and process driver information"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/tools/analyze-and-enrich-drivers.js",
+      "line": 196,
+      "text": "// TODO: Implement device initialization"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/tools/analyze-and-enrich-drivers.js",
+      "line": 219,
+      "text": "// TODO: Implement driver initialization"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/tools/driver-enrichment-engine.js",
+      "line": 184,
+      "text": "manufacturerName: '_TZ3000_xxxxxxxx',"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/tools/prompts/device_interview.json",
+      "line": 11,
+      "text": "\"manufacturerName\": \"_TZ3000_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/tools/prompts/device_interview.json",
+      "line": 12,
+      "text": "\"productId\": \"TSxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/tools/prompts/device_interview.json",
+      "line": 13,
+      "text": "\"modelId\": \"TSxxxx\","
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/tools/update-placeholders.js",
+      "line": 17,
+      "text": "'TODO': 'IMPLEMENTED',"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/tools/update-placeholders.js",
+      "line": 18,
+      "text": "'FIXME': 'FIXED',"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/tools/update-placeholders.js",
+      "line": 19,
+      "text": "'XXX': 'COMPLETED',"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/tools/version-manager-and-release-creator.js",
+      "line": 222,
+      "text": ".replace(/📋 TODO Traités/g, '📋 TODO Traités')"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/tools/version-manager-and-release-creator.js",
+      "line": 243,
+      "text": ".replace(/📋 TODO Traités/g, '📋 Behandelde TODO')"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/tools/version-manager-and-release-creator.js",
+      "line": 264,
+      "text": ".replace(/📋 TODO Traités/g, '📋 செய்யப்பட்ட TODO')"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/tools/version-manager-and-release-creator.js",
+      "line": 457,
+      "text": "# Traiter les TODO et mettre à jour les README"
+    },
+    {
+      "file": "./ultimate_system/all/docs/project-data/tools/version-manager-and-release-creator.js",
+      "line": 458,
+      "text": "node tools/todo-processor-and-readme-updater.js"
+    },
+    {
+      "file": "./ultimate_system/all/docs/scripts/package-lock.json",
+      "line": 5220,
+      "text": "\"integrity\": \"sha512-TRzzuFRRmEoSW/p1KVAmiOgPco2Irlah+bGFCeNfJXxxYGwSw7YwAOAcd7X28K/m5bjBWKsC29KyoMf"
+    },
+    {
+      "file": "./ultimate_system/all/docs/scripts/package-lock.json",
+      "line": 5648,
+      "text": "\"integrity\": \"sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwq"
+    },
+    {
+      "file": "./ultimate_system/all/docs/scripts/script-consolidation/validation/structure_validator.js",
+      "line": 5,
+      "text": "// TODO: Implémenter la validation structurelle"
+    },
+    {
+      "file": "./ultimate_system/all/references/historical_data/enriched_history.json",
+      "line": 868,
+      "text": "\"message\": \"feat: Complete TODO processing and README matrix update - 2025-01-28 18:45 GMT+2 - Proce"
+    },
+    {
+      "file": "./ultimate_system/all/references/historical_data/enriched_history.json",
+      "line": 878,
+      "text": "\"message\": \"feat: Complete implementation of forum improvements and documentation finalization -  GM"
+    },
+    {
+      "file": "./ultimate_system/all/references/historical_data/enriched_history.json",
+      "line": 893,
+      "text": "\"message\": \"🚀 IMPLÉMENTATION EXHAUSTIVE COMPLÈTE - Système TODO complet créé - Dashboard GitHub Pag"
+    },
+    {
+      "file": "./ultimate_system/all/references/historical_data/enriched_history.json",
+      "line": 968,
+      "text": "\"message\": \"[EN/FR] Archivage automatique des fichiers .md et TODO avec versionning horodaté, réorga"
+    },
+    {
+      "file": "./ultimate_system/all/references/historical_data/enriched_history.json",
+      "line": 973,
+      "text": "\"message\": \"[EN/FR] Archivage automatique des fichiers .md et TODO avec versionning horodaté, réorga"
+    },
+    {
+      "file": "./ultimate_system/all/scripts/organized/FIX_DUPLICATES.js",
+      "line": 31,
+      "text": "mfg: ['_TZE200_cwbvmsar', '_TZE200_bjawzodf', '_TZE284_climxxxx'],"
+    },
+    {
+      "file": "./ultimate_system/all/scripts/organized/FIX_DUPLICATES.js",
+      "line": 35,
+      "text": "mfg: ['_TZ3000_26fmupbb', '_TZ3000_n2egfsli', '_TZE200_contxxxx'],"
+    },
+    {
+      "file": "./ultimate_system/all/scripts/organized/FIX_DUPLICATES.js",
+      "line": 39,
+      "text": "mfg: ['_TZ3000_odygigth', '_TZE284_sooucan5', '_TZE200_lightxxx'],"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/config/MEGA_ORCHESTRATOR_REPORT_2025-08-16T03-32-24-325Z.json",
+      "line": 13,
+      "text": "\"stderr\": \"⚠️ Fichier compose invalide: C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\drivers\\\\zigbee\\\\models\\\\gen"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/config/MEGA_ORCHESTRATOR_REPORT_2025-08-16T10-28-07-649Z.json",
+      "line": 13,
+      "text": "\"stderr\": \"⚠️ Fichier compose invalide: C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\drivers\\\\generic\\\\cover\\\\dri"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/config/MEGA_ORCHESTRATOR_REPORT_2025-08-16T13-33-56-381Z.json",
+      "line": 13,
+      "text": "\"stderr\": \"⚠️ Fichier compose invalide: C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\drivers\\\\generic\\\\cover\\\\dri"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/config/MEGA_ORCHESTRATOR_REPORT_2025-08-16T14-32-57-556Z.json",
+      "line": 13,
+      "text": "\"stderr\": \"⚠️ Fichier compose invalide: C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\drivers\\\\generic\\\\cover\\\\dri"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/dev-tools/scraping/johan-benz-comprehensive-scraper.js",
+      "line": 687,
+      "text": "title: \"Button connectivity issues with _TZ3000_xxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/architecture.md",
+      "line": 1,
+      "text": "# 🏗️ **Architecture Technique**## 🎯 **Vue d'ensemble**Ce document décrit l'architecture technique "
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/DEVICE_COMPATIBILITY.md",
+      "line": 156,
+      "text": "- _TZ3000_xxxx / TS004F"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/DEVICE_COMPATIBILITY.md",
+      "line": 157,
+      "text": "- _TZE200_xxxx / TS0601"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/enhanced/es.md",
+      "line": 1,
+      "text": "# Tuya Zigbee Project - Español## 🎯 Objetivo Principal**Integración local máxima de dispositivos Tu"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/enhanced/ETAT_AVANCEMENT_CURSOR.md",
+      "line": 1,
+      "text": "# Rapport d’état Cursor – Universal TUYA Zigbee Device## 🕒 Planification et estimations d’avancemen"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/enhanced/INDEX.md",
+      "line": 1,
+      "text": "# Documentation Universal Universal TUYA Zigbee Device## Structure des fichiers Markdown### Document"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/enhanced/RAPPORT_FINAL_COMPLETION.md",
+      "line": 1,
+      "text": "# RAPPORT FINAL COMPLETION - Tuya Zigbee Project (2025-07-26)## 🎉 **TOUTES LES TÂCHES MANQUANTES CO"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/enhanced/RAPPORT_FINAL_ZIGBEE_ENRICHMENT.md",
+      "line": 1,
+      "text": "# 🚀 RAPPORT FINAL - ENRICHISSEMENT COMPLET AVEC RÉFÉRENTIEL ZIGBEE## 📊 **Résumé Exécutif****Date**"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/enhanced/RAPPORT_REORGANISATION_COMPLETE.md",
+      "line": 1,
+      "text": "# 📁 RAPPORT DE RÉORGANISATION COMPLÈTE## 🎯 **RÉSUMÉ EXÉCUTIF****✅ RÉORGANISATION COMPLÈTE RÉALISÉE"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/enhanced/RESUME_FINAL_CURSOR.md",
+      "line": 1,
+      "text": "# 🚀 RÉSUMÉ FINAL CURSOR - PROJET TUYA ZIGBEE**Date : 24/07/2025 23:15 UTC** **Statut : ✅ MISSION AC"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/enhanced/TASK_TRACKER_REPORT_20250725.md",
+      "line": 1,
+      "text": "# Task Tracker Report - Tuya Zigbee Project**Date:** 2025-07-25 00:48:43**Generated by:** Task Track"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/enhanced/TODO_COMPLETE_FIX.md",
+      "line": 1,
+      "text": "# TODO SYNCHRONISE - Universal Universal TUYA Zigbee Device## METRIQUES ACTUELLES (2025-07-25_15-12-"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/enhanced/TODO_CURSOR_COMPLET.md",
+      "line": 1,
+      "text": "# TODO SYNCHRONISE - Universal Universal TUYA Zigbee Device## METRIQUES ACTUELLES (2025-07-25_15-12-"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/enhanced/TODO_CURSOR_INCREMENTAL.md",
+      "line": 1,
+      "text": "# TODO SYNCHRONISE - Universal Universal TUYA Zigbee Device## METRIQUES ACTUELLES (2025-07-25_15-12-"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/enhanced/TODO_CURSOR_NATIVE.md",
+      "line": 1,
+      "text": "# TODO SYNCHRONISE - Universal TUYA Zigbee Device## METRIQUES ACTUELLES (2025-07-25_21-35-00)### Dri"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/enhanced/TODO_ENRICHISSEMENT_COMPLET.md",
+      "line": 1,
+      "text": "# TODO ENRICHISSEMENT COMPLET - Tuya Zigbee Project## 🚀 **TÂCHES ACCOMPLIES (2025-01-27)**### ✅ **P"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/enhanced/TODO_PROJET.md",
+      "line": 1,
+      "text": "# TODO SYNCHRONISE - Universal Universal TUYA Zigbee Device## METRIQUES ACTUELLES (2025-07-25_15-12-"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/enhanced/TODO_REPRISE_49H.md",
+      "line": 1,
+      "text": "# TODO REPRISE 49 DERNIÈRES HEURES - Tuya Zigbee Project## 🚀 **TÂCHES PRIORITAIRES À REPRENDRE**###"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/enhanced/tuya-zigbee-features-list.md",
+      "line": 1,
+      "text": "# 🚀 FEATURES TUYA/ZIGBEE SPÉCIFIQUES - Universal TUYA Zigbee Device## 📊 ANALYSE DES FEATURES TUYA/"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/enhanced/workflow-enhancement-plan.md",
+      "line": 1,
+      "text": "# 🚀 PLAN D'ENRICHISSEMENT WORKFLOWS - features Tuya/Zigbee## 📊 ANALYSE DES 60 WORKFLOWS EXISTANTS#"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/enhanced/workflow-test-20250726-164442.md",
+      "line": 1,
+      "text": "# Workflow Test Report - 2025-07-26 16:44:42# Mode enrichissement additif## Workflow Validation Resu"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/external/cursor_global_policy (2).md",
+      "line": 14,
+      "text": "- Load `cursor_todo_queue.md` on launch"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/external/cursor_global_policy (2).md",
+      "line": 35,
+      "text": "3. 🧠 Ouvre `cursor_todo_queue.md` et exécute chaque tâche `- [ ]` une par une."
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/external/cursor_global_policy (2).md",
+      "line": 48,
+      "text": "- `TODO_TRACKER.md`"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/external/cursor_global_policy (2).md",
+      "line": 58,
+      "text": "- Toujours relancer `cursor_todo_queue.md`"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/external/cursor_prompt_auto.md",
+      "line": 5,
+      "text": "🧠 Cursor must refer to cursor_todo_queue.md before executing or suggesting anything."
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/external/cursor_todo_queue.md",
+      "line": 8,
+      "text": "- [ ] Scanner tous les TODO, FIXME, NOTE: dans les fichiers sources"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/HOMEY_COMMUNITY_FIXES.md",
+      "line": 1,
+      "text": "# 🔧 Corrections Automatiques Homey Community## 🎯 Problèmes Identifiés et Solutions### 📋 Problème "
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/i18n/README_ES.md",
+      "line": 1,
+      "text": "# Integración Universal de Dispositivos Tuya ZigBee para Homey## Descripción GeneralIntegración Univ"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/mega_prompt_checklist.md",
+      "line": 35,
+      "text": "- [ ] 8. Centraliser TODOs"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/mega_prompt_full.md",
+      "line": 43,
+      "text": "8. Centraliser les TODO listées dans les anciens commits."
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/PHASE_1_SOCLE.md",
+      "line": 373,
+      "text": "// TODO: Implement error reporting service integration"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/prompts-72h-analysis.json",
+      "line": 72,
+      "text": "\"content\": \"recuepre toute la todolist qui a été mis en place dasn ce projket\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/prompts-72h-analysis.json",
+      "line": 77,
+      "text": "\"Récupération de la TODO list complète\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/prompts-72h-analysis.json",
+      "line": 78,
+      "text": "\"Analyse des fichiers TODO\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/prompts-72h-analysis.md",
+      "line": 1,
+      "text": "# 📝 Analyse des Prompts - 72 Dernières Heures## 📅 **PÉRIODE D'ANALYSE**- **Début** : 26/07/2025 01"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/RAPPORT_FINAL_COMPLET.md",
+      "line": 1,
+      "text": "# 🎉 RAPPORT FINAL COMPLET - RECONSTRUCTION MAÎTRE `com.tuya.zigbee`**Date**: 31/07/2025 19:25 **Sta"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/RAPPORT_FINAL_ETAT_PROJET.md",
+      "line": 1,
+      "text": "# RAPPORT FINAL - ÉTAT ACTUEL DU PROJET## 🎯 **RÉSUMÉ EXÉCUTIF**Le projet `com.tuya.zigbee` a été **"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/RAPPORT_FINAL_RECUPERATION_COMPLETE.md",
+      "line": 1,
+      "text": "# 🎉 RAPPORT FINAL - RÉCUPÉRATION COMPLÈTE ET MEGA-PIPELINE ULTIME**Date**: 31/07/2025 21:15 **Statu"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/README_megaproject_full_multilang.md",
+      "line": 1,
+      "text": "# Universal Tuya & Zigbee Device App – Mega Project (SDK3+, JS-only, Fully Autonomous)## 📌 ENGLISH "
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/reports/analysis/ETAT_AVANCEMENT_CURSOR.md",
+      "line": 1,
+      "text": "# Rapport d’état Cursor – Universal TUYA Zigbee Device## 🕒 Planification et estimations d’avancemen"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/reports/analysis/TASK_TRACKER_REPORT_20250725.md",
+      "line": 1,
+      "text": "# Task Tracker Report - Tuya Zigbee Project**Date:** 2025-07-25 00:48:43**Generated by:** Task Track"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/reports/final/RAPPORT_FINAL_COMPLETION.md",
+      "line": 1,
+      "text": "# RAPPORT FINAL COMPLETION - Tuya Zigbee Project (2025-07-26)## 🎉 **TOUTES LES TÂCHES MANQUANTES CO"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/reports/final/RAPPORT_FINAL_ZIGBEE_ENRICHMENT.md",
+      "line": 1,
+      "text": "# 🚀 RAPPORT FINAL - ENRICHISSEMENT COMPLET AVEC RÉFÉRENTIEL ZIGBEE## 📊 **Résumé Exécutif****Date**"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/reports/final/RAPPORT_REORGANISATION_COMPLETE.md",
+      "line": 1,
+      "text": "# 📁 RAPPORT DE RÉORGANISATION COMPLÈTE## 🎯 **RÉSUMÉ EXÉCUTIF****✅ RÉORGANISATION COMPLÈTE RÉALISÉE"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/reports/final/RESUME_FINAL_CURSOR.md",
+      "line": 1,
+      "text": "# 🚀 RÉSUMÉ FINAL CURSOR - PROJET TUYA ZIGBEE**Date : 24/07/2025 23:15 UTC** **Statut : ✅ MISSION AC"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/reports/workflow-test-20250726-164442.md",
+      "line": 1,
+      "text": "# Workflow Test Report - 2025-07-26 16:44:42# Mode enrichissement additif## Workflow Validation Resu"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/structure.md",
+      "line": 35,
+      "text": "📄 cursor_todo_queue.md (703 Bytes)"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/subjects.md",
+      "line": 40,
+      "text": "- **todo**"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/tasks-72h-complete-analysis.md",
+      "line": 1,
+      "text": "# 📊 ANALYSE COMPLÈTE DES TÂCHES 72H - Tuya Zigbee Project## 📅 **PÉRIODE D'ANALYSE**- **Début** : 2"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/todo/current/TODO_ENRICHISSEMENT_COMPLET.md",
+      "line": 1,
+      "text": "# TODO ENRICHISSEMENT COMPLET - Tuya Zigbee Project## 🚀 **TÂCHES ACCOMPLIES (2025-01-27)**### ✅ **P"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/todo/current/TODO_REPRISE_49H.md",
+      "line": 1,
+      "text": "# TODO REPRISE 49 DERNIÈRES HEURES - Tuya Zigbee Project## 🚀 **TÂCHES PRIORITAIRES À REPRENDRE**###"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/todo/TODO_COMPLETE_FIX.md",
+      "line": 1,
+      "text": "# TODO SYNCHRONISE - Universal Universal TUYA Zigbee Device## METRIQUES ACTUELLES (2025-07-25_15-12-"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/todo/TODO_CURSOR_COMPLET.md",
+      "line": 1,
+      "text": "# TODO SYNCHRONISE - Universal Universal TUYA Zigbee Device## METRIQUES ACTUELLES (2025-07-25_15-12-"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/todo/TODO_CURSOR_INCREMENTAL.md",
+      "line": 1,
+      "text": "# TODO SYNCHRONISE - Universal Universal TUYA Zigbee Device## METRIQUES ACTUELLES (2025-07-25_15-12-"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/todo/TODO_CURSOR_NATIVE.md",
+      "line": 1,
+      "text": "# TODO SYNCHRONISE - Universal TUYA Zigbee Device## METRIQUES ACTUELLES (2025-07-25_21-35-00)### Dri"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/documentation/docs/todo/TODO_PROJET.md",
+      "line": 1,
+      "text": "# TODO SYNCHRONISE - Universal Universal TUYA Zigbee Device## METRIQUES ACTUELLES (2025-07-25_15-12-"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/comprehensive-review-report.json",
+      "line": 187,
+      "text": "\"todo\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/exhaustive-github-analysis.json",
+      "line": 1349,
+      "text": "\"body\": \"* Copy of lcdtemphumidsensor but configureAttributeReporting removed since device doesn't s"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/exhaustive-github-analysis.json",
+      "line": 1367,
+      "text": "\"body\": \"* Added device as new device copied from water_leak_sensor_tuya\\r\\n* Added new images\\r\\n* "
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/exhaustive-github-analysis.json",
+      "line": 2112,
+      "text": "\"body\": \"### Prerequisites:\\n\\n- Before requesting a device addition, please ensure there is not alr"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/exhaustive-github-analysis.json",
+      "line": 2129,
+      "text": "\"body\": \"### Prerequisites:\\n\\n- Before requesting a device addition, please ensure there is not alr"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/github-pr-issues-comprehensive-extraction.json",
+      "line": 1140,
+      "text": "\"body\": \"* Copy of lcdtemphumidsensor but configureAttributeReporting removed since device doesn't s"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/github-pr-issues-comprehensive-extraction.json",
+      "line": 1155,
+      "text": "\"body\": \"* Added device as new device copied from water_leak_sensor_tuya\\r\\n* Added new images\\r\\n* "
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/github-pr-issues-comprehensive-extraction.json",
+      "line": 2748,
+      "text": "\"body\": \"### Prerequisites:\\n\\n- Before requesting a device addition, please ensure there is not alr"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/github-pr-issues-comprehensive-extraction.json",
+      "line": 2762,
+      "text": "\"body\": \"### Prerequisites:\\n\\n- Before requesting a device addition, please ensure there is not alr"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/github-pr-issues-comprehensive-extraction.json",
+      "line": 5468,
+      "text": "\"_TZE20X_xxxxxxxx\""
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/johan-benz-comprehensive-analysis.json",
+      "line": 159,
+      "text": "\"title\": \"Button connectivity issues with _TZ3000_xxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/johan-benz-comprehensive-analysis.json",
+      "line": 171,
+      "text": "\"_TZ3000_xxxxxxx\""
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/johan-benz-comprehensive-analysis.json",
+      "line": 231,
+      "text": "\"title\": \"Button connectivity issues with _TZ3000_xxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/johan-benz-comprehensive-analysis.json",
+      "line": 243,
+      "text": "\"_TZ3000_xxxxxxx\""
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/johan-benz-comprehensive-analysis.json",
+      "line": 313,
+      "text": "\"identifier\": \"_TZ3000_xxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/johan-benz-comprehensive-analysis.json",
+      "line": 317,
+      "text": "\"Issue #457: Button connectivity issues with _TZ3000_xxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/johan-benz-comprehensive-analysis.json",
+      "line": 318,
+      "text": "\"Issue #457: Button connectivity issues with _TZ3000_xxxxxxx\""
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225148,
+      "text": "\"name\": \"TODO_COMPLETE_FIX.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225150,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_COMPLETE_FIX.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225156,
+      "text": "\"name\": \"TODO_CURSOR_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225158,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_CURSOR_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225164,
+      "text": "\"name\": \"TODO_CURSOR_INCREMENTAL.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225166,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_CURSOR_INCREMENTAL.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225172,
+      "text": "\"name\": \"TODO_CURSOR_NATIVE.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225174,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_CURSOR_NATIVE.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225180,
+      "text": "\"name\": \"TODO_ENRICHISSEMENT_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225182,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_ENRICHISSEMENT_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225188,
+      "text": "\"name\": \"TODO_PROJET.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225190,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_PROJET.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225196,
+      "text": "\"name\": \"TODO_REplug_49H.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225198,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_REplug_49H.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225524,
+      "text": "\"name\": \"cursor_todo_queue.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 225526,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\external\\\\cursor_todo_queue.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228111,
+      "text": "\"name\": \"todo\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228113,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228118,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\current\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228121,
+      "text": "\"name\": \"TODO_ENRICHISSEMENT_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228123,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\current\\\\TODO_ENRICHISSEMENT_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228129,
+      "text": "\"name\": \"TODO_REplug_49H.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228131,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\current\\\\TODO_REplug_49H.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228140,
+      "text": "\"name\": \"TODO_COMPLETE_FIX.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228142,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\TODO_COMPLETE_FIX.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228148,
+      "text": "\"name\": \"TODO_CURSOR_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228150,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\TODO_CURSOR_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228156,
+      "text": "\"name\": \"TODO_CURSOR_INCREMENTAL.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228158,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\TODO_CURSOR_INCREMENTAL.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228164,
+      "text": "\"name\": \"TODO_CURSOR_NATIVE.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228166,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\TODO_CURSOR_NATIVE.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228172,
+      "text": "\"name\": \"TODO_PROJET.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 228174,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\TODO_PROJET.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349435,
+      "text": "\"name\": \"TODO_COMPLETE_FIX.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349437,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349443,
+      "text": "\"name\": \"TODO_CURSOR_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349445,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349451,
+      "text": "\"name\": \"TODO_CURSOR_INCREMENTAL.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349453,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349459,
+      "text": "\"name\": \"TODO_CURSOR_NATIVE.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349461,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349467,
+      "text": "\"name\": \"TODO_ENRICHISSEMENT_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349469,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349475,
+      "text": "\"name\": \"TODO_PROJET.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349477,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349483,
+      "text": "\"name\": \"TODO_REplug_49H.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 349485,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351838,
+      "text": "\"name\": \"todo\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351840,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351845,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351848,
+      "text": "\"name\": \"TODO_ENRICHISSEMENT_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351850,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351856,
+      "text": "\"name\": \"TODO_REplug_49H.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351858,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351867,
+      "text": "\"name\": \"TODO_COMPLETE_FIX.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351869,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351875,
+      "text": "\"name\": \"TODO_CURSOR_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351877,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351883,
+      "text": "\"name\": \"TODO_CURSOR_INCREMENTAL.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351885,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351891,
+      "text": "\"name\": \"TODO_CURSOR_NATIVE.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351893,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351899,
+      "text": "\"name\": \"TODO_PROJET.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 351901,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 357274,
+      "text": "\"name\": \"process-all-todos-and-logs.ps1\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 357276,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\process-all-todos-and-logs.ps1\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 359207,
+      "text": "\"name\": \"process-all-todos-and-logs.ps1.backup\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 359209,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\script-conversion\\\\process-all-todos-and-logs.ps1."
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 458027,
+      "text": "\"async function updateTodoQueue\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 525341,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_COMPLETE_FIX.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 525347,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_CURSOR_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 525353,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_CURSOR_INCREMENTAL.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 525359,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_CURSOR_NATIVE.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 525365,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_ENRICHISSEMENT_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 525371,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_PROJET.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 525377,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\enhanced\\\\TODO_REplug_49H.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 525581,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\external\\\\cursor_todo_queue.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 527087,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\current\\\\TODO_ENRICHISSEMENT_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 527093,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\current\\\\TODO_REplug_49H.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 527099,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\TODO_COMPLETE_FIX.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 527105,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\TODO_CURSOR_COMPLET.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 527111,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\TODO_CURSOR_INCREMENTAL.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 527117,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\TODO_CURSOR_NATIVE.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 527123,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\docs\\\\todo\\\\TODO_PROJET.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 542273,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 542279,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 542285,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 542291,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 542297,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 542303,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 542309,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 543617,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 543623,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 543629,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 543635,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 543641,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 543647,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 543653,
+      "text": "\"path\": \"C:\\\\Users\\\\HP\\\\Desktop\\\\repair\\\\scripts\\\\core\\\\temp_extraction\\\\com.tuya.zigbee-master\\\\doc"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/analysis-results/mega-project-analysis-report.json",
+      "line": 548335,
+      "text": "\"async function updateTodoQueue\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/data/enhanced_sources/scraped_data.json",
+      "line": 2777,
+      "text": "\"body\": \"### Prerequisites:\\n\\n- Before requesting a device addition, please ensure there is not alr"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/data/enhanced_sources/scraped_data.json",
+      "line": 2860,
+      "text": "\"body\": \"### Prerequisites:\\n\\n- Before requesting a device addition, please ensure there is not alr"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/data/enhanced_sources/scraped_data.json",
+      "line": 51543,
+      "text": "\"body\": \"* Copy of lcdtemphumidsensor but configureAttributeReporting removed since device doesn't s"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/data/enhanced_sources/scraped_data.json",
+      "line": 51909,
+      "text": "\"body\": \"* Added device as new device copied from water_leak_sensor_tuya\\r\\n* Added new images\\r\\n* "
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/data/enhanced_sources/scraped_data.json",
+      "line": 54530,
+      "text": "\"body\": \"### Prerequisites:\\n\\n- Before requesting a device addition, please ensure there is not alr"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/data/matrices/driver_matrix.json",
+      "line": 13857,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/data/matrices/driver_matrix.json",
+      "line": 14621,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/data/matrices/driver_matrix.json",
+      "line": 15392,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/data/matrices/driver_matrix.json",
+      "line": 16156,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/data/matrices/driver_matrix.json",
+      "line": 16927,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/data/matrices/driver_matrix.json",
+      "line": 17691,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/data/matrices/driver_matrix.json",
+      "line": 18462,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/data/matrices/driver_matrix.json",
+      "line": 19226,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/data/matrices/driver_matrix.json",
+      "line": 19997,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/data/matrices/driver_matrix.json",
+      "line": 20761,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/data/matrices/driver_matrix.json",
+      "line": 21532,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/data/matrices/driver_matrix.json",
+      "line": 22296,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/data/matrices/driver_matrix.json",
+      "line": 23067,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/data/matrices/driver_matrix.json",
+      "line": 23831,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/data/matrices/driver_matrix.json",
+      "line": 24603,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/data/matrices/driver_matrix.json",
+      "line": 25370,
+      "text": "\"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/data/matrices/manufacturer_matrix.json",
+      "line": 8638,
+      "text": "\"name\": \"_TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/matrices/driver_matrix.json",
+      "line": 13857,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/matrices/driver_matrix.json",
+      "line": 14621,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/matrices/driver_matrix.json",
+      "line": 15392,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/matrices/driver_matrix.json",
+      "line": 16156,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/matrices/driver_matrix.json",
+      "line": 16927,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/matrices/driver_matrix.json",
+      "line": 17691,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/matrices/driver_matrix.json",
+      "line": 18462,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/matrices/driver_matrix.json",
+      "line": 19226,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/matrices/driver_matrix.json",
+      "line": 19997,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/matrices/driver_matrix.json",
+      "line": 20761,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/matrices/driver_matrix.json",
+      "line": 21532,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/matrices/driver_matrix.json",
+      "line": 22296,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/matrices/driver_matrix.json",
+      "line": 23067,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/matrices/driver_matrix.json",
+      "line": 23831,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/matrices/driver_matrix.json",
+      "line": 24603,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/matrices/driver_matrix.json",
+      "line": 25370,
+      "text": "\"TZE20X_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/analysis/mega-analysis-report.json",
+      "line": 3388,
+      "text": "\"todoDriver\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/analysis/mega-analysis-report.json",
+      "line": 3399,
+      "text": "\"todoTracker\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/analysis/mega-analysis-report.json",
+      "line": 10753,
+      "text": "\"todoDriver\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/analysis/mega-analysis-report.json",
+      "line": 10764,
+      "text": "\"todoTracker\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/analysis/mega-analysis-report.json",
+      "line": 12574,
+      "text": "\"path\": \"scripts\\\\process-all-todos-and-logs.ps1\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/analysis/mega-analysis-report.json",
+      "line": 305634,
+      "text": "\"todoDriver\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/analysis/mega-analysis-report.json",
+      "line": 305645,
+      "text": "\"todoTracker\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/analysis/mega-analysis-report.json",
+      "line": 305717,
+      "text": "\"todoDriver\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/analysis/mega-analysis-report.json",
+      "line": 305728,
+      "text": "\"todoTracker\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 3387,
+      "text": "\"todoDriver\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 3398,
+      "text": "\"todoTracker\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 10752,
+      "text": "\"todoDriver\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 10763,
+      "text": "\"todoTracker\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 12573,
+      "text": "\"path\": \"scripts\\\\process-all-todos-and-logs.ps1\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 305633,
+      "text": "\"todoDriver\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 305644,
+      "text": "\"todoTracker\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 305716,
+      "text": "\"todoDriver\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 305727,
+      "text": "\"todoTracker\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 322510,
+      "text": "\"hacktoberfest\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 322530,
+      "text": "\"hacktoberfest\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 322531,
+      "text": "\"hacktoberfest2022\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 322615,
+      "text": "\"body\": \"### What happened?\\n\\nLong press of the bottom right button generates an invalid action cha"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 322949,
+      "text": "\"body\": \"### What happened?\\n\\nI'm getting recurrent messages on Z2M for device Thermostat Moes ZHT-"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 323996,
+      "text": "\"body\": \"### The problem\\n\\nThe opower integration with PG&E won't connect anymore. I've confirmed t"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 324151,
+      "text": "\"body\": \"### The problem\\n\\nI have 3 brel screens on a brel hub-03.\\nIf I send a close or open comma"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 324549,
+      "text": "\"body\": \"### The problem\\n\\nper 2025.9.3 these were in the logs\\n\\nfor 1 core and 1 custom integrati"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 324656,
+      "text": "\"body\": \"### The problem\\n\\nRejestrator: homeassistant.config_entries\\nŹródło: config_entries.py:751"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 326281,
+      "text": "\"body\": \"### Does the issue really belong here?\\n\\n- [x] I definitively want to report a bug within "
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 326492,
+      "text": "\"body\": \"Update DDF for Aqara Single Switch Module T1 (with Neutral).\\r\\n- Use Xiaomi special attrib"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 328446,
+      "text": "\"body\": \"<!--\\r\\n  You are amazing! Thanks for contributing to our project!\\r\\n  Please, DO NOT DELE"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 328454,
+      "text": "\"body\": \"<!--\\r\\n  You are amazing! Thanks for contributing to our project!\\r\\n  Please, DO NOT DELE"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 329606,
+      "text": "\"body\": \"Update DDF for Aqara Single Switch Module T1 (with Neutral).\\r\\n- Use Xiaomi special attrib"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 330070,
+      "text": "\"body\": \"The database can contain reachable = true entries but for older timestamps. Fix this on loa"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 330257,
+      "text": "\"body\": \"# Notes\\r\\n- Bosch BMCT-SLZ: due to some changes, the device needs to be reconfigured. This"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 330409,
+      "text": "\"body\": \"- Add multiple NICs in govee_light_local (@itewk - #128123)\\r\\n- Ignore errors when PlaySta"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 330465,
+      "text": "\"body\": \"- Fix PG&E and Duquesne Light Company in Opower (@tronikos - #149658)\\r\\n- Deprecate MQTT v"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/organized/automation/orchestration-report.json",
+      "line": 330753,
+      "text": "\"body\": \"# Contributors:\\r\\nThe following users have been contributing to this release. Thank you fo"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/releases/v1.0.0/README.md",
+      "line": 41,
+      "text": "# Traiter les TODO et mettre à jour les README"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/releases/v1.0.0/README.md",
+      "line": 42,
+      "text": "node tools/todo-processor-and-readme-updater.js"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/releases/v1.1.0/README.md",
+      "line": 41,
+      "text": "# Traiter les TODO et mettre à jour les README"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/releases/v1.1.0/README.md",
+      "line": 42,
+      "text": "node tools/todo-processor-and-readme-updater.js"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/releases/v1.2.0/README.md",
+      "line": 41,
+      "text": "# Traiter les TODO et mettre à jour les README"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/releases/v1.2.0/README.md",
+      "line": 42,
+      "text": "node tools/todo-processor-and-readme-updater.js"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/releases/v1.3.0/README.md",
+      "line": 41,
+      "text": "# Traiter les TODO et mettre à jour les README"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/releases/v1.3.0/README.md",
+      "line": 42,
+      "text": "node tools/todo-processor-and-readme-updater.js"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/releases/v1.4.0/README.md",
+      "line": 41,
+      "text": "# Traiter les TODO et mettre à jour les README"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/releases/v1.4.0/README.md",
+      "line": 42,
+      "text": "node tools/todo-processor-and-readme-updater.js"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 9,
+      "text": "\"todo\": 0,"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 47,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\forum-homey-community-device-1\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 54,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\forum-homey-community-device-2\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 61,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\homey-apps-device-1\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 68,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\homey-apps-device-2\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 75,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\homey-apps-device-3\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 82,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\zigbee2mqtt-devices-device-1\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 89,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\zigbee2mqtt-devices-device-2\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 96,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\zigbee2mqtt-devices-device-3\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4818,
+      "text": "\"path\": \"drivers\\\\todo-devices\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4826,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\forum-homey-community-device-1\\\\assets\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4834,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\forum-homey-community-device-1\\\\assets\\\\images\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4842,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\forum-homey-community-device-2\\\\assets\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4850,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\forum-homey-community-device-2\\\\assets\\\\images\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4858,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\homey-apps-device-1\\\\assets\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4866,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\homey-apps-device-1\\\\assets\\\\images\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4874,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\homey-apps-device-2\\\\assets\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4882,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\homey-apps-device-2\\\\assets\\\\images\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4890,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\homey-apps-device-3\\\\assets\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4898,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\homey-apps-device-3\\\\assets\\\\images\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4906,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\zigbee2mqtt-devices-device-1\\\\assets\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4914,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\zigbee2mqtt-devices-device-1\\\\assets\\\\images\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4922,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\zigbee2mqtt-devices-device-2\\\\assets\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4930,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\zigbee2mqtt-devices-device-2\\\\assets\\\\images\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4938,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\zigbee2mqtt-devices-device-3\\\\assets\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 4946,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\zigbee2mqtt-devices-device-3\\\\assets\\\\images\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 35185,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\forum-homey-community-device-1\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 35190,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\forum-homey-community-device-2\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 35195,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\homey-apps-device-1\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 35200,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\homey-apps-device-2\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 35205,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\homey-apps-device-3\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 35210,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\zigbee2mqtt-devices-device-1\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 35215,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\zigbee2mqtt-devices-device-2\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/comprehensive-analysis.json",
+      "line": 35220,
+      "text": "\"path\": \"drivers\\\\todo-devices\\\\zigbee2mqtt-devices-device-3\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/external-folder-analysis.json",
+      "line": 50,
+      "text": "\"path\": \"cursor_todo_queue.md\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/external-folder-analysis.md",
+      "line": 57,
+      "text": "- **todo**"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/fetch-report.json",
+      "line": 18,
+      "text": "\"status\": \"todo\""
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/fetch-report.json",
+      "line": 28,
+      "text": "\"status\": \"todo\""
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/fetch-report.json",
+      "line": 38,
+      "text": "\"status\": \"todo\""
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/fetch-report.json",
+      "line": 48,
+      "text": "\"status\": \"todo\""
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/fetch-report.json",
+      "line": 58,
+      "text": "\"status\": \"todo\""
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/fetch-report.json",
+      "line": 68,
+      "text": "\"status\": \"todo\""
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/fetch-report.json",
+      "line": 79,
+      "text": "\"status\": \"todo\""
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/fetch-report.json",
+      "line": 89,
+      "text": "\"status\": \"todo\""
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/fix-new-forum-bugs-report.json",
+      "line": 36,
+      "text": "\"resolve_todo\": false"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/forum-errors-fix-report.json",
+      "line": 36,
+      "text": "\"resolve_todo\": false"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/master-optimization-pipeline-report.json",
+      "line": 19,
+      "text": "\"output\": \"[2025-07-30T15:48:04.639Z] [INFO] 🚀 === DÉMARRAGE COMPLÉTION 657 DRIVERS ===\\n[2025-07-3"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/master-optimization-pipeline-report.json",
+      "line": 49,
+      "text": "\"output\": \"\\u001b[36m[2025-07-30T15:49:12.391Z] [INFO] 🚀 === DÉMARRAGE MÉGA PIPELINE ===\\u001b[0m\\n"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/master-rebuild-final-report.json",
+      "line": 234,
+      "text": "\"message\": \"Exécution: step7_resolveTodoDrivers\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/master-rebuild-final-report.json",
+      "line": 239,
+      "text": "\"step\": \"STEP7_TODO_DRIVERS\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/master-rebuild-final-report.json",
+      "line": 240,
+      "text": "\"message\": \"📝 Résolution des drivers TODO\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/master-rebuild-final-report.json",
+      "line": 245,
+      "text": "\"step\": \"STEP7_TODO_DRIVERS\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/master-rebuild-final-report.json",
+      "line": 246,
+      "text": "\"message\": \"0 drivers TODO résolus\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/master-rebuild-final-report.json",
+      "line": 252,
+      "text": "\"message\": \"✅ step7_resolveTodoDrivers terminé avec succès\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/mega-pipeline-results.json",
+      "line": 137,
+      "text": "\"todo\": {"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/mega-pipeline-results.json",
+      "line": 140,
+      "text": "\"todoDevices\": 15,"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/new-forum-post-analysis.json",
+      "line": 125,
+      "text": "\"implementation\": \"resolveTodoDevices\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/new-forum-post-analysis.json",
+      "line": 203,
+      "text": "\"title\": \"Mettre à jour resolveTodoDevices\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/reports/analysis/new-forum-post-analysis.json",
+      "line": 206,
+      "text": "\"scripts/resolve-todo-devices.js\""
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/tools/analyze-and-enrich-drivers.js",
+      "line": 93,
+      "text": "// TODO: Add more analysis (code quality, test coverage, etc.)"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/tools/analyze-and-enrich-drivers.js",
+      "line": 131,
+      "text": "// TODO: Extract and process driver information"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/tools/analyze-and-enrich-drivers.js",
+      "line": 196,
+      "text": "// TODO: Implement device initialization"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/tools/analyze-and-enrich-drivers.js",
+      "line": 219,
+      "text": "// TODO: Implement driver initialization"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/tools/driver-enrichment-engine.js",
+      "line": 184,
+      "text": "manufacturerName: '_TZ3000_xxxxxxxx',"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/tools/prompts/device_interview.json",
+      "line": 11,
+      "text": "\"manufacturerName\": \"_TZ3000_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/tools/prompts/device_interview.json",
+      "line": 12,
+      "text": "\"productId\": \"TSxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/tools/prompts/device_interview.json",
+      "line": 13,
+      "text": "\"modelId\": \"TSxxxx\","
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/tools/update-placeholders.js",
+      "line": 17,
+      "text": "'TODO': 'IMPLEMENTED',"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/tools/update-placeholders.js",
+      "line": 18,
+      "text": "'FIXME': 'FIXED',"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/tools/update-placeholders.js",
+      "line": 19,
+      "text": "'XXX': 'COMPLETED',"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/tools/version-manager-and-release-creator.js",
+      "line": 222,
+      "text": ".replace(/📋 TODO Traités/g, '📋 TODO Traités')"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/tools/version-manager-and-release-creator.js",
+      "line": 243,
+      "text": ".replace(/📋 TODO Traités/g, '📋 Behandelde TODO')"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/tools/version-manager-and-release-creator.js",
+      "line": 264,
+      "text": ".replace(/📋 TODO Traités/g, '📋 செய்யப்பட்ட TODO')"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/tools/version-manager-and-release-creator.js",
+      "line": 457,
+      "text": "# Traiter les TODO et mettre à jour les README"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/project-data/tools/version-manager-and-release-creator.js",
+      "line": 458,
+      "text": "node tools/todo-processor-and-readme-updater.js"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/scripts/package-lock.json",
+      "line": 5220,
+      "text": "\"integrity\": \"sha512-TRzzuFRRmEoSW/p1KVAmiOgPco2Irlah+bGFCeNfJXxxYGwSw7YwAOAcd7X28K/m5bjBWKsC29KyoMf"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/scripts/package-lock.json",
+      "line": 5648,
+      "text": "\"integrity\": \"sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwq"
+    },
+    {
+      "file": "./ultimate_system/docs_moved/scripts/script-consolidation/validation/structure_validator.js",
+      "line": 5,
+      "text": "// TODO: Implémenter la validation structurelle"
+    },
+    {
+      "file": "./ultimate_system/references_moved/historical_data/enriched_history.json",
+      "line": 868,
+      "text": "\"message\": \"feat: Complete TODO processing and README matrix update - 2025-01-28 18:45 GMT+2 - Proce"
+    },
+    {
+      "file": "./ultimate_system/references_moved/historical_data/enriched_history.json",
+      "line": 878,
+      "text": "\"message\": \"feat: Complete implementation of forum improvements and documentation finalization -  GM"
+    },
+    {
+      "file": "./ultimate_system/references_moved/historical_data/enriched_history.json",
+      "line": 893,
+      "text": "\"message\": \"🚀 IMPLÉMENTATION EXHAUSTIVE COMPLÈTE - Système TODO complet créé - Dashboard GitHub Pag"
+    },
+    {
+      "file": "./ultimate_system/references_moved/historical_data/enriched_history.json",
+      "line": 968,
+      "text": "\"message\": \"[EN/FR] Archivage automatique des fichiers .md et TODO avec versionning horodaté, réorga"
+    },
+    {
+      "file": "./ultimate_system/references_moved/historical_data/enriched_history.json",
+      "line": 973,
+      "text": "\"message\": \"[EN/FR] Archivage automatique des fichiers .md et TODO avec versionning horodaté, réorga"
+    },
+    {
+      "file": "./ultimate_system/referentials/driver_references.json",
+      "line": 9948,
+      "text": "\"_TZ3000_xxxxx\": {"
+    },
+    {
+      "file": "./ultimate_system/referentials/driver_references.json",
+      "line": 9950,
+      "text": "\"manufacturerName\": \"_TZ3000_xxxxx\","
+    },
+    {
+      "file": "./ultimate_system/referentials/driver_references.json",
+      "line": 10710,
+      "text": "\"_TZ3000_xxxxxxxx\": {"
+    },
+    {
+      "file": "./ultimate_system/referentials/driver_references.json",
+      "line": 10712,
+      "text": "\"manufacturerName\": \"_TZ3000_xxxxxxxx\","
+    },
+    {
+      "file": "./ultimate_system/scraping/COMPARE_ENRICH_ALL_DRIVERS.js",
+      "line": 83,
+      "text": "// Examples: _TZ3000_xxx, _TZ3210_xxx, _TZ3400_xxx, _TZE200_xxx, _TZE204_xxx, _TZE284_xxx, _TYZB01_x"
+    },
+    {
+      "file": "./ultimate_system/scripts_moved/organized/FIX_DUPLICATES.js",
+      "line": 31,
+      "text": "mfg: ['_TZE200_cwbvmsar', '_TZE200_bjawzodf', '_TZE284_climxxxx'],"
+    },
+    {
+      "file": "./ultimate_system/scripts_moved/organized/FIX_DUPLICATES.js",
+      "line": 35,
+      "text": "mfg: ['_TZ3000_26fmupbb', '_TZ3000_n2egfsli', '_TZE200_contxxxx'],"
+    },
+    {
+      "file": "./ultimate_system/scripts_moved/organized/FIX_DUPLICATES.js",
+      "line": 39,
+      "text": "mfg: ['_TZ3000_odygigth', '_TZE284_sooucan5', '_TZE200_lightxxx'],"
+    }
+  ],
+  "gitFailures": []
+}
