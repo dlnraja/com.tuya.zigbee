@@ -24,6 +24,7 @@
     "large": "./assets/large.png"
   },
   "zigbee": {
+    "manufacturerName": "_TZ3000_ji4araar",
     "productId": [
       "TS0001",
       "TS0201",
@@ -49,23 +50,7 @@
       "instruction": {
         "en": "Follow the pairing instructions for your Temperature Sensor."
       }
-    },
-    "manufacturerIds": [
-      4417,
-      4098,
-      4619,
-      4742,
-      4648,
-      4644,
-      4455,
-      4659,
-      4660
-    ],
-    "productIds": [
-      1031,
-      1032,
-      1033
-    ]
+    }
   },
   "energy": {
     "batteries": [
@@ -90,6 +75,5 @@
         "en": "%"
       }
     }
-  },
-  "manufacturerName": "Tuya"
+  }
 }

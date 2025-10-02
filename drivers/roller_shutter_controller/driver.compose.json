@@ -37,6 +37,7 @@
     ]
   },
   "zigbee": {
+    "manufacturerName": "_TZ3000_ji4araar",
     "productId": [
       "TS0001"
     ],
@@ -61,9 +62,8 @@
   },
   "images": {
     "small": "./assets/small.png",
-    "large": "./assets/images/large.png"
+    "large": "./assets/large.png"
   },
-  "manufacturerName": "Tuya",
   "platforms": [
     "local"
   ]

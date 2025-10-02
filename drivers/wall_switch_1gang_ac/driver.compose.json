@@ -34,27 +34,11 @@
         "de": "Schalten Sie den Schalter 3 Mal schnell ein/aus"
       }
     },
-    "manufacturerName": "_TZ3000_txpirhfq",
-    "manufacturerIds": [
-      4417,
-      4098,
-      4619,
-      4742,
-      4648,
-      4644,
-      4455,
-      4659,
-      4660
-    ],
-    "productIds": [
-      1043,
-      1044,
-      1045
-    ]
+    "manufacturerName": "_TZ3000_ji4araar"
   },
   "images": {
-    "small": "/drivers/wall_switch_1gang_ac/assets/small.png",
-    "large": "/drivers/wall_switch_1gang_ac/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "settings": [],
   "name": {
@@ -66,6 +50,5 @@
   "connectivity": [
     "zigbee"
   ],
-  "capabilitiesOptions": {},
-  "manufacturerName": "MOES"
+  "capabilitiesOptions": {}
 }

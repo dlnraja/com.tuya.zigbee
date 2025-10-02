@@ -11,6 +11,7 @@
     "measure_battery"
   ],
   "zigbee": {
+    "manufacturerName": "_TZ3000_ji4araar",
     "productId": [
       "TS0001"
     ],
@@ -24,19 +25,7 @@
           258
         ]
       }
-    },
-    "manufacturerIds": [
-      4417,
-      4098,
-      4619,
-      4742,
-      4648,
-      4644,
-      4455,
-      4659,
-      4660
-    ],
-    "productIds": []
+    }
   },
   "images": {
     "small": "./assets/small.png",
@@ -76,6 +65,5 @@
         "en": "%"
       }
     }
-  },
-  "manufacturerName": "BSEED"
+  }
 }

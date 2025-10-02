@@ -10,6 +10,7 @@
     "measure_battery"
   ],
   "zigbee": {
+    "manufacturerName": "_TZ3000_ji4araar",
     "productId": [
       "TS0001",
       "TS0201",
@@ -30,23 +31,11 @@
           516
         ]
       }
-    },
-    "manufacturerIds": [
-      4417,
-      4098,
-      4619,
-      4742,
-      4648,
-      4644,
-      4455,
-      4659,
-      4660
-    ],
-    "productIds": []
+    }
   },
   "images": {
-    "small": "/drivers/thermostat/assets/small.png",
-    "large": "/drivers/thermostat/assets/large.png",
+    "small": "./assets/small.png",
+    "large": "./assets/large.png",
     "xlarge": "/drivers/thermostat/assets/xlarge.png"
   },
   "community": {

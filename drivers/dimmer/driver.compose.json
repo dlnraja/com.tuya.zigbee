@@ -9,10 +9,10 @@
   ],
   "images": {
     "small": "./assets/small.png",
-    "large": "./assets/images/large.png"
+    "large": "./assets/large.png"
   },
   "zigbee": {
-    "manufacturerName": "_TZ3000_gyzlwu5q",
+    "manufacturerName": "_TZ3000_ji4araar",
     "productId": [
       "TS0601",
       "TS110E",
@@ -47,7 +47,6 @@
   "connectivity": [
     "zigbee"
   ],
-  "manufacturerName": "Lonsonho",
   "energy": {
     "approximation": {
       "usageConstant": 10

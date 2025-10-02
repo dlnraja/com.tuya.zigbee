@@ -13,7 +13,7 @@
     "thermostat_mode"
   ],
   "zigbee": {
-    "manufacturerName": "_TZE284_vvmbj46n",
+    "manufacturerName": "_TZ3000_ji4araar",
     "productId": [
       "TS0001",
       "TS0201",
@@ -73,9 +73,8 @@
   },
   "images": {
     "small": "./assets/small.png",
-    "large": "./assets/images/large.png"
+    "large": "./assets/large.png"
   },
-  "manufacturerName": "Tuya",
   "energy": {
     "batteries": [
       "CR2032"

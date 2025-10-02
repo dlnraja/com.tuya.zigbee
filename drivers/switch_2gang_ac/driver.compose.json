@@ -8,6 +8,7 @@
     "onoff.gang2"
   ],
   "zigbee": {
+    "manufacturerName": "_TZ3000_ji4araar",
     "productId": [
       "TS0001"
     ],
@@ -38,7 +39,7 @@
   },
   "images": {
     "small": "./assets/small.png",
-    "large": "./assets/images/large.png"
+    "large": "./assets/large.png"
   },
   "capabilitiesOptions": {
     "onoff": {
@@ -54,7 +55,6 @@
       }
     }
   },
-  "manufacturerName": "MOES",
   "platforms": [
     "local"
   ]
