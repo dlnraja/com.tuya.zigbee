@@ -13,9 +13,10 @@
   "energy": {},
   "images": {
     "small": "./assets/small.png",
-    "large": "./assets/images/large.png"
+    "large": "./assets/large.png"
   },
   "zigbee": {
+    "manufacturerName": "_TZ3000_ji4araar",
     "productId": [
       "TS0001"
     ],
@@ -43,19 +44,7 @@
         "de": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
         "nl": "Press and hold the pairing button for 5 seconds until LED blinks rapidly."
       }
-    },
-    "manufacturerIds": [
-      4417,
-      4098,
-      4619,
-      4742,
-      4648,
-      4644,
-      4455,
-      4659,
-      4660
-    ],
-    "productIds": []
+    }
   },
   "platforms": [
     "local"
@@ -63,6 +52,5 @@
   "connectivity": [
     "zigbee"
   ],
-  "capabilitiesOptions": {},
-  "manufacturerName": "BSEED"
+  "capabilitiesOptions": {}
 }

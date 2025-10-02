@@ -19,6 +19,7 @@
     ]
   },
   "zigbee": {
+    "manufacturerName": "_TZ3000_ji4araar",
     "productId": [
       "TS0001",
       "TS0201",
@@ -42,7 +43,7 @@
   },
   "images": {
     "small": "./assets/small.png",
-    "large": "./assets/images/large.png"
+    "large": "./assets/large.png"
   },
   "capabilitiesOptions": {
     "measure_temperature": {
@@ -62,7 +63,6 @@
       }
     }
   },
-  "manufacturerName": "Tuya",
   "platforms": [
     "local"
   ]

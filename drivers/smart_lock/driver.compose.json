@@ -12,6 +12,7 @@
     "alarm_battery"
   ],
   "zigbee": {
+    "manufacturerName": "_TZ3000_ji4araar",
     "productId": [
       "TS0001"
     ],
@@ -22,23 +23,11 @@
           3
         ]
       }
-    },
-    "manufacturerIds": [
-      4417,
-      4098,
-      4619,
-      4742,
-      4648,
-      4644,
-      4455,
-      4659,
-      4660
-    ],
-    "productIds": []
+    }
   },
   "images": {
-    "small": "/drivers/smart_lock/assets/small.png",
-    "large": "/drivers/smart_lock/assets/large.png",
+    "small": "./assets/small.png",
+    "large": "./assets/large.png",
     "xlarge": "/drivers/smart_lock/assets/xlarge.png"
   },
   "energy": {
@@ -62,6 +51,5 @@
   "connectivity": [
     "zigbee"
   ],
-  "capabilitiesOptions": {},
-  "manufacturerName": "BSEED"
+  "capabilitiesOptions": {}
 }

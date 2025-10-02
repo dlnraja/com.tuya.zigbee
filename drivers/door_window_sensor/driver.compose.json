@@ -20,6 +20,7 @@
     ]
   },
   "zigbee": {
+    "manufacturerName": "_TZ3000_ji4araar",
     "productId": [
       "TS0001",
       "TS130F",
@@ -36,23 +37,7 @@
           25
         ]
       }
-    },
-    "manufacturerIds": [
-      4417,
-      4098,
-      4619,
-      4742,
-      4648,
-      4644,
-      4455,
-      4659,
-      4660
-    ],
-    "productIds": [
-      1025,
-      1029,
-      1030
-    ]
+    }
   },
   "images": {
     "large": "./assets/large.png",
@@ -86,6 +71,5 @@
         "en": "°C"
       }
     }
-  },
-  "manufacturerName": "MOES"
+  }
 }

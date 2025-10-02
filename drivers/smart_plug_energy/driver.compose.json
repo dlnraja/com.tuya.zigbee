@@ -11,6 +11,7 @@
     "measure_current"
   ],
   "zigbee": {
+    "manufacturerName": "_TZ3000_ji4araar",
     "productId": [
       "TS011F"
     ],
@@ -70,9 +71,8 @@
   },
   "images": {
     "small": "./assets/small.png",
-    "large": "./assets/images/large.png"
+    "large": "./assets/large.png"
   },
-  "manufacturerName": "Lonsonho",
   "platforms": [
     "local"
   ]

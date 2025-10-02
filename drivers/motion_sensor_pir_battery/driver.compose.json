@@ -19,6 +19,7 @@
     ]
   },
   "zigbee": {
+    "manufacturerName": "_TZ3000_ji4araar",
     "productId": [
       "TS0202"
     ],
@@ -39,8 +40,8 @@
     }
   },
   "images": {
-    "small": "/assets/images/small.png",
-    "large": "/assets/images/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "platforms": [
     "local"
@@ -48,6 +49,5 @@
   "connectivity": [
     "zigbee"
   ],
-  "capabilitiesOptions": {},
-  "manufacturerName": "MOES"
+  "capabilitiesOptions": {}
 }

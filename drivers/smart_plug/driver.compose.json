@@ -13,6 +13,7 @@
     "measure_current"
   ],
   "zigbee": {
+    "manufacturerName": "_TZ3000_ji4araar",
     "productId": [
       "TS011F"
     ],
@@ -33,23 +34,7 @@
           2820
         ]
       }
-    },
-    "manufacturerIds": [
-      4417,
-      4098,
-      4619,
-      4742,
-      4648,
-      4644,
-      4455,
-      4659,
-      4660
-    ],
-    "productIds": [
-      1040,
-      1041,
-      1042
-    ]
+    }
   },
   "images": {
     "large": "./assets/large.png",
