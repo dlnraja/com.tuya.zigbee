@@ -58,5 +58,10 @@
   "manufacturerName": "Lonsonho",
   "platforms": [
     "local"
-  ]
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  }
 }
