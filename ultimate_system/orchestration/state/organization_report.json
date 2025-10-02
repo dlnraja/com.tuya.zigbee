@@ -1,0 +1,184 @@
+{
+  "generatedAt": "2025-10-02T21:46:19.476Z",
+  "summary": {
+    "moved": [
+      {
+        "moved": true,
+        "source": "DISABLE_GITHUB_PAGES.md",
+        "destination": "archive\\old_docs\\DISABLE_GITHUB_PAGES.md"
+      },
+      {
+        "moved": true,
+        "source": "FORCE_DISABLE_PAGES.md",
+        "destination": "archive\\old_docs\\FORCE_DISABLE_PAGES.md"
+      },
+      {
+        "moved": true,
+        "source": "FORCE_DISABLE_PAGES_COMPLETE.md",
+        "destination": "archive\\old_docs\\FORCE_DISABLE_PAGES_COMPLETE.md"
+      },
+      {
+        "moved": true,
+        "source": "GITHUB_ACTIONS_TRIGGER.md",
+        "destination": "archive\\old_docs\\GITHUB_ACTIONS_TRIGGER.md"
+      },
+      {
+        "moved": true,
+        "source": "GITHUB_PAGES_DISABLED.md",
+        "destination": "archive\\old_docs\\GITHUB_PAGES_DISABLED.md"
+      },
+      {
+        "moved": true,
+        "source": "PAGES_DELETED_TEST.md",
+        "destination": "archive\\old_docs\\PAGES_DELETED_TEST.md"
+      },
+      {
+        "moved": true,
+        "source": "FINAL_ACTION_REQUIRED.md",
+        "destination": "archive\\old_docs\\FINAL_ACTION_REQUIRED.md"
+      },
+      {
+        "moved": true,
+        "source": "SUCCESS.md",
+        "destination": "archive\\old_docs\\SUCCESS.md"
+      },
+      {
+        "moved": true,
+        "source": "PUBLICATION_STATUS.md",
+        "destination": "archive\\old_docs\\PUBLICATION_STATUS.md"
+      },
+      {
+        "moved": true,
+        "source": "PUBLISH_STATUS.md",
+        "destination": "archive\\old_docs\\PUBLISH_STATUS.md"
+      },
+      {
+        "moved": true,
+        "source": "DRIVER_STATS.md",
+        "destination": "archive\\old_docs\\DRIVER_STATS.md"
+      },
+      {
+        "moved": true,
+        "source": "METADATA_ENRICHED_REPORT.md",
+        "destination": "archive\\old_docs\\METADATA_ENRICHED_REPORT.md"
+      },
+      {
+        "moved": true,
+        "source": "README.txt",
+        "destination": "archive\\old_docs\\README.txt"
+      },
+      {
+        "moved": true,
+        "source": "CLEAN_BUILD_V2.bat",
+        "destination": "archive\\old_scripts\\CLEAN_BUILD_V2.bat"
+      },
+      {
+        "moved": true,
+        "source": "COMMIT_AND_PUBLISH.bat",
+        "destination": "archive\\old_scripts\\COMMIT_AND_PUBLISH.bat"
+      },
+      {
+        "moved": true,
+        "source": "FINAL_BUILD_PUBLISH.bat",
+        "destination": "archive\\old_scripts\\FINAL_BUILD_PUBLISH.bat"
+      },
+      {
+        "moved": true,
+        "source": "FINAL_COMPLETE_PUBLISH.bat",
+        "destination": "archive\\old_scripts\\FINAL_COMPLETE_PUBLISH.bat"
+      },
+      {
+        "moved": true,
+        "source": "FINAL_PUBLISH.bat",
+        "destination": "archive\\old_scripts\\FINAL_PUBLISH.bat"
+      },
+      {
+        "moved": true,
+        "source": "FORCE_CLEAN.bat",
+        "destination": "archive\\old_scripts\\FORCE_CLEAN.bat"
+      },
+      {
+        "moved": true,
+        "source": "NUCLEAR_CLEAN.bat",
+        "destination": "archive\\old_scripts\\NUCLEAR_CLEAN.bat"
+      },
+      {
+        "moved": true,
+        "source": "publish_manual.bat",
+        "destination": "archive\\old_scripts\\publish_manual.bat"
+      },
+      {
+        "moved": true,
+        "source": "PUBLISH_AUTO.ps1",
+        "destination": "archive\\old_scripts\\PUBLISH_AUTO.ps1"
+      },
+      {
+        "moved": true,
+        "source": "publish.ps1",
+        "destination": "archive\\old_scripts\\publish.ps1"
+      },
+      {
+        "moved": true,
+        "source": "check_image.ps1",
+        "destination": "archive\\old_scripts\\check_image.ps1"
+      },
+      {
+        "moved": true,
+        "source": "create_app_icon.ps1",
+        "destination": "archive\\old_scripts\\create_app_icon.ps1"
+      },
+      {
+        "moved": true,
+        "source": "create_large_icon.ps1",
+        "destination": "archive\\old_scripts\\create_large_icon.ps1"
+      },
+      {
+        "moved": true,
+        "source": "fix_all_driver_images.ps1",
+        "destination": "archive\\old_scripts\\fix_all_driver_images.ps1"
+      },
+      {
+        "moved": true,
+        "source": "fix_app_images.ps1",
+        "destination": "archive\\old_scripts\\fix_app_images.ps1"
+      },
+      {
+        "moved": true,
+        "source": "generate_all_driver_icons.ps1",
+        "destination": "archive\\old_scripts\\generate_all_driver_icons.ps1"
+      },
+      {
+        "moved": true,
+        "source": "CLASSIFIED.json",
+        "destination": "archive\\old_data\\CLASSIFIED.json"
+      },
+      {
+        "moved": true,
+        "source": "MANUFACTURERS_DOCUMENTATION.html",
+        "destination": "archive\\old_data\\MANUFACTURERS_DOCUMENTATION.html"
+      },
+      {
+        "moved": true,
+        "source": "corrected",
+        "destination": "archive\\old_backups\\corrected"
+      },
+      {
+        "moved": true,
+        "source": "drivers_backup_co",
+        "destination": "archive\\old_backups\\drivers_backup_co"
+      },
+      {
+        "moved": true,
+        "source": "mega_evolution",
+        "destination": "archive\\old_backups\\mega_evolution"
+      },
+      {
+        "moved": true,
+        "source": "v18_complete",
+        "destination": "archive\\old_backups\\v18_complete"
+      }
+    ],
+    "notFound": [],
+    "failed": []
+  }
+}

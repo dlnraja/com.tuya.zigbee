@@ -20,6 +20,8 @@
   },
   "zigbee": {
     "productId": [
+      "TS0001",
+      "TS0201",
       "TS0601"
     ],
     "endpoints": {
@@ -38,8 +40,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/images/large.png"
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
   },
   "platforms": [
     "local"

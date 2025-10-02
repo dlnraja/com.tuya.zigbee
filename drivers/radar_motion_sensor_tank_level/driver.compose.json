@@ -6,7 +6,7 @@
   "capabilities": [
     "alarm_motion",
     "measure_luminance",
-    "measure_generic",
+    "measure_distance",
     "measure_battery"
   ],
   "energy": {

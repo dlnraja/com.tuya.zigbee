@@ -50,7 +50,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/radar_motion_sensor_mmwave/assets/images/large.png",
+      "image": "./assets/images/large.png",
       "instruction": {
         "en": "Press and hold pairing button for 5 seconds until LED blinks rapidly",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote rapidement"

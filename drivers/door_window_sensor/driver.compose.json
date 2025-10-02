@@ -20,9 +20,10 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": "_TZ3000_mcxw5ehu",
     "productId": [
-      "TS0202"
+      "TS0001",
+      "TS130F",
+      "TS0203"
     ],
     "endpoints": {
       "1": {
