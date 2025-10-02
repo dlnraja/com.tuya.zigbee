@@ -11,14 +11,16 @@
   ],
   "energy": {
     "batteries": [
-      "CR2032",
-      "PP3"
+      "CR2032"
     ]
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZE200_htnnfasr",
+      "_TZ3400_jeaxp72v"
+    ],
     "productId": [
-      "TS0001"
+      "TS0601"
     ],
     "endpoints": {
       "1": {
