@@ -43,23 +43,7 @@
         "de": "Halten Sie die Taste 5 Sekunden lang gedrückt, bis die LED blinkt"
       }
     },
-    "manufacturerIds": [
-      "1005007769107379",
-      4417,
-      4098,
-      4619,
-      4742,
-      4648,
-      4644,
-      4455,
-      4659,
-      4660
-    ],
-    "productIds": [
-      1043,
-      1044,
-      1045
-    ]
+    "manufacturerName": "_TZ3000_ji4araar"
   },
   "images": {
     "small": "./assets/small.png",
@@ -87,6 +71,5 @@
   "connectivity": [
     "zigbee"
   ],
-  "capabilitiesOptions": {},
-  "manufacturerName": "Tuya"
+  "capabilitiesOptions": {}
 }

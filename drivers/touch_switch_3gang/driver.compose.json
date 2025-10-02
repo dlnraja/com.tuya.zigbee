@@ -9,6 +9,7 @@
     "onoff.gang3"
   ],
   "zigbee": {
+    "manufacturerName": "_TZ3000_ji4araar",
     "productId": [
       "TS0001"
     ],
@@ -46,23 +47,7 @@
           6
         ]
       }
-    },
-    "manufacturerIds": [
-      4417,
-      4098,
-      4619,
-      4742,
-      4648,
-      4644,
-      4455,
-      4659,
-      4660
-    ],
-    "productIds": [
-      1043,
-      1044,
-      1045
-    ]
+    }
   },
   "images": {
     "large": "./assets/large.png",
@@ -106,6 +91,5 @@
         "fr": "Bouton 3"
       }
     }
-  },
-  "manufacturerName": "MOES"
+  }
 }

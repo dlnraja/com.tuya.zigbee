@@ -22,6 +22,7 @@
     "large": "./assets/large.png"
   },
   "zigbee": {
+    "manufacturerName": "_TZ3000_ji4araar",
     "productId": [
       "TS0001",
       "TS0203"
@@ -43,23 +44,7 @@
       "instruction": {
         "en": "Follow the pairing instructions for your Garage Door Opener."
       }
-    },
-    "manufacturerIds": [
-      4417,
-      4098,
-      4619,
-      4742,
-      4648,
-      4644,
-      4455,
-      4659,
-      4660
-    ],
-    "productIds": [
-      1025,
-      1029,
-      1030
-    ]
+    }
   },
   "energy": {
     "batteries": [
@@ -68,6 +53,5 @@
     ]
   },
   "settings": [],
-  "capabilitiesOptions": {},
-  "manufacturerName": "BSEED"
+  "capabilitiesOptions": {}
 }

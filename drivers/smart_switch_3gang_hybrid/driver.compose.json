@@ -53,26 +53,11 @@
         "de": "Schalten Sie den Schalter 3 Mal schnell ein/aus"
       }
     },
-    "manufacturerIds": [
-      4417,
-      4098,
-      4619,
-      4742,
-      4648,
-      4644,
-      4455,
-      4659,
-      4660
-    ],
-    "productIds": [
-      1043,
-      1044,
-      1045
-    ]
+    "manufacturerName": "_TZ3000_ji4araar"
   },
   "images": {
-    "small": "/drivers/smart_switch_3gang_hybrid/assets/small.png",
-    "large": "/drivers/smart_switch_3gang_hybrid/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "settings": [],
   "name": {
@@ -105,6 +90,5 @@
         "fr": "Bouton 3"
       }
     }
-  },
-  "manufacturerName": "Tuya"
+  }
 }

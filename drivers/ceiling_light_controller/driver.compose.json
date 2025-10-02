@@ -11,7 +11,7 @@
     "light_temperature"
   ],
   "zigbee": {
-    "manufacturerName": "_TZE200_oisqyl4o",
+    "manufacturerName": "_TZ3000_ji4araar",
     "productId": [
       "TS0001"
     ],
@@ -36,9 +36,8 @@
   "capabilitiesOptions": {},
   "images": {
     "small": "./assets/small.png",
-    "large": "./assets/images/large.png"
+    "large": "./assets/large.png"
   },
-  "manufacturerName": "BSEED",
   "energy": {
     "approximation": {
       "usageConstant": 10

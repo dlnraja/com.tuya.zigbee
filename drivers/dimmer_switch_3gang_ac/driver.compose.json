@@ -9,6 +9,7 @@
     "onoff.gang3"
   ],
   "zigbee": {
+    "manufacturerName": "_TZ3000_ji4araar",
     "productId": [
       "TS0001",
       "TS110E",
@@ -53,7 +54,7 @@
   },
   "images": {
     "small": "./assets/small.png",
-    "large": "./assets/images/large.png"
+    "large": "./assets/large.png"
   },
   "capabilitiesOptions": {
     "onoff": {
@@ -75,7 +76,6 @@
       }
     }
   },
-  "manufacturerName": "Tuya",
   "energy": {
     "approximation": {
       "usageConstant": 10

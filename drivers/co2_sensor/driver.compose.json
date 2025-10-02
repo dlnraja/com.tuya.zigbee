@@ -11,7 +11,7 @@
     "measure_battery"
   ],
   "zigbee": {
-    "manufacturerName": "_TZE204_ijxvkhd0",
+    "manufacturerName": "_TZ3000_ji4araar",
     "productId": [
       "TS0001"
     ],
@@ -34,9 +34,8 @@
   "capabilitiesOptions": {},
   "images": {
     "small": "./assets/small.png",
-    "large": "./assets/images/large.png"
+    "large": "./assets/large.png"
   },
-  "manufacturerName": "Tuya",
   "energy": {
     "batteries": [
       "CR2032"
