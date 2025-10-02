@@ -11,11 +11,7 @@
     "alarm_battery"
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_TZE200_universal",
-      "_TZE200_light",
-      "_TZ3000_bulb"
-    ],
+    "manufacturerName": "_TZ3000_bulb",
     "productId": [
       "TS0001",
       "TS0203"

@@ -6,19 +6,15 @@
   "class": "sensor",
   "capabilities": [
     "alarm_co",
-    "measure_co",
     "measure_battery"
   ],
   "energy": {
     "batteries": [
-      "CR2032"
+      "PP3"
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZE200_htnnfasr",
-      "_TZ3400_jeaxp72v"
-    ],
+    "manufacturerName": "_TZE200_htnnfasr",
     "productId": [
       "TS0601"
     ],
@@ -32,7 +28,8 @@
           61184
         ],
         "bindings": [
-          25
+          1,
+          1280
         ]
       }
     }
@@ -41,7 +38,6 @@
     "small": "./assets/small.png",
     "large": "./assets/images/large.png"
   },
-  "manufacturerName": "Tuya",
   "platforms": [
     "local"
   ]

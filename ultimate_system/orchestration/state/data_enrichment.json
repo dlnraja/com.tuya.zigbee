@@ -1,0 +1,1288 @@
+{
+  "generatedAt": "2025-10-02T21:18:08.546Z",
+  "metrics": {
+    "sourcesProcessed": [
+      {
+        "file": "ultimate_system\\references_moved\\enriched_manufacturer_db.json",
+        "type": "reference"
+      },
+      {
+        "file": "ultimate_system\\references_moved\\mega_manufacturer_db.json",
+        "type": "reference"
+      },
+      {
+        "file": "ultimate_system\\references_moved\\ultra_mfg_database.json",
+        "type": "reference"
+      },
+      {
+        "file": "ultimate_system\\references_moved\\scraping_holistique_v18.json",
+        "type": "reference"
+      },
+      {
+        "file": "ultimate_system\\references_moved\\web_scraped_v10.json",
+        "type": "reference"
+      },
+      {
+        "file": "ultimate_system\\references_moved\\scraping_v16.json",
+        "type": "reference"
+      },
+      {
+        "file": "ultimate_system\\github.json",
+        "type": "optional"
+      },
+      {
+        "file": "ultimate_system\\github_data.json",
+        "type": "optional"
+      },
+      {
+        "file": "ultimate_system\\data_sources\\github.json",
+        "type": "local"
+      }
+    ],
+    "manufacturers": 79,
+    "productIds": 5,
+    "clusters": 0,
+    "dps": 0,
+    "batteries": 0,
+    "rejected": 0
+  },
+  "enrichedManufacturers": [
+    {
+      "manufacturer": "_TZ3000_",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\enriched_manufacturer_db.json",
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json"
+      ],
+      "notes": [
+        "discovered",
+        "plug.historical"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_ zigbee",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\scraping_holistique_v18.json"
+      ],
+      "notes": [
+        "iaEnrichment.searchTerms"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_26fmupbb",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json",
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "categorized.contact",
+        "contact"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_2mbfxlzr",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "contact"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_2putqrmw",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "plug"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_6jbvbzpi",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "contact"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_7ysdnebc",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "dimmer"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_8",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json"
+      ],
+      "notes": [
+        "discovered"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_92chsky7",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "dimmer"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_cehuw1lw",
+      "productIds": [
+        "TS011F"
+      ],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\enriched_manufacturer_db.json",
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json",
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "categorized.plug",
+        "plug",
+        "plug.mfg"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_community_v16",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\scraping_v16.json"
+      ],
+      "notes": [
+        "data.homey_forum"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_community_v18",
+      "productIds": [
+        "TS_AI_DISCOVER_V18"
+      ],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "community.homey.app",
+        "homey.app/support",
+        "ultimate_system\\references_moved\\scraping_holistique_v18.json"
+      ],
+      "notes": [
+        "manufacturerIDsFound",
+        "scrapingResults.homey_community",
+        "scrapingResults.homey_community.manufacturerIDs"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_extended_v18",
+      "productIds": [
+        "TS_AI_DISCOVER_V18"
+      ],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "home-assistant.io",
+        "hubitat.com",
+        "openhab.org",
+        "ultimate_system\\references_moved\\scraping_holistique_v18.json"
+      ],
+      "notes": [
+        "manufacturerIDsFound",
+        "scrapingResults.extended_forums",
+        "scrapingResults.extended_forums.manufacturerIDs"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_fllyghyj",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json",
+        "ultimate_system\\references_moved\\web_scraped_v10.json"
+      ],
+      "notes": [
+        "categorized.switch",
+        "twitter"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_g5xawfcq",
+      "productIds": [
+        "TS011F"
+      ],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\enriched_manufacturer_db.json",
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json",
+        "ultimate_system\\references_moved\\ultra_mfg_database.json",
+        "ultimate_system\\references_moved\\web_scraped_v10.json"
+      ],
+      "notes": [
+        "categorized.plug",
+        "google",
+        "plug",
+        "plug.mfg"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_github_v16",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\scraping_v16.json"
+      ],
+      "notes": [
+        "data.github"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_github_v18",
+      "productIds": [
+        "TS_AI_DISCOVER_V18"
+      ],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "Johan-Bendz",
+        "athom-tech",
+        "dlnraja",
+        "ultimate_system\\references_moved\\scraping_holistique_v18.json"
+      ],
+      "notes": [
+        "manufacturerIDsFound",
+        "scrapingResults.github",
+        "scrapingResults.github.manufacturerIDs"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_google_v16",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\scraping_v16.json"
+      ],
+      "notes": [
+        "data.google"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_google_v18",
+      "productIds": [
+        "TS_AI_DISCOVER_V18"
+      ],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "community.homey.app",
+        "github.com/athom-tech",
+        "homey.app",
+        "ultimate_system\\references_moved\\scraping_holistique_v18.json"
+      ],
+      "notes": [
+        "manufacturerIDsFound",
+        "scrapingResults.google",
+        "scrapingResults.google.manufacturerIDs"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_ia_search_v18",
+      "productIds": [
+        "TS_AI_DISCOVER_V18"
+      ],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\scraping_holistique_v18.json"
+      ],
+      "notes": [
+        "iaEnrichment.additionalManufacturerIDs",
+        "manufacturerIDsFound"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_ji4araar",
+      "productIds": [
+        "TS0001",
+        "TS0011"
+      ],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\enriched_manufacturer_db.json",
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json",
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "categorized.switch",
+        "switch",
+        "switch.mfg"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_johan_v18",
+      "productIds": [
+        "TS_AI_DISCOVER_V18"
+      ],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "forum references",
+        "github.com/Johan-Bendz",
+        "ultimate_system\\references_moved\\scraping_holistique_v18.json"
+      ],
+      "notes": [
+        "manufacturerIDsFound",
+        "scrapingResults.johan_bendz",
+        "scrapingResults.johan_bendz.manufacturerIDs"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_ke_x5ola",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "light"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_kmh5qpmb",
+      "productIds": [
+        "TS0202"
+      ],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\enriched_manufacturer_db.json",
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json",
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "categorized.motion",
+        "motion",
+        "motion.mfg"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_lf56vpxj",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "motion"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_mcxw5ehu",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json",
+        "ultimate_system\\references_moved\\ultra_mfg_database.json",
+        "ultimate_system\\references_moved\\web_scraped_v10.json"
+      ],
+      "notes": [
+        "categorized.motion",
+        "motion",
+        "reddit"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_mmtwjmaq",
+      "productIds": [
+        "TS0202"
+      ],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\enriched_manufacturer_db.json",
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json",
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "categorized.motion",
+        "motion",
+        "motion.mfg"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_msl6wxk9",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json",
+        "ultimate_system\\references_moved\\ultra_mfg_database.json",
+        "ultimate_system\\references_moved\\web_scraped_v10.json"
+      ],
+      "notes": [
+        "categorized.light",
+        "github",
+        "light"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_n2egfsli",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json",
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "categorized.contact",
+        "contact"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_oborybow",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "light"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_okaz9tjs",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "plug"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_qzjcsmar",
+      "productIds": [
+        "TS0001",
+        "TS0011"
+      ],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\enriched_manufacturer_db.json",
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json",
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "categorized.switch",
+        "switch",
+        "switch.mfg"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_rdz06uge",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json",
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "categorized.dimmer",
+        "dimmer"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_reddit_v16",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\scraping_v16.json"
+      ],
+      "notes": [
+        "data.reddit"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_reddit_v18",
+      "productIds": [
+        "TS_AI_DISCOVER_V18"
+      ],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "r/domotique",
+        "r/homeautomation",
+        "r/homey",
+        "r/zigbee",
+        "ultimate_system\\references_moved\\scraping_holistique_v18.json"
+      ],
+      "notes": [
+        "manufacturerIDsFound",
+        "scrapingResults.reddit",
+        "scrapingResults.reddit.manufacturerIDs"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_smart_v18",
+      "productIds": [
+        "TS_AI_DISCOVER_V18"
+      ],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\scraping_holistique_v18.json"
+      ],
+      "notes": [
+        "iaEnrichment.additionalManufacturerIDs",
+        "manufacturerIDsFound"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_social_v16",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\scraping_v16.json"
+      ],
+      "notes": [
+        "data.twitter"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_social_v18",
+      "productIds": [
+        "TS_AI_DISCOVER_V18"
+      ],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "#domotique",
+        "#homey",
+        "#tuya",
+        "#zigbee",
+        "ultimate_system\\references_moved\\scraping_holistique_v18.json"
+      ],
+      "notes": [
+        "manufacturerIDsFound",
+        "scrapingResults.twitter",
+        "scrapingResults.twitter.manufacturerIDs"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_tasrktzi",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "switch"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_wyhuocal",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "switch"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_zha_v16",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\scraping_v16.json"
+      ],
+      "notes": [
+        "data.zha_forums"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3000_zha_v18",
+      "productIds": [
+        "TS_AI_DISCOVER_V18"
+      ],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "domoticz.com",
+        "jeedom.com",
+        "ultimate_system\\references_moved\\scraping_holistique_v18.json",
+        "zigbee.blakadder.com",
+        "zigbee2mqtt.io"
+      ],
+      "notes": [
+        "manufacturerIDsFound",
+        "scrapingResults.zha_domotique",
+        "scrapingResults.zha_domotique.manufacturerIDs"
+      ]
+    },
+    {
+      "manufacturer": "_TZ3210_",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json"
+      ],
+      "notes": [
+        "discovered"
+      ]
+    },
+    {
+      "manufacturer": "_TZE200_",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json"
+      ],
+      "notes": [
+        "discovered"
+      ]
+    },
+    {
+      "manufacturer": "_TZE200_ zigbee",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\scraping_holistique_v18.json"
+      ],
+      "notes": [
+        "iaEnrichment.searchTerms"
+      ]
+    },
+    {
+      "manufacturer": "_TZE200_3towulqd",
+      "productIds": [
+        "TS0202"
+      ],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\enriched_manufacturer_db.json",
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json",
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "categorized.motion",
+        "motion",
+        "motion.mfg"
+      ]
+    },
+    {
+      "manufacturer": "_TZE200_8ygsuhe1",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "climate"
+      ]
+    },
+    {
+      "manufacturer": "_TZE200_ai_find_v18",
+      "productIds": [
+        "TS_AI_DISCOVER_V18"
+      ],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\scraping_holistique_v18.json"
+      ],
+      "notes": [
+        "iaEnrichment.additionalManufacturerIDs",
+        "manufacturerIDsFound"
+      ]
+    },
+    {
+      "manufacturer": "_TZE200_bendz_v18",
+      "productIds": [
+        "TS_AI_DISCOVER_V18"
+      ],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "forum references",
+        "github.com/Johan-Bendz",
+        "ultimate_system\\references_moved\\scraping_holistique_v18.json"
+      ],
+      "notes": [
+        "manufacturerIDsFound",
+        "scrapingResults.johan_bendz",
+        "scrapingResults.johan_bendz.manufacturerIDs"
+      ]
+    },
+    {
+      "manufacturer": "_TZE200_bjawzodf",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json",
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "categorized.climate",
+        "climate"
+      ]
+    },
+    {
+      "manufacturer": "_TZE200_cowvfni3",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json",
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "categorized.curtain",
+        "curtain"
+      ]
+    },
+    {
+      "manufacturer": "_TZE200_cwbvmsar",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json",
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "categorized.climate",
+        "climate"
+      ]
+    },
+    {
+      "manufacturer": "_TZE200_fctwhugx",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json",
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "categorized.curtain",
+        "curtain"
+      ]
+    },
+    {
+      "manufacturer": "_TZE200_forum_v16",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\scraping_v16.json"
+      ],
+      "notes": [
+        "data.reddit"
+      ]
+    },
+    {
+      "manufacturer": "_TZE200_forum_v18",
+      "productIds": [
+        "TS_AI_DISCOVER_V18"
+      ],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "r/domotique",
+        "r/homeautomation",
+        "r/homey",
+        "r/zigbee",
+        "ultimate_system\\references_moved\\scraping_holistique_v18.json"
+      ],
+      "notes": [
+        "manufacturerIDsFound",
+        "scrapingResults.reddit",
+        "scrapingResults.reddit.manufacturerIDs"
+      ]
+    },
+    {
+      "manufacturer": "_TZE200_forums_v18",
+      "productIds": [
+        "TS_AI_DISCOVER_V18"
+      ],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "home-assistant.io",
+        "hubitat.com",
+        "openhab.org",
+        "ultimate_system\\references_moved\\scraping_holistique_v18.json"
+      ],
+      "notes": [
+        "manufacturerIDsFound",
+        "scrapingResults.extended_forums",
+        "scrapingResults.extended_forums.manufacturerIDs"
+      ]
+    },
+    {
+      "manufacturer": "_TZE200_homey_v16",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\scraping_v16.json"
+      ],
+      "notes": [
+        "data.homey_forum"
+      ]
+    },
+    {
+      "manufacturer": "_TZE200_homey_v18",
+      "productIds": [
+        "TS_AI_DISCOVER_V18"
+      ],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "community.homey.app",
+        "homey.app/support",
+        "ultimate_system\\references_moved\\scraping_holistique_v18.json"
+      ],
+      "notes": [
+        "manufacturerIDsFound",
+        "scrapingResults.homey_community",
+        "scrapingResults.homey_community.manufacturerIDs"
+      ]
+    },
+    {
+      "manufacturer": "_TZE200_locansqn",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json",
+        "ultimate_system\\references_moved\\web_scraped_v10.json"
+      ],
+      "notes": [
+        "categorized.climate",
+        "twitter"
+      ]
+    },
+    {
+      "manufacturer": "_TZE200_rddyvrci",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "curtain"
+      ]
+    },
+    {
+      "manufacturer": "_TZE200_repo_v16",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\scraping_v16.json"
+      ],
+      "notes": [
+        "data.github"
+      ]
+    },
+    {
+      "manufacturer": "_TZE200_repo_v18",
+      "productIds": [
+        "TS_AI_DISCOVER_V18"
+      ],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "Johan-Bendz",
+        "athom-tech",
+        "dlnraja",
+        "ultimate_system\\references_moved\\scraping_holistique_v18.json"
+      ],
+      "notes": [
+        "manufacturerIDsFound",
+        "scrapingResults.github",
+        "scrapingResults.github.manufacturerIDs"
+      ]
+    },
+    {
+      "manufacturer": "_TZE200_search_v16",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\scraping_v16.json"
+      ],
+      "notes": [
+        "data.google"
+      ]
+    },
+    {
+      "manufacturer": "_TZE200_search_v18",
+      "productIds": [
+        "TS_AI_DISCOVER_V18"
+      ],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "community.homey.app",
+        "github.com/athom-tech",
+        "homey.app",
+        "ultimate_system\\references_moved\\scraping_holistique_v18.json"
+      ],
+      "notes": [
+        "manufacturerIDsFound",
+        "scrapingResults.google",
+        "scrapingResults.google.manufacturerIDs"
+      ]
+    },
+    {
+      "manufacturer": "_TZE200_tweet_v16",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\scraping_v16.json"
+      ],
+      "notes": [
+        "data.twitter"
+      ]
+    },
+    {
+      "manufacturer": "_TZE200_tweet_v18",
+      "productIds": [
+        "TS_AI_DISCOVER_V18"
+      ],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "#domotique",
+        "#homey",
+        "#tuya",
+        "#zigbee",
+        "ultimate_system\\references_moved\\scraping_holistique_v18.json"
+      ],
+      "notes": [
+        "manufacturerIDsFound",
+        "scrapingResults.twitter",
+        "scrapingResults.twitter.manufacturerIDs"
+      ]
+    },
+    {
+      "manufacturer": "_TZE200_xuzcvlku",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "curtain"
+      ]
+    },
+    {
+      "manufacturer": "_TZE200_zigbee_v16",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\scraping_v16.json"
+      ],
+      "notes": [
+        "data.zha_forums"
+      ]
+    },
+    {
+      "manufacturer": "_TZE200_zigbee_v18",
+      "productIds": [
+        "TS_AI_DISCOVER_V18"
+      ],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "domoticz.com",
+        "jeedom.com",
+        "ultimate_system\\references_moved\\scraping_holistique_v18.json",
+        "zigbee.blakadder.com",
+        "zigbee2mqtt.io"
+      ],
+      "notes": [
+        "manufacturerIDsFound",
+        "scrapingResults.zha_domotique",
+        "scrapingResults.zha_domotique.manufacturerIDs"
+      ]
+    },
+    {
+      "manufacturer": "_TZE200_ztvwu4nk",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "climate"
+      ]
+    },
+    {
+      "manufacturer": "_TZE204_",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json"
+      ],
+      "notes": [
+        "discovered"
+      ]
+    },
+    {
+      "manufacturer": "_TZE284_98z4zhra",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json",
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "categorized.light",
+        "light"
+      ]
+    },
+    {
+      "manufacturer": "_TZE284_9cxrt8gp",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json"
+      ],
+      "notes": [
+        "categorized.contact"
+      ]
+    },
+    {
+      "manufacturer": "_TZE284_aagrxlbd",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\web_scraped_v10.json"
+      ],
+      "notes": [
+        "github"
+      ]
+    },
+    {
+      "manufacturer": "_TZE284_aao6qtcs",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json",
+        "ultimate_system\\references_moved\\ultra_mfg_database.json",
+        "ultimate_system\\references_moved\\web_scraped_v10.json"
+      ],
+      "notes": [
+        "categorized.switch",
+        "google",
+        "switch"
+      ]
+    },
+    {
+      "manufacturer": "_TZE284_cjbofhxw",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json",
+        "ultimate_system\\references_moved\\ultra_mfg_database.json",
+        "ultimate_system\\references_moved\\web_scraped_v10.json"
+      ],
+      "notes": [
+        "categorized.plug",
+        "plug",
+        "reddit"
+      ]
+    },
+    {
+      "manufacturer": "_TZE284_khkk23xi",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json"
+      ],
+      "notes": [
+        "categorized.curtain"
+      ]
+    },
+    {
+      "manufacturer": "_TZE284_rccgwzz8",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\mega_manufacturer_db.json",
+        "ultimate_system\\references_moved\\ultra_mfg_database.json"
+      ],
+      "notes": [
+        "categorized.dimmer",
+        "dimmer"
+      ]
+    },
+    {
+      "manufacturer": "Johan-Bendz",
+      "productIds": [],
+      "clusters": [],
+      "dps": [],
+      "batteries": [],
+      "sources": [
+        "ultimate_system\\references_moved\\scraping_holistique_v18.json"
+      ],
+      "notes": [
+        "scrapingResults.github.sources"
+      ]
+    }
+  ],
+  "rejectedEntries": []
+}

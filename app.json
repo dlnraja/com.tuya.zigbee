@@ -1715,7 +1715,6 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
           "PP3"
         ]
       },
@@ -1867,7 +1866,7 @@
           "_TZE200_d7lpruvi"
         ],
         "productId": [
-          "TS0001"
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -1879,7 +1878,8 @@
               61184
             ],
             "bindings": [
-              25
+              1,
+              1280
             ]
           }
         }
@@ -1888,7 +1888,6 @@
         "small": "./assets/small.png",
         "large": "./assets/images/large.png"
       },
-      "manufacturerName": "Tuya",
       "platforms": [
         "local"
       ],
@@ -2329,7 +2328,12 @@
           }
         }
       },
-      "id": "curtain_motor"
+      "id": "curtain_motor",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -16559,7 +16563,7 @@
           "RGB bulb compatibility"
         ],
         "enriched": true,
-        "last_updated": "2025-09-15T19:34:02.950Z"
+        "last_updated": "2025-09-15T19:34:02.95Z"
       },
       "manufacturerId": [],
       "productId": [],

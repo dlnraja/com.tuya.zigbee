@@ -1,0 +1,62 @@
+{
+  "generatedAt": "2025-10-02T21:21:13.094Z",
+  "iterations": [
+    {
+      "iteration": 1,
+      "success": false,
+      "metrics": {
+        "validationOk": false,
+        "gitOk": false,
+        "wildcardsPresent": false,
+        "duplicatesPresent": false,
+        "classifierMetrics": {
+          "manufacturersCorrected": 11,
+          "driversRelocated": 0,
+          "duplicatesResolved": 2
+        }
+      }
+    },
+    {
+      "iteration": 2,
+      "success": false,
+      "metrics": {
+        "validationOk": false,
+        "gitOk": false,
+        "wildcardsPresent": false,
+        "duplicatesPresent": false,
+        "classifierMetrics": {
+          "manufacturersCorrected": 11,
+          "driversRelocated": 0,
+          "duplicatesResolved": 2
+        }
+      }
+    },
+    {
+      "iteration": 3,
+      "success": false,
+      "metrics": {
+        "validationOk": false,
+        "gitOk": false,
+        "wildcardsPresent": false,
+        "duplicatesPresent": false,
+        "classifierMetrics": {
+          "manufacturersCorrected": 11,
+          "driversRelocated": 0,
+          "duplicatesResolved": 2
+        }
+      }
+    }
+  ],
+  "finalMetrics": {
+    "validationOk": false,
+    "gitOk": false,
+    "wildcardsPresent": false,
+    "duplicatesPresent": false,
+    "classifierMetrics": {
+      "manufacturersCorrected": 11,
+      "driversRelocated": 0,
+      "duplicatesResolved": 2
+    }
+  },
+  "manufacturerSample": []
+}
