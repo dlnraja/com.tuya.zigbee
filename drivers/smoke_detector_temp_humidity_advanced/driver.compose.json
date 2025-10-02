@@ -19,10 +19,11 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZE200_m9skfctm",
+      "_TZE200_rccxox8p"
+    ],
     "productId": [
-      "TS0001",
-      "TS0201",
       "TS0601"
     ],
     "endpoints": {
