@@ -39,8 +39,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/images/large.png"
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
   },
   "platforms": [
     "local"

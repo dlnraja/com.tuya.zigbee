@@ -43,7 +43,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/motion_sensor_hobeian/assets/images/large.png",
+      "image": "./assets/images/large.png",
       "instruction": {
         "en": "Press the pairing button until LED blinks rapidly",
         "fr": "Appuyez sur le bouton d'appairage jusqu'à ce que la LED clignote rapidement"

@@ -10,9 +10,10 @@
     "measure_battery"
   ],
   "zigbee": {
-    "manufacturerName": "_TZ3000_1dd0d5yi",
+    "manufacturerName": "_TZE200_6ygjfyll",
     "productId": [
-      "TS0001"
+      "TS0001",
+      "TS130F"
     ],
     "endpoints": {
       "1": {
@@ -39,7 +40,7 @@
     "productIds": []
   },
   "images": {
-    "large": "./assets/images/large.png",
+    "large": "./assets/large.png",
     "small": "./assets/small.png"
   },
   "pair": [

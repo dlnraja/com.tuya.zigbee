@@ -11,7 +11,6 @@
     "measure_battery"
   ],
   "zigbee": {
-    "manufacturerName": "_TZE200_nkoabg8w",
     "productId": [
       "TS0001"
     ],
@@ -78,10 +77,5 @@
       }
     }
   },
-  "manufacturerName": "BSEED",
-  "energy": {
-    "batteries": [
-      "CR2032"
-    ]
-  }
+  "manufacturerName": "BSEED"
 }
