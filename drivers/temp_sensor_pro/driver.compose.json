@@ -14,7 +14,9 @@
   ],
   "zigbee": {
     "productId": [
-      "TS0202"
+      "TS0001",
+      "TS0201",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -39,10 +41,5 @@
   "manufacturerName": "BSEED",
   "platforms": [
     "local"
-  ],
-  "energy": {
-    "batteries": [
-      "CR2032"
-    ]
-  }
+  ]
 }

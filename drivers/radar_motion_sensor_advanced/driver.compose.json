@@ -8,7 +8,7 @@
   "capabilities": [
     "alarm_motion",
     "measure_luminance",
-    "measure_generic",
+    "measure_distance",
     "measure_battery"
   ],
   "energy": {
@@ -18,7 +18,6 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": "_TZE201_ztc6ggyl",
     "productId": [
       "TS0202"
     ],

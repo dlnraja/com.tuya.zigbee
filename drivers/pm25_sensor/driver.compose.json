@@ -11,7 +11,7 @@
   ],
   "zigbee": {
     "productId": [
-      "TS0202"
+      "TS0001"
     ],
     "endpoints": {
       "1": {
@@ -74,10 +74,5 @@
       }
     }
   },
-  "manufacturerName": "Tuya",
-  "energy": {
-    "batteries": [
-      "CR2032"
-    ]
-  }
+  "manufacturerName": "Tuya"
 }
