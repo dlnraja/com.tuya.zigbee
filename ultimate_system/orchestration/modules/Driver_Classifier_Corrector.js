@@ -138,10 +138,14 @@ function applyEnrichment(manifest, enrichmentRecord) {
   return updated;
 }
 
-function rewriteManufacturerList(manifest, newManufacturers) {
+function rewriteManufacturer(manifest, manufacturer) {
   const updated = { ...manifest };
   if (!updated.zigbee) updated.zigbee = {};
-  updated.zigbee.manufacturerName = newManufacturers;
+  if (manufacturer) {
+    updated.zigbee.manufacturerName = manufacturer;
+  } else {
+    delete updated.zigbee.manufacturerName;
+  }
   return updated;
 }
 
@@ -165,7 +169,7 @@ function removeInvalidManufacturers(manifest, validManufacturers) {
     }
   }
 
-  return rewriteManufacturerList(manifest, filtered);
+  return rewriteManufacturer(manifest, filtered[0] || null);
 }
 
 function relocateDriver(driverId, targetCategory, catalog) {
@@ -214,7 +218,7 @@ function main() {
 
     const validManufacturers = new Set([manufacturer]);
     const updatedManifest = applyEnrichment(targetManifestData.manifest, enrichmentRecord || {});
-    const manifestWithManufacturers = rewriteManufacturerList(updatedManifest, Array.from(validManufacturers));
+    const manifestWithManufacturers = rewriteManufacturer(updatedManifest, manufacturer);
     updateManifest(targetManifestData.manifestPath, manifestWithManufacturers);
     manufacturersCorrected += 1;
 
@@ -244,14 +248,35 @@ function main() {
       .map((manufacturer) => enrichmentMap.get(manufacturer))
       .filter(Boolean);
 
+    let updatedManifest = { ...manifest };
     if (enrichmentRecords.length) {
-      let updatedManifest = { ...manifest };
       enrichmentRecords.forEach((record) => {
         updatedManifest = applyEnrichment(updatedManifest, record);
       });
-      updateManifest(manifestPath, updatedManifest);
       manufacturersCorrected += 1;
     }
+
+    // Ensure energy.batteries exists when measure_battery is declared (SDK3 requirement)
+    const hasMeasureBattery = Array.isArray(updatedManifest.capabilities) &&
+      updatedManifest.capabilities.includes('measure_battery');
+    if (hasMeasureBattery) {
+      updatedManifest.energy = updatedManifest.energy || {};
+      if (!Array.isArray(updatedManifest.energy.batteries) || !updatedManifest.energy.batteries.length) {
+        // Conservative default; can be refined by enrichment later
+        updatedManifest.energy.batteries = ['CR2032'];
+      }
+    }
+
+    // Normalize driver image paths defensively
+    updatedManifest.images = updatedManifest.images || {};
+    if (updatedManifest.images.small !== './assets/small.png') {
+      updatedManifest.images.small = './assets/small.png';
+    }
+    if (updatedManifest.images.large !== './assets/large.png') {
+      updatedManifest.images.large = './assets/large.png';
+    }
+
+    updateManifest(manifestPath, updatedManifest);
 
     const targetCategory = driverToCategory.get(driverId);
     if (targetCategory) {
