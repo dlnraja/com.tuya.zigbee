@@ -20,8 +20,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/temperature_sensor/assets/small.png",
+    "large": "/drivers/temperature_sensor/assets/large.png"
   },
   "zigbee": {
     "manufacturerName": "_TZ3000_ji4araar",
@@ -45,7 +45,7 @@
       }
     },
     "learnmode": {
-      "image": "./assets/large.png",
+      "image": "/drivers/temperature_sensor/assets/large.png",
       "instruction": {
         "en": "Follow the pairing instructions for your Temperature Sensor."
       }

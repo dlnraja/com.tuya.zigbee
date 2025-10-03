@@ -32,8 +32,8 @@
     }
   },
   "images": {
-    "large": "./assets/large.png",
-    "small": "./assets/small.png"
+    "large": "/drivers/lux_sensor/assets/large.png",
+    "small": "/drivers/lux_sensor/assets/small.png"
   },
   "pair": [
     {

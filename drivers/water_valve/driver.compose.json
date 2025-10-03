@@ -17,8 +17,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/water_valve/assets/small.png",
+    "large": "/drivers/water_valve/assets/large.png"
   },
   "zigbee": {
     "manufacturerName": "_TZ3000_ji4araar",
@@ -40,7 +40,7 @@
       }
     },
     "learnmode": {
-      "image": "./assets/large.png",
+      "image": "/drivers/water_valve/assets/large.png",
       "instruction": {
         "en": "Follow the pairing instructions for your Water Valve."
       }

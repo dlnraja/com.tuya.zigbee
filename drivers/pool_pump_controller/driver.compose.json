@@ -34,8 +34,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/pool_pump_controller/assets/small.png",
+    "large": "/drivers/pool_pump_controller/assets/large.png"
   },
   "capabilitiesOptions": {},
   "platforms": [

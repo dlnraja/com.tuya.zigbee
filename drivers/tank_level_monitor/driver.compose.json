@@ -36,8 +36,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/tank_level_monitor/assets/small.png",
+    "large": "/drivers/tank_level_monitor/assets/large.png"
   },
   "capabilitiesOptions": {},
   "platforms": [

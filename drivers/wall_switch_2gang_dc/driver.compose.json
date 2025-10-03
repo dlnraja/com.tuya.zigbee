@@ -36,7 +36,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/wall_switch_2gang_dc/assets/learn.svg",
+      "image": "/drivers/wall_switch_2gang_dc/assets/large.png",
       "instruction": {
         "en": "Turn the switch on/off 3 times quickly",
         "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -47,8 +47,8 @@
     "manufacturerName": "_TZ3000_ji4araar"
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/wall_switch_2gang_dc/assets/small.png",
+    "large": "/drivers/wall_switch_2gang_dc/assets/large.png"
   },
   "settings": [],
   "name": {

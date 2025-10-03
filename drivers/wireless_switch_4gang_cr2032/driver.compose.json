@@ -34,7 +34,7 @@
       }
     },
     "learnmode": {
-      "image": "./assets/large.png",
+      "image": "/drivers/wireless_switch_4gang_cr2032/assets/large.png",
       "instruction": {
         "en": "Press and hold the button until the LED flashes",
         "fr": "Appuyez et maintenez le bouton jusqu'à ce que la LED clignote",
@@ -45,8 +45,8 @@
     "manufacturerName": "_TZ3000_ji4araar"
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/wireless_switch_4gang_cr2032/assets/small.png",
+    "large": "/drivers/wireless_switch_4gang_cr2032/assets/large.png"
   },
   "name": {
     "en": "Wireless Switch 4gang CR2032"

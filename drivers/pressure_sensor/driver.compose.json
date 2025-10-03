@@ -37,8 +37,8 @@
     }
   },
   "images": {
-    "large": "./assets/large.png",
-    "small": "./assets/small.png"
+    "large": "/drivers/pressure_sensor/assets/large.png",
+    "small": "/drivers/pressure_sensor/assets/small.png"
   },
   "pair": [
     {

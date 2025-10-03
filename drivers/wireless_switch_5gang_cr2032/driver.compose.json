@@ -36,7 +36,7 @@
       }
     },
     "learnmode": {
-      "image": "./assets/large.png",
+      "image": "/drivers/wireless_switch_5gang_cr2032/assets/large.png",
       "instruction": {
         "en": "Press and hold the button for 5 seconds until LED flashes",
         "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote",
@@ -47,8 +47,8 @@
     "manufacturerName": "_TZ3000_ji4araar"
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/wireless_switch_5gang_cr2032/assets/small.png",
+    "large": "/drivers/wireless_switch_5gang_cr2032/assets/large.png"
   },
   "settings": [
     {

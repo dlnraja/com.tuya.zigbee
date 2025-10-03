@@ -38,8 +38,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/milight_controller/assets/small.png",
+    "large": "/drivers/milight_controller/assets/large.png"
   },
   "capabilitiesOptions": {},
   "platforms": [
