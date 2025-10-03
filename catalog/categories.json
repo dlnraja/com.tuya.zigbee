@@ -36,13 +36,13 @@
     "wall_switch_4gang_ac",
     "wall_switch_4gang_dc",
     "wall_switch_5gang_ac",
-    "wall_switch_6gang_ac"
+    "wall_switch_6gang_ac",
+    "ceiling_light_rgb"
   ],
   "socket": [
     "energy_monitoring_plug",
     "energy_monitoring_plug_advanced",
     "extension_plug",
-    "motion_sensor_battery",
     "relay_switch_1gang",
     "remote_switch",
     "roller_shutter_switch",
@@ -62,7 +62,6 @@
   "sensor": [
     "air_quality_monitor",
     "air_quality_monitor_pro",
-    "ceiling_light_rgb",
     "climate_monitor",
     "co2_sensor",
     "co2_temp_humidity",
@@ -123,7 +122,8 @@
     "vibration_sensor",
     "water_leak_detector_advanced",
     "water_leak_detector_sq510a",
-    "water_leak_sensor"
+    "water_leak_sensor",
+    "motion_sensor_battery"
   ],
   "thermostat": [
     "smart_radiator_valve",

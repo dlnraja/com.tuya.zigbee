@@ -5,6 +5,13 @@
     "bindings": [1, 1280],
     "batteries": ["CR2450"]
   },
+  "motion_sensor_battery": {
+    "allowProductIdPrefixes": ["TS0202", "TS0901"],
+    "class": "sensor",
+    "bindings": [1, 1280],
+    "batteries": ["CR2032", "CR2450"],
+    "forceProductIds": ["TS0202", "TS0901"]
+  },
   "scene_controller_4button": {
     "allowProductIdPrefixes": ["TS004"],
     "class": "button"
@@ -15,6 +22,7 @@
   },
   "ceiling_light_rgb": {
     "allowProductIdPrefixes": ["TS05", "TS110"],
-    "class": "light"
+    "class": "light",
+    "clearBatteries": true
   }
 }
