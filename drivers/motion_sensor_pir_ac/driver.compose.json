@@ -1,8 +1,6 @@
 {
   "name": {
-    "en": "Motion Sensor PIR AC",
-    "fr": "Détecteur de Mouvement",
-    "de": "Motion Sensor"
+    "en": "Motion Sensor PIR AC"
   },
   "class": "sensor",
   "capabilities": [
@@ -63,10 +61,7 @@
     "learnmode": {
       "image": "./assets/large.png",
       "instruction": {
-        "en": "Turn the switch on/off 3 times quickly",
-        "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
-        "nl": "Schakel de schakelaar 3 keer snel aan/uit",
-        "de": "Schalten Sie den Schalter 3 Mal schnell ein/aus"
+        "en": "Turn the switch on/off 3 times quickly"
       }
     },
     "manufacturerName": [
@@ -93,30 +88,26 @@
       "id": "motion_sensitivity",
       "type": "dropdown",
       "label": {
-        "en": "Motion Sensitivity",
-        "fr": "Sensibilité de mouvement"
+        "en": "Motion Sensitivity"
       },
       "value": "medium",
       "values": [
         {
           "id": "low",
           "label": {
-            "en": "Low",
-            "fr": "Faible"
+            "en": "Low"
           }
         },
         {
           "id": "medium",
           "label": {
-            "en": "Medium",
-            "fr": "Moyen"
+            "en": "Medium"
           }
         },
         {
           "id": "high",
           "label": {
-            "en": "High",
-            "fr": "Élevé"
+            "en": "High"
           }
         }
       ]

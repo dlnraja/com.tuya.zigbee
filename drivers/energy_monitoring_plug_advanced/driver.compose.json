@@ -76,9 +76,7 @@
   "capabilitiesOptions": {
     "measure_power": {
       "title": {
-        "en": "Power",
-        "fr": "Puissance",
-        "de": "Leistung"
+        "en": "Power"
       },
       "units": {
         "en": "W"
@@ -87,9 +85,7 @@
     },
     "measure_voltage": {
       "title": {
-        "en": "Voltage",
-        "fr": "Tension",
-        "de": "Spannung"
+        "en": "Voltage"
       },
       "units": {
         "en": "V"
@@ -98,9 +94,7 @@
     },
     "measure_current": {
       "title": {
-        "en": "Current",
-        "fr": "Courant",
-        "de": "Strom"
+        "en": "Current"
       },
       "units": {
         "en": "A"

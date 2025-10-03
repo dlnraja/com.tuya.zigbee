@@ -1,9 +1,6 @@
 {
   "name": {
-    "en": "Sonoff Mini",
-    "fr": "Sonoff Mini",
-    "de": "Sonoff Mini",
-    "nl": "Sonoff Mini"
+    "en": "Sonoff Mini"
   },
   "class": "light",
   "capabilities": [
@@ -86,10 +83,7 @@
     "learnmode": {
       "image": "./assets/large.png",
       "instruction": {
-        "en": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
-        "fr": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
-        "de": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
-        "nl": "Press and hold the pairing button for 5 seconds until LED blinks rapidly."
+        "en": "Press and hold the pairing button for 5 seconds until LED blinks rapidly."
       }
     }
   },

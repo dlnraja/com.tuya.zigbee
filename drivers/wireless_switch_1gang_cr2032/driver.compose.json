@@ -1,9 +1,6 @@
 {
   "name": {
-    "en": "Aqara Button",
-    "fr": "Aqara Button",
-    "de": "Aqara Button",
-    "nl": "Aqara Button"
+    "en": "Aqara Button"
   },
   "class": "button",
   "capabilities": [
@@ -93,10 +90,7 @@
     "learnmode": {
       "image": "./assets/large.png",
       "instruction": {
-        "en": "Press and hold the reset button for 3 seconds until the LED starts blinking.",
-        "fr": "Press and hold the reset button for 3 seconds until the LED starts blinking.",
-        "de": "Press and hold the reset button for 3 seconds until the LED starts blinking.",
-        "nl": "Press and hold the reset button for 3 seconds until the LED starts blinking."
+        "en": "Press and hold the reset button for 3 seconds until the LED starts blinking."
       }
     }
   },

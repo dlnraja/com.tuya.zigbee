@@ -1,7 +1,6 @@
 {
   "name": {
-    "en": "Water Leak Detector Advanced",
-    "fr": "Détecteur de Fuite d'Eau Avancé"
+    "en": "Water Leak Detector Advanced"
   },
   "class": "sensor",
   "capabilities": [
@@ -81,8 +80,7 @@
     "learnmode": {
       "image": "./assets/large.png",
       "instruction": {
-        "en": "Press and hold the pairing button for 5 seconds",
-        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes"
+        "en": "Press and hold the pairing button for 5 seconds"
       }
     }
   },

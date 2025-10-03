@@ -1,7 +1,6 @@
 {
   "name": {
-    "en": "mmWave Radar Motion Sensor",
-    "fr": "Capteur Mouvement Radar mmWave"
+    "en": "mmWave Radar Motion Sensor"
   },
   "class": "sensor",
   "capabilities": [
@@ -13,14 +12,12 @@
   "capabilitiesOptions": {
     "alarm_motion": {
       "title": {
-        "en": "Motion (Radar)",
-        "fr": "Mouvement (Radar)"
+        "en": "Motion (Radar)"
       }
     },
     "alarm_generic": {
       "title": {
-        "en": "Presence Detection",
-        "fr": "Détection de Présence"
+        "en": "Presence Detection"
       }
     }
   },
@@ -97,8 +94,7 @@
     "learnmode": {
       "image": "./assets/large.png",
       "instruction": {
-        "en": "Press and hold pairing button for 5 seconds until LED blinks rapidly",
-        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
+        "en": "Press and hold pairing button for 5 seconds until LED blinks rapidly"
       }
     }
   },
