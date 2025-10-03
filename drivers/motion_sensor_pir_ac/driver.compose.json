@@ -12,7 +12,8 @@
   ],
   "zigbee": {
     "productId": [
-      "TS0202"
+      "TS0001",
+      "TS0011"
     ],
     "endpoints": {
       "1": {
@@ -84,5 +85,10 @@
   "connectivity": [
     "zigbee"
   ],
-  "capabilitiesOptions": {}
+  "capabilitiesOptions": {},
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  }
 }

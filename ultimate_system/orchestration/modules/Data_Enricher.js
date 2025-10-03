@@ -14,6 +14,8 @@ const ROOT = path.resolve(__dirname, '../../..');
 const STATE_DIR = path.resolve(__dirname, '../state');
 const REFERENCES_DIR = path.join(ROOT, 'ultimate_system', 'references_moved');
 const DATA_SOURCES_DIR = path.join(ROOT, 'ultimate_system', 'data_sources');
+const EXTERNAL_SOURCES_DIR = path.join(ROOT, '.external_sources');
+const ROOT_REFERENCES_DIR = path.join(ROOT, 'references');
 
 const SOURCE_FILES = [
   'enriched_manufacturer_db.json',
@@ -364,6 +366,26 @@ function gatherSourceData() {
       .forEach((entry) => {
         const filePath = path.join(DATA_SOURCES_DIR, entry.name);
         gatherFromFile(filePath, 'local', accepted, stats, rejected, sources);
+      });
+  }
+
+  // Also gather root-level references if present (e.g. references/*.json)
+  if (fs.existsSync(ROOT_REFERENCES_DIR)) {
+    fs.readdirSync(ROOT_REFERENCES_DIR, { withFileTypes: true })
+      .filter((entry) => entry.isFile() && entry.name.endsWith('.json'))
+      .forEach((entry) => {
+        const filePath = path.join(ROOT_REFERENCES_DIR, entry.name);
+        gatherFromFile(filePath, 'root_reference', accepted, stats, rejected, sources);
+      });
+  }
+
+  // Include external analysis dumps (e.g. forum/community processed JSON)
+  if (fs.existsSync(EXTERNAL_SOURCES_DIR)) {
+    fs.readdirSync(EXTERNAL_SOURCES_DIR, { withFileTypes: true })
+      .filter((entry) => entry.isFile() && entry.name.endsWith('.json'))
+      .forEach((entry) => {
+        const filePath = path.join(EXTERNAL_SOURCES_DIR, entry.name);
+        gatherFromFile(filePath, 'external', accepted, stats, rejected, sources);
       });
   }
 
