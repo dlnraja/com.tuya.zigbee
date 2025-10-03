@@ -441,6 +441,21 @@ function main() {
         updatedManifest.zigbee.productId = Array.from(new Set(after));
       }
     }
+    // Ensure specific productIds are present regardless of existing list
+    if (ov && Array.isArray(ov.forceProductIds)) {
+      updatedManifest.zigbee = updatedManifest.zigbee || {};
+      const ensures = ov.forceProductIds
+        .map((x) => (typeof x === 'string' ? x.trim().toUpperCase() : String(x).trim().toUpperCase()))
+        .filter(Boolean);
+      const before = Array.isArray(updatedManifest.zigbee.productId) ? updatedManifest.zigbee.productId.slice() : [];
+      const normalizedBefore = before
+        .map((p) => (typeof p === 'string' ? p.trim().toUpperCase() : String(p).trim().toUpperCase()))
+        .filter(Boolean);
+      const merged = Array.from(new Set([...normalizedBefore, ...ensures]));
+      if (merged.length) {
+        updatedManifest.zigbee.productId = merged;
+      }
+    }
     if (ov && ov.class && updatedManifest.class !== ov.class) {
       updatedManifest.class = ov.class;
     }
@@ -458,6 +473,10 @@ function main() {
     if (ov && Array.isArray(ov.batteries) && ov.batteries.length) {
       updatedManifest.energy = updatedManifest.energy || {};
       updatedManifest.energy.batteries = Array.from(new Set(ov.batteries));
+    }
+    // Allow curated override to clear incorrect batteries for mains-powered devices
+    if (ov && ov.clearBatteries === true && updatedManifest.energy) {
+      delete updatedManifest.energy.batteries;
     }
 
     // First pass: filter productIds by inferred category only (conservative)
