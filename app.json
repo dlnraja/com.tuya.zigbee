@@ -5,16 +5,10 @@
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
-    "en": "Ultimate Zigbee Hub",
-    "fr": "Hub Zigbee Ultime",
-    "de": "Ultimate Zigbee Hub",
-    "nl": "Ultimate Zigbee Hub"
+    "en": "Ultimate Zigbee Hub"
   },
   "description": {
-    "en": "Ultimate Zigbee Hub v2.1.8 - Enhanced compatibility with 1000+ devices from 60+ manufacturers. Professional SDK3 architecture with comprehensive Johan Bendz compatibility. Local Zigbee 3.0 operation.",
-    "fr": "Support professionnel des appareils Zigbee avec compatibilité fabricant complète. Conforme SDK3, organisé par fonction plutôt que par marque.",
-    "de": "Professionelle Zigbee-Geräteunterstützung mit umfassender Herstellerkompatibilität. SDK3-konform, nach Gerätefunktion organisiert.",
-    "nl": "Professionele Zigbee apparaatondersteuning met uitgebreide fabrikantcompatibiliteit. SDK3-conform, georganiseerd naar apparaatfunctie."
+    "en": "Ultimate Zigbee Hub v2.1.8 - Enhanced compatibility with 1000+ devices from 60+ manufacturers. Professional SDK3 architecture with comprehensive Johan Bendz compatibility. Local Zigbee 3.0 operation."
   },
   "category": "lights",
   "permissions": [],
@@ -509,8 +503,7 @@
     },
     {
       "name": {
-        "en": "CO Detector Pro",
-        "fr": "Détecteur CO Pro"
+        "en": "CO Detector Pro"
       },
       "class": "sensor",
       "capabilities": [
@@ -555,8 +548,7 @@
     },
     {
       "name": {
-        "en": "Comprehensive Air Monitor",
-        "fr": "Moniteur d'air complet"
+        "en": "Comprehensive Air Monitor"
       },
       "class": "sensor",
       "capabilities": [
@@ -1018,9 +1010,7 @@
     },
     {
       "name": {
-        "en": "Door Lock",
-        "fr": "Capteur de Porte",
-        "de": "Door Sensor"
+        "en": "Door Lock"
       },
       "class": "lock",
       "capabilities": [
@@ -1094,9 +1084,7 @@
     },
     {
       "name": {
-        "en": "Door Window Sensor",
-        "fr": "Capteur de Porte",
-        "de": "Door Sensor"
+        "en": "Door Window Sensor"
       },
       "class": "sensor",
       "capabilities": [
@@ -1187,9 +1175,7 @@
     },
     {
       "name": {
-        "en": "Doorbell",
-        "fr": "Capteur de Porte",
-        "de": "Door Sensor"
+        "en": "Doorbell"
       },
       "class": "lock",
       "capabilities": [
@@ -1864,9 +1850,7 @@
     },
     {
       "name": {
-        "en": "Garage Door Controller",
-        "fr": "Capteur de Porte",
-        "de": "Door Sensor"
+        "en": "Garage Door Controller"
       },
       "class": "button",
       "capabilities": [
@@ -1925,9 +1909,7 @@
     },
     {
       "name": {
-        "en": "Garage Door Opener",
-        "fr": "Capteur de Porte",
-        "de": "Door Sensor"
+        "en": "Garage Door Opener"
       },
       "class": "lock",
       "capabilities": [
@@ -2412,9 +2394,7 @@
     },
     {
       "name": {
-        "en": "Mi-Light Controller",
-        "fr": "Contrôleur d'Éclairage",
-        "de": "Light Controller"
+        "en": "Mi-Light Controller"
       },
       "class": "light",
       "capabilities": [
@@ -2461,10 +2441,7 @@
     },
     {
       "name": {
-        "en": "Sonoff Mini",
-        "fr": "Sonoff Mini",
-        "de": "Sonoff Mini",
-        "nl": "Sonoff Mini"
+        "en": "Sonoff Mini"
       },
       "class": "light",
       "capabilities": [
@@ -2500,10 +2477,7 @@
         "learnmode": {
           "image": "/drivers/mini/assets/large.png",
           "instruction": {
-            "en": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
-            "fr": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
-            "de": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
-            "nl": "Press and hold the pairing button for 5 seconds until LED blinks rapidly."
+            "en": "Press and hold the pairing button for 5 seconds until LED blinks rapidly."
           }
         },
         "manufacturerIds": [
@@ -2605,9 +2579,7 @@
     },
     {
       "name": {
-        "en": "PIR Motion Sensor Battery",
-        "fr": "Détecteur de Mouvement",
-        "de": "Motion Sensor"
+        "en": "PIR Motion Sensor Battery"
       },
       "class": "socket",
       "capabilities": [
@@ -2655,9 +2627,7 @@
     },
     {
       "name": {
-        "en": "Motion Sensor Mmwave",
-        "fr": "Détecteur de Mouvement",
-        "de": "Motion Sensor"
+        "en": "Motion Sensor Mmwave"
       },
       "class": "sensor",
       "capabilities": [
@@ -2725,9 +2695,7 @@
     },
     {
       "name": {
-        "en": "Motion Sensor PIR AC",
-        "fr": "Détecteur de Mouvement",
-        "de": "Motion Sensor"
+        "en": "Motion Sensor PIR AC"
       },
       "class": "sensor",
       "capabilities": [
@@ -2757,10 +2725,7 @@
         "learnmode": {
           "image": "/drivers/motion_sensor_pir_ac/assets/large.png",
           "instruction": {
-            "en": "Turn the switch on/off 3 times quickly",
-            "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
-            "nl": "Schakel de schakelaar 3 keer snel aan/uit",
-            "de": "Schalten Sie den Schalter 3 Mal schnell ein/aus"
+            "en": "Turn the switch on/off 3 times quickly"
           }
         },
         "manufacturerName": "_TZ3000_ji4araar",
@@ -2836,9 +2801,7 @@
     },
     {
       "name": {
-        "en": "Motion Sensor PIR Battery",
-        "fr": "Détecteur de Mouvement",
-        "de": "Motion Sensor"
+        "en": "Motion Sensor PIR Battery"
       },
       "class": "sensor",
       "capabilities": [
@@ -2891,8 +2854,7 @@
     },
     {
       "name": {
-        "en": "PIR Motion Sensor",
-        "fr": "Capteur de Mouvement PIR HOBEIAN"
+        "en": "PIR Motion Sensor"
       },
       "class": "sensor",
       "capabilities": [
@@ -2937,8 +2899,7 @@
         "learnmode": {
           "image": "/drivers/motion_sensor_zigbee_204z/assets/large.png",
           "instruction": {
-            "en": "Press the pairing button until LED blinks rapidly",
-            "fr": "Appuyez sur le bouton d'appairage jusqu'à ce que la LED clignote rapidement"
+            "en": "Press the pairing button until LED blinks rapidly"
           }
         }
       },
@@ -3125,9 +3086,7 @@
     },
     {
       "name": {
-        "en": "Outdoor Light Controller",
-        "fr": "Contrôleur d'Éclairage",
-        "de": "Light Controller"
+        "en": "Outdoor Light Controller"
       },
       "class": "light",
       "capabilities": [
@@ -3385,9 +3344,7 @@
     },
     {
       "name": {
-        "en": "PIR Motion Sensor Advanced",
-        "fr": "Détecteur de Mouvement",
-        "de": "Motion Sensor"
+        "en": "PIR Motion Sensor Advanced"
       },
       "class": "sensor",
       "capabilities": [
@@ -3927,9 +3884,7 @@
     },
     {
       "name": {
-        "en": "Radar Motion Sensor Advanced",
-        "fr": "Détecteur de Mouvement",
-        "de": "Motion Sensor"
+        "en": "Radar Motion Sensor Advanced"
       },
       "class": "sensor",
       "capabilities": [
@@ -3978,8 +3933,7 @@
     },
     {
       "name": {
-        "en": "mmWave Radar Motion Sensor",
-        "fr": "Capteur Mouvement Radar mmWave"
+        "en": "mmWave Radar Motion Sensor"
       },
       "class": "sensor",
       "capabilities": [
@@ -4031,8 +3985,7 @@
         "learnmode": {
           "image": "/drivers/radar_motion_sensor_mmwave/assets/large.png",
           "instruction": {
-            "en": "Press and hold pairing button for 5 seconds until LED blinks rapidly",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
+            "en": "Press and hold pairing button for 5 seconds until LED blinks rapidly"
           }
         }
       },
@@ -4172,10 +4125,7 @@
     },
     {
       "name": {
-        "en": "Sonoff Basic",
-        "fr": "Sonoff Basic",
-        "de": "Sonoff Basic",
-        "nl": "Sonoff Basic"
+        "en": "Sonoff Basic"
       },
       "class": "socket",
       "capabilities": [
@@ -4215,10 +4165,7 @@
         "learnmode": {
           "image": "/drivers/relay_switch_1gang/assets/large.png",
           "instruction": {
-            "en": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
-            "fr": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
-            "de": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
-            "nl": "Press and hold the pairing button for 5 seconds until LED blinks rapidly."
+            "en": "Press and hold the pairing button for 5 seconds until LED blinks rapidly."
           }
         },
         "manufacturerIds": [
@@ -4324,8 +4271,7 @@
     },
     {
       "name": {
-        "en": "RGB LED Controller",
-        "fr": "Contrôleur LED RGB"
+        "en": "RGB LED Controller"
       },
       "class": "light",
       "capabilities": [
@@ -4458,8 +4404,7 @@
     },
     {
       "name": {
-        "en": "Roller Shutter Controller",
-        "fr": "Contrôleur de Volet Roulant"
+        "en": "Roller Shutter Controller"
       },
       "class": "sensor",
       "capabilities": [
@@ -4513,8 +4458,7 @@
         "learnmode": {
           "image": "/drivers/roller_shutter_controller/assets/large.png",
           "instruction": {
-            "en": "Press and hold the pairing button until the LED blinks",
-            "fr": "Appuyez et maintenez le bouton d'appairage jusqu'à ce que la LED clignote"
+            "en": "Press and hold the pairing button until the LED blinks"
           }
         }
       },
@@ -4667,8 +4611,7 @@
     },
     {
       "name": {
-        "en": "Scene Controller",
-        "fr": "Contrôleur de scènes"
+        "en": "Scene Controller"
       },
       "class": "other",
       "capabilities": [],
@@ -4695,8 +4638,7 @@
         },
         "learnmode": {
           "instruction": {
-            "en": "Press any button to pair",
-            "fr": "Appuyez sur un bouton pour associer"
+            "en": "Press any button to pair"
           }
         }
       },
@@ -4740,10 +4682,7 @@
         "learnmode": {
           "image": "/drivers/scene_controller_2button/assets/large.png",
           "instruction": {
-            "en": "Press and hold the button for 5 seconds until LED flashes",
-            "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote",
-            "nl": "Houd de knop 5 seconden ingedrukt totdat de LED knippert",
-            "de": "Halten Sie die Taste 5 Sekunden lang gedrückt, bis die LED blinkt"
+            "en": "Press and hold the button for 5 seconds until LED flashes"
           }
         },
         "manufacturerName": "_TZ3000_ji4araar",
@@ -4831,10 +4770,7 @@
         "learnmode": {
           "image": "/drivers/scene_controller_4button/assets/large.png",
           "instruction": {
-            "en": "Press and hold the button for 5 seconds until LED flashes",
-            "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote",
-            "nl": "Houd de knop 5 seconden ingedrukt totdat de LED knippert",
-            "de": "Halten Sie die Taste 5 Sekunden lang gedrückt, bis die LED blinkt"
+            "en": "Press and hold the button for 5 seconds until LED flashes"
           }
         },
         "manufacturerName": "_TZ3000_ji4araar",
@@ -4924,10 +4860,7 @@
         "learnmode": {
           "image": "/drivers/scene_controller_6button/assets/large.png",
           "instruction": {
-            "en": "Press and hold the button for 5 seconds until LED flashes",
-            "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote",
-            "nl": "Houd de knop 5 seconden ingedrukt totdat de LED knippert",
-            "de": "Halten Sie die Taste 5 Sekunden lang gedrückt, bis die LED blinkt"
+            "en": "Press and hold the button for 5 seconds until LED flashes"
           }
         },
         "manufacturerName": "_TZ3000_ji4araar",
@@ -5019,10 +4952,7 @@
         "learnmode": {
           "image": "/drivers/scene_controller_8button/assets/large.png",
           "instruction": {
-            "en": "Press and hold the button for 5 seconds until LED flashes",
-            "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote",
-            "nl": "Houd de knop 5 seconden ingedrukt totdat de LED knippert",
-            "de": "Halten Sie die Taste 5 Sekunden lang gedrückt, bis die LED blinkt"
+            "en": "Press and hold the button for 5 seconds until LED flashes"
           }
         },
         "manufacturerName": "_TZ3000_ji4araar",
@@ -5256,9 +5186,7 @@
     },
     {
       "name": {
-        "en": "Smart Bulb",
-        "fr": "Interrupteur Intelligent",
-        "de": "Smart Switch"
+        "en": "Smart Bulb"
       },
       "class": "light",
       "capabilities": [
@@ -5334,9 +5262,7 @@
     },
     {
       "name": {
-        "en": "Smart Bulb Tunable",
-        "fr": "Interrupteur Intelligent",
-        "de": "Smart Switch"
+        "en": "Smart Bulb Tunable"
       },
       "class": "light",
       "capabilities": [
@@ -5414,9 +5340,7 @@
     },
     {
       "name": {
-        "en": "Smart Bulb White",
-        "fr": "Interrupteur Intelligent",
-        "de": "Smart Switch"
+        "en": "Smart Bulb White"
       },
       "class": "light",
       "capabilities": [
@@ -5494,9 +5418,7 @@
     },
     {
       "name": {
-        "en": "Smart Curtain Motor",
-        "fr": "Interrupteur Intelligent",
-        "de": "Smart Switch"
+        "en": "Smart Curtain Motor"
       },
       "class": "sensor",
       "capabilities": [
@@ -5582,8 +5504,7 @@
     },
     {
       "name": {
-        "en": "Smart Dimmer Module 1 Gang",
-        "fr": "Module Variateur Intelligent 1 Voie"
+        "en": "Smart Dimmer Module 1 Gang"
       },
       "class": "light",
       "capabilities": [
@@ -5630,8 +5551,7 @@
         "learnmode": {
           "image": "/drivers/smart_dimmer_module_1gang/assets/large.png",
           "instruction": {
-            "en": "Press and hold the pairing button until the LED blinks",
-            "fr": "Appuyez et maintenez le bouton d'appairage jusqu'à ce que la LED clignote"
+            "en": "Press and hold the pairing button until the LED blinks"
           }
         }
       },
@@ -5647,9 +5567,7 @@
     },
     {
       "name": {
-        "en": "Smart Doorbell",
-        "fr": "Interrupteur Intelligent",
-        "de": "Smart Switch"
+        "en": "Smart Doorbell"
       },
       "class": "lock",
       "capabilities": [
@@ -5733,9 +5651,7 @@
     },
     {
       "name": {
-        "en": "Smart Garden Sprinkler",
-        "fr": "Interrupteur Intelligent",
-        "de": "Smart Switch"
+        "en": "Smart Garden Sprinkler"
       },
       "class": "sensor",
       "capabilities": [
@@ -5822,9 +5738,7 @@
     },
     {
       "name": {
-        "en": "Smart Irrigation Controller",
-        "fr": "Interrupteur Intelligent",
-        "de": "Smart Switch"
+        "en": "Smart Irrigation Controller"
       },
       "class": "other",
       "capabilities": [
@@ -5873,9 +5787,7 @@
     },
     {
       "name": {
-        "en": "Smart Lock",
-        "fr": "Interrupteur Intelligent",
-        "de": "Smart Switch"
+        "en": "Smart Lock"
       },
       "class": "sensor",
       "capabilities": [
@@ -6023,9 +5935,7 @@
     },
     {
       "name": {
-        "en": "Smart Plug",
-        "fr": "Interrupteur Intelligent",
-        "de": "Smart Switch"
+        "en": "Smart Plug"
       },
       "class": "socket",
       "capabilities": [
@@ -6218,9 +6128,7 @@
     },
     {
       "name": {
-        "en": "Smart Radiator Valve",
-        "fr": "Interrupteur Intelligent",
-        "de": "Smart Switch"
+        "en": "Smart Radiator Valve"
       },
       "class": "sensor",
       "capabilities": [
@@ -6291,8 +6199,7 @@
     },
     {
       "name": {
-        "en": "Smart Smoke Detector Advanced",
-        "fr": "Détecteur de Fumée Intelligent Avancé"
+        "en": "Smart Smoke Detector Advanced"
       },
       "class": "sensor",
       "capabilities": [
@@ -6337,8 +6244,7 @@
         "learnmode": {
           "image": "/drivers/smart_smoke_detector_advanced/assets/large.png",
           "instruction": {
-            "en": "Press and hold the pairing button until the LED blinks",
-            "fr": "Appuyez et maintenez le bouton d'appairage jusqu'à ce que la LED clignote"
+            "en": "Press and hold the pairing button until the LED blinks"
           }
         }
       },
@@ -6354,9 +6260,7 @@
     },
     {
       "name": {
-        "en": "Smart Spot",
-        "fr": "Interrupteur Intelligent",
-        "de": "Smart Switch"
+        "en": "Smart Spot"
       },
       "class": "light",
       "capabilities": [
@@ -6494,10 +6398,7 @@
         "learnmode": {
           "image": "/drivers/smart_switch_1gang_hybrid/assets/large.png",
           "instruction": {
-            "en": "Turn the switch on/off 3 times quickly",
-            "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
-            "nl": "Schakel de schakelaar 3 keer snel aan/uit",
-            "de": "Schalten Sie den Schalter 3 Mal schnell ein/aus"
+            "en": "Turn the switch on/off 3 times quickly"
           }
         },
         "manufacturerName": "_TZ3000_ji4araar",
@@ -6524,9 +6425,7 @@
       },
       "settings": [],
       "name": {
-        "en": "Smart Switch 1gang Hybrid",
-        "fr": "Interrupteur Intelligent",
-        "de": "Smart Switch"
+        "en": "Smart Switch 1gang Hybrid"
       },
       "platforms": [
         "local"
@@ -6638,10 +6537,7 @@
         "learnmode": {
           "image": "/drivers/smart_switch_2gang_hybrid/assets/large.png",
           "instruction": {
-            "en": "Turn the switch on/off 3 times quickly",
-            "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
-            "nl": "Schakel de schakelaar 3 keer snel aan/uit",
-            "de": "Schalten Sie den Schalter 3 Mal schnell ein/aus"
+            "en": "Turn the switch on/off 3 times quickly"
           }
         },
         "manufacturerName": "_TZ3000_ji4araar",
@@ -6668,9 +6564,7 @@
       },
       "settings": [],
       "name": {
-        "en": "Smart Switch 2gang Hybrid",
-        "fr": "Interrupteur Intelligent",
-        "de": "Smart Switch"
+        "en": "Smart Switch 2gang Hybrid"
       },
       "platforms": [
         "local"
@@ -6825,10 +6719,7 @@
         "learnmode": {
           "image": "/drivers/smart_switch_3gang_hybrid/assets/large.png",
           "instruction": {
-            "en": "Turn the switch on/off 3 times quickly",
-            "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
-            "nl": "Schakel de schakelaar 3 keer snel aan/uit",
-            "de": "Schalten Sie den Schalter 3 Mal schnell ein/aus"
+            "en": "Turn the switch on/off 3 times quickly"
           }
         },
         "manufacturerName": "_TZ3000_ji4araar",
@@ -6855,9 +6746,7 @@
       },
       "settings": [],
       "name": {
-        "en": "Smart Switch 3gang Hybrid",
-        "fr": "Interrupteur Intelligent",
-        "de": "Smart Switch"
+        "en": "Smart Switch 3gang Hybrid"
       },
       "platforms": [
         "local"
@@ -6919,10 +6808,7 @@
         "learnmode": {
           "image": "/drivers/smart_switch_4gang_hybrid/assets/large.png",
           "instruction": {
-            "en": "Turn the switch on/off 3 times quickly",
-            "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
-            "nl": "Schakel de schakelaar 3 keer snel aan/uit",
-            "de": "Schalten Sie den Schalter 3 Mal schnell ein/aus"
+            "en": "Turn the switch on/off 3 times quickly"
           }
         },
         "manufacturerName": "_TZ3000_ji4araar",
@@ -6949,9 +6835,7 @@
       },
       "settings": [],
       "name": {
-        "en": "Smart Switch 4gang Hybrid",
-        "fr": "Interrupteur Intelligent",
-        "de": "Smart Switch"
+        "en": "Smart Switch 4gang Hybrid"
       },
       "platforms": [
         "local"
@@ -6965,8 +6849,7 @@
     },
     {
       "name": {
-        "en": "Smart Thermostat",
-        "fr": "Thermostat intelligent"
+        "en": "Smart Thermostat"
       },
       "class": "sensor",
       "capabilities": [
@@ -7051,8 +6934,7 @@
     },
     {
       "name": {
-        "en": "Smart Valve Controller",
-        "fr": "Contrôleur de valve intelligent"
+        "en": "Smart Valve Controller"
       },
       "class": "other",
       "capabilities": [
@@ -7095,9 +6977,7 @@
     },
     {
       "name": {
-        "en": "Smart Water Valve",
-        "fr": "Interrupteur Intelligent",
-        "de": "Smart Switch"
+        "en": "Smart Water Valve"
       },
       "class": "sensor",
       "capabilities": [
@@ -7266,9 +7146,7 @@
     },
     {
       "name": {
-        "en": "Advanced Smoke Detector with Temperature & Humidity",
-        "fr": "Capteur de Température",
-        "de": "Temperature Sensor"
+        "en": "Advanced Smoke Detector with Temperature & Humidity"
       },
       "class": "sensor",
       "capabilities": [
@@ -7339,9 +7217,7 @@
     },
     {
       "name": {
-        "en": "Smoke Temperature Humidity Sensor",
-        "fr": "Capteur de Température",
-        "de": "Temperature Sensor"
+        "en": "Smoke Temperature Humidity Sensor"
       },
       "class": "sensor",
       "capabilities": [
@@ -7498,8 +7374,7 @@
     },
     {
       "name": {
-        "en": "Soil Moisture & Temperature Sensor",
-        "fr": "Capteur d'Humidité du Sol et Température"
+        "en": "Soil Moisture & Temperature Sensor"
       },
       "class": "sensor",
       "capabilities": [
@@ -7560,8 +7435,7 @@
         "learnmode": {
           "image": "/drivers/soil_moisture_temperature_sensor/assets/large.png",
           "instruction": {
-            "en": "Press and hold the pairing button until the LED blinks",
-            "fr": "Appuyez et maintenez le bouton d'appairage jusqu'à ce que la LED clignote"
+            "en": "Press and hold the pairing button until the LED blinks"
           }
         }
       },
@@ -7577,9 +7451,7 @@
     },
     {
       "name": {
-        "en": "Soil Tester Temperature Humidity",
-        "fr": "Capteur de Température",
-        "de": "Temperature Sensor"
+        "en": "Soil Tester Temperature Humidity"
       },
       "class": "sensor",
       "capabilities": [
@@ -8302,9 +8174,7 @@
     },
     {
       "name": {
-        "en": "Temperature Humidity Sensor Advanced",
-        "fr": "Capteur de Température",
-        "de": "Temperature Sensor"
+        "en": "Temperature Humidity Sensor Advanced"
       },
       "class": "sensor",
       "capabilities": [
@@ -8375,8 +8245,7 @@
     },
     {
       "name": {
-        "en": "Temperature Humidity Sensor",
-        "fr": "Capteur Température Humidité eWeLink"
+        "en": "Temperature Humidity Sensor"
       },
       "class": "sensor",
       "capabilities": [
@@ -8416,8 +8285,7 @@
         "learnmode": {
           "image": "/drivers/temp_humid_sensor_leak_detector/assets/large.png",
           "instruction": {
-            "en": "Press and hold the pairing button for 3 seconds",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 3 secondes"
+            "en": "Press and hold the pairing button for 3 seconds"
           }
         }
       },
@@ -8451,9 +8319,7 @@
     },
     {
       "name": {
-        "en": "Temperature Humidity Sensor v1w2k9dd",
-        "fr": "Capteur de Température",
-        "de": "Temperature Sensor"
+        "en": "Temperature Humidity Sensor v1w2k9dd"
       },
       "class": "sensor",
       "capabilities": [
@@ -8575,9 +8441,7 @@
     },
     {
       "name": {
-        "en": "Temperature Controller",
-        "fr": "Capteur de Température",
-        "de": "Temperature Sensor"
+        "en": "Temperature Controller"
       },
       "class": "sensor",
       "capabilities": [
@@ -8668,9 +8532,7 @@
     },
     {
       "name": {
-        "en": "Temperature Humidity Sensor",
-        "fr": "Capteur de Température",
-        "de": "Temperature Sensor"
+        "en": "Temperature Humidity Sensor"
       },
       "class": "sensor",
       "capabilities": [
@@ -8771,9 +8633,7 @@
     },
     {
       "name": {
-        "en": "Temperature Sensor",
-        "fr": "Capteur de Température",
-        "de": "Temperature Sensor"
+        "en": "Temperature Sensor"
       },
       "class": "sensor",
       "capabilities": [
@@ -8868,9 +8728,7 @@
     },
     {
       "name": {
-        "en": "Temperature Sensor THS317-ET-TU",
-        "fr": "Capteur de Température",
-        "de": "Temperature Sensor"
+        "en": "Temperature Sensor THS317-ET-TU"
       },
       "class": "sensor",
       "capabilities": [
@@ -9990,10 +9848,7 @@
         "learnmode": {
           "image": "/drivers/wall_switch_1gang_ac/assets/large.png",
           "instruction": {
-            "en": "Turn the switch on/off 3 times quickly",
-            "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
-            "nl": "Schakel de schakelaar 3 keer snel aan/uit",
-            "de": "Schalten Sie den Schalter 3 Mal schnell ein/aus"
+            "en": "Turn the switch on/off 3 times quickly"
           }
         },
         "manufacturerName": "_TZ3000_ji4araar",
@@ -10062,10 +9917,7 @@
         "learnmode": {
           "image": "/drivers/wall_switch_1gang_dc/assets/large.png",
           "instruction": {
-            "en": "Turn the switch on/off 3 times quickly",
-            "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
-            "nl": "Schakel de schakelaar 3 keer snel aan/uit",
-            "de": "Schalten Sie den Schalter 3 Mal schnell ein/aus"
+            "en": "Turn the switch on/off 3 times quickly"
           }
         },
         "manufacturerName": "_TZ3000_ji4araar",
@@ -10145,10 +9997,7 @@
         "learnmode": {
           "image": "/drivers/wall_switch_2gang_ac/assets/large.png",
           "instruction": {
-            "en": "Turn the switch on/off 3 times quickly",
-            "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
-            "nl": "Schakel de schakelaar 3 keer snel aan/uit",
-            "de": "Schalten Sie den Schalter 3 Mal schnell ein/aus"
+            "en": "Turn the switch on/off 3 times quickly"
           }
         },
         "manufacturerName": "_TZ3000_ji4araar",
@@ -10241,10 +10090,7 @@
         "learnmode": {
           "image": "/drivers/wall_switch_2gang_dc/assets/large.png",
           "instruction": {
-            "en": "Turn the switch on/off 3 times quickly",
-            "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
-            "nl": "Schakel de schakelaar 3 keer snel aan/uit",
-            "de": "Schalten Sie den Schalter 3 Mal schnell ein/aus"
+            "en": "Turn the switch on/off 3 times quickly"
           }
         },
         "manufacturerName": "_TZ3000_ji4araar",
@@ -10350,10 +10196,7 @@
         "learnmode": {
           "image": "/drivers/wall_switch_3gang_ac/assets/large.png",
           "instruction": {
-            "en": "Turn the switch on/off 3 times quickly",
-            "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
-            "nl": "Schakel de schakelaar 3 keer snel aan/uit",
-            "de": "Schalten Sie den Schalter 3 Mal schnell ein/aus"
+            "en": "Turn the switch on/off 3 times quickly"
           }
         },
         "manufacturerName": "_TZ3000_ji4araar",
@@ -10380,10 +10223,7 @@
       },
       "settings": [],
       "name": {
-        "en": "Wall Switch 3-Gang AC",
-        "fr": "Interrupteur Mural 3-Gang AC",
-        "nl": "Wandschakelaar 3-Gang AC",
-        "de": "Wandschalter 3-Gang AC"
+        "en": "Wall Switch 3-Gang AC"
       },
       "platforms": [
         "local"
@@ -10468,10 +10308,7 @@
         "learnmode": {
           "image": "/drivers/wall_switch_3gang_dc/assets/large.png",
           "instruction": {
-            "en": "Turn the switch on/off 3 times quickly",
-            "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
-            "nl": "Schakel de schakelaar 3 keer snel aan/uit",
-            "de": "Schalten Sie den Schalter 3 Mal schnell ein/aus"
+            "en": "Turn the switch on/off 3 times quickly"
           }
         },
         "manufacturerName": "_TZ3000_ji4araar",
@@ -10605,10 +10442,7 @@
         "learnmode": {
           "image": "/drivers/wall_switch_4gang_ac/assets/large.png",
           "instruction": {
-            "en": "Turn the switch on/off 3 times quickly",
-            "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
-            "nl": "Schakel de schakelaar 3 keer snel aan/uit",
-            "de": "Schalten Sie den Schalter 3 Mal schnell ein/aus"
+            "en": "Turn the switch on/off 3 times quickly"
           }
         },
         "manufacturerName": "_TZ3000_ji4araar",
@@ -10723,10 +10557,7 @@
         "learnmode": {
           "image": "/drivers/wall_switch_4gang_dc/assets/large.png",
           "instruction": {
-            "en": "Turn the switch on/off 3 times quickly",
-            "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
-            "nl": "Schakel de schakelaar 3 keer snel aan/uit",
-            "de": "Schalten Sie den Schalter 3 Mal schnell ein/aus"
+            "en": "Turn the switch on/off 3 times quickly"
           }
         },
         "manufacturerName": "_TZ3000_ji4araar",
@@ -10855,10 +10686,7 @@
         "learnmode": {
           "image": "/drivers/wall_switch_5gang_ac/assets/large.png",
           "instruction": {
-            "en": "Turn the switch on/off 3 times quickly",
-            "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
-            "nl": "Schakel de schakelaar 3 keer snel aan/uit",
-            "de": "Schalten Sie den Schalter 3 Mal schnell ein/aus"
+            "en": "Turn the switch on/off 3 times quickly"
           }
         },
         "manufacturerName": "_TZ3000_ji4araar",
@@ -11002,10 +10830,7 @@
         "learnmode": {
           "image": "/drivers/wall_switch_6gang_ac/assets/large.png",
           "instruction": {
-            "en": "Turn the switch on/off 3 times quickly",
-            "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
-            "nl": "Schakel de schakelaar 3 keer snel aan/uit",
-            "de": "Schalten Sie den Schalter 3 Mal schnell ein/aus"
+            "en": "Turn the switch on/off 3 times quickly"
           }
         },
         "manufacturerName": "_TZ3000_ji4araar",
@@ -11046,8 +10871,7 @@
     },
     {
       "name": {
-        "en": "Water Leak Detector Advanced",
-        "fr": "Détecteur de Fuite d'Eau Avancé"
+        "en": "Water Leak Detector Advanced"
       },
       "class": "sensor",
       "capabilities": [
@@ -11083,8 +10907,7 @@
         "learnmode": {
           "image": "/drivers/water_leak_detector_advanced/assets/large.png",
           "instruction": {
-            "en": "Press and hold the pairing button for 5 seconds",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes"
+            "en": "Press and hold the pairing button for 5 seconds"
           }
         }
       },
@@ -11320,9 +11143,7 @@
     },
     {
       "name": {
-        "en": "Water Valve Smart",
-        "fr": "Interrupteur Intelligent",
-        "de": "Smart Switch"
+        "en": "Water Valve Smart"
       },
       "class": "other",
       "capabilities": [
@@ -11446,10 +11267,7 @@
     },
     {
       "name": {
-        "en": "Aqara Button",
-        "fr": "Aqara Button",
-        "de": "Aqara Button",
-        "nl": "Aqara Button"
+        "en": "Aqara Button"
       },
       "class": "button",
       "capabilities": [
@@ -11490,10 +11308,7 @@
         "learnmode": {
           "image": "/drivers/wireless_switch_1gang_cr2032/assets/large.png",
           "instruction": {
-            "en": "Press and hold the reset button for 3 seconds until the LED starts blinking.",
-            "fr": "Press and hold the reset button for 3 seconds until the LED starts blinking.",
-            "de": "Press and hold the reset button for 3 seconds until the LED starts blinking.",
-            "nl": "Press and hold the reset button for 3 seconds until the LED starts blinking."
+            "en": "Press and hold the reset button for 3 seconds until the LED starts blinking."
           }
         },
         "manufacturerIds": [
@@ -11570,10 +11385,7 @@
         "learnmode": {
           "image": "/drivers/wireless_switch_2gang_cr2032/assets/large.png",
           "instruction": {
-            "en": "Press and hold the button until the LED flashes",
-            "fr": "Appuyez et maintenez le bouton jusqu'à ce que la LED clignote",
-            "nl": "Houd de knop ingedrukt totdat de LED knippert",
-            "de": "Halten Sie die Taste gedrückt, bis die LED blinkt"
+            "en": "Press and hold the button until the LED flashes"
           }
         },
         "manufacturerName": "_TZ3000_ji4araar",
@@ -11681,10 +11493,7 @@
         "learnmode": {
           "image": "/drivers/wireless_switch_3gang_cr2032/assets/large.png",
           "instruction": {
-            "en": "Press and hold the button until the LED flashes",
-            "fr": "Appuyez et maintenez le bouton jusqu'à ce que la LED clignote",
-            "nl": "Houd de knop ingedrukt totdat de LED knippert",
-            "de": "Halten Sie die Taste gedrückt, bis die LED blinkt"
+            "en": "Press and hold the button until the LED flashes"
           }
         },
         "manufacturerName": "_TZ3000_ji4araar",
@@ -11779,10 +11588,7 @@
         "learnmode": {
           "image": "/drivers/wireless_switch_4gang_cr2032/assets/large.png",
           "instruction": {
-            "en": "Press and hold the button until the LED flashes",
-            "fr": "Appuyez et maintenez le bouton jusqu'à ce que la LED clignote",
-            "nl": "Houd de knop ingedrukt totdat de LED knippert",
-            "de": "Halten Sie die Taste gedrückt, bis die LED blinkt"
+            "en": "Press and hold the button until the LED flashes"
           }
         },
         "manufacturerName": "_TZ3000_ji4araar",
@@ -11823,8 +11629,7 @@
     },
     {
       "name": {
-        "en": "Wireless Switch 4-Gang (CR2450)",
-        "fr": "Interrupteur Sans Fil 4-Gang (CR2450)"
+        "en": "Wireless Switch 4-Gang (CR2450)"
       },
       "class": "button",
       "capabilities": [
@@ -11891,8 +11696,7 @@
         "learnmode": {
           "image": "/drivers/wireless_switch_4gang_cr2450/assets/large.png",
           "instruction": {
-            "en": "Press any button 3 times rapidly",
-            "fr": "Appuyez sur n'importe quel bouton 3 fois rapidement"
+            "en": "Press any button 3 times rapidly"
           }
         }
       },
@@ -11945,10 +11749,7 @@
         "learnmode": {
           "image": "/drivers/wireless_switch_5gang_cr2032/assets/large.png",
           "instruction": {
-            "en": "Press and hold the button for 5 seconds until LED flashes",
-            "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote",
-            "nl": "Houd de knop 5 seconden ingedrukt totdat de LED knippert",
-            "de": "Halten Sie die Taste 5 Sekunden lang gedrückt, bis die LED blinkt"
+            "en": "Press and hold the button for 5 seconds until LED flashes"
           }
         },
         "manufacturerName": "_TZ3000_ji4araar",
@@ -12040,10 +11841,7 @@
         "learnmode": {
           "image": "/drivers/wireless_switch_6gang_cr2032/assets/large.png",
           "instruction": {
-            "en": "Press and hold the button for 5 seconds until LED flashes",
-            "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote",
-            "nl": "Houd de knop 5 seconden ingedrukt totdat de LED knippert",
-            "de": "Halten Sie die Taste 5 Sekunden lang gedrückt, bis die LED blinkt"
+            "en": "Press and hold the button for 5 seconds until LED flashes"
           }
         },
         "manufacturerName": "_TZ3000_ji4araar",
@@ -12097,10 +11895,7 @@
     },
     {
       "name": {
-        "en": "Sonoff Zbbridge",
-        "fr": "Sonoff Zbbridge",
-        "de": "Sonoff Zbbridge",
-        "nl": "Sonoff Zbbridge"
+        "en": "Sonoff Zbbridge"
       },
       "class": "other",
       "capabilities": [
@@ -12131,10 +11926,7 @@
         "learnmode": {
           "image": "/drivers/zbbridge/assets/large.png",
           "instruction": {
-            "en": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
-            "fr": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
-            "de": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
-            "nl": "Press and hold the pairing button for 5 seconds until LED blinks rapidly."
+            "en": "Press and hold the pairing button for 5 seconds until LED blinks rapidly."
           }
         },
         "manufacturerIds": [
