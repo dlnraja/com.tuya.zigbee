@@ -1,96 +1,96 @@
 {
-  "generatedAt": "2025-10-03T11:15:45.973Z",
-  "ok": true,
+  "generatedAt": "2025-10-03T14:25:08.147Z",
+  "ok": false,
   "steps": [
     {
       "name": "External Sources Fetcher",
       "cmd": "node ultimate_system/scripts/external_sources_fetcher.js",
       "ok": true,
-      "durationMs": 493,
+      "durationMs": 1535,
       "error": null
     },
     {
       "name": "Scrape forum (v2)",
       "cmd": "node ultimate_system/scripts/forum_scraper_v2.js",
       "ok": true,
-      "durationMs": 2660,
+      "durationMs": 4235,
       "error": null
     },
     {
       "name": "Deep web scraper (mini)",
       "cmd": "node ultimate_system/scripts/deep_web_scraper_mini.js",
       "ok": true,
-      "durationMs": 997,
+      "durationMs": 627,
       "error": null
     },
     {
       "name": "Data Enricher",
       "cmd": "node ultimate_system/orchestration/modules/Data_Enricher.js",
       "ok": true,
-      "durationMs": 285,
+      "durationMs": 768,
       "error": null
     },
     {
       "name": "Manufacturer Equivalences & Categories",
       "cmd": "node ultimate_system/scripts/enrich_manufacturer_equivalences_and_categories.js",
       "ok": true,
-      "durationMs": 374,
+      "durationMs": 1320,
       "error": null
     },
     {
       "name": "Driver Classifier & Corrector",
       "cmd": "node ultimate_system/orchestration/modules/Driver_Classifier_Corrector.js",
-      "ok": true,
-      "durationMs": 1119,
-      "error": null
+      "ok": false,
+      "durationMs": 31817,
+      "error": "Command failed: node ultimate_system/orchestration/modules/Driver_Classifier_Corrector.js"
     },
     {
       "name": "SDK3 Quick Autofix",
       "cmd": "node ultimate_system/scripts/sdk3_quick_autofix.js",
       "ok": true,
-      "durationMs": 753,
+      "durationMs": 2193,
       "error": null
     },
     {
       "name": "Fix all driver assets",
       "cmd": "node ultimate_system/scripts/fix_all_driver_assets.js",
       "ok": true,
-      "durationMs": 80212,
+      "durationMs": 125390,
       "error": null
     },
     {
       "name": "Correspondence Reporter",
       "cmd": "node ultimate_system/scripts/correspondence_reporter.js",
       "ok": true,
-      "durationMs": 542,
+      "durationMs": 376,
       "error": null
     },
     {
       "name": "Apply Correspondence Proposals",
       "cmd": "node ultimate_system/scripts/apply_correspondence_proposals.js",
       "ok": true,
-      "durationMs": 1686,
+      "durationMs": 778,
       "error": null
     },
     {
       "name": "Recursive Validate & Fix",
       "cmd": "node ultimate_system/scripts/recursive_validate_fix.js",
       "ok": true,
-      "durationMs": 66907,
+      "durationMs": 97753,
       "error": null
     },
     {
       "name": "Purge .homeybuild",
       "cmd": "powershell -Command \"Remove-Item .homeybuild -Recurse -Force -ErrorAction SilentlyContinue\"",
       "ok": true,
-      "durationMs": 5560,
+      "durationMs": 6499,
       "error": null
     },
     {
       "name": "Homey validate (publish)",
       "cmd": "homey app validate --level publish",
       "ok": true,
-      "durationMs": 51828,
+      "durationMs": 80191,
       "error": null
     }
   ]

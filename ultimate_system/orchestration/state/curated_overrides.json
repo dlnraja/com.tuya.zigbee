@@ -1,0 +1,20 @@
+{
+  "motion_sensor_pir_battery": {
+    "allowProductIdPrefixes": ["TS0202", "TS0901"],
+    "class": "sensor",
+    "bindings": [1, 1280],
+    "batteries": ["CR2450"]
+  },
+  "scene_controller_4button": {
+    "allowProductIdPrefixes": ["TS004"],
+    "class": "button"
+  },
+  "energy_monitoring_plug": {
+    "allowProductIdPrefixes": ["TS010", "TS011"],
+    "class": "socket"
+  },
+  "ceiling_light_rgb": {
+    "allowProductIdPrefixes": ["TS05", "TS110"],
+    "class": "light"
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-03T11:14:48.537Z",
+  "generatedAt": "2025-10-03T14:23:41.413Z",
   "success": true,
   "attempts": [
     {
@@ -8,7 +8,8 @@
         {
           "name": "purge_cache",
           "result": {
-            "ok": true
+            "ok": false,
+            "error": "Command failed: powershell -Command \"Remove-Item .homeybuild -Recurse -Force -ErrorAction SilentlyContinue\""
           }
         },
         {

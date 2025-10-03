@@ -1,12 +1,12 @@
 {
   "2.1.6": {
-    "en": "omey appuis"
+    "en": "Store listing and English texts updated; initial v2.x housekeeping."
   },
   "2.1.7": {
-    "en": "update"
+    "en": "Stability and tooling improvements: orchestrator refinements, asset normalization, SDK3 quick autofix, validation tweaks."
   },
   "2.1.8": {
-    "en": "upttt"
+    "en": "Driver enrichment and classification: merge-not-replace data, TS-based productId filtering, manufacturer list pruning, unbranded device enrichment, English changelog fixes."
   },
   "2.0.0": {
     "en": "v2.0.0 - Major update with 164 drivers"
@@ -15,9 +15,9 @@
     "en": "Unbranded reclass, images 75x75, manufacturer/product alignment, SDK3 fixes"
   },
   "2.0.2": {
-    "en": "okok"
+    "en": "Minor fixes and performance improvements."
   },
   "2.0.3": {
-    "en": "yyyyyyyyyyyyyyy"
+    "en": "Enrichment precision and icon fixes; product/manufacturer alignment tweaks."
   }
 }
