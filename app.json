@@ -161,7 +161,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "MOES",
       "energy": {
@@ -206,7 +206,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "Lonsonho",
       "energy": {
@@ -257,7 +257,7 @@
       "capabilitiesOptions": {},
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "BSEED",
       "energy": {
@@ -308,7 +308,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "MOES",
       "energy": {
@@ -396,7 +396,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "Tuya",
       "energy": {
@@ -445,7 +445,7 @@
       "capabilitiesOptions": {},
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "Tuya",
       "energy": {
@@ -494,7 +494,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "Tuya",
       "energy": {
@@ -546,7 +546,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -587,7 +587,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "Tuya",
       "energy": {
@@ -642,7 +642,7 @@
         "productIds": []
       },
       "images": {
-        "large": "./assets/images/large.png",
+        "large": "./assets/large.png",
         "small": "./assets/small.png"
       },
       "pair": [
@@ -702,7 +702,7 @@
       ],
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -728,7 +728,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/images/large.png",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Press and hold setup button for 3 seconds"
           }
@@ -783,7 +783,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "Tuya",
@@ -853,7 +853,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -921,7 +921,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "MOES",
@@ -1341,7 +1341,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "Tuya",
       "energy": {
@@ -1427,7 +1427,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "Lonsonho",
       "platforms": [
@@ -1508,7 +1508,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
@@ -1902,7 +1902,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "MOES",
       "platforms": [
@@ -2105,7 +2105,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "BSEED",
       "platforms": [
@@ -2146,8 +2146,8 @@
         "productIds": []
       },
       "images": {
-        "small": "/drivers/hvac_controller/assets/small.png",
-        "large": "/drivers/hvac_controller/assets/large.png",
+        "small": "./assets/small.png",
+        "large": "./assets/large.png",
         "xlarge": "/drivers/hvac_controller/assets/xlarge.png"
       },
       "community": {
@@ -2207,7 +2207,7 @@
       "capabilitiesOptions": {},
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "BSEED",
       "platforms": [
@@ -2253,7 +2253,7 @@
       "capabilitiesOptions": {},
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "BSEED",
       "platforms": [
@@ -2299,7 +2299,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "BSEED",
       "platforms": [
@@ -2427,7 +2427,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
@@ -2451,7 +2451,7 @@
       "energy": {},
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -2475,7 +2475,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/images/large.png",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
             "fr": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
@@ -2617,7 +2617,7 @@
       "capabilitiesOptions": {},
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "BSEED",
       "platforms": [
@@ -2843,8 +2843,8 @@
         }
       },
       "images": {
-        "small": "/assets/images/small.png",
-        "large": "/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -2902,7 +2902,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/images/large.png",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Press the pairing button until LED blinks rapidly",
             "fr": "Appuyez sur le bouton d'appairage jusqu'à ce que la LED clignote rapidement"
@@ -2911,7 +2911,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
@@ -3382,7 +3382,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
@@ -3423,7 +3423,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "BSEED",
       "platforms": [
@@ -3547,7 +3547,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "MOES",
@@ -3630,7 +3630,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "Lonsonho",
       "platforms": [
@@ -3914,7 +3914,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "Tuya",
@@ -3976,7 +3976,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/images/large.png",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Press and hold pairing button for 5 seconds until LED blinks rapidly",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
@@ -3985,7 +3985,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
@@ -4033,7 +4033,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "MOES",
@@ -4137,7 +4137,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -4160,7 +4160,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/images/large.png",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
             "fr": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
@@ -4307,7 +4307,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
@@ -4453,7 +4453,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/roller_shutter_controller/assets/icon.svg",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Press and hold the pairing button until the LED blinks",
             "fr": "Appuyez et maintenez le bouton d'appairage jusqu'à ce que la LED clignote"
@@ -4462,7 +4462,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
@@ -4505,7 +4505,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "windowcoverings_set": {
@@ -4569,7 +4569,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "windowcoverings_set": {
@@ -4606,7 +4606,7 @@
       "capabilities": [],
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -4670,7 +4670,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/scene_controller_2button/assets/learn.svg",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Press and hold the button for 5 seconds until LED flashes",
             "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote",
@@ -4698,8 +4698,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/scene_controller_2button/assets/small.png",
-        "large": "/drivers/scene_controller_2button/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [
         {
@@ -4761,7 +4761,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/scene_controller_4button/assets/learn.svg",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Press and hold the button for 5 seconds until LED flashes",
             "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote",
@@ -4789,8 +4789,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/scene_controller_4button/assets/small.png",
-        "large": "/drivers/scene_controller_4button/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [
         {
@@ -4854,7 +4854,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/scene_controller_6button/assets/learn.svg",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Press and hold the button for 5 seconds until LED flashes",
             "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote",
@@ -4882,8 +4882,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/scene_controller_6button/assets/small.png",
-        "large": "/drivers/scene_controller_6button/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [
         {
@@ -4949,7 +4949,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/scene_controller_8button/assets/learn.svg",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Press and hold the button for 5 seconds until LED flashes",
             "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote",
@@ -4977,8 +4977,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/scene_controller_8button/assets/small.png",
-        "large": "/drivers/scene_controller_8button/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [
         {
@@ -5178,7 +5178,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "MOES",
       "platforms": [
@@ -5555,7 +5555,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_dimmer_module_1gang/assets/icon.svg",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Press and hold the pairing button until the LED blinks",
             "fr": "Appuyez et maintenez le bouton d'appairage jusqu'à ce que la LED clignote"
@@ -5564,7 +5564,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
@@ -5789,7 +5789,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "Tuya",
@@ -5838,8 +5838,8 @@
         "productIds": []
       },
       "images": {
-        "small": "/drivers/smart_lock/assets/small.png",
-        "large": "/drivers/smart_lock/assets/large.png",
+        "small": "./assets/small.png",
+        "large": "./assets/large.png",
         "xlarge": "/drivers/smart_lock/assets/xlarge.png"
       },
       "energy": {
@@ -5940,7 +5940,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "MOES",
       "platforms": [
@@ -6135,7 +6135,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "Lonsonho",
       "platforms": [
@@ -6262,7 +6262,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_smoke_detector_advanced/assets/icon.svg",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Press and hold the pairing button until the LED blinks",
             "fr": "Appuyez et maintenez le bouton d'appairage jusqu'à ce que la LED clignote"
@@ -6271,7 +6271,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "Lonsonho",
       "platforms": [
@@ -6385,7 +6385,7 @@
       "capabilitiesOptions": {},
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "MOES",
       "platforms": [
@@ -6419,7 +6419,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_switch_1gang_hybrid/assets/learn.svg",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -6446,8 +6446,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/smart_switch_1gang_hybrid/assets/small.png",
-        "large": "/drivers/smart_switch_1gang_hybrid/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -6520,7 +6520,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "MOES",
       "platforms": [
@@ -6563,7 +6563,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_switch_2gang_hybrid/assets/learn.svg",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -6590,8 +6590,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/smart_switch_2gang_hybrid/assets/small.png",
-        "large": "/drivers/smart_switch_2gang_hybrid/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -6695,7 +6695,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
@@ -6750,7 +6750,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_switch_3gang_hybrid/assets/learn.svg",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -6777,8 +6777,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/smart_switch_3gang_hybrid/assets/small.png",
-        "large": "/drivers/smart_switch_3gang_hybrid/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -6844,7 +6844,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_switch_4gang_hybrid/assets/learn.svg",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -6871,8 +6871,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/smart_switch_4gang_hybrid/assets/small.png",
-        "large": "/drivers/smart_switch_4gang_hybrid/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -6963,7 +6963,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
@@ -7002,7 +7002,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
@@ -7219,8 +7219,8 @@
         }
       },
       "images": {
-        "small": "/assets/images/small.png",
-        "large": "/assets/images/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -7296,7 +7296,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -7470,7 +7470,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/soil_moisture_temperature_sensor/assets/icon.svg",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Press and hold the pairing button until the LED blinks",
             "fr": "Appuyez et maintenez le bouton d'appairage jusqu'à ce que la LED clignote"
@@ -7479,7 +7479,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
@@ -7531,7 +7531,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -7601,7 +7601,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
@@ -7648,7 +7648,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
@@ -7696,7 +7696,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
@@ -7746,7 +7746,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -7815,7 +7815,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -7896,7 +7896,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -7959,7 +7959,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
@@ -8010,7 +8010,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
@@ -8063,7 +8063,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "Tuya",
@@ -8109,7 +8109,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "MOES",
@@ -8157,7 +8157,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "MOES",
@@ -8204,7 +8204,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
@@ -8260,7 +8260,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -8327,7 +8327,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/temperature_humidity_sensor_ewelink/assets/icon.svg",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Press and hold the pairing button for 3 seconds",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 3 secondes"
@@ -8336,7 +8336,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -8408,7 +8408,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -8473,7 +8473,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "BSEED",
       "platforms": [
@@ -8814,7 +8814,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -8888,8 +8888,8 @@
         "productIds": []
       },
       "images": {
-        "small": "/drivers/thermostat/assets/small.png",
-        "large": "/drivers/thermostat/assets/large.png",
+        "small": "./assets/small.png",
+        "large": "./assets/large.png",
         "xlarge": "/drivers/thermostat/assets/xlarge.png"
       },
       "community": {
@@ -9065,7 +9065,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "Lonsonho",
@@ -9556,7 +9556,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -9729,7 +9729,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_power": {
@@ -9886,7 +9886,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_1gang_ac/assets/learn.svg",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -9913,8 +9913,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/wall_switch_1gang_ac/assets/small.png",
-        "large": "/drivers/wall_switch_1gang_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -9958,7 +9958,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_1gang_dc/assets/learn.svg",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -9985,8 +9985,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/wall_switch_1gang_dc/assets/small.png",
-        "large": "/drivers/wall_switch_1gang_dc/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -10041,7 +10041,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_2gang_ac/assets/learn.svg",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -10068,8 +10068,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/wall_switch_2gang_ac/assets/small.png",
-        "large": "/drivers/wall_switch_2gang_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -10137,7 +10137,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_2gang_dc/assets/learn.svg",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -10164,8 +10164,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/wall_switch_2gang_dc/assets/small.png",
-        "large": "/drivers/wall_switch_2gang_dc/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -10246,7 +10246,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_3gang_ac/assets/learn.svg",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -10273,8 +10273,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/wall_switch_3gang_ac/assets/small.png",
-        "large": "/drivers/wall_switch_3gang_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -10364,7 +10364,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_3gang_dc/assets/learn.svg",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -10391,8 +10391,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/wall_switch_3gang_dc/assets/small.png",
-        "large": "/drivers/wall_switch_3gang_dc/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -10501,7 +10501,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_4gang_ac/assets/learn.svg",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -10528,8 +10528,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/wall_switch_4gang_ac/assets/small.png",
-        "large": "/drivers/wall_switch_4gang_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -10619,7 +10619,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_4gang_dc/assets/learn.svg",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -10646,8 +10646,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/wall_switch_4gang_dc/assets/small.png",
-        "large": "/drivers/wall_switch_4gang_dc/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -10751,7 +10751,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_5gang_ac/assets/learn.svg",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -10778,8 +10778,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/wall_switch_5gang_ac/assets/small.png",
-        "large": "/drivers/wall_switch_5gang_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -10898,7 +10898,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_6gang_ac/assets/learn.svg",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -10925,8 +10925,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/wall_switch_6gang_ac/assets/small.png",
-        "large": "/drivers/wall_switch_6gang_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -10979,7 +10979,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/water_leak_detector_advanced/assets/icon.svg",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes"
@@ -10988,7 +10988,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -11043,7 +11043,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
@@ -11253,7 +11253,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "MOES",
@@ -11358,7 +11358,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -11381,7 +11381,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/images/large.png",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Press and hold the reset button for 3 seconds until the LED starts blinking.",
             "fr": "Press and hold the reset button for 3 seconds until the LED starts blinking.",
@@ -11782,7 +11782,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/images/large.png",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Press any button 3 times rapidly",
             "fr": "Appuyez sur n'importe quel bouton 3 fois rapidement"
@@ -11791,7 +11791,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
@@ -12002,7 +12002,7 @@
       "energy": {},
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -12022,7 +12022,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/images/large.png",
+          "image": "./assets/large.png",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
             "fr": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
@@ -12082,7 +12082,7 @@
       },
       "images": {
         "small": "./assets/small.png",
-        "large": "./assets/images/large.png"
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "Tuya",
