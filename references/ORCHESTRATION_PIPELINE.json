@@ -1,0 +1,59 @@
+{
+  "generatedAt": "2025-10-03T11:25:41+02:00",
+  "pipeline": [
+    {
+      "step": 1,
+      "name": "forum_scraper_v2",
+      "script": "ultimate_system/scripts/forum_scraper_v2.js",
+      "output": "ultimate_system/data_sources/forum_data_v2.json",
+      "purpose": "Collect Homey forum manufacturers (_TZ*, _TZE*) and productIds (TS****)."
+    },
+    {
+      "step": 2,
+      "name": "deep_web_scraper_mini",
+      "script": "ultimate_system/scripts/deep_web_scraper_mini.js",
+      "output": "ultimate_system/data_sources/web_data_mini.json",
+      "purpose": "Aggregate minimal Zigbee sources (Z2M, Blakadder) for productIds/manufacturers."
+    },
+    {
+      "step": 3,
+      "name": "Data_Enricher",
+      "script": "ultimate_system/orchestration/modules/Data_Enricher.js",
+      "output": "ultimate_system/orchestration/state/data_enrichment.json",
+      "purpose": "Unify sources into normalized enrichment base (manufacturers, productIds, clusters, dps, batteries)."
+    },
+    {
+      "step": 4,
+      "name": "Driver_Classifier_Corrector",
+      "script": "ultimate_system/orchestration/modules/Driver_Classifier_Corrector.js",
+      "output": "ultimate_system/orchestration/state/driver_classifier_state.json",
+      "purpose": "Apply enrichment, enforce mono-manufacturer per driver, normalize images/energy."
+    },
+    {
+      "step": 5,
+      "name": "sdk3_quick_autofix",
+      "script": "ultimate_system/scripts/sdk3_quick_autofix.js",
+      "purpose": "Auto-fix SDK3 rules: capabilities, classes, image paths, numeric clusters, batteries, manufacturerName, productId."
+    },
+    {
+      "step": 6,
+      "name": "fix_all_driver_assets",
+      "script": "ultimate_system/scripts/fix_all_driver_assets.js",
+      "purpose": "Generate/ensure driver images (75x75 small.png, 500x500 large.png) in drivers/*/assets/."
+    },
+    {
+      "step": 7,
+      "name": "validate_publish",
+      "command": "homey app validate --level publish",
+      "purpose": "Publish-level validation."
+    }
+  ],
+  "latest": {
+    "publishValidation": true,
+    "reports": {
+      "orchestration": "ultimate_system/orchestration/state/scrape_enrich_report.json",
+      "enrichment": "ultimate_system/orchestration/state/data_enrichment.json",
+      "classification": "ultimate_system/orchestration/state/driver_classifier_state.json"
+    }
+  }
+}

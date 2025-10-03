@@ -1,0 +1,23 @@
+{
+  "generatedAt": "2025-10-03T11:14:48.537Z",
+  "success": true,
+  "attempts": [
+    {
+      "attempt": 1,
+      "actions": [
+        {
+          "name": "purge_cache",
+          "result": {
+            "ok": true
+          }
+        },
+        {
+          "name": "validate_publish",
+          "result": {
+            "ok": true
+          }
+        }
+      ]
+    }
+  ]
+}
