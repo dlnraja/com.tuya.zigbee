@@ -1,7 +1,6 @@
 {
   "name": {
-    "en": "Smart Dimmer Module 1 Gang",
-    "fr": "Module Variateur Intelligent 1 Voie"
+    "en": "Smart Dimmer Module 1 Gang"
   },
   "class": "light",
   "capabilities": [
@@ -92,8 +91,7 @@
     "learnmode": {
       "image": "./assets/large.png",
       "instruction": {
-        "en": "Press and hold the pairing button until the LED blinks",
-        "fr": "Appuyez et maintenez le bouton d'appairage jusqu'à ce que la LED clignote"
+        "en": "Press and hold the pairing button until the LED blinks"
       }
     }
   },

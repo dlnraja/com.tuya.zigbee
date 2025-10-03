@@ -1,7 +1,6 @@
 {
   "name": {
-    "en": "Soil Moisture & Temperature Sensor",
-    "fr": "Capteur d'Humidité du Sol et Température"
+    "en": "Soil Moisture & Temperature Sensor"
   },
   "class": "sensor",
   "capabilities": [
@@ -15,8 +14,7 @@
   "capabilitiesOptions": {
     "measure_temperature": {
       "title": {
-        "en": "Soil Temperature",
-        "fr": "Température du Sol"
+        "en": "Soil Temperature"
       },
       "units": {
         "en": "°C"
@@ -24,8 +22,7 @@
     },
     "measure_humidity": {
       "title": {
-        "en": "Soil Moisture",
-        "fr": "Humidité du Sol"
+        "en": "Soil Moisture"
       },
       "units": {
         "en": "%"
@@ -104,8 +101,7 @@
     "learnmode": {
       "image": "./assets/large.png",
       "instruction": {
-        "en": "Press and hold the pairing button until the LED blinks",
-        "fr": "Appuyez et maintenez le bouton d'appairage jusqu'à ce que la LED clignote"
+        "en": "Press and hold the pairing button until the LED blinks"
       }
     }
   },

@@ -1,7 +1,6 @@
 {
   "name": {
-    "en": "PIR Motion Sensor",
-    "fr": "Capteur de Mouvement PIR HOBEIAN"
+    "en": "PIR Motion Sensor"
   },
   "class": "sensor",
   "capabilities": [
@@ -12,8 +11,7 @@
   "capabilitiesOptions": {
     "alarm_motion": {
       "title": {
-        "en": "Motion",
-        "fr": "Mouvement"
+        "en": "Motion"
       }
     }
   },
@@ -90,8 +88,7 @@
     "learnmode": {
       "image": "./assets/large.png",
       "instruction": {
-        "en": "Press the pairing button until LED blinks rapidly",
-        "fr": "Appuyez sur le bouton d'appairage jusqu'à ce que la LED clignote rapidement"
+        "en": "Press the pairing button until LED blinks rapidly"
       }
     }
   },

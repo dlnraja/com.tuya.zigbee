@@ -1,7 +1,6 @@
 {
   "name": {
-    "en": "Wireless Switch 4-Gang (CR2450)",
-    "fr": "Interrupteur Sans Fil 4-Gang (CR2450)"
+    "en": "Wireless Switch 4-Gang (CR2450)"
   },
   "class": "button",
   "capabilities": [
@@ -16,26 +15,22 @@
   "capabilitiesOptions": {
     "button.1": {
       "title": {
-        "en": "Button 1",
-        "fr": "Bouton 1"
+        "en": "Button 1"
       }
     },
     "button.2": {
       "title": {
-        "en": "Button 2",
-        "fr": "Bouton 2"
+        "en": "Button 2"
       }
     },
     "button.3": {
       "title": {
-        "en": "Button 3",
-        "fr": "Bouton 3"
+        "en": "Button 3"
       }
     },
     "button.4": {
       "title": {
-        "en": "Button 4",
-        "fr": "Bouton 4"
+        "en": "Button 4"
       }
     }
   },
@@ -117,8 +112,7 @@
     "learnmode": {
       "image": "./assets/large.png",
       "instruction": {
-        "en": "Press any button 3 times rapidly",
-        "fr": "Appuyez sur n'importe quel bouton 3 fois rapidement"
+        "en": "Press any button 3 times rapidly"
       }
     }
   },

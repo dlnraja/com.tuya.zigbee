@@ -1,7 +1,6 @@
 {
   "name": {
-    "en": "Temperature Humidity Sensor",
-    "fr": "Capteur Température Humidité eWeLink"
+    "en": "Temperature Humidity Sensor"
   },
   "class": "sensor",
   "capabilities": [
@@ -83,8 +82,7 @@
     "learnmode": {
       "image": "./assets/large.png",
       "instruction": {
-        "en": "Press and hold the pairing button for 3 seconds",
-        "fr": "Appuyez et maintenez le bouton d'appairage pendant 3 secondes"
+        "en": "Press and hold the pairing button for 3 seconds"
       }
     }
   },

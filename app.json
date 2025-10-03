@@ -26,16 +26,10 @@
       "id": "debug_logging",
       "type": "checkbox",
       "title": {
-        "en": "Enable debug logging",
-        "fr": "Activer les logs de debug",
-        "de": "Debug-Protokollierung aktivieren",
-        "nl": "Debug logging inschakelen"
+        "en": "Enable debug logging"
       },
       "hint": {
-        "en": "Enable detailed logging for troubleshooting device issues",
-        "fr": "Activer les logs détaillés pour le dépannage",
-        "de": "Detaillierte Protokollierung zur Fehlerbehebung aktivieren",
-        "nl": "Gedetailleerde logging voor probleemoplossing inschakelen"
+        "en": "Enable detailed logging for troubleshooting device issues"
       },
       "value": false
     },
@@ -43,12 +37,10 @@
       "id": "community_updates",
       "type": "checkbox",
       "title": {
-        "en": "Enable community updates",
-        "fr": "Activer les mises à jour communautaires"
+        "en": "Enable community updates"
       },
       "hint": {
-        "en": "Receive notifications about new device support from community",
-        "fr": "Recevoir des notifications sur les nouveaux appareils supportés"
+        "en": "Receive notifications about new device support from community"
       },
       "value": true
     }
@@ -59,53 +51,7 @@
     "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
   },
   "tags": {
-    "en": [
-      "tuya",
-      "zigbee",
-      "smart home",
-      "iot",
-      "sensors",
-      "lights",
-      "switches",
-      "climate",
-      "security",
-      "unbranded",
-      "professional",
-      "sdk3"
-    ],
-    "fr": [
-      "tuya",
-      "zigbee",
-      "maison intelligente",
-      "iot",
-      "capteurs",
-      "lumières",
-      "interrupteurs",
-      "climatisation",
-      "sécurité"
-    ],
-    "de": [
-      "tuya",
-      "zigbee",
-      "smart home",
-      "iot",
-      "sensoren",
-      "lichter",
-      "schalter",
-      "klima",
-      "sicherheit"
-    ],
-    "nl": [
-      "tuya",
-      "zigbee",
-      "smart home",
-      "iot",
-      "sensoren",
-      "lampen",
-      "schakelaars",
-      "klimaat",
-      "beveiliging"
-    ]
+    "en": []
   },
   "platformCompatibility": {
     "local": true,
@@ -367,22 +313,19 @@
             {
               "id": "heat",
               "title": {
-                "en": "Heat",
-                "fr": "Chauffage"
+                "en": "Heat"
               }
             },
             {
               "id": "off",
               "title": {
-                "en": "Off",
-                "fr": "Arrêt"
+                "en": "Off"
               }
             },
             {
               "id": "auto",
               "title": {
-                "en": "Auto",
-                "fr": "Automatique"
+                "en": "Auto"
               }
             }
           ]
@@ -659,8 +602,7 @@
       "capabilitiesOptions": {
         "windowcoverings_set": {
           "title": {
-            "en": "Position",
-            "fr": "Position"
+            "en": "Position"
           },
           "units": {
             "en": "%"
@@ -668,8 +610,7 @@
         },
         "windowcoverings_tilt_set": {
           "title": {
-            "en": "Tilt",
-            "fr": "Inclinaison"
+            "en": "Tilt"
           },
           "units": {
             "en": "%"
@@ -850,20 +791,17 @@
       "capabilitiesOptions": {
         "onoff": {
           "title": {
-            "en": "Gang 1",
-            "fr": "Bouton 1"
+            "en": "Gang 1"
           }
         },
         "onoff.gang2": {
           "title": {
-            "en": "Gang 2",
-            "fr": "Bouton 2"
+            "en": "Gang 2"
           }
         },
         "onoff.gang3": {
           "title": {
-            "en": "Gang 3",
-            "fr": "Bouton 3"
+            "en": "Gang 3"
           }
         }
       },
@@ -1296,9 +1234,7 @@
       "capabilitiesOptions": {
         "measure_power": {
           "title": {
-            "en": "Power",
-            "fr": "Puissance",
-            "de": "Leistung"
+            "en": "Power"
           },
           "units": {
             "en": "W"
@@ -1307,9 +1243,7 @@
         },
         "measure_voltage": {
           "title": {
-            "en": "Voltage",
-            "fr": "Tension",
-            "de": "Spannung"
+            "en": "Voltage"
           },
           "units": {
             "en": "V"
@@ -1318,9 +1252,7 @@
         },
         "measure_current": {
           "title": {
-            "en": "Current",
-            "fr": "Courant",
-            "de": "Strom"
+            "en": "Current"
           },
           "units": {
             "en": "A"
@@ -1382,9 +1314,7 @@
       "capabilitiesOptions": {
         "measure_power": {
           "title": {
-            "en": "Power",
-            "fr": "Puissance",
-            "de": "Leistung"
+            "en": "Power"
           },
           "units": {
             "en": "W"
@@ -1393,9 +1323,7 @@
         },
         "measure_voltage": {
           "title": {
-            "en": "Voltage",
-            "fr": "Tension",
-            "de": "Spannung"
+            "en": "Voltage"
           },
           "units": {
             "en": "V"
@@ -1404,9 +1332,7 @@
         },
         "measure_current": {
           "title": {
-            "en": "Current",
-            "fr": "Courant",
-            "de": "Strom"
+            "en": "Current"
           },
           "units": {
             "en": "A"
@@ -1463,9 +1389,7 @@
       "capabilitiesOptions": {
         "measure_power": {
           "title": {
-            "en": "Power",
-            "fr": "Puissance",
-            "de": "Leistung"
+            "en": "Power"
           },
           "units": {
             "en": "W"
@@ -1474,9 +1398,7 @@
         },
         "measure_voltage": {
           "title": {
-            "en": "Voltage",
-            "fr": "Tension",
-            "de": "Spannung"
+            "en": "Voltage"
           },
           "units": {
             "en": "V"
@@ -1485,9 +1407,7 @@
         },
         "measure_current": {
           "title": {
-            "en": "Current",
-            "fr": "Courant",
-            "de": "Strom"
+            "en": "Current"
           },
           "units": {
             "en": "A"
@@ -1583,9 +1503,7 @@
       "capabilitiesOptions": {
         "measure_power": {
           "title": {
-            "en": "Power",
-            "fr": "Puissance",
-            "de": "Leistung"
+            "en": "Power"
           },
           "units": {
             "en": "W"
@@ -1594,9 +1512,7 @@
         },
         "measure_voltage": {
           "title": {
-            "en": "Voltage",
-            "fr": "Tension",
-            "de": "Spannung"
+            "en": "Voltage"
           },
           "units": {
             "en": "V"
@@ -1605,9 +1521,7 @@
         },
         "measure_current": {
           "title": {
-            "en": "Current",
-            "fr": "Courant",
-            "de": "Strom"
+            "en": "Current"
           },
           "units": {
             "en": "A"
@@ -2755,30 +2669,26 @@
           "id": "motion_sensitivity",
           "type": "dropdown",
           "label": {
-            "en": "Motion Sensitivity",
-            "fr": "Sensibilité de mouvement"
+            "en": "Motion Sensitivity"
           },
           "value": "medium",
           "values": [
             {
               "id": "low",
               "label": {
-                "en": "Low",
-                "fr": "Faible"
+                "en": "Low"
               }
             },
             {
               "id": "medium",
               "label": {
-                "en": "Medium",
-                "fr": "Moyen"
+                "en": "Medium"
               }
             },
             {
               "id": "high",
               "label": {
-                "en": "High",
-                "fr": "Élevé"
+                "en": "High"
               }
             }
           ]
@@ -2865,8 +2775,7 @@
       "capabilitiesOptions": {
         "alarm_motion": {
           "title": {
-            "en": "Motion",
-            "fr": "Mouvement"
+            "en": "Motion"
           }
         }
       },
@@ -3601,9 +3510,7 @@
       "capabilitiesOptions": {
         "measure_power": {
           "title": {
-            "en": "Power",
-            "fr": "Puissance",
-            "de": "Leistung"
+            "en": "Power"
           },
           "units": {
             "en": "W"
@@ -3612,9 +3519,7 @@
         },
         "measure_voltage": {
           "title": {
-            "en": "Voltage",
-            "fr": "Tension",
-            "de": "Spannung"
+            "en": "Voltage"
           },
           "units": {
             "en": "V"
@@ -3623,9 +3528,7 @@
         },
         "measure_current": {
           "title": {
-            "en": "Current",
-            "fr": "Courant",
-            "de": "Strom"
+            "en": "Current"
           },
           "units": {
             "en": "A"
@@ -3945,14 +3848,12 @@
       "capabilitiesOptions": {
         "alarm_motion": {
           "title": {
-            "en": "Motion (Radar)",
-            "fr": "Mouvement (Radar)"
+            "en": "Motion (Radar)"
           }
         },
         "alarm_generic": {
           "title": {
-            "en": "Presence Detection",
-            "fr": "Détection de Présence"
+            "en": "Presence Detection"
           }
         }
       },
@@ -4377,8 +4278,7 @@
       "capabilitiesOptions": {
         "windowcoverings_set": {
           "title": {
-            "en": "Position",
-            "fr": "Position"
+            "en": "Position"
           },
           "units": {
             "en": "%"
@@ -4386,8 +4286,7 @@
         },
         "windowcoverings_tilt_set": {
           "title": {
-            "en": "Tilt",
-            "fr": "Inclinaison"
+            "en": "Tilt"
           },
           "units": {
             "en": "%"
@@ -4417,8 +4316,7 @@
       "capabilitiesOptions": {
         "windowcoverings_set": {
           "title": {
-            "en": "Position",
-            "fr": "Position"
+            "en": "Position"
           },
           "units": {
             "en": "%"
@@ -4426,8 +4324,7 @@
         },
         "windowcoverings_tilt_set": {
           "title": {
-            "en": "Tilt",
-            "fr": "Inclinaison"
+            "en": "Tilt"
           },
           "units": {
             "en": "%"
@@ -4512,8 +4409,7 @@
       "capabilitiesOptions": {
         "windowcoverings_set": {
           "title": {
-            "en": "Position",
-            "fr": "Position"
+            "en": "Position"
           },
           "units": {
             "en": "%"
@@ -4521,8 +4417,7 @@
         },
         "windowcoverings_tilt_set": {
           "title": {
-            "en": "Tilt",
-            "fr": "Inclinaison"
+            "en": "Tilt"
           },
           "units": {
             "en": "%"
@@ -4581,8 +4476,7 @@
       "capabilitiesOptions": {
         "windowcoverings_set": {
           "title": {
-            "en": "Position",
-            "fr": "Position"
+            "en": "Position"
           },
           "units": {
             "en": "%"
@@ -4590,8 +4484,7 @@
         },
         "windowcoverings_tilt_set": {
           "title": {
-            "en": "Tilt",
-            "fr": "Inclinaison"
+            "en": "Tilt"
           },
           "units": {
             "en": "%"
@@ -4713,8 +4606,7 @@
           "id": "battery_threshold",
           "type": "number",
           "label": {
-            "en": "Low Battery Threshold (%)",
-            "fr": "Seuil de batterie faible (%)"
+            "en": "Low Battery Threshold (%)"
           },
           "value": 20,
           "min": 5,
@@ -4801,8 +4693,7 @@
           "id": "battery_threshold",
           "type": "number",
           "label": {
-            "en": "Low Battery Threshold (%)",
-            "fr": "Seuil de batterie faible (%)"
+            "en": "Low Battery Threshold (%)"
           },
           "value": 20,
           "min": 5,
@@ -4891,8 +4782,7 @@
           "id": "battery_threshold",
           "type": "number",
           "label": {
-            "en": "Low Battery Threshold (%)",
-            "fr": "Seuil de batterie faible (%)"
+            "en": "Low Battery Threshold (%)"
           },
           "value": 20,
           "min": 5,
@@ -4983,8 +4873,7 @@
           "id": "battery_threshold",
           "type": "number",
           "label": {
-            "en": "Low Battery Threshold (%)",
-            "fr": "Seuil de batterie faible (%)"
+            "en": "Low Battery Threshold (%)"
           },
           "value": 20,
           "min": 5,
@@ -5477,8 +5366,7 @@
       "capabilitiesOptions": {
         "windowcoverings_set": {
           "title": {
-            "en": "Position",
-            "fr": "Position"
+            "en": "Position"
           },
           "units": {
             "en": "%"
@@ -5486,8 +5374,7 @@
         },
         "windowcoverings_tilt_set": {
           "title": {
-            "en": "Tilt",
-            "fr": "Inclinaison"
+            "en": "Tilt"
           },
           "units": {
             "en": "%"
@@ -5891,9 +5778,7 @@
       "capabilitiesOptions": {
         "measure_power": {
           "title": {
-            "en": "Power",
-            "fr": "Puissance",
-            "de": "Leistung"
+            "en": "Power"
           },
           "units": {
             "en": "W"
@@ -5902,9 +5787,7 @@
         },
         "measure_voltage": {
           "title": {
-            "en": "Voltage",
-            "fr": "Tension",
-            "de": "Spannung"
+            "en": "Voltage"
           },
           "units": {
             "en": "V"
@@ -5913,9 +5796,7 @@
         },
         "measure_current": {
           "title": {
-            "en": "Current",
-            "fr": "Courant",
-            "de": "Strom"
+            "en": "Current"
           },
           "units": {
             "en": "A"
@@ -6011,9 +5892,7 @@
       "capabilitiesOptions": {
         "measure_power": {
           "title": {
-            "en": "Power",
-            "fr": "Puissance",
-            "de": "Leistung"
+            "en": "Power"
           },
           "units": {
             "en": "W"
@@ -6022,9 +5901,7 @@
         },
         "measure_voltage": {
           "title": {
-            "en": "Voltage",
-            "fr": "Tension",
-            "de": "Spannung"
+            "en": "Voltage"
           },
           "units": {
             "en": "V"
@@ -6033,9 +5910,7 @@
         },
         "measure_current": {
           "title": {
-            "en": "Current",
-            "fr": "Courant",
-            "de": "Strom"
+            "en": "Current"
           },
           "units": {
             "en": "A"
@@ -6084,9 +5959,7 @@
       "capabilitiesOptions": {
         "measure_power": {
           "title": {
-            "en": "Power",
-            "fr": "Puissance",
-            "de": "Leistung"
+            "en": "Power"
           },
           "units": {
             "en": "W"
@@ -6095,9 +5968,7 @@
         },
         "measure_voltage": {
           "title": {
-            "en": "Voltage",
-            "fr": "Tension",
-            "de": "Spannung"
+            "en": "Voltage"
           },
           "units": {
             "en": "V"
@@ -6106,9 +5977,7 @@
         },
         "measure_current": {
           "title": {
-            "en": "Current",
-            "fr": "Courant",
-            "de": "Strom"
+            "en": "Current"
           },
           "units": {
             "en": "A"
@@ -6211,8 +6080,7 @@
       "capabilitiesOptions": {
         "alarm_smoke": {
           "title": {
-            "en": "Smoke Alarm",
-            "fr": "Alarme Fumée"
+            "en": "Smoke Alarm"
           }
         }
       },
@@ -6479,14 +6347,12 @@
       "capabilitiesOptions": {
         "onoff": {
           "title": {
-            "en": "Gang 1",
-            "fr": "Bouton 1"
+            "en": "Gang 1"
           }
         },
         "onoff.gang2": {
           "title": {
-            "en": "Gang 2",
-            "fr": "Bouton 2"
+            "en": "Gang 2"
           }
         }
       },
@@ -6575,14 +6441,12 @@
       "capabilitiesOptions": {
         "onoff": {
           "title": {
-            "en": "Gang 1",
-            "fr": "Bouton 1"
+            "en": "Gang 1"
           }
         },
         "onoff.gang2": {
           "title": {
-            "en": "Gang 2",
-            "fr": "Bouton 2"
+            "en": "Gang 2"
           }
         }
       },
@@ -6643,20 +6507,17 @@
       "capabilitiesOptions": {
         "onoff": {
           "title": {
-            "en": "Gang 1",
-            "fr": "Bouton 1"
+            "en": "Gang 1"
           }
         },
         "onoff.gang2": {
           "title": {
-            "en": "Gang 2",
-            "fr": "Bouton 2"
+            "en": "Gang 2"
           }
         },
         "onoff.gang3": {
           "title": {
-            "en": "Gang 3",
-            "fr": "Bouton 3"
+            "en": "Gang 3"
           }
         }
       },
@@ -6757,20 +6618,17 @@
       "capabilitiesOptions": {
         "onoff": {
           "title": {
-            "en": "Gang 1",
-            "fr": "Bouton 1"
+            "en": "Gang 1"
           }
         },
         "onoff.gang2": {
           "title": {
-            "en": "Gang 2",
-            "fr": "Bouton 2"
+            "en": "Gang 2"
           }
         },
         "onoff.gang3": {
           "title": {
-            "en": "Gang 3",
-            "fr": "Bouton 3"
+            "en": "Gang 3"
           }
         }
       },
@@ -6872,22 +6730,19 @@
             {
               "id": "heat",
               "title": {
-                "en": "Heat",
-                "fr": "Chauffage"
+                "en": "Heat"
               }
             },
             {
               "id": "off",
               "title": {
-                "en": "Off",
-                "fr": "Arrêt"
+                "en": "Off"
               }
             },
             {
               "id": "auto",
               "title": {
-                "en": "Auto",
-                "fr": "Automatique"
+                "en": "Auto"
               }
             }
           ]
@@ -7388,8 +7243,7 @@
       "capabilitiesOptions": {
         "measure_temperature": {
           "title": {
-            "en": "Soil Temperature",
-            "fr": "Température du Sol"
+            "en": "Soil Temperature"
           },
           "units": {
             "en": "°C"
@@ -7397,8 +7251,7 @@
         },
         "measure_humidity": {
           "title": {
-            "en": "Soil Moisture",
-            "fr": "Humidité du Sol"
+            "en": "Soil Moisture"
           },
           "units": {
             "en": "%"
@@ -7710,14 +7563,12 @@
       "capabilitiesOptions": {
         "onoff": {
           "title": {
-            "en": "Gang 1",
-            "fr": "Bouton 1"
+            "en": "Gang 1"
           }
         },
         "onoff.gang2": {
           "title": {
-            "en": "Gang 2",
-            "fr": "Bouton 2"
+            "en": "Gang 2"
           }
         }
       },
@@ -7779,14 +7630,12 @@
       "capabilitiesOptions": {
         "onoff": {
           "title": {
-            "en": "Gang 1",
-            "fr": "Bouton 1"
+            "en": "Gang 1"
           }
         },
         "onoff.gang2": {
           "title": {
-            "en": "Gang 2",
-            "fr": "Bouton 2"
+            "en": "Gang 2"
           }
         }
       },
@@ -7860,20 +7709,17 @@
       "capabilitiesOptions": {
         "onoff": {
           "title": {
-            "en": "Gang 1",
-            "fr": "Bouton 1"
+            "en": "Gang 1"
           }
         },
         "onoff.gang2": {
           "title": {
-            "en": "Gang 2",
-            "fr": "Bouton 2"
+            "en": "Gang 2"
           }
         },
         "onoff.gang3": {
           "title": {
-            "en": "Gang 3",
-            "fr": "Bouton 3"
+            "en": "Gang 3"
           }
         }
       },
@@ -8890,22 +8736,19 @@
             {
               "id": "heat",
               "title": {
-                "en": "Heat",
-                "fr": "Chauffage"
+                "en": "Heat"
               }
             },
             {
               "id": "off",
               "title": {
-                "en": "Off",
-                "fr": "Arrêt"
+                "en": "Off"
               }
             },
             {
               "id": "auto",
               "title": {
-                "en": "Auto",
-                "fr": "Automatique"
+                "en": "Auto"
               }
             }
           ]
@@ -9184,14 +9027,12 @@
       "capabilitiesOptions": {
         "onoff": {
           "title": {
-            "en": "Gang 1",
-            "fr": "Bouton 1"
+            "en": "Gang 1"
           }
         },
         "onoff.gang2": {
           "title": {
-            "en": "Gang 2",
-            "fr": "Bouton 2"
+            "en": "Gang 2"
           }
         }
       },
@@ -9291,20 +9132,17 @@
       "capabilitiesOptions": {
         "onoff": {
           "title": {
-            "en": "Gang 1",
-            "fr": "Bouton 1"
+            "en": "Gang 1"
           }
         },
         "onoff.gang2": {
           "title": {
-            "en": "Gang 2",
-            "fr": "Bouton 2"
+            "en": "Gang 2"
           }
         },
         "onoff.gang3": {
           "title": {
-            "en": "Gang 3",
-            "fr": "Bouton 3"
+            "en": "Gang 3"
           }
         }
       },
@@ -9616,9 +9454,7 @@
       "capabilitiesOptions": {
         "measure_power": {
           "title": {
-            "en": "Power",
-            "fr": "Puissance",
-            "de": "Leistung"
+            "en": "Power"
           },
           "units": {
             "en": "W"
@@ -9627,9 +9463,7 @@
         },
         "measure_voltage": {
           "title": {
-            "en": "Voltage",
-            "fr": "Tension",
-            "de": "Spannung"
+            "en": "Voltage"
           },
           "units": {
             "en": "V"
@@ -9638,9 +9472,7 @@
         },
         "measure_current": {
           "title": {
-            "en": "Current",
-            "fr": "Courant",
-            "de": "Strom"
+            "en": "Current"
           },
           "units": {
             "en": "A"
@@ -9694,9 +9526,7 @@
       "capabilitiesOptions": {
         "measure_power": {
           "title": {
-            "en": "Power",
-            "fr": "Puissance",
-            "de": "Leistung"
+            "en": "Power"
           },
           "units": {
             "en": "W"
@@ -9705,9 +9535,7 @@
         },
         "measure_voltage": {
           "title": {
-            "en": "Voltage",
-            "fr": "Tension",
-            "de": "Spannung"
+            "en": "Voltage"
           },
           "units": {
             "en": "V"
@@ -9716,9 +9544,7 @@
         },
         "measure_current": {
           "title": {
-            "en": "Current",
-            "fr": "Courant",
-            "de": "Strom"
+            "en": "Current"
           },
           "units": {
             "en": "A"
@@ -10035,14 +9861,12 @@
       "capabilitiesOptions": {
         "onoff": {
           "title": {
-            "en": "Gang 1",
-            "fr": "Bouton 1"
+            "en": "Gang 1"
           }
         },
         "onoff.gang2": {
           "title": {
-            "en": "Gang 2",
-            "fr": "Bouton 2"
+            "en": "Gang 2"
           }
         }
       },
@@ -10128,14 +9952,12 @@
       "capabilitiesOptions": {
         "onoff": {
           "title": {
-            "en": "Gang 1",
-            "fr": "Bouton 1"
+            "en": "Gang 1"
           }
         },
         "onoff.gang2": {
           "title": {
-            "en": "Gang 2",
-            "fr": "Bouton 2"
+            "en": "Gang 2"
           }
         }
       },
@@ -10234,20 +10056,17 @@
       "capabilitiesOptions": {
         "onoff": {
           "title": {
-            "en": "Gang 1",
-            "fr": "Bouton 1"
+            "en": "Gang 1"
           }
         },
         "onoff.gang2": {
           "title": {
-            "en": "Gang 2",
-            "fr": "Bouton 2"
+            "en": "Gang 2"
           }
         },
         "onoff.gang3": {
           "title": {
-            "en": "Gang 3",
-            "fr": "Bouton 3"
+            "en": "Gang 3"
           }
         }
       },
@@ -10346,20 +10165,17 @@
       "capabilitiesOptions": {
         "onoff": {
           "title": {
-            "en": "Gang 1",
-            "fr": "Bouton 1"
+            "en": "Gang 1"
           }
         },
         "onoff.gang2": {
           "title": {
-            "en": "Gang 2",
-            "fr": "Bouton 2"
+            "en": "Gang 2"
           }
         },
         "onoff.gang3": {
           "title": {
-            "en": "Gang 3",
-            "fr": "Bouton 3"
+            "en": "Gang 3"
           }
         }
       },
@@ -11423,14 +11239,12 @@
       "capabilitiesOptions": {
         "onoff": {
           "title": {
-            "en": "Gang 1",
-            "fr": "Bouton 1"
+            "en": "Gang 1"
           }
         },
         "onoff.gang2": {
           "title": {
-            "en": "Gang 2",
-            "fr": "Bouton 2"
+            "en": "Gang 2"
           }
         }
       },
@@ -11531,20 +11345,17 @@
       "capabilitiesOptions": {
         "onoff": {
           "title": {
-            "en": "Gang 1",
-            "fr": "Bouton 1"
+            "en": "Gang 1"
           }
         },
         "onoff.gang2": {
           "title": {
-            "en": "Gang 2",
-            "fr": "Bouton 2"
+            "en": "Gang 2"
           }
         },
         "onoff.gang3": {
           "title": {
-            "en": "Gang 3",
-            "fr": "Bouton 3"
+            "en": "Gang 3"
           }
         }
       },
@@ -11644,26 +11455,22 @@
       "capabilitiesOptions": {
         "button.1": {
           "title": {
-            "en": "Button 1",
-            "fr": "Bouton 1"
+            "en": "Button 1"
           }
         },
         "button.2": {
           "title": {
-            "en": "Button 2",
-            "fr": "Bouton 2"
+            "en": "Button 2"
           }
         },
         "button.3": {
           "title": {
-            "en": "Button 3",
-            "fr": "Bouton 3"
+            "en": "Button 3"
           }
         },
         "button.4": {
           "title": {
-            "en": "Button 4",
-            "fr": "Bouton 4"
+            "en": "Button 4"
           }
         }
       },
@@ -11780,8 +11587,7 @@
           "id": "battery_threshold",
           "type": "number",
           "label": {
-            "en": "Low Battery Threshold (%)",
-            "fr": "Seuil de batterie faible (%)"
+            "en": "Low Battery Threshold (%)"
           },
           "value": 20,
           "min": 5,
@@ -11872,8 +11678,7 @@
           "id": "battery_threshold",
           "type": "number",
           "label": {
-            "en": "Low Battery Threshold (%)",
-            "fr": "Seuil de batterie faible (%)"
+            "en": "Low Battery Threshold (%)"
           },
           "value": 20,
           "min": 5,
