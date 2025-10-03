@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2025-10-03T11:12:13.009Z",
+  "outputs": [
+    {
+      "file": ".external_sources\\zigbee2mqtt_supported_devices_1759489932836.json",
+      "counts": {
+        "manufacturers": 0,
+        "productIds": 0
+      }
+    },
+    {
+      "file": ".external_sources\\blakadder_all_devices_1759489932928.json",
+      "counts": {
+        "manufacturers": 0,
+        "productIds": 27
+      }
+    },
+    {
+      "file": ".external_sources\\koenkk_tuya_devices_herdsman_converters_1759489932996.json",
+      "counts": {
+        "manufacturers": 1205,
+        "productIds": 65
+      }
+    },
+    {
+      "file": ".external_sources\\home_assistant_zha_tuya_init_1759489933006.json",
+      "counts": {
+        "manufacturers": 1,
+        "productIds": 2
+      }
+    }
+  ]
+}

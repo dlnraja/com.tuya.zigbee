@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2025-10-03T11:47:04+02:00",
+  "sources": [
+    {
+      "name": "Zigbee2MQTT Supported Devices",
+      "url": "https://www.zigbee2mqtt.io/supported-devices/",
+      "type": "html"
+    },
+    {
+      "name": "Blakadder All Devices",
+      "url": "https://zigbee.blakadder.com/all.html",
+      "type": "html"
+    },
+    {
+      "name": "Koenkk Tuya devices (herdsman-converters)",
+      "url": "https://raw.githubusercontent.com/Koenkk/zigbee-herdsman-converters/master/src/devices/tuya.ts",
+      "type": "code"
+    },
+    {
+      "name": "Home Assistant ZHA Tuya init",
+      "url": "https://raw.githubusercontent.com/zigpy/zha-device-handlers/dev/zhaquirks/tuya/__init__.py",
+      "type": "code"
+    }
+  ]
+}
