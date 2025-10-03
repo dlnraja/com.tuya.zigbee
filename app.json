@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.ultimate.zigbee.hub",
-  "version": "2.0.3",
+  "version": "2.1.8",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
@@ -11,7 +11,7 @@
     "nl": "Ultimate Zigbee Hub"
   },
   "description": {
-    "en": "Ultimate Zigbee Hub v2.1.9 - Enhanced compatibility with 1000+ devices from 60+ manufacturers. Professional SDK3 architecture with comprehensive Johan Bendz compatibility. Local Zigbee 3.0 operation.",
+    "en": "Ultimate Zigbee Hub v2.1.8 - Enhanced compatibility with 1000+ devices from 60+ manufacturers. Professional SDK3 architecture with comprehensive Johan Bendz compatibility. Local Zigbee 3.0 operation.",
     "fr": "Support professionnel des appareils Zigbee avec compatibilité fabricant complète. Conforme SDK3, organisé par fonction plutôt que par marque.",
     "de": "Professionelle Zigbee-Geräteunterstützung mit umfassender Herstellerkompatibilität. SDK3-konform, nach Gerätefunktion organisiert.",
     "nl": "Professionele Zigbee apparaatondersteuning met uitgebreide fabrikantcompatibiliteit. SDK3-conform, georganiseerd naar apparaatfunctie."
