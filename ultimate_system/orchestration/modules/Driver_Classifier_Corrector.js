@@ -139,12 +139,21 @@ function applyEnrichment(manifest, enrichmentRecord) {
 }
 
 function rewriteManufacturer(manifest, manufacturer) {
+  // Backward-compatible helper retained, but now ensures inclusion of manufacturer
   const updated = { ...manifest };
   if (!updated.zigbee) updated.zigbee = {};
-  if (manufacturer) {
-    updated.zigbee.manufacturerName = manufacturer;
+  if (!manufacturer) return updated;
+  const current = updated.zigbee.manufacturerName;
+  if (Array.isArray(current)) {
+    if (!current.includes(manufacturer)) {
+      updated.zigbee.manufacturerName = Array.from(new Set([...current, manufacturer]));
+    }
+  } else if (typeof current === 'string' && current) {
+    if (current !== manufacturer) {
+      updated.zigbee.manufacturerName = Array.from(new Set([current, manufacturer]));
+    }
   } else {
-    delete updated.zigbee.manufacturerName;
+    updated.zigbee.manufacturerName = manufacturer;
   }
   return updated;
 }
@@ -169,7 +178,15 @@ function removeInvalidManufacturers(manifest, validManufacturers) {
     }
   }
 
-  return rewriteManufacturer(manifest, filtered[0] || null);
+  // Preserve multiple manufacturers if several are valid; if none valid, drop field
+  const updated = { ...manifest };
+  if (!filtered.length) {
+    if (updated.zigbee) delete updated.zigbee.manufacturerName;
+    return updated;
+  }
+  updated.zigbee = updated.zigbee || {};
+  updated.zigbee.manufacturerName = filtered.length === 1 ? filtered[0] : filtered;
+  return updated;
 }
 
 function relocateDriver(driverId, targetCategory, catalog) {
@@ -209,24 +226,17 @@ function main() {
 
   const newCatalog = { ...catalog };
 
+  // No longer enforce mono-manufacturer across drivers.
+  // Instead, ensure each referenced manufacturer is included and enrichment is applied, without removing others.
   duplicates.forEach((drivers, manufacturer) => {
     duplicatesResolved += 1;
-    const targetDriver = drivers[0];
     const enrichmentRecord = enrichmentMap.get(manufacturer);
-    const targetManifestData = loadDriverManifest(targetDriver);
-    if (!targetManifestData.manifest) return;
-
-    const validManufacturers = new Set([manufacturer]);
-    const updatedManifest = applyEnrichment(targetManifestData.manifest, enrichmentRecord || {});
-    const manifestWithManufacturers = rewriteManufacturer(updatedManifest, manufacturer);
-    updateManifest(targetManifestData.manifestPath, manifestWithManufacturers);
-    manufacturersCorrected += 1;
-
-    drivers.slice(1).forEach((otherDriverId) => {
-      const { manifest, manifestPath } = loadDriverManifest(otherDriverId);
+    drivers.forEach((driverId) => {
+      const { manifest, manifestPath } = loadDriverManifest(driverId);
       if (!manifest) return;
-      const cleaned = removeInvalidManufacturers(manifest, validManufacturers);
-      updateManifest(manifestPath, cleaned);
+      let updated = applyEnrichment(manifest, enrichmentRecord || {});
+      updated = rewriteManufacturer(updated, manufacturer);
+      updateManifest(manifestPath, updated);
       manufacturersCorrected += 1;
     });
   });

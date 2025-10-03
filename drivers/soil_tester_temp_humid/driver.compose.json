@@ -22,7 +22,71 @@
     "manufacturerName": "_TZ3000_ji4araar",
     "productId": [
       "TS0001",
-      "TS0011"
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0006",
+      "TS000F",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS0021",
+      "TS0026",
+      "TS0041",
+      "TS0041A",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS0046",
+      "TS0049",
+      "TS004F",
+      "TS0052",
+      "TS0101",
+      "TS0105",
+      "TS0108",
+      "TS0111",
+      "TS0115",
+      "TS011F",
+      "TS0121",
+      "TS0201",
+      "TS0202",
+      "TS0203",
+      "TS0204",
+      "TS0205",
+      "TS0207",
+      "TS020C",
+      "TS0210",
+      "TS0215A",
+      "TS0216",
+      "TS0218",
+      "TS0222",
+      "TS0224",
+      "TS0225",
+      "TS0301",
+      "TS030F",
+      "TS0501A",
+      "TS0501B",
+      "TS0502A",
+      "TS0502B",
+      "TS0503A",
+      "TS0503B",
+      "TS0504A",
+      "TS0504B",
+      "TS0505",
+      "TS0505A",
+      "TS0505B",
+      "TS0601",
+      "TS0603",
+      "TS0726",
+      "TS0901",
+      "TS1002",
+      "TS1101",
+      "TS110E",
+      "TS110F",
+      "TS1111",
+      "TS1201",
+      "TS130F"
     ],
     "endpoints": {
       "1": {
@@ -40,8 +104,8 @@
     }
   },
   "images": {
-    "small": "/drivers/soil_tester_temp_humid/assets/small.png",
-    "large": "/drivers/soil_tester_temp_humid/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "capabilitiesOptions": {
     "measure_temperature": {
@@ -63,5 +127,13 @@
   },
   "platforms": [
     "local"
-  ]
+  ],
+  "community": {
+    "brand": "Tuya",
+    "aliases": [
+      "tuya",
+      "unbranded",
+      "generic"
+    ]
+  }
 }

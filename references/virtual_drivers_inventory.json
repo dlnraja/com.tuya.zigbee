@@ -1,0 +1,42 @@
+{
+  "generatedAt": "2025-10-03T09:44:42.236Z",
+  "count": 2,
+  "items": [
+    {
+      "id": "zbbridge",
+      "class": "other",
+      "types": [
+        "bridge"
+      ],
+      "origins": [
+        "generic",
+        "z2m"
+      ],
+      "reasons": [
+        "name:bridge",
+        "name:zbbridge",
+        "class:other+name:bridge/gateway"
+      ],
+      "productIds": 42,
+      "endpoints": 1
+    },
+    {
+      "id": "zigbee_gateway_hub",
+      "class": "other",
+      "types": [
+        "gateway"
+      ],
+      "origins": [
+        "generic"
+      ],
+      "reasons": [
+        "name:gateway",
+        "name:zigbee_gateway",
+        "name:zigbee_gateway_hub",
+        "class:other+name:bridge/gateway"
+      ],
+      "productIds": 42,
+      "endpoints": 1
+    }
+  ]
+}

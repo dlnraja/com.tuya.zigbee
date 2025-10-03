@@ -1,0 +1,61 @@
+{
+  "generatedAt": "2025-10-03T11:25:41+02:00",
+  "summary": "Homey SDK3 compliance rules applied across app.json and drivers/*/driver.compose.json",
+  "app": {
+    "compatibility": ">=12.2.0",
+    "images": {
+      "small": "250x175",
+      "large": "500x350",
+      "xlarge": "1000x700"
+    },
+    "driverImagePaths": "/drivers/<id>/assets/small.png and /drivers/<id>/assets/large.png"
+  },
+  "driver": {
+    "images": {
+      "small": "75x75",
+      "large": "500x500",
+      "xlarge": "1000x1000",
+      "manifestPaths": "./assets/small.png and ./assets/large.png",
+      "learnmodeImage": "<driver>/assets/large.png"
+    },
+    "classes": {
+      "invalid": ["switch"],
+      "valid": ["sensor", "light", "socket", "button", "other", "alarm", "lock"],
+      "mappingHeuristic": "switch -> light|socket|button|sensor based on capabilities"
+    },
+    "capabilities": {
+      "replacements": { "measure_voc": "measure_tvoc" },
+      "removed": ["measure_formaldehyde"],
+      "notes": ["Some capabilities (e.g., measure_distance) require higher compatibility; app set to >=12.2.0"]
+    },
+    "clusters": {
+      "rule": "All clusters/bindings must be numeric IDs",
+      "conversion": "names (basic, identify, onoff, etc.) and hex (0xXXXX) converted to numbers; unique + sorted",
+      "tuya": "EF00 -> 61184"
+    },
+    "batteries": {
+      "requirement": "If 'measure_battery' capability is present, energy.batteries must be a non-empty array",
+      "allowed": [
+        "AA","AAA","C","D",
+        "CR2032","CR2430","CR2450","CR2477","CR3032",
+        "CR2","CR123A","CR14250","CR17335",
+        "PP3","INTERNAL","OTHER"
+      ],
+      "mapping": "Li-ion / LiFePO4 => INTERNAL",
+      "default": "CR2032 when missing"
+    },
+    "manufacturer": {
+      "rule": "zigbee.manufacturerName can be a string or an array of strings",
+      "allowMultiple": true,
+      "notes": [
+        "Preserve arrays when present; clean and deduplicate entries.",
+        "If a root-level manufacturerName exists, merge into zigbee.manufacturerName.",
+        "Do not collapse multiple valid manufacturers during duplicate handling."
+      ]
+    },
+    "productId": {
+      "rule": "zigbee.productId is an array of strings",
+      "normalize": "TS* upper-case; 0x* lower-case; deduplicated"
+    }
+  }
+}

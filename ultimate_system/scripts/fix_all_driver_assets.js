@@ -33,16 +33,15 @@ function getColorForDriver(index) {
 function fixDriverAssets(driverName, index) {
   const driverDir = path.join(DRIVERS_DIR, driverName);
   const assetsDir = path.join(driverDir, 'assets');
-  const imagesDir = path.join(assetsDir, 'images');
   
   const smallPath = path.join(assetsDir, 'small.png');
-  const largePath = path.join(imagesDir, 'large.png');
+  const largePath = path.join(assetsDir, 'large.png');
   
   const color = getColorForDriver(index);
   let fixed = 0;
   
   ensureDir(assetsDir);
-  ensureDir(imagesDir);
+  
   
   try {
     // Generate 75x75 small.png

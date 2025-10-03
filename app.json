@@ -1868,7 +1868,7 @@
         "fr": "Capteur de Porte",
         "de": "Door Sensor"
       },
-      "class": "garagedoor",
+      "class": "button",
       "capabilities": [
         "garagedoor_closed",
         "button.open",
@@ -4461,7 +4461,7 @@
         "en": "Roller Shutter Controller",
         "fr": "Contrôleur de Volet Roulant"
       },
-      "class": "windowcoverings",
+      "class": "sensor",
       "capabilities": [
         "windowcoverings_set",
         "windowcoverings_state",
@@ -4532,7 +4532,7 @@
       "name": {
         "en": "Roller Shutter Switch"
       },
-      "class": "windowcoverings",
+      "class": "light",
       "capabilities": [
         "windowcoverings_closed",
         "windowcoverings_set",
@@ -4600,7 +4600,7 @@
       "name": {
         "en": "Roller Shutter Switch Advanced"
       },
-      "class": "windowcoverings",
+      "class": "light",
       "capabilities": [
         "windowcoverings_closed",
         "windowcoverings_set",
@@ -5498,7 +5498,7 @@
         "fr": "Interrupteur Intelligent",
         "de": "Smart Switch"
       },
-      "class": "windowcoverings",
+      "class": "sensor",
       "capabilities": [
         "windowcoverings_state",
         "windowcoverings_set",
@@ -6222,7 +6222,7 @@
         "fr": "Interrupteur Intelligent",
         "de": "Smart Switch"
       },
-      "class": "thermostat",
+      "class": "sensor",
       "capabilities": [
         "target_temperature",
         "measure_temperature"
@@ -6968,7 +6968,7 @@
         "en": "Smart Thermostat",
         "fr": "Thermostat intelligent"
       },
-      "class": "thermostat",
+      "class": "sensor",
       "capabilities": [
         "target_temperature",
         "measure_temperature",
@@ -7099,7 +7099,7 @@
         "fr": "Interrupteur Intelligent",
         "de": "Smart Switch"
       },
-      "class": "thermostat",
+      "class": "sensor",
       "capabilities": [
         "target_temperature",
         "measure_temperature",
@@ -8579,7 +8579,7 @@
         "fr": "Capteur de Température",
         "de": "Temperature Sensor"
       },
-      "class": "thermostat",
+      "class": "sensor",
       "capabilities": [
         "target_temperature",
         "measure_temperature",
@@ -9622,7 +9622,7 @@
       "class": "sensor",
       "capabilities": [
         "measure_co2",
-        "measure_voc",
+        "measure_tvoc",
         "measure_temperature",
         "measure_humidity",
         "measure_battery",
@@ -11244,7 +11244,7 @@
       "name": {
         "en": "Water Valve"
       },
-      "class": "thermostat",
+      "class": "sensor",
       "capabilities": [
         "target_temperature",
         "measure_temperature",
