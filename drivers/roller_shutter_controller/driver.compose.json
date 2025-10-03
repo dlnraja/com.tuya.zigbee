@@ -1,7 +1,6 @@
 {
   "name": {
-    "en": "Roller Shutter Controller",
-    "fr": "Contrôleur de Volet Roulant"
+    "en": "Roller Shutter Controller"
   },
   "class": "sensor",
   "capabilities": [
@@ -14,8 +13,7 @@
   "capabilitiesOptions": {
     "windowcoverings_set": {
       "title": {
-        "en": "Position",
-        "fr": "Position"
+        "en": "Position"
       },
       "units": {
         "en": "%"
@@ -23,8 +21,7 @@
     },
     "windowcoverings_tilt_set": {
       "title": {
-        "en": "Tilt",
-        "fr": "Inclinaison"
+        "en": "Tilt"
       },
       "units": {
         "en": "%"
@@ -88,8 +85,7 @@
     "learnmode": {
       "image": "./assets/large.png",
       "instruction": {
-        "en": "Press and hold the pairing button until the LED blinks",
-        "fr": "Appuyez et maintenez le bouton d'appairage jusqu'à ce que la LED clignote"
+        "en": "Press and hold the pairing button until the LED blinks"
       }
     }
   },

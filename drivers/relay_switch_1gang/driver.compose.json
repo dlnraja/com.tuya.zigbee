@@ -1,9 +1,6 @@
 {
   "name": {
-    "en": "Sonoff Basic",
-    "fr": "Sonoff Basic",
-    "de": "Sonoff Basic",
-    "nl": "Sonoff Basic"
+    "en": "Sonoff Basic"
   },
   "class": "socket",
   "capabilities": [
@@ -82,10 +79,7 @@
     "learnmode": {
       "image": "./assets/large.png",
       "instruction": {
-        "en": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
-        "fr": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
-        "de": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
-        "nl": "Press and hold the pairing button for 5 seconds until LED blinks rapidly."
+        "en": "Press and hold the pairing button for 5 seconds until LED blinks rapidly."
       }
     }
   },

@@ -81,10 +81,7 @@
     "learnmode": {
       "image": "./assets/large.png",
       "instruction": {
-        "en": "Turn the switch on/off 3 times quickly",
-        "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
-        "nl": "Schakel de schakelaar 3 keer snel aan/uit",
-        "de": "Schalten Sie den Schalter 3 Mal schnell ein/aus"
+        "en": "Turn the switch on/off 3 times quickly"
       }
     },
     "manufacturerName": [
@@ -108,9 +105,7 @@
   },
   "settings": [],
   "name": {
-    "en": "Smart Switch 3gang Hybrid",
-    "fr": "Interrupteur Intelligent",
-    "de": "Smart Switch"
+    "en": "Smart Switch 3gang Hybrid"
   },
   "platforms": [
     "local"
@@ -121,20 +116,17 @@
   "capabilitiesOptions": {
     "onoff": {
       "title": {
-        "en": "Gang 1",
-        "fr": "Bouton 1"
+        "en": "Gang 1"
       }
     },
     "onoff.gang2": {
       "title": {
-        "en": "Gang 2",
-        "fr": "Bouton 2"
+        "en": "Gang 2"
       }
     },
     "onoff.gang3": {
       "title": {
-        "en": "Gang 3",
-        "fr": "Bouton 3"
+        "en": "Gang 3"
       }
     }
   },

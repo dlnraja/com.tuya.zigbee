@@ -1,7 +1,6 @@
 {
   "name": {
-    "en": "Smart Smoke Detector Advanced",
-    "fr": "Détecteur de Fumée Intelligent Avancé"
+    "en": "Smart Smoke Detector Advanced"
   },
   "class": "sensor",
   "capabilities": [
@@ -13,8 +12,7 @@
   "capabilitiesOptions": {
     "alarm_smoke": {
       "title": {
-        "en": "Smoke Alarm",
-        "fr": "Alarme Fumée"
+        "en": "Smoke Alarm"
       }
     }
   },
@@ -90,8 +88,7 @@
     "learnmode": {
       "image": "./assets/large.png",
       "instruction": {
-        "en": "Press and hold the pairing button until the LED blinks",
-        "fr": "Appuyez et maintenez le bouton d'appairage jusqu'à ce que la LED clignote"
+        "en": "Press and hold the pairing button until the LED blinks"
       }
     }
   },

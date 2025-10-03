@@ -13,12 +13,16 @@ const pngGenerator = require('./generate_placeholder_png.js');
 const ROOT = path.resolve(__dirname, '../..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
 
-const COLORS = [
-  { r: 30, g: 136, b: 229, a: 255 },   // Blue
-  { r: 76, g: 175, b: 80, a: 255 },    // Green
-  { r: 255, g: 152, b: 0, a: 255 },    // Orange
-  { r: 156, g: 39, b: 176, a: 255 },   // Purple
-];
+// Category-to-color mapping (SDK3 store consistency)
+// light -> Amber, sensor -> Green, socket -> Blue, lock -> Purple, other -> Blue Grey, default -> Teal
+const CLASS_COLOR_HEX = {
+  light: '#FFC107',
+  sensor: '#4CAF50',
+  socket: '#2196F3',
+  lock: '#9C27B0',
+  other: '#607D8B',
+};
+const DEFAULT_COLOR_HEX = '#009688';
 
 function ensureDir(dirPath) {
   if (!fs.existsSync(dirPath)) {
@@ -26,8 +30,18 @@ function ensureDir(dirPath) {
   }
 }
 
-function getColorForDriver(index) {
-  return COLORS[index % COLORS.length];
+function getDriverClass(driverName) {
+  try {
+    const manifestPath = path.join(DRIVERS_DIR, driverName, 'driver.compose.json');
+    if (!fs.existsSync(manifestPath)) return null;
+    const m = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+    return typeof m.class === 'string' ? m.class : null;
+  } catch { return null; }
+}
+
+function colorForClassHex(driverClass) {
+  if (!driverClass) return DEFAULT_COLOR_HEX;
+  return CLASS_COLOR_HEX[driverClass] || DEFAULT_COLOR_HEX;
 }
 
 function fixDriverAssets(driverName, index) {
@@ -37,7 +51,8 @@ function fixDriverAssets(driverName, index) {
   const smallPath = path.join(assetsDir, 'small.png');
   const largePath = path.join(assetsDir, 'large.png');
   
-  const color = getColorForDriver(index);
+  const driverClass = getDriverClass(driverName);
+  const colorHex = colorForClassHex(driverClass);
   let fixed = 0;
   
   ensureDir(assetsDir);
@@ -47,11 +62,11 @@ function fixDriverAssets(driverName, index) {
     // Generate 75x75 small.png
     const { execSync } = require('child_process');
     const genScript = path.join(ROOT, 'ultimate_system', 'scripts', 'generate_placeholder_png.js');
-    execSync(`node "${genScript}" --width 75 --height 75 --color "#1E88E5" --output "${smallPath}"`, { cwd: ROOT });
+    execSync(`node "${genScript}" --width 75 --height 75 --color "${colorHex}" --output "${smallPath}"`, { cwd: ROOT });
     fixed++;
     
     // Generate 500x500 large.png
-    execSync(`node "${genScript}" --width 500 --height 500 --color "#1E88E5" --output "${largePath}"`, { cwd: ROOT });
+    execSync(`node "${genScript}" --width 500 --height 500 --color "${colorHex}" --output "${largePath}"`, { cwd: ROOT });
     fixed++;
   } catch (error) {
     console.warn(`   ⚠️  ${driverName}: ${error.message}`);

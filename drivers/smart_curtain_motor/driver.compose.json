@@ -1,8 +1,6 @@
 {
   "name": {
-    "en": "Smart Curtain Motor",
-    "fr": "Interrupteur Intelligent",
-    "de": "Smart Switch"
+    "en": "Smart Curtain Motor"
   },
   "class": "sensor",
   "capabilities": [
@@ -81,8 +79,7 @@
   "capabilitiesOptions": {
     "windowcoverings_set": {
       "title": {
-        "en": "Position",
-        "fr": "Position"
+        "en": "Position"
       },
       "units": {
         "en": "%"
@@ -90,8 +87,7 @@
     },
     "windowcoverings_tilt_set": {
       "title": {
-        "en": "Tilt",
-        "fr": "Inclinaison"
+        "en": "Tilt"
       },
       "units": {
         "en": "%"
