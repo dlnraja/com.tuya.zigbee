@@ -13,7 +13,7 @@ config/
 
 # Development documentation
 *.md
-README.md
+!README.md
 SECURITY.md
 CHANGELOG.md
 CONTRIBUTING.md
