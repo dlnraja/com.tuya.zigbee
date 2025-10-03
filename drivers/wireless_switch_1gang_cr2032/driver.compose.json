@@ -18,8 +18,8 @@
     ]
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/wireless_switch_1gang_cr2032/assets/small.png",
+    "large": "/drivers/wireless_switch_1gang_cr2032/assets/large.png"
   },
   "zigbee": {
     "manufacturerName": "_TZ3000_ji4araar",
@@ -43,7 +43,7 @@
       }
     },
     "learnmode": {
-      "image": "./assets/images/large.png",
+      "image": "/drivers/wireless_switch_1gang_cr2032/assets/large.png",
       "instruction": {
         "en": "Press and hold the reset button for 3 seconds until the LED starts blinking.",
         "fr": "Press and hold the reset button for 3 seconds until the LED starts blinking.",

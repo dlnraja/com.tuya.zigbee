@@ -32,8 +32,8 @@
     }
   },
   "images": {
-    "large": "./assets/large.png",
-    "small": "./assets/small.png"
+    "large": "/drivers/gas_detector/assets/large.png",
+    "small": "/drivers/gas_detector/assets/small.png"
   },
   "pair": [
     {

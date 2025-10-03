@@ -20,8 +20,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/smart_doorbell/assets/small.png",
+    "large": "/drivers/smart_doorbell/assets/large.png"
   },
   "zigbee": {
     "manufacturerName": "_TZ3000_ji4araar",
@@ -42,7 +42,7 @@
       }
     },
     "learnmode": {
-      "image": "./assets/large.png",
+      "image": "/drivers/smart_doorbell/assets/large.png",
       "instruction": {
         "en": "Follow the pairing instructions for your Smart Doorbell."
       }

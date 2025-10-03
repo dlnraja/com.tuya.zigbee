@@ -28,8 +28,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/air_quality_monitor/assets/small.png",
+    "large": "/drivers/air_quality_monitor/assets/large.png"
   },
   "energy": {
     "batteries": [

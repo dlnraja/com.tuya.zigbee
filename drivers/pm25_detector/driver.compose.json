@@ -30,8 +30,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/pm25_detector/assets/small.png",
+    "large": "/drivers/pm25_detector/assets/large.png"
   },
   "platforms": [
     "local"

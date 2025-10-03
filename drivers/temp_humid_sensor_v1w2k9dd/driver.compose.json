@@ -42,8 +42,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/temp_humid_sensor_v1w2k9dd/assets/small.png",
+    "large": "/drivers/temp_humid_sensor_v1w2k9dd/assets/large.png"
   },
   "capabilitiesOptions": {
     "measure_temperature": {

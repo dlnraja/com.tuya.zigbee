@@ -38,8 +38,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/radar_motion_sensor_tank_level/assets/small.png",
+    "large": "/drivers/radar_motion_sensor_tank_level/assets/large.png"
   },
   "capabilitiesOptions": {},
   "platforms": [

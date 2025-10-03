@@ -28,7 +28,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/smart_switch_4gang_hybrid/assets/learn.svg",
+      "image": "/drivers/smart_switch_4gang_hybrid/assets/large.png",
       "instruction": {
         "en": "Turn the switch on/off 3 times quickly",
         "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -39,8 +39,8 @@
     "manufacturerName": "_TZ3000_ji4araar"
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/smart_switch_4gang_hybrid/assets/small.png",
+    "large": "/drivers/smart_switch_4gang_hybrid/assets/large.png"
   },
   "settings": [],
   "name": {

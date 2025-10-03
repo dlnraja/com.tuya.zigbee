@@ -36,7 +36,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/water_leak_detector_advanced/assets/icon.svg",
+      "image": "/drivers/water_leak_detector_advanced/assets/large.png",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes"
@@ -44,8 +44,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/water_leak_detector_advanced/assets/small.png",
+    "large": "/drivers/water_leak_detector_advanced/assets/large.png"
   },
   "capabilitiesOptions": {
     "measure_temperature": {

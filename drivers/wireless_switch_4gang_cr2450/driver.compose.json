@@ -67,7 +67,7 @@
       }
     },
     "learnmode": {
-      "image": "./assets/images/large.png",
+      "image": "/drivers/wireless_switch_4gang_cr2450/assets/large.png",
       "instruction": {
         "en": "Press any button 3 times rapidly",
         "fr": "Appuyez sur n'importe quel bouton 3 fois rapidement"
@@ -75,8 +75,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/wireless_switch_4gang_cr2450/assets/small.png",
+    "large": "/drivers/wireless_switch_4gang_cr2450/assets/large.png"
   },
   "platforms": [
     "local"

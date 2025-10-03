@@ -34,8 +34,8 @@
     }
   },
   "images": {
-    "large": "./assets/large.png",
-    "small": "./assets/small.png"
+    "large": "/drivers/temperature_controller/assets/large.png",
+    "small": "/drivers/temperature_controller/assets/small.png"
   },
   "pair": [
     {

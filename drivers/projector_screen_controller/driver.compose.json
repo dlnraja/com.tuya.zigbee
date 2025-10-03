@@ -29,8 +29,8 @@
     }
   },
   "images": {
-    "large": "./assets/large.png",
-    "small": "./assets/small.png"
+    "large": "/drivers/projector_screen_controller/assets/large.png",
+    "small": "/drivers/projector_screen_controller/assets/small.png"
   },
   "pair": [
     {

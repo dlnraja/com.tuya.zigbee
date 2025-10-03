@@ -44,7 +44,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/smart_dimmer_module_1gang/assets/icon.svg",
+      "image": "/drivers/smart_dimmer_module_1gang/assets/large.png",
       "instruction": {
         "en": "Press and hold the pairing button until the LED blinks",
         "fr": "Appuyez et maintenez le bouton d'appairage jusqu'à ce que la LED clignote"
@@ -52,8 +52,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/smart_dimmer_module_1gang/assets/small.png",
+    "large": "/drivers/smart_dimmer_module_1gang/assets/large.png"
   },
   "platforms": [
     "local"

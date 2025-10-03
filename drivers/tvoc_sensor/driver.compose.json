@@ -32,8 +32,8 @@
     }
   },
   "images": {
-    "large": "./assets/large.png",
-    "small": "./assets/small.png"
+    "large": "/drivers/tvoc_sensor/assets/large.png",
+    "small": "/drivers/tvoc_sensor/assets/small.png"
   },
   "pair": [
     {

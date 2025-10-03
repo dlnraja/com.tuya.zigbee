@@ -33,8 +33,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png",
+    "small": "/drivers/thermostat/assets/small.png",
+    "large": "/drivers/thermostat/assets/large.png",
     "xlarge": "/drivers/thermostat/assets/xlarge.png"
   },
   "community": {

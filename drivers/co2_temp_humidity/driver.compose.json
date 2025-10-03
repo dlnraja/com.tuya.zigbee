@@ -32,8 +32,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/co2_temp_humidity/assets/small.png",
+    "large": "/drivers/co2_temp_humidity/assets/large.png"
   },
   "energy": {
     "batteries": [

@@ -18,8 +18,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/garage_door_opener/assets/small.png",
+    "large": "/drivers/garage_door_opener/assets/large.png"
   },
   "zigbee": {
     "manufacturerName": "_TZ3000_ji4araar",
@@ -40,7 +40,7 @@
       }
     },
     "learnmode": {
-      "image": "./assets/large.png",
+      "image": "/drivers/garage_door_opener/assets/large.png",
       "instruction": {
         "en": "Follow the pairing instructions for your Garage Door Opener."
       }

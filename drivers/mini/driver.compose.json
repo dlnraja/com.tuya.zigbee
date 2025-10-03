@@ -12,8 +12,8 @@
   ],
   "energy": {},
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/mini/assets/small.png",
+    "large": "/drivers/mini/assets/large.png"
   },
   "zigbee": {
     "manufacturerName": "_TZ3000_ji4araar",
@@ -38,7 +38,7 @@
       }
     },
     "learnmode": {
-      "image": "./assets/images/large.png",
+      "image": "/drivers/mini/assets/large.png",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
         "fr": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",

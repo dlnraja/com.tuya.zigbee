@@ -6,8 +6,8 @@
   "class": "other",
   "capabilities": [],
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/scene_controller/assets/small.png",
+    "large": "/drivers/scene_controller/assets/large.png"
   },
   "zigbee": {
     "manufacturerName": "_TZ3000_ji4araar",
