@@ -32,8 +32,8 @@
     }
   },
   "images": {
-    "large": "./assets/large.png",
-    "small": "./assets/small.png"
+    "large": "/drivers/noise_level_sensor/assets/large.png",
+    "small": "/drivers/noise_level_sensor/assets/small.png"
   },
   "pair": [
     {

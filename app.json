@@ -160,8 +160,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/air_quality_monitor/assets/small.png",
+        "large": "/drivers/air_quality_monitor/assets/large.png"
       },
       "manufacturerName": "MOES",
       "energy": {
@@ -205,8 +205,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/air_quality_monitor_pro/assets/small.png",
+        "large": "/drivers/air_quality_monitor_pro/assets/large.png"
       },
       "manufacturerName": "Lonsonho",
       "energy": {
@@ -256,8 +256,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/ceiling_light_controller/assets/small.png",
+        "large": "/drivers/ceiling_light_controller/assets/large.png"
       },
       "manufacturerName": "BSEED",
       "energy": {
@@ -307,8 +307,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/ceiling_light_rgb/assets/small.png",
+        "large": "/drivers/ceiling_light_rgb/assets/large.png"
       },
       "manufacturerName": "MOES",
       "energy": {
@@ -395,8 +395,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/climate_monitor/assets/small.png",
+        "large": "/drivers/climate_monitor/assets/large.png"
       },
       "manufacturerName": "Tuya",
       "energy": {
@@ -444,8 +444,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/co2_sensor/assets/small.png",
+        "large": "/drivers/co2_sensor/assets/large.png"
       },
       "manufacturerName": "Tuya",
       "energy": {
@@ -493,8 +493,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/co2_temp_humidity/assets/small.png",
+        "large": "/drivers/co2_temp_humidity/assets/large.png"
       },
       "manufacturerName": "Tuya",
       "energy": {
@@ -545,8 +545,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/co_detector_pro/assets/small.png",
+        "large": "/drivers/co_detector_pro/assets/large.png"
       },
       "platforms": [
         "local"
@@ -586,8 +586,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/comprehensive_air_monitor/assets/small.png",
+        "large": "/drivers/comprehensive_air_monitor/assets/large.png"
       },
       "manufacturerName": "Tuya",
       "energy": {
@@ -642,8 +642,8 @@
         "productIds": []
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/curtain_motor/assets/large.png",
+        "small": "/drivers/curtain_motor/assets/small.png"
       },
       "pair": [
         {
@@ -701,8 +701,8 @@
         "dim"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/dimmer/assets/small.png",
+        "large": "/drivers/dimmer/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -728,7 +728,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/dimmer/assets/large.png",
           "instruction": {
             "en": "Press and hold setup button for 3 seconds"
           }
@@ -782,8 +782,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/dimmer_switch_1gang_ac/assets/small.png",
+        "large": "/drivers/dimmer_switch_1gang_ac/assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "Tuya",
@@ -852,8 +852,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/dimmer_switch_3gang_ac/assets/small.png",
+        "large": "/drivers/dimmer_switch_3gang_ac/assets/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -920,8 +920,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/dimmer_switch_timer_module/assets/small.png",
+        "large": "/drivers/dimmer_switch_timer_module/assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "MOES",
@@ -983,8 +983,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png",
+        "small": "/drivers/door_controller/assets/small.png",
+        "large": "/drivers/door_controller/assets/large.png",
         "xlarge": "/drivers/led_strip/assets/xlarge.png"
       },
       "community": {
@@ -1009,7 +1009,10 @@
       "energy": {
         "approximation": {
           "usageConstant": 10
-        }
+        },
+        "batteries": [
+          "CR2032"
+        ]
       },
       "id": "door_controller"
     },
@@ -1034,8 +1037,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/door_lock/assets/small.png",
+        "large": "/drivers/door_lock/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -1056,7 +1059,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/door_lock/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Door Lock."
           }
@@ -1147,8 +1150,8 @@
         ]
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/door_window_sensor/assets/large.png",
+        "small": "/drivers/door_window_sensor/assets/small.png"
       },
       "pair": [
         {
@@ -1204,8 +1207,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/doorbell/assets/small.png",
+        "large": "/drivers/doorbell/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -1226,7 +1229,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/doorbell/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Doorbell."
           }
@@ -1340,8 +1343,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/energy_monitoring_plug/assets/small.png",
+        "large": "/drivers/energy_monitoring_plug/assets/large.png"
       },
       "manufacturerName": "Tuya",
       "energy": {
@@ -1426,8 +1429,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/energy_monitoring_plug_advanced/assets/small.png",
+        "large": "/drivers/energy_monitoring_plug_advanced/assets/large.png"
       },
       "manufacturerName": "Lonsonho",
       "platforms": [
@@ -1507,8 +1510,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/energy_plug_advanced/assets/small.png",
+        "large": "/drivers/energy_plug_advanced/assets/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
@@ -1569,8 +1572,8 @@
         ]
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/extension_plug/assets/large.png",
+        "small": "/drivers/extension_plug/assets/small.png"
       },
       "pair": [
         {
@@ -1672,8 +1675,8 @@
         "productIds": []
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/fan_controller/assets/large.png",
+        "small": "/drivers/fan_controller/assets/small.png"
       },
       "pair": [
         {
@@ -1748,8 +1751,8 @@
         "productIds": []
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/fingerprint_lock/assets/large.png",
+        "small": "/drivers/fingerprint_lock/assets/small.png"
       },
       "pair": [
         {
@@ -1819,8 +1822,8 @@
         "productIds": []
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/formaldehyde_sensor/assets/large.png",
+        "small": "/drivers/formaldehyde_sensor/assets/small.png"
       },
       "pair": [
         {
@@ -1852,7 +1855,12 @@
         }
       },
       "manufacturerName": "Tuya",
-      "id": "formaldehyde_sensor"
+      "id": "formaldehyde_sensor",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -1901,14 +1909,19 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/garage_door_controller/assets/small.png",
+        "large": "/drivers/garage_door_controller/assets/large.png"
       },
       "manufacturerName": "MOES",
       "platforms": [
         "local"
       ],
-      "id": "garage_door_controller"
+      "id": "garage_door_controller",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -1930,8 +1943,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/garage_door_opener/assets/small.png",
+        "large": "/drivers/garage_door_opener/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -1952,7 +1965,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/garage_door_opener/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Garage Door Opener."
           }
@@ -2034,8 +2047,8 @@
         ]
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/gas_detector/assets/large.png",
+        "small": "/drivers/gas_detector/assets/small.png"
       },
       "pair": [
         {
@@ -2104,14 +2117,19 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/humidity_controller/assets/small.png",
+        "large": "/drivers/humidity_controller/assets/large.png"
       },
       "manufacturerName": "BSEED",
       "platforms": [
         "local"
       ],
-      "id": "humidity_controller"
+      "id": "humidity_controller",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -2146,8 +2164,8 @@
         "productIds": []
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png",
+        "small": "/drivers/hvac_controller/assets/small.png",
+        "large": "/drivers/hvac_controller/assets/large.png",
         "xlarge": "/drivers/hvac_controller/assets/xlarge.png"
       },
       "community": {
@@ -2206,8 +2224,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/led_strip_advanced/assets/small.png",
+        "large": "/drivers/led_strip_advanced/assets/large.png"
       },
       "manufacturerName": "BSEED",
       "platforms": [
@@ -2252,8 +2270,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/led_strip_controller/assets/small.png",
+        "large": "/drivers/led_strip_controller/assets/large.png"
       },
       "manufacturerName": "BSEED",
       "platforms": [
@@ -2298,8 +2316,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/led_strip_controller_pro/assets/small.png",
+        "large": "/drivers/led_strip_controller_pro/assets/large.png"
       },
       "manufacturerName": "BSEED",
       "platforms": [
@@ -2352,8 +2370,8 @@
         "productIds": []
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/lux_sensor/assets/large.png",
+        "small": "/drivers/lux_sensor/assets/small.png"
       },
       "pair": [
         {
@@ -2385,7 +2403,12 @@
         }
       },
       "manufacturerName": "Tuya",
-      "id": "lux_sensor"
+      "id": "lux_sensor",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -2426,8 +2449,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/milight_controller/assets/small.png",
+        "large": "/drivers/milight_controller/assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
@@ -2450,8 +2473,8 @@
       ],
       "energy": {},
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/mini/assets/small.png",
+        "large": "/drivers/mini/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -2475,7 +2498,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/mini/assets/large.png",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
             "fr": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
@@ -2524,8 +2547,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/mini_switch/assets/small.png",
+        "large": "/drivers/mini_switch/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -2548,7 +2571,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/mini_switch/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Mini Switch."
           }
@@ -2616,14 +2639,19 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/motion_sensor_battery/assets/small.png",
+        "large": "/drivers/motion_sensor_battery/assets/large.png"
       },
       "manufacturerName": "BSEED",
       "platforms": [
         "local"
       ],
-      "id": "motion_sensor_battery"
+      "id": "motion_sensor_battery",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -2644,8 +2672,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/motion_sensor_mmwave/assets/small.png",
+        "large": "/drivers/motion_sensor_mmwave/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -2727,7 +2755,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/motion_sensor_pir_ac/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -2754,8 +2782,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/motion_sensor_pir_ac/assets/small.png",
+        "large": "/drivers/motion_sensor_pir_ac/assets/large.png"
       },
       "settings": [
         {
@@ -2799,7 +2827,12 @@
       ],
       "capabilitiesOptions": {},
       "manufacturerName": "Tuya",
-      "id": "motion_sensor_pir_ac"
+      "id": "motion_sensor_pir_ac",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -2843,8 +2876,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/motion_sensor_pir_battery/assets/small.png",
+        "large": "/drivers/motion_sensor_pir_battery/assets/large.png"
       },
       "platforms": [
         "local"
@@ -2902,7 +2935,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/motion_sensor_zigbee_204z/assets/large.png",
           "instruction": {
             "en": "Press the pairing button until LED blinks rapidly",
             "fr": "Appuyez sur le bouton d'appairage jusqu'à ce que la LED clignote rapidement"
@@ -2910,8 +2943,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/motion_sensor_zigbee_204z/assets/small.png",
+        "large": "/drivers/motion_sensor_zigbee_204z/assets/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
@@ -2970,8 +3003,8 @@
         "productIds": []
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/multisensor/assets/large.png",
+        "small": "/drivers/multisensor/assets/small.png"
       },
       "pair": [
         {
@@ -3050,8 +3083,8 @@
         "productIds": []
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/noise_level_sensor/assets/large.png",
+        "small": "/drivers/noise_level_sensor/assets/small.png"
       },
       "pair": [
         {
@@ -3083,7 +3116,12 @@
         }
       },
       "manufacturerName": "BSEED",
-      "id": "noise_level_sensor"
+      "id": "noise_level_sensor",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -3143,8 +3181,8 @@
         ]
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/outdoor_light_controller/assets/large.png",
+        "small": "/drivers/outdoor_light_controller/assets/small.png"
       },
       "pair": [
         {
@@ -3167,7 +3205,12 @@
       ],
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
-      "id": "outdoor_light_controller"
+      "id": "outdoor_light_controller",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -3189,8 +3232,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/outdoor_siren/assets/small.png",
+        "large": "/drivers/outdoor_siren/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -3211,7 +3254,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/outdoor_siren/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Outdoor Siren."
           }
@@ -3271,8 +3314,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/pet_feeder/assets/small.png",
+        "large": "/drivers/pet_feeder/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -3295,7 +3338,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/pet_feeder/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Pet Feeder."
           }
@@ -3381,8 +3424,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/pir_sensor_advanced/assets/small.png",
+        "large": "/drivers/pir_sensor_advanced/assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
@@ -3422,8 +3465,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/pm25_detector/assets/small.png",
+        "large": "/drivers/pm25_detector/assets/large.png"
       },
       "manufacturerName": "BSEED",
       "platforms": [
@@ -3476,8 +3519,8 @@
         "productIds": []
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/pm25_sensor/assets/large.png",
+        "small": "/drivers/pm25_sensor/assets/small.png"
       },
       "pair": [
         {
@@ -3509,7 +3552,12 @@
         }
       },
       "manufacturerName": "Tuya",
-      "id": "pm25_sensor"
+      "id": "pm25_sensor",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -3546,8 +3594,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/pool_pump_controller/assets/small.png",
+        "large": "/drivers/pool_pump_controller/assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "MOES",
@@ -3629,8 +3677,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/power_meter_socket/assets/small.png",
+        "large": "/drivers/power_meter_socket/assets/large.png"
       },
       "manufacturerName": "Lonsonho",
       "platforms": [
@@ -3684,8 +3732,8 @@
         "productIds": []
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/presence_sensor_radar/assets/large.png",
+        "small": "/drivers/presence_sensor_radar/assets/small.png"
       },
       "pair": [
         {
@@ -3717,7 +3765,12 @@
         }
       },
       "manufacturerName": "Tuya",
-      "id": "presence_sensor_radar"
+      "id": "presence_sensor_radar",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -3769,8 +3822,8 @@
         "productIds": []
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/pressure_sensor/assets/large.png",
+        "small": "/drivers/pressure_sensor/assets/small.png"
       },
       "pair": [
         {
@@ -3846,8 +3899,8 @@
         "productIds": []
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/projector_screen_controller/assets/large.png",
+        "small": "/drivers/projector_screen_controller/assets/small.png"
       },
       "pair": [
         {
@@ -3913,8 +3966,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/radar_motion_sensor_advanced/assets/small.png",
+        "large": "/drivers/radar_motion_sensor_advanced/assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "Tuya",
@@ -3976,7 +4029,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/radar_motion_sensor_mmwave/assets/large.png",
           "instruction": {
             "en": "Press and hold pairing button for 5 seconds until LED blinks rapidly",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
@@ -3984,8 +4037,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/radar_motion_sensor_mmwave/assets/small.png",
+        "large": "/drivers/radar_motion_sensor_mmwave/assets/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
@@ -4032,8 +4085,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/radar_motion_sensor_tank_level/assets/small.png",
+        "large": "/drivers/radar_motion_sensor_tank_level/assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "MOES",
@@ -4091,8 +4144,8 @@
         "productIds": []
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/radiator_valve/assets/large.png",
+        "small": "/drivers/radiator_valve/assets/small.png"
       },
       "pair": [
         {
@@ -4136,8 +4189,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/relay_switch_1gang/assets/small.png",
+        "large": "/drivers/relay_switch_1gang/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -4160,7 +4213,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/relay_switch_1gang/assets/large.png",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
             "fr": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
@@ -4213,8 +4266,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/remote_switch/assets/small.png",
+        "large": "/drivers/remote_switch/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -4237,7 +4290,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/remote_switch/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Remote Switch."
           }
@@ -4306,8 +4359,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/rgb_led_controller/assets/small.png",
+        "large": "/drivers/rgb_led_controller/assets/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
@@ -4357,8 +4410,8 @@
         "productIds": []
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png",
+        "small": "/drivers/roller_blind_controller/assets/small.png",
+        "large": "/drivers/roller_blind_controller/assets/large.png",
         "xlarge": "/drivers/curtain_motor/assets/xlarge.png"
       },
       "community": {
@@ -4396,7 +4449,12 @@
         }
       },
       "manufacturerName": "BSEED",
-      "id": "roller_blind_controller"
+      "id": "roller_blind_controller",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -4453,7 +4511,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/roller_shutter_controller/assets/large.png",
           "instruction": {
             "en": "Press and hold the pairing button until the LED blinks",
             "fr": "Appuyez et maintenez le bouton d'appairage jusqu'à ce que la LED clignote"
@@ -4461,8 +4519,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/roller_shutter_controller/assets/small.png",
+        "large": "/drivers/roller_shutter_controller/assets/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
@@ -4504,8 +4562,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/roller_shutter_switch/assets/small.png",
+        "large": "/drivers/roller_shutter_switch/assets/large.png"
       },
       "capabilitiesOptions": {
         "windowcoverings_set": {
@@ -4531,7 +4589,12 @@
       "platforms": [
         "local"
       ],
-      "id": "roller_shutter_switch"
+      "id": "roller_shutter_switch",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -4568,8 +4631,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/roller_shutter_switch_advanced/assets/small.png",
+        "large": "/drivers/roller_shutter_switch_advanced/assets/large.png"
       },
       "capabilitiesOptions": {
         "windowcoverings_set": {
@@ -4595,7 +4658,12 @@
       "platforms": [
         "local"
       ],
-      "id": "roller_shutter_switch_advanced"
+      "id": "roller_shutter_switch_advanced",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -4605,8 +4673,8 @@
       "class": "other",
       "capabilities": [],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/scene_controller/assets/small.png",
+        "large": "/drivers/scene_controller/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -4670,7 +4738,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/scene_controller_2button/assets/large.png",
           "instruction": {
             "en": "Press and hold the button for 5 seconds until LED flashes",
             "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote",
@@ -4698,8 +4766,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/scene_controller_2button/assets/small.png",
+        "large": "/drivers/scene_controller_2button/assets/large.png"
       },
       "settings": [
         {
@@ -4761,7 +4829,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/scene_controller_4button/assets/large.png",
           "instruction": {
             "en": "Press and hold the button for 5 seconds until LED flashes",
             "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote",
@@ -4789,8 +4857,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/scene_controller_4button/assets/small.png",
+        "large": "/drivers/scene_controller_4button/assets/large.png"
       },
       "settings": [
         {
@@ -4854,7 +4922,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/scene_controller_6button/assets/large.png",
           "instruction": {
             "en": "Press and hold the button for 5 seconds until LED flashes",
             "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote",
@@ -4882,8 +4950,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/scene_controller_6button/assets/small.png",
+        "large": "/drivers/scene_controller_6button/assets/large.png"
       },
       "settings": [
         {
@@ -4949,7 +5017,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/scene_controller_8button/assets/large.png",
           "instruction": {
             "en": "Press and hold the button for 5 seconds until LED flashes",
             "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote",
@@ -4977,8 +5045,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/scene_controller_8button/assets/small.png",
+        "large": "/drivers/scene_controller_8button/assets/large.png"
       },
       "settings": [
         {
@@ -5046,8 +5114,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png",
+        "small": "/drivers/scene_controller_battery/assets/small.png",
+        "large": "/drivers/scene_controller_battery/assets/large.png",
         "xlarge": "/drivers/scene_switch/assets/xlarge.png"
       },
       "community": {
@@ -5111,8 +5179,8 @@
         "productIds": []
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/shade_controller/assets/large.png",
+        "small": "/drivers/shade_controller/assets/small.png"
       },
       "pair": [
         {
@@ -5177,8 +5245,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_bulb_dimmer/assets/small.png",
+        "large": "/drivers/smart_bulb_dimmer/assets/large.png"
       },
       "manufacturerName": "MOES",
       "platforms": [
@@ -5240,8 +5308,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png",
+        "small": "/drivers/smart_bulb_rgb/assets/small.png",
+        "large": "/drivers/smart_bulb_rgb/assets/large.png",
         "xlarge": "/drivers/smart_bulb/assets/xlarge.png"
       },
       "community": {
@@ -5318,8 +5386,8 @@
         ]
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/smart_bulb_tunable/assets/large.png",
+        "small": "/drivers/smart_bulb_tunable/assets/small.png"
       },
       "pair": [
         {
@@ -5398,8 +5466,8 @@
         ]
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/smart_bulb_white/assets/large.png",
+        "small": "/drivers/smart_bulb_white/assets/small.png"
       },
       "pair": [
         {
@@ -5444,8 +5512,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_curtain_motor/assets/small.png",
+        "large": "/drivers/smart_curtain_motor/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -5465,7 +5533,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/smart_curtain_motor/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Smart Curtain Motor."
           }
@@ -5505,7 +5573,12 @@
         }
       },
       "manufacturerName": "Tuya",
-      "id": "smart_curtain_motor"
+      "id": "smart_curtain_motor",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -5555,7 +5628,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/smart_dimmer_module_1gang/assets/large.png",
           "instruction": {
             "en": "Press and hold the pairing button until the LED blinks",
             "fr": "Appuyez et maintenez le bouton d'appairage jusqu'à ce que la LED clignote"
@@ -5563,8 +5636,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_dimmer_module_1gang/assets/small.png",
+        "large": "/drivers/smart_dimmer_module_1gang/assets/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
@@ -5594,8 +5667,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_doorbell/assets/small.png",
+        "large": "/drivers/smart_doorbell/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -5616,7 +5689,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/smart_doorbell/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Smart Doorbell."
           }
@@ -5678,8 +5751,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_garden_sprinkler/assets/small.png",
+        "large": "/drivers/smart_garden_sprinkler/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -5702,7 +5775,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/smart_garden_sprinkler/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Smart Garden Sprinkler."
           }
@@ -5788,8 +5861,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_irrigation_controller/assets/small.png",
+        "large": "/drivers/smart_irrigation_controller/assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "Tuya",
@@ -5838,8 +5911,8 @@
         "productIds": []
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png",
+        "small": "/drivers/smart_lock/assets/small.png",
+        "large": "/drivers/smart_lock/assets/large.png",
         "xlarge": "/drivers/smart_lock/assets/xlarge.png"
       },
       "energy": {
@@ -5939,8 +6012,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_outlet_monitor/assets/small.png",
+        "large": "/drivers/smart_outlet_monitor/assets/large.png"
       },
       "manufacturerName": "MOES",
       "platforms": [
@@ -6003,8 +6076,8 @@
         ]
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/smart_plug/assets/large.png",
+        "small": "/drivers/smart_plug/assets/small.png"
       },
       "pair": [
         {
@@ -6134,8 +6207,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_plug_energy/assets/small.png",
+        "large": "/drivers/smart_plug_energy/assets/large.png"
       },
       "manufacturerName": "Lonsonho",
       "platforms": [
@@ -6161,8 +6234,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_radiator_valve/assets/small.png",
+        "large": "/drivers/smart_radiator_valve/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -6184,7 +6257,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/smart_radiator_valve/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Smart Radiator Valve."
           }
@@ -6262,7 +6335,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/smart_smoke_detector_advanced/assets/large.png",
           "instruction": {
             "en": "Press and hold the pairing button until the LED blinks",
             "fr": "Appuyez et maintenez le bouton d'appairage jusqu'à ce que la LED clignote"
@@ -6270,8 +6343,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_smoke_detector_advanced/assets/small.png",
+        "large": "/drivers/smart_smoke_detector_advanced/assets/large.png"
       },
       "manufacturerName": "Lonsonho",
       "platforms": [
@@ -6326,8 +6399,8 @@
         "productIds": []
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/smart_spot/assets/large.png",
+        "small": "/drivers/smart_spot/assets/small.png"
       },
       "pair": [
         {
@@ -6384,8 +6457,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_switch_1gang_ac/assets/small.png",
+        "large": "/drivers/smart_switch_1gang_ac/assets/large.png"
       },
       "manufacturerName": "MOES",
       "platforms": [
@@ -6419,7 +6492,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/smart_switch_1gang_hybrid/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -6446,8 +6519,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_switch_1gang_hybrid/assets/small.png",
+        "large": "/drivers/smart_switch_1gang_hybrid/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -6519,8 +6592,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_switch_2gang_ac/assets/small.png",
+        "large": "/drivers/smart_switch_2gang_ac/assets/large.png"
       },
       "manufacturerName": "MOES",
       "platforms": [
@@ -6563,7 +6636,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/smart_switch_2gang_hybrid/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -6590,8 +6663,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_switch_2gang_hybrid/assets/small.png",
+        "large": "/drivers/smart_switch_2gang_hybrid/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -6694,8 +6767,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_switch_3gang_ac/assets/small.png",
+        "large": "/drivers/smart_switch_3gang_ac/assets/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
@@ -6750,7 +6823,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/smart_switch_3gang_hybrid/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -6777,8 +6850,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_switch_3gang_hybrid/assets/small.png",
+        "large": "/drivers/smart_switch_3gang_hybrid/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -6844,7 +6917,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/smart_switch_4gang_hybrid/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -6871,8 +6944,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_switch_4gang_hybrid/assets/small.png",
+        "large": "/drivers/smart_switch_4gang_hybrid/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -6962,14 +7035,19 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_thermostat/assets/small.png",
+        "large": "/drivers/smart_thermostat/assets/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
         "local"
       ],
-      "id": "smart_thermostat"
+      "id": "smart_thermostat",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -7001,14 +7079,19 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_valve_controller/assets/small.png",
+        "large": "/drivers/smart_valve_controller/assets/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
         "local"
       ],
-      "id": "smart_valve_controller"
+      "id": "smart_valve_controller",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -7031,8 +7114,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_water_valve/assets/small.png",
+        "large": "/drivers/smart_water_valve/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -7053,7 +7136,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/smart_water_valve/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Smart Water Valve."
           }
@@ -7083,7 +7166,12 @@
         }
       },
       "manufacturerName": "Tuya",
-      "id": "smart_water_valve"
+      "id": "smart_water_valve",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -7141,8 +7229,8 @@
         ]
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/smoke_detector/assets/large.png",
+        "small": "/drivers/smoke_detector/assets/small.png"
       },
       "pair": [
         {
@@ -7219,8 +7307,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smoke_detector_temp_humidity_advanced/assets/small.png",
+        "large": "/drivers/smoke_detector_temp_humidity_advanced/assets/large.png"
       },
       "platforms": [
         "local"
@@ -7295,8 +7383,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smoke_temp_humid_sensor/assets/small.png",
+        "large": "/drivers/smoke_temp_humid_sensor/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -7373,8 +7461,8 @@
         "productIds": []
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/soil_moisture_sensor/assets/large.png",
+        "small": "/drivers/soil_moisture_sensor/assets/small.png"
       },
       "pair": [
         {
@@ -7470,7 +7558,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/soil_moisture_temperature_sensor/assets/large.png",
           "instruction": {
             "en": "Press and hold the pairing button until the LED blinks",
             "fr": "Appuyez et maintenez le bouton d'appairage jusqu'à ce que la LED clignote"
@@ -7478,8 +7566,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/soil_moisture_temperature_sensor/assets/small.png",
+        "large": "/drivers/soil_moisture_temperature_sensor/assets/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
@@ -7530,8 +7618,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/soil_tester_temp_humid/assets/small.png",
+        "large": "/drivers/soil_tester_temp_humid/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -7600,8 +7688,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/solar_panel_controller/assets/small.png",
+        "large": "/drivers/solar_panel_controller/assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
@@ -7647,8 +7735,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/sos_emergency_button/assets/small.png",
+        "large": "/drivers/sos_emergency_button/assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
@@ -7695,8 +7783,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/switch_1gang_battery/assets/small.png",
+        "large": "/drivers/switch_1gang_battery/assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
@@ -7745,8 +7833,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/switch_2gang_ac/assets/small.png",
+        "large": "/drivers/switch_2gang_ac/assets/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -7814,8 +7902,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/switch_2gang_hybrid/assets/small.png",
+        "large": "/drivers/switch_2gang_hybrid/assets/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -7895,8 +7983,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/switch_3gang_battery/assets/small.png",
+        "large": "/drivers/switch_3gang_battery/assets/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -7958,8 +8046,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/switch_4gang_ac/assets/small.png",
+        "large": "/drivers/switch_4gang_ac/assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
@@ -8009,8 +8097,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/switch_4gang_battery_cr2032/assets/small.png",
+        "large": "/drivers/switch_4gang_battery_cr2032/assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
@@ -8062,8 +8150,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/switch_5gang_battery/assets/small.png",
+        "large": "/drivers/switch_5gang_battery/assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "Tuya",
@@ -8108,8 +8196,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/switch_6gang_ac/assets/small.png",
+        "large": "/drivers/switch_6gang_ac/assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "MOES",
@@ -8156,8 +8244,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/switch_8gang_ac/assets/small.png",
+        "large": "/drivers/switch_8gang_ac/assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "MOES",
@@ -8203,8 +8291,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/tank_level_monitor/assets/small.png",
+        "large": "/drivers/tank_level_monitor/assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
@@ -8259,8 +8347,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/temp_humid_sensor_advanced/assets/small.png",
+        "large": "/drivers/temp_humid_sensor_advanced/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -8327,7 +8415,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/temp_humid_sensor_leak_detector/assets/large.png",
           "instruction": {
             "en": "Press and hold the pairing button for 3 seconds",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 3 secondes"
@@ -8335,8 +8423,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/temp_humid_sensor_leak_detector/assets/small.png",
+        "large": "/drivers/temp_humid_sensor_leak_detector/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -8407,8 +8495,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/temp_humid_sensor_v1w2k9dd/assets/small.png",
+        "large": "/drivers/temp_humid_sensor_v1w2k9dd/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -8472,14 +8560,19 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/temp_sensor_pro/assets/small.png",
+        "large": "/drivers/temp_sensor_pro/assets/large.png"
       },
       "manufacturerName": "BSEED",
       "platforms": [
         "local"
       ],
-      "id": "temp_sensor_pro"
+      "id": "temp_sensor_pro",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -8534,8 +8627,8 @@
         ]
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/temperature_controller/assets/large.png",
+        "small": "/drivers/temperature_controller/assets/small.png"
       },
       "pair": [
         {
@@ -8567,7 +8660,12 @@
         }
       },
       "manufacturerName": "Tuya",
-      "id": "temperature_controller"
+      "id": "temperature_controller",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -8629,8 +8727,8 @@
         ]
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/temperature_humidity_sensor/assets/large.png",
+        "small": "/drivers/temperature_humidity_sensor/assets/small.png"
       },
       "pair": [
         {
@@ -8694,8 +8792,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/temperature_sensor/assets/small.png",
+        "large": "/drivers/temperature_sensor/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -8720,7 +8818,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/temperature_sensor/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Temperature Sensor."
           }
@@ -8813,8 +8911,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/temperature_sensor_advanced/assets/small.png",
+        "large": "/drivers/temperature_sensor_advanced/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -8888,8 +8986,8 @@
         "productIds": []
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png",
+        "small": "/drivers/thermostat/assets/small.png",
+        "large": "/drivers/thermostat/assets/large.png",
         "xlarge": "/drivers/thermostat/assets/xlarge.png"
       },
       "community": {
@@ -9004,8 +9102,8 @@
         "productIds": []
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/touch_dimmer/assets/large.png",
+        "small": "/drivers/touch_dimmer/assets/small.png"
       },
       "pair": [
         {
@@ -9064,8 +9162,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/touch_dimmer_1gang/assets/small.png",
+        "large": "/drivers/touch_dimmer_1gang/assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "Lonsonho",
@@ -9122,8 +9220,8 @@
         ]
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/touch_switch_1gang/assets/large.png",
+        "small": "/drivers/touch_switch_1gang/assets/small.png"
       },
       "pair": [
         {
@@ -9204,8 +9302,8 @@
         ]
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/touch_switch_2gang/assets/large.png",
+        "small": "/drivers/touch_switch_2gang/assets/small.png"
       },
       "pair": [
         {
@@ -9311,8 +9409,8 @@
         ]
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/touch_switch_3gang/assets/large.png",
+        "small": "/drivers/touch_switch_3gang/assets/small.png"
       },
       "pair": [
         {
@@ -9407,8 +9505,8 @@
         ]
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/touch_switch_4gang/assets/large.png",
+        "small": "/drivers/touch_switch_4gang/assets/small.png"
       },
       "pair": [
         {
@@ -9478,8 +9576,8 @@
         "productIds": []
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/tvoc_sensor/assets/large.png",
+        "small": "/drivers/tvoc_sensor/assets/small.png"
       },
       "pair": [
         {
@@ -9511,7 +9609,12 @@
         }
       },
       "manufacturerName": "Tuya",
-      "id": "tvoc_sensor"
+      "id": "tvoc_sensor",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -9555,8 +9658,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/tvoc_sensor_advanced/assets/small.png",
+        "large": "/drivers/tvoc_sensor_advanced/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -9631,8 +9734,8 @@
         "productIds": []
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/usb_outlet/assets/large.png",
+        "small": "/drivers/usb_outlet/assets/small.png"
       },
       "pair": [
         {
@@ -9728,8 +9831,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/usb_outlet_advanced/assets/small.png",
+        "large": "/drivers/usb_outlet_advanced/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_power": {
@@ -9823,8 +9926,8 @@
         "productIds": []
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/vibration_sensor/assets/large.png",
+        "small": "/drivers/vibration_sensor/assets/small.png"
       },
       "pair": [
         {
@@ -9886,7 +9989,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/wall_switch_1gang_ac/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -9913,8 +10016,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wall_switch_1gang_ac/assets/small.png",
+        "large": "/drivers/wall_switch_1gang_ac/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -9958,7 +10061,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/wall_switch_1gang_dc/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -9985,8 +10088,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wall_switch_1gang_dc/assets/small.png",
+        "large": "/drivers/wall_switch_1gang_dc/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -10041,7 +10144,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/wall_switch_2gang_ac/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -10068,8 +10171,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wall_switch_2gang_ac/assets/small.png",
+        "large": "/drivers/wall_switch_2gang_ac/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -10137,7 +10240,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/wall_switch_2gang_dc/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -10164,8 +10267,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wall_switch_2gang_dc/assets/small.png",
+        "large": "/drivers/wall_switch_2gang_dc/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -10246,7 +10349,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/wall_switch_3gang_ac/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -10273,8 +10376,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wall_switch_3gang_ac/assets/small.png",
+        "large": "/drivers/wall_switch_3gang_ac/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -10364,7 +10467,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/wall_switch_3gang_dc/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -10391,8 +10494,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wall_switch_3gang_dc/assets/small.png",
+        "large": "/drivers/wall_switch_3gang_dc/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -10501,7 +10604,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/wall_switch_4gang_ac/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -10528,8 +10631,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wall_switch_4gang_ac/assets/small.png",
+        "large": "/drivers/wall_switch_4gang_ac/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -10619,7 +10722,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/wall_switch_4gang_dc/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -10646,8 +10749,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wall_switch_4gang_dc/assets/small.png",
+        "large": "/drivers/wall_switch_4gang_dc/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -10751,7 +10854,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/wall_switch_5gang_ac/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -10778,8 +10881,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wall_switch_5gang_ac/assets/small.png",
+        "large": "/drivers/wall_switch_5gang_ac/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -10898,7 +11001,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/wall_switch_6gang_ac/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumez/éteignez l'interrupteur 3 fois rapidement",
@@ -10925,8 +11028,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wall_switch_6gang_ac/assets/small.png",
+        "large": "/drivers/wall_switch_6gang_ac/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -10979,7 +11082,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/water_leak_detector_advanced/assets/large.png",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes"
@@ -10987,8 +11090,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/water_leak_detector_advanced/assets/small.png",
+        "large": "/drivers/water_leak_detector_advanced/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -11042,8 +11145,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/water_leak_detector_sq510a/assets/small.png",
+        "large": "/drivers/water_leak_detector_sq510a/assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "BSEED",
@@ -11103,8 +11206,8 @@
         "productIds": []
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "/drivers/water_leak_sensor/assets/large.png",
+        "small": "/drivers/water_leak_sensor/assets/small.png"
       },
       "pair": [
         {
@@ -11157,8 +11260,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/water_valve/assets/small.png",
+        "large": "/drivers/water_valve/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -11179,7 +11282,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/water_valve/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Water Valve."
           }
@@ -11209,7 +11312,12 @@
         }
       },
       "manufacturerName": "BSEED",
-      "id": "water_valve"
+      "id": "water_valve",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -11252,8 +11360,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/water_valve_smart/assets/small.png",
+        "large": "/drivers/water_valve_smart/assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "MOES",
@@ -11280,8 +11388,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wireless_switch/assets/small.png",
+        "large": "/drivers/wireless_switch/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -11304,7 +11412,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/wireless_switch/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Wireless Switch."
           }
@@ -11357,8 +11465,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wireless_switch_1gang_cr2032/assets/small.png",
+        "large": "/drivers/wireless_switch_1gang_cr2032/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -11381,7 +11489,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/wireless_switch_1gang_cr2032/assets/large.png",
           "instruction": {
             "en": "Press and hold the reset button for 3 seconds until the LED starts blinking.",
             "fr": "Press and hold the reset button for 3 seconds until the LED starts blinking.",
@@ -11461,7 +11569,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/wireless_switch_2gang_cr2032/assets/large.png",
           "instruction": {
             "en": "Press and hold the button until the LED flashes",
             "fr": "Appuyez et maintenez le bouton jusqu'à ce que la LED clignote",
@@ -11489,8 +11597,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wireless_switch_2gang_cr2032/assets/small.png",
+        "large": "/drivers/wireless_switch_2gang_cr2032/assets/large.png"
       },
       "name": {
         "en": "Wireless Switch 2gang CR2032"
@@ -11572,7 +11680,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/wireless_switch_3gang_cr2032/assets/large.png",
           "instruction": {
             "en": "Press and hold the button until the LED flashes",
             "fr": "Appuyez et maintenez le bouton jusqu'à ce que la LED clignote",
@@ -11600,8 +11708,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wireless_switch_3gang_cr2032/assets/small.png",
+        "large": "/drivers/wireless_switch_3gang_cr2032/assets/large.png"
       },
       "name": {
         "en": "Wireless Switch 3gang CR2032"
@@ -11670,7 +11778,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/wireless_switch_4gang_cr2032/assets/large.png",
           "instruction": {
             "en": "Press and hold the button until the LED flashes",
             "fr": "Appuyez et maintenez le bouton jusqu'à ce que la LED clignote",
@@ -11698,8 +11806,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wireless_switch_4gang_cr2032/assets/small.png",
+        "large": "/drivers/wireless_switch_4gang_cr2032/assets/large.png"
       },
       "name": {
         "en": "Wireless Switch 4gang CR2032"
@@ -11782,7 +11890,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/wireless_switch_4gang_cr2450/assets/large.png",
           "instruction": {
             "en": "Press any button 3 times rapidly",
             "fr": "Appuyez sur n'importe quel bouton 3 fois rapidement"
@@ -11790,8 +11898,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wireless_switch_4gang_cr2450/assets/small.png",
+        "large": "/drivers/wireless_switch_4gang_cr2450/assets/large.png"
       },
       "manufacturerName": "Tuya",
       "platforms": [
@@ -11836,7 +11944,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/wireless_switch_5gang_cr2032/assets/large.png",
           "instruction": {
             "en": "Press and hold the button for 5 seconds until LED flashes",
             "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote",
@@ -11864,8 +11972,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wireless_switch_5gang_cr2032/assets/small.png",
+        "large": "/drivers/wireless_switch_5gang_cr2032/assets/large.png"
       },
       "settings": [
         {
@@ -11931,7 +12039,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/wireless_switch_6gang_cr2032/assets/large.png",
           "instruction": {
             "en": "Press and hold the button for 5 seconds until LED flashes",
             "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote",
@@ -11959,8 +12067,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wireless_switch_6gang_cr2032/assets/small.png",
+        "large": "/drivers/wireless_switch_6gang_cr2032/assets/large.png"
       },
       "settings": [
         {
@@ -12001,8 +12109,8 @@
       ],
       "energy": {},
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/zbbridge/assets/small.png",
+        "large": "/drivers/zbbridge/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": "_TZ3000_ji4araar",
@@ -12022,7 +12130,7 @@
           }
         },
         "learnmode": {
-          "image": "./assets/large.png",
+          "image": "/drivers/zbbridge/assets/large.png",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
             "fr": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
@@ -12081,8 +12189,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/zigbee_gateway_hub/assets/small.png",
+        "large": "/drivers/zigbee_gateway_hub/assets/large.png"
       },
       "capabilitiesOptions": {},
       "manufacturerName": "Tuya",

@@ -8,8 +8,8 @@
     "dim"
   ],
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/dimmer/assets/small.png",
+    "large": "/drivers/dimmer/assets/large.png"
   },
   "zigbee": {
     "manufacturerName": "_TZ3000_ji4araar",
@@ -34,7 +34,7 @@
       }
     },
     "learnmode": {
-      "image": "./assets/images/large.png",
+      "image": "/drivers/dimmer/assets/large.png",
       "instruction": {
         "en": "Press and hold setup button for 3 seconds"
       }

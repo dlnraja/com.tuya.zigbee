@@ -39,8 +39,8 @@
     }
   },
   "images": {
-    "large": "./assets/large.png",
-    "small": "./assets/small.png"
+    "large": "/drivers/smoke_detector/assets/large.png",
+    "small": "/drivers/smoke_detector/assets/small.png"
   },
   "pair": [
     {

@@ -27,8 +27,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png",
+    "small": "/drivers/smart_lock/assets/small.png",
+    "large": "/drivers/smart_lock/assets/large.png",
     "xlarge": "/drivers/smart_lock/assets/xlarge.png"
   },
   "energy": {

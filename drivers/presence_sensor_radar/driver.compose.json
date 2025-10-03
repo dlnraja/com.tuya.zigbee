@@ -33,8 +33,8 @@
     }
   },
   "images": {
-    "large": "./assets/large.png",
-    "small": "./assets/small.png"
+    "large": "/drivers/presence_sensor_radar/assets/large.png",
+    "small": "/drivers/presence_sensor_radar/assets/small.png"
   },
   "pair": [
     {

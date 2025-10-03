@@ -27,11 +27,23 @@ function main() {
   let changed = 0;
   app.drivers = app.drivers.map((drv) => {
     const d = { ...drv };
+    const id = d.id;
     d.images = d.images || {};
-    if (d.images.small !== './assets/small.png') { d.images.small = './assets/small.png'; changed++; }
-    if (d.images.large !== './assets/large.png') { d.images.large = './assets/large.png'; changed++; }
-    if (d.zigbee && d.zigbee.learnmode && typeof d.zigbee.learnmode.image === 'string') {
-      if (d.zigbee.learnmode.image !== './assets/large.png') { d.zigbee.learnmode.image = './assets/large.png'; changed++; }
+    if (id) {
+      const smallPath = `/drivers/${id}/assets/small.png`;
+      const largePath = `/drivers/${id}/assets/large.png`;
+      if (d.images.small !== smallPath) { d.images.small = smallPath; changed++; }
+      if (d.images.large !== largePath) { d.images.large = largePath; changed++; }
+      if (d.zigbee && d.zigbee.learnmode && typeof d.zigbee.learnmode.image === 'string') {
+        if (d.zigbee.learnmode.image !== largePath) { d.zigbee.learnmode.image = largePath; changed++; }
+      }
+    } else {
+      // Fallback: keep relative, but normalize names
+      if (d.images.small !== './assets/small.png') { d.images.small = './assets/small.png'; changed++; }
+      if (d.images.large !== './assets/large.png') { d.images.large = './assets/large.png'; changed++; }
+      if (d.zigbee && d.zigbee.learnmode && typeof d.zigbee.learnmode.image === 'string') {
+        if (d.zigbee.learnmode.image !== './assets/large.png') { d.zigbee.learnmode.image = './assets/large.png'; changed++; }
+      }
     }
     return d;
   });

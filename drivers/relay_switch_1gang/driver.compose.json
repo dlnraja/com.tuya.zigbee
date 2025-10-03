@@ -17,8 +17,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/relay_switch_1gang/assets/small.png",
+    "large": "/drivers/relay_switch_1gang/assets/large.png"
   },
   "zigbee": {
     "manufacturerName": "_TZ3000_ji4araar",
@@ -42,7 +42,7 @@
       }
     },
     "learnmode": {
-      "image": "./assets/images/large.png",
+      "image": "/drivers/relay_switch_1gang/assets/large.png",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",
         "fr": "Press and hold the pairing button for 5 seconds until LED blinks rapidly.",

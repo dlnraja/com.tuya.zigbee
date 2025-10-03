@@ -16,8 +16,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/pet_feeder/assets/small.png",
+    "large": "/drivers/pet_feeder/assets/large.png"
   },
   "zigbee": {
     "manufacturerName": "_TZ3000_ji4araar",
@@ -41,7 +41,7 @@
       }
     },
     "learnmode": {
-      "image": "./assets/large.png",
+      "image": "/drivers/pet_feeder/assets/large.png",
       "instruction": {
         "en": "Follow the pairing instructions for your Pet Feeder."
       }

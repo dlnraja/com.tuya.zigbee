@@ -45,7 +45,7 @@
       }
     },
     "learnmode": {
-      "image": "./assets/images/large.png",
+      "image": "/drivers/motion_sensor_zigbee_204z/assets/large.png",
       "instruction": {
         "en": "Press the pairing button until LED blinks rapidly",
         "fr": "Appuyez sur le bouton d'appairage jusqu'à ce que la LED clignote rapidement"
@@ -53,8 +53,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/motion_sensor_zigbee_204z/assets/small.png",
+    "large": "/drivers/motion_sensor_zigbee_204z/assets/large.png"
   },
   "platforms": [
     "local"

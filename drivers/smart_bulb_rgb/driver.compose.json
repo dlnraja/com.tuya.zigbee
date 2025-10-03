@@ -37,8 +37,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png",
+    "small": "/drivers/smart_bulb_rgb/assets/small.png",
+    "large": "/drivers/smart_bulb_rgb/assets/large.png",
     "xlarge": "/drivers/smart_bulb/assets/xlarge.png"
   },
   "community": {

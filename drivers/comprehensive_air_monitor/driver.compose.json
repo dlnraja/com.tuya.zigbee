@@ -32,8 +32,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/comprehensive_air_monitor/assets/small.png",
+    "large": "/drivers/comprehensive_air_monitor/assets/large.png"
   },
   "energy": {
     "batteries": [

@@ -29,8 +29,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png",
+    "small": "/drivers/roller_blind_controller/assets/small.png",
+    "large": "/drivers/roller_blind_controller/assets/large.png",
     "xlarge": "/drivers/curtain_motor/assets/xlarge.png"
   },
   "community": {
