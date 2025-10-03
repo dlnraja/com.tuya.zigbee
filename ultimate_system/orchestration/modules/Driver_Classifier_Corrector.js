@@ -21,6 +21,41 @@ function ensureDir(dirPath) {
   }
 }
 
+// Cap manufacturerName list based on relevance to current PIDs and category usage
+function capManufacturers(manifest, enrichmentMap, categoryPidIndex, category, maxCount = 12) {
+  if (!manifest?.zigbee) return manifest;
+  const current = manifest.zigbee.manufacturerName;
+  const mlist = Array.isArray(current) ? current.slice() : (current ? [current] : []);
+  if (!mlist.length) return manifest;
+
+  const pids = Array.isArray(manifest.zigbee.productId)
+    ? manifest.zigbee.productId.map((p) => (typeof p === 'string' ? p.trim().toUpperCase() : String(p).trim().toUpperCase())).filter(Boolean)
+    : [];
+  const catKnown = categoryPidIndex.get(category) || new Set();
+
+  const scored = mlist.map((m) => {
+    const rec = enrichmentMap.get(m) || {};
+    const recPids = Array.isArray(rec.productIds)
+      ? rec.productIds.map((p) => (typeof p === 'string' ? p.trim().toUpperCase() : String(p).trim().toUpperCase())).filter(Boolean)
+      : [];
+    let pidIntersect = 0;
+    let catIntersect = 0;
+    recPids.forEach((rp) => {
+      if (pids.includes(rp)) pidIntersect += 1;
+      if (catKnown.has(rp)) catIntersect += 1;
+    });
+    const score = pidIntersect * 2 + catIntersect; // prioritize direct intersection
+    return { m, score };
+  });
+
+  scored.sort((a, b) => b.score - a.score || a.m.localeCompare(b.m));
+  const keep = scored.slice(0, Math.max(1, maxCount)).map((s) => s.m);
+
+  const updated = { ...manifest };
+  updated.zigbee.manufacturerName = keep.length === 1 ? keep[0] : Array.from(new Set(keep));
+  return updated;
+}
+
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, 'utf8'));
 }
@@ -118,21 +153,31 @@ function applyEnrichment(manifest, enrichmentRecord) {
   const updated = { ...manifest };
   if (!updated.zigbee) updated.zigbee = {};
 
+  // Merge productIds (do not replace)
   if (Array.isArray(enrichmentRecord.productIds) && enrichmentRecord.productIds.length) {
-    const uniqueProductIds = Array.from(new Set(enrichmentRecord.productIds));
-    updated.zigbee.productId = uniqueProductIds;
+    const existing = Array.isArray(updated.zigbee.productId) ? updated.zigbee.productId : [];
+    const merged = Array.from(new Set([...existing, ...enrichmentRecord.productIds]));
+    if (merged.length) updated.zigbee.productId = merged;
   }
 
+  // Merge clusters into clusterOverrides.default.clusters (union)
   if (Array.isArray(enrichmentRecord.clusters) && enrichmentRecord.clusters.length) {
     updated.zigbee.clusterOverrides = updated.zigbee.clusterOverrides || {};
-    updated.zigbee.clusterOverrides.default = {
-      clusters: enrichmentRecord.clusters,
-    };
+    const prev = updated.zigbee.clusterOverrides.default && Array.isArray(updated.zigbee.clusterOverrides.default.clusters)
+      ? updated.zigbee.clusterOverrides.default.clusters
+      : [];
+    const merged = Array.from(new Set([...(prev || []), ...enrichmentRecord.clusters]))
+      .filter((n) => Number.isFinite(n))
+      .sort((a, b) => a - b);
+    updated.zigbee.clusterOverrides.default = { clusters: merged };
   }
 
+  // Merge batteries (union)
   if (Array.isArray(enrichmentRecord.batteries) && enrichmentRecord.batteries.length) {
     updated.energy = updated.energy || {};
-    updated.energy.batteries = enrichmentRecord.batteries;
+    const prev = Array.isArray(updated.energy.batteries) ? updated.energy.batteries : [];
+    const merged = Array.from(new Set([...prev, ...enrichmentRecord.batteries]));
+    if (merged.length) updated.energy.batteries = merged;
   }
 
   return updated;
@@ -189,6 +234,77 @@ function removeInvalidManufacturers(manifest, validManufacturers) {
   return updated;
 }
 
+// Heuristic: infer a broad device category from a Tuya TS model code.
+// Returns one of: 'light' | 'socket' | 'sensor' | 'button' | null
+function inferCategoryFromTS(ts) {
+  if (!ts || typeof ts !== 'string') return null;
+  const s = ts.toUpperCase();
+  // Lighting families: bulbs, LED controllers
+  if (/^TS05\d/.test(s)) return 'light';
+  if (/^TS110/.test(s)) return 'light';
+  // Socket/relay families
+  if (/^TS010/.test(s) || /^TS011/.test(s)) return 'socket';
+  // Buttons/remotes
+  if (/^TS021/.test(s) || /^TS030/.test(s) || /^TS004/.test(s)) return 'button';
+  // Sensors (motion/contact/env)
+  if (/^TS020/.test(s) || /^TS022/.test(s) || s === 'TS0901') return 'sensor';
+  // Many others (e.g., TS0601) are too generic → do not filter
+  return null;
+}
+
+// Filter manufacturers to those that map to at least one remaining productId
+function filterManufacturersByProductIds(manifest, enrichmentMap) {
+  if (!manifest?.zigbee) return manifest;
+  const current = manifest.zigbee.manufacturerName;
+  const pids = Array.isArray(manifest.zigbee.productId)
+    ? manifest.zigbee.productId.map((p) => (typeof p === 'string' ? p.trim().toUpperCase() : String(p).trim().toUpperCase())).filter(Boolean)
+    : [];
+  if (!current || !pids.length) return manifest;
+
+  const origList = Array.isArray(current) ? current.slice() : [current];
+  const keep = [];
+  origList.forEach((m) => {
+    const rec = enrichmentMap.get(m);
+    if (!rec) return; // no info → drop unless nothing else remains
+    const recPids = Array.isArray(rec.productIds) ? rec.productIds.map((p) => String(p).trim().toUpperCase()) : [];
+    const ok = recPids.some((pid) => pids.includes(pid));
+    if (ok) keep.push(m);
+  });
+
+  const updated = { ...manifest };
+  if (keep.length) {
+    updated.zigbee.manufacturerName = keep.length === 1 ? keep[0] : Array.from(new Set(keep));
+  } else {
+    // fallback: preserve the first original value to avoid emptying field
+    updated.zigbee.manufacturerName = Array.isArray(current) ? current[0] : current;
+  }
+  return updated;
+}
+
+// Derive manufacturerName strictly from the current productIds using the reverse index
+function setManufacturersFromPids(manifest, productIdToManufacturers) {
+  if (!manifest?.zigbee) return manifest;
+  const pids = Array.isArray(manifest.zigbee.productId)
+    ? manifest.zigbee.productId
+        .map((p) => (typeof p === 'string' ? p.trim().toUpperCase() : String(p).trim().toUpperCase()))
+        .filter(Boolean)
+    : [];
+  if (!pids.length) return manifest;
+
+  const derived = new Set();
+  pids.forEach((pid) => {
+    const mset = productIdToManufacturers.get(pid);
+    if (mset) mset.forEach((m) => derived.add(m));
+  });
+
+  if (!derived.size) return manifest;
+
+  const updated = { ...manifest };
+  const arr = Array.from(new Set([...derived]));
+  updated.zigbee.manufacturerName = arr.length === 1 ? arr[0] : arr.sort();
+  return updated;
+}
+
 function relocateDriver(driverId, targetCategory, catalog) {
   if (!targetCategory) return false;
   if (!catalog[targetCategory]) catalog[targetCategory] = [];
@@ -220,6 +336,36 @@ function main() {
     enrichmentMap.set(record.manufacturer, record);
   });
 
+  // Reverse index: productId -> Set(manufacturers) for cross-enrichment
+  const productIdToManufacturers = new Map();
+  enrichmentState.enrichedManufacturers.forEach((record) => {
+    const pids = Array.isArray(record.productIds) ? record.productIds : [];
+    pids.forEach((pidRaw) => {
+      const pid = typeof pidRaw === 'string' ? pidRaw.trim().toUpperCase() : String(pidRaw).trim().toUpperCase();
+      if (!pid) return;
+      if (!productIdToManufacturers.has(pid)) productIdToManufacturers.set(pid, new Set());
+      productIdToManufacturers.get(pid).add(record.manufacturer);
+    });
+  });
+
+  // Curated overrides (prefix-based PID allowlists, class corrections)
+  const curatedOverrides = readJsonSafe(path.join(STATE_DIR, 'curated_overrides.json')) || {};
+
+  // Build category -> Set(productIds) observed across current drivers (for conservative cross-check)
+  const categoryPidIndex = new Map();
+  driverList.forEach((d) => {
+    const cat = driverToCategory.get(d);
+    if (!cat) return;
+    const { manifest } = loadDriverManifest(d);
+    const ids = Array.isArray(manifest?.zigbee?.productId) ? manifest.zigbee.productId : [];
+    ids.forEach((pidRaw) => {
+      const pid = typeof pidRaw === 'string' ? pidRaw.trim().toUpperCase() : String(pidRaw).trim().toUpperCase();
+      if (!pid) return;
+      if (!categoryPidIndex.has(cat)) categoryPidIndex.set(cat, new Set());
+      categoryPidIndex.get(cat).add(pid);
+    });
+  });
+
   let manufacturersCorrected = 0;
   let driversRelocated = 0;
   let duplicatesResolved = 0;
@@ -248,11 +394,10 @@ function main() {
     if (!manifest || !manifest.zigbee) return;
 
     const manufacturers = manifest.zigbee.manufacturerName;
-    if (!manufacturers) return;
 
     const normalized = Array.isArray(manufacturers)
       ? manufacturers.map(normalizeManufacturerName).filter(Boolean)
-      : [normalizeManufacturerName(manufacturers)].filter(Boolean);
+      : (manufacturers ? [normalizeManufacturerName(manufacturers)].filter(Boolean) : []);
 
     const enrichmentRecords = normalized
       .map((manufacturer) => enrichmentMap.get(manufacturer))
@@ -266,6 +411,102 @@ function main() {
       manufacturersCorrected += 1;
     }
 
+    // Cross-enrich manufacturers by intersecting productIds with external mappings
+    const driverPids = Array.isArray(updatedManifest?.zigbee?.productId)
+      ? updatedManifest.zigbee.productId.map((p) => (typeof p === 'string' ? p.trim().toUpperCase() : String(p).trim().toUpperCase())).filter(Boolean)
+      : [];
+    if (driverPids.length) {
+      const extraManufacturers = new Set();
+      driverPids.forEach((pid) => {
+        const mset = productIdToManufacturers.get(pid);
+        if (mset) mset.forEach((m) => extraManufacturers.add(m));
+      });
+      if (extraManufacturers.size) {
+        extraManufacturers.forEach((m) => {
+          updatedManifest = rewriteManufacturer(updatedManifest, m);
+        });
+      }
+    }
+
+    // Apply curated overrides per driver (PID prefixes and class)
+    const ov = curatedOverrides[driverId];
+    if (ov && Array.isArray(ov.allowProductIdPrefixes) && updatedManifest.zigbee && Array.isArray(updatedManifest.zigbee.productId)) {
+      const prefs = ov.allowProductIdPrefixes.map((x) => String(x).toUpperCase());
+      const before = updatedManifest.zigbee.productId.slice();
+      const after = before.filter((pid) => {
+        const p = typeof pid === 'string' ? pid.trim().toUpperCase() : String(pid).trim().toUpperCase();
+        return prefs.some((pf) => p.startsWith(pf));
+      });
+      if (after.length > 0 && after.length <= before.length) {
+        updatedManifest.zigbee.productId = Array.from(new Set(after));
+      }
+    }
+    if (ov && ov.class && updatedManifest.class !== ov.class) {
+      updatedManifest.class = ov.class;
+    }
+
+    // Apply curated endpoint bindings (override OTA etc.)
+    if (ov && Array.isArray(ov.bindings)) {
+      updatedManifest.zigbee = updatedManifest.zigbee || {};
+      updatedManifest.zigbee.endpoints = updatedManifest.zigbee.endpoints || {};
+      const ep1 = updatedManifest.zigbee.endpoints['1'] || {};
+      ep1.bindings = Array.from(new Set(ov.bindings));
+      updatedManifest.zigbee.endpoints['1'] = ep1;
+    }
+
+    // Apply curated batteries preference
+    if (ov && Array.isArray(ov.batteries) && ov.batteries.length) {
+      updatedManifest.energy = updatedManifest.energy || {};
+      updatedManifest.energy.batteries = Array.from(new Set(ov.batteries));
+    }
+
+    // First pass: filter productIds by inferred category only (conservative)
+    if (updatedManifest.zigbee && Array.isArray(updatedManifest.zigbee.productId) && updatedManifest.zigbee.productId.length) {
+      const original = updatedManifest.zigbee.productId.slice();
+      const filteredByCategory = original.filter((pid) => {
+        const p = typeof pid === 'string' ? pid.trim().toUpperCase() : String(pid).trim().toUpperCase();
+        const inf = inferCategoryFromTS(p);
+        return !inf || inf === category;
+      });
+      if (filteredByCategory.length > 0 && filteredByCategory.length < original.length) {
+        updatedManifest.zigbee.productId = Array.from(new Set(filteredByCategory));
+      }
+    }
+
+    // Trim manufacturers by PID intersection (now that PIDs are category-filtered)
+    updatedManifest = filterManufacturersByProductIds(updatedManifest, enrichmentMap);
+
+    // Second pass: remove unknown TS not mapped to the now-trimmed manufacturers
+    if (updatedManifest.zigbee && Array.isArray(updatedManifest.zigbee.productId) && updatedManifest.zigbee.productId.length) {
+      const original2 = updatedManifest.zigbee.productId.slice();
+      const mlist2 = Array.isArray(updatedManifest.zigbee.manufacturerName)
+        ? updatedManifest.zigbee.manufacturerName
+        : (updatedManifest.zigbee.manufacturerName ? [updatedManifest.zigbee.manufacturerName] : []);
+      const knownSet2 = new Set();
+      mlist2.forEach((m) => {
+        const rec = enrichmentMap.get(m);
+        if (rec && Array.isArray(rec.productIds)) {
+          rec.productIds.forEach((p) => {
+            const u = typeof p === 'string' ? p.trim().toUpperCase() : String(p).trim().toUpperCase();
+            if (u) knownSet2.add(u);
+          });
+        }
+      });
+      const catKnown = categoryPidIndex.get(category) || new Set();
+      if (knownSet2.size) {
+        const filteredByKnown = original2.filter((pid) => {
+          const p = typeof pid === 'string' ? pid.trim().toUpperCase() : String(pid).trim().toUpperCase();
+          const inf = inferCategoryFromTS(p);
+          if (inf) return inf === category; // already ensured by first pass but keep invariant
+          // unknown family: require presence in both manufacturer known set and category-observed set
+          return knownSet2.has(p) && catKnown.has(p);
+        });
+        if (filteredByKnown.length > 0 && filteredByKnown.length < original2.length) {
+          updatedManifest.zigbee.productId = Array.from(new Set(filteredByKnown));
+        }
+      }
+    }
+
     // Ensure energy.batteries exists when measure_battery is declared (SDK3 requirement)
     const hasMeasureBattery = Array.isArray(updatedManifest.capabilities) &&
       updatedManifest.capabilities.includes('measure_battery');
@@ -276,6 +517,15 @@ function main() {
         updatedManifest.energy.batteries = ['CR2032'];
       }
     }
+
+    // After second-pass filtering, trim manufacturers again by PID intersection
+    updatedManifest = filterManufacturersByProductIds(updatedManifest, enrichmentMap);
+
+    // Aggressive consolidation for unbranded/over-broad sets: derive directly from PIDs
+    updatedManifest = setManufacturersFromPids(updatedManifest, productIdToManufacturers);
+
+    // Cap manufacturer list size by relevance to category and PIDs
+    updatedManifest = capManufacturers(updatedManifest, enrichmentMap, categoryPidIndex, category, 12);
 
     // Normalize driver image paths defensively
     updatedManifest.images = updatedManifest.images || {};
@@ -288,8 +538,20 @@ function main() {
 
     updateManifest(manifestPath, updatedManifest);
 
-    const targetCategory = driverToCategory.get(driverId);
+    // Determine target category: curated override wins if it maps to a known catalog category
+    const overrideCategory = (ov && typeof ov.class === 'string' && newCatalog[ov.class]) ? ov.class : null;
+    const targetCategory = overrideCategory || driverToCategory.get(driverId);
     if (targetCategory) {
+      // If an override category is set, remove the driver from all other categories first
+      if (overrideCategory) {
+        Object.keys(newCatalog).forEach((cat) => {
+          if (cat === targetCategory) return;
+          const arr = newCatalog[cat];
+          if (Array.isArray(arr)) {
+            newCatalog[cat] = arr.filter((d) => d !== driverId);
+          }
+        });
+      }
       const relocated = relocateDriver(driverId, targetCategory, newCatalog);
       if (relocated) driversRelocated += 1;
     }
@@ -306,6 +568,9 @@ function main() {
   };
   const stateFile = path.join(STATE_DIR, 'driver_classifier_state.json');
   writeJson(stateFile, state);
+
+  // Persist updated catalog categories
+  writeJson(CATALOG_FILE, newCatalog);
 
   console.log(`   • Manufacturiers corrigés: ${manufacturersCorrected}`);
   console.log(`   • Drivers relocalisés: ${driversRelocated}`);
