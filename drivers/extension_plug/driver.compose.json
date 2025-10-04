@@ -32,16 +32,7 @@
       "TS0111",
       "TS0115",
       "TS0105",
-      "TS0108",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0006",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014",
-      "TS0601"
+      "TS0108"
     ],
     "endpoints": {
       "1": {
@@ -63,8 +54,8 @@
     }
   },
   "images": {
-    "large": "./assets/large.png",
-    "small": "./assets/small.png"
+    "large": "/drivers/extension_plug/assets/large.png",
+    "small": "/drivers/extension_plug/assets/small.png"
   },
   "pair": [
     {

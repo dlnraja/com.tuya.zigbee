@@ -61,8 +61,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/co_detector_pro/assets/small.png",
+    "large": "/drivers/co_detector_pro/assets/large.png"
   },
   "platforms": [
     "local"

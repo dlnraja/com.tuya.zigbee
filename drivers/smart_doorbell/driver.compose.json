@@ -18,8 +18,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/smart_doorbell/assets/small.png",
+    "large": "/drivers/smart_doorbell/assets/large.png"
   },
   "zigbee": {
     "manufacturerName": [

@@ -16,8 +16,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/smart_garden_sprinkler/assets/small.png",
+    "large": "/drivers/smart_garden_sprinkler/assets/large.png"
   },
   "zigbee": {
     "manufacturerName": [

@@ -16,8 +16,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/garage_door_opener/assets/small.png",
+    "large": "/drivers/garage_door_opener/assets/large.png"
   },
   "zigbee": {
     "manufacturerName": [
