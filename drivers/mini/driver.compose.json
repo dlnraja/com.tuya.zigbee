@@ -61,13 +61,11 @@
           4,
           5,
           6,
-          8,
-          1,
-          768,
-          61184
+          8
         ],
         "bindings": [
-          1
+          6,
+          8
         ]
       }
     },
@@ -83,5 +81,6 @@
   ],
   "connectivity": [
     "zigbee"
-  ]
+  ],
+  "capabilitiesOptions": {}
 }
