@@ -1,0 +1,23 @@
+{
+  "version": "v38.0",
+  "policy": {
+    "numericClusterRegistration": true,
+    "clusters": {
+      "onoff": 6,
+      "dim": 8,
+      "light_hue": 768,
+      "light_saturation": 768,
+      "light_temperature": 768,
+      "measure_temperature": 1026,
+      "measure_humidity": 1029,
+      "alarm_motion": 1280,
+      "alarm_contact": 1280,
+      "alarm_co": 1280,
+      "measure_battery": 1,
+      "alarm_battery": 1,
+      "ef00": 61184
+    },
+    "removedTuyaSpecific": "All usages of CLUSTER_TUYA_SPECIFIC replaced by numeric cluster registration",
+    "debug": ["enableDebug()", "printNode()"]
+  }
+}

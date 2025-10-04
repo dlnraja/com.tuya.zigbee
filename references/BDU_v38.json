@@ -1,0 +1,56 @@
+{
+  "version": "v38.0",
+  "basedOn": "references/BDU_v37.json",
+  "overrides": [
+    {
+      "driver": "dimmer_switch_1gang_ac",
+      "productId": ["TS0601", "TS110E"],
+      "endpoints1_clusters": [0, 3, 4, 5, 6, 8, 61184],
+      "bindings": [1],
+      "notes": [
+        "manufacturerName placeholders pruned",
+        "numeric capability mapping enforced"
+      ]
+    },
+    {
+      "driver": "dimmer",
+      "productId": ["TS0501A"],
+      "endpoints1_clusters": [0, 3, 4, 5, 6, 8],
+      "bindings": [1]
+    },
+    {
+      "driver": "ceiling_light_rgb",
+      "productId": ["TS0505A"],
+      "endpoints1_clusters": [0, 4, 5, 6, 8, 768],
+      "bindings": [1]
+    },
+    {
+      "driver": "ceiling_light_controller",
+      "productId": ["TS0505A"],
+      "endpoints1_clusters": [0, 4, 5, 6, 8, 768],
+      "bindings": [1]
+    },
+    {
+      "driver": "climate_monitor",
+      "productId": ["TS0201"],
+      "endpoints1_clusters": [0, 1, 3, 1026, 1029],
+      "bindings": [1]
+    },
+    {
+      "driver": "co_detector_pro",
+      "productId": ["TS0601"],
+      "endpoints1_clusters": [0, 1, 3, 1280, 61184],
+      "bindings": [1]
+    }
+  ],
+  "deviceCodePolicy": {
+    "numericClusterRegistration": true,
+    "removedTuyaSpecific": true
+  },
+  "assets": {
+    "requiredDriverImageSizes": {
+      "small": "75x75",
+      "large": "500x500"
+    }
+  }
+}
