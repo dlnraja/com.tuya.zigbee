@@ -42,11 +42,12 @@
           3,
           6,
           8,
-          1026
+          1026,
+          1,
+          61184
         ],
         "bindings": [
-          6,
-          8
+          1
         ]
       }
     }
@@ -55,7 +56,6 @@
     "small": "/drivers/smart_irrigation_controller/assets/small.png",
     "large": "/drivers/smart_irrigation_controller/assets/large.png"
   },
-  "capabilitiesOptions": {},
   "platforms": [
     "local"
   ]
