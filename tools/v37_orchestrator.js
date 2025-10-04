@@ -54,6 +54,19 @@ function inferTS(dcj, driverName){
   return current.length ? current : ["TS0201"]; // safe sensor fallback
 }
 
+function enforceLightMonoTS(dcj){
+  if (dcj.class !== "light") return;
+  const caps = Array.isArray(dcj.capabilities) ? dcj.capabilities : [];
+  const hasRGB = caps.includes("light_hue") || caps.includes("light_saturation");
+  const hasCCT = caps.includes("light_temperature");
+  let targetTS = null;
+  if (hasRGB) targetTS = "TS0505A"; // RGB
+  else if (hasCCT) targetTS = "TS0502A"; // CCT only
+  else if (caps.includes("dim") || caps.includes("onoff")) targetTS = "TS0501A"; // Dim/OnOff only
+  if (!dcj.zigbee) dcj.zigbee = {};
+  dcj.zigbee.productId = targetTS ? [targetTS] : (Array.isArray(dcj.zigbee.productId) && dcj.zigbee.productId.length ? dcj.zigbee.productId : ["TS0501A"]);
+}
+
 function normalizeDriver(driverFolder){
   const file = path.join(DRIVERS_DIR, driverFolder, "driver.compose.json");
   const dcj = readJSON(file);
@@ -65,10 +78,16 @@ function normalizeDriver(driverFolder){
   // Remove non standard capability
   if (Array.isArray(dcj.capabilities)) {
     dcj.capabilities = dcj.capabilities.filter(c => c !== "measure_co");
+    // Lights should not expose ambient measurement capabilities
+    if (dcj.class === "light") {
+      dcj.capabilities = dcj.capabilities.filter(c => c !== "measure_temperature" && c !== "measure_humidity");
+    }
   }
 
   // Infer TS if needed
   dcj.zigbee.productId = inferTS(dcj, driverFolder);
+  // Enforce strict mono-TS for lights regardless of previous productId content
+  enforceLightMonoTS(dcj);
 
   // Ensure endpoints structure
   dcj.zigbee.endpoints = dcj.zigbee.endpoints || {};
@@ -94,6 +113,13 @@ function normalizeDriver(driverFolder){
     ep1.clusters = addCluster(ep1.clusters, 768); // colorControl
     ep1.clusters = addCluster(ep1.clusters, 4);   // groups
     ep1.clusters = addCluster(ep1.clusters, 5);   // scenes
+    // If it's a light and we removed measurement caps, clean 1026/1029 if present
+    if (!hasCap(dcj,"measure_temperature")) {
+      ep1.clusters = ep1.clusters.filter(id => id !== 1026);
+    }
+    if (!hasCap(dcj,"measure_humidity")) {
+      ep1.clusters = ep1.clusters.filter(id => id !== 1029);
+    }
   }
 
   // Window coverings cluster

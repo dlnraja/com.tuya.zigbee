@@ -1,6 +1,6 @@
 {
   "version": "v37",
-  "generatedAt": "2025-10-04T22:08:53.462Z",
+  "generatedAt": "2025-10-04T22:18:48.034Z",
   "entries": [
     {
       "driver": "air_quality_monitor",
@@ -2922,7 +2922,20 @@
     {
       "driver": "ceiling_light_rgb",
       "productId": [
-        "TS0505A"
+        "TS0501A",
+        "TS0502A",
+        "TS0502B",
+        "TS0503A",
+        "TS0503B",
+        "TS0504B",
+        "TS0505A",
+        "TS0505B",
+        "TS110E",
+        "TS110F",
+        "TS0501B",
+        "TS0504A",
+        "TS0505",
+        "TS1101"
       ],
       "manufacturerName": [
         "_TZ3000_01gpyda5",
