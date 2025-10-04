@@ -54,8 +54,14 @@ function inferTS(dcj, driverName){
   return current.length ? current : ["TS0201"]; // safe sensor fallback
 }
 
-function enforceLightMonoTS(dcj){
+function enforceLightMonoTS(dcj, driverFolder){
   if (dcj.class !== "light") return;
+  // Manual override for known wall dimmer driver
+  if (driverFolder === 'dimmer') {
+    if (!dcj.zigbee) dcj.zigbee = {};
+    dcj.zigbee.productId = ["TS110E"]; // Tuya Zigbee Dimmer Module (standard clusters)
+    return;
+  }
   const caps = Array.isArray(dcj.capabilities) ? dcj.capabilities : [];
   const hasRGB = caps.includes("light_hue") || caps.includes("light_saturation");
   const hasCCT = caps.includes("light_temperature");
@@ -87,7 +93,7 @@ function normalizeDriver(driverFolder){
   // Infer TS if needed
   dcj.zigbee.productId = inferTS(dcj, driverFolder);
   // Enforce strict mono-TS for lights regardless of previous productId content
-  enforceLightMonoTS(dcj);
+  enforceLightMonoTS(dcj, driverFolder);
 
   // Ensure endpoints structure
   dcj.zigbee.endpoints = dcj.zigbee.endpoints || {};
