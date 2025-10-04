@@ -4,9 +4,10 @@
   },
   "class": "sensor",
   "capabilities": [
-    "alarm_smoke",
+    "onoff",
     "measure_battery",
-    "alarm_battery"
+    "measure_temperature",
+    "alarm_motion"
   ],
   "energy": {
     "batteries": [
@@ -29,17 +30,35 @@
       "_TZ3000_1dd0d5yi"
     ],
     "productId": [
-      "TS0205"
+      "TS0001",
+      "TS0201",
+      "TS0202",
+      "TS0203",
+      "TS0205",
+      "TS0207",
+      "TS0222",
+      "TS0225",
+      "TS0601",
+      "TS130F",
+      "TS0204",
+      "TS020C",
+      "TS0224",
+      "TS0901"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          1,
-          1280
+          3,
+          4,
+          5,
+          6,
+          1280,
+          1
         ],
         "bindings": [
-          1
+          6,
+          8
         ]
       }
     }
@@ -62,3 +81,19 @@
     }
   ],
   "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature"
+      },
+      "units": {
+        "en": "°C"
+      }
+    }
+  }
+}

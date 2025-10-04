@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2025-10-02T21:52:52.149Z",
+  "generatedAt": "2025-10-04T13:44:24.895Z",
   "metrics": {
     "drivers": 162,
-    "manufacturers": 22,
+    "manufacturers": 19,
     "todoRemaining": 0,
     "scriptsMoved": 0,
-    "validationSuccess": false,
-    "gitPushStatus": "pull_failed",
-    "gitAttempts": 0
+    "validationSuccess": true,
+    "gitPushStatus": "success",
+    "gitAttempts": 1
   },
   "reorg": {
     "moved": []
