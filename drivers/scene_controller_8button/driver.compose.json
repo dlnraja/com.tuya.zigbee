@@ -46,8 +46,7 @@
           6
         ],
         "bindings": [
-          1,
-          6
+          1
         ]
       }
     },
@@ -96,6 +95,5 @@
   ],
   "connectivity": [
     "zigbee"
-  ],
-  "capabilitiesOptions": {}
+  ]
 }

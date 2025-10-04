@@ -9,38 +9,6 @@
     "thermostat_mode",
     "measure_battery"
   ],
-  "capabilitiesOptions": {
-    "target_temperature": {
-      "min": 5,
-      "max": 35,
-      "step": 0.5,
-      "units": {
-        "en": "°C"
-      }
-    },
-    "thermostat_mode": {
-      "values": [
-        {
-          "id": "heat",
-          "title": {
-            "en": "Heat"
-          }
-        },
-        {
-          "id": "off",
-          "title": {
-            "en": "Off"
-          }
-        },
-        {
-          "id": "auto",
-          "title": {
-            "en": "Auto"
-          }
-        }
-      ]
-    }
-  },
   "zigbee": {
     "manufacturerName": [
       "_TZ1800_ejwkn2h2",
@@ -67,12 +35,12 @@
           1,
           513,
           516,
-          1026
+          1026,
+          3,
+          61184
         ],
         "bindings": [
-          25,
-          513,
-          516
+          1
         ]
       }
     }
