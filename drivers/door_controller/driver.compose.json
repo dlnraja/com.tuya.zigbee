@@ -26,23 +26,40 @@
       "_TZ3000_1dd0d5yi"
     ],
     "productId": [
-      "TS0501A"
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS0501A",
+      "TS0502A",
+      "TS0502B",
+      "TS0503A",
+      "TS0503B",
+      "TS0504B",
+      "TS0505A",
+      "TS0505B",
+      "TS0601",
+      "TS110E",
+      "TS110F",
+      "TS0006",
+      "TS0501B",
+      "TS0504A",
+      "TS0505",
+      "TS1101"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
           1,
-          1280,
-          3,
-          6,
-          8,
-          768,
-          4,
-          5
+          1280
         ],
         "bindings": [
-          1
+          25
         ]
       }
     }
@@ -68,6 +85,7 @@
   "connectivity": [
     "zigbee"
   ],
+  "capabilitiesOptions": {},
   "energy": {
     "approximation": {
       "usageConstant": 10
