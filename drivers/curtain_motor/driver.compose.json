@@ -2,7 +2,7 @@
   "name": {
     "en": "Curtain Motor"
   },
-  "class": "other",
+  "class": "windowcoverings",
   "capabilities": [
     "onoff",
     "windowcoverings_set",
@@ -25,9 +25,7 @@
       "_TZ3000_0s9gukzt"
     ],
     "productId": [
-      "TS0001",
-      "TS130F",
-      "TS0601"
+      "TS130F"
     ],
     "endpoints": {
       "1": {

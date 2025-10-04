@@ -2,14 +2,12 @@
   "name": {
     "en": "Outdoor Siren"
   },
-  "class": "lock",
+  "class": "sensor",
   "capabilities": [
-    "locked",
-    "alarm_battery",
-    "measure_battery",
-    "alarm_contact",
     "alarm_generic",
-    "volume_set"
+    "alarm_tamper",
+    "measure_battery",
+    "alarm_battery"
   ],
   "platforms": [
     "local"
@@ -37,7 +35,7 @@
       "_TZ3000_0s9gukzt"
     ],
     "productId": [
-      "TS0001"
+      "TS0224"
     ],
     "endpoints": {
       "1": {
@@ -47,7 +45,7 @@
           1280
         ],
         "bindings": [
-          25
+          1
         ]
       }
     },
