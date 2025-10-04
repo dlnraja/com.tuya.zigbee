@@ -47,12 +47,12 @@
           1,
           513,
           516,
-          1026
+          1026,
+          3,
+          61184
         ],
         "bindings": [
-          25,
-          513,
-          516
+          1
         ]
       }
     }
@@ -90,36 +90,6 @@
       "units": {
         "en": "°C"
       }
-    },
-    "target_temperature": {
-      "min": 5,
-      "max": 35,
-      "step": 0.5,
-      "units": {
-        "en": "°C"
-      }
-    },
-    "thermostat_mode": {
-      "values": [
-        {
-          "id": "heat",
-          "title": {
-            "en": "Heat"
-          }
-        },
-        {
-          "id": "off",
-          "title": {
-            "en": "Off"
-          }
-        },
-        {
-          "id": "auto",
-          "title": {
-            "en": "Auto"
-          }
-        }
-      ]
     }
   }
 }
