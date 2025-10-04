@@ -7,9 +7,7 @@
     "measure_temperature",
     "measure_humidity",
     "alarm_battery",
-    "measure_battery",
-    "alarm_motion",
-    "measure_luminance"
+    "measure_battery"
   ],
   "platforms": [
     "local"
@@ -37,33 +35,19 @@
       "_TZ3000_1dd0d5yi"
     ],
     "productId": [
-      "TS0001",
-      "TS0201",
-      "TS0601",
-      "TS0202",
-      "TS0203",
-      "TS0205",
-      "TS0207",
-      "TS0222",
-      "TS0225",
-      "TS130F",
-      "TS0204",
-      "TS020C",
-      "TS0224",
-      "TS0901"
+      "TS0201"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
           1,
-          1024,
-          1030,
-          1280,
+          1026,
+          1029,
           61184
         ],
         "bindings": [
-          25
+          1
         ]
       }
     },
