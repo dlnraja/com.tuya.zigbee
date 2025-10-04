@@ -26,30 +26,7 @@
       "_TZ3000_1dd0d5yi"
     ],
     "productId": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014",
-      "TS0501A",
-      "TS0502A",
-      "TS0502B",
-      "TS0503A",
-      "TS0503B",
-      "TS0504B",
-      "TS0505A",
-      "TS0505B",
-      "TS0601",
-      "TS110E",
-      "TS110F",
-      "TS0006",
-      "TS0501B",
-      "TS0504A",
-      "TS0505",
-      "TS1101"
+      "TS0505A"
     ],
     "endpoints": {
       "1": {
@@ -59,17 +36,16 @@
           5,
           6,
           8,
-          768
+          768,
+          1,
+          3
         ],
         "bindings": [
-          6,
-          8,
-          768
+          1
         ]
       }
     }
   },
-  "capabilitiesOptions": {},
   "images": {
     "small": "/drivers/ceiling_light_controller/assets/small.png",
     "large": "/drivers/ceiling_light_controller/assets/large.png"
