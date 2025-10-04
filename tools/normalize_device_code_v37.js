@@ -19,22 +19,25 @@ function normalizeDeviceJS(driverFolder){
   const file = path.join(DRIVERS_DIR, driverFolder, "device.js");
   let src = fs.readFileSync(file, "utf8");
 
-  // Only target simple generic pattern: forEach over caps with CLUSTER_TUYA_SPECIFIC
-  const genericPattern = /const\s+caps\s*=\s*this\.getCapabilities\(\);[\s\S]*?caps\.forEach\(cap\s*=>\s*\{[\s\S]*?this\.registerCapability\(cap,\s*['"]CLUSTER_TUYA_SPECIFIC['"]\);[\s\S]*?\}\);/m;
-  if (!genericPattern.test(src)) return false;
+  if (!src.includes('CLUSTER_TUYA_SPECIFIC')) return false;
 
   // Ensure enableDebug/printNode present
   if (!/this\.enableDebug\(\);/m.test(src)) {
     src = src.replace(/async\s+onNodeInit\(\)\s*\{/, match => `${match}\n    this.enableDebug();`);
   }
   if (!/this\.printNode\(\);/m.test(src)) {
-    src = src.replace(/this\.enableDebug\(\);[\s\S]*?\n/, m => m + `    this.printNode();\n`);
+    // Insert printNode after enableDebug if not present
+    src = src.replace(/this\.enableDebug\(\);[\t ]*\n/, m => m + `    this.printNode();\n`);
   }
 
-  // Replace the generic loop with explicit numeric registrations
-  const replacement = `// Register capabilities with numeric Zigbee clusters\n    if (this.hasCapability('onoff')) {\n      this.registerCapability('onoff', 6);\n    }\n    if (this.hasCapability('dim')) {\n      this.registerCapability('dim', 8);\n    }\n    if (this.hasCapability('light_hue')) {\n      this.registerCapability('light_hue', 768);\n    }\n    if (this.hasCapability('light_saturation')) {\n      this.registerCapability('light_saturation', 768);\n    }\n    if (this.hasCapability('light_temperature')) {\n      this.registerCapability('light_temperature', 768);\n    }\n    if (this.hasCapability('measure_temperature')) {\n      this.registerCapability('measure_temperature', 1026);\n    }\n    if (this.hasCapability('measure_humidity')) {\n      this.registerCapability('measure_humidity', 1029);\n    }\n    if (this.hasCapability('alarm_motion')) {\n      this.registerCapability('alarm_motion', 1280);\n    }\n    if (this.hasCapability('alarm_contact')) {\n      this.registerCapability('alarm_contact', 1280);\n    }\n    if (this.hasCapability('alarm_co')) {\n      this.registerCapability('alarm_co', 1280);\n    }\n    if (this.hasCapability('measure_battery')) {\n      this.registerCapability('measure_battery', 1);\n    }\n    if (this.hasCapability('alarm_battery')) {\n      this.registerCapability('alarm_battery', 1);\n    }`;
+  // Inject numeric registration block if not already present
+  if (!/Register capabilities with numeric Zigbee clusters/.test(src)) {
+    src = src.replace(/\basync\s+onNodeInit\(\)\s*\{[\s\S]*?this\.printNode\(\);\s*\n/, match => match +
+`    // Register capabilities with numeric Zigbee clusters\n    if (this.hasCapability('onoff')) {\n      this.registerCapability('onoff', 6);\n    }\n    if (this.hasCapability('dim')) {\n      this.registerCapability('dim', 8);\n    }\n    if (this.hasCapability('light_hue')) {\n      this.registerCapability('light_hue', 768);\n    }\n    if (this.hasCapability('light_saturation')) {\n      this.registerCapability('light_saturation', 768);\n    }\n    if (this.hasCapability('light_temperature')) {\n      this.registerCapability('light_temperature', 768);\n    }\n    if (this.hasCapability('measure_temperature')) {\n      this.registerCapability('measure_temperature', 1026);\n    }\n    if (this.hasCapability('measure_humidity')) {\n      this.registerCapability('measure_humidity', 1029);\n    }\n    if (this.hasCapability('alarm_motion')) {\n      this.registerCapability('alarm_motion', 1280);\n    }\n    if (this.hasCapability('alarm_contact')) {\n      this.registerCapability('alarm_contact', 1280);\n    }\n    if (this.hasCapability('alarm_co')) {\n      this.registerCapability('alarm_co', 1280);\n    }\n    if (this.hasCapability('measure_battery')) {\n      this.registerCapability('measure_battery', 1);\n    }\n    if (this.hasCapability('alarm_battery')) {\n      this.registerCapability('alarm_battery', 1);\n    }\n`);
+  }
 
-  src = src.replace(genericPattern, replacement);
+  // Neutralize any CLUSTER_TUYA_SPECIFIC registrations to avoid double-registration
+  src = src.replace(/this\.registerCapability\([^\)]*,\s*['"]CLUSTER_TUYA_SPECIFIC['"]\);?/g, '// replaced by numeric cluster registration');
 
   fs.writeFileSync(file, src, "utf8");
   return true;

@@ -588,8 +588,6 @@
       "_TZ3000_xfs39dbf",
       "_TZ3000_xkap8wtb",
       "_TZ3000_xr3htd96",
-      "_TZ3000_xxxxx",
-      "_TZ3000_xxxxxxxx",
       "_TZ3000_y4ona9me",
       "_TZ3000_yd2e749y",
       "_TZ3000_yfekcy3n",
@@ -1431,7 +1429,7 @@
       "_TZE608_xkr8gep3"
     ],
     "productId": [
-      "TS0001"
+      "TS0501A"
     ],
     "endpoints": {
       "1": {
@@ -1440,7 +1438,10 @@
           4,
           5,
           6,
-          8
+          8,
+          1,
+          3,
+          768
         ],
         "bindings": [
           1
@@ -1452,7 +1453,6 @@
     "small": "/drivers/switch_8gang_ac/assets/small.png",
     "large": "/drivers/switch_8gang_ac/assets/large.png"
   },
-  "capabilitiesOptions": {},
   "platforms": [
     "local"
   ]
