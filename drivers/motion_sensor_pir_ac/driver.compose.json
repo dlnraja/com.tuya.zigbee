@@ -62,8 +62,8 @@
     ]
   },
   "images": {
-    "small": "/drivers/motion_sensor_pir_ac/assets/small.png",
-    "large": "/drivers/motion_sensor_pir_ac/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "settings": [
     {

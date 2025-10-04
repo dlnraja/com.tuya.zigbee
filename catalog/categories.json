@@ -27,13 +27,9 @@
     "switch_6gang_ac",
     "switch_8gang_ac",
     "touch_dimmer_1gang",
-    "wall_switch_1gang_ac",
     "wall_switch_1gang_dc",
-    "wall_switch_2gang_ac",
     "wall_switch_2gang_dc",
-    "wall_switch_3gang_ac",
     "wall_switch_3gang_dc",
-    "wall_switch_4gang_ac",
     "wall_switch_4gang_dc",
     "wall_switch_5gang_ac",
     "wall_switch_6gang_ac",
@@ -57,7 +53,11 @@
     "touch_switch_4gang",
     "usb_outlet",
     "usb_outlet_advanced",
-    "wireless_switch"
+    "wireless_switch",
+    "wall_switch_1gang_ac",
+    "wall_switch_2gang_ac",
+    "wall_switch_3gang_ac",
+    "wall_switch_4gang_ac"
   ],
   "sensor": [
     "air_quality_monitor",

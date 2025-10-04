@@ -60,8 +60,8 @@
     }
   },
   "images": {
-    "small": "/drivers/temp_sensor_pro/assets/small.png",
-    "large": "/drivers/temp_sensor_pro/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "platforms": [
     "local"

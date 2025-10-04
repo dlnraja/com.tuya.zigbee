@@ -90,8 +90,8 @@
     }
   },
   "images": {
-    "small": "/drivers/power_meter_socket/assets/small.png",
-    "large": "/drivers/power_meter_socket/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "platforms": [
     "local"

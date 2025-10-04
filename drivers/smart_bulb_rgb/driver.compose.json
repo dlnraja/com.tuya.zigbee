@@ -70,8 +70,8 @@
     }
   },
   "images": {
-    "small": "/drivers/smart_bulb_rgb/assets/small.png",
-    "large": "/drivers/smart_bulb_rgb/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "community": {
     "sources": [

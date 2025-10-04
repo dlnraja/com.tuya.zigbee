@@ -58,8 +58,8 @@
     }
   },
   "images": {
-    "small": "/drivers/thermostat/assets/small.png",
-    "large": "/drivers/thermostat/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "community": {
     "sources": [

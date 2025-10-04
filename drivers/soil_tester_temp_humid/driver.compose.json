@@ -63,8 +63,8 @@
     }
   },
   "images": {
-    "small": "/drivers/soil_tester_temp_humid/assets/small.png",
-    "large": "/drivers/soil_tester_temp_humid/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "capabilitiesOptions": {
     "measure_temperature": {

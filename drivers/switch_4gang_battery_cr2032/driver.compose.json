@@ -68,8 +68,8 @@
     }
   },
   "images": {
-    "small": "/drivers/switch_4gang_battery_cr2032/assets/small.png",
-    "large": "/drivers/switch_4gang_battery_cr2032/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "capabilitiesOptions": {},
   "platforms": [

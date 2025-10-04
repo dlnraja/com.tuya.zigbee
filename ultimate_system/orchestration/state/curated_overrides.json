@@ -1,28 +1,84 @@
 {
   "motion_sensor_pir_battery": {
-    "allowProductIdPrefixes": ["TS0202", "TS0901"],
+    "allowProductIdPrefixes": [
+      "TS0202",
+      "TS0901"
+    ],
     "class": "sensor",
-    "bindings": [1, 1280],
-    "batteries": ["CR2450"]
+    "bindings": [
+      1,
+      1280
+    ],
+    "batteries": [
+      "CR2450"
+    ]
   },
   "motion_sensor_battery": {
-    "allowProductIdPrefixes": ["TS0202", "TS0901"],
+    "allowProductIdPrefixes": [
+      "TS0202",
+      "TS0901"
+    ],
     "class": "sensor",
-    "bindings": [1, 1280],
-    "batteries": ["CR2032", "CR2450"],
-    "forceProductIds": ["TS0202", "TS0901"]
+    "bindings": [
+      1,
+      1280
+    ],
+    "batteries": [
+      "CR2032",
+      "CR2450"
+    ],
+    "forceProductIds": [
+      "TS0202",
+      "TS0901"
+    ]
   },
   "scene_controller_4button": {
-    "allowProductIdPrefixes": ["TS004"],
+    "allowProductIdPrefixes": [
+      "TS004"
+    ],
     "class": "button"
   },
   "energy_monitoring_plug": {
-    "allowProductIdPrefixes": ["TS010", "TS011"],
+    "allowProductIdPrefixes": [
+      "TS010",
+      "TS011"
+    ],
     "class": "socket"
   },
   "ceiling_light_rgb": {
-    "allowProductIdPrefixes": ["TS05", "TS110"],
+    "allowProductIdPrefixes": [
+      "TS05",
+      "TS110"
+    ],
     "class": "light",
     "clearBatteries": true
+  },
+  "wall_switch_1gang_ac": {
+    "allowProductIdPrefixes": [
+      "TS0001",
+      "TS0011"
+    ],
+    "class": "socket"
+  },
+  "wall_switch_2gang_ac": {
+    "allowProductIdPrefixes": [
+      "TS0002",
+      "TS0012"
+    ],
+    "class": "socket"
+  },
+  "wall_switch_3gang_ac": {
+    "allowProductIdPrefixes": [
+      "TS0003",
+      "TS0013"
+    ],
+    "class": "socket"
+  },
+  "wall_switch_4gang_ac": {
+    "allowProductIdPrefixes": [
+      "TS0004",
+      "TS0014"
+    ],
+    "class": "socket"
   }
 }

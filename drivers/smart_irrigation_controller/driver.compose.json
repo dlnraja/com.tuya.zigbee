@@ -52,8 +52,8 @@
     }
   },
   "images": {
-    "small": "/drivers/smart_irrigation_controller/assets/small.png",
-    "large": "/drivers/smart_irrigation_controller/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "capabilitiesOptions": {},
   "platforms": [
