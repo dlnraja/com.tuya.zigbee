@@ -43,13 +43,10 @@
           0,
           1,
           1280,
-          1026,
-          3,
-          6,
-          61184
+          1026
         ],
         "bindings": [
-          1
+          25
         ]
       }
     }
@@ -58,6 +55,7 @@
     "small": "/drivers/water_valve_smart/assets/small.png",
     "large": "/drivers/water_valve_smart/assets/large.png"
   },
+  "capabilitiesOptions": {},
   "platforms": [
     "local"
   ]
