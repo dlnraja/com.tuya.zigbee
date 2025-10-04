@@ -2,7 +2,7 @@
   "name": {
     "en": "Smart Curtain Motor"
   },
-  "class": "windowcoverings",
+  "class": "sensor",
   "capabilities": [
     "windowcoverings_state",
     "windowcoverings_set",
@@ -35,6 +35,7 @@
       "_TZ3000_0s9gukzt"
     ],
     "productId": [
+      "TS0001",
       "TS130F"
     ],
     "endpoints": {
