@@ -5,6 +5,7 @@
   "class": "light",
   "capabilities": [
     "onoff",
+    "measure_temperature",
     "dim",
     "light_hue",
     "light_saturation",
@@ -26,7 +27,20 @@
       "_TZ3000_1dd0d5yi"
     ],
     "productId": [
-      "TS0505A"
+      "TS0501A",
+      "TS0502A",
+      "TS0502B",
+      "TS0503A",
+      "TS0503B",
+      "TS0504B",
+      "TS0505A",
+      "TS0505B",
+      "TS110E",
+      "TS110F",
+      "TS0501B",
+      "TS0504A",
+      "TS0505",
+      "TS1101"
     ],
     "endpoints": {
       "1": {
@@ -36,12 +50,12 @@
           5,
           6,
           8,
-          768,
-          1,
-          3
+          768
         ],
         "bindings": [
-          1
+          6,
+          8,
+          768
         ]
       }
     }
