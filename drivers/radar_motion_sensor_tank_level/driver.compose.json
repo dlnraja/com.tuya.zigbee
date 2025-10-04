@@ -589,6 +589,8 @@
       "_TZ3000_xfs39dbf",
       "_TZ3000_xkap8wtb",
       "_TZ3000_xr3htd96",
+      "_TZ3000_xxxxx",
+      "_TZ3000_xxxxxxxx",
       "_TZ3000_y4ona9me",
       "_TZ3000_yd2e749y",
       "_TZ3000_yfekcy3n",
@@ -1440,8 +1442,7 @@
           1024,
           1030,
           1280,
-          61184,
-          3
+          61184
         ],
         "bindings": [
           1
@@ -1453,6 +1454,7 @@
     "small": "/drivers/radar_motion_sensor_tank_level/assets/small.png",
     "large": "/drivers/radar_motion_sensor_tank_level/assets/large.png"
   },
+  "capabilitiesOptions": {},
   "platforms": [
     "local"
   ]

@@ -18,12 +18,11 @@
           1024,
           1030,
           1280,
-          61184,
-          3,
-          6
+          61184
         ],
         "bindings": [
-          1
+          1,
+          1280
         ]
       }
     },
@@ -46,6 +45,7 @@
       "TS0901"
     ]
   },
+  "capabilitiesOptions": {},
   "images": {
     "small": "/drivers/motion_sensor_battery/assets/small.png",
     "large": "/drivers/motion_sensor_battery/assets/large.png"
