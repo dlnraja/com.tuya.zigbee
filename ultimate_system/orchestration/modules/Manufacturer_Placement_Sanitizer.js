@@ -27,14 +27,20 @@ function ensureDir(dirPath) {
   if (!fs.existsSync(dirPath)) fs.mkdirSync(dirPath, { recursive: true });
 }
 
-function toSingleString(value) {
-  if (!value) return null;
-  if (typeof value === 'string') return value.trim();
-  if (Array.isArray(value)) {
-    const first = value.find((v) => typeof v === 'string' && v.trim());
-    return first ? first.trim() : null;
+function toStringArrayNormalized(value) {
+  const out = [];
+  if (!value) return out;
+  if (typeof value === 'string') {
+    const v = value.trim(); if (v) out.push(v);
+  } else if (Array.isArray(value)) {
+    for (const v of value) {
+      if (typeof v === 'string') {
+        const t = v.trim(); if (t) out.push(t);
+      }
+    }
   }
-  return null;
+  // dedupe
+  return Array.from(new Set(out));
 }
 
 function sanitizeManifest(manifest) {
@@ -52,10 +58,10 @@ function sanitizeManifest(manifest) {
     changed = true;
   }
 
-  // Collapse zigbee.manufacturerName to a single string
-  const single = toSingleString(m.zigbee.manufacturerName);
-  if (single && m.zigbee.manufacturerName !== single) {
-    m.zigbee.manufacturerName = single;
+  // Keep zigbee.manufacturerName as an array of strings (normalized & deduped)
+  const arr = toStringArrayNormalized(m.zigbee.manufacturerName);
+  if (arr.length && JSON.stringify(m.zigbee.manufacturerName) !== JSON.stringify(arr)) {
+    m.zigbee.manufacturerName = arr;
     changed = true;
   }
 
@@ -73,10 +79,8 @@ function sanitizeManifest(manifest) {
     changed = true;
   }
 
-  // Normalize images paths
-  m.images = m.images || {};
-  if (m.images.small !== './assets/small.png') { m.images.small = './assets/small.png'; changed = true; }
-  if (m.images.large !== './assets/large.png') { m.images.large = './assets/large.png'; changed = true; }
+  // Do not alter image paths here; handled by dedicated image normalizers
+  // m.images left untouched on purpose
 
   return { manifest: m, changed };
 }
