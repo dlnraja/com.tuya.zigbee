@@ -70,8 +70,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/rgb_led_controller/assets/small.png",
+    "large": "/drivers/rgb_led_controller/assets/large.png"
   },
   "platforms": [
     "local"

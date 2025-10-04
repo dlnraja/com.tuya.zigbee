@@ -82,8 +82,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/energy_monitoring_plug/assets/small.png",
+    "large": "/drivers/energy_monitoring_plug/assets/large.png"
   },
   "energy": {
     "approximation": {
