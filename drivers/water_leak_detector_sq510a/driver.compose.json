@@ -588,6 +588,8 @@
       "_TZ3000_xfs39dbf",
       "_TZ3000_xkap8wtb",
       "_TZ3000_xr3htd96",
+      "_TZ3000_xxxxx",
+      "_TZ3000_xxxxxxxx",
       "_TZ3000_y4ona9me",
       "_TZ3000_yd2e749y",
       "_TZ3000_yfekcy3n",
@@ -1437,8 +1439,7 @@
           0,
           1,
           1280,
-          1026,
-          3
+          1026
         ],
         "bindings": [
           1
@@ -1450,6 +1451,7 @@
     "small": "/drivers/water_leak_detector_sq510a/assets/small.png",
     "large": "/drivers/water_leak_detector_sq510a/assets/large.png"
   },
+  "capabilitiesOptions": {},
   "platforms": [
     "local"
   ]
