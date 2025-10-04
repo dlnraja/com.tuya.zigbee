@@ -37,11 +37,12 @@
           6,
           8,
           1794,
-          61184,
-          1
+          61184
         ],
         "bindings": [
-          1
+          6,
+          8,
+          1794
         ]
       }
     }
@@ -50,6 +51,7 @@
     "small": "/drivers/pool_pump_controller/assets/small.png",
     "large": "/drivers/pool_pump_controller/assets/large.png"
   },
+  "capabilitiesOptions": {},
   "platforms": [
     "local"
   ]
