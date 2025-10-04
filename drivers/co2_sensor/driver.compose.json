@@ -59,8 +59,8 @@
   },
   "capabilitiesOptions": {},
   "images": {
-    "small": "/drivers/co2_sensor/assets/small.png",
-    "large": "/drivers/co2_sensor/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "energy": {
     "batteries": [

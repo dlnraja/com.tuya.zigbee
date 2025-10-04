@@ -43,8 +43,8 @@
     }
   },
   "images": {
-    "large": "/drivers/projector_screen_controller/assets/large.png",
-    "small": "/drivers/projector_screen_controller/assets/small.png"
+    "large": "./assets/large.png",
+    "small": "./assets/small.png"
   },
   "pair": [
     {

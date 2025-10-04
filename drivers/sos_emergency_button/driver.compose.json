@@ -64,8 +64,8 @@
     }
   },
   "images": {
-    "small": "/drivers/sos_emergency_button/assets/small.png",
-    "large": "/drivers/sos_emergency_button/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "capabilitiesOptions": {},
   "platforms": [

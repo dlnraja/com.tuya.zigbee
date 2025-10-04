@@ -16,8 +16,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "/drivers/mini_switch/assets/small.png",
-    "large": "/drivers/mini_switch/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "zigbee": {
     "manufacturerName": [

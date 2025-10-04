@@ -42,8 +42,8 @@
     }
   },
   "images": {
-    "small": "/drivers/smart_valve_controller/assets/small.png",
-    "large": "/drivers/smart_valve_controller/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "platforms": [
     "local"

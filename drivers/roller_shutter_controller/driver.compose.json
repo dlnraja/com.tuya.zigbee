@@ -71,8 +71,8 @@
     }
   },
   "images": {
-    "small": "/drivers/roller_shutter_controller/assets/small.png",
-    "large": "/drivers/roller_shutter_controller/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "platforms": [
     "local"

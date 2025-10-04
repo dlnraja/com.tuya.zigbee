@@ -17,8 +17,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "/drivers/door_lock/assets/small.png",
-    "large": "/drivers/door_lock/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "zigbee": {
     "manufacturerName": [

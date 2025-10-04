@@ -78,8 +78,8 @@
     }
   },
   "images": {
-    "small": "/drivers/smart_thermostat/assets/small.png",
-    "large": "/drivers/smart_thermostat/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "platforms": [
     "local"

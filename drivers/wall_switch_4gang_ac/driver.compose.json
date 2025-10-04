@@ -1,5 +1,5 @@
 {
-  "class": "light",
+  "class": "socket",
   "capabilities": [
     "onoff",
     "button.2",
@@ -9,30 +9,8 @@
   ],
   "zigbee": {
     "productId": [
-      "TS0001",
       "TS0004",
-      "TS0014",
-      "TS0002",
-      "TS0003",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0501A",
-      "TS0502A",
-      "TS0502B",
-      "TS0503A",
-      "TS0503B",
-      "TS0504B",
-      "TS0505A",
-      "TS0505B",
-      "TS0601",
-      "TS110E",
-      "TS110F",
-      "TS0006",
-      "TS0501B",
-      "TS0504A",
-      "TS0505",
-      "TS1101"
+      "TS0014"
     ],
     "endpoints": {
       "1": {
@@ -114,8 +92,8 @@
     ]
   },
   "images": {
-    "small": "/drivers/wall_switch_4gang_ac/assets/small.png",
-    "large": "/drivers/wall_switch_4gang_ac/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "settings": [],
   "name": {

@@ -93,8 +93,8 @@
     }
   },
   "images": {
-    "small": "/drivers/climate_monitor/assets/small.png",
-    "large": "/drivers/climate_monitor/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "energy": {
     "batteries": [

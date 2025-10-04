@@ -68,8 +68,8 @@
     }
   },
   "images": {
-    "small": "/drivers/garage_door_controller/assets/small.png",
-    "large": "/drivers/garage_door_controller/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "platforms": [
     "local"

@@ -63,8 +63,8 @@
     }
   },
   "images": {
-    "large": "/drivers/water_leak_sensor/assets/large.png",
-    "small": "/drivers/water_leak_sensor/assets/small.png"
+    "large": "./assets/large.png",
+    "small": "./assets/small.png"
   },
   "pair": [
     {

@@ -37,7 +37,14 @@
       "TS0115",
       "TS011F",
       "TS0105",
-      "TS0108"
+      "TS0108",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014"
     ],
     "endpoints": {
       "1": {
@@ -52,8 +59,8 @@
     }
   },
   "images": {
-    "small": "/drivers/roller_shutter_switch_advanced/assets/small.png",
-    "large": "/drivers/roller_shutter_switch_advanced/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "capabilitiesOptions": {
     "windowcoverings_set": {
