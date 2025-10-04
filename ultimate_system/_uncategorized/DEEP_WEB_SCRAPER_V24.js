@@ -9,7 +9,8 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
-const root = path.resolve(__dirname, '..');
+// __dirname is '<repo>/ultimate_system/_uncategorized', so go two levels up to reach repo root
+const root = path.resolve(__dirname, '..', '..');
 const driversDir = path.join(root, 'drivers');
 
 console.log('🌐 DEEP_WEB_SCRAPER_V24 - Scraping profond');
@@ -69,9 +70,9 @@ const WEB_SOURCES = [
   'https://raw.githubusercontent.com/Koenkk/zigbee-herdsman-converters/master/src/devices/tuya.ts',
   'https://raw.githubusercontent.com/zigpy/zha-device-handlers/dev/zhaquirks/tuya/__init__.py',
   
-  // Johan Bendz repos
-  'https://api.github.com/repos/johan-bendz/com.tuya.zigbee/contents/drivers',
-  'https://raw.githubusercontent.com/johan-bendz/com.tuya.zigbee/master/app.json'
+  // Johan Bendz repo (correct owner slug)
+  'https://api.github.com/repos/JohanBendz/com.tuya.zigbee/contents/drivers',
+  'https://raw.githubusercontent.com/JohanBendz/com.tuya.zigbee/master/app.json'
 ];
 
 function buildSearchUrls(productId) {
@@ -89,9 +90,9 @@ function buildSearchUrls(productId) {
     `https://github.com/dresden-elektronik/deconz-rest-plugin/issues?q=${encodeURIComponent(productId)}`,
     
     // Johan Bendz ecosystem
-    `https://github.com/johan-bendz/com.tuya.zigbee/issues?q=${encodeURIComponent(productId)}`,
-    `https://github.com/johan-bendz/com.tuya.zigbee/pulls?q=${encodeURIComponent(productId)}`,
-    `https://github.com/search?q=${encodeURIComponent(productId + ' repo:johan-bendz/com.tuya.zigbee')}`,
+    `https://github.com/JohanBendz/com.tuya.zigbee/issues?q=${encodeURIComponent(productId)}`,
+    `https://github.com/JohanBendz/com.tuya.zigbee/pulls?q=${encodeURIComponent(productId)}`,
+    `https://github.com/search?q=${encodeURIComponent(productId + ' repo:JohanBendz/com.tuya.zigbee')}`,
     `https://github.com/search?q=${encodeURIComponent(productId + ' com.tuya.zigbee fork:true')}`,
     
     // Homey community forums
