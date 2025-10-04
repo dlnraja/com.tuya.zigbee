@@ -52,8 +52,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/water_valve_smart/assets/small.png",
+    "large": "/drivers/water_valve_smart/assets/large.png"
   },
   "capabilitiesOptions": {},
   "platforms": [

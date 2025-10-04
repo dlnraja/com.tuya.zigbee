@@ -63,8 +63,8 @@
     }
   },
   "images": {
-    "large": "./assets/large.png",
-    "small": "./assets/small.png"
+    "large": "/drivers/soil_moisture_sensor/assets/large.png",
+    "small": "/drivers/soil_moisture_sensor/assets/small.png"
   },
   "pair": [
     {

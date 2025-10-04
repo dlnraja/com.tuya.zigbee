@@ -41,8 +41,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/zigbee_gateway_hub/assets/small.png",
+    "large": "/drivers/zigbee_gateway_hub/assets/large.png"
   },
   "capabilitiesOptions": {},
   "platforms": [

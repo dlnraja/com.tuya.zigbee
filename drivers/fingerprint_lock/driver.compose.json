@@ -1449,8 +1449,8 @@
     }
   },
   "images": {
-    "large": "./assets/large.png",
-    "small": "./assets/small.png"
+    "large": "/drivers/fingerprint_lock/assets/large.png",
+    "small": "/drivers/fingerprint_lock/assets/small.png"
   },
   "pair": [
     {

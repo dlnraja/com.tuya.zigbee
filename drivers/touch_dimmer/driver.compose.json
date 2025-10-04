@@ -44,8 +44,8 @@
     }
   },
   "images": {
-    "large": "./assets/large.png",
-    "small": "./assets/small.png"
+    "large": "/drivers/touch_dimmer/assets/large.png",
+    "small": "/drivers/touch_dimmer/assets/small.png"
   },
   "pair": [
     {

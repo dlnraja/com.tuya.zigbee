@@ -14,8 +14,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/smart_radiator_valve/assets/small.png",
+    "large": "/drivers/smart_radiator_valve/assets/large.png"
   },
   "zigbee": {
     "manufacturerName": [

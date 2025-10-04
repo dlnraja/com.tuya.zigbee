@@ -8,8 +8,8 @@
   ],
   "energy": {},
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "/drivers/zbbridge/assets/small.png",
+    "large": "/drivers/zbbridge/assets/large.png"
   },
   "zigbee": {
     "manufacturerName": [
