@@ -36,7 +36,9 @@
         "clusters": [
           0,
           3,
-          6
+          6,
+          1,
+          61184
         ],
         "bindings": [
           1
@@ -55,6 +57,5 @@
   ],
   "connectivity": [
     "zigbee"
-  ],
-  "capabilitiesOptions": {}
+  ]
 }
