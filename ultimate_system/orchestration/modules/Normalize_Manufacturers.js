@@ -83,6 +83,10 @@ function updateManifest(filePath, manifest, manufacturer) {
   } else {
     delete updated.zigbee.manufacturerName;
   }
+  // Remove any root-level manufacturerName to avoid duplication
+  if (Object.prototype.hasOwnProperty.call(updated, 'manufacturerName')) {
+    delete updated.manufacturerName;
+  }
   fs.writeFileSync(filePath, JSON.stringify(updated, null, 2), 'utf8');
 }
 

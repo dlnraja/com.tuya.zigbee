@@ -5,16 +5,15 @@
  * For each driver:
  * - Set images.small to './assets/small.png'
  * - Set images.large to './assets/large.png'
- * - Generate 75x75 small.png and 500x500 large.png under drivers/*/assets/
+ * - Does NOT (re)generate images; paths only. Use fix_all_driver_assets.js for image generation.
+ * - Use absolute per-driver paths: /drivers/<driverId>/assets/small.png and /drivers/<driverId>/assets/large.png
  */
 
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
 
 const ROOT = path.resolve(__dirname, '../..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
-const GEN = path.join(ROOT, 'ultimate_system', 'scripts', 'generate_placeholder_png.js');
 
 function readJsonSafe(filePath) {
   try { return JSON.parse(fs.readFileSync(filePath, 'utf8')); } catch (_) { return null; }
@@ -26,7 +25,7 @@ function ensureDir(dirPath) {
   if (!fs.existsSync(dirPath)) fs.mkdirSync(dirPath, { recursive: true });
 }
 
-function fixDriver(driverName, color) {
+function fixDriver(driverName) {
   const driverDir = path.join(DRIVERS_DIR, driverName);
   const composePath = path.join(driverDir, 'driver.compose.json');
   if (!fs.existsSync(composePath)) return null;
@@ -35,18 +34,10 @@ function fixDriver(driverName, color) {
   if (!manifest) return null;
 
   manifest.images = manifest.images || {};
-  if (manifest.images.small !== './assets/small.png') manifest.images.small = './assets/small.png';
-  if (manifest.images.large !== './assets/large.png') manifest.images.large = './assets/large.png';
-
-  const assetsDir = path.join(driverDir, 'assets');
-  ensureDir(assetsDir);
-
-  try {
-    execSync(`node "${GEN}" --width 75 --height 75 --color "#1E88E5" --output "${path.join(assetsDir, 'small.png')}"`, { cwd: ROOT });
-    execSync(`node "${GEN}" --width 500 --height 500 --color "#1E88E5" --output "${path.join(assetsDir, 'large.png')}"`, { cwd: ROOT });
-  } catch (e) {
-    // continue per driver
-  }
+  const smallRef = `/drivers/${driverName}/assets/small.png`;
+  const largeRef = `/drivers/${driverName}/assets/large.png`;
+  if (manifest.images.small !== smallRef) manifest.images.small = smallRef;
+  if (manifest.images.large !== largeRef) manifest.images.large = largeRef;
 
   writeJson(composePath, manifest);
   return { driver: driverName };
