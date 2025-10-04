@@ -56,10 +56,17 @@
         "clusters": [
           0,
           1,
-          1280
+          1280,
+          3,
+          6,
+          8,
+          768,
+          4,
+          5,
+          61184
         ],
         "bindings": [
-          25
+          1
         ]
       }
     }
@@ -85,7 +92,6 @@
   "connectivity": [
     "zigbee"
   ],
-  "capabilitiesOptions": {},
   "energy": {
     "approximation": {
       "usageConstant": 10

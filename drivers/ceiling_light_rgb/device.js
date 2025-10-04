@@ -6,11 +6,26 @@ class TuyaDevice extends ZigBeeDevice {
     this.enableDebug();
     this.printNode();
     
-    // Register capabilities
-    const caps = this.getCapabilities();
-    caps.forEach(cap => {
-      this.registerCapability(cap, 'CLUSTER_TUYA_SPECIFIC');
-    });
+    // Register capabilities with proper Zigbee clusters
+    if (this.hasCapability('onoff')) {
+      this.registerCapability('onoff', 6);
+    }
+
+    if (this.hasCapability('dim')) {
+      this.registerCapability('dim', 8);
+    }
+
+    if (this.hasCapability('light_hue')) {
+      this.registerCapability('light_hue', 768);
+    }
+
+    if (this.hasCapability('light_saturation')) {
+      this.registerCapability('light_saturation', 768);
+    }
+
+    if (this.hasCapability('light_temperature')) {
+      this.registerCapability('light_temperature', 768);
+    }
   }
 }
 module.exports = TuyaDevice;

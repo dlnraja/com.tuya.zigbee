@@ -21,7 +21,9 @@
           4,
           5,
           6,
-          8
+          8,
+          1,
+          768
         ],
         "bindings": [
           1
@@ -1325,6 +1327,5 @@
   ],
   "connectivity": [
     "zigbee"
-  ],
-  "capabilitiesOptions": {}
+  ]
 }
