@@ -55,7 +55,7 @@
           61184
         ],
         "bindings": [
-          1
+          1280
         ]
       }
     }
@@ -64,6 +64,7 @@
     "small": "/drivers/tank_level_monitor/assets/small.png",
     "large": "/drivers/tank_level_monitor/assets/large.png"
   },
+  "capabilitiesOptions": {},
   "platforms": [
     "local"
   ]
