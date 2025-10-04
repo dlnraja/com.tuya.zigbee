@@ -57,7 +57,8 @@
           1280
         ],
         "bindings": [
-          1
+          6,
+          1280
         ]
       }
     }
@@ -66,6 +67,7 @@
     "small": "/drivers/sos_emergency_button/assets/small.png",
     "large": "/drivers/sos_emergency_button/assets/large.png"
   },
+  "capabilitiesOptions": {},
   "platforms": [
     "local"
   ]
