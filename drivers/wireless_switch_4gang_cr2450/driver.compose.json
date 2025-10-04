@@ -97,8 +97,8 @@
     }
   },
   "images": {
-    "small": "/drivers/wireless_switch_4gang_cr2450/assets/small.png",
-    "large": "/drivers/wireless_switch_4gang_cr2450/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "platforms": [
     "local"

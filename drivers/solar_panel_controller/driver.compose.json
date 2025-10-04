@@ -55,8 +55,8 @@
     }
   },
   "images": {
-    "small": "/drivers/solar_panel_controller/assets/small.png",
-    "large": "/drivers/solar_panel_controller/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "capabilitiesOptions": {},
   "platforms": [

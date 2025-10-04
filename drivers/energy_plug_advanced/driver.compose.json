@@ -90,8 +90,8 @@
     }
   },
   "images": {
-    "small": "/drivers/energy_plug_advanced/assets/small.png",
-    "large": "/drivers/energy_plug_advanced/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "platforms": [
     "local"

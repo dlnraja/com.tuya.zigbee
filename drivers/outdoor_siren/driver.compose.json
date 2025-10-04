@@ -18,8 +18,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "/drivers/outdoor_siren/assets/small.png",
-    "large": "/drivers/outdoor_siren/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "zigbee": {
     "manufacturerName": [

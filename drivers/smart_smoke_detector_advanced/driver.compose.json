@@ -75,8 +75,8 @@
     }
   },
   "images": {
-    "small": "/drivers/smart_smoke_detector_advanced/assets/small.png",
-    "large": "/drivers/smart_smoke_detector_advanced/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "platforms": [
     "local"

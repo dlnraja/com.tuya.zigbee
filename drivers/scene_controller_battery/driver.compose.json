@@ -48,8 +48,8 @@
     }
   },
   "images": {
-    "small": "/drivers/scene_controller_battery/assets/small.png",
-    "large": "/drivers/scene_controller_battery/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "community": {
     "sources": [

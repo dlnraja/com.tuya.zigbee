@@ -32,7 +32,14 @@
       "TS0111",
       "TS0115",
       "TS0105",
-      "TS0108"
+      "TS0108",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014"
     ],
     "endpoints": {
       "1": {
@@ -83,8 +90,8 @@
     }
   },
   "images": {
-    "small": "/drivers/energy_monitoring_plug_advanced/assets/small.png",
-    "large": "/drivers/energy_monitoring_plug_advanced/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "platforms": [
     "local"

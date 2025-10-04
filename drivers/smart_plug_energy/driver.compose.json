@@ -90,8 +90,8 @@
     }
   },
   "images": {
-    "small": "/drivers/smart_plug_energy/assets/small.png",
-    "large": "/drivers/smart_plug_energy/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "platforms": [
     "local"

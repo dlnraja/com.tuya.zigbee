@@ -16,8 +16,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "/drivers/pet_feeder/assets/small.png",
-    "large": "/drivers/pet_feeder/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "zigbee": {
     "manufacturerName": [

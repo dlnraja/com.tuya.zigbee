@@ -42,8 +42,8 @@
     }
   },
   "images": {
-    "large": "/drivers/fan_controller/assets/large.png",
-    "small": "/drivers/fan_controller/assets/small.png"
+    "large": "./assets/large.png",
+    "small": "./assets/small.png"
   },
   "pair": [
     {

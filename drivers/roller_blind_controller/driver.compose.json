@@ -54,8 +54,8 @@
     }
   },
   "images": {
-    "small": "/drivers/roller_blind_controller/assets/small.png",
-    "large": "/drivers/roller_blind_controller/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "community": {
     "sources": [

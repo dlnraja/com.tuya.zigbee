@@ -63,8 +63,8 @@
     }
   },
   "images": {
-    "small": "/drivers/smoke_detector_temp_humidity_advanced/assets/small.png",
-    "large": "/drivers/smoke_detector_temp_humidity_advanced/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "platforms": [
     "local"

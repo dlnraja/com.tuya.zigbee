@@ -85,8 +85,8 @@
     }
   },
   "images": {
-    "small": "/drivers/smart_dimmer_module_1gang/assets/small.png",
-    "large": "/drivers/smart_dimmer_module_1gang/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "platforms": [
     "local"
