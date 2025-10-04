@@ -594,6 +594,8 @@
       "_TZ3000_xfs39dbf",
       "_TZ3000_xkap8wtb",
       "_TZ3000_xr3htd96",
+      "_TZ3000_xxxxx",
+      "_TZ3000_xxxxxxxx",
       "_TZ3000_y4ona9me",
       "_TZ3000_yd2e749y",
       "_TZ3000_yfekcy3n",
@@ -1442,8 +1444,7 @@
         "clusters": [
           0,
           1,
-          1280,
-          3
+          1280
         ],
         "bindings": [
           1
@@ -1463,5 +1464,6 @@
       "CR2032"
     ]
   },
-  "settings": []
+  "settings": [],
+  "capabilitiesOptions": {}
 }

@@ -32,12 +32,10 @@
         "clusters": [
           0,
           3,
-          6,
-          1,
-          61184
+          6
         ],
         "bindings": [
-          1
+          6
         ]
       }
     }
@@ -46,6 +44,7 @@
     "small": "/drivers/zigbee_gateway_hub/assets/small.png",
     "large": "/drivers/zigbee_gateway_hub/assets/large.png"
   },
+  "capabilitiesOptions": {},
   "platforms": [
     "local"
   ]
