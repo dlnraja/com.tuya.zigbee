@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-10-05T05:48:49.317Z",
+  "topics": [
+    "dlnraja",
+    "johanbendz"
+  ],
+  "source": "tools/forum_data.txt",
+  "findings": {
+    "uniqueManufacturerNames": [],
+    "uniqueProductIds": [],
+    "clusters": [],
+    "dps": [],
+    "keywords": [
+      "tuya"
+    ]
+  },
+  "notes": []
+}

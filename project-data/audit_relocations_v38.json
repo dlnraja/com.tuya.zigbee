@@ -1,7 +1,417 @@
 {
-  "timestamp": "2025-10-04T23:35:56.673Z",
+  "timestamp": "2025-10-05T05:50:33.703Z",
   "records": [
     {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "air_quality_monitor",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "air_quality_monitor_pro",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "co2_sensor",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "co2_temp_humidity",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "comprehensive_air_monitor",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "curtain_motor",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "dimmer",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "dimmer_switch_1gang_ac",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "dimmer_switch_3gang_ac",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "dimmer_switch_timer_module",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "doorbell",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "door_lock",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "door_window_sensor",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "fan_controller",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "fingerprint_lock",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "formaldehyde_sensor",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "garage_door_opener",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "lux_sensor",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "mini_switch",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "motion_sensor_mmwave",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "motion_sensor_pir_ac",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "motion_sensor_pir_battery",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "outdoor_siren",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "pir_sensor_advanced",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "pm25_detector",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "pm25_sensor",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "power_meter_socket",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "presence_sensor_radar",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "radar_motion_sensor_advanced",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "radar_motion_sensor_mmwave",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "radar_motion_sensor_tank_level",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "relay_switch_1gang",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "remote_switch",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "roller_blind_controller",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "roller_shutter_controller",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "smart_curtain_motor",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "smart_dimmer_module_1gang",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "smart_doorbell",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "smart_outlet_monitor",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "smart_plug",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "smart_plug_energy",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "smart_smoke_detector_advanced",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "smart_switch_1gang_ac",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "smart_switch_1gang_hybrid",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "smart_switch_2gang_hybrid",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "smart_switch_3gang_hybrid",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "smart_switch_4gang_hybrid",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "smoke_detector",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "smoke_detector_temp_humidity_advanced",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "smoke_temp_humid_sensor",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "soil_moisture_temperature_sensor",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "soil_tester_temp_humid",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "switch_1gang_battery",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "switch_2gang_ac",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "switch_2gang_hybrid",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "switch_4gang_ac",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "switch_8gang_ac",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "temperature_humidity_sensor",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "temperature_sensor",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "temperature_sensor_advanced",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "temp_humid_sensor_advanced",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "temp_humid_sensor_leak_detector",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "temp_humid_sensor_v1w2k9dd",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "touch_dimmer_1gang",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "touch_switch_1gang",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "tvoc_sensor",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "tvoc_sensor_advanced",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "usb_outlet",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "usb_outlet_advanced",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "wall_switch_1gang_ac",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "wall_switch_1gang_dc",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "wall_switch_2gang_ac",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "wall_switch_2gang_dc",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "wall_switch_3gang_ac",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "wall_switch_3gang_dc",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "wall_switch_4gang_ac",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "wall_switch_4gang_dc",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "water_leak_detector_advanced",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "water_leak_detector_sq510a",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "water_leak_sensor",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "wireless_switch",
+      "removed": 2
+    },
+    {
+      "type": "manufacturer_placeholder_removed",
+      "folder": "wireless_switch_1gang_cr2032",
+      "removed": 2
+    },
+    {
       "type": "productId_relocated",
       "ts": "TS0501A",
       "from": "ceiling_light_controller",
@@ -17,24 +427,6 @@
       "type": "productId_relocated",
       "ts": "TS110E",
       "from": "ceiling_light_controller",
-      "to": "dimmer_switch_1gang_ac"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS0501A",
-      "from": "ceiling_light_rgb",
-      "to": "dimmer"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS0502A",
-      "from": "ceiling_light_rgb",
-      "to": "smart_bulb_tunable"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS110E",
-      "from": "ceiling_light_rgb",
       "to": "dimmer_switch_1gang_ac"
     },
     {
@@ -48,198 +440,6 @@
       "ts": "TS130F",
       "from": "climate_monitor",
       "to": "curtain_motor"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS0201",
-      "from": "co_detector_pro",
-      "to": "climate_monitor"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS0202",
-      "from": "co_detector_pro",
-      "to": "motion_sensor_pir_battery"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS130F",
-      "from": "co_detector_pro",
-      "to": "curtain_motor"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS110E",
-      "from": "dimmer",
-      "to": "dimmer_switch_1gang_ac"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS0201",
-      "from": "energy_plug_advanced",
-      "to": "climate_monitor"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS0202",
-      "from": "energy_plug_advanced",
-      "to": "motion_sensor_pir_battery"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS130F",
-      "from": "energy_plug_advanced",
-      "to": "curtain_motor"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS0202",
-      "from": "humidity_controller",
-      "to": "motion_sensor_pir_battery"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS130F",
-      "from": "humidity_controller",
-      "to": "curtain_motor"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS0501A",
-      "from": "led_strip_advanced",
-      "to": "dimmer"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS0502A",
-      "from": "led_strip_advanced",
-      "to": "smart_bulb_tunable"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS110E",
-      "from": "led_strip_advanced",
-      "to": "dimmer_switch_1gang_ac"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS0501A",
-      "from": "led_strip_controller",
-      "to": "dimmer"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS0502A",
-      "from": "led_strip_controller",
-      "to": "smart_bulb_tunable"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS110E",
-      "from": "led_strip_controller",
-      "to": "dimmer_switch_1gang_ac"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS0201",
-      "from": "led_strip_controller_pro",
-      "to": "climate_monitor"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS0202",
-      "from": "led_strip_controller_pro",
-      "to": "motion_sensor_pir_battery"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS130F",
-      "from": "led_strip_controller_pro",
-      "to": "curtain_motor"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS0201",
-      "from": "motion_sensor_zigbee_204z",
-      "to": "climate_monitor"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS130F",
-      "from": "motion_sensor_zigbee_204z",
-      "to": "curtain_motor"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS0202",
-      "from": "pir_sensor_advanced",
-      "to": "motion_sensor_pir_battery"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS0501A",
-      "from": "rgb_led_controller",
-      "to": "dimmer"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS0502A",
-      "from": "rgb_led_controller",
-      "to": "smart_bulb_tunable"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS110E",
-      "from": "rgb_led_controller",
-      "to": "dimmer_switch_1gang_ac"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS011F",
-      "from": "roller_shutter_switch",
-      "to": "smart_plug"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS011F",
-      "from": "roller_shutter_switch_advanced",
-      "to": "smart_plug"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS0501A",
-      "from": "smart_bulb_rgb",
-      "to": "dimmer"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS0502A",
-      "from": "smart_bulb_rgb",
-      "to": "smart_bulb_tunable"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS110E",
-      "from": "smart_bulb_rgb",
-      "to": "dimmer_switch_1gang_ac"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS0501A",
-      "from": "smart_bulb_tunable",
-      "to": "dimmer"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS0505A",
-      "from": "smart_bulb_tunable",
-      "to": "smart_bulb_rgb"
-    },
-    {
-      "type": "productId_relocated",
-      "ts": "TS110E",
-      "from": "smart_bulb_tunable",
-      "to": "dimmer_switch_1gang_ac"
     }
   ]
 }
