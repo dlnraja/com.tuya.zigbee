@@ -1,14 +1,15 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.ultimate.zigbee.hub",
-  "version": "2.1.8",
+  "version": "2.1.9",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
     "en": "Ultimate Zigbee Hub"
   },
   "description": {
-    "en": "Ultimate Zigbee Hub v2.1.8 - Enhanced compatibility with 1000+ devices from 60+ manufacturers. Professional SDK3 architecture with comprehensive Johan Bendz compatibility. Local Zigbee 3.0 operation."
+    "en": "Ultimate Zigbee Hub: Professional Tuya integration with strict 200 IDs limit per driver, dynamic per-type limits, global multi-protocol support (SmartThings, Enki, Z2M, ZHA), SDK3 compliant. Supports 162+ device types with intelligent manufacturerName enrichment.",
+    "fr": "Ultimate Zigbee Hub: Intégration professionnelle Tuya avec limite stricte de 200 IDs par driver, limites dynamiques par type, support multi-protocole global (SmartThings, Enki, Z2M, ZHA), conforme SDK3. Supporte 162+ types avec enrichissement intelligent."
   },
   "category": "lights",
   "permissions": [],

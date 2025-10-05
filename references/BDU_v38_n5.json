@@ -1,0 +1,461 @@
+{
+  "version": "v38.0-n5",
+  "inherits": "references/BDU_v38_n4.json",
+  "global": {
+    "targets": [
+      {
+        "name": "ZHA (Home Assistant)",
+        "url": "https://www.home-assistant.io/integrations/zha",
+        "lang": "en"
+      },
+      {
+        "name": "Z2M Discussions",
+        "url": "https://github.com/Koenkk/zigbee2mqtt/discussions",
+        "lang": "multi"
+      },
+      {
+        "name": "SmartThings Developers",
+        "url": "https://community.smartthings.com/c/developers/drivers",
+        "lang": "en,ko"
+      },
+      {
+        "name": "deCONZ REST Plugin",
+        "url": "https://github.com/dresden-elektronik/deconz-rest-plugin",
+        "lang": "de,en"
+      },
+      {
+        "name": "Enki Leroy Merlin",
+        "url": "https://www.leroymerlin.fr/produits/marques/enki",
+        "lang": "fr"
+      },
+      {
+        "name": "Blakadder Signatures",
+        "url": "https://www.blakadder.com/zigbee-device-signatures/",
+        "lang": "en"
+      },
+      {
+        "name": "ZHA Device Handlers",
+        "url": "https://github.com/zigpy/zha-device-handlers/",
+        "lang": "en"
+      }
+    ],
+    "queries": [
+      {
+        "query": "SmartThings Zigbee quirks clusters DPs site:github.com",
+        "lang": "en"
+      },
+      {
+        "query": "SmartThings Zigbee manufacturerName signatures",
+        "lang": "en"
+      },
+      {
+        "query": "SmartThings Zigbee tuya EF00 mapping",
+        "lang": "en"
+      },
+      {
+        "query": "SmartThings Zigbee quirks clusters DPs site:github.com",
+        "lang": "fr"
+      },
+      {
+        "query": "SmartThings Zigbee manufacturerName signatures",
+        "lang": "fr"
+      },
+      {
+        "query": "SmartThings Zigbee tuya EF00 mapping",
+        "lang": "fr"
+      },
+      {
+        "query": "SmartThings Zigbee quirks clusters DPs site:github.com",
+        "lang": "de"
+      },
+      {
+        "query": "SmartThings Zigbee manufacturerName signatures",
+        "lang": "de"
+      },
+      {
+        "query": "SmartThings Zigbee tuya EF00 mapping",
+        "lang": "de"
+      },
+      {
+        "query": "SmartThings Zigbee quirks clusters DPs site:github.com",
+        "lang": "es"
+      },
+      {
+        "query": "SmartThings Zigbee manufacturerName signatures",
+        "lang": "es"
+      },
+      {
+        "query": "SmartThings Zigbee tuya EF00 mapping",
+        "lang": "es"
+      },
+      {
+        "query": "SmartThings Zigbee quirks clusters DPs site:github.com",
+        "lang": "it"
+      },
+      {
+        "query": "SmartThings Zigbee manufacturerName signatures",
+        "lang": "it"
+      },
+      {
+        "query": "SmartThings Zigbee tuya EF00 mapping",
+        "lang": "it"
+      },
+      {
+        "query": "SmartThings Zigbee quirks clusters DPs site:github.com",
+        "lang": "nl"
+      },
+      {
+        "query": "SmartThings Zigbee manufacturerName signatures",
+        "lang": "nl"
+      },
+      {
+        "query": "SmartThings Zigbee tuya EF00 mapping",
+        "lang": "nl"
+      },
+      {
+        "query": "SmartThings Zigbee quirks clusters DPs site:github.com",
+        "lang": "zh"
+      },
+      {
+        "query": "SmartThings Zigbee manufacturerName signatures",
+        "lang": "zh"
+      },
+      {
+        "query": "SmartThings Zigbee tuya EF00 mapping",
+        "lang": "zh"
+      },
+      {
+        "query": "SmartThings Zigbee quirks clusters DPs site:github.com",
+        "lang": "ru"
+      },
+      {
+        "query": "SmartThings Zigbee manufacturerName signatures",
+        "lang": "ru"
+      },
+      {
+        "query": "SmartThings Zigbee tuya EF00 mapping",
+        "lang": "ru"
+      },
+      {
+        "query": "SmartThings Zigbee quirks clusters DPs site:github.com",
+        "lang": "pl"
+      },
+      {
+        "query": "SmartThings Zigbee manufacturerName signatures",
+        "lang": "pl"
+      },
+      {
+        "query": "SmartThings Zigbee tuya EF00 mapping",
+        "lang": "pl"
+      },
+      {
+        "query": "SmartThings Zigbee quirks clusters DPs site:github.com",
+        "lang": "ja"
+      },
+      {
+        "query": "SmartThings Zigbee manufacturerName signatures",
+        "lang": "ja"
+      },
+      {
+        "query": "SmartThings Zigbee tuya EF00 mapping",
+        "lang": "ja"
+      },
+      {
+        "query": "Enki Zigbee quirks clusters DPs site:github.com",
+        "lang": "en"
+      },
+      {
+        "query": "Enki Zigbee manufacturerName signatures",
+        "lang": "en"
+      },
+      {
+        "query": "Enki Zigbee tuya EF00 mapping",
+        "lang": "en"
+      },
+      {
+        "query": "Enki Zigbee quirks clusters DPs site:github.com",
+        "lang": "fr"
+      },
+      {
+        "query": "Enki Zigbee manufacturerName signatures",
+        "lang": "fr"
+      },
+      {
+        "query": "Enki Zigbee tuya EF00 mapping",
+        "lang": "fr"
+      },
+      {
+        "query": "Enki Zigbee quirks clusters DPs site:github.com",
+        "lang": "de"
+      },
+      {
+        "query": "Enki Zigbee manufacturerName signatures",
+        "lang": "de"
+      },
+      {
+        "query": "Enki Zigbee tuya EF00 mapping",
+        "lang": "de"
+      },
+      {
+        "query": "Enki Zigbee quirks clusters DPs site:github.com",
+        "lang": "es"
+      },
+      {
+        "query": "Enki Zigbee manufacturerName signatures",
+        "lang": "es"
+      },
+      {
+        "query": "Enki Zigbee tuya EF00 mapping",
+        "lang": "es"
+      },
+      {
+        "query": "Enki Zigbee quirks clusters DPs site:github.com",
+        "lang": "it"
+      },
+      {
+        "query": "Enki Zigbee manufacturerName signatures",
+        "lang": "it"
+      },
+      {
+        "query": "Enki Zigbee tuya EF00 mapping",
+        "lang": "it"
+      },
+      {
+        "query": "Enki Zigbee quirks clusters DPs site:github.com",
+        "lang": "nl"
+      },
+      {
+        "query": "Enki Zigbee manufacturerName signatures",
+        "lang": "nl"
+      },
+      {
+        "query": "Enki Zigbee tuya EF00 mapping",
+        "lang": "nl"
+      },
+      {
+        "query": "Enki Zigbee quirks clusters DPs site:github.com",
+        "lang": "zh"
+      },
+      {
+        "query": "Enki Zigbee manufacturerName signatures",
+        "lang": "zh"
+      },
+      {
+        "query": "Enki Zigbee tuya EF00 mapping",
+        "lang": "zh"
+      },
+      {
+        "query": "Enki Zigbee quirks clusters DPs site:github.com",
+        "lang": "ru"
+      },
+      {
+        "query": "Enki Zigbee manufacturerName signatures",
+        "lang": "ru"
+      },
+      {
+        "query": "Enki Zigbee tuya EF00 mapping",
+        "lang": "ru"
+      },
+      {
+        "query": "Enki Zigbee quirks clusters DPs site:github.com",
+        "lang": "pl"
+      },
+      {
+        "query": "Enki Zigbee manufacturerName signatures",
+        "lang": "pl"
+      },
+      {
+        "query": "Enki Zigbee tuya EF00 mapping",
+        "lang": "pl"
+      },
+      {
+        "query": "Enki Zigbee quirks clusters DPs site:github.com",
+        "lang": "ja"
+      },
+      {
+        "query": "Enki Zigbee manufacturerName signatures",
+        "lang": "ja"
+      },
+      {
+        "query": "Enki Zigbee tuya EF00 mapping",
+        "lang": "ja"
+      },
+      {
+        "query": "Home Assistant Zigbee quirks clusters DPs site:github.com",
+        "lang": "en"
+      },
+      {
+        "query": "Home Assistant Zigbee manufacturerName signatures",
+        "lang": "en"
+      },
+      {
+        "query": "Home Assistant Zigbee tuya EF00 mapping",
+        "lang": "en"
+      },
+      {
+        "query": "Home Assistant Zigbee quirks clusters DPs site:github.com",
+        "lang": "fr"
+      },
+      {
+        "query": "Home Assistant Zigbee manufacturerName signatures",
+        "lang": "fr"
+      },
+      {
+        "query": "Home Assistant Zigbee tuya EF00 mapping",
+        "lang": "fr"
+      },
+      {
+        "query": "Home Assistant Zigbee quirks clusters DPs site:github.com",
+        "lang": "de"
+      },
+      {
+        "query": "Home Assistant Zigbee manufacturerName signatures",
+        "lang": "de"
+      },
+      {
+        "query": "Home Assistant Zigbee tuya EF00 mapping",
+        "lang": "de"
+      },
+      {
+        "query": "Home Assistant Zigbee quirks clusters DPs site:github.com",
+        "lang": "es"
+      },
+      {
+        "query": "Home Assistant Zigbee manufacturerName signatures",
+        "lang": "es"
+      },
+      {
+        "query": "Home Assistant Zigbee tuya EF00 mapping",
+        "lang": "es"
+      },
+      {
+        "query": "Home Assistant Zigbee quirks clusters DPs site:github.com",
+        "lang": "it"
+      },
+      {
+        "query": "Home Assistant Zigbee manufacturerName signatures",
+        "lang": "it"
+      },
+      {
+        "query": "Home Assistant Zigbee tuya EF00 mapping",
+        "lang": "it"
+      },
+      {
+        "query": "Home Assistant Zigbee quirks clusters DPs site:github.com",
+        "lang": "nl"
+      },
+      {
+        "query": "Home Assistant Zigbee manufacturerName signatures",
+        "lang": "nl"
+      },
+      {
+        "query": "Home Assistant Zigbee tuya EF00 mapping",
+        "lang": "nl"
+      },
+      {
+        "query": "Home Assistant Zigbee quirks clusters DPs site:github.com",
+        "lang": "zh"
+      },
+      {
+        "query": "Home Assistant Zigbee manufacturerName signatures",
+        "lang": "zh"
+      },
+      {
+        "query": "Home Assistant Zigbee tuya EF00 mapping",
+        "lang": "zh"
+      },
+      {
+        "query": "Home Assistant Zigbee quirks clusters DPs site:github.com",
+        "lang": "ru"
+      },
+      {
+        "query": "Home Assistant Zigbee manufacturerName signatures",
+        "lang": "ru"
+      },
+      {
+        "query": "Home Assistant Zigbee tuya EF00 mapping",
+        "lang": "ru"
+      },
+      {
+        "query": "Home Assistant Zigbee quirks clusters DPs site:github.com",
+        "lang": "pl"
+      },
+      {
+        "query": "Home Assistant Zigbee manufacturerName signatures",
+        "lang": "pl"
+      },
+      {
+        "query": "Home Assistant Zigbee tuya EF00 mapping",
+        "lang": "pl"
+      },
+      {
+        "query": "Home Assistant Zigbee quirks clusters DPs site:github.com",
+        "lang": "ja"
+      },
+      {
+        "query": "Home Assistant Zigbee manufacturerName signatures",
+        "lang": "ja"
+      },
+      {
+        "query": "Home Assistant Zigbee tuya EF00 mapping",
+        "lang": "ja"
+      },
+      {
+        "query": "zigbee-herdsman Zigbee quirks clusters DPs site:github.com",
+        "lang": "en"
+      },
+      {
+        "query": "zigbee-herdsman Zigbee manufacturerName signatures",
+        "lang": "en"
+      },
+      {
+        "query": "zigbee-herdsman Zigbee tuya EF00 mapping",
+        "lang": "en"
+      },
+      {
+        "query": "zigbee-herdsman Zigbee quirks clusters DPs site:github.com",
+        "lang": "fr"
+      },
+      {
+        "query": "zigbee-herdsman Zigbee manufacturerName signatures",
+        "lang": "fr"
+      },
+      {
+        "query": "zigbee-herdsman Zigbee tuya EF00 mapping",
+        "lang": "fr"
+      },
+      {
+        "query": "zigbee-herdsman Zigbee quirks clusters DPs site:github.com",
+        "lang": "de"
+      },
+      {
+        "query": "zigbee-herdsman Zigbee manufacturerName signatures",
+        "lang": "de"
+      },
+      {
+        "query": "zigbee-herdsman Zigbee tuya EF00 mapping",
+        "lang": "de"
+      },
+      {
+        "query": "zigbee-herdsman Zigbee quirks clusters DPs site:github.com",
+        "lang": "es"
+      }
+    ]
+  },
+  "addon": {
+    "fetch": {
+      "koenkk_tuya": {
+        "name": "Koenkk Tuya Devices (herdsman-converters)",
+        "devicesCount": 0,
+        "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\references\\addon_enrichment_data\\koenkk_tuya_1759680937092.json"
+      },
+      "smartthings_edge": {
+        "name": "SmartThings Edge Drivers (community)",
+        "devicesCount": 0,
+        "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\references\\addon_enrichment_data\\smartthings_edge_1759680939327.json"
+      }
+    },
+    "integrationChanges": [],
+    "ecosystems": []
+  }
+}

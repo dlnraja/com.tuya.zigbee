@@ -1,14 +1,11 @@
 {
-  "timestamp": "2025-10-05T15:36:37.592Z",
+  "timestamp": "2025-10-05T16:15:35.413Z",
   "inputs": {
     "protocols": [
       "SmartThings",
       "Enki",
       "Home Assistant",
-      "zigbee-herdsman",
-      "deCONZ",
-      "ZHA",
-      "Blakadder"
+      "zigbee-herdsman"
     ],
     "languages": [
       "en",
