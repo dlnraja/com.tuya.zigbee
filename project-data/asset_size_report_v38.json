@@ -1,0 +1,1949 @@
+{
+  "timestamp": "2025-10-05T04:18:34.946Z",
+  "drivers": [
+    {
+      "folder": "air_quality_monitor",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "air_quality_monitor_pro",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "ceiling_light_controller",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "ceiling_light_rgb",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "climate_monitor",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "co2_sensor",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "co2_temp_humidity",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "comprehensive_air_monitor",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "co_detector_pro",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "curtain_motor",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "dimmer",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "dimmer_switch_1gang_ac",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "dimmer_switch_3gang_ac",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "dimmer_switch_timer_module",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "doorbell",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "door_controller",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "door_lock",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "door_window_sensor",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "energy_monitoring_plug",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "energy_monitoring_plug_advanced",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "energy_plug_advanced",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "extension_plug",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "fan_controller",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "fingerprint_lock",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "formaldehyde_sensor",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "garage_door_controller",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "garage_door_opener",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "gas_detector",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "humidity_controller",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "hvac_controller",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "led_strip_advanced",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "led_strip_controller",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "led_strip_controller_pro",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "lux_sensor",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "milight_controller",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "mini",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "mini_switch",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "motion_sensor_battery",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "motion_sensor_mmwave",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "motion_sensor_pir_ac",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "motion_sensor_pir_battery",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "motion_sensor_zigbee_204z",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "multisensor",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "noise_level_sensor",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "outdoor_light_controller",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "outdoor_siren",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "pet_feeder",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "pir_sensor_advanced",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "pm25_detector",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "pm25_sensor",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "pool_pump_controller",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "power_meter_socket",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "presence_sensor_radar",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "pressure_sensor",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "projector_screen_controller",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "radar_motion_sensor_advanced",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "radar_motion_sensor_mmwave",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "radar_motion_sensor_tank_level",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "radiator_valve",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "relay_switch_1gang",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "remote_switch",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "rgb_led_controller",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "roller_blind_controller",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "roller_shutter_controller",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "roller_shutter_switch",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "roller_shutter_switch_advanced",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "scene_controller",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "scene_controller_2button",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "scene_controller_4button",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "scene_controller_6button",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "scene_controller_8button",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "scene_controller_battery",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "shade_controller",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smart_bulb_dimmer",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smart_bulb_rgb",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smart_bulb_tunable",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smart_bulb_white",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smart_curtain_motor",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smart_dimmer_module_1gang",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smart_doorbell",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smart_garden_sprinkler",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smart_irrigation_controller",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smart_lock",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smart_outlet_monitor",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smart_plug",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smart_plug_energy",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smart_radiator_valve",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smart_smoke_detector_advanced",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smart_spot",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smart_switch_1gang_ac",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smart_switch_1gang_hybrid",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smart_switch_2gang_ac",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smart_switch_2gang_hybrid",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smart_switch_3gang_ac",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smart_switch_3gang_hybrid",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smart_switch_4gang_hybrid",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smart_thermostat",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smart_valve_controller",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smart_water_valve",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smoke_detector",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smoke_detector_temp_humidity_advanced",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "smoke_temp_humid_sensor",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "soil_moisture_sensor",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "soil_moisture_temperature_sensor",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "soil_tester_temp_humid",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "solar_panel_controller",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "sos_emergency_button",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "switch_1gang_battery",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "switch_2gang_ac",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "switch_2gang_hybrid",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "switch_3gang_battery",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "switch_4gang_ac",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "switch_4gang_battery_cr2032",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "switch_5gang_battery",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "switch_6gang_ac",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "switch_8gang_ac",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "tank_level_monitor",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "temperature_controller",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "temperature_humidity_sensor",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "temperature_sensor",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "temperature_sensor_advanced",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "temp_humid_sensor_advanced",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "temp_humid_sensor_leak_detector",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "temp_humid_sensor_v1w2k9dd",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "temp_sensor_pro",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "thermostat",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "touch_dimmer",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "touch_dimmer_1gang",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "touch_switch_1gang",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "touch_switch_2gang",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "touch_switch_3gang",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "touch_switch_4gang",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "tvoc_sensor",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "tvoc_sensor_advanced",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "usb_outlet",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "usb_outlet_advanced",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "vibration_sensor",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "wall_switch_1gang_ac",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "wall_switch_1gang_dc",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "wall_switch_2gang_ac",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "wall_switch_2gang_dc",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "wall_switch_3gang_ac",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "wall_switch_3gang_dc",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "wall_switch_4gang_ac",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "wall_switch_4gang_dc",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "wall_switch_5gang_ac",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "wall_switch_6gang_ac",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "water_leak_detector_advanced",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "water_leak_detector_sq510a",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "water_leak_sensor",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "water_valve",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "water_valve_smart",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "wireless_switch",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "wireless_switch_1gang_cr2032",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "wireless_switch_2gang_cr2032",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "wireless_switch_3gang_cr2032",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "wireless_switch_4gang_cr2032",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "wireless_switch_4gang_cr2450",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "wireless_switch_5gang_cr2032",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "wireless_switch_6gang_cr2032",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "zbbridge",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    },
+    {
+      "folder": "zigbee_gateway_hub",
+      "small": {
+        "width": 75,
+        "height": 75
+      },
+      "large": {
+        "width": 500,
+        "height": 500
+      },
+      "needsFix": false
+    }
+  ]
+}
