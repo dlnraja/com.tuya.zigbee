@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2025-10-05T22:09:42.145Z",
+  "generatedAt": "2025-10-05T22:19:43.026Z",
   "metrics": {
     "drivers": 163,
-    "manufacturers": 30,
+    "manufacturers": 1218,
     "categories": {
       "totalCategories": 11,
       "validFolders": 162,
@@ -11,11 +11,11 @@
     "manufacturerViolations": 163
   },
   "outstandingPrompts": [],
-  "archivePath": "ultimate_system\\archives\\audit_2025-10-05T22-09-40-397Z",
+  "archivePath": "ultimate_system\\archives\\audit_2025-10-05T22-19-40-877Z",
   "manufacturerViolations": [
     {
       "driver": "air_quality_monitor",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -31,7 +31,7 @@
     },
     {
       "driver": "air_quality_monitor_pro",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -47,23 +47,23 @@
     },
     {
       "driver": "ceiling_fan",
-      "count": 12,
+      "count": 1212,
       "sample": [
-        "_TZE200_5xbza9xs",
-        "_TZE200_fdtjuw7u",
-        "_TZE200_rhblgy0z",
-        "_TZE200_1ozguk6x",
-        "_TZE200_vhy3iakz",
-        "_TZE200_wtlhqy5k",
-        "_TZE200_cowvfni3",
-        "_TZE200_nkoabg8w",
-        "_TZE200_d0yu2xgi",
-        "Tuya"
+        "CREATE",
+        "IKOHS",
+        "Tuya",
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc",
+        "_TZ3000_0ht8dnxj",
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i"
       ]
     },
     {
       "driver": "ceiling_light_controller",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -79,7 +79,7 @@
     },
     {
       "driver": "ceiling_light_rgb",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -95,7 +95,7 @@
     },
     {
       "driver": "climate_monitor",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -111,7 +111,7 @@
     },
     {
       "driver": "co2_sensor",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -127,7 +127,7 @@
     },
     {
       "driver": "co2_temp_humidity",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -143,7 +143,7 @@
     },
     {
       "driver": "comprehensive_air_monitor",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -159,7 +159,7 @@
     },
     {
       "driver": "co_detector_pro",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -175,7 +175,7 @@
     },
     {
       "driver": "curtain_motor",
-      "count": 12,
+      "count": 1211,
       "sample": [
         "_TZ1800_ejwkn2h2",
         "_TZ1800_fcdjzz3s",
@@ -191,7 +191,7 @@
     },
     {
       "driver": "dimmer",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -207,7 +207,7 @@
     },
     {
       "driver": "dimmer_switch_1gang_ac",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -223,7 +223,7 @@
     },
     {
       "driver": "dimmer_switch_3gang_ac",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -239,7 +239,7 @@
     },
     {
       "driver": "dimmer_switch_timer_module",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -255,7 +255,7 @@
     },
     {
       "driver": "doorbell",
-      "count": 12,
+      "count": 1211,
       "sample": [
         "_TZ1800_ejwkn2h2",
         "_TZ1800_fcdjzz3s",
@@ -271,7 +271,7 @@
     },
     {
       "driver": "door_controller",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -287,7 +287,7 @@
     },
     {
       "driver": "door_lock",
-      "count": 12,
+      "count": 1211,
       "sample": [
         "_TZ1800_ejwkn2h2",
         "_TZ1800_fcdjzz3s",
@@ -303,7 +303,7 @@
     },
     {
       "driver": "door_window_sensor",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -319,7 +319,7 @@
     },
     {
       "driver": "energy_monitoring_plug",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -335,7 +335,7 @@
     },
     {
       "driver": "energy_monitoring_plug_advanced",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -351,7 +351,7 @@
     },
     {
       "driver": "energy_plug_advanced",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -367,7 +367,7 @@
     },
     {
       "driver": "extension_plug",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -383,7 +383,7 @@
     },
     {
       "driver": "fan_controller",
-      "count": 12,
+      "count": 1211,
       "sample": [
         "_TZ1800_ejwkn2h2",
         "_TZ1800_fcdjzz3s",
@@ -399,7 +399,7 @@
     },
     {
       "driver": "fingerprint_lock",
-      "count": 12,
+      "count": 1211,
       "sample": [
         "_TZ1800_ejwkn2h2",
         "_TZ1800_fcdjzz3s",
@@ -415,7 +415,7 @@
     },
     {
       "driver": "formaldehyde_sensor",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -431,7 +431,7 @@
     },
     {
       "driver": "garage_door_controller",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -447,7 +447,7 @@
     },
     {
       "driver": "garage_door_opener",
-      "count": 12,
+      "count": 1211,
       "sample": [
         "_TZ1800_ejwkn2h2",
         "_TZ1800_fcdjzz3s",
@@ -463,7 +463,7 @@
     },
     {
       "driver": "gas_detector",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -479,7 +479,7 @@
     },
     {
       "driver": "humidity_controller",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -495,7 +495,7 @@
     },
     {
       "driver": "hvac_controller",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -511,7 +511,7 @@
     },
     {
       "driver": "led_strip_advanced",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -527,7 +527,7 @@
     },
     {
       "driver": "led_strip_controller",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -543,7 +543,7 @@
     },
     {
       "driver": "led_strip_controller_pro",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -559,7 +559,7 @@
     },
     {
       "driver": "lux_sensor",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -575,7 +575,7 @@
     },
     {
       "driver": "milight_controller",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -591,7 +591,7 @@
     },
     {
       "driver": "mini",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -607,7 +607,7 @@
     },
     {
       "driver": "mini_switch",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -623,7 +623,7 @@
     },
     {
       "driver": "motion_sensor_battery",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -639,7 +639,7 @@
     },
     {
       "driver": "motion_sensor_mmwave",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -655,7 +655,7 @@
     },
     {
       "driver": "motion_sensor_pir_ac",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -671,7 +671,7 @@
     },
     {
       "driver": "motion_sensor_pir_battery",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -687,7 +687,7 @@
     },
     {
       "driver": "motion_sensor_zigbee_204z",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -703,7 +703,7 @@
     },
     {
       "driver": "multisensor",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -719,7 +719,7 @@
     },
     {
       "driver": "noise_level_sensor",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -735,7 +735,7 @@
     },
     {
       "driver": "outdoor_light_controller",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -751,7 +751,7 @@
     },
     {
       "driver": "outdoor_siren",
-      "count": 12,
+      "count": 1211,
       "sample": [
         "_TZ1800_ejwkn2h2",
         "_TZ1800_fcdjzz3s",
@@ -767,7 +767,7 @@
     },
     {
       "driver": "pet_feeder",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -783,7 +783,7 @@
     },
     {
       "driver": "pir_sensor_advanced",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -799,7 +799,7 @@
     },
     {
       "driver": "pm25_detector",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -815,7 +815,7 @@
     },
     {
       "driver": "pm25_sensor",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -831,7 +831,7 @@
     },
     {
       "driver": "pool_pump_controller",
-      "count": 12,
+      "count": 1211,
       "sample": [
         "_TZ1800_ejwkn2h2",
         "_TZ1800_fcdjzz3s",
@@ -847,7 +847,7 @@
     },
     {
       "driver": "power_meter_socket",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -863,7 +863,7 @@
     },
     {
       "driver": "presence_sensor_radar",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -879,7 +879,7 @@
     },
     {
       "driver": "pressure_sensor",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -895,7 +895,7 @@
     },
     {
       "driver": "projector_screen_controller",
-      "count": 12,
+      "count": 1211,
       "sample": [
         "_TZ1800_ejwkn2h2",
         "_TZ1800_fcdjzz3s",
@@ -911,7 +911,7 @@
     },
     {
       "driver": "radar_motion_sensor_advanced",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -927,7 +927,7 @@
     },
     {
       "driver": "radar_motion_sensor_mmwave",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -943,7 +943,7 @@
     },
     {
       "driver": "radar_motion_sensor_tank_level",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -959,7 +959,7 @@
     },
     {
       "driver": "radiator_valve",
-      "count": 12,
+      "count": 1211,
       "sample": [
         "_TZ1800_ejwkn2h2",
         "_TZ1800_fcdjzz3s",
@@ -975,7 +975,7 @@
     },
     {
       "driver": "relay_switch_1gang",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -991,7 +991,7 @@
     },
     {
       "driver": "remote_switch",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1007,7 +1007,7 @@
     },
     {
       "driver": "rgb_led_controller",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1023,7 +1023,7 @@
     },
     {
       "driver": "roller_blind_controller",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1039,7 +1039,7 @@
     },
     {
       "driver": "roller_shutter_controller",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1055,7 +1055,7 @@
     },
     {
       "driver": "roller_shutter_switch",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1071,7 +1071,7 @@
     },
     {
       "driver": "roller_shutter_switch_advanced",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1087,7 +1087,7 @@
     },
     {
       "driver": "scene_controller",
-      "count": 12,
+      "count": 1211,
       "sample": [
         "_TZ1800_ejwkn2h2",
         "_TZ1800_fcdjzz3s",
@@ -1103,7 +1103,7 @@
     },
     {
       "driver": "scene_controller_2button",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1119,7 +1119,7 @@
     },
     {
       "driver": "scene_controller_4button",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1135,7 +1135,7 @@
     },
     {
       "driver": "scene_controller_6button",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1151,7 +1151,7 @@
     },
     {
       "driver": "scene_controller_8button",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1167,7 +1167,7 @@
     },
     {
       "driver": "scene_controller_battery",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1183,7 +1183,7 @@
     },
     {
       "driver": "shade_controller",
-      "count": 12,
+      "count": 1211,
       "sample": [
         "_TZ1800_ejwkn2h2",
         "_TZ1800_fcdjzz3s",
@@ -1199,7 +1199,7 @@
     },
     {
       "driver": "smart_bulb_dimmer",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1215,7 +1215,7 @@
     },
     {
       "driver": "smart_bulb_rgb",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1231,7 +1231,7 @@
     },
     {
       "driver": "smart_bulb_tunable",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1247,7 +1247,7 @@
     },
     {
       "driver": "smart_bulb_white",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1263,7 +1263,7 @@
     },
     {
       "driver": "smart_curtain_motor",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1279,7 +1279,7 @@
     },
     {
       "driver": "smart_dimmer_module_1gang",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1295,7 +1295,7 @@
     },
     {
       "driver": "smart_doorbell",
-      "count": 12,
+      "count": 1211,
       "sample": [
         "_TZ1800_ejwkn2h2",
         "_TZ1800_fcdjzz3s",
@@ -1311,7 +1311,7 @@
     },
     {
       "driver": "smart_garden_sprinkler",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1327,7 +1327,7 @@
     },
     {
       "driver": "smart_irrigation_controller",
-      "count": 12,
+      "count": 1211,
       "sample": [
         "_TZ1800_ejwkn2h2",
         "_TZ1800_fcdjzz3s",
@@ -1343,7 +1343,7 @@
     },
     {
       "driver": "smart_lock",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1359,7 +1359,7 @@
     },
     {
       "driver": "smart_outlet_monitor",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1375,7 +1375,7 @@
     },
     {
       "driver": "smart_plug",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1391,7 +1391,7 @@
     },
     {
       "driver": "smart_plug_energy",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1407,7 +1407,7 @@
     },
     {
       "driver": "smart_radiator_valve",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1423,7 +1423,7 @@
     },
     {
       "driver": "smart_smoke_detector_advanced",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1439,7 +1439,7 @@
     },
     {
       "driver": "smart_spot",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1455,7 +1455,7 @@
     },
     {
       "driver": "smart_switch_1gang_ac",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1471,7 +1471,7 @@
     },
     {
       "driver": "smart_switch_1gang_hybrid",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1487,7 +1487,7 @@
     },
     {
       "driver": "smart_switch_2gang_ac",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1503,7 +1503,7 @@
     },
     {
       "driver": "smart_switch_2gang_hybrid",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1519,7 +1519,7 @@
     },
     {
       "driver": "smart_switch_3gang_ac",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1535,7 +1535,7 @@
     },
     {
       "driver": "smart_switch_3gang_hybrid",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1551,7 +1551,7 @@
     },
     {
       "driver": "smart_switch_4gang_hybrid",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1567,7 +1567,7 @@
     },
     {
       "driver": "smart_thermostat",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1583,7 +1583,7 @@
     },
     {
       "driver": "smart_valve_controller",
-      "count": 12,
+      "count": 1211,
       "sample": [
         "_TZ1800_ejwkn2h2",
         "_TZ1800_fcdjzz3s",
@@ -1599,7 +1599,7 @@
     },
     {
       "driver": "smart_water_valve",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1615,7 +1615,7 @@
     },
     {
       "driver": "smoke_detector",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1631,7 +1631,7 @@
     },
     {
       "driver": "smoke_detector_temp_humidity_advanced",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1647,7 +1647,7 @@
     },
     {
       "driver": "smoke_temp_humid_sensor",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1663,7 +1663,7 @@
     },
     {
       "driver": "soil_moisture_sensor",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1679,7 +1679,7 @@
     },
     {
       "driver": "soil_moisture_temperature_sensor",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1695,7 +1695,7 @@
     },
     {
       "driver": "soil_tester_temp_humid",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1711,7 +1711,7 @@
     },
     {
       "driver": "solar_panel_controller",
-      "count": 12,
+      "count": 1211,
       "sample": [
         "_TZ1800_ejwkn2h2",
         "_TZ1800_fcdjzz3s",
@@ -1727,7 +1727,7 @@
     },
     {
       "driver": "sos_emergency_button",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1743,7 +1743,7 @@
     },
     {
       "driver": "switch_1gang_battery",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1759,7 +1759,7 @@
     },
     {
       "driver": "switch_2gang_ac",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1775,7 +1775,7 @@
     },
     {
       "driver": "switch_2gang_hybrid",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1791,7 +1791,7 @@
     },
     {
       "driver": "switch_3gang_battery",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1807,7 +1807,7 @@
     },
     {
       "driver": "switch_4gang_ac",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1823,7 +1823,7 @@
     },
     {
       "driver": "switch_4gang_battery_cr2032",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1839,7 +1839,7 @@
     },
     {
       "driver": "switch_5gang_battery",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1855,7 +1855,7 @@
     },
     {
       "driver": "switch_6gang_ac",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1871,7 +1871,7 @@
     },
     {
       "driver": "switch_8gang_ac",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1887,7 +1887,7 @@
     },
     {
       "driver": "tank_level_monitor",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1903,7 +1903,7 @@
     },
     {
       "driver": "temperature_controller",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1919,7 +1919,7 @@
     },
     {
       "driver": "temperature_humidity_sensor",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1935,7 +1935,7 @@
     },
     {
       "driver": "temperature_sensor",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1951,7 +1951,7 @@
     },
     {
       "driver": "temperature_sensor_advanced",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1967,7 +1967,7 @@
     },
     {
       "driver": "temp_humid_sensor_advanced",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1983,7 +1983,7 @@
     },
     {
       "driver": "temp_humid_sensor_leak_detector",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -1999,7 +1999,7 @@
     },
     {
       "driver": "temp_humid_sensor_v1w2k9dd",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2015,7 +2015,7 @@
     },
     {
       "driver": "temp_sensor_pro",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2031,7 +2031,7 @@
     },
     {
       "driver": "thermostat",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2047,7 +2047,7 @@
     },
     {
       "driver": "touch_dimmer",
-      "count": 12,
+      "count": 1211,
       "sample": [
         "_TZ1800_ejwkn2h2",
         "_TZ1800_fcdjzz3s",
@@ -2063,7 +2063,7 @@
     },
     {
       "driver": "touch_dimmer_1gang",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2079,7 +2079,7 @@
     },
     {
       "driver": "touch_switch_1gang",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2095,7 +2095,7 @@
     },
     {
       "driver": "touch_switch_2gang",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2111,7 +2111,7 @@
     },
     {
       "driver": "touch_switch_3gang",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2127,7 +2127,7 @@
     },
     {
       "driver": "touch_switch_4gang",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2143,7 +2143,7 @@
     },
     {
       "driver": "tvoc_sensor",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2159,7 +2159,7 @@
     },
     {
       "driver": "tvoc_sensor_advanced",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2175,7 +2175,7 @@
     },
     {
       "driver": "usb_outlet",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2191,7 +2191,7 @@
     },
     {
       "driver": "usb_outlet_advanced",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2207,7 +2207,7 @@
     },
     {
       "driver": "vibration_sensor",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2223,7 +2223,7 @@
     },
     {
       "driver": "wall_switch_1gang_ac",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2239,7 +2239,7 @@
     },
     {
       "driver": "wall_switch_1gang_dc",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2255,7 +2255,7 @@
     },
     {
       "driver": "wall_switch_2gang_ac",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2271,7 +2271,7 @@
     },
     {
       "driver": "wall_switch_2gang_dc",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2287,7 +2287,7 @@
     },
     {
       "driver": "wall_switch_3gang_ac",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2303,7 +2303,7 @@
     },
     {
       "driver": "wall_switch_3gang_dc",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2319,7 +2319,7 @@
     },
     {
       "driver": "wall_switch_4gang_ac",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2335,7 +2335,7 @@
     },
     {
       "driver": "wall_switch_4gang_dc",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2351,7 +2351,7 @@
     },
     {
       "driver": "wall_switch_5gang_ac",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2367,7 +2367,7 @@
     },
     {
       "driver": "wall_switch_6gang_ac",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2383,7 +2383,7 @@
     },
     {
       "driver": "water_leak_detector_advanced",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2399,7 +2399,7 @@
     },
     {
       "driver": "water_leak_detector_sq510a",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2415,7 +2415,7 @@
     },
     {
       "driver": "water_leak_sensor",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2431,7 +2431,7 @@
     },
     {
       "driver": "water_valve",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2447,7 +2447,7 @@
     },
     {
       "driver": "water_valve_smart",
-      "count": 12,
+      "count": 1211,
       "sample": [
         "_TZ1800_ejwkn2h2",
         "_TZ1800_fcdjzz3s",
@@ -2463,7 +2463,7 @@
     },
     {
       "driver": "wireless_switch",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2479,7 +2479,7 @@
     },
     {
       "driver": "wireless_switch_1gang_cr2032",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2495,7 +2495,7 @@
     },
     {
       "driver": "wireless_switch_2gang_cr2032",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2511,7 +2511,7 @@
     },
     {
       "driver": "wireless_switch_3gang_cr2032",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2527,7 +2527,7 @@
     },
     {
       "driver": "wireless_switch_4gang_cr2032",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2543,7 +2543,7 @@
     },
     {
       "driver": "wireless_switch_4gang_cr2450",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2559,7 +2559,7 @@
     },
     {
       "driver": "wireless_switch_5gang_cr2032",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2575,7 +2575,7 @@
     },
     {
       "driver": "wireless_switch_6gang_cr2032",
-      "count": 12,
+      "count": 1205,
       "sample": [
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
@@ -2591,7 +2591,7 @@
     },
     {
       "driver": "zbbridge",
-      "count": 12,
+      "count": 1211,
       "sample": [
         "_TZ1800_ejwkn2h2",
         "_TZ1800_fcdjzz3s",
@@ -2607,7 +2607,7 @@
     },
     {
       "driver": "zigbee_gateway_hub",
-      "count": 12,
+      "count": 1211,
       "sample": [
         "_TZ1800_ejwkn2h2",
         "_TZ1800_fcdjzz3s",
