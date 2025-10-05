@@ -1,0 +1,78 @@
+{
+  "name": {
+    "en": "Ceiling Fan",
+    "fr": "Ventilateur de plafond"
+  },
+  "class": "fan",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "title": {
+        "en": "Fan Speed",
+        "fr": "Vitesse du ventilateur"
+      },
+      "min": 0,
+      "max": 1,
+      "step": 0.01
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_5xbza9xs",
+      "_TZE200_fdtjuw7u",
+      "_TZE200_rhblgy0z",
+      "_TZE200_1ozguk6x",
+      "_TZE200_vhy3iakz",
+      "_TZE200_wtlhqy5k",
+      "_TZE200_cowvfni3",
+      "_TZE200_nkoabg8w",
+      "_TZE200_d0yu2xgi",
+      "Tuya",
+      "IKOHS",
+      "CREATE"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          61184
+        ],
+        "bindings": [
+          6,
+          8
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/ceiling_fan/assets/small.png",
+    "large": "/drivers/ceiling_fan/assets/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "platforms": [
+    "local"
+  ]
+}
