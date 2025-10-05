@@ -5,13 +5,6 @@
     "onoff.gang2",
     "onoff.gang3"
   ],
-  "energy": {
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "AA"
-    ]
-  },
   "zigbee": {
     "productId": [
       "TS0001",
@@ -41,7 +34,7 @@
           6
         ],
         "bindings": [
-          6
+          1
         ]
       },
       "2": {
