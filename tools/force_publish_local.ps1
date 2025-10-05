@@ -5,10 +5,19 @@ Write-Host "🚀 FORCE PUBLICATION LOCALE HOMEY" -ForegroundColor Cyan
 Write-Host "=" * 70
 Write-Host ""
 
-$ROOT = Get-Location
-
 # Étape 1: Validation pré-publication
-Write-Host "📋 Étape 1/5: Validation pré-publication..." -ForegroundColor Yellow
+Write-Host "📋 Étape 1/6: Préparation et validation..." -ForegroundColor Yellow
+
+Write-Host "  → Nettoyage cache Homey..." -ForegroundColor Gray
+if (Test-Path ".homeybuild") { Remove-Item -Recurse -Force ".homeybuild" }
+if (Test-Path ".homeycompose") { Remove-Item -Recurse -Force ".homeycompose" }
+
+Write-Host "  → Build de l'app..." -ForegroundColor Gray
+homey app build
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "❌ Build échoué" -ForegroundColor Red
+    exit 1
+}
 
 Write-Host "  → Validation JSON..." -ForegroundColor Gray
 node tools/validate_all_json.js
@@ -17,8 +26,8 @@ if ($LASTEXITCODE -ne 0) {
     exit 1
 }
 
-Write-Host "  → Validation SDK3..." -ForegroundColor Gray
-node tools/homey_validate.js
+Write-Host "  → Validation SDK3 publish-level..." -ForegroundColor Gray
+homey app validate --level publish
 if ($LASTEXITCODE -ne 0) {
     Write-Host "❌ Validation SDK3 échouée" -ForegroundColor Red
     exit 1
@@ -28,7 +37,7 @@ Write-Host "✅ Validations OK" -ForegroundColor Green
 Write-Host ""
 
 # Étape 2: Vérifier installation Homey CLI
-Write-Host "📋 Étape 2/5: Vérification Homey CLI..." -ForegroundColor Yellow
+Write-Host "📋 Étape 2/6: Vérification Homey CLI..." -ForegroundColor Yellow
 
 $homeyCli = Get-Command homey -ErrorAction SilentlyContinue
 if (-not $homeyCli) {
@@ -44,7 +53,7 @@ Write-Host "✅ Homey CLI prêt" -ForegroundColor Green
 Write-Host ""
 
 # Étape 3: Vérifier Git status
-Write-Host "📋 Étape 3/5: Vérification Git..." -ForegroundColor Yellow
+Write-Host "📋 Étape 3/6: Vérification Git..." -ForegroundColor Yellow
 
 $gitStatus = git status --porcelain
 if ($gitStatus) {
@@ -64,7 +73,7 @@ if ($gitStatus) {
 Write-Host ""
 
 # Étape 4: Login Homey
-Write-Host "📋 Étape 4/5: Login Homey..." -ForegroundColor Yellow
+Write-Host "📋 Étape 4/6: Login Homey..." -ForegroundColor Yellow
 Write-Host ""
 Write-Host "🔐 ATTENTION: Vous devez entrer vos credentials Homey" -ForegroundColor Cyan
 Write-Host "   Email: Votre email Homey"
