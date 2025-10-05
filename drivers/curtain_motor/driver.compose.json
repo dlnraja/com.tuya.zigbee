@@ -21,13 +21,12 @@
       "_TZ3000_0dumfk2z",
       "_TZ3000_0ghwhypc",
       "_TZ3000_0ht8dnxj",
-      "_TZE200_fctwhugx",
-      "_TZE200_cowvfni3",
-      "_TZE200_xuzcvlku",
-      "_TZE200_wmcdj3aq"
+      "_TZ3000_0s1izerx",
+      "_TZ3000_0s9gukzt"
     ],
     "productId": [
-      "TS130F"
+      "TS130F",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -42,8 +41,8 @@
     }
   },
   "images": {
-    "large": "/drivers/curtain_motor/assets/large.png",
-    "small": "/drivers/curtain_motor/assets/small.png"
+    "large": "./assets/large.png",
+    "small": "./assets/small.png"
   },
   "pair": [
     {

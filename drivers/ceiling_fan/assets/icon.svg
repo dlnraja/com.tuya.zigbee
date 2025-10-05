@@ -1,4 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
-  <rect width="100" height="100" fill="#4CAF50" rx="10"/>
-  <text x="50" y="55" text-anchor="middle" fill="white" font-size="12">TUYA</text>
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+</style>
+<g>
+	<!-- Central motor housing -->
+	<circle class="st0" cx="50" cy="50" r="8"/>
+	
+	<!-- Fan blade 1 (top) -->
+	<path class="st0" d="M50,20 Q55,25 55,35 L45,35 Q45,25 50,20 Z"/>
+	
+	<!-- Fan blade 2 (top-right) -->
+	<path class="st0" d="M70,30 Q67,35 62,40 L57,33 Q62,28 70,30 Z"/>
+	
+	<!-- Fan blade 3 (bottom-right) -->
+	<path class="st0" d="M75,55 Q70,58 62,58 L60,48 Q68,48 75,55 Z"/>
+	
+	<!-- Fan blade 4 (bottom) -->
+	<path class="st0" d="M50,80 Q45,75 45,65 L55,65 Q55,75 50,80 Z"/>
+	
+	<!-- Fan blade 5 (bottom-left) -->
+	<path class="st0" d="M25,55 Q30,58 38,58 L40,48 Q32,48 25,55 Z"/>
+	
+	<!-- Fan blade 6 (top-left) -->
+	<path class="st0" d="M30,30 Q33,35 38,40 L43,33 Q38,28 30,30 Z"/>
+	
+	<!-- Central dot -->
+	<circle class="st0" cx="50" cy="50" r="3"/>
+</g>
 </svg>

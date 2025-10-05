@@ -16,22 +16,32 @@
     "zigbee"
   ],
   "images": {
-    "small": "/drivers/wireless_switch/assets/small.png",
-    "large": "/drivers/wireless_switch/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_",
-      "_TZ3000_1obwwnmq",
-      "_TZ3000_26",
-      "_TZ3000_6",
-      "_TZ3000_8",
-      "_TZ3000_ji4araar",
-      "_TZ3000_qzjcsmar",
-      "_TZE200_"
+      "_TZ3000_01gpyda5",
+      "_TZ3000_0dumfk2z",
+      "_TZ3000_0ghwhypc",
+      "_TZ3000_0ht8dnxj",
+      "_TZ3000_0s1izerx",
+      "_TZ3000_0s9gukzt",
+      "_TZ3000_0zfrhq4i",
+      "_TZ3000_0zrccfgx",
+      "_TZ3000_11pg3ima",
+      "_TZ3000_18ejxno0",
+      "_TZ3000_1adss9de",
+      "_TZ3000_1dd0d5yi"
     ],
     "productId": [
-      "TS0001"
+      "TS0001",
+      "TS0101",
+      "TS0111",
+      "TS0115",
+      "TS011F",
+      "TS0105",
+      "TS0108"
     ],
     "endpoints": {
       "1": {
