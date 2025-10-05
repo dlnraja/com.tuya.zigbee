@@ -1,22 +1,22 @@
 'use strict';
 
-const { Device } = require('homey');
+const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class ComprehensiveAirMonitorDevice extends Device {
+class ComprehensiveAirMonitorDevice extends ZigBeeDevice {
+  async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+    this.enableDebug();
+    this.printNode();
 
-  async onInit() {
-    this.log('comprehensive_air_monitor device has been initialized');
-    
-    // Register capability listeners
-    this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));
+    // Register measurements using numeric Zigbee clusters
+    if (this.hasCapability('measure_temperature')) {
+      this.registerCapability('measure_temperature', 1026); // temperatureMeasurement
+    }
+    if (this.hasCapability('measure_humidity')) {
+      this.registerCapability('measure_humidity', 1029); // relativeHumidity
+    }
+    // CO2/PM2.5 typically via Tuya EF00; fallback runtime can be added when DP map is confirmed
   }
-
-  async onCapabilityOnoff(value, opts) {
-    this.log('onCapabilityOnoff was called with value:', value);
-    // Implement your device control logic here
-    return Promise.resolve();
-  }
-
 }
 
 module.exports = ComprehensiveAirMonitorDevice;
