@@ -1,10 +1,29 @@
 {
-  "timestamp": "2025-10-05T14:45:28.133Z",
+  "timestamp": "2025-10-05T15:03:47.858Z",
   "referenceSources": {
     "totalManufacturers": 1231,
     "driversInDatabase": 162
   },
-  "maxPerDriver": 15,
+  "limitMode": "dynamic_by_type",
+  "absMaxPerDriver": 200,
+  "perTypeLimits": {
+    "switch": 60,
+    "dimmer": 45,
+    "bulb": 45,
+    "plug": 25,
+    "curtain": 25,
+    "motion": 30,
+    "contact": 30,
+    "air_quality": 30,
+    "climate": 30,
+    "sensor": 30,
+    "lock": 25,
+    "water_leak": 25,
+    "smoke": 20,
+    "thermostat": 25,
+    "valve": 20,
+    "other": 20
+  },
   "driversChecked": 162,
   "driversUpdated": 0,
   "results": [
