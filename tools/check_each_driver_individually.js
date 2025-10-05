@@ -7,10 +7,52 @@ const REPORT_DIR = path.join(ROOT, "project-data");
 const REPORT = path.join(REPORT_DIR, "individual_driver_check_v38.json");
 
 function ex(p){ try{ fs.accessSync(p); return true; } catch{ return false; } }
+
+// Per-type limits for manufacturerName count, with absolute cap
+const MAX_PER_DRIVER_BY_TYPE = {
+  switch: 60,
+  dimmer: 45,
+  bulb: 45,
+  plug: 25,
+  curtain: 25,
+  motion: 30,
+  contact: 30,
+  air_quality: 30,
+  climate: 30,
+  sensor: 30,
+  lock: 25,
+  water_leak: 25,
+  smoke: 20,
+  thermostat: 25,
+  valve: 20,
+  other: 20
+};
+const ABS_MAX_PER_DRIVER = 200;
 function dj(p){ return JSON.parse(fs.readFileSync(p, "utf8")); }
 function wj(p, obj){ fs.writeFileSync(p, JSON.stringify(obj, null, 2) + "\n", "utf8"); }
 function ed(p){ if(!ex(p)) fs.mkdirSync(p,{recursive:true}); }
 function drivers(){ return ex(DRIVERS)? fs.readdirSync(DRIVERS).filter(d=>ex(path.join(DRIVERS,d,'driver.compose.json'))):[]; }
+
+// Infer driver type from folder name and class to apply per-type limits
+function inferType(folder, cls){
+  const f = String(folder || '').toLowerCase();
+  const c = String(cls || '').toLowerCase();
+  if(/dimmer/.test(f)) return 'dimmer';
+  if(/switch/.test(f) && !/dimmer/.test(f)) return 'switch';
+  if(/plug|outlet|socket/.test(f)) return 'plug';
+  if(/bulb|spot|strip|ceiling.*light/.test(f)) return 'bulb';
+  if(/curtain|roller|shade/.test(f)) return 'curtain';
+  if(/lock/.test(f)) return 'lock';
+  if(/thermostat|radiator/.test(f)) return 'thermostat';
+  if(/contact|door.*window/.test(f)) return 'contact';
+  if(/motion|pir|radar|presence/.test(f)) return 'motion';
+  if(/water.*leak/.test(f)) return 'water_leak';
+  if(/smoke/.test(f)) return 'smoke';
+  if(/air|co2|pm25|tvoc|formaldehyde/.test(f)) return 'air_quality';
+  if(/temp|humidity|climate/.test(f) || c === 'sensor') return 'climate';
+  if(/sensor|detector|monitor/.test(f)) return 'sensor';
+  return 'other';
+}
 
 function checkDriver(folder){
   const file = path.join(DRIVERS, folder, 'driver.compose.json');
@@ -48,12 +90,15 @@ function checkDriver(folder){
     issues.push('Missing zigbee section');
   } else {
     // Check manufacturerName
+    const dtype = inferType(folder, j.class);
+    const typeLimit = MAX_PER_DRIVER_BY_TYPE[dtype] ?? 30;
+    const limit = Math.min(typeLimit, ABS_MAX_PER_DRIVER);
     if(!Array.isArray(j.zigbee.manufacturerName)){
       issues.push('manufacturerName is not an array');
     } else if(j.zigbee.manufacturerName.length === 0){
       issues.push('manufacturerName array is empty');
-    } else if(j.zigbee.manufacturerName.length > 20){
-      issues.push(`manufacturerName has ${j.zigbee.manufacturerName.length} entries (>20, consider reducing)`);
+    } else if(j.zigbee.manufacturerName.length > limit){
+      issues.push(`manufacturerName has ${j.zigbee.manufacturerName.length} entries (> ${limit} for type ${dtype}, consider reducing)`);
     }
     
     // Check productId

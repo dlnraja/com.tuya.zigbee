@@ -15,7 +15,26 @@ function uj(a){ return Array.from(new Set(a)); }
 function ed(p){ if(!ex(p)) fs.mkdirSync(p,{recursive:true}); }
 function drivers(){ return ex(DRIVERS)? fs.readdirSync(DRIVERS).filter(d=>ex(path.join(DRIVERS,d,'driver.compose.json'))):[]; }
 
-const MAX_MANUFACTURERS_PER_DRIVER = 15; // Limite stricte et cohérente
+// Dynamic per-type limits + absolute guard to avoid incoherent oversizing
+const MAX_PER_DRIVER_BY_TYPE = {
+  switch: 60,
+  dimmer: 45,
+  bulb: 45,
+  plug: 25,
+  curtain: 25,
+  motion: 30,
+  contact: 30,
+  air_quality: 30,
+  climate: 30,
+  sensor: 30,
+  lock: 25,
+  water_leak: 25,
+  smoke: 20,
+  thermostat: 25,
+  valve: 20,
+  other: 20
+};
+const ABS_MAX_PER_DRIVER = 200;
 
 // Load ALL reference sources
 function loadAllReferences(){
@@ -114,13 +133,15 @@ function enrichDriver(folder, json, refs){
            (refs.allManufacturers.has(n) || /^(TS\d{4}|_TZ[EDMSE]\d{3,4}_)/.test(n));
   });
   
-  // Limit to MAX_MANUFACTURERS_PER_DRIVER
-  const limitedNames = validNames.slice(0, MAX_MANUFACTURERS_PER_DRIVER);
+  // Limit dynamically by type with absolute guard
+  const typeLimit = MAX_PER_DRIVER_BY_TYPE[analysis.type] ?? 30;
+  const limit = Math.min(typeLimit, ABS_MAX_PER_DRIVER);
+  const limitedNames = validNames.slice(0, limit);
   
   if(limitedNames.length !== currentNames.length || !currentNames.every(n => limitedNames.includes(n))){
     json.zigbee = json.zigbee || {};
     json.zigbee.manufacturerName = uj(limitedNames).sort((a,b)=>a.localeCompare(b));
-    changes.push(`manufacturerName: ${currentNames.length} -> ${json.zigbee.manufacturerName.length} (validated & limited)`);
+    changes.push(`manufacturerName: ${currentNames.length} -> ${json.zigbee.manufacturerName.length} (validated & limited to ${limit})`);
     modified = true;
   }
   
@@ -189,7 +210,7 @@ function enrichDriver(folder, json, refs){
   const refs = loadAllReferences();
   console.log(`  Current drivers in database: ${refs.currentDriverData.size}`);
   console.log(`  Total unique manufacturers (all sources): ${refs.allManufacturers.size}`);
-  console.log(`  Max manufacturers per driver: ${MAX_MANUFACTURERS_PER_DRIVER}\n`);
+  console.log(`  Limit mode: dynamic by type (abs max ${ABS_MAX_PER_DRIVER})\n`);
   
   const results = [];
   let updatedCount = 0;
@@ -224,7 +245,9 @@ function enrichDriver(folder, json, refs){
       totalManufacturers: refs.allManufacturers.size,
       driversInDatabase: refs.currentDriverData.size
     },
-    maxPerDriver: MAX_MANUFACTURERS_PER_DRIVER,
+    limitMode: 'dynamic_by_type',
+    absMaxPerDriver: ABS_MAX_PER_DRIVER,
+    perTypeLimits: MAX_PER_DRIVER_BY_TYPE,
     driversChecked: results.length,
     driversUpdated: updatedCount,
     results: results
@@ -235,6 +258,6 @@ function enrichDriver(folder, json, refs){
   console.log(`   Drivers checked: ${results.length}`);
   console.log(`   Drivers updated: ${updatedCount}`);
   console.log(`   Total unique manufacturers: ${refs.allManufacturers.size}`);
-  console.log(`   Max manufacturers per driver: ${MAX_MANUFACTURERS_PER_DRIVER}`);
+  console.log(`   Limit mode: dynamic_by_type, abs max per driver: ${ABS_MAX_PER_DRIVER}`);
   console.log(`\n📝 Report: ${REPORT}`);
 })();
