@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-10-05T17:05:57.966Z",
+  "timestamp": "2025-10-05T17:14:36.353Z",
   "drivers": [
     {
       "folder": "air_quality_monitor",
@@ -19,7 +19,7 @@
     },
     {
       "folder": "climate_monitor",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "co2_sensor",
@@ -75,19 +75,19 @@
     },
     {
       "folder": "energy_monitoring_plug",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "energy_monitoring_plug_advanced",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "energy_plug_advanced",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "extension_plug",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "fan_controller",
@@ -123,15 +123,15 @@
     },
     {
       "folder": "led_strip_advanced",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "led_strip_controller",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "led_strip_controller_pro",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "lux_sensor",
@@ -151,7 +151,7 @@
     },
     {
       "folder": "motion_sensor_battery",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "motion_sensor_mmwave",
@@ -167,7 +167,7 @@
     },
     {
       "folder": "motion_sensor_zigbee_204z",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "multisensor",
@@ -259,11 +259,11 @@
     },
     {
       "folder": "roller_shutter_switch",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "roller_shutter_switch_advanced",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "scene_controller",
@@ -295,19 +295,19 @@
     },
     {
       "folder": "smart_bulb_dimmer",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "smart_bulb_rgb",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "smart_bulb_tunable",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "smart_bulb_white",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "smart_curtain_motor",
@@ -355,7 +355,7 @@
     },
     {
       "folder": "smart_spot",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "smart_switch_1gang_ac",
@@ -367,7 +367,7 @@
     },
     {
       "folder": "smart_switch_2gang_ac",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "smart_switch_2gang_hybrid",
@@ -375,7 +375,7 @@
     },
     {
       "folder": "smart_switch_3gang_ac",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "smart_switch_3gang_hybrid",
@@ -443,7 +443,7 @@
     },
     {
       "folder": "switch_3gang_battery",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "switch_4gang_ac",
@@ -451,11 +451,11 @@
     },
     {
       "folder": "switch_4gang_battery_cr2032",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "switch_5gang_battery",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "switch_6gang_ac",
@@ -499,7 +499,7 @@
     },
     {
       "folder": "temp_sensor_pro",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "thermostat",
@@ -507,7 +507,7 @@
     },
     {
       "folder": "touch_dimmer",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "touch_dimmer_1gang",
@@ -519,15 +519,15 @@
     },
     {
       "folder": "touch_switch_2gang",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "touch_switch_3gang",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "touch_switch_4gang",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "tvoc_sensor",
@@ -583,7 +583,7 @@
     },
     {
       "folder": "wall_switch_5gang_ac",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "wall_switch_6gang_ac",
@@ -619,27 +619,27 @@
     },
     {
       "folder": "wireless_switch_2gang_cr2032",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "wireless_switch_3gang_cr2032",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "wireless_switch_4gang_cr2032",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "wireless_switch_4gang_cr2450",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "wireless_switch_5gang_cr2032",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "wireless_switch_6gang_cr2032",
-      "changed": false
+      "changed": true
     },
     {
       "folder": "zbbridge",
