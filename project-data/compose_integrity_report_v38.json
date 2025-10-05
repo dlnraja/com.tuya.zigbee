@@ -1,0 +1,817 @@
+{
+  "timestamp": "2025-10-05T05:47:36.683Z",
+  "ok": true,
+  "drivers": [
+    {
+      "folder": "air_quality_monitor",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\air_quality_monitor\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "air_quality_monitor_pro",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\air_quality_monitor_pro\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "ceiling_light_controller",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\ceiling_light_controller\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "ceiling_light_rgb",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\ceiling_light_rgb\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "climate_monitor",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\climate_monitor\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "co2_sensor",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\co2_sensor\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "co2_temp_humidity",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\co2_temp_humidity\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "comprehensive_air_monitor",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\comprehensive_air_monitor\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "co_detector_pro",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\co_detector_pro\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "curtain_motor",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\curtain_motor\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "dimmer",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\dimmer\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "dimmer_switch_1gang_ac",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\dimmer_switch_1gang_ac\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "dimmer_switch_3gang_ac",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\dimmer_switch_3gang_ac\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "dimmer_switch_timer_module",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\dimmer_switch_timer_module\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "doorbell",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\doorbell\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "door_controller",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\door_controller\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "door_lock",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\door_lock\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "door_window_sensor",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\door_window_sensor\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "energy_monitoring_plug",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\energy_monitoring_plug\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "energy_monitoring_plug_advanced",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\energy_monitoring_plug_advanced\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "energy_plug_advanced",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\energy_plug_advanced\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "extension_plug",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\extension_plug\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "fan_controller",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\fan_controller\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "fingerprint_lock",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\fingerprint_lock\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "formaldehyde_sensor",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\formaldehyde_sensor\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "garage_door_controller",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\garage_door_controller\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "garage_door_opener",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\garage_door_opener\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "gas_detector",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\gas_detector\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "humidity_controller",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\humidity_controller\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "hvac_controller",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\hvac_controller\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "led_strip_advanced",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\led_strip_advanced\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "led_strip_controller",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\led_strip_controller\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "led_strip_controller_pro",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\led_strip_controller_pro\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "lux_sensor",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\lux_sensor\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "milight_controller",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\milight_controller\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "mini",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\mini\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "mini_switch",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\mini_switch\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "motion_sensor_battery",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\motion_sensor_battery\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "motion_sensor_mmwave",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\motion_sensor_mmwave\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "motion_sensor_pir_ac",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\motion_sensor_pir_ac\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "motion_sensor_pir_battery",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\motion_sensor_pir_battery\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "motion_sensor_zigbee_204z",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\motion_sensor_zigbee_204z\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "multisensor",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\multisensor\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "noise_level_sensor",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\noise_level_sensor\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "outdoor_light_controller",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\outdoor_light_controller\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "outdoor_siren",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\outdoor_siren\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "pet_feeder",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\pet_feeder\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "pir_sensor_advanced",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\pir_sensor_advanced\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "pm25_detector",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\pm25_detector\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "pm25_sensor",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\pm25_sensor\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "pool_pump_controller",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\pool_pump_controller\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "power_meter_socket",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\power_meter_socket\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "presence_sensor_radar",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\presence_sensor_radar\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "pressure_sensor",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\pressure_sensor\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "projector_screen_controller",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\projector_screen_controller\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "radar_motion_sensor_advanced",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\radar_motion_sensor_advanced\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "radar_motion_sensor_mmwave",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\radar_motion_sensor_mmwave\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "radar_motion_sensor_tank_level",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\radar_motion_sensor_tank_level\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "radiator_valve",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\radiator_valve\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "relay_switch_1gang",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\relay_switch_1gang\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "remote_switch",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\remote_switch\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "rgb_led_controller",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\rgb_led_controller\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "roller_blind_controller",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\roller_blind_controller\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "roller_shutter_controller",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\roller_shutter_controller\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "roller_shutter_switch",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\roller_shutter_switch\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "roller_shutter_switch_advanced",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\roller_shutter_switch_advanced\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "scene_controller",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\scene_controller\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "scene_controller_2button",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\scene_controller_2button\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "scene_controller_4button",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\scene_controller_4button\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "scene_controller_6button",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\scene_controller_6button\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "scene_controller_8button",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\scene_controller_8button\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "scene_controller_battery",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\scene_controller_battery\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "shade_controller",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\shade_controller\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smart_bulb_dimmer",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_bulb_dimmer\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smart_bulb_rgb",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_bulb_rgb\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smart_bulb_tunable",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_bulb_tunable\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smart_bulb_white",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_bulb_white\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smart_curtain_motor",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_curtain_motor\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smart_dimmer_module_1gang",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_dimmer_module_1gang\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smart_doorbell",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_doorbell\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smart_garden_sprinkler",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_garden_sprinkler\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smart_irrigation_controller",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_irrigation_controller\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smart_lock",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_lock\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smart_outlet_monitor",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_outlet_monitor\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smart_plug",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_plug\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smart_plug_energy",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_plug_energy\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smart_radiator_valve",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_radiator_valve\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smart_smoke_detector_advanced",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_smoke_detector_advanced\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smart_spot",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_spot\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smart_switch_1gang_ac",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_switch_1gang_ac\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smart_switch_1gang_hybrid",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_switch_1gang_hybrid\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smart_switch_2gang_ac",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_switch_2gang_ac\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smart_switch_2gang_hybrid",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_switch_2gang_hybrid\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smart_switch_3gang_ac",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_switch_3gang_ac\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smart_switch_3gang_hybrid",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_switch_3gang_hybrid\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smart_switch_4gang_hybrid",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_switch_4gang_hybrid\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smart_thermostat",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_thermostat\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smart_valve_controller",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_valve_controller\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smart_water_valve",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smart_water_valve\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smoke_detector",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smoke_detector\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smoke_detector_temp_humidity_advanced",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smoke_detector_temp_humidity_advanced\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "smoke_temp_humid_sensor",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\smoke_temp_humid_sensor\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "soil_moisture_sensor",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\soil_moisture_sensor\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "soil_moisture_temperature_sensor",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\soil_moisture_temperature_sensor\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "soil_tester_temp_humid",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\soil_tester_temp_humid\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "solar_panel_controller",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\solar_panel_controller\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "sos_emergency_button",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\sos_emergency_button\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "switch_1gang_battery",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switch_1gang_battery\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "switch_2gang_ac",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switch_2gang_ac\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "switch_2gang_hybrid",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switch_2gang_hybrid\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "switch_3gang_battery",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switch_3gang_battery\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "switch_4gang_ac",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switch_4gang_ac\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "switch_4gang_battery_cr2032",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switch_4gang_battery_cr2032\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "switch_5gang_battery",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switch_5gang_battery\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "switch_6gang_ac",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switch_6gang_ac\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "switch_8gang_ac",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\switch_8gang_ac\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "tank_level_monitor",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tank_level_monitor\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "temperature_controller",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\temperature_controller\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "temperature_humidity_sensor",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\temperature_humidity_sensor\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "temperature_sensor",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\temperature_sensor\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "temperature_sensor_advanced",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\temperature_sensor_advanced\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "temp_humid_sensor_advanced",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\temp_humid_sensor_advanced\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "temp_humid_sensor_leak_detector",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\temp_humid_sensor_leak_detector\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "temp_humid_sensor_v1w2k9dd",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\temp_humid_sensor_v1w2k9dd\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "temp_sensor_pro",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\temp_sensor_pro\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "thermostat",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\thermostat\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "touch_dimmer",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_dimmer\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "touch_dimmer_1gang",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_dimmer_1gang\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "touch_switch_1gang",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_switch_1gang\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "touch_switch_2gang",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_switch_2gang\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "touch_switch_3gang",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_switch_3gang\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "touch_switch_4gang",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\touch_switch_4gang\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "tvoc_sensor",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tvoc_sensor\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "tvoc_sensor_advanced",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\tvoc_sensor_advanced\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "usb_outlet",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\usb_outlet\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "usb_outlet_advanced",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\usb_outlet_advanced\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "vibration_sensor",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\vibration_sensor\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "wall_switch_1gang_ac",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_1gang_ac\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "wall_switch_1gang_dc",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_1gang_dc\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "wall_switch_2gang_ac",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_2gang_ac\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "wall_switch_2gang_dc",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_2gang_dc\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "wall_switch_3gang_ac",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_3gang_ac\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "wall_switch_3gang_dc",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_3gang_dc\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "wall_switch_4gang_ac",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_4gang_ac\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "wall_switch_4gang_dc",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_4gang_dc\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "wall_switch_5gang_ac",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_5gang_ac\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "wall_switch_6gang_ac",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wall_switch_6gang_ac\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "water_leak_detector_advanced",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\water_leak_detector_advanced\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "water_leak_detector_sq510a",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\water_leak_detector_sq510a\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "water_leak_sensor",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\water_leak_sensor\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "water_valve",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\water_valve\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "water_valve_smart",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\water_valve_smart\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "wireless_switch",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "wireless_switch_1gang_cr2032",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_1gang_cr2032\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "wireless_switch_2gang_cr2032",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_2gang_cr2032\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "wireless_switch_3gang_cr2032",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_3gang_cr2032\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "wireless_switch_4gang_cr2032",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_4gang_cr2032\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "wireless_switch_4gang_cr2450",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_4gang_cr2450\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "wireless_switch_5gang_cr2032",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_5gang_cr2032\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "wireless_switch_6gang_cr2032",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\wireless_switch_6gang_cr2032\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "zbbridge",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\zbbridge\\driver.compose.json",
+      "status": "ok"
+    },
+    {
+      "folder": "zigbee_gateway_hub",
+      "file": "C:\\Users\\HP\\Desktop\\tuya_repair\\drivers\\zigbee_gateway_hub\\driver.compose.json",
+      "status": "ok"
+    }
+  ],
+  "errors": []
+}

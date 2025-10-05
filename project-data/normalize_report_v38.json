@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-10-05T04:24:15.266Z",
+  "timestamp": "2025-10-05T05:52:21.174Z",
   "drivers": [
     {
       "folder": "air_quality_monitor",
@@ -11,7 +11,7 @@
     },
     {
       "folder": "ceiling_light_controller",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "ceiling_light_rgb",
@@ -19,7 +19,7 @@
     },
     {
       "folder": "climate_monitor",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "co2_sensor",
@@ -63,7 +63,7 @@
     },
     {
       "folder": "door_controller",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "door_lock",
@@ -83,7 +83,7 @@
     },
     {
       "folder": "energy_plug_advanced",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "extension_plug",
@@ -95,7 +95,7 @@
     },
     {
       "folder": "fingerprint_lock",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "formaldehyde_sensor",
@@ -103,7 +103,7 @@
     },
     {
       "folder": "garage_door_controller",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "garage_door_opener",
@@ -115,23 +115,23 @@
     },
     {
       "folder": "humidity_controller",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "hvac_controller",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "led_strip_advanced",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "led_strip_controller",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "led_strip_controller_pro",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "lux_sensor",
@@ -139,11 +139,11 @@
     },
     {
       "folder": "milight_controller",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "mini",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "mini_switch",
@@ -167,19 +167,19 @@
     },
     {
       "folder": "motion_sensor_zigbee_204z",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "multisensor",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "noise_level_sensor",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "outdoor_light_controller",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "outdoor_siren",
@@ -187,7 +187,7 @@
     },
     {
       "folder": "pet_feeder",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "pir_sensor_advanced",
@@ -203,7 +203,7 @@
     },
     {
       "folder": "pool_pump_controller",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "power_meter_socket",
@@ -215,11 +215,11 @@
     },
     {
       "folder": "pressure_sensor",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "projector_screen_controller",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "radar_motion_sensor_advanced",
@@ -235,7 +235,7 @@
     },
     {
       "folder": "radiator_valve",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "relay_switch_1gang",
@@ -247,7 +247,7 @@
     },
     {
       "folder": "rgb_led_controller",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "roller_blind_controller",
@@ -267,47 +267,47 @@
     },
     {
       "folder": "scene_controller",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "scene_controller_2button",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "scene_controller_4button",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "scene_controller_6button",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "scene_controller_8button",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "scene_controller_battery",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "shade_controller",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "smart_bulb_dimmer",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "smart_bulb_rgb",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "smart_bulb_tunable",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "smart_bulb_white",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "smart_curtain_motor",
@@ -323,15 +323,15 @@
     },
     {
       "folder": "smart_garden_sprinkler",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "smart_irrigation_controller",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "smart_lock",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "smart_outlet_monitor",
@@ -347,15 +347,15 @@
     },
     {
       "folder": "smart_radiator_valve",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "smart_smoke_detector_advanced",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "smart_spot",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "smart_switch_1gang_ac",
@@ -387,19 +387,19 @@
     },
     {
       "folder": "smart_thermostat",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "smart_valve_controller",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "smart_water_valve",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "smoke_detector",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "smoke_detector_temp_humidity_advanced",
@@ -411,7 +411,7 @@
     },
     {
       "folder": "soil_moisture_sensor",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "soil_moisture_temperature_sensor",
@@ -423,11 +423,11 @@
     },
     {
       "folder": "solar_panel_controller",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "sos_emergency_button",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "switch_1gang_battery",
@@ -443,7 +443,7 @@
     },
     {
       "folder": "switch_3gang_battery",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "switch_4gang_ac",
@@ -451,11 +451,11 @@
     },
     {
       "folder": "switch_4gang_battery_cr2032",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "switch_5gang_battery",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "switch_6gang_ac",
@@ -467,11 +467,11 @@
     },
     {
       "folder": "tank_level_monitor",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "temperature_controller",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "temperature_humidity_sensor",
@@ -491,7 +491,7 @@
     },
     {
       "folder": "temp_humid_sensor_leak_detector",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "temp_humid_sensor_v1w2k9dd",
@@ -499,15 +499,15 @@
     },
     {
       "folder": "temp_sensor_pro",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "thermostat",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "touch_dimmer",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "touch_dimmer_1gang",
@@ -547,7 +547,7 @@
     },
     {
       "folder": "vibration_sensor",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "wall_switch_1gang_ac",
@@ -583,7 +583,7 @@
     },
     {
       "folder": "wall_switch_5gang_ac",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "wall_switch_6gang_ac",
@@ -591,23 +591,23 @@
     },
     {
       "folder": "water_leak_detector_advanced",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "water_leak_detector_sq510a",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "water_leak_sensor",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "water_valve",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "water_valve_smart",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "wireless_switch",
@@ -619,35 +619,35 @@
     },
     {
       "folder": "wireless_switch_2gang_cr2032",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "wireless_switch_3gang_cr2032",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "wireless_switch_4gang_cr2032",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "wireless_switch_4gang_cr2450",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "wireless_switch_5gang_cr2032",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "wireless_switch_6gang_cr2032",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "zbbridge",
-      "changed": true
+      "changed": false
     },
     {
       "folder": "zigbee_gateway_hub",
-      "changed": true
+      "changed": false
     }
   ],
   "errors": []
