@@ -3,10 +3,12 @@
 Write-Host "🧹 NETTOYAGE COMPLET ENVIRONNEMENT HOMEY" -ForegroundColor Cyan
 Write-Host "=" * 70
 
-# 1. Arrêter processus
+# 1. Arrêter processus (méthode agressive)
 Write-Host "`n1. Arrêt des processus..." -ForegroundColor Yellow
 Get-Process | Where-Object {$_.ProcessName -like "*node*" -or $_.ProcessName -like "*homey*"} | Stop-Process -Force -ErrorAction SilentlyContinue
-Start-Sleep -Seconds 2
+taskkill /F /IM node.exe /T 2>$null | Out-Null
+taskkill /F /IM npm.exe /T 2>$null | Out-Null
+Start-Sleep -Seconds 3
 Write-Host "   ✅ Processus arrêtés" -ForegroundColor Green
 
 # 2. Supprimer fichiers problématiques
@@ -21,15 +23,21 @@ $svgs | Remove-Item -Force
 
 Write-Host "   ✅ Supprimés: $($placeholders.Count) placeholders, $($specs.Count) specs, $($svgs.Count) SVG" -ForegroundColor Green
 
-# 3. Nettoyer cache Homey
+# 3. Nettoyer cache Homey (méthode Windows CMD)
 Write-Host "`n3. Nettoyage cache Homey..." -ForegroundColor Yellow
 if (Test-Path ".homeybuild") {
-    Get-ChildItem ".homeybuild" -Recurse -Force -ErrorAction SilentlyContinue | Remove-Item -Force -Recurse -ErrorAction SilentlyContinue
-    Start-Sleep -Seconds 1
-    Remove-Item ".homeybuild" -Force -Recurse -ErrorAction SilentlyContinue
+    # Utiliser rmdir Windows (plus robuste que PowerShell pour dossiers bloqués)
+    cmd /c "rmdir /s /q .homeybuild" 2>$null | Out-Null
+    Start-Sleep -Seconds 2
 }
 if (Test-Path ".homeycompose") {
-    Remove-Item ".homeycompose" -Force -Recurse -ErrorAction SilentlyContinue
+    cmd /c "rmdir /s /q .homeycompose" 2>$null | Out-Null
+}
+# Vérification
+if (-not (Test-Path ".homeybuild") -and -not (Test-Path ".homeycompose")) {
+    Write-Host "   ✅ Cache nettoyé complètement" -ForegroundColor Green
+} else {
+    Write-Host "   ⚠️ Cache partiellement nettoyé (peut causer erreurs)" -ForegroundColor Yellow
 }
 Write-Host "   ✅ Cache nettoyé" -ForegroundColor Green
 
