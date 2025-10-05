@@ -1,0 +1,1794 @@
+{
+  "timestamp": "2025-10-05T14:45:28.133Z",
+  "referenceSources": {
+    "totalManufacturers": 1231,
+    "driversInDatabase": 162
+  },
+  "maxPerDriver": 15,
+  "driversChecked": 162,
+  "driversUpdated": 0,
+  "results": [
+    {
+      "folder": "air_quality_monitor",
+      "analysis": {
+        "type": "air_quality",
+        "category": "climate",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "air_quality_monitor_pro",
+      "analysis": {
+        "type": "air_quality",
+        "category": "climate",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "ceiling_light_controller",
+      "analysis": {
+        "type": "bulb",
+        "category": "lighting",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "ceiling_light_rgb",
+      "analysis": {
+        "type": "bulb",
+        "category": "lighting",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "climate_monitor",
+      "analysis": {
+        "type": "climate",
+        "category": "climate",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 13
+    },
+    {
+      "folder": "co2_sensor",
+      "analysis": {
+        "type": "air_quality",
+        "category": "climate",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "co2_temp_humidity",
+      "analysis": {
+        "type": "air_quality",
+        "category": "climate",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "co_detector_pro",
+      "analysis": {
+        "type": "sensor",
+        "category": "monitoring",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "comprehensive_air_monitor",
+      "analysis": {
+        "type": "air_quality",
+        "category": "climate",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 2
+    },
+    {
+      "folder": "curtain_motor",
+      "analysis": {
+        "type": "curtain",
+        "category": "window",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "dimmer",
+      "analysis": {
+        "type": "dimmer",
+        "category": "lighting",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "dimmer_switch_1gang_ac",
+      "analysis": {
+        "type": "dimmer",
+        "category": "lighting",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "dimmer_switch_3gang_ac",
+      "analysis": {
+        "type": "dimmer",
+        "category": "lighting",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "dimmer_switch_timer_module",
+      "analysis": {
+        "type": "dimmer",
+        "category": "lighting",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "door_controller",
+      "analysis": {
+        "type": "curtain",
+        "category": "window",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "door_lock",
+      "analysis": {
+        "type": "lock",
+        "category": "security",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "door_window_sensor",
+      "analysis": {
+        "type": "contact",
+        "category": "security",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "doorbell",
+      "analysis": {
+        "type": "other",
+        "category": "other",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "energy_monitoring_plug",
+      "analysis": {
+        "type": "plug",
+        "category": "power",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 6
+    },
+    {
+      "folder": "energy_monitoring_plug_advanced",
+      "analysis": {
+        "type": "plug",
+        "category": "power",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 6
+    },
+    {
+      "folder": "energy_plug_advanced",
+      "analysis": {
+        "type": "plug",
+        "category": "power",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 6
+    },
+    {
+      "folder": "extension_plug",
+      "analysis": {
+        "type": "plug",
+        "category": "power",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 6
+    },
+    {
+      "folder": "fan_controller",
+      "analysis": {
+        "type": "curtain",
+        "category": "window",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "fingerprint_lock",
+      "analysis": {
+        "type": "lock",
+        "category": "security",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "formaldehyde_sensor",
+      "analysis": {
+        "type": "air_quality",
+        "category": "climate",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "garage_door_controller",
+      "analysis": {
+        "type": "curtain",
+        "category": "window",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "garage_door_opener",
+      "analysis": {
+        "type": "other",
+        "category": "other",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "gas_detector",
+      "analysis": {
+        "type": "sensor",
+        "category": "monitoring",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "humidity_controller",
+      "analysis": {
+        "type": "curtain",
+        "category": "window",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "hvac_controller",
+      "analysis": {
+        "type": "curtain",
+        "category": "window",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "led_strip_advanced",
+      "analysis": {
+        "type": "bulb",
+        "category": "lighting",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "led_strip_controller",
+      "analysis": {
+        "type": "bulb",
+        "category": "lighting",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "led_strip_controller_pro",
+      "analysis": {
+        "type": "bulb",
+        "category": "lighting",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "lux_sensor",
+      "analysis": {
+        "type": "sensor",
+        "category": "monitoring",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "milight_controller",
+      "analysis": {
+        "type": "curtain",
+        "category": "window",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "mini",
+      "analysis": {
+        "type": "other",
+        "category": "other",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "mini_switch",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "motion_sensor_battery",
+      "analysis": {
+        "type": "motion",
+        "category": "security",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 13
+    },
+    {
+      "folder": "motion_sensor_mmwave",
+      "analysis": {
+        "type": "motion",
+        "category": "security",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "motion_sensor_pir_ac",
+      "analysis": {
+        "type": "motion",
+        "category": "security",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "motion_sensor_pir_battery",
+      "analysis": {
+        "type": "motion",
+        "category": "security",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "motion_sensor_zigbee_204z",
+      "analysis": {
+        "type": "motion",
+        "category": "security",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 13
+    },
+    {
+      "folder": "multisensor",
+      "analysis": {
+        "type": "sensor",
+        "category": "monitoring",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "noise_level_sensor",
+      "analysis": {
+        "type": "sensor",
+        "category": "monitoring",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "outdoor_light_controller",
+      "analysis": {
+        "type": "curtain",
+        "category": "window",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "outdoor_siren",
+      "analysis": {
+        "type": "other",
+        "category": "other",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "pet_feeder",
+      "analysis": {
+        "type": "other",
+        "category": "other",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "pir_sensor_advanced",
+      "analysis": {
+        "type": "motion",
+        "category": "security",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "pm25_detector",
+      "analysis": {
+        "type": "air_quality",
+        "category": "climate",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "pm25_sensor",
+      "analysis": {
+        "type": "air_quality",
+        "category": "climate",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "pool_pump_controller",
+      "analysis": {
+        "type": "curtain",
+        "category": "window",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "power_meter_socket",
+      "analysis": {
+        "type": "plug",
+        "category": "power",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 4
+    },
+    {
+      "folder": "presence_sensor_radar",
+      "analysis": {
+        "type": "motion",
+        "category": "security",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "pressure_sensor",
+      "analysis": {
+        "type": "sensor",
+        "category": "monitoring",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "projector_screen_controller",
+      "analysis": {
+        "type": "curtain",
+        "category": "window",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "radar_motion_sensor_advanced",
+      "analysis": {
+        "type": "motion",
+        "category": "security",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "radar_motion_sensor_mmwave",
+      "analysis": {
+        "type": "motion",
+        "category": "security",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "radar_motion_sensor_tank_level",
+      "analysis": {
+        "type": "motion",
+        "category": "security",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "radiator_valve",
+      "analysis": {
+        "type": "thermostat",
+        "category": "climate",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "relay_switch_1gang",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "remote_switch",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "rgb_led_controller",
+      "analysis": {
+        "type": "curtain",
+        "category": "window",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "roller_blind_controller",
+      "analysis": {
+        "type": "curtain",
+        "category": "window",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "roller_shutter_controller",
+      "analysis": {
+        "type": "curtain",
+        "category": "window",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "roller_shutter_switch",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 12
+    },
+    {
+      "folder": "roller_shutter_switch_advanced",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 12
+    },
+    {
+      "folder": "scene_controller",
+      "analysis": {
+        "type": "curtain",
+        "category": "window",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "scene_controller_2button",
+      "analysis": {
+        "type": "curtain",
+        "category": "window",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "scene_controller_4button",
+      "analysis": {
+        "type": "curtain",
+        "category": "window",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "scene_controller_6button",
+      "analysis": {
+        "type": "curtain",
+        "category": "window",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "scene_controller_8button",
+      "analysis": {
+        "type": "curtain",
+        "category": "window",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "scene_controller_battery",
+      "analysis": {
+        "type": "curtain",
+        "category": "window",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "shade_controller",
+      "analysis": {
+        "type": "curtain",
+        "category": "window",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "smart_bulb_dimmer",
+      "analysis": {
+        "type": "dimmer",
+        "category": "lighting",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 12
+    },
+    {
+      "folder": "smart_bulb_rgb",
+      "analysis": {
+        "type": "bulb",
+        "category": "lighting",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "smart_bulb_tunable",
+      "analysis": {
+        "type": "bulb",
+        "category": "lighting",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "smart_bulb_white",
+      "analysis": {
+        "type": "bulb",
+        "category": "lighting",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "smart_curtain_motor",
+      "analysis": {
+        "type": "curtain",
+        "category": "window",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "smart_dimmer_module_1gang",
+      "analysis": {
+        "type": "dimmer",
+        "category": "lighting",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "smart_doorbell",
+      "analysis": {
+        "type": "other",
+        "category": "other",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "smart_garden_sprinkler",
+      "analysis": {
+        "type": "other",
+        "category": "other",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "smart_irrigation_controller",
+      "analysis": {
+        "type": "curtain",
+        "category": "window",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "smart_lock",
+      "analysis": {
+        "type": "lock",
+        "category": "security",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "smart_outlet_monitor",
+      "analysis": {
+        "type": "plug",
+        "category": "power",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 4
+    },
+    {
+      "folder": "smart_plug",
+      "analysis": {
+        "type": "plug",
+        "category": "power",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 4
+    },
+    {
+      "folder": "smart_plug_energy",
+      "analysis": {
+        "type": "plug",
+        "category": "power",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 4
+    },
+    {
+      "folder": "smart_radiator_valve",
+      "analysis": {
+        "type": "thermostat",
+        "category": "climate",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "smart_smoke_detector_advanced",
+      "analysis": {
+        "type": "smoke",
+        "category": "security",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "smart_spot",
+      "analysis": {
+        "type": "bulb",
+        "category": "lighting",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "smart_switch_1gang_ac",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "smart_switch_1gang_hybrid",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "smart_switch_2gang_ac",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 12
+    },
+    {
+      "folder": "smart_switch_2gang_hybrid",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "smart_switch_3gang_ac",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 12
+    },
+    {
+      "folder": "smart_switch_3gang_hybrid",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "smart_switch_4gang_hybrid",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "smart_thermostat",
+      "analysis": {
+        "type": "thermostat",
+        "category": "climate",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "smart_valve_controller",
+      "analysis": {
+        "type": "curtain",
+        "category": "window",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "smart_water_valve",
+      "analysis": {
+        "type": "other",
+        "category": "other",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "smoke_detector",
+      "analysis": {
+        "type": "smoke",
+        "category": "security",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "smoke_detector_temp_humidity_advanced",
+      "analysis": {
+        "type": "smoke",
+        "category": "security",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "smoke_temp_humid_sensor",
+      "analysis": {
+        "type": "smoke",
+        "category": "security",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "soil_moisture_sensor",
+      "analysis": {
+        "type": "sensor",
+        "category": "monitoring",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "soil_moisture_temperature_sensor",
+      "analysis": {
+        "type": "climate",
+        "category": "climate",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "soil_tester_temp_humid",
+      "analysis": {
+        "type": "climate",
+        "category": "climate",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "solar_panel_controller",
+      "analysis": {
+        "type": "curtain",
+        "category": "window",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "sos_emergency_button",
+      "analysis": {
+        "type": "other",
+        "category": "other",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "switch_1gang_battery",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "switch_2gang_ac",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "switch_2gang_hybrid",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "switch_3gang_battery",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 12
+    },
+    {
+      "folder": "switch_4gang_ac",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "switch_4gang_battery_cr2032",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 12
+    },
+    {
+      "folder": "switch_5gang_battery",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 12
+    },
+    {
+      "folder": "switch_6gang_ac",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 1
+    },
+    {
+      "folder": "switch_8gang_ac",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "tank_level_monitor",
+      "analysis": {
+        "type": "sensor",
+        "category": "monitoring",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "temp_humid_sensor_advanced",
+      "analysis": {
+        "type": "climate",
+        "category": "climate",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "temp_humid_sensor_leak_detector",
+      "analysis": {
+        "type": "climate",
+        "category": "climate",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "temp_humid_sensor_v1w2k9dd",
+      "analysis": {
+        "type": "climate",
+        "category": "climate",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "temp_sensor_pro",
+      "analysis": {
+        "type": "climate",
+        "category": "climate",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 13
+    },
+    {
+      "folder": "temperature_controller",
+      "analysis": {
+        "type": "curtain",
+        "category": "window",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "temperature_humidity_sensor",
+      "analysis": {
+        "type": "climate",
+        "category": "climate",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "temperature_sensor",
+      "analysis": {
+        "type": "climate",
+        "category": "climate",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "temperature_sensor_advanced",
+      "analysis": {
+        "type": "climate",
+        "category": "climate",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "thermostat",
+      "analysis": {
+        "type": "thermostat",
+        "category": "climate",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "touch_dimmer",
+      "analysis": {
+        "type": "dimmer",
+        "category": "lighting",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 12
+    },
+    {
+      "folder": "touch_dimmer_1gang",
+      "analysis": {
+        "type": "dimmer",
+        "category": "lighting",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "touch_switch_1gang",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "touch_switch_2gang",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 12
+    },
+    {
+      "folder": "touch_switch_3gang",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 12
+    },
+    {
+      "folder": "touch_switch_4gang",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 12
+    },
+    {
+      "folder": "tvoc_sensor",
+      "analysis": {
+        "type": "air_quality",
+        "category": "climate",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "tvoc_sensor_advanced",
+      "analysis": {
+        "type": "air_quality",
+        "category": "climate",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "usb_outlet",
+      "analysis": {
+        "type": "plug",
+        "category": "power",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 4
+    },
+    {
+      "folder": "usb_outlet_advanced",
+      "analysis": {
+        "type": "plug",
+        "category": "power",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 4
+    },
+    {
+      "folder": "vibration_sensor",
+      "analysis": {
+        "type": "sensor",
+        "category": "monitoring",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "wall_switch_1gang_ac",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "wall_switch_1gang_dc",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "wall_switch_2gang_ac",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "wall_switch_2gang_dc",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "wall_switch_3gang_ac",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "wall_switch_3gang_dc",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "wall_switch_4gang_ac",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "wall_switch_4gang_dc",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "wall_switch_5gang_ac",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 12
+    },
+    {
+      "folder": "wall_switch_6gang_ac",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 1
+    },
+    {
+      "folder": "water_leak_detector_advanced",
+      "analysis": {
+        "type": "water_leak",
+        "category": "security",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "water_leak_detector_sq510a",
+      "analysis": {
+        "type": "water_leak",
+        "category": "security",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "water_leak_sensor",
+      "analysis": {
+        "type": "water_leak",
+        "category": "security",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "water_valve",
+      "analysis": {
+        "type": "other",
+        "category": "other",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "water_valve_smart",
+      "analysis": {
+        "type": "other",
+        "category": "other",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "wireless_switch",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "wireless_switch_1gang_cr2032",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 3
+    },
+    {
+      "folder": "wireless_switch_2gang_cr2032",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 12
+    },
+    {
+      "folder": "wireless_switch_3gang_cr2032",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 12
+    },
+    {
+      "folder": "wireless_switch_4gang_cr2032",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 12
+    },
+    {
+      "folder": "wireless_switch_4gang_cr2450",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 12
+    },
+    {
+      "folder": "wireless_switch_5gang_cr2032",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 12
+    },
+    {
+      "folder": "wireless_switch_6gang_cr2032",
+      "analysis": {
+        "type": "switch",
+        "category": "control",
+        "powerSource": "battery"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 12
+    },
+    {
+      "folder": "zbbridge",
+      "analysis": {
+        "type": "other",
+        "category": "other",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    },
+    {
+      "folder": "zigbee_gateway_hub",
+      "analysis": {
+        "type": "other",
+        "category": "other",
+        "powerSource": "ac"
+      },
+      "changes": [],
+      "modified": false,
+      "manufacturerCount": 10
+    }
+  ]
+}
