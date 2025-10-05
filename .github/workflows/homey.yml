@@ -100,11 +100,7 @@ jobs:
         # Create .homeyrc with token (non-interactive method)
         echo "🔐 Configuring Homey CLI with token..."
         mkdir -p ~/.homey
-        cat > ~/.homeyrc << EOF
-{
-  "token": "$HOMEY_TOKEN"
-}
-EOF
+        echo "{\"token\": \"$HOMEY_TOKEN\"}" > ~/.homeyrc
         
         if command -v homey &> /dev/null; then
           echo "📱 Using homey CLI..."
