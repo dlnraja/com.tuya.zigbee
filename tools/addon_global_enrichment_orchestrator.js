@@ -96,7 +96,7 @@ function parseZ2M(data){
       description: dev.description || '',
       supports: dev.supports || '',
       source: 'zigbee2mqtt',
-      ecosys<br/>tem: detectEcosystem(dev.vendor, dev.model)
+      ecosystem: detectEcosystem(dev.vendor, dev.model)
     });
   }
   return devices;
