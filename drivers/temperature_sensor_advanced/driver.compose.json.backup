@@ -1,0 +1,91 @@
+{
+  "name": {
+    "en": "Temperature Sensor THS317-ET-TU"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery",
+    "alarm_battery",
+    "alarm_motion",
+    "measure_luminance"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_01gpyda5",
+      "_TZ3000_0dumfk2z",
+      "_TZ3000_0ghwhypc",
+      "_TZ3000_0ht8dnxj",
+      "_TZ3000_0s1izerx",
+      "_TZ3000_0s9gukzt",
+      "_TZ3000_0zfrhq4i",
+      "_TZ3000_0zrccfgx",
+      "_TZ3000_11pg3ima",
+      "_TZ3000_18ejxno0",
+      "_TZ3000_1adss9de",
+      "_TZ3000_1dd0d5yi"
+    ],
+    "productId": [
+      "TS0201",
+      "TS0001",
+      "TS0202",
+      "TS0203",
+      "TS0205",
+      "TS0207",
+      "TS0222",
+      "TS0225",
+      "TS0601",
+      "TS130F",
+      "TS0204",
+      "TS020C",
+      "TS0224",
+      "TS0901"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1024,
+          1030,
+          1280,
+          61184
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
+  },
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature"
+      },
+      "units": {
+        "en": "°C"
+      }
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Humidity"
+      },
+      "units": {
+        "en": "%"
+      }
+    }
+  },
+  "platforms": [
+    "local"
+  ]
+}

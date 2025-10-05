@@ -1,0 +1,113 @@
+{
+  "name": {
+    "en": "USB Outlet"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "meter_power",
+    "measure_voltage",
+    "measure_current"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_01gpyda5",
+      "_TZ3000_0dumfk2z",
+      "_TZ3000_0ghwhypc",
+      "_TZ3000_0ht8dnxj",
+      "_TZ3000_0s1izerx",
+      "_TZ3000_0s9gukzt",
+      "_TZ3000_0zfrhq4i",
+      "_TZ3000_0zrccfgx",
+      "_TZ3000_11pg3ima",
+      "_TZ3000_18ejxno0",
+      "_TZ3000_1adss9de",
+      "_TZ3000_1dd0d5yi"
+    ],
+    "productId": [
+      "TS011F",
+      "TS0001",
+      "TS0101",
+      "TS0105",
+      "TS0108",
+      "TS0111",
+      "TS0115",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          1794,
+          2820
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    }
+  },
+  "images": {
+    "large": "./assets/large.png",
+    "small": "./assets/small.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilitiesOptions": {
+    "measure_power": {
+      "title": {
+        "en": "Power"
+      },
+      "units": {
+        "en": "W"
+      },
+      "decimals": 1
+    },
+    "measure_voltage": {
+      "title": {
+        "en": "Voltage"
+      },
+      "units": {
+        "en": "V"
+      },
+      "decimals": 1
+    },
+    "measure_current": {
+      "title": {
+        "en": "Current"
+      },
+      "units": {
+        "en": "A"
+      },
+      "decimals": 2
+    }
+  }
+}
