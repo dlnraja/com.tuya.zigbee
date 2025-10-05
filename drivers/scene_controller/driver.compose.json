@@ -3,7 +3,9 @@
     "en": "Scene Controller"
   },
   "class": "other",
-  "capabilities": [],
+  "capabilities": [
+    "onoff"
+  ],
   "images": {
     "small": "/drivers/scene_controller/assets/small.png",
     "large": "/drivers/scene_controller/assets/large.png"
