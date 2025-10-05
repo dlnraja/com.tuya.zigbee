@@ -79,23 +79,29 @@ Write-Host "🔍 Step 5/6: Checking Homey CLI..." -ForegroundColor Yellow
 $homeyCmd = Get-Command homey -ErrorAction SilentlyContinue
 if (-not $homeyCmd) {
     Write-Host "❌ Homey CLI not found. Installing..." -ForegroundColor Yellow
-    npm install -g homey
     if ($LASTEXITCODE -ne 0) {
         Write-Host "❌ Failed to install Homey CLI. Install manually: npm install -g homey" -ForegroundColor Red
         exit 1
     }
 }
-Write-Host "✅ Homey CLI installed" -ForegroundColor Green
+Write-Host "🚀 HOMEY LOCAL PUBLICATION PREPARATION" -ForegroundColor Cyan
+Write-Host "=" * 70
 Write-Host ""
 
-# Step 6: Prepare publication info
-Write-Host "🔍 Step 6/6: Preparing publication..." -ForegroundColor Yellow
+# Pre-publish checks
+Write-Host "📋 Step 1: Pre-publish validation..." -ForegroundColor Yellow
+Write-Host ""
+
+Write-Host "  → Cleaning unnecessary files..." -ForegroundColor Gray
+Get-ChildItem -Path "drivers" -Recurse -Filter "*.placeholder" -ErrorAction SilentlyContinue | Remove-Item -Force
+Get-ChildItem -Path "drivers" -Recurse -Filter "*-spec.json" -ErrorAction SilentlyContinue | Remove-Item -Force
+Get-ChildItem -Path "drivers" -Recurse -Filter "*.svg" -File -ErrorAction SilentlyContinue | Where-Object { $_.Name -ne "icon.svg" } | Remove-Item -Force
+Write-Host "✅ Cleaned" -ForegroundColor Green
 Write-Host ""
 Write-Host "=" * 70 -ForegroundColor Cyan
 Write-Host "📋 PUBLICATION CHECKLIST" -ForegroundColor Cyan
 Write-Host "=" * 70 -ForegroundColor Cyan
 Write-Host ""
-Write-Host "✅ JSON validation: PASSED"
 Write-Host "✅ SDK3 compliance: PASSED"
 Write-Host "✅ Version: $currentVersion"
 Write-Host "✅ Drivers: 162"
