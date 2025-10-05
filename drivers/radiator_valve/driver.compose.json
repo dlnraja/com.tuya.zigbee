@@ -20,18 +20,16 @@
       "_TZ2000_avdnvykf",
       "_TZ2000_hjsgdkfl",
       "_TZ2000_xogb73am",
-      "_TZ3000_",
       "_TZ3000_01gpyda5",
       "_TZ3000_0dumfk2z",
       "_TZ3000_0ghwhypc",
       "_TZ3000_0ht8dnxj",
-      "_TZ3000_26",
-      "_TZ3000_6",
-      "_TZ3000_8",
-      "_TZE200_"
+      "_TZ3000_0s1izerx",
+      "_TZ3000_0s9gukzt"
     ],
     "productId": [
-      "TS0601"
+      "TS0601",
+      "TS130F"
     ],
     "endpoints": {
       "1": {
@@ -51,8 +49,8 @@
     }
   },
   "images": {
-    "large": "/drivers/radiator_valve/assets/large.png",
-    "small": "/drivers/radiator_valve/assets/small.png"
+    "large": "./assets/large.png",
+    "small": "./assets/small.png"
   },
   "pair": [
     {
