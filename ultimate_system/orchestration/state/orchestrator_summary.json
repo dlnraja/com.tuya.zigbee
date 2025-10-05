@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-05T21:45:44.311Z",
+  "generatedAt": "2025-10-05T22:11:21.382Z",
   "iterations": [
     {
       "iteration": 1,
@@ -10,9 +10,9 @@
         "wildcardsPresent": false,
         "duplicatesPresent": false,
         "classifierMetrics": {
-          "manufacturersCorrected": 2351,
-          "driversRelocated": 4,
-          "duplicatesResolved": 53
+          "manufacturersCorrected": 2107,
+          "driversRelocated": 0,
+          "duplicatesResolved": 19
         }
       }
     }
@@ -23,9 +23,9 @@
     "wildcardsPresent": false,
     "duplicatesPresent": false,
     "classifierMetrics": {
-      "manufacturersCorrected": 2351,
-      "driversRelocated": 4,
-      "duplicatesResolved": 53
+      "manufacturersCorrected": 2107,
+      "driversRelocated": 0,
+      "duplicatesResolved": 19
     }
   },
   "manufacturerSample": [
