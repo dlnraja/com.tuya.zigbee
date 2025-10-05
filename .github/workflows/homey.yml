@@ -97,13 +97,24 @@ jobs:
           exit 1
         fi
         
+        # Create .homeyrc with token (non-interactive method)
+        echo "🔐 Configuring Homey CLI with token..."
+        mkdir -p ~/.homey
+        cat > ~/.homeyrc << EOF
+{
+  "token": "$HOMEY_TOKEN"
+}
+EOF
+        
         if command -v homey &> /dev/null; then
           echo "📱 Using homey CLI..."
-          echo "$HOMEY_TOKEN" | homey login
+          homey whoami || echo "⚠️ Token validation failed"
+          echo "📦 Publishing app..."
           homey app publish
         elif command -v athom &> /dev/null; then
           echo "📱 Using athom CLI..."
-          echo "$HOMEY_TOKEN" | athom login
+          athom whoami || echo "⚠️ Token validation failed"
+          echo "📦 Publishing app..."
           athom app publish
         else
           echo "❌ No CLI available for publication"
