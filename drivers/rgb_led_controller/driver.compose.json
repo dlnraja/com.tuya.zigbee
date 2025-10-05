@@ -12,7 +12,6 @@
   ],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_",
       "_TZ3000_01gpyda5",
       "_TZ3000_0dumfk2z",
       "_TZ3000_0ghwhypc",
@@ -23,13 +22,33 @@
       "_TZ3000_0zrccfgx",
       "_TZ3000_11pg3ima",
       "_TZ3000_18ejxno0",
-      "_TZ3000_26",
-      "_TZ3000_6",
-      "_TZ3000_8",
-      "_TZE200_"
+      "_TZ3000_1adss9de",
+      "_TZ3000_1dd0d5yi"
     ],
     "productId": [
-      "TS0601"
+      "TS0601",
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS0501A",
+      "TS0501B",
+      "TS0502A",
+      "TS0502B",
+      "TS0503A",
+      "TS0503B",
+      "TS0504A",
+      "TS0504B",
+      "TS0505",
+      "TS0505A",
+      "TS0505B",
+      "TS1101",
+      "TS110E",
+      "TS110F"
     ],
     "endpoints": {
       "1": {
@@ -49,8 +68,8 @@
     }
   },
   "images": {
-    "small": "/drivers/rgb_led_controller/assets/small.png",
-    "large": "/drivers/rgb_led_controller/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "platforms": [
     "local"

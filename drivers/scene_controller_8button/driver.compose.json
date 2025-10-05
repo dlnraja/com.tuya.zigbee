@@ -19,7 +19,25 @@
   },
   "zigbee": {
     "productId": [
-      "TS130F"
+      "TS130F",
+      "TS0001",
+      "TS004",
+      "TS0041",
+      "TS0041A",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS0046",
+      "TS0049",
+      "TS004F",
+      "TS004X",
+      "TS0210",
+      "TS0215A",
+      "TS0216",
+      "TS0218",
+      "TS0301",
+      "TS030F",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -41,7 +59,6 @@
       }
     },
     "manufacturerName": [
-      "_TZ3000_",
       "_TZ3000_01gpyda5",
       "_TZ3000_0dumfk2z",
       "_TZ3000_0ghwhypc",
@@ -52,15 +69,13 @@
       "_TZ3000_0zrccfgx",
       "_TZ3000_11pg3ima",
       "_TZ3000_18ejxno0",
-      "_TZ3000_26",
-      "_TZ3000_6",
-      "_TZ3000_8",
-      "_TZE200_"
+      "_TZ3000_1adss9de",
+      "_TZE200_cowvfni3"
     ]
   },
   "images": {
-    "small": "/drivers/scene_controller_8button/assets/small.png",
-    "large": "/drivers/scene_controller_8button/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "settings": [
     {
