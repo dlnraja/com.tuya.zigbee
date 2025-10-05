@@ -18,7 +18,7 @@ jobs:
       with:
         node-version: '18'
         
-        - name: Install Homey CLI (robust)
+    - name: Install Homey CLI (robust)
       run: |
         echo "🔍 Installing Homey CLI with multiple fallbacks..."
         
@@ -69,8 +69,11 @@ jobs:
         
     - name: Clean environment
       run: |
-        rm -rf .homeycompose node_modules docs/ public/ _site/ || true
-        echo "🧹 Environment cleaned"
+        rm -rf .homeybuild .homeycompose node_modules docs/ public/ _site/ || true
+        find drivers -name "*.placeholder" -delete || true
+        find drivers -name "*-spec.json" -delete || true
+        find drivers -name "*.svg" ! -name "icon.svg" -delete || true
+        echo "🧹 Environment cleaned (cache + placeholder files)"
         
     - name: Validate App (if CLI available)
       run: |
