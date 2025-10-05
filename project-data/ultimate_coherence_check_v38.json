@@ -1,7 +1,7 @@
 {
-  "timestamp": "2025-10-05T17:05:57.163Z",
+  "timestamp": "2025-10-05T17:14:35.632Z",
   "referenceSources": {
-    "totalManufacturers": 1231,
+    "totalManufacturers": 1236,
     "driversInDatabase": 162
   },
   "limitMode": "dynamic_by_type",
@@ -36,7 +36,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "air_quality_monitor_pro",
@@ -47,7 +47,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "ceiling_light_controller",
@@ -58,7 +58,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "ceiling_light_rgb",
@@ -69,7 +69,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "climate_monitor",
@@ -80,7 +80,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 13
+      "manufacturerCount": 18
     },
     {
       "folder": "co2_sensor",
@@ -91,7 +91,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "co2_temp_humidity",
@@ -102,7 +102,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "co_detector_pro",
@@ -113,7 +113,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "comprehensive_air_monitor",
@@ -124,7 +124,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 2
+      "manufacturerCount": 7
     },
     {
       "folder": "curtain_motor",
@@ -135,7 +135,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "dimmer",
@@ -146,7 +146,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "dimmer_switch_1gang_ac",
@@ -157,7 +157,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "dimmer_switch_3gang_ac",
@@ -168,7 +168,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "dimmer_switch_timer_module",
@@ -179,7 +179,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "door_controller",
@@ -190,7 +190,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "door_lock",
@@ -201,7 +201,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "door_window_sensor",
@@ -212,7 +212,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "doorbell",
@@ -223,7 +223,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "energy_monitoring_plug",
@@ -234,7 +234,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 6
+      "manufacturerCount": 11
     },
     {
       "folder": "energy_monitoring_plug_advanced",
@@ -245,7 +245,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 6
+      "manufacturerCount": 11
     },
     {
       "folder": "energy_plug_advanced",
@@ -256,7 +256,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 6
+      "manufacturerCount": 11
     },
     {
       "folder": "extension_plug",
@@ -267,7 +267,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 6
+      "manufacturerCount": 11
     },
     {
       "folder": "fan_controller",
@@ -278,7 +278,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "fingerprint_lock",
@@ -289,7 +289,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "formaldehyde_sensor",
@@ -300,7 +300,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "garage_door_controller",
@@ -311,7 +311,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "garage_door_opener",
@@ -322,7 +322,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "gas_detector",
@@ -333,7 +333,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "humidity_controller",
@@ -344,7 +344,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "hvac_controller",
@@ -355,7 +355,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "led_strip_advanced",
@@ -366,7 +366,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "led_strip_controller",
@@ -377,7 +377,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "led_strip_controller_pro",
@@ -388,7 +388,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "lux_sensor",
@@ -399,7 +399,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "milight_controller",
@@ -410,7 +410,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "mini",
@@ -421,7 +421,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "mini_switch",
@@ -432,7 +432,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "motion_sensor_battery",
@@ -443,7 +443,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 13
+      "manufacturerCount": 18
     },
     {
       "folder": "motion_sensor_mmwave",
@@ -454,7 +454,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "motion_sensor_pir_ac",
@@ -465,7 +465,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "motion_sensor_pir_battery",
@@ -476,7 +476,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "motion_sensor_zigbee_204z",
@@ -487,7 +487,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 13
+      "manufacturerCount": 18
     },
     {
       "folder": "multisensor",
@@ -498,7 +498,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "noise_level_sensor",
@@ -509,7 +509,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "outdoor_light_controller",
@@ -520,7 +520,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "outdoor_siren",
@@ -531,7 +531,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "pet_feeder",
@@ -542,7 +542,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "pir_sensor_advanced",
@@ -553,7 +553,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "pm25_detector",
@@ -564,7 +564,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "pm25_sensor",
@@ -575,7 +575,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "pool_pump_controller",
@@ -586,7 +586,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "power_meter_socket",
@@ -597,7 +597,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 4
+      "manufacturerCount": 9
     },
     {
       "folder": "presence_sensor_radar",
@@ -608,7 +608,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "pressure_sensor",
@@ -619,7 +619,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "projector_screen_controller",
@@ -630,7 +630,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "radar_motion_sensor_advanced",
@@ -641,7 +641,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "radar_motion_sensor_mmwave",
@@ -652,7 +652,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "radar_motion_sensor_tank_level",
@@ -663,7 +663,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "radiator_valve",
@@ -674,7 +674,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "relay_switch_1gang",
@@ -685,7 +685,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "remote_switch",
@@ -696,7 +696,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "rgb_led_controller",
@@ -707,7 +707,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "roller_blind_controller",
@@ -718,7 +718,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "roller_shutter_controller",
@@ -729,7 +729,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "roller_shutter_switch",
@@ -740,7 +740,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 12
+      "manufacturerCount": 17
     },
     {
       "folder": "roller_shutter_switch_advanced",
@@ -751,7 +751,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 12
+      "manufacturerCount": 17
     },
     {
       "folder": "scene_controller",
@@ -762,7 +762,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "scene_controller_2button",
@@ -773,7 +773,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "scene_controller_4button",
@@ -784,7 +784,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "scene_controller_6button",
@@ -795,7 +795,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "scene_controller_8button",
@@ -806,7 +806,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "scene_controller_battery",
@@ -817,7 +817,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "shade_controller",
@@ -828,7 +828,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "smart_bulb_dimmer",
@@ -839,7 +839,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 12
+      "manufacturerCount": 17
     },
     {
       "folder": "smart_bulb_rgb",
@@ -850,7 +850,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "smart_bulb_tunable",
@@ -861,7 +861,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "smart_bulb_white",
@@ -872,7 +872,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "smart_curtain_motor",
@@ -883,7 +883,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "smart_dimmer_module_1gang",
@@ -894,7 +894,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "smart_doorbell",
@@ -905,7 +905,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "smart_garden_sprinkler",
@@ -916,7 +916,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "smart_irrigation_controller",
@@ -927,7 +927,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "smart_lock",
@@ -938,7 +938,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "smart_outlet_monitor",
@@ -949,7 +949,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 4
+      "manufacturerCount": 9
     },
     {
       "folder": "smart_plug",
@@ -960,7 +960,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 4
+      "manufacturerCount": 9
     },
     {
       "folder": "smart_plug_energy",
@@ -971,7 +971,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 4
+      "manufacturerCount": 9
     },
     {
       "folder": "smart_radiator_valve",
@@ -982,7 +982,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "smart_smoke_detector_advanced",
@@ -993,7 +993,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "smart_spot",
@@ -1004,7 +1004,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "smart_switch_1gang_ac",
@@ -1015,7 +1015,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "smart_switch_1gang_hybrid",
@@ -1026,7 +1026,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "smart_switch_2gang_ac",
@@ -1037,7 +1037,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 12
+      "manufacturerCount": 17
     },
     {
       "folder": "smart_switch_2gang_hybrid",
@@ -1048,7 +1048,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "smart_switch_3gang_ac",
@@ -1059,7 +1059,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 12
+      "manufacturerCount": 17
     },
     {
       "folder": "smart_switch_3gang_hybrid",
@@ -1070,7 +1070,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "smart_switch_4gang_hybrid",
@@ -1081,7 +1081,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "smart_thermostat",
@@ -1092,7 +1092,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "smart_valve_controller",
@@ -1103,7 +1103,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "smart_water_valve",
@@ -1114,7 +1114,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "smoke_detector",
@@ -1125,7 +1125,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "smoke_detector_temp_humidity_advanced",
@@ -1136,7 +1136,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "smoke_temp_humid_sensor",
@@ -1147,7 +1147,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "soil_moisture_sensor",
@@ -1158,7 +1158,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "soil_moisture_temperature_sensor",
@@ -1169,7 +1169,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "soil_tester_temp_humid",
@@ -1180,7 +1180,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "solar_panel_controller",
@@ -1191,7 +1191,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "sos_emergency_button",
@@ -1202,7 +1202,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "switch_1gang_battery",
@@ -1213,7 +1213,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "switch_2gang_ac",
@@ -1224,7 +1224,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "switch_2gang_hybrid",
@@ -1235,7 +1235,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "switch_3gang_battery",
@@ -1246,7 +1246,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 12
+      "manufacturerCount": 17
     },
     {
       "folder": "switch_4gang_ac",
@@ -1257,7 +1257,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "switch_4gang_battery_cr2032",
@@ -1268,7 +1268,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 12
+      "manufacturerCount": 17
     },
     {
       "folder": "switch_5gang_battery",
@@ -1279,7 +1279,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 12
+      "manufacturerCount": 17
     },
     {
       "folder": "switch_6gang_ac",
@@ -1290,7 +1290,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 1
+      "manufacturerCount": 6
     },
     {
       "folder": "switch_8gang_ac",
@@ -1301,7 +1301,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "tank_level_monitor",
@@ -1312,7 +1312,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "temp_humid_sensor_advanced",
@@ -1323,7 +1323,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "temp_humid_sensor_leak_detector",
@@ -1334,7 +1334,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "temp_humid_sensor_v1w2k9dd",
@@ -1345,7 +1345,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "temp_sensor_pro",
@@ -1356,7 +1356,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 13
+      "manufacturerCount": 18
     },
     {
       "folder": "temperature_controller",
@@ -1367,7 +1367,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "temperature_humidity_sensor",
@@ -1378,7 +1378,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "temperature_sensor",
@@ -1389,7 +1389,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "temperature_sensor_advanced",
@@ -1400,7 +1400,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "thermostat",
@@ -1411,7 +1411,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "touch_dimmer",
@@ -1422,7 +1422,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 12
+      "manufacturerCount": 17
     },
     {
       "folder": "touch_dimmer_1gang",
@@ -1433,7 +1433,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "touch_switch_1gang",
@@ -1444,7 +1444,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "touch_switch_2gang",
@@ -1455,7 +1455,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 12
+      "manufacturerCount": 17
     },
     {
       "folder": "touch_switch_3gang",
@@ -1466,7 +1466,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 12
+      "manufacturerCount": 17
     },
     {
       "folder": "touch_switch_4gang",
@@ -1477,7 +1477,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 12
+      "manufacturerCount": 17
     },
     {
       "folder": "tvoc_sensor",
@@ -1488,7 +1488,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "tvoc_sensor_advanced",
@@ -1499,7 +1499,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "usb_outlet",
@@ -1510,7 +1510,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 4
+      "manufacturerCount": 9
     },
     {
       "folder": "usb_outlet_advanced",
@@ -1521,7 +1521,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 4
+      "manufacturerCount": 9
     },
     {
       "folder": "vibration_sensor",
@@ -1532,7 +1532,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "wall_switch_1gang_ac",
@@ -1543,7 +1543,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "wall_switch_1gang_dc",
@@ -1554,7 +1554,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "wall_switch_2gang_ac",
@@ -1565,7 +1565,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "wall_switch_2gang_dc",
@@ -1576,7 +1576,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "wall_switch_3gang_ac",
@@ -1587,7 +1587,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "wall_switch_3gang_dc",
@@ -1598,7 +1598,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "wall_switch_4gang_ac",
@@ -1609,7 +1609,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "wall_switch_4gang_dc",
@@ -1620,7 +1620,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "wall_switch_5gang_ac",
@@ -1631,7 +1631,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 12
+      "manufacturerCount": 17
     },
     {
       "folder": "wall_switch_6gang_ac",
@@ -1642,7 +1642,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 1
+      "manufacturerCount": 6
     },
     {
       "folder": "water_leak_detector_advanced",
@@ -1653,7 +1653,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "water_leak_detector_sq510a",
@@ -1664,7 +1664,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "water_leak_sensor",
@@ -1675,7 +1675,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "water_valve",
@@ -1686,7 +1686,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "water_valve_smart",
@@ -1697,7 +1697,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "wireless_switch",
@@ -1708,7 +1708,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "wireless_switch_1gang_cr2032",
@@ -1719,7 +1719,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 3
+      "manufacturerCount": 8
     },
     {
       "folder": "wireless_switch_2gang_cr2032",
@@ -1730,7 +1730,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 12
+      "manufacturerCount": 17
     },
     {
       "folder": "wireless_switch_3gang_cr2032",
@@ -1741,7 +1741,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 12
+      "manufacturerCount": 17
     },
     {
       "folder": "wireless_switch_4gang_cr2032",
@@ -1752,7 +1752,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 12
+      "manufacturerCount": 17
     },
     {
       "folder": "wireless_switch_4gang_cr2450",
@@ -1763,7 +1763,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 12
+      "manufacturerCount": 17
     },
     {
       "folder": "wireless_switch_5gang_cr2032",
@@ -1774,7 +1774,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 12
+      "manufacturerCount": 17
     },
     {
       "folder": "wireless_switch_6gang_cr2032",
@@ -1785,7 +1785,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 12
+      "manufacturerCount": 17
     },
     {
       "folder": "zbbridge",
@@ -1796,7 +1796,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     },
     {
       "folder": "zigbee_gateway_hub",
@@ -1807,7 +1807,7 @@
       },
       "changes": [],
       "modified": false,
-      "manufacturerCount": 10
+      "manufacturerCount": 15
     }
   ]
 }
