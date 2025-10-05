@@ -1,0 +1,62 @@
+{
+  "name": {
+    "en": "Solar Panel Controller"
+  },
+  "class": "other",
+  "capabilities": [
+    "measure_power",
+    "measure_voltage",
+    "measure_current",
+    "measure_battery",
+    "onoff"
+  ],
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ1800_ejwkn2h2",
+      "_TZ1800_fcdjzz3s",
+      "_TZ2000_a476raq2",
+      "_TZ2000_avdnvykf",
+      "_TZ2000_hjsgdkfl",
+      "_TZ2000_xogb73am",
+      "_TZ3000_01gpyda5",
+      "_TZ3000_0dumfk2z",
+      "_TZ3000_0ghwhypc",
+      "_TZ3000_0ht8dnxj",
+      "_TZ3000_0s1izerx",
+      "_TZ3000_0s9gukzt"
+    ],
+    "productId": [
+      "TS0601",
+      "TS130F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          6,
+          1794,
+          2820,
+          61184
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
+  },
+  "capabilitiesOptions": {},
+  "platforms": [
+    "local"
+  ]
+}
