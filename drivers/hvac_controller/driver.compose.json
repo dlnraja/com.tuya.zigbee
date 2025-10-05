@@ -3,7 +3,10 @@
     "en": "Hvac Controller"
   },
   "class": "sensor",
-  "capabilities": [],
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature"
+  ],
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_01gpyda5",
