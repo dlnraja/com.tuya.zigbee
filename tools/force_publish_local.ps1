@@ -8,11 +8,6 @@ Write-Host ""
 # Étape 1: Validation pré-publication
 Write-Host "📋 Étape 1/6: Préparation et validation..." -ForegroundColor Yellow
 
-Write-Host "  → Nettoyage fichiers inutiles..." -ForegroundColor Gray
-Get-ChildItem -Path "drivers" -Recurse -Filter "*.placeholder" -ErrorAction SilentlyContinue | Remove-Item -Force
-Get-ChildItem -Path "drivers" -Recurse -Filter "*-spec.json" -ErrorAction SilentlyContinue | Remove-Item -Force
-Get-ChildItem -Path "drivers" -Recurse -Filter "*.svg" -File -ErrorAction SilentlyContinue | Where-Object { $_.Name -ne "icon.svg" } | Remove-Item -Force
-
 Write-Host "  → Nettoyage fichiers inutiles (placeholder, spec, svg)..." -ForegroundColor Gray
 Get-ChildItem -Path "drivers" -Recurse -Filter "*.placeholder" -ErrorAction SilentlyContinue | Remove-Item -Force
 Get-ChildItem -Path "drivers" -Recurse -Filter "*-spec.json" -ErrorAction SilentlyContinue | Remove-Item -Force
