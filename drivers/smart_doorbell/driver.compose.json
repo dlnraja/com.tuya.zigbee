@@ -2,7 +2,7 @@
   "name": {
     "en": "Smart Doorbell"
   },
-  "class": "lock",
+  "class": "sensor",
   "capabilities": [
     "locked",
     "alarm_battery",
@@ -82,7 +82,24 @@
       "_TZ3000_cehuw1lw",
       "_TZ3000_qzjcsmar",
       "_TZ3000_ji4araar",
-      "_TZ3000_n2egfsli"
+      "_TZ3000_n2egfsli",
+      "TS0203",
+      "_TZ3000_4uuaja4a",
+      "TS0001",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS011F",
+      "TS0201",
+      "TS0601",
+      "TS130F",
+      "TS0202",
+      "TS0205",
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044"
     ],
     "productId": [
       "TS0601",

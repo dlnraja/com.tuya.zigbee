@@ -2,7 +2,7 @@
   "name": {
     "en": "Garage Door Controller"
   },
-  "class": "button",
+  "class": "sensor",
   "capabilities": [
     "garagedoor_closed",
     "button.open",
@@ -99,7 +99,26 @@
       "_TZE200_cwbvmsar",
       "_TZE200_bjawzodf",
       "_TZE200_locansqn",
-      "_TZE200_fctwhugx"
+      "_TZE200_fctwhugx",
+      "TS0203",
+      "_TZ3000_4uuaja4a",
+      "_TZE200_zpzndjez",
+      "_TZE200_dwcarsat",
+      "TS0001",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS011F",
+      "TS0201",
+      "TS0601",
+      "TS130F",
+      "TS0202",
+      "TS0205",
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044"
     ],
     "productId": [
       "TS0601",
