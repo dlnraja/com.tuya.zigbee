@@ -39,17 +39,27 @@
         </div>
     </div>
     
+    <script src="/manager/webserver/assets/js/homey.js" data-origin="settings"></script>
     <script>
         function onHomeyReady(Homey) {
             Homey.ready(() => {
+                console.log('Homey settings ready');
+                
                 ['debug_logging', 'community_updates'].forEach(setting => {
+                    // Get initial value
                     Homey.get(setting, (err, value) => {
-                        if (!err) document.getElementById(setting).checked = !!value;
+                        if (!err && document.getElementById(setting)) {
+                            document.getElementById(setting).checked = !!value;
+                        }
                     });
                     
-                    document.getElementById(setting).addEventListener('change', function() {
-                        Homey.set(setting, this.checked);
-                    });
+                    // Listen for changes
+                    const element = document.getElementById(setting);
+                    if (element) {
+                        element.addEventListener('change', function() {
+                            Homey.set(setting, this.checked);
+                        });
+                    }
                 });
             });
         }
