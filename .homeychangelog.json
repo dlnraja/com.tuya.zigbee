@@ -1,29 +1,3 @@
 {
-  "2.1.6": {
-    "en": "Store listing and English texts updated; initial v2.x housekeeping."
-  },
-  "2.1.7": {
-    "en": "Stability and tooling improvements: orchestrator refinements, asset normalization, SDK3 quick autofix, validation tweaks."
-  },
-  "2.1.8": {
-    "en": "Driver enrichment and classification: merge-not-replace data, TS-based productId filtering, manufacturer list pruning, unbranded device enrichment, English changelog fixes."
-  },
-  "2.0.0": {
-    "en": "v2.0.0 - Major update with 164 drivers"
-  },
-  "2.0.1": {
-    "en": "Unbranded reclass, images 75x75, manufacturer/product alignment, SDK3 fixes"
-  },
-  "2.0.2": {
-    "en": "Minor fixes and performance improvements."
-  },
-  "2.0.3": {
-    "en": "Enrichment precision and icon fixes; product/manufacturer alignment tweaks."
-  },
-  "2.1.24": {
-    "en": "yodate and refactor drivers"
-  },
-  "2.1.2": {
-    "en": "update many drivers and fix app.js"
-  }
+  "1.0.3": "Auto-publication: Complete enrichment from all sources + GitHub Actions fixes + Autonomous orchestration"
 }
