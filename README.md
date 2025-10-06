@@ -1,50 +1,122 @@
-# Universal Tuya Zigbee Device Hub
+# Universal Tuya Zigbee
 
-Professional Zigbee device integration for Homey - 550+ devices supported locally.
+**The ultimate solution for integrating your Tuya Zigbee devices with Homey - 100% locally, no cloud required!**
 
-## Project Structure
+## 🎯 What Does This App Do?
 
-```
-tuya_repair/
-├── drivers/          # 164 Zigbee device drivers (organized by function)
-├── tools/            # Development and automation scripts
-├── references/       # Documentation, reports, and enrichment data
-├── project-data/     # Build artifacts, logs, and analysis results
-├── ultimate_system/  # Advanced automation and orchestration
-├── .github/          # CI/CD workflows and automation
-└── settings/         # App configuration UI
-```
+Universal Tuya Zigbee allows you to seamlessly integrate **hundreds of Tuya Zigbee devices** into your Homey smart home - completely locally, without any cloud dependencies.
 
-## Quick Start
+### Key Features
 
-```bash
-# Install dependencies
-npm install
+✅ **550+ Devices Supported** - Massive compatibility with Tuya Zigbee devices  
+✅ **100% Local** - Works entirely offline, no internet required  
+✅ **163 Device Drivers** - Organized by device function for easy pairing  
+✅ **28 Flow Cards** - Full automation support with triggers, conditions, and actions  
+✅ **Multi-Language** - English and French support  
 
-# Validate app
-homey app validate --level=publish
+## 🔌 Supported Devices
 
-# Run app
-homey app run
-```
+This app supports a wide range of Tuya Zigbee devices:
 
-## Documentation
+- **💡 Lighting** - Bulbs, LED strips, dimmers, CCT lights
+- **🔌 Plugs** - Smart plugs with energy monitoring
+- **🌡️ Sensors** - Temperature, humidity, motion, door/window, water leak
+- **🔘 Switches** - Wall switches (1-4 gang), wireless buttons, scene switches
+- **🚪 Locks & Access** - Smart locks, IR remotes
+- **🎚️ Curtains** - Smart curtain motors and blinds
+- **🔔 Alarms** - Sirens and alarm systems
+- **📡 And More** - Thermostats, valves, presence sensors
 
-- [Scripts Documentation](./references/documentation/README_SCRIPTS.md)
-- [Addon Enrichment Guide](./references/documentation/ADDON_ENRICHMENT_QUICKSTART.md)
-- [Final Reports](./references/reports/)
+## 🚀 Getting Started
 
-## Development
+1. **Install the app** from the Homey App Store
+2. **Add a device** - Go to Devices → Add Device → Universal Tuya Zigbee
+3. **Select your device type** - Choose the category that matches your device
+4. **Pair** - Put your device in pairing mode and follow Homey's instructions
+5. **Enjoy!** - Your device is now ready to use in flows and scenes
 
-All development scripts are located in `tools/` and `ultimate_system/`.
+## 🔧 Configuration
 
-## Statistics
+The app includes a settings page accessible from the Homey app where you can:
+- View all paired devices
+- Configure device-specific settings
+- Access troubleshooting information
 
-- **164 drivers** organized by device function
-- **550+ Zigbee devices** supported
-- **100% local** - no cloud dependencies
-- **SDK3 compliant** - latest Homey standards
+## 📱 Flow Cards
+
+Create powerful automations with 28 comprehensive flow cards:
+
+### Triggers (When...)
+- Motion detected
+- Temperature/humidity changed
+- Door/window opened/closed
+- Button pressed
+- And more...
+
+### Conditions (And...)
+- Temperature above/below threshold
+- Motion active
+- Device is on/off
+- Battery level check
+
+### Actions (Then...)
+- Turn devices on/off
+- Set brightness/color
+- Set temperature
+- Open/close curtains
+- Control locks
+
+## 🌍 Language Support
+
+- 🇬🇧 English
+- 🇫🇷 Français
+
+## 🔒 Privacy & Security
+
+✅ **100% Local** - All communication happens locally via Zigbee  
+✅ **No Cloud** - Your data never leaves your home  
+✅ **No Tracking** - We don't collect any usage data  
+✅ **Open Development** - Active development with regular updates  
+
+## 💡 Tips
+
+- **Pairing Issues?** Make sure your device is in pairing mode (usually hold the button for 5-10 seconds)
+- **Device Not Listed?** Try the generic "Unbranded" categories - they work with most devices
+- **Energy Monitoring** - Many smart plugs support real-time energy monitoring
+- **Firmware Updates** - Keep your Homey and devices updated for best performance
+
+## 🆘 Support
+
+- **Community Forum**: [Homey Community](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352/)
+- **GitHub**: [Report Issues & Contribute](https://github.com/dlnraja/com.tuya.zigbee)
+
+## 📊 Technical Details
+
+- **SDK Version**: 3 (Latest Homey standards)
+- **Compatibility**: Homey Pro 2023, Homey Bridge, Homey Pro (2016-2019)
+- **Minimum Homey Firmware**: 12.2.0
+- **Protocol**: Zigbee (100% local)
+- **Device Categories**: Organized by function for universal compatibility
+
+## 🎉 Recent Updates
+
+**v1.3.1**
+- ✅ Fixed settings page infinite loop issue
+- ✅ Added homey-zigbeedriver dependency
+- ✅ Added 28 comprehensive flow cards
+- ✅ All 163 drivers operational and validated
+
+## ⭐ Why Choose Universal Tuya Zigbee?
+
+Unlike cloud-based solutions, this app gives you:
+- **Full Control** - Your devices, your rules, no vendor lock-in
+- **Reliability** - Works even without internet
+- **Privacy** - No data sent to third-party servers
+- **Speed** - Local communication = instant response
+- **Flexibility** - Use with any Homey-compatible automation
 
 ---
 
-*Organized according to UNBRANDED principles - devices categorized by FUNCTION, not brand.*
+**Made with ❤️ for the Homey community**
+
+*Organized according to UNBRANDED principles - devices categorized by FUNCTION, not brand name for maximum compatibility.*
