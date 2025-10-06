@@ -75,7 +75,9 @@
       }
     },
     "manufacturerName": [
-      "TS0041"
+      "TS0041",
+      "TS0042",
+      "_TZ3000_vp6clf9d"
     ]
   },
   "images": {
@@ -102,5 +104,10 @@
         "en": "Gang 2"
       }
     }
+  },
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
   }
 }
