@@ -4,7 +4,6 @@
   },
   "class": "button",
   "capabilities": [
-    "alarm_battery",
     "measure_battery",
     "onoff",
     "dim"

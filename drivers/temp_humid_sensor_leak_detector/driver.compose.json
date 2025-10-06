@@ -6,7 +6,6 @@
   "capabilities": [
     "measure_temperature",
     "measure_humidity",
-    "alarm_battery",
     "measure_battery",
     "alarm_motion",
     "measure_luminance",
