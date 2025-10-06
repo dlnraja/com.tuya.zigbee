@@ -1,0 +1,310 @@
+{
+  "emptyCount": 27,
+  "fixedCount": 27,
+  "report": [
+    {
+      "driver": "air_quality_monitor",
+      "recovered": 8,
+      "ids": [
+        "TS0601",
+        "_TZE200_dwcarsat",
+        "_TZE200_ryfmq5rl",
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc",
+        "_TZ3000_0ht8dnxj",
+        "_TZ3000_0s1izerx"
+      ]
+    },
+    {
+      "driver": "air_quality_monitor_pro",
+      "recovered": 7,
+      "ids": [
+        "TS0601",
+        "_TZE200_dwcarsat",
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc",
+        "_TZ3000_0ht8dnxj",
+        "_TZ3000_0s1izerx"
+      ]
+    },
+    {
+      "driver": "dimmer",
+      "recovered": 5,
+      "ids": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc",
+        "_TZ3000_0ht8dnxj",
+        "_TZ3000_0s1izerx"
+      ]
+    },
+    {
+      "driver": "formaldehyde_sensor",
+      "recovered": 5,
+      "ids": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc",
+        "_TZ3000_0ht8dnxj",
+        "_TZ3000_0s1izerx"
+      ]
+    },
+    {
+      "driver": "lux_sensor",
+      "recovered": 5,
+      "ids": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc",
+        "_TZ3000_0ht8dnxj",
+        "_TZ3000_0s1izerx"
+      ]
+    },
+    {
+      "driver": "mini",
+      "recovered": 5,
+      "ids": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc",
+        "_TZ3000_0ht8dnxj",
+        "_TZ3000_0s1izerx"
+      ]
+    },
+    {
+      "driver": "multisensor",
+      "recovered": 5,
+      "ids": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc",
+        "_TZ3000_0ht8dnxj",
+        "_TZ3000_0s1izerx"
+      ]
+    },
+    {
+      "driver": "noise_level_sensor",
+      "recovered": 5,
+      "ids": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc",
+        "_TZ3000_0ht8dnxj",
+        "_TZ3000_0s1izerx"
+      ]
+    },
+    {
+      "driver": "pet_feeder",
+      "recovered": 5,
+      "ids": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc",
+        "_TZ3000_0ht8dnxj",
+        "_TZ3000_0s1izerx"
+      ]
+    },
+    {
+      "driver": "pm25_detector",
+      "recovered": 5,
+      "ids": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc",
+        "_TZ3000_0ht8dnxj",
+        "_TZ3000_0s1izerx"
+      ]
+    },
+    {
+      "driver": "pm25_sensor",
+      "recovered": 5,
+      "ids": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc",
+        "_TZ3000_0ht8dnxj",
+        "_TZ3000_0s1izerx"
+      ]
+    },
+    {
+      "driver": "pressure_sensor",
+      "recovered": 5,
+      "ids": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc",
+        "_TZ3000_0ht8dnxj",
+        "_TZ3000_0s1izerx"
+      ]
+    },
+    {
+      "driver": "smart_garden_sprinkler",
+      "recovered": 5,
+      "ids": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc",
+        "_TZ3000_0ht8dnxj",
+        "_TZ3000_0s1izerx"
+      ]
+    },
+    {
+      "driver": "smart_outlet_monitor",
+      "recovered": 5,
+      "ids": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc",
+        "_TZ3000_0ht8dnxj",
+        "_TZ3000_0s1izerx"
+      ]
+    },
+    {
+      "driver": "smart_spot",
+      "recovered": 5,
+      "ids": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc",
+        "_TZ3000_0ht8dnxj",
+        "_TZ3000_0s1izerx"
+      ]
+    },
+    {
+      "driver": "smart_thermostat",
+      "recovered": 5,
+      "ids": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc",
+        "_TZ3000_0ht8dnxj",
+        "_TZ3000_0s1izerx"
+      ]
+    },
+    {
+      "driver": "soil_moisture_sensor",
+      "recovered": 5,
+      "ids": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc",
+        "_TZ3000_0ht8dnxj",
+        "_TZ3000_0s1izerx"
+      ]
+    },
+    {
+      "driver": "tank_level_monitor",
+      "recovered": 5,
+      "ids": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc",
+        "_TZ3000_0ht8dnxj",
+        "_TZ3000_0s1izerx"
+      ]
+    },
+    {
+      "driver": "thermostat",
+      "recovered": 5,
+      "ids": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc",
+        "_TZ3000_0ht8dnxj",
+        "_TZ3000_0s1izerx"
+      ]
+    },
+    {
+      "driver": "touch_dimmer",
+      "recovered": 5,
+      "ids": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2",
+        "_TZ2000_avdnvykf",
+        "_TZ2000_hjsgdkfl"
+      ]
+    },
+    {
+      "driver": "tvoc_sensor",
+      "recovered": 5,
+      "ids": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc",
+        "_TZ3000_0ht8dnxj",
+        "_TZ3000_0s1izerx"
+      ]
+    },
+    {
+      "driver": "tvoc_sensor_advanced",
+      "recovered": 5,
+      "ids": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc",
+        "_TZ3000_0ht8dnxj",
+        "_TZ3000_0s1izerx"
+      ]
+    },
+    {
+      "driver": "usb_outlet",
+      "recovered": 5,
+      "ids": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc",
+        "_TZ3000_0ht8dnxj",
+        "_TZ3000_0s1izerx"
+      ]
+    },
+    {
+      "driver": "usb_outlet_advanced",
+      "recovered": 5,
+      "ids": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc",
+        "_TZ3000_0ht8dnxj",
+        "_TZ3000_0s1izerx"
+      ]
+    },
+    {
+      "driver": "vibration_sensor",
+      "recovered": 5,
+      "ids": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc",
+        "_TZ3000_0ht8dnxj",
+        "_TZ3000_0s1izerx"
+      ]
+    },
+    {
+      "driver": "zbbridge",
+      "recovered": 5,
+      "ids": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2",
+        "_TZ2000_avdnvykf",
+        "_TZ2000_hjsgdkfl"
+      ]
+    },
+    {
+      "driver": "zigbee_gateway_hub",
+      "recovered": 5,
+      "ids": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2",
+        "_TZ2000_avdnvykf",
+        "_TZ2000_hjsgdkfl"
+      ]
+    }
+  ],
+  "version": "1.1.6",
+  "timestamp": "2025-10-06T13:56:39.383Z"
+}
