@@ -23,7 +23,9 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "TS0505"
+      "TS0001",
+      "TS0011",
+      "TS0012"
     ],
     "productId": [
       "TS110E",
