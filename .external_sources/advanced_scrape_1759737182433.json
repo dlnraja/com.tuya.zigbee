@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "scraped": "2025-10-06T07:53:02.433Z",
+    "totalRequests": 5,
+    "errors": 2,
+    "cached": 0
+  },
+  "sources": {
+    "z2m_devices": {
+      "success": false,
+      "error": "HTTP 404"
+    },
+    "z2m_converters": {
+      "success": true,
+      "manufacturers": 0,
+      "productIds": 0
+    },
+    "blakadder_tuya": {
+      "success": false,
+      "error": "HTTP 404"
+    },
+    "zha_quirks": {
+      "success": true,
+      "manufacturers": 1,
+      "productIds": 0
+    },
+    "johan_devices": {
+      "success": true,
+      "manufacturers": 0,
+      "productIds": 0
+    }
+  },
+  "manufacturers": [
+    "_TZE200_cowvfni3"
+  ],
+  "productIds": [],
+  "stats": {
+    "totalManufacturers": 1,
+    "totalProductIds": 0,
+    "cacheHitRate": 0
+  }
+}
