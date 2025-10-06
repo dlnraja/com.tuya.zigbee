@@ -1,0 +1,1116 @@
+{
+  "analyzed": 163,
+  "enriched": 33,
+  "toReorganize": [
+    {
+      "current": "ceiling_light_controller",
+      "recommended": "light_1gang_ac",
+      "type": "light",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "ceiling_light_rgb",
+      "recommended": "light_1gang_ac",
+      "type": "light",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "climate_monitor",
+      "recommended": "climate_1gang_battery",
+      "type": "climate",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "co2_sensor",
+      "recommended": "safety_1gang_battery",
+      "type": "safety",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "co2_temp_humidity",
+      "recommended": "safety_1gang_battery",
+      "type": "safety",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "co_detector_pro",
+      "recommended": "safety_1gang_battery",
+      "type": "safety",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "comprehensive_air_monitor",
+      "recommended": "safety_1gang_ac",
+      "type": "safety",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "curtain_motor",
+      "recommended": "curtain_1gang_battery",
+      "type": "curtain",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "dimmer",
+      "recommended": "dimmer_1gang_ac",
+      "type": "dimmer",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "dimmer_switch_1gang_ac",
+      "recommended": "switch_1gang_ac",
+      "type": "switch",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "dimmer_switch_3gang_ac",
+      "recommended": "switch_3gang_ac",
+      "type": "switch",
+      "power": "AC",
+      "gangs": 3
+    },
+    {
+      "current": "dimmer_switch_timer_module",
+      "recommended": "switch_1gang_ac",
+      "type": "switch",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "door_controller",
+      "recommended": "contact_1gang_battery",
+      "type": "contact",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "door_lock",
+      "recommended": "contact_1gang_battery",
+      "type": "contact",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "door_window_sensor",
+      "recommended": "contact_1gang_battery",
+      "type": "contact",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "doorbell",
+      "recommended": "contact_1gang_battery",
+      "type": "contact",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "energy_monitoring_plug",
+      "recommended": "plug_1gang_ac",
+      "type": "plug",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "energy_monitoring_plug_advanced",
+      "recommended": "plug_1gang_ac",
+      "type": "plug",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "energy_plug_advanced",
+      "recommended": "plug_1gang_ac",
+      "type": "plug",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "extension_plug",
+      "recommended": "plug_1gang_ac",
+      "type": "plug",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "fan_controller",
+      "recommended": "safety_1gang_ac",
+      "type": "safety",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "garage_door_controller",
+      "recommended": "contact_1gang_battery",
+      "type": "contact",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "garage_door_opener",
+      "recommended": "contact_1gang_battery",
+      "type": "contact",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "gas_detector",
+      "recommended": "safety_1gang_ac",
+      "type": "safety",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "humidity_controller",
+      "recommended": "safety_1gang_battery",
+      "type": "safety",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "hvac_controller",
+      "recommended": "safety_1gang_ac",
+      "type": "safety",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "led_strip_advanced",
+      "recommended": "light_1gang_ac",
+      "type": "light",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "led_strip_controller",
+      "recommended": "light_1gang_ac",
+      "type": "light",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "led_strip_controller_pro",
+      "recommended": "light_1gang_ac",
+      "type": "light",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "milight_controller",
+      "recommended": "light_1gang_ac",
+      "type": "light",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "mini_switch",
+      "recommended": "switch_1gang_battery",
+      "type": "switch",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "motion_sensor_battery",
+      "recommended": "motion_1gang_battery",
+      "type": "motion",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "motion_sensor_mmwave",
+      "recommended": "motion_1gang_battery",
+      "type": "motion",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "motion_sensor_pir_ac",
+      "recommended": "motion_1gang_battery",
+      "type": "motion",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "motion_sensor_pir_battery",
+      "recommended": "motion_1gang_battery",
+      "type": "motion",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "motion_sensor_zigbee_204z",
+      "recommended": "motion_1gang_battery",
+      "type": "motion",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "outdoor_light_controller",
+      "recommended": "contact_1gang_battery",
+      "type": "contact",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "outdoor_siren",
+      "recommended": "contact_1gang_battery",
+      "type": "contact",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "pir_sensor_advanced",
+      "recommended": "motion_1gang_battery",
+      "type": "motion",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "pool_pump_controller",
+      "recommended": "safety_1gang_ac",
+      "type": "safety",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "power_meter_socket",
+      "recommended": "plug_1gang_ac",
+      "type": "plug",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "presence_sensor_radar",
+      "recommended": "motion_1gang_battery",
+      "type": "motion",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "projector_screen_controller",
+      "recommended": "safety_1gang_ac",
+      "type": "safety",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "radar_motion_sensor_advanced",
+      "recommended": "motion_1gang_battery",
+      "type": "motion",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "radar_motion_sensor_mmwave",
+      "recommended": "motion_1gang_battery",
+      "type": "motion",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "radar_motion_sensor_tank_level",
+      "recommended": "motion_1gang_battery",
+      "type": "motion",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "radiator_valve",
+      "recommended": "valve_1gang_battery",
+      "type": "valve",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "relay_switch_1gang",
+      "recommended": "switch_1gang_ac",
+      "type": "switch",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "remote_switch",
+      "recommended": "switch_1gang_battery",
+      "type": "switch",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "rgb_led_controller",
+      "recommended": "light_1gang_ac",
+      "type": "light",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "roller_blind_controller",
+      "recommended": "curtain_1gang_battery",
+      "type": "curtain",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "roller_shutter_controller",
+      "recommended": "safety_1gang_battery",
+      "type": "safety",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "roller_shutter_switch",
+      "recommended": "switch_1gang_battery",
+      "type": "switch",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "roller_shutter_switch_advanced",
+      "recommended": "switch_1gang_battery",
+      "type": "switch",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "scene_controller",
+      "recommended": "button_1gang_ac",
+      "type": "button",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "scene_controller_2button",
+      "recommended": "button_1gang_battery",
+      "type": "button",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "scene_controller_4button",
+      "recommended": "button_1gang_battery",
+      "type": "button",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "scene_controller_6button",
+      "recommended": "button_1gang_battery",
+      "type": "button",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "scene_controller_8button",
+      "recommended": "button_1gang_battery",
+      "type": "button",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "scene_controller_battery",
+      "recommended": "button_1gang_battery",
+      "type": "button",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "shade_controller",
+      "recommended": "safety_1gang_ac",
+      "type": "safety",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "smart_bulb_dimmer",
+      "recommended": "dimmer_1gang_ac",
+      "type": "dimmer",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "smart_bulb_rgb",
+      "recommended": "light_1gang_ac",
+      "type": "light",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "smart_bulb_tunable",
+      "recommended": "light_1gang_ac",
+      "type": "light",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "smart_bulb_white",
+      "recommended": "light_1gang_ac",
+      "type": "light",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "smart_curtain_motor",
+      "recommended": "curtain_1gang_battery",
+      "type": "curtain",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "smart_dimmer_module_1gang",
+      "recommended": "dimmer_1gang_ac",
+      "type": "dimmer",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "smart_doorbell",
+      "recommended": "contact_1gang_battery",
+      "type": "contact",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "smart_irrigation_controller",
+      "recommended": "safety_1gang_battery",
+      "type": "safety",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "smart_plug",
+      "recommended": "plug_1gang_ac",
+      "type": "plug",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "smart_plug_energy",
+      "recommended": "plug_1gang_ac",
+      "type": "plug",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "smart_radiator_valve",
+      "recommended": "valve_1gang_ac",
+      "type": "valve",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "smart_smoke_detector_advanced",
+      "recommended": "safety_1gang_battery",
+      "type": "safety",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "smart_switch_1gang_ac",
+      "recommended": "switch_1gang_ac",
+      "type": "switch",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "smart_switch_1gang_hybrid",
+      "recommended": "switch_1gang_ac",
+      "type": "switch",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "smart_switch_2gang_ac",
+      "recommended": "switch_2gang_ac",
+      "type": "switch",
+      "power": "AC",
+      "gangs": 2
+    },
+    {
+      "current": "smart_switch_2gang_hybrid",
+      "recommended": "switch_2gang_ac",
+      "type": "switch",
+      "power": "AC",
+      "gangs": 2
+    },
+    {
+      "current": "smart_switch_3gang_ac",
+      "recommended": "switch_3gang_ac",
+      "type": "switch",
+      "power": "AC",
+      "gangs": 3
+    },
+    {
+      "current": "smart_switch_3gang_hybrid",
+      "recommended": "switch_3gang_ac",
+      "type": "switch",
+      "power": "AC",
+      "gangs": 3
+    },
+    {
+      "current": "smart_switch_4gang_hybrid",
+      "recommended": "switch_4gang_ac",
+      "type": "switch",
+      "power": "AC",
+      "gangs": 4
+    },
+    {
+      "current": "smart_valve_controller",
+      "recommended": "safety_1gang_battery",
+      "type": "safety",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "smart_water_valve",
+      "recommended": "valve_1gang_battery",
+      "type": "valve",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "smoke_detector",
+      "recommended": "safety_1gang_battery",
+      "type": "safety",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "smoke_detector_temp_humidity_advanced",
+      "recommended": "safety_1gang_battery",
+      "type": "safety",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "smoke_temp_humid_sensor",
+      "recommended": "safety_1gang_battery",
+      "type": "safety",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "soil_moisture_temperature_sensor",
+      "recommended": "climate_1gang_battery",
+      "type": "climate",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "soil_tester_temp_humid",
+      "recommended": "climate_1gang_battery",
+      "type": "climate",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "solar_panel_controller",
+      "recommended": "safety_1gang_battery",
+      "type": "safety",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "sos_emergency_button",
+      "recommended": "button_1gang_battery",
+      "type": "button",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "switch_2gang_hybrid",
+      "recommended": "switch_2gang_ac",
+      "type": "switch",
+      "power": "AC",
+      "gangs": 2
+    },
+    {
+      "current": "switch_4gang_battery_cr2032",
+      "recommended": "switch_4gang_battery",
+      "type": "switch",
+      "power": "Battery",
+      "gangs": 4
+    },
+    {
+      "current": "temp_humid_sensor_advanced",
+      "recommended": "climate_1gang_battery",
+      "type": "climate",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "temp_humid_sensor_leak_detector",
+      "recommended": "safety_1gang_battery",
+      "type": "safety",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "temp_humid_sensor_v1w2k9dd",
+      "recommended": "climate_1gang_battery",
+      "type": "climate",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "temp_sensor_pro",
+      "recommended": "climate_1gang_battery",
+      "type": "climate",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "temperature_controller",
+      "recommended": "safety_1gang_battery",
+      "type": "safety",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "temperature_humidity_sensor",
+      "recommended": "climate_1gang_battery",
+      "type": "climate",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "temperature_sensor",
+      "recommended": "climate_1gang_battery",
+      "type": "climate",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "temperature_sensor_advanced",
+      "recommended": "climate_1gang_battery",
+      "type": "climate",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "touch_dimmer",
+      "recommended": "dimmer_1gang_ac",
+      "type": "dimmer",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "touch_dimmer_1gang",
+      "recommended": "dimmer_1gang_ac",
+      "type": "dimmer",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "touch_switch_1gang",
+      "recommended": "switch_1gang_ac",
+      "type": "switch",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "touch_switch_2gang",
+      "recommended": "switch_2gang_ac",
+      "type": "switch",
+      "power": "AC",
+      "gangs": 2
+    },
+    {
+      "current": "touch_switch_3gang",
+      "recommended": "switch_3gang_ac",
+      "type": "switch",
+      "power": "AC",
+      "gangs": 3
+    },
+    {
+      "current": "touch_switch_4gang",
+      "recommended": "switch_4gang_ac",
+      "type": "switch",
+      "power": "AC",
+      "gangs": 4
+    },
+    {
+      "current": "wall_switch_1gang_ac",
+      "recommended": "switch_1gang_ac",
+      "type": "switch",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "wall_switch_1gang_dc",
+      "recommended": "switch_1gang_ac",
+      "type": "switch",
+      "power": "AC",
+      "gangs": 1
+    },
+    {
+      "current": "wall_switch_2gang_ac",
+      "recommended": "switch_2gang_ac",
+      "type": "switch",
+      "power": "AC",
+      "gangs": 2
+    },
+    {
+      "current": "wall_switch_2gang_dc",
+      "recommended": "switch_2gang_ac",
+      "type": "switch",
+      "power": "AC",
+      "gangs": 2
+    },
+    {
+      "current": "wall_switch_3gang_ac",
+      "recommended": "switch_3gang_ac",
+      "type": "switch",
+      "power": "AC",
+      "gangs": 3
+    },
+    {
+      "current": "wall_switch_3gang_dc",
+      "recommended": "switch_3gang_ac",
+      "type": "switch",
+      "power": "AC",
+      "gangs": 3
+    },
+    {
+      "current": "wall_switch_4gang_ac",
+      "recommended": "switch_4gang_ac",
+      "type": "switch",
+      "power": "AC",
+      "gangs": 4
+    },
+    {
+      "current": "wall_switch_4gang_dc",
+      "recommended": "switch_4gang_ac",
+      "type": "switch",
+      "power": "AC",
+      "gangs": 4
+    },
+    {
+      "current": "wall_switch_5gang_ac",
+      "recommended": "switch_5gang_ac",
+      "type": "switch",
+      "power": "AC",
+      "gangs": 5
+    },
+    {
+      "current": "wall_switch_6gang_ac",
+      "recommended": "switch_6gang_ac",
+      "type": "switch",
+      "power": "AC",
+      "gangs": 6
+    },
+    {
+      "current": "water_leak_detector_advanced",
+      "recommended": "safety_1gang_battery",
+      "type": "safety",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "water_leak_detector_sq510a",
+      "recommended": "safety_1gang_battery",
+      "type": "safety",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "water_leak_sensor",
+      "recommended": "safety_1gang_battery",
+      "type": "safety",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "water_valve",
+      "recommended": "valve_1gang_battery",
+      "type": "valve",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "water_valve_smart",
+      "recommended": "valve_1gang_battery",
+      "type": "valve",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "wireless_switch",
+      "recommended": "button_1gang_battery",
+      "type": "button",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "wireless_switch_1gang_cr2032",
+      "recommended": "button_1gang_battery",
+      "type": "button",
+      "power": "Battery",
+      "gangs": 1
+    },
+    {
+      "current": "wireless_switch_2gang_cr2032",
+      "recommended": "button_2gang_battery",
+      "type": "button",
+      "power": "Battery",
+      "gangs": 2
+    },
+    {
+      "current": "wireless_switch_3gang_cr2032",
+      "recommended": "button_3gang_battery",
+      "type": "button",
+      "power": "Battery",
+      "gangs": 3
+    },
+    {
+      "current": "wireless_switch_4gang_cr2032",
+      "recommended": "button_4gang_battery",
+      "type": "button",
+      "power": "Battery",
+      "gangs": 4
+    },
+    {
+      "current": "wireless_switch_4gang_cr2450",
+      "recommended": "button_4gang_battery",
+      "type": "button",
+      "power": "Battery",
+      "gangs": 4
+    },
+    {
+      "current": "wireless_switch_5gang_cr2032",
+      "recommended": "button_5gang_battery",
+      "type": "button",
+      "power": "Battery",
+      "gangs": 5
+    },
+    {
+      "current": "wireless_switch_6gang_cr2032",
+      "recommended": "button_6gang_battery",
+      "type": "button",
+      "power": "Battery",
+      "gangs": 6
+    }
+  ],
+  "changes": [
+    {
+      "driver": "dimmer",
+      "changes": [
+        "IDs: 5 → 7",
+        "class: socket"
+      ]
+    },
+    {
+      "driver": "dimmer_switch_1gang_ac",
+      "changes": [
+        "IDs: 3 → 4"
+      ]
+    },
+    {
+      "driver": "dimmer_switch_3gang_ac",
+      "changes": [
+        "IDs: 3 → 4"
+      ]
+    },
+    {
+      "driver": "dimmer_switch_timer_module",
+      "changes": [
+        "IDs: 3 → 4"
+      ]
+    },
+    {
+      "driver": "remote_switch",
+      "changes": [
+        "IDs: 1 → 3",
+        "class: socket"
+      ]
+    },
+    {
+      "driver": "roller_shutter_switch",
+      "changes": [
+        "IDs: 1 → 3",
+        "class: socket"
+      ]
+    },
+    {
+      "driver": "roller_shutter_switch_advanced",
+      "changes": [
+        "IDs: 1 → 3",
+        "class: socket"
+      ]
+    },
+    {
+      "driver": "scene_controller_2button",
+      "changes": [
+        "IDs: 2 → 4",
+        "class: button"
+      ]
+    },
+    {
+      "driver": "scene_controller_4button",
+      "changes": [
+        "IDs: 2 → 4",
+        "class: button"
+      ]
+    },
+    {
+      "driver": "scene_controller_6button",
+      "changes": [
+        "IDs: 2 → 4",
+        "class: button"
+      ]
+    },
+    {
+      "driver": "scene_controller_8button",
+      "changes": [
+        "IDs: 2 → 4",
+        "class: button"
+      ]
+    },
+    {
+      "driver": "scene_controller_battery",
+      "changes": [
+        "IDs: 2 → 4",
+        "class: button",
+        "batteries: CR2032"
+      ]
+    },
+    {
+      "driver": "smart_bulb_dimmer",
+      "changes": [
+        "IDs: 6 → 7",
+        "class: socket"
+      ]
+    },
+    {
+      "driver": "smart_dimmer_module_1gang",
+      "changes": [
+        "IDs: 3 → 4"
+      ]
+    },
+    {
+      "driver": "smart_switch_3gang_ac",
+      "changes": [
+        "IDs: 7 → 7"
+      ]
+    },
+    {
+      "driver": "smart_switch_3gang_hybrid",
+      "changes": [
+        "IDs: 7 → 7"
+      ]
+    },
+    {
+      "driver": "smart_switch_4gang_hybrid",
+      "changes": [
+        "IDs: 7 → 7"
+      ]
+    },
+    {
+      "driver": "switch_4gang_ac",
+      "changes": [
+        "IDs: 7 → 7"
+      ]
+    },
+    {
+      "driver": "touch_dimmer",
+      "changes": [
+        "IDs: 5 → 7",
+        "class: socket"
+      ]
+    },
+    {
+      "driver": "touch_dimmer_1gang",
+      "changes": [
+        "IDs: 3 → 4"
+      ]
+    },
+    {
+      "driver": "touch_switch_3gang",
+      "changes": [
+        "IDs: 7 → 7"
+      ]
+    },
+    {
+      "driver": "touch_switch_4gang",
+      "changes": [
+        "IDs: 7 → 7"
+      ]
+    },
+    {
+      "driver": "wall_switch_3gang_ac",
+      "changes": [
+        "IDs: 7 → 7"
+      ]
+    },
+    {
+      "driver": "wall_switch_3gang_dc",
+      "changes": [
+        "IDs: 7 → 7"
+      ]
+    },
+    {
+      "driver": "wall_switch_4gang_ac",
+      "changes": [
+        "IDs: 7 → 7"
+      ]
+    },
+    {
+      "driver": "wall_switch_4gang_dc",
+      "changes": [
+        "IDs: 7 → 7"
+      ]
+    },
+    {
+      "driver": "wireless_switch",
+      "changes": [
+        "IDs: 1 → 2"
+      ]
+    },
+    {
+      "driver": "wireless_switch_1gang_cr2032",
+      "changes": [
+        "IDs: 1 → 2"
+      ]
+    },
+    {
+      "driver": "wireless_switch_2gang_cr2032",
+      "changes": [
+        "IDs: 1 → 3",
+        "batteries: CR2032"
+      ]
+    },
+    {
+      "driver": "wireless_switch_3gang_cr2032",
+      "changes": [
+        "IDs: 1 → 3",
+        "batteries: CR2032"
+      ]
+    },
+    {
+      "driver": "wireless_switch_4gang_cr2032",
+      "changes": [
+        "IDs: 1 → 3"
+      ]
+    },
+    {
+      "driver": "wireless_switch_4gang_cr2450",
+      "changes": [
+        "IDs: 1 → 3"
+      ]
+    },
+    {
+      "driver": "wireless_switch_6gang_cr2032",
+      "changes": [
+        "IDs: 1 → 3"
+      ]
+    }
+  ]
+}
