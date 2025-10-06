@@ -8,11 +8,6 @@
     "measure_co",
     "measure_battery"
   ],
-  "energy": {
-    "batteries": [
-      "PP3"
-    ]
-  },
   "zigbee": {
     "manufacturerName": [
       "TS0205",
@@ -73,5 +68,11 @@
   },
   "platforms": [
     "local"
-  ]
+  ],
+  "energy": {
+    "batteries": [
+      "AAA",
+      "CR2032"
+    ]
+  }
 }

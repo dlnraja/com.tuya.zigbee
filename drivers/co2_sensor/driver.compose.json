@@ -70,12 +70,13 @@
     "small": "./assets/small.png",
     "large": "./assets/large.png"
   },
-  "energy": {
-    "batteries": [
-      "CR2032"
-    ]
-  },
   "platforms": [
     "local"
-  ]
+  ],
+  "energy": {
+    "batteries": [
+      "AAA",
+      "CR2032"
+    ]
+  }
 }

@@ -8,11 +8,6 @@
     "measure_power",
     "dim"
   ],
-  "energy": {
-    "approximation": {
-      "usageConstant": 5
-    }
-  },
   "images": {
     "small": "./assets/small.png",
     "large": "./assets/large.png"

@@ -85,11 +85,6 @@
       }
     }
   },
-  "energy": {
-    "batteries": [
-      "CR2032"
-    ]
-  },
   "settings": [],
   "capabilitiesOptions": {
     "measure_temperature": {
@@ -108,5 +103,11 @@
         "en": "%"
       }
     }
+  },
+  "energy": {
+    "batteries": [
+      "AAA",
+      "CR2032"
+    ]
   }
 }

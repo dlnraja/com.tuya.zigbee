@@ -12,11 +12,6 @@
     "alarm_contact",
     "alarm_battery"
   ],
-  "energy": {
-    "batteries": [
-      "CR2032"
-    ]
-  },
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_26fmupbb",
@@ -103,5 +98,11 @@
         "en": "°C"
       }
     }
+  },
+  "energy": {
+    "batteries": [
+      "AAA",
+      "CR2032"
+    ]
   }
 }

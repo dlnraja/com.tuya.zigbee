@@ -9,11 +9,6 @@
     "onoff",
     "dim"
   ],
-  "energy": {
-    "batteries": [
-      "CR2032"
-    ]
-  },
   "images": {
     "small": "./assets/small.png",
     "large": "./assets/large.png"
@@ -91,5 +86,10 @@
   "connectivity": [
     "zigbee"
   ],
-  "capabilitiesOptions": {}
+  "capabilitiesOptions": {},
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  }
 }

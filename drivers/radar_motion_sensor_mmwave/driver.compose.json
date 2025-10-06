@@ -21,12 +21,6 @@
       }
     }
   },
-  "energy": {
-    "batteries": [
-      "CR2032",
-      "AA"
-    ]
-  },
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_mmtwjmaq",
@@ -96,5 +90,11 @@
   },
   "platforms": [
     "local"
-  ]
+  ],
+  "energy": {
+    "batteries": [
+      "AAA",
+      "CR2032"
+    ]
+  }
 }
