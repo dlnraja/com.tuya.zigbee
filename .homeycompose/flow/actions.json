@@ -1,0 +1,262 @@
+[
+  {
+    "id": "turn_on",
+    "title": {
+      "en": "Turn on",
+      "fr": "Allumer"
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "capabilities=onoff"
+      }
+    ]
+  },
+  {
+    "id": "turn_off",
+    "title": {
+      "en": "Turn off",
+      "fr": "Éteindre"
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "capabilities=onoff"
+      }
+    ]
+  },
+  {
+    "id": "toggle",
+    "title": {
+      "en": "Toggle on/off",
+      "fr": "Inverser on/off"
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "capabilities=onoff"
+      }
+    ]
+  },
+  {
+    "id": "set_dim",
+    "title": {
+      "en": "Set brightness to...",
+      "fr": "Régler la luminosité à..."
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "capabilities=dim"
+      },
+      {
+        "type": "range",
+        "name": "brightness",
+        "title": {
+          "en": "Brightness",
+          "fr": "Luminosité"
+        },
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "label": "%",
+        "labelMultiplier": 100,
+        "labelDecimals": 0
+      }
+    ]
+  },
+  {
+    "id": "set_temperature",
+    "title": {
+      "en": "Set target temperature to...",
+      "fr": "Régler la température cible à..."
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "capabilities=target_temperature"
+      },
+      {
+        "type": "number",
+        "name": "temperature",
+        "title": {
+          "en": "Temperature (°C)",
+          "fr": "Température (°C)"
+        },
+        "placeholder": {
+          "en": "21",
+          "fr": "21"
+        },
+        "min": 5,
+        "max": 35
+      }
+    ]
+  },
+  {
+    "id": "set_thermostat_mode",
+    "title": {
+      "en": "Set thermostat mode",
+      "fr": "Régler le mode thermostat"
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "capabilities=thermostat_mode"
+      },
+      {
+        "type": "dropdown",
+        "name": "mode",
+        "title": {
+          "en": "Mode",
+          "fr": "Mode"
+        },
+        "values": [
+          {
+            "id": "auto",
+            "label": {
+              "en": "Auto",
+              "fr": "Auto"
+            }
+          },
+          {
+            "id": "heat",
+            "label": {
+              "en": "Heat",
+              "fr": "Chauffage"
+            }
+          },
+          {
+            "id": "cool",
+            "label": {
+              "en": "Cool",
+              "fr": "Refroidissement"
+            }
+          },
+          {
+            "id": "off",
+            "label": {
+              "en": "Off",
+              "fr": "Arrêt"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "set_light_temperature",
+    "title": {
+      "en": "Set light temperature to...",
+      "fr": "Régler la température de lumière à..."
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "capabilities=light_temperature"
+      },
+      {
+        "type": "range",
+        "name": "temperature",
+        "title": {
+          "en": "Color temperature",
+          "fr": "Température de couleur"
+        },
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "label": {
+          "en": "Warm - Cold",
+          "fr": "Chaud - Froid"
+        }
+      }
+    ]
+  },
+  {
+    "id": "set_light_hue",
+    "title": {
+      "en": "Set light color (hue)",
+      "fr": "Régler la couleur de lumière (teinte)"
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "capabilities=light_hue"
+      },
+      {
+        "type": "range",
+        "name": "hue",
+        "title": {
+          "en": "Hue",
+          "fr": "Teinte"
+        },
+        "min": 0,
+        "max": 1,
+        "step": 0.01
+      }
+    ]
+  },
+  {
+    "id": "set_curtain_position",
+    "title": {
+      "en": "Set curtain position to...",
+      "fr": "Régler la position des rideaux à..."
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "capabilities=windowcoverings_set"
+      },
+      {
+        "type": "range",
+        "name": "position",
+        "title": {
+          "en": "Position",
+          "fr": "Position"
+        },
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "label": "%",
+        "labelMultiplier": 100,
+        "labelDecimals": 0
+      }
+    ]
+  },
+  {
+    "id": "open_curtain",
+    "title": {
+      "en": "Open curtain",
+      "fr": "Ouvrir les rideaux"
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "capabilities=windowcoverings_set"
+      }
+    ]
+  },
+  {
+    "id": "close_curtain",
+    "title": {
+      "en": "Close curtain",
+      "fr": "Fermer les rideaux"
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "capabilities=windowcoverings_set"
+      }
+    ]
+  }
+]
