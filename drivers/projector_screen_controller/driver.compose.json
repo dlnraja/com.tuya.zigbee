@@ -2,14 +2,13 @@
   "name": {
     "en": "Projector Screen Controller"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
     "onoff"
   ],
   "zigbee": {
     "manufacturerName": [
-      "TS0205",
-      "_TZE200_m9skfctm"
+      "TS0041"
     ],
     "productId": [
       "TS0601",

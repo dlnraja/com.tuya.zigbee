@@ -1,5 +1,5 @@
 {
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
     "onoff",
     "button.2",
@@ -75,8 +75,7 @@
       }
     },
     "manufacturerName": [
-      "TS0205",
-      "_TZE200_m9skfctm"
+      "TS0041"
     ]
   },
   "images": {
