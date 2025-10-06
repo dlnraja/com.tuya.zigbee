@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2025-10-05T22:37:45.813Z",
+  "generatedAt": "2025-10-06T08:25:10.578Z",
   "metrics": {
     "drivers": 163,
-    "manufacturers": 1218,
+    "manufacturers": 67,
     "categories": {
       "totalCategories": 11,
       "validFolders": 162,
@@ -11,43 +11,43 @@
     "manufacturerViolations": 163
   },
   "outstandingPrompts": [],
-  "archivePath": "ultimate_system\\archives\\audit_2025-10-05T22-37-44-371Z",
+  "archivePath": "ultimate_system\\archives\\audit_2025-10-06T08-25-09-573Z",
   "manufacturerViolations": [
     {
       "driver": "air_quality_monitor",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "air_quality_monitor_pro",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "ceiling_fan",
-      "count": 1212,
+      "count": 60,
       "sample": [
         "CREATE",
         "IKOHS",
@@ -63,2562 +63,2562 @@
     },
     {
       "driver": "ceiling_light_controller",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "ceiling_light_rgb",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "climate_monitor",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "co2_sensor",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "co2_temp_humidity",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "comprehensive_air_monitor",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "co_detector_pro",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "curtain_motor",
-      "count": 1211,
+      "count": 12,
       "sample": [
-        "_TZ1800_ejwkn2h2",
-        "_TZ1800_fcdjzz3s",
-        "_TZ2000_a476raq2",
-        "_TZ2000_avdnvykf",
-        "_TZ2000_hjsgdkfl",
-        "_TZ2000_xogb73am",
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj"
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "dimmer",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "dimmer_switch_1gang_ac",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "dimmer_switch_3gang_ac",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "dimmer_switch_timer_module",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "doorbell",
-      "count": 1211,
+      "count": 12,
       "sample": [
-        "_TZ1800_ejwkn2h2",
-        "_TZ1800_fcdjzz3s",
-        "_TZ2000_a476raq2",
-        "_TZ2000_avdnvykf",
-        "_TZ2000_hjsgdkfl",
-        "_TZ2000_xogb73am",
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj"
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "door_controller",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "door_lock",
-      "count": 1211,
+      "count": 12,
       "sample": [
-        "_TZ1800_ejwkn2h2",
-        "_TZ1800_fcdjzz3s",
-        "_TZ2000_a476raq2",
-        "_TZ2000_avdnvykf",
-        "_TZ2000_hjsgdkfl",
-        "_TZ2000_xogb73am",
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj"
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "door_window_sensor",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "energy_monitoring_plug",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "energy_monitoring_plug_advanced",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "energy_plug_advanced",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "extension_plug",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "fan_controller",
-      "count": 1211,
+      "count": 12,
       "sample": [
-        "_TZ1800_ejwkn2h2",
-        "_TZ1800_fcdjzz3s",
-        "_TZ2000_a476raq2",
-        "_TZ2000_avdnvykf",
-        "_TZ2000_hjsgdkfl",
-        "_TZ2000_xogb73am",
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj"
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "fingerprint_lock",
-      "count": 1211,
+      "count": 12,
       "sample": [
-        "_TZ1800_ejwkn2h2",
-        "_TZ1800_fcdjzz3s",
-        "_TZ2000_a476raq2",
-        "_TZ2000_avdnvykf",
-        "_TZ2000_hjsgdkfl",
-        "_TZ2000_xogb73am",
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj"
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "formaldehyde_sensor",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "garage_door_controller",
-      "count": 1205,
+      "count": 12,
       "sample": [
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZE200_cowvfni3",
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
         "_TZ3000_0ghwhypc",
         "_TZ3000_0ht8dnxj",
-        "_TZ3000_0s1izerx",
-        "_TZ3000_0s9gukzt",
-        "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_0zrccfgx"
       ]
     },
     {
       "driver": "garage_door_opener",
-      "count": 1211,
+      "count": 12,
       "sample": [
-        "_TZ1800_ejwkn2h2",
-        "_TZ1800_fcdjzz3s",
-        "_TZ2000_a476raq2",
-        "_TZ2000_avdnvykf",
-        "_TZ2000_hjsgdkfl",
-        "_TZ2000_xogb73am",
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj"
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "gas_detector",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "humidity_controller",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "hvac_controller",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "led_strip_advanced",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "led_strip_controller",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "led_strip_controller_pro",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "lux_sensor",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "milight_controller",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "mini",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "mini_switch",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "motion_sensor_battery",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "motion_sensor_mmwave",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "motion_sensor_pir_ac",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "motion_sensor_pir_battery",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "motion_sensor_zigbee_204z",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "multisensor",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "noise_level_sensor",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "outdoor_light_controller",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "outdoor_siren",
-      "count": 1211,
+      "count": 12,
       "sample": [
-        "_TZ1800_ejwkn2h2",
-        "_TZ1800_fcdjzz3s",
-        "_TZ2000_a476raq2",
-        "_TZ2000_avdnvykf",
-        "_TZ2000_hjsgdkfl",
-        "_TZ2000_xogb73am",
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj"
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "pet_feeder",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "pir_sensor_advanced",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "pm25_detector",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "pm25_sensor",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "pool_pump_controller",
-      "count": 1211,
+      "count": 12,
       "sample": [
-        "_TZ1800_ejwkn2h2",
-        "_TZ1800_fcdjzz3s",
-        "_TZ2000_a476raq2",
-        "_TZ2000_avdnvykf",
-        "_TZ2000_hjsgdkfl",
-        "_TZ2000_xogb73am",
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj"
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "power_meter_socket",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "presence_sensor_radar",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "pressure_sensor",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "projector_screen_controller",
-      "count": 1211,
+      "count": 12,
       "sample": [
-        "_TZ1800_ejwkn2h2",
-        "_TZ1800_fcdjzz3s",
-        "_TZ2000_a476raq2",
-        "_TZ2000_avdnvykf",
-        "_TZ2000_hjsgdkfl",
-        "_TZ2000_xogb73am",
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj"
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "radar_motion_sensor_advanced",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "radar_motion_sensor_mmwave",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "radar_motion_sensor_tank_level",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "radiator_valve",
-      "count": 1211,
+      "count": 12,
       "sample": [
-        "_TZ1800_ejwkn2h2",
-        "_TZ1800_fcdjzz3s",
-        "_TZ2000_a476raq2",
-        "_TZ2000_avdnvykf",
-        "_TZ2000_hjsgdkfl",
-        "_TZ2000_xogb73am",
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj"
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "relay_switch_1gang",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "remote_switch",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "rgb_led_controller",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "roller_blind_controller",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "roller_shutter_controller",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "roller_shutter_switch",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "roller_shutter_switch_advanced",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "scene_controller",
-      "count": 1211,
+      "count": 12,
       "sample": [
-        "_TZ1800_ejwkn2h2",
-        "_TZ1800_fcdjzz3s",
-        "_TZ2000_a476raq2",
-        "_TZ2000_avdnvykf",
-        "_TZ2000_hjsgdkfl",
-        "_TZ2000_xogb73am",
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj"
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "scene_controller_2button",
-      "count": 1205,
+      "count": 12,
       "sample": [
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZE200_cowvfni3",
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
         "_TZ3000_0ghwhypc",
         "_TZ3000_0ht8dnxj",
-        "_TZ3000_0s1izerx",
-        "_TZ3000_0s9gukzt",
-        "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_0zrccfgx"
       ]
     },
     {
       "driver": "scene_controller_4button",
-      "count": 1205,
+      "count": 12,
       "sample": [
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZE200_cowvfni3",
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
         "_TZ3000_0ghwhypc",
         "_TZ3000_0ht8dnxj",
-        "_TZ3000_0s1izerx",
-        "_TZ3000_0s9gukzt",
-        "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_0zrccfgx"
       ]
     },
     {
       "driver": "scene_controller_6button",
-      "count": 1205,
+      "count": 12,
       "sample": [
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZE200_cowvfni3",
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
         "_TZ3000_0ghwhypc",
         "_TZ3000_0ht8dnxj",
-        "_TZ3000_0s1izerx",
-        "_TZ3000_0s9gukzt",
-        "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_0zrccfgx"
       ]
     },
     {
       "driver": "scene_controller_8button",
-      "count": 1205,
+      "count": 12,
       "sample": [
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZE200_cowvfni3",
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
         "_TZ3000_0ghwhypc",
         "_TZ3000_0ht8dnxj",
-        "_TZ3000_0s1izerx",
-        "_TZ3000_0s9gukzt",
-        "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_0zrccfgx"
       ]
     },
     {
       "driver": "scene_controller_battery",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "shade_controller",
-      "count": 1211,
+      "count": 12,
       "sample": [
-        "_TZ1800_ejwkn2h2",
-        "_TZ1800_fcdjzz3s",
-        "_TZ2000_a476raq2",
-        "_TZ2000_avdnvykf",
-        "_TZ2000_hjsgdkfl",
-        "_TZ2000_xogb73am",
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj"
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smart_bulb_dimmer",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smart_bulb_rgb",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smart_bulb_tunable",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smart_bulb_white",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smart_curtain_motor",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smart_dimmer_module_1gang",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smart_doorbell",
-      "count": 1211,
+      "count": 12,
       "sample": [
-        "_TZ1800_ejwkn2h2",
-        "_TZ1800_fcdjzz3s",
-        "_TZ2000_a476raq2",
-        "_TZ2000_avdnvykf",
-        "_TZ2000_hjsgdkfl",
-        "_TZ2000_xogb73am",
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj"
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smart_garden_sprinkler",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smart_irrigation_controller",
-      "count": 1211,
+      "count": 12,
       "sample": [
-        "_TZ1800_ejwkn2h2",
-        "_TZ1800_fcdjzz3s",
-        "_TZ2000_a476raq2",
-        "_TZ2000_avdnvykf",
-        "_TZ2000_hjsgdkfl",
-        "_TZ2000_xogb73am",
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj"
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smart_lock",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smart_outlet_monitor",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smart_plug",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smart_plug_energy",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smart_radiator_valve",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smart_smoke_detector_advanced",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smart_spot",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smart_switch_1gang_ac",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smart_switch_1gang_hybrid",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smart_switch_2gang_ac",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smart_switch_2gang_hybrid",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smart_switch_3gang_ac",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smart_switch_3gang_hybrid",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smart_switch_4gang_hybrid",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smart_thermostat",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smart_valve_controller",
-      "count": 1211,
+      "count": 12,
       "sample": [
-        "_TZ1800_ejwkn2h2",
-        "_TZ1800_fcdjzz3s",
-        "_TZ2000_a476raq2",
-        "_TZ2000_avdnvykf",
-        "_TZ2000_hjsgdkfl",
-        "_TZ2000_xogb73am",
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj"
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smart_water_valve",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smoke_detector",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smoke_detector_temp_humidity_advanced",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "smoke_temp_humid_sensor",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "soil_moisture_sensor",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "soil_moisture_temperature_sensor",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "soil_tester_temp_humid",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "solar_panel_controller",
-      "count": 1211,
+      "count": 12,
       "sample": [
-        "_TZ1800_ejwkn2h2",
-        "_TZ1800_fcdjzz3s",
-        "_TZ2000_a476raq2",
-        "_TZ2000_avdnvykf",
-        "_TZ2000_hjsgdkfl",
-        "_TZ2000_xogb73am",
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj"
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "sos_emergency_button",
-      "count": 1205,
+      "count": 12,
       "sample": [
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZE200_cowvfni3",
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
         "_TZ3000_0ghwhypc",
         "_TZ3000_0ht8dnxj",
-        "_TZ3000_0s1izerx",
-        "_TZ3000_0s9gukzt",
-        "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_0zrccfgx"
       ]
     },
     {
       "driver": "switch_1gang_battery",
-      "count": 1205,
+      "count": 12,
       "sample": [
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZE200_cowvfni3",
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
         "_TZ3000_0ghwhypc",
         "_TZ3000_0ht8dnxj",
-        "_TZ3000_0s1izerx",
-        "_TZ3000_0s9gukzt",
-        "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_0zrccfgx"
       ]
     },
     {
       "driver": "switch_2gang_ac",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "switch_2gang_hybrid",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "switch_3gang_battery",
-      "count": 1205,
+      "count": 12,
       "sample": [
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZE200_cowvfni3",
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
         "_TZ3000_0ghwhypc",
         "_TZ3000_0ht8dnxj",
-        "_TZ3000_0s1izerx",
-        "_TZ3000_0s9gukzt",
-        "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_0zrccfgx"
       ]
     },
     {
       "driver": "switch_4gang_ac",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "switch_4gang_battery_cr2032",
-      "count": 1205,
+      "count": 12,
       "sample": [
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZE200_cowvfni3",
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
         "_TZ3000_0ghwhypc",
         "_TZ3000_0ht8dnxj",
-        "_TZ3000_0s1izerx",
-        "_TZ3000_0s9gukzt",
-        "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_0zrccfgx"
       ]
     },
     {
       "driver": "switch_5gang_battery",
-      "count": 1205,
+      "count": 12,
       "sample": [
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZE200_cowvfni3",
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
         "_TZ3000_0ghwhypc",
         "_TZ3000_0ht8dnxj",
-        "_TZ3000_0s1izerx",
-        "_TZ3000_0s9gukzt",
-        "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_0zrccfgx"
       ]
     },
     {
       "driver": "switch_6gang_ac",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "switch_8gang_ac",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "tank_level_monitor",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "temperature_controller",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "temperature_humidity_sensor",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "temperature_sensor",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "temperature_sensor_advanced",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "temp_humid_sensor_advanced",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "temp_humid_sensor_leak_detector",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "temp_humid_sensor_v1w2k9dd",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "temp_sensor_pro",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "thermostat",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "touch_dimmer",
-      "count": 1211,
+      "count": 12,
       "sample": [
-        "_TZ1800_ejwkn2h2",
-        "_TZ1800_fcdjzz3s",
-        "_TZ2000_a476raq2",
-        "_TZ2000_avdnvykf",
-        "_TZ2000_hjsgdkfl",
-        "_TZ2000_xogb73am",
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj"
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "touch_dimmer_1gang",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "touch_switch_1gang",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "touch_switch_2gang",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "touch_switch_3gang",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "touch_switch_4gang",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "tvoc_sensor",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "tvoc_sensor_advanced",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "usb_outlet",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "usb_outlet_advanced",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "vibration_sensor",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "wall_switch_1gang_ac",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "wall_switch_1gang_dc",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "wall_switch_2gang_ac",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "wall_switch_2gang_dc",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "wall_switch_3gang_ac",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "wall_switch_3gang_dc",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "wall_switch_4gang_ac",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "wall_switch_4gang_dc",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "wall_switch_5gang_ac",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "wall_switch_6gang_ac",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "water_leak_detector_advanced",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "water_leak_detector_sq510a",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "water_leak_sensor",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "water_valve",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "water_valve_smart",
-      "count": 1211,
+      "count": 12,
       "sample": [
-        "_TZ1800_ejwkn2h2",
-        "_TZ1800_fcdjzz3s",
-        "_TZ2000_a476raq2",
-        "_TZ2000_avdnvykf",
-        "_TZ2000_hjsgdkfl",
-        "_TZ2000_xogb73am",
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj"
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "wireless_switch",
-      "count": 1205,
+      "count": 12,
       "sample": [
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj",
         "_TZ3000_0s1izerx",
         "_TZ3000_0s9gukzt",
         "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "wireless_switch_1gang_cr2032",
-      "count": 1205,
+      "count": 12,
       "sample": [
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZE200_cowvfni3",
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
         "_TZ3000_0ghwhypc",
         "_TZ3000_0ht8dnxj",
-        "_TZ3000_0s1izerx",
-        "_TZ3000_0s9gukzt",
-        "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_0zrccfgx"
       ]
     },
     {
       "driver": "wireless_switch_2gang_cr2032",
-      "count": 1205,
+      "count": 12,
       "sample": [
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZE200_cowvfni3",
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
         "_TZ3000_0ghwhypc",
         "_TZ3000_0ht8dnxj",
-        "_TZ3000_0s1izerx",
-        "_TZ3000_0s9gukzt",
-        "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_0zrccfgx"
       ]
     },
     {
       "driver": "wireless_switch_3gang_cr2032",
-      "count": 1205,
+      "count": 12,
       "sample": [
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZE200_cowvfni3",
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
         "_TZ3000_0ghwhypc",
         "_TZ3000_0ht8dnxj",
-        "_TZ3000_0s1izerx",
-        "_TZ3000_0s9gukzt",
-        "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_0zrccfgx"
       ]
     },
     {
       "driver": "wireless_switch_4gang_cr2032",
-      "count": 1205,
+      "count": 12,
       "sample": [
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZE200_cowvfni3",
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
         "_TZ3000_0ghwhypc",
         "_TZ3000_0ht8dnxj",
-        "_TZ3000_0s1izerx",
-        "_TZ3000_0s9gukzt",
-        "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_0zrccfgx"
       ]
     },
     {
       "driver": "wireless_switch_4gang_cr2450",
-      "count": 1205,
+      "count": 12,
       "sample": [
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZE200_cowvfni3",
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
         "_TZ3000_0ghwhypc",
         "_TZ3000_0ht8dnxj",
-        "_TZ3000_0s1izerx",
-        "_TZ3000_0s9gukzt",
-        "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_0zrccfgx"
       ]
     },
     {
       "driver": "wireless_switch_5gang_cr2032",
-      "count": 1205,
+      "count": 12,
       "sample": [
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZE200_cowvfni3",
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
         "_TZ3000_0ghwhypc",
         "_TZ3000_0ht8dnxj",
-        "_TZ3000_0s1izerx",
-        "_TZ3000_0s9gukzt",
-        "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_0zrccfgx"
       ]
     },
     {
       "driver": "wireless_switch_6gang_cr2032",
-      "count": 1205,
+      "count": 12,
       "sample": [
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZE200_cowvfni3",
         "_TZ3000_01gpyda5",
         "_TZ3000_0dumfk2z",
         "_TZ3000_0ghwhypc",
         "_TZ3000_0ht8dnxj",
-        "_TZ3000_0s1izerx",
-        "_TZ3000_0s9gukzt",
-        "_TZ3000_0zfrhq4i",
-        "_TZ3000_0zrccfgx",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_18ejxno0"
+        "_TZ3000_0zrccfgx"
       ]
     },
     {
       "driver": "zbbridge",
-      "count": 1211,
+      "count": 12,
       "sample": [
-        "_TZ1800_ejwkn2h2",
-        "_TZ1800_fcdjzz3s",
-        "_TZ2000_a476raq2",
-        "_TZ2000_avdnvykf",
-        "_TZ2000_hjsgdkfl",
-        "_TZ2000_xogb73am",
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj"
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     },
     {
       "driver": "zigbee_gateway_hub",
-      "count": 1211,
+      "count": 12,
       "sample": [
-        "_TZ1800_ejwkn2h2",
-        "_TZ1800_fcdjzz3s",
-        "_TZ2000_a476raq2",
-        "_TZ2000_avdnvykf",
-        "_TZ2000_hjsgdkfl",
-        "_TZ2000_xogb73am",
-        "_TZ3000_01gpyda5",
-        "_TZ3000_0dumfk2z",
-        "_TZ3000_0ghwhypc",
-        "_TZ3000_0ht8dnxj"
+        "_TZ3000_0s1izerx",
+        "_TZ3000_0s9gukzt",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_18ejxno0",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_46t1rvdu",
+        "_TZ3000_49qchf10"
       ]
     }
   ]
