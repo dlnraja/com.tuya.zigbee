@@ -2,7 +2,7 @@
   "name": {
     "en": "Dimmer Switch Timer Module"
   },
-  "class": "light",
+  "class": "socket",
   "capabilities": [
     "onoff",
     "dim"

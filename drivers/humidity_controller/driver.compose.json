@@ -2,7 +2,7 @@
   "name": {
     "en": "humidity controller"
   },
-  "class": "button",
+  "class": "sensor",
   "capabilities": [
     "onoff",
     "measure_temperature",
