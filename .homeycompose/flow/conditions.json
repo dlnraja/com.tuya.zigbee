@@ -1,0 +1,162 @@
+[
+  {
+    "id": "is_on",
+    "title": {
+      "en": "Device is !{{on|off}}",
+      "fr": "L'appareil est !{{allumé|éteint}}"
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "capabilities=onoff"
+      }
+    ]
+  },
+  {
+    "id": "alarm_active",
+    "title": {
+      "en": "Alarm is !{{active|inactive}}",
+      "fr": "L'alarme est !{{active|inactive}}"
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "capabilities=alarm_motion|alarm_contact|alarm_smoke|alarm_co|alarm_water"
+      }
+    ]
+  },
+  {
+    "id": "temperature_above",
+    "title": {
+      "en": "Temperature is above...",
+      "fr": "La température est au-dessus de..."
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "capabilities=measure_temperature"
+      },
+      {
+        "type": "number",
+        "name": "temperature",
+        "title": {
+          "en": "Temperature (°C)",
+          "fr": "Température (°C)"
+        },
+        "placeholder": {
+          "en": "25",
+          "fr": "25"
+        }
+      }
+    ]
+  },
+  {
+    "id": "temperature_below",
+    "title": {
+      "en": "Temperature is below...",
+      "fr": "La température est en-dessous de..."
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "capabilities=measure_temperature"
+      },
+      {
+        "type": "number",
+        "name": "temperature",
+        "title": {
+          "en": "Temperature (°C)",
+          "fr": "Température (°C)"
+        },
+        "placeholder": {
+          "en": "18",
+          "fr": "18"
+        }
+      }
+    ]
+  },
+  {
+    "id": "humidity_above",
+    "title": {
+      "en": "Humidity is above...",
+      "fr": "L'humidité est au-dessus de..."
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "capabilities=measure_humidity"
+      },
+      {
+        "type": "number",
+        "name": "humidity",
+        "title": {
+          "en": "Humidity (%)",
+          "fr": "Humidité (%)"
+        },
+        "placeholder": {
+          "en": "70",
+          "fr": "70"
+        }
+      }
+    ]
+  },
+  {
+    "id": "battery_below",
+    "title": {
+      "en": "Battery is below...",
+      "fr": "La batterie est en-dessous de..."
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "capabilities=measure_battery"
+      },
+      {
+        "type": "number",
+        "name": "battery",
+        "title": {
+          "en": "Battery level (%)",
+          "fr": "Niveau batterie (%)"
+        },
+        "placeholder": {
+          "en": "20",
+          "fr": "20"
+        },
+        "min": 0,
+        "max": 100
+      }
+    ]
+  },
+  {
+    "id": "power_above",
+    "title": {
+      "en": "Power is above...",
+      "fr": "La puissance est au-dessus de..."
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "capabilities=measure_power"
+      },
+      {
+        "type": "number",
+        "name": "power",
+        "title": {
+          "en": "Power (W)",
+          "fr": "Puissance (W)"
+        },
+        "placeholder": {
+          "en": "100",
+          "fr": "100"
+        }
+      }
+    ]
+  }
+]
