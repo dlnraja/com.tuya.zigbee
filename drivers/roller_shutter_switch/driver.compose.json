@@ -2,7 +2,7 @@
   "name": {
     "en": "Roller Shutter Switch"
   },
-  "class": "socket",
+  "class": "windowcoverings",
   "capabilities": [
     "windowcoverings_closed",
     "windowcoverings_set",
