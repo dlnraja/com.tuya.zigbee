@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-05T22:37:46.862Z",
+  "generatedAt": "2025-10-06T08:25:11.437Z",
   "metrics": {
     "sourcesProcessed": [
       {
@@ -123,6 +123,10 @@
         "type": "root_reference"
       },
       {
+        "file": ".external_sources\\advanced_scrape_1759737182433.json",
+        "type": "external"
+      },
+      {
         "file": ".external_sources\\aiChat-analysis.json",
         "type": "external"
       },
@@ -227,6 +231,10 @@
         "type": "external"
       },
       {
+        "file": ".external_sources\\scraper_cache.json",
+        "type": "external"
+      },
+      {
         "file": ".external_sources\\zigbee2mqtt_supported_devices_1759486662968.json",
         "type": "external"
       },
@@ -260,7 +268,7 @@
     "clusters": 0,
     "dps": 0,
     "batteries": 0,
-    "rejected": 34
+    "rejected": 37
   },
   "enrichedManufacturers": [
     {
@@ -210065,6 +210073,7 @@
       "dps": [],
       "batteries": [],
       "sources": [
+        ".external_sources\\advanced_scrape_1759737182433.json",
         ".external_sources\\home_assistant_zha_tuya_init_1759486663525.json",
         ".external_sources\\home_assistant_zha_tuya_init_1759489781023.json",
         ".external_sources\\home_assistant_zha_tuya_init_1759489933006.json",
@@ -370814,6 +370823,30 @@
       "reason": "missing_valid_manufacturer",
       "sample": [
         "487"
+      ]
+    },
+    {
+      "file": ".external_sources\\advanced_scrape_1759737182433.json",
+      "context": "sources.z2m_converters",
+      "reason": "missing_valid_manufacturer",
+      "sample": [
+        "0"
+      ]
+    },
+    {
+      "file": ".external_sources\\advanced_scrape_1759737182433.json",
+      "context": "sources.zha_quirks",
+      "reason": "missing_valid_manufacturer",
+      "sample": [
+        "1"
+      ]
+    },
+    {
+      "file": ".external_sources\\advanced_scrape_1759737182433.json",
+      "context": "sources.johan_devices",
+      "reason": "missing_valid_manufacturer",
+      "sample": [
+        "0"
       ]
     },
     {
