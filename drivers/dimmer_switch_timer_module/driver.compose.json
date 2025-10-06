@@ -71,11 +71,6 @@
     "large": "./assets/large.png"
   },
   "capabilitiesOptions": {},
-  "energy": {
-    "approximation": {
-      "usageConstant": 10
-    }
-  },
   "platforms": [
     "local"
   ]

@@ -8,12 +8,6 @@
     "measure_luminance",
     "measure_battery"
   ],
-  "energy": {
-    "batteries": [
-      "CR123A",
-      "AA"
-    ]
-  },
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_mmtwjmaq",
@@ -78,5 +72,11 @@
   "capabilitiesOptions": {},
   "platforms": [
     "local"
-  ]
+  ],
+  "energy": {
+    "batteries": [
+      "AAA",
+      "CR2032"
+    ]
+  }
 }

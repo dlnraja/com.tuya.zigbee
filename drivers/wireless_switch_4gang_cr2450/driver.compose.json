@@ -34,12 +34,6 @@
       }
     }
   },
-  "energy": {
-    "batteries": [
-      "CR2450",
-      "CR2032"
-    ]
-  },
   "zigbee": {
     "manufacturerName": [
       "TS0041",
@@ -112,5 +106,10 @@
   },
   "platforms": [
     "local"
-  ]
+  ],
+  "energy": {
+    "batteries": [
+      "CR2450"
+    ]
+  }
 }

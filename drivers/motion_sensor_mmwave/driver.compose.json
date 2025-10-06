@@ -75,12 +75,12 @@
       }
     }
   },
+  "settings": [],
+  "capabilitiesOptions": {},
   "energy": {
     "batteries": [
-      "CR2032",
-      "AA"
+      "AAA",
+      "CR2032"
     ]
-  },
-  "settings": [],
-  "capabilitiesOptions": {}
+  }
 }

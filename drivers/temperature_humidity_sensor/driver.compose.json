@@ -11,11 +11,6 @@
     "alarm_battery",
     "measure_luminance"
   ],
-  "energy": {
-    "batteries": [
-      "CR2032"
-    ]
-  },
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_fllyghyj",
@@ -114,5 +109,11 @@
         "en": "%"
       }
     }
+  },
+  "energy": {
+    "batteries": [
+      "AAA",
+      "CR2032"
+    ]
   }
 }

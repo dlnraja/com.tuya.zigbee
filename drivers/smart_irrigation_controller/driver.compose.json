@@ -9,12 +9,6 @@
     "alarm_water",
     "measure_battery"
   ],
-  "energy": {
-    "batteries": [
-      "CR2032",
-      "AA"
-    ]
-  },
   "zigbee": {
     "manufacturerName": [
       "TS0205",
@@ -66,5 +60,10 @@
   "capabilitiesOptions": {},
   "platforms": [
     "local"
-  ]
+  ],
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  }
 }

@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
@@ -222,11 +222,6 @@
         "small": "/drivers/air_quality_monitor/assets/small.png",
         "large": "/drivers/air_quality_monitor/assets/large.png"
       },
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "platforms": [
         "local"
       ],
@@ -366,11 +361,6 @@
         "small": "/drivers/air_quality_monitor_pro/assets/small.png",
         "large": "/drivers/air_quality_monitor_pro/assets/large.png"
       },
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "platforms": [
         "local"
       ],
@@ -501,11 +491,6 @@
       "images": {
         "small": "/drivers/ceiling_light_controller/assets/small.png",
         "large": "/drivers/ceiling_light_controller/assets/large.png"
-      },
-      "energy": {
-        "approximation": {
-          "usageConstant": 10
-        }
       },
       "platforms": [
         "local"
@@ -646,7 +631,6 @@
         "small": "/drivers/ceiling_light_rgb/assets/small.png",
         "large": "/drivers/ceiling_light_rgb/assets/large.png"
       },
-      "energy": {},
       "platforms": [
         "local"
       ],
@@ -970,11 +954,6 @@
         "small": "/drivers/climate_monitor/assets/small.png",
         "large": "/drivers/climate_monitor/assets/large.png"
       },
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "platforms": [
         "local"
       ],
@@ -1119,11 +1098,6 @@
         "small": "/drivers/co2_sensor/assets/small.png",
         "large": "/drivers/co2_sensor/assets/large.png"
       },
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "platforms": [
         "local"
       ],
@@ -1266,11 +1240,6 @@
         "small": "/drivers/co2_temp_humidity/assets/small.png",
         "large": "/drivers/co2_temp_humidity/assets/large.png"
       },
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "platforms": [
         "local"
       ],
@@ -1286,11 +1255,6 @@
         "measure_co",
         "measure_battery"
       ],
-      "energy": {
-        "batteries": [
-          "PP3"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -1706,11 +1670,6 @@
           }
         }
       },
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "id": "curtain_motor"
     },
     {
@@ -1840,11 +1799,6 @@
       "connectivity": [
         "zigbee"
       ],
-      "energy": {
-        "approximation": {
-          "usageConstant": 10
-        }
-      },
       "id": "dimmer"
     },
     {
@@ -2032,11 +1986,6 @@
         "large": "/drivers/dimmer_switch_1gang_ac/assets/large.png"
       },
       "capabilitiesOptions": {},
-      "energy": {
-        "approximation": {
-          "usageConstant": 10
-        }
-      },
       "platforms": [
         "local"
       ],
@@ -2265,11 +2214,6 @@
           }
         }
       },
-      "energy": {
-        "approximation": {
-          "usageConstant": 10
-        }
-      },
       "platforms": [
         "local"
       ],
@@ -2460,11 +2404,6 @@
         "large": "/drivers/dimmer_switch_timer_module/assets/large.png"
       },
       "capabilitiesOptions": {},
-      "energy": {
-        "approximation": {
-          "usageConstant": 10
-        }
-      },
       "platforms": [
         "local"
       ],
@@ -2608,14 +2547,6 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "energy": {
-        "approximation": {
-          "usageConstant": 10
-        },
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "id": "door_controller"
     },
     {
@@ -2715,12 +2646,6 @@
           }
         }
       },
-      "energy": {
-        "batteries": [
-          "AA",
-          "CR2032"
-        ]
-      },
       "settings": [],
       "capabilitiesOptions": {},
       "id": "door_lock"
@@ -2739,11 +2664,6 @@
         "alarm_contact",
         "alarm_battery"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -2996,12 +2916,6 @@
           }
         }
       },
-      "energy": {
-        "batteries": [
-          "AA",
-          "CR2032"
-        ]
-      },
       "settings": [],
       "capabilitiesOptions": {
         "volume_set": {
@@ -3189,11 +3103,6 @@
       "images": {
         "small": "/drivers/energy_monitoring_plug/assets/small.png",
         "large": "/drivers/energy_monitoring_plug/assets/large.png"
-      },
-      "energy": {
-        "approximation": {
-          "usageConstant": 5
-        }
       },
       "platforms": [
         "local"
@@ -3854,11 +3763,6 @@
         "measure_battery",
         "alarm_generic"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -4123,11 +4027,6 @@
           }
         }
       },
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "id": "formaldehyde_sensor"
     },
     {
@@ -4256,11 +4155,6 @@
       "platforms": [
         "local"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "id": "garage_door_controller"
     },
     {
@@ -4368,12 +4262,6 @@
             "en": "Follow the pairing instructions for your Garage Door Opener."
           }
         }
-      },
-      "energy": {
-        "batteries": [
-          "AA",
-          "CR2032"
-        ]
       },
       "settings": [],
       "capabilitiesOptions": {},
@@ -4700,11 +4588,6 @@
       "platforms": [
         "local"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "id": "humidity_controller"
     },
     {
@@ -5396,11 +5279,6 @@
           }
         }
       },
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "id": "lux_sensor"
     },
     {
@@ -5544,7 +5422,6 @@
         "onoff",
         "dim"
       ],
-      "energy": {},
       "images": {
         "small": "/drivers/mini/assets/small.png",
         "large": "/drivers/mini/assets/large.png"
@@ -5890,11 +5767,6 @@
           }
         }
       },
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "settings": [],
       "capabilitiesOptions": {},
       "id": "mini_switch"
@@ -6042,12 +5914,6 @@
       "platforms": [
         "local"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "CR2450"
-        ]
-      },
       "id": "motion_sensor_battery"
     },
     {
@@ -6191,12 +6057,6 @@
             ]
           }
         }
-      },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
       },
       "settings": [],
       "capabilitiesOptions": {},
@@ -6381,11 +6241,6 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "id": "motion_sensor_pir_ac"
     },
     {
@@ -6399,11 +6254,6 @@
         "alarm_battery",
         "measure_luminance"
       ],
-      "energy": {
-        "batteries": [
-          "CR2450"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -6555,12 +6405,6 @@
             "en": "Motion"
           }
         }
-      },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -6725,11 +6569,6 @@
         "alarm_motion",
         "measure_luminance"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -7081,11 +6920,6 @@
           }
         }
       },
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "id": "noise_level_sensor"
     },
     {
@@ -7236,11 +7070,6 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "id": "outdoor_light_controller"
     },
     {
@@ -7340,12 +7169,6 @@
             "en": "Follow the pairing instructions for your Outdoor Siren."
           }
         }
-      },
-      "energy": {
-        "batteries": [
-          "AA",
-          "CR2032"
-        ]
       },
       "settings": [],
       "capabilitiesOptions": {
@@ -7484,11 +7307,6 @@
           }
         }
       },
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "settings": [],
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -7520,12 +7338,6 @@
         "measure_luminance",
         "measure_battery"
       ],
-      "energy": {
-        "batteries": [
-          "CR123A",
-          "AA"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -7964,11 +7776,6 @@
           }
         }
       },
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "id": "pm25_sensor"
     },
     {
@@ -8399,11 +8206,6 @@
           }
         }
       },
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "id": "presence_sensor_radar"
     },
     {
@@ -8417,11 +8219,6 @@
         "alarm_motion",
         "measure_luminance"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -8723,12 +8520,6 @@
         "measure_luminance",
         "measure_battery"
       ],
-      "energy": {
-        "batteries": [
-          "AA",
-          "CR123A"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -8884,12 +8675,6 @@
           }
         }
       },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -9037,12 +8822,6 @@
         "measure_luminance",
         "measure_battery"
       ],
-      "energy": {
-        "batteries": [
-          "AA",
-          "CR123A"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -9184,11 +8963,6 @@
         "measure_battery",
         "onoff"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_0s1izerx",
@@ -9312,11 +9086,6 @@
         "measure_power",
         "dim"
       ],
-      "energy": {
-        "approximation": {
-          "usageConstant": 5
-        }
-      },
       "images": {
         "small": "/drivers/relay_switch_1gang/assets/small.png",
         "large": "/drivers/relay_switch_1gang/assets/large.png"
@@ -9705,11 +9474,6 @@
           }
         }
       },
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "settings": [],
       "capabilitiesOptions": {},
       "id": "remote_switch"
@@ -9970,11 +9734,6 @@
           }
         }
       },
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "id": "roller_blind_controller"
     },
     {
@@ -10006,11 +9765,6 @@
             "en": "%"
           }
         }
-      },
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -10320,11 +10074,6 @@
       "platforms": [
         "local"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "id": "roller_shutter_switch"
     },
     {
@@ -10543,11 +10292,6 @@
       "platforms": [
         "local"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "id": "roller_shutter_switch_advanced"
     },
     {
@@ -10751,11 +10495,6 @@
         "measure_battery",
         "alarm_battery"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "zigbee": {
         "productId": [
           "TS0001",
@@ -10987,11 +10726,6 @@
         "measure_battery",
         "alarm_battery"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "zigbee": {
         "productId": [
           "TS0041",
@@ -11218,11 +10952,6 @@
         "measure_battery",
         "alarm_battery"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "zigbee": {
         "productId": [
           "TS0001",
@@ -11458,11 +11187,6 @@
         "measure_battery",
         "alarm_battery"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "zigbee": {
         "productId": [
           "TS0001",
@@ -12780,11 +12504,6 @@
           }
         }
       },
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "id": "smart_curtain_motor"
     },
     {
@@ -12803,11 +12522,6 @@
           "opts": {
             "duration": true
           }
-        }
-      },
-      "energy": {
-        "approximation": {
-          "usageConstant": 0.5
         }
       },
       "zigbee": {
@@ -13094,12 +12808,6 @@
           }
         }
       },
-      "energy": {
-        "batteries": [
-          "AA",
-          "CR2032"
-        ]
-      },
       "settings": [],
       "capabilitiesOptions": {
         "volume_set": {
@@ -13237,11 +12945,6 @@
           }
         }
       },
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "settings": [],
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -13274,12 +12977,6 @@
         "alarm_water",
         "measure_battery"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_0s1izerx",
@@ -13472,12 +13169,6 @@
       "images": {
         "small": "/drivers/smart_lock/assets/small.png",
         "large": "/drivers/smart_lock/assets/large.png"
-      },
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
       },
       "community": {
         "sources": [
@@ -14131,11 +13822,6 @@
             "en": "Smoke Alarm"
           }
         }
-      },
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -16076,11 +15762,6 @@
       "platforms": [
         "local"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "id": "smart_thermostat"
     },
     {
@@ -16183,11 +15864,6 @@
       "platforms": [
         "local"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "id": "smart_valve_controller"
     },
     {
@@ -16312,11 +15988,6 @@
           }
         }
       },
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "id": "smart_water_valve"
     },
     {
@@ -16330,11 +16001,6 @@
         "measure_temperature",
         "alarm_motion"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -16505,12 +16171,6 @@
         "measure_battery",
         "alarm_battery"
       ],
-      "energy": {
-        "batteries": [
-          "CR123A",
-          "AA"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -16676,12 +16336,6 @@
         "alarm_motion",
         "measure_luminance"
       ],
-      "energy": {
-        "batteries": [
-          "CR123A",
-          "AA"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -16843,11 +16497,6 @@
         "alarm_motion",
         "measure_luminance"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -17050,11 +16699,6 @@
           }
         }
       },
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -17204,12 +16848,6 @@
         "measure_battery",
         "alarm_battery"
       ],
-      "energy": {
-        "batteries": [
-          "CR123A",
-          "AA"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -17370,11 +17008,6 @@
         "measure_battery",
         "onoff"
       ],
-      "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_0s1izerx",
@@ -17483,11 +17116,6 @@
         "alarm_generic",
         "measure_battery"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -17697,11 +17325,6 @@
         "onoff",
         "dim"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -18103,12 +17726,6 @@
         "onoff",
         "onoff.gang2"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AAA"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -18321,12 +17938,6 @@
         "onoff.gang2",
         "onoff.gang3"
       ],
-      "energy": {
-        "batteries": [
-          "CR2450",
-          "CR2032"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -18768,11 +18379,6 @@
         "onoff",
         "dim"
       ],
-      "energy": {
-        "batteries": [
-          "CR2450"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -18986,12 +18592,6 @@
         "onoff",
         "dim"
       ],
-      "energy": {
-        "batteries": [
-          "CR2450",
-          "AAA"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -19592,12 +19192,6 @@
         "alarm_water",
         "measure_battery"
       ],
-      "energy": {
-        "batteries": [
-          "CR123A",
-          "AA"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -19757,12 +19351,6 @@
         "alarm_battery",
         "alarm_motion"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AAA"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -19926,11 +19514,6 @@
         "measure_luminance",
         "alarm_water"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -20097,12 +19680,6 @@
         "alarm_motion",
         "measure_luminance"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AAA"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -20409,11 +19986,6 @@
       "platforms": [
         "local"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "id": "temp_sensor_pro"
     },
     {
@@ -20584,11 +20156,6 @@
           }
         }
       },
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "id": "temperature_controller"
     },
     {
@@ -20604,11 +20171,6 @@
         "alarm_battery",
         "measure_luminance"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -20925,11 +20487,6 @@
           }
         }
       },
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "settings": [],
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -20964,11 +20521,6 @@
         "alarm_motion",
         "measure_luminance"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -21246,12 +20798,6 @@
       "connectivity": [
         "zigbee"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AA"
-        ]
-      },
       "capabilitiesOptions": {
         "measure_temperature": {
           "title": {
@@ -22768,11 +22314,6 @@
           }
         }
       },
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "id": "tvoc_sensor"
     },
     {
@@ -22789,12 +22330,6 @@
         "alarm_motion",
         "measure_luminance"
       ],
-      "energy": {
-        "batteries": [
-          "CR123A",
-          "AA"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -23278,11 +22813,6 @@
         "alarm_motion",
         "measure_luminance"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -25850,12 +25380,6 @@
         "alarm_battery",
         "measure_battery"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "AAA"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -26012,11 +25536,6 @@
         "measure_temperature",
         "alarm_battery"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -26161,11 +25680,6 @@
         "alarm_water",
         "alarm_battery"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -26443,11 +25957,6 @@
           }
         }
       },
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "id": "water_valve"
     },
     {
@@ -26463,12 +25972,6 @@
         "measure_temperature",
         "alarm_battery"
       ],
-      "energy": {
-        "batteries": [
-          "CR123A",
-          "AA"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_0s1izerx",
@@ -26761,11 +26264,6 @@
           }
         }
       },
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "settings": [],
       "capabilitiesOptions": {},
       "id": "wireless_switch"
@@ -26781,11 +26279,6 @@
         "onoff",
         "dim"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "images": {
         "small": "/drivers/wireless_switch_1gang_cr2032/assets/small.png",
         "large": "/drivers/wireless_switch_1gang_cr2032/assets/large.png"
@@ -26984,13 +26477,6 @@
         "onoff",
         "onoff.gang2"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "CR2450",
-          "AA"
-        ]
-      },
       "zigbee": {
         "productId": [
           "TS0001",
@@ -27228,13 +26714,6 @@
         "onoff.gang2",
         "onoff.gang3"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "CR2450",
-          "AA"
-        ]
-      },
       "zigbee": {
         "productId": [
           "TS0001",
@@ -27489,13 +26968,6 @@
         "alarm_battery",
         "dim"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032",
-          "CR2450",
-          "AA"
-        ]
-      },
       "zigbee": {
         "productId": [
           "TS0001",
@@ -27742,12 +27214,6 @@
           }
         }
       },
-      "energy": {
-        "batteries": [
-          "CR2450",
-          "CR2032"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_01gpyda5",
@@ -27963,11 +27429,6 @@
         "alarm_battery",
         "dim"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "zigbee": {
         "productId": [
           "TS0001",
@@ -28203,11 +27664,6 @@
         "alarm_battery",
         "dim"
       ],
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
-      },
       "zigbee": {
         "productId": [
           "TS0001",
@@ -28438,7 +27894,6 @@
       "capabilities": [
         "onoff"
       ],
-      "energy": {},
       "images": {
         "small": "/drivers/zbbridge/assets/small.png",
         "large": "/drivers/zbbridge/assets/large.png"
