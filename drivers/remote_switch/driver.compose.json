@@ -2,7 +2,7 @@
   "name": {
     "en": "Remote Switch"
   },
-  "class": "button",
+  "class": "socket",
   "capabilities": [
     "onoff",
     "measure_battery",
@@ -21,7 +21,9 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "TS0041"
+      "TS0001",
+      "TS0041",
+      "_TZ3000_qzjcsmar"
     ],
     "productId": [
       "TS0001",
