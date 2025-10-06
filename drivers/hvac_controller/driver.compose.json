@@ -2,15 +2,14 @@
   "name": {
     "en": "Hvac Controller"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
     "target_temperature",
     "measure_temperature"
   ],
   "zigbee": {
     "manufacturerName": [
-      "TS0205",
-      "_TZE200_m9skfctm"
+      "TS0041"
     ],
     "productId": [
       "TS0601",

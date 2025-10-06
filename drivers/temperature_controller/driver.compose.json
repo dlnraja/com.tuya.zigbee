@@ -2,7 +2,7 @@
   "name": {
     "en": "Temperature Controller"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
     "target_temperature",
     "measure_temperature",
@@ -12,11 +12,7 @@
   ],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_fllyghyj",
-      "TS0201",
-      "TS0601",
-      "_TZE200_cwbvmsar",
-      "_TZE200_bjawzodf"
+      "TS0041"
     ],
     "productId": [
       "TS0601",

@@ -2,7 +2,7 @@
   "name": {
     "en": "Pool Pump Controller"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
     "onoff",
     "measure_power",
@@ -11,8 +11,7 @@
   ],
   "zigbee": {
     "manufacturerName": [
-      "TS0205",
-      "_TZE200_m9skfctm"
+      "TS0041"
     ],
     "productId": [
       "TS0601",

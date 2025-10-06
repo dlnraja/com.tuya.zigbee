@@ -2,7 +2,7 @@
   "name": {
     "en": "Roller Shutter Controller"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
     "windowcoverings_set",
     "windowcoverings_state",
@@ -35,8 +35,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "TS0205",
-      "_TZE200_m9skfctm"
+      "TS0041"
     ],
     "productId": [
       "TS130F",

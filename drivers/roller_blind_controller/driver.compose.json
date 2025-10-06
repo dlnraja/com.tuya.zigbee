@@ -2,7 +2,7 @@
   "name": {
     "en": "Curtain Motor"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
     "windowcoverings_state",
     "dim",
@@ -12,8 +12,7 @@
   ],
   "zigbee": {
     "manufacturerName": [
-      "TS0205",
-      "_TZE200_m9skfctm"
+      "TS0041"
     ],
     "productId": [
       "TS130F",

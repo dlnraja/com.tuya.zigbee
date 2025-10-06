@@ -2,7 +2,7 @@
   "name": {
     "en": "Solar Panel Controller"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
     "measure_power",
     "measure_voltage",
@@ -17,8 +17,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "TS0205",
-      "_TZE200_m9skfctm"
+      "TS0041"
     ],
     "productId": [
       "TS0601",
