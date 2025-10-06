@@ -6,7 +6,6 @@ on:
     paths-ignore:
       - '**.md'
       - 'references/**'
-      - '.github/**'
   workflow_dispatch:
 
 jobs:
@@ -84,23 +83,57 @@ jobs:
         echo "🚀 Publishing to Homey App Store..."
         echo "Version: ${{ steps.version.outputs.version }}"
         
-        # Auto-respond to prompts
-        {
-          sleep 1 && echo "y" &&      # Uncommitted changes? Yes
-          sleep 1 && echo "y" &&      # Update version? Yes
-          sleep 1 && echo "" &&       # Version type? [Enter] = patch
-          sleep 1 && echo "Fix: Settings infinite loop + homey-zigbeedriver dependency + 28 flow cards" &&
-          sleep 1 && echo "y" &&      # Commit? Yes
-          sleep 1 && echo "y"         # Push? Yes
-        } | homey app publish
+        # Configure Git for commits
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
         
-        PUBLISH_EXIT=$?
-        if [ $PUBLISH_EXIT -eq 0 ]; then
-          echo "✅ Publication completed successfully"
-        else
-          echo "⚠️ Publication may need manual intervention"
-          echo "Exit code: $PUBLISH_EXIT"
-        fi
+        # Create expect script for automation
+        cat > publish.exp << 'EOF'
+        #!/usr/bin/expect -f
+        set timeout 60
+        
+        spawn homey app publish
+        
+        expect {
+          "uncommitted changes" {
+            send "y\r"
+            exp_continue
+          }
+          "update your app's version number" {
+            send "y\r"
+            exp_continue
+          }
+          "Select the desired version number" {
+            send "\r"
+            exp_continue
+          }
+          "What's new in" {
+            send "Fix: Settings infinite loop + homey-zigbeedriver dependency + 28 flow cards\r"
+            exp_continue
+          }
+          "Do you want to commit" {
+            send "y\r"
+            exp_continue
+          }
+          "Do you want to push" {
+            send "y\r"
+            exp_continue
+          }
+          eof
+        }
+        EOF
+        
+        chmod +x publish.exp
+        
+        # Install expect
+        sudo apt-get update -qq
+        sudo apt-get install -y expect
+        
+        # Run expect script
+        ./publish.exp || {
+          echo "⚠️ Expect script failed, trying direct method..."
+          echo -e "y\ny\n\nFix: Settings infinite loop + homey-zigbeedriver dependency + 28 flow cards\ny\ny" | homey app publish || true
+        }
         
         echo "🔗 Check status: https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee"
         
