@@ -1,0 +1,1721 @@
+{
+  "timestamp": "2025-10-06T08:11:52.842Z",
+  "totalDrivers": 163,
+  "categories": {
+    "sensors": [
+      {
+        "id": "air_quality_monitor",
+        "class": "sensor",
+        "capabilities": [
+          "onoff"
+        ]
+      },
+      {
+        "id": "air_quality_monitor_pro",
+        "class": "sensor",
+        "capabilities": [
+          "measure_co2",
+          "measure_temperature",
+          "measure_battery",
+          "alarm_battery"
+        ]
+      },
+      {
+        "id": "climate_monitor",
+        "class": "sensor",
+        "capabilities": [
+          "onoff",
+          "measure_temperature",
+          "measure_humidity",
+          "measure_battery",
+          "alarm_battery",
+          "target_temperature",
+          "thermostat_mode"
+        ]
+      },
+      {
+        "id": "co2_sensor",
+        "class": "sensor",
+        "capabilities": [
+          "measure_co2",
+          "measure_temperature",
+          "alarm_motion",
+          "measure_luminance",
+          "measure_battery"
+        ]
+      },
+      {
+        "id": "co2_temp_humidity",
+        "class": "sensor",
+        "capabilities": [
+          "onoff",
+          "measure_temperature",
+          "measure_humidity",
+          "measure_battery",
+          "alarm_battery"
+        ]
+      },
+      {
+        "id": "co_detector_pro",
+        "class": "sensor",
+        "capabilities": [
+          "alarm_co",
+          "measure_co",
+          "measure_battery"
+        ]
+      },
+      {
+        "id": "comprehensive_air_monitor",
+        "class": "sensor",
+        "capabilities": [
+          "measure_temperature",
+          "measure_humidity",
+          "measure_co2",
+          "measure_pm25"
+        ]
+      },
+      {
+        "id": "door_window_sensor",
+        "class": "sensor",
+        "capabilities": [
+          "onoff",
+          "measure_battery",
+          "measure_temperature",
+          "alarm_motion",
+          "measure_luminance",
+          "alarm_contact",
+          "alarm_battery"
+        ]
+      },
+      {
+        "id": "energy_monitoring_plug",
+        "class": "socket",
+        "capabilities": [
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "measure_voltage",
+          "measure_current"
+        ]
+      },
+      {
+        "id": "energy_monitoring_plug_advanced",
+        "class": "socket",
+        "capabilities": [
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "measure_voltage",
+          "measure_current"
+        ]
+      },
+      {
+        "id": "energy_plug_advanced",
+        "class": "sensor",
+        "capabilities": [
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "measure_voltage",
+          "measure_current"
+        ]
+      },
+      {
+        "id": "formaldehyde_sensor",
+        "class": "sensor",
+        "capabilities": [
+          "measure_temperature",
+          "alarm_motion",
+          "measure_luminance",
+          "measure_battery"
+        ]
+      },
+      {
+        "id": "gas_detector",
+        "class": "sensor",
+        "capabilities": [
+          "onoff",
+          "measure_temperature",
+          "alarm_motion"
+        ]
+      },
+      {
+        "id": "humidity_controller",
+        "class": "sensor",
+        "capabilities": [
+          "onoff",
+          "measure_temperature",
+          "measure_humidity",
+          "measure_battery",
+          "alarm_battery"
+        ]
+      },
+      {
+        "id": "hvac_controller",
+        "class": "sensor",
+        "capabilities": [
+          "target_temperature",
+          "measure_temperature"
+        ]
+      },
+      {
+        "id": "led_strip_controller_pro",
+        "class": "sensor",
+        "capabilities": [
+          "onoff",
+          "measure_temperature",
+          "dim",
+          "light_hue",
+          "light_saturation",
+          "light_temperature"
+        ]
+      },
+      {
+        "id": "lux_sensor",
+        "class": "sensor",
+        "capabilities": [
+          "measure_temperature",
+          "alarm_motion",
+          "measure_luminance",
+          "measure_battery"
+        ]
+      },
+      {
+        "id": "mini_switch",
+        "class": "sensor",
+        "capabilities": [
+          "onoff",
+          "measure_battery",
+          "alarm_battery",
+          "dim"
+        ]
+      },
+      {
+        "id": "motion_sensor_battery",
+        "class": "sensor",
+        "capabilities": [
+          "onoff",
+          "alarm_motion",
+          "measure_luminance",
+          "measure_battery"
+        ]
+      },
+      {
+        "id": "motion_sensor_mmwave",
+        "class": "sensor",
+        "capabilities": [
+          "alarm_motion",
+          "measure_battery",
+          "measure_luminance"
+        ]
+      },
+      {
+        "id": "motion_sensor_pir_ac",
+        "class": "sensor",
+        "capabilities": [
+          "alarm_motion",
+          "measure_luminance",
+          "measure_battery"
+        ]
+      },
+      {
+        "id": "motion_sensor_pir_battery",
+        "class": "sensor",
+        "capabilities": [
+          "alarm_motion",
+          "measure_battery",
+          "alarm_battery",
+          "measure_luminance"
+        ]
+      },
+      {
+        "id": "motion_sensor_zigbee_204z",
+        "class": "sensor",
+        "capabilities": [
+          "alarm_motion",
+          "measure_battery",
+          "measure_luminance"
+        ]
+      },
+      {
+        "id": "multisensor",
+        "class": "sensor",
+        "capabilities": [
+          "onoff",
+          "measure_battery",
+          "measure_temperature",
+          "alarm_motion",
+          "measure_luminance"
+        ]
+      },
+      {
+        "id": "noise_level_sensor",
+        "class": "sensor",
+        "capabilities": [
+          "measure_temperature",
+          "alarm_motion",
+          "measure_luminance",
+          "measure_battery"
+        ]
+      },
+      {
+        "id": "pet_feeder",
+        "class": "sensor",
+        "capabilities": [
+          "measure_temperature",
+          "measure_humidity",
+          "alarm_battery",
+          "measure_battery"
+        ]
+      },
+      {
+        "id": "pir_sensor_advanced",
+        "class": "sensor",
+        "capabilities": [
+          "alarm_motion",
+          "measure_luminance",
+          "measure_battery"
+        ]
+      },
+      {
+        "id": "pm25_detector",
+        "class": "sensor",
+        "capabilities": [
+          "onoff",
+          "measure_temperature"
+        ]
+      },
+      {
+        "id": "pm25_sensor",
+        "class": "sensor",
+        "capabilities": [
+          "measure_temperature",
+          "alarm_motion",
+          "measure_luminance",
+          "measure_battery"
+        ]
+      },
+      {
+        "id": "power_meter_socket",
+        "class": "sensor",
+        "capabilities": [
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "measure_voltage",
+          "measure_current"
+        ]
+      },
+      {
+        "id": "presence_sensor_radar",
+        "class": "sensor",
+        "capabilities": [
+          "onoff",
+          "measure_temperature",
+          "alarm_motion",
+          "measure_luminance",
+          "measure_battery"
+        ]
+      },
+      {
+        "id": "pressure_sensor",
+        "class": "sensor",
+        "capabilities": [
+          "measure_battery",
+          "measure_temperature",
+          "alarm_motion",
+          "measure_luminance"
+        ]
+      },
+      {
+        "id": "radar_motion_sensor_advanced",
+        "class": "sensor",
+        "capabilities": [
+          "alarm_motion",
+          "measure_luminance",
+          "measure_distance",
+          "measure_battery"
+        ]
+      },
+      {
+        "id": "radar_motion_sensor_mmwave",
+        "class": "sensor",
+        "capabilities": [
+          "alarm_motion",
+          "measure_battery",
+          "measure_luminance",
+          "alarm_generic"
+        ]
+      },
+      {
+        "id": "radar_motion_sensor_tank_level",
+        "class": "sensor",
+        "capabilities": [
+          "alarm_motion",
+          "measure_luminance",
+          "measure_distance",
+          "measure_battery"
+        ]
+      },
+      {
+        "id": "roller_blind_controller",
+        "class": "sensor",
+        "capabilities": [
+          "windowcoverings_state",
+          "dim",
+          "windowcoverings_set",
+          "windowcoverings_tilt_set",
+          "measure_battery"
+        ]
+      },
+      {
+        "id": "roller_shutter_controller",
+        "class": "sensor",
+        "capabilities": [
+          "windowcoverings_set",
+          "windowcoverings_state",
+          "alarm_battery",
+          "measure_battery",
+          "windowcoverings_tilt_set"
+        ]
+      },
+      {
+        "id": "scene_controller_battery",
+        "class": "sensor",
+        "capabilities": [
+          "onoff"
+        ]
+      },
+      {
+        "id": "smart_bulb_dimmer",
+        "class": "sensor",
+        "capabilities": [
+          "onoff",
+          "measure_temperature",
+          "dim",
+          "light_hue",
+          "light_saturation",
+          "light_temperature"
+        ]
+      },
+      {
+        "id": "smart_curtain_motor",
+        "class": "sensor",
+        "capabilities": [
+          "windowcoverings_state",
+          "windowcoverings_set",
+          "windowcoverings_tilt_set",
+          "measure_battery"
+        ]
+      },
+      {
+        "id": "smart_garden_sprinkler",
+        "class": "sensor",
+        "capabilities": [
+          "measure_temperature",
+          "measure_humidity",
+          "alarm_battery",
+          "measure_battery"
+        ]
+      },
+      {
+        "id": "smart_lock",
+        "class": "sensor",
+        "capabilities": [
+          "locked",
+          "alarm_generic",
+          "measure_battery",
+          "alarm_battery"
+        ]
+      },
+      {
+        "id": "smart_outlet_monitor",
+        "class": "sensor",
+        "capabilities": [
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "measure_voltage",
+          "measure_current"
+        ]
+      },
+      {
+        "id": "smart_plug_energy",
+        "class": "sensor",
+        "capabilities": [
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "measure_voltage",
+          "measure_current"
+        ]
+      },
+      {
+        "id": "smart_radiator_valve",
+        "class": "sensor",
+        "capabilities": [
+          "target_temperature",
+          "measure_temperature"
+        ]
+      },
+      {
+        "id": "smart_smoke_detector_advanced",
+        "class": "sensor",
+        "capabilities": [
+          "alarm_smoke",
+          "alarm_battery",
+          "measure_battery",
+          "alarm_tamper"
+        ]
+      },
+      {
+        "id": "smart_thermostat",
+        "class": "sensor",
+        "capabilities": [
+          "target_temperature",
+          "measure_temperature",
+          "thermostat_mode",
+          "measure_battery"
+        ]
+      },
+      {
+        "id": "smart_water_valve",
+        "class": "sensor",
+        "capabilities": [
+          "target_temperature",
+          "measure_temperature",
+          "alarm_water",
+          "measure_battery",
+          "alarm_battery"
+        ]
+      },
+      {
+        "id": "smoke_detector",
+        "class": "sensor",
+        "capabilities": [
+          "onoff",
+          "measure_battery",
+          "measure_temperature",
+          "alarm_motion"
+        ]
+      },
+      {
+        "id": "smoke_detector_temp_humidity_advanced",
+        "class": "sensor",
+        "capabilities": [
+          "alarm_smoke",
+          "measure_temperature",
+          "measure_humidity",
+          "measure_battery",
+          "alarm_battery"
+        ]
+      },
+      {
+        "id": "smoke_temp_humid_sensor",
+        "class": "sensor",
+        "capabilities": [
+          "alarm_smoke",
+          "measure_temperature",
+          "measure_humidity",
+          "measure_battery",
+          "alarm_battery",
+          "alarm_motion",
+          "measure_luminance"
+        ]
+      },
+      {
+        "id": "soil_moisture_sensor",
+        "class": "sensor",
+        "capabilities": [
+          "onoff",
+          "measure_battery",
+          "measure_temperature",
+          "alarm_motion",
+          "measure_luminance"
+        ]
+      },
+      {
+        "id": "soil_moisture_temperature_sensor",
+        "class": "sensor",
+        "capabilities": [
+          "measure_temperature",
+          "measure_humidity",
+          "alarm_battery",
+          "measure_battery",
+          "alarm_motion",
+          "measure_luminance"
+        ]
+      },
+      {
+        "id": "soil_tester_temp_humid",
+        "class": "sensor",
+        "capabilities": [
+          "measure_temperature",
+          "measure_humidity",
+          "measure_luminance",
+          "measure_battery",
+          "alarm_battery"
+        ]
+      },
+      {
+        "id": "tank_level_monitor",
+        "class": "sensor",
+        "capabilities": [
+          "measure_water",
+          "alarm_water",
+          "measure_battery"
+        ]
+      },
+      {
+        "id": "temp_humid_sensor_advanced",
+        "class": "sensor",
+        "capabilities": [
+          "measure_temperature",
+          "measure_humidity",
+          "measure_pressure",
+          "measure_luminance",
+          "measure_battery",
+          "alarm_battery",
+          "alarm_motion"
+        ]
+      },
+      {
+        "id": "temp_humid_sensor_leak_detector",
+        "class": "sensor",
+        "capabilities": [
+          "measure_temperature",
+          "measure_humidity",
+          "alarm_battery",
+          "measure_battery",
+          "alarm_motion",
+          "measure_luminance",
+          "alarm_water"
+        ]
+      },
+      {
+        "id": "temp_humid_sensor_v1w2k9dd",
+        "class": "sensor",
+        "capabilities": [
+          "measure_temperature",
+          "measure_humidity",
+          "measure_battery",
+          "alarm_battery",
+          "alarm_motion",
+          "measure_luminance"
+        ]
+      },
+      {
+        "id": "temp_sensor_pro",
+        "class": "sensor",
+        "capabilities": [
+          "onoff",
+          "measure_temperature",
+          "measure_humidity",
+          "measure_battery",
+          "alarm_battery",
+          "alarm_motion",
+          "measure_luminance"
+        ]
+      },
+      {
+        "id": "temperature_controller",
+        "class": "sensor",
+        "capabilities": [
+          "target_temperature",
+          "measure_temperature",
+          "measure_humidity",
+          "measure_battery",
+          "alarm_battery"
+        ]
+      },
+      {
+        "id": "temperature_humidity_sensor",
+        "class": "sensor",
+        "capabilities": [
+          "measure_temperature",
+          "measure_humidity",
+          "measure_battery",
+          "alarm_motion",
+          "alarm_battery",
+          "measure_luminance"
+        ]
+      },
+      {
+        "id": "temperature_sensor",
+        "class": "sensor",
+        "capabilities": [
+          "measure_temperature",
+          "measure_humidity",
+          "alarm_battery",
+          "measure_battery",
+          "alarm_motion",
+          "measure_luminance"
+        ]
+      },
+      {
+        "id": "temperature_sensor_advanced",
+        "class": "sensor",
+        "capabilities": [
+          "measure_temperature",
+          "measure_humidity",
+          "measure_battery",
+          "alarm_battery",
+          "alarm_motion",
+          "measure_luminance"
+        ]
+      },
+      {
+        "id": "thermostat",
+        "class": "sensor",
+        "capabilities": [
+          "target_temperature",
+          "measure_temperature",
+          "thermostat_mode",
+          "measure_battery"
+        ]
+      },
+      {
+        "id": "tvoc_sensor",
+        "class": "sensor",
+        "capabilities": [
+          "measure_temperature",
+          "alarm_motion",
+          "measure_luminance",
+          "measure_battery"
+        ]
+      },
+      {
+        "id": "tvoc_sensor_advanced",
+        "class": "sensor",
+        "capabilities": [
+          "measure_co2",
+          "measure_tvoc",
+          "measure_temperature",
+          "measure_humidity",
+          "measure_battery",
+          "alarm_motion",
+          "measure_luminance"
+        ]
+      },
+      {
+        "id": "vibration_sensor",
+        "class": "sensor",
+        "capabilities": [
+          "onoff",
+          "measure_battery",
+          "measure_temperature",
+          "alarm_motion",
+          "measure_luminance"
+        ]
+      },
+      {
+        "id": "water_leak_detector_advanced",
+        "class": "sensor",
+        "capabilities": [
+          "alarm_water",
+          "measure_temperature",
+          "alarm_battery",
+          "measure_battery"
+        ]
+      },
+      {
+        "id": "water_leak_detector_sq510a",
+        "class": "sensor",
+        "capabilities": [
+          "alarm_water",
+          "measure_battery",
+          "measure_temperature",
+          "alarm_battery"
+        ]
+      },
+      {
+        "id": "water_leak_sensor",
+        "class": "sensor",
+        "capabilities": [
+          "onoff",
+          "measure_battery",
+          "measure_temperature",
+          "alarm_motion",
+          "measure_luminance",
+          "alarm_water",
+          "alarm_battery"
+        ]
+      },
+      {
+        "id": "water_valve",
+        "class": "sensor",
+        "capabilities": [
+          "target_temperature",
+          "measure_temperature",
+          "alarm_water",
+          "measure_battery",
+          "alarm_battery"
+        ]
+      }
+    ],
+    "switches": [
+      {
+        "id": "curtain_motor",
+        "class": "other",
+        "capabilities": [
+          "onoff",
+          "windowcoverings_set",
+          "windowcoverings_tilt_set",
+          "measure_battery"
+        ]
+      },
+      {
+        "id": "dimmer_switch_1gang_ac",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "dim"
+        ]
+      },
+      {
+        "id": "dimmer_switch_3gang_ac",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "onoff.gang2",
+          "onoff.gang3"
+        ]
+      },
+      {
+        "id": "dimmer_switch_timer_module",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "dim"
+        ]
+      },
+      {
+        "id": "fan_controller",
+        "class": "other",
+        "capabilities": [
+          "onoff",
+          "dim"
+        ]
+      },
+      {
+        "id": "garage_door_controller",
+        "class": "button",
+        "capabilities": [
+          "garagedoor_closed",
+          "button.open",
+          "button.close",
+          "alarm_contact",
+          "measure_battery",
+          "alarm_battery"
+        ]
+      },
+      {
+        "id": "pool_pump_controller",
+        "class": "other",
+        "capabilities": [
+          "onoff",
+          "measure_power",
+          "measure_current",
+          "dim"
+        ]
+      },
+      {
+        "id": "projector_screen_controller",
+        "class": "other",
+        "capabilities": [
+          "onoff"
+        ]
+      },
+      {
+        "id": "radiator_valve",
+        "class": "other",
+        "capabilities": [
+          "measure_battery",
+          "onoff"
+        ]
+      },
+      {
+        "id": "relay_switch_1gang",
+        "class": "socket",
+        "capabilities": [
+          "onoff",
+          "measure_power",
+          "dim"
+        ]
+      },
+      {
+        "id": "remote_switch",
+        "class": "socket",
+        "capabilities": [
+          "onoff",
+          "measure_battery",
+          "alarm_battery",
+          "dim"
+        ]
+      },
+      {
+        "id": "roller_shutter_switch",
+        "class": "light",
+        "capabilities": [
+          "windowcoverings_closed",
+          "windowcoverings_set",
+          "button.up",
+          "button.down",
+          "button.stop",
+          "onoff",
+          "dim",
+          "windowcoverings_tilt_set",
+          "measure_battery"
+        ]
+      },
+      {
+        "id": "roller_shutter_switch_advanced",
+        "class": "light",
+        "capabilities": [
+          "windowcoverings_closed",
+          "windowcoverings_set",
+          "button.up",
+          "button.down",
+          "button.stop",
+          "measure_power",
+          "onoff",
+          "dim",
+          "windowcoverings_tilt_set",
+          "measure_battery"
+        ]
+      },
+      {
+        "id": "scene_controller",
+        "class": "other",
+        "capabilities": [
+          "onoff"
+        ]
+      },
+      {
+        "id": "scene_controller_2button",
+        "class": "button",
+        "capabilities": [
+          "onoff",
+          "button.2",
+          "measure_battery",
+          "alarm_battery"
+        ]
+      },
+      {
+        "id": "scene_controller_4button",
+        "class": "button",
+        "capabilities": [
+          "onoff",
+          "button.2",
+          "button.3",
+          "button.4",
+          "measure_battery",
+          "alarm_battery"
+        ]
+      },
+      {
+        "id": "scene_controller_6button",
+        "class": "button",
+        "capabilities": [
+          "onoff",
+          "button.2",
+          "button.3",
+          "button.4",
+          "button.5",
+          "button.6",
+          "measure_battery",
+          "alarm_battery"
+        ]
+      },
+      {
+        "id": "scene_controller_8button",
+        "class": "button",
+        "capabilities": [
+          "onoff",
+          "button.2",
+          "button.3",
+          "button.4",
+          "button.5",
+          "button.6",
+          "button.7",
+          "button.8",
+          "measure_battery",
+          "alarm_battery"
+        ]
+      },
+      {
+        "id": "shade_controller",
+        "class": "other",
+        "capabilities": [
+          "onoff"
+        ]
+      },
+      {
+        "id": "smart_dimmer_module_1gang",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "dim",
+          "measure_power",
+          "meter_power"
+        ]
+      },
+      {
+        "id": "smart_irrigation_controller",
+        "class": "other",
+        "capabilities": [
+          "onoff",
+          "measure_water",
+          "alarm_water",
+          "measure_battery"
+        ]
+      },
+      {
+        "id": "smart_switch_1gang_ac",
+        "class": "socket",
+        "capabilities": [
+          "onoff",
+          "dim"
+        ]
+      },
+      {
+        "id": "smart_switch_1gang_hybrid",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "dim"
+        ]
+      },
+      {
+        "id": "smart_switch_2gang_ac",
+        "class": "socket",
+        "capabilities": [
+          "onoff",
+          "onoff.gang2"
+        ]
+      },
+      {
+        "id": "smart_switch_2gang_hybrid",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "onoff.gang2"
+        ]
+      },
+      {
+        "id": "smart_switch_3gang_ac",
+        "class": "socket",
+        "capabilities": [
+          "onoff",
+          "onoff.gang2",
+          "onoff.gang3"
+        ]
+      },
+      {
+        "id": "smart_switch_3gang_hybrid",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "onoff.gang2",
+          "onoff.gang3"
+        ]
+      },
+      {
+        "id": "smart_switch_4gang_hybrid",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "button.2",
+          "button.3",
+          "button.4",
+          "dim"
+        ]
+      },
+      {
+        "id": "smart_valve_controller",
+        "class": "other",
+        "capabilities": [
+          "onoff",
+          "measure_battery"
+        ]
+      },
+      {
+        "id": "solar_panel_controller",
+        "class": "other",
+        "capabilities": [
+          "measure_power",
+          "measure_voltage",
+          "measure_current",
+          "measure_battery",
+          "onoff"
+        ]
+      },
+      {
+        "id": "sos_emergency_button",
+        "class": "button",
+        "capabilities": [
+          "button.sos",
+          "alarm_generic",
+          "measure_battery"
+        ]
+      },
+      {
+        "id": "switch_1gang_battery",
+        "class": "button",
+        "capabilities": [
+          "button.1",
+          "measure_battery",
+          "onoff",
+          "dim"
+        ]
+      },
+      {
+        "id": "switch_2gang_ac",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "onoff.gang2"
+        ]
+      },
+      {
+        "id": "switch_2gang_hybrid",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "onoff.gang2"
+        ]
+      },
+      {
+        "id": "switch_3gang_battery",
+        "class": "button",
+        "capabilities": [
+          "onoff",
+          "onoff.gang2",
+          "onoff.gang3"
+        ]
+      },
+      {
+        "id": "switch_4gang_ac",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "button.2",
+          "button.3",
+          "button.4",
+          "dim"
+        ]
+      },
+      {
+        "id": "switch_4gang_battery_cr2032",
+        "class": "button",
+        "capabilities": [
+          "button.1",
+          "button.2",
+          "button.3",
+          "button.4",
+          "measure_battery",
+          "onoff",
+          "dim"
+        ]
+      },
+      {
+        "id": "switch_5gang_battery",
+        "class": "button",
+        "capabilities": [
+          "button.1",
+          "button.2",
+          "button.3",
+          "button.4",
+          "button.5",
+          "measure_battery",
+          "onoff",
+          "dim"
+        ]
+      },
+      {
+        "id": "switch_6gang_ac",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "button.2",
+          "button.3",
+          "button.4",
+          "button.5",
+          "button.6",
+          "dim"
+        ]
+      },
+      {
+        "id": "switch_8gang_ac",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "button.2",
+          "button.3",
+          "button.4",
+          "button.5",
+          "button.6",
+          "button.7",
+          "button.8",
+          "dim"
+        ]
+      },
+      {
+        "id": "touch_dimmer",
+        "class": "other",
+        "capabilities": [
+          "onoff",
+          "dim"
+        ]
+      },
+      {
+        "id": "touch_dimmer_1gang",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "dim"
+        ]
+      },
+      {
+        "id": "touch_switch_1gang",
+        "class": "socket",
+        "capabilities": [
+          "button.1",
+          "onoff",
+          "dim"
+        ]
+      },
+      {
+        "id": "touch_switch_2gang",
+        "class": "socket",
+        "capabilities": [
+          "onoff",
+          "onoff.gang2"
+        ]
+      },
+      {
+        "id": "touch_switch_3gang",
+        "class": "socket",
+        "capabilities": [
+          "onoff",
+          "onoff.gang2",
+          "onoff.gang3"
+        ]
+      },
+      {
+        "id": "touch_switch_4gang",
+        "class": "socket",
+        "capabilities": [
+          "button.1",
+          "button.2",
+          "button.3",
+          "button.4",
+          "onoff",
+          "dim"
+        ]
+      },
+      {
+        "id": "wall_switch_1gang_ac",
+        "class": "socket",
+        "capabilities": [
+          "onoff",
+          "dim"
+        ]
+      },
+      {
+        "id": "wall_switch_1gang_dc",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "dim"
+        ]
+      },
+      {
+        "id": "wall_switch_2gang_ac",
+        "class": "socket",
+        "capabilities": [
+          "onoff",
+          "onoff.gang2"
+        ]
+      },
+      {
+        "id": "wall_switch_2gang_dc",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "onoff.gang2"
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_ac",
+        "class": "socket",
+        "capabilities": [
+          "onoff",
+          "onoff.gang2",
+          "onoff.gang3"
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_dc",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "onoff.gang2",
+          "onoff.gang3"
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_ac",
+        "class": "socket",
+        "capabilities": [
+          "onoff",
+          "button.2",
+          "button.3",
+          "button.4",
+          "dim"
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_dc",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "button.2",
+          "button.3",
+          "button.4",
+          "dim"
+        ]
+      },
+      {
+        "id": "wall_switch_5gang_ac",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "button.2",
+          "button.3",
+          "button.4",
+          "button.5",
+          "dim"
+        ]
+      },
+      {
+        "id": "wall_switch_6gang_ac",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "button.2",
+          "button.3",
+          "button.4",
+          "button.5",
+          "button.6",
+          "dim"
+        ]
+      },
+      {
+        "id": "water_valve_smart",
+        "class": "other",
+        "capabilities": [
+          "onoff",
+          "measure_water",
+          "alarm_water",
+          "measure_battery",
+          "measure_temperature",
+          "alarm_battery"
+        ]
+      },
+      {
+        "id": "wireless_switch",
+        "class": "socket",
+        "capabilities": [
+          "onoff",
+          "measure_battery",
+          "alarm_battery",
+          "dim"
+        ]
+      },
+      {
+        "id": "wireless_switch_1gang_cr2032",
+        "class": "button",
+        "capabilities": [
+          "alarm_battery",
+          "measure_battery",
+          "onoff",
+          "dim"
+        ]
+      },
+      {
+        "id": "wireless_switch_2gang_cr2032",
+        "class": "button",
+        "capabilities": [
+          "onoff",
+          "onoff.gang2"
+        ]
+      },
+      {
+        "id": "wireless_switch_3gang_cr2032",
+        "class": "button",
+        "capabilities": [
+          "onoff",
+          "onoff.gang2",
+          "onoff.gang3"
+        ]
+      },
+      {
+        "id": "wireless_switch_4gang_cr2032",
+        "class": "button",
+        "capabilities": [
+          "onoff",
+          "measure_battery",
+          "alarm_battery",
+          "dim"
+        ]
+      },
+      {
+        "id": "wireless_switch_4gang_cr2450",
+        "class": "button",
+        "capabilities": [
+          "button.1",
+          "button.2",
+          "button.3",
+          "button.4",
+          "measure_battery",
+          "onoff",
+          "dim"
+        ]
+      },
+      {
+        "id": "wireless_switch_5gang_cr2032",
+        "class": "button",
+        "capabilities": [
+          "onoff",
+          "button.2",
+          "button.3",
+          "button.4",
+          "button.5",
+          "measure_battery",
+          "alarm_battery",
+          "dim"
+        ]
+      },
+      {
+        "id": "wireless_switch_6gang_cr2032",
+        "class": "button",
+        "capabilities": [
+          "onoff",
+          "button.2",
+          "button.3",
+          "button.4",
+          "button.5",
+          "button.6",
+          "measure_battery",
+          "alarm_battery",
+          "dim"
+        ]
+      },
+      {
+        "id": "zbbridge",
+        "class": "other",
+        "capabilities": [
+          "onoff"
+        ]
+      },
+      {
+        "id": "zigbee_gateway_hub",
+        "class": "other",
+        "capabilities": [
+          "onoff",
+          "measure_signal_strength"
+        ]
+      }
+    ],
+    "lighting": [
+      {
+        "id": "ceiling_light_controller",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "dim",
+          "light_hue",
+          "light_saturation",
+          "light_temperature"
+        ]
+      },
+      {
+        "id": "ceiling_light_rgb",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "measure_temperature",
+          "dim",
+          "light_hue",
+          "light_saturation",
+          "light_temperature"
+        ]
+      },
+      {
+        "id": "dimmer",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "dim"
+        ]
+      },
+      {
+        "id": "door_controller",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "dim",
+          "alarm_contact",
+          "measure_battery",
+          "alarm_battery"
+        ]
+      },
+      {
+        "id": "led_strip_advanced",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "dim",
+          "light_hue",
+          "light_saturation",
+          "light_temperature"
+        ]
+      },
+      {
+        "id": "led_strip_controller",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "dim",
+          "light_hue",
+          "light_saturation",
+          "light_temperature"
+        ]
+      },
+      {
+        "id": "milight_controller",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "dim",
+          "light_hue",
+          "light_saturation",
+          "light_temperature",
+          "light_mode"
+        ]
+      },
+      {
+        "id": "mini",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "dim"
+        ]
+      },
+      {
+        "id": "outdoor_light_controller",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "dim",
+          "alarm_contact",
+          "measure_battery",
+          "alarm_battery",
+          "light_hue",
+          "light_saturation",
+          "light_temperature"
+        ]
+      },
+      {
+        "id": "rgb_led_controller",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "dim",
+          "light_hue",
+          "light_saturation",
+          "light_temperature"
+        ]
+      },
+      {
+        "id": "smart_bulb_rgb",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "dim",
+          "light_temperature",
+          "light_hue",
+          "light_saturation"
+        ]
+      },
+      {
+        "id": "smart_bulb_tunable",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "dim",
+          "light_temperature",
+          "light_hue",
+          "light_saturation"
+        ]
+      },
+      {
+        "id": "smart_bulb_white",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "dim",
+          "light_hue",
+          "light_saturation",
+          "light_temperature"
+        ]
+      },
+      {
+        "id": "smart_spot",
+        "class": "light",
+        "capabilities": [
+          "onoff",
+          "dim"
+        ]
+      }
+    ],
+    "climate": [],
+    "power": [
+      {
+        "id": "extension_plug",
+        "class": "socket",
+        "capabilities": [
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "measure_voltage",
+          "measure_current"
+        ]
+      },
+      {
+        "id": "smart_plug",
+        "class": "socket",
+        "capabilities": [
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "measure_voltage",
+          "measure_current"
+        ]
+      },
+      {
+        "id": "usb_outlet",
+        "class": "socket",
+        "capabilities": [
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "measure_voltage",
+          "measure_current"
+        ]
+      },
+      {
+        "id": "usb_outlet_advanced",
+        "class": "socket",
+        "capabilities": [
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "measure_voltage",
+          "measure_current"
+        ]
+      }
+    ],
+    "covers": [],
+    "security": [
+      {
+        "id": "door_lock",
+        "class": "lock",
+        "capabilities": [
+          "locked",
+          "alarm_tamper",
+          "measure_battery",
+          "alarm_battery",
+          "alarm_contact"
+        ]
+      },
+      {
+        "id": "doorbell",
+        "class": "lock",
+        "capabilities": [
+          "locked",
+          "alarm_battery",
+          "measure_battery",
+          "alarm_contact",
+          "alarm_generic",
+          "volume_set"
+        ]
+      },
+      {
+        "id": "fingerprint_lock",
+        "class": "lock",
+        "capabilities": [
+          "locked",
+          "measure_battery",
+          "alarm_generic"
+        ]
+      },
+      {
+        "id": "garage_door_opener",
+        "class": "lock",
+        "capabilities": [
+          "locked",
+          "alarm_battery",
+          "measure_battery",
+          "alarm_contact"
+        ]
+      },
+      {
+        "id": "outdoor_siren",
+        "class": "lock",
+        "capabilities": [
+          "locked",
+          "alarm_battery",
+          "measure_battery",
+          "alarm_contact",
+          "alarm_generic",
+          "volume_set"
+        ]
+      },
+      {
+        "id": "smart_doorbell",
+        "class": "lock",
+        "capabilities": [
+          "locked",
+          "alarm_battery",
+          "measure_battery",
+          "alarm_contact",
+          "alarm_generic",
+          "volume_set"
+        ]
+      }
+    ],
+    "specialty": [
+      {
+        "id": "ceiling_fan",
+        "class": "fan",
+        "capabilities": [
+          "onoff",
+          "dim"
+        ]
+      }
+    ]
+  },
+  "suggestedLimits": {
+    "sensors": 100,
+    "switches": 150,
+    "lighting": 80,
+    "power": 80,
+    "climate": 60,
+    "covers": 60,
+    "security": 50,
+    "specialty": 60
+  },
+  "estimatedTotalIds": 18950
+}

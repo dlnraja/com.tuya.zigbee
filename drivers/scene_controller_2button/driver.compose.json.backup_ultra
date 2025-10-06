@@ -1,0 +1,162 @@
+{
+  "class": "button",
+  "capabilities": [
+    "onoff",
+    "button.2",
+    "measure_battery",
+    "alarm_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "zigbee": {
+    "productId": [
+      "TS130F",
+      "TS0001",
+      "TS004",
+      "TS0041",
+      "TS0041A",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS0046",
+      "TS0049",
+      "TS004F",
+      "TS004X",
+      "TS0210",
+      "TS0215A",
+      "TS0216",
+      "TS0218",
+      "TS0301",
+      "TS030F",
+      "TS0601",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0006",
+      "TS000F",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS0021",
+      "TS0026",
+      "TS0052",
+      "TS0121",
+      "TS0603",
+      "TS0726",
+      "TS1002",
+      "TS1201",
+      "TS1111"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          6
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/scene_controller_2button/assets/large.png",
+      "instruction": {
+        "en": "Press and hold the button for 5 seconds until LED flashes"
+      }
+    },
+    "manufacturerName": [
+      "_TZ3000_01gpyda5",
+      "_TZ3000_0dumfk2z",
+      "_TZ3000_0ghwhypc",
+      "_TZ3000_0ht8dnxj",
+      "_TZ3000_0s1izerx",
+      "_TZ3000_0s9gukzt",
+      "_TZ3000_0zfrhq4i",
+      "_TZ3000_0zrccfgx",
+      "_TZ3000_11pg3ima",
+      "_TZ3000_18ejxno0",
+      "_TZ3000_1adss9de",
+      "_TZ3000_1dd0d5yi",
+      "_TZ3000_1hwjutgo",
+      "_TZ3000_1twfmkcc",
+      "_TZ3000_266azbg3",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_2iiimqs9",
+      "_TZ3000_2izubafb",
+      "_TZ3000_2mbfxlzr",
+      "_TZ3000_2putqrmw",
+      "_TZE200_01fvxamo",
+      "_TZE200_0hb4rdnp",
+      "_TZE200_0hg58wyk",
+      "_TZE200_0j5jma9b",
+      "_TZE200_0nauxa0p",
+      "_TZE200_0u3bj3rc",
+      "_TZE200_0zaf1cr8",
+      "_TZE200_1agwnems",
+      "_TZE200_1drr8tab",
+      "_TZE200_1fuxihti",
+      "_TZE200_1ibpyhdc",
+      "_TZE200_2aaelwxk",
+      "_TZE200_2atgpdho",
+      "_TZE200_2dpplnsn",
+      "_TZE200_2ekuz3dz",
+      "_TZE200_2hf7x9n3",
+      "_TZE200_2imwyigp",
+      "_TZE200_2m38mh6k",
+      "_TZE200_2odrmqwq",
+      "_TZE200_2se8efxh",
+      "_TZE200_2vfxweng",
+      "_TZE200_3ejwxpmu",
+      "_TZE200_3i3exuay",
+      "_TZE200_3p5ydos3",
+      "_TZE200_3t91nb6k",
+      "_TZE200_3towulqd",
+      "_TZE200_3xfjp0ag",
+      "_TZE200_3ylew7b4",
+      "_TZE200_44af8vyi",
+      "_TZE200_4eeyebrt",
+      "_TZE200_4mh6tyyo",
+      "_TZE200_4vobcgd3",
+      "_TZE200_579lguh2",
+      "_TZE200_5d3vhjro",
+      "_TZE200_5nldle7w",
+      "_TZE200_5sbebbzs",
+      "_TZE200_5zbp6j0u",
+      "_TZE200_68nvbio9",
+      "_TZE200_6rdj8dzm",
+      "_TZE200_6wi2mope"
+    ]
+  },
+  "images": {
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
+  },
+  "settings": [
+    {
+      "id": "battery_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold (%)"
+      },
+      "value": 20,
+      "min": 5,
+      "max": 50
+    }
+  ],
+  "name": {
+    "en": "Scene Controller 2button"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilitiesOptions": {}
+}
