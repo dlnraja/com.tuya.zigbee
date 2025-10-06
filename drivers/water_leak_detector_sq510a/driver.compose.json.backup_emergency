@@ -1,0 +1,88 @@
+{
+  "name": {
+    "en": "Water Leak Detector"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_water",
+    "measure_battery",
+    "measure_temperature",
+    "alarm_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_0s1izerx",
+      "_TZ3000_0s9gukzt",
+      "_TZ3000_0zfrhq4i",
+      "_TZ3000_18ejxno0",
+      "_TZE200_cowvfni3",
+      "_TZ3000_1dd0d5yi",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_2mbfxlzr",
+      "_TZ3000_2putqrmw",
+      "_TZ3000_46t1rvdu",
+      "_TZ3000_49qchf10",
+      "_TZ3000_4fjiwweb"
+    ],
+    "productId": [
+      "TS0207",
+      "TS0001",
+      "TS0201",
+      "TS0202",
+      "TS0203",
+      "TS0205",
+      "TS0222",
+      "TS0225",
+      "TS0601",
+      "TS130F",
+      "TS0204",
+      "TS020C",
+      "TS0224",
+      "TS0901",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0006",
+      "TS000F",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS0021",
+      "TS0026",
+      "TS0052",
+      "TS0121",
+      "TS0603",
+      "TS0726",
+      "TS1002",
+      "TS1201",
+      "TS1111"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1026,
+          1280
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
+  },
+  "capabilitiesOptions": {},
+  "platforms": [
+    "local"
+  ]
+}
