@@ -8,8 +8,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "Support for Tuya Zigbee devices with local control (no cloud required). Community-maintained fork with SDK3 compliance, supporting 163 device types including lights, sensors, switches, climate controls, and more. Based on Johan Bendz's original work with active development and monthly updates.",
-    "fr": "Support pour appareils Tuya Zigbee avec contrôle local (sans cloud). Fork maintenu par la communauté avec conformité SDK3, supportant 163 types d'appareils incluant lumières, capteurs, interrupteurs, contrôles climatiques, et plus. Basé sur le travail original de Johan Bendz avec développement actif et mises à jour mensuelles."
+    "en": "Universal control for white-label Tuya Zigbee devices - no cloud, full local integration",
+    "fr": "Contrôle universel pour appareils Tuya Zigbee - sans cloud, intégration locale complète"
   },
   "category": "lights",
   "permissions": [],
