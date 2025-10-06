@@ -4,6 +4,13 @@
 
 ---
 
+## 🔁 Correctifs Ciblés
+
+- **tools/fixers/FIX_BATTERY_OFFICIAL.js** : ajuste `energy.batteries` et capacités liées aux capteurs sur pile.
+- **tools/fixers/FIX_ENERGY_OFFICIAL_RULES.js** : applique les règles SDK3 d'énergie sur tous les drivers.
+- **tools/fixers/REMOVE_UNDEFINED_ENERGY.js** : supprime les champs `energy` invalides après enrichissement.
+
+Ces scripts sont regroupés dans le dossier `tools/fixers/` et peuvent être lancés individuellement via `node tools/fixers/<script>.js` pour des corrections ciblées.
 ## 🎯 Script Principal (Recommandé)
 
 ### **node tools/clean_and_validate.js**
@@ -27,27 +34,26 @@ node tools/clean_and_validate.js
 - 📊 Rapport complet
 - ⚡ Rapide (~10 secondes)
 
----
 
 ## 📋 Scripts Alternatifs
 
-### 1. **clean_cache.bat** (Windows simple)
+### 1. **./tools/scripts/clean_cache.bat** (Windows simple)
 ```cmd
-.\clean_cache.bat
+./tools/scripts/clean_cache.bat
 ```
 - ✅ Suppression cache uniquement
 - ✅ Rapide (3 secondes)
 - ✅ Windows natif
 
-### 2. **CLEANUP_PERMANENT.ps1** (PowerShell complet)
+### 2. **./tools/scripts/CLEANUP_PERMANENT.ps1** (PowerShell complet)
 ```powershell
-.\CLEANUP_PERMANENT.ps1
+./tools/scripts/CLEANUP_PERMANENT.ps1
 ```
 - ✅ Nettoyage complet
 - ✅ Build + validation
 - ⚠️ Plus lent (~20 secondes)
 
----
+{{ ... }}
 
 ## 🔧 Scripts de Validation
 
