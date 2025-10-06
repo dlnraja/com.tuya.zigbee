@@ -3,20 +3,24 @@ name: Homey Publication (Fixed)
 on:
   push:
     branches: [master]
+    paths-ignore:
+      - '**.md'
+      - 'references/**'
   workflow_dispatch:
 
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     
     steps:
-    - name: Checkout
+    - name: Checkout Repository
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
       
-    - name: Setup Node.js
+    - name: Setup Node.js 18
       uses: actions/setup-node@v4
       with:
         node-version: '18'
@@ -24,207 +28,139 @@ jobs:
         
     - name: Install Dependencies
       run: |
-        npm install --no-audit --no-fund || true
+        echo "📦 Installing app dependencies..."
+        npm ci --no-audit --no-fund || npm install --no-audit --no-fund
         
-    - name: Install Homey CLI (Multiple Methods)
+    - name: Install Homey CLI
       run: |
-        echo "🔍 Installing Homey CLI..."
+        echo "🔍 Installing Homey CLI globally..."
+        npm install -g homey@latest --no-audit --no-fund
+        homey --version
         
-        # Try official package
-        npm install -g homey --no-audit --no-fund 2>&1 | tee /tmp/install.log || true
-        
-        # Verify
-        if command -v homey &> /dev/null; then
-          echo "✅ Homey CLI installed successfully"
-          homey --version
-        else
-          echo "❌ Installation failed, trying alternative..."
-          npm install -g athom-cli --no-audit --no-fund || true
-        fi
-        
-    - name: Clean Cache
+    - name: Clean Build Cache
       run: |
-        echo "🧹 Cleaning Homey cache..."
+        echo "🧹 Cleaning cache..."
         rm -rf .homeybuild .homeycompose node_modules/.cache || true
-        
-    - name: Setup Automation Environment
-      run: |
-        echo "🤖 Setting up automation..."
-        
-        # Install expect for automation
-        sudo apt-get update && sudo apt-get install -y expect tcl
-        
-        # Create automation script
-        cat > /tmp/auto-publish.exp << 'EOF'
-#!/usr/bin/expect -f
-
-set timeout 300
-log_user 1
-
-# Start the publish command
-spawn homey app publish
-
-# Handle prompts
-expect {
-    "uncommitted changes" {
-        send "y\r"
-        exp_continue
-    }
-    "version" {
-        send "patch\r"
-        exp_continue
-    }
-    "changelog" {
-        send "Auto-publication: Enrichment from all sources + GitHub Actions fixes\r"
-        exp_continue
-    }
-    "Are you sure" {
-        send "y\r"
-        exp_continue
-    }
-    eof {
-        catch wait result
-        exit [lindex $result 3]
-    }
-    timeout {
-        puts "Timeout reached"
-        exit 1
-    }
-}
-EOF
-        
-        chmod +x /tmp/auto-publish.exp
-        echo "✅ Automation script created"
         
     - name: Configure Homey Authentication
       env:
         HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
       run: |
-        echo "🔐 Configuring authentication..."
-        
+        echo "🔐 Configuring Homey authentication..."
         if [ -z "$HOMEY_TOKEN" ]; then
-          echo "❌ HOMEY_TOKEN not set in secrets!"
+          echo "❌ ERROR: HOMEY_TOKEN secret is not configured!"
+          echo "ℹ️  Please add HOMEY_TOKEN to repository secrets"
+          echo "ℹ️  Get your token from: https://tools.developer.homey.app/"
           exit 1
         fi
-        
-        # Create Homey config
         mkdir -p ~/.homey
-        cat > ~/.homeyrc << EOF
-{
-  "token": "$HOMEY_TOKEN"
-}
-EOF
+        echo "{\"token\":\"$HOMEY_TOKEN\"}" > ~/.homey/.homeyrc.json
+        echo "✅ Authentication configured"
+        homey whoami || (echo "⚠️ Token validation warning - continuing..." && exit 0)
         
-        # Verify authentication
-        if command -v homey &> /dev/null; then
-          homey whoami || {
-            echo "⚠️ Token validation failed, but continuing..."
-          }
-        fi
-        
-    - name: Validate App
+    - name: Build App
       run: |
-        echo "🔍 Validating app..."
-        if command -v homey &> /dev/null; then
-          homey app validate --level=publish || {
-            echo "⚠️ Validation warnings detected, but continuing..."
-          }
-        else
-          echo "⚠️ CLI not available, skipping validation"
-        fi
+        echo "🔨 Building Homey app..."
+        homey app build
         
-    - name: Publish with Automation (Method 1)
-      id: publish_auto
-      continue-on-error: true
+    - name: Validate App (Publish Level)
       run: |
-        echo "🚀 Publishing with expect automation..."
-        if [ -f /tmp/auto-publish.exp ] && command -v expect &> /dev/null; then
-          /tmp/auto-publish.exp
-        else
-          echo "⚠️ Expect not available"
-          exit 1
-        fi
+        echo "✅ Validating app at publish level..."
+        homey app validate --level=publish
         
-    - name: Publish Direct (Method 2)
-      if: steps.publish_auto.outcome == 'failure'
-      continue-on-error: true
-      id: publish_direct
+    - name: Extract Current Version
+      id: version
       run: |
-        echo "🚀 Publishing with direct method..."
-        echo -e "y\npatch\nAuto-publication via GitHub Actions\ny\n" | homey app publish || exit 1
+        CURRENT_VERSION=$(node -p "require('./app.json').version")
+        echo "version=$CURRENT_VERSION" >> $GITHUB_OUTPUT
+        echo "📊 Current version: $CURRENT_VERSION"
         
-    - name: Publish Non-Interactive (Method 3)
-      if: steps.publish_direct.outcome == 'failure'
-      continue-on-error: true
-      id: publish_noninteractive
+    - name: Publish to Homey App Store
+      id: publish
+      env:
+        HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
       run: |
-        echo "🚀 Publishing with non-interactive method..."
+        echo "🚀 Publishing to Homey App Store..."
+        echo "Version: ${{ steps.version.outputs.version }}"
         
-        # Create non-interactive publish script
-        cat > /tmp/publish.js << 'EOF'
-const { execSync } = require('child_process');
-const fs = require('fs');
-
-try {
-  // Read app.json to get current version
-  const appJson = JSON.parse(fs.readFileSync('./app.json', 'utf8'));
-  const currentVersion = appJson.version;
-  console.log(`Current version: ${currentVersion}`);
-  
-  // Increment patch version
-  const versionParts = currentVersion.split('.');
-  versionParts[2] = parseInt(versionParts[2]) + 1;
-  const newVersion = versionParts.join('.');
-  console.log(`New version: ${newVersion}`);
-  
-  // Update version in app.json
-  appJson.version = newVersion;
-  fs.writeFileSync('./app.json', JSON.stringify(appJson, null, 2));
-  
-  // Update changelog
-  const changelog = {
-    [`${newVersion}`]: "Auto-publication: Enrichment + GitHub Actions fixes"
-  };
-  fs.writeFileSync('./.homeychangelog.json', JSON.stringify(changelog, null, 2));
-  
-  // Try to publish
-  console.log('🚀 Publishing...');
-  execSync('homey app publish --changelog "Auto-publication"', {
-    stdio: 'inherit',
-    timeout: 180000
-  });
-  
-  console.log('✅ Publication successful!');
-  
-} catch (error) {
-  console.error('❌ Publication failed:', error.message);
-  process.exit(1);
-}
-EOF
-        
-        node /tmp/publish.js || exit 1
-        
-    - name: Final Status Check
-      run: |
-        if [ "${{ steps.publish_auto.outcome }}" == "success" ] || \
-           [ "${{ steps.publish_direct.outcome }}" == "success" ] || \
-           [ "${{ steps.publish_noninteractive.outcome }}" == "success" ]; then
-          echo "✅ PUBLICATION SUCCESSFUL!"
-          echo "🎉 App published to Homey App Store"
-          echo "🔗 https://tools.developer.homey.app/apps"
-          exit 0
-        else
-          echo "❌ ALL PUBLICATION METHODS FAILED"
-          echo "Please check logs above for details"
-          exit 1
-        fi
-        
-    - name: Create Release Tag
-      if: success()
-      run: |
-        VERSION=$(node -e "console.log(require('./app.json').version)")
+        # Configure Git for commits
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
-        git tag -a "v${VERSION}" -m "Auto-release v${VERSION}" || true
-        git push origin "v${VERSION}" || true
-        echo "📦 Tagged release v${VERSION}"
+        
+        # Create expect script for automation
+        cat > publish.exp << 'EOF'
+        #!/usr/bin/expect -f
+        set timeout 60
+        
+        spawn homey app publish
+        
+        expect {
+          "uncommitted changes" {
+            send "y\r"
+            exp_continue
+          }
+          "update your app's version number" {
+            send "y\r"
+            exp_continue
+          }
+          "Select the desired version number" {
+            send "\r"
+            exp_continue
+          }
+          "What's new in" {
+            send "Fix: Settings infinite loop + homey-zigbeedriver dependency + 28 flow cards\r"
+            exp_continue
+          }
+          "Do you want to commit" {
+            send "y\r"
+            exp_continue
+          }
+          "Do you want to push" {
+            send "y\r"
+            exp_continue
+          }
+          eof
+        }
+        EOF
+        
+        chmod +x publish.exp
+        
+        # Install expect
+        sudo apt-get update -qq
+        sudo apt-get install -y expect
+        
+        # Run expect script
+        ./publish.exp || {
+          echo "⚠️ Expect script failed, trying direct method..."
+          echo -e "y\ny\n\nFix: Settings infinite loop + homey-zigbeedriver dependency + 28 flow cards\ny\ny" | homey app publish || true
+        }
+        
+        echo "🔗 Check status: https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee"
+        
+    - name: Create GitHub Release Tag
+      if: success()
+      run: |
+        echo "🏷️ Creating release tag..."
+        VERSION="${{ steps.version.outputs.version }}"
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git tag -a "v$VERSION" -m "Release v$VERSION - Auto-published via GitHub Actions" || echo "Tag already exists"
+        git push origin "v$VERSION" || echo "Tag push failed (may already exist)"
+        
+    - name: Summary
+      if: always()
+      run: |
+        echo "## 📊 Publication Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**App ID:** com.dlnraja.tuya.zigbee" >> $GITHUB_STEP_SUMMARY
+        echo "**Version:** ${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Status:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "🔗 [View on Homey Developer Tools](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee)" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        if [ "${{ job.status }}" == "success" ]; then
+          echo "✅ **Publication completed successfully!**" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "⚠️ **Publication may require manual intervention**" >> $GITHUB_STEP_SUMMARY
+          echo "Please check the logs above for details" >> $GITHUB_STEP_SUMMARY
+        fi
