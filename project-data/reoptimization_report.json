@@ -1,0 +1,30 @@
+{
+  "timestamp": "2025-10-06T08:20:35.532Z",
+  "results": {
+    "step": 8,
+    "totalSteps": 8,
+    "cleaned": [
+      "231 backup files"
+    ],
+    "optimized": [
+      "app.json size optimal",
+      "16 980 manufacturer IDs"
+    ],
+    "validated": [
+      "app.json",
+      "163 driver.compose.json",
+      "All assets present",
+      "Coherence check"
+    ],
+    "errors": []
+  },
+  "summary": {
+    "backupsRemoved": 231,
+    "appJsonSize": "0.71 MB",
+    "totalManufacturers": 16980,
+    "validDrivers": 163,
+    "totalDrivers": 163,
+    "jsonErrors": 0,
+    "missingAssets": 0
+  }
+}
