@@ -2,7 +2,7 @@
   "name": {
     "en": "Touch Dimmer 1-Gang"
   },
-  "class": "light",
+  "class": "socket",
   "capabilities": [
     "onoff",
     "dim"

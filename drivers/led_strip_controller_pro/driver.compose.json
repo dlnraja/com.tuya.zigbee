@@ -2,7 +2,7 @@
   "name": {
     "en": "led strip controller pro"
   },
-  "class": "button",
+  "class": "light",
   "capabilities": [
     "onoff",
     "measure_temperature",
