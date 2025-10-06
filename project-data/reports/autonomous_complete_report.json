@@ -1,9 +1,9 @@
 {
-  "timestamp": "2025-10-06T08:33:11.358Z",
+  "timestamp": "2025-10-06T08:42:16.378Z",
   "autonomous": true,
   "phases": {
     "enrichment": {
-      "driversEnriched": 162,
+      "driversEnriched": 0,
       "totalManufacturers": 1205
     },
     "images": {
@@ -11,7 +11,7 @@
       "pngNeeded": 0
     },
     "reorganization": {
-      "filesCleaned": 1,
+      "filesCleaned": 0,
       "structureOrganized": true
     },
     "validation": {
@@ -25,9 +25,9 @@
   "errors": [],
   "summary": {
     "totalDrivers": 163,
-    "enriched": 162,
+    "enriched": 0,
     "imagesGenerated": 0,
-    "filesReorganized": 3,
+    "filesReorganized": 2,
     "validated": 854,
     "errors": 0
   }
