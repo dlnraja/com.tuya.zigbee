@@ -2,7 +2,7 @@
   "name": {
     "en": "humidity controller"
   },
-  "class": "sensor",
+  "class": "curtain",
   "capabilities": [
     "onoff",
     "measure_temperature",

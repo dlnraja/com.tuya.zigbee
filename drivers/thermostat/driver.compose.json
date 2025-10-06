@@ -2,7 +2,7 @@
   "name": {
     "en": "Thermostat"
   },
-  "class": "sensor",
+  "class": "thermostat",
   "capabilities": [
     "target_temperature",
     "measure_temperature",

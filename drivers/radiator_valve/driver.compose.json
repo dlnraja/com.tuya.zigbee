@@ -2,7 +2,7 @@
   "name": {
     "en": "Radiator Valve"
   },
-  "class": "other",
+  "class": "thermostat",
   "capabilities": [
     "measure_battery",
     "onoff"
