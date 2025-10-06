@@ -5,7 +5,6 @@
   "class": "sensor",
   "capabilities": [
     "alarm_smoke",
-    "alarm_battery",
     "measure_battery",
     "alarm_tamper"
   ],
