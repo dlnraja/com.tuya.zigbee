@@ -1,0 +1,115 @@
+{
+  "name": {
+    "en": "Wall Switch Triple Gang AC"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "onoff.gang2",
+    "onoff.gang3"
+  ],
+  "zigbee": {
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          1
+        ]
+      },
+      "2": {
+        "clusters": [
+          0,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "3": {
+        "clusters": [
+          0,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "manufacturerName": [
+      "_TZ3000_0s1izerx",
+      "_TZ3000_0s9gukzt",
+      "_TZ3000_0zfrhq4i",
+      "_TZ3000_18ejxno0",
+      "_TZE200_cowvfni3",
+      "_TZ3000_1dd0d5yi",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_2mbfxlzr",
+      "_TZ3000_2putqrmw",
+      "_TZ3000_46t1rvdu",
+      "_TZ3000_49qchf10",
+      "_TZ3000_4fjiwweb"
+    ],
+    "productId": [
+      "TS0001",
+      "TS0101",
+      "TS0111",
+      "TS0115",
+      "TS011F",
+      "TS0105",
+      "TS0108",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS0006",
+      "TS000F",
+      "TS0021",
+      "TS0026",
+      "TS0052",
+      "TS0121",
+      "TS0601",
+      "TS0603",
+      "TS0726",
+      "TS1002",
+      "TS1201",
+      "TS130F",
+      "TS1111"
+    ]
+  },
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Gang 1"
+      }
+    },
+    "onoff.gang2": {
+      "title": {
+        "en": "Gang 2"
+      }
+    },
+    "onoff.gang3": {
+      "title": {
+        "en": "Gang 3"
+      }
+    }
+  },
+  "images": {
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
+  },
+  "platforms": [
+    "local"
+  ]
+}

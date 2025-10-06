@@ -1,0 +1,63 @@
+{
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "zigbee": {
+    "productId": [
+      "TS0001",
+      "TS0011"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/wall_switch_1gang_ac/assets/large.png",
+      "instruction": {
+        "en": "Turn the switch on/off 3 times quickly"
+      }
+    },
+    "manufacturerName": [
+      "_TZ3000_0s1izerx",
+      "_TZ3000_0s9gukzt",
+      "_TZ3000_0zfrhq4i",
+      "_TZ3000_18ejxno0",
+      "_TZE200_cowvfni3",
+      "_TZ3000_01gpyda5",
+      "_TZ3000_0dumfk2z",
+      "_TZ3000_0ghwhypc",
+      "_TZ3000_0ht8dnxj",
+      "_TZ3000_0zrccfgx",
+      "_TZ3000_11pg3ima",
+      "_TZ3000_1adss9de"
+    ]
+  },
+  "images": {
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
+  },
+  "settings": [],
+  "name": {
+    "en": "Wall Switch 1gang AC"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilitiesOptions": {}
+}
