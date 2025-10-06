@@ -2,7 +2,7 @@
   "name": {
     "en": "smart bulb dimmer"
   },
-  "class": "light",
+  "class": "socket",
   "capabilities": [
     "onoff",
     "measure_temperature",
@@ -13,12 +13,13 @@
   ],
   "zigbee": {
     "manufacturerName": [
-      "TS0505B",
+      "TS0001",
       "TS0502B",
-      "_TZ3000_odygigth",
-      "_TZ3000_dbou1ap4",
       "TS0505",
-      "TS0502"
+      "TS0505B",
+      "_TZ3000_dbou1ap4",
+      "_TZ3000_odygigth",
+      "_TZ3000_qzjcsmar"
     ],
     "productId": [
       "TS0601",
