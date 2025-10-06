@@ -45,6 +45,7 @@ function resolveHomeyExecutable() {
 }
 
 const homeyExecutable = resolveHomeyExecutable();
+console.log(`🔍 Homey CLI: ${homeyExecutable}`);
 
 console.log('🤖 AUTO PUBLISH COMPLETE - Publication Autonome');
 console.log('='.repeat(80));
@@ -106,7 +107,7 @@ async function autoPublish() {
     };
 
     const publish = isWindows
-      ? spawn(homeyExecutable, ['app', 'publish'], spawnOptions)
+      ? spawn(process.env.COMSPEC || 'cmd.exe', ['/c', `"${homeyExecutable}" app publish`], spawnOptions)
       : spawn(homeyExecutable, ['app', 'publish'], spawnOptions);
     
     let output = '';

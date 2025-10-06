@@ -1,0 +1,186 @@
+[
+  {
+    "id": "alarm_triggered",
+    "title": {
+      "en": "Alarm was triggered",
+      "fr": "Alarme déclenchée"
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "capabilities=alarm_motion|alarm_contact|alarm_smoke|alarm_co|alarm_water|alarm_battery"
+      }
+    ],
+    "tokens": [
+      {
+        "name": "alarm_type",
+        "type": "string",
+        "title": {
+          "en": "Alarm type",
+          "fr": "Type d'alarme"
+        },
+        "example": {
+          "en": "motion",
+          "fr": "mouvement"
+        }
+      }
+    ]
+  },
+  {
+    "id": "temperature_changed",
+    "title": {
+      "en": "Temperature changed",
+      "fr": "Température a changé"
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "capabilities=measure_temperature"
+      }
+    ],
+    "tokens": [
+      {
+        "name": "temperature",
+        "type": "number",
+        "title": {
+          "en": "Temperature",
+          "fr": "Température"
+        },
+        "example": 23.5
+      }
+    ]
+  },
+  {
+    "id": "humidity_changed",
+    "title": {
+      "en": "Humidity changed",
+      "fr": "Humidité a changé"
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "capabilities=measure_humidity"
+      }
+    ],
+    "tokens": [
+      {
+        "name": "humidity",
+        "type": "number",
+        "title": {
+          "en": "Humidity",
+          "fr": "Humidité"
+        },
+        "example": 65
+      }
+    ]
+  },
+  {
+    "id": "power_changed",
+    "title": {
+      "en": "Power consumption changed",
+      "fr": "Consommation électrique a changé"
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "capabilities=measure_power"
+      }
+    ],
+    "tokens": [
+      {
+        "name": "power",
+        "type": "number",
+        "title": {
+          "en": "Power (W)",
+          "fr": "Puissance (W)"
+        },
+        "example": 150
+      }
+    ]
+  },
+  {
+    "id": "battery_low",
+    "title": {
+      "en": "Battery is low",
+      "fr": "Batterie faible"
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "capabilities=measure_battery"
+      }
+    ],
+    "tokens": [
+      {
+        "name": "battery",
+        "type": "number",
+        "title": {
+          "en": "Battery level (%)",
+          "fr": "Niveau batterie (%)"
+        },
+        "example": 15
+      }
+    ]
+  },
+  {
+    "id": "motion_detected",
+    "title": {
+      "en": "Motion detected",
+      "fr": "Mouvement détecté"
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "capabilities=alarm_motion"
+      }
+    ]
+  },
+  {
+    "id": "contact_alarm",
+    "title": {
+      "en": "Contact sensor triggered",
+      "fr": "Capteur de contact déclenché"
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "capabilities=alarm_contact"
+      }
+    ]
+  },
+  {
+    "id": "device_turned_on",
+    "title": {
+      "en": "Device turned on",
+      "fr": "Appareil allumé"
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "capabilities=onoff"
+      }
+    ]
+  },
+  {
+    "id": "device_turned_off",
+    "title": {
+      "en": "Device turned off",
+      "fr": "Appareil éteint"
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "capabilities=onoff"
+      }
+    ]
+  }
+]
