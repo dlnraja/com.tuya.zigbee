@@ -14,5 +14,8 @@
   },
   "1.1.12": {
     "en": "Official Homey SDK3 compliance: Fixed duplicate battery capabilities (measure_battery + alarm_battery), proper energy configuration per documentation"
+  },
+  "1.1.13": {
+    "en": "fix data"
   }
 }
