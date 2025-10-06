@@ -2,7 +2,7 @@
   "name": {
     "en": "Temperature Controller"
   },
-  "class": "sensor",
+  "class": "curtain",
   "capabilities": [
     "target_temperature",
     "measure_temperature",

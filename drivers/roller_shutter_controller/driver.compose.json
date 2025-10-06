@@ -2,7 +2,7 @@
   "name": {
     "en": "Roller Shutter Controller"
   },
-  "class": "sensor",
+  "class": "curtain",
   "capabilities": [
     "windowcoverings_set",
     "windowcoverings_state",

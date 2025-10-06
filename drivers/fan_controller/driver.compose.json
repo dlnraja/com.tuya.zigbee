@@ -2,7 +2,7 @@
   "name": {
     "en": "Fan Controller"
   },
-  "class": "sensor",
+  "class": "curtain",
   "capabilities": [
     "onoff",
     "dim"

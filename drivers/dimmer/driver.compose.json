@@ -2,7 +2,7 @@
   "name": {
     "en": "Tuya Dimmer Switch"
   },
-  "class": "socket",
+  "class": "light",
   "capabilities": [
     "onoff",
     "dim"

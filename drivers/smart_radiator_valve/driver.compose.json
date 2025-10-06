@@ -2,7 +2,7 @@
   "name": {
     "en": "Smart Radiator Valve"
   },
-  "class": "other",
+  "class": "thermostat",
   "capabilities": [
     "target_temperature",
     "measure_temperature"

@@ -2,7 +2,7 @@
   "name": {
     "en": "Smart Doorbell"
   },
-  "class": "sensor",
+  "class": "doorbell",
   "capabilities": [
     "locked",
     "measure_battery",

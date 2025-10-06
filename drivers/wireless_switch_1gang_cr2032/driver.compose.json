@@ -2,7 +2,7 @@
   "name": {
     "en": "Aqara Button"
   },
-  "class": "button",
+  "class": "socket",
   "capabilities": [
     "measure_battery",
     "onoff",

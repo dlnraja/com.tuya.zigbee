@@ -2,7 +2,7 @@
   "name": {
     "en": "Smart Curtain Motor"
   },
-  "class": "windowcoverings",
+  "class": "curtain",
   "capabilities": [
     "windowcoverings_state",
     "windowcoverings_set",
