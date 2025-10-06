@@ -2,7 +2,7 @@
   "name": {
     "en": "smart bulb dimmer"
   },
-  "class": "socket",
+  "class": "light",
   "capabilities": [
     "onoff",
     "measure_temperature",

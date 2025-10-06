@@ -2,7 +2,7 @@
   "name": {
     "en": "Smart Irrigation Controller"
   },
-  "class": "sensor",
+  "class": "curtain",
   "capabilities": [
     "onoff",
     "measure_water",

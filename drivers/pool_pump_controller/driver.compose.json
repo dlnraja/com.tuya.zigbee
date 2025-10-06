@@ -2,7 +2,7 @@
   "name": {
     "en": "Pool Pump Controller"
   },
-  "class": "sensor",
+  "class": "curtain",
   "capabilities": [
     "onoff",
     "measure_power",

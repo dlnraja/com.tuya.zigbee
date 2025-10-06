@@ -2,7 +2,7 @@
   "name": {
     "en": "Outdoor Light Controller"
   },
-  "class": "sensor",
+  "class": "light",
   "capabilities": [
     "onoff",
     "dim",

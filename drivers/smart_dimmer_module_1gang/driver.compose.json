@@ -2,7 +2,7 @@
   "name": {
     "en": "Smart Dimmer Module 1 Gang"
   },
-  "class": "socket",
+  "class": "light",
   "capabilities": [
     "onoff",
     "dim",

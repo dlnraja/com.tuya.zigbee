@@ -2,7 +2,7 @@
   "name": {
     "en": "Touch Dimmer"
   },
-  "class": "socket",
+  "class": "light",
   "capabilities": [
     "onoff",
     "dim"
