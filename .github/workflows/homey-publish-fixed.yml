@@ -3,9 +3,6 @@ name: Homey Publication (Fixed)
 on:
   push:
     branches: [master]
-    paths-ignore:
-      - '**.md'
-      - 'references/**'
   workflow_dispatch:
 
 jobs:
