@@ -84,13 +84,24 @@ jobs:
         echo "🚀 Publishing to Homey App Store..."
         echo "Version: ${{ steps.version.outputs.version }}"
         
-        # Try to publish (will prompt for inputs, we'll provide them via stdin)
-        echo -e "y\n\nFix: Settings infinite loop + homey-zigbeedriver dependency + 28 flow cards\ny\ny" | homey app publish || {
-          echo "⚠️ Standard publish failed, trying alternative method..."
-          homey app build || true
-        }
+        # Auto-respond to prompts
+        {
+          sleep 1 && echo "y" &&      # Uncommitted changes? Yes
+          sleep 1 && echo "y" &&      # Update version? Yes
+          sleep 1 && echo "" &&       # Version type? [Enter] = patch
+          sleep 1 && echo "Fix: Settings infinite loop + homey-zigbeedriver dependency + 28 flow cards" &&
+          sleep 1 && echo "y" &&      # Commit? Yes
+          sleep 1 && echo "y"         # Push? Yes
+        } | homey app publish
         
-        echo "✅ Publication attempt completed"
+        PUBLISH_EXIT=$?
+        if [ $PUBLISH_EXIT -eq 0 ]; then
+          echo "✅ Publication completed successfully"
+        else
+          echo "⚠️ Publication may need manual intervention"
+          echo "Exit code: $PUBLISH_EXIT"
+        fi
+        
         echo "🔗 Check status: https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee"
         
     - name: Create GitHub Release Tag

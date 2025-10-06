@@ -103,12 +103,11 @@ async function autoPublish() {
     const spawnOptions = {
       cwd: rootPath,
       stdio: ['pipe', 'pipe', 'pipe'],
-      env: { ...process.env }
+      env: { ...process.env },
+      shell: true
     };
 
-    const publish = isWindows
-      ? spawn(process.env.COMSPEC || 'cmd.exe', ['/c', `"${homeyExecutable}" app publish`], spawnOptions)
-      : spawn(homeyExecutable, ['app', 'publish'], spawnOptions);
+    const publish = spawn('homey', ['app', 'publish'], spawnOptions);
     
     let output = '';
     let errorOutput = '';
