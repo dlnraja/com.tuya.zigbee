@@ -5,7 +5,6 @@
   "class": "sensor",
   "capabilities": [
     "locked",
-    "alarm_battery",
     "measure_battery",
     "alarm_contact"
   ],
