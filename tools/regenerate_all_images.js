@@ -42,7 +42,7 @@ function getCategoryForDriver(driverId) {
   if (lower.match(/sensor|detector|monitor|motion|pir|radar|leak|smoke|co2|temp|humid|pressure|lux|soil|vibration|presence/)) return 'sensors';
   if (lower.match(/bulb|spot|led_strip|rgb|ceiling_light|dimmer/) && !lower.includes('controller')) return 'lighting';
   if (lower.match(/plug|outlet|socket|energy|power_meter|mini/)) return 'power';
-  if (lower.match(/curtain|blind|shutter|shade|projector/)) return 'covers';
+  if (lower.match(/curtain|blind|shutter|shade|projector|roller|cover|door_controller|garage|gate/)) return 'covers';
   if (lower.match(/thermostat|radiator|hvac/)) return 'climate';
   if (lower.match(/lock|doorbell|siren|sos/)) return 'security';
   
@@ -76,7 +76,7 @@ function generateEnhancedSVG(driverId, category) {
   <!-- Large icon/initial -->
   <text x="250" y="280" font-family="Arial, sans-serif" font-size="140" 
         fill="white" text-anchor="middle" font-weight="bold" 
-        filter="url(#shadow)">${initial}</text>
+        filter="url(#shadow)">${icon}</text>
   
   <!-- Category badge -->
   <rect x="100" y="360" width="300" height="50" rx="25" fill="white" opacity="0.9"/>
