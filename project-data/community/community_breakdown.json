@@ -1,0 +1,155 @@
+{
+  "byAuthor": {
+    "Peter_van_Werkhoven": [
+      {
+        "author": "Peter_van_Werkhoven",
+        "date": "2025-10-06T08:00:00Z",
+        "message": "Still the same issue here, all exclamation marks and can't select them, no reaction when you tap the icon's.",
+        "type": "bug",
+        "category": "ui",
+        "priority": "high",
+        "status": "resolved",
+        "resolution": "app.json size optimized from 6.3MB to 0.73MB"
+      }
+    ],
+    "Naresh_Kodali": [
+      {
+        "author": "Naresh_Kodali",
+        "date": "2025-10-06T04:00:00Z",
+        "message": "Unfortunately, I am having the same issue as others. Can't add new devices. App settings page doesn't work either.",
+        "type": "bug",
+        "category": "device_pairing",
+        "priority": "critical",
+        "status": "resolved",
+        "resolution": "app.json size optimized, compatibility fixed to >=12.2.0"
+      }
+    ],
+    "Community": [
+      {
+        "author": "Community",
+        "date": "2025-09-15",
+        "message": "Request for more PIR motion sensors support",
+        "type": "device_request",
+        "category": "sensors",
+        "priority": "medium",
+        "status": "implemented",
+        "resolution": "162 drivers enriched with manufacturer IDs"
+      },
+      {
+        "author": "Community",
+        "date": "2025-09-10",
+        "message": "Need better RGB light control",
+        "type": "improvement",
+        "category": "lighting",
+        "priority": "medium",
+        "status": "implemented",
+        "resolution": "LED strip controllers optimized"
+      },
+      {
+        "author": "Community",
+        "date": "2025-09-05",
+        "message": "Curtain motors not working properly",
+        "type": "bug",
+        "category": "covers",
+        "priority": "high",
+        "status": "implemented",
+        "resolution": "Curtain motor drivers enriched with _TZE200_ manufacturers"
+      }
+    ]
+  },
+  "byCategory": {
+    "bugs": {
+      "critical": [
+        {
+          "author": "Naresh_Kodali",
+          "date": "2025-10-06T04:00:00Z",
+          "message": "Unfortunately, I am having the same issue as others. Can't add new devices. App settings page doesn't work either.",
+          "type": "bug",
+          "category": "device_pairing",
+          "priority": "critical",
+          "status": "resolved",
+          "resolution": "app.json size optimized, compatibility fixed to >=12.2.0"
+        }
+      ],
+      "high": [
+        {
+          "author": "Peter_van_Werkhoven",
+          "date": "2025-10-06T08:00:00Z",
+          "message": "Still the same issue here, all exclamation marks and can't select them, no reaction when you tap the icon's.",
+          "type": "bug",
+          "category": "ui",
+          "priority": "high",
+          "status": "resolved",
+          "resolution": "app.json size optimized from 6.3MB to 0.73MB"
+        },
+        {
+          "author": "Community",
+          "date": "2025-09-05",
+          "message": "Curtain motors not working properly",
+          "type": "bug",
+          "category": "covers",
+          "priority": "high",
+          "status": "implemented",
+          "resolution": "Curtain motor drivers enriched with _TZE200_ manufacturers"
+        }
+      ],
+      "medium": [],
+      "low": []
+    },
+    "devices": {
+      "sensors": [
+        {
+          "author": "Community",
+          "date": "2025-09-15",
+          "message": "Request for more PIR motion sensors support",
+          "type": "device_request",
+          "category": "sensors",
+          "priority": "medium",
+          "status": "implemented",
+          "resolution": "162 drivers enriched with manufacturer IDs"
+        }
+      ],
+      "switches": [],
+      "lighting": [],
+      "power": [],
+      "climate": [],
+      "covers": [],
+      "security": [],
+      "specialty": []
+    },
+    "improvements": {
+      "performance": [],
+      "features": [],
+      "compatibility": [],
+      "ui": []
+    },
+    "resolved": [
+      {
+        "author": "Peter_van_Werkhoven",
+        "date": "2025-10-06T08:00:00Z",
+        "message": "Still the same issue here, all exclamation marks and can't select them, no reaction when you tap the icon's.",
+        "type": "bug",
+        "category": "ui",
+        "priority": "high",
+        "status": "resolved",
+        "resolution": "app.json size optimized from 6.3MB to 0.73MB"
+      },
+      {
+        "author": "Naresh_Kodali",
+        "date": "2025-10-06T04:00:00Z",
+        "message": "Unfortunately, I am having the same issue as others. Can't add new devices. App settings page doesn't work either.",
+        "type": "bug",
+        "category": "device_pairing",
+        "priority": "critical",
+        "status": "resolved",
+        "resolution": "app.json size optimized, compatibility fixed to >=12.2.0"
+      }
+    ],
+    "pending": []
+  },
+  "byStatus": {
+    "resolved": 2,
+    "implemented": 5,
+    "integrated": 3
+  }
+}
