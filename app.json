@@ -364,7 +364,12 @@
       "platforms": [
         "local"
       ],
-      "id": "air_quality_monitor_pro"
+      "id": "air_quality_monitor_pro",
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
     },
     {
       "name": {
@@ -957,7 +962,13 @@
       "platforms": [
         "local"
       ],
-      "id": "climate_monitor"
+      "id": "climate_monitor",
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      }
     },
     {
       "name": {
@@ -1101,7 +1112,13 @@
       "platforms": [
         "local"
       ],
-      "id": "co2_sensor"
+      "id": "co2_sensor",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -1243,7 +1260,13 @@
       "platforms": [
         "local"
       ],
-      "id": "co2_temp_humidity"
+      "id": "co2_temp_humidity",
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      }
     },
     {
       "name": {
@@ -1397,7 +1420,13 @@
       "platforms": [
         "local"
       ],
-      "id": "co_detector_pro"
+      "id": "co_detector_pro",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -1670,7 +1699,13 @@
           }
         }
       },
-      "id": "curtain_motor"
+      "id": "curtain_motor",
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      }
     },
     {
       "name": {
@@ -2547,7 +2582,13 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "door_controller"
+      "id": "door_controller",
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      }
     },
     {
       "name": {
@@ -2648,7 +2689,12 @@
       },
       "settings": [],
       "capabilitiesOptions": {},
-      "id": "door_lock"
+      "id": "door_lock",
+      "energy": {
+        "batteries": [
+          "AA"
+        ]
+      }
     },
     {
       "name": {
@@ -2816,7 +2862,13 @@
           }
         }
       },
-      "id": "door_window_sensor"
+      "id": "door_window_sensor",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -2927,7 +2979,13 @@
           }
         }
       },
-      "id": "doorbell"
+      "id": "doorbell",
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      }
     },
     {
       "name": {
@@ -3859,7 +3917,12 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "fingerprint_lock"
+      "id": "fingerprint_lock",
+      "energy": {
+        "batteries": [
+          "AA"
+        ]
+      }
     },
     {
       "name": {
@@ -4027,7 +4090,13 @@
           }
         }
       },
-      "id": "formaldehyde_sensor"
+      "id": "formaldehyde_sensor",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -4155,7 +4224,13 @@
       "platforms": [
         "local"
       ],
-      "id": "garage_door_controller"
+      "id": "garage_door_controller",
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      }
     },
     {
       "name": {
@@ -4265,7 +4340,13 @@
       },
       "settings": [],
       "capabilitiesOptions": {},
-      "id": "garage_door_opener"
+      "id": "garage_door_opener",
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      }
     },
     {
       "name": {
@@ -4588,7 +4669,13 @@
       "platforms": [
         "local"
       ],
-      "id": "humidity_controller"
+      "id": "humidity_controller",
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      }
     },
     {
       "name": {
@@ -5279,7 +5366,13 @@
           }
         }
       },
-      "id": "lux_sensor"
+      "id": "lux_sensor",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -5769,7 +5862,13 @@
       },
       "settings": [],
       "capabilitiesOptions": {},
-      "id": "mini_switch"
+      "id": "mini_switch",
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      }
     },
     {
       "name": {
@@ -5914,7 +6013,13 @@
       "platforms": [
         "local"
       ],
-      "id": "motion_sensor_battery"
+      "id": "motion_sensor_battery",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -6060,7 +6165,13 @@
       },
       "settings": [],
       "capabilitiesOptions": {},
-      "id": "motion_sensor_mmwave"
+      "id": "motion_sensor_mmwave",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -6241,7 +6352,13 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "motion_sensor_pir_ac"
+      "id": "motion_sensor_pir_ac",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -6387,7 +6504,13 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "motion_sensor_pir_battery"
+      "id": "motion_sensor_pir_battery",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -6555,7 +6678,13 @@
       "platforms": [
         "local"
       ],
-      "id": "motion_sensor_zigbee_204z"
+      "id": "motion_sensor_zigbee_204z",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -6738,7 +6867,13 @@
           }
         }
       },
-      "id": "multisensor"
+      "id": "multisensor",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -6920,7 +7055,13 @@
           }
         }
       },
-      "id": "noise_level_sensor"
+      "id": "noise_level_sensor",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -7070,7 +7211,13 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "outdoor_light_controller"
+      "id": "outdoor_light_controller",
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      }
     },
     {
       "name": {
@@ -7181,7 +7328,13 @@
           }
         }
       },
-      "id": "outdoor_siren"
+      "id": "outdoor_siren",
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      }
     },
     {
       "name": {
@@ -7326,7 +7479,13 @@
           }
         }
       },
-      "id": "pet_feeder"
+      "id": "pet_feeder",
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      }
     },
     {
       "name": {
@@ -7468,7 +7627,13 @@
       "platforms": [
         "local"
       ],
-      "id": "pir_sensor_advanced"
+      "id": "pir_sensor_advanced",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -7776,7 +7941,13 @@
           }
         }
       },
-      "id": "pm25_sensor"
+      "id": "pm25_sensor",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -8206,7 +8377,13 @@
           }
         }
       },
-      "id": "presence_sensor_radar"
+      "id": "presence_sensor_radar",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -8388,7 +8565,13 @@
           }
         }
       },
-      "id": "pressure_sensor"
+      "id": "pressure_sensor",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -8650,7 +8833,13 @@
       "platforms": [
         "local"
       ],
-      "id": "radar_motion_sensor_advanced"
+      "id": "radar_motion_sensor_advanced",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -8810,7 +8999,13 @@
       "platforms": [
         "local"
       ],
-      "id": "radar_motion_sensor_mmwave"
+      "id": "radar_motion_sensor_mmwave",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -8952,7 +9147,13 @@
       "platforms": [
         "local"
       ],
-      "id": "radar_motion_sensor_tank_level"
+      "id": "radar_motion_sensor_tank_level",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -9074,7 +9275,12 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "radiator_valve"
+      "id": "radiator_valve",
+      "energy": {
+        "batteries": [
+          "AA"
+        ]
+      }
     },
     {
       "name": {
@@ -9476,7 +9682,12 @@
       },
       "settings": [],
       "capabilitiesOptions": {},
-      "id": "remote_switch"
+      "id": "remote_switch",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -9734,7 +9945,13 @@
           }
         }
       },
-      "id": "roller_blind_controller"
+      "id": "roller_blind_controller",
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      }
     },
     {
       "name": {
@@ -9857,7 +10074,13 @@
       "platforms": [
         "local"
       ],
-      "id": "roller_shutter_controller"
+      "id": "roller_shutter_controller",
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      }
     },
     {
       "name": {
@@ -10074,7 +10297,13 @@
       "platforms": [
         "local"
       ],
-      "id": "roller_shutter_switch"
+      "id": "roller_shutter_switch",
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      }
     },
     {
       "name": {
@@ -10292,7 +10521,12 @@
       "platforms": [
         "local"
       ],
-      "id": "roller_shutter_switch_advanced"
+      "id": "roller_shutter_switch_advanced",
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
     },
     {
       "name": {
@@ -10714,7 +10948,12 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "scene_controller_2button"
+      "id": "scene_controller_2button",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "class": "button",
@@ -10938,7 +11177,12 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "scene_controller_4button"
+      "id": "scene_controller_4button",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "class": "button",
@@ -11171,7 +11415,12 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "scene_controller_6button"
+      "id": "scene_controller_6button",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "class": "button",
@@ -11406,7 +11655,12 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "scene_controller_8button"
+      "id": "scene_controller_8button",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -12504,7 +12758,12 @@
           }
         }
       },
-      "id": "smart_curtain_motor"
+      "id": "smart_curtain_motor",
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
     },
     {
       "name": {
@@ -12819,7 +13078,12 @@
           }
         }
       },
-      "id": "smart_doorbell"
+      "id": "smart_doorbell",
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
     },
     {
       "name": {
@@ -12964,7 +13228,12 @@
           }
         }
       },
-      "id": "smart_garden_sprinkler"
+      "id": "smart_garden_sprinkler",
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
     },
     {
       "name": {
@@ -13071,7 +13340,12 @@
       "platforms": [
         "local"
       ],
-      "id": "smart_irrigation_controller"
+      "id": "smart_irrigation_controller",
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
     },
     {
       "name": {
@@ -13186,7 +13460,12 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "smart_lock"
+      "id": "smart_lock",
+      "energy": {
+        "batteries": [
+          "AA"
+        ]
+      }
     },
     {
       "name": {
@@ -13957,7 +14236,13 @@
       "platforms": [
         "local"
       ],
-      "id": "smart_smoke_detector_advanced"
+      "id": "smart_smoke_detector_advanced",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -15762,7 +16047,12 @@
       "platforms": [
         "local"
       ],
-      "id": "smart_thermostat"
+      "id": "smart_thermostat",
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
     },
     {
       "name": {
@@ -15864,7 +16154,12 @@
       "platforms": [
         "local"
       ],
-      "id": "smart_valve_controller"
+      "id": "smart_valve_controller",
+      "energy": {
+        "batteries": [
+          "AA"
+        ]
+      }
     },
     {
       "name": {
@@ -15988,7 +16283,12 @@
           }
         }
       },
-      "id": "smart_water_valve"
+      "id": "smart_water_valve",
+      "energy": {
+        "batteries": [
+          "AA"
+        ]
+      }
     },
     {
       "name": {
@@ -16157,7 +16457,13 @@
           }
         }
       },
-      "id": "smoke_detector"
+      "id": "smoke_detector",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -16320,7 +16626,13 @@
           }
         }
       },
-      "id": "smoke_detector_temp_humidity_advanced"
+      "id": "smoke_detector_temp_humidity_advanced",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -16483,7 +16795,13 @@
       "platforms": [
         "local"
       ],
-      "id": "smoke_temp_humid_sensor"
+      "id": "smoke_temp_humid_sensor",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -16666,7 +16984,13 @@
           }
         }
       },
-      "id": "soil_moisture_sensor"
+      "id": "soil_moisture_sensor",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -16834,7 +17158,13 @@
       "platforms": [
         "local"
       ],
-      "id": "soil_moisture_temperature_sensor"
+      "id": "soil_moisture_temperature_sensor",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -16994,7 +17324,13 @@
       "platforms": [
         "local"
       ],
-      "id": "soil_tester_temp_humid"
+      "id": "soil_tester_temp_humid",
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      }
     },
     {
       "name": {
@@ -17104,7 +17440,13 @@
       "platforms": [
         "local"
       ],
-      "id": "solar_panel_controller"
+      "id": "solar_panel_controller",
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      }
     },
     {
       "name": {
@@ -17312,7 +17654,12 @@
       "platforms": [
         "local"
       ],
-      "id": "sos_emergency_button"
+      "id": "sos_emergency_button",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -17504,7 +17851,13 @@
       "platforms": [
         "local"
       ],
-      "id": "switch_1gang_battery"
+      "id": "switch_1gang_battery",
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      }
     },
     {
       "name": {
@@ -18575,7 +18928,12 @@
       "platforms": [
         "local"
       ],
-      "id": "switch_4gang_battery_cr2032"
+      "id": "switch_4gang_battery_cr2032",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -18788,7 +19146,13 @@
       "platforms": [
         "local"
       ],
-      "id": "switch_5gang_battery"
+      "id": "switch_5gang_battery",
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      }
     },
     {
       "name": {
@@ -19335,7 +19699,13 @@
       "platforms": [
         "local"
       ],
-      "id": "tank_level_monitor"
+      "id": "tank_level_monitor",
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      }
     },
     {
       "name": {
@@ -19498,7 +19868,13 @@
       "platforms": [
         "local"
       ],
-      "id": "temp_humid_sensor_advanced"
+      "id": "temp_humid_sensor_advanced",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -19665,7 +20041,13 @@
       "platforms": [
         "local"
       ],
-      "id": "temp_humid_sensor_leak_detector"
+      "id": "temp_humid_sensor_leak_detector",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -19827,7 +20209,13 @@
       "platforms": [
         "local"
       ],
-      "id": "temp_humid_sensor_v1w2k9dd"
+      "id": "temp_humid_sensor_v1w2k9dd",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -19986,7 +20374,13 @@
       "platforms": [
         "local"
       ],
-      "id": "temp_sensor_pro"
+      "id": "temp_sensor_pro",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -20156,7 +20550,13 @@
           }
         }
       },
-      "id": "temperature_controller"
+      "id": "temperature_controller",
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      }
     },
     {
       "name": {
@@ -20334,7 +20734,13 @@
           }
         }
       },
-      "id": "temperature_humidity_sensor"
+      "id": "temperature_humidity_sensor",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -20506,7 +20912,13 @@
           }
         }
       },
-      "id": "temperature_sensor"
+      "id": "temperature_sensor",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -20668,7 +21080,13 @@
       "platforms": [
         "local"
       ],
-      "id": "temperature_sensor_advanced"
+      "id": "temperature_sensor_advanced",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -20838,7 +21256,13 @@
           ]
         }
       },
-      "id": "thermostat"
+      "id": "thermostat",
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      }
     },
     {
       "name": {
@@ -22314,7 +22738,13 @@
           }
         }
       },
-      "id": "tvoc_sensor"
+      "id": "tvoc_sensor",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -22477,7 +22907,13 @@
       "platforms": [
         "local"
       ],
-      "id": "tvoc_sensor_advanced"
+      "id": "tvoc_sensor_advanced",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -22982,7 +23418,13 @@
           }
         }
       },
-      "id": "vibration_sensor"
+      "id": "vibration_sensor",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "class": "light",
@@ -25523,7 +25965,13 @@
       "platforms": [
         "local"
       ],
-      "id": "water_leak_detector_advanced"
+      "id": "water_leak_detector_advanced",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -25664,7 +26112,13 @@
       "platforms": [
         "local"
       ],
-      "id": "water_leak_detector_sq510a"
+      "id": "water_leak_detector_sq510a",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -25833,7 +26287,13 @@
           }
         }
       },
-      "id": "water_leak_sensor"
+      "id": "water_leak_sensor",
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -25957,7 +26417,12 @@
           }
         }
       },
-      "id": "water_valve"
+      "id": "water_valve",
+      "energy": {
+        "batteries": [
+          "AA"
+        ]
+      }
     },
     {
       "name": {
@@ -26064,7 +26529,12 @@
       "platforms": [
         "local"
       ],
-      "id": "water_valve_smart"
+      "id": "water_valve_smart",
+      "energy": {
+        "batteries": [
+          "AA"
+        ]
+      }
     },
     {
       "name": {
@@ -26266,7 +26736,12 @@
       },
       "settings": [],
       "capabilitiesOptions": {},
-      "id": "wireless_switch"
+      "id": "wireless_switch",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -26469,7 +26944,12 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "wireless_switch_1gang_cr2032"
+      "id": "wireless_switch_1gang_cr2032",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "class": "button",
@@ -27176,7 +27656,12 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "wireless_switch_4gang_cr2032"
+      "id": "wireless_switch_4gang_cr2032",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
@@ -27415,7 +27900,12 @@
       "platforms": [
         "local"
       ],
-      "id": "wireless_switch_4gang_cr2450"
+      "id": "wireless_switch_4gang_cr2450",
+      "energy": {
+        "batteries": [
+          "CR2450"
+        ]
+      }
     },
     {
       "class": "button",
@@ -27649,7 +28139,12 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "wireless_switch_5gang_cr2032"
+      "id": "wireless_switch_5gang_cr2032",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "class": "button",
@@ -27884,7 +28379,12 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "wireless_switch_6gang_cr2032"
+      "id": "wireless_switch_6gang_cr2032",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "name": {
