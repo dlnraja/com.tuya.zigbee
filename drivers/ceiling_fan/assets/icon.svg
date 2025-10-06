@@ -1,31 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-<style type="text/css">
-	.st0{fill:#FFFFFF;}
-</style>
-<g>
-	<!-- Central motor housing -->
-	<circle class="st0" cx="50" cy="50" r="8"/>
-	
-	<!-- Fan blade 1 (top) -->
-	<path class="st0" d="M50,20 Q55,25 55,35 L45,35 Q45,25 50,20 Z"/>
-	
-	<!-- Fan blade 2 (top-right) -->
-	<path class="st0" d="M70,30 Q67,35 62,40 L57,33 Q62,28 70,30 Z"/>
-	
-	<!-- Fan blade 3 (bottom-right) -->
-	<path class="st0" d="M75,55 Q70,58 62,58 L60,48 Q68,48 75,55 Z"/>
-	
-	<!-- Fan blade 4 (bottom) -->
-	<path class="st0" d="M50,80 Q45,75 45,65 L55,65 Q55,75 50,80 Z"/>
-	
-	<!-- Fan blade 5 (bottom-left) -->
-	<path class="st0" d="M25,55 Q30,58 38,58 L40,48 Q32,48 25,55 Z"/>
-	
-	<!-- Fan blade 6 (top-left) -->
-	<path class="st0" d="M30,30 Q33,35 38,40 L43,33 Q38,28 30,30 Z"/>
-	
-	<!-- Central dot -->
-	<circle class="st0" cx="50" cy="50" r="3"/>
-</g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad_specialty" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#607D8B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#607D8B;stop-opacity:0.7" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background with gradient -->
+  <rect width="500" height="500" fill="url(#grad_specialty)" rx="60"/>
+  
+  <!-- Icon circle background -->
+  <circle cx="250" cy="220" r="100" fill="white" opacity="0.2" filter="url(#shadow)"/>
+  
+  <!-- Large icon/initial -->
+  <text x="250" y="280" font-family="Arial, sans-serif" font-size="140" 
+        fill="white" text-anchor="middle" font-weight="bold" 
+        filter="url(#shadow)">C</text>
+  
+  <!-- Category badge -->
+  <rect x="100" y="360" width="300" height="50" rx="25" fill="white" opacity="0.9"/>
+  <text x="250" y="392" font-family="Arial, sans-serif" font-size="22" 
+        fill="#607D8B" text-anchor="middle" font-weight="bold">SPECIALTY</text>
+  
+  <!-- Brand -->
+  <text x="250" y="450" font-family="Arial, sans-serif" font-size="28" 
+        fill="white" text-anchor="middle" opacity="0.9" font-weight="300">Tuya Zigbee</text>
 </svg>
