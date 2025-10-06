@@ -1,0 +1,447 @@
+{
+  "fixed": 63,
+  "report": [
+    {
+      "driver": "air_quality_monitor",
+      "type": "other",
+      "before": 1615,
+      "after": 0,
+      "removed": 1615
+    },
+    {
+      "driver": "air_quality_monitor_pro",
+      "type": "other",
+      "before": 1613,
+      "after": 0,
+      "removed": 1613
+    },
+    {
+      "driver": "pm25_detector",
+      "type": "other",
+      "before": 1612,
+      "after": 0,
+      "removed": 1612
+    },
+    {
+      "driver": "pm25_sensor",
+      "type": "other",
+      "before": 1612,
+      "after": 0,
+      "removed": 1612
+    },
+    {
+      "driver": "tvoc_sensor",
+      "type": "other",
+      "before": 1612,
+      "after": 0,
+      "removed": 1612
+    },
+    {
+      "driver": "tvoc_sensor_advanced",
+      "type": "other",
+      "before": 1612,
+      "after": 0,
+      "removed": 1612
+    },
+    {
+      "driver": "mini",
+      "type": "other",
+      "before": 1609,
+      "after": 0,
+      "removed": 1609
+    },
+    {
+      "driver": "pet_feeder",
+      "type": "other",
+      "before": 1608,
+      "after": 0,
+      "removed": 1608
+    },
+    {
+      "driver": "smart_garden_sprinkler",
+      "type": "other",
+      "before": 1608,
+      "after": 0,
+      "removed": 1608
+    },
+    {
+      "driver": "zbbridge",
+      "type": "other",
+      "before": 1608,
+      "after": 0,
+      "removed": 1608
+    },
+    {
+      "driver": "zigbee_gateway_hub",
+      "type": "other",
+      "before": 1608,
+      "after": 0,
+      "removed": 1608
+    },
+    {
+      "driver": "formaldehyde_sensor",
+      "type": "other",
+      "before": 1607,
+      "after": 0,
+      "removed": 1607
+    },
+    {
+      "driver": "lux_sensor",
+      "type": "other",
+      "before": 1607,
+      "after": 0,
+      "removed": 1607
+    },
+    {
+      "driver": "multisensor",
+      "type": "other",
+      "before": 1607,
+      "after": 0,
+      "removed": 1607
+    },
+    {
+      "driver": "noise_level_sensor",
+      "type": "other",
+      "before": 1607,
+      "after": 0,
+      "removed": 1607
+    },
+    {
+      "driver": "pressure_sensor",
+      "type": "other",
+      "before": 1607,
+      "after": 0,
+      "removed": 1607
+    },
+    {
+      "driver": "smart_spot",
+      "type": "other",
+      "before": 1607,
+      "after": 0,
+      "removed": 1607
+    },
+    {
+      "driver": "soil_moisture_sensor",
+      "type": "other",
+      "before": 1607,
+      "after": 0,
+      "removed": 1607
+    },
+    {
+      "driver": "tank_level_monitor",
+      "type": "other",
+      "before": 1607,
+      "after": 0,
+      "removed": 1607
+    },
+    {
+      "driver": "vibration_sensor",
+      "type": "other",
+      "before": 1607,
+      "after": 0,
+      "removed": 1607
+    },
+    {
+      "driver": "ceiling_fan",
+      "type": "fan",
+      "before": 521,
+      "after": 1,
+      "removed": 520
+    },
+    {
+      "driver": "dimmer",
+      "type": "other",
+      "before": 7,
+      "after": 0,
+      "removed": 7
+    },
+    {
+      "driver": "touch_dimmer",
+      "type": "other",
+      "before": 7,
+      "after": 0,
+      "removed": 7
+    },
+    {
+      "driver": "smart_outlet_monitor",
+      "type": "other",
+      "before": 5,
+      "after": 0,
+      "removed": 5
+    },
+    {
+      "driver": "smart_thermostat",
+      "type": "other",
+      "before": 5,
+      "after": 0,
+      "removed": 5
+    },
+    {
+      "driver": "thermostat",
+      "type": "other",
+      "before": 5,
+      "after": 0,
+      "removed": 5
+    },
+    {
+      "driver": "usb_outlet",
+      "type": "other",
+      "before": 5,
+      "after": 0,
+      "removed": 5
+    },
+    {
+      "driver": "usb_outlet_advanced",
+      "type": "other",
+      "before": 5,
+      "after": 0,
+      "removed": 5
+    },
+    {
+      "driver": "presence_sensor_radar",
+      "type": "motion",
+      "before": 5,
+      "after": 4,
+      "removed": 1
+    },
+    {
+      "driver": "roller_shutter_switch",
+      "type": "curtain",
+      "before": 1,
+      "after": 1,
+      "removed": 0
+    },
+    {
+      "driver": "roller_shutter_switch_advanced",
+      "type": "curtain",
+      "before": 1,
+      "after": 1,
+      "removed": 0
+    },
+    {
+      "driver": "fan_controller",
+      "type": "safety",
+      "before": 1,
+      "after": 2,
+      "removed": -1
+    },
+    {
+      "driver": "hvac_controller",
+      "type": "safety",
+      "before": 1,
+      "after": 2,
+      "removed": -1
+    },
+    {
+      "driver": "pool_pump_controller",
+      "type": "safety",
+      "before": 1,
+      "after": 2,
+      "removed": -1
+    },
+    {
+      "driver": "projector_screen_controller",
+      "type": "safety",
+      "before": 1,
+      "after": 2,
+      "removed": -1
+    },
+    {
+      "driver": "roller_blind_controller",
+      "type": "safety",
+      "before": 1,
+      "after": 2,
+      "removed": -1
+    },
+    {
+      "driver": "roller_shutter_controller",
+      "type": "safety",
+      "before": 1,
+      "after": 2,
+      "removed": -1
+    },
+    {
+      "driver": "scene_controller",
+      "type": "safety",
+      "before": 1,
+      "after": 2,
+      "removed": -1
+    },
+    {
+      "driver": "scene_controller_2button",
+      "type": "safety",
+      "before": 1,
+      "after": 2,
+      "removed": -1
+    },
+    {
+      "driver": "scene_controller_4button",
+      "type": "safety",
+      "before": 1,
+      "after": 2,
+      "removed": -1
+    },
+    {
+      "driver": "scene_controller_6button",
+      "type": "safety",
+      "before": 1,
+      "after": 2,
+      "removed": -1
+    },
+    {
+      "driver": "scene_controller_8button",
+      "type": "safety",
+      "before": 1,
+      "after": 2,
+      "removed": -1
+    },
+    {
+      "driver": "scene_controller_battery",
+      "type": "safety",
+      "before": 1,
+      "after": 2,
+      "removed": -1
+    },
+    {
+      "driver": "shade_controller",
+      "type": "safety",
+      "before": 1,
+      "after": 2,
+      "removed": -1
+    },
+    {
+      "driver": "smart_irrigation_controller",
+      "type": "safety",
+      "before": 1,
+      "after": 2,
+      "removed": -1
+    },
+    {
+      "driver": "smart_valve_controller",
+      "type": "safety",
+      "before": 1,
+      "after": 2,
+      "removed": -1
+    },
+    {
+      "driver": "solar_panel_controller",
+      "type": "safety",
+      "before": 1,
+      "after": 2,
+      "removed": -1
+    },
+    {
+      "driver": "ceiling_light_controller",
+      "type": "lighting",
+      "before": 1,
+      "after": 3,
+      "removed": -2
+    },
+    {
+      "driver": "co2_temp_humidity",
+      "type": "climate",
+      "before": 1,
+      "after": 3,
+      "removed": -2
+    },
+    {
+      "driver": "dimmer_switch_1gang_ac",
+      "type": "switch",
+      "before": 1,
+      "after": 3,
+      "removed": -2
+    },
+    {
+      "driver": "dimmer_switch_3gang_ac",
+      "type": "switch",
+      "before": 1,
+      "after": 3,
+      "removed": -2
+    },
+    {
+      "driver": "dimmer_switch_timer_module",
+      "type": "switch",
+      "before": 1,
+      "after": 3,
+      "removed": -2
+    },
+    {
+      "driver": "humidity_controller",
+      "type": "climate",
+      "before": 1,
+      "after": 3,
+      "removed": -2
+    },
+    {
+      "driver": "led_strip_controller",
+      "type": "lighting",
+      "before": 1,
+      "after": 3,
+      "removed": -2
+    },
+    {
+      "driver": "led_strip_controller_pro",
+      "type": "lighting",
+      "before": 1,
+      "after": 3,
+      "removed": -2
+    },
+    {
+      "driver": "milight_controller",
+      "type": "lighting",
+      "before": 1,
+      "after": 3,
+      "removed": -2
+    },
+    {
+      "driver": "rgb_led_controller",
+      "type": "lighting",
+      "before": 1,
+      "after": 3,
+      "removed": -2
+    },
+    {
+      "driver": "smart_dimmer_module_1gang",
+      "type": "switch",
+      "before": 1,
+      "after": 3,
+      "removed": -2
+    },
+    {
+      "driver": "smoke_detector_temp_humidity_advanced",
+      "type": "climate",
+      "before": 1,
+      "after": 3,
+      "removed": -2
+    },
+    {
+      "driver": "smoke_temp_humid_sensor",
+      "type": "climate",
+      "before": 1,
+      "after": 3,
+      "removed": -2
+    },
+    {
+      "driver": "temp_humid_sensor_leak_detector",
+      "type": "climate",
+      "before": 1,
+      "after": 3,
+      "removed": -2
+    },
+    {
+      "driver": "temperature_controller",
+      "type": "climate",
+      "before": 1,
+      "after": 3,
+      "removed": -2
+    },
+    {
+      "driver": "touch_dimmer_1gang",
+      "type": "switch",
+      "before": 1,
+      "after": 3,
+      "removed": -2
+    }
+  ],
+  "version": "1.1.5"
+}
