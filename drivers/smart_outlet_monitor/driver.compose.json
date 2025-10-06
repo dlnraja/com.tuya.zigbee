@@ -2,7 +2,7 @@
   "name": {
     "en": "smart outlet monitor"
   },
-  "class": "sensor",
+  "class": "socket",
   "capabilities": [
     "onoff",
     "measure_power",
@@ -121,7 +121,25 @@
       "_TZ3000_cehuw1lw",
       "_TZ3000_qzjcsmar",
       "_TZ3000_ji4araar",
-      "_TZ3000_n2egfsli"
+      "_TZ3000_n2egfsli",
+      "TS011F",
+      "_TZ3000_cphmq0q7",
+      "_TZ3000_4uuaja4a",
+      "TS0001",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS0201",
+      "TS0601",
+      "TS0203",
+      "TS130F",
+      "TS0202",
+      "TS0205",
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044"
     ],
     "productId": [
       "TS0001",
@@ -155,7 +173,8 @@
       "TS0726",
       "TS1002",
       "TS1201",
-      "TS1111"
+      "TS1111",
+      "TS011F"
     ],
     "endpoints": {
       "1": {

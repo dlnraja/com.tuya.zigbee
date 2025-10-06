@@ -2,7 +2,7 @@
   "name": {
     "en": "Smart Curtain Motor"
   },
-  "class": "sensor",
+  "class": "windowcoverings",
   "capabilities": [
     "windowcoverings_state",
     "windowcoverings_set",
@@ -95,7 +95,26 @@
       "_TZE200_bjawzodf",
       "_TZE200_locansqn",
       "_TZE200_fctwhugx",
-      "_TZE200_cowvfni3"
+      "_TZE200_cowvfni3",
+      "TS130F",
+      "_TZE200_zpzndjez",
+      "_TZ3000_4uuaja4a",
+      "_TZE200_dwcarsat",
+      "TS0001",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS011F",
+      "TS0201",
+      "TS0601",
+      "TS0203",
+      "TS0202",
+      "TS0205",
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044"
     ],
     "productId": [
       "TS130F",

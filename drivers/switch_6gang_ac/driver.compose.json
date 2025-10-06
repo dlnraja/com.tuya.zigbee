@@ -2,7 +2,7 @@
   "name": {
     "en": "Switch 6-Gang AC Power"
   },
-  "class": "light",
+  "class": "socket",
   "capabilities": [
     "onoff",
     "button.2",
@@ -171,7 +171,24 @@
       "_TZ3000_msl6wxk9",
       "_TZ3000_qzjcsmar",
       "_TZ3000_ji4araar",
-      "_TZ3000_n2egfsli"
+      "_TZ3000_n2egfsli",
+      "TS0001",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "_TZ3000_4uuaja4a",
+      "TS011F",
+      "TS0201",
+      "TS0601",
+      "TS0203",
+      "TS130F",
+      "TS0202",
+      "TS0205",
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044"
     ],
     "productId": [
       "TS0001",
@@ -208,7 +225,11 @@
       "TS1002",
       "TS1201",
       "TS130F",
-      "TS1111"
+      "TS1111",
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044"
     ],
     "endpoints": {
       "1": {
