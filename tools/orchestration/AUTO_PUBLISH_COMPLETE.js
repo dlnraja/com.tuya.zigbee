@@ -1,19 +1,55 @@
 #!/usr/bin/env node
 // ============================================================================
 // AUTO PUBLISH COMPLETE - Publication 100% Automatique
-// ============================================================================
 
-const { spawn } = require('child_process');
+const { spawn, execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-const rootPath = 'c:\\Users\\HP\\Desktop\\tuya_repair';
+const rootPath = path.resolve(__dirname, '..', '..');
+const isWindows = process.platform === 'win32';
+function resolveHomeyExecutable() {
+  if (!isWindows) {
+    return 'homey';
+  }
+
+  const candidates = [];
+  try {
+    const whereOutput = execSync('where homey.cmd', { stdio: ['pipe', 'pipe', 'ignore'] }).toString().trim();
+    if (whereOutput) {
+      candidates.push(...whereOutput.split(/\r?\n/));
+    }
+  } catch (e) {}
+
+  try {
+    const whereOutput = execSync('where homey.exe', { stdio: ['pipe', 'pipe', 'ignore'] }).toString().trim();
+    if (whereOutput) {
+      candidates.push(...whereOutput.split(/\r?\n/));
+    }
+  } catch (e) {}
+
+  try {
+    const npmHomey = execSync('npm root -g', { stdio: ['pipe', 'pipe', 'ignore'] }).toString().trim();
+    if (npmHomey) {
+      candidates.push(path.join(path.dirname(npmHomey), 'homey.cmd'));
+    }
+  } catch (e) {}
+
+  for (const candidate of candidates) {
+    if (candidate && fs.existsSync(candidate)) {
+      return candidate;
+    }
+  }
+
+  return 'homey.cmd';
+}
+
+const homeyExecutable = resolveHomeyExecutable();
 
 console.log('🤖 AUTO PUBLISH COMPLETE - Publication Autonome');
 console.log('='.repeat(80));
 console.log(`Timestamp: ${new Date().toISOString()}\n`);
 
-// ============================================================================
 // CONFIGURATION
 // ============================================================================
 const CONFIG = {
@@ -63,11 +99,15 @@ async function autoPublish() {
     const changelog = generateChangelog();
     console.log(`📝 Changelog auto: "${changelog}"\n`);
     
-    const publish = spawn('homey', ['app', 'publish'], {
+    const spawnOptions = {
       cwd: rootPath,
       stdio: ['pipe', 'pipe', 'pipe'],
-      shell: true
-    });
+      env: { ...process.env }
+    };
+
+    const publish = isWindows
+      ? spawn(homeyExecutable, ['app', 'publish'], spawnOptions)
+      : spawn(homeyExecutable, ['app', 'publish'], spawnOptions);
     
     let output = '';
     let errorOutput = '';
@@ -89,7 +129,16 @@ async function autoPublish() {
       }
       else if (text.includes('Select the desired version number')) {
         console.log(`🤖 Auto-réponse: ${CONFIG.versionType.toUpperCase()}`);
-        publish.stdin.write('\n'); // Entrée = patch par défaut
+        switch (CONFIG.versionType) {
+          case 'minor':
+            publish.stdin.write('\x1B[B\n');
+            break;
+          case 'major':
+            publish.stdin.write('\x1B[B\x1B[B\n');
+            break;
+          default:
+            publish.stdin.write('\n');
+        }
       }
       else if (text.includes('What\'s new in')) {
         console.log(`🤖 Auto-réponse: "${changelog}"`);
