@@ -55,11 +55,10 @@ jobs:
         echo "version=$VERSION" >> $GITHUB_OUTPUT
         echo "Current version: $VERSION"
         
-    - name: Publish to Homey App Store
+    - name: Publish to Homey App Store (Automated)
       run: |
-        echo "🚀 Publishing v${{ steps.version.outputs.version }}..."
-        echo "Note: This step requires manual intervention due to Homey CLI prompts"
-        echo "Alternative: Use 'homey app publish' locally"
+        echo "🚀 Publishing with automation..."
+        node tools/AUTO_PUBLISH_COMPLETE.js
         
     - name: Create Release
       if: success()
