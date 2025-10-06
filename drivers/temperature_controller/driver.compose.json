@@ -2,7 +2,7 @@
   "name": {
     "en": "Temperature Controller"
   },
-  "class": "button",
+  "class": "sensor",
   "capabilities": [
     "target_temperature",
     "measure_temperature",
