@@ -76,11 +76,6 @@
     "small": "./assets/small.png",
     "large": "./assets/large.png"
   },
-  "energy": {
-    "approximation": {
-      "usageConstant": 5
-    }
-  },
   "platforms": [
     "local"
   ]

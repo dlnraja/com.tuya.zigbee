@@ -11,12 +11,6 @@
     "measure_temperature",
     "alarm_battery"
   ],
-  "energy": {
-    "batteries": [
-      "CR123A",
-      "AA"
-    ]
-  },
   "zigbee": {
     "manufacturerName": [
       "_TZE200_81isopgh"
@@ -66,5 +60,10 @@
   "capabilitiesOptions": {},
   "platforms": [
     "local"
-  ]
+  ],
+  "energy": {
+    "batteries": [
+      "AA"
+    ]
+  }
 }

@@ -9,11 +9,6 @@
     "measure_temperature",
     "alarm_motion"
   ],
-  "energy": {
-    "batteries": [
-      "CR2032"
-    ]
-  },
   "zigbee": {
     "manufacturerName": [
       "TS0205",
@@ -102,5 +97,11 @@
         "en": "°C"
       }
     }
+  },
+  "energy": {
+    "batteries": [
+      "AAA",
+      "CR2032"
+    ]
   }
 }

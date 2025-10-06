@@ -8,12 +8,6 @@
     "alarm_water",
     "measure_battery"
   ],
-  "energy": {
-    "batteries": [
-      "CR123A",
-      "AA"
-    ]
-  },
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_01gpyda5",
@@ -78,5 +72,11 @@
   "capabilitiesOptions": {},
   "platforms": [
     "local"
-  ]
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "AAA"
+    ]
+  }
 }

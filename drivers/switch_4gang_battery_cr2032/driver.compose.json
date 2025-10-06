@@ -12,11 +12,6 @@
     "onoff",
     "dim"
   ],
-  "energy": {
-    "batteries": [
-      "CR2450"
-    ]
-  },
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_qzjcsmar",
@@ -88,5 +83,10 @@
   "capabilitiesOptions": {},
   "platforms": [
     "local"
-  ]
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  }
 }

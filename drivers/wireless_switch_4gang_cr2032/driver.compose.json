@@ -6,13 +6,6 @@
     "alarm_battery",
     "dim"
   ],
-  "energy": {
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "AA"
-    ]
-  },
   "zigbee": {
     "productId": [
       "TS0001",
@@ -92,5 +85,10 @@
   "connectivity": [
     "zigbee"
   ],
-  "capabilitiesOptions": {}
+  "capabilitiesOptions": {},
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  }
 }

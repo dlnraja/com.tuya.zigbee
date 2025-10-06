@@ -12,12 +12,6 @@
     "alarm_motion",
     "measure_luminance"
   ],
-  "energy": {
-    "batteries": [
-      "CR123A",
-      "AA"
-    ]
-  },
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_01gpyda5",
@@ -100,5 +94,11 @@
   },
   "platforms": [
     "local"
-  ]
+  ],
+  "energy": {
+    "batteries": [
+      "AAA",
+      "CR2032"
+    ]
+  }
 }

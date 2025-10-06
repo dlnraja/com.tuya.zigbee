@@ -9,11 +9,6 @@
     "alarm_battery",
     "measure_luminance"
   ],
-  "energy": {
-    "batteries": [
-      "CR2450"
-    ]
-  },
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_mmtwjmaq",
@@ -52,5 +47,11 @@
   "connectivity": [
     "zigbee"
   ],
-  "capabilitiesOptions": {}
+  "capabilitiesOptions": {},
+  "energy": {
+    "batteries": [
+      "AAA",
+      "CR2032"
+    ]
+  }
 }

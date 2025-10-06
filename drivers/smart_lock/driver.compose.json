@@ -64,12 +64,6 @@
     "small": "./assets/small.png",
     "large": "./assets/large.png"
   },
-  "energy": {
-    "batteries": [
-      "CR2032",
-      "AA"
-    ]
-  },
   "community": {
     "sources": [
       "Generic compatibility database",
@@ -85,5 +79,10 @@
   "connectivity": [
     "zigbee"
   ],
-  "capabilitiesOptions": {}
+  "capabilitiesOptions": {},
+  "energy": {
+    "batteries": [
+      "AA"
+    ]
+  }
 }

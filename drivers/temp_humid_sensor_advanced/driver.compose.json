@@ -12,12 +12,6 @@
     "alarm_battery",
     "alarm_motion"
   ],
-  "energy": {
-    "batteries": [
-      "CR2032",
-      "AAA"
-    ]
-  },
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_fllyghyj",
@@ -100,5 +94,11 @@
   },
   "platforms": [
     "local"
-  ]
+  ],
+  "energy": {
+    "batteries": [
+      "AAA",
+      "CR2032"
+    ]
+  }
 }

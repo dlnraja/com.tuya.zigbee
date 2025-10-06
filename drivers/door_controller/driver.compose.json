@@ -91,11 +91,9 @@
   ],
   "capabilitiesOptions": {},
   "energy": {
-    "approximation": {
-      "usageConstant": 10
-    },
     "batteries": [
-      "CR2032"
+      "CR2032",
+      "AAA"
     ]
   }
 }

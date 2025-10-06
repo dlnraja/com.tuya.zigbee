@@ -8,11 +8,6 @@
     "measure_battery",
     "alarm_generic"
   ],
-  "energy": {
-    "batteries": [
-      "CR2032"
-    ]
-  },
   "zigbee": {
     "manufacturerName": [
       "_TZE200_wfxuhoea"
@@ -80,5 +75,10 @@
   "connectivity": [
     "zigbee"
   ],
-  "capabilitiesOptions": {}
+  "capabilitiesOptions": {},
+  "energy": {
+    "batteries": [
+      "AA"
+    ]
+  }
 }

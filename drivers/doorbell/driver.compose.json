@@ -71,12 +71,6 @@
       }
     }
   },
-  "energy": {
-    "batteries": [
-      "AA",
-      "CR2032"
-    ]
-  },
   "settings": [],
   "capabilitiesOptions": {
     "volume_set": {
@@ -87,5 +81,11 @@
         "en": "%"
       }
     }
+  },
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "AAA"
+    ]
   }
 }
