@@ -1,101 +1,50 @@
-# 🏠 Ultimate Zigbee Hub
+# Universal Tuya Zigbee Device Hub
 
-## 🌟 Professional UNBRANDED Zigbee Device Support
+Professional Zigbee device integration for Homey - 550+ devices supported locally.
 
-**The most comprehensive Zigbee device compatibility app for Homey, organized by device FUNCTION, not brand.**
+## Project Structure
 
-### 📊 Statistics
-- **159 Professional Drivers** 
-- **UNBRANDED Organization** by device function
-- **Complete Manufacturer IDs** (no wildcards)
-- **Based on Johan Bendz** + Homey Community contributions
+```
+tuya_repair/
+├── drivers/          # 164 Zigbee device drivers (organized by function)
+├── tools/            # Development and automation scripts
+├── references/       # Documentation, reports, and enrichment data
+├── project-data/     # Build artifacts, logs, and analysis results
+├── ultimate_system/  # Advanced automation and orchestration
+├── .github/          # CI/CD workflows and automation
+└── settings/         # App configuration UI
+```
 
-### 🎯 Device Categories
+## Quick Start
 
-#### Motion & Presence (10 drivers)
-- motion sensor battery
-- motion sensor mmwave
-- motion sensor pir ac
-- motion sensor pir battery
-- motion sensor zigbee 204z
-- ...and 5 more
+```bash
+# Install dependencies
+npm install
 
-#### Climate & Environment (17 drivers)
-- climate monitor
-- co2 sensor
-- co2 temp humidity
-- humidity controller
-- smoke detector temp humidity advanced
-- ...and 12 more
+# Validate app
+homey app validate --level=publish
 
-#### Smart Lighting (18 drivers)
-- ceiling light controller
-- ceiling light rgb
-- dimmer
-- dimmer switch 1gang ac
-- dimmer switch 3gang ac
-- ...and 13 more
+# Run app
+homey app run
+```
 
-#### Power & Energy (7 drivers)
-- energy monitoring plug
-- energy monitoring plug advanced
-- energy plug advanced
-- extension plug
-- power meter socket
-- ...and 2 more
+## Documentation
 
-#### Security & Safety (15 drivers)
-- doorbell
-- door controller
-- door lock
-- door window sensor
-- fingerprint lock
-- ...and 10 more
+- [Scripts Documentation](./references/documentation/README_SCRIPTS.md)
+- [Addon Enrichment Guide](./references/documentation/ADDON_ENRICHMENT_QUICKSTART.md)
+- [Final Reports](./references/reports/)
 
-#### Automation Control (92 drivers)
-- air quality monitor
-- air quality monitor pro
-- co detector advanced
-- co detector pro
-- curtain motor
-- ...and 87 more
+## Development
 
-### 🏭 Technical Excellence
-- **Homey SDK3** compliant
-- **Complete manufacturer IDs** from all sources
-- **Professional UNBRANDED** user experience  
-- **Auto-published** via GitHub Actions
+All development scripts are located in `tools/` and `ultimate_system/`.
 
-### 📱 Installation
-Available on Homey App Store: [Ultimate Zigbee Hub](https://homey.app/a/com.dlnraja.ultimate.zigbee.hub/)
+## Statistics
 
-### 🙏 Credits
-- **Johan Bendz** - Architecture inspiration
-- **Homey Community** - Testing & feedback
-- **Contributors** - Device compatibility data
-
-### 🔗 Links
-- [Homey App Store](https://apps.developer.homey.app/app-store/publishing)
-- [GitHub Repository](https://github.com/dlnraja/com.tuya.zigbee)
-- [Community Forum](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352/)
-## 🙏 Credits & Acknowledgments
-
-### Original Work
-This project builds upon the excellent foundation laid by **Johan Bendz** with his original [Tuya Zigbee App](https://community.homey.app/t/app-pro-tuya-zigbee-app/26439).
-
-### MIT License
-This project is released under the MIT License, ensuring open collaboration and community development.
-
-### Community Contributors
-- **Johan Bendz** - Original Tuya Zigbee App creator
-- **Homey Community** - Feedback, testing, and device compatibility reports
-- **Zigbee Community** - Device database and manufacturer identification
-
-### Project Evolution
-- **Original**: Johan Bendz's Tuya Zigbee App (SDK2/3 hybrid)
-- **Current**: Full SDK3 rewrite with professional UNBRANDED structure
-- **Future**: AI-powered device identification and dynamic capabilities
+- **164 drivers** organized by device function
+- **550+ Zigbee devices** supported
+- **100% local** - no cloud dependencies
+- **SDK3 compliant** - latest Homey standards
 
 ---
 
-*Built with ❤️ for the Homey community*
+*Organized according to UNBRANDED principles - devices categorized by FUNCTION, not brand.*
