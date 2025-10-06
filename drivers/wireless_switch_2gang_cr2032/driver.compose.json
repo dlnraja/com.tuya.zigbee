@@ -1,5 +1,5 @@
 {
-  "class": "socket",
+  "class": "button",
   "capabilities": [
     "onoff",
     "onoff.gang2"
@@ -75,13 +75,7 @@
       }
     },
     "manufacturerName": [
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_ji4araar",
-      "TS0001",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014"
+      "TS0041"
     ]
   },
   "images": {

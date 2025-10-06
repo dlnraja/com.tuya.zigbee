@@ -2,7 +2,7 @@
   "name": {
     "en": "Wireless Switch 4-Gang (CR2450)"
   },
-  "class": "socket",
+  "class": "button",
   "capabilities": [
     "button.1",
     "button.2",
@@ -42,13 +42,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_ji4araar",
-      "TS0001",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014"
+      "TS0041"
     ],
     "productId": [
       "TS0001",

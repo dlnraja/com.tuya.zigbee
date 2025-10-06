@@ -2,7 +2,7 @@
   "name": {
     "en": "Roller Shutter Switch"
   },
-  "class": "socket",
+  "class": "windowcoverings",
   "capabilities": [
     "windowcoverings_closed",
     "windowcoverings_set",
@@ -16,13 +16,7 @@
   ],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_ji4araar",
-      "TS0001",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014"
+      "TS130F"
     ],
     "productId": [
       "TS0001",

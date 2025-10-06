@@ -2,7 +2,7 @@
   "name": {
     "en": "LED Strip Controller"
   },
-  "class": "light",
+  "class": "button",
   "capabilities": [
     "onoff",
     "dim",
@@ -12,13 +12,7 @@
   ],
   "zigbee": {
     "manufacturerName": [
-      "TS0505B",
-      "TS0502B",
-      "_TZ3000_odygigth",
-      "_TZ3000_dbou1ap4",
-      "TS0505",
-      "TS0502",
-      "TS0504B"
+      "TS0041"
     ],
     "productId": [
       "TS0501A",

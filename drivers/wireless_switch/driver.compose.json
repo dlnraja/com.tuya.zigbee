@@ -2,7 +2,7 @@
   "name": {
     "en": "Wireless Switch"
   },
-  "class": "socket",
+  "class": "button",
   "capabilities": [
     "onoff",
     "measure_battery",
@@ -21,13 +21,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_ji4araar",
-      "TS0001",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014"
+      "TS0041"
     ],
     "productId": [
       "TS0001",

@@ -2,20 +2,14 @@
   "name": {
     "en": "Touch Dimmer 1-Gang"
   },
-  "class": "socket",
+  "class": "light",
   "capabilities": [
     "onoff",
     "dim"
   ],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_ji4araar",
-      "TS0001",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014"
+      "TS0505"
     ],
     "productId": [
       "TS110E",

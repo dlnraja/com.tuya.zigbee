@@ -2,7 +2,7 @@
   "name": {
     "en": "Dimmer Switch 3-Gang AC"
   },
-  "class": "socket",
+  "class": "light",
   "capabilities": [
     "onoff",
     "onoff.gang2",
@@ -10,13 +10,7 @@
   ],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_ji4araar",
-      "TS0001",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014"
+      "TS0505"
     ],
     "productId": [
       "TS110E",
