@@ -1,0 +1,2717 @@
+{
+  "timestamp": "2025-10-07T19:07:04.034Z",
+  "forumData": {
+    "posts": 1,
+    "manufacturerNames": [
+      "_TZE204_t1blo2bj"
+    ],
+    "productIds": []
+  },
+  "zigbeeHerdsmanData": {
+    "devices": 0,
+    "manufacturerNames": 0,
+    "productIds": 0
+  },
+  "missing": {
+    "manufacturerNames": [],
+    "productIds": [],
+    "features": []
+  },
+  "coherenceIssues": [
+    {
+      "driver": "air_quality_monitor",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "air_quality_monitor",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "air_quality_monitor",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "air_quality_monitor",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "air_quality_monitor_pro",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "air_quality_monitor_pro",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "air_quality_monitor_pro",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "air_quality_monitor_pro",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "ceiling_fan",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "ceiling_fan",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "ceiling_fan",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "ceiling_fan",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "ceiling_light_controller",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "ceiling_light_controller",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "climate_monitor",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "climate_monitor",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "climate_monitor",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "climate_monitor",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "co2_sensor",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "co2_sensor",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "co2_temp_humidity",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "co2_temp_humidity",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "co2_temp_humidity",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "co2_temp_humidity",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "co_detector_pro",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "co_detector_pro",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "co_detector_pro",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "co_detector_pro",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "comprehensive_air_monitor",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "comprehensive_air_monitor",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "comprehensive_air_monitor",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "comprehensive_air_monitor",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "curtain_motor",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "curtain_motor",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "dimmer",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "dimmer",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "door_controller",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "door_controller",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "door_lock",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "door_lock",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "door_window_sensor",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "door_window_sensor",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "doorbell",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "doorbell",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "energy_monitoring_plug_advanced",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "energy_monitoring_plug_advanced",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "energy_plug_advanced",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "energy_plug_advanced",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "energy_plug_advanced",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "energy_plug_advanced",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "extension_plug",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "extension_plug",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "fan_controller",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "fan_controller",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "fingerprint_lock",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "fingerprint_lock",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "formaldehyde_sensor",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "formaldehyde_sensor",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "garage_door_controller",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "garage_door_controller",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "garage_door_opener",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "garage_door_opener",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "gas_detector",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "gas_detector",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "gas_detector",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "gas_detector",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "humidity_controller",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "humidity_controller",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "humidity_controller",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "humidity_controller",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "hvac_controller",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "hvac_controller",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "hvac_controller",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "hvac_controller",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "led_strip_advanced",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "led_strip_advanced",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "led_strip_controller",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "led_strip_controller",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "led_strip_controller_pro",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "led_strip_controller_pro",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "led_strip_controller_pro",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "led_strip_controller_pro",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "lux_sensor",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "lux_sensor",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "milight_controller",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "milight_controller",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "mini",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "mini",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "mini_switch",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "mini_switch",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "mini_switch",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "motion_sensor_mmwave",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "motion_sensor_mmwave",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "motion_sensor_pir_ac",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "motion_sensor_pir_ac",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "motion_sensor_zigbee_204z",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "motion_sensor_zigbee_204z",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "multisensor",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "multisensor",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "noise_level_sensor",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "noise_level_sensor",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "outdoor_light_controller",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "outdoor_light_controller",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "outdoor_siren",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "outdoor_siren",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "pet_feeder",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "pet_feeder",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "pet_feeder",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "pet_feeder",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "pir_sensor_advanced",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "pir_sensor_advanced",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "pm25_detector",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "pm25_detector",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "pm25_detector",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "pm25_detector",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "pm25_sensor",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "pm25_sensor",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "pool_pump_controller",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "pool_pump_controller",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "power_meter_socket",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "power_meter_socket",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "power_meter_socket",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "power_meter_socket",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "presence_sensor_radar",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "presence_sensor_radar",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "pressure_sensor",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "pressure_sensor",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "projector_screen_controller",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "projector_screen_controller",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "radar_motion_sensor_advanced",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "radar_motion_sensor_advanced",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "radar_motion_sensor_mmwave",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "radar_motion_sensor_mmwave",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "radar_motion_sensor_tank_level",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "radar_motion_sensor_tank_level",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "radiator_valve",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "radiator_valve",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "rgb_led_controller",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "rgb_led_controller",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "roller_blind_controller",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "roller_blind_controller",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "roller_blind_controller",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "roller_blind_controller",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "roller_shutter_controller",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "roller_shutter_controller",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "roller_shutter_controller",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "roller_shutter_controller",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "scene_controller",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "scene_controller",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "scene_controller_2button",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "scene_controller_2button",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "scene_controller_6button",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "scene_controller_6button",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "scene_controller_8button",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "scene_controller_8button",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "scene_controller_battery",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "scene_controller_battery",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "scene_controller_battery",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "scene_controller_battery",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "shade_controller",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "shade_controller",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "smart_bulb_dimmer",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "smart_bulb_dimmer",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "smart_bulb_dimmer",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "smart_bulb_dimmer",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "smart_bulb_rgb",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "smart_bulb_rgb",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "smart_bulb_tunable",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "smart_bulb_tunable",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "smart_bulb_white",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "smart_bulb_white",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "smart_curtain_motor",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "smart_curtain_motor",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "smart_curtain_motor",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "smart_curtain_motor",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "smart_dimmer_module_1gang",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "smart_dimmer_module_1gang",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "smart_doorbell",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "smart_doorbell",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "smart_garden_sprinkler",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "smart_garden_sprinkler",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "smart_garden_sprinkler",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "smart_garden_sprinkler",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "smart_irrigation_controller",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "smart_irrigation_controller",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "smart_lock",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "smart_lock",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "smart_lock",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "smart_lock",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "smart_outlet_monitor",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "smart_outlet_monitor",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "smart_outlet_monitor",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "smart_outlet_monitor",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "smart_plug",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "smart_plug",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "smart_plug_energy",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "smart_plug_energy",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "smart_plug_energy",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "smart_plug_energy",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "smart_radiator_valve",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "smart_radiator_valve",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "smart_radiator_valve",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "smart_radiator_valve",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "smart_smoke_detector_advanced",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "smart_smoke_detector_advanced",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "smart_smoke_detector_advanced",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "smart_smoke_detector_advanced",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "smart_spot",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "smart_spot",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "smart_thermostat",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "smart_thermostat",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "smart_thermostat",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "smart_thermostat",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "smart_valve_controller",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "smart_valve_controller",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "smart_water_valve",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "smart_water_valve",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "smart_water_valve",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "smart_water_valve",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "smoke_detector",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "smoke_detector",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "smoke_detector",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "smoke_detector",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "smoke_detector_temp_humidity_advanced",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "smoke_detector_temp_humidity_advanced",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "smoke_detector_temp_humidity_advanced",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "smoke_detector_temp_humidity_advanced",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "smoke_temp_humid_sensor",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "smoke_temp_humid_sensor",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "soil_moisture_sensor",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "soil_moisture_sensor",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "soil_moisture_temperature_sensor",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "soil_moisture_temperature_sensor",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "soil_tester_temp_humid",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "soil_tester_temp_humid",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "soil_tester_temp_humid",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "soil_tester_temp_humid",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "solar_panel_controller",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "solar_panel_controller",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "sos_emergency_button",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "sos_emergency_button",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "tank_level_monitor",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "tank_level_monitor",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "tank_level_monitor",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "tank_level_monitor",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "temp_humid_sensor_advanced",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "temp_humid_sensor_advanced",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "temp_humid_sensor_leak_detector",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "temp_humid_sensor_leak_detector",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "temp_humid_sensor_v1w2k9dd",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "temp_humid_sensor_v1w2k9dd",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "temp_sensor_pro",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "temp_sensor_pro",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "temperature_controller",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "temperature_controller",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "temperature_controller",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "temperature_controller",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "temperature_humidity_sensor",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "temperature_humidity_sensor",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "temperature_sensor",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "temperature_sensor",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "temperature_sensor_advanced",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "temperature_sensor_advanced",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "thermostat",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "thermostat",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "thermostat",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "thermostat",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "touch_dimmer",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "touch_dimmer",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "touch_dimmer_1gang",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "touch_dimmer_1gang",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "tvoc_sensor",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "tvoc_sensor",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "tvoc_sensor_advanced",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "tvoc_sensor_advanced",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "usb_outlet",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "usb_outlet",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "usb_outlet_advanced",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "usb_outlet_advanced",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "vibration_sensor",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "vibration_sensor",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "water_leak_detector_advanced",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "water_leak_detector_advanced",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "water_leak_detector_advanced",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "water_leak_detector_advanced",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "water_leak_detector_sq510a",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "water_leak_detector_sq510a",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "water_leak_detector_sq510a",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "water_leak_detector_sq510a",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "water_leak_sensor",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "water_leak_sensor",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "water_valve",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "water_valve",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0201",
+          "expectedType": "sensor",
+          "driverType": "water_valve",
+          "severity": "high"
+        },
+        {
+          "type": "type_mismatch",
+          "productId": "TS0202",
+          "expectedType": "sensor",
+          "driverType": "water_valve",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "water_valve_smart",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "water_valve_smart",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "zbbridge",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "zbbridge",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "driver": "zigbee_gateway_hub",
+      "issues": [
+        {
+          "type": "type_mismatch",
+          "productId": "TS0001",
+          "expectedType": "switch",
+          "driverType": "zigbee_gateway_hub",
+          "severity": "high"
+        }
+      ]
+    }
+  ],
+  "reorganizationPlan": {
+    "moves": [
+      {
+        "driver": "ceiling_light_controller",
+        "currentLocation": "mixed",
+        "suggestedCategory": "lighting",
+        "reason": "Driver name suggests lighting"
+      },
+      {
+        "driver": "ceiling_light_rgb",
+        "currentLocation": "mixed",
+        "suggestedCategory": "lighting",
+        "reason": "Driver name suggests lighting"
+      },
+      {
+        "driver": "climate_monitor",
+        "currentLocation": "mixed",
+        "suggestedCategory": "temp_climate",
+        "reason": "Driver name suggests temp_climate"
+      },
+      {
+        "driver": "co2_sensor",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "co2_temp_humidity",
+        "currentLocation": "mixed",
+        "suggestedCategory": "temp_climate",
+        "reason": "Driver name suggests temp_climate"
+      },
+      {
+        "driver": "co_detector_pro",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "comprehensive_air_monitor",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "dimmer",
+        "currentLocation": "mixed",
+        "suggestedCategory": "lighting",
+        "reason": "Driver name suggests lighting"
+      },
+      {
+        "driver": "dimmer_switch_1gang_ac",
+        "currentLocation": "mixed",
+        "suggestedCategory": "lighting",
+        "reason": "Driver name suggests lighting"
+      },
+      {
+        "driver": "dimmer_switch_3gang_ac",
+        "currentLocation": "mixed",
+        "suggestedCategory": "lighting",
+        "reason": "Driver name suggests lighting"
+      },
+      {
+        "driver": "dimmer_switch_timer_module",
+        "currentLocation": "mixed",
+        "suggestedCategory": "lighting",
+        "reason": "Driver name suggests lighting"
+      },
+      {
+        "driver": "door_controller",
+        "currentLocation": "mixed",
+        "suggestedCategory": "contact_security",
+        "reason": "Driver name suggests contact_security"
+      },
+      {
+        "driver": "door_lock",
+        "currentLocation": "mixed",
+        "suggestedCategory": "contact_security",
+        "reason": "Driver name suggests contact_security"
+      },
+      {
+        "driver": "door_window_sensor",
+        "currentLocation": "mixed",
+        "suggestedCategory": "contact_security",
+        "reason": "Driver name suggests contact_security"
+      },
+      {
+        "driver": "doorbell",
+        "currentLocation": "mixed",
+        "suggestedCategory": "contact_security",
+        "reason": "Driver name suggests contact_security"
+      },
+      {
+        "driver": "energy_monitoring_plug",
+        "currentLocation": "mixed",
+        "suggestedCategory": "power_energy",
+        "reason": "Driver name suggests power_energy"
+      },
+      {
+        "driver": "energy_monitoring_plug_advanced",
+        "currentLocation": "mixed",
+        "suggestedCategory": "power_energy",
+        "reason": "Driver name suggests power_energy"
+      },
+      {
+        "driver": "energy_plug_advanced",
+        "currentLocation": "mixed",
+        "suggestedCategory": "power_energy",
+        "reason": "Driver name suggests power_energy"
+      },
+      {
+        "driver": "extension_plug",
+        "currentLocation": "mixed",
+        "suggestedCategory": "power_energy",
+        "reason": "Driver name suggests power_energy"
+      },
+      {
+        "driver": "fan_controller",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "fingerprint_lock",
+        "currentLocation": "mixed",
+        "suggestedCategory": "contact_security",
+        "reason": "Driver name suggests contact_security"
+      },
+      {
+        "driver": "garage_door_controller",
+        "currentLocation": "mixed",
+        "suggestedCategory": "contact_security",
+        "reason": "Driver name suggests contact_security"
+      },
+      {
+        "driver": "garage_door_opener",
+        "currentLocation": "mixed",
+        "suggestedCategory": "contact_security",
+        "reason": "Driver name suggests contact_security"
+      },
+      {
+        "driver": "gas_detector",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "humidity_controller",
+        "currentLocation": "mixed",
+        "suggestedCategory": "temp_climate",
+        "reason": "Driver name suggests temp_climate"
+      },
+      {
+        "driver": "hvac_controller",
+        "currentLocation": "mixed",
+        "suggestedCategory": "temp_climate",
+        "reason": "Driver name suggests temp_climate"
+      },
+      {
+        "driver": "led_strip_advanced",
+        "currentLocation": "mixed",
+        "suggestedCategory": "lighting",
+        "reason": "Driver name suggests lighting"
+      },
+      {
+        "driver": "led_strip_controller",
+        "currentLocation": "mixed",
+        "suggestedCategory": "lighting",
+        "reason": "Driver name suggests lighting"
+      },
+      {
+        "driver": "led_strip_controller_pro",
+        "currentLocation": "mixed",
+        "suggestedCategory": "lighting",
+        "reason": "Driver name suggests lighting"
+      },
+      {
+        "driver": "milight_controller",
+        "currentLocation": "mixed",
+        "suggestedCategory": "lighting",
+        "reason": "Driver name suggests lighting"
+      },
+      {
+        "driver": "mini_switch",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "motion_sensor_battery",
+        "currentLocation": "mixed",
+        "suggestedCategory": "motion_presence",
+        "reason": "Driver name suggests motion_presence"
+      },
+      {
+        "driver": "motion_sensor_mmwave",
+        "currentLocation": "mixed",
+        "suggestedCategory": "motion_presence",
+        "reason": "Driver name suggests motion_presence"
+      },
+      {
+        "driver": "motion_sensor_pir_ac",
+        "currentLocation": "mixed",
+        "suggestedCategory": "motion_presence",
+        "reason": "Driver name suggests motion_presence"
+      },
+      {
+        "driver": "motion_sensor_pir_battery",
+        "currentLocation": "mixed",
+        "suggestedCategory": "motion_presence",
+        "reason": "Driver name suggests motion_presence"
+      },
+      {
+        "driver": "motion_sensor_zigbee_204z",
+        "currentLocation": "mixed",
+        "suggestedCategory": "motion_presence",
+        "reason": "Driver name suggests motion_presence"
+      },
+      {
+        "driver": "outdoor_light_controller",
+        "currentLocation": "mixed",
+        "suggestedCategory": "contact_security",
+        "reason": "Driver name suggests contact_security"
+      },
+      {
+        "driver": "outdoor_siren",
+        "currentLocation": "mixed",
+        "suggestedCategory": "contact_security",
+        "reason": "Driver name suggests contact_security"
+      },
+      {
+        "driver": "pir_sensor_advanced",
+        "currentLocation": "mixed",
+        "suggestedCategory": "motion_presence",
+        "reason": "Driver name suggests motion_presence"
+      },
+      {
+        "driver": "pool_pump_controller",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "power_meter_socket",
+        "currentLocation": "mixed",
+        "suggestedCategory": "power_energy",
+        "reason": "Driver name suggests power_energy"
+      },
+      {
+        "driver": "presence_sensor_radar",
+        "currentLocation": "mixed",
+        "suggestedCategory": "motion_presence",
+        "reason": "Driver name suggests motion_presence"
+      },
+      {
+        "driver": "projector_screen_controller",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "radar_motion_sensor_advanced",
+        "currentLocation": "mixed",
+        "suggestedCategory": "motion_presence",
+        "reason": "Driver name suggests motion_presence"
+      },
+      {
+        "driver": "radar_motion_sensor_mmwave",
+        "currentLocation": "mixed",
+        "suggestedCategory": "motion_presence",
+        "reason": "Driver name suggests motion_presence"
+      },
+      {
+        "driver": "radar_motion_sensor_tank_level",
+        "currentLocation": "mixed",
+        "suggestedCategory": "motion_presence",
+        "reason": "Driver name suggests motion_presence"
+      },
+      {
+        "driver": "relay_switch_1gang",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "remote_switch",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "rgb_led_controller",
+        "currentLocation": "mixed",
+        "suggestedCategory": "lighting",
+        "reason": "Driver name suggests lighting"
+      },
+      {
+        "driver": "roller_blind_controller",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "roller_shutter_controller",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "roller_shutter_switch",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "roller_shutter_switch_advanced",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "scene_controller",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "scene_controller_2button",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "scene_controller_4button",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "scene_controller_6button",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "scene_controller_8button",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "scene_controller_battery",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "shade_controller",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "smart_bulb_dimmer",
+        "currentLocation": "mixed",
+        "suggestedCategory": "lighting",
+        "reason": "Driver name suggests lighting"
+      },
+      {
+        "driver": "smart_bulb_rgb",
+        "currentLocation": "mixed",
+        "suggestedCategory": "lighting",
+        "reason": "Driver name suggests lighting"
+      },
+      {
+        "driver": "smart_bulb_tunable",
+        "currentLocation": "mixed",
+        "suggestedCategory": "lighting",
+        "reason": "Driver name suggests lighting"
+      },
+      {
+        "driver": "smart_bulb_white",
+        "currentLocation": "mixed",
+        "suggestedCategory": "lighting",
+        "reason": "Driver name suggests lighting"
+      },
+      {
+        "driver": "smart_dimmer_module_1gang",
+        "currentLocation": "mixed",
+        "suggestedCategory": "lighting",
+        "reason": "Driver name suggests lighting"
+      },
+      {
+        "driver": "smart_doorbell",
+        "currentLocation": "mixed",
+        "suggestedCategory": "contact_security",
+        "reason": "Driver name suggests contact_security"
+      },
+      {
+        "driver": "smart_irrigation_controller",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "smart_lock",
+        "currentLocation": "mixed",
+        "suggestedCategory": "contact_security",
+        "reason": "Driver name suggests contact_security"
+      },
+      {
+        "driver": "smart_outlet_monitor",
+        "currentLocation": "mixed",
+        "suggestedCategory": "power_energy",
+        "reason": "Driver name suggests power_energy"
+      },
+      {
+        "driver": "smart_plug",
+        "currentLocation": "mixed",
+        "suggestedCategory": "power_energy",
+        "reason": "Driver name suggests power_energy"
+      },
+      {
+        "driver": "smart_plug_energy",
+        "currentLocation": "mixed",
+        "suggestedCategory": "power_energy",
+        "reason": "Driver name suggests power_energy"
+      },
+      {
+        "driver": "smart_smoke_detector_advanced",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "smart_switch_1gang_ac",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "smart_switch_1gang_hybrid",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "smart_switch_2gang_ac",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "smart_switch_2gang_hybrid",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "smart_switch_3gang_ac",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "smart_switch_3gang_hybrid",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "smart_switch_4gang_hybrid",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "smart_thermostat",
+        "currentLocation": "mixed",
+        "suggestedCategory": "temp_climate",
+        "reason": "Driver name suggests temp_climate"
+      },
+      {
+        "driver": "smart_valve_controller",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "smart_water_valve",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "smoke_detector",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "smoke_detector_temp_humidity_advanced",
+        "currentLocation": "mixed",
+        "suggestedCategory": "temp_climate",
+        "reason": "Driver name suggests temp_climate"
+      },
+      {
+        "driver": "smoke_temp_humid_sensor",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "soil_moisture_temperature_sensor",
+        "currentLocation": "mixed",
+        "suggestedCategory": "temp_climate",
+        "reason": "Driver name suggests temp_climate"
+      },
+      {
+        "driver": "solar_panel_controller",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "sos_emergency_button",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "switch_1gang_battery",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "switch_2gang_ac",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "switch_2gang_hybrid",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "switch_3gang_battery",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "switch_4gang_ac",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "switch_4gang_battery_cr2032",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "switch_5gang_battery",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "switch_6gang_ac",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "switch_8gang_ac",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "temp_humid_sensor_leak_detector",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "temperature_controller",
+        "currentLocation": "mixed",
+        "suggestedCategory": "temp_climate",
+        "reason": "Driver name suggests temp_climate"
+      },
+      {
+        "driver": "temperature_humidity_sensor",
+        "currentLocation": "mixed",
+        "suggestedCategory": "temp_climate",
+        "reason": "Driver name suggests temp_climate"
+      },
+      {
+        "driver": "temperature_sensor",
+        "currentLocation": "mixed",
+        "suggestedCategory": "temp_climate",
+        "reason": "Driver name suggests temp_climate"
+      },
+      {
+        "driver": "temperature_sensor_advanced",
+        "currentLocation": "mixed",
+        "suggestedCategory": "temp_climate",
+        "reason": "Driver name suggests temp_climate"
+      },
+      {
+        "driver": "thermostat",
+        "currentLocation": "mixed",
+        "suggestedCategory": "temp_climate",
+        "reason": "Driver name suggests temp_climate"
+      },
+      {
+        "driver": "touch_dimmer",
+        "currentLocation": "mixed",
+        "suggestedCategory": "lighting",
+        "reason": "Driver name suggests lighting"
+      },
+      {
+        "driver": "touch_dimmer_1gang",
+        "currentLocation": "mixed",
+        "suggestedCategory": "lighting",
+        "reason": "Driver name suggests lighting"
+      },
+      {
+        "driver": "touch_switch_1gang",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "touch_switch_2gang",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "touch_switch_3gang",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "touch_switch_4gang",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "usb_outlet",
+        "currentLocation": "mixed",
+        "suggestedCategory": "power_energy",
+        "reason": "Driver name suggests power_energy"
+      },
+      {
+        "driver": "usb_outlet_advanced",
+        "currentLocation": "mixed",
+        "suggestedCategory": "power_energy",
+        "reason": "Driver name suggests power_energy"
+      },
+      {
+        "driver": "wall_switch_1gang_ac",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "wall_switch_1gang_dc",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "wall_switch_2gang_ac",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "wall_switch_2gang_dc",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "wall_switch_3gang_ac",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "wall_switch_3gang_dc",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "wall_switch_4gang_ac",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "wall_switch_4gang_dc",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "wall_switch_5gang_ac",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "wall_switch_6gang_ac",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "water_leak_detector_advanced",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "water_leak_detector_sq510a",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "water_leak_sensor",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "water_valve",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "water_valve_smart",
+        "currentLocation": "mixed",
+        "suggestedCategory": "safety",
+        "reason": "Driver name suggests safety"
+      },
+      {
+        "driver": "wireless_switch",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "wireless_switch_1gang_cr2032",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "wireless_switch_2gang_cr2032",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "wireless_switch_3gang_cr2032",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "wireless_switch_4gang_cr2032",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "wireless_switch_4gang_cr2450",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "wireless_switch_5gang_cr2032",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      },
+      {
+        "driver": "wireless_switch_6gang_cr2032",
+        "currentLocation": "mixed",
+        "suggestedCategory": "automation",
+        "reason": "Driver name suggests automation"
+      }
+    ],
+    "renames": [],
+    "merges": []
+  },
+  "enrichment": {
+    "manufacturerNamesAdded": 0,
+    "featuresAdded": 32
+  }
+}
