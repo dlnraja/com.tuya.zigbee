@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
@@ -14,9 +14,9 @@
   "category": "lights",
   "permissions": [],
   "images": {
-    "small": "/assets/small.svg",
-    "large": "/assets/large.svg",
-    "xlarge": "/assets/xlarge.svg"
+    "small": "/assets/small.png",
+    "large": "/assets/large.png",
+    "xlarge": "/assets/xlarge.png"
   },
   "author": {
     "name": "Dylan L.N. Raja",
@@ -197,8 +197,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/air_quality_monitor/assets/small.png",
+        "large": "./drivers/air_quality_monitor/assets/large.png"
       },
       "platforms": [
         "local"
@@ -289,8 +289,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/air_quality_monitor_pro/assets/small.png",
+        "large": "./drivers/air_quality_monitor_pro/assets/large.png"
       },
       "platforms": [
         "local"
@@ -464,8 +464,8 @@
         }
       },
       "images": {
-        "small": "/drivers/ceiling_fan/assets/small.png",
-        "large": "/drivers/ceiling_fan/assets/large.png"
+        "small": "./drivers/ceiling_fan/assets/small.png",
+        "large": "./drivers/ceiling_fan/assets/large.png"
       },
       "pair": [
         {
@@ -603,8 +603,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/ceiling_light_controller/assets/small.png",
+        "large": "./drivers/ceiling_light_controller/assets/large.png"
       },
       "platforms": [
         "local"
@@ -708,8 +708,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/ceiling_light_rgb/assets/small.png",
+        "large": "./drivers/ceiling_light_rgb/assets/large.png"
       },
       "platforms": [
         "local"
@@ -838,8 +838,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/climate_monitor/assets/small.png",
+        "large": "./drivers/climate_monitor/assets/large.png"
       },
       "platforms": [
         "local"
@@ -947,8 +947,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/co2_sensor/assets/small.png",
+        "large": "./drivers/co2_sensor/assets/large.png"
       },
       "platforms": [
         "local"
@@ -1048,8 +1048,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/co2_temp_humidity/assets/small.png",
+        "large": "./drivers/co2_temp_humidity/assets/large.png"
       },
       "platforms": [
         "local"
@@ -1154,8 +1154,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/co_detector_pro/assets/small.png",
+        "large": "./drivers/co_detector_pro/assets/large.png"
       },
       "platforms": [
         "local"
@@ -1255,8 +1255,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/comprehensive_air_monitor/assets/small.png",
+        "large": "./drivers/comprehensive_air_monitor/assets/large.png"
       },
       "platforms": [
         "local"
@@ -1318,8 +1318,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/curtain_motor/assets/large.png",
+        "small": "./drivers/curtain_motor/assets/small.png"
       },
       "pair": [
         {
@@ -1376,8 +1376,8 @@
         "dim"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/dimmer/assets/small.png",
+        "large": "./drivers/dimmer/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -1483,7 +1483,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/dimmer/assets/large.png",
+          "image": "./drivers/dimmer/assets/large.png",
           "instruction": {
             "en": "Press and hold setup button for 3 seconds"
           }
@@ -1610,8 +1610,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/dimmer_switch_1gang_ac/assets/small.png",
+        "large": "./drivers/dimmer_switch_1gang_ac/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -1754,8 +1754,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/dimmer_switch_3gang_ac/assets/small.png",
+        "large": "./drivers/dimmer_switch_3gang_ac/assets/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -1892,8 +1892,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/dimmer_switch_timer_module/assets/small.png",
+        "large": "./drivers/dimmer_switch_timer_module/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -1995,8 +1995,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/door_controller/assets/small.png",
+        "large": "./drivers/door_controller/assets/large.png"
       },
       "community": {
         "sources": [
@@ -2042,8 +2042,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/door_lock/assets/small.png",
+        "large": "./drivers/door_lock/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -2114,7 +2114,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/door_lock/assets/large.png",
+          "image": "./drivers/door_lock/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Door Lock."
           }
@@ -2216,8 +2216,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/door_window_sensor/assets/large.png",
+        "small": "./drivers/door_window_sensor/assets/small.png"
       },
       "pair": [
         {
@@ -2275,8 +2275,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/doorbell/assets/small.png",
+        "large": "./drivers/doorbell/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -2347,7 +2347,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/doorbell/assets/large.png",
+          "image": "./drivers/doorbell/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Doorbell."
           }
@@ -2490,8 +2490,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/energy_monitoring_plug/assets/small.png",
+        "large": "./drivers/energy_monitoring_plug/assets/large.png"
       },
       "platforms": [
         "local"
@@ -2637,8 +2637,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/energy_monitoring_plug_advanced/assets/small.png",
+        "large": "./drivers/energy_monitoring_plug_advanced/assets/large.png"
       },
       "platforms": [
         "local"
@@ -2793,8 +2793,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/energy_plug_advanced/assets/small.png",
+        "large": "./drivers/energy_plug_advanced/assets/large.png"
       },
       "platforms": [
         "local"
@@ -2911,8 +2911,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/extension_plug/assets/large.png",
+        "small": "./drivers/extension_plug/assets/small.png"
       },
       "pair": [
         {
@@ -3072,8 +3072,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/fan_controller/assets/large.png",
+        "small": "./drivers/fan_controller/assets/small.png"
       },
       "pair": [
         {
@@ -3204,8 +3204,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/fingerprint_lock/assets/large.png",
+        "small": "./drivers/fingerprint_lock/assets/small.png"
       },
       "pair": [
         {
@@ -3327,8 +3327,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/formaldehyde_sensor/assets/large.png",
+        "small": "./drivers/formaldehyde_sensor/assets/small.png"
       },
       "pair": [
         {
@@ -3476,8 +3476,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/garage_door_controller/assets/small.png",
+        "large": "./drivers/garage_door_controller/assets/large.png"
       },
       "platforms": [
         "local"
@@ -3507,8 +3507,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/garage_door_opener/assets/small.png",
+        "large": "./drivers/garage_door_opener/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -3579,7 +3579,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/garage_door_opener/assets/large.png",
+          "image": "./drivers/garage_door_opener/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Garage Door Opener."
           }
@@ -3717,8 +3717,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/gas_detector/assets/large.png",
+        "small": "./drivers/gas_detector/assets/small.png"
       },
       "pair": [
         {
@@ -3838,8 +3838,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/humidity_controller/assets/small.png",
+        "large": "./drivers/humidity_controller/assets/large.png"
       },
       "platforms": [
         "local"
@@ -3935,8 +3935,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/hvac_controller/assets/small.png",
+        "large": "./drivers/hvac_controller/assets/large.png"
       },
       "community": {
         "sources": [
@@ -4074,8 +4074,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/led_strip_advanced/assets/small.png",
+        "large": "./drivers/led_strip_advanced/assets/large.png"
       },
       "platforms": [
         "local"
@@ -4200,8 +4200,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/led_strip_controller/assets/small.png",
+        "large": "./drivers/led_strip_controller/assets/large.png"
       },
       "platforms": [
         "local"
@@ -4323,8 +4323,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/led_strip_controller_pro/assets/small.png",
+        "large": "./drivers/led_strip_controller_pro/assets/large.png"
       },
       "platforms": [
         "local"
@@ -4424,8 +4424,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/lux_sensor/assets/large.png",
+        "small": "./drivers/lux_sensor/assets/small.png"
       },
       "pair": [
         {
@@ -4582,8 +4582,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/milight_controller/assets/small.png",
+        "large": "./drivers/milight_controller/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -4601,8 +4601,8 @@
         "dim"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/mini/assets/small.png",
+        "large": "./drivers/mini/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -4710,7 +4710,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/mini/assets/large.png",
+          "image": "./drivers/mini/assets/large.png",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until LED blinks rapidly."
           }
@@ -4742,8 +4742,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/mini_switch/assets/small.png",
+        "large": "./drivers/mini_switch/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -4849,7 +4849,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/mini_switch/assets/large.png",
+          "image": "./drivers/mini_switch/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Mini Switch."
           }
@@ -4930,8 +4930,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/motion_sensor_battery/assets/small.png",
+        "large": "./drivers/motion_sensor_battery/assets/large.png"
       },
       "platforms": [
         "local"
@@ -4961,8 +4961,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/motion_sensor_mmwave/assets/small.png",
+        "large": "./drivers/motion_sensor_mmwave/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -5116,7 +5116,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/motion_sensor_pir_ac/assets/large.png",
+          "image": "./drivers/motion_sensor_pir_ac/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -5153,8 +5153,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/motion_sensor_pir_ac/assets/small.png",
+        "large": "./drivers/motion_sensor_pir_ac/assets/large.png"
       },
       "settings": [
         {
@@ -5264,8 +5264,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/motion_sensor_pir_battery/assets/small.png",
+        "large": "./drivers/motion_sensor_pir_battery/assets/large.png"
       },
       "platforms": [
         "local"
@@ -5380,15 +5380,15 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/motion_sensor_zigbee_204z/assets/large.png",
+          "image": "./drivers/motion_sensor_zigbee_204z/assets/large.png",
           "instruction": {
             "en": "Press the pairing button until LED blinks rapidly"
           }
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/motion_sensor_zigbee_204z/assets/small.png",
+        "large": "./drivers/motion_sensor_zigbee_204z/assets/large.png"
       },
       "platforms": [
         "local"
@@ -5495,8 +5495,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/multisensor/assets/large.png",
+        "small": "./drivers/multisensor/assets/small.png"
       },
       "pair": [
         {
@@ -5628,8 +5628,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/noise_level_sensor/assets/large.png",
+        "small": "./drivers/noise_level_sensor/assets/small.png"
       },
       "pair": [
         {
@@ -5797,8 +5797,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/outdoor_light_controller/assets/large.png",
+        "small": "./drivers/outdoor_light_controller/assets/small.png"
       },
       "pair": [
         {
@@ -5847,8 +5847,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/outdoor_siren/assets/small.png",
+        "large": "./drivers/outdoor_siren/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -5919,7 +5919,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/outdoor_siren/assets/large.png",
+          "image": "./drivers/outdoor_siren/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Outdoor Siren."
           }
@@ -5961,8 +5961,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/pet_feeder/assets/small.png",
+        "large": "./drivers/pet_feeder/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -6046,7 +6046,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/pet_feeder/assets/large.png",
+          "image": "./drivers/pet_feeder/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Pet Feeder."
           }
@@ -6171,8 +6171,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/pir_sensor_advanced/assets/small.png",
+        "large": "./drivers/pir_sensor_advanced/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -6301,8 +6301,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/pm25_detector/assets/small.png",
+        "large": "./drivers/pm25_detector/assets/large.png"
       },
       "platforms": [
         "local"
@@ -6402,8 +6402,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/pm25_sensor/assets/large.png",
+        "small": "./drivers/pm25_sensor/assets/small.png"
       },
       "pair": [
         {
@@ -6552,8 +6552,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/pool_pump_controller/assets/small.png",
+        "large": "./drivers/pool_pump_controller/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -6706,8 +6706,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/power_meter_socket/assets/small.png",
+        "large": "./drivers/power_meter_socket/assets/large.png"
       },
       "platforms": [
         "local"
@@ -6808,8 +6808,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/presence_sensor_radar/assets/large.png",
+        "small": "./drivers/presence_sensor_radar/assets/small.png"
       },
       "pair": [
         {
@@ -6941,8 +6941,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/pressure_sensor/assets/large.png",
+        "small": "./drivers/pressure_sensor/assets/small.png"
       },
       "pair": [
         {
@@ -7089,8 +7089,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/projector_screen_controller/assets/large.png",
+        "small": "./drivers/projector_screen_controller/assets/small.png"
       },
       "pair": [
         {
@@ -7206,8 +7206,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/radar_motion_sensor_advanced/assets/small.png",
+        "large": "./drivers/radar_motion_sensor_advanced/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -7326,15 +7326,15 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/radar_motion_sensor_mmwave/assets/large.png",
+          "image": "./drivers/radar_motion_sensor_mmwave/assets/large.png",
           "instruction": {
             "en": "Press and hold pairing button for 5 seconds until LED blinks rapidly"
           }
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/radar_motion_sensor_mmwave/assets/small.png",
+        "large": "./drivers/radar_motion_sensor_mmwave/assets/large.png"
       },
       "platforms": [
         "local"
@@ -7439,8 +7439,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/radar_motion_sensor_tank_level/assets/small.png",
+        "large": "./drivers/radar_motion_sensor_tank_level/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -7564,8 +7564,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/radiator_valve/assets/large.png",
+        "small": "./drivers/radiator_valve/assets/small.png"
       },
       "pair": [
         {
@@ -7605,8 +7605,8 @@
         "dim"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/relay_switch_1gang/assets/small.png",
+        "large": "./drivers/relay_switch_1gang/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -7707,7 +7707,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/relay_switch_1gang/assets/large.png",
+          "image": "./drivers/relay_switch_1gang/assets/large.png",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until LED blinks rapidly."
           }
@@ -7739,8 +7739,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/remote_switch/assets/small.png",
+        "large": "./drivers/remote_switch/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -7841,7 +7841,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/remote_switch/assets/large.png",
+          "image": "./drivers/remote_switch/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Remote Switch."
           }
@@ -7973,8 +7973,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/rgb_led_controller/assets/small.png",
+        "large": "./drivers/rgb_led_controller/assets/large.png"
       },
       "platforms": [
         "local"
@@ -8070,8 +8070,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/roller_blind_controller/assets/small.png",
+        "large": "./drivers/roller_blind_controller/assets/large.png"
       },
       "community": {
         "sources": [
@@ -8216,15 +8216,15 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/roller_shutter_controller/assets/large.png",
+          "image": "./drivers/roller_shutter_controller/assets/large.png",
           "instruction": {
             "en": "Press and hold the pairing button until the LED blinks"
           }
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/roller_shutter_controller/assets/small.png",
+        "large": "./drivers/roller_shutter_controller/assets/large.png"
       },
       "platforms": [
         "local"
@@ -8345,8 +8345,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/roller_shutter_switch/assets/small.png",
+        "large": "./drivers/roller_shutter_switch/assets/large.png"
       },
       "capabilitiesOptions": {
         "windowcoverings_set": {
@@ -8486,8 +8486,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/roller_shutter_switch_advanced/assets/small.png",
+        "large": "./drivers/roller_shutter_switch_advanced/assets/large.png"
       },
       "capabilitiesOptions": {
         "windowcoverings_set": {
@@ -8526,8 +8526,8 @@
         "onoff"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/scene_controller/assets/small.png",
+        "large": "./drivers/scene_controller/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -8669,7 +8669,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/scene_controller_2button/assets/large.png",
+          "image": "./drivers/scene_controller_2button/assets/large.png",
           "instruction": {
             "en": "Press and hold the button for 5 seconds until LED flashes"
           }
@@ -8706,8 +8706,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/scene_controller_2button/assets/small.png",
+        "large": "./drivers/scene_controller_2button/assets/large.png"
       },
       "settings": [
         {
@@ -8774,7 +8774,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/scene_controller_4button/assets/large.png",
+          "image": "./drivers/scene_controller_4button/assets/large.png",
           "instruction": {
             "en": "Press and hold the button for 5 seconds until LED flashes"
           }
@@ -8811,8 +8811,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/scene_controller_4button/assets/small.png",
+        "large": "./drivers/scene_controller_4button/assets/large.png"
       },
       "settings": [
         {
@@ -8908,7 +8908,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/scene_controller_6button/assets/large.png",
+          "image": "./drivers/scene_controller_6button/assets/large.png",
           "instruction": {
             "en": "Press and hold the button for 5 seconds until LED flashes"
           }
@@ -8945,8 +8945,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/scene_controller_6button/assets/small.png",
+        "large": "./drivers/scene_controller_6button/assets/large.png"
       },
       "settings": [
         {
@@ -9044,7 +9044,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/scene_controller_8button/assets/large.png",
+          "image": "./drivers/scene_controller_8button/assets/large.png",
           "instruction": {
             "en": "Press and hold the button for 5 seconds until LED flashes"
           }
@@ -9081,8 +9081,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/scene_controller_8button/assets/small.png",
+        "large": "./drivers/scene_controller_8button/assets/large.png"
       },
       "settings": [
         {
@@ -9210,8 +9210,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/scene_controller_battery/assets/small.png",
+        "large": "./drivers/scene_controller_battery/assets/large.png"
       },
       "community": {
         "sources": [
@@ -9339,8 +9339,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/shade_controller/assets/large.png",
+        "small": "./drivers/shade_controller/assets/small.png"
       },
       "pair": [
         {
@@ -9480,8 +9480,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/smart_bulb_dimmer/assets/small.png",
+        "large": "./drivers/smart_bulb_dimmer/assets/large.png"
       },
       "platforms": [
         "local"
@@ -9605,8 +9605,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/smart_bulb_rgb/assets/small.png",
+        "large": "./drivers/smart_bulb_rgb/assets/large.png"
       },
       "community": {
         "sources": [
@@ -9744,8 +9744,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/smart_bulb_tunable/assets/large.png",
+        "small": "./drivers/smart_bulb_tunable/assets/small.png"
       },
       "pair": [
         {
@@ -9886,8 +9886,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/smart_bulb_white/assets/large.png",
+        "small": "./drivers/smart_bulb_white/assets/small.png"
       },
       "pair": [
         {
@@ -9929,8 +9929,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/smart_curtain_motor/assets/small.png",
+        "large": "./drivers/smart_curtain_motor/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -9986,7 +9986,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_curtain_motor/assets/large.png",
+          "image": "./drivers/smart_curtain_motor/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Smart Curtain Motor."
           }
@@ -10139,15 +10139,15 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_dimmer_module_1gang/assets/large.png",
+          "image": "./drivers/smart_dimmer_module_1gang/assets/large.png",
           "instruction": {
             "en": "Press and hold the pairing button until the LED blinks"
           }
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/smart_dimmer_module_1gang/assets/small.png",
+        "large": "./drivers/smart_dimmer_module_1gang/assets/large.png"
       },
       "platforms": [
         "local"
@@ -10173,8 +10173,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/smart_doorbell/assets/small.png",
+        "large": "./drivers/smart_doorbell/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -10245,7 +10245,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_doorbell/assets/large.png",
+          "image": "./drivers/smart_doorbell/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Smart Doorbell."
           }
@@ -10286,8 +10286,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/smart_garden_sprinkler/assets/small.png",
+        "large": "./drivers/smart_garden_sprinkler/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -10371,7 +10371,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_garden_sprinkler/assets/large.png",
+          "image": "./drivers/smart_garden_sprinkler/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Smart Garden Sprinkler."
           }
@@ -10513,8 +10513,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/smart_irrigation_controller/assets/small.png",
+        "large": "./drivers/smart_irrigation_controller/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -10594,8 +10594,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/smart_lock/assets/small.png",
+        "large": "./drivers/smart_lock/assets/large.png"
       },
       "community": {
         "sources": [
@@ -10765,8 +10765,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/smart_outlet_monitor/assets/small.png",
+        "large": "./drivers/smart_outlet_monitor/assets/large.png"
       },
       "platforms": [
         "local"
@@ -10883,8 +10883,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/smart_plug/assets/large.png",
+        "small": "./drivers/smart_plug/assets/small.png"
       },
       "pair": [
         {
@@ -11081,8 +11081,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/smart_plug_energy/assets/small.png",
+        "large": "./drivers/smart_plug_energy/assets/large.png"
       },
       "platforms": [
         "local"
@@ -11105,8 +11105,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/smart_radiator_valve/assets/small.png",
+        "large": "./drivers/smart_radiator_valve/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -11178,7 +11178,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_radiator_valve/assets/large.png",
+          "image": "./drivers/smart_radiator_valve/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Smart Radiator Valve."
           }
@@ -11313,15 +11313,15 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_smoke_detector_advanced/assets/large.png",
+          "image": "./drivers/smart_smoke_detector_advanced/assets/large.png",
           "instruction": {
             "en": "Press and hold the pairing button until the LED blinks"
           }
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/smart_smoke_detector_advanced/assets/small.png",
+        "large": "./drivers/smart_smoke_detector_advanced/assets/large.png"
       },
       "platforms": [
         "local"
@@ -11451,8 +11451,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/smart_spot/assets/large.png",
+        "small": "./drivers/smart_spot/assets/small.png"
       },
       "pair": [
         {
@@ -11586,8 +11586,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/smart_switch_1gang_ac/assets/small.png",
+        "large": "./drivers/smart_switch_1gang_ac/assets/large.png"
       },
       "platforms": [
         "local"
@@ -11657,7 +11657,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_switch_1gang_hybrid/assets/large.png",
+          "image": "./drivers/smart_switch_1gang_hybrid/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -11714,8 +11714,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/smart_switch_1gang_hybrid/assets/small.png",
+        "large": "./drivers/smart_switch_1gang_hybrid/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -11861,8 +11861,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/smart_switch_2gang_ac/assets/small.png",
+        "large": "./drivers/smart_switch_2gang_ac/assets/large.png"
       },
       "platforms": [
         "local"
@@ -11942,7 +11942,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_switch_2gang_hybrid/assets/large.png",
+          "image": "./drivers/smart_switch_2gang_hybrid/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -11999,8 +11999,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/smart_switch_2gang_hybrid/assets/small.png",
+        "large": "./drivers/smart_switch_2gang_hybrid/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -12174,8 +12174,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/smart_switch_3gang_ac/assets/small.png",
+        "large": "./drivers/smart_switch_3gang_ac/assets/large.png"
       },
       "platforms": [
         "local"
@@ -12267,7 +12267,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_switch_3gang_hybrid/assets/large.png",
+          "image": "./drivers/smart_switch_3gang_hybrid/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -12324,8 +12324,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/smart_switch_3gang_hybrid/assets/small.png",
+        "large": "./drivers/smart_switch_3gang_hybrid/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -12422,7 +12422,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_switch_4gang_hybrid/assets/large.png",
+          "image": "./drivers/smart_switch_4gang_hybrid/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -12479,8 +12479,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/smart_switch_4gang_hybrid/assets/small.png",
+        "large": "./drivers/smart_switch_4gang_hybrid/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -12615,8 +12615,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/smart_thermostat/assets/small.png",
+        "large": "./drivers/smart_thermostat/assets/large.png"
       },
       "platforms": [
         "local"
@@ -12707,8 +12707,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/smart_valve_controller/assets/small.png",
+        "large": "./drivers/smart_valve_controller/assets/large.png"
       },
       "platforms": [
         "local"
@@ -12738,8 +12738,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/smart_water_valve/assets/small.png",
+        "large": "./drivers/smart_water_valve/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -12825,7 +12825,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_water_valve/assets/large.png",
+          "image": "./drivers/smart_water_valve/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Smart Water Valve."
           }
@@ -12972,8 +12972,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/smoke_detector/assets/large.png",
+        "small": "./drivers/smoke_detector/assets/small.png"
       },
       "pair": [
         {
@@ -13099,8 +13099,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/smoke_detector_temp_humidity_advanced/assets/small.png",
+        "large": "./drivers/smoke_detector_temp_humidity_advanced/assets/large.png"
       },
       "platforms": [
         "local"
@@ -13229,8 +13229,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/smoke_temp_humid_sensor/assets/small.png",
+        "large": "./drivers/smoke_temp_humid_sensor/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -13355,8 +13355,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/soil_moisture_sensor/assets/large.png",
+        "small": "./drivers/soil_moisture_sensor/assets/small.png"
       },
       "pair": [
         {
@@ -13506,15 +13506,15 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/soil_moisture_temperature_sensor/assets/large.png",
+          "image": "./drivers/soil_moisture_temperature_sensor/assets/large.png",
           "instruction": {
             "en": "Press and hold the pairing button until the LED blinks"
           }
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/soil_moisture_temperature_sensor/assets/small.png",
+        "large": "./drivers/soil_moisture_temperature_sensor/assets/large.png"
       },
       "platforms": [
         "local"
@@ -13614,8 +13614,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/soil_tester_temp_humid/assets/small.png",
+        "large": "./drivers/soil_tester_temp_humid/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -13748,8 +13748,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/solar_panel_controller/assets/small.png",
+        "large": "./drivers/solar_panel_controller/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -13881,8 +13881,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/sos_emergency_button/assets/small.png",
+        "large": "./drivers/sos_emergency_button/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -14012,8 +14012,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/switch_1gang_battery/assets/small.png",
+        "large": "./drivers/switch_1gang_battery/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -14154,8 +14154,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/switch_2gang_ac/assets/small.png",
+        "large": "./drivers/switch_2gang_ac/assets/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -14301,8 +14301,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/switch_2gang_hybrid/assets/small.png",
+        "large": "./drivers/switch_2gang_hybrid/assets/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -14458,8 +14458,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/switch_3gang_battery/assets/small.png",
+        "large": "./drivers/switch_3gang_battery/assets/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -14603,8 +14603,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/switch_4gang_ac/assets/small.png",
+        "large": "./drivers/switch_4gang_ac/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -14732,8 +14732,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/switch_4gang_battery_cr2032/assets/small.png",
+        "large": "./drivers/switch_4gang_battery_cr2032/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -14867,8 +14867,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/switch_5gang_battery/assets/small.png",
+        "large": "./drivers/switch_5gang_battery/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -15004,8 +15004,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/switch_6gang_ac/assets/small.png",
+        "large": "./drivers/switch_6gang_ac/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -15137,8 +15137,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/switch_8gang_ac/assets/small.png",
+        "large": "./drivers/switch_8gang_ac/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -15238,8 +15238,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/tank_level_monitor/assets/small.png",
+        "large": "./drivers/tank_level_monitor/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -15348,8 +15348,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/temp_humid_sensor_advanced/assets/small.png",
+        "large": "./drivers/temp_humid_sensor_advanced/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -15467,15 +15467,15 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/temp_humid_sensor_leak_detector/assets/large.png",
+          "image": "./drivers/temp_humid_sensor_leak_detector/assets/large.png",
           "instruction": {
             "en": "Press and hold the pairing button for 3 seconds"
           }
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/temp_humid_sensor_leak_detector/assets/small.png",
+        "large": "./drivers/temp_humid_sensor_leak_detector/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -15600,8 +15600,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/temp_humid_sensor_v1w2k9dd/assets/small.png",
+        "large": "./drivers/temp_humid_sensor_v1w2k9dd/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -15727,8 +15727,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/temp_sensor_pro/assets/small.png",
+        "large": "./drivers/temp_sensor_pro/assets/large.png"
       },
       "platforms": [
         "local"
@@ -15828,8 +15828,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/temperature_controller/assets/large.png",
+        "small": "./drivers/temperature_controller/assets/small.png"
       },
       "pair": [
         {
@@ -15909,7 +15909,8 @@
           "_TZE200_cwbvmsar",
           "_TZE200_dwcarsat",
           "_TZE200_m9skfctm",
-          "_TZE200_ryfmq5rl"
+          "_TZE200_ryfmq5rl",
+          "_TZE204_t1blo2bj"
         ],
         "productId": [
           "TS0201",
@@ -15962,8 +15963,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/temperature_humidity_sensor/assets/large.png",
+        "small": "./drivers/temperature_humidity_sensor/assets/small.png"
       },
       "pair": [
         {
@@ -16029,8 +16030,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/temperature_sensor/assets/small.png",
+        "large": "./drivers/temperature_sensor/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -16113,7 +16114,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/temperature_sensor/assets/large.png",
+          "image": "./drivers/temperature_sensor/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Temperature Sensor."
           }
@@ -16240,8 +16241,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/temperature_sensor_advanced/assets/small.png",
+        "large": "./drivers/temperature_sensor_advanced/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -16360,8 +16361,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/thermostat/assets/small.png",
+        "large": "./drivers/thermostat/assets/large.png"
       },
       "community": {
         "sources": [
@@ -16526,8 +16527,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/touch_dimmer/assets/large.png",
+        "small": "./drivers/touch_dimmer/assets/small.png"
       },
       "pair": [
         {
@@ -16664,8 +16665,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/touch_dimmer_1gang/assets/small.png",
+        "large": "./drivers/touch_dimmer_1gang/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -16783,8 +16784,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/touch_switch_1gang/assets/large.png",
+        "small": "./drivers/touch_switch_1gang/assets/small.png"
       },
       "pair": [
         {
@@ -16927,8 +16928,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/touch_switch_2gang/assets/large.png",
+        "small": "./drivers/touch_switch_2gang/assets/small.png"
       },
       "pair": [
         {
@@ -17094,8 +17095,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/touch_switch_3gang/assets/large.png",
+        "small": "./drivers/touch_switch_3gang/assets/small.png"
       },
       "pair": [
         {
@@ -17248,8 +17249,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/touch_switch_4gang/assets/large.png",
+        "small": "./drivers/touch_switch_4gang/assets/small.png"
       },
       "pair": [
         {
@@ -17366,8 +17367,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/tvoc_sensor/assets/large.png",
+        "small": "./drivers/tvoc_sensor/assets/small.png"
       },
       "pair": [
         {
@@ -17502,8 +17503,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/tvoc_sensor_advanced/assets/small.png",
+        "large": "./drivers/tvoc_sensor_advanced/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -17644,8 +17645,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/usb_outlet/assets/large.png",
+        "small": "./drivers/usb_outlet/assets/small.png"
       },
       "pair": [
         {
@@ -17807,8 +17808,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/usb_outlet_advanced/assets/small.png",
+        "large": "./drivers/usb_outlet_advanced/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_power": {
@@ -17938,8 +17939,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/vibration_sensor/assets/large.png",
+        "small": "./drivers/vibration_sensor/assets/small.png"
       },
       "pair": [
         {
@@ -18012,7 +18013,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_1gang_ac/assets/large.png",
+          "image": "./drivers/wall_switch_1gang_ac/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -18069,8 +18070,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/wall_switch_1gang_ac/assets/small.png",
+        "large": "./drivers/wall_switch_1gang_ac/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -18149,7 +18150,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_1gang_dc/assets/large.png",
+          "image": "./drivers/wall_switch_1gang_dc/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -18206,8 +18207,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/wall_switch_1gang_dc/assets/small.png",
+        "large": "./drivers/wall_switch_1gang_dc/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -18268,7 +18269,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_2gang_ac/assets/large.png",
+          "image": "./drivers/wall_switch_2gang_ac/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -18325,8 +18326,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/wall_switch_2gang_ac/assets/small.png",
+        "large": "./drivers/wall_switch_2gang_ac/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -18427,7 +18428,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_2gang_dc/assets/large.png",
+          "image": "./drivers/wall_switch_2gang_dc/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -18484,8 +18485,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/wall_switch_2gang_dc/assets/small.png",
+        "large": "./drivers/wall_switch_2gang_dc/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -18570,7 +18571,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_3gang_ac/assets/large.png",
+          "image": "./drivers/wall_switch_3gang_ac/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -18627,8 +18628,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/wall_switch_3gang_ac/assets/small.png",
+        "large": "./drivers/wall_switch_3gang_ac/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -18747,7 +18748,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_3gang_dc/assets/large.png",
+          "image": "./drivers/wall_switch_3gang_dc/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -18804,8 +18805,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/wall_switch_3gang_dc/assets/small.png",
+        "large": "./drivers/wall_switch_3gang_dc/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -18916,7 +18917,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_4gang_ac/assets/large.png",
+          "image": "./drivers/wall_switch_4gang_ac/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -18973,8 +18974,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/wall_switch_4gang_ac/assets/small.png",
+        "large": "./drivers/wall_switch_4gang_ac/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -19098,7 +19099,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_4gang_dc/assets/large.png",
+          "image": "./drivers/wall_switch_4gang_dc/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -19155,8 +19156,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/wall_switch_4gang_dc/assets/small.png",
+        "large": "./drivers/wall_switch_4gang_dc/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -19296,7 +19297,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_5gang_ac/assets/large.png",
+          "image": "./drivers/wall_switch_5gang_ac/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -19355,8 +19356,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/wall_switch_5gang_ac/assets/small.png",
+        "large": "./drivers/wall_switch_5gang_ac/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -19510,7 +19511,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_6gang_ac/assets/large.png",
+          "image": "./drivers/wall_switch_6gang_ac/assets/large.png",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -19567,8 +19568,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/wall_switch_6gang_ac/assets/small.png",
+        "large": "./drivers/wall_switch_6gang_ac/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -19667,15 +19668,15 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/water_leak_detector_advanced/assets/large.png",
+          "image": "./drivers/water_leak_detector_advanced/assets/large.png",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds"
           }
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/water_leak_detector_advanced/assets/small.png",
+        "large": "./drivers/water_leak_detector_advanced/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -19783,8 +19784,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/water_leak_detector_sq510a/assets/small.png",
+        "large": "./drivers/water_leak_detector_sq510a/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -19886,8 +19887,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./drivers/water_leak_sensor/assets/large.png",
+        "small": "./drivers/water_leak_sensor/assets/small.png"
       },
       "pair": [
         {
@@ -19944,8 +19945,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/water_valve/assets/small.png",
+        "large": "./drivers/water_valve/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -20031,7 +20032,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/water_valve/assets/large.png",
+          "image": "./drivers/water_valve/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Water Valve."
           }
@@ -20141,8 +20142,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/water_valve_smart/assets/small.png",
+        "large": "./drivers/water_valve_smart/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -20172,8 +20173,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/wireless_switch/assets/small.png",
+        "large": "./drivers/wireless_switch/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -20273,7 +20274,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wireless_switch/assets/large.png",
+          "image": "./drivers/wireless_switch/assets/large.png",
           "instruction": {
             "en": "Follow the pairing instructions for your Wireless Switch."
           }
@@ -20299,8 +20300,8 @@
         "dim"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/wireless_switch_1gang_cr2032/assets/small.png",
+        "large": "./drivers/wireless_switch_1gang_cr2032/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -20406,7 +20407,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wireless_switch_1gang_cr2032/assets/large.png",
+          "image": "./drivers/wireless_switch_1gang_cr2032/assets/large.png",
           "instruction": {
             "en": "Press and hold the reset button for 3 seconds until the LED starts blinking."
           }
@@ -20499,7 +20500,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wireless_switch_2gang_cr2032/assets/large.png",
+          "image": "./drivers/wireless_switch_2gang_cr2032/assets/large.png",
           "instruction": {
             "en": "Press and hold the button until the LED flashes"
           }
@@ -20555,8 +20556,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/wireless_switch_2gang_cr2032/assets/small.png",
+        "large": "./drivers/wireless_switch_2gang_cr2032/assets/large.png"
       },
       "name": {
         "en": "Wireless Switch 2gang CR2032"
@@ -20664,7 +20665,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wireless_switch_3gang_cr2032/assets/large.png",
+          "image": "./drivers/wireless_switch_3gang_cr2032/assets/large.png",
           "instruction": {
             "en": "Press and hold the button until the LED flashes"
           }
@@ -20720,8 +20721,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/wireless_switch_3gang_cr2032/assets/small.png",
+        "large": "./drivers/wireless_switch_3gang_cr2032/assets/large.png"
       },
       "name": {
         "en": "Wireless Switch 3gang CR2032"
@@ -20813,7 +20814,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wireless_switch_4gang_cr2032/assets/large.png",
+          "image": "./drivers/wireless_switch_4gang_cr2032/assets/large.png",
           "instruction": {
             "en": "Press and hold the button until the LED flashes"
           }
@@ -20869,8 +20870,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/wireless_switch_4gang_cr2032/assets/small.png",
+        "large": "./drivers/wireless_switch_4gang_cr2032/assets/large.png"
       },
       "name": {
         "en": "Wireless Switch 4gang CR2032"
@@ -21029,15 +21030,15 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wireless_switch_4gang_cr2450/assets/large.png",
+          "image": "./drivers/wireless_switch_4gang_cr2450/assets/large.png",
           "instruction": {
             "en": "Press any button 3 times rapidly"
           }
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/wireless_switch_4gang_cr2450/assets/small.png",
+        "large": "./drivers/wireless_switch_4gang_cr2450/assets/large.png"
       },
       "platforms": [
         "local"
@@ -21115,7 +21116,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wireless_switch_5gang_cr2032/assets/large.png",
+          "image": "./drivers/wireless_switch_5gang_cr2032/assets/large.png",
           "instruction": {
             "en": "Press and hold the button for 5 seconds until LED flashes"
           }
@@ -21171,8 +21172,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/wireless_switch_5gang_cr2032/assets/small.png",
+        "large": "./drivers/wireless_switch_5gang_cr2032/assets/large.png"
       },
       "settings": [
         {
@@ -21270,7 +21271,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wireless_switch_6gang_cr2032/assets/large.png",
+          "image": "./drivers/wireless_switch_6gang_cr2032/assets/large.png",
           "instruction": {
             "en": "Press and hold the button for 5 seconds until LED flashes"
           }
@@ -21326,8 +21327,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/wireless_switch_6gang_cr2032/assets/small.png",
+        "large": "./drivers/wireless_switch_6gang_cr2032/assets/large.png"
       },
       "settings": [
         {
@@ -21367,8 +21368,8 @@
         "onoff"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/zbbridge/assets/small.png",
+        "large": "./drivers/zbbridge/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -21444,7 +21445,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/zbbridge/assets/large.png",
+          "image": "./drivers/zbbridge/assets/large.png",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until LED blinks rapidly."
           }
@@ -21543,8 +21544,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./drivers/zigbee_gateway_hub/assets/small.png",
+        "large": "./drivers/zigbee_gateway_hub/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
