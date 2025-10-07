@@ -1,0 +1,517 @@
+{
+  "startTime": "2025-10-07T17:12:59.577Z",
+  "phases": {
+    "1": {
+      "name": "BACKUP & PREPARATION",
+      "status": "SUCCESS",
+      "duration": 23264,
+      "result": {
+        "backupPath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\backup\\backup_2025-10-07T17-12-59"
+      }
+    },
+    "2": {
+      "name": "AUDIT COMPLET",
+      "status": "SUCCESS",
+      "duration": 969,
+      "result": {
+        "total": 163,
+        "categorized": 153,
+        "needsReorganization": 69,
+        "needsEnrichment": 104,
+        "unknownProductIds": 2986,
+        "unknownManufacturers": 4570
+      }
+    },
+    "3": {
+      "name": "ENRICHMENT EXTERNE",
+      "status": "SUCCESS",
+      "duration": 2685,
+      "result": {
+        "status": "completed"
+      }
+    },
+    "4": {
+      "name": "REORGANISATION UNBRANDED",
+      "status": "SUCCESS",
+      "duration": 59,
+      "result": {
+        "plan": [
+          {
+            "driver": "air_quality_monitor",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0205, TS0207, TS0222, TS0225, TS130F, TS0204, TS020C, TS0224, TS0901, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "air_quality_monitor_pro",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0205, TS0207, TS0222, TS0225, TS130F, TS0204, TS020C, TS0224, TS0901, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "ceiling_fan",
+            "currentCategory": "fan",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS004, TS0041, TS0041A, TS0042, TS0043, TS0044, TS0046, TS0049, TS004F, TS004X, TS0052, TS0101, TS0105, TS0108, TS0111, TS0115, TS011F, TS0121, TS0201, TS0202, TS0203, TS0204, TS0205, TS0207, TS020C, TS0210, TS0215A, TS0216, TS0218, TS0222, TS0224, TS0225, TS0301, TS030F, TS0501A, TS0501B, TS0502A, TS0502B, TS0503A, TS0503B, TS0504A, TS0504B, TS0505, TS0505A, TS0505B, TS0603, TS0726, TS0901, TS1002, TS1101, TS110E, TS110F, TS1111, TS1201, TS130F sont de type mixed"
+          },
+          {
+            "driver": "ceiling_light_controller",
+            "currentCategory": "light",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0002, TS0003, TS0004, TS0011, TS0012, TS0013, TS0014, TS0501A, TS0501B, TS0502A, TS0502B, TS0503A, TS0503B, TS0504A, TS0504B, TS0505, TS0505A, TS0505B, TS1101, TS110E, TS110F, TS0006, TS000F, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS130F, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "climate_monitor",
+            "currentCategory": "thermostat",
+            "suggestedCategory": "sensor",
+            "reason": "ProductIds TS0201, TS0601, TS0001, TS0202, TS0203, TS0205, TS0207, TS0222, TS0225, TS130F, TS0204, TS020C, TS0224, TS0901, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type sensor"
+          },
+          {
+            "driver": "co2_sensor",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0205, TS0207, TS0222, TS0225, TS130F, TS0204, TS020C, TS0224, TS0901, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "co2_temp_humidity",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0205, TS0207, TS0222, TS0225, TS130F, TS0204, TS020C, TS0224, TS0901, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "comprehensive_air_monitor",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0204, TS0205, TS0207, TS020C, TS0222, TS0224, TS0225, TS0901, TS130F, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "co_detector_pro",
+            "currentCategory": "unknown",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0204, TS0205, TS0207, TS020C, TS0222, TS0224, TS0225, TS0901, TS130F, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "dimmer",
+            "currentCategory": "light",
+            "suggestedCategory": "switch",
+            "reason": "ProductIds TS110E, TS0001, TS0002, TS0003, TS0004, TS0011, TS0012, TS0013, TS0014, TS0501A, TS0502A, TS0502B, TS0503A, TS0503B, TS0504B, TS0505A, TS0505B, TS0601, TS110F, TS0501B, TS0504A, TS0505, TS1101, TS0006, TS000F, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS130F, TS1111 sont de type switch"
+          },
+          {
+            "driver": "doorbell",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS130F, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "door_controller",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0002, TS0003, TS0004, TS0011, TS0012, TS0013, TS0014, TS0501A, TS0501B, TS0502A, TS0502B, TS0503A, TS0503B, TS0504A, TS0504B, TS0505, TS0505A, TS0505B, TS1101, TS110E, TS110F, TS0006, TS000F, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS130F, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "door_lock",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS130F, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "energy_plug_advanced",
+            "currentCategory": "plug",
+            "suggestedCategory": "switch",
+            "reason": "ProductIds TS0001, TS0201, TS0202, TS0203, TS0204, TS0205, TS0207, TS020C, TS0222, TS0224, TS0225, TS0601, TS0901, TS130F, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111, TS011F sont de type switch"
+          },
+          {
+            "driver": "fingerprint_lock",
+            "currentCategory": "lock",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS130F, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "formaldehyde_sensor",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0205, TS0207, TS0222, TS0225, TS130F, TS0204, TS020C, TS0224, TS0901, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "garage_door_controller",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS130F, TS0001, TS004, TS0041, TS0041A, TS0042, TS0043, TS0044, TS0046, TS0049, TS004F, TS004X, TS0210, TS0215A, TS0216, TS0218, TS0301, TS030F, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "garage_door_opener",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS130F, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "gas_detector",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0204, TS0205, TS0207, TS020C, TS0222, TS0224, TS0225, TS0901, TS130F, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "humidity_controller",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS130F, TS0001, TS0201, TS0202, TS0203, TS0204, TS0205, TS0207, TS020C, TS0222, TS0224, TS0225, TS0901, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "hvac_controller",
+            "currentCategory": "curtain",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS130F, TS0001, TS0201, TS0202, TS0203, TS0204, TS0205, TS0207, TS020C, TS0222, TS0224, TS0225, TS0901, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "led_strip_controller_pro",
+            "currentCategory": "light",
+            "suggestedCategory": "switch",
+            "reason": "ProductIds TS0001, TS0201, TS0202, TS0203, TS0205, TS0207, TS0222, TS0225, TS0601, TS130F, TS0204, TS020C, TS0224, TS0901, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type switch"
+          },
+          {
+            "driver": "lux_sensor",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0204, TS0205, TS0207, TS020C, TS0222, TS0224, TS0225, TS0901, TS130F, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "milight_controller",
+            "currentCategory": "light",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0002, TS0003, TS0004, TS0011, TS0012, TS0013, TS0014, TS0501A, TS0501B, TS0502A, TS0502B, TS0503A, TS0503B, TS0504A, TS0504B, TS0505, TS0505A, TS0505B, TS1101, TS110E, TS110F, TS0006, TS000F, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS130F, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "mini",
+            "currentCategory": "unknown",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0002, TS0003, TS0004, TS0011, TS0012, TS0013, TS0014, TS0501A, TS0501B, TS0502A, TS0502B, TS0503A, TS0503B, TS0504A, TS0504B, TS0505, TS0505A, TS0505B, TS1101, TS110E, TS110F, TS0006, TS000F, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS130F, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "multisensor",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0204, TS0205, TS0207, TS020C, TS0222, TS0224, TS0225, TS0901, TS130F, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "noise_level_sensor",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0204, TS0205, TS0207, TS020C, TS0222, TS0224, TS0225, TS0901, TS130F, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "outdoor_light_controller",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0002, TS0003, TS0004, TS0011, TS0012, TS0013, TS0014, TS0501A, TS0501B, TS0502A, TS0502B, TS0503A, TS0503B, TS0504A, TS0504B, TS0505, TS0505A, TS0505B, TS1101, TS110E, TS110F, TS0006, TS000F, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS130F, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "outdoor_siren",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS130F, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "pet_feeder",
+            "currentCategory": "unknown",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0204, TS0205, TS0207, TS020C, TS0222, TS0224, TS0225, TS0901, TS130F, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "pm25_detector",
+            "currentCategory": "unknown",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0205, TS0207, TS0222, TS0225, TS130F, TS0204, TS020C, TS0224, TS0901, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "pm25_sensor",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0205, TS0207, TS0222, TS0225, TS130F, TS0204, TS020C, TS0224, TS0901, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "pool_pump_controller",
+            "currentCategory": "curtain",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS130F, TS0001, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "power_meter_socket",
+            "currentCategory": "plug",
+            "suggestedCategory": "switch",
+            "reason": "ProductIds TS0001, TS0201, TS0202, TS0203, TS0204, TS0205, TS0207, TS020C, TS0222, TS0224, TS0225, TS0601, TS0901, TS130F, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111, TS011F sont de type switch"
+          },
+          {
+            "driver": "pressure_sensor",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0204, TS0205, TS0207, TS020C, TS0222, TS0224, TS0225, TS0901, TS130F, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "projector_screen_controller",
+            "currentCategory": "curtain",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS130F, TS0001, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "radiator_valve",
+            "currentCategory": "valve",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS130F, TS0001, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "rgb_led_controller",
+            "currentCategory": "light",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0002, TS0003, TS0004, TS0011, TS0012, TS0013, TS0014, TS0501A, TS0501B, TS0502A, TS0502B, TS0503A, TS0503B, TS0504A, TS0504B, TS0505, TS0505A, TS0505B, TS1101, TS110E, TS110F, TS0006, TS000F, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS130F, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "scene_controller",
+            "currentCategory": "curtain",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS130F, TS0001, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "scene_controller_4button",
+            "currentCategory": "curtain",
+            "suggestedCategory": "remote",
+            "reason": "ProductIds TS004, TS0041, TS0041A, TS0042, TS0043, TS0044, TS0046, TS0049, TS004F, TS004X sont de type remote"
+          },
+          {
+            "driver": "scene_controller_battery",
+            "currentCategory": "curtain",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS130F, TS0001, TS0201, TS0202, TS0203, TS0204, TS0205, TS0207, TS020C, TS0222, TS0224, TS0225, TS0901, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "shade_controller",
+            "currentCategory": "curtain",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS130F, TS0001, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "smart_bulb_dimmer",
+            "currentCategory": "light",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0205, TS0207, TS0222, TS0225, TS130F, TS0204, TS020C, TS0224, TS0901, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "smart_doorbell",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS130F, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "smart_garden_sprinkler",
+            "currentCategory": "unknown",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0204, TS0205, TS0207, TS020C, TS0222, TS0224, TS0225, TS0901, TS130F, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "smart_irrigation_controller",
+            "currentCategory": "curtain",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS130F, TS0001, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "smart_lock",
+            "currentCategory": "lock",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0204, TS0205, TS0207, TS020C, TS0222, TS0224, TS0225, TS0901, TS130F, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "smart_outlet_monitor",
+            "currentCategory": "plug",
+            "suggestedCategory": "switch",
+            "reason": "ProductIds TS0001, TS0201, TS0202, TS0203, TS0204, TS0205, TS0207, TS020C, TS0222, TS0224, TS0225, TS0601, TS0901, TS130F, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111, TS011F sont de type switch"
+          },
+          {
+            "driver": "smart_plug_energy",
+            "currentCategory": "plug",
+            "suggestedCategory": "switch",
+            "reason": "ProductIds TS0001, TS0201, TS0202, TS0203, TS0204, TS0205, TS0207, TS020C, TS0222, TS0224, TS0225, TS0601, TS0901, TS130F, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111, TS011F sont de type switch"
+          },
+          {
+            "driver": "smart_radiator_valve",
+            "currentCategory": "valve",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0204, TS0205, TS0207, TS020C, TS0222, TS0224, TS0225, TS0901, TS130F, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "smart_spot",
+            "currentCategory": "unknown",
+            "suggestedCategory": "light",
+            "reason": "ProductIds TS0501A, TS0502A, TS0502B, TS0503A, TS0503B, TS0504B, TS0505A, TS0505B, TS0501B, TS0504A, TS0505, TS0001, TS0002, TS0003, TS0004, TS0011, TS0012, TS0013, TS0014, TS0601, TS110E, TS110F, TS1101, TS0006, TS000F, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS130F, TS1111 sont de type light"
+          },
+          {
+            "driver": "smart_thermostat",
+            "currentCategory": "thermostat",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0204, TS0205, TS0207, TS020C, TS0222, TS0224, TS0225, TS0901, TS130F, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "smart_valve_controller",
+            "currentCategory": "curtain",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS130F, TS0001, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "smart_water_valve",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0204, TS0205, TS0207, TS020C, TS0222, TS0224, TS0225, TS0901, TS130F, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "soil_moisture_sensor",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0204, TS0205, TS0207, TS020C, TS0222, TS0224, TS0225, TS0901, TS130F, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "soil_tester_temp_humid",
+            "currentCategory": "unknown",
+            "suggestedCategory": "sensor",
+            "reason": "ProductIds TS0201, TS0001, TS0202, TS0203, TS0205, TS0207, TS0222, TS0225, TS0601, TS130F, TS0204, TS020C, TS0224, TS0901, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type sensor"
+          },
+          {
+            "driver": "solar_panel_controller",
+            "currentCategory": "curtain",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS130F, TS0001, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "sos_emergency_button",
+            "currentCategory": "remote",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS004, TS0041, TS0041A, TS0042, TS0043, TS0044, TS0046, TS0049, TS004F, TS004X, TS0210, TS0215A, TS0216, TS0218, TS0301, TS030F, TS130F, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "tank_level_monitor",
+            "currentCategory": "unknown",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0204, TS0205, TS0207, TS020C, TS0222, TS0224, TS0225, TS0901, TS130F, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "temperature_controller",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0204, TS0205, TS0207, TS020C, TS0222, TS0224, TS0225, TS0901, TS130F, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "thermostat",
+            "currentCategory": "thermostat",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0204, TS0205, TS0207, TS020C, TS0222, TS0224, TS0225, TS0901, TS130F, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "touch_dimmer",
+            "currentCategory": "switch",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS130F, TS0001, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "tvoc_sensor",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0205, TS0207, TS0222, TS0225, TS130F, TS0204, TS020C, TS0224, TS0901, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "tvoc_sensor_advanced",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0205, TS0207, TS0222, TS0225, TS130F, TS0204, TS020C, TS0224, TS0901, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "vibration_sensor",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0204, TS0205, TS0207, TS020C, TS0222, TS0224, TS0225, TS0901, TS130F, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "water_valve",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS0001, TS0201, TS0202, TS0203, TS0204, TS0205, TS0207, TS020C, TS0222, TS0224, TS0225, TS0901, TS130F, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "water_valve_smart",
+            "currentCategory": "sensor",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS130F, TS0001, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "zbbridge",
+            "currentCategory": "unknown",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS130F, TS0001, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          },
+          {
+            "driver": "zigbee_gateway_hub",
+            "currentCategory": "unknown",
+            "suggestedCategory": "mixed",
+            "reason": "ProductIds TS0601, TS130F, TS0001, TS0002, TS0003, TS0004, TS0006, TS000F, TS0011, TS0012, TS0013, TS0014, TS0021, TS0026, TS0052, TS0121, TS0603, TS0726, TS1002, TS1201, TS1111 sont de type mixed"
+          }
+        ]
+      }
+    },
+    "5": {
+      "name": "ENRICHMENT MANUFACTURER/PRODUCT IDS",
+      "status": "SUCCESS",
+      "duration": 1,
+      "result": {
+        "status": "partial"
+      }
+    },
+    "6": {
+      "name": "FEATURES ENHANCEMENT",
+      "status": "SUCCESS",
+      "duration": 0,
+      "result": {
+        "featuresAdded": 0
+      }
+    },
+    "7": {
+      "name": "IMAGES CORRECTION",
+      "status": "SUCCESS",
+      "duration": 12,
+      "result": {
+        "status": "verified"
+      }
+    },
+    "8": {
+      "name": "VALIDATION",
+      "status": "SUCCESS",
+      "duration": 47510,
+      "result": {
+        "valid": false,
+        "error": "Command failed: homey app validate --level=publish"
+      }
+    },
+    "9": {
+      "name": "GIT COMMIT & PUSH",
+      "status": "SUCCESS",
+      "duration": 2,
+      "result": {
+        "commitMessagePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\COMMIT_MESSAGE.txt"
+      }
+    },
+    "10": {
+      "name": "PUBLICATION",
+      "status": "SUCCESS",
+      "duration": 1,
+      "result": {
+        "status": "manual"
+      }
+    }
+  },
+  "errors": [],
+  "warnings": [],
+  "statistics": {
+    "driversAnalyzed": 163,
+    "driversReorganized": 69,
+    "driversEnriched": 0,
+    "featuresAdded": 0,
+    "imagesFixed": 0
+  },
+  "endTime": "2025-10-07T17:14:14.083Z",
+  "totalDuration": 74506
+}
