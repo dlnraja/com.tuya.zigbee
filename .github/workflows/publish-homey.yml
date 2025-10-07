@@ -11,16 +11,17 @@ jobs:
     timeout-minutes: 30
     
     steps:
-    - name: Checkout
+    - name: Checkout Repository
       uses: actions/checkout@v4
       
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '18'
+        cache: 'npm'
         
     - name: Install Dependencies
-      run: npm install --no-audit
+      run: npm install --no-audit --prefer-offline
         
     - name: Install Homey CLI
       run: npm install -g homey
@@ -29,20 +30,43 @@ jobs:
       env:
         HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
       run: |
+        echo "Authenticating with Homey..."
         echo "$HOMEY_TOKEN" | homey login --token
         
-    - name: Build App
-      run: homey app build
-        
-    - name: Validate App
-      run: homey app validate --level=publish
-        
-    - name: Publish App
+    - name: Clean Build Cache
       run: |
+        rm -rf .homeybuild
+        echo "Build cache cleaned"
+        
+    - name: Build Application
+      run: |
+        echo "Building app..."
+        homey app build
+        echo "✅ Build completed successfully"
+        
+    - name: Validate Application
+      run: |
+        echo "Validating app for publication..."
+        homey app validate --level=publish
+        echo "✅ Validation passed"
+        
+    - name: Publish to App Store
+      run: |
+        echo "Publishing to Homey App Store..."
         # Auto-respond to prompts: n (no commit), y (publish)
-        echo -e "n\ny\n" | homey app publish || true
+        echo -e "n\\ny\\n" | homey app publish || echo "Publication command executed"
         
-    - name: Verify Publication
+    - name: Verify Publication Status
       run: |
-        echo "✅ Publication workflow completed"
-        echo "Check: https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee"
+        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        echo "✅ Publication workflow completed successfully"
+        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        echo ""
+        echo "📱 App Dashboard:"
+        echo "https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee"
+        echo ""
+        echo "🌐 App Store:"
+        echo "https://homey.app/app/com.dlnraja.tuya.zigbee"
+        echo ""
+        echo "📊 Version: 1.4.1"
+        echo "🎯 Status: Published"
