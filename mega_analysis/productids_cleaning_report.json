@@ -1,0 +1,227 @@
+{
+  "timestamp": "2025-10-07T19:08:04.505Z",
+  "stats": {
+    "driversProcessed": 163,
+    "productIdsRemoved": 1014,
+    "productIdsKept": 4029,
+    "driversModified": 134
+  },
+  "knownProductIds": {
+    "TS0001": {
+      "type": "switch",
+      "subtype": "1gang",
+      "valid": true
+    },
+    "TS0002": {
+      "type": "switch",
+      "subtype": "2gang",
+      "valid": true
+    },
+    "TS0003": {
+      "type": "switch",
+      "subtype": "3gang",
+      "valid": true
+    },
+    "TS0004": {
+      "type": "switch",
+      "subtype": "4gang",
+      "valid": true
+    },
+    "TS0011": {
+      "type": "switch",
+      "subtype": "1gang_enhanced",
+      "valid": true
+    },
+    "TS0012": {
+      "type": "switch",
+      "subtype": "2gang_enhanced",
+      "valid": true
+    },
+    "TS0013": {
+      "type": "switch",
+      "subtype": "3gang_enhanced",
+      "valid": true
+    },
+    "TS0014": {
+      "type": "switch",
+      "subtype": "4gang_enhanced",
+      "valid": true
+    },
+    "TS0201": {
+      "type": "sensor",
+      "subtype": "temperature_humidity",
+      "valid": true
+    },
+    "TS0202": {
+      "type": "sensor",
+      "subtype": "motion",
+      "valid": true
+    },
+    "TS0203": {
+      "type": "sensor",
+      "subtype": "contact",
+      "valid": true
+    },
+    "TS0207": {
+      "type": "sensor",
+      "subtype": "water_leak",
+      "valid": true
+    },
+    "TS011F": {
+      "type": "plug",
+      "subtype": "energy_monitoring",
+      "valid": true
+    },
+    "TS0121": {
+      "type": "plug",
+      "subtype": "energy_monitoring",
+      "valid": true
+    },
+    "TS0601": {
+      "type": "universal",
+      "subtype": "dp_protocol",
+      "note": "Can be many types",
+      "valid": true
+    },
+    "TS130F": {
+      "type": "curtain",
+      "subtype": "motor",
+      "valid": true
+    },
+    "TS0041": {
+      "type": "remote",
+      "subtype": "1button",
+      "valid": true
+    },
+    "TS0042": {
+      "type": "remote",
+      "subtype": "2button",
+      "valid": true
+    },
+    "TS0043": {
+      "type": "remote",
+      "subtype": "3button",
+      "valid": true
+    },
+    "TS0044": {
+      "type": "remote",
+      "subtype": "4button",
+      "valid": true
+    }
+  },
+  "rules": {
+    "switch": [
+      "switch",
+      "universal"
+    ],
+    "plug": [
+      "plug",
+      "universal"
+    ],
+    "socket": [
+      "plug",
+      "universal"
+    ],
+    "outlet": [
+      "plug",
+      "universal"
+    ],
+    "dimmer": [
+      "switch",
+      "universal"
+    ],
+    "bulb": [
+      "universal"
+    ],
+    "light": [
+      "switch",
+      "universal"
+    ],
+    "sensor": [
+      "sensor",
+      "universal"
+    ],
+    "temperature": [
+      "sensor",
+      "universal"
+    ],
+    "humidity": [
+      "sensor",
+      "universal"
+    ],
+    "motion": [
+      "sensor",
+      "universal"
+    ],
+    "contact": [
+      "sensor",
+      "universal"
+    ],
+    "door": [
+      "sensor",
+      "switch",
+      "universal"
+    ],
+    "window": [
+      "sensor",
+      "universal"
+    ],
+    "leak": [
+      "sensor",
+      "universal"
+    ],
+    "water": [
+      "sensor",
+      "universal"
+    ],
+    "smoke": [
+      "sensor",
+      "universal"
+    ],
+    "curtain": [
+      "curtain",
+      "universal"
+    ],
+    "blind": [
+      "curtain",
+      "universal"
+    ],
+    "shutter": [
+      "curtain",
+      "universal"
+    ],
+    "remote": [
+      "remote",
+      "universal"
+    ],
+    "button": [
+      "remote",
+      "universal"
+    ],
+    "scene": [
+      "remote",
+      "switch",
+      "universal"
+    ],
+    "thermostat": [
+      "sensor",
+      "universal"
+    ],
+    "climate": [
+      "sensor",
+      "universal"
+    ],
+    "valve": [
+      "switch",
+      "universal"
+    ],
+    "lock": [
+      "sensor",
+      "universal"
+    ],
+    "fan": [
+      "switch",
+      "universal"
+    ]
+  }
+}
