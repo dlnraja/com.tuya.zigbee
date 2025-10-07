@@ -19,9 +19,11 @@ jobs:
       with:
         node-version: '18'
         
+    - name: Install Dependencies
+      run: npm install --no-audit
+        
     - name: Install Homey CLI
-      run: |
-        npm install -g homey
+      run: npm install -g homey
         
     - name: Login to Homey
       env:
@@ -30,19 +32,17 @@ jobs:
         echo "$HOMEY_TOKEN" | homey login --token
         
     - name: Build App
-      run: |
-        npm install --no-audit
-        homey app build
+      run: homey app build
         
     - name: Validate App
-      run: |
-        homey app validate --level=publish
+      run: homey app validate --level=publish
         
     - name: Publish App
       run: |
-        # Auto-respond to prompts
+        # Auto-respond to prompts: n (no commit), y (publish)
         echo -e "n\ny\n" | homey app publish || true
         
     - name: Verify Publication
       run: |
         echo "✅ Publication workflow completed"
+        echo "Check: https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee"
