@@ -1,0 +1,426 @@
+{
+  "timestamp": "2025-10-07T22:16:37.566Z",
+  "total": 163,
+  "analyzed": 163,
+  "criticalIssues": 0,
+  "highIssues": 0,
+  "warnings": 79,
+  "fixes": 0,
+  "healthScore": 95,
+  "details": {
+    "issues": [],
+    "warnings": [
+      {
+        "driver": "co2_sensor",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "co2_temp_humidity",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1029
+      },
+      {
+        "driver": "comprehensive_air_monitor",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1029
+      },
+      {
+        "driver": "curtain_motor",
+        "type": "MISSING_REQUIRED_CAPABILITY",
+        "capability": "windowcoverings_state",
+        "class": "curtain"
+      },
+      {
+        "driver": "curtain_motor",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 258
+      },
+      {
+        "driver": "door_controller",
+        "type": "MISSING_REQUIRED_CAPABILITY",
+        "capability": "windowcoverings_state",
+        "class": "curtain"
+      },
+      {
+        "driver": "energy_monitoring_plug",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1794
+      },
+      {
+        "driver": "energy_monitoring_plug_advanced",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1794
+      },
+      {
+        "driver": "energy_plug_advanced",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1794
+      },
+      {
+        "driver": "extension_plug",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1794
+      },
+      {
+        "driver": "formaldehyde_sensor",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "garage_door_controller",
+        "type": "MISSING_REQUIRED_CAPABILITY",
+        "capability": "windowcoverings_state",
+        "class": "curtain"
+      },
+      {
+        "driver": "humidity_controller",
+        "type": "MISSING_REQUIRED_CAPABILITY",
+        "capability": "windowcoverings_state",
+        "class": "curtain"
+      },
+      {
+        "driver": "humidity_controller",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1029
+      },
+      {
+        "driver": "hvac_controller",
+        "type": "MISSING_REQUIRED_CAPABILITY",
+        "capability": "windowcoverings_state",
+        "class": "curtain"
+      },
+      {
+        "driver": "led_strip_controller",
+        "type": "MISSING_REQUIRED_CAPABILITY",
+        "capability": "windowcoverings_state",
+        "class": "curtain"
+      },
+      {
+        "driver": "led_strip_controller_pro",
+        "type": "MISSING_REQUIRED_CAPABILITY",
+        "capability": "windowcoverings_state",
+        "class": "curtain"
+      },
+      {
+        "driver": "lux_sensor",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "motion_sensor_battery",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "motion_sensor_mmwave",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "motion_sensor_pir_ac",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "motion_sensor_pir_battery",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "motion_sensor_zigbee_204z",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "multisensor",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "noise_level_sensor",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "pet_feeder",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1029
+      },
+      {
+        "driver": "pir_sensor_advanced",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "pm25_sensor",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "pool_pump_controller",
+        "type": "MISSING_REQUIRED_CAPABILITY",
+        "capability": "windowcoverings_state",
+        "class": "curtain"
+      },
+      {
+        "driver": "pool_pump_controller",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1794
+      },
+      {
+        "driver": "power_meter_socket",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1794
+      },
+      {
+        "driver": "presence_sensor_radar",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "pressure_sensor",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "projector_screen_controller",
+        "type": "MISSING_REQUIRED_CAPABILITY",
+        "capability": "windowcoverings_state",
+        "class": "curtain"
+      },
+      {
+        "driver": "radar_motion_sensor_advanced",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "radar_motion_sensor_mmwave",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "radar_motion_sensor_tank_level",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "radiator_valve",
+        "type": "MISSING_REQUIRED_CAPABILITY",
+        "capability": "target_temperature",
+        "class": "thermostat"
+      },
+      {
+        "driver": "rgb_led_controller",
+        "type": "NOT_ZIGBEE_DEVICE",
+        "severity": "LOW"
+      },
+      {
+        "driver": "rgb_led_controller",
+        "type": "NO_ONINIT",
+        "severity": "LOW"
+      },
+      {
+        "driver": "roller_blind_controller",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 258
+      },
+      {
+        "driver": "roller_shutter_controller",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 258
+      },
+      {
+        "driver": "roller_shutter_switch",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 258
+      },
+      {
+        "driver": "roller_shutter_switch_advanced",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 258
+      },
+      {
+        "driver": "scene_controller",
+        "type": "NOT_ZIGBEE_DEVICE",
+        "severity": "LOW"
+      },
+      {
+        "driver": "scene_controller",
+        "type": "NO_ONINIT",
+        "severity": "LOW"
+      },
+      {
+        "driver": "shade_controller",
+        "type": "MISSING_REQUIRED_CAPABILITY",
+        "capability": "windowcoverings_state",
+        "class": "curtain"
+      },
+      {
+        "driver": "smart_curtain_motor",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 258
+      },
+      {
+        "driver": "smart_garden_sprinkler",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1029
+      },
+      {
+        "driver": "smart_irrigation_controller",
+        "type": "MISSING_REQUIRED_CAPABILITY",
+        "capability": "windowcoverings_state",
+        "class": "curtain"
+      },
+      {
+        "driver": "smart_outlet_monitor",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1794
+      },
+      {
+        "driver": "smart_plug",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1794
+      },
+      {
+        "driver": "smart_plug_energy",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1794
+      },
+      {
+        "driver": "smart_smoke_detector_advanced",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 60672
+      },
+      {
+        "driver": "smart_thermostat",
+        "type": "NOT_ZIGBEE_DEVICE",
+        "severity": "LOW"
+      },
+      {
+        "driver": "smart_thermostat",
+        "type": "NO_ONINIT",
+        "severity": "LOW"
+      },
+      {
+        "driver": "smart_valve_controller",
+        "type": "MISSING_REQUIRED_CAPABILITY",
+        "capability": "windowcoverings_state",
+        "class": "curtain"
+      },
+      {
+        "driver": "smart_valve_controller",
+        "type": "NOT_ZIGBEE_DEVICE",
+        "severity": "LOW"
+      },
+      {
+        "driver": "smart_valve_controller",
+        "type": "NO_ONINIT",
+        "severity": "LOW"
+      },
+      {
+        "driver": "smoke_detector_temp_humidity_advanced",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1029
+      },
+      {
+        "driver": "smoke_temp_humid_sensor",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "soil_moisture_sensor",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "soil_moisture_temperature_sensor",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "soil_tester_temp_humid",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1029
+      },
+      {
+        "driver": "solar_panel_controller",
+        "type": "MISSING_REQUIRED_CAPABILITY",
+        "capability": "windowcoverings_state",
+        "class": "curtain"
+      },
+      {
+        "driver": "solar_panel_controller",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1794
+      },
+      {
+        "driver": "temp_humid_sensor_advanced",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "temp_humid_sensor_v1w2k9dd",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "temp_sensor_pro",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "temperature_controller",
+        "type": "MISSING_REQUIRED_CAPABILITY",
+        "capability": "windowcoverings_state",
+        "class": "curtain"
+      },
+      {
+        "driver": "temperature_controller",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1029
+      },
+      {
+        "driver": "temperature_humidity_sensor",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "temperature_sensor",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "temperature_sensor_advanced",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "tvoc_sensor",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "tvoc_sensor_advanced",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      },
+      {
+        "driver": "usb_outlet",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1794
+      },
+      {
+        "driver": "usb_outlet_advanced",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1794
+      },
+      {
+        "driver": "vibration_sensor",
+        "type": "UNKNOWN_CLUSTER",
+        "cluster": 1030
+      }
+    ],
+    "fixes": []
+  }
+}
