@@ -1,0 +1,133 @@
+{
+  "timestamp": "2025-10-07T19:26:24.218Z",
+  "summary": {
+    "postsAnalyzed": 1,
+    "manufacturerNamesFound": [
+      "_TZE204_t1blo2bj",
+      "_TZE200_3towulqd",
+      "_TZE200_ht9wscmr",
+      "_TZ3000_g5xawfcq",
+      "_TZ3000_4fjiwweb",
+      "_TZE200_khx7nnka",
+      "_TZE200_locansqn",
+      "_TZ3000_vzopcetz",
+      "_TZE200_pay2byax",
+      "_TZ3000_odygigth"
+    ],
+    "productIdsFound": [],
+    "issuesIdentified": 5,
+    "screenshotIds": 10
+  },
+  "corrections": {
+    "manufacturerNamesAdded": 7,
+    "capabilitiesAdded": 2,
+    "driversFixed": 1
+  },
+  "nlpPatterns": {
+    "deviceNotFound": {
+      "keywords": [
+        "not found",
+        "cannot find",
+        "missing",
+        "not detected"
+      ],
+      "action": "add_manufacturer_id",
+      "priority": "high"
+    },
+    "wrongDriver": {
+      "keywords": [
+        "wrong driver",
+        "incorrect type",
+        "detected as"
+      ],
+      "action": "fix_driver_assignment",
+      "priority": "high"
+    },
+    "missingCapability": {
+      "keywords": [
+        "not showing",
+        "missing reading",
+        "no measurement"
+      ],
+      "action": "add_capability",
+      "priority": "medium"
+    },
+    "batteryIssue": {
+      "keywords": [
+        "battery",
+        "battery level",
+        "battery not"
+      ],
+      "action": "add_battery_capability",
+      "priority": "medium"
+    },
+    "energyMonitoring": {
+      "keywords": [
+        "power",
+        "energy",
+        "consumption",
+        "watts"
+      ],
+      "action": "add_energy_capability",
+      "priority": "medium"
+    },
+    "controlIssue": {
+      "keywords": [
+        "not responding",
+        "cannot control",
+        "not working"
+      ],
+      "action": "verify_productid",
+      "priority": "high"
+    }
+  },
+  "knownIssues": [
+    {
+      "type": "pairing_failure",
+      "pattern": "device not pairing",
+      "solution": "Add manufacturer ID to database",
+      "frequency": "common"
+    },
+    {
+      "type": "energy_monitoring",
+      "pattern": "no power measurement",
+      "solution": "Add measure_power capability",
+      "frequency": "medium"
+    },
+    {
+      "type": "battery_level",
+      "pattern": "battery not showing",
+      "solution": "Add measure_battery + alarm_battery",
+      "frequency": "common"
+    },
+    {
+      "type": "switch_control",
+      "pattern": "switch not responding",
+      "solution": "Verify productId matches driver type",
+      "frequency": "medium"
+    },
+    {
+      "type": "temperature_reading",
+      "pattern": "temperature not updating",
+      "solution": "Verify manufacturerName in correct driver",
+      "frequency": "medium"
+    }
+  ],
+  "posts": [
+    {
+      "number": 228,
+      "author": "Karsten_Hille",
+      "date": "2025-10-07",
+      "content": "Temperature and humidity sensor found as air quality monitor",
+      "issue": "Wrong driver detection",
+      "manufacturerName": "_TZE204_t1blo2bj",
+      "expectedDriver": "temperature_humidity_sensor",
+      "actualDriver": "air_quality_monitor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity"
+      ],
+      "status": "FIXED"
+    }
+  ]
+}

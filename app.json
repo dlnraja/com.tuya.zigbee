@@ -1238,7 +1238,8 @@
           "TS130F",
           "_TZ3000_qzjcsmar",
           "_TZE200_cowvfni3",
-          "_TZE200_fctwhugx"
+          "_TZE200_fctwhugx",
+          "_TZE200_pay2byax"
         ],
         "productId": [
           "TS130F",
@@ -2104,7 +2105,8 @@
           "_TZE200_cwbvmsar",
           "_TZE200_dwcarsat",
           "_TZE200_m9skfctm",
-          "_TZE200_ryfmq5rl"
+          "_TZE200_ryfmq5rl",
+          "_TZ3000_odygigth"
         ],
         "productId": [
           "TS0203",
@@ -5059,7 +5061,8 @@
           "_TZE200_cwbvmsar",
           "_TZE200_dwcarsat",
           "_TZE200_m9skfctm",
-          "_TZE200_ryfmq5rl"
+          "_TZE200_ryfmq5rl",
+          "_TZE200_ht9wscmr"
         ],
         "productId": [
           "TS0202",
@@ -8453,7 +8456,8 @@
           "_TZE200_dwcarsat",
           "_TZE200_m9skfctm",
           "_TZE200_ryfmq5rl",
-          "_TZE200_wfxuhoea"
+          "_TZE200_wfxuhoea",
+          "_TZ3000_vzopcetz"
         ]
       },
       "images": {
@@ -10532,7 +10536,8 @@
           "_TZ3000_xabckq1v",
           "_TZE200_81isopgh",
           "_TZE200_m9skfctm",
-          "_TZE200_wfxuhoea"
+          "_TZE200_wfxuhoea",
+          "_TZ3000_4fjiwweb"
         ],
         "productId": [
           "TS0204",
@@ -12023,7 +12028,8 @@
           "_TZE200_cwbvmsar",
           "_TZE200_dwcarsat",
           "_TZE200_m9skfctm",
-          "_TZE200_ryfmq5rl"
+          "_TZE200_ryfmq5rl",
+          "_TZE200_khx7nnka"
         ],
         "productId": [
           "TS0601",
@@ -12118,7 +12124,8 @@
           "_TZE200_dwcarsat",
           "_TZE200_m9skfctm",
           "_TZE200_ryfmq5rl",
-          "_TZE200_wfxuhoea"
+          "_TZE200_wfxuhoea",
+          "_TZE200_locansqn"
         ],
         "productId": [
           "TS0601",
@@ -12297,7 +12304,9 @@
         "onoff",
         "measure_battery",
         "measure_temperature",
-        "alarm_motion"
+        "alarm_motion",
+        "alarm_smoke",
+        "alarm_battery"
       ],
       "zigbee": {
         "manufacturerName": [
