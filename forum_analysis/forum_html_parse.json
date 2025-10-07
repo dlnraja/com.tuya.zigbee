@@ -1,0 +1,80 @@
+{
+  "timestamp": "2025-10-07T19:50:58.206Z",
+  "source": "Homey Community Forum - HTML Parse",
+  "forumManufacturerIds": [
+    "_TZE204_t1blo2bj",
+    "_TZE200_3towulqd",
+    "_TZE200_ht9wscmr",
+    "_TZ3000_g5xawfcq",
+    "_TZ3000_4fjiwweb",
+    "_TZE200_khx7nnka",
+    "_TZE200_locansqn",
+    "_TZ3000_vzopcetz",
+    "_TZE200_pay2byax",
+    "_TZ3000_odygigth",
+    "_TZ3000_mmtwjmaq",
+    "_TZE200_cwbvmsar",
+    "_TZE284_aao6qtcs",
+    "_TZ3000_kfu8zapd",
+    "_TZE204_bjzrowv2",
+    "_TZ3210_ncw88jfq",
+    "_TZE284_2aaelwxk",
+    "_TZE284_gyzlwu5q",
+    "_TZ3000_qzjcsmar",
+    "_TZ3000_kmh5qpmb"
+  ],
+  "forumProductIds": [
+    "TS0001",
+    "TS0002",
+    "TS0003",
+    "TS0004",
+    "TS0011",
+    "TS0012",
+    "TS0013",
+    "TS0014",
+    "TS0201",
+    "TS0202",
+    "TS0203",
+    "TS0207",
+    "TS011F",
+    "TS0121",
+    "TS130F",
+    "TS0041",
+    "TS0042",
+    "TS0043",
+    "TS0044",
+    "TS0601",
+    "TS110F",
+    "TS1111",
+    "TS0101",
+    "TS0115",
+    "TS0505B",
+    "TS004F"
+  ],
+  "missingManufacturerNames": [
+    "_TZE200_3towulqd",
+    "_TZE284_aao6qtcs",
+    "_TZ3000_kfu8zapd",
+    "_TZE204_bjzrowv2",
+    "_TZ3210_ncw88jfq",
+    "_TZE284_2aaelwxk",
+    "_TZE284_gyzlwu5q"
+  ],
+  "missingProductIds": [],
+  "forumIssues": [
+    {
+      "postNumber": 228,
+      "author": "Karsten_Hille",
+      "issue": "Temperature sensor detected as air quality monitor",
+      "manufacturerName": "_TZE204_t1blo2bj",
+      "expectedDriver": "temperature_humidity_sensor",
+      "actualDriver": "air_quality_monitor",
+      "status": "FIXED"
+    }
+  ],
+  "stats": {
+    "totalForumIds": 47,
+    "currentIds": 135,
+    "missingIds": 7
+  }
+}
