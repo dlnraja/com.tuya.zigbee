@@ -12259,7 +12259,10 @@
         "button.2",
         "button.3",
         "button.4",
-        "dim"
+        "dim",
+        "onoff.2",
+        "onoff.3",
+        "onoff.4"
       ],
       "zigbee": {
         "productId": [
@@ -14462,7 +14465,10 @@
         "button.2",
         "button.3",
         "button.4",
-        "dim"
+        "dim",
+        "onoff.2",
+        "onoff.3",
+        "onoff.4"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -14621,7 +14627,10 @@
         "button.4",
         "measure_battery",
         "onoff",
-        "dim"
+        "dim",
+        "onoff.2",
+        "onoff.3",
+        "onoff.4"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -14784,7 +14793,11 @@
         "button.5",
         "measure_battery",
         "onoff",
-        "dim"
+        "dim",
+        "onoff.2",
+        "onoff.3",
+        "onoff.4",
+        "onoff.5"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -14946,7 +14959,12 @@
         "button.4",
         "button.5",
         "button.6",
-        "dim"
+        "dim",
+        "onoff.2",
+        "onoff.3",
+        "onoff.4",
+        "onoff.5",
+        "onoff.6"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -15106,7 +15124,14 @@
         "button.6",
         "button.7",
         "button.8",
-        "dim"
+        "dim",
+        "onoff.2",
+        "onoff.3",
+        "onoff.4",
+        "onoff.5",
+        "onoff.6",
+        "onoff.7",
+        "onoff.8"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -17302,7 +17327,10 @@
         "button.3",
         "button.4",
         "onoff",
-        "dim"
+        "dim",
+        "onoff.2",
+        "onoff.3",
+        "onoff.4"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -19162,7 +19190,10 @@
         "button.2",
         "button.3",
         "button.4",
-        "dim"
+        "dim",
+        "onoff.2",
+        "onoff.3",
+        "onoff.4"
       ],
       "zigbee": {
         "productId": [
@@ -19345,7 +19376,10 @@
         "button.2",
         "button.3",
         "button.4",
-        "dim"
+        "dim",
+        "onoff.2",
+        "onoff.3",
+        "onoff.4"
       ],
       "zigbee": {
         "productId": [
@@ -19556,7 +19590,11 @@
         "button.3",
         "button.4",
         "button.5",
-        "dim"
+        "dim",
+        "onoff.2",
+        "onoff.3",
+        "onoff.4",
+        "onoff.5"
       ],
       "zigbee": {
         "productId": [
@@ -19784,7 +19822,12 @@
         "button.4",
         "button.5",
         "button.6",
-        "dim"
+        "dim",
+        "onoff.2",
+        "onoff.3",
+        "onoff.4",
+        "onoff.5",
+        "onoff.6"
       ],
       "zigbee": {
         "productId": [
@@ -21275,7 +21318,10 @@
       "capabilities": [
         "onoff",
         "measure_battery",
-        "dim"
+        "dim",
+        "onoff.2",
+        "onoff.3",
+        "onoff.4"
       ],
       "zigbee": {
         "productId": [
@@ -21448,7 +21494,10 @@
         "button.4",
         "measure_battery",
         "onoff",
-        "dim"
+        "dim",
+        "onoff.2",
+        "onoff.3",
+        "onoff.4"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -21633,7 +21682,11 @@
         "button.4",
         "button.5",
         "measure_battery",
-        "dim"
+        "dim",
+        "onoff.2",
+        "onoff.3",
+        "onoff.4",
+        "onoff.5"
       ],
       "zigbee": {
         "productId": [
@@ -21815,7 +21868,12 @@
         "button.5",
         "button.6",
         "measure_battery",
-        "dim"
+        "dim",
+        "onoff.2",
+        "onoff.3",
+        "onoff.4",
+        "onoff.5",
+        "onoff.6"
       ],
       "zigbee": {
         "productId": [
