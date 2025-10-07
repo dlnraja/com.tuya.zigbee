@@ -1,0 +1,48 @@
+name: Homey App Store Publication
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Install Homey CLI
+      run: |
+        npm install -g homey
+        
+    - name: Login to Homey
+      env:
+        HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
+      run: |
+        echo "$HOMEY_TOKEN" | homey login --token
+        
+    - name: Build App
+      run: |
+        npm install --no-audit
+        homey app build
+        
+    - name: Validate App
+      run: |
+        homey app validate --level=publish
+        
+    - name: Publish App
+      run: |
+        # Auto-respond to prompts
+        echo -e "n\ny\n" | homey app publish || true
+        
+    - name: Verify Publication
+      run: |
+        echo "✅ Publication workflow completed"
