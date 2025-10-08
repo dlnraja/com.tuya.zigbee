@@ -85,7 +85,9 @@ jobs:
           export HOMEY_TOKEN="$HOMEY_PAT"
           
           # Capture publish output to extract Build ID
-          PUBLISH_OUTPUT=$(homey app publish 2>&1 | tee /dev/tty)
+          echo "📦 Publishing app to Homey App Store..."
+          PUBLISH_OUTPUT=$(homey app publish 2>&1)
+          echo "$PUBLISH_OUTPUT"
           
           # Extract Build ID from "Created Build ID XX" line
           BUILD_ID=$(echo "$PUBLISH_OUTPUT" | grep -oP 'Created Build ID \K[0-9]+' || echo "")
