@@ -1,6 +1,6 @@
 # 🌟 Universal Tuya Zigbee Device App
 
-[![Version](https://img.shields.io/badge/version-1.8.2-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![Version](https://img.shields.io/badge/version-2.0.12-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-SDK3-orange.svg)](https://apps.developer.homey.app/)
 [![Health](https://img.shields.io/badge/health-96%25-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee)
