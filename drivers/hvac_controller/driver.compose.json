@@ -2,7 +2,7 @@
   "name": {
     "en": "Hvac Controller"
   },
-  "class": "other",
+  "class": "sensor",
   "capabilities": [
     "target_temperature",
     "measure_temperature"

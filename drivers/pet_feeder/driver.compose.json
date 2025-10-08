@@ -2,7 +2,7 @@
   "name": {
     "en": "Pet Feeder"
   },
-  "class": "sensor",
+  "class": "other",
   "capabilities": [
     "measure_temperature",
     "measure_humidity",

@@ -2,7 +2,7 @@
   "name": {
     "en": "Smart Water Valve"
   },
-  "class": "other",
+  "class": "sensor",
   "capabilities": [
     "target_temperature",
     "measure_temperature",

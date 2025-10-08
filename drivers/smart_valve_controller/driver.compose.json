@@ -2,7 +2,7 @@
   "name": {
     "en": "Smart Valve Controller"
   },
-  "class": "other",
+  "class": "sensor",
   "capabilities": [
     "onoff",
     "measure_battery"

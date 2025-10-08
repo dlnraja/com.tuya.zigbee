@@ -2,7 +2,7 @@
   "name": {
     "en": "Switch 4-Gang Remote"
   },
-  "class": "socket",
+  "class": "button",
   "capabilities": [
     "button.1",
     "button.2",

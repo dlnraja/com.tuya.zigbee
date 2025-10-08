@@ -2,7 +2,7 @@
   "name": {
     "en": "Outdoor Siren"
   },
-  "class": "other",
+  "class": "sensor",
   "capabilities": [
     "locked",
     "measure_battery",

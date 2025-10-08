@@ -2,7 +2,7 @@
   "name": {
     "en": "Ceiling Light Controller"
   },
-  "class": "light",
+  "class": "sensor",
   "capabilities": [
     "onoff",
     "dim",
