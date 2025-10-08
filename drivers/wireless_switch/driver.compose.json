@@ -2,7 +2,7 @@
   "name": {
     "en": "Wireless Switch"
   },
-  "class": "socket",
+  "class": "button",
   "capabilities": [
     "onoff",
     "measure_battery",

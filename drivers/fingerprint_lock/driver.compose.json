@@ -2,7 +2,7 @@
   "name": {
     "en": "Fingerprint Lock"
   },
-  "class": "other",
+  "class": "lock",
   "capabilities": [
     "locked",
     "measure_battery",

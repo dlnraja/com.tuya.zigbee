@@ -2,7 +2,7 @@
   "name": {
     "en": "Door Lock"
   },
-  "class": "other",
+  "class": "sensor",
   "capabilities": [
     "locked",
     "alarm_tamper",

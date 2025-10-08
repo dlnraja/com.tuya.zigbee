@@ -2,7 +2,7 @@
   "name": {
     "en": "Solar Panel Controller"
   },
-  "class": "other",
+  "class": "sensor",
   "capabilities": [
     "measure_power",
     "measure_voltage",

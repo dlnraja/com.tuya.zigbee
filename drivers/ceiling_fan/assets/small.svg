@@ -1,6 +1,9 @@
 <svg width="75" height="75" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="37.5" cy="37.5" r="30" fill="#2196F3" opacity="0.2"/>
-      <circle cx="37.5" cy="37.5" r="8" fill="#2196F3"/>
-      <path d="M 37.5 15 L 37.5 25 M 37.5 50 L 37.5 60 M 15 37.5 L 25 37.5 M 50 37.5 L 60 37.5" 
-            stroke="#2196F3" stroke-width="3" fill="none"/>
-    </svg>
+    <circle cx="37.5" cy="28" r="12" fill="#FFD700" opacity="0.3"/>
+    <path d="M 30 35 L 30 50 Q 30 55, 37.5 55 Q 45 55, 45 50 L 45 35 Z" 
+          fill="#FFD700" opacity="0.5"/>
+    <rect x="33" y="55" width="9" height="5" rx="1" fill="#FFD700"/>
+    <line x1="37.5" y1="10" x2="37.5" y2="16" stroke="#FFD700" stroke-width="2"/>
+    <line x1="20" y1="28" x2="26" y2="28" stroke="#FFD700" stroke-width="2"/>
+    <line x1="49" y1="28" x2="55" y2="28" stroke="#FFD700" stroke-width="2"/>
+  </svg>

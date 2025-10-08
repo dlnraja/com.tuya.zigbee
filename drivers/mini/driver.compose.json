@@ -2,7 +2,7 @@
   "name": {
     "en": "Sonoff Mini"
   },
-  "class": "light",
+  "class": "sensor",
   "capabilities": [
     "onoff",
     "dim"

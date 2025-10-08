@@ -2,7 +2,7 @@
   "name": {
     "en": "Touch Switch 2gang"
   },
-  "class": "socket",
+  "class": "sensor",
   "capabilities": [
     "onoff",
     "onoff.gang2"

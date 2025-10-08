@@ -2,7 +2,7 @@
   "name": {
     "en": "smart outlet monitor"
   },
-  "class": "socket",
+  "class": "sensor",
   "capabilities": [
     "onoff",
     "measure_power",

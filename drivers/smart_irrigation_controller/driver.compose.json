@@ -2,7 +2,7 @@
   "name": {
     "en": "Smart Irrigation Controller"
   },
-  "class": "other",
+  "class": "sensor",
   "capabilities": [
     "onoff",
     "measure_water",

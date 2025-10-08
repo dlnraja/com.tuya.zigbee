@@ -2,7 +2,7 @@
   "name": {
     "en": "Touch Switch 4gang"
   },
-  "class": "socket",
+  "class": "sensor",
   "capabilities": [
     "button.1",
     "button.2",

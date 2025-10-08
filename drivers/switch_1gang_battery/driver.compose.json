@@ -2,7 +2,7 @@
   "name": {
     "en": "Switch 1-Gang Battery CR2032"
   },
-  "class": "socket",
+  "class": "sensor",
   "capabilities": [
     "button.1",
     "measure_battery",

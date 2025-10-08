@@ -2,7 +2,7 @@
   "name": {
     "en": "Dimmer Switch 3-Gang AC"
   },
-  "class": "socket",
+  "class": "light",
   "capabilities": [
     "onoff",
     "onoff.gang2",
