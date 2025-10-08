@@ -20,7 +20,7 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
-const rootPath = __dirname;
+const rootPath = path.join(__dirname, '..');
 const appJsonPath = path.join(rootPath, 'app.json');
 const driversPath = path.join(rootPath, 'drivers');
 
