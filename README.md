@@ -4,18 +4,24 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-SDK3-orange.svg)](https://apps.developer.homey.app/)
 [![Health](https://img.shields.io/badge/health-96%25-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee)
-[![Coverage](https://img.shields.io/badge/devices-10,520+-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 
 **The most comprehensive Tuya Zigbee device integration for Homey Pro**
 
 ## 🎯 Overview
 
-Universal Tuya Zigbee Device App provides seamless integration of 10,520+ Tuya Zigbee device variants with Homey Pro, featuring:
+# Universal Tuya Zigbee - Complete Local Control for 10,000+ Devices
+
+**Version 2.0.5** | **SDK3** | **163 Drivers** | **10,520+ Device IDs** | **100% Local Control**
+
+**Last Updated:** 2025-10-08 | **Build #14-16** | **Status:** Production Ready
+
+**Seamless integration of 10,520+ Tuya Zigbee device variants with Homey Pro, featuring:
 
 - ✅ **Pure Zigbee Local Control** - No API key required
 - ✅ **10,520+ Device Variants** - Record coverage (5x reference databases)
 - ✅ **163 Drivers** - Comprehensive device coverage
 - ✅ **96% Health Score** - Optimal quality
+{{ ... }}
 - ✅ **Auto-Updates** - Monthly enrichment via GitHub Actions
 - ✅ **Zigbee2MQTT Compatible** - Easy migration
 - ✅ **UNBRANDED Organization** - Find devices by function, not brand
