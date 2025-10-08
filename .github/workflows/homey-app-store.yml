@@ -1,10 +1,10 @@
 name: Homey App Store Auto-Publish with Draft→Test Promotion
 
 on:
-  workflow_dispatch:  # MANUAL ONLY - Auto disabled due to Processing errors
-  # push:
-  #   branches:
-  #     - master
+  push:
+    branches:
+      - master
+  workflow_dispatch:
 
 jobs:
   publish:
