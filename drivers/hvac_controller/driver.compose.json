@@ -2,7 +2,7 @@
   "name": {
     "en": "Hvac Controller"
   },
-  "class": "curtain",
+  "class": "other",
   "capabilities": [
     "target_temperature",
     "measure_temperature"
