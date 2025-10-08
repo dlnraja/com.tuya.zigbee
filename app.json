@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "1.7.5",
+  "version": "1.8.0",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
@@ -1334,7 +1334,10 @@
           "_TZE200_cwbvmsar",
           "_TZE200_dwcarsat",
           "_TZE200_m9skfctm",
-          "_TZE200_ryfmq5rl"
+          "_TZE200_ryfmq5rl",
+          "_TZ3218_t9ynfz4x",
+          "_TZ3218_awarhusb",
+          "_TZE204_uo8qcagc"
         ],
         "productId": [
           "TS0601",
@@ -1345,7 +1348,9 @@
           "TS0726",
           "TS1002",
           "TS1201",
-          "TS1111"
+          "TS1111",
+          "TS0225",
+          "TS0207"
         ],
         "endpoints": {
           "1": {
@@ -1536,7 +1541,8 @@
           "_TZ3210_k1msuvg6",
           "_TZ3210_zxbtub8r",
           "_TZ3210_iystcadi",
-          "_TZ3210_r5afgmkl"
+          "_TZ3210_r5afgmkl",
+          "_TZE200_ubgdwsnr"
         ],
         "productId": [
           "TS110E",
@@ -2347,7 +2353,9 @@
           "_TZE284_aao6qtcs",
           "_TZ3000_6ygjfyll",
           "_TZ3000_lf56vpxj",
-          "_TZE200_qq9mpfhw"
+          "_TZE200_qq9mpfhw",
+          "_TZE284_6teua268",
+          "_TZE284_u8ouaqsz"
         ],
         "productId": [
           "TS0203",
@@ -2593,10 +2601,21 @@
           "_TZ3000_ew3ldmgx",
           "_TZ3000_rdtixbnu",
           "_TZ3000_8nkb7mof",
-          "_TZ3000_mvn6jl7x"
+          "_TZ3000_mvn6jl7x",
+          "_TZ3000_npg02xft",
+          "_TZ3000_gjnozsaz",
+          "_TZ3000_tas0zemd",
+          "_TZ3290_nkpxapoz",
+          "_TZ3290_yyax9ajf",
+          "_TZE200_r5ksy7qo",
+          "_TZE200_xtrnjaoz",
+          "_TZE204_432zhuwe",
+          "_TZE204_yrugsphv",
+          "_TZE284_fncxk3ob"
         ],
         "productId": [
-          "TS011F"
+          "TS011F",
+          "TS0505B"
         ],
         "endpoints": {
           "1": {
@@ -4902,11 +4921,23 @@
           "_TZ3000_ebar6ljy",
           "_TZ3000_kyb656no",
           "_TZ3000_upgcbody",
-          "_TZE200_qq9mpfhw"
+          "_TZE200_qq9mpfhw",
+          "_TZE200_2aaelwxk",
+          "_TZE200_kb5noeto",
+          "_TZE200_tyffvoij",
+          "_TZE200_uli8wasj",
+          "_TZE200_grgol3xp",
+          "_TZE200_rhgsbacq",
+          "_TZE200_y8jijhba",
+          "_TZ3000_bs93npae",
+          "_TZ3290_8xzb2ghn",
+          "_TZE200_agumlajc",
+          "_TZE200_s6hzw8g2"
         ],
         "productId": [
           "TS0202",
-          "TS0901"
+          "TS0901",
+          "TS0601"
         ]
       },
       "capabilitiesOptions": {},
@@ -5253,11 +5284,23 @@
           "_TZ3000_bguser20",
           "_TZ3000_oxslv1c9",
           "_TZ3000_ebar6ljy",
-          "_TZE200_qq9mpfhw"
+          "_TZE200_qq9mpfhw",
+          "_TZE200_2aaelwxk",
+          "_TZE200_kb5noeto",
+          "_TZE200_tyffvoij",
+          "_TZE200_uli8wasj",
+          "_TZE200_grgol3xp",
+          "_TZE200_rhgsbacq",
+          "_TZE200_y8jijhba",
+          "_TZ3000_bs93npae",
+          "_TZ3290_8xzb2ghn",
+          "_TZE200_agumlajc",
+          "_TZE200_s6hzw8g2"
         ],
         "productId": [
           "TS0202",
-          "TS0901"
+          "TS0901",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -5480,7 +5523,10 @@
           "_TZ3000_ebar6ljy",
           "_TZ3000_kyb656no",
           "_TZ3000_upgcbody",
-          "_TZE200_qq9mpfhw"
+          "_TZE200_qq9mpfhw",
+          "_TZ3218_t9ynfz4x",
+          "_TZ3218_awarhusb",
+          "_TZE204_uo8qcagc"
         ],
         "productId": [
           "TS0601",
@@ -5495,7 +5541,8 @@
           "TS0726",
           "TS1002",
           "TS1201",
-          "TS1111"
+          "TS1111",
+          "TS0225"
         ],
         "endpoints": {
           "1": {
@@ -6117,7 +6164,18 @@
           "_TZ3000_ebar6ljy",
           "_TZ3000_kyb656no",
           "_TZ3000_upgcbody",
-          "_TZE200_qq9mpfhw"
+          "_TZE200_qq9mpfhw",
+          "_TZE200_2aaelwxk",
+          "_TZE200_kb5noeto",
+          "_TZE200_tyffvoij",
+          "_TZE200_uli8wasj",
+          "_TZE200_grgol3xp",
+          "_TZE200_rhgsbacq",
+          "_TZE200_y8jijhba",
+          "_TZ3000_bs93npae",
+          "_TZ3290_8xzb2ghn",
+          "_TZE200_agumlajc",
+          "_TZE200_s6hzw8g2"
         ],
         "productId": [
           "TS0202",
@@ -9985,7 +10043,8 @@
           "_TZ3210_k1msuvg6",
           "_TZ3210_zxbtub8r",
           "_TZ3210_iystcadi",
-          "_TZ3210_r5afgmkl"
+          "_TZ3210_r5afgmkl",
+          "_TZE200_ubgdwsnr"
         ],
         "productId": [
           "TS110E",
@@ -10629,7 +10688,17 @@
           "_TZ3000_okaz9tjs",
           "_TZ3000_typdpbpg",
           "_TZ3000_ew3ldmgx",
-          "_TZ3000_rdtixbnu"
+          "_TZ3000_rdtixbnu",
+          "_TZ3000_npg02xft",
+          "_TZ3000_gjnozsaz",
+          "_TZ3000_tas0zemd",
+          "_TZ3290_nkpxapoz",
+          "_TZ3290_yyax9ajf",
+          "_TZE200_r5ksy7qo",
+          "_TZE200_xtrnjaoz",
+          "_TZE204_432zhuwe",
+          "_TZE204_yrugsphv",
+          "_TZE284_fncxk3ob"
         ],
         "productId": [
           "TS011F",
@@ -10639,7 +10708,8 @@
           "TS0726",
           "TS1002",
           "TS1201",
-          "TS1111"
+          "TS1111",
+          "TS0505B"
         ],
         "endpoints": {
           "1": {
@@ -10787,7 +10857,17 @@
           "_TZ3000_ew3ldmgx",
           "_TZ3000_rdtixbnu",
           "_TZ3000_8nkb7mof",
-          "_TZ3000_mvn6jl7x"
+          "_TZ3000_mvn6jl7x",
+          "_TZ3000_npg02xft",
+          "_TZ3000_gjnozsaz",
+          "_TZ3000_tas0zemd",
+          "_TZ3290_nkpxapoz",
+          "_TZ3290_yyax9ajf",
+          "_TZE200_r5ksy7qo",
+          "_TZE200_xtrnjaoz",
+          "_TZE204_432zhuwe",
+          "_TZE204_yrugsphv",
+          "_TZE284_fncxk3ob"
         ],
         "productId": [
           "TS0601",
@@ -10798,7 +10878,8 @@
           "TS1002",
           "TS1201",
           "TS1111",
-          "TS011F"
+          "TS011F",
+          "TS0505B"
         ],
         "endpoints": {
           "1": {
@@ -11316,7 +11397,55 @@
           "_TZ3000_kku0qepc",
           "_TZ3000_decgzopl",
           "_TZ3000_wwhu5v8h",
-          "_TZ3000_v8czzqzx"
+          "_TZ3000_v8czzqzx",
+          "_TZ3000_lqpt3mvr",
+          "_TZ3000_gwkzibhs",
+          "_TZE284_7zazvlyn",
+          "_TZ3000_pl5v1yyy",
+          "_TZE204_jtiem9ru",
+          "_TZ3290_8xzb2ghn",
+          "_TZ3000_bs93npae",
+          "_TZE200_lvkk0hdg",
+          "_TZE284_waa352qv",
+          "_TZE200_jhkttplm",
+          "_TZ3000_ibefeicf",
+          "_TZ3000_303avxxt",
+          "_TZ3000_cayepv1a",
+          "_TZ3000_lepzuhto",
+          "_TZ3000_qystbcjg",
+          "_TZ3000_zrm3oxsh",
+          "_TZ3000_zjchz7pd",
+          "_TZ3000_zv6x8bt2",
+          "_TZ3000_xa9g7rxs",
+          "_TZE200_raz9qavg",
+          "_TZE200_a8sdabtg",
+          "_TZE200_kccdzaeo",
+          "_TZE200_s7rsrtbg",
+          "_TZE200_tmszbtzq",
+          "_TZE200_iba1ckek",
+          "_TZE200_hggxgsjj",
+          "_TZE200_hl0ss9oa",
+          "_TZE200_2aaelwxk",
+          "_TZE200_kb5noeto",
+          "_TZE200_kb5noetl",
+          "_TZE200_3towulqd",
+          "_TZE200_1ibpyhdc",
+          "_TZE200_bh3n6gk8",
+          "_TZE200_ttcovulf",
+          "_TZE200_qoy0ekbd",
+          "_TZE200_znbl8dj5",
+          "_TZE200_dikkika5",
+          "_TZE200_ysm4dsb1",
+          "_TZE200_n8dljorx",
+          "_TZE200_pay2byax",
+          "_TZE200_ijey4q29",
+          "_TZE200_8isdky6j",
+          "_TZE200_p6fuhvez",
+          "_TZE200_wzk0x7fq",
+          "_TZE284_iwyqtclw",
+          "_TZ3002_jn2x20tg",
+          "_TZ3002_zjuvw9zf",
+          "_TZE284_wbhaespm"
         ],
         "productId": [
           "TS0001",
@@ -11342,7 +11471,10 @@
           "TS0726",
           "TS1002",
           "TS1201",
-          "TS1111"
+          "TS1111",
+          "TS0210",
+          "TS0505B",
+          "TS0225"
         ]
       },
       "capabilitiesOptions": {},
@@ -11634,7 +11766,8 @@
           "_TZ3000_kku0qepc",
           "_TZ3000_decgzopl",
           "_TZ3000_wwhu5v8h",
-          "_TZ3000_v8czzqzx"
+          "_TZ3000_v8czzqzx",
+          "_TZE200_z1xg4gsp"
         ],
         "productId": [
           "TS0001",
@@ -11996,7 +12129,8 @@
           "_TZ3000_dku2cfsc",
           "_TZ3000_decgzopl",
           "_TZ3000_wwhu5v8h",
-          "_TZ3000_v8czzqzx"
+          "_TZ3000_v8czzqzx",
+          "_TZ3000_nwidmc4n"
         ],
         "productId": [
           "TS0001",
@@ -13852,7 +13986,55 @@
           "_TZ3000_p6ju8myv",
           "_TZ3000_decgzopl",
           "_TZ3000_wwhu5v8h",
-          "_TZ3000_v8czzqzx"
+          "_TZ3000_v8czzqzx",
+          "_TZ3000_lqpt3mvr",
+          "_TZ3000_gwkzibhs",
+          "_TZE284_7zazvlyn",
+          "_TZ3000_pl5v1yyy",
+          "_TZE204_jtiem9ru",
+          "_TZ3290_8xzb2ghn",
+          "_TZ3000_bs93npae",
+          "_TZE200_lvkk0hdg",
+          "_TZE284_waa352qv",
+          "_TZE200_jhkttplm",
+          "_TZ3000_ibefeicf",
+          "_TZ3000_303avxxt",
+          "_TZ3000_cayepv1a",
+          "_TZ3000_lepzuhto",
+          "_TZ3000_qystbcjg",
+          "_TZ3000_zrm3oxsh",
+          "_TZ3000_zjchz7pd",
+          "_TZ3000_zv6x8bt2",
+          "_TZ3000_xa9g7rxs",
+          "_TZE200_raz9qavg",
+          "_TZE200_a8sdabtg",
+          "_TZE200_kccdzaeo",
+          "_TZE200_s7rsrtbg",
+          "_TZE200_tmszbtzq",
+          "_TZE200_iba1ckek",
+          "_TZE200_hggxgsjj",
+          "_TZE200_hl0ss9oa",
+          "_TZE200_2aaelwxk",
+          "_TZE200_kb5noeto",
+          "_TZE200_kb5noetl",
+          "_TZE200_3towulqd",
+          "_TZE200_1ibpyhdc",
+          "_TZE200_bh3n6gk8",
+          "_TZE200_ttcovulf",
+          "_TZE200_qoy0ekbd",
+          "_TZE200_znbl8dj5",
+          "_TZE200_dikkika5",
+          "_TZE200_ysm4dsb1",
+          "_TZE200_n8dljorx",
+          "_TZE200_pay2byax",
+          "_TZE200_ijey4q29",
+          "_TZE200_8isdky6j",
+          "_TZE200_p6fuhvez",
+          "_TZE200_wzk0x7fq",
+          "_TZE284_iwyqtclw",
+          "_TZ3002_jn2x20tg",
+          "_TZ3002_zjuvw9zf",
+          "_TZE284_wbhaespm"
         ],
         "productId": [
           "TS0001",
@@ -13885,7 +14067,9 @@
           "TS0726",
           "TS1002",
           "TS1201",
-          "TS1111"
+          "TS1111",
+          "TS0505B",
+          "TS0225"
         ],
         "endpoints": {
           "1": {
@@ -14009,7 +14193,8 @@
           "_TZ3000_p6ju8myv",
           "_TZ3000_decgzopl",
           "_TZ3000_wwhu5v8h",
-          "_TZ3000_v8czzqzx"
+          "_TZ3000_v8czzqzx",
+          "_TZE200_z1xg4gsp"
         ],
         "productId": [
           "TS0002",
@@ -14358,7 +14543,8 @@
           "_TZ3000_p6ju8myv",
           "_TZ3000_decgzopl",
           "_TZ3000_wwhu5v8h",
-          "_TZ3000_v8czzqzx"
+          "_TZ3000_v8czzqzx",
+          "_TZ3000_nwidmc4n"
         ],
         "productId": [
           "TS0001",
@@ -15428,7 +15614,16 @@
           "_TZ3000_ebar6ljy",
           "_TZ3000_kyb656no",
           "_TZ3000_upgcbody",
-          "_TZE200_qq9mpfhw"
+          "_TZE200_qq9mpfhw",
+          "_TZE204_vjpaih9f",
+          "_TZE204_8fffc3kb",
+          "_TZE284_0dvm9mva",
+          "_TZE204_w2vunxzm",
+          "_TZE200_ch3t1xbl",
+          "_TZ3002_jn2x20tg",
+          "_TZE204_ksz749x8",
+          "_TZE284_idn2htgu",
+          "_TZE284_ltwbm23f"
         ],
         "productId": [
           "TS0201",
@@ -16048,7 +16243,16 @@
           "_TZ3000_lf56vpxj",
           "_TZ3000_oxslv1c9",
           "_TZ3000_ebar6ljy",
-          "_TZE200_qq9mpfhw"
+          "_TZE200_qq9mpfhw",
+          "_TZE204_vjpaih9f",
+          "_TZE204_8fffc3kb",
+          "_TZE284_0dvm9mva",
+          "_TZE204_w2vunxzm",
+          "_TZE200_ch3t1xbl",
+          "_TZ3002_jn2x20tg",
+          "_TZE204_ksz749x8",
+          "_TZE284_idn2htgu",
+          "_TZE284_ltwbm23f"
         ],
         "productId": [
           "TS0201",
@@ -16610,7 +16814,8 @@
           "_TZ3210_k1msuvg6",
           "_TZ3210_zxbtub8r",
           "_TZ3210_iystcadi",
-          "_TZ3210_r5afgmkl"
+          "_TZ3210_r5afgmkl",
+          "_TZE200_ubgdwsnr"
         ],
         "productId": [
           "TS0601",
@@ -16868,7 +17073,55 @@
           "_TZ3000_p6ju8myv",
           "_TZ3000_decgzopl",
           "_TZ3000_wwhu5v8h",
-          "_TZ3000_v8czzqzx"
+          "_TZ3000_v8czzqzx",
+          "_TZ3000_lqpt3mvr",
+          "_TZ3000_gwkzibhs",
+          "_TZE284_7zazvlyn",
+          "_TZ3000_pl5v1yyy",
+          "_TZE204_jtiem9ru",
+          "_TZ3290_8xzb2ghn",
+          "_TZ3000_bs93npae",
+          "_TZE200_lvkk0hdg",
+          "_TZE284_waa352qv",
+          "_TZE200_jhkttplm",
+          "_TZ3000_ibefeicf",
+          "_TZ3000_303avxxt",
+          "_TZ3000_cayepv1a",
+          "_TZ3000_lepzuhto",
+          "_TZ3000_qystbcjg",
+          "_TZ3000_zrm3oxsh",
+          "_TZ3000_zjchz7pd",
+          "_TZ3000_zv6x8bt2",
+          "_TZ3000_xa9g7rxs",
+          "_TZE200_raz9qavg",
+          "_TZE200_a8sdabtg",
+          "_TZE200_kccdzaeo",
+          "_TZE200_s7rsrtbg",
+          "_TZE200_tmszbtzq",
+          "_TZE200_iba1ckek",
+          "_TZE200_hggxgsjj",
+          "_TZE200_hl0ss9oa",
+          "_TZE200_2aaelwxk",
+          "_TZE200_kb5noeto",
+          "_TZE200_kb5noetl",
+          "_TZE200_3towulqd",
+          "_TZE200_1ibpyhdc",
+          "_TZE200_bh3n6gk8",
+          "_TZE200_ttcovulf",
+          "_TZE200_qoy0ekbd",
+          "_TZE200_znbl8dj5",
+          "_TZE200_dikkika5",
+          "_TZE200_ysm4dsb1",
+          "_TZE200_n8dljorx",
+          "_TZE200_pay2byax",
+          "_TZE200_ijey4q29",
+          "_TZE200_8isdky6j",
+          "_TZE200_p6fuhvez",
+          "_TZE200_wzk0x7fq",
+          "_TZE284_iwyqtclw",
+          "_TZ3002_jn2x20tg",
+          "_TZ3002_zjuvw9zf",
+          "_TZE284_wbhaespm"
         ],
         "productId": [
           "TS0001",
@@ -16894,7 +17147,10 @@
           "TS0726",
           "TS1002",
           "TS1201",
-          "TS1111"
+          "TS1111",
+          "TS0210",
+          "TS0505B",
+          "TS0225"
         ],
         "endpoints": {
           "1": {
@@ -17028,7 +17284,8 @@
           "_TZ3000_p6ju8myv",
           "_TZ3000_decgzopl",
           "_TZ3000_wwhu5v8h",
-          "_TZ3000_v8czzqzx"
+          "_TZ3000_v8czzqzx",
+          "_TZE200_z1xg4gsp"
         ],
         "productId": [
           "TS0001",
@@ -17210,7 +17467,8 @@
           "_TZ3000_p6ju8myv",
           "_TZ3000_decgzopl",
           "_TZ3000_wwhu5v8h",
-          "_TZ3000_v8czzqzx"
+          "_TZ3000_v8czzqzx",
+          "_TZ3000_nwidmc4n"
         ],
         "productId": [
           "TS0001",
@@ -18169,7 +18427,13 @@
           "TS0011",
           "TS0012",
           "TS0013",
-          "TS0014"
+          "TS0014",
+          "TS0210",
+          "TS0505B",
+          "TS0601",
+          "TS1201",
+          "TS1002",
+          "TS0225"
         ],
         "endpoints": {
           "1": {
@@ -18273,7 +18537,55 @@
           "_TZ3000_p6ju8myv",
           "_TZ3000_decgzopl",
           "_TZ3000_wwhu5v8h",
-          "_TZ3000_v8czzqzx"
+          "_TZ3000_v8czzqzx",
+          "_TZ3000_lqpt3mvr",
+          "_TZ3000_gwkzibhs",
+          "_TZE284_7zazvlyn",
+          "_TZ3000_pl5v1yyy",
+          "_TZE204_jtiem9ru",
+          "_TZ3290_8xzb2ghn",
+          "_TZ3000_bs93npae",
+          "_TZE200_lvkk0hdg",
+          "_TZE284_waa352qv",
+          "_TZE200_jhkttplm",
+          "_TZ3000_ibefeicf",
+          "_TZ3000_303avxxt",
+          "_TZ3000_cayepv1a",
+          "_TZ3000_lepzuhto",
+          "_TZ3000_qystbcjg",
+          "_TZ3000_zrm3oxsh",
+          "_TZ3000_zjchz7pd",
+          "_TZ3000_zv6x8bt2",
+          "_TZ3000_xa9g7rxs",
+          "_TZE200_raz9qavg",
+          "_TZE200_a8sdabtg",
+          "_TZE200_kccdzaeo",
+          "_TZE200_s7rsrtbg",
+          "_TZE200_tmszbtzq",
+          "_TZE200_iba1ckek",
+          "_TZE200_hggxgsjj",
+          "_TZE200_hl0ss9oa",
+          "_TZE200_2aaelwxk",
+          "_TZE200_kb5noeto",
+          "_TZE200_kb5noetl",
+          "_TZE200_3towulqd",
+          "_TZE200_1ibpyhdc",
+          "_TZE200_bh3n6gk8",
+          "_TZE200_ttcovulf",
+          "_TZE200_qoy0ekbd",
+          "_TZE200_znbl8dj5",
+          "_TZE200_dikkika5",
+          "_TZE200_ysm4dsb1",
+          "_TZE200_n8dljorx",
+          "_TZE200_pay2byax",
+          "_TZE200_ijey4q29",
+          "_TZE200_8isdky6j",
+          "_TZE200_p6fuhvez",
+          "_TZE200_wzk0x7fq",
+          "_TZE284_iwyqtclw",
+          "_TZ3002_jn2x20tg",
+          "_TZ3002_zjuvw9zf",
+          "_TZE284_wbhaespm"
         ]
       },
       "images": {
@@ -18470,7 +18782,8 @@
           "TS0001",
           "TS0011",
           "TS0013",
-          "TS0014"
+          "TS0014",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -18585,7 +18898,8 @@
           "_TZ3000_p6ju8myv",
           "_TZ3000_decgzopl",
           "_TZ3000_wwhu5v8h",
-          "_TZ3000_v8czzqzx"
+          "_TZ3000_v8czzqzx",
+          "_TZE200_z1xg4gsp"
         ]
       },
       "images": {
@@ -18943,7 +19257,8 @@
           "_TZ3000_p6ju8myv",
           "_TZ3000_decgzopl",
           "_TZ3000_wwhu5v8h",
-          "_TZ3000_v8czzqzx"
+          "_TZ3000_v8czzqzx",
+          "_TZ3000_nwidmc4n"
         ]
       },
       "images": {
