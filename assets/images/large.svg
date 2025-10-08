@@ -1,13 +1,24 @@
-<svg width="75" height="75" viewBox="0 0 75 75" xmlns="http://www.w3.org/2000/svg">
-  <rect width="75" height="75" fill="white"/>
-  <g transform="translate(37.5, 37.5)">
-    <!-- Air Conditioner Unit -->
-    <rect x="-20" y="-10" width="40" height="20" rx="2" fill="#4A90E2" stroke="#333" stroke-width="1"/>
-    <!-- Vents -->
-    <line x1="-15" y1="-5" x2="15" y2="-5" stroke="white" stroke-width="0.5"/>
-    <line x1="-15" y1="0" x2="15" y2="0" stroke="white" stroke-width="0.5"/>  
-    <line x1="-15" y1="5" x2="15" y2="5" stroke="white" stroke-width="0.5"/>
-    <!-- LED -->
-    <circle cx="12" cy="-5" r="1" fill="#00ff00"/>
-  </g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="350" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad_app" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1B4D72;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2E5F8C;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="500" height="350" fill="url(#grad_app)" rx="35"/>
+  
+  <!-- Icon -->
+  <text x="250" y="175" font-family="Arial, sans-serif" font-size="105" 
+        fill="white" text-anchor="middle" font-weight="bold">🏠</text>
+  
+  <!-- Title -->
+  <text x="250" y="262.5" font-family="Arial, sans-serif" font-size="42" 
+        fill="white" text-anchor="middle" font-weight="bold">Universal Tuya</text>
+  
+  <!-- Subtitle -->
+  <text x="250" y="308" font-family="Arial, sans-serif" font-size="28" 
+        fill="white" text-anchor="middle" opacity="0.8">Zigbee Local Control</text>
 </svg>
