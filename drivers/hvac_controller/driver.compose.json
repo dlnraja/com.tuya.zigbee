@@ -99,5 +99,6 @@
   "connectivity": [
     "zigbee"
   ],
-  "capabilitiesOptions": {}
+  "capabilitiesOptions": {},
+  "id": "hvac_controller"
 }
