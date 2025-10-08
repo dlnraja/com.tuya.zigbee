@@ -1,0 +1,110 @@
+name: Monthly Auto-Enrichment & Publish
+
+on:
+  schedule:
+    # Runs on the 1st of every month at 02:00 UTC
+    - cron: '0 2 1 * *'
+  workflow_dispatch: # Manual trigger
+  
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-enrich-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Install Dependencies
+      run: |
+        npm install --no-audit --prefer-offline
+        npm install -g homey
+        
+    - name: Configure Git
+      run: |
+        git config user.name "Auto-Enrichment Bot"
+        git config user.email "bot@tuya-zigbee.app"
+        
+    - name: Login to Homey
+      env:
+        HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
+      run: |
+        echo "🔐 Authenticating with Homey..."
+        echo "$HOMEY_TOKEN" | homey login --token
+        
+    - name: Run Monthly Auto-Enrichment
+      run: |
+        echo "🌐 MONTHLY AUTO-ENRICHMENT STARTED"
+        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        echo ""
+        echo "📅 Date: $(date)"
+        echo ""
+        
+        # Run the monthly orchestrator
+        node scripts/MONTHLY_AUTO_ENRICHMENT_ORCHESTRATOR.js
+        
+    - name: Check for Changes
+      id: check_changes
+      run: |
+        if [[ -n $(git status --porcelain) ]]; then
+          echo "has_changes=true" >> $GITHUB_OUTPUT
+          echo "✅ Changes detected"
+        else
+          echo "has_changes=false" >> $GITHUB_OUTPUT
+          echo "ℹ️  No changes detected"
+        fi
+        
+    - name: Commit & Push Changes
+      if: steps.check_changes.outputs.has_changes == 'true'
+      run: |
+        git add -A
+        git commit -m "chore: Monthly auto-enrichment - $(date +'%Y-%m-%d') - Automated device database update"
+        git push origin master
+        
+    - name: Publish to App Store
+      if: steps.check_changes.outputs.has_changes == 'true'
+      run: |
+        echo "📤 Publishing to Homey App Store..."
+        printf "n\n" | homey app publish 2>&1 | tee publish.log || true
+        
+        if grep -q "successfully published" publish.log || grep -q "App published" publish.log; then
+          echo "✅ Publication successful!"
+        else
+          echo "⚠️  Publication may need manual review"
+        fi
+        
+    - name: Create Summary Report
+      if: always()
+      run: |
+        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        echo "📊 MONTHLY AUTO-ENRICHMENT SUMMARY"
+        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        echo ""
+        echo "📅 Date: $(date)"
+        echo "🔄 Changes: ${{ steps.check_changes.outputs.has_changes }}"
+        echo ""
+        
+        if [ -f reports/monthly_enrichment_report.json ]; then
+          echo "📄 Report generated:"
+          cat reports/monthly_enrichment_report.json
+        fi
+        
+    - name: Upload Artifacts
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: enrichment-reports
+        path: |
+          reports/
+          *.log
