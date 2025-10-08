@@ -24,12 +24,13 @@ jobs:
     - name: Install Homey CLI
       run: npm install -g homey
         
-    - name: Login to Homey
+    - name: Setup Homey Authentication
       env:
         HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
       run: |
         echo "Authenticating with Homey..."
-        echo "$HOMEY_TOKEN" | homey login --token
+        mkdir -p ~/.homey
+        echo "{\"token\":\"$HOMEY_TOKEN\"}" > ~/.homey/config.json
         
     - name: Clean Build Cache
       run: |

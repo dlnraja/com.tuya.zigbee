@@ -36,12 +36,13 @@ jobs:
         git config user.name "Auto-Enrichment Bot"
         git config user.email "bot@tuya-zigbee.app"
         
-    - name: Login to Homey
+    - name: Setup Homey Authentication
       env:
         HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
       run: |
-        echo "🔐 Authenticating with Homey..."
-        echo "$HOMEY_TOKEN" | homey login --token
+        echo "🔐 Setting up Homey authentication..."
+        mkdir -p ~/.homey
+        echo "{\"token\":\"$HOMEY_TOKEN\"}" > ~/.homey/config.json
         
     - name: Run Monthly Auto-Enrichment
       run: |
