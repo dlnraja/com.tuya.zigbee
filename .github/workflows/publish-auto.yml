@@ -45,24 +45,22 @@ jobs:
           
           if [ -z "$LAST_TAG" ]; then
             # No previous tag, use last 5 commits
-            COMMITS=$(git log -5 --pretty=format:"- %s" --no-merges)
+            COMMITS=$(git log -5 --pretty=format:"%s" --no-merges)
           else
             # Get commits since last tag
-            COMMITS=$(git log ${LAST_TAG}..HEAD --pretty=format:"- %s" --no-merges)
+            COMMITS=$(git log ${LAST_TAG}..HEAD --pretty=format:"%s" --no-merges)
           fi
           
           # If no commits, use a default message
           if [ -z "$COMMITS" ]; then
-            COMMITS="- Bug fixes and improvements"
+            COMMITS="Bug fixes and improvements"
           fi
           
-          # Limit to first 500 chars for Homey API
-          CHANGELOG=$(echo "$COMMITS" | head -c 500)
+          # Join commits with semicolons, remove problematic characters
+          CHANGELOG=$(echo "$COMMITS" | tr '\n' ';' | sed 's/;$//' | sed 's/;/; /g' | head -c 400)
           
-          # Save to output (escape newlines)
-          echo "changelog<<EOF" >> $GITHUB_OUTPUT
-          echo "$CHANGELOG" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+          # Save to output (single line, no special chars)
+          echo "changelog=$CHANGELOG" >> $GITHUB_OUTPUT
           
           # Display in summary
           echo "## 📋 Changelog" >> $GITHUB_STEP_SUMMARY
