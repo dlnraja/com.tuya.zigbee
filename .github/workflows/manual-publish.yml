@@ -1,9 +1,9 @@
-name: Manual Homey Publish
+name: Manual Publish to Homey
 
 on:
   workflow_dispatch:
     inputs:
-      version_type:
+      version:
         description: 'Version bump type'
         required: true
         default: 'patch'
@@ -13,100 +13,65 @@ on:
           - minor
           - major
       changelog:
-        description: 'Changelog message'
-        required: false
-        default: 'Fix: Settings infinite loop + homey-zigbeedriver dependency + 28 flow cards'
+        description: 'Changelog for this version'
+        required: true
+        default: 'Bug fixes and improvements'
+
+permissions:
+  contents: write
 
 jobs:
   publish:
+    name: Manual Publish
     runs-on: ubuntu-latest
-    timeout-minutes: 30
     
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-        
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-        
-    - name: Install Dependencies
-      run: |
-        echo "📦 Installing dependencies..."
-        npm install --no-audit --no-fund
-        
-    - name: Install Homey CLI
-      run: |
-        echo "🔍 Installing Homey CLI..."
-        npm install -g homey@latest --no-audit --no-fund
-        homey --version
-        
-    - name: Check HOMEY_TOKEN
-      env:
-        HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
-      run: |
-        if [ -z "$HOMEY_TOKEN" ]; then
-          echo "⚠️  WARNING: HOMEY_TOKEN not configured"
-          echo "ℹ️  Get token from: https://tools.developer.homey.app/"
-          echo "ℹ️  Add it to: Settings → Secrets → Actions → HOMEY_TOKEN"
-          echo ""
-          echo "📝 Continuing without authentication (will use build only)..."
-        else
-          echo "✅ HOMEY_TOKEN is configured"
-          mkdir -p ~/.homey
-          echo "{\"token\":\"$HOMEY_TOKEN\"}" > ~/.homey/.homeyrc.json
-          homey whoami || echo "Token validation skipped"
-        fi
-        
-    - name: Build App
-      run: |
-        echo "🔨 Building app..."
-        homey app build
-        
-    - name: Validate App
-      run: |
-        echo "✅ Validating at publish level..."
-        homey app validate --level=publish
-        
-    - name: Get Current Version
-      id: version
-      run: |
-        VERSION=$(node -p "require('./app.json').version")
-        echo "version=$VERSION" >> $GITHUB_OUTPUT
-        echo "📊 Current version: $VERSION"
-        
-    - name: Publish Summary
-      run: |
-        echo "## 📊 Build Summary" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "**Status:** ✅ Build & Validation Successful" >> $GITHUB_STEP_SUMMARY
-        echo "**Current Version:** ${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
-        echo "**Requested Bump:** ${{ inputs.version_type }}" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "### Next Steps:" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        if [ -n "${{ secrets.HOMEY_TOKEN }}" ]; then
-          echo "✅ HOMEY_TOKEN configured - Ready for automatic publish" >> $GITHUB_STEP_SUMMARY
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+      
+      - name: ✅ Validate App
+        uses: athombv/github-action-homey-app-validate@master
+        with:
+          level: publish
+      
+      - name: 🆙 Update Version
+        uses: athombv/github-action-homey-app-version@master
+        id: update_version
+        with:
+          version: ${{ inputs.version }}
+          changelog: ${{ inputs.changelog }}
+      
+      - name: 💾 Commit Version
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "chore: bump version to v${{ steps.update_version.outputs.version }} [skip ci]"
+            git tag "v${{ steps.update_version.outputs.version }}"
+            git push origin HEAD --tags
+          fi
+      
+      - name: 🚀 Publish to Homey
+        uses: athombv/github-action-homey-app-publish@master
+        id: publish
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+      
+      - name: 📦 Create Release
+        run: |
+          gh release create "v${{ steps.update_version.outputs.version }}" \
+            --title "v${{ steps.update_version.outputs.version }}" \
+            --notes "${{ inputs.changelog }}" \
+            --generate-notes || echo "Release skipped"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: 🎉 Success Report
+        run: |
+          echo "# 🎉 Publication Successful!" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "To publish, run locally:" >> $GITHUB_STEP_SUMMARY
-          echo "\`\`\`bash" >> $GITHUB_STEP_SUMMARY
-          echo "homey app publish" >> $GITHUB_STEP_SUMMARY
-          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
-        else
-          echo "⚠️  HOMEY_TOKEN not configured" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**To enable auto-publish:**" >> $GITHUB_STEP_SUMMARY
-          echo "1. Get token: https://tools.developer.homey.app/" >> $GITHUB_STEP_SUMMARY
-          echo "2. Add secret: Settings → Secrets → Actions → HOMEY_TOKEN" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Or publish manually:**" >> $GITHUB_STEP_SUMMARY
-          echo "\`\`\`bash" >> $GITHUB_STEP_SUMMARY
-          echo "git pull" >> $GITHUB_STEP_SUMMARY
-          echo "homey app publish" >> $GITHUB_STEP_SUMMARY
-          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
-        fi
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "🔗 [View App on Homey](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Version**: v${{ steps.update_version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Homey**: ${{ steps.publish.outputs.url }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Release**: https://github.com/${{ github.repository }}/releases/tag/v${{ steps.update_version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
