@@ -79,25 +79,29 @@ jobs:
       - name: Get Build ID and Auto-Promote
         id: extract_build
         continue-on-error: true
+        shell: bash
         run: |
+          set +e  # Don't exit on error
+          
           echo "📋 Getting latest build from Homey API..."
           
           # Wait 5 seconds for build to be fully registered
           sleep 5
           
-          # Try to get all builds
+          # Try to get all builds with safe error handling
+          RESPONSE=""
           RESPONSE=$(curl -s -H "Authorization: Bearer ${{ secrets.HOMEY_PAT }}" \
-            "https://api.developer.homey.app/app/com.dlnraja.tuya.zigbee/builds" 2>/dev/null || echo "")
+            "https://api.developer.homey.app/app/com.dlnraja.tuya.zigbee/builds" 2>/dev/null)
           
-          # Extract first build ID (most recent)
+          # Extract first build ID (most recent) with safe handling
           BUILD_ID=""
-          if [ -n "$RESPONSE" ]; then
-            BUILD_ID=$(echo "$RESPONSE" | grep -o '"id":[0-9]*' | head -1 | grep -o '[0-9]*' 2>/dev/null || echo "")
+          if [ ! -z "$RESPONSE" ]; then
+            BUILD_ID=$(echo "$RESPONSE" | grep -o '"id":[0-9]*' 2>/dev/null | head -1 | grep -o '[0-9]*' 2>/dev/null)
           fi
           
-          # Output Build ID
-          if [ -n "$BUILD_ID" ] && [ "$BUILD_ID" -ge 1 ] 2>/dev/null; then
-            echo "BUILD_ID=$BUILD_ID" >> $GITHUB_OUTPUT
+          # Check if we got a valid build ID
+          if [ ! -z "$BUILD_ID" ] && [ "$BUILD_ID" -gt 0 ] 2>/dev/null; then
+            echo "BUILD_ID=$BUILD_ID" >> $GITHUB_OUTPUT || true
             echo "✅ Build ID: $BUILD_ID"
             
             # Auto-promote immediately
@@ -109,21 +113,21 @@ jobs:
               "https://api.developer.homey.app/app/com.dlnraja.tuya.zigbee/build/$BUILD_ID/promote" \
               -d '{"target": "test"}' 2>/dev/null)
             
-            HTTP_CODE=$(echo "$PROMO_RESPONSE" | tail -n1)
+            HTTP_CODE=$(echo "$PROMO_RESPONSE" | tail -n1 2>/dev/null)
             
             if [ "$HTTP_CODE" = "200" ] || [ "$HTTP_CODE" = "201" ]; then
               echo "✅ Build #$BUILD_ID promoted to TEST successfully!"
               echo "🔗 Test URL: https://homey.app/a/com.dlnraja.tuya.zigbee/test/"
             else
-              echo "⚠️  Promotion status: $HTTP_CODE (may require manual promotion)"
+              echo "⚠️  Promotion status: $HTTP_CODE (manual promotion may be needed)"
             fi
           else
-            echo "BUILD_ID=" >> $GITHUB_OUTPUT
-            echo "⚠️ Could not extract Build ID"
-            echo "💡 Check: https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee"
+            echo "BUILD_ID=" >> $GITHUB_OUTPUT || true
+            echo "⚠️ Could not extract Build ID from API"
+            echo "💡 Manual check: https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee"
           fi
           
-          # Always exit 0 to not block workflow
+          # Always succeed
           exit 0
           
       - name: Summary
