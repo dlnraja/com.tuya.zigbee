@@ -1,0 +1,153 @@
+name: Publish to Homey App Store
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+    inputs:
+      version_bump:
+        description: 'Version bump type'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    name: Validate, Version & Publish
+    runs-on: ubuntu-latest
+    
+    steps:
+      # 1. Checkout code
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for changelog
+      
+      # 2. Validate app
+      - name: ✅ Validate Homey App
+        uses: athombv/github-action-homey-app-validate@master
+        with:
+          level: publish
+      
+      # 3. Extract changelog from commits
+      - name: 📝 Generate Changelog from Commits
+        id: changelog
+        run: |
+          # Get commits since last tag or last 5 commits
+          LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+          
+          if [ -z "$LAST_TAG" ]; then
+            # No previous tag, use last 5 commits
+            COMMITS=$(git log -5 --pretty=format:"- %s" --no-merges)
+          else
+            # Get commits since last tag
+            COMMITS=$(git log ${LAST_TAG}..HEAD --pretty=format:"- %s" --no-merges)
+          fi
+          
+          # If no commits, use a default message
+          if [ -z "$COMMITS" ]; then
+            COMMITS="- Bug fixes and improvements"
+          fi
+          
+          # Limit to first 500 chars for Homey API
+          CHANGELOG=$(echo "$COMMITS" | head -c 500)
+          
+          # Save to output (escape newlines)
+          echo "changelog<<EOF" >> $GITHUB_OUTPUT
+          echo "$CHANGELOG" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+          
+          # Display in summary
+          echo "## 📋 Changelog" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "$CHANGELOG" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+      
+      # 4. Determine version bump
+      - name: 🔢 Determine Version Bump
+        id: version_type
+        run: |
+          # Use workflow input if manual, else determine from commit messages
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            VERSION_BUMP="${{ inputs.version_bump }}"
+          else
+            # Auto-detect from commit messages
+            COMMITS=$(git log -1 --pretty=format:"%s%n%b")
+            
+            if echo "$COMMITS" | grep -iE "^(BREAKING|major:)" > /dev/null; then
+              VERSION_BUMP="major"
+            elif echo "$COMMITS" | grep -iE "^(feat|feature|minor:)" > /dev/null; then
+              VERSION_BUMP="minor"
+            else
+              VERSION_BUMP="patch"
+            fi
+          fi
+          
+          echo "version_bump=$VERSION_BUMP" >> $GITHUB_OUTPUT
+          echo "📊 Version bump: **$VERSION_BUMP**" >> $GITHUB_STEP_SUMMARY
+      
+      # 5. Update app version
+      - name: 🆙 Update Homey App Version
+        uses: athombv/github-action-homey-app-version@master
+        id: update_version
+        with:
+          version: ${{ steps.version_type.outputs.version_bump }}
+          changelog: ${{ steps.changelog.outputs.changelog }}
+      
+      # 6. Commit version changes
+      - name: 💾 Commit Version Update
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # Only commit if there are changes
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "chore: bump version to v${{ steps.update_version.outputs.version }} [skip ci]"
+            git tag "v${{ steps.update_version.outputs.version }}"
+            git push origin HEAD --tags
+            
+            echo "✅ Version committed and tagged" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "ℹ️ No version changes to commit" >> $GITHUB_STEP_SUMMARY
+          fi
+      
+      # 7. Publish to Homey App Store
+      - name: 🚀 Publish to Homey App Store
+        uses: athombv/github-action-homey-app-publish@master
+        id: publish
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+      
+      # 8. Create GitHub Release
+      - name: 📦 Create GitHub Release
+        run: |
+          gh release create "v${{ steps.update_version.outputs.version }}" \
+            --title "v${{ steps.update_version.outputs.version }}" \
+            --notes "${{ steps.changelog.outputs.changelog }}" \
+            --generate-notes || echo "Release creation skipped (may already exist)"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
+      
+      # 9. Success report
+      - name: 🎉 Publication Success
+        run: |
+          echo "# 🎉 Publication Successful!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## 📊 Details" >> $GITHUB_STEP_SUMMARY
+          echo "- **Version**: v${{ steps.update_version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Type**: ${{ steps.version_type.outputs.version_bump }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Homey Dashboard**: ${{ steps.publish.outputs.url }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## 🔗 Links" >> $GITHUB_STEP_SUMMARY
+          echo "- [Homey App Dashboard](${{ steps.publish.outputs.url }})" >> $GITHUB_STEP_SUMMARY
+          echo "- [GitHub Release](https://github.com/${{ github.repository }}/releases/tag/v${{ steps.update_version.outputs.version }})" >> $GITHUB_STEP_SUMMARY
+          echo "- [App Store](https://homey.app/apps/${{ github.repository }})" >> $GITHUB_STEP_SUMMARY
