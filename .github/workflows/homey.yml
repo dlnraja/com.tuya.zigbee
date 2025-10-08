@@ -1,9 +1,9 @@
 name: Homey Publication
 
 on:
-  # push:
-  #   branches: [master]
-  workflow_dispatch:  # Manual trigger only
+  push:
+    branches: [master]
+  workflow_dispatch:  # Manual trigger also available
 
 jobs:
   publish:
