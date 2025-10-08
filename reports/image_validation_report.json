@@ -1,0 +1,3132 @@
+{
+  "timestamp": "2025-10-08T05:31:41.477Z",
+  "standards": {
+    "small": {
+      "width": 75,
+      "height": 75,
+      "required": true
+    },
+    "large": {
+      "width": 500,
+      "height": 500,
+      "required": true
+    },
+    "xlarge": {
+      "width": 1000,
+      "height": 1000,
+      "required": false
+    }
+  },
+  "statistics": {
+    "totalImages": 489,
+    "valid": 336,
+    "invalid": 0,
+    "missing": 0,
+    "fixed": 0
+  },
+  "driverAnalysis": {
+    "total": 163,
+    "unbranded": 163,
+    "branded": 0
+  },
+  "driversWithIssues": 0,
+  "drivers": [
+    {
+      "name": "air_quality_monitor",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "air_quality_monitor_pro",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "ceiling_fan",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "ceiling_light_controller",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "ceiling_light_rgb",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "climate_monitor",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "co2_sensor",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "co2_temp_humidity",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "comprehensive_air_monitor",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "co_detector_pro",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "curtain_motor",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "dimmer",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "VALID",
+          "dimensions": "1000x1000"
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "dimmer_switch_1gang_ac",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "dimmer_switch_3gang_ac",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "dimmer_switch_timer_module",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "doorbell",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "door_controller",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "VALID",
+          "dimensions": "1000x1000"
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "door_lock",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "door_window_sensor",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "energy_monitoring_plug",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "energy_monitoring_plug_advanced",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "energy_plug_advanced",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "extension_plug",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "fan_controller",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "fingerprint_lock",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "formaldehyde_sensor",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "garage_door_controller",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "garage_door_opener",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "gas_detector",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "humidity_controller",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "hvac_controller",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "VALID",
+          "dimensions": "1000x1000"
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "led_strip_advanced",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "led_strip_controller",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "led_strip_controller_pro",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "lux_sensor",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "milight_controller",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "mini",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "VALID",
+          "dimensions": "1000x1000"
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "mini_switch",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "motion_sensor_battery",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "motion_sensor_mmwave",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "motion_sensor_pir_ac",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "motion_sensor_pir_battery",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "motion_sensor_zigbee_204z",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "multisensor",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "noise_level_sensor",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "outdoor_light_controller",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "outdoor_siren",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "pet_feeder",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "pir_sensor_advanced",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "pm25_detector",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "pm25_sensor",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "pool_pump_controller",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "power_meter_socket",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "presence_sensor_radar",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "pressure_sensor",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "projector_screen_controller",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "radar_motion_sensor_advanced",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "radar_motion_sensor_mmwave",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "radar_motion_sensor_tank_level",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "radiator_valve",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "relay_switch_1gang",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "VALID",
+          "dimensions": "1000x1000"
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "remote_switch",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "rgb_led_controller",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "roller_blind_controller",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "roller_shutter_controller",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "roller_shutter_switch",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "roller_shutter_switch_advanced",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "scene_controller",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "scene_controller_2button",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "scene_controller_4button",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "scene_controller_6button",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "scene_controller_8button",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "scene_controller_battery",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "VALID",
+          "dimensions": "1000x1000"
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "shade_controller",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smart_bulb_dimmer",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smart_bulb_rgb",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "VALID",
+          "dimensions": "1000x1000"
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smart_bulb_tunable",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smart_bulb_white",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smart_curtain_motor",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smart_dimmer_module_1gang",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smart_doorbell",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smart_garden_sprinkler",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smart_irrigation_controller",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smart_lock",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smart_outlet_monitor",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smart_plug",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smart_plug_energy",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smart_radiator_valve",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smart_smoke_detector_advanced",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smart_spot",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smart_switch_1gang_ac",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smart_switch_1gang_hybrid",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smart_switch_2gang_ac",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smart_switch_2gang_hybrid",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smart_switch_3gang_ac",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smart_switch_3gang_hybrid",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smart_switch_4gang_hybrid",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smart_thermostat",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smart_valve_controller",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smart_water_valve",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smoke_detector",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smoke_detector_temp_humidity_advanced",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "smoke_temp_humid_sensor",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "soil_moisture_sensor",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "soil_moisture_temperature_sensor",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "soil_tester_temp_humid",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "solar_panel_controller",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "sos_emergency_button",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "switch_1gang_battery",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "switch_2gang_ac",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "switch_2gang_hybrid",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "switch_3gang_battery",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "switch_4gang_ac",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "switch_4gang_battery_cr2032",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "switch_5gang_battery",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "switch_6gang_ac",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "switch_8gang_ac",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "tank_level_monitor",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "temperature_controller",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "temperature_humidity_sensor",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "temperature_sensor",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "temperature_sensor_advanced",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "temp_humid_sensor_advanced",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "temp_humid_sensor_leak_detector",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "temp_humid_sensor_v1w2k9dd",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "temp_sensor_pro",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "thermostat",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "VALID",
+          "dimensions": "1000x1000"
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "touch_dimmer",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "touch_dimmer_1gang",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "touch_switch_1gang",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "touch_switch_2gang",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "touch_switch_3gang",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "touch_switch_4gang",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "tvoc_sensor",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "tvoc_sensor_advanced",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "usb_outlet",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "usb_outlet_advanced",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "vibration_sensor",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "wall_switch_1gang_ac",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "wall_switch_1gang_dc",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "wall_switch_2gang_ac",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "wall_switch_2gang_dc",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "wall_switch_3gang_ac",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "wall_switch_3gang_dc",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "wall_switch_4gang_ac",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "wall_switch_4gang_dc",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "wall_switch_5gang_ac",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "wall_switch_6gang_ac",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "water_leak_detector_advanced",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "water_leak_detector_sq510a",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "water_leak_sensor",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "water_valve",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "water_valve_smart",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "wireless_switch",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "wireless_switch_1gang_cr2032",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "VALID",
+          "dimensions": "1000x1000"
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "wireless_switch_2gang_cr2032",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "wireless_switch_3gang_cr2032",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "wireless_switch_4gang_cr2032",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "wireless_switch_4gang_cr2450",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "wireless_switch_5gang_cr2032",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "wireless_switch_6gang_cr2032",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "zbbridge",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "VALID",
+          "dimensions": "1000x1000"
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "zigbee_gateway_hub",
+      "unbranded": true,
+      "images": {
+        "small": {
+          "status": "VALID",
+          "dimensions": "75x75"
+        },
+        "large": {
+          "status": "VALID",
+          "dimensions": "500x500"
+        },
+        "xlarge": {
+          "status": "OPTIONAL_MISSING",
+          "required": false
+        }
+      },
+      "issues": []
+    }
+  ]
+}

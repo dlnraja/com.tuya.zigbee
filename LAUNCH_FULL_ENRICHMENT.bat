@@ -199,6 +199,31 @@ pause
 echo.
 
 REM ════════════════════════════════════════════════════════════════════════════
+REM PHASE 5.5: IMAGE VALIDATION
+REM ════════════════════════════════════════════════════════════════════════════
+
+echo 🖼️  PHASE 5.5: IMAGE VALIDATION
+echo ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+echo.
+echo Checking all driver images...
+echo.
+
+node scripts\ULTIMATE_IMAGE_VALIDATOR.js
+if %errorlevel% neq 0 (
+    echo.
+    echo ⚠️  Image issues found (review reports/)
+    pause
+)
+
+echo.
+echo ✅ Image Validation: COMPLETE
+echo.
+echo ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+echo.
+pause
+echo.
+
+REM ════════════════════════════════════════════════════════════════════════════
 REM PHASE 6: VALIDATION & BUILD
 REM ════════════════════════════════════════════════════════════════════════════
 
