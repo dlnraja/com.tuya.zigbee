@@ -1,23 +1,17 @@
 # Build cache
-.homeycompose/
+node_modules/
 .homeybuild/
+.homeycompose/
+.vscode/
+.git/
+.github/
+.dev/
+*.log
+*.tmp
 
-# Development files - EXCLUDE ALL
-scripts/
-tools/
-docs/
-tests/
-utils/
-lib/
-config/
-
-# Development documentation
-*.md
+# Keep essential files
 !README.md
-SECURITY.md
-CHANGELOG.md
-CONTRIBUTING.md
-LICENSE
+!CHANGELOG.md
 
 # Git files
 .git/

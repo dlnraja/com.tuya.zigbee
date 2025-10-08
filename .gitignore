@@ -46,3 +46,10 @@ archives/large/
 temp_clones/
 archive/
 archive/*
+
+# Development files (organized)
+.dev/
+archive_old/
+reports/
+docs/
+scripts/
