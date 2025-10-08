@@ -1,0 +1,63 @@
+name: Homey App Store Auto-Publish with Draft→Test Promotion
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Install Homey CLI
+        run: npm install -g homey
+        
+      - name: Login to Homey
+        run: |
+          echo "${{ secrets.HOMEY_TOKEN }}" | homey login --token
+          
+      - name: Validate app
+        run: homey app validate --level=publish
+        
+      - name: Publish app (creates Draft build)
+        id: publish
+        run: |
+          BUILD_OUTPUT=$(homey app publish 2>&1)
+          echo "$BUILD_OUTPUT"
+          BUILD_ID=$(echo "$BUILD_OUTPUT" | grep -oP 'Build #\K[0-9]+' || echo "")
+          if [ -z "$BUILD_ID" ]; then
+            echo "❌ Failed to extract build ID"
+            exit 1
+          fi
+          echo "BUILD_ID=$BUILD_ID" >> $GITHUB_OUTPUT
+          echo "✅ Build #$BUILD_ID created (Draft)"
+          
+      - name: Auto-promote Draft to Test
+        run: |
+          BUILD_ID="${{ steps.publish.outputs.BUILD_ID }}"
+          echo "🚀 Promoting Build #$BUILD_ID from Draft to Test..."
+          
+          # Use Homey API to promote build
+          curl -X POST \
+            -H "Authorization: Bearer ${{ secrets.HOMEY_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            "https://api.developer.homey.app/app/com.dlnraja.tuya.zigbee/build/$BUILD_ID/promote" \
+            -d '{"target": "test"}'
+          
+          echo "✅ Build #$BUILD_ID promoted to Test"
+          
+      - name: Summary
+        run: |
+          echo "📊 Publication Summary:"
+          echo "  - Build ID: ${{ steps.publish.outputs.BUILD_ID }}"
+          echo "  - Status: Test (auto-promoted)"
+          echo "  - URL: https://homey.app/a/com.dlnraja.tuya.zigbee/test/"
