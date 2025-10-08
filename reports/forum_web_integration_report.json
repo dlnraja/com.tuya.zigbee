@@ -1,0 +1,38 @@
+{
+  "timestamp": "2025-10-08T04:32:55.366Z",
+  "version": "1.8.2",
+  "sources": {
+    "forums": [
+      "tuyaCloud",
+      "tuyaZigbee1",
+      "tuyaZigbee2",
+      "tuyaAthom"
+    ],
+    "webDatabases": [
+      "zigbee2mqtt",
+      "herdsman",
+      "zha",
+      "blakadder"
+    ]
+  },
+  "integration": {
+    "idsAdded": 16,
+    "driversUpdated": 16,
+    "webVerified": 0,
+    "verificationRate": 0
+  },
+  "devices": [
+    "Smart Plugs",
+    "Temperature Sensors",
+    "Motion Sensors",
+    "Wall Switches",
+    "Dimmers",
+    "Door Sensors",
+    "HOBEIAN Switches",
+    "Multi-gang Switches",
+    "Wireless Buttons",
+    "Curtain Motors",
+    "Thermostats",
+    "Smart Bulbs"
+  ]
+}
