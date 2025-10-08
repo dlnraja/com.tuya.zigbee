@@ -1,9 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg width="75" height="75" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="37.5" cy="28" r="12" fill="#FFD700" opacity="0.3"/>
-    <path d="M 30 35 L 30 50 Q 30 55, 37.5 55 Q 45 55, 45 50 L 45 35 Z" 
-          fill="#FFD700" opacity="0.5"/>
-    <rect x="33" y="55" width="9" height="5" rx="1" fill="#FFD700"/>
-    <line x1="37.5" y1="10" x2="37.5" y2="16" stroke="#FFD700" stroke-width="2"/>
-    <line x1="20" y1="28" x2="26" y2="28" stroke="#FFD700" stroke-width="2"/>
-    <line x1="49" y1="28" x2="55" y2="28" stroke="#FFD700" stroke-width="2"/>
-  </svg>
+  <defs>
+    <linearGradient id="grad_smart_bulb_tunable_75" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFC107;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFD54F;stop-opacity:0.8" />
+    </linearGradient>
+    <filter id="shadow_75">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background with gradient -->
+  <rect width="75" height="75" fill="url(#grad_smart_bulb_tunable_75)" rx="12"/>
+  
+  <!-- Icon circle background -->
+  <circle cx="37.5" cy="30" r="20" fill="white" opacity="0.2" filter="url(#shadow_75)"/>
+  
+  <!-- Large icon/emoji -->
+  <text x="37.5" y="41.25" font-family="Arial, sans-serif" font-size="40" 
+        fill="white" text-anchor="middle" font-weight="bold" 
+        filter="url(#shadow_75)">💡</text>
+  
+  <!-- Category badge -->
+  <rect x="7.5" y="58.5" width="60" height="16" rx="8" fill="white" opacity="0.95"/>
+  <text x="37.5" y="69.5" font-family="Arial, sans-serif" font-size="8" 
+        fill="#FFC107" text-anchor="middle" font-weight="bold">LIGHTING</text>
+</svg>
