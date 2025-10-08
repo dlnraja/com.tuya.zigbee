@@ -24,6 +24,32 @@ jobs:
         npm install --no-audit --prefer-offline
         npm install -g homey
         
+    - name: Install Canvas for Image Generation
+      run: |
+        echo "🎨 Installing canvas dependencies..."
+        sudo apt-get update
+        sudo apt-get install -y libcairo2-dev libjpeg-dev libpango1.0-dev libgif-dev build-essential g++
+        npm install canvas
+        echo "✅ Canvas installed"
+        
+    - name: Generate Smart Images (Build 8-9 Colors)
+      run: |
+        echo "🎨 Generating smart images with Johan Bendz color system..."
+        if [ ! -f "scripts/SMART_IMAGE_GENERATOR.js" ]; then
+          echo "⚠️  Image generator not found - skipping"
+        else
+          node scripts/SMART_IMAGE_GENERATOR.js
+          echo "✅ Images generated"
+          
+          # Verify images were created
+          if [ -f "assets/images/small.png" ]; then
+            echo "✅ App images present"
+          fi
+          
+          DRIVER_COUNT=$(find drivers -name "small.png" 2>/dev/null | wc -l)
+          echo "📊 Generated images for $DRIVER_COUNT drivers"
+        fi
+        
     - name: Verify Homey Token
       env:
         HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
