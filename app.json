@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "1.8.1",
+  "version": "1.8.2",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
@@ -1400,7 +1400,8 @@
           "_TZE200_zah67ekd",
           "_TZE200_xuzcvlku",
           "_TZE200_fdtjuw7u",
-          "_TZE200_wmcdj3aq"
+          "_TZE200_wmcdj3aq",
+          "_TZ3000_fzo2pocs"
         ],
         "productId": [
           "TS130F",
@@ -8075,7 +8076,8 @@
           "_TZE200_pay2byax",
           "_TZE200_xuzcvlku",
           "_TZE200_fdtjuw7u",
-          "_TZE200_wmcdj3aq"
+          "_TZE200_wmcdj3aq",
+          "_TZ3000_fzo2pocs"
         ],
         "productId": [
           "TS130F",
@@ -9440,7 +9442,8 @@
           "_TZ3210_k1msuvg6",
           "_TZ3210_zxbtub8r",
           "_TZ3210_iystcadi",
-          "_TZ3210_r5afgmkl"
+          "_TZ3210_r5afgmkl",
+          "_TZ3000_49qchf10"
         ],
         "productId": [
           "TS0601",
@@ -9545,7 +9548,8 @@
           "_TZ3210_it1u8ahz",
           "_TZ3000_92chsky7",
           "_TZ3210_ngqk6jia",
-          "_TZ3000_ktuoyvt5"
+          "_TZ3000_ktuoyvt5",
+          "_TZ3000_49qchf10"
         ],
         "productId": [
           "TS0501A",
@@ -9812,7 +9816,8 @@
           "_TZ3210_it1u8ahz",
           "_TZ3000_92chsky7",
           "_TZ3210_ngqk6jia",
-          "_TZ3000_ktuoyvt5"
+          "_TZ3000_ktuoyvt5",
+          "_TZ3000_49qchf10"
         ],
         "productId": [
           "TS0501A",
@@ -9913,7 +9918,8 @@
           "_TZE200_pay2byax",
           "_TZE200_xuzcvlku",
           "_TZE200_fdtjuw7u",
-          "_TZE200_wmcdj3aq"
+          "_TZE200_wmcdj3aq",
+          "_TZ3000_fzo2pocs"
         ],
         "productId": [
           "TS130F",
@@ -10984,7 +10990,8 @@
           "_TZE200_locansqn",
           "_TZE200_kfvq6avy",
           "_TZE200_5toc8efa",
-          "_TZE200_yw7cahqs"
+          "_TZE200_yw7cahqs",
+          "_TZE200_cwnjrr72"
         ],
         "productId": [
           "TS0601",
@@ -11445,7 +11452,8 @@
           "_TZE284_iwyqtclw",
           "_TZ3002_jn2x20tg",
           "_TZ3002_zjuvw9zf",
-          "_TZE284_wbhaespm"
+          "_TZE284_wbhaespm",
+          "_TZ3000_4fjiwweb"
         ],
         "productId": [
           "TS0001",
@@ -11767,7 +11775,8 @@
           "_TZ3000_decgzopl",
           "_TZ3000_wwhu5v8h",
           "_TZ3000_v8czzqzx",
-          "_TZE200_z1xg4gsp"
+          "_TZE200_z1xg4gsp",
+          "_TZ3000_4fjiwweb"
         ],
         "productId": [
           "TS0001",
@@ -12635,7 +12644,8 @@
           "_TZE200_b6wax7g0",
           "_TZE200_hue3yfsn",
           "_TZE200_2atgpdho",
-          "_TZE200_kfvq6avy"
+          "_TZE200_kfvq6avy",
+          "_TZE200_cwnjrr72"
         ],
         "productId": [
           "TS0601",
@@ -15624,7 +15634,8 @@
           "_TZ3002_jn2x20tg",
           "_TZE204_ksz749x8",
           "_TZE284_idn2htgu",
-          "_TZE284_ltwbm23f"
+          "_TZE284_ltwbm23f",
+          "_TZE200_bq5c8xfe"
         ],
         "productId": [
           "TS0201",
@@ -16253,7 +16264,8 @@
           "_TZ3002_jn2x20tg",
           "_TZE204_ksz749x8",
           "_TZE284_idn2htgu",
-          "_TZE284_ltwbm23f"
+          "_TZE284_ltwbm23f",
+          "_TZE200_bq5c8xfe"
         ],
         "productId": [
           "TS0201",
@@ -16411,7 +16423,8 @@
           "_TZ3000_ebar6ljy",
           "_TZ3000_kyb656no",
           "_TZ3000_upgcbody",
-          "_TZE200_qq9mpfhw"
+          "_TZE200_qq9mpfhw",
+          "_TZE200_bq5c8xfe"
         ],
         "productId": [
           "TS0201",
@@ -16656,7 +16669,8 @@
           "_TZE200_2atgpdho",
           "_TZE200_ckud7u2l",
           "_TZE200_shkxsgis",
-          "_TZE200_kfvq6avy"
+          "_TZE200_kfvq6avy",
+          "_TZE200_cwnjrr72"
         ],
         "productId": [
           "TS0601",
@@ -18586,7 +18600,8 @@
           "_TZE284_iwyqtclw",
           "_TZ3002_jn2x20tg",
           "_TZ3002_zjuvw9zf",
-          "_TZE284_wbhaespm"
+          "_TZE284_wbhaespm",
+          "_TZ3000_4fjiwweb"
         ]
       },
       "images": {
@@ -18900,7 +18915,8 @@
           "_TZ3000_decgzopl",
           "_TZ3000_wwhu5v8h",
           "_TZ3000_v8czzqzx",
-          "_TZE200_z1xg4gsp"
+          "_TZE200_z1xg4gsp",
+          "_TZ3000_4fjiwweb"
         ]
       },
       "images": {
