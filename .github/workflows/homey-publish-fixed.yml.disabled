@@ -1,8 +1,12 @@
 name: Homey Publication (Fixed)
 
 on:
-  push:
-    branches: [master]
+  # DÉSACTIVÉ - Utiliser publish-auto.yml à la place
+  workflow_dispatch:
+    inputs:
+      deprecated:
+        description: 'Ce workflow est obsolète'
+        required: false
   workflow_dispatch:
 
 jobs:
