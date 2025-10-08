@@ -1,0 +1,123 @@
+name: Homey App Store Publication (SDK3)
+
+on:
+  push:
+    branches: [master, main]
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Node.js 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install Dependencies
+        run: |
+          echo "📦 Installing dependencies..."
+          npm ci || npm install
+      
+      - name: Install Homey CLI
+        run: |
+          echo "🔧 Installing Homey CLI..."
+          npm install -g homey
+          homey --version
+      
+      - name: Configure Homey Authentication
+        env:
+          HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
+        run: |
+          echo "🔐 Configuring Homey authentication..."
+          if [ -z "$HOMEY_TOKEN" ]; then
+            echo "❌ ERROR: HOMEY_TOKEN not configured!"
+            echo "Please add HOMEY_TOKEN to GitHub Secrets"
+            echo "Get token from: https://tools.developer.homey.app/api"
+            exit 1
+          fi
+          mkdir -p ~/.homey
+          echo '{"token":"'"$HOMEY_TOKEN"'"}' > ~/.homey/.homeyrc.json
+          echo "✅ Authentication configured"
+      
+      - name: Clean Build Cache
+        run: |
+          echo "🧹 Cleaning cache..."
+          rm -rf .homeybuild .homeycompose
+      
+      - name: Validate App (Publish Level)
+        run: |
+          echo "✅ Validating app..."
+          homey app validate --level=publish
+      
+      - name: Build App
+        run: |
+          echo "🔨 Building app..."
+          homey app build
+      
+      - name: Publish to Homey App Store
+        run: |
+          echo "🚀 Publishing to Homey App Store..."
+          
+          # Install expect for automation
+          sudo apt-get update -qq
+          sudo apt-get install -y expect
+          
+          # Create expect script
+          cat > publish.exp << 'EOFEXP'
+          #!/usr/bin/expect -f
+          set timeout 120
+          
+          spawn homey app publish
+          
+          expect {
+            "uncommitted changes" {
+              send "n\r"
+              exp_continue
+            }
+            "update your app's version" {
+              send "y\r"
+              exp_continue
+            }
+            "Select the desired version" {
+              send "\r"
+              exp_continue
+            }
+            "What's new in this version" {
+              send "SDK3 compliance + workflow fixes\r"
+              exp_continue
+            }
+            "commit these changes" {
+              send "n\r"
+              exp_continue
+            }
+            timeout {
+              puts "Timeout reached"
+              exit 1
+            }
+            eof
+          }
+          EOFEXP
+          
+          chmod +x publish.exp
+          ./publish.exp
+          
+          echo "✅ Publication completed"
+      
+      - name: Publication Summary
+        if: always()
+        run: |
+          echo "## 📊 Publication Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**App ID:** com.dlnraja.tuya.zigbee" >> $GITHUB_STEP_SUMMARY
+          echo "**Status:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "🔗 [View on Homey Dashboard](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee)" >> $GITHUB_STEP_SUMMARY

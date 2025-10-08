@@ -1,0 +1,53 @@
+name: Homey App Store (Official Actions)
+
+on:
+  push:
+    branches: [master, main]
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install Dependencies
+        run: npm ci || npm install
+      
+      - name: Validate App
+        uses: athombv/github-action-homey-app-validate@master
+        with:
+          homey-token: ${{ secrets.HOMEY_TOKEN }}
+          level: publish
+      
+      - name: Update Version
+        uses: athombv/github-action-homey-app-update-version@master
+        with:
+          homey-token: ${{ secrets.HOMEY_TOKEN }}
+          version-type: patch
+      
+      - name: Publish to Homey App Store
+        uses: athombv/github-action-homey-app-publish@master
+        with:
+          homey-token: ${{ secrets.HOMEY_TOKEN }}
+          changelog: SDK3 compliance + workflow fixes
+      
+      - name: Summary
+        if: always()
+        run: |
+          echo "## 📊 Publication Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**App:** Universal Tuya Zigbee" >> $GITHUB_STEP_SUMMARY
+          echo "**ID:** com.dlnraja.tuya.zigbee" >> $GITHUB_STEP_SUMMARY
+          echo "**Status:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "🔗 [Dashboard](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee)" >> $GITHUB_STEP_SUMMARY

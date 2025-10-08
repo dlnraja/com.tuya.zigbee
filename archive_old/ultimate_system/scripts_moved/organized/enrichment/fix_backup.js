@@ -1,1 +1,0 @@
-const fs=require("fs");if(!fs.existsSync("./backup"))fs.mkdirSync("./backup",{recursive:true});console.log("✅ BACKUP OK");
