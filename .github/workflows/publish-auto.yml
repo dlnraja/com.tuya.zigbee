@@ -40,6 +40,9 @@ jobs:
       - name: 📝 Generate Changelog from Commits
         id: changelog
         run: |
+          # Source sanitization functions
+          source .github/scripts/sanitize.sh
+          
           # Get commits since last tag or last 5 commits
           LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
           
@@ -56,10 +59,10 @@ jobs:
             COMMITS="Bug fixes and improvements"
           fi
           
-          # Join commits with semicolons, remove problematic characters
-          CHANGELOG=$(echo "$COMMITS" | tr '\n' ';' | sed 's/;$//' | sed 's/;/; /g' | head -c 400)
+          # Sanitize for Homey changelog (400 chars max)
+          CHANGELOG=$(sanitize_homey_changelog "$COMMITS" 400)
           
-          # Save to output (single line, no special chars)
+          # Save to output (safe format)
           echo "changelog=$CHANGELOG" >> $GITHUB_OUTPUT
           
           # Display in summary
