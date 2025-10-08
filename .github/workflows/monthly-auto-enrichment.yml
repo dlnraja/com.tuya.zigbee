@@ -54,6 +54,14 @@ jobs:
         # Run the monthly orchestrator
         node scripts/MONTHLY_AUTO_ENRICHMENT_ORCHESTRATOR.js
         
+    - name: Validate Images
+      run: |
+        echo "🖼️  VALIDATING IMAGES"
+        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        
+        # Run image validator
+        node scripts/ULTIMATE_IMAGE_VALIDATOR.js || echo "⚠️  Image validation warnings (non-blocking)"
+        
     - name: Check for Changes
       id: check_changes
       run: |
