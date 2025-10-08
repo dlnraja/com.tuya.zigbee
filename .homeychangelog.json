@@ -50,5 +50,8 @@
   },
   "2.0.8": {
     "en": "fix: désactivation complète GitHub Pages + correction gitignore"
+  },
+  "2.0.9": {
+    "en": "fix: désactivation workflows obsolètes (renamed .disabled)"
   }
 }
