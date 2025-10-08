@@ -1,4 +1,4 @@
-name: Homey App Store Auto-Publish
+name: Homey App Store Auto-Publish with Draft→Test Promotion
 
 on:
   push:
@@ -77,16 +77,77 @@ jobs:
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
       
+      - name: Extract Build ID and Auto-Promote to Test
+        id: promote
+        continue-on-error: true
+        shell: bash
+        run: |
+          set +e
+          
+          echo "📋 Waiting for build to be registered..."
+          sleep 5
+          
+          echo "🔍 Fetching latest build from Homey API..."
+          RESPONSE=$(curl -s -H "Authorization: Bearer ${{ secrets.HOMEY_PAT }}" \
+            "https://api.developer.homey.app/app/com.dlnraja.tuya.zigbee/builds" 2>/dev/null || echo "")
+          
+          BUILD_ID=""
+          if [ ! -z "$RESPONSE" ]; then
+            BUILD_ID=$(echo "$RESPONSE" | grep -o '"id":[0-9]*' 2>/dev/null | head -1 | grep -o '[0-9]*' 2>/dev/null || echo "")
+          fi
+          
+          if [ ! -z "$BUILD_ID" ] && [ "$BUILD_ID" -gt 0 ] 2>/dev/null; then
+            echo "BUILD_ID=$BUILD_ID" >> $GITHUB_OUTPUT
+            echo "✅ Build ID extracted: $BUILD_ID"
+            
+            echo "🚀 Promoting Build #$BUILD_ID to Test channel..."
+            PROMO_RESPONSE=$(curl -s -X POST \
+              -H "Authorization: Bearer ${{ secrets.HOMEY_PAT }}" \
+              -H "Content-Type: application/json" \
+              -w "\n%{http_code}" \
+              "https://api.developer.homey.app/app/com.dlnraja.tuya.zigbee/build/$BUILD_ID/promote" \
+              -d '{"target": "test"}' 2>/dev/null || echo "")
+            
+            HTTP_CODE=$(echo "$PROMO_RESPONSE" | tail -n1 2>/dev/null || echo "0")
+            
+            if [ "$HTTP_CODE" = "200" ] || [ "$HTTP_CODE" = "201" ]; then
+              echo "✅ Build #$BUILD_ID promoted to TEST successfully!"
+              echo "🔗 Test URL: https://homey.app/a/com.dlnraja.tuya.zigbee/test/"
+              echo "PROMOTED=true" >> $GITHUB_OUTPUT
+            else
+              echo "⚠️ Promotion returned status: $HTTP_CODE"
+              echo "💡 Manual promotion may be needed"
+              echo "PROMOTED=false" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "BUILD_ID=" >> $GITHUB_OUTPUT
+            echo "PROMOTED=false" >> $GITHUB_OUTPUT
+            echo "⚠️ Could not extract Build ID"
+            echo "💡 Check dashboard: https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee"
+          fi
+          
+          exit 0
+      
       - name: Summary
         run: |
           echo "## 📊 Publication Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "- **Version:** ${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Status:** Draft (ready for Test promotion)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Build ID:** ${{ steps.promote.outputs.BUILD_ID }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Auto-Promoted:** ${{ steps.promote.outputs.PROMOTED }}" >> $GITHUB_STEP_SUMMARY
           echo "- **Management URL:** ${{ steps.publish.outputs.url }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🔗 Links" >> $GITHUB_STEP_SUMMARY
+          echo "- **Dashboard:** https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee" >> $GITHUB_STEP_SUMMARY
+          echo "- **Test URL:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
           echo "### 🎯 Next Steps" >> $GITHUB_STEP_SUMMARY
-          echo "1. Go to [Dashboard](${{ steps.publish.outputs.url }})" >> $GITHUB_STEP_SUMMARY
-          echo "2. Click 'Promote to Test' to make it available for testing" >> $GITHUB_STEP_SUMMARY
-          echo "3. Test URL will be: https://homey.app/a/com.dlnraja.tuya.zigbee/test/" >> $GITHUB_STEP_SUMMARY
-          echo "4. When ready, submit for certification to go Live" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.promote.outputs.PROMOTED }}" = "true" ]; then
+            echo "1. ✅ Build automatically promoted to Test" >> $GITHUB_STEP_SUMMARY
+            echo "2. Test the app from the Test URL above" >> $GITHUB_STEP_SUMMARY
+            echo "3. When ready, promote to Live from dashboard" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "1. Go to [Dashboard](${{ steps.publish.outputs.url }})" >> $GITHUB_STEP_SUMMARY
+            echo "2. Manually promote Build #${{ steps.promote.outputs.BUILD_ID }} to Test" >> $GITHUB_STEP_SUMMARY
+            echo "3. Test and then promote to Live when ready" >> $GITHUB_STEP_SUMMARY
+          fi
