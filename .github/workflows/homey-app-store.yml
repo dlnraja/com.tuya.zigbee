@@ -11,19 +11,23 @@ jobs:
     
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
         
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           
       - name: Install Homey CLI
         run: npm install -g homey
         
       - name: Login to Homey
+        env:
+          HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
         run: |
-          echo "${{ secrets.HOMEY_TOKEN }}" | homey login --token
+          homey login --bearer $HOMEY_TOKEN
           
       - name: Validate app
         run: homey app validate --level=publish
@@ -31,33 +35,49 @@ jobs:
       - name: Publish app (creates Draft build)
         id: publish
         run: |
-          BUILD_OUTPUT=$(homey app publish 2>&1)
-          echo "$BUILD_OUTPUT"
-          BUILD_ID=$(echo "$BUILD_OUTPUT" | grep -oP 'Build #\K[0-9]+' || echo "")
+          BUILD_OUTPUT=$(homey app publish 2>&1 | tee /dev/tty)
+          BUILD_ID=$(echo "$BUILD_OUTPUT" | grep -oP 'App version \d+\.\d+\.\d+ has been published\. Build ID: \K\d+' || echo "")
+          if [ -z "$BUILD_ID" ]; then
+            BUILD_ID=$(echo "$BUILD_OUTPUT" | grep -oP 'Build #\K[0-9]+' || echo "")
+          fi
           if [ -z "$BUILD_ID" ]; then
             echo "❌ Failed to extract build ID"
+            echo "Output was: $BUILD_OUTPUT"
             exit 1
           fi
           echo "BUILD_ID=$BUILD_ID" >> $GITHUB_OUTPUT
           echo "✅ Build #$BUILD_ID created (Draft)"
           
       - name: Auto-promote Draft to Test
+        env:
+          HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
         run: |
           BUILD_ID="${{ steps.publish.outputs.BUILD_ID }}"
           echo "🚀 Promoting Build #$BUILD_ID from Draft to Test..."
           
           # Use Homey API to promote build
-          curl -X POST \
-            -H "Authorization: Bearer ${{ secrets.HOMEY_TOKEN }}" \
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
+            -H "Authorization: Bearer $HOMEY_TOKEN" \
             -H "Content-Type: application/json" \
             "https://api.developer.homey.app/app/com.dlnraja.tuya.zigbee/build/$BUILD_ID/promote" \
-            -d '{"target": "test"}'
+            -d '{"target": "test"}')
           
-          echo "✅ Build #$BUILD_ID promoted to Test"
+          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+          
+          if [ "$HTTP_CODE" -eq 200 ] || [ "$HTTP_CODE" -eq 201 ]; then
+            echo "✅ Build #$BUILD_ID promoted to Test successfully"
+          else
+            echo "⚠️ API returned status $HTTP_CODE"
+            echo "Response: $BODY"
+            echo "Note: Build may still be promoted, check dashboard"
+          fi
           
       - name: Summary
         run: |
-          echo "📊 Publication Summary:"
-          echo "  - Build ID: ${{ steps.publish.outputs.BUILD_ID }}"
-          echo "  - Status: Test (auto-promoted)"
-          echo "  - URL: https://homey.app/a/com.dlnraja.tuya.zigbee/test/"
+          echo "## 📊 Publication Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Build ID:** ${{ steps.publish.outputs.BUILD_ID }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Status:** Test (auto-promoted)" >> $GITHUB_STEP_SUMMARY
+          echo "- **URL:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/" >> $GITHUB_STEP_SUMMARY
+          echo "- **Dashboard:** https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee" >> $GITHUB_STEP_SUMMARY
