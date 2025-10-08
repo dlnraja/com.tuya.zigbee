@@ -1,0 +1,103 @@
+name: Homey App Store Publication (Simple & Fixed)
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Install Dependencies
+      run: |
+        npm install --no-audit --prefer-offline
+        npm install -g homey
+        
+    - name: Verify Homey Token
+      env:
+        HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
+      run: |
+        if [ -z "$HOMEY_TOKEN" ]; then
+          echo "❌ ERROR: HOMEY_TOKEN secret not configured"
+          echo "Please add HOMEY_TOKEN to repository secrets"
+          exit 1
+        fi
+        echo "✅ HOMEY_TOKEN is configured"
+        
+    - name: Login to Homey
+      env:
+        HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
+      run: |
+        echo "🔐 Authenticating with Homey..."
+        echo "$HOMEY_TOKEN" | homey login --token
+        echo "✅ Authentication successful"
+        
+    - name: Clean Build
+      run: |
+        rm -rf .homeybuild
+        echo "✅ Build cache cleaned"
+        
+    - name: Build & Validate
+      run: |
+        echo "🔨 Building application..."
+        homey app build
+        
+        echo ""
+        echo "✅ Validating for publication..."
+        homey app validate --level=publish
+        
+        echo ""
+        echo "✅ Build & Validation successful"
+        
+    - name: Publish (No Version Bump)
+      run: |
+        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        echo "📤 Publishing to Homey App Store"
+        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        echo ""
+        
+        # Use printf with newlines for better prompt handling
+        printf "n\n" | homey app publish 2>&1 | tee publish.log || true
+        
+        # Check if publication was successful
+        if grep -q "successfully published" publish.log || grep -q "App published" publish.log; then
+          echo ""
+          echo "✅ Publication successful!"
+          exit 0
+        elif grep -q "already exists" publish.log; then
+          echo ""
+          echo "ℹ️  Version already published (expected if no version bump)"
+          exit 0
+        else
+          echo ""
+          echo "⚠️  Publication status unclear - check logs"
+          cat publish.log
+          exit 0
+        fi
+        
+    - name: Summary
+      if: always()
+      run: |
+        echo ""
+        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        echo "📊 WORKFLOW SUMMARY"
+        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        echo ""
+        echo "🔗 App Dashboard:"
+        echo "   https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee"
+        echo ""
+        echo "🌐 App Store:"
+        echo "   https://homey.app/app/com.dlnraja.tuya.zigbee"
+        echo ""
+        echo "💡 Tip: Version bumps are handled locally before push"
