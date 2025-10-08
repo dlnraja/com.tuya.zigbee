@@ -47,5 +47,8 @@
   },
   "2.0.7": {
     "en": "feat: système sanitization universel pour caractères spéciaux"
+  },
+  "2.0.8": {
+    "en": "fix: désactivation complète GitHub Pages + correction gitignore"
   }
 }
