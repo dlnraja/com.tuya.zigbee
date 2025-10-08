@@ -2,7 +2,7 @@
   "name": {
     "en": "Dimmer Switch 1-Gang AC"
   },
-  "class": "socket",
+  "class": "light",
   "capabilities": [
     "onoff",
     "dim"

@@ -2,7 +2,7 @@
   "name": {
     "en": "Switch 3-Gang Battery CR2450"
   },
-  "class": "socket",
+  "class": "sensor",
   "capabilities": [
     "onoff",
     "onoff.gang2",

@@ -2,7 +2,7 @@
   "name": {
     "en": "Doorbell"
   },
-  "class": "other",
+  "class": "sensor",
   "capabilities": [
     "locked",
     "measure_battery",

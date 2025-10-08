@@ -2,7 +2,7 @@
   "name": {
     "en": "Switch 2-Gang Hybrid AC/DC"
   },
-  "class": "socket",
+  "class": "sensor",
   "capabilities": [
     "onoff",
     "onoff.gang2"

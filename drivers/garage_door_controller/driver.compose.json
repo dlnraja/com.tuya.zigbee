@@ -2,7 +2,7 @@
   "name": {
     "en": "Garage Door Controller"
   },
-  "class": "other",
+  "class": "sensor",
   "capabilities": [
     "garagedoor_closed",
     "button.open",

@@ -2,7 +2,7 @@
   "name": {
     "en": "Curtain Motor"
   },
-  "class": "windowcoverings",
+  "class": "sensor",
   "capabilities": [
     "windowcoverings_state",
     "dim",
