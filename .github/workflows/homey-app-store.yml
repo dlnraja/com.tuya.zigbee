@@ -8,6 +8,8 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     
     steps:
       - name: Checkout code
@@ -19,6 +21,54 @@ jobs:
         uses: athombv/github-action-homey-app-validate@master
         with:
           level: publish
+      
+      - name: Generate User-Friendly Changelog
+        id: changelog
+        run: |
+          # Get last commit message
+          LAST_COMMIT=$(git log -1 --pretty=format:"%s")
+          
+          # Convert technical commit to user-friendly message
+          if echo "$LAST_COMMIT" | grep -iE "^feat"; then
+            CHANGELOG="New features and improvements"
+          elif echo "$LAST_COMMIT" | grep -iE "^fix"; then
+            CHANGELOG="Bug fixes and stability improvements"
+          elif echo "$LAST_COMMIT" | grep -iE "device|manufacturer|id"; then
+            CHANGELOG="Added support for new devices and improved compatibility"
+          elif echo "$LAST_COMMIT" | grep -iE "image|visual"; then
+            CHANGELOG="Updated device icons and visual improvements"
+          elif echo "$LAST_COMMIT" | grep -iE "workflow|action"; then
+            CHANGELOG="System improvements and optimizations"
+          else
+            CHANGELOG="Performance and stability improvements"
+          fi
+          
+          # Sanitize special characters (max 400 chars for Homey)
+          CHANGELOG=$(echo "$CHANGELOG" | tr -d '\r\n' | head -c 400)
+          
+          echo "changelog=$CHANGELOG" >> $GITHUB_OUTPUT
+          echo "Generated changelog: $CHANGELOG"
+      
+      - name: Auto-Increment Version
+        uses: athombv/github-action-homey-app-version@master
+        id: version
+        with:
+          version: patch
+          changelog: ${{ steps.changelog.outputs.changelog }}
+      
+      - name: Commit Version Bump
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "chore: bump version to v${{ steps.version.outputs.version }} [skip ci]"
+            git push origin HEAD
+            echo "✅ Version bumped to ${{ steps.version.outputs.version }}"
+          else
+            echo "ℹ️ No version changes"
+          fi
         
       - name: Publish Homey App
         uses: athombv/github-action-homey-app-publish@master
