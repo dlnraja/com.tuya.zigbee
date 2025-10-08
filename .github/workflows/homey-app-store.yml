@@ -70,41 +70,36 @@ jobs:
             echo "ℹ️ No version changes"
           fi
         
-      - name: Publish Homey App
+      - name: Publish Homey App and Extract Build ID
         uses: athombv/github-action-homey-app-publish@master
         id: publish
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
       
-      - name: Extract Build ID from Publish URL
+      - name: Get Build ID from Dashboard
         id: extract_build
         run: |
-          # The official action returns URL in format: .../build/XX
-          URL="${{ steps.publish.outputs.url }}"
-          echo "📋 Full URL from action: $URL"
+          echo "📋 Fetching latest build from Homey API..."
           
-          # Extract Build ID from URL path
-          if [[ "$URL" =~ /build/([0-9]+) ]]; then
-            BUILD_ID="${BASH_REMATCH[1]}"
-            echo "✅ Build ID extracted from URL: $BUILD_ID"
+          # Wait 2 seconds for build to be registered
+          sleep 2
+          
+          # Get all builds and extract the most recent ID
+          RESPONSE=$(curl -s -H "Authorization: Bearer ${{ secrets.HOMEY_PAT }}" \
+            "https://api.developer.homey.app/app/com.dlnraja.tuya.zigbee/builds")
+          
+          # Extract first build ID (most recent)
+          BUILD_ID=$(echo "$RESPONSE" | grep -o '"id":[0-9]*' | head -1 | grep -o '[0-9]*')
+          
+          if [ -n "$BUILD_ID" ] && [ "$BUILD_ID" -gt 0 ]; then
             echo "BUILD_ID=$BUILD_ID" >> $GITHUB_OUTPUT
+            echo "✅ Build ID: $BUILD_ID"
+            echo "🔗 URL: https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee/build/$BUILD_ID"
           else
-            # Fallback: Get latest build from API
-            echo "⚠️  URL doesn't contain build ID, trying API..."
-            RESPONSE=$(curl -s -H "Authorization: Bearer ${{ secrets.HOMEY_PAT }}" \
-              "https://api.developer.homey.app/app/com.dlnraja.tuya.zigbee/builds")
-            
-            # Parse JSON to get first build ID
-            BUILD_ID=$(echo "$RESPONSE" | grep -oP '"id":\s*\K\d+' | head -1)
-            
-            if [ -n "$BUILD_ID" ]; then
-              echo "✅ Build ID from API: $BUILD_ID"
-              echo "BUILD_ID=$BUILD_ID" >> $GITHUB_OUTPUT
-            else
-              echo "❌ Could not extract Build ID"
-              echo "BUILD_ID=" >> $GITHUB_OUTPUT
-              exit 1
-            fi
+            echo "⚠️ Could not extract Build ID, manual promotion required"
+            echo "BUILD_ID=" >> $GITHUB_OUTPUT
+            echo "🔗 Check: https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee"
+            # Don't exit 1, just skip promotion
           fi
           
       - name: Auto-promote Draft to Test
