@@ -87,6 +87,13 @@ jobs:
         echo ""
         echo "✅ Build & Validation successful"
         
+    - name: Auto-commit any changes
+      run: |
+        git config user.name "GitHub Actions Bot"
+        git config user.email "actions@github.com"
+        git add -A
+        git diff --staged --quiet || git commit -m "chore: auto-commit before publish" || true
+        
     - name: Publish (No Version Bump)
       run: |
         echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
@@ -95,7 +102,7 @@ jobs:
         echo ""
         
         # Use printf with newlines for better prompt handling
-        printf "n\n" | homey app publish 2>&1 | tee publish.log || true
+        printf "y\nn\n" | homey app publish 2>&1 | tee publish.log || true
         
         # Check if publication was successful
         if grep -q "successfully published" publish.log || grep -q "App published" publish.log; then
