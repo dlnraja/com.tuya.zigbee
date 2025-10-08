@@ -1,0 +1,1439 @@
+{
+  "timestamp": "2025-10-08T04:19:41.160Z",
+  "webSources": [
+    "zigbee2mqtt",
+    "herdsman",
+    "zha",
+    "blakadder"
+  ],
+  "webDataSize": {
+    "manufacturerIds": 0,
+    "productIds": 2
+  },
+  "validation": {
+    "total": 163,
+    "validated": 163,
+    "verified": 0,
+    "warnings": 43,
+    "recommendations": 163
+  },
+  "details": {
+    "warnings": [
+      {
+        "driver": "curtain_motor",
+        "type": "CAPABILITY_UNEXPECTED",
+        "expected": [
+          "windowcoverings_state"
+        ],
+        "found": [
+          "onoff",
+          "windowcoverings_set",
+          "windowcoverings_tilt_set"
+        ]
+      },
+      {
+        "driver": "door_controller",
+        "type": "CLASS_UNEXPECTED",
+        "expected": [
+          "sensor"
+        ],
+        "found": "curtain"
+      },
+      {
+        "driver": "door_lock",
+        "type": "CLASS_UNEXPECTED",
+        "expected": [
+          "sensor"
+        ],
+        "found": "lock"
+      },
+      {
+        "driver": "doorbell",
+        "type": "CLASS_UNEXPECTED",
+        "expected": [
+          "sensor"
+        ],
+        "found": "doorbell"
+      },
+      {
+        "driver": "fan_controller",
+        "type": "CAPABILITY_UNEXPECTED",
+        "expected": [
+          "windowcoverings_state"
+        ],
+        "found": [
+          "onoff",
+          "dim"
+        ]
+      },
+      {
+        "driver": "garage_door_controller",
+        "type": "CLASS_UNEXPECTED",
+        "expected": [
+          "sensor"
+        ],
+        "found": "curtain"
+      },
+      {
+        "driver": "humidity_controller",
+        "type": "CLASS_UNEXPECTED",
+        "expected": [
+          "sensor"
+        ],
+        "found": "curtain"
+      },
+      {
+        "driver": "hvac_controller",
+        "type": "CAPABILITY_UNEXPECTED",
+        "expected": [
+          "windowcoverings_state"
+        ],
+        "found": [
+          "target_temperature",
+          "measure_temperature"
+        ]
+      },
+      {
+        "driver": "led_strip_controller",
+        "type": "CAPABILITY_UNEXPECTED",
+        "expected": [
+          "windowcoverings_state"
+        ],
+        "found": [
+          "onoff",
+          "dim",
+          "light_hue"
+        ]
+      },
+      {
+        "driver": "led_strip_controller_pro",
+        "type": "CAPABILITY_UNEXPECTED",
+        "expected": [
+          "windowcoverings_state"
+        ],
+        "found": [
+          "onoff",
+          "measure_temperature",
+          "dim"
+        ]
+      },
+      {
+        "driver": "outdoor_light_controller",
+        "type": "CLASS_UNEXPECTED",
+        "expected": [
+          "sensor"
+        ],
+        "found": "light"
+      },
+      {
+        "driver": "outdoor_siren",
+        "type": "CLASS_UNEXPECTED",
+        "expected": [
+          "sensor"
+        ],
+        "found": "other"
+      },
+      {
+        "driver": "pool_pump_controller",
+        "type": "CAPABILITY_UNEXPECTED",
+        "expected": [
+          "windowcoverings_state"
+        ],
+        "found": [
+          "onoff",
+          "measure_power",
+          "measure_current"
+        ]
+      },
+      {
+        "driver": "projector_screen_controller",
+        "type": "CAPABILITY_UNEXPECTED",
+        "expected": [
+          "windowcoverings_state"
+        ],
+        "found": [
+          "onoff"
+        ]
+      },
+      {
+        "driver": "radiator_valve",
+        "type": "CAPABILITY_UNEXPECTED",
+        "expected": [
+          "target_temperature"
+        ],
+        "found": [
+          "measure_battery",
+          "onoff"
+        ]
+      },
+      {
+        "driver": "rgb_led_controller",
+        "type": "CLASS_UNEXPECTED",
+        "expected": [
+          "curtain"
+        ],
+        "found": "light"
+      },
+      {
+        "driver": "rgb_led_controller",
+        "type": "CAPABILITY_UNEXPECTED",
+        "expected": [
+          "windowcoverings_state"
+        ],
+        "found": [
+          "onoff",
+          "dim",
+          "light_hue"
+        ]
+      },
+      {
+        "driver": "scene_controller",
+        "type": "CLASS_UNEXPECTED",
+        "expected": [
+          "curtain"
+        ],
+        "found": "button"
+      },
+      {
+        "driver": "scene_controller",
+        "type": "CAPABILITY_UNEXPECTED",
+        "expected": [
+          "windowcoverings_state"
+        ],
+        "found": [
+          "onoff"
+        ]
+      },
+      {
+        "driver": "scene_controller_2button",
+        "type": "CLASS_UNEXPECTED",
+        "expected": [
+          "curtain"
+        ],
+        "found": "button"
+      },
+      {
+        "driver": "scene_controller_2button",
+        "type": "CAPABILITY_UNEXPECTED",
+        "expected": [
+          "windowcoverings_state"
+        ],
+        "found": [
+          "onoff",
+          "button.2",
+          "measure_battery"
+        ]
+      },
+      {
+        "driver": "scene_controller_4button",
+        "type": "CLASS_UNEXPECTED",
+        "expected": [
+          "curtain"
+        ],
+        "found": "button"
+      },
+      {
+        "driver": "scene_controller_4button",
+        "type": "PRODUCT_ID_UNEXPECTED",
+        "expected": [
+          "TS0601"
+        ],
+        "found": [
+          "TS004",
+          "TS0041",
+          "TS0041A"
+        ]
+      },
+      {
+        "driver": "scene_controller_4button",
+        "type": "CAPABILITY_UNEXPECTED",
+        "expected": [
+          "windowcoverings_state"
+        ],
+        "found": [
+          "onoff",
+          "button.2",
+          "button.3"
+        ]
+      },
+      {
+        "driver": "scene_controller_6button",
+        "type": "CLASS_UNEXPECTED",
+        "expected": [
+          "curtain"
+        ],
+        "found": "button"
+      },
+      {
+        "driver": "scene_controller_6button",
+        "type": "CAPABILITY_UNEXPECTED",
+        "expected": [
+          "windowcoverings_state"
+        ],
+        "found": [
+          "onoff",
+          "button.2",
+          "button.3"
+        ]
+      },
+      {
+        "driver": "scene_controller_8button",
+        "type": "CLASS_UNEXPECTED",
+        "expected": [
+          "curtain"
+        ],
+        "found": "button"
+      },
+      {
+        "driver": "scene_controller_8button",
+        "type": "CAPABILITY_UNEXPECTED",
+        "expected": [
+          "windowcoverings_state"
+        ],
+        "found": [
+          "onoff",
+          "button.2",
+          "button.3"
+        ]
+      },
+      {
+        "driver": "scene_controller_battery",
+        "type": "CLASS_UNEXPECTED",
+        "expected": [
+          "curtain"
+        ],
+        "found": "button"
+      },
+      {
+        "driver": "scene_controller_battery",
+        "type": "CAPABILITY_UNEXPECTED",
+        "expected": [
+          "windowcoverings_state"
+        ],
+        "found": [
+          "onoff"
+        ]
+      },
+      {
+        "driver": "shade_controller",
+        "type": "CAPABILITY_UNEXPECTED",
+        "expected": [
+          "windowcoverings_state"
+        ],
+        "found": [
+          "onoff"
+        ]
+      },
+      {
+        "driver": "smart_bulb_dimmer",
+        "type": "PRODUCT_ID_UNEXPECTED",
+        "expected": [
+          "TS0501B",
+          "TS0502B",
+          "TS0503B",
+          "TS0505B",
+          "TS0001",
+          "TS0011"
+        ],
+        "found": [
+          "TS0601",
+          "TS0901",
+          "TS0603"
+        ]
+      },
+      {
+        "driver": "smart_doorbell",
+        "type": "CLASS_UNEXPECTED",
+        "expected": [
+          "sensor"
+        ],
+        "found": "doorbell"
+      },
+      {
+        "driver": "smart_irrigation_controller",
+        "type": "CAPABILITY_UNEXPECTED",
+        "expected": [
+          "windowcoverings_state"
+        ],
+        "found": [
+          "onoff",
+          "measure_water",
+          "alarm_water"
+        ]
+      },
+      {
+        "driver": "smart_valve_controller",
+        "type": "CLASS_UNEXPECTED",
+        "expected": [
+          "thermostat"
+        ],
+        "found": "curtain"
+      },
+      {
+        "driver": "smart_valve_controller",
+        "type": "CAPABILITY_UNEXPECTED",
+        "expected": [
+          "target_temperature"
+        ],
+        "found": [
+          "onoff",
+          "measure_battery"
+        ]
+      },
+      {
+        "driver": "smart_water_valve",
+        "type": "CLASS_UNEXPECTED",
+        "expected": [
+          "thermostat"
+        ],
+        "found": "other"
+      },
+      {
+        "driver": "solar_panel_controller",
+        "type": "CAPABILITY_UNEXPECTED",
+        "expected": [
+          "windowcoverings_state"
+        ],
+        "found": [
+          "measure_power",
+          "measure_voltage",
+          "measure_current"
+        ]
+      },
+      {
+        "driver": "temperature_controller",
+        "type": "CLASS_UNEXPECTED",
+        "expected": [
+          "sensor"
+        ],
+        "found": "curtain"
+      },
+      {
+        "driver": "touch_dimmer",
+        "type": "PRODUCT_ID_UNEXPECTED",
+        "expected": [
+          "TS0501B",
+          "TS0502B",
+          "TS0503B",
+          "TS0505B",
+          "TS0001",
+          "TS0011"
+        ],
+        "found": [
+          "TS0601",
+          "TS0603",
+          "TS0726"
+        ]
+      },
+      {
+        "driver": "water_valve",
+        "type": "CLASS_UNEXPECTED",
+        "expected": [
+          "thermostat"
+        ],
+        "found": "other"
+      },
+      {
+        "driver": "water_valve_smart",
+        "type": "CLASS_UNEXPECTED",
+        "expected": [
+          "thermostat"
+        ],
+        "found": "other"
+      },
+      {
+        "driver": "water_valve_smart",
+        "type": "CAPABILITY_UNEXPECTED",
+        "expected": [
+          "target_temperature"
+        ],
+        "found": [
+          "onoff",
+          "measure_water",
+          "alarm_water"
+        ]
+      }
+    ],
+    "recommendations": [
+      {
+        "driver": "air_quality_monitor",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "air_quality_monitor_pro",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "ceiling_fan",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "ceiling_light_controller",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "ceiling_light_rgb",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "climate_monitor",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "co2_sensor",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "co2_temp_humidity",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "co_detector_pro",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "comprehensive_air_monitor",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "curtain_motor",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "dimmer",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "dimmer_switch_1gang_ac",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "dimmer_switch_3gang_ac",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "dimmer_switch_timer_module",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "door_controller",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "door_lock",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "door_window_sensor",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "doorbell",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "energy_monitoring_plug",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "energy_monitoring_plug_advanced",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "energy_plug_advanced",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "extension_plug",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "fan_controller",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "fingerprint_lock",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "formaldehyde_sensor",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "garage_door_controller",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "garage_door_opener",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "gas_detector",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "humidity_controller",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "hvac_controller",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "led_strip_advanced",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "led_strip_controller",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "led_strip_controller_pro",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "lux_sensor",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "milight_controller",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "mini",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "mini_switch",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "motion_sensor_battery",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "motion_sensor_mmwave",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "motion_sensor_pir_ac",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "motion_sensor_pir_battery",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "motion_sensor_zigbee_204z",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "multisensor",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "noise_level_sensor",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "outdoor_light_controller",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "outdoor_siren",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "pet_feeder",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "pir_sensor_advanced",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "pm25_detector",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "pm25_sensor",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "pool_pump_controller",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "power_meter_socket",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "presence_sensor_radar",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "pressure_sensor",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "projector_screen_controller",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "radar_motion_sensor_advanced",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "radar_motion_sensor_mmwave",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "radar_motion_sensor_tank_level",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "radiator_valve",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "relay_switch_1gang",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "remote_switch",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "rgb_led_controller",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "roller_blind_controller",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "roller_shutter_controller",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "roller_shutter_switch",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "roller_shutter_switch_advanced",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "scene_controller",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "scene_controller_2button",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "scene_controller_4button",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "scene_controller_6button",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "scene_controller_8button",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "scene_controller_battery",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "shade_controller",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smart_bulb_dimmer",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smart_bulb_rgb",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smart_bulb_tunable",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smart_bulb_white",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smart_curtain_motor",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smart_dimmer_module_1gang",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smart_doorbell",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smart_garden_sprinkler",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smart_irrigation_controller",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smart_lock",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smart_outlet_monitor",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smart_plug",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smart_plug_energy",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smart_radiator_valve",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smart_smoke_detector_advanced",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smart_spot",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smart_switch_1gang_ac",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smart_switch_1gang_hybrid",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smart_switch_2gang_ac",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smart_switch_2gang_hybrid",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smart_switch_3gang_ac",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smart_switch_3gang_hybrid",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smart_switch_4gang_hybrid",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smart_thermostat",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smart_valve_controller",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smart_water_valve",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smoke_detector",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smoke_detector_temp_humidity_advanced",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "smoke_temp_humid_sensor",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "soil_moisture_sensor",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "soil_moisture_temperature_sensor",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "soil_tester_temp_humid",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "solar_panel_controller",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "sos_emergency_button",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "switch_1gang_battery",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "switch_2gang_ac",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "switch_2gang_hybrid",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "switch_3gang_battery",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "switch_4gang_ac",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "switch_4gang_battery_cr2032",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "switch_5gang_battery",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "switch_6gang_ac",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "switch_8gang_ac",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "tank_level_monitor",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "temp_humid_sensor_advanced",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "temp_humid_sensor_leak_detector",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "temp_humid_sensor_v1w2k9dd",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "temp_sensor_pro",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "temperature_controller",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "temperature_humidity_sensor",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "temperature_sensor",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "temperature_sensor_advanced",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "thermostat",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "touch_dimmer",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "touch_dimmer_1gang",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "touch_switch_1gang",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "touch_switch_2gang",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "touch_switch_3gang",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "touch_switch_4gang",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "tvoc_sensor",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "tvoc_sensor_advanced",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "usb_outlet",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "usb_outlet_advanced",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "vibration_sensor",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "wall_switch_1gang_ac",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "wall_switch_1gang_dc",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "wall_switch_2gang_ac",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "wall_switch_2gang_dc",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "wall_switch_3gang_ac",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "wall_switch_3gang_dc",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "wall_switch_4gang_ac",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "wall_switch_4gang_dc",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "wall_switch_5gang_ac",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "wall_switch_6gang_ac",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "water_leak_detector_advanced",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "water_leak_detector_sq510a",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "water_leak_sensor",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "water_valve",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "water_valve_smart",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "wireless_switch",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "wireless_switch_1gang_cr2032",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "wireless_switch_2gang_cr2032",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "wireless_switch_3gang_cr2032",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "wireless_switch_4gang_cr2032",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "wireless_switch_4gang_cr2450",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "wireless_switch_5gang_cr2032",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "wireless_switch_6gang_cr2032",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "zbbridge",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      },
+      {
+        "driver": "zigbee_gateway_hub",
+        "type": "LOW_VALIDATION_RATE",
+        "rate": 0,
+        "suggestion": "Consider reviewing manufacturer IDs against zigbee-herdsman-converters"
+      }
+    ],
+    "verified": []
+  }
+}
