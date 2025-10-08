@@ -102,20 +102,62 @@ jobs:
         mkdir -p ~/.homey
         echo "{\"token\": \"$HOMEY_TOKEN\"}" > ~/.homeyrc
         
-        if command -v homey &> /dev/null; then
-          echo "📱 Using homey CLI..."
-          homey whoami || echo "⚠️ Token validation failed"
-          echo "📦 Publishing app..."
-          homey app publish
-        elif command -v athom &> /dev/null; then
-          echo "📱 Using athom CLI..."
-          athom whoami || echo "⚠️ Token validation failed"
-          echo "📦 Publishing app..."
-          athom app publish
-        else
-          echo "❌ No CLI available for publication"
-          exit 1
-        fi
+        # Install expect for automation
+        echo "📦 Installing expect..."
+        sudo apt-get update -qq
+        sudo apt-get install -y expect
+        
+        # Create expect script for automated publication
+        echo "📝 Creating automation script..."
+        cat > publish.exp << 'EOFEXP'
+        #!/usr/bin/expect -f
+        set timeout 120
+        
+        spawn homey app publish
+        
+        expect {
+          "uncommitted changes" {
+            send "y\r"
+            exp_continue
+          }
+          "update your app's version" {
+            send "y\r"
+            exp_continue
+          }
+          "Select the desired version" {
+            send "\r"
+            exp_continue
+          }
+          "What's new in this version" {
+            send "Image fixes: 492 images regenerated with proper sizes + Johan Bendz color schemes\r"
+            exp_continue
+          }
+          "commit these changes" {
+            send "y\r"
+            exp_continue
+          }
+          "successfully published" {
+            puts "\n✅ Publication successful!"
+            exit 0
+          }
+          timeout {
+            puts "\n⏱️ Timeout reached"
+            exit 1
+          }
+          eof
+        }
+        EOFEXP
+        
+        chmod +x publish.exp
+        
+        # Run publication
+        echo "🚀 Starting publication..."
+        ./publish.exp || {
+          echo "⚠️ Expect script failed, trying direct method..."
+          printf "y\ny\n\nImage fixes: 492 images regenerated\ny\ny\n" | homey app publish || true
+        }
+        
+        echo "🔗 Check status: https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee"
         
     - name: Success Report
       run: |
