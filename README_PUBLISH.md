@@ -6,19 +6,28 @@
 
 ## ⚡ Utilisation Simple
 
-### Lancer tout le processus:
+### Lancer le processus unifié:
 
 ```batch
 PUBLISH.bat
 ```
 
-**C'est tout!** Ce script fait automatiquement:
+**Deux modes disponibles:**
 
-1. ✅ **Vérifications** - Node.js, Canvas, structure projet
-2. 🎨 **Génération images** - Build 8-9 avec couleurs Johan Bendz
-3. 🧹 **Nettoyage cache** - `.homeybuild` et `.homeycompose`
-4. ✅ **Validation** - `homey app validate`
-5. 📤 **Git push** - Commit + push vers GitHub
+### Mode 1: QUICK PUBLISH (5 min)
+- ✅ Génération images Build 8-9
+- ✅ Validation Homey
+- ✅ Git push automatique
+
+### Mode 2: FULL ENRICHMENT (30 min)
+- 🐙 GitHub Integration (PRs, Issues, Repos)
+- 🌐 Forum Integration (Homey, Zigbee2MQTT, Blakadder)
+- 🔍 Pattern Analysis
+- 🔬 Ultra-Fine Driver Analysis
+- 🌐 Web Validation
+- 🎨 Smart Images Generation Build 8-9
+- ✅ Validation complète
+- 📤 Git push automatique
 
 Ensuite **GitHub Actions** prend le relais automatiquement!
 

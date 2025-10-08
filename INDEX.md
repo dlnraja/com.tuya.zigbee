@@ -24,12 +24,20 @@ Ce projet est un système complet pour gérer et publier une application Homey a
 PUBLISH.bat
 ```
 
-Ce script fait **TOUT automatiquement**:
-1. ✅ Vérifications (Node.js, Canvas, structure)
-2. 🎨 Génération images (Build 8-9 colors)
-3. 🧹 Nettoyage cache Homey
-4. ✅ Validation application
-5. 📤 Git commit + push
+**Deux modes au choix:**
+
+**[1] QUICK PUBLISH** (5 min)
+- 🎨 Génération images Build 8-9
+- ✅ Validation Homey
+- 📤 Git push
+
+**[2] FULL ENRICHMENT** (30 min)
+- 🐙 Enrichissement GitHub (PRs/Issues)
+- 🌐 Enrichissement Forums (Homey/Zigbee2MQTT/Blakadder)
+- 🔍 Analyse patterns + validation
+- 🎨 Génération images Build 8-9
+- ✅ Validation complète
+- 📤 Git push
 
 Puis **GitHub Actions** publie automatiquement vers Homey App Store!
 

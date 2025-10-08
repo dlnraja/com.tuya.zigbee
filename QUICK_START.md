@@ -6,26 +6,32 @@
 
 ## ⚡ Méthode Rapide (Recommandée)
 
-### Étape 1: Vérification
-```batch
-CHECK_ALL_BEFORE_PUSH.bat
-```
-Ce script vérifie:
-- ✅ Node.js installé
-- ✅ Canvas module présent
-- ✅ Scripts de génération disponibles
-- ✅ Structure du projet correcte
+### Un seul fichier - Deux modes:
 
-### Étape 2: Génération + Publication
 ```batch
-GENERATE_IMAGES_AND_PUBLISH.bat
+PUBLISH.bat
 ```
-Ce script fait TOUT automatiquement:
-1. 🎨 Génère images avec couleurs Build 8-9
+
+**À l'exécution, choisissez:**
+
+### Mode [1] QUICK PUBLISH (5 min)
+Parfait pour publication rapide:
+1. 🎨 Génère images Build 8-9
 2. 🧹 Nettoie le cache Homey
 3. ✅ Valide l'application
 4. 📝 Commit les changements
-5. 🚀 Push vers GitHub (déclenche publication automatique)
+5. 🚀 Push vers GitHub
+
+### Mode [2] FULL ENRICHMENT (30 min)
+Pour enrichissement complet:
+1. 🐙 GitHub Integration (PRs, Issues, Repos)
+2. 🌐 Forum Integration (Homey, Zigbee2MQTT, Blakadder)
+3. 🔍 Pattern Analysis
+4. 🔬 Ultra-Fine Driver Analysis
+5. 🌐 Web Validation
+6. 🎨 Smart Images Generation
+7. ✅ Validation complète
+8. 📤 Git push
 
 ---
 
