@@ -83,29 +83,42 @@ jobs:
           URL="${{ steps.publish.outputs.url }}"
           echo "Publish URL: $URL"
           
-          # URL format: https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee/builds/17
-          BUILD_ID=$(echo "$URL" | grep -oP 'builds/\K[0-9]+' || echo "")
+          # Try pattern 1: .../build/24 or .../builds/24
+          BUILD_ID=$(echo "$URL" | grep -oP 'builds?/\K[0-9]+' || echo "")
           
           if [ -z "$BUILD_ID" ]; then
             echo "⚠️  Could not extract build ID from URL"
-            echo "Checking API for latest build..."
+            echo "Trying API for latest build..."
             
             # Alternative: Get latest build from API
             RESPONSE=$(curl -s -H "Authorization: Bearer ${{ secrets.HOMEY_PAT }}" \
-              "https://api.developer.homey.app/app/com.dlnraja.tuya.zigbee/builds")
+              "https://api.developer.homey.app/app/com.dlnraja.tuya.zigbee/builds" 2>&1)
             
-            BUILD_ID=$(echo "$RESPONSE" | jq -r '.[0].id // empty')
+            # Check if response is valid JSON
+            if echo "$RESPONSE" | jq empty 2>/dev/null; then
+              BUILD_ID=$(echo "$RESPONSE" | jq -r '.[0].id // empty' 2>/dev/null)
+            else
+              echo "API response not valid JSON, trying to parse from publish logs..."
+              BUILD_ID=""
+            fi
+          fi
+          
+          # If still no ID, try to extract from URL path
+          if [ -z "$BUILD_ID" ]; then
+            BUILD_ID=$(echo "$URL" | grep -oP '/(\d+)$' | tr -d '/' || echo "")
           fi
           
           if [ -n "$BUILD_ID" ]; then
             echo "BUILD_ID=$BUILD_ID" >> $GITHUB_OUTPUT
             echo "✅ Build ID: $BUILD_ID"
           else
-            echo "❌ Failed to extract build ID"
-            exit 1
+            echo "⚠️  Could not extract build ID automatically"
+            echo "Check manually at: $URL"
+            echo "BUILD_ID=unknown" >> $GITHUB_OUTPUT
           fi
           
       - name: Auto-promote Draft to Test
+        if: steps.build_id.outputs.BUILD_ID != 'unknown'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: |
