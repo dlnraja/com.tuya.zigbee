@@ -15,49 +15,56 @@ jobs:
         with:
           fetch-depth: 0
         
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Validate Homey App
+        uses: athombv/github-action-homey-app-validate@master
         with:
-          node-version: '20'
-          
-      - name: Install Homey CLI
-        run: npm install -g homey
+          level: publish
         
-      - name: Login to Homey
-        env:
-          HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
-        run: |
-          homey login --bearer $HOMEY_TOKEN
-          
-      - name: Validate app
-        run: homey app validate --level=publish
-        
-      - name: Publish app (creates Draft build)
+      - name: Publish Homey App
+        uses: athombv/github-action-homey-app-publish@master
         id: publish
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+          
+      - name: Extract Build ID
+        id: build_id
         run: |
-          BUILD_OUTPUT=$(homey app publish 2>&1 | tee /dev/tty)
-          BUILD_ID=$(echo "$BUILD_OUTPUT" | grep -oP 'App version \d+\.\d+\.\d+ has been published\. Build ID: \K\d+' || echo "")
+          # Extract build ID from the publish URL
+          URL="${{ steps.publish.outputs.url }}"
+          echo "Publish URL: $URL"
+          
+          # URL format: https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee/builds/17
+          BUILD_ID=$(echo "$URL" | grep -oP 'builds/\K[0-9]+' || echo "")
+          
           if [ -z "$BUILD_ID" ]; then
-            BUILD_ID=$(echo "$BUILD_OUTPUT" | grep -oP 'Build #\K[0-9]+' || echo "")
+            echo "⚠️  Could not extract build ID from URL"
+            echo "Checking API for latest build..."
+            
+            # Alternative: Get latest build from API
+            RESPONSE=$(curl -s -H "Authorization: Bearer ${{ secrets.HOMEY_PAT }}" \
+              "https://api.developer.homey.app/app/com.dlnraja.tuya.zigbee/builds")
+            
+            BUILD_ID=$(echo "$RESPONSE" | jq -r '.[0].id // empty')
           fi
-          if [ -z "$BUILD_ID" ]; then
+          
+          if [ -n "$BUILD_ID" ]; then
+            echo "BUILD_ID=$BUILD_ID" >> $GITHUB_OUTPUT
+            echo "✅ Build ID: $BUILD_ID"
+          else
             echo "❌ Failed to extract build ID"
-            echo "Output was: $BUILD_OUTPUT"
             exit 1
           fi
-          echo "BUILD_ID=$BUILD_ID" >> $GITHUB_OUTPUT
-          echo "✅ Build #$BUILD_ID created (Draft)"
           
       - name: Auto-promote Draft to Test
         env:
-          HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: |
-          BUILD_ID="${{ steps.publish.outputs.BUILD_ID }}"
+          BUILD_ID="${{ steps.build_id.outputs.BUILD_ID }}"
           echo "🚀 Promoting Build #$BUILD_ID from Draft to Test..."
           
           # Use Homey API to promote build
           RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
-            -H "Authorization: Bearer $HOMEY_TOKEN" \
+            -H "Authorization: Bearer $HOMEY_PAT" \
             -H "Content-Type: application/json" \
             "https://api.developer.homey.app/app/com.dlnraja.tuya.zigbee/build/$BUILD_ID/promote" \
             -d '{"target": "test"}')
@@ -65,19 +72,26 @@ jobs:
           HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
           BODY=$(echo "$RESPONSE" | sed '$d')
           
+          echo "HTTP Status: $HTTP_CODE"
+          echo "Response: $BODY"
+          
           if [ "$HTTP_CODE" -eq 200 ] || [ "$HTTP_CODE" -eq 201 ]; then
             echo "✅ Build #$BUILD_ID promoted to Test successfully"
           else
-            echo "⚠️ API returned status $HTTP_CODE"
-            echo "Response: $BODY"
-            echo "Note: Build may still be promoted, check dashboard"
+            echo "⚠️  Promotion may have failed (status $HTTP_CODE)"
+            echo "Please check dashboard: https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee"
           fi
           
       - name: Summary
         run: |
           echo "## 📊 Publication Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "- **Build ID:** ${{ steps.publish.outputs.BUILD_ID }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Build ID:** ${{ steps.build_id.outputs.BUILD_ID }}" >> $GITHUB_STEP_SUMMARY
           echo "- **Status:** Test (auto-promoted)" >> $GITHUB_STEP_SUMMARY
-          echo "- **URL:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/" >> $GITHUB_STEP_SUMMARY
-          echo "- **Dashboard:** https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee" >> $GITHUB_STEP_SUMMARY
+          echo "- **Management URL:** ${{ steps.publish.outputs.url }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Test Install URL:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🎯 Next Steps" >> $GITHUB_STEP_SUMMARY
+          echo "1. Verify build in [Dashboard](${{ steps.publish.outputs.url }})" >> $GITHUB_STEP_SUMMARY
+          echo "2. Test installation from [Test URL](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)" >> $GITHUB_STEP_SUMMARY
+          echo "3. When ready, promote to Live from dashboard" >> $GITHUB_STEP_SUMMARY
