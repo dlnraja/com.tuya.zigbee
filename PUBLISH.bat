@@ -334,36 +334,75 @@ if exist "scripts\ULTIMATE_IMAGE_VALIDATOR.js" (
 echo.
 pause
 echo.
-
 REM ═══ PHASE 8: VALIDATION & BUILD ═══
 echo [PHASE 8/9] Validation and Build...
 echo ────────────────────────────────────────────────────────────────────
 
-echo Cleaning build cache...
-if exist ".homeybuild" (
-    rmdir /s /q .homeybuild
-    echo ✅ Cache cleaned
-)
+@echo off
+echo ========================================
+echo PUBLICATION HOMEY - MODE INTERACTIF
+echo ========================================
 echo.
 
-echo Building app...
-homey app build
-if %errorlevel% neq 0 (
-    echo ❌ Build FAILED!
+cd /d "%~dp0"
+
+REM Cleanup
+echo Nettoyage cache...
+if exist .homeybuild rmdir /s /q .homeybuild 2>nul
+if exist .homeycompose rmdir /s /q .homeycompose 2>nul
+
+REM Validate
+echo Validation...
+call homey app validate --level publish
+if errorlevel 1 (
+    echo ERREUR validation
     pause
     exit /b 1
 )
-echo ✅ Build: PASSED
+
+REM Build
+echo Build...
+call homey app build
+if errorlevel 1 (
+    echo ERREUR build
+    pause
+    exit /b 1
+)
+
+echo.
+echo ========================================
+echo PUBLICATION INTERACTIVE
+echo ========================================
+echo.
+echo REPONDEZ AUX QUESTIONS:
+echo   1. Update version? ^> Y
+echo   2. Version? ^> ENTREE (Patch)
+echo   3. What's new? ^> Publication Homey Dashboard
+echo   4. Commit? ^> Y
+echo   5. Push? ^> N
+echo.
+pause
 echo.
 
-echo Validating for publication...
-homey app validate --level=publish
+REM Publication
+call homey app publish
+
+echo.
+echo ========================================
+if errorlevel 1 (
+    echo PUBLICATION ECHOUEE
+) else (
+    echo PUBLICATION REUSSIE
+    echo Dashboard: https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee
+)
+echo ========================================
+echo.
+pause --level=publish
 if %errorlevel% neq 0 (
     echo ⚠️  Validation warnings (continuing)
 )
 echo ✅ Validation: PASSED
 echo.
-pause
 echo.
 
 REM ═══ PHASE 9: GIT OPERATIONS ═══
