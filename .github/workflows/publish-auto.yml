@@ -1,8 +1,9 @@
-name: Publish to Homey App Store
+name: Publish to Homey App Store (DISABLED - Use homey-app-store.yml instead)
 
 on:
-  push:
-    branches: [master]
+  # Disabled to avoid conflict with homey-app-store.yml
+  # push:
+  #   branches: [master]
   workflow_dispatch:
     inputs:
       version_bump:
