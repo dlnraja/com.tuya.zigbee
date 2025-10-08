@@ -76,30 +76,35 @@ jobs:
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
       
-      - name: Extract Build ID from URL
+      - name: Extract Build ID from Publish URL
         id: extract_build
         run: |
-          # Get URL from publish action output
+          # The official action returns URL in format: .../build/XX
           URL="${{ steps.publish.outputs.url }}"
-          echo "📋 Publish URL: $URL"
+          echo "📋 Full URL from action: $URL"
           
-          # Try to extract Build ID from URL (format: .../build/XX)
-          BUILD_ID=$(echo "$URL" | grep -oP 'build/\K[0-9]+' || echo "")
-          
-          # If not found in URL, use API to get latest build
-          if [ -z "$BUILD_ID" ]; then
-            echo "⚠️ Could not extract from URL, trying API..."
+          # Extract Build ID from URL path
+          if [[ "$URL" =~ /build/([0-9]+) ]]; then
+            BUILD_ID="${BASH_REMATCH[1]}"
+            echo "✅ Build ID extracted from URL: $BUILD_ID"
+            echo "BUILD_ID=$BUILD_ID" >> $GITHUB_OUTPUT
+          else
+            # Fallback: Get latest build from API
+            echo "⚠️  URL doesn't contain build ID, trying API..."
             RESPONSE=$(curl -s -H "Authorization: Bearer ${{ secrets.HOMEY_PAT }}" \
               "https://api.developer.homey.app/app/com.dlnraja.tuya.zigbee/builds")
-            BUILD_ID=$(echo "$RESPONSE" | jq -r '.[0].id // empty' 2>/dev/null || echo "")
-          fi
-          
-          if [ -n "$BUILD_ID" ]; then
-            echo "BUILD_ID=$BUILD_ID" >> $GITHUB_OUTPUT
-            echo "✅ Build ID: $BUILD_ID"
-          else
-            echo "⚠️ Could not extract Build ID"
-            echo "BUILD_ID=" >> $GITHUB_OUTPUT
+            
+            # Parse JSON to get first build ID
+            BUILD_ID=$(echo "$RESPONSE" | grep -oP '"id":\s*\K\d+' | head -1)
+            
+            if [ -n "$BUILD_ID" ]; then
+              echo "✅ Build ID from API: $BUILD_ID"
+              echo "BUILD_ID=$BUILD_ID" >> $GITHUB_OUTPUT
+            else
+              echo "❌ Could not extract Build ID"
+              echo "BUILD_ID=" >> $GITHUB_OUTPUT
+              exit 1
+            fi
           fi
           
       - name: Auto-promote Draft to Test
