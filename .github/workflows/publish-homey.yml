@@ -1,8 +1,6 @@
-name: Homey App Store Publication
+name: Homey App Store Publication (DEPRECATED - Use publish-homey-simple.yml)
 
 on:
-  push:
-    branches: [master]
   workflow_dispatch:
 
 jobs:

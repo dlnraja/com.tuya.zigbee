@@ -1,12 +1,12 @@
 {
-  "timestamp": "2025-10-07T22:16:37.566Z",
+  "timestamp": "2025-10-08T03:46:53.644Z",
   "total": 163,
   "analyzed": 163,
   "criticalIssues": 0,
   "highIssues": 0,
-  "warnings": 79,
+  "warnings": 68,
   "fixes": 0,
-  "healthScore": 95,
+  "healthScore": 96,
   "details": {
     "issues": [],
     "warnings": [
@@ -37,12 +37,6 @@
         "cluster": 258
       },
       {
-        "driver": "door_controller",
-        "type": "MISSING_REQUIRED_CAPABILITY",
-        "capability": "windowcoverings_state",
-        "class": "curtain"
-      },
-      {
         "driver": "energy_monitoring_plug",
         "type": "UNKNOWN_CLUSTER",
         "cluster": 1794
@@ -68,39 +62,9 @@
         "cluster": 1030
       },
       {
-        "driver": "garage_door_controller",
-        "type": "MISSING_REQUIRED_CAPABILITY",
-        "capability": "windowcoverings_state",
-        "class": "curtain"
-      },
-      {
-        "driver": "humidity_controller",
-        "type": "MISSING_REQUIRED_CAPABILITY",
-        "capability": "windowcoverings_state",
-        "class": "curtain"
-      },
-      {
         "driver": "humidity_controller",
         "type": "UNKNOWN_CLUSTER",
         "cluster": 1029
-      },
-      {
-        "driver": "hvac_controller",
-        "type": "MISSING_REQUIRED_CAPABILITY",
-        "capability": "windowcoverings_state",
-        "class": "curtain"
-      },
-      {
-        "driver": "led_strip_controller",
-        "type": "MISSING_REQUIRED_CAPABILITY",
-        "capability": "windowcoverings_state",
-        "class": "curtain"
-      },
-      {
-        "driver": "led_strip_controller_pro",
-        "type": "MISSING_REQUIRED_CAPABILITY",
-        "capability": "windowcoverings_state",
-        "class": "curtain"
       },
       {
         "driver": "lux_sensor",
@@ -156,12 +120,6 @@
         "driver": "pm25_sensor",
         "type": "UNKNOWN_CLUSTER",
         "cluster": 1030
-      },
-      {
-        "driver": "pool_pump_controller",
-        "type": "MISSING_REQUIRED_CAPABILITY",
-        "capability": "windowcoverings_state",
-        "class": "curtain"
       },
       {
         "driver": "pool_pump_controller",
@@ -267,12 +225,6 @@
         "cluster": 1029
       },
       {
-        "driver": "smart_irrigation_controller",
-        "type": "MISSING_REQUIRED_CAPABILITY",
-        "capability": "windowcoverings_state",
-        "class": "curtain"
-      },
-      {
         "driver": "smart_outlet_monitor",
         "type": "UNKNOWN_CLUSTER",
         "cluster": 1794
@@ -301,12 +253,6 @@
         "driver": "smart_thermostat",
         "type": "NO_ONINIT",
         "severity": "LOW"
-      },
-      {
-        "driver": "smart_valve_controller",
-        "type": "MISSING_REQUIRED_CAPABILITY",
-        "capability": "windowcoverings_state",
-        "class": "curtain"
       },
       {
         "driver": "smart_valve_controller",
@@ -345,12 +291,6 @@
       },
       {
         "driver": "solar_panel_controller",
-        "type": "MISSING_REQUIRED_CAPABILITY",
-        "capability": "windowcoverings_state",
-        "class": "curtain"
-      },
-      {
-        "driver": "solar_panel_controller",
         "type": "UNKNOWN_CLUSTER",
         "cluster": 1794
       },
@@ -368,12 +308,6 @@
         "driver": "temp_sensor_pro",
         "type": "UNKNOWN_CLUSTER",
         "cluster": 1030
-      },
-      {
-        "driver": "temperature_controller",
-        "type": "MISSING_REQUIRED_CAPABILITY",
-        "capability": "windowcoverings_state",
-        "class": "curtain"
       },
       {
         "driver": "temperature_controller",
