@@ -36,39 +36,36 @@ jobs:
         with:
           level: publish
       
-      # 3. Extract changelog from commits
-      - name: 📝 Generate Changelog from Commits
+      # 3. Generate user-friendly changelog
+      - name: 📝 Generate User-Friendly Changelog
         id: changelog
         run: |
-          # Source sanitization functions
-          source .github/scripts/sanitize.sh
+          # Source changelog generator
+          source .github/scripts/generate-changelog.sh
           
-          # Get commits since last tag or last 5 commits
-          LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+          # Get commits since last tag
+          COMMITS=$(get_commits_since_last_tag)
           
-          if [ -z "$LAST_TAG" ]; then
-            # No previous tag, use last 5 commits
-            COMMITS=$(git log -5 --pretty=format:"%s" --no-merges)
+          # Generate user-friendly message
+          if [ -n "$COMMITS" ]; then
+            CHANGELOG=$(generate_changelog_from_commits "$COMMITS")
           else
-            # Get commits since last tag
-            COMMITS=$(git log ${LAST_TAG}..HEAD --pretty=format:"%s" --no-merges)
+            CHANGELOG="Performance and stability improvements"
           fi
           
-          # If no commits, use a default message
-          if [ -z "$COMMITS" ]; then
-            COMMITS="Bug fixes and improvements"
-          fi
-          
-          # Sanitize for Homey changelog (400 chars max)
-          CHANGELOG=$(sanitize_homey_changelog "$COMMITS" 400)
-          
-          # Save to output (safe format)
+          # Save to output
           echo "changelog=$CHANGELOG" >> $GITHUB_OUTPUT
           
           # Display in summary
-          echo "## 📋 Changelog" >> $GITHUB_STEP_SUMMARY
+          echo "## 📋 Changelog (User-Friendly)" >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
           echo "$CHANGELOG" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🔧 Technical Commits:" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "$COMMITS" | head -3 >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
       
       # 4. Determine version bump
