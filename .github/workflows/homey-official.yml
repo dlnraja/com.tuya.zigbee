@@ -63,7 +63,7 @@ jobs:
           
           expect {
             "uncommitted changes" {
-              send "n\r"
+              send "y\r"
               exp_continue
             }
             "update your app's version" {
@@ -75,10 +75,14 @@ jobs:
               exp_continue
             }
             "What's new" {
-              send "SDK3 fixes + workflow\r"
+              send "SDK3 fixes + workflow corrected\r"
               exp_continue
             }
             "Do you want to commit" {
+              send "y\r"
+              exp_continue
+            }
+            "Do you want to push" {
               send "n\r"
               exp_continue
             }
