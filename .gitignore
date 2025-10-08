@@ -1,9 +1,15 @@
 # Homey build
-.homeycompose/
+.homeycomp# Homey
 .homeybuild/
-
-# Node.js
+.homeycompose/
+env.json
 node_modules/
+
+# GitHub Pages (désactivé)
+docs/
+_site/
+.jekyll-cache/
+.jekyll-metadata
 npm-debug.log*
 
 # Sensitive data - NEVER COMMIT
@@ -50,6 +56,3 @@ archive/*
 # Development files (organized)
 .dev/
 archive_old/
-reports/
-docs/
-scripts/
