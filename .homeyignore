@@ -9,7 +9,34 @@ node_modules/
 *.log
 *.tmp
 
-# Keep essential files
+# Heavy folders CRITICAL
+github-analysis/
+project-data/
+reports/
+docs/
+
+# Documentation files (exclude all except essential)
+*_FIX*.md
+*_GUIDE*.md
+*_STATUS*.md
+*SUCCESS*.md
+BUILD*.md
+IMAGES*.md
+PUSH*.md
+EMERGENCY*.md
+SESSION*.md
+FINAL*.md
+WORKFLOW*.md
+INDEX.md
+MONITOR.bat
+PUBLISH*.bat
+START_HERE.md
+QUICK_START.md
+IMAGE_GENERATION*.md
+CORRECTIONS*.md
+CATEGORIES*.md
+
+# Keep ONLY essential files
 !README.md
 !CHANGELOG.md
 
@@ -51,7 +78,8 @@ temp/
 *.bak
 *.backup
 
-# Development scripts and tools
+# Development scripts and tools (EXCLUDE ALL)
+scripts/
 *.bat
 *.ps1
 *.sh
