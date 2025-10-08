@@ -41,5 +41,8 @@
   },
   "2.0.5": {
     "en": "fix images"
+  },
+  "2.0.6": {
+    "en": "fix: changelog format pour action homey-app-version; feat: HOMEY_PAT configuré - test publication complète; docs: résultats test publication GitHub Actions complets; docs: guide monitoring et troubleshooting workflow complet; feat: script monitoring workflow GitHub Actions; test: workflow GitHub Actions publication; docs: guide complet de publication avec GitHub Actions; feat: workflows et scri"
   }
 }
