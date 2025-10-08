@@ -57,15 +57,6 @@ class TuyaZigbeeDevice extends ZigBeeDevice {
         capabilities.filter(cap => cap.startsWith('alarm_')).forEach(capability => {
             // replaced by numeric cluster registration
         });
-        
-        // Register onoff capability
-        if (capabilities.includes('onoff')) {
-            this.registerCapability('onoff', 'CLUSTER_ON_OFF');
-        }
-        
-        // Register dim capability
-        if (capabilities.includes('dim')) {
-            this.registerCapability('dim', 'CLUSTER_LEVEL_CONTROL');
         }
         
         this.log('Tuya Zigbee device initialized');
