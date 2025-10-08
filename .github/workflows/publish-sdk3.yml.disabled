@@ -4,12 +4,15 @@ on:
   push:
     branches: [master, main]
   workflow_dispatch:
+    inputs:
+      deprecated:
+        description: 'Ce workflow est obsolète - Utiliser publish-auto.yml'
+        required: false
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4

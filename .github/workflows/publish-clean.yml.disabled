@@ -1,7 +1,13 @@
 name: Homey App Auto-Publication
 
 on:
-  push:
+  # DÉSACTIVÉ - Utiliser publish-auto.yml à la place
+  workflow_dispatch:
+    inputs:
+      deprecated:
+        description: 'Ce workflow est obsolète'
+        required: false
+  push_disabled:
     branches: [master]
     paths-ignore:
       - '**.md'

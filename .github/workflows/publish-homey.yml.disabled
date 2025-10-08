@@ -1,7 +1,12 @@
 name: Homey App Store Publication (DEPRECATED - Use publish-homey-simple.yml)
 
 on:
+  # DÉSACTIVÉ - Utiliser publish-auto.yml
   workflow_dispatch:
+    inputs:
+      deprecated:
+        description: 'OBSOLÈTE'
+        required: false
 
 jobs:
   publish:
