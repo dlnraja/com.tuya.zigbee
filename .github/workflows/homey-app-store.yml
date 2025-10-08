@@ -84,23 +84,55 @@ jobs:
         run: |
           set +e
           
-          echo "📋 Waiting for build to be registered..."
-          sleep 5
-          
-          echo "🔍 Fetching latest build from Homey API..."
-          RESPONSE=$(curl -s -H "Authorization: Bearer ${{ secrets.HOMEY_PAT }}" \
-            "https://api.developer.homey.app/app/com.dlnraja.tuya.zigbee/builds" 2>/dev/null || echo "")
-          
           BUILD_ID=""
-          if [ ! -z "$RESPONSE" ]; then
-            BUILD_ID=$(echo "$RESPONSE" | grep -o '"id":[0-9]*' 2>/dev/null | head -1 | grep -o '[0-9]*' 2>/dev/null || echo "")
+          
+          # METHOD 1: Extract Build ID from publish action URL output
+          echo "🔍 Method 1: Extracting Build ID from URL..."
+          PUBLISH_URL="${{ steps.publish.outputs.url }}"
+          if [ ! -z "$PUBLISH_URL" ]; then
+            BUILD_ID=$(echo "$PUBLISH_URL" | grep -oP 'build/\K[0-9]+' || echo "")
+            if [ ! -z "$BUILD_ID" ]; then
+              echo "✅ Build ID extracted from URL: $BUILD_ID"
+            fi
           fi
           
+          # METHOD 2: If URL extraction failed, query API after waiting
+          if [ -z "$BUILD_ID" ]; then
+            echo "🔍 Method 2: Fetching from API..."
+            sleep 8
+            
+            RESPONSE=$(curl -s -H "Authorization: Bearer ${{ secrets.HOMEY_PAT }}" \
+              "https://api.developer.homey.app/app/com.dlnraja.tuya.zigbee/builds" 2>/dev/null || echo "")
+            
+            if [ ! -z "$RESPONSE" ]; then
+              BUILD_ID=$(echo "$RESPONSE" | grep -o '"id":[0-9]*' 2>/dev/null | head -1 | grep -o '[0-9]*' 2>/dev/null || echo "")
+              if [ ! -z "$BUILD_ID" ]; then
+                echo "✅ Build ID extracted from API: $BUILD_ID"
+              fi
+            fi
+          fi
+          
+          # METHOD 3: Last resort - try parsing JSON properly with jq
+          if [ -z "$BUILD_ID" ] && command -v jq &> /dev/null; then
+            echo "🔍 Method 3: Using jq parser..."
+            sleep 3
+            
+            RESPONSE=$(curl -s -H "Authorization: Bearer ${{ secrets.HOMEY_PAT }}" \
+              "https://api.developer.homey.app/app/com.dlnraja.tuya.zigbee/builds" 2>/dev/null || echo "")
+            
+            if [ ! -z "$RESPONSE" ]; then
+              BUILD_ID=$(echo "$RESPONSE" | jq -r '.[0].id // empty' 2>/dev/null || echo "")
+              if [ ! -z "$BUILD_ID" ]; then
+                echo "✅ Build ID extracted with jq: $BUILD_ID"
+              fi
+            fi
+          fi
+          
+          # PROMOTION: If we have a Build ID, promote it automatically
           if [ ! -z "$BUILD_ID" ] && [ "$BUILD_ID" -gt 0 ] 2>/dev/null; then
             echo "BUILD_ID=$BUILD_ID" >> $GITHUB_OUTPUT
-            echo "✅ Build ID extracted: $BUILD_ID"
             
-            echo "🚀 Promoting Build #$BUILD_ID to Test channel..."
+            echo "🚀 Auto-promoting Build #$BUILD_ID to Test channel..."
             PROMO_RESPONSE=$(curl -s -X POST \
               -H "Authorization: Bearer ${{ secrets.HOMEY_PAT }}" \
               -H "Content-Type: application/json" \
@@ -115,15 +147,15 @@ jobs:
               echo "🔗 Test URL: https://homey.app/a/com.dlnraja.tuya.zigbee/test/"
               echo "PROMOTED=true" >> $GITHUB_OUTPUT
             else
-              echo "⚠️ Promotion returned status: $HTTP_CODE"
-              echo "💡 Manual promotion may be needed"
+              echo "⚠️ Promotion returned HTTP $HTTP_CODE"
+              echo "Response: $PROMO_RESPONSE"
               echo "PROMOTED=false" >> $GITHUB_OUTPUT
             fi
           else
             echo "BUILD_ID=" >> $GITHUB_OUTPUT
             echo "PROMOTED=false" >> $GITHUB_OUTPUT
-            echo "⚠️ Could not extract Build ID"
-            echo "💡 Check dashboard: https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee"
+            echo "❌ All extraction methods failed"
+            echo "💡 Manual promotion needed: https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee"
           fi
           
           exit 0
