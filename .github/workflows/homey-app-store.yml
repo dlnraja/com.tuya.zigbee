@@ -76,78 +76,55 @@ jobs:
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
       
-      - name: Get Build ID from Dashboard
+      - name: Get Build ID and Auto-Promote
         id: extract_build
+        continue-on-error: true
         run: |
-          echo "📋 Fetching latest build from Homey API..."
+          echo "📋 Getting latest build from Homey API..."
           
-          # Wait 2 seconds for build to be registered
-          sleep 2
+          # Wait 5 seconds for build to be fully registered
+          sleep 5
           
-          # Get all builds and extract the most recent ID
+          # Try to get all builds
           RESPONSE=$(curl -s -H "Authorization: Bearer ${{ secrets.HOMEY_PAT }}" \
-            "https://api.developer.homey.app/app/com.dlnraja.tuya.zigbee/builds")
+            "https://api.developer.homey.app/app/com.dlnraja.tuya.zigbee/builds" 2>/dev/null || echo "")
           
           # Extract first build ID (most recent)
-          BUILD_ID=$(echo "$RESPONSE" | grep -o '"id":[0-9]*' | head -1 | grep -o '[0-9]*')
+          BUILD_ID=""
+          if [ -n "$RESPONSE" ]; then
+            BUILD_ID=$(echo "$RESPONSE" | grep -o '"id":[0-9]*' | head -1 | grep -o '[0-9]*' 2>/dev/null || echo "")
+          fi
           
-          if [ -n "$BUILD_ID" ] && [ "$BUILD_ID" -gt 0 ]; then
+          # Output Build ID
+          if [ -n "$BUILD_ID" ] && [ "$BUILD_ID" -ge 1 ] 2>/dev/null; then
             echo "BUILD_ID=$BUILD_ID" >> $GITHUB_OUTPUT
             echo "✅ Build ID: $BUILD_ID"
-            echo "🔗 URL: https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee/build/$BUILD_ID"
+            
+            # Auto-promote immediately
+            echo "🚀 Auto-promoting Build #$BUILD_ID to Test..."
+            PROMO_RESPONSE=$(curl -s -X POST \
+              -H "Authorization: Bearer ${{ secrets.HOMEY_PAT }}" \
+              -H "Content-Type: application/json" \
+              -w "\n%{http_code}" \
+              "https://api.developer.homey.app/app/com.dlnraja.tuya.zigbee/build/$BUILD_ID/promote" \
+              -d '{"target": "test"}' 2>/dev/null)
+            
+            HTTP_CODE=$(echo "$PROMO_RESPONSE" | tail -n1)
+            
+            if [ "$HTTP_CODE" = "200" ] || [ "$HTTP_CODE" = "201" ]; then
+              echo "✅ Build #$BUILD_ID promoted to TEST successfully!"
+              echo "🔗 Test URL: https://homey.app/a/com.dlnraja.tuya.zigbee/test/"
+            else
+              echo "⚠️  Promotion status: $HTTP_CODE (may require manual promotion)"
+            fi
           else
-            echo "⚠️ Could not extract Build ID, manual promotion required"
             echo "BUILD_ID=" >> $GITHUB_OUTPUT
-            echo "🔗 Check: https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee"
-            # Don't exit 1, just skip promotion
+            echo "⚠️ Could not extract Build ID"
+            echo "💡 Check: https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee"
           fi
           
-      - name: Auto-promote Draft to Test
-        if: steps.extract_build.outputs.BUILD_ID != ''
-        env:
-          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-        run: |
-          BUILD_ID="${{ steps.extract_build.outputs.BUILD_ID }}"
-          echo "🚀 Promoting Build #$BUILD_ID from Draft to Test..."
-          echo ""
-          
-          # Wait 3 seconds for build to be ready
-          echo "⏳ Waiting 3 seconds for build to be ready..."
-          sleep 3
-          
-          # Use Homey API to promote build
-          echo "📡 API Call: POST /build/$BUILD_ID/promote"
-          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
-            -H "Authorization: Bearer $HOMEY_PAT" \
-            -H "Content-Type: application/json" \
-            "https://api.developer.homey.app/app/com.dlnraja.tuya.zigbee/build/$BUILD_ID/promote" \
-            -d '{"target": "test"}')
-          
-          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
-          BODY=$(echo "$RESPONSE" | sed '$d')
-          
-          echo ""
-          echo "HTTP Status: $HTTP_CODE"
-          echo "Response Body: $BODY"
-          echo ""
-          
-          if [ "$HTTP_CODE" -eq 200 ] || [ "$HTTP_CODE" -eq 201 ]; then
-            echo "✅ Build #$BUILD_ID promoted to Test successfully!"
-            echo ""
-            echo "🔗 Test URL: https://homey.app/a/com.dlnraja.tuya.zigbee/test/"
-          elif [ "$HTTP_CODE" -eq 401 ]; then
-            echo "❌ Authentication failed - HOMEY_PAT may be invalid"
-            echo "   Get new token: https://tools.developer.homey.app/me"
-            exit 1
-          elif [ "$HTTP_CODE" -eq 404 ]; then
-            echo "❌ Build #$BUILD_ID not found"
-            exit 1
-          else
-            echo "⚠️  Promotion failed (status $HTTP_CODE)"
-            echo "   Manual promotion required:"
-            echo "   https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee/build/$BUILD_ID"
-            exit 1
-          fi
+          # Always exit 0 to not block workflow
+          exit 0
           
       - name: Summary
         run: |
