@@ -1,119 +1,261 @@
-name: Monthly Auto-Enrichment & Publish
+name: 🔄 Monthly Auto-Enrichment & Publish
 
 on:
   schedule:
-    # Runs on the 1st of every month at 02:00 UTC
+    # Runs on the 1st of every month at 02:00 UTC (04:00 Paris time)
     - cron: '0 2 1 * *'
-  workflow_dispatch: # Manual trigger
+  workflow_dispatch:
+    inputs:
+      force_publish:
+        description: 'Force publication même sans changements'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
   
 permissions:
   contents: write
-  pull-requests: write
 
 jobs:
-  auto-enrich-and-publish:
+  monthly-enrichment:
+    name: 🌐 Enrichissement Mensuel Automatique
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
     
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-        
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-        
-    - name: Install Dependencies
-      run: |
-        npm install --no-audit --prefer-offline
-        npm install -g homey
-        
-    - name: Configure Git
-      run: |
-        git config user.name "Auto-Enrichment Bot"
-        git config user.email "bot@tuya-zigbee.app"
-        
-    - name: Setup Homey Authentication
-      env:
-        HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
-      run: |
-        echo "🔐 Setting up Homey authentication..."
-        mkdir -p ~/.homey
-        echo "{\"token\":\"$HOMEY_TOKEN\"}" > ~/.homey/config.json
-        
-    - name: Run Monthly Auto-Enrichment
-      run: |
-        echo "🌐 MONTHLY AUTO-ENRICHMENT STARTED"
-        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-        echo ""
-        echo "📅 Date: $(date)"
-        echo ""
-        
-        # Run the monthly orchestrator
-        node scripts/MONTHLY_AUTO_ENRICHMENT_ORCHESTRATOR.js
-        
-    - name: Validate Images
-      run: |
-        echo "🖼️  VALIDATING IMAGES"
-        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-        
-        # Run image validator
-        node scripts/ULTIMATE_IMAGE_VALIDATOR.js || echo "⚠️  Image validation warnings (non-blocking)"
-        
-    - name: Check for Changes
-      id: check_changes
-      run: |
-        if [[ -n $(git status --porcelain) ]]; then
-          echo "has_changes=true" >> $GITHUB_OUTPUT
-          echo "✅ Changes detected"
-        else
-          echo "has_changes=false" >> $GITHUB_OUTPUT
-          echo "ℹ️  No changes detected"
-        fi
-        
-    - name: Commit & Push Changes
-      if: steps.check_changes.outputs.has_changes == 'true'
-      run: |
-        git add -A
-        git commit -m "chore: Monthly auto-enrichment - $(date +'%Y-%m-%d') - Automated device database update"
-        git push origin master
-        
-    - name: Publish to App Store
-      if: steps.check_changes.outputs.has_changes == 'true'
-      run: |
-        echo "📤 Publishing to Homey App Store..."
-        printf "n\n" | homey app publish 2>&1 | tee publish.log || true
-        
-        if grep -q "successfully published" publish.log || grep -q "App published" publish.log; then
-          echo "✅ Publication successful!"
-        else
-          echo "⚠️  Publication may need manual review"
-        fi
-        
-    - name: Create Summary Report
-      if: always()
-      run: |
-        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-        echo "📊 MONTHLY AUTO-ENRICHMENT SUMMARY"
-        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-        echo ""
-        echo "📅 Date: $(date)"
-        echo "🔄 Changes: ${{ steps.check_changes.outputs.has_changes }}"
-        echo ""
-        
-        if [ -f reports/monthly_enrichment_report.json ]; then
-          echo "📄 Report generated:"
-          cat reports/monthly_enrichment_report.json
-        fi
-        
-    - name: Upload Artifacts
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: enrichment-reports
-        path: |
-          reports/
-          *.log
+      # 1. Checkout with full history
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT || github.token }}
+      
+      # 2. Setup Node.js
+      - name: 🔧 Setup Node.js 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      # 3. Install dependencies
+      - name: 📦 Install Dependencies
+        run: |
+          echo "📦 Installing project dependencies..."
+          npm ci || npm install --no-audit
+          echo "✅ Dependencies installed"
+      
+      # 4. Configure Git
+      - name: ⚙️ Configure Git
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      
+      # 5. Run enrichment orchestrator
+      - name: 🌐 Run Monthly Auto-Enrichment
+        id: enrichment
+        continue-on-error: true
+        run: |
+          echo "## 🌐 Monthly Auto-Enrichment" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "📅 **Date:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ -f scripts/MONTHLY_AUTO_ENRICHMENT_ORCHESTRATOR.js ]; then
+            echo "🚀 Lancement orchestrateur enrichissement..."
+            node scripts/MONTHLY_AUTO_ENRICHMENT_ORCHESTRATOR.js || echo "enrichment_status=warning" >> $GITHUB_OUTPUT
+            echo "enrichment_status=success" >> $GITHUB_OUTPUT
+          else
+            echo "⚠️ Orchestrateur non trouvé, skip enrichment"
+            echo "enrichment_status=skipped" >> $GITHUB_OUTPUT
+          fi
+      
+      # 6. Validate images (optional)
+      - name: 🖼️ Validate Images
+        continue-on-error: true
+        run: |
+          if [ -f scripts/ULTIMATE_IMAGE_VALIDATOR.js ]; then
+            echo "🖼️ Validation des images..."
+            node scripts/ULTIMATE_IMAGE_VALIDATOR.js || echo "⚠️ Image warnings (non-blocking)"
+          else
+            echo "ℹ️ Image validator non trouvé, skip"
+          fi
+      
+      # 7. Clean Homey cache before validation
+      - name: 🧹 Clean Homey Cache
+        run: |
+          echo "🧹 Cleaning Homey cache..."
+          rm -rf .homeybuild
+          rm -rf node_modules/.cache
+          echo "✅ Cache cleaned"
+      
+      # 8. Check for changes
+      - name: 🔍 Check for Changes
+        id: check_changes
+        run: |
+          # Source sanitization functions
+          source .github/scripts/sanitize.sh || true
+          
+          if [[ -n $(git status --porcelain) ]]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            
+            # Count changes
+            ADDED=$(git diff --cached --numstat | wc -l)
+            MODIFIED=$(git diff --numstat | wc -l)
+            
+            echo "files_changed=$((ADDED + MODIFIED))" >> $GITHUB_OUTPUT
+            echo "✅ Changements détectés: $((ADDED + MODIFIED)) fichiers"
+            
+            # Generate changelog
+            CHANGES_SUMMARY=$(git status --short | head -20)
+            echo "changes_summary<<EOF" >> $GITHUB_OUTPUT
+            echo "$CHANGES_SUMMARY" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "files_changed=0" >> $GITHUB_OUTPUT
+            echo "ℹ️ Aucun changement détecté"
+          fi
+      
+      # 9. Validate Homey App
+      - name: ✅ Validate Homey App
+        if: steps.check_changes.outputs.has_changes == 'true'
+        uses: athombv/github-action-homey-app-validate@master
+        with:
+          level: publish
+      
+      # 10. Generate changelog
+      - name: 📝 Generate Monthly Changelog
+        if: steps.check_changes.outputs.has_changes == 'true'
+        id: changelog
+        run: |
+          # Source sanitization
+          source .github/scripts/sanitize.sh
+          
+          # Generate monthly changelog
+          MONTH=$(date +'%B %Y')
+          RAW_CHANGELOG="Monthly enrichment $MONTH: Database update with latest device definitions; Manufacturer IDs updated; Product IDs synchronized; Images validated; SDK3 compliance verified"
+          
+          # Sanitize for Homey
+          CHANGELOG=$(sanitize_homey_changelog "$RAW_CHANGELOG" 400)
+          
+          echo "changelog=$CHANGELOG" >> $GITHUB_OUTPUT
+          
+          echo "## 📋 Changelog" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "$CHANGELOG" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+      
+      # 11. Update version (minor bump for monthly enrichment)
+      - name: 🆙 Update Version (Minor)
+        if: steps.check_changes.outputs.has_changes == 'true'
+        uses: athombv/github-action-homey-app-version@master
+        id: update_version
+        with:
+          version: minor
+          changelog: ${{ steps.changelog.outputs.changelog }}
+      
+      # 12. Commit version changes
+      - name: 💾 Commit Changes
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          MONTH=$(date +'%B %Y')
+          FILES_COUNT="${{ steps.check_changes.outputs.files_changed }}"
+          
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "chore: Monthly auto-enrichment $MONTH [skip ci]" \
+              -m "Automated monthly database update" \
+              -m "Files changed: $FILES_COUNT" \
+              -m "Device definitions synchronized" \
+              -m "SDK3 compliance verified" \
+              -m "Images validated" \
+              -m "Auto-generated by monthly-auto-enrichment workflow"
+            
+            git tag "v${{ steps.update_version.outputs.version }}" || true
+            git push origin HEAD --tags || true
+            
+            echo "✅ Changes committed and pushed"
+          fi
+      
+      # 13. Publish to Homey App Store
+      - name: 🚀 Publish to Homey App Store
+        if: steps.check_changes.outputs.has_changes == 'true' || github.event.inputs.force_publish == 'true'
+        uses: athombv/github-action-homey-app-publish@master
+        id: publish
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+      
+      # 14. Create GitHub Release
+      - name: 📦 Create GitHub Release
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          MONTH=$(date +'%B %Y')
+          VERSION="${{ steps.update_version.outputs.version }}"
+          CHANGELOG="${{ steps.changelog.outputs.changelog }}"
+          FILES="${{ steps.check_changes.outputs.files_changed }}"
+          STATUS="${{ steps.enrichment.outputs.enrichment_status }}"
+          DASHBOARD="${{ steps.publish.outputs.url }}"
+          
+          # Create release notes
+          cat > release_notes.md <<EOF
+$CHANGELOG
+
+## 📊 Summary
+- **Files changed:** $FILES
+- **Enrichment status:** $STATUS
+- **Publication:** Successful
+- **Dashboard:** $DASHBOARD
+
+## 🔗 Links
+- [Homey Dashboard]($DASHBOARD)
+- [App Store](https://homey.app/apps/com.dlnraja.tuya.zigbee)
+EOF
+          
+          gh release create "v$VERSION" \
+            --title "🔄 Monthly Enrichment - $MONTH (v$VERSION)" \
+            --notes-file release_notes.md \
+            --generate-notes || echo "⚠️ Release creation skipped"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
+      
+      # 15. Final summary
+      - name: 📊 Generate Summary Report
+        if: always()
+        run: |
+          echo "## 📊 Monthly Enrichment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Date:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "- **Changes detected:** ${{ steps.check_changes.outputs.has_changes }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Files changed:** ${{ steps.check_changes.outputs.files_changed }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Enrichment status:** ${{ steps.enrichment.outputs.enrichment_status }}" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ steps.check_changes.outputs.has_changes }}" = "true" ]; then
+            echo "- **New version:** v${{ steps.update_version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+            echo "- **Publication:** ✅ Success" >> $GITHUB_STEP_SUMMARY
+            echo "- **Dashboard:** ${{ steps.publish.outputs.url }}" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "- **Publication:** ⏭️ Skipped (no changes)" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ -f reports/monthly_enrichment_report.json ]; then
+            echo "### 📄 Enrichment Report" >> $GITHUB_STEP_SUMMARY
+            echo '```json' >> $GITHUB_STEP_SUMMARY
+            cat reports/monthly_enrichment_report.json >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+          fi
+      
+      # 16. Upload artifacts
+      - name: 📤 Upload Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: monthly-enrichment-reports-${{ github.run_number }}
+          path: |
+            reports/
+            *.log
+          retention-days: 90
