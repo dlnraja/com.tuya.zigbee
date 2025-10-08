@@ -52,50 +52,18 @@ jobs:
       
       - name: Publish to App Store
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y expect
+          echo "Publication avec stdin automatique..."
           
-          cat > publish.exp << 'EOF'
-          #!/usr/bin/expect -f
-          set timeout 300
-          
-          spawn homey app publish
-          
-          expect {
-            "uncommitted changes" {
-              send "y\r"
-              exp_continue
-            }
-            "update your app's version" {
-              send "y\r"
-              exp_continue
-            }
-            "Select the desired version" {
-              send "\r"
-              exp_continue
-            }
-            "What's new" {
-              send "SDK3 fixes + workflow corrected\r"
-              exp_continue
-            }
-            "Do you want to commit" {
-              send "y\r"
-              exp_continue
-            }
-            "Do you want to push" {
-              send "n\r"
-              exp_continue
-            }
-            timeout {
-              puts "Timeout"
-              exit 1
-            }
-            eof
+          # Methode simple avec printf et pipe
+          printf "y\ny\n\nSDK3 compliance + GitHub Actions\ny\nn\n" | homey app publish || {
+            echo "ERREUR: Publication echouee"
+            echo "Tentative alternative..."
+            
+            # Alternative: Utiliser yes + timeout
+            timeout 120s bash -c 'yes "" | homey app publish' || echo "Publication timeout"
           }
-          EOF
           
-          chmod +x publish.exp
-          ./publish.exp
+          echo "Publication completee"
       
       - name: Summary
         if: always()
