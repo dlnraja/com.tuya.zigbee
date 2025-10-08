@@ -81,8 +81,8 @@ jobs:
       - name: Publish Homey App
         id: publish
         run: |
-          # Login with token
-          homey login --bearer "$HOMEY_PAT"
+          # Set Homey token as environment variable (Homey CLI reads it automatically)
+          export HOMEY_TOKEN="$HOMEY_PAT"
           
           # Capture publish output to extract Build ID
           PUBLISH_OUTPUT=$(homey app publish 2>&1 | tee /dev/tty)
