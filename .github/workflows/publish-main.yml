@@ -61,13 +61,14 @@ jobs:
         fi
         echo "✅ HOMEY_TOKEN is configured"
         
-    - name: Login to Homey
+    - name: Setup Homey Authentication
       env:
         HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
       run: |
-        echo "🔐 Authenticating with Homey..."
-        echo "$HOMEY_TOKEN" | homey login --token
-        echo "✅ Authentication successful"
+        echo "🔐 Setting up Homey authentication..."
+        mkdir -p ~/.homey
+        echo "{\"token\":\"$HOMEY_TOKEN\"}" > ~/.homey/config.json
+        echo "✅ Authentication configured"
         
     - name: Clean Build
       run: |
