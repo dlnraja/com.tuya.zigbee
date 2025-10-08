@@ -1,31 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="500" height="500" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="grad_lighting" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#FFB300;stop-opacity:0.8" />
+    <linearGradient id="grad_smart_bulb_tunable_500" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFC107;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFD54F;stop-opacity:0.8" />
     </linearGradient>
-    <filter id="shadow">
+    <filter id="shadow_500">
       <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.3"/>
     </filter>
   </defs>
   
   <!-- Background with gradient -->
-  <rect width="500" height="500" fill="url(#grad_lighting)" rx="60"/>
+  <rect width="500" height="500" fill="url(#grad_smart_bulb_tunable_500)" rx="60"/>
   
   <!-- Icon circle background -->
-  <circle cx="250" cy="220" r="100" fill="white" opacity="0.2" filter="url(#shadow)"/>
+  <circle cx="250" cy="220" r="100" fill="white" opacity="0.2" filter="url(#shadow_500)"/>
   
   <!-- Large icon/emoji -->
   <text x="250" y="280" font-family="Arial, sans-serif" font-size="140" 
         fill="white" text-anchor="middle" font-weight="bold" 
-        filter="url(#shadow)">💡</text>
+        filter="url(#shadow_500)">💡</text>
   
   <!-- Category badge -->
   <rect x="100" y="390" width="300" height="50" rx="25" fill="white" opacity="0.95"/>
   <text x="250" y="425" font-family="Arial, sans-serif" font-size="22" 
-        fill="#FFD700" text-anchor="middle" font-weight="bold">LIGHTING</text>
-  
-  <!-- Brand -->
-  
+        fill="#FFC107" text-anchor="middle" font-weight="bold">LIGHTING</text>
 </svg>
