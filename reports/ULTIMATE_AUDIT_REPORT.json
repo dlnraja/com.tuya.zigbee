@@ -33,15 +33,15 @@
       ]
     },
     {
-      "driver": "energy_monitoring_plug_ac",
+      "driver": "energy_monitoring_plug_ac_ac",
       "warnings": [
-        "⚠️  Class 'sensor' != attendue 'socket' pour 'energy_monitoring_plug_ac'"
+        "⚠️  Class 'sensor' != attendue 'socket' pour 'energy_monitoring_plug_ac_ac'"
       ]
     },
     {
-      "driver": "energy_monitoring_plug_ac_advanced",
+      "driver": "energy_monitoring_plug_ac_ac_advanced",
       "warnings": [
-        "⚠️  Class 'sensor' != attendue 'socket' pour 'energy_monitoring_plug_ac_advanced'"
+        "⚠️  Class 'sensor' != attendue 'socket' pour 'energy_monitoring_plug_ac_ac_advanced'"
       ]
     },
     {
@@ -69,9 +69,9 @@
       ]
     },
     {
-      "driver": "mini_switch_cr2032",
+      "driver": "mini_switch_cr2032_cr2032",
       "warnings": [
-        "⚠️  Class 'sensor' inhabituelle pour nom 'mini_switch_cr2032'"
+        "⚠️  Class 'sensor' inhabituelle pour nom 'mini_switch_cr2032_cr2032'"
       ]
     },
     {
@@ -93,15 +93,15 @@
       ]
     },
     {
-      "driver": "roller_shutter_switch_cr2032",
+      "driver": "roller_shutter_switch_cr2032_cr2032",
       "warnings": [
-        "⚠️  Class 'other' inhabituelle pour nom 'roller_shutter_switch_cr2032'"
+        "⚠️  Class 'other' inhabituelle pour nom 'roller_shutter_switch_cr2032_cr2032'"
       ]
     },
     {
-      "driver": "roller_shutter_switch_cr2032_advanced",
+      "driver": "roller_shutter_switch_cr2032_cr2032_advanced",
       "warnings": [
-        "⚠️  Class 'other' inhabituelle pour nom 'roller_shutter_switch_cr2032_advanced'"
+        "⚠️  Class 'other' inhabituelle pour nom 'roller_shutter_switch_cr2032_cr2032_advanced'"
       ]
     },
     {
