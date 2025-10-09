@@ -155,29 +155,6 @@ Votre capteur de vibration est maintenant correctement détecté ! Le bug qui le
 
 Ce manufactureur est déjà supporté dans le driver `temperature_humidity_sensor` depuis plusieurs versions. Si votre device ne s'appaire pas correctement, essayez:
 
-1. Réinitialisez le capteur (reset factory)
-2. Supprimez l'ancien device dans Homey
-3. Ré-appairez en mode "Add Device" → "Tuya Zigbee" → "Temperature Humidity Sensor"
-
----
-
-## 🚀 COMMENT INSTALLER LA NOUVELLE VERSION
-
-### Option 1: Test Channel (Recommandé - Version 2.1.31 disponible maintenant)
-1. Ouvrez l'App Store Homey
-2. Cherchez "Universal Tuya Zigbee"
-3. Activez le **Test channel**
-4. Installez la version **2.1.31**
-
-### Option 2: Attendre la certification Live
-La version sera soumise pour certification et disponible sur le Live channel dans quelques jours.
-
----
-
-## 📊 RÉSUMÉ DE LA VERSION 2.1.31
-
-✅ **7 demandes GitHub fermées** (#26, #27, #28, #29, #30, #31, #32)
-✅ **2 nouveaux drivers créés** (ZG-204ZM, ZG-204ZV)
 ✅ **5 drivers existants enrichis**
 ✅ **11 nouveaux manufactureurs ajoutés**
 ✅ **1 bug critique corrigé** (TS0210 vibration sensor)

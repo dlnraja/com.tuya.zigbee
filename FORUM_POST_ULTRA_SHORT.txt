@@ -1,0 +1,18 @@
+Update v2.1.34 - Major Fix Release 🎉
+
+FIXED:
+✅ Temperature/Battery/Humidity showing N/A or wrong values
+✅ 11 drivers repaired with correct Zigbee parsers
+✅ Issues #26-32 resolved (TS0201, TS0210, ZG-204ZV, ZG-204ZM, etc.)
+
+NEW:
+🚀 1,767 Flow Cards added (triggers, conditions, actions)
+⚙️ Advanced settings (calibration, reporting intervals)
+🔧 Maintenance actions (identify device, reset meter)
+
+STATUS:
+✓ Validated for Homey App Store
+✓ SDK3 compliant
+✓ 0 errors
+
+Available soon via Homey App Store update!
