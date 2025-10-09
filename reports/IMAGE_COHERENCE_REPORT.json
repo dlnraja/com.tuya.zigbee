@@ -688,7 +688,7 @@
     ],
     "plug": [
       {
-        "name": "energy_monitoring_plug_ac",
+        "name": "energy_monitoring_plug_ac_ac",
         "images": {
           "small": true,
           "large": true,
@@ -696,7 +696,7 @@
         }
       },
       {
-        "name": "energy_monitoring_plug_ac_advanced",
+        "name": "energy_monitoring_plug_ac_ac_advanced",
         "images": {
           "small": true,
           "large": true,
@@ -704,7 +704,7 @@
         }
       },
       {
-        "name": "energy_plug_advanced_ac",
+        "name": "energy_plug_advanced_ac_ac",
         "images": {
           "small": true,
           "large": true,
@@ -712,7 +712,7 @@
         }
       },
       {
-        "name": "extension_plug_ac",
+        "name": "extension_plug_ac_ac",
         "images": {
           "small": true,
           "large": true,
@@ -720,7 +720,7 @@
         }
       },
       {
-        "name": "power_meter_socket_ac",
+        "name": "power_meter_socket_ac_ac",
         "images": {
           "small": true,
           "large": true,
@@ -728,7 +728,7 @@
         }
       },
       {
-        "name": "smart_plug_ac",
+        "name": "smart_plug_ac_ac",
         "images": {
           "small": true,
           "large": true,
@@ -736,7 +736,7 @@
         }
       },
       {
-        "name": "smart_plug_ac_energy",
+        "name": "smart_plug_ac_ac_energy",
         "images": {
           "small": true,
           "large": true,
@@ -790,7 +790,7 @@
     ],
     "switch": [
       {
-        "name": "mini_switch_cr2032",
+        "name": "mini_switch_cr2032_cr2032",
         "images": {
           "small": true,
           "large": true,
@@ -806,7 +806,7 @@
         }
       },
       {
-        "name": "remote_switch_cr2032",
+        "name": "remote_switch_cr2032_cr2032",
         "images": {
           "small": true,
           "large": true,
@@ -814,7 +814,7 @@
         }
       },
       {
-        "name": "roller_shutter_switch_cr2032",
+        "name": "roller_shutter_switch_cr2032_cr2032",
         "images": {
           "small": true,
           "large": true,
@@ -822,7 +822,7 @@
         }
       },
       {
-        "name": "roller_shutter_switch_cr2032_advanced",
+        "name": "roller_shutter_switch_cr2032_cr2032_advanced",
         "images": {
           "small": true,
           "large": true,
@@ -1070,7 +1070,7 @@
         }
       },
       {
-        "name": "wireless_switch_cr2032",
+        "name": "wireless_switch_cr2032_cr2032",
         "images": {
           "small": true,
           "large": true,
@@ -1078,7 +1078,7 @@
         }
       },
       {
-        "name": "wireless_switch_cr2032_1gang_cr2032",
+        "name": "wireless_switch_cr2032_cr2032_1gang_cr2032",
         "images": {
           "small": true,
           "large": true,
@@ -1086,7 +1086,7 @@
         }
       },
       {
-        "name": "wireless_switch_cr2032_2gang_cr2032",
+        "name": "wireless_switch_cr2032_cr2032_2gang_cr2032",
         "images": {
           "small": true,
           "large": true,
@@ -1094,7 +1094,7 @@
         }
       },
       {
-        "name": "wireless_switch_cr2032_3gang_cr2032",
+        "name": "wireless_switch_cr2032_cr2032_3gang_cr2032",
         "images": {
           "small": true,
           "large": true,
@@ -1102,7 +1102,7 @@
         }
       },
       {
-        "name": "wireless_switch_cr2032_4gang_cr2032",
+        "name": "wireless_switch_cr2032_cr2032_4gang_cr2032",
         "images": {
           "small": true,
           "large": true,
@@ -1110,7 +1110,7 @@
         }
       },
       {
-        "name": "wireless_switch_cr2032_4gang_cr2450",
+        "name": "wireless_switch_cr2032_cr2032_4gang_cr2450",
         "images": {
           "small": true,
           "large": true,
@@ -1118,7 +1118,7 @@
         }
       },
       {
-        "name": "wireless_switch_cr2032_5gang_cr2032",
+        "name": "wireless_switch_cr2032_cr2032_5gang_cr2032",
         "images": {
           "small": true,
           "large": true,
@@ -1126,7 +1126,7 @@
         }
       },
       {
-        "name": "wireless_switch_cr2032_6gang_cr2032",
+        "name": "wireless_switch_cr2032_cr2032_6gang_cr2032",
         "images": {
           "small": true,
           "large": true,
@@ -1144,7 +1144,7 @@
         }
       },
       {
-        "name": "motion_sensor_mmwave_battery",
+        "name": "motion_sensor_mmwave_battery_battery",
         "images": {
           "small": true,
           "large": true,
@@ -1152,7 +1152,7 @@
         }
       },
       {
-        "name": "motion_sensor_pir_ac_battery",
+        "name": "motion_sensor_pir_ac_battery_battery",
         "images": {
           "small": true,
           "large": true,
@@ -1168,7 +1168,7 @@
         }
       },
       {
-        "name": "motion_sensor_zigbee_204z_battery",
+        "name": "motion_sensor_zigbee_204z_battery_battery",
         "images": {
           "small": true,
           "large": true,
@@ -1192,7 +1192,7 @@
         }
       },
       {
-        "name": "radar_motion_sensor_advanced_battery",
+        "name": "radar_motion_sensor_advanced_battery_battery",
         "images": {
           "small": true,
           "large": true,
@@ -1200,7 +1200,7 @@
         }
       },
       {
-        "name": "radar_motion_sensor_mmwave_battery_battery",
+        "name": "radar_motion_sensor_mmwave_battery_battery_battery_battery",
         "images": {
           "small": true,
           "large": true,
@@ -1208,7 +1208,7 @@
         }
       },
       {
-        "name": "radar_motion_sensor_tank_level_battery",
+        "name": "radar_motion_sensor_tank_level_battery_battery",
         "images": {
           "small": true,
           "large": true,
