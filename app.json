@@ -12556,13 +12556,13 @@
         }
       },
       "images": {
-        "small": "./drivers/smart_plug_ac_energy/assets/small.png",
-        "large": "./drivers/smart_plug_ac_energy/assets/large.png"
+        "small": "./drivers/smart_plug_energy_ac/assets/small.png",
+        "large": "./drivers/smart_plug_energy_ac/assets/large.png"
       },
       "platforms": [
         "local"
       ],
-      "id": "smart_plug_ac_energy"
+      "id": "smart_plug_energy_ac"
     },
     {
       "name": {
@@ -32613,7 +32613,7 @@
         ]
       },
       {
-        "id": "smart_plug_ac_energy_turned_on",
+        "id": "smart_plug_energy_ac_turned_on",
         "title": {
           "en": "Turned on",
           "fr": "Allumé",
@@ -32624,12 +32624,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=smart_plug_ac_energy"
+            "filter": "driver_id=smart_plug_energy_ac"
           }
         ]
       },
       {
-        "id": "smart_plug_ac_energy_turned_off",
+        "id": "smart_plug_energy_ac_turned_off",
         "title": {
           "en": "Turned off",
           "fr": "Éteint",
@@ -32640,12 +32640,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=smart_plug_ac_energy"
+            "filter": "driver_id=smart_plug_energy_ac"
           }
         ]
       },
       {
-        "id": "smart_plug_ac_energy_measure_power_changed",
+        "id": "smart_plug_energy_ac_measure_power_changed",
         "title": {
           "en": "Power changed",
           "fr": "Power a changé",
@@ -32666,12 +32666,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=smart_plug_ac_energy"
+            "filter": "driver_id=smart_plug_energy_ac"
           }
         ]
       },
       {
-        "id": "smart_plug_ac_energy_measure_voltage_changed",
+        "id": "smart_plug_energy_ac_measure_voltage_changed",
         "title": {
           "en": "Voltage changed",
           "fr": "Voltage a changé",
@@ -32692,12 +32692,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=smart_plug_ac_energy"
+            "filter": "driver_id=smart_plug_energy_ac"
           }
         ]
       },
       {
-        "id": "smart_plug_ac_energy_measure_current_changed",
+        "id": "smart_plug_energy_ac_measure_current_changed",
         "title": {
           "en": "Current changed",
           "fr": "Current a changé",
@@ -32718,7 +32718,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=smart_plug_ac_energy"
+            "filter": "driver_id=smart_plug_energy_ac"
           }
         ]
       },
@@ -53613,7 +53613,7 @@
         ]
       },
       {
-        "id": "smart_plug_ac_energy_is_on",
+        "id": "smart_plug_energy_ac_is_on",
         "title": {
           "en": "Is !{{turned on|turned off}}",
           "fr": "Est !{{allumé|éteint}}",
@@ -53624,12 +53624,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=smart_plug_ac_energy"
+            "filter": "driver_id=smart_plug_energy_ac"
           }
         ]
       },
       {
-        "id": "smart_plug_ac_energy_measure_power_greater_than",
+        "id": "smart_plug_energy_ac_measure_power_greater_than",
         "title": {
           "en": "Power is greater than...",
           "fr": "Power est supérieur à...",
@@ -53644,7 +53644,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=smart_plug_ac_energy"
+            "filter": "driver_id=smart_plug_energy_ac"
           },
           {
             "name": "greater",
@@ -53677,7 +53677,7 @@
         ]
       },
       {
-        "id": "smart_plug_ac_energy_measure_power_less_than",
+        "id": "smart_plug_energy_ac_measure_power_less_than",
         "title": {
           "en": "Power is less than...",
           "fr": "Power est inférieur à...",
@@ -53692,7 +53692,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=smart_plug_ac_energy"
+            "filter": "driver_id=smart_plug_energy_ac"
           },
           {
             "name": "less",
@@ -53725,7 +53725,7 @@
         ]
       },
       {
-        "id": "smart_plug_ac_energy_measure_voltage_greater_than",
+        "id": "smart_plug_energy_ac_measure_voltage_greater_than",
         "title": {
           "en": "Voltage is greater than...",
           "fr": "Voltage est supérieur à...",
@@ -53740,7 +53740,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=smart_plug_ac_energy"
+            "filter": "driver_id=smart_plug_energy_ac"
           },
           {
             "name": "greater",
@@ -53773,7 +53773,7 @@
         ]
       },
       {
-        "id": "smart_plug_ac_energy_measure_voltage_less_than",
+        "id": "smart_plug_energy_ac_measure_voltage_less_than",
         "title": {
           "en": "Voltage is less than...",
           "fr": "Voltage est inférieur à...",
@@ -53788,7 +53788,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=smart_plug_ac_energy"
+            "filter": "driver_id=smart_plug_energy_ac"
           },
           {
             "name": "less",
@@ -53821,7 +53821,7 @@
         ]
       },
       {
-        "id": "smart_plug_ac_energy_measure_current_greater_than",
+        "id": "smart_plug_energy_ac_measure_current_greater_than",
         "title": {
           "en": "Current is greater than...",
           "fr": "Current est supérieur à...",
@@ -53836,7 +53836,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=smart_plug_ac_energy"
+            "filter": "driver_id=smart_plug_energy_ac"
           },
           {
             "name": "greater",
@@ -53869,7 +53869,7 @@
         ]
       },
       {
-        "id": "smart_plug_ac_energy_measure_current_less_than",
+        "id": "smart_plug_energy_ac_measure_current_less_than",
         "title": {
           "en": "Current is less than...",
           "fr": "Current est inférieur à...",
@@ -53884,7 +53884,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=smart_plug_ac_energy"
+            "filter": "driver_id=smart_plug_energy_ac"
           },
           {
             "name": "less",
@@ -69723,7 +69723,7 @@
         ]
       },
       {
-        "id": "smart_plug_ac_energy_turn_on",
+        "id": "smart_plug_energy_ac_turn_on",
         "title": {
           "en": "Turn on",
           "fr": "Allumer",
@@ -69734,12 +69734,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=smart_plug_ac_energy"
+            "filter": "driver_id=smart_plug_energy_ac"
           }
         ]
       },
       {
-        "id": "smart_plug_ac_energy_turn_off",
+        "id": "smart_plug_energy_ac_turn_off",
         "title": {
           "en": "Turn off",
           "fr": "Éteindre",
@@ -69750,12 +69750,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=smart_plug_ac_energy"
+            "filter": "driver_id=smart_plug_energy_ac"
           }
         ]
       },
       {
-        "id": "smart_plug_ac_energy_toggle",
+        "id": "smart_plug_energy_ac_toggle",
         "title": {
           "en": "Toggle on/off",
           "fr": "Inverser marche/arrêt",
@@ -69766,7 +69766,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=smart_plug_ac_energy"
+            "filter": "driver_id=smart_plug_energy_ac"
           }
         ]
       },
