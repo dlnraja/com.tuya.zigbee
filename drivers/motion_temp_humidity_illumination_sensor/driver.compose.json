@@ -1,0 +1,85 @@
+{
+  "name": {
+    "en": "Motion Temp Humidity Illumination Sensor (ZG-204ZV)"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "measure_battery",
+    "measure_luminance",
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "capabilitiesOptions": {
+    "alarm_motion": {
+      "title": {
+        "en": "Motion"
+      }
+    },
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature"
+      },
+      "units": {
+        "en": "°C"
+      }
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Humidity"
+      },
+      "units": {
+        "en": "%"
+      }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "HOBEIAN",
+      "_TZE200_uli8wasj",
+      "_TZE200_grgol3xp",
+      "_TZE200_rhgsbacq",
+      "_TZE200_y8jijhba"
+    ],
+    "productId": [
+      "TS0601",
+      "ZG-204ZV"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1024,
+          1026,
+          1029,
+          1280,
+          61184
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/motion_temp_humidity_illumination_sensor/assets/large.png",
+      "instruction": {
+        "en": "Press the pairing button until LED blinks rapidly"
+      }
+    }
+  },
+  "images": {
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "energy": {
+    "batteries": [
+      "AAA",
+      "CR2032"
+    ]
+  },
+  "id": "motion_temp_humidity_illumination_sensor"
+}
