@@ -1,6 +1,6 @@
 # 🌟 Universal Tuya Zigbee Device App
 
-[![Version](https://img.shields.io/badge/version-2.0.12-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![Version](https://img.shields.io/badge/version-2.1.36-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-SDK3-orange.svg)](https://apps.developer.homey.app/)
 [![Health](https://img.shields.io/badge/health-96%25-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee)
@@ -11,18 +11,18 @@
 
 # Universal Tuya Zigbee - Complete Local Control for 10,000+ Devices
 
-**Version 2.0.5** | **SDK3** | **163 Drivers** | **10,520+ Device IDs** | **100% Local Control**
+**Version 2.1.36** | **SDK3** | **163 Drivers** | **2,000+ Manufacturer IDs** | **100% Local Control**
 
-**Last Updated:** 2025-10-08 | **Build #14-16** | **Status:** Production Ready
+**Last Updated:** 2025-10-09 | **Status:** Production Ready ✅
 
-**Seamless integration of 10,520+ Tuya Zigbee device variants with Homey Pro, featuring:
+Seamless integration of 2,000+ Tuya Zigbee device manufacturers with Homey Pro, featuring:
 
 - ✅ **Pure Zigbee Local Control** - No API key required
-- ✅ **10,520+ Device Variants** - Record coverage (5x reference databases)
-- ✅ **163 Drivers** - Comprehensive device coverage
-- ✅ **96% Health Score** - Optimal quality
-{{ ... }}
-- ✅ **Auto-Updates** - Monthly enrichment via GitHub Actions
+- ✅ **2,000+ Manufacturer IDs** - Maximum device coverage
+- ✅ **163 Drivers** - All validated and functional
+- ✅ **1,767 Flow Cards** - Complete automation support
+- ✅ **SDK3 Compliant** - Latest Homey standards
+- ✅ **Auto-Updates** - Via GitHub Actions
 - ✅ **Zigbee2MQTT Compatible** - Easy migration
 - ✅ **UNBRANDED Organization** - Find devices by function, not brand
 
@@ -38,11 +38,11 @@
 ## 📊 Coverage
 
 **Supported Devices:**
-- **10,520+ Manufacturer IDs** (Record coverage!)
-- **150+ Product IDs** (optimized)
-- **163 Drivers** (all validated)
-- **11+ Sources** integrated (GitHub, Forums, Web DBs)
-- **96% Health Score** (optimal quality)
+- **2,000+ Manufacturer IDs** - Comprehensive coverage
+- **1,500+ Product IDs** - Maximum compatibility
+- **163 Drivers** - All validated SDK3
+- **1,767 Flow Cards** - Complete automation
+- **0 Validation Errors** - Production ready
 
 **Supported Brands:**
 - Tuya (all series: TS*, _TZ*, _TZE*)
@@ -124,24 +124,22 @@ Devices organized by **FUNCTION**, not brand:
 - Blinds controllers
 - Shutter motors
 
-## 🆕 What's New in v1.8.2
+## 🆕 What's New in v2.1.36
 
-### Major Updates
-- ✅ **+1,226 Manufacturer IDs** added (+48% increase)
-- ✅ **10,520+ Total Coverage** - Record for Homey ecosystem
-- ✅ **11+ Sources Integrated** - GitHub, Forums, Web databases
-- ✅ **Monthly Auto-Updates** - GitHub Actions automation
-- ✅ **96% Health Score** - Optimal quality
-- ✅ **28 Corrections** - Gang capabilities, class fixes
-- ✅ **20/20 Tests Passed** - 100% validation
-- ✅ **Community Issues** - 4 issues resolved (<24h)
+### Major Features Added
+- ✅ **1,767 Flow Cards** - Auto-generated (661 triggers, 698 conditions, 408 actions)
+- ✅ **2,481 Corrections** - Complete app.json sync with sources
+- ✅ **Advanced Settings** - Calibration, reporting intervals, sensitivity
+- ✅ **Maintenance Actions** - Identify device, reset meters
+- ✅ **Energy.batteries** - All battery devices configured
+- ✅ **Complete Coherence** - All 163 drivers verified
 
-### Sources Integrated
-- **GitHub** - 3 repos (yours, Johan Bendz, Koenkk)
-- **Homey Forums** - 4 community threads
-- **Web Databases** - Zigbee2MQTT, ZHA, BlakAdder
-- **Pattern Analysis** - Cross-variation detection
-- **Community Feedback** - Direct user reports
+### Bug Fixes
+- ✅ Temperature/humidity/battery parsers corrected (11 drivers)
+- ✅ Missing manufacturer IDs added (_TZE284_vvmbj46n and more)
+- ✅ Missing product IDs sync (159 drivers)
+- ✅ Flow handlers added to all drivers
+- ✅ 0 validation errors - SDK3 compliant
 
 ## 🔄 Migration from Zigbee2MQTT
 
@@ -160,60 +158,63 @@ Easy migration path for Z2M users:
 
 ```
 .
-├── LAUNCH_FULL_ENRICHMENT.bat    # Windows launcher (ultra-verbose)
-├── app.json                       # 10,520+ IDs, 163 drivers
+├── app.json                       # 163 drivers, 1,767 flow cards
 ├── drivers/                       # 163 device drivers
-├── scripts/                       # 18 automation scripts
-│   ├── MEGA_GITHUB_INTEGRATION_ENRICHER.js
-│   ├── MEGA_FORUM_WEB_INTEGRATOR.js
-│   ├── MONTHLY_AUTO_ENRICHMENT_ORCHESTRATOR.js
-│   ├── ULTRA_FINE_DRIVER_ANALYZER.js
-│   ├── TEST_ALL_SYSTEMS.js
-│   ├── TEST_AUTOMATION_COMPLETE.js
-│   └── ... (18 total)
-├── docs/                          # 25 documents
-├── reports/                       # JSON reports
+├── scripts/
+│   ├── analysis/                  # Verification scripts
+│   │   ├── VERIFY_AND_FIX_APP_JSON.js
+│   │   ├── VERIFY_DRIVERS_COHERENCE.js
+│   │   └── MEGA_FEATURE_ANALYZER.js
+│   ├── fixes/                     # Automatic fixes
+│   │   ├── FIX_DEVICE_CAPABILITIES_CASCADE.js
+│   │   ├── FIX_MISSING_BATTERIES.js
+│   │   └── FIX_SETTINGS_VALIDATION.js
+│   ├── generators/                # Code generators
+│   │   ├── FLOW_HANDLER_GENERATOR.js
+│   │   └── MEGA_FEATURE_IMPLEMENTER.js
+│   └── automation/                # GitHub Actions helpers
+├── docs/
+│   ├── forum/                     # Homey forum posts
+│   ├── reports/                   # Technical reports
+│   └── actions/                   # Action guides
+├── reports/
+│   ├── json/                      # JSON reports
+│   └── commits/                   # Commit messages
 └── .github/
-    └── workflows/                 # 10 GitHub Actions
-        ├── publish-main.yml       # Primary (active)
-        └── monthly-auto-enrichment.yml
+    └── workflows/                 # GitHub Actions
+        └── publish-main.yml       # Automatic publishing
 ```
 
 ### Scripts
 
-**Full Enrichment Cycle (Manual):**
-```batch
-# Windows - Ultra-verbose launcher
-.\LAUNCH_FULL_ENRICHMENT.bat
+**Verify app.json coherence:**
+```bash
+node scripts/analysis/VERIFY_AND_FIX_APP_JSON.js
 ```
 
-**Testing:**
+**Verify all drivers:**
 ```bash
-# Test all systems
-node scripts/TEST_ALL_SYSTEMS.js
-
-# Test automation
-node scripts/TEST_AUTOMATION_COMPLETE.js
+node scripts/analysis/VERIFY_DRIVERS_COHERENCE.js
 ```
 
-**GitHub Integration:**
+**Fix missing capabilities:**
 ```bash
-node scripts/MEGA_GITHUB_INTEGRATION_ENRICHER.js
+node scripts/fixes/FIX_DEVICE_CAPABILITIES_CASCADE.js
 ```
 
-**Forum Integration:**
+**Generate flow cards:**
 ```bash
-node scripts/MEGA_FORUM_WEB_INTEGRATOR.js
+node scripts/generators/MEGA_FEATURE_IMPLEMENTER.js
 ```
 
 ## 📖 Documentation
 
-- [Session Complete Report](docs/SESSION_FINALE_COMPLETE_10H.md) - 10-hour session
-- [Automation Guide](docs/AUTOMATION_SYSTEM_GUIDE.md) - GitHub Actions + .bat
-- [Test Reports](docs/AUTOMATION_TEST_REPORT.md) - 20/20 tests passed
-- [Organization Report](docs/PROJECT_ORGANIZATION_REPORT.md) - Structure
-- [GitHub Actions](.github/workflows/) - 10 workflows
-- [All Documentation](docs/) - 25+ documents
+- [Forum Post](docs/forum/FORUM_POST_ENGLISH_SHORT.md) - User-friendly update post
+- [Mega Features Report](docs/reports/MEGA_FEATURES_RAPPORT_FINAL.md) - 1,767 flow cards
+- [Coherence Summary](docs/reports/COHERENCE_FINAL_SUMMARY.md) - Final verification
+- [Cascade Fixes](docs/reports/RAPPORT_CASCADE_FIXES.md) - Technical fixes
+- [Contributing Guide](docs/CONTRIBUTING.md) - How to contribute
+- [GitHub Actions](.github/workflows/) - Automatic publishing
 
 ## 🐛 Bug Reports & Feature Requests
 
@@ -260,17 +261,16 @@ MIT License - See [LICENSE](LICENSE) file
 ## 📊 Statistics
 
 ```
-Version: 1.8.2
-Drivers: 163 (all validated)
-Manufacturer IDs: 10,520+ (RECORD!)
-Product IDs: 150+ (optimized)
-Devices Supported: 10,520+ variants
-Coverage: 5x reference databases
-Health Score: 96% (optimal)
-Tests: 20/20 passed (100%)
+Version: 2.1.36
+Drivers: 163 (all validated SDK3)
+Manufacturer IDs: 2,000+
+Product IDs: 1,500+
+Flow Cards: 1,767 (661 triggers + 698 conditions + 408 actions)
+Validation Errors: 0
 Mode: 100% Zigbee Local
 API Key Required: NONE
-Auto-Updates: Monthly (GitHub Actions)
+Auto-Updates: Via GitHub Actions
+SDK: 3 (latest)
 ```
 
 ## 🌟 Star History
