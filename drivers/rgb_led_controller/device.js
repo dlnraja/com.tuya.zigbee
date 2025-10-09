@@ -5,6 +5,25 @@ const { Device } = require('homey');
 class RgbLedControllerDevice extends Device {
 
   async onInit() {
+    // Register Zigbee capabilities
+
+    this.registerCapability('onoff', 'genOnOff', {
+      get: 'onOff',
+      set: 'onOff',
+      setParser: value => ({ value: value ? 1 : 0 }),
+      report: 'onOff',
+      reportParser: value => value === 1
+    });
+    this.registerCapability('dim', 'genLevelCtrl', {
+      get: 'currentLevel',
+      set: 'currentLevel',
+      setParser: value => ({
+        value: Math.round(value * 254),
+        transtime: 0
+      }),
+      report: 'currentLevel',
+      reportParser: value => value / 254
+    });
     await this.registerFlowCardHandlers();
     this.log('rgb_led_controller device has been initialized');
     

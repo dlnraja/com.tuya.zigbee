@@ -5,6 +5,27 @@ const { Device } = require('homey');
 class SmartValveControllerDevice extends Device {
 
   async onInit() {
+    // Register Zigbee capabilities
+
+    this.registerCapability('onoff', 'genOnOff', {
+      get: 'onOff',
+      set: 'onOff',
+      setParser: value => ({ value: value ? 1 : 0 }),
+      report: 'onOff',
+      reportParser: value => value === 1
+    });
+    this.registerCapability('measure_battery', 'genPowerCfg', {
+      get: 'batteryPercentageRemaining',
+      report: 'batteryPercentageRemaining',
+      reportParser: value => Math.max(0, Math.min(100, value / 2)),
+      reportOpts: {
+        configureAttributeReporting: {
+          minInterval: 3600,
+          maxInterval: 14400,
+          minChange: 2
+        }
+      }
+    });
     await this.registerFlowCardHandlers();
     this.log('smart_valve_controller device has been initialized');
     
