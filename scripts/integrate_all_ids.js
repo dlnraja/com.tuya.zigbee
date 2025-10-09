@@ -15,7 +15,7 @@ const driverMapping = {
     // Motion/PIR/Radar sensors
     'motion_sensor_battery': ['_TZ3000_', '_TZE200_', 'TS0202'],
     'presence_sensor_radar': ['_TZE200_', '_TZE284_', 'TS0601'],
-    'radar_motion_sensor_advanced': ['_TZE200_', '_TZE204_'],
+    'radar_motion_sensor_advanced_battery': ['_TZE200_', '_TZE204_'],
     
     // Temperature/Humidity
     'temperature_humidity_sensor': ['_TZE200_', '_TZE284_', 'TS0201', 'TS0601'],
@@ -26,8 +26,8 @@ const driverMapping = {
     'smart_switch_2gang': ['_TZ3000_', 'TS0002'],
     
     // Plugs/Energy
-    'smart_plug_energy': ['_TZ3000_', '_TZ3210_', '_TZE200_', '_TZE204_', 'TS011F', 'TS0121'],
-    'smart_plug': ['_TZ3000_', 'TS011F'],
+    'smart_plug_ac_energy': ['_TZ3000_', '_TZ3210_', '_TZE200_', '_TZE204_', 'TS011F', 'TS0121'],
+    'smart_plug_ac': ['_TZ3000_', 'TS011F'],
     
     // LED/Lights
     'led_strip_controller': ['_TZ3210_', '_TZ3290_', 'TS0505'],
