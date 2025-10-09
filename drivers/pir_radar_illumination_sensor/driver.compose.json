@@ -1,0 +1,65 @@
+{
+  "name": {
+    "en": "PIR Radar Illumination Sensor (ZG-204ZM)"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "measure_battery",
+    "measure_luminance"
+  ],
+  "capabilitiesOptions": {
+    "alarm_motion": {
+      "title": {
+        "en": "Motion"
+      }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "HOBEIAN",
+      "_TZE200_2aaelwxk",
+      "_TZE200_kb5noeto",
+      "_TZE200_tyffvoij"
+    ],
+    "productId": [
+      "TS0601",
+      "ZG-204ZM"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1024,
+          1030,
+          1280,
+          61184
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/pir_radar_illumination_sensor/assets/large.png",
+      "instruction": {
+        "en": "Press the pairing button until LED blinks rapidly"
+      }
+    }
+  },
+  "images": {
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "energy": {
+    "batteries": [
+      "AAA",
+      "CR2032"
+    ]
+  },
+  "id": "pir_radar_illumination_sensor"
+}
