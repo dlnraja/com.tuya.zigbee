@@ -144,5 +144,10 @@
   "platforms": [
     "local"
   ],
+  "energy": {
+    "approximation": {
+      "usageConstant": 0.5
+    }
+  },
   "id": "energy_monitoring_plug_advanced"
 }

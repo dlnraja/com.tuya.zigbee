@@ -44,6 +44,19 @@ class TuyaDevice extends ZigBeeDevice {
     if (this.hasCapability('alarm_battery')) {
       this.registerCapability('alarm_battery', 1);
     }
+    // Energy monitoring capabilities
+    if (this.hasCapability('measure_power')) {
+      this.registerCapability('measure_power', 2820); // Electrical Measurement cluster
+    }
+    if (this.hasCapability('meter_power')) {
+      this.registerCapability('meter_power', 1794); // Metering cluster
+    }
+    if (this.hasCapability('measure_voltage')) {
+      this.registerCapability('measure_voltage', 2820); // Electrical Measurement cluster
+    }
+    if (this.hasCapability('measure_current')) {
+      this.registerCapability('measure_current', 2820); // Electrical Measurement cluster
+    }
   }
 }
 module.exports = TuyaDevice;
