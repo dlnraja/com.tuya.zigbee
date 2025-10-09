@@ -23663,8 +23663,8 @@
         "dim"
       ],
       "images": {
-        "small": "./drivers/wireless_switch_cr2032_1gang_cr2032/assets/small.png",
-        "large": "./drivers/wireless_switch_cr2032_1gang_cr2032/assets/large.png"
+        "small": "./drivers/wireless_switch_1gang_cr2032/assets/small.png",
+        "large": "./drivers/wireless_switch_1gang_cr2032/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -23804,7 +23804,7 @@
           }
         },
         "learnmode": {
-          "image": "./drivers/wireless_switch_cr2032_1gang_cr2032/assets/large.png",
+          "image": "./drivers/wireless_switch_1gang_cr2032/assets/large.png",
           "instruction": {
             "en": "Press and hold the reset button for 3 seconds until the LED starts blinking."
           }
@@ -23824,7 +23824,7 @@
           "CR2032"
         ]
       },
-      "id": "wireless_switch_cr2032_1gang_cr2032"
+      "id": "wireless_switch_1gang_cr2032"
     },
     {
       "class": "socket",
@@ -24280,7 +24280,7 @@
           }
         },
         "learnmode": {
-          "image": "./drivers/wireless_switch_cr2032_4gang_cr2032/assets/large.png",
+          "image": "./drivers/wireless_switch_4gang_cr2032/assets/large.png",
           "instruction": {
             "en": "Press and hold the button until the LED flashes"
           }
@@ -24370,8 +24370,8 @@
         ]
       },
       "images": {
-        "small": "./drivers/wireless_switch_cr2032_4gang_cr2032/assets/small.png",
-        "large": "./drivers/wireless_switch_cr2032_4gang_cr2032/assets/large.png"
+        "small": "./drivers/wireless_switch_4gang_cr2032/assets/small.png",
+        "large": "./drivers/wireless_switch_4gang_cr2032/assets/large.png"
       },
       "name": {
         "en": "Wireless Switch 4gang CR2032"
@@ -24388,7 +24388,7 @@
           "CR2032"
         ]
       },
-      "id": "wireless_switch_cr2032_4gang_cr2032"
+      "id": "wireless_switch_4gang_cr2032"
     },
     {
       "name": {
@@ -24657,7 +24657,7 @@
           }
         },
         "learnmode": {
-          "image": "./drivers/wireless_switch_cr2032_5gang_cr2032/assets/large.png",
+          "image": "./drivers/wireless_switch_5gang_cr2032/assets/large.png",
           "instruction": {
             "en": "Press and hold the button for 5 seconds until LED flashes"
           }
@@ -24746,8 +24746,8 @@
         ]
       },
       "images": {
-        "small": "./drivers/wireless_switch_cr2032_5gang_cr2032/assets/small.png",
-        "large": "./drivers/wireless_switch_cr2032_5gang_cr2032/assets/large.png"
+        "small": "./drivers/wireless_switch_5gang_cr2032/assets/small.png",
+        "large": "./drivers/wireless_switch_5gang_cr2032/assets/large.png"
       },
       "settings": [
         {
@@ -24776,7 +24776,7 @@
           "CR2032"
         ]
       },
-      "id": "wireless_switch_cr2032_5gang_cr2032"
+      "id": "wireless_switch_5gang_cr2032"
     },
     {
       "class": "socket",
@@ -24850,7 +24850,7 @@
           }
         },
         "learnmode": {
-          "image": "./drivers/wireless_switch_cr2032_6gang_cr2032/assets/large.png",
+          "image": "./drivers/wireless_switch_6gang_cr2032/assets/large.png",
           "instruction": {
             "en": "Press and hold the button for 5 seconds until LED flashes"
           }
@@ -24939,8 +24939,8 @@
         ]
       },
       "images": {
-        "small": "./drivers/wireless_switch_cr2032_6gang_cr2032/assets/small.png",
-        "large": "./drivers/wireless_switch_cr2032_6gang_cr2032/assets/large.png"
+        "small": "./drivers/wireless_switch_6gang_cr2032/assets/small.png",
+        "large": "./drivers/wireless_switch_6gang_cr2032/assets/large.png"
       },
       "settings": [
         {
@@ -24969,7 +24969,7 @@
           "CR2032"
         ]
       },
-      "id": "wireless_switch_cr2032_6gang_cr2032"
+      "id": "wireless_switch_6gang_cr2032"
     },
     {
       "name": {
@@ -38543,7 +38543,7 @@
         ]
       },
       {
-        "id": "wireless_switch_cr2032_1gang_cr2032_measure_battery_changed",
+        "id": "wireless_switch_1gang_cr2032_measure_battery_changed",
         "title": {
           "en": "Battery changed",
           "fr": "Battery a changé",
@@ -38564,12 +38564,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_1gang_cr2032"
+            "filter": "driver_id=wireless_switch_1gang_cr2032"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_1gang_cr2032_turned_on",
+        "id": "wireless_switch_1gang_cr2032_turned_on",
         "title": {
           "en": "Turned on",
           "fr": "Allumé",
@@ -38580,12 +38580,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_1gang_cr2032"
+            "filter": "driver_id=wireless_switch_1gang_cr2032"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_1gang_cr2032_turned_off",
+        "id": "wireless_switch_1gang_cr2032_turned_off",
         "title": {
           "en": "Turned off",
           "fr": "Éteint",
@@ -38596,7 +38596,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_1gang_cr2032"
+            "filter": "driver_id=wireless_switch_1gang_cr2032"
           }
         ]
       },
@@ -38665,7 +38665,7 @@
         ]
       },
       {
-        "id": "wireless_switch_cr2032_4gang_cr2032_turned_on",
+        "id": "wireless_switch_4gang_cr2032_turned_on",
         "title": {
           "en": "Turned on",
           "fr": "Allumé",
@@ -38676,12 +38676,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_4gang_cr2032"
+            "filter": "driver_id=wireless_switch_4gang_cr2032"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_4gang_cr2032_turned_off",
+        "id": "wireless_switch_4gang_cr2032_turned_off",
         "title": {
           "en": "Turned off",
           "fr": "Éteint",
@@ -38692,12 +38692,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_4gang_cr2032"
+            "filter": "driver_id=wireless_switch_4gang_cr2032"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_4gang_cr2032_measure_battery_changed",
+        "id": "wireless_switch_4gang_cr2032_measure_battery_changed",
         "title": {
           "en": "Battery changed",
           "fr": "Battery a changé",
@@ -38718,7 +38718,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_4gang_cr2032"
+            "filter": "driver_id=wireless_switch_4gang_cr2032"
           }
         ]
       },
@@ -38781,7 +38781,7 @@
         ]
       },
       {
-        "id": "wireless_switch_cr2032_5gang_cr2032_turned_on",
+        "id": "wireless_switch_5gang_cr2032_turned_on",
         "title": {
           "en": "Turned on",
           "fr": "Allumé",
@@ -38792,12 +38792,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_5gang_cr2032"
+            "filter": "driver_id=wireless_switch_5gang_cr2032"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_5gang_cr2032_turned_off",
+        "id": "wireless_switch_5gang_cr2032_turned_off",
         "title": {
           "en": "Turned off",
           "fr": "Éteint",
@@ -38808,12 +38808,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_5gang_cr2032"
+            "filter": "driver_id=wireless_switch_5gang_cr2032"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_5gang_cr2032_measure_battery_changed",
+        "id": "wireless_switch_5gang_cr2032_measure_battery_changed",
         "title": {
           "en": "Battery changed",
           "fr": "Battery a changé",
@@ -38834,12 +38834,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_5gang_cr2032"
+            "filter": "driver_id=wireless_switch_5gang_cr2032"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_6gang_cr2032_turned_on",
+        "id": "wireless_switch_6gang_cr2032_turned_on",
         "title": {
           "en": "Turned on",
           "fr": "Allumé",
@@ -38850,12 +38850,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_6gang_cr2032"
+            "filter": "driver_id=wireless_switch_6gang_cr2032"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_6gang_cr2032_turned_off",
+        "id": "wireless_switch_6gang_cr2032_turned_off",
         "title": {
           "en": "Turned off",
           "fr": "Éteint",
@@ -38866,12 +38866,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_6gang_cr2032"
+            "filter": "driver_id=wireless_switch_6gang_cr2032"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_6gang_cr2032_measure_battery_changed",
+        "id": "wireless_switch_6gang_cr2032_measure_battery_changed",
         "title": {
           "en": "Battery changed",
           "fr": "Battery a changé",
@@ -38892,7 +38892,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_6gang_cr2032"
+            "filter": "driver_id=wireless_switch_6gang_cr2032"
           }
         ]
       },
@@ -65117,7 +65117,7 @@
         ]
       },
       {
-        "id": "wireless_switch_cr2032_1gang_cr2032_measure_battery_greater_than",
+        "id": "wireless_switch_1gang_cr2032_measure_battery_greater_than",
         "title": {
           "en": "Battery is greater than...",
           "fr": "Battery est supérieur à...",
@@ -65132,7 +65132,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_1gang_cr2032"
+            "filter": "driver_id=wireless_switch_1gang_cr2032"
           },
           {
             "name": "greater",
@@ -65165,7 +65165,7 @@
         ]
       },
       {
-        "id": "wireless_switch_cr2032_1gang_cr2032_measure_battery_less_than",
+        "id": "wireless_switch_1gang_cr2032_measure_battery_less_than",
         "title": {
           "en": "Battery is less than...",
           "fr": "Battery est inférieur à...",
@@ -65180,7 +65180,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_1gang_cr2032"
+            "filter": "driver_id=wireless_switch_1gang_cr2032"
           },
           {
             "name": "less",
@@ -65213,7 +65213,7 @@
         ]
       },
       {
-        "id": "wireless_switch_cr2032_1gang_cr2032_is_on",
+        "id": "wireless_switch_1gang_cr2032_is_on",
         "title": {
           "en": "Is !{{turned on|turned off}}",
           "fr": "Est !{{allumé|éteint}}",
@@ -65224,7 +65224,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_1gang_cr2032"
+            "filter": "driver_id=wireless_switch_1gang_cr2032"
           }
         ]
       },
@@ -65261,7 +65261,7 @@
         ]
       },
       {
-        "id": "wireless_switch_cr2032_4gang_cr2032_is_on",
+        "id": "wireless_switch_4gang_cr2032_is_on",
         "title": {
           "en": "Is !{{turned on|turned off}}",
           "fr": "Est !{{allumé|éteint}}",
@@ -65272,12 +65272,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_4gang_cr2032"
+            "filter": "driver_id=wireless_switch_4gang_cr2032"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_4gang_cr2032_measure_battery_greater_than",
+        "id": "wireless_switch_4gang_cr2032_measure_battery_greater_than",
         "title": {
           "en": "Battery is greater than...",
           "fr": "Battery est supérieur à...",
@@ -65292,7 +65292,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_4gang_cr2032"
+            "filter": "driver_id=wireless_switch_4gang_cr2032"
           },
           {
             "name": "greater",
@@ -65325,7 +65325,7 @@
         ]
       },
       {
-        "id": "wireless_switch_cr2032_4gang_cr2032_measure_battery_less_than",
+        "id": "wireless_switch_4gang_cr2032_measure_battery_less_than",
         "title": {
           "en": "Battery is less than...",
           "fr": "Battery est inférieur à...",
@@ -65340,7 +65340,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_4gang_cr2032"
+            "filter": "driver_id=wireless_switch_4gang_cr2032"
           },
           {
             "name": "less",
@@ -65485,7 +65485,7 @@
         ]
       },
       {
-        "id": "wireless_switch_cr2032_5gang_cr2032_is_on",
+        "id": "wireless_switch_5gang_cr2032_is_on",
         "title": {
           "en": "Is !{{turned on|turned off}}",
           "fr": "Est !{{allumé|éteint}}",
@@ -65496,12 +65496,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_5gang_cr2032"
+            "filter": "driver_id=wireless_switch_5gang_cr2032"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_5gang_cr2032_measure_battery_greater_than",
+        "id": "wireless_switch_5gang_cr2032_measure_battery_greater_than",
         "title": {
           "en": "Battery is greater than...",
           "fr": "Battery est supérieur à...",
@@ -65516,7 +65516,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_5gang_cr2032"
+            "filter": "driver_id=wireless_switch_5gang_cr2032"
           },
           {
             "name": "greater",
@@ -65549,7 +65549,7 @@
         ]
       },
       {
-        "id": "wireless_switch_cr2032_5gang_cr2032_measure_battery_less_than",
+        "id": "wireless_switch_5gang_cr2032_measure_battery_less_than",
         "title": {
           "en": "Battery is less than...",
           "fr": "Battery est inférieur à...",
@@ -65564,7 +65564,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_5gang_cr2032"
+            "filter": "driver_id=wireless_switch_5gang_cr2032"
           },
           {
             "name": "less",
@@ -65597,7 +65597,7 @@
         ]
       },
       {
-        "id": "wireless_switch_cr2032_6gang_cr2032_is_on",
+        "id": "wireless_switch_6gang_cr2032_is_on",
         "title": {
           "en": "Is !{{turned on|turned off}}",
           "fr": "Est !{{allumé|éteint}}",
@@ -65608,12 +65608,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_6gang_cr2032"
+            "filter": "driver_id=wireless_switch_6gang_cr2032"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_6gang_cr2032_measure_battery_greater_than",
+        "id": "wireless_switch_6gang_cr2032_measure_battery_greater_than",
         "title": {
           "en": "Battery is greater than...",
           "fr": "Battery est supérieur à...",
@@ -65628,7 +65628,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_6gang_cr2032"
+            "filter": "driver_id=wireless_switch_6gang_cr2032"
           },
           {
             "name": "greater",
@@ -65661,7 +65661,7 @@
         ]
       },
       {
-        "id": "wireless_switch_cr2032_6gang_cr2032_measure_battery_less_than",
+        "id": "wireless_switch_6gang_cr2032_measure_battery_less_than",
         "title": {
           "en": "Battery is less than...",
           "fr": "Battery est inférieur à...",
@@ -65676,7 +65676,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_6gang_cr2032"
+            "filter": "driver_id=wireless_switch_6gang_cr2032"
           },
           {
             "name": "less",
@@ -72699,7 +72699,7 @@
         ]
       },
       {
-        "id": "wireless_switch_cr2032_1gang_cr2032_turn_on",
+        "id": "wireless_switch_1gang_cr2032_turn_on",
         "title": {
           "en": "Turn on",
           "fr": "Allumer",
@@ -72710,12 +72710,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_1gang_cr2032"
+            "filter": "driver_id=wireless_switch_1gang_cr2032"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_1gang_cr2032_turn_off",
+        "id": "wireless_switch_1gang_cr2032_turn_off",
         "title": {
           "en": "Turn off",
           "fr": "Éteindre",
@@ -72726,12 +72726,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_1gang_cr2032"
+            "filter": "driver_id=wireless_switch_1gang_cr2032"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_1gang_cr2032_toggle",
+        "id": "wireless_switch_1gang_cr2032_toggle",
         "title": {
           "en": "Toggle on/off",
           "fr": "Inverser marche/arrêt",
@@ -72742,12 +72742,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_1gang_cr2032"
+            "filter": "driver_id=wireless_switch_1gang_cr2032"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_1gang_cr2032_set_dim",
+        "id": "wireless_switch_1gang_cr2032_set_dim",
         "title": {
           "en": "Set brightness",
           "fr": "Régler la luminosité",
@@ -72762,7 +72762,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_1gang_cr2032"
+            "filter": "driver_id=wireless_switch_1gang_cr2032"
           },
           {
             "name": "dim",
@@ -72873,7 +72873,7 @@
         ]
       },
       {
-        "id": "wireless_switch_cr2032_4gang_cr2032_turn_on",
+        "id": "wireless_switch_4gang_cr2032_turn_on",
         "title": {
           "en": "Turn on",
           "fr": "Allumer",
@@ -72884,12 +72884,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_4gang_cr2032"
+            "filter": "driver_id=wireless_switch_4gang_cr2032"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_4gang_cr2032_turn_off",
+        "id": "wireless_switch_4gang_cr2032_turn_off",
         "title": {
           "en": "Turn off",
           "fr": "Éteindre",
@@ -72900,12 +72900,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_4gang_cr2032"
+            "filter": "driver_id=wireless_switch_4gang_cr2032"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_4gang_cr2032_toggle",
+        "id": "wireless_switch_4gang_cr2032_toggle",
         "title": {
           "en": "Toggle on/off",
           "fr": "Inverser marche/arrêt",
@@ -72916,12 +72916,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_4gang_cr2032"
+            "filter": "driver_id=wireless_switch_4gang_cr2032"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_4gang_cr2032_set_dim",
+        "id": "wireless_switch_4gang_cr2032_set_dim",
         "title": {
           "en": "Set brightness",
           "fr": "Régler la luminosité",
@@ -72936,7 +72936,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_4gang_cr2032"
+            "filter": "driver_id=wireless_switch_4gang_cr2032"
           },
           {
             "name": "dim",
@@ -73029,7 +73029,7 @@
         ]
       },
       {
-        "id": "wireless_switch_cr2032_5gang_cr2032_turn_on",
+        "id": "wireless_switch_5gang_cr2032_turn_on",
         "title": {
           "en": "Turn on",
           "fr": "Allumer",
@@ -73040,12 +73040,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_5gang_cr2032"
+            "filter": "driver_id=wireless_switch_5gang_cr2032"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_5gang_cr2032_turn_off",
+        "id": "wireless_switch_5gang_cr2032_turn_off",
         "title": {
           "en": "Turn off",
           "fr": "Éteindre",
@@ -73056,12 +73056,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_5gang_cr2032"
+            "filter": "driver_id=wireless_switch_5gang_cr2032"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_5gang_cr2032_toggle",
+        "id": "wireless_switch_5gang_cr2032_toggle",
         "title": {
           "en": "Toggle on/off",
           "fr": "Inverser marche/arrêt",
@@ -73072,12 +73072,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_5gang_cr2032"
+            "filter": "driver_id=wireless_switch_5gang_cr2032"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_5gang_cr2032_set_dim",
+        "id": "wireless_switch_5gang_cr2032_set_dim",
         "title": {
           "en": "Set brightness",
           "fr": "Régler la luminosité",
@@ -73092,7 +73092,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_5gang_cr2032"
+            "filter": "driver_id=wireless_switch_5gang_cr2032"
           },
           {
             "name": "dim",
@@ -73107,7 +73107,7 @@
         ]
       },
       {
-        "id": "wireless_switch_cr2032_6gang_cr2032_turn_on",
+        "id": "wireless_switch_6gang_cr2032_turn_on",
         "title": {
           "en": "Turn on",
           "fr": "Allumer",
@@ -73118,12 +73118,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_6gang_cr2032"
+            "filter": "driver_id=wireless_switch_6gang_cr2032"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_6gang_cr2032_turn_off",
+        "id": "wireless_switch_6gang_cr2032_turn_off",
         "title": {
           "en": "Turn off",
           "fr": "Éteindre",
@@ -73134,12 +73134,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_6gang_cr2032"
+            "filter": "driver_id=wireless_switch_6gang_cr2032"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_6gang_cr2032_toggle",
+        "id": "wireless_switch_6gang_cr2032_toggle",
         "title": {
           "en": "Toggle on/off",
           "fr": "Inverser marche/arrêt",
@@ -73150,12 +73150,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_6gang_cr2032"
+            "filter": "driver_id=wireless_switch_6gang_cr2032"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_6gang_cr2032_set_dim",
+        "id": "wireless_switch_6gang_cr2032_set_dim",
         "title": {
           "en": "Set brightness",
           "fr": "Régler la luminosité",
@@ -73170,7 +73170,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_6gang_cr2032"
+            "filter": "driver_id=wireless_switch_6gang_cr2032"
           },
           {
             "name": "dim",
