@@ -5,6 +5,48 @@ const { Device } = require('homey');
 class SmartThermostatDevice extends Device {
 
   async onInit() {
+    // Register Zigbee capabilities
+
+    this.registerCapability('target_temperature', 'hvacThermostat', {
+      get: 'occupiedHeatingSetpoint',
+      set: 'occupiedHeatingSetpoint',
+      setParser: value => value * 100,
+      report: 'occupiedHeatingSetpoint',
+      reportParser: value => value / 100
+    });
+    this.registerCapability('measure_temperature', 'msTemperatureMeasurement', {
+      get: 'measuredValue',
+      report: 'measuredValue',
+      reportParser: value => value / 100,
+      reportOpts: {
+        configureAttributeReporting: {
+          minInterval: 300,
+          maxInterval: 3600,
+          minChange: 10
+        }
+      }
+    });
+    this.registerCapability('thermostat_mode', 'hvacThermostat', {
+      get: 'systemMode',
+      set: 'systemMode',
+      report: 'systemMode',
+      reportParser: value => {
+        const modes = ['off', 'auto', 'cool', 'heat'];
+        return modes[value] || 'off';
+      }
+    });
+    this.registerCapability('measure_battery', 'genPowerCfg', {
+      get: 'batteryPercentageRemaining',
+      report: 'batteryPercentageRemaining',
+      reportParser: value => Math.max(0, Math.min(100, value / 2)),
+      reportOpts: {
+        configureAttributeReporting: {
+          minInterval: 3600,
+          maxInterval: 14400,
+          minChange: 2
+        }
+      }
+    });
     await this.registerFlowCardHandlers();
     this.log('smart_thermostat device has been initialized');
     
