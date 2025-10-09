@@ -5,6 +5,15 @@ const { Device } = require('homey');
 class SceneControllerDevice extends Device {
 
   async onInit() {
+    // Register Zigbee capabilities
+
+    this.registerCapability('onoff', 'genOnOff', {
+      get: 'onOff',
+      set: 'onOff',
+      setParser: value => ({ value: value ? 1 : 0 }),
+      report: 'onOff',
+      reportParser: value => value === 1
+    });
     await this.registerFlowCardHandlers();
     this.log('scene_controller device has been initialized');
     
