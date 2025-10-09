@@ -24567,15 +24567,15 @@
           }
         },
         "learnmode": {
-          "image": "./drivers/wireless_switch_cr2032_4gang_cr2450/assets/large.png",
+          "image": "./drivers/wireless_switch_4gang_cr2450/assets/large.png",
           "instruction": {
             "en": "Press any button 3 times rapidly"
           }
         }
       },
       "images": {
-        "small": "./drivers/wireless_switch_cr2032_4gang_cr2450/assets/small.png",
-        "large": "./drivers/wireless_switch_cr2032_4gang_cr2450/assets/large.png"
+        "small": "./drivers/wireless_switch_4gang_cr2450/assets/small.png",
+        "large": "./drivers/wireless_switch_4gang_cr2450/assets/large.png"
       },
       "platforms": [
         "local"
@@ -24585,7 +24585,7 @@
           "CR2450"
         ]
       },
-      "id": "wireless_switch_cr2032_4gang_cr2450"
+      "id": "wireless_switch_4gang_cr2450"
     },
     {
       "class": "socket",
@@ -38723,7 +38723,7 @@
         ]
       },
       {
-        "id": "wireless_switch_cr2032_4gang_cr2450_measure_battery_changed",
+        "id": "wireless_switch_4gang_cr2450_measure_battery_changed",
         "title": {
           "en": "Battery changed",
           "fr": "Battery a changé",
@@ -38744,12 +38744,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_4gang_cr2450"
+            "filter": "driver_id=wireless_switch_4gang_cr2450"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_4gang_cr2450_turned_on",
+        "id": "wireless_switch_4gang_cr2450_turned_on",
         "title": {
           "en": "Turned on",
           "fr": "Allumé",
@@ -38760,12 +38760,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_4gang_cr2450"
+            "filter": "driver_id=wireless_switch_4gang_cr2450"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_4gang_cr2450_turned_off",
+        "id": "wireless_switch_4gang_cr2450_turned_off",
         "title": {
           "en": "Turned off",
           "fr": "Éteint",
@@ -38776,7 +38776,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_4gang_cr2450"
+            "filter": "driver_id=wireless_switch_4gang_cr2450"
           }
         ]
       },
@@ -65373,7 +65373,7 @@
         ]
       },
       {
-        "id": "wireless_switch_cr2032_4gang_cr2450_measure_battery_greater_than",
+        "id": "wireless_switch_4gang_cr2450_measure_battery_greater_than",
         "title": {
           "en": "Battery is greater than...",
           "fr": "Battery est supérieur à...",
@@ -65388,7 +65388,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_4gang_cr2450"
+            "filter": "driver_id=wireless_switch_4gang_cr2450"
           },
           {
             "name": "greater",
@@ -65421,7 +65421,7 @@
         ]
       },
       {
-        "id": "wireless_switch_cr2032_4gang_cr2450_measure_battery_less_than",
+        "id": "wireless_switch_4gang_cr2450_measure_battery_less_than",
         "title": {
           "en": "Battery is less than...",
           "fr": "Battery est inférieur à...",
@@ -65436,7 +65436,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_4gang_cr2450"
+            "filter": "driver_id=wireless_switch_4gang_cr2450"
           },
           {
             "name": "less",
@@ -65469,7 +65469,7 @@
         ]
       },
       {
-        "id": "wireless_switch_cr2032_4gang_cr2450_is_on",
+        "id": "wireless_switch_4gang_cr2450_is_on",
         "title": {
           "en": "Is !{{turned on|turned off}}",
           "fr": "Est !{{allumé|éteint}}",
@@ -65480,7 +65480,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_4gang_cr2450"
+            "filter": "driver_id=wireless_switch_4gang_cr2450"
           }
         ]
       },
@@ -72951,7 +72951,7 @@
         ]
       },
       {
-        "id": "wireless_switch_cr2032_4gang_cr2450_turn_on",
+        "id": "wireless_switch_4gang_cr2450_turn_on",
         "title": {
           "en": "Turn on",
           "fr": "Allumer",
@@ -72962,12 +72962,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_4gang_cr2450"
+            "filter": "driver_id=wireless_switch_4gang_cr2450"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_4gang_cr2450_turn_off",
+        "id": "wireless_switch_4gang_cr2450_turn_off",
         "title": {
           "en": "Turn off",
           "fr": "Éteindre",
@@ -72978,12 +72978,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_4gang_cr2450"
+            "filter": "driver_id=wireless_switch_4gang_cr2450"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_4gang_cr2450_toggle",
+        "id": "wireless_switch_4gang_cr2450_toggle",
         "title": {
           "en": "Toggle on/off",
           "fr": "Inverser marche/arrêt",
@@ -72994,12 +72994,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_4gang_cr2450"
+            "filter": "driver_id=wireless_switch_4gang_cr2450"
           }
         ]
       },
       {
-        "id": "wireless_switch_cr2032_4gang_cr2450_set_dim",
+        "id": "wireless_switch_4gang_cr2450_set_dim",
         "title": {
           "en": "Set brightness",
           "fr": "Régler la luminosité",
@@ -73014,7 +73014,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wireless_switch_cr2032_4gang_cr2450"
+            "filter": "driver_id=wireless_switch_4gang_cr2450"
           },
           {
             "name": "dim",
