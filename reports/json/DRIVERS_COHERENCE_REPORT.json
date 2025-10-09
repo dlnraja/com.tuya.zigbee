@@ -107,21 +107,21 @@
       "fixes": []
     },
     {
-      "id": "energy_monitoring_plug_ac",
+      "id": "energy_monitoring_plug_ac_ac",
       "issues": [
         "Missing registerCapability: measure_power, meter_power, measure_voltage, measure_current"
       ],
       "fixes": []
     },
     {
-      "id": "energy_plug_advanced_ac",
+      "id": "energy_plug_advanced_ac_ac",
       "issues": [
         "Missing registerCapability: measure_power, meter_power, measure_voltage, measure_current"
       ],
       "fixes": []
     },
     {
-      "id": "extension_plug_ac",
+      "id": "extension_plug_ac_ac",
       "issues": [
         "Missing registerCapability: onoff, measure_power, meter_power, measure_voltage, measure_current"
       ],
@@ -198,7 +198,7 @@
       "fixes": []
     },
     {
-      "id": "mini_switch_cr2032",
+      "id": "mini_switch_cr2032_cr2032",
       "issues": [
         "Missing registerCapability: onoff, measure_battery, dim"
       ],
@@ -212,14 +212,14 @@
       "fixes": []
     },
     {
-      "id": "motion_sensor_mmwave_battery",
+      "id": "motion_sensor_mmwave_battery_battery",
       "issues": [
         "Missing registerCapability: measure_luminance, alarm_battery"
       ],
       "fixes": []
     },
     {
-      "id": "motion_sensor_pir_ac_battery",
+      "id": "motion_sensor_pir_ac_battery_battery",
       "issues": [
         "Missing registerCapability: alarm_motion, measure_luminance, measure_battery, alarm_battery"
       ],
@@ -233,7 +233,7 @@
       "fixes": []
     },
     {
-      "id": "motion_sensor_zigbee_204z_battery",
+      "id": "motion_sensor_zigbee_204z_battery_battery",
       "issues": [
         "Missing registerCapability: alarm_motion, measure_battery, measure_luminance, alarm_battery"
       ],
@@ -303,7 +303,7 @@
       "fixes": []
     },
     {
-      "id": "power_meter_socket_ac",
+      "id": "power_meter_socket_ac_ac",
       "issues": [
         "Missing registerCapability: measure_power, meter_power, measure_voltage, measure_current"
       ],
@@ -331,21 +331,21 @@
       "fixes": []
     },
     {
-      "id": "radar_motion_sensor_advanced_battery",
+      "id": "radar_motion_sensor_advanced_battery_battery",
       "issues": [
         "Missing registerCapability: measure_luminance"
       ],
       "fixes": []
     },
     {
-      "id": "radar_motion_sensor_mmwave_battery_battery",
+      "id": "radar_motion_sensor_mmwave_battery_battery_battery_battery",
       "issues": [
         "Missing registerCapability: measure_luminance, alarm_generic"
       ],
       "fixes": []
     },
     {
-      "id": "radar_motion_sensor_tank_level_battery",
+      "id": "radar_motion_sensor_tank_level_battery_battery",
       "issues": [
         "Missing registerCapability: measure_luminance"
       ],
@@ -366,7 +366,7 @@
       "fixes": []
     },
     {
-      "id": "remote_switch_cr2032",
+      "id": "remote_switch_cr2032_cr2032",
       "issues": [
         "Missing registerCapability: measure_battery, dim"
       ],
@@ -394,14 +394,14 @@
       "fixes": []
     },
     {
-      "id": "roller_shutter_switch_cr2032",
+      "id": "roller_shutter_switch_cr2032_cr2032",
       "issues": [
         "Missing registerCapability: windowcoverings_closed, windowcoverings_set, button.up, button.down, button.stop, windowcoverings_tilt_set"
       ],
       "fixes": []
     },
     {
-      "id": "roller_shutter_switch_cr2032_advanced",
+      "id": "roller_shutter_switch_cr2032_cr2032_advanced",
       "issues": [
         "Missing registerCapability: windowcoverings_closed, windowcoverings_set, button.up, button.down, button.stop, measure_power, windowcoverings_tilt_set"
       ],
@@ -514,14 +514,14 @@
       "fixes": []
     },
     {
-      "id": "smart_plug_ac",
+      "id": "smart_plug_ac_ac",
       "issues": [
         "Missing registerCapability: onoff, measure_power, meter_power, measure_voltage, measure_current"
       ],
       "fixes": []
     },
     {
-      "id": "smart_plug_ac_energy",
+      "id": "smart_plug_ac_ac_energy",
       "issues": [
         "Missing registerCapability: measure_power, meter_power, measure_voltage, measure_current"
       ],
@@ -955,56 +955,56 @@
       "fixes": []
     },
     {
-      "id": "wireless_switch_cr2032",
+      "id": "wireless_switch_cr2032_cr2032",
       "issues": [
         "Missing registerCapability: measure_battery, dim"
       ],
       "fixes": []
     },
     {
-      "id": "wireless_switch_cr2032_1gang_cr2032",
+      "id": "wireless_switch_cr2032_cr2032_1gang_cr2032",
       "issues": [
         "Missing registerCapability: measure_battery, onoff, dim"
       ],
       "fixes": []
     },
     {
-      "id": "wireless_switch_cr2032_2gang_cr2032",
+      "id": "wireless_switch_cr2032_cr2032_2gang_cr2032",
       "issues": [
         "Missing registerCapability: onoff, onoff.gang2"
       ],
       "fixes": []
     },
     {
-      "id": "wireless_switch_cr2032_3gang_cr2032",
+      "id": "wireless_switch_cr2032_cr2032_3gang_cr2032",
       "issues": [
         "Missing registerCapability: onoff, onoff.gang2, onoff.gang3"
       ],
       "fixes": []
     },
     {
-      "id": "wireless_switch_cr2032_4gang_cr2032",
+      "id": "wireless_switch_cr2032_cr2032_4gang_cr2032",
       "issues": [
         "Missing registerCapability: onoff, measure_battery, dim, onoff.2, onoff.3, onoff.4"
       ],
       "fixes": []
     },
     {
-      "id": "wireless_switch_cr2032_4gang_cr2450",
+      "id": "wireless_switch_cr2032_cr2032_4gang_cr2450",
       "issues": [
         "Missing registerCapability: button.1, button.2, button.3, button.4, onoff.2, onoff.3, onoff.4"
       ],
       "fixes": []
     },
     {
-      "id": "wireless_switch_cr2032_5gang_cr2032",
+      "id": "wireless_switch_cr2032_cr2032_5gang_cr2032",
       "issues": [
         "Missing registerCapability: onoff, button.2, button.3, button.4, button.5, measure_battery, dim, onoff.2, onoff.3, onoff.4, onoff.5"
       ],
       "fixes": []
     },
     {
-      "id": "wireless_switch_cr2032_6gang_cr2032",
+      "id": "wireless_switch_cr2032_cr2032_6gang_cr2032",
       "issues": [
         "Missing registerCapability: onoff, button.2, button.3, button.4, button.5, button.6, measure_battery, dim, onoff.2, onoff.3, onoff.4, onoff.5, onoff.6"
       ],

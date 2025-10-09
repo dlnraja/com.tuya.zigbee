@@ -35,7 +35,7 @@ const GITHUB_ISSUES_OPEN = [
     reporter: 'gfi63',
     device: { model: 'TS011F', manufacturer: '_TZ3000_npg02xft' },
     status: 'FIXED',
-    driver: 'energy_monitoring_plug_ac_advanced'
+    driver: 'energy_monitoring_plug_ac_ac_advanced'
   },
   {
     number: 28,
@@ -59,7 +59,7 @@ const GITHUB_ISSUES_OPEN = [
     reporter: 'askseb',
     device: { model: 'TS0041', manufacturer: '_TZ3000_yj6k7vfo' },
     status: 'FIXED',
-    driver: 'wireless_switch_cr2032_1gang_cr2032'
+    driver: 'wireless_switch_cr2032_cr2032_1gang_cr2032'
   },
   {
     number: 31,
