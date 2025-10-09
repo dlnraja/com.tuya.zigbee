@@ -18038,8 +18038,8 @@
         }
       },
       "images": {
-        "small": "./drivers/temp_humid_sensor_v1w2k9dd/assets/small.png",
-        "large": "./drivers/temp_humid_sensor_v1w2k9dd/assets/large.png"
+        "small": "./drivers/temp_humid_sensor_dd/assets/small.png",
+        "large": "./drivers/temp_humid_sensor_dd/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -18068,7 +18068,7 @@
           "CR2032"
         ]
       },
-      "id": "temp_humid_sensor_v1w2k9dd"
+      "id": "temp_humid_sensor_dd"
     },
     {
       "name": {
@@ -23070,8 +23070,8 @@
         }
       },
       "images": {
-        "small": "./drivers/water_leak_detector_sq510a/assets/small.png",
-        "large": "./drivers/water_leak_detector_sq510a/assets/large.png"
+        "small": "./drivers/water_leak_detector/assets/small.png",
+        "large": "./drivers/water_leak_detector/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -23083,7 +23083,7 @@
           "CR2032"
         ]
       },
-      "id": "water_leak_detector_sq510a"
+      "id": "water_leak_detector"
     },
     {
       "name": {
@@ -35431,7 +35431,7 @@
         ]
       },
       {
-        "id": "temp_humid_sensor_v1w2k9dd_measure_temperature_changed",
+        "id": "temp_humid_sensor_dd_measure_temperature_changed",
         "title": {
           "en": "Temperature changed",
           "fr": "Temperature a changé",
@@ -35452,12 +35452,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=temp_humid_sensor_v1w2k9dd"
+            "filter": "driver_id=temp_humid_sensor_dd"
           }
         ]
       },
       {
-        "id": "temp_humid_sensor_v1w2k9dd_measure_humidity_changed",
+        "id": "temp_humid_sensor_dd_measure_humidity_changed",
         "title": {
           "en": "Humidity changed",
           "fr": "Humidity a changé",
@@ -35478,12 +35478,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=temp_humid_sensor_v1w2k9dd"
+            "filter": "driver_id=temp_humid_sensor_dd"
           }
         ]
       },
       {
-        "id": "temp_humid_sensor_v1w2k9dd_measure_battery_changed",
+        "id": "temp_humid_sensor_dd_measure_battery_changed",
         "title": {
           "en": "Battery changed",
           "fr": "Battery a changé",
@@ -35504,12 +35504,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=temp_humid_sensor_v1w2k9dd"
+            "filter": "driver_id=temp_humid_sensor_dd"
           }
         ]
       },
       {
-        "id": "temp_humid_sensor_v1w2k9dd_alarm_motion_true",
+        "id": "temp_humid_sensor_dd_alarm_motion_true",
         "title": {
           "en": "Motion alarm activated",
           "fr": "Alarme motion activée",
@@ -35524,12 +35524,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=temp_humid_sensor_v1w2k9dd"
+            "filter": "driver_id=temp_humid_sensor_dd"
           }
         ]
       },
       {
-        "id": "temp_humid_sensor_v1w2k9dd_alarm_motion_false",
+        "id": "temp_humid_sensor_dd_alarm_motion_false",
         "title": {
           "en": "Motion alarm deactivated",
           "fr": "Alarme motion désactivée",
@@ -35544,12 +35544,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=temp_humid_sensor_v1w2k9dd"
+            "filter": "driver_id=temp_humid_sensor_dd"
           }
         ]
       },
       {
-        "id": "temp_humid_sensor_v1w2k9dd_measure_luminance_changed",
+        "id": "temp_humid_sensor_dd_measure_luminance_changed",
         "title": {
           "en": "Luminance changed",
           "fr": "Luminance a changé",
@@ -35570,12 +35570,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=temp_humid_sensor_v1w2k9dd"
+            "filter": "driver_id=temp_humid_sensor_dd"
           }
         ]
       },
       {
-        "id": "temp_humid_sensor_v1w2k9dd_alarm_battery_true",
+        "id": "temp_humid_sensor_dd_alarm_battery_true",
         "title": {
           "en": "Battery alarm activated",
           "fr": "Alarme battery activée",
@@ -35590,12 +35590,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=temp_humid_sensor_v1w2k9dd"
+            "filter": "driver_id=temp_humid_sensor_dd"
           }
         ]
       },
       {
-        "id": "temp_humid_sensor_v1w2k9dd_alarm_battery_false",
+        "id": "temp_humid_sensor_dd_alarm_battery_false",
         "title": {
           "en": "Battery alarm deactivated",
           "fr": "Alarme battery désactivée",
@@ -35610,7 +35610,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=temp_humid_sensor_v1w2k9dd"
+            "filter": "driver_id=temp_humid_sensor_dd"
           }
         ]
       },
@@ -37921,7 +37921,7 @@
         ]
       },
       {
-        "id": "water_leak_detector_sq510a_alarm_water_true",
+        "id": "water_leak_detector_alarm_water_true",
         "title": {
           "en": "Water alarm activated",
           "fr": "Alarme water activée",
@@ -37936,12 +37936,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=water_leak_detector_sq510a"
+            "filter": "driver_id=water_leak_detector"
           }
         ]
       },
       {
-        "id": "water_leak_detector_sq510a_alarm_water_false",
+        "id": "water_leak_detector_alarm_water_false",
         "title": {
           "en": "Water alarm deactivated",
           "fr": "Alarme water désactivée",
@@ -37956,12 +37956,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=water_leak_detector_sq510a"
+            "filter": "driver_id=water_leak_detector"
           }
         ]
       },
       {
-        "id": "water_leak_detector_sq510a_measure_battery_changed",
+        "id": "water_leak_detector_measure_battery_changed",
         "title": {
           "en": "Battery changed",
           "fr": "Battery a changé",
@@ -37982,12 +37982,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=water_leak_detector_sq510a"
+            "filter": "driver_id=water_leak_detector"
           }
         ]
       },
       {
-        "id": "water_leak_detector_sq510a_measure_temperature_changed",
+        "id": "water_leak_detector_measure_temperature_changed",
         "title": {
           "en": "Temperature changed",
           "fr": "Temperature a changé",
@@ -38008,7 +38008,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=water_leak_detector_sq510a"
+            "filter": "driver_id=water_leak_detector"
           }
         ]
       },
@@ -59005,7 +59005,7 @@
         ]
       },
       {
-        "id": "temp_humid_sensor_v1w2k9dd_measure_temperature_greater_than",
+        "id": "temp_humid_sensor_dd_measure_temperature_greater_than",
         "title": {
           "en": "Temperature is greater than...",
           "fr": "Temperature est supérieur à...",
@@ -59020,7 +59020,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=temp_humid_sensor_v1w2k9dd"
+            "filter": "driver_id=temp_humid_sensor_dd"
           },
           {
             "name": "greater",
@@ -59053,7 +59053,7 @@
         ]
       },
       {
-        "id": "temp_humid_sensor_v1w2k9dd_measure_temperature_less_than",
+        "id": "temp_humid_sensor_dd_measure_temperature_less_than",
         "title": {
           "en": "Temperature is less than...",
           "fr": "Temperature est inférieur à...",
@@ -59068,7 +59068,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=temp_humid_sensor_v1w2k9dd"
+            "filter": "driver_id=temp_humid_sensor_dd"
           },
           {
             "name": "less",
@@ -59101,7 +59101,7 @@
         ]
       },
       {
-        "id": "temp_humid_sensor_v1w2k9dd_measure_humidity_greater_than",
+        "id": "temp_humid_sensor_dd_measure_humidity_greater_than",
         "title": {
           "en": "Humidity is greater than...",
           "fr": "Humidity est supérieur à...",
@@ -59116,7 +59116,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=temp_humid_sensor_v1w2k9dd"
+            "filter": "driver_id=temp_humid_sensor_dd"
           },
           {
             "name": "greater",
@@ -59149,7 +59149,7 @@
         ]
       },
       {
-        "id": "temp_humid_sensor_v1w2k9dd_measure_humidity_less_than",
+        "id": "temp_humid_sensor_dd_measure_humidity_less_than",
         "title": {
           "en": "Humidity is less than...",
           "fr": "Humidity est inférieur à...",
@@ -59164,7 +59164,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=temp_humid_sensor_v1w2k9dd"
+            "filter": "driver_id=temp_humid_sensor_dd"
           },
           {
             "name": "less",
@@ -59197,7 +59197,7 @@
         ]
       },
       {
-        "id": "temp_humid_sensor_v1w2k9dd_measure_battery_greater_than",
+        "id": "temp_humid_sensor_dd_measure_battery_greater_than",
         "title": {
           "en": "Battery is greater than...",
           "fr": "Battery est supérieur à...",
@@ -59212,7 +59212,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=temp_humid_sensor_v1w2k9dd"
+            "filter": "driver_id=temp_humid_sensor_dd"
           },
           {
             "name": "greater",
@@ -59245,7 +59245,7 @@
         ]
       },
       {
-        "id": "temp_humid_sensor_v1w2k9dd_measure_battery_less_than",
+        "id": "temp_humid_sensor_dd_measure_battery_less_than",
         "title": {
           "en": "Battery is less than...",
           "fr": "Battery est inférieur à...",
@@ -59260,7 +59260,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=temp_humid_sensor_v1w2k9dd"
+            "filter": "driver_id=temp_humid_sensor_dd"
           },
           {
             "name": "less",
@@ -59293,7 +59293,7 @@
         ]
       },
       {
-        "id": "temp_humid_sensor_v1w2k9dd_alarm_motion_is_active",
+        "id": "temp_humid_sensor_dd_alarm_motion_is_active",
         "title": {
           "en": "Motion alarm is !{{active|inactive}}",
           "fr": "Alarme motion est !{{active|inactive}}",
@@ -59304,12 +59304,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=temp_humid_sensor_v1w2k9dd"
+            "filter": "driver_id=temp_humid_sensor_dd"
           }
         ]
       },
       {
-        "id": "temp_humid_sensor_v1w2k9dd_measure_luminance_greater_than",
+        "id": "temp_humid_sensor_dd_measure_luminance_greater_than",
         "title": {
           "en": "Luminance is greater than...",
           "fr": "Luminance est supérieur à...",
@@ -59324,7 +59324,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=temp_humid_sensor_v1w2k9dd"
+            "filter": "driver_id=temp_humid_sensor_dd"
           },
           {
             "name": "greater",
@@ -59357,7 +59357,7 @@
         ]
       },
       {
-        "id": "temp_humid_sensor_v1w2k9dd_measure_luminance_less_than",
+        "id": "temp_humid_sensor_dd_measure_luminance_less_than",
         "title": {
           "en": "Luminance is less than...",
           "fr": "Luminance est inférieur à...",
@@ -59372,7 +59372,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=temp_humid_sensor_v1w2k9dd"
+            "filter": "driver_id=temp_humid_sensor_dd"
           },
           {
             "name": "less",
@@ -59405,7 +59405,7 @@
         ]
       },
       {
-        "id": "temp_humid_sensor_v1w2k9dd_alarm_battery_is_active",
+        "id": "temp_humid_sensor_dd_alarm_battery_is_active",
         "title": {
           "en": "Battery alarm is !{{active|inactive}}",
           "fr": "Alarme battery est !{{active|inactive}}",
@@ -59416,7 +59416,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=temp_humid_sensor_v1w2k9dd"
+            "filter": "driver_id=temp_humid_sensor_dd"
           }
         ]
       },
@@ -63917,7 +63917,7 @@
         ]
       },
       {
-        "id": "water_leak_detector_sq510a_alarm_water_is_active",
+        "id": "water_leak_detector_alarm_water_is_active",
         "title": {
           "en": "Water alarm is !{{active|inactive}}",
           "fr": "Alarme water est !{{active|inactive}}",
@@ -63928,12 +63928,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=water_leak_detector_sq510a"
+            "filter": "driver_id=water_leak_detector"
           }
         ]
       },
       {
-        "id": "water_leak_detector_sq510a_measure_battery_greater_than",
+        "id": "water_leak_detector_measure_battery_greater_than",
         "title": {
           "en": "Battery is greater than...",
           "fr": "Battery est supérieur à...",
@@ -63948,7 +63948,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=water_leak_detector_sq510a"
+            "filter": "driver_id=water_leak_detector"
           },
           {
             "name": "greater",
@@ -63981,7 +63981,7 @@
         ]
       },
       {
-        "id": "water_leak_detector_sq510a_measure_battery_less_than",
+        "id": "water_leak_detector_measure_battery_less_than",
         "title": {
           "en": "Battery is less than...",
           "fr": "Battery est inférieur à...",
@@ -63996,7 +63996,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=water_leak_detector_sq510a"
+            "filter": "driver_id=water_leak_detector"
           },
           {
             "name": "less",
@@ -64029,7 +64029,7 @@
         ]
       },
       {
-        "id": "water_leak_detector_sq510a_measure_temperature_greater_than",
+        "id": "water_leak_detector_measure_temperature_greater_than",
         "title": {
           "en": "Temperature is greater than...",
           "fr": "Temperature est supérieur à...",
@@ -64044,7 +64044,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=water_leak_detector_sq510a"
+            "filter": "driver_id=water_leak_detector"
           },
           {
             "name": "greater",
@@ -64077,7 +64077,7 @@
         ]
       },
       {
-        "id": "water_leak_detector_sq510a_measure_temperature_less_than",
+        "id": "water_leak_detector_measure_temperature_less_than",
         "title": {
           "en": "Temperature is less than...",
           "fr": "Temperature est inférieur à...",
@@ -64092,7 +64092,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=water_leak_detector_sq510a"
+            "filter": "driver_id=water_leak_detector"
           },
           {
             "name": "less",
