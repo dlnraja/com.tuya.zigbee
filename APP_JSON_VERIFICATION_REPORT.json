@@ -1,15 +1,12 @@
 {
-  "timestamp": "2025-10-09T15:11:19.350Z",
-  "version": "2.1.35",
+  "timestamp": "2025-10-09T21:36:16.149Z",
+  "version": "2.1.36",
   "drivers": 163,
   "issues": {
-    "total": 174,
-    "by_type": {
-      "missing_products": 159,
-      "missing_manufacturers": 15
-    }
+    "total": 0,
+    "by_type": {}
   },
-  "fixes_applied": 2481,
+  "fixes_applied": 0,
   "flow_cards": {
     "triggers": 661,
     "conditions": 698,
