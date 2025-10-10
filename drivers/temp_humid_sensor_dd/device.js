@@ -2,27 +2,79 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class TuyaZigbeeDevice extends ZigBeeDevice {
+class TempHumidSensorDevice extends ZigBeeDevice {
+  
+  async onNodeInit({ zclNode }) {
+    this.log('Temperature Humidity Sensor initialized');
 
-    async onNodeInit() {
-        this.enableDebug();
-        this.printNode();
-        
-    // Register capabilities with numeric Zigbee clusters
-    if (this.hasCapability('onoff')) {
-      this.registerCapability('onoff', 6);
+    // Enable debugging
+    this.enableDebug();
+    this.printNode();
+
+    // Temperature - CRITICAL FIX for Forum Bug #259
+    if (this.hasCapability('measure_temperature')) {
+      this.registerCapability('measure_temperature', 1024, {
+        reportParser: value => {
+          this.log('Temperature report:', value);
+          return Math.round((value / 100) * 10) / 10;
+        },
+        getOpts: {
+          getOnStart: true,
+          pollInterval: 300000
+        }
+      });
     }
-    if (this.hasCapability('dim')) {
-      this.registerCapability('dim', 8);
+
+    // Humidity - CRITICAL FIX for Forum Bug #259
+    if (this.hasCapability('measure_humidity')) {
+      this.registerCapability('measure_humidity', 1024, {
+        reportParser: value => {
+          this.log('Humidity report:', value);
+          return Math.round((value / 100) * 10) / 10;
+        },
+        getOpts: {
+          getOnStart: true,
+          pollInterval: 300000
+        }
+      });
     }
-    if (this.hasCapability('light_hue')) {
-      this.registerCapability('light_hue', 768);
+
+    // Battery
+    if (this.hasCapability('measure_battery')) {
+      this.registerCapability('measure_battery', 1, {
+        reportParser: value => {
+          this.log('Battery report:', value);
+          return Math.min(100, Math.max(0, value / 2));
+        },
+        getOpts: {
+          getOnStart: true,
+          pollInterval: 3600000
+        }
+      });
     }
-    if (this.hasCapability('light_saturation')) {
-      this.registerCapability('light_saturation', 768);
+
+    // Luminance
+    if (this.hasCapability('measure_luminance')) {
+      this.registerCapability('measure_luminance', 1024, {
+        reportParser: value => {
+          this.log('Luminance report:', value);
+          return Math.max(0, Math.round(Math.pow(10, (value - 1) / 10000)));
+        },
+        getOpts: {
+          getOnStart: true,
+          pollInterval: 300000
+        }
+      });
     }
-    if (this.hasCapability('light_temperature')) {
-      this.registerCapability('light_temperature', 768);
+
+    // Motion alarm
+    if (this.hasCapability('alarm_motion')) {
+      zclNode.endpoints[1].clusters.basic.on('reporting', (value) => {
+        this.log('Motion report:', value);
+        if (value && value.hasOwnProperty('occupancy')) {
+          this.setCapabilityValue('alarm_motion', value.occupancy === 1).catch(this.error);
+        }
+      });
     }
     if (this.hasCapability('measure_temperature')) {
       this.registerCapability('measure_temperature', 1026);
