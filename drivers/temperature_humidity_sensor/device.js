@@ -43,38 +43,52 @@ class TemperatureHumiditySensorDevice extends ZigBeeDevice {
       this.log('✅ Battery capability registered');
     }
 
-    // Motion/vibration alarm (IAS Zone)
-    if (this.hasCapability('alarm_motion')) {
-      this.registerCapability('alarm_motion', 'iasZone', {
-        report: 'zoneStatus',
-        reportParser: value => (value & 1) === 1
-      });
-      this.log('✅ Motion alarm capability registered');
-    }
-
-    // Illuminance measurement
-    if (this.hasCapability('measure_luminance')) {
-      this.registerCapability('measure_luminance', 'msIlluminanceMeasurement', {
-        get: 'measuredValue',
-        report: 'measuredValue',
-        reportParser: value => Math.pow(10, (value - 1) / 10000),
-        getParser: value => Math.pow(10, (value - 1) / 10000)
-      });
-      this.log('✅ Luminance capability registered');
-    }
+    // Temperature/Humidity sensors don't have motion or luminance capabilities
 
     // Configure attribute reporting
     try {
-      await this.configureAttributeReporting([
-        {
+      const reportingConfigs = [];
+      
+      // Temperature reporting
+      if (this.hasCapability('measure_temperature')) {
+        reportingConfigs.push({
+          endpointId: 1,
+          cluster: 'msTemperatureMeasurement',
+          attributeName: 'measuredValue',
+          minInterval: 60,
+          maxInterval: 3600,
+          minChange: 50  // 0.5°C (value is in 0.01°C)
+        });
+      }
+      
+      // Humidity reporting
+      if (this.hasCapability('measure_humidity')) {
+        reportingConfigs.push({
+          endpointId: 1,
+          cluster: 'msRelativeHumidity',
+          attributeName: 'measuredValue',
+          minInterval: 60,
+          maxInterval: 3600,
+          minChange: 100  // 1% (value is in 0.01%)
+        });
+      }
+      
+      // Battery reporting
+      if (this.hasCapability('measure_battery')) {
+        reportingConfigs.push({
           endpointId: 1,
           cluster: 'genPowerCfg',
           attributeName: 'batteryPercentageRemaining',
-          minInterval: 0,
-          maxInterval: 3600,
-          minChange: 1
-        }
-      ]);
+          minInterval: 3600,
+          maxInterval: 43200,
+          minChange: 2
+        });
+      }
+      
+      if (reportingConfigs.length > 0) {
+        await this.configureAttributeReporting(reportingConfigs);
+        this.log('✅ Attribute reporting configured');
+      }
     } catch (error) {
       this.error('Failed to configure reporting:', error);
     }
