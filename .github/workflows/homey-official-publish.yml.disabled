@@ -122,14 +122,33 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           
+          # Add all changes (including potential build artifacts)
+          git add -A
+          
           if [ -n "$(git status --porcelain)" ]; then
-            git add app.json .homeychangelog.json
             git commit -m "chore: bump version to v${{ steps.version.outputs.version }} [skip ci]"
             git push origin HEAD
-            echo "✅ Version v${{ steps.version.outputs.version }} committed"
+            echo "✅ Version v${{ steps.version.outputs.version }} committed and pushed"
           else
             echo "ℹ️ No changes to commit"
           fi
+      
+      # Fresh checkout to ensure clean state
+      - name: Fresh Checkout for Publication
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+      
+      - name: Setup Node.js for Publication
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Install Dependencies for Publication
+        run: |
+          npm install --save-dev homey canvas
+          npm ci --ignore-scripts 2>/dev/null || npm install --ignore-scripts
       
       # ✅ OFFICIAL HOMEY ACTION #3: Publish
       - name: Publish to Homey App Store (Official Action)
