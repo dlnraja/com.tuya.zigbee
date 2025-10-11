@@ -80,16 +80,24 @@ async function main() {
       console.warn('⚠️  Validation avec warnings (continué)');
     }
     
-    // 5️⃣ Git status
-    console.log('\n5️⃣  GIT STATUS\n');
+    // 5️⃣ Git pull rebase
+    console.log('\n5️⃣  GIT PULL REBASE\n');
+    try {
+      exec('git pull --rebase origin master');
+    } catch (error) {
+      console.log('⚠️  Pull échoué ou déjà à jour');
+    }
+    
+    // 6️⃣ Git status
+    console.log('\n6️⃣  GIT STATUS\n');
     exec('git status --short');
     
-    // 6️⃣ Git add all
-    console.log('\n6️⃣  GIT ADD\n');
+    // 7️⃣ Git add all
+    console.log('\n7️⃣  GIT ADD\n');
     exec('git add .');
     
-    // 7️⃣ Git commit
-    console.log('\n7️⃣  GIT COMMIT\n');
+    // 8️⃣ Git commit
+    console.log('\n8️⃣  GIT COMMIT\n');
     const commitMsg = `🎨 Images personnalisées V2 + icônes alimentation
 
 ✨ Génération images ultra-personnalisées:
@@ -115,8 +123,8 @@ Version: ${appJson.version}`;
     
     exec(`git commit -m "${commitMsg}"`);
     
-    // 8️⃣ Git push
-    console.log('\n8️⃣  GIT PUSH\n');
+    // 9️⃣ Git push
+    console.log('\n9️⃣  GIT PUSH\n');
     exec('git push origin master');
     
     console.log('\n✅ SUCCÈS COMPLET!\n');
