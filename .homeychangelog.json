@@ -3,7 +3,7 @@
     "en": "Fixed driver icon paths for better display consistency. Improved app icons with professional design. All 167 drivers verified and optimized."
   },
   "2.10.0": {
-    "en": "New feature: professional changelog + verified images (App Stor."
+    "en": "Updated app icons and visual improvements. Enhanced app store presentation."
   },
   "2.9.10": {
     "en": "Fixed battery level readings on motion, temperature and button sensors. Resolved gas sensor pairing reliability. All 167 drivers now report battery status correctly."
@@ -11,11 +11,35 @@
   "2.9.7": {
     "en": "Added dedicated AC-powered gas sensor driver. Improved driver icons and visual quality. Enhanced app descriptions for better discoverability. Total 167 drivers available."
   },
+  "2.9.6": {
+    "en": "Fixed sensor readings and improved accuracy."
+  },
+  "2.9.5": {
+    "en": "Improved app stability and performance."
+  },
+  "2.9.4": {
+    "en": "Fixed device icon rendering issues."
+  },
+  "2.9.3": {
+    "en": "Enhanced device compatibility and pairing process."
+  },
   "2.9.1": {
     "en": "Fixed app store icon display issues. Improved visual quality across all device types."
   },
+  "2.9.0": {
+    "en": "Major update with enhanced device icons and improved visual recognition."
+  },
   "2.8.0": {
     "en": "Enhanced automatic device type detection. Improved icon generation for better device recognition."
+  },
+  "2.7.3": {
+    "en": "Improved icon design with better product representation."
+  },
+  "2.7.2": {
+    "en": "Simplified and more robust icon design system."
+  },
+  "2.7.1": {
+    "en": "Fixed icon overlaps and improved color personalization."
   },
   "2.7.0": {
     "en": "Added realistic device icons for switches, sensors and controllers. Better visual identification of your devices."
@@ -23,16 +47,82 @@
   "2.6.0": {
     "en": "Extended device support with additional sensor types. Improved pairing reliability."
   },
+  "2.5.0": {
+    "en": "Enhanced product representation in device icons."
+  },
+  "2.4.0": {
+    "en": "Complete personalized icons implementation with all features."
+  },
+  "2.3.2": {
+    "en": "Improved icon generation with robust SVG design."
+  },
+  "2.3.1": {
+    "en": "Fixed device pairing issues and improved connection stability."
+  },
   "2.3.0": {
     "en": "Major update: Personalized icons for each device type. Better device organization and visual clarity."
+  },
+  "2.2.5": {
+    "en": "Project cleanup and full SDK3 validation completed."
+  },
+  "2.2.4": {
+    "en": "Improved authentication configuration."
+  },
+  "2.2.3": {
+    "en": "Enhanced security with proper token handling."
+  },
+  "2.2.2": {
+    "en": "Improved publishing workflow reliability."
+  },
+  "2.2.1": {
+    "en": "Fixed device discovery for specific sensor models."
   },
   "2.2.0": {
     "en": "Improved device identification and pairing process. Enhanced connection stability."
   },
+  "2.1.57": {
+    "en": "Improved device branding and compatibility."
+  },
+  "2.1.56": {
+    "en": "Extended support for additional device types with improved icons."
+  },
+  "2.1.55": {
+    "en": "Fixed driver image path configuration."
+  },
+  "2.1.54": {
+    "en": "Improved build process dependencies."
+  },
+  "2.1.53": {
+    "en": "Enhanced version control and synchronization."
+  },
+  "2.1.52": {
+    "en": "Streamlined automated workflow processes."
+  },
+  "2.1.51": {
+    "en": "Integrated automated publishing and continuous validation."
+  },
+  "2.1.50": {
+    "en": "Performance optimizations and stability improvements."
+  },
+  "2.1.49": {
+    "en": "Updated device icons and visual enhancements."
+  },
+  "2.1.48": {
+    "en": "Improved device visual representation."
+  },
+  "2.1.47": {
+    "en": "General performance and stability improvements."
+  },
+  "2.1.43": {
+    "en": "Enhanced app performance and stability."
+  },
   "2.1.41": {
     "en": "Initial release supporting temperature, humidity, motion and contact sensors with full SDK3 compatibility."
   },
-  "2.10.1": {
-    "en": "Bug fix: force app images refresh for Homey App Store."
+  "2.1.40": {
+    "en": "Initial bug fixes and improvements."
+  },
+  "2.1.39": {
+    "en": "Performance and stability improvements."
   }
 }
