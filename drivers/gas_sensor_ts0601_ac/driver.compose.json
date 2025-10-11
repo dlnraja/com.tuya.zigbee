@@ -15,10 +15,7 @@
       "_TZE200_ux5v4tgb",
       "_TZE204_ux5v4tgb",
       "_TZE200_ezqy5pvh",
-      "_TZE204_ezqy5pvh",
-      "_TZE200_ggev5fsl",
-      "_TZE204_ggev5fsl",
-      "_TZE284_rjgdhqqi"
+      "_TZE204_ezqy5pvh"
     ],
     "productId": [
       "TS0601"
@@ -27,14 +24,11 @@
       "1": {
         "clusters": [
           0,
-          1,
           4,
           5,
           61184
         ],
-        "bindings": [
-          1
-        ]
+        "bindings": []
       }
     },
     "learnmode": {
