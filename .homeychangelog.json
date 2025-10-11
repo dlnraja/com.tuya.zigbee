@@ -25,5 +25,8 @@
   },
   "2.1.51": {
     "en": "GitHub Actions integration: automated publishing, semantic versioning, continuous validation. Official Homey marketplace actions. PowerShell scripts. Complete publication guides. Community bug fixes maintained."
+  },
+  "2.1.52": {
+    "en": "Bug fix: disable conflicting workflows, keep only auto-publ."
   }
 }
