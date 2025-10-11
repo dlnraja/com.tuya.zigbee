@@ -1,12 +1,14 @@
 # GitHub Actions Workflows
 
-## Active Workflows
+## GitHub Workflows - Universal Tuya Zigbee
+
+**Last Updated:** 2025-10-11 14:43  
+**Status:** ✅ Auto-Publish Active
 
 ### 🚀 publish-main.yml (PRIMARY)
 **Status:** ✅ ACTIVE  
 **Trigger:** Push to master branch  
 **Purpose:** Build, validate, and publish app to Homey App Store
-
 **Features:**
 - ✅ Robust prompt handling
 - ✅ Error detection and reporting
