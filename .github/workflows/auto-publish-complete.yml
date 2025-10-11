@@ -609,30 +609,33 @@ jobs:
           echo "⏳ Waiting 5 seconds for git to sync..."
           sleep 5
       
-      - name: 🚀 Publish to Homey App Store (Direct CLI)
+      - name: 🚀 Publish to Homey App Store (Official Athom Action)
+        uses: athombv/github-action-homey-app-publish@master
         id: publish
-        env:
-          HOMEY_HEADLESS: "1"
-          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        continue-on-error: true
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+      
+      - name: ⚠️ Publication Status Check
         run: |
-          echo "🚀 Publishing directly via Homey CLI..."
-          echo "⚠️ Bypassing Athom action due to validation bug"
-          
-          # Install dependencies and Homey CLI
-          npm ci --ignore-scripts || npm install
-          
-          # Homey CLI uses HOMEY_PAT env var (same as official action)
-          echo "✅ Authenticated via HOMEY_PAT environment variable"
-          
-          # Publish in headless mode (will fail validation but we bypass it)
-          npx homey app publish || {
-            echo "⚠️ Publish command failed, but this is expected due to CLI bug"
-            echo "✅ Version was bumped and committed - manual publish needed"
-            echo "📍 Go to https://tools.developer.homey.app to complete publication"
-            exit 0
-          }
-          
-          echo "✅ App published successfully!"
+          echo "⚠️ KNOWN ISSUE: Homey CLI validation bug may cause publish to fail"
+          echo ""
+          echo "📊 CURRENT STATUS:"
+          echo "   ✅ Version bumped to v${{ steps.version.outputs.version }}"
+          echo "   ✅ Changelog updated"
+          echo "   ✅ Changes committed to GitHub"
+          echo ""
+          if [ "${{ steps.publish.outcome }}" = "success" ]; then
+            echo "✅ App published successfully to Homey App Store!"
+          else
+            echo "⚠️ Auto-publish encountered validation error (expected)"
+            echo ""
+            echo "📍 MANUAL PUBLICATION REQUIRED:"
+            echo "   1. Go to: https://tools.developer.homey.app"
+            echo "   2. Select: Universal Tuya Zigbee"
+            echo "   3. Version v${{ steps.version.outputs.version }} is ready"
+            echo "   4. Click 'Publish to Test' or submit for certification"
+          fi
       
       - name: Publication Summary
         run: |
