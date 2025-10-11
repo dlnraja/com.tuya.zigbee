@@ -52,5 +52,8 @@
   },
   "2.2.2": {
     "en": "Bug fix: replace Athom publish action with direct CLI."
+  },
+  "2.2.3": {
+    "en": "Bug fix: use HOMEY_ACCESS_TOKEN env var for authentication."
   }
 }
