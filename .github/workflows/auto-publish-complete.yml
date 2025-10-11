@@ -272,74 +272,154 @@ jobs:
           echo "📦 Installing canvas and pngjs for image validation..."
           npm install --save-dev canvas pngjs
       
-      - name: 🖼️ Validate & Fix All Images
+      - name: 🖼️ Validate Image Paths & Dimensions
         run: |
-          echo "🖼️ Validating all images before Homey CLI compilation..."
-          
-          # Homey SDK3 specs
-          DRIVER_SMALL="75x75"
-          DRIVER_LARGE="500x500"
-          APP_SMALL="250x175"
-          APP_LARGE="500x350"
-          
-          # Function to check image size
-          check_image() {
-            local file=$1
-            local expected_width=$2
-            local expected_height=$3
-            
-            if [ ! -f "$file" ]; then
-              echo "❌ Missing: $file"
-              return 1
-            fi
-            
-            # Get dimensions using identify (ImageMagick) or file
-            if command -v identify &> /dev/null; then
-              dims=$(identify -format "%wx%h" "$file" 2>/dev/null)
-              if [ "$dims" != "${expected_width}x${expected_height}" ]; then
-                echo "❌ Wrong size: $file ($dims, expected ${expected_width}x${expected_height})"
-                return 1
-              fi
-            fi
-            
-            echo "✅ Valid: $file"
-            return 0
-          }
+          echo "🖼️ Validating image paths and dimensions..."
           
           ERRORS=0
+          WARNINGS=0
           
-          # Check app images
-          echo "📋 Checking app images..."
-          check_image "assets/images/small.png" 250 175 || ERRORS=$((ERRORS+1))
-          check_image "assets/images/large.png" 500 350 || ERRORS=$((ERRORS+1))
+          # 1. Check app-level images exist and have correct sizes
+          echo ""
+          echo "📋 1. Checking APP images (assets/images/)..."
           
-          # Check driver images (sample first 10 to avoid timeout)
-          echo "📋 Checking driver images (sample)..."
+          if [ ! -d "assets/images" ]; then
+            echo "❌ CRITICAL: assets/images/ directory missing!"
+            ERRORS=$((ERRORS+1))
+          else
+            # App images specs: 250x175, 500x350, 1000x700
+            for img in small large xlarge; do
+              img_path="assets/images/${img}.png"
+              if [ ! -f "$img_path" ]; then
+                echo "❌ Missing: $img_path"
+                ERRORS=$((ERRORS+1))
+              else
+                if command -v identify &> /dev/null; then
+                  dims=$(identify -format "%wx%h" "$img_path" 2>/dev/null)
+                  case $img in
+                    small)
+                      expected="250x175"
+                      ;;
+                    large)
+                      expected="500x350"
+                      ;;
+                    xlarge)
+                      expected="1000x700"
+                      ;;
+                  esac
+                  
+                  if [ "$dims" = "$expected" ]; then
+                    echo "✅ $img_path: $dims"
+                  else
+                    echo "❌ $img_path: $dims (expected $expected)"
+                    ERRORS=$((ERRORS+1))
+                  fi
+                else
+                  echo "⚠️  Cannot verify $img_path (ImageMagick not installed)"
+                  WARNINGS=$((WARNINGS+1))
+                fi
+              fi
+            done
+          fi
+          
+          # 2. Check driver images exist and have correct sizes
+          echo ""
+          echo "📋 2. Checking DRIVER images (sample 20 drivers)..."
+          
           CHECKED=0
           for driver_dir in drivers/*/; do
-            if [ $CHECKED -ge 10 ]; then
+            if [ $CHECKED -ge 20 ]; then
               break
             fi
             
             driver_name=$(basename "$driver_dir")
+            assets_dir="${driver_dir}assets"
             
-            if [ -f "${driver_dir}assets/small.png" ]; then
-              check_image "${driver_dir}assets/small.png" 75 75 || ERRORS=$((ERRORS+1))
+            if [ ! -d "$assets_dir" ]; then
+              echo "⚠️  $driver_name: no assets/ directory"
+              WARNINGS=$((WARNINGS+1))
+              continue
             fi
             
-            if [ -f "${driver_dir}assets/large.png" ]; then
-              check_image "${driver_dir}assets/large.png" 500 500 || ERRORS=$((ERRORS+1))
+            # Driver images specs: 75x75, 500x500, 1000x1000
+            driver_errors=0
+            for img in small large xlarge; do
+              img_path="${assets_dir}/${img}.png"
+              if [ ! -f "$img_path" ]; then
+                echo "❌ $driver_name: missing ${img}.png"
+                driver_errors=$((driver_errors+1))
+              else
+                if command -v identify &> /dev/null; then
+                  dims=$(identify -format "%wx%h" "$img_path" 2>/dev/null)
+                  case $img in
+                    small)
+                      expected="75x75"
+                      ;;
+                    large)
+                      expected="500x500"
+                      ;;
+                    xlarge)
+                      expected="1000x1000"
+                      ;;
+                  esac
+                  
+                  if [ "$dims" != "$expected" ]; then
+                    echo "❌ $driver_name/${img}.png: $dims (expected $expected)"
+                    driver_errors=$((driver_errors+1))
+                  fi
+                fi
+              fi
+            done
+            
+            if [ $driver_errors -eq 0 ]; then
+              echo "✅ $driver_name: all images valid"
+            else
+              ERRORS=$((ERRORS+driver_errors))
             fi
             
             CHECKED=$((CHECKED+1))
           done
           
-          if [ $ERRORS -gt 0 ]; then
-            echo "⚠️ Found $ERRORS image issues"
-            echo "Note: Homey CLI will use these images as-is"
-            echo "If validation fails, images may need manual fix"
+          # 3. Check for path conflicts (crucial!)
+          echo ""
+          echo "📋 3. Checking for path conflicts..."
+          
+          # Verify app.json references
+          if grep -q '"small": "/assets/images/small.png"' app.json; then
+            echo "✅ app.json correctly references /assets/images/small.png"
           else
-            echo "✅ All checked images valid"
+            echo "❌ app.json has wrong image path"
+            ERRORS=$((ERRORS+1))
+          fi
+          
+          # Verify drivers reference their own assets
+          SAMPLE_DRIVER=$(find drivers -name "driver.compose.json" | head -1)
+          if [ -f "$SAMPLE_DRIVER" ]; then
+            if grep -q '"small": "./assets/small.png"' "$SAMPLE_DRIVER"; then
+              echo "✅ Drivers correctly reference ./assets/small.png"
+            else
+              echo "⚠️  Some drivers may have incorrect image paths"
+              WARNINGS=$((WARNINGS+1))
+            fi
+          fi
+          
+          # Summary
+          echo ""
+          echo "========================================"
+          echo "📊 VALIDATION SUMMARY"
+          echo "========================================"
+          echo "Errors: $ERRORS"
+          echo "Warnings: $WARNINGS"
+          echo ""
+          
+          if [ $ERRORS -gt 0 ]; then
+            echo "❌ CRITICAL ERRORS FOUND - Validation will likely fail!"
+            echo "   Please fix image paths and dimensions before continuing."
+            exit 1
+          elif [ $WARNINGS -gt 0 ]; then
+            echo "⚠️  Warnings found, but continuing..."
+          else
+            echo "✅ All image paths and dimensions valid!"
           fi
       
       - name: Validate App (Official Athom Action)
