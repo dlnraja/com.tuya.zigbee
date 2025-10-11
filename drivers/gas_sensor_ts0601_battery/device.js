@@ -1,56 +1,56 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaClusterHandler = require('../../utils/tuya-cluster-handler');
 
-class GasSensorDevice extends ZigBeeDevice {
-  
+class GasSensorTs0601BatteryDevice extends ZigBeeDevice {
+
   async onNodeInit({ zclNode }) {
-    this.log('Gas Sensor TS0601 initialized');
+    this.log('gas_sensor_ts0601_battery initialized');
 
-    // Enable debug logging
-    this.enableDebug();
-    this.printNode();
+    // Call parent
+    await super.onNodeInit({ zclNode });
 
-    // Gas alarm (CO)
-    if (this.hasCapability('alarm_co')) {
-      zclNode.endpoints[1].clusters.basic.on('reporting', (value) => {
-        this.log('Gas detection report:', value);
-        if (value && value.hasOwnProperty('gas_value')) {
-          const gasDetected = value.gas_value > 0;
-          this.setCapabilityValue('alarm_co', gasDetected).catch(this.error);
-        }
-      });
+    // Auto-detect device type and initialize Tuya cluster handler
+    const deviceType = TuyaClusterHandler.detectDeviceType('gas_sensor_ts0601_battery');
+    const tuyaInitialized = await TuyaClusterHandler.init(this, zclNode, deviceType);
+    
+    if (tuyaInitialized) {
+      this.log('✅ Tuya cluster handler initialized for type:', deviceType);
+    } else {
+      this.log('⚠️  No Tuya cluster found, using standard Zigbee');
+      
+      // Fallback to standard cluster handling if needed
+      await this.registerStandardCapabilities();
     }
 
-    // Smoke alarm
-    if (this.hasCapability('alarm_smoke')) {
-      zclNode.endpoints[1].clusters.basic.on('reporting', (value) => {
-        this.log('Smoke detection report:', value);
-        if (value && value.hasOwnProperty('smoke_value')) {
-          const smokeDetected = value.smoke_value > 0;
-          this.setCapabilityValue('alarm_smoke', smokeDetected).catch(this.error);
-        }
-      });
-    }
+    // Mark device as available
+    await this.setAvailable();
+  }
 
+  /**
+   * Register standard Zigbee capabilities (fallback)
+   */
+  async registerStandardCapabilities() {
     // Battery
     if (this.hasCapability('measure_battery')) {
-      this.registerCapability('measure_battery', 1, {
-        reportParser: value => {
-          this.log('Battery report:', value);
-          return Math.min(100, Math.max(0, value / 2));
-        },
-        getOpts: {
-          getOnStart: true,
-          pollInterval: 3600000 // Every hour
-        }
-      });
+      try {
+        this.registerCapability('measure_battery', 'genPowerCfg', {
+          get: 'batteryPercentageRemaining',
+          report: 'batteryPercentageRemaining',
+          reportParser: value => Math.max(0, Math.min(100, value / 2)),
+          getParser: value => Math.max(0, Math.min(100, value / 2))
+        });
+      } catch (err) {
+        this.log('Could not register battery capability:', err.message);
+      }
     }
   }
 
-  onDeleted() {
-    this.log('Gas Sensor TS0601 deleted');
+  async onDeleted() {
+    this.log('gas_sensor_ts0601_battery deleted');
   }
+
 }
 
-module.exports = GasSensorDevice;
+module.exports = GasSensorTs0601BatteryDevice;

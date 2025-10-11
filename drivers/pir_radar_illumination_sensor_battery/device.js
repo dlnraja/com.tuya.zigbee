@@ -1,70 +1,56 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaClusterHandler = require('../../utils/tuya-cluster-handler');
 
-class PirRadarIlluminationSensorDevice extends ZigBeeDevice {
+class PirRadarIlluminationSensorBatteryDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
-    this.log('pir_radar_illumination_sensor device initialized');
+    this.log('pir_radar_illumination_sensor_battery initialized');
 
     // Call parent
     await super.onNodeInit({ zclNode });
 
-    // Motion/vibration alarm (IAS Zone)
-    if (this.hasCapability('alarm_motion')) {
-      this.registerCapability('alarm_motion', 'iasZone', {
-        report: 'zoneStatus',
-        reportParser: value => (value & 1) === 1
-      });
-      this.log('✅ Motion alarm capability registered');
-    }
-
-    // Battery measurement
-    if (this.hasCapability('measure_battery')) {
-      this.registerCapability('measure_battery', 'genPowerCfg', {
-        get: 'batteryPercentageRemaining',
-        report: 'batteryPercentageRemaining',
-        reportParser: value => Math.max(0, Math.min(100, value / 2)),
-        getParser: value => Math.max(0, Math.min(100, value / 2))
-      });
-      this.log('✅ Battery capability registered');
-    }
-
-    // Illuminance measurement
-    if (this.hasCapability('measure_luminance')) {
-      this.registerCapability('measure_luminance', 'msIlluminanceMeasurement', {
-        get: 'measuredValue',
-        report: 'measuredValue',
-        reportParser: value => Math.pow(10, (value - 1) / 10000),
-        getParser: value => Math.pow(10, (value - 1) / 10000)
-      });
-      this.log('✅ Luminance capability registered');
-    }
-
-    // Configure attribute reporting
-    try {
-      await this.configureAttributeReporting([
-        {
-          endpointId: 1,
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 0,
-          maxInterval: 3600,
-          minChange: 1
-        }
-      ]);
-    } catch (error) {
-      this.error('Failed to configure reporting:', error);
+    // Auto-detect device type and initialize Tuya cluster handler
+    const deviceType = TuyaClusterHandler.detectDeviceType('pir_radar_illumination_sensor_battery');
+    const tuyaInitialized = await TuyaClusterHandler.init(this, zclNode, deviceType);
+    
+    if (tuyaInitialized) {
+      this.log('✅ Tuya cluster handler initialized for type:', deviceType);
+    } else {
+      this.log('⚠️  No Tuya cluster found, using standard Zigbee');
+      
+      // Fallback to standard cluster handling if needed
+      await this.registerStandardCapabilities();
     }
 
     // Mark device as available
     await this.setAvailable();
   }
 
+  /**
+   * Register standard Zigbee capabilities (fallback)
+   */
+  async registerStandardCapabilities() {
+    // Battery
+    if (this.hasCapability('measure_battery')) {
+      try {
+        this.registerCapability('measure_battery', 'genPowerCfg', {
+          get: 'batteryPercentageRemaining',
+          report: 'batteryPercentageRemaining',
+          reportParser: value => Math.max(0, Math.min(100, value / 2)),
+          getParser: value => Math.max(0, Math.min(100, value / 2))
+        });
+      } catch (err) {
+        this.log('Could not register battery capability:', err.message);
+      }
+    }
+  }
+
   async onDeleted() {
-    this.log('pir_radar_illumination_sensor device deleted');
+    this.log('pir_radar_illumination_sensor_battery deleted');
   }
 
 }
 
-module.exports = PirRadarIlluminationSensorDevice;
+module.exports = PirRadarIlluminationSensorBatteryDevice;
