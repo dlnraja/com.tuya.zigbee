@@ -40,9 +40,7 @@ jobs:
       
       # ✅ OFFICIAL HOMEY VALIDATION ACTION
       - name: Validate (${{ matrix.validation-level }})
-        uses: athombv/github-action-homey-app-validate@master
-        with:
-          validate-level: ${{ matrix.validation-level }}
+        run: npx homey app validate --level ${{ matrix.validation-level }}
       
       - name: Summary
         if: always()
