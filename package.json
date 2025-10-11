@@ -5,7 +5,17 @@
   "main": "app.js",
   "scripts": {
     "validate": "homey app validate",
-    "publish": "homey app publish"
+    "validate:debug": "homey app validate --level debug",
+    "validate:publish": "homey app validate --level publish",
+    "publish": "homey app publish",
+    "precommit": "node scripts/PRE_COMMIT_CHECKS.js",
+    "pipeline": "node scripts/ULTIMATE_CI_CD_PIPELINE.js",
+    "audit": "node scripts/COMPLETE_POWER_AUDIT.js",
+    "clean": "node scripts/CLEAN_APP_JSON.js",
+    "sync": "node scripts/AUTO_UPDATE_APP_JSON.js",
+    "images": "node scripts/RESIZE_IMAGES_PRESERVE_CONTENT.js",
+    "images:contextual": "node scripts/REGENERATE_ALL_CONTEXTUAL_IMAGES.js",
+    "fix-nomenclature": "node scripts/FIX_DRIVER_NOMENCLATURE.js"
   },
   "keywords": [
     "homey",

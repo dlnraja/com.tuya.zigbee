@@ -1,0 +1,61 @@
+name: CI/CD Pipeline with Pre-checks
+
+on:
+  push:
+    branches: [ master, main ]
+  workflow_dispatch:
+
+jobs:
+  validate-and-publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: |
+          npm install --save-dev homey
+          npm install
+
+      - name: Security - Clean .homeycompose
+        run: |
+          if [ -d ".homeycompose" ]; then
+            rm -rf .homeycompose
+            echo "✅ .homeycompose cleaned"
+          else
+            echo "✅ .homeycompose does not exist"
+          fi
+
+      - name: Validate - Debug level
+        run: npx homey app validate --level debug
+
+      - name: Validate - Publish level
+        run: npx homey app validate --level publish
+
+      - name: Build app
+        run: npx homey app build
+
+      - name: Create artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: homey-app
+          path: |
+            .homeybuild/
+            app.json
+            package.json
+
+      - name: Publish to Homey App Store
+        if: success()
+        env:
+          HOMEY_API_TOKEN: ${{ secrets.HOMEY_API_TOKEN }}
+        run: |
+          echo "🚀 Publishing to Homey App Store..."
+          npx homey app publish
