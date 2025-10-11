@@ -149,5 +149,10 @@
       }
     }
   },
-  "id": "wireless_switch_2gang_cr2032"
+  "id": "wireless_switch_2gang_cr2032",
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  }
 }

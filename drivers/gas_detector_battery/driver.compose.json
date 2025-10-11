@@ -155,5 +155,10 @@
       }
     }
   },
-  "id": "gas_detector_battery"
+  "id": "gas_detector_battery",
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  }
 }
