@@ -105,5 +105,33 @@
       "CR2032"
     ]
   },
-  "id": "temp_sensor_pro_battery"
+  "id": "temp_sensor_pro_battery",
+  "settings": [
+    {
+      "type": "number",
+      "id": "dp_13_comfort_temperature",
+      "label": {
+        "en": "comfort temperature"
+      },
+      "value": 0
+    },
+    {
+      "type": "number",
+      "id": "dp_14_eco_temperature",
+      "label": {
+        "en": "eco temperature"
+      },
+      "value": 0
+    },
+    {
+      "type": "number",
+      "id": "dp_19_temperature_calibration",
+      "label": {
+        "en": "temperature calibration"
+      },
+      "value": -9,
+      "min": -9,
+      "max": 9
+    }
+  ]
 }

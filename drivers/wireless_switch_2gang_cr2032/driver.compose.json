@@ -2,7 +2,8 @@
   "class": "button",
   "capabilities": [
     "onoff",
-    "onoff.gang2"
+    "onoff.gang2",
+    "measure_battery"
   ],
   "zigbee": {
     "productId": [

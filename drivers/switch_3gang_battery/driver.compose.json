@@ -6,7 +6,8 @@
   "capabilities": [
     "onoff",
     "onoff.gang2",
-    "onoff.gang3"
+    "onoff.gang3",
+    "measure_battery"
   ],
   "zigbee": {
     "manufacturerName": [
