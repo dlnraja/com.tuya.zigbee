@@ -239,13 +239,20 @@ class DriverIconGenerator {
         this.roundRect(ctx, size * 0.02, size * 0.02, size * 0.96, size * 0.96, radius);
         ctx.stroke();
         
-        // Main device icon (center, large)
+        // Main device icon (center, large) - with gang visualization
         const mainIconSize = size * 0.4;
         ctx.font = `${mainIconSize}px Arial`;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillStyle = 'white';
-        ctx.fillText(deviceIcon, size / 2, size * 0.42);
+        
+        // If multi-gang, show multiple icons
+        if (gangs && gangs > 1) {
+            this.drawMultiGangIcons(ctx, deviceIcon, size, gangs, mainIconSize);
+        } else {
+            // Single device icon
+            ctx.fillText(deviceIcon, size / 2, size * 0.42);
+        }
         
         // Power source badge (top right)
         const powerIconSize = size * 0.2;
@@ -308,6 +315,87 @@ class DriverIconGenerator {
         ctx.fillText(deviceText, size / 2, textBadgeY);
         
         return canvas;
+    }
+
+    // Draw multiple gang icons side by side
+    drawMultiGangIcons(ctx, deviceIcon, size, gangs, iconSize) {
+        // Calculate positioning for multiple icons
+        const centerY = size * 0.42;
+        const spacing = size * 0.22; // Space between icons
+        
+        // Adjust icon size for multiple gangs
+        const adjustedSize = iconSize * (gangs > 3 ? 0.7 : 0.85);
+        ctx.font = `${adjustedSize}px Arial`;
+        
+        if (gangs === 2) {
+            // 2 gang: side by side
+            const positions = [
+                size / 2 - spacing / 2,
+                size / 2 + spacing / 2
+            ];
+            positions.forEach(x => {
+                ctx.fillText(deviceIcon, x, centerY);
+            });
+        } else if (gangs === 3) {
+            // 3 gang: left, center, right
+            const positions = [
+                size / 2 - spacing,
+                size / 2,
+                size / 2 + spacing
+            ];
+            positions.forEach(x => {
+                ctx.fillText(deviceIcon, x, centerY);
+            });
+        } else if (gangs === 4) {
+            // 4 gang: 2x2 grid
+            const positions = [
+                { x: size / 2 - spacing / 2, y: centerY - spacing * 0.4 },
+                { x: size / 2 + spacing / 2, y: centerY - spacing * 0.4 },
+                { x: size / 2 - spacing / 2, y: centerY + spacing * 0.4 },
+                { x: size / 2 + spacing / 2, y: centerY + spacing * 0.4 }
+            ];
+            positions.forEach(pos => {
+                ctx.fillText(deviceIcon, pos.x, pos.y);
+            });
+        } else if (gangs === 5) {
+            // 5 gang: 2 top, 1 center, 2 bottom
+            const positions = [
+                { x: size / 2 - spacing / 2, y: centerY - spacing * 0.5 },
+                { x: size / 2 + spacing / 2, y: centerY - spacing * 0.5 },
+                { x: size / 2, y: centerY },
+                { x: size / 2 - spacing / 2, y: centerY + spacing * 0.5 },
+                { x: size / 2 + spacing / 2, y: centerY + spacing * 0.5 }
+            ];
+            positions.forEach(pos => {
+                ctx.fillText(deviceIcon, pos.x, pos.y);
+            });
+        } else if (gangs === 6) {
+            // 6 gang: 3x2 grid
+            const positions = [
+                { x: size / 2 - spacing, y: centerY - spacing * 0.4 },
+                { x: size / 2, y: centerY - spacing * 0.4 },
+                { x: size / 2 + spacing, y: centerY - spacing * 0.4 },
+                { x: size / 2 - spacing, y: centerY + spacing * 0.4 },
+                { x: size / 2, y: centerY + spacing * 0.4 },
+                { x: size / 2 + spacing, y: centerY + spacing * 0.4 }
+            ];
+            positions.forEach(pos => {
+                ctx.fillText(deviceIcon, pos.x, pos.y);
+            });
+        } else {
+            // 8+ gang: show grid pattern with count
+            const smallSize = adjustedSize * 0.5;
+            ctx.font = `${smallSize}px Arial`;
+            
+            // Draw 3x3 grid pattern
+            for (let row = 0; row < 3; row++) {
+                for (let col = 0; col < 3; col++) {
+                    const x = size / 2 - spacing + (col * spacing);
+                    const y = centerY - spacing * 0.5 + (row * spacing * 0.5);
+                    ctx.fillText(deviceIcon, x, y);
+                }
+            }
+        }
     }
 
     // Helper: Draw rounded rectangle
