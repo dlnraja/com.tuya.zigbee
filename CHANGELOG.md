@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.1.40] - 2025-10-11
+
+### Fixed
+- **Critical**: Temperature/humidity sensors now display values correctly
+- **Critical**: PIR motion sensors pair without "Unknown Device" conflicts
+- **Bug**: Fixed version mismatch between app.json and package.json
+- **Bug**: Restored missing driver.js files for 5 drivers
+
+### Added
+- **Feature**: Gas sensor TS0601_gas_sensor_2 support (community request)
+- **Tool**: Ultimate diagnostic and repair script
+
+### Changed
+- **Improvement**: Cleaned overlapping manufacturer IDs across drivers
+- **Improvement**: Enhanced Zigbee cluster configurations
+
+
 All notable changes to this project will be documented in this file.
 
 ## [2.1.40] - 2025-10-10

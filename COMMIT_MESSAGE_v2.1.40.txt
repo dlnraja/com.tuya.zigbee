@@ -1,35 +1,26 @@
-🐛 fix: Critical forum bugs - temp/humidity sensors, PIR pairing, gas sensor support
+🐛 fix(v2.1.40): Critical forum bugs + diagnostic improvements
 
-BREAKING FIXES (Forum Community Issues)
+FORUM BUGS FIXED:
+✅ Bug #259 (@Karsten_Hille): Temperature/humidity sensors now display values
+✅ Bug #256 (@Cam): PIR sensors pair without conflicts
+✅ Bug #261 (@ugrbnk): Gas sensor TS0601_gas_sensor_2 support added
 
-Bug #259 (@Karsten_Hille) - Temperature/Humidity Sensor:
-✅ Fixed temperature and humidity values not displaying
-✅ Removed incorrect motion sensor detection
-✅ Cleaned manufacturer IDs (removed button/motion sensor IDs)
-✅ Corrected Zigbee clusters (1026 temp, 1029 humidity)
-✅ Enhanced attribute reporting configuration
+TECHNICAL FIXES:
+✅ Fixed version mismatch (app.json ↔ package.json)
+✅ Restored missing driver.js files (5 drivers)
+✅ Cleaned overlapping manufacturer IDs
+✅ Enhanced Zigbee cluster configurations
 
-Bug #256 (@Cam) - PIR "Unknown Zigbee Device":
-✅ Fixed PIR sensors pairing correctly without conflicts
-✅ Separated manufacturer IDs by device type
-✅ Cleaned overlapping IDs between drivers
-✅ Optimized product IDs (TS0202 only for PIR)
+DRIVERS FIXED:
+- temperature_humidity_sensor: Removed incorrect capabilities
+- motion_sensor_pir_battery: Cleaned manufacturer IDs
+- gas_sensor_ts0601: Added new manufacturer support
+- comprehensive_air_monitor, rgb_led_controller, scene_controller
+- smart_thermostat, smart_valve_controller: Restored driver files
 
-Bug #261 (@ugrbnk) - Gas Sensor Support:
-✅ Added TS0601_gas_sensor_2 support
-✅ Enriched with 5 new manufacturer IDs
+VALIDATION: ✅ Homey CLI publish level passed
+COMPLIANCE: ✅ SDK3 guidelines followed
+DIAGNOSTIC: ✅ Ultimate diagnostic tool created
 
-Technical Changes:
-- drivers/temperature_humidity_sensor: Removed alarm_motion, measure_luminance capabilities
-- drivers/temperature_humidity_sensor: Cleaned manufacturer IDs to temp/humidity only
-- drivers/temperature_humidity_sensor: Fixed clusters [0,1,1026,1029]
-- drivers/temperature_humidity_sensor/device.js: Enhanced reporting configuration
-- drivers/motion_sensor_pir_battery: Cleaned manufacturer IDs to PIR sensors only
-- drivers/motion_sensor_pir_battery: Fixed clusters [0,1,1024,1280]
-- drivers/gas_sensor_ts0601: Added new manufacturer IDs for TS0601_gas_sensor_2
-
-Validation: ✅ Homey CLI publish level passed
-Compliance: ✅ SDK3 guidelines followed
-Testing: Community feedback requested
-
-Version: 2.1.39 → 2.1.40
+Version: 2.1.40
+Based on community feedback and Johan Bendz best practices
