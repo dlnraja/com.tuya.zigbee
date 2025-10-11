@@ -135,8 +135,8 @@
     }
   },
   "images": {
-    "small": "./drivers/switch_3gang_battery/assets/small.png",
-    "large": "./drivers/switch_3gang_battery/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "capabilitiesOptions": {
     "onoff": {

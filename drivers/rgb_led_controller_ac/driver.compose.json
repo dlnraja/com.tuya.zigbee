@@ -115,8 +115,8 @@
     }
   },
   "images": {
-    "small": "./drivers/rgb_led_controller_ac/assets/small.png",
-    "large": "./drivers/rgb_led_controller_ac/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "platforms": [
     "local"
