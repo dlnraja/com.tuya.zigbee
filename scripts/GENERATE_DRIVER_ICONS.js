@@ -52,55 +52,41 @@ class DriverIconGenerator {
             default: { primary: '#1E88E5', secondary: '#64B5F6', icon: '#0D47A1' }
         };
         
-        // Device type icons (emoji representations)
-        this.deviceIcons = {
-            // Switches
-            'switch': '💡',
-            'dimmer': '🎚️',
-            'relay': '🔌',
-            
-            // Sensors
-            'motion_sensor': '👁️',
-            'door_sensor': '🚪',
-            'window_sensor': '🪟',
-            'contact_sensor': '📍',
-            'water_leak': '💧',
-            'smoke': '🔥',
-            'gas': '⚠️',
-            'co2': '🌫️',
-            
-            // Climate
-            'temperature': '🌡️',
-            'humidity': '💨',
-            'thermostat': '🌡️',
-            'hvac': '❄️',
-            
-            // Lights
-            'light': '💡',
-            'bulb': '💡',
-            'rgb': '🌈',
-            'ceiling_light': '💡',
-            
-            // Security
-            'alarm': '🚨',
-            'siren': '📢',
-            'lock': '🔒',
-            
-            // Energy
-            'plug': '🔌',
-            'socket': '🔌',
-            'meter': '⚡',
-            
-            // Others
-            'valve': '🚰',
-            'pump': '⚙️',
-            'fan': '🌀',
-            'curtain': '🪟',
-            'blind': '📜',
-            'garage': '🚗',
-            
-            // Default
-            'default': '🔧'
+        // Device type icons - will be DRAWN, not emojis
+        this.deviceTypes = {
+            'switch': 'switch',
+            'dimmer': 'dimmer',
+            'relay': 'switch',
+            'motion': 'motion',
+            'door': 'contact',
+            'window': 'contact',
+            'contact': 'contact',
+            'leak': 'leak',
+            'smoke': 'smoke',
+            'gas': 'smoke',
+            'co2': 'air',
+            'temperature': 'temperature',
+            'temp': 'temperature',
+            'humidity': 'humidity',
+            'thermostat': 'temperature',
+            'climate': 'temperature',
+            'light': 'light',
+            'bulb': 'light',
+            'rgb': 'light',
+            'ceiling': 'light',
+            'alarm': 'alarm',
+            'siren': 'alarm',
+            'lock': 'lock',
+            'plug': 'plug',
+            'socket': 'plug',
+            'outlet': 'plug',
+            'valve': 'valve',
+            'pump': 'valve',
+            'fan': 'fan',
+            'curtain': 'curtain',
+            'blind': 'curtain',
+            'garage': 'garage',
+            'default': 'switch'
         };
         
         // Power source icons
@@ -138,15 +124,15 @@ class DriverIconGenerator {
         return 'default';
     }
 
-    // Detect device type icon
-    detectDeviceIcon(driverName) {
+    // Detect device type for drawing
+    detectDeviceType(driverName) {
         const name = driverName.toLowerCase();
         
-        for (const [key, icon] of Object.entries(this.deviceIcons)) {
-            if (name.includes(key)) return icon;
+        for (const [key, type] of Object.entries(this.deviceTypes)) {
+            if (name.includes(key)) return type;
         }
         
-        return this.deviceIcons.default;
+        return this.deviceTypes.default;
     }
 
     // Detect power source
@@ -219,7 +205,7 @@ class DriverIconGenerator {
         // Detect characteristics
         const category = this.detectCategory(driverName);
         const colors = this.colors[category] || this.colors.default;
-        const deviceIcon = this.detectDeviceIcon(driverName);
+        const deviceType = this.detectDeviceType(driverName);
         const powerSource = this.detectPowerSource(driverName);
         const gangs = this.detectGangs(driverName);
         
