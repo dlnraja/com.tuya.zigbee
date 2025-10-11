@@ -9,8 +9,8 @@
     "dim"
   ],
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "./drivers/relay_switch_1gang_ac/assets/small.png",
+    "large": "./drivers/relay_switch_1gang_ac/assets/large.png"
   },
   "zigbee": {
     "manufacturerName": [

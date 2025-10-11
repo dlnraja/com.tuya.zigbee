@@ -16,8 +16,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "./drivers/smart_curtain_motor_hybrid/assets/small.png",
+    "large": "./drivers/smart_curtain_motor_hybrid/assets/large.png"
   },
   "zigbee": {
     "manufacturerName": [

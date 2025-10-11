@@ -42,8 +42,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "./drivers/motion_sensor_pir_battery/assets/small.png",
+    "large": "./drivers/motion_sensor_pir_battery/assets/large.png"
   },
   "platforms": [
     "local"

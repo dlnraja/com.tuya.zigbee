@@ -120,8 +120,8 @@
   },
   "capabilitiesOptions": {},
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "./drivers/led_strip_controller_ac/assets/small.png",
+    "large": "./drivers/led_strip_controller_ac/assets/large.png"
   },
   "platforms": [
     "local"

@@ -110,8 +110,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "./drivers/radar_motion_sensor_mmwave_battery/assets/small.png",
+    "large": "./drivers/radar_motion_sensor_mmwave_battery/assets/large.png"
   },
   "platforms": [
     "local"

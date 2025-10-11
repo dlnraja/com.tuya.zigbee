@@ -143,8 +143,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "./drivers/power_meter_socket_ac/assets/small.png",
+    "large": "./drivers/power_meter_socket_ac/assets/large.png"
   },
   "platforms": [
     "local"

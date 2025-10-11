@@ -118,8 +118,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "./drivers/smart_thermostat_hybrid/assets/small.png",
+    "large": "./drivers/smart_thermostat_hybrid/assets/large.png"
   },
   "platforms": [
     "local"
