@@ -1,11 +1,22 @@
 name: Auto-Fix Images on Validation Failure
 
 on:
+  # Trigger when validation fails
   workflow_run:
     workflows: ["Auto-Publish Complete Pipeline"]
     types:
       - completed
+    branches:
+      - master
+  # Manual trigger
   workflow_dispatch:
+  # Also trigger on push if previous failed
+  push:
+    branches:
+      - master
+    paths:
+      - 'drivers/*/assets/*.png'
+      - '.github/workflows/auto-fix-images.yml'
 
 jobs:
   auto-fix:
@@ -131,21 +142,8 @@ jobs:
           
           if [ -n "$(git status --porcelain)" ]; then
             git add drivers/*/assets/*.png
-            git commit -m "fix(images): auto-fix all driver images to correct sizes
-
-AUTO-FIX: Corrected image dimensions
-
-Fixed:
-- All small.png to 75x75
-- All large.png to 500x500  
-- All xlarge.png to 1000x1000
-
-This was triggered automatically after validation failure.
-
-[skip ci]"
-            
+            git commit -m "fix(images): auto-fix driver images to 75x75, 500x500, 1000x1000 [skip ci]"
             git push origin HEAD:master
-            
             echo "✅ Fixed images committed and pushed"
           else
             echo "ℹ️ No changes needed"
