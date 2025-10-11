@@ -117,7 +117,7 @@
     "en": "Major update: Added AC gas sensor support, fixed all image rendering issues, improved descriptions. Now supporting 167 drivers for 1500+ devices with detailed product icons."
   },
   "2.9.8": {
-    "en": "Update app.json to v2.9.7 - enhanced descriptions."
+    "en": "Critical fix: Battery readings now working correctly. Fixed SDK3 cluster ID issues affecting sensors. No more '56 years ago' readings. All battery-powered devices will now report correctly."
   },
   "2.9.9": {
     "en": "Fixed sensor readings and improved accuracy."
