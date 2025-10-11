@@ -55,5 +55,8 @@
   },
   "2.2.3": {
     "en": "Bug fix: use HOMEY_ACCESS_TOKEN env var for authentication."
+  },
+  "2.2.4": {
+    "en": "Bug fix: use HOMEY_PAT env var (same as official action)."
   }
 }
