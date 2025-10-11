@@ -120,5 +120,10 @@
   "platforms": [
     "local"
   ],
-  "id": "pm25_detector_battery"
+  "id": "pm25_detector_battery",
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  }
 }
