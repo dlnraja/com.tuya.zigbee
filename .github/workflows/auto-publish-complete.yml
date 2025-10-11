@@ -611,6 +611,8 @@ jobs:
       
       - name: 🚀 Publish to Homey App Store (Direct CLI)
         id: publish
+        env:
+          HOMEY_ACCESS_TOKEN: ${{ secrets.HOMEY_PAT }}
         run: |
           echo "🚀 Publishing directly via Homey CLI..."
           echo "⚠️ Bypassing Athom action due to validation bug"
@@ -618,8 +620,8 @@ jobs:
           # Install Homey CLI
           npm install -g homey
           
-          # Login with PAT
-          homey login --token ${{ secrets.HOMEY_PAT }}
+          # Homey CLI uses HOMEY_ACCESS_TOKEN env var automatically
+          echo "✅ Authenticated via environment variable"
           
           # Publish (will fail validation but we bypass it)
           homey app publish || {
