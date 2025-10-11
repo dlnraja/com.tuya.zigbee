@@ -1,28 +1,28 @@
 # 🌟 Universal Tuya Zigbee Device App
 
-[![Version](https://img.shields.io/badge/version-2.1.36-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![Version](https://img.shields.io/badge/version-2.1.51-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-SDK3-orange.svg)](https://apps.developer.homey.app/)
-[![Health](https://img.shields.io/badge/health-96%25-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-Active-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions)
 
-**The most comprehensive Tuya Zigbee device integration for Homey Pro**
+**The most comprehensive Tuya Zigbee device integration for Homey Pro with automated publication**
 
 ## 🎯 Overview
 
-# Universal Tuya Zigbee - Complete Local Control for 10,000+ Devices
+**Version 2.1.51** | **SDK3** | **164 Drivers** | **2,000+ Manufacturer IDs** | **100% Local Control**
 
-**Version 2.1.36** | **SDK3** | **163 Drivers** | **2,000+ Manufacturer IDs** | **100% Local Control**
-
-**Last Updated:** 2025-10-09 | **Status:** Production Ready ✅
+**Last Updated:** 2025-10-11 | **Status:** Production Ready ✅ | **Auto-Publish:** GitHub Actions
 
 Seamless integration of 2,000+ Tuya Zigbee device manufacturers with Homey Pro, featuring:
 
 - ✅ **Pure Zigbee Local Control** - No API key required
 - ✅ **2,000+ Manufacturer IDs** - Maximum device coverage
-- ✅ **163 Drivers** - All validated and functional
+- ✅ **164 Drivers** - All validated and functional
 - ✅ **1,767 Flow Cards** - Complete automation support
 - ✅ **SDK3 Compliant** - Latest Homey standards
-- ✅ **Auto-Updates** - Via GitHub Actions
+- ✅ **Automated Publishing** - Official Homey GitHub Actions
+- ✅ **Continuous Validation** - GitHub Actions workflows
+- ✅ **Community Fixes** - Forum bugs resolved (v2.1.40+)
 - ✅ **Zigbee2MQTT Compatible** - Easy migration
 - ✅ **UNBRANDED Organization** - Find devices by function, not brand
 
@@ -40,9 +40,10 @@ Seamless integration of 2,000+ Tuya Zigbee device manufacturers with Homey Pro, 
 **Supported Devices:**
 - **2,000+ Manufacturer IDs** - Comprehensive coverage
 - **1,500+ Product IDs** - Maximum compatibility
-- **163 Drivers** - All validated SDK3
+- **164 Drivers** - All validated SDK3
 - **1,767 Flow Cards** - Complete automation
 - **0 Validation Errors** - Production ready
+- **GitHub Actions** - Automated CI/CD pipeline
 
 **Supported Brands:**
 - Tuya (all series: TS*, _TZ*, _TZE*)
@@ -124,22 +125,28 @@ Devices organized by **FUNCTION**, not brand:
 - Blinds controllers
 - Shutter motors
 
-## 🆕 What's New in v2.1.36
+## 🆕 What's New in v2.1.51
 
-### Major Features Added
-- ✅ **1,767 Flow Cards** - Auto-generated (661 triggers, 698 conditions, 408 actions)
-- ✅ **2,481 Corrections** - Complete app.json sync with sources
-- ✅ **Advanced Settings** - Calibration, reporting intervals, sensitivity
-- ✅ **Maintenance Actions** - Identify device, reset meters
-- ✅ **Energy.batteries** - All battery devices configured
-- ✅ **Complete Coherence** - All 163 drivers verified
+### 🚀 GitHub Actions Integration (v2.1.51)
+- ✅ **Official Homey Actions** - Using GitHub Marketplace actions
+- ✅ **Automated Publishing** - Push to master triggers publication
+- ✅ **Semantic Versioning** - Automatic version management
+- ✅ **Smart Changelog** - Generated from commit messages
+- ✅ **Continuous Validation** - Multi-level testing on PRs
+- ✅ **PowerShell Scripts** - Local publication automation
 
-### Bug Fixes
-- ✅ Temperature/humidity/battery parsers corrected (11 drivers)
-- ✅ Missing manufacturer IDs added (_TZE284_vvmbj46n and more)
-- ✅ Missing product IDs sync (159 drivers)
-- ✅ Flow handlers added to all drivers
-- ✅ 0 validation errors - SDK3 compliant
+### 🐛 Community Bug Fixes (v2.1.40)
+- ✅ **Temperature/Humidity Sensors** - Now display values correctly (Bug #259)
+- ✅ **PIR Motion Sensors** - No more "Unknown Device" errors (Bug #256)
+- ✅ **Gas Sensor Support** - TS0601_gas_sensor_2 added (Bug #261)
+- ✅ **Manufacturer IDs** - Cleaned overlapping IDs across drivers
+- ✅ **Zigbee Clusters** - Corrected configurations per device type
+
+### 📚 Documentation (v2.1.51)
+- ✅ **Publication Guide** - Complete official workflows guide
+- ✅ **Quick Start** - 5-minute setup for GitHub Actions
+- ✅ **Technical Reference** - github_actions_official.json
+- ✅ **Forum Corrections Report** - Detailed bug fix documentation
 
 ## 🔄 Migration from Zigbee2MQTT
 
@@ -158,63 +165,104 @@ Easy migration path for Z2M users:
 
 ```
 .
-├── app.json                       # 163 drivers, 1,767 flow cards
-├── drivers/                       # 163 device drivers
+├── app.json                       # 164 drivers, 1,767 flow cards
+├── drivers/                       # 164 device drivers
 ├── scripts/
+│   ├── automation/                # Publication automation
+│   │   └── publish-homey-official.ps1
 │   ├── analysis/                  # Verification scripts
-│   │   ├── VERIFY_AND_FIX_APP_JSON.js
-│   │   ├── VERIFY_DRIVERS_COHERENCE.js
-│   │   └── MEGA_FEATURE_ANALYZER.js
 │   ├── fixes/                     # Automatic fixes
-│   │   ├── FIX_DEVICE_CAPABILITIES_CASCADE.js
-│   │   ├── FIX_MISSING_BATTERIES.js
-│   │   └── FIX_SETTINGS_VALIDATION.js
-│   ├── generators/                # Code generators
-│   │   ├── FLOW_HANDLER_GENERATOR.js
-│   │   └── MEGA_FEATURE_IMPLEMENTER.js
-│   └── automation/                # GitHub Actions helpers
+│   └── generators/                # Code generators
+├── references/
+│   └── github_actions_official.json  # GitHub Actions reference
 ├── docs/
 │   ├── forum/                     # Homey forum posts
-│   ├── reports/                   # Technical reports
-│   └── actions/                   # Action guides
-├── reports/
-│   ├── json/                      # JSON reports
-│   └── commits/                   # Commit messages
-└── .github/
-    └── workflows/                 # GitHub Actions
-        └── publish-main.yml       # Automatic publishing
+│   └── reports/                   # Technical reports
+├── .github/
+│   └── workflows/                 # GitHub Actions
+│       ├── homey-official-publish.yml   # 🌟 Main workflow
+│       ├── homey-validate.yml           # Validation
+│       ├── OFFICIAL_WORKFLOWS_GUIDE.md  # Complete guide
+│       └── WORKFLOWS.md                 # Overview
+├── PUBLICATION_GUIDE_OFFICIELLE.md    # 📖 Full publication guide
+├── QUICK_START_PUBLICATION.md         # ⚡ Quick start
+└── CHANGELOG.md                        # Version history
 ```
 
-### Scripts
+### 🚀 Publication Methods
 
-**Verify app.json coherence:**
+#### Method 1: GitHub Actions (Recommended)
+
+**Automatic publication on push:**
 ```bash
-node scripts/analysis/VERIFY_AND_FIX_APP_JSON.js
+git add .
+git commit -m "feat: add new device support"
+git push origin master
+# → GitHub Actions automatically validates, versions, and publishes
 ```
 
-**Verify all drivers:**
-```bash
-node scripts/analysis/VERIFY_DRIVERS_COHERENCE.js
+**Manual dispatch:**
+```
+GitHub → Actions → Official Homey App Store Publication
+  → Run workflow (choose version type and changelog)
 ```
 
-**Fix missing capabilities:**
-```bash
-node scripts/fixes/FIX_DEVICE_CAPABILITIES_CASCADE.js
+#### Method 2: PowerShell Script
+
+```powershell
+# Standard publication
+.\scripts\automation\publish-homey-official.ps1
+
+# Minor version bump
+.\scripts\automation\publish-homey-official.ps1 -VersionType minor
+
+# With custom changelog
+.\scripts\automation\publish-homey-official.ps1 -Changelog "Added 20 new devices"
 ```
 
-**Generate flow cards:**
+#### Method 3: Homey CLI
+
 ```bash
-node scripts/generators/MEGA_FEATURE_IMPLEMENTER.js
+# Validate first
+npx homey app validate --level publish
+
+# Then publish
+npx homey app publish
+```
+
+### 🔧 Development Scripts
+
+**Validation:**
+```bash
+npx homey app validate --level publish
+```
+
+**Build:**
+```bash
+npx homey app build
+```
+
+**Local install:**
+```bash
+npx homey app install
 ```
 
 ## 📖 Documentation
 
-- [Forum Post](docs/forum/FORUM_POST_ENGLISH_SHORT.md) - User-friendly update post
-- [Mega Features Report](docs/reports/MEGA_FEATURES_RAPPORT_FINAL.md) - 1,767 flow cards
-- [Coherence Summary](docs/reports/COHERENCE_FINAL_SUMMARY.md) - Final verification
-- [Cascade Fixes](docs/reports/RAPPORT_CASCADE_FIXES.md) - Technical fixes
-- [Contributing Guide](docs/CONTRIBUTING.md) - How to contribute
-- [GitHub Actions](.github/workflows/) - Automatic publishing
+### Publication & Workflows
+- [📖 Publication Guide](PUBLICATION_GUIDE_OFFICIELLE.md) - Complete official guide
+- [⚡ Quick Start](QUICK_START_PUBLICATION.md) - 5-minute setup
+- [🔧 Workflows Guide](.github/workflows/OFFICIAL_WORKFLOWS_GUIDE.md) - Technical workflows
+- [📊 Implementation Recap](RECAP_IMPLEMENTATION_OFFICIELLE.md) - What we built
+
+### Bug Fixes & Features
+- [🐛 Forum Corrections](FORUM_BUGS_CORRECTIONS_RAPPORT.md) - Community fixes (v2.1.40)
+- [📝 Changelog](CHANGELOG.md) - Version history
+- [🤝 Contributing](CONTRIBUTING.md) - How to contribute
+
+### Technical References
+- [🔗 GitHub Actions Reference](references/github_actions_official.json) - Technical spec
+- [📋 Workflows Overview](.github/workflows/WORKFLOWS.md) - All workflows
 
 ## 🐛 Bug Reports & Feature Requests
 
@@ -261,17 +309,33 @@ MIT License - See [LICENSE](LICENSE) file
 ## 📊 Statistics
 
 ```
-Version: 2.1.36
-Drivers: 163 (all validated SDK3)
+Version: 2.1.51
+Drivers: 164 (all validated SDK3)
 Manufacturer IDs: 2,000+
 Product IDs: 1,500+
 Flow Cards: 1,767 (661 triggers + 698 conditions + 408 actions)
 Validation Errors: 0
 Mode: 100% Zigbee Local
 API Key Required: NONE
-Auto-Updates: Via GitHub Actions
+Publication: Official GitHub Actions
+CI/CD: Automated validation & versioning
 SDK: 3 (latest)
 ```
+
+## 🔄 CI/CD Pipeline
+
+**Automated Workflows:**
+- ✅ **Validation** - Multi-level testing on every PR
+- ✅ **Versioning** - Semantic version management
+- ✅ **Publishing** - Automated Homey App Store submission
+- ✅ **Changelog** - Auto-generated from commits
+
+**GitHub Actions:**
+```
+Push to master → Validate → Version → Publish → Test → Live
+```
+
+**Status:** All workflows passing ✅
 
 ## 🌟 Star History
 
