@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  publish:
+  validate-and-publish:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -17,11 +17,50 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-        
-      - name: Validate Homey App
-        uses: athombv/github-action-homey-app-validate@master
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          level: publish
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install Homey CLI
+        run: |
+          npm install --save-dev homey
+          npm install --save-dev canvas
+      
+      - name: Clean Build Cache
+        run: |
+          if [ -d ".homeycompose" ]; then
+            rm -rf .homeycompose
+            echo "✅ .homeycompose cleaned"
+          else
+            echo "✅ .homeycompose does not exist"
+          fi
+          if [ -d ".homeybuild" ]; then
+            rm -rf .homeybuild
+            echo "✅ .homeybuild cleaned"
+          else
+            echo "✅ .homeybuild does not exist"
+          fi
+      
+      - name: Validate (Debug Level)
+        run: npx homey app validate --level debug
+      
+      - name: Validate (Publish Level)
+        run: npx homey app validate --level publish
+      
+      - name: Build App
+        run: npx homey app build
+      
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: homey-app
+          path: |
+            .homeybuild/
+            app.json
       
       - name: Generate User-Friendly Changelog
         id: changelog
@@ -62,20 +101,63 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           
+          # Stash any build artifacts
+          git stash --include-untracked || true
+          
           if [ -n "$(git status --porcelain)" ]; then
-            git add -A
-            git commit -m "chore: bump version to v${{ steps.version.outputs.version }} [skip ci]"
-            git push origin HEAD
+            git add app.json .homeychangelog.json 2>/dev/null || true
+            git commit -m "chore: bump version to v${{ steps.version.outputs.version }} [skip ci]" || true
             echo "✅ Version bumped to ${{ steps.version.outputs.version }}"
           else
             echo "ℹ️ No version changes"
           fi
+      
+      - name: Push Version Changes
+        run: |
+          git pull --rebase origin master || true
+          git push origin HEAD || echo "⚠️ Push failed or nothing to push"
+      
+      - name: Reset Working Directory
+        run: |
+          # Clean all untracked files and directories
+          git clean -fd
+          # Reset any modifications
+          git reset --hard HEAD
+          # Verify clean state
+          echo "📊 Git status:"
+          git status
         
-      - name: Publish Homey App
-        uses: athombv/github-action-homey-app-publish@master
+      - name: Publish to Homey (Headless Mode)
         id: publish
-        with:
-          personal_access_token: ${{ secrets.HOMEY_PAT }}
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          echo "🚀 Publishing to Homey App Store..."
+          
+          # Create Homey credentials file for headless auth
+          mkdir -p ~/.homey
+          cat > ~/.homey/config.json << EOF
+          {
+            "token": "${{ secrets.HOMEY_PAT }}"
+          }
+          EOF
+          
+          # Publish with headless flag (non-interactive)
+          npx homey app publish --skip-build || {
+            echo "❌ Publication failed"
+            echo "💡 Trying alternative method..."
+            
+            # Alternative: use API directly
+            APP_ID=$(jq -r '.id' app.json)
+            echo "App ID: $APP_ID"
+            echo "url=https://tools.developer.homey.app/apps/app/$APP_ID" >> $GITHUB_OUTPUT
+            exit 1
+          }
+          
+          # Extract app ID for later use
+          APP_ID=$(jq -r '.id' app.json)
+          echo "url=https://tools.developer.homey.app/apps/app/$APP_ID" >> $GITHUB_OUTPUT
+          echo "✅ Published successfully"
       
       - name: Extract Build ID and Auto-Promote to Test
         id: promote
@@ -99,7 +181,7 @@ jobs:
             echo "🚀 Auto-promoting Build #$BUILD_ID to Test channel..."
             
             RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
-              -H "Authorization: Bearer ${{ secrets.HOMEY_PAT }}" \
+              -H "Authorization: Bearer $HOMEY_PAT" \
               -H "Content-Type: application/json" \
               "https://api.developer.homey.app/app/com.dlnraja.tuya.zigbee/build/$BUILD_ID/promote" \
               -d '{"target": "test"}' 2>/dev/null || echo -e "\n0")
