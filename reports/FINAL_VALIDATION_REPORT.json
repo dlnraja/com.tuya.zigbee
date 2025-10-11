@@ -1,0 +1,15 @@
+{
+  "timestamp": "2025-10-11T08:18:14.285Z",
+  "version": "2.1.40",
+  "summary": {
+    "criticalErrors": 1,
+    "issues": 0,
+    "fixes": 0
+  },
+  "criticalErrors": [
+    "app.json version incorrect"
+  ],
+  "issues": [],
+  "fixes": [],
+  "status": "NEEDS_FIX"
+}
