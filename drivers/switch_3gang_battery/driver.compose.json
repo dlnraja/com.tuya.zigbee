@@ -158,5 +158,10 @@
   "platforms": [
     "local"
   ],
-  "id": "switch_3gang_battery"
+  "id": "switch_3gang_battery",
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  }
 }

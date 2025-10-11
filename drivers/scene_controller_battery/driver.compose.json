@@ -99,6 +99,9 @@
     "small": "./drivers/scene_controller_battery/assets/small.png",
     "large": "./drivers/scene_controller_battery/assets/large.png"
   },
+  "energy": {
+    "batteries": ["CR2032"]
+  },
   "community": {
     "sources": [
       "Generic compatibility database",

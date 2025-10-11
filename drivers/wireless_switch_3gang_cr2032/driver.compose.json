@@ -166,5 +166,10 @@
       }
     }
   },
-  "id": "wireless_switch_3gang_cr2032"
+  "id": "wireless_switch_3gang_cr2032",
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  }
 }
