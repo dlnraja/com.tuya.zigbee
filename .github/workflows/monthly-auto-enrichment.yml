@@ -33,16 +33,15 @@ jobs:
           token: ${{ secrets.GH_PAT || github.token }}
       
       # 2. Setup Node.js
-      - name: 🔧 Setup Node.js 18
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'npm'
       
       # 3. Install dependencies
-      - name: 📦 Install Dependencies
+      - name: Install Dependencies
         run: |
-          echo "📦 Installing project dependencies..."
+          echo "Installing project dependencies..."
           npm ci || npm install --no-audit
           echo "✅ Dependencies installed"
       
