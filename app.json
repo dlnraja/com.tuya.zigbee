@@ -73288,6 +73288,12 @@
           "nl": "Identificeer apparaat (knipperen)",
           "de": "Gerät identifizieren (blinken)"
         },
+        "titleFormatted": {
+          "en": "Identify [[device]]",
+          "fr": "Identifier [[device]]",
+          "nl": "Identificeer [[device]]",
+          "de": "Identifiziere [[device]]"
+        },
         "hint": {
           "en": "Flash the device light to identify it physically",
           "fr": "Faire clignoter la lumière pour identifier physiquement"
@@ -73306,6 +73312,12 @@
           "fr": "Réinitialiser compteur énergie",
           "nl": "Reset energiemeter",
           "de": "Energiezähler zurücksetzen"
+        },
+        "titleFormatted": {
+          "en": "Reset power meter of [[device]]",
+          "fr": "Réinitialiser compteur énergie de [[device]]",
+          "nl": "Reset energiemeter van [[device]]",
+          "de": "Energiezähler von [[device]] zurücksetzen"
         },
         "hint": {
           "en": "Reset the cumulative power meter to zero",

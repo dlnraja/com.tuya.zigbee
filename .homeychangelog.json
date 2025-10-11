@@ -3,6 +3,6 @@
     "en": "Performance and stability improvements"
   },
   "2.1.40": {
-    "en": "Bug fixes and stability improvements"
+    "en": "Critical forum bugs fixed: temperature/humidity sensors now display values correctly, PIR sensors pair without conflicts, gas sensor support added, version sync fixed, missing driver files restored"
   }
 }
