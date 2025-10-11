@@ -1,0 +1,175 @@
+name: Official Homey App Store Publication
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - 'reports/**'
+      - 'project-data/**'
+  workflow_dispatch:
+    inputs:
+      version_type:
+        description: 'Version increment type'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+      changelog:
+        description: 'Changelog message'
+        required: false
+        default: 'Bug fixes and improvements'
+
+jobs:
+  validate:
+    name: Validate App
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install Dependencies
+        run: |
+          npm install --save-dev homey canvas
+          npm ci --ignore-scripts 2>/dev/null || npm install --ignore-scripts
+      
+      - name: Clean Homey Cache
+        run: |
+          rm -rf .homeybuild .homeycompose
+          echo "✅ Build cache cleaned"
+      
+      # ✅ OFFICIAL HOMEY ACTION #1: Validate
+      - name: Validate App (Official Action)
+        uses: athombv/github-action-homey-app-validate@master
+        with:
+          validate-level: publish
+
+  version-and-publish:
+    name: Version & Publish
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install Dependencies
+        run: |
+          npm install --save-dev homey canvas
+      
+      - name: Generate Smart Changelog
+        id: changelog
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            CHANGELOG="${{ inputs.changelog }}"
+          else
+            # Auto-generate from last commit
+            LAST_COMMIT=$(git log -1 --pretty=format:"%s")
+            
+            if echo "$LAST_COMMIT" | grep -iE "^feat|feature"; then
+              CHANGELOG="New features and device support added"
+            elif echo "$LAST_COMMIT" | grep -iE "^fix|bug"; then
+              CHANGELOG="Bug fixes and stability improvements"
+            elif echo "$LAST_COMMIT" | grep -iE "device|manufacturer|driver"; then
+              CHANGELOG="Enhanced device compatibility and manufacturer support"
+            elif echo "$LAST_COMMIT" | grep -iE "forum|community|issue"; then
+              CHANGELOG="Community-reported issues fixed"
+            else
+              CHANGELOG="Performance and stability improvements"
+            fi
+          fi
+          
+          # Sanitize (Homey max 400 chars)
+          CHANGELOG=$(echo "$CHANGELOG" | tr -d '\r\n' | head -c 400)
+          echo "changelog=$CHANGELOG" >> $GITHUB_OUTPUT
+          echo "📝 Changelog: $CHANGELOG"
+      
+      # ✅ OFFICIAL HOMEY ACTION #2: Update Version
+      - name: Update App Version (Official Action)
+        uses: athombv/github-action-homey-app-update-version@master
+        id: version
+        with:
+          version: ${{ github.event.inputs.version_type || 'patch' }}
+          changelog: ${{ steps.changelog.outputs.changelog }}
+      
+      - name: Commit Version Changes
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          if [ -n "$(git status --porcelain)" ]; then
+            git add app.json .homeychangelog.json
+            git commit -m "chore: bump version to v${{ steps.version.outputs.version }} [skip ci]"
+            git push origin HEAD
+            echo "✅ Version v${{ steps.version.outputs.version }} committed"
+          else
+            echo "ℹ️ No changes to commit"
+          fi
+      
+      # ✅ OFFICIAL HOMEY ACTION #3: Publish
+      - name: Publish to Homey App Store (Official Action)
+        uses: athombv/github-action-homey-app-publish@master
+        id: publish
+        with:
+          personal-access-token: ${{ secrets.HOMEY_PAT }}
+      
+      - name: Publication Summary
+        run: |
+          echo "## 🎉 Publication Successful" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** v${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Changelog:** ${{ steps.changelog.outputs.changelog }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🔗 Useful Links" >> $GITHUB_STEP_SUMMARY
+          echo "- [Developer Dashboard](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee)" >> $GITHUB_STEP_SUMMARY
+          echo "- [Test URL](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)" >> $GITHUB_STEP_SUMMARY
+          echo "- [Live App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📋 Next Steps" >> $GITHUB_STEP_SUMMARY
+          echo "1. Go to [Developer Dashboard](https://tools.developer.homey.app)" >> $GITHUB_STEP_SUMMARY
+          echo "2. Navigate to **Apps SDK → My Apps**" >> $GITHUB_STEP_SUMMARY
+          echo "3. Find **Universal Tuya Zigbee v${{ steps.version.outputs.version }}**" >> $GITHUB_STEP_SUMMARY
+          echo "4. Choose:" >> $GITHUB_STEP_SUMMARY
+          echo "   - **Test Release** (no certification needed, private link)" >> $GITHUB_STEP_SUMMARY
+          echo "   - **Live Release** (submit for Athom certification)" >> $GITHUB_STEP_SUMMARY
+
+  notify:
+    name: Notification
+    needs: version-and-publish
+    runs-on: ubuntu-latest
+    if: always()
+    
+    steps:
+      - name: Status Check
+        run: |
+          if [ "${{ needs.version-and-publish.result }}" = "success" ]; then
+            echo "✅ Publication workflow completed successfully"
+          else
+            echo "❌ Publication workflow failed"
+            exit 1
+          fi
