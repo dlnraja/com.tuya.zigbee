@@ -120,8 +120,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "./drivers/climate_monitor_cr2032/assets/small.png",
+    "large": "./drivers/climate_monitor_cr2032/assets/large.png"
   },
   "platforms": [
     "local"

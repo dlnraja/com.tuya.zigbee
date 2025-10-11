@@ -15,8 +15,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "./drivers/motion_sensor_mmwave_battery/assets/small.png",
+    "large": "./drivers/motion_sensor_mmwave_battery/assets/large.png"
   },
   "zigbee": {
     "manufacturerName": [

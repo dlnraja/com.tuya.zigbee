@@ -17,8 +17,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "./drivers/water_valve_hybrid/assets/small.png",
+    "large": "./drivers/water_valve_hybrid/assets/large.png"
   },
   "zigbee": {
     "manufacturerName": [

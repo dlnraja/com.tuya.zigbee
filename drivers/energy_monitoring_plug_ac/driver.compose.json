@@ -116,8 +116,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "./drivers/energy_monitoring_plug_ac/assets/small.png",
+    "large": "./drivers/energy_monitoring_plug_ac/assets/large.png"
   },
   "platforms": [
     "local"

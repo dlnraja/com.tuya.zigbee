@@ -106,8 +106,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "./drivers/garage_door_controller_ac/assets/small.png",
+    "large": "./drivers/garage_door_controller_ac/assets/large.png"
   },
   "platforms": [
     "local"

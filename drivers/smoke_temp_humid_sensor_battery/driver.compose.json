@@ -98,8 +98,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "./drivers/smoke_temp_humid_sensor_battery/assets/small.png",
+    "large": "./drivers/smoke_temp_humid_sensor_battery/assets/large.png"
   },
   "capabilitiesOptions": {
     "measure_temperature": {

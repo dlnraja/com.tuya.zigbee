@@ -82,8 +82,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "./drivers/air_quality_monitor_pro_battery/assets/small.png",
+    "large": "./drivers/air_quality_monitor_pro_battery/assets/large.png"
   },
   "platforms": [
     "local"
