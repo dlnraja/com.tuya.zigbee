@@ -31,5 +31,8 @@
   },
   "2.1.53": {
     "en": "Bug fix: add git pull rebase and retry logic for version co."
+  },
+  "2.1.54": {
+    "en": "Bug fix: add package-lock.json for Athom publish action."
   }
 }
