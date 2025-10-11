@@ -120,6 +120,9 @@
     "en": "Critical fix: Battery readings now working correctly. Fixed SDK3 cluster ID issues affecting sensors. No more '56 years ago' readings. All battery-powered devices will now report correctly."
   },
   "2.9.9": {
-    "en": "Fixed sensor readings and improved accuracy."
+    "en": "Critical fix: Battery readings now working correctly. Fixed SDK3 cluster ID issues affecting sensors. No more '56 years ago' readings. All battery-powered devices will now report correctly."
+  },
+  "2.9.10": {
+    "en": "Fixed gas sensor AC endpoints configuration based on real Zigbee device interview. Improved pairing reliability for AC-powered gas sensors."
   }
 }
