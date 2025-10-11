@@ -178,5 +178,35 @@
       "CR2032"
     ]
   },
-  "id": "smoke_detector_battery"
+  "id": "smoke_detector_battery",
+  "settings": [
+    {
+      "type": "dropdown",
+      "id": "dp_20_smoke_sensitivity",
+      "label": {
+        "en": "smoke sensitivity"
+      },
+      "value": "0",
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "low"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "medium"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "high"
+          }
+        }
+      ]
+    }
+  ]
 }
