@@ -7,7 +7,9 @@
     "onoff",
     "measure_battery",
     "measure_temperature",
-    "alarm_motion"
+    "alarm_motion",
+    "alarm_smoke",
+    "alarm_battery"
   ],
   "zigbee": {
     "manufacturerName": [

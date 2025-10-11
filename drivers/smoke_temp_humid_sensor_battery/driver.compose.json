@@ -9,7 +9,8 @@
     "measure_humidity",
     "measure_battery",
     "alarm_motion",
-    "measure_luminance"
+    "measure_luminance",
+    "alarm_battery"
   ],
   "zigbee": {
     "manufacturerName": [

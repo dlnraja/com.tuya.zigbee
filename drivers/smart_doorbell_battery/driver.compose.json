@@ -8,7 +8,8 @@
     "measure_battery",
     "alarm_contact",
     "alarm_generic",
-    "volume_set"
+    "volume_set",
+    "alarm_battery"
   ],
   "platforms": [
     "local"
