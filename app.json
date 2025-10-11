@@ -9403,7 +9403,7 @@
     {
       "id": "mini_ac",
       "name": {
-        "en": "Sonoff Mini"
+        "en": "Mini Switch AC"
       },
       "class": "sensor",
       "capabilities": [
@@ -11389,7 +11389,7 @@
     {
       "id": "relay_switch_1gang_ac",
       "name": {
-        "en": "Sonoff Basic"
+        "en": "Relay Switch 1-Gang AC"
       },
       "class": "socket",
       "capabilities": [
@@ -19073,7 +19073,7 @@
     {
       "id": "zbbridge_ac",
       "name": {
-        "en": "Sonoff Zbbridge"
+        "en": "Zigbee Bridge Hub AC"
       },
       "class": "sensor",
       "capabilities": [
