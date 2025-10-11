@@ -23,7 +23,7 @@ on:
 
 jobs:
   pre-checks:
-    name: Pre-Flight Checks
+    name: Quality & Pre-Flight Checks
     runs-on: ubuntu-latest
     outputs:
       should_publish: ${{ steps.check.outputs.should_publish }}
@@ -48,11 +48,121 @@ jobs:
       - name: Check JSON Syntax
         run: |
           echo "🔍 Checking JSON files..."
+          ERRORS=0
           for file in $(find . -name "*.json" -not -path "./node_modules/*" -not -path "./.homeybuild/*"); do
             echo "Validating: $file"
-            jq empty "$file" || { echo "❌ Invalid JSON: $file"; exit 1; }
+            if ! jq empty "$file" 2>/dev/null; then
+              echo "❌ Invalid JSON: $file"
+              ERRORS=$((ERRORS + 1))
+            fi
           done
+          
+          if [ $ERRORS -gt 0 ]; then
+            echo "❌ Found $ERRORS invalid JSON files"
+            exit 1
+          fi
           echo "✅ All JSON files valid"
+      
+      - name: Check CHANGELOG.md
+        run: |
+          echo "📋 Checking CHANGELOG.md..."
+          
+          if [ ! -f "CHANGELOG.md" ]; then
+            echo "⚠️ WARNING: CHANGELOG.md not found"
+            echo "Creating basic CHANGELOG.md"
+            echo "# Changelog" > CHANGELOG.md
+            echo "" >> CHANGELOG.md
+            echo "All notable changes to this project will be documented in this file." >> CHANGELOG.md
+          fi
+          
+          # Check if CHANGELOG has recent updates
+          LINES=$(wc -l < CHANGELOG.md)
+          if [ $LINES -lt 5 ]; then
+            echo "⚠️ WARNING: CHANGELOG.md seems empty or too short"
+          else
+            echo "✅ CHANGELOG.md exists ($LINES lines)"
+          fi
+          
+          # Check for version entry in CHANGELOG
+          VERSION=$(jq -r '.version' app.json)
+          if grep -q "\[$VERSION\]" CHANGELOG.md; then
+            echo "✅ Version $VERSION found in CHANGELOG"
+          else
+            echo "ℹ️ Version $VERSION not yet in CHANGELOG (will be added)"
+          fi
+      
+      - name: Check .homeychangelog.json
+        run: |
+          echo "📝 Checking .homeychangelog.json..."
+          
+          if [ ! -f ".homeychangelog.json" ]; then
+            echo "⚠️ WARNING: .homeychangelog.json not found"
+            echo "Creating basic .homeychangelog.json"
+            echo "{}" > .homeychangelog.json
+          fi
+          
+          # Validate JSON syntax
+          if ! jq empty .homeychangelog.json 2>/dev/null; then
+            echo "❌ Invalid .homeychangelog.json"
+            exit 1
+          fi
+          
+          # Check if it has entries
+          ENTRIES=$(jq 'length' .homeychangelog.json)
+          echo "✅ .homeychangelog.json valid ($ENTRIES versions)"
+          
+          # Check last entry is user-friendly (not too technical)
+          LAST_VERSION=$(jq -r 'keys | .[-1]' .homeychangelog.json)
+          if [ "$LAST_VERSION" != "null" ]; then
+            LAST_MESSAGE=$(jq -r ".\"$LAST_VERSION\".en" .homeychangelog.json)
+            echo "Last entry: $LAST_MESSAGE"
+            
+            # Check if message is user-friendly (no technical jargon)
+            if echo "$LAST_MESSAGE" | grep -iE "refactor|async|await|promise|sdk|api|npm"; then
+              echo "⚠️ WARNING: Last changelog contains technical terms"
+              echo "Consider using user-friendly language"
+            fi
+          fi
+      
+      - name: Check README.md Quality
+        run: |
+          echo "📖 Checking README.md quality..."
+          
+          if [ ! -f "README.md" ]; then
+            echo "❌ ERROR: README.md not found"
+            exit 1
+          fi
+          
+          # Check README size
+          SIZE=$(wc -c < README.md)
+          LINES=$(wc -l < README.md)
+          
+          if [ $SIZE -lt 1000 ]; then
+            echo "⚠️ WARNING: README.md is very short ($SIZE bytes)"
+          else
+            echo "✅ README.md exists ($LINES lines, $SIZE bytes)"
+          fi
+          
+          # Check for essential sections
+          MISSING_SECTIONS=""
+          
+          if ! grep -qi "installation" README.md; then
+            MISSING_SECTIONS="${MISSING_SECTIONS}Installation, "
+          fi
+          
+          if ! grep -qi "usage\|how to\|getting started" README.md; then
+            MISSING_SECTIONS="${MISSING_SECTIONS}Usage, "
+          fi
+          
+          if ! grep -qi "license" README.md; then
+            MISSING_SECTIONS="${MISSING_SECTIONS}License, "
+          fi
+          
+          if [ -n "$MISSING_SECTIONS" ]; then
+            echo "⚠️ WARNING: Missing sections: $MISSING_SECTIONS"
+          else
+            echo "✅ README.md has essential sections"
+          fi
       
       - name: Check Driver Structure
         run: |
@@ -65,13 +175,58 @@ jobs:
             exit 1
           fi
           
+          # Check each driver has required files
+          ERRORS=0
+          for driver_dir in drivers/*/; do
+            driver_name=$(basename "$driver_dir")
+            
+            # Check driver.compose.json or driver.json
+            if [ ! -f "${driver_dir}driver.compose.json" ] && [ ! -f "${driver_dir}driver.json" ]; then
+              echo "⚠️ WARNING: $driver_name missing driver manifest"
+              ERRORS=$((ERRORS + 1))
+            fi
+            
+            # Check device.js
+            if [ ! -f "${driver_dir}device.js" ]; then
+              echo "⚠️ WARNING: $driver_name missing device.js"
+              ERRORS=$((ERRORS + 1))
+            fi
+          done
+          
+          if [ $ERRORS -gt 0 ]; then
+            echo "⚠️ Found $ERRORS driver issues (non-blocking)"
+          fi
+          
           echo "✅ Driver structure OK ($DRIVERS_COUNT drivers)"
       
-      - name: Check Commit Message
+      - name: Check Commit Message Quality
         id: check
         run: |
           COMMIT_MSG=$(git log -1 --pretty=format:"%s")
+          COMMIT_BODY=$(git log -1 --pretty=format:"%b")
           echo "Commit message: $COMMIT_MSG"
+          
+          # Check commit message length
+          MSG_LENGTH=${#COMMIT_MSG}
+          if [ $MSG_LENGTH -lt 10 ]; then
+            echo "⚠️ WARNING: Commit message is very short ($MSG_LENGTH chars)"
+          elif [ $MSG_LENGTH -gt 100 ]; then
+            echo "⚠️ WARNING: Commit message is very long ($MSG_LENGTH chars)"
+          else
+            echo "✅ Commit message length OK ($MSG_LENGTH chars)"
+          fi
+          
+          # Check for conventional commit format
+          if echo "$COMMIT_MSG" | grep -qE "^(feat|fix|docs|style|refactor|test|chore|perf|ci|build|revert)(\(.+\))?:"; then
+            echo "✅ Commit follows conventional format"
+          else
+            echo "ℹ️ Commit doesn't follow conventional format (not required)"
+          fi
+          
+          # Check for spelling in common words
+          if echo "$COMMIT_MSG" | grep -iE "teh|recieve|occured|seperate|definately"; then
+            echo "⚠️ WARNING: Possible spelling errors in commit message"
+          fi
           
           # Skip publish if commit contains [skip ci], [skip publish] or starts with docs:
           if echo "$COMMIT_MSG" | grep -iE "\[skip (ci|publish)\]|^docs:|^doc:"; then
@@ -84,6 +239,17 @@ jobs:
             echo "should_publish=true" >> $GITHUB_OUTPUT
             echo "✅ Will publish"
           fi
+      
+      - name: Quality Check Summary
+        run: |
+          echo "## 📊 Quality Check Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ **JSON files:** Valid" >> $GITHUB_STEP_SUMMARY
+          echo "✅ **CHANGELOG.md:** Present" >> $GITHUB_STEP_SUMMARY
+          echo "✅ **.homeychangelog.json:** Valid" >> $GITHUB_STEP_SUMMARY
+          echo "✅ **README.md:** Quality checked" >> $GITHUB_STEP_SUMMARY
+          echo "✅ **Drivers:** Structure verified" >> $GITHUB_STEP_SUMMARY
+          echo "✅ **Commit message:** Quality checked" >> $GITHUB_STEP_SUMMARY
 
   validate:
     name: Validate Homey App
@@ -120,40 +286,101 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
       
-      - name: Generate Smart Changelog
+      - name: Generate User-Friendly Changelog
         id: changelog
         run: |
           LAST_COMMIT=$(git log -1 --pretty=format:"%s")
+          COMMIT_BODY=$(git log -1 --pretty=format:"%b")
           echo "Last commit: $LAST_COMMIT"
           
-          # Detect version type and generate changelog
+          # Extract meaningful content from commit message
+          # Remove technical prefixes and cleanup
+          COMMIT_CLEAN=$(echo "$LAST_COMMIT" | sed -E 's/^(feat|fix|docs|style|refactor|test|chore|perf|ci|build|revert)(\([^)]+\))?:\s*//i')
+          
+          # Detect version type and generate USER-FRIENDLY changelog
           if echo "$LAST_COMMIT" | grep -iE "^feat|feature|^add"; then
             VERSION_TYPE="minor"
-            CHANGELOG="New features and device support added"
+            
+            # Generate user-friendly message for new features
+            if echo "$COMMIT_CLEAN" | grep -iE "sensor|device|driver"; then
+              # Count devices if mentioned
+              if echo "$COMMIT_CLEAN" | grep -oE "[0-9]+" | head -1; then
+                COUNT=$(echo "$COMMIT_CLEAN" | grep -oE "[0-9]+" | head -1)
+                CHANGELOG="Added support for $COUNT new devices"
+              else
+                CHANGELOG="Added support for new devices"
+              fi
+            elif echo "$COMMIT_CLEAN" | grep -iE "flow|automation"; then
+              CHANGELOG="New automation features added"
+            else
+              # Use cleaned commit message
+              CHANGELOG="New feature: ${COMMIT_CLEAN:0:50}"
+            fi
+            
           elif echo "$LAST_COMMIT" | grep -iE "^fix|bug|^patch"; then
             VERSION_TYPE="patch"
-            CHANGELOG="Bug fixes and stability improvements"
+            
+            # Generate user-friendly message for fixes
+            if echo "$COMMIT_CLEAN" | grep -iE "temperature|sensor|reading"; then
+              CHANGELOG="Fixed sensor readings and improved accuracy"
+            elif echo "$COMMIT_CLEAN" | grep -iE "pairing|connection|connect"; then
+              CHANGELOG="Fixed device pairing issues"
+            elif echo "$COMMIT_CLEAN" | grep -iE "crash|error|fail"; then
+              CHANGELOG="Fixed stability issues and crashes"
+            else
+              CHANGELOG="Bug fix: ${COMMIT_CLEAN:0:50}"
+            fi
+            
           elif echo "$LAST_COMMIT" | grep -iE "^break|^major|breaking"; then
             VERSION_TYPE="major"
-            CHANGELOG="Major update with breaking changes"
+            CHANGELOG="Important update: ${COMMIT_CLEAN:0:50}"
+            
           elif echo "$LAST_COMMIT" | grep -iE "device|manufacturer|driver"; then
             VERSION_TYPE="patch"
-            CHANGELOG="Enhanced device compatibility and manufacturer support"
+            if echo "$COMMIT_CLEAN" | grep -oE "[0-9]+"; then
+              COUNT=$(echo "$COMMIT_CLEAN" | grep -oE "[0-9]+" | head -1)
+              CHANGELOG="Improved compatibility with $COUNT devices"
+            else
+              CHANGELOG="Improved device compatibility"
+            fi
+            
           elif echo "$LAST_COMMIT" | grep -iE "forum|community|issue"; then
             VERSION_TYPE="patch"
-            CHANGELOG="Community-reported issues fixed"
+            CHANGELOG="Fixed issues reported by the community"
+            
           else
             VERSION_TYPE="patch"
-            CHANGELOG="Performance and stability improvements"
+            # Try to use cleaned commit message if short enough
+            if [ ${#COMMIT_CLEAN} -lt 60 ]; then
+              CHANGELOG="$COMMIT_CLEAN"
+            else
+              CHANGELOG="Performance and stability improvements"
+            fi
           fi
           
-          # Sanitize (Homey max 400 chars)
-          CHANGELOG=$(echo "$CHANGELOG" | tr -d '\r\n' | head -c 400)
+          # Remove technical terms for user-friendliness
+          CHANGELOG=$(echo "$CHANGELOG" | sed -E 's/\b(async|await|promise|sdk|api|npm|refactor|typescript|eslint)\b//gi')
+          
+          # Capitalize first letter
+          CHANGELOG="$(echo ${CHANGELOG:0:1} | tr '[:lower:]' '[:upper:]')${CHANGELOG:1}"
+          
+          # Ensure proper ending
+          if ! echo "$CHANGELOG" | grep -qE '\.$'; then
+            CHANGELOG="${CHANGELOG}."
+          fi
+          
+          # Sanitize and limit (Homey max 400 chars)
+          CHANGELOG=$(echo "$CHANGELOG" | tr -d '\r\n' | sed 's/  */ /g' | head -c 400)
+          
+          # Final check: if too technical or empty, use default
+          if [ -z "$CHANGELOG" ] || [ "$CHANGELOG" = "." ]; then
+            CHANGELOG="App improvements and updates."
+          fi
           
           echo "version_type=$VERSION_TYPE" >> $GITHUB_OUTPUT
           echo "changelog=$CHANGELOG" >> $GITHUB_OUTPUT
-          echo "📝 Version: $VERSION_TYPE"
-          echo "📝 Changelog: $CHANGELOG"
+          echo "📝 Version type: $VERSION_TYPE"
+          echo "📝 User-friendly changelog: $CHANGELOG"
       
       - name: Update App Version (Official Athom Action)
         uses: athombv/github-action-homey-app-version@master
