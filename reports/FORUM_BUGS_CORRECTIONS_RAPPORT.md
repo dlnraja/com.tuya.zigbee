@@ -1,9 +1,7 @@
 # Rapport de Corrections - Bugs Forum Homey Community
 
-**MOVED TO**: docs/forum/FORUM_BUGS_CORRECTIONS_RAPPORT.md
-
 **Date**: 2025-10-10  
-**Version**: 2.1.40  
+**Version**: 2.1.40 (en préparation)  
 **Auteur**: Dylan Rajasekaram
 
 ## 📋 Résumé Exécutif

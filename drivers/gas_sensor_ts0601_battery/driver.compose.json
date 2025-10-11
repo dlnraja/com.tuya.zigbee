@@ -1,0 +1,65 @@
+{
+  "name": {
+    "en": "Gas Sensor TS0601",
+    "fr": "Capteur de Gaz TS0601"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_co",
+    "alarm_smoke",
+    "measure_battery"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_yojqa8xn",
+      "_TZE204_yojqa8xn",
+      "_TZE200_ux5v4tgb",
+      "_TZE204_ux5v4tgb",
+      "_TZE200_ezqy5pvh",
+      "_TZE204_ezqy5pvh",
+      "_TZE200_ggev5fsl",
+      "_TZE204_ggev5fsl",
+      "_TZE284_rjgdhqqi"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          4,
+          5,
+          61184
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the button on the device for 5 seconds to pair",
+        "fr": "Appuyez et maintenez le bouton pendant 5 secondes pour appairer"
+      }
+    }
+  },
+  "images": {
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "batteries": [
+      "AA",
+      "AAA"
+    ]
+  },
+  "id": "gas_sensor_ts0601_battery"
+}
