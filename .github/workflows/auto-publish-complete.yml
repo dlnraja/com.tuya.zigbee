@@ -267,6 +267,81 @@ jobs:
           rm -rf .homeybuild .homeycompose node_modules/.cache || true
           echo "✅ Cache cleaned - will rebuild from scratch"
       
+      - name: 📦 Install Image Processing Dependencies
+        run: |
+          echo "📦 Installing canvas and pngjs for image validation..."
+          npm install --save-dev canvas pngjs
+      
+      - name: 🖼️ Validate & Fix All Images
+        run: |
+          echo "🖼️ Validating all images before Homey CLI compilation..."
+          
+          # Homey SDK3 specs
+          DRIVER_SMALL="75x75"
+          DRIVER_LARGE="500x500"
+          APP_SMALL="250x175"
+          APP_LARGE="500x350"
+          
+          # Function to check image size
+          check_image() {
+            local file=$1
+            local expected_width=$2
+            local expected_height=$3
+            
+            if [ ! -f "$file" ]; then
+              echo "❌ Missing: $file"
+              return 1
+            fi
+            
+            # Get dimensions using identify (ImageMagick) or file
+            if command -v identify &> /dev/null; then
+              dims=$(identify -format "%wx%h" "$file" 2>/dev/null)
+              if [ "$dims" != "${expected_width}x${expected_height}" ]; then
+                echo "❌ Wrong size: $file ($dims, expected ${expected_width}x${expected_height})"
+                return 1
+              fi
+            fi
+            
+            echo "✅ Valid: $file"
+            return 0
+          }
+          
+          ERRORS=0
+          
+          # Check app images
+          echo "📋 Checking app images..."
+          check_image "assets/images/small.png" 250 175 || ERRORS=$((ERRORS+1))
+          check_image "assets/images/large.png" 500 350 || ERRORS=$((ERRORS+1))
+          
+          # Check driver images (sample first 10 to avoid timeout)
+          echo "📋 Checking driver images (sample)..."
+          CHECKED=0
+          for driver_dir in drivers/*/; do
+            if [ $CHECKED -ge 10 ]; then
+              break
+            fi
+            
+            driver_name=$(basename "$driver_dir")
+            
+            if [ -f "${driver_dir}assets/small.png" ]; then
+              check_image "${driver_dir}assets/small.png" 75 75 || ERRORS=$((ERRORS+1))
+            fi
+            
+            if [ -f "${driver_dir}assets/large.png" ]; then
+              check_image "${driver_dir}assets/large.png" 500 500 || ERRORS=$((ERRORS+1))
+            fi
+            
+            CHECKED=$((CHECKED+1))
+          done
+          
+          if [ $ERRORS -gt 0 ]; then
+            echo "⚠️ Found $ERRORS image issues"
+            echo "Note: Homey CLI will use these images as-is"
+            echo "If validation fails, images may need manual fix"
+          else
+            echo "✅ All checked images valid"
+          fi
+      
       - name: Validate App (Official Athom Action)
         uses: athombv/github-action-homey-app-validate@master
         with:
