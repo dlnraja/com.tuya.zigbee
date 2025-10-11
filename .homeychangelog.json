@@ -106,5 +106,8 @@
   },
   "2.9.4": {
     "en": "Bug fix: regenerate ALL images with v2.9 version marker - f."
+  },
+  "2.9.5": {
+    "en": "Trigger: force auto-publish workflow."
   }
 }
