@@ -34,5 +34,8 @@
   },
   "2.1.54": {
     "en": "Bug fix: add package-lock.json for Athom publish action."
+  },
+  "2.1.55": {
+    "en": "Bug fix: correct driver image paths in app.json (148 driver."
   }
 }
