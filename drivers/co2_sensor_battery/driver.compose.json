@@ -8,7 +8,8 @@
     "measure_temperature",
     "alarm_motion",
     "measure_luminance",
-    "measure_battery"
+    "measure_battery",
+    "alarm_co2"
   ],
   "zigbee": {
     "manufacturerName": [

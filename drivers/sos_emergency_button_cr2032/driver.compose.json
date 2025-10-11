@@ -6,7 +6,8 @@
   "capabilities": [
     "button.sos",
     "alarm_generic",
-    "measure_battery"
+    "measure_battery",
+    "alarm_button"
   ],
   "zigbee": {
     "manufacturerName": [

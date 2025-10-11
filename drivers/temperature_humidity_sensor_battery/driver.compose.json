@@ -6,7 +6,8 @@
   "capabilities": [
     "measure_temperature",
     "measure_humidity",
-    "measure_battery"
+    "measure_battery",
+    "alarm_temperature"
   ],
   "zigbee": {
     "manufacturerName": [
