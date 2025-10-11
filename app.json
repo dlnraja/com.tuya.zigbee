@@ -80554,5 +80554,113 @@
         ]
       }
     ]
+  },
+  "capabilities": {
+    "measure_angle": {
+      "type": "number",
+      "title": {
+        "en": "Opening Angle",
+        "fr": "Angle d'ouverture"
+      },
+      "units": {
+        "en": "°"
+      },
+      "decimals": 0,
+      "min": 0,
+      "max": 180,
+      "desc": {
+        "en": "Door/window opening angle in degrees"
+      },
+      "chartType": "stepLine",
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    },
+    "battery_state": {
+      "type": "enum",
+      "title": {
+        "en": "Battery State",
+        "fr": "État batterie"
+      },
+      "values": [
+        {
+          "id": "low",
+          "title": {
+            "en": "Low",
+            "fr": "Faible"
+          }
+        },
+        {
+          "id": "medium",
+          "title": {
+            "en": "Medium",
+            "fr": "Moyen"
+          }
+        },
+        {
+          "id": "high",
+          "title": {
+            "en": "High",
+            "fr": "Élevé"
+          }
+        },
+        {
+          "id": "charging",
+          "title": {
+            "en": "Charging",
+            "fr": "En charge"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    },
+    "measure_smoke": {
+      "type": "number",
+      "title": {
+        "en": "Smoke Level",
+        "fr": "Niveau de fumée"
+      },
+      "units": {
+        "en": "ppm"
+      },
+      "decimals": 0,
+      "min": 0,
+      "max": 1000,
+      "desc": {
+        "en": "Smoke concentration level"
+      },
+      "chartType": "stepLine",
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    },
+    "alarm_fault": {
+      "type": "boolean",
+      "title": {
+        "en": "Fault Alarm",
+        "fr": "Alarme défaut"
+      },
+      "desc": {
+        "en": "Device fault detected"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    },
+    "alarm_temperature": {
+      "type": "boolean",
+      "title": {
+        "en": "Temperature Alarm",
+        "fr": "Alarme température"
+      },
+      "desc": {
+        "en": "Temperature threshold exceeded"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    }
   }
 }
