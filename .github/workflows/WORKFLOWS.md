@@ -1,17 +1,24 @@
-# 🔄 GitHub Actions Workflows
+# GitHub Actions Workflows Documentation
+
+**Last Updated:** 2025-10-11  
+**Based on:** [Official Homey Documentation](https://apps.developer.homey.app/app-store/publishing)
+
+This directory contains GitHub Actions workflows for automating the validation, versioning, and publication of the Universal Tuya Zigbee Homey App.
+
+---
 
 ## Active Workflow
 
-### 🚀 `publish-auto.yml` - Automatic Publication
-**Status:** ✅ Active  
+### `publish-auto.yml` - Automatic Publication
+**Status:** Active  
 **Trigger:** Push to master, Manual dispatch
 
 **Features:**
-- ✅ Automatic validation (SDK3)
-- ✅ Auto-generated changelog from commits
-- ✅ Intelligent version bumping
-- ✅ Homey App Store publication
-- ✅ GitHub Release creation
+- Automatic validation (SDK3)
+- Auto-generated changelog from commits
+- Intelligent version bumping
+- Homey App Store publication
+- GitHub Release creation
 
 **Version Detection:**
 - `BREAKING` or `major:` prefix → **major** bump
@@ -39,7 +46,6 @@ These workflows are kept for reference but are not active:
 - `publish-main.yml` - Main publication method
 - `publish-sdk3.yml` - SDK3-specific publication
 - `manual-publish.yml` - Manual trigger only
-- `test-cli.yml` - CLI testing
 
 ---
 
