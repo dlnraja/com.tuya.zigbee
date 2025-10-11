@@ -4,5 +4,8 @@
   },
   "2.1.40": {
     "en": "Critical forum bugs fixed: temperature/humidity sensors now display values correctly, PIR sensors pair without conflicts, gas sensor support added, version sync fixed, missing driver files restored"
+  },
+  "2.1.41": {
+    "en": "Added support for new devices and improved compatibility"
   }
 }
