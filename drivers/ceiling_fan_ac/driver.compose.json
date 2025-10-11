@@ -159,8 +159,8 @@
     }
   },
   "images": {
-    "small": "/drivers/ceiling_fan/assets/small.png",
-    "large": "/drivers/ceiling_fan/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "pair": [
     {

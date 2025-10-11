@@ -146,8 +146,8 @@
     }
   },
   "images": {
-    "small": "./drivers/smart_switch_3gang_ac/assets/small.png",
-    "large": "./drivers/smart_switch_3gang_ac/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "platforms": [
     "local"

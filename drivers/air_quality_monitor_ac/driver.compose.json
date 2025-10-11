@@ -105,8 +105,8 @@
     }
   },
   "images": {
-    "small": "./drivers/air_quality_monitor_ac/assets/small.png",
-    "large": "./drivers/air_quality_monitor_ac/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "platforms": [
     "local"

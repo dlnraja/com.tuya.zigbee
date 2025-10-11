@@ -93,8 +93,8 @@
     }
   },
   "images": {
-    "small": "./drivers/temp_sensor_pro_battery/assets/small.png",
-    "large": "./drivers/temp_sensor_pro_battery/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "platforms": [
     "local"

@@ -18,8 +18,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "./drivers/temperature_sensor_battery/assets/small.png",
-    "large": "./drivers/temperature_sensor_battery/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "zigbee": {
     "manufacturerName": [
