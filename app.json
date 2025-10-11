@@ -321,8 +321,8 @@
         }
       },
       "images": {
-        "small": "/drivers/dimmer_switch_1gang_ac/assets/small.png",
-        "large": "/drivers/dimmer_switch_1gang_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -336,7 +336,9 @@
       },
       "class": "light",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "onoff.gang2",
+        "onoff.gang3"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -463,8 +465,8 @@
         }
       },
       "images": {
-        "small": "/drivers/dimmer_switch_3gang_ac/assets/small.png",
-        "large": "/drivers/dimmer_switch_3gang_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -557,8 +559,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "/drivers/motion_sensor_battery/assets/small.png",
-        "large": "/drivers/motion_sensor_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -615,8 +617,8 @@
         }
       },
       "images": {
-        "small": "/drivers/motion_sensor_pir_battery/assets/small.png",
-        "large": "/drivers/motion_sensor_pir_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -642,8 +644,8 @@
         "onoff"
       ],
       "images": {
-        "small": "/drivers/scene_controller/assets/small.png",
-        "large": "/drivers/scene_controller/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -821,8 +823,8 @@
         }
       },
       "images": {
-        "small": "/drivers/scene_controller_battery/assets/small.png",
-        "large": "/drivers/scene_controller_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "community": {
         "sources": [
@@ -952,8 +954,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "/drivers/smart_switch_1gang_ac/assets/small.png",
-        "large": "/drivers/smart_switch_1gang_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -1080,8 +1082,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/smart_switch_1gang_hybrid/assets/small.png",
-        "large": "/drivers/smart_switch_1gang_hybrid/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -1102,7 +1104,8 @@
       },
       "class": "socket",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "onoff.gang2"
       ],
       "zigbee": {
         "endpoints": {
@@ -1226,8 +1229,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_switch_2gang_ac/assets/small.png",
-        "large": "/drivers/smart_switch_2gang_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -1237,7 +1240,8 @@
       "id": "smart_switch_2gang_hybrid",
       "class": "socket",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "onoff.gang2"
       ],
       "zigbee": {
         "productId": [
@@ -1363,8 +1367,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/smart_switch_2gang_hybrid/assets/small.png",
-        "large": "/drivers/smart_switch_2gang_hybrid/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -1396,7 +1400,9 @@
       },
       "class": "socket",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "onoff.gang2",
+        "onoff.gang3"
       ],
       "zigbee": {
         "endpoints": {
@@ -1536,8 +1542,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_switch_3gang_ac/assets/small.png",
-        "large": "/drivers/smart_switch_3gang_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -1547,7 +1553,9 @@
       "id": "smart_switch_3gang_hybrid",
       "class": "socket",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "onoff.gang2",
+        "onoff.gang3"
       ],
       "zigbee": {
         "productId": [
@@ -1684,8 +1692,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/smart_switch_3gang_hybrid/assets/small.png",
-        "large": "/drivers/smart_switch_3gang_hybrid/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -1720,6 +1728,9 @@
       "class": "socket",
       "capabilities": [
         "onoff",
+        "button.2",
+        "button.3",
+        "button.4",
         "dim"
       ],
       "zigbee": {
@@ -1836,8 +1847,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/smart_switch_4gang_hybrid/assets/small.png",
-        "large": "/drivers/smart_switch_4gang_hybrid/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -1858,6 +1869,7 @@
       },
       "class": "sensor",
       "capabilities": [
+        "button.1",
         "measure_battery",
         "onoff",
         "dim"
@@ -1967,8 +1979,8 @@
         }
       },
       "images": {
-        "small": "/drivers/switch_1gang_battery/assets/small.png",
-        "large": "/drivers/switch_1gang_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -1988,7 +2000,8 @@
       },
       "class": "socket",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "onoff.gang2"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -2108,8 +2121,8 @@
         }
       },
       "images": {
-        "small": "/drivers/switch_2gang_ac/assets/small.png",
-        "large": "/drivers/switch_2gang_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -2134,7 +2147,8 @@
       },
       "class": "sensor",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "onoff.gang2"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -2254,8 +2268,8 @@
         }
       },
       "images": {
-        "small": "/drivers/switch_2gang_hybrid/assets/small.png",
-        "large": "/drivers/switch_2gang_hybrid/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -2280,7 +2294,9 @@
       },
       "class": "sensor",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "onoff.gang2",
+        "onoff.gang3"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -2408,8 +2424,8 @@
         }
       },
       "images": {
-        "small": "/drivers/switch_3gang_battery/assets/small.png",
-        "large": "/drivers/switch_3gang_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -2440,6 +2456,9 @@
       "class": "socket",
       "capabilities": [
         "onoff",
+        "button.2",
+        "button.3",
+        "button.4",
         "dim"
       ],
       "zigbee": {
@@ -2550,8 +2569,8 @@
         }
       },
       "images": {
-        "small": "/drivers/switch_4gang_ac/assets/small.png",
-        "large": "/drivers/switch_4gang_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -2565,6 +2584,10 @@
       },
       "class": "button",
       "capabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4",
         "measure_battery",
         "onoff",
         "dim"
@@ -2674,8 +2697,8 @@
         }
       },
       "images": {
-        "small": "/drivers/switch_4gang_battery_cr2032/assets/small.png",
-        "large": "/drivers/switch_4gang_battery_cr2032/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -2694,6 +2717,11 @@
       },
       "class": "sensor",
       "capabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4",
+        "button.5",
         "measure_battery",
         "onoff",
         "dim"
@@ -2803,8 +2831,8 @@
         }
       },
       "images": {
-        "small": "/drivers/switch_5gang_battery/assets/small.png",
-        "large": "/drivers/switch_5gang_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -2825,6 +2853,11 @@
       "class": "socket",
       "capabilities": [
         "onoff",
+        "button.2",
+        "button.3",
+        "button.4",
+        "button.5",
+        "button.6",
         "dim"
       ],
       "zigbee": {
@@ -2935,8 +2968,8 @@
         }
       },
       "images": {
-        "small": "/drivers/switch_6gang_ac/assets/small.png",
-        "large": "/drivers/switch_6gang_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -2951,6 +2984,13 @@
       "class": "socket",
       "capabilities": [
         "onoff",
+        "button.2",
+        "button.3",
+        "button.4",
+        "button.5",
+        "button.6",
+        "button.7",
+        "button.8",
         "dim"
       ],
       "zigbee": {
@@ -3061,8 +3101,8 @@
         }
       },
       "images": {
-        "small": "/drivers/switch_8gang_ac/assets/small.png",
-        "large": "/drivers/switch_8gang_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -3161,8 +3201,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/wall_switch_1gang_ac/assets/small.png",
-        "large": "/drivers/wall_switch_1gang_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -3298,8 +3338,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/wall_switch_1gang_dc/assets/small.png",
-        "large": "/drivers/wall_switch_1gang_dc/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -3317,7 +3357,8 @@
       "id": "wall_switch_2gang_ac",
       "class": "socket",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "onoff.gang2"
       ],
       "zigbee": {
         "productId": [
@@ -3416,8 +3457,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/wall_switch_2gang_ac/assets/small.png",
-        "large": "/drivers/wall_switch_2gang_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -3446,7 +3487,8 @@
       "id": "wall_switch_2gang_dc",
       "class": "socket",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "onoff.gang2"
       ],
       "zigbee": {
         "productId": [
@@ -3574,8 +3616,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/wall_switch_2gang_dc/assets/small.png",
-        "large": "/drivers/wall_switch_2gang_dc/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -3604,7 +3646,9 @@
       "id": "wall_switch_3gang_ac",
       "class": "socket",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "onoff.gang2",
+        "onoff.gang3"
       ],
       "zigbee": {
         "productId": [
@@ -3715,8 +3759,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/wall_switch_3gang_ac/assets/small.png",
-        "large": "/drivers/wall_switch_3gang_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -3750,7 +3794,9 @@
       "id": "wall_switch_3gang_dc",
       "class": "socket",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "onoff.gang2",
+        "onoff.gang3"
       ],
       "zigbee": {
         "productId": [
@@ -3890,8 +3936,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/wall_switch_3gang_dc/assets/small.png",
-        "large": "/drivers/wall_switch_3gang_dc/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -3926,6 +3972,9 @@
       "class": "socket",
       "capabilities": [
         "onoff",
+        "button.2",
+        "button.3",
+        "button.4",
         "dim"
       ],
       "zigbee": {
@@ -4056,8 +4105,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/wall_switch_4gang_ac/assets/small.png",
-        "large": "/drivers/wall_switch_4gang_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -4076,6 +4125,9 @@
       "class": "socket",
       "capabilities": [
         "onoff",
+        "button.2",
+        "button.3",
+        "button.4",
         "dim"
       ],
       "zigbee": {
@@ -4235,8 +4287,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/wall_switch_4gang_dc/assets/small.png",
-        "large": "/drivers/wall_switch_4gang_dc/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -4255,6 +4307,10 @@
       "class": "socket",
       "capabilities": [
         "onoff",
+        "button.2",
+        "button.3",
+        "button.4",
+        "button.5",
         "dim"
       ],
       "zigbee": {
@@ -4431,8 +4487,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/wall_switch_5gang_ac/assets/small.png",
-        "large": "/drivers/wall_switch_5gang_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -4451,6 +4507,11 @@
       "class": "socket",
       "capabilities": [
         "onoff",
+        "button.2",
+        "button.3",
+        "button.4",
+        "button.5",
+        "button.6",
         "dim"
       ],
       "zigbee": {
@@ -4638,8 +4699,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/wall_switch_6gang_ac/assets/small.png",
-        "large": "/drivers/wall_switch_6gang_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [],
       "name": {
@@ -4665,8 +4726,8 @@
         "dim"
       ],
       "images": {
-        "small": "/drivers/wireless_switch_1gang_cr2032/assets/small.png",
-        "large": "/drivers/wireless_switch_1gang_cr2032/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -4797,7 +4858,8 @@
       "id": "wireless_switch_2gang_cr2032",
       "class": "button",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "onoff.gang2"
       ],
       "zigbee": {
         "productId": [
@@ -4919,8 +4981,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/wireless_switch_2gang_cr2032/assets/small.png",
-        "large": "/drivers/wireless_switch_2gang_cr2032/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "name": {
         "en": "Wireless Switch 2gang CR2032"
@@ -4948,7 +5010,9 @@
       "id": "wireless_switch_3gang_cr2032",
       "class": "button",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "onoff.gang2",
+        "onoff.gang3"
       ],
       "zigbee": {
         "productId": [
@@ -5081,8 +5145,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/wireless_switch_3gang_cr2032/assets/small.png",
-        "large": "/drivers/wireless_switch_3gang_cr2032/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "name": {
         "en": "Wireless Switch 3gang CR2032"
@@ -5229,8 +5293,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/wireless_switch_4gang_cr2032/assets/small.png",
-        "large": "/drivers/wireless_switch_4gang_cr2032/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "name": {
         "en": "Wireless Switch 4gang CR2032"
@@ -5255,6 +5319,10 @@
       },
       "class": "button",
       "capabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4",
         "measure_battery",
         "onoff",
         "dim"
@@ -5391,8 +5459,8 @@
         }
       },
       "images": {
-        "small": "/drivers/wireless_switch_4gang_cr2450/assets/small.png",
-        "large": "/drivers/wireless_switch_4gang_cr2450/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -5408,6 +5476,10 @@
       "class": "button",
       "capabilities": [
         "onoff",
+        "button.2",
+        "button.3",
+        "button.4",
+        "button.5",
         "measure_battery",
         "dim"
       ],
@@ -5521,8 +5593,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/wireless_switch_5gang_cr2032/assets/small.png",
-        "large": "/drivers/wireless_switch_5gang_cr2032/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [
         {
@@ -5557,6 +5629,11 @@
       "class": "button",
       "capabilities": [
         "onoff",
+        "button.2",
+        "button.3",
+        "button.4",
+        "button.5",
+        "button.6",
         "measure_battery",
         "dim"
       ],
@@ -5670,8 +5747,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/wireless_switch_6gang_cr2032/assets/small.png",
-        "large": "/drivers/wireless_switch_6gang_cr2032/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [
         {
@@ -5809,8 +5886,8 @@
         }
       },
       "images": {
-        "small": "/drivers/air_quality_monitor_ac/assets/small.png",
-        "large": "/drivers/air_quality_monitor_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -5901,8 +5978,8 @@
         }
       },
       "images": {
-        "small": "/drivers/air_quality_monitor_pro_battery/assets/small.png",
-        "large": "/drivers/air_quality_monitor_pro_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -6075,8 +6152,8 @@
         }
       },
       "images": {
-        "small": "/drivers/ceiling_fan_ac/assets/small.png",
-        "large": "/drivers/ceiling_fan_ac/assets/large.png"
+        "small": "/drivers/ceiling_fan/assets/small.png",
+        "large": "/drivers/ceiling_fan/assets/large.png"
       },
       "pair": [
         {
@@ -6214,8 +6291,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "/drivers/ceiling_light_controller_ac/assets/small.png",
-        "large": "/drivers/ceiling_light_controller_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -6319,8 +6396,8 @@
         }
       },
       "images": {
-        "small": "/drivers/ceiling_light_rgb_ac/assets/small.png",
-        "large": "/drivers/ceiling_light_rgb_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -6449,8 +6526,8 @@
         }
       },
       "images": {
-        "small": "/drivers/climate_monitor_cr2032/assets/small.png",
-        "large": "/drivers/climate_monitor_cr2032/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -6558,8 +6635,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "/drivers/co2_sensor_battery/assets/small.png",
-        "large": "/drivers/co2_sensor_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -6659,8 +6736,8 @@
         }
       },
       "images": {
-        "small": "/drivers/co2_temp_humidity_cr2032/assets/small.png",
-        "large": "/drivers/co2_temp_humidity_cr2032/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -6760,8 +6837,8 @@
         }
       },
       "images": {
-        "small": "/drivers/comprehensive_air_monitor_ac/assets/small.png",
-        "large": "/drivers/comprehensive_air_monitor_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -6775,6 +6852,7 @@
       "class": "sensor",
       "capabilities": [
         "alarm_co",
+        "measure_co",
         "measure_battery"
       ],
       "zigbee": {
@@ -6859,8 +6937,8 @@
         }
       },
       "images": {
-        "small": "/drivers/co_detector_pro_battery/assets/small.png",
-        "large": "/drivers/co_detector_pro_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -6877,10 +6955,11 @@
       "name": {
         "en": "Curtain Motor"
       },
-      "class": "sensor",
+      "class": "other",
       "capabilities": [
         "onoff",
         "windowcoverings_set",
+        "windowcoverings_tilt_set",
         "measure_battery"
       ],
       "zigbee": {
@@ -6935,8 +7014,8 @@
         }
       },
       "images": {
-        "small": "/drivers/curtain_motor_ac/assets/small.png",
-        "large": "/drivers/curtain_motor_ac/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -6993,8 +7072,8 @@
         "dim"
       ],
       "images": {
-        "small": "/drivers/dimmer_ac/assets/small.png",
-        "large": "/drivers/dimmer_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -7227,8 +7306,8 @@
         }
       },
       "images": {
-        "small": "/drivers/dimmer_switch_timer_module_ac/assets/small.png",
-        "large": "/drivers/dimmer_switch_timer_module_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -7255,8 +7334,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/doorbell_cr2032/assets/small.png",
-        "large": "/drivers/doorbell_cr2032/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -7446,8 +7525,8 @@
         }
       },
       "images": {
-        "small": "/drivers/door_controller_ac/assets/small.png",
-        "large": "/drivers/door_controller_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "community": {
         "sources": [
@@ -7493,8 +7572,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/door_lock_battery/assets/small.png",
-        "large": "/drivers/door_lock_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -7669,8 +7748,8 @@
         }
       },
       "images": {
-        "small": "/drivers/door_window_sensor_battery/assets/small.png",
-        "large": "/drivers/door_window_sensor_battery/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -7817,8 +7896,8 @@
         }
       },
       "images": {
-        "small": "/drivers/fan_controller_ac/assets/small.png",
-        "large": "/drivers/fan_controller_ac/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -7949,8 +8028,8 @@
         }
       },
       "images": {
-        "small": "/drivers/fingerprint_lock_battery/assets/small.png",
-        "large": "/drivers/fingerprint_lock_battery/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -8072,8 +8151,8 @@
         }
       },
       "images": {
-        "small": "/drivers/formaldehyde_sensor_battery/assets/small.png",
-        "large": "/drivers/formaldehyde_sensor_battery/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -8118,6 +8197,9 @@
       },
       "class": "sensor",
       "capabilities": [
+        "garagedoor_closed",
+        "button.open",
+        "button.close",
         "alarm_contact",
         "measure_battery"
       ],
@@ -8217,8 +8299,8 @@
         }
       },
       "images": {
-        "small": "/drivers/garage_door_controller_ac/assets/small.png",
-        "large": "/drivers/garage_door_controller_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -8248,8 +8330,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/garage_door_opener_cr2032/assets/small.png",
-        "large": "/drivers/garage_door_opener_cr2032/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -8458,8 +8540,8 @@
         }
       },
       "images": {
-        "small": "/drivers/gas_detector_battery/assets/small.png",
-        "large": "/drivers/gas_detector_battery/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -8540,8 +8622,8 @@
         }
       },
       "images": {
-        "small": "/drivers/gas_sensor_ts0601_battery/assets/small.png",
-        "large": "/drivers/gas_sensor_ts0601_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -8644,8 +8726,8 @@
         }
       },
       "images": {
-        "small": "/drivers/humidity_controller_ac/assets/small.png",
-        "large": "/drivers/humidity_controller_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -8741,8 +8823,8 @@
         }
       },
       "images": {
-        "small": "/drivers/hvac_controller_ac/assets/small.png",
-        "large": "/drivers/hvac_controller_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "community": {
         "sources": [
@@ -8880,8 +8962,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "/drivers/led_strip_advanced_ac/assets/small.png",
-        "large": "/drivers/led_strip_advanced_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -9010,8 +9092,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "/drivers/led_strip_controller_ac/assets/small.png",
-        "large": "/drivers/led_strip_controller_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -9133,8 +9215,8 @@
         }
       },
       "images": {
-        "small": "/drivers/led_strip_controller_pro_ac/assets/small.png",
-        "large": "/drivers/led_strip_controller_pro_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -9234,8 +9316,8 @@
         }
       },
       "images": {
-        "small": "/drivers/lux_sensor_battery/assets/small.png",
-        "large": "/drivers/lux_sensor_battery/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -9392,8 +9474,8 @@
         }
       },
       "images": {
-        "small": "/drivers/milight_controller_ac/assets/small.png",
-        "large": "/drivers/milight_controller_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -9411,8 +9493,8 @@
         "dim"
       ],
       "images": {
-        "small": "/drivers/mini_ac/assets/small.png",
-        "large": "/drivers/mini_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -9606,8 +9688,8 @@
         }
       },
       "images": {
-        "small": "/drivers/motion_temp_humidity_illumination_multi_battery/assets/small.png",
-        "large": "/drivers/motion_temp_humidity_illumination_multi_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -9714,8 +9796,8 @@
         }
       },
       "images": {
-        "small": "/drivers/multisensor_battery/assets/small.png",
-        "large": "/drivers/multisensor_battery/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -9847,8 +9929,8 @@
         }
       },
       "images": {
-        "small": "/drivers/noise_level_sensor_battery/assets/small.png",
-        "large": "/drivers/noise_level_sensor_battery/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -10016,8 +10098,8 @@
         }
       },
       "images": {
-        "small": "/drivers/outdoor_light_controller_ac/assets/small.png",
-        "large": "/drivers/outdoor_light_controller_ac/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -10066,8 +10148,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/outdoor_siren_cr2032/assets/small.png",
-        "large": "/drivers/outdoor_siren_cr2032/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -10167,7 +10249,7 @@
       "name": {
         "en": "Pet Feeder"
       },
-      "class": "sensor",
+      "class": "other",
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
@@ -10180,8 +10262,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/pet_feeder_cr2032/assets/small.png",
-        "large": "/drivers/pet_feeder_cr2032/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -10320,7 +10402,8 @@
           "HOBEIAN",
           "_TZE200_2aaelwxk",
           "_TZE200_kb5noeto",
-          "_TZE200_tyffvoij"
+          "_TZE200_tyffvoij",
+          "_TZE200_3towulqd"
         ],
         "productId": [
           "TS0601",
@@ -10349,8 +10432,8 @@
         }
       },
       "images": {
-        "small": "/drivers/pir_radar_illumination_sensor_battery/assets/small.png",
-        "large": "/drivers/pir_radar_illumination_sensor_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -10455,8 +10538,8 @@
         }
       },
       "images": {
-        "small": "/drivers/pir_sensor_advanced_battery/assets/small.png",
-        "large": "/drivers/pir_sensor_advanced_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -10585,8 +10668,8 @@
         }
       },
       "images": {
-        "small": "/drivers/pm25_detector_battery/assets/small.png",
-        "large": "/drivers/pm25_detector_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -10686,8 +10769,8 @@
         }
       },
       "images": {
-        "small": "/drivers/pm25_sensor_battery/assets/small.png",
-        "large": "/drivers/pm25_sensor_battery/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -10836,8 +10919,8 @@
         }
       },
       "images": {
-        "small": "/drivers/pool_pump_controller_ac/assets/small.png",
-        "large": "/drivers/pool_pump_controller_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -10941,8 +11024,8 @@
         }
       },
       "images": {
-        "small": "/drivers/presence_sensor_radar_battery/assets/small.png",
-        "large": "/drivers/presence_sensor_radar_battery/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -11074,8 +11157,8 @@
         }
       },
       "images": {
-        "small": "/drivers/pressure_sensor_battery/assets/small.png",
-        "large": "/drivers/pressure_sensor_battery/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -11222,8 +11305,8 @@
         }
       },
       "images": {
-        "small": "/drivers/projector_screen_controller_ac/assets/small.png",
-        "large": "/drivers/projector_screen_controller_ac/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -11251,7 +11334,7 @@
       "name": {
         "en": "Radiator Valve"
       },
-      "class": "sensor",
+      "class": "other",
       "capabilities": [
         "measure_battery",
         "onoff"
@@ -11357,8 +11440,8 @@
         }
       },
       "images": {
-        "small": "/drivers/radiator_valve_hybrid/assets/small.png",
-        "large": "/drivers/radiator_valve_hybrid/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -11398,8 +11481,8 @@
         "dim"
       ],
       "images": {
-        "small": "/drivers/relay_switch_1gang_ac/assets/small.png",
-        "large": "/drivers/relay_switch_1gang_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -11632,8 +11715,8 @@
         }
       },
       "images": {
-        "small": "/drivers/rgb_led_controller_ac/assets/small.png",
-        "large": "/drivers/rgb_led_controller_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -11649,6 +11732,7 @@
         "windowcoverings_state",
         "dim",
         "windowcoverings_set",
+        "windowcoverings_tilt_set",
         "measure_battery"
       ],
       "zigbee": {
@@ -11728,8 +11812,8 @@
         }
       },
       "images": {
-        "small": "/drivers/roller_blind_controller_ac/assets/small.png",
-        "large": "/drivers/roller_blind_controller_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "community": {
         "sources": [
@@ -11779,7 +11863,8 @@
       "capabilities": [
         "windowcoverings_set",
         "windowcoverings_state",
-        "measure_battery"
+        "measure_battery",
+        "windowcoverings_tilt_set"
       ],
       "capabilitiesOptions": {
         "windowcoverings_set": {
@@ -11880,8 +11965,8 @@
         }
       },
       "images": {
-        "small": "/drivers/roller_shutter_controller_ac/assets/small.png",
-        "large": "/drivers/roller_shutter_controller_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -11898,6 +11983,7 @@
       "class": "sensor",
       "capabilities": [
         "onoff",
+        "button.2",
         "measure_battery"
       ],
       "zigbee": {
@@ -11990,8 +12076,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/scene_controller_2button_cr2032/assets/small.png",
-        "large": "/drivers/scene_controller_2button_cr2032/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [
         {
@@ -12026,6 +12112,9 @@
       "class": "sensor",
       "capabilities": [
         "onoff",
+        "button.2",
+        "button.3",
+        "button.4",
         "measure_battery"
       ],
       "zigbee": {
@@ -12094,8 +12183,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/scene_controller_4button_cr2032/assets/small.png",
-        "large": "/drivers/scene_controller_4button_cr2032/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [
         {
@@ -12130,6 +12219,11 @@
       "class": "sensor",
       "capabilities": [
         "onoff",
+        "button.2",
+        "button.3",
+        "button.4",
+        "button.5",
+        "button.6",
         "measure_battery"
       ],
       "zigbee": {
@@ -12222,8 +12316,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/scene_controller_6button_cr2032/assets/small.png",
-        "large": "/drivers/scene_controller_6button_cr2032/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [
         {
@@ -12258,6 +12352,13 @@
       "class": "sensor",
       "capabilities": [
         "onoff",
+        "button.2",
+        "button.3",
+        "button.4",
+        "button.5",
+        "button.6",
+        "button.7",
+        "button.8",
         "measure_battery"
       ],
       "zigbee": {
@@ -12350,8 +12451,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/scene_controller_8button_cr2032/assets/small.png",
-        "large": "/drivers/scene_controller_8button_cr2032/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "settings": [
         {
@@ -12490,8 +12591,8 @@
         }
       },
       "images": {
-        "small": "/drivers/shade_controller_ac/assets/small.png",
-        "large": "/drivers/shade_controller_ac/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -12631,8 +12732,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_bulb_dimmer_ac/assets/small.png",
-        "large": "/drivers/smart_bulb_dimmer_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -12756,8 +12857,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_bulb_rgb_ac/assets/small.png",
-        "large": "/drivers/smart_bulb_rgb_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "community": {
         "sources": [
@@ -12895,8 +12996,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_bulb_tunable_ac/assets/small.png",
-        "large": "/drivers/smart_bulb_tunable_ac/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -13037,8 +13138,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_bulb_white_ac/assets/small.png",
-        "large": "/drivers/smart_bulb_white_ac/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -13066,10 +13167,11 @@
       "name": {
         "en": "Smart Curtain Motor"
       },
-      "class": "sensor",
+      "class": "other",
       "capabilities": [
         "windowcoverings_state",
         "windowcoverings_set",
+        "windowcoverings_tilt_set",
         "measure_battery"
       ],
       "platforms": [
@@ -13079,8 +13181,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/smart_curtain_motor_hybrid/assets/small.png",
-        "large": "/drivers/smart_curtain_motor_hybrid/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -13176,7 +13278,8 @@
       "capabilities": [
         "onoff",
         "dim",
-        "measure_power"
+        "measure_power",
+        "meter_power"
       ],
       "capabilitiesOptions": {
         "dim": {
@@ -13295,8 +13398,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_dimmer_module_1gang_ac/assets/small.png",
-        "large": "/drivers/smart_dimmer_module_1gang_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -13322,8 +13425,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/smart_doorbell_battery/assets/small.png",
-        "large": "/drivers/smart_doorbell_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -13435,8 +13538,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/smart_garden_sprinkler_battery/assets/small.png",
-        "large": "/drivers/smart_garden_sprinkler_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -13559,6 +13662,7 @@
       "class": "sensor",
       "capabilities": [
         "onoff",
+        "measure_water",
         "alarm_water",
         "measure_battery"
       ],
@@ -13661,8 +13765,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_irrigation_controller_hybrid/assets/small.png",
-        "large": "/drivers/smart_irrigation_controller_hybrid/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -13742,8 +13846,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_lock_battery/assets/small.png",
-        "large": "/drivers/smart_lock_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "community": {
         "sources": [
@@ -13776,6 +13880,7 @@
       "capabilities": [
         "onoff",
         "measure_power",
+        "meter_power",
         "measure_voltage",
         "measure_current"
       ],
@@ -13912,8 +14017,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_outlet_monitor_ac/assets/small.png",
-        "large": "/drivers/smart_outlet_monitor_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -13924,7 +14029,7 @@
       "name": {
         "en": "Smart Radiator Valve"
       },
-      "class": "sensor",
+      "class": "other",
       "capabilities": [
         "target_temperature",
         "measure_temperature"
@@ -13936,8 +14041,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/smart_radiator_valve_hybrid/assets/small.png",
-        "large": "/drivers/smart_radiator_valve_hybrid/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -14151,8 +14256,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_smoke_detector_advanced_battery/assets/small.png",
-        "large": "/drivers/smart_smoke_detector_advanced_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -14282,8 +14387,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_spot_ac/assets/small.png",
-        "large": "/drivers/smart_spot_ac/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -14311,7 +14416,7 @@
       "name": {
         "en": "Smart Thermostat"
       },
-      "class": "sensor",
+      "class": "other",
       "capabilities": [
         "target_temperature",
         "measure_temperature",
@@ -14427,8 +14532,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_thermostat_hybrid/assets/small.png",
-        "large": "/drivers/smart_thermostat_hybrid/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -14519,8 +14624,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smart_valve_controller_hybrid/assets/small.png",
-        "large": "/drivers/smart_valve_controller_hybrid/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -14550,8 +14655,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/smart_water_valve_hybrid/assets/small.png",
-        "large": "/drivers/smart_water_valve_hybrid/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -14801,8 +14906,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smoke_detector_battery/assets/small.png",
-        "large": "/drivers/smoke_detector_battery/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -14928,8 +15033,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smoke_detector_temp_humidity_advanced_battery/assets/small.png",
-        "large": "/drivers/smoke_detector_temp_humidity_advanced_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -15062,8 +15167,8 @@
         }
       },
       "images": {
-        "small": "/drivers/smoke_temp_humid_sensor_battery/assets/small.png",
-        "large": "/drivers/smoke_temp_humid_sensor_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -15188,8 +15293,8 @@
         }
       },
       "images": {
-        "small": "/drivers/soil_moisture_sensor_battery/assets/small.png",
-        "large": "/drivers/soil_moisture_sensor_battery/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -15346,8 +15451,8 @@
         }
       },
       "images": {
-        "small": "/drivers/soil_moisture_temperature_sensor_battery/assets/small.png",
-        "large": "/drivers/soil_moisture_temperature_sensor_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -15448,8 +15553,8 @@
         }
       },
       "images": {
-        "small": "/drivers/soil_tester_temp_humid_cr2032/assets/small.png",
-        "large": "/drivers/soil_tester_temp_humid_cr2032/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -15582,8 +15687,8 @@
         }
       },
       "images": {
-        "small": "/drivers/solar_panel_controller_hybrid/assets/small.png",
-        "large": "/drivers/solar_panel_controller_hybrid/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -15603,6 +15708,7 @@
       },
       "class": "button",
       "capabilities": [
+        "button.sos",
         "alarm_generic",
         "measure_battery"
       ],
@@ -15713,8 +15819,8 @@
         }
       },
       "images": {
-        "small": "/drivers/sos_emergency_button_cr2032/assets/small.png",
-        "large": "/drivers/sos_emergency_button_cr2032/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -15733,6 +15839,7 @@
       },
       "class": "sensor",
       "capabilities": [
+        "measure_water",
         "alarm_water",
         "measure_battery"
       ],
@@ -15818,8 +15925,8 @@
         }
       },
       "images": {
-        "small": "/drivers/tank_level_monitor_cr2032/assets/small.png",
-        "large": "/drivers/tank_level_monitor_cr2032/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -15920,8 +16027,8 @@
         }
       },
       "images": {
-        "small": "/drivers/temperature_controller_hybrid/assets/small.png",
-        "large": "/drivers/temperature_controller_hybrid/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -16004,8 +16111,8 @@
         }
       },
       "images": {
-        "small": "/drivers/temperature_humidity_sensor_battery/assets/small.png",
-        "large": "/drivers/temperature_humidity_sensor_battery/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -16146,8 +16253,8 @@
         }
       },
       "images": {
-        "small": "/drivers/temperature_sensor_advanced_battery/assets/small.png",
-        "large": "/drivers/temperature_sensor_advanced_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -16197,8 +16304,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/temperature_sensor_battery/assets/small.png",
-        "large": "/drivers/temperature_sensor_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -16409,8 +16516,8 @@
         }
       },
       "images": {
-        "small": "/drivers/temp_humid_sensor_advanced_battery/assets/small.png",
-        "large": "/drivers/temp_humid_sensor_advanced_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -16535,8 +16642,8 @@
         }
       },
       "images": {
-        "small": "/drivers/temp_humid_sensor_dd_battery/assets/small.png",
-        "large": "/drivers/temp_humid_sensor_dd_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -16661,8 +16768,8 @@
         }
       },
       "images": {
-        "small": "/drivers/temp_humid_sensor_leak_detector_battery/assets/small.png",
-        "large": "/drivers/temp_humid_sensor_leak_detector_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -16788,8 +16895,8 @@
         }
       },
       "images": {
-        "small": "/drivers/temp_sensor_pro_battery/assets/small.png",
-        "large": "/drivers/temp_sensor_pro_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "platforms": [
         "local"
@@ -16806,7 +16913,7 @@
       "name": {
         "en": "Thermostat"
       },
-      "class": "sensor",
+      "class": "other",
       "capabilities": [
         "target_temperature",
         "measure_temperature",
@@ -16890,8 +16997,8 @@
         }
       },
       "images": {
-        "small": "/drivers/thermostat_hybrid/assets/small.png",
-        "large": "/drivers/thermostat_hybrid/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "community": {
         "sources": [
@@ -17069,8 +17176,8 @@
         }
       },
       "images": {
-        "small": "/drivers/touch_dimmer_1gang_ac/assets/small.png",
-        "large": "/drivers/touch_dimmer_1gang_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -17178,8 +17285,8 @@
         }
       },
       "images": {
-        "small": "/drivers/touch_dimmer_ac/assets/small.png",
-        "large": "/drivers/touch_dimmer_ac/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -17209,6 +17316,7 @@
       },
       "class": "sensor",
       "capabilities": [
+        "button.1",
         "onoff",
         "dim"
       ],
@@ -17312,8 +17420,8 @@
         }
       },
       "images": {
-        "small": "/drivers/touch_switch_1gang_ac/assets/small.png",
-        "large": "/drivers/touch_switch_1gang_ac/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -17343,7 +17451,8 @@
       },
       "class": "sensor",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "onoff.gang2"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -17455,8 +17564,8 @@
         }
       },
       "images": {
-        "small": "/drivers/touch_switch_2gang_ac/assets/small.png",
-        "large": "/drivers/touch_switch_2gang_ac/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -17497,7 +17606,9 @@
       },
       "class": "sensor",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "onoff.gang2",
+        "onoff.gang3"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -17620,8 +17731,8 @@
         }
       },
       "images": {
-        "small": "/drivers/touch_switch_3gang_ac/assets/small.png",
-        "large": "/drivers/touch_switch_3gang_ac/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -17667,6 +17778,10 @@
       },
       "class": "sensor",
       "capabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4",
         "onoff",
         "dim"
       ],
@@ -17770,8 +17885,8 @@
         }
       },
       "images": {
-        "small": "/drivers/touch_switch_4gang_ac/assets/small.png",
-        "large": "/drivers/touch_switch_4gang_ac/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -17802,6 +17917,7 @@
       "class": "sensor",
       "capabilities": [
         "measure_co2",
+        "measure_tvoc",
         "measure_temperature",
         "measure_humidity",
         "measure_battery",
@@ -17890,8 +18006,8 @@
         }
       },
       "images": {
-        "small": "/drivers/tvoc_sensor_advanced_battery/assets/small.png",
-        "large": "/drivers/tvoc_sensor_advanced_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -18015,8 +18131,8 @@
         }
       },
       "images": {
-        "small": "/drivers/tvoc_sensor_battery/assets/small.png",
-        "large": "/drivers/tvoc_sensor_battery/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -18063,6 +18179,7 @@
       "capabilities": [
         "onoff",
         "measure_power",
+        "meter_power",
         "measure_voltage",
         "measure_current"
       ],
@@ -18164,8 +18281,8 @@
         }
       },
       "images": {
-        "small": "/drivers/usb_outlet_ac/assets/small.png",
-        "large": "/drivers/usb_outlet_ac/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -18225,6 +18342,7 @@
       "capabilities": [
         "onoff",
         "measure_power",
+        "meter_power",
         "measure_voltage",
         "measure_current"
       ],
@@ -18326,8 +18444,8 @@
         }
       },
       "images": {
-        "small": "/drivers/usb_outlet_advanced_ac/assets/small.png",
-        "large": "/drivers/usb_outlet_advanced_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_power": {
@@ -18460,8 +18578,8 @@
         }
       },
       "images": {
-        "small": "/drivers/vibration_sensor_battery/assets/small.png",
-        "large": "/drivers/vibration_sensor_battery/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -18591,8 +18709,8 @@
         }
       },
       "images": {
-        "small": "/drivers/water_leak_detector_advanced_battery/assets/small.png",
-        "large": "/drivers/water_leak_detector_advanced_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -18700,8 +18818,8 @@
         }
       },
       "images": {
-        "small": "/drivers/water_leak_detector_battery/assets/small.png",
-        "large": "/drivers/water_leak_detector_battery/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -18803,8 +18921,8 @@
         }
       },
       "images": {
-        "small": "/drivers/water_leak_sensor_battery/assets/small.png",
-        "large": "/drivers/water_leak_sensor_battery/assets/large.png"
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
       },
       "pair": [
         {
@@ -18861,8 +18979,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/water_valve_hybrid/assets/small.png",
-        "large": "/drivers/water_valve_hybrid/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -18979,6 +19097,7 @@
       "class": "sensor",
       "capabilities": [
         "onoff",
+        "measure_water",
         "alarm_water",
         "measure_battery",
         "measure_temperature"
@@ -19057,8 +19176,8 @@
         }
       },
       "images": {
-        "small": "/drivers/water_valve_smart_hybrid/assets/small.png",
-        "large": "/drivers/water_valve_smart_hybrid/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -19080,8 +19199,8 @@
         "onoff"
       ],
       "images": {
-        "small": "/drivers/zbbridge_ac/assets/small.png",
-        "large": "/drivers/zbbridge_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -19178,7 +19297,8 @@
       },
       "class": "sensor",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "measure_signal_strength"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -19255,13 +19375,2495 @@
         }
       },
       "images": {
-        "small": "/drivers/zigbee_gateway_hub_ac/assets/small.png",
-        "large": "/drivers/zigbee_gateway_hub_ac/assets/large.png"
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
         "local"
       ]
+    },
+    {
+      "id": "energy_monitoring_plug",
+      "name": {
+        "en": "Energy Monitoring Plug"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS0203",
+          "TS0205",
+          "TS0502",
+          "TS0502B",
+          "TS0505",
+          "TS0505B",
+          "TS0601",
+          "TS130F",
+          "_TZ1800_ejwkn2h2",
+          "_TZ1800_fcdjzz3s",
+          "_TZ2000_a476raq2",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_cehuw1lw",
+          "_TZ3000_cphmq0q7",
+          "_TZ3000_dbou1ap4",
+          "_TZ3000_fvh3pjaz",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_ji4araar",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_odygigth",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_tk3s5tyg",
+          "_TZ3000_uim07oem",
+          "_TZ3000_vp6clf9d",
+          "_TZ3000_xabckq1v",
+          "_TZE200_81isopgh",
+          "_TZE200_m9skfctm",
+          "_TZE200_wfxuhoea"
+        ],
+        "productId": [
+          "TS011F",
+          "TS0101",
+          "TS0105",
+          "TS0108",
+          "TS0111",
+          "TS0115"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              1794,
+              2820
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        }
+      },
+      "capabilitiesOptions": {
+        "measure_power": {
+          "title": {
+            "en": "Power"
+          },
+          "units": {
+            "en": "W"
+          },
+          "decimals": 1
+        },
+        "measure_voltage": {
+          "title": {
+            "en": "Voltage"
+          },
+          "units": {
+            "en": "V"
+          },
+          "decimals": 1
+        },
+        "measure_current": {
+          "title": {
+            "en": "Current"
+          },
+          "units": {
+            "en": "A"
+          },
+          "decimals": 2
+        }
+      },
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "platforms": [
+        "local"
+      ]
+    },
+    {
+      "id": "energy_monitoring_plug_advanced",
+      "name": {
+        "en": "Energy Plug Advanced"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS0203",
+          "TS0205",
+          "TS0502",
+          "TS0502B",
+          "TS0505",
+          "TS0505B",
+          "TS0601",
+          "TS130F",
+          "_TZ1800_ejwkn2h2",
+          "_TZ1800_fcdjzz3s",
+          "_TZ2000_a476raq2",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_cehuw1lw",
+          "_TZ3000_cphmq0q7",
+          "_TZ3000_dbou1ap4",
+          "_TZ3000_fvh3pjaz",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_ji4araar",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_npg02xft",
+          "_TZ3000_odygigth",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_tk3s5tyg",
+          "_TZ3000_uim07oem",
+          "_TZ3000_vp6clf9d",
+          "_TZ3000_xabckq1v",
+          "_TZE200_81isopgh",
+          "_TZE200_m9skfctm",
+          "_TZE200_wfxuhoea"
+        ],
+        "productId": [
+          "TS011F",
+          "TS0001",
+          "TS0101",
+          "TS0105",
+          "TS0108",
+          "TS0111",
+          "TS0115",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0006",
+          "TS000F",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0601",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS130F",
+          "TS1111"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              1794,
+              2820
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        }
+      },
+      "capabilitiesOptions": {
+        "measure_power": {
+          "title": {
+            "en": "Power"
+          },
+          "units": {
+            "en": "W"
+          },
+          "decimals": 1
+        },
+        "measure_voltage": {
+          "title": {
+            "en": "Voltage"
+          },
+          "units": {
+            "en": "V"
+          },
+          "decimals": 1
+        },
+        "measure_current": {
+          "title": {
+            "en": "Current"
+          },
+          "units": {
+            "en": "A"
+          },
+          "decimals": 2
+        }
+      },
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "energy_plug_advanced",
+      "name": {
+        "en": "energy plug advanced"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS0203",
+          "TS0205",
+          "TS0502",
+          "TS0502B",
+          "TS0505",
+          "TS0505B",
+          "TS0601",
+          "TS130F",
+          "_TZ1800_ejwkn2h2",
+          "_TZ1800_fcdjzz3s",
+          "_TZ2000_a476raq2",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_cehuw1lw",
+          "_TZ3000_cphmq0q7",
+          "_TZ3000_dbou1ap4",
+          "_TZ3000_fvh3pjaz",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_ji4araar",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_odygigth",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_tk3s5tyg",
+          "_TZ3000_uim07oem",
+          "_TZ3000_vp6clf9d",
+          "_TZ3000_xabckq1v",
+          "_TZE200_81isopgh",
+          "_TZE200_dwcarsat",
+          "_TZE200_m9skfctm",
+          "_TZE200_ryfmq5rl",
+          "_TZE200_wfxuhoea"
+        ],
+        "productId": [
+          "TS0001",
+          "TS0201",
+          "TS0202",
+          "TS0203",
+          "TS0204",
+          "TS0205",
+          "TS0207",
+          "TS020C",
+          "TS0222",
+          "TS0224",
+          "TS0225",
+          "TS0601",
+          "TS0901",
+          "TS130F",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0006",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS1111",
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              1794,
+              2820,
+              61184
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        }
+      },
+      "capabilitiesOptions": {
+        "measure_power": {
+          "title": {
+            "en": "Power"
+          },
+          "units": {
+            "en": "W"
+          },
+          "decimals": 1
+        },
+        "measure_voltage": {
+          "title": {
+            "en": "Voltage"
+          },
+          "units": {
+            "en": "V"
+          },
+          "decimals": 1
+        },
+        "measure_current": {
+          "title": {
+            "en": "Current"
+          },
+          "units": {
+            "en": "A"
+          },
+          "decimals": 2
+        }
+      },
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "platforms": [
+        "local"
+      ]
+    },
+    {
+      "id": "extension_plug",
+      "name": {
+        "en": "Extension Plug"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS0203",
+          "TS0205",
+          "TS0502",
+          "TS0502B",
+          "TS0505",
+          "TS0505B",
+          "TS0601",
+          "TS130F",
+          "_TZ1800_ejwkn2h2",
+          "_TZ1800_fcdjzz3s",
+          "_TZ2000_a476raq2",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_cehuw1lw",
+          "_TZ3000_cphmq0q7",
+          "_TZ3000_dbou1ap4",
+          "_TZ3000_fvh3pjaz",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_ji4araar",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_odygigth",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_tk3s5tyg",
+          "_TZ3000_uim07oem",
+          "_TZ3000_vp6clf9d",
+          "_TZ3000_xabckq1v",
+          "_TZE200_81isopgh",
+          "_TZE200_m9skfctm",
+          "_TZE200_wfxuhoea"
+        ],
+        "productId": [
+          "TS011F",
+          "TS0001",
+          "TS0101",
+          "TS0105",
+          "TS0108",
+          "TS0111",
+          "TS0115",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0006",
+          "TS000F",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0601",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS130F",
+          "TS1111"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              1794,
+              2820
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        }
+      },
+      "images": {
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "capabilitiesOptions": {
+        "measure_power": {
+          "title": {
+            "en": "Power"
+          },
+          "units": {
+            "en": "W"
+          },
+          "decimals": 1
+        },
+        "measure_voltage": {
+          "title": {
+            "en": "Voltage"
+          },
+          "units": {
+            "en": "V"
+          },
+          "decimals": 1
+        },
+        "measure_current": {
+          "title": {
+            "en": "Current"
+          },
+          "units": {
+            "en": "A"
+          },
+          "decimals": 2
+        }
+      }
+    },
+    {
+      "id": "mini_switch",
+      "name": {
+        "en": "Mini Switch"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "onoff",
+        "measure_battery",
+        "dim"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS0203",
+          "TS0205",
+          "TS0502",
+          "TS0502B",
+          "TS0505",
+          "TS0505B",
+          "TS0601",
+          "TS130F",
+          "_TZ1800_ejwkn2h2",
+          "_TZ1800_fcdjzz3s",
+          "_TZ2000_a476raq2",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_cehuw1lw",
+          "_TZ3000_cphmq0q7",
+          "_TZ3000_dbou1ap4",
+          "_TZ3000_fvh3pjaz",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_ji4araar",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_odygigth",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_tk3s5tyg",
+          "_TZ3000_uim07oem",
+          "_TZ3000_vp6clf9d",
+          "_TZ3000_xabckq1v",
+          "_TZE200_81isopgh",
+          "_TZE200_m9skfctm",
+          "_TZE200_wfxuhoea"
+        ],
+        "productId": [
+          "TS0001",
+          "TS0201",
+          "TS0202",
+          "TS0203",
+          "TS0205",
+          "TS0207",
+          "TS0222",
+          "TS0225",
+          "TS0601",
+          "TS130F",
+          "TS0204",
+          "TS020C",
+          "TS0224",
+          "TS0901",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0006",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS1111",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/mini_switch/assets/large.png",
+          "instruction": {
+            "en": "Follow the pairing instructions for your Mini Switch."
+          }
+        }
+      },
+      "settings": [],
+      "capabilitiesOptions": {},
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      }
+    },
+    {
+      "id": "motion_sensor_mmwave",
+      "name": {
+        "en": "Motion Sensor Mmwave"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery",
+        "measure_luminance"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS0201",
+          "TS0202",
+          "TS0203",
+          "TS0205",
+          "TS0601",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_fllyghyj",
+          "_TZ3000_kmh5qpmb",
+          "_TZ3000_mcxw5ehu",
+          "_TZ3000_mmtwjmaq",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_tk3s5tyg",
+          "_TZE200_81isopgh",
+          "_TZE200_bjawzodf",
+          "_TZE200_cwbvmsar",
+          "_TZE200_dwcarsat",
+          "_TZE200_m9skfctm",
+          "_TZE200_ryfmq5rl"
+        ],
+        "productId": [
+          "TS0202",
+          "TS0001",
+          "TS0201",
+          "TS0203",
+          "TS0205",
+          "TS0207",
+          "TS0222",
+          "TS0225",
+          "TS0601",
+          "TS130F",
+          "TS0204",
+          "TS020C",
+          "TS0224",
+          "TS0901",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0006",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS1111"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              1024,
+              1030,
+              1280,
+              61184
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        }
+      },
+      "settings": [],
+      "capabilitiesOptions": {},
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
+    },
+    {
+      "id": "motion_sensor_pir_ac",
+      "name": {
+        "en": "Motion Sensor PIR AC"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_luminance",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "productId": [
+          "TS0202",
+          "TS0001",
+          "TS0201",
+          "TS0203",
+          "TS0205",
+          "TS0207",
+          "TS0222",
+          "TS0225",
+          "TS0601",
+          "TS130F",
+          "TS0204",
+          "TS020C",
+          "TS0224",
+          "TS0901",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0006",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS1111"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              1024,
+              1030,
+              1280,
+              61184
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/motion_sensor_pir_ac/assets/large.png",
+          "instruction": {
+            "en": "Turn the switch on/off 3 times quickly"
+          }
+        },
+        "manufacturerName": [
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS0201",
+          "TS0202",
+          "TS0203",
+          "TS0205",
+          "TS0601",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_fllyghyj",
+          "_TZ3000_kmh5qpmb",
+          "_TZ3000_mcxw5ehu",
+          "_TZ3000_mmtwjmaq",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_tk3s5tyg",
+          "_TZE200_81isopgh",
+          "_TZE200_bjawzodf",
+          "_TZE200_cwbvmsar",
+          "_TZE200_dwcarsat",
+          "_TZE200_m9skfctm",
+          "_TZE200_ryfmq5rl"
+        ]
+      },
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "settings": [
+        {
+          "id": "motion_sensitivity",
+          "type": "dropdown",
+          "label": {
+            "en": "Motion Sensitivity"
+          },
+          "value": "medium",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High"
+              }
+            }
+          ]
+        }
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "capabilitiesOptions": {},
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
+    },
+    {
+      "id": "motion_sensor_zigbee_204z",
+      "name": {
+        "en": "PIR Motion Sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery",
+        "measure_luminance"
+      ],
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Motion"
+          }
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS0201",
+          "TS0202",
+          "TS0203",
+          "TS0205",
+          "TS0601",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_fllyghyj",
+          "_TZ3000_kmh5qpmb",
+          "_TZ3000_mcxw5ehu",
+          "_TZ3000_mmtwjmaq",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_tk3s5tyg",
+          "_TZE200_81isopgh",
+          "_TZE200_bjawzodf",
+          "_TZE200_cwbvmsar",
+          "_TZE200_dwcarsat",
+          "_TZE200_m9skfctm",
+          "_TZE200_ryfmq5rl"
+        ],
+        "productId": [
+          "TS0202",
+          "TS0601",
+          "TS0001",
+          "TS0201",
+          "TS0203",
+          "TS0205",
+          "TS0207",
+          "TS0222",
+          "TS0225",
+          "TS130F",
+          "TS0204",
+          "TS020C",
+          "TS0224",
+          "TS0901",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0006",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS1111"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              1024,
+              1030,
+              1280,
+              61184
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/motion_sensor_zigbee_204z/assets/large.png",
+          "instruction": {
+            "en": "Press the pairing button until LED blinks rapidly"
+          }
+        }
+      },
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
+    },
+    {
+      "id": "power_meter_socket",
+      "name": {
+        "en": "power meter socket"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS0203",
+          "TS0205",
+          "TS0502",
+          "TS0502B",
+          "TS0505",
+          "TS0505B",
+          "TS0601",
+          "TS130F",
+          "_TZ1800_ejwkn2h2",
+          "_TZ1800_fcdjzz3s",
+          "_TZ2000_a476raq2",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_cehuw1lw",
+          "_TZ3000_cphmq0q7",
+          "_TZ3000_dbou1ap4",
+          "_TZ3000_fvh3pjaz",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_ji4araar",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_odygigth",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_tk3s5tyg",
+          "_TZ3000_uim07oem",
+          "_TZ3000_vp6clf9d",
+          "_TZ3000_xabckq1v",
+          "_TZE200_81isopgh",
+          "_TZE200_m9skfctm",
+          "_TZE200_wfxuhoea"
+        ],
+        "productId": [
+          "TS0001",
+          "TS0201",
+          "TS0202",
+          "TS0203",
+          "TS0204",
+          "TS0205",
+          "TS0207",
+          "TS020C",
+          "TS0222",
+          "TS0224",
+          "TS0225",
+          "TS0601",
+          "TS0901",
+          "TS130F",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0006",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS1111",
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              1794,
+              2820
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        }
+      },
+      "capabilitiesOptions": {
+        "measure_power": {
+          "title": {
+            "en": "Power"
+          },
+          "units": {
+            "en": "W"
+          },
+          "decimals": 1
+        },
+        "measure_voltage": {
+          "title": {
+            "en": "Voltage"
+          },
+          "units": {
+            "en": "V"
+          },
+          "decimals": 1
+        },
+        "measure_current": {
+          "title": {
+            "en": "Current"
+          },
+          "units": {
+            "en": "A"
+          },
+          "decimals": 2
+        }
+      },
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "platforms": [
+        "local"
+      ]
+    },
+    {
+      "id": "radar_motion_sensor_advanced",
+      "name": {
+        "en": "Radar Motion Sensor Advanced"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_luminance",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS0201",
+          "TS0202",
+          "TS0203",
+          "TS0205",
+          "TS0601",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_fllyghyj",
+          "_TZ3000_kmh5qpmb",
+          "_TZ3000_mcxw5ehu",
+          "_TZ3000_mmtwjmaq",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_tk3s5tyg",
+          "_TZE200_81isopgh",
+          "_TZE200_bjawzodf",
+          "_TZE200_cwbvmsar",
+          "_TZE200_dwcarsat",
+          "_TZE200_m9skfctm",
+          "_TZE200_ryfmq5rl"
+        ],
+        "productId": [
+          "TS0202",
+          "TS0001",
+          "TS0201",
+          "TS0203",
+          "TS0205",
+          "TS0207",
+          "TS0222",
+          "TS0225",
+          "TS0601",
+          "TS130F",
+          "TS0204",
+          "TS020C",
+          "TS0224",
+          "TS0901",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0006",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS1111"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              1024,
+              1030,
+              1280,
+              61184
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "capabilitiesOptions": {},
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
+    },
+    {
+      "id": "radar_motion_sensor_mmwave",
+      "name": {
+        "en": "mmWave Radar Motion Sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery",
+        "measure_luminance",
+        "alarm_generic"
+      ],
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Motion (Radar)"
+          }
+        },
+        "alarm_generic": {
+          "title": {
+            "en": "Presence Detection"
+          }
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS0201",
+          "TS0202",
+          "TS0203",
+          "TS0205",
+          "TS0601",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_fllyghyj",
+          "_TZ3000_kmh5qpmb",
+          "_TZ3000_mcxw5ehu",
+          "_TZ3000_mmtwjmaq",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_tk3s5tyg",
+          "_TZE200_81isopgh",
+          "_TZE200_bjawzodf",
+          "_TZE200_cwbvmsar",
+          "_TZE200_dwcarsat",
+          "_TZE200_m9skfctm",
+          "_TZE200_ryfmq5rl",
+          "_TZE200_wfxuhoea"
+        ],
+        "productId": [
+          "TS0202",
+          "TS0001",
+          "TS0201",
+          "TS0203",
+          "TS0205",
+          "TS0207",
+          "TS0222",
+          "TS0225",
+          "TS0601",
+          "TS130F",
+          "TS0204",
+          "TS020C",
+          "TS0224",
+          "TS0901",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0006",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS1111"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              1024,
+              1030,
+              1280,
+              61184
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/radar_motion_sensor_mmwave/assets/large.png",
+          "instruction": {
+            "en": "Press and hold pairing button for 5 seconds until LED blinks rapidly"
+          }
+        }
+      },
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
+    },
+    {
+      "id": "radar_motion_sensor_tank_level",
+      "name": {
+        "en": "Radar Motion Sensor Pro"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_luminance",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS0201",
+          "TS0202",
+          "TS0203",
+          "TS0205",
+          "TS0601",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_fllyghyj",
+          "_TZ3000_kmh5qpmb",
+          "_TZ3000_mcxw5ehu",
+          "_TZ3000_mmtwjmaq",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_tk3s5tyg",
+          "_TZE200_81isopgh",
+          "_TZE200_bjawzodf",
+          "_TZE200_cwbvmsar",
+          "_TZE200_dwcarsat",
+          "_TZE200_m9skfctm",
+          "_TZE200_ryfmq5rl"
+        ],
+        "productId": [
+          "TS0202",
+          "TS0001",
+          "TS0201",
+          "TS0203",
+          "TS0205",
+          "TS0207",
+          "TS0222",
+          "TS0225",
+          "TS0601",
+          "TS130F",
+          "TS0204",
+          "TS020C",
+          "TS0224",
+          "TS0901",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0006",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS1111"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              1024,
+              1030,
+              1280,
+              61184
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "capabilitiesOptions": {},
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
+    },
+    {
+      "id": "remote_switch",
+      "name": {
+        "en": "Remote Switch"
+      },
+      "class": "button",
+      "capabilities": [
+        "onoff",
+        "measure_battery",
+        "dim"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS0203",
+          "TS0205",
+          "TS0502",
+          "TS0502B",
+          "TS0505",
+          "TS0505B",
+          "TS0601",
+          "TS130F",
+          "_TZ1800_ejwkn2h2",
+          "_TZ1800_fcdjzz3s",
+          "_TZ2000_a476raq2",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_cehuw1lw",
+          "_TZ3000_cphmq0q7",
+          "_TZ3000_dbou1ap4",
+          "_TZ3000_fvh3pjaz",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_ji4araar",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_odygigth",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_tk3s5tyg",
+          "_TZ3000_uim07oem",
+          "_TZ3000_vp6clf9d",
+          "_TZ3000_xabckq1v",
+          "_TZE200_81isopgh",
+          "_TZE200_m9skfctm",
+          "_TZE200_wfxuhoea"
+        ],
+        "productId": [
+          "TS0001",
+          "TS0101",
+          "TS0111",
+          "TS0115",
+          "TS011F",
+          "TS0105",
+          "TS0108",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0006",
+          "TS000F",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0601",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS130F",
+          "TS1111",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/remote_switch/assets/large.png",
+          "instruction": {
+            "en": "Follow the pairing instructions for your Remote Switch."
+          }
+        }
+      },
+      "settings": [],
+      "capabilitiesOptions": {},
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
+    },
+    {
+      "id": "roller_shutter_switch_advanced",
+      "name": {
+        "en": "Roller Shutter Switch Advanced"
+      },
+      "class": "other",
+      "capabilities": [
+        "windowcoverings_closed",
+        "windowcoverings_set",
+        "button.up",
+        "button.down",
+        "button.stop",
+        "measure_power",
+        "onoff",
+        "dim",
+        "windowcoverings_tilt_set",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS011F",
+          "TS0121",
+          "TS0205",
+          "TS0502B",
+          "TS0505",
+          "TS0505B",
+          "TS130F",
+          "_TZ1800_ejwkn2h2",
+          "_TZ1800_fcdjzz3s",
+          "_TZ2000_a476raq2",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_cehuw1lw",
+          "_TZ3000_cphmq0q7",
+          "_TZ3000_dbou1ap4",
+          "_TZ3000_fvh3pjaz",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_ji4araar",
+          "_TZ3000_odygigth",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_uim07oem",
+          "_TZE200_cowvfni3",
+          "_TZE200_fctwhugx",
+          "_TZE200_m9skfctm"
+        ],
+        "productId": [
+          "TS0001",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0501A",
+          "TS0502A",
+          "TS0502B",
+          "TS0503A",
+          "TS0503B",
+          "TS0504B",
+          "TS0505A",
+          "TS0505B",
+          "TS0601",
+          "TS110E",
+          "TS110F",
+          "TS0501B",
+          "TS0504A",
+          "TS0505",
+          "TS1101",
+          "TS0006",
+          "TS000F",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS130F",
+          "TS1111",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              258
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "capabilitiesOptions": {
+        "windowcoverings_set": {
+          "title": {
+            "en": "Position"
+          },
+          "units": {
+            "en": "%"
+          }
+        },
+        "windowcoverings_tilt_set": {
+          "title": {
+            "en": "Tilt"
+          },
+          "units": {
+            "en": "%"
+          }
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
+    },
+    {
+      "id": "roller_shutter_switch",
+      "name": {
+        "en": "Roller Shutter Switch"
+      },
+      "class": "other",
+      "capabilities": [
+        "windowcoverings_closed",
+        "windowcoverings_set",
+        "button.up",
+        "button.down",
+        "button.stop",
+        "onoff",
+        "dim",
+        "windowcoverings_tilt_set",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS011F",
+          "TS0121",
+          "TS0205",
+          "TS0502B",
+          "TS0505",
+          "TS0505B",
+          "TS130F",
+          "_TZ1800_ejwkn2h2",
+          "_TZ1800_fcdjzz3s",
+          "_TZ2000_a476raq2",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_cehuw1lw",
+          "_TZ3000_cphmq0q7",
+          "_TZ3000_dbou1ap4",
+          "_TZ3000_fvh3pjaz",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_ji4araar",
+          "_TZ3000_odygigth",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_uim07oem",
+          "_TZE200_cowvfni3",
+          "_TZE200_fctwhugx",
+          "_TZE200_m9skfctm"
+        ],
+        "productId": [
+          "TS0001",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0501A",
+          "TS0502A",
+          "TS0502B",
+          "TS0503A",
+          "TS0503B",
+          "TS0504B",
+          "TS0505A",
+          "TS0505B",
+          "TS0601",
+          "TS110E",
+          "TS110F",
+          "TS0501B",
+          "TS0504A",
+          "TS0505",
+          "TS1101",
+          "TS0006",
+          "TS000F",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS130F",
+          "TS1111",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              258
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "capabilitiesOptions": {
+        "windowcoverings_set": {
+          "title": {
+            "en": "Position"
+          },
+          "units": {
+            "en": "%"
+          }
+        },
+        "windowcoverings_tilt_set": {
+          "title": {
+            "en": "Tilt"
+          },
+          "units": {
+            "en": "%"
+          }
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      }
+    },
+    {
+      "id": "smart_plug",
+      "name": {
+        "en": "Smart Plug"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS0203",
+          "TS0205",
+          "TS0502",
+          "TS0502B",
+          "TS0505",
+          "TS0505B",
+          "TS0601",
+          "TS130F",
+          "_TZ1800_ejwkn2h2",
+          "_TZ1800_fcdjzz3s",
+          "_TZ2000_a476raq2",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_cehuw1lw",
+          "_TZ3000_cphmq0q7",
+          "_TZ3000_dbou1ap4",
+          "_TZ3000_fvh3pjaz",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_ji4araar",
+          "_TZ3000_kfu8zapd",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_odygigth",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_tk3s5tyg",
+          "_TZ3000_uim07oem",
+          "_TZ3000_vp6clf9d",
+          "_TZ3000_xabckq1v",
+          "_TZE200_81isopgh",
+          "_TZE200_m9skfctm",
+          "_TZE200_wfxuhoea"
+        ],
+        "productId": [
+          "TS011F",
+          "TS0001",
+          "TS0101",
+          "TS0105",
+          "TS0108",
+          "TS0111",
+          "TS0115",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0006",
+          "TS000F",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0601",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS130F",
+          "TS1111"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              1794,
+              2820
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        }
+      },
+      "images": {
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "capabilitiesOptions": {
+        "measure_power": {
+          "title": {
+            "en": "Power"
+          },
+          "units": {
+            "en": "W"
+          },
+          "decimals": 1
+        },
+        "measure_voltage": {
+          "title": {
+            "en": "Voltage"
+          },
+          "units": {
+            "en": "V"
+          },
+          "decimals": 1
+        },
+        "measure_current": {
+          "title": {
+            "en": "Current"
+          },
+          "units": {
+            "en": "A"
+          },
+          "decimals": 2
+        }
+      }
+    },
+    {
+      "id": "smart_plug_energy",
+      "name": {
+        "en": "smart plug energy"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS0203",
+          "TS0205",
+          "TS0502",
+          "TS0502B",
+          "TS0505",
+          "TS0505B",
+          "TS0601",
+          "TS130F",
+          "_TZ1800_ejwkn2h2",
+          "_TZ1800_fcdjzz3s",
+          "_TZ2000_a476raq2",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_cehuw1lw",
+          "_TZ3000_cphmq0q7",
+          "_TZ3000_dbou1ap4",
+          "_TZ3000_fvh3pjaz",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_ji4araar",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_odygigth",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_tk3s5tyg",
+          "_TZ3000_uim07oem",
+          "_TZ3000_vp6clf9d",
+          "_TZ3000_ww6drja5",
+          "_TZ3000_xabckq1v",
+          "_TZ3210_alxkwn0h",
+          "_TZE200_81isopgh",
+          "_TZE200_m9skfctm",
+          "_TZE200_wfxuhoea",
+          "_TZE204_5cuocqty",
+          "_TZE204_ahwvlkpy",
+          "_TZE204_bjzrowv2",
+          "_TZE204_dapwryy7",
+          "_TZE204_dcnsggvz",
+          "_TZE204_lawxy9e2",
+          "_TZE204_ltwbm23f",
+          "_TZE204_nklqjk62",
+          "_TZE204_xu4a5rhj"
+        ],
+        "productId": [
+          "TS0001",
+          "TS0201",
+          "TS0202",
+          "TS0203",
+          "TS0204",
+          "TS0205",
+          "TS0207",
+          "TS020C",
+          "TS0222",
+          "TS0224",
+          "TS0225",
+          "TS0601",
+          "TS0901",
+          "TS130F",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0006",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS1111",
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              1794,
+              2820
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        }
+      },
+      "capabilitiesOptions": {
+        "measure_power": {
+          "title": {
+            "en": "Power"
+          },
+          "units": {
+            "en": "W"
+          },
+          "decimals": 1
+        },
+        "measure_voltage": {
+          "title": {
+            "en": "Voltage"
+          },
+          "units": {
+            "en": "V"
+          },
+          "decimals": 1
+        },
+        "measure_current": {
+          "title": {
+            "en": "Current"
+          },
+          "units": {
+            "en": "A"
+          },
+          "decimals": 2
+        }
+      },
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "platforms": [
+        "local"
+      ]
+    },
+    {
+      "id": "wireless_switch",
+      "name": {
+        "en": "Wireless Switch"
+      },
+      "class": "button",
+      "capabilities": [
+        "onoff",
+        "measure_battery",
+        "dim"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS0203",
+          "TS0205",
+          "TS0502",
+          "TS0502B",
+          "TS0505",
+          "TS0505B",
+          "TS0601",
+          "_TZ1800_ejwkn2h2",
+          "_TZ1800_fcdjzz3s",
+          "_TZ2000_a476raq2",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_cehuw1lw",
+          "_TZ3000_cphmq0q7",
+          "_TZ3000_dbou1ap4",
+          "_TZ3000_fvh3pjaz",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_ji4araar",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_odygigth",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_tk3s5tyg",
+          "_TZ3000_uim07oem",
+          "_TZ3000_vp6clf9d",
+          "_TZ3000_xabckq1v",
+          "_TZE200_81isopgh",
+          "_TZE200_m9skfctm",
+          "_TZE200_wfxuhoea"
+        ],
+        "productId": [
+          "TS0001",
+          "TS0101",
+          "TS0111",
+          "TS0115",
+          "TS011F",
+          "TS0105",
+          "TS0108",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0006",
+          "TS000F",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0601",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS130F",
+          "TS1111",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/wireless_switch/assets/large.png",
+          "instruction": {
+            "en": "Follow the pairing instructions for your Wireless Switch."
+          }
+        }
+      },
+      "settings": [],
+      "capabilitiesOptions": {},
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     }
   ],
   "flow": {

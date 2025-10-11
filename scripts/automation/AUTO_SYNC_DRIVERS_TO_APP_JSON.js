@@ -23,7 +23,7 @@ const colors = {
 
 class AutoSyncDrivers {
   constructor() {
-    this.rootDir = path.join(__dirname, '..');
+    this.rootDir = path.join(__dirname, '..', '..');
     this.driversAdded = [];
     this.driversUpdated = [];
   }
