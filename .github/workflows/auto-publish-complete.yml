@@ -398,7 +398,20 @@ jobs:
           if [ -n "$(git status --porcelain)" ]; then
             git add app.json .homeychangelog.json
             git commit -m "chore: bump version to v${{ steps.version.outputs.version }} [skip ci]"
-            git push
+            
+            # Pull with rebase to handle any changes
+            git pull --rebase origin master || {
+              echo "⚠️ Pull failed, retrying..."
+              git pull --rebase origin master
+            }
+            
+            # Push changes
+            git push origin HEAD:master || {
+              echo "⚠️ Push failed, retrying..."
+              git pull --rebase origin master
+              git push origin HEAD:master
+            }
+            
             echo "✅ Version v${{ steps.version.outputs.version }} committed and pushed"
           else
             echo "ℹ️ No version changes to commit"
