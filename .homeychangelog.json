@@ -58,5 +58,8 @@
   },
   "2.2.4": {
     "en": "Bug fix: use HOMEY_PAT env var (same as official action)."
+  },
+  "2.2.5": {
+    "en": "Bug fix: final project cleanup + validation 100%."
   }
 }
