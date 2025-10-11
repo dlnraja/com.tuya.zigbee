@@ -54,17 +54,35 @@ function detectGangCount(name) {
   return match ? parseInt(match[1]) : 1;
 }
 
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.lineTo(x + w - r, y);
+  ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+  ctx.lineTo(x + w, y + h - r);
+  ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+  ctx.lineTo(x + r, y + h);
+  ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+  ctx.lineTo(x, y + r);
+  ctx.quadraticCurveTo(x, y, x + r, y);
+  ctx.closePath();
+}
+
 function drawIcon(ctx, w, h, name, colors) {
   const cx = w/2, cy = h/2;
   const lower = name.toLowerCase();
   
-  // Gradient background
+  // ROUNDED RECTANGLE background with gradient
+  const cornerRadius = w * 0.08; // 8% rounded corners
   const grad = ctx.createLinearGradient(0, 0, w, h);
   grad.addColorStop(0, colors.p);
   grad.addColorStop(0.5, colors.s);
   grad.addColorStop(1, colors.a);
   ctx.fillStyle = grad;
-  ctx.fillRect(0, 0, w, h);
+  
+  // Draw rounded rectangle
+  roundRect(ctx, 0, 0, w, h, cornerRadius);
+  ctx.fill();
   
   // Large white circle for icon area
   const r = Math.min(w,h) * 0.42;
@@ -77,12 +95,12 @@ function drawIcon(ctx, w, h, name, colors) {
   ctx.fill();
   ctx.shadowColor = 'transparent';
   
-  // Draw device-specific icon with COLORS
+  // Draw device-specific icon with COLORS (LARGER size)
   ctx.lineWidth = w*0.012;
   ctx.lineCap = 'round';
   ctx.lineJoin = 'round';
   
-  const size = w * 0.16;
+  const size = w * 0.20; // Increased from 0.16 to 0.20 (25% larger)
   
   if (lower.includes('switch') || lower.includes('gang')) {
     // Switch: draw multiple COLORED buttons for multi-gang
@@ -243,7 +261,9 @@ function drawIcon(ctx, w, h, name, colors) {
     ctx.fill();
     ctx.stroke();
   } else if (lower.includes('valve')) {
-    // Valve/tap
+    // COLORED Valve/tap
+    ctx.strokeStyle = colors.a;
+    ctx.fillStyle = colors.p;
     ctx.beginPath();
     ctx.arc(cx, cy, size*0.6, 0, 2*Math.PI);
     ctx.stroke();
@@ -251,12 +271,174 @@ function drawIcon(ctx, w, h, name, colors) {
     ctx.arc(cx, cy, size*0.4, 0, 2*Math.PI);
     ctx.stroke();
     ctx.fillRect(cx - size*0.12, cy - size*0.9, size*0.24, size*0.7);
+  } else if (lower.includes('co2') || lower.includes('air_quality') || lower.includes('tvoc')) {
+    // COLORED CO2/Air quality sensor - molecules
+    ctx.fillStyle = colors.p;
+    ctx.strokeStyle = colors.a;
+    
+    // Draw molecules pattern
+    const positions = [
+      {x: cx - size*0.5, y: cy - size*0.3},
+      {x: cx + size*0.5, y: cy - size*0.3},
+      {x: cx, y: cy + size*0.4},
+      {x: cx - size*0.25, y: cy + size*0.1},
+      {x: cx + size*0.25, y: cy + size*0.1}
+    ];
+    
+    positions.forEach(pos => {
+      ctx.beginPath();
+      ctx.arc(pos.x, pos.y, size*0.15, 0, 2*Math.PI);
+      ctx.fill();
+      ctx.stroke();
+    });
+    
+    // Connecting lines
+    ctx.lineWidth = w*0.008;
+    ctx.beginPath();
+    ctx.moveTo(positions[0].x, positions[0].y);
+    ctx.lineTo(positions[3].x, positions[3].y);
+    ctx.lineTo(positions[2].x, positions[2].y);
+    ctx.lineTo(positions[4].x, positions[4].y);
+    ctx.lineTo(positions[1].x, positions[1].y);
+    ctx.stroke();
+  } else if (lower.includes('vibration')) {
+    // COLORED Vibration sensor - waves
+    ctx.strokeStyle = colors.p;
+    ctx.lineWidth = w*0.01;
+    
+    // Zigzag pattern
+    const points = 5;
+    const amplitude = size*0.6;
+    const width = size*1.4;
+    const step = width / (points - 1);
+    
+    ctx.beginPath();
+    for(let i = 0; i < points; i++) {
+      const x = cx - width/2 + i*step;
+      const y = cy + (i % 2 === 0 ? -amplitude/2 : amplitude/2);
+      if (i === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+  } else if (lower.includes('siren') || lower.includes('alarm')) {
+    // COLORED Siren/alarm
+    ctx.fillStyle = colors.p;
+    ctx.strokeStyle = colors.a;
+    
+    // Siren shape
+    ctx.beginPath();
+    ctx.moveTo(cx - size*0.4, cy + size*0.5);
+    ctx.lineTo(cx - size*0.6, cy + size*0.7);
+    ctx.lineTo(cx + size*0.6, cy + size*0.7);
+    ctx.lineTo(cx + size*0.4, cy + size*0.5);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+    
+    ctx.beginPath();
+    ctx.arc(cx, cy, size*0.4, Math.PI, 0);
+    ctx.fill();
+    ctx.stroke();
+    
+    // Sound waves
+    ctx.lineWidth = w*0.008;
+    for(let i = 1; i <= 2; i++) {
+      ctx.globalAlpha = 0.6 - i*0.2;
+      ctx.beginPath();
+      ctx.arc(cx, cy, size*(0.5 + i*0.3), -Math.PI/6, Math.PI + Math.PI/6);
+      ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+  } else if (lower.includes('radar')) {
+    // COLORED Radar
+    ctx.strokeStyle = colors.p;
+    ctx.fillStyle = colors.a;
+    ctx.lineWidth = w*0.008;
+    
+    // Radar circles
+    for(let i = 1; i <= 3; i++) {
+      ctx.globalAlpha = 0.8 - i*0.2;
+      ctx.beginPath();
+      ctx.arc(cx, cy, size*i*0.35, 0, 2*Math.PI);
+      ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+    
+    // Radar beam
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.lineTo(cx + size*0.8, cy - size*0.5);
+    ctx.lineWidth = w*0.012;
+    ctx.stroke();
+  } else if (lower.includes('button') || lower.includes('scene') || lower.includes('remote')) {
+    // COLORED Button/remote
+    ctx.fillStyle = colors.p;
+    ctx.strokeStyle = colors.a;
+    
+    // Button shape
+    ctx.beginPath();
+    ctx.arc(cx, cy, size*0.5, 0, 2*Math.PI);
+    ctx.fill();
+    ctx.stroke();
+    
+    // Inner circle
+    ctx.beginPath();
+    ctx.arc(cx, cy, size*0.3, 0, 2*Math.PI);
+    ctx.strokeStyle = '#FFF';
+    ctx.lineWidth = w*0.01;
+    ctx.stroke();
+  } else if (lower.includes('garage') || lower.includes('door_controller')) {
+    // COLORED Garage door
+    ctx.strokeStyle = colors.a;
+    ctx.lineWidth = w*0.012;
+    
+    // Door segments
+    for(let i = 0; i < 4; i++) {
+      const y = cy - size*0.6 + i*size*0.35;
+      ctx.strokeRect(cx - size*0.6, y, size*1.2, size*0.3);
+    }
+  } else if (lower.includes('fan')) {
+    // COLORED Fan blades
+    ctx.fillStyle = colors.p;
+    ctx.strokeStyle = colors.a;
+    
+    for(let i = 0; i < 3; i++) {
+      const angle = (i * Math.PI * 2 / 3);
+      ctx.beginPath();
+      ctx.ellipse(
+        cx + Math.cos(angle) * size * 0.35,
+        cy + Math.sin(angle) * size * 0.35,
+        size * 0.45,
+        size * 0.28,
+        angle,
+        0,
+        Math.PI * 2
+      );
+      ctx.fill();
+      ctx.stroke();
+    }
+    
+    // Center
+    ctx.fillStyle = '#FFF';
+    ctx.beginPath();
+    ctx.arc(cx, cy, size*0.18, 0, 2*Math.PI);
+    ctx.fill();
+    ctx.strokeStyle = colors.a;
+    ctx.stroke();
   } else {
-    // Default: generic device icon
-    ctx.font = `${Math.floor(w*0.35)}px Arial`;
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillText(colors.i, cx, cy);
+    // COLORED Default icon (pour tout device inconnu)
+    ctx.fillStyle = colors.p;
+    ctx.strokeStyle = colors.a;
+    ctx.lineWidth = w*0.012;
+    
+    // Generic device rectangle
+    ctx.fillRect(cx - size*0.5, cy - size*0.5, size, size);
+    ctx.strokeRect(cx - size*0.5, cy - size*0.5, size, size);
+    
+    // Inner details
+    ctx.strokeStyle = colors.s;
+    ctx.lineWidth = w*0.008;
+    ctx.strokeRect(cx - size*0.3, cy - size*0.3, size*0.6, size*0.6);
   }
   
   ctx.shadowColor = 'transparent';
