@@ -3,9 +3,9 @@
     "en": "Performance and stability improvements"
   },
   "2.1.40": {
-    "en": "Critical forum bugs fixed: temperature/humidity sensors now display values correctly, PIR sensors pair without conflicts, gas sensor support added, version sync fixed, missing driver files restored"
+    "en": "Initial forum bug fixes attempt"
   },
   "2.1.41": {
-    "en": "Added support for new devices and improved compatibility"
+    "en": "CRITICAL FIXES: Temperature/humidity sensors display values correctly, PIR sensors pair without conflicts, gas sensor TS0601_gas_sensor_2 support added, version sync resolved, 5 missing driver files restored, full SDK3 compliance verified, all Homey documentation reviewed, Johan Bendz standards applied"
   }
 }
