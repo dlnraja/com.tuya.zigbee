@@ -1,23 +1,61 @@
 # Changelog
 
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [2.1.51] - 2025-10-11
+
+### Added - GitHub Actions Integration 🚀
+- **Official Homey GitHub Actions** - Using marketplace actions from athombv
+  - `athombv/github-action-homey-app-validate` for validation
+  - `athombv/github-action-homey-app-update-version` for versioning
+  - `athombv/github-action-homey-app-publish` for publication
+- **Automated Publishing Workflow** - `homey-official-publish.yml`
+  - Automatic validation on push to master
+  - Semantic versioning (patch/minor/major)
+  - Smart changelog generation from commits
+  - Automatic version commit back to repository
+- **Continuous Validation Workflow** - `homey-validate.yml`
+  - Multi-level validation (debug + publish)
+  - JSON syntax checking
+  - Driver structure verification
+  - Runs on all PRs and development branches
+- **PowerShell Publication Script** - `publish-homey-official.ps1`
+  - Local publication automation
+  - Pre-flight checks
+  - Cache cleaning
+  - Dry-run mode support
+
+### Documentation
+- **Publication Guide** - `PUBLICATION_GUIDE_OFFICIELLE.md` (comprehensive)
+- **Quick Start Guide** - `QUICK_START_PUBLICATION.md` (5-minute setup)
+- **Workflows Guide** - `.github/workflows/OFFICIAL_WORKFLOWS_GUIDE.md`
+- **Implementation Recap** - `RECAP_IMPLEMENTATION_OFFICIELLE.md`
+- **Technical Reference** - `references/github_actions_official.json`
+- **Updated README.md** - With CI/CD pipeline information
+
+### Changed
+- Updated version badge to 2.1.51
+- Updated project structure documentation
+- Enhanced development section with publication methods
+
 ## [2.1.40] - 2025-10-11
 
 ### Fixed
-- **Critical**: Temperature/humidity sensors now display values correctly
-- **Critical**: PIR motion sensors pair without "Unknown Device" conflicts
+- **Critical**: Temperature/humidity sensors now display values correctly (Bug #259)
+- **Critical**: PIR motion sensors pair without "Unknown Device" conflicts (Bug #256)
 - **Bug**: Fixed version mismatch between app.json and package.json
 - **Bug**: Restored missing driver.js files for 5 drivers
 
 ### Added
-- **Feature**: Gas sensor TS0601_gas_sensor_2 support (community request)
+- **Feature**: Gas sensor TS0601_gas_sensor_2 support (Bug #261 - community request)
 - **Tool**: Ultimate diagnostic and repair script
 
 ### Changed
 - **Improvement**: Cleaned overlapping manufacturer IDs across drivers
 - **Improvement**: Enhanced Zigbee cluster configurations
-
-
-All notable changes to this project will be documented in this file.
 
 ## [2.1.40] - 2025-10-10
 
