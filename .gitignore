@@ -56,3 +56,5 @@ archive/*
 # Development files (organized)
 .dev/
 archive_old/
+
+*.backup-auto
