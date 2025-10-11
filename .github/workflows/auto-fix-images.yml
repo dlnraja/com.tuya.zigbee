@@ -143,7 +143,22 @@ jobs:
           if [ -n "$(git status --porcelain)" ]; then
             git add drivers/*/assets/*.png
             git commit -m "fix(images): auto-fix driver images to 75x75, 500x500, 1000x1000 [skip ci]"
-            git push origin HEAD:master
+            
+            # Pull with rebase first to handle any new commits
+            echo "📥 Pulling latest changes..."
+            git pull --rebase origin master || {
+              echo "⚠️ Pull failed, retrying..."
+              git pull --rebase origin master
+            }
+            
+            # Push changes
+            echo "📤 Pushing fixed images..."
+            git push origin HEAD:master || {
+              echo "⚠️ Push failed, retrying with pull..."
+              git pull --rebase origin master
+              git push origin HEAD:master
+            }
+            
             echo "✅ Fixed images committed and pushed"
           else
             echo "ℹ️ No changes needed"
