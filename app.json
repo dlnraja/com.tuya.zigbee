@@ -732,7 +732,8 @@
       },
       "class": "sensor",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "measure_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -2296,7 +2297,8 @@
       "capabilities": [
         "onoff",
         "onoff.gang2",
-        "onoff.gang3"
+        "onoff.gang3",
+        "measure_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -4859,7 +4861,8 @@
       "class": "button",
       "capabilities": [
         "onoff",
-        "onoff.gang2"
+        "onoff.gang2",
+        "measure_battery"
       ],
       "zigbee": {
         "productId": [
@@ -5012,7 +5015,8 @@
       "capabilities": [
         "onoff",
         "onoff.gang2",
-        "onoff.gang3"
+        "onoff.gang3",
+        "measure_battery"
       ],
       "zigbee": {
         "productId": [
@@ -6537,7 +6541,35 @@
           "CR2032",
           "AAA"
         ]
-      }
+      },
+      "settings": [
+        {
+          "type": "number",
+          "id": "dp_13_comfort_temperature",
+          "label": {
+            "en": "comfort temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_14_eco_temperature",
+          "label": {
+            "en": "eco temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_19_temperature_calibration",
+          "label": {
+            "en": "temperature calibration"
+          },
+          "value": -9,
+          "min": -9,
+          "max": 9
+        }
+      ]
     },
     {
       "id": "co2_sensor_battery",
@@ -6748,7 +6780,35 @@
           "CR2032",
           "AAA"
         ]
-      }
+      },
+      "settings": [
+        {
+          "type": "number",
+          "id": "dp_13_comfort_temperature",
+          "label": {
+            "en": "comfort temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_14_eco_temperature",
+          "label": {
+            "en": "eco temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_19_temperature_calibration",
+          "label": {
+            "en": "temperature calibration"
+          },
+          "value": -9,
+          "min": -9,
+          "max": 9
+        }
+      ]
     },
     {
       "id": "comprehensive_air_monitor_ac",
@@ -9706,7 +9766,35 @@
           "AAA",
           "CR2032"
         ]
-      }
+      },
+      "settings": [
+        {
+          "type": "number",
+          "id": "dp_13_comfort_temperature",
+          "label": {
+            "en": "comfort temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_14_eco_temperature",
+          "label": {
+            "en": "eco temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_19_temperature_calibration",
+          "label": {
+            "en": "temperature calibration"
+          },
+          "value": -9,
+          "min": -9,
+          "max": 9
+        }
+      ]
     },
     {
       "id": "multisensor_battery",
@@ -10567,7 +10655,8 @@
       "class": "sensor",
       "capabilities": [
         "onoff",
-        "measure_temperature"
+        "measure_temperature",
+        "measure_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -14276,7 +14365,37 @@
           "AAA",
           "CR2032"
         ]
-      }
+      },
+      "settings": [
+        {
+          "type": "dropdown",
+          "id": "dp_20_smoke_sensitivity",
+          "label": {
+            "en": "smoke sensitivity"
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "low"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "medium"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "high"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "smart_spot_ac",
@@ -14551,7 +14670,35 @@
         "batteries": [
           "INTERNAL"
         ]
-      }
+      },
+      "settings": [
+        {
+          "type": "number",
+          "id": "dp_13_comfort_temperature",
+          "label": {
+            "en": "comfort temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_14_eco_temperature",
+          "label": {
+            "en": "eco temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_19_temperature_calibration",
+          "label": {
+            "en": "temperature calibration"
+          },
+          "value": -9,
+          "min": -9,
+          "max": 9
+        }
+      ]
     },
     {
       "id": "smart_valve_controller_hybrid",
@@ -14955,7 +15102,37 @@
           "AAA",
           "CR2032"
         ]
-      }
+      },
+      "settings": [
+        {
+          "type": "dropdown",
+          "id": "dp_20_smoke_sensitivity",
+          "label": {
+            "en": "smoke sensitivity"
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "low"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "medium"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "high"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "smoke_detector_temp_humidity_advanced_battery",
@@ -15078,7 +15255,63 @@
           "AAA",
           "CR2032"
         ]
-      }
+      },
+      "settings": [
+        {
+          "type": "dropdown",
+          "id": "dp_20_smoke_sensitivity",
+          "label": {
+            "en": "smoke sensitivity"
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "low"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "medium"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "high"
+              }
+            }
+          ]
+        },
+        {
+          "type": "number",
+          "id": "dp_13_comfort_temperature",
+          "label": {
+            "en": "comfort temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_14_eco_temperature",
+          "label": {
+            "en": "eco temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_19_temperature_calibration",
+          "label": {
+            "en": "temperature calibration"
+          },
+          "value": -9,
+          "min": -9,
+          "max": 9
+        }
+      ]
     },
     {
       "id": "smoke_temp_humid_sensor_battery",
@@ -15210,7 +15443,63 @@
           "AAA",
           "CR2032"
         ]
-      }
+      },
+      "settings": [
+        {
+          "type": "dropdown",
+          "id": "dp_20_smoke_sensitivity",
+          "label": {
+            "en": "smoke sensitivity"
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "low"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "medium"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "high"
+              }
+            }
+          ]
+        },
+        {
+          "type": "number",
+          "id": "dp_13_comfort_temperature",
+          "label": {
+            "en": "comfort temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_14_eco_temperature",
+          "label": {
+            "en": "eco temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_19_temperature_calibration",
+          "label": {
+            "en": "temperature calibration"
+          },
+          "value": -9,
+          "min": -9,
+          "max": 9
+        }
+      ]
     },
     {
       "id": "soil_moisture_sensor_battery",
@@ -15477,7 +15766,35 @@
           "AAA",
           "CR2032"
         ]
-      }
+      },
+      "settings": [
+        {
+          "type": "number",
+          "id": "dp_13_comfort_temperature",
+          "label": {
+            "en": "comfort temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_14_eco_temperature",
+          "label": {
+            "en": "eco temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_19_temperature_calibration",
+          "label": {
+            "en": "temperature calibration"
+          },
+          "value": -9,
+          "min": -9,
+          "max": 9
+        }
+      ]
     },
     {
       "id": "soil_tester_temp_humid_cr2032",
@@ -15597,7 +15914,35 @@
           "CR2032",
           "AAA"
         ]
-      }
+      },
+      "settings": [
+        {
+          "type": "number",
+          "id": "dp_13_comfort_temperature",
+          "label": {
+            "en": "comfort temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_14_eco_temperature",
+          "label": {
+            "en": "eco temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_19_temperature_calibration",
+          "label": {
+            "en": "temperature calibration"
+          },
+          "value": -9,
+          "min": -9,
+          "max": 9
+        }
+      ]
     },
     {
       "id": "solar_panel_controller_hybrid",
@@ -16081,7 +16426,35 @@
           "CR2032",
           "AAA"
         ]
-      }
+      },
+      "settings": [
+        {
+          "type": "number",
+          "id": "dp_13_comfort_temperature",
+          "label": {
+            "en": "comfort temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_14_eco_temperature",
+          "label": {
+            "en": "eco temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_19_temperature_calibration",
+          "label": {
+            "en": "temperature calibration"
+          },
+          "value": -9,
+          "min": -9,
+          "max": 9
+        }
+      ]
     },
     {
       "id": "temperature_humidity_sensor_battery",
@@ -16174,7 +16547,35 @@
           "AAA",
           "CR2032"
         ]
-      }
+      },
+      "settings": [
+        {
+          "type": "number",
+          "id": "dp_13_comfort_temperature",
+          "label": {
+            "en": "comfort temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_14_eco_temperature",
+          "label": {
+            "en": "eco temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_19_temperature_calibration",
+          "label": {
+            "en": "temperature calibration"
+          },
+          "value": -9,
+          "min": -9,
+          "max": 9
+        }
+      ]
     },
     {
       "id": "temperature_sensor_advanced_battery",
@@ -16301,7 +16702,35 @@
           "AAA",
           "CR2032"
         ]
-      }
+      },
+      "settings": [
+        {
+          "type": "number",
+          "id": "dp_13_comfort_temperature",
+          "label": {
+            "en": "comfort temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_14_eco_temperature",
+          "label": {
+            "en": "eco temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_19_temperature_calibration",
+          "label": {
+            "en": "temperature calibration"
+          },
+          "value": -9,
+          "min": -9,
+          "max": 9
+        }
+      ]
     },
     {
       "id": "temperature_sensor_battery",
@@ -16565,7 +16994,35 @@
           "AAA",
           "CR2032"
         ]
-      }
+      },
+      "settings": [
+        {
+          "type": "number",
+          "id": "dp_13_comfort_temperature",
+          "label": {
+            "en": "comfort temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_14_eco_temperature",
+          "label": {
+            "en": "eco temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_19_temperature_calibration",
+          "label": {
+            "en": "temperature calibration"
+          },
+          "value": -9,
+          "min": -9,
+          "max": 9
+        }
+      ]
     },
     {
       "id": "temp_humid_sensor_dd_battery",
@@ -16691,7 +17148,35 @@
           "AAA",
           "CR2032"
         ]
-      }
+      },
+      "settings": [
+        {
+          "type": "number",
+          "id": "dp_13_comfort_temperature",
+          "label": {
+            "en": "comfort temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_14_eco_temperature",
+          "label": {
+            "en": "eco temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_19_temperature_calibration",
+          "label": {
+            "en": "temperature calibration"
+          },
+          "value": -9,
+          "min": -9,
+          "max": 9
+        }
+      ]
     },
     {
       "id": "temp_humid_sensor_leak_detector_battery",
@@ -16818,7 +17303,35 @@
           "AAA",
           "CR2032"
         ]
-      }
+      },
+      "settings": [
+        {
+          "type": "number",
+          "id": "dp_13_comfort_temperature",
+          "label": {
+            "en": "comfort temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_14_eco_temperature",
+          "label": {
+            "en": "eco temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_19_temperature_calibration",
+          "label": {
+            "en": "temperature calibration"
+          },
+          "value": -9,
+          "min": -9,
+          "max": 9
+        }
+      ]
     },
     {
       "id": "temp_sensor_pro_battery",
@@ -16927,7 +17440,35 @@
           "AAA",
           "CR2032"
         ]
-      }
+      },
+      "settings": [
+        {
+          "type": "number",
+          "id": "dp_13_comfort_temperature",
+          "label": {
+            "en": "comfort temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_14_eco_temperature",
+          "label": {
+            "en": "eco temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_19_temperature_calibration",
+          "label": {
+            "en": "temperature calibration"
+          },
+          "value": -9,
+          "min": -9,
+          "max": 9
+        }
+      ]
     },
     {
       "id": "thermostat_hybrid",
@@ -17081,7 +17622,35 @@
           "CR2032",
           "AAA"
         ]
-      }
+      },
+      "settings": [
+        {
+          "type": "number",
+          "id": "dp_13_comfort_temperature",
+          "label": {
+            "en": "comfort temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_14_eco_temperature",
+          "label": {
+            "en": "eco temperature"
+          },
+          "value": 0
+        },
+        {
+          "type": "number",
+          "id": "dp_19_temperature_calibration",
+          "label": {
+            "en": "temperature calibration"
+          },
+          "value": -9,
+          "min": -9,
+          "max": 9
+        }
+      ]
     },
     {
       "id": "touch_dimmer_1gang_ac",
@@ -19408,6 +19977,2488 @@
       "platforms": [
         "local"
       ]
+    },
+    {
+      "id": "energy_monitoring_plug",
+      "name": {
+        "en": "Energy Monitoring Plug"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS0203",
+          "TS0205",
+          "TS0502",
+          "TS0502B",
+          "TS0505",
+          "TS0505B",
+          "TS0601",
+          "TS130F",
+          "_TZ1800_ejwkn2h2",
+          "_TZ1800_fcdjzz3s",
+          "_TZ2000_a476raq2",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_cehuw1lw",
+          "_TZ3000_cphmq0q7",
+          "_TZ3000_dbou1ap4",
+          "_TZ3000_fvh3pjaz",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_ji4araar",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_odygigth",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_tk3s5tyg",
+          "_TZ3000_uim07oem",
+          "_TZ3000_vp6clf9d",
+          "_TZ3000_xabckq1v",
+          "_TZE200_81isopgh",
+          "_TZE200_m9skfctm",
+          "_TZE200_wfxuhoea"
+        ],
+        "productId": [
+          "TS011F",
+          "TS0101",
+          "TS0105",
+          "TS0108",
+          "TS0111",
+          "TS0115"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              1794,
+              2820
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        }
+      },
+      "capabilitiesOptions": {
+        "measure_power": {
+          "title": {
+            "en": "Power"
+          },
+          "units": {
+            "en": "W"
+          },
+          "decimals": 1
+        },
+        "measure_voltage": {
+          "title": {
+            "en": "Voltage"
+          },
+          "units": {
+            "en": "V"
+          },
+          "decimals": 1
+        },
+        "measure_current": {
+          "title": {
+            "en": "Current"
+          },
+          "units": {
+            "en": "A"
+          },
+          "decimals": 2
+        }
+      },
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "platforms": [
+        "local"
+      ]
+    },
+    {
+      "id": "energy_monitoring_plug_advanced",
+      "name": {
+        "en": "Energy Plug Advanced"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS0203",
+          "TS0205",
+          "TS0502",
+          "TS0502B",
+          "TS0505",
+          "TS0505B",
+          "TS0601",
+          "TS130F",
+          "_TZ1800_ejwkn2h2",
+          "_TZ1800_fcdjzz3s",
+          "_TZ2000_a476raq2",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_cehuw1lw",
+          "_TZ3000_cphmq0q7",
+          "_TZ3000_dbou1ap4",
+          "_TZ3000_fvh3pjaz",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_ji4araar",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_npg02xft",
+          "_TZ3000_odygigth",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_tk3s5tyg",
+          "_TZ3000_uim07oem",
+          "_TZ3000_vp6clf9d",
+          "_TZ3000_xabckq1v",
+          "_TZE200_81isopgh",
+          "_TZE200_m9skfctm",
+          "_TZE200_wfxuhoea"
+        ],
+        "productId": [
+          "TS011F",
+          "TS0001",
+          "TS0101",
+          "TS0105",
+          "TS0108",
+          "TS0111",
+          "TS0115",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0006",
+          "TS000F",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0601",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS130F",
+          "TS1111"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              1794,
+              2820
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        }
+      },
+      "capabilitiesOptions": {
+        "measure_power": {
+          "title": {
+            "en": "Power"
+          },
+          "units": {
+            "en": "W"
+          },
+          "decimals": 1
+        },
+        "measure_voltage": {
+          "title": {
+            "en": "Voltage"
+          },
+          "units": {
+            "en": "V"
+          },
+          "decimals": 1
+        },
+        "measure_current": {
+          "title": {
+            "en": "Current"
+          },
+          "units": {
+            "en": "A"
+          },
+          "decimals": 2
+        }
+      },
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "energy_plug_advanced",
+      "name": {
+        "en": "energy plug advanced"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS0203",
+          "TS0205",
+          "TS0502",
+          "TS0502B",
+          "TS0505",
+          "TS0505B",
+          "TS0601",
+          "TS130F",
+          "_TZ1800_ejwkn2h2",
+          "_TZ1800_fcdjzz3s",
+          "_TZ2000_a476raq2",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_cehuw1lw",
+          "_TZ3000_cphmq0q7",
+          "_TZ3000_dbou1ap4",
+          "_TZ3000_fvh3pjaz",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_ji4araar",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_odygigth",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_tk3s5tyg",
+          "_TZ3000_uim07oem",
+          "_TZ3000_vp6clf9d",
+          "_TZ3000_xabckq1v",
+          "_TZE200_81isopgh",
+          "_TZE200_dwcarsat",
+          "_TZE200_m9skfctm",
+          "_TZE200_ryfmq5rl",
+          "_TZE200_wfxuhoea"
+        ],
+        "productId": [
+          "TS0001",
+          "TS0201",
+          "TS0202",
+          "TS0203",
+          "TS0204",
+          "TS0205",
+          "TS0207",
+          "TS020C",
+          "TS0222",
+          "TS0224",
+          "TS0225",
+          "TS0601",
+          "TS0901",
+          "TS130F",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0006",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS1111",
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              1794,
+              2820,
+              61184
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        }
+      },
+      "capabilitiesOptions": {
+        "measure_power": {
+          "title": {
+            "en": "Power"
+          },
+          "units": {
+            "en": "W"
+          },
+          "decimals": 1
+        },
+        "measure_voltage": {
+          "title": {
+            "en": "Voltage"
+          },
+          "units": {
+            "en": "V"
+          },
+          "decimals": 1
+        },
+        "measure_current": {
+          "title": {
+            "en": "Current"
+          },
+          "units": {
+            "en": "A"
+          },
+          "decimals": 2
+        }
+      },
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "platforms": [
+        "local"
+      ]
+    },
+    {
+      "id": "extension_plug",
+      "name": {
+        "en": "Extension Plug"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS0203",
+          "TS0205",
+          "TS0502",
+          "TS0502B",
+          "TS0505",
+          "TS0505B",
+          "TS0601",
+          "TS130F",
+          "_TZ1800_ejwkn2h2",
+          "_TZ1800_fcdjzz3s",
+          "_TZ2000_a476raq2",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_cehuw1lw",
+          "_TZ3000_cphmq0q7",
+          "_TZ3000_dbou1ap4",
+          "_TZ3000_fvh3pjaz",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_ji4araar",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_odygigth",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_tk3s5tyg",
+          "_TZ3000_uim07oem",
+          "_TZ3000_vp6clf9d",
+          "_TZ3000_xabckq1v",
+          "_TZE200_81isopgh",
+          "_TZE200_m9skfctm",
+          "_TZE200_wfxuhoea"
+        ],
+        "productId": [
+          "TS011F",
+          "TS0001",
+          "TS0101",
+          "TS0105",
+          "TS0108",
+          "TS0111",
+          "TS0115",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0006",
+          "TS000F",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0601",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS130F",
+          "TS1111"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              1794,
+              2820
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        }
+      },
+      "images": {
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "capabilitiesOptions": {
+        "measure_power": {
+          "title": {
+            "en": "Power"
+          },
+          "units": {
+            "en": "W"
+          },
+          "decimals": 1
+        },
+        "measure_voltage": {
+          "title": {
+            "en": "Voltage"
+          },
+          "units": {
+            "en": "V"
+          },
+          "decimals": 1
+        },
+        "measure_current": {
+          "title": {
+            "en": "Current"
+          },
+          "units": {
+            "en": "A"
+          },
+          "decimals": 2
+        }
+      }
+    },
+    {
+      "id": "mini_switch",
+      "name": {
+        "en": "Mini Switch"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "onoff",
+        "measure_battery",
+        "dim"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS0203",
+          "TS0205",
+          "TS0502",
+          "TS0502B",
+          "TS0505",
+          "TS0505B",
+          "TS0601",
+          "TS130F",
+          "_TZ1800_ejwkn2h2",
+          "_TZ1800_fcdjzz3s",
+          "_TZ2000_a476raq2",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_cehuw1lw",
+          "_TZ3000_cphmq0q7",
+          "_TZ3000_dbou1ap4",
+          "_TZ3000_fvh3pjaz",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_ji4araar",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_odygigth",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_tk3s5tyg",
+          "_TZ3000_uim07oem",
+          "_TZ3000_vp6clf9d",
+          "_TZ3000_xabckq1v",
+          "_TZE200_81isopgh",
+          "_TZE200_m9skfctm",
+          "_TZE200_wfxuhoea"
+        ],
+        "productId": [
+          "TS0001",
+          "TS0201",
+          "TS0202",
+          "TS0203",
+          "TS0205",
+          "TS0207",
+          "TS0222",
+          "TS0225",
+          "TS0601",
+          "TS130F",
+          "TS0204",
+          "TS020C",
+          "TS0224",
+          "TS0901",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0006",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS1111",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/mini_switch/assets/large.png",
+          "instruction": {
+            "en": "Follow the pairing instructions for your Mini Switch."
+          }
+        }
+      },
+      "settings": [],
+      "capabilitiesOptions": {},
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      }
+    },
+    {
+      "id": "motion_sensor_mmwave",
+      "name": {
+        "en": "Motion Sensor Mmwave"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery",
+        "measure_luminance"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS0201",
+          "TS0202",
+          "TS0203",
+          "TS0205",
+          "TS0601",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_fllyghyj",
+          "_TZ3000_kmh5qpmb",
+          "_TZ3000_mcxw5ehu",
+          "_TZ3000_mmtwjmaq",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_tk3s5tyg",
+          "_TZE200_81isopgh",
+          "_TZE200_bjawzodf",
+          "_TZE200_cwbvmsar",
+          "_TZE200_dwcarsat",
+          "_TZE200_m9skfctm",
+          "_TZE200_ryfmq5rl"
+        ],
+        "productId": [
+          "TS0202",
+          "TS0001",
+          "TS0201",
+          "TS0203",
+          "TS0205",
+          "TS0207",
+          "TS0222",
+          "TS0225",
+          "TS0601",
+          "TS130F",
+          "TS0204",
+          "TS020C",
+          "TS0224",
+          "TS0901",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0006",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS1111"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              1024,
+              1030,
+              1280,
+              61184
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        }
+      },
+      "settings": [],
+      "capabilitiesOptions": {},
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
+    },
+    {
+      "id": "motion_sensor_pir_ac",
+      "name": {
+        "en": "Motion Sensor PIR AC"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_luminance",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "productId": [
+          "TS0202",
+          "TS0001",
+          "TS0201",
+          "TS0203",
+          "TS0205",
+          "TS0207",
+          "TS0222",
+          "TS0225",
+          "TS0601",
+          "TS130F",
+          "TS0204",
+          "TS020C",
+          "TS0224",
+          "TS0901",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0006",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS1111"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              1024,
+              1030,
+              1280,
+              61184
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/motion_sensor_pir_ac/assets/large.png",
+          "instruction": {
+            "en": "Turn the switch on/off 3 times quickly"
+          }
+        },
+        "manufacturerName": [
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS0201",
+          "TS0202",
+          "TS0203",
+          "TS0205",
+          "TS0601",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_fllyghyj",
+          "_TZ3000_kmh5qpmb",
+          "_TZ3000_mcxw5ehu",
+          "_TZ3000_mmtwjmaq",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_tk3s5tyg",
+          "_TZE200_81isopgh",
+          "_TZE200_bjawzodf",
+          "_TZE200_cwbvmsar",
+          "_TZE200_dwcarsat",
+          "_TZE200_m9skfctm",
+          "_TZE200_ryfmq5rl"
+        ]
+      },
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "settings": [
+        {
+          "id": "motion_sensitivity",
+          "type": "dropdown",
+          "label": {
+            "en": "Motion Sensitivity"
+          },
+          "value": "medium",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High"
+              }
+            }
+          ]
+        }
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "capabilitiesOptions": {},
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
+    },
+    {
+      "id": "motion_sensor_zigbee_204z",
+      "name": {
+        "en": "PIR Motion Sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery",
+        "measure_luminance"
+      ],
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Motion"
+          }
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS0201",
+          "TS0202",
+          "TS0203",
+          "TS0205",
+          "TS0601",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_fllyghyj",
+          "_TZ3000_kmh5qpmb",
+          "_TZ3000_mcxw5ehu",
+          "_TZ3000_mmtwjmaq",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_tk3s5tyg",
+          "_TZE200_81isopgh",
+          "_TZE200_bjawzodf",
+          "_TZE200_cwbvmsar",
+          "_TZE200_dwcarsat",
+          "_TZE200_m9skfctm",
+          "_TZE200_ryfmq5rl"
+        ],
+        "productId": [
+          "TS0202",
+          "TS0601",
+          "TS0001",
+          "TS0201",
+          "TS0203",
+          "TS0205",
+          "TS0207",
+          "TS0222",
+          "TS0225",
+          "TS130F",
+          "TS0204",
+          "TS020C",
+          "TS0224",
+          "TS0901",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0006",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS1111"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              1024,
+              1030,
+              1280,
+              61184
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/motion_sensor_zigbee_204z/assets/large.png",
+          "instruction": {
+            "en": "Press the pairing button until LED blinks rapidly"
+          }
+        }
+      },
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
+    },
+    {
+      "id": "power_meter_socket",
+      "name": {
+        "en": "power meter socket"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS0203",
+          "TS0205",
+          "TS0502",
+          "TS0502B",
+          "TS0505",
+          "TS0505B",
+          "TS0601",
+          "TS130F",
+          "_TZ1800_ejwkn2h2",
+          "_TZ1800_fcdjzz3s",
+          "_TZ2000_a476raq2",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_cehuw1lw",
+          "_TZ3000_cphmq0q7",
+          "_TZ3000_dbou1ap4",
+          "_TZ3000_fvh3pjaz",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_ji4araar",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_odygigth",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_tk3s5tyg",
+          "_TZ3000_uim07oem",
+          "_TZ3000_vp6clf9d",
+          "_TZ3000_xabckq1v",
+          "_TZE200_81isopgh",
+          "_TZE200_m9skfctm",
+          "_TZE200_wfxuhoea"
+        ],
+        "productId": [
+          "TS0001",
+          "TS0201",
+          "TS0202",
+          "TS0203",
+          "TS0204",
+          "TS0205",
+          "TS0207",
+          "TS020C",
+          "TS0222",
+          "TS0224",
+          "TS0225",
+          "TS0601",
+          "TS0901",
+          "TS130F",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0006",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS1111",
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              1794,
+              2820
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        }
+      },
+      "capabilitiesOptions": {
+        "measure_power": {
+          "title": {
+            "en": "Power"
+          },
+          "units": {
+            "en": "W"
+          },
+          "decimals": 1
+        },
+        "measure_voltage": {
+          "title": {
+            "en": "Voltage"
+          },
+          "units": {
+            "en": "V"
+          },
+          "decimals": 1
+        },
+        "measure_current": {
+          "title": {
+            "en": "Current"
+          },
+          "units": {
+            "en": "A"
+          },
+          "decimals": 2
+        }
+      },
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "platforms": [
+        "local"
+      ]
+    },
+    {
+      "id": "radar_motion_sensor_advanced",
+      "name": {
+        "en": "Radar Motion Sensor Advanced"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_luminance",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS0201",
+          "TS0202",
+          "TS0203",
+          "TS0205",
+          "TS0601",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_fllyghyj",
+          "_TZ3000_kmh5qpmb",
+          "_TZ3000_mcxw5ehu",
+          "_TZ3000_mmtwjmaq",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_tk3s5tyg",
+          "_TZE200_81isopgh",
+          "_TZE200_bjawzodf",
+          "_TZE200_cwbvmsar",
+          "_TZE200_dwcarsat",
+          "_TZE200_m9skfctm",
+          "_TZE200_ryfmq5rl"
+        ],
+        "productId": [
+          "TS0202",
+          "TS0001",
+          "TS0201",
+          "TS0203",
+          "TS0205",
+          "TS0207",
+          "TS0222",
+          "TS0225",
+          "TS0601",
+          "TS130F",
+          "TS0204",
+          "TS020C",
+          "TS0224",
+          "TS0901",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0006",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS1111"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              1024,
+              1030,
+              1280,
+              61184
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "capabilitiesOptions": {},
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
+    },
+    {
+      "id": "radar_motion_sensor_mmwave",
+      "name": {
+        "en": "mmWave Radar Motion Sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery",
+        "measure_luminance",
+        "alarm_generic"
+      ],
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Motion (Radar)"
+          }
+        },
+        "alarm_generic": {
+          "title": {
+            "en": "Presence Detection"
+          }
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS0201",
+          "TS0202",
+          "TS0203",
+          "TS0205",
+          "TS0601",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_fllyghyj",
+          "_TZ3000_kmh5qpmb",
+          "_TZ3000_mcxw5ehu",
+          "_TZ3000_mmtwjmaq",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_tk3s5tyg",
+          "_TZE200_81isopgh",
+          "_TZE200_bjawzodf",
+          "_TZE200_cwbvmsar",
+          "_TZE200_dwcarsat",
+          "_TZE200_m9skfctm",
+          "_TZE200_ryfmq5rl",
+          "_TZE200_wfxuhoea"
+        ],
+        "productId": [
+          "TS0202",
+          "TS0001",
+          "TS0201",
+          "TS0203",
+          "TS0205",
+          "TS0207",
+          "TS0222",
+          "TS0225",
+          "TS0601",
+          "TS130F",
+          "TS0204",
+          "TS020C",
+          "TS0224",
+          "TS0901",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0006",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS1111"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              1024,
+              1030,
+              1280,
+              61184
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/radar_motion_sensor_mmwave/assets/large.png",
+          "instruction": {
+            "en": "Press and hold pairing button for 5 seconds until LED blinks rapidly"
+          }
+        }
+      },
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
+    },
+    {
+      "id": "radar_motion_sensor_tank_level",
+      "name": {
+        "en": "Radar Motion Sensor Pro"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_luminance",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS0201",
+          "TS0202",
+          "TS0203",
+          "TS0205",
+          "TS0601",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_fllyghyj",
+          "_TZ3000_kmh5qpmb",
+          "_TZ3000_mcxw5ehu",
+          "_TZ3000_mmtwjmaq",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_tk3s5tyg",
+          "_TZE200_81isopgh",
+          "_TZE200_bjawzodf",
+          "_TZE200_cwbvmsar",
+          "_TZE200_dwcarsat",
+          "_TZE200_m9skfctm",
+          "_TZE200_ryfmq5rl"
+        ],
+        "productId": [
+          "TS0202",
+          "TS0001",
+          "TS0201",
+          "TS0203",
+          "TS0205",
+          "TS0207",
+          "TS0222",
+          "TS0225",
+          "TS0601",
+          "TS130F",
+          "TS0204",
+          "TS020C",
+          "TS0224",
+          "TS0901",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0006",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS1111"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              1024,
+              1030,
+              1280,
+              61184
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "capabilitiesOptions": {},
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032"
+        ]
+      }
+    },
+    {
+      "id": "remote_switch",
+      "name": {
+        "en": "Remote Switch"
+      },
+      "class": "button",
+      "capabilities": [
+        "onoff",
+        "measure_battery",
+        "dim"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS0203",
+          "TS0205",
+          "TS0502",
+          "TS0502B",
+          "TS0505",
+          "TS0505B",
+          "TS0601",
+          "TS130F",
+          "_TZ1800_ejwkn2h2",
+          "_TZ1800_fcdjzz3s",
+          "_TZ2000_a476raq2",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_cehuw1lw",
+          "_TZ3000_cphmq0q7",
+          "_TZ3000_dbou1ap4",
+          "_TZ3000_fvh3pjaz",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_ji4araar",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_odygigth",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_tk3s5tyg",
+          "_TZ3000_uim07oem",
+          "_TZ3000_vp6clf9d",
+          "_TZ3000_xabckq1v",
+          "_TZE200_81isopgh",
+          "_TZE200_m9skfctm",
+          "_TZE200_wfxuhoea"
+        ],
+        "productId": [
+          "TS0001",
+          "TS0101",
+          "TS0111",
+          "TS0115",
+          "TS011F",
+          "TS0105",
+          "TS0108",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0006",
+          "TS000F",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0601",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS130F",
+          "TS1111",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/remote_switch/assets/large.png",
+          "instruction": {
+            "en": "Follow the pairing instructions for your Remote Switch."
+          }
+        }
+      },
+      "settings": [],
+      "capabilitiesOptions": {},
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
+    },
+    {
+      "id": "roller_shutter_switch_advanced",
+      "name": {
+        "en": "Roller Shutter Switch Advanced"
+      },
+      "class": "other",
+      "capabilities": [
+        "windowcoverings_closed",
+        "windowcoverings_set",
+        "button.up",
+        "button.down",
+        "button.stop",
+        "measure_power",
+        "onoff",
+        "dim",
+        "windowcoverings_tilt_set",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS011F",
+          "TS0121",
+          "TS0205",
+          "TS0502B",
+          "TS0505",
+          "TS0505B",
+          "TS130F",
+          "_TZ1800_ejwkn2h2",
+          "_TZ1800_fcdjzz3s",
+          "_TZ2000_a476raq2",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_cehuw1lw",
+          "_TZ3000_cphmq0q7",
+          "_TZ3000_dbou1ap4",
+          "_TZ3000_fvh3pjaz",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_ji4araar",
+          "_TZ3000_odygigth",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_uim07oem",
+          "_TZE200_cowvfni3",
+          "_TZE200_fctwhugx",
+          "_TZE200_m9skfctm"
+        ],
+        "productId": [
+          "TS0001",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0501A",
+          "TS0502A",
+          "TS0502B",
+          "TS0503A",
+          "TS0503B",
+          "TS0504B",
+          "TS0505A",
+          "TS0505B",
+          "TS0601",
+          "TS110E",
+          "TS110F",
+          "TS0501B",
+          "TS0504A",
+          "TS0505",
+          "TS1101",
+          "TS0006",
+          "TS000F",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS130F",
+          "TS1111",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              258
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "capabilitiesOptions": {
+        "windowcoverings_set": {
+          "title": {
+            "en": "Position"
+          },
+          "units": {
+            "en": "%"
+          }
+        },
+        "windowcoverings_tilt_set": {
+          "title": {
+            "en": "Tilt"
+          },
+          "units": {
+            "en": "%"
+          }
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
+    },
+    {
+      "id": "roller_shutter_switch",
+      "name": {
+        "en": "Roller Shutter Switch"
+      },
+      "class": "other",
+      "capabilities": [
+        "windowcoverings_closed",
+        "windowcoverings_set",
+        "button.up",
+        "button.down",
+        "button.stop",
+        "onoff",
+        "dim",
+        "windowcoverings_tilt_set",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS011F",
+          "TS0121",
+          "TS0205",
+          "TS0502B",
+          "TS0505",
+          "TS0505B",
+          "TS130F",
+          "_TZ1800_ejwkn2h2",
+          "_TZ1800_fcdjzz3s",
+          "_TZ2000_a476raq2",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_cehuw1lw",
+          "_TZ3000_cphmq0q7",
+          "_TZ3000_dbou1ap4",
+          "_TZ3000_fvh3pjaz",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_ji4araar",
+          "_TZ3000_odygigth",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_uim07oem",
+          "_TZE200_cowvfni3",
+          "_TZE200_fctwhugx",
+          "_TZE200_m9skfctm"
+        ],
+        "productId": [
+          "TS0001",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0501A",
+          "TS0502A",
+          "TS0502B",
+          "TS0503A",
+          "TS0503B",
+          "TS0504B",
+          "TS0505A",
+          "TS0505B",
+          "TS0601",
+          "TS110E",
+          "TS110F",
+          "TS0501B",
+          "TS0504A",
+          "TS0505",
+          "TS1101",
+          "TS0006",
+          "TS000F",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS130F",
+          "TS1111",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              258
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "capabilitiesOptions": {
+        "windowcoverings_set": {
+          "title": {
+            "en": "Position"
+          },
+          "units": {
+            "en": "%"
+          }
+        },
+        "windowcoverings_tilt_set": {
+          "title": {
+            "en": "Tilt"
+          },
+          "units": {
+            "en": "%"
+          }
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      }
+    },
+    {
+      "id": "smart_plug",
+      "name": {
+        "en": "Smart Plug"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS0203",
+          "TS0205",
+          "TS0502",
+          "TS0502B",
+          "TS0505",
+          "TS0505B",
+          "TS0601",
+          "TS130F",
+          "_TZ1800_ejwkn2h2",
+          "_TZ1800_fcdjzz3s",
+          "_TZ2000_a476raq2",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_cehuw1lw",
+          "_TZ3000_cphmq0q7",
+          "_TZ3000_dbou1ap4",
+          "_TZ3000_fvh3pjaz",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_ji4araar",
+          "_TZ3000_kfu8zapd",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_odygigth",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_tk3s5tyg",
+          "_TZ3000_uim07oem",
+          "_TZ3000_vp6clf9d",
+          "_TZ3000_xabckq1v",
+          "_TZE200_81isopgh",
+          "_TZE200_m9skfctm",
+          "_TZE200_wfxuhoea"
+        ],
+        "productId": [
+          "TS011F",
+          "TS0001",
+          "TS0101",
+          "TS0105",
+          "TS0108",
+          "TS0111",
+          "TS0115",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0006",
+          "TS000F",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0601",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS130F",
+          "TS1111"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              1794,
+              2820
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        }
+      },
+      "images": {
+        "large": "./assets/large.png",
+        "small": "./assets/small.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "capabilitiesOptions": {
+        "measure_power": {
+          "title": {
+            "en": "Power"
+          },
+          "units": {
+            "en": "W"
+          },
+          "decimals": 1
+        },
+        "measure_voltage": {
+          "title": {
+            "en": "Voltage"
+          },
+          "units": {
+            "en": "V"
+          },
+          "decimals": 1
+        },
+        "measure_current": {
+          "title": {
+            "en": "Current"
+          },
+          "units": {
+            "en": "A"
+          },
+          "decimals": 2
+        }
+      }
+    },
+    {
+      "id": "smart_plug_energy",
+      "name": {
+        "en": "smart plug energy"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS0203",
+          "TS0205",
+          "TS0502",
+          "TS0502B",
+          "TS0505",
+          "TS0505B",
+          "TS0601",
+          "TS130F",
+          "_TZ1800_ejwkn2h2",
+          "_TZ1800_fcdjzz3s",
+          "_TZ2000_a476raq2",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_cehuw1lw",
+          "_TZ3000_cphmq0q7",
+          "_TZ3000_dbou1ap4",
+          "_TZ3000_fvh3pjaz",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_ji4araar",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_odygigth",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_tk3s5tyg",
+          "_TZ3000_uim07oem",
+          "_TZ3000_vp6clf9d",
+          "_TZ3000_ww6drja5",
+          "_TZ3000_xabckq1v",
+          "_TZ3210_alxkwn0h",
+          "_TZE200_81isopgh",
+          "_TZE200_m9skfctm",
+          "_TZE200_wfxuhoea",
+          "_TZE204_5cuocqty",
+          "_TZE204_ahwvlkpy",
+          "_TZE204_bjzrowv2",
+          "_TZE204_dapwryy7",
+          "_TZE204_dcnsggvz",
+          "_TZE204_lawxy9e2",
+          "_TZE204_ltwbm23f",
+          "_TZE204_nklqjk62",
+          "_TZE204_xu4a5rhj"
+        ],
+        "productId": [
+          "TS0001",
+          "TS0201",
+          "TS0202",
+          "TS0203",
+          "TS0204",
+          "TS0205",
+          "TS0207",
+          "TS020C",
+          "TS0222",
+          "TS0224",
+          "TS0225",
+          "TS0601",
+          "TS0901",
+          "TS130F",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0006",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS1111",
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              1794,
+              2820
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        }
+      },
+      "capabilitiesOptions": {
+        "measure_power": {
+          "title": {
+            "en": "Power"
+          },
+          "units": {
+            "en": "W"
+          },
+          "decimals": 1
+        },
+        "measure_voltage": {
+          "title": {
+            "en": "Voltage"
+          },
+          "units": {
+            "en": "V"
+          },
+          "decimals": 1
+        },
+        "measure_current": {
+          "title": {
+            "en": "Current"
+          },
+          "units": {
+            "en": "A"
+          },
+          "decimals": 2
+        }
+      },
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "platforms": [
+        "local"
+      ]
+    },
+    {
+      "id": "wireless_switch",
+      "name": {
+        "en": "Wireless Switch"
+      },
+      "class": "button",
+      "capabilities": [
+        "onoff",
+        "measure_battery",
+        "dim"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "images": {
+        "small": "./assets/small.png",
+        "large": "./assets/large.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "TS0001",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS004F",
+          "TS011F",
+          "TS0121",
+          "TS0203",
+          "TS0205",
+          "TS0502",
+          "TS0502B",
+          "TS0505",
+          "TS0505B",
+          "TS0601",
+          "_TZ1800_ejwkn2h2",
+          "_TZ1800_fcdjzz3s",
+          "_TZ2000_a476raq2",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TZ3000_01gpyda5",
+          "_TZ3000_0dumfk2z",
+          "_TZ3000_0ghwhypc",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_0s1izerx",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_cehuw1lw",
+          "_TZ3000_cphmq0q7",
+          "_TZ3000_dbou1ap4",
+          "_TZ3000_fvh3pjaz",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_ji4araar",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_odygigth",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_tk3s5tyg",
+          "_TZ3000_uim07oem",
+          "_TZ3000_vp6clf9d",
+          "_TZ3000_xabckq1v",
+          "_TZE200_81isopgh",
+          "_TZE200_m9skfctm",
+          "_TZE200_wfxuhoea"
+        ],
+        "productId": [
+          "TS0001",
+          "TS0101",
+          "TS0111",
+          "TS0115",
+          "TS011F",
+          "TS0105",
+          "TS0108",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0006",
+          "TS000F",
+          "TS0021",
+          "TS0026",
+          "TS0052",
+          "TS0121",
+          "TS0601",
+          "TS0603",
+          "TS0726",
+          "TS1002",
+          "TS1201",
+          "TS130F",
+          "TS1111",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              1
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/wireless_switch/assets/large.png",
+          "instruction": {
+            "en": "Follow the pairing instructions for your Wireless Switch."
+          }
+        }
+      },
+      "settings": [],
+      "capabilitiesOptions": {},
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
     },
     {
       "id": "energy_monitoring_plug",
