@@ -119,5 +119,61 @@
       "CR2032"
     ]
   },
-  "id": "smoke_detector_temp_humidity_advanced_battery"
+  "id": "smoke_detector_temp_humidity_advanced_battery",
+  "settings": [
+    {
+      "type": "dropdown",
+      "id": "dp_20_smoke_sensitivity",
+      "label": {
+        "en": "smoke sensitivity"
+      },
+      "value": "0",
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "low"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "medium"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "high"
+          }
+        }
+      ]
+    },
+    {
+      "type": "number",
+      "id": "dp_13_comfort_temperature",
+      "label": {
+        "en": "comfort temperature"
+      },
+      "value": 0
+    },
+    {
+      "type": "number",
+      "id": "dp_14_eco_temperature",
+      "label": {
+        "en": "eco temperature"
+      },
+      "value": 0
+    },
+    {
+      "type": "number",
+      "id": "dp_19_temperature_calibration",
+      "label": {
+        "en": "temperature calibration"
+      },
+      "value": -9,
+      "min": -9,
+      "max": 9
+    }
+  ]
 }
