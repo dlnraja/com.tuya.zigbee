@@ -52,41 +52,41 @@ class DriverIconGenerator {
             default: { primary: '#1E88E5', secondary: '#64B5F6', icon: '#0D47A1' }
         };
         
-        // Device type icons - will be DRAWN, not emojis
-        this.deviceTypes = {
-            'switch': 'switch',
-            'dimmer': 'dimmer',
-            'relay': 'switch',
-            'motion': 'motion',
-            'door': 'contact',
-            'window': 'contact',
-            'contact': 'contact',
-            'leak': 'leak',
-            'smoke': 'smoke',
-            'gas': 'smoke',
-            'co2': 'air',
-            'temperature': 'temperature',
-            'temp': 'temperature',
-            'humidity': 'humidity',
-            'thermostat': 'temperature',
-            'climate': 'temperature',
-            'light': 'light',
-            'bulb': 'light',
-            'rgb': 'light',
-            'ceiling': 'light',
-            'alarm': 'alarm',
-            'siren': 'alarm',
-            'lock': 'lock',
-            'plug': 'plug',
-            'socket': 'plug',
-            'outlet': 'plug',
-            'valve': 'valve',
-            'pump': 'valve',
-            'fan': 'fan',
-            'curtain': 'curtain',
-            'blind': 'curtain',
-            'garage': 'garage',
-            'default': 'switch'
+        // Device icons - APPROPRIATE emojis/symbols
+        this.deviceIcons = {
+            'switch': '⏻',      // Power button (switch)
+            'dimmer': '🎚️',     // Slider (dimmer)
+            'relay': '⏻',      // Power button
+            'motion': '👁️',     // Eye (motion sensor)
+            'door': '🚪',       // Door
+            'window': '🪟',     // Window
+            'contact': '🚪',    // Door sensor
+            'leak': '💧',       // Water drop
+            'smoke': '🔥',      // Fire (smoke)
+            'gas': '⚠️',        // Warning (gas)
+            'co2': '🌫️',       // Fog (CO2)
+            'temperature': '🌡️', // Thermometer
+            'temp': '🌡️',
+            'humidity': '💨',   // Wind (humidity)
+            'thermostat': '🌡️',
+            'climate': '🌡️',
+            'light': '💡',      // Bulb (light)
+            'bulb': '💡',
+            'rgb': '🌈',        // Rainbow (RGB)
+            'ceiling': '💡',
+            'alarm': '🚨',      // Siren
+            'siren': '📢',      // Speaker
+            'lock': '🔒',       // Lock
+            'plug': '🔌',       // Plug
+            'socket': '🔌',
+            'outlet': '🔌',
+            'valve': '🚰',      // Tap
+            'pump': '⚙️',       // Gear
+            'fan': '🌀',        // Spiral (fan)
+            'curtain': '📜',    // Scroll (curtain)
+            'blind': '📜',
+            'garage': '🚗',     // Car (garage)
+            'default': '⏻'     // Power button
         };
         
         // Power source icons
@@ -124,15 +124,15 @@ class DriverIconGenerator {
         return 'default';
     }
 
-    // Detect device type for drawing
-    detectDeviceType(driverName) {
+    // Detect device icon
+    detectDeviceIcon(driverName) {
         const name = driverName.toLowerCase();
         
-        for (const [key, type] of Object.entries(this.deviceTypes)) {
-            if (name.includes(key)) return type;
+        for (const [key, icon] of Object.entries(this.deviceIcons)) {
+            if (name.includes(key)) return icon;
         }
         
-        return this.deviceTypes.default;
+        return this.deviceIcons.default;
     }
 
     // Detect power source
@@ -205,7 +205,7 @@ class DriverIconGenerator {
         // Detect characteristics
         const category = this.detectCategory(driverName);
         const colors = this.colors[category] || this.colors.default;
-        const deviceType = this.detectDeviceType(driverName);
+        const deviceIcon = this.detectDeviceIcon(driverName);
         const powerSource = this.detectPowerSource(driverName);
         const gangs = this.detectGangs(driverName);
         
@@ -240,23 +240,24 @@ class DriverIconGenerator {
             ctx.fillText(deviceIcon, size / 2, size * 0.42);
         }
         
-        // Power source badge (top right)
-        const powerIconSize = size * 0.2;
+        // Power source badge (BOTTOM RIGHT - small and discrete)
+        const powerIconSize = size * 0.12;
         const powerIcon = this.powerIcons[powerSource];
         ctx.font = `${powerIconSize}px Arial`;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         
-        // Power badge background (circle)
-        const powerBadgeX = size * 0.8;
-        const powerBadgeY = size * 0.2;
-        const badgeRadius = size * 0.15;
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+        // Power badge background (small circle)
+        const powerBadgeX = size * 0.88;
+        const powerBadgeY = size * 0.7;  // Higher up to avoid text badge
+        const badgeRadius = size * 0.1;
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
         ctx.beginPath();
         ctx.arc(powerBadgeX, powerBadgeY, badgeRadius, 0, Math.PI * 2);
         ctx.fill();
         
-        ctx.fillStyle = 'white';
+        // Power icon (colored)
+        ctx.fillStyle = colors.icon;
         ctx.fillText(powerIcon, powerBadgeX, powerBadgeY);
         
         // Device type text badge (bottom)
@@ -273,8 +274,8 @@ class DriverIconGenerator {
         const textMetrics = ctx.measureText(deviceText);
         const badgeWidth = textMetrics.width + (badgePadding * 2);
         
-        // Badge background (rounded rectangle)
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+        // Badge background (WHITE rounded rectangle like old style)
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
         this.roundRect(ctx, 
             (size - badgeWidth) / 2, 
             textBadgeY - badgeHeight / 2, 
@@ -284,18 +285,18 @@ class DriverIconGenerator {
         );
         ctx.fill();
         
-        // White underline
+        // Dark underline
         const underlineY = textBadgeY + textSize * 0.25;
         const underlineWidth = textMetrics.width * 0.9;
-        ctx.strokeStyle = 'white';
-        ctx.lineWidth = size * 0.005;
+        ctx.strokeStyle = colors.icon;
+        ctx.lineWidth = size * 0.008;
         ctx.beginPath();
         ctx.moveTo((size - underlineWidth) / 2, underlineY);
         ctx.lineTo((size + underlineWidth) / 2, underlineY);
         ctx.stroke();
         
-        // Device type text (white)
-        ctx.fillStyle = 'white';
+        // Device type text (BLACK/DARK)
+        ctx.fillStyle = colors.icon;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText(deviceText, size / 2, textBadgeY);
