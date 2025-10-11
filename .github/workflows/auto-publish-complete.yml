@@ -1,0 +1,230 @@
+name: Auto-Publish Complete Pipeline
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - 'reports/**'
+      - 'project-data/**'
+      - 'github-analysis/**'
+  workflow_dispatch:
+    inputs:
+      skip_publish:
+        description: 'Skip auto-publish (validation only)'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
+
+jobs:
+  pre-checks:
+    name: Pre-Flight Checks
+    runs-on: ubuntu-latest
+    outputs:
+      should_publish: ${{ steps.check.outputs.should_publish }}
+      
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Install Dependencies
+        run: |
+          echo "📦 Installing dependencies..."
+          npm install --save-dev homey canvas
+          npm ci --ignore-scripts 2>/dev/null || npm install --ignore-scripts
+      
+      - name: Check JSON Syntax
+        run: |
+          echo "🔍 Checking JSON files..."
+          for file in $(find . -name "*.json" -not -path "./node_modules/*" -not -path "./.homeybuild/*"); do
+            echo "Validating: $file"
+            jq empty "$file" || { echo "❌ Invalid JSON: $file"; exit 1; }
+          done
+          echo "✅ All JSON files valid"
+      
+      - name: Check Driver Structure
+        run: |
+          echo "🔍 Checking driver structure..."
+          DRIVERS_COUNT=$(find drivers -maxdepth 1 -mindepth 1 -type d 2>/dev/null | wc -l)
+          echo "Found $DRIVERS_COUNT drivers"
+          
+          if [ $DRIVERS_COUNT -eq 0 ]; then
+            echo "❌ No drivers found"
+            exit 1
+          fi
+          
+          echo "✅ Driver structure OK ($DRIVERS_COUNT drivers)"
+      
+      - name: Check Commit Message
+        id: check
+        run: |
+          COMMIT_MSG=$(git log -1 --pretty=format:"%s")
+          echo "Commit message: $COMMIT_MSG"
+          
+          # Skip publish if commit contains [skip ci], [skip publish] or starts with docs:
+          if echo "$COMMIT_MSG" | grep -iE "\[skip (ci|publish)\]|^docs:|^doc:"; then
+            echo "should_publish=false" >> $GITHUB_OUTPUT
+            echo "⏭️ Skipping publish based on commit message"
+          elif [ "${{ github.event.inputs.skip_publish }}" = "true" ]; then
+            echo "should_publish=false" >> $GITHUB_OUTPUT
+            echo "⏭️ Skipping publish (manual input)"
+          else
+            echo "should_publish=true" >> $GITHUB_OUTPUT
+            echo "✅ Will publish"
+          fi
+
+  validate:
+    name: Validate Homey App
+    needs: pre-checks
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: Validate App (Official Athom Action)
+        uses: athombv/github-action-homey-app-validate@master
+        with:
+          level: publish
+      
+      - name: Validation Success
+        run: |
+          echo "## ✅ Validation Successful" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "App validated at **publish** level" >> $GITHUB_STEP_SUMMARY
+
+  auto-publish:
+    name: Auto-Publish to Homey App Store
+    needs: [pre-checks, validate]
+    if: needs.pre-checks.outputs.should_publish == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Generate Smart Changelog
+        id: changelog
+        run: |
+          LAST_COMMIT=$(git log -1 --pretty=format:"%s")
+          echo "Last commit: $LAST_COMMIT"
+          
+          # Detect version type and generate changelog
+          if echo "$LAST_COMMIT" | grep -iE "^feat|feature|^add"; then
+            VERSION_TYPE="minor"
+            CHANGELOG="New features and device support added"
+          elif echo "$LAST_COMMIT" | grep -iE "^fix|bug|^patch"; then
+            VERSION_TYPE="patch"
+            CHANGELOG="Bug fixes and stability improvements"
+          elif echo "$LAST_COMMIT" | grep -iE "^break|^major|breaking"; then
+            VERSION_TYPE="major"
+            CHANGELOG="Major update with breaking changes"
+          elif echo "$LAST_COMMIT" | grep -iE "device|manufacturer|driver"; then
+            VERSION_TYPE="patch"
+            CHANGELOG="Enhanced device compatibility and manufacturer support"
+          elif echo "$LAST_COMMIT" | grep -iE "forum|community|issue"; then
+            VERSION_TYPE="patch"
+            CHANGELOG="Community-reported issues fixed"
+          else
+            VERSION_TYPE="patch"
+            CHANGELOG="Performance and stability improvements"
+          fi
+          
+          # Sanitize (Homey max 400 chars)
+          CHANGELOG=$(echo "$CHANGELOG" | tr -d '\r\n' | head -c 400)
+          
+          echo "version_type=$VERSION_TYPE" >> $GITHUB_OUTPUT
+          echo "changelog=$CHANGELOG" >> $GITHUB_OUTPUT
+          echo "📝 Version: $VERSION_TYPE"
+          echo "📝 Changelog: $CHANGELOG"
+      
+      - name: Update App Version (Official Athom Action)
+        uses: athombv/github-action-homey-app-version@master
+        id: version
+        with:
+          version: ${{ steps.changelog.outputs.version_type }}
+          changelog: ${{ steps.changelog.outputs.changelog }}
+      
+      - name: Commit Version Changes
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          if [ -n "$(git status --porcelain)" ]; then
+            git add app.json .homeychangelog.json
+            git commit -m "chore: bump version to v${{ steps.version.outputs.version }} [skip ci]"
+            git push
+            echo "✅ Version v${{ steps.version.outputs.version }} committed and pushed"
+          else
+            echo "ℹ️ No version changes to commit"
+          fi
+      
+      - name: Wait for Git Sync
+        run: |
+          echo "⏳ Waiting 5 seconds for git to sync..."
+          sleep 5
+      
+      - name: Publish to Homey App Store (Official Athom Action)
+        uses: athombv/github-action-homey-app-publish@master
+        id: publish
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+      
+      - name: Publication Summary
+        run: |
+          echo "## 🎉 Auto-Publication Successful!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** v${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Type:** ${{ steps.changelog.outputs.version_type }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Changelog:** ${{ steps.changelog.outputs.changelog }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📋 Next Steps" >> $GITHUB_STEP_SUMMARY
+          echo "1. Go to [Developer Dashboard](https://tools.developer.homey.app)" >> $GITHUB_STEP_SUMMARY
+          echo "2. Find **Universal Tuya Zigbee v${{ steps.version.outputs.version }}**" >> $GITHUB_STEP_SUMMARY
+          echo "3. **Promote to Test** or submit for certification" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🔗 Useful Links" >> $GITHUB_STEP_SUMMARY
+          echo "- [Dashboard](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee)" >> $GITHUB_STEP_SUMMARY
+          echo "- [Test URL](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)" >> $GITHUB_STEP_SUMMARY
+          echo "- [Live URL](https://homey.app/a/com.dlnraja.tuya.zigbee/)" >> $GITHUB_STEP_SUMMARY
+
+  notify:
+    name: Build Summary
+    needs: [pre-checks, validate, auto-publish]
+    runs-on: ubuntu-latest
+    if: always()
+    
+    steps:
+      - name: Summary
+        run: |
+          echo "## 📊 Pipeline Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Pre-checks:** ${{ needs.pre-checks.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Validation:** ${{ needs.validate.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Publication:** ${{ needs.auto-publish.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ needs.auto-publish.result }}" = "success" ]; then
+            echo "✅ **Auto-publish completed successfully**" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.auto-publish.result }}" = "skipped" ]; then
+            echo "⏭️ **Auto-publish skipped** (validation only)" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ **Pipeline failed** - Check logs above" >> $GITHUB_STEP_SUMMARY
+          fi
