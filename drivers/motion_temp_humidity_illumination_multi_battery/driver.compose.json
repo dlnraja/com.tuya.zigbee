@@ -69,8 +69,8 @@
     }
   },
   "images": {
-    "small": "./drivers/motion_temp_humidity_illumination_multi_battery/assets/small.png",
-    "large": "./drivers/motion_temp_humidity_illumination_multi_battery/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "platforms": [
     "local"

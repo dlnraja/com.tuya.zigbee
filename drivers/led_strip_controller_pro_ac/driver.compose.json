@@ -113,8 +113,8 @@
     }
   },
   "images": {
-    "small": "./drivers/led_strip_controller_pro_ac/assets/small.png",
-    "large": "./drivers/led_strip_controller_pro_ac/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "platforms": [
     "local"

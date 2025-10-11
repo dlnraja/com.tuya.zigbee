@@ -114,8 +114,8 @@
     }
   },
   "images": {
-    "small": "./drivers/smart_bulb_dimmer_ac/assets/small.png",
-    "large": "./drivers/smart_bulb_dimmer_ac/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "platforms": [
     "local"

@@ -15,8 +15,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "./drivers/pet_feeder_cr2032/assets/small.png",
-    "large": "./drivers/pet_feeder_cr2032/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "zigbee": {
     "manufacturerName": [

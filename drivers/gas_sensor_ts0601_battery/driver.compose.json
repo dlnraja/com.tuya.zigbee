@@ -41,8 +41,8 @@
     }
   },
   "images": {
-    "small": "./drivers/gas_sensor_ts0601_battery/assets/small.png",
-    "large": "./drivers/gas_sensor_ts0601_battery/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "platforms": [
     "local"

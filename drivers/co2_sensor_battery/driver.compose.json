@@ -94,8 +94,8 @@
   },
   "capabilitiesOptions": {},
   "images": {
-    "small": "./drivers/co2_sensor_battery/assets/small.png",
-    "large": "./drivers/co2_sensor_battery/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "platforms": [
     "local"

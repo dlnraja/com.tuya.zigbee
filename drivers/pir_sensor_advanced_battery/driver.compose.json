@@ -90,8 +90,8 @@
     }
   },
   "images": {
-    "small": "./drivers/pir_sensor_advanced_battery/assets/small.png",
-    "large": "./drivers/pir_sensor_advanced_battery/assets/large.png"
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
   },
   "capabilitiesOptions": {},
   "platforms": [
