@@ -119,10 +119,15 @@
   "2.1.41": {
     "en": "Initial release supporting temperature, humidity, motion and contact sensors with full SDK3 compatibility."
   },
+<<<<<<< HEAD
   "2.1.40": {
     "en": "Initial bug fixes and improvements."
   },
   "2.1.39": {
     "en": "Performance and stability improvements."
+=======
+  "2.10.2": {
+    "en": "Bug fix: driver icons coherence - corrected all image paths."
+>>>>>>> b7a1d115d1a60f27a80b26b11d36b23b4195a98b
   }
 }
