@@ -103,5 +103,8 @@
       "AAA"
     ]
   },
-  "id": "tank_level_monitor_cr2032"
+  "id": "tank_level_monitor_cr2032",
+  "connectivity": [
+    "zigbee"
+  ]
 }

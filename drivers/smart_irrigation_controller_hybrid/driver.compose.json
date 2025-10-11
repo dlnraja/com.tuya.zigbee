@@ -120,5 +120,8 @@
       "INTERNAL"
     ]
   },
-  "id": "smart_irrigation_controller_hybrid"
+  "id": "smart_irrigation_controller_hybrid",
+  "connectivity": [
+    "zigbee"
+  ]
 }

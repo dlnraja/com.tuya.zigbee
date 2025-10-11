@@ -106,5 +106,8 @@
       "CR2032"
     ]
   },
-  "id": "co2_sensor_battery"
+  "id": "co2_sensor_battery",
+  "connectivity": [
+    "zigbee"
+  ]
 }

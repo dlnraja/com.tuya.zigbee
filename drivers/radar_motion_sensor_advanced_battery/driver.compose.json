@@ -103,5 +103,8 @@
       "CR2032"
     ]
   },
-  "id": "radar_motion_sensor_advanced"
+  "id": "radar_motion_sensor_advanced",
+  "connectivity": [
+    "zigbee"
+  ]
 }

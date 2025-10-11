@@ -122,5 +122,8 @@
   "platforms": [
     "local"
   ],
-  "id": "ceiling_light_controller_ac"
+  "id": "ceiling_light_controller_ac",
+  "connectivity": [
+    "zigbee"
+  ]
 }

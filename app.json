@@ -327,6 +327,9 @@
       "capabilitiesOptions": {},
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -487,6 +490,9 @@
       },
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -570,7 +576,10 @@
           "AAA",
           "CR2032"
         ]
-      }
+      },
+      "connectivity": [
+        "zigbee"
+      ]
     },
     {
       "id": "motion_sensor_pir_battery",
@@ -723,6 +732,9 @@
       },
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -965,6 +977,9 @@
       },
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -1240,6 +1255,9 @@
       },
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -1553,6 +1571,9 @@
       },
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -1997,7 +2018,10 @@
           "CR2032",
           "AAA"
         ]
-      }
+      },
+      "connectivity": [
+        "zigbee"
+      ]
     },
     {
       "id": "switch_2gang_ac",
@@ -2144,6 +2168,9 @@
       },
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -2291,6 +2318,9 @@
       },
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -2458,7 +2488,10 @@
         "batteries": [
           "CR2032"
         ]
-      }
+      },
+      "connectivity": [
+        "zigbee"
+      ]
     },
     {
       "id": "switch_4gang_ac",
@@ -2587,6 +2620,9 @@
       "capabilitiesOptions": {},
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -2720,7 +2756,10 @@
         "batteries": [
           "CR2032"
         ]
-      }
+      },
+      "connectivity": [
+        "zigbee"
+      ]
     },
     {
       "id": "switch_5gang_battery",
@@ -2855,7 +2894,10 @@
           "CR2032",
           "AAA"
         ]
-      }
+      },
+      "connectivity": [
+        "zigbee"
+      ]
     },
     {
       "id": "switch_6gang_ac",
@@ -2986,6 +3028,9 @@
       "capabilitiesOptions": {},
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -3119,6 +3164,9 @@
       "capabilitiesOptions": {},
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -5493,7 +5541,10 @@
         "batteries": [
           "CR2450"
         ]
-      }
+      },
+      "connectivity": [
+        "zigbee"
+      ]
     },
     {
       "id": "wireless_switch_5gang_cr2032",
@@ -5915,6 +5966,9 @@
       },
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -6012,7 +6066,10 @@
         "batteries": [
           "INTERNAL"
         ]
-      }
+      },
+      "connectivity": [
+        "zigbee"
+      ]
     },
     {
       "id": "ceiling_fan_ac",
@@ -6194,6 +6251,9 @@
       ],
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -6320,6 +6380,9 @@
       },
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -6425,6 +6488,9 @@
       },
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -6589,6 +6655,9 @@
           "min": -9,
           "max": 9
         }
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -6699,7 +6768,10 @@
           "AAA",
           "CR2032"
         ]
-      }
+      },
+      "connectivity": [
+        "zigbee"
+      ]
     },
     {
       "id": "co2_temp_humidity_cr2032",
@@ -6828,6 +6900,9 @@
           "min": -9,
           "max": 9
         }
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -6923,6 +6998,9 @@
       },
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -7029,7 +7107,10 @@
           "AAA",
           "CR2032"
         ]
-      }
+      },
+      "connectivity": [
+        "zigbee"
+      ]
     },
     {
       "id": "curtain_motor_ac",
@@ -7393,6 +7474,9 @@
       "capabilitiesOptions": {},
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -8393,7 +8477,10 @@
           "CR2032",
           "AAA"
         ]
-      }
+      },
+      "connectivity": [
+        "zigbee"
+      ]
     },
     {
       "id": "garage_door_opener_cr2032",
@@ -8829,7 +8916,10 @@
           "CR2032",
           "AAA"
         ]
-      }
+      },
+      "connectivity": [
+        "zigbee"
+      ]
     },
     {
       "id": "hvac_controller_ac",
@@ -9059,6 +9149,9 @@
       },
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -9189,6 +9282,9 @@
       },
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -9312,6 +9408,9 @@
       },
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -9572,6 +9671,9 @@
       "capabilitiesOptions": {},
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -9819,6 +9921,9 @@
           "min": -9,
           "max": 9
         }
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -10563,7 +10668,10 @@
           "AAA",
           "CR2032"
         ]
-      }
+      },
+      "connectivity": [
+        "zigbee"
+      ]
     },
     {
       "id": "pir_sensor_advanced_battery",
@@ -10670,7 +10778,10 @@
           "AAA",
           "CR2032"
         ]
-      }
+      },
+      "connectivity": [
+        "zigbee"
+      ]
     },
     {
       "id": "pm25_detector_battery",
@@ -10799,7 +10910,10 @@
         "batteries": [
           "CR2032"
         ]
-      }
+      },
+      "connectivity": [
+        "zigbee"
+      ]
     },
     {
       "id": "pm25_sensor_battery",
@@ -11051,6 +11165,9 @@
       "capabilitiesOptions": {},
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -11846,6 +11963,9 @@
       },
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -12102,7 +12222,10 @@
           "CR2032",
           "AAA"
         ]
-      }
+      },
+      "connectivity": [
+        "zigbee"
+      ]
     },
     {
       "id": "scene_controller_2button_cr2032",
@@ -12863,6 +12986,9 @@
       },
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -13529,6 +13655,9 @@
       },
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -13903,7 +14032,10 @@
         "batteries": [
           "INTERNAL"
         ]
-      }
+      },
+      "connectivity": [
+        "zigbee"
+      ]
     },
     {
       "id": "smart_lock_battery",
@@ -14149,6 +14281,9 @@
       },
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -14425,6 +14560,9 @@
             }
           ]
         }
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -14728,6 +14866,9 @@
           "min": -9,
           "max": 9
         }
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -14820,7 +14961,10 @@
         "batteries": [
           "AA"
         ]
-      }
+      },
+      "connectivity": [
+        "zigbee"
+      ]
     },
     {
       "id": "smart_water_valve_hybrid",
@@ -15529,6 +15673,9 @@
           "min": -9,
           "max": 9
         }
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -15824,6 +15971,9 @@
           "min": -9,
           "max": 9
         }
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -15972,6 +16122,9 @@
           "min": -9,
           "max": 9
         }
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -16089,7 +16242,10 @@
           "CR2032",
           "AAA"
         ]
-      }
+      },
+      "connectivity": [
+        "zigbee"
+      ]
     },
     {
       "id": "sos_emergency_button_cr2032",
@@ -16220,7 +16376,10 @@
         "batteries": [
           "CR2032"
         ]
-      }
+      },
+      "connectivity": [
+        "zigbee"
+      ]
     },
     {
       "id": "tank_level_monitor_cr2032",
@@ -16327,7 +16486,10 @@
           "CR2032",
           "AAA"
         ]
-      }
+      },
+      "connectivity": [
+        "zigbee"
+      ]
     },
     {
       "id": "temperature_controller_hybrid",
@@ -16759,6 +16921,9 @@
           "min": -9,
           "max": 9
         }
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -17051,6 +17216,9 @@
           "min": -9,
           "max": 9
         }
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -17205,6 +17373,9 @@
           "min": -9,
           "max": 9
         }
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -17360,6 +17531,9 @@
           "min": -9,
           "max": 9
         }
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -17497,6 +17671,9 @@
           "min": -9,
           "max": 9
         }
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -17801,6 +17978,9 @@
       "capabilitiesOptions": {},
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -18654,7 +18834,10 @@
           "AAA",
           "CR2032"
         ]
-      }
+      },
+      "connectivity": [
+        "zigbee"
+      ]
     },
     {
       "id": "tvoc_sensor_battery",
@@ -19097,6 +19280,9 @@
       },
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     },
     {
@@ -19350,7 +19536,10 @@
           "AAA",
           "CR2032"
         ]
-      }
+      },
+      "connectivity": [
+        "zigbee"
+      ]
     },
     {
       "id": "water_leak_detector_battery",
@@ -19451,7 +19640,10 @@
           "AAA",
           "CR2032"
         ]
-      }
+      },
+      "connectivity": [
+        "zigbee"
+      ]
     },
     {
       "id": "water_leak_sensor_battery",
@@ -19811,7 +20003,10 @@
         "batteries": [
           "AA"
         ]
-      }
+      },
+      "connectivity": [
+        "zigbee"
+      ]
     },
     {
       "id": "zbbridge_ac",
@@ -20005,6 +20200,9 @@
       "capabilitiesOptions": {},
       "platforms": [
         "local"
+      ],
+      "connectivity": [
+        "zigbee"
       ]
     }
   ],

@@ -118,5 +118,8 @@
   "platforms": [
     "local"
   ],
-  "id": "dimmer_switch_timer_module_ac"
+  "id": "dimmer_switch_timer_module_ac",
+  "connectivity": [
+    "zigbee"
+  ]
 }

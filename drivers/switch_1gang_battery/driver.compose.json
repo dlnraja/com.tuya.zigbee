@@ -127,5 +127,8 @@
       "AAA"
     ]
   },
-  "id": "switch_1gang_battery"
+  "id": "switch_1gang_battery",
+  "connectivity": [
+    "zigbee"
+  ]
 }

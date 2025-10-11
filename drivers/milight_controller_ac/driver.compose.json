@@ -123,5 +123,8 @@
   "platforms": [
     "local"
   ],
-  "id": "milight_controller_ac"
+  "id": "milight_controller_ac",
+  "connectivity": [
+    "zigbee"
+  ]
 }

@@ -143,5 +143,8 @@
   "platforms": [
     "local"
   ],
-  "id": "switch_2gang_hybrid"
+  "id": "switch_2gang_hybrid",
+  "connectivity": [
+    "zigbee"
+  ]
 }

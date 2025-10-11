@@ -160,5 +160,8 @@
       "min": -9,
       "max": 9
     }
+  ],
+  "connectivity": [
+    "zigbee"
   ]
 }

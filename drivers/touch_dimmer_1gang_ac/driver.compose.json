@@ -118,5 +118,8 @@
   "platforms": [
     "local"
   ],
-  "id": "touch_dimmer_1gang_ac"
+  "id": "touch_dimmer_1gang_ac",
+  "connectivity": [
+    "zigbee"
+  ]
 }

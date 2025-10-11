@@ -129,5 +129,8 @@
       "CR2032"
     ]
   },
-  "id": "switch_4gang_battery_cr2032"
+  "id": "switch_4gang_battery_cr2032",
+  "connectivity": [
+    "zigbee"
+  ]
 }

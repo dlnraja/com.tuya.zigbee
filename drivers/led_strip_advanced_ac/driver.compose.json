@@ -122,5 +122,8 @@
   "platforms": [
     "local"
   ],
-  "id": "led_strip_advanced_ac"
+  "id": "led_strip_advanced_ac",
+  "connectivity": [
+    "zigbee"
+  ]
 }

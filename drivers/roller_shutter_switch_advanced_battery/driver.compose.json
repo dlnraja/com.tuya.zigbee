@@ -136,5 +136,8 @@
       "INTERNAL"
     ]
   },
-  "id": "roller_shutter_switch_advanced"
+  "id": "roller_shutter_switch_advanced",
+  "connectivity": [
+    "zigbee"
+  ]
 }

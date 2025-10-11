@@ -87,5 +87,8 @@
   "platforms": [
     "local"
   ],
-  "id": "scene_controller"
+  "id": "scene_controller",
+  "connectivity": [
+    "zigbee"
+  ]
 }

@@ -127,5 +127,8 @@
       "CR2032"
     ]
   },
-  "id": "sos_emergency_button_cr2032"
+  "id": "sos_emergency_button_cr2032",
+  "connectivity": [
+    "zigbee"
+  ]
 }

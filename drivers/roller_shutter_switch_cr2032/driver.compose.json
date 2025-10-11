@@ -136,5 +136,8 @@
       "AAA"
     ]
   },
-  "id": "roller_shutter_switch"
+  "id": "roller_shutter_switch",
+  "connectivity": [
+    "zigbee"
+  ]
 }

@@ -113,5 +113,8 @@
       "AAA"
     ]
   },
-  "id": "solar_panel_controller_hybrid"
+  "id": "solar_panel_controller_hybrid",
+  "connectivity": [
+    "zigbee"
+  ]
 }

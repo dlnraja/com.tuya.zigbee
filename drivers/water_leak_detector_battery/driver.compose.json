@@ -97,5 +97,8 @@
       "CR2032"
     ]
   },
-  "id": "water_leak_detector_battery"
+  "id": "water_leak_detector_battery",
+  "connectivity": [
+    "zigbee"
+  ]
 }
