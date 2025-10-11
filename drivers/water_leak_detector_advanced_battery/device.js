@@ -1,6 +1,7 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { CLUSTER } = require('zigbee-clusters');
 
 class WaterLeakDetectorAdvancedDevice extends ZigBeeDevice {
 
@@ -22,7 +23,7 @@ class WaterLeakDetectorAdvancedDevice extends ZigBeeDevice {
 
     // Battery capabilities
     if (this.hasCapability('alarm_battery')) {
-      this.registerCapability('alarm_battery', 'genPowerCfg', {
+      this.registerCapability('alarm_battery', CLUSTER.POWER_CONFIGURATION, {
         get: 'batteryPercentageRemaining',
         report: 'batteryPercentageRemaining',
         reportParser: value => value < 20
@@ -30,7 +31,7 @@ class WaterLeakDetectorAdvancedDevice extends ZigBeeDevice {
     }
 
     if (this.hasCapability('measure_battery')) {
-      this.registerCapability('measure_battery', 'genPowerCfg', {
+      this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
         get: 'batteryPercentageRemaining',
         report: 'batteryPercentageRemaining', 
         reportParser: value => Math.max(0, Math.min(100, value))

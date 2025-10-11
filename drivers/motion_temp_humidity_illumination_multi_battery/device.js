@@ -36,7 +36,7 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
     // Battery from standard cluster (fallback)
     if (this.hasCapability('measure_battery')) {
       try {
-        this.registerCapability('measure_battery', 'genPowerCfg', {
+        this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
           get: 'batteryPercentageRemaining',
           report: 'batteryPercentageRemaining',
           reportParser: value => Math.max(0, Math.min(100, value / 2)),
