@@ -321,8 +321,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/dimmer_switch_1gang_ac/assets/small.png",
+        "large": "/drivers/dimmer_switch_1gang_ac/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -463,8 +463,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/dimmer_switch_3gang_ac/assets/small.png",
+        "large": "/drivers/dimmer_switch_3gang_ac/assets/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -557,8 +557,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/motion_sensor_battery/assets/small.png",
+        "large": "/drivers/motion_sensor_battery/assets/large.png"
       },
       "platforms": [
         "local"
@@ -615,8 +615,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/motion_sensor_pir_battery/assets/small.png",
+        "large": "/drivers/motion_sensor_pir_battery/assets/large.png"
       },
       "platforms": [
         "local"
@@ -642,8 +642,8 @@
         "onoff"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/scene_controller/assets/small.png",
+        "large": "/drivers/scene_controller/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -821,8 +821,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/scene_controller_battery/assets/small.png",
+        "large": "/drivers/scene_controller_battery/assets/large.png"
       },
       "community": {
         "sources": [
@@ -952,8 +952,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_switch_1gang_ac/assets/small.png",
+        "large": "/drivers/smart_switch_1gang_ac/assets/large.png"
       },
       "platforms": [
         "local"
@@ -1080,8 +1080,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_switch_1gang_hybrid/assets/small.png",
+        "large": "/drivers/smart_switch_1gang_hybrid/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -1226,8 +1226,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_switch_2gang_ac/assets/small.png",
+        "large": "/drivers/smart_switch_2gang_ac/assets/large.png"
       },
       "platforms": [
         "local"
@@ -1363,8 +1363,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_switch_2gang_hybrid/assets/small.png",
+        "large": "/drivers/smart_switch_2gang_hybrid/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -1536,8 +1536,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_switch_3gang_ac/assets/small.png",
+        "large": "/drivers/smart_switch_3gang_ac/assets/large.png"
       },
       "platforms": [
         "local"
@@ -1684,8 +1684,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_switch_3gang_hybrid/assets/small.png",
+        "large": "/drivers/smart_switch_3gang_hybrid/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -1836,8 +1836,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_switch_4gang_hybrid/assets/small.png",
+        "large": "/drivers/smart_switch_4gang_hybrid/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -1967,8 +1967,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/switch_1gang_battery/assets/small.png",
+        "large": "/drivers/switch_1gang_battery/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -2108,8 +2108,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/switch_2gang_ac/assets/small.png",
+        "large": "/drivers/switch_2gang_ac/assets/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -2254,8 +2254,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/switch_2gang_hybrid/assets/small.png",
+        "large": "/drivers/switch_2gang_hybrid/assets/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -2408,8 +2408,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/switch_3gang_battery/assets/small.png",
+        "large": "/drivers/switch_3gang_battery/assets/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -2550,8 +2550,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/switch_4gang_ac/assets/small.png",
+        "large": "/drivers/switch_4gang_ac/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -2674,8 +2674,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/switch_4gang_battery_cr2032/assets/small.png",
+        "large": "/drivers/switch_4gang_battery_cr2032/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -2803,8 +2803,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/switch_5gang_battery/assets/small.png",
+        "large": "/drivers/switch_5gang_battery/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -2935,8 +2935,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/switch_6gang_ac/assets/small.png",
+        "large": "/drivers/switch_6gang_ac/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -3061,8 +3061,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/switch_8gang_ac/assets/small.png",
+        "large": "/drivers/switch_8gang_ac/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -3161,8 +3161,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wall_switch_1gang_ac/assets/small.png",
+        "large": "/drivers/wall_switch_1gang_ac/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -3298,8 +3298,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wall_switch_1gang_dc/assets/small.png",
+        "large": "/drivers/wall_switch_1gang_dc/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -3416,8 +3416,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wall_switch_2gang_ac/assets/small.png",
+        "large": "/drivers/wall_switch_2gang_ac/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -3574,8 +3574,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wall_switch_2gang_dc/assets/small.png",
+        "large": "/drivers/wall_switch_2gang_dc/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -3715,8 +3715,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wall_switch_3gang_ac/assets/small.png",
+        "large": "/drivers/wall_switch_3gang_ac/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -3890,8 +3890,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wall_switch_3gang_dc/assets/small.png",
+        "large": "/drivers/wall_switch_3gang_dc/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -4056,8 +4056,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wall_switch_4gang_ac/assets/small.png",
+        "large": "/drivers/wall_switch_4gang_ac/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -4235,8 +4235,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wall_switch_4gang_dc/assets/small.png",
+        "large": "/drivers/wall_switch_4gang_dc/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -4431,8 +4431,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wall_switch_5gang_ac/assets/small.png",
+        "large": "/drivers/wall_switch_5gang_ac/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -4638,8 +4638,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wall_switch_6gang_ac/assets/small.png",
+        "large": "/drivers/wall_switch_6gang_ac/assets/large.png"
       },
       "settings": [],
       "name": {
@@ -4665,8 +4665,8 @@
         "dim"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wireless_switch_1gang_cr2032/assets/small.png",
+        "large": "/drivers/wireless_switch_1gang_cr2032/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -4919,8 +4919,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wireless_switch_2gang_cr2032/assets/small.png",
+        "large": "/drivers/wireless_switch_2gang_cr2032/assets/large.png"
       },
       "name": {
         "en": "Wireless Switch 2gang CR2032"
@@ -5081,8 +5081,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wireless_switch_3gang_cr2032/assets/small.png",
+        "large": "/drivers/wireless_switch_3gang_cr2032/assets/large.png"
       },
       "name": {
         "en": "Wireless Switch 3gang CR2032"
@@ -5229,8 +5229,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wireless_switch_4gang_cr2032/assets/small.png",
+        "large": "/drivers/wireless_switch_4gang_cr2032/assets/large.png"
       },
       "name": {
         "en": "Wireless Switch 4gang CR2032"
@@ -5391,8 +5391,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wireless_switch_4gang_cr2450/assets/small.png",
+        "large": "/drivers/wireless_switch_4gang_cr2450/assets/large.png"
       },
       "platforms": [
         "local"
@@ -5521,8 +5521,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wireless_switch_5gang_cr2032/assets/small.png",
+        "large": "/drivers/wireless_switch_5gang_cr2032/assets/large.png"
       },
       "settings": [
         {
@@ -5670,8 +5670,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/wireless_switch_6gang_cr2032/assets/small.png",
+        "large": "/drivers/wireless_switch_6gang_cr2032/assets/large.png"
       },
       "settings": [
         {
@@ -5809,8 +5809,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/air_quality_monitor_ac/assets/small.png",
+        "large": "/drivers/air_quality_monitor_ac/assets/large.png"
       },
       "platforms": [
         "local"
@@ -5901,8 +5901,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/air_quality_monitor_pro_battery/assets/small.png",
+        "large": "/drivers/air_quality_monitor_pro_battery/assets/large.png"
       },
       "platforms": [
         "local"
@@ -6075,8 +6075,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/ceiling_fan_ac/assets/small.png",
+        "large": "/drivers/ceiling_fan_ac/assets/large.png"
       },
       "pair": [
         {
@@ -6214,8 +6214,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/ceiling_light_controller_ac/assets/small.png",
+        "large": "/drivers/ceiling_light_controller_ac/assets/large.png"
       },
       "platforms": [
         "local"
@@ -6319,8 +6319,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/ceiling_light_rgb_ac/assets/small.png",
+        "large": "/drivers/ceiling_light_rgb_ac/assets/large.png"
       },
       "platforms": [
         "local"
@@ -6449,8 +6449,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/climate_monitor_cr2032/assets/small.png",
+        "large": "/drivers/climate_monitor_cr2032/assets/large.png"
       },
       "platforms": [
         "local"
@@ -6558,8 +6558,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/co2_sensor_battery/assets/small.png",
+        "large": "/drivers/co2_sensor_battery/assets/large.png"
       },
       "platforms": [
         "local"
@@ -6659,8 +6659,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/co2_temp_humidity_cr2032/assets/small.png",
+        "large": "/drivers/co2_temp_humidity_cr2032/assets/large.png"
       },
       "platforms": [
         "local"
@@ -6760,8 +6760,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/comprehensive_air_monitor_ac/assets/small.png",
+        "large": "/drivers/comprehensive_air_monitor_ac/assets/large.png"
       },
       "platforms": [
         "local"
@@ -6859,8 +6859,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/co_detector_pro_battery/assets/small.png",
+        "large": "/drivers/co_detector_pro_battery/assets/large.png"
       },
       "platforms": [
         "local"
@@ -6935,8 +6935,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/curtain_motor_ac/assets/small.png",
+        "large": "/drivers/curtain_motor_ac/assets/large.png"
       },
       "pair": [
         {
@@ -6993,8 +6993,8 @@
         "dim"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/dimmer_ac/assets/small.png",
+        "large": "/drivers/dimmer_ac/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -7227,8 +7227,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/dimmer_switch_timer_module_ac/assets/small.png",
+        "large": "/drivers/dimmer_switch_timer_module_ac/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -7255,8 +7255,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/doorbell_cr2032/assets/small.png",
+        "large": "/drivers/doorbell_cr2032/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -7446,8 +7446,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/door_controller_ac/assets/small.png",
+        "large": "/drivers/door_controller_ac/assets/large.png"
       },
       "community": {
         "sources": [
@@ -7493,8 +7493,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/door_lock_battery/assets/small.png",
+        "large": "/drivers/door_lock_battery/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -7669,8 +7669,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/door_window_sensor_battery/assets/small.png",
+        "large": "/drivers/door_window_sensor_battery/assets/large.png"
       },
       "pair": [
         {
@@ -7817,8 +7817,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/fan_controller_ac/assets/small.png",
+        "large": "/drivers/fan_controller_ac/assets/large.png"
       },
       "pair": [
         {
@@ -7949,8 +7949,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/fingerprint_lock_battery/assets/small.png",
+        "large": "/drivers/fingerprint_lock_battery/assets/large.png"
       },
       "pair": [
         {
@@ -8072,8 +8072,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/formaldehyde_sensor_battery/assets/small.png",
+        "large": "/drivers/formaldehyde_sensor_battery/assets/large.png"
       },
       "pair": [
         {
@@ -8217,8 +8217,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/garage_door_controller_ac/assets/small.png",
+        "large": "/drivers/garage_door_controller_ac/assets/large.png"
       },
       "platforms": [
         "local"
@@ -8248,8 +8248,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/garage_door_opener_cr2032/assets/small.png",
+        "large": "/drivers/garage_door_opener_cr2032/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -8458,8 +8458,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/gas_detector_battery/assets/small.png",
+        "large": "/drivers/gas_detector_battery/assets/large.png"
       },
       "pair": [
         {
@@ -8540,8 +8540,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/gas_sensor_ts0601_battery/assets/small.png",
+        "large": "/drivers/gas_sensor_ts0601_battery/assets/large.png"
       },
       "platforms": [
         "local"
@@ -8644,8 +8644,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/humidity_controller_ac/assets/small.png",
+        "large": "/drivers/humidity_controller_ac/assets/large.png"
       },
       "platforms": [
         "local"
@@ -8741,8 +8741,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/hvac_controller_ac/assets/small.png",
+        "large": "/drivers/hvac_controller_ac/assets/large.png"
       },
       "community": {
         "sources": [
@@ -8880,8 +8880,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/led_strip_advanced_ac/assets/small.png",
+        "large": "/drivers/led_strip_advanced_ac/assets/large.png"
       },
       "platforms": [
         "local"
@@ -9010,8 +9010,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/led_strip_controller_ac/assets/small.png",
+        "large": "/drivers/led_strip_controller_ac/assets/large.png"
       },
       "platforms": [
         "local"
@@ -9133,8 +9133,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/led_strip_controller_pro_ac/assets/small.png",
+        "large": "/drivers/led_strip_controller_pro_ac/assets/large.png"
       },
       "platforms": [
         "local"
@@ -9234,8 +9234,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/lux_sensor_battery/assets/small.png",
+        "large": "/drivers/lux_sensor_battery/assets/large.png"
       },
       "pair": [
         {
@@ -9392,8 +9392,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/milight_controller_ac/assets/small.png",
+        "large": "/drivers/milight_controller_ac/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -9411,8 +9411,8 @@
         "dim"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/mini_ac/assets/small.png",
+        "large": "/drivers/mini_ac/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -9606,8 +9606,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/motion_temp_humidity_illumination_multi_battery/assets/small.png",
+        "large": "/drivers/motion_temp_humidity_illumination_multi_battery/assets/large.png"
       },
       "platforms": [
         "local"
@@ -9714,8 +9714,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/multisensor_battery/assets/small.png",
+        "large": "/drivers/multisensor_battery/assets/large.png"
       },
       "pair": [
         {
@@ -9847,8 +9847,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/noise_level_sensor_battery/assets/small.png",
+        "large": "/drivers/noise_level_sensor_battery/assets/large.png"
       },
       "pair": [
         {
@@ -10016,8 +10016,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/outdoor_light_controller_ac/assets/small.png",
+        "large": "/drivers/outdoor_light_controller_ac/assets/large.png"
       },
       "pair": [
         {
@@ -10066,8 +10066,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/outdoor_siren_cr2032/assets/small.png",
+        "large": "/drivers/outdoor_siren_cr2032/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -10180,8 +10180,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/pet_feeder_cr2032/assets/small.png",
+        "large": "/drivers/pet_feeder_cr2032/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -10349,8 +10349,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/pir_radar_illumination_sensor_battery/assets/small.png",
+        "large": "/drivers/pir_radar_illumination_sensor_battery/assets/large.png"
       },
       "platforms": [
         "local"
@@ -10455,8 +10455,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/pir_sensor_advanced_battery/assets/small.png",
+        "large": "/drivers/pir_sensor_advanced_battery/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -10585,8 +10585,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/pm25_detector_battery/assets/small.png",
+        "large": "/drivers/pm25_detector_battery/assets/large.png"
       },
       "platforms": [
         "local"
@@ -10686,8 +10686,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/pm25_sensor_battery/assets/small.png",
+        "large": "/drivers/pm25_sensor_battery/assets/large.png"
       },
       "pair": [
         {
@@ -10836,8 +10836,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/pool_pump_controller_ac/assets/small.png",
+        "large": "/drivers/pool_pump_controller_ac/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -10941,8 +10941,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/presence_sensor_radar_battery/assets/small.png",
+        "large": "/drivers/presence_sensor_radar_battery/assets/large.png"
       },
       "pair": [
         {
@@ -11074,8 +11074,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/pressure_sensor_battery/assets/small.png",
+        "large": "/drivers/pressure_sensor_battery/assets/large.png"
       },
       "pair": [
         {
@@ -11222,8 +11222,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/projector_screen_controller_ac/assets/small.png",
+        "large": "/drivers/projector_screen_controller_ac/assets/large.png"
       },
       "pair": [
         {
@@ -11357,8 +11357,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/radiator_valve_hybrid/assets/small.png",
+        "large": "/drivers/radiator_valve_hybrid/assets/large.png"
       },
       "pair": [
         {
@@ -11398,8 +11398,8 @@
         "dim"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/relay_switch_1gang_ac/assets/small.png",
+        "large": "/drivers/relay_switch_1gang_ac/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -11632,8 +11632,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/rgb_led_controller_ac/assets/small.png",
+        "large": "/drivers/rgb_led_controller_ac/assets/large.png"
       },
       "platforms": [
         "local"
@@ -11728,8 +11728,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/roller_blind_controller_ac/assets/small.png",
+        "large": "/drivers/roller_blind_controller_ac/assets/large.png"
       },
       "community": {
         "sources": [
@@ -11880,8 +11880,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/roller_shutter_controller_ac/assets/small.png",
+        "large": "/drivers/roller_shutter_controller_ac/assets/large.png"
       },
       "platforms": [
         "local"
@@ -11990,8 +11990,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/scene_controller_2button_cr2032/assets/small.png",
+        "large": "/drivers/scene_controller_2button_cr2032/assets/large.png"
       },
       "settings": [
         {
@@ -12094,8 +12094,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/scene_controller_4button_cr2032/assets/small.png",
+        "large": "/drivers/scene_controller_4button_cr2032/assets/large.png"
       },
       "settings": [
         {
@@ -12222,8 +12222,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/scene_controller_6button_cr2032/assets/small.png",
+        "large": "/drivers/scene_controller_6button_cr2032/assets/large.png"
       },
       "settings": [
         {
@@ -12350,8 +12350,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/scene_controller_8button_cr2032/assets/small.png",
+        "large": "/drivers/scene_controller_8button_cr2032/assets/large.png"
       },
       "settings": [
         {
@@ -12490,8 +12490,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/shade_controller_ac/assets/small.png",
+        "large": "/drivers/shade_controller_ac/assets/large.png"
       },
       "pair": [
         {
@@ -12631,8 +12631,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_bulb_dimmer_ac/assets/small.png",
+        "large": "/drivers/smart_bulb_dimmer_ac/assets/large.png"
       },
       "platforms": [
         "local"
@@ -12756,8 +12756,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_bulb_rgb_ac/assets/small.png",
+        "large": "/drivers/smart_bulb_rgb_ac/assets/large.png"
       },
       "community": {
         "sources": [
@@ -12895,8 +12895,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/smart_bulb_tunable_ac/assets/small.png",
+        "large": "/drivers/smart_bulb_tunable_ac/assets/large.png"
       },
       "pair": [
         {
@@ -13037,8 +13037,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/smart_bulb_white_ac/assets/small.png",
+        "large": "/drivers/smart_bulb_white_ac/assets/large.png"
       },
       "pair": [
         {
@@ -13079,8 +13079,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_curtain_motor_hybrid/assets/small.png",
+        "large": "/drivers/smart_curtain_motor_hybrid/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -13295,8 +13295,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_dimmer_module_1gang_ac/assets/small.png",
+        "large": "/drivers/smart_dimmer_module_1gang_ac/assets/large.png"
       },
       "platforms": [
         "local"
@@ -13322,8 +13322,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_doorbell_battery/assets/small.png",
+        "large": "/drivers/smart_doorbell_battery/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -13435,8 +13435,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_garden_sprinkler_battery/assets/small.png",
+        "large": "/drivers/smart_garden_sprinkler_battery/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -13661,8 +13661,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_irrigation_controller_hybrid/assets/small.png",
+        "large": "/drivers/smart_irrigation_controller_hybrid/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -13742,8 +13742,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_lock_battery/assets/small.png",
+        "large": "/drivers/smart_lock_battery/assets/large.png"
       },
       "community": {
         "sources": [
@@ -13912,8 +13912,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_outlet_monitor_ac/assets/small.png",
+        "large": "/drivers/smart_outlet_monitor_ac/assets/large.png"
       },
       "platforms": [
         "local"
@@ -13936,8 +13936,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_radiator_valve_hybrid/assets/small.png",
+        "large": "/drivers/smart_radiator_valve_hybrid/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -14151,8 +14151,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_smoke_detector_advanced_battery/assets/small.png",
+        "large": "/drivers/smart_smoke_detector_advanced_battery/assets/large.png"
       },
       "platforms": [
         "local"
@@ -14282,8 +14282,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/smart_spot_ac/assets/small.png",
+        "large": "/drivers/smart_spot_ac/assets/large.png"
       },
       "pair": [
         {
@@ -14427,8 +14427,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_thermostat_hybrid/assets/small.png",
+        "large": "/drivers/smart_thermostat_hybrid/assets/large.png"
       },
       "platforms": [
         "local"
@@ -14519,8 +14519,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_valve_controller_hybrid/assets/small.png",
+        "large": "/drivers/smart_valve_controller_hybrid/assets/large.png"
       },
       "platforms": [
         "local"
@@ -14550,8 +14550,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smart_water_valve_hybrid/assets/small.png",
+        "large": "/drivers/smart_water_valve_hybrid/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -14801,8 +14801,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/smoke_detector_battery/assets/small.png",
+        "large": "/drivers/smoke_detector_battery/assets/large.png"
       },
       "pair": [
         {
@@ -14928,8 +14928,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smoke_detector_temp_humidity_advanced_battery/assets/small.png",
+        "large": "/drivers/smoke_detector_temp_humidity_advanced_battery/assets/large.png"
       },
       "platforms": [
         "local"
@@ -15062,8 +15062,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/smoke_temp_humid_sensor_battery/assets/small.png",
+        "large": "/drivers/smoke_temp_humid_sensor_battery/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -15188,8 +15188,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/soil_moisture_sensor_battery/assets/small.png",
+        "large": "/drivers/soil_moisture_sensor_battery/assets/large.png"
       },
       "pair": [
         {
@@ -15346,8 +15346,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/soil_moisture_temperature_sensor_battery/assets/small.png",
+        "large": "/drivers/soil_moisture_temperature_sensor_battery/assets/large.png"
       },
       "platforms": [
         "local"
@@ -15448,8 +15448,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/soil_tester_temp_humid_cr2032/assets/small.png",
+        "large": "/drivers/soil_tester_temp_humid_cr2032/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -15582,8 +15582,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/solar_panel_controller_hybrid/assets/small.png",
+        "large": "/drivers/solar_panel_controller_hybrid/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -15713,8 +15713,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/sos_emergency_button_cr2032/assets/small.png",
+        "large": "/drivers/sos_emergency_button_cr2032/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -15818,8 +15818,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/tank_level_monitor_cr2032/assets/small.png",
+        "large": "/drivers/tank_level_monitor_cr2032/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -15920,8 +15920,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/temperature_controller_hybrid/assets/small.png",
+        "large": "/drivers/temperature_controller_hybrid/assets/large.png"
       },
       "pair": [
         {
@@ -16004,8 +16004,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/temperature_humidity_sensor_battery/assets/small.png",
+        "large": "/drivers/temperature_humidity_sensor_battery/assets/large.png"
       },
       "pair": [
         {
@@ -16146,8 +16146,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/temperature_sensor_advanced_battery/assets/small.png",
+        "large": "/drivers/temperature_sensor_advanced_battery/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -16197,8 +16197,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/temperature_sensor_battery/assets/small.png",
+        "large": "/drivers/temperature_sensor_battery/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -16409,8 +16409,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/temp_humid_sensor_advanced_battery/assets/small.png",
+        "large": "/drivers/temp_humid_sensor_advanced_battery/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -16535,8 +16535,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/temp_humid_sensor_dd_battery/assets/small.png",
+        "large": "/drivers/temp_humid_sensor_dd_battery/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -16661,8 +16661,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/temp_humid_sensor_leak_detector_battery/assets/small.png",
+        "large": "/drivers/temp_humid_sensor_leak_detector_battery/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -16788,8 +16788,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/temp_sensor_pro_battery/assets/small.png",
+        "large": "/drivers/temp_sensor_pro_battery/assets/large.png"
       },
       "platforms": [
         "local"
@@ -16890,8 +16890,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/thermostat_hybrid/assets/small.png",
+        "large": "/drivers/thermostat_hybrid/assets/large.png"
       },
       "community": {
         "sources": [
@@ -17069,8 +17069,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/touch_dimmer_1gang_ac/assets/small.png",
+        "large": "/drivers/touch_dimmer_1gang_ac/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -17178,8 +17178,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/touch_dimmer_ac/assets/small.png",
+        "large": "/drivers/touch_dimmer_ac/assets/large.png"
       },
       "pair": [
         {
@@ -17312,8 +17312,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/touch_switch_1gang_ac/assets/small.png",
+        "large": "/drivers/touch_switch_1gang_ac/assets/large.png"
       },
       "pair": [
         {
@@ -17455,8 +17455,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/touch_switch_2gang_ac/assets/small.png",
+        "large": "/drivers/touch_switch_2gang_ac/assets/large.png"
       },
       "pair": [
         {
@@ -17620,8 +17620,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/touch_switch_3gang_ac/assets/small.png",
+        "large": "/drivers/touch_switch_3gang_ac/assets/large.png"
       },
       "pair": [
         {
@@ -17770,8 +17770,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/touch_switch_4gang_ac/assets/small.png",
+        "large": "/drivers/touch_switch_4gang_ac/assets/large.png"
       },
       "pair": [
         {
@@ -17890,8 +17890,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/tvoc_sensor_advanced_battery/assets/small.png",
+        "large": "/drivers/tvoc_sensor_advanced_battery/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -18015,8 +18015,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/tvoc_sensor_battery/assets/small.png",
+        "large": "/drivers/tvoc_sensor_battery/assets/large.png"
       },
       "pair": [
         {
@@ -18164,8 +18164,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/usb_outlet_ac/assets/small.png",
+        "large": "/drivers/usb_outlet_ac/assets/large.png"
       },
       "pair": [
         {
@@ -18326,8 +18326,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/usb_outlet_advanced_ac/assets/small.png",
+        "large": "/drivers/usb_outlet_advanced_ac/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_power": {
@@ -18460,8 +18460,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/vibration_sensor_battery/assets/small.png",
+        "large": "/drivers/vibration_sensor_battery/assets/large.png"
       },
       "pair": [
         {
@@ -18591,8 +18591,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/water_leak_detector_advanced_battery/assets/small.png",
+        "large": "/drivers/water_leak_detector_advanced_battery/assets/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -18700,8 +18700,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/water_leak_detector_battery/assets/small.png",
+        "large": "/drivers/water_leak_detector_battery/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -18803,8 +18803,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "small": "/drivers/water_leak_sensor_battery/assets/small.png",
+        "large": "/drivers/water_leak_sensor_battery/assets/large.png"
       },
       "pair": [
         {
@@ -18861,8 +18861,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/water_valve_hybrid/assets/small.png",
+        "large": "/drivers/water_valve_hybrid/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -19057,8 +19057,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/water_valve_smart_hybrid/assets/small.png",
+        "large": "/drivers/water_valve_smart_hybrid/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -19080,8 +19080,8 @@
         "onoff"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/zbbridge_ac/assets/small.png",
+        "large": "/drivers/zbbridge_ac/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -19255,8 +19255,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "/drivers/zigbee_gateway_hub_ac/assets/small.png",
+        "large": "/drivers/zigbee_gateway_hub_ac/assets/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
