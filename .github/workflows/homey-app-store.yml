@@ -126,37 +126,18 @@ jobs:
           echo "📊 Git status:"
           git status
         
-      - name: Publish to Homey (Headless Mode)
+      - name: Publish to Homey App Store (Official Athom Action)
         id: publish
-        env:
-          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        uses: athombv/github-action-homey-app-publish@master
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+      
+      - name: Publication Success
         run: |
-          echo "🚀 Publishing to Homey App Store..."
-          
-          # Create Homey credentials file for headless auth
-          mkdir -p ~/.homey
-          cat > ~/.homey/config.json << EOF
-          {
-            "token": "${{ secrets.HOMEY_PAT }}"
-          }
-          EOF
-          
-          # Publish with headless flag (non-interactive)
-          npx homey app publish --skip-build || {
-            echo "❌ Publication failed"
-            echo "💡 Trying alternative method..."
-            
-            # Alternative: use API directly
-            APP_ID=$(jq -r '.id' app.json)
-            echo "App ID: $APP_ID"
-            echo "url=https://tools.developer.homey.app/apps/app/$APP_ID" >> $GITHUB_OUTPUT
-            exit 1
-          }
-          
-          # Extract app ID for later use
           APP_ID=$(jq -r '.id' app.json)
           echo "url=https://tools.developer.homey.app/apps/app/$APP_ID" >> $GITHUB_OUTPUT
-          echo "✅ Published successfully"
+          echo "✅ Published successfully to Homey App Store"
+          echo "📦 App ID: $APP_ID"
       
       - name: Extract Build ID and Auto-Promote to Test
         id: promote
