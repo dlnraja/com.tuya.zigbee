@@ -1,6 +1,7 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { CLUSTER } = require('zigbee-clusters');
 
 class RollerShutterControllerDevice extends ZigBeeDevice {
 
@@ -25,7 +26,7 @@ class RollerShutterControllerDevice extends ZigBeeDevice {
 
     // Battery reporting
     if (this.hasCapability('alarm_battery')) {
-      this.registerCapability('alarm_battery', 'genPowerCfg', {
+      this.registerCapability('alarm_battery', CLUSTER.POWER_CONFIGURATION, {
         get: 'batteryPercentageRemaining',
         report: 'batteryPercentageRemaining',
         getOpts: {

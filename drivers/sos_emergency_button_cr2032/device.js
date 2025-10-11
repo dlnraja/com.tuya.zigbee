@@ -1,6 +1,7 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { CLUSTER } = require('zigbee-clusters');
 const TuyaClusterHandler = require('../../utils/tuya-cluster-handler');
 
 class SosEmergencyButtonCr2032Device extends ZigBeeDevice {
@@ -35,7 +36,7 @@ class SosEmergencyButtonCr2032Device extends ZigBeeDevice {
     // Battery
     if (this.hasCapability('measure_battery')) {
       try {
-        this.registerCapability('measure_battery', 'genPowerCfg', {
+        this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
           get: 'batteryPercentageRemaining',
           report: 'batteryPercentageRemaining',
           reportParser: value => Math.max(0, Math.min(100, value / 2)),

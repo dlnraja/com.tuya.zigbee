@@ -1,6 +1,7 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { CLUSTER } = require('zigbee-clusters');
 
 class TemperatureHumiditySensorDevice extends ZigBeeDevice {
 
@@ -34,7 +35,7 @@ class TemperatureHumiditySensorDevice extends ZigBeeDevice {
 
     // Battery measurement
     if (this.hasCapability('measure_battery')) {
-      this.registerCapability('measure_battery', 'genPowerCfg', {
+      this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
         get: 'batteryPercentageRemaining',
         report: 'batteryPercentageRemaining',
         reportParser: value => Math.max(0, Math.min(100, value / 2)),
