@@ -86,8 +86,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "./drivers/smoke_detector_temp_humidity_advanced_battery/assets/small.png",
+    "large": "./drivers/smoke_detector_temp_humidity_advanced_battery/assets/large.png"
   },
   "platforms": [
     "local"

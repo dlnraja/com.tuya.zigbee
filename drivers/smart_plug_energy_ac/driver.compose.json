@@ -154,8 +154,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "./drivers/smart_plug_energy_ac/assets/small.png",
+    "large": "./drivers/smart_plug_energy_ac/assets/large.png"
   },
   "platforms": [
     "local"

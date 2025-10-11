@@ -7,8 +7,8 @@
     "onoff"
   ],
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "./drivers/zbbridge_ac/assets/small.png",
+    "large": "./drivers/zbbridge_ac/assets/large.png"
   },
   "zigbee": {
     "manufacturerName": [

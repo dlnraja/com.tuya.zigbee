@@ -93,8 +93,8 @@
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "small": "./drivers/temperature_sensor_advanced_battery/assets/small.png",
+    "large": "./drivers/temperature_sensor_advanced_battery/assets/large.png"
   },
   "capabilitiesOptions": {
     "measure_temperature": {
