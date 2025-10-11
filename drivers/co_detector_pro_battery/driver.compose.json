@@ -102,5 +102,8 @@
       "CR2032"
     ]
   },
-  "id": "co_detector_pro_battery"
+  "id": "co_detector_pro_battery",
+  "connectivity": [
+    "zigbee"
+  ]
 }

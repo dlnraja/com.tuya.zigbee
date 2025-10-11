@@ -93,5 +93,8 @@
       "INTERNAL"
     ]
   },
-  "id": "air_quality_monitor_pro_battery"
+  "id": "air_quality_monitor_pro_battery",
+  "connectivity": [
+    "zigbee"
+  ]
 }

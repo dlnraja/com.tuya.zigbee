@@ -155,5 +155,8 @@
       "CR2450"
     ]
   },
-  "id": "wireless_switch_4gang_cr2450"
+  "id": "wireless_switch_4gang_cr2450",
+  "connectivity": [
+    "zigbee"
+  ]
 }

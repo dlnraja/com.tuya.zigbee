@@ -152,5 +152,8 @@
   "platforms": [
     "local"
   ],
-  "id": "smart_switch_3gang_ac"
+  "id": "smart_switch_3gang_ac",
+  "connectivity": [
+    "zigbee"
+  ]
 }

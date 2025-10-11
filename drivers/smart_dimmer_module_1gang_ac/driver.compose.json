@@ -132,5 +132,8 @@
   "platforms": [
     "local"
   ],
-  "id": "smart_dimmer_module_1gang_ac"
+  "id": "smart_dimmer_module_1gang_ac",
+  "connectivity": [
+    "zigbee"
+  ]
 }

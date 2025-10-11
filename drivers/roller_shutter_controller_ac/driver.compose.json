@@ -120,5 +120,8 @@
       "AAA"
     ]
   },
-  "id": "roller_shutter_controller_ac"
+  "id": "roller_shutter_controller_ac",
+  "connectivity": [
+    "zigbee"
+  ]
 }

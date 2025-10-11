@@ -97,5 +97,8 @@
       "AA"
     ]
   },
-  "id": "water_valve_smart_hybrid"
+  "id": "water_valve_smart_hybrid",
+  "connectivity": [
+    "zigbee"
+  ]
 }

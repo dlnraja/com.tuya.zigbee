@@ -118,5 +118,8 @@
   "platforms": [
     "local"
   ],
-  "id": "dimmer_switch_1gang_ac"
+  "id": "dimmer_switch_1gang_ac",
+  "connectivity": [
+    "zigbee"
+  ]
 }

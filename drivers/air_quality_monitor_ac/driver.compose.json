@@ -111,5 +111,8 @@
   "platforms": [
     "local"
   ],
-  "id": "air_quality_monitor_ac"
+  "id": "air_quality_monitor_ac",
+  "connectivity": [
+    "zigbee"
+  ]
 }

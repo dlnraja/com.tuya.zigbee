@@ -129,5 +129,8 @@
   "platforms": [
     "local"
   ],
-  "id": "switch_8gang_ac"
+  "id": "switch_8gang_ac",
+  "connectivity": [
+    "zigbee"
+  ]
 }

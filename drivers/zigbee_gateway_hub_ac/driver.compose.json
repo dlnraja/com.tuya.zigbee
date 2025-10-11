@@ -89,5 +89,8 @@
   "platforms": [
     "local"
   ],
-  "id": "zigbee_gateway_hub_ac"
+  "id": "zigbee_gateway_hub_ac",
+  "connectivity": [
+    "zigbee"
+  ]
 }

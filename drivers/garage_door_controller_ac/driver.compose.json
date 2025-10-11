@@ -118,5 +118,8 @@
       "AAA"
     ]
   },
-  "id": "garage_door_controller_ac"
+  "id": "garage_door_controller_ac",
+  "connectivity": [
+    "zigbee"
+  ]
 }

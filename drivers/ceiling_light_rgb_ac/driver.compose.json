@@ -101,5 +101,8 @@
   "platforms": [
     "local"
   ],
-  "id": "ceiling_light_rgb_ac"
+  "id": "ceiling_light_rgb_ac",
+  "connectivity": [
+    "zigbee"
+  ]
 }
