@@ -28,5 +28,8 @@
   },
   "2.1.52": {
     "en": "Bug fix: disable conflicting workflows, keep only auto-publ."
+  },
+  "2.1.53": {
+    "en": "Bug fix: add git pull rebase and retry logic for version co."
   }
 }
