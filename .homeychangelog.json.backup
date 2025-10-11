@@ -1,0 +1,26 @@
+{
+  "2.9.10": {
+    "en": "Critical battery fix: Resolved '56 years ago' readings on sensors. Fixed gas sensor pairing. Improved device reliability for 167 drivers supporting 1500+ devices."
+  },
+  "2.9.7": {
+    "en": "Major update: Added AC gas sensor driver with proper power source detection. Fixed image rendering. Enhanced app descriptions. 167 drivers now available."
+  },
+  "2.9.1": {
+    "en": "Fixed app icon dimensions and improved visual quality."
+  },
+  "2.8.0": {
+    "en": "Improved device identification and icon generation system."
+  },
+  "2.6.0": {
+    "en": "Added support for additional device types."
+  },
+  "2.3.1": {
+    "en": "Fixed device pairing issues and improved connection stability."
+  },
+  "2.2.5": {
+    "en": "Project cleanup and full SDK3 validation completed."
+  },
+  "2.1.41": {
+    "en": "Initial release with SDK3 support for temperature, humidity, motion sensors and more."
+  }
+}

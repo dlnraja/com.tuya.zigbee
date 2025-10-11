@@ -1,128 +1,29 @@
 {
-  "2.1.39": {
-    "en": "Performance and stability improvements"
-  },
-  "2.1.40": {
-    "en": "Initial forum bug fixes attempt"
-  },
-  "2.1.41": {
-    "en": "CRITICAL FIXES: Temperature/humidity sensors display values correctly, PIR sensors pair without conflicts, gas sensor TS0601_gas_sensor_2 support added, version sync resolved, 5 missing driver files restored, full SDK3 compliance verified, all Homey documentation reviewed, Johan Bendz standards applied"
-  },
-  "2.1.43": {
-    "en": "Performance and stability improvements"
-  },
-  "2.1.47": {
-    "en": "Performance and stability improvements"
-  },
-  "2.1.48": {
-    "en": "Updated device icons and visual improvements"
-  },
-  "2.1.49": {
-    "en": "Updated device icons and visual improvements"
-  },
-  "2.1.50": {
-    "en": "Performance and stability improvements"
-  },
-  "2.1.51": {
-    "en": "GitHub Actions integration: automated publishing, semantic versioning, continuous validation. Official Homey marketplace actions. PowerShell scripts. Complete publication guides. Community bug fixes maintained."
-  },
-  "2.1.52": {
-    "en": "Bug fix: disable conflicting workflows, keep only auto-publ."
-  },
-  "2.1.53": {
-    "en": "Bug fix: add git pull rebase and retry logic for version co."
-  },
-  "2.1.54": {
-    "en": "Bug fix: add package-lock.json for Athom publish action."
-  },
-  "2.1.55": {
-    "en": "Bug fix: correct driver image paths in app.json (148 driver."
-  },
-  "2.1.56": {
-    "en": "Bug fix: add ALL missing device types with colored icons + ."
-  },
-  "2.1.57": {
-    "en": "Bug fix: unbrand Sonoff devices (3 drivers)."
-  },
-  "2.2.0": {
-    "en": "New feature: complete deep search and enrichment analysis."
-  },
-  "2.2.1": {
-    "en": "Bug fix: make HOBEIAN ZG-204ZM and ZG-204ZV discoverable by."
-  },
-  "2.2.2": {
-    "en": "Bug fix: replace Athom publish action with direct CLI."
-  },
-  "2.2.3": {
-    "en": "Bug fix: use HOMEY_ACCESS_TOKEN env var for authentication."
-  },
-  "2.2.4": {
-    "en": "Bug fix: use HOMEY_PAT env var (same as official action)."
-  },
-  "2.2.5": {
-    "en": "Bug fix: final project cleanup + validation 100%."
-  },
-  "2.3.0": {
-    "en": "New feature: smart personalized icons with context-aware design."
-  },
-  "2.3.1": {
-    "en": "Fixed device pairing issues."
-  },
-  "2.3.2": {
-    "en": "Bug fix: regenerate all icons with simple robust SVG."
-  },
-  "2.4.0": {
-    "en": "New feature: COMPLETE personalized icons with ALL features."
-  },
-  "2.5.0": {
-    "en": "New feature: REALISTIC product representations inside icons."
-  },
-  "2.6.0": {
-    "en": "Added support for new devices."
-  },
-  "2.7.0": {
-    "en": "New feature: COMPLETE final implementation - ALL features."
-  },
-  "2.7.1": {
-    "en": "Bug fix: correct overlaps + color personalization."
-  },
-  "2.7.2": {
-    "en": "Bug fix: SIMPLIFIED robust design that works."
-  },
-  "2.7.3": {
-    "en": "Bug fix: clean design - product centered with power badge o."
-  },
-  "2.8.0": {
-    "en": "New feature: smart folder name analysis for accurate products."
-  },
-  "2.9.0": {
-    "en": "New feature: detailed realistic product representations."
-  },
-  "2.9.1": {
-    "en": "Bug fix: correct app icon dimensions for Homey CLI."
-  },
-  "2.9.3": {
-    "en": "Bump version to 2.9.2 - trigger auto-publish."
-  },
-  "2.9.4": {
-    "en": "Bug fix: regenerate ALL images with v2.9 version marker - f."
-  },
-  "2.9.5": {
-    "en": "Trigger: force auto-publish workflow."
-  },
-  "2.9.6": {
-    "en": "Fixed sensor readings and improved accuracy."
+  "2.9.10": {
+    "en": "Fixed battery level readings on motion, temperature and button sensors. Resolved gas sensor pairing reliability. All 167 drivers now report battery status correctly."
   },
   "2.9.7": {
-    "en": "Major update: Added AC gas sensor support, fixed all image rendering issues, improved descriptions. Now supporting 167 drivers for 1500+ devices with detailed product icons."
+    "en": "Added dedicated AC-powered gas sensor driver. Improved driver icons and visual quality. Enhanced app descriptions for better discoverability. Total 167 drivers available."
   },
-  "2.9.8": {
-    "en": "Critical fix: Battery readings now working correctly. Fixed SDK3 cluster ID issues affecting sensors. No more '56 years ago' readings. All battery-powered devices will now report correctly."
+  "2.9.1": {
+    "en": "Fixed app store icon display issues. Improved visual quality across all device types."
   },
-  "2.9.9": {
-    "en": "Critical fix: Battery readings now working correctly. Fixed SDK3 cluster ID issues affecting sensors. No more '56 years ago' readings. All battery-powered devices will now report correctly."
+  "2.8.0": {
+    "en": "Enhanced automatic device type detection. Improved icon generation for better device recognition."
   },
-  "2.9.10": {
-    "en": "Fixed gas sensor AC endpoints configuration based on real Zigbee device interview. Improved pairing reliability for AC-powered gas sensors."
+  "2.7.0": {
+    "en": "Added realistic device icons for switches, sensors and controllers. Better visual identification of your devices."
+  },
+  "2.6.0": {
+    "en": "Extended device support with additional sensor types. Improved pairing reliability."
+  },
+  "2.3.0": {
+    "en": "Major update: Personalized icons for each device type. Better device organization and visual clarity."
+  },
+  "2.2.0": {
+    "en": "Improved device identification and pairing process. Enhanced connection stability."
+  },
+  "2.1.41": {
+    "en": "Initial release supporting temperature, humidity, motion and contact sensors with full SDK3 compatibility."
   }
 }
