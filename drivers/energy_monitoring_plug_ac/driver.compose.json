@@ -122,5 +122,8 @@
   "platforms": [
     "local"
   ],
-  "id": "energy_monitoring_plug"
+  "id": "energy_monitoring_plug",
+  "connectivity": [
+    "zigbee"
+  ]
 }

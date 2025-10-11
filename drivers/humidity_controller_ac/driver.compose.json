@@ -97,5 +97,8 @@
       "AAA"
     ]
   },
-  "id": "humidity_controller_ac"
+  "id": "humidity_controller_ac",
+  "connectivity": [
+    "zigbee"
+  ]
 }

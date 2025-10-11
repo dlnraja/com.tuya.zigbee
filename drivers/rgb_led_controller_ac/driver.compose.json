@@ -121,5 +121,8 @@
   "platforms": [
     "local"
   ],
-  "id": "rgb_led_controller_ac"
+  "id": "rgb_led_controller_ac",
+  "connectivity": [
+    "zigbee"
+  ]
 }

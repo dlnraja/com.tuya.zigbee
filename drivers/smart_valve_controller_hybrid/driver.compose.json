@@ -88,5 +88,8 @@
       "AA"
     ]
   },
-  "id": "smart_valve_controller_hybrid"
+  "id": "smart_valve_controller_hybrid",
+  "connectivity": [
+    "zigbee"
+  ]
 }

@@ -120,5 +120,8 @@
   "platforms": [
     "local"
   ],
-  "id": "smart_bulb_dimmer_ac"
+  "id": "smart_bulb_dimmer_ac",
+  "connectivity": [
+    "zigbee"
+  ]
 }

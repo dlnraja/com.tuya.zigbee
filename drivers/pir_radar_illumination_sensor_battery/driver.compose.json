@@ -62,5 +62,8 @@
       "CR2032"
     ]
   },
-  "id": "pir_radar_illumination_sensor_battery"
+  "id": "pir_radar_illumination_sensor_battery",
+  "connectivity": [
+    "zigbee"
+  ]
 }

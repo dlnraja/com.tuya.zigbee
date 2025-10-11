@@ -124,5 +124,8 @@
       "CR2032"
     ]
   },
-  "id": "tvoc_sensor_advanced_battery"
+  "id": "tvoc_sensor_advanced_battery",
+  "connectivity": [
+    "zigbee"
+  ]
 }

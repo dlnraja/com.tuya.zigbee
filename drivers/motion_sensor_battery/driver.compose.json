@@ -79,5 +79,8 @@
       "CR2032"
     ]
   },
-  "id": "motion_sensor_battery"
+  "id": "motion_sensor_battery",
+  "connectivity": [
+    "zigbee"
+  ]
 }

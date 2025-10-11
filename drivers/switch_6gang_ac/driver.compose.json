@@ -127,5 +127,8 @@
   "platforms": [
     "local"
   ],
-  "id": "switch_6gang_ac"
+  "id": "switch_6gang_ac",
+  "connectivity": [
+    "zigbee"
+  ]
 }

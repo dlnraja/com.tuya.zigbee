@@ -149,5 +149,8 @@
   "platforms": [
     "local"
   ],
-  "id": "smart_outlet_monitor_ac"
+  "id": "smart_outlet_monitor_ac",
+  "connectivity": [
+    "zigbee"
+  ]
 }

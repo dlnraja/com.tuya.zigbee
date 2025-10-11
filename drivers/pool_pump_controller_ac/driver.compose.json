@@ -115,5 +115,8 @@
   "platforms": [
     "local"
   ],
-  "id": "pool_pump_controller_ac"
+  "id": "pool_pump_controller_ac",
+  "connectivity": [
+    "zigbee"
+  ]
 }

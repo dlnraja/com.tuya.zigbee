@@ -103,5 +103,8 @@
       "CR2032"
     ]
   },
-  "id": "pir_sensor_advanced_battery"
+  "id": "pir_sensor_advanced_battery",
+  "connectivity": [
+    "zigbee"
+  ]
 }

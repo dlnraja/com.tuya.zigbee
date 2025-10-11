@@ -143,5 +143,8 @@
   "platforms": [
     "local"
   ],
-  "id": "usb_outlet_advanced_ac"
+  "id": "usb_outlet_advanced_ac",
+  "connectivity": [
+    "zigbee"
+  ]
 }

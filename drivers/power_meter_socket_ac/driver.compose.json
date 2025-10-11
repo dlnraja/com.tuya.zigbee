@@ -149,5 +149,8 @@
   "platforms": [
     "local"
   ],
-  "id": "power_meter_socket"
+  "id": "power_meter_socket",
+  "connectivity": [
+    "zigbee"
+  ]
 }

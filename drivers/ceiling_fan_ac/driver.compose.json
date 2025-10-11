@@ -178,5 +178,8 @@
   "platforms": [
     "local"
   ],
-  "id": "ceiling_fan_ac"
+  "id": "ceiling_fan_ac",
+  "connectivity": [
+    "zigbee"
+  ]
 }
