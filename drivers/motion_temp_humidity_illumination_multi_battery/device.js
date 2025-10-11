@@ -33,18 +33,18 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
       }
     }
 
-    // Battery from standard cluster (this usually works)
+    // Battery from standard cluster (fallback)
     if (this.hasCapability('measure_battery')) {
       try {
-        this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
+        this.registerCapability('measure_battery', 'genPowerCfg', {
           get: 'batteryPercentageRemaining',
           report: 'batteryPercentageRemaining',
           reportParser: value => Math.max(0, Math.min(100, value / 2)),
           getParser: value => Math.max(0, Math.min(100, value / 2))
         });
-        this.log('✅ Battery capability registered');
+        this.log('✅ Battery capability registered (fallback)');
       } catch (err) {
-        this.error('Failed to register battery:', err);
+        this.log('Could not register battery fallback:', err.message);
       }
     }
 
