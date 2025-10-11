@@ -49,5 +49,8 @@
   },
   "2.2.1": {
     "en": "Bug fix: make HOBEIAN ZG-204ZM and ZG-204ZV discoverable by."
+  },
+  "2.2.2": {
+    "en": "Bug fix: replace Athom publish action with direct CLI."
   }
 }
