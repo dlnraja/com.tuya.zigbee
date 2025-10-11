@@ -261,11 +261,20 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
       
-      - name: 🧹 Force Clean Cache (Fresh Build)
+      - name: FORCE Clean Everything
         run: |
-          echo "🧹 Cleaning all caches for fresh build..."
+          echo " NUCLEAR CLEAN - Removing ALL caches and builds..."
           rm -rf .homeybuild .homeycompose node_modules/.cache || true
-          echo "✅ Cache cleaned - will rebuild from scratch"
+          rm -rf ~/.homey || true
+          rm -rf /tmp/homey* || true
+          
+          # Verify images exist
+          ls -lh assets/images/
+          
+          # Show image dimensions
+          file assets/images/*.png || true
+          
+          echo "Complete cleanup done - Fresh rebuild guaranteed"
       
       - name: 📦 Install Image Processing Dependencies
         run: |
