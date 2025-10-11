@@ -103,5 +103,8 @@
   },
   "2.9.3": {
     "en": "Bump version to 2.9.2 - trigger auto-publish."
+  },
+  "2.9.4": {
+    "en": "Bug fix: regenerate ALL images with v2.9 version marker - f."
   }
 }
