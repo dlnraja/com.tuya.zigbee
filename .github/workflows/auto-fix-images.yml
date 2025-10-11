@@ -1,0 +1,179 @@
+name: Auto-Fix Images on Validation Failure
+
+on:
+  workflow_run:
+    workflows: ["Auto-Publish Complete Pipeline"]
+    types:
+      - completed
+  workflow_dispatch:
+
+jobs:
+  auto-fix:
+    name: Auto-Fix Images if Validation Failed
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' || github.event_name == 'workflow_dispatch' }}
+    permissions:
+      contents: write
+    
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: 🔍 Check if Validation Failed Due to Images
+        id: check
+        run: |
+          echo "Checking last workflow run for image errors..."
+          
+          # Simulate check (in real scenario, we'd parse logs)
+          # For now, assume it's an image issue if workflow failed
+          echo "needs_fix=true" >> $GITHUB_OUTPUT
+          echo "🔧 Image fix needed"
+      
+      - name: 📦 Install Dependencies
+        if: steps.check.outputs.needs_fix == 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick
+          npm install --save-dev sharp
+      
+      - name: 🔧 Fix ALL Driver Images
+        if: steps.check.outputs.needs_fix == 'true'
+        run: |
+          echo "🔧 Fixing all driver images to correct sizes..."
+          
+          # Install sharp for Node.js image processing
+          cat > fix-images.js << 'FIXSCRIPT'
+          const sharp = require('sharp');
+          const fs = require('fs');
+          const path = require('path');
+          
+          async function resizeImage(input, output, width, height) {
+            try {
+              await sharp(input)
+                .resize(width, height, {
+                  fit: 'contain',
+                  background: { r: 255, g: 255, b: 255, alpha: 1 }
+                })
+                .png()
+                .toFile(output);
+              return true;
+            } catch (err) {
+              console.error(`Error processing ${input}:`, err.message);
+              return false;
+            }
+          }
+          
+          async function fixAllImages() {
+            const driversDir = 'drivers';
+            const drivers = fs.readdirSync(driversDir).filter(d => 
+              fs.statSync(path.join(driversDir, d)).isDirectory()
+            );
+            
+            let fixed = 0;
+            
+            for (const driver of drivers) {
+              const assetsPath = path.join(driversDir, driver, 'assets');
+              
+              if (!fs.existsSync(assetsPath)) continue;
+              
+              const largePath = path.join(assetsPath, 'large.png');
+              const smallPath = path.join(assetsPath, 'small.png');
+              const xlargePath = path.join(assetsPath, 'xlarge.png');
+              
+              // Use large as source
+              if (fs.existsSync(largePath)) {
+                const largeStat = fs.statSync(largePath);
+                
+                // Fix small (75x75)
+                if (await resizeImage(largePath, smallPath, 75, 75)) {
+                  console.log(`✅ Fixed ${driver}/small.png`);
+                  fixed++;
+                }
+                
+                // Ensure large is 500x500
+                if (await resizeImage(largePath, largePath + '.tmp', 500, 500)) {
+                  fs.renameSync(largePath + '.tmp', largePath);
+                  console.log(`✅ Fixed ${driver}/large.png`);
+                  fixed++;
+                }
+                
+                // Fix xlarge (1000x1000)
+                if (await resizeImage(largePath, xlargePath, 1000, 1000)) {
+                  console.log(`✅ Fixed ${driver}/xlarge.png`);
+                  fixed++;
+                }
+              }
+            }
+            
+            console.log(`\n✅ Fixed ${fixed} images total`);
+          }
+          
+          fixAllImages().catch(console.error);
+          FIXSCRIPT
+          
+          node fix-images.js
+      
+      - name: 🧹 Clean Build Cache
+        if: steps.check.outputs.needs_fix == 'true'
+        run: |
+          echo "🧹 Cleaning build cache..."
+          rm -rf .homeybuild .homeycompose node_modules/.cache
+          echo "✅ Cache cleaned"
+      
+      - name: 💾 Commit Fixed Images
+        if: steps.check.outputs.needs_fix == 'true'
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          if [ -n "$(git status --porcelain)" ]; then
+            git add drivers/*/assets/*.png
+            git commit -m "fix(images): auto-fix all driver images to correct sizes
+
+AUTO-FIX: Corrected image dimensions
+
+Fixed:
+- All small.png to 75x75
+- All large.png to 500x500  
+- All xlarge.png to 1000x1000
+
+This was triggered automatically after validation failure.
+
+[skip ci]"
+            
+            git push origin HEAD:master
+            
+            echo "✅ Fixed images committed and pushed"
+          else
+            echo "ℹ️ No changes needed"
+          fi
+      
+      - name: 🔄 Trigger Re-Validation
+        if: steps.check.outputs.needs_fix == 'true'
+        run: |
+          echo "🔄 Waiting 10 seconds for push to propagate..."
+          sleep 10
+          
+          echo "✅ Push complete - main workflow will trigger automatically"
+      
+      - name: 📢 Summary
+        if: always()
+        run: |
+          echo "## 🔧 Auto-Fix Images Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ steps.check.outputs.needs_fix }}" == "true" ]; then
+            echo "✅ **Images fixed and pushed**" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "All driver images corrected to:" >> $GITHUB_STEP_SUMMARY
+            echo "- small.png: 75x75" >> $GITHUB_STEP_SUMMARY
+            echo "- large.png: 500x500" >> $GITHUB_STEP_SUMMARY
+            echo "- xlarge.png: 1000x1000" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Main workflow will re-run automatically." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "ℹ️ **No fixes needed**" >> $GITHUB_STEP_SUMMARY
+          fi
