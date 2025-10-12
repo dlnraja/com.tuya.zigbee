@@ -202,5 +202,8 @@
   },
   "2.15.17": {
     "en": "Bug fix: IAS Zone enrollment using correct Homey Zigbee ."
+  },
+  "2.15.18": {
+    "en": "Fixed sensor readings and improved accuracy."
   }
 }
