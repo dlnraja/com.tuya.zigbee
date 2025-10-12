@@ -1,4 +1,4 @@
-name: Homey App Publish (Simplifié)
+name: Homey App Publish (Official)
 
 on:
   push:
@@ -14,6 +14,8 @@ jobs:
   publish:
     name: Publish to Homey App Store
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     
     steps:
       - name: 📥 Checkout
@@ -26,43 +28,10 @@ jobs:
         with:
           node-version: '18'
       
-      - name: 📦 Install Homey CLI
-        run: |
-          npm install --global homey
-          homey --version
-      
-      - name: 🔐 Setup Homey Authentication
-        env:
-          HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
-        run: |
-          if [ -z "$HOMEY_TOKEN" ]; then
-            echo "❌ ERREUR: HOMEY_TOKEN non configuré!"
-            echo ""
-            echo "📋 CONFIGURATION REQUISE:"
-            echo "1. Aller sur: https://tools.developer.homey.app/"
-            echo "2. Account → Personal Access Tokens"
-            echo "3. Create New Token"
-            echo "4. Copier le token"
-            echo "5. GitHub → Settings → Secrets → New secret"
-            echo "6. Name: HOMEY_TOKEN"
-            echo "7. Value: [coller le token]"
-            exit 1
-          fi
-          
-          # Create Homey config directory
-          mkdir -p ~/.homey
-          
-          # Write token to config file (Homey CLI v3+ method)
-          echo '{"token":"'"$HOMEY_TOKEN"'"}' > ~/.homey/auth.json
-          
-          echo "✅ Homey authentication configured"
-      
-      - name: ✅ Validate App
-        run: |
-          echo "🔍 Validating app..."
-          homey app validate --level publish || {
-            echo "⚠️ Validation warnings (continuing...)"
-          }
+      - name: ✅ Validate App (Official Athom Action)
+        uses: athombv/github-action-homey-app-validate@master
+        with:
+          level: publish
       
       - name: 📝 Generate Changelog
         id: changelog
@@ -87,82 +56,52 @@ jobs:
           echo "📝 Version type: $TYPE"
           echo "📝 Changelog: $MSG"
       
-      - name: 🚀 Publish to Homey
+      - name: 🔄 Update Version (Official Athom Action)
+        uses: athombv/github-action-homey-app-version@master
+        id: version
+        with:
+          version: ${{ steps.changelog.outputs.type }}
+          changelog: ${{ steps.changelog.outputs.message }}
+      
+      - name: 🚀 Publish to Homey (Official Athom Action)
+        uses: athombv/github-action-homey-app-publish@master
         id: publish
-        env:
-          HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
-        run: |
-          echo "🚀 Publishing to Homey App Store..."
-          
-          # Run publish command
-          OUTPUT=$(homey app version ${{ steps.changelog.outputs.type }} 2>&1) || {
-            echo "⚠️ Version bump may have issues"
-            echo "$OUTPUT"
-          }
-          
-          # Try to publish
-          PUBLISH_OUTPUT=$(homey app publish --changelog "${{ steps.changelog.outputs.message }}" 2>&1) || {
-            echo "⚠️ Publish may have issues"
-            echo "$PUBLISH_OUTPUT"
-            
-            # Check if it's a known validation error
-            if echo "$PUBLISH_OUTPUT" | grep -q "validation"; then
-              echo ""
-              echo "📊 KNOWN ISSUE: Homey CLI validation bug"
-              echo "✅ App is valid locally"
-              echo "⚠️ Manual publication required"
-              exit 0
-            fi
-          }
-          
-          echo "$PUBLISH_OUTPUT"
-          
-          if echo "$PUBLISH_OUTPUT" | grep -q "success"; then
-            echo "success=true" >> $GITHUB_OUTPUT
-            echo "✅ App published successfully!"
-          else
-            echo "success=false" >> $GITHUB_OUTPUT
-            echo "⚠️ Auto-publish may require manual intervention"
-          fi
+        with:
+          personal_access_token: ${{ secrets.HOMEY_TOKEN }}
       
       - name: 💾 Commit Version Changes
-        if: always()
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           
           if [ -n "$(git status --porcelain)" ]; then
-            git add app.json .homeychangelog.json || true
-            git commit -m "chore: version bump [skip ci]" || true
+            git add app.json .homeychangelog.json
+            git commit -m "chore: version bump to v${{ steps.version.outputs.version }} [skip ci]"
             git push || {
               echo "⚠️ Push failed, trying with rebase..."
               git pull --rebase origin master
               git push
             }
-            echo "✅ Version changes committed"
+            echo "✅ Version v${{ steps.version.outputs.version }} committed"
           else
-            echo "ℹ️ No changes to commit"
+            echo "ℹ️ No version changes to commit"
           fi
       
       - name: 📊 Summary
         if: always()
         run: |
-          echo "## 🎉 Publication Status" >> $GITHUB_STEP_SUMMARY
+          echo "## 🎉 Publication Complete" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          
-          if [ "${{ steps.publish.outputs.success }}" = "true" ]; then
-            echo "✅ **App published successfully to Homey App Store!**" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "⚠️ **Manual publication required**" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "### 📋 Steps to Complete Publication:" >> $GITHUB_STEP_SUMMARY
-            echo "1. Go to [Homey Developer Dashboard](https://tools.developer.homey.app/)" >> $GITHUB_STEP_SUMMARY
-            echo "2. Find **Universal Tuya Zigbee**" >> $GITHUB_STEP_SUMMARY
-            echo "3. Click **Publish to Test** or submit for certification" >> $GITHUB_STEP_SUMMARY
-          fi
-          
+          echo "**Version:** v${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Changelog:** ${{ steps.changelog.outputs.message }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### 🔗 Useful Links:" >> $GITHUB_STEP_SUMMARY
+          echo "### 📋 Next Steps:" >> $GITHUB_STEP_SUMMARY
+          echo "1. Go to [Homey Dashboard](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee)" >> $GITHUB_STEP_SUMMARY
+          echo "2. Find **Universal Tuya Zigbee v${{ steps.version.outputs.version }}** (Draft)" >> $GITHUB_STEP_SUMMARY
+          echo "3. Click **Promote to Test** to make it available on test channel" >> $GITHUB_STEP_SUMMARY
+          echo "4. Or submit for **Certification** to publish to live" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🔗 Links:" >> $GITHUB_STEP_SUMMARY
           echo "- [Dashboard](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee)" >> $GITHUB_STEP_SUMMARY
           echo "- [Test Channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)" >> $GITHUB_STEP_SUMMARY
           echo "- [Live App](https://homey.app/a/com.dlnraja.tuya.zigbee/)" >> $GITHUB_STEP_SUMMARY
