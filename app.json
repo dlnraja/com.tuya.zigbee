@@ -19803,7 +19803,7 @@
         "measure_temperature",
         "measure_humidity",
         "measure_battery",
-        "alarm_temperature"
+        "temp_alarm"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -20032,7 +20032,7 @@
         "measure_temperature",
         "measure_humidity",
         "measure_battery",
-        "alarm_temperature"
+        "temp_alarm"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -20176,7 +20176,7 @@
         "measure_battery",
         "alarm_motion",
         "measure_luminance",
-        "alarm_temperature"
+        "temp_alarm"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -20355,7 +20355,7 @@
         "measure_battery",
         "alarm_motion",
         "measure_luminance",
-        "alarm_temperature"
+        "temp_alarm"
       ],
       "platforms": [
         "local"
