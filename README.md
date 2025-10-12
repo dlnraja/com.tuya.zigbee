@@ -4,8 +4,11 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-SDK3-orange.svg)](https://apps.developer.homey.app/)
 [![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-Active-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions)
+[![Automation](https://img.shields.io/badge/Automation-Master_Orchestrator-blueviolet.svg)](docs/MASTER_ORCHESTRATOR_GUIDE.md)
 
 **The most comprehensive Tuya Zigbee device integration for Homey Pro with automated publication**
+
+> 🎭 **NEW!** [Master Orchestrator Ultimate](docs/MASTER_ORCHESTRATOR_GUIDE.md) - Double-click `RUN_ULTIMATE.bat` for full automation!
 
 ## 🎯 Overview
 
@@ -287,6 +290,47 @@ Contributions welcome! Please:
 ## 📄 License
 
 MIT License - See [LICENSE](LICENSE) file
+
+## 🔧 For Developers
+
+### Master Orchestrator Ultimate
+
+The project includes a powerful automation system that handles everything from A to Z:
+
+```bash
+# Double-click (easiest)
+RUN_ULTIMATE.bat
+
+# Or command-line
+node scripts/MASTER_ORCHESTRATOR_ULTIMATE.js [options]
+```
+
+**What it does:**
+- 🌐 Downloads & matches with Blakadder + Zigbee2MQTT databases
+- 🎯 Intelligent cross-platform conversion
+- 🤖 Auto-enriches drivers (HIGH confidence ≥90%)
+- ✅ Multi-level validation (JSON, Homey CLI, SDK3)
+- 📄 Auto-organizes documentation
+- 🚀 Smart Git commit + GitHub Actions publish
+
+**Documentation:** [Master Orchestrator Guide](docs/MASTER_ORCHESTRATOR_GUIDE.md)
+
+### Other Automation Scripts
+
+```bash
+# Intelligent enrichment system
+node scripts/enrichment/INTELLIGENT_MATCHER_BLAKADDER.js
+node scripts/enrichment/PATHFINDER_CONVERTER.js
+node scripts/enrichment/AUTO_ENRICHMENT_ORCHESTRATOR.js
+
+# Forum & analysis
+node scripts/analysis/CHECK_FORUM_ISSUES_COMPLETE.js
+
+# Git automation
+pwsh scripts/automation/SMART_COMMIT.ps1 -Message "your message"
+```
+
+---
 
 ## 👥 Credits
 
