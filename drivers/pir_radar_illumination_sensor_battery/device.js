@@ -12,13 +12,15 @@ class PirRadarIlluminationSensorBatteryDevice extends ZigBeeDevice {
     // Call parent
     await super.onNodeInit({ zclNode });
     
-    // Initialiser le système de batterie intelligent
+    // Initialiser le système de batterie intelligent V2 (Homey Persistent Storage)
     try {
-      const { getInstance } = require('../../utils/battery-intelligence-system');
-      this.batterySystem = await getInstance();
-      this.log('✅ Battery Intelligence System loaded');
+      const BatteryIntelligenceSystemV2 = require('../../utils/battery-intelligence-system-v2');
+      this.batterySystem = new BatteryIntelligenceSystemV2(this);
+      await this.batterySystem.load();
+      this.log('✅ Battery Intelligence System V2 loaded (Homey Storage)');
     } catch (err) {
-      this.log('⚠️  Battery Intelligence System not available:', err.message);
+      this.log('⚠️  Battery Intelligence System V2 not available:', err.message);
+      this.log('   → Fallback to basic mode will be used');
     }
 
     // Auto-detect device type and initialize Tuya cluster handler
@@ -59,47 +61,98 @@ class PirRadarIlluminationSensorBatteryDevice extends ZigBeeDevice {
           reportParser: async (value) => {
             this.log('🔋 Battery raw value:', value);
             
-            // Essayer de récupérer le voltage si disponible
+            // Essayer de récupérer voltage + current si disponibles
             let voltage = null;
+            let current = null;
+            
             try {
               if (zclNode.endpoints[1] && zclNode.endpoints[1].clusters.powerConfiguration) {
-                const batteryVoltage = await zclNode.endpoints[1].clusters.powerConfiguration.readAttributes(['batteryVoltage']);
-                if (batteryVoltage && batteryVoltage.batteryVoltage) {
-                  voltage = batteryVoltage.batteryVoltage / 10; // Convertir en volts
+                const attrs = await zclNode.endpoints[1].clusters.powerConfiguration.readAttributes([
+                  'batteryVoltage',
+                  'batteryCurrentCapacity'
+                ]).catch(() => ({}));
+                
+                if (attrs.batteryVoltage) {
+                  voltage = attrs.batteryVoltage / 10; // Convertir en volts
                   this.log('🔋 Battery voltage:', voltage, 'V');
+                }
+                
+                if (attrs.batteryCurrentCapacity) {
+                  current = attrs.batteryCurrentCapacity / 1000; // Convertir en mA
+                  this.log('🔋 Battery current:', current, 'mA');
                 }
               }
             } catch (err) {
-              // Voltage non disponible
+              // Mesures physiques non disponibles, on continue sans
+              this.log('ℹ️  Physical measurements not available:', err.message);
             }
             
-            // Utiliser le système intelligent si disponible
+            // ========== CASCADE DE FALLBACK INTELLIGENT ==========
+            
+            // NIVEAU 1: Système intelligent V2 (meilleure option)
             if (this.batterySystem) {
-              const batteryType = this.getSetting('battery_type') || 'CR2032';
-              const analysis = this.batterySystem.analyzeValue(value, manufacturerName, voltage, batteryType);
-              
-              this.log(`🔋 Intelligent analysis:`, {
-                percent: analysis.percent,
-                confidence: analysis.confidence,
-                dataType: analysis.dataType,
-                source: analysis.source
-              });
-              
-              // Sauvegarder périodiquement
-              if (analysis.needsLearning) {
-                await this.batterySystem.save();
+              try {
+                const batteryType = this.getSetting('battery_type') || 'CR2032';
+                const analysis = await this.batterySystem.analyzeValue(
+                  value, 
+                  manufacturerName, 
+                  voltage, 
+                  current, 
+                  batteryType
+                );
+                
+                this.log(`🔋 Intelligent V2 analysis:`, {
+                  percent: analysis.percent,
+                  confidence: analysis.confidence,
+                  method: analysis.method,
+                  source: analysis.source
+                });
+                
+                // Sauvegarder périodiquement si en mode learning
+                if (analysis.needsLearning) {
+                  await this.batterySystem.save().catch(err => {
+                    this.error('Failed to save battery learning:', err);
+                  });
+                }
+                
+                return analysis.percent;
+              } catch (err) {
+                this.error('⚠️  Battery Intelligence V2 failed:', err.message);
+                // Continue vers fallback niveau 2
               }
-              
-              return analysis.percent;
             }
             
-            // Fallback: calcul simple
-            this.log('🔋 Using simple fallback calculation');
-            if (value <= 100) {
-              return Math.max(0, Math.min(100, value));
-            } else {
-              return Math.max(0, Math.min(100, value / 2));
+            // NIVEAU 2: Calcul voltage si disponible (sans système intelligent)
+            if (voltage) {
+              const batteryType = this.getSetting('battery_type') || 'CR2032';
+              const voltagePercent = this.calculateSimpleVoltagePercent(voltage, batteryType);
+              if (voltagePercent !== null) {
+                this.log('🔋 Using simple voltage calculation:', voltagePercent);
+                return voltagePercent;
+              }
             }
+            
+            // NIVEAU 3: Détection intelligente du format de données
+            let percent;
+            if (value <= 100) {
+              // Format 0-100
+              percent = value;
+              this.log('🔋 Detected format: 0-100');
+            } else if (value <= 200) {
+              // Format 0-200
+              percent = value / 2;
+              this.log('🔋 Detected format: 0-200');
+            } else if (value <= 255) {
+              // Format 0-255
+              percent = Math.round(value / 2.55);
+              this.log('🔋 Detected format: 0-255');
+            } else {
+              // Format inconnu - conservateur
+              percent = Math.min(100, value);
+              this.log('⚠️  Unknown format, using conservative approach');
+            }
+            
+            return Math.max(0, Math.min(100, Math.round(percent)));
           },
           getParser: async (value) => {
             const manufacturerName = this.getData().manufacturerName || 'unknown';
@@ -187,8 +240,43 @@ class PirRadarIlluminationSensorBatteryDevice extends ZigBeeDevice {
     }
   }
 
+  /**
+   * Calcul simple de voltage (fallback sans système intelligent)
+   */
+  calculateSimpleVoltagePercent(voltage, batteryType) {
+    // Courbes simplifiées
+    const curves = {
+      'CR2032': { nominal: 3.0, cutoff: 2.0 },
+      'CR2450': { nominal: 3.0, cutoff: 2.0 },
+      'CR2477': { nominal: 3.0, cutoff: 2.0 },
+      'AAA': { nominal: 1.5, cutoff: 0.8 },
+      'AA': { nominal: 1.5, cutoff: 0.8 }
+    };
+    
+    const curve = curves[batteryType];
+    if (!curve) return null;
+    
+    if (voltage >= curve.nominal) return 100;
+    if (voltage <= curve.cutoff) return 0;
+    
+    // Interpolation linéaire simple
+    const range = curve.nominal - curve.cutoff;
+    const position = voltage - curve.cutoff;
+    return Math.round((position / range) * 100);
+  }
+
   async onDeleted() {
     this.log('pir_radar_illumination_sensor_battery deleted');
+    
+    // Sauvegarder une dernière fois le système de batterie
+    if (this.batterySystem) {
+      try {
+        await this.batterySystem.save();
+        this.log('✅ Battery Intelligence saved before deletion');
+      } catch (err) {
+        this.error('Failed to save Battery Intelligence on deletion:', err);
+      }
+    }
   }
 
 }
