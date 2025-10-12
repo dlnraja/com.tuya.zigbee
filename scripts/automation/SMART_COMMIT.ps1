@@ -1,6 +1,8 @@
 #!/usr/bin/env pwsh
 # SMART_COMMIT.ps1
-# Commit intelligent: organise docs + commit + push sans rebase
+# Commit intelligent: organise docs + commit + push GitHub SEULEMENT
+# NOTE: Ne publie PAS vers Homey App Store automatiquement
+# Pour publier vers Homey: pwsh scripts/automation/PUBLISH_TO_HOMEY.ps1
 
 param(
     [string]$Message = "chore: auto commit with organized docs"
