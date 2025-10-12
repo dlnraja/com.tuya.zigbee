@@ -15,20 +15,49 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-      
-      - name: Setup Homey CLI
-        run: |
-          npm install -g homey
-          echo "${{ secrets.HOMEY_TOKEN }}" | homey login --token
+          cache: 'npm'
       
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+      
+      - name: "Setup Homey CLI (Official)"
+        run: |
+          npm install -g homey
+          homey --version
+      
+      - name: Authenticate Homey CLI
+        env:
+          HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
+        run: |
+          if [ -z "$HOMEY_TOKEN" ]; then
+            echo "❌ HOMEY_TOKEN secret not configured"
+            exit 1
+          fi
+          
+          # Create Homey config directory
+          mkdir -p ~/.homey
+          
+          # Create session file with token
+          cat > ~/.homey/session.json << EOF
+          {
+            "token": "$HOMEY_TOKEN"
+          }
+          EOF
+          
+          # Verify authentication
+          homey whoami || {
+            echo "❌ Homey authentication failed"
+            exit 1
+          }
+          
+          echo "✅ Authenticated with Homey CLI"
       
       - name: Check driver changes
         id: check_changes
@@ -43,14 +72,98 @@ jobs:
             echo "No driver changes"
           fi
       
-      - name: Validate app
+      - name: "Pre-flight Validation (Syntax)"
         if: steps.check_changes.outputs.has_driver_changes == 'true'
-        run: homey app validate --level publish
+        run: |
+          echo "🔍 Running syntax validation..."
+          
+          # Validate JSON files
+          for file in app.json .homeychangelog.json; do
+            if ! jq empty "$file" 2>/dev/null; then
+              echo "❌ Invalid JSON: $file"
+              exit 1
+            fi
+          done
+          
+          # Check driver manifests
+          for manifest in drivers/*/driver.compose.json; do
+            if [ -f "$manifest" ]; then
+              if ! jq empty "$manifest" 2>/dev/null; then
+                echo "❌ Invalid JSON: $manifest"
+                exit 1
+              fi
+            fi
+          done
+          
+          echo "✅ Syntax validation passed"
+      
+      - name: "Homey App Validation (Level: Publish)"
+        if: steps.check_changes.outputs.has_driver_changes == 'true'
+        run: |
+          echo "🔍 Running Homey CLI validation (publish level)..."
+          
+          # Run validation with proper error handling
+          if ! homey app validate --level publish 2>&1 | tee validation.log; then
+            echo "❌ Homey validation failed!"
+            echo "::error::Validation errors detected - see logs above"
+            cat validation.log
+            exit 1
+          fi
+          
+          echo "✅ Homey validation passed"
+      
+      - name: SDK3 Compliance Check
+        if: steps.check_changes.outputs.has_driver_changes == 'true'
+        run: |
+          echo "🔍 Checking SDK3 compliance..."
+          
+          # Verify SDK version
+          SDK_VERSION=$(node -pe "require('./app.json').sdk")
+          if [ "$SDK_VERSION" != "3" ]; then
+            echo "❌ Wrong SDK version: $SDK_VERSION (expected: 3)"
+            exit 1
+          fi
+          
+          # Check for deprecated dependencies
+          if grep -q "homey-meshdriver" package.json 2>/dev/null; then
+            echo "❌ Deprecated dependency: homey-meshdriver (use homey-zigbeedriver)"
+            exit 1
+          fi
+          
+          echo "✅ SDK3 compliant"
+      
+      - name: Driver Endpoints Check
+        if: steps.check_changes.outputs.has_driver_changes == 'true'
+        run: |
+          echo "🔍 Checking driver endpoints..."
+          
+          MISSING_ENDPOINTS=0
+          for manifest in drivers/*/driver.compose.json; do
+            if [ -f "$manifest" ]; then
+              DRIVER=$(basename $(dirname "$manifest"))
+              
+              # Check if Zigbee driver has endpoints
+              if jq -e '.zigbee' "$manifest" >/dev/null 2>&1; then
+                if ! jq -e '.zigbee.endpoints' "$manifest" >/dev/null 2>&1; then
+                  echo "⚠️  Missing endpoints: $DRIVER"
+                  MISSING_ENDPOINTS=$((MISSING_ENDPOINTS + 1))
+                fi
+              fi
+            fi
+          done
+          
+          if [ $MISSING_ENDPOINTS -gt 0 ]; then
+            echo "⚠️  $MISSING_ENDPOINTS drivers missing endpoints (continuing anyway)"
+          else
+            echo "✅ All Zigbee drivers have endpoints defined"
+          fi
       
       - name: Auto-bump version
         if: steps.check_changes.outputs.has_driver_changes == 'true'
         id: version
         run: |
+          echo "📦 Auto-bumping version..."
+          
           CURRENT_VERSION=$(node -pe "require('./app.json').version")
           IFS='.' read -ra PARTS <<< "$CURRENT_VERSION"
           PARTS[2]=$((PARTS[2] + 1))
@@ -59,18 +172,20 @@ jobs:
           echo "current=$CURRENT_VERSION" >> $GITHUB_OUTPUT
           echo "new=$NEW_VERSION" >> $GITHUB_OUTPUT
           
-          # Update app.json
+          echo "Version: $CURRENT_VERSION → $NEW_VERSION"
+          
+          # Update app.json with proper formatting
           node -e "
           const fs = require('fs');
-          const app = require('./app.json');
+          const app = JSON.parse(fs.readFileSync('app.json', 'utf8'));
           app.version = '$NEW_VERSION';
-          fs.writeFileSync('app.json', JSON.stringify(app, null, 2));
+          fs.writeFileSync('app.json', JSON.stringify(app, null, 2) + '\n');
           "
           
-          # Update changelog
+          # Update changelog with proper structure
           node -e "
           const fs = require('fs');
-          const changelog = require('./.homeychangelog.json');
+          const changelog = JSON.parse(fs.readFileSync('.homeychangelog.json', 'utf8'));
           const newEntry = {
             version: '$NEW_VERSION',
             date: new Date().toISOString().split('T')[0],
@@ -78,10 +193,12 @@ jobs:
               en: 'Driver improvements from community feedback and automated enrichment'
             }
           };
-          const entries = Object.values(changelog);
-          const updated = { ...Object.fromEntries([[newEntry.version, newEntry], ...Object.entries(changelog)]) };
-          fs.writeFileSync('./.homeychangelog.json', JSON.stringify(updated, null, 2));
+          // Add new entry at the beginning
+          const updated = Object.assign({ [$NEW_VERSION]: newEntry }, changelog);
+          fs.writeFileSync('.homeychangelog.json', JSON.stringify(updated, null, 2) + '\n');
           "
+          
+          echo "✅ Version bumped to $NEW_VERSION"
       
       - name: Commit version bump
         if: steps.check_changes.outputs.has_driver_changes == 'true'
@@ -92,34 +209,94 @@ jobs:
           git commit -m "chore: bump version to ${{ steps.version.outputs.new }} [skip ci]"
           git push
       
-      - name: Publish to Homey App Store
-        if: steps.check_changes.outputs.has_driver_changes == 'true'
-        run: homey app publish
-      
-      - name: Create Release
-        if: steps.check_changes.outputs.has_driver_changes == 'true'
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: v${{ steps.version.outputs.new }}
-          release_name: Release v${{ steps.version.outputs.new }}
-          body: |
-            ## Auto-published driver improvements
-            
-            Version ${{ steps.version.outputs.current }} → ${{ steps.version.outputs.new }}
-            
-            Driver changes detected and automatically published to Homey App Store.
-            
-            See [Homey App Store Dashboard](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee)
-          draft: false
-          prerelease: false
-      
-      - name: Summary
+      - name: Re-validate After Version Bump
         if: steps.check_changes.outputs.has_driver_changes == 'true'
         run: |
-          echo "## ✅ Auto-Publish Complete" >> $GITHUB_STEP_SUMMARY
+          echo "🔍 Re-validating after version bump..."
+          
+          if ! homey app validate --level publish; then
+            echo "❌ Validation failed after version bump!"
+            echo "::error::Post-bump validation failed"
+            exit 1
+          fi
+          
+          echo "✅ Post-bump validation passed"
+      
+      - name: "Publish to Homey App Store (Official CLI)"
+        if: steps.check_changes.outputs.has_driver_changes == 'true'
+        id: publish
+        run: |
+          echo "🚀 Publishing to Homey App Store..."
+          echo "Version: ${{ steps.version.outputs.new }}"
+          
+          # Run official Homey CLI publish command
+          if ! homey app publish 2>&1 | tee publish.log; then
+            echo "❌ Publication failed!"
+            echo "::error::Homey app publish command failed"
+            cat publish.log
+            exit 1
+          fi
+          
+          echo "✅ Successfully published to Homey App Store"
+          echo "published=true" >> $GITHUB_OUTPUT
+      
+      - name: Create GitHub Release
+        if: steps.check_changes.outputs.has_driver_changes == 'true' && steps.publish.outputs.published == 'true'
+        uses: ncipollo/release-action@v1
+        with:
+          tag: "v${{ steps.version.outputs.new }}"
+          name: "Release v${{ steps.version.outputs.new }}"
+          body: |
+            ## 🚀 Auto-published Driver Improvements
+            
+            **Version:** ${{ steps.version.outputs.current }} → ${{ steps.version.outputs.new }}
+            
+            ### Changes
+            Driver improvements from community feedback and automated enrichment system.
+            
+            ### Validation
+            - ✅ Syntax validation passed
+            - ✅ Homey CLI validation passed (publish level)
+            - ✅ SDK3 compliance verified
+            - ✅ Driver endpoints checked
+            
+            ### Published
+            ✅ Live on [Homey App Store](https://homey.app/app/com.dlnraja.tuya.zigbee)
+            
+            ### Dashboard
+            [Developer Dashboard](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee)
+          draft: false
+          prerelease: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Build Summary
+        if: steps.check_changes.outputs.has_driver_changes == 'true'
+        run: |
+          echo "## ✅ Auto-Publish Complete!" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Version:** ${{ steps.version.outputs.current }} → ${{ steps.version.outputs.new }}" >> $GITHUB_STEP_SUMMARY
-          echo "**Published:** YES (driver changes detected)" >> $GITHUB_STEP_SUMMARY
-          echo "**Dashboard:** https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee" >> $GITHUB_STEP_SUMMARY
+          echo "### 📦 Version" >> $GITHUB_STEP_SUMMARY
+          echo "${{ steps.version.outputs.current }} → **${{ steps.version.outputs.new }}**" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### ✅ Validation Steps" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Syntax validation" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Homey CLI validation (publish level)" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ SDK3 compliance check" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Driver endpoints check" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Post-bump validation" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🚀 Publication" >> $GITHUB_STEP_SUMMARY
+          echo "**Status:** Published to Homey App Store ✅" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🔗 Links" >> $GITHUB_STEP_SUMMARY
+          echo "- [Homey App Store](https://homey.app/app/com.dlnraja.tuya.zigbee)" >> $GITHUB_STEP_SUMMARY
+          echo "- [Developer Dashboard](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee)" >> $GITHUB_STEP_SUMMARY
+          echo "- [GitHub Release](https://github.com/${{ github.repository }}/releases/tag/v${{ steps.version.outputs.new }})" >> $GITHUB_STEP_SUMMARY
+      
+      - name: No Publish Needed
+        if: steps.check_changes.outputs.has_driver_changes != 'true'
+        run: |
+          echo "## ℹ️ No Publication Needed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "No driver changes detected - publication skipped." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Only documentation or scripts were modified." >> $GITHUB_STEP_SUMMARY
