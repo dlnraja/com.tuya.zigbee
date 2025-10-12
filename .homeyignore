@@ -111,4 +111,15 @@ ultimate_system/
 
 backup/
 
-backup/
+# Placeholders and temp files
+*.placeholder
+
+# Analysis and reports (CRITICAL SIZE)
+.cache/
+references/
+
+# Documentation (keep only essential)
+IMPLEMENTATION_COMPLETE_2025.md
+ENRICHISSEMENT_FLOW_CARDS_COMPLETE.md
+
+references

@@ -1,15 +1,15 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "2.15.30",
+  "version": "2.15.31",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "Universal support for 1500+ Tuya Zigbee devices across 167 drivers - 100% local control, no cloud required. Supports switches, sensors, lights, plugs, curtains and more from multiple brands.",
-    "fr": "Support universel pour 1500+ appareils Tuya Zigbee avec 167 drivers - Contrôle 100% local, sans cloud. Supporte interrupteurs, capteurs, lumières, prises, rideaux et plus de multiples marques."
+    "en": "Universal Zigbee support across 183 drivers - 100% local control, no cloud required. Supports Philips Hue, IKEA, Tuya, Xiaomi and more. Thread/Matter ready. 2024-2025 products supported.",
+    "fr": "Support Zigbee universel avec 183 drivers - Contrôle 100% local, sans cloud. Supporte Philips Hue, IKEA, Tuya, Xiaomi et plus. Thread/Matter prêt. Produits 2024-2025 supportés."
   },
   "category": "appliances",
   "permissions": [],
