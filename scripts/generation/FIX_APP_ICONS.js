@@ -15,24 +15,46 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 const ASSETS_DIR = path.join(__dirname, '../../assets/images');
-const SVG_PATH = path.join(ASSETS_DIR, 'icon.svg');
 
 // Homey App Icon Requirements (official)
+// Each size has its own optimized SVG
 const SIZES = {
-  small: { width: 250, height: 175 },
-  large: { width: 500, height: 350 },
-  xlarge: { width: 1000, height: 700 }
+  small: { 
+    width: 250, 
+    height: 175,
+    svg: path.join(ASSETS_DIR, 'icon-small.svg')
+  },
+  large: { 
+    width: 500, 
+    height: 350,
+    svg: path.join(ASSETS_DIR, 'icon-large.svg')
+  },
+  xlarge: { 
+    width: 1000, 
+    height: 700,
+    svg: path.join(ASSETS_DIR, 'icon-xlarge.svg')
+  }
 };
 
 console.log('🎨 Fixing App Icons for Homey');
 console.log('═'.repeat(60));
 
-// Vérifier si icon.svg existe
-if (!fs.existsSync(SVG_PATH)) {
-  console.error('❌ icon.svg not found!');
+// Vérifier si les SVG existent
+console.log('\n📋 Checking SVG files...');
+let missingFiles = [];
+for (const [name, config] of Object.entries(SIZES)) {
+  if (!fs.existsSync(config.svg)) {
+    console.error(`  ❌ ${name}: ${path.basename(config.svg)} not found!`);
+    missingFiles.push(name);
+  } else {
+    console.log(`  ✅ ${name}: ${path.basename(config.svg)}`);
+  }
+}
+
+if (missingFiles.length > 0) {
+  console.error('\n❌ Missing SVG files! Cannot continue.');
   process.exit(1);
 }
-console.log('✅ icon.svg found');
 
 // Vérifier si ImageMagick est installé
 try {
@@ -47,16 +69,16 @@ try {
     console.log('✅ Sharp available as fallback');
     
     // Convertir SVG en PNG avec sharp
-    for (const [name, size] of Object.entries(SIZES)) {
+    for (const [name, config] of Object.entries(SIZES)) {
       const outputPath = path.join(ASSETS_DIR, `${name}.png`);
       
-      sharp(SVG_PATH)
-        .resize(size.width, size.height, { fit: 'fill' })
+      sharp(config.svg)
+        .resize(config.width, config.height)
         .png({ quality: 100, compressionLevel: 9 })
         .toFile(outputPath)
         .then(() => {
           const stats = fs.statSync(outputPath);
-          console.log(`  ✅ ${name}.png (${size.width}x${size.height}) - ${Math.round(stats.size / 1024)}KB`);
+          console.log(`  ✅ ${name}.png (${config.width}x${config.height}) - ${Math.round(stats.size / 1024)}KB`);
         })
         .catch(err => {
           console.error(`  ❌ Failed to generate ${name}.png:`, err.message);
@@ -78,18 +100,18 @@ try {
 // Utiliser ImageMagick pour convertir
 console.log('\n📐 Generating PNG files...');
 
-for (const [name, size] of Object.entries(SIZES)) {
+for (const [name, config] of Object.entries(SIZES)) {
   const outputPath = path.join(ASSETS_DIR, `${name}.png`);
   
   try {
-    // Convertir SVG en PNG avec ImageMagick (aspect ratio preserved)
+    // Convertir SVG spécifique en PNG (dimensions déjà optimales)
     execSync(
-      `magick convert -background none -resize ${size.width}x${size.height}! "${SVG_PATH}" "${outputPath}"`,
+      `magick convert -background none "${config.svg}" "${outputPath}"`,
       { stdio: 'ignore' }
     );
     
     const stats = fs.statSync(outputPath);
-    console.log(`  ✅ ${name}.png (${size.width}x${size.height}) - ${Math.round(stats.size / 1024)}KB`);
+    console.log(`  ✅ ${name}.png (${config.width}x${config.height}) - ${Math.round(stats.size / 1024)}KB`);
     
   } catch (error) {
     console.error(`  ❌ Failed to generate ${name}.png:`, error.message);
