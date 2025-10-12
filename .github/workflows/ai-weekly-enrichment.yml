@@ -1,0 +1,157 @@
+name: AI-Powered Weekly Enrichment
+
+on:
+  schedule:
+    # Tous les lundis à 2h UTC
+    - cron: '0 2 * * 1'
+  workflow_dispatch:
+    inputs:
+      quick_mode:
+        description: 'Quick mode (faster but less comprehensive)'
+        required: false
+        default: true
+        type: boolean
+
+jobs:
+  quick-intelligence:
+    name: Weekly Quick Intelligence
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+      
+      - name: 🔧 Setup
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: 🤖 Quick AI Scan
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          npm install openai axios
+          
+          cat > quick-ai-scan.js << 'SCAN_SCRIPT'
+          const OpenAI = require('openai');
+          const axios = require('axios');
+          const fs = require('fs');
+          
+          class QuickAIAgent {
+            constructor() {
+              this.openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+            }
+            
+            async quickScan() {
+              console.log('⚡ Quick AI intelligence scan...');
+              
+              // 1. Quick check nouvelles releases Zigbee2MQTT
+              const z2m = await this.checkZigbee2MQTTReleases();
+              
+              // 2. Quick check forum Homey
+              const forum = await this.checkHomeyForum();
+              
+              // 3. AI: Identifier urgent items
+              const urgent = await this.identifyUrgent([...z2m, ...forum]);
+              
+              const report = {
+                timestamp: new Date().toISOString(),
+                quick_scan: true,
+                findings: {
+                  zigbee2mqtt: z2m.length,
+                  forum: forum.length,
+                  urgent: urgent.length
+                },
+                urgent_items: urgent
+              };
+              
+              fs.writeFileSync(
+                'data/enrichment/weekly-quick-scan.json',
+                JSON.stringify(report, null, 2)
+              );
+              
+              console.log(\`✅ Found \${urgent.length} urgent items\`);
+            }
+            
+            async checkZigbee2MQTTReleases() {
+              try {
+                const response = await axios.get(
+                  'https://api.github.com/repos/Koenkk/zigbee2mqtt/releases/latest',
+                  { headers: { 'User-Agent': 'Homey-Check' } }
+                );
+                
+                return [{
+                  source: 'zigbee2mqtt',
+                  type: 'release',
+                  version: response.data.tag_name,
+                  date: response.data.published_at,
+                  url: response.data.html_url
+                }];
+              } catch (error) {
+                return [];
+              }
+            }
+            
+            async checkHomeyForum() {
+              // Simplified - en prod utiliser scraping
+              return [];
+            }
+            
+            async identifyUrgent(items) {
+              if (items.length === 0) return [];
+              
+              try {
+                const completion = await this.openai.chat.completions.create({
+                  model: 'gpt-3.5-turbo',
+                  messages: [{
+                    role: 'user',
+                    content: \`From these updates, identify URGENT items requiring immediate attention:\\n\${JSON.stringify(items)}\\n\\nReturn JSON array with priority and reason.\`
+                  }],
+                  temperature: 0.3,
+                  max_tokens: 500
+                });
+                
+                return JSON.parse(completion.choices[0].message.content).urgent || [];
+              } catch {
+                return items.slice(0, 3);
+              }
+            }
+          }
+          
+          const agent = new QuickAIAgent();
+          agent.quickScan().catch(console.error);
+          SCAN_SCRIPT
+          
+          node quick-ai-scan.js
+      
+      - name: 📊 Create Issue if Urgent
+        if: hashFiles('data/enrichment/weekly-quick-scan.json') != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = JSON.parse(
+              fs.readFileSync('data/enrichment/weekly-quick-scan.json', 'utf8')
+            );
+            
+            if (report.urgent_items.length > 0) {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: \`🚨 Weekly AI Scan: \${report.urgent_items.length} urgent items\`,
+                body: \`## Weekly AI Intelligence Scan\\n\\n\${JSON.stringify(report.urgent_items, null, 2)}\`,
+                labels: ['ai-scan', 'urgent', 'enrichment']
+              });
+            }
+      
+      - name: 💾 Commit Report
+        run: |
+          git config user.name "Weekly AI Bot"
+          git config user.email "weekly-ai@github.com"
+          
+          if [ -n "$(git status --porcelain)" ]; then
+            git add data/enrichment/
+            git commit -m "⚡ Weekly AI Scan - $(date +%Y-%m-%d)"
+            git push
+          fi
