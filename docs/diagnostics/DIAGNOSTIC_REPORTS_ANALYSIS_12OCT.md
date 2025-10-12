@@ -220,12 +220,15 @@ zclNode.endpoints[1].clusters.iasZone.on('attr.zoneStatus', (value) => {
 
 ## 🎯 PROCHAINES ACTIONS
 
-### Priorité 1: IAS Zone Fix
-1. Remplacer `enrollResponse()` par méthodes Homey correctes
-2. Implémenter bind + configureReporting
-3. Write IAS CIE address
-4. Listen for zone status changes
-5. Tester avec SOS Button et HOBEIAN
+### Priorité 1: IAS Zone Fix ✅ DONE
+1. ✅ Remplacer `enrollResponse()` par méthodes Homey correctes
+2. ✅ Implémenter bind + configureReporting
+3. ✅ Write IAS CIE address
+4. ✅ Listen for zone status changes
+5. ✅ Testé avec 3 drivers:
+   - sos_emergency_button_cr2032
+   - motion_temp_humidity_illumination_multi_battery
+   - pir_radar_illumination_sensor_battery
 
 ### Priorité 2: Communication
 1. Répondre à Peter avec fix ETA
