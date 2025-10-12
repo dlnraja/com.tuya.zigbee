@@ -229,8 +229,9 @@ jobs:
           echo "🚀 Publishing to Homey App Store..."
           echo "Version: ${{ steps.version.outputs.new }}"
           
-          # Run official Homey CLI publish command
-          if ! homey app publish 2>&1 | tee publish.log; then
+          # Auto-answer "yes" to all prompts (no confirmation, patch version selection)
+          # Run official Homey CLI publish command with auto-responses
+          if ! printf "n\n0\n" | homey app publish 2>&1 | tee publish.log; then
             echo "❌ Publication failed!"
             echo "::error::Homey app publish command failed"
             cat publish.log
