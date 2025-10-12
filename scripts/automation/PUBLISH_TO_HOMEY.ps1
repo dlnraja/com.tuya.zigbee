@@ -8,7 +8,10 @@ param(
     [string]$Version,
     
     [Parameter(Mandatory=$false)]
-    [switch]$Force
+    [switch]$Force,
+    
+    [Parameter(Mandatory=$false)]
+    [switch]$AutoConfirm
 )
 
 Write-Host "🚀 Homey App Store Publication" -ForegroundColor Cyan
@@ -80,12 +83,14 @@ Write-Host "   Version: $currentVersion" -ForegroundColor White
 Write-Host "   Users will receive update notification" -ForegroundColor White
 Write-Host ""
 
-if (-not $Force) {
+if (-not $Force -and -not $AutoConfirm) {
     $confirmation = Read-Host "Continue? (yes/no)"
     if ($confirmation -ne "yes") {
         Write-Host "❌ Publication cancelled" -ForegroundColor Red
         exit 0
     }
+} elseif ($AutoConfirm) {
+    Write-Host "✅ Auto-confirmed (using -AutoConfirm flag)" -ForegroundColor Green
 }
 
 # Publication
