@@ -131,56 +131,116 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
       }
     }
     
-    // Motion via IAS Zone
+    // Motion via IAS Zone - CRITICAL FIX v2.15.31
+    // Fixed: enrollResponse doesn't exist - use notification listeners only
     if (this.hasCapability('alarm_motion')) {
       try {
-        this.registerCapability('alarm_motion', CLUSTER.IAS_ZONE, {
-          get: 'zoneStatus',
-          report: 'zoneStatus',
-          reportParser: value => {
-            this.log('Motion IAS Zone status:', value);
-            return (value & 1) === 1;
-          }
-        });
-        
-        // IAS Zone enrollment - FIXED v2.15.17
-        // Use correct Homey Zigbee API methods
         const endpoint = zclNode.endpoints[this.getClusterEndpoint(CLUSTER.IAS_ZONE)];
         if (endpoint && endpoint.clusters.iasZone) {
+          this.log('🚶 Setting up Motion IAS Zone...');
+          
+          // CRITICAL: Write IAS CIE Address for enrollment
           try {
-            // Method 1: Write IAS CIE Address
-            this.log('Writing IAS CIE address for motion...');
             await endpoint.clusters.iasZone.writeAttributes({
-              iasCieAddress: zclNode.ieeeAddress
+              iasCieAddress: zclNode.ieeeAddr
             });
-            this.log('✅ IAS CIE address written');
+            this.log('✅ IAS CIE address written for motion');
+          } catch (err) {
+            this.log('⚠️ IAS CIE write failed (may retry):', err.message);
+          }
+          
+          // Configure reporting with retry
+          let reportingConfigured = false;
+          for (let attempt = 1; attempt <= 3; attempt++) {
+            try {
+              await endpoint.clusters.iasZone.configureReporting({
+                zoneStatus: {
+                  minInterval: 0,
+                  maxInterval: 300,
+                  minChange: 1
+                }
+              });
+              this.log(`✅ IAS Zone reporting configured (attempt ${attempt})`);
+              reportingConfigured = true;
+              break;
+            } catch (err) {
+              this.log(`⚠️ IAS reporting config attempt ${attempt} failed:`, err.message);
+              if (attempt < 3) {
+                await new Promise(resolve => setTimeout(resolve, 1000 * attempt));
+              }
+            }
+          }
+          
+          if (!reportingConfigured) {
+            this.log('⚠️ IAS reporting not configured, relying on notifications');
+          }
+          
+          // CRITICAL: Listen for motion notifications
+          endpoint.clusters.iasZone.on('zoneStatusChangeNotification', async (payload) => {
+            this.log('🚶 MOTION DETECTED! Notification:', JSON.stringify(payload));
             
-            // Method 2: Configure reporting for zone status
-            await endpoint.clusters.iasZone.configureReporting({
-              zoneStatus: {
-                minInterval: 0,
-                maxInterval: 300,
-                minChange: 1
+            if (payload.zoneStatus) {
+              const motionDetected = payload.zoneStatus.alarm1 || payload.zoneStatus.alarm2 || (payload.zoneStatus & 1) === 1;
+              this.log('Motion state:', motionDetected ? 'DETECTED ✅' : 'Clear ⭕');
+              
+              await this.setCapabilityValue('alarm_motion', motionDetected);
+              
+              // Auto-reset motion after timeout (configurable)
+              if (motionDetected) {
+                const timeout = this.getSetting('motion_timeout') || 60;
+                this.log(`Motion will auto-reset in ${timeout} seconds`);
+                
+                if (this.motionTimeout) clearTimeout(this.motionTimeout);
+                this.motionTimeout = setTimeout(async () => {
+                  await this.setCapabilityValue('alarm_motion', false);
+                  this.log('✅ Motion auto-reset');
+                }, timeout * 1000);
+              }
+            }
+          });
+          
+          // Register capability for reading
+          this.registerCapability('alarm_motion', CLUSTER.IAS_ZONE, {
+            get: 'zoneStatus',
+            report: 'zoneStatus',
+            reportParser: value => {
+              this.log('Motion IAS Zone status:', value);
+              return (value & 1) === 1;
+            }
+          });
+          
+          this.log('✅ Motion IAS Zone registered with notification listener');
+        } else {
+          this.log('⚠️ IAS Zone cluster not found, trying Occupancy Sensing fallback...');
+          
+          // Fallback to Occupancy Sensing
+          try {
+            this.registerCapability('alarm_motion', CLUSTER.OCCUPANCY_SENSING, {
+              get: 'occupancy',
+              report: 'occupancy',
+              reportParser: value => {
+                this.log('Motion occupancy value:', value);
+                const occupied = (value & 1) === 1;
+                
+                // Auto-reset after timeout
+                if (occupied) {
+                  const timeout = this.getSetting('motion_timeout') || 60;
+                  if (this.motionTimeout) clearTimeout(this.motionTimeout);
+                  this.motionTimeout = setTimeout(async () => {
+                    await this.setCapabilityValue('alarm_motion', false);
+                  }, timeout * 1000);
+                }
+                
+                return occupied;
               }
             });
-            this.log('✅ IAS Zone reporting configured');
-            
-            // Method 3: Listen for zone status change notifications
-            endpoint.clusters.iasZone.on('zoneStatusChangeNotification', (payload) => {
-              this.log('IAS Zone motion notification:', payload);
-              if (this.hasCapability('alarm_motion')) {
-                const motionDetected = (payload.zoneStatus & 1) === 1;
-                this.setCapabilityValue('alarm_motion', motionDetected).catch(this.error);
-              }
-            });
-            this.log('✅ IAS Zone motion listener registered');
-            
-          } catch (enrollErr) {
-            this.log('IAS Zone motion enrollment failed:', enrollErr.message);
+            this.log('✅ Motion registered (Occupancy Sensing fallback)');
+          } catch (occErr) {
+            this.error('❌ Motion fallback also failed:', occErr);
           }
         }
       } catch (err) {
-        this.log('IAS Zone motion failed:', err.message);
+        this.error('❌ IAS Zone motion setup failed:', err);
       }
     }
   }
@@ -188,14 +248,22 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
   /**
    * Handle Tuya datapoint reports
    * Based on Zigbee2MQTT converter for ZG-204ZV
+   * Enhanced logging for HOBEIAN troubleshooting
    */
   _handleTuyaData(data) {
-    this.log('📦 Tuya data received:', JSON.stringify(data));
+    this.log('📦 Tuya data received (raw):', JSON.stringify(data));
     
-    if (!data || !data.dataPoints) {
-      this.log('⚠️  No dataPoints in Tuya data');
+    if (!data) {
+      this.log('⚠️  No data received from Tuya cluster');
       return;
     }
+    
+    if (!data.dataPoints) {
+      this.log('⚠️  No dataPoints in Tuya data, available keys:', Object.keys(data));
+      return;
+    }
+    
+    this.log('✅ DataPoints found:', Object.keys(data.dataPoints).join(', '));
     
     // Tuya datapoints for ZG-204ZV:
     // DP 1: motion (bool)
@@ -205,9 +273,10 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
     // DP 9: illuminance (int, lux)
     
     Object.entries(data.dataPoints).forEach(([dp, value]) => {
-      this.log(`Processing DP ${dp}:`, value);
+      const dpNum = parseInt(dp);
+      this.log(`🔍 Processing DP ${dpNum}:`, value, `(type: ${typeof value})`);
       
-      switch(parseInt(dp)) {
+      switch(dpNum) {
         case 1: // Motion
           if (this.hasCapability('alarm_motion')) {
             this.setCapabilityValue('alarm_motion', value === true || value === 1).catch(this.error);

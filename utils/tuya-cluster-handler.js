@@ -20,19 +20,30 @@ class TuyaClusterHandler {
   static async init(device, zclNode, deviceType = 'COMMON') {
     device.log(`[TuyaCluster] Initializing for type: ${deviceType}`);
     
-    // Get the Tuya cluster
-    const tuyaCluster = zclNode.endpoints[1]?.clusters[TUYA_CLUSTER_ID];
+    // Auto-detect Tuya cluster on ANY endpoint (critical fix for HOBEIAN devices)
+    let tuyaCluster = null;
+    let tuyaEndpoint = null;
+    
+    for (const [epId, endpoint] of Object.entries(zclNode.endpoints)) {
+      if (endpoint.clusters && endpoint.clusters[TUYA_CLUSTER_ID]) {
+        tuyaCluster = endpoint.clusters[TUYA_CLUSTER_ID];
+        tuyaEndpoint = epId;
+        device.log(`[TuyaCluster] ✅ Found on endpoint ${epId}`);
+        break;
+      }
+    }
     
     if (!tuyaCluster) {
-      device.log('[TuyaCluster] No Tuya cluster found');
+      device.log('[TuyaCluster] No Tuya cluster found on any endpoint');
       return false;
     }
 
-    device.log('[TuyaCluster] ✅ Tuya cluster found');
+    device.log(`[TuyaCluster] ✅ Tuya cluster found on endpoint ${tuyaEndpoint}`);
     
-    // Store device type for later use
+    // Store device type and endpoint for later use
     device._tuyaDeviceType = deviceType;
     device._tuyaCluster = tuyaCluster;
+    device._tuyaEndpoint = tuyaEndpoint;
     
     // Set up event listeners
     tuyaCluster.on('response', (data) => {
@@ -43,12 +54,33 @@ class TuyaClusterHandler {
       this.handleTuyaData(device, data, deviceType);
     });
     
-    // Request initial data
+    // Configure reporting (critical for HOBEIAN devices)
     try {
-      await tuyaCluster.read('dataPoints');
-      device.log('[TuyaCluster] ✅ Initial data requested');
+      await tuyaCluster.configureReporting([{
+        attributeId: 0, // dataPoints
+        minimumReportInterval: 0,
+        maximumReportInterval: 3600,
+        reportableChange: 0
+      }]);
+      device.log('[TuyaCluster] ✅ Reporting configured');
     } catch (err) {
-      device.log('[TuyaCluster] Could not read initial data:', err.message);
+      device.log('[TuyaCluster] Reporting config failed (may be OK):', err.message);
+    }
+    
+    // Request initial data with retry
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      try {
+        await tuyaCluster.read('dataPoints');
+        device.log(`[TuyaCluster] ✅ Initial data requested (attempt ${attempt})`);
+        break;
+      } catch (err) {
+        device.log(`[TuyaCluster] Initial data read attempt ${attempt} failed:`, err.message);
+        if (attempt === 3) {
+          device.log('[TuyaCluster] ⚠️ All read attempts failed, waiting for reports');
+        } else {
+          await new Promise(resolve => setTimeout(resolve, 1000 * attempt));
+        }
+      }
     }
     
     return true;
@@ -58,12 +90,20 @@ class TuyaClusterHandler {
    * Handle Tuya datapoint reports
    */
   static handleTuyaData(device, data, deviceType) {
-    if (!data || !data.dataPoints) {
-      device.log('[TuyaCluster] No dataPoints in response');
+    // Enhanced logging for debugging data reception issues
+    device.log('[TuyaCluster] Raw data received:', JSON.stringify(data));
+    
+    if (!data) {
+      device.log('[TuyaCluster] ⚠️ No data in response');
+      return;
+    }
+    
+    if (!data.dataPoints) {
+      device.log('[TuyaCluster] ⚠️ No dataPoints in response, data keys:', Object.keys(data));
       return;
     }
 
-    device.log('[TuyaCluster] Data received:', JSON.stringify(data.dataPoints));
+    device.log('[TuyaCluster] 📦 DataPoints received:', JSON.stringify(data.dataPoints));
     
     // Get datapoint mapping for this device type
     const mapping = TUYA_DATAPOINTS[deviceType] || TUYA_DATAPOINTS.COMMON;
