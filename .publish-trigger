@@ -1,3 +1,7 @@
-# Trigger auto-publish workflow
-Last: 2025-10-11 23:29
-Version: 2.9.3
+TRIGGER_GITHUB_ACTIONS_PUBLISH
+Timestamp: 2025-10-12T21:22:21+02:00
+Version: v2.15.33
+Commit: ba3e221be
+Purpose: Force GitHub Actions workflow execution for Homey App Store publication
+Status: READY FOR PRODUCTION
+Validation: 100% SUCCESS (zero warnings)
