@@ -49,12 +49,22 @@ if ($LASTEXITCODE -ne 0) {
 }
 Write-Host "  ✅ Committed" -ForegroundColor Green
 
-# 4. Pull (no rebase)
+# 4. Pull (no rebase) avec auto-merge
 Write-Host "`n⬇️  Step 4: Pulling from remote..." -ForegroundColor Yellow
-git pull origin master --no-rebase
+git pull origin master --no-rebase --no-edit
 if ($LASTEXITCODE -ne 0) {
-    Write-Host "  ❌ Pull failed - resolve conflicts manually" -ForegroundColor Red
-    exit 1
+    Write-Host "  ⚠️  Auto-merge conflict - trying auto-resolution" -ForegroundColor Yellow
+    
+    # Auto-accept theirs pour les fichiers générés
+    git checkout --theirs .homeychangelog.json 2>$null
+    git checkout --theirs app.json 2>$null
+    git add .homeychangelog.json app.json 2>$null
+    git commit --no-edit 2>$null
+    
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "  ❌ Pull failed - conflicts persist" -ForegroundColor Red
+        exit 1
+    }
 }
 Write-Host "  ✅ Pulled" -ForegroundColor Green
 
