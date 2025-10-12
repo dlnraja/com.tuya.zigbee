@@ -39,7 +39,7 @@ class RadarMotionSensorTankLevelBatteryDevice extends ZigBeeDevice {
         this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
           get: 'batteryPercentageRemaining',
           report: 'batteryPercentageRemaining',
-          reportParser: value => Math.max(0, Math.min(100, value / 2)),
+          reportParser: value => { this.log('Battery raw value:', value); // Smart calculation: check if value is already 0-100 or 0-200 if (value <= 100) { return Math.max(0, Math.min(100, value)); } else { return Math.max(0, Math.min(100, value / 2)); } },
           getParser: value => Math.max(0, Math.min(100, value / 2))
         });
       } catch (err) {
