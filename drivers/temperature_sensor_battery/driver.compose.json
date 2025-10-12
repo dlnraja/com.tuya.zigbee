@@ -9,7 +9,7 @@
     "measure_battery",
     "alarm_motion",
     "measure_luminance",
-    "alarm_temperature"
+    "temp_alarm"
   ],
   "platforms": [
     "local"
