@@ -21,8 +21,8 @@ class SosEmergencyButtonCr2032Device extends ZigBeeDevice {
     } else {
       this.log('⚠️  No Tuya cluster found, using standard Zigbee');
       
-      // Fallback to standard cluster handling if needed
-      await this.registerStandardCapabilities();
+      // Fallback to standard cluster handling
+      await this.registerStandardCapabilities(zclNode);
     }
 
     // Mark device as available
@@ -32,18 +32,63 @@ class SosEmergencyButtonCr2032Device extends ZigBeeDevice {
   /**
    * Register standard Zigbee capabilities (fallback)
    */
-  async registerStandardCapabilities() {
-    // Battery
+  async registerStandardCapabilities(zclNode) {
+    // Battery - IMPROVED calculation
     if (this.hasCapability('measure_battery')) {
       try {
         this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
           get: 'batteryPercentageRemaining',
           report: 'batteryPercentageRemaining',
-          reportParser: value => Math.max(0, Math.min(100, value / 2)),
-          getParser: value => Math.max(0, Math.min(100, value / 2))
+          reportParser: value => {
+            this.log('Battery raw value:', value);
+            // Smart calculation: check if value is already 0-100 or 0-200
+            if (value <= 100) {
+              // Already percentage (some Tuya devices)
+              return Math.max(0, Math.min(100, value));
+            } else {
+              // Standard Zigbee 0-200 format
+              return Math.max(0, Math.min(100, value / 2));
+            }
+          },
+          getParser: value => {
+            this.log('Battery raw value (get):', value);
+            if (value <= 100) {
+              return Math.max(0, Math.min(100, value));
+            } else {
+              return Math.max(0, Math.min(100, value / 2));
+            }
+          }
         });
+        this.log('✅ Battery capability registered with smart calculation');
       } catch (err) {
         this.log('Could not register battery capability:', err.message);
+      }
+    }
+
+    // IAS Zone for button events (alarm_contact)
+    if (this.hasCapability('alarm_contact')) {
+      try {
+        this.registerCapability('alarm_contact', CLUSTER.IAS_ZONE, {
+          get: 'zoneStatus',
+          report: 'zoneStatus',
+          reportParser: value => {
+            this.log('IAS Zone status:', value);
+            // Bit 0 = alarm1 (button pressed)
+            return (value & 1) === 1;
+          }
+        });
+        
+        // Enroll to IAS Zone
+        const endpoint = zclNode.endpoints[this.getClusterEndpoint(CLUSTER.IAS_ZONE)];
+        if (endpoint && endpoint.clusters.iasZone) {
+          await endpoint.clusters.iasZone.enrollResponse({
+            enrollResponseCode: 0, // Success
+            zoneId: 1
+          });
+          this.log('✅ IAS Zone enrolled successfully');
+        }
+      } catch (err) {
+        this.log('IAS Zone setup failed:', err.message);
       }
     }
   }
