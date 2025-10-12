@@ -1,6 +1,9 @@
 {
+  "2.11.4": {
+    "en": "Major update: All 167 drivers now have unique, color-coded images by device type for easy recognition."
+  },
   "2.11.3": {
-    "en": "Bug fix: generate unique app images for each size - force A."
+    "en": "Fixed settings page loading. Added support for HOBEIAN ZG-204ZV sensor. Optimized app performance."
   },
   "2.11.2": {
     "en": "Updated app icons with unique designs for each size. Enhanced visual presentation on App Store."
