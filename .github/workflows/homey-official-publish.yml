@@ -1,0 +1,126 @@
+name: Homey App - Official Publish
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - 'reports/**'
+      - '.github/**'
+      - 'scripts/**'
+      - 'project-data/**'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: Validate App
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate Homey App (Publish Level)
+        uses: athombv/github-action-homey-app-validate@v1
+        with:
+          level: publish
+
+  version:
+    name: Update Version
+    needs: validate
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.update-version.outputs.version }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Update version (Patch)
+        id: update-version
+        uses: athombv/github-action-homey-app-update-version@v1
+        with:
+          type: patch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Display new version
+        run: |
+          echo "✅ Version updated to: ${{ steps.update-version.outputs.version }}"
+
+  publish:
+    name: Publish to Homey App Store
+    needs: [validate, version]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Pull latest changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git pull --rebase origin master
+
+      - name: Publish to Homey App Store
+        uses: athombv/github-action-homey-app-publish@v1
+        with:
+          changelog: |
+            v${{ needs.version.outputs.version }} - Automated release
+            
+            ✅ IAS Zone enrollment fixes (motion sensors & SOS buttons)
+            ✅ Enhanced Johan Bendz attribution (community feedback)
+            ✅ Improved Athom App Store compliance
+            ✅ Forum feedback implemented
+            ✅ SDK3 native implementation
+            ✅ 183 drivers with 2000+ device IDs
+            ✅ 100% local control (no cloud)
+        env:
+          HOMEY_API_TOKEN: ${{ secrets.HOMEY_TOKEN }}
+
+      - name: Success notification
+        if: success()
+        run: |
+          echo "🎉 ===== HOMEY APP PUBLISHED SUCCESSFULLY ====="
+          echo "Version: ${{ needs.version.outputs.version }}"
+          echo "Dashboard: https://tools.developer.homey.app/apps"
+          echo "================================================"
+
+      - name: Failure notification
+        if: failure()
+        run: |
+          echo "❌ ===== PUBLISH FAILED ====="
+          echo "Check logs for details"
+          echo "Dashboard: https://tools.developer.homey.app/apps"
+          echo "============================="
