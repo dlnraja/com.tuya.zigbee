@@ -1,22 +1,15 @@
-name: Auto-Fix Images on Validation Failure
+name: Auto-Fix Images on Validation Failure (DISABLED)
 
 on:
-  # Trigger when validation fails
-  workflow_run:
-    workflows: ["Auto-Publish Complete Pipeline"]
-    types:
-      - completed
-    branches:
-      - master
-  # Manual trigger
+  # DISABLED - causing conflicts with placeholders
+  # workflow_run:
+  #   workflows: ["Auto-Publish Complete Pipeline"]
+  #   types:
+  #     - completed
+  #   branches:
+  #     - master
+  # Manual trigger only
   workflow_dispatch:
-  # Also trigger on push if previous failed
-  push:
-    branches:
-      - master
-    paths:
-      - 'drivers/*/assets/*.png'
-      - '.github/workflows/auto-fix-images.yml'
 
 jobs:
   auto-fix:
