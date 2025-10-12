@@ -12,7 +12,85 @@ https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-vers
 
 ---
 
-## 1️⃣ RÉPONSE À CAM (Post #275)
+## 1️⃣ RÉPONSE À NARESH (Post #274) 🆕
+
+**Contexte:** Battery OK mais Motion et Illumination ne reportent PAS (v2.11.1)
+
+### Message à Poster:
+
+```markdown
+Hi Naresh!
+
+Thanks for testing and the detailed feedback! Great to hear **battery is now working**! 👍
+
+**For Motion & Illumination not reporting:**
+
+This is likely a **reporting configuration** or **IAS Zone enrollment** issue.
+
+**Quick fix - Try this first:**
+
+1. **Update to v2.11.3** (just released!)
+   - Settings → Apps → Universal Tuya Zigbee → Update
+   - Restart Homey
+   - Remove devices
+   - Re-pair them
+
+2. **Wait 5-10 minutes** after pairing
+   - First motion/lux reports can take time
+   - Device needs to configure reporting intervals
+
+3. **Test motion physically:**
+   - Wait 5 minutes without movement
+   - Walk in front of sensor
+   - Check if motion triggers
+
+4. **Test illuminance:**
+   - Turn lights ON/OFF (drastic change)
+   - Wait 1-2 minutes
+   - Check if lux changes
+
+**Why this happens:**
+
+Motion sensors use **IAS Zone** (cluster 1280) which requires:
+- Device "enrollment" with Homey
+- Proper CIE address configuration
+- Sometimes takes 2-3 pairing attempts
+
+Illuminance uses **cluster 1024** which needs:
+- Reporting configuration
+- Proper bindings
+- Significant light change to trigger
+
+**v2.11.3 improvements:**
+✅ Better IAS Zone enrollment
+✅ Improved reporting configuration
+✅ Better bindings setup
+✅ Added cluster 3 (Identify) for some sensors
+
+**Can you also provide:**
+- Device manufacturer name?
+- Model/Product ID?
+- Screenshot of device settings → Advanced?
+
+**Debugging (if still issues):**
+
+1. Go to: https://developer.athom.com/tools/zigbee
+2. Select your motion sensor
+3. Check IAS Zone cluster (1280):
+   - zoneState: should be "enrolled"
+   - iasCIEAddress: should match Homey address
+4. Check Illuminance cluster (1024):
+   - Look for "measuredValue"
+
+Let me know after trying v2.11.3!
+
+Best regards,
+Dylan
+```
+
+---
+
+## 2️⃣ RÉPONSE À CAM (Post #275)
 
 **Contexte:** Cam a des devices "unknown zigbee device" avec v2.7.1
 
@@ -63,7 +141,7 @@ Dylan 🚀
 
 ---
 
-## 2️⃣ RÉPONSE À PETER (HOBEIAN ZG-204ZV)
+## 3️⃣ RÉPONSE À PETER (HOBEIAN ZG-204ZV)
 
 **Contexte:** Device HOBEIAN ZG-204ZV non reconnu (#1263)
 
@@ -116,7 +194,7 @@ Dylan
 
 ---
 
-## 3️⃣ RÉPONSE À PATRICK (Settings Page)
+## 4️⃣ RÉPONSE À PATRICK (Settings Page)
 
 **Contexte:** Settings page ne charge pas
 
@@ -170,7 +248,7 @@ Dylan
 
 ---
 
-## 4️⃣ POST GÉNÉRAL - CHANGELOG v2.11.3
+## 5️⃣ POST GÉNÉRAL - CHANGELOG v2.11.3
 
 **Contexte:** Annonce nouvelle version
 
@@ -238,6 +316,7 @@ Dylan
 ## 📊 RÉSUMÉ ACTIONS
 
 ### Réponses Individuelles
+- [x] Naresh (Battery OK, Motion/Lux NON) - v2.11.3 + troubleshooting
 - [x] Cam (v2.7.1 outdated) - UPDATE required
 - [x] Peter (HOBEIAN ZG-204ZV) - FIXED in v2.11.3
 - [x] Patrick (Settings page) - FIXED in v2.11.3
