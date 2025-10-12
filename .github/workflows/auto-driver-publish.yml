@@ -1,0 +1,125 @@
+name: Auto Driver Publish
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - 'drivers/**'
+  workflow_dispatch:
+
+jobs:
+  detect-and-publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Setup Homey CLI
+        run: |
+          npm install -g homey
+          echo "${{ secrets.HOMEY_TOKEN }}" | homey login --token
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Check driver changes
+        id: check_changes
+        run: |
+          DRIVER_CHANGES=$(git diff --name-only HEAD~1 HEAD | grep "^drivers/" || true)
+          if [ -n "$DRIVER_CHANGES" ]; then
+            echo "has_driver_changes=true" >> $GITHUB_OUTPUT
+            echo "Driver changes detected:"
+            echo "$DRIVER_CHANGES"
+          else
+            echo "has_driver_changes=false" >> $GITHUB_OUTPUT
+            echo "No driver changes"
+          fi
+      
+      - name: Validate app
+        if: steps.check_changes.outputs.has_driver_changes == 'true'
+        run: homey app validate --level publish
+      
+      - name: Auto-bump version
+        if: steps.check_changes.outputs.has_driver_changes == 'true'
+        id: version
+        run: |
+          CURRENT_VERSION=$(node -pe "require('./app.json').version")
+          IFS='.' read -ra PARTS <<< "$CURRENT_VERSION"
+          PARTS[2]=$((PARTS[2] + 1))
+          NEW_VERSION="${PARTS[0]}.${PARTS[1]}.${PARTS[2]}"
+          
+          echo "current=$CURRENT_VERSION" >> $GITHUB_OUTPUT
+          echo "new=$NEW_VERSION" >> $GITHUB_OUTPUT
+          
+          # Update app.json
+          node -e "
+          const fs = require('fs');
+          const app = require('./app.json');
+          app.version = '$NEW_VERSION';
+          fs.writeFileSync('app.json', JSON.stringify(app, null, 2));
+          "
+          
+          # Update changelog
+          node -e "
+          const fs = require('fs');
+          const changelog = require('./.homeychangelog.json');
+          const newEntry = {
+            version: '$NEW_VERSION',
+            date: new Date().toISOString().split('T')[0],
+            changes: {
+              en: 'Driver improvements from community feedback and automated enrichment'
+            }
+          };
+          const entries = Object.values(changelog);
+          const updated = { ...Object.fromEntries([[newEntry.version, newEntry], ...Object.entries(changelog)]) };
+          fs.writeFileSync('./.homeychangelog.json', JSON.stringify(updated, null, 2));
+          "
+      
+      - name: Commit version bump
+        if: steps.check_changes.outputs.has_driver_changes == 'true'
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          git add app.json .homeychangelog.json
+          git commit -m "chore: bump version to ${{ steps.version.outputs.new }} [skip ci]"
+          git push
+      
+      - name: Publish to Homey App Store
+        if: steps.check_changes.outputs.has_driver_changes == 'true'
+        run: homey app publish
+      
+      - name: Create Release
+        if: steps.check_changes.outputs.has_driver_changes == 'true'
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ steps.version.outputs.new }}
+          release_name: Release v${{ steps.version.outputs.new }}
+          body: |
+            ## Auto-published driver improvements
+            
+            Version ${{ steps.version.outputs.current }} → ${{ steps.version.outputs.new }}
+            
+            Driver changes detected and automatically published to Homey App Store.
+            
+            See [Homey App Store Dashboard](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee)
+          draft: false
+          prerelease: false
+      
+      - name: Summary
+        if: steps.check_changes.outputs.has_driver_changes == 'true'
+        run: |
+          echo "## ✅ Auto-Publish Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** ${{ steps.version.outputs.current }} → ${{ steps.version.outputs.new }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Published:** YES (driver changes detected)" >> $GITHUB_STEP_SUMMARY
+          echo "**Dashboard:** https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee" >> $GITHUB_STEP_SUMMARY
