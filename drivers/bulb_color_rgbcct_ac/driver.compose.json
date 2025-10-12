@@ -1,0 +1,70 @@
+{
+  "id": "bulb_color_rgbcct_ac",
+  "name": {
+    "en": "Smart Bulb Color RGB+CCT (AC)",
+    "fr": "Ampoule Intelligente Couleur RGB+CCT (AC)",
+    "nl": "Slimme Lamp Kleur RGB+CCT (AC)",
+    "de": "Intelligente Lampe Farbe RGB+CCT (AC)"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature",
+    "light_mode"
+  ],
+  "energy": {
+    "approximation": {
+      "usageOn": 9,
+      "usageOff": 0.5
+    }
+  },
+  "images": {
+    "small": "./assets/small.png",
+    "large": "./assets/large.png",
+    "xlarge": "./assets/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_riwp3k79",
+      "_TZ3000_dbou1ap4",
+      "Signify Netherlands B.V.",
+      "IKEA of Sweden"
+    ],
+    "productId": [
+      "TS0505",
+      "LCT015",
+      "LED1623G12"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          768,
+          4096
+        ],
+        "bindings": [
+          6,
+          8,
+          768
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "./assets/large.png",
+      "instruction": {
+        "en": "1. Make sure the device is powered\n2. Press the pairing button for 5 seconds\n3. Wait for the device to appear in Homey\n4. The device is now paired",
+        "fr": "1. Assurez-vous que l'appareil est alimenté\n2. Appuyez sur le bouton d'appairage pendant 5 secondes\n3. Attendez que l'appareil apparaisse dans Homey\n4. L'appareil est maintenant apparié",
+        "nl": "1. Zorg ervoor dat het apparaat is ingeschakeld\n2. Druk 5 seconden op de koppelknop\n3. Wacht tot het apparaat verschijnt in Homey\n4. Het apparaat is nu gekoppeld",
+        "de": "1. Stellen Sie sicher, dass das Gerät eingeschaltet ist\n2. Drücken Sie die Kopplungstaste 5 Sekunden lang\n3. Warten Sie, bis das Gerät in Homey angezeigt wird\n4. Das Gerät ist jetzt gekoppelt"
+      }
+    }
+  }
+}
