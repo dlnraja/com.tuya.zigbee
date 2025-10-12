@@ -4,7 +4,10 @@
 /**
  * FIX_APP_ICONS.js
  * Génère les icônes app correctes depuis icon.svg
- * Requirements: small.png (250x250), large.png (500x500), xlarge.png (1000x1000)
+ * Homey Requirements: 
+ * - small.png (250x175)
+ * - large.png (500x350) 
+ * - xlarge.png (1000x700)
  */
 
 const fs = require('fs');
@@ -14,10 +17,11 @@ const { execSync } = require('child_process');
 const ASSETS_DIR = path.join(__dirname, '../../assets/images');
 const SVG_PATH = path.join(ASSETS_DIR, 'icon.svg');
 
+// Homey App Icon Requirements (official)
 const SIZES = {
-  small: 250,
-  large: 500,
-  xlarge: 1000
+  small: { width: 250, height: 175 },
+  large: { width: 500, height: 350 },
+  xlarge: { width: 1000, height: 700 }
 };
 
 console.log('🎨 Fixing App Icons for Homey');
@@ -47,12 +51,12 @@ try {
       const outputPath = path.join(ASSETS_DIR, `${name}.png`);
       
       sharp(SVG_PATH)
-        .resize(size, size)
+        .resize(size.width, size.height, { fit: 'fill' })
         .png({ quality: 100, compressionLevel: 9 })
         .toFile(outputPath)
         .then(() => {
           const stats = fs.statSync(outputPath);
-          console.log(`  ✅ ${name}.png (${size}x${size}) - ${Math.round(stats.size / 1024)}KB`);
+          console.log(`  ✅ ${name}.png (${size.width}x${size.height}) - ${Math.round(stats.size / 1024)}KB`);
         })
         .catch(err => {
           console.error(`  ❌ Failed to generate ${name}.png:`, err.message);
@@ -78,14 +82,14 @@ for (const [name, size] of Object.entries(SIZES)) {
   const outputPath = path.join(ASSETS_DIR, `${name}.png`);
   
   try {
-    // Convertir SVG en PNG avec ImageMagick
+    // Convertir SVG en PNG avec ImageMagick (aspect ratio preserved)
     execSync(
-      `magick convert -background none -resize ${size}x${size} "${SVG_PATH}" "${outputPath}"`,
+      `magick convert -background none -resize ${size.width}x${size.height}! "${SVG_PATH}" "${outputPath}"`,
       { stdio: 'ignore' }
     );
     
     const stats = fs.statSync(outputPath);
-    console.log(`  ✅ ${name}.png (${size}x${size}) - ${Math.round(stats.size / 1024)}KB`);
+    console.log(`  ✅ ${name}.png (${size.width}x${size.height}) - ${Math.round(stats.size / 1024)}KB`);
     
   } catch (error) {
     console.error(`  ❌ Failed to generate ${name}.png:`, error.message);
