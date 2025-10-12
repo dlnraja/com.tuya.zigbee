@@ -181,5 +181,8 @@
   },
   "2.15.10": {
     "en": "Bump version to 2.15.9."
+  },
+  "2.15.11": {
+    "en": "Bug fix: auto-merge configuration - no VSCode intervention."
   }
 }
