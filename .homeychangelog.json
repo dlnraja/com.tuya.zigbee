@@ -1,4 +1,7 @@
 {
+  "2.15.1": {
+    "en": "Critical fixes: SOS button battery reading corrected (smart calculation). HOBEIAN multisensor data reception fixed (auto-detect endpoint + fallback clusters). IAS Zone enrollment for events. Enhanced debug logging."
+  },
   "2.11.4": {
     "en": "Bug fix: forum issues resolution + HOBEIAN support - v2.11."
   },
