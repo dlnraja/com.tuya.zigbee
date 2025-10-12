@@ -1,0 +1,59 @@
+{
+  "id": "smart_plug_dimmer_ac",
+  "name": {
+    "en": "Smart Plug with Dimmer (AC)",
+    "fr": "Prise Intelligente avec Variateur (AC)",
+    "nl": "Slimme Stekker met Dimmer (AC)",
+    "de": "Intelligente Steckdose mit Dimmer (AC)"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_power",
+    "meter_power"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": false
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 5,
+      "usageOff": 0.5
+    }
+  },
+  "images": {
+    "small": "./assets/small.png",
+    "large": "./assets/large.png",
+    "xlarge": "./assets/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Signify Netherlands B.V.",
+      "Philips",
+      "LEDVANCE"
+    ],
+    "productId": [
+      "LOM003",
+      "LOM001",
+      "LOM002"
+    ],
+    "endpoints": {
+      "11": {
+        "clusters": [0, 3, 4, 5, 6, 8, 4096, 64515],
+        "bindings": [6, 8]
+      }
+    },
+    "learnmode": {
+      "image": "./assets/large.png",
+      "instruction": {
+        "en": "1. Plug the smart plug into a power outlet\n2. Wait for the LED to start blinking\n3. If the LED doesn't blink, press and hold the button for 10 seconds\n4. The device will now be in pairing mode",
+        "fr": "1. Branchez la prise intelligente dans une prise électrique\n2. Attendez que la LED commence à clignoter\n3. Si la LED ne clignote pas, maintenez le bouton enfoncé pendant 10 secondes\n4. L'appareil est maintenant en mode d'appairage",
+        "nl": "1. Steek de slimme stekker in een stopcontact\n2. Wacht tot de LED begint te knipperen\n3. Als de LED niet knippert, houd de knop 10 seconden ingedrukt\n4. Het apparaat bevindt zich nu in de koppelingsmodus",
+        "de": "1. Stecken Sie die intelligente Steckdose in eine Steckdose\n2. Warten Sie, bis die LED zu blinken beginnt\n3. Wenn die LED nicht blinkt, halten Sie die Taste 10 Sekunden lang gedrückt\n4. Das Gerät befindet sich jetzt im Kopplungsmodus"
+      }
+    }
+  }
+}
