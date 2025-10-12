@@ -187,9 +187,84 @@ class PirRadarIlluminationSensorBatteryDevice extends ZigBeeDevice {
       }
     }
 
-    // Motion via IAS Zone - FIXED v2.15.17
+    // Motion via IAS Zone - ENHANCED v2.15.32
     if (this.hasCapability('alarm_motion')) {
       try {
+        const endpoint = zclNode.endpoints[this.getClusterEndpoint(CLUSTER.IAS_ZONE)];
+        if (endpoint && endpoint.clusters.iasZone) {
+          this.log('🚶 Setting up PIR+Radar Motion IAS Zone...');
+          
+          // CRITICAL: Write IAS CIE Address for enrollment with retry
+          let cieWritten = false;
+          for (let attempt = 1; attempt <= 3; attempt++) {
+            try {
+              await endpoint.clusters.iasZone.writeAttributes({
+                iasCieAddress: zclNode.ieeeAddr
+              });
+              this.log(`✅ IAS CIE address written (attempt ${attempt})`);
+              cieWritten = true;
+              break;
+            } catch (err) {
+              this.log(`⚠️ IAS CIE write attempt ${attempt} failed:`, err.message);
+              if (attempt < 3) {
+                await new Promise(resolve => setTimeout(resolve, 1000 * attempt));
+              }
+            }
+          }
+          
+          if (!cieWritten) {
+            this.log('⚠️ IAS CIE address write failed after 3 attempts');
+          }
+          
+          // Configure reporting with retry
+          let reportingConfigured = false;
+          for (let attempt = 1; attempt <= 3; attempt++) {
+            try {
+              await endpoint.clusters.iasZone.configureReporting({
+                zoneStatus: {
+                  minInterval: 0,
+                  maxInterval: 300,
+                  minChange: 1
+                }
+              });
+              this.log(`✅ IAS Zone reporting configured (attempt ${attempt})`);
+              reportingConfigured = true;
+              break;
+            } catch (err) {
+              this.log(`⚠️ IAS reporting config attempt ${attempt} failed:`, err.message);
+              if (attempt < 3) {
+                await new Promise(resolve => setTimeout(resolve, 1000 * attempt));
+              }
+            }
+          }
+          
+          if (!reportingConfigured) {
+            this.log('⚠️ IAS reporting not configured, relying on notifications');
+          }
+          
+          // CRITICAL: Listen for motion notifications
+          endpoint.clusters.iasZone.on('zoneStatusChangeNotification', async (payload) => {
+            this.log('🚶 PIR+RADAR MOTION! Notification:', JSON.stringify(payload));
+            if (this.hasCapability('alarm_motion')) {
+              const motionDetected = payload.zoneStatus?.alarm1 || payload.zoneStatus?.alarm2 || (payload.zoneStatus & 1) === 1;
+              this.log('Motion state:', motionDetected ? 'DETECTED ✅' : 'Clear ⭕');
+              await this.setCapabilityValue('alarm_motion', motionDetected).catch(this.error);
+              
+              // Auto-reset after timeout
+              if (motionDetected) {
+                const timeout = this.getSetting('motion_timeout') || 60;
+                if (this.motionTimeout) clearTimeout(this.motionTimeout);
+                this.motionTimeout = setTimeout(async () => {
+                  await this.setCapabilityValue('alarm_motion', false).catch(this.error);
+                  this.log('✅ Motion auto-reset');
+                }, timeout * 1000);
+              }
+            }
+          });
+          this.log('✅ IAS Zone motion listener registered');
+        }
+        
+        // Register capability for reading
         this.registerCapability('alarm_motion', CLUSTER.IAS_ZONE, {
           get: 'zoneStatus',
           report: 'zoneStatus',
@@ -198,44 +273,9 @@ class PirRadarIlluminationSensorBatteryDevice extends ZigBeeDevice {
             return (value & 1) === 1;
           }
         });
-        
-        // IAS Zone enrollment - Use correct Homey Zigbee API
-        const endpoint = zclNode.endpoints[this.getClusterEndpoint(CLUSTER.IAS_ZONE)];
-        if (endpoint && endpoint.clusters.iasZone) {
-          try {
-            // Method 1: Write IAS CIE Address
-            this.log('Writing IAS CIE address for motion...');
-            await endpoint.clusters.iasZone.writeAttributes({
-              iasCieAddress: zclNode.ieeeAddress
-            });
-            this.log('✅ IAS CIE address written');
-            
-            // Method 2: Configure reporting
-            await endpoint.clusters.iasZone.configureReporting({
-              zoneStatus: {
-                minInterval: 0,
-                maxInterval: 300,
-                minChange: 1
-              }
-            });
-            this.log('✅ IAS Zone reporting configured');
-            
-            // Method 3: Listen for notifications
-            endpoint.clusters.iasZone.on('zoneStatusChangeNotification', (payload) => {
-              this.log('IAS Zone motion notification:', payload);
-              if (this.hasCapability('alarm_motion')) {
-                const motionDetected = (payload.zoneStatus & 1) === 1;
-                this.setCapabilityValue('alarm_motion', motionDetected).catch(this.error);
-              }
-            });
-            this.log('✅ IAS Zone motion listener registered');
-            
-          } catch (enrollErr) {
-            this.log('IAS Zone enrollment failed:', enrollErr.message);
-          }
-        }
+        this.log('✅ Motion capability registered');
       } catch (err) {
-        this.log('IAS Zone motion failed:', err.message);
+        this.log('IAS Zone motion setup failed:', err.message);
       }
     }
   }
