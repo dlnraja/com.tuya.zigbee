@@ -82,14 +82,41 @@ class SosEmergencyButtonCr2032Device extends ZigBeeDevice {
           }
         });
         
-        // Enroll to IAS Zone
+        // IAS Zone enrollment - FIXED v2.15.17
+        // Use correct Homey Zigbee API methods
         const endpoint = zclNode.endpoints[this.getClusterEndpoint(CLUSTER.IAS_ZONE)];
         if (endpoint && endpoint.clusters.iasZone) {
-          await endpoint.clusters.iasZone.enrollResponse({
-            enrollResponseCode: 0, // Success
-            zoneId: 1
-          });
-          this.log('✅ IAS Zone enrolled successfully');
+          try {
+            // Method 1: Write IAS CIE Address
+            this.log('Writing IAS CIE address...');
+            await endpoint.clusters.iasZone.writeAttributes({
+              iasCieAddress: zclNode.ieeeAddress
+            });
+            this.log('✅ IAS CIE address written');
+            
+            // Method 2: Configure reporting for zone status
+            await endpoint.clusters.iasZone.configureReporting({
+              zoneStatus: {
+                minInterval: 0,
+                maxInterval: 300,
+                minChange: 1
+              }
+            });
+            this.log('✅ IAS Zone reporting configured');
+            
+            // Method 3: Listen for zone status change notifications
+            endpoint.clusters.iasZone.on('zoneStatusChangeNotification', (payload) => {
+              this.log('IAS Zone notification:', payload);
+              if (this.hasCapability('alarm_contact')) {
+                const isPressed = (payload.zoneStatus & 1) === 1;
+                this.setCapabilityValue('alarm_contact', isPressed).catch(this.error);
+              }
+            });
+            this.log('✅ IAS Zone listener registered');
+            
+          } catch (enrollErr) {
+            this.log('IAS Zone enrollment failed:', enrollErr.message);
+          }
         }
       } catch (err) {
         this.log('IAS Zone setup failed:', err.message);
