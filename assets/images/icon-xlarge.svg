@@ -1,0 +1,58 @@
+<svg width="1000" height="700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-gradient-xl" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F8F9FA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E9ECEF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="icon-gradient-xl" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5A9FE2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4A8FD2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background clair et doux -->
+  <rect width="1000" height="700" rx="90" ry="90" fill="url(#bg-gradient-xl)"/>
+  
+  <!-- Cercle central -->
+  <circle cx="500" cy="300" r="180" fill="#FFFFFF" opacity="0.75"/>
+  
+  <!-- Icône Zigbee minimaliste -->
+  <g transform="translate(500, 300)">
+    <!-- Noeud central -->
+    <circle cx="0" cy="0" r="35" fill="url(#icon-gradient-xl)"/>
+    
+    <!-- Lignes de connexion fines -->
+    <line x1="0" y1="0" x2="0" y2="-110" stroke="#5A9FE2" stroke-width="3.5" opacity="0.6"/>
+    <line x1="0" y1="0" x2="95" y2="55" stroke="#5A9FE2" stroke-width="3.5" opacity="0.6"/>
+    <line x1="0" y1="0" x2="-95" y2="55" stroke="#5A9FE2" stroke-width="3.5" opacity="0.6"/>
+    
+    <!-- Noeuds périphériques -->
+    <circle cx="0" cy="-110" r="24" fill="url(#icon-gradient-xl)" opacity="0.9"/>
+    <circle cx="95" cy="55" r="24" fill="url(#icon-gradient-xl)" opacity="0.9"/>
+    <circle cx="-95" cy="55" r="24" fill="url(#icon-gradient-xl)" opacity="0.9"/>
+    
+    <!-- Points de connexion blancs subtils -->
+    <circle cx="0" cy="0" r="6" fill="#FFFFFF"/>
+    <circle cx="0" cy="-110" r="5" fill="#FFFFFF"/>
+    <circle cx="95" cy="55" r="5" fill="#FFFFFF"/>
+    <circle cx="-95" cy="55" r="5" fill="#FFFFFF"/>
+  </g>
+  
+  <!-- Texte TUYA léger et élégant -->
+  <text x="500" y="560" 
+        font-family="'SF Pro Display', 'Segoe UI', Arial, sans-serif" 
+        font-size="80" 
+        font-weight="300"
+        letter-spacing="15"
+        fill="#6C757D" 
+        text-anchor="middle">TUYA</text>
+  
+  <!-- Sous-titre Zigbee discret -->
+  <text x="500" y="630" 
+        font-family="'SF Pro Display', 'Segoe UI', Arial, sans-serif" 
+        font-size="38" 
+        font-weight="400"
+        letter-spacing="8"
+        fill="#8B96A0" 
+        text-anchor="middle">ZIGBEE</text>
+</svg>
