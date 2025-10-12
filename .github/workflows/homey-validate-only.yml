@@ -28,7 +28,7 @@ jobs:
         run: npm ci
 
       - name: Validate - ${{ matrix.validation-level }} level
-        uses: athombv/github-action-homey-app-validate@v1
+        uses: athombv/github-action-homey-app-validate@master
         with:
           level: ${{ matrix.validation-level }}
 
