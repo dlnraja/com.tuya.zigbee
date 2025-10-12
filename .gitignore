@@ -5,8 +5,8 @@
 env.json
 node_modules/
 
-# GitHub Pages (désactivé)
-docs/
+# GitHub Pages (désactivé - mais on garde docs/ pour notre documentation)
+# docs/ <- ne plus ignorer, on utilise docs/ pour notre documentation
 _site/
 .jekyll-cache/
 .jekyll-metadata
