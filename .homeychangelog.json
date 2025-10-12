@@ -1,6 +1,6 @@
 {
   "2.11.4": {
-    "en": "Major update: All 167 drivers now have unique, color-coded images by device type for easy recognition."
+    "en": "Bug fix: forum issues resolution + HOBEIAN support - v2.11."
   },
   "2.11.3": {
     "en": "Fixed settings page loading. Added support for HOBEIAN ZG-204ZV sensor. Optimized app performance."
@@ -143,10 +143,10 @@
   "2.11.1": {
     "en": "Performance and stability improvements."
   },
-  "2.11.4": {
-    "en": "Bug fix: forum issues resolution + HOBEIAN support - v2.11."
-  },
   "2.12.0": {
     "en": "Added support for 2 new devices."
+  },
+  "2.13.0": {
+    "en": "Added support for 100 new devices."
   }
 }
