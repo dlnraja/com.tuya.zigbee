@@ -6,9 +6,31 @@
 [![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-Active-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions)
 [![Automation](https://img.shields.io/badge/Automation-Master_Orchestrator-blueviolet.svg)](docs/MASTER_ORCHESTRATOR_GUIDE.md)
 
-**The most comprehensive Tuya Zigbee device integration for Homey Pro with automated publication**
+> **Based on the excellent work by [Johan Bendz](https://github.com/JohanBendz)**  
+> Original app: [com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) | Licensed under MIT License
+
+**Community-maintained Tuya Zigbee integration for Homey Pro - Extending Johan's original work to full SDK3**
 
 > 🎭 **NEW!** [Master Orchestrator Ultimate](docs/MASTER_ORCHESTRATOR_GUIDE.md) - Double-click `RUN_ULTIMATE.bat` for full automation!
+
+## 🙏 Credits & Attribution
+
+This is a **community-maintained fork** of Johan Bendz's original Tuya Zigbee app, extended and updated to full SDK3 native implementation.
+
+- **Original Author:** [Johan Bendz](https://github.com/JohanBendz)
+- **Original Repository:** [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee)
+- **Current Maintainer:** Dylan Rajasekaram
+- **License:** MIT License (inherited from original)
+
+### Why This Fork?
+
+Johan's original app was an excellent SDK2/SDK3 hybrid implementation. This fork continues that work with:
+- ✅ Full SDK3 native implementation (no legacy SDK2 code)
+- ✅ Extended device support (183 drivers vs original count)
+- ✅ Active maintenance and bug fixes
+- ✅ Community-driven development via GitHub
+- ✅ Automated testing and publication
+- ✅ IAS Zone enrollment fixes for motion sensors & buttons
 
 ## 🎯 Overview
 
