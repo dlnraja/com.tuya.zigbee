@@ -13,6 +13,9 @@ on:
       - 'project-data/**'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   validate:
     name: Validate App
@@ -31,7 +34,7 @@ jobs:
         run: npm ci
 
       - name: Validate Homey App (Publish Level)
-        uses: athombv/github-action-homey-app-validate@v1
+        uses: athombv/github-action-homey-app-validate@master
         with:
           level: publish
 
@@ -58,9 +61,19 @@ jobs:
 
       - name: Update version (Patch)
         id: update-version
-        uses: athombv/github-action-homey-app-update-version@v1
+        uses: athombv/github-action-homey-app-version@master
         with:
-          type: patch
+          version: patch
+          changelog: "Automated release"
+
+      - name: Commit & Push version
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Update Homey App Version to v${{ steps.update-version.outputs.version }}" || echo "No changes to commit"
+          git tag "v${{ steps.update-version.outputs.version }}" || echo "Tag already exists"
+          git push origin HEAD --tags || echo "Nothing to push"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -73,10 +86,15 @@ jobs:
     needs: [validate, version]
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout latest version
         uses: actions/checkout@v4
         with:
           ref: master
+          fetch-depth: 0
+
+      - name: Pull latest changes
+        run: |
+          git pull origin master
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -87,27 +105,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Pull latest changes
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git pull --rebase origin master
-
       - name: Publish to Homey App Store
-        uses: athombv/github-action-homey-app-publish@v1
+        uses: athombv/github-action-homey-app-publish@master
         with:
-          changelog: |
-            v${{ needs.version.outputs.version }} - Automated release
-            
-            ✅ IAS Zone enrollment fixes (motion sensors & SOS buttons)
-            ✅ Enhanced Johan Bendz attribution (community feedback)
-            ✅ Improved Athom App Store compliance
-            ✅ Forum feedback implemented
-            ✅ SDK3 native implementation
-            ✅ 183 drivers with 2000+ device IDs
-            ✅ 100% local control (no cloud)
-        env:
-          HOMEY_API_TOKEN: ${{ secrets.HOMEY_TOKEN }}
+          personal_access_token: ${{ secrets.HOMEY_TOKEN }}
 
       - name: Success notification
         if: success()

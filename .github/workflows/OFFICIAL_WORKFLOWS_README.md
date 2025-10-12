@@ -13,9 +13,9 @@
 **Purpose:** Official Homey App Store publication
 
 **Uses Official GitHub Actions:**
-- ✅ [`athombv/github-action-homey-app-validate@v1`](https://github.com/marketplace/actions/homey-app-validate)
-- ✅ [`athombv/github-action-homey-app-update-version@v1`](https://github.com/marketplace/actions/homey-app-update-version)
-- ✅ [`athombv/github-action-homey-app-publish@v1`](https://github.com/marketplace/actions/homey-app-publish)
+- ✅ [`athombv/github-action-homey-app-validate@master`](https://github.com/marketplace/actions/homey-app-validate)
+- ✅ [`athombv/github-action-homey-app-version@master`](https://github.com/marketplace/actions/homey-app-update-version)
+- ✅ [`athombv/github-action-homey-app-publish@master`](https://github.com/marketplace/actions/homey-app-publish)
 
 **Jobs:**
 1. **Validate** - Runs `homey app validate --level publish`
