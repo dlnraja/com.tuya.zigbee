@@ -31,7 +31,7 @@ jobs:
           npm install --global homey
           homey --version
       
-      - name: 🔐 Login to Homey
+      - name: 🔐 Setup Homey Authentication
         env:
           HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
         run: |
@@ -49,8 +49,13 @@ jobs:
             exit 1
           fi
           
-          echo "$HOMEY_TOKEN" | homey login --token
-          echo "✅ Logged in to Homey"
+          # Create Homey config directory
+          mkdir -p ~/.homey
+          
+          # Write token to config file (Homey CLI v3+ method)
+          echo '{"token":"'"$HOMEY_TOKEN"'"}' > ~/.homey/auth.json
+          
+          echo "✅ Homey authentication configured"
       
       - name: ✅ Validate App
         run: |
