@@ -48,13 +48,30 @@
       "1": {
         "clusters": [
           0,
-          4,
-          5,
+          1,
           6,
-          8
+          57344
         ],
         "bindings": [
           1
+        ]
+      },
+      "2": {
+        "clusters": [
+          1,
+          6
+        ]
+      },
+      "3": {
+        "clusters": [
+          1,
+          6
+        ]
+      },
+      "4": {
+        "clusters": [
+          1,
+          6
         ]
       }
     },
@@ -109,6 +126,7 @@
       "_TZ3000_uim07oem",
       "_TZ3000_vp6clf9d",
       "_TZ3000_xabckq1v",
+      "_TZ3000_5bpeda8u",
       "_TZE200_81isopgh",
       "_TZE200_m9skfctm",
       "_TZE200_wfxuhoea",
