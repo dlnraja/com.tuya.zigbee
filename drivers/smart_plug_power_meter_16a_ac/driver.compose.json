@@ -60,5 +60,71 @@
       "usageOn": 5,
       "usageOff": 0.5
     }
-  }
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Power Settings",
+        "fr": "Paramètres d'alimentation",
+        "nl": "Stroom instellingen",
+        "de": "Leistungseinstellungen"
+      },
+      "children": [
+        {
+          "id": "power_on_behavior",
+          "type": "dropdown",
+          "label": {
+            "en": "Power-on behavior",
+            "fr": "Comportement à la mise sous tension",
+            "nl": "Inschakeling gedrag",
+            "de": "Einschaltverhalten"
+          },
+          "value": "restore",
+          "values": [
+            {
+              "id": "on",
+              "label": {
+                "en": "Always ON",
+                "fr": "Toujours ALLUMÉ",
+                "nl": "Altijd AAN",
+                "de": "Immer EIN"
+              }
+            },
+            {
+              "id": "off",
+              "label": {
+                "en": "Always OFF",
+                "fr": "Toujours ÉTEINT",
+                "nl": "Altijd UIT",
+                "de": "Immer AUS"
+              }
+            },
+            {
+              "id": "restore",
+              "label": {
+                "en": "Restore last state",
+                "fr": "Restaurer le dernier état",
+                "nl": "Herstel laatste status",
+                "de": "Letzten Zustand wiederherstellen"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
