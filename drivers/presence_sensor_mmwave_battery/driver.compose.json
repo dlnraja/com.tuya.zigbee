@@ -58,5 +58,82 @@
     "batteries": [
       "CR2450"
     ]
-  }
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Motion Detection",
+        "fr": "Détection de mouvement",
+        "nl": "Bewegingsdetectie",
+        "de": "Bewegungserkennung"
+      },
+      "children": [
+        {
+          "id": "motion_timeout",
+          "type": "number",
+          "label": {
+            "en": "Motion timeout (seconds)",
+            "fr": "Délai de mouvement (secondes)",
+            "nl": "Beweging timeout (seconden)",
+            "de": "Bewegungs-Timeout (Sekunden)"
+          },
+          "value": 60,
+          "min": 5,
+          "max": 600,
+          "step": 5,
+          "units": {
+            "en": "seconds",
+            "fr": "secondes",
+            "nl": "seconden",
+            "de": "Sekunden"
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Battery Settings",
+        "fr": "Paramètres de batterie",
+        "nl": "Batterij instellingen",
+        "de": "Batterie-Einstellungen"
+      },
+      "children": [
+        {
+          "id": "battery_report_interval",
+          "type": "number",
+          "label": {
+            "en": "Battery report interval (minutes)",
+            "fr": "Intervalle de rapport de batterie (minutes)",
+            "nl": "Batterij rapportage interval (minuten)",
+            "de": "Batteriebericht-Intervall (Minuten)"
+          },
+          "value": 60,
+          "min": 15,
+          "max": 1440,
+          "step": 15,
+          "units": {
+            "en": "minutes",
+            "fr": "minutes",
+            "nl": "minuten",
+            "de": "Minuten"
+          }
+        }
+      ]
+    }
+  ]
 }

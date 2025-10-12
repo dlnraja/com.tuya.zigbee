@@ -53,5 +53,51 @@
       "usageOn": 5,
       "usageOff": 0.5
     }
-  }
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Motion Detection",
+        "fr": "Détection de mouvement",
+        "nl": "Bewegingsdetectie",
+        "de": "Bewegungserkennung"
+      },
+      "children": [
+        {
+          "id": "motion_timeout",
+          "type": "number",
+          "label": {
+            "en": "Motion timeout (seconds)",
+            "fr": "Délai de mouvement (secondes)",
+            "nl": "Beweging timeout (seconden)",
+            "de": "Bewegungs-Timeout (Sekunden)"
+          },
+          "value": 60,
+          "min": 5,
+          "max": 600,
+          "step": 5,
+          "units": {
+            "en": "seconds",
+            "fr": "secondes",
+            "nl": "seconden",
+            "de": "Sekunden"
+          }
+        }
+      ]
+    }
+  ]
 }
