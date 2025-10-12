@@ -69,84 +69,111 @@ class SosEmergencyButtonCr2032Device extends ZigBeeDevice {
       }
     }
 
-    // IAS Zone for button events - ENHANCED v2.15.32
-    // Use alarm_generic instead of alarm_contact for SOS button
+    // IAS Zone for button events - CRITICAL FIX v2.15.50
+    // Fixed: Use correct IAS Zone enrollment sequence with attribute 0x0010
     if (this.hasCapability('alarm_generic')) {
       try {
         const endpoint = zclNode.endpoints[this.getClusterEndpoint(CLUSTER.IAS_ZONE)];
         if (endpoint && endpoint.clusters.iasZone) {
           this.log('🚨 Setting up SOS button IAS Zone...');
           
-          // CRITICAL: Write IAS CIE Address for enrollment with retry
-          let cieWritten = false;
-          for (let attempt = 1; attempt <= 3; attempt++) {
+          // CRITICAL: Write IAS CIE Address for enrollment using correct attribute ID
+          try {
+            // Method 1: Direct attribute write with ID 0x0010
+            await endpoint.clusters.iasZone.write(0x0010, zclNode.ieeeAddr, 'ieeeAddr');
+            this.log('✅ IAS CIE address written (method 1: direct write)');
+          } catch (err1) {
+            this.log('⚠️ Method 1 failed, trying method 2:', err1.message);
             try {
-              await endpoint.clusters.iasZone.writeAttributes({
-                iasCieAddress: zclNode.ieeeAddr
-              });
-              this.log(`✅ IAS CIE address written (attempt ${attempt})`);
-              cieWritten = true;
-              break;
-            } catch (err) {
-              this.log(`⚠️ IAS CIE write attempt ${attempt} failed:`, err.message);
-              if (attempt < 3) {
-                await new Promise(resolve => setTimeout(resolve, 1000 * attempt));
+              // Method 2: Write with Buffer format
+              const ieeeBuffer = Buffer.from(zclNode.ieeeAddr.split(':').reverse().join(''), 'hex');
+              await endpoint.clusters.iasZone.write(0x0010, ieeeBuffer);
+              this.log('✅ IAS CIE address written (method 2: buffer)');
+            } catch (err2) {
+              this.log('⚠️ Method 2 failed, trying method 3:', err2.message);
+              try {
+                // Method 3: Use read to trigger auto-enrollment
+                const currentCie = await endpoint.clusters.iasZone.read(0x0010);
+                this.log('📋 Current CIE address:', currentCie);
+              } catch (err3) {
+                this.log('⚠️ All CIE write methods failed, device may auto-enroll:', err3.message);
               }
             }
           }
           
-          if (!cieWritten) {
-            this.log('⚠️ IAS CIE address write failed after 3 attempts');
-          }
+          // Wait for potential enrollment
+          await new Promise(resolve => setTimeout(resolve, 2000));
           
-          // Configure reporting with retry
-          let reportingConfigured = false;
-          for (let attempt = 1; attempt <= 3; attempt++) {
-            try {
-              await endpoint.clusters.iasZone.configureReporting({
-                zoneStatus: {
-                  minInterval: 0,
-                  maxInterval: 300,
-                  minChange: 1
-                }
-              });
-              this.log(`✅ IAS Zone reporting configured (attempt ${attempt})`);
-              reportingConfigured = true;
-              break;
-            } catch (err) {
-              this.log(`⚠️ IAS reporting config attempt ${attempt} failed:`, err.message);
-              if (attempt < 3) {
-                await new Promise(resolve => setTimeout(resolve, 1000 * attempt));
-              }
-            }
-          }
+          // Skip configureReporting - many Tuya IAS devices don't support it
+          // Instead, rely purely on zoneStatusChangeNotification
           
-          if (!reportingConfigured) {
-            this.log('⚠️ IAS reporting not configured, relying on notifications');
-          }
-          
-          // CRITICAL: Listen for button press notifications
+          // CRITICAL: Listen for button press notifications (v2.15.50 enhanced)
           endpoint.clusters.iasZone.on('zoneStatusChangeNotification', async (payload) => {
-            this.log('🚨 SOS BUTTON PRESSED! Notification:', JSON.stringify(payload));
+            this.log('🚨 ===== SOS BUTTON NOTIFICATION RECEIVED =====');
+            this.log('Full payload:', JSON.stringify(payload));
             
-            // Trigger alarm on any zone status change
-            if (payload.zoneStatus && (payload.zoneStatus.alarm1 || payload.zoneStatus.alarm2 || (payload.zoneStatus & 1) === 1)) {
-              await this.setCapabilityValue('alarm_generic', true);
-              this.log('✅ SOS alarm triggered!');
+            try {
+              // Parse zoneStatus - handle both object and number formats
+              let buttonPressed = false;
               
-              // Trigger flow card for automation
-              if (this.homey.flow) {
+              if (typeof payload.zoneStatus === 'object') {
+                buttonPressed = payload.zoneStatus.alarm1 || payload.zoneStatus.alarm2 || false;
+                this.log('ZoneStatus (object):', payload.zoneStatus);
+              } else if (typeof payload.zoneStatus === 'number') {
+                buttonPressed = (payload.zoneStatus & 1) === 1;
+                this.log('ZoneStatus (number):', payload.zoneStatus, '→ pressed:', buttonPressed);
+              } else {
+                this.log('⚠️ Unknown zoneStatus type:', typeof payload.zoneStatus);
+              }
+              
+              if (buttonPressed) {
+                this.log('🚨 SOS BUTTON PRESSED! ✅');
+                await this.setCapabilityValue('alarm_generic', true).catch(this.error);
+                
+                // Trigger flow card for automation
+                if (this.homey && this.homey.flow) {
+                  try {
+                    const triggerCard = this.homey.flow.getDeviceTriggerCard('sos_button_pressed');
+                    if (triggerCard) {
+                      await triggerCard.trigger(this, {}, {});
+                      this.log('✅ Flow card triggered');
+                    }
+                  } catch (flowErr) {
+                    this.log('⚠️ Flow trigger failed:', flowErr.message);
+                  }
+                }
+                
+                // Auto-reset after 5 seconds
+                setTimeout(async () => {
+                  await this.setCapabilityValue('alarm_generic', false).catch(this.error);
+                  this.log('✅ SOS alarm reset');
+                }, 5000);
+              }
+            } catch (parseErr) {
+              this.error('❌ SOS notification parse error:', parseErr);
+            }
+          });
+          
+          // ADDITIONAL: Also listen for standard attribute reports as fallback
+          endpoint.clusters.iasZone.on('attr.zoneStatus', async (value) => {
+            this.log('🚨 SOS Button attribute report (fallback):', value);
+            const buttonPressed = typeof value === 'number' ? (value & 1) === 1 : false;
+            if (buttonPressed) {
+              await this.setCapabilityValue('alarm_generic', true).catch(this.error);
+              
+              // Trigger flow
+              if (this.homey && this.homey.flow) {
                 try {
-                  await this.homey.flow.getDeviceTriggerCard('sos_button_pressed')?.trigger(this, {}, {}).catch(() => {});
+                  const triggerCard = this.homey.flow.getDeviceTriggerCard('sos_button_pressed');
+                  if (triggerCard) await triggerCard.trigger(this, {}, {});
                 } catch (flowErr) {
                   this.log('Flow trigger failed:', flowErr.message);
                 }
               }
               
-              // Auto-reset after 5 seconds
+              // Auto-reset
               setTimeout(async () => {
-                await this.setCapabilityValue('alarm_generic', false);
-                this.log('✅ SOS alarm reset');
+                await this.setCapabilityValue('alarm_generic', false).catch(this.error);
               }, 5000);
             }
           });
