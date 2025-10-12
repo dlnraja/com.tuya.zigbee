@@ -33,7 +33,24 @@
     "manufacturerName": [
       "Signify Netherlands B.V.",
       "Philips",
-      "LEDVANCE"
+      "LEDVANCE",
+      "TS0121",
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0005",
+      "TS0006",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS0501",
+      "TS0502",
+      "TS0503",
+      "TS0504",
+      "TS0505",
+      "Tuya"
     ],
     "productId": [
       "LOM003",
@@ -42,8 +59,20 @@
     ],
     "endpoints": {
       "11": {
-        "clusters": [0, 3, 4, 5, 6, 8, 4096, 64515],
-        "bindings": [6, 8]
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          4096,
+          64515
+        ],
+        "bindings": [
+          6,
+          8
+        ]
       }
     },
     "learnmode": {
