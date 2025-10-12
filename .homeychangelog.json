@@ -136,5 +136,8 @@
   },
   "2.11.1": {
     "en": "Performance and stability improvements."
+  },
+  "2.11.3": {
+    "en": "Bug fix: generate unique app images for each size - force A."
   }
 }
