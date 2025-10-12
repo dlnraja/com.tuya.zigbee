@@ -1,0 +1,60 @@
+{
+  "id": "bulb_white_ac",
+  "name": {
+    "en": "Bulb White Ac",
+    "fr": "Bulb White Ac",
+    "nl": "Bulb White Ac",
+    "de": "Bulb White Ac"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "images": {
+    "small": "./assets/small.png",
+    "large": "./assets/large.png",
+    "xlarge": "./assets/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Signify Netherlands B.V.",
+      "Philips"
+    ],
+    "productId": [
+      "LWA027"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8
+        ],
+        "bindings": [
+          5,
+          6,
+          8
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "./assets/large.png",
+      "instruction": {
+        "en": "1. Power on the device\n2. Press and hold pairing button for 5 seconds\n3. Wait for device to appear in Homey\n4. Device is now paired",
+        "fr": "1. Allumez l'appareil\n2. Maintenez le bouton d'appairage pendant 5 secondes\n3. Attendez que l'appareil apparaisse dans Homey\n4. L'appareil est maintenant appairé",
+        "nl": "1. Schakel het apparaat in\n2. Houd de koppelknop 5 seconden ingedrukt\n3. Wacht tot het apparaat verschijnt in Homey\n4. Het apparaat is nu gekoppeld",
+        "de": "1. Schalten Sie das Gerät ein\n2. Halten Sie die Kopplungstaste 5 Sekunden lang gedrückt\n3. Warten Sie, bis das Gerät in Homey angezeigt wird\n4. Das Gerät ist jetzt gekoppelt"
+      }
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 5,
+      "usageOff": 0.5
+    }
+  }
+}
