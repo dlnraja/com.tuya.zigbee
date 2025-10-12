@@ -1,3 +1,38 @@
+
+## [2.15.31] - 2025-10-12
+
+### Added
+- 10 nouveaux drivers 2024-2025 (Philips Hue, IKEA Thread, Tuya Advanced)
+- 40 flow cards (16 triggers, 8 conditions, 16 actions)
+- Support Thread/Matter (14 produits)
+- Images générées automatiquement (45 PNG)
+
+### Changed
+- Description app: 183 drivers (was 167)
+- Architecture UNBRANDED complète
+- Optimisation taille app (~45 MB)
+
+### Fixed
+- Conflit workflow auto-fix-images.yml
+- Images manquantes sur page test
+- Placeholders supprimés
+
+### Drivers Added
+- bulb_white_ac, bulb_white_ambiance_ac
+- bulb_color_rgbcct_ac (enriched)
+- led_strip_outdoor_color_ac
+- doorbell_camera_ac, alarm_siren_chime_ac
+- contact_sensor_battery
+- wireless_button_2gang_battery, wireless_dimmer_scroll_battery
+- presence_sensor_mmwave_battery
+- smart_plug_power_meter_16a_ac
+
+### Coverage
+- Philips Hue 2025: 5 nouveaux produits
+- IKEA Thread: 4 nouveaux produits
+- Tuya Advanced: 2 nouveaux produits
+- Total devices: 1500+ supported
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
