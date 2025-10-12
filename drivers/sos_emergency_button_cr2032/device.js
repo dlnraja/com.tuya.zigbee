@@ -4,6 +4,10 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
 const TuyaClusterHandler = require('../../utils/tuya-cluster-handler');
 
+/**
+ * SOS Emergency Button CR2032 Device
+ * v2.15.12 - Enhanced IAS Zone enrollment with fallback methods (2025-10-12)
+ */
 class SosEmergencyButtonCr2032Device extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {

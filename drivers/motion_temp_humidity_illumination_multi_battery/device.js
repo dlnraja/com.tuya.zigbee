@@ -3,6 +3,10 @@
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
 
+/**
+ * HOBEIAN Multisensor (Motion + Temperature + Humidity + Illumination)
+ * v2.15.12 - Enhanced IAS Zone enrollment for motion detection (2025-10-12)
+ */
 class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
