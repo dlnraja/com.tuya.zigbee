@@ -94,7 +94,47 @@
       }
     }
   },
-  "settings": [],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "SDK3 Advanced Settings",
+        "fr": "Paramètres Avancés SDK3"
+      },
+      "children": [
+        {
+          "id": "enable_contact_logging",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Contact Event Logging",
+            "fr": "Activer Journalisation Contact"
+          },
+          "value": false
+        },
+        {
+          "id": "battery_low_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold",
+            "fr": "Seuil Batterie Faible"
+          },
+          "units": "%",
+          "value": 20,
+          "min": 5,
+          "max": 50
+        },
+        {
+          "id": "battery_notification",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Battery Notifications",
+            "fr": "Activer Notifications Batterie"
+          },
+          "value": true
+        }
+      ]
+    }
+  ],
   "capabilitiesOptions": {},
   "energy": {
     "batteries": [

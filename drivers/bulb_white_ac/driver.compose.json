@@ -152,6 +152,83 @@
           ]
         }
       ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "SDK3 Advanced Settings",
+        "fr": "Paramètres Avancés SDK3"
+      },
+      "children": [
+        {
+          "id": "power_on_behavior",
+          "type": "dropdown",
+          "label": {
+            "en": "Power-On Behavior",
+            "fr": "Comportement Allumage"
+          },
+          "value": "last_state",
+          "values": [
+            {
+              "id": "last_state",
+              "label": {
+                "en": "Last State",
+                "fr": "Dernier État"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "Always On",
+                "fr": "Toujours Allumé"
+              }
+            },
+            {
+              "id": "off",
+              "label": {
+                "en": "Always Off",
+                "fr": "Toujours Éteint"
+              }
+            }
+          ]
+        },
+        {
+          "id": "default_brightness",
+          "type": "number",
+          "label": {
+            "en": "Default Brightness",
+            "fr": "Luminosité par Défaut"
+          },
+          "units": "%",
+          "value": 100,
+          "min": 1,
+          "max": 100
+        },
+        {
+          "id": "min_brightness",
+          "type": "number",
+          "label": {
+            "en": "Minimum Brightness",
+            "fr": "Luminosité Minimale"
+          },
+          "units": "%",
+          "value": 1,
+          "min": 1,
+          "max": 50
+        },
+        {
+          "id": "fade_time",
+          "type": "number",
+          "label": {
+            "en": "Fade Time",
+            "fr": "Temps Fondu"
+          },
+          "units": "ms",
+          "value": 500,
+          "min": 0,
+          "max": 3000
+        }
+      ]
     }
   ],
   "platforms": [

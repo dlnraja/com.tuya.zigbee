@@ -164,5 +164,90 @@
   "id": "energy_plug_advanced",
   "connectivity": [
     "zigbee"
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "SDK3 Advanced Settings",
+        "fr": "Paramètres Avancés SDK3"
+      },
+      "children": [
+        {
+          "id": "power_on_state",
+          "type": "dropdown",
+          "label": {
+            "en": "Power-On State",
+            "fr": "État Allumage"
+          },
+          "value": "last",
+          "values": [
+            {
+              "id": "last",
+              "label": {
+                "en": "Last State",
+                "fr": "Dernier État"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "On",
+                "fr": "Allumé"
+              }
+            },
+            {
+              "id": "off",
+              "label": {
+                "en": "Off",
+                "fr": "Éteint"
+              }
+            }
+          ]
+        },
+        {
+          "id": "enable_led",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable LED Indicator",
+            "fr": "Activer Indicateur LED"
+          },
+          "value": true
+        },
+        {
+          "id": "power_threshold",
+          "type": "number",
+          "label": {
+            "en": "Power Alert Threshold",
+            "fr": "Seuil Alerte Puissance"
+          },
+          "units": "W",
+          "value": 2000,
+          "min": 1,
+          "max": 5000
+        },
+        {
+          "id": "overload_protection",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Overload Protection",
+            "fr": "Activer Protection Surcharge"
+          },
+          "value": true
+        },
+        {
+          "id": "overload_limit",
+          "type": "number",
+          "label": {
+            "en": "Overload Limit",
+            "fr": "Limite Surcharge"
+          },
+          "units": "W",
+          "value": 2500,
+          "min": 1,
+          "max": 5000
+        }
+      ]
+    }
   ]
 }
