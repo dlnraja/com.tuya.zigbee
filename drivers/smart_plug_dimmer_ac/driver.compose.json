@@ -76,7 +76,7 @@
       }
     },
     "learnmode": {
-      "image": "./assets/large.png",
+      "image": "/drivers/smart_plug_dimmer_ac/assets/large.png",
       "instruction": {
         "en": "1. Plug the smart plug into a power outlet\n2. Wait for the LED to start blinking\n3. If the LED doesn't blink, press and hold the button for 10 seconds\n4. The device will now be in pairing mode",
         "fr": "1. Branchez la prise intelligente dans une prise électrique\n2. Attendez que la LED commence à clignoter\n3. Si la LED ne clignote pas, maintenez le bouton enfoncé pendant 10 secondes\n4. L'appareil est maintenant en mode d'appairage",
