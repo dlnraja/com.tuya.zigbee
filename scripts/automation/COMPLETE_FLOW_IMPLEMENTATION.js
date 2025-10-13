@@ -457,7 +457,8 @@ function generateDriverRegistration(intelligence) {
 }
 
 async function enrichDriver(driverPath, driverData) {
-  const intelligence = driverData.intelligence?.primary;
+  // Handle both data structures
+  const intelligence = driverData.intelligence?.primary || driverData.primary;
   if (!intelligence || !INTELLIGENCE_TO_FLOWS[intelligence]) {
     return { skipped: true, reason: 'No intelligence flows' };
   }
@@ -511,7 +512,7 @@ async function enrichDriver(driverPath, driverData) {
     const flows = INTELLIGENCE_TO_FLOWS[intelligence];
     return {
       success: true,
-      driver: driverData.driver,
+      driver: driverData.driver || driverData.name,
       intelligence: intelligence,
       methods_added: {
         triggers: flows.triggers?.length || 0,
