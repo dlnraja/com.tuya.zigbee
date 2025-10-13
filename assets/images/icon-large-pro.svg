@@ -1,0 +1,80 @@
+<svg width="500" height="350" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-large" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F8F9FA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E9ECEF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="icon-large" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5A9FE2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4A8FD2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="500" height="350" rx="45" fill="url(#bg-large)"/>
+  
+  <!-- Cercle central -->
+  <circle cx="250" cy="150" r="90" fill="#FFFFFF" opacity="0.7"/>
+  
+  <!-- Icône Zigbee principale -->
+  <g transform="translate(250, 150)">
+    <!-- Noeud central -->
+    <circle cx="0" cy="0" r="18" fill="url(#icon-large)"/>
+    
+    <!-- Lignes de connexion -->
+    <line x1="0" y1="0" x2="0" y2="-55" stroke="#5A9FE2" stroke-width="2" opacity="0.6"/>
+    <line x1="0" y1="0" x2="48" y2="28" stroke="#5A9FE2" stroke-width="2" opacity="0.6"/>
+    <line x1="0" y1="0" x2="-48" y2="28" stroke="#5A9FE2" stroke-width="2" opacity="0.6"/>
+    
+    <!-- Noeuds périphériques -->
+    <circle cx="0" cy="-55" r="12" fill="url(#icon-large)" opacity="0.9"/>
+    <circle cx="48" cy="28" r="12" fill="url(#icon-large)" opacity="0.9"/>
+    <circle cx="-48" cy="28" r="12" fill="url(#icon-large)" opacity="0.9"/>
+    
+    <!-- Points lumineux -->
+    <circle cx="0" cy="0" r="3.5" fill="#FFFFFF"/>
+    <circle cx="0" cy="-55" r="2.5" fill="#FFFFFF"/>
+    <circle cx="48" cy="28" r="2.5" fill="#FFFFFF"/>
+    <circle cx="-48" cy="28" r="2.5" fill="#FFFFFF"/>
+  </g>
+  
+  <!-- Badges power types -->
+  <g transform="translate(400, 60)">
+    <!-- Battery -->
+    <circle cx="0" cy="0" r="16" fill="#4CAF50" opacity="0.9"/>
+    <rect x="-6" y="-4" width="12" height="8" rx="1.5" fill="#FFFFFF" opacity="0.9"/>
+    <rect x="-3" y="-6" width="6" height="2" rx="1" fill="#FFFFFF" opacity="0.9"/>
+    
+    <!-- AC Lightning -->
+    <circle cx="0" cy="40" r="16" fill="#5A9FE2" opacity="0.9"/>
+    <path d="M 3 32 L -3 40 L 0 40 L -2 48 L 4 38 L 1 38 Z" fill="#FFFFFF" opacity="0.9"/>
+  </g>
+  
+  <!-- Titre principal -->
+  <text x="250" y="275" 
+        font-family="'SF Pro Display', 'Segoe UI', Arial, sans-serif" 
+        font-size="42" 
+        font-weight="300"
+        letter-spacing="8"
+        fill="#6C757D" 
+        text-anchor="middle">ZIGBEE</text>
+  
+  <!-- Sous-titre -->
+  <text x="250" y="310" 
+        font-family="'SF Pro Display', 'Segoe UI', Arial, sans-serif" 
+        font-size="18" 
+        font-weight="400"
+        letter-spacing="3"
+        fill="#8B96A0" 
+        text-anchor="middle">UNIVERSAL DEVICE APP</text>
+  
+  <!-- Version badge -->
+  <text x="250" y="330" 
+        font-family="'SF Pro Display', 'Segoe UI', Arial, sans-serif" 
+        font-size="11" 
+        font-weight="400"
+        letter-spacing="2"
+        fill="#8B96A0" 
+        opacity="0.7"
+        text-anchor="middle">SDK3 • 183 DRIVERS • 300+ DEVICES</text>
+</svg>

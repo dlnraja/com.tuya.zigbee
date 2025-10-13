@@ -1,0 +1,119 @@
+<svg width="1024" height="1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-xlarge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F8F9FA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E9ECEF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="icon-xlarge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5A9FE2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4A8FD2;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="glow-xlarge">
+      <stop offset="0%" style="stop-color:#5A9FE2;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#5A9FE2;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1024" height="1024" rx="120" fill="url(#bg-xlarge)"/>
+  
+  <!-- Glow effect -->
+  <circle cx="512" cy="420" r="250" fill="url(#glow-xlarge)"/>
+  
+  <!-- Cercle principal -->
+  <circle cx="512" cy="420" r="200" fill="#FFFFFF" opacity="0.7"/>
+  
+  <!-- Icône Zigbee mesh network -->
+  <g transform="translate(512, 420)">
+    <!-- Noeud central grand -->
+    <circle cx="0" cy="0" r="38" fill="url(#icon-xlarge)"/>
+    <circle cx="0" cy="0" r="30" fill="#FFFFFF" opacity="0.2"/>
+    
+    <!-- Lignes principales -->
+    <line x1="0" y1="0" x2="0" y2="-120" stroke="#5A9FE2" stroke-width="4" opacity="0.6"/>
+    <line x1="0" y1="0" x2="104" y2="-60" stroke="#5A9FE2" stroke-width="4" opacity="0.6"/>
+    <line x1="0" y1="0" x2="104" y2="60" stroke="#5A9FE2" stroke-width="4" opacity="0.6"/>
+    <line x1="0" y1="0" x2="-104" y2="60" stroke="#5A9FE2" stroke-width="4" opacity="0.6"/>
+    <line x1="0" y1="0" x2="-104" y2="-60" stroke="#5A9FE2" stroke-width="4" opacity="0.6"/>
+    
+    <!-- Noeuds périphériques -->
+    <circle cx="0" cy="-120" r="24" fill="url(#icon-xlarge)" opacity="0.9"/>
+    <circle cx="104" cy="-60" r="24" fill="url(#icon-xlarge)" opacity="0.9"/>
+    <circle cx="104" cy="60" r="24" fill="url(#icon-xlarge)" opacity="0.9"/>
+    <circle cx="-104" cy="60" r="24" fill="url(#icon-xlarge)" opacity="0.9"/>
+    <circle cx="-104" cy="-60" r="24" fill="url(#icon-xlarge)" opacity="0.9"/>
+    
+    <!-- Points lumineux -->
+    <circle cx="0" cy="0" r="8" fill="#FFFFFF"/>
+    <circle cx="0" cy="-120" r="5" fill="#FFFFFF"/>
+    <circle cx="104" cy="-60" r="5" fill="#FFFFFF"/>
+    <circle cx="104" cy="60" r="5" fill="#FFFFFF"/>
+    <circle cx="-104" cy="60" r="5" fill="#FFFFFF"/>
+    <circle cx="-104" cy="-60" r="5" fill="#FFFFFF"/>
+  </g>
+  
+  <!-- Badges power types (grande taille) -->
+  <g transform="translate(820, 200)">
+    <!-- Battery -->
+    <circle cx="0" cy="0" r="35" fill="#4CAF50" opacity="0.95"/>
+    <rect x="-14" y="-10" width="28" height="20" rx="3" fill="#FFFFFF" opacity="0.95"/>
+    <rect x="-8" y="-14" width="16" height="4" rx="2" fill="#FFFFFF" opacity="0.95"/>
+    
+    <!-- AC -->
+    <circle cx="0" cy="85" r="35" fill="#5A9FE2" opacity="0.95"/>
+    <path d="M 8 70 L -8 85 L 0 85 L -6 100 L 10 82 L 2 82 Z" fill="#FFFFFF" opacity="0.95"/>
+    
+    <!-- Hybrid -->
+    <circle cx="0" cy="170" r="35" fill="#FF9800" opacity="0.95"/>
+    <path d="M 0 155 A 15 15 0 1 1 0 185" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+    <path d="M -3 157 L 0 155 L 0 159 Z" fill="#FFFFFF"/>
+  </g>
+  
+  <!-- Titre principal -->
+  <text x="512" y="700" 
+        font-family="'SF Pro Display', 'Segoe UI', Arial, sans-serif" 
+        font-size="90" 
+        font-weight="300"
+        letter-spacing="16"
+        fill="#6C757D" 
+        text-anchor="middle">ZIGBEE</text>
+  
+  <!-- Sous-titre -->
+  <text x="512" y="770" 
+        font-family="'SF Pro Display', 'Segoe UI', Arial, sans-serif" 
+        font-size="36" 
+        font-weight="400"
+        letter-spacing="6"
+        fill="#8B96A0" 
+        text-anchor="middle">UNIVERSAL DEVICE APP</text>
+  
+  <!-- Description -->
+  <text x="512" y="830" 
+        font-family="'SF Pro Display', 'Segoe UI', Arial, sans-serif" 
+        font-size="22" 
+        font-weight="400"
+        letter-spacing="3"
+        fill="#8B96A0" 
+        opacity="0.8"
+        text-anchor="middle">183 Native SDK3 Drivers • 300+ Device IDs</text>
+  
+  <!-- Features -->
+  <text x="512" y="880" 
+        font-family="'SF Pro Display', 'Segoe UI', Arial, sans-serif" 
+        font-size="18" 
+        font-weight="400"
+        letter-spacing="2"
+        fill="#8B96A0" 
+        opacity="0.7"
+        text-anchor="middle">Battery Intelligence • Energy Optimized • Homey Standards</text>
+  
+  <!-- Version badge -->
+  <text x="512" y="940" 
+        font-family="'SF Pro Display', 'Segoe UI', Arial, sans-serif" 
+        font-size="16" 
+        font-weight="400"
+        letter-spacing="2"
+        fill="#8B96A0" 
+        opacity="0.6"
+        text-anchor="middle">v2.15.62 • 100% Local Control • Community Maintained</text>
+</svg>
