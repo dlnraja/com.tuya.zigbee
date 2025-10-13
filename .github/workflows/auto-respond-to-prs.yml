@@ -1,0 +1,144 @@
+name: Auto Respond to Pull Requests
+
+on:
+  pull_request:
+    types: [opened]
+  workflow_dispatch:
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  analyze-pr:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Analyze PR Changes
+        id: analyze
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            
+            // Get files changed
+            const files = await github.rest.pulls.listFiles({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: pr.number
+            });
+            
+            const changedFiles = files.data.map(f => f.filename);
+            const driversChanged = changedFiles.filter(f => f.startsWith('drivers/'));
+            
+            // Analyze changes
+            const hasDriverChanges = driversChanged.length > 0;
+            const hasManifestChanges = changedFiles.some(f => f.includes('driver.compose.json'));
+            const hasDeviceJs = changedFiles.some(f => f.endsWith('device.js'));
+            
+            core.setOutput('drivers_changed', driversChanged.length);
+            core.setOutput('has_manifest', hasManifestChanges);
+            core.setOutput('has_device_js', hasDeviceJs);
+            
+            return {
+              driversCount: driversChanged.length,
+              hasManifest: hasManifestChanges,
+              hasDeviceJs: hasDeviceJs,
+              files: changedFiles
+            };
+
+      - name: Generate PR Response
+        id: response
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            const driversChanged = ${{ steps.analyze.outputs.drivers_changed }};
+            const hasManifest = ${{ steps.analyze.outputs.has_manifest }};
+            const hasDeviceJs = ${{ steps.analyze.outputs.has_device_js }};
+            
+            let response = `# 🤖 Automated PR Analysis\n\n`;
+            response += `Thank you for your contribution @${pr.user.login}! 🎉\n\n`;
+            
+            response += `## 📊 Changes Summary\n`;
+            response += `- **Drivers Modified**: ${driversChanged}\n`;
+            response += `- **Manifest Changes**: ${hasManifest ? '✅' : '❌'}\n`;
+            response += `- **Device Logic Changes**: ${hasDeviceJs ? '✅' : '❌'}\n\n`;
+            
+            response += `## ✅ Checklist for Driver Contributions\n\n`;
+            response += `Please ensure:\n`;
+            response += `- [ ] Driver follows UNBRANDED categorization (by function, not brand)\n`;
+            response += `- [ ] Manufacturer IDs are complete (no wildcards like \`_TZE284_*\`)\n`;
+            response += `- [ ] All Zigbee clusters are numeric (0, 1, 3, 6, etc.)\n`;
+            response += `- [ ] Capabilities match device functions\n`;
+            response += `- [ ] Images are proper size (75x75, 500x500 for drivers)\n`;
+            response += `- [ ] Tested on physical device\n`;
+            response += `- [ ] No hard-coded credentials or sensitive data\n\n`;
+            
+            if (hasManifest) {
+              response += `## 📋 driver.compose.json Guidelines\n\n`;
+              response += `✅ **Manufacturer IDs**: Use complete IDs from device interview\n`;
+              response += `✅ **Clusters**: Must be numeric (0=Basic, 1=Power, 6=OnOff, etc.)\n`;
+              response += `✅ **Product IDs**: Array of strings (TS0601, TS011F, etc.)\n`;
+              response += `✅ **Capabilities**: Match Homey SDK3 standards\n\n`;
+            }
+            
+            if (hasDeviceJs) {
+              response += `## 🔧 device.js Best Practices\n\n`;
+              response += `✅ Extend from \`ZigBeeDevice\` or appropriate base class\n`;
+              response += `✅ Handle cluster events properly\n`;
+              response += `✅ Include error handling\n`;
+              response += `✅ Add debug logging for troubleshooting\n\n`;
+            }
+            
+            response += `## 🚀 Next Steps\n\n`;
+            response += `1. **Review**: I'll review your changes shortly\n`;
+            response += `2. **Testing**: Please confirm device testing results\n`;
+            response += `3. **Validation**: Run \`homey app validate --level publish\`\n`;
+            response += `4. **Merge**: Once approved, changes will be merged\n\n`;
+            
+            response += `---\n`;
+            response += `*🤖 Automated response by GitHub Actions*\n`;
+            response += `*Generated: ${new Date().toISOString()}*\n`;
+            
+            return response;
+
+      - name: Post Comment on PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const response = ${{ steps.response.outputs.result }};
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              body: response
+            });
+
+      - name: Add Labels to PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const driversChanged = ${{ steps.analyze.outputs.drivers_changed }};
+            const labels = ['contribution'];
+            
+            if (driversChanged > 0) {
+              labels.push('driver-change');
+            }
+            
+            if (driversChanged >= 3) {
+              labels.push('major-change');
+            }
+            
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              labels: labels
+            });
