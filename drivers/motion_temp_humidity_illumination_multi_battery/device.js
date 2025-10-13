@@ -131,40 +131,40 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
       }
     }
     
-    // Motion via IAS Zone - CRITICAL FIX v2.15.50
-    // Fixed: Use correct IAS Zone enrollment sequence with attribute 0x0010
+    // Motion via IAS Zone - CRITICAL FIX v2.15.71 SDK3
+    // Fixed: Use CORRECT Homey SDK3 API for IAS Zone enrollment
     if (this.hasCapability('alarm_motion')) {
       try {
         const endpoint = zclNode.endpoints[this.getClusterEndpoint(CLUSTER.IAS_ZONE)];
         if (endpoint && endpoint.clusters.iasZone) {
           this.log('🚶 Setting up Motion IAS Zone...');
           
-          // CRITICAL: Write IAS CIE Address for enrollment using correct attribute ID
+          // CRITICAL SDK3 FIX: Use writeAttributes (not write which doesn't exist in SDK3)
           try {
-            // Method 1: Direct attribute write with ID 0x0010
-            await endpoint.clusters.iasZone.write(0x0010, zclNode.ieeeAddr, 'ieeeAddr');
-            this.log('✅ IAS CIE address written (method 1: direct write)');
-          } catch (err1) {
-            this.log('⚠️ Method 1 failed, trying method 2:', err1.message);
-            try {
-              // Method 2: Write with Buffer format
-              const ieeeBuffer = Buffer.from(zclNode.ieeeAddr.split(':').reverse().join(''), 'hex');
-              await endpoint.clusters.iasZone.write(0x0010, ieeeBuffer);
-              this.log('✅ IAS CIE address written (method 2: buffer)');
-            } catch (err2) {
-              this.log('⚠️ Method 2 failed, trying method 3:', err2.message);
-              try {
-                // Method 3: Use read to trigger auto-enrollment
-                const currentCie = await endpoint.clusters.iasZone.read(0x0010);
-                this.log('📋 Current CIE address:', currentCie);
-              } catch (err3) {
-                this.log('⚠️ All CIE write methods failed, device may auto-enroll:', err3.message);
-              }
-            }
+            // Get Homey's IEEE address for CIE enrollment
+            const homeyIeee = this.homey.zigbee.ieee;
+            this.log('📡 Homey IEEE address:', homeyIeee);
+            
+            // Convert IEEE address to Buffer (reverse byte order for Zigbee)
+            const ieeeBuffer = Buffer.from(homeyIeee.replace(/:/g, '').match(/.{2}/g).reverse().join(''), 'hex');
+            this.log('📡 IEEE Buffer:', ieeeBuffer.toString('hex'));
+            
+            // SDK3 Correct Method: writeAttributes with iasCIEAddress
+            await endpoint.clusters.iasZone.writeAttributes({
+              iasCIEAddress: ieeeBuffer
+            });
+            this.log('✅ IAS CIE Address written successfully (SDK3 method)');
+            
+            // Wait for enrollment to complete
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            
+            // Verify enrollment
+            const cieAddr = await endpoint.clusters.iasZone.readAttributes(['iasCIEAddress']);
+            this.log('✅ Enrollment verified, CIE Address:', cieAddr.iasCIEAddress?.toString('hex'));
+          } catch (enrollErr) {
+            this.log('⚠️ IAS Zone enrollment failed:', enrollErr.message);
+            this.log('Device may auto-enroll or require manual pairing');
           }
-          
-          // Wait for potential enrollment
-          await new Promise(resolve => setTimeout(resolve, 2000));
           
           // Skip configureReporting - many Tuya IAS devices don't support it
           // Instead, rely purely on zoneStatusChangeNotification
