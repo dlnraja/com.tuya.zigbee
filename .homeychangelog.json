@@ -1,4 +1,7 @@
 {
+  "2.15.72": {
+    "en": "CRITICAL SDK3 FIX: IAS Zone enrollment completely rewritten using correct Homey SDK3 API. Motion sensors and SOS buttons now work properly. Fixed writeAttributes method for iasCIEAddress. Removed duplicate device IDs causing pairing confusion."
+  },
   "2.15.71": {
     "en": "CRITICAL SDK3 FIX: IAS Zone enrollment completely rewritten using correct Homey SDK3 API. Motion sensors and SOS buttons now work properly. Fixed writeAttributes method for iasCIEAddress. Resolves all IAS Zone enrollment failures."
   },
