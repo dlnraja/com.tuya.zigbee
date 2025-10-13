@@ -338,5 +338,8 @@
   },
   "2.15.66": {
     "en": "🔧 ZG-204ZM FIX: Added sensitivity/timeout settings for mmWave radar false motion issue. Troubleshooting guide included. PIR+Radar sensor now configurable. Reddit community feedback."
+  },
+  "2.15.67": {
+    "en": "✅ DEVICE SUPPORT: ZM-P1 Tuya motion sensor (Motion + Lux) added. Also added ZG-204ZL to motion_sensor_illuminance_battery driver. Zigbee2MQTT Issue #28103 addressed."
   }
 }
