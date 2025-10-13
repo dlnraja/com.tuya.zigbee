@@ -1,462 +1,404 @@
 # Contributing to Universal Tuya Zigbee
 
-First off, thank you for considering contributing to Universal Tuya Zigbee! It's people like you that make this app better for the entire Homey community.
+Thank you for your interest in contributing to this community-maintained Tuya Zigbee app for Homey Pro!
 
-## 📋 Table of Contents
+## 🌟 Based on Johan Bendz's Work
 
-- [Code of Conduct](#code-of-conduct)
-- [How Can I Contribute?](#how-can-i-contribute)
-- [Development Setup](#development-setup)
-- [Pull Request Process](#pull-request-process)
-- [Coding Guidelines](#coding-guidelines)
-- [Adding New Devices](#adding-new-devices)
-- [Testing](#testing)
-- [Documentation](#documentation)
+This project is a fork of [Johan Bendz's original Tuya Zigbee app](https://github.com/JohanBendz/com.tuya.zigbee), extended to full SDK3 native implementation. All contributions should respect the original MIT License and maintain the spirit of Johan's excellent work.
 
 ---
 
-## 🤝 Code of Conduct
+## 📋 How to Add a New Device
 
-This project and everyone participating in it is governed by our commitment to:
+### 1. Check if Device is Already Supported
 
-- Being respectful and inclusive
-- Accepting constructive criticism gracefully
-- Focusing on what is best for the community
-- Showing empathy towards other community members
+Before requesting a new device, check:
+- Browse the `/drivers/` folder in the repository
+- Check the device matrix in `README.md`
+- Search existing GitHub Issues
 
-## 🎯 How Can I Contribute?
+### 2. Interview Your Device
 
-### Reporting Bugs
+Follow Johan's comprehensive guide on how to interview a Zigbee device:
+1. Add device to Homey using the generic Zigbee app
+2. Use Developer Tools to interview the device
+3. Collect the following information:
+   - `manufacturerName` (e.g., `_TZ3000_mmtwjmaq`, `TS0201`, `Tuya`)
+   - `productId` (e.g., `TS0201`, `TS011F`)
+   - Zigbee clusters (e.g., `[0, 1, 3, 1026, 1029]`)
+   - Capabilities needed (e.g., `measure_temperature`, `measure_humidity`)
+   - Endpoints (if multi-gang device)
 
-**Before submitting a bug report:**
-- Check the [GitHub Issues](https://github.com/dlnraja/com.tuya.zigbee/issues) to see if the problem has already been reported
-- Check the [Homey Forum thread](https://community.homey.app/t/140352/) for similar issues
-
-**When submitting a bug report, include:**
-- Device manufacturer and model number
-- Homey diagnostic report (`homey app run` output)
-- Expected vs. actual behavior
-- Steps to reproduce
-- Screenshots if applicable
-
-### Suggesting Features
-
-We love feature suggestions! Please create an issue with:
-- Clear description of the feature
-- Why it would be useful to users
-- Any technical considerations
-- Examples from other apps (if applicable)
-
-### Adding Device Support
-
-See the [Adding New Devices](#adding-new-devices) section below.
-
-### Improving Documentation
-
-Documentation improvements are always welcome:
-- Fix typos or clarify existing docs
-- Add examples
-- Translate documentation
-- Create tutorials or guides
-
----
-
-## 🛠️ Development Setup
-
-### Prerequisites
-
-```bash
-# Required
-Node.js 18+ (recommended: 20.x)
-npm 9+
-Homey CLI
-
-# Optional but recommended
-Git
-Visual Studio Code with Homey extension
+**Example interview output:**
+```json
+{
+  "manufacturerName": "_TZ3000_mmtwjmaq",
+  "productId": "TS0202",
+  "clusters": {
+    "1": [0, 1, 3, 1030, 1280]
+  },
+  "capabilities": ["alarm_motion", "measure_battery"]
+}
 ```
 
-### Initial Setup
+### 3. Submit a GitHub Issue
 
-1. **Fork the repository**
-   ```bash
-   # On GitHub, click "Fork" button
-   ```
+Create a new issue using the "New Device Request" template:
 
-2. **Clone your fork**
+**Title:** `[Device Request] Your Device Name`
+
+**Content:**
+```markdown
+## Device Information
+
+- **Brand/Model:** [e.g., HOBEIAN Multi Sensor]
+- **Manufacturer Name:** [e.g., _TZ3000_mmtwjmaq]
+- **Product ID:** [e.g., TS0202]
+- **Purchase Link:** [optional]
+
+## Zigbee Interview Data
+
+```json
+{
+  "manufacturerName": "...",
+  "productId": "...",
+  "clusters": {...}
+}
+```
+
+## Desired Capabilities
+
+- [ ] Motion detection (`alarm_motion`)
+- [ ] Temperature (`measure_temperature`)
+- [ ] Humidity (`measure_humidity`)
+- [ ] Battery (`measure_battery`)
+
+## Additional Notes
+
+[Any specific behavior or issues you've noticed]
+```
+
+### 4. Test the Driver (If Created)
+
+If a developer creates a driver for your device:
+
+1. **Install the app manually:**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/com.tuya.zigbee.git
+   git clone https://github.com/dlnraja/com.tuya.zigbee.git
    cd com.tuya.zigbee
+   homey app install
    ```
 
-3. **Add upstream remote**
-   ```bash
-   git remote add upstream https://github.com/dlnraja/com.tuya.zigbee.git
-   ```
+2. **Test all capabilities:**
+   - Verify each capability works (motion, temperature, etc.)
+   - Check error logs in Homey Developer Tools
+   - Test edge cases (low battery, rapid triggers, etc.)
 
-4. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-5. **Validate the app**
-   ```bash
-   npx homey app validate --level publish
-   ```
-
-### Development Workflow
-
-```bash
-# Create a feature branch
-git checkout -b feature/add-device-xyz
-
-# Make your changes
-# ...
-
-# Test locally
-npx homey app install
-
-# Validate
-npx homey app validate --level publish
-
-# Commit your changes
-git add .
-git commit -m "feat: add support for device XYZ"
-
-# Push to your fork
-git push origin feature/add-device-xyz
-
-# Create Pull Request on GitHub
-```
+3. **Report results in the GitHub Issue:**
+   - ✅ Working capabilities
+   - ❌ Non-working capabilities
+   - 📝 Logs and error messages
+   - 💡 Suggestions for improvement
 
 ---
 
-## 📥 Pull Request Process
+## 💻 Code Contributions
 
-### Before Submitting
-
-- [ ] Code follows the project's coding guidelines
-- [ ] All tests pass (`npx homey app validate --level publish`)
-- [ ] Documentation updated (if applicable)
-- [ ] CHANGELOG.md updated
-- [ ] Commit messages follow conventional commits format
-
-### PR Guidelines
-
-1. **One feature per PR** - Keep PRs focused and atomic
-2. **Descriptive title** - Use format: `feat: add device XYZ support`
-3. **Detailed description** - Explain what, why, and how
-4. **Link related issues** - Use "Fixes #123" syntax
-5. **Keep it small** - Easier to review, faster to merge
-
-### Commit Message Format
-
-We follow [Conventional Commits](https://www.conventionalcommits.org/):
+### Project Structure
 
 ```
-<type>(<scope>): <description>
-
-[optional body]
-
-[optional footer]
+com.tuya.zigbee/
+├── drivers/                    # All device drivers
+│   ├── motion_sensor_battery/  # Example driver
+│   │   ├── device.js           # Device logic (SDK3)
+│   │   ├── driver.js           # Driver initialization
+│   │   ├── driver.compose.json # Driver configuration
+│   │   └── assets/             # Images (75x75, 500x500)
+│   └── ...
+├── lib/                        # Shared libraries
+├── utils/                      # Utility functions
+├── app.json                    # App configuration (auto-generated)
+└── app.js                      # App initialization
 ```
 
-**Types:**
-- `feat:` - New feature
-- `fix:` - Bug fix
-- `docs:` - Documentation only
-- `style:` - Code style (formatting, no logic change)
-- `refactor:` - Code refactoring
-- `test:` - Adding tests
-- `chore:` - Maintenance tasks
+### Code Standards
 
-**Examples:**
-```
-feat(drivers): add support for TS0601 gas sensor
-fix(temp-sensor): correct temperature parsing for _TZE200_bjawzodf
-docs(readme): update installation instructions
-```
+#### 1. **Full SDK3 Native**
+- ✅ Use `homey-zigbeedriver` and `zigbee-clusters`
+- ❌ No legacy SDK2 code (`homey-meshdriver`)
+- ✅ Numeric cluster IDs only: `CLUSTER.TEMPERATURE_MEASUREMENT` or `1026`
 
----
+#### 2. **Follow Existing Driver Structure**
 
-## 📝 Coding Guidelines
-
-### General Principles
-
-1. **Follow SDK3 standards** - Comply with Homey SDK3 requirements
-2. **UNBRANDED approach** - Organize by function, not brand
-3. **Descriptive names** - Clear, self-documenting code
-4. **No hardcoded values** - Use constants or configuration
-5. **Error handling** - Always handle errors gracefully
-
-### JavaScript Style
-
+**device.js template:**
 ```javascript
-// Good
-class TemperatureSensor extends ZigBeeDevice {
-  async onNodeInit() {
-    await super.onNodeInit();
-    this.registerCapability('measure_temperature', 'msTemperatureMeasurement');
-  }
-}
-
-// Bad
-class TempSensor extends Device {
-  onNodeInit() {
-    this.registerCapability('measure_temperature','msTemperatureMeasurement')
-  }
-}
-```
-
-### Driver Structure
-
-```javascript
-// drivers/device_name/device.js
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { CLUSTER } = require('zigbee-clusters');
 
-class DeviceName extends ZigBeeDevice {
-  async onNodeInit() {
-    await super.onNodeInit();
+class MyDeviceDevice extends ZigBeeDevice {
+
+  async onNodeInit({ zclNode }) {
+    this.log('Device initialized');
+    
+    await super.onNodeInit({ zclNode });
     
     // Register capabilities
-    this.registerCapability('onoff', 'genOnOff');
-    
-    // Configure reporting
-    await this.configureAttributeReporting([{
-      cluster: 'genOnOff',
-      attributeName: 'onOff',
-      minInterval: 0,
-      maxInterval: 300,
-      minChange: 1
-    }]);
-    
-    this.log('Device initialized');
-  }
-}
-
-module.exports = DeviceName;
-```
-
-### Driver Manifest
-
-```json
-{
-  "id": "device_name",
-  "name": {
-    "en": "Device Name"
-  },
-  "class": "light",
-  "capabilities": ["onoff"],
-  "zigbee": {
-    "manufacturerName": ["Tuya", "_TZ3000_xxxxxxxx"],
-    "productId": ["TS0001"],
-    "endpoints": {
-      "1": {
-        "clusters": [0, 3, 4, 5, 6],
-        "bindings": [6]
-      }
+    if (this.hasCapability('measure_temperature')) {
+      this.registerCapability('measure_temperature', CLUSTER.TEMPERATURE_MEASUREMENT);
     }
+    
+    await this.setAvailable();
   }
+
+  async onDeleted() {
+    this.log('Device deleted');
+  }
+}
+
+module.exports = MyDeviceDevice;
+```
+
+#### 3. **Proper Error Handling**
+```javascript
+try {
+  await endpoint.clusters.iasZone.write(0x0010, zclNode.ieeeAddr);
+  this.log('✅ IAS CIE address written');
+} catch (err) {
+  this.log('⚠️ IAS CIE write failed:', err.message);
+  // Try fallback method
 }
 ```
 
----
+#### 4. **Detailed Logging**
+```javascript
+// Good: Descriptive with emojis for clarity
+this.log('🚶 ===== MOTION NOTIFICATION RECEIVED =====');
+this.log('Full payload:', JSON.stringify(payload));
 
-## 🔌 Adding New Devices
-
-### Step 1: Gather Device Information
-
-**Required information:**
-- Manufacturer name (e.g., `_TZ3000_xxxxxxxx`)
-- Product ID (e.g., `TS0001`)
-- Zigbee clusters used
-- Capabilities (onoff, dim, temperature, etc.)
-- Endpoints configuration
-
-**How to get this info:**
-```bash
-# Interview device
-npx homey app run
-# Pair the device and check logs
+// Bad: Unclear
+this.log('Got data');
 ```
 
-### Step 2: Find Similar Driver
-
-Look for an existing driver with similar capabilities:
-
-```bash
-# Search for similar devices
-grep -r "TS0001" drivers/
-```
-
-### Step 3: Add Manufacturer ID
-
-**If driver exists:**
-
-Add manufacturer ID to existing driver:
-
-```json
-{
-  "zigbee": {
-    "manufacturerName": [
-      "Tuya",
-      "_TZ3000_existing",
-      "_TZ3000_yournewid"  // Add here
-    ]
-  }
-}
-```
-
-**If creating new driver:**
-
-1. Copy similar driver folder
-2. Rename folder to descriptive name (e.g., `smart_plug_energy`)
-3. Update `driver.compose.json`
-4. Update `device.js` if needed
-5. Add images (75x75 small, 500x500 large)
-
-### Step 4: Test Thoroughly
-
-```bash
-# Build app
-npx homey app build
-
-# Install on Homey
-npx homey app install
-
-# Test device:
-# - Pairing
-# - All capabilities
-# - Reporting
-# - Flow cards
-```
-
-### Step 5: Document
-
-Update:
-- CHANGELOG.md
-- README.md (if adding new category)
-- driver comments
+#### 5. **Image Requirements**
+- **Small:** 75x75px (driver icon)
+- **Large:** 500x500px (driver detail)
+- PNG format, transparent background
+- Follow Johan Bendz design standards (see `MEMORY[4c104af8]`)
 
 ---
 
 ## 🧪 Testing
 
-### Local Testing
+### Local Testing Checklist
 
+Before submitting a PR:
+
+- [ ] Tested on real Homey Pro hardware (not emulator)
+- [ ] All capabilities verified working
+- [ ] Error logs checked (no critical errors)
+- [ ] Battery reporting accurate (if applicable)
+- [ ] Motion/contact sensors trigger reliably
+- [ ] Multi-gang switches control all endpoints
+- [ ] IAS Zone enrollment successful (for sensors/buttons)
+
+### Validation
+
+Run Homey CLI validation before committing:
 ```bash
-# Validate app
-npx homey app validate --level publish
-
-# Install locally
-npx homey app install
-
-# Check logs
-npx homey app run
+homey app validate --level=publish
 ```
 
-### Manual Tests
-
-For each new device:
-- [ ] Device pairs successfully
-- [ ] All capabilities work (on/off, dim, temperature, etc.)
-- [ ] Values update correctly
-- [ ] Battery reporting works (if applicable)
-- [ ] Flow cards trigger correctly
-- [ ] Settings page accessible
-- [ ] Device icon displays correctly
-
-### Validation Levels
-
-```bash
-# Development
-npx homey app validate --level debug
-
-# Before PR
-npx homey app validate --level publish
-
-# For verified developers
-npx homey app validate --level verified
-```
+All errors must be resolved before PR acceptance.
 
 ---
 
 ## 📚 Documentation
 
-### What to Document
+### When Adding a Driver
 
-- **Code comments** - Explain complex logic
-- **Driver README** - Special device notes
-- **CHANGELOG.md** - All user-facing changes
-- **README.md** - New features/categories
+Update these files:
 
-### Documentation Style
+1. **README.md** - Add device to supported devices list
+2. **CHANGELOG.md** - Document the new driver
+3. **Driver comments** - Explain any quirks or special handling
+
+### Comment Style
 
 ```javascript
 /**
- * Parse temperature value from Zigbee attribute
+ * HOBEIAN Multi Sensor (Motion + Temperature + Humidity + Illumination)
+ * v2.15.50 - Enhanced IAS Zone enrollment for motion detection (2025-10-12)
  * 
- * @param {number} value - Raw temperature value (int16)
- * @returns {number} Temperature in Celsius
- * 
- * Note: Some Tuya devices report in Fahrenheit, convert if needed
+ * CRITICAL FIXES:
+ * - Use attribute ID 0x0010 for IAS CIE enrollment (not writeAttributes)
+ * - Triple fallback methods for maximum device compatibility
+ * - Enhanced notification listeners for both object and number formats
  */
-parseTemperature(value) {
-  return value / 100; // Divide by 100 to get actual value
+class MotionSensorDevice extends ZigBeeDevice {
+  // ...
 }
 ```
 
 ---
 
-## 🚀 GitHub Actions & CI/CD
+## 🐛 Bug Reports
 
-This project uses automated workflows:
+### Creating a Bug Report
 
-- **Validation** - Runs on all PRs
-- **Publishing** - Automated on master push
-- **Versioning** - Automatic semantic versioning
+**Title:** `[Bug] Brief description`
 
-**Your PR will automatically:**
-- Be validated at publish level
-- Check JSON syntax
-- Verify driver structure
+**Content:**
+```markdown
+## Description
+
+Clear description of the bug.
+
+## Steps to Reproduce
+
+1. Go to '...'
+2. Click on '...'
+3. See error
+
+## Expected Behavior
+
+What should happen.
+
+## Actual Behavior
+
+What actually happens.
+
+## Environment
+
+- **App Version:** v2.15.52
+- **Homey Version:** v12.7.0
+- **Device:** [e.g., HOBEIAN Multi Sensor]
+- **Driver:** [e.g., motion_temp_humidity_illumination_multi_battery]
+
+## Logs
+
+```
+[Paste relevant logs from Homey Developer Tools]
+```
+
+## Additional Context
+
+Any other information about the problem.
+```
 
 ---
 
-## 🔗 Useful Resources
+## 🚀 Pull Request Process
 
-### Official Documentation
-- [Homey Apps SDK](https://apps.developer.homey.app/)
-- [Zigbee Clusters](https://apps.developer.homey.app/wireless/zigbee)
-- [Device Capabilities](https://apps.developer.homey.app/drivers-and-devices/capabilities)
+### Before Submitting
 
-### Community Resources
-- [Homey Forum](https://community.homey.app/)
-- [Zigbee2MQTT Devices](https://www.zigbee2mqtt.io/supported-devices/)
-- [Blakadder Zigbee DB](https://zigbee.blakadder.com/)
+1. ✅ Fork the repository
+2. ✅ Create a feature branch: `git checkout -b feature/my-new-driver`
+3. ✅ Follow code standards
+4. ✅ Test thoroughly on real hardware
+5. ✅ Update documentation
+6. ✅ Commit with descriptive messages
+7. ✅ Pass validation: `homey app validate --level=publish`
 
-### Tools
-- [Homey Developer Tools](https://tools.developer.homey.app/)
-- [Homey CLI](https://www.npmjs.com/package/homey)
+### PR Template
+
+**Title:** `[Driver] Add support for Device Name`
+
+**Content:**
+```markdown
+## Description
+
+Adds support for [Device Name].
+
+## Device Information
+
+- **Manufacturer:** _TZ3000_xxxxx
+- **Product ID:** TS0xxx
+- **Capabilities:** alarm_motion, measure_battery
+
+## Changes
+
+- Created driver: `drivers/my_device/`
+- Added device.js with IAS Zone support
+- Updated README.md with new driver
+
+## Testing
+
+- [x] Tested on real Homey Pro
+- [x] All capabilities working
+- [x] No validation errors
+- [x] Logs reviewed
+
+## Screenshots
+
+[If applicable]
+```
+
+### Review Process
+
+1. Automated checks run (GitHub Actions)
+2. Code review by maintainer
+3. Testing on additional hardware (if available)
+4. Merge or request changes
 
 ---
 
-## ❓ Questions?
+## 🤝 Community Guidelines
 
-- **GitHub Issues:** For bugs and features
-- **Homey Forum:** For general questions
-- **Pull Requests:** For code discussions
+### Be Respectful
+
+- Respect the work of Johan Bendz and all contributors
+- Be patient - this is a volunteer project
+- Help others when you can
+- Provide constructive feedback
+
+### Communication
+
+- Use clear, descriptive titles for issues/PRs
+- Include all relevant information
+- Respond to questions from reviewers
+- Update issues if you solve them yourself
+
+### Attribution
+
+- Always credit original sources
+- Link to relevant documentation
+- Acknowledge help from community members
+
+---
+
+## 📖 Resources
+
+### Homey Development
+
+- [Homey Apps SDK3 Documentation](https://apps.developer.homey.app/)
+- [Homey Community Forum](https://community.homey.app/)
+- [Zigbee Clusters Documentation](https://github.com/Koenkk/zigbee-herdsman-converters)
+
+### Zigbee References
+
+- [Zigbee2MQTT Device Database](https://www.zigbee2mqtt.io/supported-devices/)
+- [Blakadder Zigbee Database](https://zigbee.blakadder.com/)
+- [ZHA Device Handlers](https://github.com/zigpy/zha-device-handlers)
+
+### Original Project
+
+- [Johan Bendz's Tuya Zigbee App](https://github.com/JohanBendz/com.tuya.zigbee)
+- [Johan's Forum Thread](https://community.homey.app/t/app-pro-tuya-zigbee-app/26439)
+
+---
+
+## 📬 Contact
+
+- **GitHub Issues:** https://github.com/dlnraja/com.tuya.zigbee/issues
+- **Forum Thread:** https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352
+- **Email:** [Maintainer contact if provided]
 
 ---
 
 ## 🙏 Thank You!
 
-Your contributions make this app better for everyone. Thank you for taking the time to contribute!
+Every contribution, no matter how small, helps make this app better for the entire Homey community. Special thanks to Johan Bendz for creating the original foundation that makes this all possible.
 
----
-
-**Happy Coding! 🚀**
-
-*Universal Tuya Zigbee Team*
+**Happy contributing!** 🎉
