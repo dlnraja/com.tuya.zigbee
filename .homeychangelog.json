@@ -1,4 +1,7 @@
 {
+  "2.15.71": {
+    "en": "CRITICAL SDK3 FIX: IAS Zone enrollment completely rewritten using correct Homey SDK3 API. Motion sensors and SOS buttons now work properly. Fixed writeAttributes method for iasCIEAddress. Resolves all IAS Zone enrollment failures."
+  },
   "2.15.1": {
     "en": "Critical fixes: SOS button battery reading corrected (smart calculation). HOBEIAN multisensor data reception fixed (auto-detect endpoint + fallback clusters). IAS Zone enrollment for events. Enhanced debug logging."
   },
