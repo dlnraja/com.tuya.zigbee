@@ -172,6 +172,11 @@
       "units": {
         "en": "°C"
       }
+    },
+    "alarm_motion": {
+      "title": {
+        "en": "Motion"
+      }
     }
   },
   "id": "gas_detector_battery",

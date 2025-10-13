@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Wireless Switch 4-Gang (CR2450) (Battery)"
+    "en": "4-Button Remote"
   },
-  "class": "button",
+  "class": "socket",
   "capabilities": [
     "button.1",
     "button.2",

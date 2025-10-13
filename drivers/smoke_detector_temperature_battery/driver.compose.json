@@ -59,5 +59,18 @@
         "de": "1. Stellen Sie sicher, dass das Gerät eingeschaltet ist\n2. Drücken Sie die Kopplungstaste 5 Sekunden lang\n3. Warten Sie, bis das Gerät in Homey angezeigt wird\n4. Das Gerät ist jetzt gekoppelt"
       }
     }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature"
+      }
+    }
   }
 }

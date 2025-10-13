@@ -6,7 +6,7 @@
     "nl": "Bulb White Ac",
     "de": "Bulb White Ac"
   },
-  "class": "other",
+  "class": "light",
   "capabilities": [
     "onoff",
     "dim"
@@ -153,5 +153,12 @@
         }
       ]
     }
-  ]
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilitiesOptions": {}
 }

@@ -99,5 +99,18 @@
         }
       ]
     }
-  ]
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilitiesOptions": {
+    "alarm_motion": {
+      "title": {
+        "en": "Motion"
+      }
+    }
+  }
 }

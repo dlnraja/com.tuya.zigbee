@@ -2,7 +2,7 @@
   "name": {
     "en": "Switch 4-Gang Remote (Battery)"
   },
-  "class": "button",
+  "class": "socket",
   "capabilities": [
     "button.1",
     "button.2",

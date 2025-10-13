@@ -129,5 +129,17 @@
   ],
   "connectivity": [
     "zigbee"
-  ]
+  ],
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature"
+      }
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Humidity"
+      }
+    }
+  }
 }

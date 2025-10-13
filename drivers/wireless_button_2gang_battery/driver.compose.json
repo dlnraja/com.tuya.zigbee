@@ -1,12 +1,12 @@
 {
   "id": "wireless_button_2gang_battery",
   "name": {
-    "en": "Wireless Button 2gang Battery (Battery)",
+    "en": "2-Button Remote",
     "fr": "Wireless Button 2gang Battery",
     "nl": "Wireless Button 2gang Battery",
     "de": "Wireless Button 2gang Battery"
   },
-  "class": "other",
+  "class": "button",
   "capabilities": [
     "measure_battery"
   ],
@@ -98,5 +98,12 @@
         }
       ]
     }
-  ]
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilitiesOptions": {}
 }

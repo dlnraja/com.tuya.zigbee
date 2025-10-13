@@ -156,5 +156,12 @@
         }
       ]
     }
-  ]
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilitiesOptions": {}
 }

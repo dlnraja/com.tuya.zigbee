@@ -132,5 +132,12 @@
   "id": "smart_bulb_dimmer_ac",
   "connectivity": [
     "zigbee"
-  ]
+  ],
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature"
+      }
+    }
+  }
 }
