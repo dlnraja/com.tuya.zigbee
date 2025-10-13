@@ -26,6 +26,10 @@
     "manufacturerName": [
       "_TZ3000_mmtwjmaq",
       "_TZ3000_kmh5qpmb",
+      "_TZE200_3towulqd",
+      "_TZE200_1ibpyhdc",
+      "_TZE200_bh3n6gk8",
+      "HOBEIAN",
       "LUMI",
       "Signify Netherlands B.V.",
       "IKEA of Sweden"
@@ -58,10 +62,10 @@
     "learnmode": {
       "image": "/drivers/motion_sensor_illuminance_battery/assets/large.png",
       "instruction": {
-        "en": "1. Make sure the device is powered\n2. Press the pairing button for 5 seconds\n3. Wait for the device to appear in Homey\n4. The device is now paired",
-        "fr": "1. Assurez-vous que l'appareil est alimenté\n2. Appuyez sur le bouton d'appairage pendant 5 secondes\n3. Attendez que l'appareil apparaisse dans Homey\n4. L'appareil est maintenant apparié",
-        "nl": "1. Zorg ervoor dat het apparaat is ingeschakeld\n2. Druk 5 seconden op de koppelknop\n3. Wacht tot het apparaat verschijnt in Homey\n4. Het apparaat is nu gekoppeld",
-        "de": "1. Stellen Sie sicher, dass das Gerät eingeschaltet ist\n2. Drücken Sie die Kopplungstaste 5 Sekunden lang\n3. Warten Sie, bis das Gerät in Homey angezeigt wird\n4. Das Gerät ist jetzt gekoppelt"
+        "en": "1. Insert fresh batteries (CR2450 recommended)\n2. Press the button (pinhole on side) with paperclip for 10 seconds\n3. LED will turn on then blink during pairing\n4. Wait for device to appear in Homey",
+        "fr": "1. Insérez des piles neuves (CR2450 recommandé)\n2. Appuyez sur le bouton (trou sur le côté) avec un trombone pendant 10 secondes\n3. La LED s'allume puis clignote pendant l'appairage\n4. Attendez que l'appareil apparaisse dans Homey",
+        "nl": "1. Plaats verse batterijen (CR2450 aanbevolen)\n2. Druk 10 seconden op de knop (gaatje aan de zijkant) met paperclip\n3. LED gaat aan en knippert tijdens koppelen\n4. Wacht tot apparaat verschijnt in Homey",
+        "de": "1. Frische Batterien einlegen (CR2450 empfohlen)\n2. Taste (Loch an der Seite) 10 Sekunden mit Büroklammer drücken\n3. LED leuchtet auf und blinkt beim Koppeln\n4. Warten bis Gerät in Homey erscheint"
       }
     }
   },

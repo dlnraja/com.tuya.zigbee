@@ -72,7 +72,8 @@
     "learnmode": {
       "image": "/drivers/wireless_switch_2gang_cr2032/assets/large.png",
       "instruction": {
-        "en": "Press and hold the button until the LED flashes"
+        "en": "Press and hold the button until the LED flashes. IMPORTANT: Use fresh batteries for reliable pairing.",
+        "fr": "Appuyez et maintenez le bouton jusqu'à ce que la LED clignote. IMPORTANT: Utilisez des piles neuves pour un appairage fiable."
       }
     },
     "manufacturerName": [
@@ -120,6 +121,8 @@
       "_TZ3000_uim07oem",
       "_TZ3000_vp6clf9d",
       "_TZ3000_xabckq1v",
+      "_TZ3000_dfgbtub0",
+      "_TZ3000_b3mgfu0d",
       "_TZE200_81isopgh",
       "_TZE200_m9skfctm",
       "_TZE200_wfxuhoea",
