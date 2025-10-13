@@ -87,5 +87,118 @@
   "id": "pir_radar_illumination_sensor_battery",
   "connectivity": [
     "zigbee"
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "mmWave Radar Settings (ZG-204ZM)",
+        "fr": "Paramètres Radar mmWave (ZG-204ZM)"
+      },
+      "children": [
+        {
+          "type": "label",
+          "label": {
+            "en": "⚠️ mmWave radar detects micro-movements through walls/cardboard. Adjust settings if experiencing constant false motion.",
+            "fr": "⚠️ Le radar mmWave détecte les micro-mouvements à travers murs/carton. Ajustez si faux mouvements constants."
+          }
+        },
+        {
+          "type": "dropdown",
+          "id": "pir_sensitivity",
+          "label": {
+            "en": "PIR Sensitivity",
+            "fr": "Sensibilité PIR"
+          },
+          "hint": {
+            "en": "Adjust PIR sensor sensitivity (does not affect mmWave)",
+            "fr": "Ajuster la sensibilité du capteur PIR (n'affecte pas mmWave)"
+          },
+          "value": "medium",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low",
+                "fr": "Basse"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium (recommended)",
+                "fr": "Moyenne (recommandé)"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High",
+                "fr": "Haute"
+              }
+            }
+          ]
+        },
+        {
+          "type": "dropdown",
+          "id": "motion_timeout",
+          "label": {
+            "en": "Motion Timeout",
+            "fr": "Délai de Mouvement"
+          },
+          "hint": {
+            "en": "How long motion remains detected after last movement. Increase if constant false motion.",
+            "fr": "Durée de détection après dernier mouvement. Augmenter si faux mouvements constants."
+          },
+          "value": "60",
+          "values": [
+            {
+              "id": "30",
+              "label": {
+                "en": "30 seconds",
+                "fr": "30 secondes"
+              }
+            },
+            {
+              "id": "60",
+              "label": {
+                "en": "1 minute (recommended)",
+                "fr": "1 minute (recommandé)"
+              }
+            },
+            {
+              "id": "120",
+              "label": {
+                "en": "2 minutes",
+                "fr": "2 minutes"
+              }
+            },
+            {
+              "id": "300",
+              "label": {
+                "en": "5 minutes",
+                "fr": "5 minutes"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Troubleshooting",
+        "fr": "Dépannage"
+      },
+      "children": [
+        {
+          "type": "label",
+          "label": {
+            "en": "If experiencing constant false motion:\n• mmWave detects through cardboard, wood, thin walls\n• Detects breathing, heartbeat, micro-movements\n• Place sensor with clear line of sight\n• Avoid pointing at walls, windows, or high-traffic areas through walls\n• Consider increasing motion timeout to 5 minutes",
+            "fr": "Si faux mouvements constants:\n• mmWave détecte à travers carton, bois, murs fins\n• Détecte respiration, battements cardiaques, micro-mouvements\n• Placer capteur avec ligne de vue dégagée\n• Éviter zones à fort trafic à travers murs\n• Augmenter délai à 5 minutes"
+          }
+        }
+      ]
+    }
   ]
 }
