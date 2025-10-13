@@ -77,28 +77,53 @@ class SosEmergencyButtonCr2032Device extends ZigBeeDevice {
         if (endpoint && endpoint.clusters.iasZone) {
           this.log('🚨 Setting up SOS button IAS Zone...');
           
-          // CRITICAL SDK3 FIX: Use writeAttributes (not write which doesn't exist in SDK3)
+          // CRITICAL SDK3 FIX: Use correct method to get Homey IEEE address
           try {
-            // Get Homey's IEEE address for CIE enrollment
-            const homeyIeee = this.homey.zigbee.ieee;
-            this.log('📡 Homey IEEE address:', homeyIeee);
+            // Get Homey's IEEE address from zclNode (SDK3 correct method)
+            let homeyIeee = null;
             
-            // Convert IEEE address to Buffer (reverse byte order for Zigbee)
-            const ieeeBuffer = Buffer.from(homeyIeee.replace(/:/g, '').match(/.{2}/g).reverse().join(''), 'hex');
-            this.log('📡 IEEE Buffer:', ieeeBuffer.toString('hex'));
+            // Method 1: Try via zclNode
+            if (zclNode && zclNode._node && zclNode._node.bridgeId) {
+              homeyIeee = zclNode._node.bridgeId;
+              this.log('📡 Homey IEEE from bridgeId:', homeyIeee);
+            }
             
-            // SDK3 Correct Method: writeAttributes with iasCIEAddress
-            await endpoint.clusters.iasZone.writeAttributes({
-              iasCIEAddress: ieeeBuffer
-            });
-            this.log('✅ IAS CIE Address written successfully (SDK3 method)');
+            // Method 2: Try via endpoint clusters
+            if (!homeyIeee && endpoint.clusters.iasZone) {
+              try {
+                const attrs = await endpoint.clusters.iasZone.readAttributes(['iasCIEAddress']);
+                if (attrs.iasCIEAddress && attrs.iasCIEAddress.toString('hex') !== '0000000000000000') {
+                  this.log('📡 CIE already enrolled, using existing address');
+                  homeyIeee = attrs.iasCIEAddress.toString('hex').match(/.{2}/g).reverse().join(':');
+                }
+              } catch (e) {
+                this.log('Could not read existing CIE address:', e.message);
+              }
+            }
             
-            // Wait for enrollment to complete
-            await new Promise(resolve => setTimeout(resolve, 2000));
-            
-            // Verify enrollment
-            const cieAddr = await endpoint.clusters.iasZone.readAttributes(['iasCIEAddress']);
-            this.log('✅ Enrollment verified, CIE Address:', cieAddr.iasCIEAddress?.toString('hex'));
+            if (homeyIeee) {
+              this.log('📡 Homey IEEE address:', homeyIeee);
+              
+              // Convert IEEE address to Buffer (reverse byte order for Zigbee)
+              const ieeeClean = homeyIeee.replace(/:/g, '').toLowerCase();
+              const ieeeBuffer = Buffer.from(ieeeClean.match(/.{2}/g).reverse().join(''), 'hex');
+              this.log('📡 IEEE Buffer:', ieeeBuffer.toString('hex'));
+              
+              // SDK3 Correct Method: writeAttributes with iasCIEAddress
+              await endpoint.clusters.iasZone.writeAttributes({
+                iasCIEAddress: ieeeBuffer
+              });
+              this.log('✅ IAS CIE Address written successfully (SDK3 method)');
+              
+              // Wait for enrollment to complete
+              await new Promise(resolve => setTimeout(resolve, 2000));
+              
+              // Verify enrollment
+              const cieAddr = await endpoint.clusters.iasZone.readAttributes(['iasCIEAddress']);
+              this.log('✅ Enrollment verified, CIE Address:', cieAddr.iasCIEAddress?.toString('hex'));
+            } else {
+              throw new Error('Could not obtain Homey IEEE address');
+            }
           } catch (enrollErr) {
             this.log('⚠️ IAS Zone enrollment failed:', enrollErr.message);
             this.log('Device may auto-enroll or require manual pairing');

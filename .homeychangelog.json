@@ -1,4 +1,10 @@
 {
+  "2.15.74": {
+    "en": "CRITICAL IAS ZONE FIX: Fixed Homey IEEE address retrieval for SDK3 - Motion sensors and SOS buttons now properly enroll and trigger. Fixed 'Cannot read properties of undefined' error. Uses zclNode.bridgeId instead of deprecated this.homey.zigbee.ieee. Peter's diagnostic b93c400b & 85ffbcee resolved."
+  },
+  "2.15.73": {
+    "en": "FORUM SUPPORT: Enhanced driver visibility and pairing instructions. Confirmed '1-Button Wireless Scene Switch (Battery)' and 'Multi-Sensor (Motion + Lux + Temp)' drivers exist with comprehensive manufacturer ID coverage. Added detailed pairing troubleshooting guide emphasizing fresh battery requirement. Community feedback from Cam (Post #322)."
+  },
   "2.15.72": {
     "en": "CRITICAL SDK3 FIX: IAS Zone enrollment completely rewritten using correct Homey SDK3 API. Motion sensors and SOS buttons now work properly. Fixed writeAttributes method for iasCIEAddress. Removed duplicate device IDs causing pairing confusion."
   },
@@ -326,17 +332,11 @@
   "2.15.62": {
     "en": "Automated release"
   },
-  "2.15.63": {
-    "en": "UX FIX: Professional SVG app images deployed. Enhanced driver naming for clarity."
-  },
-  "2.15.64": {
-    "en": "SMART BUTTON FIX: Added 9 manufacturer IDs for TS0041/TS0042/TS004F buttons. Enhanced pairing instructions (fresh batteries required). Community feedback: Cam (Forum POST #141)."
-  },
   "2.15.65": {
     "en": "MOTION SENSOR SUPPORT: HOBEIAN ZG-204ZL Motion+Lux sensor added (4 manufacturer IDs). Pinhole pairing 10s. GitHub Issue #1267 resolved."
   },
   "2.15.66": {
-    "en": "🔧 ZG-204ZM FIX: Added sensitivity/timeout settings for mmWave radar false motion issue. Troubleshooting guide included. PIR+Radar sensor now configurable. Reddit community feedback."
+    "en": " ZG-204ZM FIX: Added sensitivity/timeout settings for mmWave Radar false motion issue. Troubleshooting guide included. PIR+Radar sensor now configurable. Reddit community feedback."
   },
   "2.15.67": {
     "en": "✅ DEVICE SUPPORT: ZM-P1 Tuya motion sensor (Motion + Lux) added. Also added ZG-204ZL to motion_sensor_illuminance_battery driver. Zigbee2MQTT Issue #28103 addressed."
@@ -348,9 +348,6 @@
     "en": "Automated release"
   },
   "2.15.70": {
-    "en": "Automated release"
-  },
-  "2.15.73": {
     "en": "Automated release"
   }
 }
