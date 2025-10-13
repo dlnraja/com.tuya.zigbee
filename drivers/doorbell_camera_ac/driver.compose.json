@@ -98,6 +98,45 @@
           }
         }
       ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "SDK3 Advanced Settings",
+        "fr": "Paramètres Avancés SDK3"
+      },
+      "children": [
+        {
+          "id": "motion_timeout",
+          "type": "number",
+          "label": {
+            "en": "Motion Auto-Reset Timeout",
+            "fr": "Délai de Réinitialisation Mouvement"
+          },
+          "units": "s",
+          "value": 60,
+          "min": 5,
+          "max": 600
+        },
+        {
+          "id": "enable_motion_logging",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Motion Event Logging",
+            "fr": "Activer Journalisation Mouvement"
+          },
+          "value": false
+        },
+        {
+          "id": "enable_contact_logging",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Contact Event Logging",
+            "fr": "Activer Journalisation Contact"
+          },
+          "value": false
+        }
+      ]
     }
   ],
   "platforms": [

@@ -96,7 +96,91 @@
       }
     }
   },
-  "settings": [],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "SDK3 Advanced Settings",
+        "fr": "Paramètres Avancés SDK3"
+      },
+      "children": [
+        {
+          "id": "enable_contact_logging",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Contact Event Logging",
+            "fr": "Activer Journalisation Contact"
+          },
+          "value": false
+        },
+        {
+          "id": "battery_low_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold",
+            "fr": "Seuil Batterie Faible"
+          },
+          "units": "%",
+          "value": 20,
+          "min": 5,
+          "max": 50
+        },
+        {
+          "id": "battery_notification",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Battery Notifications",
+            "fr": "Activer Notifications Batterie"
+          },
+          "value": true
+        },
+        {
+          "id": "alarm_duration",
+          "type": "number",
+          "label": {
+            "en": "Alarm Duration",
+            "fr": "Durée Alarme"
+          },
+          "units": "s",
+          "value": 60,
+          "min": 10,
+          "max": 300
+        },
+        {
+          "id": "alarm_volume",
+          "type": "dropdown",
+          "label": {
+            "en": "Alarm Volume",
+            "fr": "Volume Alarme"
+          },
+          "value": "high",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low",
+                "fr": "Bas"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium",
+                "fr": "Moyen"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High",
+                "fr": "Élevé"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "capabilitiesOptions": {
     "volume_set": {
       "min": 0,
