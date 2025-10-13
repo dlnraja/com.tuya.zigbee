@@ -335,5 +335,8 @@
   },
   "2.15.65": {
     "en": "✅ DEVICE SUPPORT: HOBEIAN ZG-204Z PIR motion sensor added. Complete support for all ZG-204 family (ZG-204Z, ZG-204ZL, ZG-204ZV). Based on Zigbee2MQTT specifications. Community request."
+  },
+  "2.15.66": {
+    "en": "🔧 ZG-204ZM FIX: Added sensitivity/timeout settings for mmWave radar false motion issue. Troubleshooting guide included. PIR+Radar sensor now configurable. Reddit community feedback."
   }
 }
