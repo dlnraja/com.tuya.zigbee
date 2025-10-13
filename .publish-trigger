@@ -1,7 +1,8 @@
 TRIGGER_GITHUB_ACTIONS_PUBLISH
-Timestamp: 2025-10-12T21:22:21+02:00
-Version: v2.15.33
-Commit: ba3e221be
-Purpose: Force GitHub Actions workflow execution for Homey App Store publication
+Timestamp: 2025-10-14T00:20:22+02:00
+Version: v2.15.84
+Commit: aad39803b
+Purpose: Force publish with 104 flows (multi-gang + capability + critical)
 Status: READY FOR PRODUCTION
-Validation: 100% SUCCESS (zero warnings)
+Features: Multi-gang flows (22) + Red triangle fix (5 drivers) + 104 total flows
+Validation: 100% SUCCESS
