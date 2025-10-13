@@ -21,6 +21,67 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
       });
       this.log('✅ Battery capability registered');
 
+    // ========================================
+    // IAS ZONE ENROLLMENT - SDK3 FIXED
+    // ========================================
+    try {
+      const endpoint = this.zclNode.endpoints[1];
+      
+      // Get Homey's IEEE address (SDK3 way)
+      const ieee = this.zclNode?.bridgeId;
+      
+      if (!ieee) {
+        this.log('⚠️ Cannot get Homey IEEE address, device may auto-enroll');
+      } else {
+        this.log('📍 Homey IEEE address:', ieee);
+        
+        // Convert to proper format for IAS CIE Address
+        const ieeeAddress = ieee.replace(/:/g, '');
+        
+        // Write CIE Address to device
+        await endpoint.clusters.iasZone.writeAttributes({
+          iasCieAddress: ieeeAddress
+        });
+        
+        this.log('✅ IAS CIE Address written successfully');
+        
+        // Send enrollment response
+        await endpoint.clusters.iasZone.enrollResponse({
+          enrollResponseCode: 0, // Success
+          zoneId: 0
+        });
+        
+        this.log('✅ IAS Zone enrollment successful');
+      }
+      
+      // Register zone status notification listener
+      endpoint.clusters.iasZone.onZoneStatusChangeNotification = async (payload) => {
+        this.log('🔔 IAS Zone notification received:', payload);
+        
+        const zoneStatus = payload.zoneStatus;
+        const alarmMask = zoneStatus & 0x03; // Bits 0-1 = alarm state
+        const isTriggered = alarmMask > 0;
+        
+        this.log(`IAS Zone ${isTriggered ? 'TRIGGERED ✅' : 'CLEARED ⬜'}`);
+        
+        // Update capability
+        const capabilityName = this.hasCapability('alarm_motion') ? 'alarm_motion' : 'alarm_generic';
+        await this.setCapabilityValue(capabilityName, isTriggered);
+        
+        // Trigger flows
+        if (isTriggered) {
+          const context = this.getContextData ? this.getContextData() : {};
+          await this.triggerFlowCard(`${capabilityName === 'alarm_motion' ? 'motion_detected' : 'alarm_triggered'}`, context);
+        }
+      };
+      
+      this.log('✅ IAS Zone notification listener registered');
+      
+    } catch (err) {
+      this.error('❌ IAS Zone setup failed:', err);
+      this.log('Device may require re-pairing or will auto-enroll');
+    }
+
     }
 
     // Temperature measurement

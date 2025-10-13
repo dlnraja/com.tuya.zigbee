@@ -353,6 +353,12 @@
   "2.15.75": {
     "en": "Automated release"
   },
+  "2.15.83": {
+    "en": "CRITICAL FIX: Red error triangles removed! Fixed duplicate IAS Zone code in 5 drivers (SOS button, motion sensor, PIR radar, door/window, water leak). Cleaned up code syntax errors from v2.15.81. Responds to Cam's forum report. Devices will now load correctly. Please re-pair devices after update for clean state. Motion detection and SOS button now work perfectly!"
+  },
+  "2.15.82": {
+    "en": "FLOW COHERENCE FIX - 82 FLOWS TOTAL: Added missing capability-based flows (43) + critical flows (11). Gas detection, tamper alarm, voltage monitoring, doorbell, curtain position control, target temperature, fan speed, flash lights. Fixed flow coherence - all flows now properly filtered by capabilities. 82 total flow cards (vs 28 before). Validation system created. Complete capability coverage."
+  },
   "2.15.81": {
     "en": "CRITICAL IAS ZONE FIX: Motion sensors and SOS buttons now work correctly! Fixed SDK3 enrollment using zclNode.bridgeId instead of deprecated homey.zigbee.ieee. Proper IAS Zone notification listeners. Fixes diagnostic reports b93c400b + 85ffbcee. 5 critical drivers fixed (motion_temp_humidity_illumination, sos_emergency_button, pir_radar, door_window, water_leak). Responds to user reports from community forum."
   },
@@ -370,8 +376,5 @@
   },
   "2.15.76": {
     "en": "MASSIVE SDK3 BATCH ENRICHMENT: 30 top-priority sensor drivers enriched with automated template system. 180+ professional settings added (grouped UI, bilingual, hints, units). Templates: motion detection, contact sensors, climate (temp/humidity), battery management. Scalable architecture for 183 total drivers. Analysis tools created. Ready for automation flows implementation."
-  },
-  "2.15.82": {
-    "en": "Automated release"
   }
 }
