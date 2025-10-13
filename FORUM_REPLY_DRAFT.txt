@@ -1,0 +1,77 @@
+========================================
+REPLY TO CAM
+========================================
+
+Hi @Cam!
+
+You're absolutely right about the UX - those technical names are confusing! I really appreciate the feedback.
+
+**For your HOBEIAN motion sensor with lux:**
+
+The driver you need is: **"Motion Temp Humidity Illumination Multi Battery"**
+
+I know, terrible name! 😅 Here's the quick way to find it:
+- Search for: **"Multi"** or **"Illumination"**
+- It's the one that shows: Motion + Lux + Battery + Temp + Humidity
+
+**Why it didn't work before:**
+Your exact variant (ZG-204**L**) was missing from the supported devices. I added it in v2.15.54.
+
+**Steps to pair:**
+1. Update app to v2.15.54
+2. Remove old device if already paired
+3. Add device → Search "Multi"
+4. Follow pairing instructions
+
+**What you'll get:**
+✅ Motion detection
+✅ Light level (lux) - your key feature!
+✅ Battery percentage
+✅ Temperature (might work depending on exact model)
+✅ Humidity (might work depending on exact model)
+
+**UX improvements coming:**
+I'm working on renaming all drivers to be more user-friendly:
+- BEFORE: "Motion Temp Humidity Illumination Multi Battery"
+- AFTER: "Multi-Sensor (Motion + Lux + Temp)"
+
+Plus better icons and device examples. This feedback is exactly what I needed!
+
+Let me know if it works!
+
+Dylan
+
+========================================
+REPLY TO PETER
+========================================
+
+Hi @Peter_van_Werkhoven!
+
+I found the issue - you tested v2.15.49, but the fix for your diagnostic report (1c9d6ce6) was released in **v2.15.52** (on Oct 13).
+
+**Timeline:**
+- v2.15.49 (Oct 12) - ❌ No fix yet
+- v2.15.52 (Oct 13 00:10) - ✅ **IAS Zone fix for your issue**
+- v2.15.54 (Oct 13 00:25) - ✅ Latest version
+
+**The fix:**
+I corrected the IAS Zone enrollment method - the old code used an API that doesn't exist. The new code uses the proper Zigbee attribute write.
+
+**Please try again:**
+1. **Update to v2.15.54**
+2. **Remove your devices** (critical - they need to re-enroll)
+3. **Re-pair them**
+4. **Test motion/button**
+
+**Expected behavior:**
+- Motion sensor: Walk in front → triggers within 1-2 sec
+- SOS button: Press → triggers immediately, auto-resets after 5 sec
+
+**If still not working:**
+Please generate a **new diagnostic report** after installing v2.15.54 and re-pairing. This will show me if the enrollment succeeded.
+
+Thanks for your patience!
+
+Dylan
+
+========================================
