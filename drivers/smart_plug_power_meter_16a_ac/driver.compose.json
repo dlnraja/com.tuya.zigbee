@@ -46,7 +46,7 @@
       }
     },
     "learnmode": {
-      "image": "./assets/large.png",
+      "image": "/drivers/smart_plug_power_meter_16a_ac/assets/large.png",
       "instruction": {
         "en": "1. Power on the device\n2. Press and hold pairing button for 5 seconds\n3. Wait for device to appear in Homey\n4. Device is now paired",
         "fr": "1. Allumez l'appareil\n2. Maintenez le bouton d'appairage pendant 5 secondes\n3. Attendez que l'appareil apparaisse dans Homey\n4. L'appareil est maintenant appairé",
