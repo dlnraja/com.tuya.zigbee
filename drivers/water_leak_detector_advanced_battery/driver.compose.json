@@ -137,5 +137,61 @@
   "id": "water_leak_detector_advanced_battery",
   "connectivity": [
     "zigbee"
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "SDK3 Advanced Settings",
+        "fr": "Paramètres Avancés SDK3"
+      },
+      "children": [
+        {
+          "id": "temperature_calibration",
+          "type": "number",
+          "label": {
+            "en": "Temperature Calibration",
+            "fr": "Calibration Température"
+          },
+          "units": "°C",
+          "value": 0,
+          "min": -9,
+          "max": 9
+        },
+        {
+          "id": "temperature_threshold",
+          "type": "number",
+          "label": {
+            "en": "Temperature Alert Threshold",
+            "fr": "Seuil Alerte Température"
+          },
+          "units": "°C",
+          "value": 25,
+          "min": 0,
+          "max": 50
+        },
+        {
+          "id": "battery_low_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold",
+            "fr": "Seuil Batterie Faible"
+          },
+          "units": "%",
+          "value": 20,
+          "min": 5,
+          "max": 50
+        },
+        {
+          "id": "battery_notification",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Battery Notifications",
+            "fr": "Activer Notifications Batterie"
+          },
+          "value": true
+        }
+      ]
+    }
   ]
 }

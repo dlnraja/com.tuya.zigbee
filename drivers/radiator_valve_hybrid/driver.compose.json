@@ -137,5 +137,73 @@
       "AA"
     ]
   },
-  "id": "radiator_valve_hybrid"
+  "id": "radiator_valve_hybrid",
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "SDK3 Advanced Settings",
+        "fr": "Paramètres Avancés SDK3"
+      },
+      "children": [
+        {
+          "id": "battery_low_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold",
+            "fr": "Seuil Batterie Faible"
+          },
+          "units": "%",
+          "value": 20,
+          "min": 5,
+          "max": 50
+        },
+        {
+          "id": "battery_notification",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Battery Notifications",
+            "fr": "Activer Notifications Batterie"
+          },
+          "value": true
+        },
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset",
+            "fr": "Décalage Température"
+          },
+          "units": "°C",
+          "value": 0,
+          "min": -5,
+          "max": 5
+        },
+        {
+          "id": "min_setpoint",
+          "type": "number",
+          "label": {
+            "en": "Minimum Setpoint",
+            "fr": "Consigne Minimale"
+          },
+          "units": "°C",
+          "value": 5,
+          "min": 5,
+          "max": 25
+        },
+        {
+          "id": "max_setpoint",
+          "type": "number",
+          "label": {
+            "en": "Maximum Setpoint",
+            "fr": "Consigne Maximale"
+          },
+          "units": "°C",
+          "value": 35,
+          "min": 15,
+          "max": 35
+        }
+      ]
+    }
+  ]
 }

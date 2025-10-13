@@ -72,5 +72,60 @@
   "connectivity": [
     "zigbee"
   ],
-  "capabilitiesOptions": {}
+  "capabilitiesOptions": {},
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "SDK3 Advanced Settings",
+        "fr": "Paramètres Avancés SDK3"
+      },
+      "children": [
+        {
+          "id": "alarm_duration",
+          "type": "number",
+          "label": {
+            "en": "Alarm Duration",
+            "fr": "Durée Alarme"
+          },
+          "units": "s",
+          "value": 60,
+          "min": 10,
+          "max": 300
+        },
+        {
+          "id": "alarm_volume",
+          "type": "dropdown",
+          "label": {
+            "en": "Alarm Volume",
+            "fr": "Volume Alarme"
+          },
+          "value": "high",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low",
+                "fr": "Bas"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium",
+                "fr": "Moyen"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High",
+                "fr": "Élevé"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

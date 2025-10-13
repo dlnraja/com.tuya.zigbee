@@ -152,7 +152,74 @@
     "small": "./assets/small.png",
     "large": "./assets/large.png"
   },
-  "settings": [],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "SDK3 Advanced Settings",
+        "fr": "Paramètres Avancés SDK3"
+      },
+      "children": [
+        {
+          "id": "switch_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Switch Mode",
+            "fr": "Mode Interrupteur"
+          },
+          "value": "toggle",
+          "values": [
+            {
+              "id": "toggle",
+              "label": {
+                "en": "Toggle",
+                "fr": "Bascule"
+              }
+            },
+            {
+              "id": "momentary",
+              "label": {
+                "en": "Momentary",
+                "fr": "Momentané"
+              }
+            }
+          ]
+        },
+        {
+          "id": "power_on_state",
+          "type": "dropdown",
+          "label": {
+            "en": "Power-On State",
+            "fr": "État Allumage"
+          },
+          "value": "last",
+          "values": [
+            {
+              "id": "last",
+              "label": {
+                "en": "Last State",
+                "fr": "Dernier État"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "On",
+                "fr": "Allumé"
+              }
+            },
+            {
+              "id": "off",
+              "label": {
+                "en": "Off",
+                "fr": "Éteint"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "name": {
     "en": "3-Gang Wall Switch"
   },

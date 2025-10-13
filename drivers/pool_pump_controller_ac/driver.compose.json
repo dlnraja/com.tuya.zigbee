@@ -127,5 +127,34 @@
   "id": "pool_pump_controller_ac",
   "connectivity": [
     "zigbee"
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "SDK3 Advanced Settings",
+        "fr": "Paramètres Avancés SDK3"
+      },
+      "children": [
+        {
+          "id": "reverse_direction",
+          "type": "checkbox",
+          "label": {
+            "en": "Reverse Direction",
+            "fr": "Inverser Direction"
+          },
+          "value": false
+        },
+        {
+          "id": "calibration_mode",
+          "type": "checkbox",
+          "label": {
+            "en": "Calibration Mode",
+            "fr": "Mode Calibration"
+          },
+          "value": false
+        }
+      ]
+    }
   ]
 }

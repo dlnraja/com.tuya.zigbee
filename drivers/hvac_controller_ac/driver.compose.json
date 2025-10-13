@@ -122,5 +122,76 @@
       }
     }
   },
-  "id": "hvac_controller_ac"
+  "id": "hvac_controller_ac",
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "SDK3 Advanced Settings",
+        "fr": "Paramètres Avancés SDK3"
+      },
+      "children": [
+        {
+          "id": "temperature_calibration",
+          "type": "number",
+          "label": {
+            "en": "Temperature Calibration",
+            "fr": "Calibration Température"
+          },
+          "units": "°C",
+          "value": 0,
+          "min": -9,
+          "max": 9
+        },
+        {
+          "id": "temperature_threshold",
+          "type": "number",
+          "label": {
+            "en": "Temperature Alert Threshold",
+            "fr": "Seuil Alerte Température"
+          },
+          "units": "°C",
+          "value": 25,
+          "min": 0,
+          "max": 50
+        },
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset",
+            "fr": "Décalage Température"
+          },
+          "units": "°C",
+          "value": 0,
+          "min": -5,
+          "max": 5
+        },
+        {
+          "id": "min_setpoint",
+          "type": "number",
+          "label": {
+            "en": "Minimum Setpoint",
+            "fr": "Consigne Minimale"
+          },
+          "units": "°C",
+          "value": 5,
+          "min": 5,
+          "max": 25
+        },
+        {
+          "id": "max_setpoint",
+          "type": "number",
+          "label": {
+            "en": "Maximum Setpoint",
+            "fr": "Consigne Maximale"
+          },
+          "units": "°C",
+          "value": 35,
+          "min": 15,
+          "max": 35
+        }
+      ]
+    }
+  ]
 }

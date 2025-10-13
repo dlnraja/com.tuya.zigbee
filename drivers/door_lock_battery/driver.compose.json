@@ -116,7 +116,68 @@
       }
     }
   },
-  "settings": [],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "SDK3 Advanced Settings",
+        "fr": "Paramètres Avancés SDK3"
+      },
+      "children": [
+        {
+          "id": "enable_contact_logging",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Contact Event Logging",
+            "fr": "Activer Journalisation Contact"
+          },
+          "value": false
+        },
+        {
+          "id": "battery_low_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold",
+            "fr": "Seuil Batterie Faible"
+          },
+          "units": "%",
+          "value": 20,
+          "min": 5,
+          "max": 50
+        },
+        {
+          "id": "battery_notification",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Battery Notifications",
+            "fr": "Activer Notifications Batterie"
+          },
+          "value": true
+        },
+        {
+          "id": "auto_lock_timeout",
+          "type": "number",
+          "label": {
+            "en": "Auto-Lock Timeout",
+            "fr": "Délai Verrouillage Auto"
+          },
+          "units": "s",
+          "value": 30,
+          "min": 0,
+          "max": 300
+        },
+        {
+          "id": "enable_lock_notifications",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Lock Notifications",
+            "fr": "Activer Notifications Verrouillage"
+          },
+          "value": true
+        }
+      ]
+    }
+  ],
   "capabilitiesOptions": {},
   "energy": {
     "batteries": [
