@@ -71,19 +71,17 @@
   "2.3.0": {
     "en": "Major update: Personalized icons for each device type. Better device organization and visual clarity."
   },
-  "2.3.1": {
-    "en": "Fixed device pairing issues and improved connection stability."
   },
   "2.15.56": {
     "en": "COMPLETE UPDATE: Driver selection guide created. Documentation updated. Image placeholders identified. Changelog organized. Full project audit. Ready for community."
   },
-  "2.15.57": {
-    "en": "CRITICAL IMAGE FIX: Corrected image paths for 50 drivers. Each driver now displays its unique image on test page. Fixed learnmode image paths pointing to wrong folders. All drivers now have proper visual representation."
+  "2.15.64": {
+    "en": "CRITICAL UX FIX: TS0041 (_TZ3000_5bpeda8u) reassigned to correct 1-button driver. Driver names now match product listings (Button vs Gang). Motion sensor pairing improved. Community feedback: Cam (Forum)."
   },
-  "2.2.5": {
-    "en": "Project cleanup and full SDK3 validation completed."
-  },
-  "2.2.4": {
+  "2.15.65": {
+    "en": "DEVICE SUPPORT: HOBEIAN ZG-204Z PIR motion sensor added. Complete support for all ZG-204 family (ZG-204Z, ZG-204ZL, ZG-204ZV). Based on Zigbee2MQTT specifications. Community request."
+  }
+}
     "en": "Improved authentication configuration."
   },
   "2.2.3": {
@@ -330,9 +328,12 @@
     "en": "Automated release"
   },
   "2.15.63": {
-    "en": "Automated release"
+    "en": "UX FIX: Professional SVG app images deployed. Enhanced driver naming for clarity."
   },
   "2.15.64": {
-    "en": "Automated release"
+    "en": "🚨 CRITICAL UX FIX: TS0041 (_TZ3000_5bpeda8u) reassigned to correct 1-button driver. Driver names now match product listings (Button vs Gang). Motion sensor pairing improved. Community feedback: Cam (Forum)."
+  },
+  "2.15.65": {
+    "en": "✅ DEVICE SUPPORT: HOBEIAN ZG-204Z PIR motion sensor added. Complete support for all ZG-204 family (ZG-204Z, ZG-204ZL, ZG-204ZV). Based on Zigbee2MQTT specifications. Community request."
   }
 }
