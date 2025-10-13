@@ -1,228 +1,59 @@
 {
-  "timestamp": "2025-10-08T22:13:37.160Z",
-  "stats": {
-    "total": 163,
-    "valid": 128,
-    "withIssues": 0,
-    "withWarnings": 35
+  "drivers": {
+    "total": 183,
+    "ok": 183,
+    "issues": []
   },
-  "issues": [],
-  "warnings": [
-    {
-      "driver": "ceiling_fan",
-      "warnings": [
-        "⚠️  Class 'light' != attendue 'fan' pour 'ceiling_fan'"
-      ]
-    },
-    {
-      "driver": "ceiling_light_controller",
-      "warnings": [
-        "⚠️  Class 'sensor' != attendue 'light' pour 'ceiling_light_controller'"
-      ]
-    },
-    {
-      "driver": "curtain_motor",
-      "warnings": [
-        "⚠️  Class 'other' != attendue 'curtain' pour 'curtain_motor'"
-      ]
-    },
-    {
-      "driver": "door_lock",
-      "warnings": [
-        "⚠️  Class 'sensor' != attendue 'lock' pour 'door_lock'"
-      ]
-    },
-    {
-      "driver": "energy_monitoring_plug_ac_ac",
-      "warnings": [
-        "⚠️  Class 'sensor' != attendue 'socket' pour 'energy_monitoring_plug_ac_ac'"
-      ]
-    },
-    {
-      "driver": "energy_monitoring_plug_ac_ac_advanced",
-      "warnings": [
-        "⚠️  Class 'sensor' != attendue 'socket' pour 'energy_monitoring_plug_ac_ac_advanced'"
-      ]
-    },
-    {
-      "driver": "fan_controller",
-      "warnings": [
-        "⚠️  Class 'sensor' != attendue 'fan' pour 'fan_controller'"
-      ]
-    },
-    {
-      "driver": "led_strip_controller",
-      "warnings": [
-        "⚠️  Class 'sensor' != attendue 'light' pour 'led_strip_controller'"
-      ]
-    },
-    {
-      "driver": "led_strip_controller_pro",
-      "warnings": [
-        "⚠️  Class 'sensor' != attendue 'light' pour 'led_strip_controller_pro'"
-      ]
-    },
-    {
-      "driver": "milight_controller",
-      "warnings": [
-        "⚠️  Class 'sensor' != attendue 'light' pour 'milight_controller'"
-      ]
-    },
-    {
-      "driver": "mini_switch_cr2032_cr2032",
-      "warnings": [
-        "⚠️  Class 'sensor' inhabituelle pour nom 'mini_switch_cr2032_cr2032'"
-      ]
-    },
-    {
-      "driver": "outdoor_light_controller",
-      "warnings": [
-        "⚠️  Class 'sensor' != attendue 'light' pour 'outdoor_light_controller'"
-      ]
-    },
-    {
-      "driver": "rgb_led_controller",
-      "warnings": [
-        "⚠️  Class 'sensor' != attendue 'light' pour 'rgb_led_controller'"
-      ]
-    },
-    {
-      "driver": "roller_blind_controller",
-      "warnings": [
-        "⚠️  Class 'sensor' != attendue 'curtain' pour 'roller_blind_controller'"
-      ]
-    },
-    {
-      "driver": "roller_shutter_switch_cr2032_cr2032",
-      "warnings": [
-        "⚠️  Class 'other' inhabituelle pour nom 'roller_shutter_switch_cr2032_cr2032'"
-      ]
-    },
-    {
-      "driver": "roller_shutter_switch_cr2032_cr2032_advanced",
-      "warnings": [
-        "⚠️  Class 'other' inhabituelle pour nom 'roller_shutter_switch_cr2032_cr2032_advanced'"
-      ]
-    },
-    {
-      "driver": "scene_controller",
-      "warnings": [
-        "⚠️  Class 'sensor' != attendue 'button' pour 'scene_controller'"
-      ]
-    },
-    {
-      "driver": "scene_controller_2button",
-      "warnings": [
-        "⚠️  Class 'sensor' != attendue 'button' pour 'scene_controller_2button'"
-      ]
-    },
-    {
-      "driver": "scene_controller_4button",
-      "warnings": [
-        "⚠️  Class 'sensor' != attendue 'button' pour 'scene_controller_4button'"
-      ]
-    },
-    {
-      "driver": "scene_controller_6button",
-      "warnings": [
-        "⚠️  Class 'sensor' != attendue 'button' pour 'scene_controller_6button'"
-      ]
-    },
-    {
-      "driver": "scene_controller_8button",
-      "warnings": [
-        "⚠️  Class 'sensor' != attendue 'button' pour 'scene_controller_8button'"
-      ]
-    },
-    {
-      "driver": "scene_controller_battery",
-      "warnings": [
-        "⚠️  Class 'sensor' != attendue 'button' pour 'scene_controller_battery'"
-      ]
-    },
-    {
-      "driver": "shade_controller",
-      "warnings": [
-        "⚠️  Class 'sensor' != attendue 'curtain' pour 'shade_controller'"
-      ]
-    },
-    {
-      "driver": "smart_curtain_motor",
-      "warnings": [
-        "⚠️  Class 'other' != attendue 'curtain' pour 'smart_curtain_motor'"
-      ]
-    },
-    {
-      "driver": "smart_outlet_monitor",
-      "warnings": [
-        "⚠️  Class 'sensor' != attendue 'socket' pour 'smart_outlet_monitor'"
-      ]
-    },
-    {
-      "driver": "smart_thermostat",
-      "warnings": [
-        "⚠️  Class 'other' != attendue 'thermostat' pour 'smart_thermostat'"
-      ]
-    },
-    {
-      "driver": "switch_1gang_battery",
-      "warnings": [
-        "⚠️  Class 'sensor' inhabituelle pour nom 'switch_1gang_battery'"
-      ]
-    },
-    {
-      "driver": "switch_2gang_hybrid",
-      "warnings": [
-        "⚠️  Class 'sensor' inhabituelle pour nom 'switch_2gang_hybrid'"
-      ]
-    },
-    {
-      "driver": "switch_3gang_battery",
-      "warnings": [
-        "⚠️  Class 'sensor' inhabituelle pour nom 'switch_3gang_battery'"
-      ]
-    },
-    {
-      "driver": "switch_5gang_battery",
-      "warnings": [
-        "⚠️  Class 'sensor' inhabituelle pour nom 'switch_5gang_battery'"
-      ]
-    },
-    {
-      "driver": "thermostat",
-      "warnings": [
-        "⚠️  Class 'other' != attendue 'thermostat' pour 'thermostat'"
-      ]
-    },
-    {
-      "driver": "touch_switch_1gang",
-      "warnings": [
-        "⚠️  Class 'sensor' inhabituelle pour nom 'touch_switch_1gang'"
-      ]
-    },
-    {
-      "driver": "touch_switch_2gang",
-      "warnings": [
-        "⚠️  Class 'sensor' inhabituelle pour nom 'touch_switch_2gang'"
-      ]
-    },
-    {
-      "driver": "touch_switch_3gang",
-      "warnings": [
-        "⚠️  Class 'sensor' inhabituelle pour nom 'touch_switch_3gang'"
-      ]
-    },
-    {
-      "driver": "touch_switch_4gang",
-      "warnings": [
-        "⚠️  Class 'sensor' inhabituelle pour nom 'touch_switch_4gang'"
-      ]
-    }
-  ],
-  "summary": {
-    "totalDrivers": 163,
-    "validDrivers": 128,
-    "needsAttention": 35,
-    "healthScore": 79
+  "extensions": {
+    "total": 0,
+    "ok": 0,
+    "issues": []
+  },
+  "types": {
+    "battery": 86,
+    "ac": 74,
+    "hybrid": 17,
+    "dc": 4,
+    "unknown": 2
+  },
+  "images": {
+    "total": 31,
+    "missing": 0,
+    "issues": [
+      "Unexpected file type: images/.force-update",
+      "Unexpected file type: README.md",
+      "Unexpected file type: templates/device-template.js",
+      "Unexpected file type: templates/driver-readme.md",
+      "Unexpected file type: templates/driver-template/device.js",
+      "Unexpected file type: templates/driver-template/driver.compose.json",
+      "Unexpected file type: templates/driver.compose.json",
+      "Unexpected file type: templates/driver.js",
+      "Unexpected file type: templates/driver.metadata.json",
+      "Unexpected file type: templates/multi-sensor-device.d.ts",
+      "Unexpected file type: templates/multi-sensor-device.d.ts.map",
+      "Unexpected file type: templates/multi-sensor-device.js",
+      "Unexpected file type: templates/README-multilingual-template.md",
+      "Unexpected file type: templates/switch-device.js"
+    ]
+  },
+  "appJson": {
+    "ok": true,
+    "issues": []
+  },
+  "directories": {
+    "total": 7,
+    "issues": []
+  },
+  "generators": {
+    "found": [
+      "APP_IMAGE_GENERATOR.js",
+      "FIX_APP_IMAGES_FINAL.js",
+      "FIX_DRIVER_IMAGES.js",
+      "images",
+      "REGENERATE_ALL_CONTEXTUAL_IMAGES.js",
+      "RESIZE_IMAGES_PRESERVE_CONTENT.js",
+      "ULTIMATE_IMAGE_GENERATOR_V2.js"
+    ],
+    "issues": []
   }
 }
