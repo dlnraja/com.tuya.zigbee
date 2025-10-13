@@ -26489,5 +26489,746 @@
       "uiComponent": "sensor",
       "icon": "/assets/temp_alarm.svg"
     }
+  },
+  "flow": {
+    "triggers": [
+      {
+        "id": "safety_alarm_triggered",
+        "title": {
+          "en": "Safety alarm triggered",
+          "fr": "Alarme sécurité déclenchée"
+        },
+        "hint": {
+          "en": "Triggered when smoke, gas, or water leak detected",
+          "fr": "Déclenché lors détection fumée, gaz ou fuite"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=alarm_smoke|capabilities=alarm_co|capabilities=alarm_gas|capabilities=alarm_water"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "alarm_type",
+            "type": "string",
+            "title": {
+              "en": "Alarm Type",
+              "fr": "Type Alarme"
+            },
+            "example": "smoke"
+          },
+          {
+            "name": "severity",
+            "type": "string",
+            "title": {
+              "en": "Severity",
+              "fr": "Gravité"
+            },
+            "example": "critical"
+          }
+        ]
+      },
+      {
+        "id": "security_breach_detected",
+        "title": {
+          "en": "Security breach detected",
+          "fr": "Violation sécurité détectée"
+        },
+        "hint": {
+          "en": "Door forced, tamper, or unauthorized access",
+          "fr": "Porte forcée, effraction ou accès non autorisé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=alarm_generic|capabilities=locked"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "breach_type",
+            "type": "string",
+            "title": {
+              "en": "Breach Type",
+              "fr": "Type Violation"
+            },
+            "example": "door_forced"
+          },
+          {
+            "name": "location",
+            "type": "string",
+            "title": {
+              "en": "Location",
+              "fr": "Emplacement"
+            },
+            "example": "front_door"
+          }
+        ]
+      },
+      {
+        "id": "sos_button_emergency",
+        "title": {
+          "en": "SOS emergency button pressed",
+          "fr": "Bouton SOS urgence pressé"
+        },
+        "hint": {
+          "en": "Emergency button pressed - immediate action required",
+          "fr": "Bouton urgence pressé - action immédiate"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=alarm_generic"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "press_count",
+            "type": "number",
+            "title": {
+              "en": "Press Count",
+              "fr": "Nb Pressions"
+            },
+            "example": 2
+          },
+          {
+            "name": "timestamp",
+            "type": "string",
+            "title": {
+              "en": "Time",
+              "fr": "Heure"
+            },
+            "example": "22:30:45"
+          }
+        ]
+      },
+      {
+        "id": "presence_detected_smart",
+        "title": {
+          "en": "Presence detected (smart)",
+          "fr": "Présence détectée (intelligent)"
+        },
+        "hint": {
+          "en": "Motion detected with context (time, lux, temperature)",
+          "fr": "Mouvement détecté avec contexte (heure, lux, température)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=alarm_motion"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "luminance",
+            "type": "number",
+            "title": {
+              "en": "Luminance",
+              "fr": "Luminosité"
+            },
+            "example": 45
+          },
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "fr": "Température"
+            },
+            "example": 21
+          },
+          {
+            "name": "time_of_day",
+            "type": "string",
+            "title": {
+              "en": "Time of Day",
+              "fr": "Moment Journée"
+            },
+            "example": "night"
+          }
+        ]
+      },
+      {
+        "id": "no_presence_timeout",
+        "title": {
+          "en": "No presence (timeout)",
+          "fr": "Absence (délai écoulé)"
+        },
+        "hint": {
+          "en": "No motion for configured duration",
+          "fr": "Pas de mouvement pendant durée configurée"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=alarm_motion"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "duration_minutes",
+            "type": "number",
+            "title": {
+              "en": "Duration (min)",
+              "fr": "Durée (min)"
+            },
+            "example": 15
+          }
+        ]
+      },
+      {
+        "id": "air_quality_warning",
+        "title": {
+          "en": "Air quality warning",
+          "fr": "Alerte qualité air"
+        },
+        "hint": {
+          "en": "CO₂, TVOC or PM2.5 exceeded warning threshold",
+          "fr": "CO₂, TVOC ou PM2.5 dépassé seuil alerte"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=measure_co2|capabilities=measure_pm25"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "pollutant",
+            "type": "string",
+            "title": {
+              "en": "Pollutant",
+              "fr": "Polluant"
+            },
+            "example": "CO₂"
+          },
+          {
+            "name": "level",
+            "type": "number",
+            "title": {
+              "en": "Level",
+              "fr": "Niveau"
+            },
+            "example": 1200
+          },
+          {
+            "name": "health_risk",
+            "type": "string",
+            "title": {
+              "en": "Health Risk",
+              "fr": "Risque Santé"
+            },
+            "example": "moderate"
+          }
+        ]
+      },
+      {
+        "id": "temperature_comfort_zone",
+        "title": {
+          "en": "Temperature !{{left|entered}} comfort zone",
+          "fr": "Température !{{quitté|entré}} zone confort"
+        },
+        "hint": {
+          "en": "Temperature crossed comfort threshold",
+          "fr": "Température franchit seuil confort"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=measure_temperature"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "fr": "Température"
+            },
+            "example": 26.5
+          },
+          {
+            "name": "trend",
+            "type": "string",
+            "title": {
+              "en": "Trend",
+              "fr": "Tendance"
+            },
+            "example": "rising"
+          }
+        ]
+      },
+      {
+        "id": "entry_state_changed",
+        "title": {
+          "en": "Entry !{{opened|closed}}",
+          "fr": "Entrée !{{ouverte|fermée}}"
+        },
+        "hint": {
+          "en": "Door or window opened/closed",
+          "fr": "Porte ou fenêtre ouverte/fermée"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=alarm_contact"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "entry_name",
+            "type": "string",
+            "title": {
+              "en": "Entry",
+              "fr": "Entrée"
+            },
+            "example": "front_door"
+          },
+          {
+            "name": "armed_status",
+            "type": "boolean",
+            "title": {
+              "en": "Armed",
+              "fr": "Armé"
+            },
+            "example": false
+          },
+          {
+            "name": "outside_temp",
+            "type": "number",
+            "title": {
+              "en": "Outside Temp",
+              "fr": "Temp Extérieure"
+            },
+            "example": 15
+          }
+        ]
+      },
+      {
+        "id": "entry_left_open_alert",
+        "title": {
+          "en": "Entry left open",
+          "fr": "Entrée laissée ouverte"
+        },
+        "hint": {
+          "en": "Entry open beyond threshold duration",
+          "fr": "Entrée ouverte au-delà durée seuil"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=alarm_contact"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "duration_minutes",
+            "type": "number",
+            "title": {
+              "en": "Duration (min)",
+              "fr": "Durée (min)"
+            },
+            "example": 15
+          }
+        ]
+      },
+      {
+        "id": "power_consumption_spike",
+        "title": {
+          "en": "Power consumption spike",
+          "fr": "Pic consommation électrique"
+        },
+        "hint": {
+          "en": "Abnormally high power consumption detected",
+          "fr": "Consommation anormalement élevée détectée"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=measure_power"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "power_w",
+            "type": "number",
+            "title": {
+              "en": "Power (W)",
+              "fr": "Puissance (W)"
+            },
+            "example": 2500
+          },
+          {
+            "name": "baseline_w",
+            "type": "number",
+            "title": {
+              "en": "Baseline (W)",
+              "fr": "Référence (W)"
+            },
+            "example": 150
+          }
+        ]
+      },
+      {
+        "id": "light_scene_activated",
+        "title": {
+          "en": "Light scene activated",
+          "fr": "Scène lumière activée"
+        },
+        "hint": {
+          "en": "Light brightness or color changed",
+          "fr": "Luminosité ou couleur modifiée"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=onoff&capabilities=dim"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "brightness",
+            "type": "number",
+            "title": {
+              "en": "Brightness",
+              "fr": "Luminosité"
+            },
+            "example": 75
+          },
+          {
+            "name": "scene_type",
+            "type": "string",
+            "title": {
+              "en": "Scene",
+              "fr": "Scène"
+            },
+            "example": "evening"
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "any_safety_alarm_active",
+        "title": {
+          "en": "Any safety alarm !{{is|is not}} active",
+          "fr": "Une alarme sécurité !{{est|n'est pas}} active"
+        },
+        "hint": {
+          "en": "Check if any safety alarm currently active",
+          "fr": "Vérifie si alarme sécurité active"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          }
+        ]
+      },
+      {
+        "id": "is_armed",
+        "title": {
+          "en": "Security is !{{armed|disarmed}}",
+          "fr": "Sécurité !{{armée|désarmée}}"
+        },
+        "hint": {
+          "en": "Check current security armed state",
+          "fr": "Vérifie état armement sécurité"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          }
+        ]
+      },
+      {
+        "id": "anyone_home",
+        "title": {
+          "en": "Anyone !{{is|is not}} home",
+          "fr": "Quelqu'un !{{est|n'est pas}} à la maison"
+        },
+        "hint": {
+          "en": "Check if any presence sensor detected activity recently",
+          "fr": "Vérifie si capteur présence a détecté activité récente"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          }
+        ]
+      },
+      {
+        "id": "room_occupied",
+        "title": {
+          "en": "Room is !{{occupied|vacant}}",
+          "fr": "Pièce !{{occupée|vacante}}"
+        },
+        "hint": {
+          "en": "Check if this specific room currently occupied",
+          "fr": "Vérifie si cette pièce actuellement occupée"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          }
+        ]
+      },
+      {
+        "id": "air_quality_good",
+        "title": {
+          "en": "Air quality is !{{good|poor}}",
+          "fr": "Qualité air !{{bonne|mauvaise}}"
+        },
+        "hint": {
+          "en": "All air quality metrics in healthy range",
+          "fr": "Toutes métriques qualité air dans zone saine"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          }
+        ]
+      },
+      {
+        "id": "climate_optimal",
+        "title": {
+          "en": "Climate is !{{optimal|suboptimal}}",
+          "fr": "Climat !{{optimal|sous-optimal}}"
+        },
+        "hint": {
+          "en": "Temperature and humidity both in comfort range",
+          "fr": "Température et humidité toutes deux en zone confort"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          }
+        ]
+      },
+      {
+        "id": "all_entries_secured",
+        "title": {
+          "en": "All entries !{{are|are not}} secured",
+          "fr": "Toutes entrées !{{sont|ne sont pas}} sécurisées"
+        },
+        "hint": {
+          "en": "All doors and windows closed",
+          "fr": "Toutes portes et fenêtres fermées"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          }
+        ]
+      },
+      {
+        "id": "is_consuming_power",
+        "title": {
+          "en": "Device is !{{consuming|not consuming}} power",
+          "fr": "Appareil !{{consomme|ne consomme pas}}"
+        },
+        "hint": {
+          "en": "Check if device currently drawing power",
+          "fr": "Vérifie si appareil tire actuellement puissance"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          }
+        ]
+      },
+      {
+        "id": "natural_light_sufficient",
+        "title": {
+          "en": "Natural light is !{{sufficient|insufficient}}",
+          "fr": "Lumière naturelle !{{suffisante|insuffisante}}"
+        },
+        "hint": {
+          "en": "Check if daylight enough (no artificial light needed)",
+          "fr": "Vérifie si lumière jour suffit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "emergency_shutdown",
+        "title": {
+          "en": "Emergency shutdown protocol",
+          "fr": "Protocole arrêt urgence"
+        },
+        "hint": {
+          "en": "Execute emergency shutdown based on alarm type",
+          "fr": "Execute arrêt urgence selon type alarme"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          }
+        ]
+      },
+      {
+        "id": "trigger_full_security_protocol",
+        "title": {
+          "en": "Trigger full security protocol",
+          "fr": "Déclencher protocole sécurité complet"
+        },
+        "hint": {
+          "en": "All lights ON, sirens, lock doors, notify",
+          "fr": "Toutes lumières ON, sirènes, verrouiller, notifier"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          }
+        ]
+      },
+      {
+        "id": "adaptive_lighting_control",
+        "title": {
+          "en": "Adaptive lighting control",
+          "fr": "Contrôle éclairage adaptatif"
+        },
+        "hint": {
+          "en": "Smart lighting based on presence, lux, and time",
+          "fr": "Éclairage intelligent selon présence, lux et heure"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          }
+        ]
+      },
+      {
+        "id": "improve_air_quality",
+        "title": {
+          "en": "Improve air quality",
+          "fr": "Améliorer qualité air"
+        },
+        "hint": {
+          "en": "Activate ventilation, purifiers, open windows",
+          "fr": "Activer ventilation, purificateurs, ouvrir fenêtres"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          }
+        ]
+      },
+      {
+        "id": "smart_climate_optimization",
+        "title": {
+          "en": "Smart climate optimization",
+          "fr": "Optimisation climatique intelligente"
+        },
+        "hint": {
+          "en": "Optimize based on occupancy, weather, time",
+          "fr": "Optimise selon occupancy, météo, heure"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          }
+        ]
+      },
+      {
+        "id": "secure_home_protocol",
+        "title": {
+          "en": "Secure home protocol",
+          "fr": "Protocole sécurisation maison"
+        },
+        "hint": {
+          "en": "Close curtains, lock doors, arm security",
+          "fr": "Fermer rideaux, verrouiller portes, armer sécurité"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          }
+        ]
+      },
+      {
+        "id": "load_shedding_protocol",
+        "title": {
+          "en": "Load shedding protocol",
+          "fr": "Protocole délestage"
+        },
+        "hint": {
+          "en": "Turn off non-essential devices",
+          "fr": "Éteindre appareils non essentiels"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          }
+        ]
+      },
+      {
+        "id": "circadian_lighting",
+        "title": {
+          "en": "Circadian lighting",
+          "fr": "Éclairage circadien"
+        },
+        "hint": {
+          "en": "Adjust color temp to match sun position",
+          "fr": "Ajuster température couleur selon position soleil"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          }
+        ]
+      }
+    ]
   }
 }
