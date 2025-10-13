@@ -67,6 +67,15 @@
       "_TZ3000_vp6clf9d",
       "_TZ3000_xabckq1v",
       "_TZ3000_yj6k7vfo",
+      "_TZ3000_xrqsdxq6",
+      "_TZ3000_adkvzooy",
+      "_TZ3000_peszejy7",
+      "_TZ3000_fa9mlvja",
+      "_TZ3000_s0i14ubi",
+      "_TZ3000_itb0omhv",
+      "_TZ3400_keyjqthh",
+      "_TZ3400_tk3s5tyg",
+      "_TYZB02_key8kk7r",
       "_TZE200_81isopgh",
       "_TZE200_m9skfctm",
       "_TZE200_wfxuhoea"
@@ -126,7 +135,8 @@
     "learnmode": {
       "image": "/drivers/wireless_switch_1gang_cr2032/assets/large.png",
       "instruction": {
-        "en": "Press and hold the reset button for 3 seconds until the LED starts blinking."
+        "en": "Press and hold the reset button for 3 seconds until the LED starts blinking. IMPORTANT: Use fresh batteries for reliable pairing.",
+        "fr": "Appuyez et maintenez le bouton de réinitialisation pendant 3 secondes jusqu'à ce que la LED clignote. IMPORTANT: Utilisez des piles neuves pour un appairage fiable."
       }
     }
   },

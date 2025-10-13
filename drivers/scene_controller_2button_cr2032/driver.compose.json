@@ -60,7 +60,7 @@
     "learnmode": {
       "image": "/drivers/scene_controller_2button_cr2032/assets/large.png",
       "instruction": {
-        "en": "Press and hold the button for 5 seconds until LED flashes"
+        "en": "Press and hold the button for 5 seconds until LED flashes rapidly (3-5 times per second). If pairing fails, remove battery, wait 10 seconds, reinsert and try again."
       }
     },
     "manufacturerName": [
