@@ -17,13 +17,17 @@ assets/
 │   ├── power-battery-low.svg  # Low battery badge
 │   └── placeholder.svg        # Generic placeholder
 │
+├── temp_alarm.svg      # Temperature alarm capability icon (MUST be in root)
+│
 └── templates/          # Source SVG files (not used in app)
     ├── icon.svg               # Source for app icon
-    ├── small.svg              # Source template
-    ├── large.svg              # Source template
-    ├── xlarge.svg             # Source template
-    └── [category]-icon.svg    # Category-specific templates
+    ├── small.svg              # Small template
+    ├── large.svg              # Large template
+    ├── xlarge.svg             # XLarge template
+    └── temp_alarm.svg         # Source for temp_alarm.svg
 ```
+
+⚠️ **IMPORTANT**: `temp_alarm.svg` must be in `/assets/` root because it's referenced in `app.json` as a capability icon.
 
 ## Guidelines
 
