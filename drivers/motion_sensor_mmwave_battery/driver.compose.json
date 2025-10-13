@@ -122,7 +122,13 @@
     }
   },
   "settings": [],
-  "capabilitiesOptions": {},
+  "capabilitiesOptions": {
+    "alarm_motion": {
+      "title": {
+        "en": "Motion"
+      }
+    }
+  },
   "energy": {
     "batteries": [
       "AAA",

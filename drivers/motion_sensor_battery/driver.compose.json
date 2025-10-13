@@ -87,7 +87,13 @@
       "TS0901"
     ]
   },
-  "capabilitiesOptions": {},
+  "capabilitiesOptions": {
+    "alarm_motion": {
+      "title": {
+        "en": "Motion"
+      }
+    }
+  },
   "images": {
     "small": "./assets/small.png",
     "large": "./assets/large.png"

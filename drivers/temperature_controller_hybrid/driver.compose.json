@@ -127,6 +127,11 @@
       "units": {
         "en": "°C"
       }
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Humidity"
+      }
     }
   },
   "energy": {

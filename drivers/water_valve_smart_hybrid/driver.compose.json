@@ -89,7 +89,13 @@
     "small": "./assets/small.png",
     "large": "./assets/large.png"
   },
-  "capabilitiesOptions": {},
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature"
+      }
+    }
+  },
   "platforms": [
     "local"
   ],

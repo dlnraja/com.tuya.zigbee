@@ -2,7 +2,7 @@
   "name": {
     "en": "Energy Monitoring Plug"
   },
-  "class": "sensor",
+  "class": "socket",
   "capabilities": [
     "onoff",
     "measure_power",

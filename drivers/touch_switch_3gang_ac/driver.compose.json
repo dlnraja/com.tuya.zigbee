@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Touch Switch 3gang"
+    "en": "3-Gang Wall Switch"
   },
-  "class": "sensor",
+  "class": "socket",
   "capabilities": [
     "onoff",
     "onoff.gang2",

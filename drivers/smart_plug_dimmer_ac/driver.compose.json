@@ -84,5 +84,11 @@
         "de": "1. Stecken Sie die intelligente Steckdose in eine Steckdose\n2. Warten Sie, bis die LED zu blinken beginnt\n3. Wenn die LED nicht blinkt, halten Sie die Taste 10 Sekunden lang gedrückt\n4. Das Gerät befindet sich jetzt im Kopplungsmodus"
       }
     }
-  }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }

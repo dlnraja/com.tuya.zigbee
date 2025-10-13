@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "1-Button Remote (Battery)"
+    "en": "1-Gang Wall Switch"
   },
-  "class": "button",
+  "class": "socket",
   "capabilities": [
     "measure_battery",
     "onoff",

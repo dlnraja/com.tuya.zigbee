@@ -147,5 +147,12 @@
   },
   "connectivity": [
     "zigbee"
-  ]
+  ],
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature"
+      }
+    }
+  }
 }
