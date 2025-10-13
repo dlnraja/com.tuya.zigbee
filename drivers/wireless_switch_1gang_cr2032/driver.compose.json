@@ -1,6 +1,7 @@
 {
   "name": {
-    "en": "1-Gang Wall Switch"
+    "en": "1-Button Wireless Scene Switch (Battery)",
+    "fr": "Interrupteur Sans Fil 1 Bouton (Batterie)"
   },
   "class": "socket",
   "capabilities": [
@@ -15,6 +16,11 @@
   "zigbee": {
     "manufacturerName": [
       "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0005",
+      "TS0006",
       "TS0011",
       "TS0012",
       "TS0013",
@@ -33,6 +39,7 @@
       "TS0505",
       "TS0505B",
       "TS0601",
+      "Tuya",
       "_TZ1800_ejwkn2h2",
       "_TZ1800_fcdjzz3s",
       "_TZ2000_a476raq2",
@@ -45,6 +52,7 @@
       "_TZ3000_0s1izerx",
       "_TZ3000_26fmupbb",
       "_TZ3000_4uuaja4a",
+      "_TZ3000_5bpeda8u",
       "_TZ3000_cehuw1lw",
       "_TZ3000_cphmq0q7",
       "_TZ3000_dbou1ap4",
@@ -61,13 +69,7 @@
       "_TZ3000_yj6k7vfo",
       "_TZE200_81isopgh",
       "_TZE200_m9skfctm",
-      "_TZE200_wfxuhoea",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "Tuya"
+      "_TZE200_wfxuhoea"
     ],
     "productId": [
       "TS0001",
