@@ -17,17 +17,20 @@ assets/
 │   ├── power-battery-low.svg  # Low battery badge
 │   └── placeholder.svg        # Generic placeholder
 │
+├── icon.svg            # App icon SVG (MUST be in root for Homey validation)
 ├── temp_alarm.svg      # Temperature alarm capability icon (MUST be in root)
 │
-└── templates/          # Source SVG files (not used in app)
-    ├── icon.svg               # Source for app icon
+└── templates/          # Source SVG files (backup copies)
+    ├── icon.svg               # Source backup for app icon
     ├── small.svg              # Small template
     ├── large.svg              # Large template
     ├── xlarge.svg             # XLarge template
-    └── temp_alarm.svg         # Source for temp_alarm.svg
+    └── temp_alarm.svg         # Source backup for temp_alarm.svg
 ```
 
-⚠️ **IMPORTANT**: `temp_alarm.svg` must be in `/assets/` root because it's referenced in `app.json` as a capability icon.
+⚠️ **CRITICAL**: These files MUST be in `/assets/` root:
+- `icon.svg` - Required by Homey validation system
+- `temp_alarm.svg` - Referenced in `app.json` as capability icon
 
 ## Guidelines
 
