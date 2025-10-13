@@ -26528,7 +26528,11 @@
             },
             "example": "critical"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Safety alarm triggered",
+          "fr": "Alarme sécurité déclenchée"
+        }
       },
       {
         "id": "security_breach_detected",
@@ -26566,7 +26570,11 @@
             },
             "example": "front_door"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Security breach detected",
+          "fr": "Violation sécurité détectée"
+        }
       },
       {
         "id": "sos_button_emergency",
@@ -26604,7 +26612,11 @@
             },
             "example": "22:30:45"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "SOS emergency button pressed",
+          "fr": "Bouton SOS urgence pressé"
+        }
       },
       {
         "id": "presence_detected_smart",
@@ -26651,7 +26663,11 @@
             },
             "example": "night"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Presence detected (smart)",
+          "fr": "Présence détectée (intelligent)"
+        }
       },
       {
         "id": "no_presence_timeout",
@@ -26680,7 +26696,11 @@
             },
             "example": 15
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "No presence (timeout)",
+          "fr": "Absence (délai écoulé)"
+        }
       },
       {
         "id": "air_quality_warning",
@@ -26727,7 +26747,11 @@
             },
             "example": "moderate"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Air quality warning",
+          "fr": "Alerte qualité air"
+        }
       },
       {
         "id": "temperature_comfort_zone",
@@ -26765,7 +26789,11 @@
             },
             "example": "rising"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Temperature !{{left|entered}} comfort zone",
+          "fr": "Température !{{quitté|entré}} zone confort"
+        }
       },
       {
         "id": "entry_state_changed",
@@ -26812,7 +26840,11 @@
             },
             "example": 15
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Entry !{{opened|closed}}",
+          "fr": "Entrée !{{ouverte|fermée}}"
+        }
       },
       {
         "id": "entry_left_open_alert",
@@ -26841,7 +26873,11 @@
             },
             "example": 15
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Entry left open",
+          "fr": "Entrée laissée ouverte"
+        }
       },
       {
         "id": "power_consumption_spike",
@@ -26879,7 +26915,11 @@
             },
             "example": 150
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Power consumption spike",
+          "fr": "Pic consommation électrique"
+        }
       },
       {
         "id": "light_scene_activated",
@@ -26917,7 +26957,11 @@
             },
             "example": "evening"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Light scene activated",
+          "fr": "Scène lumière activée"
+        }
       }
     ],
     "conditions": [
@@ -26937,7 +26981,11 @@
             "name": "device",
             "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Any safety alarm !{{is|is not}} active",
+          "fr": "Une alarme sécurité !{{est|n'est pas}} active"
+        }
       },
       {
         "id": "is_armed",
@@ -26955,7 +27003,11 @@
             "name": "device",
             "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Security is !{{armed|disarmed}}",
+          "fr": "Sécurité !{{armée|désarmée}}"
+        }
       },
       {
         "id": "anyone_home",
@@ -26973,7 +27025,11 @@
             "name": "device",
             "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Anyone !{{is|is not}} home",
+          "fr": "Quelqu'un !{{est|n'est pas}} à la maison"
+        }
       },
       {
         "id": "room_occupied",
@@ -26991,7 +27047,11 @@
             "name": "device",
             "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Room is !{{occupied|vacant}}",
+          "fr": "Pièce !{{occupée|vacante}}"
+        }
       },
       {
         "id": "air_quality_good",
@@ -27009,7 +27069,11 @@
             "name": "device",
             "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Air quality is !{{good|poor}}",
+          "fr": "Qualité air !{{bonne|mauvaise}}"
+        }
       },
       {
         "id": "climate_optimal",
@@ -27027,7 +27091,11 @@
             "name": "device",
             "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Climate is !{{optimal|suboptimal}}",
+          "fr": "Climat !{{optimal|sous-optimal}}"
+        }
       },
       {
         "id": "all_entries_secured",
@@ -27045,7 +27113,11 @@
             "name": "device",
             "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "All entries !{{are|are not}} secured",
+          "fr": "Toutes entrées !{{sont|ne sont pas}} sécurisées"
+        }
       },
       {
         "id": "is_consuming_power",
@@ -27063,7 +27135,11 @@
             "name": "device",
             "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Device is !{{consuming|not consuming}} power",
+          "fr": "Appareil !{{consomme|ne consomme pas}}"
+        }
       },
       {
         "id": "natural_light_sufficient",
@@ -27081,7 +27157,11 @@
             "name": "device",
             "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Natural light is !{{sufficient|insufficient}}",
+          "fr": "Lumière naturelle !{{suffisante|insuffisante}}"
+        }
       }
     ],
     "actions": [
@@ -27101,7 +27181,11 @@
             "name": "device",
             "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Emergency shutdown protocol",
+          "fr": "Protocole arrêt urgence"
+        }
       },
       {
         "id": "trigger_full_security_protocol",
@@ -27119,7 +27203,11 @@
             "name": "device",
             "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger full security protocol",
+          "fr": "Déclencher protocole sécurité complet"
+        }
       },
       {
         "id": "adaptive_lighting_control",
@@ -27137,7 +27225,11 @@
             "name": "device",
             "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Adaptive lighting control",
+          "fr": "Contrôle éclairage adaptatif"
+        }
       },
       {
         "id": "improve_air_quality",
@@ -27155,7 +27247,11 @@
             "name": "device",
             "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Improve air quality",
+          "fr": "Améliorer qualité air"
+        }
       },
       {
         "id": "smart_climate_optimization",
@@ -27173,7 +27269,11 @@
             "name": "device",
             "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Smart climate optimization",
+          "fr": "Optimisation climatique intelligente"
+        }
       },
       {
         "id": "secure_home_protocol",
@@ -27191,7 +27291,11 @@
             "name": "device",
             "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Secure home protocol",
+          "fr": "Protocole sécurisation maison"
+        }
       },
       {
         "id": "load_shedding_protocol",
@@ -27209,7 +27313,11 @@
             "name": "device",
             "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Load shedding protocol",
+          "fr": "Protocole délestage"
+        }
       },
       {
         "id": "circadian_lighting",
@@ -27227,7 +27335,11 @@
             "name": "device",
             "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Circadian lighting",
+          "fr": "Éclairage circadien"
+        }
       }
     ]
   }
