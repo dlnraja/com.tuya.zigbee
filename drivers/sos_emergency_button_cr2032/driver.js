@@ -4,9 +4,17 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class TuyaZigbeeDriver extends ZigBeeDriver {
 
-    onInit() {
+    async onInit() {
         this.log('Tuya Zigbee Driver has been initialized');
-        super.onInit();
+        await super.onInit();
+        
+        // Register flow action for testing SOS button
+        this.homey.flow.getActionCard('test_sos_button')
+          .registerRunListener(async (args) => {
+            return args.device.testSosButton();
+          });
+        
+        this.log('✅ Flow cards registered for SOS button');
     }
 
 }

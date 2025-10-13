@@ -108,30 +108,134 @@
   "id": "motion_temp_humidity_illumination_multi_battery",
   "settings": [
     {
-      "type": "number",
-      "id": "dp_13_comfort_temperature",
+      "type": "group",
       "label": {
-        "en": "comfort temperature"
+        "en": "Motion Detection Settings",
+        "fr": "Paramètres de Détection de Mouvement"
       },
-      "value": 0
+      "children": [
+        {
+          "type": "number",
+          "id": "motion_timeout",
+          "label": {
+            "en": "Motion Auto-Reset Timeout (seconds)",
+            "fr": "Délai de Réinitialisation Automatique (secondes)"
+          },
+          "hint": {
+            "en": "Time after which motion alarm automatically resets to false",
+            "fr": "Temps après lequel l'alarme de mouvement se réinitialise automatiquement"
+          },
+          "value": 60,
+          "min": 5,
+          "max": 600,
+          "units": {
+            "en": "s"
+          }
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_motion_logging",
+          "label": {
+            "en": "Enable Motion Event Logging",
+            "fr": "Activer la Journalisation des Événements de Mouvement"
+          },
+          "hint": {
+            "en": "Log all motion detection events for diagnostics",
+            "fr": "Enregistrer tous les événements de détection pour le diagnostic"
+          },
+          "value": false
+        }
+      ]
     },
     {
-      "type": "number",
-      "id": "dp_14_eco_temperature",
+      "type": "group",
       "label": {
-        "en": "eco temperature"
+        "en": "Temperature & Humidity Settings",
+        "fr": "Paramètres de Température & Humidité"
       },
-      "value": 0
+      "children": [
+        {
+          "type": "number",
+          "id": "dp_19_temperature_calibration",
+          "label": {
+            "en": "Temperature Calibration (°C)",
+            "fr": "Calibration de Température (°C)"
+          },
+          "hint": {
+            "en": "Adjust temperature reading by this offset",
+            "fr": "Ajuster la lecture de température avec ce décalage"
+          },
+          "value": 0,
+          "min": -9,
+          "max": 9,
+          "units": {
+            "en": "°C"
+          }
+        },
+        {
+          "type": "number",
+          "id": "dp_13_comfort_temperature",
+          "label": {
+            "en": "Comfort Temperature Threshold (°C)",
+            "fr": "Seuil de Température Confortable (°C)"
+          },
+          "hint": {
+            "en": "Target comfort temperature for automations",
+            "fr": "Température cible pour les automatisations"
+          },
+          "value": 22,
+          "min": 10,
+          "max": 30,
+          "units": {
+            "en": "°C"
+          }
+        },
+        {
+          "type": "number",
+          "id": "dp_14_eco_temperature",
+          "label": {
+            "en": "Eco Temperature Threshold (°C)",
+            "fr": "Seuil de Température Économique (°C)"
+          },
+          "hint": {
+            "en": "Target eco temperature for energy saving",
+            "fr": "Température cible pour économie d'énergie"
+          },
+          "value": 18,
+          "min": 10,
+          "max": 25,
+          "units": {
+            "en": "°C"
+          }
+        }
+      ]
     },
     {
-      "type": "number",
-      "id": "dp_19_temperature_calibration",
+      "type": "group",
       "label": {
-        "en": "temperature calibration"
+        "en": "Advanced Settings",
+        "fr": "Paramètres Avancés"
       },
-      "value": -9,
-      "min": -9,
-      "max": 9
+      "children": [
+        {
+          "type": "number",
+          "id": "reporting_interval",
+          "label": {
+            "en": "Sensor Reporting Interval (minutes)",
+            "fr": "Intervalle de Rapport du Capteur (minutes)"
+          },
+          "hint": {
+            "en": "How often sensor values are updated (lower = more battery drain)",
+            "fr": "Fréquence de mise à jour des valeurs (plus bas = plus de batterie consommée)"
+          },
+          "value": 5,
+          "min": 1,
+          "max": 60,
+          "units": {
+            "en": "min"
+          }
+        }
+      ]
     }
   ],
   "connectivity": [
