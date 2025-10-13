@@ -314,10 +314,7 @@
   "2.15.55": {
     "en": "UX IMPROVEMENT: User-friendly driver names (top 10). Multi-Sensor (Motion + Lux + Temp), 4-Button Remote, 2-Gang Wall Switch. Power mode suffix preserved. Better searchability. No breaking changes."
   },
-  "2.15.56": {
-    "en": "COMPLETE UPDATE: Driver selection guide created. Documentation updated. Image placeholders identified. Changelog organized. Full project audit. Ready for community."
-  },
-  "2.15.57": {
-    "en": "CRITICAL IMAGE FIX: Corrected image paths for 50 drivers. Each driver now displays its unique image on test page. Fixed learnmode image paths pointing to wrong folders. All drivers now have proper visual representation."
+  "2.15.58": {
+    "en": "Automated release"
   }
 }
