@@ -1,5 +1,5 @@
 {
-  "class": "button",
+  "class": "socket",
   "capabilities": [
     "onoff",
     "button.2",
@@ -142,7 +142,7 @@
     }
   ],
   "name": {
-    "en": "Wireless Switch 6gang CR2032 (Battery)"
+    "en": "6-Button Remote"
   },
   "platforms": [
     "local"

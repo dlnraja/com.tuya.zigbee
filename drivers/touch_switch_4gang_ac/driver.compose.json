@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Touch Switch 4gang"
+    "en": "4-Gang Wall Switch"
   },
-  "class": "sensor",
+  "class": "socket",
   "capabilities": [
     "button.1",
     "button.2",

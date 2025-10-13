@@ -106,5 +106,17 @@
   "id": "comprehensive_air_monitor_ac",
   "connectivity": [
     "zigbee"
-  ]
+  ],
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature"
+      }
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Humidity"
+      }
+    }
+  }
 }

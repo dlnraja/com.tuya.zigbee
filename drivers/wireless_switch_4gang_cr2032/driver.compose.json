@@ -1,5 +1,5 @@
 {
-  "class": "button",
+  "class": "socket",
   "capabilities": [
     "onoff",
     "measure_battery",
@@ -143,7 +143,7 @@
     "large": "./assets/large.png"
   },
   "name": {
-    "en": "4-Button Remote (Battery)"
+    "en": "4-Gang Wall Switch"
   },
   "platforms": [
     "local"

@@ -2,7 +2,7 @@
   "name": {
     "en": "Energy Plug Advanced"
   },
-  "class": "sensor",
+  "class": "socket",
   "capabilities": [
     "onoff",
     "measure_power",

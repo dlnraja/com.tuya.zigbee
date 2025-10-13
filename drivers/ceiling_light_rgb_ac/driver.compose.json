@@ -113,5 +113,12 @@
   "id": "ceiling_light_rgb_ac",
   "connectivity": [
     "zigbee"
-  ]
+  ],
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature"
+      }
+    }
+  }
 }

@@ -1,5 +1,5 @@
 {
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
     "onoff",
     "button.2",
@@ -95,7 +95,7 @@
     }
   ],
   "name": {
-    "en": "Scene Controller 4button (Battery)"
+    "en": "4-Button Remote"
   },
   "platforms": [
     "local"

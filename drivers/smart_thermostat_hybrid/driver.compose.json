@@ -39,6 +39,11 @@
           }
         }
       ]
+    },
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature"
+      }
     }
   },
   "zigbee": {

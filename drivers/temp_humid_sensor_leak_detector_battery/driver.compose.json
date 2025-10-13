@@ -1,6 +1,6 @@
 {
   "name": {
-    "en": "Temperature Humidity Sensor (Battery)"
+    "en": "Water Leak Sensor"
   },
   "class": "sensor",
   "capabilities": [
@@ -132,6 +132,11 @@
       },
       "units": {
         "en": "%"
+      }
+    },
+    "alarm_motion": {
+      "title": {
+        "en": "Motion"
       }
     }
   },

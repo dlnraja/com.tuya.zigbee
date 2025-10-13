@@ -1,6 +1,6 @@
 {
   "name": {
-    "en": "CO2 Sensor (Battery)"
+    "en": "CO₂ Sensor (Battery)"
   },
   "class": "sensor",
   "capabilities": [
@@ -113,7 +113,18 @@
       }
     }
   },
-  "capabilitiesOptions": {},
+  "capabilitiesOptions": {
+    "alarm_motion": {
+      "title": {
+        "en": "Motion"
+      }
+    },
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature"
+      }
+    }
+  },
   "images": {
     "small": "./assets/small.png",
     "large": "./assets/large.png"
