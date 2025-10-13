@@ -213,11 +213,28 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
                 this.log('⚠️ Unknown zoneStatus type:', typeof payload.zoneStatus);
               }
               
-              this.log('🚶 Motion state:', motionDetected ? '✅ DETECTED' : '⭕ Clear');
+              this.log('🛜 Motion state:', motionDetected ? '✅ DETECTED' : '⭕ Clear');
               await this.setCapabilityValue('alarm_motion', motionDetected).catch(this.error);
               
-              // Auto-reset motion after timeout (configurable)
+              // Trigger flow cards SDK3
               if (motionDetected) {
+                // Motion detected flow
+                const enableLogging = this.getSetting('enable_motion_logging');
+                if (enableLogging) {
+                  this.log('🎞️ Triggering motion_detected flow card');
+                }
+                
+                try {
+                  await this.homey.flow.getDeviceTriggerCard('motion_detected').trigger(this, {
+                    luminance: this.getCapabilityValue('measure_luminance') || 0,
+                    temperature: this.getCapabilityValue('measure_temperature') || 0,
+                    humidity: this.getCapabilityValue('measure_humidity') || 0
+                  }).catch(err => this.error('Flow trigger failed:', err));
+                } catch (flowErr) {
+                  this.error('⚠️ Motion flow trigger error:', flowErr);
+                }
+                
+                // Auto-reset motion after timeout (configurable)
                 const timeout = this.getSetting('motion_timeout') || 60;
                 this.log(`⏱️ Motion will auto-reset in ${timeout} seconds`);
                 
@@ -225,7 +242,23 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
                 this.motionTimeout = setTimeout(async () => {
                   await this.setCapabilityValue('alarm_motion', false).catch(this.error);
                   this.log('✅ Motion auto-reset');
+                  
+                  // Trigger motion_cleared flow
+                  try {
+                    await this.homey.flow.getDeviceTriggerCard('motion_cleared').trigger(this)
+                      .catch(err => this.error('Motion cleared flow failed:', err));
+                  } catch (flowErr) {
+                    this.error('⚠️ Motion cleared flow error:', flowErr);
+                  }
                 }, timeout * 1000);
+              } else {
+                // Trigger motion_cleared flow
+                try {
+                  await this.homey.flow.getDeviceTriggerCard('motion_cleared').trigger(this)
+                    .catch(err => this.error('Motion cleared flow failed:', err));
+                } catch (flowErr) {
+                  this.error('⚠️ Motion cleared flow error:', flowErr);
+                }
               }
             } catch (parseErr) {
               this.error('❌ Motion notification parse error:', parseErr);
@@ -371,8 +404,80 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
     });
   }
 
+  /**
+   * Flow condition: is_motion_detected
+   */
+  async isMotionDetected() {
+    return this.getCapabilityValue('alarm_motion') || false;
+  }
+
+  /**
+   * Flow condition: temperature_above
+   */
+  async isTemperatureAbove(args) {
+    const currentTemp = this.getCapabilityValue('measure_temperature') || 0;
+    return currentTemp > args.threshold;
+  }
+
+  /**
+   * Flow condition: humidity_above
+   */
+  async isHumidityAbove(args) {
+    const currentHumidity = this.getCapabilityValue('measure_humidity') || 0;
+    return currentHumidity > args.threshold;
+  }
+
+  /**
+   * Flow condition: luminance_above
+   */
+  async isLuminanceAbove(args) {
+    const currentLuminance = this.getCapabilityValue('measure_luminance') || 0;
+    return currentLuminance > args.threshold;
+  }
+
+  /**
+   * Flow action: reset_motion_alarm
+   */
+  async resetMotionAlarm() {
+    this.log('🔄 Manually resetting motion alarm via flow action');
+    
+    if (this.motionTimeout) {
+      clearTimeout(this.motionTimeout);
+      this.motionTimeout = null;
+    }
+    
+    await this.setCapabilityValue('alarm_motion', false);
+    
+    // Trigger motion_cleared flow
+    try {
+      await this.homey.flow.getDeviceTriggerCard('motion_cleared').trigger(this);
+      this.log('✅ Motion cleared flow triggered from manual reset');
+    } catch (err) {
+      this.error('⚠️ Motion cleared flow error:', err);
+    }
+    
+    return true;
+  }
+
+  /**
+   * Flow action: set_motion_timeout
+   */
+  async setMotionTimeout(args) {
+    const newTimeout = args.timeout;
+    this.log(`⏱️ Setting motion timeout to ${newTimeout} seconds via flow action`);
+    
+    await this.setSettings({ motion_timeout: newTimeout });
+    this.log('✅ Motion timeout updated successfully');
+    
+    return true;
+  }
+
   async onDeleted() {
     this.log('motion_temp_humidity_illumination_sensor device deleted');
+    
+    if (this.motionTimeout) {
+      clearTimeout(this.motionTimeout);
+    }
   }
 
 }

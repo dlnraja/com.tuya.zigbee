@@ -155,24 +155,58 @@ class SosEmergencyButtonCr2032Device extends ZigBeeDevice {
                 this.log('🚨 SOS BUTTON PRESSED! ✅');
                 await this.setCapabilityValue('alarm_generic', true).catch(this.error);
                 
-                // Trigger flow card for automation
-                if (this.homey && this.homey.flow) {
-                  try {
-                    const triggerCard = this.homey.flow.getDeviceTriggerCard('sos_button_pressed');
-                    if (triggerCard) {
-                      await triggerCard.trigger(this, {}, {});
-                      this.log('✅ Flow card triggered');
+                const enableLogging = this.getSetting('enable_sos_logging');
+                if (enableLogging) {
+                  this.log('📝 SOS event logged at:', new Date().toISOString());
+                }
+                
+                // Check for double-press
+                const enableDoublePress = this.getSetting('enable_double_press');
+                if (enableDoublePress) {
+                  const doublePressWindow = this.getSetting('double_press_timeout') || 500;
+                  const now = Date.now();
+                  
+                  if (this.lastPressTime && (now - this.lastPressTime) < doublePressWindow) {
+                    this.log('🔄 DOUBLE-PRESS DETECTED!');
+                    
+                    // Trigger double-press flow
+                    try {
+                      await this.homey.flow.getDeviceTriggerCard('sos_button_double_pressed').trigger(this)
+                        .catch(err => this.error('Double-press flow failed:', err));
+                      this.log('✅ Double-press flow triggered');
+                    } catch (flowErr) {
+                      this.error('⚠️ Double-press flow error:', flowErr);
                     }
-                  } catch (flowErr) {
-                    this.log('⚠️ Flow trigger failed:', flowErr.message);
+                    
+                    this.lastPressTime = null; // Reset to prevent triple-press
+                  } else {
+                    this.lastPressTime = now;
                   }
                 }
                 
-                // Auto-reset after 5 seconds
+                // Trigger flow card for automation with tokens
+                try {
+                  const battery = this.getCapabilityValue('measure_battery') || 0;
+                  const timestamp = new Date().toLocaleString('en-GB', { 
+                    year: 'numeric', month: '2-digit', day: '2-digit',
+                    hour: '2-digit', minute: '2-digit', second: '2-digit'
+                  });
+                  
+                  await this.homey.flow.getDeviceTriggerCard('sos_button_pressed').trigger(this, {
+                    battery: battery,
+                    timestamp: timestamp
+                  }).catch(err => this.error('Flow trigger failed:', err));
+                  this.log('✅ SOS flow card triggered with battery:', battery, 'timestamp:', timestamp);
+                } catch (flowErr) {
+                  this.error('⚠️ Flow trigger error:', flowErr);
+                }
+                
+                // Auto-reset after configurable timeout
+                const resetTimeout = (this.getSetting('sos_auto_reset') || 5) * 1000;
                 setTimeout(async () => {
                   await this.setCapabilityValue('alarm_generic', false).catch(this.error);
-                  this.log('✅ SOS alarm reset');
-                }, 5000);
+                  this.log('✅ SOS alarm reset after', resetTimeout/1000, 'seconds');
+                }, resetTimeout);
               }
             } catch (parseErr) {
               this.error('❌ SOS notification parse error:', parseErr);
@@ -249,8 +283,53 @@ class SosEmergencyButtonCr2032Device extends ZigBeeDevice {
     }
   }
 
+  /**
+   * Flow action: test_sos_button
+   */
+  async testSosButton() {
+    this.log('🧪 Testing SOS button via flow action');
+    
+    // Simulate SOS button press
+    await this.setCapabilityValue('alarm_generic', true);
+    
+    const enableLogging = this.getSetting('enable_sos_logging');
+    if (enableLogging) {
+      this.log('📝 TEST SOS event logged at:', new Date().toISOString());
+    }
+    
+    // Trigger flow card with test data
+    try {
+      const battery = this.getCapabilityValue('measure_battery') || 0;
+      const timestamp = new Date().toLocaleString('en-GB', { 
+        year: 'numeric', month: '2-digit', day: '2-digit',
+        hour: '2-digit', minute: '2-digit', second: '2-digit'
+      });
+      
+      await this.homey.flow.getDeviceTriggerCard('sos_button_pressed').trigger(this, {
+        battery: battery,
+        timestamp: timestamp
+      });
+      this.log('✅ TEST SOS flow card triggered successfully');
+    } catch (flowErr) {
+      this.error('⚠️ TEST flow trigger error:', flowErr);
+    }
+    
+    // Auto-reset
+    const resetTimeout = (this.getSetting('sos_auto_reset') || 5) * 1000;
+    setTimeout(async () => {
+      await this.setCapabilityValue('alarm_generic', false);
+      this.log('✅ TEST SOS alarm reset');
+    }, resetTimeout);
+    
+    return true;
+  }
+
   async onDeleted() {
     this.log('sos_emergency_button_cr2032 deleted');
+    
+    if (this.lastPressTime) {
+      this.lastPressTime = null;
+    }
   }
 
 }
