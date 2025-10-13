@@ -71,17 +71,7 @@
   "2.3.0": {
     "en": "Major update: Personalized icons for each device type. Better device organization and visual clarity."
   },
-  },
-  "2.15.56": {
-    "en": "COMPLETE UPDATE: Driver selection guide created. Documentation updated. Image placeholders identified. Changelog organized. Full project audit. Ready for community."
-  },
-  "2.15.64": {
-    "en": "CRITICAL UX FIX: TS0041 (_TZ3000_5bpeda8u) reassigned to correct 1-button driver. Driver names now match product listings (Button vs Gang). Motion sensor pairing improved. Community feedback: Cam (Forum)."
-  },
-  "2.15.65": {
-    "en": "DEVICE SUPPORT: HOBEIAN ZG-204Z PIR motion sensor added. Complete support for all ZG-204 family (ZG-204Z, ZG-204ZL, ZG-204ZV). Based on Zigbee2MQTT specifications. Community request."
-  }
-}
+  "2.2.4": {
     "en": "Improved authentication configuration."
   },
   "2.2.3": {
@@ -312,6 +302,9 @@
   "2.15.55": {
     "en": "UX IMPROVEMENT: User-friendly driver names (top 10). Multi-Sensor (Motion + Lux + Temp), 4-Button Remote, 2-Gang Wall Switch. Power mode suffix preserved. Better searchability. No breaking changes."
   },
+  "2.15.56": {
+    "en": "COMPLETE UPDATE: Driver selection guide created. Documentation updated. Image placeholders identified. Changelog organized. Full project audit. Ready for community."
+  },
   "2.15.58": {
     "en": "Automated release"
   },
@@ -331,10 +324,10 @@
     "en": "UX FIX: Professional SVG app images deployed. Enhanced driver naming for clarity."
   },
   "2.15.64": {
-    "en": "🚨 CRITICAL UX FIX: TS0041 (_TZ3000_5bpeda8u) reassigned to correct 1-button driver. Driver names now match product listings (Button vs Gang). Motion sensor pairing improved. Community feedback: Cam (Forum)."
+    "en": "SMART BUTTON FIX: Added 9 manufacturer IDs for TS0041/TS0042/TS004F buttons. Enhanced pairing instructions (fresh batteries required). Community feedback: Cam (Forum POST #141)."
   },
   "2.15.65": {
-    "en": "✅ DEVICE SUPPORT: HOBEIAN ZG-204Z PIR motion sensor added. Complete support for all ZG-204 family (ZG-204Z, ZG-204ZL, ZG-204ZV). Based on Zigbee2MQTT specifications. Community request."
+    "en": "MOTION SENSOR SUPPORT: HOBEIAN ZG-204ZL Motion+Lux sensor added (4 manufacturer IDs). Pinhole pairing 10s. GitHub Issue #1267 resolved."
   },
   "2.15.66": {
     "en": "🔧 ZG-204ZM FIX: Added sensitivity/timeout settings for mmWave radar false motion issue. Troubleshooting guide included. PIR+Radar sensor now configurable. Reddit community feedback."
