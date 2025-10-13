@@ -134,6 +134,106 @@
     ]
   },
   "id": "sos_emergency_button_cr2032",
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "SOS Button Settings",
+        "fr": "Paramètres du Bouton SOS"
+      },
+      "children": [
+        {
+          "type": "number",
+          "id": "sos_auto_reset",
+          "label": {
+            "en": "Auto-Reset After Press (seconds)",
+            "fr": "Réinitialisation Automatique Après Pression (secondes)"
+          },
+          "hint": {
+            "en": "Time after which alarm automatically resets after SOS button press",
+            "fr": "Temps après lequel l'alarme se réinitialise automatiquement"
+          },
+          "value": 5,
+          "min": 1,
+          "max": 60,
+          "units": {
+            "en": "s"
+          }
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_double_press",
+          "label": {
+            "en": "Enable Double-Press Detection",
+            "fr": "Activer la Détection de Double-Pression"
+          },
+          "hint": {
+            "en": "Trigger additional flow when button is pressed twice quickly",
+            "fr": "Déclencher un flow supplémentaire si pressé deux fois rapidement"
+          },
+          "value": false
+        },
+        {
+          "type": "number",
+          "id": "double_press_timeout",
+          "label": {
+            "en": "Double-Press Window (ms)",
+            "fr": "Fenêtre de Double-Pression (ms)"
+          },
+          "hint": {
+            "en": "Maximum time between two presses to count as double-press",
+            "fr": "Temps maximum entre deux pressions pour compter comme double-pression"
+          },
+          "value": 500,
+          "min": 200,
+          "max": 2000,
+          "units": {
+            "en": "ms"
+          }
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_sos_logging",
+          "label": {
+            "en": "Enable SOS Event Logging",
+            "fr": "Activer la Journalisation des Événements SOS"
+          },
+          "hint": {
+            "en": "Log all SOS button press events with timestamps",
+            "fr": "Enregistrer tous les événements de pression avec horodatage"
+          },
+          "value": true
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Battery Settings",
+        "fr": "Paramètres de Batterie"
+      },
+      "children": [
+        {
+          "type": "number",
+          "id": "battery_low_threshold",
+          "label": {
+            "en": "Low Battery Threshold (%)",
+            "fr": "Seuil de Batterie Faible (%)"
+          },
+          "hint": {
+            "en": "Send notification when battery drops below this level",
+            "fr": "Envoyer une notification quand la batterie descend sous ce niveau"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50,
+          "units": {
+            "en": "%"
+          }
+        }
+      ]
+    }
+  ],
   "connectivity": [
     "zigbee"
   ]
