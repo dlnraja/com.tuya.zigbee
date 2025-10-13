@@ -129,7 +129,69 @@
       }
     }
   },
-  "settings": [],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "SDK3 Advanced Settings",
+        "fr": "Paramètres Avancés SDK3"
+      },
+      "children": [
+        {
+          "id": "motion_timeout",
+          "type": "number",
+          "label": "Motion Auto-Reset Timeout (s)",
+          "value": 60,
+          "min": 5,
+          "max": 600
+        },
+        {
+          "id": "enable_motion_logging",
+          "type": "checkbox",
+          "label": "Enable Motion Event Logging",
+          "value": false
+        },
+        {
+          "id": "temperature_calibration",
+          "type": "number",
+          "label": "Temperature Calibration (°C)",
+          "value": 0,
+          "min": -9,
+          "max": 9
+        },
+        {
+          "id": "temperature_threshold",
+          "type": "number",
+          "label": "Temperature Threshold (°C)",
+          "value": 25,
+          "min": 0,
+          "max": 50
+        },
+        {
+          "id": "humidity_threshold",
+          "type": "number",
+          "label": "Humidity Threshold (%)",
+          "value": 70,
+          "min": 0,
+          "max": 100
+        },
+        {
+          "id": "battery_low_threshold",
+          "type": "number",
+          "label": "Low Battery Threshold (%)",
+          "value": 20,
+          "min": 5,
+          "max": 50
+        },
+        {
+          "id": "battery_notification",
+          "type": "checkbox",
+          "label": "Enable Battery Notifications",
+          "value": true
+        }
+      ]
+    }
+  ],
   "capabilitiesOptions": {
     "measure_temperature": {
       "title": {
