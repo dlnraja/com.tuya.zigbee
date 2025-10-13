@@ -51,7 +51,7 @@
       }
     },
     "learnmode": {
-      "image": "./assets/large.png",
+      "image": "/drivers/smoke_detector_temperature_battery/assets/large.png",
       "instruction": {
         "en": "1. Make sure the device is powered\n2. Press the pairing button for 5 seconds\n3. Wait for the device to appear in Homey\n4. The device is now paired",
         "fr": "1. Assurez-vous que l'appareil est alimenté\n2. Appuyez sur le bouton d'appairage pendant 5 secondes\n3. Attendez que l'appareil apparaisse dans Homey\n4. L'appareil est maintenant apparié",

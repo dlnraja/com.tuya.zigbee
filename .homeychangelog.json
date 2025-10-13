@@ -68,14 +68,17 @@
   "2.4.0": {
     "en": "Complete personalized icons implementation with all features."
   },
-  "2.3.2": {
-    "en": "Improved icon generation with robust SVG design."
+  "2.3.0": {
+    "en": "Major update: Personalized icons for each device type. Better device organization and visual clarity."
   },
   "2.3.1": {
     "en": "Fixed device pairing issues and improved connection stability."
   },
-  "2.3.0": {
-    "en": "Major update: Personalized icons for each device type. Better device organization and visual clarity."
+  "2.15.56": {
+    "en": "COMPLETE UPDATE: Driver selection guide created. Documentation updated. Image placeholders identified. Changelog organized. Full project audit. Ready for community."
+  },
+  "2.15.57": {
+    "en": "CRITICAL IMAGE FIX: Corrected image paths for 50 drivers. Each driver now displays its unique image on test page. Fixed learnmode image paths pointing to wrong folders. All drivers now have proper visual representation."
   },
   "2.2.5": {
     "en": "Project cleanup and full SDK3 validation completed."
@@ -300,18 +303,21 @@
     "en": "Bug fixes and stability improvements"
   },
   "2.15.52": {
-    "en": "App improvements and updates"
+    "en": "CRITICAL FIX: IAS Zone enrollment for motion sensors & SOS buttons. Fixed HOBEIAN multi-sensor motion detection. Correct Zigbee attribute write (0x0010). Enhanced notification listeners. Community feedback fixes."
   },
   "2.15.53": {
-    "en": "App improvements and updates"
+    "en": "COMMUNITY FEEDBACK: Enhanced Johan Bendz attribution. Improved app description (realistic, humble). Settings page with credits. Official GitHub Actions implemented. Forum issues addressed."
   },
   "2.15.54": {
-    "en": "App improvements and updates"
+    "en": "GITHUB ISSUES RESOLVED: #1267 HOBEIAN ZG-204ZL support added. #1268 TS0041 4-gang button fixed (all 4 buttons now work). Correct multi-endpoint configuration. Tuya cluster support (57344)."
   },
   "2.15.55": {
-    "en": "Automated release"
+    "en": "UX IMPROVEMENT: User-friendly driver names (top 10). Multi-Sensor (Motion + Lux + Temp), 4-Button Remote, 2-Gang Wall Switch. Power mode suffix preserved. Better searchability. No breaking changes."
   },
   "2.15.56": {
-    "en": "Automated release"
+    "en": "COMPLETE UPDATE: Driver selection guide created. Documentation updated. Image placeholders identified. Changelog organized. Full project audit. Ready for community."
+  },
+  "2.15.57": {
+    "en": "CRITICAL IMAGE FIX: Corrected image paths for 50 drivers. Each driver now displays its unique image on test page. Fixed learnmode image paths pointing to wrong folders. All drivers now have proper visual representation."
   }
 }
