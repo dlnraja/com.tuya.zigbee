@@ -334,5 +334,8 @@
   },
   "2.15.67": {
     "en": "✅ DEVICE SUPPORT: ZM-P1 Tuya motion sensor (Motion + Lux) added. Also added ZG-204ZL to motion_sensor_illuminance_battery driver. Zigbee2MQTT Issue #28103 addressed."
+  },
+  "2.15.68": {
+    "en": "Automated release"
   }
 }
