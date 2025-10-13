@@ -3,10 +3,10 @@
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
 
-class WaterLeakSensorDevice extends ZigBeeDevice {
+class DoorWindowSensorDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
-    this.log('water_leak_sensor device initialized');
+    this.log('door_window_sensor device initialized');
 
     // Call parent
     await super.onNodeInit({ zclNode });
@@ -20,6 +20,67 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
         getParser: value => Math.max(0, Math.min(100, value / 2))
       });
       this.log('✅ Battery capability registered');
+
+    // ========================================
+    // IAS ZONE ENROLLMENT - SDK3 FIXED
+    // ========================================
+    try {
+      const endpoint = this.zclNode.endpoints[1];
+      
+      // Get Homey's IEEE address (SDK3 way)
+      const ieee = this.zclNode?.bridgeId;
+      
+      if (!ieee) {
+        this.log('⚠️ Cannot get Homey IEEE address, device may auto-enroll');
+      } else {
+        this.log('📍 Homey IEEE address:', ieee);
+        
+        // Convert to proper format for IAS CIE Address
+        const ieeeAddress = ieee.replace(/:/g, '');
+        
+        // Write CIE Address to device
+        await endpoint.clusters.iasZone.writeAttributes({
+          iasCieAddress: ieeeAddress
+        });
+        
+        this.log('✅ IAS CIE Address written successfully');
+        
+        // Send enrollment response
+        await endpoint.clusters.iasZone.enrollResponse({
+          enrollResponseCode: 0, // Success
+          zoneId: 0
+        });
+        
+        this.log('✅ IAS Zone enrollment successful');
+      }
+      
+      // Register zone status notification listener
+      endpoint.clusters.iasZone.onZoneStatusChangeNotification = async (payload) => {
+        this.log('🔔 IAS Zone notification received:', payload);
+        
+        const zoneStatus = payload.zoneStatus;
+        const alarmMask = zoneStatus & 0x03; // Bits 0-1 = alarm state
+        const isTriggered = alarmMask > 0;
+        
+        this.log(`IAS Zone ${isTriggered ? 'TRIGGERED ✅' : 'CLEARED ⬜'}`);
+        
+        // Update capability
+        const capabilityName = this.hasCapability('alarm_motion') ? 'alarm_motion' : 'alarm_generic';
+        await this.setCapabilityValue(capabilityName, isTriggered);
+        
+        // Trigger flows
+        if (isTriggered) {
+          const context = this.getContextData ? this.getContextData() : {};
+          await this.triggerFlowCard(`${capabilityName === 'alarm_motion' ? 'motion_detected' : 'alarm_triggered'}`, context);
+        }
+      };
+      
+      this.log('✅ IAS Zone notification listener registered');
+      
+    } catch (err) {
+      this.error('❌ IAS Zone setup failed:', err);
+      this.log('Device may require re-pairing or will auto-enroll');
+    }
 
     }
 
@@ -54,13 +115,13 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
       this.log('✅ Luminance capability registered');
     }
 
-    // Water leak alarm
-    if (this.hasCapability('alarm_water')) {
-      this.registerCapability('alarm_water', 'iasZone', {
+    // Contact alarm (door/window)
+    if (this.hasCapability('alarm_contact')) {
+      this.registerCapability('alarm_contact', 'iasZone', {
         report: 'zoneStatus',
         reportParser: value => (value & 1) === 1
       });
-      this.log('✅ Water alarm capability registered');
+      this.log('✅ Contact alarm capability registered');
     }
 
     // Configure attribute reporting
@@ -84,7 +145,7 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
   }
 
   async onDeleted() {
-    this.log('water_leak_sensor device deleted');
+    this.log('door_window_sensor device deleted');
   }
 
 
@@ -108,7 +169,7 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
     
     // Condition: OnOff
     try {
-      const isOnCard = this.homey.flow.getDeviceConditionCard('water_leak_sensor_is_on');
+      const isOnCard = this.homey.flow.getDeviceConditionCard('door_window_sensor_is_on');
       if (isOnCard) {
         isOnCard.registerRunListener(async (args, state) => {
           return args.device.getCapabilityValue('onoff') === true;
@@ -122,7 +183,7 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
     const alarmCaps = this.getCapabilities().filter(c => c.startsWith('alarm_'));
     alarmCaps.forEach(alarmCap => {
       try {
-        const conditionCard = this.homey.flow.getDeviceConditionCard(`water_leak_sensor_${alarmCap}_is_active`);
+        const conditionCard = this.homey.flow.getDeviceConditionCard(`door_window_sensor_${alarmCap}_is_active`);
         if (conditionCard) {
           conditionCard.registerRunListener(async (args, state) => {
             return args.device.getCapabilityValue(alarmCap) === true;
@@ -138,7 +199,7 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
     measureCaps.forEach(measureCap => {
       try {
         // Greater than
-        const gtCard = this.homey.flow.getDeviceConditionCard(`water_leak_sensor_${measureCap}_greater_than`);
+        const gtCard = this.homey.flow.getDeviceConditionCard(`door_window_sensor_${measureCap}_greater_than`);
         if (gtCard) {
           gtCard.registerRunListener(async (args, state) => {
             const value = args.device.getCapabilityValue(measureCap);
@@ -149,7 +210,7 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
         }
 
         // Less than
-        const ltCard = this.homey.flow.getDeviceConditionCard(`water_leak_sensor_${measureCap}_less_than`);
+        const ltCard = this.homey.flow.getDeviceConditionCard(`door_window_sensor_${measureCap}_less_than`);
         if (ltCard) {
           ltCard.registerRunListener(async (args, state) => {
             const value = args.device.getCapabilityValue(measureCap);
@@ -168,7 +229,7 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
     
     // Action: Turn On
     try {
-      const turnOnCard = this.homey.flow.getDeviceActionCard('water_leak_sensor_turn_on');
+      const turnOnCard = this.homey.flow.getDeviceActionCard('door_window_sensor_turn_on');
       if (turnOnCard) {
         turnOnCard.registerRunListener(async (args, state) => {
           await args.device.setCapabilityValue('onoff', true);
@@ -180,7 +241,7 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
 
     // Action: Turn Off
     try {
-      const turnOffCard = this.homey.flow.getDeviceActionCard('water_leak_sensor_turn_off');
+      const turnOffCard = this.homey.flow.getDeviceActionCard('door_window_sensor_turn_off');
       if (turnOffCard) {
         turnOffCard.registerRunListener(async (args, state) => {
           await args.device.setCapabilityValue('onoff', false);
@@ -192,7 +253,7 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
 
     // Action: Toggle
     try {
-      const toggleCard = this.homey.flow.getDeviceActionCard('water_leak_sensor_toggle');
+      const toggleCard = this.homey.flow.getDeviceActionCard('door_window_sensor_toggle');
       if (toggleCard) {
         toggleCard.registerRunListener(async (args, state) => {
           const current = args.device.getCapabilityValue('onoff');
@@ -205,7 +266,7 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
 
     // Action: Set Dim
     try {
-      const setDimCard = this.homey.flow.getDeviceActionCard('water_leak_sensor_set_dim');
+      const setDimCard = this.homey.flow.getDeviceActionCard('door_window_sensor_set_dim');
       if (setDimCard) {
         setDimCard.registerRunListener(async (args, state) => {
           await args.device.setCapabilityValue('dim', args.dim);
@@ -217,7 +278,7 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
 
     // Action: Set Temperature
     try {
-      const setTempCard = this.homey.flow.getDeviceActionCard('water_leak_sensor_set_temperature');
+      const setTempCard = this.homey.flow.getDeviceActionCard('door_window_sensor_set_temperature');
       if (setTempCard) {
         setTempCard.registerRunListener(async (args, state) => {
           await args.device.setCapabilityValue('target_temperature', args.temperature);
@@ -229,21 +290,21 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
 
     // Action: Window Coverings
     try {
-      const openCard = this.homey.flow.getDeviceActionCard('water_leak_sensor_open');
+      const openCard = this.homey.flow.getDeviceActionCard('door_window_sensor_open');
       if (openCard) {
         openCard.registerRunListener(async (args, state) => {
           await args.device.setCapabilityValue('windowcoverings_set', 1);
         });
       }
 
-      const closeCard = this.homey.flow.getDeviceActionCard('water_leak_sensor_close');
+      const closeCard = this.homey.flow.getDeviceActionCard('door_window_sensor_close');
       if (closeCard) {
         closeCard.registerRunListener(async (args, state) => {
           await args.device.setCapabilityValue('windowcoverings_set', 0);
         });
       }
 
-      const setPosCard = this.homey.flow.getDeviceActionCard('water_leak_sensor_set_position');
+      const setPosCard = this.homey.flow.getDeviceActionCard('door_window_sensor_set_position');
       if (setPosCard) {
         setPosCard.registerRunListener(async (args, state) => {
           await args.device.setCapabilityValue('windowcoverings_set', args.position);
@@ -409,4 +470,4 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
 
 }
 
-module.exports = WaterLeakSensorDevice;
+module.exports = DoorWindowSensorDevice;
