@@ -168,7 +168,9 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
               this.log('📡 Homey IEEE address:', homeyIeee);
               
               // Convert IEEE address to Buffer (reverse byte order for Zigbee)
-              const ieeeClean = homeyIeee.replace(/:/g, '').toLowerCase();
+              // FIX: Ensure homeyIeee is a string
+              const ieeeString = String(homeyIeee || '');
+              const ieeeClean = ieeeString.replace(/:/g, '').toLowerCase();
               const ieeeBuffer = Buffer.from(ieeeClean.match(/.{2}/g).reverse().join(''), 'hex');
               this.log('📡 IEEE Buffer:', ieeeBuffer.toString('hex'));
               
