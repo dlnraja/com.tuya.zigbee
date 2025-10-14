@@ -63,7 +63,9 @@ class SosEmergencyButtonCr2032Device extends ZigBeeDevice {
             this.log('📡 Homey IEEE address:', ieee);
             
             // Convert to proper format
-            const ieeeClean = ieee.replace(/:/g, '').toLowerCase();
+            // FIX: Ensure ieee is a string
+            const ieeeString = String(ieee || '');
+            const ieeeClean = ieeeString.replace(/:/g, '').toLowerCase();
             const ieeeBuffer = Buffer.from(ieeeClean.match(/.{2}/g).reverse().join(''), 'hex');
             
             // Write CIE Address
