@@ -26530,8 +26530,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Safety alarm triggered",
-          "fr": "Alarme sécurité déclenchée"
+          "en": "Safety alarm triggered [[device]]",
+          "fr": "Alarme sécurité déclenchée [[device]]"
         }
       },
       {
@@ -26572,8 +26572,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Security breach detected",
-          "fr": "Violation sécurité détectée"
+          "en": "Security breach detected [[device]]",
+          "fr": "Violation sécurité détectée [[device]]"
         }
       },
       {
@@ -26614,8 +26614,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "SOS emergency button pressed",
-          "fr": "Bouton SOS urgence pressé"
+          "en": "SOS emergency button pressed [[device]]",
+          "fr": "Bouton SOS urgence pressé [[device]]"
         }
       },
       {
@@ -26665,8 +26665,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Presence detected (smart)",
-          "fr": "Présence détectée (intelligent)"
+          "en": "Presence detected (smart) [[device]]",
+          "fr": "Présence détectée (intelligent) [[device]]"
         }
       },
       {
@@ -26698,8 +26698,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "No presence (timeout)",
-          "fr": "Absence (délai écoulé)"
+          "en": "No presence (timeout) [[device]]",
+          "fr": "Absence (délai écoulé) [[device]]"
         }
       },
       {
@@ -26749,8 +26749,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Air quality warning",
-          "fr": "Alerte qualité air"
+          "en": "Air quality warning [[device]]",
+          "fr": "Alerte qualité air [[device]]"
         }
       },
       {
@@ -26791,8 +26791,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Temperature !{{left|entered}} comfort zone",
-          "fr": "Température !{{quitté|entré}} zone confort"
+          "en": "Temperature !{{left|entered}} comfort zone [[device]]",
+          "fr": "Température !{{quitté|entré}} zone confort [[device]]"
         }
       },
       {
@@ -26842,8 +26842,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Entry !{{opened|closed}}",
-          "fr": "Entrée !{{ouverte|fermée}}"
+          "en": "Entry !{{opened|closed}} [[device]]",
+          "fr": "Entrée !{{ouverte|fermée}} [[device]]"
         }
       },
       {
@@ -26875,8 +26875,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Entry left open",
-          "fr": "Entrée laissée ouverte"
+          "en": "Entry left open [[device]]",
+          "fr": "Entrée laissée ouverte [[device]]"
         }
       },
       {
@@ -26917,8 +26917,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Power consumption spike",
-          "fr": "Pic consommation électrique"
+          "en": "Power consumption spike [[device]]",
+          "fr": "Pic consommation électrique [[device]]"
         }
       },
       {
@@ -26959,8 +26959,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Light scene activated",
-          "fr": "Scène lumière activée"
+          "en": "Light scene activated [[device]]",
+          "fr": "Scène lumière activée [[device]]"
         }
       }
     ],
@@ -26983,8 +26983,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Any safety alarm !{{is|is not}} active",
-          "fr": "Une alarme sécurité !{{est|n'est pas}} active"
+          "en": "[[device]] Any safety alarm !{{is|is not}} active",
+          "fr": "[[device]] Une alarme sécurité !{{est|n'est pas}} active"
         }
       },
       {
@@ -27005,8 +27005,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Security is !{{armed|disarmed}}",
-          "fr": "Sécurité !{{armée|désarmée}}"
+          "en": "[[device]] Security is !{{armed|disarmed}}",
+          "fr": "[[device]] Sécurité !{{armée|désarmée}}"
         }
       },
       {
@@ -27027,8 +27027,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Anyone !{{is|is not}} home",
-          "fr": "Quelqu'un !{{est|n'est pas}} à la maison"
+          "en": "[[device]] Anyone !{{is|is not}} home",
+          "fr": "[[device]] Quelqu'un !{{est|n'est pas}} à la maison"
         }
       },
       {
@@ -27049,8 +27049,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Room is !{{occupied|vacant}}",
-          "fr": "Pièce !{{occupée|vacante}}"
+          "en": "[[device]] Room is !{{occupied|vacant}}",
+          "fr": "[[device]] Pièce !{{occupée|vacante}}"
         }
       },
       {
@@ -27071,8 +27071,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Air quality is !{{good|poor}}",
-          "fr": "Qualité air !{{bonne|mauvaise}}"
+          "en": "[[device]] Air quality is !{{good|poor}}",
+          "fr": "[[device]] Qualité air !{{bonne|mauvaise}}"
         }
       },
       {
@@ -27093,8 +27093,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Climate is !{{optimal|suboptimal}}",
-          "fr": "Climat !{{optimal|sous-optimal}}"
+          "en": "[[device]] Climate is !{{optimal|suboptimal}}",
+          "fr": "[[device]] Climat !{{optimal|sous-optimal}}"
         }
       },
       {
@@ -27115,8 +27115,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "All entries !{{are|are not}} secured",
-          "fr": "Toutes entrées !{{sont|ne sont pas}} sécurisées"
+          "en": "[[device]] All entries !{{are|are not}} secured",
+          "fr": "[[device]] Toutes entrées !{{sont|ne sont pas}} sécurisées"
         }
       },
       {
@@ -27137,8 +27137,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Device is !{{consuming|not consuming}} power",
-          "fr": "Appareil !{{consomme|ne consomme pas}}"
+          "en": "[[device]] Device is !{{consuming|not consuming}} power",
+          "fr": "[[device]] Appareil !{{consomme|ne consomme pas}}"
         }
       },
       {
@@ -27159,8 +27159,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Natural light is !{{sufficient|insufficient}}",
-          "fr": "Lumière naturelle !{{suffisante|insuffisante}}"
+          "en": "[[device]] Natural light is !{{sufficient|insufficient}}",
+          "fr": "[[device]] Lumière naturelle !{{suffisante|insuffisante}}"
         }
       }
     ],
@@ -27183,8 +27183,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Emergency shutdown protocol",
-          "fr": "Protocole arrêt urgence"
+          "en": "Emergency shutdown protocol [[device]]",
+          "fr": "Protocole arrêt urgence [[device]]"
         }
       },
       {
@@ -27205,8 +27205,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Trigger full security protocol",
-          "fr": "Déclencher protocole sécurité complet"
+          "en": "Trigger full security protocol [[device]]",
+          "fr": "Déclencher protocole sécurité complet [[device]]"
         }
       },
       {
@@ -27227,8 +27227,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Adaptive lighting control",
-          "fr": "Contrôle éclairage adaptatif"
+          "en": "Adaptive lighting control [[device]]",
+          "fr": "Contrôle éclairage adaptatif [[device]]"
         }
       },
       {
@@ -27249,8 +27249,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Improve air quality",
-          "fr": "Améliorer qualité air"
+          "en": "Improve air quality [[device]]",
+          "fr": "Améliorer qualité air [[device]]"
         }
       },
       {
@@ -27271,8 +27271,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Smart climate optimization",
-          "fr": "Optimisation climatique intelligente"
+          "en": "Smart climate optimization [[device]]",
+          "fr": "Optimisation climatique intelligente [[device]]"
         }
       },
       {
@@ -27293,8 +27293,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Secure home protocol",
-          "fr": "Protocole sécurisation maison"
+          "en": "Secure home protocol [[device]]",
+          "fr": "Protocole sécurisation maison [[device]]"
         }
       },
       {
@@ -27315,8 +27315,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Load shedding protocol",
-          "fr": "Protocole délestage"
+          "en": "Load shedding protocol [[device]]",
+          "fr": "Protocole délestage [[device]]"
         }
       },
       {
@@ -27337,8 +27337,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Circadian lighting",
-          "fr": "Éclairage circadien"
+          "en": "Circadian lighting [[device]]",
+          "fr": "Éclairage circadien [[device]]"
         }
       }
     ]
