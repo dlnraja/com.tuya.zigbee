@@ -27744,8 +27744,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Send battery status report",
-          "fr": "Envoyer rapport état batteries"
+          "en": "Send battery status report via [[method]]",
+          "fr": "Envoyer rapport état batteries via [[method]]"
         }
       },
       {
@@ -27770,8 +27770,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Enable battery maintenance mode",
-          "fr": "Activer mode maintenance batterie"
+          "en": "Set battery maintenance mode to [[mode]]",
+          "fr": "Définir mode maintenance batterie sur [[mode]]"
         }
       }
     ]
