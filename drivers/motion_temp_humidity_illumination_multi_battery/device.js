@@ -2,10 +2,11 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
+const IASZoneEnroller = require('../../lib/IASZoneEnroller');
 
 /**
  * HOBEIAN Multisensor (Motion + Temperature + Humidity + Illumination)
- * v2.15.12 - Enhanced IAS Zone enrollment for motion detection (2025-10-12)
+ * v2.15.98 - Multi-method IAS Zone enrollment with automatic fallback
  */
 class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
 
@@ -132,212 +133,42 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
       }
     }
     
-    // Motion via IAS Zone - CRITICAL FIX v2.15.71 SDK3
-    // Fixed: Use CORRECT Homey SDK3 API for IAS Zone enrollment
+    // Motion via IAS Zone - v2.15.98 Multi-method with automatic fallback
     if (this.hasCapability('alarm_motion')) {
       try {
         const endpoint = zclNode.endpoints[this.getClusterEndpoint(CLUSTER.IAS_ZONE)];
         if (endpoint && endpoint.clusters.iasZone) {
-          this.log('🚶 Setting up Motion IAS Zone...');
+          this.log('🚶 Setting up Motion IAS Zone with multi-method enrollment...');
           
-          // CRITICAL SDK3 FIX v2.15.97: Use correct method to get Homey IEEE address
-          try {
-            // Get Homey's IEEE address from zclNode (SDK3 correct method)
-            let homeyIeee = null;
-            let ieeeBuffer = null;
-            
-            // Method 1: Try to read existing CIE address first (most reliable)
-            if (endpoint.clusters.iasZone) {
-              try {
-                const attrs = await endpoint.clusters.iasZone.readAttributes(['iasCIEAddress']);
-                if (attrs.iasCIEAddress) {
-                  // Check if already enrolled (non-zero address)
-                  const hexStr = attrs.iasCIEAddress.toString('hex');
-                  if (hexStr !== '0000000000000000' && hexStr.length === 16) {
-                    this.log('📡 CIE already enrolled, using existing address:', hexStr);
-                    ieeeBuffer = attrs.iasCIEAddress;
-                    // Convert to readable format for logging
-                    homeyIeee = hexStr.match(/.{2}/g).reverse().join(':');
-                  }
-                }
-              } catch (e) {
-                this.log('Could not read existing CIE address:', e.message);
-              }
-            }
-            
-            // Method 2: Try via zclNode bridgeId
-            if (!ieeeBuffer && zclNode && zclNode._node && zclNode._node.bridgeId) {
-              const bridgeId = zclNode._node.bridgeId;
-              
-              // CRITICAL FIX v2.15.97: Properly handle Buffer or string bridgeId
-              if (Buffer.isBuffer(bridgeId) && bridgeId.length >= 8) {
-                // Use buffer directly if valid length
-                ieeeBuffer = bridgeId.length === 8 ? bridgeId : bridgeId.slice(0, 8);
-                // Convert to readable format for logging
-                const hexBytes = [];
-                for (let i = 0; i < ieeeBuffer.length; i++) {
-                  hexBytes.push(ieeeBuffer[i].toString(16).padStart(2, '0'));
-                }
-                homeyIeee = hexBytes.join(':');
-                this.log('📡 Homey IEEE from bridgeId (Buffer):', homeyIeee);
-              } else if (typeof bridgeId === 'string' && bridgeId.length >= 16) {
-                // Parse string format (colon-separated or raw hex)
-                homeyIeee = bridgeId;
-                this.log('📡 Homey IEEE from bridgeId (string):', homeyIeee);
-                
-                // Convert string to Buffer
-                const ieeeClean = (typeof homeyIeee === 'string') ? 
-                  homeyIeee.replace(/:/g, '').toLowerCase() : '';
-                
-                if (ieeeClean.length >= 16) {
-                  const hexPairs = ieeeClean.substring(0, 16).match(/.{2}/g);
-                  if (hexPairs && hexPairs.length === 8) {
-                    ieeeBuffer = Buffer.from(hexPairs.reverse().join(''), 'hex');
-                  }
-                }
-              }
-            }
-            
-            // Final validation and enrollment
-            if (ieeeBuffer && Buffer.isBuffer(ieeeBuffer) && ieeeBuffer.length === 8) {
-              this.log('📡 Final IEEE Buffer (8 bytes):', ieeeBuffer.toString('hex'));
-              
-              // SDK3 Correct Method: writeAttributes with iasCIEAddress
-              await endpoint.clusters.iasZone.writeAttributes({
-                iasCIEAddress: ieeeBuffer
-              });
-              this.log('✅ IAS CIE Address written successfully (SDK3 method)');
-              
-              // Wait for enrollment to complete
-              await new Promise(resolve => setTimeout(resolve, 2000));
-              
-              // Verify enrollment
-              const cieAddr = await endpoint.clusters.iasZone.readAttributes(['iasCIEAddress']);
-              this.log('✅ Enrollment verified, CIE Address:', cieAddr.iasCIEAddress?.toString('hex'));
-              
-              // Configure zone type if needed
-              try {
-                await endpoint.clusters.iasZone.writeAttributes({
-                  zoneType: 13 // Motion sensor type
-                });
-                this.log('✅ Zone type configured as motion sensor (13)');
-              } catch (zoneTypeErr) {
-                this.log('Zone type configuration skipped:', zoneTypeErr.message);
-              }
-            } else {
-              this.log('⚠️ Could not create valid IEEE Buffer, device may auto-enroll');
-              this.log('IEEE Buffer state:', {
-                exists: !!ieeeBuffer,
-                isBuffer: Buffer.isBuffer(ieeeBuffer),
-                length: ieeeBuffer?.length
-              });
-            }
-          } catch (enrollErr) {
-            this.log('⚠️ IAS Zone enrollment failed:', enrollErr.message);
-            this.log('Device may auto-enroll or require manual pairing');
-          }
-          
-          // Skip configureReporting - many Tuya IAS devices don't support it
-          // Instead, rely purely on zoneStatusChangeNotification
-          
-          // CRITICAL: Listen for motion notifications (v2.15.50 enhanced)
-          endpoint.clusters.iasZone.on('zoneStatusChangeNotification', async (payload) => {
-            this.log('🚶 ===== MOTION NOTIFICATION RECEIVED =====');
-            this.log('Full payload:', JSON.stringify(payload));
-            
-            try {
-              // Parse zoneStatus - handle both object and number formats
-              let motionDetected = false;
-              
-              if (typeof payload.zoneStatus === 'object') {
-                motionDetected = payload.zoneStatus.alarm1 || payload.zoneStatus.alarm2 || false;
-                this.log('ZoneStatus (object):', payload.zoneStatus);
-              } else if (typeof payload.zoneStatus === 'number') {
-                motionDetected = (payload.zoneStatus & 1) === 1;
-                this.log('ZoneStatus (number):', payload.zoneStatus, '→ motion:', motionDetected);
-              } else {
-                this.log('⚠️ Unknown zoneStatus type:', typeof payload.zoneStatus);
-              }
-              
-              this.log('🛜 Motion state:', motionDetected ? '✅ DETECTED' : '⭕ Clear');
-              await this.setCapabilityValue('alarm_motion', motionDetected).catch(this.error);
-              
-              // Trigger flow cards SDK3
-              if (motionDetected) {
-                // Motion detected flow
-                const enableLogging = this.getSetting('enable_motion_logging');
-                if (enableLogging) {
-                  this.log('🎞️ Triggering motion_detected flow card');
-                }
-                
-                try {
-                  await this.homey.flow.getDeviceTriggerCard('motion_detected').trigger(this, {
-                    luminance: this.getCapabilityValue('measure_luminance') || 0,
-                    temperature: this.getCapabilityValue('measure_temperature') || 0,
-                    humidity: this.getCapabilityValue('measure_humidity') || 0
-                  }).catch(err => this.error('Flow trigger failed:', err));
-                } catch (flowErr) {
-                  this.error('⚠️ Motion flow trigger error:', flowErr);
-                }
-                
-                // Auto-reset motion after timeout (configurable)
-                const timeout = this.getSetting('motion_timeout') || 60;
-                this.log(`⏱️ Motion will auto-reset in ${timeout} seconds`);
-                
-                if (this.motionTimeout) clearTimeout(this.motionTimeout);
-                this.motionTimeout = setTimeout(async () => {
-                  await this.setCapabilityValue('alarm_motion', false).catch(this.error);
-                  this.log('✅ Motion auto-reset');
-                  
-                  // Trigger motion_cleared flow
-                  try {
-                    await this.homey.flow.getDeviceTriggerCard('motion_cleared').trigger(this)
-                      .catch(err => this.error('Motion cleared flow failed:', err));
-                  } catch (flowErr) {
-                    this.error('⚠️ Motion cleared flow error:', flowErr);
-                  }
-                }, timeout * 1000);
-              } else {
-                // Trigger motion_cleared flow
-                try {
-                  await this.homey.flow.getDeviceTriggerCard('motion_cleared').trigger(this)
-                    .catch(err => this.error('Motion cleared flow failed:', err));
-                } catch (flowErr) {
-                  this.error('⚠️ Motion cleared flow error:', flowErr);
-                }
-              }
-            } catch (parseErr) {
-              this.error('❌ Motion notification parse error:', parseErr);
-            }
+          // Create IAS Zone enroller with automatic fallback
+          this.iasZoneEnroller = new IASZoneEnroller(this, endpoint, {
+            zoneType: 13, // Motion sensor
+            capability: 'alarm_motion',
+            flowCard: 'motion_detected',
+            flowTokens: {},
+            autoResetTimeout: (this.getSetting('motion_timeout') || 60) * 1000,
+            pollInterval: 30000, // 30s polling if needed
+            enablePolling: true
           });
           
-          // ADDITIONAL: Also listen for standard attribute reports as fallback
-          endpoint.clusters.iasZone.on('attr.zoneStatus', async (value) => {
-            this.log('🚶 Motion attribute report (fallback):', value);
-            const motionDetected = typeof value === 'number' ? (value & 1) === 1 : false;
-            if (motionDetected) {
-              await this.setCapabilityValue('alarm_motion', true).catch(this.error);
-              
-              // Auto-reset
-              const timeout = this.getSetting('motion_timeout') || 60;
-              if (this.motionTimeout) clearTimeout(this.motionTimeout);
-              this.motionTimeout = setTimeout(async () => {
-                await this.setCapabilityValue('alarm_motion', false).catch(this.error);
-              }, timeout * 1000);
-            }
-          });
+          // Try all enrollment methods automatically
+          const enrollMethod = await this.iasZoneEnroller.enroll(zclNode);
           
-          // Register capability for reading
-          this.registerCapability('alarm_motion', CLUSTER.IAS_ZONE, {
-            get: 'zoneStatus',
-            report: 'zoneStatus',
-            reportParser: value => {
-              this.log('Motion IAS Zone status:', value);
-              return (value & 1) === 1;
-            }
-          });
-          
-          this.log('✅ Motion IAS Zone registered with notification listener');
+          if (enrollMethod) {
+            this.log(`✅ Motion IAS Zone enrolled successfully via: ${enrollMethod}`);
+            this.log('📊 Enrollment status:', this.iasZoneEnroller.getStatus());
+            
+            // Register capability for reading
+            this.registerCapability('alarm_motion', CLUSTER.IAS_ZONE, {
+              get: 'zoneStatus',
+              report: 'zoneStatus',
+              reportParser: value => {
+                this.log('Motion IAS Zone status:', value);
+                return (value & 1) === 1;
+              }
+            });
+            
+            this.log('✅ Motion IAS Zone fully configured with automatic fallback');
         } else {
           this.log('⚠️ IAS Zone cluster not found, trying Occupancy Sensing fallback...');
           
@@ -523,6 +354,12 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
     
     if (this.motionTimeout) {
       clearTimeout(this.motionTimeout);
+    }
+    
+    // Cleanup IAS Zone enroller
+    if (this.iasZoneEnroller) {
+      this.iasZoneEnroller.destroy();
+      this.iasZoneEnroller = null;
     }
   }
   // ========================================
