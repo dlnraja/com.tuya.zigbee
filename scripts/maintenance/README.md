@@ -1,0 +1,96 @@
+# Scripts maintenance
+
+## Scripts disponibles
+
+### CLEAN_APP_JSON.js
+
+```bash
+node scripts/maintenance/CLEAN_APP_JSON.js
+```
+
+### COMPLETE_AUDIT_AND_FIX.js
+
+```bash
+node scripts/maintenance/COMPLETE_AUDIT_AND_FIX.js
+```
+
+### DEEP_FIX_DEVICE_JS.js
+
+```bash
+node scripts/maintenance/DEEP_FIX_DEVICE_JS.js
+```
+
+### FIX_APP_IMAGES_FINAL.js
+
+```bash
+node scripts/maintenance/FIX_APP_IMAGES_FINAL.js
+```
+
+### FIX_DRIVER_IMAGES.js
+
+```bash
+node scripts/maintenance/FIX_DRIVER_IMAGES.js
+```
+
+### FIX_DRIVER_IMAGES_COMPLETE.js
+
+```bash
+node scripts/maintenance/FIX_DRIVER_IMAGES_COMPLETE.js
+```
+
+### FIX_SYNTAX_ERRORS.js
+
+```bash
+node scripts/maintenance/FIX_SYNTAX_ERRORS.js
+```
+
+### fix_ts0210_bug.js
+
+```bash
+node scripts/maintenance/fix_ts0210_bug.js
+```
+
+### optimize-images.js
+
+```bash
+node scripts/maintenance/optimize-images.js
+```
+
+### ORGANIZE_PROJECT_CLEAN.js
+
+```bash
+node scripts/maintenance/ORGANIZE_PROJECT_CLEAN.js
+```
+
+### ULTIMATE_DIAGNOSTIC_AND_REPAIR.js
+
+```bash
+node scripts/maintenance/ULTIMATE_DIAGNOSTIC_AND_REPAIR.js
+```
+
+### ULTIMATE_VALIDATION_AND_FIX_ALL.js
+
+```bash
+node scripts/maintenance/ULTIMATE_VALIDATION_AND_FIX_ALL.js
+```
+
+### UNBRANDED_RENAME_AND_ENERGY_FIX.js
+
+```bash
+node scripts/maintenance/UNBRANDED_RENAME_AND_ENERGY_FIX.js
+```
+
+### UX_CRITICAL_FIX.js
+
+```bash
+node scripts/maintenance/UX_CRITICAL_FIX.js
+```
+
+
+## Utilisation
+
+Tous les scripts peuvent être importés via l'index:
+
+```javascript
+const maintenance = require('./scripts/maintenance');
+```
