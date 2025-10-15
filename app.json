@@ -326,10 +326,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -442,10 +438,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -471,11 +463,6 @@
       "capabilities": [
         "alarm_generic"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png",
-        "xlarge": "./assets/images/xlarge.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "Signify Netherlands B.V."
@@ -551,11 +538,6 @@
           "usageOff": 0.5
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png",
-        "xlarge": "./assets/images/xlarge.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_riwp3k79",
@@ -616,11 +598,6 @@
         "onoff",
         "dim"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png",
-        "xlarge": "./assets/images/xlarge.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "Signify Netherlands B.V.",
@@ -774,11 +751,6 @@
         "dim",
         "light_temperature"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png",
-        "xlarge": "./assets/images/xlarge.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "Signify Netherlands B.V.",
@@ -1089,10 +1061,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "pair": [
         {
           "id": "list_devices",
@@ -1240,10 +1208,6 @@
         }
       },
       "capabilitiesOptions": {},
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -1356,10 +1320,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -1490,10 +1450,6 @@
             }
           ]
         }
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -1653,10 +1609,6 @@
         }
       },
       "capabilitiesOptions": {},
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -1757,10 +1709,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -1916,10 +1864,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -2032,10 +1976,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -2057,11 +1997,6 @@
         "alarm_contact",
         "measure_battery"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png",
-        "xlarge": "./assets/images/xlarge.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "IKEA of Sweden"
@@ -2220,10 +2155,6 @@
           }
         }
       },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
-      },
       "pair": [
         {
           "id": "list_devices",
@@ -2278,10 +2209,6 @@
         "onoff",
         "dim"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "TS0001",
@@ -2530,10 +2457,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "capabilitiesOptions": {},
       "platforms": [
         "local"
@@ -2686,10 +2609,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "capabilitiesOptions": {
         "onoff": {
           "title": {
@@ -2836,10 +2755,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "capabilitiesOptions": {},
       "platforms": [
         "local"
@@ -2958,10 +2873,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "community": {
         "sources": [
           "Generic compatibility database",
@@ -3006,10 +2917,6 @@
       "connectivity": [
         "zigbee"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "TS0041",
@@ -3225,10 +3132,6 @@
           }
         }
       },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
-      },
       "pair": [
         {
           "id": "list_devices",
@@ -3279,11 +3182,6 @@
         "alarm_generic",
         "alarm_motion"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png",
-        "xlarge": "./assets/images/xlarge.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "Signify Netherlands B.V."
@@ -3387,10 +3285,6 @@
       "connectivity": [
         "zigbee"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "TS0041",
@@ -3612,10 +3506,6 @@
           "decimals": 2
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -3771,10 +3661,6 @@
           },
           "decimals": 2
         }
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -3945,10 +3831,6 @@
           "decimals": 2
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -4074,10 +3956,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -4245,10 +4123,6 @@
           }
         }
       },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
-      },
       "pair": [
         {
           "id": "list_devices",
@@ -4396,10 +4270,6 @@
           }
         }
       },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
-      },
       "pair": [
         {
           "id": "list_devices",
@@ -4539,10 +4409,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -4704,10 +4570,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -4738,10 +4600,6 @@
       "connectivity": [
         "zigbee"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "TS0041",
@@ -4971,10 +4829,6 @@
           }
         }
       },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
-      },
       "pair": [
         {
           "id": "list_devices",
@@ -5063,11 +4917,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png",
-        "xlarge": "./assets/images/xlarge.png"
-      },
       "platforms": [
         "local"
       ],
@@ -5138,10 +4987,6 @@
             "fr": "Appuyez et maintenez le bouton pendant 5 secondes pour appairer"
           }
         }
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -5259,10 +5104,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -5374,10 +5215,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "community": {
         "sources": [
@@ -5523,10 +5360,6 @@
         }
       },
       "capabilitiesOptions": {},
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -5665,10 +5498,6 @@
         }
       },
       "capabilitiesOptions": {},
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -5800,10 +5629,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -5827,11 +5652,6 @@
         "light_hue",
         "light_saturation"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png",
-        "xlarge": "./assets/images/xlarge.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "Signify Netherlands B.V."
@@ -6085,10 +5905,6 @@
           }
         }
       },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
-      },
       "pair": [
         {
           "id": "list_devices",
@@ -6252,10 +6068,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "capabilitiesOptions": {},
       "platforms": [
         "local"
@@ -6274,10 +6086,6 @@
         "onoff",
         "dim"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "TS0001",
@@ -6424,10 +6232,6 @@
       "connectivity": [
         "zigbee"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "TS0001",
@@ -6644,10 +6448,6 @@
         ]
       },
       "capabilitiesOptions": {},
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -6680,11 +6480,6 @@
         "batteries": [
           "CR2450"
         ]
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png",
-        "xlarge": "./assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -6744,10 +6539,6 @@
       "connectivity": [
         "zigbee"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "TS0041",
@@ -6991,10 +6782,6 @@
           "Tuya"
         ]
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "settings": [
         {
           "id": "motion_sensitivity",
@@ -7104,10 +6891,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -7250,10 +7033,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -7360,10 +7139,6 @@
             "en": "Press the pairing button until LED blinks rapidly"
           }
         }
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -7521,10 +7296,6 @@
           }
         }
       },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
-      },
       "pair": [
         {
           "id": "list_devices",
@@ -7674,10 +7445,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -7853,10 +7620,6 @@
           }
         }
       },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
-      },
       "pair": [
         {
           "id": "list_devices",
@@ -7903,10 +7666,6 @@
       "connectivity": [
         "zigbee"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "TS0041",
@@ -8018,10 +7777,6 @@
       "connectivity": [
         "zigbee"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "TS0041",
@@ -8211,10 +7966,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -8341,10 +8092,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -8495,10 +8242,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -8624,10 +8367,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -8783,10 +8522,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -8950,10 +8685,6 @@
           "decimals": 2
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -8976,11 +8707,6 @@
         "measure_luminance",
         "measure_battery"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png",
-        "xlarge": "./assets/images/xlarge.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZE200_ztc6ggyl",
@@ -9218,10 +8944,6 @@
           }
         }
       },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
-      },
       "pair": [
         {
           "id": "list_devices",
@@ -9371,10 +9093,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -9529,10 +9247,6 @@
           }
         }
       },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
-      },
       "pair": [
         {
           "id": "list_devices",
@@ -9667,10 +9381,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -9820,10 +9530,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -9951,10 +9657,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "capabilitiesOptions": {},
       "platforms": [
         "local"
@@ -10080,10 +9782,6 @@
           }
         }
       },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
-      },
       "pair": [
         {
           "id": "list_devices",
@@ -10121,10 +9819,6 @@
         "measure_power",
         "dim"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "TS0001",
@@ -10264,10 +9958,6 @@
       "connectivity": [
         "zigbee"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "TS0001",
@@ -10513,10 +10203,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -10627,10 +10313,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "community": {
         "sources": [
@@ -10797,10 +10479,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -10947,10 +10625,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "capabilitiesOptions": {
         "windowcoverings_set": {
           "title": {
@@ -11095,10 +10769,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "capabilitiesOptions": {
         "windowcoverings_set": {
           "title": {
@@ -11139,10 +10809,6 @@
       "capabilities": [
         "onoff"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "TS0041",
@@ -11338,10 +11004,6 @@
           "Tuya"
         ]
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "settings": [
         {
           "id": "battery_threshold",
@@ -11450,10 +11112,6 @@
           "TS0006",
           "Tuya"
         ]
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "settings": [
         {
@@ -11589,10 +11247,6 @@
           "TS0006",
           "Tuya"
         ]
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "settings": [
         {
@@ -11730,10 +11384,6 @@
           "TS0006",
           "Tuya"
         ]
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "settings": [
         {
@@ -11885,10 +11535,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "energy": {
         "batteries": [
           "CR2032"
@@ -12027,10 +11673,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -12178,10 +11820,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -12314,10 +11952,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "community": {
         "sources": [
@@ -12462,10 +12096,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -12614,10 +12244,6 @@
           }
         }
       },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
-      },
       "pair": [
         {
           "id": "list_devices",
@@ -12657,10 +12283,6 @@
       "connectivity": [
         "zigbee"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "TS0205",
@@ -12884,10 +12506,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -12915,10 +12533,6 @@
       "connectivity": [
         "zigbee"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "TS0041",
@@ -13049,10 +12663,6 @@
       "connectivity": [
         "zigbee"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "TS0041",
@@ -13303,10 +12913,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "capabilitiesOptions": {},
       "platforms": [
         "local"
@@ -13413,10 +13019,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "community": {
         "sources": [
@@ -13594,10 +13196,6 @@
           "decimals": 2
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -13725,10 +13323,6 @@
           }
         }
       },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
-      },
       "pair": [
         {
           "id": "list_devices",
@@ -13804,11 +13398,6 @@
           "usageOn": 5,
           "usageOff": 0.5
         }
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png",
-        "xlarge": "./assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -14031,10 +13620,6 @@
           "decimals": 2
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -14059,11 +13644,6 @@
         "measure_current",
         "meter_power"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png",
-        "xlarge": "./assets/images/xlarge.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_typdpbpg",
@@ -14188,10 +13768,6 @@
       "connectivity": [
         "zigbee"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "TS0201",
@@ -14424,10 +14000,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -14597,10 +14169,6 @@
           }
         }
       },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
-      },
       "pair": [
         {
           "id": "list_devices",
@@ -14741,10 +14309,6 @@
         ]
       },
       "capabilitiesOptions": {},
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -14877,10 +14441,6 @@
           "TS0006",
           "Tuya"
         ]
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "settings": [],
       "name": {
@@ -15034,10 +14594,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -15180,10 +14736,6 @@
           "TS0006",
           "Tuya"
         ]
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "settings": [],
       "name": {
@@ -15365,10 +14917,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -15523,10 +15071,6 @@
           "TS0006",
           "Tuya"
         ]
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "settings": [],
       "name": {
@@ -15685,10 +15229,6 @@
           "Tuya"
         ]
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "settings": [],
       "name": {
         "en": "Smart Switch 4gang Hybrid"
@@ -15822,10 +15362,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -15956,10 +15492,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -15991,10 +15523,6 @@
       "connectivity": [
         "zigbee"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "TS0041",
@@ -16264,10 +15792,6 @@
           }
         }
       },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
-      },
       "pair": [
         {
           "id": "list_devices",
@@ -16443,10 +15967,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -16555,11 +16075,6 @@
         "batteries": [
           "CR123A"
         ]
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png",
-        "xlarge": "./assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -16717,10 +16232,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -16924,10 +16435,6 @@
           }
         }
       },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
-      },
       "pair": [
         {
           "id": "list_devices",
@@ -17101,10 +16608,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -17234,10 +16737,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -17406,10 +16905,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "capabilitiesOptions": {},
       "platforms": [
         "local"
@@ -17546,10 +17041,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -17704,10 +17195,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "capabilitiesOptions": {},
       "platforms": [
         "local"
@@ -17857,10 +17344,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -18013,10 +17496,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -18200,10 +17679,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "capabilitiesOptions": {
         "onoff": {
           "title": {
@@ -18362,10 +17837,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "capabilitiesOptions": {},
       "platforms": [
         "local"
@@ -18516,10 +17987,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -18678,10 +18145,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "capabilitiesOptions": {},
       "platforms": [
         "local"
@@ -18827,10 +18290,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "capabilitiesOptions": {},
       "platforms": [
         "local"
@@ -18972,10 +18431,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "capabilitiesOptions": {},
       "platforms": [
         "local"
@@ -19076,10 +18531,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -19210,10 +18661,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -19388,10 +18835,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -19568,10 +19011,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "capabilitiesOptions": {
         "measure_temperature": {
           "title": {
@@ -19747,10 +19186,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -19891,10 +19326,6 @@
           }
         }
       },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
-      },
       "pair": [
         {
           "id": "list_devices",
@@ -19978,11 +19409,6 @@
         "batteries": [
           "CR2032"
         ]
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png",
-        "xlarge": "./assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -20087,10 +19513,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -20280,10 +19702,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "capabilitiesOptions": {
         "measure_temperature": {
           "title": {
@@ -20363,10 +19781,6 @@
       "connectivity": [
         "zigbee"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "TS0041",
@@ -20590,10 +20004,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "community": {
         "sources": [
           "Generic compatibility database",
@@ -20806,10 +20216,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "capabilitiesOptions": {},
       "platforms": [
         "local"
@@ -20926,10 +20332,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -21070,10 +20472,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -21223,10 +20621,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -21400,10 +20794,6 @@
           }
         }
       },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
-      },
       "pair": [
         {
           "id": "list_devices",
@@ -21563,10 +20953,6 @@
           }
         }
       },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
-      },
       "pair": [
         {
           "id": "list_devices",
@@ -21704,10 +21090,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -21853,10 +21235,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -22012,10 +21390,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -22185,10 +21559,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "capabilitiesOptions": {
         "measure_power": {
           "title": {
@@ -22343,10 +21713,6 @@
           }
         }
       },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
-      },
       "pair": [
         {
           "id": "list_devices",
@@ -22482,10 +21848,6 @@
           "TS0504",
           "Tuya"
         ]
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "settings": [],
       "name": {
@@ -22626,10 +21988,6 @@
           "Tuya"
         ]
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "settings": [],
       "name": {
         "en": "Wall Switch 1gang DC"
@@ -22753,10 +22111,6 @@
           "TS0504",
           "Tuya"
         ]
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "settings": [],
       "name": {
@@ -22919,10 +22273,6 @@
           "Tuya"
         ]
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "settings": [],
       "name": {
         "en": "Wall Switch 2gang DC"
@@ -23070,10 +22420,6 @@
           "TS0504",
           "Tuya"
         ]
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "settings": [],
       "name": {
@@ -23254,10 +22600,6 @@
           "Tuya"
         ]
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "settings": [],
       "name": {
         "en": "Wall Switch 3gang DC"
@@ -23431,10 +22773,6 @@
           "TS0504",
           "Tuya"
         ]
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "settings": [],
       "name": {
@@ -23619,10 +22957,6 @@
           "TS0006",
           "Tuya"
         ]
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "settings": [],
       "name": {
@@ -23828,10 +23162,6 @@
           "TS0504",
           "Tuya"
         ]
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "settings": [],
       "name": {
@@ -24050,10 +23380,6 @@
           "Tuya"
         ]
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "settings": [],
       "name": {
         "en": "Wall Switch 6gang AC"
@@ -24178,10 +23504,6 @@
             "en": "Press and hold the pairing button for 5 seconds"
           }
         }
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -24313,10 +23635,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "capabilitiesOptions": {},
       "platforms": [
         "local"
@@ -24443,10 +23761,6 @@
           }
         }
       },
-      "images": {
-        "large": "./assets/images/large.png",
-        "small": "./assets/images/small.png"
-      },
       "pair": [
         {
           "id": "list_devices",
@@ -24502,10 +23816,6 @@
       "connectivity": [
         "zigbee"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "TS0041",
@@ -24702,10 +24012,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "capabilitiesOptions": {},
       "platforms": [
         "local"
@@ -24732,11 +24038,6 @@
       "capabilities": [
         "measure_battery"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png",
-        "xlarge": "./assets/images/xlarge.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "IKEA of Sweden"
@@ -24834,11 +24135,6 @@
       "capabilities": [
         "measure_battery"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png",
-        "xlarge": "./assets/images/xlarge.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "IKEA of Sweden"
@@ -24943,11 +24239,6 @@
           "CR2032"
         ]
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png",
-        "xlarge": "./assets/images/xlarge.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "IKEA of Sweden",
@@ -24996,10 +24287,6 @@
         "onoff",
         "dim"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "TS0001",
@@ -25265,10 +24552,6 @@
           "Tuya"
         ]
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "name": {
         "en": "Wireless Switch 2gang CR2032"
       },
@@ -25443,10 +24726,6 @@
           "Tuya"
         ]
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "name": {
         "en": "Wireless Switch 3gang CR2032"
       },
@@ -25601,10 +24880,6 @@
           "TS0006",
           "Tuya"
         ]
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "name": {
         "en": "Wireless Switch 4gang CR2032"
@@ -25774,10 +25049,6 @@
           }
         }
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "platforms": [
         "local"
       ],
@@ -25916,10 +25187,6 @@
           "TS0006",
           "Tuya"
         ]
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "settings": [
         {
@@ -26077,10 +25344,6 @@
           "Tuya"
         ]
       },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "settings": [
         {
           "id": "battery_threshold",
@@ -26126,10 +25389,6 @@
       "connectivity": [
         "zigbee"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "TS0001",
@@ -26257,10 +25516,6 @@
       "capabilities": [
         "onoff"
       ],
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
-      },
       "zigbee": {
         "manufacturerName": [
           "TS0001",
@@ -26454,10 +25709,6 @@
             ]
           }
         }
-      },
-      "images": {
-        "small": "./assets/images/small.png",
-        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
