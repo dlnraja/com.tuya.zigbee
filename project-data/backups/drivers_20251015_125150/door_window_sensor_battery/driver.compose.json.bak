@@ -1,37 +1,19 @@
 {
   "name": {
-    "en": "Soil Moisture & Temperature Sensor (Battery)"
+    "en": "Door Window Sensor (Battery)"
   },
   "class": "sensor",
   "capabilities": [
+    "onoff",
+    "measure_battery",
     "measure_temperature",
-    "measure_humidity",
-    "measure_battery"
+    "alarm_motion",
+    "measure_luminance",
+    "alarm_contact",
+    "alarm_battery"
   ],
-  "capabilitiesOptions": {
-    "measure_temperature": {
-      "title": {
-        "en": "Soil Temperature"
-      },
-      "units": {
-        "en": "°C"
-      }
-    },
-    "measure_humidity": {
-      "title": {
-        "en": "Soil Moisture"
-      },
-      "units": {
-        "en": "%"
-      }
-    }
-  },
   "zigbee": {
     "manufacturerName": [
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044",
       "TS0201",
       "TS0202",
       "TS0203",
@@ -49,15 +31,14 @@
       "_TZ3000_mcxw5ehu",
       "_TZ3000_mmtwjmaq",
       "_TZ3000_n2egfsli",
-      "_TZ3000_tk3s5tyg",
+      "_TZ3000_okohwwap",
       "_TZE200_81isopgh",
       "_TZE200_bjawzodf",
       "_TZE200_cwbvmsar",
       "_TZE200_dwcarsat",
       "_TZE200_m9skfctm",
+      "_TZE200_pay2byax",
       "_TZE200_ryfmq5rl",
-      "_TZE284_aao3yzhs",
-      "_TZE284_sgabhwa6",
       "_TZ3000_1dd0d5yi",
       "_TZ3000_2mbfxlzr",
       "_TZ3000_46t1rvdu",
@@ -81,10 +62,10 @@
       "Tuya"
     ],
     "productId": [
-      "TS0201",
-      "TS0001",
-      "TS0202",
       "TS0203",
+      "TS0001",
+      "TS0201",
+      "TS0202",
       "TS0205",
       "TS0207",
       "TS0222",
@@ -119,64 +100,60 @@
         "clusters": [
           0,
           1,
-          1024,
-          1030,
-          1280,
-          61184
+          1280
         ],
         "bindings": [
           1
         ]
       }
-    },
-    "learnmode": {
-      "image": "/drivers/soil_moisture_temperature_sensor_battery/assets/large.png",
-      "instruction": {
-        "en": "Press and hold the pairing button until the LED blinks"
-      }
     }
   },
   "images": {
-    "small": "./assets/small.png",
-    "large": "./assets/large.png"
+    "large": "./assets/large.png",
+    "small": "./assets/small.png"
   },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
   "platforms": [
     "local"
   ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature"
+      },
+      "units": {
+        "en": "°C"
+      }
+    },
+    "alarm_motion": {
+      "title": {
+        "en": "Motion"
+      }
+    }
+  },
   "energy": {
     "batteries": [
       "AAA",
       "CR2032"
     ]
   },
-  "id": "soil_moisture_temperature_sensor_battery",
+  "id": "door_window_sensor_battery",
   "settings": [
-    {
-      "type": "number",
-      "id": "dp_13_comfort_temperature",
-      "label": {
-        "en": "comfort temperature"
-      },
-      "value": 0
-    },
-    {
-      "type": "number",
-      "id": "dp_14_eco_temperature",
-      "label": {
-        "en": "eco temperature"
-      },
-      "value": 0
-    },
-    {
-      "type": "number",
-      "id": "dp_19_temperature_calibration",
-      "label": {
-        "en": "temperature calibration"
-      },
-      "value": -9,
-      "min": -9,
-      "max": 9
-    },
     {
       "type": "group",
       "label": {
@@ -185,13 +162,29 @@
       },
       "children": [
         {
+          "id": "motion_timeout",
+          "type": "number",
+          "label": "Motion Auto-Reset Timeout (s)",
+          "value": 60,
+          "min": 5,
+          "max": 600
+        },
+        {
+          "id": "enable_motion_logging",
+          "type": "checkbox",
+          "label": "Enable Motion Event Logging",
+          "value": false
+        },
+        {
+          "id": "enable_contact_logging",
+          "type": "checkbox",
+          "label": "Enable Contact Event Logging",
+          "value": false
+        },
+        {
           "id": "temperature_calibration",
           "type": "number",
-          "label": {
-            "en": "Temperature Calibration",
-            "fr": "Calibration Température"
-          },
-          "units": "°C",
+          "label": "Temperature Calibration (°C)",
           "value": 0,
           "min": -9,
           "max": 9
@@ -199,35 +192,15 @@
         {
           "id": "temperature_threshold",
           "type": "number",
-          "label": {
-            "en": "Temperature Alert Threshold",
-            "fr": "Seuil Alerte Température"
-          },
-          "units": "°C",
+          "label": "Temperature Threshold (°C)",
           "value": 25,
           "min": 0,
           "max": 50
         },
         {
-          "id": "humidity_threshold",
-          "type": "number",
-          "label": {
-            "en": "Humidity Alert Threshold",
-            "fr": "Seuil Alerte Humidité"
-          },
-          "units": "%",
-          "value": 70,
-          "min": 0,
-          "max": 100
-        },
-        {
           "id": "battery_low_threshold",
           "type": "number",
-          "label": {
-            "en": "Low Battery Threshold",
-            "fr": "Seuil Batterie Faible"
-          },
-          "units": "%",
+          "label": "Low Battery Threshold (%)",
           "value": 20,
           "min": 5,
           "max": 50
@@ -235,16 +208,10 @@
         {
           "id": "battery_notification",
           "type": "checkbox",
-          "label": {
-            "en": "Enable Battery Notifications",
-            "fr": "Activer Notifications Batterie"
-          },
+          "label": "Enable Battery Notifications",
           "value": true
         }
       ]
     }
-  ],
-  "connectivity": [
-    "zigbee"
   ]
 }
