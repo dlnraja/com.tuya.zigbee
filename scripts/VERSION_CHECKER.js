@@ -2,7 +2,7 @@
 'use strict';
 
 /**
- * VERSION CONSISTENCY CHECKER v2.15.97
+ * VERSION CONSISTENCY CHECKER v2.15.98
  * 
  * Checks and fixes version inconsistencies across:
  * - app.json
@@ -21,7 +21,7 @@ const ROOT_DIR = path.join(__dirname, '..');
 
 class VersionChecker {
   constructor(targetVersion) {
-    this.targetVersion = targetVersion || '2.15.97';
+    this.targetVersion = targetVersion || '2.15.98';
     this.issues = [];
     this.fixes = [];
   }
@@ -176,7 +176,7 @@ class VersionChecker {
 // ========================================
 
 if (require.main === module) {
-  const targetVersion = process.argv[2] || '2.15.97';
+  const targetVersion = process.argv[2] || '2.15.98';
   const checker = new VersionChecker(targetVersion);
   
   checker.run().then(hasChanges => {

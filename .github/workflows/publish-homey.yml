@@ -34,7 +34,7 @@ jobs:
       
       - name: Version Consistency Check
         run: |
-          node scripts/VERSION_CHECKER.js 2.15.97
+          node scripts/VERSION_CHECKER.js 2.15.98
       
       - name: Homey App Validate
         run: |
@@ -85,7 +85,7 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git add app.json package.json
-          git commit -m "🔖 Version bump to 2.15.97 - IAS Zone critical fix" || true
+          git commit -m "🔖 Version bump to 2.15.98 - IAS Zone critical fix" || true
           git push || true
         continue-on-error: true
       
@@ -94,8 +94,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v2.15.97
-          release_name: v2.15.97 - Critical IAS Zone Fix
+          tag_name: v2.15.98
+          release_name: v2.15.98 - Critical IAS Zone Fix
           body: |
             ## 🐛 Critical Bug Fixes
             
