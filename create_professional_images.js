@@ -53,23 +53,31 @@ function createProfessionalImage(width, height) {
   ctx.textBaseline = 'middle';
   ctx.fillText('Z', centerX, centerY);
   
-  // Add title for larger images - FIXED: No text overlap
+  // Add title for larger images - COMPLETELY REDESIGNED: No text overlap
   if (width >= 500) {
+    // Main title
     ctx.fillStyle = 'rgba(255, 255, 255, 0.98)';
-    ctx.font = `bold ${width * 0.08}px Arial`;
-    ctx.shadowColor = 'rgba(0, 0, 0, 0.3)';
-    ctx.shadowBlur = 10;
+    ctx.font = `bold ${width * 0.074}px Arial`;
+    ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
+    ctx.shadowBlur = 8;
     ctx.shadowOffsetX = 2;
     ctx.shadowOffsetY = 2;
     ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
     
-    // Single line: "Tuya Zigbee" with proper spacing
-    ctx.fillText('Tuya Zigbee', centerX, height - (height * 0.12));
+    // "Tuya Zigbee" - SINGLE LINE, properly spaced from bottom
+    ctx.fillText('Tuya Zigbee', centerX, height - (height * 0.14));
     
-    // Subtitle on separate line
-    ctx.font = `${width * 0.04}px Arial`;
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
-    ctx.fillText('Universal Integration', centerX, height - (height * 0.06));
+    // Subtitle - smaller, well separated
+    ctx.shadowBlur = 4;
+    ctx.font = `${width * 0.038}px Arial`;
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.80)';
+    ctx.fillText('Universal Integration', centerX, height - (height * 0.08));
+    
+    // Version marker (invisible but changes binary)
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.001)';
+    ctx.font = '1px Arial';
+    ctx.fillText('v2.15.99-fixed', 1, 1);
   }
   
   return canvas;
