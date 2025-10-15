@@ -20,10 +20,12 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "Signify Netherlands B.V."
+      "Signify Netherlands B.V.",
+      "_TZE200_s8gkrkxk"
     ],
     "productId": [
-      "LST006"
+      "LST006",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
