@@ -327,8 +327,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -443,8 +443,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -472,9 +472,9 @@
         "alarm_generic"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png",
-        "xlarge": "./assets/xlarge.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -552,9 +552,9 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png",
-        "xlarge": "./assets/xlarge.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -617,9 +617,9 @@
         "dim"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png",
-        "xlarge": "./assets/xlarge.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -775,9 +775,9 @@
         "light_temperature"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png",
-        "xlarge": "./assets/xlarge.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -1090,8 +1090,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "pair": [
         {
@@ -1241,8 +1241,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -1358,8 +1358,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -1492,8 +1492,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -1654,8 +1654,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -1759,8 +1759,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -1917,8 +1917,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -2033,8 +2033,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -2058,9 +2058,9 @@
         "measure_battery"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png",
-        "xlarge": "./assets/xlarge.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -2221,8 +2221,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -2279,8 +2279,8 @@
         "dim"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -2531,8 +2531,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -2687,8 +2687,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -2837,8 +2837,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -2959,8 +2959,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "community": {
         "sources": [
@@ -3007,8 +3007,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -3226,8 +3226,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -3280,9 +3280,9 @@
         "alarm_motion"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png",
-        "xlarge": "./assets/xlarge.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -3388,8 +3388,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -3613,8 +3613,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -3773,8 +3773,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -3946,8 +3946,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -4076,8 +4076,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -4246,8 +4246,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -4397,8 +4397,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -4541,8 +4541,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -4705,8 +4705,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -4739,8 +4739,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -4972,8 +4972,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -5064,9 +5064,9 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png",
-        "xlarge": "./assets/xlarge.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.png"
       },
       "platforms": [
         "local"
@@ -5140,8 +5140,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -5260,8 +5260,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -5376,8 +5376,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "community": {
         "sources": [
@@ -5524,8 +5524,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -5666,8 +5666,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -5801,8 +5801,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -5828,9 +5828,9 @@
         "light_saturation"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png",
-        "xlarge": "./assets/xlarge.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -6086,8 +6086,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -6253,8 +6253,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -6275,8 +6275,8 @@
         "dim"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -6425,8 +6425,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -6645,8 +6645,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -6682,9 +6682,9 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png",
-        "xlarge": "./assets/xlarge.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -6745,8 +6745,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -6992,8 +6992,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "settings": [
         {
@@ -7106,8 +7106,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -7251,8 +7251,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -7362,8 +7362,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -7522,8 +7522,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -7676,8 +7676,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -7854,8 +7854,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -7904,8 +7904,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -8019,8 +8019,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -8212,8 +8212,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -8343,8 +8343,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -8496,8 +8496,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -8626,8 +8626,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -8785,8 +8785,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -8951,8 +8951,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -8977,9 +8977,9 @@
         "measure_battery"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png",
-        "xlarge": "./assets/xlarge.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -9219,8 +9219,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -9373,8 +9373,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -9530,8 +9530,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -9669,8 +9669,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -9821,8 +9821,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -9952,8 +9952,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -10081,8 +10081,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -10122,8 +10122,8 @@
         "dim"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -10265,8 +10265,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -10514,8 +10514,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -10629,8 +10629,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "community": {
         "sources": [
@@ -10798,8 +10798,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -10948,8 +10948,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "windowcoverings_set": {
@@ -11096,8 +11096,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "windowcoverings_set": {
@@ -11140,8 +11140,8 @@
         "onoff"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -11339,8 +11339,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "settings": [
         {
@@ -11452,8 +11452,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "settings": [
         {
@@ -11591,8 +11591,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "settings": [
         {
@@ -11732,8 +11732,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "settings": [
         {
@@ -11886,8 +11886,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "energy": {
         "batteries": [
@@ -12029,8 +12029,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -12179,8 +12179,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -12316,8 +12316,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "community": {
         "sources": [
@@ -12464,8 +12464,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -12615,8 +12615,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -12658,8 +12658,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -12885,8 +12885,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -12916,8 +12916,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -13050,8 +13050,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -13304,8 +13304,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -13415,8 +13415,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "community": {
         "sources": [
@@ -13595,8 +13595,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -13726,8 +13726,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -13806,9 +13806,9 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png",
-        "xlarge": "./assets/xlarge.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -14032,8 +14032,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -14060,9 +14060,9 @@
         "meter_power"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png",
-        "xlarge": "./assets/xlarge.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -14189,8 +14189,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -14425,8 +14425,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -14598,8 +14598,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -14742,8 +14742,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -14879,8 +14879,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "settings": [],
       "name": {
@@ -15035,8 +15035,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -15182,8 +15182,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "settings": [],
       "name": {
@@ -15366,8 +15366,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -15525,8 +15525,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "settings": [],
       "name": {
@@ -15686,8 +15686,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "settings": [],
       "name": {
@@ -15823,8 +15823,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -15957,8 +15957,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -15992,8 +15992,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -16265,8 +16265,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -16444,8 +16444,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -16557,9 +16557,9 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png",
-        "xlarge": "./assets/xlarge.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -16719,8 +16719,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -16925,8 +16925,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -17102,8 +17102,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -17236,8 +17236,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -17407,8 +17407,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -17548,8 +17548,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -17705,8 +17705,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -17859,8 +17859,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -18015,8 +18015,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -18201,8 +18201,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -18363,8 +18363,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -18518,8 +18518,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -18679,8 +18679,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -18828,8 +18828,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -18973,8 +18973,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -19078,8 +19078,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -19212,8 +19212,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -19390,8 +19390,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -19569,8 +19569,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -19748,8 +19748,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -19892,8 +19892,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -19980,9 +19980,9 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png",
-        "xlarge": "./assets/xlarge.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -20089,8 +20089,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -20281,8 +20281,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -20364,8 +20364,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -20591,8 +20591,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "community": {
         "sources": [
@@ -20807,8 +20807,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -20928,8 +20928,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -21072,8 +21072,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -21225,8 +21225,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -21401,8 +21401,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -21564,8 +21564,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -21706,8 +21706,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -21855,8 +21855,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -22014,8 +22014,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -22186,8 +22186,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "measure_power": {
@@ -22344,8 +22344,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -22484,8 +22484,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "settings": [],
       "name": {
@@ -22627,8 +22627,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "settings": [],
       "name": {
@@ -22755,8 +22755,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "settings": [],
       "name": {
@@ -22920,8 +22920,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "settings": [],
       "name": {
@@ -23072,8 +23072,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "settings": [],
       "name": {
@@ -23255,8 +23255,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "settings": [],
       "name": {
@@ -23433,8 +23433,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "settings": [],
       "name": {
@@ -23621,8 +23621,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "settings": [],
       "name": {
@@ -23830,8 +23830,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "settings": [],
       "name": {
@@ -24051,8 +24051,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "settings": [],
       "name": {
@@ -24180,8 +24180,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -24314,8 +24314,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -24444,8 +24444,8 @@
         }
       },
       "images": {
-        "large": "./assets/large.png",
-        "small": "./assets/small.png"
+        "large": "./assets/images/large.png",
+        "small": "./assets/images/small.png"
       },
       "pair": [
         {
@@ -24503,8 +24503,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -24703,8 +24703,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -24733,9 +24733,9 @@
         "measure_battery"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png",
-        "xlarge": "./assets/xlarge.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -24835,9 +24835,9 @@
         "measure_battery"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png",
-        "xlarge": "./assets/xlarge.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -24944,9 +24944,9 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png",
-        "xlarge": "./assets/xlarge.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png",
+        "xlarge": "./assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -24997,8 +24997,8 @@
         "dim"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -25266,8 +25266,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "name": {
         "en": "Wireless Switch 2gang CR2032"
@@ -25444,8 +25444,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "name": {
         "en": "Wireless Switch 3gang CR2032"
@@ -25603,8 +25603,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "name": {
         "en": "Wireless Switch 4gang CR2032"
@@ -25775,8 +25775,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -25918,8 +25918,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "settings": [
         {
@@ -26078,8 +26078,8 @@
         ]
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "settings": [
         {
@@ -26127,8 +26127,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -26258,8 +26258,8 @@
         "onoff"
       ],
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -26456,8 +26456,8 @@
         }
       },
       "images": {
-        "small": "./assets/small.png",
-        "large": "./assets/large.png"
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
