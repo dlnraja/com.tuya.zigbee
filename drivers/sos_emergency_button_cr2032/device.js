@@ -1,169 +1,151 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
-const { CLUSTER } = require('zigbee-clusters');
 const IASZoneEnroller = require('../../lib/IASZoneEnroller');
 
 /**
- * SOS Emergency Button CR2032 Device
- * v2.15.98 - Multi-method IAS Zone enrollment with automatic fallback
+ * SOS EMERGENCY BUTTON - CR2032
+ * Fix pour stabilité connexion - Forum #353
  */
-class SosEmergencyButtonCr2032Device extends ZigBeeDevice {
+class SOSEmergencyButtonDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
-    this.log('sos_emergency_button_cr2032 initialized');
-    await super.onNodeInit({ zclNode });
+    this.printNode();
+    
+    // Keep-alive mechanism
+    this.keepAliveInterval = null;
+    
+    // IAS Zone enrollment robuste
+    try {
+      await this.enrollIASZone();
+    } catch (err) {
+      this.error('IAS Zone enrollment error:', err);
+      // Retry après 30s
+      this.homey.setTimeout(() => this.enrollIASZone(), 30000);
+    }
 
     // Register capabilities
-    await this.registerStandardCapabilities(zclNode);
+    this.registerCapability('alarm_generic', 'ssIasZone', {
+      reportParser: (value) => {
+        this.log('SOS button pressed:', value);
+        return value?.zoneStatus?.alarm1 === 1;
+      }
+    });
 
+    this.registerCapability('alarm_tamper', 'ssIasZone', {
+      reportParser: (value) => {
+        return value?.zoneStatus?.tamper === 1;
+      }
+    });
+
+    this.registerCapability('measure_battery', 'genPowerCfg', {
+      reportParser: (value) => {
+        const battery = value === 200 ? 100 : value / 2;
+        this.log('Battery:', battery + '%');
+        
+        // Alert si batterie faible
+        if (battery < 20) {
+          this.log('⚠️  Low battery detected!');
+          this.setWarning('Battery low - Replace CR2032 soon');
+        }
+        
+        return battery;
+      }
+    });
+
+    // Keep-alive: poll battery chaque 30 min
+    this.startKeepAlive();
+    
+    // Marquer disponible
     await this.setAvailable();
+    this.log('✅ SOS Button initialized successfully');
   }
 
-  async registerStandardCapabilities(zclNode) {
-    // Battery capability
-    if (this.hasCapability('measure_battery')) {
-      try {
-        this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
-          get: 'batteryPercentageRemaining',
-          report: 'batteryPercentageRemaining',
-          reportParser: value => {
-            this.log('Battery raw value:', value);
-            if (value <= 100) {
-              return Math.max(0, Math.min(100, value));
-            } else {
-              return Math.max(0, Math.min(100, value / 2));
-            }
-          },
-          getParser: value => {
-            this.log('Battery raw value (get):', value);
-            if (value <= 100) {
-              return Math.max(0, Math.min(100, value));
-            } else {
-              return Math.max(0, Math.min(100, value / 2));
-            }
-          }
-        });
-        this.log('✅ Battery capability registered');
-      } catch (err) {
-        this.log('Could not register battery capability:', err.message);
+  /**
+   * Enrollment IAS Zone robuste
+   */
+  async enrollIASZone() {
+    this.log('Starting IAS Zone enrollment...');
+    
+    try {
+      const enroller = new IASZoneEnroller(this);
+      const success = await enroller.enroll();
+      
+      if (success) {
+        this.log('✅ IAS Zone enrolled successfully');
+        return true;
+      } else {
+        throw new Error('Enrollment failed');
       }
+    } catch (err) {
+      this.error('IAS Zone enrollment failed:', err);
+      throw err;
     }
+  }
 
-    // IAS Zone for SOS button - v2.15.98 Multi-method with automatic fallback
-    if (this.hasCapability('alarm_generic')) {
+  /**
+   * Keep-alive mechanism
+   */
+  startKeepAlive() {
+    if (this.keepAliveInterval) {
+      this.homey.clearInterval(this.keepAliveInterval);
+    }
+    
+    this.keepAliveInterval = this.homey.setInterval(async () => {
       try {
-        const endpoint = zclNode.endpoints[this.getClusterEndpoint(CLUSTER.IAS_ZONE)];
-        if (endpoint && endpoint.clusters.iasZone) {
-          this.log('🚨 Setting up SOS button IAS Zone with multi-method enrollment...');
-          
-          // Create IAS Zone enroller with automatic fallback
-          this.iasZoneEnroller = new IASZoneEnroller(this, endpoint, {
-            zoneType: 4, // Emergency button type
-            capability: 'alarm_generic',
-            flowCard: 'sos_button_emergency',
-            flowTokens: {
-              battery: this.getCapabilityValue('measure_battery') || 0,
-              timestamp: new Date().toISOString()
-            },
-            autoResetTimeout: 5000, // 5 seconds auto-reset
-            pollInterval: 30000, // 30s polling if needed
-            enablePolling: true
-          });
-          
-          // Try all enrollment methods automatically
-          const enrollMethod = await this.iasZoneEnroller.enroll(zclNode);
-          
-          if (enrollMethod) {
-            this.log(`✅ SOS Button IAS Zone enrolled successfully via: ${enrollMethod}`);
-            this.log('📊 Enrollment status:', this.iasZoneEnroller.getStatus());
-            
-            // Register capability for reading
-            this.registerCapability('alarm_generic', CLUSTER.IAS_ZONE, {
-              get: 'zoneStatus',
-              report: 'zoneStatus',
-              reportParser: value => {
-                this.log('🚨 SOS Button zone status:', value);
-                return (value & 1) === 1;
-              }
-            });
-            
-            this.log('✅ SOS Button IAS Zone fully configured with automatic fallback');
-          } else {
-            this.error('❌ All SOS Button enrollment methods failed');
-          }
+        // Poll battery pour maintenir connexion
+        const battery = await this.zclNode.endpoints[1].clusters.genPowerCfg
+          .readAttributes(['batteryPercentageRemaining'])
+          .catch(() => null);
+        
+        if (battery) {
+          this.log('Keep-alive: Device responding ✅');
+          await this.setAvailable();
+        } else {
+          this.log('Keep-alive: No response ⚠️');
         }
       } catch (err) {
-        this.error('❌ SOS Button IAS Zone setup failed:', err);
+        this.log('Keep-alive error:', err.message);
       }
-    }
+    }, 30 * 60 * 1000); // 30 minutes
   }
 
+  /**
+   * Gestion rename
+   */
+  async onRenamed(name) {
+    this.log('Device renamed to:', name);
+    // Ne pas réinitialiser - garder config
+  }
+
+  /**
+   * Gestion settings change
+   */
+  async onSettings({ oldSettings, newSettings, changedKeys }) {
+    this.log('Settings changed:', changedKeys);
+    // Préserver connexion pendant changement settings
+  }
+
+  /**
+   * Cleanup proper
+   */
   async onDeleted() {
-    this.log('sos_emergency_button_cr2032 deleted');
+    this.log('Device deleted - cleanup');
     
-    // Cleanup IAS Zone enroller
-    if (this.iasZoneEnroller) {
-      this.iasZoneEnroller.destroy();
-      this.iasZoneEnroller = null;
+    if (this.keepAliveInterval) {
+      this.homey.clearInterval(this.keepAliveInterval);
     }
-  }
-
-  // ========================================
-  // FLOW METHODS - Auto-generated
-  // ========================================
-
-  async triggerFlowCard(cardId, tokens = {}) {
+    
+    // Nettoyer IAS Zone
     try {
-      const flowCard = this.homey.flow.getDeviceTriggerCard(cardId);
-      await flowCard.trigger(this, tokens);
-      this.log(`✅ Flow triggered: ${cardId}`, tokens);
+      await this.zclNode.endpoints[1].clusters.ssIasZone
+        .writeAttributes({ iasCieAddress: '00:00:00:00:00:00:00:00' })
+        .catch(() => null);
     } catch (err) {
-      this.error(`❌ Flow trigger error: ${cardId}`, err);
+      // Ignore
     }
   }
 
-  async checkAnyAlarm() {
-    const capabilities = this.getCapabilities();
-    for (const cap of capabilities) {
-      if (cap.startsWith('alarm_')) {
-        const value = this.getCapabilityValue(cap);
-        if (value === true) return true;
-      }
-    }
-    return false;
-  }
-
-  getContextData() {
-    const context = {
-      time_of_day: this.getTimeOfDay(),
-      timestamp: new Date().toISOString()
-    };
-    
-    const caps = this.getCapabilities();
-    if (caps.includes('measure_luminance')) {
-      context.luminance = this.getCapabilityValue('measure_luminance') || 0;
-    }
-    if (caps.includes('measure_temperature')) {
-      context.temperature = this.getCapabilityValue('measure_temperature') || 0;
-    }
-    if (caps.includes('measure_humidity')) {
-      context.humidity = this.getCapabilityValue('measure_humidity') || 0;
-    }
-    if (caps.includes('measure_battery')) {
-      context.battery = this.getCapabilityValue('measure_battery') || 0;
-    }
-    
-    return context;
-  }
-
-  getTimeOfDay() {
-    const hour = new Date().getHours();
-    if (hour >= 5 && hour < 12) return 'morning';
-    if (hour >= 12 && hour < 17) return 'afternoon';
-    if (hour >= 17 && hour < 22) return 'evening';
-    return 'night';
-  }
 }
 
-module.exports = SosEmergencyButtonCr2032Device;
+module.exports = SOSEmergencyButtonDevice;
