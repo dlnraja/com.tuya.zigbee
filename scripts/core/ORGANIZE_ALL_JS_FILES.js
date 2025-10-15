@@ -64,7 +64,8 @@ class OrganizeAllJSFiles {
     this.rootAllowed = [
       'create_driver_images.js',
       'create_professional_images.js',
-      'verify_all_images.js'
+      'verify_all_images.js',
+      'README.txt'  // Requis pour Homey App Store
     ];
 
     // Dossiers à ignorer

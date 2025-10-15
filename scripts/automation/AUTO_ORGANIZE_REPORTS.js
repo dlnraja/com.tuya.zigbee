@@ -20,6 +20,7 @@ class AutoOrganizeReports {
     // Fichiers autorisés à la racine
     this.allowedAtRoot = [
       'README.md',
+      'README.txt',  // Requis pour Homey App Store
       'CHANGELOG.md',
       'LICENSE',
       'package.json',
@@ -29,9 +30,10 @@ class AutoOrganizeReports {
       '.gitattributes',
       '.homeyignore',
       '.homeychangelog.json',
-      '.env.example',
+      '.homeychangelog.json.backup',
       '.prettierrc',
-      '.prettierignore'
+      '.prettierignore',
+      '.env.example'
     ];
   }
 
