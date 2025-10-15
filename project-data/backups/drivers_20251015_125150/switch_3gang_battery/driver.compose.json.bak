@@ -1,0 +1,285 @@
+{
+  "name": {
+    "en": "Switch 3-Gang Battery CR2450 (Battery)"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "onoff.gang2",
+    "onoff.gang3",
+    "measure_battery"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "TS0001",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS004F",
+      "TS011F",
+      "TS0121",
+      "TS0203",
+      "TS0205",
+      "TS0502",
+      "TS0502B",
+      "TS0505",
+      "TS0505B",
+      "TS0601",
+      "TS130F",
+      "_TZ1800_ejwkn2h2",
+      "_TZ1800_fcdjzz3s",
+      "_TZ2000_a476raq2",
+      "_TZ2000_avdnvykf",
+      "_TZ2000_hjsgdkfl",
+      "_TZ3000_01gpyda5",
+      "_TZ3000_0dumfk2z",
+      "_TZ3000_0ghwhypc",
+      "_TZ3000_0ht8dnxj",
+      "_TZ3000_0s1izerx",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_4uuaja4a",
+      "_TZ3000_cehuw1lw",
+      "_TZ3000_cphmq0q7",
+      "_TZ3000_dbou1ap4",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_g5xawfcq",
+      "_TZ3000_ji4araar",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_odygigth",
+      "_TZ3000_qzjcsmar",
+      "_TZ3000_tk3s5tyg",
+      "_TZ3000_uim07oem",
+      "_TZ3000_vp6clf9d",
+      "_TZ3000_xabckq1v",
+      "_TZE200_81isopgh",
+      "_TZE200_m9skfctm",
+      "_TZE200_wfxuhoea",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0005",
+      "TS0006",
+      "_TZ3000_1dd0d5yi",
+      "_TZ3000_2mbfxlzr",
+      "_TZ3000_46t1rvdu",
+      "_TZ3000_4rbqgcuv",
+      "_TZ3000_5e2f3n2h",
+      "_TZ3000_8nkb7mof",
+      "_TZ3000_9hpxg80k",
+      "_TZ3000_aaifmpuq",
+      "_TZ3000_ali1q8p0",
+      "_TZ3000_bffkdmp8",
+      "_TZ3000_bn4t9du1",
+      "_TZ3000_cfnprab5",
+      "_TZ3000_cymsnfvf",
+      "_TZ3000_ddcqbtgs",
+      "_TZ3000_dfgbtub0",
+      "_TZ3000_dlhhrhs8",
+      "_TZ3000_dpo1ysak",
+      "_TZ3000_dziaict4",
+      "Tuya"
+    ],
+    "productId": [
+      "TS0001",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS0041",
+      "TS0049",
+      "TS004F",
+      "TS0215A",
+      "TS0601",
+      "TS130F",
+      "TS0041A",
+      "TS0046",
+      "TS0216",
+      "TS0218",
+      "TS0301",
+      "TS030F",
+      "TS004",
+      "TS004X",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0006",
+      "TS000F",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS0021",
+      "TS0026",
+      "TS0052",
+      "TS0121",
+      "TS0603",
+      "TS0726",
+      "TS1002",
+      "TS1201",
+      "TS1111"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          1
+        ]
+      },
+      "2": {
+        "clusters": [
+          0,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6,
+          1
+        ]
+      },
+      "3": {
+        "clusters": [
+          0,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6,
+          1
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "./assets/small.png",
+    "large": "./assets/large.png"
+  },
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Gang 1"
+      }
+    },
+    "onoff.gang2": {
+      "title": {
+        "en": "Gang 2"
+      }
+    },
+    "onoff.gang3": {
+      "title": {
+        "en": "Gang 3"
+      }
+    }
+  },
+  "platforms": [
+    "local"
+  ],
+  "id": "switch_3gang_battery",
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "connectivity": [
+    "zigbee"
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "SDK3 Advanced Settings",
+        "fr": "Paramètres Avancés SDK3"
+      },
+      "children": [
+        {
+          "id": "battery_low_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold",
+            "fr": "Seuil Batterie Faible"
+          },
+          "units": "%",
+          "value": 20,
+          "min": 5,
+          "max": 50
+        },
+        {
+          "id": "battery_notification",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Battery Notifications",
+            "fr": "Activer Notifications Batterie"
+          },
+          "value": true
+        },
+        {
+          "id": "switch_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Switch Mode",
+            "fr": "Mode Interrupteur"
+          },
+          "value": "toggle",
+          "values": [
+            {
+              "id": "toggle",
+              "label": {
+                "en": "Toggle",
+                "fr": "Bascule"
+              }
+            },
+            {
+              "id": "momentary",
+              "label": {
+                "en": "Momentary",
+                "fr": "Momentané"
+              }
+            }
+          ]
+        },
+        {
+          "id": "power_on_state",
+          "type": "dropdown",
+          "label": {
+            "en": "Power-On State",
+            "fr": "État Allumage"
+          },
+          "value": "last",
+          "values": [
+            {
+              "id": "last",
+              "label": {
+                "en": "Last State",
+                "fr": "Dernier État"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "On",
+                "fr": "Allumé"
+              }
+            },
+            {
+              "id": "off",
+              "label": {
+                "en": "Off",
+                "fr": "Éteint"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
