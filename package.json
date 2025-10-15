@@ -1,6 +1,12 @@
 {
   "name": "ultimate-zigbee-hub",
+<<<<<<< HEAD
   "version": "2.15.98",
+||||||| 936c3c30a
+  "version": "2.1.46",
+=======
+  "version": "2.15.97",
+>>>>>>> 074aa0b952dc67a4e694a66d5e671a41c86c30f7
   "description": "Ultimate Zigbee Hub for Homey - Professional Edition",
   "main": "app.js",
   "scripts": {
