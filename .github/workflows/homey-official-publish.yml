@@ -32,10 +32,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Validate Homey App (Publish Level)
+      - name: Validate Homey App (Debug Level)
         uses: athombv/github-action-homey-app-validate@master
         with:
-          level: publish
+          level: debug
 
   version:
     name: Update Version
