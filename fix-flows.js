@@ -18,10 +18,10 @@ if (sendBattery) {
 const battMaint = appJson.flow.actions.find(a => a.id === 'battery_maintenance_mode');
 if (battMaint) {
   battMaint.titleFormatted = {
-    en: "Set battery maintenance mode to [[mode]]",
-    fr: "Définir mode maintenance batterie sur [[mode]]"
+    en: "Set battery maintenance mode to [[enabled]]",
+    fr: "Définir mode maintenance batterie sur [[enabled]]"
   };
-  console.log('✅ battery_maintenance_mode - titleFormatted avec [[mode]]');
+  console.log('✅ battery_maintenance_mode - titleFormatted avec [[enabled]]');
 }
 
 fs.writeFileSync('app.json', JSON.stringify(appJson, null, 2));
