@@ -27742,7 +27742,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Send battery status report",
+          "fr": "Envoyer rapport état batteries"
+        }
       },
       {
         "id": "battery_maintenance_mode",
@@ -27764,7 +27768,11 @@
               "en": "Duration (hours)"
             }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Enable battery maintenance mode",
+          "fr": "Activer mode maintenance batterie"
+        }
       }
     ]
   }
