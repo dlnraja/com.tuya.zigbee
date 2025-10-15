@@ -3,7 +3,7 @@ const path = require('path');
 const { createCanvas } = require('canvas');
 
 console.log('🎨 RÉGÉNÉRATION COMPLÈTE - IMAGES PERSONNALISÉES\n');
-console.log('='repeat(60) + '\n');
+console.log('='.repeat(60) + '\n');
 
 const driversPath = path.join(__dirname, 'drivers');
 const drivers = fs.readdirSync(driversPath).filter(d => 
