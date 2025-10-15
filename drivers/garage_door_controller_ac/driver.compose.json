@@ -198,5 +198,12 @@
         }
       ]
     }
-  ]
+  ],
+  "learnmode": {
+    "image": "./assets/learnmode.svg",
+    "instruction": {
+      "en": "Press and hold the reset button for 5 seconds until the LED blinks",
+      "fr": "Appuyez et maintenez le bouton reset pendant 5 secondes jusqu'à ce que la LED clignote"
+    }
+  }
 }
