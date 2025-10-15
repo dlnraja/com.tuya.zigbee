@@ -27098,6 +27098,131 @@
             }
           }
         ]
+      },
+      {
+        "id": "low_battery_alert",
+        "title": {
+          "en": "Low battery alert",
+          "fr": "Alerte batterie faible"
+        },
+        "titleFormatted": {
+          "en": "Battery level below [[threshold]]%",
+          "fr": "Niveau batterie sous [[threshold]]%"
+        },
+        "tokens": [
+          {
+            "name": "device",
+            "type": "string",
+            "title": {
+              "en": "Device"
+            }
+          },
+          {
+            "name": "battery",
+            "type": "number",
+            "title": {
+              "en": "Battery %"
+            }
+          },
+          {
+            "name": "battery_type",
+            "type": "string",
+            "title": {
+              "en": "Battery Type"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 5,
+            "max": 50,
+            "value": 20,
+            "placeholder": {
+              "en": "Threshold"
+            }
+          }
+        ]
+      },
+      {
+        "id": "battery_critical",
+        "title": {
+          "en": "Battery critical (< 10%)",
+          "fr": "Batterie critique (< 10%)"
+        },
+        "tokens": [
+          {
+            "name": "device",
+            "type": "string",
+            "title": {
+              "en": "Device"
+            }
+          },
+          {
+            "name": "battery",
+            "type": "number",
+            "title": {
+              "en": "Battery %"
+            }
+          }
+        ]
+      },
+      {
+        "id": "device_battery_changed",
+        "title": {
+          "en": "Battery changed/replaced",
+          "fr": "Batterie changée/remplacée"
+        },
+        "hint": {
+          "en": "Triggered when battery jumps from low to high"
+        },
+        "tokens": [
+          {
+            "name": "device",
+            "type": "string",
+            "title": {
+              "en": "Device"
+            }
+          },
+          {
+            "name": "old_battery",
+            "type": "number",
+            "title": {
+              "en": "Old %"
+            }
+          },
+          {
+            "name": "new_battery",
+            "type": "number",
+            "title": {
+              "en": "New %"
+            }
+          }
+        ]
+      },
+      {
+        "id": "multiple_low_batteries",
+        "title": {
+          "en": "Multiple devices low battery",
+          "fr": "Plusieurs appareils batterie faible"
+        },
+        "tokens": [
+          {
+            "name": "count",
+            "type": "number",
+            "title": {
+              "en": "Device Count"
+            }
+          },
+          {
+            "name": "devices",
+            "type": "string",
+            "title": {
+              "en": "Device List"
+            }
+          }
+        ]
       }
     ],
     "conditions": [
@@ -27357,6 +27482,54 @@
             }
           }
         ]
+      },
+      {
+        "id": "battery_level_between",
+        "title": {
+          "en": "Battery level is between",
+          "fr": "Niveau batterie entre"
+        },
+        "titleFormatted": {
+          "en": "Battery between [[min]]% and [[max]]%",
+          "fr": "Batterie entre [[min]]% et [[max]]%"
+        },
+        "args": [
+          {
+            "name": "min",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "placeholder": {
+              "en": "Min %"
+            }
+          },
+          {
+            "name": "max",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "placeholder": {
+              "en": "Max %"
+            }
+          }
+        ]
+      },
+      {
+        "id": "battery_needs_replacement",
+        "title": {
+          "en": "Battery needs replacement",
+          "fr": "Batterie nécessite remplacement"
+        },
+        "hint": {
+          "en": "True if battery < 15% or voltage low"
+        }
+      },
+      {
+        "id": "all_batteries_healthy",
+        "title": {
+          "en": "All batteries healthy (> 30%)",
+          "fr": "Toutes batteries saines (> 30%)"
+        }
       }
     ],
     "actions": [
@@ -27551,6 +27724,64 @@
         "hint": {
           "en": "Make the device LED blink for identification"
         }
+      },
+      {
+        "id": "send_battery_report",
+        "title": {
+          "en": "Send battery status report",
+          "fr": "Envoyer rapport état batteries"
+        },
+        "hint": {
+          "en": "Generate and send full battery status for all devices"
+        },
+        "args": [
+          {
+            "name": "method",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "notification",
+                "label": {
+                  "en": "Homey Notification"
+                }
+              },
+              {
+                "id": "email",
+                "label": {
+                  "en": "Email"
+                }
+              },
+              {
+                "id": "log",
+                "label": {
+                  "en": "Log Only"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "battery_maintenance_mode",
+        "title": {
+          "en": "Enable battery maintenance mode",
+          "fr": "Activer mode maintenance batterie"
+        },
+        "hint": {
+          "en": "Monitor all batteries closely and alert on changes"
+        },
+        "args": [
+          {
+            "name": "duration",
+            "type": "number",
+            "min": 1,
+            "max": 168,
+            "units": "hours",
+            "placeholder": {
+              "en": "Duration (hours)"
+            }
+          }
+        ]
       }
     ]
   }

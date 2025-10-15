@@ -251,6 +251,129 @@
           "value": false
         }
       ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Battery Management",
+        "fr": "Gestion Batterie"
+      },
+      "children": [
+        {
+          "id": "low_battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low battery alert threshold",
+            "fr": "Seuil alerte batterie faible"
+          },
+          "hint": {
+            "en": "Alert when battery drops below this level",
+            "fr": "Alerte quand batterie descend sous ce niveau"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50,
+          "units": "%"
+        },
+        {
+          "id": "battery_reporting_interval",
+          "type": "number",
+          "label": {
+            "en": "Battery reporting interval",
+            "fr": "Intervalle rapport batterie"
+          },
+          "hint": {
+            "en": "How often to check battery level (minutes)",
+            "fr": "Fréquence vérification batterie (minutes)"
+          },
+          "value": 60,
+          "min": 15,
+          "max": 1440,
+          "units": "min"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Battery Management",
+        "fr": "Gestion Batterie"
+      },
+      "children": [
+        {
+          "id": "low_battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low battery alert threshold",
+            "fr": "Seuil alerte batterie faible"
+          },
+          "hint": {
+            "en": "Alert when battery drops below this level",
+            "fr": "Alerte quand batterie descend sous ce niveau"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50,
+          "units": "%"
+        },
+        {
+          "id": "battery_reporting_interval",
+          "type": "number",
+          "label": {
+            "en": "Battery reporting interval",
+            "fr": "Intervalle rapport batterie"
+          },
+          "hint": {
+            "en": "How often to check battery level (minutes)",
+            "fr": "Fréquence vérification batterie (minutes)"
+          },
+          "value": 60,
+          "min": 15,
+          "max": 1440,
+          "units": "min"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Battery Management",
+        "fr": "Gestion Batterie"
+      },
+      "children": [
+        {
+          "id": "low_battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low battery alert threshold",
+            "fr": "Seuil alerte batterie faible"
+          },
+          "hint": {
+            "en": "Alert when battery drops below this level",
+            "fr": "Alerte quand batterie descend sous ce niveau"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50,
+          "units": "%"
+        },
+        {
+          "id": "battery_reporting_interval",
+          "type": "number",
+          "label": {
+            "en": "Battery reporting interval",
+            "fr": "Intervalle rapport batterie"
+          },
+          "hint": {
+            "en": "How often to check battery level (minutes)",
+            "fr": "Fréquence vérification batterie (minutes)"
+          },
+          "value": 60,
+          "min": 15,
+          "max": 1440,
+          "units": "min"
+        }
+      ]
     }
   ],
   "learnmode": {
