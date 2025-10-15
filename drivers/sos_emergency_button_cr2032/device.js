@@ -57,15 +57,28 @@ class SosEmergencyButtonCr2032Device extends ZigBeeDevice {
           this.log('🚨 Setting up SOS button IAS Zone...');
           
           // SDK3 correct method to get Homey IEEE address
-          const ieee = zclNode?.bridgeId;
+          let homeyIeee = null;
+          const bridgeId = zclNode?._node?.bridgeId;
           
-          if (ieee) {
-            this.log('📡 Homey IEEE address:', ieee);
+          // CRITICAL FIX v2.15.93: bridgeId might be Buffer or string
+          if (bridgeId) {
+            if (Buffer.isBuffer(bridgeId)) {
+              // Convert Buffer to colon-separated hex string
+              homeyIeee = Array.from(bridgeId).map(b => b.toString(16).padStart(2, '0')).join(':');
+              this.log('📡 Homey IEEE from bridgeId (Buffer):', homeyIeee);
+            } else if (typeof bridgeId === 'string') {
+              homeyIeee = bridgeId;
+              this.log('📡 Homey IEEE from bridgeId (string):', homeyIeee);
+            } else {
+              this.log('⚠️ bridgeId has unexpected type:', typeof bridgeId);
+            }
+          }
+          
+          if (homeyIeee && typeof homeyIeee === 'string') {
+            this.log('📡 Homey IEEE address:', homeyIeee);
             
-            // Convert to proper format
-            // FIX: Ensure ieee is a string
-            const ieeeString = String(ieee || '');
-            const ieeeClean = ieeeString.replace(/:/g, '').toLowerCase();
+            // Convert to proper format for Zigbee
+            const ieeeClean = homeyIeee.replace(/:/g, '').toLowerCase();
             const ieeeBuffer = Buffer.from(ieeeClean.match(/.{2}/g).reverse().join(''), 'hex');
             
             // Write CIE Address
