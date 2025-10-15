@@ -140,49 +140,67 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
         if (endpoint && endpoint.clusters.iasZone) {
           this.log('🚶 Setting up Motion IAS Zone...');
           
-          // CRITICAL SDK3 FIX: Use correct method to get Homey IEEE address
+          // CRITICAL SDK3 FIX v2.15.97: Use correct method to get Homey IEEE address
           try {
             // Get Homey's IEEE address from zclNode (SDK3 correct method)
             let homeyIeee = null;
+            let ieeeBuffer = null;
             
-            // Method 1: Try via zclNode
-            if (zclNode && zclNode._node && zclNode._node.bridgeId) {
-              const bridgeId = zclNode._node.bridgeId;
-              
-              // CRITICAL FIX v2.15.93: bridgeId might be Buffer or string
-              if (Buffer.isBuffer(bridgeId)) {
-                // Convert Buffer to colon-separated hex string
-                homeyIeee = Array.from(bridgeId).map(b => b.toString(16).padStart(2, '0')).join(':');
-                this.log('📡 Homey IEEE from bridgeId (Buffer):', homeyIeee);
-              } else if (typeof bridgeId === 'string') {
-                homeyIeee = bridgeId;
-                this.log('📡 Homey IEEE from bridgeId (string):', homeyIeee);
-              } else {
-                this.log('⚠️ bridgeId has unexpected type:', typeof bridgeId);
-              }
-            }
-            
-            // Method 2: Try via endpoint clusters
-            if (!homeyIeee && endpoint.clusters.iasZone) {
+            // Method 1: Try to read existing CIE address first (most reliable)
+            if (endpoint.clusters.iasZone) {
               try {
                 const attrs = await endpoint.clusters.iasZone.readAttributes(['iasCIEAddress']);
-                if (attrs.iasCIEAddress && attrs.iasCIEAddress.toString('hex') !== '0000000000000000') {
-                  this.log('📡 CIE already enrolled, using existing address');
+                if (attrs.iasCIEAddress) {
+                  // Check if already enrolled (non-zero address)
                   const hexStr = attrs.iasCIEAddress.toString('hex');
-                  homeyIeee = hexStr.match(/.{2}/g).reverse().join(':');
+                  if (hexStr !== '0000000000000000' && hexStr.length === 16) {
+                    this.log('📡 CIE already enrolled, using existing address:', hexStr);
+                    ieeeBuffer = attrs.iasCIEAddress;
+                    // Convert to readable format for logging
+                    homeyIeee = hexStr.match(/.{2}/g).reverse().join(':');
+                  }
                 }
               } catch (e) {
                 this.log('Could not read existing CIE address:', e.message);
               }
             }
             
-            if (homeyIeee && typeof homeyIeee === 'string') {
-              this.log('📡 Homey IEEE address:', homeyIeee);
+            // Method 2: Try via zclNode bridgeId
+            if (!ieeeBuffer && zclNode && zclNode._node && zclNode._node.bridgeId) {
+              const bridgeId = zclNode._node.bridgeId;
               
-              // Convert IEEE address to Buffer (reverse byte order for Zigbee)
-              const ieeeClean = homeyIeee.replace(/:/g, '').toLowerCase();
-              const ieeeBuffer = Buffer.from(ieeeClean.match(/.{2}/g).reverse().join(''), 'hex');
-              this.log('📡 IEEE Buffer:', ieeeBuffer.toString('hex'));
+              // CRITICAL FIX v2.15.97: Properly handle Buffer or string bridgeId
+              if (Buffer.isBuffer(bridgeId) && bridgeId.length >= 8) {
+                // Use buffer directly if valid length
+                ieeeBuffer = bridgeId.length === 8 ? bridgeId : bridgeId.slice(0, 8);
+                // Convert to readable format for logging
+                const hexBytes = [];
+                for (let i = 0; i < ieeeBuffer.length; i++) {
+                  hexBytes.push(ieeeBuffer[i].toString(16).padStart(2, '0'));
+                }
+                homeyIeee = hexBytes.join(':');
+                this.log('📡 Homey IEEE from bridgeId (Buffer):', homeyIeee);
+              } else if (typeof bridgeId === 'string' && bridgeId.length >= 16) {
+                // Parse string format (colon-separated or raw hex)
+                homeyIeee = bridgeId;
+                this.log('📡 Homey IEEE from bridgeId (string):', homeyIeee);
+                
+                // Convert string to Buffer
+                const ieeeClean = (typeof homeyIeee === 'string') ? 
+                  homeyIeee.replace(/:/g, '').toLowerCase() : '';
+                
+                if (ieeeClean.length >= 16) {
+                  const hexPairs = ieeeClean.substring(0, 16).match(/.{2}/g);
+                  if (hexPairs && hexPairs.length === 8) {
+                    ieeeBuffer = Buffer.from(hexPairs.reverse().join(''), 'hex');
+                  }
+                }
+              }
+            }
+            
+            // Final validation and enrollment
+            if (ieeeBuffer && Buffer.isBuffer(ieeeBuffer) && ieeeBuffer.length === 8) {
+              this.log('📡 Final IEEE Buffer (8 bytes):', ieeeBuffer.toString('hex'));
               
               // SDK3 Correct Method: writeAttributes with iasCIEAddress
               await endpoint.clusters.iasZone.writeAttributes({
@@ -196,8 +214,23 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
               // Verify enrollment
               const cieAddr = await endpoint.clusters.iasZone.readAttributes(['iasCIEAddress']);
               this.log('✅ Enrollment verified, CIE Address:', cieAddr.iasCIEAddress?.toString('hex'));
+              
+              // Configure zone type if needed
+              try {
+                await endpoint.clusters.iasZone.writeAttributes({
+                  zoneType: 13 // Motion sensor type
+                });
+                this.log('✅ Zone type configured as motion sensor (13)');
+              } catch (zoneTypeErr) {
+                this.log('Zone type configuration skipped:', zoneTypeErr.message);
+              }
             } else {
-              throw new Error('Could not obtain Homey IEEE address');
+              this.log('⚠️ Could not create valid IEEE Buffer, device may auto-enroll');
+              this.log('IEEE Buffer state:', {
+                exists: !!ieeeBuffer,
+                isBuffer: Buffer.isBuffer(ieeeBuffer),
+                length: ieeeBuffer?.length
+              });
             }
           } catch (enrollErr) {
             this.log('⚠️ IAS Zone enrollment failed:', enrollErr.message);
