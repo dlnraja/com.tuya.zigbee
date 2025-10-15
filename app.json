@@ -27050,6 +27050,54 @@
             }
           }
         ]
+      },
+      {
+        "id": "device_online",
+        "title": {
+          "en": "Device came online",
+          "fr": "Appareil en ligne"
+        },
+        "tokens": [
+          {
+            "name": "device",
+            "type": "string",
+            "title": {
+              "en": "Device"
+            }
+          }
+        ]
+      },
+      {
+        "id": "device_offline",
+        "title": {
+          "en": "Device went offline",
+          "fr": "Appareil hors ligne"
+        },
+        "tokens": [
+          {
+            "name": "device",
+            "type": "string",
+            "title": {
+              "en": "Device"
+            }
+          }
+        ]
+      },
+      {
+        "id": "battery_low",
+        "title": {
+          "en": "Battery is low",
+          "fr": "Batterie faible"
+        },
+        "tokens": [
+          {
+            "name": "battery",
+            "type": "number",
+            "title": {
+              "en": "Battery %"
+            }
+          }
+        ]
       }
     ],
     "conditions": [
@@ -27280,6 +27328,35 @@
         "title": {
           "en": "Alarm is active"
         }
+      },
+      {
+        "id": "is_online",
+        "title": {
+          "en": "Device is online",
+          "fr": "Appareil en ligne"
+        }
+      },
+      {
+        "id": "battery_below",
+        "title": {
+          "en": "Battery is below",
+          "fr": "Batterie en dessous de"
+        },
+        "titleFormatted": {
+          "en": "Battery is below [[threshold]]%",
+          "fr": "Batterie en dessous de [[threshold]]%"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "placeholder": {
+              "en": "Threshold"
+            }
+          }
+        ]
       }
     ],
     "actions": [
@@ -27463,6 +27540,16 @@
         "id": "reset_alarm",
         "title": {
           "en": "Reset alarm"
+        }
+      },
+      {
+        "id": "identify_device",
+        "title": {
+          "en": "Identify device (blink LED)",
+          "fr": "Identifier appareil (LED clignote)"
+        },
+        "hint": {
+          "en": "Make the device LED blink for identification"
         }
       }
     ]
