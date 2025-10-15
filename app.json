@@ -332,7 +332,11 @@
       "id": "air_quality_monitor_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -449,7 +453,11 @@
       "id": "air_quality_monitor_pro_battery",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "id": "alarm_siren_chime_ac",
@@ -513,7 +521,11 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "id": "bulb_color_rgbcct_ac",
@@ -583,6 +595,10 @@
             "de": "1. Stellen Sie sicher, dass das Gerät eingeschaltet ist\n2. Drücken Sie die Kopplungstaste 5 Sekunden lang\n3. Warten Sie, bis das Gerät in Homey angezeigt wird\n4. Das Gerät ist jetzt gekoppelt"
           }
         }
+      },
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       }
     },
     {
@@ -735,7 +751,11 @@
             }
           ]
         }
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "id": "bulb_white_ambiance_ac",
@@ -890,7 +910,11 @@
             }
           ]
         }
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -1080,7 +1104,11 @@
       "id": "ceiling_fan_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -1214,7 +1242,11 @@
       "id": "ceiling_light_controller_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -1327,7 +1359,11 @@
       "id": "ceiling_light_rgb_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -1491,7 +1527,11 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -1621,7 +1661,11 @@
       "id": "co2_sensor_battery",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -1750,7 +1794,11 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -1876,7 +1924,11 @@
       "id": "co_detector_pro_battery",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -1982,7 +2034,11 @@
       "id": "comprehensive_air_monitor_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "id": "contact_sensor_battery",
@@ -2080,7 +2136,11 @@
             }
           ]
         }
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -2198,7 +2258,11 @@
           "AAA"
         ]
       },
-      "id": "curtain_motor_ac"
+      "id": "curtain_motor_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -2334,7 +2398,11 @@
       "connectivity": [
         "zigbee"
       ],
-      "id": "dimmer_ac"
+      "id": "dimmer_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -2464,7 +2532,11 @@
       "id": "dimmer_switch_1gang_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -2632,7 +2704,11 @@
       "id": "dimmer_switch_3gang_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -2762,7 +2838,11 @@
       "id": "dimmer_switch_timer_module_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -2897,7 +2977,11 @@
           "AAA"
         ]
       },
-      "id": "door_controller_ac"
+      "id": "door_controller_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -3020,7 +3104,11 @@
           "AA"
         ]
       },
-      "id": "door_lock_battery"
+      "id": "door_lock_battery",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -3167,7 +3255,11 @@
           "CR2032"
         ]
       },
-      "id": "door_window_sensor_battery"
+      "id": "door_window_sensor_battery",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "id": "doorbell_camera_ac",
@@ -3265,7 +3357,11 @@
             }
           ]
         }
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -3378,7 +3474,11 @@
           "AAA"
         ]
       },
-      "id": "doorbell_cr2032"
+      "id": "doorbell_cr2032",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -3512,7 +3612,11 @@
       "id": "energy_monitoring_plug_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -3673,7 +3777,11 @@
       "id": "energy_monitoring_plug_advanced_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -3837,7 +3945,11 @@
       "id": "energy_plug_advanced_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -4005,7 +4117,11 @@
           "decimals": 2
         }
       },
-      "id": "extension_plug_ac"
+      "id": "extension_plug_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -4143,7 +4259,11 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "fan_controller_ac"
+      "id": "fan_controller_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -4295,7 +4415,11 @@
           "AA"
         ]
       },
-      "id": "fingerprint_lock_battery"
+      "id": "fingerprint_lock_battery",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -4445,7 +4569,11 @@
           "CR2032"
         ]
       },
-      "id": "formaldehyde_sensor_battery"
+      "id": "formaldehyde_sensor_battery",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -4582,7 +4710,11 @@
       "id": "garage_door_controller_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -4684,7 +4816,11 @@
           "AAA"
         ]
       },
-      "id": "garage_door_opener_cr2032"
+      "id": "garage_door_opener_cr2032",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -4863,6 +4999,10 @@
         "batteries": [
           "CR2032"
         ]
+      },
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       }
     },
     {
@@ -4923,7 +5063,11 @@
       "connectivity": [
         "zigbee"
       ],
-      "id": "gas_sensor_ts0601_ac"
+      "id": "gas_sensor_ts0601_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -5000,7 +5144,11 @@
           "AAA"
         ]
       },
-      "id": "gas_sensor_ts0601_battery"
+      "id": "gas_sensor_ts0601_battery",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -5116,7 +5264,11 @@
       "id": "humidity_controller_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -5232,7 +5384,11 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "hvac_controller_ac"
+      "id": "hvac_controller_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -5366,7 +5522,11 @@
       "id": "led_strip_advanced_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -5504,7 +5664,11 @@
       "id": "led_strip_controller_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -5635,7 +5799,11 @@
       "id": "led_strip_controller_pro_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "id": "led_strip_outdoor_color_ac",
@@ -5790,7 +5958,11 @@
             }
           ]
         }
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -5940,7 +6112,11 @@
           "CR2032"
         ]
       },
-      "id": "lux_sensor_battery"
+      "id": "lux_sensor_battery",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -6075,7 +6251,11 @@
       "id": "milight_controller_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -6214,7 +6394,11 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "mini_ac"
+      "id": "mini_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -6356,7 +6540,11 @@
           "AAA"
         ]
       },
-      "id": "mini_switch_cr2032"
+      "id": "mini_switch_cr2032",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -6460,7 +6648,11 @@
       "id": "motion_sensor_battery",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "id": "motion_sensor_illuminance_battery",
@@ -6521,6 +6713,10 @@
             "de": "1. Stellen Sie sicher, dass das Gerät eingeschaltet ist\n2. Drücken Sie die Kopplungstaste 5 Sekunden lang\n3. Warten Sie, bis das Gerät in Homey angezeigt wird\n4. Das Gerät ist jetzt gekoppelt"
           }
         }
+      },
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       }
     },
     {
@@ -6650,7 +6846,11 @@
           "CR2032"
         ]
       },
-      "id": "motion_sensor_mmwave_battery"
+      "id": "motion_sensor_mmwave_battery",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -6825,7 +7025,11 @@
           "CR2032"
         ]
       },
-      "id": "motion_sensor_pir_ac_battery"
+      "id": "motion_sensor_pir_ac_battery",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -6905,7 +7109,11 @@
           "CR2032"
         ]
       },
-      "id": "motion_sensor_pir_battery"
+      "id": "motion_sensor_pir_battery",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -7045,7 +7253,11 @@
       "id": "motion_sensor_zigbee_204z_battery",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -7180,7 +7392,11 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -7331,7 +7547,11 @@
           "CR2032"
         ]
       },
-      "id": "multisensor_battery"
+      "id": "multisensor_battery",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -7481,7 +7701,11 @@
           "CR2032"
         ]
       },
-      "id": "noise_level_sensor_battery"
+      "id": "noise_level_sensor_battery",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -7646,7 +7870,11 @@
           "AAA"
         ]
       },
-      "id": "outdoor_light_controller_ac"
+      "id": "outdoor_light_controller_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -7759,7 +7987,11 @@
           "AAA"
         ]
       },
-      "id": "outdoor_siren_cr2032"
+      "id": "outdoor_siren_cr2032",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -7891,7 +8123,11 @@
           "AAA"
         ]
       },
-      "id": "pet_feeder_cr2032"
+      "id": "pet_feeder_cr2032",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -7978,7 +8214,11 @@
       "id": "pir_radar_illumination_sensor_battery",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -8106,7 +8346,11 @@
       "id": "pir_sensor_advanced_battery",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -8253,7 +8497,11 @@
       },
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -8403,7 +8651,11 @@
           "CR2032"
         ]
       },
-      "id": "pm25_sensor_battery"
+      "id": "pm25_sensor_battery",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -8530,7 +8782,11 @@
       "id": "pool_pump_controller_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -8691,7 +8947,11 @@
       "id": "power_meter_socket_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "id": "presence_sensor_mmwave_battery",
@@ -8825,7 +9085,11 @@
             }
           ]
         }
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -8979,7 +9243,11 @@
           "CR2032"
         ]
       },
-      "id": "presence_sensor_radar_battery"
+      "id": "presence_sensor_radar_battery",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -9129,7 +9397,11 @@
           "CR2032"
         ]
       },
-      "id": "pressure_sensor_battery"
+      "id": "pressure_sensor_battery",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -9267,7 +9539,11 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "projector_screen_controller_ac"
+      "id": "projector_screen_controller_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -9395,7 +9671,11 @@
       "id": "radar_motion_sensor_advanced_battery",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -9542,7 +9822,11 @@
       "id": "radar_motion_sensor_mmwave_battery",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -9670,7 +9954,11 @@
       "id": "radar_motion_sensor_tank_level_battery",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -9807,7 +10095,11 @@
           "AA"
         ]
       },
-      "id": "radiator_valve_hybrid"
+      "id": "radiator_valve_hybrid",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -9940,7 +10232,11 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "relay_switch_1gang_ac"
+      "id": "relay_switch_1gang_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -10076,7 +10372,11 @@
           "CR2032"
         ]
       },
-      "id": "remote_switch_cr2032"
+      "id": "remote_switch_cr2032",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -10209,7 +10509,11 @@
       "id": "rgb_led_controller_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -10352,7 +10656,11 @@
           "AAA"
         ]
       },
-      "id": "roller_blind_controller_ac"
+      "id": "roller_blind_controller_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -10491,7 +10799,11 @@
       "id": "roller_shutter_controller_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -10654,7 +10966,11 @@
       "id": "roller_shutter_switch_advanced_battery",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -10799,7 +11115,11 @@
       "id": "roller_shutter_switch_cr2032",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -10900,7 +11220,11 @@
       "id": "scene_controller",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "class": "sensor",
@@ -11031,7 +11355,11 @@
           "CR2032"
         ]
       },
-      "id": "scene_controller_2button_cr2032"
+      "id": "scene_controller_2button_cr2032",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "class": "sensor",
@@ -11140,7 +11468,11 @@
           "CR2032"
         ]
       },
-      "id": "scene_controller_4button_cr2032"
+      "id": "scene_controller_4button_cr2032",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "class": "sensor",
@@ -11275,7 +11607,11 @@
           "CR2032"
         ]
       },
-      "id": "scene_controller_6button_cr2032"
+      "id": "scene_controller_6button_cr2032",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "class": "sensor",
@@ -11412,7 +11748,11 @@
           "CR2032"
         ]
       },
-      "id": "scene_controller_8button_cr2032"
+      "id": "scene_controller_8button_cr2032",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -11556,7 +11896,11 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "scene_controller_battery"
+      "id": "scene_controller_battery",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -11694,7 +12038,11 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "shade_controller_ac"
+      "id": "shade_controller_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -11826,7 +12174,11 @@
       "id": "smart_bulb_dimmer_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -11970,7 +12322,11 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "smart_bulb_rgb_ac"
+      "id": "smart_bulb_rgb_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -12117,7 +12473,11 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "smart_bulb_tunable_ac"
+      "id": "smart_bulb_tunable_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -12264,7 +12624,11 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "smart_bulb_white_ac"
+      "id": "smart_bulb_white_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -12368,7 +12732,11 @@
           "INTERNAL"
         ]
       },
-      "id": "smart_curtain_motor_hybrid"
+      "id": "smart_curtain_motor_hybrid",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -12512,7 +12880,11 @@
       "id": "smart_dimmer_module_1gang_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -12645,7 +13017,11 @@
           "INTERNAL"
         ]
       },
-      "id": "smart_doorbell_battery"
+      "id": "smart_doorbell_battery",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -12796,7 +13172,11 @@
           "INTERNAL"
         ]
       },
-      "id": "smart_garden_sprinkler_battery"
+      "id": "smart_garden_sprinkler_battery",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -12925,7 +13305,11 @@
       "id": "smart_irrigation_controller_hybrid",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -13041,7 +13425,11 @@
           "AA"
         ]
       },
-      "id": "smart_lock_battery"
+      "id": "smart_lock_battery",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -13202,7 +13590,11 @@
       "id": "smart_outlet_monitor_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -13371,7 +13763,11 @@
           "decimals": 2
         }
       },
-      "id": "smart_plug_ac"
+      "id": "smart_plug_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "id": "smart_plug_dimmer_ac",
@@ -13454,6 +13850,10 @@
             "de": "1. Stecken Sie die intelligente Steckdose in eine Steckdose\n2. Warten Sie, bis die LED zu blinken beginnt\n3. Wenn die LED nicht blinkt, halten Sie die Taste 10 Sekunden lang gedrückt\n4. Das Gerät befindet sich jetzt im Kopplungsmodus"
           }
         }
+      },
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       }
     },
     {
@@ -13626,7 +14026,11 @@
       "id": "smart_plug_energy_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "id": "smart_plug_power_meter_16a_ac",
@@ -13751,7 +14155,11 @@
             }
           ]
         }
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -13856,7 +14264,11 @@
           }
         }
       },
-      "id": "smart_radiator_valve_hybrid"
+      "id": "smart_radiator_valve_hybrid",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -14042,7 +14454,11 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -14189,7 +14605,11 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "smart_spot_ac"
+      "id": "smart_spot_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -14315,7 +14735,11 @@
       "id": "smart_switch_1gang_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "class": "socket",
@@ -14453,7 +14877,11 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "smart_switch_1gang_hybrid"
+      "id": "smart_switch_1gang_hybrid",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -14600,7 +15028,11 @@
       "id": "smart_switch_2gang_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "class": "socket",
@@ -14759,7 +15191,11 @@
           }
         }
       },
-      "id": "smart_switch_2gang_hybrid"
+      "id": "smart_switch_2gang_hybrid",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -14923,7 +15359,11 @@
       "id": "smart_switch_3gang_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "class": "socket",
@@ -15099,7 +15539,11 @@
           }
         }
       },
-      "id": "smart_switch_3gang_hybrid"
+      "id": "smart_switch_3gang_hybrid",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "class": "socket",
@@ -15240,7 +15684,11 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "smart_switch_4gang_hybrid"
+      "id": "smart_switch_4gang_hybrid",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -15401,7 +15849,11 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -15503,7 +15955,11 @@
       "id": "smart_valve_controller_hybrid",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -15630,7 +16086,11 @@
           "AA"
         ]
       },
-      "id": "smart_water_valve_hybrid"
+      "id": "smart_water_valve_hybrid",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -15857,7 +16317,11 @@
             }
           ]
         }
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -16053,7 +16517,11 @@
           "min": -9,
           "max": 9
         }
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "id": "smoke_detector_temperature_battery",
@@ -16111,6 +16579,10 @@
             "de": "1. Stellen Sie sicher, dass das Gerät eingeschaltet ist\n2. Drücken Sie die Kopplungstaste 5 Sekunden lang\n3. Warten Sie, bis das Gerät in Homey angezeigt wird\n4. Das Gerät ist jetzt gekoppelt"
           }
         }
+      },
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       }
     },
     {
@@ -16319,7 +16791,11 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -16470,7 +16946,11 @@
           "CR2032"
         ]
       },
-      "id": "soil_moisture_sensor_battery"
+      "id": "soil_moisture_sensor_battery",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -16648,7 +17128,11 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -16796,7 +17280,11 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -16918,7 +17406,11 @@
       "id": "solar_panel_controller_hybrid",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -17054,7 +17546,11 @@
       "id": "sos_emergency_button_cr2032",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -17208,7 +17704,11 @@
       "id": "switch_1gang_battery",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -17363,7 +17863,11 @@
       "id": "switch_2gang_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -17515,7 +18019,11 @@
       "id": "switch_2gang_hybrid",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -17707,7 +18215,11 @@
       },
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -17844,7 +18356,11 @@
       "id": "switch_4gang_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -18000,7 +18516,11 @@
       "id": "switch_4gang_battery_cr2032",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -18158,7 +18678,11 @@
       "id": "switch_5gang_battery",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -18297,7 +18821,11 @@
       "id": "switch_6gang_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -18438,7 +18966,11 @@
       "id": "switch_8gang_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -18545,7 +19077,11 @@
       "id": "tank_level_monitor_cr2032",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -18720,7 +19256,11 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -18894,7 +19434,11 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -19069,7 +19613,11 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -19226,7 +19774,11 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -19389,7 +19941,11 @@
           "min": -9,
           "max": 9
         }
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "id": "temperature_humidity_display_battery",
@@ -19447,6 +20003,10 @@
             "de": "1. Stellen Sie sicher, dass das Gerät eingeschaltet ist\n2. Drücken Sie die Kopplungstaste 5 Sekunden lang\n3. Warten Sie, bis das Gerät in Homey angezeigt wird\n4. Das Gerät ist jetzt gekoppelt"
           }
         }
+      },
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       }
     },
     {
@@ -19585,7 +20145,11 @@
           "min": -9,
           "max": 9
         }
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -19760,7 +20324,11 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -19914,7 +20482,11 @@
           "CR2032"
         ]
       },
-      "id": "temperature_sensor_battery"
+      "id": "temperature_sensor_battery",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -20093,7 +20665,11 @@
           "min": -9,
           "max": 9
         }
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -20223,7 +20799,11 @@
       "id": "touch_dimmer_1gang_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -20353,7 +20933,11 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "touch_dimmer_ac"
+      "id": "touch_dimmer_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -20493,7 +21077,11 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "touch_switch_1gang_ac"
+      "id": "touch_switch_1gang_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -20653,7 +21241,11 @@
           }
         }
       },
-      "id": "touch_switch_2gang_ac"
+      "id": "touch_switch_2gang_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -20830,7 +21422,11 @@
           }
         }
       },
-      "id": "touch_switch_3gang_ac"
+      "id": "touch_switch_3gang_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -20973,7 +21569,11 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "touch_switch_4gang_ac"
+      "id": "touch_switch_4gang_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -21121,7 +21721,11 @@
       "id": "tvoc_sensor_advanced_battery",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -21271,7 +21875,11 @@
           "CR2032"
         ]
       },
-      "id": "tvoc_sensor_battery"
+      "id": "tvoc_sensor_battery",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -21439,7 +22047,11 @@
           "decimals": 2
         }
       },
-      "id": "usb_outlet_ac"
+      "id": "usb_outlet_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -21594,7 +22206,11 @@
       "id": "usb_outlet_advanced_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -21748,7 +22364,11 @@
           "CR2032"
         ]
       },
-      "id": "vibration_sensor_battery"
+      "id": "vibration_sensor_battery",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "class": "socket",
@@ -21860,7 +22480,11 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "wall_switch_1gang_ac"
+      "id": "wall_switch_1gang_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "class": "socket",
@@ -21999,7 +22623,11 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "wall_switch_1gang_dc"
+      "id": "wall_switch_1gang_dc",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "class": "socket",
@@ -22134,7 +22762,11 @@
           }
         }
       },
-      "id": "wall_switch_2gang_ac"
+      "id": "wall_switch_2gang_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "class": "socket",
@@ -22295,7 +22927,11 @@
           }
         }
       },
-      "id": "wall_switch_2gang_dc"
+      "id": "wall_switch_2gang_dc",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "class": "socket",
@@ -22448,7 +23084,11 @@
           }
         }
       },
-      "id": "wall_switch_3gang_ac"
+      "id": "wall_switch_3gang_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "class": "socket",
@@ -22627,7 +23267,11 @@
           }
         }
       },
-      "id": "wall_switch_3gang_dc"
+      "id": "wall_switch_3gang_dc",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "class": "socket",
@@ -22785,7 +23429,11 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "wall_switch_4gang_ac"
+      "id": "wall_switch_4gang_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "class": "socket",
@@ -22969,7 +23617,11 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "wall_switch_4gang_dc"
+      "id": "wall_switch_4gang_dc",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "class": "socket",
@@ -23174,7 +23826,11 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "wall_switch_5gang_ac"
+      "id": "wall_switch_5gang_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "class": "socket",
@@ -23391,7 +24047,11 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "wall_switch_6gang_ac"
+      "id": "wall_switch_6gang_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -23527,7 +24187,11 @@
       "id": "water_leak_detector_advanced_battery",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -23648,7 +24312,11 @@
       "id": "water_leak_detector_battery",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -23796,7 +24464,11 @@
           "CR2032"
         ]
       },
-      "id": "water_leak_sensor_battery"
+      "id": "water_leak_sensor_battery",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -23923,7 +24595,11 @@
           "AA"
         ]
       },
-      "id": "water_valve_hybrid"
+      "id": "water_valve_hybrid",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -24024,7 +24700,11 @@
       "id": "water_valve_smart_hybrid",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "id": "wireless_button_2gang_battery",
@@ -24121,7 +24801,11 @@
             }
           ]
         }
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "id": "wireless_dimmer_scroll_battery",
@@ -24220,7 +24904,11 @@
             }
           ]
         }
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "id": "wireless_scene_controller_4button_battery",
@@ -24275,6 +24963,10 @@
             "de": "1. Stellen Sie sicher, dass das Gerät eingeschaltet ist\n2. Drücken Sie die Kopplungstaste 5 Sekunden lang\n3. Warten Sie, bis das Gerät in Homey angezeigt wird\n4. Das Gerät ist jetzt gekoppelt"
           }
         }
+      },
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       }
     },
     {
@@ -24417,7 +25109,11 @@
           "CR2032"
         ]
       },
-      "id": "wireless_switch_1gang_cr2032"
+      "id": "wireless_switch_1gang_cr2032",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "class": "button",
@@ -24578,6 +25274,10 @@
         "batteries": [
           "CR2032"
         ]
+      },
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       }
     },
     {
@@ -24757,6 +25457,10 @@
         "batteries": [
           "CR2032"
         ]
+      },
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
       }
     },
     {
@@ -24896,7 +25600,11 @@
           "CR2032"
         ]
       },
-      "id": "wireless_switch_4gang_cr2032"
+      "id": "wireless_switch_4gang_cr2032",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -25060,7 +25768,11 @@
       "id": "wireless_switch_4gang_cr2450",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "class": "button",
@@ -25215,7 +25927,11 @@
           "CR2032"
         ]
       },
-      "id": "wireless_switch_5gang_cr2032"
+      "id": "wireless_switch_5gang_cr2032",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "class": "button",
@@ -25371,7 +26087,11 @@
           "CR2032"
         ]
       },
-      "id": "wireless_switch_6gang_cr2032"
+      "id": "wireless_switch_6gang_cr2032",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -25506,7 +26226,11 @@
           "CR2032"
         ]
       },
-      "id": "wireless_switch_cr2032"
+      "id": "wireless_switch_cr2032",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -25614,7 +26338,11 @@
         "zigbee"
       ],
       "capabilitiesOptions": {},
-      "id": "zbbridge_ac"
+      "id": "zbbridge_ac",
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     },
     {
       "name": {
@@ -25717,7 +26445,11 @@
       "id": "zigbee_gateway_hub_ac",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "images": {
+        "small": "./assets/images/small.png",
+        "large": "./assets/images/large.png"
+      }
     }
   ],
   "capabilities": {
