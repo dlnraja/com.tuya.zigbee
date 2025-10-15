@@ -6,6 +6,56 @@ Format: Keep a Changelog (https://keepachangelog.com)
 Versioning: Semantic Versioning (https://semver.org)
 
 ================================================================================
+[2.15.93] - 2025-10-15 🚨 CRITICAL FIX
+================================================================================
+
+CRITICAL BUG FIX - Motion Sensors & SOS Buttons Now Work!
+----------------------------------------------------------
+**ISSUE**: Multiple users reported motion sensors and SOS buttons not triggering flows
+**ROOT CAUSE**: IEEE address Buffer handling caused `v.replace is not a function` error
+**IMPACT**: IAS Zone enrollment failed silently, preventing device notifications
+
+FIXED
+-----
+✅ Motion sensors now trigger flows correctly
+✅ SOS buttons now trigger alarm flows
+✅ IAS Zone enrollment works on first pairing
+✅ Proper Buffer-to-string conversion for IEEE addresses
+✅ Enhanced type safety checks
+
+AFFECTED DRIVERS FIXED
+----------------------
+- drivers/motion_temp_humidity_illumination_multi_battery/device.js
+- drivers/sos_emergency_button_cr2032/device.js
+
+TECHNICAL DETAILS
+-----------------
+- zclNode._node.bridgeId returns Buffer, not string
+- Added Buffer.isBuffer() check before processing
+- Proper hex conversion: Array.from(buffer).map().join(':')
+- Type verification before calling .replace()
+
+COMMUNITY REPORTS ADDRESSED
+---------------------------
+- Diagnostic cad613e7 (v2.15.87): "Still no Motion and SOS triggered data"
+- Diagnostic c411abc2 (v2.15.89): "SOS button not Triggering the alarm"
+- Diagnostic c91cdb08 (v2.15.92): "doesn't see a button press on SOS button"
+
+ADDED
+-----
+- New device support: _TZE284_vvmbj46n (TS0601 Color LCD Temp/Humidity Sensor)
+  * Driver: temp_humid_sensor_advanced_battery
+  * Community request by Karsten_Hille (GitHub #1175)
+  * Uses Tuya cluster 0xEF00 with datapoints DP2, DP4, DP5
+
+USER ACTION REQUIRED
+--------------------
+⚠️ IMPORTANT: Remove and re-pair motion sensors and SOS buttons after update
+   - Old devices have corrupted IEEE addresses from previous bug
+   - Fresh pairing ensures proper IAS Zone enrollment
+   - Expected logs: "✅ IAS CIE Address written successfully"
+
+================================================================================
 [2.1.51] - 2025-10-11
 ================================================================================
 

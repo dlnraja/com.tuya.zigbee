@@ -147,8 +147,19 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
             
             // Method 1: Try via zclNode
             if (zclNode && zclNode._node && zclNode._node.bridgeId) {
-              homeyIeee = zclNode._node.bridgeId;
-              this.log('📡 Homey IEEE from bridgeId:', homeyIeee);
+              const bridgeId = zclNode._node.bridgeId;
+              
+              // CRITICAL FIX v2.15.93: bridgeId might be Buffer or string
+              if (Buffer.isBuffer(bridgeId)) {
+                // Convert Buffer to colon-separated hex string
+                homeyIeee = Array.from(bridgeId).map(b => b.toString(16).padStart(2, '0')).join(':');
+                this.log('📡 Homey IEEE from bridgeId (Buffer):', homeyIeee);
+              } else if (typeof bridgeId === 'string') {
+                homeyIeee = bridgeId;
+                this.log('📡 Homey IEEE from bridgeId (string):', homeyIeee);
+              } else {
+                this.log('⚠️ bridgeId has unexpected type:', typeof bridgeId);
+              }
             }
             
             // Method 2: Try via endpoint clusters
@@ -157,20 +168,19 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
                 const attrs = await endpoint.clusters.iasZone.readAttributes(['iasCIEAddress']);
                 if (attrs.iasCIEAddress && attrs.iasCIEAddress.toString('hex') !== '0000000000000000') {
                   this.log('📡 CIE already enrolled, using existing address');
-                  homeyIeee = attrs.iasCIEAddress.toString('hex').match(/.{2}/g).reverse().join(':');
+                  const hexStr = attrs.iasCIEAddress.toString('hex');
+                  homeyIeee = hexStr.match(/.{2}/g).reverse().join(':');
                 }
               } catch (e) {
                 this.log('Could not read existing CIE address:', e.message);
               }
             }
             
-            if (homeyIeee) {
+            if (homeyIeee && typeof homeyIeee === 'string') {
               this.log('📡 Homey IEEE address:', homeyIeee);
               
               // Convert IEEE address to Buffer (reverse byte order for Zigbee)
-              // FIX: Ensure homeyIeee is a string
-              const ieeeString = String(homeyIeee || '');
-              const ieeeClean = ieeeString.replace(/:/g, '').toLowerCase();
+              const ieeeClean = homeyIeee.replace(/:/g, '').toLowerCase();
               const ieeeBuffer = Buffer.from(ieeeClean.match(/.{2}/g).reverse().join(''), 'hex');
               this.log('📡 IEEE Buffer:', ieeeBuffer.toString('hex'));
               
