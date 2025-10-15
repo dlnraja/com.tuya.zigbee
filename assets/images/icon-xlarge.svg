@@ -1,58 +1,46 @@
-<svg width="1000" height="700" xmlns="http://www.w3.org/2000/svg">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="700" viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg-gradient-xl" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#F8F9FA;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#E9ECEF;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="icon-gradient-xl" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#5A9FE2;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#4A8FD2;stop-opacity:1" />
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#764ba2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f093fb;stop-opacity:1" />
     </linearGradient>
   </defs>
   
-  <!-- Background clair et doux -->
-  <rect width="1000" height="700" rx="90" ry="90" fill="url(#bg-gradient-xl)"/>
+  <!-- Fond -->
+  <rect width="1000" height="700" fill="url(#grad3)"/>
   
-  <!-- Cercle central -->
-  <circle cx="500" cy="300" r="180" fill="#FFFFFF" opacity="0.75"/>
+  <!-- Cercles décoratifs -->
+  <circle cx="850" cy="100" r="80" fill="white" opacity="0.08"/>
+  <circle cx="150" cy="600" r="100" fill="white" opacity="0.08"/>
+  <circle cx="900" cy="550" r="60" fill="white" opacity="0.08"/>
   
-  <!-- Icône Zigbee minimaliste -->
-  <g transform="translate(500, 300)">
-    <!-- Noeud central -->
-    <circle cx="0" cy="0" r="35" fill="url(#icon-gradient-xl)"/>
-    
-    <!-- Lignes de connexion fines -->
-    <line x1="0" y1="0" x2="0" y2="-110" stroke="#5A9FE2" stroke-width="3.5" opacity="0.6"/>
-    <line x1="0" y1="0" x2="95" y2="55" stroke="#5A9FE2" stroke-width="3.5" opacity="0.6"/>
-    <line x1="0" y1="0" x2="-95" y2="55" stroke="#5A9FE2" stroke-width="3.5" opacity="0.6"/>
-    
-    <!-- Noeuds périphériques -->
-    <circle cx="0" cy="-110" r="24" fill="url(#icon-gradient-xl)" opacity="0.9"/>
-    <circle cx="95" cy="55" r="24" fill="url(#icon-gradient-xl)" opacity="0.9"/>
-    <circle cx="-95" cy="55" r="24" fill="url(#icon-gradient-xl)" opacity="0.9"/>
-    
-    <!-- Points de connexion blancs subtils -->
-    <circle cx="0" cy="0" r="6" fill="#FFFFFF"/>
-    <circle cx="0" cy="-110" r="5" fill="#FFFFFF"/>
-    <circle cx="95" cy="55" r="5" fill="#FFFFFF"/>
-    <circle cx="-95" cy="55" r="5" fill="#FFFFFF"/>
-  </g>
+  <!-- Hexagone central -->
+  <polygon points="500,150 560,180 560,240 500,270 440,240 440,180" 
+           fill="white" opacity="0.95"/>
   
-  <!-- Texte TUYA léger et élégant -->
-  <text x="500" y="560" 
-        font-family="'SF Pro Display', 'Segoe UI', Arial, sans-serif" 
-        font-size="80" 
-        font-weight="300"
-        letter-spacing="15"
-        fill="#6C757D" 
-        text-anchor="middle">TUYA</text>
+  <!-- Logo Z -->
+  <text x="500" y="230" font-family="Arial, sans-serif" font-size="80" 
+        font-weight="bold" fill="#667eea" text-anchor="middle">Z</text>
   
-  <!-- Sous-titre Zigbee discret -->
-  <text x="500" y="630" 
-        font-family="'SF Pro Display', 'Segoe UI', Arial, sans-serif" 
-        font-size="38" 
-        font-weight="400"
-        letter-spacing="8"
-        fill="#8B96A0" 
-        text-anchor="middle">ZIGBEE</text>
+  <!-- Titre principal -->
+  <text x="500" y="340" font-family="Arial, sans-serif" font-size="76" 
+        font-weight="bold" fill="white" text-anchor="middle">Tuya Zigbee</text>
+  
+  <!-- Sous-titre -->
+  <text x="500" y="400" font-family="Arial, sans-serif" font-size="36" 
+        fill="white" text-anchor="middle" opacity="0.9">Universal Homey Integration</text>
+  
+  <!-- Box features -->
+  <rect x="200" y="460" width="600" height="140" rx="20" fill="white" opacity="0.15"/>
+  
+  <text x="500" y="510" font-family="Arial, sans-serif" font-size="28" 
+        font-weight="bold" fill="white" text-anchor="middle">550+ Devices • 183 Drivers • 100% Local</text>
+  
+  <text x="500" y="550" font-family="Arial, sans-serif" font-size="24" 
+        fill="white" text-anchor="middle">Battery Intelligence • Flow Automation</text>
+  
+  <text x="500" y="585" font-family="Arial, sans-serif" font-size="24" 
+        fill="white" text-anchor="middle">Real-time Monitoring • Community Support</text>
 </svg>
