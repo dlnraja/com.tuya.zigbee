@@ -53,19 +53,23 @@ function createProfessionalImage(width, height) {
   ctx.textBaseline = 'middle';
   ctx.fillText('Z', centerX, centerY);
   
-  // Add title for larger images
+  // Add title for larger images - FIXED: No text overlap
   if (width >= 500) {
     ctx.fillStyle = 'rgba(255, 255, 255, 0.98)';
-    ctx.font = `bold ${width * 0.09}px Arial`;
+    ctx.font = `bold ${width * 0.08}px Arial`;
     ctx.shadowColor = 'rgba(0, 0, 0, 0.3)';
     ctx.shadowBlur = 10;
     ctx.shadowOffsetX = 2;
     ctx.shadowOffsetY = 2;
     ctx.textAlign = 'center';
-    ctx.fillText('Universal', centerX, height - (height * 0.15));
     
-    ctx.font = `${width * 0.065}px Arial`;
-    ctx.fillText('Tuya Zigbee', centerX, height - (height * 0.08));
+    // Single line: "Tuya Zigbee" with proper spacing
+    ctx.fillText('Tuya Zigbee', centerX, height - (height * 0.12));
+    
+    // Subtitle on separate line
+    ctx.font = `${width * 0.04}px Arial`;
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
+    ctx.fillText('Universal Integration', centerX, height - (height * 0.06));
   }
   
   return canvas;
