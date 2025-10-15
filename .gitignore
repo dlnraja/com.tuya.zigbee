@@ -58,3 +58,16 @@ archive/*
 archive_old/
 
 *.backup-auto
+# Auto-cleanup rules - Ne pas créer ces fichiers à la racine
+*_REPORT*.md
+*_STATUS*.md
+*_SUMMARY*.md
+*_COMPLETE*.md
+*_FIX*.md
+*_DEPLOY*.md
+*_SESSION*.md
+*.tmp
+*.log
+*.bak
+temp_*.bat
+temp_*.js
