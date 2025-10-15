@@ -27270,7 +27270,10 @@
               "en": "Temperature"
             }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Temperature is above [[threshold]]"
+        }
       },
       {
         "id": "alarm_is_active",
