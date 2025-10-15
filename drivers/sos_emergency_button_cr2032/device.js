@@ -97,15 +97,23 @@ class SosEmergencyButtonCr2032Device extends ZigBeeDevice {
                 this.log('🚨 SOS BUTTON PRESSED! ✅');
                 await this.setCapabilityValue('alarm_generic', true);
                 
-                // Trigger flow
+                // Trigger flow - FIXED v2.15.92: Use correct flow card ID
                 try {
                   const battery = this.getCapabilityValue('measure_battery') || 0;
                   const timestamp = new Date().toISOString();
                   
-                  await this.triggerFlowCard('alarm_triggered', {
+                  // Trigger BOTH flow cards for maximum compatibility
+                  await this.triggerFlowCard('sos_button_emergency', {
                     battery: battery,
                     timestamp: timestamp
                   });
+                  
+                  await this.triggerFlowCard('safety_alarm_triggered', {
+                    battery: battery,
+                    timestamp: timestamp
+                  });
+                  
+                  this.log('✅ SOS flow cards triggered successfully');
                 } catch (flowErr) {
                   this.error('⚠️ Flow trigger error:', flowErr);
                 }
