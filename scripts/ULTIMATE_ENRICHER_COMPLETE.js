@@ -2,7 +2,7 @@
 'use strict';
 
 /**
- * ULTIMATE ENRICHER COMPLETE v2.15.97
+ * ULTIMATE ENRICHER COMPLETE v2.15.98
  * 
  * Comprehensive enrichment system combining ALL previous prompt requirements:
  * - Internet search for missing manufacturer names
@@ -28,7 +28,7 @@ const CONFIG = {
   driversDir: path.join(__dirname, '..', 'drivers'),
   projectDataDir: path.join(__dirname, '..', 'project-data'),
   referencesDir: path.join(__dirname, '..', 'references'),
-  outputFile: path.join(__dirname, '..', 'project-data', 'ENRICHMENT_v2.15.97_REPORT.json'),
+  outputFile: path.join(__dirname, '..', 'project-data', 'ENRICHMENT_v2.15.98_REPORT.json'),
   
   // External sources
   sources: {
@@ -110,7 +110,7 @@ class ManufacturerEnricher {
     
     return {
       metadata: {
-        version: '2.15.97',
+        version: '2.15.98',
         lastUpdated: new Date().toISOString(),
         totalEntries: 0,
         sources: []
@@ -333,7 +333,7 @@ class UltimateEnricher {
     this.driverEnricher = new DriverEnricher(CONFIG.driversDir);
     this.report = {
       startTime: new Date().toISOString(),
-      version: '2.15.97',
+      version: '2.15.98',
       phases: [],
       summary: {}
     };
@@ -368,7 +368,7 @@ class UltimateEnricher {
   }
   
   async run() {
-    Logger.log('\n🚀 ULTIMATE ENRICHER v2.15.97 STARTING\n');
+    Logger.log('\n🚀 ULTIMATE ENRICHER v2.15.98 STARTING\n');
     
     // Phase 1: Search external sources
     await this.runPhase('External Source Search', async () => {
