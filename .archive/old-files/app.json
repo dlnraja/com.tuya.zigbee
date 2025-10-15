@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "2.15.98",
+  "version": "2.15.99",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
@@ -26962,94 +26962,6 @@
           "en": "Light scene activated [[device]]",
           "fr": "Scène lumière activée [[device]]"
         }
-      },
-      {
-        "id": "motion_detected",
-        "title": {
-          "en": "Motion detected"
-        },
-        "tokens": [
-          {
-            "name": "device",
-            "type": "string",
-            "title": {
-              "en": "Device"
-            }
-          },
-          {
-            "name": "timestamp",
-            "type": "string",
-            "title": {
-              "en": "Timestamp"
-            }
-          }
-        ]
-      },
-      {
-        "id": "temperature_changed",
-        "title": {
-          "en": "Temperature changed"
-        },
-        "tokens": [
-          {
-            "name": "temperature",
-            "type": "number",
-            "title": {
-              "en": "Temperature"
-            }
-          },
-          {
-            "name": "unit",
-            "type": "string",
-            "title": {
-              "en": "Unit"
-            }
-          }
-        ]
-      },
-      {
-        "id": "button_pressed",
-        "title": {
-          "en": "Button pressed"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button"
-            }
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action"
-            }
-          }
-        ]
-      },
-      {
-        "id": "alarm_triggered",
-        "title": {
-          "en": "Alarm triggered"
-        },
-        "tokens": [
-          {
-            "name": "type",
-            "type": "string",
-            "title": {
-              "en": "Alarm Type"
-            }
-          },
-          {
-            "name": "state",
-            "type": "boolean",
-            "title": {
-              "en": "State"
-            }
-          }
-        ]
       }
     ],
     "conditions": [
@@ -27250,33 +27162,6 @@
           "en": "[[device]] Natural light is !{{sufficient|insufficient}}",
           "fr": "[[device]] Lumière naturelle !{{suffisante|insuffisante}}"
         }
-      },
-      {
-        "id": "is_motion_active",
-        "title": {
-          "en": "Motion is active"
-        }
-      },
-      {
-        "id": "temperature_above",
-        "title": {
-          "en": "Temperature is above"
-        },
-        "args": [
-          {
-            "name": "threshold",
-            "type": "number",
-            "placeholder": {
-              "en": "Temperature"
-            }
-          }
-        ]
-      },
-      {
-        "id": "alarm_is_active",
-        "title": {
-          "en": "Alarm is active"
-        }
       }
     ],
     "actions": [
@@ -27454,12 +27339,6 @@
         "titleFormatted": {
           "en": "Circadian lighting [[device]]",
           "fr": "Éclairage circadien [[device]]"
-        }
-      },
-      {
-        "id": "reset_alarm",
-        "title": {
-          "en": "Reset alarm"
         }
       }
     ]
