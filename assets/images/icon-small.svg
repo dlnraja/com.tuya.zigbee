@@ -1,46 +1,27 @@
-<svg width="250" height="175" xmlns="http://www.w3.org/2000/svg">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="250" height="175" viewBox="0 0 250 175" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg-gradient-s" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#F8F9FA;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#E9ECEF;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="icon-gradient-s" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#5A9FE2;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#4A8FD2;stop-opacity:1" />
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
     </linearGradient>
   </defs>
   
-  <!-- Background clair -->
-  <rect width="250" height="175" rx="25" ry="25" fill="url(#bg-gradient-s)"/>
+  <!-- Fond -->
+  <rect width="250" height="175" fill="url(#grad2)"/>
   
-  <!-- Icône Zigbee centrée et proportionnée -->
-  <g transform="translate(125, 87.5)">
-    <!-- Noeud central -->
-    <circle cx="0" cy="0" r="12" fill="url(#icon-gradient-s)"/>
-    
-    <!-- Lignes fines -->
-    <line x1="0" y1="0" x2="0" y2="-35" stroke="#5A9FE2" stroke-width="1.5" opacity="0.7"/>
-    <line x1="0" y1="0" x2="30" y2="18" stroke="#5A9FE2" stroke-width="1.5" opacity="0.7"/>
-    <line x1="0" y1="0" x2="-30" y2="18" stroke="#5A9FE2" stroke-width="1.5" opacity="0.7"/>
-    
-    <!-- Noeuds périphériques -->
-    <circle cx="0" cy="-35" r="8" fill="url(#icon-gradient-s)" opacity="0.9"/>
-    <circle cx="30" cy="18" r="8" fill="url(#icon-gradient-s)" opacity="0.9"/>
-    <circle cx="-30" cy="18" r="8" fill="url(#icon-gradient-s)" opacity="0.9"/>
-    
-    <!-- Points blancs subtils -->
-    <circle cx="0" cy="0" r="2.5" fill="#FFFFFF"/>
-    <circle cx="0" cy="-35" r="2" fill="#FFFFFF"/>
-    <circle cx="30" cy="18" r="2" fill="#FFFFFF"/>
-    <circle cx="-30" cy="18" r="2" fill="#FFFFFF"/>
-  </g>
+  <!-- Hexagone -->
+  <polygon points="125,50 145,60 145,80 125,90 105,80 105,60" 
+           fill="white" opacity="0.95"/>
   
-  <!-- Texte TUYA discret -->
-  <text x="125" y="155" 
-        font-family="'SF Pro Display', 'Segoe UI', Arial, sans-serif" 
-        font-size="24" 
-        font-weight="300"
-        letter-spacing="3"
-        fill="#6C757D" 
-        text-anchor="middle">TUYA</text>
+  <!-- Logo Z -->
+  <text x="125" y="80" font-family="Arial, sans-serif" font-size="28" 
+        font-weight="bold" fill="#667eea" text-anchor="middle">Z</text>
+  
+  <!-- Texte -->
+  <text x="125" y="120" font-family="Arial, sans-serif" font-size="24" 
+        font-weight="bold" fill="white" text-anchor="middle">Tuya</text>
+  
+  <text x="125" y="145" font-family="Arial, sans-serif" font-size="14" 
+        fill="white" text-anchor="middle" opacity="0.9">Zigbee Hub</text>
 </svg>
