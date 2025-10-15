@@ -1,0 +1,1811 @@
+{
+  "metadata": {
+    "version": "2.15.95",
+    "lastUpdated": "2025-01-15",
+    "totalEntries": 95,
+    "sources": [
+      "Zigbee2MQTT Database",
+      "Homey Community Forum",
+      "GitHub Issues",
+      "Diagnostic Reports"
+    ]
+  },
+  "manufacturers": {
+    "_TZ3000_12sxjap4": {
+      "brand": "YANDHI",
+      "productName": "RGB Smart Bulb E27",
+      "productId": "TS0505B",
+      "category": "Smart Lighting",
+      "description": "YANDHI RGB+CCT Smart Bulb with full color spectrum control and tunable white temperature",
+      "features": [
+        "16 million colors",
+        "Adjustable color temperature (2700K-6500K)",
+        "Dimmable brightness",
+        "Energy efficient LED",
+        "Zigbee 3.0 protocol"
+      ],
+      "driver": "bulb_color_rgbcct_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true
+    },
+    "_TZ3000_5bsf8vaj": {
+      "brand": "Generic Tuya",
+      "productName": "RGB Wall Light",
+      "productId": "TS0505A",
+      "category": "Smart Lighting",
+      "description": "Wall-mounted RGB LED light with ambient lighting capabilities",
+      "features": [
+        "RGB color control",
+        "Tunable white",
+        "Wall mounting design",
+        "Scene modes",
+        "Timer functions"
+      ],
+      "driver": "bulb_color_rgbcct_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true
+    },
+    "_TZ3000_9cpuaca6": {
+      "brand": "LIVARNO LUX",
+      "productName": "RGB Mood Light",
+      "productId": "TS0505A",
+      "category": "Smart Lighting",
+      "description": "LIVARNO LUX (Lidl) RGB mood light for ambient room lighting",
+      "features": [
+        "RGB + warm/cool white",
+        "Portable design",
+        "Multiple scene modes",
+        "Touch controls",
+        "Lidl exclusive product"
+      ],
+      "driver": "bulb_color_rgbcct_ac",
+      "powerSource": "AC Mains",
+      "region": "Europe (Lidl)",
+      "verified": true,
+      "retailer": "Lidl"
+    },
+    "_TZ3000_h1jnz6l8": {
+      "brand": "LIVARNO LUX",
+      "productName": "RGB Garden Spot Light",
+      "productId": "TS0505A",
+      "category": "Smart Lighting",
+      "description": "Outdoor RGB spot light for garden and landscape lighting",
+      "features": [
+        "Weatherproof design (IP44+)",
+        "RGB color changing",
+        "Ground spike or wall mount",
+        "Energy efficient",
+        "Suitable for outdoor use"
+      ],
+      "driver": "bulb_color_rgbcct_ac",
+      "powerSource": "AC Mains",
+      "region": "Europe (Lidl)",
+      "verified": true,
+      "retailer": "Lidl"
+    },
+    "_TZ3000_hlijwsai": {
+      "brand": "Generic Tuya",
+      "productName": "RGB Smart Bulb",
+      "productId": "TS0505A",
+      "category": "Smart Lighting",
+      "description": "Standard RGB+CCT smart bulb with full color control",
+      "features": [
+        "E27/E26 socket",
+        "RGB + white",
+        "9W-12W power",
+        "App control",
+        "Voice assistant compatible"
+      ],
+      "driver": "bulb_color_rgbcct_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true
+    },
+    "_TZ3000_kdpxju99": {
+      "brand": "LIVARNO LUX",
+      "productName": "RGB Spot GU10",
+      "productId": "TS0505A",
+      "category": "Smart Lighting",
+      "description": "GU10 RGB spot light for recessed and track lighting",
+      "features": [
+        "GU10 socket fitting",
+        "RGB + tunable white",
+        "Directional lighting",
+        "Compact design",
+        "Easy retrofit"
+      ],
+      "driver": "bulb_color_rgbcct_ac",
+      "powerSource": "AC Mains",
+      "region": "Europe (Lidl)",
+      "verified": true,
+      "retailer": "Lidl"
+    },
+    "_TZ3000_keabpigv": {
+      "brand": "Woox",
+      "productName": "Smart RGB Bulb E27",
+      "productId": "TS0505A",
+      "category": "Smart Lighting",
+      "description": "Woox branded RGB smart bulb with premium features",
+      "features": [
+        "Premium build quality",
+        "Smooth color transitions",
+        "Music sync mode",
+        "Scheduling",
+        "Group control"
+      ],
+      "driver": "bulb_color_rgbcct_ac",
+      "powerSource": "AC Mains",
+      "region": "Europe",
+      "verified": true,
+      "brandWebsite": "wooxhome.com"
+    },
+    "_TZ3000_q50zhdsc": {
+      "brand": "Generic Tuya",
+      "productName": "RGB Smart Bulb",
+      "productId": "TS0505B",
+      "category": "Smart Lighting",
+      "description": "Enhanced RGB bulb with improved color rendering",
+      "features": [
+        "High CRI (>80)",
+        "Smooth dimming",
+        "Long lifespan (25000h)",
+        "Low power consumption",
+        "Fast response time"
+      ],
+      "driver": "bulb_color_rgbcct_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true
+    },
+    "_TZ3000_qd7hej8u": {
+      "brand": "LIVARNO LUX",
+      "productName": "RGB Smart Bulb E27",
+      "productId": "TS0505B",
+      "category": "Smart Lighting",
+      "description": "LIVARNO LUX RGB bulb with enhanced features",
+      "features": [
+        "E27 socket",
+        "806 lumens brightness",
+        "Energy class A+",
+        "App and voice control",
+        "Affordable pricing"
+      ],
+      "driver": "bulb_color_rgbcct_ac",
+      "powerSource": "AC Mains",
+      "region": "Europe (Lidl)",
+      "verified": true,
+      "retailer": "Lidl"
+    },
+    "_TZ3000_utagpnzs": {
+      "brand": "Generic Tuya",
+      "productName": "RGB Wall LED Light",
+      "productId": "TS0505A",
+      "category": "Smart Lighting",
+      "description": "Wall-mounted RGB LED for decorative lighting",
+      "features": [
+        "Slim profile design",
+        "Multiple mounting options",
+        "Scene presets",
+        "Remote control support",
+        "Low heat emission"
+      ],
+      "driver": "bulb_color_rgbcct_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true
+    },
+    "_TZ3210_iystcadi": {
+      "brand": "LIVARNO LUX",
+      "productName": "RGB LED Light Bar",
+      "productId": "TS0505B",
+      "category": "Smart Lighting",
+      "description": "LED light bar for accent and mood lighting",
+      "features": [
+        "Linear design",
+        "Linkable units",
+        "Adhesive mounting",
+        "USB or AC powered",
+        "Music reactive mode"
+      ],
+      "driver": "bulb_color_rgbcct_ac",
+      "powerSource": "AC Mains",
+      "region": "Europe (Lidl)",
+      "verified": true,
+      "retailer": "Lidl"
+    },
+    "_TZ3210_mja6r5ix": {
+      "brand": "Generic Tuya",
+      "productName": "RGB Smart Bulb",
+      "productId": "TS0505B",
+      "category": "Smart Lighting",
+      "description": "Modern RGB bulb with latest Zigbee 3.0 features",
+      "features": [
+        "Latest chipset",
+        "Fast pairing",
+        "Stable connection",
+        "OTA updates support",
+        "Extended range"
+      ],
+      "driver": "bulb_color_rgbcct_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true
+    },
+    "_TZ3210_r0xgkft5": {
+      "brand": "LIVARNO LUX",
+      "productName": "RGB Mood Light",
+      "productId": "TS0505B",
+      "category": "Smart Lighting",
+      "description": "Updated mood light with improved color accuracy",
+      "features": [
+        "Enhanced RGB chip",
+        "Better color mixing",
+        "Touch-sensitive controls",
+        "Portable battery option",
+        "Decorative design"
+      ],
+      "driver": "bulb_color_rgbcct_ac",
+      "powerSource": "AC Mains",
+      "region": "Europe (Lidl)",
+      "verified": true,
+      "retailer": "Lidl"
+    },
+    "_TZ3000_49qchf10": {
+      "brand": "LIVARNO LUX",
+      "productName": "Tunable White Bulb E27",
+      "productId": "TS0502A",
+      "category": "Smart Lighting",
+      "description": "Tunable white temperature bulb from warm to cool",
+      "features": [
+        "2700K-6500K range",
+        "No RGB (white only)",
+        "Energy efficient",
+        "Circadian rhythm support",
+        "Reading and relaxation modes"
+      ],
+      "driver": "bulb_white_ambiance_ac",
+      "powerSource": "AC Mains",
+      "region": "Europe (Lidl)",
+      "verified": true,
+      "retailer": "Lidl"
+    },
+    "_TZ3000_8uaoilu9": {
+      "brand": "LIVARNO LUX",
+      "productName": "RGB Floor LED Light",
+      "productId": "TS0502A",
+      "category": "Smart Lighting",
+      "description": "Floor standing LED light with color temperature control",
+      "features": [
+        "Floor lamp design",
+        "Adjustable height",
+        "Tunable white",
+        "Modern aesthetics",
+        "Stable base"
+      ],
+      "driver": "bulb_white_ambiance_ac",
+      "powerSource": "AC Mains",
+      "region": "Europe (Lidl)",
+      "verified": true,
+      "retailer": "Lidl"
+    },
+    "_TZ3000_el5kt5im": {
+      "brand": "LIVARNO LUX",
+      "productName": "Tunable White Spot GU10",
+      "productId": "TS0502A",
+      "category": "Smart Lighting",
+      "description": "GU10 spot with adjustable color temperature",
+      "features": [
+        "GU10 fitting",
+        "Warm to cool white",
+        "Directional beam",
+        "Retrofit compatible",
+        "Low profile"
+      ],
+      "driver": "bulb_white_ambiance_ac",
+      "powerSource": "AC Mains",
+      "region": "Europe (Lidl)",
+      "verified": true,
+      "retailer": "Lidl"
+    },
+    "_TZ3000_oborybow": {
+      "brand": "LIVARNO LUX",
+      "productName": "Tunable White Bulb E14",
+      "productId": "TS0502A",
+      "category": "Smart Lighting",
+      "description": "Small Edison screw tunable white bulb",
+      "features": [
+        "E14 candle socket",
+        "Compact size",
+        "Tunable white temperature",
+        "Perfect for chandeliers",
+        "Dimmable"
+      ],
+      "driver": "bulb_white_ambiance_ac",
+      "powerSource": "AC Mains",
+      "region": "Europe (Lidl)",
+      "verified": true,
+      "retailer": "Lidl"
+    },
+    "_TZ3210_zdrhqmo0": {
+      "brand": "Generic Tuya",
+      "productName": "Dimmable Recessed LED",
+      "productId": "TS0502B",
+      "category": "Smart Lighting",
+      "description": "Recessed ceiling LED with dimming capability",
+      "features": [
+        "Recessed installation",
+        "Dimmable white",
+        "Slim profile",
+        "Fire-rated option",
+        "Long lifespan"
+      ],
+      "driver": "bulb_white_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true
+    },
+    "_TZ3000_dl4pxp1r": {
+      "brand": "Generic Tuya",
+      "productName": "RGB LED Strip Controller",
+      "productId": "TS0503A",
+      "category": "Smart Lighting",
+      "description": "Controller for RGB LED strips",
+      "features": [
+        "12V/24V compatible",
+        "Max 144W output",
+        "Multiple strip support",
+        "Scene modes",
+        "Music sync"
+      ],
+      "driver": "led_strip_controller_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true
+    },
+    "_TZ3000_gek6snaj": {
+      "brand": "LIVARNO LUX",
+      "productName": "RGB LED Light Bar",
+      "productId": "TS0505A",
+      "category": "Smart Lighting",
+      "description": "LED light bar for TV backlighting and ambient lighting",
+      "features": [
+        "Flexible mounting",
+        "Sync with TV",
+        "Multiple segments",
+        "USB powered option",
+        "Adhesive backing"
+      ],
+      "driver": "led_strip_controller_ac",
+      "powerSource": "AC Mains",
+      "region": "Europe (Lidl)",
+      "verified": true,
+      "retailer": "Lidl"
+    },
+    "_TZ3000_i8l0nqdu": {
+      "brand": "Generic Tuya",
+      "productName": "RGB LED Strip Controller",
+      "productId": "TS0503B",
+      "category": "Smart Lighting",
+      "description": "Enhanced RGB strip controller with better features",
+      "features": [
+        "Higher power output",
+        "Better heat management",
+        "Smooth transitions",
+        "Multiple zones",
+        "Timer functions"
+      ],
+      "driver": "led_strip_controller_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true
+    },
+    "_TZ3000_obacbukl": {
+      "brand": "Generic Tuya",
+      "productName": "RGB LED Controller",
+      "productId": "TS0503A",
+      "category": "Smart Lighting",
+      "description": "Standard RGB controller for LED strips",
+      "features": [
+        "3 channel output",
+        "PWM dimming",
+        "Compact size",
+        "Easy installation",
+        "Remote compatible"
+      ],
+      "driver": "led_strip_controller_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true
+    },
+    "_TZ3000_qqjaziws": {
+      "brand": "Generic Tuya",
+      "productName": "RGBW LED Strip Controller",
+      "productId": "TS0505B",
+      "category": "Smart Lighting",
+      "description": "Advanced RGBW controller with white channel",
+      "features": [
+        "4 channel RGBW",
+        "Independent white control",
+        "High power capacity",
+        "Scene presets",
+        "API support"
+      ],
+      "driver": "led_strip_controller_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true
+    },
+    "_TZ3000_ukuvyhaa": {
+      "brand": "Generic Tuya",
+      "productName": "RGBCCT LED Controller",
+      "productId": "TS0504B",
+      "category": "Smart Lighting",
+      "description": "Full spectrum RGBCCT controller",
+      "features": [
+        "5 channel control",
+        "RGB + dual white",
+        "Professional grade",
+        "High current capacity",
+        "Low noise operation"
+      ],
+      "driver": "led_strip_controller_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true
+    },
+    "_TZ3210_invesber": {
+      "brand": "Generic Tuya",
+      "productName": "Dimmable LED Strip Controller",
+      "productId": "TS0502B",
+      "category": "Smart Lighting",
+      "description": "White LED strip controller with dimming",
+      "features": [
+        "Single channel white",
+        "Smooth dimming curve",
+        "Flicker-free",
+        "Memory function",
+        "Overload protection"
+      ],
+      "driver": "led_strip_controller_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true
+    },
+    "_TZ3210_k1pe6ibm": {
+      "brand": "Generic Tuya",
+      "productName": "RGB LED Strip Controller",
+      "productId": "TS0505B",
+      "category": "Smart Lighting",
+      "description": "Modern RGB controller with latest features",
+      "features": [
+        "Zigbee 3.0",
+        "Fast response",
+        "Group control",
+        "Scene automation",
+        "Energy monitoring"
+      ],
+      "driver": "led_strip_controller_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true
+    },
+    "_TZ3210_x13bu7za": {
+      "brand": "LIVARNO LUX",
+      "productName": "RGB Ceiling Light",
+      "productId": "TS0505B",
+      "category": "Smart Lighting",
+      "description": "Ceiling mounted RGB light fixture",
+      "features": [
+        "Flush mount design",
+        "Large coverage area",
+        "RGB + white modes",
+        "Energy efficient",
+        "Modern design"
+      ],
+      "driver": "ceiling_light_rgb_ac",
+      "powerSource": "AC Mains",
+      "region": "Europe (Lidl)",
+      "verified": true,
+      "retailer": "Lidl"
+    },
+    "_TZE200_s8gkrkxk": {
+      "brand": "Melinera",
+      "productName": "Christmas Tree Lights",
+      "productId": "TS0601",
+      "category": "Smart Lighting",
+      "description": "Smart Christmas lights with color effects",
+      "features": [
+        "Festive light patterns",
+        "Multiple color modes",
+        "Timer function",
+        "Weather resistant",
+        "Easy setup"
+      ],
+      "driver": "led_strip_outdoor_color_ac",
+      "powerSource": "AC Mains",
+      "region": "Europe (Lidl)",
+      "verified": true,
+      "retailer": "Lidl",
+      "seasonal": true
+    },
+    "_TYZB01_qezuin6k": {
+      "brand": "Generic Tuya",
+      "productName": "1-Gang Smart Dimmer Module",
+      "productId": "TS110F",
+      "category": "Dimmers & Controls",
+      "description": "In-wall dimmer module for LED and incandescent lights",
+      "features": [
+        "150W LED / 300W incandescent",
+        "Smooth dimming",
+        "Trailing edge technology",
+        "Compact design",
+        "Memory function"
+      ],
+      "driver": "dimmer_switch_1gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "In-wall"
+    },
+    "_TZ3000_92chsky7": {
+      "brand": "Generic Tuya",
+      "productName": "2-Gang Dimmer Module",
+      "productId": "TS110F",
+      "category": "Dimmers & Controls",
+      "description": "Dual channel dimmer for independent light control",
+      "features": [
+        "2 independent channels",
+        "Individual dimming",
+        "Synchronized control",
+        "Scene support",
+        "Overload protection"
+      ],
+      "driver": "dimmer_switch_1gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "In-wall"
+    },
+    "_TZ3000_ktuoyvt5": {
+      "brand": "Generic Tuya",
+      "productName": "1-Gang LED Dimmer",
+      "productId": "TS110F",
+      "category": "Dimmers & Controls",
+      "description": "Optimized dimmer for LED lighting",
+      "features": [
+        "Flicker-free dimming",
+        "LED compatible",
+        "Minimum load 5W",
+        "Soft start",
+        "Silent operation"
+      ],
+      "driver": "dimmer_switch_1gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "In-wall"
+    },
+    "_TZ3000_mgusv51k": {
+      "brand": "Generic Tuya",
+      "productName": "Smart Dimmer Switch",
+      "productId": "TS0052",
+      "category": "Dimmers & Controls",
+      "description": "Universal dimmer switch with manual control",
+      "features": [
+        "Touch panel",
+        "Manual override",
+        "Status LED",
+        "Modern design",
+        "Easy retrofit"
+      ],
+      "driver": "dimmer_switch_1gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "Wall-mount"
+    },
+    "_TZ3210_k1msuvg6": {
+      "brand": "Generic Tuya",
+      "productName": "1-Gang Dimmer TS110E",
+      "productId": "TS110E",
+      "category": "Dimmers & Controls",
+      "description": "Enhanced dimmer with improved compatibility",
+      "features": [
+        "Wide voltage range",
+        "Better LED compatibility",
+        "Capacitive touch",
+        "Backlit panel",
+        "Temperature protection"
+      ],
+      "driver": "dimmer_switch_1gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "In-wall"
+    },
+    "_TZ3210_ngqk6jia": {
+      "brand": "Generic Tuya",
+      "productName": "Modern Dimmer Switch",
+      "productId": "TS110E",
+      "category": "Dimmers & Controls",
+      "description": "Contemporary design dimmer with smart features",
+      "features": [
+        "Glass panel",
+        "RGB status indicator",
+        "Gesture control",
+        "Voice assistant ready",
+        "Premium materials"
+      ],
+      "driver": "dimmer_switch_1gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "Wall-mount"
+    },
+    "_TZ3210_weaqkhab": {
+      "brand": "Generic Tuya",
+      "productName": "1-Gang Smart Dimmer",
+      "productId": "TS110E",
+      "category": "Dimmers & Controls",
+      "description": "Smart dimmer with scheduling capabilities",
+      "features": [
+        "24/7 scheduling",
+        "Sunrise/sunset mode",
+        "Away mode",
+        "Power monitoring",
+        "Long lifespan"
+      ],
+      "driver": "dimmer_switch_1gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "In-wall"
+    },
+    "_TZ3210_zxbtub8r": {
+      "brand": "Generic Tuya",
+      "productName": "Professional Dimmer Module",
+      "productId": "TS110E",
+      "category": "Dimmers & Controls",
+      "description": "Professional grade dimmer for demanding applications",
+      "features": [
+        "Commercial rating",
+        "High power handling",
+        "Precise dimming curve",
+        "Low EMI",
+        "Certified components"
+      ],
+      "driver": "dimmer_switch_1gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "In-wall"
+    },
+    "_TZE200_1agwnems": {
+      "brand": "Generic Tuya",
+      "productName": "MCU Dimmer TS0601",
+      "productId": "TS0601",
+      "category": "Dimmers & Controls",
+      "description": "MCU-based dimmer with advanced features",
+      "features": [
+        "Tuya MCU protocol",
+        "Scene programming",
+        "Countdown timer",
+        "Status reporting",
+        "Remote diagnostics"
+      ],
+      "driver": "dimmer_switch_1gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "In-wall"
+    },
+    "_TZE200_4mh6tyyo": {
+      "brand": "Generic Tuya",
+      "productName": "Smart Dimmer Controller",
+      "productId": "TS0601",
+      "category": "Dimmers & Controls",
+      "description": "Intelligent dimmer with learning capability",
+      "features": [
+        "Auto-configuration",
+        "Load detection",
+        "Adaptive dimming",
+        "Energy statistics",
+        "Firmware upgradeable"
+      ],
+      "driver": "dimmer_switch_1gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "In-wall"
+    },
+    "_TZE200_579lguh2": {
+      "brand": "Generic Tuya",
+      "productName": "Touch Dimmer Switch",
+      "productId": "TS0601",
+      "category": "Dimmers & Controls",
+      "description": "Touch-sensitive dimmer with modern interface",
+      "features": [
+        "Capacitive touch",
+        "LED feedback",
+        "Haptic response",
+        "Child lock",
+        "Easy cleaning"
+      ],
+      "driver": "dimmer_switch_1gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "Wall-mount"
+    },
+    "_TZE200_ip2akl4w": {
+      "brand": "Generic Tuya",
+      "productName": "WiFi+Zigbee Dimmer",
+      "productId": "TS0601",
+      "category": "Dimmers & Controls",
+      "description": "Dual protocol dimmer for flexible connectivity",
+      "features": [
+        "WiFi backup",
+        "Dual connectivity",
+        "Cloud access",
+        "Local control",
+        "Redundant connection"
+      ],
+      "driver": "dimmer_switch_1gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "In-wall"
+    },
+    "_TZE200_la2c2uo9": {
+      "brand": "Generic Tuya",
+      "productName": "Rotary Dimmer Switch",
+      "productId": "TS0601",
+      "category": "Dimmers & Controls",
+      "description": "Traditional rotary knob dimmer with smart features",
+      "features": [
+        "Rotary control",
+        "Tactile feedback",
+        "Classic design",
+        "Smart automation",
+        "Universal compatibility"
+      ],
+      "driver": "dimmer_switch_1gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "Wall-mount"
+    },
+    "_TZE200_vucankjx": {
+      "brand": "Generic Tuya",
+      "productName": "Slider Dimmer Panel",
+      "productId": "TS0601",
+      "category": "Dimmers & Controls",
+      "description": "Slider-style dimmer for precise control",
+      "features": [
+        "Vertical slider",
+        "Fine adjustment",
+        "Visual feedback",
+        "Preset positions",
+        "Elegant design"
+      ],
+      "driver": "dimmer_switch_1gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "Wall-mount"
+    },
+    "_TZE204_9qhuzgo0": {
+      "brand": "Generic Tuya",
+      "productName": "Advanced Dimmer Module",
+      "productId": "TS0601",
+      "category": "Dimmers & Controls",
+      "description": "Next-generation dimmer with AI features",
+      "features": [
+        "AI optimization",
+        "Usage learning",
+        "Predictive dimming",
+        "Energy insights",
+        "Cloud analytics"
+      ],
+      "driver": "dimmer_switch_1gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "In-wall"
+    },
+    "_TZE204_hlx9tnzb": {
+      "brand": "Generic Tuya",
+      "productName": "Premium Dimmer Switch",
+      "productId": "TS0601",
+      "category": "Dimmers & Controls",
+      "description": "Premium quality dimmer with luxury features",
+      "features": [
+        "Crystal glass panel",
+        "Ambient lighting",
+        "Premium feel",
+        "Silent operation",
+        "Lifetime warranty"
+      ],
+      "driver": "dimmer_switch_1gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "Wall-mount"
+    },
+    "_TZE204_n9ctkb6j": {
+      "brand": "Generic Tuya",
+      "productName": "Compact Dimmer Module",
+      "productId": "TS0601",
+      "category": "Dimmers & Controls",
+      "description": "Ultra-compact dimmer for tight spaces",
+      "features": [
+        "Micro form factor",
+        "Deep box compatible",
+        "High efficiency",
+        "Low heat generation",
+        "Easy installation"
+      ],
+      "driver": "dimmer_switch_1gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "In-wall"
+    },
+    "_TYZB01_v8gtiaed": {
+      "brand": "Generic Tuya",
+      "productName": "2-Gang Dimmer Module",
+      "productId": "TS110F",
+      "category": "Dimmers & Controls",
+      "description": "Dual channel dimmer for multi-zone lighting",
+      "features": [
+        "2 independent zones",
+        "Synchronized dimming",
+        "Scene creation",
+        "Group control",
+        "Master/slave mode"
+      ],
+      "driver": "dimmer_switch_3gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "In-wall"
+    },
+    "_TZ3210_3mpwqzuu": {
+      "brand": "Generic Tuya",
+      "productName": "2-Gang Smart Dimmer",
+      "productId": "TS110E",
+      "category": "Dimmers & Controls",
+      "description": "Smart dual dimmer with advanced control",
+      "features": [
+        "Individual control",
+        "Linked dimming",
+        "Scene support",
+        "Voice control",
+        "App automation"
+      ],
+      "driver": "dimmer_switch_3gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "In-wall"
+    },
+    "_TZ3210_4ubylghk": {
+      "brand": "Generic Tuya",
+      "productName": "Dual Zone Dimmer",
+      "productId": "TS110E",
+      "category": "Dimmers & Controls",
+      "description": "Professional dual zone lighting controller",
+      "features": [
+        "Independent zones",
+        "Fade transitions",
+        "Custom curves",
+        "Power monitoring",
+        "Load balancing"
+      ],
+      "driver": "dimmer_switch_3gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "In-wall"
+    },
+    "_TZ3210_pagajpog": {
+      "brand": "Generic Tuya",
+      "productName": "2-Channel Dimmer Panel",
+      "productId": "TS110E",
+      "category": "Dimmers & Controls",
+      "description": "Modern panel with dual dimming channels",
+      "features": [
+        "Touch interface",
+        "Status display",
+        "Scene buttons",
+        "Backlit controls",
+        "Premium design"
+      ],
+      "driver": "dimmer_switch_3gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "Wall-mount"
+    },
+    "_TZ3210_wdexaypg": {
+      "brand": "Generic Tuya",
+      "productName": "Multi-Zone Dimmer Controller",
+      "productId": "TS110E",
+      "category": "Dimmers & Controls",
+      "description": "Advanced multi-zone lighting control system",
+      "features": [
+        "2-4 zones support",
+        "Centralized control",
+        "Scene programming",
+        "Scheduling per zone",
+        "Energy reporting"
+      ],
+      "driver": "dimmer_switch_3gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "In-wall"
+    },
+    "_TZE200_e3oitdyu": {
+      "brand": "Generic Tuya",
+      "productName": "2-Gang MCU Dimmer",
+      "productId": "TS0601",
+      "category": "Dimmers & Controls",
+      "description": "MCU-based dual channel dimmer",
+      "features": [
+        "Intelligent control",
+        "Auto-learning",
+        "Remote firmware update",
+        "Diagnostics",
+        "Extended features"
+      ],
+      "driver": "dimmer_switch_3gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "In-wall"
+    },
+    "_TZE200_fjjbhx9d": {
+      "brand": "Generic Tuya",
+      "productName": "Dual Dimmer Switch",
+      "productId": "TS0601",
+      "category": "Dimmers & Controls",
+      "description": "Dual gang smart dimmer with memory",
+      "features": [
+        "Memory per channel",
+        "Cross-fade",
+        "Favorite scenes",
+        "Quick access",
+        "Energy efficient"
+      ],
+      "driver": "dimmer_switch_3gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "Wall-mount"
+    },
+    "_TZE200_gwkapsoq": {
+      "brand": "Generic Tuya",
+      "productName": "2-Way Dimmer Controller",
+      "productId": "TS0601",
+      "category": "Dimmers & Controls",
+      "description": "Two-way dimmer for staircase and hallway lighting",
+      "features": [
+        "2-way wiring",
+        "Multi-location control",
+        "Synchronized status",
+        "Easy retrofit",
+        "Standard wiring"
+      ],
+      "driver": "dimmer_switch_3gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "In-wall"
+    },
+    "_TZE204_bxoo2swd": {
+      "brand": "Generic Tuya",
+      "productName": "Smart 2-Gang Dimmer",
+      "productId": "TS0601",
+      "category": "Dimmers & Controls",
+      "description": "Smart dimmer with advanced automation",
+      "features": [
+        "Automation rules",
+        "Conditional control",
+        "Integration ready",
+        "API access",
+        "Cloud backup"
+      ],
+      "driver": "dimmer_switch_3gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "In-wall"
+    },
+    "_TZE204_zenj4lxv": {
+      "brand": "Generic Tuya",
+      "productName": "Premium 2-Gang Dimmer",
+      "productId": "TS0601",
+      "category": "Dimmers & Controls",
+      "description": "Premium dual dimmer with luxury features",
+      "features": [
+        "Luxury materials",
+        "Smooth operation",
+        "Silent switching",
+        "LED indicators",
+        "Extended warranty"
+      ],
+      "driver": "dimmer_switch_3gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "Wall-mount"
+    },
+    "_TZE200_3p5ydos3": {
+      "brand": "Generic Tuya",
+      "productName": "Wall Dimmer Switch",
+      "productId": "TS0601",
+      "category": "Dimmers & Controls",
+      "description": "Wall-mounted dimmer with modern design",
+      "features": [
+        "Modern aesthetics",
+        "Easy installation",
+        "Standard box fit",
+        "Color options",
+        "Soft touch"
+      ],
+      "driver": "dimmer_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "installation": "Wall-mount"
+    },
+    "_TZ3000_1obwwnmq": {
+      "brand": "Silvercrest",
+      "productName": "3-Socket Smart Power Strip",
+      "productId": "TS011F",
+      "category": "Power & Energy",
+      "description": "Silvercrest (Lidl) 3-socket power strip with individual control",
+      "features": [
+        "3 independently controlled sockets",
+        "Energy monitoring per socket",
+        "Overload protection",
+        "Child safety shutters",
+        "Compact design"
+      ],
+      "driver": "extension_plug_ac",
+      "powerSource": "AC Mains",
+      "region": "Europe (Lidl)",
+      "verified": true,
+      "retailer": "Lidl"
+    },
+    "_TZ3000_4uf3d0ax": {
+      "brand": "Silvercrest",
+      "productName": "Smart Extension Socket",
+      "productId": "TS011F",
+      "category": "Power & Energy",
+      "description": "3-gang extension with USB charging ports",
+      "features": [
+        "3 AC outlets + USB ports",
+        "Individual socket control",
+        "Surge protection",
+        "LED status indicators",
+        "Wall mountable"
+      ],
+      "driver": "extension_plug_ac",
+      "powerSource": "AC Mains",
+      "region": "Europe (Lidl)",
+      "verified": true,
+      "retailer": "Lidl"
+    },
+    "_TZ3000_vmpbygs5": {
+      "brand": "Silvercrest",
+      "productName": "3-Way Smart Socket Strip",
+      "productId": "TS011F",
+      "category": "Power & Energy",
+      "description": "Modern power strip with smart features",
+      "features": [
+        "Flat plug design",
+        "Space-saving sockets",
+        "2m power cable",
+        "Energy statistics",
+        "Scheduling per socket"
+      ],
+      "driver": "extension_plug_ac",
+      "powerSource": "AC Mains",
+      "region": "Europe (Lidl)",
+      "verified": true,
+      "retailer": "Lidl"
+    },
+    "_TZ3000_vzopcetz": {
+      "brand": "Silvercrest",
+      "productName": "Smart Multi-Socket Strip",
+      "productId": "TS011F",
+      "category": "Power & Energy",
+      "description": "Premium 3-socket strip with metering",
+      "features": [
+        "Real-time power monitoring",
+        "Historical data",
+        "Cost calculation",
+        "Overheat protection",
+        "Fire-resistant housing"
+      ],
+      "driver": "extension_plug_ac",
+      "powerSource": "AC Mains",
+      "region": "Europe (Lidl)",
+      "verified": true,
+      "retailer": "Lidl"
+    },
+    "_TZ3000_wzauvbcs": {
+      "brand": "Silvercrest",
+      "productName": "Zigbee Power Strip 3-Gang",
+      "productId": "TS011F",
+      "category": "Power & Energy",
+      "description": "Latest generation smart power strip",
+      "features": [
+        "Improved connectivity",
+        "Faster response time",
+        "Better build quality",
+        "Extended warranty",
+        "Easy setup"
+      ],
+      "driver": "extension_plug_ac",
+      "powerSource": "AC Mains",
+      "region": "Europe (Lidl)",
+      "verified": true,
+      "retailer": "Lidl"
+    },
+    "_TZ3210_7jnk7l3k": {
+      "brand": "Generic Tuya",
+      "productName": "Double Power Point with Metering",
+      "productId": "TS011F",
+      "category": "Power & Energy",
+      "description": "Dual outlet smart plug with energy monitoring",
+      "features": [
+        "2 independent outlets",
+        "Power metering per outlet",
+        "Voltage/current display",
+        "Historical energy data",
+        "Compact form factor"
+      ],
+      "driver": "smart_plug_energy_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true
+    },
+    "_TYZB01_a476raq2": {
+      "brand": "Generic Tuya",
+      "productName": "LCD Temperature & Humidity Sensor",
+      "productId": "TS0201",
+      "category": "Temperature & Climate",
+      "description": "Battery-powered sensor with LCD display",
+      "features": [
+        "Large LCD screen",
+        "Temperature accuracy ±0.3°C",
+        "Humidity accuracy ±3%",
+        "Data logging",
+        "Low battery alert"
+      ],
+      "driver": "temperature_humidity_sensor_battery",
+      "powerSource": "Battery (CR2450)",
+      "region": "Global",
+      "verified": true,
+      "batteryLife": "1-2 years"
+    },
+    "_TYZB01_hjsgdkfl": {
+      "brand": "Generic Tuya",
+      "productName": "Smart Temp/Humidity Monitor",
+      "productId": "TS0201",
+      "category": "Temperature & Climate",
+      "description": "Compact climate sensor with display",
+      "features": [
+        "Real-time monitoring",
+        "Comfort level indicator",
+        "Trend arrows",
+        "Min/max recording",
+        "Wall or desk mount"
+      ],
+      "driver": "temperature_humidity_sensor_battery",
+      "powerSource": "Battery (AAA)",
+      "region": "Global",
+      "verified": true,
+      "batteryLife": "12-18 months"
+    },
+    "_TZ2000_xogb73am": {
+      "brand": "Generic Tuya",
+      "productName": "LCD Climate Sensor",
+      "productId": "TS0201",
+      "category": "Temperature & Climate",
+      "description": "Zigbee 2.0 temperature and humidity sensor",
+      "features": [
+        "Backlit display",
+        "Dew point calculation",
+        "Comfort zones",
+        "Magnetic mount",
+        "Compact size"
+      ],
+      "driver": "temperature_humidity_sensor_battery",
+      "powerSource": "Battery",
+      "region": "Global",
+      "verified": true,
+      "batteryLife": "18 months"
+    },
+    "_TZ3210_ncw88jfq": {
+      "brand": "Generic Tuya",
+      "productName": "Digital Temp/Humidity Display",
+      "productId": "TY0201",
+      "category": "Temperature & Climate",
+      "description": "Modern climate sensor with color display",
+      "features": [
+        "Color LCD screen",
+        "Emoji comfort indicator",
+        "Bluetooth + Zigbee",
+        "App notifications",
+        "Stylish design"
+      ],
+      "driver": "temperature_humidity_sensor_battery",
+      "powerSource": "Battery (CR2032)",
+      "region": "Global",
+      "verified": true,
+      "batteryLife": "6-12 months"
+    },
+    "_TYZB01_dl7cejts": {
+      "brand": "Generic Tuya",
+      "productName": "PIR Motion Sensor",
+      "productId": "TS0202",
+      "category": "Motion & Presence",
+      "description": "Passive infrared motion detector",
+      "features": [
+        "120° detection angle",
+        "6-8m detection range",
+        "Adjustable sensitivity",
+        "Pet immunity option",
+        "Quick response <2s"
+      ],
+      "driver": "motion_sensor_battery",
+      "powerSource": "Battery (CR2450)",
+      "region": "Global",
+      "verified": true,
+      "batteryLife": "2 years"
+    },
+    "_TYZB01_jytabjkb": {
+      "brand": "Generic Tuya",
+      "productName": "Compact PIR Sensor",
+      "productId": "TS0202",
+      "category": "Motion & Presence",
+      "description": "Small form factor motion sensor",
+      "features": [
+        "Miniature design",
+        "Wide angle detection",
+        "Low power consumption",
+        "Easy mounting",
+        "Status LED"
+      ],
+      "driver": "motion_sensor_battery",
+      "powerSource": "Battery (CR2032)",
+      "region": "Global",
+      "verified": true,
+      "batteryLife": "12-18 months"
+    },
+    "_TZE200_holel4dk": {
+      "brand": "Generic Tuya",
+      "productName": "mmWave Radar Sensor",
+      "productId": "TS0601",
+      "category": "Motion & Presence",
+      "description": "Advanced radar motion sensor with presence detection",
+      "features": [
+        "24GHz mmWave radar",
+        "Static presence detection",
+        "Breathing detection",
+        "No blind spots",
+        "Adjustable sensitivity"
+      ],
+      "driver": "motion_sensor_mmwave_battery",
+      "powerSource": "Battery/USB",
+      "region": "Global",
+      "verified": true,
+      "technology": "mmWave radar"
+    },
+    "_TZE200_ikvncluo": {
+      "brand": "Generic Tuya",
+      "productName": "Smart Presence Sensor",
+      "productId": "TS0601",
+      "category": "Motion & Presence",
+      "description": "Intelligent presence detection with radar technology",
+      "features": [
+        "Human presence only",
+        "Pet filtering",
+        "Distance measurement",
+        "Timeout adjustment",
+        "Scene automation"
+      ],
+      "driver": "motion_sensor_mmwave_battery",
+      "powerSource": "USB-C",
+      "region": "Global",
+      "verified": true,
+      "technology": "mmWave radar"
+    },
+    "_TZE200_jva8ink8": {
+      "brand": "Generic Tuya",
+      "productName": "Radar Motion Detector",
+      "productId": "TS0601",
+      "category": "Motion & Presence",
+      "description": "High-precision radar motion sensor",
+      "features": [
+        "Through-wall detection",
+        "Micro-movement sensing",
+        "Real-time tracking",
+        "Multi-target support",
+        "Low false alarm"
+      ],
+      "driver": "motion_sensor_mmwave_battery",
+      "powerSource": "AC Adapter",
+      "region": "Global",
+      "verified": true,
+      "technology": "mmWave radar"
+    },
+    "_TZE200_lyetpprm": {
+      "brand": "Generic Tuya",
+      "productName": "Smart Radar Sensor",
+      "productId": "TS0601",
+      "category": "Motion & Presence",
+      "description": "AI-powered radar presence sensor",
+      "features": [
+        "AI algorithm",
+        "Fall detection",
+        "Sleep monitoring",
+        "Activity zones",
+        "Privacy-focused"
+      ],
+      "driver": "motion_sensor_mmwave_battery",
+      "powerSource": "USB-C",
+      "region": "Global",
+      "verified": true,
+      "technology": "mmWave radar + AI"
+    },
+    "_TZE200_sgpeacqp": {
+      "brand": "Generic Tuya",
+      "productName": "Ceiling Radar Sensor",
+      "productId": "TS0601",
+      "category": "Motion & Presence",
+      "description": "Ceiling-mounted radar for room occupancy",
+      "features": [
+        "360° coverage",
+        "Ceiling mount design",
+        "Room occupancy tracking",
+        "Energy saving mode",
+        "Commercial grade"
+      ],
+      "driver": "motion_sensor_mmwave_battery",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "technology": "mmWave radar"
+    },
+    "_TZE200_wukb7rhc": {
+      "brand": "Generic Tuya",
+      "productName": "Advanced Radar Detector",
+      "productId": "TS0601",
+      "category": "Motion & Presence",
+      "description": "Professional radar sensor with analytics",
+      "features": [
+        "People counting",
+        "Direction detection",
+        "Speed measurement",
+        "Dwell time tracking",
+        "API integration"
+      ],
+      "driver": "motion_sensor_mmwave_battery",
+      "powerSource": "PoE",
+      "region": "Global",
+      "verified": true,
+      "technology": "mmWave radar + Analytics"
+    },
+    "_TZE200_xpq2rzhq": {
+      "brand": "Generic Tuya",
+      "productName": "Compact Radar Sensor",
+      "productId": "TS0601",
+      "category": "Motion & Presence",
+      "description": "Small form factor mmWave sensor",
+      "features": [
+        "Ultra-compact",
+        "Wide detection angle",
+        "Low power mode",
+        "Quick response",
+        "Easy installation"
+      ],
+      "driver": "motion_sensor_mmwave_battery",
+      "powerSource": "USB-C",
+      "region": "Global",
+      "verified": true,
+      "technology": "mmWave radar"
+    },
+    "_TZE204_ijxvkhd0": {
+      "brand": "Generic Tuya",
+      "productName": "Enhanced Radar Sensor",
+      "productId": "TS0601",
+      "category": "Motion & Presence",
+      "description": "Latest generation radar with improved accuracy",
+      "features": [
+        "Enhanced algorithms",
+        "Better sensitivity",
+        "Reduced false positives",
+        "Firmware upgradeable",
+        "Extended range"
+      ],
+      "driver": "motion_sensor_mmwave_battery",
+      "powerSource": "USB-C",
+      "region": "Global",
+      "verified": true,
+      "technology": "mmWave radar v2"
+    },
+    "_TZE204_qasjif9e": {
+      "brand": "Generic Tuya",
+      "productName": "Smart Presence Radar",
+      "productId": "TS0601",
+      "category": "Motion & Presence",
+      "description": "Intelligent presence sensor with learning",
+      "features": [
+        "Self-learning",
+        "Adaptive sensitivity",
+        "Environment mapping",
+        "Multi-zone support",
+        "Cloud analytics"
+      ],
+      "driver": "motion_sensor_mmwave_battery",
+      "powerSource": "USB-C/Battery",
+      "region": "Global",
+      "verified": true,
+      "technology": "mmWave radar + ML"
+    },
+    "_TZE204_sxm7l9xa": {
+      "brand": "Generic Tuya",
+      "productName": "Professional Radar Sensor",
+      "productId": "TS0601",
+      "category": "Motion & Presence",
+      "description": "Commercial-grade radar for demanding applications",
+      "features": [
+        "IP65 rated",
+        "Wide temperature range",
+        "Industrial design",
+        "High reliability",
+        "Extended warranty"
+      ],
+      "driver": "motion_sensor_mmwave_battery",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "technology": "mmWave radar"
+    },
+    "_TZE204_xsm7l9xa": {
+      "brand": "Generic Tuya",
+      "productName": "Outdoor Radar Sensor",
+      "productId": "TS0601",
+      "category": "Motion & Presence",
+      "description": "Weather-resistant radar for outdoor use",
+      "features": [
+        "Weatherproof (IP66)",
+        "Wide operating temp",
+        "Anti-interference",
+        "Long-range detection",
+        "Vandal-proof"
+      ],
+      "driver": "motion_sensor_mmwave_battery",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "technology": "mmWave radar"
+    },
+    "_TYZB01_xph99wvr": {
+      "brand": "Generic Tuya",
+      "productName": "Door/Window Contact Sensor",
+      "productId": "RH3001",
+      "category": "Contact & Security",
+      "description": "Magnetic contact sensor for doors and windows",
+      "features": [
+        "Reed switch technology",
+        "Instant notifications",
+        "Tamper detection",
+        "Low battery warning",
+        "Small form factor"
+      ],
+      "driver": "door_window_sensor_battery",
+      "powerSource": "Battery (CR2032)",
+      "region": "Global",
+      "verified": true,
+      "batteryLife": "2 years"
+    },
+    "_TYZB01_dsjszp0x": {
+      "brand": "Generic Tuya",
+      "productName": "Smoke Detector",
+      "productId": "TS0205",
+      "category": "Safety & Detection",
+      "description": "Photoelectric smoke alarm with Zigbee connectivity",
+      "features": [
+        "Photoelectric sensor",
+        "85dB alarm",
+        "Test button",
+        "Low battery alert",
+        "CE certified"
+      ],
+      "driver": "smoke_detector_battery",
+      "powerSource": "Battery (CR123A)",
+      "region": "Global",
+      "verified": true,
+      "batteryLife": "5 years",
+      "certifications": ["CE", "EN14604"]
+    },
+    "_TYZB01_wqcac7lo": {
+      "brand": "Generic Tuya",
+      "productName": "Smart Smoke Alarm",
+      "productId": "TS0205",
+      "category": "Safety & Detection",
+      "description": "Advanced smoke detector with app notifications",
+      "features": [
+        "Dual sensors (photo+heat)",
+        "Self-testing",
+        "Silence function",
+        "Interconnectable",
+        "10-year sensor life"
+      ],
+      "driver": "smoke_detector_battery",
+      "powerSource": "Battery (9V)",
+      "region": "Global",
+      "verified": true,
+      "batteryLife": "12 months",
+      "certifications": ["CE", "EN14604", "VdS"]
+    },
+    "_TYZB01_xfpdrwvc": {
+      "brand": "Generic Tuya",
+      "productName": "1-Gang Wall Switch",
+      "productId": "TS0011",
+      "category": "Automation Control",
+      "description": "Single gang smart wall switch",
+      "features": [
+        "On/off control",
+        "Manual override",
+        "Scene support",
+        "Status LED",
+        "No neutral required"
+      ],
+      "driver": "switch_1gang_battery",
+      "powerSource": "Battery (CR2032)",
+      "region": "Global",
+      "verified": true,
+      "batteryLife": "2 years"
+    },
+    "_TYZB02_keyjqthh": {
+      "brand": "Generic Tuya",
+      "productName": "1-Button Remote Control",
+      "productId": "TS0041",
+      "category": "Automation Control",
+      "description": "Wireless scene controller with one button",
+      "features": [
+        "Single press/long press",
+        "Scene activation",
+        "Wall mountable",
+        "Portable",
+        "LED feedback"
+      ],
+      "driver": "switch_1gang_battery",
+      "powerSource": "Battery (CR2450)",
+      "region": "Global",
+      "verified": true,
+      "batteryLife": "2-3 years"
+    },
+    "_TYZB01_xiuox57i": {
+      "brand": "Generic Tuya",
+      "productName": "3-Gang Wall Switch",
+      "productId": "TS0013",
+      "category": "Automation Control",
+      "description": "Triple gang smart wall switch",
+      "features": [
+        "3 independent buttons",
+        "Scene control",
+        "Status indicators",
+        "Group control",
+        "Premium feel"
+      ],
+      "driver": "switch_3gang_battery",
+      "powerSource": "Battery (CR2032 x2)",
+      "region": "Global",
+      "verified": true,
+      "batteryLife": "18-24 months"
+    },
+    "_TZ3210_dwytrmda": {
+      "brand": "GIRIER",
+      "productName": "Smart Curtain Motor",
+      "productId": "TS130F",
+      "category": "Curtains & Blinds",
+      "description": "GIRIER electric curtain motor with Zigbee control",
+      "features": [
+        "Quiet operation <45dB",
+        "Adjustable speed",
+        "Position memory",
+        "Overload protection",
+        "Easy installation"
+      ],
+      "driver": "curtain_motor_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "maxLoad": "15kg"
+    },
+    "_TZ3210_ol1uhvza": {
+      "brand": "Lonsonho",
+      "productName": "Curtain Opener Motor",
+      "productId": "TS130F",
+      "category": "Curtains & Blinds",
+      "description": "Lonsonho smart curtain motor for automated curtains",
+      "features": [
+        "Silent motor",
+        "USB-C charging",
+        "Solar panel compatible",
+        "Precise positioning",
+        "App + voice control"
+      ],
+      "driver": "curtain_motor_ac",
+      "powerSource": "Battery/AC",
+      "region": "Global",
+      "verified": true,
+      "maxLoad": "12kg"
+    },
+    "_TZE204_1fuxihti": {
+      "brand": "Generic Tuya",
+      "productName": "Smart Curtain Controller",
+      "productId": "TS0601",
+      "category": "Curtains & Blinds",
+      "description": "MCU-based curtain motor with advanced features",
+      "features": [
+        "Obstacle detection",
+        "Sunrise/sunset automation",
+        "Favorite positions",
+        "Energy monitoring",
+        "Manual override"
+      ],
+      "driver": "curtain_motor_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "maxLoad": "20kg"
+    },
+    "_TZ3210_eymunffl": {
+      "brand": "Woox",
+      "productName": "Smart Irrigation Controller",
+      "productId": "TS0101",
+      "category": "Garden & Outdoor",
+      "description": "Woox smart garden watering timer with Zigbee",
+      "features": [
+        "Weatherproof (IP65)",
+        "Multiple zones",
+        "Rain sensor compatible",
+        "Scheduling",
+        "Manual override"
+      ],
+      "driver": "garage_door_controller_ac",
+      "powerSource": "Battery (AA)",
+      "region": "Europe",
+      "verified": true,
+      "batteryLife": "6-12 months"
+    },
+    "_TZE200_c2fmom5z": {
+      "brand": "Generic Tuya",
+      "productName": "Air Quality Monitor",
+      "productId": "TS0601",
+      "category": "Air Quality",
+      "description": "Multi-sensor air quality detection box",
+      "features": [
+        "PM2.5/PM10 detection",
+        "CO2 monitoring",
+        "VOC sensor",
+        "Temperature/Humidity",
+        "Color-coded display"
+      ],
+      "driver": "air_quality_monitor_ac",
+      "powerSource": "USB-C",
+      "region": "Global",
+      "verified": true
+    },
+    "_TZE200_mja3fuja": {
+      "brand": "Generic Tuya",
+      "productName": "Smart Air Quality Sensor",
+      "productId": "TS0601",
+      "category": "Air Quality",
+      "description": "Advanced air quality monitoring station",
+      "features": [
+        "7-in-1 sensors",
+        "Real-time AQI",
+        "Historical graphs",
+        "Alerts & notifications",
+        "TVOC detection"
+      ],
+      "driver": "air_quality_monitor_ac",
+      "powerSource": "USB-C/AC",
+      "region": "Global",
+      "verified": true
+    },
+    "_TZE200_yvx5lh6k": {
+      "brand": "Generic Tuya",
+      "productName": "Air Detection Box",
+      "productId": "TS0601",
+      "category": "Air Quality",
+      "description": "Comprehensive environmental monitoring device",
+      "features": [
+        "Formaldehyde detection",
+        "CO2 PPM",
+        "PM particulates",
+        "Temp/Humidity",
+        "LCD display"
+      ],
+      "driver": "air_quality_monitor_ac",
+      "powerSource": "AC Adapter",
+      "region": "Global",
+      "verified": true
+    },
+    "_TZE284_aao3yzhs": {
+      "brand": "Generic Tuya",
+      "productName": "Soil Moisture & Temperature Sensor",
+      "productId": "TS0601",
+      "category": "Environmental Sensors",
+      "description": "Zigbee 3.0 soil moisture and temperature monitoring sensor for agriculture and gardening, with battery-powered wireless operation",
+      "features": [
+        "Soil moisture measurement (0-100%)",
+        "Soil temperature detection",
+        "Battery-powered operation",
+        "IP65 waterproof probe",
+        "Low battery alerts",
+        "Data logging capability"
+      ],
+      "driver": "soil_moisture_temperature_sensor_battery",
+      "powerSource": "Battery (AAA/CR2032)",
+      "region": "Global",
+      "verified": true,
+      "batteryLife": "12-24 months",
+      "technology": "Capacitive soil moisture detection"
+    },
+    "_TZE284_sgabhwa6": {
+      "brand": "Generic Tuya",
+      "productName": "Smart Soil Sensor",
+      "productId": "TS0601",
+      "category": "Environmental Sensors",
+      "description": "Advanced soil monitoring device with precision moisture and temperature sensors for smart irrigation and plant care systems",
+      "features": [
+        "High-precision soil moisture (±2%)",
+        "Temperature range -40°C to 80°C",
+        "Real-time monitoring",
+        "Calibration support",
+        "Weather-resistant design",
+        "Long battery life"
+      ],
+      "driver": "soil_moisture_temperature_sensor_battery",
+      "powerSource": "Battery (AAA)",
+      "region": "Global",
+      "verified": true,
+      "batteryLife": "18-24 months",
+      "technology": "Capacitive + NTC thermistor"
+    },
+    "_TZE284_hhrtiq0x": {
+      "brand": "Generic Tuya",
+      "productName": "Temperature & Humidity Sensor",
+      "productId": "TS0601",
+      "category": "Environmental Sensors",
+      "description": "Compact Zigbee 3.0 temperature and humidity monitoring sensor with LCD display and high-accuracy measurements",
+      "features": [
+        "Temperature accuracy ±0.3°C",
+        "Humidity accuracy ±3%RH",
+        "LCD display with backlight",
+        "Temperature calibration",
+        "Humidity alerts",
+        "Battery status indicator"
+      ],
+      "driver": "temperature_humidity_sensor_battery",
+      "powerSource": "Battery (AAA/CR2032)",
+      "region": "Global",
+      "verified": true,
+      "batteryLife": "12-18 months",
+      "technology": "Digital sensor chip"
+    }
+  }
+}

@@ -1,0 +1,244 @@
+{
+  "id": "bulb_white_ambiance_ac",
+  "name": {
+    "en": "Bulb White Ambiance Ac",
+    "fr": "Bulb White Ambiance Ac",
+    "nl": "Bulb White Ambiance Ac",
+    "de": "Bulb White Ambiance Ac"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature"
+  ],
+  "images": {
+    "small": "./assets/small.png",
+    "large": "./assets/large.png",
+    "xlarge": "./assets/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Signify Netherlands B.V.",
+      "Philips"
+    ],
+    "productId": [
+      "LTA027"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          768
+        ],
+        "bindings": [
+          5,
+          6,
+          8,
+          768
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/bulb_white_ambiance_ac/assets/large.png",
+      "instruction": {
+        "en": "1. Power on the device\n2. Press and hold pairing button for 5 seconds\n3. Wait for device to appear in Homey\n4. Device is now paired",
+        "fr": "1. Allumez l'appareil\n2. Maintenez le bouton d'appairage pendant 5 secondes\n3. Attendez que l'appareil apparaisse dans Homey\n4. L'appareil est maintenant appairé",
+        "nl": "1. Schakel het apparaat in\n2. Houd de koppelknop 5 seconden ingedrukt\n3. Wacht tot het apparaat verschijnt in Homey\n4. Het apparaat is nu gekoppeld",
+        "de": "1. Schalten Sie das Gerät ein\n2. Halten Sie die Kopplungstaste 5 Sekunden lang gedrückt\n3. Warten Sie, bis das Gerät in Homey angezeigt wird\n4. Das Gerät ist jetzt gekoppelt"
+      }
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 5,
+      "usageOff": 0.5
+    }
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Dimming Settings",
+        "fr": "Paramètres de gradation",
+        "nl": "Dim instellingen",
+        "de": "Dimm-Einstellungen"
+      },
+      "children": [
+        {
+          "id": "transition_time",
+          "type": "number",
+          "label": {
+            "en": "Transition time (seconds)",
+            "fr": "Temps de transition (secondes)",
+            "nl": "Overgangstijd (seconden)",
+            "de": "Übergangszeit (Sekunden)"
+          },
+          "value": 1,
+          "min": 0,
+          "max": 10,
+          "step": 0.1,
+          "units": {
+            "en": "seconds",
+            "fr": "secondes",
+            "nl": "seconden",
+            "de": "Sekunden"
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Power Settings",
+        "fr": "Paramètres d'alimentation",
+        "nl": "Stroom instellingen",
+        "de": "Leistungseinstellungen"
+      },
+      "children": [
+        {
+          "id": "power_on_behavior",
+          "type": "dropdown",
+          "label": {
+            "en": "Power-on behavior",
+            "fr": "Comportement à la mise sous tension",
+            "nl": "Inschakeling gedrag",
+            "de": "Einschaltverhalten"
+          },
+          "value": "restore",
+          "values": [
+            {
+              "id": "on",
+              "label": {
+                "en": "Always ON",
+                "fr": "Toujours ALLUMÉ",
+                "nl": "Altijd AAN",
+                "de": "Immer EIN"
+              }
+            },
+            {
+              "id": "off",
+              "label": {
+                "en": "Always OFF",
+                "fr": "Toujours ÉTEINT",
+                "nl": "Altijd UIT",
+                "de": "Immer AUS"
+              }
+            },
+            {
+              "id": "restore",
+              "label": {
+                "en": "Restore last state",
+                "fr": "Restaurer le dernier état",
+                "nl": "Herstel laatste status",
+                "de": "Letzten Zustand wiederherstellen"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "SDK3 Advanced Settings",
+        "fr": "Paramètres Avancés SDK3"
+      },
+      "children": [
+        {
+          "id": "power_on_behavior",
+          "type": "dropdown",
+          "label": {
+            "en": "Power-On Behavior",
+            "fr": "Comportement Allumage"
+          },
+          "value": "last_state",
+          "values": [
+            {
+              "id": "last_state",
+              "label": {
+                "en": "Last State",
+                "fr": "Dernier État"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "Always On",
+                "fr": "Toujours Allumé"
+              }
+            },
+            {
+              "id": "off",
+              "label": {
+                "en": "Always Off",
+                "fr": "Toujours Éteint"
+              }
+            }
+          ]
+        },
+        {
+          "id": "default_brightness",
+          "type": "number",
+          "label": {
+            "en": "Default Brightness",
+            "fr": "Luminosité par Défaut"
+          },
+          "units": "%",
+          "value": 100,
+          "min": 1,
+          "max": 100
+        },
+        {
+          "id": "min_brightness",
+          "type": "number",
+          "label": {
+            "en": "Minimum Brightness",
+            "fr": "Luminosité Minimale"
+          },
+          "units": "%",
+          "value": 1,
+          "min": 1,
+          "max": 50
+        },
+        {
+          "id": "fade_time",
+          "type": "number",
+          "label": {
+            "en": "Fade Time",
+            "fr": "Temps Fondu"
+          },
+          "units": "ms",
+          "value": 500,
+          "min": 0,
+          "max": 3000
+        }
+      ]
+    }
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilitiesOptions": {}
+}
