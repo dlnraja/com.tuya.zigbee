@@ -3,31 +3,25 @@
 
 const { execSync } = require('child_process');
 const fs = require('fs');
-const path = require('path');
 
-const ROOT = __dirname;
-
-console.log('🚀 Final push...\n');
+console.log('🚀 Push organization...\n');
 
 try {
-  // Git add
   console.log('📝 Git add...');
-  execSync('git add -A', { cwd: ROOT, stdio: 'inherit' });
+  execSync('git add -A', { cwd: __dirname, stdio: 'inherit' });
 
-  // Git commit
   console.log('💾 Git commit...');
   try {
-    execSync('git commit -m "feat: Battery monitoring system + Final validation + Scripts converted to Node.js"', { 
-      cwd: ROOT, 
-      stdio: 'inherit' 
+    execSync('git commit -m "feat: Complete JS files organization - 193 files organized in 9 categories"', {
+      cwd: __dirname,
+      stdio: 'inherit'
     });
   } catch (err) {
     console.log('Nothing to commit');
   }
 
-  // Git push
   console.log('📤 Git push...');
-  execSync('git push origin master', { cwd: ROOT, stdio: 'inherit' });
+  execSync('git push origin master', { cwd: __dirname, stdio: 'inherit' });
 
   console.log('\n✅ Push completed!');
   
