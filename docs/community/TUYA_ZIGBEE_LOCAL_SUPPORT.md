@@ -511,6 +511,32 @@ Test:
 ### Documentation
 **Emplacement:** docs/community/
 - Ce fichier: TUYA_ZIGBEE_LOCAL_SUPPORT.md
+- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
+- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
+- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
+- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
+- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
+- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
+- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
+- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
+- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
+- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
+- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
+- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
+- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
+- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
+- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
+- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
+- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
+- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
+- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
+- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
+- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
+- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
+- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
+- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
+- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
+- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
 - Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
 - Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
 - Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
@@ -533,24 +559,14 @@ Test:
 - Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
 - Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
 - Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
-- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
-- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
 - Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
 - Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
-- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
-- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
-- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
-- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
-- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
-- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
-- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
-- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
 - Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
 - Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
+- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
+- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
 - Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
 - Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
-- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
-- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
 - Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
 - Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
 - Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
@@ -565,22 +581,6 @@ Test:
 - Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
 - Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
 - Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
-- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
-- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
-- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
-- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
-- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
-- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
-- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
-- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
-- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
-- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
-- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
-- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
-- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
-- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
-- Best practices: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
-- Quick tips: docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md
 
 ---
 
