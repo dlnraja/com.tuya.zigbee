@@ -37,6 +37,7 @@ ultimate_system/backup/
 ultimate_system/backup/*/
 ultimate_system/backup/*/*
 ultimate_system/backup/*/*/*
+.backup-enrichment/
 
 # Git clones history - NEVER COMMIT
 backup/git_clones/
@@ -71,3 +72,7 @@ archive_old/
 *.bak
 temp_*.bat
 temp_*.js
+
+# Large project status files
+docs/project-status/PROJECT_STRUCTURE.md
+docs/project-status/*_LARGE*.md
