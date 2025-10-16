@@ -176,11 +176,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `22e7e0ed5` feat: Add Zigbee Cluster Map - Global cluster ID correspondence table - *Dylan Rajasekaram* (6 minutes ago)
-- `d954e1246` final - *Dylan Rajasekaram* (15 minutes ago)
-- `94327ad74` release: v3.0.30 - Enterprise CI/CD & Complete Automation - *Dylan Rajasekaram* (22 minutes ago)
-- `2759592c9` Update Homey App Version to v3.0.31 - *github-actions[bot]* (25 minutes ago)
-- `0d8b6a9c9` ci: Complete GitHub Actions & Diagnostics improvement - *Dylan Rajasekaram* (32 minutes ago)
+- `29982e7f2` docs: Forum response for Peter - v3.0.23 issues (SOS + Multi-sensor) - *Dylan Rajasekaram* (7 minutes ago)
+- `22e7e0ed5` feat: Add Zigbee Cluster Map - Global cluster ID correspondence table - *Dylan Rajasekaram* (13 minutes ago)
+- `d954e1246` final - *Dylan Rajasekaram* (21 minutes ago)
+- `94327ad74` release: v3.0.30 - Enterprise CI/CD & Complete Automation - *Dylan Rajasekaram* (29 minutes ago)
+- `2759592c9` Update Homey App Version to v3.0.31 - *github-actions[bot]* (32 minutes ago)
 
 ---
 
