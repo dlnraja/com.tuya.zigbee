@@ -178,6 +178,7 @@ powershell scripts/automation/install-git-hooks.ps1
 - `1f5e501ed` fix: v3.0.16 - CRITICAL CLUSTER ID FIX for Peter's devices - *Dylan Rajasekaram* (7 minutes ago)
 - `f1a45a404` chore: Organisation complète des fichiers à la racine - *Dylan Rajasekaram* (17 minutes ago)
 - `869b724ed` chore: Organisation complète des fichiers à la racine - *Dylan Rajasekaram* (18 minutes ago)
+- `869b724ed` chore: Organisation complète des fichiers à la racine - *Dylan Rajasekaram* (19 minutes ago)
 - `699272f8c` Update Homey App Version to v3.0.15 - *github-actions[bot]* (52 minutes ago)
 - `ff9249641` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (54 minutes ago)
 
