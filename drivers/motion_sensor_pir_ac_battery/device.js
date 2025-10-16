@@ -28,11 +28,7 @@ class MotionSensorPirAcBatteryDevice extends ZigBeeDevice {
     // Mark device as available
     await this.setAvailable();
   }
-
-   catch (err) {
-      this.error('Battery change detection error:', err);
-    }
-  }
+}
 
 }
 
