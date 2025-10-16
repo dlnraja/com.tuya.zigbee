@@ -28,7 +28,7 @@ class BulbWhiteAmbianceAcDevice extends ZigBeeDevice {
     // onoff
     if (this.hasCapability('onoff')) {
       try {
-        this.registerCapability('onoff', CLUSTER.ON_OFF, {
+        this.registerCapability('onoff', 6, {
       get: 'onOff',
       report: 'onOff',
       set: 'toggle',
@@ -43,7 +43,7 @@ class BulbWhiteAmbianceAcDevice extends ZigBeeDevice {
     // dim
     if (this.hasCapability('dim')) {
       try {
-        this.registerCapability('dim', CLUSTER.LEVEL_CONTROL, {
+        this.registerCapability('dim', 8, {
       get: 'currentLevel',
       report: 'currentLevel',
       set: 'moveToLevelWithOnOff',
@@ -58,7 +58,7 @@ class BulbWhiteAmbianceAcDevice extends ZigBeeDevice {
     // light_temperature
     if (this.hasCapability('light_temperature')) {
       try {
-        this.registerCapability('light_temperature', CLUSTER.COLOR_CONTROL, {
+        this.registerCapability('light_temperature', 768, {
       get: 'colorTemperature',
       report: 'colorTemperature',
       set: 'moveToColorTemp',

@@ -42,7 +42,7 @@ class DoorbellCameraAcDevice extends ZigBeeDevice {
     // alarm_motion
     if (this.hasCapability('alarm_motion')) {
       try {
-        this.registerCapability('alarm_motion', CLUSTER.OCCUPANCY_SENSING, {
+        this.registerCapability('alarm_motion', 1030, {
       get: 'occupancy',
       report: 'occupancy',
       reportParser: value => (value & 1) === 1

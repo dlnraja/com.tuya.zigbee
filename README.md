@@ -176,11 +176,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `11e279cc8` docs: Add Zigbee Timeout troubleshooting and crash analysis - *Dylan Rajasekaram* (8 minutes ago)
-- `ea14b066c` Update Homey App Version to v3.0.34 - *github-actions[bot]* (8 minutes ago)
-- `04c989295` feat: Complete Industrialization - Cookbook, Profiles, and Final Documentation - *Dylan Rajasekaram* (15 minutes ago)
-- `b2f2c8f23` Update Homey App Version to v3.0.33 - *github-actions[bot]* (21 minutes ago)
-- `efafa0097` cleanup - *Dylan Rajasekaram* (27 minutes ago)
+- `ae67aa606` docs: Add crash dashboard analysis for v3.0.23 pattern - *Dylan Rajasekaram* (24 minutes ago)
+- `11e279cc8` docs: Add Zigbee Timeout troubleshooting and crash analysis - *Dylan Rajasekaram* (31 minutes ago)
+- `ea14b066c` Update Homey App Version to v3.0.34 - *github-actions[bot]* (31 minutes ago)
+- `04c989295` feat: Complete Industrialization - Cookbook, Profiles, and Final Documentation - *Dylan Rajasekaram* (38 minutes ago)
+- `b2f2c8f23` Update Homey App Version to v3.0.33 - *github-actions[bot]* (44 minutes ago)
 
 ---
 

@@ -27,7 +27,7 @@ class MotionSensorIlluminanceBatteryDevice extends ZigBeeDevice {
 
     // Register illuminance (lux) capability
     if (this.hasCapability('measure_luminance')) {
-      this.registerCapability('measure_luminance', CLUSTER.ILLUMINANCE_MEASUREMENT, {
+      this.registerCapability('measure_luminance', 1024, {
         get: 'measuredValue',
         report: 'measuredValue',
         reportParser: value => {
@@ -42,7 +42,7 @@ class MotionSensorIlluminanceBatteryDevice extends ZigBeeDevice {
 
     // Register battery capability
     if (this.hasCapability('measure_battery')) {
-      this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
+      this.registerCapability('measure_battery', 1, {
         get: 'batteryPercentageRemaining',
         report: 'batteryPercentageRemaining',
         reportParser: value => value / 2,

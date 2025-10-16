@@ -28,7 +28,7 @@ class SmartPlugPowerMeter16aAcDevice extends ZigBeeDevice {
     // onoff
     if (this.hasCapability('onoff')) {
       try {
-        this.registerCapability('onoff', CLUSTER.ON_OFF, {
+        this.registerCapability('onoff', 6, {
       get: 'onOff',
       report: 'onOff',
       set: 'toggle',
@@ -43,7 +43,7 @@ class SmartPlugPowerMeter16aAcDevice extends ZigBeeDevice {
     // measure_power
     if (this.hasCapability('measure_power')) {
       try {
-        this.registerCapability('measure_power', CLUSTER.ELECTRICAL_MEASUREMENT, {
+        this.registerCapability('measure_power', 2820, {
       get: 'activePower',
       report: 'activePower',
       reportParser: value => value / 10
@@ -57,7 +57,7 @@ class SmartPlugPowerMeter16aAcDevice extends ZigBeeDevice {
     // measure_voltage
     if (this.hasCapability('measure_voltage')) {
       try {
-        this.registerCapability('measure_voltage', CLUSTER.ELECTRICAL_MEASUREMENT, {
+        this.registerCapability('measure_voltage', 2820, {
       get: 'rmsVoltage',
       report: 'rmsVoltage',
       reportParser: value => value / 10
@@ -71,7 +71,7 @@ class SmartPlugPowerMeter16aAcDevice extends ZigBeeDevice {
     // measure_current
     if (this.hasCapability('measure_current')) {
       try {
-        this.registerCapability('measure_current', CLUSTER.ELECTRICAL_MEASUREMENT, {
+        this.registerCapability('measure_current', 2820, {
       get: 'rmsCurrent',
       report: 'rmsCurrent',
       reportParser: value => value / 1000
@@ -85,7 +85,7 @@ class SmartPlugPowerMeter16aAcDevice extends ZigBeeDevice {
     // meter_power
     if (this.hasCapability('meter_power')) {
       try {
-        this.registerCapability('meter_power', CLUSTER.METERING, {
+        this.registerCapability('meter_power', 1794, {
       get: 'currentSummDelivered',
       report: 'currentSummDelivered',
       reportParser: value => value / 1000

@@ -39,7 +39,7 @@ class SmartPlugDimmerAcDevice extends ZigBeeDevice {
     // On/Off capability
     if (this.hasCapability('onoff')) {
       try {
-        this.registerCapability('onoff', CLUSTER.ON_OFF, {
+        this.registerCapability('onoff', 6, {
           get: 'onOff',
           report: 'onOff',
           reportParser: value => {
@@ -61,7 +61,7 @@ class SmartPlugDimmerAcDevice extends ZigBeeDevice {
     // Dim capability
     if (this.hasCapability('dim')) {
       try {
-        this.registerCapability('dim', CLUSTER.LEVEL_CONTROL, {
+        this.registerCapability('dim', 8, {
           get: 'currentLevel',
           report: 'currentLevel',
           reportParser: value => {
@@ -89,7 +89,7 @@ class SmartPlugDimmerAcDevice extends ZigBeeDevice {
     if (this.hasCapability('measure_power')) {
       try {
         // Try to register, but don't fail if cluster not available
-        this.registerCapability('measure_power', CLUSTER.ELECTRICAL_MEASUREMENT, {
+        this.registerCapability('measure_power', 2820, {
           get: 'activePower',
           report: 'activePower',
           reportParser: value => {
@@ -112,7 +112,7 @@ class SmartPlugDimmerAcDevice extends ZigBeeDevice {
     // Energy metering (if device supports it)
     if (this.hasCapability('meter_power')) {
       try {
-        this.registerCapability('meter_power', CLUSTER.METERING, {
+        this.registerCapability('meter_power', 1794, {
           get: 'currentSummationDelivered',
           report: 'currentSummationDelivered',
           reportParser: value => {
@@ -172,7 +172,7 @@ class SmartPlugDimmerAcDevice extends ZigBeeDevice {
   async configurePowerOnBehavior(behavior) {
     try {
       const { zclNode } = this;
-      const endpoint = zclNode.endpoints[this.getClusterEndpoint(CLUSTER.ON_OFF)];
+      const endpoint = zclNode.endpoints[this.getClusterEndpoint(6)];
 
       if (endpoint && endpoint.clusters.onOff) {
         let startUpOnOff;
