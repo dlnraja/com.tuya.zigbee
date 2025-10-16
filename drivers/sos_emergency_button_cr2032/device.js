@@ -26,30 +26,19 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
     // SOS Button IAS Zone
     this.log('🚨 Setting up SOS button IAS Zone...');
     try {
-      await IASZoneEnroller.enroll(this, zclNode);
+      const endpoint = zclNode.endpoints[1];
+      const enroller = new IASZoneEnroller(this, endpoint, {
+        zoneType: 21, // Emergency button
+        capability: 'alarm_generic',
+        pollInterval: 30000,
+        autoResetTimeout: 0 // No auto-reset for SOS
+      });
+      const method = await enroller.enroll(zclNode);
+      this.log(`✅ SOS IAS Zone enrolled via: ${method}`);
     } catch (err) {
       this.error('IAS Zone enrollment failed:', err);
-      this.log('⚠️ Cannot get Homey IEEE, device may auto-enroll');
+      this.log('⚠️ Device may auto-enroll or work without explicit enrollment');
     }
-    
-    this.registerCapability('alarm_generic', CLUSTER.IAS_ZONE, {
-      get: 'zoneStatus',
-      report: 'zoneStatus',
-      reportParser: value => {
-        this.log('🚨 SOS Button zone status:', value);
-        return value.alarm1;
-      }
-    });
-    
-    // Listen for zone status change notifications
-    if (zclNode.endpoints[1] && zclNode.endpoints[1].clusters.iasZone) {
-      zclNode.endpoints[1].clusters.iasZone.on('zoneStatusChangeNotification', data => {
-        this.log('🚨 SOS BUTTON PRESSED! Zone status:', data);
-        this.setCapabilityValue('alarm_generic', data.zoneStatus.alarm1).catch(this.error);
-      });
-    }
-    
-    this.log('✅ SOS Button IAS Zone registered');
 
     await this.setAvailable();
   }
