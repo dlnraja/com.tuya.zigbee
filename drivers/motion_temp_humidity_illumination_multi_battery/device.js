@@ -3,6 +3,7 @@
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
 const IASZoneEnroller = require('../../lib/IASZoneEnroller');
+// Tuya cluster handler removed - using standard Zigbee clusters only
 
 class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
 
@@ -26,7 +27,7 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
     // Register standard Zigbee clusters
     this.log('Registering standard Zigbee clusters...');
       
-      // Temperature
+      // Temperature (cluster 1026)
       this.registerCapability('measure_temperature', CLUSTER.TEMPERATURE_MEASUREMENT, {
         get: 'measuredValue',
         report: 'measuredValue',
@@ -40,8 +41,8 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
       });
       this.log('✅ Temperature cluster registered');
       
-      // Humidity
-      this.registerCapability('measure_humidity', CLUSTER.RELATIVE_HUMIDITY, {
+      // Humidity (cluster 1029)
+      this.registerCapability('measure_humidity', 1029, {
         get: 'measuredValue',
         report: 'measuredValue',
         getOpts: {
@@ -54,7 +55,7 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
       });
       this.log('✅ Humidity cluster registered');
       
-      // Illuminance
+      // Illuminance (cluster 1024)
       this.registerCapability('measure_luminance', CLUSTER.ILLUMINANCE_MEASUREMENT, {
         get: 'measuredValue',
         report: 'measuredValue',
