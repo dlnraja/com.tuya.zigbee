@@ -80,8 +80,7 @@ homey app install
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
-- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
+- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -176,16 +175,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `6ae1bf5db` update - *Dylan Rajasekaram* (7 minutes ago)
-- `c5eb70e5a` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (10 minutes ago)
-- `bd5710952` fix: CRITICAL - IAS Zone enrollment failure (Motion + SOS Button) - *Dylan Rajasekaram* (11 minutes ago)
-- `2aa255c50` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (18 minutes ago)
-- `a2c44af01` fix: Temperature sensor detected as smoke detector + overlap detection system - *Dylan Rajasekaram* (20 minutes ago)
-- `6ae1bf5db` update - *Dylan Rajasekaram* (37 seconds ago)
-- `c5eb70e5a` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (3 minutes ago)
-- `bd5710952` fix: CRITICAL - IAS Zone enrollment failure (Motion + SOS Button) - *Dylan Rajasekaram* (5 minutes ago)
-- `2aa255c50` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (12 minutes ago)
-- `a2c44af01` fix: Temperature sensor detected as smoke detector + overlap detection system - *Dylan Rajasekaram* (14 minutes ago)
+- `614656ffe` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (37 seconds ago)
+- `e8ef07242` fix: v3.0.2 critical bugs - 135 drivers improved - *Dylan Rajasekaram* (2 minutes ago)
+- `985c00e99` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (8 minutes ago)
+- `6ae1bf5db` update - *Dylan Rajasekaram* (9 minutes ago)
+- `c5eb70e5a` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (11 minutes ago)
 
 ---
 
