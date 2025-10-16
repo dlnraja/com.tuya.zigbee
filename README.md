@@ -56,51 +56,7 @@ homey app install
 ## 📂 Project Structure
 
 ```
-tuya_repair/
-├── 📄 FICHIERS RACINE (essentiels seulement)
-│   ├── README.md              ← Documentation principale
-│   ├── CHANGELOG.md           ← Historique versions
-│   ├── LICENSE                ← Licence MIT
-│   ├── app.json              ← Config Homey (généré)
-│   ├── package.json          ← Dépendances Node
-│   └── .env                  ← Variables environnement
-│
-├── 📁 DOSSIERS HOMEY (SDK)
-│   ├── drivers/              ← 183 drivers Zigbee
-│   ├── lib/                  ← Bibliothèques partagées
-│   ├── utils/                ← Utilitaires helpers
-│   ├── assets/               ← Images app
-│   ├── locales/              ← Traductions
-│   ├── settings/             ← Interface settings
-│   └── api/                  ← API endpoints
-│
-├── 📁 DOCUMENTATION
-│   ├── docs/
-│   │   ├── fixes/            ← Docs corrections bugs
-│   │   ├── workflow/         ← Docs workflow GitHub
-│   │   ├── community/        ← Analyse apps communautaires
-│   │   └── forum/            ← Réponses forum users
-│   │
-│   └── references/           ← Références techniques
-│
-├── 📁 SCRIPTS
-│   ├── scripts/
-│   │   ├── fixes/            ← Scripts correction bugs
-│   │   ├── automation/       ← Scripts Git/Publish
-│   │   └── utils/            ← Scripts utilitaires
-│   │
-│   └── ultimate_system/      ← Système automatisation avancé
-│
-├── 📁 DATA & REPORTS
-│   ├── project-data/         ← Données projet
-│   ├── reports/              ← Rapports validation
-│   └── github-analysis/      ← Analyses GitHub
-│
-└── 📁 CONFIGURATION
-    ├── .github/              ← GitHub Actions workflows
-    ├── .vscode/              ← Config VS Code
-    ├── .gitignore            ← Fichiers ignorés Git
-    └── .homeyignore          ← Fichiers ignorés Homey
+
 ```
 
 **Complete documentation:** [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md)
@@ -224,6 +180,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `4c5b76bd6` feat: Complete finalization v3.0.0 - AI automation, full documentation, all implementations - *Dylan Rajasekaram* (16 minutes ago)
 - `bd75aab66` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (27 minutes ago)
 - `8218a28e9` v3.0.0 Major Release - *Dylan Rajasekaram* (28 minutes ago)
+- `161693ffb` feat: Complete v3.0.0 script updates - All algorithms, AI automation, DP Engine integration - *Dylan Rajasekaram* (52 minutes ago)
+- `f8115b37b` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (65 minutes ago)
+- `4c5b76bd6` feat: Complete finalization v3.0.0 - AI automation, full documentation, all implementations - *Dylan Rajasekaram* (66 minutes ago)
+- `bd75aab66` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (77 minutes ago)
+- `8218a28e9` v3.0.0 Major Release - *Dylan Rajasekaram* (78 minutes ago)
 
 ---
 
