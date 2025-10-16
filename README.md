@@ -124,8 +124,7 @@ tuya_repair/
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
-- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
+- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -220,16 +219,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `8d1764948` feat: Audit 360Â° Implementation - DP Engine, Local-First, CI Complete - *Dylan Rajasekaram* (3 minutes ago)
-- `be6ff9068` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (14 minutes ago)
-- `495e50e01` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (14 minutes ago)
-- `84b705d80` feat: Professional review implementation - CI/CD, Coverage methodology, Positioning - *Dylan Rajasekaram* (15 minutes ago)
-- `95e51b35c` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (25 minutes ago)
-- `8d1764948` feat: Audit 360Â° Implementation - DP Engine, Local-First, CI Complete - *Dylan Rajasekaram* (16 minutes ago)
-- `be6ff9068` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (26 minutes ago)
-- `495e50e01` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (27 minutes ago)
-- `84b705d80` feat: Professional review implementation - CI/CD, Coverage methodology, Positioning - *Dylan Rajasekaram* (28 minutes ago)
-- `95e51b35c` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (37 minutes ago)
+- `8218a28e9` v3.0.0 Major Release - *Dylan Rajasekaram* (76 seconds ago)
+- `7b4a094dc` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (14 minutes ago)
+- `8d1764948` feat: Audit 360Â° Implementation - DP Engine, Local-First, CI Complete - *Dylan Rajasekaram* (17 minutes ago)
+- `be6ff9068` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (27 minutes ago)
+- `495e50e01` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (28 minutes ago)
 
 ---
 
