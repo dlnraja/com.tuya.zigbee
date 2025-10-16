@@ -16,8 +16,39 @@ permissions:
   contents: write
 
 jobs:
+  update-docs:
+    name: Update Documentation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Update all links and paths
+        run: node scripts/automation/update-all-links.js
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "dylan.rajasekaram@gmail.com"
+          git config --local user.name "Dylan Rajasekaram"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Docs: Auto-update links, paths, README & CHANGELOG [skip ci]"
+            git push
+          fi
+
   validate:
     name: Validate App
+    needs: update-docs
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
