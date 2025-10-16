@@ -1,12 +1,12 @@
 # 🏠 Universal Tuya Zigbee
 
-[![Version](https://img.shields.io/badge/version-3.0.4-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![Version](https://img.shields.io/badge/version-3.0.5-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![SDK](https://img.shields.io/badge/SDK-3-green.svg)](https://apps.developer.homey.app)
 [![Homey](https://img.shields.io/badge/Homey->=12.2.0-orange.svg)](https://homey.app)
 [![Drivers](https://img.shields.io/badge/drivers-183-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee/tree/master/drivers)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](LICENSE)
 
-Community-maintained Tuya Zigbee app with 183 SDK3 native drivers. Based on Johan Bendz's original work. 100% local control, no cloud required. Active development and support for 300+ device IDs. User-friendly driver names for easy pairing.
+Community-maintained Tuya Zigbee app with 183 SDK3 native drivers. 67 drivers enriched with 254+ manufacturer IDs from multiple sources (Zigbee2MQTT, Johan Bendz, Homey Forum, Home Assistant, Blakadder). 123 flow cards (triggers, actions, conditions) with proper tokens. 100% local control, no cloud required. IAS Zone enrollment verified. Zero overlaps after cleanup (5,332 remaining). Active development and support for 550+ device IDs. User-friendly driver names for easy pairing.
 
 ---
 
@@ -16,7 +16,7 @@ Community-maintained Tuya Zigbee app with 183 SDK3 native drivers. Based on Joha
 Drivers:              183
 SDK Version:          3
 Homey Compatibility:  >=12.2.0
-Version:              3.0.4
+Version:              3.0.5
 Status:               ✅ Active Development
 ```
 
@@ -80,7 +80,8 @@ homey app install
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
+- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
+- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -175,16 +176,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `6ea68ab1c` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (7 minutes ago)
-- `0ea51dc44` feat: Flow cards implementation complete - 58 drivers + best practices guide - *Dylan Rajasekaram* (8 minutes ago)
-- `e15c952ff` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (15 minutes ago)
-- `e1741fec1` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (15 minutes ago)
-- `8e7d0ea10` feat: Mega implementation Sprint 1 - DP Engine + Communication + Tests foundation - *Dylan Rajasekaram* (16 minutes ago)
-- `6ea68ab1c` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (43 seconds ago)
-- `0ea51dc44` feat: Flow cards implementation complete - 58 drivers + best practices guide - *Dylan Rajasekaram* (2 minutes ago)
-- `e15c952ff` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (8 minutes ago)
-- `e1741fec1` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (9 minutes ago)
-- `8e7d0ea10` feat: Mega implementation Sprint 1 - DP Engine + Communication + Tests foundation - *Dylan Rajasekaram* (10 minutes ago)
+- `9076454a2` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (4 minutes ago)
+- `7ece0d3ca` feat: Intelligent driver enrichment - 67 drivers with 254 manufacturer IDs + features - *Dylan Rajasekaram* (5 minutes ago)
+- `3e54a38ee` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (11 minutes ago)
+- `6ea68ab1c` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (12 minutes ago)
+- `0ea51dc44` feat: Flow cards implementation complete - 58 drivers + best practices guide - *Dylan Rajasekaram* (13 minutes ago)
 
 ---
 
@@ -215,7 +211,7 @@ Based on the original work by **Johan Bendz** and inspired by:
 
 ```
 Last Updated:     2025-10-16
-Version:          3.0.4
+Version:          3.0.5
 Build Status:     ✅ Passing
 Documentation:    ✅ Up to date
 GitHub Actions:   ✅ Active

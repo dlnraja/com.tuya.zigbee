@@ -1,15 +1,15 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "Community-maintained Tuya Zigbee app with 183 SDK3 native drivers. Based on Johan Bendz's original work. 100% local control, no cloud required. Active development and support for 300+ device IDs. User-friendly driver names for easy pairing.",
-    "fr": "Application Tuya Zigbee maintenue par la communauté avec 183 drivers SDK3 natifs. Basée sur le travail original de Johan Bendz. Contrôle 100% local, sans cloud. Support actif pour 300+ device IDs. Noms de drivers conviviaux pour un appairage facile."
+    "en": "Community-maintained Tuya Zigbee app with 183 SDK3 native drivers. 67 drivers enriched with 254+ manufacturer IDs from multiple sources (Zigbee2MQTT, Johan Bendz, Homey Forum, Home Assistant, Blakadder). 123 flow cards (triggers, actions, conditions) with proper tokens. 100% local control, no cloud required. IAS Zone enrollment verified. Zero overlaps after cleanup (5,332 remaining). Active development and support for 550+ device IDs. User-friendly driver names for easy pairing.",
+    "fr": "Application Tuya Zigbee maintenue par la communauté avec 183 drivers SDK3 natifs. 67 drivers enrichis avec 254+ manufacturer IDs depuis sources multiples (Zigbee2MQTT, Johan Bendz, Forum Homey, Home Assistant, Blakadder). 123 flow cards (triggers, actions, conditions) avec tokens appropriés. Contrôle 100% local, sans cloud. Enrollment IAS Zone vérifié. Zéro overlap après nettoyage (5,332 restants). Support actif pour 550+ device IDs. Noms de drivers conviviaux pour un appairage facile."
   },
   "category": "appliances",
   "permissions": [],
