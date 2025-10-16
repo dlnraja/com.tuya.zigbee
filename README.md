@@ -180,6 +180,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `84e4c0ca9` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (8 minutes ago)
 - `dc952643a` feat: Complete scraping system - 18 official sources implemented - *Dylan Rajasekaram* (11 minutes ago)
 - `717d4cb80` Update Homey App Version to v3.0.25 - *github-actions[bot]* (16 minutes ago)
+- `7f30960d7` feat: Complete auto-enrichment system - 18 sources + full pipeline - *Dylan Rajasekaram* (9 minutes ago)
+- `24104974b` Update Homey App Version to v3.0.26 - *github-actions[bot]* (12 minutes ago)
+- `84e4c0ca9` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (14 minutes ago)
+- `dc952643a` feat: Complete scraping system - 18 official sources implemented - *Dylan Rajasekaram* (17 minutes ago)
+- `717d4cb80` Update Homey App Version to v3.0.25 - *github-actions[bot]* (22 minutes ago)
 
 ---
 
