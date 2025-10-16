@@ -1,6 +1,6 @@
 # 🏠 Universal Tuya Zigbee
 
-[![Version](https://img.shields.io/badge/version-3.0.6-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![Version](https://img.shields.io/badge/version-3.0.7-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![SDK](https://img.shields.io/badge/SDK-3-green.svg)](https://apps.developer.homey.app)
 [![Homey](https://img.shields.io/badge/Homey->=12.2.0-orange.svg)](https://homey.app)
 [![Drivers](https://img.shields.io/badge/drivers-183-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee/tree/master/drivers)
@@ -16,7 +16,7 @@ Community-maintained Tuya Zigbee app with 183 SDK3 native drivers. 67 drivers en
 Drivers:              183
 SDK Version:          3
 Homey Compatibility:  >=12.2.0
-Version:              3.0.6
+Version:              3.0.7
 Status:               ✅ Active Development
 ```
 
@@ -175,16 +175,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `e1531b71f` docs: PROJECT STATUS FINAL - v3.0.5 100% COMPLETE - *Dylan Rajasekaram* (2 minutes ago)
-- `d53bc5763` Update Homey App Version to v3.0.6 - *github-actions[bot]* (7 minutes ago)
-- `4c14b04d3` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (9 minutes ago)
-- `74129c237` fix: Homey publish workflow - Add pull rebase and retry logic - *Dylan Rajasekaram* (11 minutes ago)
-- `d131c2275` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (17 minutes ago)
-- `e1531b71f` docs: PROJECT STATUS FINAL - v3.0.5 100% COMPLETE - *Dylan Rajasekaram* (7 minutes ago)
-- `d53bc5763` Update Homey App Version to v3.0.6 - *github-actions[bot]* (12 minutes ago)
-- `4c14b04d3` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (15 minutes ago)
-- `74129c237` fix: Homey publish workflow - Add pull rebase and retry logic - *Dylan Rajasekaram* (16 minutes ago)
-- `d131c2275` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (22 minutes ago)
+- `7b8cf3f3e` fix: Add concurrency control to prevent workflow conflicts (SOLUTION DÉFINITIVE) - *Dylan Rajasekaram* (2 minutes ago)
+- `bab3df0c7` Update Homey App Version to v3.0.7 - *github-actions[bot]* (5 minutes ago)
+- `f71bc1856` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (7 minutes ago)
+- `e1531b71f` docs: PROJECT STATUS FINAL - v3.0.5 100% COMPLETE - *Dylan Rajasekaram* (9 minutes ago)
+- `d53bc5763` Update Homey App Version to v3.0.6 - *github-actions[bot]* (14 minutes ago)
 
 ---
 
@@ -215,7 +210,7 @@ Based on the original work by **Johan Bendz** and inspired by:
 
 ```
 Last Updated:     2025-10-16
-Version:          3.0.6
+Version:          3.0.7
 Build Status:     ✅ Passing
 Documentation:    ✅ Up to date
 GitHub Actions:   ✅ Active
