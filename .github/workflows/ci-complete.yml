@@ -141,6 +141,16 @@ jobs:
         with:
           node-version: '20'
       
+      - name: Download Device Matrix
+        uses: actions/download-artifact@v4
+        with:
+          name: device-matrix-md
+      
+      - name: Download Coverage Stats
+        uses: actions/download-artifact@v4
+        with:
+          name: coverage-stats-json
+      
       - name: Generate Matrix Exports
         run: |
           # Create exports directory
