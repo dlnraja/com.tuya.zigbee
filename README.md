@@ -1,6 +1,6 @@
 # 🏠 Universal Tuya Zigbee
 
-[![Version](https://img.shields.io/badge/version-3.0.31-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![Version](https://img.shields.io/badge/version-3.0.32-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![SDK](https://img.shields.io/badge/SDK-3-green.svg)](https://apps.developer.homey.app)
 [![Homey](https://img.shields.io/badge/Homey->=12.2.0-orange.svg)](https://homey.app)
 [![Drivers](https://img.shields.io/badge/drivers-183-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee/tree/master/drivers)
@@ -16,7 +16,7 @@ Community-maintained Tuya Zigbee app with 183 SDK3 native drivers. 67 drivers en
 Drivers:              183
 SDK Version:          3
 Homey Compatibility:  >=12.2.0
-Version:              3.0.31
+Version:              3.0.32
 Status:               ✅ Active Development
 ```
 
@@ -176,11 +176,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `29982e7f2` docs: Forum response for Peter - v3.0.23 issues (SOS + Multi-sensor) - *Dylan Rajasekaram* (7 minutes ago)
-- `22e7e0ed5` feat: Add Zigbee Cluster Map - Global cluster ID correspondence table - *Dylan Rajasekaram* (13 minutes ago)
-- `d954e1246` final - *Dylan Rajasekaram* (21 minutes ago)
-- `94327ad74` release: v3.0.30 - Enterprise CI/CD & Complete Automation - *Dylan Rajasekaram* (29 minutes ago)
-- `2759592c9` Update Homey App Version to v3.0.31 - *github-actions[bot]* (32 minutes ago)
+- `efafa0097` cleanup - *Dylan Rajasekaram* (13 minutes ago)
+- `346156b01` docs: Forum response for Peter - v3.0.23 issues (SOS + Multi-sensor) - *Dylan Rajasekaram* (20 minutes ago)
+- `c80272cce` Update Homey App Version to v3.0.32 - *github-actions[bot]* (19 minutes ago)
+- `22e7e0ed5` feat: Add Zigbee Cluster Map - Global cluster ID correspondence table - *Dylan Rajasekaram* (25 minutes ago)
+- `d954e1246` final - *Dylan Rajasekaram* (34 minutes ago)
 
 ---
 
@@ -211,7 +211,7 @@ Based on the original work by **Johan Bendz** and inspired by:
 
 ```
 Last Updated:     2025-10-16
-Version:          3.0.31
+Version:          3.0.32
 Build Status:     ✅ Passing
 Documentation:    ✅ Up to date
 GitHub Actions:   ✅ Active
