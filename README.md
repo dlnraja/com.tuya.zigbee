@@ -80,8 +80,7 @@ homey app install
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
-- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
+- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -181,6 +180,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `614656ffe` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (13 minutes ago)
 - `e8ef07242` fix: v3.0.2 critical bugs - 135 drivers improved - *Dylan Rajasekaram* (14 minutes ago)
 - `985c00e99` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (20 minutes ago)
+- `614656ffe` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (37 seconds ago)
+- `e8ef07242` fix: v3.0.2 critical bugs - 135 drivers improved - *Dylan Rajasekaram* (2 minutes ago)
+- `985c00e99` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (8 minutes ago)
+- `6ae1bf5db` update - *Dylan Rajasekaram* (9 minutes ago)
+- `c5eb70e5a` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (11 minutes ago)
 
 ---
 
