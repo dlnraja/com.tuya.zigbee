@@ -180,6 +180,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `e33ba59cb` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (8 minutes ago)
 - `619a443f7` fix: Add required README.txt for Homey App Store - *Dylan Rajasekaram* (11 minutes ago)
 - `a0064333f` Update Homey App Version to v3.0.21 - *github-actions[bot]* (11 minutes ago)
+- `31126732e` fix: CI workflow - Download artifacts before export - *Dylan Rajasekaram* (28 minutes ago)
+- `63440220c` Update Homey App Version to v3.0.22 - *github-actions[bot]* (31 minutes ago)
+- `e33ba59cb` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (33 minutes ago)
+- `619a443f7` fix: Add required README.txt for Homey App Store - *Dylan Rajasekaram* (36 minutes ago)
+- `a0064333f` Update Homey App Version to v3.0.21 - *github-actions[bot]* (36 minutes ago)
 
 ---
 
