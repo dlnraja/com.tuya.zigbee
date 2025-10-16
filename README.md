@@ -179,6 +179,10 @@ powershell scripts/automation/install-git-hooks.ps1
 - `27751d01a` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (5 minutes ago)
 - `5278eb987` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (6 minutes ago)
 - `7ce4c6e00` fix: GitHub Actions workflow - Add pull rebase and retry logic - *Dylan Rajasekaram* (6 minutes ago)
+- `0011b0321` test: Trigger workflow to verify pull rebase fix - *Dylan Rajasekaram* (3 minutes ago)
+- `27751d01a` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (5 minutes ago)
+- `5278eb987` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (6 minutes ago)
+- `7ce4c6e00` fix: GitHub Actions workflow - Add pull rebase and retry logic - *Dylan Rajasekaram* (7 minutes ago)
 - `d3ab1f705` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (9 minutes ago)
 
 ---
