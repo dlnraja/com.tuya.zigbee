@@ -176,16 +176,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `9076454a2` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (4 minutes ago)
-- `7ece0d3ca` feat: Intelligent driver enrichment - 67 drivers with 254 manufacturer IDs + features - *Dylan Rajasekaram* (5 minutes ago)
-- `3e54a38ee` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (11 minutes ago)
-- `6ea68ab1c` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (12 minutes ago)
-- `0ea51dc44` feat: Flow cards implementation complete - 58 drivers + best practices guide - *Dylan Rajasekaram* (13 minutes ago)
-- `9076454a2` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (43 seconds ago)
-- `7ece0d3ca` feat: Intelligent driver enrichment - 67 drivers with 254 manufacturer IDs + features - *Dylan Rajasekaram* (2 minutes ago)
-- `3e54a38ee` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (8 minutes ago)
-- `6ea68ab1c` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (9 minutes ago)
-- `0ea51dc44` feat: Flow cards implementation complete - 58 drivers + best practices guide - *Dylan Rajasekaram* (10 minutes ago)
+- `af2f99906` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (4 minutes ago)
+- `2334f112c` chore: Update app.json to v3.0.5 with complete session improvements - *Dylan Rajasekaram* (5 minutes ago)
+- `36eed5127` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (8 minutes ago)
+- `9076454a2` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (9 minutes ago)
+- `7ece0d3ca` feat: Intelligent driver enrichment - 67 drivers with 254 manufacturer IDs + features - *Dylan Rajasekaram* (9 minutes ago)
 
 ---
 
