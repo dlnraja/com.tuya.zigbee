@@ -175,16 +175,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `eb9266ae2` feat: v3.0.3 - ChatGPT audit implementation (Quick Wins) - *Dylan Rajasekaram* (2 minutes ago)
-- `d465b1353` feat: v3.0.3 - ChatGPT audit implementation (Quick Wins) - *Dylan Rajasekaram* (4 minutes ago)
-- `614656ffe` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (13 minutes ago)
-- `e8ef07242` fix: v3.0.2 critical bugs - 135 drivers improved - *Dylan Rajasekaram* (14 minutes ago)
-- `985c00e99` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (20 minutes ago)
-- `614656ffe` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (37 seconds ago)
-- `e8ef07242` fix: v3.0.2 critical bugs - 135 drivers improved - *Dylan Rajasekaram* (2 minutes ago)
-- `985c00e99` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (8 minutes ago)
-- `6ae1bf5db` update - *Dylan Rajasekaram* (9 minutes ago)
-- `c5eb70e5a` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (11 minutes ago)
+- `fe6c26900` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (48 seconds ago)
+- `5771255e3` chore: update docs after v3.0.3 - *Dylan Rajasekaram* (2 minutes ago)
+- `eb9266ae2` feat: v3.0.3 - ChatGPT audit implementation (Quick Wins) - *Dylan Rajasekaram* (4 minutes ago)
+- `d465b1353` feat: v3.0.3 - ChatGPT audit implementation (Quick Wins) - *Dylan Rajasekaram* (5 minutes ago)
+- `58821b68e` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (14 minutes ago)
 
 ---
 
