@@ -36,7 +36,7 @@ jobs:
         continue-on-error: true
       
       - name: Upload Validation Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: validation-report
           path: validation-output.txt
@@ -78,7 +78,7 @@ jobs:
         continue-on-error: true
       
       - name: Upload ESLint Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: eslint-report
           path: eslint-output.txt
@@ -108,7 +108,7 @@ jobs:
         continue-on-error: true
       
       - name: Upload Schema Validation Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: schema-validation-report
           path: schema-validation.txt
@@ -138,7 +138,7 @@ jobs:
           node scripts/automation/generate-coverage-stats.js
       
       - name: Upload Coverage Reports
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: coverage-reports
           path: |
@@ -193,7 +193,7 @@ jobs:
           cat audit-output.txt
       
       - name: Upload Audit Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: security-audit-report
           path: audit-output.txt
