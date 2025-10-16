@@ -80,8 +80,7 @@ homey app install
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
-- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
+- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -181,6 +180,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `ffe5d2412` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (20 minutes ago)
 - `fe6c26900` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (21 minutes ago)
 - `5771255e3` chore: update docs after v3.0.3 - *Dylan Rajasekaram* (22 minutes ago)
+- `3a92984b2` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (56 seconds ago)
+- `832e7622b` fix: v3.0.4 - Driver overlaps cleaned (13,280 → 5,332) + Peter issue resolved - *Dylan Rajasekaram* (2 minutes ago)
+- `ffe5d2412` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (13 minutes ago)
+- `fe6c26900` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (14 minutes ago)
+- `5771255e3` chore: update docs after v3.0.3 - *Dylan Rajasekaram* (14 minutes ago)
 
 ---
 
