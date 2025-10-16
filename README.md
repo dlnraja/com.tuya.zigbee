@@ -180,6 +180,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `0dc72726b` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (6 minutes ago)
 - `0a661c1bb` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (8 minutes ago)
 - `8865aabc9` fix: v3.0.17 - CRITICAL Tuya Cluster Handler Fix for TS0601 Devices - *Dylan Rajasekaram* (17 minutes ago)
+- `b3ce632d2` chore: trigger auto-publish workflow v3.0.17 - *Dylan Rajasekaram* (4 minutes ago)
+- `63a585954` Update Homey App Version to v3.0.18 - *github-actions[bot]* (6 minutes ago)
+- `0dc72726b` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (8 minutes ago)
+- `0a661c1bb` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (10 minutes ago)
+- `8865aabc9` fix: v3.0.17 - CRITICAL Tuya Cluster Handler Fix for TS0601 Devices - *Dylan Rajasekaram* (20 minutes ago)
 
 ---
 
