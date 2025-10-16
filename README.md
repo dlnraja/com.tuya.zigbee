@@ -219,16 +219,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `f036da46b` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (13 minutes ago)
-- `885fe3512` Release: v2.15.133 FINAL - Documentation complete (400KB), Implementation base (67%), Database (100+ devices), Auto-update system, Ready for production - *Dylan Rajasekaram* (21 minutes ago)
-- `14667bfcb` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (26 minutes ago)
-- `bf6d30b77` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (26 minutes ago)
-- `f9af75caa` Implementation: Phase 1-4 base structure (FlowCardManager, VirtualCapabilities, DeviceHealth, ManufacturerDB) - *Dylan Rajasekaram* (28 minutes ago)
-- `f036da46b` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (47 seconds ago)
-- `885fe3512` Release: v2.15.133 FINAL - Documentation complete (400KB), Implementation base (67%), Database (100+ devices), Auto-update system, Ready for production - *Dylan Rajasekaram* (9 minutes ago)
-- `14667bfcb` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (14 minutes ago)
-- `bf6d30b77` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (15 minutes ago)
-- `f9af75caa` Implementation: Phase 1-4 base structure (FlowCardManager, VirtualCapabilities, DeviceHealth, ManufacturerDB) - *Dylan Rajasekaram* (16 minutes ago)
+- `02fd40d6c` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (39 seconds ago)
+- `c8ad1d4b2` Docs: Architecture reorganization planning + Driver metadata (183 drivers categorized, v3.0.0 roadmap) - *Dylan Rajasekaram* (78 seconds ago)
+- `65713d135` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (13 minutes ago)
+- `f036da46b` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (14 minutes ago)
+- `885fe3512` Release: v2.15.133 FINAL - Documentation complete (400KB), Implementation base (67%), Database (100+ devices), Auto-update system, Ready for production - *Dylan Rajasekaram* (22 minutes ago)
 
 ---
 
