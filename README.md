@@ -79,7 +79,8 @@ homey app install
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
+- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
+- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -180,6 +181,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `087e23c37` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (3 minutes ago)
 - `f4e475adf` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (3 minutes ago)
 - `5770ecf0f` fix(critical): Fix cluster ID NaN errors causing device initialization failures - *Dylan Rajasekaram* (5 minutes ago)
+- `996503cbf` docs: Session finale 16 Oct 2025 - Complete summary - *Dylan Rajasekaram* (38 minutes ago)
+- `4c0cb01e4` Update Homey App Version to v3.0.14 - *github-actions[bot]* (37 minutes ago)
+- `087e23c37` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (39 minutes ago)
+- `f4e475adf` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (39 minutes ago)
+- `5770ecf0f` fix(critical): Fix cluster ID NaN errors causing device initialization failures - *Dylan Rajasekaram* (41 minutes ago)
 
 ---
 
