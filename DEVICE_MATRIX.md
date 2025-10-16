@@ -235,4 +235,4 @@ Device missing? [Request Support](https://github.com/dlnraja/com.tuya.zigbee/iss
 
 ---
 
-**Last Updated:** 2025-10-16T10:43:14.414Z
+**Last Updated:** 2025-10-16T10:55:07.199Z
