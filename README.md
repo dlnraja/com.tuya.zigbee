@@ -180,6 +180,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `675a86a30` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (13 minutes ago)
 - `02ceda857` fix: CRITICAL - Multi-sensor & SOS button cluster IDs numeric (fixes NaN errors) - *Dylan Rajasekaram* (17 minutes ago)
 - `2d193f2e7` Update Homey App Version to v3.0.27 - *github-actions[bot]* (20 minutes ago)
+- `d7a6349ac` feat: Complete project industrialization - Transparency CI, Issue Templates, DP Engine - *Dylan Rajasekaram* (7 minutes ago)
+- `301b605f6` Update Homey App Version to v3.0.28 - *github-actions[bot]* (14 minutes ago)
+- `675a86a30` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (17 minutes ago)
+- `02ceda857` fix: CRITICAL - Multi-sensor & SOS button cluster IDs numeric (fixes NaN errors) - *Dylan Rajasekaram* (21 minutes ago)
+- `2d193f2e7` Update Homey App Version to v3.0.27 - *github-actions[bot]* (24 minutes ago)
 
 ---
 
