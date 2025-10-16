@@ -180,6 +180,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `bd8e78fa8` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (10 minutes ago)
 - `218ca6436` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (11 minutes ago)
 - `9d7c5b77c` feat: Système d'automatisation complet - Interview to Driver + Bi-Monthly Updates - *Dylan Rajasekaram* (16 minutes ago)
+- `6439fe0fc` fix: Workflow versioning - Handle existing tags correctly - *Dylan Rajasekaram* (6 minutes ago)
+- `c2f09341b` Update Homey App Version to v3.0.20 - *github-actions[bot]* (12 minutes ago)
+- `bd8e78fa8` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (13 minutes ago)
+- `218ca6436` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (14 minutes ago)
+- `9d7c5b77c` feat: Système d'automatisation complet - Interview to Driver + Bi-Monthly Updates - *Dylan Rajasekaram* (20 minutes ago)
 
 ---
 
