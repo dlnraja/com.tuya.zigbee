@@ -1,6 +1,6 @@
 # 🏠 Universal Tuya Zigbee
 
-[![Version](https://img.shields.io/badge/version-3.0.16-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![Version](https://img.shields.io/badge/version-3.0.15-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![SDK](https://img.shields.io/badge/SDK-3-green.svg)](https://apps.developer.homey.app)
 [![Homey](https://img.shields.io/badge/Homey->=12.2.0-orange.svg)](https://homey.app)
 [![Drivers](https://img.shields.io/badge/drivers-183-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee/tree/master/drivers)
@@ -16,7 +16,7 @@ Community-maintained Tuya Zigbee app with 183 SDK3 native drivers. 67 drivers en
 Drivers:              183
 SDK Version:          3
 Homey Compatibility:  >=12.2.0
-Version:              3.0.16
+Version:              3.0.15
 Status:               ✅ Active Development
 ```
 
@@ -80,8 +80,7 @@ homey app install
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
-- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
+- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -176,27 +175,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `996503cbf` docs: Session finale 16 Oct 2025 - Complete summary - *Dylan Rajasekaram* (2 minutes ago)
-- `4c0cb01e4` Update Homey App Version to v3.0.14 - *github-actions[bot]* (67 seconds ago)
-- `4c0cb01e4` Update Homey App Version to v3.0.14 - *github-actions[bot]* (68 seconds ago)
-- `087e23c37` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (3 minutes ago)
-- `f4e475adf` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (3 minutes ago)
-- `5770ecf0f` fix(critical): Fix cluster ID NaN errors causing device initialization failures - *Dylan Rajasekaram* (5 minutes ago)
-- `996503cbf` docs: Session finale 16 Oct 2025 - Complete summary - *Dylan Rajasekaram* (38 minutes ago)
-- `4c0cb01e4` Update Homey App Version to v3.0.14 - *github-actions[bot]* (37 minutes ago)
-- `087e23c37` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (39 minutes ago)
-- `f4e475adf` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (39 minutes ago)
-- `5770ecf0f` fix(critical): Fix cluster ID NaN errors causing device initialization failures - *Dylan Rajasekaram* (41 minutes ago)
-- `4f105e0d2` chore: Organisation complète des fichiers à la racine - *Dylan Rajasekaram* (2 minutes ago)
-- `996503cbf` docs: Session finale 16 Oct 2025 - Complete summary - *Dylan Rajasekaram* (39 minutes ago)
-- `4c0cb01e4` Update Homey App Version to v3.0.14 - *github-actions[bot]* (38 minutes ago)
-- `087e23c37` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (41 minutes ago)
-- `f4e475adf` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (41 minutes ago)
-- `553df8dac` chore: Organisation complète des fichiers à la racine - *Dylan Rajasekaram* (11 minutes ago)
-- `4f105e0d2` chore: Organisation complète des fichiers à la racine - *Dylan Rajasekaram* (12 minutes ago)
-- `996503cbf` docs: Session finale 16 Oct 2025 - Complete summary - *Dylan Rajasekaram* (50 minutes ago)
-- `4c0cb01e4` Update Homey App Version to v3.0.14 - *github-actions[bot]* (49 minutes ago)
-- `087e23c37` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (51 minutes ago)
+- `1f5e501ed` fix: v3.0.16 - CRITICAL CLUSTER ID FIX for Peter's devices - *Dylan Rajasekaram* (7 minutes ago)
+- `f1a45a404` chore: Organisation complète des fichiers à la racine - *Dylan Rajasekaram* (17 minutes ago)
+- `869b724ed` chore: Organisation complète des fichiers à la racine - *Dylan Rajasekaram* (18 minutes ago)
+- `699272f8c` Update Homey App Version to v3.0.15 - *github-actions[bot]* (52 minutes ago)
+- `ff9249641` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (54 minutes ago)
 
 ---
 
@@ -227,7 +210,7 @@ Based on the original work by **Johan Bendz** and inspired by:
 
 ```
 Last Updated:     2025-10-16
-Version:          3.0.16
+Version:          3.0.15
 Build Status:     ✅ Passing
 Documentation:    ✅ Up to date
 GitHub Actions:   ✅ Active
