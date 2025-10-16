@@ -21,6 +21,8 @@ Ce système met à jour **automatiquement** tous les liens, chemins, README et C
 **Problème résolu:**
 Quand des fichiers sont déplacés (ex: `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` → `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md`), tous les liens dans les autres fichiers doivent être mis à jour manuellement. C'est fastidieux et source d'erreurs.
 Quand des fichiers sont déplacés (ex: `docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` → `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md`), tous les liens dans les autres fichiers doivent être mis à jour manuellement. C'est fastidieux et source d'erreurs.
+Quand des fichiers sont déplacés (ex: `docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` → `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md`), tous les liens dans les autres fichiers doivent être mis à jour manuellement. C'est fastidieux et source d'erreurs.
+Quand des fichiers sont déplacés (ex: `docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` → `docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md`), tous les liens dans les autres fichiers doivent être mis à jour manuellement. C'est fastidieux et source d'erreurs.
 
 **Solution:**
 Système automatique qui détecte et corrige tous les liens cassés après chaque modification.
@@ -54,6 +56,10 @@ node scripts/automation/update-all-links.js
   ✓ Updated path: scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1 → scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1
   ✓ Updated MD link: docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md → docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md
   ✓ Updated path: scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1 → scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1
+  ✓ Updated MD link: docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md → docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md
+  ✓ Updated path: scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1 → scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1
+  ✓ Updated MD link: docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md → docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md
+  ✓ Updated path: scripts/automation/scripts/automation/scripts/automation/commit-push.ps1 → scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1
 ✅ Updated: README.md
 ✅ Updated: PROJECT_STRUCTURE.md
 
@@ -195,18 +201,30 @@ const PATH_MAPPINGS = {
   'docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md': 'docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md',
   'docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md': 'docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md',
   'docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md': 'docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md',
+  'docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md': 'docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md',
+  'docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md': 'docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md',
+  'docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md': 'docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md',
+  'docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md': 'docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md',
   
   // Documentation Workflow
   'docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md': 'docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md',
   'docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md': 'docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md',
   'docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md': 'docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md',
   'docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md': 'docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md',
+  'docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md': 'docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md',
+  'docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md': 'docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md',
+  'docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md': 'docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md',
+  'docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md': 'docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md',
   
   // Scripts Automation
   'scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1': 'scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1',
   'scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js': 'scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js',
   'scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1': 'scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1',
   'scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js': 'scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js',
+  'scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1': 'scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1',
+  'scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js': 'scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js',
+  'scripts/automation/scripts/automation/scripts/automation/commit-push.ps1': 'scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1',
+  'scripts/automation/scripts/automation/scripts/automation/auto-publish.js': 'scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js',
   
   // ... (tous les mappings)
 };
@@ -392,6 +410,8 @@ powershell scripts/automation/install-git-hooks.ps1
 - `ORGANISATION_COMPLETE.md` - Récapitulatif organisation
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide workflow GitHub
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide workflow GitHub
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide workflow GitHub
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide workflow GitHub
 
 ---
 
