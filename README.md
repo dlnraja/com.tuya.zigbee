@@ -224,6 +224,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `95e51b35c` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (11 minutes ago)
 - `02fd40d6c` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (12 minutes ago)
 - `c8ad1d4b2` Docs: Architecture reorganization planning + Driver metadata (183 drivers categorized, v3.0.0 roadmap) - *Dylan Rajasekaram* (12 minutes ago)
+- `495e50e01` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (11 minutes ago)
+- `84b705d80` feat: Professional review implementation - CI/CD, Coverage methodology, Positioning - *Dylan Rajasekaram* (12 minutes ago)
+- `95e51b35c` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (22 minutes ago)
+- `02fd40d6c` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (22 minutes ago)
+- `c8ad1d4b2` Docs: Architecture reorganization planning + Driver metadata (183 drivers categorized, v3.0.0 roadmap) - *Dylan Rajasekaram* (23 minutes ago)
 
 ---
 
