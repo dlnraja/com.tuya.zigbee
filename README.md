@@ -1,6 +1,6 @@
 # 🏠 Universal Tuya Zigbee
 
-[![Version](https://img.shields.io/badge/version-3.0.10-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![Version](https://img.shields.io/badge/version-3.0.11-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![SDK](https://img.shields.io/badge/SDK-3-green.svg)](https://apps.developer.homey.app)
 [![Homey](https://img.shields.io/badge/Homey->=12.2.0-orange.svg)](https://homey.app)
 [![Drivers](https://img.shields.io/badge/drivers-183-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee/tree/master/drivers)
@@ -16,7 +16,7 @@ Community-maintained Tuya Zigbee app with 183 SDK3 native drivers. 67 drivers en
 Drivers:              183
 SDK Version:          3
 Homey Compatibility:  >=12.2.0
-Version:              3.0.10
+Version:              3.0.11
 Status:               ✅ Active Development
 ```
 
@@ -174,16 +174,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `89ab2fb5d` fix: Complete GitHub Actions workflows diagnosis and cleanup - *Dylan Rajasekaram* (2 minutes ago)
-- `67d867894` Update Homey App Version to v3.0.10 - *github-actions[bot]* (23 minutes ago)
-- `0f7335a5c` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (25 minutes ago)
-- `5cedeb58e` fix: Add missing CHANGELOG entries for v3.0.1-v3.0.8 to fix Homey publish - *Dylan Rajasekaram* (27 minutes ago)
-- `368c77ac5` Update Homey App Version to v3.0.9 - *github-actions[bot]* (30 minutes ago)
-- `89ab2fb5d` fix: Complete GitHub Actions workflows diagnosis and cleanup - *Dylan Rajasekaram* (6 minutes ago)
-- `67d867894` Update Homey App Version to v3.0.10 - *github-actions[bot]* (27 minutes ago)
-- `0f7335a5c` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (29 minutes ago)
-- `5cedeb58e` fix: Add missing CHANGELOG entries for v3.0.1-v3.0.8 to fix Homey publish - *Dylan Rajasekaram* (31 minutes ago)
-- `368c77ac5` Update Homey App Version to v3.0.9 - *github-actions[bot]* (34 minutes ago)
+- `5016563ce` docs: GitHub Actions complete fix summary - *Dylan Rajasekaram* (3 minutes ago)
+- `6259be802` Update Homey App Version to v3.0.11 - *github-actions[bot]* (4 minutes ago)
+- `f2eaed4d2` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (6 minutes ago)
+- `89ab2fb5d` fix: Complete GitHub Actions workflows diagnosis and cleanup - *Dylan Rajasekaram* (8 minutes ago)
+- `67d867894` Update Homey App Version to v3.0.10 - *github-actions[bot]* (29 minutes ago)
 
 ---
 
@@ -214,7 +209,7 @@ Based on the original work by **Johan Bendz** and inspired by:
 
 ```
 Last Updated:     2025-10-16
-Version:          3.0.10
+Version:          3.0.11
 Build Status:     ✅ Passing
 Documentation:    ✅ Up to date
 GitHub Actions:   ✅ Active
