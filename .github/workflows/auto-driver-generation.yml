@@ -1,0 +1,218 @@
+name: Auto Driver Generation - AI Powered
+
+on:
+  issues:
+    types: [opened, labeled]
+  issue_comment:
+    types: [created]
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: 'Issue number to process'
+        required: true
+        type: number
+
+permissions:
+  issues: write
+  contents: write
+  pull-requests: write
+
+jobs:
+  analyze-and-generate:
+    name: Analyze Issue & Generate Driver
+    runs-on: ubuntu-latest
+    if: |
+      (github.event_name == 'issues' && contains(github.event.issue.labels.*.name, 'device-request')) ||
+      (github.event_name == 'issue_comment' && contains(github.event.issue.labels.*.name, 'device-request') && contains(github.event.comment.body, '/generate')) ||
+      github.event_name == 'workflow_dispatch'
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      
+      - name: Install Dependencies
+        run: |
+          npm install
+          npm install axios cheerio openai
+      
+      - name: Extract Issue Data
+        id: extract
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const issue = context.payload.issue || 
+                         await github.rest.issues.get({
+                           owner: context.repo.owner,
+                           repo: context.repo.repo,
+                           issue_number: context.payload.inputs?.issue_number || context.issue.number
+                         }).then(r => r.data);
+            
+            // Extract device info from issue body
+            const body = issue.body || '';
+            
+            // Parse structured data
+            const extractField = (label) => {
+              const regex = new RegExp(`${label}[:\\s]*([^\\n]+)`, 'i');
+              const match = body.match(regex);
+              return match ? match[1].trim() : null;
+            };
+            
+            const deviceData = {
+              issue_number: issue.number,
+              brand: extractField('Brand'),
+              model: extractField('Model'),
+              manufacturerName: extractField('ManufacturerName|Manufacturer ID'),
+              modelId: extractField('ModelId|Model ID'),
+              category: extractField('Category|Device Category'),
+              powerSource: extractField('Power Source'),
+              z2m_link: extractField('Zigbee2MQTT|Z2M'),
+              fingerprint: body.match(/```[\s\S]*?Fingerprint[\s\S]*?```/i)?.[0],
+              datapoints: body.match(/```[\s\S]*?DP[\s\S]*?```/i)?.[0],
+              fullBody: body
+            };
+            
+            core.setOutput('device_data', JSON.stringify(deviceData));
+            return deviceData;
+      
+      - name: Web Research - Google & Z2M
+        id: research
+        run: |
+          node scripts/ai/web-research.js '${{ steps.extract.outputs.device_data }}'
+      
+      - name: Heuristic Analysis
+        id: analyze
+        run: |
+          node scripts/ai/heuristic-analyzer.js '${{ steps.research.outputs.enriched_data }}'
+      
+      - name: Generate Driver
+        id: generate
+        run: |
+          node scripts/ai/driver-generator.js '${{ steps.analyze.outputs.analysis }}'
+      
+      - name: Validate Generated Driver
+        id: validate
+        run: |
+          homey app validate --level publish
+          node scripts/validation/validate-driver-schemas.js
+        continue-on-error: true
+      
+      - name: Create Pull Request
+        if: steps.validate.outcome == 'success'
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: |
+            feat: Auto-generated driver for ${{ fromJSON(steps.extract.outputs.device_data).model }}
+            
+            Device: ${{ fromJSON(steps.extract.outputs.device_data).brand }} ${{ fromJSON(steps.extract.outputs.device_data).model }}
+            Category: ${{ fromJSON(steps.extract.outputs.device_data).category }}
+            Manufacturer ID: ${{ fromJSON(steps.extract.outputs.device_data).manufacturerName }}
+            
+            Generated automatically from issue #${{ fromJSON(steps.extract.outputs.device_data).issue_number }}
+          branch: auto/driver-${{ fromJSON(steps.extract.outputs.device_data).issue_number }}
+          title: '[Auto-Generated] Driver for ${{ fromJSON(steps.extract.outputs.device_data).model }}'
+          body: |
+            ## 🤖 Auto-Generated Driver
+            
+            This driver was automatically generated from issue #${{ fromJSON(steps.extract.outputs.device_data).issue_number }}
+            
+            ### Device Information
+            - **Brand:** ${{ fromJSON(steps.extract.outputs.device_data).brand }}
+            - **Model:** ${{ fromJSON(steps.extract.outputs.device_data).model }}
+            - **Manufacturer ID:** ${{ fromJSON(steps.extract.outputs.device_data).manufacturerName }}
+            - **Category:** ${{ fromJSON(steps.extract.outputs.device_data).category }}
+            
+            ### Generation Process
+            ✅ Issue data extracted
+            ✅ Web research completed (Google + Z2M)
+            ✅ Heuristic analysis performed
+            ✅ Driver generated with DP Engine
+            ✅ Validation passed
+            
+            ### Review Needed
+            Please review the generated driver and test with actual device before merging.
+            
+            ---
+            Closes #${{ fromJSON(steps.extract.outputs.device_data).issue_number }}
+          labels: auto-generated, needs-review, device-request
+      
+      - name: Comment on Issue (Success)
+        if: steps.validate.outcome == 'success'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: ${{ fromJSON(steps.extract.outputs.device_data).issue_number }},
+              body: `## 🤖 Auto-Generated Driver Ready!
+              
+              I've automatically generated a driver for this device and created a pull request.
+              
+              ✅ **Pull Request:** #${{ steps.create-pr.outputs.pull-request-number }}
+              ✅ **Validation:** Passed
+              ✅ **Category:** ${{ fromJSON(steps.extract.outputs.device_data).category }}
+              
+              ### Next Steps
+              1. Review the generated driver
+              2. Test with your actual device
+              3. Provide feedback on the PR
+              4. Merge when ready
+              
+              The driver was generated using:
+              - Web research (Google + Zigbee2MQTT)
+              - Heuristic analysis
+              - DP Engine profiles
+              - Automatic categorization
+              
+              Thank you for your device request! 🙏`
+            });
+      
+      - name: Comment on Issue (Failed)
+        if: steps.validate.outcome != 'success'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: ${{ fromJSON(steps.extract.outputs.device_data).issue_number }},
+              body: `## ⚠️ Auto-Generation Needs Review
+              
+              I attempted to automatically generate a driver but validation failed.
+              
+              ### What I Did
+              ✅ Extracted device information
+              ✅ Performed web research
+              ✅ Analyzed heuristically
+              ❌ Driver validation failed
+              
+              ### What's Needed
+              This device requires manual intervention. Common reasons:
+              - Missing critical information (fingerprint, DPs)
+              - Complex TS0601 DP mapping
+              - Non-standard Zigbee implementation
+              
+              A maintainer will review and create the driver manually.
+              
+              You can help by providing:
+              - Complete Zigbee fingerprint
+              - DP list (if TS0601)
+              - Links to Z2M or similar resources
+              
+              Thank you for your patience! 🙏`
+            });
+            
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: ${{ fromJSON(steps.extract.outputs.device_data).issue_number }},
+              labels: ['needs-manual-review', 'auto-gen-failed']
+            });
