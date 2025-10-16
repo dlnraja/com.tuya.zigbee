@@ -65,13 +65,12 @@ homey app install
 
 ## 🔄 Recent Updates
 
-### Version 3.0.0 - 2025-10-16
+### Version 3.0.8 - 2025-10-16
 
-- **Complete DP interpretation engine** - Centralized Data Point handling
-- **Fingerprints database** (100+ devices mapped)
-- **Profiles system** (20+ profiles defined)
-- **Capability mapping** (comprehensive DP → Homey conversion)
-- **Reusable converters** (power, temperature, onoff, and more)
+- SYNTHESE_COMPLETE_FINALE.md - Complete session summary
+- Memory saved with full session recap
+- All GitHub Actions workflows now resilient with concurrency control
+- No more push rejected errors
 
 **Full changelog:** [CHANGELOG.md](CHANGELOG.md)
 
@@ -180,6 +179,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `6066124d8` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (8 minutes ago)
 - `7b8cf3f3e` fix: Add concurrency control to prevent workflow conflicts (SOLUTION DÉFINITIVE) - *Dylan Rajasekaram* (9 minutes ago)
 - `bab3df0c7` Update Homey App Version to v3.0.7 - *github-actions[bot]* (12 minutes ago)
+- `f95cbe3de` docs: SYNTHESE COMPLETE FINALE - 100% TERMINÉ - *Dylan Rajasekaram* (8 minutes ago)
+- `342eb33e1` Update Homey App Version to v3.0.8 - *github-actions[bot]* (10 minutes ago)
+- `6066124d8` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (13 minutes ago)
+- `7b8cf3f3e` fix: Add concurrency control to prevent workflow conflicts (SOLUTION DÉFINITIVE) - *Dylan Rajasekaram* (15 minutes ago)
+- `bab3df0c7` Update Homey App Version to v3.0.7 - *github-actions[bot]* (17 minutes ago)
 
 ---
 
