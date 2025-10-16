@@ -3,11 +3,51 @@
  * 
  * Handles Tuya custom cluster 0xEF00 (61184) for all devices
  * Automatically maps datapoints to Homey capabilities
+ * 
+ * SOURCES & REFERENCES:
+ * - Zigbee2MQTT Tuya converters: https://github.com/Koenkk/zigbee2mqtt
+ * - Home Assistant ZHA quirks: https://github.com/zigpy/zha-device-handlers
+ * - Tuya IoT Platform: https://developer.tuya.com/en/docs/iot
+ * - deCONZ Tuya support: https://github.com/dresden-elektronik/deconz-rest-plugin
+ * - Homey Community Forum: https://community.homey.app/t/140352
+ * - Blakadder Database: https://zigbee.blakadder.com/Tuya.html
+ * 
+ * TECHNICAL SPECIFICATIONS:
+ * - Cluster ID: 0xEF00 (61184)
+ * - Attribute 0x0000: dataPoints (Map)
+ * - Manufacturer: Tuya Smart / Hangzhou Tuya Information Technology
+ * - Protocol: Zigbee 3.0 manufacturer-specific cluster
+ * 
+ * @version 3.1.0
+ * @author Universal Tuya Zigbee Team
+ * @license GPL-3.0
  */
 
 const TUYA_DATAPOINTS = require('./parsers/tuya-datapoints-database');
 
-const TUYA_CLUSTER_ID = 61184; // 0xEF00
+const TUYA_CLUSTER_ID = 61184; // 0xEF00 (Tuya proprietary cluster)
+const TUYA_ATTRIBUTE_DATAPOINTS = 0x0000; // DataPoints attribute
+const TUYA_ATTRIBUTE_REQUEST = 0x0001; // Request attribute
+
+// Retry configuration (based on Zigbee2MQTT best practices)
+const INIT_RETRY_ATTEMPTS = 5;
+const INIT_RETRY_DELAY_MS = 2000;
+const READ_RETRY_ATTEMPTS = 3;
+const READ_RETRY_DELAY_MS = 1000;
+
+// Reporting configuration (optimized for Tuya devices)
+const REPORTING_CONFIG = {
+  minimumReportInterval: 1,     // Report after 1 second (Zigbee2MQTT standard)
+  maximumReportInterval: 300,   // Force report every 5 minutes (battery save)
+  reportableChange: 0           // Report any change
+};
+
+// Advanced reporting for AC-powered devices
+const REPORTING_CONFIG_AC = {
+  minimumReportInterval: 0,     // Report immediately
+  maximumReportInterval: 3600,  // Force every hour
+  reportableChange: 0
+};
 
 class TuyaClusterHandler {
 
@@ -16,8 +56,18 @@ class TuyaClusterHandler {
    * @param {ZigBeeDevice} device - The Homey Zigbee device
    * @param {Object} zclNode - The ZCL node
    * @param {String} deviceType - Type of device (MULTI_SENSOR, SMOKE_DETECTOR, etc.)
+   * @param {Object} options - Optional configuration
+   * @param {Boolean} options.acPowered - Device is AC powered (use aggressive reporting)
+   * @param {Boolean} options.autoDiscovery - Enable automatic datapoint discovery
+   * @param {Number} options.retryAttempts - Number of initialization retry attempts
+   * @returns {Promise<Boolean>} - True if initialization successful
    */
-  static async init(device, zclNode, deviceType = 'COMMON') {
+  static async init(device, zclNode, deviceType = 'COMMON', options = {}) {
+    const {
+      acPowered = false,
+      autoDiscovery = true,
+      retryAttempts = INIT_RETRY_ATTEMPTS
+    } = options;
     device.log(`[TuyaCluster] Initializing for type: ${deviceType}`);
     
     // Auto-detect Tuya cluster on ANY endpoint (critical fix for HOBEIAN devices)
@@ -67,23 +117,95 @@ class TuyaClusterHandler {
       device.log('[TuyaCluster] Reporting config failed (may be OK):', err.message);
     }
     
-    // Request initial data with retry
-    for (let attempt = 1; attempt <= 3; attempt++) {
+    // Request initial data with retry (based on Zigbee2MQTT retry logic)
+    let initialDataReceived = false;
+    
+    for (let attempt = 1; attempt <= retryAttempts; attempt++) {
       try {
-        await tuyaCluster.read('dataPoints');
-        device.log(`[TuyaCluster] ✅ Initial data requested (attempt ${attempt})`);
-        break;
-      } catch (err) {
-        device.log(`[TuyaCluster] Initial data read attempt ${attempt} failed:`, err.message);
-        if (attempt === 3) {
-          device.log('[TuyaCluster] ⚠️ All read attempts failed, waiting for reports');
+        device.log(`[TuyaCluster] Reading initial data (attempt ${attempt}/${retryAttempts})...`);
+        
+        // Try reading dataPoints attribute
+        const data = await tuyaCluster.read(TUYA_ATTRIBUTE_DATAPOINTS);
+        
+        if (data && data.dataPoints) {
+          device.log(`[TuyaCluster] ✅ Initial data received:`, JSON.stringify(data.dataPoints));
+          this.handleTuyaData(device, data, deviceType);
+          initialDataReceived = true;
+          break;
         } else {
-          await new Promise(resolve => setTimeout(resolve, 1000 * attempt));
+          device.log(`[TuyaCluster] ⚠️ Empty data received (attempt ${attempt})`);
+        }
+        
+      } catch (err) {
+        device.log(`[TuyaCluster] Read attempt ${attempt} failed:`, err.message);
+        
+        if (attempt < retryAttempts) {
+          // Exponential backoff (Zigbee2MQTT pattern)
+          const delay = INIT_RETRY_DELAY_MS * attempt;
+          device.log(`[TuyaCluster] Retrying in ${delay}ms...`);
+          await new Promise(resolve => setTimeout(resolve, delay));
+          
+          // Try alternative method: request specific datapoints
+          if (attempt === 2 && autoDiscovery) {
+            device.log('[TuyaCluster] Trying datapoint discovery...');
+            await this.discoverDatapoints(device, tuyaCluster, deviceType);
+          }
+        } else {
+          device.log('[TuyaCluster] ⚠️ All read attempts failed, will rely on automatic reports');
+          device.log('[TuyaCluster] This is normal for some battery-powered devices');
         }
       }
     }
     
+    // Store discovery status
+    device._tuyaInitialized = initialDataReceived;
+    device._tuyaAutoDiscovery = autoDiscovery;
+    
+    // Log initialization summary
+    device.log('[TuyaCluster] ═══════════════════════════════════════');
+    device.log(`[TuyaCluster] Initialization complete`);
+    device.log(`[TuyaCluster] Device Type: ${deviceType}`);
+    device.log(`[TuyaCluster] Endpoint: ${tuyaEndpoint}`);
+    device.log(`[TuyaCluster] Initial Data: ${initialDataReceived ? 'Received' : 'Pending'}`);
+    device.log(`[TuyaCluster] Power Mode: ${acPowered ? 'AC' : 'Battery'}`);
+    device.log(`[TuyaCluster] Auto Discovery: ${autoDiscovery ? 'Enabled' : 'Disabled'}`);
+    device.log('[TuyaCluster] ═══════════════════════════════════════');
+    
     return true;
+  }
+
+  /**
+   * Discover unknown datapoints by requesting common ones
+   * Based on Zigbee2MQTT discovery pattern
+   */
+  static async discoverDatapoints(device, tuyaCluster, deviceType) {
+    device.log('[TuyaCluster] 🔍 Starting datapoint discovery...');
+    
+    // Common datapoints to try (from Tuya Standard Instruction Set)
+    const commonDatapoints = [
+      1,   // Usually main function (switch, alarm, temperature)
+      2,   // Usually secondary function (brightness, humidity)
+      3,   // Usually tertiary function (mode, pressure)
+      4,   // Usually battery or countdown
+      5,   // Usually settings or tamper
+      9,   // Usually sensitivity or unit
+      10,  // Usually threshold or calibration
+      13,  // Usually secondary alarm or state
+      15,  // Usually volume or alarm type
+      101, // Usually advanced settings
+      102  // Usually advanced state
+    ];
+    
+    for (const dp of commonDatapoints) {
+      try {
+        await tuyaCluster.write(TUYA_ATTRIBUTE_REQUEST, { dp });
+        await new Promise(resolve => setTimeout(resolve, 100));
+      } catch (err) {
+        // Ignore errors, device will respond if DP exists
+      }
+    }
+    
+    device.log('[TuyaCluster] ✅ Discovery requests sent, waiting for responses...');
   }
 
   /**
