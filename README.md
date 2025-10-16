@@ -1,6 +1,6 @@
 # 🏠 Universal Tuya Zigbee
 
-[![Version](https://img.shields.io/badge/version-3.0.16-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![Version](https://img.shields.io/badge/version-3.0.17-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![SDK](https://img.shields.io/badge/SDK-3-green.svg)](https://apps.developer.homey.app)
 [![Homey](https://img.shields.io/badge/Homey->=12.2.0-orange.svg)](https://homey.app)
 [![Drivers](https://img.shields.io/badge/drivers-183-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee/tree/master/drivers)
@@ -16,7 +16,7 @@ Community-maintained Tuya Zigbee app with 183 SDK3 native drivers. 67 drivers en
 Drivers:              183
 SDK Version:          3
 Homey Compatibility:  >=12.2.0
-Version:              3.0.16
+Version:              3.0.17
 Status:               ✅ Active Development
 ```
 
@@ -65,13 +65,13 @@ homey app install
 
 ## 🔄 Recent Updates
 
-### Version 3.0.16 - 2025-10-16
+### Version 3.0.17 - 2025-10-16
 
-- ✅ **Motion Multi-Sensor**: Cluster ID registration fixed - all sensors now report data
-- ✅ **SOS Emergency Button**: IAS Zone listeners now properly trigger flows
-- ✅ All cluster IDs now use `CLUSTER.*` constants instead of hardcoded numbers
-- ✅ Fixed `TypeError: Cannot read properties of undefined (reading 'ID')`
-- ✅ Fixed `TypeError: expected_cluster_id_number`
+- ✅ **Tuya TS0601 Devices Now Working**: Gas sensors, some motion sensors, water leak detectors
+- ✅ Fixed `Error: Cannot find module '../../utils/tuya-cluster-handler'`
+- ✅ All TS0601-based devices now properly initialize
+- `utils/tuya-cluster-handler.js`: Universal handler for Tuya proprietary cluster
+- Automatic device type detection (GAS_DETECTOR, MULTI_SENSOR, etc.)
 
 **Full changelog:** [CHANGELOG.md](CHANGELOG.md)
 
@@ -176,27 +176,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `996503cbf` docs: Session finale 16 Oct 2025 - Complete summary - *Dylan Rajasekaram* (2 minutes ago)
-- `4c0cb01e4` Update Homey App Version to v3.0.14 - *github-actions[bot]* (67 seconds ago)
-- `4c0cb01e4` Update Homey App Version to v3.0.14 - *github-actions[bot]* (68 seconds ago)
-- `087e23c37` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (3 minutes ago)
-- `f4e475adf` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (3 minutes ago)
-- `5770ecf0f` fix(critical): Fix cluster ID NaN errors causing device initialization failures - *Dylan Rajasekaram* (5 minutes ago)
-- `996503cbf` docs: Session finale 16 Oct 2025 - Complete summary - *Dylan Rajasekaram* (38 minutes ago)
-- `4c0cb01e4` Update Homey App Version to v3.0.14 - *github-actions[bot]* (37 minutes ago)
-- `087e23c37` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (39 minutes ago)
-- `f4e475adf` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (39 minutes ago)
-- `5770ecf0f` fix(critical): Fix cluster ID NaN errors causing device initialization failures - *Dylan Rajasekaram* (41 minutes ago)
-- `4f105e0d2` chore: Organisation complète des fichiers à la racine - *Dylan Rajasekaram* (2 minutes ago)
-- `996503cbf` docs: Session finale 16 Oct 2025 - Complete summary - *Dylan Rajasekaram* (39 minutes ago)
-- `4c0cb01e4` Update Homey App Version to v3.0.14 - *github-actions[bot]* (38 minutes ago)
-- `087e23c37` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (41 minutes ago)
-- `f4e475adf` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (41 minutes ago)
-- `553df8dac` chore: Organisation complète des fichiers à la racine - *Dylan Rajasekaram* (11 minutes ago)
-- `4f105e0d2` chore: Organisation complète des fichiers à la racine - *Dylan Rajasekaram* (12 minutes ago)
-- `996503cbf` docs: Session finale 16 Oct 2025 - Complete summary - *Dylan Rajasekaram* (50 minutes ago)
-- `4c0cb01e4` Update Homey App Version to v3.0.14 - *github-actions[bot]* (49 minutes ago)
-- `087e23c37` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (51 minutes ago)
+- `1f5e501ed` fix: v3.0.16 - CRITICAL CLUSTER ID FIX for Peter's devices - *Dylan Rajasekaram* (16 minutes ago)
+- `f1a45a404` chore: Organisation complète des fichiers à la racine - *Dylan Rajasekaram* (26 minutes ago)
+- `869b724ed` chore: Organisation complète des fichiers à la racine - *Dylan Rajasekaram* (27 minutes ago)
+- `699272f8c` Update Homey App Version to v3.0.15 - *github-actions[bot]* (61 minutes ago)
+- `ff9249641` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (63 minutes ago)
 
 ---
 
@@ -227,7 +211,7 @@ Based on the original work by **Johan Bendz** and inspired by:
 
 ```
 Last Updated:     2025-10-16
-Version:          3.0.16
+Version:          3.0.17
 Build Status:     ✅ Passing
 Documentation:    ✅ Up to date
 GitHub Actions:   ✅ Active
