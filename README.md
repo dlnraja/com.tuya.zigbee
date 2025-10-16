@@ -1,6 +1,6 @@
 # 🏠 Universal Tuya Zigbee
 
-[![Version](https://img.shields.io/badge/version-3.0.3-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![Version](https://img.shields.io/badge/version-3.0.4-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![SDK](https://img.shields.io/badge/SDK-3-green.svg)](https://apps.developer.homey.app)
 [![Homey](https://img.shields.io/badge/Homey->=12.2.0-orange.svg)](https://homey.app)
 [![Drivers](https://img.shields.io/badge/drivers-183-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee/tree/master/drivers)
@@ -16,7 +16,7 @@ Community-maintained Tuya Zigbee app with 183 SDK3 native drivers. Based on Joha
 Drivers:              183
 SDK Version:          3
 Homey Compatibility:  >=12.2.0
-Version:              3.0.3
+Version:              3.0.4
 Status:               ✅ Active Development
 ```
 
@@ -80,7 +80,8 @@ homey app install
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
+- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
+- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -175,16 +176,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `eb9266ae2` feat: v3.0.3 - ChatGPT audit implementation (Quick Wins) - *Dylan Rajasekaram* (2 minutes ago)
-- `d465b1353` feat: v3.0.3 - ChatGPT audit implementation (Quick Wins) - *Dylan Rajasekaram* (4 minutes ago)
-- `614656ffe` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (13 minutes ago)
-- `e8ef07242` fix: v3.0.2 critical bugs - 135 drivers improved - *Dylan Rajasekaram* (14 minutes ago)
-- `985c00e99` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (20 minutes ago)
-- `614656ffe` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (37 seconds ago)
-- `e8ef07242` fix: v3.0.2 critical bugs - 135 drivers improved - *Dylan Rajasekaram* (2 minutes ago)
-- `985c00e99` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (8 minutes ago)
-- `6ae1bf5db` update - *Dylan Rajasekaram* (9 minutes ago)
-- `c5eb70e5a` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (11 minutes ago)
+- `fe6c26900` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (11 minutes ago)
+- `5771255e3` chore: update docs after v3.0.3 - *Dylan Rajasekaram* (12 minutes ago)
+- `eb9266ae2` feat: v3.0.3 - ChatGPT audit implementation (Quick Wins) - *Dylan Rajasekaram* (14 minutes ago)
+- `d465b1353` feat: v3.0.3 - ChatGPT audit implementation (Quick Wins) - *Dylan Rajasekaram* (16 minutes ago)
+- `58821b68e` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (25 minutes ago)
 
 ---
 
@@ -215,7 +211,7 @@ Based on the original work by **Johan Bendz** and inspired by:
 
 ```
 Last Updated:     2025-10-16
-Version:          3.0.3
+Version:          3.0.4
 Build Status:     ✅ Passing
 Documentation:    ✅ Up to date
 GitHub Actions:   ✅ Active
