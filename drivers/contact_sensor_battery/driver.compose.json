@@ -18,10 +18,17 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "IKEA of Sweden"
+      "IKEA of Sweden",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_2mbfxlzr",
+      "_TZ3000_4ugnzsli",
+      "_TZ3000_oxslv1c9",
+      "_TZ3000_7d8yme6f"
     ],
     "productId": [
-      "E2492"
+      "E2492",
+      "TS0203"
     ],
     "endpoints": {
       "1": {

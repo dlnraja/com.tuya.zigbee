@@ -29,9 +29,19 @@
       "_TZE200_dwcarsat",
       "_TZE200_m9skfctm",
       "_TZE200_ryfmq5rl",
-      "_TZE200_rxq4iti9"
+      "_TZE200_rxq4iti9",
+      "_TZ3000_ywagc4rj",
+      "_TZ3000_zl1kmjqx",
+      "_TZE200_whpb9yts",
+      "_TZE200_locansqn",
+      "_TZE200_bq5c8xfe",
+      "_TZ3000_itnrsufe",
+      "_TZ3000_qaaysllp"
     ],
-    "productId": [],
+    "productId": [
+      "TS0201",
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -218,6 +228,29 @@
           "units": "min"
         }
       ]
+    },
+    {
+      "id": "temperature_offset",
+      "type": "number",
+      "label": {
+        "en": "Temperature offset (°C)",
+        "fr": "Décalage température (°C)"
+      },
+      "value": 0,
+      "min": -5,
+      "max": 5,
+      "step": 0.1
+    },
+    {
+      "id": "humidity_offset",
+      "type": "number",
+      "label": {
+        "en": "Humidity offset (%)",
+        "fr": "Décalage humidité (%)"
+      },
+      "value": 0,
+      "min": -20,
+      "max": 20
     }
   ],
   "connectivity": [

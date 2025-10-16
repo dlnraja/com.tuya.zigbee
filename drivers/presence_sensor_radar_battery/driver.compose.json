@@ -218,6 +218,17 @@
           "units": "min"
         }
       ]
+    },
+    {
+      "id": "motion_timeout",
+      "type": "number",
+      "label": {
+        "en": "Motion timeout (seconds)",
+        "fr": "Délai motion (secondes)"
+      },
+      "value": 30,
+      "min": 5,
+      "max": 300
     }
   ],
   "learnmode": {

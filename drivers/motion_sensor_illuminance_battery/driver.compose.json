@@ -32,14 +32,22 @@
       "HOBEIAN",
       "LUMI",
       "Signify Netherlands B.V.",
-      "IKEA of Sweden"
+      "IKEA of Sweden",
+      "_TZ3000_mcxw5ehu",
+      "_TZE200_ar0slwnd",
+      "_TZE200_sfiy5tfs",
+      "_TZE200_mrf6vtua",
+      "_TZE204_mrf6vtua",
+      "_TZ3040_bb6xaihh"
     ],
     "productId": [
       "RTCGQ11LM",
       "SML001",
       "E2494",
       "ZM-P1",
-      "ZG-204ZL"
+      "ZG-204ZL",
+      "TS0202",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -159,6 +167,17 @@
           "units": "min"
         }
       ]
+    },
+    {
+      "id": "motion_timeout",
+      "type": "number",
+      "label": {
+        "en": "Motion timeout (seconds)",
+        "fr": "Délai motion (secondes)"
+      },
+      "value": 30,
+      "min": 5,
+      "max": 300
     }
   ],
   "learnmode": {
