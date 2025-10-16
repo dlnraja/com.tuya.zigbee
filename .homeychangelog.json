@@ -1,4 +1,12 @@
 {
+  "3.0.17": {
+    "en": "🔧 TUYA TS0601 FIX: Gas sensors & Tuya cluster devices now working! Created missing tuya-cluster-handler module. Fixes MODULE_NOT_FOUND errors affecting TS0601 devices (gas sensors, motion sensors, water leak). Cluster 0xEF00 (61184) datapoints now properly decoded. Gas alarms, CO detection, and Tuya datapoint updates now functional. Forum #382 resolved. UPDATE if you have TS0601 devices showing no data!",
+    "fr": "🔧 FIX TUYA TS0601: Capteurs gaz & devices Tuya cluster fonctionnels! Module tuya-cluster-handler manquant créé. Corrige erreurs MODULE_NOT_FOUND affectant devices TS0601 (capteurs gaz, mouvement, fuites eau). Datapoints cluster 0xEF00 (61184) maintenant décodés correctement. Alarmes gaz, détection CO, et updates datapoint Tuya fonctionnels. Forum #382 résolu. MISE À JOUR si devices TS0601 sans données!"
+  },
+  "3.0.16": {
+    "en": "🔴 CRITICAL CLUSTER ID FIX: Motion sensors & SOS buttons now fully functional! Fixed TypeError cluster ID errors. Multi-sensors now report ALL data (temp/humidity/battery/motion/lux). SOS buttons now properly trigger flows on press. All cluster IDs use CLUSTER.* constants. Diagnostic 79185556 resolved. UPDATE IMMEDIATELY if experiencing incomplete sensor data!",
+    "fr": "🔴 FIX CLUSTER ID CRITIQUE: Capteurs mouvement & boutons SOS entièrement fonctionnels! Erreurs TypeError cluster ID corrigées. Multi-capteurs rapportent TOUTES les données (temp/humidité/batterie/mouvement/lux). Boutons SOS déclenchent maintenant les flows correctement. Tous les cluster IDs utilisent constantes CLUSTER.*. Diagnostic 79185556 résolu. MISE À JOUR IMMÉDIATE si données capteurs incomplètes!"
+  },
   "2.15.133": {
     "en": "DOCUMENTATION: Added comprehensive Tuya Zigbee Local Support guide + Smart Plugs FAQ. Explains 100% local control (no cloud), Zigbee direct protocol, compatible brands (MOES, Nous, LSC, Lidl, Amazon), Wi-Fi to Zigbee migration guide, and privacy benefits. Community forum integration complete."
   },

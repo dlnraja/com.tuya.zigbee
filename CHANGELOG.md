@@ -1,3 +1,36 @@
+## [3.0.17] - 2025-10-16
+
+### 🔧 CRITICAL FIX - Tuya Cluster Handler (TS0601 Devices)
+
+#### Fixed
+- ✅ **Tuya TS0601 Devices Now Working**: Gas sensors, some motion sensors, water leak detectors
+  - Created `utils/tuya-cluster-handler.js` (was missing, causing MODULE_NOT_FOUND errors)
+  - Fixed cluster 0xEF00 (61184) datapoint processing
+  - Gas Sensor TS0601 (_TZE204_yojqa8xn) now receives data
+  - Auto-detection of Tuya cluster on any endpoint
+  - Enhanced logging for debugging Tuya datapoints
+- ✅ Fixed `Error: Cannot find module '../../utils/tuya-cluster-handler'`
+- ✅ All TS0601-based devices now properly initialize
+
+#### Technical Details
+- `utils/tuya-cluster-handler.js`: Universal handler for Tuya proprietary cluster
+- Automatic device type detection (GAS_DETECTOR, MULTI_SENSOR, etc.)
+- Datapoint mapping to Homey capabilities
+- Retry logic for initial data requests (3 attempts)
+- Reporting configuration (0-3600s intervals)
+
+#### User Impact
+- ugrbnk's gas sensor (Forum #382) now functional
+- All Tuya TS0601 devices receive data correctly
+- Gas sensors: alarm_co and alarm_smoke now update
+- Motion sensors with TS0601: Now report motion/temp/humidity
+- Water leak TS0601: Now trigger alarms
+- No re-pairing required (but recommended for best results)
+
+**IMPORTANT:** This affects many Tuya devices using cluster 61184 (0xEF00). Update immediately if you have TS0601 devices showing no data!
+
+---
+
 ## [3.0.16] - 2025-10-16
 
 ### 🔴 CRITICAL FIXES - Peter's Devices Now Fully Functional
@@ -50,7 +83,7 @@
 ### 📚 Complete Documentation & Final Synthesis
 
 #### Added
-- PROJECT_docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md - Complete project status
+- PROJECT_docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md - Complete project status
 - SYNTHESE_COMPLETE_FINALE.md - Absolute final summary
 
 #### Changed
