@@ -80,8 +80,7 @@ homey app install
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
-- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
+- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -181,6 +180,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `1ce32413d` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (15 minutes ago)
 - `67c7f4fef` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (16 minutes ago)
 - `2a1b17695` docs: IAS Zone implementation verification - CONFORME Homey SDK best practices - *Dylan Rajasekaram* (17 minutes ago)
+- `c35b815a0` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (44 seconds ago)
+- `236fe2a98` fix: Project coherence verification + motion sensors IAS Zone fixes - *Dylan Rajasekaram* (2 minutes ago)
+- `1ce32413d` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (9 minutes ago)
+- `67c7f4fef` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (10 minutes ago)
+- `2a1b17695` docs: IAS Zone implementation verification - CONFORME Homey SDK best practices - *Dylan Rajasekaram* (11 minutes ago)
 
 ---
 
