@@ -124,7 +124,8 @@ tuya_repair/
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
+- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
+- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -224,6 +225,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `8218a28e9` v3.0.0 Major Release - *Dylan Rajasekaram* (14 minutes ago)
 - `7b4a094dc` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (26 minutes ago)
 - `8d1764948` feat: Audit 360Â° Implementation - DP Engine, Local-First, CI Complete - *Dylan Rajasekaram* (29 minutes ago)
+- `4c5b76bd6` feat: Complete finalization v3.0.0 - AI automation, full documentation, all implementations - *Dylan Rajasekaram* (14 minutes ago)
+- `bd75aab66` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (25 minutes ago)
+- `8218a28e9` v3.0.0 Major Release - *Dylan Rajasekaram* (26 minutes ago)
+- `7b4a094dc` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (39 minutes ago)
+- `8d1764948` feat: Audit 360Â° Implementation - DP Engine, Local-First, CI Complete - *Dylan Rajasekaram* (42 minutes ago)
 
 ---
 
