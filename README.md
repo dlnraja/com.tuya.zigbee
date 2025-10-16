@@ -80,7 +80,8 @@ homey app install
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
+- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
+- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -180,6 +181,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `f71bc1856` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (7 minutes ago)
 - `e1531b71f` docs: PROJECT STATUS FINAL - v3.0.5 100% COMPLETE - *Dylan Rajasekaram* (9 minutes ago)
 - `d53bc5763` Update Homey App Version to v3.0.6 - *github-actions[bot]* (14 minutes ago)
+- `7b8cf3f3e` fix: Add concurrency control to prevent workflow conflicts (SOLUTION DÉFINITIVE) - *Dylan Rajasekaram* (7 minutes ago)
+- `bab3df0c7` Update Homey App Version to v3.0.7 - *github-actions[bot]* (10 minutes ago)
+- `f71bc1856` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (12 minutes ago)
+- `e1531b71f` docs: PROJECT STATUS FINAL - v3.0.5 100% COMPLETE - *Dylan Rajasekaram* (14 minutes ago)
+- `d53bc5763` Update Homey App Version to v3.0.6 - *github-actions[bot]* (19 minutes ago)
 
 ---
 
