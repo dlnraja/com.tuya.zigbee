@@ -180,6 +180,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `4c14b04d3` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (9 minutes ago)
 - `74129c237` fix: Homey publish workflow - Add pull rebase and retry logic - *Dylan Rajasekaram* (11 minutes ago)
 - `d131c2275` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (17 minutes ago)
+- `e1531b71f` docs: PROJECT STATUS FINAL - v3.0.5 100% COMPLETE - *Dylan Rajasekaram* (7 minutes ago)
+- `d53bc5763` Update Homey App Version to v3.0.6 - *github-actions[bot]* (12 minutes ago)
+- `4c14b04d3` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (15 minutes ago)
+- `74129c237` fix: Homey publish workflow - Add pull rebase and retry logic - *Dylan Rajasekaram* (16 minutes ago)
+- `d131c2275` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (22 minutes ago)
 
 ---
 
