@@ -1,0 +1,84 @@
+name: 💡 Feature Request / Enhancement
+description: Suggest a new feature or improvement
+title: "[Feature] "
+labels: ["enhancement", "needs-discussion"]
+assignees:
+  - dlnraja
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Feature Request
+        
+        We appreciate your ideas for improving the app!
+
+  - type: textarea
+    id: feature
+    attributes:
+      label: "What Feature / Enhancement?"
+      description: "Describe the feature you'd like to see"
+      placeholder: |
+        Add support for scenes/presets on thermostats
+        or
+        Automatic mesh health monitoring
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: "Why is this useful?"
+      description: "What problem does it solve? Who benefits?"
+      placeholder: |
+        Currently, users must manually check each device's LQI.
+        Auto-monitoring would alert when signal drops below threshold.
+    validations:
+      required: true
+
+  - type: textarea
+    id: how
+    attributes:
+      label: "How would it work? (optional idea)"
+      description: "Any thoughts on implementation?"
+      placeholder: |
+        - Add new capability: signal_strength
+        - Poll LQI every hour
+        - Trigger alarm_generic if LQI < 50
+    validations:
+      required: false
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: "Category"
+      options:
+        - Driver improvement
+        - New capability
+        - Pairing experience
+        - Documentation
+        - Automation
+        - Performance
+        - UI/UX
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: "Examples / References"
+      description: "Links to similar features in other apps/platforms?"
+      placeholder: "Z2M has this: https://..."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "Checklist"
+      options:
+        - label: "I have searched existing issues (no duplicate)"
+          required: true
+        - label: "This feature is relevant to local Zigbee control"
+          required: true
