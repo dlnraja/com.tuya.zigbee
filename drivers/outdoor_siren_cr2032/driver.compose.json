@@ -8,7 +8,8 @@
     "measure_battery",
     "alarm_contact",
     "alarm_generic",
-    "volume_set"
+    "volume_set",
+    "onoff"
   ],
   "platforms": [
     "local"
@@ -45,10 +46,16 @@
       "_TZE200_dwcarsat",
       "_TZE200_m9skfctm",
       "_TZE200_ryfmq5rl",
-      "_TZE200_wfxuhoea"
+      "_TZE200_wfxuhoea",
+      "_TZ3000_ssp0maqm",
+      "_TZ3000_t13n5zo0",
+      "_TZE200_t1blo2bj",
+      "_TYST11_7hfcudw5"
     ],
     "productId": [
-      "TS0001"
+      "TS0001",
+      "TS0219",
+      "TS0601"
     ],
     "endpoints": {
       "1": {

@@ -52,11 +52,18 @@
       "TS0006",
       "TS0501",
       "_TZ3000_uwaort14",
-      "_TZ3000_dd8wwzcy"
+      "_TZ3000_dd8wwzcy",
+      "_TZ3000_9djocypn",
+      "_TZ3000_kdi2o9m6",
+      "_TZ3000_rdtixbnu",
+      "_TZ3000_okaz9tjs",
+      "_TZ3000_vzopcetz",
+      "_TZ3000_1obwwnmq"
     ],
     "productId": [
       "TS011F",
-      "TS0001"
+      "TS0001",
+      "TS0121"
     ],
     "endpoints": {
       "1": {
@@ -211,6 +218,17 @@
           "max": 5000
         }
       ]
+    },
+    {
+      "id": "power_reporting_interval",
+      "type": "number",
+      "label": {
+        "en": "Power reporting interval (seconds)",
+        "fr": "Intervalle rapport énergie (secondes)"
+      },
+      "value": 60,
+      "min": 10,
+      "max": 3600
     }
   ],
   "learnmode": {

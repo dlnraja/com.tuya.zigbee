@@ -7,7 +7,9 @@
     "onoff",
     "windowcoverings_set",
     "windowcoverings_tilt_set",
-    "measure_battery"
+    "measure_battery",
+    "windowcoverings_state",
+    "dim"
   ],
   "zigbee": {
     "manufacturerName": [
@@ -37,7 +39,8 @@
       "1": {
         "clusters": [
           0,
-          258
+          258,
+          3
         ],
         "bindings": [
           1
@@ -182,6 +185,15 @@
           "units": "min"
         }
       ]
+    },
+    {
+      "id": "invert_direction",
+      "type": "checkbox",
+      "label": {
+        "en": "Invert direction",
+        "fr": "Inverser direction"
+      },
+      "value": false
     }
   ],
   "learnmode": {

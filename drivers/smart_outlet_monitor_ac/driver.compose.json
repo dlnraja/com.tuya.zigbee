@@ -109,7 +109,19 @@
   "connectivity": [
     "zigbee"
   ],
-  "settings": [],
+  "settings": [
+    {
+      "id": "power_reporting_interval",
+      "type": "number",
+      "label": {
+        "en": "Power reporting interval (seconds)",
+        "fr": "Intervalle rapport énergie (secondes)"
+      },
+      "value": 60,
+      "min": 10,
+      "max": 3600
+    }
+  ],
   "learnmode": {
     "image": "./assets/learnmode.svg",
     "instruction": {

@@ -23,12 +23,21 @@
   "zigbee": {
     "manufacturerName": [
       "IKEA of Sweden",
-      "Signify Netherlands B.V."
+      "Signify Netherlands B.V.",
+      "_TZ3000_xabckq1v",
+      "_TZ3000_vp6clf9d",
+      "_TZ3000_kjfzuycl",
+      "_TZE200_tz32mtza",
+      "_TZE200_g1ib5ldv"
     ],
     "productId": [
       "E1524",
       "E1810",
-      "RWL021"
+      "RWL021",
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044"
     ],
     "endpoints": {
       "1": {

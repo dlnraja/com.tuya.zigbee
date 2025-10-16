@@ -8,7 +8,9 @@
   },
   "class": "other",
   "capabilities": [
-    "alarm_generic"
+    "alarm_generic",
+    "onoff",
+    "volume_set"
   ],
   "images": {
     "small": "./assets/images/small.png",
@@ -17,10 +19,16 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "Signify Netherlands B.V."
+      "Signify Netherlands B.V.",
+      "_TZ3000_ssp0maqm",
+      "_TZ3000_t13n5zo0",
+      "_TZE200_t1blo2bj",
+      "_TYST11_7hfcudw5"
     ],
     "productId": [
-      "HSC001"
+      "HSC001",
+      "TS0219",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
