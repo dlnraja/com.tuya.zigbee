@@ -80,8 +80,7 @@ homey app install
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
-- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
+- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -176,16 +175,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `62c65b5c4` final - *Dylan Rajasekaram* (38 seconds ago)
-- `10b461d1f` update - *Dylan Rajasekaram* (2 minutes ago)
-- `264c824b2` feat: Audit 360° Implementation Complete v2.15.134+ - *Dylan Rajasekaram* (4 minutes ago)
-- `2b4c2c2dc` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (53 minutes ago)
-- `161693ffb` feat: Complete v3.0.0 script updates - All algorithms, AI automation, DP Engine integration - *Dylan Rajasekaram* (56 minutes ago)
-- `62c65b5c4` final - *Dylan Rajasekaram* (10 minutes ago)
-- `10b461d1f` update - *Dylan Rajasekaram* (11 minutes ago)
-- `264c824b2` feat: Audit 360° Implementation Complete v2.15.134+ - *Dylan Rajasekaram* (13 minutes ago)
-- `2b4c2c2dc` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (63 minutes ago)
-- `161693ffb` feat: Complete v3.0.0 script updates - All algorithms, AI automation, DP Engine integration - *Dylan Rajasekaram* (65 minutes ago)
+- `e2d2a9953` feat: v3.0.0 Implementation Complete - Audit 360 ChatGPT - *Dylan Rajasekaram* (2 minutes ago)
+- `15fad6556` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (12 minutes ago)
+- `62c65b5c4` final - *Dylan Rajasekaram* (12 minutes ago)
+- `10b461d1f` update - *Dylan Rajasekaram* (13 minutes ago)
+- `264c824b2` feat: Audit 360° Implementation Complete v2.15.134+ - *Dylan Rajasekaram* (15 minutes ago)
 
 ---
 
