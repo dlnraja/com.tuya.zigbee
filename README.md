@@ -220,16 +220,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `d4d8b5375` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (4 minutes ago)
-- `eae930b0b` Docs: Integration Nedis Zigbee Support (Tuya inside, pas besoin app separee, Action NL/BE) - *Dylan Rajasekaram* (5 minutes ago)
-- `767af5401` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (8 minutes ago)
-- `05659653c` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (9 minutes ago)
-- `0847677d4` Sync - *Dylan Rajasekaram* (10 minutes ago)
-- `d4d8b5375` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (53 seconds ago)
-- `eae930b0b` Docs: Integration Nedis Zigbee Support (Tuya inside, pas besoin app separee, Action NL/BE) - *Dylan Rajasekaram* (86 seconds ago)
-- `767af5401` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (5 minutes ago)
-- `05659653c` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (5 minutes ago)
-- `0847677d4` Sync - *Dylan Rajasekaram* (6 minutes ago)
+- `d2d407452` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (7 minutes ago)
+- `32912e4fa` Docs: Roadmap ameliorations (Device Capabilities + Philips Hue + Aqara + SONOFF best practices) - *Dylan Rajasekaram* (10 minutes ago)
+- `dbd1d6176` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (13 minutes ago)
+- `d4d8b5375` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (14 minutes ago)
+- `eae930b0b` Docs: Integration Nedis Zigbee Support (Tuya inside, pas besoin app separee, Action NL/BE) - *Dylan Rajasekaram* (15 minutes ago)
 
 ---
 
