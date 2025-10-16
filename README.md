@@ -1,6 +1,6 @@
 # 🏠 Universal Tuya Zigbee
 
-[![Version](https://img.shields.io/badge/version-3.0.1-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![Version](https://img.shields.io/badge/version-3.0.2-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![SDK](https://img.shields.io/badge/SDK-3-green.svg)](https://apps.developer.homey.app)
 [![Homey](https://img.shields.io/badge/Homey->=12.2.0-orange.svg)](https://homey.app)
 [![Drivers](https://img.shields.io/badge/drivers-183-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee/tree/master/drivers)
@@ -16,7 +16,7 @@ Community-maintained Tuya Zigbee app with 183 SDK3 native drivers. Based on Joha
 Drivers:              183
 SDK Version:          3
 Homey Compatibility:  >=12.2.0
-Version:              3.0.1
+Version:              3.0.2
 Status:               ✅ Active Development
 ```
 
@@ -80,7 +80,8 @@ homey app install
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
+- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
+- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -175,11 +176,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `bd5710952` fix: CRITICAL - IAS Zone enrollment failure (Motion + SOS Button) - *Dylan Rajasekaram* (2 minutes ago)
-- `2aa255c50` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (9 minutes ago)
-- `a2c44af01` fix: Temperature sensor detected as smoke detector + overlap detection system - *Dylan Rajasekaram* (11 minutes ago)
-- `e8d736416` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (18 minutes ago)
-- `e2d2a9953` feat: v3.0.0 Implementation Complete - Audit 360 ChatGPT - *Dylan Rajasekaram* (21 minutes ago)
+- `6ae1bf5db` update - *Dylan Rajasekaram* (7 minutes ago)
+- `c5eb70e5a` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (10 minutes ago)
+- `bd5710952` fix: CRITICAL - IAS Zone enrollment failure (Motion + SOS Button) - *Dylan Rajasekaram* (11 minutes ago)
+- `2aa255c50` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (18 minutes ago)
+- `a2c44af01` fix: Temperature sensor detected as smoke detector + overlap detection system - *Dylan Rajasekaram* (20 minutes ago)
 
 ---
 
@@ -210,7 +211,7 @@ Based on the original work by **Johan Bendz** and inspired by:
 
 ```
 Last Updated:     2025-10-16
-Version:          3.0.1
+Version:          3.0.2
 Build Status:     ✅ Passing
 Documentation:    ✅ Up to date
 GitHub Actions:   ✅ Active

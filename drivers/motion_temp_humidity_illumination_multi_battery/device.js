@@ -28,7 +28,7 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
     this.log('Registering standard Zigbee clusters...');
       
       // Temperature (cluster 1026)
-      this.registerCapability('measure_temperature', CLUSTER.TEMPERATURE_MEASUREMENT, {
+      this.registerCapability('measure_temperature', 1026, {
         get: 'measuredValue',
         report: 'measuredValue',
         getOpts: {
@@ -56,7 +56,7 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
       this.log('✅ Humidity cluster registered');
       
       // Illuminance (cluster 1024)
-      this.registerCapability('measure_luminance', CLUSTER.ILLUMINANCE_MEASUREMENT, {
+      this.registerCapability('measure_luminance', 1024, {
         get: 'measuredValue',
         report: 'measuredValue',
         getOpts: {
@@ -87,7 +87,7 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
       }
       
       // Battery
-      this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
+      this.registerCapability('measure_battery', 1, {
         get: 'batteryPercentageRemaining',
         report: 'batteryPercentageRemaining',
         getOpts: {
