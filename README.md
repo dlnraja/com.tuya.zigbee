@@ -80,7 +80,8 @@ homey app install
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
+- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
+- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -180,6 +181,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `55ecbd201` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (28 minutes ago)
 - `31126732e` fix: CI workflow - Download artifacts before export - *Dylan Rajasekaram* (30 minutes ago)
 - `63440220c` Update Homey App Version to v3.0.22 - *github-actions[bot]* (33 minutes ago)
+- `0220d600c` feat: Complete forum support + Tuya 0xEF00 documentation + Handler v3.1 - *Dylan Rajasekaram* (11 minutes ago)
+- `f0bb0185c` Update Homey App Version to v3.0.23 - *github-actions[bot]* (33 minutes ago)
+- `55ecbd201` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (35 minutes ago)
+- `31126732e` fix: CI workflow - Download artifacts before export - *Dylan Rajasekaram* (38 minutes ago)
+- `63440220c` Update Homey App Version to v3.0.22 - *github-actions[bot]* (41 minutes ago)
 
 ---
 

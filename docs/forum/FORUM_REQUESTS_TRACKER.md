@@ -41,6 +41,22 @@
 
 ---
 
+### 3b. ugrbnk - Diagnostic Report (Post #390)
+- **Post:** #390 (Diagnostic email)
+- **Diagnostic ID:** cbfd89ec-692d-4cc9-b555-18114cf6d31a
+- **Device:** Same as above (_TZE204_yojqa8xn / TS0601)
+- **Issue:** Tuya cluster 0xEF00 NOT FOUND during initialization
+- **Status:** 🔴 **CRITICAL - Root Cause Identified**
+- **Root cause:** Device paired with old driver BEFORE v3.0.17
+- **Log evidence:** `[TuyaCluster] No Tuya cluster found on any endpoint`
+- **Solution:** Complete factory reset + re-pairing mandatory
+- **Response:** `RESPONSE_UGRBNK_DIAGNOSTIC_NO_TUYA_CLUSTER.md`
+- **Action:** ✅ Ready to send (email + forum post)
+- **App Version:** v3.0.23
+- **Homey Version:** v12.8.0
+
+---
+
 ### 4. Karsten_Hille - Temp/Humidity LCD Color
 - **Posts:** #349 (diagnostic), #387 (not found)
 - **Device:** _TZE284_vvmbj46n / TS0601
