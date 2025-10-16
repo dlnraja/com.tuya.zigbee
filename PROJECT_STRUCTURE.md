@@ -129,28 +129,28 @@ assets/
 
 ### `/docs/fixes/`
 Documentation des corrections de bugs:
-- `CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
-- `PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
-- `EMAIL_CORRECTION_SUMMARY.md` - Correction emails
-- `STATUS_FINAL.md` - Status final corrections
+- `docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
+- `docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
+- `docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
+- `docs/fixes/STATUS_FINAL.md` - Status final corrections
 
 ### `/docs/workflow/`
 Documentation workflow GitHub Actions:
-- `WORKFLOW_GUIDE.md` - Guide complet workflow
-- `QUICK_WORKFLOW.md` - Référence rapide
-- `README_WORKFLOW.md` - Résumé workflow
-- `PUBLICATION_SUCCESS.md` - Succès publication
-- `FORCE_PUBLISH.md` - Publication manuelle
+- `docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
+- `docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
+- `docs/workflow/README_WORKFLOW.md` - Résumé workflow
+- `docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
+- `docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
 
 ### `/docs/community/`
 Analyse apps communautaires Homey:
-- `COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
-- `QUICK_IMPROVEMENTS.md` - Priorités amélioration
+- `docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
+- `docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
 
 ### `/docs/forum/`
 Réponses forum utilisateurs:
-- `FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
-- `FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
+- `docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
+- `docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
 
 ---
 
@@ -158,26 +158,26 @@ Réponses forum utilisateurs:
 
 ### `/scripts/fixes/`
 Scripts de correction automatique:
-- `FIX_APP_IMAGES_FINAL.js` - Fix images app
-- `FIX_DEVICE_FILES.js` - Fix fichiers devices
-- `ULTIMATE_FIX_ALL.js` - Fix complet automatique
-- `fix-images.js` - Correction images
-- `fix-flows.js` - Correction flow cards
+- `scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
+- `scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
+- `scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
+- `scripts/fixes/fix-images.js` - Correction images
+- `scripts/fixes/fix-flows.js` - Correction flow cards
 
 ### `/scripts/automation/`
 Scripts automation Git & Publish:
-- `commit-analysis.ps1` - Commit analyse community
-- `commit-critical-fixes.ps1` - Commit fixes critiques
-- `commit-push.ps1` - Commit & push générique
-- `auto-publish.js` - Publication automatique
-- `push-native.js` - Push vers GitHub
+- `scripts/automation/commit-analysis.ps1` - Commit analyse community
+- `scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
+- `scripts/automation/commit-push.ps1` - Commit & push générique
+- `scripts/automation/auto-publish.js` - Publication automatique
+- `scripts/automation/push-native.js` - Push vers GitHub
 
 ### `/scripts/utils/`
 Scripts utilitaires divers:
 - `organize-project.ps1` - Organisation projet (ce script!)
-- `add-all-images.ps1` - Ajout images en masse
-- `create-app-images.js` - Création images app
-- `remove-driver-images.js` - Suppression images drivers
+- `scripts/utils/add-all-images.ps1` - Ajout images en masse
+- `scripts/utils/create-app-images.js` - Création images app
+- `scripts/utils/remove-driver-images.js` - Suppression images drivers
 
 ---
 
