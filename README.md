@@ -176,16 +176,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `67c7f4fef` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (8 minutes ago)
-- `2a1b17695` docs: IAS Zone implementation verification - CONFORME Homey SDK best practices - *Dylan Rajasekaram* (9 minutes ago)
-- `b5f9fd0e1` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (16 minutes ago)
-- `3a92984b2` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (17 minutes ago)
-- `832e7622b` fix: v3.0.4 - Driver overlaps cleaned (13,280 → 5,332) + Peter issue resolved - *Dylan Rajasekaram* (19 minutes ago)
-- `67c7f4fef` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (42 seconds ago)
-- `2a1b17695` docs: IAS Zone implementation verification - CONFORME Homey SDK best practices - *Dylan Rajasekaram* (2 minutes ago)
-- `b5f9fd0e1` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (9 minutes ago)
-- `3a92984b2` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (10 minutes ago)
-- `832e7622b` fix: v3.0.4 - Driver overlaps cleaned (13,280 → 5,332) + Peter issue resolved - *Dylan Rajasekaram* (11 minutes ago)
+- `c35b815a0` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (7 minutes ago)
+- `236fe2a98` fix: Project coherence verification + motion sensors IAS Zone fixes - *Dylan Rajasekaram* (8 minutes ago)
+- `1ce32413d` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (15 minutes ago)
+- `67c7f4fef` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (16 minutes ago)
+- `2a1b17695` docs: IAS Zone implementation verification - CONFORME Homey SDK best practices - *Dylan Rajasekaram* (17 minutes ago)
 
 ---
 
