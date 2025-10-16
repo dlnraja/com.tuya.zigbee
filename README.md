@@ -179,6 +179,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `0ff6f593e` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (6 minutes ago)
 - `5016563ce` docs: GitHub Actions complete fix summary - *Dylan Rajasekaram* (9 minutes ago)
 - `6259be802` Update Homey App Version to v3.0.11 - *github-actions[bot]* (10 minutes ago)
+- `32922b9e4` feat: MEGA ENRICHMENT Plan Complete + Tools Created - *Dylan Rajasekaram* (6 minutes ago)
+- `e4d2707f6` Update Homey App Version to v3.0.12 - *github-actions[bot]* (9 minutes ago)
+- `0ff6f593e` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (11 minutes ago)
+- `5016563ce` docs: GitHub Actions complete fix summary - *Dylan Rajasekaram* (13 minutes ago)
+- `6259be802` Update Homey App Version to v3.0.11 - *github-actions[bot]* (15 minutes ago)
 
 ---
 
@@ -220,3 +225,248 @@ GitHub Actions:   ✅ Active
 ---
 
 **💡 Tip:** Use `powershell scripts/automation/smart-commit.ps1 "message"` for automatic docs updates!
+
+
+<!-- AUTO-GENERATED-DRIVERS-START -->
+## 📱 Supported Devices
+
+> **Auto-generated list** - Updated automatically
+
+**Total:** 183 drivers | 6834+ device IDs
+
+### 🌡️ Temperature & Climate
+
+<details>
+<summary><strong>93 drivers</strong> - Click to expand</summary>
+
+- **Advanced Smoke Detector with Temperature & Humidity (Battery)** - 47 device IDs
+- **air quality monitor** - 42 device IDs
+- **air quality monitor pro (Battery)** - 38 device IDs
+- **Ceiling Light Controller** - 39 device IDs
+- **climate monitor (Battery)** - 24 device IDs
+- **CO Detector Pro (Battery)** - 45 device IDs
+- **CO₂ Sensor (Battery)** - 44 device IDs
+- **co2 temp humidity (Battery)** - 28 device IDs
+- **Comprehensive Air Monitor** - 21 device IDs
+- **Contact Sensor Battery (Battery)** - 9 device IDs
+- **Curtain Motor (Battery)** - 25 device IDs
+- **Door Lock (Battery)** - 45 device IDs
+- **Door Window Sensor (Battery)** - 45 device IDs
+- **Doorbell (Battery)** - 25 device IDs
+- **Doorbell Camera Ac** - 2 device IDs
+- **Fan Controller** - 47 device IDs
+- **Formaldehyde Sensor (Battery)** - 44 device IDs
+- **Garage Door Controller (Battery)** - 28 device IDs
+- **Garage Door Opener (Battery)** - 25 device IDs
+- **Gas Detector (Battery)** - 62 device IDs
+- **Gas Sensor TS0601 (AC)** - 9 device IDs
+- **Gas Sensor TS0601 (Battery)** - 23 device IDs
+- **humidity controller (Battery)** - 22 device IDs
+- **Hvac Controller** - 22 device IDs
+- **Led Strip (Battery)** - 27 device IDs
+- **LED Strip Controller** - 52 device IDs
+- **led strip controller pro** - 38 device IDs
+- **Lux Sensor (Battery)** - 44 device IDs
+- **Mi-Light Controller** - 39 device IDs
+- **Mini Switch (Battery)** - 39 device IDs
+- **Mini Switch AC** - 41 device IDs
+- **Motion Sensor (mmWave Radar, Battery)** - 64 device IDs
+- **Motion Sensor (PIR, Battery)** - 59 device IDs
+- **Motion Sensor with Illuminance (Battery)** - 22 device IDs
+- **Multi-Sensor (Motion + Lux + Temp) (Battery)** - 38 device IDs
+- **Multisensor (Battery)** - 43 device IDs
+- **Noise Level Sensor (Battery)** - 44 device IDs
+- **Outdoor Light Controller (Battery)** - 47 device IDs
+- **Outdoor Siren (Battery)** - 31 device IDs
+- **PIR Motion Sensor (Battery)** - 56 device IDs
+- **PIR Motion Sensor (Battery)** - 40 device IDs
+- **PIR Motion Sensor (Battery)** - 52 device IDs
+- **PIR Motion Sensor Advanced (Battery)** - 44 device IDs
+- **PIR Radar Illumination Sensor Battery (Battery)** - 27 device IDs
+- **pm25 detector (Battery)** - 57 device IDs
+- **Pm25 Sensor (Battery)** - 44 device IDs
+- **Pool Pump Controller** - 46 device IDs
+- **Presence Sensor Mmwave Battery (Battery)** - 3 device IDs
+- **Presence Sensor Radar (Battery)** - 48 device IDs
+- **Pressure Sensor (Battery)** - 44 device IDs
+- **Projector Screen Controller** - 46 device IDs
+- **Radar Motion Sensor Advanced (Battery)** - 52 device IDs
+- **Radar Motion Sensor Pro (Battery)** - 53 device IDs
+- **Radar Presence Sensor (mmWave) (Battery)** - 54 device IDs
+- **RGB LED Controller** - 39 device IDs
+- **Roller Shutter Controller (Battery)** - 24 device IDs
+- **Scene Controller** - 36 device IDs
+- **Scene Switch (Battery)** - 56 device IDs
+- **Shade Controller** - 47 device IDs
+- **Smart Doorbell (Battery)** - 45 device IDs
+- **Smart Garden Sprinkler (Battery)** - 45 device IDs
+- **Smart Irrigation Controller** - 45 device IDs
+- **smart outlet monitor** - 38 device IDs
+- **Smart Smoke Detector Advanced (Battery)** - 56 device IDs
+- **Smart Valve Controller** - 27 device IDs
+- **Smart Water Valve** - 28 device IDs
+- **Smoke Detector (Battery)** - 14 device IDs
+- **Smoke Detector with Temperature (Battery)** - 9 device IDs
+- **Smoke Temperature Humidity Sensor (Battery)** - 48 device IDs
+- **Soil Moisture & Temperature Sensor (Battery)** - 47 device IDs
+- **Soil Moisture Sensor (Battery)** - 5 device IDs
+- **Soil Tester Temperature Humidity (Battery)** - 21 device IDs
+- **Solar Panel Controller** - 37 device IDs
+- **Tank Level Monitor (Battery)** - 24 device IDs
+- **temp sensor pro (Battery)** - 43 device IDs
+- **Temperature & Humidity Sensor (Battery)** - 44 device IDs
+- **Temperature Controller** - 21 device IDs
+- **Temperature Humidity Display (Battery)** - 6 device IDs
+- **Temperature Humidity Sensor (Battery)** - 30 device IDs
+- **Temperature Humidity Sensor v1w2k9dd (Battery)** - 45 device IDs
+- **Temperature Sensor (Battery)** - 45 device IDs
+- **Temperature Sensor THS317-ET-TU (Battery)** - 43 device IDs
+- **Tvoc Sensor (Battery)** - 44 device IDs
+- **TVOC Sensor Advanced (Battery)** - 43 device IDs
+- **Vibration Sensor (Battery)** - 45 device IDs
+- **Water Leak Detector (Battery)** - 46 device IDs
+- **Water Leak Detector Advanced (Battery)** - 46 device IDs
+- **Water Leak Sensor** - 40 device IDs
+- **Water Leak Sensor (Battery)** - 47 device IDs
+- **Water Valve** - 28 device IDs
+- **Water Valve Smart** - 28 device IDs
+- **Zigbee Bridge Hub AC** - 29 device IDs
+- **Zigbee Gateway Hub** - 29 device IDs
+
+</details>
+
+### 💡 Smart Lighting
+
+<details>
+<summary><strong>17 drivers</strong> - Click to expand</summary>
+
+- **Bulb White Ac** - 4 device IDs
+- **Bulb White Ambiance Ac** - 7 device IDs
+- **Ceiling Fan** - 41 device IDs
+- **ceiling light rgb** - 41 device IDs
+- **Color & White Bulb** - 23 device IDs
+- **Color Bulb (RGB)** - 40 device IDs
+- **Dimmer Switch** - 41 device IDs
+- **Dimmer Switch Timer Module** - 40 device IDs
+- **LED Strip Advanced** - 38 device IDs
+- **Led Strip Outdoor Color Ac** - 3 device IDs
+- **smart bulb dimmer** - 39 device IDs
+- **Smart Bulb Tunable** - 40 device IDs
+- **Smart Bulb White** - 40 device IDs
+- **Smart Dimmer Module 1 Gang** - 40 device IDs
+- **Smart Spot** - 42 device IDs
+- **Touch Dimmer** - 39 device IDs
+- **Touch Dimmer 1-Gang** - 40 device IDs
+
+</details>
+
+### 🔌 Power & Energy
+
+<details>
+<summary><strong>51 drivers</strong> - Click to expand</summary>
+
+- **1-Button Wireless Scene Switch (Battery)** - 58 device IDs
+- **1-Gang Wall Switch** - 39 device IDs
+- **1-Gang Wall Switch** - 40 device IDs
+- **1-Gang Wall Switch** - 40 device IDs
+- **1-Gang Wall Switch** - 39 device IDs
+- **1-Gang Wall Switch (AC)** - 40 device IDs
+- **2-Button Wireless Scene Switch (Battery)** - 48 device IDs
+- **2-Gang Wall Switch** - 39 device IDs
+- **2-Gang Wall Switch** - 40 device IDs
+- **2-Gang Wall Switch** - 40 device IDs
+- **2-Gang Wall Switch** - 39 device IDs
+- **2-Gang Wall Switch (AC)** - 40 device IDs
+- **3-Button Wireless Scene Switch (Battery)** - 47 device IDs
+- **3-Gang Wall Switch** - 39 device IDs
+- **3-Gang Wall Switch** - 40 device IDs
+- **3-Gang Wall Switch** - 39 device IDs
+- **3-Gang Wall Switch (AC)** - 40 device IDs
+- **4-Button Remote** - 47 device IDs
+- **4-Button Wireless Scene Switch (Battery)** - 47 device IDs
+- **4-Gang Wall Switch** - 39 device IDs
+- **4-Gang Wall Switch** - 40 device IDs
+- **4-Gang Wall Switch** - 40 device IDs
+- **4-Gang Wall Switch** - 39 device IDs
+- **5-Button Remote** - 47 device IDs
+- **5-Gang Wall Switch** - 42 device IDs
+- **6-Button Remote** - 47 device IDs
+- **6-Gang Wall Switch** - 40 device IDs
+- **Dimmer Switch 1-Gang AC** - 57 device IDs
+- **Dimmer Switch 3-Gang AC** - 50 device IDs
+- **Energy Monitoring Plug** - 45 device IDs
+- **energy plug advanced** - 47 device IDs
+- **Energy Plug Advanced** - 46 device IDs
+- **Extension Plug** - 50 device IDs
+- **power meter socket** - 47 device IDs
+- **Relay Switch 1-Gang AC** - 40 device IDs
+- **Smart Plug** - 50 device IDs
+- **smart plug energy** - 60 device IDs
+- **Smart Plug Power Meter 16a Ac** - 13 device IDs
+- **Smart Plug with Dimmer (AC)** - 9 device IDs
+- **Switch 1-Gang Battery CR2032 (Battery)** - 59 device IDs
+- **Switch 2-Gang AC Power** - 40 device IDs
+- **Switch 2-Gang Hybrid AC/DC** - 39 device IDs
+- **Switch 3-Gang Battery CR2450 (Battery)** - 58 device IDs
+- **Switch 4-Gang AC Power** - 40 device IDs
+- **Switch 4-Gang Remote (Battery)** - 57 device IDs
+- **Switch 5-Gang Battery CR2450 (Battery)** - 57 device IDs
+- **Switch 6-Gang AC Power** - 40 device IDs
+- **Switch 8-Gang AC Power** - 40 device IDs
+- **USB Outlet** - 40 device IDs
+- **USB Outlet Advanced** - 38 device IDs
+- **Wall Switch 3-Gang AC** - 40 device IDs
+
+</details>
+
+### 🎛️ Automation Control
+
+<details>
+<summary><strong>9 drivers</strong> - Click to expand</summary>
+
+- **2-Button Remote** - 32 device IDs
+- **2-Button Remote** - 2 device IDs
+- **4-Button Remote** - 41 device IDs
+- **6-Button Remote** - 32 device IDs
+- **8-Button Remote** - 32 device IDs
+- **Remote Switch (Battery)** - 46 device IDs
+- **SOS Emergency Button (Battery)** - 47 device IDs
+- **Wireless Scene Controller 4-Button (Battery)** - 14 device IDs
+- **Wireless Switch (Battery)** - 48 device IDs
+
+</details>
+
+### 🔔 Contact & Security
+
+<details>
+<summary><strong>2 drivers</strong> - Click to expand</summary>
+
+- **Fingerprint Lock (Battery)** - 59 device IDs
+- **Smart Lock (Battery)** - 31 device IDs
+
+</details>
+
+### 🔧 Other Devices
+
+<details>
+<summary><strong>11 drivers</strong> - Click to expand</summary>
+
+- **Alarm Siren Chime Ac** - 8 device IDs
+- **Curtain Motor (Battery)** - 19 device IDs
+- **Pet Feeder (Battery)** - 25 device IDs
+- **Radiator Valve** - 44 device IDs
+- **Roller Shutter Switch (Battery)** - 29 device IDs
+- **Roller Shutter Switch Advanced (Battery)** - 45 device IDs
+- **Smart Curtain Motor** - 5 device IDs
+- **Smart Radiator Valve** - 16 device IDs
+- **Smart Thermostat** - 27 device IDs
+- **Thermostat** - 27 device IDs
+- **Wireless Dimmer Scroll Battery (Battery)** - 2 device IDs
+
+</details>
+
+---
+
+*Last updated: 2025-10-16*
+
+<!-- AUTO-GENERATED-DRIVERS-END -->
