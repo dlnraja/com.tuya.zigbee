@@ -80,8 +80,7 @@ homey app install
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
-- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
+- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -181,6 +180,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `36eed5127` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (8 minutes ago)
 - `9076454a2` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (9 minutes ago)
 - `7ece0d3ca` feat: Intelligent driver enrichment - 67 drivers with 254 manufacturer IDs + features - *Dylan Rajasekaram* (9 minutes ago)
+- `af2f99906` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (46 seconds ago)
+- `2334f112c` chore: Update app.json to v3.0.5 with complete session improvements - *Dylan Rajasekaram* (2 minutes ago)
+- `36eed5127` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (5 minutes ago)
+- `9076454a2` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (5 minutes ago)
+- `7ece0d3ca` feat: Intelligent driver enrichment - 67 drivers with 254 manufacturer IDs + features - *Dylan Rajasekaram* (6 minutes ago)
 
 ---
 
