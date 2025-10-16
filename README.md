@@ -1,6 +1,6 @@
 # 🏠 Universal Tuya Zigbee
 
-[![Version](https://img.shields.io/badge/version-3.0.33-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![Version](https://img.shields.io/badge/version-3.0.34-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![SDK](https://img.shields.io/badge/SDK-3-green.svg)](https://apps.developer.homey.app)
 [![Homey](https://img.shields.io/badge/Homey->=12.2.0-orange.svg)](https://homey.app)
 [![Drivers](https://img.shields.io/badge/drivers-183-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee/tree/master/drivers)
@@ -16,7 +16,7 @@ Community-maintained Tuya Zigbee app with 183 SDK3 native drivers. 67 drivers en
 Drivers:              183
 SDK Version:          3
 Homey Compatibility:  >=12.2.0
-Version:              3.0.33
+Version:              3.0.34
 Status:               ✅ Active Development
 ```
 
@@ -176,11 +176,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `04c989295` feat: Complete Industrialization - Cookbook, Profiles, and Final Documentation - *Dylan Rajasekaram* (8 minutes ago)
-- `b2f2c8f23` Update Homey App Version to v3.0.33 - *github-actions[bot]* (14 minutes ago)
-- `efafa0097` cleanup - *Dylan Rajasekaram* (20 minutes ago)
-- `346156b01` docs: Forum response for Peter - v3.0.23 issues (SOS + Multi-sensor) - *Dylan Rajasekaram* (27 minutes ago)
-- `c80272cce` Update Homey App Version to v3.0.32 - *github-actions[bot]* (26 minutes ago)
+- `11e279cc8` docs: Add Zigbee Timeout troubleshooting and crash analysis - *Dylan Rajasekaram* (8 minutes ago)
+- `ea14b066c` Update Homey App Version to v3.0.34 - *github-actions[bot]* (8 minutes ago)
+- `04c989295` feat: Complete Industrialization - Cookbook, Profiles, and Final Documentation - *Dylan Rajasekaram* (15 minutes ago)
+- `b2f2c8f23` Update Homey App Version to v3.0.33 - *github-actions[bot]* (21 minutes ago)
+- `efafa0097` cleanup - *Dylan Rajasekaram* (27 minutes ago)
 
 ---
 
@@ -211,7 +211,7 @@ Based on the original work by **Johan Bendz** and inspired by:
 
 ```
 Last Updated:     2025-10-16
-Version:          3.0.33
+Version:          3.0.34
 Build Status:     ✅ Passing
 Documentation:    ✅ Up to date
 GitHub Actions:   ✅ Active
