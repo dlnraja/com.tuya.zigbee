@@ -222,6 +222,15 @@ function updateChangelog() {
  * Main
  */
 function main() {
+  // Check if we should skip auto-updates
+  const SKIP_AUTO_UPDATE = process.env.SKIP_AUTO_UPDATE === 'true';
+  
+  if (SKIP_AUTO_UPDATE) {
+    console.log('ℹ️  Auto-update skipped (SKIP_AUTO_UPDATE=true)');
+    console.log('ℹ️  Use: SKIP_AUTO_UPDATE=false node scripts/automation/update-all-links.js to force update');
+    return;
+  }
+  
   console.log('🔄 UPDATING ALL LINKS AND PATHS...\n');
   
   // 1. Scanner et mettre à jour tous les fichiers
@@ -229,31 +238,42 @@ function main() {
   const updated = scanAndUpdateFiles(ROOT);
   console.log(`\n✅ Updated ${updated} files\n`);
   
-  // 2. Mettre à jour README.md
-  console.log('📄 Updating README.md...');
-  updateReadme();
-  console.log('');
-  
-  // 3. Mettre à jour CHANGELOG.md
-  console.log('📋 Updating CHANGELOG.md...');
-  updateChangelog();
-  console.log('');
-  
-  // 4. Générer la liste des drivers
-  console.log('📱 Generating drivers list...');
-  try {
-    const { execSync } = require('child_process');
-    execSync('node scripts/automation/generate-drivers-list.js', { 
-      cwd: ROOT,
-      stdio: 'inherit' 
-    });
-  } catch (error) {
-    console.log('⚠️  Could not generate drivers list:', error.message);
+  // 2. Mettre à jour README.md (only if explicitly requested)
+  if (process.env.UPDATE_README === 'true') {
+    console.log('📄 Updating README.md...');
+    updateReadme();
+    console.log('');
   }
-  console.log('');
+  
+  // 3. Mettre à jour CHANGELOG.md (only if explicitly requested)
+  if (process.env.UPDATE_CHANGELOG === 'true') {
+    console.log('📋 Updating CHANGELOG.md...');
+    updateChangelog();
+    console.log('');
+  }
+  
+  // 4. Générer la liste des drivers (only if explicitly requested)
+  if (process.env.UPDATE_DRIVERS_LIST === 'true') {
+    console.log('📱 Generating drivers list...');
+    try {
+      const { execSync } = require('child_process');
+      execSync('node scripts/automation/generate-drivers-list.js', { 
+        cwd: ROOT,
+        stdio: 'inherit' 
+      });
+    } catch (error) {
+      console.log('⚠️  Could not generate drivers list:', error.message);
+    }
+    console.log('');
+  }
   
   console.log('✅ ALL LINKS AND PATHS UPDATED!');
   console.log('✅ Docs mis à jour!');
+  console.log('\nℹ️  To update README/CHANGELOG/Drivers, use:');
+  console.log('   UPDATE_README=true UPDATE_CHANGELOG=true UPDATE_DRIVERS_LIST=true npm run update');
 }
 
-main();
+// Only run if called directly (not required as module)
+if (require.main === module) {
+  main();
+}
