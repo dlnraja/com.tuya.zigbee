@@ -80,7 +80,8 @@ homey app install
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
+- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
+- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -175,16 +176,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `5f3969373` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (9 minutes ago)
-- `d8d3f6ad1` fix: Update GitHub Actions workflows to use upload-artifact@v4 - *Dylan Rajasekaram* (10 minutes ago)
-- `429bd4ce3` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (13 minutes ago)
-- `1a6c019eb` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (14 minutes ago)
-- `4502166bd` ci: Add publish-v3.yml workflow for automated Homey App Store publication - *Dylan Rajasekaram* (15 minutes ago)
-- `5f3969373` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (48 seconds ago)
-- `d8d3f6ad1` fix: Update GitHub Actions workflows to use upload-artifact@v4 - *Dylan Rajasekaram* (2 minutes ago)
-- `429bd4ce3` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (5 minutes ago)
-- `1a6c019eb` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (6 minutes ago)
-- `4502166bd` ci: Add publish-v3.yml workflow for automated Homey App Store publication - *Dylan Rajasekaram* (7 minutes ago)
+- `37a8ae1f6` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (11 minutes ago)
+- `ad631f391` feat: MEGA IMPLEMENTATION Sprints 2-4 - README refonte + CONTRIBUTING.md + automation - *Dylan Rajasekaram* (12 minutes ago)
+- `fbf1f51ba` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (20 minutes ago)
+- `5f3969373` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (21 minutes ago)
+- `d8d3f6ad1` fix: Update GitHub Actions workflows to use upload-artifact@v4 - *Dylan Rajasekaram* (22 minutes ago)
 
 ---
 
