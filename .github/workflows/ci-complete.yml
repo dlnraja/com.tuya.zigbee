@@ -1,0 +1,328 @@
+name: CI Complete - Validation & Matrix Generation
+
+on:
+  push:
+    branches: [ master, develop ]
+  pull_request:
+    branches: [ master, develop ]
+  workflow_dispatch:
+
+jobs:
+  # Job 1: Validate App
+  validate-app:
+    name: Validate Homey App
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      
+      - name: Install Homey CLI
+        run: npm install -g homey
+      
+      - name: Validate App (Publish Level)
+        id: validate
+        run: |
+          homey app validate --level publish > validation.log 2>&1
+          cat validation.log
+        continue-on-error: true
+      
+      - name: Upload Validation Log
+        uses: actions/upload-artifact@v3
+        with:
+          name: validation-log
+          path: validation.log
+          retention-days: 30
+      
+      - name: Check Result
+        run: |
+          if grep -q "validated successfully" validation.log; then
+            echo "✅ Validation PASSED"
+            exit 0
+          else
+            echo "❌ Validation FAILED"
+            exit 1
+          fi
+
+  # Job 2: Generate Device Matrix
+  generate-matrix:
+    name: Generate Device Matrix
+    runs-on: ubuntu-latest
+    needs: validate-app
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      
+      - name: Generate Device Matrix
+        run: |
+          node scripts/automation/generate-device-matrix.js
+          node scripts/automation/generate-coverage-stats.js
+      
+      - name: Upload Matrix (Markdown)
+        uses: actions/upload-artifact@v3
+        with:
+          name: device-matrix-md
+          path: DEVICE_MATRIX.md
+          retention-days: 90
+      
+      - name: Upload Coverage Stats (JSON)
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-stats-json
+          path: COVERAGE_STATS.json
+          retention-days: 90
+      
+      - name: Upload Dashboard (HTML)
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-dashboard
+          path: coverage-dashboard.html
+          retention-days: 90
+      
+      - name: Display Stats
+        run: |
+          echo "📊 Coverage Statistics"
+          cat COVERAGE_STATS.json | jq -r '
+            "Total Drivers: \(.total_drivers)",
+            "Device Variants: \(.device_variants)",
+            "Categories: \(.categories)",
+            "Brands: \(.brand_count)",
+            "Health Score: \(.health_score)%"
+          '
+
+  # Job 3: Schema Validation
+  schema-validation:
+    name: Schema Validation
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      
+      - name: Validate Driver Schemas
+        run: node scripts/validation/validate-driver-schemas.js
+        continue-on-error: true
+      
+      - name: Upload Schema Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: schema-validation-report
+          path: schema-validation-report.json
+          retention-days: 30
+
+  # Job 4: Export Matrix (CSV & JSON)
+  export-matrix:
+    name: Export Device Matrix
+    runs-on: ubuntu-latest
+    needs: generate-matrix
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      
+      - name: Generate Matrix Exports
+        run: |
+          # Create exports directory
+          mkdir -p exports
+          
+          # Generate CSV from DEVICE_MATRIX.md
+          node -e "
+          const fs = require('fs');
+          const md = fs.readFileSync('DEVICE_MATRIX.md', 'utf8');
+          const lines = md.split('\\n');
+          const table = lines.filter(l => l.startsWith('|') && !l.includes('---'));
+          fs.writeFileSync('exports/device-matrix.csv', 
+            table.map(l => l.split('|').slice(1, -1).join(',')).join('\\n')
+          );
+          console.log('✅ CSV generated');
+          "
+          
+          # Copy JSON
+          cp COVERAGE_STATS.json exports/coverage-stats.json
+          
+          # Create index
+          echo "Device Matrix Exports - Generated $(date)" > exports/README.txt
+          echo "" >> exports/README.txt
+          echo "Files:" >> exports/README.txt
+          echo "- device-matrix.csv (for Excel/LibreOffice)" >> exports/README.txt
+          echo "- coverage-stats.json (for programmatic access)" >> exports/README.txt
+      
+      - name: Upload Exports
+        uses: actions/upload-artifact@v3
+        with:
+          name: matrix-exports
+          path: exports/
+          retention-days: 90
+
+  # Job 5: Generate Badges
+  generate-badges:
+    name: Generate Status Badges
+    runs-on: ubuntu-latest
+    needs: [validate-app, generate-matrix]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      
+      - name: Generate Stats
+        id: stats
+        run: |
+          node scripts/automation/generate-coverage-stats.js
+          
+          # Extract stats
+          DRIVERS=$(cat COVERAGE_STATS.json | jq -r '.total_drivers')
+          VARIANTS=$(cat COVERAGE_STATS.json | jq -r '.device_variants')
+          HEALTH=$(cat COVERAGE_STATS.json | jq -r '.health_score')
+          
+          echo "drivers=$DRIVERS" >> $GITHUB_OUTPUT
+          echo "variants=$VARIANTS" >> $GITHUB_OUTPUT
+          echo "health=$HEALTH" >> $GITHUB_OUTPUT
+      
+      - name: Create Badge JSON
+        run: |
+          mkdir -p .github/badges
+          
+          # Drivers badge
+          echo '{
+            "schemaVersion": 1,
+            "label": "drivers",
+            "message": "${{ steps.stats.outputs.drivers }}",
+            "color": "blue"
+          }' > .github/badges/drivers.json
+          
+          # Variants badge
+          echo '{
+            "schemaVersion": 1,
+            "label": "device variants",
+            "message": "${{ steps.stats.outputs.variants }}+",
+            "color": "green"
+          }' > .github/badges/variants.json
+          
+          # Health badge
+          echo '{
+            "schemaVersion": 1,
+            "label": "health",
+            "message": "${{ steps.stats.outputs.health }}%",
+            "color": "brightgreen"
+          }' > .github/badges/health.json
+      
+      - name: Upload Badges
+        uses: actions/upload-artifact@v3
+        with:
+          name: badges
+          path: .github/badges/
+          retention-days: 30
+
+  # Job 6: PR Comment with Coverage
+  pr-comment:
+    name: Comment PR with Coverage
+    runs-on: ubuntu-latest
+    needs: generate-matrix
+    if: github.event_name == 'pull_request'
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      
+      - name: Generate Stats
+        run: node scripts/automation/generate-coverage-stats.js
+      
+      - name: Comment PR
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const stats = JSON.parse(fs.readFileSync('COVERAGE_STATS.json', 'utf8'));
+            
+            const comment = `## 📊 Coverage Report
+            
+            | Metric | Value |
+            |--------|-------|
+            | **Total Drivers** | ${stats.total_drivers} |
+            | **Device Variants** | ${stats.device_variants}+ |
+            | **Categories** | ${stats.categories} |
+            | **Brands** | ${stats.brand_count} |
+            | **Health Score** | ${stats.health_score}% |
+            
+            ### 🔗 Artifacts
+            - [Device Matrix (Markdown)](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            - [Coverage Stats (JSON)](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            - [Dashboard (HTML)](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            
+            ### 📈 Top Categories
+            ${Object.entries(stats.by_category)
+              .sort((a, b) => b[1] - a[1])
+              .slice(0, 5)
+              .map(([cat, count]) => `- **${cat}**: ${count} drivers`)
+              .join('\n')}
+            
+            ---
+            _Generated by CI - [Methodology](https://github.com/${{ github.repository }}/blob/master/docs/COVERAGE_METHODOLOGY.md)_
+            `;
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+
+  # Job 7: Build Summary
+  build-summary:
+    name: Build Summary
+    runs-on: ubuntu-latest
+    needs: [validate-app, generate-matrix, schema-validation]
+    if: always()
+    
+    steps:
+      - name: Generate Summary
+        run: |
+          echo "## 🎯 CI Build Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Check | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Homey Validation | ${{ needs.validate-app.result == 'success' && '✅ Passed' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Device Matrix | ${{ needs.generate-matrix.result == 'success' && '✅ Generated' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Schema Validation | ${{ needs.schema-validation.result == 'success' && '✅ Valid' || '⚠️ Issues' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📦 Artifacts" >> $GITHUB_STEP_SUMMARY
+          echo "- Validation Log" >> $GITHUB_STEP_SUMMARY
+          echo "- Device Matrix (MD, CSV, JSON)" >> $GITHUB_STEP_SUMMARY
+          echo "- Coverage Dashboard (HTML)" >> $GITHUB_STEP_SUMMARY
+          echo "- Schema Validation Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🔗 Links" >> $GITHUB_STEP_SUMMARY
+          echo "- [Coverage Methodology](https://github.com/${{ github.repository }}/blob/master/docs/COVERAGE_METHODOLOGY.md)" >> $GITHUB_STEP_SUMMARY
+          echo "- [Device Request Template](https://github.com/${{ github.repository }}/issues/new?template=device-request.yml)" >> $GITHUB_STEP_SUMMARY
