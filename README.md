@@ -80,8 +80,7 @@ homey app install
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
-- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
+- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -176,16 +175,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `a2c44af01` fix: Temperature sensor detected as smoke detector + overlap detection system - *Dylan Rajasekaram* (2 minutes ago)
-- `e8d736416` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (9 minutes ago)
-- `e2d2a9953` feat: v3.0.0 Implementation Complete - Audit 360 ChatGPT - *Dylan Rajasekaram* (12 minutes ago)
-- `15fad6556` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (21 minutes ago)
-- `62c65b5c4` final - *Dylan Rajasekaram* (22 minutes ago)
-- `a2c44af01` fix: Temperature sensor detected as smoke detector + overlap detection system - *Dylan Rajasekaram* (9 minutes ago)
-- `e8d736416` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (16 minutes ago)
-- `e2d2a9953` feat: v3.0.0 Implementation Complete - Audit 360 ChatGPT - *Dylan Rajasekaram* (19 minutes ago)
-- `15fad6556` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (28 minutes ago)
-- `62c65b5c4` final - *Dylan Rajasekaram* (29 minutes ago)
+- `bd5710952` fix: CRITICAL - IAS Zone enrollment failure (Motion + SOS Button) - *Dylan Rajasekaram* (2 minutes ago)
+- `2aa255c50` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (9 minutes ago)
+- `a2c44af01` fix: Temperature sensor detected as smoke detector + overlap detection system - *Dylan Rajasekaram* (11 minutes ago)
+- `e8d736416` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (18 minutes ago)
+- `e2d2a9953` feat: v3.0.0 Implementation Complete - Audit 360 ChatGPT - *Dylan Rajasekaram* (21 minutes ago)
 
 ---
 
