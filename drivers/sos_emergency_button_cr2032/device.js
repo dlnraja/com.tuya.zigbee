@@ -9,8 +9,8 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
   async onNodeInit({ zclNode }) {
     this.log('sos_emergency_button_cr2032 initialized');
 
-    // Battery
-    this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
+    // Battery (cluster 1)
+    this.registerCapability('measure_battery', 1, {
       get: 'batteryPercentageRemaining',
       report: 'batteryPercentageRemaining',
       getOpts: {
