@@ -175,16 +175,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `e2d2a9953` feat: v3.0.0 Implementation Complete - Audit 360 ChatGPT - *Dylan Rajasekaram* (2 minutes ago)
-- `15fad6556` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (12 minutes ago)
-- `62c65b5c4` final - *Dylan Rajasekaram* (12 minutes ago)
-- `10b461d1f` update - *Dylan Rajasekaram* (13 minutes ago)
-- `264c824b2` feat: Audit 360° Implementation Complete v2.15.134+ - *Dylan Rajasekaram* (15 minutes ago)
-- `e2d2a9953` feat: v3.0.0 Implementation Complete - Audit 360 ChatGPT - *Dylan Rajasekaram* (10 minutes ago)
-- `15fad6556` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (19 minutes ago)
-- `62c65b5c4` final - *Dylan Rajasekaram* (20 minutes ago)
-- `10b461d1f` update - *Dylan Rajasekaram* (21 minutes ago)
-- `264c824b2` feat: Audit 360° Implementation Complete v2.15.134+ - *Dylan Rajasekaram* (23 minutes ago)
+- `a2c44af01` fix: Temperature sensor detected as smoke detector + overlap detection system - *Dylan Rajasekaram* (2 minutes ago)
+- `e8d736416` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (9 minutes ago)
+- `e2d2a9953` feat: v3.0.0 Implementation Complete - Audit 360 ChatGPT - *Dylan Rajasekaram* (12 minutes ago)
+- `15fad6556` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (21 minutes ago)
+- `62c65b5c4` final - *Dylan Rajasekaram* (22 minutes ago)
 
 ---
 
