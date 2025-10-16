@@ -209,8 +209,8 @@ async enrollStandard(zclNode) {
 
 ### Apps Communautaires Analysées
 
+D'après la documentation `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md`:
 D'après la documentation `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md`:
-D'après la documentation `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md`:
 
 **1. Aqara/Xiaomi App (Maxmudjon):**
 ```javascript
@@ -421,8 +421,8 @@ bridgeId reçu: ":4:ae:f:::9:fe:f:::f:6e:2:::0:bc"
 
 ### Notre Documentation
 - `lib/IASZoneEnroller.js` (ligne 1-503)
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md`
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md`
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md`
 - `docs/forum/IAS_ZONE_ENROLLMENT_FIX_CRITICAL.md`
 - `docs/v3/V3.0.1_CRITICAL_FIX_SUMMARY.md`
 
