@@ -124,8 +124,7 @@ tuya_repair/
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
-- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
+- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -220,16 +219,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `02fd40d6c` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (10 minutes ago)
-- `c8ad1d4b2` Docs: Architecture reorganization planning + Driver metadata (183 drivers categorized, v3.0.0 roadmap) - *Dylan Rajasekaram* (11 minutes ago)
-- `65713d135` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (23 minutes ago)
-- `f036da46b` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (23 minutes ago)
-- `885fe3512` Release: v2.15.133 FINAL - Documentation complete (400KB), Implementation base (67%), Database (100+ devices), Auto-update system, Ready for production - *Dylan Rajasekaram* (32 minutes ago)
-- `02fd40d6c` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (39 seconds ago)
-- `c8ad1d4b2` Docs: Architecture reorganization planning + Driver metadata (183 drivers categorized, v3.0.0 roadmap) - *Dylan Rajasekaram* (78 seconds ago)
-- `65713d135` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (13 minutes ago)
-- `f036da46b` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (14 minutes ago)
-- `885fe3512` Release: v2.15.133 FINAL - Documentation complete (400KB), Implementation base (67%), Database (100+ devices), Auto-update system, Ready for production - *Dylan Rajasekaram* (22 minutes ago)
+- `495e50e01` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (39 seconds ago)
+- `84b705d80` feat: Professional review implementation - CI/CD, Coverage methodology, Positioning - *Dylan Rajasekaram* (87 seconds ago)
+- `95e51b35c` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (11 minutes ago)
+- `02fd40d6c` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (12 minutes ago)
+- `c8ad1d4b2` Docs: Architecture reorganization planning + Driver metadata (183 drivers categorized, v3.0.0 roadmap) - *Dylan Rajasekaram* (12 minutes ago)
 
 ---
 
