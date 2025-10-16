@@ -176,16 +176,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `1a6c019eb` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (4 minutes ago)
-- `4502166bd` ci: Add publish-v3.yml workflow for automated Homey App Store publication - *Dylan Rajasekaram* (5 minutes ago)
-- `e47f74b7a` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (8 minutes ago)
-- `af2f99906` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (9 minutes ago)
-- `2334f112c` chore: Update app.json to v3.0.5 with complete session improvements - *Dylan Rajasekaram* (10 minutes ago)
-- `1a6c019eb` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (47 seconds ago)
-- `4502166bd` ci: Add publish-v3.yml workflow for automated Homey App Store publication - *Dylan Rajasekaram* (2 minutes ago)
-- `e47f74b7a` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (5 minutes ago)
-- `af2f99906` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (5 minutes ago)
-- `2334f112c` chore: Update app.json to v3.0.5 with complete session improvements - *Dylan Rajasekaram* (6 minutes ago)
+- `5f3969373` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (9 minutes ago)
+- `d8d3f6ad1` fix: Update GitHub Actions workflows to use upload-artifact@v4 - *Dylan Rajasekaram* (10 minutes ago)
+- `429bd4ce3` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (13 minutes ago)
+- `1a6c019eb` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (14 minutes ago)
+- `4502166bd` ci: Add publish-v3.yml workflow for automated Homey App Store publication - *Dylan Rajasekaram* (15 minutes ago)
 
 ---
 
