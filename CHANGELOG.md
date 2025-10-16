@@ -17,7 +17,7 @@
 ### 📚 Complete Documentation & Final Synthesis
 
 #### Added
-- PROJECT_docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md - Complete project status
+- PROJECT_docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md - Complete project status
 - SYNTHESE_COMPLETE_FINALE.md - Absolute final summary
 
 #### Changed
@@ -274,6 +274,24 @@
 - Total devices: 1500+ supported
 
 # Changelog
+
+## [3.0.12] - 2025-10-16
+
+### 🗂️ Organization
+- Reorganized project structure (docs/, scripts/ folders)
+- Updated all file paths and links
+- Created PROJECT_STRUCTURE.md documentation
+
+### 🐛 Bug Fixes
+- Fixed missing module error in motion sensor
+- Fixed IAS Zone enrollment issues
+- Improved error handling
+
+### 📚 Documentation
+- Updated README.md with new structure
+- Organized documentation by category
+- Added auto-update system for links
+
 
 ## [3.0.11] - 2025-10-16
 
