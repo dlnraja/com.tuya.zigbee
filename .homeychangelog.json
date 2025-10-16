@@ -1,4 +1,7 @@
 {
+  "2.15.133": {
+    "en": "DOCUMENTATION: Added comprehensive Tuya Zigbee Local Support guide + Smart Plugs FAQ. Explains 100% local control (no cloud), Zigbee direct protocol, compatible brands (MOES, Nous, LSC, Lidl, Amazon), Wi-Fi to Zigbee migration guide, and privacy benefits. Community forum integration complete."
+  },
   "2.15.74": {
     "en": "CRITICAL IAS ZONE FIX: Fixed Homey IEEE address retrieval for SDK3 - Motion sensors and SOS buttons now properly enroll and trigger. Fixed 'Cannot read properties of undefined' error. Uses zclNode.bridgeId instead of deprecated this.homey.zigbee.ieee. Peter's diagnostic b93c400b & 85ffbcee resolved."
   },
