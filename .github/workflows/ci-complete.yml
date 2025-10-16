@@ -33,7 +33,7 @@ jobs:
         continue-on-error: true
       
       - name: Upload Validation Log
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: validation-log
           path: validation.log
@@ -70,21 +70,21 @@ jobs:
           node scripts/automation/generate-coverage-stats.js
       
       - name: Upload Matrix (Markdown)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: device-matrix-md
           path: DEVICE_MATRIX.md
           retention-days: 90
       
       - name: Upload Coverage Stats (JSON)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: coverage-stats-json
           path: COVERAGE_STATS.json
           retention-days: 90
       
       - name: Upload Dashboard (HTML)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: coverage-dashboard
           path: coverage-dashboard.html
@@ -120,7 +120,7 @@ jobs:
         continue-on-error: true
       
       - name: Upload Schema Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: schema-validation-report
           path: schema-validation-report.json
@@ -169,7 +169,7 @@ jobs:
           echo "- coverage-stats.json (for programmatic access)" >> exports/README.txt
       
       - name: Upload Exports
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: matrix-exports
           path: exports/
@@ -234,7 +234,7 @@ jobs:
           }' > .github/badges/health.json
       
       - name: Upload Badges
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: badges
           path: .github/badges/
