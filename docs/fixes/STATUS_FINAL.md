@@ -12,7 +12,7 @@
 ### 2. Images APP Corrigées
 - ✅ `assets/images/small.png` - 250x175 (requis pour APP)
 - ✅ `assets/images/large.png` - 500x350 (requis pour APP)
-- ✅ Script `create-app-images.js` créé pour régénération
+- ✅ Script `scripts/utils/create-app-images.js` créé pour régénération
 
 ### 3. Workflow GitHub Actions
 - ✅ Workflow officielhomey-official-publish.yml` configuré
@@ -20,10 +20,10 @@
 - ⚠️ Validation publish: Encore des erreurs (déclarations images drivers)
 
 ### 4. Scripts Utilitaires
-- ✅ `push-native.js` - Push avec auth native Windsurf
-- ✅ `FINAL_CLEANUP.js` - Nettoyage projet
-- ✅ `ULTIMATE_FIX_ALL.js` - Fix automatique
-- ✅ `fix-flows.js` - Correction titleFormatted
+- ✅ `scripts/automation/push-native.js` - Push avec auth native Windsurf
+- ✅ `scripts/utils/FINAL_CLEANUP.js` - Nettoyage projet
+- ✅ `scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix automatique
+- ✅ `scripts/fixes/fix-flows.js` - Correction titleFormatted
 
 ---
 
@@ -102,18 +102,18 @@ Expliquer conflit SDK3 images APP vs drivers
 ## 📁 FICHIERS IMPORTANTS CRÉÉS
 
 ### Documentation:
-- `PUBLICATION_SUCCESS.md` - Instructions si publish réussit
-- `PUBLICATION_MANUELLE_REQUISE.md` - Guide publication manuelle
-- `STATUS_FINAL.md` - Ce document
+- `docs/workflow/PUBLICATION_SUCCESS.md` - Instructions si publish réussit
+- `docs/workflow/PUBLICATION_MANUELLE_REQUISE.md` - Guide publication manuelle
+- `docs/fixes/STATUS_FINAL.md` - Ce document
 
 ### Scripts:
-- `create-app-images.js` - Régénère images APP
-- `push-native.js` - Push avec auth native
-- `ULTIMATE_FIX_ALL.js` - Fix automatique complet
+- `scripts/utils/create-app-images.js` - Régénère images APP
+- `scripts/automation/push-native.js` - Push avec auth native
+- `scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix automatique complet
 
 ### Fixes Device:
-- `URGENT_FIX_COMPLETE.js` - Restoration device.js
-- `FIX_TITLEFORMATTED.js` - Correction flows
+- `scripts/fixes/URGENT_FIX_COMPLETE.js` - Restoration device.js
+- `scripts/fixes/FIX_TITLEFORMATTED.js` - Correction flows
 
 ---
 

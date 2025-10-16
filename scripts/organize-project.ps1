@@ -77,6 +77,12 @@ Move-Item -Force "remove-driver-images.js" "scripts/utils/" -ErrorAction Silentl
 Write-Host ""
 Write-Host "✅ Organisation terminée!" -ForegroundColor Green
 Write-Host ""
+
+# Mise à jour automatique des liens après réorganisation
+Write-Host "🔄 Mise à jour automatique des liens..." -ForegroundColor Yellow
+& node scripts/automation/update-all-links.js
+
+Write-Host ""
 Write-Host "STRUCTURE CRÉÉE:" -ForegroundColor Cyan
 Write-Host "  docs/fixes/      - Documentation des corrections" -ForegroundColor White
 Write-Host "  docs/workflow/   - Documentation workflow GitHub" -ForegroundColor White
@@ -85,3 +91,5 @@ Write-Host "  docs/forum/      - Réponses forum" -ForegroundColor White
 Write-Host "  scripts/fixes/   - Scripts de correction" -ForegroundColor White
 Write-Host "  scripts/automation/ - Scripts automation Git/Publish" -ForegroundColor White
 Write-Host "  scripts/utils/   - Scripts utilitaires" -ForegroundColor White
+Write-Host ""
+Write-Host "✅ Liens et chemins mis à jour automatiquement!" -ForegroundColor Green
