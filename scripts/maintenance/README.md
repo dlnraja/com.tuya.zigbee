@@ -21,9 +21,11 @@ node scripts/maintenance/DEEP_FIX_DEVICE_JS.js
 ```
 
 ### scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js
+### scripts/fixes/FIX_APP_IMAGES_FINAL.js
 
 ```bash
 node scripts/maintenance/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js
+node scripts/maintenance/scripts/fixes/FIX_APP_IMAGES_FINAL.js
 ```
 
 ### FIX_DRIVER_IMAGES.js
