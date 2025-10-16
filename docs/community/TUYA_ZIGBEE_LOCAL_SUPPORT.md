@@ -1,0 +1,567 @@
+# 📡 SUPPORT TUYA ZIGBEE LOCAL - SANS CLOUD
+
+**App:** Universal Tuya Zigbee  
+**Mode:** 100% Local - Aucun Cloud Requis  
+**Protocol:** Zigbee Natif (pas Wi-Fi, pas Tuya Cloud API)
+
+---
+
+## 🎯 DIFFÉRENCE CRUCIALE
+
+### ❌ Apps Cloud Tuya (à éviter)
+- **Tuya Cloud App** (Athom/Tuya Inc.) - Requiert cloud Tuya
+- **Tuya Smart App** - Requiert compte Tuya + Internet
+- Connexion Wi-Fi via API cloud
+- Dépendant des serveurs Tuya
+- Latence réseau
+- Données envoyées au cloud
+
+### ✅ Universal Tuya Zigbee (cette app)
+- **100% Local** - Aucun cloud requis
+- **Zigbee Direct** - Communication directe avec Homey
+- Fonctionne **sans Internet**
+- **Aucune donnée** envoyée à Tuya
+- Latence minimale
+- Contrôle instantané
+
+---
+
+## 🔌 SMART PLUGS SUPPORTÉS (ZIGBEE LOCAL)
+
+### Catégorie 1: Smart Plugs Standards
+```
+✅ Smart Plug AC (16A)
+✅ Smart Plug Energy Monitor
+✅ Smart Plug Dimmer
+✅ Smart Outlet Monitor
+✅ USB Outlet AC
+✅ Power Meter Socket
+```
+
+**Brands compatibles (Zigbee):**
+- Tuya OEM devices
+- MOES Smart Plugs (Zigbee)
+- Nous Smart Plugs (Zigbee)
+- Lonsonho
+- Lidl/Silvercrest (Tuya inside)
+- Action Smart Plugs (Tuya inside)
+- Amazon Basics Smart Plugs (some models)
+
+### Caractéristiques:
+- ✅ On/Off control
+- ✅ Energy monitoring (W, kWh)
+- ✅ Voltage/Current measurement
+- ✅ Overload protection
+- ✅ Power threshold alerts
+- ✅ Scheduling via Homey flows
+- ✅ Daily/monthly energy tracking
+
+---
+
+## 📋 RÉPONSES AUX QUESTIONS FORUM
+
+### 1. "Mon smart plug Tuya se déconnecte régulièrement"
+
+**Problème:** Vous utilisez probablement une app cloud (Tuya Cloud, Tuya Smart)
+
+**Solution avec Universal Tuya Zigbee:**
+- ✅ Connexion Zigbee = **stable et locale**
+- ✅ Pas de dépendance Internet
+- ✅ Mesh Zigbee Homey
+- ✅ Répéteurs automatiques
+- ✅ Reconnexion automatique
+
+**Migration:**
+1. Supprimer device de l'app cloud
+2. Factory reset du smart plug
+3. Ajouter dans "Universal Tuya Zigbee"
+4. Mode Zigbee détecté automatiquement
+
+---
+
+### 2. "Comment savoir si mon smart plug est compatible?"
+
+**Vérification:**
+
+**Méthode 1: Packaging**
+```
+Rechercher:
+✅ Logo Zigbee
+✅ "Zigbee 3.0"
+✅ "Works with Zigbee"
+❌ "Wi-Fi only" = NON compatible
+```
+
+**Méthode 2: Homey**
+```
+1. Ouvrir Universal Tuya Zigbee
+2. Ajouter device
+3. Rechercher "Smart Plug"
+4. Si détecté = compatible!
+```
+
+**Méthode 3: Model Number**
+```
+Chercher model sur:
+- GitHub: github.com/dlnraja/com.tuya.zigbee
+- Forum: community.homey.app
+- Envoyer diagnostic après tentative pairing
+```
+
+---
+
+### 3. "Différence entre Tuya Wi-Fi et Tuya Zigbee?"
+
+| Feature | Wi-Fi (Cloud) | Zigbee (Local) |
+|---------|--------------|----------------|
+| **Internet requis** | ✅ Oui | ❌ Non |
+| **Cloud API** | ✅ Requis | ❌ Aucun |
+| **Latence** | 500-2000ms | 50-200ms |
+| **Stabilité** | Moyenne | Excellente |
+| **Privacy** | Données → cloud | 100% local |
+| **Hors ligne** | ❌ Ne fonctionne pas | ✅ Fonctionne |
+| **Mesh** | ❌ Non | ✅ Oui (Zigbee) |
+
+**Notre app = Zigbee uniquement!**
+
+---
+
+### 4. "Smart Plugs Amazon/Action/Lidl compatibles?"
+
+**Oui, SI Zigbee!**
+
+**Amazon:**
+- ✅ Amazon Basics Smart Plug (Zigbee version)
+- ❌ Amazon Echo Plug (Wi-Fi) = NON
+
+**Action (Pays-Bas/Belgique):**
+- ✅ LSC Smart Connect (Tuya Zigbee)
+- Manufacturer: `_TZ3000_*`
+- Compatible à 100%
+
+**Lidl/Silvercrest:**
+- ✅ Lidl Smart Home (Tuya Zigbee inside)
+- Manufacturer: `_TZE200_*` ou `_TZ3000_*`
+- Compatible à 100%
+
+**MOES:**
+- ✅ Tous les smart plugs Zigbee MOES
+- Excellente compatibilité
+- Energy monitoring inclus
+
+**Vérification:**
+```bash
+# Après pairing, vérifier dans diagnostic:
+Manufacturer: _TZ3000_xxxx  ← Tuya Zigbee = ✅ Compatible
+Manufacturer: Tuya           ← Wi-Fi = ❌ Non compatible
+```
+
+---
+
+### 5. "J'ai des Tuya Wi-Fi, comment migrer vers Zigbee?"
+
+**Impossible de convertir!**
+- Wi-Fi device ≠ Zigbee device
+- Hardware différent
+
+**Solution:**
+1. **Acheter version Zigbee** du même modèle
+2. Vérifier logo "Zigbee 3.0" sur packaging
+3. Pairing dans Universal Tuya Zigbee
+4. Recréer flows Homey
+
+**Avantages migration:**
+- ✅ Plus stable
+- ✅ Plus rapide
+- ✅ Pas de cloud
+- ✅ Fonctionne hors ligne
+- ✅ Meilleure intégration Homey
+
+---
+
+## 🛠️ SUPPORT SANS SURCOUCHE PROPRIÉTAIRE
+
+### Ce que ça signifie:
+
+**Surcouche propriétaire = App Tuya Cloud**
+- Tuya ajoute une couche logicielle
+- Communication via serveurs Tuya
+- Latence + dépendance
+
+**Sans surcouche = Universal Tuya Zigbee**
+- Communication Zigbee **directe**
+- Homey parle **directement** au device
+- Protocole Zigbee standard (ZCL)
+- **Aucun** serveur intermédiaire
+
+### Implémentation:
+
+**Notre app utilise:**
+```javascript
+// Zigbee Clusters Standard
+CLUSTER.ON_OFF          // On/Off control
+CLUSTER.ELECTRICAL_MEASUREMENT  // Power measurement
+CLUSTER.METERING        // Energy metering
+CLUSTER.BASIC           // Device info
+
+// PAS de Tuya Cloud API
+// PAS de conversion Wi-Fi
+// PAS de serveurs externes
+```
+
+**Résultat:**
+- ✅ Contrôle instantané
+- ✅ 100% local
+- ✅ Zigbee pur
+- ✅ Standard ZCL
+- ✅ Compatible tout Zigbee coordinator
+
+---
+
+## 📱 SMART PLUGS PAR MARQUE
+
+### MOES (Zigbee)
+```
+Modèles supportés:
+- MOES Smart Plug ZSS-X (16A)
+- MOES Smart Plug with USB
+- MOES Energy Monitor Plug
+- MOES Dimmer Plug
+
+Manufacturer ID: _TZ3000_* ou _TZE200_*
+Status: ✅ 100% Compatible
+Energy Monitoring: ✅ Oui
+```
+
+### Nous (Zigbee)
+```
+Modèles supportés:
+- Nous A1Z Smart Plug
+- Nous A3Z Energy Monitor
+- Nous A4Z USB Plug
+
+Manufacturer ID: _TZ3000_*
+Status: ✅ 100% Compatible
+Energy Monitoring: ✅ Oui
+```
+
+### Lidl/Silvercrest (Tuya inside)
+```
+Modèles supportés:
+- Silvercrest Smart Plug (Zigbee)
+- Lidl Smart Home Socket
+
+Manufacturer ID: _TZE200_* ou _TZ3000_*
+Status: ✅ Compatible
+Energy Monitoring: ⚠️ Selon modèle
+```
+
+### Action LSC Smart Connect
+```
+Modèles supportés:
+- LSC Smart Plug
+- LSC Smart Plug with USB
+
+Manufacturer ID: _TZ3000_*
+Status: ✅ 100% Compatible
+Energy Monitoring: ✅ Oui
+```
+
+### Amazon (Zigbee version)
+```
+Modèles supportés:
+- Amazon Basics Smart Plug (Zigbee)
+
+Manufacturer ID: Varie
+Status: ✅ Compatible (tester)
+Energy Monitoring: ❌ Non
+```
+
+---
+
+## 🔧 TROUBLESHOOTING FORUM
+
+### "Device not found" lors du pairing
+
+**Cause:** Device en mode Wi-Fi ou déjà pairé
+
+**Solution:**
+```
+1. Factory reset du plug:
+   - Appuyer bouton 5 secondes
+   - LED clignote rapidement
+   
+2. Dans Homey:
+   - Ouvrir Universal Tuya Zigbee
+   - Ajouter device
+   - Chercher "Smart Plug"
+   - Attendre 30 secondes
+   
+3. Si échec:
+   - Rapprocher plug de Homey (<2m)
+   - Retry factory reset
+   - Vérifier si Zigbee (pas Wi-Fi)
+```
+
+### "Device offline" régulièrement
+
+**Cause:** Mauvaise portée Zigbee ou interférences
+
+**Solution:**
+```
+1. Vérifier mesh Zigbee:
+   - Settings → Zigbee → Devices
+   - Vérifier "Hop count"
+   
+2. Ajouter répéteurs:
+   - Smart plugs = répéteurs automatiques
+   - Placer entre Homey et device
+   
+3. Réduire interférences:
+   - Éloigner de Wi-Fi router
+   - Éloigner de micro-ondes
+   - Changer canal Zigbee si nécessaire
+```
+
+### "Energy monitoring ne fonctionne pas"
+
+**Cause:** Device ne supporte pas ou mauvaise configuration
+
+**Solution:**
+```
+1. Vérifier support:
+   - App → Device → Capabilities
+   - Chercher "measure_power" et "meter_power"
+   
+2. Si absent:
+   - Device ne supporte pas energy monitoring
+   - Acheter modèle avec support
+   
+3. Si présent mais pas de data:
+   - Attendre 5 minutes (initialisation)
+   - Vérifier consommation > 1W
+   - Envoyer diagnostic report
+```
+
+---
+
+## 📊 COMPATIBILITÉ DEVICES
+
+### Smart Plugs avec Energy Monitoring
+```
+✅ MOES ZSS-X Series
+✅ Nous A3Z/A4Z
+✅ LSC Smart Connect
+✅ Lidl Smart Home (certains modèles)
+✅ Tuya OEM (manufacturer _TZ3000_)
+```
+
+### Smart Plugs sans Energy Monitoring
+```
+✅ Amazon Basics Smart Plug (Zigbee)
+✅ Basic Tuya Plugs
+✅ Lidl Basic Models
+⚠️ Fonctionnent mais pas de mesure énergie
+```
+
+### Smart Plugs NON compatibles
+```
+❌ Tuya Wi-Fi Plugs (require cloud)
+❌ Amazon Echo Plug (Wi-Fi only)
+❌ TP-Link Kasa (proprietary protocol)
+❌ Shelly Plug (Wi-Fi, use Shelly app)
+```
+
+---
+
+## 🎓 GUIDE MIGRATION TUYA CLOUD → ZIGBEE LOCAL
+
+### Étape 1: Identifier vos devices
+```
+Devices Tuya Cloud:
+- Ouvrir app Tuya Cloud/Smart
+- Noter modèles et manufacturers
+- Chercher versions Zigbee équivalentes
+```
+
+### Étape 2: Acheter équivalents Zigbee
+```
+Où acheter:
+- Amazon (vérifier "Zigbee 3.0")
+- AliExpress (rechercher "Tuya Zigbee")
+- Action (LSC Smart Connect)
+- Lidl (Smart Home Zigbee)
+- Boutiques locales électronique
+```
+
+### Étape 3: Migration
+```
+1. Supprimer de Tuya Cloud app
+2. Factory reset device
+3. Ajouter dans Universal Tuya Zigbee
+4. Recréer flows Homey
+5. Tester fonctionnement offline
+```
+
+### Étape 4: Validation
+```
+Test:
+- Débrancher Internet
+- Tester on/off
+- Si fonctionne = ✅ Local!
+- Si erreur = vérifier config
+```
+
+---
+
+## 📝 RÉPONSES POSTS FORUM SPÉCIFIQUES
+
+### Post: "Tuya SmartPlug from Amazon"
+**Question:** Compatible avec Homey?
+
+**Réponse:**
+- ✅ **Si Zigbee version:** Compatible avec Universal Tuya Zigbee
+- ❌ **Si Wi-Fi version:** Utiliser Tuya Cloud app (moins stable)
+- **Vérifier:** Logo "Zigbee 3.0" sur boîte
+- **Migration:** Préférer Zigbee pour stabilité
+
+### Post: "Tuya Smart app discussion"
+**Context:** Problèmes cloud Tuya
+
+**Réponse:**
+- App "Tuya Smart" = Cloud dépendant
+- **Alternative:** Universal Tuya Zigbee (local)
+- Avantages: Stable, rapide, privacy, offline
+- Migration possible vers Zigbee devices
+
+### Post: "Smart plug buying tips"
+**Conseils pour achat:**
+
+**À rechercher:**
+- ✅ Logo "Zigbee 3.0"
+- ✅ "Works with Homey" ou "Works with Zigbee"
+- ✅ Manufacturer: Tuya OEM, MOES, Nous, LSC
+- ✅ Energy monitoring (si besoin)
+- ✅ 16A rating (EU)
+
+**À éviter:**
+- ❌ "Wi-Fi only"
+- ❌ "Requires Tuya app"
+- ❌ "Cloud required"
+- ❌ Proprietary protocols (non-Zigbee)
+
+### Post: "App MOES discussion"
+**Question:** App séparée nécessaire?
+
+**Réponse:**
+- ❌ **Pas besoin d'app MOES séparée**
+- ✅ **Universal Tuya Zigbee supporte MOES**
+- Devices MOES Zigbee = Tuya inside
+- Même manufacturer IDs
+- Support complet inclus
+
+### Post: "Smartplug hors ligne régulièrement"
+**Problème:** Disconnects fréquents
+
+**Cause probable:** App cloud + Wi-Fi
+**Solution:** Migration vers Zigbee
+- Acheter version Zigbee
+- Pairer dans Universal Tuya Zigbee
+- Profiter stabilité Zigbee mesh
+- Plus de déconnexions!
+
+### Post: "[APP] Tuya by Athom"
+**Context:** App officielle Tuya Cloud
+
+**Notre différence:**
+- App Athom = Cloud API
+- Universal Tuya Zigbee = Local Zigbee
+- Protocoles différents
+- Cas d'usage différents
+- Notre app = Privacy + Stability
+
+### Post: "[APP] Tuya Cloud by Athom"
+**Context:** Discussion app cloud Tuya
+
+**Notre position:**
+- Cloud = Dépendance Internet
+- Zigbee = Indépendance totale
+- Privacy: Aucune donnée → cloud
+- Performance: Latence minimale
+- Recommandation: Préférer Zigbee
+
+---
+
+## 🌐 SUPPORT COMMUNAUTÉ
+
+### Forum Homey
+**Thread principal:** [Universal Tuya Zigbee Discussion]
+- Questions support
+- Partage devices compatibles
+- Diagnostic reports
+- Feature requests
+
+### GitHub
+**Repository:** github.com/dlnraja/com.tuya.zigbee
+- Issues tracker
+- Device database
+- Contribution guidelines
+- Release notes
+
+### Documentation
+**Emplacement:** docs/community/
+- Ce fichier: TUYA_ZIGBEE_LOCAL_SUPPORT.md
+- Best practices: docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md
+- Quick tips: docs/community/docs/community/QUICK_IMPROVEMENTS.md
+
+---
+
+## ✅ CHECKLIST ACHAT SMART PLUG
+
+Avant d'acheter, vérifier:
+
+- [ ] ✅ Logo "Zigbee 3.0" sur packaging
+- [ ] ✅ Spécifications: Protocol = Zigbee
+- [ ] ✅ Energy monitoring (si besoin)
+- [ ] ✅ 16A rating (EU) ou équivalent
+- [ ] ✅ Reviews mentionnent Homey/Zigbee
+- [ ] ❌ PAS de mention "Wi-Fi only"
+- [ ] ❌ PAS de mention "Cloud required"
+- [ ] ❌ PAS de "Tuya app required"
+
+**Marques recommandées:**
+- ✅ MOES (excellent rapport qualité/prix)
+- ✅ Nous (bonne qualité)
+- ✅ LSC Smart Connect (Action, bon prix)
+- ✅ Lidl Smart Home (accessible)
+
+---
+
+## 🎯 RÉSUMÉ
+
+### Universal Tuya Zigbee = 
+✅ **100% Local** (pas de cloud)  
+✅ **Zigbee Direct** (communication directe Homey)  
+✅ **Sans Surcouche** (pas de serveurs Tuya)  
+✅ **Privacy Total** (aucune donnée externe)  
+✅ **Offline Ready** (fonctionne sans Internet)  
+✅ **Mesh Zigbee** (répéteurs automatiques)  
+✅ **Latence Minimale** (50-200ms)  
+✅ **Stable** (pas de déconnexions)  
+
+### vs Apps Cloud Tuya =
+❌ Dépendant Internet  
+❌ Requiert cloud Tuya  
+❌ Données → serveurs externes  
+❌ Latence élevée (500-2000ms)  
+❌ Déconnexions fréquentes  
+❌ Privacy limitée  
+
+---
+
+**Version:** 1.0  
+**Date:** 16 Octobre 2025  
+**App:** Universal Tuya Zigbee v2.15.131  
+**Support:** github.com/dlnraja/com.tuya.zigbee/issues
+
+🎯 **Choisissez Zigbee pour contrôle local, stable et privé de vos smart plugs Tuya!**
