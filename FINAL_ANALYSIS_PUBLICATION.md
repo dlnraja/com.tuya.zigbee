@@ -12,6 +12,7 @@
 
 #### ✅ Documentation Community (docs/community/)
 1. **docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md** (15KB)
+1. **docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md** (15KB)
    - Analyse Philips Hue, Aqara, SONOFF
    - Best practices identifiées
    - Flow cards patterns
@@ -47,12 +48,14 @@
    - STATUS: ✅ Complet
 
 6. **docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md** (8KB)
+6. **docs/community/docs/community/QUICK_IMPROVEMENTS.md** (8KB)
    - Priorités développement
    - Quick wins identifiés
    - STATUS: ✅ Complet
 
 #### ✅ Documentation Workflow (docs/workflow/)
 1. **docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md** (35KB)
+1. **docs/workflow/docs/workflow/WORKFLOW_GUIDE.md** (35KB)
    - GitHub Actions complet
    - Publication automatique
    - STATUS: ✅ Complet
@@ -64,16 +67,19 @@
    - STATUS: ✅ Complet
 
 3. **docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md** (5KB)
+3. **docs/workflow/docs/workflow/QUICK_WORKFLOW.md** (5KB)
    - Référence rapide
    - STATUS: ✅ Complet
 
 #### ✅ Documentation Fixes (docs/fixes/)
 1. **docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md** (28KB)
+1. **docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md** (28KB)
    - Fixes critiques IAS Zone
    - Module manquant
    - STATUS: ✅ Complet
 
 2. **docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md** (25KB)
+2. **docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md** (25KB)
    - Fix motion sensors
    - STATUS: ✅ Complet
 
