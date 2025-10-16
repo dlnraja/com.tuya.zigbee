@@ -80,7 +80,8 @@ homey app install
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
+- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
+- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -185,6 +186,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `fbbd0bf8a` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (29 minutes ago)
 - `2f3d7e5c8` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (31 minutes ago)
 - `b3ce632d2` chore: trigger auto-publish workflow v3.0.17 - *Dylan Rajasekaram* (33 minutes ago)
+- `9d7c5b77c` feat: Système d'automatisation complet - Interview to Driver + Bi-Monthly Updates - *Dylan Rajasekaram* (14 minutes ago)
+- `a78c677fc` Update Homey App Version to v3.0.19 - *github-actions[bot]* (36 minutes ago)
+- `fbbd0bf8a` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (38 minutes ago)
+- `2f3d7e5c8` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (40 minutes ago)
+- `b3ce632d2` chore: trigger auto-publish workflow v3.0.17 - *Dylan Rajasekaram* (41 minutes ago)
 
 ---
 
