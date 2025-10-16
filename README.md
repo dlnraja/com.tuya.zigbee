@@ -80,8 +80,7 @@ homey app install
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
-- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
+- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -176,11 +175,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `8865aabc9` fix: v3.0.17 - CRITICAL Tuya Cluster Handler Fix for TS0601 Devices - *Dylan Rajasekaram* (10 minutes ago)
-- `1f5e501ed` fix: v3.0.16 - CRITICAL CLUSTER ID FIX for Peter's devices - *Dylan Rajasekaram* (25 minutes ago)
-- `f1a45a404` chore: Organisation complète des fichiers à la racine - *Dylan Rajasekaram* (36 minutes ago)
-- `869b724ed` chore: Organisation complète des fichiers à la racine - *Dylan Rajasekaram* (37 minutes ago)
-- `699272f8c` Update Homey App Version to v3.0.15 - *github-actions[bot]* (71 minutes ago)
+- `0a661c1bb` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (2 minutes ago)
+- `8865aabc9` fix: v3.0.17 - CRITICAL Tuya Cluster Handler Fix for TS0601 Devices - *Dylan Rajasekaram* (11 minutes ago)
+- `d100d0552` Update Homey App Version to v3.0.16 - *github-actions[bot]* (18 minutes ago)
+- `4b8b98807` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (20 minutes ago)
+- `501cfac60` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (20 minutes ago)
 
 ---
 
