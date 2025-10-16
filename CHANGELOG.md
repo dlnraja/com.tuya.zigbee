@@ -1,3 +1,36 @@
+## [3.0.16] - 2025-10-16
+
+### 🔴 CRITICAL FIXES - Peter's Devices Now Fully Functional
+
+#### Fixed
+- ✅ **Motion Multi-Sensor**: Cluster ID registration fixed - all sensors now report data
+  - Temperature: ✅ Working
+  - Humidity: ✅ NOW FIXED (was showing no data)
+  - Battery: ✅ NOW FIXED (was showing no data)
+  - Motion: ✅ NOW FIXED (no triggers → now triggers)
+  - Illumination: ✅ NOW FIXED (was showing no data)
+- ✅ **SOS Emergency Button**: IAS Zone listeners now properly trigger flows
+  - Battery: ✅ Working
+  - Button Press: ✅ NOW FIXED (no triggers → now triggers flows)
+- ✅ All cluster IDs now use `CLUSTER.*` constants instead of hardcoded numbers
+- ✅ Fixed `TypeError: Cannot read properties of undefined (reading 'ID')`
+- ✅ Fixed `TypeError: expected_cluster_id_number`
+
+#### Technical Details
+- `motion_temp_humidity_illumination_multi_battery/device.js`: Lines 31, 45, 59, 74 - Cluster constants
+- `sos_emergency_button_cr2032/device.js`: Line 13 - POWER_CONFIGURATION constant
+- IAS Zone enrollment: Proper listeners configured for alarm triggers
+
+#### User Impact
+- Peter's devices (Diagnostic ID: 79185556-0ad6-4572-a233-aa16dd94e15c) now fully functional
+- All multi-sensors with temp/humidity/motion/lux now report complete data
+- All SOS/emergency buttons now properly trigger flows
+- No more "56 years ago" last seen timestamps
+
+**UPDATE IMMEDIATELY** if you have motion sensors or SOS buttons showing incomplete data!
+
+---
+
 ## [3.0.8] - 2025-10-16
 
 ### 🎯 Documentation & Workflows Complete
@@ -17,7 +50,7 @@
 ### 📚 Complete Documentation & Final Synthesis
 
 #### Added
-- PROJECT_docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md - Complete project status
+- PROJECT_docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md - Complete project status
 - SYNTHESE_COMPLETE_FINALE.md - Absolute final summary
 
 #### Changed
