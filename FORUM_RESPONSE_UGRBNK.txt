@@ -1,0 +1,67 @@
+Hi @ugrbnk! 👋
+
+Thanks for the diagnostic ID! To help you effectively, I need more information:
+
+## 📋 Please Provide:
+
+1. **Which device** is having issues?
+   - Device name/type (e.g., Multi-sensor, SOS button, Smart plug, etc.)
+
+2. **What problem** are you experiencing?
+   - Device not pairing?
+   - Not working correctly?
+   - No readings/triggers?
+   - Other issue?
+
+3. **Which app version** are you using?
+   - Check: Homey App → More → Apps → Universal Tuya Zigbee → Version number
+
+4. **Which instructions** did you follow?
+   - Link or describe what steps you tried
+
+5. **What specifically didn't change?**
+   - Same error message?
+   - Device still not working?
+   - No readings?
+
+## 🔍 Common Issues & Solutions:
+
+### If you're on **v3.0.23 or older**:
+Update to **v3.0.31+** - many critical bugs were fixed in v3.0.26+
+- SOS button triggers ✅
+- Multi-sensor pairing ✅
+- Temperature/humidity/motion readings ✅
+
+### If device won't pair:
+1. Factory reset device properly
+2. Put device VERY close to Homey (<30cm)
+3. Remove any "ghost" devices from Settings → Zigbee
+4. Try pairing again
+
+### If device paired but not working:
+1. Update app to latest version (v3.0.31+)
+2. Remove device
+3. Factory reset
+4. Re-pair close to Homey
+
+## 📊 How to Check Your App Version:
+
+1. Open Homey App
+2. More → Apps
+3. Find "Universal Tuya Zigbee"
+4. Version number is shown
+
+## 🆘 For Better Help, Please Share:
+
+- Device type/model
+- Current app version
+- Exact problem description
+- What you already tried
+- Any error messages
+
+Once I have these details, I can provide specific help! 👍
+
+**Note:** Your diagnostic ID (a063a142-b657-42f0-8f0a-622c8674e53f) has been received, but I need to know which device and what issue to analyze it properly.
+
+Regards,
+Dylan
