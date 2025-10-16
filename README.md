@@ -1,6 +1,6 @@
 # 🏠 Universal Tuya Zigbee
 
-[![Version](https://img.shields.io/badge/version-3.0.23-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![Version](https://img.shields.io/badge/version-3.0.24-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![SDK](https://img.shields.io/badge/SDK-3-green.svg)](https://apps.developer.homey.app)
 [![Homey](https://img.shields.io/badge/Homey->=12.2.0-orange.svg)](https://homey.app)
 [![Drivers](https://img.shields.io/badge/drivers-183-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee/tree/master/drivers)
@@ -16,7 +16,7 @@ Community-maintained Tuya Zigbee app with 183 SDK3 native drivers. 67 drivers en
 Drivers:              183
 SDK Version:          3
 Homey Compatibility:  >=12.2.0
-Version:              3.0.23
+Version:              3.0.24
 Status:               ✅ Active Development
 ```
 
@@ -80,8 +80,7 @@ homey app install
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
-- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
+- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -176,16 +175,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `0220d600c` feat: Complete forum support + Tuya 0xEF00 documentation + Handler v3.1 - *Dylan Rajasekaram* (3 minutes ago)
-- `f0bb0185c` Update Homey App Version to v3.0.23 - *github-actions[bot]* (25 minutes ago)
-- `55ecbd201` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (28 minutes ago)
-- `31126732e` fix: CI workflow - Download artifacts before export - *Dylan Rajasekaram* (30 minutes ago)
-- `63440220c` Update Homey App Version to v3.0.22 - *github-actions[bot]* (33 minutes ago)
-- `0220d600c` feat: Complete forum support + Tuya 0xEF00 documentation + Handler v3.1 - *Dylan Rajasekaram* (11 minutes ago)
-- `f0bb0185c` Update Homey App Version to v3.0.23 - *github-actions[bot]* (33 minutes ago)
-- `55ecbd201` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (35 minutes ago)
-- `31126732e` fix: CI workflow - Download artifacts before export - *Dylan Rajasekaram* (38 minutes ago)
-- `63440220c` Update Homey App Version to v3.0.22 - *github-actions[bot]* (41 minutes ago)
+- `ebbe52105` feat: Diagnostic ugrbnk analyzed + Complete session documentation - *Dylan Rajasekaram* (3 minutes ago)
+- `4e97a0285` Update Homey App Version to v3.0.24 - *github-actions[bot]* (8 minutes ago)
+- `385642fae` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (10 minutes ago)
+- `0220d600c` feat: Complete forum support + Tuya 0xEF00 documentation + Handler v3.1 - *Dylan Rajasekaram* (13 minutes ago)
+- `f0bb0185c` Update Homey App Version to v3.0.23 - *github-actions[bot]* (35 minutes ago)
 
 ---
 
@@ -216,7 +210,7 @@ Based on the original work by **Johan Bendz** and inspired by:
 
 ```
 Last Updated:     2025-10-16
-Version:          3.0.23
+Version:          3.0.24
 Build Status:     ✅ Passing
 Documentation:    ✅ Up to date
 GitHub Actions:   ✅ Active
