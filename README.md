@@ -186,6 +186,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `087e23c37` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (39 minutes ago)
 - `f4e475adf` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (39 minutes ago)
 - `5770ecf0f` fix(critical): Fix cluster ID NaN errors causing device initialization failures - *Dylan Rajasekaram* (41 minutes ago)
+- `4f105e0d2` chore: Organisation complète des fichiers à la racine - *Dylan Rajasekaram* (2 minutes ago)
+- `996503cbf` docs: Session finale 16 Oct 2025 - Complete summary - *Dylan Rajasekaram* (39 minutes ago)
+- `4c0cb01e4` Update Homey App Version to v3.0.14 - *github-actions[bot]* (38 minutes ago)
+- `087e23c37` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (41 minutes ago)
+- `f4e475adf` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (41 minutes ago)
 
 ---
 
