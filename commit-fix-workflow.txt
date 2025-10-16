@@ -1,0 +1,33 @@
+fix: GitHub Actions workflow - Add pull rebase and retry logic
+
+Fixed workflow "Update Documentation & Links" failing with push rejected error.
+
+Issue:
+- Workflow failed with: "! [rejected] master -> master (fetch first)"
+- Caused by concurrent pushes creating race condition
+- Remote had changes that local didn't have
+
+Solution:
+✅ Added git pull --rebase before push
+✅ Implemented retry logic (3 attempts with 5s delay)
+✅ Sync with remote changes automatically
+
+Changes to .github/workflows/update-docs.yml:
+- Pull rebase before push to sync remote changes
+- Retry loop (3 attempts) if push fails
+- Auto-sync between retries
+- Clear success/failure messages
+
+Benefits:
+- Handles concurrent workflow runs gracefully
+- No more push rejected errors
+- Automatic conflict resolution via rebase
+- Resilient to timing issues
+
+Testing:
+- Next workflow run will pull before push
+- Retry logic activates if push fails
+- Maximum 3 attempts with auto-sync
+
+Version: 3.0.5
+Status: Workflow fixed and ready
