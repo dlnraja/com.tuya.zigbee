@@ -2,7 +2,6 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
-const TuyaClusterHandler = require('../../utils/tuya-cluster-handler');
 const IASZoneEnroller = require('../../lib/IASZoneEnroller');
 
 class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
@@ -24,15 +23,8 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
     }
     this.log('========================');
 
-    // Try Tuya cluster first
-    const deviceType = TuyaClusterHandler.detectDeviceType('motion_temp_humidity_illumination_multi_battery');
-    const tuyaInitialized = await TuyaClusterHandler.init(this, zclNode, deviceType);
-    
-    if (tuyaInitialized) {
-      this.log('✅ Tuya cluster initialized');
-    } else {
-      this.log('⚠️ No Tuya cluster found, using standard Zigbee clusters');
-      this.log('Registering standard Zigbee clusters...');
+    // Register standard Zigbee clusters
+    this.log('Registering standard Zigbee clusters...');
       
       // Temperature
       this.registerCapability('measure_temperature', CLUSTER.TEMPERATURE_MEASUREMENT, {
@@ -106,7 +98,6 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
         }
       });
       this.log('✅ Battery capability registered');
-    }
 
     await this.setAvailable();
   }
