@@ -2,7 +2,7 @@
 
 **Generated:** 2025-10-16  
 **Total Drivers:** 183  
-**App Version:** 2.15.133
+**App Version:** 3.0.0
 
 ---
 
@@ -235,4 +235,4 @@ Device missing? [Request Support](https://github.com/dlnraja/com.tuya.zigbee/iss
 
 ---
 
-**Last Updated:** 2025-10-16T10:55:07.199Z
+**Last Updated:** 2025-10-16T11:05:41.569Z
