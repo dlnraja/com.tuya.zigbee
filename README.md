@@ -1,6 +1,6 @@
 # 🏠 Universal Tuya Zigbee
 
-[![Version](https://img.shields.io/badge/version-2.15.132-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![Version](https://img.shields.io/badge/version-2.15.133-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![SDK](https://img.shields.io/badge/SDK-3-green.svg)](https://apps.developer.homey.app)
 [![Homey](https://img.shields.io/badge/Homey->=12.2.0-orange.svg)](https://homey.app)
 [![Drivers](https://img.shields.io/badge/drivers-183-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee/tree/master/drivers)
@@ -16,7 +16,7 @@ Community-maintained Tuya Zigbee app with 183 SDK3 native drivers. Based on Joha
 Drivers:              183
 SDK Version:          3
 Homey Compatibility:  >=12.2.0
-Version:              2.15.132
+Version:              2.15.133
 Status:               ✅ Active Development
 ```
 
@@ -124,7 +124,8 @@ tuya_repair/
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
+- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
+- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -219,16 +220,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `6341e2178` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (12 minutes ago)
-- `e15bb9a19` Feature: Systeme complet mise a jour automatique (README + liens + CHANGELOG + GitHub Actions) - *Dylan Rajasekaram* (13 minutes ago)
-- `cbf253384` Update Homey App Version to v2.15.132 - *github-actions[bot]* (24 minutes ago)
-- `51a37e7ea` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (26 minutes ago)
-- `122098fd0` Docs: Organisation complete projet (docs/ + scripts/ structure propre) - *Dylan Rajasekaram* (27 minutes ago)
-- `6341e2178` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (53 seconds ago)
-- `e15bb9a19` Feature: Systeme complet mise a jour automatique (README + liens + CHANGELOG + GitHub Actions) - *Dylan Rajasekaram* (2 minutes ago)
-- `cbf253384` Update Homey App Version to v2.15.132 - *github-actions[bot]* (12 minutes ago)
-- `51a37e7ea` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (14 minutes ago)
-- `122098fd0` Docs: Organisation complete projet (docs/ + scripts/ structure propre) - *Dylan Rajasekaram* (15 minutes ago)
+- `d42ffda05` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (3 minutes ago)
+- `02850e640` Docs: Integration forum - Support Tuya Zigbee Local + Smart Plugs FAQ (sans cloud, 100% local) - *Dylan Rajasekaram* (6 minutes ago)
+- `41a48da79` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (18 minutes ago)
+- `6341e2178` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (19 minutes ago)
+- `e15bb9a19` Feature: Systeme complet mise a jour automatique (README + liens + CHANGELOG + GitHub Actions) - *Dylan Rajasekaram* (19 minutes ago)
 
 ---
 
@@ -259,7 +255,7 @@ Based on the original work by **Johan Bendz** and inspired by:
 
 ```
 Last Updated:     2025-10-16
-Version:          2.15.132
+Version:          2.15.133
 Build Status:     ✅ Passing
 Documentation:    ✅ Up to date
 GitHub Actions:   ✅ Active
