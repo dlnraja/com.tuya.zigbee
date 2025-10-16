@@ -1,6 +1,6 @@
 # 🏠 Universal Tuya Zigbee
 
-[![Version](https://img.shields.io/badge/version-3.0.14-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![Version](https://img.shields.io/badge/version-3.0.16-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![SDK](https://img.shields.io/badge/SDK-3-green.svg)](https://apps.developer.homey.app)
 [![Homey](https://img.shields.io/badge/Homey->=12.2.0-orange.svg)](https://homey.app)
 [![Drivers](https://img.shields.io/badge/drivers-183-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee/tree/master/drivers)
@@ -16,7 +16,7 @@ Community-maintained Tuya Zigbee app with 183 SDK3 native drivers. 67 drivers en
 Drivers:              183
 SDK Version:          3
 Homey Compatibility:  >=12.2.0
-Version:              3.0.14
+Version:              3.0.16
 Status:               ✅ Active Development
 ```
 
@@ -65,12 +65,13 @@ homey app install
 
 ## 🔄 Recent Updates
 
-### Version 3.0.8 - 2025-10-16
+### Version 3.0.16 - 2025-10-16
 
-- SYNTHESE_COMPLETE_FINALE.md - Complete session summary
-- Memory saved with full session recap
-- All GitHub Actions workflows now resilient with concurrency control
-- No more push rejected errors
+- ✅ **Motion Multi-Sensor**: Cluster ID registration fixed - all sensors now report data
+- ✅ **SOS Emergency Button**: IAS Zone listeners now properly trigger flows
+- ✅ All cluster IDs now use `CLUSTER.*` constants instead of hardcoded numbers
+- ✅ Fixed `TypeError: Cannot read properties of undefined (reading 'ID')`
+- ✅ Fixed `TypeError: expected_cluster_id_number`
 
 **Full changelog:** [CHANGELOG.md](CHANGELOG.md)
 
@@ -191,6 +192,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `4c0cb01e4` Update Homey App Version to v3.0.14 - *github-actions[bot]* (38 minutes ago)
 - `087e23c37` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (41 minutes ago)
 - `f4e475adf` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (41 minutes ago)
+- `553df8dac` chore: Organisation complète des fichiers à la racine - *Dylan Rajasekaram* (11 minutes ago)
+- `4f105e0d2` chore: Organisation complète des fichiers à la racine - *Dylan Rajasekaram* (12 minutes ago)
+- `996503cbf` docs: Session finale 16 Oct 2025 - Complete summary - *Dylan Rajasekaram* (50 minutes ago)
+- `4c0cb01e4` Update Homey App Version to v3.0.14 - *github-actions[bot]* (49 minutes ago)
+- `087e23c37` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (51 minutes ago)
 
 ---
 
@@ -221,7 +227,7 @@ Based on the original work by **Johan Bendz** and inspired by:
 
 ```
 Last Updated:     2025-10-16
-Version:          3.0.14
+Version:          3.0.16
 Build Status:     ✅ Passing
 Documentation:    ✅ Up to date
 GitHub Actions:   ✅ Active
