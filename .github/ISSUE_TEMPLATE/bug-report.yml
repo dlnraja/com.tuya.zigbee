@@ -1,0 +1,158 @@
+name: 🐛 Bug Report
+description: Report a bug or issue with an existing driver
+title: "[Bug] "
+labels: ["bug", "needs-triage"]
+assignees:
+  - dlnraja
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Thank you for reporting!
+        
+        Please provide as much detail as possible to help us fix the issue quickly.
+        
+        **Before submitting:**
+        - Check if the issue is already reported
+        - Try updating to the latest app version
+        - Verify your Homey firmware is up to date
+
+  - type: input
+    id: app-version
+    attributes:
+      label: App Version
+      description: Which version of Universal Tuya Zigbee are you using?
+      placeholder: ex. 3.0.26
+    validations:
+      required: true
+
+  - type: input
+    id: homey-version
+    attributes:
+      label: Homey Version
+      description: Your Homey firmware version
+      placeholder: ex. 12.8.0
+    validations:
+      required: true
+
+  - type: input
+    id: device-name
+    attributes:
+      label: Device Name
+      description: Which device is affected?
+      placeholder: ex. MOES Smart Plug, Tuya Motion Sensor
+    validations:
+      required: true
+
+  - type: input
+    id: driver-name
+    attributes:
+      label: Driver Name
+      description: Name of the driver in the app
+      placeholder: ex. smart_plug_ac, motion_sensor_battery
+    validations:
+      required: true
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Bug Description
+      description: Clear description of what's wrong
+      placeholder: |
+        The motion sensor doesn't trigger flows anymore after Homey restart.
+        It was working fine before.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: What should happen?
+      placeholder: |
+        Motion sensor should trigger "Motion detected" flow card when motion is detected.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: What actually happens?
+      placeholder: |
+        Flow card doesn't trigger. Device shows as online but no motion events.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce this issue?
+      placeholder: |
+        1. Pair motion sensor
+        2. Create flow with "Motion detected" trigger
+        3. Restart Homey
+        4. Trigger motion → nothing happens
+    validations:
+      required: true
+
+  - type: input
+    id: diagnostic-id
+    attributes:
+      label: Diagnostic Report ID
+      description: If you sent a diagnostic report, paste the ID here
+      placeholder: ex. 6c8e96e2-06b1-4c1e-aa45-ed47923a71f2
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant Logs
+      description: Copy logs from Homey Developer Tools (if available)
+      placeholder: |
+        2025-10-16T10:00:00.000Z [err] Device error: ...
+      render: shell
+    validations:
+      required: false
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How Often Does This Happen?
+      options:
+        - Always (100%)
+        - Often (>50%)
+        - Sometimes (<50%)
+        - Rarely
+        - Only once
+    validations:
+      required: true
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Workaround
+      description: Have you found any temporary solution?
+      placeholder: |
+        Removing and re-pairing the device fixes it temporarily.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched for similar issues
+          required: true
+        - label: I have updated to the latest app version
+          required: true
+        - label: I have restarted Homey
+          required: false
+        - label: I have tried re-pairing the device
+          required: false
+        - label: I can provide more logs if needed
+          required: false
