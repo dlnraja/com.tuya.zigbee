@@ -1,4 +1,4 @@
-# 🎉 RAPPORT FINAL - DÉPLOIEMENT COMPLET v2.15.98
+﻿# 🎉 RAPPORT FINAL - DÉPLOIEMENT COMPLET v2.15.98
 
 **Date:** 2025-01-15  
 **Version:** 2.15.98  
@@ -423,7 +423,7 @@ chore: Resolve merge conflict - v2.15.98
 
 ### Contact
 - **Développeur:** Dylan L.N. Raja
-- **Email:** senetmarne@gmail.com
+- **Email:** dylan.rajasekaram@gmail.com
 - **GitHub:** @dlnraja
 
 ---
