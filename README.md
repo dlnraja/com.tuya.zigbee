@@ -225,6 +225,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `8a0859110` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (14 minutes ago)
 - `d2d407452` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (14 minutes ago)
 - `32912e4fa` Docs: Roadmap ameliorations (Device Capabilities + Philips Hue + Aqara + SONOFF best practices) - *Dylan Rajasekaram* (17 minutes ago)
+- `bf6d30b77` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (44 seconds ago)
+- `f9af75caa` Implementation: Phase 1-4 base structure (FlowCardManager, VirtualCapabilities, DeviceHealth, ManufacturerDB) - *Dylan Rajasekaram* (2 minutes ago)
+- `8a0859110` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (9 minutes ago)
+- `d2d407452` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (9 minutes ago)
+- `32912e4fa` Docs: Roadmap ameliorations (Device Capabilities + Philips Hue + Aqara + SONOFF best practices) - *Dylan Rajasekaram* (12 minutes ago)
 
 ---
 
