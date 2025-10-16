@@ -20,10 +20,17 @@
 - ✅ Script `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` créé pour régénération
 - ✅ Script `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` créé pour régénération
 - ✅ Script `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` créé pour régénération
+- ✅ Script `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` créé pour régénération
+- ✅ Script `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` créé pour régénération
+- ✅ Script `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` créé pour régénération
+- ✅ Script `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` créé pour régénération
+- ✅ Script `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` créé pour régénération
 - ✅ Script `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` créé pour régénération
 - ✅ Script `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` créé pour régénération
 - ✅ Script `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` créé pour régénération
 - ✅ Script `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` créé pour régénération
+- ✅ Script `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` créé pour régénération
+- ✅ Script `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` créé pour régénération
 
 ### 3. Workflow GitHub Actions
 - ✅ Workflow officielhomey-official-publish.yml` configuré
@@ -63,6 +70,26 @@
 - ✅ `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/FINAL_CLEANUP.js` - Nettoyage projet
 - ✅ `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix automatique
 - ✅ `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction titleFormatted
+- ✅ `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push avec auth native Windsurf
+- ✅ `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/FINAL_CLEANUP.js` - Nettoyage projet
+- ✅ `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix automatique
+- ✅ `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction titleFormatted
+- ✅ `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push avec auth native Windsurf
+- ✅ `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/FINAL_CLEANUP.js` - Nettoyage projet
+- ✅ `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix automatique
+- ✅ `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction titleFormatted
+- ✅ `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push avec auth native Windsurf
+- ✅ `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/FINAL_CLEANUP.js` - Nettoyage projet
+- ✅ `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix automatique
+- ✅ `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction titleFormatted
+- ✅ `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push avec auth native Windsurf
+- ✅ `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/FINAL_CLEANUP.js` - Nettoyage projet
+- ✅ `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix automatique
+- ✅ `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction titleFormatted
+- ✅ `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push avec auth native Windsurf
+- ✅ `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/FINAL_CLEANUP.js` - Nettoyage projet
+- ✅ `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix automatique
+- ✅ `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction titleFormatted
 - ✅ `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push avec auth native Windsurf
 - ✅ `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/FINAL_CLEANUP.js` - Nettoyage projet
 - ✅ `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix automatique
@@ -79,6 +106,14 @@
 - ✅ `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/FINAL_CLEANUP.js` - Nettoyage projet
 - ✅ `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix automatique
 - ✅ `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction titleFormatted
+- ✅ `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push avec auth native Windsurf
+- ✅ `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/FINAL_CLEANUP.js` - Nettoyage projet
+- ✅ `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix automatique
+- ✅ `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction titleFormatted
+- ✅ `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push avec auth native Windsurf
+- ✅ `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/FINAL_CLEANUP.js` - Nettoyage projet
+- ✅ `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix automatique
+- ✅ `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction titleFormatted
 
 ---
 
@@ -181,6 +216,21 @@ Expliquer conflit SDK3 images APP vs drivers
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Instructions si publish réussit
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_MANUELLE_REQUISE.md` - Guide publication manuelle
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Ce document
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Instructions si publish réussit
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_MANUELLE_REQUISE.md` - Guide publication manuelle
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Ce document
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Instructions si publish réussit
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_MANUELLE_REQUISE.md` - Guide publication manuelle
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Ce document
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Instructions si publish réussit
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_MANUELLE_REQUISE.md` - Guide publication manuelle
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Ce document
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Instructions si publish réussit
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_MANUELLE_REQUISE.md` - Guide publication manuelle
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Ce document
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Instructions si publish réussit
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_MANUELLE_REQUISE.md` - Guide publication manuelle
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Ce document
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Instructions si publish réussit
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_MANUELLE_REQUISE.md` - Guide publication manuelle
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Ce document
@@ -193,6 +243,12 @@ Expliquer conflit SDK3 images APP vs drivers
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Instructions si publish réussit
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_MANUELLE_REQUISE.md` - Guide publication manuelle
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Ce document
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Instructions si publish réussit
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_MANUELLE_REQUISE.md` - Guide publication manuelle
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Ce document
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Instructions si publish réussit
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_MANUELLE_REQUISE.md` - Guide publication manuelle
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Ce document
 
 ### Scripts:
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Régénère images APP
@@ -219,6 +275,21 @@ Expliquer conflit SDK3 images APP vs drivers
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Régénère images APP
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push avec auth native
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix automatique complet
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Régénère images APP
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push avec auth native
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix automatique complet
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Régénère images APP
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push avec auth native
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix automatique complet
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Régénère images APP
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push avec auth native
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix automatique complet
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Régénère images APP
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push avec auth native
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix automatique complet
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Régénère images APP
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push avec auth native
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix automatique complet
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Régénère images APP
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push avec auth native
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix automatique complet
@@ -231,6 +302,12 @@ Expliquer conflit SDK3 images APP vs drivers
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Régénère images APP
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push avec auth native
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix automatique complet
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Régénère images APP
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push avec auth native
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix automatique complet
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Régénère images APP
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push avec auth native
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix automatique complet
 
 ### Fixes Device:
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/URGENT_FIX_COMPLETE.js` - Restoration device.js
@@ -249,6 +326,16 @@ Expliquer conflit SDK3 images APP vs drivers
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_TITLEFORMATTED.js` - Correction flows
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/URGENT_FIX_COMPLETE.js` - Restoration device.js
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_TITLEFORMATTED.js` - Correction flows
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/URGENT_FIX_COMPLETE.js` - Restoration device.js
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_TITLEFORMATTED.js` - Correction flows
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/URGENT_FIX_COMPLETE.js` - Restoration device.js
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_TITLEFORMATTED.js` - Correction flows
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/URGENT_FIX_COMPLETE.js` - Restoration device.js
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_TITLEFORMATTED.js` - Correction flows
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/URGENT_FIX_COMPLETE.js` - Restoration device.js
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_TITLEFORMATTED.js` - Correction flows
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/URGENT_FIX_COMPLETE.js` - Restoration device.js
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_TITLEFORMATTED.js` - Correction flows
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/URGENT_FIX_COMPLETE.js` - Restoration device.js
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_TITLEFORMATTED.js` - Correction flows
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/URGENT_FIX_COMPLETE.js` - Restoration device.js
@@ -257,6 +344,10 @@ Expliquer conflit SDK3 images APP vs drivers
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_TITLEFORMATTED.js` - Correction flows
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/URGENT_FIX_COMPLETE.js` - Restoration device.js
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_TITLEFORMATTED.js` - Correction flows
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/URGENT_FIX_COMPLETE.js` - Restoration device.js
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_TITLEFORMATTED.js` - Correction flows
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/URGENT_FIX_COMPLETE.js` - Restoration device.js
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_TITLEFORMATTED.js` - Correction flows
 
 ---
 
