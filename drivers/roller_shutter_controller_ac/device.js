@@ -26,7 +26,7 @@ class RollerShutterControllerDevice extends ZigBeeDevice {
 
     // Battery reporting
     if (this.hasCapability('alarm_battery')) {
-      this.registerCapability('alarm_battery', CLUSTER.POWER_CONFIGURATION, {
+      this.registerCapability('alarm_battery', 1, {
         get: 'batteryPercentageRemaining',
         report: 'batteryPercentageRemaining',
         getOpts: {

@@ -36,7 +36,7 @@ class SceneControllerDevice extends ZigBeeDevice {
     // Battery
     if (this.hasCapability('measure_battery')) {
       try {
-        this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
+        this.registerCapability('measure_battery', 1, {
           get: 'batteryPercentageRemaining',
           report: 'batteryPercentageRemaining',
           reportParser: value => { this.log('Battery raw value:', value); // Smart calculation: check if value is already 0-100 or 0-200 if (value <= 100) { return Math.max(0, Math.min(100, value)); } else { return Math.max(0, Math.min(100, value / 2)); } },
