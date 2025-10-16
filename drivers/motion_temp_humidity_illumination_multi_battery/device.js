@@ -79,37 +79,18 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
       // Motion IAS Zone
       this.log('🚶 Setting up Motion IAS Zone...');
       try {
-        await IASZoneEnroller.enroll(this, zclNode);
-        
-        this.registerCapability('alarm_motion', CLUSTER.IAS_ZONE, {
-          get: 'zoneStatus',
-          report: 'zoneStatus',
-          reportParser: value => {
-            this.log('Motion IAS Zone status:', value);
-            return value.alarm1;
-          }
+        const endpoint = zclNode.endpoints[1];
+        const enroller = new IASZoneEnroller(this, endpoint, {
+          zoneType: 13, // Motion sensor
+          capability: 'alarm_motion',
+          pollInterval: 60000,
+          autoResetTimeout: 60000 // Auto-reset after 60s
         });
-        
-        // Listen for zone status change notifications
-        zclNode.endpoints[1].clusters.iasZone.on('zoneStatusChangeNotification', data => {
-          this.log('Motion detected! Zone status:', data);
-          this.setCapabilityValue('alarm_motion', data.zoneStatus.alarm1).catch(this.error);
-        });
-        
-        this.log('✅ Motion IAS Zone registered with notification listener');
+        const method = await enroller.enroll(zclNode);
+        this.log(`✅ Motion IAS Zone enrolled via: ${method}`);
       } catch (err) {
         this.error('IAS Zone enrollment failed:', err);
-        this.log('Device may auto-enroll or require manual pairing');
-        
-        // Still register the capability
-        this.registerCapability('alarm_motion', CLUSTER.IAS_ZONE, {
-          get: 'zoneStatus',
-          report: 'zoneStatus',
-          reportParser: value => {
-            return value.alarm1;
-          }
-        });
-        this.log('✅ Motion IAS Zone registered with notification listener');
+        this.log('⚠️ Device may auto-enroll or work without explicit enrollment');
       }
       
       // Battery
