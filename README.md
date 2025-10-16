@@ -80,7 +80,8 @@ homey app install
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
+- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
+- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -180,6 +181,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `e292f628f` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (9 minutes ago)
 - `640298e96` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (11 minutes ago)
 - `ebbe52105` feat: Diagnostic ugrbnk analyzed + Complete session documentation - *Dylan Rajasekaram* (14 minutes ago)
+- `dc952643a` feat: Complete scraping system - 18 official sources implemented - *Dylan Rajasekaram* (8 minutes ago)
+- `717d4cb80` Update Homey App Version to v3.0.25 - *github-actions[bot]* (13 minutes ago)
+- `e292f628f` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (15 minutes ago)
+- `640298e96` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (17 minutes ago)
+- `ebbe52105` feat: Diagnostic ugrbnk analyzed + Complete session documentation - *Dylan Rajasekaram* (20 minutes ago)
 
 ---
 

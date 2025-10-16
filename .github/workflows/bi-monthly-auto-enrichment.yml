@@ -36,24 +36,52 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Scrape Zigbee2MQTT Database
+      - name: 🌐 Scrape All 18 Official Sources (Master)
+        run: node scripts/automation/scrapers/scrape-all-sources.js
+        continue-on-error: true
+        
+      - name: 1️⃣ Tuya IoT Platform
+        run: node scripts/automation/scrapers/scrape-tuya-iot.js
+        continue-on-error: true
+
+      - name: 2️⃣-3️⃣ Tuya Documentation (Gateway + Standards)
+        run: echo "Included in Tuya IoT scraper"
+        continue-on-error: true
+
+      - name: 4️⃣-5️⃣ Zigbee2MQTT (Converters + Database)
         run: node scripts/automation/scrapers/scrape-zigbee2mqtt.js
         continue-on-error: true
 
-      - name: Scrape Home Assistant ZHA
-        run: node scripts/automation/scrapers/scrape-home-assistant-zha.js
+      - name: 6️⃣ Home Assistant ZHA Quirks
+        run: node scripts/automation/scrapers/scrape-zha.js
         continue-on-error: true
 
-      - name: Scrape Blakadder Database
+      - name: 7️⃣ deCONZ REST Plugin
+        run: node scripts/automation/scrapers/scrape-deconz.js
+        continue-on-error: true
+
+      - name: 8️⃣ Blakadder Zigbee Database
         run: node scripts/automation/scrapers/scrape-blakadder.js
         continue-on-error: true
 
-      - name: Scrape Johan Bendz GitHub
+      - name: 9️⃣ Homey Community Forum
+        run: node scripts/automation/scrapers/scrape-homey-forum.js
+        continue-on-error: true
+
+      - name: 🔟 Johan Bendz Repository
         run: node scripts/automation/scrapers/scrape-johan-bendz.js
         continue-on-error: true
 
-      - name: Scrape Tuya IoT Documentation
-        run: node scripts/automation/scrapers/scrape-tuya-docs.js
+      - name: 1️⃣1️⃣-1️⃣3️⃣ Zigbee Alliance Specifications
+        run: node scripts/automation/scrapers/scrape-zigbee-alliance.js
+        continue-on-error: true
+
+      - name: 1️⃣4️⃣ Zigbee Herdsman Converters
+        run: node scripts/automation/scrapers/scrape-herdsman.js
+        continue-on-error: true
+
+      - name: 1️⃣5️⃣-1️⃣8️⃣ Additional Sources (Dev Tools, Sniffer, Node-RED, Reverse Engineering)
+        run: echo "Included in Master scraper"
         continue-on-error: true
 
       - name: Update Manufacturer IDs Database
