@@ -23,7 +23,7 @@ class WaterLeakDetectorAdvancedDevice extends ZigBeeDevice {
 
     // Battery capabilities
     if (this.hasCapability('alarm_battery')) {
-      this.registerCapability('alarm_battery', CLUSTER.POWER_CONFIGURATION, {
+      this.registerCapability('alarm_battery', 1, {
         get: 'batteryPercentageRemaining',
         report: 'batteryPercentageRemaining',
         reportParser: value => value < 20
@@ -31,7 +31,7 @@ class WaterLeakDetectorAdvancedDevice extends ZigBeeDevice {
     }
 
     if (this.hasCapability('measure_battery')) {
-      this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
+      this.registerCapability('measure_battery', 1, {
         get: 'batteryPercentageRemaining',
         report: 'batteryPercentageRemaining', 
         reportParser: value => Math.max(0, Math.min(100, value))

@@ -28,7 +28,7 @@ class AlarmSirenChimeAcDevice extends ZigBeeDevice {
     // alarm_generic
     if (this.hasCapability('alarm_generic')) {
       try {
-        this.registerCapability('alarm_generic', CLUSTER.IAS_ZONE, {
+        this.registerCapability('alarm_generic', 1280, {
       zoneType: 'alarm',
       get: 'zoneStatus',
       report: 'zoneStatus'
