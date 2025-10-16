@@ -239,7 +239,21 @@ function main() {
   updateChangelog();
   console.log('');
   
+  // 4. Générer la liste des drivers
+  console.log('📱 Generating drivers list...');
+  try {
+    const { execSync } = require('child_process');
+    execSync('node scripts/automation/generate-drivers-list.js', { 
+      cwd: ROOT,
+      stdio: 'inherit' 
+    });
+  } catch (error) {
+    console.log('⚠️  Could not generate drivers list:', error.message);
+  }
+  console.log('');
+  
   console.log('✅ ALL LINKS AND PATHS UPDATED!');
+  console.log('✅ Docs mis à jour!');
 }
 
 main();
