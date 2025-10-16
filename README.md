@@ -176,11 +176,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `1f5e501ed` fix: v3.0.16 - CRITICAL CLUSTER ID FIX for Peter's devices - *Dylan Rajasekaram* (16 minutes ago)
-- `f1a45a404` chore: Organisation complète des fichiers à la racine - *Dylan Rajasekaram* (26 minutes ago)
-- `869b724ed` chore: Organisation complète des fichiers à la racine - *Dylan Rajasekaram* (27 minutes ago)
-- `699272f8c` Update Homey App Version to v3.0.15 - *github-actions[bot]* (61 minutes ago)
-- `ff9249641` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (63 minutes ago)
+- `8865aabc9` fix: v3.0.17 - CRITICAL Tuya Cluster Handler Fix for TS0601 Devices - *Dylan Rajasekaram* (10 minutes ago)
+- `1f5e501ed` fix: v3.0.16 - CRITICAL CLUSTER ID FIX for Peter's devices - *Dylan Rajasekaram* (25 minutes ago)
+- `f1a45a404` chore: Organisation complète des fichiers à la racine - *Dylan Rajasekaram* (36 minutes ago)
+- `869b724ed` chore: Organisation complète des fichiers à la racine - *Dylan Rajasekaram* (37 minutes ago)
+- `699272f8c` Update Homey App Version to v3.0.15 - *github-actions[bot]* (71 minutes ago)
 
 ---
 
