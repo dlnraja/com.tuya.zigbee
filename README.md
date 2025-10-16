@@ -181,6 +181,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `ad631f391` feat: MEGA IMPLEMENTATION Sprints 2-4 - README refonte + CONTRIBUTING.md + automation - *Dylan Rajasekaram* (17 minutes ago)
 - `fbf1f51ba` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (25 minutes ago)
 - `5f3969373` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (26 minutes ago)
+- `37a8ae1f6` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (47 seconds ago)
+- `ad631f391` feat: MEGA IMPLEMENTATION Sprints 2-4 - README refonte + CONTRIBUTING.md + automation - *Dylan Rajasekaram* (2 minutes ago)
+- `fbf1f51ba` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (10 minutes ago)
+- `5f3969373` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (11 minutes ago)
+- `d8d3f6ad1` fix: Update GitHub Actions workflows to use upload-artifact@v4 - *Dylan Rajasekaram* (12 minutes ago)
 
 ---
 
