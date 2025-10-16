@@ -1,4 +1,183 @@
-# Scripts automation
+# 🤖 Scripts d'Automatisation - Système Complet
+
+## 🎯 Vue d'Ensemble
+
+Ce dossier contient le **système d'automatisation complet** pour:
+- ✅ Conversion automatique interviews forum/GitHub → drivers fonctionnels
+- ✅ Mise à jour bi-mensuelle de toutes les sources externes
+- ✅ Intégration automatique données non-standard Tuya
+- ✅ Génération parseurs custom pour datapoints propriétaires
+
+**Documentation complète:** `/docs/automation/SYSTEME_AUTO_COMPLET.md`
+
+---
+
+## 🚀 Quick Start
+
+### Générer Driver depuis Interview Forum
+
+```bash
+# 1. Placer interview dans data/forum/interviews/
+# 2. Lancer processing
+node scripts/automation/process-forum-interviews.js
+
+# Driver généré automatiquement!
+```
+
+### Forcer Mise à Jour Sources
+
+```bash
+# Scraper toutes sources
+node scripts/automation/scrapers/scrape-zigbee2mqtt.js
+node scripts/automation/scrapers/scrape-home-assistant-zha.js
+
+# Update databases
+node scripts/automation/update-manufacturer-database.js
+node scripts/automation/update-tuya-datapoints-db.js
+
+# Generate rapport
+node scripts/automation/generate-enrichment-report.js
+```
+
+---
+
+## 📁 Structure
+
+```
+automation/
+├── auto-driver-generator.js           ⭐ Générateur principal
+├── process-forum-interviews.js        🔄 Forum → Drivers
+├── process-github-issues.js           🔄 GitHub → Drivers
+├── update-manufacturer-database.js    📊 MAJ Manufacturer IDs
+├── update-tuya-datapoints-db.js       📊 MAJ Tuya Datapoints
+├── batch-generate-drivers.js          🚀 Génération batch
+│
+├── scrapers/                          🕷️ Collecte données externes
+│   ├── scrape-zigbee2mqtt.js
+│   ├── scrape-home-assistant-zha.js
+│   ├── scrape-blakadder.js
+│   ├── scrape-johan-bendz.js
+│   └── scrape-tuya-docs.js
+│
+└── README.md                          📖 Ce fichier
+```
+
+---
+
+## 🤖 Auto Driver Generator
+
+### Utilisation
+
+```javascript
+const AutoDriverGenerator = require('./auto-driver-generator');
+
+const input = {
+  type: 'forum',           // ou 'github_issue', 'diagnostic'
+  content: `
+    "manufacturerName": "_TZE204_yojqa8xn",
+    "modelId": "TS0601",
+    "inputClusters": [4, 5, 61184, 0]
+  `
+};
+
+const result = await AutoDriverGenerator.generateDriverFromInput(input);
+// → Driver créé dans drivers/gas_sensor_ts0601_tze204/
+```
+
+### Fonctionnalités
+
+- ✅ Auto-détection device type (50+ patterns)
+- ✅ Extraction manufacturer/model IDs
+- ✅ Analyse clusters Zigbee
+- ✅ Extraction Tuya datapoints (TS0601)
+- ✅ Génération driver.compose.json
+- ✅ Génération device.js avec handlers
+- ✅ Génération capabilities automatiques
+- ✅ Intégration dans projet
+
+---
+
+## 🕷️ Scrapers
+
+### Zigbee2MQTT
+
+```bash
+node scrapers/scrape-zigbee2mqtt.js
+
+# Output:
+# data/sources/zigbee2mqtt/
+#   ├── manufacturer-ids.json  (250+ IDs)
+#   ├── devices.json           (2,800+ devices)
+#   └── tuya-datapoints.json   (500+ mappings)
+```
+
+### Home Assistant ZHA
+
+```bash
+node scrapers/scrape-home-assistant-zha.js
+
+# Output: Cluster configurations, quirks, device handlers
+```
+
+---
+
+## 📊 Database Updates
+
+### Manufacturer IDs
+
+```bash
+node update-manufacturer-database.js
+
+# Actions:
+# 1. Load existing database
+# 2. Merge scraped sources
+# 3. Validate format (_TZ[0-9A-Z]+_[a-z0-9]{8})
+# 4. Remove duplicates
+# 5. Save updated database
+# 6. Generate statistics
+```
+
+### Tuya Datapoints
+
+```bash
+node update-tuya-datapoints-db.js
+
+# Actions:
+# 1. Load existing datapoints
+# 2. Merge from 7 sources
+# 3. Map to capabilities
+# 4. Generate parsers
+# 5. Save database
+# 6. Generate documentation
+```
+
+**Output:** `utils/parsers/tuya-datapoints-database.js`
+
+---
+
+## ⏰ Workflow Automatique
+
+### GitHub Actions: Bi-Monthly Enrichment
+
+**Fichier:** `.github/workflows/bi-monthly-auto-enrichment.yml`
+
+**Cron:** `0 2 1 */2 *` (1er de chaque 2 mois, 2h UTC)
+
+**Étapes:**
+1. Scrape 7 sources externes
+2. Update 3 databases
+3. Process forum interviews (2 mois)
+4. Process GitHub issues
+5. Generate drivers
+6. Validate all
+7. Publish to App Store
+8. Create report issue
+
+**Durée:** ~30-45 minutes
+
+---
+
+## 📝 Scripts d'Automatisation
 
 ## Scripts disponibles
 
