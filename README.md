@@ -225,6 +225,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `02850e640` Docs: Integration forum - Support Tuya Zigbee Local + Smart Plugs FAQ (sans cloud, 100% local) - *Dylan Rajasekaram* (11 minutes ago)
 - `41a48da79` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (22 minutes ago)
 - `6341e2178` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (23 minutes ago)
+- `d42ffda05` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (43 seconds ago)
+- `02850e640` Docs: Integration forum - Support Tuya Zigbee Local + Smart Plugs FAQ (sans cloud, 100% local) - *Dylan Rajasekaram* (4 minutes ago)
+- `41a48da79` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (15 minutes ago)
+- `6341e2178` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (16 minutes ago)
+- `e15bb9a19` Feature: Systeme complet mise a jour automatique (README + liens + CHANGELOG + GitHub Actions) - *Dylan Rajasekaram* (17 minutes ago)
 
 ---
 
