@@ -1,0 +1,111 @@
+{
+  "actions": [
+    {
+      "id": "set_thermostat_mode",
+      "title": {
+        "en": "Set mode",
+        "fr": "Définir mode"
+      },
+      "titleFormatted": {
+        "en": "Set mode to [[mode]]",
+        "fr": "Définir mode à [[mode]]"
+      },
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=climate_monitor_cr2032"
+        },
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          },
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto",
+                "fr": "Auto"
+              }
+            },
+            {
+              "id": "heat",
+              "label": {
+                "en": "Heat",
+                "fr": "Chauffage"
+              }
+            },
+            {
+              "id": "cool",
+              "label": {
+                "en": "Cool",
+                "fr": "Refroidissement"
+              }
+            },
+            {
+              "id": "off",
+              "label": {
+                "en": "Off",
+                "fr": "Arrêt"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "mode_is",
+      "title": {
+        "en": "Mode is...",
+        "fr": "Mode est..."
+      },
+      "titleFormatted": {
+        "en": "Mode !{{is|is not}} [[mode]]",
+        "fr": "Mode !{{est|n'est pas}} [[mode]]"
+      },
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=climate_monitor_cr2032"
+        },
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          },
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto",
+                "fr": "Auto"
+              }
+            },
+            {
+              "id": "heat",
+              "label": {
+                "en": "Heat",
+                "fr": "Chauffage"
+              }
+            },
+            {
+              "id": "cool",
+              "label": {
+                "en": "Cool",
+                "fr": "Refroidissement"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
