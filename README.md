@@ -1,6 +1,6 @@
 # 🏠 Universal Tuya Zigbee
 
-[![Version](https://img.shields.io/badge/version-2.15.133-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![Version](https://img.shields.io/badge/version-3.0.0-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![SDK](https://img.shields.io/badge/SDK-3-green.svg)](https://apps.developer.homey.app)
 [![Homey](https://img.shields.io/badge/Homey->=12.2.0-orange.svg)](https://homey.app)
 [![Drivers](https://img.shields.io/badge/drivers-183-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee/tree/master/drivers)
@@ -16,7 +16,7 @@ Community-maintained Tuya Zigbee app with 183 SDK3 native drivers. Based on Joha
 Drivers:              183
 SDK Version:          3
 Homey Compatibility:  >=12.2.0
-Version:              2.15.133
+Version:              3.0.0
 Status:               ✅ Active Development
 ```
 
@@ -109,13 +109,13 @@ tuya_repair/
 
 ## 🔄 Recent Updates
 
-### Version 2.15.98 - 2025-01-15
+### Version 3.0.0 - 2025-10-16
 
-- **IASZoneEnroller Library** - Multi-method enrollment system with automatic fallback
-- **Comprehensive Documentation**
-- **Motion Sensor** (`motion_temp_humidity_illumination_multi_battery`)
-- **SOS Emergency Button** (`sos_emergency_button_cr2032`)
-- No longer dependent on Homey IEEE address
+- **Complete DP interpretation engine** - Centralized Data Point handling
+- **Fingerprints database** (100+ devices mapped)
+- **Profiles system** (20+ profiles defined)
+- **Capability mapping** (comprehensive DP → Homey conversion)
+- **Reusable converters** (power, temperature, onoff, and more)
 
 **Full changelog:** [CHANGELOG.md](CHANGELOG.md)
 
@@ -124,7 +124,8 @@ tuya_repair/
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
+- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
+- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -224,6 +225,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `495e50e01` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (14 minutes ago)
 - `84b705d80` feat: Professional review implementation - CI/CD, Coverage methodology, Positioning - *Dylan Rajasekaram* (15 minutes ago)
 - `95e51b35c` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (25 minutes ago)
+- `8d1764948` feat: Audit 360Â° Implementation - DP Engine, Local-First, CI Complete - *Dylan Rajasekaram* (16 minutes ago)
+- `be6ff9068` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (26 minutes ago)
+- `495e50e01` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (27 minutes ago)
+- `84b705d80` feat: Professional review implementation - CI/CD, Coverage methodology, Positioning - *Dylan Rajasekaram* (28 minutes ago)
+- `95e51b35c` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (37 minutes ago)
 
 ---
 
@@ -254,7 +260,7 @@ Based on the original work by **Johan Bendz** and inspired by:
 
 ```
 Last Updated:     2025-10-16
-Version:          2.15.133
+Version:          3.0.0
 Build Status:     ✅ Passing
 Documentation:    ✅ Up to date
 GitHub Actions:   ✅ Active
