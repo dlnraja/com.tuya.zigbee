@@ -124,8 +124,7 @@ tuya_repair/
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
-- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
+- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -225,6 +224,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `cbf253384` Update Homey App Version to v2.15.132 - *github-actions[bot]* (24 minutes ago)
 - `51a37e7ea` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (26 minutes ago)
 - `122098fd0` Docs: Organisation complete projet (docs/ + scripts/ structure propre) - *Dylan Rajasekaram* (27 minutes ago)
+- `6341e2178` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (53 seconds ago)
+- `e15bb9a19` Feature: Systeme complet mise a jour automatique (README + liens + CHANGELOG + GitHub Actions) - *Dylan Rajasekaram* (2 minutes ago)
+- `cbf253384` Update Homey App Version to v2.15.132 - *github-actions[bot]* (12 minutes ago)
+- `51a37e7ea` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (14 minutes ago)
+- `122098fd0` Docs: Organisation complete projet (docs/ + scripts/ structure propre) - *Dylan Rajasekaram* (15 minutes ago)
 
 ---
 
