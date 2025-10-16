@@ -124,8 +124,7 @@ tuya_repair/
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
-- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
+- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -220,16 +219,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `bf6d30b77` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (6 minutes ago)
-- `f9af75caa` Implementation: Phase 1-4 base structure (FlowCardManager, VirtualCapabilities, DeviceHealth, ManufacturerDB) - *Dylan Rajasekaram* (7 minutes ago)
-- `8a0859110` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (14 minutes ago)
-- `d2d407452` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (14 minutes ago)
-- `32912e4fa` Docs: Roadmap ameliorations (Device Capabilities + Philips Hue + Aqara + SONOFF best practices) - *Dylan Rajasekaram* (17 minutes ago)
-- `bf6d30b77` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (44 seconds ago)
-- `f9af75caa` Implementation: Phase 1-4 base structure (FlowCardManager, VirtualCapabilities, DeviceHealth, ManufacturerDB) - *Dylan Rajasekaram* (2 minutes ago)
-- `8a0859110` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (9 minutes ago)
-- `d2d407452` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (9 minutes ago)
-- `32912e4fa` Docs: Roadmap ameliorations (Device Capabilities + Philips Hue + Aqara + SONOFF best practices) - *Dylan Rajasekaram* (12 minutes ago)
+- `f036da46b` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (47 seconds ago)
+- `885fe3512` Release: v2.15.133 FINAL - Documentation complete (400KB), Implementation base (67%), Database (100+ devices), Auto-update system, Ready for production - *Dylan Rajasekaram* (9 minutes ago)
+- `14667bfcb` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (14 minutes ago)
+- `bf6d30b77` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (15 minutes ago)
+- `f9af75caa` Implementation: Phase 1-4 base structure (FlowCardManager, VirtualCapabilities, DeviceHealth, ManufacturerDB) - *Dylan Rajasekaram* (16 minutes ago)
 
 ---
 
