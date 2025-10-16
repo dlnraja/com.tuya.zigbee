@@ -79,8 +79,7 @@ homey app install
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
-- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
+- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -175,11 +174,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `ad4b8b1cf` feat: Auto-generated drivers list in README with GitHub Actions - *Dylan Rajasekaram* (7 minutes ago)
-- `8fd775dec` Update Homey App Version to v3.0.13 - *github-actions[bot]* (10 minutes ago)
-- `4286c481f` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (12 minutes ago)
-- `32922b9e4` feat: MEGA ENRICHMENT Plan Complete + Tools Created - *Dylan Rajasekaram* (13 minutes ago)
-- `e4d2707f6` Update Homey App Version to v3.0.12 - *github-actions[bot]* (16 minutes ago)
+- `5770ecf0f` fix(critical): Fix cluster ID NaN errors causing device initialization failures - *Dylan Rajasekaram* (89 seconds ago)
+- `ad4b8b1cf` feat: Auto-generated drivers list in README with GitHub Actions - *Dylan Rajasekaram* (9 minutes ago)
+- `8fd775dec` Update Homey App Version to v3.0.13 - *github-actions[bot]* (11 minutes ago)
+- `4286c481f` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (13 minutes ago)
+- `32922b9e4` feat: MEGA ENRICHMENT Plan Complete + Tools Created - *Dylan Rajasekaram* (15 minutes ago)
 
 ---
 
