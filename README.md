@@ -175,11 +175,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `bd5710952` fix: CRITICAL - IAS Zone enrollment failure (Motion + SOS Button) - *Dylan Rajasekaram* (2 minutes ago)
-- `2aa255c50` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (9 minutes ago)
-- `a2c44af01` fix: Temperature sensor detected as smoke detector + overlap detection system - *Dylan Rajasekaram* (11 minutes ago)
-- `e8d736416` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (18 minutes ago)
-- `e2d2a9953` feat: v3.0.0 Implementation Complete - Audit 360 ChatGPT - *Dylan Rajasekaram* (21 minutes ago)
+- `6ae1bf5db` update - *Dylan Rajasekaram* (37 seconds ago)
+- `c5eb70e5a` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (3 minutes ago)
+- `bd5710952` fix: CRITICAL - IAS Zone enrollment failure (Motion + SOS Button) - *Dylan Rajasekaram* (5 minutes ago)
+- `2aa255c50` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (12 minutes ago)
+- `a2c44af01` fix: Temperature sensor detected as smoke detector + overlap detection system - *Dylan Rajasekaram* (14 minutes ago)
 
 ---
 
