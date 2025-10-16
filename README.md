@@ -175,16 +175,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `9ac66bd13` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (4 minutes ago)
-- `cd1111a0d` feat: MEGA IMPLEMENTATION COMPLETE - All Remaining Phases (Sprints 2-4) - *Dylan Rajasekaram* (4 minutes ago)
-- `703ef0f7e` feat: MEGA IMPLEMENTATION COMPLETE - All Remaining Phases (Sprints 2-4) - *Dylan Rajasekaram* (9 minutes ago)
-- `428b9fd70` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (19 minutes ago)
-- `37a8ae1f6` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (20 minutes ago)
-- `9ac66bd13` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (61 seconds ago)
-- `cd1111a0d` feat: MEGA IMPLEMENTATION COMPLETE - All Remaining Phases (Sprints 2-4) - *Dylan Rajasekaram* (2 minutes ago)
-- `703ef0f7e` feat: MEGA IMPLEMENTATION COMPLETE - All Remaining Phases (Sprints 2-4) - *Dylan Rajasekaram* (6 minutes ago)
-- `428b9fd70` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (16 minutes ago)
-- `37a8ae1f6` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (17 minutes ago)
+- `5278eb987` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (55 seconds ago)
+- `7ce4c6e00` fix: GitHub Actions workflow - Add pull rebase and retry logic - *Dylan Rajasekaram* (2 minutes ago)
+- `d3ab1f705` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (4 minutes ago)
+- `9ac66bd13` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (5 minutes ago)
+- `cd1111a0d` feat: MEGA IMPLEMENTATION COMPLETE - All Remaining Phases (Sprints 2-4) - *Dylan Rajasekaram* (6 minutes ago)
 
 ---
 
