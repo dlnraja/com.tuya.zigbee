@@ -1,6 +1,6 @@
 # 🏠 Universal Tuya Zigbee
 
-[![Version](https://img.shields.io/badge/version-3.0.34-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![Version](https://img.shields.io/badge/version-3.0.35-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![SDK](https://img.shields.io/badge/SDK-3-green.svg)](https://apps.developer.homey.app)
 [![Homey](https://img.shields.io/badge/Homey->=12.2.0-orange.svg)](https://homey.app)
 [![Drivers](https://img.shields.io/badge/drivers-183-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee/tree/master/drivers)
@@ -16,7 +16,7 @@ Community-maintained Tuya Zigbee app with 183 SDK3 native drivers. 67 drivers en
 Drivers:              183
 SDK Version:          3
 Homey Compatibility:  >=12.2.0
-Version:              3.0.34
+Version:              3.0.35
 Status:               ✅ Active Development
 ```
 
@@ -176,11 +176,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `dceb55a85` fix: Replace all CLUSTER constants with numeric IDs - v3.0.35 - *Dylan Rajasekaram* (10 minutes ago)
-- `ae67aa606` docs: Add crash dashboard analysis for v3.0.23 pattern - *Dylan Rajasekaram* (32 minutes ago)
-- `11e279cc8` docs: Add Zigbee Timeout troubleshooting and crash analysis - *Dylan Rajasekaram* (39 minutes ago)
-- `ea14b066c` Update Homey App Version to v3.0.34 - *github-actions[bot]* (39 minutes ago)
-- `04c989295` feat: Complete Industrialization - Cookbook, Profiles, and Final Documentation - *Dylan Rajasekaram* (46 minutes ago)
+- `f8420cc15` docs: Add forum responses for all users with v3.0.35 fix - *Dylan Rajasekaram* (22 minutes ago)
+- `2496946fb` Update Homey App Version to v3.0.35 - *github-actions[bot]* (24 minutes ago)
+- `dceb55a85` fix: Replace all CLUSTER constants with numeric IDs - v3.0.35 - *Dylan Rajasekaram* (30 minutes ago)
+- `ae67aa606` docs: Add crash dashboard analysis for v3.0.23 pattern - *Dylan Rajasekaram* (52 minutes ago)
+- `11e279cc8` docs: Add Zigbee Timeout troubleshooting and crash analysis - *Dylan Rajasekaram* (59 minutes ago)
 
 ---
 
@@ -211,7 +211,7 @@ Based on the original work by **Johan Bendz** and inspired by:
 
 ```
 Last Updated:     2025-10-16
-Version:          3.0.34
+Version:          3.0.35
 Build Status:     ✅ Passing
 Documentation:    ✅ Up to date
 GitHub Actions:   ✅ Active
