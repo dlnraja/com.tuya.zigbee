@@ -55,10 +55,10 @@ v2.15.128 → v2.15.129 (GitHub Actions) ✅
 
 ## 📚 DOCUMENTATION
 
+**Guide Complet:** [`docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md`](docs/workflow/WORKFLOW_GUIDE.md)  
+**Référence Rapide:** [`docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md`](docs/workflow/QUICK_WORKFLOW.md)
 **Guide Complet:** [`docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md`](docs/workflow/WORKFLOW_GUIDE.md)  
 **Référence Rapide:** [`docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md`](docs/workflow/QUICK_WORKFLOW.md)
-**Guide Complet:** [`docs/workflow/docs/workflow/WORKFLOW_GUIDE.md`](docs/workflow/WORKFLOW_GUIDE.md)  
-**Référence Rapide:** [`docs/workflow/docs/workflow/QUICK_WORKFLOW.md`](docs/workflow/QUICK_WORKFLOW.md)
 
 ---
 
