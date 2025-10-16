@@ -75,11 +75,18 @@
       "_TZE204_ijxvkhd0",
       "_TZE204_qasjif9e",
       "_TZE204_sxm7l9xa",
-      "_TZE204_xsm7l9xa"
+      "_TZE204_xsm7l9xa",
+      "_TZE200_3towulqd",
+      "_TZE200_ar0slwnd",
+      "_TZE200_sfiy5tfs",
+      "_TZE200_mrf6vtua",
+      "_TZE204_mrf6vtua",
+      "_TZ3040_bb6xaihh"
     ],
     "productId": [
       "TS0202",
-      "TS0001"
+      "TS0001",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -175,6 +182,17 @@
           "units": "min"
         }
       ]
+    },
+    {
+      "id": "motion_timeout",
+      "type": "number",
+      "label": {
+        "en": "Motion timeout (seconds)",
+        "fr": "Délai motion (secondes)"
+      },
+      "value": 30,
+      "min": 5,
+      "max": 300
     }
   ],
   "capabilitiesOptions": {

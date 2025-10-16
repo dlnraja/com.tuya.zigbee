@@ -12,7 +12,11 @@
   "zigbee": {
     "productId": [
       "TS130F",
-      "TS0001"
+      "TS0001",
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044"
     ],
     "endpoints": {
       "1": {
@@ -56,7 +60,10 @@
       "_TZE200_ryfmq5rl",
       "_TZE200_wfxuhoea",
       "TS0005",
-      "TS0006"
+      "TS0006",
+      "_TZ3000_kjfzuycl",
+      "_TZE200_tz32mtza",
+      "_TZE200_g1ib5ldv"
     ]
   },
   "images": {

@@ -28,10 +28,18 @@
       "_TZE200_cwbvmsar",
       "_TZE200_dwcarsat",
       "_TZE200_m9skfctm",
-      "_TZE200_ryfmq5rl"
+      "_TZE200_ryfmq5rl",
+      "_TZE200_b6wax7g0",
+      "_TZE200_ztvwu4nk",
+      "_TZE200_ye5jkfsb",
+      "_TZE200_aoclfnxz",
+      "_TZE200_husqqvux",
+      "_TZE200_0dvm9mva",
+      "_TYST11_zivfvd7h"
     ],
     "productId": [
-      "TS0001"
+      "TS0001",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -41,7 +49,8 @@
           513,
           516,
           1026,
-          61184
+          61184,
+          3
         ],
         "bindings": [
           1
@@ -272,6 +281,18 @@
           "units": "min"
         }
       ]
+    },
+    {
+      "id": "temperature_offset",
+      "type": "number",
+      "label": {
+        "en": "Temperature offset (°C)",
+        "fr": "Décalage température (°C)"
+      },
+      "value": 0,
+      "min": -5,
+      "max": 5,
+      "step": 0.1
     }
   ],
   "learnmode": {
