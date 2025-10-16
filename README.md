@@ -79,7 +79,8 @@ homey app install
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
+- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
+- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -179,6 +180,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `f2eaed4d2` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (6 minutes ago)
 - `89ab2fb5d` fix: Complete GitHub Actions workflows diagnosis and cleanup - *Dylan Rajasekaram* (8 minutes ago)
 - `67d867894` Update Homey App Version to v3.0.10 - *github-actions[bot]* (29 minutes ago)
+- `5016563ce` docs: GitHub Actions complete fix summary - *Dylan Rajasekaram* (7 minutes ago)
+- `6259be802` Update Homey App Version to v3.0.11 - *github-actions[bot]* (9 minutes ago)
+- `f2eaed4d2` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (11 minutes ago)
+- `89ab2fb5d` fix: Complete GitHub Actions workflows diagnosis and cleanup - *Dylan Rajasekaram* (13 minutes ago)
+- `67d867894` Update Homey App Version to v3.0.10 - *github-actions[bot]* (34 minutes ago)
 
 ---
 
