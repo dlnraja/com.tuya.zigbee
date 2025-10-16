@@ -129,38 +129,18 @@ assets/
 
 ### `/docs/fixes/`
 Documentation des corrections de bugs:
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
@@ -169,22 +149,10 @@ Documentation des corrections de bugs:
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
@@ -217,14 +185,22 @@ Documentation des corrections de bugs:
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
-- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
@@ -233,49 +209,48 @@ Documentation des corrections de bugs:
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
 - `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md` - Fix module manquant
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md` - Fix IAS Zone enrollment
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/EMAIL_CORRECTION_SUMMARY.md` - Correction emails
+- `docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md` - Status final corrections
 
 ### `/docs/workflow/`
 Documentation workflow GitHub Actions:
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
@@ -286,26 +261,11 @@ Documentation workflow GitHub Actions:
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
@@ -346,16 +306,26 @@ Documentation workflow GitHub Actions:
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
-- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
@@ -366,37 +336,51 @@ Documentation workflow GitHub Actions:
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
 - `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/WORKFLOW_GUIDE.md` - Guide complet workflow
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/QUICK_WORKFLOW.md` - Référence rapide
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/README_WORKFLOW.md` - Résumé workflow
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md` - Succès publication
+- `docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/FORCE_PUBLISH.md` - Publication manuelle
 
 ### `/docs/community/`
 Analyse apps communautaires Homey:
+- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
+- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
 - `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
 - `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
-- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
-- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
-- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
-- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
-- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
-- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
 - `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
 - `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
-- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
-- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
-- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
-- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
-- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
-- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
 - `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
 - `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
 - `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
 - `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
-- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
-- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
 - `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
 - `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
-- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
-- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
-- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
-- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
 - `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
 - `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
 - `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
@@ -413,45 +397,45 @@ Analyse apps communautaires Homey:
 - `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
 - `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
 - `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
-- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
-- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
-- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
-- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
+- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
+- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
+- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
+- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
+- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
+- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
+- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
+- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
 - `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
 - `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
 - `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
 - `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
+- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
+- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
+- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
+- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
+- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
+- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
+- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
+- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
+- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
+- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
+- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/COMMUNITY_APPS_ANALYSIS.md` - Analyse Philips Hue, Aqara, SONOFF
+- `docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/docs/community/QUICK_IMPROVEMENTS.md` - Priorités amélioration
 
 ### `/docs/forum/`
 Réponses forum utilisateurs:
+- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
+- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
 - `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
 - `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
-- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
-- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
-- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
-- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
-- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
-- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
 - `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
 - `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
-- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
-- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
-- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
-- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
-- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
-- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
 - `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
 - `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
 - `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
 - `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
-- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
-- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
 - `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
 - `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
-- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
-- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
-- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
-- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
 - `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
 - `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
 - `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
@@ -468,14 +452,30 @@ Réponses forum utilisateurs:
 - `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
 - `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
 - `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
-- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
-- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
-- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
-- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
+- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
+- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
+- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
+- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
+- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
+- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
+- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
+- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
 - `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
 - `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
 - `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
 - `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
+- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
+- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
+- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
+- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
+- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
+- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
+- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
+- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
+- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
+- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
+- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_POSTS_COPY_PASTE.txt` - Réponses prêtes à poster
+- `docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/docs/forum/FORUM_RESPONSE_PETER_DUTCHDUKE.md` - Réponses détaillées
 
 ---
 
@@ -483,46 +483,21 @@ Réponses forum utilisateurs:
 
 ### `/scripts/fixes/`
 Scripts de correction automatique:
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
@@ -533,26 +508,11 @@ Scripts de correction automatique:
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
@@ -593,16 +553,26 @@ Scripts de correction automatique:
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
-- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
@@ -613,49 +583,54 @@ Scripts de correction automatique:
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
 - `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js` - Fix images app
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/FIX_DEVICE_FILES.js` - Fix fichiers devices
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/ULTIMATE_FIX_ALL.js` - Fix complet automatique
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-images.js` - Correction images
+- `scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/scripts/fixes/fix-flows.js` - Correction flow cards
 
 ### `/scripts/automation/`
 Scripts automation Git & Publish:
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
@@ -666,26 +641,11 @@ Scripts automation Git & Publish:
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
@@ -726,16 +686,26 @@ Scripts automation Git & Publish:
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
@@ -746,52 +716,58 @@ Scripts automation Git & Publish:
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
 - `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-analysis.ps1` - Commit analyse community
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-critical-fixes.ps1` - Commit fixes critiques
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/commit-push.ps1` - Commit & push générique
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js` - Publication automatique
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/push-native.js` - Push vers GitHub
 
 ### `/scripts/utils/`
 Scripts utilitaires divers:
 - `organize-project.ps1` - Organisation projet (ce script!)
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
@@ -816,18 +792,42 @@ Scripts utilitaires divers:
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
-- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
 - `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/add-all-images.ps1` - Ajout images en masse
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/create-app-images.js` - Création images app
+- `scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/remove-driver-images.js` - Suppression images drivers
 
 ---
 
