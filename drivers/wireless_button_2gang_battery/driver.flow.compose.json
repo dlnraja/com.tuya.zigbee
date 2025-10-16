@@ -1,0 +1,41 @@
+{
+  "triggers": [
+    {
+      "id": "button_pressed",
+      "title": {
+        "en": "Button pressed",
+        "fr": "Bouton appuyé"
+      },
+      "hint": {
+        "en": "Triggered when a button is pressed"
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
+        },
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action",
+            "fr": "Action"
+          },
+          "example": "single"
+        }
+      ],
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=wireless_button_2gang_battery"
+        }
+      ]
+    }
+  ]
+}
