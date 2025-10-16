@@ -1,6 +1,6 @@
 # 🏠 Universal Tuya Zigbee
 
-[![Version](https://img.shields.io/badge/version-3.0.21-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![Version](https://img.shields.io/badge/version-3.0.22-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![SDK](https://img.shields.io/badge/SDK-3-green.svg)](https://apps.developer.homey.app)
 [![Homey](https://img.shields.io/badge/Homey->=12.2.0-orange.svg)](https://homey.app)
 [![Drivers](https://img.shields.io/badge/drivers-183-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee/tree/master/drivers)
@@ -16,7 +16,7 @@ Community-maintained Tuya Zigbee app with 183 SDK3 native drivers. 67 drivers en
 Drivers:              183
 SDK Version:          3
 Homey Compatibility:  >=12.2.0
-Version:              3.0.21
+Version:              3.0.22
 Status:               ✅ Active Development
 ```
 
@@ -80,8 +80,7 @@ homey app install
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
-- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
+- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -176,16 +175,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `619a443f7` fix: Add required README.txt for Homey App Store - *Dylan Rajasekaram* (3 minutes ago)
-- `a0064333f` Update Homey App Version to v3.0.21 - *github-actions[bot]* (3 minutes ago)
-- `e1d2a2816` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (5 minutes ago)
-- `6439fe0fc` fix: Workflow versioning - Handle existing tags correctly - *Dylan Rajasekaram* (8 minutes ago)
-- `c2f09341b` Update Homey App Version to v3.0.20 - *github-actions[bot]* (14 minutes ago)
-- `619a443f7` fix: Add required README.txt for Homey App Store - *Dylan Rajasekaram* (8 minutes ago)
-- `a0064333f` Update Homey App Version to v3.0.21 - *github-actions[bot]* (9 minutes ago)
-- `e1d2a2816` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (11 minutes ago)
-- `6439fe0fc` fix: Workflow versioning - Handle existing tags correctly - *Dylan Rajasekaram* (13 minutes ago)
-- `c2f09341b` Update Homey App Version to v3.0.20 - *github-actions[bot]* (20 minutes ago)
+- `31126732e` fix: CI workflow - Download artifacts before export - *Dylan Rajasekaram* (3 minutes ago)
+- `63440220c` Update Homey App Version to v3.0.22 - *github-actions[bot]* (6 minutes ago)
+- `e33ba59cb` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (8 minutes ago)
+- `619a443f7` fix: Add required README.txt for Homey App Store - *Dylan Rajasekaram* (11 minutes ago)
+- `a0064333f` Update Homey App Version to v3.0.21 - *github-actions[bot]* (11 minutes ago)
 
 ---
 
@@ -216,7 +210,7 @@ Based on the original work by **Johan Bendz** and inspired by:
 
 ```
 Last Updated:     2025-10-16
-Version:          3.0.21
+Version:          3.0.22
 Build Status:     ✅ Passing
 Documentation:    ✅ Up to date
 GitHub Actions:   ✅ Active
