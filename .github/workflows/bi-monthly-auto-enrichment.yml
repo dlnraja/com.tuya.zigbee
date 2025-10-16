@@ -292,34 +292,38 @@ jobs:
               ? JSON.parse(fs.readFileSync('enrichment-report.json', 'utf8'))
               : { drivers_added: 0, ids_added: 0, datapoints_added: 0 };
             
+            const newDriversList = report.new_drivers ? report.new_drivers.map(d => `- ${d}`).join('\n') : 'None';
+            const bodyText = [
+              '## 🤖 Automated Enrichment Complete',
+              '',
+              '### 📊 Statistics',
+              `- **New Drivers Generated**: ${report.drivers_added}`,
+              `- **Manufacturer IDs Added**: ${report.ids_added}`,
+              `- **Datapoints Mapped**: ${report.datapoints_added}`,
+              '- **Sources Updated**: Zigbee2MQTT, ZHA, Blakadder, Johan Bendz, Tuya Docs',
+              '',
+              '### 🔄 Sources Scraped',
+              '- ✅ Zigbee2MQTT Database',
+              '- ✅ Home Assistant ZHA Integration',
+              '- ✅ Blakadder Zigbee Database',
+              '- ✅ Johan Bendz GitHub Repository',
+              '- ✅ Tuya IoT Documentation',
+              '',
+              '### 🆕 New Drivers',
+              newDriversList,
+              '',
+              '### 📝 Next Steps',
+              '- Test new drivers with real devices',
+              '- Update documentation',
+              '- Monitor user feedback',
+              '',
+              `**Workflow Run**: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`
+            ].join('\n');
+            
             await github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
               title: `✅ Bi-Monthly Auto-Enrichment Report - ${new Date().toISOString().split('T')[0]}`,
-              body: `## 🤖 Automated Enrichment Complete
-
-### 📊 Statistics
-- **New Drivers Generated**: ${report.drivers_added}
-- **Manufacturer IDs Added**: ${report.ids_added}
-- **Datapoints Mapped**: ${report.datapoints_added}
-- **Sources Updated**: Zigbee2MQTT, ZHA, Blakadder, Johan Bendz, Tuya Docs
-
-### 🔄 Sources Scraped
-- ✅ Zigbee2MQTT Database
-- ✅ Home Assistant ZHA Integration
-- ✅ Blakadder Zigbee Database
-- ✅ Johan Bendz GitHub Repository
-- ✅ Tuya IoT Documentation
-
-### 🆕 New Drivers
-${report.new_drivers ? report.new_drivers.map(d => `- ${d}`).join('\n') : 'None'}
-
-### 📝 Next Steps
-- Test new drivers with real devices
-- Update documentation
-- Monitor user feedback
-
-**Workflow Run**: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}
-`,
+              body: bodyText,
               labels: ['automation', 'enrichment', 'report']
             });
