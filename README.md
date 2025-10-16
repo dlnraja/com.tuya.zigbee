@@ -80,7 +80,8 @@ homey app install
 ## 🐛 Recent Fixes
 
 - [STATUS_FINAL.md](docs/fixes/STATUS_FINAL.md) (2025-10-16)
-- [PETER_INSTRUCTIONS_COURTES.md](docs/fixes/PETER_INSTRUCTIONS_COURTES.md) (2025-10-16)
+- [EMAIL_CORRECTION_SUMMARY.md](docs/fixes/EMAIL_CORRECTION_SUMMARY.md) (2025-10-16)
+- [CRITICAL_FIX_SUMMARY_v2.15.130.md](docs/fixes/CRITICAL_FIX_SUMMARY_v2.15.130.md) (2025-10-16)
 
 **All fixes:** [docs/fixes/](docs/fixes/)
 
@@ -180,6 +181,11 @@ powershell scripts/automation/install-git-hooks.ps1
 - `d3ab1f705` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (4 minutes ago)
 - `9ac66bd13` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (5 minutes ago)
 - `cd1111a0d` feat: MEGA IMPLEMENTATION COMPLETE - All Remaining Phases (Sprints 2-4) - *Dylan Rajasekaram* (6 minutes ago)
+- `5278eb987` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (3 minutes ago)
+- `7ce4c6e00` fix: GitHub Actions workflow - Add pull rebase and retry logic - *Dylan Rajasekaram* (4 minutes ago)
+- `d3ab1f705` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (7 minutes ago)
+- `9ac66bd13` Merge branch 'master' of https://github.com/dlnraja/com.tuya.zigbee - *Dylan Rajasekaram* (8 minutes ago)
+- `cd1111a0d` feat: MEGA IMPLEMENTATION COMPLETE - All Remaining Phases (Sprints 2-4) - *Dylan Rajasekaram* (8 minutes ago)
 
 ---
 
