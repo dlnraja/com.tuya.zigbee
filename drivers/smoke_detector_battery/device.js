@@ -272,14 +272,6 @@ class SmokeDetectorDevice extends ZigBeeDevice {
       }
     }
   }
-  // ========================================
-  // FLOW METHODS - Auto-generated
-  // ========================================
-
-   catch (err) {
-      this.error('Battery change detection error:', err);
-    }
-  }
 
 }
 
