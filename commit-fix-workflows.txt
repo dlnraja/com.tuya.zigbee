@@ -1,0 +1,32 @@
+fix: Update GitHub Actions workflows to use upload-artifact@v4
+
+Fixed deprecation errors in CI workflows:
+- Updated actions/upload-artifact from v3 to v4 in ci-validation.yml (5 occurrences)
+- Updated actions/upload-artifact from v3 to v4 in ci-complete.yml (7 occurrences)
+
+Context:
+GitHub Actions deprecated upload-artifact@v3 on April 16, 2024.
+All workflows were failing with error:
+"This request has been automatically failed because it uses a deprecated version of actions/upload-artifact: v3"
+
+Files modified:
+- .github/workflows/ci-validation.yml
+  - Upload Validation Report
+  - Upload ESLint Report
+  - Upload Schema Validation Report
+  - Upload Coverage Reports
+  - Upload Audit Report
+
+- .github/workflows/ci-complete.yml
+  - Upload Validation Log
+  - Upload Matrix (Markdown)
+  - Upload Coverage Stats (JSON)
+  - Upload Dashboard (HTML)
+  - Upload Schema Report
+  - Upload Exports
+  - Upload Badges
+
+All workflows should now execute successfully.
+
+Fixes: GitHub Actions failing with artifact upload deprecation error
+Version: 3.0.5
