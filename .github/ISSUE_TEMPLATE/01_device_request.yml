@@ -1,0 +1,150 @@
+name: 🔌 Device Request (Zigbee Local)
+description: Request support for a new Zigbee device (local control)
+title: "[Device] "
+labels: ["device-request", "needs-review"]
+assignees:
+  - dlnraja
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Thanks for helping us expand device support!
+        
+        Please provide as much detail as possible. Complete information = faster support.
+        
+        **This app focuses on local Zigbee control (no cloud required).**
+
+  - type: input
+    id: brand
+    attributes:
+      label: Brand & Model
+      description: Exact brand name and model number (from box/label)
+      placeholder: "ex: MOES TRV-ZB, Nous A4Z, LSC Smart Connect..."
+    validations:
+      required: true
+
+  - type: input
+    id: purchase
+    attributes:
+      label: Where Purchased
+      description: Link to product page (Amazon, AliExpress, Action, etc.)
+      placeholder: "https://..."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: power
+    attributes:
+      label: Power Source
+      options:
+        - Battery
+        - Mains (AC)
+        - USB
+        - Hybrid (Battery + Mains)
+        - Unknown
+    validations:
+      required: true
+
+  - type: textarea
+    id: fingerprint
+    attributes:
+      label: "Zigbee Fingerprint (MANDATORY)"
+      description: |
+        Get this from Homey Developer Tools → Zigbee → Device → Info
+        
+        We need:
+        - manufacturerName (ex: _TZ3000_abcd1234)
+        - modelId (ex: TS0601)
+        - endpoints (ex: [1])
+        - clusters per endpoint (ex: [0, 1, 3, 4, 5, 6])
+      placeholder: |
+        manufacturerName: _TZ3000_example
+        modelId: TS0601
+        endpoints: [1]
+        clusters endpoint 1: [0, 1, 3, 4, 5, 6, 61184]
+      render: yaml
+    validations:
+      required: true
+
+  - type: textarea
+    id: dp_list
+    attributes:
+      label: "TS0601 DP List (if applicable)"
+      description: |
+        If device is TS0601, list ALL Data Points (DPs) with meanings
+        
+        Get from Homey logs or Zigbee2MQTT converter
+      placeholder: |
+        dp1: on/off (0=off, 1=on)
+        dp2: brightness (0-100)
+        dp3: temperature (°C × 10)
+        dp15: battery (0-100%)
+      render: yaml
+    validations:
+      required: false
+
+  - type: input
+    id: z2m_link
+    attributes:
+      label: "Zigbee2MQTT Link"
+      description: "Link to Z2M device page (HIGHLY useful for fast support)"
+      placeholder: "https://www.zigbee2mqtt.io/devices/..."
+    validations:
+      required: false
+
+  - type: input
+    id: ha_link
+    attributes:
+      label: "Home Assistant / ZHA Link"
+      description: "Link to HA quirk or ZHA discussion"
+      placeholder: "https://github.com/zigpy/zha-device-handlers/..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: capabilities
+    attributes:
+      label: "Expected Capabilities"
+      description: |
+        What should this device do in Homey?
+        
+        Examples:
+        - Smart plug: onoff, measure_power, meter_power
+        - Thermostat: measure_temperature, target_temperature, thermostat_mode
+        - Sensor: measure_temperature, measure_humidity, alarm_battery
+      placeholder: |
+        - onoff (turn on/off)
+        - measure_temperature (current temp)
+        - target_temperature (set temp)
+        - thermostat_mode (heat/cool/auto/off)
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: "Pairing Logs / Notes"
+      description: |
+        Any special notes about pairing?
+        - Delays
+        - Battery reporting issues
+        - Special reset procedure
+        - Firmware version
+      placeholder: "Device requires 3x press to enter pairing mode..."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "Checklist"
+      options:
+        - label: "I have searched existing issues (no duplicate)"
+          required: true
+        - label: "I have provided complete Zigbee fingerprint"
+          required: true
+        - label: "I understand this app is for LOCAL Zigbee control (not cloud/WiFi)"
+          required: true
+        - label: "I am willing to test the driver when created"
+          required: false
