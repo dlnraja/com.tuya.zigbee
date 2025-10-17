@@ -24,7 +24,7 @@ I reviewed your diagnostic log. The app is loading correctly, but I need more in
 4. For motion sensor: Wait 60s during pairing (IAS Zone enrollment)
 
 📚 RESOURCES:
-• IAS Zone Fix: https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md
+• IAS Zone Fix: https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md
 • TS0601 Fix (v3.0.35): https://github.com/dlnraja/com.tuya.zigbee#-recent-updates
 
 Once you share the manufacturer IDs + active diagnostic, I can pinpoint the exact issue!
