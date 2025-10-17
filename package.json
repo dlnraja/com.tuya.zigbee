@@ -16,6 +16,8 @@
     "ai:analyze": "node scripts/ai/heuristic-analyzer.js",
     "ai:generate": "node scripts/ai/driver-generator.js",
     "update": "node scripts/automation/update-all-links.js",
+    "readme:update": "node scripts/automation/update-readme-proactive.js",
+    "prepush": "node scripts/automation/pre-push-intelligent.js",
     "finalize": "powershell -ExecutionPolicy Bypass -File scripts/automation/finalize-all.ps1",
     "precommit": "node scripts/PRE_COMMIT_CHECKS.js",
     "pipeline": "node scripts/ULTIMATE_CI_CD_PIPELINE.js",
