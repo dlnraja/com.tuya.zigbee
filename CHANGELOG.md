@@ -1,3 +1,38 @@
+## [3.0.44] - 2025-10-17
+
+### 🆕 Community Manufacturer IDs - Ian Gibbo Interview
+
+#### Added
+- ✅ **`_TZ3000_00mk2xzy`** → `smart_plug_ac`
+  - TS011F smart plug with energy monitoring
+  - Supports: onOff, metering, electrical measurement
+  - Verified working by community member Ian Gibbo
+
+- ✅ **`_TZ3000_zmlunnhy`** → `wireless_switch_2gang_cr2032`
+  - TS0012 battery-powered wireless 2-gang button/scene controller
+  - **Note:** Unusual TS0012 variant - battery powered, not AC mains
+  - Added TS0012 to productId list for wireless switch driver
+  - deviceType: enddevice, receiveWhenIdle: false
+
+#### Verified Existing Support
+- ✅ **`_TZ3000_h1ipgkwn`** (TS0002) - Already in switch_2gang_ac (added v3.0.42)
+- ✅ **`HOBEIAN`** (ZG-204ZV) - Already in motion_sensor_illuminance_battery
+
+#### Pending Clarification
+- ⏳ **`_TZE284_1lvln0x6`** (TS0601) - Awaiting user confirmation of device type
+  - Tuya cluster 61184 (proprietary)
+  - Battery powered
+  - Requires identification before adding to correct driver
+
+#### Community Contribution
+- Interview data provided by Ian Gibbo (Homey Community Forum)
+- 5 devices analyzed, 2 new manufacturer IDs added
+- Documentation: `docs/support/IAN_GIBBO_INTERVIEW_ANALYSIS.md`
+
+**Thank you Ian for the detailed interview data!**
+
+---
+
 ## [3.0.43] - 2025-10-17
 
 ### 🔴 HOTFIX - Cluster ID Registration Error (CRITICAL)
@@ -347,10 +382,14 @@ Previous code sent Zigbee command during `onNodeInit()`, but Zigbee subsystem wa
 ### 📚 Complete Documentation & Final Synthesis
 
 #### Added
+- PROJECT_docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md - Complete project status
+- PROJECT_docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md - Complete project status
+- PROJECT_docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md - Complete project status
+- PROJECT_docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md - Complete project status
 - PROJECT_docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md - Complete project status
 - PROJECT_docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md - Complete project status
-- PROJECT_docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md - Complete project status
-- PROJECT_docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md - Complete project status
+- PROJECT_docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md - Complete project status
+- PROJECT_docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/STATUS_FINAL.md - Complete project status
 - SYNTHESE_COMPLETE_FINALE.md - Absolute final summary
 
 #### Changed
