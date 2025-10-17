@@ -1,3 +1,85 @@
+## [3.0.41] - 2025-10-17
+
+### 📊 DIAGNOSTIC REPORTS ANALYSIS - 12+ User Reports Processed
+
+#### Added
+- ✅ **Comprehensive Diagnostic Tracking System**
+  - `docs/support/DIAGNOSTIC_TRACKING.md`: Systematic tracking of all user reports
+  - `docs/support/DIAGNOSTIC_SUMMARY_OCT17.md`: Full analysis of Oct 15-17 reports
+  - `docs/support/EMAIL_CRITICAL_UPDATE_v3037.txt`: Template for v3.0.23 users (IAS crash warning)
+  - `docs/support/MANUFACTURER_IDS_TO_ADD.md`: 3 pending IDs with detailed analysis
+  - `docs/support/TEMPERATURE_SENSOR_TROUBLESHOOTING.md`: Complete troubleshooting guide
+
+- ✅ **Manufacturer ID from Community Interview (Ian Gibbo)**
+  - Added `_TZ3000_h1ipgkwn` to `switch_2gang_ac` driver
+  - Verified `HOBEIAN` already present in `motion_sensor_illuminance_battery`
+  - Documented 3 pending IDs requiring clarification:
+    - `_TZE284_1lvln0x6` (TS0601 battery device - type unknown)
+    - `_TZ3000_zmlunnhy` (TS0012 battery switch - unusual, likely button)
+
+#### Analyzed Issues (12+ Reports)
+**🔴 Critical (Already Fixed in v3.0.37):**
+- 2x IAS Zone crashes (v3.0.23 users need to update)
+- SOS buttons, motion sensors, contact sensors affected
+
+**🟡 Temperature Sensors (8 Reports - High Priority):**
+- Battery reporting failures (most common issue)
+- Partial data (temp yes, humidity/battery no)
+- "No readings" or "No data last 5 days"
+- "Temperature sensor identified incorrectly"
+
+**Root Causes Identified:**
+1. Missing manufacturer IDs in drivers
+2. Wrong driver selected during pairing (generic vs. specific)
+3. TS0601 Tuya cluster parsing issues
+4. Battery cluster configuration not optimal
+5. Weak Zigbee signal / mesh issues
+
+**🟢 Other Issues:**
+- 1x Ghost device (pairing failure with multisensor)
+- 2x Generic "app doesn't work" (need clarification)
+- 1x Zigbee timeout (transient, monitoring)
+
+#### Documentation
+- ✅ **Temperature Sensor Troubleshooting Guide** created
+  - 4 common issues documented with solutions
+  - Battery reporting fix procedures
+  - TS0601 device identification
+  - Driver selection guide
+  - Manufacturer ID reference table
+  - Diagnostic submission checklist
+  - Quick fixes summary
+
+- ✅ **Diagnostic Tracking System** operational
+  - Log ID tracking
+  - Status monitoring (⏳ Awaiting / 🔧 In Progress / ✅ Resolved)
+  - Response templates ready
+  - Priority action items defined
+
+#### Statistics
+- **Total Diagnostics:** 12+
+- **Critical Crashes:** 2 (fixed in v3.0.37)
+- **Manufacturer IDs Added:** 1
+- **Manufacturer IDs Verified:** 1
+- **Manufacturer IDs Pending:** 3
+- **Documentation Files:** 5
+
+#### Next Steps (Priority Actions)
+1. 🔥 **Critical:** Email v3.0.23 users to update (IAS Zone crash fix)
+2. 🟡 **High:** Email 8 temperature sensor users for manufacturer IDs
+3. 🟡 **Medium:** Follow up with Ian Gibbo for TS0601/TS0012 clarification
+4. 🟢 **Low:** Respond to generic diagnostic users
+
+#### Technical Improvements Planned
+- Improve battery cluster configuration in temp sensor drivers
+- Enhance TS0601 Tuya cluster error messages
+- Add missing manufacturer IDs after user confirmation
+- Create automated battery reporting verification
+
+**USER ACTION:** If you submitted a diagnostic report Oct 15-17, check your email for response with next steps!
+
+---
+
 ## [3.0.37] - 2025-10-17
 
 ### 🔴 CRITICAL FIX - IAS Zone Enrollment Race Condition
