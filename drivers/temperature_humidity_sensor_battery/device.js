@@ -35,13 +35,24 @@ class TemperatureHumiditySensorDevice extends ZigBeeDevice {
 
     // Battery measurement
     if (this.hasCapability('measure_battery')) {
-      this.registerCapability('measure_battery', 1, {
+      this.registerCapability('measure_battery', CLUSTER.genPowerCfg, {
         get: 'batteryPercentageRemaining',
         report: 'batteryPercentageRemaining',
-        reportParser: value => { this.log('Battery raw value:', value); // Smart calculation: check if value is already 0-100 or 0-200 if (value <= 100) { return Math.max(0, Math.min(100, value)); } else { return Math.max(0, Math.min(100, value / 2)); } },
-        getParser: value => Math.max(0, Math.min(100, value / 2))
+        reportParser: value => {
+          this.log('Battery raw value:', value);
+          // Smart calculation: Tuya devices report 0-200 (divide by 2) or 0-100 (use as-is)
+          const percentage = value <= 100 ? value : value / 2;
+          return Math.max(0, Math.min(100, percentage));
+        },
+        getParser: value => {
+          const percentage = value <= 100 ? value : value / 2;
+          return Math.max(0, Math.min(100, percentage));
+        }
       });
       this.log('✅ Battery capability registered');
+      
+      // Force initial battery read with retry
+      this.forceBatteryRead();
     }
 
     // Temperature/Humidity sensors don't have motion or luminance capabilities
@@ -74,15 +85,15 @@ class TemperatureHumiditySensorDevice extends ZigBeeDevice {
         });
       }
       
-      // Battery reporting
+      // Battery reporting - IMPROVED for better reliability
       if (this.hasCapability('measure_battery')) {
         reportingConfigs.push({
           endpointId: 1,
           cluster: 'genPowerCfg',
           attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2
+          minInterval: 300,      // 5 min (reduced from 1h)
+          maxInterval: 3600,     // 1 hour (reduced from 12h)
+          minChange: 2           // 2% change
         });
       }
       
@@ -96,6 +107,46 @@ class TemperatureHumiditySensorDevice extends ZigBeeDevice {
 
     // Mark device as available
     await this.setAvailable();
+  }
+
+  /**
+   * Force battery read with retry logic
+   * Diagnostic Fix: Many users report battery not updating
+   */
+  async forceBatteryRead(retries = 3) {
+    if (!this.hasCapability('measure_battery')) return;
+    
+    for (let attempt = 1; attempt <= retries; attempt++) {
+      try {
+        this.log(`🔋 Attempting battery read (attempt ${attempt}/${retries})...`);
+        
+        const batteryValue = await this.zclNode.endpoints[1].clusters.genPowerCfg.readAttributes('batteryPercentageRemaining');
+        
+        if (batteryValue && batteryValue.batteryPercentageRemaining !== undefined) {
+          const rawValue = batteryValue.batteryPercentageRemaining;
+          const percentage = rawValue <= 100 ? rawValue : rawValue / 2;
+          const clamped = Math.max(0, Math.min(100, percentage));
+          
+          await this.setCapabilityValue('measure_battery', clamped);
+          this.log(`✅ Battery read successful: ${clamped}% (raw: ${rawValue})`);
+          return;
+        }
+      } catch (error) {
+        this.log(`⚠️  Battery read attempt ${attempt} failed:`, error.message);
+        if (attempt < retries) {
+          await this.wait(2000 * attempt); // Exponential backoff
+        }
+      }
+    }
+    
+    this.log('❌ All battery read attempts failed - will retry on next report');
+  }
+
+  /**
+   * Wait utility
+   */
+  wait(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 
   async onDeleted() {

@@ -25,14 +25,148 @@ class TemperatureSensorBatteryDevice extends ZigBeeDevice {
       await this.registerStandardCapabilities();
     }
 
+    // Force battery read with retry for all devices
+    if (this.hasCapability('measure_battery')) {
+      this.forceBatteryRead();
+    }
+
     // Mark device as available
     await this.setAvailable();
   }
 
-   catch (err) {
-      this.error('Battery change detection error:', err);
+  /**
+   * Register standard Zigbee capabilities
+   * Fallback when Tuya cluster not available
+   */
+  async registerStandardCapabilities() {
+    this.log('🔧 Registering standard capabilities...');
+    
+    // Temperature
+    if (this.hasCapability('measure_temperature')) {
+      this.registerCapability('measure_temperature', CLUSTER.temperatureMeasurement, {
+        get: 'measuredValue',
+        report: 'measuredValue',
+        reportParser: value => value / 100,
+        getParser: value => value / 100
+      });
+      this.log('✅ Temperature capability registered');
+    }
+
+    // Humidity
+    if (this.hasCapability('measure_humidity')) {
+      this.registerCapability('measure_humidity', CLUSTER.relativeHumidity, {
+        get: 'measuredValue',
+        report: 'measuredValue',
+        reportParser: value => value / 100,
+        getParser: value => value / 100
+      });
+      this.log('✅ Humidity capability registered');
+    }
+
+    // Battery - IMPROVED with smart parsing
+    if (this.hasCapability('measure_battery')) {
+      this.registerCapability('measure_battery', CLUSTER.genPowerCfg, {
+        get: 'batteryPercentageRemaining',
+        report: 'batteryPercentageRemaining',
+        reportParser: value => {
+          this.log('Battery raw value:', value);
+          const percentage = value <= 100 ? value : value / 2;
+          return Math.max(0, Math.min(100, percentage));
+        },
+        getParser: value => {
+          const percentage = value <= 100 ? value : value / 2;
+          return Math.max(0, Math.min(100, percentage));
+        }
+      });
+      this.log('✅ Battery capability registered');
+    }
+
+    // Configure attribute reporting with improved intervals
+    try {
+      const reportingConfigs = [];
+      
+      if (this.hasCapability('measure_temperature')) {
+        reportingConfigs.push({
+          endpointId: 1,
+          cluster: CLUSTER.temperatureMeasurement,
+          attributeName: 'measuredValue',
+          minInterval: 60,
+          maxInterval: 3600,
+          minChange: 50
+        });
+      }
+      
+      if (this.hasCapability('measure_humidity')) {
+        reportingConfigs.push({
+          endpointId: 1,
+          cluster: CLUSTER.relativeHumidity,
+          attributeName: 'measuredValue',
+          minInterval: 60,
+          maxInterval: 3600,
+          minChange: 100
+        });
+      }
+      
+      if (this.hasCapability('measure_battery')) {
+        reportingConfigs.push({
+          endpointId: 1,
+          cluster: CLUSTER.genPowerCfg,
+          attributeName: 'batteryPercentageRemaining',
+          minInterval: 300,
+          maxInterval: 3600,
+          minChange: 2
+        });
+      }
+      
+      if (reportingConfigs.length > 0) {
+        await this.configureAttributeReporting(reportingConfigs);
+        this.log('✅ Attribute reporting configured');
+      }
+    } catch (error) {
+      this.error('Failed to configure reporting:', error);
     }
   }
+
+  /**
+   * Force battery read with retry logic
+   * Diagnostic Fix: Many users report battery not updating
+   */
+  async forceBatteryRead(retries = 3) {
+    if (!this.hasCapability('measure_battery')) return;
+    
+    for (let attempt = 1; attempt <= retries; attempt++) {
+      try {
+        this.log(`🔋 Attempting battery read (attempt ${attempt}/${retries})...`);
+        
+        const batteryValue = await this.zclNode.endpoints[1].clusters.genPowerCfg.readAttributes('batteryPercentageRemaining');
+        
+        if (batteryValue && batteryValue.batteryPercentageRemaining !== undefined) {
+          const rawValue = batteryValue.batteryPercentageRemaining;
+          const percentage = rawValue <= 100 ? rawValue : rawValue / 2;
+          const clamped = Math.max(0, Math.min(100, percentage));
+          
+          await this.setCapabilityValue('measure_battery', clamped);
+          this.log(`✅ Battery read successful: ${clamped}% (raw: ${rawValue})`);
+          return;
+        }
+      } catch (error) {
+        this.log(`⚠️  Battery read attempt ${attempt} failed:`, error.message);
+        if (attempt < retries) {
+          await this.wait(2000 * attempt);
+        }
+      }
+    }
+    
+    this.log('❌ All battery read attempts failed - will retry on next report');
+  }
+
+  /**
+   * Wait utility
+   */
+  wait(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
   // ========================================
   // FLOW METHODS - Auto-generated
   // ========================================
