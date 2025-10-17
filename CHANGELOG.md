@@ -1,3 +1,37 @@
+## [3.0.37] - 2025-10-17
+
+### 🔴 CRITICAL FIX - IAS Zone Enrollment Race Condition
+
+#### Fixed
+- ✅ **Crash Fix**: "Zigbee is aan het opstarten" race condition eliminated
+  - **Removed proactive `zoneEnrollResponse()` call** that violated Homey best practices
+  - Now uses **listener-only approach** as per official Homey SDK documentation
+  - Prevents crashes on Homey startup/restart when IAS Zone devices are paired
+- ✅ Affected devices now enroll reliably:
+  - SOS Emergency Button (`sos_emergency_button_cr2032`)
+  - Motion Sensors (all PIR and mmWave variants)
+  - Contact Sensors (door/window sensors)
+  - All other IAS Zone devices
+
+#### Technical Details
+- `lib/IASZoneEnroller.js`: **Removed proactive `zoneEnrollResponse()` from `setupZoneEnrollListener()`**
+- Follows Homey best practice: *"Avoid initiating communication with the node in onInit or onNodeInit"*
+- Now only sets up `onZoneEnrollRequest` listener - responds when device requests (not proactively)
+- Device sends Zone Enroll Request → Listener responds → Enrollment complete
+- No more "Zigbee is starting up" errors
+
+#### Root Cause
+Previous code sent Zigbee command during `onNodeInit()`, but Zigbee subsystem wasn't ready yet. Official Homey docs explicitly warn against this pattern.
+
+#### User Impact
+- **Before:** 6 crashes in 5 hours on Homey restart
+- **After:** Zero crashes expected, proper enrollment when device requests
+- No user action required - fix applies automatically after update
+
+**IMPORTANT:** If you experienced crashes with IAS Zone devices (motion/contact sensors, buttons), this update fixes it!
+
+---
+
 ## [3.0.17] - 2025-10-16
 
 ### 🔧 CRITICAL FIX - Tuya Cluster Handler (TS0601 Devices)
