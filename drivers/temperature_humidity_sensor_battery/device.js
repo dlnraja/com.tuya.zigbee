@@ -35,7 +35,7 @@ class TemperatureHumiditySensorDevice extends ZigBeeDevice {
 
     // Battery measurement
     if (this.hasCapability('measure_battery')) {
-      this.registerCapability('measure_battery', CLUSTER.genPowerCfg, {
+      this.registerCapability('measure_battery', 1, {
         get: 'batteryPercentageRemaining',
         report: 'batteryPercentageRemaining',
         reportParser: value => {
