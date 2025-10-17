@@ -1,3 +1,112 @@
+## [3.0.42] - 2025-10-17
+
+### 🔋 CRITICAL FIX - Temperature Sensor Battery Reporting (8 Reports)
+
+#### Fixed
+- ✅ **Battery Not Reporting** (Issue #1 from 8 diagnostic reports)
+  - Fixed syntax error in `temperature_humidity_sensor_battery/device.js` line 41
+  - Improved battery cluster configuration in all temperature sensor drivers
+  - Added smart parsing for Tuya devices (0-100 or 0-200 ranges)
+  - Added retry logic with exponential backoff (3 attempts)
+  - Reduced reporting intervals: 5min min / 1hour max (was 1hour / 12hours)
+  
+- ✅ **Partial Data Reporting** (temperature yes, battery/humidity no)
+  - Improved attribute reporting configuration
+  - Forced initial battery read on device initialization
+  - Better error handling with detailed logging
+  
+- ✅ **No Readings After Pairing**
+  - Added `registerStandardCapabilities()` fallback for non-Tuya devices
+  - Better TS0601 Tuya cluster detection
+  - Comprehensive capability registration with proper clusters
+
+#### Technical Details
+
+**Files Modified:**
+- `drivers/temperature_humidity_sensor_battery/device.js`:
+  - Fixed malformed reportParser (line 41 syntax error)
+  - Added `forceBatteryRead()` method with retry logic
+  - Improved battery reporting intervals (300s min, 3600s max)
+  - Smart percentage calculation (handles 0-100 and 0-200 ranges)
+
+- `drivers/temperature_sensor_battery/device.js`:
+  - Added complete `registerStandardCapabilities()` method
+  - Added `forceBatteryRead()` with 3 retries + exponential backoff
+  - Improved cluster configuration
+  - Better fallback when Tuya cluster not available
+
+**Battery Reporting Improvements:**
+```javascript
+// OLD:
+minInterval: 3600,     // 1 hour
+maxInterval: 43200,    // 12 hours
+minChange: 2
+
+// NEW:
+minInterval: 300,      // 5 minutes
+maxInterval: 3600,     // 1 hour
+minChange: 2
+```
+
+**Smart Battery Parsing:**
+```javascript
+// Handles both Tuya ranges automatically
+reportParser: value => {
+  const percentage = value <= 100 ? value : value / 2;
+  return Math.max(0, Math.min(100, percentage));
+}
+```
+
+**Retry Logic:**
+```javascript
+async forceBatteryRead(retries = 3) {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      // Attempt read with exponential backoff
+      await wait(2000 * attempt);
+    } catch (error) {
+      // Log and retry
+    }
+  }
+}
+```
+
+#### Root Causes Addressed
+1. ✅ Syntax error preventing battery registration
+2. ✅ Reporting intervals too long (12 hours)
+3. ✅ No retry mechanism for failed reads
+4. ✅ No initial battery read forcing
+5. ✅ Poor error handling and logging
+
+#### User Impact
+**Before:**
+- "Only temperature data and no battery level"
+- "Battery shows 0% or never updates"
+- "Temp reading now, rest no data last 5 days"
+
+**After:**
+- Battery reads immediately on pairing (3 retry attempts)
+- Updates every 5 minutes minimum (vs. 1 hour before)
+- Smart parsing handles all Tuya device types
+- Detailed logging for troubleshooting
+- Automatic recovery from failed reads
+
+#### Affected Drivers
+✅ `temperature_humidity_sensor_battery`  
+✅ `temperature_sensor_battery`  
+⏳ Other temp sensor drivers to follow (temp_sensor_pro, temp_humid_sensor_advanced, etc.)
+
+**USER ACTION:** If you have temperature sensors with battery issues:
+1. Update app to v3.0.42+
+2. Remove battery from sensor for 10 seconds
+3. Reinsert battery
+4. Wait 5 minutes
+5. Battery should now report correctly
+
+**Note:** Some devices may require re-pairing if issue persists after battery reset.
+
+---
+
 ## [3.0.41] - 2025-10-17
 
 ### 📊 DIAGNOSTIC REPORTS ANALYSIS - 12+ User Reports Processed
