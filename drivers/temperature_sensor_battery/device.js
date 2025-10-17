@@ -43,7 +43,7 @@ class TemperatureSensorBatteryDevice extends ZigBeeDevice {
     
     // Temperature
     if (this.hasCapability('measure_temperature')) {
-      this.registerCapability('measure_temperature', CLUSTER.temperatureMeasurement, {
+      this.registerCapability('measure_temperature', 'msTemperatureMeasurement', {
         get: 'measuredValue',
         report: 'measuredValue',
         reportParser: value => value / 100,
@@ -54,7 +54,7 @@ class TemperatureSensorBatteryDevice extends ZigBeeDevice {
 
     // Humidity
     if (this.hasCapability('measure_humidity')) {
-      this.registerCapability('measure_humidity', CLUSTER.relativeHumidity, {
+      this.registerCapability('measure_humidity', 'msRelativeHumidity', {
         get: 'measuredValue',
         report: 'measuredValue',
         reportParser: value => value / 100,
@@ -65,7 +65,7 @@ class TemperatureSensorBatteryDevice extends ZigBeeDevice {
 
     // Battery - IMPROVED with smart parsing
     if (this.hasCapability('measure_battery')) {
-      this.registerCapability('measure_battery', CLUSTER.genPowerCfg, {
+      this.registerCapability('measure_battery', 1, {
         get: 'batteryPercentageRemaining',
         report: 'batteryPercentageRemaining',
         reportParser: value => {
@@ -88,7 +88,7 @@ class TemperatureSensorBatteryDevice extends ZigBeeDevice {
       if (this.hasCapability('measure_temperature')) {
         reportingConfigs.push({
           endpointId: 1,
-          cluster: CLUSTER.temperatureMeasurement,
+          cluster: 'msTemperatureMeasurement',
           attributeName: 'measuredValue',
           minInterval: 60,
           maxInterval: 3600,
@@ -99,7 +99,7 @@ class TemperatureSensorBatteryDevice extends ZigBeeDevice {
       if (this.hasCapability('measure_humidity')) {
         reportingConfigs.push({
           endpointId: 1,
-          cluster: CLUSTER.relativeHumidity,
+          cluster: 'msRelativeHumidity',
           attributeName: 'measuredValue',
           minInterval: 60,
           maxInterval: 3600,
@@ -110,7 +110,7 @@ class TemperatureSensorBatteryDevice extends ZigBeeDevice {
       if (this.hasCapability('measure_battery')) {
         reportingConfigs.push({
           endpointId: 1,
-          cluster: CLUSTER.genPowerCfg,
+          cluster: 'genPowerCfg',
           attributeName: 'batteryPercentageRemaining',
           minInterval: 300,
           maxInterval: 3600,

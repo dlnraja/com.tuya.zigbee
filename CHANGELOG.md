@@ -1,4 +1,43 @@
-## [3.0.42] - 2025-10-17
+## [3.0.43] - 2025-10-17
+
+### 🔴 HOTFIX - Cluster ID Registration Error (CRITICAL)
+
+#### Fixed
+- ✅ **TypeError: expected_cluster_id_number** (introduced in v3.0.42)
+  - Fixed incorrect use of `CLUSTER.temperatureMeasurement` constants
+  - Changed to proper string cluster names ('msTemperatureMeasurement')
+  - Fixed in `temperature_sensor_battery/device.js`
+  - Fixed in `temperature_humidity_sensor_battery/device.js`
+
+#### Root Cause
+In v3.0.42, I incorrectly used CLUSTER constants instead of string cluster names:
+```javascript
+// ❌ WRONG (v3.0.42):
+this.registerCapability('measure_temperature', CLUSTER.temperatureMeasurement, {
+
+// ✅ CORRECT (v3.0.43):
+this.registerCapability('measure_temperature', 'msTemperatureMeasurement', {
+```
+
+#### Affected Drivers
+- ✅ `temperature_sensor_battery` - FIXED
+- ✅ `temperature_humidity_sensor_battery` - FIXED
+
+#### Error Details
+```
+Error: 'onNodeInit()' failed, reason: TypeError: expected_cluster_id_number
+at MotionTempHumidityIlluminationSensorDevice.registerCapability
+at SOSEmergencyButtonDevice.registerCapability
+```
+
+**Impact:** v3.0.42 was **BROKEN** for temperature sensor devices  
+**Status:** ✅ FIXED in v3.0.43 - immediate hotfix
+
+**USER ACTION:** Update immediately to v3.0.43 if you installed v3.0.42
+
+---
+
+## [3.0.42] - 2025-10-17 ⚠️ BROKEN - DO NOT USE
 
 ### 🔋 CRITICAL FIX - Temperature Sensor Battery Reporting (8 Reports)
 
