@@ -26,11 +26,11 @@ I reviewed your diagnostic log. The app is loading correctly, but I need more in
 📚 RESOURCES:
 <<<<<<< HEAD
 • IAS Zone Fix: https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md
-||||||| 5deefa725
-• IAS Zone Fix: https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md
-=======
+||||||| parent of a18424cba (docs: Update documentation with diagnostic analysis and path corrections)
 • IAS Zone Fix: https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md
->>>>>>> e4e5eebc66f1adfd81065fd5ce66a7ff2666adee
+=======
+• IAS Zone Fix: https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/docs/fixes/PETER_IAS_ZONE_FIX_COMPLETE.md
+>>>>>>> a18424cba (docs: Update documentation with diagnostic analysis and path corrections)
 • TS0601 Fix (v3.0.35): https://github.com/dlnraja/com.tuya.zigbee#-recent-updates
 
 Once you share the manufacturer IDs + active diagnostic, I can pinpoint the exact issue!
