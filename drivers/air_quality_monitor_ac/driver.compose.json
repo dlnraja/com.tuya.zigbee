@@ -6,11 +6,6 @@
   "capabilities": [
     "onoff"
   ],
-  "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png",
-    "xlarge": "./assets/images/xlarge.png"
-  },
   "zigbee": {
     "manufacturerName": [
       "TS0041",

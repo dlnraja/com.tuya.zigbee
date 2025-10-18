@@ -122,8 +122,8 @@ Analyser tout le projet, corriger toutes les erreurs, valider et publier l'app H
 - `assets/images/xlarge.png`: 1000x700 ✅
 
 **Scripts:**
-- `fix-images.js`
-- `scripts/fixes/FIX_APP_IMAGES_FINAL.js`
+- `scripts/fixes/fix-images.js`
+- `scripts/fixes/scripts/fixes/FIX_APP_IMAGES_FINAL.js`
 
 ---
 
