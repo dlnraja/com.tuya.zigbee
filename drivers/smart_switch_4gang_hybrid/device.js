@@ -3,6 +3,7 @@
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const IASZoneEnroller = require('../../lib/IASZoneEnroller');
 const batteryConverter = require('../../lib/tuya-engine/converters/battery');
+const FallbackSystem = require('../../lib/FallbackSystem');
 
 class SmartSwitch4gangHybridDevice extends ZigBeeDevice {
 
@@ -420,6 +421,52 @@ class SmartSwitch4gangHybridDevice extends ZigBeeDevice {
     this.log('✅ Poll attributes completed');
   }
 
+
+
+  /**
+   * Read attribute with intelligent fallback
+   * Tries multiple strategies until success
+   */
+  async readAttributeSafe(cluster, attribute) {
+    try {
+      return await this.fallback.readAttributeWithFallback(cluster, attribute);
+    } catch (err) {
+      this.error(`Failed to read ${cluster}.${attribute} after all fallback strategies:`, err);
+      throw err;
+    }
+  }
+
+  /**
+   * Configure report with intelligent fallback
+   */
+  async configureReportSafe(config) {
+    try {
+      return await this.fallback.configureReportWithFallback(config);
+    } catch (err) {
+      this.error(`Failed to configure report after all fallback strategies:`, err);
+      // Don't throw - use polling as ultimate fallback
+      return { success: false, method: 'polling' };
+    }
+  }
+
+  /**
+   * IAS Zone enrollment with fallback
+   */
+  async enrollIASZoneSafe() {
+    try {
+      return await this.fallback.iasEnrollWithFallback();
+    } catch (err) {
+      this.error('Failed to enroll IAS Zone after all fallback strategies:', err);
+      throw err;
+    }
+  }
+
+  /**
+   * Get fallback system statistics
+   */
+  getFallbackStats() {
+    return this.fallback ? this.fallback.getStats() : null;
+  }
 }
 
 module.exports = SmartSwitch4gangHybridDevice;
