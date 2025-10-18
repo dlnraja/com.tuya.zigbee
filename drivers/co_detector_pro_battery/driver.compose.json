@@ -78,8 +78,8 @@
     }
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "drivers/co_detector_pro_battery/assets/images/small.png",
+    "large": "drivers/co_detector_pro_battery/assets/images/large.png"
   },
   "platforms": [
     "local"

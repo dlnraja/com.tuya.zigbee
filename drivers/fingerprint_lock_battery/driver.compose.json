@@ -95,8 +95,8 @@
     }
   },
   "images": {
-    "large": "./assets/images/large.png",
-    "small": "./assets/images/small.png"
+    "large": "drivers/fingerprint_lock_battery/assets/images/large.png",
+    "small": "drivers/fingerprint_lock_battery/assets/images/small.png"
   },
   "pair": [
     {

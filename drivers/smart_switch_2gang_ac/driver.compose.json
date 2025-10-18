@@ -95,8 +95,8 @@
     }
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "drivers/smart_switch_2gang_ac/assets/images/small.png",
+    "large": "drivers/smart_switch_2gang_ac/assets/images/large.png"
   },
   "platforms": [
     "local"

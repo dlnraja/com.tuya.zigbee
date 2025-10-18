@@ -66,7 +66,7 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
 
     // Temperature measurement
     if (this.hasCapability('measure_temperature')) {
-      this.registerCapability('measure_temperature', 'msTemperatureMeasurement', {
+      this.registerCapability('measure_temperature', 1026, {
         get: 'measuredValue',
         report: 'measuredValue',
         reportParser: value => value / 100,
@@ -77,7 +77,7 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
 
     // Motion/vibration alarm (IAS Zone)
     if (this.hasCapability('alarm_motion')) {
-      this.registerCapability('alarm_motion', 'iasZone', {
+      this.registerCapability('alarm_motion', 1280, {
         report: 'zoneStatus',
         reportParser: value => (value & 1) === 1
       });
@@ -86,7 +86,7 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
 
     // Illuminance measurement
     if (this.hasCapability('measure_luminance')) {
-      this.registerCapability('measure_luminance', 'msIlluminanceMeasurement', {
+      this.registerCapability('measure_luminance', 1024, {
         get: 'measuredValue',
         report: 'measuredValue',
         reportParser: value => fromZigbeeMeasuredValue(value),
@@ -97,7 +97,7 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
 
     // Water leak alarm
     if (this.hasCapability('alarm_water')) {
-      this.registerCapability('alarm_water', 'iasZone', {
+      this.registerCapability('alarm_water', 1280, {
         report: 'zoneStatus',
         reportParser: value => (value & 1) === 1
       });

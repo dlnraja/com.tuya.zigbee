@@ -80,8 +80,8 @@
     }
   },
   "images": {
-    "large": "./assets/images/large.png",
-    "small": "./assets/images/small.png"
+    "large": "drivers/noise_level_sensor_battery/assets/images/large.png",
+    "small": "drivers/noise_level_sensor_battery/assets/images/small.png"
   },
   "pair": [
     {

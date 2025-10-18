@@ -65,8 +65,8 @@
     }
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "drivers/water_valve_smart_hybrid/assets/images/small.png",
+    "large": "drivers/water_valve_smart_hybrid/assets/images/large.png"
   },
   "capabilitiesOptions": {
     "measure_temperature": {

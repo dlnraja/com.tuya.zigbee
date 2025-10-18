@@ -113,8 +113,8 @@
     }
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "drivers/energy_monitoring_plug_advanced_ac/assets/images/small.png",
+    "large": "drivers/energy_monitoring_plug_advanced_ac/assets/images/large.png"
   },
   "platforms": [
     "local"

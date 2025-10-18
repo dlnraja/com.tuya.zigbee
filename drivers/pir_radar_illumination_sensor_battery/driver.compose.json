@@ -70,8 +70,8 @@
     }
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "drivers/pir_radar_illumination_sensor_battery/assets/images/small.png",
+    "large": "drivers/pir_radar_illumination_sensor_battery/assets/images/large.png"
   },
   "platforms": [
     "local"

@@ -96,8 +96,8 @@
     }
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "drivers/motion_sensor_zigbee_204z_battery/assets/images/small.png",
+    "large": "drivers/motion_sensor_zigbee_204z_battery/assets/images/large.png"
   },
   "platforms": [
     "local"

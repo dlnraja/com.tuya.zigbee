@@ -89,8 +89,8 @@
     }
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "drivers/radar_motion_sensor_tank_level_battery/assets/images/small.png",
+    "large": "drivers/radar_motion_sensor_tank_level_battery/assets/images/large.png"
   },
   "capabilitiesOptions": {
     "alarm_motion": {

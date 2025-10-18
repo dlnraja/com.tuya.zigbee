@@ -13,9 +13,9 @@
     "measure_battery"
   ],
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png",
-    "xlarge": "./assets/images/xlarge.png"
+    "small": "drivers/presence_sensor_mmwave_battery/assets/images/small.png",
+    "large": "drivers/presence_sensor_mmwave_battery/assets/images/large.png",
+    "xlarge": "drivers/presence_sensor_mmwave_battery/assets/images/xlarge.png"
   },
   "zigbee": {
     "manufacturerName": [

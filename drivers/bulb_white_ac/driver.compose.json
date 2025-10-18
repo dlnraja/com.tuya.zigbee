@@ -12,9 +12,9 @@
     "dim"
   ],
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png",
-    "xlarge": "./assets/images/xlarge.png"
+    "small": "drivers/bulb_white_ac/assets/images/small.png",
+    "large": "drivers/bulb_white_ac/assets/images/large.png",
+    "xlarge": "drivers/bulb_white_ac/assets/images/xlarge.png"
   },
   "zigbee": {
     "manufacturerName": [

@@ -12,9 +12,9 @@
     "alarm_motion"
   ],
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png",
-    "xlarge": "./assets/images/xlarge.png"
+    "small": "drivers/doorbell_camera_ac/assets/images/small.png",
+    "large": "drivers/doorbell_camera_ac/assets/images/large.png",
+    "xlarge": "drivers/doorbell_camera_ac/assets/images/xlarge.png"
   },
   "zigbee": {
     "manufacturerName": [

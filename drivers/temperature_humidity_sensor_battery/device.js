@@ -62,7 +62,7 @@ class TemperatureHumiditySensorDevice extends ZigBeeDevice {
 
     // Temperature measurement
     if (this.hasCapability('measure_temperature')) {
-      this.registerCapability('measure_temperature', 'msTemperatureMeasurement', {
+      this.registerCapability('measure_temperature', 1026, {
         get: 'measuredValue',
         report: 'measuredValue',
         reportParser: value => value / 100,
@@ -73,7 +73,7 @@ class TemperatureHumiditySensorDevice extends ZigBeeDevice {
 
     // Humidity measurement
     if (this.hasCapability('measure_humidity')) {
-      this.registerCapability('measure_humidity', 'msRelativeHumidity', {
+      this.registerCapability('measure_humidity', 1029, {
         get: 'measuredValue',
         report: 'measuredValue',
         reportParser: value => value / 100,

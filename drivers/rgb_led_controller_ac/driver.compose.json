@@ -77,8 +77,8 @@
     }
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "drivers/rgb_led_controller_ac/assets/images/small.png",
+    "large": "drivers/rgb_led_controller_ac/assets/images/large.png"
   },
   "platforms": [
     "local"

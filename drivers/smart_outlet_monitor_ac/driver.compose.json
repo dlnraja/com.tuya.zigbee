@@ -104,8 +104,8 @@
     }
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "drivers/smart_outlet_monitor_ac/assets/images/small.png",
+    "large": "drivers/smart_outlet_monitor_ac/assets/images/large.png"
   },
   "platforms": [
     "local"

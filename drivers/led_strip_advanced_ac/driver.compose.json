@@ -76,8 +76,8 @@
   },
   "capabilitiesOptions": {},
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "drivers/led_strip_advanced_ac/assets/images/small.png",
+    "large": "drivers/led_strip_advanced_ac/assets/images/large.png"
   },
   "platforms": [
     "local"

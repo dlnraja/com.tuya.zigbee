@@ -73,8 +73,8 @@
     }
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "drivers/touch_dimmer_1gang_ac/assets/images/small.png",
+    "large": "drivers/touch_dimmer_1gang_ac/assets/images/large.png"
   },
   "capabilitiesOptions": {},
   "platforms": [

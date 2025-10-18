@@ -89,8 +89,8 @@
     }
   },
   "images": {
-    "large": "./assets/images/large.png",
-    "small": "./assets/images/small.png"
+    "large": "drivers/smart_plug_ac/assets/images/large.png",
+    "small": "drivers/smart_plug_ac/assets/images/small.png"
   },
   "pair": [
     {

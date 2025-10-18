@@ -81,8 +81,8 @@
     }
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "drivers/water_leak_detector_advanced_battery/assets/images/small.png",
+    "large": "drivers/water_leak_detector_advanced_battery/assets/images/large.png"
   },
   "capabilitiesOptions": {
     "measure_temperature": {

@@ -80,8 +80,8 @@
     }
   },
   "images": {
-    "large": "./assets/images/large.png",
-    "small": "./assets/images/small.png"
+    "large": "drivers/fan_controller_ac/assets/images/large.png",
+    "small": "drivers/fan_controller_ac/assets/images/small.png"
   },
   "pair": [
     {

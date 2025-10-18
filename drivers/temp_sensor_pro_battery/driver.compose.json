@@ -80,8 +80,8 @@
     }
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "drivers/temp_sensor_pro_battery/assets/images/small.png",
+    "large": "drivers/temp_sensor_pro_battery/assets/images/large.png"
   },
   "platforms": [
     "local"

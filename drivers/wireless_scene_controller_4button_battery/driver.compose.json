@@ -16,9 +16,9 @@
     ]
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png",
-    "xlarge": "./assets/images/xlarge.png"
+    "small": "drivers/wireless_scene_controller_4button_battery/assets/images/small.png",
+    "large": "drivers/wireless_scene_controller_4button_battery/assets/images/large.png",
+    "xlarge": "drivers/wireless_scene_controller_4button_battery/assets/images/xlarge.png"
   },
   "zigbee": {
     "manufacturerName": [
