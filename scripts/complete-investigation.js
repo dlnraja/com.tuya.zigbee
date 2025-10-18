@@ -55,12 +55,34 @@ console.log('\n📁 1. ANALYSE DES DRIVERS...\n');
 function analyzeDriver(filePath) {
   const content = fs.readFileSync(filePath, 'utf8');
   const driverName = path.basename(path.dirname(filePath));
+  const driverDir = path.dirname(filePath);
   report.drivers.total++;
   
-  // Capabilities
-  const hasBattery = content.includes("'measure_battery'") || content.includes('"measure_battery"');
-  const hasIlluminance = content.includes("'measure_luminance'") || content.includes('"measure_luminance"');
-  const hasAlarm = /['"]alarm_/.test(content);
+  // Read actual capabilities from driver.compose.json (not just device.js mentions)
+  let actualCapabilities = [];
+  const composeFile = path.join(driverDir, 'driver.compose.json');
+  if (fs.existsSync(composeFile)) {
+    try {
+      const compose = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
+      actualCapabilities = compose.capabilities || [];
+    } catch (e) {
+      // If can't parse, fall back to device.js detection
+    }
+  }
+  
+  // Check capabilities (from compose if available, else from device.js)
+  const hasBattery = actualCapabilities.length > 0 
+    ? actualCapabilities.includes('measure_battery')
+    : (content.includes("'measure_battery'") || content.includes('"measure_battery"'));
+    
+  const hasIlluminance = actualCapabilities.length > 0
+    ? actualCapabilities.includes('measure_luminance')
+    : (content.includes("'measure_luminance'") || content.includes('"measure_luminance"'));
+    
+  // REAL alarm capabilities (not flow card mentions)
+  const hasAlarm = actualCapabilities.length > 0
+    ? actualCapabilities.some(cap => cap.startsWith('alarm_'))
+    : false; // If no compose, don't assume (avoids false positives)
   
   if (hasBattery) report.drivers.withBattery++;
   if (hasIlluminance) report.drivers.withIlluminance++;
@@ -79,7 +101,7 @@ function analyzeDriver(filePath) {
     }
   }
   
-  // IASZoneEnroller
+  // IASZoneEnroller (only check if REAL alarm capability exists)
   if (hasAlarm) {
     if (content.includes('IASZoneEnroller')) {
       report.drivers.withIAS++;
