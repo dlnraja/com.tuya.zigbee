@@ -3,6 +3,7 @@
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
 const TuyaClusterHandler = require('../../utils/tuya-cluster-handler');
+const { fromZclBatteryPercentageRemaining } = require('../../lib/tuya-engine/converters/battery');
 
 class SmartBulbWhiteAcDevice extends ZigBeeDevice {
 

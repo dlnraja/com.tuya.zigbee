@@ -3,6 +3,7 @@
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
 const IASZoneEnroller = require('../../lib/IASZoneEnroller');
+const { fromZclBatteryPercentageRemaining } = require('../../lib/tuya-engine/converters/battery');
 
 class SOSEmergencyButtonDevice extends ZigBeeDevice {
 
