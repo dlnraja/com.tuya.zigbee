@@ -7,7 +7,7 @@
     "measure_temperature",
     "measure_humidity",
     "measure_battery",
-    "temp_alarm"
+    "alarm_generic"
   ],
   "zigbee": {
     "manufacturerName": [
