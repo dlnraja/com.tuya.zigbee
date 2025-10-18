@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "motion_detected",
+      "id": "motion_sensor_pir_ac_battery_motion_detected",
       "title": {
         "en": "Motion detected",
         "fr": "Mouvement détecté"
@@ -18,7 +18,7 @@
       ]
     },
     {
-      "id": "motion_cleared",
+      "id": "motion_sensor_pir_ac_battery_motion_cleared",
       "title": {
         "en": "Motion cleared",
         "fr": "Mouvement terminé"
@@ -37,7 +37,7 @@
   ],
   "conditions": [
     {
-      "id": "motion_active",
+      "id": "motion_sensor_pir_ac_battery_motion_active",
       "title": {
         "en": "Motion is active",
         "fr": "Mouvement actif"
