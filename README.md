@@ -42,6 +42,21 @@ homey app install
 
 ---
 
+## 🔍 Transparency & Quality (CI/CD)
+
+This project publishes **automated build artifacts** for full transparency:
+
+- **✅ Validation Logs**: `homey app validate --level publish` results in every build
+- **✅ Device Matrix**: Auto-generated JSON/CSV of all supported devices
+- **✅ ESLint Results**: Code quality checks on every commit
+- **✅ GitHub Actions**: Public CI/CD workflow visible to all
+
+[![Build Status](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/build.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions)
+
+**Download Artifacts**: [Latest Build Artifacts](https://github.com/dlnraja/com.tuya.zigbee/actions) → Click latest workflow → Scroll to Artifacts
+
+---
+
 ## 📊 Supported Devices (183 Drivers)
 
 ### 🚨 Motion & Presence Detection (14)

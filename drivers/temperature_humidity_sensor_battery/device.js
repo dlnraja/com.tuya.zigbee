@@ -2,6 +2,7 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
+const { fromZclBatteryPercentageRemaining } = require('../../lib/tuya-engine/converters/battery');
 
 class TemperatureHumiditySensorDevice extends ZigBeeDevice {
 
@@ -33,23 +34,18 @@ class TemperatureHumiditySensorDevice extends ZigBeeDevice {
       this.log('✅ Humidity capability registered');
     }
 
-    // Battery measurement
+    // Battery measurement - Using standard converter
     if (this.hasCapability('measure_battery')) {
       this.registerCapability('measure_battery', 1, {
         get: 'batteryPercentageRemaining',
         report: 'batteryPercentageRemaining',
         reportParser: value => {
           this.log('Battery raw value:', value);
-          // Smart calculation: Tuya devices report 0-200 (divide by 2) or 0-100 (use as-is)
-          const percentage = value <= 100 ? value : value / 2;
-          return Math.max(0, Math.min(100, percentage));
+          return fromZclBatteryPercentageRemaining(value);
         },
-        getParser: value => {
-          const percentage = value <= 100 ? value : value / 2;
-          return Math.max(0, Math.min(100, percentage));
-        }
+        getParser: value => fromZclBatteryPercentageRemaining(value)
       });
-      this.log('✅ Battery capability registered');
+      this.log('✅ Battery capability registered with converter');
       
       // Force initial battery read with retry
       this.forceBatteryRead();
@@ -124,11 +120,10 @@ class TemperatureHumiditySensorDevice extends ZigBeeDevice {
         
         if (batteryValue && batteryValue.batteryPercentageRemaining !== undefined) {
           const rawValue = batteryValue.batteryPercentageRemaining;
-          const percentage = rawValue <= 100 ? rawValue : rawValue / 2;
-          const clamped = Math.max(0, Math.min(100, percentage));
+          const percentage = fromZclBatteryPercentageRemaining(rawValue);
           
-          await this.setCapabilityValue('measure_battery', clamped);
-          this.log(`✅ Battery read successful: ${clamped}% (raw: ${rawValue})`);
+          await this.setCapabilityValue('measure_battery', percentage);
+          this.log(`✅ Battery read successful: ${percentage}% (raw: ${rawValue})`);
           return;
         }
       } catch (error) {
@@ -406,11 +401,6 @@ class TemperatureHumiditySensorDevice extends ZigBeeDevice {
   // ========================================
   // FLOW METHODS - Auto-generated
   // ========================================
-
-   catch (err) {
-      this.error('Battery change detection error:', err);
-    }
-  }
 
 }
 

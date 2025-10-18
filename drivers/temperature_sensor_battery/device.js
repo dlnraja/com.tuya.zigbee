@@ -3,6 +3,7 @@
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
 const TuyaClusterHandler = require('../../utils/tuya-cluster-handler');
+const { fromZclBatteryPercentageRemaining } = require('../../lib/tuya-engine/converters/battery');
 
 class TemperatureSensorBatteryDevice extends ZigBeeDevice {
 
@@ -63,22 +64,18 @@ class TemperatureSensorBatteryDevice extends ZigBeeDevice {
       this.log('✅ Humidity capability registered');
     }
 
-    // Battery - IMPROVED with smart parsing
+    // Battery - Using standard converter
     if (this.hasCapability('measure_battery')) {
       this.registerCapability('measure_battery', 1, {
         get: 'batteryPercentageRemaining',
         report: 'batteryPercentageRemaining',
         reportParser: value => {
           this.log('Battery raw value:', value);
-          const percentage = value <= 100 ? value : value / 2;
-          return Math.max(0, Math.min(100, percentage));
+          return fromZclBatteryPercentageRemaining(value);
         },
-        getParser: value => {
-          const percentage = value <= 100 ? value : value / 2;
-          return Math.max(0, Math.min(100, percentage));
-        }
+        getParser: value => fromZclBatteryPercentageRemaining(value)
       });
-      this.log('✅ Battery capability registered');
+      this.log('✅ Battery capability registered with converter');
     }
 
     // Configure attribute reporting with improved intervals
@@ -142,11 +139,10 @@ class TemperatureSensorBatteryDevice extends ZigBeeDevice {
         
         if (batteryValue && batteryValue.batteryPercentageRemaining !== undefined) {
           const rawValue = batteryValue.batteryPercentageRemaining;
-          const percentage = rawValue <= 100 ? rawValue : rawValue / 2;
-          const clamped = Math.max(0, Math.min(100, percentage));
+          const percentage = fromZclBatteryPercentageRemaining(rawValue);
           
-          await this.setCapabilityValue('measure_battery', clamped);
-          this.log(`✅ Battery read successful: ${clamped}% (raw: ${rawValue})`);
+          await this.setCapabilityValue('measure_battery', percentage);
+          this.log(`✅ Battery read successful: ${percentage}% (raw: ${rawValue})`);
           return;
         }
       } catch (error) {

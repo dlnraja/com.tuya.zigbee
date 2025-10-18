@@ -9,7 +9,7 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
   async onNodeInit({ zclNode }) {
     this.log('sos_emergency_button_cr2032 initialized');
 
-    // Battery (cluster 1)
+    // Battery (cluster 1) - Using standard converter
     this.registerCapability('measure_battery', 1, {
       get: 'batteryPercentageRemaining',
       report: 'batteryPercentageRemaining',
@@ -18,10 +18,11 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
       },
       reportParser: value => {
         this.log('Battery raw value:', value);
-        return value / 2;
-      }
+        return fromZclBatteryPercentageRemaining(value);
+      },
+      getParser: value => fromZclBatteryPercentageRemaining(value)
     });
-    this.log('✅ Battery capability registered');
+    this.log('✅ Battery capability registered with converter');
     
     // SOS Button IAS Zone
     this.log('🚨 Setting up SOS button IAS Zone...');
