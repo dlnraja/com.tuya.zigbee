@@ -2,6 +2,7 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
+const IASZoneEnroller = require('../../lib/IASZoneEnroller');
 
 class DoorWindowSensorDevice extends ZigBeeDevice {
 
@@ -16,8 +17,8 @@ class DoorWindowSensorDevice extends ZigBeeDevice {
       this.registerCapability('measure_battery', 1, {
         get: 'batteryPercentageRemaining',
         report: 'batteryPercentageRemaining',
-        reportParser: value => { this.log('Battery raw value:', value); // Smart calculation: check if value is already 0-100 or 0-200 if (value <= 100) { return Math.max(0, Math.min(100, value)); } else { return Math.max(0, Math.min(100, value / 2)); } },
-        getParser: value => Math.max(0, Math.min(100, value / 2))
+        reportParser: value => { this.log('Battery raw value:', value); // Smart calculation: check if value is already 0-100 or 0-200 if (value <= 100) { return Math.max(0, Math.min(100, value)); } else { return fromZclBatteryPercentageRemaining(value); } },
+        getParser: value => fromZclBatteryPercentageRemaining(value)
       });
       this.log('✅ Battery capability registered');
 
@@ -48,8 +49,8 @@ class DoorWindowSensorDevice extends ZigBeeDevice {
       this.registerCapability('measure_luminance', 'msIlluminanceMeasurement', {
         get: 'measuredValue',
         report: 'measuredValue',
-        reportParser: value => Math.pow(10, (value - 1) / 10000),
-        getParser: value => Math.pow(10, (value - 1) / 10000)
+        reportParser: value => fromZigbeeMeasuredValue(value),
+        getParser: value => fromZigbeeMeasuredValue(value)
       });
       this.log('✅ Luminance capability registered');
     }

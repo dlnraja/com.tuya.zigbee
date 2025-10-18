@@ -2,6 +2,7 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
+const IASZoneEnroller = require('../../lib/IASZoneEnroller');
 
 /**
  * Doorbell Camera Ac
