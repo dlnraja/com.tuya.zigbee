@@ -4,11 +4,19 @@ const Homey = require('homey');
 const { registerCustomClusters } = require('./lib/registerClusters');
 
 class UniversalTuyaZigbeeApp extends Homey.App {
+  _flowCardsRegistered = false;
+
 
   /**
    * onInit is called when the app is initialized.
    */
   async onInit() {
+    if (this._flowCardsRegistered) {
+      this.log('⏭️  Flow cards already registered');
+      return;
+        this._flowCardsRegistered = true;
+  }
+
     this.log('Universal Tuya Zigbee App is initializing...');
 
     // CRITICAL: Register custom Zigbee clusters FIRST
