@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "contact_opened",
+      "id": "door_window_sensor_battery_contact_opened",
       "title": {
         "en": "Opened",
         "fr": "Ouvert"
@@ -18,7 +18,7 @@
       ]
     },
     {
-      "id": "contact_closed",
+      "id": "door_window_sensor_battery_contact_closed",
       "title": {
         "en": "Closed",
         "fr": "Fermé"
@@ -37,7 +37,7 @@
   ],
   "conditions": [
     {
-      "id": "is_open",
+      "id": "door_window_sensor_battery_is_open",
       "title": {
         "en": "Is open",
         "fr": "Est ouvert"
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "id": "is_closed",
+      "id": "door_window_sensor_battery_is_closed",
       "title": {
         "en": "Is closed",
         "fr": "Est fermé"
