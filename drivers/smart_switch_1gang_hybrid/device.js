@@ -1,6 +1,8 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const IASZoneEnroller = require('../../lib/IASZoneEnroller');
+const batteryConverter = require('../../lib/tuya-engine/converters/battery');
 
 class SmartSwitch1gangHybridDevice extends ZigBeeDevice {
 
@@ -12,7 +14,9 @@ class SmartSwitch1gangHybridDevice extends ZigBeeDevice {
         this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));
 
         // Mark device as available
+        try {
         await this.setAvailable();
+        } catch (err) { this.error('Await error:', err); }
     }
 
         async onCapabilityOnoff(value, opts) {
@@ -38,7 +42,9 @@ class SmartSwitch1gangHybridDevice extends ZigBeeDevice {
 
 
   async setCapabilityValue(capabilityId, value) {
+    try {
     await super.setCapabilityValue(capabilityId, value);
+    } catch (err) { this.error('Await error:', err); }
     await this.triggerCapabilityFlow(capabilityId, value);
   }
 
@@ -188,7 +194,9 @@ class SmartSwitch1gangHybridDevice extends ZigBeeDevice {
       const closeCard = this.homey.flow.getDeviceActionCard('smart_switch_1gang_hybrid_close');
       if (closeCard) {
         closeCard.registerRunListener(async (args, state) => {
+          try {
           await args.device.setCapabilityValue('windowcoverings_set', 0);
+          } catch (err) { this.error('Await error:', err); }
         });
       }
 
@@ -214,7 +222,9 @@ class SmartSwitch1gangHybridDevice extends ZigBeeDevice {
               await args.device.setCapabilityValue('onoff', true);
               await new Promise(resolve => setTimeout(resolve, 300));
               await args.device.setCapabilityValue('onoff', false);
+              try {
               await new Promise(resolve => setTimeout(resolve, 300));
+              } catch (err) { this.error('Await error:', err); }
             }
             await args.device.setCapabilityValue('onoff', original);
           }
@@ -355,6 +365,60 @@ class SmartSwitch1gangHybridDevice extends ZigBeeDevice {
     return 'night';
   }
 
+
+
+  /**
+   * Poll tous les attributes pour forcer mise à jour
+   * Résout: Données non visibles après pairing (Peter + autres)
+   */
+  async pollAttributes() {
+    const promises = [];
+    
+    // Battery
+    if (this.hasCapability('measure_battery')) {
+      promises.push(
+        this.zclNode.endpoints[1]?.clusters.powerConfiguration?.readAttributes('batteryPercentageRemaining')
+          .catch(err => this.log('Battery read failed (ignorable):', err.message))
+      );
+    }
+    
+    // Temperature
+    if (this.hasCapability('measure_temperature')) {
+      promises.push(
+        this.zclNode.endpoints[1]?.clusters.temperatureMeasurement?.readAttributes('measuredValue')
+          .catch(err => this.log('Temperature read failed (ignorable):', err.message))
+      );
+    }
+    
+    // Humidity
+    if (this.hasCapability('measure_humidity')) {
+      promises.push(
+        this.zclNode.endpoints[1]?.clusters.relativeHumidity?.readAttributes('measuredValue')
+          .catch(err => this.log('Humidity read failed (ignorable):', err.message))
+      );
+    }
+    
+    // Illuminance
+    if (this.hasCapability('measure_luminance')) {
+      promises.push(
+        this.zclNode.endpoints[1]?.clusters.illuminanceMeasurement?.readAttributes('measuredValue')
+          .catch(err => this.log('Illuminance read failed (ignorable):', err.message))
+      );
+    }
+    
+    // Alarm status (IAS Zone)
+    if (this.hasCapability('alarm_motion') || this.hasCapability('alarm_contact')) {
+      promises.push(
+        this.zclNode.endpoints[1]?.clusters.iasZone?.readAttributes('zoneStatus')
+          .catch(err => this.log('IAS Zone read failed (ignorable):', err.message))
+      );
+    }
+    
+    try {
+    await Promise.allSettled(promises);
+    } catch (err) { this.error('Await error:', err); }
+    this.log('✅ Poll attributes completed');
+  }
 
 }
 
