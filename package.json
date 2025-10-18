@@ -4,6 +4,11 @@
   "description": "Universal Tuya Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
+    "validate": "node scripts/validation/pre-publish-check.js",
+    "fix:images": "node scripts/validation/fix-driver-images-object.js && node scripts/validation/fix-app-image-dimensions.js",
+    "fix:all": "npm run fix:images && node scripts/fixes/add-learnmode-to-all-drivers.js",
+    "build:clean": "node -e \"const fs=require('fs');const p='.homeybuild';if(fs.existsSync(p))fs.rmSync(p,{recursive:true})\" && homey app build",
+    "validate:publish": "npm run build:clean && homey app validate --level publish",
     "validate": "homey app validate",
     "validate:debug": "homey app validate --level debug",
     "validate:publish": "homey app validate --level publish",
