@@ -5,9 +5,7 @@
     "withIlluminance": 155,
     "withAlarm": 183,
     "withIAS": 30,
-    "missingBatteryConverter": [
-      "water_leak_detector_advanced_battery"
-    ],
+    "missingBatteryConverter": [],
     "missingIlluminanceConverter": [],
     "missingIAS": [
       "air_quality_monitor_ac",
@@ -165,44 +163,7 @@
       "zigbee_gateway_hub_ac"
     ],
     "orphanedCode": [],
-    "missingImports": [
-      "air_quality_monitor_ac: missing battery import",
-      "ceiling_fan_ac: missing battery import",
-      "ceiling_light_controller_ac: missing battery import",
-      "ceiling_light_rgb_ac: missing battery import",
-      "door_window_sensor_battery: missing battery import",
-      "door_window_sensor_battery: missing illuminance import",
-      "energy_plug_advanced_ac: missing battery import",
-      "hvac_controller_ac: missing battery import",
-      "led_strip_advanced_ac: missing battery import",
-      "led_strip_controller_ac: missing battery import",
-      "led_strip_controller_pro_ac: missing battery import",
-      "milight_controller_ac: missing battery import",
-      "mini_ac: missing battery import",
-      "motion_sensor_illuminance_battery: missing battery import",
-      "motion_sensor_illuminance_battery: missing illuminance import",
-      "motion_sensor_pir_battery: missing battery import",
-      "motion_temp_humidity_illumination_multi_battery: missing battery import",
-      "motion_temp_humidity_illumination_multi_battery: missing illuminance import",
-      "pool_pump_controller_ac: missing battery import",
-      "projector_screen_controller_ac: missing battery import",
-      "rgb_led_controller_ac: missing battery import",
-      "scene_controller: missing battery import",
-      "shade_controller_ac: missing battery import",
-      "smart_bulb_dimmer_ac: missing battery import",
-      "smart_bulb_rgb_ac: missing battery import",
-      "smart_bulb_tunable_ac: missing battery import",
-      "smart_bulb_white_ac: missing battery import",
-      "smart_radiator_valve_hybrid: missing battery import",
-      "smart_spot_ac: missing battery import",
-      "sos_emergency_button_cr2032: missing battery import",
-      "touch_dimmer_ac: missing battery import",
-      "wall_switch_5gang_ac: missing battery import",
-      "water_leak_sensor_battery: missing battery import",
-      "water_leak_sensor_battery: missing illuminance import",
-      "zbbridge_ac: missing battery import",
-      "zigbee_gateway_hub_ac: missing battery import"
-    ]
+    "missingImports": []
   },
   "validation": {
     "homey": {
@@ -220,12 +181,9 @@
   },
   "critical": [],
   "warnings": [
-    "1 drivers need battery converter",
-    "153 drivers need IASZoneEnroller",
-    "36 drivers missing imports"
+    "153 drivers need IASZoneEnroller"
   ],
   "suggestions": [
-    "Run: node scripts/audit-and-fix-all.js to fix battery converters",
     "Run: node scripts/apply-ias-zone-enroller.js to add IASZoneEnroller"
   ]
 }
