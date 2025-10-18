@@ -10,9 +10,7 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
     // Configure battery reporting (min 1h, max 24h, delta 5%)
-    try {
-    await this.configureAttributeReporting([{
-    } catch (err) { this.error('Await error:', err); }
+    this.configureAttributeReporting([{
       endpointId: 1,
       cluster: 'powerConfiguration',
       attributeName: 'batteryPercentageRemaining',
