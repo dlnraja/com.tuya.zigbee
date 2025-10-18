@@ -130,9 +130,7 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
       });
       this.log('✅ Battery capability registered');
 
-    try {
-    await this.setAvailable();
-    } catch (err) { this.error('Await error:', err); }
+    this.setAvailable().catch(err => this.error('setAvailable error:', err));
   }
   // ========================================
   // FLOW METHODS - Auto-generated
