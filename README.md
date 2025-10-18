@@ -1,14 +1,26 @@
 # 🏠 Universal Tuya Zigbee
 
-[![Version](https://img.shields.io/badge/version-3.0.37-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![Version](https://img.shields.io/badge/version-3.0.50-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![SDK](https://img.shields.io/badge/SDK-3-green.svg)](https://apps.developer.homey.app)
 [![Homey](https://img.shields.io/badge/Homey->=12.2.0-orange.svg)](https://homey.app)
-[![Drivers](https://img.shields.io/badge/drivers-183-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee/tree/master/drivers)
-[![Build & Validate](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/ci-complete.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/ci-complete.yml)
-[![Matrix Export](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/matrix-export.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/matrix-export.yml)
+[![Drivers](https://img.shields.io/badge/drivers-183-brightgreen.svg)](matrix/DEVICE_MATRIX.md)
+[![Build & Validate](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/build.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/build.yml)
+[![Complete Validation](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/complete-validation.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/complete-validation.yml)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](LICENSE)
 
 **Community-maintained Tuya Zigbee app** with 183 SDK3 native drivers. 100% local control, no cloud required. Active development with comprehensive device support.
+
+---
+
+## 🚀 Start Here
+
+**New User?** Follow these steps:
+
+1. **📥 Install** → [Via Homey CLI](#from-homey-cli-recommended) (recommended) or [wait for App Store](#from-homey-app-store)
+2. **🔍 Check Compatibility** → [Device Matrix](matrix/DEVICE_MATRIX.md) (183 drivers, 550+ device IDs)
+3. **📚 Learn** → [Zigbee Cookbook](ZIGBEE_COOKBOOK.md) (pairing, troubleshooting, best practices)
+4. **🆕 Request Device** → [Device Request Template](.github/ISSUE_TEMPLATE/device-request.md)
+5. **💬 Get Help** → [Homey Community Forum](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352)
 
 ---
 
@@ -23,37 +35,74 @@
 
 ---
 
-## 🚀 Installation
+## 📥 Installation
 
-### From Homey CLI (Recommended)
+### Method 1: Homey CLI (Recommended - Available Now)
+
+**Why CLI?** Get latest features immediately, no waiting for Store approval.
+
 ```bash
+# Install Homey CLI (once)
+npm install -g homey
+
+# Clone and install app
 git clone https://github.com/dlnraja/com.tuya.zigbee.git
 cd com.tuya.zigbee
 npm install
 homey app install
 ```
 
-### From Homey App Store
-> ⚠️ **Note:** App Store listing pending review. Use CLI method above for immediate access.
+**Requirements**: Node.js 18+, npm, Homey account
 
+---
+
+### Method 2: Homey App Store (Coming Soon)
+
+> ⚠️ **Status**: App Store submission pending Athom review  
+> ⏰ **ETA**: Review typically takes 1-7 days  
+> 📌 **Use CLI above** for immediate access
+
+**Once live**:
 1. Open Homey app → **More** → **Apps**
 2. Search for "**Universal Tuya Zigbee**"
 3. Click **Install**
+
+We'll update this README with Store link once live.
 
 ---
 
 ## 🔍 Transparency & Quality (CI/CD)
 
-This project publishes **automated build artifacts** for full transparency:
+We believe in **radical transparency**. Every build publishes public artifacts:
 
-- **✅ Validation Logs**: `homey app validate --level publish` results in every build
-- **✅ Device Matrix**: Auto-generated JSON/CSV of all supported devices
-- **✅ ESLint Results**: Code quality checks on every commit
-- **✅ GitHub Actions**: Public CI/CD workflow visible to all
+### 📊 What We Publish
 
-[![Build Status](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/build.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions)
+| Artifact | Description | Link |
+|----------|-------------|------|
+| **Validation Logs** | Full `homey app validate --level publish` output | [Download](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/build.yml) |
+| **Device Matrix** | JSON/CSV of all 183 drivers + 550+ device IDs | [View](matrix/DEVICE_MATRIX.md) / [JSON](matrix/devices.json) |
+| **Investigation Report** | Automated quality checks + coverage stats | [Download](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/build.yml) |
+| **ESLint Results** | Code quality analysis | [Download](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/build.yml) |
 
-**Download Artifacts**: [Latest Build Artifacts](https://github.com/dlnraja/com.tuya.zigbee/actions) → Click latest workflow → Scroll to Artifacts
+### ✅ Quality Gates
+
+- **Homey Validation**: ✅ PASSED (publish level, 0 errors)
+- **Device Matrix**: ✅ 183 drivers, auto-generated every build
+- **Battery Coverage**: ✅ 100% (166/166 battery drivers)
+- **IAS Zone Coverage**: ✅ 100% (30/30 alarm drivers)
+- **CI/CD**: ✅ Automated on every commit
+
+### 🔗 Live Status
+
+[![Build & Validate](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/build.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/build.yml) ← **Click for latest validation logs**
+
+**How to verify**:
+1. Click badge above → View latest workflow run
+2. Scroll to **Artifacts** section
+3. Download `build-artifacts.zip`
+4. Contains: validation logs, device matrix, investigation report
+
+**Updated**: Every push to `master` branch (typically daily)
 
 ---
 
