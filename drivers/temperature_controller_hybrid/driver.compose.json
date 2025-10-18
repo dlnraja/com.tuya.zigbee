@@ -57,8 +57,9 @@
     }
   },
   "images": {
-    "large": "./assets/images/large.png",
-    "small": "./assets/images/small.png"
+    "large": "./drivers/temperature_controller_hybrid/assets/images/large.png",
+    "small": "./drivers/temperature_controller_hybrid/assets/images/small.png",
+    "xlarge": "./drivers/temperature_controller_hybrid/assets/images/xlarge.png"
   },
   "pair": [
     {

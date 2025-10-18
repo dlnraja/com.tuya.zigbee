@@ -1,0 +1,1160 @@
+{
+  "timestamp": "2025-10-18T17:10:58.214Z",
+  "project": {
+    "total_drivers": 183,
+    "zigbee_drivers": 183,
+    "valid_drivers": 0
+  },
+  "issues_found": {
+    "missing_learnmode": 0,
+    "duplicate_flow_ids": 0,
+    "invalid_images": 183,
+    "missing_titleFormatted": 0
+  },
+  "issues_details": {
+    "missing_learnmode": [],
+    "duplicate_flow_ids": [],
+    "missing_device_tokens": [],
+    "invalid_images": [
+      {
+        "driver": "air_quality_monitor_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "air_quality_monitor_pro_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "alarm_siren_chime_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "bulb_color_rgbcct_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "bulb_white_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "bulb_white_ambiance_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "ceiling_fan_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "ceiling_light_controller_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "ceiling_light_rgb_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "climate_monitor_cr2032",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "co2_sensor_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "co2_temp_humidity_cr2032",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "comprehensive_air_monitor_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "contact_sensor_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "co_detector_pro_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "curtain_motor_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "dimmer_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "dimmer_switch_1gang_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "dimmer_switch_3gang_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "dimmer_switch_timer_module_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "doorbell_camera_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "doorbell_cr2032",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "door_controller_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "door_lock_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "door_window_sensor_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "energy_monitoring_plug_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "energy_monitoring_plug_advanced_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "energy_plug_advanced_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "extension_plug_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "fan_controller_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "fingerprint_lock_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "formaldehyde_sensor_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "garage_door_controller_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "garage_door_opener_cr2032",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "gas_detector_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "gas_sensor_ts0601_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "gas_sensor_ts0601_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "humidity_controller_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "hvac_controller_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "led_strip_advanced_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "led_strip_controller_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "led_strip_controller_pro_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "led_strip_outdoor_color_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "lux_sensor_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "milight_controller_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "mini_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "mini_switch_cr2032",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "motion_sensor_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "motion_sensor_illuminance_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "motion_sensor_mmwave_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "motion_sensor_pir_ac_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "motion_sensor_pir_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "motion_sensor_zigbee_204z_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "motion_temp_humidity_illumination_multi_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "multisensor_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "noise_level_sensor_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "outdoor_light_controller_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "outdoor_siren_cr2032",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "pet_feeder_cr2032",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "pir_radar_illumination_sensor_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "pir_sensor_advanced_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "pm25_detector_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "pm25_sensor_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "pool_pump_controller_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "power_meter_socket_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "presence_sensor_mmwave_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "presence_sensor_radar_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "pressure_sensor_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "projector_screen_controller_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "radar_motion_sensor_advanced_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "radar_motion_sensor_mmwave_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "radar_motion_sensor_tank_level_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "radiator_valve_hybrid",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "relay_switch_1gang_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "remote_switch_cr2032",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "rgb_led_controller_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "roller_blind_controller_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "roller_shutter_controller_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "roller_shutter_switch_advanced_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "roller_shutter_switch_cr2032",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "scene_controller",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "scene_controller_2button_cr2032",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "scene_controller_4button_cr2032",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "scene_controller_6button_cr2032",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "scene_controller_8button_cr2032",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "scene_controller_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "shade_controller_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_bulb_dimmer_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_bulb_rgb_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_bulb_tunable_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_bulb_white_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_curtain_motor_hybrid",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_dimmer_module_1gang_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_doorbell_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_garden_sprinkler_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_irrigation_controller_hybrid",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_lock_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_outlet_monitor_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_plug_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_plug_dimmer_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_plug_energy_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_plug_power_meter_16a_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_radiator_valve_hybrid",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_smoke_detector_advanced_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_spot_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_switch_1gang_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_switch_1gang_hybrid",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_switch_2gang_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_switch_2gang_hybrid",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_switch_3gang_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_switch_3gang_hybrid",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_switch_4gang_hybrid",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_thermostat_hybrid",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_valve_controller_hybrid",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smart_water_valve_hybrid",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smoke_detector_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smoke_detector_temperature_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smoke_detector_temp_humidity_advanced_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "smoke_temp_humid_sensor_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "soil_moisture_sensor_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "soil_moisture_temperature_sensor_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "soil_tester_temp_humid_cr2032",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "solar_panel_controller_hybrid",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "sos_emergency_button_cr2032",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "switch_1gang_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "switch_2gang_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "switch_2gang_hybrid",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "switch_3gang_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "switch_4gang_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "switch_4gang_battery_cr2032",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "switch_5gang_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "switch_6gang_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "switch_8gang_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "tank_level_monitor_cr2032",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "temperature_controller_hybrid",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "temperature_humidity_display_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "temperature_humidity_sensor_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "temperature_sensor_advanced_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "temperature_sensor_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "temp_humid_sensor_advanced_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "temp_humid_sensor_dd_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "temp_humid_sensor_leak_detector_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "temp_sensor_pro_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "thermostat_hybrid",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "touch_dimmer_1gang_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "touch_dimmer_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "touch_switch_1gang_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "touch_switch_2gang_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "touch_switch_3gang_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "touch_switch_4gang_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "tvoc_sensor_advanced_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "tvoc_sensor_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "usb_outlet_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "usb_outlet_advanced_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "vibration_sensor_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "wall_switch_1gang_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "wall_switch_1gang_dc",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "wall_switch_2gang_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "wall_switch_2gang_dc",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "wall_switch_3gang_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "wall_switch_3gang_dc",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "wall_switch_4gang_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "wall_switch_4gang_dc",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "wall_switch_5gang_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "wall_switch_6gang_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "water_leak_detector_advanced_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "water_leak_detector_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "water_leak_sensor_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "water_valve_hybrid",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "water_valve_smart_hybrid",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "wireless_button_2gang_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "wireless_dimmer_scroll_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "wireless_scene_controller_4button_battery",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "wireless_switch_1gang_cr2032",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "wireless_switch_2gang_cr2032",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "wireless_switch_3gang_cr2032",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "wireless_switch_4gang_cr2032",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "wireless_switch_4gang_cr2450",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "wireless_switch_5gang_cr2032",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "wireless_switch_6gang_cr2032",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "wireless_switch_cr2032",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "zbbridge_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      },
+      {
+        "driver": "zigbee_gateway_hub_ac",
+        "issues": [
+          "Missing xlarge.png"
+        ]
+      }
+    ],
+    "missing_titleFormatted": []
+  },
+  "homey_sdk3_compliance": {
+    "spec_version": "3.0",
+    "validation_level": "publish",
+    "image_specs": {
+      "app": {
+        "small": {
+          "width": 250,
+          "height": 175
+        },
+        "large": {
+          "width": 500,
+          "height": 500
+        },
+        "xlarge": {
+          "width": 1000,
+          "height": 700
+        }
+      },
+      "driver": {
+        "small": {
+          "width": 75,
+          "height": 75
+        },
+        "large": {
+          "width": 500,
+          "height": 500
+        },
+        "xlarge": {
+          "width": 1000,
+          "height": 1000
+        }
+      }
+    },
+    "zigbee_requirements": [
+      "manufacturerName",
+      "productId",
+      "endpoints",
+      "learnmode"
+    ]
+  }
+}

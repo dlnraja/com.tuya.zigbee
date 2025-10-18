@@ -79,8 +79,9 @@
     }
   },
   "images": {
-    "large": "./assets/images/large.png",
-    "small": "./assets/images/small.png"
+    "large": "./drivers/radiator_valve_hybrid/assets/images/large.png",
+    "small": "./drivers/radiator_valve_hybrid/assets/images/small.png",
+    "xlarge": "./drivers/radiator_valve_hybrid/assets/images/xlarge.png"
   },
   "pair": [
     {

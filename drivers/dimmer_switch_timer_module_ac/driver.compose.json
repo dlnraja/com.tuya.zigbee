@@ -73,8 +73,9 @@
     }
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "./drivers/dimmer_switch_timer_module_ac/assets/images/small.png",
+    "large": "./drivers/dimmer_switch_timer_module_ac/assets/images/large.png",
+    "xlarge": "./drivers/dimmer_switch_timer_module_ac/assets/images/xlarge.png"
   },
   "capabilitiesOptions": {},
   "platforms": [

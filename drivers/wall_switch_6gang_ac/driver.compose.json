@@ -147,8 +147,9 @@
     ]
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "./drivers/wall_switch_6gang_ac/assets/images/small.png",
+    "large": "./drivers/wall_switch_6gang_ac/assets/images/large.png",
+    "xlarge": "./drivers/wall_switch_6gang_ac/assets/images/xlarge.png"
   },
   "settings": [
     {

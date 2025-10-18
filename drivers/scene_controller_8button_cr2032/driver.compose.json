@@ -69,8 +69,9 @@
     ]
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "./drivers/scene_controller_8button_cr2032/assets/images/small.png",
+    "large": "./drivers/scene_controller_8button_cr2032/assets/images/large.png",
+    "xlarge": "./drivers/scene_controller_8button_cr2032/assets/images/xlarge.png"
   },
   "settings": [
     {

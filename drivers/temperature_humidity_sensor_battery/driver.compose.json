@@ -65,8 +65,9 @@
     }
   },
   "images": {
-    "large": "./assets/images/large.png",
-    "small": "./assets/images/small.png"
+    "large": "./drivers/temperature_humidity_sensor_battery/assets/images/large.png",
+    "small": "./drivers/temperature_humidity_sensor_battery/assets/images/small.png",
+    "xlarge": "./drivers/temperature_humidity_sensor_battery/assets/images/xlarge.png"
   },
   "pair": [
     {

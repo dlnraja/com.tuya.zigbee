@@ -81,8 +81,9 @@
     }
   },
   "images": {
-    "large": "./assets/images/large.png",
-    "small": "./assets/images/small.png"
+    "large": "./drivers/door_window_sensor_battery/assets/images/large.png",
+    "small": "./drivers/door_window_sensor_battery/assets/images/small.png",
+    "xlarge": "./drivers/door_window_sensor_battery/assets/images/xlarge.png"
   },
   "pair": [
     {

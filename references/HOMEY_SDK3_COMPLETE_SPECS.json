@@ -1,0 +1,248 @@
+{
+  "version": "3.0.0",
+  "source": "https://apps.developer.homey.app",
+  "last_updated": "2025-10-18",
+  
+  "image_specifications": {
+    "app_images": {
+      "location": "/assets/images/",
+      "required_files": ["small.png", "large.png", "xlarge.png"],
+      "dimensions": {
+        "small": { "width": 250, "height": 175 },
+        "large": { "width": 500, "height": 500 },
+        "xlarge": { "width": 1000, "height": 700 }
+      },
+      "format": "PNG",
+      "purpose": "App Store listing"
+    },
+    
+    "driver_images": {
+      "location": "/drivers/{driver_id}/assets/images/",
+      "required_files": ["small.png", "large.png", "xlarge.png"],
+      "dimensions": {
+        "small": { "width": 75, "height": 75 },
+        "large": { "width": 500, "height": 500 },
+        "xlarge": { "width": 1000, "height": 1000 }
+      },
+      "format": "PNG",
+      "purpose": "Device pairing and identification"
+    },
+    
+    "icon": {
+      "location": "/assets/icon.svg",
+      "format": "SVG",
+      "size": "Single size (vector)",
+      "purpose": "App icon displayed in Homey"
+    }
+  },
+  
+  "zigbee_driver_requirements": {
+    "required_manifest_fields": [
+      "name",
+      "class",
+      "capabilities",
+      "zigbee.manufacturerName",
+      "zigbee.productId",
+      "zigbee.endpoints",
+      "zigbee.learnmode"
+    ],
+    
+    "zigbee_object": {
+      "manufacturerName": {
+        "type": "string or array",
+        "description": "Manufacturer ID from Basic cluster",
+        "example": ["_TZ3000_kmh5qpmb", "TS0202"]
+      },
+      
+      "productId": {
+        "type": "string or array",
+        "description": "Product ID from device",
+        "example": ["PIR_sensor", "motion_detector"]
+      },
+      
+      "endpoints": {
+        "type": "object",
+        "description": "Endpoint configuration with clusters",
+        "structure": {
+          "endpoint_id": {
+            "clusters": ["array of cluster IDs as numbers"],
+            "bindings": ["array of cluster IDs for server bindings"]
+          }
+        },
+        "example": {
+          "1": {
+            "clusters": [0, 1, 3, 1024, 1030],
+            "bindings": [1030]
+          }
+        }
+      },
+      
+      "learnmode": {
+        "type": "object",
+        "required": true,
+        "structure": {
+          "instruction": {
+            "type": "object",
+            "description": "Localized pairing instructions",
+            "required_languages": ["en"],
+            "example": {
+              "en": "Press the button on your device three times",
+              "nl": "Druk drie keer op de knop op uw apparaat",
+              "fr": "Appuyez trois fois sur le bouton de votre appareil"
+            }
+          },
+          "image": {
+            "type": "string",
+            "optional": true,
+            "description": "Path to pairing instruction image",
+            "example": "/drivers/my_driver/assets/learnmode.svg"
+          }
+        }
+      }
+    },
+    
+    "dependencies": {
+      "required": [
+        "homey-zigbeedriver",
+        "zigbee-clusters"
+      ],
+      "install_command": "npm install --save homey-zigbeedriver zigbee-clusters"
+    }
+  },
+  
+  "flow_card_requirements": {
+    "unique_ids": {
+      "required": true,
+      "scope": "global",
+      "description": "All flow card IDs must be unique across entire app",
+      "recommendation": "Prefix with driver name: {driver}_{card_id}"
+    },
+    
+    "device_cards": {
+      "device_argument_required": true,
+      "device_token_in_titleFormatted": {
+        "required": true,
+        "token": "[[device]]",
+        "description": "Device cards MUST include [[device]] token in titleFormatted",
+        "examples": {
+          "action": "Turn [[device]] [[state]]",
+          "condition": "[[device]] is [[state]]",
+          "trigger": "When [[device]] turned [[state]]"
+        }
+      }
+    },
+    
+    "titleFormatted": {
+      "required": "Will be required in future SDK versions",
+      "current_status": "Warning only",
+      "description": "Formatted title with argument tokens",
+      "languages": ["en", "nl", "de", "fr", "it", "sv", "no", "es", "da"],
+      "tokens": {
+        "device": "[[device]]",
+        "arguments": "[[argument_name]]",
+        "dropdown": "[[dropdown_value]]"
+      }
+    }
+  },
+  
+  "validation_levels": {
+    "debug": {
+      "description": "Basic validation for development",
+      "checks": ["manifest structure", "required fields"]
+    },
+    
+    "verified": {
+      "description": "Intermediate validation",
+      "checks": ["debug checks", "capability compliance", "flow card structure"]
+    },
+    
+    "publish": {
+      "description": "Full validation for App Store submission",
+      "checks": [
+        "verified checks",
+        "image dimensions and format",
+        "unique flow card IDs",
+        "device tokens in titleFormatted",
+        "zigbee learnmode",
+        "localization completeness"
+      ]
+    }
+  },
+  
+  "best_practices": {
+    "zigbee_drivers": [
+      "Always use official Homey Zigbee developer tools to interview devices",
+      "Include multiple manufacturer IDs if device has variants",
+      "Test pairing with actual devices before publishing",
+      "Implement attribute reporting for battery-powered devices",
+      "Use proper cluster IDs (numeric, not string)",
+      "Bind only necessary clusters to reduce network traffic"
+    ],
+    
+    "flow_cards": [
+      "Use descriptive, user-friendly titles",
+      "Include [[device]] token in all device cards",
+      "Provide clear argument labels and descriptions",
+      "Test flow cards in actual Flows before publishing",
+      "Use titleFormatted for better user experience"
+    ],
+    
+    "images": [
+      "Use professional, consistent design across all driver images",
+      "Test image visibility at small sizes (75x75)",
+      "Use transparent backgrounds for driver icons",
+      "Follow Homey visual identity guidelines",
+      "Optimize PNG files for smaller app size"
+    ]
+  },
+  
+  "common_validation_errors": {
+    "Invalid image size": {
+      "cause": "Image dimensions don't match required specifications",
+      "solution": "Resize images to exact dimensions specified in image_specifications"
+    },
+    
+    "Missing zigbee.learnmode": {
+      "cause": "Zigbee driver missing required learnmode field",
+      "solution": "Add learnmode object with instruction text to driver manifest"
+    },
+    
+    "Duplicate flow card ID": {
+      "cause": "Multiple flow cards with same ID",
+      "solution": "Prefix all flow card IDs with driver name to ensure uniqueness"
+    },
+    
+    "Missing [[device]] token": {
+      "cause": "Device flow card titleFormatted doesn't include [[device]]",
+      "solution": "Add [[device]] token to titleFormatted for all device cards"
+    },
+    
+    "Invalid cluster ID": {
+      "cause": "Cluster ID specified as string instead of number",
+      "solution": "Convert cluster IDs to numbers (e.g., 'genBasic' → 0)"
+    }
+  },
+  
+  "migration_sdk2_to_sdk3": {
+    "homey_instance": {
+      "old": "const Homey = require('homey'); Homey.ManagerX",
+      "new": "this.homey.X",
+      "description": "Homey instance moved from global require to this.homey"
+    },
+    
+    "flow_cards": {
+      "old": "Homey.ManagerFlow.getCard(...)",
+      "new": "this.homey.flow.getDeviceTriggerCard(...)",
+      "description": "Flow card API moved to this.homey.flow"
+    },
+    
+    "zigbee_stack": {
+      "changes": [
+        "Improved Zigbee stack with better compatibility",
+        "MeshDriver deprecated, use homey-zigbeedriver",
+        "Better IAS Zone support",
+        "Improved attribute reporting"
+      ]
+    }
+  }
+}

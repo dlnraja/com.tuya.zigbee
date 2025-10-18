@@ -78,8 +78,9 @@
     }
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "./drivers/pir_sensor_advanced_battery/assets/images/small.png",
+    "large": "./drivers/pir_sensor_advanced_battery/assets/images/large.png",
+    "xlarge": "./drivers/pir_sensor_advanced_battery/assets/images/xlarge.png"
   },
   "capabilitiesOptions": {
     "alarm_motion": {

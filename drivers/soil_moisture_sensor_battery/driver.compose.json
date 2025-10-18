@@ -41,8 +41,9 @@
     }
   },
   "images": {
-    "large": "./assets/images/large.png",
-    "small": "./assets/images/small.png"
+    "large": "./drivers/soil_moisture_sensor_battery/assets/images/large.png",
+    "small": "./drivers/soil_moisture_sensor_battery/assets/images/small.png",
+    "xlarge": "./drivers/soil_moisture_sensor_battery/assets/images/xlarge.png"
   },
   "pair": [
     {

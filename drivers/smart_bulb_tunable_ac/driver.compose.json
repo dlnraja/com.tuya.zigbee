@@ -78,8 +78,9 @@
     }
   },
   "images": {
-    "large": "./assets/images/large.png",
-    "small": "./assets/images/small.png"
+    "large": "./drivers/smart_bulb_tunable_ac/assets/images/large.png",
+    "small": "./drivers/smart_bulb_tunable_ac/assets/images/small.png",
+    "xlarge": "./drivers/smart_bulb_tunable_ac/assets/images/xlarge.png"
   },
   "pair": [
     {

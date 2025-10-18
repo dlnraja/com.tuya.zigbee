@@ -79,8 +79,9 @@
     }
   },
   "images": {
-    "large": "./assets/images/large.png",
-    "small": "./assets/images/small.png"
+    "large": "./drivers/multisensor_battery/assets/images/large.png",
+    "small": "./drivers/multisensor_battery/assets/images/small.png",
+    "xlarge": "./drivers/multisensor_battery/assets/images/xlarge.png"
   },
   "pair": [
     {

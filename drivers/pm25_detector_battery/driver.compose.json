@@ -92,8 +92,9 @@
     }
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "./drivers/pm25_detector_battery/assets/images/small.png",
+    "large": "./drivers/pm25_detector_battery/assets/images/large.png",
+    "xlarge": "./drivers/pm25_detector_battery/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

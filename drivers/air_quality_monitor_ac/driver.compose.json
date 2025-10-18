@@ -6,6 +6,11 @@
   "capabilities": [
     "onoff"
   ],
+  "images": {
+    "small": "./assets/images/small.png",
+    "large": "./assets/images/large.png",
+    "xlarge": "./assets/images/xlarge.png"
+  },
   "zigbee": {
     "manufacturerName": [
       "TS0041",
@@ -72,10 +77,6 @@
         "en": "Press the pairing button on your device to start pairing.\n\nIf your device does not have a pairing button, check the device manual for pairing instructions."
       }
     }
-  },
-  "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
   },
   "platforms": [
     "local"
