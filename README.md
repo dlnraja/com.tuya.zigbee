@@ -1,6 +1,6 @@
 # 🏠 Universal Tuya Zigbee
 
-[![Version](https://img.shields.io/badge/version-3.0.58-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![Version](https://img.shields.io/badge/version-3.0.60-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
 [![SDK](https://img.shields.io/badge/SDK-3-green.svg)](https://apps.developer.homey.app)
 [![Homey](https://img.shields.io/badge/Homey->=12.2.0-orange.svg)](https://homey.app)
 [![Drivers](https://img.shields.io/badge/drivers-183-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee/tree/master/drivers)
@@ -16,7 +16,7 @@ Community-maintained Tuya Zigbee app with 183 SDK3 native drivers. 67 drivers en
 Drivers:              183
 SDK Version:          3
 Homey Compatibility:  >=12.2.0
-Version:              3.0.58
+Version:              3.0.60
 Status:               ✅ Active Development
 ```
 
@@ -176,11 +176,11 @@ powershell scripts/automation/install-git-hooks.ps1
 
 ## 📝 Recent Commits
 
-- `8b0c42bd2` feat: Complete Intelligent System - Fallback + Debug + Resources (removed large files) - *Dylan Rajasekaram* (28 minutes ago)
-- `040515e03` feat: Complete Intelligent System - Fallback + Debug + Resources - *Dylan Rajasekaram* (36 minutes ago)
-- `41574a291` Update Homey App Version to v3.0.58 - *github-actions[bot]* (49 minutes ago)
-- `e5c23ef14` Docs: Auto-update links, paths, README & CHANGELOG [skip ci] - *Dylan Rajasekaram* (51 minutes ago)
-- `026fc2b8b` chore: update device matrix [skip ci] - *github-actions[bot]* (51 minutes ago)
+- `23ce60c57` chore: Version 3.0.60 - Ready for Homey App Store publication - *Dylan Rajasekaram* (4 minutes ago)
+- `70a0fb0b9` fix(v3.0.59): Debug and repair for Homey App Store deployment - *Dylan Rajasekaram* (7 minutes ago)
+- `c408e5032` feat(v3.0.58): Complete implementation of 5 major improvements - *Dylan Rajasekaram* (18 minutes ago)
+- `8b0c42bd2` feat: Complete Intelligent System - Fallback + Debug + Resources (removed large files) - *Dylan Rajasekaram* (66 minutes ago)
+- `040515e03` feat: Complete Intelligent System - Fallback + Debug + Resources - *Dylan Rajasekaram* (74 minutes ago)
 
 ---
 
@@ -211,7 +211,7 @@ Based on the original work by **Johan Bendz** and inspired by:
 
 ```
 Last Updated:     2025-10-18
-Version:          3.0.58
+Version:          3.0.60
 Build Status:     ✅ Passing
 Documentation:    ✅ Up to date
 GitHub Actions:   ✅ Active
@@ -229,7 +229,7 @@ GitHub Actions:   ✅ Active
 
 > **Auto-generated list** - Updated automatically
 
-**Total:** 183 drivers | 6838+ device IDs
+**Total:** 183 drivers | 6862+ device IDs
 
 ### 🌡️ Temperature & Climate
 
@@ -256,8 +256,8 @@ GitHub Actions:   ✅ Active
 - **Garage Door Controller (Battery)** - 28 device IDs
 - **Garage Door Opener (Battery)** - 25 device IDs
 - **Gas Detector (Battery)** - 62 device IDs
-- **Gas Sensor TS0601 (AC)** - 9 device IDs
-- **Gas Sensor TS0601 (Battery)** - 23 device IDs
+- **Gas Sensor TS0601 (AC)** - 10 device IDs
+- **Gas Sensor TS0601 (Battery)** - 24 device IDs
 - **humidity controller (Battery)** - 22 device IDs
 - **Hvac Controller** - 22 device IDs
 - **Led Strip (Battery)** - 27 device IDs
@@ -267,17 +267,17 @@ GitHub Actions:   ✅ Active
 - **Mi-Light Controller** - 39 device IDs
 - **Mini Switch (Battery)** - 39 device IDs
 - **Mini Switch AC** - 41 device IDs
-- **Motion Sensor (mmWave Radar, Battery)** - 64 device IDs
-- **Motion Sensor (PIR, Battery)** - 59 device IDs
-- **Motion Sensor with Illuminance (Battery)** - 22 device IDs
+- **Motion Sensor (mmWave Radar, Battery)** - 69 device IDs
+- **Motion Sensor (PIR, Battery)** - 60 device IDs
+- **Motion Sensor with Illuminance (Battery)** - 23 device IDs
 - **Multi-Sensor (Motion + Lux + Temp) (Battery)** - 38 device IDs
 - **Multisensor (Battery)** - 43 device IDs
 - **Noise Level Sensor (Battery)** - 44 device IDs
 - **Outdoor Light Controller (Battery)** - 47 device IDs
 - **Outdoor Siren (Battery)** - 31 device IDs
-- **PIR Motion Sensor (Battery)** - 56 device IDs
-- **PIR Motion Sensor (Battery)** - 40 device IDs
-- **PIR Motion Sensor (Battery)** - 52 device IDs
+- **PIR Motion Sensor (Battery)** - 57 device IDs
+- **PIR Motion Sensor (Battery)** - 41 device IDs
+- **PIR Motion Sensor (Battery)** - 53 device IDs
 - **PIR Motion Sensor Advanced (Battery)** - 44 device IDs
 - **PIR Radar Illumination Sensor Battery (Battery)** - 27 device IDs
 - **pm25 detector (Battery)** - 57 device IDs
@@ -287,9 +287,9 @@ GitHub Actions:   ✅ Active
 - **Presence Sensor Radar (Battery)** - 48 device IDs
 - **Pressure Sensor (Battery)** - 44 device IDs
 - **Projector Screen Controller** - 46 device IDs
-- **Radar Motion Sensor Advanced (Battery)** - 52 device IDs
-- **Radar Motion Sensor Pro (Battery)** - 53 device IDs
-- **Radar Presence Sensor (mmWave) (Battery)** - 54 device IDs
+- **Radar Motion Sensor Advanced (Battery)** - 53 device IDs
+- **Radar Motion Sensor Pro (Battery)** - 54 device IDs
+- **Radar Presence Sensor (mmWave) (Battery)** - 55 device IDs
 - **RGB LED Controller** - 39 device IDs
 - **Roller Shutter Controller (Battery)** - 24 device IDs
 - **Scene Controller** - 36 device IDs
@@ -389,7 +389,7 @@ GitHub Actions:   ✅ Active
 - **5-Gang Wall Switch** - 42 device IDs
 - **6-Button Remote** - 47 device IDs
 - **6-Gang Wall Switch** - 40 device IDs
-- **Dimmer Switch 1-Gang AC** - 57 device IDs
+- **Dimmer Switch 1-Gang AC** - 60 device IDs
 - **Dimmer Switch 3-Gang AC** - 50 device IDs
 - **Energy Monitoring Plug** - 45 device IDs
 - **energy plug advanced** - 47 device IDs
@@ -398,7 +398,7 @@ GitHub Actions:   ✅ Active
 - **power meter socket** - 47 device IDs
 - **Relay Switch 1-Gang AC** - 40 device IDs
 - **Smart Plug** - 51 device IDs
-- **smart plug energy** - 60 device IDs
+- **smart plug energy** - 65 device IDs
 - **Smart Plug Power Meter 16a Ac** - 13 device IDs
 - **Smart Plug with Dimmer (AC)** - 9 device IDs
 - **Switch 1-Gang Battery CR2032 (Battery)** - 59 device IDs
@@ -449,7 +449,7 @@ GitHub Actions:   ✅ Active
 <summary><strong>11 drivers</strong> - Click to expand</summary>
 
 - **Alarm Siren Chime Ac** - 8 device IDs
-- **Curtain Motor (Battery)** - 19 device IDs
+- **Curtain Motor (Battery)** - 20 device IDs
 - **Pet Feeder (Battery)** - 25 device IDs
 - **Radiator Valve** - 44 device IDs
 - **Roller Shutter Switch (Battery)** - 29 device IDs
