@@ -1,5 +1,6 @@
 'use strict';
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const IASZoneEnroller = require('../../lib/IASZoneEnroller');
 
 class TuyaDevice extends ZigBeeDevice {
   async onNodeInit() {

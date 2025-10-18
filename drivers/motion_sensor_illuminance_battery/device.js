@@ -32,7 +32,7 @@ class MotionSensorIlluminanceBatteryDevice extends ZigBeeDevice {
         report: 'measuredValue',
         reportParser: value => {
           // Convert to lux using logarithmic formula
-          return Math.pow(10, (value - 1) / 10000);
+          return fromZigbeeMeasuredValue(value);
         },
         getOpts: {
           getOnStart: true,
@@ -45,7 +45,7 @@ class MotionSensorIlluminanceBatteryDevice extends ZigBeeDevice {
       this.registerCapability('measure_battery', 1, {
         get: 'batteryPercentageRemaining',
         report: 'batteryPercentageRemaining',
-        reportParser: value => value / 2,
+        reportParser: value => fromZclBatteryPercentageRemaining(value),
         getOpts: {
           getOnStart: true,
         },
