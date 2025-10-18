@@ -1,0 +1,28 @@
+fix: Convert cluster names to numeric IDs + update all docs
+
+✅ CLUSTER IDS CONVERSION (6 drivers):
+- door_window_sensor_battery: 'iasZone' → 1280, 'msTemperatureMeasurement' → 1026, 'msIlluminanceMeasurement' → 1024
+- roller_shutter_controller_ac: 'genLevelCtrl' → 8
+- smart_dimmer_module_1gang_ac: 'genOnOff' → 6, 'genLevelCtrl' → 8
+- temperature_humidity_sensor_battery: 'msTemperatureMeasurement' → 1026, 'msRelativeHumidity' → 1029
+- water_leak_detector_advanced_battery: 'ssIasZone' → 1280
+- water_leak_sensor_battery: 'iasZone' → 1280, 'msTemperatureMeasurement' → 1026, 'msIlluminanceMeasurement' → 1024
+
+✅ BENEFITS:
+- Better performance (no name lookup)
+- Guaranteed compatibility
+- Consistency across all drivers
+- No ambiguity
+
+✅ AUTO-DOCUMENTATION UPDATES (31 files):
+- Updated all path references in docs
+- Fixed broken links
+- Synchronized documentation
+
+✅ VALIDATION:
+- homey app validate: PASSED
+- All drivers now use numeric cluster IDs
+- No functionality broken
+
+✅ NEW SCRIPT:
+- scripts/fixes/fix-cluster-names-to-numbers.js (automated conversion tool)
