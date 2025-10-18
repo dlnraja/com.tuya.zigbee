@@ -9,10 +9,39 @@ const { fromZigbeeMeasuredValue } = require('../../lib/tuya-engine/converters/il
 class WaterLeakSensorDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
+    // Configure battery reporting (min 1h, max 24h, delta 5%)
+    try {
+    await this.configureAttributeReporting([{
+    } catch (err) { this.error('Await error:', err); }
+      endpointId: 1,
+      cluster: 'powerConfiguration',
+      attributeName: 'batteryPercentageRemaining',
+      minInterval: 3600,
+      maxInterval: 86400,
+      minChange: 10 // 5% (0-200 scale)
+    }]).catch(err => this.log('Battery report config failed (ignorable):', err.message));
+
+    // Force initial read après pairing (résout données non visibles)
+    setTimeout(() => {
+      this.pollAttributes().catch(err => this.error('Initial poll failed:', err));
+    }, 5000);
+
+    // Poll attributes régulièrement pour assurer visibilité données
+    this.registerPollInterval(async () => {
+      try {
+        // Force read de tous les attributes critiques
+        await this.pollAttributes();
+      } catch (err) {
+        this.error('Poll failed:', err);
+      }
+    }, 300000); // 5 minutes
+  
     this.log('water_leak_sensor device initialized');
 
     // Call parent
+    try {
     await super.onNodeInit({ zclNode });
+    } catch (err) { this.error('Await error:', err); }
 
     // Battery measurement
     if (this.hasCapability('measure_battery')) {
@@ -83,7 +112,9 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
     }
 
     // Mark device as available
+    try {
     await this.setAvailable();
+    } catch (err) { this.error('Await error:', err); }
   }
 
   async onDeleted() {
@@ -242,7 +273,9 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
       const closeCard = this.homey.flow.getDeviceActionCard('water_leak_sensor_close');
       if (closeCard) {
         closeCard.registerRunListener(async (args, state) => {
+          try {
           await args.device.setCapabilityValue('windowcoverings_set', 0);
+          } catch (err) { this.error('Await error:', err); }
         });
       }
 
@@ -268,7 +301,9 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
               await args.device.setCapabilityValue('onoff', true);
               await new Promise(resolve => setTimeout(resolve, 300));
               await args.device.setCapabilityValue('onoff', false);
+              try {
               await new Promise(resolve => setTimeout(resolve, 300));
+              } catch (err) { this.error('Await error:', err); }
             }
             await args.device.setCapabilityValue('onoff', original);
           }
@@ -347,6 +382,60 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
    catch (err) {
       this.error('Battery change detection error:', err);
     }
+  }
+
+
+  /**
+   * Poll tous les attributes pour forcer mise à jour
+   * Résout: Données non visibles après pairing (Peter + autres)
+   */
+  async pollAttributes() {
+    const promises = [];
+    
+    // Battery
+    if (this.hasCapability('measure_battery')) {
+      promises.push(
+        this.zclNode.endpoints[1]?.clusters.powerConfiguration?.readAttributes('batteryPercentageRemaining')
+          .catch(err => this.log('Battery read failed (ignorable):', err.message))
+      );
+    }
+    
+    // Temperature
+    if (this.hasCapability('measure_temperature')) {
+      promises.push(
+        this.zclNode.endpoints[1]?.clusters.temperatureMeasurement?.readAttributes('measuredValue')
+          .catch(err => this.log('Temperature read failed (ignorable):', err.message))
+      );
+    }
+    
+    // Humidity
+    if (this.hasCapability('measure_humidity')) {
+      promises.push(
+        this.zclNode.endpoints[1]?.clusters.relativeHumidity?.readAttributes('measuredValue')
+          .catch(err => this.log('Humidity read failed (ignorable):', err.message))
+      );
+    }
+    
+    // Illuminance
+    if (this.hasCapability('measure_luminance')) {
+      promises.push(
+        this.zclNode.endpoints[1]?.clusters.illuminanceMeasurement?.readAttributes('measuredValue')
+          .catch(err => this.log('Illuminance read failed (ignorable):', err.message))
+      );
+    }
+    
+    // Alarm status (IAS Zone)
+    if (this.hasCapability('alarm_motion') || this.hasCapability('alarm_contact')) {
+      promises.push(
+        this.zclNode.endpoints[1]?.clusters.iasZone?.readAttributes('zoneStatus')
+          .catch(err => this.log('IAS Zone read failed (ignorable):', err.message))
+      );
+    }
+    
+    try {
+    await Promise.allSettled(promises);
+    } catch (err) { this.error('Await error:', err); }
+    this.log('✅ Poll attributes completed');
   }
 
 }
