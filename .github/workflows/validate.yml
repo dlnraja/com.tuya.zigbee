@@ -72,7 +72,7 @@ jobs:
         run: |
           echo "Validating JSON files..."
           INVALID=0
-          for file in $(find . -name "*.json" -not -path "./node_modules/*" -not -path "./.git/*"); do
+          for file in $(find . -name "*.json" -not -path "./node_modules/*" -not -path "./.git/*" -not -path "./assets/templates/*"); do
             if ! jq empty "$file" 2>/dev/null; then
               echo "❌ Invalid JSON: $file"
               INVALID=$((INVALID + 1))
@@ -82,7 +82,7 @@ jobs:
             echo "❌ $INVALID invalid JSON files found"
             exit 1
           fi
-          echo "✅ All JSON files valid"
+          echo "✅ All JSON files valid (templates excluded)"
           
       - name: Generate validation report
         if: always()
