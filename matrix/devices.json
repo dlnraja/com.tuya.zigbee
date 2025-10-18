@@ -713,12 +713,13 @@
       "_TZE200_ol5jlkkr",
       "_TZ3210_dwytrmda",
       "_TZ3210_ol1uhvza",
-      "_TZE204_1fuxihti"
+      "_TZE204_1fuxihti",
+      "_TZE284_1fuxihti"
     ],
     "models": [
       "TS130F"
     ],
-    "manufacturer_count": 18,
+    "manufacturer_count": 19,
     "model_count": 1,
     "capabilities": [
       "onoff",
@@ -848,13 +849,16 @@
       "_TZE200_vucankjx",
       "_TZE204_9qhuzgo0",
       "_TZE204_hlx9tnzb",
-      "_TZE204_n9ctkb6j"
+      "_TZE204_n9ctkb6j",
+      "_TZE284_hlx9tnzb",
+      "_TZE284_n9ctkb6j",
+      "_TZE284_9qhuzgo0"
     ],
     "models": [
       "TS110E",
       "TS0001"
     ],
-    "manufacturer_count": 55,
+    "manufacturer_count": 58,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -1889,10 +1893,11 @@
       "_TZE204_ezqy5pvh",
       "TS0005",
       "TS0006",
-      "TS0501"
+      "TS0501",
+      "_TZE284_ezqy5pvh"
     ],
     "models": [],
-    "manufacturer_count": 9,
+    "manufacturer_count": 10,
     "model_count": 0,
     "capabilities": [
       "alarm_co",
@@ -1928,10 +1933,11 @@
       "_TZ3000_dfgbtub0",
       "_TZ3000_dlhhrhs8",
       "_TZ3000_dpo1ysak",
-      "_TZ3000_dziaict4"
+      "_TZ3000_dziaict4",
+      "_TZE284_ggev5fsl"
     ],
     "models": [],
-    "manufacturer_count": 23,
+    "manufacturer_count": 24,
     "model_count": 0,
     "capabilities": [
       "alarm_co",
@@ -2529,14 +2535,15 @@
       "_TZE200_sfiy5tfs",
       "_TZE200_mrf6vtua",
       "_TZE204_mrf6vtua",
-      "_TZ3040_bb6xaihh"
+      "_TZ3040_bb6xaihh",
+      "_TZE284_mrf6vtua"
     ],
     "models": [
       "TS0202",
       "TS0901",
       "TS0601"
     ],
-    "manufacturer_count": 56,
+    "manufacturer_count": 57,
     "model_count": 3,
     "capabilities": [
       "onoff",
@@ -2566,7 +2573,8 @@
       "_TZE200_sfiy5tfs",
       "_TZE200_mrf6vtua",
       "_TZE204_mrf6vtua",
-      "_TZ3040_bb6xaihh"
+      "_TZ3040_bb6xaihh",
+      "_TZE284_mrf6vtua"
     ],
     "models": [
       "RTCGQ11LM",
@@ -2577,7 +2585,7 @@
       "TS0202",
       "TS0601"
     ],
-    "manufacturer_count": 15,
+    "manufacturer_count": 16,
     "model_count": 7,
     "capabilities": [
       "alarm_motion",
@@ -2652,6 +2660,11 @@
       "_TZE200_sfiy5tfs",
       "_TZE200_mrf6vtua",
       "_TZE204_mrf6vtua",
+      "_TZE284_mrf6vtua",
+      "_TZE284_ijxvkhd0",
+      "_TZE284_qasjif9e",
+      "_TZE284_sxm7l9xa",
+      "_TZE284_xsm7l9xa",
       "_TZ3040_bb6xaihh"
     ],
     "models": [
@@ -2659,7 +2672,7 @@
       "TS0001",
       "TS0601"
     ],
-    "manufacturer_count": 61,
+    "manufacturer_count": 66,
     "model_count": 3,
     "capabilities": [
       "alarm_motion",
@@ -2726,14 +2739,15 @@
       "_TZE200_sfiy5tfs",
       "_TZE200_mrf6vtua",
       "_TZE204_mrf6vtua",
-      "_TZ3040_bb6xaihh"
+      "_TZ3040_bb6xaihh",
+      "_TZE284_mrf6vtua"
     ],
     "models": [
       "TS0202",
       "TS0001",
       "TS0601"
     ],
-    "manufacturer_count": 53,
+    "manufacturer_count": 54,
     "model_count": 3,
     "capabilities": [
       "alarm_motion",
@@ -2784,14 +2798,15 @@
       "_TZ3000_dziaict4",
       "_TZE200_sfiy5tfs",
       "_TZE200_mrf6vtua",
-      "_TZE204_mrf6vtua"
+      "_TZE204_mrf6vtua",
+      "_TZE284_mrf6vtua"
     ],
     "models": [
       "ZG-204Z",
       "TS0202",
       "TS0601"
     ],
-    "manufacturer_count": 37,
+    "manufacturer_count": 38,
     "model_count": 3,
     "capabilities": [
       "alarm_motion",
@@ -2855,13 +2870,14 @@
       "_TZE200_sfiy5tfs",
       "_TZE200_mrf6vtua",
       "_TZE204_mrf6vtua",
-      "_TZ3040_bb6xaihh"
+      "_TZ3040_bb6xaihh",
+      "_TZE284_mrf6vtua"
     ],
     "models": [
       "TS0202",
       "TS0601"
     ],
-    "manufacturer_count": 50,
+    "manufacturer_count": 51,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
@@ -3861,13 +3877,14 @@
       "_TZE200_sfiy5tfs",
       "_TZE200_mrf6vtua",
       "_TZE204_mrf6vtua",
-      "_TZ3040_bb6xaihh"
+      "_TZ3040_bb6xaihh",
+      "_TZE284_mrf6vtua"
     ],
     "models": [
       "TS0202",
       "TS0601"
     ],
-    "manufacturer_count": 50,
+    "manufacturer_count": 51,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
@@ -3932,14 +3949,15 @@
       "_TZE200_sfiy5tfs",
       "_TZE200_mrf6vtua",
       "_TZE204_mrf6vtua",
-      "_TZ3040_bb6xaihh"
+      "_TZ3040_bb6xaihh",
+      "_TZE284_mrf6vtua"
     ],
     "models": [
       "TS0202",
       "TS0001",
       "TS0601"
     ],
-    "manufacturer_count": 51,
+    "manufacturer_count": 52,
     "model_count": 3,
     "capabilities": [
       "alarm_motion",
@@ -4004,14 +4022,15 @@
       "_TZE200_sfiy5tfs",
       "_TZE200_mrf6vtua",
       "_TZE204_mrf6vtua",
-      "_TZ3040_bb6xaihh"
+      "_TZ3040_bb6xaihh",
+      "_TZE284_mrf6vtua"
     ],
     "models": [
       "TS0202",
       "TS0001",
       "TS0601"
     ],
-    "manufacturer_count": 50,
+    "manufacturer_count": 51,
     "model_count": 3,
     "capabilities": [
       "alarm_motion",
@@ -5666,7 +5685,12 @@
       "_TZ3000_rdtixbnu",
       "_TZ3000_okaz9tjs",
       "_TZ3000_vzopcetz",
-      "_TZ3000_1obwwnmq"
+      "_TZ3000_1obwwnmq",
+      "_TZE284_ahwvlkpy",
+      "_TZE284_dapwryy7",
+      "_TZE284_dcnsggvz",
+      "_TZE284_bjzrowv2",
+      "_TZE284_5cuocqty"
     ],
     "models": [
       "TS0001",
@@ -5674,7 +5698,7 @@
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 56,
+    "manufacturer_count": 61,
     "model_count": 4,
     "capabilities": [
       "onoff",
@@ -7821,7 +7845,7 @@
       "measure_temperature",
       "measure_humidity",
       "measure_battery",
-      "temp_alarm"
+      "alarm_generic"
     ],
     "power_source": "battery",
     "clusters": []
@@ -7895,7 +7919,7 @@
       "measure_temperature",
       "measure_humidity",
       "measure_battery",
-      "temp_alarm"
+      "alarm_generic"
     ],
     "power_source": "battery",
     "clusters": []
@@ -7958,7 +7982,7 @@
       "measure_battery",
       "alarm_motion",
       "measure_luminance",
-      "temp_alarm"
+      "alarm_generic"
     ],
     "power_source": "battery",
     "clusters": []
@@ -8024,7 +8048,7 @@
       "measure_battery",
       "alarm_motion",
       "measure_luminance",
-      "temp_alarm"
+      "alarm_generic"
     ],
     "power_source": "battery",
     "clusters": []
