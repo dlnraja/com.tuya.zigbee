@@ -30,7 +30,7 @@ class MotionSensorDevice extends ZigBeeDevice {
       this.registerCapability('measure_battery', 1, {
         get: 'batteryPercentageRemaining',
         report: 'batteryPercentageRemaining',
-        reportParser: value => value / 2,
+        reportParser: value => fromZclBatteryPercentageRemaining(value),
         getOpts: {
           getOnStart: true,
         },

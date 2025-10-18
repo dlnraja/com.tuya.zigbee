@@ -63,8 +63,8 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
           getOnStart: true
         },
         reportParser: value => {
-          this.log('Illuminance:', Math.pow(10, (value - 1) / 10000));
-          return Math.pow(10, (value - 1) / 10000);
+          this.log('Illuminance:', fromZigbeeMeasuredValue(value));
+          return fromZigbeeMeasuredValue(value);
         }
       });
       this.log('✅ Illuminance cluster registered');
@@ -95,7 +95,7 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
         },
         reportParser: value => {
           this.log('Battery raw value:', value);
-          return value / 2;
+          return fromZclBatteryPercentageRemaining(value);
         }
       });
       this.log('✅ Battery capability registered');

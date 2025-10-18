@@ -2,6 +2,7 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
+const { fromZclBatteryPercentageRemaining } = require('../../lib/tuya-engine/converters/battery');
 
 /**
  * Smart Plug with Dimmer (AC Powered)
