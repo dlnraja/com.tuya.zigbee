@@ -27,9 +27,9 @@
     }
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png",
-    "xlarge": "./assets/images/xlarge.png"
+    "small": "drivers/smart_plug_dimmer_ac/assets/images/small.png",
+    "large": "drivers/smart_plug_dimmer_ac/assets/images/large.png",
+    "xlarge": "drivers/smart_plug_dimmer_ac/assets/images/xlarge.png"
   },
   "zigbee": {
     "manufacturerName": [

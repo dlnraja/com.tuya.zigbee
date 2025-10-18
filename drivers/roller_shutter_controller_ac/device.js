@@ -48,7 +48,7 @@ class RollerShutterControllerDevice extends ZigBeeDevice {
     
     // Register capabilities
     if (this.hasCapability('windowcoverings_set')) {
-      this.registerCapability('windowcoverings_set', 'genLevelCtrl', {
+      this.registerCapability('windowcoverings_set', 8, {
         set: 'moveToLevelWithOnOff',
         setParser(value) {
           return {

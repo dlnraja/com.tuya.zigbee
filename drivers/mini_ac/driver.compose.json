@@ -8,8 +8,8 @@
     "dim"
   ],
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "drivers/mini_ac/assets/images/small.png",
+    "large": "drivers/mini_ac/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [

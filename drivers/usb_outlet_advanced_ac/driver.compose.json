@@ -75,8 +75,8 @@
     }
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "drivers/usb_outlet_advanced_ac/assets/images/small.png",
+    "large": "drivers/usb_outlet_advanced_ac/assets/images/large.png"
   },
   "capabilitiesOptions": {
     "measure_power": {

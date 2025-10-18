@@ -66,7 +66,7 @@ class DoorWindowSensorDevice extends ZigBeeDevice {
 
     // Temperature measurement
     if (this.hasCapability('measure_temperature')) {
-      this.registerCapability('measure_temperature', 'msTemperatureMeasurement', {
+      this.registerCapability('measure_temperature', 1026, {
         get: 'measuredValue',
         report: 'measuredValue',
         reportParser: value => value / 100,
@@ -77,7 +77,7 @@ class DoorWindowSensorDevice extends ZigBeeDevice {
 
     // Motion/vibration alarm (IAS Zone)
     if (this.hasCapability('alarm_motion')) {
-      this.registerCapability('alarm_motion', 'iasZone', {
+      this.registerCapability('alarm_motion', 1280, {
         report: 'zoneStatus',
         reportParser: value => (value & 1) === 1
       });
@@ -86,7 +86,7 @@ class DoorWindowSensorDevice extends ZigBeeDevice {
 
     // Illuminance measurement
     if (this.hasCapability('measure_luminance')) {
-      this.registerCapability('measure_luminance', 'msIlluminanceMeasurement', {
+      this.registerCapability('measure_luminance', 1024, {
         get: 'measuredValue',
         report: 'measuredValue',
         reportParser: value => fromZigbeeMeasuredValue(value),
@@ -97,7 +97,7 @@ class DoorWindowSensorDevice extends ZigBeeDevice {
 
     // Contact alarm (door/window)
     if (this.hasCapability('alarm_contact')) {
-      this.registerCapability('alarm_contact', 'iasZone', {
+      this.registerCapability('alarm_contact', 1280, {
         report: 'zoneStatus',
         reportParser: value => (value & 1) === 1
       });

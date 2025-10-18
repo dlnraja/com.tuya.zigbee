@@ -11,9 +11,9 @@
     "measure_battery"
   ],
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png",
-    "xlarge": "./assets/images/xlarge.png"
+    "small": "drivers/wireless_button_2gang_battery/assets/images/small.png",
+    "large": "drivers/wireless_button_2gang_battery/assets/images/large.png",
+    "xlarge": "drivers/wireless_button_2gang_battery/assets/images/xlarge.png"
   },
   "zigbee": {
     "manufacturerName": [

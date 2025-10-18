@@ -101,8 +101,8 @@
     }
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "drivers/soil_moisture_temperature_sensor_battery/assets/images/small.png",
+    "large": "drivers/soil_moisture_temperature_sensor_battery/assets/images/large.png"
   },
   "platforms": [
     "local"

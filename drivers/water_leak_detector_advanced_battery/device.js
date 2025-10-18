@@ -39,7 +39,7 @@ class WaterLeakDetectorAdvancedDevice extends ZigBeeDevice {
 
     // Water alarm capability
     if (this.hasCapability('alarm_water')) {
-      this.registerCapability('alarm_water', 'ssIasZone', {
+      this.registerCapability('alarm_water', 1280, {
         get: 'zoneStatus',
         report: 'zoneStatus',
         reportParser: value => (value & 1) === 1

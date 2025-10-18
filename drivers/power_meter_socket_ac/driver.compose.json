@@ -114,8 +114,8 @@
     }
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "drivers/power_meter_socket_ac/assets/images/small.png",
+    "large": "drivers/power_meter_socket_ac/assets/images/large.png"
   },
   "platforms": [
     "local"

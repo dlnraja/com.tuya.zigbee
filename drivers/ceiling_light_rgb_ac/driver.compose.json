@@ -80,8 +80,8 @@
     }
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "drivers/ceiling_light_rgb_ac/assets/images/small.png",
+    "large": "drivers/ceiling_light_rgb_ac/assets/images/large.png"
   },
   "platforms": [
     "local"

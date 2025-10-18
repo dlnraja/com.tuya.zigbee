@@ -78,8 +78,8 @@
     }
   },
   "images": {
-    "large": "./assets/images/large.png",
-    "small": "./assets/images/small.png"
+    "large": "drivers/usb_outlet_ac/assets/images/large.png",
+    "small": "drivers/usb_outlet_ac/assets/images/small.png"
   },
   "pair": [
     {

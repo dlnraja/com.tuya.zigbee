@@ -74,8 +74,8 @@
     }
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "drivers/air_quality_monitor_ac/assets/images/small.png",
+    "large": "drivers/air_quality_monitor_ac/assets/images/large.png"
   },
   "platforms": [
     "local"

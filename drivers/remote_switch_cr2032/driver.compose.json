@@ -15,8 +15,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "drivers/remote_switch_cr2032/assets/images/small.png",
+    "large": "drivers/remote_switch_cr2032/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [

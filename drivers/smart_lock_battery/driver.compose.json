@@ -63,8 +63,8 @@
     }
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "drivers/smart_lock_battery/assets/images/small.png",
+    "large": "drivers/smart_lock_battery/assets/images/large.png"
   },
   "community": {
     "sources": [

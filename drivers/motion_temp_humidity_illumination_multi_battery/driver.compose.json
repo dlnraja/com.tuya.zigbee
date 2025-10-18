@@ -101,8 +101,8 @@
     }
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "drivers/motion_temp_humidity_illumination_multi_battery/assets/images/small.png",
+    "large": "drivers/motion_temp_humidity_illumination_multi_battery/assets/images/large.png"
   },
   "platforms": [
     "local"

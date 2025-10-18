@@ -41,9 +41,9 @@
     }
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png",
-    "xlarge": "./assets/images/xlarge.png"
+    "small": "drivers/gas_sensor_ts0601_ac/assets/images/small.png",
+    "large": "drivers/gas_sensor_ts0601_ac/assets/images/large.png",
+    "xlarge": "drivers/gas_sensor_ts0601_ac/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

@@ -85,8 +85,8 @@
     }
   },
   "images": {
-    "large": "./assets/images/large.png",
-    "small": "./assets/images/small.png"
+    "large": "drivers/presence_sensor_radar_battery/assets/images/large.png",
+    "small": "drivers/presence_sensor_radar_battery/assets/images/small.png"
   },
   "pair": [
     {

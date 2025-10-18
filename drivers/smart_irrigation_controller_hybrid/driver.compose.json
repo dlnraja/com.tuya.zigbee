@@ -81,8 +81,8 @@
     }
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "drivers/smart_irrigation_controller_hybrid/assets/images/small.png",
+    "large": "drivers/smart_irrigation_controller_hybrid/assets/images/large.png"
   },
   "capabilitiesOptions": {},
   "platforms": [

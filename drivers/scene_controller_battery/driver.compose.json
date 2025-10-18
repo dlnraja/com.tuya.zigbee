@@ -89,8 +89,8 @@
     }
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "drivers/scene_controller_battery/assets/images/small.png",
+    "large": "drivers/scene_controller_battery/assets/images/large.png"
   },
   "energy": {
     "batteries": [

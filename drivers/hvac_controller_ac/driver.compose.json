@@ -53,8 +53,8 @@
     }
   },
   "images": {
-    "small": "./assets/images/small.png",
-    "large": "./assets/images/large.png"
+    "small": "drivers/hvac_controller_ac/assets/images/small.png",
+    "large": "drivers/hvac_controller_ac/assets/images/large.png"
   },
   "community": {
     "sources": [
