@@ -2,6 +2,7 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
+const IASZoneEnroller = require('../../lib/IASZoneEnroller');
 
 class WaterLeakDetectorAdvancedDevice extends ZigBeeDevice {
 
@@ -45,6 +46,25 @@ class WaterLeakDetectorAdvancedDevice extends ZigBeeDevice {
   async setCapabilityValue(capabilityId, value) {
     await super.setCapabilityValue(capabilityId, value);
     await this.triggerCapabilityFlow(capabilityId, value);
+    // Water leak detector IAS Zone
+    if (this.hasCapability('alarm_water')) {
+      this.log('🚨 Setting up Water leak detector IAS Zone...');
+      try {
+        const endpoint = zclNode.endpoints[1];
+        const enroller = new IASZoneEnroller(this, endpoint, {
+          zoneType: 10, // Water leak detector
+          capability: 'alarm_water',
+          pollInterval: 30000,
+          autoResetTimeout: 0
+        });
+        const method = await enroller.enroll(zclNode);
+        this.log(`✅ Water leak detector IAS Zone enrolled via: ${method}`);
+      } catch (err) {
+        this.error('❌ IAS Zone enrollment failed:', err);
+        this.log('⚠️  Device may auto-enroll or work without explicit enrollment');
+      }
+    }
+
   }
 
 
