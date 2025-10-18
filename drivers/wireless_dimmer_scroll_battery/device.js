@@ -1,6 +1,8 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const IASZoneEnroller = require('../../lib/IASZoneEnroller');
+const batteryConverter = require('../../lib/tuya-engine/converters/battery');
 const { CLUSTER } = require('zigbee-clusters');
 
  catch (err) {
@@ -76,6 +78,60 @@ const { CLUSTER } = require('zigbee-clusters');
     return 'night';
   }
 
+
+
+  /**
+   * Poll tous les attributes pour forcer mise à jour
+   * Résout: Données non visibles après pairing (Peter + autres)
+   */
+  async pollAttributes() {
+    const promises = [];
+    
+    // Battery
+    if (this.hasCapability('measure_battery')) {
+      promises.push(
+        this.zclNode.endpoints[1]?.clusters.powerConfiguration?.readAttributes('batteryPercentageRemaining')
+          .catch(err => this.log('Battery read failed (ignorable):', err.message))
+      );
+    }
+    
+    // Temperature
+    if (this.hasCapability('measure_temperature')) {
+      promises.push(
+        this.zclNode.endpoints[1]?.clusters.temperatureMeasurement?.readAttributes('measuredValue')
+          .catch(err => this.log('Temperature read failed (ignorable):', err.message))
+      );
+    }
+    
+    // Humidity
+    if (this.hasCapability('measure_humidity')) {
+      promises.push(
+        this.zclNode.endpoints[1]?.clusters.relativeHumidity?.readAttributes('measuredValue')
+          .catch(err => this.log('Humidity read failed (ignorable):', err.message))
+      );
+    }
+    
+    // Illuminance
+    if (this.hasCapability('measure_luminance')) {
+      promises.push(
+        this.zclNode.endpoints[1]?.clusters.illuminanceMeasurement?.readAttributes('measuredValue')
+          .catch(err => this.log('Illuminance read failed (ignorable):', err.message))
+      );
+    }
+    
+    // Alarm status (IAS Zone)
+    if (this.hasCapability('alarm_motion') || this.hasCapability('alarm_contact')) {
+      promises.push(
+        this.zclNode.endpoints[1]?.clusters.iasZone?.readAttributes('zoneStatus')
+          .catch(err => this.log('IAS Zone read failed (ignorable):', err.message))
+      );
+    }
+    
+    try {
+    await Promise.allSettled(promises);
+    } catch (err) { this.error('Await error:', err); }
+    this.log('✅ Poll attributes completed');
+  }
 
 }
 
