@@ -1,14 +1,14 @@
 {
   "actions": [
     {
-      "id": "turn_on_duration",
+      "id": "energy_monitoring_plug_ac_turn_on_duration",
       "title": {
         "en": "Turn on for...",
         "fr": "Allumer pendant..."
       },
       "titleFormatted": {
-        "en": "Turn on for [[duration]] seconds",
-        "fr": "Allumer pendant [[duration]] secondes"
+        "en": "Turn [[device]] on for [[duration]] seconds",
+        "fr": "Allumer [[device]] pendant [[duration]] secondes"
       },
       "args": [
         {

@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "contact_opened",
+      "id": "outdoor_light_controller_ac_contact_opened",
       "title": {
         "en": "Opened",
         "fr": "Ouvert"
@@ -18,7 +18,7 @@
       ]
     },
     {
-      "id": "contact_closed",
+      "id": "outdoor_light_controller_ac_contact_closed",
       "title": {
         "en": "Closed",
         "fr": "Fermé"
@@ -37,7 +37,7 @@
   ],
   "conditions": [
     {
-      "id": "is_open",
+      "id": "outdoor_light_controller_ac_is_open",
       "title": {
         "en": "Is open",
         "fr": "Est ouvert"
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "id": "is_closed",
+      "id": "outdoor_light_controller_ac_is_closed",
       "title": {
         "en": "Is closed",
         "fr": "Est fermé"
