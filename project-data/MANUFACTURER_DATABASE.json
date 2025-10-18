@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "version": "2.15.95",
+    "version": "2.15.96",
     "lastUpdated": "2025-01-15",
-    "totalEntries": 95,
+    "totalEntries": 110,
     "sources": [
       "Zigbee2MQTT Database",
       "Homey Community Forum",
@@ -1806,6 +1806,301 @@
       "verified": true,
       "batteryLife": "12-18 months",
       "technology": "Digital sensor chip"
+    },
+    "_TZE284_mrf6vtua": {
+      "brand": "Generic Tuya",
+      "productName": "mmWave Radar Motion Sensor",
+      "productId": "TS0601",
+      "category": "Motion Sensors",
+      "description": "Advanced mmWave radar motion sensor with high precision human presence detection. Uses 24GHz radar technology for accurate motion detection through obstacles.",
+      "features": [
+        "24GHz mmWave radar technology",
+        "Motion and presence detection",
+        "Configurable sensitivity (O-sensitivity, V-sensitivity)",
+        "LED status indicator (configurable)",
+        "Vacancy delay settings (0-1000s)",
+        "Luminance-based automation",
+        "Multiple working modes"
+      ],
+      "driver": "motion_sensor_mmwave_battery",
+      "powerSource": "Battery (AAA/CR2450)",
+      "region": "Global",
+      "verified": true,
+      "batteryLife": "12-24 months",
+      "technology": "24GHz millimeter wave radar"
+    },
+    "_TZE284_ijxvkhd0": {
+      "brand": "Generic Tuya",
+      "productName": "mmWave Human Presence Sensor",
+      "productId": "TS0601",
+      "category": "Motion Sensors",
+      "description": "High-precision mmWave radar sensor for human presence detection with configurable sensitivity and detection zones.",
+      "features": [
+        "Human presence detection",
+        "Static and moving detection",
+        "Adjustable detection distance",
+        "Multiple sensitivity modes",
+        "Low power consumption"
+      ],
+      "driver": "motion_sensor_mmwave_battery",
+      "powerSource": "Battery",
+      "region": "Global",
+      "verified": true
+    },
+    "_TZE284_qasjif9e": {
+      "brand": "Generic Tuya",
+      "productName": "mmWave Motion Sensor (Advanced)",
+      "productId": "TS0601",
+      "category": "Motion Sensors",
+      "description": "Professional mmWave motion sensor with advanced configuration options. Supports ZHA and Zigbee2MQTT with full feature set.",
+      "features": [
+        "24GHz radar detection",
+        "Configurable detection zones",
+        "Sensitivity adjustment",
+        "LED control",
+        "Vacancy timer",
+        "Scene automation support"
+      ],
+      "driver": "motion_sensor_mmwave_battery",
+      "powerSource": "Battery (CR2450)",
+      "region": "Global",
+      "verified": true,
+      "batteryLife": "18-24 months"
+    },
+    "_TZE284_sxm7l9xa": {
+      "brand": "Generic Tuya",
+      "productName": "mmWave Radar Sensor (Compact)",
+      "productId": "TS0601",
+      "category": "Motion Sensors",
+      "description": "Compact mmWave radar motion sensor with reliable human detection. Optimized for small spaces and precise detection.",
+      "features": [
+        "Compact design",
+        "Fast response time (<500ms)",
+        "Precise motion tracking",
+        "Low false alarm rate",
+        "Energy efficient"
+      ],
+      "driver": "motion_sensor_mmwave_battery",
+      "powerSource": "Battery",
+      "region": "Global",
+      "verified": true
+    },
+    "_TZE284_xsm7l9xa": {
+      "brand": "Generic Tuya",
+      "productName": "mmWave Radar Sensor (Enhanced)",
+      "productId": "TS0601",
+      "category": "Motion Sensors",
+      "description": "Enhanced variant of mmWave radar sensor with improved detection algorithms and better battery efficiency.",
+      "features": [
+        "Enhanced detection algorithm",
+        "Improved battery life",
+        "Reduced false positives",
+        "Optimized RF sensitivity",
+        "Quick pairing"
+      ],
+      "driver": "motion_sensor_mmwave_battery",
+      "powerSource": "Battery (CR2450)",
+      "region": "Global",
+      "verified": true,
+      "batteryLife": "24+ months"
+    },
+    "_TZE284_5cuocqty": {
+      "brand": "Generic Tuya",
+      "productName": "Smart Plug with Energy Monitoring (16A)",
+      "productId": "TS0121",
+      "category": "Smart Plugs",
+      "description": "16A Zigbee smart plug with comprehensive energy monitoring. Measures power, voltage, current, and energy consumption.",
+      "features": [
+        "16A maximum load (EU standard)",
+        "Real-time power monitoring (W)",
+        "Energy consumption tracking (kWh)",
+        "Voltage and current measurement",
+        "Overload protection",
+        "Child safety lock",
+        "Zigbee mesh repeater"
+      ],
+      "driver": "smart_plug_energy_ac",
+      "powerSource": "AC Mains (230V)",
+      "region": "Europe",
+      "verified": true,
+      "maxLoad": "16A / 3680W"
+    },
+    "_TZE284_bjzrowv2": {
+      "brand": "Generic Tuya",
+      "productName": "Smart Plug Energy Monitor",
+      "productId": "TS0121",
+      "category": "Smart Plugs",
+      "description": "Zigbee smart plug with energy monitoring features for home automation and energy management.",
+      "features": [
+        "On/Off control",
+        "Power monitoring",
+        "Energy statistics",
+        "Compact design",
+        "Easy installation"
+      ],
+      "driver": "smart_plug_energy_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true
+    },
+    "_TZE284_ahwvlkpy": {
+      "brand": "Generic Tuya",
+      "productName": "Smart Plug with Metering",
+      "productId": "TS0121",
+      "category": "Smart Plugs",
+      "description": "Smart plug with electrical metering capabilities for energy-conscious home automation.",
+      "features": [
+        "Power metering",
+        "Remote control",
+        "Schedule support",
+        "Zigbee repeater function"
+      ],
+      "driver": "smart_plug_energy_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true
+    },
+    "_TZE284_dapwryy7": {
+      "brand": "Generic Tuya",
+      "productName": "16A Smart Socket",
+      "productId": "TS0121",
+      "category": "Smart Plugs",
+      "description": "High-capacity smart socket with energy monitoring for heavy appliances.",
+      "features": [
+        "16A capacity",
+        "Energy monitoring",
+        "Overload protection",
+        "LED indicator"
+      ],
+      "driver": "smart_plug_energy_ac",
+      "powerSource": "AC Mains",
+      "region": "Europe",
+      "verified": true
+    },
+    "_TZE284_dcnsggvz": {
+      "brand": "Generic Tuya",
+      "productName": "Smart Outlet Energy",
+      "productId": "TS0121",
+      "category": "Smart Plugs",
+      "description": "Smart outlet with comprehensive energy monitoring and control features.",
+      "features": [
+        "Real-time monitoring",
+        "Historical data",
+        "Remote switch",
+        "Mesh support"
+      ],
+      "driver": "smart_plug_energy_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true
+    },
+    "_TZE284_9qhuzgo0": {
+      "brand": "Generic Tuya",
+      "productName": "Single Gang Dimmer Switch",
+      "productId": "TS0601",
+      "category": "Dimmers",
+      "description": "Smart dimmer switch with smooth dimming control and scene support.",
+      "features": [
+        "0-100% dimming",
+        "Minimum brightness setting",
+        "Smooth transitions",
+        "Scene modes",
+        "LED indicator"
+      ],
+      "driver": "dimmer_switch_1gang_ac",
+      "powerSource": "AC Mains (Live+Neutral required)",
+      "region": "Global",
+      "verified": true
+    },
+    "_TZE284_hlx9tnzb": {
+      "brand": "Generic Tuya",
+      "productName": "LED Dimmer 1 Gang",
+      "productId": "TS0601",
+      "category": "Dimmers",
+      "description": "Single gang LED dimmer with advanced control features.",
+      "features": [
+        "LED compatible",
+        "Smooth dimming",
+        "Memory function",
+        "Touch control"
+      ],
+      "driver": "dimmer_switch_1gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true
+    },
+    "_TZE284_n9ctkb6j": {
+      "brand": "Generic Tuya",
+      "productName": "Smart Dimmer Single",
+      "productId": "TS0601",
+      "category": "Dimmers",
+      "description": "Intelligent dimmer switch with app and manual control.",
+      "features": [
+        "App control",
+        "Manual dimming",
+        "Preset scenes",
+        "Night mode"
+      ],
+      "driver": "dimmer_switch_1gang_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true
+    },
+    "_TZE284_1fuxihti": {
+      "brand": "Generic Tuya",
+      "productName": "Smart Curtain Motor",
+      "productId": "TS0601",
+      "category": "Curtain Motors",
+      "description": "Zigbee curtain motor with position control and quiet operation.",
+      "features": [
+        "Position control (0-100%)",
+        "Quiet operation (<35dB)",
+        "Auto-calibration",
+        "Schedule support",
+        "Manual control backup"
+      ],
+      "driver": "curtain_motor_ac",
+      "powerSource": "AC Mains or DC adapter",
+      "region": "Global",
+      "verified": true
+    },
+    "_TZE284_ezqy5pvh": {
+      "brand": "Generic Tuya",
+      "productName": "Gas Leak Detector (AC)",
+      "productId": "TS0601",
+      "category": "Gas Sensors",
+      "description": "Mains-powered gas leak detector with combustible gas detection.",
+      "features": [
+        "Combustible gas detection",
+        "Instant alarm",
+        "Self-test function",
+        "Long sensor life (5+ years)",
+        "High sensitivity"
+      ],
+      "driver": "gas_sensor_ts0601_ac",
+      "powerSource": "AC Mains",
+      "region": "Global",
+      "verified": true,
+      "gasTypes": "Natural gas, LPG, Methane"
+    },
+    "_TZE284_ggev5fsl": {
+      "brand": "Generic Tuya",
+      "productName": "Gas Detector (Battery)",
+      "productId": "TS0601",
+      "category": "Gas Sensors",
+      "description": "Battery-powered gas detector for flexible installation.",
+      "features": [
+        "Wireless installation",
+        "Low battery alert",
+        "Gas leak alarm",
+        "Test button",
+        "LED status"
+      ],
+      "driver": "gas_sensor_ts0601_battery",
+      "powerSource": "Battery (3x AA)",
+      "region": "Global",
+      "verified": true,
+      "batteryLife": "12-18 months"
     }
   }
 }
