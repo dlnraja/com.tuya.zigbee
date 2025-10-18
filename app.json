@@ -56835,7 +56835,7 @@
             "filter": "driver_id=contact_sensor_battery"
           }
         ],
-        "titleFormatted": "Is open"
+        "titleFormatted": "Is open [[device]]"
       },
       {
         "id": "contact_sensor_battery_is_closed",
@@ -56855,7 +56855,7 @@
             "filter": "driver_id=contact_sensor_battery"
           }
         ],
-        "titleFormatted": "Is closed"
+        "titleFormatted": "Is closed [[device]]"
       },
       {
         "id": "door_controller_ac_is_open",
@@ -56875,7 +56875,7 @@
             "filter": "driver_id=door_controller_ac"
           }
         ],
-        "titleFormatted": "Is open"
+        "titleFormatted": "Is open [[device]]"
       },
       {
         "id": "door_controller_ac_is_closed",
@@ -56895,7 +56895,7 @@
             "filter": "driver_id=door_controller_ac"
           }
         ],
-        "titleFormatted": "Is closed"
+        "titleFormatted": "Is closed [[device]]"
       },
       {
         "id": "door_lock_battery_is_open",
@@ -56915,7 +56915,7 @@
             "filter": "driver_id=door_lock_battery"
           }
         ],
-        "titleFormatted": "Is open"
+        "titleFormatted": "Is open [[device]]"
       },
       {
         "id": "door_lock_battery_is_closed",
@@ -56935,7 +56935,7 @@
             "filter": "driver_id=door_lock_battery"
           }
         ],
-        "titleFormatted": "Is closed"
+        "titleFormatted": "Is closed [[device]]"
       },
       {
         "id": "door_window_sensor_battery_is_open",
@@ -56955,7 +56955,7 @@
             "filter": "driver_id=door_window_sensor_battery"
           }
         ],
-        "titleFormatted": "Is open"
+        "titleFormatted": "Is open [[device]]"
       },
       {
         "id": "door_window_sensor_battery_is_closed",
@@ -56975,7 +56975,7 @@
             "filter": "driver_id=door_window_sensor_battery"
           }
         ],
-        "titleFormatted": "Is closed"
+        "titleFormatted": "Is closed [[device]]"
       },
       {
         "id": "doorbell_camera_ac_is_open",
@@ -56995,7 +56995,7 @@
             "filter": "driver_id=doorbell_camera_ac"
           }
         ],
-        "titleFormatted": "Is open"
+        "titleFormatted": "Is open [[device]]"
       },
       {
         "id": "doorbell_camera_ac_is_closed",
@@ -57015,7 +57015,7 @@
             "filter": "driver_id=doorbell_camera_ac"
           }
         ],
-        "titleFormatted": "Is closed"
+        "titleFormatted": "Is closed [[device]]"
       },
       {
         "id": "doorbell_cr2032_is_open",
@@ -57035,7 +57035,7 @@
             "filter": "driver_id=doorbell_cr2032"
           }
         ],
-        "titleFormatted": "Is open"
+        "titleFormatted": "Is open [[device]]"
       },
       {
         "id": "doorbell_cr2032_is_closed",
@@ -57055,7 +57055,7 @@
             "filter": "driver_id=doorbell_cr2032"
           }
         ],
-        "titleFormatted": "Is closed"
+        "titleFormatted": "Is closed [[device]]"
       },
       {
         "id": "garage_door_controller_ac_is_open",
@@ -57075,7 +57075,7 @@
             "filter": "driver_id=garage_door_controller_ac"
           }
         ],
-        "titleFormatted": "Is open"
+        "titleFormatted": "Is open [[device]]"
       },
       {
         "id": "garage_door_controller_ac_is_closed",
@@ -57095,7 +57095,7 @@
             "filter": "driver_id=garage_door_controller_ac"
           }
         ],
-        "titleFormatted": "Is closed"
+        "titleFormatted": "Is closed [[device]]"
       },
       {
         "id": "garage_door_opener_cr2032_is_open",
@@ -57115,7 +57115,7 @@
             "filter": "driver_id=garage_door_opener_cr2032"
           }
         ],
-        "titleFormatted": "Is open"
+        "titleFormatted": "Is open [[device]]"
       },
       {
         "id": "garage_door_opener_cr2032_is_closed",
@@ -57135,7 +57135,7 @@
             "filter": "driver_id=garage_door_opener_cr2032"
           }
         ],
-        "titleFormatted": "Is closed"
+        "titleFormatted": "Is closed [[device]]"
       },
       {
         "id": "led_strip_outdoor_color_ac_is_open",
@@ -57155,7 +57155,7 @@
             "filter": "driver_id=led_strip_outdoor_color_ac"
           }
         ],
-        "titleFormatted": "Is open"
+        "titleFormatted": "Is open [[device]]"
       },
       {
         "id": "led_strip_outdoor_color_ac_is_closed",
@@ -57175,7 +57175,7 @@
             "filter": "driver_id=led_strip_outdoor_color_ac"
           }
         ],
-        "titleFormatted": "Is closed"
+        "titleFormatted": "Is closed [[device]]"
       },
       {
         "id": "motion_sensor_battery_motion_active",
@@ -57195,7 +57195,7 @@
             "filter": "driver_id=motion_sensor_battery"
           }
         ],
-        "titleFormatted": "Motion is active"
+        "titleFormatted": "Motion is active [[device]]"
       },
       {
         "id": "motion_sensor_illuminance_battery_motion_active",
@@ -57215,7 +57215,7 @@
             "filter": "driver_id=motion_sensor_illuminance_battery"
           }
         ],
-        "titleFormatted": "Motion is active"
+        "titleFormatted": "Motion is active [[device]]"
       },
       {
         "id": "motion_sensor_mmwave_battery_motion_active",
@@ -57235,7 +57235,7 @@
             "filter": "driver_id=motion_sensor_mmwave_battery"
           }
         ],
-        "titleFormatted": "Motion is active"
+        "titleFormatted": "Motion is active [[device]]"
       },
       {
         "id": "motion_sensor_pir_ac_battery_motion_active",
@@ -57255,7 +57255,7 @@
             "filter": "driver_id=motion_sensor_pir_ac_battery"
           }
         ],
-        "titleFormatted": "Motion is active"
+        "titleFormatted": "Motion is active [[device]]"
       },
       {
         "id": "motion_sensor_pir_battery_motion_active",
@@ -57275,7 +57275,7 @@
             "filter": "driver_id=motion_sensor_pir_battery"
           }
         ],
-        "titleFormatted": "Motion is active"
+        "titleFormatted": "Motion is active [[device]]"
       },
       {
         "id": "motion_sensor_zigbee_204z_battery_motion_active",
@@ -57295,7 +57295,7 @@
             "filter": "driver_id=motion_sensor_zigbee_204z_battery"
           }
         ],
-        "titleFormatted": "Motion is active"
+        "titleFormatted": "Motion is active [[device]]"
       },
       {
         "id": "motion_temp_humidity_illumination_multi_battery_motion_active",
@@ -57315,7 +57315,7 @@
             "filter": "driver_id=motion_temp_humidity_illumination_multi_battery"
           }
         ],
-        "titleFormatted": "Motion is active"
+        "titleFormatted": "Motion is active [[device]]"
       },
       {
         "id": "outdoor_light_controller_ac_is_open",
@@ -57335,7 +57335,7 @@
             "filter": "driver_id=outdoor_light_controller_ac"
           }
         ],
-        "titleFormatted": "Is open"
+        "titleFormatted": "Is open [[device]]"
       },
       {
         "id": "outdoor_light_controller_ac_is_closed",
@@ -57355,7 +57355,7 @@
             "filter": "driver_id=outdoor_light_controller_ac"
           }
         ],
-        "titleFormatted": "Is closed"
+        "titleFormatted": "Is closed [[device]]"
       },
       {
         "id": "outdoor_siren_cr2032_is_open",
@@ -57375,7 +57375,7 @@
             "filter": "driver_id=outdoor_siren_cr2032"
           }
         ],
-        "titleFormatted": "Is open"
+        "titleFormatted": "Is open [[device]]"
       },
       {
         "id": "outdoor_siren_cr2032_is_closed",
@@ -57395,7 +57395,7 @@
             "filter": "driver_id=outdoor_siren_cr2032"
           }
         ],
-        "titleFormatted": "Is closed"
+        "titleFormatted": "Is closed [[device]]"
       },
       {
         "id": "pir_radar_illumination_sensor_battery_motion_active",
@@ -57415,7 +57415,7 @@
             "filter": "driver_id=pir_radar_illumination_sensor_battery"
           }
         ],
-        "titleFormatted": "Motion is active"
+        "titleFormatted": "Motion is active [[device]]"
       },
       {
         "id": "pir_sensor_advanced_battery_motion_active",
@@ -57435,7 +57435,7 @@
             "filter": "driver_id=pir_sensor_advanced_battery"
           }
         ],
-        "titleFormatted": "Motion is active"
+        "titleFormatted": "Motion is active [[device]]"
       },
       {
         "id": "presence_sensor_radar_battery_motion_active",
@@ -57455,7 +57455,7 @@
             "filter": "driver_id=presence_sensor_radar_battery"
           }
         ],
-        "titleFormatted": "Motion is active"
+        "titleFormatted": "Motion is active [[device]]"
       },
       {
         "id": "radar_motion_sensor_advanced_battery_motion_active",
@@ -57475,7 +57475,7 @@
             "filter": "driver_id=radar_motion_sensor_advanced_battery"
           }
         ],
-        "titleFormatted": "Motion is active"
+        "titleFormatted": "Motion is active [[device]]"
       },
       {
         "id": "radar_motion_sensor_mmwave_battery_motion_active",
@@ -57495,7 +57495,7 @@
             "filter": "driver_id=radar_motion_sensor_mmwave_battery"
           }
         ],
-        "titleFormatted": "Motion is active"
+        "titleFormatted": "Motion is active [[device]]"
       },
       {
         "id": "radar_motion_sensor_tank_level_battery_motion_active",
@@ -57515,7 +57515,7 @@
             "filter": "driver_id=radar_motion_sensor_tank_level_battery"
           }
         ],
-        "titleFormatted": "Motion is active"
+        "titleFormatted": "Motion is active [[device]]"
       },
       {
         "id": "smart_doorbell_battery_is_open",
@@ -57535,7 +57535,7 @@
             "filter": "driver_id=smart_doorbell_battery"
           }
         ],
-        "titleFormatted": "Is open"
+        "titleFormatted": "Is open [[device]]"
       },
       {
         "id": "smart_doorbell_battery_is_closed",
@@ -57555,7 +57555,7 @@
             "filter": "driver_id=smart_doorbell_battery"
           }
         ],
-        "titleFormatted": "Is closed"
+        "titleFormatted": "Is closed [[device]]"
       },
       {
         "id": "smart_thermostat_hybrid_mode_is",
@@ -58281,7 +58281,7 @@
             "filter": "driver_id=contact_sensor_battery"
           }
         ],
-        "titleFormatted": "Opened"
+        "titleFormatted": "Opened [[device]]"
       },
       {
         "id": "contact_sensor_battery_contact_closed",
@@ -58304,7 +58304,7 @@
             "filter": "driver_id=contact_sensor_battery"
           }
         ],
-        "titleFormatted": "Closed"
+        "titleFormatted": "Closed [[device]]"
       },
       {
         "id": "door_controller_ac_contact_opened",
@@ -58327,7 +58327,7 @@
             "filter": "driver_id=door_controller_ac"
           }
         ],
-        "titleFormatted": "Opened"
+        "titleFormatted": "Opened [[device]]"
       },
       {
         "id": "door_controller_ac_contact_closed",
@@ -58350,7 +58350,7 @@
             "filter": "driver_id=door_controller_ac"
           }
         ],
-        "titleFormatted": "Closed"
+        "titleFormatted": "Closed [[device]]"
       },
       {
         "id": "door_lock_battery_contact_opened",
@@ -58373,7 +58373,7 @@
             "filter": "driver_id=door_lock_battery"
           }
         ],
-        "titleFormatted": "Opened"
+        "titleFormatted": "Opened [[device]]"
       },
       {
         "id": "door_lock_battery_contact_closed",
@@ -58396,7 +58396,7 @@
             "filter": "driver_id=door_lock_battery"
           }
         ],
-        "titleFormatted": "Closed"
+        "titleFormatted": "Closed [[device]]"
       },
       {
         "id": "door_window_sensor_battery_contact_opened",
@@ -58419,7 +58419,7 @@
             "filter": "driver_id=door_window_sensor_battery"
           }
         ],
-        "titleFormatted": "Opened"
+        "titleFormatted": "Opened [[device]]"
       },
       {
         "id": "door_window_sensor_battery_contact_closed",
@@ -58442,7 +58442,7 @@
             "filter": "driver_id=door_window_sensor_battery"
           }
         ],
-        "titleFormatted": "Closed"
+        "titleFormatted": "Closed [[device]]"
       },
       {
         "id": "doorbell_camera_ac_contact_opened",
@@ -58465,7 +58465,7 @@
             "filter": "driver_id=doorbell_camera_ac"
           }
         ],
-        "titleFormatted": "Opened"
+        "titleFormatted": "Opened [[device]]"
       },
       {
         "id": "doorbell_camera_ac_contact_closed",
@@ -58488,7 +58488,7 @@
             "filter": "driver_id=doorbell_camera_ac"
           }
         ],
-        "titleFormatted": "Closed"
+        "titleFormatted": "Closed [[device]]"
       },
       {
         "id": "doorbell_cr2032_contact_opened",
@@ -58511,7 +58511,7 @@
             "filter": "driver_id=doorbell_cr2032"
           }
         ],
-        "titleFormatted": "Opened"
+        "titleFormatted": "Opened [[device]]"
       },
       {
         "id": "doorbell_cr2032_contact_closed",
@@ -58534,7 +58534,7 @@
             "filter": "driver_id=doorbell_cr2032"
           }
         ],
-        "titleFormatted": "Closed"
+        "titleFormatted": "Closed [[device]]"
       },
       {
         "id": "garage_door_controller_ac_contact_opened",
@@ -58557,7 +58557,7 @@
             "filter": "driver_id=garage_door_controller_ac"
           }
         ],
-        "titleFormatted": "Opened"
+        "titleFormatted": "Opened [[device]]"
       },
       {
         "id": "garage_door_controller_ac_contact_closed",
@@ -58580,7 +58580,7 @@
             "filter": "driver_id=garage_door_controller_ac"
           }
         ],
-        "titleFormatted": "Closed"
+        "titleFormatted": "Closed [[device]]"
       },
       {
         "id": "garage_door_opener_cr2032_contact_opened",
@@ -58603,7 +58603,7 @@
             "filter": "driver_id=garage_door_opener_cr2032"
           }
         ],
-        "titleFormatted": "Opened"
+        "titleFormatted": "Opened [[device]]"
       },
       {
         "id": "garage_door_opener_cr2032_contact_closed",
@@ -58626,7 +58626,7 @@
             "filter": "driver_id=garage_door_opener_cr2032"
           }
         ],
-        "titleFormatted": "Closed"
+        "titleFormatted": "Closed [[device]]"
       },
       {
         "id": "led_strip_outdoor_color_ac_contact_opened",
@@ -58649,7 +58649,7 @@
             "filter": "driver_id=led_strip_outdoor_color_ac"
           }
         ],
-        "titleFormatted": "Opened"
+        "titleFormatted": "Opened [[device]]"
       },
       {
         "id": "led_strip_outdoor_color_ac_contact_closed",
@@ -58672,7 +58672,7 @@
             "filter": "driver_id=led_strip_outdoor_color_ac"
           }
         ],
-        "titleFormatted": "Closed"
+        "titleFormatted": "Closed [[device]]"
       },
       {
         "id": "motion_sensor_battery_motion_detected",
@@ -58695,7 +58695,7 @@
             "filter": "driver_id=motion_sensor_battery"
           }
         ],
-        "titleFormatted": "Motion detected"
+        "titleFormatted": "Motion detected [[device]]"
       },
       {
         "id": "motion_sensor_battery_motion_cleared",
@@ -58718,7 +58718,7 @@
             "filter": "driver_id=motion_sensor_battery"
           }
         ],
-        "titleFormatted": "Motion cleared"
+        "titleFormatted": "Motion cleared [[device]]"
       },
       {
         "id": "motion_sensor_illuminance_battery_motion_detected",
@@ -58741,7 +58741,7 @@
             "filter": "driver_id=motion_sensor_illuminance_battery"
           }
         ],
-        "titleFormatted": "Motion detected"
+        "titleFormatted": "Motion detected [[device]]"
       },
       {
         "id": "motion_sensor_illuminance_battery_motion_cleared",
@@ -58764,7 +58764,7 @@
             "filter": "driver_id=motion_sensor_illuminance_battery"
           }
         ],
-        "titleFormatted": "Motion cleared"
+        "titleFormatted": "Motion cleared [[device]]"
       },
       {
         "id": "motion_sensor_mmwave_battery_motion_detected",
@@ -58787,7 +58787,7 @@
             "filter": "driver_id=motion_sensor_mmwave_battery"
           }
         ],
-        "titleFormatted": "Motion detected"
+        "titleFormatted": "Motion detected [[device]]"
       },
       {
         "id": "motion_sensor_mmwave_battery_motion_cleared",
@@ -58810,7 +58810,7 @@
             "filter": "driver_id=motion_sensor_mmwave_battery"
           }
         ],
-        "titleFormatted": "Motion cleared"
+        "titleFormatted": "Motion cleared [[device]]"
       },
       {
         "id": "motion_sensor_pir_ac_battery_motion_detected",
@@ -58833,7 +58833,7 @@
             "filter": "driver_id=motion_sensor_pir_ac_battery"
           }
         ],
-        "titleFormatted": "Motion detected"
+        "titleFormatted": "Motion detected [[device]]"
       },
       {
         "id": "motion_sensor_pir_ac_battery_motion_cleared",
@@ -58856,7 +58856,7 @@
             "filter": "driver_id=motion_sensor_pir_ac_battery"
           }
         ],
-        "titleFormatted": "Motion cleared"
+        "titleFormatted": "Motion cleared [[device]]"
       },
       {
         "id": "motion_sensor_pir_battery_motion_detected",
@@ -58879,7 +58879,7 @@
             "filter": "driver_id=motion_sensor_pir_battery"
           }
         ],
-        "titleFormatted": "Motion detected"
+        "titleFormatted": "Motion detected [[device]]"
       },
       {
         "id": "motion_sensor_pir_battery_motion_cleared",
@@ -58902,7 +58902,7 @@
             "filter": "driver_id=motion_sensor_pir_battery"
           }
         ],
-        "titleFormatted": "Motion cleared"
+        "titleFormatted": "Motion cleared [[device]]"
       },
       {
         "id": "motion_sensor_zigbee_204z_battery_motion_detected",
@@ -58925,7 +58925,7 @@
             "filter": "driver_id=motion_sensor_zigbee_204z_battery"
           }
         ],
-        "titleFormatted": "Motion detected"
+        "titleFormatted": "Motion detected [[device]]"
       },
       {
         "id": "motion_sensor_zigbee_204z_battery_motion_cleared",
@@ -58948,7 +58948,7 @@
             "filter": "driver_id=motion_sensor_zigbee_204z_battery"
           }
         ],
-        "titleFormatted": "Motion cleared"
+        "titleFormatted": "Motion cleared [[device]]"
       },
       {
         "id": "motion_temp_humidity_illumination_multi_battery_motion_detected",
@@ -58971,7 +58971,7 @@
             "filter": "driver_id=motion_temp_humidity_illumination_multi_battery"
           }
         ],
-        "titleFormatted": "Motion detected"
+        "titleFormatted": "Motion detected [[device]]"
       },
       {
         "id": "motion_temp_humidity_illumination_multi_battery_motion_cleared",
@@ -58994,7 +58994,7 @@
             "filter": "driver_id=motion_temp_humidity_illumination_multi_battery"
           }
         ],
-        "titleFormatted": "Motion cleared"
+        "titleFormatted": "Motion cleared [[device]]"
       },
       {
         "id": "outdoor_light_controller_ac_contact_opened",
@@ -59017,7 +59017,7 @@
             "filter": "driver_id=outdoor_light_controller_ac"
           }
         ],
-        "titleFormatted": "Opened"
+        "titleFormatted": "Opened [[device]]"
       },
       {
         "id": "outdoor_light_controller_ac_contact_closed",
@@ -59040,7 +59040,7 @@
             "filter": "driver_id=outdoor_light_controller_ac"
           }
         ],
-        "titleFormatted": "Closed"
+        "titleFormatted": "Closed [[device]]"
       },
       {
         "id": "outdoor_siren_cr2032_contact_opened",
@@ -59063,7 +59063,7 @@
             "filter": "driver_id=outdoor_siren_cr2032"
           }
         ],
-        "titleFormatted": "Opened"
+        "titleFormatted": "Opened [[device]]"
       },
       {
         "id": "outdoor_siren_cr2032_contact_closed",
@@ -59086,7 +59086,7 @@
             "filter": "driver_id=outdoor_siren_cr2032"
           }
         ],
-        "titleFormatted": "Closed"
+        "titleFormatted": "Closed [[device]]"
       },
       {
         "id": "pir_radar_illumination_sensor_battery_motion_detected",
@@ -59109,7 +59109,7 @@
             "filter": "driver_id=pir_radar_illumination_sensor_battery"
           }
         ],
-        "titleFormatted": "Motion detected"
+        "titleFormatted": "Motion detected [[device]]"
       },
       {
         "id": "pir_radar_illumination_sensor_battery_motion_cleared",
@@ -59132,7 +59132,7 @@
             "filter": "driver_id=pir_radar_illumination_sensor_battery"
           }
         ],
-        "titleFormatted": "Motion cleared"
+        "titleFormatted": "Motion cleared [[device]]"
       },
       {
         "id": "pir_sensor_advanced_battery_motion_detected",
@@ -59155,7 +59155,7 @@
             "filter": "driver_id=pir_sensor_advanced_battery"
           }
         ],
-        "titleFormatted": "Motion detected"
+        "titleFormatted": "Motion detected [[device]]"
       },
       {
         "id": "pir_sensor_advanced_battery_motion_cleared",
@@ -59178,7 +59178,7 @@
             "filter": "driver_id=pir_sensor_advanced_battery"
           }
         ],
-        "titleFormatted": "Motion cleared"
+        "titleFormatted": "Motion cleared [[device]]"
       },
       {
         "id": "presence_sensor_radar_battery_motion_detected",
@@ -59201,7 +59201,7 @@
             "filter": "driver_id=presence_sensor_radar_battery"
           }
         ],
-        "titleFormatted": "Motion detected"
+        "titleFormatted": "Motion detected [[device]]"
       },
       {
         "id": "presence_sensor_radar_battery_motion_cleared",
@@ -59224,7 +59224,7 @@
             "filter": "driver_id=presence_sensor_radar_battery"
           }
         ],
-        "titleFormatted": "Motion cleared"
+        "titleFormatted": "Motion cleared [[device]]"
       },
       {
         "id": "radar_motion_sensor_advanced_battery_motion_detected",
@@ -59247,7 +59247,7 @@
             "filter": "driver_id=radar_motion_sensor_advanced_battery"
           }
         ],
-        "titleFormatted": "Motion detected"
+        "titleFormatted": "Motion detected [[device]]"
       },
       {
         "id": "radar_motion_sensor_advanced_battery_motion_cleared",
@@ -59270,7 +59270,7 @@
             "filter": "driver_id=radar_motion_sensor_advanced_battery"
           }
         ],
-        "titleFormatted": "Motion cleared"
+        "titleFormatted": "Motion cleared [[device]]"
       },
       {
         "id": "radar_motion_sensor_mmwave_battery_motion_detected",
@@ -59293,7 +59293,7 @@
             "filter": "driver_id=radar_motion_sensor_mmwave_battery"
           }
         ],
-        "titleFormatted": "Motion detected"
+        "titleFormatted": "Motion detected [[device]]"
       },
       {
         "id": "radar_motion_sensor_mmwave_battery_motion_cleared",
@@ -59316,7 +59316,7 @@
             "filter": "driver_id=radar_motion_sensor_mmwave_battery"
           }
         ],
-        "titleFormatted": "Motion cleared"
+        "titleFormatted": "Motion cleared [[device]]"
       },
       {
         "id": "radar_motion_sensor_tank_level_battery_motion_detected",
@@ -59339,7 +59339,7 @@
             "filter": "driver_id=radar_motion_sensor_tank_level_battery"
           }
         ],
-        "titleFormatted": "Motion detected"
+        "titleFormatted": "Motion detected [[device]]"
       },
       {
         "id": "radar_motion_sensor_tank_level_battery_motion_cleared",
@@ -59362,7 +59362,7 @@
             "filter": "driver_id=radar_motion_sensor_tank_level_battery"
           }
         ],
-        "titleFormatted": "Motion cleared"
+        "titleFormatted": "Motion cleared [[device]]"
       },
       {
         "id": "remote_switch_cr2032_button_pressed",
@@ -59405,7 +59405,7 @@
             "filter": "driver_id=remote_switch_cr2032"
           }
         ],
-        "titleFormatted": "Button pressed"
+        "titleFormatted": "Button pressed [[device]]"
       },
       {
         "id": "scene_controller_button_pressed",
@@ -59448,7 +59448,7 @@
             "filter": "driver_id=scene_controller"
           }
         ],
-        "titleFormatted": "Button pressed"
+        "titleFormatted": "Button pressed [[device]]"
       },
       {
         "id": "scene_controller_2button_cr2032_button_pressed",
@@ -59491,7 +59491,7 @@
             "filter": "driver_id=scene_controller_2button_cr2032"
           }
         ],
-        "titleFormatted": "Button pressed"
+        "titleFormatted": "Button pressed [[device]]"
       },
       {
         "id": "scene_controller_4button_cr2032_button_pressed",
@@ -59534,7 +59534,7 @@
             "filter": "driver_id=scene_controller_4button_cr2032"
           }
         ],
-        "titleFormatted": "Button pressed"
+        "titleFormatted": "Button pressed [[device]]"
       },
       {
         "id": "scene_controller_6button_cr2032_button_pressed",
@@ -59577,7 +59577,7 @@
             "filter": "driver_id=scene_controller_6button_cr2032"
           }
         ],
-        "titleFormatted": "Button pressed"
+        "titleFormatted": "Button pressed [[device]]"
       },
       {
         "id": "scene_controller_8button_cr2032_button_pressed",
@@ -59620,7 +59620,7 @@
             "filter": "driver_id=scene_controller_8button_cr2032"
           }
         ],
-        "titleFormatted": "Button pressed"
+        "titleFormatted": "Button pressed [[device]]"
       },
       {
         "id": "scene_controller_battery_button_pressed",
@@ -59663,7 +59663,7 @@
             "filter": "driver_id=scene_controller_battery"
           }
         ],
-        "titleFormatted": "Button pressed"
+        "titleFormatted": "Button pressed [[device]]"
       },
       {
         "id": "smart_doorbell_battery_contact_opened",
@@ -59686,7 +59686,7 @@
             "filter": "driver_id=smart_doorbell_battery"
           }
         ],
-        "titleFormatted": "Opened"
+        "titleFormatted": "Opened [[device]]"
       },
       {
         "id": "smart_doorbell_battery_contact_closed",
@@ -59709,7 +59709,7 @@
             "filter": "driver_id=smart_doorbell_battery"
           }
         ],
-        "titleFormatted": "Closed"
+        "titleFormatted": "Closed [[device]]"
       },
       {
         "id": "sos_emergency_button_cr2032_button_pressed",
@@ -59752,7 +59752,7 @@
             "filter": "driver_id=sos_emergency_button_cr2032"
           }
         ],
-        "titleFormatted": "Button pressed"
+        "titleFormatted": "Button pressed [[device]]"
       },
       {
         "id": "wireless_button_2gang_battery_button_pressed",
@@ -59795,7 +59795,7 @@
             "filter": "driver_id=wireless_button_2gang_battery"
           }
         ],
-        "titleFormatted": "Button pressed"
+        "titleFormatted": "Button pressed [[device]]"
       },
       {
         "id": "wireless_scene_controller_4button_battery_button_pressed",
@@ -59838,7 +59838,7 @@
             "filter": "driver_id=wireless_scene_controller_4button_battery"
           }
         ],
-        "titleFormatted": "Button pressed"
+        "titleFormatted": "Button pressed [[device]]"
       },
       {
         "id": "wireless_switch_1gang_cr2032_button_pressed",
@@ -59881,7 +59881,7 @@
             "filter": "driver_id=wireless_switch_1gang_cr2032"
           }
         ],
-        "titleFormatted": "Button pressed"
+        "titleFormatted": "Button pressed [[device]]"
       },
       {
         "id": "wireless_switch_2gang_cr2032_button_pressed",
@@ -59924,7 +59924,7 @@
             "filter": "driver_id=wireless_switch_2gang_cr2032"
           }
         ],
-        "titleFormatted": "Button pressed"
+        "titleFormatted": "Button pressed [[device]]"
       },
       {
         "id": "wireless_switch_3gang_cr2032_button_pressed",
@@ -59967,7 +59967,7 @@
             "filter": "driver_id=wireless_switch_3gang_cr2032"
           }
         ],
-        "titleFormatted": "Button pressed"
+        "titleFormatted": "Button pressed [[device]]"
       },
       {
         "id": "wireless_switch_4gang_cr2032_button_pressed",
@@ -60010,7 +60010,7 @@
             "filter": "driver_id=wireless_switch_4gang_cr2032"
           }
         ],
-        "titleFormatted": "Button pressed"
+        "titleFormatted": "Button pressed [[device]]"
       },
       {
         "id": "wireless_switch_4gang_cr2450_button_pressed",
@@ -60053,7 +60053,7 @@
             "filter": "driver_id=wireless_switch_4gang_cr2450"
           }
         ],
-        "titleFormatted": "Button pressed"
+        "titleFormatted": "Button pressed [[device]]"
       },
       {
         "id": "wireless_switch_5gang_cr2032_button_pressed",
@@ -60096,7 +60096,7 @@
             "filter": "driver_id=wireless_switch_5gang_cr2032"
           }
         ],
-        "titleFormatted": "Button pressed"
+        "titleFormatted": "Button pressed [[device]]"
       },
       {
         "id": "wireless_switch_6gang_cr2032_button_pressed",
@@ -60139,7 +60139,7 @@
             "filter": "driver_id=wireless_switch_6gang_cr2032"
           }
         ],
-        "titleFormatted": "Button pressed"
+        "titleFormatted": "Button pressed [[device]]"
       },
       {
         "id": "wireless_switch_cr2032_button_pressed",
@@ -60182,7 +60182,7 @@
             "filter": "driver_id=wireless_switch_cr2032"
           }
         ],
-        "titleFormatted": "Button pressed"
+        "titleFormatted": "Button pressed [[device]]"
       }
     ]
   }
