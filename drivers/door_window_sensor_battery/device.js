@@ -10,6 +10,49 @@ const FallbackSystem = require('../../lib/FallbackSystem');
 class DoorWindowSensorDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
+
+// IAS Zone - Contact Sensor
+    const endpoint = this.zclNode.endpoints[1];
+    const iasZoneCluster = endpoint.clusters.iasZone;
+    
+    if (!iasZoneCluster) {
+      this.error('IAS Zone cluster not found on endpoint 1');
+      return;
+    }
+    
+    // Listen for zone status changes
+    iasZoneCluster.on('attr.zoneStatus', (value) => {
+      // Bit 0 = alarm1 (contact open/closed)
+      const isOpen = (value & 0x01) === 0x01;
+      this.log('Contact status:', isOpen ? 'OPEN' : 'CLOSED');
+      this.setCapabilityValue('alarm_contact', isOpen).catch(this.error);
+    });
+    
+    // Proactive enrollment response
+    iasZoneCluster.on('zoneEnrollRequest', async (enrollRequest) => {
+      this.log('Received zoneEnrollRequest:', enrollRequest);
+      
+      try {
+        await iasZoneCluster.zoneEnrollResponse({
+          enrollResponseCode: 0,
+          zoneId: 10
+        });
+        this.log('Sent zoneEnrollResponse successfully');
+      } catch (err) {
+        this.error('Failed to send zoneEnrollResponse:', err);
+      }
+    });
+    
+    // Write IAS CIE Address
+    try {
+      const ieeeAddress = await this.homey.zigbee.getIeeeAddress();
+      await iasZoneCluster.writeAttributes({
+        iasCieAddr: ieeeAddress
+      });
+      this.log('Wrote IAS CIE address:', ieeeAddress);
+    } catch (err) {
+      this.error('Failed to write IAS CIE address:', err);
+    }
     // Configure battery reporting (min 1h, max 24h, delta 5%)
     try {
     await this.configureAttributeReporting([{
