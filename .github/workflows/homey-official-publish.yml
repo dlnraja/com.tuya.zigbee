@@ -87,32 +87,21 @@ jobs:
           level: debug
 
   version:
-    name: Update Version
+    name: Get Current Version
     needs: validate
     runs-on: ubuntu-latest
     outputs:
-      version: ${{ steps.update-version.outputs.version }}
+      version: ${{ steps.get-version.outputs.version }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Update version (Patch)
-        id: update-version
-        uses: athombv/github-action-homey-app-version@master
-        with:
-          version: patch
-          changelog: "Automated release"
+      - name: Get version from app.json
+        id: get-version
+        run: |
+          VERSION=$(node -p "require('./app.json').version")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "📦 Current version: $VERSION"
 
       - name: Create Release
         uses: actions/create-release@v1
@@ -120,8 +109,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v${{ steps.update-version.outputs.version }}
-          release_name: Release v${{ steps.update-version.outputs.version }}
+          tag_name: v${{ steps.get-version.outputs.version }}
+          release_name: Release v${{ steps.get-version.outputs.version }}
           body: |
             ## What's Changed
             
@@ -131,42 +120,9 @@ jobs:
           draft: false
           prerelease: false
 
-      - name: Commit & Push version
+      - name: Display version
         run: |
-          git config --local user.name "github-actions[bot]"
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git commit -m "Update Homey App Version to v${{ steps.update-version.outputs.version }}" || echo "No changes to commit"
-          
-          # Delete tag locally if exists (avoid conflicts)
-          git tag -d "v${{ steps.update-version.outputs.version }}" 2>/dev/null || echo "Tag doesn't exist locally"
-          
-          # Create tag
-          git tag "v${{ steps.update-version.outputs.version }}"
-          
-          # Pull with rebase to sync with remote
-          git pull --rebase origin master || echo "Rebase conflict, continuing..."
-          
-          # Delete remote tag if exists
-          git push origin :refs/tags/v${{ steps.update-version.outputs.version }} 2>/dev/null || echo "Remote tag doesn't exist"
-          
-          # Push with retry logic
-          for i in {1..3}; do
-            if git push origin HEAD --tags --force; then
-              echo "✅ Push successful"
-              break
-            else
-              echo "⚠️ Push failed, retrying in 5 seconds..."
-              sleep 5
-              git pull --rebase origin master || true
-            fi
-          done
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Display new version
-        run: |
-          echo "✅ Version updated to: ${{ steps.update-version.outputs.version }}"
+          echo "📦 Publishing version: ${{ steps.get-version.outputs.version }}"
 
   publish:
     name: Publish to Homey App Store
