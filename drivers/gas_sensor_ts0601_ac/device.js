@@ -23,7 +23,7 @@ class GasSensorTs0601AcDevice extends ZigBeeDevice {
     await this.configureAttributeReporting([{
     } catch (err) { this.error('Await error:', err); }
       endpointId: 1,
-      cluster: 'powerConfiguration',
+      cluster: CLUSTER.POWER_CONFIGURATION,
       attributeName: 'batteryPercentageRemaining',
       minInterval: 3600,
       maxInterval: 86400,

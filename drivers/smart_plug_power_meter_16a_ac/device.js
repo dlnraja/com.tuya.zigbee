@@ -30,7 +30,7 @@ class SmartPlugPowerMeter16aAcDevice extends ZigBeeDevice {
     await this.configureAttributeReporting([{
     } catch (err) { this.error('Await error:', err); }
       endpointId: 1,
-      cluster: 'powerConfiguration',
+      cluster: CLUSTER.POWER_CONFIGURATION,
       attributeName: 'batteryPercentageRemaining',
       minInterval: 3600,
       maxInterval: 86400,
@@ -78,8 +78,8 @@ class SmartPlugPowerMeter16aAcDevice extends ZigBeeDevice {
     if (this.hasCapability('onoff')) {
       try {
         this.registerCapability('onoff', 6, {
-      get: 'onOff',
-      report: 'onOff',
+      get: CLUSTER.ON_OFF,
+      report: CLUSTER.ON_OFF,
       set: 'toggle',
       setParser: value => ({ })
     });
