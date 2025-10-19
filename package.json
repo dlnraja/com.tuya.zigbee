@@ -26,6 +26,9 @@
     "sync": "node scripts/AUTO_UPDATE_APP_JSON.js",
     "images": "node scripts/RESIZE_IMAGES_PRESERVE_CONTENT.js",
     "images:contextual": "node scripts/REGENERATE_ALL_CONTEXTUAL_IMAGES.js",
+    "images:generate": "node scripts/images/intelligent-image-generator.js",
+    "images:regenerate": "node scripts/images/batch-regenerate-all.js",
+    "images:verify": "node scripts/images/verify-all-images.js",
     "fix-nomenclature": "node scripts/FIX_DRIVER_NOMENCLATURE.js"
   },
   "keywords": [
