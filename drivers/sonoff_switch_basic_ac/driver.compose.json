@@ -23,14 +23,48 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "SONOFF"
+      "SONOFF",
+      "GE",
+      "Sengled",
+      "Legrand",
+      "Schneider Electric"
     ],
     "productId": [
       "BASICZBR3",
       "ZBMINI",
       "ZBMINIL2",
       "ZBMINI-L",
-      "ZBMINI-L2"
+      "ZBMINI-L2",
+      "45852",
+      "45853",
+      "45856",
+      "45857",
+      "12724",
+      "12719",
+      "14294",
+      "14295",
+      "14296",
+      "Jasco Products",
+      "SYLVANIA",
+      "LEDVANCE",
+      "CentraLite",
+      "Iris",
+      "Lowe's",
+      "Cable outlet",
+      "Connected outlet",
+      "Micromodule switch",
+      "Micromodule dimmer",
+      "Double gangs remote switch",
+      "Remote toggle switch",
+      "Remote motion sensor",
+      "Shutters central remote switch",
+      "NHPB/SHUTTER/1",
+      "NHPB/SWITCH/1",
+      "U201DST600ZB",
+      "U201SRY2KWZB",
+      "EER50000",
+      "Hager",
+      "Delta Dore"
     ],
     "endpoints": {
       "1": {
