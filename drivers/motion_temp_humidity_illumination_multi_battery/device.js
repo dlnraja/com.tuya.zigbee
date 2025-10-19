@@ -54,11 +54,16 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
     
     // Write IAS CIE Address proactively
     try {
-      const ieeeAddress = await this.homey.zigbee.getIeeeAddress();
-      await iasZoneCluster.writeAttributes({
-        iasCieAddr: ieeeAddress
-      });
-      this.log('Wrote IAS CIE address:', ieeeAddress);
+      // Get IEEE address from zclNode (SDK3 compatible)
+      const ieeeAddress = this.zclNode.ieeeAddress;
+      if (ieeeAddress) {
+        await iasZoneCluster.writeAttributes({
+          iasCieAddr: ieeeAddress
+        });
+        this.log('Wrote IAS CIE address:', ieeeAddress);
+      } else {
+        this.error('IEEE address not available');
+      }
     } catch (err) {
       this.error('Failed to write IAS CIE address:', err);
     }
@@ -83,7 +88,7 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
     
     // Register battery capability
 // TODO: Consider debouncing capability updates for better performance
-    this.registerCapability('measure_battery', 'genPowerCfg', {
+    this.registerCapability('measure_battery', 1, {
       endpoint: 1,
       get: 'batteryPercentageRemaining',
       report: 'batteryPercentageRemaining',

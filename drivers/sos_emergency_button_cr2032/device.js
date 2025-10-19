@@ -31,7 +31,7 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
     // Register onOff cluster for button events
     if (this.hasCapability('onoff')) {
       // TODO: Consider debouncing capability updates for better performance
-      this.registerCapability('onoff', 'genOnOff', {
+      this.registerCapability('onoff', 6, {
         endpoint: 1
       });
     }
