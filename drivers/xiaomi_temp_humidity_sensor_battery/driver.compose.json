@@ -27,7 +27,9 @@
   "zigbee": {
     "manufacturerName": [
       "lumi.weather",
-      "lumi.sensor_ht"
+      "lumi.sensor_ht",
+      "lumi.sensor_ht.agl02",
+      "lumi.airmonitor.acn01"
     ],
     "productId": [],
     "endpoints": {

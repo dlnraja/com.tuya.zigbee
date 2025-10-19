@@ -25,7 +25,10 @@
   "zigbee": {
     "manufacturerName": [
       "lumi.sensor_magnet",
-      "lumi.sensor_magnet.aq2"
+      "lumi.sensor_magnet.aq2",
+      "lumi.magnet.agl02",
+      "lumi.magnet.ac01",
+      "lumi.magnet.acn001"
     ],
     "productId": [],
     "endpoints": {
