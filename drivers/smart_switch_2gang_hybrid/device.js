@@ -12,6 +12,7 @@ class SmartSwitch2gangHybridDevice extends ZigBeeDevice {
 
         // Register capabilities
                 // Register on/off capability
+// TODO: Consider debouncing capability updates for better performance
         this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));
 
         // Mark device as available

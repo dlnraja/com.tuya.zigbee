@@ -1,6 +1,7 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { CLUSTER } = require('zigbee-clusters');
 const IASZoneEnroller = require('../../lib/IASZoneEnroller');
 const batteryConverter = require('../../lib/tuya-engine/converters/battery');
 const FallbackSystem = require('../../lib/FallbackSystem');
@@ -12,6 +13,7 @@ class RollerBlindControllerDevice extends ZigBeeDevice {
 
         // Register capabilities
                 // Register on/off capability
+// TODO: Consider debouncing capability updates for better performance
         this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));
 
         // Mark device as available
