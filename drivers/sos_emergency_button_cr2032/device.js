@@ -10,10 +10,10 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
 
-// ==========================================
+    // ==========================================
     // BUTTON CLICK DETECTION - OPTIMIZED
     // ==========================================
-    
+
     // Click detection state
     this._clickState = {
       lastClick: 0,
@@ -22,40 +22,40 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
       longPressTimer: null,
       buttonPressed: false
     };
-    
+
     // Timing constants
     const DOUBLE_CLICK_WINDOW = 400;  // ms
     const LONG_PRESS_DURATION = 1000; // ms
     const DEBOUNCE_TIME = 50;         // ms
-    
+
     // Register onOff cluster for button events
     if (this.hasCapability('onoff')) {
-// TODO: Consider debouncing capability updates for better performance
+      // TODO: Consider debouncing capability updates for better performance
       this.registerCapability('onoff', 'genOnOff', {
         endpoint: 1
       });
     }
-    
+
     // Listen for onOff commands (button press/release)
     const onOffCluster = this.zclNode.endpoints[1]?.clusters?.onOff;
-    
+
     if (onOffCluster) {
       // Press detection
       onOffCluster.on('command', async (command) => {
         const now = Date.now();
-        
+
         // Debounce
         if (now - this._clickState.lastClick < DEBOUNCE_TIME) {
           this.log('Debounced click');
           return;
         }
-        
+
         this.log('Button command:', command);
-        
+
         if (command === 'on' || command === 'off' || command === 'toggle') {
           this._clickState.buttonPressed = true;
           this._clickState.lastClick = now;
-          
+
           // Start long press timer
           this._clickState.longPressTimer = setTimeout(() => {
             if (this._clickState.buttonPressed) {
@@ -63,7 +63,7 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
               this.homey.flow.getDeviceTriggerCard('button_long_press')
                 .trigger(this, {}, {})
                 .catch(this.error);
-              
+
               // Reset state after long press
               this._clickState.buttonPressed = false;
               this._clickState.clickCount = 0;
@@ -73,43 +73,43 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
               }
             }
           }, LONG_PRESS_DURATION);
-          
+
         } else if (command === 'commandButtonRelease' || this._clickState.buttonPressed) {
           // Button released
           this._clickState.buttonPressed = false;
-          
+
           // Clear long press timer
           if (this._clickState.longPressTimer) {
             clearTimeout(this._clickState.longPressTimer);
             this._clickState.longPressTimer = null;
           }
-          
+
           // Increment click count
           this._clickState.clickCount++;
-          
+
           // Clear existing timer
           if (this._clickState.clickTimer) {
             clearTimeout(this._clickState.clickTimer);
           }
-          
+
           // Wait for potential second click
           this._clickState.clickTimer = setTimeout(() => {
             const clicks = this._clickState.clickCount;
             this._clickState.clickCount = 0;
             this._clickState.clickTimer = null;
-            
+
             if (clicks === 1) {
               this.log('🔘 SINGLE CLICK detected');
               this.homey.flow.getDeviceTriggerCard('button_pressed')
                 .trigger(this, {}, {})
                 .catch(this.error);
-                
+
             } else if (clicks === 2) {
               this.log('🔘 DOUBLE CLICK detected');
               this.homey.flow.getDeviceTriggerCard('button_double_press')
                 .trigger(this, {}, {})
                 .catch(this.error);
-                
+
             } else if (clicks >= 3) {
               this.log(`🔘 MULTI CLICK detected (${clicks})`);
               this.homey.flow.getDeviceTriggerCard('button_multi_press')
@@ -119,20 +119,20 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
           }, DOUBLE_CLICK_WINDOW);
         }
       });
-      
+
       this.log('Button click detection initialized');
-      
+
     } else {
       this.error('OnOff cluster not found for button detection');
     }
-    
+
     // Alternative: Level Control cluster for some buttons
     const levelControlCluster = this.zclNode.endpoints[1]?.clusters?.levelControl;
-    
+
     if (levelControlCluster) {
       levelControlCluster.on('command', async (command) => {
         this.log('Level control command:', command);
-        
+
         // Some buttons use step/move commands
         if (command === 'step' || command === 'stepWithOnOff') {
           this.log('🔘 BUTTON STEP detected (single click alternative)');
@@ -145,7 +145,7 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
     // ==========================================
     // BATTERY MANAGEMENT - OPTIMIZED
     // ==========================================
-    
+
     // Configure battery reporting
     try {
       await this.configureAttributeReporting([{
@@ -160,7 +160,7 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
     } catch (err) {
       this.log('Battery report config failed (non-critical):', err.message);
     }
-    
+
     // Register battery capability
     this.registerCapability('measure_battery', 'genPowerCfg', {
       endpoint: 1,
@@ -178,7 +178,7 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
         return Math.max(0, Math.min(100, percentage));
       }
     });
-    
+
     // Initial battery poll after pairing
     setTimeout(async () => {
       try {
@@ -188,43 +188,43 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
         this.error('Initial battery poll failed:', err);
       }
     }, 5000);
-    
+
     // Regular battery polling with exponential backoff on errors
     let pollFailures = 0;
     const maxPollFailures = 5;
-    
+
     this.registerPollInterval(async () => {
       try {
         const battery = await this.zclNode.endpoints[1].clusters.powerConfiguration.readAttributes(['batteryPercentageRemaining']);
-        
+
         if (battery && battery.batteryPercentageRemaining !== undefined) {
           const percentage = Math.round(battery.batteryPercentageRemaining / 2);
           await this.setCapabilityValue('measure_battery', percentage);
           this.log('Battery polled:', percentage + '%');
-          
+
           // Reset failure counter on success
           pollFailures = 0;
-          
+
           // Low battery alert
           if (percentage <= 20 && percentage > 10) {
             this.log('⚠️  Low battery warning:', percentage + '%');
             await this.homey.notifications.createNotification({
               excerpt: `${this.getName()} battery low (${percentage}%)`
-            }).catch(() => {});
+            }).catch(() => { });
           }
-          
+
           // Critical battery alert
           if (percentage <= 10) {
             this.log('🔴 Critical battery:', percentage + '%');
             await this.homey.notifications.createNotification({
               excerpt: `${this.getName()} battery critical (${percentage}%) - replace soon!`
-            }).catch(() => {});
+            }).catch(() => { });
           }
         }
       } catch (err) {
         pollFailures++;
         this.error(`Battery poll failed (${pollFailures}/${maxPollFailures}):`, err.message);
-        
+
         // Stop polling after max failures to preserve battery
         if (pollFailures >= maxPollFailures) {
           this.log('Max poll failures reached, reducing poll frequency');
@@ -246,7 +246,7 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
         this.error('Poll failed:', err);
       }
     }, 300000); // 5 minutes
-  
+
     this.log('sos_emergency_button_cr2032 initialized');
 
     // Battery (cluster 1) - Using standard converter
@@ -263,24 +263,86 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
       getParser: value => fromZclBatteryPercentageRemaining(value)
     });
     this.log('✅ Battery capability registered with converter');
-    
-    // SOS Button IAS Zone
+
+    // SOS Button IAS Zone - v2.15.71 working pattern + IASZoneEnroller fallback
     this.log('🚨 Setting up SOS button IAS Zone...');
-    try {
-      const endpoint = zclNode.endpoints[1];
-      const enroller = new IASZoneEnroller(this, endpoint, {
-        zoneType: 21, // Emergency button
-        capability: 'alarm_generic',
-        pollInterval: 30000,
-        autoResetTimeout: 0 // No auto-reset for SOS
+
+    // PRIMARY METHOD: Direct enrollment (v2.15.71 pattern that worked!)
+    const sosEndpoint = zclNode.endpoints[1];
+    const iasZoneCluster = sosEndpoint.clusters.iasZone;
+
+    if (iasZoneCluster) {
+      // Listen for zone status changes
+      iasZoneCluster.on('attr.zoneStatus', (value) => {
+        const alarmActive = (value & 0x01) === 0x01; // Bit 0 = alarm1 (button pressed)
+        this.log('SOS Button pressed:', alarmActive);
+        this.setCapabilityValue('alarm_generic', alarmActive).catch(this.error);
       });
-      const method = await enroller.enroll(zclNode);
-      this.log(`✅ SOS IAS Zone enrolled via: ${method}`);
-      
+
+      // Proactive enrollment response
+      iasZoneCluster.on('zoneEnrollRequest', async (enrollRequest) => {
+        this.log('Received zoneEnrollRequest:', enrollRequest);
+        try {
+          await iasZoneCluster.zoneEnrollResponse({
+            enrollResponseCode: 0, // Success
+            zoneId: 10
+          });
+          this.log('Sent zoneEnrollResponse successfully');
+        } catch (err) {
+          this.error('Failed to send zoneEnrollResponse:', err);
+        }
+      });
+
+      // Write IAS CIE Address (v2.15.71 working pattern)
+      try {
+        // Get Homey IEEE address as Buffer with reversed byte order (CRITICAL!)
+        const homeyIeee = await this.homey.zigbee.getIeeeAddress();
+        const ieeeBuffer = Buffer.from(
+          homeyIeee.replace(/:/g, '').match(/.{2}/g).reverse().join(''),
+          'hex'
+        );
+
+        this.log('📡 Homey IEEE:', homeyIeee);
+        this.log('📡 IEEE Buffer:', ieeeBuffer.toString('hex'));
+
+        // Write CIE Address
+        await iasZoneCluster.writeAttributes({
+          iasCieAddr: ieeeBuffer
+        });
+        this.log('✅ IAS CIE Address written (SDK3 method)');
+
+        // VERIFY enrollment (v2.15.71 pattern)
+        const verify = await iasZoneCluster.readAttributes(['iasCieAddr']);
+        this.log('✅ Enrollment verified:', verify.iasCieAddr?.toString('hex'));
+
+        // Wait for enrollment to complete (CRITICAL - from v2.15.71)
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        this.log('✅ SOS Button IAS Zone enrollment complete');
+
+      } catch (err) {
+        this.error('Direct IAS enrollment failed:', err);
+        this.log('⚠️ Trying IASZoneEnroller fallback...');
+
+        // FALLBACK METHOD: IASZoneEnroller library
+        try {
+          const enroller = new IASZoneEnroller(this, sosEndpoint, {
+            zoneType: 21, // Emergency button
+            capability: 'alarm_generic',
+            pollInterval: 30000,
+            autoResetTimeout: 0 // No auto-reset for SOS
+          });
+          const method = await enroller.enroll(zclNode);
+          this.log(`✅ SOS IAS Zone enrolled via fallback: ${method}`);
+        } catch (fallbackErr) {
+          this.error('Fallback enrollment also failed:', fallbackErr);
+          this.log('⚠️ Device may auto-enroll');
+        }
+      }
+
       // Add robust listener for alarm_generic
       this.registerCapabilityListener('alarm_generic', async (value) => {
         this.log('🚨 SOS Button pressed! Alarm:', value);
-        
+
         // Trigger flow card
         const triggerId = value ? 'sos_button_pressed' : 'sos_button_released';
         try {
@@ -290,24 +352,20 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
           this.error('Flow trigger error:', error.message);
         }
       });
-      
+
       // Direct IAS Zone status notification handler
-      if (endpoint.clusters.iasZone) {
-        endpoint.clusters.iasZone.onZoneStatusChangeNotification = (payload) => {
-          this.log('🚨 IAS Zone Status Notification:', payload);
-          
-          const alarm = (payload.zoneStatus & 0x01) !== 0;
-          this.setCapabilityValue('alarm_generic', alarm).catch(this.error);
-        };
-      }
-      
-    } catch (err) {
-      this.error('IAS Zone enrollment failed:', err);
-      this.log('⚠️ Device may auto-enroll or work without explicit enrollment');
+      iasZoneCluster.onZoneStatusChangeNotification = (payload) => {
+        this.log('🚨 IAS Zone Status Notification:', payload);
+        const alarm = (payload.zoneStatus & 0x01) !== 0;
+        this.setCapabilityValue('alarm_generic', alarm).catch(this.error);
+      };
+
+    } else {
+      this.error('IAS Zone cluster not found!');
     }
 
     try {
-    await this.setAvailable();
+      await this.setAvailable();
     } catch (err) { this.error('Await error:', err); }
   }
   // ========================================
@@ -349,7 +407,7 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
       time_of_day: this.getTimeOfDay(),
       timestamp: new Date().toISOString()
     };
-    
+
     // Add available sensor values
     const caps = this.getCapabilities();
     if (caps.includes('measure_luminance')) {
@@ -364,7 +422,7 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
     if (caps.includes('measure_battery')) {
       context.battery = this.getCapabilityValue('measure_battery') || 0;
     }
-    
+
     return context;
   }
 
@@ -387,7 +445,7 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
    */
   async pollAttributes() {
     const promises = [];
-    
+
     // Battery
     if (this.hasCapability('measure_battery')) {
       promises.push(
@@ -395,7 +453,7 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
           .catch(err => this.log('Battery read failed (ignorable):', err.message))
       );
     }
-    
+
     // Temperature
     if (this.hasCapability('measure_temperature')) {
       promises.push(
@@ -403,7 +461,7 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
           .catch(err => this.log('Temperature read failed (ignorable):', err.message))
       );
     }
-    
+
     // Humidity
     if (this.hasCapability('measure_humidity')) {
       promises.push(
@@ -411,7 +469,7 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
           .catch(err => this.log('Humidity read failed (ignorable):', err.message))
       );
     }
-    
+
     // Illuminance
     if (this.hasCapability('measure_luminance')) {
       promises.push(
@@ -419,7 +477,7 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
           .catch(err => this.log('Illuminance read failed (ignorable):', err.message))
       );
     }
-    
+
     // Alarm status (IAS Zone)
     if (this.hasCapability('alarm_motion') || this.hasCapability('alarm_contact')) {
       promises.push(
@@ -427,9 +485,9 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
           .catch(err => this.log('IAS Zone read failed (ignorable):', err.message))
       );
     }
-    
+
     try {
-    await Promise.allSettled(promises);
+      await Promise.allSettled(promises);
     } catch (err) { this.error('Await error:', err); }
     this.log('✅ Poll attributes completed');
   }
