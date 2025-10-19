@@ -1,68 +1,58 @@
-# 🔢 Intelligent Version Management
+# 🔢 Automatic Version Management
 
 ## 📋 Overview
 
-The workflow has been optimized for **MANUAL VERSION CONTROL** with intelligent automation.
+The workflow uses **AUTOMATIC VERSION INCREMENT** with intelligent automation.
 
 ## 🎯 Philosophy
 
-**YOU control versions, GitHub Actions publishes them.**
+**Push to master, GitHub Actions auto-increments and publishes.**
 
-- ✅ Manual version increments for meaningful releases
-- ✅ Descriptive changelogs for each version
-- ✅ Automatic publication without auto-increment
-- ✅ No version conflicts or race conditions
+- ✅ Automatic patch version increments on every push
+- ✅ Standardized changelog for releases
+- ✅ Fully automated publication pipeline
+- ✅ Zero manual version management needed
 
 ## 🔄 Workflow Pipeline
 
-### Current Setup (Optimized)
+### Current Setup (Fully Automated)
 
 ```yaml
 1. update-docs → Auto-update links, paths, README
 2. validate → Validate app at publish level
-3. version → READ current version from app.json
-4. publish → Publish THAT version to Homey App Store
+3. version → AUTO-INCREMENT patch version (3.1.9 → 3.1.10)
+4. publish → Publish NEW version to Homey App Store
 ```
 
-**Key Change:** Step 3 no longer AUTO-INCREMENTS!
+**Key Feature:** Automatic patch increment on every push!
 
 ## 📝 How to Release a New Version
 
-### Step 1: Update Version Manually
+### Simple Process (Fully Automated)
 
-Edit `app.json`:
-```json
-{
-  "version": "3.1.10"  // Increment manually
-}
-```
-
-### Step 2: Update Changelog
-
-Edit `.homeychangelog.json`:
-```json
-{
-  "3.1.10": {
-    "en": "🔧 YOUR MEANINGFUL CHANGELOG HERE\n✅ Feature 1\n✅ Feature 2\n✅ Bug fix"
-  }
-}
-```
-
-### Step 3: Commit & Push
-
+**Step 1: Make your changes**
 ```bash
-git add app.json .homeychangelog.json
-git commit -m "chore: Bump version to 3.1.10"
+# Edit drivers, fix bugs, add features
+git add .
+git commit -m "fix: Your changes here"
+```
+
+**Step 2: Push to master**
+```bash
 git push origin master
 ```
 
-### Step 4: Watch GitHub Actions
+**Step 3: That's it! 🎉**
 
-The workflow will:
+The workflow will automatically:
 1. ✅ Validate the app
-2. ✅ Read version 3.1.10 from app.json
-3. ✅ Create GitHub Release v3.1.10
-4. ✅ Publish v3.1.10 to Homey App Store
+2. ✅ Auto-increment version (e.g., 3.1.9 → 3.1.10)
+3. ✅ Generate standardized changelog
+4. ✅ Create GitHub Release
+5. ✅ Publish to Homey App Store
+6. ✅ Commit version change back to repo
+
+**No manual version management needed!**
 
 ## 🎨 Version Numbering Strategy
 
