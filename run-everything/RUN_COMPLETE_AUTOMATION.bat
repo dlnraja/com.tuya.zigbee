@@ -145,10 +145,10 @@ echo %BLUE%PHASE 2: Enrichissement depuis sources Internet%NC%
 echo %BLUE%============================================================================%NC%
 echo.
 
-IF EXIST "scripts\node-tools\enrichment-advanced.js" (
+IF EXIST "scripts\node-tools\run-enrichment.js" (
     echo [ENRICH] Lancement de l'enrichissement avance...
     cd scripts\node-tools
-    node enrichment-advanced.js 2>nul
+    node run-enrichment.js 2>nul
     IF !ERRORLEVEL! NEQ 0 (
         echo %YELLOW%[WARNING] Enrichissement partiel ou echoue (continue...)%NC%
     ) ELSE (

@@ -1,13 +1,15 @@
 {
   "metadata": {
     "version": "3.1.0",
-    "lastUpdated": "2025-01-15",
-    "totalEntries": 110,
+    "lastUpdated": "2025-10-19T09:28:29.653Z",
+    "totalEntries": 383,
     "sources": [
-      "Zigbee2MQTT Database",
-      "Homey Community Forum",
-      "GitHub Issues",
-      "Diagnostic Reports"
+      "github-koenkk",
+      "patterns",
+      "community",
+      "ts-models",
+      "existing-drivers",
+      "archive"
     ]
   },
   "manufacturers": {
@@ -1535,7 +1537,10 @@
       "region": "Global",
       "verified": true,
       "batteryLife": "5 years",
-      "certifications": ["CE", "EN14604"]
+      "certifications": [
+        "CE",
+        "EN14604"
+      ]
     },
     "_TYZB01_wqcac7lo": {
       "brand": "Generic Tuya",
@@ -1555,7 +1560,11 @@
       "region": "Global",
       "verified": true,
       "batteryLife": "12 months",
-      "certifications": ["CE", "EN14604", "VdS"]
+      "certifications": [
+        "CE",
+        "EN14604",
+        "VdS"
+      ]
     },
     "_TYZB01_xfpdrwvc": {
       "brand": "Generic Tuya",
@@ -2101,6 +2110,1638 @@
       "region": "Global",
       "verified": true,
       "batteryLife": "12-18 months"
+    },
+    "Zbeacon": {
+      "name": "Zbeacon",
+      "verified": true,
+      "source": "github-koenkk",
+      "addedDate": "2025-10-19T09:28:20.025Z"
+    },
+    "_TZ3000_zl1kmjqx": {
+      "name": "_TZ3000_zl1kmjqx",
+      "verified": true,
+      "source": "github-koenkk",
+      "addedDate": "2025-10-19T09:28:20.027Z"
+    },
+    "_TZ3000_mw1pqqqt": {
+      "name": "_TZ3000_mw1pqqqt",
+      "verified": true,
+      "source": "github-koenkk",
+      "addedDate": "2025-10-19T09:28:20.027Z"
+    },
+    "_TZ3000_gjnozsaz": {
+      "name": "_TZ3000_gjnozsaz",
+      "verified": true,
+      "source": "github-koenkk",
+      "addedDate": "2025-10-19T09:28:20.027Z"
+    },
+    "_TZ3000_cehuw1lw": {
+      "name": "_TZ3000_cehuw1lw",
+      "verified": true,
+      "source": "github-koenkk",
+      "addedDate": "2025-10-19T09:28:20.027Z"
+    },
+    "_TZ3000_abrsvsou": {
+      "name": "_TZ3000_abrsvsou",
+      "verified": true,
+      "source": "github-koenkk",
+      "addedDate": "2025-10-19T09:28:20.027Z"
+    },
+    "_TZ3000_gwkzibhs": {
+      "name": "_TZ3000_gwkzibhs",
+      "verified": true,
+      "source": "github-koenkk",
+      "addedDate": "2025-10-19T09:28:20.027Z"
+    },
+    "_TZE200_hl0ss9oa": {
+      "name": "_TZE200_hl0ss9oa",
+      "verified": true,
+      "source": "github-koenkk",
+      "addedDate": "2025-10-19T09:28:20.027Z"
+    },
+    "ZGAF-205L": {
+      "name": "ZGAF-205L",
+      "verified": true,
+      "source": "github-koenkk",
+      "addedDate": "2025-10-19T09:28:20.028Z"
+    },
+    "_TZE200_y4mdop0b": {
+      "name": "_TZE200_y4mdop0b",
+      "verified": true,
+      "source": "github-koenkk",
+      "addedDate": "2025-10-19T09:28:20.028Z"
+    },
+    "_TZE284_6ocnqlhn": {
+      "name": "_TZE284_6ocnqlhn",
+      "verified": true,
+      "source": "github-koenkk",
+      "addedDate": "2025-10-19T09:28:20.028Z"
+    },
+    "_TZE200_lvkk0hdg": {
+      "name": "_TZE200_lvkk0hdg",
+      "verified": true,
+      "source": "github-koenkk",
+      "addedDate": "2025-10-19T09:28:20.028Z"
+    },
+    "_TZ3210_emqmwtym": {
+      "name": "_TZ3210_emqmwtym",
+      "verified": true,
+      "source": "github-koenkk",
+      "addedDate": "2025-10-19T09:28:20.028Z"
+    },
+    "_TZE200_khah2lkr": {
+      "name": "_TZE200_khah2lkr",
+      "verified": true,
+      "source": "github-koenkk",
+      "addedDate": "2025-10-19T09:28:20.028Z"
+    },
+    "ZG-204ZE": {
+      "name": "ZG-204ZE",
+      "verified": true,
+      "source": "github-koenkk",
+      "addedDate": "2025-10-19T09:28:20.028Z"
+    },
+    "_TZE204_lpedvtvr": {
+      "name": "_TZE204_lpedvtvr",
+      "verified": true,
+      "source": "github-koenkk",
+      "addedDate": "2025-10-19T09:28:22.367Z"
+    },
+    "_TZE284_aao6qtpo": {
+      "name": "_TZE284_aao6qtpo",
+      "verified": false,
+      "source": "pattern-generation",
+      "addedDate": "2025-10-19T09:28:27.740Z"
+    },
+    "_TZE284_7ysdnebc": {
+      "name": "_TZE284_7ysdnebc",
+      "verified": false,
+      "source": "pattern-generation",
+      "addedDate": "2025-10-19T09:28:27.740Z"
+    },
+    "_TZE284_9qhuzn0q": {
+      "name": "_TZE284_9qhuzn0q",
+      "verified": false,
+      "source": "pattern-generation",
+      "addedDate": "2025-10-19T09:28:27.740Z"
+    },
+    "_TZE284_h1p4kzzq": {
+      "name": "_TZE284_h1p4kzzq",
+      "verified": false,
+      "source": "pattern-generation",
+      "addedDate": "2025-10-19T09:28:27.740Z"
+    },
+    "_TZE284_5d2zb8dm": {
+      "name": "_TZE284_5d2zb8dm",
+      "verified": false,
+      "source": "pattern-generation",
+      "addedDate": "2025-10-19T09:28:27.740Z"
+    },
+    "_TZE284_mmtwjmaq": {
+      "name": "_TZE284_mmtwjmaq",
+      "verified": false,
+      "source": "pattern-generation",
+      "addedDate": "2025-10-19T09:28:27.740Z"
+    },
+    "_TZE284_kmh5qpmb": {
+      "name": "_TZE284_kmh5qpmb",
+      "verified": false,
+      "source": "pattern-generation",
+      "addedDate": "2025-10-19T09:28:27.740Z"
+    },
+    "_TZE284_cwbvmsar": {
+      "name": "_TZE284_cwbvmsar",
+      "verified": false,
+      "source": "pattern-generation",
+      "addedDate": "2025-10-19T09:28:27.740Z"
+    },
+    "_TZE284_bjawzodf": {
+      "name": "_TZE284_bjawzodf",
+      "verified": false,
+      "source": "pattern-generation",
+      "addedDate": "2025-10-19T09:28:27.740Z"
+    },
+    "_TZE284_g5xawfcq": {
+      "name": "_TZE284_g5xawfcq",
+      "verified": false,
+      "source": "pattern-generation",
+      "addedDate": "2025-10-19T09:28:27.740Z"
+    },
+    "_TZE284_8dljlua2": {
+      "name": "_TZE284_8dljlua2",
+      "verified": false,
+      "source": "community",
+      "addedDate": "2025-10-19T09:28:27.741Z"
+    },
+    "_TZ3000_mmtwjmaq": {
+      "name": "_TZ3000_mmtwjmaq",
+      "verified": false,
+      "source": "community",
+      "addedDate": "2025-10-19T09:28:27.741Z"
+    },
+    "_TZ3000_kmh5qpmb": {
+      "name": "_TZ3000_kmh5qpmb",
+      "verified": false,
+      "source": "community",
+      "addedDate": "2025-10-19T09:28:27.741Z"
+    },
+    "_TZE200_cwbvmsar": {
+      "name": "_TZE200_cwbvmsar",
+      "verified": false,
+      "source": "community",
+      "addedDate": "2025-10-19T09:28:27.741Z"
+    },
+    "_TZE200_bjawzodf": {
+      "name": "_TZE200_bjawzodf",
+      "verified": false,
+      "source": "community",
+      "addedDate": "2025-10-19T09:28:27.741Z"
+    },
+    "_TZ3000_g5xawfcq": {
+      "name": "_TZ3000_g5xawfcq",
+      "verified": false,
+      "source": "community",
+      "addedDate": "2025-10-19T09:28:27.741Z"
+    },
+    "TS0001": {
+      "name": "TS0001",
+      "verified": true,
+      "source": "ts-models",
+      "addedDate": "2025-10-19T09:28:27.742Z"
+    },
+    "TS0002": {
+      "name": "TS0002",
+      "verified": true,
+      "source": "ts-models",
+      "addedDate": "2025-10-19T09:28:27.742Z"
+    },
+    "TS0003": {
+      "name": "TS0003",
+      "verified": true,
+      "source": "ts-models",
+      "addedDate": "2025-10-19T09:28:27.742Z"
+    },
+    "TS0004": {
+      "name": "TS0004",
+      "verified": true,
+      "source": "ts-models",
+      "addedDate": "2025-10-19T09:28:27.742Z"
+    },
+    "TS0011": {
+      "name": "TS0011",
+      "verified": true,
+      "source": "ts-models",
+      "addedDate": "2025-10-19T09:28:27.742Z"
+    },
+    "TS0012": {
+      "name": "TS0012",
+      "verified": true,
+      "source": "ts-models",
+      "addedDate": "2025-10-19T09:28:27.742Z"
+    },
+    "TS0013": {
+      "name": "TS0013",
+      "verified": true,
+      "source": "ts-models",
+      "addedDate": "2025-10-19T09:28:27.742Z"
+    },
+    "TS0014": {
+      "name": "TS0014",
+      "verified": true,
+      "source": "ts-models",
+      "addedDate": "2025-10-19T09:28:27.742Z"
+    },
+    "TS011F": {
+      "name": "TS011F",
+      "verified": true,
+      "source": "ts-models",
+      "addedDate": "2025-10-19T09:28:27.742Z"
+    },
+    "TS0121": {
+      "name": "TS0121",
+      "verified": true,
+      "source": "ts-models",
+      "addedDate": "2025-10-19T09:28:27.742Z"
+    },
+    "TS0201": {
+      "name": "TS0201",
+      "verified": true,
+      "source": "ts-models",
+      "addedDate": "2025-10-19T09:28:27.742Z"
+    },
+    "TS0202": {
+      "name": "TS0202",
+      "verified": true,
+      "source": "ts-models",
+      "addedDate": "2025-10-19T09:28:27.742Z"
+    },
+    "TS0203": {
+      "name": "TS0203",
+      "verified": true,
+      "source": "ts-models",
+      "addedDate": "2025-10-19T09:28:27.742Z"
+    },
+    "TS0204": {
+      "name": "TS0204",
+      "verified": true,
+      "source": "ts-models",
+      "addedDate": "2025-10-19T09:28:27.742Z"
+    },
+    "TS0205": {
+      "name": "TS0205",
+      "verified": true,
+      "source": "ts-models",
+      "addedDate": "2025-10-19T09:28:27.742Z"
+    },
+    "TS0207": {
+      "name": "TS0207",
+      "verified": true,
+      "source": "ts-models",
+      "addedDate": "2025-10-19T09:28:27.742Z"
+    },
+    "TS0216": {
+      "name": "TS0216",
+      "verified": true,
+      "source": "ts-models",
+      "addedDate": "2025-10-19T09:28:27.742Z"
+    },
+    "TS0601": {
+      "name": "TS0601",
+      "verified": true,
+      "source": "ts-models",
+      "addedDate": "2025-10-19T09:28:27.742Z"
+    },
+    "TS130F": {
+      "name": "TS130F",
+      "verified": true,
+      "source": "ts-models",
+      "addedDate": "2025-10-19T09:28:27.742Z"
+    },
+    "TS0041": {
+      "name": "TS0041",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.752Z"
+    },
+    "TS0042": {
+      "name": "TS0042",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.752Z"
+    },
+    "TS0043": {
+      "name": "TS0043",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.752Z"
+    },
+    "TS0044": {
+      "name": "TS0044",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.752Z"
+    },
+    "_TZ1800_ejwkn2h2": {
+      "name": "_TZ1800_ejwkn2h2",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.752Z"
+    },
+    "_TZ1800_fcdjzz3s": {
+      "name": "_TZ1800_fcdjzz3s",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.752Z"
+    },
+    "_TZ2000_a476raq2": {
+      "name": "_TZ2000_a476raq2",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.752Z"
+    },
+    "_TZ2000_avdnvykf": {
+      "name": "_TZ2000_avdnvykf",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.752Z"
+    },
+    "_TZ2000_hjsgdkfl": {
+      "name": "_TZ2000_hjsgdkfl",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.752Z"
+    },
+    "_TZ3000_01gpyda5": {
+      "name": "_TZ3000_01gpyda5",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.752Z"
+    },
+    "_TZ3000_0dumfk2z": {
+      "name": "_TZ3000_0dumfk2z",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.752Z"
+    },
+    "_TZ3000_0ghwhypc": {
+      "name": "_TZ3000_0ghwhypc",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.752Z"
+    },
+    "_TZ3000_0ht8dnxj": {
+      "name": "_TZ3000_0ht8dnxj",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.752Z"
+    },
+    "_TZ3000_0s1izerx": {
+      "name": "_TZ3000_0s1izerx",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.752Z"
+    },
+    "_TZ3000_26fmupbb": {
+      "name": "_TZ3000_26fmupbb",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.752Z"
+    },
+    "_TZ3000_4uuaja4a": {
+      "name": "_TZ3000_4uuaja4a",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.752Z"
+    },
+    "_TZ3000_cphmq0q7": {
+      "name": "_TZ3000_cphmq0q7",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.752Z"
+    },
+    "_TZ3000_fllyghyj": {
+      "name": "_TZ3000_fllyghyj",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.752Z"
+    },
+    "_TZ3000_ji4araar": {
+      "name": "_TZ3000_ji4araar",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.752Z"
+    },
+    "_TZ3000_mcxw5ehu": {
+      "name": "_TZ3000_mcxw5ehu",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.752Z"
+    },
+    "_TZ3000_n2egfsli": {
+      "name": "_TZ3000_n2egfsli",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.752Z"
+    },
+    "_TZ3000_qzjcsmar": {
+      "name": "_TZ3000_qzjcsmar",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.752Z"
+    },
+    "_TZ3000_tk3s5tyg": {
+      "name": "_TZ3000_tk3s5tyg",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.753Z"
+    },
+    "_TZE200_81isopgh": {
+      "name": "_TZE200_81isopgh",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.753Z"
+    },
+    "_TZE200_dwcarsat": {
+      "name": "_TZE200_dwcarsat",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.753Z"
+    },
+    "_TZE200_m9skfctm": {
+      "name": "_TZE200_m9skfctm",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.753Z"
+    },
+    "_TZE200_ryfmq5rl": {
+      "name": "_TZE200_ryfmq5rl",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.753Z"
+    },
+    "_TZE200_wfxuhoea": {
+      "name": "_TZE200_wfxuhoea",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.753Z"
+    },
+    "TS0005": {
+      "name": "TS0005",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.753Z"
+    },
+    "TS0006": {
+      "name": "TS0006",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.753Z"
+    },
+    "TS0501": {
+      "name": "TS0501",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.753Z"
+    },
+    "IKEA of Sweden": {
+      "name": "IKEA of Sweden",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.753Z"
+    },
+    "_TZ3000_1dd0d5yi": {
+      "name": "_TZ3000_1dd0d5yi",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.765Z"
+    },
+    "_TZ3000_2mbfxlzr": {
+      "name": "_TZ3000_2mbfxlzr",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.765Z"
+    },
+    "_TZ3000_46t1rvdu": {
+      "name": "_TZ3000_46t1rvdu",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.765Z"
+    },
+    "_TZ3000_4rbqgcuv": {
+      "name": "_TZ3000_4rbqgcuv",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.765Z"
+    },
+    "_TZ3000_5e2f3n2h": {
+      "name": "_TZ3000_5e2f3n2h",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.765Z"
+    },
+    "_TZ3000_8nkb7mof": {
+      "name": "_TZ3000_8nkb7mof",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.765Z"
+    },
+    "_TZ3000_9hpxg80k": {
+      "name": "_TZ3000_9hpxg80k",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.765Z"
+    },
+    "_TZ3000_aaifmpuq": {
+      "name": "_TZ3000_aaifmpuq",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.765Z"
+    },
+    "_TZ3000_ali1q8p0": {
+      "name": "_TZ3000_ali1q8p0",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.765Z"
+    },
+    "_TZ3000_bffkdmp8": {
+      "name": "_TZ3000_bffkdmp8",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.765Z"
+    },
+    "_TZ3000_bn4t9du1": {
+      "name": "_TZ3000_bn4t9du1",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.765Z"
+    },
+    "_TZ3000_cfnprab5": {
+      "name": "_TZ3000_cfnprab5",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.765Z"
+    },
+    "_TZ3000_cymsnfvf": {
+      "name": "_TZ3000_cymsnfvf",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.765Z"
+    },
+    "_TZ3000_ddcqbtgs": {
+      "name": "_TZ3000_ddcqbtgs",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.765Z"
+    },
+    "_TZ3000_dfgbtub0": {
+      "name": "_TZ3000_dfgbtub0",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.765Z"
+    },
+    "_TZ3000_dlhhrhs8": {
+      "name": "_TZ3000_dlhhrhs8",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.765Z"
+    },
+    "_TZ3000_dpo1ysak": {
+      "name": "_TZ3000_dpo1ysak",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.765Z"
+    },
+    "_TZ3000_dziaict4": {
+      "name": "_TZ3000_dziaict4",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.765Z"
+    },
+    "Signify Netherlands B.V.": {
+      "name": "Signify Netherlands B.V.",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.777Z"
+    },
+    "_TZ3000_ssp0maqm": {
+      "name": "_TZ3000_ssp0maqm",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.777Z"
+    },
+    "_TZ3000_t13n5zo0": {
+      "name": "_TZ3000_t13n5zo0",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.777Z"
+    },
+    "_TZE200_t1blo2bj": {
+      "name": "_TZE200_t1blo2bj",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.777Z"
+    },
+    "_TYST11_7hfcudw5": {
+      "name": "_TYST11_7hfcudw5",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.777Z"
+    },
+    "_TZ3000_riwp3k79": {
+      "name": "_TZ3000_riwp3k79",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.789Z"
+    },
+    "_TZ3000_dbou1ap4": {
+      "name": "_TZ3000_dbou1ap4",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.789Z"
+    },
+    "Philips": {
+      "name": "Philips",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.789Z"
+    },
+    "_TZ3210_r5afgmkl": {
+      "name": "_TZ3210_r5afgmkl",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.789Z"
+    },
+    "_TZ3210_sroezl0s": {
+      "name": "_TZ3210_sroezl0s",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.789Z"
+    },
+    "TS004F": {
+      "name": "TS004F",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.824Z"
+    },
+    "TS0502B": {
+      "name": "TS0502B",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.824Z"
+    },
+    "TS0505B": {
+      "name": "TS0505B",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.825Z"
+    },
+    "_TZ3000_fvh3pjaz": {
+      "name": "_TZ3000_fvh3pjaz",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.825Z"
+    },
+    "_TZ3000_odygigth": {
+      "name": "_TZ3000_odygigth",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.825Z"
+    },
+    "_TZ3000_uim07oem": {
+      "name": "_TZ3000_uim07oem",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.825Z"
+    },
+    "_TZ3000_vp6clf9d": {
+      "name": "_TZ3000_vp6clf9d",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.825Z"
+    },
+    "_TZ3000_xabckq1v": {
+      "name": "_TZ3000_xabckq1v",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.825Z"
+    },
+    "_TZE200_whpb9yts": {
+      "name": "_TZE200_whpb9yts",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.861Z"
+    },
+    "_TZE200_locansqn": {
+      "name": "_TZE200_locansqn",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.861Z"
+    },
+    "_TZE200_bq5c8xfe": {
+      "name": "_TZE200_bq5c8xfe",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.861Z"
+    },
+    "_TZ3000_ywagc4rj": {
+      "name": "_TZ3000_ywagc4rj",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.861Z"
+    },
+    "_TZE200_rxq4iti9": {
+      "name": "_TZE200_rxq4iti9",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.883Z"
+    },
+    "_TZ3000_itnrsufe": {
+      "name": "_TZ3000_itnrsufe",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.883Z"
+    },
+    "_TZ3000_qaaysllp": {
+      "name": "_TZ3000_qaaysllp",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.883Z"
+    },
+    "_TZ3000_4ugnzsli": {
+      "name": "_TZ3000_4ugnzsli",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.905Z"
+    },
+    "_TZ3000_oxslv1c9": {
+      "name": "_TZ3000_oxslv1c9",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.905Z"
+    },
+    "_TZ3000_7d8yme6f": {
+      "name": "_TZ3000_7d8yme6f",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.905Z"
+    },
+    "MOES": {
+      "name": "MOES",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.916Z"
+    },
+    "_TZE200_3towulqd": {
+      "name": "_TZE200_3towulqd",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.926Z"
+    },
+    "_TZE200_8ygsuhe1": {
+      "name": "_TZE200_8ygsuhe1",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.926Z"
+    },
+    "_TZE200_a8sdabtg": {
+      "name": "_TZE200_a8sdabtg",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.926Z"
+    },
+    "_TZE200_cowvfni3": {
+      "name": "_TZE200_cowvfni3",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.926Z"
+    },
+    "_TZE200_fctwhugx": {
+      "name": "_TZE200_fctwhugx",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.926Z"
+    },
+    "_TZE200_npj9bug3": {
+      "name": "_TZE200_npj9bug3",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.926Z"
+    },
+    "_TZE200_sfqyhvpv": {
+      "name": "_TZE200_sfqyhvpv",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.926Z"
+    },
+    "_TZE200_u6x1zyv2": {
+      "name": "_TZE200_u6x1zyv2",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.926Z"
+    },
+    "_TZE200_wqashyqo": {
+      "name": "_TZE200_wqashyqo",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.926Z"
+    },
+    "_TZE284_uqfph8ah": {
+      "name": "_TZE284_uqfph8ah",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.926Z"
+    },
+    "_TZE200_ol5jlkkr": {
+      "name": "_TZE200_ol5jlkkr",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:27.926Z"
+    },
+    "_TZ3000_okohwwap": {
+      "name": "_TZ3000_okohwwap",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.016Z"
+    },
+    "_TZE200_pay2byax": {
+      "name": "_TZE200_pay2byax",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.016Z"
+    },
+    "_TZE200_nvups4nh": {
+      "name": "_TZE200_nvups4nh",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.016Z"
+    },
+    "_TZ3000_typdpbpg": {
+      "name": "_TZ3000_typdpbpg",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.027Z"
+    },
+    "_TZ3000_w0qqde0g": {
+      "name": "_TZ3000_w0qqde0g",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.027Z"
+    },
+    "_TZ3000_ew3ldmgx": {
+      "name": "_TZ3000_ew3ldmgx",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.027Z"
+    },
+    "_TZ3000_1h2x4akh": {
+      "name": "_TZ3000_1h2x4akh",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.027Z"
+    },
+    "_TZ3000_dd8wwzcy": {
+      "name": "_TZ3000_dd8wwzcy",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.027Z"
+    },
+    "_TZ3000_npg02xft": {
+      "name": "_TZ3000_npg02xft",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.037Z"
+    },
+    "_TZ3000_9djocypn": {
+      "name": "_TZ3000_9djocypn",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.057Z"
+    },
+    "_TZ3000_kdi2o9m6": {
+      "name": "_TZ3000_kdi2o9m6",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.057Z"
+    },
+    "_TZ3000_rdtixbnu": {
+      "name": "_TZ3000_rdtixbnu",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.057Z"
+    },
+    "_TZ3000_okaz9tjs": {
+      "name": "_TZ3000_okaz9tjs",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.057Z"
+    },
+    "_TZE200_yojqa8xn": {
+      "name": "_TZE200_yojqa8xn",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.134Z"
+    },
+    "_TZE204_yojqa8xn": {
+      "name": "_TZE204_yojqa8xn",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.134Z"
+    },
+    "_TZE200_ux5v4tgb": {
+      "name": "_TZE200_ux5v4tgb",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.134Z"
+    },
+    "_TZE204_ux5v4tgb": {
+      "name": "_TZE204_ux5v4tgb",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.134Z"
+    },
+    "_TZE200_ezqy5pvh": {
+      "name": "_TZE200_ezqy5pvh",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.134Z"
+    },
+    "_TZE204_ezqy5pvh": {
+      "name": "_TZE204_ezqy5pvh",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.134Z"
+    },
+    "_TZE200_ggev5fsl": {
+      "name": "_TZE200_ggev5fsl",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.142Z"
+    },
+    "_TZE204_ggev5fsl": {
+      "name": "_TZE204_ggev5fsl",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.142Z"
+    },
+    "_TZE284_rjgdhqqi": {
+      "name": "_TZE284_rjgdhqqi",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.142Z"
+    },
+    "_TZ3210_eejm8dcr": {
+      "name": "_TZ3210_eejm8dcr",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.183Z"
+    },
+    "_TZ3210_j4pdtz9v": {
+      "name": "_TZ3210_j4pdtz9v",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.183Z"
+    },
+    "_TZ3210_tgvtvdoc": {
+      "name": "_TZ3210_tgvtvdoc",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.183Z"
+    },
+    "_TZ3290_gnl5a6a5": {
+      "name": "_TZ3290_gnl5a6a5",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.183Z"
+    },
+    "_TZ3000_c8ozah8n": {
+      "name": "_TZ3000_c8ozah8n",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.253Z"
+    },
+    "_TZ3000_fa9mlvja": {
+      "name": "_TZ3000_fa9mlvja",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.253Z"
+    },
+    "_TZ3000_o4mkahkc": {
+      "name": "_TZ3000_o4mkahkc",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.253Z"
+    },
+    "_TZ3000_rcuyhwe3": {
+      "name": "_TZ3000_rcuyhwe3",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.253Z"
+    },
+    "_TZ3000_txpirhfq": {
+      "name": "_TZ3000_txpirhfq",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.253Z"
+    },
+    "_TZE200_ar0slwnd": {
+      "name": "_TZE200_ar0slwnd",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.253Z"
+    },
+    "_TZE200_sfiy5tfs": {
+      "name": "_TZE200_sfiy5tfs",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.253Z"
+    },
+    "_TZE200_mrf6vtua": {
+      "name": "_TZE200_mrf6vtua",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.253Z"
+    },
+    "_TZE204_mrf6vtua": {
+      "name": "_TZE204_mrf6vtua",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.253Z"
+    },
+    "_TZ3040_bb6xaihh": {
+      "name": "_TZ3040_bb6xaihh",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.253Z"
+    },
+    "_TZE200_1ibpyhdc": {
+      "name": "_TZE200_1ibpyhdc",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.259Z"
+    },
+    "_TZE200_bh3n6gk8": {
+      "name": "_TZE200_bh3n6gk8",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.259Z"
+    },
+    "HOBEIAN": {
+      "name": "HOBEIAN",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.259Z"
+    },
+    "LUMI": {
+      "name": "LUMI",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.259Z"
+    },
+    "_TZ3000_otvn3lne": {
+      "name": "_TZ3000_otvn3lne",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.279Z"
+    },
+    "_TZ3040_wqmtjsyk": {
+      "name": "_TZ3040_wqmtjsyk",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.279Z"
+    },
+    "_TZE200_ztc6ggyl": {
+      "name": "_TZE200_ztc6ggyl",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.279Z"
+    },
+    "_TZE204_ztc6ggyl": {
+      "name": "_TZE204_ztc6ggyl",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.279Z"
+    },
+    "_TZE284_0zse7xqg": {
+      "name": "_TZE284_0zse7xqg",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.279Z"
+    },
+    "_TZE200_uli8wasj": {
+      "name": "_TZE200_uli8wasj",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.302Z"
+    },
+    "_TZE200_grgol3xp": {
+      "name": "_TZE200_grgol3xp",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.302Z"
+    },
+    "_TZE200_rhgsbacq": {
+      "name": "_TZE200_rhgsbacq",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.302Z"
+    },
+    "_TZE200_y8jijhba": {
+      "name": "_TZE200_y8jijhba",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.302Z"
+    },
+    "_TZE200_2aaelwxk": {
+      "name": "_TZE200_2aaelwxk",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.362Z"
+    },
+    "_TZE200_kb5noeto": {
+      "name": "_TZE200_kb5noeto",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.362Z"
+    },
+    "_TZE200_tyffvoij": {
+      "name": "_TZE200_tyffvoij",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.362Z"
+    },
+    "_TZE284_ztc6ggyl": {
+      "name": "_TZE284_ztc6ggyl",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.424Z"
+    },
+    "_TZ3000_famkxci2": {
+      "name": "_TZ3000_famkxci2",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.540Z"
+    },
+    "_TZ3400_keyjhapk": {
+      "name": "_TZ3400_keyjhapk",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.540Z"
+    },
+    "_TZ3000_adkvzooy": {
+      "name": "_TZ3000_adkvzooy",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.540Z"
+    },
+    "_TZ3000_peszejy7": {
+      "name": "_TZ3000_peszejy7",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.540Z"
+    },
+    "_TZ3000_kjfzuycl": {
+      "name": "_TZ3000_kjfzuycl",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.609Z"
+    },
+    "_TZE200_tz32mtza": {
+      "name": "_TZE200_tz32mtza",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.609Z"
+    },
+    "_TZE200_g1ib5ldv": {
+      "name": "_TZE200_g1ib5ldv",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.609Z"
+    },
+    "_TZ3000_an5rjiwd": {
+      "name": "_TZ3000_an5rjiwd",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.630Z"
+    },
+    "_TZ3000_mrpevh8p": {
+      "name": "_TZ3000_mrpevh8p",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.630Z"
+    },
+    "_TZ3000_pcqjmcud": {
+      "name": "_TZ3000_pcqjmcud",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.630Z"
+    },
+    "_TZ3000_4fjiwweb": {
+      "name": "_TZ3000_4fjiwweb",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.630Z"
+    },
+    "_TZ3000_uri7ongn": {
+      "name": "_TZ3000_uri7ongn",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.630Z"
+    },
+    "_TZ3000_ixla93vd": {
+      "name": "_TZ3000_ixla93vd",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.630Z"
+    },
+    "_TZ3000_qja6nq5z": {
+      "name": "_TZ3000_qja6nq5z",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.630Z"
+    },
+    "_TZ3000_csflgqj2": {
+      "name": "_TZ3000_csflgqj2",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.630Z"
+    },
+    "_TZ3000_wkai4ga5": {
+      "name": "_TZ3000_wkai4ga5",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.630Z"
+    },
+    "_TZE200_mgstdyz3": {
+      "name": "_TZE200_mgstdyz3",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.781Z"
+    },
+    "_TZE284_mgstdyz3": {
+      "name": "_TZE284_mgstdyz3",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.781Z"
+    },
+    "aqara": {
+      "name": "aqara",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.781Z"
+    },
+    "_TZ3000_00mk2xzy": {
+      "name": "_TZ3000_00mk2xzy",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.803Z"
+    },
+    "_TZ3000_kfu8zapd": {
+      "name": "_TZ3000_kfu8zapd",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.803Z"
+    },
+    "_TZ3000_uwaort14": {
+      "name": "_TZ3000_uwaort14",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.803Z"
+    },
+    "LEDVANCE": {
+      "name": "LEDVANCE",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.811Z"
+    },
+    "_TZ3000_ww6drja5": {
+      "name": "_TZ3000_ww6drja5",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.823Z"
+    },
+    "_TZ3210_alxkwn0h": {
+      "name": "_TZ3210_alxkwn0h",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.823Z"
+    },
+    "_TZE204_5cuocqty": {
+      "name": "_TZE204_5cuocqty",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.823Z"
+    },
+    "_TZE204_ahwvlkpy": {
+      "name": "_TZE204_ahwvlkpy",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.823Z"
+    },
+    "_TZE204_bjzrowv2": {
+      "name": "_TZE204_bjzrowv2",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.823Z"
+    },
+    "_TZE204_dapwryy7": {
+      "name": "_TZE204_dapwryy7",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.823Z"
+    },
+    "_TZE204_dcnsggvz": {
+      "name": "_TZE204_dcnsggvz",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.823Z"
+    },
+    "_TZE204_lawxy9e2": {
+      "name": "_TZE204_lawxy9e2",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.823Z"
+    },
+    "_TZE204_ltwbm23f": {
+      "name": "_TZE204_ltwbm23f",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.823Z"
+    },
+    "_TZE204_nklqjk62": {
+      "name": "_TZE204_nklqjk62",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.823Z"
+    },
+    "_TZE204_xu4a5rhj": {
+      "name": "_TZE204_xu4a5rhj",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.824Z"
+    },
+    "_TZ3000_u1rkajsr": {
+      "name": "_TZ3000_u1rkajsr",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.838Z"
+    },
+    "_TZE200_dq1mfjug": {
+      "name": "_TZE200_dq1mfjug",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.860Z"
+    },
+    "_TZE200_rccxox8p": {
+      "name": "_TZE200_rccxox8p",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.860Z"
+    },
+    "_TZ3210_up3pngle": {
+      "name": "_TZ3210_up3pngle",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.860Z"
+    },
+    "_TZE200_b6wax7g0": {
+      "name": "_TZE200_b6wax7g0",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.958Z"
+    },
+    "_TZE200_ztvwu4nk": {
+      "name": "_TZE200_ztvwu4nk",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.959Z"
+    },
+    "_TZE200_ye5jkfsb": {
+      "name": "_TZE200_ye5jkfsb",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.959Z"
+    },
+    "_TZE200_aoclfnxz": {
+      "name": "_TZE200_aoclfnxz",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.959Z"
+    },
+    "_TZE200_husqqvux": {
+      "name": "_TZE200_husqqvux",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.959Z"
+    },
+    "_TZE200_0dvm9mva": {
+      "name": "_TZE200_0dvm9mva",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.959Z"
+    },
+    "_TYST11_zivfvd7h": {
+      "name": "_TYST11_zivfvd7h",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:28.959Z"
+    },
+    "_TZE284_n4ttsck2": {
+      "name": "_TZE284_n4ttsck2",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.000Z"
+    },
+    "_TZE284_gyzlwu5q": {
+      "name": "_TZE284_gyzlwu5q",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.021Z"
+    },
+    "_TZE284_oitavov2": {
+      "name": "_TZE284_oitavov2",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.033Z"
+    },
+    "_TZE284_myd45weu": {
+      "name": "_TZE284_myd45weu",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.045Z"
+    },
+    "_TZ3000_p6ju8myv": {
+      "name": "_TZ3000_p6ju8myv",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.066Z"
+    },
+    "_TZ3000_fsiepnrh": {
+      "name": "_TZ3000_fsiepnrh",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.066Z"
+    },
+    "_TZ3000_zsh6uat3": {
+      "name": "_TZ3000_zsh6uat3",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.066Z"
+    },
+    "_TZ3000_h1ipgkwn": {
+      "name": "_TZ3000_h1ipgkwn",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.084Z"
+    },
+    "_TZ3000_bguser20": {
+      "name": "_TZ3000_bguser20",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.185Z"
+    },
+    "_TZ3000_bgsigers": {
+      "name": "_TZ3000_bgsigers",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.187Z"
+    },
+    "_TZ3000_idrxiajl": {
+      "name": "_TZ3000_idrxiajl",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.187Z"
+    },
+    "_TZ3000_akqdg6g7": {
+      "name": "_TZ3000_akqdg6g7",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.187Z"
+    },
+    "_TZE200_hhrtiq0x": {
+      "name": "_TZE200_hhrtiq0x",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.187Z"
+    },
+    "_TZE200_yjjdcqsq": {
+      "name": "_TZE200_yjjdcqsq",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.187Z"
+    },
+    "_TZE284_1lvln0x6": {
+      "name": "_TZE284_1lvln0x6",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.187Z"
+    },
+    "_TZE284_vvmbj46n": {
+      "name": "_TZE284_vvmbj46n",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.200Z"
+    },
+    "_TZ3000_lqpt3mvr": {
+      "name": "_TZ3000_lqpt3mvr",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.351Z"
+    },
+    "_TZ3000_upgcbody": {
+      "name": "_TZ3000_upgcbody",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.478Z"
+    },
+    "_TZ3000_kyb656no": {
+      "name": "_TZ3000_kyb656no",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.478Z"
+    },
+    "_TZ3000_v8gtiaed": {
+      "name": "_TZ3000_v8gtiaed",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.478Z"
+    },
+    "_TZE200_qq9mpfhw": {
+      "name": "_TZE200_qq9mpfhw",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.478Z"
+    },
+    "_TZE200_akjefhj5": {
+      "name": "_TZE200_akjefhj5",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.478Z"
+    },
+    "_TZ3000_5bpeda8u": {
+      "name": "_TZ3000_5bpeda8u",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.553Z"
+    },
+    "_TZ3000_yj6k7vfo": {
+      "name": "_TZ3000_yj6k7vfo",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.553Z"
+    },
+    "_TZ3000_xrqsdxq6": {
+      "name": "_TZ3000_xrqsdxq6",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.553Z"
+    },
+    "_TZ3000_s0i14ubi": {
+      "name": "_TZ3000_s0i14ubi",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.553Z"
+    },
+    "_TZ3000_itb0omhv": {
+      "name": "_TZ3000_itb0omhv",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.553Z"
+    },
+    "_TZ3400_keyjqthh": {
+      "name": "_TZ3400_keyjqthh",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.553Z"
+    },
+    "_TZ3400_tk3s5tyg": {
+      "name": "_TZ3400_tk3s5tyg",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.553Z"
+    },
+    "_TYZB02_key8kk7r": {
+      "name": "_TYZB02_key8kk7r",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.553Z"
+    },
+    "_TZ3000_arfwfgoa": {
+      "name": "_TZ3000_arfwfgoa",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.553Z"
+    },
+    "_TZ3000_bi6lpsew": {
+      "name": "_TZ3000_bi6lpsew",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.553Z"
+    },
+    "_TZ3000_b3mgfu0d": {
+      "name": "_TZ3000_b3mgfu0d",
+      "verified": true,
+      "source": "existing-drivers",
+      "addedDate": "2025-10-19T09:28:29.562Z"
     }
   }
 }

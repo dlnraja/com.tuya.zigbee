@@ -75,7 +75,7 @@ jobs:
         continue-on-error: true
         run: |
           cd scripts/node-tools
-          node enrichment-advanced.js || echo "⚠️ Enrichment partially failed, continuing..."
+          node run-enrichment.js || echo "⚠️ Enrichment partially failed, continuing..."
           
       - name: Commit enrichment
         run: |
