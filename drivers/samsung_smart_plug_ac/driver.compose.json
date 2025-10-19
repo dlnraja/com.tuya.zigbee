@@ -1,0 +1,56 @@
+{
+  "id": "samsung_smart_plug_ac",
+  "name": {
+    "en": "Smart Plug (Samsung)",
+    "fr": "Smart Plug (Samsung)",
+    "nl": "Smart Plug (Samsung)",
+    "de": "Smart Plug (Samsung)"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "meter_power"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "SmartThings",
+      "Samsung"
+    ],
+    "productId": [
+      "outlet"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6,
+          2820
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/learnmode.svg",
+      "instruction": {
+        "en": "Follow device pairing instructions",
+        "fr": "Suivre les instructions d'appairage",
+        "nl": "Volg de koppelingsinstru cties",
+        "de": "Folgen Sie den Kopplungsanweisungen"
+      }
+    }
+  }
+}
