@@ -1,0 +1,200 @@
+{
+  "name": {
+    "en": "Temperature Humidity Sensor (Battery)"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery",
+    "temp_alarm"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_bgsigers",
+      "_TZ3000_fllyghyj",
+      "_TZ3000_idrxiajl",
+      "_TZ3000_ywagc4rj",
+      "_TZ3000_8nkb7mof",
+      "_TZ3000_9hpxg80k",
+      "_TZ3000_aaifmpuq",
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_ali1q8p0",
+      "_TZ3000_bffkdmp8",
+      "_TZ3000_bn4t9du1",
+      "_TZ3000_cfnprab5",
+      "_TZ3000_cymsnfvf",
+      "_TZ3000_ddcqbtgs",
+      "_TZ3000_dfgbtub0",
+      "_TZ3000_dlhhrhs8",
+      "_TZ3000_dpo1ysak",
+      "_TZ3000_dziaict4",
+      "_TZE200_bjawzodf",
+      "_TZE200_hhrtiq0x",
+      "_TZE200_hl0ss9oa",
+      "_TZE200_locansqn",
+      "_TZE200_yjjdcqsq",
+      "_TZE284_hhrtiq0x",
+      "_TZE284_sgabhwa6"
+    ],
+    "productId": [
+      "TS0201",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1026,
+          1029
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    }
+  },
+  "images": {
+    "large": "./assets/large.png",
+    "small": "./assets/small.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature"
+      },
+      "units": {
+        "en": "°C"
+      }
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Humidity"
+      },
+      "units": {
+        "en": "%"
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "AAA",
+      "CR2032"
+    ]
+  },
+  "id": "temperature_humidity_sensor_battery",
+  "settings": [
+    {
+      "type": "number",
+      "id": "dp_13_comfort_temperature",
+      "label": {
+        "en": "comfort temperature"
+      },
+      "value": 0
+    },
+    {
+      "type": "number",
+      "id": "dp_14_eco_temperature",
+      "label": {
+        "en": "eco temperature"
+      },
+      "value": 0
+    },
+    {
+      "type": "number",
+      "id": "dp_19_temperature_calibration",
+      "label": {
+        "en": "temperature calibration"
+      },
+      "value": -9,
+      "min": -9,
+      "max": 9
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "SDK3 Advanced Settings",
+        "fr": "Paramètres Avancés SDK3"
+      },
+      "children": [
+        {
+          "id": "temperature_calibration",
+          "type": "number",
+          "label": {
+            "en": "Temperature Calibration",
+            "fr": "Calibration Température"
+          },
+          "units": "°C",
+          "value": 0,
+          "min": -9,
+          "max": 9
+        },
+        {
+          "id": "temperature_threshold",
+          "type": "number",
+          "label": {
+            "en": "Temperature Alert Threshold",
+            "fr": "Seuil Alerte Température"
+          },
+          "units": "°C",
+          "value": 25,
+          "min": 0,
+          "max": 50
+        },
+        {
+          "id": "humidity_threshold",
+          "type": "number",
+          "label": {
+            "en": "Humidity Alert Threshold",
+            "fr": "Seuil Alerte Humidité"
+          },
+          "units": "%",
+          "value": 70,
+          "min": 0,
+          "max": 100
+        },
+        {
+          "id": "battery_low_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold",
+            "fr": "Seuil Batterie Faible"
+          },
+          "units": "%",
+          "value": 20,
+          "min": 5,
+          "max": 50
+        },
+        {
+          "id": "battery_notification",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Battery Notifications",
+            "fr": "Activer Notifications Batterie"
+          },
+          "value": true
+        }
+      ]
+    }
+  ]
+}

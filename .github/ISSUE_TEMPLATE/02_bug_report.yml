@@ -1,0 +1,125 @@
+name: 🐛 Bug Report
+description: Report a bug or issue with an existing driver
+title: "[Bug] "
+labels: ["bug", "needs-triage"]
+assignees:
+  - dlnraja
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Bug Report
+        
+        Please describe the issue clearly and provide as much detail as possible.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Describe the Bug"
+      description: |
+        What happened vs what you expected?
+        
+        Be specific and clear.
+      placeholder: |
+        Expected: Temperature sensor should report every 5 minutes
+        Actual: No temperature updates after pairing
+    validations:
+      required: true
+
+  - type: input
+    id: driver
+    attributes:
+      label: "Driver Name"
+      description: "Which driver are you using?"
+      placeholder: "ex: temperature_sensor_battery, smart_plug_ac..."
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: "Device Brand & Model"
+      placeholder: "ex: MOES Temperature Sensor, Nous A4Z Plug..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: fingerprint
+    attributes:
+      label: "Zigbee Fingerprint"
+      description: "manufacturerName, modelId (from Homey Developer Tools)"
+      placeholder: |
+        manufacturerName: _TZ3000_example
+        modelId: TS0201
+      render: yaml
+    validations:
+      required: false
+
+  - type: input
+    id: app_version
+    attributes:
+      label: "App Version"
+      description: "Which version of Universal Tuya Zigbee?"
+      placeholder: "ex: v3.0.2"
+    validations:
+      required: true
+
+  - type: input
+    id: homey_version
+    attributes:
+      label: "Homey Version"
+      description: "Which Homey firmware version?"
+      placeholder: "ex: v12.8.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Steps to Reproduce"
+      description: "How can we reproduce this bug?"
+      placeholder: |
+        1. Pair device
+        2. Wait 10 minutes
+        3. Check temperature capability
+        4. Value is still null
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: "Logs"
+      description: |
+        Homey logs showing the issue
+        
+        Get from: Settings → Apps → Universal Tuya Zigbee → View Logs
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: "Additional Context"
+      description: |
+        Anything else relevant:
+        - Screenshots
+        - Network topology
+        - Recent changes
+        - Workarounds tried
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "Checklist"
+      options:
+        - label: "I have searched existing issues (no duplicate)"
+          required: true
+        - label: "I have tried re-pairing the device"
+          required: false
+        - label: "I have checked Zigbee network health (LQI, routing)"
+          required: false

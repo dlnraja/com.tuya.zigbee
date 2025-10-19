@@ -1,0 +1,30 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="plugGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9C27B0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#673AB7;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="dimmerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Plug body -->
+  <rect x="50" y="60" width="100" height="100" rx="15" fill="url(#plugGradient)" />
+  
+  <!-- Power symbol -->
+  <circle cx="100" cy="90" r="15" fill="white" opacity="0.9" />
+  <path d="M 100 78 L 100 90" stroke="url(#dimmerGradient)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 95 90 Q 100 95 105 90" stroke="url(#dimmerGradient)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  
+  <!-- Dimmer indicator -->
+  <circle cx="100" cy="130" r="12" fill="white" opacity="0.8" />
+  <path d="M 88 130 L 112 130" stroke="url(#dimmerGradient)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="106" cy="130" r="4" fill="url(#dimmerGradient)" />
+  
+  <!-- Prongs -->
+  <rect x="75" y="160" width="8" height="25" rx="2" fill="white" opacity="0.9" />
+  <rect x="117" y="160" width="8" height="25" rx="2" fill="white" opacity="0.9" />
+</svg>

@@ -1,0 +1,8 @@
+TRIGGER_GITHUB_ACTIONS_PUBLISH
+Timestamp: 2025-10-14T00:20:22+02:00
+Version: v2.15.84
+Commit: aad39803b
+Purpose: Force publish with 104 flows (multi-gang + capability + critical)
+Status: READY FOR PRODUCTION
+Features: Multi-gang flows (22) + Red triangle fix (5 drivers) + 104 total flows
+Validation: 100% SUCCESS

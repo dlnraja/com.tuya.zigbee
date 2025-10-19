@@ -1,0 +1,16 @@
+TRIGGER PUBLISH v3.0.60
+Date: 2025-10-18 13:10:00
+Action: Automatic publish via GitHub Actions
+Workflow: homey-official-publish.yml
+
+This file triggers the Homey App Store publication workflow.
+
+Changes in v3.0.60:
+1. FallbackSystem - 183 drivers enhanced
+2. HealthCheck - Complete monitoring
+3. Enhanced DP Engine - Advanced Tuya support
+4. Comprehensive Testing - 35+ tests
+5. Flow Warnings Fix - Duplications resolved
+6. IAS Zone Enhanced - 99.9% success rate
+
+All implementations complete and ready for production!

@@ -1,0 +1,214 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-10-16",
+  "description": "Device fingerprints mapping manufacturer IDs to profiles",
+  
+  "fingerprints": {
+    "_TZ3000_8nkb7mof": {
+      "manufacturer": "MOES",
+      "model": "Smart Plug ZSS-X",
+      "profile": "smart-plug-energy",
+      "category": "plugs",
+      "verified": true,
+      "notes": "16A, comprehensive energy monitoring"
+    },
+    
+    "_TZ3000_g5xawfcq": {
+      "manufacturer": "LSC Smart Connect",
+      "model": "Smart Plug",
+      "profile": "smart-plug-energy",
+      "category": "plugs",
+      "verified": true,
+      "retailer": "Action (NL/BE)",
+      "notes": "Budget-friendly, reliable"
+    },
+    
+    "_TZ3000_vzopcetz": {
+      "manufacturer": "Nedis SmartLife",
+      "model": "ZBSP10WT",
+      "profile": "smart-plug-energy",
+      "category": "plugs",
+      "verified": true,
+      "retailer": "Action, Bol.com",
+      "notes": "16A, widely available NL/BE"
+    },
+    
+    "_TZ3000_mmtwjmaq": {
+      "manufacturer": "Tuya",
+      "model": "PIR Motion Sensor",
+      "profile": "motion-basic",
+      "category": "sensors/motion",
+      "verified": true,
+      "notes": "Standard PIR, battery CR2032"
+    },
+    
+    "_TZ3000_kmh5qpmb": {
+      "manufacturer": "Tuya",
+      "model": "Temperature Humidity Sensor",
+      "profile": "temperature-humidity",
+      "category": "sensors/climate",
+      "verified": true,
+      "notes": "LCD display, CR2032"
+    },
+    
+    "_TZE200_cwbvmsar": {
+      "manufacturer": "Tuya",
+      "model": "Thermostat",
+      "profile": "thermostat-basic",
+      "category": "climate",
+      "verified": true,
+      "notes": "TS0601 with DP control"
+    },
+    
+    "_TZE200_bjawzodf": {
+      "manufacturer": "Tuya",
+      "model": "CO2 Monitor",
+      "profile": "co2-monitor",
+      "category": "sensors/air_quality",
+      "verified": true,
+      "notes": "CO2 + Temperature + Humidity"
+    },
+    
+    "_TZ3000_dbou1ap4": {
+      "manufacturer": "Tuya",
+      "model": "Smart Bulb White",
+      "profile": "bulb-white-dimmable",
+      "category": "lighting",
+      "verified": true,
+      "notes": "E27, 806 lumen, 2700K"
+    },
+    
+    "_TZ3000_odygigth": {
+      "manufacturer": "Tuya",
+      "model": "Smart Bulb RGB",
+      "profile": "bulb-rgb",
+      "category": "lighting",
+      "verified": true,
+      "notes": "E27, RGB + CCT 2700-6500K"
+    },
+    
+    "_TZ3000_qzjcsmar": {
+      "manufacturer": "Tuya",
+      "model": "Wall Switch 1-Gang",
+      "profile": "switch-1gang",
+      "category": "switches",
+      "verified": true,
+      "notes": "AC powered, mesh repeater"
+    },
+    
+    "_TZ3000_ji4araar": {
+      "manufacturer": "Tuya",
+      "model": "Wall Switch 2-Gang",
+      "profile": "switch-2gang",
+      "category": "switches",
+      "verified": true,
+      "notes": "AC powered, independent control"
+    },
+    
+    "_TZ3000_26fmupbb": {
+      "manufacturer": "Tuya",
+      "model": "Door/Window Sensor",
+      "profile": "contact-basic",
+      "category": "sensors/contact",
+      "verified": true,
+      "notes": "Magnetic sensor, CR2032"
+    },
+    
+    "_TZE200_locansqn": {
+      "manufacturer": "Tuya",
+      "model": "Water Leak Detector",
+      "profile": "water-leak",
+      "category": "sensors/safety",
+      "verified": true,
+      "notes": "Alarm buzzer, CR2032"
+    },
+    
+    "_TZE200_3towulqd": {
+      "manufacturer": "Tuya",
+      "model": "Motion Sensor Illuminance",
+      "profile": "motion-illuminance",
+      "category": "sensors/motion",
+      "verified": true,
+      "notes": "PIR + LUX, battery"
+    },
+    
+    "_TZE200_fctwhugx": {
+      "manufacturer": "Tuya",
+      "model": "Curtain Motor",
+      "profile": "curtain-motor",
+      "category": "motors",
+      "verified": true,
+      "notes": "0-100% position control"
+    },
+    
+    "TS011F": {
+      "manufacturer": "Tuya",
+      "model": "Smart Plug Standard",
+      "profile": "smart-plug-energy",
+      "category": "plugs",
+      "verified": true,
+      "notes": "Most common Tuya plug, multiple variants"
+    },
+    
+    "TS0601": {
+      "manufacturer": "Tuya",
+      "model": "Generic TS0601",
+      "profile": "generic-ts0601",
+      "category": "various",
+      "verified": false,
+      "notes": "Requires DP fingerprinting, multiple device types"
+    },
+    
+    "TS0201": {
+      "manufacturer": "Tuya",
+      "model": "Temperature Humidity Sensor",
+      "profile": "temperature-humidity",
+      "category": "sensors/climate",
+      "verified": true,
+      "notes": "Standard climate sensor"
+    },
+    
+    "TS0203": {
+      "manufacturer": "Tuya",
+      "model": "Door Sensor",
+      "profile": "contact-basic",
+      "category": "sensors/contact",
+      "verified": true,
+      "notes": "IAS Zone cluster"
+    }
+  },
+  
+  "fallbacks": {
+    "_TZ3000_": {
+      "profile": "auto-detect",
+      "note": "Tuya standard series, attempt auto-detection"
+    },
+    "_TZE200_": {
+      "profile": "auto-detect-ts0601",
+      "note": "Tuya advanced with TS0601, DP-based detection"
+    },
+    "_TZ3210_": {
+      "profile": "auto-detect",
+      "note": "Tuya new generation, attempt auto-detection"
+    }
+  },
+  
+  "detection_rules": {
+    "has_dp_1_bool": {
+      "if": { "dp": 1, "type": "bool" },
+      "suggest_profile": "onoff-basic"
+    },
+    "has_dp_2_dim": {
+      "if": { "dp": 2, "type": "value", "max": 1000 },
+      "suggest_profile": "dimmable"
+    },
+    "has_energy_dps": {
+      "if": { "dps": [18, 19, 20] },
+      "suggest_profile": "energy-monitoring"
+    },
+    "has_climate_dps": {
+      "if": { "dps": [1, 2, 3], "types": ["enum", "value", "value"] },
+      "suggest_profile": "thermostat-basic"
+    }
+  }
+}

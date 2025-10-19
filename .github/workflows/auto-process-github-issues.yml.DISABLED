@@ -1,0 +1,304 @@
+name: Auto Process GitHub Issues
+
+on:
+  issues:
+    types: [opened, labeled]
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: 'Issue number to process manually'
+        required: false
+
+permissions:
+  issues: write
+  contents: write
+  pull-requests: write
+
+jobs:
+  process-issue:
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.action == 'opened' && contains(github.event.issue.labels.*.name, 'New Device')) ||
+      (github.event.action == 'labeled' && github.event.label.name == 'New Device')
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install Dependencies
+        run: |
+          npm install @octokit/rest
+          npm install node-fetch
+
+      - name: Extract Issue Information
+        id: extract
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue || 
+                         await github.rest.issues.get({
+                           owner: context.repo.owner,
+                           repo: context.repo.repo,
+                           issue_number: context.payload.inputs?.issue_number || context.issue.number
+                         }).then(r => r.data);
+            
+            const body = issue.body || '';
+            const title = issue.title || '';
+            
+            // Extract manufacturer and model from issue body or title
+            const manufacturerMatch = body.match(/manufacturerName[:\s]+([^\s\n]+)/) || 
+                                    title.match(/\[([_A-Z0-9]+)\]/);
+            const modelMatch = body.match(/modelId[:\s]+([^\s\n]+)/) || 
+                              title.match(/\/\s*([A-Z0-9\-]+)\s*$/);
+            
+            const manufacturer = manufacturerMatch ? manufacturerMatch[1] : '';
+            const model = modelMatch ? modelMatch[1] : '';
+            
+            console.log(`Extracted - Manufacturer: ${manufacturer}, Model: ${model}`);
+            
+            core.setOutput('issue_number', issue.number);
+            core.setOutput('manufacturer', manufacturer);
+            core.setOutput('model', model);
+            core.setOutput('title', title);
+            core.setOutput('body', body);
+            return { manufacturer, model, title };
+
+      - name: Process Issue with Ultimate Processor
+        id: process
+        env:
+          ISSUE_NUMBER: ${{ steps.extract.outputs.issue_number }}
+          MANUFACTURER: ${{ steps.extract.outputs.manufacturer }}
+          MODEL: ${{ steps.extract.outputs.model }}
+          TITLE: ${{ steps.extract.outputs.title }}
+          BODY: ${{ steps.extract.outputs.body }}
+        run: |
+          node << 'SCRIPT_EOF'
+          const fs = require('fs').promises;
+          const path = require('path');
+          
+          const issue = {
+            number: parseInt(process.env.ISSUE_NUMBER),
+            manufacturer: process.env.MANUFACTURER,
+            model: process.env.MODEL,
+            title: process.env.TITLE,
+            body: process.env.BODY
+          };
+          
+          console.log('Processing issue:', issue);
+          
+          // Device type mapping
+          const DEVICE_MAPPING = {
+            'TS011F': { pattern: 'smart_plug', category: 'Power & Energy', class: 'socket' },
+            'TS0601_CO': { pattern: 'co_detector', category: 'Safety', class: 'sensor' },
+            'TS0601_CURTAIN': { pattern: 'curtain_motor', category: 'Covers', class: 'windowcoverings' },
+            'TS0601_TEMP': { pattern: 'temp_humidity', category: 'Climate', class: 'sensor' },
+            'TS0207': { pattern: 'water_leak', category: 'Safety', class: 'sensor' },
+            'TS0202': { pattern: 'motion_sensor', category: 'Motion', class: 'sensor' },
+            'TS0041': { pattern: 'wireless_switch_1gang', category: 'Control', class: 'button' },
+            'ZG-204ZL': { pattern: 'motion_sensor_illuminance', category: 'Motion', class: 'sensor' }
+          };
+          
+          // Determine device type
+          function determineDeviceType(issue) {
+            const title = issue.title.toLowerCase();
+            const model = issue.model;
+            
+            if (model === 'TS011F') return DEVICE_MAPPING['TS011F'];
+            if (model === 'TS0601') {
+              if (title.includes('co') || title.includes('carbon')) return DEVICE_MAPPING['TS0601_CO'];
+              if (title.includes('curtain') || title.includes('motor')) return DEVICE_MAPPING['TS0601_CURTAIN'];
+              if (title.includes('temp') || title.includes('humid')) return DEVICE_MAPPING['TS0601_TEMP'];
+            }
+            if (model === 'TS0207') return DEVICE_MAPPING['TS0207'];
+            if (model === 'TS0202') return DEVICE_MAPPING['TS0202'];
+            if (model === 'TS0041') return DEVICE_MAPPING['TS0041'];
+            if (model === 'ZG-204ZL') return DEVICE_MAPPING['ZG-204ZL'];
+            
+            return { pattern: 'unknown', category: 'Unknown', class: 'other' };
+          }
+          
+          // Find matching driver
+          async function findDriver(deviceType) {
+            try {
+              const driversDir = path.join(process.cwd(), 'drivers');
+              const drivers = await fs.readdir(driversDir);
+              const pattern = deviceType.pattern;
+              const matching = drivers.filter(d => d.includes(pattern));
+              return matching.length > 0 ? matching[0] : null;
+            } catch (error) {
+              console.error('Error finding driver:', error);
+              return null;
+            }
+          }
+          
+          // Enrich driver
+          async function enrichDriver(driverName, manufacturer, model) {
+            try {
+              const driverPath = path.join(process.cwd(), 'drivers', driverName, 'driver.compose.json');
+              const content = await fs.readFile(driverPath, 'utf8');
+              const driver = JSON.parse(content);
+              
+              if (!driver.zigbee || !driver.zigbee.manufacturerName) {
+                return { status: 'NO_ZIGBEE_STRUCTURE', modified: false };
+              }
+              
+              if (driver.zigbee.manufacturerName.includes(manufacturer)) {
+                return { status: 'ALREADY_PRESENT', modified: false };
+              }
+              
+              // Add manufacturer
+              driver.zigbee.manufacturerName.push(manufacturer);
+              
+              // Add productId if needed
+              if (driver.zigbee.productId && !driver.zigbee.productId.includes(model)) {
+                driver.zigbee.productId.push(model);
+              }
+              
+              // Save
+              await fs.writeFile(driverPath, JSON.stringify(driver, null, 2), 'utf8');
+              
+              return { status: 'ENRICHED', modified: true, driver: driverName };
+            } catch (error) {
+              console.error('Error enriching driver:', error);
+              return { status: 'ERROR', modified: false, error: error.message };
+            }
+          }
+          
+          // Main processing
+          async function processIssue() {
+            const deviceType = determineDeviceType(issue);
+            console.log('Device type:', deviceType);
+            
+            const driver = await findDriver(deviceType);
+            console.log('Found driver:', driver);
+            
+            let enrichment = { status: 'NOT_PROCESSED', modified: false };
+            if (driver) {
+              enrichment = await enrichDriver(driver, issue.manufacturer, issue.model);
+              console.log('Enrichment result:', enrichment);
+            }
+            
+            // Generate response
+            let response = `# Device Analysis - Issue #${issue.number}\n\n`;
+            response += `## Device Information\n`;
+            response += `- **Device**: ${issue.title}\n`;
+            response += `- **Manufacturer**: \`${issue.manufacturer}\`\n`;
+            response += `- **Model**: \`${issue.model}\`\n`;
+            response += `- **Category**: ${deviceType.category}\n\n`;
+            
+            response += `## Processing Status\n`;
+            if (enrichment.status === 'ENRICHED') {
+              response += `✅ **Driver Enhanced**: \`${driver}\`\n`;
+              response += `✅ Manufacturer ID \`${issue.manufacturer}\` added\n`;
+              response += `✅ Product ID \`${issue.model}\` added\n\n`;
+              response += `### How to Test\n`;
+              response += `1. Update app to latest version\n`;
+              response += `2. Add device using driver: **${driver}**\n`;
+              response += `3. Follow pairing instructions in the app\n`;
+              response += `4. Verify all capabilities work correctly\n\n`;
+              response += `The driver has been automatically enriched. Please test and report back! 🎉\n`;
+            } else if (enrichment.status === 'ALREADY_PRESENT') {
+              response += `ℹ️ **Device Already Supported**\n`;
+              response += `This device is already supported in driver: \`${driver}\`\n\n`;
+              response += `Please try:\n`;
+              response += `1. Update app to latest version\n`;
+              response += `2. Add device and select driver: **${driver}**\n`;
+              response += `3. If issues persist, please provide device interview data\n`;
+            } else if (!driver) {
+              response += `⚠️ **New Driver Required**\n`;
+              response += `This device needs a new driver implementation.\n\n`;
+              response += `**Recommended Actions**:\n`;
+              response += `1. Provide complete device interview from Homey Developer Tools\n`;
+              response += `2. Include all clusters and capabilities\n`;
+              response += `3. Test similar existing drivers for compatibility\n`;
+            } else {
+              response += `⚠️ **Processing Issue**\n`;
+              response += `Could not automatically process this device.\n`;
+              response += `Status: ${enrichment.status}\n\n`;
+              response += `Please provide more information or device interview data.\n`;
+            }
+            
+            response += `\n---\n`;
+            response += `*🤖 Automated response by GitHub Actions*\n`;
+            response += `*Generated: ${new Date().toISOString()}*\n`;
+            
+            // Save outputs
+            await fs.writeFile(process.env.GITHUB_OUTPUT, 
+              `response<<EOF\n${response}\nEOF\n` +
+              `driver=${driver || 'none'}\n` +
+              `enriched=${enrichment.modified}\n` +
+              `status=${enrichment.status}\n`,
+              { flag: 'a' }
+            );
+            
+            console.log('Response generated');
+          }
+          
+          processIssue().catch(console.error);
+          SCRIPT_EOF
+
+      - name: Commit Driver Changes
+        if: steps.process.outputs.enriched == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add drivers/
+          git commit -m "Auto-enrich driver for Issue #${{ steps.extract.outputs.issue_number }}: ${{ steps.extract.outputs.manufacturer }}"
+          git push
+
+      - name: Post Response to Issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const response = `${{ steps.process.outputs.response }}`;
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: ${{ steps.extract.outputs.issue_number }},
+              body: response
+            });
+            
+            console.log('Response posted to issue');
+
+      - name: Add Labels
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const status = '${{ steps.process.outputs.status }}';
+            const labels = [];
+            
+            if (status === 'ENRICHED') {
+              labels.push('driver-enriched', 'ready-for-testing');
+            } else if (status === 'ALREADY_PRESENT') {
+              labels.push('already-supported');
+            } else {
+              labels.push('needs-investigation');
+            }
+            
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: ${{ steps.extract.outputs.issue_number }},
+              labels: labels
+            });
+
+      - name: Create Summary
+        run: |
+          echo "## 🤖 Automated Issue Processing" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Issue**: #${{ steps.extract.outputs.issue_number }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Manufacturer**: \`${{ steps.extract.outputs.manufacturer }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Model**: \`${{ steps.extract.outputs.model }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Driver**: \`${{ steps.process.outputs.driver }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Status**: ${{ steps.process.outputs.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Enriched**: ${{ steps.process.outputs.enriched }}" >> $GITHUB_STEP_SUMMARY

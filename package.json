@@ -1,0 +1,62 @@
+{
+  "name": "com.dlnraja.tuya.zigbee",
+  "version": "3.1.1",
+  "description": "Universal Tuya Zigbee - Local-first control with AI automation",
+  "main": "app.js",
+  "scripts": {
+    "validate": "homey app validate",
+    "validate:debug": "homey app validate --level debug",
+    "validate:publish": "homey app validate --level publish",
+    "publish": "homey app publish",
+    "test": "node scripts/validation/validate-driver-schemas.js",
+    "matrix": "node scripts/automation/generate-device-matrix.js",
+    "coverage": "node scripts/automation/generate-coverage-stats.js",
+    "reports": "node scripts/automation/generate-all-reports.ps1",
+    "ai:research": "node scripts/ai/web-research.js",
+    "ai:analyze": "node scripts/ai/heuristic-analyzer.js",
+    "ai:generate": "node scripts/ai/driver-generator.js",
+    "update": "node scripts/automation/update-all-links.js",
+    "readme:update": "node scripts/automation/update-readme-proactive.js",
+    "prepush": "node scripts/automation/pre-push-intelligent.js",
+    "finalize": "powershell -ExecutionPolicy Bypass -File scripts/automation/finalize-all.ps1",
+    "precommit": "node scripts/PRE_COMMIT_CHECKS.js",
+    "pipeline": "node scripts/ULTIMATE_CI_CD_PIPELINE.js",
+    "audit": "node scripts/COMPLETE_POWER_AUDIT.js",
+    "clean": "node scripts/CLEAN_APP_JSON.js",
+    "sync": "node scripts/AUTO_UPDATE_APP_JSON.js",
+    "images": "node scripts/RESIZE_IMAGES_PRESERVE_CONTENT.js",
+    "images:contextual": "node scripts/REGENERATE_ALL_CONTEXTUAL_IMAGES.js",
+    "images:generate": "node scripts/images/intelligent-image-generator.js",
+    "images:regenerate": "node scripts/images/batch-regenerate-all.js",
+    "images:verify": "node scripts/images/verify-all-images.js",
+    "fix-nomenclature": "node scripts/FIX_DRIVER_NOMENCLATURE.js"
+  },
+  "keywords": [
+    "homey",
+    "zigbee",
+    "tuya",
+    "local-first",
+    "automation",
+    "ai-powered",
+    "dp-engine",
+    "smart-home"
+  ],
+  "author": "Dylan L.N. Raja",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.12.2",
+    "canvas": "^3.2.0",
+    "fs-extra": "^11.3.2",
+    "homey-zigbeedriver": "^2.1.1"
+  },
+  "devDependencies": {
+    "cheerio": "^1.1.2",
+    "js-yaml": "^4.1.0",
+    "pngjs": "^7.0.0",
+    "puppeteer": "^24.24.0",
+    "sharp": "^0.34.4"
+  }
+}
