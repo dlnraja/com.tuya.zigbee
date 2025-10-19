@@ -1,11 +1,29 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
-const IASZoneEnroller = require('../../lib/IASZoneEnroller');
-const batteryConverter = require('../../lib/tuya-engine/converters/battery');
-const FallbackSystem = require('../../lib/FallbackSystem');
+const { CLUSTER } = require('zigbee-clusters');
 
-class SmartPlugDevice extends ZigBeeDevice {
+/**
+ * SmartPlugAcDevice
+ * 
+ * SUPPORTED BRANDS:
+ * - Xiaomi
+ * - Sonoff
+ * - Samsung
+ * - Tuya
+ * 
+ * COMPATIBLE PRODUCTS:
+ * - Xiaomi Smart Plug v1/v2 (lumi.plug*)
+ * - Aqara Smart Plug H1 (lumi.plug.mmeu01)
+ * - Sonoff S31ZB/S40/S26R2ZB
+ * - Samsung SmartThings outletv4 (7A-PL-Z-J2)
+ * - Tuya Smart Plugs (_TZ3000_*, TS011F)
+ * 
+ * Note: Driver ID and folder name are UNBRANDED for universal compatibility.
+ * Brand identification happens via manufacturerName and productId fields.
+ */
+
+class SmartPlugAcDevice extends ZigBeeDevice {
 
     async onNodeInit() {
         this.log('smart_plug device initialized');

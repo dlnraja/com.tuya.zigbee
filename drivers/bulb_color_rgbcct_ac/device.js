@@ -1,19 +1,29 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
-const IASZoneEnroller = require('../../lib/IASZoneEnroller');
-const batteryConverter = require('../../lib/tuya-engine/converters/battery');
 const { CLUSTER } = require('zigbee-clusters');
-const FallbackSystem = require('../../lib/FallbackSystem');
 
 /**
- * Smart Bulb Color RGB+CCT (AC)
+ * BulbColorRgbcctAcDevice
  * 
- * Category: Smart Lighting
- * Priority: 1
+ * SUPPORTED BRANDS:
+ * - Philips
+ * - IKEA
+ * - Sengled
+ * - OSRAM
+ * - Tuya
  * 
- * Capabilities: onoff, dim, light_hue, light_saturation, light_temperature, light_mode
+ * COMPATIBLE PRODUCTS:
+ * - Philips Hue Color (LCT001-016, LCA*)
+ * - IKEA TRÅDFRI RGB (LED*)
+ * - Sengled Color Bulbs (E1C-*, E1D-*)
+ * - OSRAM/LEDVANCE RGBW (Classic A60, Flex)
+ * - Tuya RGB Bulbs (_TZ3000_*)
+ * 
+ * Note: Driver ID and folder name are UNBRANDED for universal compatibility.
+ * Brand identification happens via manufacturerName and productId fields.
  */
+
 class BulbColorRgbcctAcDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {

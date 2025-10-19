@@ -2,11 +2,25 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
-const IASZoneEnroller = require('../../lib/IASZoneEnroller');
-const batteryConverter = require('../../lib/tuya-engine/converters/battery');
-const FallbackSystem = require('../../lib/FallbackSystem');
 
-class SceneController4buttonDevice extends ZigBeeDevice {
+/**
+ * SceneController4buttonCr2032Device
+ * 
+ * SUPPORTED BRANDS:
+ * - Aqara
+ * - IKEA
+ * - Tuya
+ * 
+ * COMPATIBLE PRODUCTS:
+ * - Aqara Opple Switch 4 Button (lumi.remote.b486opcn01)
+ * - IKEA STYRBAR Remote (E2001, E2002)
+ * - Tuya 4 Button Controllers
+ * 
+ * Note: Driver ID and folder name are UNBRANDED for universal compatibility.
+ * Brand identification happens via manufacturerName and productId fields.
+ */
+
+class SceneController4buttonCr2032Device extends ZigBeeDevice {
 
     async onNodeInit() {
 

@@ -2,11 +2,29 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
-const IASZoneEnroller = require('../../lib/IASZoneEnroller');
-const batteryConverter = require('../../lib/tuya-engine/converters/battery');
-const FallbackSystem = require('../../lib/FallbackSystem');
 
-class WirelessSwitchDevice extends ZigBeeDevice {
+/**
+ * WirelessSwitchCr2032Device
+ * 
+ * SUPPORTED BRANDS:
+ * - Xiaomi
+ * - Aqara
+ * - Sonoff
+ * - Samsung
+ * - IKEA
+ * 
+ * COMPATIBLE PRODUCTS:
+ * - Xiaomi Wireless Button v1/v2/v3 (lumi.sensor_switch*)
+ * - Aqara Wireless Button H1/T1 (lumi.remote.b1acn01)
+ * - Sonoff SNZB-01/01P (button)
+ * - Samsung SmartThings button (IM6001-BTP01)
+ * - IKEA SOMRIG Shortcut Button (E2213)
+ * 
+ * Note: Driver ID and folder name are UNBRANDED for universal compatibility.
+ * Brand identification happens via manufacturerName and productId fields.
+ */
+
+class WirelessSwitchCr2032Device extends ZigBeeDevice {
 
     async onNodeInit() {
 

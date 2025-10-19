@@ -1,9 +1,26 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
-const IASZoneEnroller = require('../../lib/IASZoneEnroller');
-const batteryConverter = require('../../lib/tuya-engine/converters/battery');
-const FallbackSystem = require('../../lib/FallbackSystem');
+const { CLUSTER } = require('zigbee-clusters');
+
+/**
+ * WallSwitch2gangAcDevice
+ * 
+ * SUPPORTED BRANDS:
+ * - Xiaomi
+ * - Aqara
+ * - Legrand
+ * - Tuya
+ * 
+ * COMPATIBLE PRODUCTS:
+ * - Xiaomi Wall Switch 2 Gang v1/v2 (lumi.ctrl_neutral2, lumi.switch.b2nacn02)
+ * - Aqara Wall Switch H1 2 Gang (lumi.switch.n2acn1)
+ * - Legrand Double Gangs Remote Switch
+ * - Tuya 2 Gang Switches (_TZ3000_*)
+ * 
+ * Note: Driver ID and folder name are UNBRANDED for universal compatibility.
+ * Brand identification happens via manufacturerName and productId fields.
+ */
 
 class WallSwitch2gangAcDevice extends ZigBeeDevice {
 

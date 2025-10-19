@@ -1,18 +1,29 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
-const IASZoneEnroller = require('../../lib/IASZoneEnroller');
-const batteryConverter = require('../../lib/tuya-engine/converters/battery');
 const { CLUSTER } = require('zigbee-clusters');
-const FallbackSystem = require('../../lib/FallbackSystem');
 
 /**
- * Bulb White Ac
+ * BulbWhiteAcDevice
  * 
- * UNBRANDED Architecture
- * Generated: 2025-10-12
- * Supports: Philips
+ * SUPPORTED BRANDS:
+ * - Philips
+ * - IKEA
+ * - Sengled
+ * - Sylvania
+ * - Tuya
+ * 
+ * COMPATIBLE PRODUCTS:
+ * - Philips Hue White (LCT*, LTW*)
+ * - IKEA TRÅDFRI White (LED*)
+ * - Sengled White Bulbs (E11-*, E12-*)
+ * - Sylvania LIGHTIFY (73740-42)
+ * - Tuya White Bulbs (_TZ3000_*)
+ * 
+ * Note: Driver ID and folder name are UNBRANDED for universal compatibility.
+ * Brand identification happens via manufacturerName and productId fields.
  */
+
 class BulbWhiteAcDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
