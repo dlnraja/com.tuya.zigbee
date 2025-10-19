@@ -70,7 +70,7 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
     try {
       await this.configureAttributeReporting([{
         endpointId: 1,
-        cluster: CLUSTER.POWER_CONFIGURATION,
+        cluster: 'genPowerCfg',
         attributeName: 'batteryPercentageRemaining',
         minInterval: 3600,
         maxInterval: 86400,

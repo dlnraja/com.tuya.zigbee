@@ -150,7 +150,7 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
     try {
       await this.configureAttributeReporting([{
         endpointId: 1,
-        cluster: CLUSTER.POWER_CONFIGURATION,
+        cluster: 'genPowerCfg',
         attributeName: 'batteryPercentageRemaining',
         minInterval: 7200,
         maxInterval: 43200,  // Reduced from 172800 (2 days) to 12 hours

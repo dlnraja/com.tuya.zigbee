@@ -69,7 +69,7 @@ class MotionSensorBatteryDevice extends ZigBeeDevice {
     try {
       await this.configureAttributeReporting([{
         endpointId: 1,
-        cluster: CLUSTER.POWER_CONFIGURATION,
+        cluster: 'genPowerCfg',
         attributeName: 'batteryPercentageRemaining',
         minInterval: 3600,
         maxInterval: 86400,
@@ -201,7 +201,7 @@ class MotionSensorBatteryDevice extends ZigBeeDevice {
     if (this.hasCapability('alarm_motion')) {
       this.log('🔍 Setting up IAS Zone for motion detection...');
       try {
-        const endpoint = zclNode.endpoints[1];
+        // const endpoint (duplicate removed) = zclNode.endpoints[1];
         const enroller = new IASZoneEnroller(this, endpoint, {
           zoneType: 13, // Motion sensor
           capability: 'alarm_motion',
