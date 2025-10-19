@@ -174,10 +174,10 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
     this.log('Node:', zclNode ? 'available' : 'undefined');
     this.log('Endpoints:', Object.keys(zclNode?.endpoints || {}));
     
-    const endpoint = zclNode.endpoints[1];
-    if (endpoint) {
-      const clusters = Object.keys(endpoint.clusters || {}).map(c => {
-        const cluster = endpoint.clusters[c];
+    const debugEndpoint = zclNode.endpoints[1];
+    if (debugEndpoint) {
+      const clusters = Object.keys(debugEndpoint.clusters || {}).map(c => {
+        const cluster = debugEndpoint.clusters[c];
         return `${c} (0x${cluster?.id?.toString(16) || 'NaN'})`;
       }).join(', ');
       this.log('Endpoint 1 clusters:', clusters);
@@ -232,8 +232,8 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
       // Motion IAS Zone
       this.log('🚶 Setting up Motion IAS Zone...');
       try {
-        const endpoint = zclNode.endpoints[1];
-        const enroller = new IASZoneEnroller(this, endpoint, {
+        const iasEndpoint = zclNode.endpoints[1];
+        const enroller = new IASZoneEnroller(this, iasEndpoint, {
           zoneType: 13, // Motion sensor
           capability: 'alarm_motion',
           pollInterval: 60000,
