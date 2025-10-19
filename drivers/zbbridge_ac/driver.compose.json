@@ -12,10 +12,6 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044",
       "_TZ1800_ejwkn2h2",
       "_TZ1800_fcdjzz3s",
       "_TZ2000_a476raq2",
@@ -36,12 +32,16 @@
       "_TZE200_dwcarsat",
       "_TZE200_m9skfctm",
       "_TZE200_ryfmq5rl",
-      "_TZE200_wfxuhoea",
-      "TS0005",
-      "TS0006",
-      "TS0501"
+      "_TZE200_wfxuhoea"
     ],
     "productId": [
+      "TS0005",
+      "TS0006",
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS0501",
       "TS130F"
     ],
     "endpoints": {

@@ -145,4 +145,37 @@ class UltimateDriverAnalyzer {
     this.log('═'.repeat(66), 'magenta');
     this.log(`\n📊 ${this.results.analyzed}/${this.results.totalDrivers} drivers`, 'cyan');
     this.log(`🏭 Manufacturers: ${this.allManufacturers.size}`, 'cyan');
-    if (this.results.errors.length > 0) this.log(`❌ Erreurs: ${this.results.errors
+    if (this.results.errors.length > 0) this.log(`❌ Erreurs: ${this.results.errors.length}`, 'red');
+    if (this.results.warnings.length > 0) this.log(`⚠️  Warnings: ${this.results.warnings.length}`, 'yellow');
+    if (this.results.missingImages.length > 0) this.log(`🖼️  Images: ${this.results.missingImages.length}`, 'yellow');
+    if (this.results.duplicateManufacturers.length > 0) this.log(`🔄 Dupliqués: ${this.results.duplicateManufacturers.length}`, 'yellow');
+    this.log('\n' + '═'.repeat(66), 'magenta');
+  }
+
+  async run() {
+    console.log('\n');
+    this.log('╔══════════════════════════════════════════════════════════════╗', 'magenta');
+    this.log('║     🚀 ULTIMATE DRIVER ANALYZER V3.0                        ║', 'magenta');
+    this.log('║     ManufacturerNames & Images - 183 Drivers                ║', 'magenta');
+    this.log('╚══════════════════════════════════════════════════════════════╝', 'magenta');
+    console.log('\n');
+    this.loadReferences();
+    const analyses = this.analyzeAll();
+    this.generateReport(analyses);
+    this.displaySummary();
+    this.log('\n✅ ANALYSE TERMINÉE!\n', 'green');
+    this.log('Rapports générés:', 'cyan');
+    this.log('  - references/ULTIMATE_ANALYSIS_REPORT.json', 'blue');
+    this.log('  - docs/ULTIMATE_ANALYSIS_REPORT.md\n', 'blue');
+  }
+}
+
+if (require.main === module) {
+  const analyzer = new UltimateDriverAnalyzer();
+  analyzer.run().catch(err => {
+    console.error('❌ Erreur fatale:', err);
+    process.exit(1);
+  });
+}
+
+module.exports = UltimateDriverAnalyzer;

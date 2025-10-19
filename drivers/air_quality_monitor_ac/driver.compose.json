@@ -8,10 +8,6 @@
   ],
   "zigbee": {
     "manufacturerName": [
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044",
       "_TZ1800_ejwkn2h2",
       "_TZ1800_fcdjzz3s",
       "_TZ2000_a476raq2",
@@ -42,16 +38,19 @@
       "_TZE200_m9skfctm",
       "_TZE200_ryfmq5rl",
       "_TZE200_wfxuhoea",
-      "TS0005",
-      "TS0006",
-      "TS0501",
-      "IKEA of Sweden",
       "_TZE200_c2fmom5z",
       "_TZE200_mja3fuja",
       "_TZE200_yvx5lh6k"
     ],
     "productId": [
-      "E2495"
+      "E2495",
+      "TS0005",
+      "TS0006",
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS0501"
     ],
     "endpoints": {
       "1": {
