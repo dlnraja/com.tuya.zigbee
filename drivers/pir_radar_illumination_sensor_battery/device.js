@@ -9,15 +9,56 @@ const TuyaClusterHandler = require('../../utils/tuya-cluster-handler');
 class PirRadarIlluminationSensorBatteryDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
-    // IAS Zone enrollment (motion/contact sensors)
-    if (this.hasCapability('alarm_motion') || this.hasCapability('alarm_contact') || 
-        this.hasCapability('alarm_water') || this.hasCapability('alarm_smoke')) {
-      this.iasZoneEnroller = new IASZoneEnroller(this, zclNode);
-      await this.iasZoneEnroller.enroll().catch(err => {
-        this.error('IAS Zone enrollment failed:', err);
-      });
+    // IAS Zone Enrollment - Motion Sensor
+    const endpoint = this.zclNode.endpoints[1];
+    const iasZoneCluster = endpoint.clusters.iasZone;
+    
+    if (!iasZoneCluster) {
+      this.error('IAS Zone cluster not found on endpoint 1');
+      return;
     }
-
+    
+    // Listen for zone status changes
+    iasZoneCluster.on('attr.zoneStatus', (value) => {
+      const alarmActive = (value & 0x01) === 0x01; // Bit 0 = alarm1 (motion)
+      this.log('Motion detected:', alarmActive);
+      this.setCapabilityValue('alarm_motion', alarmActive).catch(this.error);
+      
+      // Auto-reset après 60 secondes
+      if (alarmActive && !this._motionTimeout) {
+        this._motionTimeout = setTimeout(() => {
+          this.log('Auto-clearing motion after 60s');
+          this.setCapabilityValue('alarm_motion', false).catch(this.error);
+          this._motionTimeout = null;
+        }, 60000);
+      }
+    });
+    
+    // Proactive enrollment response
+    iasZoneCluster.on('zoneEnrollRequest', async (enrollRequest) => {
+      this.log('Received zoneEnrollRequest:', enrollRequest);
+      
+      try {
+        await iasZoneCluster.zoneEnrollResponse({
+          enrollResponseCode: 0, // Success
+          zoneId: 10
+        });
+        this.log('Sent zoneEnrollResponse successfully');
+      } catch (err) {
+        this.error('Failed to send zoneEnrollResponse:', err);
+      }
+    });
+    
+    // Write IAS CIE Address proactively
+    try {
+      const ieeeAddress = await this.homey.zigbee.getIeeeAddress();
+      await iasZoneCluster.writeAttributes({
+        iasCieAddr: ieeeAddress
+      });
+      this.log('Wrote IAS CIE address:', ieeeAddress);
+    } catch (err) {
+      this.error('Failed to write IAS CIE address:', err);
+    }
     // Configure battery reporting (min 1h, max 24h, delta 5%)
     try {
     await this.configureAttributeReporting([{

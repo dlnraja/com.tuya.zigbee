@@ -24820,7 +24820,7 @@
       "name": {
         "en": "Scene Controller"
       },
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "onoff"
       ],
@@ -26164,7 +26164,7 @@
       "name": {
         "en": "Scene Switch (Battery)"
       },
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "onoff",
         "measure_battery"
