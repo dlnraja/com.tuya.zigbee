@@ -40,7 +40,7 @@ class PressureSensorBatteryDevice extends ZigBeeDevice {
     
     // Register battery capability
 // TODO: Consider debouncing capability updates for better performance
-    this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
+    this.registerCapability('measure_battery', 'genPowerCfg', {
       endpoint: 1,
       get: 'batteryPercentageRemaining',
       report: 'batteryPercentageRemaining',

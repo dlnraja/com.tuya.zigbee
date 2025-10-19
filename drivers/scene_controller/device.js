@@ -32,7 +32,7 @@ class SceneControllerDevice extends ZigBeeDevice {
     // Register onOff cluster for button events
     if (this.hasCapability('onoff')) {
 // TODO: Consider debouncing capability updates for better performance
-      this.registerCapability('onoff', CLUSTER.ON_OFF, {
+      this.registerCapability('onoff', 'genOnOff', {
         endpoint: 1
       });
     }
