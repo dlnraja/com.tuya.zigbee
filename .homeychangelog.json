@@ -13,5 +13,8 @@
   },
   "3.1.4": {
     "en": "Automated release"
+  },
+  "3.1.5": {
+    "en": "🛡️ PREVENTIVE FIX: IAS Zone enrollment improvements from v2.15.71 working pattern\n✅ IEEE Buffer conversion with reversed byte order (CRITICAL for enrollment)\n✅ Enrollment verification with readAttributes\n✅ 2-second delay for enrollment completion\n✅ Applied to motion sensor and SOS button drivers\n✅ Proactive fix based on forensic analysis of working v2.x versions\n📊 Should resolve remaining Peter diagnostic issues"
   }
 }
