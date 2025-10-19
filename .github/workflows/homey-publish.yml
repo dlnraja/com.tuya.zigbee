@@ -1,0 +1,93 @@
+name: Homey App Publish
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'app.json'
+      - '.homeycompose/**'
+      - 'drivers/**'
+      - 'lib/**'
+      - '.homeychangelog.json'
+
+jobs:
+  validate-and-publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Install Homey CLI
+        run: npm install -g homey
+      
+      - name: Validate app (publish level)
+        run: homey app validate --level publish
+      
+      - name: Check if version changed
+        id: version-check
+        run: |
+          VERSION=$(node -p "require('./app.json').version")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          
+          # Check if this version already published
+          if git tag | grep -q "^v$VERSION$"; then
+            echo "already_published=true" >> $GITHUB_OUTPUT
+          else
+            echo "already_published=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Publish to Homey App Store
+        if: steps.version-check.outputs.already_published == 'false'
+        env:
+          HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
+        run: |
+          # Configure Homey CLI with token
+          homey login --token $HOMEY_TOKEN
+          
+          # Publish to App Store
+          echo "Publishing version ${{ steps.version-check.outputs.version }}..."
+          homey app publish
+      
+      - name: Create Git tag
+        if: steps.version-check.outputs.already_published == 'false'
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git tag -a "v${{ steps.version-check.outputs.version }}" -m "Release v${{ steps.version-check.outputs.version }}"
+          git push origin "v${{ steps.version-check.outputs.version }}"
+      
+      - name: Create GitHub Release
+        if: steps.version-check.outputs.already_published == 'false'
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ steps.version-check.outputs.version }}
+          release_name: Release v${{ steps.version-check.outputs.version }}
+          body: |
+            ## Universal Tuya Zigbee v${{ steps.version-check.outputs.version }}
+            
+            Auto-published to Homey App Store via GitHub Actions.
+            
+            See CHANGELOG.md for details.
+          draft: false
+          prerelease: false
+      
+      - name: Notify success
+        if: success()
+        run: |
+          echo "✅ App validated and published successfully!"
+          echo "Version: ${{ steps.version-check.outputs.version }}"
+      
+      - name: Notify failure
+        if: failure()
+        run: |
+          echo "❌ Validation or publication failed!"
+          exit 1
