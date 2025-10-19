@@ -1,0 +1,52 @@
+{
+  "id": "remote_4button_styrbar_battery",
+  "name": {
+    "en": "Remote 4 Button (IKEA)",
+    "fr": "Télécommande 4 boutons (IKEA)"
+  },
+  "class": "button",
+  "capabilities": [
+    "measure_battery"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "IKEA of Sweden"
+    ],
+    "productId": [
+      "STYRBAR",
+      "E2001",
+      "E2002"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          6,
+          8
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/learnmode.svg",
+      "instruction": {
+        "en": "Follow device pairing instructions",
+        "fr": "Suivre les instructions d'appairage"
+      }
+    }
+  }
+}
