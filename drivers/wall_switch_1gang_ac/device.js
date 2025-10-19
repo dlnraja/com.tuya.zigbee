@@ -1,9 +1,30 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
-const IASZoneEnroller = require('../../lib/IASZoneEnroller');
-const batteryConverter = require('../../lib/tuya-engine/converters/battery');
-const FallbackSystem = require('../../lib/FallbackSystem');
+const { CLUSTER } = require('zigbee-clusters');
+
+/**
+ * WallSwitch1gangAcDevice
+ * 
+ * SUPPORTED BRANDS:
+ * - Xiaomi
+ * - Aqara
+ * - Sonoff
+ * - Legrand
+ * - Schneider
+ * - Tuya
+ * 
+ * COMPATIBLE PRODUCTS:
+ * - Xiaomi Wall Switch 1 Gang v1/v2 (lumi.ctrl_neutral1, lumi.switch.b1nacn02)
+ * - Aqara Wall Switch H1 1 Gang (lumi.switch.n1acn1)
+ * - Sonoff ZBMINI/ZBMINIL2/BASICZBR3
+ * - Legrand Micromodule Switch
+ * - Schneider Electric NHPB/SWITCH/1
+ * - Tuya 1 Gang Switches (_TZ3000_*)
+ * 
+ * Note: Driver ID and folder name are UNBRANDED for universal compatibility.
+ * Brand identification happens via manufacturerName and productId fields.
+ */
 
 class WallSwitch1gangAcDevice extends ZigBeeDevice {
 

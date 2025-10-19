@@ -2,10 +2,27 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
-const TuyaClusterHandler = require('../../utils/tuya-cluster-handler');
-const IASZoneEnroller = require('../../lib/IASZoneEnroller');
-const { fromZclBatteryPercentageRemaining } = require('../../lib/tuya-engine/converters/battery');
-const FallbackSystem = require('../../lib/FallbackSystem');
+
+/**
+ * MotionSensorBatteryDevice
+ * 
+ * SUPPORTED BRANDS:
+ * - Xiaomi
+ * - Aqara
+ * - Sonoff
+ * - Samsung
+ * - Tuya
+ * 
+ * COMPATIBLE PRODUCTS:
+ * - Xiaomi Motion Sensor v1/v2 (lumi.sensor_motion*)
+ * - Aqara Motion Sensor P1/T1/E1 (lumi.motion.agl04, ac01, ac02)
+ * - Sonoff SNZB-03/03P (motion)
+ * - Samsung SmartThings motionv4/v5 (3315-S/G)
+ * - Tuya PIR Motion Sensors (_TZE200_*, _TZ3000_*)
+ * 
+ * Note: Driver ID and folder name are UNBRANDED for universal compatibility.
+ * Brand identification happens via manufacturerName and productId fields.
+ */
 
 class MotionSensorBatteryDevice extends ZigBeeDevice {
 

@@ -1,11 +1,22 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
-const IASZoneEnroller = require('../../lib/IASZoneEnroller');
-const batteryConverter = require('../../lib/tuya-engine/converters/battery');
 const { CLUSTER } = require('zigbee-clusters');
-const TuyaClusterHandler = require('../../utils/tuya-cluster-handler');
-const FallbackSystem = require('../../lib/FallbackSystem');
+
+/**
+ * SceneControllerBatteryDevice
+ * 
+ * SUPPORTED BRANDS:
+ * - Xiaomi
+ * - Aqara
+ * 
+ * COMPATIBLE PRODUCTS:
+ * - Xiaomi Cube v1/v2 (lumi.sensor_cube*)
+ * - Aqara Cube T1 Pro (lumi.remote.cagl02)
+ * 
+ * Note: Driver ID and folder name are UNBRANDED for universal compatibility.
+ * Brand identification happens via manufacturerName and productId fields.
+ */
 
 class SceneControllerBatteryDevice extends ZigBeeDevice {
 

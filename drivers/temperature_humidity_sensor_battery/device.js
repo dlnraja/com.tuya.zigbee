@@ -1,12 +1,29 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
-const IASZoneEnroller = require('../../lib/IASZoneEnroller');
 const { CLUSTER } = require('zigbee-clusters');
-const { fromZclBatteryPercentageRemaining } = require('../../lib/tuya-engine/converters/battery');
-const FallbackSystem = require('../../lib/FallbackSystem');
 
-class TemperatureHumiditySensorDevice extends ZigBeeDevice {
+/**
+ * TemperatureHumiditySensorBatteryDevice
+ * 
+ * SUPPORTED BRANDS:
+ * - Xiaomi
+ * - Aqara
+ * - Sonoff
+ * - Tuya
+ * 
+ * COMPATIBLE PRODUCTS:
+ * - Xiaomi Temp/Humidity v1 (lumi.sensor_ht)
+ * - Xiaomi Weather Sensor (lumi.weather)
+ * - Aqara Temp/Humidity P1/T1 (lumi.sensor_ht.agl02, airmonitor.acn01)
+ * - Sonoff SNZB-02/02D/02P (temp/humidity)
+ * - Tuya Temp/Humidity Sensors (_TZE200_*, _TZ3000_*)
+ * 
+ * Note: Driver ID and folder name are UNBRANDED for universal compatibility.
+ * Brand identification happens via manufacturerName and productId fields.
+ */
+
+class TemperatureHumiditySensorBatteryDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
     // IAS Zone enrollment (motion/contact sensors)

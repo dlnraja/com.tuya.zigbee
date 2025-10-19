@@ -2,12 +2,29 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
-const IASZoneEnroller = require('../../lib/IASZoneEnroller');
-const { fromZclBatteryPercentageRemaining } = require('../../lib/tuya-engine/converters/battery');
-const { fromZigbeeMeasuredValue } = require('../../lib/tuya-engine/converters/illuminance');
-const FallbackSystem = require('../../lib/FallbackSystem');
 
-class DoorWindowSensorDevice extends ZigBeeDevice {
+/**
+ * DoorWindowSensorBatteryDevice
+ * 
+ * SUPPORTED BRANDS:
+ * - Xiaomi
+ * - Aqara
+ * - Sonoff
+ * - Samsung
+ * - Tuya
+ * 
+ * COMPATIBLE PRODUCTS:
+ * - Xiaomi Door Sensor v1/v2 (lumi.sensor_magnet*)
+ * - Aqara Door Sensor P1/T1/E1 (lumi.magnet.agl02, ac01)
+ * - Sonoff SNZB-04/04P (door/window)
+ * - Samsung SmartThings multiv4 (3321-S, 3320-L)
+ * - Tuya Contact Sensors (_TZE200_*, _TZ3000_*)
+ * 
+ * Note: Driver ID and folder name are UNBRANDED for universal compatibility.
+ * Brand identification happens via manufacturerName and productId fields.
+ */
+
+class DoorWindowSensorBatteryDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
 
