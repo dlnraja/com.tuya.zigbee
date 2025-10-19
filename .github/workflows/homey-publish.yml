@@ -1,15 +1,19 @@
-name: Homey App Publish
+# DEPRECATED - Use homey-official-publish.yml instead
+# This workflow is disabled - keeping for reference only
+
+name: Homey App Publish (DISABLED)
 
 on:
-  push:
-    branches:
-      - master
-    paths:
-      - 'app.json'
-      - '.homeycompose/**'
-      - 'drivers/**'
-      - 'lib/**'
-      - '.homeychangelog.json'
+  workflow_dispatch:  # Manual trigger only
+  # push:
+  #   branches:
+  #     - master
+  #   paths:
+  #     - 'app.json'
+  #     - '.homeycompose/**'
+  #     - 'drivers/**'
+  #     - 'lib/**'
+  #     - '.homeychangelog.json'
 
 jobs:
   validate-and-publish:
