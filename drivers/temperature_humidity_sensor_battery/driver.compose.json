@@ -49,7 +49,12 @@
       "_TZE204_auin8mzr",
       "_TZ3000_bjawzodf",
       "GE",
-      "Sengled"
+      "Sengled",
+      "lumi.weather",
+      "lumi.sensor_ht",
+      "lumi.sensor_ht.agl02",
+      "lumi.airmonitor.acn01",
+      "SONOFF"
     ],
     "productId": [
       "TY0201",
@@ -89,7 +94,10 @@
       "LEDVANCE",
       "CentraLite",
       "Iris",
-      "Lowe's"
+      "Lowe's",
+      "SNZB-02",
+      "SNZB-02D",
+      "SNZB-02P"
     ],
     "endpoints": {
       "1": {

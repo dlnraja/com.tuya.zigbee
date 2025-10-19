@@ -64,7 +64,15 @@
       "_TZE204_sbyx0lm6",
       "_TZ3000_zfmxvprs",
       "GE",
-      "Sengled"
+      "Sengled",
+      "lumi.sensor_magnet",
+      "lumi.sensor_magnet.aq2",
+      "lumi.magnet.agl02",
+      "lumi.magnet.ac01",
+      "lumi.magnet.acn001",
+      "SONOFF",
+      "SmartThings",
+      "Samsung"
     ],
     "productId": [
       "RH3001",
@@ -104,7 +112,11 @@
       "LEDVANCE",
       "CentraLite",
       "Iris",
-      "Lowe's"
+      "Lowe's",
+      "SNZB-04",
+      "SNZB-04P",
+      "multiv4",
+      "3321-S"
     ],
     "endpoints": {
       "1": {
