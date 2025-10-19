@@ -32,7 +32,17 @@
     "xlarge": "drivers/smart_plug_dimmer_ac/assets/images/xlarge.png"
   },
   "zigbee": {
-    "manufacturerName": "TS0005",
+    "manufacturerName": [
+      "TS0005",
+      "_TZ3000_g5xawfcq",
+      "_TZ3000_cphmq0q7",
+      "_TZ3000_typdpbpg",
+      "_TZ3000_okaz9tjs",
+      "_TZ3000_vzopcetz",
+      "_TZ3000_u5u4cakc",
+      "_TZ3000_qd7hej8u",
+      "_TZ3000_7ysdnebc"
+    ],
     "productId": [
       "LOM001",
       "LOM002",

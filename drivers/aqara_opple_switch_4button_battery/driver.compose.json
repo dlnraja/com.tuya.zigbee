@@ -23,7 +23,12 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "lumi.remote.b486opcn01"
+      "lumi.remote.b486opcn01",
+      "lumi.sensor_switch",
+      "lumi.sensor_switch.aq2",
+      "lumi.sensor_switch.aq3",
+      "lumi.remote.b1acn01",
+      "lumi.remote.b186acn02"
     ],
     "productId": [],
     "endpoints": {

@@ -26,7 +26,12 @@
   "zigbee": {
     "manufacturerName": [
       "lumi.sensor_motion",
-      "lumi.sensor_motion.aq2"
+      "lumi.sensor_motion.aq2",
+      "lumi.motion.agl04",
+      "lumi.motion.ac01",
+      "lumi.motion.ac02",
+      "lumi.motion.agl02",
+      "lumi.sensor_motion.aq2b"
     ],
     "productId": [],
     "endpoints": {
