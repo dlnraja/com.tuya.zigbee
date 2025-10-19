@@ -1,0 +1,30 @@
+ci: Fix GitHub Actions Homey CLI authentication
+
+ISSUE: GitHub Actions failing with "Unknown argument: token"
+Error occurred in: .github/workflows/homey-publish.yml
+
+ROOT CAUSE:
+❌ homey login --token $HOMEY_TOKEN
+   → Homey CLI doesn't support --token argument
+
+CORRECT METHOD:
+✅ Use HOMEY_API_TOKEN environment variable
+   → Homey CLI reads this automatically
+   → No explicit login command needed
+
+CHANGES:
+- Removed: homey login --token $HOMEY_TOKEN
+- Changed: HOMEY_TOKEN → HOMEY_API_TOKEN (env var)
+- Added: Comment explaining automatic authentication
+
+TECHNICAL DETAILS:
+The Homey CLI automatically checks for HOMEY_API_TOKEN
+environment variable and uses it for authentication.
+No need to call homey login when this env var is set.
+
+RESULT:
+✅ GitHub Actions will now authenticate correctly
+✅ Auto-publish will work on every push to master
+✅ No manual intervention needed
+
+This fixes the CI/CD pipeline for automatic app publishing.

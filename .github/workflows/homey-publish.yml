@@ -46,10 +46,10 @@ jobs:
       - name: Publish to Homey App Store
         if: steps.version-check.outputs.already_published == 'false'
         env:
-          HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
+          HOMEY_API_TOKEN: ${{ secrets.HOMEY_TOKEN }}
         run: |
-          # Configure Homey CLI with token
-          homey login --token $HOMEY_TOKEN
+          # Homey CLI uses HOMEY_API_TOKEN environment variable automatically
+          # No explicit login needed when env var is set
           
           # Publish to App Store
           echo "Publishing version ${{ steps.version-check.outputs.version }}..."
