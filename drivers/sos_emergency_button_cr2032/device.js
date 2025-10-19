@@ -162,7 +162,7 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
     }
     
     // Register battery capability
-    this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
+    this.registerCapability('measure_battery', 'genPowerCfg', {
       endpoint: 1,
       get: 'batteryPercentageRemaining',
       report: 'batteryPercentageRemaining',
