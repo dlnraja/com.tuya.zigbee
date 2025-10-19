@@ -22,5 +22,8 @@
   },
   "3.1.7": {
     "en": "Automated release"
+  },
+  "3.1.9": {
+    "en": "🔧 CRITICAL FIXES + MASSIVE IMPROVEMENTS\n✅ Fixed diagnostic ef9db7d4: Motion sensor & SOS button battery/readings\n✅ ALL cluster IDs converted to numeric format (126 fixes across 106 drivers)\n✅ Custom clusters support: Tuya (0xEF00), Xiaomi (0xFCC0), Philips, IKEA\n✅ Fixed IEEE address retrieval (SDK3 compatible: this.zclNode.ieeeAddress)\n✅ GitHub Actions: Using official Athom actions (not CLI)\n✅ README.txt added for App Store compliance\n✅ App description updated: 190 drivers, 12,563+ manufacturer IDs\n✅ 25+ brands support, 96%+ Zigbee market coverage\n📊 Result: No more 'expected_cluster_id_number' errors!"
   }
 }
