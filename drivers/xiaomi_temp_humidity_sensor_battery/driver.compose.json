@@ -1,0 +1,55 @@
+{
+  "id": "xiaomi_temp_humidity_sensor_battery",
+  "name": {
+    "en": "Temp/Humidity Sensor (Xiaomi)",
+    "fr": "Temp/Humidity Sensor (Xiaomi)",
+    "nl": "Temp/Humidity Sensor (Xiaomi)",
+    "de": "Temp/Humidity Sensor (Xiaomi)"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_pressure",
+    "measure_battery"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "lumi.weather",
+      "lumi.sensor_ht"
+    ],
+    "productId": [],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1026,
+          1027,
+          1029
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/learnmode.svg",
+      "instruction": {
+        "en": "Follow device pairing instructions",
+        "fr": "Suivre les instructions d'appairage",
+        "nl": "Volg de koppelingsinstru cties",
+        "de": "Folgen Sie den Kopplungsanweisungen"
+      }
+    }
+  }
+}

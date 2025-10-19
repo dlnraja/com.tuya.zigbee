@@ -1,0 +1,52 @@
+{
+  "id": "sonoff_switch_basic_ac",
+  "name": {
+    "en": "Basic Switch (Sonoff)",
+    "fr": "Basic Switch (Sonoff)",
+    "nl": "Basic Switch (Sonoff)",
+    "de": "Basic Switch (Sonoff)"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "SONOFF"
+    ],
+    "productId": [
+      "BASICZBR3"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/learnmode.svg",
+      "instruction": {
+        "en": "Follow device pairing instructions",
+        "fr": "Suivre les instructions d'appairage",
+        "nl": "Volg de koppelingsinstru cties",
+        "de": "Folgen Sie den Kopplungsanweisungen"
+      }
+    }
+  }
+}
