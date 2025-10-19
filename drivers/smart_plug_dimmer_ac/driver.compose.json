@@ -32,18 +32,14 @@
     "xlarge": "drivers/smart_plug_dimmer_ac/assets/images/xlarge.png"
   },
   "zigbee": {
-    "manufacturerName": [
-      "Signify Netherlands B.V.",
-      "Philips",
-      "LEDVANCE",
+    "manufacturerName": "TS0005",
+    "productId": [
+      "LOM001",
+      "LOM002",
+      "LOM003",
       "TS0005",
       "TS0006",
       "TS0501"
-    ],
-    "productId": [
-      "LOM003",
-      "LOM001",
-      "LOM002"
     ],
     "endpoints": {
       "11": {

@@ -10,10 +10,6 @@
   ],
   "zigbee": {
     "manufacturerName": [
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044",
       "_TZ3000_tk3s5tyg",
       "_TZE200_wfxuhoea",
       "_TZ3000_1dd0d5yi",
@@ -37,11 +33,13 @@
       "_TZ3000_dpo1ysak",
       "_TZ3000_dziaict4",
       "_TZE200_mgstdyz3",
-      "_TZE284_mgstdyz3",
-      "LUMI",
-      "aqara"
+      "_TZE284_mgstdyz3"
     ],
     "productId": [
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
       "lumi.lock.acn05"
     ],
     "endpoints": {
