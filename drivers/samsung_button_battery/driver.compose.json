@@ -24,10 +24,17 @@
   "zigbee": {
     "manufacturerName": [
       "SmartThings",
-      "Samsung"
+      "Samsung",
+      "Philips",
+      "Signify Netherlands B.V."
     ],
     "productId": [
-      "button"
+      "button",
+      "RWL020",
+      "RWL021",
+      "RWL022",
+      "ROM001",
+      "RDM001"
     ],
     "endpoints": {
       "1": {

@@ -24,7 +24,26 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "lumi.vibration.aq1"
+      "lumi.vibration.aq1",
+      "lumi.sensor_86sw1",
+      "lumi.sensor_86sw2",
+      "lumi.ctrl_ln1",
+      "lumi.ctrl_ln2",
+      "lumi.curtain",
+      "lumi.curtain.aq2",
+      "lumi.relay.c2acn01",
+      "lumi.lock.aq1",
+      "lumi.lock.acn02",
+      "lumi.airrtc.agl001",
+      "lumi.curtain.hagl04",
+      "lumi.curtain.acn002",
+      "lumi.lock.acn03",
+      "lumi.lock.acn04",
+      "lumi.light.wy0a01",
+      "lumi.light.wy0a02",
+      "lumi.light.cwopcn01",
+      "lumi.light.cwopcn02",
+      "lumi.light.cwopcn03"
     ],
     "productId": [],
     "endpoints": {
