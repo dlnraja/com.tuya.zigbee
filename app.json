@@ -56706,6 +56706,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "[[device]] is turned !{{on|off}}",
+          "fr": "[[device]] est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "name": "device",
@@ -56719,6 +56723,10 @@
         "title": {
           "en": "Motion is !{{detected|stopped}}",
           "fr": "Mouvement !{{détecté|arrêté}}"
+        },
+        "titleFormatted": {
+          "en": "[[device]] motion is !{{detected|stopped}}",
+          "fr": "[[device]] mouvement !{{détecté|arrêté}}"
         },
         "args": [
           {
@@ -56761,6 +56769,10 @@
           "en": "Turn on",
           "fr": "Allumer"
         },
+        "titleFormatted": {
+          "en": "Turn on [[device]]",
+          "fr": "Allumer [[device]]"
+        },
         "args": [
           {
             "name": "device",
@@ -56775,6 +56787,10 @@
           "en": "Turn off",
           "fr": "Éteindre"
         },
+        "titleFormatted": {
+          "en": "Turn off [[device]]",
+          "fr": "Éteindre [[device]]"
+        },
         "args": [
           {
             "name": "device",
@@ -56788,6 +56804,10 @@
         "title": {
           "en": "Toggle on/off",
           "fr": "Inverser on/off"
+        },
+        "titleFormatted": {
+          "en": "Toggle [[device]] on/off",
+          "fr": "Inverser [[device]] on/off"
         },
         "args": [
           {
@@ -56832,6 +56852,10 @@
           "en": "Motion detected",
           "fr": "Mouvement détecté"
         },
+        "titleFormatted": {
+          "en": "[[device]] detected motion",
+          "fr": "[[device]] mouvement détecté"
+        },
         "args": [
           {
             "name": "device",
@@ -56846,6 +56870,10 @@
           "en": "Door/Window opened",
           "fr": "Porte/Fenêtre ouverte"
         },
+        "titleFormatted": {
+          "en": "[[device]] opened",
+          "fr": "[[device]] ouverte"
+        },
         "args": [
           {
             "name": "device",
@@ -56859,6 +56887,10 @@
         "title": {
           "en": "Temperature changed",
           "fr": "Température changée"
+        },
+        "titleFormatted": {
+          "en": "[[device]] temperature changed",
+          "fr": "[[device]] température changée"
         },
         "tokens": [
           {
@@ -56883,6 +56915,10 @@
           "en": "Humidity changed",
           "fr": "Humidité changée"
         },
+        "titleFormatted": {
+          "en": "[[device]] humidity changed",
+          "fr": "[[device]] humidité changée"
+        },
         "tokens": [
           {
             "name": "humidity",
@@ -56905,6 +56941,10 @@
         "title": {
           "en": "Luminance changed",
           "fr": "Luminosité changée"
+        },
+        "titleFormatted": {
+          "en": "[[device]] luminance changed",
+          "fr": "[[device]] luminosité changée"
         },
         "tokens": [
           {
@@ -56929,6 +56969,10 @@
           "en": "Battery low",
           "fr": "Batterie faible"
         },
+        "titleFormatted": {
+          "en": "[[device]] battery is low",
+          "fr": "[[device]] batterie faible"
+        },
         "args": [
           {
             "name": "device",
@@ -56942,6 +56986,10 @@
         "title": {
           "en": "Water leak detected",
           "fr": "Fuite d'eau détectée"
+        },
+        "titleFormatted": {
+          "en": "[[device]] detected water leak",
+          "fr": "[[device]] fuite d'eau détectée"
         },
         "args": [
           {
@@ -56957,6 +57005,10 @@
           "en": "Smoke detected",
           "fr": "Fumée détectée"
         },
+        "titleFormatted": {
+          "en": "[[device]] detected smoke",
+          "fr": "[[device]] fumée détectée"
+        },
         "args": [
           {
             "name": "device",
@@ -56971,6 +57023,10 @@
           "en": "Turned on",
           "fr": "Allumé"
         },
+        "titleFormatted": {
+          "en": "[[device]] turned on",
+          "fr": "[[device]] allumé"
+        },
         "args": [
           {
             "name": "device",
@@ -56984,6 +57040,10 @@
         "title": {
           "en": "Turned off",
           "fr": "Éteint"
+        },
+        "titleFormatted": {
+          "en": "[[device]] turned off",
+          "fr": "[[device]] éteint"
         },
         "args": [
           {
