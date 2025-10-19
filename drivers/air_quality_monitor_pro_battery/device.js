@@ -40,7 +40,7 @@ class AirQualityMonitorProBatteryDevice extends ZigBeeDevice {
     
     // Register battery capability
 // TODO: Consider debouncing capability updates for better performance
-    this.registerCapability('measure_battery', 'genPowerCfg', {
+    this.registerCapability('measure_battery', 1, {
       endpoint: 1,
       get: 'batteryPercentageRemaining',
       report: 'batteryPercentageRemaining',

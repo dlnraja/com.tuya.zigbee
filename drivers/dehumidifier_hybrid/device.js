@@ -17,7 +17,7 @@ class DehumidifierDevice extends ZigBeeDevice {
     
     // target_humidity capability via Tuya datapoints
     if (this.hasCapability('target_humidity')) {
-      this.registerCapability('target_humidity', CLUSTER.TUYA_SPECIFIC, {
+      this.registerCapability('target_humidity', 61184, {
         endpoint: 1,
         set: async (value) => {
           return {
@@ -38,7 +38,7 @@ class DehumidifierDevice extends ZigBeeDevice {
     
     // measure_humidity capability via Tuya datapoints
     if (this.hasCapability('measure_humidity')) {
-      this.registerCapability('measure_humidity', CLUSTER.TUYA_SPECIFIC, {
+      this.registerCapability('measure_humidity', 61184, {
         endpoint: 1,
         get: 'data',
         reportParser: (value) => {
@@ -52,7 +52,7 @@ class DehumidifierDevice extends ZigBeeDevice {
     
     // measure_temperature capability (if available)
     if (this.hasCapability('measure_temperature')) {
-      this.registerCapability('measure_temperature', CLUSTER.TUYA_SPECIFIC, {
+      this.registerCapability('measure_temperature', 61184, {
         endpoint: 1,
         get: 'data',
         reportParser: (value) => {
@@ -66,7 +66,7 @@ class DehumidifierDevice extends ZigBeeDevice {
     
     // measure_power capability (if available)
     if (this.hasCapability('measure_power')) {
-      this.registerCapability('measure_power', CLUSTER.TUYA_SPECIFIC, {
+      this.registerCapability('measure_power', 61184, {
         endpoint: 1,
         get: 'data',
         reportParser: (value) => {
@@ -80,7 +80,7 @@ class DehumidifierDevice extends ZigBeeDevice {
     
     // alarm_water capability (water tank full)
     if (this.hasCapability('alarm_water')) {
-      this.registerCapability('alarm_water', CLUSTER.TUYA_SPECIFIC, {
+      this.registerCapability('alarm_water', 61184, {
         endpoint: 1,
         get: 'data',
         reportParser: (value) => {

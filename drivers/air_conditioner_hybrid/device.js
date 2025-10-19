@@ -17,7 +17,7 @@ class AirConditionerDevice extends ZigBeeDevice {
     
     // target_temperature capability
     if (this.hasCapability('target_temperature')) {
-      this.registerCapability('target_temperature', CLUSTER.THERMOSTAT, {
+      this.registerCapability('target_temperature', 513, {
         endpoint: 1,
         getOpts: {
           getOnStart: true
@@ -27,7 +27,7 @@ class AirConditionerDevice extends ZigBeeDevice {
     
     // measure_temperature capability
     if (this.hasCapability('measure_temperature')) {
-      this.registerCapability('measure_temperature', CLUSTER.THERMOSTAT, {
+      this.registerCapability('measure_temperature', 513, {
         endpoint: 1,
         getOpts: {
           getOnStart: true
@@ -37,7 +37,7 @@ class AirConditionerDevice extends ZigBeeDevice {
     
     // thermostat_mode capability
     if (this.hasCapability('thermostat_mode')) {
-      this.registerCapability('thermostat_mode', CLUSTER.TUYA_SPECIFIC, {
+      this.registerCapability('thermostat_mode', 61184, {
         endpoint: 1,
         set: async (value) => {
           const modes = {
@@ -66,7 +66,7 @@ class AirConditionerDevice extends ZigBeeDevice {
     
     // fan_speed capability
     if (this.hasCapability('fan_speed')) {
-      this.registerCapability('fan_speed', CLUSTER.TUYA_SPECIFIC, {
+      this.registerCapability('fan_speed', 61184, {
         endpoint: 1,
         set: async (value) => {
           const speeds = {
