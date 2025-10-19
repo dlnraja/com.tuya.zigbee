@@ -51,7 +51,15 @@
       "_TZ3000_arfwfgoa",
       "_TZ3000_ixla93vd",
       "_TZ3000_bi6lpsew",
-      "_TZ3000_dfgbtub0"
+      "_TZ3000_dfgbtub0",
+      "lumi.sensor_switch",
+      "lumi.sensor_switch.aq2",
+      "lumi.sensor_switch.aq3",
+      "lumi.remote.b1acn01",
+      "lumi.remote.b186acn02",
+      "SONOFF",
+      "SmartThings",
+      "Samsung"
     ],
     "productId": [
       "TS0001",
@@ -79,7 +87,11 @@
       "TS0205",
       "TS0207",
       "TS0216",
-      "TS0601"
+      "TS0601",
+      "SNZB-01",
+      "SNZB-01P",
+      "button",
+      "IM6001-BTP01"
     ],
     "endpoints": {
       "1": {
