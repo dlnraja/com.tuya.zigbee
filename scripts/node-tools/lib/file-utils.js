@@ -4,9 +4,10 @@
  */
 
 import fs from 'fs/promises';
+import fsSync from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { glob } from 'glob';
+import { dirname } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -199,7 +200,7 @@ export function getProjectRoot() {
   // Go up until we find package.json or reach root
   while (currentDir !== path.parse(currentDir).root) {
     const packagePath = path.join(currentDir, 'package.json');
-    if (fs.existsSync(packagePath)) {
+    if (fsSync.existsSync(packagePath)) {
       return currentDir;
     }
     currentDir = path.dirname(currentDir);
