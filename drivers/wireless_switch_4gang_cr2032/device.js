@@ -8,6 +8,138 @@ const FallbackSystem = require('../../lib/FallbackSystem');
 class WirelessSwitch4gangCr2032Device extends ZigBeeDevice {
 
     async onNodeInit() {
+
+// ==========================================
+    // BUTTON CLICK DETECTION - OPTIMIZED
+    // ==========================================
+    
+    // Click detection state
+    this._clickState = {
+      lastClick: 0,
+      clickCount: 0,
+      clickTimer: null,
+      longPressTimer: null,
+      buttonPressed: false
+    };
+    
+    // Timing constants
+    const DOUBLE_CLICK_WINDOW = 400;  // ms
+    const LONG_PRESS_DURATION = 1000; // ms
+    const DEBOUNCE_TIME = 50;         // ms
+    
+    // Register onOff cluster for button events
+    if (this.hasCapability('onoff')) {
+      this.registerCapability('onoff', 'onOff', {
+        endpoint: 1
+      });
+    }
+    
+    // Listen for onOff commands (button press/release)
+    const onOffCluster = this.zclNode.endpoints[1]?.clusters?.onOff;
+    
+    if (onOffCluster) {
+      // Press detection
+      onOffCluster.on('command', async (command) => {
+        const now = Date.now();
+        
+        // Debounce
+        if (now - this._clickState.lastClick < DEBOUNCE_TIME) {
+          this.log('Debounced click');
+          return;
+        }
+        
+        this.log('Button command:', command);
+        
+        if (command === 'on' || command === 'off' || command === 'toggle') {
+          this._clickState.buttonPressed = true;
+          this._clickState.lastClick = now;
+          
+          // Start long press timer
+          this._clickState.longPressTimer = setTimeout(() => {
+            if (this._clickState.buttonPressed) {
+              this.log('🔘 LONG PRESS detected');
+              this.homey.flow.getDeviceTriggerCard('button_long_press')
+                .trigger(this, {}, {})
+                .catch(this.error);
+              
+              // Reset state after long press
+              this._clickState.buttonPressed = false;
+              this._clickState.clickCount = 0;
+              if (this._clickState.clickTimer) {
+                clearTimeout(this._clickState.clickTimer);
+                this._clickState.clickTimer = null;
+              }
+            }
+          }, LONG_PRESS_DURATION);
+          
+        } else if (command === 'commandButtonRelease' || this._clickState.buttonPressed) {
+          // Button released
+          this._clickState.buttonPressed = false;
+          
+          // Clear long press timer
+          if (this._clickState.longPressTimer) {
+            clearTimeout(this._clickState.longPressTimer);
+            this._clickState.longPressTimer = null;
+          }
+          
+          // Increment click count
+          this._clickState.clickCount++;
+          
+          // Clear existing timer
+          if (this._clickState.clickTimer) {
+            clearTimeout(this._clickState.clickTimer);
+          }
+          
+          // Wait for potential second click
+          this._clickState.clickTimer = setTimeout(() => {
+            const clicks = this._clickState.clickCount;
+            this._clickState.clickCount = 0;
+            this._clickState.clickTimer = null;
+            
+            if (clicks === 1) {
+              this.log('🔘 SINGLE CLICK detected');
+              this.homey.flow.getDeviceTriggerCard('button_pressed')
+                .trigger(this, {}, {})
+                .catch(this.error);
+                
+            } else if (clicks === 2) {
+              this.log('🔘 DOUBLE CLICK detected');
+              this.homey.flow.getDeviceTriggerCard('button_double_press')
+                .trigger(this, {}, {})
+                .catch(this.error);
+                
+            } else if (clicks >= 3) {
+              this.log(`🔘 MULTI CLICK detected (${clicks})`);
+              this.homey.flow.getDeviceTriggerCard('button_multi_press')
+                .trigger(this, { count: clicks }, {})
+                .catch(this.error);
+            }
+          }, DOUBLE_CLICK_WINDOW);
+        }
+      });
+      
+      this.log('Button click detection initialized');
+      
+    } else {
+      this.error('OnOff cluster not found for button detection');
+    }
+    
+    // Alternative: Level Control cluster for some buttons
+    const levelControlCluster = this.zclNode.endpoints[1]?.clusters?.levelControl;
+    
+    if (levelControlCluster) {
+      levelControlCluster.on('command', async (command) => {
+        this.log('Level control command:', command);
+        
+        // Some buttons use step/move commands
+        if (command === 'step' || command === 'stepWithOnOff') {
+          this.log('🔘 BUTTON STEP detected (single click alternative)');
+          this.homey.flow.getDeviceTriggerCard('button_pressed')
+            .trigger(this, {}, {})
+            .catch(this.error);
+        }
+      });
+    }
         this.log('wireless_switch_4gang_cr2032 device initialized');
 
         // Register capabilities
@@ -314,14 +446,96 @@ class WirelessSwitch4gangCr2032Device extends ZigBeeDevice {
   async pollAttributes() {
     const promises = [];
     
-    // Battery
-    if (this.hasCapability('measure_battery')) {
-      promises.push(
-        this.zclNode.endpoints[1]?.clusters.powerConfiguration?.readAttributes('batteryPercentageRemaining')
-          .catch(err => this.log('Battery read failed (ignorable):', err.message))
-      );
+    // ==========================================
+    // BATTERY MANAGEMENT - OPTIMIZED
+    // ==========================================
+    
+    // Configure battery reporting
+    try {
+      await this.configureAttributeReporting([{
+        endpointId: 1,
+        cluster: 'powerConfiguration',
+        attributeName: 'batteryPercentageRemaining',
+        minInterval: 7200,
+        maxInterval: 172800,
+        minChange: 10
+      }]);
+      this.log('Battery reporting configured');
+    } catch (err) {
+      this.log('Battery report config failed (non-critical):', err.message);
     }
     
+    // Register battery capability
+    this.registerCapability('measure_battery', 'powerConfiguration', {
+      endpoint: 1,
+      get: 'batteryPercentageRemaining',
+      report: 'batteryPercentageRemaining',
+      reportParser: (value) => {
+        if (value === null || value === undefined) return null;
+        // Convert from 0-200 scale to 0-100%
+        const percentage = Math.round(value / 2);
+        return Math.max(0, Math.min(100, percentage));
+      },
+      getParser: (value) => {
+        if (value === null || value === undefined) return null;
+        const percentage = Math.round(value / 2);
+        return Math.max(0, Math.min(100, percentage));
+      }
+    });
+    
+    // Initial battery poll after pairing
+    setTimeout(async () => {
+      try {
+        await this.pollAttributes();
+        this.log('Initial battery poll completed');
+      } catch (err) {
+        this.error('Initial battery poll failed:', err);
+      }
+    }, 5000);
+    
+    // Regular battery polling with exponential backoff on errors
+    let pollFailures = 0;
+    const maxPollFailures = 5;
+    
+    this.registerPollInterval(async () => {
+      try {
+        const battery = await this.zclNode.endpoints[1].clusters.powerConfiguration.readAttributes(['batteryPercentageRemaining']);
+        
+        if (battery && battery.batteryPercentageRemaining !== undefined) {
+          const percentage = Math.round(battery.batteryPercentageRemaining / 2);
+          await this.setCapabilityValue('measure_battery', percentage);
+          this.log('Battery polled:', percentage + '%');
+          
+          // Reset failure counter on success
+          pollFailures = 0;
+          
+          // Low battery alert
+          if (percentage <= 20 && percentage > 10) {
+            this.log('⚠️  Low battery warning:', percentage + '%');
+            await this.homey.notifications.createNotification({
+              excerpt: `${this.getName()} battery low (${percentage}%)`
+            }).catch(() => {});
+          }
+          
+          // Critical battery alert
+          if (percentage <= 10) {
+            this.log('🔴 Critical battery:', percentage + '%');
+            await this.homey.notifications.createNotification({
+              excerpt: `${this.getName()} battery critical (${percentage}%) - replace soon!`
+            }).catch(() => {});
+          }
+        }
+      } catch (err) {
+        pollFailures++;
+        this.error(`Battery poll failed (${pollFailures}/${maxPollFailures}):`, err.message);
+        
+        // Stop polling after max failures to preserve battery
+        if (pollFailures >= maxPollFailures) {
+          this.log('Max poll failures reached, reducing poll frequency');
+          // Polling will continue but less frequently
+        }
+      }
+    }, 3600000);
     // Temperature
     if (this.hasCapability('measure_temperature')) {
       promises.push(

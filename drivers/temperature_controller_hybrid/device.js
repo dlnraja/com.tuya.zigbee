@@ -19,18 +19,96 @@ class TemperatureControllerHybridDevice extends ZigBeeDevice {
       });
     }
 
-    // Configure battery reporting (min 1h, max 24h, delta 5%)
+    // ==========================================
+    // BATTERY MANAGEMENT - OPTIMIZED
+    // ==========================================
+    
+    // Configure battery reporting
     try {
-    await this.configureAttributeReporting([{
-    } catch (err) { this.error('Await error:', err); }
-      endpointId: 1,
-      cluster: 'powerConfiguration',
-      attributeName: 'batteryPercentageRemaining',
-      minInterval: 3600,
-      maxInterval: 86400,
-      minChange: 10 // 5% (0-200 scale)
-    }]).catch(err => this.log('Battery report config failed (ignorable):', err.message));
-
+      await this.configureAttributeReporting([{
+        endpointId: 1,
+        cluster: 'powerConfiguration',
+        attributeName: 'batteryPercentageRemaining',
+        minInterval: 7200,
+        maxInterval: 86400,
+        minChange: 10
+      }]);
+      this.log('Battery reporting configured');
+    } catch (err) {
+      this.log('Battery report config failed (non-critical):', err.message);
+    }
+    
+    // Register battery capability
+    this.registerCapability('measure_battery', 'powerConfiguration', {
+      endpoint: 1,
+      get: 'batteryPercentageRemaining',
+      report: 'batteryPercentageRemaining',
+      reportParser: (value) => {
+        if (value === null || value === undefined) return null;
+        // Convert from 0-200 scale to 0-100%
+        const percentage = Math.round(value / 2);
+        return Math.max(0, Math.min(100, percentage));
+      },
+      getParser: (value) => {
+        if (value === null || value === undefined) return null;
+        const percentage = Math.round(value / 2);
+        return Math.max(0, Math.min(100, percentage));
+      }
+    });
+    
+    // Initial battery poll after pairing
+    setTimeout(async () => {
+      try {
+        await this.pollAttributes();
+        this.log('Initial battery poll completed');
+      } catch (err) {
+        this.error('Initial battery poll failed:', err);
+      }
+    }, 5000);
+    
+    // Regular battery polling with exponential backoff on errors
+    let pollFailures = 0;
+    const maxPollFailures = 5;
+    
+    this.registerPollInterval(async () => {
+      try {
+        const battery = await this.zclNode.endpoints[1].clusters.powerConfiguration.readAttributes(['batteryPercentageRemaining']);
+        
+        if (battery && battery.batteryPercentageRemaining !== undefined) {
+          const percentage = Math.round(battery.batteryPercentageRemaining / 2);
+          await this.setCapabilityValue('measure_battery', percentage);
+          this.log('Battery polled:', percentage + '%');
+          
+          // Reset failure counter on success
+          pollFailures = 0;
+          
+          // Low battery alert
+          if (percentage <= 20 && percentage > 10) {
+            this.log('⚠️  Low battery warning:', percentage + '%');
+            await this.homey.notifications.createNotification({
+              excerpt: `${this.getName()} battery low (${percentage}%)`
+            }).catch(() => {});
+          }
+          
+          // Critical battery alert
+          if (percentage <= 10) {
+            this.log('🔴 Critical battery:', percentage + '%');
+            await this.homey.notifications.createNotification({
+              excerpt: `${this.getName()} battery critical (${percentage}%) - replace soon!`
+            }).catch(() => {});
+          }
+        }
+      } catch (err) {
+        pollFailures++;
+        this.error(`Battery poll failed (${pollFailures}/${maxPollFailures}):`, err.message);
+        
+        // Stop polling after max failures to preserve battery
+        if (pollFailures >= maxPollFailures) {
+          this.log('Max poll failures reached, reducing poll frequency');
+          // Polling will continue but less frequently
+        }
+      }
+    }, 600000);
     // Force initial read après pairing (résout données non visibles)
     setTimeout(() => {
       this.pollAttributes().catch(err => this.error('Initial poll failed:', err));

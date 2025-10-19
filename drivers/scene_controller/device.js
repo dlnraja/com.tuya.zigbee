@@ -10,6 +10,138 @@ const FallbackSystem = require('../../lib/FallbackSystem');
 class SceneControllerDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
+
+// ==========================================
+    // BUTTON CLICK DETECTION - OPTIMIZED
+    // ==========================================
+    
+    // Click detection state
+    this._clickState = {
+      lastClick: 0,
+      clickCount: 0,
+      clickTimer: null,
+      longPressTimer: null,
+      buttonPressed: false
+    };
+    
+    // Timing constants
+    const DOUBLE_CLICK_WINDOW = 400;  // ms
+    const LONG_PRESS_DURATION = 1000; // ms
+    const DEBOUNCE_TIME = 50;         // ms
+    
+    // Register onOff cluster for button events
+    if (this.hasCapability('onoff')) {
+      this.registerCapability('onoff', 'onOff', {
+        endpoint: 1
+      });
+    }
+    
+    // Listen for onOff commands (button press/release)
+    const onOffCluster = this.zclNode.endpoints[1]?.clusters?.onOff;
+    
+    if (onOffCluster) {
+      // Press detection
+      onOffCluster.on('command', async (command) => {
+        const now = Date.now();
+        
+        // Debounce
+        if (now - this._clickState.lastClick < DEBOUNCE_TIME) {
+          this.log('Debounced click');
+          return;
+        }
+        
+        this.log('Button command:', command);
+        
+        if (command === 'on' || command === 'off' || command === 'toggle') {
+          this._clickState.buttonPressed = true;
+          this._clickState.lastClick = now;
+          
+          // Start long press timer
+          this._clickState.longPressTimer = setTimeout(() => {
+            if (this._clickState.buttonPressed) {
+              this.log('🔘 LONG PRESS detected');
+              this.homey.flow.getDeviceTriggerCard('button_long_press')
+                .trigger(this, {}, {})
+                .catch(this.error);
+              
+              // Reset state after long press
+              this._clickState.buttonPressed = false;
+              this._clickState.clickCount = 0;
+              if (this._clickState.clickTimer) {
+                clearTimeout(this._clickState.clickTimer);
+                this._clickState.clickTimer = null;
+              }
+            }
+          }, LONG_PRESS_DURATION);
+          
+        } else if (command === 'commandButtonRelease' || this._clickState.buttonPressed) {
+          // Button released
+          this._clickState.buttonPressed = false;
+          
+          // Clear long press timer
+          if (this._clickState.longPressTimer) {
+            clearTimeout(this._clickState.longPressTimer);
+            this._clickState.longPressTimer = null;
+          }
+          
+          // Increment click count
+          this._clickState.clickCount++;
+          
+          // Clear existing timer
+          if (this._clickState.clickTimer) {
+            clearTimeout(this._clickState.clickTimer);
+          }
+          
+          // Wait for potential second click
+          this._clickState.clickTimer = setTimeout(() => {
+            const clicks = this._clickState.clickCount;
+            this._clickState.clickCount = 0;
+            this._clickState.clickTimer = null;
+            
+            if (clicks === 1) {
+              this.log('🔘 SINGLE CLICK detected');
+              this.homey.flow.getDeviceTriggerCard('button_pressed')
+                .trigger(this, {}, {})
+                .catch(this.error);
+                
+            } else if (clicks === 2) {
+              this.log('🔘 DOUBLE CLICK detected');
+              this.homey.flow.getDeviceTriggerCard('button_double_press')
+                .trigger(this, {}, {})
+                .catch(this.error);
+                
+            } else if (clicks >= 3) {
+              this.log(`🔘 MULTI CLICK detected (${clicks})`);
+              this.homey.flow.getDeviceTriggerCard('button_multi_press')
+                .trigger(this, { count: clicks }, {})
+                .catch(this.error);
+            }
+          }, DOUBLE_CLICK_WINDOW);
+        }
+      });
+      
+      this.log('Button click detection initialized');
+      
+    } else {
+      this.error('OnOff cluster not found for button detection');
+    }
+    
+    // Alternative: Level Control cluster for some buttons
+    const levelControlCluster = this.zclNode.endpoints[1]?.clusters?.levelControl;
+    
+    if (levelControlCluster) {
+      levelControlCluster.on('command', async (command) => {
+        this.log('Level control command:', command);
+        
+        // Some buttons use step/move commands
+        if (command === 'step' || command === 'stepWithOnOff') {
+          this.log('🔘 BUTTON STEP detected (single click alternative)');
+          this.homey.flow.getDeviceTriggerCard('button_pressed')
+            .trigger(this, {}, {})
+            .catch(this.error);
+        }
+      });
+    }
     // IAS Zone enrollment (motion/contact sensors)
     if (this.hasCapability('alarm_motion') || this.hasCapability('alarm_contact') || 
         this.hasCapability('alarm_water') || this.hasCapability('alarm_smoke')) {
