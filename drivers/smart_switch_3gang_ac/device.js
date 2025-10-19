@@ -19,7 +19,7 @@ class Device extends ZigBeeDevice {
     await this.configureAttributeReporting([{
     } catch (err) { this.error('Await error:', err); }
       endpointId: 1,
-      cluster: 'powerConfiguration',
+      cluster: CLUSTER.POWER_CONFIGURATION,
       attributeName: 'batteryPercentageRemaining',
       minInterval: 3600,
       maxInterval: 86400,
@@ -50,7 +50,7 @@ class Device extends ZigBeeDevice {
       trackPerformance: true
     });
     this.log('✅ FallbackSystem initialized');
-        this.registerCapability('onoff', 'genOnOff');
+        this.registerCapability('onoff', CLUSTER.ON_OFF);
     }
 
   async setCapabilityValue(capabilityId, value) {

@@ -321,7 +321,7 @@ class MiniSwitchDevice extends ZigBeeDevice {
     try {
       await this.configureAttributeReporting([{
         endpointId: 1,
-        cluster: 'powerConfiguration',
+        cluster: CLUSTER.POWER_CONFIGURATION,
         attributeName: 'batteryPercentageRemaining',
         minInterval: 7200,
         maxInterval: 172800,
@@ -333,7 +333,7 @@ class MiniSwitchDevice extends ZigBeeDevice {
     }
     
     // Register battery capability
-    this.registerCapability('measure_battery', 'powerConfiguration', {
+    this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
       endpoint: 1,
       get: 'batteryPercentageRemaining',
       report: 'batteryPercentageRemaining',

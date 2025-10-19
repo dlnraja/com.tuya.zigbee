@@ -22,7 +22,7 @@ class SmartDimmerModule1GangDevice extends ZigBeeDevice {
     await this.configureAttributeReporting([{
     } catch (err) { this.error('Await error:', err); }
       endpointId: 1,
-      cluster: 'powerConfiguration',
+      cluster: CLUSTER.POWER_CONFIGURATION,
       attributeName: 'batteryPercentageRemaining',
       minInterval: 3600,
       maxInterval: 86400,
@@ -50,8 +50,8 @@ class SmartDimmerModule1GangDevice extends ZigBeeDevice {
       this.registerCapability('onoff', 6, {
         set: 'setOn',
         setParser: this._onOffSetParser.bind(this),
-        get: 'onOff',
-        report: 'onOff',
+        get: CLUSTER.ON_OFF,
+        report: CLUSTER.ON_OFF,
         reportParser: this._onOffReportParser.bind(this)
       });
     }

@@ -30,7 +30,7 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
     
     // Register onOff cluster for button events
     if (this.hasCapability('onoff')) {
-      this.registerCapability('onoff', 'onOff', {
+      this.registerCapability('onoff', CLUSTER.ON_OFF, {
         endpoint: 1
       });
     }
@@ -149,7 +149,7 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
     try {
       await this.configureAttributeReporting([{
         endpointId: 1,
-        cluster: 'powerConfiguration',
+        cluster: CLUSTER.POWER_CONFIGURATION,
         attributeName: 'batteryPercentageRemaining',
         minInterval: 7200,
         maxInterval: 172800,
@@ -161,7 +161,7 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
     }
     
     // Register battery capability
-    this.registerCapability('measure_battery', 'powerConfiguration', {
+    this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
       endpoint: 1,
       get: 'batteryPercentageRemaining',
       report: 'batteryPercentageRemaining',

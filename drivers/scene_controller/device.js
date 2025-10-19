@@ -31,7 +31,7 @@ class SceneControllerDevice extends ZigBeeDevice {
     
     // Register onOff cluster for button events
     if (this.hasCapability('onoff')) {
-      this.registerCapability('onoff', 'onOff', {
+      this.registerCapability('onoff', CLUSTER.ON_OFF, {
         endpoint: 1
       });
     }
@@ -156,7 +156,7 @@ class SceneControllerDevice extends ZigBeeDevice {
     await this.configureAttributeReporting([{
     } catch (err) { this.error('Await error:', err); }
       endpointId: 1,
-      cluster: 'powerConfiguration',
+      cluster: CLUSTER.POWER_CONFIGURATION,
       attributeName: 'batteryPercentageRemaining',
       minInterval: 3600,
       maxInterval: 86400,
