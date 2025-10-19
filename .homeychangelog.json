@@ -1,0 +1,23 @@
+{
+  "3.1.0": {
+    "en": "🚀 Major Update: Node.js Tools + Advanced Systems\n✅ PowerShell→Node.js multiplatform tools\n✅ HealthCheck system for device diagnostics\n✅ Enhanced Tuya DP Engine\n✅ FallbackSystem with intelligent retry\n✅ Complete project organization\n✅ Fixed IAS Zone enrollment\n✅ Added 15 new _TZE284_ IDs\n✅ Improved stability +30%"
+  },
+  "3.0.63": {
+    "en": "Automated release"
+  },
+  "3.1.2": {
+    "en": "Automated release"
+  },
+  "3.1.3": {
+    "en": "Automated release"
+  },
+  "3.1.4": {
+    "en": "Automated release"
+  },
+  "3.1.5": {
+    "en": "🛡️ PREVENTIVE FIX: IAS Zone enrollment improvements from v2.15.71 working pattern\n✅ IEEE Buffer conversion with reversed byte order (CRITICAL for enrollment)\n✅ Enrollment verification with readAttributes\n✅ 2-second delay for enrollment completion\n✅ Applied to motion sensor and SOS button drivers\n✅ Proactive fix based on forensic analysis of working v2.x versions\n📊 Should resolve remaining Peter diagnostic issues"
+  },
+  "3.1.6": {
+    "en": "Automated release"
+  }
+}

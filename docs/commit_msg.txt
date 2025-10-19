@@ -1,0 +1,42 @@
+ENRICHMENT v2.15.94: +92 manufacturer IDs across 21 drivers
+
+MASSIVE DEVICE SUPPORT EXPANSION
+- 92 manufacturer IDs added (validated via Zigbee2MQTT + forum)
+- 21 drivers enriched with better device coverage  
+- 6 additional product IDs for compatibility
+
+CATEGORIES ENRICHED
+Smart Lighting: +42 IDs (RGB, tunable, dimmable LEDs)
+- LIVARNO LUX (Lidl), Woox, YANDHI brands
+- Bulbs, strips, spots, mood lights, ceiling lights
+
+Dimmers: +28 IDs (1-gang, 2-gang, 3-gang, wall)
+- TS110E, TS110F, TS0601 variants
+
+Motion/Presence: +13 IDs (PIR + radar/mmWave)
+- TS0202 PIR sensors
+- TS0601 radar sensors with advanced detection
+
+Power & Energy: +6 IDs (plugs, power strips)
+- Silvercrest 3-socket strips
+- Double power points with metering
+
+Temperature Sensors: +4 IDs
+Curtain Motors: +3 IDs (GIRIER, Lonsonho)
+Air Quality: +3 IDs (detection boxes)
+Switches: +3 IDs (wall + remotes)
+Smoke Detectors: +2 IDs
+Door/Window: +1 ID
+Christmas Lights: +1 ID (Melinera/Lidl)
+
+BRANDS COVERED
+- LIVARNO LUX / Lidl (lighting)
+- Silvercrest / Lidl (power strips)
+- Melinera / Lidl (Christmas lights)
+- Woox (RGB, irrigation)
+- YANDHI, GIRIER, Lonsonho
+- Generic Tuya (all types)
+
+VALIDATION: PASS (publish level)
+Source: Zigbee2MQTT DB + Homey Forum + GitHub issues
+Principle: UNBRANDED categorization by FUNCTION not brand

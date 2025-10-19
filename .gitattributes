@@ -1,0 +1,6 @@
+# Auto-merge strategy for generated files
+app.json merge=ours
+.homeychangelog.json merge=ours
+
+# Always take newer version for these files
+*.md merge=union

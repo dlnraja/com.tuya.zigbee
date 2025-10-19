@@ -1,0 +1,59 @@
+{
+  "drivers": {
+    "total": 183,
+    "ok": 183,
+    "issues": []
+  },
+  "extensions": {
+    "total": 0,
+    "ok": 0,
+    "issues": []
+  },
+  "types": {
+    "battery": 86,
+    "ac": 74,
+    "hybrid": 17,
+    "dc": 4,
+    "unknown": 2
+  },
+  "images": {
+    "total": 31,
+    "missing": 0,
+    "issues": [
+      "Unexpected file type: images/.force-update",
+      "Unexpected file type: README.md",
+      "Unexpected file type: templates/device-template.js",
+      "Unexpected file type: templates/driver-readme.md",
+      "Unexpected file type: templates/driver-template/device.js",
+      "Unexpected file type: templates/driver-template/driver.compose.json",
+      "Unexpected file type: templates/driver.compose.json",
+      "Unexpected file type: templates/driver.js",
+      "Unexpected file type: templates/driver.metadata.json",
+      "Unexpected file type: templates/multi-sensor-device.d.ts",
+      "Unexpected file type: templates/multi-sensor-device.d.ts.map",
+      "Unexpected file type: templates/multi-sensor-device.js",
+      "Unexpected file type: templates/README-multilingual-template.md",
+      "Unexpected file type: templates/switch-device.js"
+    ]
+  },
+  "appJson": {
+    "ok": true,
+    "issues": []
+  },
+  "directories": {
+    "total": 7,
+    "issues": []
+  },
+  "generators": {
+    "found": [
+      "APP_IMAGE_GENERATOR.js",
+      "FIX_APP_IMAGES_FINAL.js",
+      "FIX_DRIVER_IMAGES.js",
+      "images",
+      "REGENERATE_ALL_CONTEXTUAL_IMAGES.js",
+      "RESIZE_IMAGES_PRESERVE_CONTENT.js",
+      "ULTIMATE_IMAGE_GENERATOR_V2.js"
+    ],
+    "issues": []
+  }
+}
