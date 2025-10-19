@@ -13,6 +13,7 @@ class TuyaZigbeeDevice extends ZigBeeDevice {
         
     // Register capabilities with numeric Zigbee clusters
     if (this.hasCapability('onoff')) {
+// TODO: Consider debouncing capability updates for better performance
       this.registerCapability('onoff', 6);
     }
     if (this.hasCapability('dim')) {

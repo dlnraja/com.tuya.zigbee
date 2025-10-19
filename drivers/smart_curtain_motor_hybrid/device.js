@@ -1,6 +1,7 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { CLUSTER } = require('zigbee-clusters');
 const IASZoneEnroller = require('../../lib/IASZoneEnroller');
 const batteryConverter = require('../../lib/tuya-engine/converters/battery');
 const FallbackSystem = require('../../lib/FallbackSystem');
@@ -16,6 +17,7 @@ class SmartCurtainMotorDevice extends ZigBeeDevice {
         
         
         // Register window coverings capabilities
+// TODO: Consider debouncing capability updates for better performance
         this.registerCapability('windowcoverings_state', 258);
         this.registerCapability('windowcoverings_set', 258);
         

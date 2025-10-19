@@ -1,5 +1,6 @@
 'use strict';
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { CLUSTER } = require('zigbee-clusters');
 const IASZoneEnroller = require('../../lib/IASZoneEnroller');
 const batteryConverter = require('../../lib/tuya-engine/converters/battery');
 const FallbackSystem = require('../../lib/FallbackSystem');
@@ -56,6 +57,7 @@ class Device extends ZigBeeDevice {
 
     // Register capabilities using numeric Zigbee clusters (SDK3 best practice)
     if (this.hasCapability('onoff')) {
+// TODO: Consider debouncing capability updates for better performance
       this.registerCapability('onoff', 6);
     }
     if (this.hasCapability('dim')) {

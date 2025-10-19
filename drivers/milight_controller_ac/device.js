@@ -87,6 +87,7 @@ class MilightControllerAcDevice extends ZigBeeDevice {
     // Battery
     if (this.hasCapability('measure_battery')) {
       try {
+// TODO: Consider debouncing capability updates for better performance
         this.registerCapability('measure_battery', 1, {
           get: 'batteryPercentageRemaining',
           report: 'batteryPercentageRemaining',

@@ -77,6 +77,7 @@ class LedStripOutdoorColorAcDevice extends ZigBeeDevice {
     // onoff
     if (this.hasCapability('onoff')) {
       try {
+// TODO: Consider debouncing capability updates for better performance
         this.registerCapability('onoff', 6, {
       get: CLUSTER.ON_OFF,
       report: CLUSTER.ON_OFF,

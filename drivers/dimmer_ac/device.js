@@ -13,6 +13,7 @@ class DimmerDevice extends ZigBeeDevice {
 
         // Register capabilities with numeric clusters
         if (this.hasCapability('onoff')) {
+// TODO: Consider debouncing capability updates for better performance
             this.registerCapability('onoff', 6);
         }
         if (this.hasCapability('dim')) {

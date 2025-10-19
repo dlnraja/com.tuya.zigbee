@@ -1,6 +1,7 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { CLUSTER } = require('zigbee-clusters');
 const IASZoneEnroller = require('../../lib/IASZoneEnroller');
 const batteryConverter = require('../../lib/tuya-engine/converters/battery');
 const FallbackSystem = require('../../lib/FallbackSystem');
@@ -57,6 +58,7 @@ class ComprehensiveAirMonitorDevice extends ZigBeeDevice {
 
     // Register measurements using numeric Zigbee clusters
     if (this.hasCapability('measure_temperature')) {
+// TODO: Consider debouncing capability updates for better performance
       this.registerCapability('measure_temperature', 1026); // temperatureMeasurement
     }
     if (this.hasCapability('measure_humidity')) {

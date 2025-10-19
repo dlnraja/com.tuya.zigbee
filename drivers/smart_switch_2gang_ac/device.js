@@ -1,5 +1,6 @@
 'use strict';
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { CLUSTER } = require('zigbee-clusters');
 const IASZoneEnroller = require('../../lib/IASZoneEnroller');
 const batteryConverter = require('../../lib/tuya-engine/converters/battery');
 const FallbackSystem = require('../../lib/FallbackSystem');
@@ -50,6 +51,7 @@ class Device extends ZigBeeDevice {
       trackPerformance: true
     });
     this.log('✅ FallbackSystem initialized');
+// TODO: Consider debouncing capability updates for better performance
         this.registerCapability('onoff', CLUSTER.ON_OFF);
     }
 
