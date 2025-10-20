@@ -195,10 +195,19 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
     const iasZoneCluster = sosEndpoint.clusters.iasZone;
 
     if (iasZoneCluster) {
-      // Listen for zone status changes
+      // Listen for zone status changes (attribute reports)
       iasZoneCluster.on('attr.zoneStatus', (value) => {
         const alarmActive = (value & 0x01) === 0x01; // Bit 0 = alarm1 (button pressed)
-        this.log('SOS Button pressed:', alarmActive);
+        this.log('🔔 SOS Button (attr):', alarmActive);
+        this.setCapabilityValue('alarm_generic', alarmActive).catch(this.error);
+      });
+      
+      // CRITICAL: Listen for zone status change notifications (command-based)
+      // Some devices send commands instead of attribute reports
+      iasZoneCluster.on('zoneStatusChangeNotification', async (payload) => {
+        this.log('📨 SOS Button notification received:', payload);
+        const alarmActive = (payload.zoneStatus & 0x01) === 0x01;
+        this.log('🔔 SOS Button (notification):', alarmActive);
         this.setCapabilityValue('alarm_generic', alarmActive).catch(this.error);
       });
 
