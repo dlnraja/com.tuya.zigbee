@@ -150,11 +150,11 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
     try {
       await this.configureAttributeReporting([{
         endpointId: 1,
-        cluster: 'genPowerCfg',
+        cluster: 1,  // FIXED: Was 'genPowerCfg', must be numeric for SDK3
         attributeName: 'batteryPercentageRemaining',
         minInterval: 7200,
         maxInterval: 43200,  // Reduced from 172800 (2 days) to 12 hours
-        minChange: 1  // FIXED: Was 10, must be 1 for battery percentage (0-255 range)
+        minChange: 2  // FIXED: Minimum 2 for battery (0-200 scale)
       }]);
       this.log('Battery reporting configured');
     } catch (err) {
@@ -218,19 +218,18 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
 
       // Write IAS CIE Address (v2.15.71 working pattern)
       try {
-        // Get Homey IEEE address as Buffer with reversed byte order (CRITICAL!)
-        const homeyIeee = await this.homey.zigbee.getIeeeAddress();
-        const ieeeBuffer = Buffer.from(
-          homeyIeee.replace(/:/g, '').match(/.{2}/g).reverse().join(''),
-          'hex'
-        );
+        // Get IEEE address from zclNode (SDK3 compatible - FIXED!)
+        const ieeeAddress = zclNode.ieeeAddress;
+        
+        if (!ieeeAddress) {
+          throw new Error('IEEE address not available from zclNode');
+        }
 
-        this.log('📡 Homey IEEE:', homeyIeee);
-        this.log('📡 IEEE Buffer:', ieeeBuffer.toString('hex'));
+        this.log('📡 Homey IEEE:', ieeeAddress);
 
-        // Write CIE Address
+        // Write CIE Address (SDK3 expects string, not Buffer)
         await iasZoneCluster.writeAttributes({
-          iasCieAddr: ieeeBuffer
+          iasCieAddr: ieeeAddress
         });
         this.log('✅ IAS CIE Address written (SDK3 method)');
 
