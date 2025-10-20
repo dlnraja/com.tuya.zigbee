@@ -31,7 +31,7 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
     
     // Register battery capability
 // TODO: Consider debouncing capability updates for better performance
-    this.registerCapability('measure_battery', 1, {
+    this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
       endpoint: 1,
       get: 'batteryPercentageRemaining',
       report: 'batteryPercentageRemaining',
@@ -133,7 +133,7 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
 
     // Battery measurement
     if (this.hasCapability('measure_battery')) {
-      this.registerCapability('measure_battery', 1, {
+      this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
         get: 'batteryPercentageRemaining',
         report: 'batteryPercentageRemaining',
         reportParser: value => { this.log('Battery raw value:', value); // Smart calculation: check if value is already 0-100 or 0-200 if (value <= 100) { return Math.max(0, Math.min(100, value)); } else { return fromZclBatteryPercentageRemaining(value); } },
@@ -145,7 +145,7 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
 
     // Temperature measurement
     if (this.hasCapability('measure_temperature')) {
-      this.registerCapability('measure_temperature', 1026, {
+      this.registerCapability('measure_temperature', CLUSTER.TEMPERATURE_MEASUREMENT, {
         get: 'measuredValue',
         report: 'measuredValue',
         reportParser: value => value / 100,
@@ -156,7 +156,7 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
 
     // Motion/vibration alarm (IAS Zone)
     if (this.hasCapability('alarm_motion')) {
-      this.registerCapability('alarm_motion', 1280, {
+      this.registerCapability('alarm_motion', CLUSTER.IAS_ZONE, {
         report: 'zoneStatus',
         reportParser: value => (value & 1) === 1
       });
@@ -165,7 +165,7 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
 
     // Illuminance measurement
     if (this.hasCapability('measure_luminance')) {
-      this.registerCapability('measure_luminance', 1024, {
+      this.registerCapability('measure_luminance', CLUSTER.ILLUMINANCE_MEASUREMENT, {
         get: 'measuredValue',
         report: 'measuredValue',
         reportParser: value => fromZigbeeMeasuredValue(value),
@@ -176,7 +176,7 @@ class WaterLeakSensorDevice extends ZigBeeDevice {
 
     // Water leak alarm
     if (this.hasCapability('alarm_water')) {
-      this.registerCapability('alarm_water', 1280, {
+      this.registerCapability('alarm_water', CLUSTER.IAS_ZONE, {
         report: 'zoneStatus',
         reportParser: value => (value & 1) === 1
       });

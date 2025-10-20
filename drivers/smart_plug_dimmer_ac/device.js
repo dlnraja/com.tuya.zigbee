@@ -89,7 +89,7 @@ class SmartPlugDimmerAcDevice extends ZigBeeDevice {
     if (this.hasCapability('onoff')) {
       try {
 // TODO: Consider debouncing capability updates for better performance
-        this.registerCapability('onoff', 6, {
+        this.registerCapability('onoff', CLUSTER.ON_OFF, {
           get: CLUSTER.ON_OFF,
           report: CLUSTER.ON_OFF,
           reportParser: value => {
@@ -111,7 +111,7 @@ class SmartPlugDimmerAcDevice extends ZigBeeDevice {
     // Dim capability
     if (this.hasCapability('dim')) {
       try {
-        this.registerCapability('dim', 8, {
+        this.registerCapability('dim', CLUSTER.LEVEL_CONTROL, {
           get: 'currentLevel',
           report: 'currentLevel',
           reportParser: value => {
@@ -139,7 +139,7 @@ class SmartPlugDimmerAcDevice extends ZigBeeDevice {
     if (this.hasCapability('measure_power')) {
       try {
         // Try to register, but don't fail if cluster not available
-        this.registerCapability('measure_power', 2820, {
+        this.registerCapability('measure_power', CLUSTER.ELECTRICAL_MEASUREMENT, {
           get: 'activePower',
           report: 'activePower',
           reportParser: value => {
@@ -164,7 +164,7 @@ class SmartPlugDimmerAcDevice extends ZigBeeDevice {
     // Energy metering (if device supports it)
     if (this.hasCapability('meter_power')) {
       try {
-        this.registerCapability('meter_power', 1794, {
+        this.registerCapability('meter_power', CLUSTER.METERING, {
           get: 'currentSummationDelivered',
           report: 'currentSummationDelivered',
           reportParser: value => {

@@ -78,7 +78,7 @@ class LedStripOutdoorColorAcDevice extends ZigBeeDevice {
     if (this.hasCapability('onoff')) {
       try {
 // TODO: Consider debouncing capability updates for better performance
-        this.registerCapability('onoff', 6, {
+        this.registerCapability('onoff', CLUSTER.ON_OFF, {
       get: CLUSTER.ON_OFF,
       report: CLUSTER.ON_OFF,
       set: 'toggle',
@@ -93,7 +93,7 @@ class LedStripOutdoorColorAcDevice extends ZigBeeDevice {
     // dim
     if (this.hasCapability('dim')) {
       try {
-        this.registerCapability('dim', 8, {
+        this.registerCapability('dim', CLUSTER.LEVEL_CONTROL, {
       get: 'currentLevel',
       report: 'currentLevel',
       set: 'moveToLevelWithOnOff',
@@ -108,7 +108,7 @@ class LedStripOutdoorColorAcDevice extends ZigBeeDevice {
     // light_hue
     if (this.hasCapability('light_hue')) {
       try {
-        this.registerCapability('light_hue', 768, {
+        this.registerCapability('light_hue', CLUSTER.COLOR_CONTROL, {
       get: 'currentHue',
       report: 'currentHue',
       set: 'moveToHue',
@@ -123,7 +123,7 @@ class LedStripOutdoorColorAcDevice extends ZigBeeDevice {
     // light_saturation
     if (this.hasCapability('light_saturation')) {
       try {
-        this.registerCapability('light_saturation', 768, {
+        this.registerCapability('light_saturation', CLUSTER.COLOR_CONTROL, {
       get: 'currentSaturation',
       report: 'currentSaturation',
       set: 'moveToSaturation',

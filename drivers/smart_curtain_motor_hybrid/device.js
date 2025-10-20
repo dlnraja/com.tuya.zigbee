@@ -328,7 +328,7 @@ class SmartCurtainMotorDevice extends ZigBeeDevice {
     }
     
     // Register battery capability
-    this.registerCapability('measure_battery', 1, {
+    this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
       endpoint: 1,
       get: 'batteryPercentageRemaining',
       report: 'batteryPercentageRemaining',

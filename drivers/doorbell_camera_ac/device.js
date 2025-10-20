@@ -69,7 +69,7 @@ class DoorbellCameraAcDevice extends ZigBeeDevice {
     if (this.hasCapability('alarm_generic')) {
       try {
 // TODO: Consider debouncing capability updates for better performance
-        this.registerCapability('alarm_generic', 1280, {
+        this.registerCapability('alarm_generic', CLUSTER.IAS_ZONE, {
       zoneType: 'alarm',
       get: 'zoneStatus',
       report: 'zoneStatus'

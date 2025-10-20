@@ -49,7 +49,7 @@ class WirelessSwitchCr2032Device extends ZigBeeDevice {
     // Register onOff cluster for button events
     if (this.hasCapability('onoff')) {
 // TODO: Consider debouncing capability updates for better performance
-      this.registerCapability('onoff', 6, {
+      this.registerCapability('onoff', CLUSTER.ON_OFF, {
         endpoint: 1
       });
     }
@@ -168,7 +168,7 @@ class WirelessSwitchCr2032Device extends ZigBeeDevice {
         
         
         // Register onoff capability
-        this.registerCapability('onoff', 6, {
+        this.registerCapability('onoff', CLUSTER.ON_OFF, {
             endpoint: 1
         });
         
@@ -479,7 +479,7 @@ class WirelessSwitchCr2032Device extends ZigBeeDevice {
     }
     
     // Register battery capability
-    this.registerCapability('measure_battery', 1, {
+    this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
       endpoint: 1,
       get: 'batteryPercentageRemaining',
       report: 'batteryPercentageRemaining',

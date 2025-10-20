@@ -43,7 +43,7 @@ class SceneControllerBatteryDevice extends ZigBeeDevice {
     // Register onOff cluster for button events
     if (this.hasCapability('onoff')) {
 // TODO: Consider debouncing capability updates for better performance
-      this.registerCapability('onoff', 6, {
+      this.registerCapability('onoff', CLUSTER.ON_OFF, {
         endpoint: 1
       });
     }
@@ -183,7 +183,7 @@ class SceneControllerBatteryDevice extends ZigBeeDevice {
     }
     
     // Register battery capability
-    this.registerCapability('measure_battery', 1, {
+    this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
       endpoint: 1,
       get: 'batteryPercentageRemaining',
       report: 'batteryPercentageRemaining',

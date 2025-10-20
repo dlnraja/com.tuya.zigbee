@@ -40,7 +40,7 @@ class TemperatureSensorBatteryDevice extends ZigBeeDevice {
     
     // Register battery capability
 // TODO: Consider debouncing capability updates for better performance
-    this.registerCapability('measure_battery', 1, {
+    this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
       endpoint: 1,
       get: 'batteryPercentageRemaining',
       report: 'batteryPercentageRemaining',
@@ -173,7 +173,7 @@ class TemperatureSensorBatteryDevice extends ZigBeeDevice {
     
     // Temperature
     if (this.hasCapability('measure_temperature')) {
-      this.registerCapability('measure_temperature', 1026, {
+      this.registerCapability('measure_temperature', CLUSTER.TEMPERATURE_MEASUREMENT, {
         get: 'measuredValue',
         report: 'measuredValue',
         reportParser: value => value / 100,
@@ -184,7 +184,7 @@ class TemperatureSensorBatteryDevice extends ZigBeeDevice {
 
     // Humidity
     if (this.hasCapability('measure_humidity')) {
-      this.registerCapability('measure_humidity', 1029, {
+      this.registerCapability('measure_humidity', CLUSTER.RELATIVE_HUMIDITY_MEASUREMENT, {
         get: 'measuredValue',
         report: 'measuredValue',
         reportParser: value => value / 100,
@@ -195,7 +195,7 @@ class TemperatureSensorBatteryDevice extends ZigBeeDevice {
 
     // Battery - Using standard converter
     if (this.hasCapability('measure_battery')) {
-      this.registerCapability('measure_battery', 1, {
+      this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
         get: 'batteryPercentageRemaining',
         report: 'batteryPercentageRemaining',
         reportParser: value => {

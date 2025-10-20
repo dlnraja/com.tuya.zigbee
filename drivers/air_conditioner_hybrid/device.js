@@ -17,7 +17,7 @@ class AirConditionerDevice extends ZigBeeDevice {
     
     // target_temperature capability
     if (this.hasCapability('target_temperature')) {
-      this.registerCapability('target_temperature', 513, {
+      this.registerCapability('target_temperature', CLUSTER.THERMOSTAT, {
         endpoint: 1,
         getOpts: {
           getOnStart: true
@@ -27,7 +27,7 @@ class AirConditionerDevice extends ZigBeeDevice {
     
     // measure_temperature capability
     if (this.hasCapability('measure_temperature')) {
-      this.registerCapability('measure_temperature', 513, {
+      this.registerCapability('measure_temperature', CLUSTER.THERMOSTAT, {
         endpoint: 1,
         getOpts: {
           getOnStart: true

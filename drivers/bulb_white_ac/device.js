@@ -89,7 +89,7 @@ class BulbWhiteAcDevice extends ZigBeeDevice {
     if (this.hasCapability('onoff')) {
       try {
 // TODO: Consider debouncing capability updates for better performance
-        this.registerCapability('onoff', 6, {
+        this.registerCapability('onoff', CLUSTER.ON_OFF, {
       get: CLUSTER.ON_OFF,
       report: CLUSTER.ON_OFF,
       set: 'toggle',
@@ -104,7 +104,7 @@ class BulbWhiteAcDevice extends ZigBeeDevice {
     // dim
     if (this.hasCapability('dim')) {
       try {
-        this.registerCapability('dim', 8, {
+        this.registerCapability('dim', CLUSTER.LEVEL_CONTROL, {
       get: 'currentLevel',
       report: 'currentLevel',
       set: 'moveToLevelWithOnOff',
