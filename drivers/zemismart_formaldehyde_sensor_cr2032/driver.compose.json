@@ -1,0 +1,365 @@
+{
+  "name": {
+    "en": "Formaldehyde Sensor (Battery) (CR2032)"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "alarm_motion",
+    "measure_luminance",
+    "measure_battery"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_01gpyda5",
+      "_TZ3000_0dumfk2z",
+      "_TZ3000_0ghwhypc",
+      "_TZ3000_0ht8dnxj",
+      "_TZ3000_0s1izerx",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_4uuaja4a",
+      "_TZ3000_fllyghyj",
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_mcxw5ehu",
+      "_TZ3000_mmtwjmaq",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_tk3s5tyg",
+      "_TZE200_81isopgh",
+      "_TZE200_bjawzodf",
+      "_TZE200_cwbvmsar",
+      "_TZE200_dwcarsat",
+      "_TZE200_m9skfctm",
+      "_TZE200_ryfmq5rl",
+      "_TZ3000_1dd0d5yi",
+      "_TZ3000_2mbfxlzr",
+      "_TZ3000_46t1rvdu",
+      "_TZ3000_4rbqgcuv",
+      "_TZ3000_5e2f3n2h",
+      "_TZ3000_8nkb7mof",
+      "_TZ3000_9hpxg80k",
+      "_TZ3000_aaifmpuq",
+      "_TZ3000_ali1q8p0",
+      "_TZ3000_bffkdmp8",
+      "_TZ3000_bn4t9du1",
+      "_TZ3000_cehuw1lw",
+      "_TZ3000_cfnprab5",
+      "_TZ3000_cphmq0q7",
+      "_TZ3000_cymsnfvf",
+      "_TZ3000_ddcqbtgs",
+      "_TZ3000_dfgbtub0",
+      "_TZ3000_dlhhrhs8",
+      "_TZ3000_dpo1ysak",
+      "_TZ3000_dziaict4",
+      "GE",
+      "Sengled",
+      "_TZE200_locansqn",
+      "_TZE200_bq5c8xfe",
+      "_TZ3000_ywagc4rj"
+    ],
+    "productId": [
+      "TS0001",
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS011F",
+      "TS0121",
+      "TS0201",
+      "TS0202",
+      "TS0203",
+      "TS0204",
+      "TS0205",
+      "TS0207",
+      "TS0216",
+      "TS0601",
+      "3130",
+      "3210-L",
+      "3320-L",
+      "3323-G",
+      "3420",
+      "3450-L",
+      "3326-L",
+      "3460-L",
+      "iL07_1",
+      "Jasco Products",
+      "SYLVANIA",
+      "LEDVANCE",
+      "CentraLite",
+      "Iris",
+      "Lowe's"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1024,
+          1030,
+          1280,
+          61184
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press the pairing button on your device to start pairing.\n\nIf your device does not have a pairing button, check the device manual for pairing instructions."
+      }
+    }
+  },
+  "images": {
+    "large": "drivers/formaldehyde_sensor_battery/assets/images/large.png",
+    "small": "drivers/formaldehyde_sensor_battery/assets/images/small.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature"
+      },
+      "units": {
+        "en": "°C"
+      }
+    },
+    "alarm_motion": {
+      "title": {
+        "en": "Motion"
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "id": "zemismart_formaldehyde_sensor_cr2032",
+  "settings": [
+    {
+      "type": "dropdown",
+      "id": "debug_level",
+      "value": "INFO",
+      "label": {
+        "en": "Debug Level",
+        "nl": "Debug Niveau",
+        "de": "Debug-Ebene",
+        "fr": "Niveau de Debug",
+        "it": "Livello Debug",
+        "sv": "Felsökningsnivå",
+        "no": "Feilsøkingsnivå",
+        "es": "Nivel de Depuración",
+        "da": "Fejlsøgningsniveau"
+      },
+      "hint": {
+        "en": "Set logging verbosity. TRACE is very detailed, ERROR shows only critical issues.",
+        "nl": "Stel logging verbositeit in. TRACE is zeer gedetailleerd, ERROR toont alleen kritieke problemen.",
+        "de": "Protokollierungsstufe festlegen. TRACE ist sehr detailliert, ERROR zeigt nur kritische Probleme.",
+        "fr": "Définir la verbosité des logs. TRACE est très détaillé, ERROR montre uniquement les problèmes critiques.",
+        "it": "Imposta verbosità logging. TRACE è molto dettagliato, ERROR mostra solo problemi critici.",
+        "sv": "Ställ in loggningsnivå. TRACE är mycket detaljerad, ERROR visar bara kritiska problem.",
+        "no": "Angi loggingsnivå. TRACE er svært detaljert, ERROR viser bare kritiske problemer.",
+        "es": "Establecer nivel de registro. TRACE es muy detallado, ERROR muestra solo problemas críticos.",
+        "da": "Indstil logningsniveau. TRACE er meget detaljeret, ERROR viser kun kritiske problemer."
+      },
+      "values": [
+        {
+          "id": "TRACE",
+          "label": {
+            "en": "TRACE (Very Verbose)",
+            "nl": "TRACE (Zeer Uitgebreid)",
+            "de": "TRACE (Sehr Ausführlich)",
+            "fr": "TRACE (Très Verbeux)",
+            "it": "TRACE (Molto Verboso)",
+            "sv": "TRACE (Mycket Utförlig)",
+            "no": "TRACE (Veldig Detaljert)",
+            "es": "TRACE (Muy Detallado)",
+            "da": "TRACE (Meget Detaljeret)"
+          }
+        },
+        {
+          "id": "DEBUG",
+          "label": {
+            "en": "DEBUG (Verbose)",
+            "nl": "DEBUG (Uitgebreid)",
+            "de": "DEBUG (Ausführlich)",
+            "fr": "DEBUG (Verbeux)",
+            "it": "DEBUG (Verboso)",
+            "sv": "DEBUG (Utförlig)",
+            "no": "DEBUG (Detaljert)",
+            "es": "DEBUG (Detallado)",
+            "da": "DEBUG (Detaljeret)"
+          }
+        },
+        {
+          "id": "INFO",
+          "label": {
+            "en": "INFO (Normal)",
+            "nl": "INFO (Normaal)",
+            "de": "INFO (Normal)",
+            "fr": "INFO (Normal)",
+            "it": "INFO (Normale)",
+            "sv": "INFO (Normal)",
+            "no": "INFO (Normal)",
+            "es": "INFO (Normal)",
+            "da": "INFO (Normal)"
+          }
+        },
+        {
+          "id": "WARN",
+          "label": {
+            "en": "WARN (Warnings Only)",
+            "nl": "WARN (Alleen Waarschuwingen)",
+            "de": "WARN (Nur Warnungen)",
+            "fr": "WARN (Avertissements Uniquement)",
+            "it": "WARN (Solo Avvisi)",
+            "sv": "WARN (Endast Varningar)",
+            "no": "WARN (Bare Advarsler)",
+            "es": "WARN (Solo Advertencias)",
+            "da": "WARN (Kun Advarsler)"
+          }
+        },
+        {
+          "id": "ERROR",
+          "label": {
+            "en": "ERROR (Errors Only)",
+            "nl": "ERROR (Alleen Fouten)",
+            "de": "ERROR (Nur Fehler)",
+            "fr": "ERROR (Erreurs Uniquement)",
+            "it": "ERROR (Solo Errori)",
+            "sv": "ERROR (Endast Fel)",
+            "no": "ERROR (Bare Feil)",
+            "es": "ERROR (Solo Errores)",
+            "da": "ERROR (Kun Fejl)"
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "SDK3 Advanced Settings",
+        "fr": "Paramètres Avancés SDK3"
+      },
+      "children": [
+        {
+          "id": "motion_timeout",
+          "type": "number",
+          "label": "Motion Auto-Reset Timeout (s)",
+          "value": 60,
+          "min": 5,
+          "max": 600
+        },
+        {
+          "id": "enable_motion_logging",
+          "type": "checkbox",
+          "label": "Enable Motion Event Logging",
+          "value": false
+        },
+        {
+          "id": "temperature_calibration",
+          "type": "number",
+          "label": "Temperature Calibration (°C)",
+          "value": 0,
+          "min": -9,
+          "max": 9
+        },
+        {
+          "id": "temperature_threshold",
+          "type": "number",
+          "label": "Temperature Threshold (°C)",
+          "value": 25,
+          "min": 0,
+          "max": 50
+        },
+        {
+          "id": "battery_low_threshold",
+          "type": "number",
+          "label": "Low Battery Threshold (%)",
+          "value": 20,
+          "min": 5,
+          "max": 50
+        },
+        {
+          "id": "battery_notification",
+          "type": "checkbox",
+          "label": "Enable Battery Notifications",
+          "value": true
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Battery Management",
+        "fr": "Gestion Batterie"
+      },
+      "children": [
+        {
+          "id": "low_battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low battery alert threshold",
+            "fr": "Seuil alerte batterie faible"
+          },
+          "hint": {
+            "en": "Alert when battery drops below this level",
+            "fr": "Alerte quand batterie descend sous ce niveau"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50,
+          "units": "%"
+        },
+        {
+          "id": "battery_reporting_interval",
+          "type": "number",
+          "label": {
+            "en": "Battery reporting interval",
+            "fr": "Intervalle rapport batterie"
+          },
+          "hint": {
+            "en": "How often to check battery level (minutes)",
+            "fr": "Fréquence vérification batterie (minutes)"
+          },
+          "value": 60,
+          "min": 15,
+          "max": 1440,
+          "units": "min"
+        }
+      ]
+    }
+  ],
+  "learnmode": {
+    "image": "./assets/learnmode.svg",
+    "instruction": {
+      "en": "Press and hold the reset button for 5 seconds until the LED blinks",
+      "fr": "Appuyez et maintenez le bouton reset pendant 5 secondes jusqu'à ce que la LED clignote"
+    }
+  }
+}
