@@ -75,11 +75,11 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
     try {
       await this.configureAttributeReporting([{
         endpointId: 1,
-        cluster: 'genPowerCfg',
+        cluster: 1,  // FIXED: Was 'genPowerCfg', must be numeric for SDK3
         attributeName: 'batteryPercentageRemaining',
         minInterval: 3600,
         maxInterval: 86400,
-        minChange: 10
+        minChange: 2  // FIXED: Minimum 2 for battery (0-200 scale)
       }]);
       this.log('Battery reporting configured');
     } catch (err) {
@@ -115,63 +115,15 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
       }
     }, 5000);
     
-    // Regular battery polling with exponential backoff on errors
-    let pollFailures = 0;
-    const maxPollFailures = 5;
-    
-    this.registerPollInterval(async () => {
-      try {
-        const battery = await this.zclNode.endpoints[1].clusters.powerConfiguration.readAttributes(['batteryPercentageRemaining']);
-        
-        if (battery && battery.batteryPercentageRemaining !== undefined) {
-          const percentage = Math.round(battery.batteryPercentageRemaining / 2);
-          await this.setCapabilityValue('measure_battery', percentage);
-          this.log('Battery polled:', percentage + '%');
-          
-          // Reset failure counter on success
-          pollFailures = 0;
-          
-          // Low battery alert
-          if (percentage <= 20 && percentage > 10) {
-            this.log('⚠️  Low battery warning:', percentage + '%');
-            await this.homey.notifications.createNotification({
-              excerpt: `${this.getName()} battery low (${percentage}%)`
-            }).catch(() => {});
-          }
-          
-          // Critical battery alert
-          if (percentage <= 10) {
-            this.log('🔴 Critical battery:', percentage + '%');
-            await this.homey.notifications.createNotification({
-              excerpt: `${this.getName()} battery critical (${percentage}%) - replace soon!`
-            }).catch(() => {});
-          }
-        }
-      } catch (err) {
-        pollFailures++;
-        this.error(`Battery poll failed (${pollFailures}/${maxPollFailures}):`, err.message);
-        
-        // Stop polling after max failures to preserve battery
-        if (pollFailures >= maxPollFailures) {
-          this.log('Max poll failures reached, reducing poll frequency');
-          // Polling will continue but less frequently
-        }
-      }
-    }, 300000);
+    // REMOVED registerPollInterval - doesn't exist in SDK3
+    // Battery will report via configureAttributeReporting above
     // Force initial read après pairing (résout données non visibles)
     setTimeout(() => {
       this.pollAttributes().catch(err => this.error('Initial poll failed:', err));
     }, 5000);
 
-    // Poll attributes régulièrement pour assurer visibilité données
-    this.registerPollInterval(async () => {
-      try {
-        // Force read de tous les attributes critiques
-        await this.pollAttributes();
-      } catch (err) {
-        this.error('Poll failed:', err);
-      }
-    }, 300000); // 5 minutes
+    // REMOVED registerPollInterval - doesn't exist in SDK3
+    // Sensors will report via configureAttributeReporting
   
     this.log('motion_temp_humidity_illumination_sensor device initialized');
     
