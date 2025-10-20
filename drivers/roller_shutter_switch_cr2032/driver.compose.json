@@ -1,6 +1,6 @@
 {
   "name": {
-    "en": "Roller Shutter Switch (CR2032)"
+    "en": "Roller Shutter Switch (CR2032) (CR2032/AAA)"
   },
   "class": "other",
   "capabilities": [
@@ -138,6 +138,43 @@
     "zigbee"
   ],
   "settings": [
+    {
+      "id": "battery_type",
+      "type": "dropdown",
+      "label": {
+        "en": "Battery Type",
+        "fr": "Type de batterie",
+        "nl": "Batterijtype",
+        "de": "Batterietyp"
+      },
+      "hint": {
+        "en": "Select the type of battery used in this device for accurate battery level calculation",
+        "fr": "Sélectionnez le type de batterie utilisé pour un calcul précis du niveau",
+        "nl": "Selecteer het type batterij voor nauwkeurige niveauberekening",
+        "de": "Wählen Sie den Batterietyp für genaue Füllstandsberechnung"
+      },
+      "value": "CR2032",
+      "values": [
+        {
+          "id": "CR2032",
+          "label": {
+            "en": "CR2032 (3V Button Cell)",
+            "fr": "CR2032 (3V Button Cell)",
+            "nl": "CR2032 (3V Button Cell)",
+            "de": "CR2032 (3V Button Cell)"
+          }
+        },
+        {
+          "id": "AAA",
+          "label": {
+            "en": "AAA (1.5V × 2 = 3V)",
+            "fr": "AAA (1.5V × 2 = 3V)",
+            "nl": "AAA (1.5V × 2 = 3V)",
+            "de": "AAA (1.5V × 2 = 3V)"
+          }
+        }
+      ]
+    },
     {
       "type": "dropdown",
       "id": "debug_level",
