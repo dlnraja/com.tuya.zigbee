@@ -5728,10 +5728,9 @@
     "model_count": 0,
     "capabilities": [
       "alarm_motion",
-      "measure_battery",
-      "presence_timeout"
+      "measure_battery"
     ],
-    "power_source": "ac",
+    "power_source": "battery",
     "clusters": []
   },
   {
@@ -5745,8 +5744,7 @@
     "manufacturer_count": 1,
     "model_count": 0,
     "capabilities": [
-      "alarm_motion",
-      "presence_timeout"
+      "alarm_motion"
     ],
     "power_source": "ac",
     "clusters": []
@@ -6652,7 +6650,7 @@
     "capabilities": [
       "measure_battery"
     ],
-    "power_source": "ac",
+    "power_source": "battery",
     "clusters": []
   },
   {
@@ -7730,7 +7728,7 @@
     "capabilities": [
       "measure_battery"
     ],
-    "power_source": "ac",
+    "power_source": "battery",
     "clusters": []
   },
   {
@@ -10926,7 +10924,7 @@
     "capabilities": [
       "measure_battery"
     ],
-    "power_source": "ac",
+    "power_source": "battery",
     "clusters": []
   },
   {
