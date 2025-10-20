@@ -75,7 +75,7 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
     try {
       await this.configureAttributeReporting([{
         endpointId: 1,
-        cluster: 1,  // FIXED: Was 'genPowerCfg', must be numeric for SDK3
+        cluster: CLUSTER.POWER_CONFIGURATION,  // SDK3: Use CLUSTER constant
         attributeName: 'batteryPercentageRemaining',
         minInterval: 3600,
         maxInterval: 86400,
@@ -86,34 +86,8 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
       this.log('Battery report config failed (non-critical):', err.message);
     }
     
-    // Register battery capability
-// TODO: Consider debouncing capability updates for better performance
-    this.registerCapability('measure_battery', 1, {
-      endpoint: 1,
-      get: 'batteryPercentageRemaining',
-      report: 'batteryPercentageRemaining',
-      reportParser: (value) => {
-        if (value === null || value === undefined) return null;
-        // Convert from 0-200 scale to 0-100%
-        const percentage = Math.round(value / 2);
-        return Math.max(0, Math.min(100, percentage));
-      },
-      getParser: (value) => {
-        if (value === null || value === undefined) return null;
-        const percentage = Math.round(value / 2);
-        return Math.max(0, Math.min(100, percentage));
-      }
-    });
-    
-    // Initial battery poll after pairing
-    setTimeout(async () => {
-      try {
-        await this.pollAttributes();
-        this.log('Initial battery poll completed');
-      } catch (err) {
-        this.error('Initial battery poll failed:', err);
-      }
-    }, 5000);
+    // Battery capability will be registered later with other sensors (line ~207)
+    // REMOVED duplicate registration here to fix "expected_cluster_id_number" error
     
     // REMOVED registerPollInterval - doesn't exist in SDK3
     // Battery will report via configureAttributeReporting above
@@ -145,7 +119,7 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
     this.log('Registering standard Zigbee clusters...');
       
       // Temperature (cluster 1026)
-      this.registerCapability('measure_temperature', 1026, {
+      this.registerCapability('measure_temperature', CLUSTER.TEMPERATURE_MEASUREMENT, {
         get: 'measuredValue',
         report: 'measuredValue',
         getOpts: {
@@ -159,7 +133,7 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
       this.log('✅ Temperature cluster registered');
       
       // Humidity (cluster 1029)
-      this.registerCapability('measure_humidity', 1029, {
+      this.registerCapability('measure_humidity', CLUSTER.RELATIVE_HUMIDITY_MEASUREMENT, {
         get: 'measuredValue',
         report: 'measuredValue',
         getOpts: {
@@ -173,7 +147,7 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
       this.log('✅ Humidity cluster registered');
       
       // Illuminance (cluster 1024)
-      this.registerCapability('measure_luminance', 1024, {
+      this.registerCapability('measure_luminance', CLUSTER.ILLUMINANCE_MEASUREMENT, {
         get: 'measuredValue',
         report: 'measuredValue',
         getOpts: {
@@ -204,7 +178,7 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
       }
       
       // Battery
-      this.registerCapability('measure_battery', 1, {
+      this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
         get: 'batteryPercentageRemaining',
         report: 'batteryPercentageRemaining',
         getOpts: {
