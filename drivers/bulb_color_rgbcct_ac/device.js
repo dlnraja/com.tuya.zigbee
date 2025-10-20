@@ -96,7 +96,7 @@ class BulbColorRgbcctAcDevice extends ZigBeeDevice {
     if (this.hasCapability('onoff')) {
       try {
 // TODO: Consider debouncing capability updates for better performance
-        this.registerCapability('onoff', 6, {
+        this.registerCapability('onoff', CLUSTER.ON_OFF, {
           get: CLUSTER.ON_OFF,
           report: CLUSTER.ON_OFF,
           set: 'toggle'
@@ -110,7 +110,7 @@ class BulbColorRgbcctAcDevice extends ZigBeeDevice {
     // dim capability
     if (this.hasCapability('dim')) {
       try {
-        this.registerCapability('dim', 8, {
+        this.registerCapability('dim', CLUSTER.LEVEL_CONTROL, {
           get: 'currentLevel',
           report: 'currentLevel',
           set: 'moveToLevelWithOnOff'
@@ -124,7 +124,7 @@ class BulbColorRgbcctAcDevice extends ZigBeeDevice {
     // light_hue capability
     if (this.hasCapability('light_hue')) {
       try {
-        this.registerCapability('light_hue', 768, {
+        this.registerCapability('light_hue', CLUSTER.COLOR_CONTROL, {
           get: 'currentHue',
           report: 'currentHue',
           set: 'moveToHue'
@@ -138,7 +138,7 @@ class BulbColorRgbcctAcDevice extends ZigBeeDevice {
     // light_saturation capability
     if (this.hasCapability('light_saturation')) {
       try {
-        this.registerCapability('light_saturation', 768, {
+        this.registerCapability('light_saturation', CLUSTER.COLOR_CONTROL, {
           get: 'currentSaturation',
           report: 'currentSaturation',
           set: 'moveToSaturation'
@@ -152,7 +152,7 @@ class BulbColorRgbcctAcDevice extends ZigBeeDevice {
     // light_temperature capability
     if (this.hasCapability('light_temperature')) {
       try {
-        this.registerCapability('light_temperature', 768, {
+        this.registerCapability('light_temperature', CLUSTER.COLOR_CONTROL, {
           get: 'colorTemperature',
           report: 'colorTemperature',
           set: 'moveToColorTemp'
@@ -166,7 +166,7 @@ class BulbColorRgbcctAcDevice extends ZigBeeDevice {
     // light_mode capability
     if (this.hasCapability('light_mode')) {
       try {
-        this.registerCapability('light_mode', 768, {
+        this.registerCapability('light_mode', CLUSTER.COLOR_CONTROL, {
           get: 'colorMode',
           report: 'colorMode'
         });

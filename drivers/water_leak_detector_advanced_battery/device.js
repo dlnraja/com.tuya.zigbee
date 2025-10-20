@@ -30,7 +30,7 @@ class WaterLeakDetectorAdvancedDevice extends ZigBeeDevice {
     
     // Register battery capability
 // TODO: Consider debouncing capability updates for better performance
-    this.registerCapability('measure_battery', 1, {
+    this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
       endpoint: 1,
       get: 'batteryPercentageRemaining',
       report: 'batteryPercentageRemaining',
@@ -118,7 +118,7 @@ class WaterLeakDetectorAdvancedDevice extends ZigBeeDevice {
 
     // Water alarm capability
     if (this.hasCapability('alarm_water')) {
-      this.registerCapability('alarm_water', 1280, {
+      this.registerCapability('alarm_water', CLUSTER.IAS_ZONE, {
         get: 'zoneStatus',
         report: 'zoneStatus',
         reportParser: value => (value & 1) === 1
@@ -132,7 +132,7 @@ class WaterLeakDetectorAdvancedDevice extends ZigBeeDevice {
 
     // Battery capabilities
     if (this.hasCapability('alarm_battery')) {
-      this.registerCapability('alarm_battery', 1, {
+      this.registerCapability('alarm_battery', CLUSTER.POWER_CONFIGURATION, {
         get: 'batteryPercentageRemaining',
         report: 'batteryPercentageRemaining',
         reportParser: value => value < 20
@@ -140,7 +140,7 @@ class WaterLeakDetectorAdvancedDevice extends ZigBeeDevice {
     }
 
     if (this.hasCapability('measure_battery')) {
-      this.registerCapability('measure_battery', 1, {
+      this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
         get: 'batteryPercentageRemaining',
         report: 'batteryPercentageRemaining', 
         reportParser: value => Math.max(0, Math.min(100, value))

@@ -49,7 +49,7 @@ class SmartDimmerModule1GangDevice extends ZigBeeDevice {
     // Register onoff capability
     if (this.hasCapability('onoff')) {
 // TODO: Consider debouncing capability updates for better performance
-      this.registerCapability('onoff', 6, {
+      this.registerCapability('onoff', CLUSTER.ON_OFF, {
         set: 'setOn',
         setParser: this._onOffSetParser.bind(this),
         get: CLUSTER.ON_OFF,
@@ -60,7 +60,7 @@ class SmartDimmerModule1GangDevice extends ZigBeeDevice {
 
     // Register dim capability
     if (this.hasCapability('dim')) {
-      this.registerCapability('dim', 8, {
+      this.registerCapability('dim', CLUSTER.LEVEL_CONTROL, {
         set: 'moveToLevelWithOnOff',
         setParser: this._dimSetParser.bind(this),
         get: 'currentLevel',

@@ -30,7 +30,7 @@ class MotionSensorDevice extends ZigBeeDevice {
     
     // Register battery capability
 // TODO: Consider debouncing capability updates for better performance
-    this.registerCapability('measure_battery', 1, {
+    this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
       endpoint: 1,
       get: 'batteryPercentageRemaining',
       report: 'batteryPercentageRemaining',
@@ -169,7 +169,7 @@ class MotionSensorDevice extends ZigBeeDevice {
     }
     // Register battery capability
     if (this.hasCapability('measure_battery')) {
-      this.registerCapability('measure_battery', 1, {
+      this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
         get: 'batteryPercentageRemaining',
         report: 'batteryPercentageRemaining',
         reportParser: value => fromZclBatteryPercentageRemaining(value),

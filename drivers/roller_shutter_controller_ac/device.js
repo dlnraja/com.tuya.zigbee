@@ -39,7 +39,7 @@ class RollerShutterControllerDevice extends ZigBeeDevice {
     
     // Register battery capability
 // TODO: Consider debouncing capability updates for better performance
-    this.registerCapability('measure_battery', 1, {
+    this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
       endpoint: 1,
       get: 'batteryPercentageRemaining',
       report: 'batteryPercentageRemaining',
@@ -127,7 +127,7 @@ class RollerShutterControllerDevice extends ZigBeeDevice {
     
     // Register capabilities
     if (this.hasCapability('windowcoverings_set')) {
-      this.registerCapability('windowcoverings_set', 8, {
+      this.registerCapability('windowcoverings_set', CLUSTER.LEVEL_CONTROL, {
         set: 'moveToLevelWithOnOff',
         setParser(value) {
           return {
@@ -144,7 +144,7 @@ class RollerShutterControllerDevice extends ZigBeeDevice {
 
     // Battery reporting
     if (this.hasCapability('alarm_battery')) {
-      this.registerCapability('alarm_battery', 1, {
+      this.registerCapability('alarm_battery', CLUSTER.POWER_CONFIGURATION, {
         get: 'batteryPercentageRemaining',
         report: 'batteryPercentageRemaining',
         getOpts: {
