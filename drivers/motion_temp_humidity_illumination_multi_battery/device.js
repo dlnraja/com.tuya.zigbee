@@ -21,10 +21,28 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
       return;
     }
     
-    // Listen for zone status changes
+    // Listen for zone status changes (attribute reports)
     iasZoneCluster.on('attr.zoneStatus', (value) => {
       const alarmActive = (value & 0x01) === 0x01; // Bit 0 = alarm1 (motion)
-      this.log('Motion detected:', alarmActive);
+      this.log('🎯 Motion detected (attr):', alarmActive);
+      this.setCapabilityValue('alarm_motion', alarmActive).catch(this.error);
+      
+      // Auto-reset après 60 secondes
+      if (alarmActive && !this._motionTimeout) {
+        this._motionTimeout = setTimeout(() => {
+          this.log('Auto-clearing motion after 60s');
+          this.setCapabilityValue('alarm_motion', false).catch(this.error);
+          this._motionTimeout = null;
+        }, 60000);
+      }
+    });
+    
+    // CRITICAL: Listen for zone status change notifications (command-based)
+    // Some devices send commands instead of attribute reports
+    iasZoneCluster.on('zoneStatusChangeNotification', async (payload) => {
+      this.log('📨 Motion notification received:', payload);
+      const alarmActive = (payload.zoneStatus & 0x01) === 0x01;
+      this.log('🎯 Motion detected (notification):', alarmActive);
       this.setCapabilityValue('alarm_motion', alarmActive).catch(this.error);
       
       // Auto-reset après 60 secondes
@@ -78,7 +96,7 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
         cluster: CLUSTER.POWER_CONFIGURATION,  // SDK3: Use CLUSTER constant
         attributeName: 'batteryPercentageRemaining',
         minInterval: 3600,
-        maxInterval: 86400,
+        maxInterval: 65535,  // MAX uint16 (18.2h) - was 86400 (24h) causing range error
         minChange: 2  // FIXED: Minimum 2 for battery (0-200 scale)
       }]);
       this.log('Battery reporting configured');
