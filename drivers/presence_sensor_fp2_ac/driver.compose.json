@@ -6,8 +6,7 @@
   },
   "class": "sensor",
   "capabilities": [
-    "alarm_motion",
-    "presence_timeout"
+    "alarm_motion"
   ],
   "platforms": [
     "local"

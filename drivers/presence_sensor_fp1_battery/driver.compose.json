@@ -7,8 +7,7 @@
   "class": "sensor",
   "capabilities": [
     "alarm_motion",
-    "measure_battery",
-    "presence_timeout"
+    "measure_battery"
   ],
   "platforms": [
     "local"
@@ -44,5 +43,10 @@
         "fr": "Suivre les instructions d'appairage"
       }
     }
+  },
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
   }
 }
