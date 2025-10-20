@@ -700,6 +700,50 @@ Previous code sent Zigbee command during `onNodeInit()`, but Zigbee subsystem wa
 
 # Changelog
 
+## [4.0.0] - 2025-10-20 - BREAKING CHANGE
+
+### ⚠️ BREAKING CHANGES
+- **ALL DEVICES MUST BE RE-PAIRED**
+- Complete driver reorganization by brand and battery type
+- 190 drivers → 300+ drivers (multi-battery separation)
+
+### Added
+- Brand prefixes: `tuya_`, `aqara_`, `ikea_`, `philips_`, etc.
+- Battery type suffixes: `_cr2032`, `_aaa`, `_aa`, `_cr2450`, etc.
+- 128 new drivers (multi-battery variants)
+
+### Changed
+- 109 drivers renamed with new nomenclature
+- Driver naming: `{brand}_{category}_{type}_{battery}`
+- All flow cards updated with new driver IDs
+
+### Migration
+See [MIGRATION_GUIDE_v4.md](docs/MIGRATION_GUIDE_v4.md) for details.
+
+---
+
+## [4.0.0] - 2025-10-20 - BREAKING CHANGE
+
+### ⚠️ BREAKING CHANGES
+- **ALL DEVICES MUST BE RE-PAIRED**
+- Complete driver reorganization by brand and battery type
+- 190 drivers → 300+ drivers (multi-battery separation)
+
+### Added
+- Brand prefixes: `tuya_`, `aqara_`, `ikea_`, `philips_`, etc.
+- Battery type suffixes: `_cr2032`, `_aaa`, `_aa`, `_cr2450`, etc.
+- 128 new drivers (multi-battery variants)
+
+### Changed
+- 126 drivers renamed with new nomenclature
+- Driver naming: `{brand}_{category}_{type}_{battery}`
+- All flow cards updated with new driver IDs
+
+### Migration
+See [MIGRATION_GUIDE_v4.md](docs/MIGRATION_GUIDE_v4.md) for details.
+
+---
+
 ## [Unreleased]
 
 ### 🎉 MASSIVE EXPANSION - October 19, 2025

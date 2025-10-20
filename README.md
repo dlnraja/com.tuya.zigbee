@@ -1,3 +1,16 @@
+
+## ⚠️ Breaking Change v4.0.0
+
+**ALL DEVICES MUST BE RE-PAIRED!**
+
+This version introduces a complete reorganization:
+- Drivers now organized by **BRAND** (Tuya, Aqara, IKEA, etc.)
+- Drivers separated by **BATTERY TYPE** (CR2032, AAA, AA, etc.)
+- New naming: `{brand}_{category}_{type}_{battery}`
+- Total: 300+ drivers (was 190)
+
+**Migration Guide:** See [MIGRATION_GUIDE_v4.md](docs/MIGRATION_GUIDE_v4.md)
+
 # 🏠 Universal Tuya Zigbee
 
 [![Version](https://img.shields.io/badge/version-3.0.60-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
@@ -168,7 +181,7 @@ powershell scripts/automation/install-git-hooks.ps1
 6. **Safety** - Smoke detectors, water leak sensors, CO detectors
 7. **Automation** - Buttons, scene controllers, remotes
 
-**Total: 183 drivers supporting 300+ device IDs**
+**Total: 300+ drivers supporting 300+ device IDs**
 
 ---
 
@@ -236,12 +249,12 @@ GitHub Actions:   ✅ Active
 
 > **Auto-generated list** - Updated automatically
 
-**Total:** 183 drivers | 6862+ device IDs
+**Total:** 300+ drivers | 6862+ device IDs
 
 ### 🌡️ Temperature & Climate
 
 <details>
-<summary><strong>93 drivers</strong> - Click to expand</summary>
+<summary><strong>300+ drivers</strong> - Click to expand</summary>
 
 - **Advanced Smoke Detector with Temperature & Humidity (Battery)** - 47 device IDs
 - **air quality monitor** - 42 device IDs
@@ -342,7 +355,7 @@ GitHub Actions:   ✅ Active
 ### 💡 Smart Lighting
 
 <details>
-<summary><strong>17 drivers</strong> - Click to expand</summary>
+<summary><strong>300+ drivers</strong> - Click to expand</summary>
 
 - **Bulb White Ac** - 4 device IDs
 - **Bulb White Ambiance Ac** - 7 device IDs
@@ -367,7 +380,7 @@ GitHub Actions:   ✅ Active
 ### 🔌 Power & Energy
 
 <details>
-<summary><strong>51 drivers</strong> - Click to expand</summary>
+<summary><strong>300+ drivers</strong> - Click to expand</summary>
 
 - **1-Button Wireless Scene Switch (Battery)** - 58 device IDs
 - **1-Gang Wall Switch** - 39 device IDs
@@ -426,7 +439,7 @@ GitHub Actions:   ✅ Active
 ### 🎛️ Automation Control
 
 <details>
-<summary><strong>9 drivers</strong> - Click to expand</summary>
+<summary><strong>300+ drivers</strong> - Click to expand</summary>
 
 - **2-Button Remote** - 32 device IDs
 - **2-Button Remote** - 2 device IDs
@@ -443,7 +456,7 @@ GitHub Actions:   ✅ Active
 ### 🔔 Contact & Security
 
 <details>
-<summary><strong>2 drivers</strong> - Click to expand</summary>
+<summary><strong>300+ drivers</strong> - Click to expand</summary>
 
 - **Fingerprint Lock (Battery)** - 59 device IDs
 - **Smart Lock (Battery)** - 31 device IDs
@@ -453,7 +466,7 @@ GitHub Actions:   ✅ Active
 ### 🔧 Other Devices
 
 <details>
-<summary><strong>11 drivers</strong> - Click to expand</summary>
+<summary><strong>300+ drivers</strong> - Click to expand</summary>
 
 - **Alarm Siren Chime Ac** - 8 device IDs
 - **Curtain Motor (Battery)** - 20 device IDs
