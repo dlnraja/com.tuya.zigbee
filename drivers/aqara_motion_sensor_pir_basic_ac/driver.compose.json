@@ -1,0 +1,44 @@
+{
+  "id": "aqara_motion_sensor_pir_basic_ac",
+  "name": {
+    "en": "Presence Sensor FP2 (AC)",
+    "fr": "Presence Sensor FP2 (AC)"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "lumi.motion.ac02"
+    ],
+    "productId": [],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          64704
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/learnmode.svg",
+      "instruction": {
+        "en": "Follow device pairing instructions",
+        "fr": "Suivre les instructions d'appairage"
+      }
+    }
+  }
+}

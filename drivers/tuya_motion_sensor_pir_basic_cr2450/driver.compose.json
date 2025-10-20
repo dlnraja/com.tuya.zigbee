@@ -1,0 +1,335 @@
+{
+  "id": "tuya_motion_sensor_pir_basic_cr2450",
+  "name": {
+    "en": "Motion Sensor PIR + Illuminance (CR2450)",
+    "fr": "Motion Sensor PIR + Illuminance (Battery)"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "measure_luminance",
+    "measure_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2450"
+    ]
+  },
+  "images": {
+    "small": "drivers/motion_sensor_illuminance_battery/assets/images/small.png",
+    "large": "drivers/motion_sensor_illuminance_battery/assets/images/large.png",
+    "xlarge": "drivers/motion_sensor_illuminance_battery/assets/images/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_mmtwjmaq",
+      "_TZ3000_kmh5qpmb",
+      "_TZE200_3towulqd",
+      "_TZE200_1ibpyhdc",
+      "_TZE200_bh3n6gk8",
+      "HOBEIAN",
+      "LUMI",
+      "Signify Netherlands B.V.",
+      "IKEA of Sweden",
+      "_TZ3000_mcxw5ehu",
+      "_TZE200_ar0slwnd",
+      "_TZE200_sfiy5tfs",
+      "_TZE200_mrf6vtua",
+      "_TZE204_mrf6vtua",
+      "_TZ3040_bb6xaihh",
+      "_TZE284_mrf6vtua",
+      "_TZE200_bh4n9cluk",
+      "_TZE204_qasjif9e",
+      "_TZE204_sooucan5",
+      "_TZE204_mtoaryre",
+      "_TZ3000_otvn3lne",
+      "_TZ3040_wqmtjsyk",
+      "_TZE204_ijxvkhd0",
+      "Philips",
+      "GE",
+      "Sengled"
+    ],
+    "productId": [
+      "RTCGQ11LM",
+      "SML001",
+      "E2494",
+      "ZM-P1",
+      "ZG-204ZL",
+      "TS0202",
+      "TS0601",
+      "SML002",
+      "SML003",
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS011F",
+      "TS0121",
+      "TS0201",
+      "TS0203",
+      "TS0204",
+      "TS0205",
+      "TS0207",
+      "TS0216",
+      "3130",
+      "3210-L",
+      "3320-L",
+      "3323-G",
+      "3420",
+      "3450-L",
+      "3326-L",
+      "3460-L",
+      "iL07_1",
+      "Jasco Products",
+      "SYLVANIA",
+      "LEDVANCE",
+      "CentraLite",
+      "Iris",
+      "Lowe's"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          1024,
+          1030,
+          1280
+        ],
+        "bindings": [
+          1,
+          1030,
+          1280
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/motion_sensor_illuminance_battery/assets/large.png",
+      "instruction": {
+        "en": "1. Insert fresh batteries (CR2450 recommended)\n2. Press the button (pinhole on side) with paperclip for 10 seconds\n3. LED will turn on then blink during pairing\n4. Wait for device to appear in Homey",
+        "fr": "1. Insérez des piles neuves (CR2450 recommandé)\n2. Appuyez sur le bouton (trou sur le côté) avec un trombone pendant 10 secondes\n3. La LED s'allume puis clignote pendant l'appairage\n4. Attendez que l'appareil apparaisse dans Homey",
+        "nl": "1. Plaats verse batterijen (CR2450 aanbevolen)\n2. Druk 10 seconden op de knop (gaatje aan de zijkant) met paperclip\n3. LED gaat aan en knippert tijdens koppelen\n4. Wacht tot apparaat verschijnt in Homey",
+        "de": "1. Frische Batterien einlegen (CR2450 empfohlen)\n2. Taste (Loch an der Seite) 10 Sekunden mit Büroklammer drücken\n3. LED leuchtet auf und blinkt beim Koppeln\n4. Warten bis Gerät in Homey erscheint"
+      }
+    }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilitiesOptions": {
+    "alarm_motion": {
+      "title": {
+        "en": "Motion"
+      }
+    }
+  },
+  "settings": [
+    {
+      "type": "dropdown",
+      "id": "debug_level",
+      "value": "INFO",
+      "label": {
+        "en": "Debug Level",
+        "nl": "Debug Niveau",
+        "de": "Debug-Ebene",
+        "fr": "Niveau de Debug",
+        "it": "Livello Debug",
+        "sv": "Felsökningsnivå",
+        "no": "Feilsøkingsnivå",
+        "es": "Nivel de Depuración",
+        "da": "Fejlsøgningsniveau"
+      },
+      "hint": {
+        "en": "Set logging verbosity. TRACE is very detailed, ERROR shows only critical issues.",
+        "nl": "Stel logging verbositeit in. TRACE is zeer gedetailleerd, ERROR toont alleen kritieke problemen.",
+        "de": "Protokollierungsstufe festlegen. TRACE ist sehr detailliert, ERROR zeigt nur kritische Probleme.",
+        "fr": "Définir la verbosité des logs. TRACE est très détaillé, ERROR montre uniquement les problèmes critiques.",
+        "it": "Imposta verbosità logging. TRACE è molto dettagliato, ERROR mostra solo problemi critici.",
+        "sv": "Ställ in loggningsnivå. TRACE är mycket detaljerad, ERROR visar bara kritiska problem.",
+        "no": "Angi loggingsnivå. TRACE er svært detaljert, ERROR viser bare kritiske problemer.",
+        "es": "Establecer nivel de registro. TRACE es muy detallado, ERROR muestra solo problemas críticos.",
+        "da": "Indstil logningsniveau. TRACE er meget detaljeret, ERROR viser kun kritiske problemer."
+      },
+      "values": [
+        {
+          "id": "TRACE",
+          "label": {
+            "en": "TRACE (Very Verbose)",
+            "nl": "TRACE (Zeer Uitgebreid)",
+            "de": "TRACE (Sehr Ausführlich)",
+            "fr": "TRACE (Très Verbeux)",
+            "it": "TRACE (Molto Verboso)",
+            "sv": "TRACE (Mycket Utförlig)",
+            "no": "TRACE (Veldig Detaljert)",
+            "es": "TRACE (Muy Detallado)",
+            "da": "TRACE (Meget Detaljeret)"
+          }
+        },
+        {
+          "id": "DEBUG",
+          "label": {
+            "en": "DEBUG (Verbose)",
+            "nl": "DEBUG (Uitgebreid)",
+            "de": "DEBUG (Ausführlich)",
+            "fr": "DEBUG (Verbeux)",
+            "it": "DEBUG (Verboso)",
+            "sv": "DEBUG (Utförlig)",
+            "no": "DEBUG (Detaljert)",
+            "es": "DEBUG (Detallado)",
+            "da": "DEBUG (Detaljeret)"
+          }
+        },
+        {
+          "id": "INFO",
+          "label": {
+            "en": "INFO (Normal)",
+            "nl": "INFO (Normaal)",
+            "de": "INFO (Normal)",
+            "fr": "INFO (Normal)",
+            "it": "INFO (Normale)",
+            "sv": "INFO (Normal)",
+            "no": "INFO (Normal)",
+            "es": "INFO (Normal)",
+            "da": "INFO (Normal)"
+          }
+        },
+        {
+          "id": "WARN",
+          "label": {
+            "en": "WARN (Warnings Only)",
+            "nl": "WARN (Alleen Waarschuwingen)",
+            "de": "WARN (Nur Warnungen)",
+            "fr": "WARN (Avertissements Uniquement)",
+            "it": "WARN (Solo Avvisi)",
+            "sv": "WARN (Endast Varningar)",
+            "no": "WARN (Bare Advarsler)",
+            "es": "WARN (Solo Advertencias)",
+            "da": "WARN (Kun Advarsler)"
+          }
+        },
+        {
+          "id": "ERROR",
+          "label": {
+            "en": "ERROR (Errors Only)",
+            "nl": "ERROR (Alleen Fouten)",
+            "de": "ERROR (Nur Fehler)",
+            "fr": "ERROR (Erreurs Uniquement)",
+            "it": "ERROR (Solo Errori)",
+            "sv": "ERROR (Endast Fel)",
+            "no": "ERROR (Bare Feil)",
+            "es": "ERROR (Solo Errores)",
+            "da": "ERROR (Kun Fejl)"
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "SDK3 Advanced Settings",
+        "fr": "Paramètres Avancés SDK3"
+      },
+      "children": [
+        {
+          "id": "motion_timeout",
+          "type": "number",
+          "label": "Motion Auto-Reset Timeout (s)",
+          "value": 60,
+          "min": 5,
+          "max": 600
+        },
+        {
+          "id": "enable_motion_logging",
+          "type": "checkbox",
+          "label": "Enable Motion Event Logging",
+          "value": false
+        },
+        {
+          "id": "battery_low_threshold",
+          "type": "number",
+          "label": "Low Battery Threshold (%)",
+          "value": 20,
+          "min": 5,
+          "max": 50
+        },
+        {
+          "id": "battery_notification",
+          "type": "checkbox",
+          "label": "Enable Battery Notifications",
+          "value": true
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Battery Management",
+        "fr": "Gestion Batterie"
+      },
+      "children": [
+        {
+          "id": "low_battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low battery alert threshold",
+            "fr": "Seuil alerte batterie faible"
+          },
+          "hint": {
+            "en": "Alert when battery drops below this level",
+            "fr": "Alerte quand batterie descend sous ce niveau"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50,
+          "units": "%"
+        },
+        {
+          "id": "battery_reporting_interval",
+          "type": "number",
+          "label": {
+            "en": "Battery reporting interval",
+            "fr": "Intervalle rapport batterie"
+          },
+          "hint": {
+            "en": "How often to check battery level (minutes)",
+            "fr": "Fréquence vérification batterie (minutes)"
+          },
+          "value": 60,
+          "min": 15,
+          "max": 1440,
+          "units": "min"
+        }
+      ]
+    },
+    {
+      "id": "motion_timeout",
+      "type": "number",
+      "label": {
+        "en": "Motion timeout (seconds)",
+        "fr": "Délai motion (secondes)"
+      },
+      "value": 30,
+      "min": 5,
+      "max": 300
+    }
+  ],
+  "learnmode": {
+    "image": "./assets/learnmode.svg",
+    "instruction": {
+      "en": "Press and hold the reset button for 5 seconds until the LED blinks",
+      "fr": "Appuyez et maintenez le bouton reset pendant 5 secondes jusqu'à ce que la LED clignote"
+    }
+  }
+}
