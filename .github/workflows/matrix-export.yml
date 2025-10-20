@@ -141,4 +141,28 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add matrix/
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update device matrix [skip ci]" && git push)
+          
+          # Check if there are changes
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          
+          # Commit changes
+          git commit -m "chore: update device matrix [skip ci]"
+          
+          # Push with retry logic (handles race conditions)
+          for i in {1..5}; do
+            if git push origin HEAD:master; then
+              echo "✅ Push successful"
+              break
+            else
+              echo "⚠️ Push failed (attempt $i/5), pulling and retrying..."
+              git pull --rebase origin master
+              if [ $i -eq 5 ]; then
+                echo "❌ Failed after 5 attempts"
+                exit 1
+              fi
+              sleep 5
+            fi
+          done
