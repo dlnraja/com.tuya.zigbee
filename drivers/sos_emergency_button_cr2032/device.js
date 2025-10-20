@@ -150,7 +150,7 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
     try {
       await this.configureAttributeReporting([{
         endpointId: 1,
-        cluster: 1,  // FIXED: Was 'genPowerCfg', must be numeric for SDK3
+        cluster: CLUSTER.POWER_CONFIGURATION,  // SDK3: Use CLUSTER constant
         attributeName: 'batteryPercentageRemaining',
         minInterval: 7200,
         maxInterval: 43200,  // Reduced from 172800 (2 days) to 12 hours
@@ -161,8 +161,8 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
       this.log('Battery report config failed (non-critical):', err.message);
     }
 
-    // Register battery capability with NUMERIC cluster ID
-    this.registerCapability('measure_battery', 1, {  // FIXED: Was 'genPowerCfg', now numeric 1
+    // Register battery capability using CLUSTER constant (SDK3 requirement)
+    this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
       endpoint: 1,
       get: 'batteryPercentageRemaining',
       report: 'batteryPercentageRemaining',
