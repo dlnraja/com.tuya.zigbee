@@ -46,7 +46,7 @@
   },
   {
     "driver_id": "air_quality_monitor_ac",
-    "name": "air quality monitor",
+    "name": "Air Quality Monitor (AC)",
     "class": "sensor",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -121,7 +121,7 @@
   },
   {
     "driver_id": "air_quality_monitor_pro_battery",
-    "name": "air quality monitor pro (Battery)",
+    "name": "Air Quality Monitor Pro (Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -199,7 +199,7 @@
   },
   {
     "driver_id": "alarm_siren_chime_ac",
-    "name": "Alarm Siren Chime Ac",
+    "name": "Alarm Siren & Chime (AC)",
     "class": "other",
     "manufacturers": [
       "Signify Netherlands B.V.",
@@ -246,7 +246,7 @@
   },
   {
     "driver_id": "bulb_color_rgbcct_ac",
-    "name": "Color & White Bulb",
+    "name": "Bulb Color RGB+CCT (AC)",
     "class": "light",
     "manufacturers": [
       "_TZ3000_riwp3k79",
@@ -361,7 +361,7 @@
   },
   {
     "driver_id": "bulb_white_ac",
-    "name": "Bulb White Ac",
+    "name": "Bulb White Basic (AC)",
     "class": "light",
     "manufacturers": [
       "Signify Netherlands B.V.",
@@ -456,7 +456,7 @@
   },
   {
     "driver_id": "bulb_white_ambiance_ac",
-    "name": "Bulb White Ambiance Ac",
+    "name": "Bulb White Ambiance (AC)",
     "class": "light",
     "manufacturers": [
       "Signify Netherlands B.V.",
@@ -1097,7 +1097,7 @@
   },
   {
     "driver_id": "comprehensive_air_monitor_ac",
-    "name": "Comprehensive Air Monitor",
+    "name": "Comprehensive Air Monitor (AC)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -1159,7 +1159,7 @@
   },
   {
     "driver_id": "contact_sensor_battery",
-    "name": "Contact Sensor Battery (Battery)",
+    "name": "Contact Sensor (Battery)",
     "class": "sensor",
     "manufacturers": [
       "IKEA of Sweden",
@@ -1229,7 +1229,7 @@
   },
   {
     "driver_id": "curtain_motor_ac",
-    "name": "Curtain Motor (Battery)",
+    "name": "Curtain Motor (AC)",
     "class": "other",
     "manufacturers": [
       "_TZ3000_qzjcsmar",
@@ -1358,7 +1358,7 @@
   },
   {
     "driver_id": "dimmer_ac",
-    "name": "Dimmer Switch",
+    "name": "Dimmer Module (AC)",
     "class": "light",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -1445,7 +1445,7 @@
   },
   {
     "driver_id": "dimmer_switch_1gang_ac",
-    "name": "Dimmer Switch 1-Gang AC",
+    "name": "1-Gang Dimmer Switch (AC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -1575,7 +1575,7 @@
   },
   {
     "driver_id": "dimmer_switch_3gang_ac",
-    "name": "Dimmer Switch 3-Gang AC",
+    "name": "3-Gang Dimmer Switch (AC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -1694,7 +1694,7 @@
   },
   {
     "driver_id": "dimmer_switch_timer_module_ac",
-    "name": "Dimmer Switch Timer Module",
+    "name": "Dimmer Switch Timer Module (AC)",
     "class": "light",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -1961,7 +1961,7 @@
   },
   {
     "driver_id": "door_window_sensor_battery",
-    "name": "Door Window Sensor (Battery)",
+    "name": "Door/Window Sensor (Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -2084,7 +2084,7 @@
   },
   {
     "driver_id": "doorbell_camera_ac",
-    "name": "Doorbell Camera Ac",
+    "name": "Doorbell Camera (AC)",
     "class": "sensor",
     "manufacturers": [
       "Signify Netherlands B.V.",
@@ -2133,7 +2133,7 @@
   },
   {
     "driver_id": "doorbell_cr2032",
-    "name": "Doorbell (Battery)",
+    "name": "Doorbell Button (CR2032)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -2202,7 +2202,7 @@
   },
   {
     "driver_id": "energy_monitoring_plug_ac",
-    "name": "Energy Monitoring Plug",
+    "name": "Energy Monitoring Plug (AC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -2286,7 +2286,7 @@
   },
   {
     "driver_id": "energy_monitoring_plug_advanced_ac",
-    "name": "Energy Plug Advanced",
+    "name": "Energy Monitoring Plug Advanced (AC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -2371,7 +2371,7 @@
   },
   {
     "driver_id": "energy_plug_advanced_ac",
-    "name": "energy plug advanced",
+    "name": "Energy Plug Advanced (AC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -2814,7 +2814,7 @@
   },
   {
     "driver_id": "garage_door_controller_ac",
-    "name": "Garage Door Controller (Battery)",
+    "name": "Garage Door Controller (AC)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -2887,7 +2887,7 @@
   },
   {
     "driver_id": "garage_door_opener_cr2032",
-    "name": "Garage Door Opener (Battery)",
+    "name": "Garage Door Opener Button (CR2032)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -3334,7 +3334,7 @@
   },
   {
     "driver_id": "led_strip_advanced_ac",
-    "name": "LED Strip Advanced",
+    "name": "LED Strip Controller Advanced (AC)",
     "class": "light",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -3418,7 +3418,7 @@
   },
   {
     "driver_id": "led_strip_controller_ac",
-    "name": "LED Strip Controller",
+    "name": "LED Strip Controller Basic (AC)",
     "class": "sensor",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -3516,7 +3516,7 @@
   },
   {
     "driver_id": "led_strip_controller_pro_ac",
-    "name": "led strip controller pro",
+    "name": "LED Strip Controller Pro (AC)",
     "class": "sensor",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -3601,7 +3601,7 @@
   },
   {
     "driver_id": "led_strip_outdoor_color_ac",
-    "name": "Led Strip Outdoor Color Ac",
+    "name": "LED Strip Outdoor Color (AC)",
     "class": "light",
     "manufacturers": [
       "Signify Netherlands B.V.",
@@ -3835,7 +3835,7 @@
   },
   {
     "driver_id": "mini_ac",
-    "name": "Mini Switch AC",
+    "name": "Mini Switch Module (AC)",
     "class": "sensor",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -3907,7 +3907,7 @@
   },
   {
     "driver_id": "mini_switch_cr2032",
-    "name": "Mini Switch (Battery)",
+    "name": "Mini Switch (CR2032)",
     "class": "sensor",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -3977,7 +3977,7 @@
   },
   {
     "driver_id": "motion_sensor_battery",
-    "name": "Motion Sensor (PIR, Battery)",
+    "name": "Motion Sensor PIR Basic (Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -4116,7 +4116,7 @@
   },
   {
     "driver_id": "motion_sensor_illuminance_battery",
-    "name": "Motion Sensor with Illuminance (Battery)",
+    "name": "Motion Sensor PIR + Illuminance (Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_mmtwjmaq",
@@ -4204,7 +4204,7 @@
   },
   {
     "driver_id": "motion_sensor_mmwave_battery",
-    "name": "Motion Sensor (mmWave Radar, Battery)",
+    "name": "Motion Sensor mmWave (Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -4333,7 +4333,7 @@
   },
   {
     "driver_id": "motion_sensor_pir_ac_battery",
-    "name": "PIR Motion Sensor (Battery)",
+    "name": "Motion Sensor PIR (AC+Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -4452,7 +4452,7 @@
   },
   {
     "driver_id": "motion_sensor_pir_battery",
-    "name": "PIR Motion Sensor (Battery)",
+    "name": "Motion Sensor PIR (Battery)",
     "class": "sensor",
     "manufacturers": [
       "HOBEIAN",
@@ -4558,7 +4558,7 @@
   },
   {
     "driver_id": "motion_sensor_zigbee_204z_battery",
-    "name": "PIR Motion Sensor (Battery)",
+    "name": "Motion Sensor HOBEIAN ZG-204Z (Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -4674,7 +4674,7 @@
   },
   {
     "driver_id": "motion_temp_humidity_illumination_multi_battery",
-    "name": "Multi-Sensor (Motion + Lux + Temp) (Battery)",
+    "name": "Multi-Sensor Motion+Temp+Humid+Lux (Battery)",
     "class": "sensor",
     "manufacturers": [
       "HOBEIAN",
@@ -5052,7 +5052,7 @@
   },
   {
     "driver_id": "outdoor_siren_cr2032",
-    "name": "Outdoor Siren (Battery)",
+    "name": "Outdoor Siren (CR2032)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -5186,7 +5186,7 @@
   },
   {
     "driver_id": "pir_radar_illumination_sensor_battery",
-    "name": "PIR Radar Illumination Sensor Battery (Battery)",
+    "name": "PIR+Radar+Illuminance Sensor (Battery)",
     "class": "sensor",
     "manufacturers": [
       "HOBEIAN",
@@ -5270,7 +5270,7 @@
   },
   {
     "driver_id": "pir_sensor_advanced_battery",
-    "name": "PIR Motion Sensor Advanced (Battery)",
+    "name": "PIR Sensor Advanced (Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -5638,7 +5638,7 @@
   },
   {
     "driver_id": "power_meter_socket_ac",
-    "name": "power meter socket",
+    "name": "Power Meter Socket (AC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -5717,7 +5717,7 @@
   },
   {
     "driver_id": "presence_sensor_fp1_battery",
-    "name": "Presence Sensor FP1 (Advanced)",
+    "name": "Presence Sensor FP1 (Battery)",
     "class": "sensor",
     "manufacturers": [
       "lumi.motion.ac01",
@@ -5735,7 +5735,7 @@
   },
   {
     "driver_id": "presence_sensor_fp2_ac",
-    "name": "Presence Sensor FP2 (Zones)",
+    "name": "Presence Sensor FP2 (AC)",
     "class": "sensor",
     "manufacturers": [
       "lumi.motion.ac02"
@@ -5751,7 +5751,7 @@
   },
   {
     "driver_id": "presence_sensor_mmwave_battery",
-    "name": "Presence Sensor Mmwave Battery (Battery)",
+    "name": "Presence Sensor mmWave (Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZE200_ztc6ggyl",
@@ -6208,7 +6208,7 @@
   },
   {
     "driver_id": "radar_motion_sensor_mmwave_battery",
-    "name": "Radar Presence Sensor (mmWave) (Battery)",
+    "name": "Radar Motion Sensor mmWave 24GHz (Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -6326,7 +6326,7 @@
   },
   {
     "driver_id": "radar_motion_sensor_tank_level_battery",
-    "name": "Radar Motion Sensor Pro (Battery)",
+    "name": "Radar Motion + Tank Level Sensor (Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -6442,7 +6442,7 @@
   },
   {
     "driver_id": "radiator_valve_hybrid",
-    "name": "Radiator Valve",
+    "name": "Radiator Valve (Hybrid)",
     "class": "other",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -6635,7 +6635,7 @@
   },
   {
     "driver_id": "remote_4button_styrbar_battery",
-    "name": "Remote 4 Button (IKEA)",
+    "name": "4-Button Remote STYRBAR (Battery)",
     "class": "button",
     "manufacturers": [
       "IKEA of Sweden"
@@ -6655,7 +6655,7 @@
   },
   {
     "driver_id": "remote_switch_cr2032",
-    "name": "Remote Switch (Battery)",
+    "name": "Remote Switch (CR2032)",
     "class": "button",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -6730,7 +6730,7 @@
   },
   {
     "driver_id": "rgb_led_controller_ac",
-    "name": "RGB LED Controller",
+    "name": "RGB LED Controller (AC)",
     "class": "sensor",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -6807,7 +6807,7 @@
   },
   {
     "driver_id": "roller_blind_controller_ac",
-    "name": "Curtain Motor (Battery)",
+    "name": "Roller Blind Controller (AC)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -6893,7 +6893,7 @@
   },
   {
     "driver_id": "roller_shutter_controller_ac",
-    "name": "Roller Shutter Controller (Battery)",
+    "name": "Roller Shutter Controller (AC)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -7092,7 +7092,7 @@
   },
   {
     "driver_id": "roller_shutter_switch_cr2032",
-    "name": "Roller Shutter Switch (Battery)",
+    "name": "Roller Shutter Switch (CR2032)",
     "class": "other",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -7182,7 +7182,7 @@
   },
   {
     "driver_id": "scene_controller",
-    "name": "Scene Controller",
+    "name": "Scene Controller (Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -7253,7 +7253,7 @@
   },
   {
     "driver_id": "scene_controller_2button_cr2032",
-    "name": "2-Button Remote",
+    "name": "2-Button Scene Controller (CR2032)",
     "class": "button",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -7319,7 +7319,7 @@
   },
   {
     "driver_id": "scene_controller_4button_cr2032",
-    "name": "4-Button Remote",
+    "name": "4-Button Scene Controller (CR2032)",
     "class": "button",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -7398,7 +7398,7 @@
   },
   {
     "driver_id": "scene_controller_6button_cr2032",
-    "name": "6-Button Remote",
+    "name": "6-Button Scene Controller (CR2032)",
     "class": "button",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -7469,7 +7469,7 @@
   },
   {
     "driver_id": "scene_controller_8button_cr2032",
-    "name": "8-Button Remote",
+    "name": "8-Button Scene Controller (CR2032)",
     "class": "button",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -7541,7 +7541,7 @@
   },
   {
     "driver_id": "scene_controller_battery",
-    "name": "Scene Switch (Battery)",
+    "name": "Multi-Button Scene Controller (Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -7633,7 +7633,7 @@
   },
   {
     "driver_id": "shade_controller_ac",
-    "name": "Shade Controller",
+    "name": "Shade Controller (AC)",
     "class": "sensor",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -7715,7 +7715,7 @@
   },
   {
     "driver_id": "shortcut_button_battery",
-    "name": "Shortcut Button",
+    "name": "Shortcut Button (Battery)",
     "class": "button",
     "manufacturers": [
       "IKEA of Sweden"
@@ -7734,7 +7734,7 @@
   },
   {
     "driver_id": "smart_bulb_dimmer_ac",
-    "name": "smart bulb dimmer",
+    "name": "Smart Bulb Dimmer (AC)",
     "class": "light",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -7873,7 +7873,7 @@
   },
   {
     "driver_id": "smart_bulb_rgb_ac",
-    "name": "Color Bulb (RGB)",
+    "name": "Smart Bulb RGB (AC)",
     "class": "light",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -8001,7 +8001,7 @@
   },
   {
     "driver_id": "smart_bulb_tunable_ac",
-    "name": "Smart Bulb Tunable",
+    "name": "Smart Bulb Tunable White (AC)",
     "class": "light",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -8129,7 +8129,7 @@
   },
   {
     "driver_id": "smart_bulb_white_ac",
-    "name": "Smart Bulb White",
+    "name": "Smart Bulb White (AC)",
     "class": "light",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -8257,7 +8257,7 @@
   },
   {
     "driver_id": "smart_curtain_motor_hybrid",
-    "name": "Smart Curtain Motor",
+    "name": "Smart Curtain Motor (Hybrid)",
     "class": "other",
     "manufacturers": [
       "_TZE200_cowvfni3",
@@ -8323,7 +8323,7 @@
   },
   {
     "driver_id": "smart_dimmer_module_1gang_ac",
-    "name": "Smart Dimmer Module 1 Gang",
+    "name": "1-Gang Smart Dimmer Module (AC)",
     "class": "light",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -8411,7 +8411,7 @@
   },
   {
     "driver_id": "smart_doorbell_battery",
-    "name": "Smart Doorbell (Battery)",
+    "name": "Smart Doorbell Camera (Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -8808,7 +8808,7 @@
   },
   {
     "driver_id": "smart_plug_ac",
-    "name": "Smart Plug",
+    "name": "Smart Plug Basic (AC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -8908,7 +8908,7 @@
   },
   {
     "driver_id": "smart_plug_dimmer_ac",
-    "name": "Smart Plug with Dimmer (AC)",
+    "name": "Smart Plug Dimmer (AC)",
     "class": "socket",
     "manufacturers": [
       "TS0005",
@@ -8978,7 +8978,7 @@
   },
   {
     "driver_id": "smart_plug_energy_ac",
-    "name": "smart plug energy",
+    "name": "Smart Plug Energy Monitor (AC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -9078,7 +9078,7 @@
   },
   {
     "driver_id": "smart_plug_power_meter_16a_ac",
-    "name": "Smart Plug Power Meter 16a Ac",
+    "name": "Smart Plug Power Meter 16A (AC)",
     "class": "socket",
     "manufacturers": [
       "_TZ3000_typdpbpg",
@@ -9134,7 +9134,7 @@
   },
   {
     "driver_id": "smart_radiator_valve_hybrid",
-    "name": "Smart Radiator Valve",
+    "name": "Smart Radiator Valve (Hybrid)",
     "class": "other",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -9191,7 +9191,7 @@
   },
   {
     "driver_id": "smart_smoke_detector_advanced_battery",
-    "name": "Smart Smoke Detector Advanced (Battery)",
+    "name": "Smoke Detector Advanced (Battery)",
     "class": "sensor",
     "manufacturers": [
       "TS0502B",
@@ -9361,7 +9361,7 @@
   },
   {
     "driver_id": "smart_switch_1gang_ac",
-    "name": "1-Gang Wall Switch (AC)",
+    "name": "1-Gang Smart Switch (AC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -9477,7 +9477,7 @@
   },
   {
     "driver_id": "smart_switch_1gang_hybrid",
-    "name": "1-Gang Wall Switch",
+    "name": "1-Gang Smart Switch (Hybrid)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -9552,7 +9552,7 @@
   },
   {
     "driver_id": "smart_switch_2gang_ac",
-    "name": "2-Gang Wall Switch (AC)",
+    "name": "2-Gang Smart Switch (AC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -9663,7 +9663,7 @@
   },
   {
     "driver_id": "smart_switch_2gang_hybrid",
-    "name": "2-Gang Wall Switch",
+    "name": "2-Gang Smart Switch (Hybrid)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -9738,7 +9738,7 @@
   },
   {
     "driver_id": "smart_switch_3gang_ac",
-    "name": "3-Gang Wall Switch (AC)",
+    "name": "3-Gang Smart Switch (AC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -9848,7 +9848,7 @@
   },
   {
     "driver_id": "smart_switch_3gang_hybrid",
-    "name": "3-Gang Wall Switch",
+    "name": "3-Gang Smart Switch (Hybrid)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -9922,7 +9922,7 @@
   },
   {
     "driver_id": "smart_switch_4gang_hybrid",
-    "name": "4-Gang Wall Switch",
+    "name": "4-Gang Smart Switch (Hybrid)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -9998,7 +9998,7 @@
   },
   {
     "driver_id": "smart_thermostat_hybrid",
-    "name": "Smart Thermostat",
+    "name": "Smart Thermostat (Hybrid)",
     "class": "other",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -10065,7 +10065,7 @@
   },
   {
     "driver_id": "smart_valve_controller_hybrid",
-    "name": "Smart Valve Controller",
+    "name": "Smart Valve Controller (Hybrid)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -10131,7 +10131,7 @@
   },
   {
     "driver_id": "smart_water_valve_hybrid",
-    "name": "Smart Water Valve",
+    "name": "Smart Water Valve (Hybrid)",
     "class": "sensor",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -10199,7 +10199,7 @@
   },
   {
     "driver_id": "smoke_detector_battery",
-    "name": "Smoke Detector (Battery)",
+    "name": "Smoke Detector Basic (Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -10255,7 +10255,7 @@
   },
   {
     "driver_id": "smoke_detector_temp_humidity_advanced_battery",
-    "name": "Advanced Smoke Detector with Temperature & Humidity (Battery)",
+    "name": "Smoke Detector + Temp/Humid Advanced (Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -10348,7 +10348,7 @@
   },
   {
     "driver_id": "smoke_detector_temperature_battery",
-    "name": "Smoke Detector with Temperature (Battery)",
+    "name": "Smoke Detector + Temperature (Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZE284_n4ttsck2",
@@ -10405,7 +10405,7 @@
   },
   {
     "driver_id": "smoke_temp_humid_sensor_battery",
-    "name": "Smoke Temperature Humidity Sensor (Battery)",
+    "name": "Smoke + Temp/Humid Sensor (Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -10830,7 +10830,7 @@
   },
   {
     "driver_id": "sos_emergency_button_cr2032",
-    "name": "SOS Emergency Button (Battery)",
+    "name": "SOS Emergency Button (CR2032)",
     "class": "button",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -10930,7 +10930,7 @@
   },
   {
     "driver_id": "switch_1gang_battery",
-    "name": "Switch 1-Gang Battery CR2032 (Battery)",
+    "name": "1-Gang Switch (Battery)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -11032,7 +11032,7 @@
   },
   {
     "driver_id": "switch_2gang_ac",
-    "name": "Switch 2-Gang AC Power",
+    "name": "2-Gang Switch (AC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -11143,7 +11143,7 @@
   },
   {
     "driver_id": "switch_2gang_hybrid",
-    "name": "Switch 2-Gang Hybrid AC/DC",
+    "name": "2-Gang Switch (Hybrid)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -11218,7 +11218,7 @@
   },
   {
     "driver_id": "switch_3gang_battery",
-    "name": "Switch 3-Gang Battery CR2450 (Battery)",
+    "name": "3-Gang Switch (Battery CR2032)",
     "class": "socket",
     "manufacturers": [
       "Philips",
@@ -11317,7 +11317,7 @@
   },
   {
     "driver_id": "switch_4gang_ac",
-    "name": "Switch 4-Gang AC Power",
+    "name": "4-Gang Switch (AC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -11428,7 +11428,7 @@
   },
   {
     "driver_id": "switch_4gang_battery_cr2032",
-    "name": "Switch 4-Gang Remote (Battery)",
+    "name": "4-Gang Switch (Battery CR2032)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -11531,7 +11531,7 @@
   },
   {
     "driver_id": "switch_5gang_battery",
-    "name": "Switch 5-Gang Battery CR2450 (Battery)",
+    "name": "5-Gang Switch (Battery)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -11631,7 +11631,7 @@
   },
   {
     "driver_id": "switch_6gang_ac",
-    "name": "Switch 6-Gang AC Power",
+    "name": "6-Gang Switch (AC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -11740,7 +11740,7 @@
   },
   {
     "driver_id": "switch_8gang_ac",
-    "name": "Switch 8-Gang AC Power",
+    "name": "8-Gang Switch (AC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -11911,7 +11911,7 @@
   },
   {
     "driver_id": "temp_humid_sensor_advanced_battery",
-    "name": "Temperature & Humidity Sensor (Battery)",
+    "name": "Temperature & Humidity Sensor Advanced (Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -12018,7 +12018,7 @@
   },
   {
     "driver_id": "temp_humid_sensor_dd_battery",
-    "name": "Temperature Humidity Sensor v1w2k9dd (Battery)",
+    "name": "Temperature & Humidity Sensor DD (Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -12123,7 +12123,7 @@
   },
   {
     "driver_id": "temp_humid_sensor_leak_detector_battery",
-    "name": "Water Leak Sensor",
+    "name": "Water Leak & Temp/Humid Sensor (Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -12229,7 +12229,7 @@
   },
   {
     "driver_id": "temp_sensor_pro_battery",
-    "name": "temp sensor pro (Battery)",
+    "name": "Temperature Sensor Pro (Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -12335,7 +12335,7 @@
   },
   {
     "driver_id": "temperature_controller_hybrid",
-    "name": "Temperature Controller",
+    "name": "Temperature Controller (Hybrid)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -12404,7 +12404,7 @@
   },
   {
     "driver_id": "temperature_humidity_display_battery",
-    "name": "Temperature Humidity Display (Battery)",
+    "name": "Temperature & Humidity Display (Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_bguser20",
@@ -12458,7 +12458,7 @@
   },
   {
     "driver_id": "temperature_humidity_sensor_battery",
-    "name": "Temperature Humidity Sensor (Battery)",
+    "name": "Temperature & Humidity Sensor Basic (Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_bgsigers",
@@ -12562,7 +12562,7 @@
   },
   {
     "driver_id": "temperature_sensor_advanced_battery",
-    "name": "Temperature Sensor THS317-ET-TU (Battery)",
+    "name": "Temperature Sensor Advanced THS317 (Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -12668,7 +12668,7 @@
   },
   {
     "driver_id": "temperature_sensor_battery",
-    "name": "Temperature Sensor (Battery)",
+    "name": "Temperature Sensor Basic (Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -12774,7 +12774,7 @@
   },
   {
     "driver_id": "thermostat_hybrid",
-    "name": "Thermostat",
+    "name": "Thermostat Basic (Hybrid)",
     "class": "other",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -12841,7 +12841,7 @@
   },
   {
     "driver_id": "touch_dimmer_1gang_ac",
-    "name": "Touch Dimmer 1-Gang",
+    "name": "1-Gang Touch Dimmer (AC)",
     "class": "light",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -12927,7 +12927,7 @@
   },
   {
     "driver_id": "touch_dimmer_ac",
-    "name": "Touch Dimmer",
+    "name": "Touch Dimmer (AC)",
     "class": "light",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -13013,7 +13013,7 @@
   },
   {
     "driver_id": "touch_switch_1gang_ac",
-    "name": "1-Gang Wall Switch",
+    "name": "1-Gang Touch Switch (AC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -13108,7 +13108,7 @@
   },
   {
     "driver_id": "touch_switch_2gang_ac",
-    "name": "2-Gang Wall Switch",
+    "name": "2-Gang Touch Switch (AC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -13202,7 +13202,7 @@
   },
   {
     "driver_id": "touch_switch_3gang_ac",
-    "name": "3-Gang Wall Switch",
+    "name": "3-Gang Touch Switch (AC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -13295,7 +13295,7 @@
   },
   {
     "driver_id": "touch_switch_4gang_ac",
-    "name": "4-Gang Wall Switch",
+    "name": "4-Gang Touch Switch (AC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -13491,7 +13491,7 @@
   },
   {
     "driver_id": "tvoc_sensor_battery",
-    "name": "Tvoc Sensor (Battery)",
+    "name": "TVOC Sensor Basic (Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -13846,7 +13846,7 @@
   },
   {
     "driver_id": "wall_switch_1gang_ac",
-    "name": "1-Gang Wall Switch",
+    "name": "1-Gang Wall Switch (AC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -13960,7 +13960,7 @@
   },
   {
     "driver_id": "wall_switch_1gang_dc",
-    "name": "1-Gang Wall Switch",
+    "name": "1-Gang Wall Switch (DC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -14035,7 +14035,7 @@
   },
   {
     "driver_id": "wall_switch_2gang_ac",
-    "name": "2-Gang Wall Switch",
+    "name": "2-Gang Wall Switch (AC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -14149,7 +14149,7 @@
   },
   {
     "driver_id": "wall_switch_2gang_dc",
-    "name": "2-Gang Wall Switch",
+    "name": "2-Gang Wall Switch (DC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -14224,7 +14224,7 @@
   },
   {
     "driver_id": "wall_switch_3gang_ac",
-    "name": "Wall Switch 3-Gang AC",
+    "name": "3-Gang Wall Switch (AC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -14333,7 +14333,7 @@
   },
   {
     "driver_id": "wall_switch_3gang_dc",
-    "name": "3-Gang Wall Switch",
+    "name": "3-Gang Wall Switch (DC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -14407,7 +14407,7 @@
   },
   {
     "driver_id": "wall_switch_4gang_ac",
-    "name": "4-Gang Wall Switch",
+    "name": "4-Gang Wall Switch (AC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -14518,7 +14518,7 @@
   },
   {
     "driver_id": "wall_switch_4gang_dc",
-    "name": "4-Gang Wall Switch",
+    "name": "4-Gang Wall Switch (DC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -14594,7 +14594,7 @@
   },
   {
     "driver_id": "wall_switch_5gang_ac",
-    "name": "5-Gang Wall Switch",
+    "name": "5-Gang Wall Switch (AC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -14704,7 +14704,7 @@
   },
   {
     "driver_id": "wall_switch_6gang_ac",
-    "name": "6-Gang Wall Switch",
+    "name": "6-Gang Wall Switch (AC)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -14899,7 +14899,7 @@
   },
   {
     "driver_id": "water_leak_detector_battery",
-    "name": "Water Leak Detector (Battery)",
+    "name": "Water Leak Detector Basic (Battery)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_01gpyda5",
@@ -15097,7 +15097,7 @@
   },
   {
     "driver_id": "water_valve_hybrid",
-    "name": "Water Valve",
+    "name": "Water Valve Controller (Hybrid)",
     "class": "sensor",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -15165,7 +15165,7 @@
   },
   {
     "driver_id": "water_valve_smart_hybrid",
-    "name": "Water Valve Smart",
+    "name": "Smart Water Valve Controller (Hybrid)",
     "class": "sensor",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -15235,7 +15235,7 @@
   },
   {
     "driver_id": "wireless_button_2gang_battery",
-    "name": "2-Button Remote",
+    "name": "2-Button Wireless Remote (Battery)",
     "class": "button",
     "manufacturers": [
       "IKEA of Sweden",
@@ -15282,7 +15282,7 @@
   },
   {
     "driver_id": "wireless_dimmer_scroll_battery",
-    "name": "Wireless Dimmer Scroll Battery (Battery)",
+    "name": "Wireless Scroll Dimmer (Battery)",
     "class": "other",
     "manufacturers": [
       "IKEA of Sweden",
@@ -15338,7 +15338,7 @@
   },
   {
     "driver_id": "wireless_scene_controller_4button_battery",
-    "name": "Wireless Scene Controller 4-Button (Battery)",
+    "name": "4-Button Wireless Scene Controller (Battery)",
     "class": "button",
     "manufacturers": [
       "IKEA of Sweden",
@@ -15395,7 +15395,7 @@
   },
   {
     "driver_id": "wireless_switch_1gang_cr2032",
-    "name": "1-Button Wireless Scene Switch (Battery)",
+    "name": "1-Button Wireless Switch (CR2032)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -15486,7 +15486,7 @@
   },
   {
     "driver_id": "wireless_switch_2gang_cr2032",
-    "name": "2-Button Wireless Scene Switch (Battery)",
+    "name": "2-Button Wireless Switch (CR2032)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -15569,7 +15569,7 @@
   },
   {
     "driver_id": "wireless_switch_3gang_cr2032",
-    "name": "3-Button Wireless Scene Switch (Battery)",
+    "name": "3-Button Wireless Switch (CR2032)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -15650,7 +15650,7 @@
   },
   {
     "driver_id": "wireless_switch_4gang_cr2032",
-    "name": "4-Button Wireless Scene Switch (Battery)",
+    "name": "4-Button Wireless Switch (CR2032)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -15729,7 +15729,7 @@
   },
   {
     "driver_id": "wireless_switch_4gang_cr2450",
-    "name": "4-Button Remote",
+    "name": "4-Button Wireless Switch (CR2450)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -15812,7 +15812,7 @@
   },
   {
     "driver_id": "wireless_switch_5gang_cr2032",
-    "name": "5-Button Remote",
+    "name": "5-Button Wireless Switch (CR2032)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -15891,7 +15891,7 @@
   },
   {
     "driver_id": "wireless_switch_6gang_cr2032",
-    "name": "6-Button Remote",
+    "name": "6-Button Wireless Switch (CR2032)",
     "class": "socket",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
@@ -15971,7 +15971,7 @@
   },
   {
     "driver_id": "wireless_switch_cr2032",
-    "name": "Wireless Switch (Battery)",
+    "name": "1-Button Wireless Switch (CR2032)",
     "class": "button",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
