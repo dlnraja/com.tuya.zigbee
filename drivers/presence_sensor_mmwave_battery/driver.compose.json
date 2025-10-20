@@ -1,10 +1,8 @@
 {
   "id": "presence_sensor_mmwave_battery",
   "name": {
-    "en": "Presence Sensor Mmwave Battery (Battery)",
-    "fr": "Presence Sensor Mmwave Battery",
-    "nl": "Presence Sensor Mmwave Battery",
-    "de": "Presence Sensor Mmwave Battery"
+    "en": "Presence Sensor mmWave (Battery)",
+    "fr": "Presence Sensor mmWave (Battery)"
   },
   "class": "sensor",
   "capabilities": [

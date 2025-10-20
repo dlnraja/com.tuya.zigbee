@@ -8,6 +8,7 @@
     "validate:debug": "homey app validate --level debug",
     "validate:publish": "homey app validate --level publish",
     "publish": "homey app publish",
+    "rename": "node scripts/fixes/RENAME_ALL_DUPLICATE_NAMES.js",
     "test": "node scripts/validation/validate-driver-schemas.js",
     "matrix": "node scripts/automation/generate-device-matrix.js",
     "coverage": "node scripts/automation/generate-coverage-stats.js",

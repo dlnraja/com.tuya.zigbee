@@ -1,10 +1,8 @@
 {
   "id": "smoke_detector_temperature_battery",
   "name": {
-    "en": "Smoke Detector with Temperature (Battery)",
-    "fr": "Détecteur de Fumée avec Température (Batterie)",
-    "nl": "Rookmelder met Temperatuur (Batterij)",
-    "de": "Rauchmelder mit Temperatur (Batterie)"
+    "en": "Smoke Detector + Temperature (Battery)",
+    "fr": "Smoke Detector + Temperature (Battery)"
   },
   "class": "sensor",
   "capabilities": [

@@ -1,10 +1,8 @@
 {
   "id": "bulb_color_rgbcct_ac",
   "name": {
-    "en": "Color & White Bulb",
-    "fr": "Ampoule Intelligente Couleur RGB+CCT (AC)",
-    "nl": "Slimme Lamp Kleur RGB+CCT (AC)",
-    "de": "Intelligente Lampe Farbe RGB+CCT (AC)"
+    "en": "Bulb Color RGB+CCT (AC)",
+    "fr": "Bulb Color RGB+CCT (AC)"
   },
   "class": "light",
   "capabilities": [
