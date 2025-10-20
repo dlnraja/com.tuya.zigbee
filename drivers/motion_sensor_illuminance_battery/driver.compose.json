@@ -1,10 +1,8 @@
 {
   "id": "motion_sensor_illuminance_battery",
   "name": {
-    "en": "Motion Sensor with Illuminance (Battery)",
-    "fr": "Capteur de Mouvement avec Luminosité (Batterie)",
-    "nl": "Bewegingssensor met Verlichtingssterkte (Batterij)",
-    "de": "Bewegungssensor mit Helligkeit (Batterie)"
+    "en": "Motion Sensor PIR + Illuminance (Battery)",
+    "fr": "Motion Sensor PIR + Illuminance (Battery)"
   },
   "class": "sensor",
   "capabilities": [

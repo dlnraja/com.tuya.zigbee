@@ -1,10 +1,8 @@
 {
   "id": "contact_sensor_battery",
   "name": {
-    "en": "Contact Sensor Battery (Battery)",
-    "fr": "Contact Sensor Battery",
-    "nl": "Contact Sensor Battery",
-    "de": "Contact Sensor Battery"
+    "en": "Contact Sensor (Battery)",
+    "fr": "Contact Sensor (Battery)"
   },
   "class": "sensor",
   "capabilities": [
