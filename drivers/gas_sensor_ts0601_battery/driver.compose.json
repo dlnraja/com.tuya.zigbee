@@ -1,6 +1,6 @@
 {
   "name": {
-    "en": "Gas Sensor TS0601 (Battery)",
+    "en": "Gas Sensor TS0601 (AA/AAA)",
     "fr": "Capteur de Gaz TS0601"
   },
   "class": "sensor",
@@ -117,6 +117,43 @@
   },
   "id": "gas_sensor_ts0601_battery",
   "settings": [
+    {
+      "id": "battery_type",
+      "type": "dropdown",
+      "label": {
+        "en": "Battery Type",
+        "fr": "Type de batterie",
+        "nl": "Batterijtype",
+        "de": "Batterietyp"
+      },
+      "hint": {
+        "en": "Select the type of battery used in this device for accurate battery level calculation",
+        "fr": "Sélectionnez le type de batterie utilisé pour un calcul précis du niveau",
+        "nl": "Selecteer het type batterij voor nauwkeurige niveauberekening",
+        "de": "Wählen Sie den Batterietyp für genaue Füllstandsberechnung"
+      },
+      "value": "AA",
+      "values": [
+        {
+          "id": "AA",
+          "label": {
+            "en": "AA (1.5V × 2 = 3V)",
+            "fr": "AA (1.5V × 2 = 3V)",
+            "nl": "AA (1.5V × 2 = 3V)",
+            "de": "AA (1.5V × 2 = 3V)"
+          }
+        },
+        {
+          "id": "AAA",
+          "label": {
+            "en": "AAA (1.5V × 2 = 3V)",
+            "fr": "AAA (1.5V × 2 = 3V)",
+            "nl": "AAA (1.5V × 2 = 3V)",
+            "de": "AAA (1.5V × 2 = 3V)"
+          }
+        }
+      ]
+    },
     {
       "type": "dropdown",
       "id": "debug_level",
