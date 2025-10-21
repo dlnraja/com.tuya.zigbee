@@ -64,5 +64,8 @@
   },
   "4.0.2": {
     "en": "🔧 Critical fixes - SDK3 full compliance\n\n✅ Fixed all titleFormatted warnings (374 flow cards)\n✅ Fixed npm dependencies structure\n✅ 65 drivers with complete flow support\n✅ 100% validation passing at publish level\n✅ 190 native drivers\n✅ 12,563+ manufacturer IDs\n✅ 25+ major brands supported\n✅ 96%+ Zigbee market coverage\n✅ 100% local control\n\nSee full changelog at: https://github.com/dlnraja/com.tuya.zigbee/blob/master/.homeychangelog.json"
+  },
+  "4.0.4": {
+    "en": "🔧 Automated release with latest fixes and improvements\n\n✅ 190 native drivers\n✅ 12,563+ manufacturer IDs\n✅ 25+ major brands supported\n✅ 96%+ Zigbee market coverage\n✅ 100% local control\n\nSee full changelog at: https://github.com/dlnraja/com.tuya.zigbee/blob/master/.homeychangelog.json\n"
   }
 }
