@@ -6,10 +6,6 @@
         "en": "Turn on for...",
         "fr": "Allumer pendant..."
       },
-      "titleFormatted": {
-        "en": "Turn [[device]] on for [[duration]] seconds",
-        "fr": "Allumer [[device]] pendant [[duration]] secondes"
-      },
       "args": [
         {
           "name": "device",
@@ -27,7 +23,11 @@
           "max": 86400,
           "step": 1
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Turn on for... [[device]] [[duration]]",
+        "fr": "Allumer pendant... [[device]] [[duration]]"
+      }
     }
   ]
 }

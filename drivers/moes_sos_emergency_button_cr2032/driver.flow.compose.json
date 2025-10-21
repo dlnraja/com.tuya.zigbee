@@ -35,7 +35,11 @@
           "type": "device",
           "filter": "driver_id=tuya_tuya_sos_emergency_button_cr2032"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Button pressed [[device]]",
+        "fr": "Bouton appuyé [[device]]"
+      }
     }
   ]
 }

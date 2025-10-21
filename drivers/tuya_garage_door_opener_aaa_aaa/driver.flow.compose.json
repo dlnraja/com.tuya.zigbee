@@ -15,7 +15,11 @@
           "type": "device",
           "filter": "driver_id=tuya_tuya_garage_door_opener_aaa_aaa"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Opened [[device]]",
+        "fr": "Ouvert [[device]]"
+      }
     },
     {
       "id": "tuya_tuya_garage_door_opener_aaa_aaa_contact_closed",
@@ -32,7 +36,11 @@
           "type": "device",
           "filter": "driver_id=tuya_tuya_garage_door_opener_aaa_aaa"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Closed [[device]]",
+        "fr": "Fermé [[device]]"
+      }
     }
   ],
   "conditions": [
@@ -48,7 +56,11 @@
           "type": "device",
           "filter": "driver_id=tuya_tuya_garage_door_opener_aaa_aaa"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Is open [[device]]",
+        "fr": "Est ouvert [[device]]"
+      }
     },
     {
       "id": "tuya_tuya_garage_door_opener_aaa_aaa_is_closed",
@@ -62,7 +74,11 @@
           "type": "device",
           "filter": "driver_id=tuya_tuya_garage_door_opener_aaa_aaa"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Is closed [[device]]",
+        "fr": "Est fermé [[device]]"
+      }
     }
   ]
 }

@@ -15,7 +15,11 @@
           "type": "device",
           "filter": "driver_id=tuya_motion_sensor_mmwave_basic_cr2032"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Motion detected [[device]]",
+        "fr": "Mouvement détecté [[device]]"
+      }
     },
     {
       "id": "tuya_motion_sensor_mmwave_basic_cr2032_motion_cleared",
@@ -32,7 +36,11 @@
           "type": "device",
           "filter": "driver_id=tuya_motion_sensor_mmwave_basic_cr2032"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Motion cleared [[device]]",
+        "fr": "Mouvement terminé [[device]]"
+      }
     }
   ],
   "conditions": [
@@ -48,7 +56,11 @@
           "type": "device",
           "filter": "driver_id=tuya_motion_sensor_mmwave_basic_cr2032"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Motion is active [[device]]",
+        "fr": "Mouvement actif [[device]]"
+      }
     }
   ]
 }

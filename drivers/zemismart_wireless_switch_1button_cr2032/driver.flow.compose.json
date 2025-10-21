@@ -35,7 +35,11 @@
           "type": "device",
           "filter": "driver_id=tuya_wireless_switch_1button_cr2032"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Button pressed [[device]]",
+        "fr": "Bouton appuyé [[device]]"
+      }
     }
   ]
 }

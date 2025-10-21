@@ -15,7 +15,11 @@
           "type": "device",
           "filter": "driver_id=tuya_lock_basic_aa"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Opened [[device]]",
+        "fr": "Ouvert [[device]]"
+      }
     },
     {
       "id": "tuya_lock_basic_aa_contact_closed",
@@ -32,7 +36,11 @@
           "type": "device",
           "filter": "driver_id=tuya_lock_basic_aa"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Closed [[device]]",
+        "fr": "Fermé [[device]]"
+      }
     }
   ],
   "conditions": [
@@ -48,7 +56,11 @@
           "type": "device",
           "filter": "driver_id=tuya_lock_basic_aa"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Is open [[device]]",
+        "fr": "Est ouvert [[device]]"
+      }
     },
     {
       "id": "tuya_lock_basic_aa_is_closed",
@@ -62,7 +74,11 @@
           "type": "device",
           "filter": "driver_id=tuya_lock_basic_aa"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Is closed [[device]]",
+        "fr": "Est fermé [[device]]"
+      }
     }
   ]
 }

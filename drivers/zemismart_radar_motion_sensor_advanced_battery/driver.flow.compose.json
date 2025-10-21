@@ -15,7 +15,11 @@
           "type": "device",
           "filter": "driver_id=radar_motion_sensor_advanced_battery"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Motion detected [[device]]",
+        "fr": "Mouvement détecté [[device]]"
+      }
     },
     {
       "id": "radar_motion_sensor_advanced_battery_motion_cleared",
@@ -32,7 +36,11 @@
           "type": "device",
           "filter": "driver_id=radar_motion_sensor_advanced_battery"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Motion cleared [[device]]",
+        "fr": "Mouvement terminé [[device]]"
+      }
     }
   ],
   "conditions": [
@@ -48,7 +56,11 @@
           "type": "device",
           "filter": "driver_id=radar_motion_sensor_advanced_battery"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Motion is active [[device]]",
+        "fr": "Mouvement actif [[device]]"
+      }
     }
   ]
 }
