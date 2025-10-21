@@ -1,0 +1,212 @@
+name: Homey App Store Auto-Publish with Draft→Test Promotion
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  validate-and-publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Install Homey CLI
+        run: |
+          npm install --save-dev homey
+          npm install --save-dev canvas
+      
+      - name: Clean Build Cache
+        run: |
+          if [ -d ".homeycompose" ]; then
+            rm -rf .homeycompose
+            echo "✅ .homeycompose cleaned"
+          else
+            echo "✅ .homeycompose does not exist"
+          fi
+          if [ -d ".homeybuild" ]; then
+            rm -rf .homeybuild
+            echo "✅ .homeybuild cleaned"
+          else
+            echo "✅ .homeybuild does not exist"
+          fi
+      
+      - name: Validate (Debug Level)
+        run: npx homey app validate --level debug
+      
+      - name: Validate (Publish Level)
+        run: npx homey app validate --level publish
+      
+      - name: Build App
+        run: npx homey app build
+      
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: homey-app
+          path: |
+            .homeybuild/
+            app.json
+      
+      - name: Generate User-Friendly Changelog
+        id: changelog
+        run: |
+          # Get last commit message
+          LAST_COMMIT=$(git log -1 --pretty=format:"%s")
+          
+          # Convert technical commit to user-friendly message
+          if echo "$LAST_COMMIT" | grep -iE "^feat"; then
+            CHANGELOG="New features and improvements"
+          elif echo "$LAST_COMMIT" | grep -iE "^fix"; then
+            CHANGELOG="Bug fixes and stability improvements"
+          elif echo "$LAST_COMMIT" | grep -iE "device|manufacturer|id"; then
+            CHANGELOG="Added support for new devices and improved compatibility"
+          elif echo "$LAST_COMMIT" | grep -iE "image|visual"; then
+            CHANGELOG="Updated device icons and visual improvements"
+          elif echo "$LAST_COMMIT" | grep -iE "workflow|action"; then
+            CHANGELOG="System improvements and optimizations"
+          else
+            CHANGELOG="Performance and stability improvements"
+          fi
+          
+          # Sanitize special characters (max 400 chars for Homey)
+          CHANGELOG=$(echo "$CHANGELOG" | tr -d '\r\n' | head -c 400)
+          
+          echo "changelog=$CHANGELOG" >> $GITHUB_OUTPUT
+          echo "Generated changelog: $CHANGELOG"
+      
+      - name: Auto-Increment Version
+        uses: athombv/github-action-homey-app-version@master
+        id: version
+        with:
+          version: patch
+          changelog: ${{ steps.changelog.outputs.changelog }}
+      
+      - name: Commit Version Bump
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # Stash any build artifacts
+          git stash --include-untracked || true
+          
+          if [ -n "$(git status --porcelain)" ]; then
+            git add app.json .homeychangelog.json 2>/dev/null || true
+            git commit -m "chore: bump version to v${{ steps.version.outputs.version }} [skip ci]" || true
+            echo "✅ Version bumped to ${{ steps.version.outputs.version }}"
+          else
+            echo "ℹ️ No version changes"
+          fi
+      
+      - name: Push Version Changes
+        run: |
+          git pull --rebase origin master || true
+          git push origin HEAD || echo "⚠️ Push failed or nothing to push"
+      
+      - name: Reset Working Directory
+        run: |
+          # Clean all untracked files and directories
+          git clean -fd
+          # Reset any modifications
+          git reset --hard HEAD
+          # Verify clean state
+          echo "📊 Git status:"
+          git status
+        
+      - name: Publish to Homey App Store (Official Athom Action)
+        id: publish
+        uses: athombv/github-action-homey-app-publish@master
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+      
+      - name: Publication Success
+        run: |
+          APP_ID=$(jq -r '.id' app.json)
+          echo "url=https://tools.developer.homey.app/apps/app/$APP_ID" >> $GITHUB_OUTPUT
+          echo "✅ Published successfully to Homey App Store"
+          echo "📦 App ID: $APP_ID"
+      
+      - name: Extract Build ID and Auto-Promote to Test
+        id: promote
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        shell: bash
+        run: |
+          set +e
+          
+          echo "🔍 Fetching latest build from Homey API..."
+          sleep 8
+          
+          # Use Python script to parse JSON reliably
+          BUILD_ID=$(python3 .github/scripts/extract_build_id.py 2>&1)
+          
+          if [ ! -z "$BUILD_ID" ] && [ "$BUILD_ID" -gt 0 ] 2>/dev/null; then
+            echo "BUILD_ID=$BUILD_ID" >> $GITHUB_OUTPUT || true
+            echo "✅ Build ID extracted: $BUILD_ID"
+            
+            echo "🚀 Auto-promoting Build #$BUILD_ID to Test channel..."
+            
+            RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
+              -H "Authorization: Bearer $HOMEY_PAT" \
+              -H "Content-Type: application/json" \
+              "https://api.developer.homey.app/app/com.dlnraja.tuya.zigbee/build/$BUILD_ID/promote" \
+              -d '{"target": "test"}' 2>/dev/null || echo -e "\n0")
+            
+            HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+            BODY=$(echo "$RESPONSE" | head -n -1)
+            
+            if [ "$HTTP_CODE" = "200" ] || [ "$HTTP_CODE" = "201" ]; then
+              echo "✅ Build #$BUILD_ID promoted to TEST successfully!"
+              echo "🔗 Test URL: https://homey.app/a/com.dlnraja.tuya.zigbee/test/"
+              echo "PROMOTED=true" >> $GITHUB_OUTPUT || true
+            else
+              echo "⚠️ Promotion returned HTTP $HTTP_CODE"
+              [ ! -z "$BODY" ] && echo "Response: $BODY"
+              echo "PROMOTED=false" >> $GITHUB_OUTPUT || true
+            fi
+          else
+            echo "BUILD_ID=" >> $GITHUB_OUTPUT || true
+            echo "PROMOTED=false" >> $GITHUB_OUTPUT || true
+            echo "❌ Could not extract Build ID"
+            echo "💡 Manual promotion: https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee"
+          fi
+          
+          exit 0
+      
+      - name: Summary
+        run: |
+          echo "## 📊 Publication Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Version:** ${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Build ID:** ${{ steps.promote.outputs.BUILD_ID }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Auto-Promoted:** ${{ steps.promote.outputs.PROMOTED }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Management URL:** ${{ steps.publish.outputs.url }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🔗 Links" >> $GITHUB_STEP_SUMMARY
+          echo "- **Dashboard:** https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee" >> $GITHUB_STEP_SUMMARY
+          echo "- **Test URL:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🎯 Next Steps" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.promote.outputs.PROMOTED }}" = "true" ]; then
+            echo "1. ✅ Build automatically promoted to Test" >> $GITHUB_STEP_SUMMARY
+            echo "2. Test the app from the Test URL above" >> $GITHUB_STEP_SUMMARY
+            echo "3. When ready, promote to Live from dashboard" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "1. Go to [Dashboard](${{ steps.publish.outputs.url }})" >> $GITHUB_STEP_SUMMARY
+            echo "2. Manually promote Build #${{ steps.promote.outputs.BUILD_ID }} to Test" >> $GITHUB_STEP_SUMMARY
+            echo "3. Test and then promote to Live when ready" >> $GITHUB_STEP_SUMMARY
+          fi

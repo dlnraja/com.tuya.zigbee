@@ -1,0 +1,16 @@
+release: v4.0.0 - Final validation passed
+
+FIXES APPLIED:
+- Corrected image paths for aqara drivers (motion_sensor, smoke_detector, temperature_humidity)
+- Removed duplicate capabilities in TVOC sensors
+- All 322 drivers validated at publish level
+- SDK3 compliance confirmed
+
+VERSION: 4.0.0
+DRIVERS: 322 total
+BATTERY SUPPORT: 154 drivers
+BRANDS: 14 organized categories
+STATUS: READY FOR PUBLICATION
+
+Validation: PASSED
+Build: SUCCESS

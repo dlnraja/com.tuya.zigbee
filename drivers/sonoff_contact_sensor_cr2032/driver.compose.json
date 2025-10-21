@@ -1,0 +1,43 @@
+{
+  "id": "sonoff_contact_sensor_cr2032",
+  "name": {
+    "en": "Sonoff Contact Sensor (CR2032)"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_contact",
+    "alarm_battery"
+  ],
+  "images": {
+    "small": "drivers/sonoff_contact_sensor_cr2032/assets/images/small.png",
+    "large": "drivers/sonoff_contact_sensor_cr2032/assets/images/large.png",
+    "xlarge": "drivers/sonoff_contact_sensor_cr2032/assets/images/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_SONOFF_generic"
+    ],
+    "productId": [
+      "generic"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  }
+}

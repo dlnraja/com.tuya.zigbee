@@ -1,0 +1,40 @@
+{
+  "id": "innr_bulb_color_ac",
+  "name": {
+    "en": "Innr Bulb Color (AC)"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation"
+  ],
+  "images": {
+    "small": "drivers/innr_bulb_color_ac/assets/images/small.png",
+    "large": "drivers/innr_bulb_color_ac/assets/images/large.png",
+    "xlarge": "drivers/innr_bulb_color_ac/assets/images/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_INNR_generic"
+    ],
+    "productId": [
+      "generic"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  }
+}

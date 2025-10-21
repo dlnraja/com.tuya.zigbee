@@ -1,0 +1,103 @@
+name: Scheduled Issues Scan
+
+on:
+  schedule:
+    # Run every day at 9 AM UTC
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: write
+
+jobs:
+  scan-and-process:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Scan Open Issues
+        id: scan
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // Get all open issues with 'New Device' label
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'New Device',
+              per_page: 100
+            });
+            
+            console.log(`Found ${issues.data.length} open device requests`);
+            
+            // Filter issues without auto-response
+            const needsProcessing = [];
+            for (const issue of issues.data) {
+              const comments = await github.rest.issues.listComments({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number
+              });
+              
+              const hasAutoResponse = comments.data.some(c => 
+                c.body.includes('🤖 Automated response')
+              );
+              
+              if (!hasAutoResponse) {
+                needsProcessing.push(issue.number);
+              }
+            }
+            
+            console.log(`${needsProcessing.length} issues need processing`);
+            core.setOutput('issues', JSON.stringify(needsProcessing));
+            core.setOutput('count', needsProcessing.length);
+            
+            return needsProcessing;
+
+      - name: Process Issues
+        if: steps.scan.outputs.count > 0
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issues = JSON.parse('${{ steps.scan.outputs.issues }}');
+            
+            console.log(`Processing ${issues.length} issues...`);
+            
+            for (const issueNumber of issues) {
+              console.log(`Triggering workflow for issue #${issueNumber}`);
+              
+              await github.rest.actions.createWorkflowDispatch({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                workflow_id: 'auto-process-github-issues.yml',
+                ref: 'main',
+                inputs: {
+                  issue_number: issueNumber.toString()
+                }
+              });
+              
+              // Wait 5 seconds between triggers to avoid rate limiting
+              await new Promise(resolve => setTimeout(resolve, 5000));
+            }
+
+      - name: Create Summary
+        run: |
+          echo "## 📊 Scheduled Issues Scan" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Date**: $(date)" >> $GITHUB_STEP_SUMMARY
+          echo "**Issues Processed**: ${{ steps.scan.outputs.count }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.scan.outputs.count }}" -gt 0 ]; then
+            echo "✅ Triggered automatic processing for unprocessed issues" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "ℹ️ All issues already processed" >> $GITHUB_STEP_SUMMARY
+          fi

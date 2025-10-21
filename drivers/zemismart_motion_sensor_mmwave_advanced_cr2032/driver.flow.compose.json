@@ -1,0 +1,54 @@
+{
+  "triggers": [
+    {
+      "id": "tuya_motion_sensor_mmwave_advanced_cr2032_motion_detected",
+      "title": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté"
+      },
+      "hint": {
+        "en": "Triggered when motion is detected"
+      },
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=tuya_motion_sensor_mmwave_advanced_cr2032"
+        }
+      ]
+    },
+    {
+      "id": "tuya_motion_sensor_mmwave_advanced_cr2032_motion_cleared",
+      "title": {
+        "en": "Motion cleared",
+        "fr": "Mouvement terminé"
+      },
+      "hint": {
+        "en": "Triggered when motion detection ends"
+      },
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=tuya_motion_sensor_mmwave_advanced_cr2032"
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "tuya_motion_sensor_mmwave_advanced_cr2032_motion_active",
+      "title": {
+        "en": "Motion is active",
+        "fr": "Mouvement actif"
+      },
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=tuya_motion_sensor_mmwave_advanced_cr2032"
+        }
+      ]
+    }
+  ]
+}

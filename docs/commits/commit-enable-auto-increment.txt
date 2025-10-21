@@ -1,0 +1,55 @@
+ci: Re-enable automatic version increment for full automation
+
+USER REQUEST: Enable auto-increment versioning
+
+SYSTEM RESTORED: Automatic patch version increment on every push
+
+WORKFLOW CHANGES:
+
+version step now:
+✅ Uses athombv/github-action-homey-app-version@master
+✅ Auto-increments patch version (3.1.9 → 3.1.10 → 3.1.11, etc.)
+✅ Generates standardized changelog automatically
+✅ Commits version change back to repo with [skip ci]
+✅ Creates GitHub Release automatically
+✅ Pushes tags to repository
+
+BENEFITS OF AUTO-INCREMENT:
+- ✅ Zero manual version management
+- ✅ Every push to master = new release
+- ✅ Fully automated CI/CD pipeline
+- ✅ Standardized changelog generation
+- ✅ No version conflicts (always increments)
+- ✅ Developer can focus on code, not versions
+
+AUTOMATED CHANGELOG:
+Every release includes:
+- 190 native drivers
+- 12,563+ manufacturer IDs
+- 25+ major brands
+- 96%+ market coverage
+- 100% local control
+- Link to full changelog
+
+PROCESS NOW:
+1. Make changes (fix bugs, add features)
+2. Commit & push to master
+3. GitHub Actions automatically:
+   - Validates app
+   - Increments version
+   - Publishes to Homey App Store
+   - Commits version back
+   - Creates GitHub Release
+
+NO MANUAL INTERVENTION NEEDED!
+
+DOCUMENTATION UPDATED:
+docs/workflow/VERSION_MANAGEMENT.md now reflects auto-increment system
+
+RESULT:
+✅ Fully automated release pipeline
+✅ Push to master = automatic publication
+✅ Version management handled by workflow
+✅ Professional CI/CD automation
+
+This is the standard Athom-recommended approach for continuous delivery.

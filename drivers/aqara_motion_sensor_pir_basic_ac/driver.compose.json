@@ -1,0 +1,71 @@
+{
+  "id": "aqara_motion_sensor_pir_basic_ac",
+  "name": {
+    "en": "Presence Sensor FP2 (AC)",
+    "fr": "Presence Sensor FP2 (AC)"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "lumi.motion.ac02",
+      "_TZ3000_mcxw5ehu",
+      "_TZ3000_msl6wxk9",
+      "_TZ3040_bb6xaihh",
+      "_TZ3000_hgu1dlak",
+      "_TZE200_locansqn",
+      "_TZE200_bq5c8xfe",
+      "_TZ3000_ywagc4rj",
+      "_TZ3000_kmh5qpmb",
+      "lumi.sensor_motion",
+      "lumi.sensor_magnet",
+      "lumi.weather",
+      "lumi.sensor_ht",
+      "lumi.sensor_smoke",
+      "lumi.ctrl_neutral",
+      "LUMI",
+      "lumi.",
+      "aqara",
+      "_TZ3000_otvn3lne",
+      "_TZ3000_6ygjfyll",
+      "_TZ3000_h4wnrtck",
+      "_TZ3000_mmtwjmaq",
+      "_TZ3000_bsvqrux3",
+      "_TZ3000_lf56vpxj",
+      "_TZ3040_6ygjfyll",
+      "_TZ3000_3towulqd",
+      "_TZE200_3towulqd",
+      "_TZ3000_nss8amz9"
+    ],
+    "productId": [],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          64704
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/learnmode.svg",
+      "instruction": {
+        "en": "Follow device pairing instructions",
+        "fr": "Suivre les instructions d'appairage"
+      }
+    }
+  }
+}
