@@ -36,7 +36,11 @@
           "type": "device",
           "filter": "driver_id=tuya_smart_switch_1gang_aaa"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Button pressed [[device]]",
+        "fr": "Bouton appuyé [[device]]"
+      }
     },
     {
       "id": "tuya_smart_switch_1gang_aaa_single_press",
@@ -65,7 +69,11 @@
           "type": "device",
           "filter": "driver_id=tuya_smart_switch_1gang_aaa"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Button single press [[device]]",
+        "fr": "Bouton pression simple [[device]]"
+      }
     },
     {
       "id": "tuya_smart_switch_1gang_aaa_double_press",
@@ -94,7 +102,11 @@
           "type": "device",
           "filter": "driver_id=tuya_smart_switch_1gang_aaa"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Button double press [[device]]",
+        "fr": "Bouton double pression [[device]]"
+      }
     },
     {
       "id": "tuya_smart_switch_1gang_aaa_long_press",
@@ -123,7 +135,11 @@
           "type": "device",
           "filter": "driver_id=tuya_smart_switch_1gang_aaa"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Button long press [[device]]",
+        "fr": "Bouton pression longue [[device]]"
+      }
     },
     {
       "id": "tuya_smart_switch_1gang_aaa_battery_low",
@@ -152,7 +168,11 @@
           "type": "device",
           "filter": "driver_id=tuya_smart_switch_1gang_aaa"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Battery is low [[device]]",
+        "fr": "Batterie faible [[device]]"
+      }
     }
   ],
   "actions": [
@@ -220,7 +240,11 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Trigger button manually [[device]] [[button]] [[action]]",
+        "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+      }
     }
   ]
 }

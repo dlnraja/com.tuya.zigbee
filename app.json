@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "4.0.1",
+  "version": "4.0.0",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
@@ -111740,7 +111740,11 @@
             "type": "device",
             "filter": "driver_id=tuya_motion_sensor_pir_basic_cr2450"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion detected [[device]]",
+          "fr": "Mouvement détecté [[device]]"
+        }
       },
       {
         "id": "tuya_motion_sensor_pir_basic_cr2450_motion_cleared",
@@ -111762,7 +111766,11 @@
             "type": "device",
             "filter": "driver_id=tuya_motion_sensor_pir_basic_cr2450"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion cleared [[device]]",
+          "fr": "Mouvement terminé [[device]]"
+        }
       },
       {
         "id": "tuya_contact_sensor_basic_cr2032_contact_opened",
@@ -111784,7 +111792,11 @@
             "type": "device",
             "filter": "driver_id=tuya_contact_sensor_basic_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Opened [[device]]",
+          "fr": "Ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_contact_sensor_basic_cr2032_contact_closed",
@@ -111806,7 +111818,11 @@
             "type": "device",
             "filter": "driver_id=tuya_contact_sensor_basic_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Closed [[device]]",
+          "fr": "Fermé [[device]]"
+        }
       },
       {
         "id": "ikea_ikea_wireless_button_2gang_cr2032_button_pressed",
@@ -111849,7 +111865,11 @@
             "type": "device",
             "filter": "driver_id=ikea_ikea_wireless_button_2gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "ikea_ikea_wireless_button_2gang_cr2032_single_press",
@@ -111883,7 +111903,11 @@
             "type": "device",
             "filter": "driver_id=ikea_ikea_wireless_button_2gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button single press [[device]]",
+          "fr": "Bouton pression simple [[device]]"
+        }
       },
       {
         "id": "ikea_ikea_wireless_button_2gang_cr2032_double_press",
@@ -111917,7 +111941,11 @@
             "type": "device",
             "filter": "driver_id=ikea_ikea_wireless_button_2gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button double press [[device]]",
+          "fr": "Bouton double pression [[device]]"
+        }
       },
       {
         "id": "ikea_ikea_wireless_button_2gang_cr2032_long_press",
@@ -111951,7 +111979,11 @@
             "type": "device",
             "filter": "driver_id=ikea_ikea_wireless_button_2gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button long press [[device]]",
+          "fr": "Bouton pression longue [[device]]"
+        }
       },
       {
         "id": "ikea_ikea_wireless_button_2gang_cr2032_battery_low",
@@ -111985,7 +112017,11 @@
             "type": "device",
             "filter": "driver_id=ikea_ikea_wireless_button_2gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery is low [[device]]",
+          "fr": "Batterie faible [[device]]"
+        }
       },
       {
         "id": "tuya_bulb_white_aaa_contact_opened",
@@ -112007,7 +112043,11 @@
             "type": "device",
             "filter": "driver_id=tuya_bulb_white_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Opened [[device]]",
+          "fr": "Ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_bulb_white_aaa_contact_closed",
@@ -112029,7 +112069,11 @@
             "type": "device",
             "filter": "driver_id=tuya_bulb_white_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Closed [[device]]",
+          "fr": "Fermé [[device]]"
+        }
       },
       {
         "id": "tuya_bulb_white_cr2032_contact_opened",
@@ -112051,7 +112095,11 @@
             "type": "device",
             "filter": "driver_id=tuya_bulb_white_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Opened [[device]]",
+          "fr": "Ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_bulb_white_cr2032_contact_closed",
@@ -112073,7 +112121,11 @@
             "type": "device",
             "filter": "driver_id=tuya_bulb_white_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Closed [[device]]",
+          "fr": "Fermé [[device]]"
+        }
       },
       {
         "id": "mini_switch_cr2032_button_pressed",
@@ -112116,7 +112168,11 @@
             "type": "device",
             "filter": "driver_id=mini_switch_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "mini_switch_cr2032_single_press",
@@ -112150,7 +112206,11 @@
             "type": "device",
             "filter": "driver_id=mini_switch_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button single press [[device]]",
+          "fr": "Bouton pression simple [[device]]"
+        }
       },
       {
         "id": "mini_switch_cr2032_double_press",
@@ -112184,7 +112244,11 @@
             "type": "device",
             "filter": "driver_id=mini_switch_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button double press [[device]]",
+          "fr": "Bouton double pression [[device]]"
+        }
       },
       {
         "id": "mini_switch_cr2032_long_press",
@@ -112218,7 +112282,11 @@
             "type": "device",
             "filter": "driver_id=mini_switch_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button long press [[device]]",
+          "fr": "Bouton pression longue [[device]]"
+        }
       },
       {
         "id": "mini_switch_cr2032_battery_low",
@@ -112252,7 +112320,11 @@
             "type": "device",
             "filter": "driver_id=mini_switch_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery is low [[device]]",
+          "fr": "Batterie faible [[device]]"
+        }
       },
       {
         "id": "outdoor_light_controller_ac_contact_opened",
@@ -112274,7 +112346,11 @@
             "type": "device",
             "filter": "driver_id=outdoor_light_controller_ac"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Opened [[device]]",
+          "fr": "Ouvert [[device]]"
+        }
       },
       {
         "id": "outdoor_light_controller_ac_contact_closed",
@@ -112296,7 +112372,11 @@
             "type": "device",
             "filter": "driver_id=outdoor_light_controller_ac"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Closed [[device]]",
+          "fr": "Fermé [[device]]"
+        }
       },
       {
         "id": "remote_switch_cr2032_button_pressed",
@@ -112339,7 +112419,11 @@
             "type": "device",
             "filter": "driver_id=remote_switch_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "remote_switch_cr2032_single_press",
@@ -112373,7 +112457,11 @@
             "type": "device",
             "filter": "driver_id=remote_switch_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button single press [[device]]",
+          "fr": "Bouton pression simple [[device]]"
+        }
       },
       {
         "id": "remote_switch_cr2032_double_press",
@@ -112407,7 +112495,11 @@
             "type": "device",
             "filter": "driver_id=remote_switch_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button double press [[device]]",
+          "fr": "Bouton double pression [[device]]"
+        }
       },
       {
         "id": "remote_switch_cr2032_long_press",
@@ -112441,7 +112533,11 @@
             "type": "device",
             "filter": "driver_id=remote_switch_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button long press [[device]]",
+          "fr": "Bouton pression longue [[device]]"
+        }
       },
       {
         "id": "remote_switch_cr2032_battery_low",
@@ -112475,7 +112571,11 @@
             "type": "device",
             "filter": "driver_id=remote_switch_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery is low [[device]]",
+          "fr": "Batterie faible [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_1gang_aaa_button_pressed",
@@ -112518,7 +112618,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_1gang_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_1gang_aaa_single_press",
@@ -112552,7 +112656,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_1gang_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button single press [[device]]",
+          "fr": "Bouton pression simple [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_1gang_aaa_double_press",
@@ -112586,7 +112694,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_1gang_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button double press [[device]]",
+          "fr": "Bouton double pression [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_1gang_aaa_long_press",
@@ -112620,7 +112732,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_1gang_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button long press [[device]]",
+          "fr": "Bouton pression longue [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_1gang_aaa_battery_low",
@@ -112654,7 +112770,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_1gang_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery is low [[device]]",
+          "fr": "Batterie faible [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_1gang_cr2032_button_pressed",
@@ -112697,7 +112817,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_1gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_1gang_cr2032_single_press",
@@ -112731,7 +112855,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_1gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button single press [[device]]",
+          "fr": "Bouton pression simple [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_1gang_cr2032_double_press",
@@ -112765,7 +112893,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_1gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button double press [[device]]",
+          "fr": "Bouton double pression [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_1gang_cr2032_long_press",
@@ -112799,7 +112931,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_1gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button long press [[device]]",
+          "fr": "Bouton pression longue [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_1gang_cr2032_battery_low",
@@ -112833,7 +112969,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_1gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery is low [[device]]",
+          "fr": "Batterie faible [[device]]"
+        }
       },
       {
         "id": "tuya_tuya_sos_emergency_button_cr2032_button_pressed",
@@ -112875,7 +113015,11 @@
             "type": "device",
             "filter": "driver_id=tuya_tuya_sos_emergency_button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "wireless_switch_2gang_cr2032_button_pressed",
@@ -112918,7 +113062,11 @@
             "type": "device",
             "filter": "driver_id=wireless_switch_2gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "wireless_switch_2gang_cr2032_single_press",
@@ -112952,7 +113100,11 @@
             "type": "device",
             "filter": "driver_id=wireless_switch_2gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button single press [[device]]",
+          "fr": "Bouton pression simple [[device]]"
+        }
       },
       {
         "id": "wireless_switch_2gang_cr2032_double_press",
@@ -112986,7 +113138,11 @@
             "type": "device",
             "filter": "driver_id=wireless_switch_2gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button double press [[device]]",
+          "fr": "Bouton double pression [[device]]"
+        }
       },
       {
         "id": "wireless_switch_2gang_cr2032_long_press",
@@ -113020,7 +113176,11 @@
             "type": "device",
             "filter": "driver_id=wireless_switch_2gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button long press [[device]]",
+          "fr": "Bouton pression longue [[device]]"
+        }
       },
       {
         "id": "wireless_switch_2gang_cr2032_battery_low",
@@ -113054,7 +113214,11 @@
             "type": "device",
             "filter": "driver_id=wireless_switch_2gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery is low [[device]]",
+          "fr": "Batterie faible [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_4button_cr2450_button_pressed",
@@ -113097,7 +113261,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_4button_cr2450"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_4button_cr2450_single_press",
@@ -113131,7 +113299,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_4button_cr2450"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button single press [[device]]",
+          "fr": "Bouton pression simple [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_4button_cr2450_double_press",
@@ -113165,7 +113337,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_4button_cr2450"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button double press [[device]]",
+          "fr": "Bouton double pression [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_4button_cr2450_long_press",
@@ -113199,7 +113375,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_4button_cr2450"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button long press [[device]]",
+          "fr": "Bouton pression longue [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_4button_cr2450_battery_low",
@@ -113233,7 +113413,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_4button_cr2450"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery is low [[device]]",
+          "fr": "Batterie faible [[device]]"
+        }
       },
       {
         "id": "wireless_switch_4gang_cr2032_button_pressed",
@@ -113276,7 +113460,11 @@
             "type": "device",
             "filter": "driver_id=wireless_switch_4gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "wireless_switch_4gang_cr2032_single_press",
@@ -113310,7 +113498,11 @@
             "type": "device",
             "filter": "driver_id=wireless_switch_4gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button single press [[device]]",
+          "fr": "Bouton pression simple [[device]]"
+        }
       },
       {
         "id": "wireless_switch_4gang_cr2032_double_press",
@@ -113344,7 +113536,11 @@
             "type": "device",
             "filter": "driver_id=wireless_switch_4gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button double press [[device]]",
+          "fr": "Bouton double pression [[device]]"
+        }
       },
       {
         "id": "wireless_switch_4gang_cr2032_long_press",
@@ -113378,7 +113574,11 @@
             "type": "device",
             "filter": "driver_id=wireless_switch_4gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button long press [[device]]",
+          "fr": "Bouton pression longue [[device]]"
+        }
       },
       {
         "id": "wireless_switch_4gang_cr2032_battery_low",
@@ -113412,7 +113612,11 @@
             "type": "device",
             "filter": "driver_id=wireless_switch_4gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery is low [[device]]",
+          "fr": "Batterie faible [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_5button_cr2032_button_pressed",
@@ -113455,7 +113659,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_5button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_5button_cr2032_single_press",
@@ -113489,7 +113697,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_5button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button single press [[device]]",
+          "fr": "Bouton pression simple [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_5button_cr2032_double_press",
@@ -113523,7 +113735,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_5button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button double press [[device]]",
+          "fr": "Bouton double pression [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_5button_cr2032_long_press",
@@ -113557,7 +113773,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_5button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button long press [[device]]",
+          "fr": "Bouton pression longue [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_5button_cr2032_battery_low",
@@ -113591,7 +113811,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_5button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery is low [[device]]",
+          "fr": "Batterie faible [[device]]"
+        }
       },
       {
         "id": "wireless_switch_6gang_cr2032_button_pressed",
@@ -113634,7 +113858,11 @@
             "type": "device",
             "filter": "driver_id=wireless_switch_6gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "wireless_switch_6gang_cr2032_single_press",
@@ -113668,7 +113896,11 @@
             "type": "device",
             "filter": "driver_id=wireless_switch_6gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button single press [[device]]",
+          "fr": "Bouton pression simple [[device]]"
+        }
       },
       {
         "id": "wireless_switch_6gang_cr2032_double_press",
@@ -113702,7 +113934,11 @@
             "type": "device",
             "filter": "driver_id=wireless_switch_6gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button double press [[device]]",
+          "fr": "Bouton double pression [[device]]"
+        }
       },
       {
         "id": "wireless_switch_6gang_cr2032_long_press",
@@ -113736,7 +113972,11 @@
             "type": "device",
             "filter": "driver_id=wireless_switch_6gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button long press [[device]]",
+          "fr": "Bouton pression longue [[device]]"
+        }
       },
       {
         "id": "wireless_switch_6gang_cr2032_battery_low",
@@ -113770,7 +114010,11 @@
             "type": "device",
             "filter": "driver_id=wireless_switch_6gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery is low [[device]]",
+          "fr": "Batterie faible [[device]]"
+        }
       },
       {
         "id": "wireless_switch_cr2032_button_pressed",
@@ -113813,7 +114057,11 @@
             "type": "device",
             "filter": "driver_id=wireless_switch_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "wireless_switch_cr2032_single_press",
@@ -113847,7 +114095,11 @@
             "type": "device",
             "filter": "driver_id=wireless_switch_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button single press [[device]]",
+          "fr": "Bouton pression simple [[device]]"
+        }
       },
       {
         "id": "wireless_switch_cr2032_double_press",
@@ -113881,7 +114133,11 @@
             "type": "device",
             "filter": "driver_id=wireless_switch_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button double press [[device]]",
+          "fr": "Bouton double pression [[device]]"
+        }
       },
       {
         "id": "wireless_switch_cr2032_long_press",
@@ -113915,7 +114171,11 @@
             "type": "device",
             "filter": "driver_id=wireless_switch_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button long press [[device]]",
+          "fr": "Bouton pression longue [[device]]"
+        }
       },
       {
         "id": "wireless_switch_cr2032_battery_low",
@@ -113949,7 +114209,11 @@
             "type": "device",
             "filter": "driver_id=wireless_switch_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery is low [[device]]",
+          "fr": "Batterie faible [[device]]"
+        }
       },
       {
         "id": "tuya_tuya_door_controller_aaa_aaa_contact_opened",
@@ -113971,7 +114235,11 @@
             "type": "device",
             "filter": "driver_id=tuya_tuya_door_controller_aaa_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Opened [[device]]",
+          "fr": "Ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_tuya_door_controller_aaa_aaa_contact_closed",
@@ -113993,7 +114261,11 @@
             "type": "device",
             "filter": "driver_id=tuya_tuya_door_controller_aaa_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Closed [[device]]",
+          "fr": "Fermé [[device]]"
+        }
       },
       {
         "id": "door_controller_ac_contact_opened",
@@ -114015,7 +114287,11 @@
             "type": "device",
             "filter": "driver_id=door_controller_ac"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Opened [[device]]",
+          "fr": "Ouvert [[device]]"
+        }
       },
       {
         "id": "door_controller_ac_contact_closed",
@@ -114037,7 +114313,11 @@
             "type": "device",
             "filter": "driver_id=door_controller_ac"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Closed [[device]]",
+          "fr": "Fermé [[device]]"
+        }
       },
       {
         "id": "tuya_tuya_door_controller_cr2032_contact_opened",
@@ -114059,7 +114339,11 @@
             "type": "device",
             "filter": "driver_id=tuya_tuya_door_controller_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Opened [[device]]",
+          "fr": "Ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_tuya_door_controller_cr2032_contact_closed",
@@ -114081,7 +114365,11 @@
             "type": "device",
             "filter": "driver_id=tuya_tuya_door_controller_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Closed [[device]]",
+          "fr": "Fermé [[device]]"
+        }
       },
       {
         "id": "tuya_doorbell_button_aaa_contact_opened",
@@ -114103,7 +114391,11 @@
             "type": "device",
             "filter": "driver_id=tuya_doorbell_button_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Opened [[device]]",
+          "fr": "Ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_doorbell_button_aaa_contact_closed",
@@ -114125,7 +114417,11 @@
             "type": "device",
             "filter": "driver_id=tuya_doorbell_button_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Closed [[device]]",
+          "fr": "Fermé [[device]]"
+        }
       },
       {
         "id": "tuya_doorbell_button_cr2032_contact_opened",
@@ -114147,7 +114443,11 @@
             "type": "device",
             "filter": "driver_id=tuya_doorbell_button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Opened [[device]]",
+          "fr": "Ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_doorbell_button_cr2032_contact_closed",
@@ -114169,7 +114469,11 @@
             "type": "device",
             "filter": "driver_id=tuya_doorbell_button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Closed [[device]]",
+          "fr": "Fermé [[device]]"
+        }
       },
       {
         "id": "tuya_doorbell_camera_ac_contact_opened",
@@ -114191,7 +114495,11 @@
             "type": "device",
             "filter": "driver_id=tuya_doorbell_camera_ac"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Opened [[device]]",
+          "fr": "Ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_doorbell_camera_ac_contact_closed",
@@ -114213,7 +114521,11 @@
             "type": "device",
             "filter": "driver_id=tuya_doorbell_camera_ac"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Closed [[device]]",
+          "fr": "Fermé [[device]]"
+        }
       },
       {
         "id": "doorbell_cr2032_contact_opened",
@@ -114235,7 +114547,11 @@
             "type": "device",
             "filter": "driver_id=doorbell_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Opened [[device]]",
+          "fr": "Ouvert [[device]]"
+        }
       },
       {
         "id": "doorbell_cr2032_contact_closed",
@@ -114257,7 +114573,11 @@
             "type": "device",
             "filter": "driver_id=doorbell_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Closed [[device]]",
+          "fr": "Fermé [[device]]"
+        }
       },
       {
         "id": "tuya_tuya_garage_door_controller_aaa_aaa_contact_opened",
@@ -114279,7 +114599,11 @@
             "type": "device",
             "filter": "driver_id=tuya_tuya_garage_door_controller_aaa_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Opened [[device]]",
+          "fr": "Ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_tuya_garage_door_controller_aaa_aaa_contact_closed",
@@ -114301,7 +114625,11 @@
             "type": "device",
             "filter": "driver_id=tuya_tuya_garage_door_controller_aaa_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Closed [[device]]",
+          "fr": "Fermé [[device]]"
+        }
       },
       {
         "id": "garage_door_controller_ac_contact_opened",
@@ -114323,7 +114651,11 @@
             "type": "device",
             "filter": "driver_id=garage_door_controller_ac"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Opened [[device]]",
+          "fr": "Ouvert [[device]]"
+        }
       },
       {
         "id": "garage_door_controller_ac_contact_closed",
@@ -114345,7 +114677,11 @@
             "type": "device",
             "filter": "driver_id=garage_door_controller_ac"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Closed [[device]]",
+          "fr": "Fermé [[device]]"
+        }
       },
       {
         "id": "tuya_tuya_garage_door_controller_cr2032_contact_opened",
@@ -114367,7 +114703,11 @@
             "type": "device",
             "filter": "driver_id=tuya_tuya_garage_door_controller_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Opened [[device]]",
+          "fr": "Ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_tuya_garage_door_controller_cr2032_contact_closed",
@@ -114389,7 +114729,11 @@
             "type": "device",
             "filter": "driver_id=tuya_tuya_garage_door_controller_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Closed [[device]]",
+          "fr": "Fermé [[device]]"
+        }
       },
       {
         "id": "tuya_tuya_garage_door_opener_aaa_aaa_contact_opened",
@@ -114411,7 +114755,11 @@
             "type": "device",
             "filter": "driver_id=tuya_tuya_garage_door_opener_aaa_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Opened [[device]]",
+          "fr": "Ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_tuya_garage_door_opener_aaa_aaa_contact_closed",
@@ -114433,7 +114781,11 @@
             "type": "device",
             "filter": "driver_id=tuya_tuya_garage_door_opener_aaa_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Closed [[device]]",
+          "fr": "Fermé [[device]]"
+        }
       },
       {
         "id": "tuya_tuya_garage_door_opener_cr2032_contact_opened",
@@ -114455,7 +114807,11 @@
             "type": "device",
             "filter": "driver_id=tuya_tuya_garage_door_opener_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Opened [[device]]",
+          "fr": "Ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_tuya_garage_door_opener_cr2032_contact_closed",
@@ -114477,7 +114833,11 @@
             "type": "device",
             "filter": "driver_id=tuya_tuya_garage_door_opener_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Closed [[device]]",
+          "fr": "Fermé [[device]]"
+        }
       },
       {
         "id": "led_strip_outdoor_color_ac_contact_opened",
@@ -114499,7 +114859,11 @@
             "type": "device",
             "filter": "driver_id=led_strip_outdoor_color_ac"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Opened [[device]]",
+          "fr": "Ouvert [[device]]"
+        }
       },
       {
         "id": "led_strip_outdoor_color_ac_contact_closed",
@@ -114521,7 +114885,11 @@
             "type": "device",
             "filter": "driver_id=led_strip_outdoor_color_ac"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Closed [[device]]",
+          "fr": "Fermé [[device]]"
+        }
       },
       {
         "id": "outdoor_siren_cr2032_contact_opened",
@@ -114543,7 +114911,11 @@
             "type": "device",
             "filter": "driver_id=outdoor_siren_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Opened [[device]]",
+          "fr": "Ouvert [[device]]"
+        }
       },
       {
         "id": "outdoor_siren_cr2032_contact_closed",
@@ -114565,7 +114937,11 @@
             "type": "device",
             "filter": "driver_id=outdoor_siren_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Closed [[device]]",
+          "fr": "Fermé [[device]]"
+        }
       },
       {
         "id": "tuya_siren_outdoor_aaa_contact_opened",
@@ -114587,7 +114963,11 @@
             "type": "device",
             "filter": "driver_id=tuya_siren_outdoor_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Opened [[device]]",
+          "fr": "Ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_siren_outdoor_aaa_contact_closed",
@@ -114609,7 +114989,11 @@
             "type": "device",
             "filter": "driver_id=tuya_siren_outdoor_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Closed [[device]]",
+          "fr": "Fermé [[device]]"
+        }
       },
       {
         "id": "tuya_siren_outdoor_cr2032_contact_opened",
@@ -114631,7 +115015,11 @@
             "type": "device",
             "filter": "driver_id=tuya_siren_outdoor_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Opened [[device]]",
+          "fr": "Ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_siren_outdoor_cr2032_contact_closed",
@@ -114653,7 +115041,11 @@
             "type": "device",
             "filter": "driver_id=tuya_siren_outdoor_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Closed [[device]]",
+          "fr": "Fermé [[device]]"
+        }
       },
       {
         "id": "tuya_door_window_sensor_basic_aaa_contact_opened",
@@ -114675,7 +115067,11 @@
             "type": "device",
             "filter": "driver_id=tuya_door_window_sensor_basic_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Opened [[device]]",
+          "fr": "Ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_door_window_sensor_basic_aaa_contact_closed",
@@ -114697,7 +115093,11 @@
             "type": "device",
             "filter": "driver_id=tuya_door_window_sensor_basic_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Closed [[device]]",
+          "fr": "Fermé [[device]]"
+        }
       },
       {
         "id": "tuya_door_window_sensor_basic_cr2032_contact_opened",
@@ -114719,7 +115119,11 @@
             "type": "device",
             "filter": "driver_id=tuya_door_window_sensor_basic_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Opened [[device]]",
+          "fr": "Ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_door_window_sensor_basic_cr2032_contact_closed",
@@ -114741,7 +115145,11 @@
             "type": "device",
             "filter": "driver_id=tuya_door_window_sensor_basic_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Closed [[device]]",
+          "fr": "Fermé [[device]]"
+        }
       },
       {
         "id": "door_window_sensor_battery_contact_opened",
@@ -114763,7 +115171,11 @@
             "type": "device",
             "filter": "driver_id=door_window_sensor_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Opened [[device]]",
+          "fr": "Ouvert [[device]]"
+        }
       },
       {
         "id": "door_window_sensor_battery_contact_closed",
@@ -114785,7 +115197,11 @@
             "type": "device",
             "filter": "driver_id=door_window_sensor_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Closed [[device]]",
+          "fr": "Fermé [[device]]"
+        }
       },
       {
         "id": "tuya_doorbell_button_internal_contact_opened",
@@ -114807,7 +115223,11 @@
             "type": "device",
             "filter": "driver_id=tuya_doorbell_button_internal"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Opened [[device]]",
+          "fr": "Ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_doorbell_button_internal_contact_closed",
@@ -114829,7 +115249,11 @@
             "type": "device",
             "filter": "driver_id=tuya_doorbell_button_internal"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Closed [[device]]",
+          "fr": "Fermé [[device]]"
+        }
       },
       {
         "id": "tuya_lock_basic_aa_contact_opened",
@@ -114851,7 +115275,11 @@
             "type": "device",
             "filter": "driver_id=tuya_lock_basic_aa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Opened [[device]]",
+          "fr": "Ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_lock_basic_aa_contact_closed",
@@ -114873,7 +115301,11 @@
             "type": "device",
             "filter": "driver_id=tuya_lock_basic_aa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Closed [[device]]",
+          "fr": "Fermé [[device]]"
+        }
       },
       {
         "id": "motion_sensor_battery_motion_detected",
@@ -114895,7 +115327,11 @@
             "type": "device",
             "filter": "driver_id=motion_sensor_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion detected [[device]]",
+          "fr": "Mouvement détecté [[device]]"
+        }
       },
       {
         "id": "motion_sensor_battery_motion_cleared",
@@ -114917,7 +115353,11 @@
             "type": "device",
             "filter": "driver_id=motion_sensor_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion cleared [[device]]",
+          "fr": "Mouvement terminé [[device]]"
+        }
       },
       {
         "id": "tuya_motion_sensor_mmwave_advanced_aaa_motion_detected",
@@ -114939,7 +115379,11 @@
             "type": "device",
             "filter": "driver_id=tuya_motion_sensor_mmwave_advanced_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion detected [[device]]",
+          "fr": "Mouvement détecté [[device]]"
+        }
       },
       {
         "id": "tuya_motion_sensor_mmwave_advanced_aaa_motion_cleared",
@@ -114961,7 +115405,11 @@
             "type": "device",
             "filter": "driver_id=tuya_motion_sensor_mmwave_advanced_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion cleared [[device]]",
+          "fr": "Mouvement terminé [[device]]"
+        }
       },
       {
         "id": "tuya_motion_sensor_mmwave_advanced_cr2032_motion_detected",
@@ -114983,7 +115431,11 @@
             "type": "device",
             "filter": "driver_id=tuya_motion_sensor_mmwave_advanced_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion detected [[device]]",
+          "fr": "Mouvement détecté [[device]]"
+        }
       },
       {
         "id": "tuya_motion_sensor_mmwave_advanced_cr2032_motion_cleared",
@@ -115005,7 +115457,11 @@
             "type": "device",
             "filter": "driver_id=tuya_motion_sensor_mmwave_advanced_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion cleared [[device]]",
+          "fr": "Mouvement terminé [[device]]"
+        }
       },
       {
         "id": "tuya_motion_sensor_mmwave_basic_aaa_motion_detected",
@@ -115027,7 +115483,11 @@
             "type": "device",
             "filter": "driver_id=tuya_motion_sensor_mmwave_basic_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion detected [[device]]",
+          "fr": "Mouvement détecté [[device]]"
+        }
       },
       {
         "id": "tuya_motion_sensor_mmwave_basic_aaa_motion_cleared",
@@ -115049,7 +115509,11 @@
             "type": "device",
             "filter": "driver_id=tuya_motion_sensor_mmwave_basic_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion cleared [[device]]",
+          "fr": "Mouvement terminé [[device]]"
+        }
       },
       {
         "id": "tuya_motion_sensor_mmwave_basic_cr2032_motion_detected",
@@ -115071,7 +115535,11 @@
             "type": "device",
             "filter": "driver_id=tuya_motion_sensor_mmwave_basic_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion detected [[device]]",
+          "fr": "Mouvement détecté [[device]]"
+        }
       },
       {
         "id": "tuya_motion_sensor_mmwave_basic_cr2032_motion_cleared",
@@ -115093,7 +115561,11 @@
             "type": "device",
             "filter": "driver_id=tuya_motion_sensor_mmwave_basic_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion cleared [[device]]",
+          "fr": "Mouvement terminé [[device]]"
+        }
       },
       {
         "id": "motion_sensor_mmwave_battery_motion_detected",
@@ -115115,7 +115587,11 @@
             "type": "device",
             "filter": "driver_id=motion_sensor_mmwave_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion detected [[device]]",
+          "fr": "Mouvement détecté [[device]]"
+        }
       },
       {
         "id": "motion_sensor_mmwave_battery_motion_cleared",
@@ -115137,7 +115613,11 @@
             "type": "device",
             "filter": "driver_id=motion_sensor_mmwave_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion cleared [[device]]",
+          "fr": "Mouvement terminé [[device]]"
+        }
       },
       {
         "id": "motion_sensor_pir_ac_battery_motion_detected",
@@ -115159,7 +115639,11 @@
             "type": "device",
             "filter": "driver_id=motion_sensor_pir_ac_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion detected [[device]]",
+          "fr": "Mouvement détecté [[device]]"
+        }
       },
       {
         "id": "motion_sensor_pir_ac_battery_motion_cleared",
@@ -115181,7 +115665,11 @@
             "type": "device",
             "filter": "driver_id=motion_sensor_pir_ac_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion cleared [[device]]",
+          "fr": "Mouvement terminé [[device]]"
+        }
       },
       {
         "id": "tuya_motion_sensor_pir_advanced_aaa_motion_detected",
@@ -115203,7 +115691,11 @@
             "type": "device",
             "filter": "driver_id=tuya_motion_sensor_pir_advanced_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion detected [[device]]",
+          "fr": "Mouvement détecté [[device]]"
+        }
       },
       {
         "id": "tuya_motion_sensor_pir_advanced_aaa_motion_cleared",
@@ -115225,7 +115717,11 @@
             "type": "device",
             "filter": "driver_id=tuya_motion_sensor_pir_advanced_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion cleared [[device]]",
+          "fr": "Mouvement terminé [[device]]"
+        }
       },
       {
         "id": "tuya_motion_sensor_pir_advanced_cr2032_motion_detected",
@@ -115247,7 +115743,11 @@
             "type": "device",
             "filter": "driver_id=tuya_motion_sensor_pir_advanced_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion detected [[device]]",
+          "fr": "Mouvement détecté [[device]]"
+        }
       },
       {
         "id": "tuya_motion_sensor_pir_advanced_cr2032_motion_cleared",
@@ -115269,7 +115769,11 @@
             "type": "device",
             "filter": "driver_id=tuya_motion_sensor_pir_advanced_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion cleared [[device]]",
+          "fr": "Mouvement terminé [[device]]"
+        }
       },
       {
         "id": "tuya_motion_sensor_pir_basic_aaa_motion_detected",
@@ -115291,7 +115795,11 @@
             "type": "device",
             "filter": "driver_id=tuya_motion_sensor_pir_basic_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion detected [[device]]",
+          "fr": "Mouvement détecté [[device]]"
+        }
       },
       {
         "id": "tuya_motion_sensor_pir_basic_aaa_motion_cleared",
@@ -115313,7 +115821,11 @@
             "type": "device",
             "filter": "driver_id=tuya_motion_sensor_pir_basic_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion cleared [[device]]",
+          "fr": "Mouvement terminé [[device]]"
+        }
       },
       {
         "id": "tuya_motion_sensor_pir_basic_cr2032_motion_detected",
@@ -115335,7 +115847,11 @@
             "type": "device",
             "filter": "driver_id=tuya_motion_sensor_pir_basic_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion detected [[device]]",
+          "fr": "Mouvement détecté [[device]]"
+        }
       },
       {
         "id": "tuya_motion_sensor_pir_basic_cr2032_motion_cleared",
@@ -115357,7 +115873,11 @@
             "type": "device",
             "filter": "driver_id=tuya_motion_sensor_pir_basic_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion cleared [[device]]",
+          "fr": "Mouvement terminé [[device]]"
+        }
       },
       {
         "id": "motion_sensor_pir_battery_motion_detected",
@@ -115379,7 +115899,11 @@
             "type": "device",
             "filter": "driver_id=motion_sensor_pir_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion detected [[device]]",
+          "fr": "Mouvement détecté [[device]]"
+        }
       },
       {
         "id": "motion_sensor_pir_battery_motion_cleared",
@@ -115401,7 +115925,11 @@
             "type": "device",
             "filter": "driver_id=motion_sensor_pir_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion cleared [[device]]",
+          "fr": "Mouvement terminé [[device]]"
+        }
       },
       {
         "id": "motion_sensor_zigbee_204z_battery_motion_detected",
@@ -115423,7 +115951,11 @@
             "type": "device",
             "filter": "driver_id=motion_sensor_zigbee_204z_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion detected [[device]]",
+          "fr": "Mouvement détecté [[device]]"
+        }
       },
       {
         "id": "motion_sensor_zigbee_204z_battery_motion_cleared",
@@ -115445,7 +115977,11 @@
             "type": "device",
             "filter": "driver_id=motion_sensor_zigbee_204z_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion cleared [[device]]",
+          "fr": "Mouvement terminé [[device]]"
+        }
       },
       {
         "id": "motion_temp_humidity_illumination_multi_battery_motion_detected",
@@ -115467,7 +116003,11 @@
             "type": "device",
             "filter": "driver_id=motion_temp_humidity_illumination_multi_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion detected [[device]]",
+          "fr": "Mouvement détecté [[device]]"
+        }
       },
       {
         "id": "motion_temp_humidity_illumination_multi_battery_motion_cleared",
@@ -115489,7 +116029,11 @@
             "type": "device",
             "filter": "driver_id=motion_temp_humidity_illumination_multi_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion cleared [[device]]",
+          "fr": "Mouvement terminé [[device]]"
+        }
       },
       {
         "id": "pir_radar_illumination_sensor_battery_motion_detected",
@@ -115511,7 +116055,11 @@
             "type": "device",
             "filter": "driver_id=pir_radar_illumination_sensor_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion detected [[device]]",
+          "fr": "Mouvement détecté [[device]]"
+        }
       },
       {
         "id": "pir_radar_illumination_sensor_battery_motion_cleared",
@@ -115533,7 +116081,11 @@
             "type": "device",
             "filter": "driver_id=pir_radar_illumination_sensor_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion cleared [[device]]",
+          "fr": "Mouvement terminé [[device]]"
+        }
       },
       {
         "id": "pir_sensor_advanced_battery_motion_detected",
@@ -115555,7 +116107,11 @@
             "type": "device",
             "filter": "driver_id=pir_sensor_advanced_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion detected [[device]]",
+          "fr": "Mouvement détecté [[device]]"
+        }
       },
       {
         "id": "pir_sensor_advanced_battery_motion_cleared",
@@ -115577,7 +116133,11 @@
             "type": "device",
             "filter": "driver_id=pir_sensor_advanced_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion cleared [[device]]",
+          "fr": "Mouvement terminé [[device]]"
+        }
       },
       {
         "id": "presence_sensor_radar_battery_motion_detected",
@@ -115599,7 +116159,11 @@
             "type": "device",
             "filter": "driver_id=presence_sensor_radar_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion detected [[device]]",
+          "fr": "Mouvement détecté [[device]]"
+        }
       },
       {
         "id": "presence_sensor_radar_battery_motion_cleared",
@@ -115621,7 +116185,11 @@
             "type": "device",
             "filter": "driver_id=presence_sensor_radar_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion cleared [[device]]",
+          "fr": "Mouvement terminé [[device]]"
+        }
       },
       {
         "id": "radar_motion_sensor_advanced_battery_motion_detected",
@@ -115643,7 +116211,11 @@
             "type": "device",
             "filter": "driver_id=radar_motion_sensor_advanced_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion detected [[device]]",
+          "fr": "Mouvement détecté [[device]]"
+        }
       },
       {
         "id": "radar_motion_sensor_advanced_battery_motion_cleared",
@@ -115665,7 +116237,11 @@
             "type": "device",
             "filter": "driver_id=radar_motion_sensor_advanced_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion cleared [[device]]",
+          "fr": "Mouvement terminé [[device]]"
+        }
       },
       {
         "id": "radar_motion_sensor_mmwave_battery_motion_detected",
@@ -115687,7 +116263,11 @@
             "type": "device",
             "filter": "driver_id=radar_motion_sensor_mmwave_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion detected [[device]]",
+          "fr": "Mouvement détecté [[device]]"
+        }
       },
       {
         "id": "radar_motion_sensor_mmwave_battery_motion_cleared",
@@ -115709,7 +116289,11 @@
             "type": "device",
             "filter": "driver_id=radar_motion_sensor_mmwave_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion cleared [[device]]",
+          "fr": "Mouvement terminé [[device]]"
+        }
       },
       {
         "id": "radar_motion_sensor_tank_level_battery_motion_detected",
@@ -115731,7 +116315,11 @@
             "type": "device",
             "filter": "driver_id=radar_motion_sensor_tank_level_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion detected [[device]]",
+          "fr": "Mouvement détecté [[device]]"
+        }
       },
       {
         "id": "radar_motion_sensor_tank_level_battery_motion_cleared",
@@ -115753,7 +116341,11 @@
             "type": "device",
             "filter": "driver_id=radar_motion_sensor_tank_level_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion cleared [[device]]",
+          "fr": "Mouvement terminé [[device]]"
+        }
       },
       {
         "id": "roller_shutter_switch_cr2032_button_pressed",
@@ -115796,7 +116388,11 @@
             "type": "device",
             "filter": "driver_id=roller_shutter_switch_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "roller_shutter_switch_cr2032_single_press",
@@ -115830,7 +116426,11 @@
             "type": "device",
             "filter": "driver_id=roller_shutter_switch_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button single press [[device]]",
+          "fr": "Bouton pression simple [[device]]"
+        }
       },
       {
         "id": "roller_shutter_switch_cr2032_double_press",
@@ -115864,7 +116464,11 @@
             "type": "device",
             "filter": "driver_id=roller_shutter_switch_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button double press [[device]]",
+          "fr": "Bouton double pression [[device]]"
+        }
       },
       {
         "id": "roller_shutter_switch_cr2032_long_press",
@@ -115898,7 +116502,11 @@
             "type": "device",
             "filter": "driver_id=roller_shutter_switch_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button long press [[device]]",
+          "fr": "Bouton pression longue [[device]]"
+        }
       },
       {
         "id": "roller_shutter_switch_cr2032_battery_low",
@@ -115932,7 +116540,11 @@
             "type": "device",
             "filter": "driver_id=roller_shutter_switch_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery is low [[device]]",
+          "fr": "Batterie faible [[device]]"
+        }
       },
       {
         "id": "scene_controller_button_pressed",
@@ -115974,7 +116586,11 @@
             "type": "device",
             "filter": "driver_id=scene_controller"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "scene_controller_battery_button_pressed",
@@ -116017,7 +116633,11 @@
             "type": "device",
             "filter": "driver_id=scene_controller_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "scene_controller_battery_single_press",
@@ -116051,7 +116671,11 @@
             "type": "device",
             "filter": "driver_id=scene_controller_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button single press [[device]]",
+          "fr": "Bouton pression simple [[device]]"
+        }
       },
       {
         "id": "scene_controller_battery_double_press",
@@ -116085,7 +116709,11 @@
             "type": "device",
             "filter": "driver_id=scene_controller_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button double press [[device]]",
+          "fr": "Bouton double pression [[device]]"
+        }
       },
       {
         "id": "scene_controller_battery_long_press",
@@ -116119,7 +116747,11 @@
             "type": "device",
             "filter": "driver_id=scene_controller_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button long press [[device]]",
+          "fr": "Bouton pression longue [[device]]"
+        }
       },
       {
         "id": "scene_controller_battery_battery_low",
@@ -116153,7 +116785,11 @@
             "type": "device",
             "filter": "driver_id=scene_controller_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery is low [[device]]",
+          "fr": "Batterie faible [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_1gang_internal_button_pressed",
@@ -116196,7 +116832,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_1gang_internal"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_1gang_internal_single_press",
@@ -116230,7 +116870,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_1gang_internal"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button single press [[device]]",
+          "fr": "Bouton pression simple [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_1gang_internal_double_press",
@@ -116264,7 +116908,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_1gang_internal"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button double press [[device]]",
+          "fr": "Bouton double pression [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_1gang_internal_long_press",
@@ -116298,7 +116946,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_1gang_internal"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button long press [[device]]",
+          "fr": "Bouton pression longue [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_1gang_internal_battery_low",
@@ -116332,7 +116984,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_1gang_internal"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery is low [[device]]",
+          "fr": "Batterie faible [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_3gang_cr2032_button_pressed",
@@ -116375,7 +117031,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_3gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_3gang_cr2032_single_press",
@@ -116409,7 +117069,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_3gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button single press [[device]]",
+          "fr": "Bouton pression simple [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_3gang_cr2032_double_press",
@@ -116443,7 +117107,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_3gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button double press [[device]]",
+          "fr": "Bouton double pression [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_3gang_cr2032_long_press",
@@ -116477,7 +117145,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_3gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button long press [[device]]",
+          "fr": "Bouton pression longue [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_3gang_cr2032_battery_low",
@@ -116511,7 +117183,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_3gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery is low [[device]]",
+          "fr": "Batterie faible [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_4gang_cr2032_button_pressed",
@@ -116554,7 +117230,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_4gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_4gang_cr2032_single_press",
@@ -116588,7 +117268,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_4gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button single press [[device]]",
+          "fr": "Bouton pression simple [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_4gang_cr2032_double_press",
@@ -116622,7 +117306,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_4gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button double press [[device]]",
+          "fr": "Bouton double pression [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_4gang_cr2032_long_press",
@@ -116656,7 +117344,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_4gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button long press [[device]]",
+          "fr": "Bouton pression longue [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_4gang_cr2032_battery_low",
@@ -116690,7 +117382,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_4gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery is low [[device]]",
+          "fr": "Batterie faible [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_5gang_aaa_button_pressed",
@@ -116733,7 +117429,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_5gang_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_5gang_aaa_single_press",
@@ -116767,7 +117467,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_5gang_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button single press [[device]]",
+          "fr": "Bouton pression simple [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_5gang_aaa_double_press",
@@ -116801,7 +117505,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_5gang_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button double press [[device]]",
+          "fr": "Bouton double pression [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_5gang_aaa_long_press",
@@ -116835,7 +117543,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_5gang_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button long press [[device]]",
+          "fr": "Bouton pression longue [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_5gang_aaa_battery_low",
@@ -116869,7 +117581,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_5gang_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery is low [[device]]",
+          "fr": "Batterie faible [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_5gang_cr2032_button_pressed",
@@ -116912,7 +117628,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_5gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_5gang_cr2032_single_press",
@@ -116946,7 +117666,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_5gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button single press [[device]]",
+          "fr": "Bouton pression simple [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_5gang_cr2032_double_press",
@@ -116980,7 +117704,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_5gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button double press [[device]]",
+          "fr": "Bouton double pression [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_5gang_cr2032_long_press",
@@ -117014,7 +117742,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_5gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button long press [[device]]",
+          "fr": "Bouton pression longue [[device]]"
+        }
       },
       {
         "id": "tuya_smart_switch_5gang_cr2032_battery_low",
@@ -117048,7 +117780,11 @@
             "type": "device",
             "filter": "driver_id=tuya_smart_switch_5gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery is low [[device]]",
+          "fr": "Batterie faible [[device]]"
+        }
       },
       {
         "id": "switch_1gang_battery_button_pressed",
@@ -117091,7 +117827,11 @@
             "type": "device",
             "filter": "driver_id=switch_1gang_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "switch_1gang_battery_single_press",
@@ -117125,7 +117865,11 @@
             "type": "device",
             "filter": "driver_id=switch_1gang_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button single press [[device]]",
+          "fr": "Bouton pression simple [[device]]"
+        }
       },
       {
         "id": "switch_1gang_battery_double_press",
@@ -117159,7 +117903,11 @@
             "type": "device",
             "filter": "driver_id=switch_1gang_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button double press [[device]]",
+          "fr": "Bouton double pression [[device]]"
+        }
       },
       {
         "id": "switch_1gang_battery_long_press",
@@ -117193,7 +117941,11 @@
             "type": "device",
             "filter": "driver_id=switch_1gang_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button long press [[device]]",
+          "fr": "Bouton pression longue [[device]]"
+        }
       },
       {
         "id": "switch_1gang_battery_battery_low",
@@ -117227,7 +117979,11 @@
             "type": "device",
             "filter": "driver_id=switch_1gang_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery is low [[device]]",
+          "fr": "Batterie faible [[device]]"
+        }
       },
       {
         "id": "switch_5gang_battery_button_pressed",
@@ -117270,7 +118026,11 @@
             "type": "device",
             "filter": "driver_id=switch_5gang_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "switch_5gang_battery_single_press",
@@ -117304,7 +118064,11 @@
             "type": "device",
             "filter": "driver_id=switch_5gang_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button single press [[device]]",
+          "fr": "Bouton pression simple [[device]]"
+        }
       },
       {
         "id": "switch_5gang_battery_double_press",
@@ -117338,7 +118102,11 @@
             "type": "device",
             "filter": "driver_id=switch_5gang_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button double press [[device]]",
+          "fr": "Bouton double pression [[device]]"
+        }
       },
       {
         "id": "switch_5gang_battery_long_press",
@@ -117372,7 +118140,11 @@
             "type": "device",
             "filter": "driver_id=switch_5gang_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button long press [[device]]",
+          "fr": "Bouton pression longue [[device]]"
+        }
       },
       {
         "id": "switch_5gang_battery_battery_low",
@@ -117406,7 +118178,11 @@
             "type": "device",
             "filter": "driver_id=switch_5gang_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery is low [[device]]",
+          "fr": "Batterie faible [[device]]"
+        }
       },
       {
         "id": "wireless_scene_controller_4button_battery_button_pressed",
@@ -117449,7 +118225,11 @@
             "type": "device",
             "filter": "driver_id=wireless_scene_controller_4button_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "wireless_scene_controller_4button_battery_single_press",
@@ -117483,7 +118263,11 @@
             "type": "device",
             "filter": "driver_id=wireless_scene_controller_4button_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button single press [[device]]",
+          "fr": "Bouton pression simple [[device]]"
+        }
       },
       {
         "id": "wireless_scene_controller_4button_battery_double_press",
@@ -117517,7 +118301,11 @@
             "type": "device",
             "filter": "driver_id=wireless_scene_controller_4button_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button double press [[device]]",
+          "fr": "Bouton double pression [[device]]"
+        }
       },
       {
         "id": "wireless_scene_controller_4button_battery_long_press",
@@ -117551,7 +118339,11 @@
             "type": "device",
             "filter": "driver_id=wireless_scene_controller_4button_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button long press [[device]]",
+          "fr": "Bouton pression longue [[device]]"
+        }
       },
       {
         "id": "wireless_scene_controller_4button_battery_battery_low",
@@ -117585,7 +118377,11 @@
             "type": "device",
             "filter": "driver_id=wireless_scene_controller_4button_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery is low [[device]]",
+          "fr": "Batterie faible [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_1button_cr2032_button_pressed",
@@ -117627,7 +118423,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_1button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_1button_cr2450_button_pressed",
@@ -117669,7 +118469,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_1button_cr2450"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "wireless_switch_1gang_cr2032_button_pressed",
@@ -117712,7 +118516,11 @@
             "type": "device",
             "filter": "driver_id=wireless_switch_1gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "wireless_switch_1gang_cr2032_single_press",
@@ -117746,7 +118554,11 @@
             "type": "device",
             "filter": "driver_id=wireless_switch_1gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button single press [[device]]",
+          "fr": "Bouton pression simple [[device]]"
+        }
       },
       {
         "id": "wireless_switch_1gang_cr2032_double_press",
@@ -117780,7 +118592,11 @@
             "type": "device",
             "filter": "driver_id=wireless_switch_1gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button double press [[device]]",
+          "fr": "Bouton double pression [[device]]"
+        }
       },
       {
         "id": "wireless_switch_1gang_cr2032_long_press",
@@ -117814,7 +118630,11 @@
             "type": "device",
             "filter": "driver_id=wireless_switch_1gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button long press [[device]]",
+          "fr": "Bouton pression longue [[device]]"
+        }
       },
       {
         "id": "wireless_switch_1gang_cr2032_battery_low",
@@ -117848,7 +118668,11 @@
             "type": "device",
             "filter": "driver_id=wireless_switch_1gang_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery is low [[device]]",
+          "fr": "Batterie faible [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_2button_cr2032_button_pressed",
@@ -117891,7 +118715,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_2button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_2button_cr2032_single_press",
@@ -117925,7 +118753,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_2button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button single press [[device]]",
+          "fr": "Bouton pression simple [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_2button_cr2032_double_press",
@@ -117959,7 +118791,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_2button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button double press [[device]]",
+          "fr": "Bouton double pression [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_2button_cr2032_long_press",
@@ -117993,7 +118829,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_2button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button long press [[device]]",
+          "fr": "Bouton pression longue [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_2button_cr2032_battery_low",
@@ -118027,7 +118867,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_2button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery is low [[device]]",
+          "fr": "Batterie faible [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_3button_cr2032_button_pressed",
@@ -118070,7 +118914,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_3button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_3button_cr2032_single_press",
@@ -118104,7 +118952,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_3button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button single press [[device]]",
+          "fr": "Bouton pression simple [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_3button_cr2032_double_press",
@@ -118138,7 +118990,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_3button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button double press [[device]]",
+          "fr": "Bouton double pression [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_3button_cr2032_long_press",
@@ -118172,7 +119028,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_3button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button long press [[device]]",
+          "fr": "Bouton pression longue [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_3button_cr2032_battery_low",
@@ -118206,7 +119066,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_3button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery is low [[device]]",
+          "fr": "Batterie faible [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_4button_cr2032_button_pressed",
@@ -118249,7 +119113,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_4button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_4button_cr2032_single_press",
@@ -118283,7 +119151,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_4button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button single press [[device]]",
+          "fr": "Bouton pression simple [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_4button_cr2032_double_press",
@@ -118317,7 +119189,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_4button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button double press [[device]]",
+          "fr": "Bouton double pression [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_4button_cr2032_long_press",
@@ -118351,7 +119227,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_4button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button long press [[device]]",
+          "fr": "Bouton pression longue [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_4button_cr2032_battery_low",
@@ -118385,7 +119265,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_4button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery is low [[device]]",
+          "fr": "Batterie faible [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_6button_cr2032_button_pressed",
@@ -118428,7 +119312,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_6button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_6button_cr2032_single_press",
@@ -118462,7 +119350,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_6button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button single press [[device]]",
+          "fr": "Bouton pression simple [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_6button_cr2032_double_press",
@@ -118496,7 +119388,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_6button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button double press [[device]]",
+          "fr": "Bouton double pression [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_6button_cr2032_long_press",
@@ -118530,7 +119426,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_6button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button long press [[device]]",
+          "fr": "Bouton pression longue [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_6button_cr2032_battery_low",
@@ -118564,7 +119464,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_6button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery is low [[device]]",
+          "fr": "Batterie faible [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_8button_cr2032_button_pressed",
@@ -118607,7 +119511,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_8button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button pressed [[device]]",
+          "fr": "Bouton appuyé [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_8button_cr2032_single_press",
@@ -118641,7 +119549,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_8button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button single press [[device]]",
+          "fr": "Bouton pression simple [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_8button_cr2032_double_press",
@@ -118675,7 +119587,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_8button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button double press [[device]]",
+          "fr": "Bouton double pression [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_8button_cr2032_long_press",
@@ -118709,7 +119625,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_8button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Button long press [[device]]",
+          "fr": "Bouton pression longue [[device]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_8button_cr2032_battery_low",
@@ -118743,7 +119663,11 @@
             "type": "device",
             "filter": "driver_id=tuya_wireless_switch_8button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery is low [[device]]",
+          "fr": "Batterie faible [[device]]"
+        }
       }
     ],
     "conditions": [
@@ -118764,17 +119688,17 @@
             "type": "device",
             "filter": "driver_id=tuya_motion_sensor_pir_basic_cr2450"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion is active [[device]]",
+          "fr": "Mouvement actif [[device]]"
+        }
       },
       {
         "id": "tuya_thermostat_aaa_mode_is",
         "title": {
           "en": "Mode is...",
           "fr": "Mode est..."
-        },
-        "titleFormatted": {
-          "en": "[[device]] mode !{{is|is not}} [[mode]]",
-          "fr": "Mode de [[device]] !{{est|n'est pas}} [[mode]]"
         },
         "args": [
           {
@@ -118818,17 +119742,17 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Mode is... [[device]] [[mode]]",
+          "fr": "Mode est... [[device]] [[mode]]"
+        }
       },
       {
         "id": "tuya_thermostat_cr2032_mode_is",
         "title": {
           "en": "Mode is...",
           "fr": "Mode est..."
-        },
-        "titleFormatted": {
-          "en": "[[device]] mode !{{is|is not}} [[mode]]",
-          "fr": "Mode de [[device]] !{{est|n'est pas}} [[mode]]"
         },
         "args": [
           {
@@ -118872,17 +119796,17 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Mode is... [[device]] [[mode]]",
+          "fr": "Mode est... [[device]] [[mode]]"
+        }
       },
       {
         "id": "thermostat_hybrid_mode_is",
         "title": {
           "en": "Mode is...",
           "fr": "Mode est..."
-        },
-        "titleFormatted": {
-          "en": "[[device]] mode !{{is|is not}} [[mode]]",
-          "fr": "Mode de [[device]] !{{est|n'est pas}} [[mode]]"
         },
         "args": [
           {
@@ -118926,17 +119850,17 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Mode is... [[device]] [[mode]]",
+          "fr": "Mode est... [[device]] [[mode]]"
+        }
       },
       {
         "id": "tuya_thermostat_smart_internal_mode_is",
         "title": {
           "en": "Mode is...",
           "fr": "Mode est..."
-        },
-        "titleFormatted": {
-          "en": "[[device]] mode !{{is|is not}} [[mode]]",
-          "fr": "Mode de [[device]] !{{est|n'est pas}} [[mode]]"
         },
         "args": [
           {
@@ -118980,7 +119904,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Mode is... [[device]] [[mode]]",
+          "fr": "Mode est... [[device]] [[mode]]"
+        }
       },
       {
         "id": "tuya_contact_sensor_basic_cr2032_is_open",
@@ -118999,7 +119927,11 @@
             "type": "device",
             "filter": "driver_id=tuya_contact_sensor_basic_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is open [[device]]",
+          "fr": "Est ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_contact_sensor_basic_cr2032_is_closed",
@@ -119018,7 +119950,11 @@
             "type": "device",
             "filter": "driver_id=tuya_contact_sensor_basic_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is closed [[device]]",
+          "fr": "Est fermé [[device]]"
+        }
       },
       {
         "id": "tuya_bulb_white_aaa_is_open",
@@ -119037,7 +119973,11 @@
             "type": "device",
             "filter": "driver_id=tuya_bulb_white_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is open [[device]]",
+          "fr": "Est ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_bulb_white_aaa_is_closed",
@@ -119056,7 +119996,11 @@
             "type": "device",
             "filter": "driver_id=tuya_bulb_white_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is closed [[device]]",
+          "fr": "Est fermé [[device]]"
+        }
       },
       {
         "id": "tuya_bulb_white_cr2032_is_open",
@@ -119075,7 +120019,11 @@
             "type": "device",
             "filter": "driver_id=tuya_bulb_white_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is open [[device]]",
+          "fr": "Est ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_bulb_white_cr2032_is_closed",
@@ -119094,17 +120042,17 @@
             "type": "device",
             "filter": "driver_id=tuya_bulb_white_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is closed [[device]]",
+          "fr": "Est fermé [[device]]"
+        }
       },
       {
         "id": "tuya_tuya_climate_monitor_aaa_aaa_mode_is",
         "title": {
           "en": "Mode is...",
           "fr": "Mode est..."
-        },
-        "titleFormatted": {
-          "en": "[[device]] mode !{{is|is not}} [[mode]]",
-          "fr": "Mode de [[device]] !{{est|n'est pas}} [[mode]]"
         },
         "args": [
           {
@@ -119148,17 +120096,17 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Mode is... [[device]] [[mode]]",
+          "fr": "Mode est... [[device]] [[mode]]"
+        }
       },
       {
         "id": "climate_monitor_cr2032_mode_is",
         "title": {
           "en": "Mode is...",
           "fr": "Mode est..."
-        },
-        "titleFormatted": {
-          "en": "[[device]] mode !{{is|is not}} [[mode]]",
-          "fr": "Mode de [[device]] !{{est|n'est pas}} [[mode]]"
         },
         "args": [
           {
@@ -119202,7 +120150,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Mode is... [[device]] [[mode]]",
+          "fr": "Mode est... [[device]] [[mode]]"
+        }
       },
       {
         "id": "outdoor_light_controller_ac_is_open",
@@ -119221,7 +120173,11 @@
             "type": "device",
             "filter": "driver_id=outdoor_light_controller_ac"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is open [[device]]",
+          "fr": "Est ouvert [[device]]"
+        }
       },
       {
         "id": "outdoor_light_controller_ac_is_closed",
@@ -119240,17 +120196,17 @@
             "type": "device",
             "filter": "driver_id=outdoor_light_controller_ac"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is closed [[device]]",
+          "fr": "Est fermé [[device]]"
+        }
       },
       {
         "id": "tuya_tuya_climate_monitor_cr2032_mode_is",
         "title": {
           "en": "Mode is...",
           "fr": "Mode est..."
-        },
-        "titleFormatted": {
-          "en": "[[device]] mode !{{is|is not}} [[mode]]",
-          "fr": "Mode de [[device]] !{{est|n'est pas}} [[mode]]"
         },
         "args": [
           {
@@ -119294,7 +120250,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Mode is... [[device]] [[mode]]",
+          "fr": "Mode est... [[device]] [[mode]]"
+        }
       },
       {
         "id": "tuya_tuya_door_controller_aaa_aaa_is_open",
@@ -119313,7 +120273,11 @@
             "type": "device",
             "filter": "driver_id=tuya_tuya_door_controller_aaa_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is open [[device]]",
+          "fr": "Est ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_tuya_door_controller_aaa_aaa_is_closed",
@@ -119332,7 +120296,11 @@
             "type": "device",
             "filter": "driver_id=tuya_tuya_door_controller_aaa_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is closed [[device]]",
+          "fr": "Est fermé [[device]]"
+        }
       },
       {
         "id": "door_controller_ac_is_open",
@@ -119351,7 +120319,11 @@
             "type": "device",
             "filter": "driver_id=door_controller_ac"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is open [[device]]",
+          "fr": "Est ouvert [[device]]"
+        }
       },
       {
         "id": "door_controller_ac_is_closed",
@@ -119370,7 +120342,11 @@
             "type": "device",
             "filter": "driver_id=door_controller_ac"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is closed [[device]]",
+          "fr": "Est fermé [[device]]"
+        }
       },
       {
         "id": "tuya_tuya_door_controller_cr2032_is_open",
@@ -119389,7 +120365,11 @@
             "type": "device",
             "filter": "driver_id=tuya_tuya_door_controller_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is open [[device]]",
+          "fr": "Est ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_tuya_door_controller_cr2032_is_closed",
@@ -119408,7 +120388,11 @@
             "type": "device",
             "filter": "driver_id=tuya_tuya_door_controller_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is closed [[device]]",
+          "fr": "Est fermé [[device]]"
+        }
       },
       {
         "id": "tuya_doorbell_button_aaa_is_open",
@@ -119427,7 +120411,11 @@
             "type": "device",
             "filter": "driver_id=tuya_doorbell_button_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is open [[device]]",
+          "fr": "Est ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_doorbell_button_aaa_is_closed",
@@ -119446,7 +120434,11 @@
             "type": "device",
             "filter": "driver_id=tuya_doorbell_button_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is closed [[device]]",
+          "fr": "Est fermé [[device]]"
+        }
       },
       {
         "id": "tuya_doorbell_button_cr2032_is_open",
@@ -119465,7 +120457,11 @@
             "type": "device",
             "filter": "driver_id=tuya_doorbell_button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is open [[device]]",
+          "fr": "Est ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_doorbell_button_cr2032_is_closed",
@@ -119484,7 +120480,11 @@
             "type": "device",
             "filter": "driver_id=tuya_doorbell_button_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is closed [[device]]",
+          "fr": "Est fermé [[device]]"
+        }
       },
       {
         "id": "tuya_doorbell_camera_ac_is_open",
@@ -119503,7 +120503,11 @@
             "type": "device",
             "filter": "driver_id=tuya_doorbell_camera_ac"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is open [[device]]",
+          "fr": "Est ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_doorbell_camera_ac_is_closed",
@@ -119522,7 +120526,11 @@
             "type": "device",
             "filter": "driver_id=tuya_doorbell_camera_ac"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is closed [[device]]",
+          "fr": "Est fermé [[device]]"
+        }
       },
       {
         "id": "doorbell_cr2032_is_open",
@@ -119541,7 +120549,11 @@
             "type": "device",
             "filter": "driver_id=doorbell_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is open [[device]]",
+          "fr": "Est ouvert [[device]]"
+        }
       },
       {
         "id": "doorbell_cr2032_is_closed",
@@ -119560,7 +120572,11 @@
             "type": "device",
             "filter": "driver_id=doorbell_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is closed [[device]]",
+          "fr": "Est fermé [[device]]"
+        }
       },
       {
         "id": "tuya_tuya_garage_door_controller_aaa_aaa_is_open",
@@ -119579,7 +120595,11 @@
             "type": "device",
             "filter": "driver_id=tuya_tuya_garage_door_controller_aaa_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is open [[device]]",
+          "fr": "Est ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_tuya_garage_door_controller_aaa_aaa_is_closed",
@@ -119598,7 +120618,11 @@
             "type": "device",
             "filter": "driver_id=tuya_tuya_garage_door_controller_aaa_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is closed [[device]]",
+          "fr": "Est fermé [[device]]"
+        }
       },
       {
         "id": "garage_door_controller_ac_is_open",
@@ -119617,7 +120641,11 @@
             "type": "device",
             "filter": "driver_id=garage_door_controller_ac"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is open [[device]]",
+          "fr": "Est ouvert [[device]]"
+        }
       },
       {
         "id": "garage_door_controller_ac_is_closed",
@@ -119636,7 +120664,11 @@
             "type": "device",
             "filter": "driver_id=garage_door_controller_ac"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is closed [[device]]",
+          "fr": "Est fermé [[device]]"
+        }
       },
       {
         "id": "tuya_tuya_garage_door_controller_cr2032_is_open",
@@ -119655,7 +120687,11 @@
             "type": "device",
             "filter": "driver_id=tuya_tuya_garage_door_controller_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is open [[device]]",
+          "fr": "Est ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_tuya_garage_door_controller_cr2032_is_closed",
@@ -119674,7 +120710,11 @@
             "type": "device",
             "filter": "driver_id=tuya_tuya_garage_door_controller_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is closed [[device]]",
+          "fr": "Est fermé [[device]]"
+        }
       },
       {
         "id": "tuya_tuya_garage_door_opener_aaa_aaa_is_open",
@@ -119693,7 +120733,11 @@
             "type": "device",
             "filter": "driver_id=tuya_tuya_garage_door_opener_aaa_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is open [[device]]",
+          "fr": "Est ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_tuya_garage_door_opener_aaa_aaa_is_closed",
@@ -119712,7 +120756,11 @@
             "type": "device",
             "filter": "driver_id=tuya_tuya_garage_door_opener_aaa_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is closed [[device]]",
+          "fr": "Est fermé [[device]]"
+        }
       },
       {
         "id": "tuya_tuya_garage_door_opener_cr2032_is_open",
@@ -119731,7 +120779,11 @@
             "type": "device",
             "filter": "driver_id=tuya_tuya_garage_door_opener_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is open [[device]]",
+          "fr": "Est ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_tuya_garage_door_opener_cr2032_is_closed",
@@ -119750,7 +120802,11 @@
             "type": "device",
             "filter": "driver_id=tuya_tuya_garage_door_opener_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is closed [[device]]",
+          "fr": "Est fermé [[device]]"
+        }
       },
       {
         "id": "led_strip_outdoor_color_ac_is_open",
@@ -119769,7 +120825,11 @@
             "type": "device",
             "filter": "driver_id=led_strip_outdoor_color_ac"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is open [[device]]",
+          "fr": "Est ouvert [[device]]"
+        }
       },
       {
         "id": "led_strip_outdoor_color_ac_is_closed",
@@ -119788,7 +120848,11 @@
             "type": "device",
             "filter": "driver_id=led_strip_outdoor_color_ac"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is closed [[device]]",
+          "fr": "Est fermé [[device]]"
+        }
       },
       {
         "id": "outdoor_siren_cr2032_is_open",
@@ -119807,7 +120871,11 @@
             "type": "device",
             "filter": "driver_id=outdoor_siren_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is open [[device]]",
+          "fr": "Est ouvert [[device]]"
+        }
       },
       {
         "id": "outdoor_siren_cr2032_is_closed",
@@ -119826,7 +120894,11 @@
             "type": "device",
             "filter": "driver_id=outdoor_siren_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is closed [[device]]",
+          "fr": "Est fermé [[device]]"
+        }
       },
       {
         "id": "tuya_siren_outdoor_aaa_is_open",
@@ -119845,7 +120917,11 @@
             "type": "device",
             "filter": "driver_id=tuya_siren_outdoor_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is open [[device]]",
+          "fr": "Est ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_siren_outdoor_aaa_is_closed",
@@ -119864,7 +120940,11 @@
             "type": "device",
             "filter": "driver_id=tuya_siren_outdoor_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is closed [[device]]",
+          "fr": "Est fermé [[device]]"
+        }
       },
       {
         "id": "tuya_siren_outdoor_cr2032_is_open",
@@ -119883,7 +120963,11 @@
             "type": "device",
             "filter": "driver_id=tuya_siren_outdoor_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is open [[device]]",
+          "fr": "Est ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_siren_outdoor_cr2032_is_closed",
@@ -119902,7 +120986,11 @@
             "type": "device",
             "filter": "driver_id=tuya_siren_outdoor_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is closed [[device]]",
+          "fr": "Est fermé [[device]]"
+        }
       },
       {
         "id": "tuya_door_window_sensor_basic_aaa_is_open",
@@ -119921,7 +121009,11 @@
             "type": "device",
             "filter": "driver_id=tuya_door_window_sensor_basic_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is open [[device]]",
+          "fr": "Est ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_door_window_sensor_basic_aaa_is_closed",
@@ -119940,7 +121032,11 @@
             "type": "device",
             "filter": "driver_id=tuya_door_window_sensor_basic_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is closed [[device]]",
+          "fr": "Est fermé [[device]]"
+        }
       },
       {
         "id": "tuya_door_window_sensor_basic_cr2032_is_open",
@@ -119959,7 +121055,11 @@
             "type": "device",
             "filter": "driver_id=tuya_door_window_sensor_basic_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is open [[device]]",
+          "fr": "Est ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_door_window_sensor_basic_cr2032_is_closed",
@@ -119978,7 +121078,11 @@
             "type": "device",
             "filter": "driver_id=tuya_door_window_sensor_basic_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is closed [[device]]",
+          "fr": "Est fermé [[device]]"
+        }
       },
       {
         "id": "door_window_sensor_battery_is_open",
@@ -119997,7 +121101,11 @@
             "type": "device",
             "filter": "driver_id=door_window_sensor_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is open [[device]]",
+          "fr": "Est ouvert [[device]]"
+        }
       },
       {
         "id": "door_window_sensor_battery_is_closed",
@@ -120016,7 +121124,11 @@
             "type": "device",
             "filter": "driver_id=door_window_sensor_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is closed [[device]]",
+          "fr": "Est fermé [[device]]"
+        }
       },
       {
         "id": "tuya_doorbell_button_internal_is_open",
@@ -120035,7 +121147,11 @@
             "type": "device",
             "filter": "driver_id=tuya_doorbell_button_internal"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is open [[device]]",
+          "fr": "Est ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_doorbell_button_internal_is_closed",
@@ -120054,7 +121170,11 @@
             "type": "device",
             "filter": "driver_id=tuya_doorbell_button_internal"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is closed [[device]]",
+          "fr": "Est fermé [[device]]"
+        }
       },
       {
         "id": "tuya_lock_basic_aa_is_open",
@@ -120073,7 +121193,11 @@
             "type": "device",
             "filter": "driver_id=tuya_lock_basic_aa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is open [[device]]",
+          "fr": "Est ouvert [[device]]"
+        }
       },
       {
         "id": "tuya_lock_basic_aa_is_closed",
@@ -120092,7 +121216,11 @@
             "type": "device",
             "filter": "driver_id=tuya_lock_basic_aa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Is closed [[device]]",
+          "fr": "Est fermé [[device]]"
+        }
       },
       {
         "id": "motion_sensor_battery_motion_active",
@@ -120111,7 +121239,11 @@
             "type": "device",
             "filter": "driver_id=motion_sensor_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion is active [[device]]",
+          "fr": "Mouvement actif [[device]]"
+        }
       },
       {
         "id": "tuya_motion_sensor_mmwave_advanced_aaa_motion_active",
@@ -120130,7 +121262,11 @@
             "type": "device",
             "filter": "driver_id=tuya_motion_sensor_mmwave_advanced_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion is active [[device]]",
+          "fr": "Mouvement actif [[device]]"
+        }
       },
       {
         "id": "tuya_motion_sensor_mmwave_advanced_cr2032_motion_active",
@@ -120149,7 +121285,11 @@
             "type": "device",
             "filter": "driver_id=tuya_motion_sensor_mmwave_advanced_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion is active [[device]]",
+          "fr": "Mouvement actif [[device]]"
+        }
       },
       {
         "id": "tuya_motion_sensor_mmwave_basic_aaa_motion_active",
@@ -120168,7 +121308,11 @@
             "type": "device",
             "filter": "driver_id=tuya_motion_sensor_mmwave_basic_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion is active [[device]]",
+          "fr": "Mouvement actif [[device]]"
+        }
       },
       {
         "id": "tuya_motion_sensor_mmwave_basic_cr2032_motion_active",
@@ -120187,7 +121331,11 @@
             "type": "device",
             "filter": "driver_id=tuya_motion_sensor_mmwave_basic_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion is active [[device]]",
+          "fr": "Mouvement actif [[device]]"
+        }
       },
       {
         "id": "motion_sensor_mmwave_battery_motion_active",
@@ -120206,7 +121354,11 @@
             "type": "device",
             "filter": "driver_id=motion_sensor_mmwave_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion is active [[device]]",
+          "fr": "Mouvement actif [[device]]"
+        }
       },
       {
         "id": "motion_sensor_pir_ac_battery_motion_active",
@@ -120225,7 +121377,11 @@
             "type": "device",
             "filter": "driver_id=motion_sensor_pir_ac_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion is active [[device]]",
+          "fr": "Mouvement actif [[device]]"
+        }
       },
       {
         "id": "tuya_motion_sensor_pir_advanced_aaa_motion_active",
@@ -120244,7 +121400,11 @@
             "type": "device",
             "filter": "driver_id=tuya_motion_sensor_pir_advanced_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion is active [[device]]",
+          "fr": "Mouvement actif [[device]]"
+        }
       },
       {
         "id": "tuya_motion_sensor_pir_advanced_cr2032_motion_active",
@@ -120263,7 +121423,11 @@
             "type": "device",
             "filter": "driver_id=tuya_motion_sensor_pir_advanced_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion is active [[device]]",
+          "fr": "Mouvement actif [[device]]"
+        }
       },
       {
         "id": "tuya_motion_sensor_pir_basic_aaa_motion_active",
@@ -120282,7 +121446,11 @@
             "type": "device",
             "filter": "driver_id=tuya_motion_sensor_pir_basic_aaa"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion is active [[device]]",
+          "fr": "Mouvement actif [[device]]"
+        }
       },
       {
         "id": "tuya_motion_sensor_pir_basic_cr2032_motion_active",
@@ -120301,7 +121469,11 @@
             "type": "device",
             "filter": "driver_id=tuya_motion_sensor_pir_basic_cr2032"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion is active [[device]]",
+          "fr": "Mouvement actif [[device]]"
+        }
       },
       {
         "id": "motion_sensor_pir_battery_motion_active",
@@ -120320,7 +121492,11 @@
             "type": "device",
             "filter": "driver_id=motion_sensor_pir_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion is active [[device]]",
+          "fr": "Mouvement actif [[device]]"
+        }
       },
       {
         "id": "motion_sensor_zigbee_204z_battery_motion_active",
@@ -120339,7 +121515,11 @@
             "type": "device",
             "filter": "driver_id=motion_sensor_zigbee_204z_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion is active [[device]]",
+          "fr": "Mouvement actif [[device]]"
+        }
       },
       {
         "id": "motion_temp_humidity_illumination_multi_battery_motion_active",
@@ -120358,7 +121538,11 @@
             "type": "device",
             "filter": "driver_id=motion_temp_humidity_illumination_multi_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion is active [[device]]",
+          "fr": "Mouvement actif [[device]]"
+        }
       },
       {
         "id": "pir_radar_illumination_sensor_battery_motion_active",
@@ -120377,7 +121561,11 @@
             "type": "device",
             "filter": "driver_id=pir_radar_illumination_sensor_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion is active [[device]]",
+          "fr": "Mouvement actif [[device]]"
+        }
       },
       {
         "id": "pir_sensor_advanced_battery_motion_active",
@@ -120396,7 +121584,11 @@
             "type": "device",
             "filter": "driver_id=pir_sensor_advanced_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion is active [[device]]",
+          "fr": "Mouvement actif [[device]]"
+        }
       },
       {
         "id": "presence_sensor_radar_battery_motion_active",
@@ -120415,7 +121607,11 @@
             "type": "device",
             "filter": "driver_id=presence_sensor_radar_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion is active [[device]]",
+          "fr": "Mouvement actif [[device]]"
+        }
       },
       {
         "id": "radar_motion_sensor_advanced_battery_motion_active",
@@ -120434,7 +121630,11 @@
             "type": "device",
             "filter": "driver_id=radar_motion_sensor_advanced_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion is active [[device]]",
+          "fr": "Mouvement actif [[device]]"
+        }
       },
       {
         "id": "radar_motion_sensor_mmwave_battery_motion_active",
@@ -120453,7 +121653,11 @@
             "type": "device",
             "filter": "driver_id=radar_motion_sensor_mmwave_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion is active [[device]]",
+          "fr": "Mouvement actif [[device]]"
+        }
       },
       {
         "id": "radar_motion_sensor_tank_level_battery_motion_active",
@@ -120472,7 +121676,11 @@
             "type": "device",
             "filter": "driver_id=radar_motion_sensor_tank_level_battery"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Motion is active [[device]]",
+          "fr": "Mouvement actif [[device]]"
+        }
       }
     ],
     "actions": [
@@ -120481,10 +121689,6 @@
         "title": {
           "en": "Turn on for...",
           "fr": "Allumer pendant..."
-        },
-        "titleFormatted": {
-          "en": "Turn [[device]] on for [[duration]] seconds",
-          "fr": "Allumer [[device]] pendant [[duration]] secondes"
         },
         "args": [
           {
@@ -120508,17 +121712,17 @@
             "max": 86400,
             "step": 1
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn on for... [[device]] [[duration]]",
+          "fr": "Allumer pendant... [[device]] [[duration]]"
+        }
       },
       {
         "id": "smart_plug_ac_turn_on_duration",
         "title": {
           "en": "Turn on for...",
           "fr": "Allumer pendant..."
-        },
-        "titleFormatted": {
-          "en": "Turn [[device]] on for [[duration]] seconds",
-          "fr": "Allumer [[device]] pendant [[duration]] secondes"
         },
         "args": [
           {
@@ -120542,17 +121746,17 @@
             "max": 86400,
             "step": 1
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn on for... [[device]] [[duration]]",
+          "fr": "Allumer pendant... [[device]] [[duration]]"
+        }
       },
       {
         "id": "smart_plug_energy_ac_turn_on_duration",
         "title": {
           "en": "Turn on for...",
           "fr": "Allumer pendant..."
-        },
-        "titleFormatted": {
-          "en": "Turn [[device]] on for [[duration]] seconds",
-          "fr": "Allumer [[device]] pendant [[duration]] secondes"
         },
         "args": [
           {
@@ -120576,17 +121780,17 @@
             "max": 86400,
             "step": 1
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn on for... [[device]] [[duration]]",
+          "fr": "Allumer pendant... [[device]] [[duration]]"
+        }
       },
       {
         "id": "smart_plug_power_meter_16a_ac_turn_on_duration",
         "title": {
           "en": "Turn on for...",
           "fr": "Allumer pendant..."
-        },
-        "titleFormatted": {
-          "en": "Turn [[device]] on for [[duration]] seconds",
-          "fr": "Allumer [[device]] pendant [[duration]] secondes"
         },
         "args": [
           {
@@ -120610,17 +121814,17 @@
             "max": 86400,
             "step": 1
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn on for... [[device]] [[duration]]",
+          "fr": "Allumer pendant... [[device]] [[duration]]"
+        }
       },
       {
         "id": "tuya_thermostat_aaa_set_thermostat_mode",
         "title": {
           "en": "Set mode",
           "fr": "Définir mode"
-        },
-        "titleFormatted": {
-          "en": "Set [[device]] mode to [[mode]]",
-          "fr": "Définir mode de [[device]] à [[mode]]"
         },
         "args": [
           {
@@ -120671,17 +121875,17 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Set mode [[device]] [[mode]]",
+          "fr": "Définir mode [[device]] [[mode]]"
+        }
       },
       {
         "id": "tuya_thermostat_cr2032_set_thermostat_mode",
         "title": {
           "en": "Set mode",
           "fr": "Définir mode"
-        },
-        "titleFormatted": {
-          "en": "Set [[device]] mode to [[mode]]",
-          "fr": "Définir mode de [[device]] à [[mode]]"
         },
         "args": [
           {
@@ -120732,17 +121936,17 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Set mode [[device]] [[mode]]",
+          "fr": "Définir mode [[device]] [[mode]]"
+        }
       },
       {
         "id": "thermostat_hybrid_set_thermostat_mode",
         "title": {
           "en": "Set mode",
           "fr": "Définir mode"
-        },
-        "titleFormatted": {
-          "en": "Set [[device]] mode to [[mode]]",
-          "fr": "Définir mode de [[device]] à [[mode]]"
         },
         "args": [
           {
@@ -120793,17 +121997,17 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Set mode [[device]] [[mode]]",
+          "fr": "Définir mode [[device]] [[mode]]"
+        }
       },
       {
         "id": "tuya_thermostat_smart_internal_set_thermostat_mode",
         "title": {
           "en": "Set mode",
           "fr": "Définir mode"
-        },
-        "titleFormatted": {
-          "en": "Set [[device]] mode to [[mode]]",
-          "fr": "Définir mode de [[device]] à [[mode]]"
         },
         "args": [
           {
@@ -120854,7 +122058,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Set mode [[device]] [[mode]]",
+          "fr": "Définir mode [[device]] [[mode]]"
+        }
       },
       {
         "id": "ikea_ikea_wireless_button_2gang_cr2032_trigger_button",
@@ -120932,7 +122140,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger button manually [[device]] [[button]] [[action]]",
+          "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        }
       },
       {
         "id": "ikea_ikea_wireless_button_2gang_cr2032_set_gang",
@@ -121010,17 +122222,17 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn gang on/off [[device]] [[gang]] [[state]]",
+          "fr": "Allumer/éteindre bouton [[device]] [[gang]] [[state]]"
+        }
       },
       {
         "id": "tuya_tuya_climate_monitor_aaa_aaa_set_thermostat_mode",
         "title": {
           "en": "Set mode",
           "fr": "Définir mode"
-        },
-        "titleFormatted": {
-          "en": "Set [[device]] mode to [[mode]]",
-          "fr": "Définir mode de [[device]] à [[mode]]"
         },
         "args": [
           {
@@ -121071,17 +122283,17 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Set mode [[device]] [[mode]]",
+          "fr": "Définir mode [[device]] [[mode]]"
+        }
       },
       {
         "id": "climate_monitor_cr2032_set_thermostat_mode",
         "title": {
           "en": "Set mode",
           "fr": "Définir mode"
-        },
-        "titleFormatted": {
-          "en": "Set [[device]] mode to [[mode]]",
-          "fr": "Définir mode de [[device]] à [[mode]]"
         },
         "args": [
           {
@@ -121132,17 +122344,17 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Set mode [[device]] [[mode]]",
+          "fr": "Définir mode [[device]] [[mode]]"
+        }
       },
       {
         "id": "energy_monitoring_plug_advanced_ac_turn_on_duration",
         "title": {
           "en": "Turn on for...",
           "fr": "Allumer pendant..."
-        },
-        "titleFormatted": {
-          "en": "Turn [[device]] on for [[duration]] seconds",
-          "fr": "Allumer [[device]] pendant [[duration]] secondes"
         },
         "args": [
           {
@@ -121166,17 +122378,17 @@
             "max": 86400,
             "step": 1
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn on for... [[device]] [[duration]]",
+          "fr": "Allumer pendant... [[device]] [[duration]]"
+        }
       },
       {
         "id": "energy_plug_advanced_ac_turn_on_duration",
         "title": {
           "en": "Turn on for...",
           "fr": "Allumer pendant..."
-        },
-        "titleFormatted": {
-          "en": "Turn [[device]] on for [[duration]] seconds",
-          "fr": "Allumer [[device]] pendant [[duration]] secondes"
         },
         "args": [
           {
@@ -121200,7 +122412,11 @@
             "max": 86400,
             "step": 1
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn on for... [[device]] [[duration]]",
+          "fr": "Allumer pendant... [[device]] [[duration]]"
+        }
       },
       {
         "id": "mini_switch_cr2032_trigger_button",
@@ -121271,17 +122487,17 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger button manually [[device]] [[button]] [[action]]",
+          "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        }
       },
       {
         "id": "tuya_plug_energy_monitor_ac_turn_on_duration",
         "title": {
           "en": "Turn on for...",
           "fr": "Allumer pendant..."
-        },
-        "titleFormatted": {
-          "en": "Turn [[device]] on for [[duration]] seconds",
-          "fr": "Allumer [[device]] pendant [[duration]] secondes"
         },
         "args": [
           {
@@ -121305,17 +122521,17 @@
             "max": 86400,
             "step": 1
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn on for... [[device]] [[duration]]",
+          "fr": "Allumer pendant... [[device]] [[duration]]"
+        }
       },
       {
         "id": "tuya_plug_smart_ac_turn_on_duration",
         "title": {
           "en": "Turn on for...",
           "fr": "Allumer pendant..."
-        },
-        "titleFormatted": {
-          "en": "Turn [[device]] on for [[duration]] seconds",
-          "fr": "Allumer [[device]] pendant [[duration]] secondes"
         },
         "args": [
           {
@@ -121339,17 +122555,17 @@
             "max": 86400,
             "step": 1
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn on for... [[device]] [[duration]]",
+          "fr": "Allumer pendant... [[device]] [[duration]]"
+        }
       },
       {
         "id": "power_meter_socket_ac_turn_on_duration",
         "title": {
           "en": "Turn on for...",
           "fr": "Allumer pendant..."
-        },
-        "titleFormatted": {
-          "en": "Turn [[device]] on for [[duration]] seconds",
-          "fr": "Allumer [[device]] pendant [[duration]] secondes"
         },
         "args": [
           {
@@ -121373,7 +122589,11 @@
             "max": 86400,
             "step": 1
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn on for... [[device]] [[duration]]",
+          "fr": "Allumer pendant... [[device]] [[duration]]"
+        }
       },
       {
         "id": "remote_switch_cr2032_trigger_button",
@@ -121444,7 +122664,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger button manually [[device]] [[button]] [[action]]",
+          "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        }
       },
       {
         "id": "tuya_smart_switch_1gang_aaa_trigger_button",
@@ -121515,7 +122739,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger button manually [[device]] [[button]] [[action]]",
+          "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        }
       },
       {
         "id": "tuya_smart_switch_1gang_cr2032_trigger_button",
@@ -121586,17 +122814,17 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger button manually [[device]] [[button]] [[action]]",
+          "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        }
       },
       {
         "id": "usb_outlet_ac_turn_on_duration",
         "title": {
           "en": "Turn on for...",
           "fr": "Allumer pendant..."
-        },
-        "titleFormatted": {
-          "en": "Turn [[device]] on for [[duration]] seconds",
-          "fr": "Allumer [[device]] pendant [[duration]] secondes"
         },
         "args": [
           {
@@ -121620,17 +122848,17 @@
             "max": 86400,
             "step": 1
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn on for... [[device]] [[duration]]",
+          "fr": "Allumer pendant... [[device]] [[duration]]"
+        }
       },
       {
         "id": "usb_outlet_advanced_ac_turn_on_duration",
         "title": {
           "en": "Turn on for...",
           "fr": "Allumer pendant..."
-        },
-        "titleFormatted": {
-          "en": "Turn [[device]] on for [[duration]] seconds",
-          "fr": "Allumer [[device]] pendant [[duration]] secondes"
         },
         "args": [
           {
@@ -121654,7 +122882,11 @@
             "max": 86400,
             "step": 1
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn on for... [[device]] [[duration]]",
+          "fr": "Allumer pendant... [[device]] [[duration]]"
+        }
       },
       {
         "id": "wireless_switch_2gang_cr2032_trigger_button",
@@ -121732,7 +122964,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger button manually [[device]] [[button]] [[action]]",
+          "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        }
       },
       {
         "id": "wireless_switch_2gang_cr2032_set_gang",
@@ -121810,7 +123046,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn gang on/off [[device]] [[gang]] [[state]]",
+          "fr": "Allumer/éteindre bouton [[device]] [[gang]] [[state]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_4button_cr2450_trigger_button",
@@ -121902,7 +123142,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger button manually [[device]] [[button]] [[action]]",
+          "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_4button_cr2450_set_gang",
@@ -121994,7 +123238,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn gang on/off [[device]] [[gang]] [[state]]",
+          "fr": "Allumer/éteindre bouton [[device]] [[gang]] [[state]]"
+        }
       },
       {
         "id": "wireless_switch_4gang_cr2032_trigger_button",
@@ -122086,7 +123334,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger button manually [[device]] [[button]] [[action]]",
+          "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        }
       },
       {
         "id": "wireless_switch_4gang_cr2032_set_gang",
@@ -122178,7 +123430,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn gang on/off [[device]] [[gang]] [[state]]",
+          "fr": "Allumer/éteindre bouton [[device]] [[gang]] [[state]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_5button_cr2032_trigger_button",
@@ -122277,7 +123533,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger button manually [[device]] [[button]] [[action]]",
+          "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_5button_cr2032_set_gang",
@@ -122376,7 +123636,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn gang on/off [[device]] [[gang]] [[state]]",
+          "fr": "Allumer/éteindre bouton [[device]] [[gang]] [[state]]"
+        }
       },
       {
         "id": "wireless_switch_6gang_cr2032_trigger_button",
@@ -122482,7 +123746,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger button manually [[device]] [[button]] [[action]]",
+          "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        }
       },
       {
         "id": "wireless_switch_6gang_cr2032_set_gang",
@@ -122588,7 +123856,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn gang on/off [[device]] [[gang]] [[state]]",
+          "fr": "Allumer/éteindre bouton [[device]] [[gang]] [[state]]"
+        }
       },
       {
         "id": "wireless_switch_cr2032_trigger_button",
@@ -122659,17 +123931,17 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger button manually [[device]] [[button]] [[action]]",
+          "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        }
       },
       {
         "id": "smart_plug_dimmer_ac_turn_on_duration",
         "title": {
           "en": "Turn on for...",
           "fr": "Allumer pendant..."
-        },
-        "titleFormatted": {
-          "en": "Turn [[device]] on for [[duration]] seconds",
-          "fr": "Allumer [[device]] pendant [[duration]] secondes"
         },
         "args": [
           {
@@ -122693,17 +123965,17 @@
             "max": 86400,
             "step": 1
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn on for... [[device]] [[duration]]",
+          "fr": "Allumer pendant... [[device]] [[duration]]"
+        }
       },
       {
         "id": "tuya_tuya_climate_monitor_cr2032_set_thermostat_mode",
         "title": {
           "en": "Set mode",
           "fr": "Définir mode"
-        },
-        "titleFormatted": {
-          "en": "Set [[device]] mode to [[mode]]",
-          "fr": "Définir mode de [[device]] à [[mode]]"
         },
         "args": [
           {
@@ -122754,7 +124026,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Set mode [[device]] [[mode]]",
+          "fr": "Définir mode [[device]] [[mode]]"
+        }
       },
       {
         "id": "roller_shutter_switch_cr2032_trigger_button",
@@ -122832,7 +124108,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger button manually [[device]] [[button]] [[action]]",
+          "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        }
       },
       {
         "id": "roller_shutter_switch_cr2032_set_gang",
@@ -122910,7 +124190,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn gang on/off [[device]] [[gang]] [[state]]",
+          "fr": "Allumer/éteindre bouton [[device]] [[gang]] [[state]]"
+        }
       },
       {
         "id": "scene_controller_battery_trigger_button",
@@ -122981,7 +124265,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger button manually [[device]] [[button]] [[action]]",
+          "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        }
       },
       {
         "id": "tuya_smart_switch_1gang_internal_trigger_button",
@@ -123059,7 +124347,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger button manually [[device]] [[button]] [[action]]",
+          "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        }
       },
       {
         "id": "tuya_smart_switch_1gang_internal_set_gang",
@@ -123137,7 +124429,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn gang on/off [[device]] [[gang]] [[state]]",
+          "fr": "Allumer/éteindre bouton [[device]] [[gang]] [[state]]"
+        }
       },
       {
         "id": "tuya_smart_switch_3gang_cr2032_trigger_button",
@@ -123222,7 +124518,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger button manually [[device]] [[button]] [[action]]",
+          "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        }
       },
       {
         "id": "tuya_smart_switch_3gang_cr2032_set_gang",
@@ -123307,7 +124607,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn gang on/off [[device]] [[gang]] [[state]]",
+          "fr": "Allumer/éteindre bouton [[device]] [[gang]] [[state]]"
+        }
       },
       {
         "id": "tuya_smart_switch_4gang_cr2032_trigger_button",
@@ -123399,7 +124703,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger button manually [[device]] [[button]] [[action]]",
+          "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        }
       },
       {
         "id": "tuya_smart_switch_4gang_cr2032_set_gang",
@@ -123491,7 +124799,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn gang on/off [[device]] [[gang]] [[state]]",
+          "fr": "Allumer/éteindre bouton [[device]] [[gang]] [[state]]"
+        }
       },
       {
         "id": "tuya_smart_switch_5gang_aaa_trigger_button",
@@ -123590,7 +124902,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger button manually [[device]] [[button]] [[action]]",
+          "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        }
       },
       {
         "id": "tuya_smart_switch_5gang_aaa_set_gang",
@@ -123689,7 +125005,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn gang on/off [[device]] [[gang]] [[state]]",
+          "fr": "Allumer/éteindre bouton [[device]] [[gang]] [[state]]"
+        }
       },
       {
         "id": "tuya_smart_switch_5gang_cr2032_trigger_button",
@@ -123788,7 +125108,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger button manually [[device]] [[button]] [[action]]",
+          "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        }
       },
       {
         "id": "tuya_smart_switch_5gang_cr2032_set_gang",
@@ -123887,7 +125211,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn gang on/off [[device]] [[gang]] [[state]]",
+          "fr": "Allumer/éteindre bouton [[device]] [[gang]] [[state]]"
+        }
       },
       {
         "id": "switch_1gang_battery_trigger_button",
@@ -123958,7 +125286,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger button manually [[device]] [[button]] [[action]]",
+          "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        }
       },
       {
         "id": "switch_5gang_battery_trigger_button",
@@ -124057,7 +125389,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger button manually [[device]] [[button]] [[action]]",
+          "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        }
       },
       {
         "id": "switch_5gang_battery_set_gang",
@@ -124156,7 +125492,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn gang on/off [[device]] [[gang]] [[state]]",
+          "fr": "Allumer/éteindre bouton [[device]] [[gang]] [[state]]"
+        }
       },
       {
         "id": "wireless_scene_controller_4button_battery_trigger_button",
@@ -124248,7 +125588,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger button manually [[device]] [[button]] [[action]]",
+          "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        }
       },
       {
         "id": "wireless_scene_controller_4button_battery_set_gang",
@@ -124340,7 +125684,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn gang on/off [[device]] [[gang]] [[state]]",
+          "fr": "Allumer/éteindre bouton [[device]] [[gang]] [[state]]"
+        }
       },
       {
         "id": "wireless_switch_1gang_cr2032_trigger_button",
@@ -124411,7 +125759,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger button manually [[device]] [[button]] [[action]]",
+          "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_2button_cr2032_trigger_button",
@@ -124489,7 +125841,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger button manually [[device]] [[button]] [[action]]",
+          "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_2button_cr2032_set_gang",
@@ -124567,7 +125923,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn gang on/off [[device]] [[gang]] [[state]]",
+          "fr": "Allumer/éteindre bouton [[device]] [[gang]] [[state]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_3button_cr2032_trigger_button",
@@ -124652,7 +126012,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger button manually [[device]] [[button]] [[action]]",
+          "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_3button_cr2032_set_gang",
@@ -124737,7 +126101,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn gang on/off [[device]] [[gang]] [[state]]",
+          "fr": "Allumer/éteindre bouton [[device]] [[gang]] [[state]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_4button_cr2032_trigger_button",
@@ -124829,7 +126197,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger button manually [[device]] [[button]] [[action]]",
+          "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_4button_cr2032_set_gang",
@@ -124921,7 +126293,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn gang on/off [[device]] [[gang]] [[state]]",
+          "fr": "Allumer/éteindre bouton [[device]] [[gang]] [[state]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_6button_cr2032_trigger_button",
@@ -125027,7 +126403,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger button manually [[device]] [[button]] [[action]]",
+          "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_6button_cr2032_set_gang",
@@ -125133,7 +126513,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn gang on/off [[device]] [[gang]] [[state]]",
+          "fr": "Allumer/éteindre bouton [[device]] [[gang]] [[state]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_8button_cr2032_trigger_button",
@@ -125253,7 +126637,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Trigger button manually [[device]] [[button]] [[action]]",
+          "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        }
       },
       {
         "id": "tuya_wireless_switch_8button_cr2032_set_gang",
@@ -125373,7 +126761,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn gang on/off [[device]] [[gang]] [[state]]",
+          "fr": "Allumer/éteindre bouton [[device]] [[gang]] [[state]]"
+        }
       }
     ]
   }

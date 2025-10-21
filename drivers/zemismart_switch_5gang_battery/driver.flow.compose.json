@@ -36,7 +36,11 @@
           "type": "device",
           "filter": "driver_id=switch_5gang_battery"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Button pressed [[device]]",
+        "fr": "Bouton appuyé [[device]]"
+      }
     },
     {
       "id": "switch_5gang_battery_single_press",
@@ -65,7 +69,11 @@
           "type": "device",
           "filter": "driver_id=switch_5gang_battery"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Button single press [[device]]",
+        "fr": "Bouton pression simple [[device]]"
+      }
     },
     {
       "id": "switch_5gang_battery_double_press",
@@ -94,7 +102,11 @@
           "type": "device",
           "filter": "driver_id=switch_5gang_battery"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Button double press [[device]]",
+        "fr": "Bouton double pression [[device]]"
+      }
     },
     {
       "id": "switch_5gang_battery_long_press",
@@ -123,7 +135,11 @@
           "type": "device",
           "filter": "driver_id=switch_5gang_battery"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Button long press [[device]]",
+        "fr": "Bouton pression longue [[device]]"
+      }
     },
     {
       "id": "switch_5gang_battery_battery_low",
@@ -152,7 +168,11 @@
           "type": "device",
           "filter": "driver_id=switch_5gang_battery"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Battery is low [[device]]",
+        "fr": "Batterie faible [[device]]"
+      }
     }
   ],
   "actions": [
@@ -248,7 +268,11 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Trigger button manually [[device]] [[button]] [[action]]",
+        "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+      }
     },
     {
       "id": "switch_5gang_battery_set_gang",
@@ -342,7 +366,11 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Turn gang on/off [[device]] [[gang]] [[state]]",
+        "fr": "Allumer/éteindre bouton [[device]] [[gang]] [[state]]"
+      }
     }
   ]
 }

@@ -6,10 +6,6 @@
         "en": "Set mode",
         "fr": "Définir mode"
       },
-      "titleFormatted": {
-        "en": "Set [[device]] mode to [[mode]]",
-        "fr": "Définir mode de [[device]] à [[mode]]"
-      },
       "args": [
         {
           "name": "device",
@@ -54,7 +50,11 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set mode [[device]] [[mode]]",
+        "fr": "Définir mode [[device]] [[mode]]"
+      }
     }
   ],
   "conditions": [
@@ -63,10 +63,6 @@
       "title": {
         "en": "Mode is...",
         "fr": "Mode est..."
-      },
-      "titleFormatted": {
-        "en": "[[device]] mode !{{is|is not}} [[mode]]",
-        "fr": "Mode de [[device]] !{{est|n'est pas}} [[mode]]"
       },
       "args": [
         {
@@ -105,7 +101,11 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Mode is... [[device]] [[mode]]",
+        "fr": "Mode est... [[device]] [[mode]]"
+      }
     }
   ]
 }

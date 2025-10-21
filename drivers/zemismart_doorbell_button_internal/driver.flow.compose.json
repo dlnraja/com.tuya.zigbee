@@ -15,7 +15,11 @@
           "type": "device",
           "filter": "driver_id=tuya_doorbell_button_internal"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Opened [[device]]",
+        "fr": "Ouvert [[device]]"
+      }
     },
     {
       "id": "tuya_doorbell_button_internal_contact_closed",
@@ -32,7 +36,11 @@
           "type": "device",
           "filter": "driver_id=tuya_doorbell_button_internal"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Closed [[device]]",
+        "fr": "Fermé [[device]]"
+      }
     }
   ],
   "conditions": [
@@ -48,7 +56,11 @@
           "type": "device",
           "filter": "driver_id=tuya_doorbell_button_internal"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Is open [[device]]",
+        "fr": "Est ouvert [[device]]"
+      }
     },
     {
       "id": "tuya_doorbell_button_internal_is_closed",
@@ -62,7 +74,11 @@
           "type": "device",
           "filter": "driver_id=tuya_doorbell_button_internal"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Is closed [[device]]",
+        "fr": "Est fermé [[device]]"
+      }
     }
   ]
 }

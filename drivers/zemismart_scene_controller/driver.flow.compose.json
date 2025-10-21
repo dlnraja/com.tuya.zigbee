@@ -35,7 +35,11 @@
           "type": "device",
           "filter": "driver_id=scene_controller"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Button pressed [[device]]",
+        "fr": "Bouton appuyé [[device]]"
+      }
     }
   ]
 }
