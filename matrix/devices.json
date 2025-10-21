@@ -1357,7 +1357,7 @@
     "clusters": []
   },
   {
-    "driver_id": "ikea_ikea_shortcut_button_other_other",
+    "driver_id": "ikea_shortcut_button_other",
     "name": "Shortcut Button (OTHER)",
     "class": "button",
     "manufacturers": [
@@ -1382,7 +1382,7 @@
     "clusters": []
   },
   {
-    "driver_id": "ikea_ikea_sound_controller_other_other",
+    "driver_id": "ikea_sound_controller_other",
     "name": "Sound Controller (IKEA)",
     "class": "button",
     "manufacturers": [
@@ -1410,7 +1410,7 @@
     "clusters": []
   },
   {
-    "driver_id": "ikea_ikea_wireless_button_2gang_cr2032",
+    "driver_id": "ikea_wireless_button_2gang_cr2032",
     "name": "2-Button Wireless Remote (CR2032)",
     "class": "button",
     "manufacturers": [
@@ -2574,7 +2574,7 @@
     "clusters": []
   },
   {
-    "driver_id": "moes_climate_monitor_aaa_aaa",
+    "driver_id": "moes_climate_monitor_aaa",
     "name": "climate monitor (Battery) (AAA)",
     "class": "sensor",
     "manufacturers": [
@@ -10069,7 +10069,7 @@
     "clusters": []
   },
   {
-    "driver_id": "tuya_door_controller_aaa_aaa",
+    "driver_id": "tuya_door_controller_aaa",
     "name": "Led Strip (Battery) (AAA)",
     "class": "sensor",
     "manufacturers": [
@@ -10782,7 +10782,7 @@
     "clusters": []
   },
   {
-    "driver_id": "tuya_garage_door_controller_aaa_aaa",
+    "driver_id": "tuya_garage_door_controller_aaa",
     "name": "Garage Door Controller (AC) (AAA)",
     "class": "sensor",
     "manufacturers": [
@@ -11114,7 +11114,7 @@
     "clusters": []
   },
   {
-    "driver_id": "tuya_garage_door_opener_aaa_aaa",
+    "driver_id": "tuya_garage_door_opener_aaa",
     "name": "Garage Door Opener Button (CR2032) (AAA)",
     "class": "sensor",
     "manufacturers": [
@@ -11420,7 +11420,7 @@
     "clusters": []
   },
   {
-    "driver_id": "tuya_humidity_controller_aaa_aaa",
+    "driver_id": "tuya_humidity_controller_aaa",
     "name": "humidity controller (Battery) (AAA)",
     "class": "sensor",
     "manufacturers": [
@@ -11956,7 +11956,7 @@
     "clusters": []
   },
   {
-    "driver_id": "tuya_pet_feeder_aaa_aaa",
+    "driver_id": "tuya_pet_feeder_aaa",
     "name": "Pet Feeder (Battery) (AAA)",
     "class": "other",
     "manufacturers": [
@@ -13134,7 +13134,7 @@
     "clusters": []
   },
   {
-    "driver_id": "tuya_soil_moisture_sensor_aaa_aaa",
+    "driver_id": "tuya_soil_moisture_sensor_aaa",
     "name": "Soil Moisture Sensor (Battery) (AAA)",
     "class": "sensor",
     "manufacturers": [
@@ -13537,7 +13537,7 @@
     "clusters": []
   },
   {
-    "driver_id": "tuya_tank_level_monitor_aaa_aaa",
+    "driver_id": "tuya_tank_level_monitor_aaa",
     "name": "Tank Level Monitor (Battery) (AAA)",
     "class": "sensor",
     "manufacturers": [
@@ -13723,7 +13723,7 @@
     "clusters": []
   },
   {
-    "driver_id": "tuya_temperature_controller_aaa_aaa",
+    "driver_id": "tuya_temperature_controller_aaa",
     "name": "Temperature Controller (Hybrid) (AAA)",
     "class": "sensor",
     "manufacturers": [
@@ -14527,7 +14527,7 @@
     "clusters": []
   },
   {
-    "driver_id": "zemismart_air_quality_monitor_pro_internal_internal",
+    "driver_id": "zemismart_air_quality_monitor_pro_internal",
     "name": "Air Quality Monitor Pro (INTERNAL)",
     "class": "sensor",
     "manufacturers": [
@@ -16574,7 +16574,7 @@
     "clusters": []
   },
   {
-    "driver_id": "zemismart_formaldehyde_sensor_aaa_aaa",
+    "driver_id": "zemismart_formaldehyde_sensor_aaa",
     "name": "Formaldehyde Sensor (Battery) (AAA)",
     "class": "sensor",
     "manufacturers": [
@@ -17076,7 +17076,7 @@
     "clusters": []
   },
   {
-    "driver_id": "zemismart_gas_sensor_ts0601_aa_aa",
+    "driver_id": "zemismart_gas_sensor_ts0601_aa",
     "name": "Gas Sensor TS0601 (Battery) (AA)",
     "class": "sensor",
     "manufacturers": [
@@ -17195,7 +17195,7 @@
     "clusters": []
   },
   {
-    "driver_id": "zemismart_gas_sensor_ts0601_aaa_aaa",
+    "driver_id": "zemismart_gas_sensor_ts0601_aaa",
     "name": "Gas Sensor TS0601 (Battery) (AAA)",
     "class": "sensor",
     "manufacturers": [
@@ -17866,7 +17866,7 @@
     "clusters": []
   },
   {
-    "driver_id": "zemismart_lux_sensor_aaa_aaa",
+    "driver_id": "zemismart_lux_sensor_aaa",
     "name": "Lux Sensor (Battery) (AAA)",
     "class": "sensor",
     "manufacturers": [
@@ -20442,7 +20442,7 @@
     "clusters": []
   },
   {
-    "driver_id": "zemismart_multisensor_aaa_aaa",
+    "driver_id": "zemismart_multisensor_aaa",
     "name": "Multisensor (Battery) (AAA)",
     "class": "sensor",
     "manufacturers": [
@@ -20834,7 +20834,7 @@
     "clusters": []
   },
   {
-    "driver_id": "zemismart_noise_level_sensor_aaa_aaa",
+    "driver_id": "zemismart_noise_level_sensor_aaa",
     "name": "Noise Level Sensor (Battery) (AAA)",
     "class": "sensor",
     "manufacturers": [
@@ -21575,7 +21575,7 @@
     "clusters": []
   },
   {
-    "driver_id": "zemismart_pm25_sensor_aaa_aaa",
+    "driver_id": "zemismart_pm25_sensor_aaa",
     "name": "Pm25 Sensor (Battery) (AAA)",
     "class": "sensor",
     "manufacturers": [
@@ -22195,7 +22195,7 @@
     "clusters": []
   },
   {
-    "driver_id": "zemismart_pressure_sensor_aaa_aaa",
+    "driver_id": "zemismart_pressure_sensor_aaa",
     "name": "Pressure Sensor (Battery) (AAA)",
     "class": "sensor",
     "manufacturers": [
@@ -24515,7 +24515,7 @@
     "clusters": []
   },
   {
-    "driver_id": "zemismart_smart_garden_sprinkler_internal_internal",
+    "driver_id": "zemismart_smart_garden_sprinkler_internal",
     "name": "Smart Garden Sprinkler (INTERNAL)",
     "class": "sensor",
     "manufacturers": [
@@ -24621,7 +24621,7 @@
     "clusters": []
   },
   {
-    "driver_id": "zemismart_smart_irrigation_controller_internal_internal",
+    "driver_id": "zemismart_smart_irrigation_controller_internal",
     "name": "Smart Irrigation Controller (INTERNAL)",
     "class": "sensor",
     "manufacturers": [
@@ -26612,7 +26612,7 @@
     "clusters": []
   },
   {
-    "driver_id": "zemismart_soil_moisture_temperature_sensor_aaa_aaa",
+    "driver_id": "zemismart_soil_moisture_temperature_sensor_aaa",
     "name": "Soil Moisture & Temperature Sensor (Battery) (AAA)",
     "class": "sensor",
     "manufacturers": [
@@ -27046,7 +27046,7 @@
     "clusters": []
   },
   {
-    "driver_id": "zemismart_solar_panel_controller_aaa_aaa",
+    "driver_id": "zemismart_solar_panel_controller_aaa",
     "name": "Solar Panel Controller (AAA)",
     "class": "sensor",
     "manufacturers": [
@@ -28047,7 +28047,7 @@
     "clusters": []
   },
   {
-    "driver_id": "zemismart_temp_sensor_pro_aaa_aaa",
+    "driver_id": "zemismart_temp_sensor_pro_aaa",
     "name": "Temperature Sensor Pro (Battery) (AAA)",
     "class": "sensor",
     "manufacturers": [
@@ -28454,7 +28454,7 @@
     "clusters": []
   },
   {
-    "driver_id": "zemismart_temperature_sensor_aaa_aaa",
+    "driver_id": "zemismart_temperature_sensor_aaa",
     "name": "Temperature Sensor Basic (Battery) (AAA)",
     "class": "sensor",
     "manufacturers": [
@@ -28597,7 +28597,7 @@
     "clusters": []
   },
   {
-    "driver_id": "zemismart_temperature_sensor_advanced_aaa_aaa",
+    "driver_id": "zemismart_temperature_sensor_advanced_aaa",
     "name": "Temperature Sensor Advanced THS317 (Battery) (AAA)",
     "class": "sensor",
     "manufacturers": [
@@ -29572,7 +29572,7 @@
     "clusters": []
   },
   {
-    "driver_id": "zemismart_tvoc_sensor_aaa_aaa",
+    "driver_id": "zemismart_tvoc_sensor_aaa",
     "name": "TVOC Sensor Basic (Battery) (AAA)",
     "class": "sensor",
     "manufacturers": [
@@ -29699,7 +29699,7 @@
     "clusters": []
   },
   {
-    "driver_id": "zemismart_tvoc_sensor_advanced_aaa_aaa",
+    "driver_id": "zemismart_tvoc_sensor_advanced_aaa",
     "name": "TVOC Sensor Advanced (Battery) (AAA)",
     "class": "sensor",
     "manufacturers": [
@@ -30436,7 +30436,7 @@
     "clusters": []
   },
   {
-    "driver_id": "zemismart_vibration_sensor_aaa_aaa",
+    "driver_id": "zemismart_vibration_sensor_aaa",
     "name": "Vibration Sensor (Battery) (AAA)",
     "class": "sensor",
     "manufacturers": [
