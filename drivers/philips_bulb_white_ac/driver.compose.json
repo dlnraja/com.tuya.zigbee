@@ -1,0 +1,38 @@
+{
+  "id": "philips_bulb_white_ac",
+  "name": {
+    "en": "Philips Hue Bulb White (AC)"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "images": {
+    "small": "drivers/philips_bulb_white_ac/assets/images/small.png",
+    "large": "drivers/philips_bulb_white_ac/assets/images/large.png",
+    "xlarge": "drivers/philips_bulb_white_ac/assets/images/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_PHILIPS_generic"
+    ],
+    "productId": [
+      "generic"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+name: Homey App - Validate Only
+
+on:
+  pull_request:
+    branches:
+      - master
+      - develop
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate Homey App
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        validation-level: [publish, verified]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate - ${{ matrix.validation-level }} level
+        uses: athombv/github-action-homey-app-validate@master
+        with:
+          level: ${{ matrix.validation-level }}
+
+      - name: Validation Success
+        if: success()
+        run: |
+          echo "✅ Validation passed at ${{ matrix.validation-level }} level"
+
+      - name: Validation Failed
+        if: failure()
+        run: |
+          echo "❌ Validation failed at ${{ matrix.validation-level }} level"
+          echo "Run locally: homey app validate --level ${{ matrix.validation-level }}"
+          exit 1

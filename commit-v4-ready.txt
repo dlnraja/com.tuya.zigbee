@@ -1,0 +1,13 @@
+release: v4.0.0 - Ready for publication
+
+FINAL FIXES:
+- Fixed image paths for aqara_motion_sensor_pir_basic_cr2450
+- Removed duplicate measure_co2 capabilities
+- All 322 drivers SDK3 compliant
+- Validation publish level: PASSED
+
+Version: 4.0.0
+Drivers: 322
+Brands: 14
+Battery Management: 154 drivers
+Status: READY FOR PUBLICATION

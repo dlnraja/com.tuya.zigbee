@@ -1,0 +1,24 @@
+{
+  "settings": {
+    "title": "Instellingen",
+    "debug_logging": "Debug logging inschakelen",
+    "debug_logging_hint": "Gedetailleerde logging voor probleemoplossing",
+    "community_updates": "Community updates inschakelen",
+    "community_updates_hint": "Ontvang meldingen over nieuwe apparaatondersteuning",
+    "reporting_interval": "Rapportage-interval (seconden)",
+    "temperature_offset": "Temperatuur offset (°C)",
+    "humidity_offset": "Luchtvochtigheid offset (%)"
+  },
+  "tabs": {
+    "general": "Algemeen",
+    "advanced": "Geavanceerd",
+    "about": "Over"
+  },
+  "common": {
+    "save": "Opslaan",
+    "cancel": "Annuleren",
+    "ok": "OK",
+    "delete": "Verwijderen",
+    "edit": "Bewerken"
+  }
+}

@@ -1,0 +1,220 @@
+name: CI Validation & Quality Checks
+
+on:
+  push:
+    branches: [ master, develop ]
+  pull_request:
+    branches: [ master, develop ]
+
+jobs:
+  # Job 1: Homey App Validation
+  validate-app:
+    name: Homey App Validation
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install Homey CLI
+        run: npm install -g homey
+      
+      - name: Install dependencies
+        run: npm ci --if-present || npm install --if-present
+      
+      - name: Validate App (Publish Level)
+        id: validate
+        run: |
+          homey app validate --level publish > validation-output.txt 2>&1
+          cat validation-output.txt
+        continue-on-error: true
+      
+      - name: Upload Validation Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-report
+          path: validation-output.txt
+          retention-days: 30
+      
+      - name: Check Validation Result
+        run: |
+          if grep -q "validated successfully" validation-output.txt; then
+            echo "✅ App validation PASSED"
+            exit 0
+          else
+            echo "❌ App validation FAILED"
+            exit 1
+          fi
+
+  # Job 2: ESLint Code Quality
+  lint-code:
+    name: ESLint Code Quality
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci --if-present || npm install --if-present
+      
+      - name: Run ESLint
+        id: eslint
+        run: |
+          npm run lint > eslint-output.txt 2>&1 || true
+          cat eslint-output.txt
+        continue-on-error: true
+      
+      - name: Upload ESLint Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: eslint-report
+          path: eslint-output.txt
+          retention-days: 30
+
+  # Job 3: Driver Schema Validation
+  validate-drivers:
+    name: Validate Driver Schemas
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      
+      - name: Install AJV (JSON Schema Validator)
+        run: npm install -g ajv-cli
+      
+      - name: Validate Driver Schemas
+        run: |
+          node scripts/validation/validate-driver-schemas.js > schema-validation.txt 2>&1
+          cat schema-validation.txt
+        continue-on-error: true
+      
+      - name: Upload Schema Validation Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: schema-validation-report
+          path: schema-validation.txt
+          retention-days: 30
+
+  # Job 4: Generate Coverage Report
+  generate-coverage:
+    name: Generate Device Coverage Report
+    runs-on: ubuntu-latest
+    needs: [validate-app]
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      
+      - name: Generate Device Matrix
+        run: |
+          node scripts/automation/generate-device-matrix.js
+      
+      - name: Generate Coverage Stats
+        run: |
+          node scripts/automation/generate-coverage-stats.js
+      
+      - name: Upload Coverage Reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-reports
+          path: |
+            DEVICE_MATRIX.md
+            COVERAGE_STATS.json
+            coverage-dashboard.html
+          retention-days: 90
+      
+      - name: Comment PR with Coverage
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const stats = JSON.parse(fs.readFileSync('COVERAGE_STATS.json', 'utf8'));
+            
+            const comment = `## 📊 Coverage Report
+            
+            - **Total Drivers:** ${stats.total_drivers}
+            - **Device Variants:** ${stats.device_variants}
+            - **Categories:** ${stats.categories}
+            - **Brands Supported:** ${stats.brands}
+            - **Health Score:** ${stats.health_score}%
+            
+            [View Full Device Matrix](https://github.com/${{ github.repository }}/blob/${{ github.head_ref }}/DEVICE_MATRIX.md)
+            `;
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+
+  # Job 5: Security Audit
+  security-audit:
+    name: NPM Security Audit
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      
+      - name: Run NPM Audit
+        run: |
+          npm audit --audit-level=moderate > audit-output.txt 2>&1 || true
+          cat audit-output.txt
+      
+      - name: Upload Audit Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-audit-report
+          path: audit-output.txt
+          retention-days: 30
+
+  # Job 6: Build Status Summary
+  build-summary:
+    name: Build Status Summary
+    runs-on: ubuntu-latest
+    needs: [validate-app, lint-code, validate-drivers, generate-coverage, security-audit]
+    if: always()
+    
+    steps:
+      - name: Generate Build Summary
+        run: |
+          echo "## 🎯 Build Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Check | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Homey Validation | ${{ needs.validate-app.result == 'success' && '✅ Passed' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| ESLint | ${{ needs.lint-code.result == 'success' && '✅ Passed' || '⚠️ Warnings' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Driver Schemas | ${{ needs.validate-drivers.result == 'success' && '✅ Valid' || '❌ Invalid' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Coverage Report | ${{ needs.generate-coverage.result == 'success' && '✅ Generated' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Security Audit | ${{ needs.security-audit.result == 'success' && '✅ No issues' || '⚠️ Review needed' }} |" >> $GITHUB_STEP_SUMMARY

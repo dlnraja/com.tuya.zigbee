@@ -1,0 +1,9 @@
+fix: remove duplicate capabilities in TVOC sensors
+
+Fixed duplicate measure_co2 in:
+- zemismart_tvoc_sensor_advanced_aaa_aaa
+- zemismart_tvoc_sensor_advanced_battery
+- zemismart_tvoc_sensor_advanced_cr2032
+
+Version: 4.0.0
+Status: Ready for publication

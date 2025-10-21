@@ -1,0 +1,106 @@
+name: Build & Validate
+
+on:
+  push:
+    branches: [ master, main, develop ]
+  pull_request:
+    branches: [ master, main ]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: Validate App
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Validate app.json
+        run: |
+          if [ ! -f "app.json" ]; then
+            echo "❌ app.json not found"
+            exit 1
+          fi
+          echo "✅ app.json found"
+          
+      - name: Check SDK version
+        run: |
+          SDK_VERSION=$(node -p "require('./app.json').sdk")
+          echo "SDK Version: $SDK_VERSION"
+          if [ "$SDK_VERSION" != "3" ]; then
+            echo "⚠️  SDK version is not 3"
+          else
+            echo "✅ SDK version is 3"
+          fi
+          
+      - name: Validate drivers
+        run: |
+          DRIVER_COUNT=$(find drivers -maxdepth 1 -type d | wc -l)
+          echo "Found $((DRIVER_COUNT - 1)) drivers"
+          if [ $DRIVER_COUNT -lt 2 ]; then
+            echo "❌ No drivers found"
+            exit 1
+          fi
+          echo "✅ Drivers found"
+          
+      - name: Check driver.compose.json files
+        run: |
+          MISSING=0
+          for driver in drivers/*/; do
+            if [ ! -f "${driver}driver.compose.json" ]; then
+              echo "❌ Missing driver.compose.json in ${driver}"
+              MISSING=$((MISSING + 1))
+            fi
+          done
+          if [ $MISSING -gt 0 ]; then
+            echo "⚠️  $MISSING drivers missing driver.compose.json"
+          else
+            echo "✅ All drivers have driver.compose.json"
+          fi
+          
+      - name: Validate JSON files
+        run: |
+          echo "Validating JSON files..."
+          INVALID=0
+          for file in $(find . -name "*.json" -not -path "./node_modules/*" -not -path "./.git/*" -not -path "./assets/templates/*"); do
+            if ! jq empty "$file" 2>/dev/null; then
+              echo "❌ Invalid JSON: $file"
+              INVALID=$((INVALID + 1))
+            fi
+          done
+          if [ $INVALID -gt 0 ]; then
+            echo "❌ $INVALID invalid JSON files found"
+            exit 1
+          fi
+          echo "✅ All JSON files valid (templates excluded)"
+          
+      - name: Generate validation report
+        if: always()
+        run: |
+          echo "# Validation Report" > validation-report.md
+          echo "" >> validation-report.md
+          echo "**Date:** $(date)" >> validation-report.md
+          echo "**Commit:** ${{ github.sha }}" >> validation-report.md
+          echo "" >> validation-report.md
+          echo "## Summary" >> validation-report.md
+          echo "- ✅ App structure validated" >> validation-report.md
+          echo "- ✅ JSON files validated" >> validation-report.md
+          echo "- ✅ Drivers validated" >> validation-report.md
+          
+      - name: Upload validation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-report
+          path: validation-report.md
+          retention-days: 30

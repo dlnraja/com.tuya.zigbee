@@ -1,0 +1,54 @@
+{
+  "triggers": [
+    {
+      "id": "radar_motion_sensor_tank_level_battery_motion_detected",
+      "title": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté"
+      },
+      "hint": {
+        "en": "Triggered when motion is detected"
+      },
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=radar_motion_sensor_tank_level_battery"
+        }
+      ]
+    },
+    {
+      "id": "radar_motion_sensor_tank_level_battery_motion_cleared",
+      "title": {
+        "en": "Motion cleared",
+        "fr": "Mouvement terminé"
+      },
+      "hint": {
+        "en": "Triggered when motion detection ends"
+      },
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=radar_motion_sensor_tank_level_battery"
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "radar_motion_sensor_tank_level_battery_motion_active",
+      "title": {
+        "en": "Motion is active",
+        "fr": "Mouvement actif"
+      },
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=radar_motion_sensor_tank_level_battery"
+        }
+      ]
+    }
+  ]
+}

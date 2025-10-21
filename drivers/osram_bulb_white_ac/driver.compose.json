@@ -1,0 +1,38 @@
+{
+  "id": "osram_bulb_white_ac",
+  "name": {
+    "en": "Osram Bulb White (AC)"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "images": {
+    "small": "drivers/osram_bulb_white_ac/assets/images/small.png",
+    "large": "drivers/osram_bulb_white_ac/assets/images/large.png",
+    "xlarge": "drivers/osram_bulb_white_ac/assets/images/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_OSRAM_generic"
+    ],
+    "productId": [
+      "generic"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  }
+}

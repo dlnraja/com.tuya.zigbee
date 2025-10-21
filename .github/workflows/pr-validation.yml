@@ -1,0 +1,125 @@
+name: PR Validation
+
+on:
+  pull_request:
+    branches:
+      - master
+      - main
+      - develop
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  validate:
+    name: Validate & Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run linter
+        id: lint
+        run: |
+          npm run lint || echo "lint_failed=true" >> $GITHUB_OUTPUT
+        continue-on-error: true
+
+      - name: Run tests
+        id: test
+        run: |
+          npm test -- --ci --coverage || echo "test_failed=true" >> $GITHUB_OUTPUT
+        continue-on-error: true
+
+      - name: Validate Homey App (Publish Level)
+        id: validate
+        uses: athombv/github-action-homey-app-validate@master
+        with:
+          level: publish
+        continue-on-error: true
+
+      - name: Build device matrix
+        id: matrix
+        run: |
+          node scripts/automation/build-device-matrix.js || echo "No matrix script found"
+        continue-on-error: true
+
+      - name: Generate validation report
+        run: |
+          echo "# Validation Report" > validation-report.md
+          echo "" >> validation-report.md
+          echo "## Status Summary" >> validation-report.md
+          echo "- **Lint**: ${{ steps.lint.outcome }}" >> validation-report.md
+          echo "- **Tests**: ${{ steps.test.outcome }}" >> validation-report.md
+          echo "- **Homey Validation**: ${{ steps.validate.outcome }}" >> validation-report.md
+          echo "- **Device Matrix**: ${{ steps.matrix.outcome }}" >> validation-report.md
+          echo "" >> validation-report.md
+          echo "Generated: $(date)" >> validation-report.md
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-and-matrix
+          path: |
+            validation-report.md
+            matrix/devices.*
+          retention-days: 30
+          if-no-files-found: ignore
+
+      - name: Comment PR
+        uses: actions/github-script@v7
+        if: always()
+        with:
+          script: |
+            const fs = require('fs');
+            let report = '## 📋 Validation Report\n\n';
+            
+            const outcomes = {
+              lint: '${{ steps.lint.outcome }}',
+              test: '${{ steps.test.outcome }}',
+              validate: '${{ steps.validate.outcome }}',
+              matrix: '${{ steps.matrix.outcome }}'
+            };
+            
+            const icons = {
+              success: '✅',
+              failure: '❌',
+              skipped: '⏭️'
+            };
+            
+            report += '| Check | Status |\n';
+            report += '|-------|--------|\n';
+            report += `| Linter | ${icons[outcomes.lint] || '❓'} ${outcomes.lint} |\n`;
+            report += `| Tests | ${icons[outcomes.test] || '❓'} ${outcomes.test} |\n`;
+            report += `| Homey Validation | ${icons[outcomes.validate] || '❓'} ${outcomes.validate} |\n`;
+            report += `| Device Matrix | ${icons[outcomes.matrix] || '❓'} ${outcomes.matrix} |\n`;
+            report += '\n';
+            
+            if (outcomes.validate === 'success') {
+              report += '✅ **Ready to merge** - All validations passed!\n';
+            } else {
+              report += '⚠️ **Action needed** - Please fix validation issues before merging.\n';
+            }
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: report
+            });
+
+      - name: Fail if validation failed
+        if: steps.validate.outcome != 'success'
+        run: |
+          echo "❌ Homey app validation failed!"
+          echo "Please fix the issues and push again."
+          exit 1

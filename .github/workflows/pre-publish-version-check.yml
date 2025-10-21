@@ -1,0 +1,85 @@
+name: Pre-Publish Version Check
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  smart-version-check:
+    name: Smart Version Check & Auto-Fix
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: 🔍 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: 📦 Install dependencies
+        run: npm ci
+      
+      - name: 🧠 Check Version Conflicts
+        id: check
+        run: |
+          echo "🔍 Running Smart Version Manager..."
+          node scripts/automation/smart-version-manager.js check
+          
+          # Check exit code
+          if [ $? -eq 1 ]; then
+            echo "⚠️  Version conflict detected!"
+            echo "conflict=true" >> $GITHUB_OUTPUT
+          else
+            echo "✅ No version conflict"
+            echo "conflict=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: 🔧 Auto-Fix Version Conflict
+        if: steps.check.outputs.conflict == 'true'
+        run: |
+          echo "🔧 Auto-fixing version conflict..."
+          
+          # Run smart version manager in auto mode
+          node scripts/automation/smart-version-manager.js auto
+          
+          # Get new version
+          NEW_VERSION=$(node -p "require('./app.json').version")
+          echo "✅ Version auto-incremented to: $NEW_VERSION"
+          echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
+      
+      - name: 📤 Commit Version Fix
+        if: steps.check.outputs.conflict == 'true'
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          
+          git add app.json CHANGELOG.md README.md package.json 2>/dev/null || true
+          git commit -m "chore: Auto-fix version conflict to v${{ steps.check.outputs.new_version }} [skip ci]" || echo "No changes"
+          
+          # Push with retry
+          for i in {1..3}; do
+            if git push origin master; then
+              echo "✅ Version fix pushed successfully"
+              break
+            else
+              echo "⚠️  Push failed, retrying..."
+              sleep 5
+              git pull --rebase origin master
+            fi
+          done
+      
+      - name: ✅ Version Check Complete
+        run: |
+          CURRENT_VERSION=$(node -p "require('./app.json').version")
+          echo "📌 Final version: $CURRENT_VERSION"
+          echo "✅ Pre-publish version check complete"

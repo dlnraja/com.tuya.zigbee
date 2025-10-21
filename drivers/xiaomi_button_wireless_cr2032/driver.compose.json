@@ -1,0 +1,42 @@
+{
+  "id": "xiaomi_button_wireless_cr2032",
+  "name": {
+    "en": "Xiaomi Wireless Button (CR2032)"
+  },
+  "class": "button",
+  "capabilities": [
+    "alarm_battery"
+  ],
+  "images": {
+    "small": "drivers/xiaomi_button_wireless_cr2032/assets/images/small.png",
+    "large": "drivers/xiaomi_button_wireless_cr2032/assets/images/large.png",
+    "xlarge": "drivers/xiaomi_button_wireless_cr2032/assets/images/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_XIAOMI_generic"
+    ],
+    "productId": [
+      "generic"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+# Ignore build artifacts and dependencies
+/node_modules/
+/coverage/
+/build/
+
+# Ignore configuration files that are sensitive to formatting
+*.json
+!/.prettierrc
+!/.eslintrc.json
+
+# Ignore markdown and other documentation files for now
+*.md
+*.txt

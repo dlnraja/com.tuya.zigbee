@@ -1,0 +1,107 @@
+name: Homey App Publish (Official)
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - 'reports/**'
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: Publish to Homey App Store
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: ✅ Validate App (Official Athom Action)
+        uses: athombv/github-action-homey-app-validate@master
+        with:
+          level: publish
+      
+      - name: 📝 Generate Changelog
+        id: changelog
+        run: |
+          LAST_COMMIT=$(git log -1 --pretty=format:"%s")
+          echo "Last commit: $LAST_COMMIT"
+          
+          # Detect type
+          if echo "$LAST_COMMIT" | grep -iE "^feat|feature|add"; then
+            TYPE="minor"
+            MSG="New features and improvements"
+          elif echo "$LAST_COMMIT" | grep -iE "^fix|bug|patch"; then
+            TYPE="patch"
+            MSG="Bug fixes and stability improvements"
+          else
+            TYPE="patch"
+            MSG="App improvements and updates"
+          fi
+          
+          echo "type=$TYPE" >> $GITHUB_OUTPUT
+          echo "message=$MSG" >> $GITHUB_OUTPUT
+          echo "📝 Version type: $TYPE"
+          echo "📝 Changelog: $MSG"
+      
+      - name: 🔄 Update Version (Official Athom Action)
+        uses: athombv/github-action-homey-app-version@master
+        id: version
+        with:
+          version: ${{ steps.changelog.outputs.type }}
+          changelog: ${{ steps.changelog.outputs.message }}
+      
+      - name: 🚀 Publish to Homey (Official Athom Action)
+        uses: athombv/github-action-homey-app-publish@master
+        id: publish
+        with:
+          personal_access_token: ${{ secrets.HOMEY_TOKEN }}
+      
+      - name: 💾 Commit Version Changes
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          
+          if [ -n "$(git status --porcelain)" ]; then
+            git add app.json .homeychangelog.json
+            git commit -m "chore: version bump to v${{ steps.version.outputs.version }} [skip ci]"
+            git push || {
+              echo "⚠️ Push failed, trying with rebase..."
+              git pull --rebase origin master
+              git push
+            }
+            echo "✅ Version v${{ steps.version.outputs.version }} committed"
+          else
+            echo "ℹ️ No version changes to commit"
+          fi
+      
+      - name: 📊 Summary
+        if: always()
+        run: |
+          echo "## 🎉 Publication Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** v${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Changelog:** ${{ steps.changelog.outputs.message }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📋 Next Steps:" >> $GITHUB_STEP_SUMMARY
+          echo "1. Go to [Homey Dashboard](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee)" >> $GITHUB_STEP_SUMMARY
+          echo "2. Find **Universal Tuya Zigbee v${{ steps.version.outputs.version }}** (Draft)" >> $GITHUB_STEP_SUMMARY
+          echo "3. Click **Promote to Test** to make it available on test channel" >> $GITHUB_STEP_SUMMARY
+          echo "4. Or submit for **Certification** to publish to live" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🔗 Links:" >> $GITHUB_STEP_SUMMARY
+          echo "- [Dashboard](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee)" >> $GITHUB_STEP_SUMMARY
+          echo "- [Test Channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)" >> $GITHUB_STEP_SUMMARY
+          echo "- [Live App](https://homey.app/a/com.dlnraja.tuya.zigbee/)" >> $GITHUB_STEP_SUMMARY

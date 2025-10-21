@@ -1,0 +1,40 @@
+{
+  "id": "sonoff_led_strip_ac",
+  "name": {
+    "en": "Sonoff LED Strip (AC)"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation"
+  ],
+  "images": {
+    "small": "drivers/sonoff_led_strip_ac/assets/images/small.png",
+    "large": "drivers/sonoff_led_strip_ac/assets/images/large.png",
+    "xlarge": "drivers/sonoff_led_strip_ac/assets/images/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_SONOFF_generic"
+    ],
+    "productId": [
+      "generic"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  }
+}

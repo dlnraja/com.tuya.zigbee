@@ -1,0 +1,37 @@
+{
+  "id": "innr_smart_plug_ac",
+  "name": {
+    "en": "Innr Smart Plug (AC)"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "drivers/innr_smart_plug_ac/assets/images/small.png",
+    "large": "drivers/innr_smart_plug_ac/assets/images/large.png",
+    "xlarge": "drivers/innr_smart_plug_ac/assets/images/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_INNR_generic"
+    ],
+    "productId": [
+      "generic"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,199 @@
+name: Diagnostic & Health Check
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+  workflow_dispatch:
+  issues:
+    types: [opened, labeled]
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  health-check:
+    name: System Health Check
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Run health checks
+        id: health
+        run: |
+          echo "🏥 Running health checks..."
+          
+          # Check drivers
+          DRIVER_COUNT=$(find drivers -maxdepth 1 -type d -not -name drivers | wc -l)
+          echo "drivers=$DRIVER_COUNT" >> $GITHUB_OUTPUT
+          
+          # Check JSON validity
+          INVALID_JSON=0
+          for file in $(find . -name "*.json" -not -path "./node_modules/*" -not -path "./.git/*"); do
+            if ! jq empty "$file" 2>/dev/null; then
+              INVALID_JSON=$((INVALID_JSON + 1))
+            fi
+          done
+          echo "invalid_json=$INVALID_JSON" >> $GITHUB_OUTPUT
+          
+          # Check for missing files
+          MISSING_COMPOSE=0
+          for driver in drivers/*/; do
+            if [ ! -f "${driver}driver.compose.json" ]; then
+              MISSING_COMPOSE=$((MISSING_COMPOSE + 1))
+            fi
+          done
+          echo "missing_compose=$MISSING_COMPOSE" >> $GITHUB_OUTPUT
+          
+          # Check enrichment data
+          if [ -f "enrichment-report.json" ]; then
+            SOURCES=$(jq -r '.statistics.sources_scraped' enrichment-report.json)
+            DATAPOINTS=$(jq -r '.statistics.datapoints_found' enrichment-report.json)
+            echo "sources=$SOURCES" >> $GITHUB_OUTPUT
+            echo "datapoints=$DATAPOINTS" >> $GITHUB_OUTPUT
+          else
+            echo "sources=0" >> $GITHUB_OUTPUT
+            echo "datapoints=0" >> $GITHUB_OUTPUT
+          fi
+          
+          # Overall health status
+          if [ $INVALID_JSON -gt 0 ] || [ $MISSING_COMPOSE -gt 5 ]; then
+            echo "status=🔴 Unhealthy" >> $GITHUB_OUTPUT
+            echo "health=unhealthy" >> $GITHUB_OUTPUT
+          elif [ $MISSING_COMPOSE -gt 0 ]; then
+            echo "status=🟡 Warning" >> $GITHUB_OUTPUT
+            echo "health=warning" >> $GITHUB_OUTPUT
+          else
+            echo "status=🟢 Healthy" >> $GITHUB_OUTPUT
+            echo "health=healthy" >> $GITHUB_OUTPUT
+          fi
+          
+      - name: Generate diagnostic report
+        run: |
+          cat << EOF > diagnostic-report.md
+          # 🏥 System Diagnostic Report
+          
+          **Generated:** $(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          **Commit:** ${{ github.sha }}
+          **Status:** ${{ steps.health.outputs.status }}
+          
+          ## 📊 Statistics
+          
+          - **Drivers:** ${{ steps.health.outputs.drivers }}
+          - **Invalid JSON files:** ${{ steps.health.outputs.invalid_json }}
+          - **Missing driver.compose.json:** ${{ steps.health.outputs.missing_compose }}
+          - **Enrichment sources:** ${{ steps.health.outputs.sources }}/18
+          - **Datapoints:** ${{ steps.health.outputs.datapoints }}
+          
+          ## 🔍 Health Status
+          
+          EOF
+          
+          if [ "${{ steps.health.outputs.health }}" = "healthy" ]; then
+            echo "✅ All systems operational" >> diagnostic-report.md
+          elif [ "${{ steps.health.outputs.health }}" = "warning" ]; then
+            echo "⚠️  Minor issues detected" >> diagnostic-report.md
+            if [ ${{ steps.health.outputs.missing_compose }} -gt 0 ]; then
+              echo "- ${{ steps.health.outputs.missing_compose }} drivers missing driver.compose.json" >> diagnostic-report.md
+            fi
+          else
+            echo "❌ Critical issues detected" >> diagnostic-report.md
+            if [ ${{ steps.health.outputs.invalid_json }} -gt 0 ]; then
+              echo "- ${{ steps.health.outputs.invalid_json }} invalid JSON files" >> diagnostic-report.md
+            fi
+            if [ ${{ steps.health.outputs.missing_compose }} -gt 0 ]; then
+              echo "- ${{ steps.health.outputs.missing_compose }} drivers missing driver.compose.json" >> diagnostic-report.md
+            fi
+          fi
+          
+          echo "" >> diagnostic-report.md
+          echo "---" >> diagnostic-report.md
+          echo "*Automated diagnostic by GitHub Actions*" >> diagnostic-report.md
+          
+      - name: Upload diagnostic report
+        uses: actions/upload-artifact@v4
+        with:
+          name: diagnostic-report
+          path: diagnostic-report.md
+          retention-days: 30
+          
+      - name: Create issue if unhealthy
+        if: steps.health.outputs.health == 'unhealthy'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('diagnostic-report.md', 'utf8');
+            
+            // Check if issue already exists
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: 'automated-diagnostic',
+              state: 'open'
+            });
+            
+            if (issues.data.length === 0) {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: '🔴 System Health Check Failed',
+                body: report,
+                labels: ['automated-diagnostic', 'bug']
+              });
+            }
+
+  auto-response:
+    name: Auto-respond to Issues
+    runs-on: ubuntu-latest
+    if: github.event_name == 'issues' && github.event.action == 'opened'
+    
+    steps:
+      - name: Add initial response
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const labels = issue.labels.map(l => l.name);
+            
+            let response = '👋 Thank you for opening this issue!\n\n';
+            
+            if (labels.includes('device-request')) {
+              response += '🔌 **Device Request Detected**\n\n';
+              response += 'Please make sure you have provided:\n';
+              response += '- ✅ Device fingerprint from Homey\n';
+              response += '- ✅ Manufacturer ID\n';
+              response += '- ✅ Model ID\n';
+              response += '- ✅ Zigbee2MQTT link (if available)\n\n';
+              response += 'A maintainer will review your request soon.\n';
+            } else if (labels.includes('bug')) {
+              response += '🐛 **Bug Report Detected**\n\n';
+              response += 'Please ensure you have included:\n';
+              response += '- ✅ App version\n';
+              response += '- ✅ Homey version\n';
+              response += '- ✅ Steps to reproduce\n';
+              response += '- ✅ Diagnostic report ID (if available)\n\n';
+              response += 'We will investigate this issue.\n';
+            } else {
+              response += 'Your issue has been received and will be reviewed by the maintainers.\n';
+            }
+            
+            response += '\n---\n*Automated response by GitHub Actions*';
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue.number,
+              body: response
+            });

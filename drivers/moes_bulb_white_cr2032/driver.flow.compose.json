@@ -1,0 +1,68 @@
+{
+  "triggers": [
+    {
+      "id": "tuya_bulb_white_cr2032_contact_opened",
+      "title": {
+        "en": "Opened",
+        "fr": "Ouvert"
+      },
+      "hint": {
+        "en": "Triggered when door/window is opened"
+      },
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=tuya_bulb_white_cr2032"
+        }
+      ]
+    },
+    {
+      "id": "tuya_bulb_white_cr2032_contact_closed",
+      "title": {
+        "en": "Closed",
+        "fr": "Fermé"
+      },
+      "hint": {
+        "en": "Triggered when door/window is closed"
+      },
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=tuya_bulb_white_cr2032"
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "tuya_bulb_white_cr2032_is_open",
+      "title": {
+        "en": "Is open",
+        "fr": "Est ouvert"
+      },
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=tuya_bulb_white_cr2032"
+        }
+      ]
+    },
+    {
+      "id": "tuya_bulb_white_cr2032_is_closed",
+      "title": {
+        "en": "Is closed",
+        "fr": "Est fermé"
+      },
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=tuya_bulb_white_cr2032"
+        }
+      ]
+    }
+  ]
+}

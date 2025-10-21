@@ -1,0 +1,40 @@
+{
+  "id": "philips_led_strip_ac",
+  "name": {
+    "en": "Philips Hue LED Strip (AC)"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation"
+  ],
+  "images": {
+    "small": "drivers/philips_led_strip_ac/assets/images/small.png",
+    "large": "drivers/philips_led_strip_ac/assets/images/large.png",
+    "xlarge": "drivers/philips_led_strip_ac/assets/images/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_PHILIPS_generic"
+    ],
+    "productId": [
+      "generic"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  }
+}
