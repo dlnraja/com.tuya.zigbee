@@ -98,7 +98,7 @@ Compliance SDK3:           100%
 ✅ MISSING_BRANDS_ANALYSIS.md
 ✅ commit-v34.txt
 ✅ commit-mega-enrichment.txt
-✅ V34_docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md (ce fichier)
+✅ V34_docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/docs/workflow/PUBLICATION_SUCCESS.md (ce fichier)
 ```
 
 ---
