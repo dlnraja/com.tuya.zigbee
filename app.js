@@ -14,15 +14,16 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     if (this._flowCardsRegistered) {
       this.log('⏭️  Flow cards already registered');
       return;
-        this._flowCardsRegistered = true;
-  }
+    }
+    
+    this._flowCardsRegistered = true;
 
     this.log('Universal Tuya Zigbee App is initializing...');
 
     // CRITICAL: Register custom Zigbee clusters FIRST
     // This must happen before any devices initialize
     try {
-      registerCustomClusters();
+      registerCustomClusters(this);
       this.log('✅ Custom Zigbee clusters registered');
     } catch (err) {
       this.error('❌ Failed to register custom clusters:', err);
