@@ -8,8 +8,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "Community-maintained Universal Zigbee app with 319 SDK3 native drivers and 9,500+ manufacturer IDs. 100% local control, no cloud required. Supports 14 major brands: ZEMISMART (145+), MOES (65+), TUYA GENERIC (40+), AVATTO (10), PHILIPS HUE (8), SAMSUNG SMARTTHINGS (8), XIAOMI (8), AQARA (6), OSRAM (6), SONOFF (6), IKEA (5), LSC (4), NOUS (4), INNR (4). 90%+ Zigbee market coverage. Active development with regular updates.",
-    "fr": "Application Zigbee universelle maintenue par la communauté avec 319 drivers SDK3 natifs et 9,500+ manufacturer IDs. Contrôle 100% local, sans cloud. Support de 14 marques majeures: ZEMISMART (145+), MOES (65+), TUYA GENERIC (40+), AVATTO (10), PHILIPS HUE (8), SAMSUNG SMARTTHINGS (8), XIAOMI (8), AQARA (6), OSRAM (6), SONOFF (6), IKEA (5), LSC (4), NOUS (4), INNR (4). Couverture 90%+ marché Zigbee. Développement actif."
+    "en": "Community-maintained Universal Zigbee app with 279 SDK3 native drivers and 9,500+ manufacturer IDs. 100% local control, no cloud required. Supports 8+ major brands (ZEMISMART, MOES, TUYA, AVATTO, AQARA, IKEA, LSC, NOUS). 85%+ Zigbee market coverage. Active development with regular updates and bug fixes.",
+    "fr": "Application Zigbee universelle maintenue par la communauté avec 323 drivers SDK3 natifs et 18,000+ manufacturer IDs. Contrôle 100% local, sans cloud. Support de 14 marques majeures (Samsung SmartThings, Sonoff, Philips Hue, Xiaomi, OSRAM, Innr, ZEMISMART, MOES, Tuya, Avatto, Aqara, IKEA, LSC, Nous). Couverture de 92%+ du marché Zigbee. Gestion batteries complète avec flows. Développement actif avec mises à jour régulières."
   },
   "category": "appliances",
   "permissions": [],
