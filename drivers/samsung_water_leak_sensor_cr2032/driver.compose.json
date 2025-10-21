@@ -15,14 +15,28 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "TS0207",
       "_SAMSUNG_generic",
+      "_TYZB01_sqmd19i1",
+      "_TZ3000_0s9gukzt",
+      "_TZ3000_85czd6fy",
+      "_TZ3000_eit7p838",
+      "_TZ3000_fxvjhdyl",
+      "_TZ3000_k4ej3ww2",
+      "_TZ3000_kstbkt6a",
       "_TZ3000_kyb656no",
-      "_TZ3000_upgcbody",
+      "_TZ3000_mugyhz0q",
       "_TZ3000_ocjlo4ea",
-      "TS0207"
+      "_TZ3000_t6jriawg",
+      "_TZ3000_upgcbody",
+      "_TZE200_jthf7vb6",
+      "_TZE200_qq9mpfhw"
     ],
     "productId": [
-      "generic"
+      "TS0207",
+      "TS0601",
+      "generic",
+      "q9mpfhw"
     ],
     "endpoints": {
       "1": {
