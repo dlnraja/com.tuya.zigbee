@@ -121692,14 +121692,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=avatto_plug_basic_ac"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_plug_basic_ac"
+            "filter": "driver_id=avatto_plug_basic_ac|tuya_plug_basic_ac"
           },
           {
             "name": "duration",
@@ -121726,14 +121721,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=avatto_smart_plug_ac"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=smart_plug_ac"
+            "filter": "driver_id=avatto_smart_plug_ac|smart_plug_ac"
           },
           {
             "name": "duration",
@@ -121760,14 +121750,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=avatto_smart_plug_energy_ac"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=smart_plug_energy_ac"
+            "filter": "driver_id=avatto_smart_plug_energy_ac|smart_plug_energy_ac"
           },
           {
             "name": "duration",
@@ -121794,14 +121779,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=avatto_smart_plug_power_meter_16a_ac"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=smart_plug_power_meter_16a_ac"
+            "filter": "driver_id=avatto_smart_plug_power_meter_16a_ac|smart_plug_power_meter_16a_ac"
           },
           {
             "name": "duration",
@@ -121828,14 +121808,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=avatto_thermostat_aaa"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_thermostat_aaa"
+            "filter": "driver_id=avatto_thermostat_aaa|tuya_thermostat_aaa"
           },
           {
             "name": "mode",
@@ -121889,14 +121864,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=avatto_thermostat_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_thermostat_cr2032"
+            "filter": "driver_id=avatto_thermostat_cr2032|tuya_thermostat_cr2032"
           },
           {
             "name": "mode",
@@ -121950,14 +121920,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=avatto_thermostat_hybrid"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=thermostat_hybrid"
+            "filter": "driver_id=avatto_thermostat_hybrid|thermostat_hybrid"
           },
           {
             "name": "mode",
@@ -122011,14 +121976,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=avatto_thermostat_smart_internal"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_thermostat_smart_internal"
+            "filter": "driver_id=avatto_thermostat_smart_internal|tuya_thermostat_smart_internal"
           },
           {
             "name": "mode",
@@ -122075,11 +122035,6 @@
           "fr": "Simuler une pression de bouton sans interaction physique"
         },
         "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ikea_ikea_wireless_button_2gang_cr2032"
-          },
           {
             "name": "device",
             "type": "device",
@@ -122158,11 +122113,6 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ikea_ikea_wireless_button_2gang_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
             "filter": "driver_id=ikea_ikea_wireless_button_2gang_cr2032"
@@ -122236,14 +122186,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=moes_climate_monitor_aaa_aaa"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_tuya_climate_monitor_aaa_aaa"
+            "filter": "driver_id=moes_climate_monitor_aaa_aaa|tuya_tuya_climate_monitor_aaa_aaa"
           },
           {
             "name": "mode",
@@ -122297,14 +122242,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=moes_climate_monitor_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=climate_monitor_cr2032"
+            "filter": "driver_id=moes_climate_monitor_cr2032|climate_monitor_cr2032"
           },
           {
             "name": "mode",
@@ -122358,14 +122298,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=moes_energy_monitoring_plug_advanced_ac"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=energy_monitoring_plug_advanced_ac"
+            "filter": "driver_id=moes_energy_monitoring_plug_advanced_ac|energy_monitoring_plug_advanced_ac"
           },
           {
             "name": "duration",
@@ -122392,14 +122327,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=moes_energy_plug_advanced_ac"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=energy_plug_advanced_ac"
+            "filter": "driver_id=moes_energy_plug_advanced_ac|energy_plug_advanced_ac"
           },
           {
             "name": "duration",
@@ -122430,14 +122360,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=moes_mini_switch_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=mini_switch_cr2032"
+            "filter": "driver_id=moes_mini_switch_cr2032|mini_switch_cr2032"
           },
           {
             "name": "button",
@@ -122501,14 +122426,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=moes_plug_energy_monitor_ac"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_plug_energy_monitor_ac"
+            "filter": "driver_id=moes_plug_energy_monitor_ac|tuya_plug_energy_monitor_ac"
           },
           {
             "name": "duration",
@@ -122535,14 +122455,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=moes_plug_smart_ac"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_plug_smart_ac"
+            "filter": "driver_id=moes_plug_smart_ac|tuya_plug_smart_ac"
           },
           {
             "name": "duration",
@@ -122569,14 +122484,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=moes_power_meter_socket_ac"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=power_meter_socket_ac"
+            "filter": "driver_id=moes_power_meter_socket_ac|power_meter_socket_ac"
           },
           {
             "name": "duration",
@@ -122607,14 +122517,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=moes_remote_switch_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=remote_switch_cr2032"
+            "filter": "driver_id=moes_remote_switch_cr2032|remote_switch_cr2032"
           },
           {
             "name": "button",
@@ -122682,14 +122587,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=moes_smart_switch_1gang_aaa"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_smart_switch_1gang_aaa"
+            "filter": "driver_id=moes_smart_switch_1gang_aaa|tuya_smart_switch_1gang_aaa"
           },
           {
             "name": "button",
@@ -122757,14 +122657,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=moes_smart_switch_1gang_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_smart_switch_1gang_cr2032"
+            "filter": "driver_id=moes_smart_switch_1gang_cr2032|tuya_smart_switch_1gang_cr2032"
           },
           {
             "name": "button",
@@ -122828,14 +122723,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=moes_usb_outlet_ac"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=usb_outlet_ac"
+            "filter": "driver_id=moes_usb_outlet_ac|usb_outlet_ac"
           },
           {
             "name": "duration",
@@ -122862,14 +122752,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=moes_usb_outlet_advanced_ac"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=usb_outlet_advanced_ac"
+            "filter": "driver_id=moes_usb_outlet_advanced_ac|usb_outlet_advanced_ac"
           },
           {
             "name": "duration",
@@ -122900,14 +122785,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=moes_wireless_switch_2gang_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=wireless_switch_2gang_cr2032"
+            "filter": "driver_id=moes_wireless_switch_2gang_cr2032|wireless_switch_2gang_cr2032"
           },
           {
             "name": "button",
@@ -122982,14 +122862,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=moes_wireless_switch_2gang_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=wireless_switch_2gang_cr2032"
+            "filter": "driver_id=moes_wireless_switch_2gang_cr2032|wireless_switch_2gang_cr2032"
           },
           {
             "name": "gang",
@@ -123064,14 +122939,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=moes_wireless_switch_4button_cr2450"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_wireless_switch_4button_cr2450"
+            "filter": "driver_id=moes_wireless_switch_4button_cr2450|tuya_wireless_switch_4button_cr2450"
           },
           {
             "name": "button",
@@ -123160,14 +123030,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=moes_wireless_switch_4button_cr2450"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_wireless_switch_4button_cr2450"
+            "filter": "driver_id=moes_wireless_switch_4button_cr2450|tuya_wireless_switch_4button_cr2450"
           },
           {
             "name": "gang",
@@ -123256,14 +123121,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=moes_wireless_switch_4gang_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=wireless_switch_4gang_cr2032"
+            "filter": "driver_id=moes_wireless_switch_4gang_cr2032|wireless_switch_4gang_cr2032"
           },
           {
             "name": "button",
@@ -123352,14 +123212,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=moes_wireless_switch_4gang_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=wireless_switch_4gang_cr2032"
+            "filter": "driver_id=moes_wireless_switch_4gang_cr2032|wireless_switch_4gang_cr2032"
           },
           {
             "name": "gang",
@@ -123448,14 +123303,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=moes_wireless_switch_5button_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_wireless_switch_5button_cr2032"
+            "filter": "driver_id=moes_wireless_switch_5button_cr2032|tuya_wireless_switch_5button_cr2032"
           },
           {
             "name": "button",
@@ -123551,14 +123401,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=moes_wireless_switch_5button_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_wireless_switch_5button_cr2032"
+            "filter": "driver_id=moes_wireless_switch_5button_cr2032|tuya_wireless_switch_5button_cr2032"
           },
           {
             "name": "gang",
@@ -123654,14 +123499,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=moes_wireless_switch_6gang_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=wireless_switch_6gang_cr2032"
+            "filter": "driver_id=moes_wireless_switch_6gang_cr2032|wireless_switch_6gang_cr2032"
           },
           {
             "name": "button",
@@ -123764,14 +123604,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=moes_wireless_switch_6gang_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=wireless_switch_6gang_cr2032"
+            "filter": "driver_id=moes_wireless_switch_6gang_cr2032|wireless_switch_6gang_cr2032"
           },
           {
             "name": "gang",
@@ -123874,14 +123709,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=moes_wireless_switch_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=wireless_switch_cr2032"
+            "filter": "driver_id=moes_wireless_switch_cr2032|wireless_switch_cr2032"
           },
           {
             "name": "button",
@@ -123945,14 +123775,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=nous_smart_plug_dimmer_ac"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=smart_plug_dimmer_ac"
+            "filter": "driver_id=nous_smart_plug_dimmer_ac|smart_plug_dimmer_ac"
           },
           {
             "name": "duration",
@@ -123979,14 +123804,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=tuya_climate_monitor_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_tuya_climate_monitor_cr2032"
+            "filter": "driver_id=tuya_climate_monitor_cr2032|tuya_tuya_climate_monitor_cr2032"
           },
           {
             "name": "mode",
@@ -124044,14 +123864,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_roller_shutter_switch_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=roller_shutter_switch_cr2032"
+            "filter": "driver_id=zemismart_roller_shutter_switch_cr2032|roller_shutter_switch_cr2032"
           },
           {
             "name": "button",
@@ -124126,14 +123941,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_roller_shutter_switch_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=roller_shutter_switch_cr2032"
+            "filter": "driver_id=zemismart_roller_shutter_switch_cr2032|roller_shutter_switch_cr2032"
           },
           {
             "name": "gang",
@@ -124208,14 +124018,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_scene_controller_battery"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=scene_controller_battery"
+            "filter": "driver_id=zemismart_scene_controller_battery|scene_controller_battery"
           },
           {
             "name": "button",
@@ -124283,14 +124088,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_smart_switch_1gang_internal"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_smart_switch_1gang_internal"
+            "filter": "driver_id=zemismart_smart_switch_1gang_internal|tuya_smart_switch_1gang_internal"
           },
           {
             "name": "button",
@@ -124365,14 +124165,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_smart_switch_1gang_internal"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_smart_switch_1gang_internal"
+            "filter": "driver_id=zemismart_smart_switch_1gang_internal|tuya_smart_switch_1gang_internal"
           },
           {
             "name": "gang",
@@ -124447,14 +124242,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_smart_switch_3gang_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_smart_switch_3gang_cr2032"
+            "filter": "driver_id=zemismart_smart_switch_3gang_cr2032|tuya_smart_switch_3gang_cr2032"
           },
           {
             "name": "button",
@@ -124536,14 +124326,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_smart_switch_3gang_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_smart_switch_3gang_cr2032"
+            "filter": "driver_id=zemismart_smart_switch_3gang_cr2032|tuya_smart_switch_3gang_cr2032"
           },
           {
             "name": "gang",
@@ -124625,14 +124410,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_smart_switch_4gang_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_smart_switch_4gang_cr2032"
+            "filter": "driver_id=zemismart_smart_switch_4gang_cr2032|tuya_smart_switch_4gang_cr2032"
           },
           {
             "name": "button",
@@ -124721,14 +124501,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_smart_switch_4gang_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_smart_switch_4gang_cr2032"
+            "filter": "driver_id=zemismart_smart_switch_4gang_cr2032|tuya_smart_switch_4gang_cr2032"
           },
           {
             "name": "gang",
@@ -124817,14 +124592,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_smart_switch_5gang_aaa"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_smart_switch_5gang_aaa"
+            "filter": "driver_id=zemismart_smart_switch_5gang_aaa|tuya_smart_switch_5gang_aaa"
           },
           {
             "name": "button",
@@ -124920,14 +124690,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_smart_switch_5gang_aaa"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_smart_switch_5gang_aaa"
+            "filter": "driver_id=zemismart_smart_switch_5gang_aaa|tuya_smart_switch_5gang_aaa"
           },
           {
             "name": "gang",
@@ -125023,14 +124788,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_smart_switch_5gang_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_smart_switch_5gang_cr2032"
+            "filter": "driver_id=zemismart_smart_switch_5gang_cr2032|tuya_smart_switch_5gang_cr2032"
           },
           {
             "name": "button",
@@ -125126,14 +124886,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_smart_switch_5gang_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_smart_switch_5gang_cr2032"
+            "filter": "driver_id=zemismart_smart_switch_5gang_cr2032|tuya_smart_switch_5gang_cr2032"
           },
           {
             "name": "gang",
@@ -125229,14 +124984,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_switch_1gang_battery"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=switch_1gang_battery"
+            "filter": "driver_id=zemismart_switch_1gang_battery|switch_1gang_battery"
           },
           {
             "name": "button",
@@ -125304,14 +125054,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_switch_5gang_battery"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=switch_5gang_battery"
+            "filter": "driver_id=zemismart_switch_5gang_battery|switch_5gang_battery"
           },
           {
             "name": "button",
@@ -125407,14 +125152,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_switch_5gang_battery"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=switch_5gang_battery"
+            "filter": "driver_id=zemismart_switch_5gang_battery|switch_5gang_battery"
           },
           {
             "name": "gang",
@@ -125510,14 +125250,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_wireless_scene_controller_4button_battery"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=wireless_scene_controller_4button_battery"
+            "filter": "driver_id=zemismart_wireless_scene_controller_4button_battery|wireless_scene_controller_4button_battery"
           },
           {
             "name": "button",
@@ -125606,14 +125341,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_wireless_scene_controller_4button_battery"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=wireless_scene_controller_4button_battery"
+            "filter": "driver_id=zemismart_wireless_scene_controller_4button_battery|wireless_scene_controller_4button_battery"
           },
           {
             "name": "gang",
@@ -125702,14 +125432,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_wireless_switch_1gang_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=wireless_switch_1gang_cr2032"
+            "filter": "driver_id=zemismart_wireless_switch_1gang_cr2032|wireless_switch_1gang_cr2032"
           },
           {
             "name": "button",
@@ -125777,14 +125502,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_wireless_switch_2button_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_wireless_switch_2button_cr2032"
+            "filter": "driver_id=zemismart_wireless_switch_2button_cr2032|tuya_wireless_switch_2button_cr2032"
           },
           {
             "name": "button",
@@ -125859,14 +125579,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_wireless_switch_2button_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_wireless_switch_2button_cr2032"
+            "filter": "driver_id=zemismart_wireless_switch_2button_cr2032|tuya_wireless_switch_2button_cr2032"
           },
           {
             "name": "gang",
@@ -125941,14 +125656,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_wireless_switch_3button_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_wireless_switch_3button_cr2032"
+            "filter": "driver_id=zemismart_wireless_switch_3button_cr2032|tuya_wireless_switch_3button_cr2032"
           },
           {
             "name": "button",
@@ -126030,14 +125740,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_wireless_switch_3button_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_wireless_switch_3button_cr2032"
+            "filter": "driver_id=zemismart_wireless_switch_3button_cr2032|tuya_wireless_switch_3button_cr2032"
           },
           {
             "name": "gang",
@@ -126119,14 +125824,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_wireless_switch_4button_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_wireless_switch_4button_cr2032"
+            "filter": "driver_id=zemismart_wireless_switch_4button_cr2032|tuya_wireless_switch_4button_cr2032"
           },
           {
             "name": "button",
@@ -126215,14 +125915,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_wireless_switch_4button_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_wireless_switch_4button_cr2032"
+            "filter": "driver_id=zemismart_wireless_switch_4button_cr2032|tuya_wireless_switch_4button_cr2032"
           },
           {
             "name": "gang",
@@ -126311,14 +126006,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_wireless_switch_6button_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_wireless_switch_6button_cr2032"
+            "filter": "driver_id=zemismart_wireless_switch_6button_cr2032|tuya_wireless_switch_6button_cr2032"
           },
           {
             "name": "button",
@@ -126421,14 +126111,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_wireless_switch_6button_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_wireless_switch_6button_cr2032"
+            "filter": "driver_id=zemismart_wireless_switch_6button_cr2032|tuya_wireless_switch_6button_cr2032"
           },
           {
             "name": "gang",
@@ -126531,14 +126216,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_wireless_switch_8button_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_wireless_switch_8button_cr2032"
+            "filter": "driver_id=zemismart_wireless_switch_8button_cr2032|tuya_wireless_switch_8button_cr2032"
           },
           {
             "name": "button",
@@ -126655,14 +126335,9 @@
         },
         "args": [
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=zemismart_wireless_switch_8button_cr2032"
-          },
-          {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=tuya_wireless_switch_8button_cr2032"
+            "filter": "driver_id=zemismart_wireless_switch_8button_cr2032|tuya_wireless_switch_8button_cr2032"
           },
           {
             "name": "gang",
