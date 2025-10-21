@@ -1,0 +1,119 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "description": "Device fingerprints mapping to profiles",
+    "last_updated": "2025-10-16",
+    "total": 15
+  },
+  "fingerprints": {
+    "TS011F_plug": {
+      "model": "TS011F",
+      "manufacturer": "_TZ3000_*",
+      "profile": "smart_plug_metering",
+      "clusters": [0, 1, 3, 4, 5, 6, 1794, 2820],
+      "description": "Tuya Smart Plug with Energy Monitoring"
+    },
+    "TS0601_gas": {
+      "model": "TS0601",
+      "manufacturer": "_TZE200_*",
+      "profile": "gas_detector_tuya",
+      "clusters": [0, 1, 3, 61184],
+      "datapoints": [1, 2, 13],
+      "description": "Tuya Gas Sensor (proprietary cluster)"
+    },
+    "TS0203_door": {
+      "model": "TS0203",
+      "manufacturer": "_TZ3000_*",
+      "profile": "contact_sensor",
+      "clusters": [0, 1, 3, 1280],
+      "description": "Tuya Door/Window Sensor"
+    },
+    "TS0201_climate": {
+      "model": "TS0201",
+      "manufacturer": "_TZ3000_*",
+      "profile": "temp_humidity_sensor",
+      "clusters": [0, 1, 3, 1026, 1029],
+      "description": "Tuya Temperature & Humidity Sensor"
+    },
+    "TS0121_plug": {
+      "model": "TS0121",
+      "manufacturer": "_TZ3000_*",
+      "profile": "smart_plug_basic",
+      "clusters": [0, 3, 4, 5, 6],
+      "description": "Tuya Smart Plug (basic)"
+    },
+    "TS0011_switch": {
+      "model": "TS0011",
+      "manufacturer": "_TZ3000_*",
+      "profile": "wall_switch_1gang",
+      "clusters": [0, 3, 4, 5, 6],
+      "description": "Tuya Wall Switch 1 Gang"
+    },
+    "TS0012_switch": {
+      "model": "TS0012",
+      "manufacturer": "_TZ3000_*",
+      "profile": "wall_switch_2gang",
+      "clusters": [0, 3, 4, 5, 6],
+      "endpoints": [1, 2],
+      "description": "Tuya Wall Switch 2 Gang"
+    },
+    "TS0004_remote": {
+      "model": "TS0004",
+      "manufacturer": "_TZ3000_*",
+      "profile": "wireless_switch_4gang",
+      "clusters": [0, 1, 3, 6],
+      "endpoints": [1, 2, 3, 4],
+      "description": "Tuya Wireless Remote 4 Button"
+    },
+    "TS0601_thermostat": {
+      "model": "TS0601",
+      "manufacturer": "_TZE200_*",
+      "profile": "thermostat_trv",
+      "clusters": [0, 1, 3, 61184],
+      "datapoints": [2, 16, 24, 107],
+      "description": "Tuya Thermostatic Radiator Valve"
+    },
+    "TS130F_curtain": {
+      "model": "TS130F",
+      "manufacturer": "_TZE200_*",
+      "profile": "curtain_motor",
+      "clusters": [0, 3, 4, 5, 258],
+      "description": "Tuya Curtain Motor"
+    },
+    "TS0207_water": {
+      "model": "TS0207",
+      "manufacturer": "_TZ3000_*",
+      "profile": "water_leak_detector",
+      "clusters": [0, 1, 3, 1280],
+      "description": "Tuya Water Leak Detector"
+    },
+    "TS0202_motion": {
+      "model": "TS0202",
+      "manufacturer": "_TZ3000_*",
+      "profile": "motion_sensor",
+      "clusters": [0, 1, 3, 1280, 1030],
+      "description": "Tuya Motion Sensor (PIR)"
+    },
+    "TS0215_sos": {
+      "model": "TS0215",
+      "manufacturer": "_TZ3000_*",
+      "profile": "sos_button",
+      "clusters": [0, 1, 3, 1280],
+      "description": "Tuya SOS Emergency Button"
+    },
+    "TS0001_relay": {
+      "model": "TS0001",
+      "manufacturer": "_TZ3000_*",
+      "profile": "relay_switch",
+      "clusters": [0, 3, 4, 5, 6],
+      "description": "Tuya Relay Switch"
+    },
+    "TS0205_smoke": {
+      "model": "TS0205",
+      "manufacturer": "_TZ3000_*",
+      "profile": "smoke_detector",
+      "clusters": [0, 1, 3, 1280],
+      "description": "Tuya Smoke Detector"
+    }
+  }
+}

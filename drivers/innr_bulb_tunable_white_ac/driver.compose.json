@@ -1,0 +1,39 @@
+{
+  "id": "innr_bulb_tunable_white_ac",
+  "name": {
+    "en": "Innr Bulb Tunable White (AC)"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature"
+  ],
+  "images": {
+    "small": "drivers/innr_bulb_tunable_white_ac/assets/images/small.png",
+    "large": "drivers/innr_bulb_tunable_white_ac/assets/images/large.png",
+    "xlarge": "drivers/innr_bulb_tunable_white_ac/assets/images/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_INNR_generic"
+    ],
+    "productId": [
+      "generic"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  }
+}

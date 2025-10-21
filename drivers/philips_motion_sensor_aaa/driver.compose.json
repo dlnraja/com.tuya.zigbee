@@ -1,0 +1,44 @@
+{
+  "id": "philips_motion_sensor_aaa",
+  "name": {
+    "en": "Philips Hue Motion (AAA)"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "measure_luminance",
+    "alarm_battery"
+  ],
+  "images": {
+    "small": "drivers/philips_motion_sensor_aaa/assets/images/small.png",
+    "large": "drivers/philips_motion_sensor_aaa/assets/images/large.png",
+    "xlarge": "drivers/philips_motion_sensor_aaa/assets/images/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_PHILIPS_generic"
+    ],
+    "productId": [
+      "generic"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "AAA"
+    ]
+  }
+}

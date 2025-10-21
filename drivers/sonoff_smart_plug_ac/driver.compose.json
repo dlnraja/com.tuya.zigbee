@@ -1,0 +1,38 @@
+{
+  "id": "sonoff_smart_plug_ac",
+  "name": {
+    "en": "Sonoff Smart Plug (AC)"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power"
+  ],
+  "images": {
+    "small": "drivers/sonoff_smart_plug_ac/assets/images/small.png",
+    "large": "drivers/sonoff_smart_plug_ac/assets/images/large.png",
+    "xlarge": "drivers/sonoff_smart_plug_ac/assets/images/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_SONOFF_generic"
+    ],
+    "productId": [
+      "generic"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  }
+}

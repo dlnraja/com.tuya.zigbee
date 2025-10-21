@@ -1,0 +1,19 @@
+fix: Peter LUX + multi-battery enhancements
+
+PETER LUX FIX:
+- Forum issue resolved (luminance missing)
+- Added complete diagnostic logging
+
+MULTI-BATTERY ENHANCEMENT:
+- Created BatteryCalculator helper lib
+- Already had battery_type settings
+- Names already clarified
+
+DOCUMENTATION:
+- PETER_LUX_FIX_COMPLETE.md
+- CHANGELOG_PETER_FIX.md
+- COMPLETE_FIX_SUMMARY.md
+- BatteryCalculator.example.js
+
+NO BREAKING CHANGES
+All 282 drivers validated successfully

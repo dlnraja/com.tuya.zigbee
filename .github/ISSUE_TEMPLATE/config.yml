@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📚 Documentation
+    url: https://github.com/dlnraja/com.tuya.zigbee/tree/master/docs
+    about: Read technical documentation and guides
+  - name: 💬 Community Forum
+    url: https://community.homey.app/t/140352
+    about: Ask questions and discuss with the community
+  - name: 📋 Device Matrix
+    url: https://github.com/dlnraja/com.tuya.zigbee/tree/master/matrix
+    about: Check supported devices and compatibility
+  - name: 🔧 Troubleshooting Guide
+    url: https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/TROUBLESHOOTING.md
+    about: Common issues and solutions

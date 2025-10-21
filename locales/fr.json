@@ -1,0 +1,24 @@
+{
+  "settings": {
+    "title": "Paramètres",
+    "debug_logging": "Activer les logs de débogage",
+    "debug_logging_hint": "Activer la journalisation détaillée pour le dépannage",
+    "community_updates": "Activer les mises à jour communautaires",
+    "community_updates_hint": "Recevoir des notifications sur le support de nouveaux appareils",
+    "reporting_interval": "Intervalle de rapport (secondes)",
+    "temperature_offset": "Décalage température (°C)",
+    "humidity_offset": "Décalage humidité (%)"
+  },
+  "tabs": {
+    "general": "Général",
+    "advanced": "Avancé",
+    "about": "À propos"
+  },
+  "common": {
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "ok": "OK",
+    "delete": "Supprimer",
+    "edit": "Modifier"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": "philips_bulb_white_ambiance_ac",
+  "name": {
+    "en": "Philips Hue White Ambiance (AC)"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature"
+  ],
+  "images": {
+    "small": "drivers/philips_bulb_white_ambiance_ac/assets/images/small.png",
+    "large": "drivers/philips_bulb_white_ambiance_ac/assets/images/large.png",
+    "xlarge": "drivers/philips_bulb_white_ambiance_ac/assets/images/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_PHILIPS_generic"
+    ],
+    "productId": [
+      "generic"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  }
+}

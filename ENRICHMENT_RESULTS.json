@@ -1,0 +1,2331 @@
+{
+  "total": 282,
+  "byBrand": {
+    "aqara": 6,
+    "lsc": 4,
+    "zemismart": 149,
+    "moes": 60,
+    "tuya": 45,
+    "ikea": 5,
+    "avatto": 9,
+    "nous": 4
+  },
+  "toRename": [
+    {
+      "current": "bulb_white_ambiance_ac",
+      "target": "lsc_bulb_white_ambiance_ac",
+      "brand": "lsc",
+      "manufacturerIds": [
+        "Signify Netherlands B.V.",
+        "Philips",
+        "_TZ3000_49qchf10"
+      ]
+    },
+    {
+      "current": "ceiling_light_controller_ac",
+      "target": "zemismart_ceiling_light_controller_ac",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "ceiling_light_rgb_ac",
+      "target": "moes_ceiling_light_rgb_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "climate_monitor_cr2032",
+      "target": "moes_climate_monitor_cr2032",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "co2_sensor_battery",
+      "target": "zemismart_co2_sensor_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "co2_temp_humidity_cr2032",
+      "target": "moes_co2_temp_humidity_cr2032",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "co_detector_pro_battery",
+      "target": "zemismart_co_detector_pro_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "curtain_motor_ac",
+      "target": "zemismart_curtain_motor_ac",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_qzjcsmar",
+        "_TZE200_3towulqd",
+        "_TZE200_8ygsuhe1"
+      ]
+    },
+    {
+      "current": "dimmer_switch_timer_module_ac",
+      "target": "moes_dimmer_switch_timer_module_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "door_window_sensor_battery",
+      "target": "zemismart_door_window_sensor_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "energy_monitoring_plug_advanced_ac",
+      "target": "moes_energy_monitoring_plug_advanced_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "energy_plug_advanced_ac",
+      "target": "moes_energy_plug_advanced_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "formaldehyde_sensor_battery",
+      "target": "zemismart_formaldehyde_sensor_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "gas_sensor_ts0601_battery",
+      "target": "zemismart_gas_sensor_ts0601_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZE200_ggev5fsl",
+        "_TZE204_ggev5fsl",
+        "_TZE284_rjgdhqqi"
+      ]
+    },
+    {
+      "current": "lux_sensor_battery",
+      "target": "zemismart_lux_sensor_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "milight_controller_ac",
+      "target": "zemismart_milight_controller_ac",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "mini_switch_cr2032",
+      "target": "moes_mini_switch_cr2032",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "motion_sensor_battery",
+      "target": "zemismart_motion_sensor_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "motion_sensor_mmwave_battery",
+      "target": "zemismart_motion_sensor_mmwave_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "motion_sensor_pir_ac_battery",
+      "target": "zemismart_motion_sensor_pir_ac_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "motion_sensor_pir_battery",
+      "target": "zemismart_motion_sensor_pir_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "HOBEIAN",
+        "_TZ3000_kmh5qpmb",
+        "_TZ3000_mcxw5ehu"
+      ]
+    },
+    {
+      "current": "motion_sensor_zigbee_204z_battery",
+      "target": "zemismart_motion_sensor_zigbee_204z_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "motion_temp_humidity_illumination_multi_battery",
+      "target": "zemismart_motion_temp_humidity_illumination_multi_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "HOBEIAN",
+        "_TZE200_uli8wasj",
+        "_TZE200_grgol3xp"
+      ]
+    },
+    {
+      "current": "multisensor_battery",
+      "target": "zemismart_multisensor_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "noise_level_sensor_battery",
+      "target": "zemismart_noise_level_sensor_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "outdoor_light_controller_ac",
+      "target": "moes_outdoor_light_controller_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "pir_radar_illumination_sensor_battery",
+      "target": "zemismart_pir_radar_illumination_sensor_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "HOBEIAN",
+        "_TZE200_2aaelwxk",
+        "_TZE200_kb5noeto"
+      ]
+    },
+    {
+      "current": "pir_sensor_advanced_battery",
+      "target": "zemismart_pir_sensor_advanced_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "pm25_sensor_battery",
+      "target": "zemismart_pm25_sensor_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "power_meter_socket_ac",
+      "target": "moes_power_meter_socket_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "presence_sensor_radar_battery",
+      "target": "zemismart_presence_sensor_radar_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "pressure_sensor_battery",
+      "target": "zemismart_pressure_sensor_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "radar_motion_sensor_advanced_battery",
+      "target": "zemismart_radar_motion_sensor_advanced_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "radar_motion_sensor_mmwave_battery",
+      "target": "zemismart_radar_motion_sensor_mmwave_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "radar_motion_sensor_tank_level_battery",
+      "target": "zemismart_radar_motion_sensor_tank_level_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "relay_switch_1gang_ac",
+      "target": "zemismart_relay_switch_1gang_ac",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "remote_switch_cr2032",
+      "target": "moes_remote_switch_cr2032",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "roller_blind_controller_ac",
+      "target": "zemismart_roller_blind_controller_ac",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "roller_shutter_controller_ac",
+      "target": "zemismart_roller_shutter_controller_ac",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "roller_shutter_switch_cr2032",
+      "target": "zemismart_roller_shutter_switch_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "scene_controller",
+      "target": "zemismart_scene_controller",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "scene_controller_battery",
+      "target": "zemismart_scene_controller_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "smart_bulb_dimmer_ac",
+      "target": "moes_smart_bulb_dimmer_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "smart_bulb_rgb_ac",
+      "target": "moes_smart_bulb_rgb_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "smart_bulb_white_ac",
+      "target": "moes_smart_bulb_white_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "smart_plug_ac",
+      "target": "avatto_smart_plug_ac",
+      "brand": "avatto",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "smart_plug_dimmer_ac",
+      "target": "nous_smart_plug_dimmer_ac",
+      "brand": "nous",
+      "manufacturerIds": [
+        "TS0005",
+        "_TZ3000_g5xawfcq",
+        "_TZ3000_cphmq0q7"
+      ]
+    },
+    {
+      "current": "smart_plug_energy_ac",
+      "target": "avatto_smart_plug_energy_ac",
+      "brand": "avatto",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "smart_plug_power_meter_16a_ac",
+      "target": "avatto_smart_plug_power_meter_16a_ac",
+      "brand": "avatto",
+      "manufacturerIds": [
+        "_TZ3000_typdpbpg",
+        "_TZ3000_u1rkajsr",
+        "_TZ3000_g5xawfcq"
+      ]
+    },
+    {
+      "current": "smart_smoke_detector_advanced_battery",
+      "target": "zemismart_smart_smoke_detector_advanced_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "TS0502B",
+        "TS0505B",
+        "_TZ1800_ejwkn2h2"
+      ]
+    },
+    {
+      "current": "smart_switch_1gang_ac",
+      "target": "zemismart_smart_switch_1gang_ac",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "smart_switch_3gang_ac",
+      "target": "zemismart_smart_switch_3gang_ac",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "smoke_detector_temp_humidity_advanced_battery",
+      "target": "zemismart_smoke_detector_temp_humidity_advanced_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "smoke_temp_humid_sensor_battery",
+      "target": "zemismart_smoke_temp_humid_sensor_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "soil_moisture_temperature_sensor_battery",
+      "target": "zemismart_soil_moisture_temperature_sensor_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "solar_panel_controller_hybrid",
+      "target": "zemismart_solar_panel_controller_hybrid",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "switch_1gang_battery",
+      "target": "zemismart_switch_1gang_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "switch_2gang_ac",
+      "target": "moes_switch_2gang_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "switch_2gang_hybrid",
+      "target": "moes_switch_2gang_hybrid",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "switch_5gang_battery",
+      "target": "zemismart_switch_5gang_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "temperature_humidity_display_battery",
+      "target": "aqara_temperature_humidity_display_battery",
+      "brand": "aqara",
+      "manufacturerIds": [
+        "_TZ3000_bguser20",
+        "_TZ3000_ywagc4rj",
+        "LUMI"
+      ]
+    },
+    {
+      "current": "temperature_humidity_sensor_battery",
+      "target": "aqara_temperature_humidity_sensor_battery",
+      "brand": "aqara",
+      "manufacturerIds": [
+        "_TZ3000_bgsigers",
+        "_TZ3000_fllyghyj",
+        "_TZ3000_idrxiajl"
+      ]
+    },
+    {
+      "current": "temperature_sensor_advanced_battery",
+      "target": "zemismart_temperature_sensor_advanced_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "temperature_sensor_battery",
+      "target": "zemismart_temperature_sensor_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "temp_humid_sensor_advanced_battery",
+      "target": "zemismart_temp_humid_sensor_advanced_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "temp_humid_sensor_dd_battery",
+      "target": "zemismart_temp_humid_sensor_dd_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "temp_humid_sensor_leak_detector_battery",
+      "target": "zemismart_temp_humid_sensor_leak_detector_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "temp_sensor_pro_battery",
+      "target": "zemismart_temp_sensor_pro_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "thermostat_hybrid",
+      "target": "avatto_thermostat_hybrid",
+      "brand": "avatto",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "touch_switch_1gang_ac",
+      "target": "zemismart_touch_switch_1gang_ac",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "touch_switch_2gang_ac",
+      "target": "moes_touch_switch_2gang_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "touch_switch_3gang_ac",
+      "target": "zemismart_touch_switch_3gang_ac",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "touch_switch_4gang_ac",
+      "target": "moes_touch_switch_4gang_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_air_quality_monitor_ac",
+      "target": "nous_air_quality_monitor_ac",
+      "brand": "nous",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_air_quality_monitor_pro_internal_internal",
+      "target": "zemismart_air_quality_monitor_pro_internal_internal",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_bulb_rgb_ac",
+      "target": "lsc_bulb_rgb_ac",
+      "brand": "lsc",
+      "manufacturerIds": [
+        "_TZ3000_riwp3k79",
+        "_TZ3000_dbou1ap4",
+        "Signify Netherlands B.V."
+      ]
+    },
+    {
+      "current": "tuya_bulb_tunable_ac",
+      "target": "moes_bulb_tunable_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_bulb_white_aaa",
+      "target": "moes_bulb_white_aaa",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_bulb_white_ac",
+      "target": "lsc_bulb_white_ac",
+      "brand": "lsc",
+      "manufacturerIds": [
+        "Signify Netherlands B.V.",
+        "Philips",
+        "_TZ3210_zdrhqmo0"
+      ]
+    },
+    {
+      "current": "tuya_bulb_white_cr2032",
+      "target": "moes_bulb_white_cr2032",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_ceiling_fan_ac",
+      "target": "moes_ceiling_fan_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_climate_monitor_aaa_aaa",
+      "target": "moes_climate_monitor_aaa_aaa",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_climate_monitor_cr2032",
+      "target": "moes_climate_monitor_cr2032",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_co2_sensor_basic_aaa",
+      "target": "zemismart_co2_sensor_basic_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_co2_sensor_basic_cr2032",
+      "target": "zemismart_co2_sensor_basic_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_contact_sensor_basic_cr2032",
+      "target": "ikea_contact_sensor_basic_cr2032",
+      "brand": "ikea",
+      "manufacturerIds": [
+        "IKEA of Sweden",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_n2egfsli"
+      ]
+    },
+    {
+      "current": "tuya_co_detector_pro_aaa",
+      "target": "zemismart_co_detector_pro_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_co_detector_pro_cr2032",
+      "target": "zemismart_co_detector_pro_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_curtain_motor_aaa",
+      "target": "zemismart_curtain_motor_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_qzjcsmar",
+        "_TZE200_3towulqd",
+        "_TZE200_8ygsuhe1"
+      ]
+    },
+    {
+      "current": "tuya_curtain_motor_cr2032",
+      "target": "zemismart_curtain_motor_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_qzjcsmar",
+        "_TZE200_3towulqd",
+        "_TZE200_8ygsuhe1"
+      ]
+    },
+    {
+      "current": "tuya_curtain_motor_internal",
+      "target": "zemismart_curtain_motor_internal",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZE200_cowvfni3",
+        "_TZE200_fctwhugx",
+        "_TZE200_m9skfctm"
+      ]
+    },
+    {
+      "current": "tuya_dimmer_1gang_ac",
+      "target": "moes_dimmer_1gang_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_dimmer_1gang_touch_ac",
+      "target": "moes_dimmer_1gang_touch_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_dimmer_ac",
+      "target": "moes_dimmer_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_dimmer_touch_ac",
+      "target": "moes_dimmer_touch_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_dimmer_wireless_cr2032",
+      "target": "lsc_dimmer_wireless_cr2032",
+      "brand": "lsc",
+      "manufacturerIds": [
+        "IKEA of Sweden",
+        "_TZ3000_dbou1ap4",
+        "_TZ3210_ngqk6jia"
+      ]
+    },
+    {
+      "current": "tuya_doorbell_button_internal",
+      "target": "zemismart_doorbell_button_internal",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_door_window_sensor_basic_aaa",
+      "target": "zemismart_door_window_sensor_basic_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_door_window_sensor_basic_cr2032",
+      "target": "zemismart_door_window_sensor_basic_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_fan_controller_ac",
+      "target": "zemismart_fan_controller_ac",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_formaldehyde_sensor_aaa_aaa",
+      "target": "zemismart_formaldehyde_sensor_aaa_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_formaldehyde_sensor_cr2032",
+      "target": "zemismart_formaldehyde_sensor_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_gas_detector_cr2032",
+      "target": "zemismart_gas_detector_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_gas_sensor_ts0601_aaa_aaa",
+      "target": "zemismart_gas_sensor_ts0601_aaa_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZE200_ggev5fsl",
+        "_TZE204_ggev5fsl",
+        "_TZE284_rjgdhqqi"
+      ]
+    },
+    {
+      "current": "tuya_gas_sensor_ts0601_aa_aa",
+      "target": "zemismart_gas_sensor_ts0601_aa_aa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZE200_ggev5fsl",
+        "_TZE204_ggev5fsl",
+        "_TZE284_rjgdhqqi"
+      ]
+    },
+    {
+      "current": "tuya_hvac_controller_ac",
+      "target": "zemismart_hvac_controller_ac",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_led_strip_advanced_ac",
+      "target": "moes_led_strip_advanced_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_led_strip_basic_ac",
+      "target": "avatto_led_strip_basic_ac",
+      "brand": "avatto",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_led_strip_pro_ac",
+      "target": "moes_led_strip_pro_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_lock_basic_aa",
+      "target": "zemismart_lock_basic_aa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_lock_fingerprint_aa",
+      "target": "zemismart_lock_fingerprint_aa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_lock_smart_aa",
+      "target": "zemismart_lock_smart_aa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_tk3s5tyg",
+        "_TZE200_wfxuhoea",
+        "_TZ3000_1dd0d5yi"
+      ]
+    },
+    {
+      "current": "tuya_lux_sensor_aaa_aaa",
+      "target": "zemismart_lux_sensor_aaa_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_lux_sensor_cr2032",
+      "target": "zemismart_lux_sensor_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_mini_ac",
+      "target": "moes_mini_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_motion_sensor_mmwave_advanced_aaa",
+      "target": "zemismart_motion_sensor_mmwave_advanced_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_motion_sensor_mmwave_advanced_cr2032",
+      "target": "zemismart_motion_sensor_mmwave_advanced_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_motion_sensor_mmwave_basic_aaa",
+      "target": "zemismart_motion_sensor_mmwave_basic_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_motion_sensor_mmwave_basic_cr2032",
+      "target": "zemismart_motion_sensor_mmwave_basic_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_motion_sensor_mmwave_basic_cr2450",
+      "target": "moes_motion_sensor_mmwave_basic_cr2450",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZE200_ztc6ggyl",
+        "_TZE284_ztc6ggyl",
+        "GE"
+      ]
+    },
+    {
+      "current": "tuya_motion_sensor_pir_advanced_aaa",
+      "target": "zemismart_motion_sensor_pir_advanced_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_motion_sensor_pir_advanced_cr2032",
+      "target": "zemismart_motion_sensor_pir_advanced_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_motion_sensor_pir_basic_aaa",
+      "target": "zemismart_motion_sensor_pir_basic_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_motion_sensor_pir_basic_cr2032",
+      "target": "zemismart_motion_sensor_pir_basic_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_motion_sensor_pir_basic_cr2450",
+      "target": "aqara_motion_sensor_pir_basic_cr2450",
+      "brand": "aqara",
+      "manufacturerIds": [
+        "_TZ3000_mmtwjmaq",
+        "_TZ3000_kmh5qpmb",
+        "_TZE200_3towulqd"
+      ]
+    },
+    {
+      "current": "tuya_multisensor_aaa_aaa",
+      "target": "zemismart_multisensor_aaa_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_multisensor_cr2032",
+      "target": "zemismart_multisensor_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_noise_level_sensor_aaa_aaa",
+      "target": "zemismart_noise_level_sensor_aaa_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_noise_level_sensor_cr2032",
+      "target": "zemismart_noise_level_sensor_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_plug_basic_ac",
+      "target": "avatto_plug_basic_ac",
+      "brand": "avatto",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_plug_energy_monitor_ac",
+      "target": "moes_plug_energy_monitor_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_plug_smart_ac",
+      "target": "moes_plug_smart_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_pm25_detector_cr2032",
+      "target": "zemismart_pm25_detector_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_pm25_sensor_aaa_aaa",
+      "target": "zemismart_pm25_sensor_aaa_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_pm25_sensor_cr2032",
+      "target": "zemismart_pm25_sensor_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_pool_pump_controller_ac",
+      "target": "zemismart_pool_pump_controller_ac",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_pressure_sensor_aaa_aaa",
+      "target": "zemismart_pressure_sensor_aaa_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_pressure_sensor_cr2032",
+      "target": "zemismart_pressure_sensor_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_projector_screen_controller_ac",
+      "target": "zemismart_projector_screen_controller_ac",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_radiator_valve_aa",
+      "target": "moes_radiator_valve_aa",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_rgb_led_controller_ac",
+      "target": "zemismart_rgb_led_controller_ac",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_roller_blind_aaa",
+      "target": "zemismart_roller_blind_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_roller_blind_cr2032",
+      "target": "zemismart_roller_blind_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_roller_shutter_aaa",
+      "target": "zemismart_roller_shutter_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_roller_shutter_cr2032",
+      "target": "zemismart_roller_shutter_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_shade_controller_ac",
+      "target": "zemismart_shade_controller_ac",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_smart_garden_sprinkler_internal_internal",
+      "target": "zemismart_smart_garden_sprinkler_internal_internal",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_smart_irrigation_controller_internal_internal",
+      "target": "zemismart_smart_irrigation_controller_internal_internal",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_smart_spot_ac",
+      "target": "moes_smart_spot_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_smart_switch_1gang_aaa",
+      "target": "moes_smart_switch_1gang_aaa",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_smart_switch_1gang_ac",
+      "target": "zemismart_smart_switch_1gang_ac",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_smart_switch_1gang_cr2032",
+      "target": "moes_smart_switch_1gang_cr2032",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_smart_switch_1gang_hybrid",
+      "target": "zemismart_smart_switch_1gang_hybrid",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_smart_switch_1gang_internal",
+      "target": "zemismart_smart_switch_1gang_internal",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_smart_switch_2gang_ac",
+      "target": "moes_smart_switch_2gang_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_smart_switch_2gang_hybrid",
+      "target": "moes_smart_switch_2gang_hybrid",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_smart_switch_3gang_ac",
+      "target": "zemismart_smart_switch_3gang_ac",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_smart_switch_3gang_cr2032",
+      "target": "zemismart_smart_switch_3gang_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "Philips",
+        "Signify Netherlands B.V.",
+        "_TZ1800_ejwkn2h2"
+      ]
+    },
+    {
+      "current": "tuya_smart_switch_3gang_hybrid",
+      "target": "zemismart_smart_switch_3gang_hybrid",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_smart_switch_4gang_ac",
+      "target": "moes_smart_switch_4gang_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_smart_switch_4gang_cr2032",
+      "target": "zemismart_smart_switch_4gang_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_smart_switch_4gang_hybrid",
+      "target": "moes_smart_switch_4gang_hybrid",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_smart_switch_5gang_aaa",
+      "target": "zemismart_smart_switch_5gang_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_smart_switch_5gang_cr2032",
+      "target": "zemismart_smart_switch_5gang_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_smart_switch_6gang_ac",
+      "target": "moes_smart_switch_6gang_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_smart_switch_8gang_ac",
+      "target": "moes_smart_switch_8gang_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_smoke_detector_advanced_aaa",
+      "target": "zemismart_smoke_detector_advanced_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "TS0502B",
+        "TS0505B",
+        "_TZ1800_ejwkn2h2"
+      ]
+    },
+    {
+      "current": "tuya_smoke_detector_advanced_cr2032",
+      "target": "zemismart_smoke_detector_advanced_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "TS0502B",
+        "TS0505B",
+        "_TZ1800_ejwkn2h2"
+      ]
+    },
+    {
+      "current": "tuya_smoke_detector_basic_cr123a",
+      "target": "aqara_smoke_detector_basic_cr123a",
+      "brand": "aqara",
+      "manufacturerIds": [
+        "_TZE284_n4ttsck2",
+        "_TZE200_m9skfctm",
+        "LUMI"
+      ]
+    },
+    {
+      "current": "tuya_soil_moisture_temperature_sensor_aaa_aaa",
+      "target": "zemismart_soil_moisture_temperature_sensor_aaa_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_soil_moisture_temperature_sensor_cr2032",
+      "target": "zemismart_soil_moisture_temperature_sensor_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_solar_panel_controller_aaa_aaa",
+      "target": "zemismart_solar_panel_controller_aaa_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_solar_panel_controller_cr2032",
+      "target": "zemismart_solar_panel_controller_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_sos_emergency_button_cr2032",
+      "target": "moes_sos_emergency_button_cr2032",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_temperature_sensor_aaa_aaa",
+      "target": "zemismart_temperature_sensor_aaa_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_temperature_sensor_advanced_aaa_aaa",
+      "target": "zemismart_temperature_sensor_advanced_aaa_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_temperature_sensor_advanced_cr2032",
+      "target": "zemismart_temperature_sensor_advanced_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_temperature_sensor_cr2032",
+      "target": "zemismart_temperature_sensor_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_temp_humidity_sensor_basic_aaa",
+      "target": "moes_temp_humidity_sensor_basic_aaa",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_temp_humidity_sensor_basic_cr2032",
+      "target": "moes_temp_humidity_sensor_basic_cr2032",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_temp_sensor_pro_aaa_aaa",
+      "target": "zemismart_temp_sensor_pro_aaa_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_temp_sensor_pro_cr2032",
+      "target": "zemismart_temp_sensor_pro_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_thermostat_aaa",
+      "target": "avatto_thermostat_aaa",
+      "brand": "avatto",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_thermostat_cr2032",
+      "target": "avatto_thermostat_cr2032",
+      "brand": "avatto",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_thermostat_smart_internal",
+      "target": "avatto_thermostat_smart_internal",
+      "brand": "avatto",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_tvoc_sensor_aaa_aaa",
+      "target": "zemismart_tvoc_sensor_aaa_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_tvoc_sensor_advanced_aaa_aaa",
+      "target": "zemismart_tvoc_sensor_advanced_aaa_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_tvoc_sensor_advanced_cr2032",
+      "target": "zemismart_tvoc_sensor_advanced_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_tvoc_sensor_cr2032",
+      "target": "zemismart_tvoc_sensor_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_valve_smart_aa",
+      "target": "zemismart_valve_smart_aa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_vibration_sensor_aaa_aaa",
+      "target": "zemismart_vibration_sensor_aaa_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_vibration_sensor_cr2032",
+      "target": "zemismart_vibration_sensor_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_wall_switch_1gang_ac",
+      "target": "zemismart_wall_switch_1gang_ac",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_wall_switch_1gang_dc",
+      "target": "zemismart_wall_switch_1gang_dc",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_wall_switch_2gang_ac",
+      "target": "moes_wall_switch_2gang_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_wall_switch_2gang_dc",
+      "target": "moes_wall_switch_2gang_dc",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_wall_switch_3gang_ac",
+      "target": "zemismart_wall_switch_3gang_ac",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_wall_switch_3gang_dc",
+      "target": "zemismart_wall_switch_3gang_dc",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_wall_switch_4gang_ac",
+      "target": "moes_wall_switch_4gang_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_wall_switch_4gang_dc",
+      "target": "moes_wall_switch_4gang_dc",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_wall_switch_5gang_ac",
+      "target": "moes_wall_switch_5gang_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_wall_switch_6gang_ac",
+      "target": "moes_wall_switch_6gang_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_water_leak_detector_advanced_aaa",
+      "target": "zemismart_water_leak_detector_advanced_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_water_leak_detector_advanced_cr2032",
+      "target": "zemismart_water_leak_detector_advanced_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_water_leak_detector_basic_aaa",
+      "target": "zemismart_water_leak_detector_basic_aaa",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_water_leak_detector_basic_cr2032",
+      "target": "zemismart_water_leak_detector_basic_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_wireless_switch_1button_cr2032",
+      "target": "zemismart_wireless_switch_1button_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_wireless_switch_1button_cr2450",
+      "target": "zemismart_wireless_switch_1button_cr2450",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_wireless_switch_2button_cr2032",
+      "target": "zemismart_wireless_switch_2button_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_wireless_switch_3button_cr2032",
+      "target": "zemismart_wireless_switch_3button_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_wireless_switch_4button_cr2032",
+      "target": "zemismart_wireless_switch_4button_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_wireless_switch_4button_cr2450",
+      "target": "moes_wireless_switch_4button_cr2450",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_wireless_switch_5button_cr2032",
+      "target": "moes_wireless_switch_5button_cr2032",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_wireless_switch_6button_cr2032",
+      "target": "zemismart_wireless_switch_6button_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_wireless_switch_8button_cr2032",
+      "target": "zemismart_wireless_switch_8button_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tuya_zbbridge_ac",
+      "target": "nous_zbbridge_ac",
+      "brand": "nous",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tuya_zigbee_gateway_hub_ac",
+      "target": "nous_zigbee_gateway_hub_ac",
+      "brand": "nous",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "tvoc_sensor_advanced_battery",
+      "target": "zemismart_tvoc_sensor_advanced_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "tvoc_sensor_battery",
+      "target": "zemismart_tvoc_sensor_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "usb_outlet_ac",
+      "target": "moes_usb_outlet_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "usb_outlet_advanced_ac",
+      "target": "moes_usb_outlet_advanced_ac",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "vibration_sensor_battery",
+      "target": "zemismart_vibration_sensor_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "water_leak_detector_advanced_battery",
+      "target": "zemismart_water_leak_detector_advanced_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "water_leak_detector_battery",
+      "target": "zemismart_water_leak_detector_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "water_leak_sensor_battery",
+      "target": "zemismart_water_leak_sensor_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ3000_01gpyda5",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_0ghwhypc"
+      ]
+    },
+    {
+      "current": "wireless_scene_controller_4button_battery",
+      "target": "zemismart_wireless_scene_controller_4button_battery",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "IKEA of Sweden",
+        "Signify Netherlands B.V.",
+        "_TZ3000_xabckq1v"
+      ]
+    },
+    {
+      "current": "wireless_switch_1gang_cr2032",
+      "target": "zemismart_wireless_switch_1gang_cr2032",
+      "brand": "zemismart",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "wireless_switch_2gang_cr2032",
+      "target": "moes_wireless_switch_2gang_cr2032",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "wireless_switch_4gang_cr2032",
+      "target": "moes_wireless_switch_4gang_cr2032",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "wireless_switch_6gang_cr2032",
+      "target": "moes_wireless_switch_6gang_cr2032",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    },
+    {
+      "current": "wireless_switch_cr2032",
+      "target": "moes_wireless_switch_cr2032",
+      "brand": "moes",
+      "manufacturerIds": [
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZ2000_a476raq2"
+      ]
+    }
+  ],
+  "toEnrich": [
+    "aqara_motion_sensor_pir_basic_ac",
+    "ikea_ikea_shortcut_button_other_other",
+    "ikea_wireless_switch_4button_other"
+  ],
+  "errors": []
+}
