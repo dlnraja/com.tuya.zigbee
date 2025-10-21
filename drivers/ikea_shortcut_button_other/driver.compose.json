@@ -22,16 +22,40 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "IKEA of Sweden",
-      "TRADFRI",
-      "IKEA",
       "FYRTUR",
+      "IKEA",
+      "IKEA of Sweden",
       "KADRILJ",
-      "SYMFONISK"
+      "SYMFONISK",
+      "TRADFRI",
+      "_TYZB02_key8kk7r",
+      "_TYZB02_keyjhapk",
+      "_TZ3000_8rppvwda",
+      "_TZ3000_a7ouggvs",
+      "_TZ3000_axpdxqgu",
+      "_TZ3000_f97vq5mn",
+      "_TZ3000_fa9mlvja",
+      "_TZ3000_fkp5zyho",
+      "_TZ3000_itb0omhv",
+      "_TZ3000_oikiyf3b",
+      "_TZ3000_owgcnkrh",
+      "_TZ3000_peszejy7",
+      "_TZ3000_pzui3skt",
+      "_TZ3000_qzjcsmar",
+      "_TZ3000_tk3s5tyg",
+      "_TZ3000_vp6clf9d",
+      "_TZ3000_wkai4ga5",
+      "_TZ3000_xabckq1v"
     ],
     "productId": [
+      "E2213",
       "SOMRIG",
-      "E2213"
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS004F",
+      "TS0215A"
     ],
     "endpoints": {
       "1": {

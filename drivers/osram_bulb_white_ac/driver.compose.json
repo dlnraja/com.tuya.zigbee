@@ -15,18 +15,31 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_OSRAM_generic",
-      "_TZ3000_dbou1ap4",
-      "_TZ3000_odygigth",
-      "_TZ3000_el5kt5im",
-      "_TZ3000_obacbukl",
-      "_TZ3000_kdpxju99",
-      "_TZ3000_49qchf10",
-      "TS0505",
       "TS0502",
-      "TS0503"
+      "TS0503",
+      "TS0505",
+      "_OSRAM_generic",
+      "_TZ3000_12sxjap4",
+      "_TZ3000_49qchf10",
+      "_TZ3000_dbou1ap4",
+      "_TZ3000_el5kt5im",
+      "_TZ3000_hlijwsai",
+      "_TZ3000_kdpxju99",
+      "_TZ3000_keabpigv",
+      "_TZ3000_obacbukl",
+      "_TZ3000_oborybow",
+      "_TZ3000_odygigth",
+      "_TZ3000_q50zhdsc",
+      "_TZ3000_qd7hej8u",
+      "_TZ3210_mja6r5ix",
+      "eWeLight"
     ],
     "productId": [
+      "TS0502A",
+      "TS0502B",
+      "TS0505A",
+      "TS0505B",
+      "ZB-CL01",
       "generic"
     ],
     "endpoints": {
