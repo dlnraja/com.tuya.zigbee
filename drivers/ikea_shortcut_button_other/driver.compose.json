@@ -1,0 +1,102 @@
+{
+  "id": "ikea_shortcut_button_other",
+  "name": {
+    "en": "Shortcut Button (OTHER)",
+    "fr": "Shortcut Button (Battery)"
+  },
+  "class": "button",
+  "capabilities": [
+    "measure_battery",
+    "alarm_battery"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "IKEA of Sweden",
+      "TRADFRI",
+      "IKEA",
+      "FYRTUR",
+      "KADRILJ",
+      "SYMFONISK"
+    ],
+    "productId": [
+      "SOMRIG",
+      "E2213"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/learnmode.svg",
+      "instruction": {
+        "en": "Follow device pairing instructions",
+        "fr": "Suivre les instructions d'appairage"
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Battery Settings",
+        "fr": "Paramètres Batterie"
+      },
+      "children": [
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)",
+            "fr": "Seuil Batterie Faible (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50,
+          "hint": {
+            "en": "Trigger low battery alarm when below this percentage",
+            "fr": "Déclenche alarme batterie faible en dessous de ce pourcentage"
+          }
+        },
+        {
+          "id": "battery_report_interval",
+          "type": "number",
+          "label": {
+            "en": "Battery Report Interval (hours)",
+            "fr": "Intervalle Rapport Batterie (heures)"
+          },
+          "value": 1,
+          "min": 1,
+          "max": 24,
+          "hint": {
+            "en": "How often to check battery level",
+            "fr": "Fréquence de vérification du niveau de batterie"
+          }
+        }
+      ]
+    }
+  ]
+}
