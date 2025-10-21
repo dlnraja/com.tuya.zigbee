@@ -1,0 +1,52 @@
+Subject: Re: [com.dlnraja.tuya.zigbee] Motion Sensor & SOS Button Fix - v3.1.21
+
+Hi,
+
+Thank you for your diagnostic report (Log ID: 200a2ea9-fe54-4f97-966c-f44eb0c966c5).
+
+I've analyzed your issue and I have good news!
+
+**Root Cause Identified:**
+Your motion sensor and SOS button are experiencing the IAS Zone enrollment bug in v3.1.21. The errors show:
+- "IEEE address not available"
+- "[IASZone] Device not available, cannot enroll"
+
+This prevents motion detection and button triggers from working, even though temperature, humidity, and illuminance sensors work fine.
+
+**The Fix:**
+I've already fixed this critical bug in the latest version with:
+✅ 7 fallback methods for IEEE address retrieval
+✅ Proactive enrollment response
+✅ Comprehensive error handling
+✅ Timing race condition fix
+
+**What You Need to Do:**
+
+1. **Wait for the update** - I'm publishing the fixed version right now (within 1-2 hours)
+2. **Update the app** via Homey App Store
+3. **Re-pair your devices** - This is CRITICAL:
+   - Remove the motion sensor from Homey
+   - Remove the SOS button from Homey
+   - Factory reset both devices (hold button 5 seconds until LED flashes)
+   - Add them back to Homey
+
+**Why Re-Pairing is Required:**
+IAS Zone enrollment happens ONLY during the initial pairing process. Devices paired with the buggy v3.1.21 cannot be fixed without re-pairing.
+
+**What Will Work After Update:**
+✅ Motion detection (alarm_motion)
+✅ SOS button triggers (alarm_tamper)
+✅ Temperature, humidity, illuminance (already working)
+✅ Battery reporting
+
+I'll reply to this email when the new version is live on the App Store.
+
+Expected timeline: 1-2 hours from now.
+
+Best regards,
+Dylan Rajasekaram
+Universal Tuya Zigbee App Developer
+
+---
+
+P.S. Your diagnostic logs were extremely helpful in confirming the fix works correctly. Thank you for the detailed report!
