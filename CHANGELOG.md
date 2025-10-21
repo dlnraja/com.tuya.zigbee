@@ -884,6 +884,15 @@ Previous code sent Zigbee command during `onNodeInit()`, but Zigbee subsystem wa
 
 # Changelog
 
+## [4.0.9] - 2025-10-21
+
+### Fixed
+- Auto-incremented version due to tag conflict (was 4.0.4)
+- All validation errors resolved
+- Ready for production deployment
+
+
+
 ## [4.0.0] - 2025-10-20 - BREAKING CHANGE
 
 ### ⚠️ BREAKING CHANGES

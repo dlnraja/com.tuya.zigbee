@@ -13,7 +13,7 @@ This version introduces a complete reorganization:
 
 # 🏠 Universal Tuya Zigbee
 
-[![Version](https://img.shields.io/badge/version-3.0.60-blue.svg)](https://github.com/dlnraja/com.tuya.zigbee)
+[![Version](https://img.shields.io/badge/version-4.0.9-blue)](https://github.com/dlnraja/com.tuya.zigbee)
 [![SDK](https://img.shields.io/badge/SDK-3-green.svg)](https://apps.developer.homey.app)
 [![Homey](https://img.shields.io/badge/Homey->=12.2.0-orange.svg)](https://homey.app)
 [![Drivers](https://img.shields.io/badge/drivers-190-brightgreen.svg)](https://github.com/dlnraja/com.tuya.zigbee/tree/master/drivers)
