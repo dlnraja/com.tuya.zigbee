@@ -8,11 +8,6 @@
       },
       "args": [
         {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=tuya_thermostat_cr2032"
-        },
-        {
           "name": "mode",
           "type": "dropdown",
           "title": {
@@ -52,8 +47,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Set mode [[device]] [[mode]]",
-        "fr": "Définir mode [[device]] [[mode]]"
+        "en": "Set mode [[mode]]",
+        "fr": "Définir mode [[mode]]"
       }
     }
   ],
@@ -65,11 +60,6 @@
         "fr": "Mode est..."
       },
       "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=tuya_thermostat_cr2032"
-        },
         {
           "name": "mode",
           "type": "dropdown",
@@ -103,8 +93,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Mode is... [[device]] [[mode]]",
-        "fr": "Mode est... [[device]] [[mode]]"
+        "en": "Mode is... [[mode]]",
+        "fr": "Mode est... [[mode]]"
       }
     }
   ]
