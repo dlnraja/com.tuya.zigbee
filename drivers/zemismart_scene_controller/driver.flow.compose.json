@@ -29,16 +29,10 @@
           "example": "single"
         }
       ],
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=scene_controller"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "Button pressed [[device]]",
-        "fr": "Bouton appuyé [[device]]"
+        "en": "Button pressed",
+        "fr": "Bouton appuyé"
       }
     }
   ]

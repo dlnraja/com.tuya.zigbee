@@ -9,16 +9,10 @@
       "hint": {
         "en": "Triggered when motion is detected"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=tuya_motion_sensor_mmwave_advanced_aaa"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "Motion detected [[device]]",
-        "fr": "Mouvement détecté [[device]]"
+        "en": "Motion detected",
+        "fr": "Mouvement détecté"
       }
     },
     {
@@ -30,16 +24,10 @@
       "hint": {
         "en": "Triggered when motion detection ends"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=tuya_motion_sensor_mmwave_advanced_aaa"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "Motion cleared [[device]]",
-        "fr": "Mouvement terminé [[device]]"
+        "en": "Motion cleared",
+        "fr": "Mouvement terminé"
       }
     }
   ],
@@ -50,16 +38,10 @@
         "en": "Motion is active",
         "fr": "Mouvement actif"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=tuya_motion_sensor_mmwave_advanced_aaa"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "Motion is active [[device]]",
-        "fr": "Mouvement actif [[device]]"
+        "en": "Motion is active",
+        "fr": "Mouvement actif"
       }
     }
   ]

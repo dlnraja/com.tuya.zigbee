@@ -30,16 +30,10 @@
           "example": "single"
         }
       ],
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=tuya_smart_switch_1gang_internal"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "Button pressed [[device]]",
-        "fr": "Bouton appuyé [[device]]"
+        "en": "Button pressed",
+        "fr": "Bouton appuyé"
       }
     },
     {
@@ -63,16 +57,10 @@
           "example": "1"
         }
       ],
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=tuya_smart_switch_1gang_internal"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "Button single press [[device]]",
-        "fr": "Bouton pression simple [[device]]"
+        "en": "Button single press",
+        "fr": "Bouton pression simple"
       }
     },
     {
@@ -96,16 +84,10 @@
           "example": "1"
         }
       ],
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=tuya_smart_switch_1gang_internal"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "Button double press [[device]]",
-        "fr": "Bouton double pression [[device]]"
+        "en": "Button double press",
+        "fr": "Bouton double pression"
       }
     },
     {
@@ -129,16 +111,10 @@
           "example": "1"
         }
       ],
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=tuya_smart_switch_1gang_internal"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "Button long press [[device]]",
-        "fr": "Bouton pression longue [[device]]"
+        "en": "Button long press",
+        "fr": "Bouton pression longue"
       }
     },
     {
@@ -162,16 +138,10 @@
           "example": 15
         }
       ],
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=tuya_smart_switch_1gang_internal"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "Battery is low [[device]]",
-        "fr": "Batterie faible [[device]]"
+        "en": "Battery is low",
+        "fr": "Batterie faible"
       }
     }
   ],
@@ -187,11 +157,6 @@
         "fr": "Simuler une pression de bouton sans interaction physique"
       },
       "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=tuya_smart_switch_1gang_internal"
-        },
         {
           "name": "button",
           "type": "dropdown",
@@ -249,8 +214,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Trigger button manually [[device]] [[button]] [[action]]",
-        "fr": "Activer bouton manuellement [[device]] [[button]] [[action]]"
+        "en": "Trigger button manually [[button]] [[action]]",
+        "fr": "Activer bouton manuellement [[button]] [[action]]"
       }
     },
     {
@@ -264,11 +229,6 @@
         "fr": "Contrôler l'état du bouton"
       },
       "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=tuya_smart_switch_1gang_internal"
-        },
         {
           "name": "gang",
           "type": "dropdown",
@@ -326,8 +286,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Turn gang on/off [[device]] [[gang]] [[state]]",
-        "fr": "Allumer/éteindre bouton [[device]] [[gang]] [[state]]"
+        "en": "Turn gang on/off [[gang]] [[state]]",
+        "fr": "Allumer/éteindre bouton [[gang]] [[state]]"
       }
     }
   ]
