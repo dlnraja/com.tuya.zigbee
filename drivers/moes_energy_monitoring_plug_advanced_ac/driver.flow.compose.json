@@ -8,11 +8,6 @@
       },
       "args": [
         {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=energy_monitoring_plug_advanced_ac"
-        },
-        {
           "name": "duration",
           "type": "number",
           "title": {
@@ -25,8 +20,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Turn on for... [[device]] [[duration]]",
-        "fr": "Allumer pendant... [[device]] [[duration]]"
+        "en": "Turn on for... [[duration]]",
+        "fr": "Allumer pendant... [[duration]]"
       }
     }
   ]
