@@ -15,7 +15,11 @@
           "type": "device",
           "filter": "driver_id=door_controller_ac"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Opened [[device]]",
+        "fr": "Ouvert [[device]]"
+      }
     },
     {
       "id": "door_controller_ac_contact_closed",
@@ -32,7 +36,11 @@
           "type": "device",
           "filter": "driver_id=door_controller_ac"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Closed [[device]]",
+        "fr": "Fermé [[device]]"
+      }
     }
   ],
   "conditions": [
@@ -48,7 +56,11 @@
           "type": "device",
           "filter": "driver_id=door_controller_ac"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Is open [[device]]",
+        "fr": "Est ouvert [[device]]"
+      }
     },
     {
       "id": "door_controller_ac_is_closed",
@@ -62,7 +74,11 @@
           "type": "device",
           "filter": "driver_id=door_controller_ac"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Is closed [[device]]",
+        "fr": "Est fermé [[device]]"
+      }
     }
   ]
 }
