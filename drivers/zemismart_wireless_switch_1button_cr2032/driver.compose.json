@@ -5,8 +5,7 @@
   "class": "sensor",
   "capabilities": [
     "onoff",
-    "measure_battery",
-    "alarm_battery"
+    "measure_battery"
   ],
   "images": {
     "small": "drivers/zemismart_wireless_switch_1button_cr2032/assets/images/small.png",

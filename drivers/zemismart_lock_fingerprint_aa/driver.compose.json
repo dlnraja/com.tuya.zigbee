@@ -6,8 +6,7 @@
   "capabilities": [
     "locked",
     "measure_battery",
-    "alarm_generic",
-    "alarm_battery"
+    "alarm_generic"
   ],
   "zigbee": {
     "manufacturerName": [

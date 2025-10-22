@@ -4,7 +4,8 @@
   },
   "class": "sensor",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_battery"
   ],
   "images": {
     "small": "drivers/zemismart_scene_controller/assets/images/small.png",

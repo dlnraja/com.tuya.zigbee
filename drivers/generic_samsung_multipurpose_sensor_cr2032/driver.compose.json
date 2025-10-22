@@ -7,7 +7,7 @@
   "capabilities": [
     "alarm_contact",
     "measure_temperature",
-    "alarm_battery"
+    "measure_battery"
   ],
   "images": {
     "small": "drivers/samsung_multipurpose_sensor_cr2032/assets/images/small.png",

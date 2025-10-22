@@ -5,7 +5,7 @@
   },
   "class": "button",
   "capabilities": [
-    "alarm_battery"
+    "measure_battery"
   ],
   "images": {
     "small": "drivers/samsung_button_cr2450/assets/images/small.png",

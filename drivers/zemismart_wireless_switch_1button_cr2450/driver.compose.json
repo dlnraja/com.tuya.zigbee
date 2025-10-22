@@ -1,12 +1,18 @@
 {
   "name": {
-    "en": "Scene Controller (Battery) (CR2450)"
+    "en": "Wireless Button (1 Button)",
+    "fr": "Bouton Sans Fil (1 Bouton)",
+    "nl": "Draadloze Knop (1 Knop)",
+    "de": "Kabelloser Schalter (1 Taste)",
+    "it": "Pulsante Wireless (1 Pulsante)",
+    "sv": "Trådlös Knapp (1 Knapp)",
+    "no": "Trådløs Knapp (1 Knapp)",
+    "es": "Botón Inalámbrico (1 Botón)",
+    "da": "Trådløs Knap (1 Knap)"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
-    "onoff",
-    "measure_battery",
-    "alarm_battery"
+    "measure_battery"
   ],
   "images": {
     "small": "drivers/zemismart_wireless_switch_1button_cr2450/assets/images/small.png",
