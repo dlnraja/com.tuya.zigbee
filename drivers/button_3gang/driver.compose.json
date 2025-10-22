@@ -1,0 +1,248 @@
+{
+  "name": {
+    "en": "3-Button Wireless Controller",
+    "fr": "Contrôleur Sans Fil 3 Boutons",
+    "nl": "3-Knops Draadloze Controller",
+    "de": "3-Tasten Drahtlos-Controller",
+    "it": "Controller Wireless 3 Pulsanti",
+    "sv": "3-Knappars Trådlös Kontroller",
+    "no": "3-Knappers Trådløs Kontroller",
+    "es": "Controlador Inalámbrico 3 Botones",
+    "da": "3-Knaps Trådløs Controller"
+  },
+  "class": "button",
+  "capabilities": [
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie",
+        "it": "Batteria",
+        "sv": "Batteri",
+        "no": "Batteri",
+        "es": "Batería",
+        "da": "Batteri"
+      }
+    }
+  },
+  "energy": {
+    "batteries": ["CR2032", "CR2450", "AAA"]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "TS0043",
+      "_TZ3000_xabckq1v",
+      "_TZ3000_bi6lpsew",
+      "_TZ3000_a7ouggvs",
+      "_TZ3000_vp6clf9d",
+      "_TZ3000_fsiepnrh",
+      "_TZ3000_qmi1cfuq",
+      "_TZ3000_zmy1waw6",
+      "_TZ3000_majwnphg",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_nnwehhst",
+      "_TZ3000_axpdxqgu",
+      "_TZ3000_dfgbtub0",
+      "_TZ3000_pdevogdj",
+      "_TZ3000_vd43bbfq",
+      "_TZ3000_2mbfxlzr",
+      "_TZ3000_bvrlqyj7",
+      "_TZ3000_odygigth",
+      "_TZ3000_otvn3lne",
+      "_TZ3000_46t1rvdu",
+      "_TZ3000_fkp5zyho",
+      "_TZ3000_ltiqubue",
+      "_TZ3000_g5xawfcq",
+      "_TZ3000_oikiyf3b",
+      "_TZ3000_o005nuxx",
+      "_TZ3000_msl6wxk9",
+      "_TZ3000_hgu1dlak"
+    ],
+    "productId": [
+      "TS0043",
+      "TS0003",
+      "TS0013"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [0, 1, 3, 4, 5, 6],
+        "bindings": [6, 1]
+      },
+      "2": {
+        "clusters": [0, 4, 5, 6],
+        "bindings": [6, 1]
+      },
+      "3": {
+        "clusters": [0, 4, 5, 6],
+        "bindings": [6, 1]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/button_3gang/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
+        "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+        "nl": "Houd een willekeurige knop 5 seconden ingedrukt totdat de LED snel knippert",
+        "de": "Halten Sie eine beliebige Taste 5 Sekunden lang gedrückt, bis die LED schnell blinkt",
+        "it": "Tenere premuto qualsiasi pulsante per 5 secondi finché il LED lampeggia rapidamente",
+        "sv": "Håll ned valfri knapp i 5 sekunder tills LED:en blinkar snabbt",
+        "no": "Hold inne en hvilken som helst knapp i 5 sekunder til LED-en blinker raskt",
+        "es": "Mantenga presionado cualquier botón durante 5 segundos hasta que el LED parpadee rápidamente",
+        "da": "Hold en vilkårlig knap nede i 5 sekunder, indtil LED'en blinker hurtigt"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/button_3gang/assets/images/small.png",
+    "large": "/drivers/button_3gang/assets/images/large.png"
+  },
+  "platforms": ["local"],
+  "connectivity": ["zigbee"],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Button Detection",
+        "fr": "Détection Boutons",
+        "nl": "Knop Detectie",
+        "de": "Tastenerkennung",
+        "it": "Rilevamento Pulsanti",
+        "sv": "Knappdetektering",
+        "no": "Knappregistrering",
+        "es": "Detección de Botones",
+        "da": "Knapdetektion"
+      },
+      "children": [
+        {
+          "id": "enable_double_press",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Double-Press Detection",
+            "fr": "Activer Détection Double-Pression",
+            "nl": "Dubbel-Druk Detectie Inschakelen",
+            "de": "Doppelklick-Erkennung Aktivieren",
+            "it": "Abilita Rilevamento Doppio Click",
+            "sv": "Aktivera Dubbeltryck-Detektering",
+            "no": "Aktiver Dobbeltrykk-Deteksjon",
+            "es": "Activar Detección Doble Pulsación",
+            "da": "Aktiver Dobbelttryk-Detektion"
+          },
+          "value": true
+        },
+        {
+          "id": "double_press_window",
+          "type": "number",
+          "label": {
+            "en": "Double-Press Time Window (ms)",
+            "fr": "Fenêtre Double-Pression (ms)",
+            "nl": "Dubbel-Druk Tijdvenster (ms)",
+            "de": "Doppelklick-Zeitfenster (ms)",
+            "it": "Finestra Temporale Doppio Click (ms)",
+            "sv": "Dubbeltryck-Tidsfönster (ms)",
+            "no": "Dobbeltrykk-Tidsvindu (ms)",
+            "es": "Ventana Tiempo Doble Pulsación (ms)",
+            "da": "Dobbelttryk-Tidsvindue (ms)"
+          },
+          "units": "ms",
+          "value": 400,
+          "min": 200,
+          "max": 1000
+        },
+        {
+          "id": "enable_long_press",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Long-Press Detection",
+            "fr": "Activer Détection Pression Longue",
+            "nl": "Lang-Drukken Detectie Inschakelen",
+            "de": "Lang-Drück-Erkennung Aktivieren",
+            "it": "Abilita Rilevamento Pressione Lunga",
+            "sv": "Aktivera Långtryck-Detektering",
+            "no": "Aktiver Langtrykk-Deteksjon",
+            "es": "Activar Detección Pulsación Larga",
+            "da": "Aktiver Langt Tryk-Detektion"
+          },
+          "value": true
+        },
+        {
+          "id": "long_press_duration",
+          "type": "number",
+          "label": {
+            "en": "Long-Press Duration (ms)",
+            "fr": "Durée Pression Longue (ms)",
+            "nl": "Lang-Drukken Duur (ms)",
+            "de": "Lang-Drück-Dauer (ms)",
+            "it": "Durata Pressione Lunga (ms)",
+            "sv": "Långtryck-Varaktighet (ms)",
+            "no": "Langtrykk-Varighet (ms)",
+            "es": "Duración Pulsación Larga (ms)",
+            "da": "Langt Tryk-Varighed (ms)"
+          },
+          "units": "ms",
+          "value": 1000,
+          "min": 500,
+          "max": 3000
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Battery Management",
+        "fr": "Gestion Batterie",
+        "nl": "Batterijbeheer",
+        "de": "Batterieverwaltung",
+        "it": "Gestione Batteria",
+        "sv": "Batterihantering",
+        "no": "Batteristyring",
+        "es": "Gestión de Batería",
+        "da": "Batteristyring"
+      },
+      "children": [
+        {
+          "id": "battery_low_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold",
+            "fr": "Seuil Batterie Faible",
+            "nl": "Lage Batterij Drempel",
+            "de": "Niedriger Batteriestand",
+            "it": "Soglia Batteria Bassa",
+            "sv": "Låg Batterinivå",
+            "no": "Lavt Batterinivå",
+            "es": "Umbral Batería Baja",
+            "da": "Lavt Batteriniveau"
+          },
+          "units": "%",
+          "value": 20,
+          "min": 5,
+          "max": 50
+        },
+        {
+          "id": "battery_reporting_interval",
+          "type": "number",
+          "label": {
+            "en": "Battery Report Interval",
+            "fr": "Intervalle Rapport Batterie",
+            "nl": "Batterij Rapport Interval",
+            "de": "Batteriebericht-Intervall",
+            "it": "Intervallo Rapporto Batteria",
+            "sv": "Batterrapport-Intervall",
+            "no": "Batteri Rapport-Intervall",
+            "es": "Intervalo Informe Batería",
+            "da": "Batteri Rapport-Interval"
+          },
+          "units": "min",
+          "value": 60,
+          "min": 15,
+          "max": 1440
+        }
+      ]
+    }
+  ]
+}

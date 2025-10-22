@@ -1,0 +1,183 @@
+{
+  "name": {
+    "en": "1-Gang Touch Switch",
+    "fr": "Interrupteur Tactile 1 Gang",
+    "nl": "1-Gang Touch Schakelaar",
+    "de": "1-Gang Touch Schalter",
+    "it": "Interruttore Touch 1 Gang",
+    "sv": "1-Gang Touch Strömbrytare",
+    "no": "1-Gang Touch Bryter",
+    "es": "Interruptor Táctil 1 Gang",
+    "da": "1-Gang Touch Kontakt"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Switch",
+        "fr": "Interrupteur"
+      }
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 0.5,
+      "usageOff": 0.5
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "TS0601",
+      "_TZE200_7tdtqgwv",
+      "_TZE200_tz32mtza",
+      "_TZE200_9cxuhakf",
+      "_TZE200_2wg5qrjy",
+      "_TZE200_vhy3iakz"
+    ],
+    "productId": [
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0006",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS0016",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          1794,
+          2820
+        ],
+        "bindings": [
+          6,
+          1794
+        ]
+      },
+      "242": {
+        "clusters": [],
+        "bindings": [
+          33
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/switch_touch_1gang/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the power button for 5 seconds until the LED blinks",
+        "fr": "Appuyez et maintenez le bouton d'alimentation pendant 5 secondes jusqu'à ce que la LED clignote"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/switch_touch_1gang/assets/images/small.png",
+    "large": "/drivers/switch_touch_1gang/assets/images/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Power Management",
+        "fr": "Gestion Énergie"
+      },
+      "children": [
+        {
+          "id": "power_reporting",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Power Reporting",
+            "fr": "Activer Rapport Énergie"
+          },
+          "value": true,
+          "hint": {
+            "en": "Report power consumption (AC only)",
+            "fr": "Rapporter consommation (AC uniquement)"
+          }
+        },
+        {
+          "id": "power_reporting_interval",
+          "type": "number",
+          "label": {
+            "en": "Reporting Interval (seconds)",
+            "fr": "Intervalle Rapport (secondes)"
+          },
+          "value": 60,
+          "min": 10,
+          "max": 3600
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Switch Behavior",
+        "fr": "Comportement Interrupteur"
+      },
+      "children": [
+        {
+          "id": "power_on_behavior",
+          "type": "dropdown",
+          "label": {
+            "en": "Power-On Behavior",
+            "fr": "Comportement au Démarrage"
+          },
+          "value": "previous",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Always Off",
+                "fr": "Toujours Éteint"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "Always On",
+                "fr": "Toujours Allumé"
+              }
+            },
+            {
+              "id": "previous",
+              "label": {
+                "en": "Restore Previous State",
+                "fr": "Restaurer État Précédent"
+              }
+            }
+          ]
+        },
+        {
+          "id": "invert_switch",
+          "type": "checkbox",
+          "label": {
+            "en": "Invert Switch Logic",
+            "fr": "Inverser Logique Interrupteur"
+          },
+          "value": false,
+          "hint": {
+            "en": "Swap ON/OFF behavior",
+            "fr": "Inverser ON/OFF"
+          }
+        }
+      ]
+    }
+  ]
+}

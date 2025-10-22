@@ -51,7 +51,7 @@ class SoundControllerBatteryDevice extends ZigBeeDevice {
     });
     
     // Battery alarm capability
-    this.registerCapability('alarm_battery', CLUSTER.POWER_CONFIGURATION, {
+    this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
       get: 'batteryAlarmState',
       reportParser: value => {
         const isLowBattery = value > 0;

@@ -6,8 +6,7 @@
   "capabilities": [
     "onoff",
     "measure_battery",
-    "dim",
-    "alarm_battery"
+    "dim"
   ],
   "platforms": [
     "local"

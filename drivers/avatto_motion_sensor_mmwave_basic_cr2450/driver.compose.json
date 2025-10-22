@@ -8,8 +8,7 @@
   "capabilities": [
     "alarm_motion",
     "measure_luminance",
-    "measure_battery",
-    "alarm_battery"
+    "measure_battery"
   ],
   "images": {
     "small": "drivers/moes_motion_sensor_mmwave_basic_cr2450/assets/images/small.png",

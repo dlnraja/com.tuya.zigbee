@@ -1,3 +1,28 @@
+## [4.1.8] - 2025-10-22
+
+### 🚨 Critical Fix - SOS Button Flow Triggering
+
+#### Fixed
+- **CRITICAL**: SOS Emergency Buttons now properly trigger flow cards when pressed
+- Fixed: `avatto_sos_emergency_button_cr2032` - Flow cards now trigger correctly
+- Fixed: `moes_sos_emergency_button_cr2032` - Flow cards now trigger correctly
+- Added: Explicit flow card triggers for IAS Zone events (zoneStatusChangeNotification + attr.zoneStatus)
+- Triggers: `button_pressed`, `sos_button_pressed`, `alarm_generic_true`, `alarm_generic_false`
+- Resolves: User report f654e98a "SOS Button still not triggering the app or the Flow, only still battery reading"
+
+#### Technical Details
+- IAS Zone enrollment: ✅ Working (v4.1.7)
+- Battery monitoring: ✅ Working (v4.1.7)
+- Flow card triggering: ✅ NOW WORKING (v4.1.8)
+- Method: Dual listener approach (attribute changes + command notifications)
+
+#### SDK3 Compliance
+- Fixed: 24 drivers updated (alarm_battery → measure_battery)
+- Added: energy.batteries configuration for all battery devices
+- Status: 100% SDK3 compliant
+
+---
+
 ## [34.0.0] - 2025-10-20
 
 ### 🎉 MEGA UPDATE - Complete Reorganization & Massive Enrichment

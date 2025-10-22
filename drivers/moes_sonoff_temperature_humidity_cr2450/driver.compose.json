@@ -7,7 +7,7 @@
   "capabilities": [
     "measure_temperature",
     "measure_humidity",
-    "alarm_battery"
+    "measure_battery"
   ],
   "images": {
     "small": "drivers/sonoff_temperature_humidity_cr2450/assets/images/small.png",

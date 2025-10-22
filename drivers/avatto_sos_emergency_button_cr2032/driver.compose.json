@@ -6,8 +6,7 @@
   "capabilities": [
     "button.sos",
     "alarm_generic",
-    "measure_battery",
-    "alarm_battery"
+    "measure_battery"
   ],
   "zigbee": {
     "manufacturerName": [
@@ -149,8 +148,54 @@
     }
   },
   "images": {
-    "small": "drivers/moes_sos_emergency_button_cr2032/assets/images/small.png",
-    "large": "drivers/moes_sos_emergency_button_cr2032/assets/images/large.png"
+    "small": "drivers/avatto_sos_emergency_button_cr2032/assets/images/small.png",
+    "large": "drivers/avatto_sos_emergency_button_cr2032/assets/images/large.png"
+  },
+  "flow": {
+    "triggers": [
+      {
+        "id": "sos_button_pressed",
+        "title": {
+          "en": "SOS button was pressed",
+          "fr": "Le bouton SOS a été pressé",
+          "nl": "SOS knop is ingedrukt",
+          "de": "SOS Taste wurde gedrückt",
+          "it": "Pulsante SOS premuto",
+          "sv": "SOS knappen trycktes",
+          "no": "SOS knapp ble trykket",
+          "es": "Botón SOS pulsado",
+          "da": "SOS knap blev trykket"
+        }
+      },
+      {
+        "id": "sos_button_double_pressed",
+        "title": {
+          "en": "SOS button was double-pressed",
+          "fr": "Le bouton SOS a été double-pressé",
+          "nl": "SOS knop is dubbel ingedrukt",
+          "de": "SOS Taste wurde doppelt gedrückt",
+          "it": "Pulsante SOS doppiamente premuto",
+          "sv": "SOS knappen dubbelklickades",
+          "no": "SOS knapp ble dobbeltklikket",
+          "es": "Botón SOS pulsado dos veces",
+          "da": "SOS knap blev dobbeltklikket"
+        }
+      },
+      {
+        "id": "sos_alarm_triggered",
+        "title": {
+          "en": "SOS alarm was triggered",
+          "fr": "L'alarme SOS a été déclenchée",
+          "nl": "SOS alarm is geactiveerd",
+          "de": "SOS Alarm wurde ausgelöst",
+          "it": "Allarme SOS attivato",
+          "sv": "SOS larm utlöstes",
+          "no": "SOS alarm ble utløst",
+          "es": "Alarma SOS activada",
+          "da": "SOS alarm blev udløst"
+        }
+      }
+    ]
   },
   "capabilitiesOptions": {},
   "platforms": [
@@ -356,158 +401,6 @@
           "max": 50,
           "units": {
             "en": "%"
-          }
-        }
-      ]
-    },
-    {
-      "type": "group",
-      "label": {
-        "en": "SDK3 Advanced Settings",
-        "fr": "Paramètres Avancés SDK3"
-      },
-      "children": [
-        {
-          "id": "battery_low_threshold",
-          "type": "number",
-          "label": {
-            "en": "Low Battery Threshold",
-            "fr": "Seuil Batterie Faible"
-          },
-          "units": "%",
-          "value": 20,
-          "min": 5,
-          "max": 50
-        },
-        {
-          "id": "battery_notification",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Battery Notifications",
-            "fr": "Activer Notifications Batterie"
-          },
-          "value": true
-        },
-        {
-          "id": "enable_double_press",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Double-Press Detection",
-            "fr": "Activer Détection Double-Pression"
-          },
-          "value": false
-        },
-        {
-          "id": "double_press_timeout",
-          "type": "number",
-          "label": {
-            "en": "Double-Press Window",
-            "fr": "Fenêtre Double-Pression"
-          },
-          "units": "ms",
-          "value": 500,
-          "min": 200,
-          "max": 2000
-        },
-        {
-          "id": "enable_long_press",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Long-Press Detection",
-            "fr": "Activer Détection Pression Longue"
-          },
-          "value": false
-        },
-        {
-          "id": "long_press_duration",
-          "type": "number",
-          "label": {
-            "en": "Long-Press Duration",
-            "fr": "Durée Pression Longue"
-          },
-          "units": "ms",
-          "value": 1000,
-          "min": 500,
-          "max": 3000
-        }
-      ]
-    },
-    {
-      "type": "group",
-      "label": {
-        "en": "Battery Management",
-        "fr": "Gestion Batterie"
-      },
-      "children": [
-        {
-          "id": "low_battery_threshold",
-          "type": "number",
-          "label": {
-            "en": "Low battery alert threshold",
-            "fr": "Seuil alerte batterie faible"
-          },
-          "hint": {
-            "en": "Alert when battery drops below this level",
-            "fr": "Alerte quand batterie descend sous ce niveau"
-          },
-          "value": 20,
-          "min": 5,
-          "max": 50,
-          "units": "%"
-        },
-        {
-          "id": "battery_reporting_interval",
-          "type": "number",
-          "label": {
-            "en": "Battery reporting interval",
-            "fr": "Intervalle rapport batterie"
-          },
-          "hint": {
-            "en": "How often to check battery level (minutes)",
-            "fr": "Fréquence vérification batterie (minutes)"
-          },
-          "value": 60,
-          "min": 15,
-          "max": 1440,
-          "units": "min"
-        }
-      ]
-    },
-    {
-      "type": "group",
-      "label": {
-        "en": "Battery Settings",
-        "fr": "Paramètres Batterie"
-      },
-      "children": [
-        {
-          "id": "battery_threshold",
-          "type": "number",
-          "label": {
-            "en": "Low Battery Threshold (%)",
-            "fr": "Seuil Batterie Faible (%)"
-          },
-          "value": 20,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "Trigger low battery alarm when below this percentage",
-            "fr": "Déclenche alarme batterie faible en dessous de ce pourcentage"
-          }
-        },
-        {
-          "id": "battery_report_interval",
-          "type": "number",
-          "label": {
-            "en": "Battery Report Interval (hours)",
-            "fr": "Intervalle Rapport Batterie (heures)"
-          },
-          "value": 1,
-          "min": 1,
-          "max": 24,
-          "hint": {
-            "en": "How often to check battery level",
-            "fr": "Fréquence de vérification du niveau de batterie"
           }
         }
       ]

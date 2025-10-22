@@ -6,7 +6,7 @@ const IASZoneEnroller = require('../../lib/IASZoneEnroller');
 const batteryConverter = require('../../lib/tuya-engine/converters/battery');
 const FallbackSystem = require('../../lib/FallbackSystem');
 
-class WirelessSwitch3gangCr2032Device extends ZigBeeDevice {
+class WirelessSwitch3buttonCr2032Device extends ZigBeeDevice {
 
     async onNodeInit() {
 
@@ -59,7 +59,7 @@ class WirelessSwitch3gangCr2032Device extends ZigBeeDevice {
           // Start long press timer
           this._clickState.longPressTimer = setTimeout(() => {
             if (this._clickState.buttonPressed) {
-              this.log('🔘 LONG PRESS detected');
+              this.log(' LONG PRESS detected');
               this.homey.flow.getDeviceTriggerCard('button_long_press')
                 .trigger(this, {}, {})
                 .catch(this.error);
@@ -99,19 +99,19 @@ class WirelessSwitch3gangCr2032Device extends ZigBeeDevice {
             this._clickState.clickTimer = null;
             
             if (clicks === 1) {
-              this.log('🔘 SINGLE CLICK detected');
+              this.log(' SINGLE CLICK detected');
               this.homey.flow.getDeviceTriggerCard('button_pressed')
                 .trigger(this, {}, {})
                 .catch(this.error);
                 
             } else if (clicks === 2) {
-              this.log('🔘 DOUBLE CLICK detected');
+              this.log(' DOUBLE CLICK detected');
               this.homey.flow.getDeviceTriggerCard('button_double_press')
                 .trigger(this, {}, {})
                 .catch(this.error);
                 
             } else if (clicks >= 3) {
-              this.log(`🔘 MULTI CLICK detected (${clicks})`);
+              this.log(` MULTI CLICK detected (${clicks})`);
               this.homey.flow.getDeviceTriggerCard('button_multi_press')
                 .trigger(this, { count: clicks }, {})
                 .catch(this.error);
@@ -135,14 +135,14 @@ class WirelessSwitch3gangCr2032Device extends ZigBeeDevice {
         
         // Some buttons use step/move commands
         if (command === 'step' || command === 'stepWithOnOff') {
-          this.log('🔘 BUTTON STEP detected (single click alternative)');
+          this.log(' BUTTON STEP detected (single click alternative)');
           this.homey.flow.getDeviceTriggerCard('button_pressed')
             .trigger(this, {}, {})
             .catch(this.error);
         }
       });
     }
-        this.log('wireless_switch_3gang_cr2032 device initialized');
+        this.log('wireless_switch_3button_cr2032 device initialized');
 
         // Register capabilities
                 // Register on/off capability
@@ -171,10 +171,13 @@ class WirelessSwitch3gangCr2032Device extends ZigBeeDevice {
         }
     }
 
-    async onDeleted() {
-        this.log('wireless_switch_3gang_cr2032 device deleted');
-    }
+    async registerFlowCards() {
+    this.log('Registering flow cards...');
 
+    // TRIGGERS
+    // Note: Button triggers are registered in onNodeInit via button detection
+
+    // CONDITIONS
 
   async setCapabilityValue(capabilityId, value) {
     try {
@@ -198,7 +201,7 @@ class WirelessSwitch3gangCr2032Device extends ZigBeeDevice {
     
     // Condition: OnOff
     try {
-      const isOnCard = this.homey.flow.getDeviceConditionCard('wireless_switch_3gang_cr2032_is_on');
+      const isOnCard = this.homey.flow.getDeviceConditionCard('wireless_switch_3button_cr2032_is_on');
       if (isOnCard) {
         isOnCard.registerRunListener(async (args, state) => {
           return args.device.getCapabilityValue('onoff') === true;
@@ -212,7 +215,7 @@ class WirelessSwitch3gangCr2032Device extends ZigBeeDevice {
     const alarmCaps = this.getCapabilities().filter(c => c.startsWith('alarm_'));
     alarmCaps.forEach(alarmCap => {
       try {
-        const conditionCard = this.homey.flow.getDeviceConditionCard(`wireless_switch_3gang_cr2032_${alarmCap}_is_active`);
+        const conditionCard = this.homey.flow.getDeviceConditionCard(`wireless_switch_3button_cr2032_${alarmCap}_is_active`);
         if (conditionCard) {
           conditionCard.registerRunListener(async (args, state) => {
             return args.device.getCapabilityValue(alarmCap) === true;
@@ -228,7 +231,7 @@ class WirelessSwitch3gangCr2032Device extends ZigBeeDevice {
     measureCaps.forEach(measureCap => {
       try {
         // Greater than
-        const gtCard = this.homey.flow.getDeviceConditionCard(`wireless_switch_3gang_cr2032_${measureCap}_greater_than`);
+        const gtCard = this.homey.flow.getDeviceConditionCard(`wireless_switch_3button_cr2032_${measureCap}_greater_than`);
         if (gtCard) {
           gtCard.registerRunListener(async (args, state) => {
             const value = args.device.getCapabilityValue(measureCap);
@@ -239,7 +242,7 @@ class WirelessSwitch3gangCr2032Device extends ZigBeeDevice {
         }
 
         // Less than
-        const ltCard = this.homey.flow.getDeviceConditionCard(`wireless_switch_3gang_cr2032_${measureCap}_less_than`);
+        const ltCard = this.homey.flow.getDeviceConditionCard(`wireless_switch_3button_cr2032_${measureCap}_less_than`);
         if (ltCard) {
           ltCard.registerRunListener(async (args, state) => {
             const value = args.device.getCapabilityValue(measureCap);
@@ -258,7 +261,7 @@ class WirelessSwitch3gangCr2032Device extends ZigBeeDevice {
     
     // Action: Turn On
     try {
-      const turnOnCard = this.homey.flow.getDeviceActionCard('wireless_switch_3gang_cr2032_turn_on');
+      const turnOnCard = this.homey.flow.getDeviceActionCard('wireless_switch_3button_cr2032_turn_on');
       if (turnOnCard) {
         turnOnCard.registerRunListener(async (args, state) => {
           await args.device.setCapabilityValue('onoff', true);
@@ -270,7 +273,7 @@ class WirelessSwitch3gangCr2032Device extends ZigBeeDevice {
 
     // Action: Turn Off
     try {
-      const turnOffCard = this.homey.flow.getDeviceActionCard('wireless_switch_3gang_cr2032_turn_off');
+      const turnOffCard = this.homey.flow.getDeviceActionCard('wireless_switch_3button_cr2032_turn_off');
       if (turnOffCard) {
         turnOffCard.registerRunListener(async (args, state) => {
           await args.device.setCapabilityValue('onoff', false);
@@ -282,7 +285,7 @@ class WirelessSwitch3gangCr2032Device extends ZigBeeDevice {
 
     // Action: Toggle
     try {
-      const toggleCard = this.homey.flow.getDeviceActionCard('wireless_switch_3gang_cr2032_toggle');
+      const toggleCard = this.homey.flow.getDeviceActionCard('wireless_switch_3button_cr2032_toggle');
       if (toggleCard) {
         toggleCard.registerRunListener(async (args, state) => {
           const current = args.device.getCapabilityValue('onoff');
@@ -295,7 +298,7 @@ class WirelessSwitch3gangCr2032Device extends ZigBeeDevice {
 
     // Action: Set Dim
     try {
-      const setDimCard = this.homey.flow.getDeviceActionCard('wireless_switch_3gang_cr2032_set_dim');
+      const setDimCard = this.homey.flow.getDeviceActionCard('wireless_switch_3button_cr2032_set_dim');
       if (setDimCard) {
         setDimCard.registerRunListener(async (args, state) => {
           await args.device.setCapabilityValue('dim', args.dim);
@@ -307,7 +310,7 @@ class WirelessSwitch3gangCr2032Device extends ZigBeeDevice {
 
     // Action: Set Temperature
     try {
-      const setTempCard = this.homey.flow.getDeviceActionCard('wireless_switch_3gang_cr2032_set_temperature');
+      const setTempCard = this.homey.flow.getDeviceActionCard('wireless_switch_3button_cr2032_set_temperature');
       if (setTempCard) {
         setTempCard.registerRunListener(async (args, state) => {
           await args.device.setCapabilityValue('target_temperature', args.temperature);
@@ -319,14 +322,14 @@ class WirelessSwitch3gangCr2032Device extends ZigBeeDevice {
 
     // Action: Window Coverings
     try {
-      const openCard = this.homey.flow.getDeviceActionCard('wireless_switch_3gang_cr2032_open');
+      const openCard = this.homey.flow.getDeviceActionCard('wireless_switch_3button_cr2032_open');
       if (openCard) {
         openCard.registerRunListener(async (args, state) => {
           await args.device.setCapabilityValue('windowcoverings_set', 1);
         });
       }
 
-      const closeCard = this.homey.flow.getDeviceActionCard('wireless_switch_3gang_cr2032_close');
+      const closeCard = this.homey.flow.getDeviceActionCard('wireless_switch_3button_cr2032_close');
       if (closeCard) {
         closeCard.registerRunListener(async (args, state) => {
           try {
@@ -335,7 +338,7 @@ class WirelessSwitch3gangCr2032Device extends ZigBeeDevice {
         });
       }
 
-      const setPosCard = this.homey.flow.getDeviceActionCard('wireless_switch_3gang_cr2032_set_position');
+      const setPosCard = this.homey.flow.getDeviceActionCard('wireless_switch_3button_cr2032_set_position');
       if (setPosCard) {
         setPosCard.registerRunListener(async (args, state) => {
           await args.device.setCapabilityValue('windowcoverings_set', args.position);
@@ -383,7 +386,10 @@ class WirelessSwitch3gangCr2032Device extends ZigBeeDevice {
     } catch (error) {
       // Card might not exist
     }
-  
+  }
+
+  async onDeleted() {
+        this.log('wireless_switch_3button_cr2032 device deleted');
   }
 
   // Helper: Trigger flow when capability changes
@@ -431,15 +437,10 @@ class WirelessSwitch3gangCr2032Device extends ZigBeeDevice {
       }
     }
   }
+  
   // ========================================
-  // FLOW METHODS - Auto-generated
+  // POLLING & MONITORING
   // ========================================
-
-   catch (err) {
-      this.error('Battery change detection error:', err);
-    }
-  }
-
 
   /**
    * Poll tous les attributes pour forcer mise à jour
@@ -513,7 +514,7 @@ class WirelessSwitch3gangCr2032Device extends ZigBeeDevice {
           
           // Low battery alert
           if (percentage <= 20 && percentage > 10) {
-            this.log('⚠️  Low battery warning:', percentage + '%');
+            this.log('  Low battery warning:', percentage + '%');
             await this.homey.notifications.createNotification({
               excerpt: `${this.getName()} battery low (${percentage}%)`
             }).catch(() => {});
@@ -521,7 +522,7 @@ class WirelessSwitch3gangCr2032Device extends ZigBeeDevice {
           
           // Critical battery alert
           if (percentage <= 10) {
-            this.log('🔴 Critical battery:', percentage + '%');
+            this.log(' Critical battery:', percentage + '%');
             await this.homey.notifications.createNotification({
               excerpt: `${this.getName()} battery critical (${percentage}%) - replace soon!`
             }).catch(() => {});
@@ -573,7 +574,7 @@ class WirelessSwitch3gangCr2032Device extends ZigBeeDevice {
     try {
     await Promise.allSettled(promises);
     } catch (err) { this.error('Await error:', err); }
-    this.log('✅ Poll attributes completed');
+    this.log(' Poll attributes completed');
   }
 
 
@@ -656,4 +657,4 @@ class WirelessSwitch3gangCr2032Device extends ZigBeeDevice {
   }
 }
 
-module.exports = WirelessSwitch3gangCr2032Device;
+module.exports = WirelessSwitch3buttonCr2032Device;

@@ -6,8 +6,7 @@
   },
   "class": "button",
   "capabilities": [
-    "measure_battery",
-    "alarm_battery"
+    "measure_battery"
   ],
   "images": {
     "small": "drivers/ikea_wireless_button_2gang_cr2032/assets/images/small.png",

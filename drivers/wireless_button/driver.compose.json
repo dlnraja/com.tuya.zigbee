@@ -1,0 +1,229 @@
+{
+  "name": {
+    "en": "Wireless Button (Universal)",
+    "fr": "Bouton Sans Fil (Universel)",
+    "nl": "Draadloze Knop (Universeel)",
+    "de": "Kabelloser Schalter (Universell)",
+    "it": "Pulsante Wireless (Universale)",
+    "sv": "Trådlös Knapp (Universell)",
+    "no": "Trådløs Knapp (Universell)",
+    "es": "Botón Inalámbrico (Universal)",
+    "da": "Trådløs Knap (Universal)"
+  },
+  "class": "button",
+  "capabilities": [],
+  "capabilitiesOptions": {},
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_0dumfk2z",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_4uuaja4a",
+      "_TZ3000_a7ouggvs",
+      "_TZ3000_axpdxqgu",
+      "_TZ3000_cehuw1lw",
+      "_TZ3000_cphmq0q7",
+      "_TZ3000_dbou1ap4",
+      "_TZ3000_el5kt5im",
+      "_TZ3000_fa9mlvja",
+      "_TZ3000_fkp5zyho",
+      "_TZ3000_fsiepnrh",
+      "_TZ3000_g5xawfcq",
+      "_TZ3000_itb0omhv",
+      "_TZ3000_iystcadi",
+      "_TZ3000_ji4araar",
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_mcxw5ehu",
+      "_TZ3000_mmtwjmaq",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_obacbukl",
+      "_TZ3000_odygigth",
+      "_TZ3000_oikiyf3b",
+      "_TZ3000_owgcnkrh",
+      "_TZ3000_p6ju8myv",
+      "_TZ3000_peszejy7",
+      "_TZ3000_pzui3skt",
+      "_TZ3000_qzjcsmar",
+      "_TZ3000_tk3s5tyg",
+      "_TZ3000_uim07oem",
+      "_TZ3000_vp6clf9d",
+      "_TZ3000_wkai4ga5",
+      "_TZ3000_xabckq1v",
+      "_TZ3000_zsh6uat3",
+      "_TZE200_7bztmfm1",
+      "_TZE200_9cxuhakf",
+      "_TZE200_azqp6ssj",
+      "_TZE200_b6wax7g0",
+      "_TZE200_bjawzodf",
+      "_TZE200_bq5c8xfe",
+      "_TZE200_ckud7u2l",
+      "_TZE200_locansqn",
+      "_TZE200_m9skfctm",
+      "_TZE200_ryfmq5rl",
+      "_TZE200_t1blo2bj",
+      "_TZE200_wfxuhoea",
+      "_TZE200_whpb9yts",
+      "_TZE200_ye5jkfsb",
+      "_TZE200_yw7cahqs",
+      "_TZE200_zl1kmjqx",
+      "_TZE200_ztc6ggyl",
+      "_TZE204_mtoaryre",
+      "lumi.remote.b186acn01",
+      "lumi.remote.b186acn02",
+      "lumi.remote.b286acn01",
+      "lumi.remote.b286acn02",
+      "lumi.remote.b486opcn01"
+    ],
+    "productId": [
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS004F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [0, 1, 3, 6],
+        "bindings": [6]
+      },
+      "2": {
+        "clusters": [0, 3, 6],
+        "bindings": [6]
+      },
+      "3": {
+        "clusters": [0, 3, 6],
+        "bindings": [6]
+      },
+      "4": {
+        "clusters": [0, 3, 6],
+        "bindings": [6]
+      },
+      "5": {
+        "clusters": [0, 3, 6],
+        "bindings": [6]
+      },
+      "6": {
+        "clusters": [0, 3, 6],
+        "bindings": [6]
+      },
+      "7": {
+        "clusters": [0, 3, 6],
+        "bindings": [6]
+      },
+      "8": {
+        "clusters": [0, 3, 6],
+        "bindings": [6]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the reset button for 5 seconds until the LED blinks rapidly",
+        "fr": "Appuyez et maintenez le bouton reset pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+        "nl": "Houd de resetknop 5 seconden ingedrukt totdat de LED snel knippert",
+        "de": "Halten Sie die Reset-Taste 5 Sekunden lang gedrückt, bis die LED schnell blinkt",
+        "it": "Tenere premuto il pulsante di reset per 5 secondi fino a quando il LED lampeggia rapidamente",
+        "sv": "Håll återställningsknappen intryckt i 5 sekunder tills lysdioden blinkar snabbt",
+        "no": "Hold tilbakestillingsknappen inne i 5 sekunder til LED-en blinker raskt",
+        "es": "Mantenga presionado el botón de reinicio durante 5 segundos hasta que el LED parpadee rápidamente",
+        "da": "Hold nulstillingsknappen inde i 5 sekunder, indtil LED'en blinker hurtigt"
+      }
+    }
+  },
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Device Configuration",
+        "fr": "Configuration de l'Appareil",
+        "nl": "Apparaatconfiguratie",
+        "de": "Gerätekonfiguration",
+        "it": "Configurazione Dispositivo",
+        "sv": "Enhetskonfiguration",
+        "no": "Enhetskonfigurasjon",
+        "es": "Configuración del Dispositivo",
+        "da": "Enhedskonfiguration"
+      },
+      "children": [
+        {
+          "id": "button_count",
+          "type": "dropdown",
+          "label": {
+            "en": "Number of Buttons",
+            "fr": "Nombre de Boutons",
+            "nl": "Aantal Knoppen",
+            "de": "Anzahl der Tasten",
+            "it": "Numero di Pulsanti",
+            "sv": "Antal Knappar",
+            "no": "Antall Knapper",
+            "es": "Número de Botones",
+            "da": "Antal Knapper"
+          },
+          "hint": {
+            "en": "Auto-detect or manually set the number of buttons",
+            "fr": "Détection automatique ou configuration manuelle du nombre de boutons"
+          },
+          "value": "auto",
+          "values": [
+            {"id": "auto", "label": {"en": "Auto-detect", "fr": "Détection automatique"}},
+            {"id": "1", "label": {"en": "1 Button", "fr": "1 Bouton"}},
+            {"id": "2", "label": {"en": "2 Buttons", "fr": "2 Boutons"}},
+            {"id": "3", "label": {"en": "3 Buttons", "fr": "3 Boutons"}},
+            {"id": "4", "label": {"en": "4 Buttons", "fr": "4 Boutons"}},
+            {"id": "6", "label": {"en": "6 Buttons", "fr": "6 Boutons"}},
+            {"id": "8", "label": {"en": "8 Buttons", "fr": "8 Boutons"}}
+          ]
+        },
+        {
+          "id": "battery_type",
+          "type": "dropdown",
+          "label": {
+            "en": "Battery Type",
+            "fr": "Type de Pile"
+          },
+          "hint": {
+            "en": "Select your battery type for accurate reporting",
+            "fr": "Sélectionnez le type de pile pour un rapport précis"
+          },
+          "value": "CR2032",
+          "values": [
+            {"id": "CR2032", "label": {"en": "CR2032"}},
+            {"id": "CR2450", "label": {"en": "CR2450"}},
+            {"id": "CR123A", "label": {"en": "CR123A"}},
+            {"id": "AAA", "label": {"en": "AAA"}},
+            {"id": "AA", "label": {"en": "AA"}}
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Battery Management",
+        "fr": "Gestion Batterie"
+      },
+      "children": [
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)",
+            "fr": "Seuil Batterie Faible (%)"
+          },
+          "hint": {
+            "en": "Trigger low battery warning at this percentage",
+            "fr": "Déclencher l'alerte batterie faible à ce pourcentage"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50,
+          "units": "%"
+        }
+      ]
+    }
+  ],
+  "connectivity": ["zigbee"],
+  "platforms": ["local"]
+}

@@ -5,7 +5,7 @@
   },
   "class": "button",
   "capabilities": [
-    "alarm_battery"
+    "measure_battery"
   ],
   "images": {
     "small": "drivers/philips_dimmer_switch_aaa/assets/images/small.png",

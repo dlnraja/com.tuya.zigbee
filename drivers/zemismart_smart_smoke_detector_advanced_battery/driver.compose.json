@@ -6,8 +6,7 @@
   "capabilities": [
     "alarm_smoke",
     "measure_battery",
-    "alarm_tamper",
-    "alarm_battery"
+    "alarm_tamper"
   ],
   "capabilitiesOptions": {
     "alarm_smoke": {
