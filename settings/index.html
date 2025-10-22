@@ -407,94 +407,31 @@
         }
         let driversData = [];
         
-        // Load drivers database from Homey API (client-side generation)
+        // Load drivers database from static JSON file
         async function loadDriversDatabase() {
-            if (!Homey) {
-                console.error('Homey API not initialized');
-                showError('Homey API not ready. Please refresh the page.');
-                return;
-            }
-            
             try {
-                console.log('Fetching drivers from Homey API...');
-                const drivers = await Homey.getDrivers();
-                console.log('Received drivers:', Object.keys(drivers).length);
+                console.log('Fetching drivers from static database...');
+                const response = await fetch('drivers-database.json');
                 
-                // Transform to searchable format
-                driversData = Object.values(drivers).map(driver => {
-                    const driverId = driver.id;
-                    const name = driver.name || driverId;
-                    
-                    // Extract category
-                    let category = 'Other';
-                    const id = driverId.toLowerCase();
-                    if (id.includes('motion') || id.includes('pir')) category = 'Motion Sensors';
-                    else if (id.includes('contact') || id.includes('door') || id.includes('window')) category = 'Contact Sensors';
-                    else if (id.includes('temperature') || id.includes('humidity') || id.includes('climate')) category = 'Climate Sensors';
-                    else if (id.includes('plug')) category = 'Smart Plugs';
-                    else if (id.includes('switch') && !id.includes('wireless')) category = 'Smart Switches';
-                    else if (id.includes('wireless') || id.includes('remote') || id.includes('button')) category = 'Wireless Switches';
-                    else if (id.includes('bulb')) category = 'Light Bulbs';
-                    else if (id.includes('led') || id.includes('strip')) category = 'LED Strips';
-                    else if (id.includes('dimmer')) category = 'Dimmers';
-                    else if (id.includes('curtain') || id.includes('blind')) category = 'Curtains';
-                    else if (id.includes('thermostat') || id.includes('trv')) category = 'Thermostats';
-                    else if (id.includes('valve')) category = 'Valves';
-                    else if (id.includes('smoke') || id.includes('gas') || id.includes('water')) category = 'Safety Sensors';
-                    else if (id.includes('sos') || id.includes('emergency')) category = 'Emergency Buttons';
-                    
-                    // Extract brand
-                    let brand = 'Generic';
-                    if (id.startsWith('tuya_')) brand = 'Tuya';
-                    else if (id.startsWith('moes_')) brand = 'MOES';
-                    else if (id.startsWith('avatto_')) brand = 'AVATTO';
-                    else if (id.startsWith('lsc_')) brand = 'LSC / Lidl';
-                    else if (id.startsWith('zemismart_')) brand = 'ZemiSmart';
-                    else if (id.startsWith('nous_')) brand = 'NOUS';
-                    else if (id.startsWith('lonsonho_')) brand = 'Lonsonho';
-                    else if (id.startsWith('xiaomi_')) brand = 'Xiaomi';
-                    else if (id.startsWith('aqara_')) brand = 'Aqara';
-                    else if (id.startsWith('sonoff_')) brand = 'Sonoff';
-                    else if (id.startsWith('samsung_')) brand = 'Samsung';
-                    else if (id.startsWith('philips_')) brand = 'Philips';
-                    else if (id.startsWith('innr_')) brand = 'INNR';
-                    else if (id.startsWith('osram_')) brand = 'OSRAM';
-                    else if (id.startsWith('ikea_')) brand = 'IKEA';
-                    
-                    return {
-                        id: driverId,
-                        name: name,
-                        category: category,
-                        brand: brand,
-                        productIds: [],
-                        manufacturerIds: [],
-                        class: driver.class || 'other',
-                        capabilities: driver.capabilities || [],
-                        connectivity: driver.connectivity || []
-                    };
-                });
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                driversData = data.drivers || [];
+                
+                console.log('Loaded', driversData.length, 'drivers from static database');
+                console.log('Database generated:', data.generated);
                 
                 // Populate filters
                 populateFilters();
                 
-                console.log('Loaded', driversData.length, 'drivers from Homey');
-            } catch (err) {
-                console.error('Failed to load drivers from Homey:', err);
-                showError(`Failed to load drivers: ${err.message || 'Unknown error'}`);
+                // Show all drivers initially
+                displayResults(driversData);
                 
-                // Try fallback to static data if available
-                try {
-                    const response = await fetch('drivers-database.json');
-                    if (response.ok) {
-                        const data = await response.json();
-                        driversData = data;
-                        populateFilters();
-                        console.log('Loaded drivers from static fallback:', driversData.length);
-                        return;
-                    }
-                } catch (fallbackErr) {
-                    console.warn('Could not load static fallback:', fallbackErr);
-                }
+            } catch (err) {
+                console.error('Failed to load drivers database:', err);
+                showError(`Failed to load drivers database: ${err.message || 'Unknown error'}. Please rebuild the database with: npm run build:drivers-db`);
             }
         }
         

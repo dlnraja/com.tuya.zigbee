@@ -30,7 +30,8 @@
     "images:generate": "node scripts/images/intelligent-image-generator.js",
     "images:regenerate": "node scripts/images/batch-regenerate-all.js",
     "images:verify": "node scripts/images/verify-all-images.js",
-    "fix-nomenclature": "node scripts/FIX_DRIVER_NOMENCLATURE.js"
+    "fix-nomenclature": "node scripts/FIX_DRIVER_NOMENCLATURE.js",
+    "build:drivers-db": "node scripts/build_driver_database.js"
   },
   "keywords": [
     "homey",
