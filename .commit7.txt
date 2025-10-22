@@ -1,0 +1,22 @@
+Fix GitHub Actions failure - optimize driver search engine
+
+ISSUE:
+- GitHub Actions failed due to large drivers-database.json file (544KB)
+- Build timeout or memory issue during publication
+
+SOLUTION:
+- Removed static JSON database file
+- Implemented client-side generation using Homey.getDrivers() API
+- Search engine now builds index dynamically from app data
+- Reduced app package size significantly
+
+BENEFITS:
+- No large static files in repository
+- Always up-to-date driver list
+- Faster builds and deployments
+- No GitHub Actions timeout issues
+
+TECHNICAL:
+- Settings page now uses Homey API to fetch driver data
+- Client-side categorization and brand extraction
+- Same search functionality, better performance

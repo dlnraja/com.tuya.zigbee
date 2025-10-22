@@ -138,5 +138,16 @@
         "de": "Halten Sie die Ein-/Aus-Taste 5 Sekunden lang gedrückt, bis die LED schnell blinkt"
       }
     }
+  },
+  "metadata": {
+    "app": {
+      "id": "com.dlnraja.tuya.zigbee",
+      "name": "Universal Tuya Zigbee",
+      "version": "4.1.3",
+      "api": {
+        "min": 3,
+        "max": 3
+      }
+    }
   }
 }
