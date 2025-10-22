@@ -1,0 +1,54 @@
+name: Build & Publish to Homey App Store
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+          
+      - name: Install Homey CLI
+        run: npm install -g homey
+      
+      - name: Generate Drivers Database
+        run: npm run build:drivers-db
+        
+      - name: Commit drivers database if changed
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add settings/drivers-database.json
+          git diff --staged --quiet || git commit -m "chore: update drivers database [skip ci]"
+          git push || echo "No changes to push"
+        
+      - name: Build app
+        run: homey app build
+        
+      - name: Validate app
+        run: homey app validate --level publish
+        
+      - name: Publish to Homey App Store
+        env:
+          HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
+        run: |
+          echo "Publishing to Homey App Store..."
+          homey login --token $HOMEY_TOKEN
+          homey app publish --skip-build
