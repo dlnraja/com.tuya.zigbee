@@ -1,10 +1,12 @@
 ## [4.2.0] - 2025-10-23
 
-### 🎯 MAJOR RELEASE - Complete Hybrid Architecture
+### 🎯 MAJOR RELEASE - Complete Hybrid Architecture + Cleanup
 
-#### 🚀 Massive Driver Consolidation
-- **163 drivers with energy suffixes** → **152 unified hybrid drivers**
-- **ALL energy suffixes eliminated**: `_ac`, `_dc`, `_battery`, `_cr2032`, `_cr2450`, `_aaa`, `_aa`, `_usb`
+#### 🚀 Massive Driver Consolidation & Cleanup
+- **165 old drivers deleted** (all energy suffixes removed)
+- **152 unified hybrid drivers** created
+- **ZERO energy suffixes remaining**: `_ac`, `_dc`, `_battery`, `_cr2032`, `_cr2450`, `_aaa`, `_aa`, `_usb`
+- **186 total drivers** (down from 350+ variants)
 - **Intelligent auto-detection**: Power source (AC/DC/Battery) + Battery type detection
 - **Dynamic capability management**: Capabilities adapt based on detected power source
 - **Zero feature loss**: All manufacturer IDs, capabilities, and features preserved
