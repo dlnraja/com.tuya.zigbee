@@ -1,0 +1,171 @@
+{
+  "id": "lsc_wireless_switch_4button_other",
+  "name": {
+    "en": "4-Button Remote STYRBAR (OTHER)",
+    "fr": "4-Button Remote STYRBAR (Battery)"
+  },
+  "class": "button",
+  "capabilities": [
+    "measure_battery",
+    "alarm_battery"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "FYRTUR",
+      "IKEA",
+      "IKEA of Sweden",
+      "KADRILJ",
+      "QBCZ03LM",
+      "SYMFONISK",
+      "TRADFRI",
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0011",
+      "TS0012",
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "WXKG01LM",
+      "WXKG02LM",
+      "WXKG03LM",
+      "WXKG11LM",
+      "WXKG12LM",
+      "WXKG13LM",
+      "WXKG14LM",
+      "_TYZB02_key8kk7r",
+      "_TYZB02_keyjhapk",
+      "_TZ3000_18ejxno0",
+      "_TZ3000_46t1rvdu",
+      "_TZ3000_4rbqgcuv",
+      "_TZ3000_6axxqqi2",
+      "_TZ3000_8bxrzyxz",
+      "_TZ3000_8rppvwda",
+      "_TZ3000_a7ouggvs",
+      "_TZ3000_axpdxqgu",
+      "_TZ3000_f97vq5mn",
+      "_TZ3000_fa9mlvja",
+      "_TZ3000_fkp5zyho",
+      "_TZ3000_fsiepnrh",
+      "_TZ3000_hhiodade",
+      "_TZ3000_itb0omhv",
+      "_TZ3000_ji4araar",
+      "_TZ3000_majwnphg",
+      "_TZ3000_nnwehhst",
+      "_TZ3000_npzfdcof",
+      "_TZ3000_odygigth",
+      "_TZ3000_oikiyf3b",
+      "_TZ3000_owgcnkrh",
+      "_TZ3000_pdevogdj",
+      "_TZ3000_peszejy7",
+      "_TZ3000_pzui3skt",
+      "_TZ3000_qmi1cfuq",
+      "_TZ3000_qzjcsmar",
+      "_TZ3000_rmjr4ufz",
+      "_TZ3000_tk3s5tyg",
+      "_TZ3000_tqlv4ug4",
+      "_TZ3000_vjhcenzo",
+      "_TZ3000_vp6clf9d",
+      "_TZ3000_wkai4ga5",
+      "_TZ3000_wxtp7c5y",
+      "_TZ3000_xabckq1v",
+      "_TZ3000_zmy1waw6",
+      "lumi.ctrl_ln1",
+      "lumi.ctrl_ln2",
+      "lumi.ctrl_neutral1",
+      "lumi.ctrl_neutral2",
+      "lumi.remote.b186acn01",
+      "lumi.remote.b286acn01"
+    ],
+    "productId": [
+      "E2001",
+      "E2002",
+      "STYRBAR",
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS004F",
+      "TS0215A"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          6,
+          8
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/learnmode.svg",
+      "instruction": {
+        "en": "Follow device pairing instructions",
+        "fr": "Suivre les instructions d'appairage"
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Battery Settings",
+        "fr": "Paramètres Batterie"
+      },
+      "children": [
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)",
+            "fr": "Seuil Batterie Faible (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50,
+          "hint": {
+            "en": "Trigger low battery alarm when below this percentage",
+            "fr": "Déclenche alarme batterie faible en dessous de ce pourcentage"
+          }
+        },
+        {
+          "id": "battery_report_interval",
+          "type": "number",
+          "label": {
+            "en": "Battery Report Interval (hours)",
+            "fr": "Intervalle Rapport Batterie (heures)"
+          },
+          "value": 1,
+          "min": 1,
+          "max": 24,
+          "hint": {
+            "en": "How often to check battery level",
+            "fr": "Fréquence de vérification du niveau de batterie"
+          }
+        }
+      ]
+    }
+  ]
+}

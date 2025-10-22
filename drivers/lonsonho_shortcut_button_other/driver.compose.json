@@ -1,0 +1,141 @@
+{
+  "id": "lonsonho_shortcut_button_other",
+  "name": {
+    "en": "Shortcut Button (OTHER)",
+    "fr": "Shortcut Button (Battery)"
+  },
+  "class": "button",
+  "capabilities": [
+    "measure_battery",
+    "alarm_battery"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "FYRTUR",
+      "IKEA",
+      "IKEA of Sweden",
+      "KADRILJ",
+      "SYMFONISK",
+      "TRADFRI",
+      "WXKG01LM",
+      "WXKG02LM",
+      "WXKG03LM",
+      "WXKG04LM",
+      "WXKG05LM",
+      "WXKG06LM",
+      "WXKG07LM",
+      "WXKG08LM",
+      "WXKG09LM",
+      "WXKG10LM",
+      "_TYZB02_key8kk7r",
+      "_TYZB02_keyjhapk",
+      "_TZ3000_8rppvwda",
+      "_TZ3000_a7ouggvs",
+      "_TZ3000_axpdxqgu",
+      "_TZ3000_f97vq5mn",
+      "_TZ3000_fa9mlvja",
+      "_TZ3000_fkp5zyho",
+      "_TZ3000_itb0omhv",
+      "_TZ3000_oikiyf3b",
+      "_TZ3000_owgcnkrh",
+      "_TZ3000_peszejy7",
+      "_TZ3000_pzui3skt",
+      "_TZ3000_qzjcsmar",
+      "_TZ3000_tk3s5tyg",
+      "_TZ3000_vp6clf9d",
+      "_TZ3000_wkai4ga5",
+      "_TZ3000_xabckq1v",
+      "lumi.remote.b186acn01",
+      "lumi.remote.b186acn02",
+      "lumi.remote.b286acn01",
+      "lumi.remote.b286acn02",
+      "lumi.remote.b486opcn01"
+    ],
+    "productId": [
+      "E2213",
+      "SOMRIG",
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS004F",
+      "TS0215A"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/learnmode.svg",
+      "instruction": {
+        "en": "Follow device pairing instructions",
+        "fr": "Suivre les instructions d'appairage"
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Battery Settings",
+        "fr": "Paramètres Batterie"
+      },
+      "children": [
+        {
+          "id": "battery_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)",
+            "fr": "Seuil Batterie Faible (%)"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50,
+          "hint": {
+            "en": "Trigger low battery alarm when below this percentage",
+            "fr": "Déclenche alarme batterie faible en dessous de ce pourcentage"
+          }
+        },
+        {
+          "id": "battery_report_interval",
+          "type": "number",
+          "label": {
+            "en": "Battery Report Interval (hours)",
+            "fr": "Intervalle Rapport Batterie (heures)"
+          },
+          "value": 1,
+          "min": 1,
+          "max": 24,
+          "hint": {
+            "en": "How often to check battery level",
+            "fr": "Fréquence de vérification du niveau de batterie"
+          }
+        }
+      ]
+    }
+  ]
+}
