@@ -1,0 +1,169 @@
+{
+  "name": {
+    "en": "Zemismart Roller Shutter Controller",
+    "fr": "Zemismart Roller Shutter Controller"
+  },
+  "class": "sensor",
+  "capabilities": [],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "AAA",
+      "AA"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Legrand",
+      "Schneider Electric",
+      "TS130F",
+      "ZNCZ04LM",
+      "ZNCZ11LM",
+      "ZNCZ12LM",
+      "ZNCZ13LM",
+      "ZNCZ14LM",
+      "ZNCZ15LM",
+      "ZNCZ16LM",
+      "ZNCZ17LM",
+      "ZNCZ18LM",
+      "ZNCZ19LM",
+      "_TYST11_wmcdj3aq",
+      "_TZ3000_01gpyda5",
+      "_TZ3000_0dumfk2z",
+      "_TZ3000_0ghwhypc",
+      "_TZ3000_0ht8dnxj",
+      "_TZ3000_0s1izerx",
+      "_TZ3000_1dd0d5yi",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_402jjyro",
+      "_TZ3000_4ugnzsli",
+      "_TZ3000_4uuaja4a",
+      "_TZ3000_6ygjfyll",
+      "_TZ3000_7d8yme6f",
+      "_TZ3000_bsvqrux3",
+      "_TZ3000_dku2cfsc",
+      "_TZ3000_ebar5p3z",
+      "_TZ3000_fllyghyj",
+      "_TZ3000_fsiepnrh",
+      "_TZ3000_h4wnrtck",
+      "_TZ3000_hgu1dlak",
+      "_TZ3000_jl7qyupf",
+      "_TZ3000_ke_x0oo3",
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_lf56vpxj",
+      "_TZ3000_ltiqubue",
+      "_TZ3000_mcxw5ehu",
+      "_TZ3000_mmtwjmaq",
+      "_TZ3000_msl6wxk9",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_o005nuxx",
+      "_TZ3000_otvn3lne",
+      "_TZ3000_pdevogdj",
+      "_TZ3000_qzjcsmar",
+      "_TZ3000_tk3s5tyg",
+      "_TZ3000_vd43bbfq",
+      "_TZ3000_vp6clf9d",
+      "_TZ3000_xabckq1v",
+      "_TZ3000_zmy1waw6",
+      "_TZ3000_zmy4lslw",
+      "_TZ3040_6ygjfyll",
+      "_TZ3040_bb6xaihh",
+      "_TZE200_5zbp6j0u",
+      "_TZE200_7eue9vhc",
+      "_TZE200_bjawzodf",
+      "_TZE200_bqcqqjpb",
+      "_TZE200_cowvfni3",
+      "_TZE200_cpbo62rn",
+      "_TZE200_cwbvmsar",
+      "_TZE200_dwcarsat",
+      "_TZE200_fctwhugx",
+      "_TZE200_fdtjuw7u",
+      "_TZE200_fzo2pocs",
+      "_TZE200_m9skfctm",
+      "_TZE200_nkoabg8w",
+      "_TZE200_rddyvrci",
+      "_TZE200_ryfmq5rl",
+      "_TZE200_wmcdj3aq",
+      "_TZE200_xuzcvlku",
+      "lumi.curtain",
+      "lumi.curtain.aq2",
+      "lumi.curtain.hagl04"
+    ],
+    "productId": [
+      "TS0001",
+      "TS0005",
+      "TS0006",
+      "TS0501",
+      "TS130F",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS011F",
+      "TS0121",
+      "TS0201",
+      "TS0202",
+      "TS0203",
+      "TS0204",
+      "TS0205",
+      "TS0207",
+      "TS0216",
+      "TS0601",
+      "Cable outlet",
+      "Connected outlet",
+      "Micromodule switch",
+      "Micromodule dimmer",
+      "Double gangs remote switch",
+      "Remote toggle switch",
+      "Remote motion sensor",
+      "Shutters central remote switch",
+      "TYXIA 4620",
+      "TYXIA 4621",
+      "TYXIA 6620",
+      "TYXIA 6630",
+      "Hager",
+      "Delta Dore"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          258
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/zemismart_roller_shutter_controller/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "auto_battery_detection",
+      "type": "checkbox",
+      "label": {
+        "en": "Auto Battery Type Detection",
+        "fr": "Détection Automatique du Type de Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Automatically detect battery type based on voltage",
+        "fr": "Détecter automatiquement le type de batterie en fonction de la tension"
+      }
+    }
+  ]
+}

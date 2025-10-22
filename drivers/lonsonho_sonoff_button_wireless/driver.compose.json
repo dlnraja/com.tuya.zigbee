@@ -1,0 +1,105 @@
+{
+  "name": {
+    "en": "Lonsonho Sonoff Button Wireless",
+    "fr": "Lonsonho Sonoff Button Wireless"
+  },
+  "class": "button",
+  "capabilities": [],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "AAA",
+      "AA"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "WXKG01LM",
+      "WXKG02LM",
+      "WXKG03LM",
+      "WXKG04LM",
+      "WXKG05LM",
+      "WXKG06LM",
+      "WXKG07LM",
+      "WXKG08LM",
+      "WXKG09LM",
+      "WXKG10LM",
+      "_SONOFF_generic",
+      "_TYZB02_key8kk7r",
+      "_TYZB02_keyjhapk",
+      "_TZ3000_8rppvwda",
+      "_TZ3000_a7ouggvs",
+      "_TZ3000_axpdxqgu",
+      "_TZ3000_f97vq5mn",
+      "_TZ3000_fa9mlvja",
+      "_TZ3000_fkp5zyho",
+      "_TZ3000_fsiepnrh",
+      "_TZ3000_itb0omhv",
+      "_TZ3000_oikiyf3b",
+      "_TZ3000_owgcnkrh",
+      "_TZ3000_pdevogdj",
+      "_TZ3000_peszejy7",
+      "_TZ3000_pzui3skt",
+      "_TZ3000_qzjcsmar",
+      "_TZ3000_tk3s5tyg",
+      "_TZ3000_vp6clf9d",
+      "_TZ3000_wkai4ga5",
+      "_TZ3000_xabckq1v",
+      "lumi.remote.b186acn01",
+      "lumi.remote.b186acn02",
+      "lumi.remote.b286acn01",
+      "lumi.remote.b286acn02",
+      "lumi.remote.b486opcn01"
+    ],
+    "productId": [
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS004F",
+      "TS0215A",
+      "generic"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/lonsonho_sonoff_button_wireless/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "auto_battery_detection",
+      "type": "checkbox",
+      "label": {
+        "en": "Auto Battery Type Detection",
+        "fr": "Détection Automatique du Type de Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Automatically detect battery type based on voltage",
+        "fr": "Détecter automatiquement le type de batterie en fonction de la tension"
+      }
+    }
+  ]
+}
