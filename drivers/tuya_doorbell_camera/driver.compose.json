@@ -1,0 +1,150 @@
+{
+  "name": {
+    "en": "Tuya Doorbell Camera",
+    "fr": "Tuya Doorbell Camera"
+  },
+  "class": "sensor",
+  "capabilities": [],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "AAA",
+      "AA"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "3321-G",
+      "3321-S",
+      "SNZB-04",
+      "Signify Netherlands B.V.",
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0005",
+      "TS0006",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS011F",
+      "TS0121",
+      "TS0201",
+      "TS0202",
+      "TS0203",
+      "TS0204",
+      "TS0205",
+      "TS0207",
+      "TS0208",
+      "TS0210",
+      "TS0215",
+      "TS0216",
+      "TS0505",
+      "TS0601",
+      "TS110E",
+      "TS130F",
+      "_TZ1800_ejwkn2h2",
+      "_TZ3000_",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_2mbfxlzr",
+      "_TZ3000_402jjyro",
+      "_TZ3000_4ugnzsli",
+      "_TZ3000_7d8yme6f",
+      "_TZ3000_7tbsruql",
+      "_TZ3000_9eeavbk5",
+      "_TZ3000_a33rw7ou",
+      "_TZ3000_au1rjicn",
+      "_TZ3000_bmg14ax2",
+      "_TZ3000_bpkijo14",
+      "_TZ3000_bzxlofth",
+      "_TZ3000_decxrtwa",
+      "_TZ3000_ebar6ljy",
+      "_TZ3000_fsiepnrh",
+      "_TZ3000_hkcpblrs",
+      "_TZ3000_lf56vpxj",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_osu834un",
+      "_TZ3000_oxslv1c9",
+      "_TZ3000_p6ju8myv",
+      "_TZ3000_qomxlryd",
+      "_TZ3000_rgchmad8",
+      "_TZ3000_yxqnffam",
+      "_TZ3000_zfmxvprs",
+      "_TZ3000_zgrffiwg",
+      "_TZ3210_",
+      "_TZ3400_",
+      "_TZE200_",
+      "_TZE200_ar0slwnd",
+      "_TZE204_",
+      "_TZE204_sbyx0lm6",
+      "lumi.sensor_magnet",
+      "lumi.sensor_magnet.aq2"
+    ],
+    "productId": [
+      "HDB001",
+      "RH3001",
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS011F",
+      "TS0121",
+      "TS0201",
+      "TS0202",
+      "TS0203",
+      "TS0204",
+      "TS0205",
+      "TS0207",
+      "TS0216",
+      "TS0601",
+      "TY0203"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          1280
+        ],
+        "bindings": [
+          5,
+          1280
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/tuya_doorbell_camera/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "auto_battery_detection",
+      "type": "checkbox",
+      "label": {
+        "en": "Auto Battery Type Detection",
+        "fr": "Détection Automatique du Type de Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Automatically detect battery type based on voltage",
+        "fr": "Détecter automatiquement le type de batterie en fonction de la tension"
+      }
+    }
+  ]
+}

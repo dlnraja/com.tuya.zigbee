@@ -1,0 +1,101 @@
+{
+  "name": {
+    "en": "Nous Osram Outdoor Plug",
+    "fr": "Nous Osram Outdoor Plug"
+  },
+  "class": "socket",
+  "capabilities": [],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "AAA",
+      "AA"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "3321-G",
+      "3321-S",
+      "SNZB-04",
+      "TS011F",
+      "TS0121",
+      "TS0203",
+      "_OSRAM_generic",
+      "_TZ1800_ejwkn2h2",
+      "_TZ3000_00mk2xzy",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_2mbfxlzr",
+      "_TZ3000_2xlvlnez",
+      "_TZ3000_402jjyro",
+      "_TZ3000_4ugnzsli",
+      "_TZ3000_7d8yme6f",
+      "_TZ3000_7tbsruql",
+      "_TZ3000_9eeavbk5",
+      "_TZ3000_a33rw7ou",
+      "_TZ3000_au1rjicn",
+      "_TZ3000_bmg14ax2",
+      "_TZ3000_bpkijo14",
+      "_TZ3000_bzxlofth",
+      "_TZ3000_cphmq0q7",
+      "_TZ3000_decxrtwa",
+      "_TZ3000_ew3ldmgx",
+      "_TZ3000_g5xawfcq",
+      "_TZ3000_hkcpblrs",
+      "_TZ3000_ksw8qtmt",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_o1jzcxou",
+      "_TZ3000_okaz9tjs",
+      "_TZ3000_osu834un",
+      "_TZ3000_oxslv1c9",
+      "_TZ3000_rgchmad8",
+      "_TZ3000_ss98ec5d",
+      "_TZ3000_yxqnffam",
+      "_TZ3000_zgrffiwg",
+      "lumi.sensor_magnet",
+      "lumi.sensor_magnet.aq2"
+    ],
+    "productId": [
+      "RH3001",
+      "TS0203",
+      "TY0203",
+      "generic"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/nous_osram_outdoor_plug/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "auto_battery_detection",
+      "type": "checkbox",
+      "label": {
+        "en": "Auto Battery Type Detection",
+        "fr": "Détection Automatique du Type de Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Automatically detect battery type based on voltage",
+        "fr": "Détecter automatiquement le type de batterie en fonction de la tension"
+      }
+    }
+  ]
+}

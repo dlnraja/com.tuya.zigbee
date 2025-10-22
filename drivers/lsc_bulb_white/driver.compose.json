@@ -1,0 +1,170 @@
+{
+  "name": {
+    "en": "Lsc Bulb White",
+    "fr": "Lsc Bulb White"
+  },
+  "class": "light",
+  "capabilities": [],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "AAA",
+      "AA"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "GE",
+      "Philips",
+      "Sengled",
+      "Signify Netherlands B.V.",
+      "TS0502",
+      "TS0503",
+      "TS0505",
+      "ZNCJMB11LM",
+      "ZNCJMB14LM",
+      "ZNDDMK11LM",
+      "ZNDDMK12LM",
+      "ZNDDMK13LM",
+      "ZNDDMK14LM",
+      "ZNDDMK15LM",
+      "ZNLDP12LM",
+      "_TZ3000_12sxjap4",
+      "_TZ3000_49qchf10",
+      "_TZ3000_dbou1ap4",
+      "_TZ3000_el5kt5im",
+      "_TZ3000_hlijwsai",
+      "_TZ3000_kdpxju99",
+      "_TZ3000_keabpigv",
+      "_TZ3000_obacbukl",
+      "_TZ3000_oborybow",
+      "_TZ3000_odygigth",
+      "_TZ3000_q50zhdsc",
+      "_TZ3000_qd7hej8u",
+      "_TZ3210_mja6r5ix",
+      "_TZ3210_r0xgkft5",
+      "_TZ3210_zdrhqmo0",
+      "eWeLight",
+      "lumi.light.aqcn02",
+      "lumi.light.cb2acn",
+      "lumi.light.cwopcn02",
+      "lumi.light.cwopcn03"
+    ],
+    "productId": [
+      "73693",
+      "73740",
+      "73741",
+      "73742",
+      "74283",
+      "74696",
+      "CentraLite",
+      "E11-G13",
+      "E11-G23",
+      "E11-N13",
+      "E11-N14",
+      "E11-U21U31",
+      "E12-N14",
+      "E1C-NB6",
+      "E1C-NB7",
+      "E1D-G73",
+      "Iris",
+      "Jasco Products",
+      "LCA001",
+      "LCA002",
+      "LCA003",
+      "LCG002",
+      "LCT001",
+      "LCT002",
+      "LCT003",
+      "LCT007",
+      "LCT010",
+      "LCT011",
+      "LCT012",
+      "LCT014",
+      "LCT015",
+      "LCT016",
+      "LCT024",
+      "LEDVANCE",
+      "LIGHTIFY",
+      "LTW001",
+      "LTW004",
+      "LTW010",
+      "LTW011",
+      "LTW012",
+      "LTW013",
+      "LTW015",
+      "LWA027",
+      "Lowe's",
+      "RT RGBW",
+      "SYLVANIA",
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS011F",
+      "TS0121",
+      "TS0201",
+      "TS0202",
+      "TS0203",
+      "TS0204",
+      "TS0205",
+      "TS0207",
+      "TS0216",
+      "TS0502A",
+      "TS0502B",
+      "TS0505A",
+      "TS0505B",
+      "TS0601",
+      "Z01-A19NAE26",
+      "ZB-CL01"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8
+        ],
+        "bindings": [
+          5,
+          6,
+          8
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/lsc_bulb_white/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "auto_battery_detection",
+      "type": "checkbox",
+      "label": {
+        "en": "Auto Battery Type Detection",
+        "fr": "Détection Automatique du Type de Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Automatically detect battery type based on voltage",
+        "fr": "Détecter automatiquement le type de batterie en fonction de la tension"
+      }
+    }
+  ]
+}

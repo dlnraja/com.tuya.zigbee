@@ -1,0 +1,100 @@
+{
+  "name": {
+    "en": "Avatto Sonoff Smart Plug",
+    "fr": "Avatto Sonoff Smart Plug"
+  },
+  "class": "socket",
+  "capabilities": [],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "AAA",
+      "AA"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "QBCZ11LM",
+      "SP120",
+      "SP220",
+      "SSM-U01",
+      "SSM-U02",
+      "SSM-U03",
+      "SSM-U04",
+      "TS011F",
+      "TS0121",
+      "ZNCZ02LM",
+      "_SONOFF_generic",
+      "_TZ3000_00mk2xzy",
+      "_TZ3000_1obwwnmq",
+      "_TZ3000_2putqrmw",
+      "_TZ3000_2xlvlnez",
+      "_TZ3000_3ooaz3ng",
+      "_TZ3000_8lkizccl",
+      "_TZ3000_8nkb7mof",
+      "_TZ3000_cehuw1lw",
+      "_TZ3000_cphmq0q7",
+      "_TZ3000_dpo1ysak",
+      "_TZ3000_ew3ldmgx",
+      "_TZ3000_g5xawfcq",
+      "_TZ3000_j1v25l17",
+      "_TZ3000_kdi2o9m6",
+      "_TZ3000_ksw8qtmt",
+      "_TZ3000_o1jzcxou",
+      "_TZ3000_okaz9tjs",
+      "_TZ3000_plyvnuf5",
+      "_TZ3000_rdtixbnu",
+      "_TZ3000_ss98ec5d",
+      "_TZ3000_typdpdpg",
+      "_TZ3000_u5u4cakc",
+      "_TZ3000_vtscrpmw",
+      "_TZ3000_w0qqde0g",
+      "_TZ3000_zloso4jk",
+      "lumi.plug",
+      "lumi.plug.mmeu01"
+    ],
+    "productId": [
+      "TS0115",
+      "TS011F",
+      "TS0121",
+      "generic"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/avatto_sonoff_smart_plug/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "auto_battery_detection",
+      "type": "checkbox",
+      "label": {
+        "en": "Auto Battery Type Detection",
+        "fr": "Détection Automatique du Type de Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Automatically detect battery type based on voltage",
+        "fr": "Détecter automatiquement le type de batterie en fonction de la tension"
+      }
+    }
+  ]
+}
