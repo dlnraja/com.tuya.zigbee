@@ -146,6 +146,116 @@
         .link-button.secondary:hover {
             background: #455A64;
         }
+        
+        /* Search Engine Styles */
+        .search-container {
+            margin: 20px 0;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            border: 2px solid #1E88E5;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        
+        .search-input:focus {
+            border-color: #1565C0;
+        }
+        
+        .filter-group {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+        
+        .filter-select {
+            flex: 1;
+            min-width: 200px;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            outline: none;
+        }
+        
+        .results-container {
+            max-height: 600px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+        
+        .driver-card {
+            padding: 15px;
+            margin: 10px 0;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .driver-card:hover {
+            border-color: #1E88E5;
+            box-shadow: 0 4px 12px rgba(30, 136, 229, 0.2);
+        }
+        
+        .driver-card h3 {
+            margin: 0 0 8px 0;
+            color: #1E88E5;
+            font-size: 18px;
+        }
+        
+        .driver-meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 8px 0;
+        }
+        
+        .driver-tag {
+            padding: 4px 10px;
+            background: #e3f2fd;
+            color: #1E88E5;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .driver-tag.brand {
+            background: #f3e5f5;
+            color: #7B1FA2;
+        }
+        
+        .driver-tag.category {
+            background: #e8f5e9;
+            color: #2E7D32;
+        }
+        
+        .driver-instructions {
+            margin-top: 10px;
+            padding: 10px;
+            background: #fff3e0;
+            border-left: 4px solid #FF9800;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+        }
+        
+        .result-count {
+            color: #666;
+            font-size: 14px;
+            margin: 10px 0;
+        }
     </style>
 </head>
 <body>
@@ -174,6 +284,30 @@
                 This is a <strong>community-maintained fork</strong> extending Johan's SDK2/SDK3 hybrid 
                 to a full SDK3 native implementation with enhanced device support and active maintenance.
             </p>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>🔍 Driver Search Engine</h2>
+        <p style="color: #666; margin-bottom: 15px;">Find the right driver for your device by searching by brand, product type, or model.</p>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search by brand, product type, or model (e.g., 'MOES motion sensor', 'plug', 'TS0601')..." />
+        </div>
+        
+        <div class="filter-group">
+            <select id="brandFilter" class="filter-select">
+                <option value="">All Brands</option>
+            </select>
+            <select id="categoryFilter" class="filter-select">
+                <option value="">All Categories</option>
+            </select>
+        </div>
+        
+        <div class="result-count" id="resultCount"></div>
+        
+        <div class="results-container" id="resultsContainer">
+            <div class="no-results">🔎 Start typing to search for drivers...</div>
         </div>
     </div>
     
@@ -250,10 +384,125 @@
     </div>
     
     <script>
+        let driversData = [];
+        
+        // Load drivers database
+        async function loadDriversDatabase() {
+            try {
+                const response = await fetch('./drivers-database.json');
+                const data = await response.json();
+                driversData = data.drivers;
+                
+                // Populate filters
+                populateFilters();
+                
+                console.log('Loaded', driversData.length, 'drivers');
+            } catch (err) {
+                console.error('Failed to load drivers database:', err);
+            }
+        }
+        
+        function populateFilters() {
+            // Get unique brands and categories
+            const brands = [...new Set(driversData.map(d => d.brand))].sort();
+            const categories = [...new Set(driversData.map(d => d.category))].sort();
+            
+            // Populate brand filter
+            const brandSelect = document.getElementById('brandFilter');
+            brands.forEach(brand => {
+                const option = document.createElement('option');
+                option.value = brand;
+                option.textContent = brand;
+                brandSelect.appendChild(option);
+            });
+            
+            // Populate category filter
+            const categorySelect = document.getElementById('categoryFilter');
+            categories.forEach(category => {
+                const option = document.createElement('option');
+                option.value = category;
+                option.textContent = category;
+                categorySelect.appendChild(option);
+            });
+        }
+        
+        function searchDrivers() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const brandFilter = document.getElementById('brandFilter').value;
+            const categoryFilter = document.getElementById('categoryFilter').value;
+            
+            let filtered = driversData;
+            
+            // Apply filters
+            if (brandFilter) {
+                filtered = filtered.filter(d => d.brand === brandFilter);
+            }
+            if (categoryFilter) {
+                filtered = filtered.filter(d => d.category === categoryFilter);
+            }
+            
+            // Apply search
+            if (searchTerm) {
+                filtered = filtered.filter(d => {
+                    return d.name.toLowerCase().includes(searchTerm) ||
+                           d.brand.toLowerCase().includes(searchTerm) ||
+                           d.category.toLowerCase().includes(searchTerm) ||
+                           d.id.toLowerCase().includes(searchTerm) ||
+                           d.productIds.some(p => p.toLowerCase().includes(searchTerm)) ||
+                           d.manufacturerIds.some(m => m.toLowerCase().includes(searchTerm));
+                });
+            }
+            
+            displayResults(filtered);
+        }
+        
+        function displayResults(drivers) {
+            const container = document.getElementById('resultsContainer');
+            const countEl = document.getElementById('resultCount');
+            
+            if (drivers.length === 0) {
+                container.innerHTML = '<div class="no-results">😔 No drivers found. Try different search terms.</div>';
+                countEl.textContent = '';
+                return;
+            }
+            
+            countEl.textContent = `Found ${drivers.length} driver(s)`;
+            
+            container.innerHTML = drivers.map(driver => `
+                <div class="driver-card">
+                    <h3>${driver.name}</h3>
+                    <div class="driver-meta">
+                        <span class="driver-tag brand">🏷️ ${driver.brand}</span>
+                        <span class="driver-tag category">📦 ${driver.category}</span>
+                        <span class="driver-tag">💡 ${driver.class}</span>
+                    </div>
+                    ${driver.productIds.length > 0 ? `
+                        <div style="margin-top: 8px; font-size: 12px; color: #666;">
+                            <strong>Product IDs:</strong> ${driver.productIds.slice(0, 5).join(', ')}${driver.productIds.length > 5 ? '...' : ''}
+                        </div>
+                    ` : ''}
+                    <div class="driver-instructions">
+                        <strong>✅ How to use this driver:</strong><br>
+                        1. Add a new device in Homey<br>
+                        2. Select "Universal Tuya Zigbee" app<br>
+                        3. Choose "<strong>${driver.name}</strong>"<br>
+                        4. Follow the pairing instructions
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            loadDriversDatabase();
+            
+            document.getElementById('searchInput').addEventListener('input', searchDrivers);
+            document.getElementById('brandFilter').addEventListener('change', searchDrivers);
+            document.getElementById('categoryFilter').addEventListener('change', searchDrivers);
+        });
+        
         function onHomeyReady(Homey) {
             Homey.ready();
-            
-            // Log app ready
             console.log('Universal Tuya Zigbee Settings Ready');
         }
     </script>
