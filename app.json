@@ -9982,8 +9982,8 @@
         }
       },
       "images": {
-        "small": "drivers/moes_ceiling_fan_ac/assets/images/small.png",
-        "large": "drivers/moes_ceiling_fan_ac/assets/images/large.png"
+        "small": "drivers/avatto_ceiling_fan_ac/assets/images/small.png",
+        "large": "drivers/avatto_ceiling_fan_ac/assets/images/large.png"
       },
       "pair": [
         {
@@ -10394,8 +10394,8 @@
         }
       },
       "images": {
-        "small": "drivers/moes_co2_temp_humidity_cr2032/assets/images/small.png",
-        "large": "drivers/moes_co2_temp_humidity_cr2032/assets/images/large.png"
+        "small": "drivers/avatto_co2_temp_humidity_cr2032/assets/images/small.png",
+        "large": "drivers/avatto_co2_temp_humidity_cr2032/assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -10960,8 +10960,8 @@
         }
       },
       "images": {
-        "small": "drivers/moes_dimmer_1gang_ac/assets/images/small.png",
-        "large": "drivers/moes_dimmer_1gang_ac/assets/images/large.png"
+        "small": "drivers/avatto_dimmer_1gang_ac/assets/images/small.png",
+        "large": "drivers/avatto_dimmer_1gang_ac/assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -11319,8 +11319,8 @@
         }
       },
       "images": {
-        "small": "drivers/moes_dimmer_1gang_touch_ac/assets/images/small.png",
-        "large": "drivers/moes_dimmer_1gang_touch_ac/assets/images/large.png"
+        "small": "drivers/avatto_dimmer_1gang_touch_ac/assets/images/small.png",
+        "large": "drivers/avatto_dimmer_1gang_touch_ac/assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -11526,8 +11526,8 @@
         "dim"
       ],
       "images": {
-        "small": "drivers/moes_dimmer_ac/assets/images/small.png",
-        "large": "drivers/moes_dimmer_ac/assets/images/large.png"
+        "small": "drivers/avatto_dimmer_ac/assets/images/small.png",
+        "large": "drivers/avatto_dimmer_ac/assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -12064,8 +12064,8 @@
         }
       },
       "images": {
-        "small": "drivers/moes_dimmer_switch_timer_module_ac/assets/images/small.png",
-        "large": "drivers/moes_dimmer_switch_timer_module_ac/assets/images/large.png"
+        "small": "drivers/avatto_dimmer_switch_timer_module_ac/assets/images/small.png",
+        "large": "drivers/avatto_dimmer_switch_timer_module_ac/assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -12470,8 +12470,8 @@
         }
       },
       "images": {
-        "large": "drivers/moes_dimmer_touch_ac/assets/images/large.png",
-        "small": "drivers/moes_dimmer_touch_ac/assets/images/small.png"
+        "large": "drivers/avatto_dimmer_touch_ac/assets/images/large.png",
+        "small": "drivers/avatto_dimmer_touch_ac/assets/images/small.png"
       },
       "pair": [
         {
@@ -12864,8 +12864,8 @@
         }
       },
       "images": {
-        "small": "drivers/moes_energy_monitoring_plug_advanced_ac/assets/images/small.png",
-        "large": "drivers/moes_energy_monitoring_plug_advanced_ac/assets/images/large.png"
+        "small": "drivers/avatto_energy_monitoring_plug_advanced_ac/assets/images/small.png",
+        "large": "drivers/avatto_energy_monitoring_plug_advanced_ac/assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -13266,8 +13266,8 @@
         }
       },
       "images": {
-        "small": "drivers/moes_energy_plug_advanced_ac/assets/images/small.png",
-        "large": "drivers/moes_energy_plug_advanced_ac/assets/images/large.png"
+        "small": "drivers/avatto_energy_plug_advanced_ac/assets/images/small.png",
+        "large": "drivers/avatto_energy_plug_advanced_ac/assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -13489,8 +13489,8 @@
         "onoff"
       ],
       "images": {
-        "small": "drivers/innr_smart_plug_ac/assets/images/small.png",
-        "large": "drivers/innr_smart_plug_ac/assets/images/large.png",
+        "small": "drivers/avatto_innr_smart_plug_ac/assets/images/small.png",
+        "large": "drivers/avatto_innr_smart_plug_ac/assets/images/large.png",
         "xlarge": "drivers/innr_smart_plug_ac/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -13706,8 +13706,8 @@
       },
       "capabilitiesOptions": {},
       "images": {
-        "small": "drivers/moes_led_strip_advanced_ac/assets/images/small.png",
-        "large": "drivers/moes_led_strip_advanced_ac/assets/images/large.png"
+        "small": "drivers/avatto_led_strip_advanced_ac/assets/images/small.png",
+        "large": "drivers/avatto_led_strip_advanced_ac/assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -14405,8 +14405,8 @@
         }
       },
       "images": {
-        "small": "drivers/moes_led_strip_pro_ac/assets/images/small.png",
-        "large": "drivers/moes_led_strip_pro_ac/assets/images/large.png"
+        "small": "drivers/avatto_led_strip_pro_ac/assets/images/small.png",
+        "large": "drivers/avatto_led_strip_pro_ac/assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -14654,8 +14654,8 @@
         "dim"
       ],
       "images": {
-        "small": "drivers/moes_mini_ac/assets/images/small.png",
-        "large": "drivers/moes_mini_ac/assets/images/large.png"
+        "small": "drivers/avatto_mini_ac/assets/images/small.png",
+        "large": "drivers/avatto_mini_ac/assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -14893,8 +14893,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "drivers/moes_mini_switch_cr2032/assets/images/small.png",
-        "large": "drivers/moes_mini_switch_cr2032/assets/images/large.png"
+        "small": "drivers/avatto_mini_switch_cr2032/assets/images/small.png",
+        "large": "drivers/avatto_mini_switch_cr2032/assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -15368,8 +15368,8 @@
         "alarm_battery"
       ],
       "images": {
-        "small": "drivers/moes_motion_sensor_mmwave_basic_cr2450/assets/images/small.png",
-        "large": "drivers/moes_motion_sensor_mmwave_basic_cr2450/assets/images/large.png",
+        "small": "drivers/avatto_motion_sensor_mmwave_basic_cr2450/assets/images/small.png",
+        "large": "drivers/avatto_motion_sensor_mmwave_basic_cr2450/assets/images/large.png",
         "xlarge": "drivers/moes_motion_sensor_mmwave_basic_cr2450/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -15865,8 +15865,8 @@
         "onoff"
       ],
       "images": {
-        "small": "drivers/osram_smart_plug_ac/assets/images/small.png",
-        "large": "drivers/osram_smart_plug_ac/assets/images/large.png",
+        "small": "drivers/avatto_osram_smart_plug_ac/assets/images/small.png",
+        "large": "drivers/avatto_osram_smart_plug_ac/assets/images/large.png",
         "xlarge": "drivers/osram_smart_plug_ac/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -15947,8 +15947,8 @@
         "onoff"
       ],
       "images": {
-        "small": "drivers/philips_smart_plug_ac/assets/images/small.png",
-        "large": "drivers/philips_smart_plug_ac/assets/images/large.png",
+        "small": "drivers/avatto_philips_smart_plug_ac/assets/images/small.png",
+        "large": "drivers/avatto_philips_smart_plug_ac/assets/images/large.png",
         "xlarge": "drivers/philips_smart_plug_ac/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -16599,8 +16599,8 @@
         }
       },
       "images": {
-        "small": "drivers/moes_plug_energy_monitor_ac/assets/images/small.png",
-        "large": "drivers/moes_plug_energy_monitor_ac/assets/images/large.png"
+        "small": "drivers/avatto_plug_energy_monitor_ac/assets/images/small.png",
+        "large": "drivers/avatto_plug_energy_monitor_ac/assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -16993,8 +16993,8 @@
         }
       },
       "images": {
-        "small": "drivers/moes_plug_smart_ac/assets/images/small.png",
-        "large": "drivers/moes_plug_smart_ac/assets/images/large.png"
+        "small": "drivers/avatto_plug_smart_ac/assets/images/small.png",
+        "large": "drivers/avatto_plug_smart_ac/assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -17296,8 +17296,8 @@
         }
       },
       "images": {
-        "small": "drivers/moes_power_meter_socket_ac/assets/images/small.png",
-        "large": "drivers/moes_power_meter_socket_ac/assets/images/large.png"
+        "small": "drivers/avatto_power_meter_socket_ac/assets/images/small.png",
+        "large": "drivers/avatto_power_meter_socket_ac/assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -17629,8 +17629,8 @@
         }
       },
       "images": {
-        "large": "drivers/moes_radiator_valve_aa/assets/images/large.png",
-        "small": "drivers/moes_radiator_valve_aa/assets/images/small.png"
+        "large": "drivers/avatto_radiator_valve_aa/assets/images/large.png",
+        "small": "drivers/avatto_radiator_valve_aa/assets/images/small.png"
       },
       "pair": [
         {
@@ -17929,8 +17929,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "drivers/tuya_radiator_valve_smart_hybrid/assets/images/small.png",
-        "large": "drivers/tuya_radiator_valve_smart_hybrid/assets/images/large.png"
+        "small": "drivers/avatto_radiator_valve_smart_hybrid/assets/images/small.png",
+        "large": "drivers/avatto_radiator_valve_smart_hybrid/assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -18240,8 +18240,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "drivers/moes_remote_switch_cr2032/assets/images/small.png",
-        "large": "drivers/moes_remote_switch_cr2032/assets/images/large.png"
+        "small": "drivers/avatto_remote_switch_cr2032/assets/images/small.png",
+        "large": "drivers/avatto_remote_switch_cr2032/assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -18681,8 +18681,8 @@
         "onoff"
       ],
       "images": {
-        "small": "drivers/samsung_outlet_ac/assets/images/small.png",
-        "large": "drivers/samsung_outlet_ac/assets/images/large.png",
+        "small": "drivers/avatto_samsung_outlet_ac/assets/images/small.png",
+        "large": "drivers/avatto_samsung_outlet_ac/assets/images/large.png",
         "xlarge": "drivers/samsung_outlet_ac/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -18759,8 +18759,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "drivers/samsung_smart_plug_ac/assets/images/small.png",
-        "large": "drivers/samsung_smart_plug_ac/assets/images/large.png",
+        "small": "drivers/avatto_samsung_smart_plug_ac/assets/images/small.png",
+        "large": "drivers/avatto_samsung_smart_plug_ac/assets/images/large.png",
         "xlarge": "drivers/samsung_smart_plug_ac/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -19042,8 +19042,8 @@
         }
       },
       "images": {
-        "small": "drivers/moes_smart_bulb_dimmer_ac/assets/images/small.png",
-        "large": "drivers/moes_smart_bulb_dimmer_ac/assets/images/large.png"
+        "small": "drivers/avatto_smart_bulb_dimmer_ac/assets/images/small.png",
+        "large": "drivers/avatto_smart_bulb_dimmer_ac/assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -19477,8 +19477,8 @@
         }
       },
       "images": {
-        "small": "drivers/moes_smart_bulb_rgb_ac/assets/images/small.png",
-        "large": "drivers/moes_smart_bulb_rgb_ac/assets/images/large.png"
+        "small": "drivers/avatto_smart_bulb_rgb_ac/assets/images/small.png",
+        "large": "drivers/avatto_smart_bulb_rgb_ac/assets/images/large.png"
       },
       "community": {
         "sources": [
@@ -19891,8 +19891,8 @@
         }
       },
       "images": {
-        "large": "drivers/moes_smart_bulb_white_ac/assets/images/large.png",
-        "small": "drivers/moes_smart_bulb_white_ac/assets/images/small.png"
+        "large": "drivers/avatto_smart_bulb_white_ac/assets/images/large.png",
+        "small": "drivers/avatto_smart_bulb_white_ac/assets/images/small.png"
       },
       "pair": [
         {
@@ -21436,8 +21436,8 @@
         }
       },
       "images": {
-        "large": "drivers/moes_smart_spot_ac/assets/images/large.png",
-        "small": "drivers/moes_smart_spot_ac/assets/images/small.png"
+        "large": "drivers/avatto_smart_spot_ac/assets/images/large.png",
+        "small": "drivers/avatto_smart_spot_ac/assets/images/small.png"
       },
       "pair": [
         {
@@ -21855,8 +21855,8 @@
         }
       },
       "images": {
-        "small": "drivers/moes_smart_switch_2gang_ac/assets/images/small.png",
-        "large": "drivers/moes_smart_switch_2gang_ac/assets/images/large.png"
+        "small": "drivers/avatto_smart_switch_2gang_ac/assets/images/small.png",
+        "large": "drivers/avatto_smart_switch_2gang_ac/assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -22199,8 +22199,8 @@
         ]
       },
       "images": {
-        "small": "drivers/moes_smart_switch_2gang_hybrid/assets/images/small.png",
-        "large": "drivers/moes_smart_switch_2gang_hybrid/assets/images/large.png"
+        "small": "drivers/avatto_smart_switch_2gang_hybrid/assets/images/small.png",
+        "large": "drivers/avatto_smart_switch_2gang_hybrid/assets/images/large.png"
       },
       "settings": [
         {
@@ -22586,8 +22586,8 @@
         }
       },
       "images": {
-        "small": "drivers/moes_smart_switch_4gang_ac/assets/images/small.png",
-        "large": "drivers/moes_smart_switch_4gang_ac/assets/images/large.png"
+        "small": "drivers/avatto_smart_switch_4gang_ac/assets/images/small.png",
+        "large": "drivers/avatto_smart_switch_4gang_ac/assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -22922,8 +22922,8 @@
         ]
       },
       "images": {
-        "small": "drivers/moes_smart_switch_4gang_hybrid/assets/images/small.png",
-        "large": "drivers/moes_smart_switch_4gang_hybrid/assets/images/large.png"
+        "small": "drivers/avatto_smart_switch_4gang_hybrid/assets/images/small.png",
+        "large": "drivers/avatto_smart_switch_4gang_hybrid/assets/images/large.png"
       },
       "settings": [
         {
@@ -23298,8 +23298,8 @@
         }
       },
       "images": {
-        "small": "drivers/moes_smart_switch_6gang_ac/assets/images/small.png",
-        "large": "drivers/moes_smart_switch_6gang_ac/assets/images/large.png"
+        "small": "drivers/avatto_smart_switch_6gang_ac/assets/images/small.png",
+        "large": "drivers/avatto_smart_switch_6gang_ac/assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -23673,8 +23673,8 @@
         }
       },
       "images": {
-        "small": "drivers/moes_smart_switch_8gang_ac/assets/images/small.png",
-        "large": "drivers/moes_smart_switch_8gang_ac/assets/images/large.png"
+        "small": "drivers/avatto_smart_switch_8gang_ac/assets/images/small.png",
+        "large": "drivers/avatto_smart_switch_8gang_ac/assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -23870,8 +23870,8 @@
         "measure_power"
       ],
       "images": {
-        "small": "drivers/sonoff_smart_plug_ac/assets/images/small.png",
-        "large": "drivers/sonoff_smart_plug_ac/assets/images/large.png",
+        "small": "drivers/avatto_sonoff_smart_plug_ac/assets/images/small.png",
+        "large": "drivers/avatto_sonoff_smart_plug_ac/assets/images/large.png",
         "xlarge": "drivers/sonoff_smart_plug_ac/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -24093,8 +24093,8 @@
         }
       },
       "images": {
-        "small": "drivers/moes_sos_emergency_button_cr2032/assets/images/small.png",
-        "large": "drivers/moes_sos_emergency_button_cr2032/assets/images/large.png"
+        "small": "drivers/avatto_sos_emergency_button_cr2032/assets/images/small.png",
+        "large": "drivers/avatto_sos_emergency_button_cr2032/assets/images/large.png"
       },
       "capabilitiesOptions": {},
       "platforms": [
@@ -24665,8 +24665,8 @@
         }
       },
       "images": {
-        "small": "drivers/moes_switch_2gang_ac/assets/images/small.png",
-        "large": "drivers/moes_switch_2gang_ac/assets/images/large.png"
+        "small": "drivers/avatto_switch_2gang_ac/assets/images/small.png",
+        "large": "drivers/avatto_switch_2gang_ac/assets/images/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -25023,8 +25023,8 @@
         }
       },
       "images": {
-        "small": "drivers/moes_switch_2gang_hybrid/assets/images/small.png",
-        "large": "drivers/moes_switch_2gang_hybrid/assets/images/large.png"
+        "small": "drivers/avatto_switch_2gang_hybrid/assets/images/small.png",
+        "large": "drivers/avatto_switch_2gang_hybrid/assets/images/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -26356,8 +26356,8 @@
         }
       },
       "images": {
-        "large": "drivers/moes_touch_switch_2gang_ac/assets/images/large.png",
-        "small": "drivers/moes_touch_switch_2gang_ac/assets/images/small.png"
+        "large": "drivers/avatto_touch_switch_2gang_ac/assets/images/large.png",
+        "small": "drivers/avatto_touch_switch_2gang_ac/assets/images/small.png"
       },
       "pair": [
         {
@@ -26738,8 +26738,8 @@
         }
       },
       "images": {
-        "large": "drivers/moes_touch_switch_4gang_ac/assets/images/large.png",
-        "small": "drivers/moes_touch_switch_4gang_ac/assets/images/small.png"
+        "large": "drivers/avatto_touch_switch_4gang_ac/assets/images/large.png",
+        "small": "drivers/avatto_touch_switch_4gang_ac/assets/images/small.png"
       },
       "pair": [
         {
@@ -27085,8 +27085,8 @@
         }
       },
       "images": {
-        "large": "drivers/moes_usb_outlet_ac/assets/images/large.png",
-        "small": "drivers/moes_usb_outlet_ac/assets/images/small.png"
+        "large": "drivers/avatto_usb_outlet_ac/assets/images/large.png",
+        "small": "drivers/avatto_usb_outlet_ac/assets/images/small.png"
       },
       "pair": [
         {
@@ -27488,8 +27488,8 @@
         }
       },
       "images": {
-        "small": "drivers/moes_usb_outlet_advanced_ac/assets/images/small.png",
-        "large": "drivers/moes_usb_outlet_advanced_ac/assets/images/large.png"
+        "small": "drivers/avatto_usb_outlet_advanced_ac/assets/images/small.png",
+        "large": "drivers/avatto_usb_outlet_advanced_ac/assets/images/large.png"
       },
       "capabilitiesOptions": {
         "measure_power": {
@@ -27928,8 +27928,8 @@
         ]
       },
       "images": {
-        "small": "drivers/moes_wall_switch_2gang_ac/assets/images/small.png",
-        "large": "drivers/moes_wall_switch_2gang_ac/assets/images/large.png"
+        "small": "drivers/avatto_wall_switch_2gang_ac/assets/images/small.png",
+        "large": "drivers/avatto_wall_switch_2gang_ac/assets/images/large.png"
       },
       "settings": [
         {
@@ -28289,8 +28289,8 @@
         ]
       },
       "images": {
-        "small": "drivers/moes_wall_switch_2gang_dc/assets/images/small.png",
-        "large": "drivers/moes_wall_switch_2gang_dc/assets/images/large.png"
+        "small": "drivers/avatto_wall_switch_2gang_dc/assets/images/small.png",
+        "large": "drivers/avatto_wall_switch_2gang_dc/assets/images/large.png"
       },
       "settings": [
         {
@@ -28717,8 +28717,8 @@
         ]
       },
       "images": {
-        "small": "drivers/moes_wall_switch_4gang_ac/assets/images/small.png",
-        "large": "drivers/moes_wall_switch_4gang_ac/assets/images/large.png"
+        "small": "drivers/avatto_wall_switch_4gang_ac/assets/images/small.png",
+        "large": "drivers/avatto_wall_switch_4gang_ac/assets/images/large.png"
       },
       "settings": [
         {
@@ -29099,8 +29099,8 @@
         ]
       },
       "images": {
-        "small": "drivers/moes_wall_switch_4gang_dc/assets/images/small.png",
-        "large": "drivers/moes_wall_switch_4gang_dc/assets/images/large.png"
+        "small": "drivers/avatto_wall_switch_4gang_dc/assets/images/small.png",
+        "large": "drivers/avatto_wall_switch_4gang_dc/assets/images/large.png"
       },
       "settings": [
         {
@@ -29530,8 +29530,8 @@
         ]
       },
       "images": {
-        "small": "drivers/moes_wall_switch_5gang_ac/assets/images/small.png",
-        "large": "drivers/moes_wall_switch_5gang_ac/assets/images/large.png"
+        "small": "drivers/avatto_wall_switch_5gang_ac/assets/images/small.png",
+        "large": "drivers/avatto_wall_switch_5gang_ac/assets/images/large.png"
       },
       "settings": [
         {
@@ -29975,8 +29975,8 @@
         ]
       },
       "images": {
-        "small": "drivers/moes_wall_switch_6gang_ac/assets/images/small.png",
-        "large": "drivers/moes_wall_switch_6gang_ac/assets/images/large.png"
+        "small": "drivers/avatto_wall_switch_6gang_ac/assets/images/small.png",
+        "large": "drivers/avatto_wall_switch_6gang_ac/assets/images/large.png"
       },
       "settings": [
         {
@@ -30183,8 +30183,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "drivers/tuya_water_valve_aa/assets/images/small.png",
-        "large": "drivers/tuya_water_valve_aa/assets/images/large.png"
+        "small": "drivers/avatto_water_valve_aa/assets/images/small.png",
+        "large": "drivers/avatto_water_valve_aa/assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -30594,8 +30594,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "drivers/tuya_water_valve_smart_aa/assets/images/small.png",
-        "large": "drivers/tuya_water_valve_smart_aa/assets/images/large.png"
+        "small": "drivers/avatto_water_valve_smart_aa/assets/images/small.png",
+        "large": "drivers/avatto_water_valve_smart_aa/assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -31130,8 +31130,8 @@
         }
       },
       "images": {
-        "small": "drivers/tuya_water_valve_smart_hybrid/assets/images/small.png",
-        "large": "drivers/tuya_water_valve_smart_hybrid/assets/images/large.png"
+        "small": "drivers/avatto_water_valve_smart_hybrid/assets/images/small.png",
+        "large": "drivers/avatto_water_valve_smart_hybrid/assets/images/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -31533,8 +31533,8 @@
         ]
       },
       "images": {
-        "small": "drivers/moes_wireless_switch_2gang_cr2032/assets/images/small.png",
-        "large": "drivers/moes_wireless_switch_2gang_cr2032/assets/images/large.png"
+        "small": "drivers/avatto_wireless_switch_2gang_cr2032/assets/images/small.png",
+        "large": "drivers/avatto_wireless_switch_2gang_cr2032/assets/images/large.png"
       },
       "name": {
         "en": "2-Button Wireless Switch (CR2032)",
@@ -32026,8 +32026,8 @@
         }
       },
       "images": {
-        "small": "drivers/moes_wireless_switch_4button_cr2450/assets/images/small.png",
-        "large": "drivers/moes_wireless_switch_4button_cr2450/assets/images/large.png"
+        "small": "drivers/avatto_wireless_switch_4button_cr2450/assets/images/small.png",
+        "large": "drivers/avatto_wireless_switch_4button_cr2450/assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -32479,8 +32479,8 @@
         ]
       },
       "images": {
-        "small": "drivers/moes_wireless_switch_4gang_cr2032/assets/images/small.png",
-        "large": "drivers/moes_wireless_switch_4gang_cr2032/assets/images/large.png"
+        "small": "drivers/avatto_wireless_switch_4gang_cr2032/assets/images/small.png",
+        "large": "drivers/avatto_wireless_switch_4gang_cr2032/assets/images/large.png"
       },
       "name": {
         "en": "4-Button Wireless Switch (CR2032)",
@@ -32934,8 +32934,8 @@
         ]
       },
       "images": {
-        "small": "drivers/moes_wireless_switch_5button_cr2032/assets/images/small.png",
-        "large": "drivers/moes_wireless_switch_5button_cr2032/assets/images/large.png"
+        "small": "drivers/avatto_wireless_switch_5button_cr2032/assets/images/small.png",
+        "large": "drivers/avatto_wireless_switch_5button_cr2032/assets/images/large.png"
       },
       "settings": [
         {
@@ -33308,8 +33308,8 @@
         ]
       },
       "images": {
-        "small": "drivers/moes_wireless_switch_6gang_cr2032/assets/images/small.png",
-        "large": "drivers/moes_wireless_switch_6gang_cr2032/assets/images/large.png"
+        "small": "drivers/avatto_wireless_switch_6gang_cr2032/assets/images/small.png",
+        "large": "drivers/avatto_wireless_switch_6gang_cr2032/assets/images/large.png"
       },
       "settings": [
         {
@@ -33536,8 +33536,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "drivers/moes_wireless_switch_cr2032/assets/images/small.png",
-        "large": "drivers/moes_wireless_switch_cr2032/assets/images/large.png"
+        "small": "drivers/avatto_wireless_switch_cr2032/assets/images/small.png",
+        "large": "drivers/avatto_wireless_switch_cr2032/assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -33997,8 +33997,8 @@
         "alarm_battery"
       ],
       "images": {
-        "small": "drivers/samsung_multipurpose_sensor_cr2032/assets/images/small.png",
-        "large": "drivers/samsung_multipurpose_sensor_cr2032/assets/images/large.png",
+        "small": "drivers/generic_samsung_multipurpose_sensor_cr2032/assets/images/small.png",
+        "large": "drivers/generic_samsung_multipurpose_sensor_cr2032/assets/images/large.png",
         "xlarge": "drivers/samsung_multipurpose_sensor_cr2032/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -34047,8 +34047,8 @@
         "alarm_battery"
       ],
       "images": {
-        "small": "drivers/ikea_contact_sensor_basic_cr2032/assets/images/small.png",
-        "large": "drivers/ikea_contact_sensor_basic_cr2032/assets/images/large.png",
+        "small": "drivers/lonsonho_contact_sensor_basic_cr2032/assets/images/small.png",
+        "large": "drivers/lonsonho_contact_sensor_basic_cr2032/assets/images/large.png",
         "xlarge": "drivers/ikea_contact_sensor_basic_cr2032/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -34463,8 +34463,8 @@
         "alarm_battery"
       ],
       "images": {
-        "small": "drivers/samsung_button_cr2450/assets/images/small.png",
-        "large": "drivers/samsung_button_cr2450/assets/images/large.png",
+        "small": "drivers/lonsonho_samsung_button_cr2450/assets/images/small.png",
+        "large": "drivers/lonsonho_samsung_button_cr2450/assets/images/large.png",
         "xlarge": "drivers/samsung_button_cr2450/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -34550,8 +34550,8 @@
         "alarm_battery"
       ],
       "images": {
-        "small": "drivers/samsung_contact_sensor_cr2032/assets/images/small.png",
-        "large": "drivers/samsung_contact_sensor_cr2032/assets/images/large.png",
+        "small": "drivers/lonsonho_samsung_contact_sensor_cr2032/assets/images/small.png",
+        "large": "drivers/lonsonho_samsung_contact_sensor_cr2032/assets/images/large.png",
         "xlarge": "drivers/samsung_contact_sensor_cr2032/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -34638,8 +34638,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/lonsonho_shortcut_button_other/assets/images/small.png",
-        "large": "/drivers/lonsonho_shortcut_button_other/assets/images/large.png",
+        "small": "drivers/lonsonho_shortcut_button_other/assets/images/small.png",
+        "large": "drivers/lonsonho_shortcut_button_other/assets/images/large.png",
         "xlarge": "/drivers/lonsonho_shortcut_button_other/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -34771,8 +34771,8 @@
         "alarm_battery"
       ],
       "images": {
-        "small": "drivers/sonoff_button_wireless_cr2450/assets/images/small.png",
-        "large": "drivers/sonoff_button_wireless_cr2450/assets/images/large.png",
+        "small": "drivers/lonsonho_sonoff_button_wireless_cr2450/assets/images/small.png",
+        "large": "drivers/lonsonho_sonoff_button_wireless_cr2450/assets/images/large.png",
         "xlarge": "drivers/sonoff_button_wireless_cr2450/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -34864,8 +34864,8 @@
         "alarm_battery"
       ],
       "images": {
-        "small": "drivers/sonoff_contact_sensor_cr2032/assets/images/small.png",
-        "large": "drivers/sonoff_contact_sensor_cr2032/assets/images/large.png",
+        "small": "drivers/lonsonho_sonoff_contact_sensor_cr2032/assets/images/small.png",
+        "large": "drivers/lonsonho_sonoff_contact_sensor_cr2032/assets/images/large.png",
         "xlarge": "drivers/sonoff_contact_sensor_cr2032/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -34946,8 +34946,8 @@
         "alarm_battery"
       ],
       "images": {
-        "small": "drivers/ikea_wireless_button_2gang_cr2032/assets/images/small.png",
-        "large": "drivers/ikea_wireless_button_2gang_cr2032/assets/images/large.png",
+        "small": "drivers/lonsonho_wireless_button_2gang_cr2032/assets/images/small.png",
+        "large": "drivers/lonsonho_wireless_button_2gang_cr2032/assets/images/large.png",
         "xlarge": "drivers/ikea_wireless_button_2gang_cr2032/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -37091,8 +37091,8 @@
         "light_saturation"
       ],
       "images": {
-        "small": "drivers/innr_bulb_color_ac/assets/images/small.png",
-        "large": "drivers/innr_bulb_color_ac/assets/images/large.png",
+        "small": "drivers/lsc_innr_bulb_color_ac/assets/images/small.png",
+        "large": "drivers/lsc_innr_bulb_color_ac/assets/images/large.png",
         "xlarge": "drivers/innr_bulb_color_ac/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -37169,8 +37169,8 @@
         "light_temperature"
       ],
       "images": {
-        "small": "drivers/innr_bulb_tunable_white_ac/assets/images/small.png",
-        "large": "drivers/innr_bulb_tunable_white_ac/assets/images/large.png",
+        "small": "drivers/lsc_innr_bulb_tunable_white_ac/assets/images/small.png",
+        "large": "drivers/lsc_innr_bulb_tunable_white_ac/assets/images/large.png",
         "xlarge": "drivers/innr_bulb_tunable_white_ac/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -37246,8 +37246,8 @@
         "dim"
       ],
       "images": {
-        "small": "drivers/innr_bulb_white_ac/assets/images/small.png",
-        "large": "drivers/innr_bulb_white_ac/assets/images/large.png",
+        "small": "drivers/lsc_innr_bulb_white_ac/assets/images/small.png",
+        "large": "drivers/lsc_innr_bulb_white_ac/assets/images/large.png",
         "xlarge": "drivers/innr_bulb_white_ac/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -37326,8 +37326,8 @@
         "light_saturation"
       ],
       "images": {
-        "small": "drivers/tuya_led_strip_outdoor_color_ac/assets/images/small.png",
-        "large": "drivers/tuya_led_strip_outdoor_color_ac/assets/images/large.png",
+        "small": "drivers/lsc_led_strip_outdoor_color_ac/assets/images/small.png",
+        "large": "drivers/lsc_led_strip_outdoor_color_ac/assets/images/large.png",
         "xlarge": "drivers/tuya_led_strip_outdoor_color_ac/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -37809,8 +37809,8 @@
         "light_saturation"
       ],
       "images": {
-        "small": "drivers/osram_bulb_rgbw_ac/assets/images/small.png",
-        "large": "drivers/osram_bulb_rgbw_ac/assets/images/large.png",
+        "small": "drivers/lsc_osram_bulb_rgbw_ac/assets/images/small.png",
+        "large": "drivers/lsc_osram_bulb_rgbw_ac/assets/images/large.png",
         "xlarge": "drivers/osram_bulb_rgbw_ac/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -37888,8 +37888,8 @@
         "light_temperature"
       ],
       "images": {
-        "small": "drivers/osram_bulb_tunable_white_ac/assets/images/small.png",
-        "large": "drivers/osram_bulb_tunable_white_ac/assets/images/large.png",
+        "small": "drivers/lsc_osram_bulb_tunable_white_ac/assets/images/small.png",
+        "large": "drivers/lsc_osram_bulb_tunable_white_ac/assets/images/large.png",
         "xlarge": "drivers/osram_bulb_tunable_white_ac/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -37965,8 +37965,8 @@
         "dim"
       ],
       "images": {
-        "small": "drivers/osram_bulb_white_ac/assets/images/small.png",
-        "large": "drivers/osram_bulb_white_ac/assets/images/large.png",
+        "small": "drivers/lsc_osram_bulb_white_ac/assets/images/small.png",
+        "large": "drivers/lsc_osram_bulb_white_ac/assets/images/large.png",
         "xlarge": "drivers/osram_bulb_white_ac/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -38044,8 +38044,8 @@
         "light_saturation"
       ],
       "images": {
-        "small": "drivers/osram_led_strip_rgbw_ac/assets/images/small.png",
-        "large": "drivers/osram_led_strip_rgbw_ac/assets/images/large.png",
+        "small": "drivers/lsc_osram_led_strip_rgbw_ac/assets/images/small.png",
+        "large": "drivers/lsc_osram_led_strip_rgbw_ac/assets/images/large.png",
         "xlarge": "drivers/osram_led_strip_rgbw_ac/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -38127,8 +38127,8 @@
         "light_saturation"
       ],
       "images": {
-        "small": "drivers/philips_bulb_color_ac/assets/images/small.png",
-        "large": "drivers/philips_bulb_color_ac/assets/images/large.png",
+        "small": "drivers/lsc_philips_bulb_color_ac/assets/images/small.png",
+        "large": "drivers/lsc_philips_bulb_color_ac/assets/images/large.png",
         "xlarge": "drivers/philips_bulb_color_ac/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -38204,8 +38204,8 @@
         "dim"
       ],
       "images": {
-        "small": "drivers/philips_bulb_white_ac/assets/images/small.png",
-        "large": "drivers/philips_bulb_white_ac/assets/images/large.png",
+        "small": "drivers/lsc_philips_bulb_white_ac/assets/images/small.png",
+        "large": "drivers/lsc_philips_bulb_white_ac/assets/images/large.png",
         "xlarge": "drivers/philips_bulb_white_ac/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -38282,8 +38282,8 @@
         "light_temperature"
       ],
       "images": {
-        "small": "drivers/philips_bulb_white_ambiance_ac/assets/images/small.png",
-        "large": "drivers/philips_bulb_white_ambiance_ac/assets/images/large.png",
+        "small": "drivers/lsc_philips_bulb_white_ambiance_ac/assets/images/small.png",
+        "large": "drivers/lsc_philips_bulb_white_ambiance_ac/assets/images/large.png",
         "xlarge": "drivers/philips_bulb_white_ambiance_ac/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -38358,8 +38358,8 @@
         "alarm_battery"
       ],
       "images": {
-        "small": "drivers/philips_dimmer_switch_aaa/assets/images/small.png",
-        "large": "drivers/philips_dimmer_switch_aaa/assets/images/large.png",
+        "small": "drivers/lsc_philips_dimmer_switch_aaa/assets/images/small.png",
+        "large": "drivers/lsc_philips_dimmer_switch_aaa/assets/images/large.png",
         "xlarge": "drivers/philips_dimmer_switch_aaa/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -38468,8 +38468,8 @@
         "light_saturation"
       ],
       "images": {
-        "small": "drivers/philips_led_strip_ac/assets/images/small.png",
-        "large": "drivers/philips_led_strip_ac/assets/images/large.png",
+        "small": "drivers/lsc_philips_led_strip_ac/assets/images/small.png",
+        "large": "drivers/lsc_philips_led_strip_ac/assets/images/large.png",
         "xlarge": "drivers/philips_led_strip_ac/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -38535,8 +38535,8 @@
         "light_saturation"
       ],
       "images": {
-        "small": "drivers/sonoff_led_strip_ac/assets/images/small.png",
-        "large": "drivers/sonoff_led_strip_ac/assets/images/large.png",
+        "small": "drivers/lsc_sonoff_led_strip_ac/assets/images/small.png",
+        "large": "drivers/lsc_sonoff_led_strip_ac/assets/images/large.png",
         "xlarge": "drivers/sonoff_led_strip_ac/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -38607,8 +38607,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/lsc_wireless_switch_4button_other/assets/images/small.png",
-        "large": "/drivers/lsc_wireless_switch_4button_other/assets/images/large.png",
+        "small": "drivers/lsc_wireless_switch_4button_other/assets/images/small.png",
+        "large": "drivers/lsc_wireless_switch_4button_other/assets/images/large.png",
         "xlarge": "/drivers/lsc_wireless_switch_4button_other/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -38944,8 +38944,8 @@
         }
       },
       "images": {
-        "small": "drivers/tuya_climate_monitor_cr2032/assets/images/small.png",
-        "large": "drivers/tuya_climate_monitor_cr2032/assets/images/large.png"
+        "small": "drivers/moes_climate_monitor_cr2032/assets/images/small.png",
+        "large": "drivers/moes_climate_monitor_cr2032/assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -39264,8 +39264,8 @@
         "alarm_battery"
       ],
       "images": {
-        "small": "drivers/sonoff_temperature_humidity_cr2450/assets/images/small.png",
-        "large": "drivers/sonoff_temperature_humidity_cr2450/assets/images/large.png",
+        "small": "drivers/moes_sonoff_temperature_humidity_cr2450/assets/images/small.png",
+        "large": "drivers/moes_sonoff_temperature_humidity_cr2450/assets/images/large.png",
         "xlarge": "drivers/sonoff_temperature_humidity_cr2450/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -39567,8 +39567,8 @@
         "onoff"
       ],
       "images": {
-        "small": "drivers/osram_outdoor_plug_ac/assets/images/small.png",
-        "large": "drivers/osram_outdoor_plug_ac/assets/images/large.png",
+        "small": "drivers/nous_osram_outdoor_plug_ac/assets/images/small.png",
+        "large": "drivers/nous_osram_outdoor_plug_ac/assets/images/large.png",
         "xlarge": "drivers/osram_outdoor_plug_ac/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -41060,8 +41060,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/tuya_air_conditioner_hybrid/assets/images/small.png",
-        "large": "/drivers/tuya_air_conditioner_hybrid/assets/images/large.png",
+        "small": "drivers/tuya_air_conditioner_hybrid/assets/images/small.png",
+        "large": "drivers/tuya_air_conditioner_hybrid/assets/images/large.png",
         "xlarge": "/drivers/tuya_air_conditioner_hybrid/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -41515,8 +41515,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/tuya_dehumidifier_hybrid/assets/images/small.png",
-        "large": "/drivers/tuya_dehumidifier_hybrid/assets/images/large.png",
+        "small": "drivers/tuya_dehumidifier_hybrid/assets/images/small.png",
+        "large": "drivers/tuya_dehumidifier_hybrid/assets/images/large.png",
         "xlarge": "/drivers/tuya_dehumidifier_hybrid/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -46092,8 +46092,8 @@
         }
       },
       "images": {
-        "small": "drivers/tuya_door_controller_ac/assets/images/small.png",
-        "large": "drivers/tuya_door_controller_ac/assets/images/large.png"
+        "small": "drivers/zemismart_door_controller_ac/assets/images/small.png",
+        "large": "drivers/zemismart_door_controller_ac/assets/images/large.png"
       },
       "community": {
         "sources": [
@@ -46898,8 +46898,8 @@
         }
       },
       "images": {
-        "small": "drivers/tuya_garage_door_controller_ac/assets/images/small.png",
-        "large": "drivers/tuya_garage_door_controller_ac/assets/images/large.png"
+        "small": "drivers/zemismart_garage_door_controller_ac/assets/images/small.png",
+        "large": "drivers/zemismart_garage_door_controller_ac/assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -47736,8 +47736,8 @@
         }
       },
       "images": {
-        "small": "drivers/tuya_humidity_controller_ac/assets/images/small.png",
-        "large": "drivers/tuya_humidity_controller_ac/assets/images/large.png"
+        "small": "drivers/zemismart_humidity_controller_ac/assets/images/small.png",
+        "large": "drivers/zemismart_humidity_controller_ac/assets/images/large.png"
       },
       "platforms": [
         "local"
@@ -50967,8 +50967,8 @@
         }
       },
       "images": {
-        "large": "drivers/moes_outdoor_light_controller_ac/assets/images/large.png",
-        "small": "drivers/moes_outdoor_light_controller_ac/assets/images/small.png"
+        "large": "drivers/zemismart_outdoor_light_controller_ac/assets/images/large.png",
+        "small": "drivers/zemismart_outdoor_light_controller_ac/assets/images/small.png"
       },
       "pair": [
         {
@@ -60924,8 +60924,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/zemismart_sound_controller_other/assets/images/small.png",
-        "large": "/drivers/zemismart_sound_controller_other/assets/images/large.png",
+        "small": "drivers/zemismart_sound_controller_other/assets/images/small.png",
+        "large": "drivers/zemismart_sound_controller_other/assets/images/large.png",
         "xlarge": "/drivers/zemismart_sound_controller_other/assets/images/xlarge.png"
       },
       "zigbee": {
@@ -63195,8 +63195,8 @@
         }
       },
       "images": {
-        "large": "drivers/tuya_temperature_controller_hybrid/assets/images/large.png",
-        "small": "drivers/tuya_temperature_controller_hybrid/assets/images/small.png"
+        "large": "drivers/zemismart_temperature_controller_hybrid/assets/images/large.png",
+        "small": "drivers/zemismart_temperature_controller_hybrid/assets/images/small.png"
       },
       "pair": [
         {
