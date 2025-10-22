@@ -1,0 +1,101 @@
+{
+  "name": {
+    "en": "Moes Sonoff Temperature Humidity",
+    "fr": "Moes Sonoff Temperature Humidity"
+  },
+  "class": "sensor",
+  "capabilities": [],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "AAA",
+      "AA"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "GZCGQ01LM",
+      "RTCGQ11LM",
+      "SNZB-02",
+      "TS0201",
+      "WSDCGQ11LM",
+      "WSDCGQ12LM",
+      "_SONOFF_generic",
+      "_TZ2000_a476raq2",
+      "_TZ2000_hjsgdkfl",
+      "_TZ2000_xogb73am",
+      "_TZ3000_0s1izerx",
+      "_TZ3000_8ybe88nf",
+      "_TZ3000_bguser20",
+      "_TZ3000_dowj6gyi",
+      "_TZ3000_f2bw0b6k",
+      "_TZ3000_fie1dpkm",
+      "_TZ3000_fllyghyj",
+      "_TZ3000_iystcadi",
+      "_TZ3000_rusu2vzb",
+      "_TZ3000_saiqcn0y",
+      "_TZ3000_xr3htd96",
+      "_TZ3000_yd2e749y",
+      "_TZ3000_ywagc4rj",
+      "_TZ3000_zl1kmjqx",
+      "_TZE200_7hfcudw5",
+      "_TZE200_bjawzodf",
+      "_TZE200_bq5c8xfe",
+      "_TZE200_dwcarsat",
+      "_TZE200_locansqn",
+      "_TZE200_nw1r9hp6",
+      "_TZE200_qoy0ekbd",
+      "_TZE200_whpb9yts",
+      "_TZE200_zl1kmjqx",
+      "_TZE204_mtoaryre",
+      "_TZE284_uqfph8ah",
+      "lumi.sensor_ht",
+      "lumi.weather"
+    ],
+    "productId": [
+      "RH3052",
+      "SM0201",
+      "TS0201",
+      "TS0601",
+      "TY0201",
+      "generic"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/moes_sonoff_temperature_humidity/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "auto_battery_detection",
+      "type": "checkbox",
+      "label": {
+        "en": "Auto Battery Type Detection",
+        "fr": "Détection Automatique du Type de Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Automatically detect battery type based on voltage",
+        "fr": "Détecter automatiquement le type de batterie en fonction de la tension"
+      }
+    }
+  ]
+}

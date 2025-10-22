@@ -1,0 +1,94 @@
+{
+  "name": {
+    "en": "Lsc Philips Bulb White Ambiance",
+    "fr": "Lsc Philips Bulb White Ambiance"
+  },
+  "class": "light",
+  "capabilities": [],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "AAA",
+      "AA"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "TS0502",
+      "TS0503",
+      "TS0505",
+      "ZNCJMB11LM",
+      "ZNCJMB14LM",
+      "ZNDDMK11LM",
+      "ZNDDMK12LM",
+      "ZNDDMK13LM",
+      "ZNDDMK14LM",
+      "ZNDDMK15LM",
+      "ZNLDP12LM",
+      "_PHILIPS_generic",
+      "_TZ3000_12sxjap4",
+      "_TZ3000_49qchf10",
+      "_TZ3000_dbou1ap4",
+      "_TZ3000_el5kt5im",
+      "_TZ3000_hlijwsai",
+      "_TZ3000_kdpxju99",
+      "_TZ3000_keabpigv",
+      "_TZ3000_obacbukl",
+      "_TZ3000_oborybow",
+      "_TZ3000_odygigth",
+      "_TZ3000_q50zhdsc",
+      "_TZ3000_qd7hej8u",
+      "_TZ3210_mja6r5ix",
+      "eWeLight",
+      "lumi.light.aqcn02",
+      "lumi.light.cb2acn",
+      "lumi.light.cwopcn02",
+      "lumi.light.cwopcn03"
+    ],
+    "productId": [
+      "TS0502A",
+      "TS0502B",
+      "TS0505A",
+      "TS0505B",
+      "ZB-CL01",
+      "generic"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/lsc_philips_bulb_white_ambiance/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "auto_battery_detection",
+      "type": "checkbox",
+      "label": {
+        "en": "Auto Battery Type Detection",
+        "fr": "Détection Automatique du Type de Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Automatically detect battery type based on voltage",
+        "fr": "Détecter automatiquement le type de batterie en fonction de la tension"
+      }
+    }
+  ]
+}

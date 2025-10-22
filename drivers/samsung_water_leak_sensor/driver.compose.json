@@ -1,0 +1,86 @@
+{
+  "name": {
+    "en": "Samsung Water Leak Sensor",
+    "fr": "Samsung Water Leak Sensor"
+  },
+  "class": "sensor",
+  "capabilities": [],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "AAA",
+      "AA"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "SJCGQ11LM",
+      "SJCGQ12LM",
+      "SJCGQ13LM",
+      "SJCGQ14LM",
+      "SJCGQ15LM",
+      "SJCGQ16LM",
+      "TS0207",
+      "_SAMSUNG_generic",
+      "_TYZB01_sqmd19i1",
+      "_TZ3000_0s9gukzt",
+      "_TZ3000_85czd6fy",
+      "_TZ3000_eit7p838",
+      "_TZ3000_fxvjhdyl",
+      "_TZ3000_k4ej3ww2",
+      "_TZ3000_kstbkt6a",
+      "_TZ3000_kyb656no",
+      "_TZ3000_mugyhz0q",
+      "_TZ3000_ocjlo4ea",
+      "_TZ3000_t6jriawg",
+      "_TZ3000_upgcbody",
+      "_TZE200_jthf7vb6",
+      "_TZE200_qq9mpfhw",
+      "lumi.sensor_wleak",
+      "lumi.sensor_wleak.aq1"
+    ],
+    "productId": [
+      "TS0207",
+      "TS0601",
+      "generic",
+      "q9mpfhw"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/samsung_water_leak_sensor/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "auto_battery_detection",
+      "type": "checkbox",
+      "label": {
+        "en": "Auto Battery Type Detection",
+        "fr": "Détection Automatique du Type de Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Automatically detect battery type based on voltage",
+        "fr": "Détecter automatiquement le type de batterie en fonction de la tension"
+      }
+    }
+  ]
+}
