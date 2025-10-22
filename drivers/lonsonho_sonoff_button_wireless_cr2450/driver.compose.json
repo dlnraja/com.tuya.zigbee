@@ -88,5 +88,16 @@
     "batteries": [
       "CR2450"
     ]
+  },
+  "metadata": {
+    "app": {
+      "id": "com.dlnraja.tuya.zigbee",
+      "name": "Universal Tuya Zigbee",
+      "version": "4.1.3",
+      "api": {
+        "min": 3,
+        "max": 3
+      }
+    }
   }
 }

@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Universal Tuya Zigbee - Settings</title>
-    <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
     <style>
         * {
             box-sizing: border-box;
@@ -257,6 +256,7 @@
             margin: 10px 0;
         }
     </style>
+    <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
 </head>
 <body>
     <h1>🎯 Universal Tuya Zigbee</h1>
@@ -384,13 +384,41 @@
     </div>
     
     <script>
+        // Utility function to show error messages
+        function showError(message) {
+            const resultsContainer = document.getElementById('resultsContainer');
+            if (resultsContainer) {
+                resultsContainer.innerHTML = `
+                    <div class="no-results">
+                        <div style="color: #e74c3c; margin-bottom: 10px;">
+                            ❌ Error: ${message}
+                        </div>
+                        <button onclick="window.location.reload()" 
+                                style="padding: 8px 16px; 
+                                       background: #3498db; 
+                                       color: white; 
+                                       border: none; 
+                                       border-radius: 4px; 
+                                       cursor: pointer;">
+                            🔄 Refresh Page
+                        </button>
+                    </div>`;
+            }
+        }
         let driversData = [];
         
         // Load drivers database from Homey API (client-side generation)
         async function loadDriversDatabase() {
+            if (!Homey) {
+                console.error('Homey API not initialized');
+                showError('Homey API not ready. Please refresh the page.');
+                return;
+            }
+            
             try {
-                // Get all drivers from Homey
+                console.log('Fetching drivers from Homey API...');
                 const drivers = await Homey.getDrivers();
+                console.log('Received drivers:', Object.keys(drivers).length);
                 
                 // Transform to searchable format
                 driversData = Object.values(drivers).map(driver => {
@@ -452,9 +480,21 @@
                 console.log('Loaded', driversData.length, 'drivers from Homey');
             } catch (err) {
                 console.error('Failed to load drivers from Homey:', err);
-                // Fallback: show error
-                document.getElementById('resultsContainer').innerHTML = 
-                    '<div class="no-results">❌ Failed to load drivers. Please refresh the page.</div>';
+                showError(`Failed to load drivers: ${err.message || 'Unknown error'}`);
+                
+                // Try fallback to static data if available
+                try {
+                    const response = await fetch('drivers-database.json');
+                    if (response.ok) {
+                        const data = await response.json();
+                        driversData = data;
+                        populateFilters();
+                        console.log('Loaded drivers from static fallback:', driversData.length);
+                        return;
+                    }
+                } catch (fallbackErr) {
+                    console.warn('Could not load static fallback:', fallbackErr);
+                }
             }
         }
         
@@ -548,18 +588,43 @@
             `).join('');
         }
         
-        // Event listeners
-        document.addEventListener('DOMContentLoaded', () => {
-            loadDriversDatabase();
+        // Global Homey reference
+        let Homey;
+        
+        // Initialize the settings page
+        function initializeApp() {
+            console.log('Initializing Universal Tuya Zigbee Settings...');
             
+            // Setup event listeners
             document.getElementById('searchInput').addEventListener('input', searchDrivers);
             document.getElementById('brandFilter').addEventListener('change', searchDrivers);
             document.getElementById('categoryFilter').addEventListener('change', searchDrivers);
-        });
+            
+            // Show loading state
+            const resultsContainer = document.getElementById('resultsContainer');
+            if (resultsContainer) {
+                resultsContainer.innerHTML = '<div class="no-results">🔍 Loading drivers database...</div>';
+            }
+            
+            // Load drivers after a short delay to ensure Homey is ready
+            setTimeout(loadDriversDatabase, 500);
+        }
         
-        function onHomeyReady(Homey) {
+        // Event listener for DOM content loaded
+        document.addEventListener('DOMContentLoaded', initializeApp);
+        
+        // Homey ready handler
+        function onHomeyReady(homeyInstance) {
+            console.log('Homey API is ready');
+            Homey = homeyInstance;
             Homey.ready();
-            console.log('Universal Tuya Zigbee Settings Ready');
+            
+            // If DOM is already loaded, initialize the app
+            if (document.readyState === 'complete' || document.readyState === 'interactive') {
+                initializeApp();
+            } else {
+                document.addEventListener('DOMContentLoaded', initializeApp);
+            }
         }
     </script>
 </body>

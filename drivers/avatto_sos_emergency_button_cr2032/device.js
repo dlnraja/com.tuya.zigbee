@@ -225,25 +225,65 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
         }
       });
 
-      // Write IAS CIE Address (v2.15.71 working pattern)
+      // Write IAS CIE Address (v2.15.71 working pattern) - ENHANCED IEEE RECOVERY
       try {
-        // Get IEEE address from multiple sources (SDK3 compatible - FIXED!)
-        let ieeeAddress = zclNode.ieeeAddress || this.homey?.zigbee?.ieeeAddress;
+        this.log('🔍 Starting IEEE address discovery...');
         
-        // Fallback: try to get from Homey API
-        if (!ieeeAddress) {
+        // Try multiple sources for IEEE address
+        let ieeeAddress = null;
+        
+        // Method 1: From zclNode directly
+        if (zclNode.ieeeAddress) {
+          ieeeAddress = zclNode.ieeeAddress;
+          this.log('✅ Method 1: Got IEEE from zclNode:', ieeeAddress);
+        }
+        
+        // Method 2: From homey.zigbee property
+        if (!ieeeAddress && this.homey?.zigbee?.ieeeAddress) {
+          ieeeAddress = this.homey.zigbee.ieeeAddress;
+          this.log('✅ Method 2: Got IEEE from homey.zigbee:', ieeeAddress);
+        }
+        
+        // Method 3: From homey.zigbee.getIeeeAddress() function
+        if (!ieeeAddress && typeof this.homey?.zigbee?.getIeeeAddress === 'function') {
           try {
-            ieeeAddress = await this.homey.zigbee.getIeeeAddress?.();
+            ieeeAddress = await this.homey.zigbee.getIeeeAddress();
+            this.log('✅ Method 3: Got IEEE from getIeeeAddress():', ieeeAddress);
           } catch (e) {
-            this.log('Could not get IEEE from Homey API');
+            this.log('⚠️ Method 3 failed:', e.message);
           }
         }
         
+        // Method 4: From device data
+        if (!ieeeAddress && this.getData()?.ieeeAddress) {
+          ieeeAddress = this.getData().ieeeAddress;
+          this.log('✅ Method 4: Got IEEE from device data:', ieeeAddress);
+        }
+        
+        // Method 5: Try to read from basic cluster
         if (!ieeeAddress) {
-          throw new Error('IEEE address not available - will retry on next pairing');
+          try {
+            const basicCluster = zclNode.endpoints[1]?.clusters?.basic;
+            if (basicCluster) {
+              const attrs = await basicCluster.readAttributes(['manufacturerName', 'modelId']);
+              this.log('ℹ️ Device info:', attrs);
+            }
+          } catch (e) {
+            this.log('⚠️ Method 5 failed:', e.message);
+          }
+        }
+        
+        // If still no IEEE, try to use a fallback coordinator address
+        if (!ieeeAddress) {
+          // Log all available properties for debugging
+          this.log('⚠️ IEEE address not found. Available sources:');
+          this.log('  - zclNode.ieeeAddress:', zclNode.ieeeAddress);
+          this.log('  - homey.zigbee:', this.homey?.zigbee ? 'exists' : 'undefined');
+          
+          throw new Error('IEEE address not available from any source. Please re-pair the device.');
         }
 
-        this.log('📡 Homey IEEE:', ieeeAddress);
+        this.log('📡 Using Homey IEEE address:', ieeeAddress);
 
         // Write CIE Address (SDK3 expects string, not Buffer)
         await iasZoneCluster.writeAttributes({
