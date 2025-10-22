@@ -1,24 +1,25 @@
 # Device Matrix
 
-**Generated:** 2025-10-22T23:20:51.941Z
+**Generated:** 2025-10-22T23:36:01.082Z
 
-**Total Devices:** 197
+**Total Devices:** 349
 
 ## Devices by Class
 
-- **sensor:** 68 drivers
-- **socket:** 64 drivers
-- **light:** 28 drivers
-- **button:** 23 drivers
-- **other:** 10 drivers
-- **lock:** 2 drivers
+- **sensor:** 125 drivers
+- **socket:** 111 drivers
+- **light:** 56 drivers
+- **button:** 35 drivers
+- **other:** 15 drivers
+- **lock:** 4 drivers
+- **unknown:** 1 drivers
 - **thermostat:** 1 drivers
 - **humidifier:** 1 drivers
 
 ## Statistics
 
-- Total Drivers: 197
-- Total Manufacturer IDs: 13961
-- Total Model IDs: 5492
-- Battery Devices: 101
+- Total Drivers: 349
+- Total Manufacturer IDs: 25154
+- Total Model IDs: 10056
+- Battery Devices: 253
 - AC Devices: 96
