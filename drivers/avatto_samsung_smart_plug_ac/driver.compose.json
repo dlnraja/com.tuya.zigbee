@@ -1,0 +1,83 @@
+{
+  "id": "avatto_samsung_smart_plug_ac",
+  "name": {
+    "en": "Samsung SmartThings Plug (AC)"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power"
+  ],
+  "images": {
+    "small": "drivers/samsung_smart_plug_ac/assets/images/small.png",
+    "large": "drivers/samsung_smart_plug_ac/assets/images/large.png",
+    "xlarge": "drivers/samsung_smart_plug_ac/assets/images/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "QBCZ11LM",
+      "SP120",
+      "SP220",
+      "SSM-U01",
+      "SSM-U02",
+      "SSM-U03",
+      "SSM-U04",
+      "TS011F",
+      "TS0121",
+      "ZNCZ02LM",
+      "_SAMSUNG_generic",
+      "_TZ3000_00mk2xzy",
+      "_TZ3000_1obwwnmq",
+      "_TZ3000_2putqrmw",
+      "_TZ3000_2xlvlnez",
+      "_TZ3000_3ooaz3ng",
+      "_TZ3000_8lkizccl",
+      "_TZ3000_8nkb7mof",
+      "_TZ3000_cehuw1lw",
+      "_TZ3000_cphmq0q7",
+      "_TZ3000_dpo1ysak",
+      "_TZ3000_ew3ldmgx",
+      "_TZ3000_g5xawfcq",
+      "_TZ3000_j1v25l17",
+      "_TZ3000_kdi2o9m6",
+      "_TZ3000_ksw8qtmt",
+      "_TZ3000_o1jzcxou",
+      "_TZ3000_okaz9tjs",
+      "_TZ3000_plyvnuf5",
+      "_TZ3000_rdtixbnu",
+      "_TZ3000_ss98ec5d",
+      "_TZ3000_typdpdpg",
+      "_TZ3000_u5u4cakc",
+      "_TZ3000_vtscrpmw",
+      "_TZ3000_w0qqde0g",
+      "_TZ3000_zloso4jk",
+      "lumi.plug",
+      "lumi.plug.mmeu01"
+    ],
+    "productId": [
+      "TS0115",
+      "TS011F",
+      "TS0121",
+      "generic"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press the pairing button on your device to start pairing.\n\nIf your device does not have a pairing button, check the device manual for pairing instructions."
+      }
+    }
+  }
+}

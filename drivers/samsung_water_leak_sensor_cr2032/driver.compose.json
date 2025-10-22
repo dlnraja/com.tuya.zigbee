@@ -15,6 +15,12 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "SJCGQ11LM",
+      "SJCGQ12LM",
+      "SJCGQ13LM",
+      "SJCGQ14LM",
+      "SJCGQ15LM",
+      "SJCGQ16LM",
       "TS0207",
       "_SAMSUNG_generic",
       "_TYZB01_sqmd19i1",
@@ -30,7 +36,9 @@
       "_TZ3000_t6jriawg",
       "_TZ3000_upgcbody",
       "_TZE200_jthf7vb6",
-      "_TZE200_qq9mpfhw"
+      "_TZE200_qq9mpfhw",
+      "lumi.sensor_wleak",
+      "lumi.sensor_wleak.aq1"
     ],
     "productId": [
       "TS0207",

@@ -15,8 +15,13 @@
   "zigbee": {
     "manufacturerName": [
       "GE",
+      "GZCGQ01LM",
+      "RTCGQ11LM",
+      "SNZB-02",
       "Sengled",
       "TS0207",
+      "WSDCGQ11LM",
+      "WSDCGQ12LM",
       "_TZ2000_a476raq2",
       "_TZ2000_hjsgdkfl",
       "_TZ2000_xogb73am",
@@ -101,13 +106,16 @@
       "_TZE200_dwcarsat",
       "_TZE200_locansqn",
       "_TZE200_m9skfctm",
+      "_TZE200_qoy0ekbd",
       "_TZE200_ryfmq5rl",
       "_TZE200_yvx5lh6k",
       "_TZE200_znbl8dj5",
       "_TZE204_auin8mzr",
       "_TZE204_cjbofhxw",
       "_TZE204_upagmta9",
-      "_TZE284_uqfph8ah"
+      "_TZE284_uqfph8ah",
+      "lumi.sensor_ht",
+      "lumi.weather"
     ],
     "productId": [
       "3130",
