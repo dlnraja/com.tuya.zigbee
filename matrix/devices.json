@@ -375,8 +375,7 @@
       "onoff",
       "measure_temperature",
       "measure_humidity",
-      "measure_battery",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -2027,8 +2026,7 @@
     "capabilities": [
       "onoff",
       "measure_battery",
-      "dim",
-      "alarm_battery"
+      "dim"
     ],
     "power_source": "battery",
     "clusters": []
@@ -2151,8 +2149,7 @@
     "capabilities": [
       "alarm_motion",
       "measure_luminance",
-      "measure_battery",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -2879,8 +2876,7 @@
     "model_count": 23,
     "capabilities": [
       "measure_battery",
-      "onoff",
-      "alarm_battery"
+      "onoff"
     ],
     "power_source": "battery",
     "clusters": []
@@ -3122,8 +3118,7 @@
     "capabilities": [
       "onoff",
       "measure_battery",
-      "dim",
-      "alarm_battery"
+      "dim"
     ],
     "power_source": "battery",
     "clusters": []
@@ -5365,8 +5360,7 @@
     "capabilities": [
       "button.sos",
       "alarm_generic",
-      "measure_battery",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -7502,8 +7496,7 @@
       "target_temperature",
       "measure_temperature",
       "alarm_water",
-      "measure_battery",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -7626,8 +7619,7 @@
       "target_temperature",
       "measure_temperature",
       "alarm_water",
-      "measure_battery",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -7752,8 +7744,7 @@
       "measure_water",
       "alarm_water",
       "measure_battery",
-      "measure_temperature",
-      "alarm_battery"
+      "measure_temperature"
     ],
     "power_source": "battery",
     "clusters": []
@@ -7899,8 +7890,7 @@
     "capabilities": [
       "onoff",
       "onoff.gang2",
-      "measure_battery",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -8057,8 +8047,7 @@
       "button.4",
       "measure_battery",
       "onoff",
-      "dim",
-      "alarm_battery"
+      "dim"
     ],
     "power_source": "battery",
     "clusters": []
@@ -8200,8 +8189,7 @@
     "capabilities": [
       "onoff",
       "measure_battery",
-      "dim",
-      "alarm_battery"
+      "dim"
     ],
     "power_source": "battery",
     "clusters": []
@@ -8356,8 +8344,7 @@
       "button.4",
       "button.5",
       "measure_battery",
-      "dim",
-      "alarm_battery"
+      "dim"
     ],
     "power_source": "battery",
     "clusters": []
@@ -8502,8 +8489,7 @@
       "button.5",
       "button.6",
       "measure_battery",
-      "dim",
-      "alarm_battery"
+      "dim"
     ],
     "power_source": "battery",
     "clusters": []
@@ -8671,8 +8657,207 @@
     "capabilities": [
       "onoff",
       "measure_battery",
-      "dim",
-      "alarm_battery"
+      "dim"
+    ],
+    "power_source": "battery",
+    "clusters": []
+  },
+  {
+    "driver_id": "button_1gang",
+    "name": "1-Buttons Wireless Controller",
+    "class": "button",
+    "manufacturers": [
+      "TS0041",
+      "_TZ3000_tk3s5tyg",
+      "_TZ3000_tk3s5tya",
+      "_TZ3400_tk3s5tyg",
+      "_TZ3000_adkvzooy",
+      "_TZ3000_bi6lpsew",
+      "_TZ3000_qzjcsmar",
+      "_TYZB01_qm6djpta",
+      "_TZ3000_czuyt8lz",
+      "_TZ3000_fa9mlvja"
+    ],
+    "models": [
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS0046",
+      "TS0048",
+      "TS0003",
+      "TS0013"
+    ],
+    "manufacturer_count": 10,
+    "model_count": 8,
+    "capabilities": [
+      "measure_battery"
+    ],
+    "power_source": "battery",
+    "clusters": []
+  },
+  {
+    "driver_id": "button_2gang",
+    "name": "2-Buttons Wireless Controller",
+    "class": "button",
+    "manufacturers": [
+      "TS0042",
+      "_TZ3000_xabckq1v",
+      "_TZ3000_owgcnkrh",
+      "_TZ3000_d0ypg4o2",
+      "_TZ3000_peszejy7",
+      "_TZ3000_uri7ongn",
+      "_TZ3000_fq1sxfrj",
+      "_TZ3400_key8kk7r",
+      "_TZ3000_ixla93vd"
+    ],
+    "models": [
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS0046",
+      "TS0048",
+      "TS0003",
+      "TS0013"
+    ],
+    "manufacturer_count": 9,
+    "model_count": 8,
+    "capabilities": [
+      "measure_battery"
+    ],
+    "power_source": "battery",
+    "clusters": []
+  },
+  {
+    "driver_id": "button_3gang",
+    "name": "3-Button Wireless Controller",
+    "class": "button",
+    "manufacturers": [
+      "TS0043",
+      "_TZ3000_xabckq1v",
+      "_TZ3000_bi6lpsew",
+      "_TZ3000_a7ouggvs",
+      "_TZ3000_vp6clf9d",
+      "_TZ3000_fsiepnrh",
+      "_TZ3000_qmi1cfuq",
+      "_TZ3000_zmy1waw6",
+      "_TZ3000_majwnphg",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_nnwehhst",
+      "_TZ3000_axpdxqgu",
+      "_TZ3000_dfgbtub0",
+      "_TZ3000_pdevogdj",
+      "_TZ3000_vd43bbfq",
+      "_TZ3000_2mbfxlzr",
+      "_TZ3000_bvrlqyj7",
+      "_TZ3000_odygigth",
+      "_TZ3000_otvn3lne",
+      "_TZ3000_46t1rvdu",
+      "_TZ3000_fkp5zyho",
+      "_TZ3000_ltiqubue",
+      "_TZ3000_g5xawfcq",
+      "_TZ3000_oikiyf3b",
+      "_TZ3000_o005nuxx",
+      "_TZ3000_msl6wxk9",
+      "_TZ3000_hgu1dlak"
+    ],
+    "models": [
+      "TS0043",
+      "TS0003",
+      "TS0013"
+    ],
+    "manufacturer_count": 28,
+    "model_count": 3,
+    "capabilities": [
+      "measure_battery"
+    ],
+    "power_source": "battery",
+    "clusters": []
+  },
+  {
+    "driver_id": "button_4gang",
+    "name": "4-Buttons Wireless Controller",
+    "class": "button",
+    "manufacturers": [
+      "TS0044",
+      "_TZ3000_vp6clf9d",
+      "_TZ3000_xabckq1v",
+      "_TZ3000_ee8nrt2l",
+      "_TZ3000_w8jwkczz",
+      "_TZ3000_tk3s5tyg",
+      "_TZ3000_czuyt8lz"
+    ],
+    "models": [
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS0046",
+      "TS0048",
+      "TS0003",
+      "TS0013"
+    ],
+    "manufacturer_count": 7,
+    "model_count": 8,
+    "capabilities": [
+      "measure_battery"
+    ],
+    "power_source": "battery",
+    "clusters": []
+  },
+  {
+    "driver_id": "button_6gang",
+    "name": "6-Buttons Wireless Controller",
+    "class": "button",
+    "manufacturers": [
+      "TS0046",
+      "_TZ3000_xabckq1v",
+      "_TZ3000_vp6clf9d",
+      "_TZ3000_ee8nrt2l"
+    ],
+    "models": [
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS0046",
+      "TS0048",
+      "TS0003",
+      "TS0013"
+    ],
+    "manufacturer_count": 4,
+    "model_count": 8,
+    "capabilities": [
+      "measure_battery"
+    ],
+    "power_source": "battery",
+    "clusters": []
+  },
+  {
+    "driver_id": "button_8gang",
+    "name": "8-Buttons Wireless Controller",
+    "class": "button",
+    "manufacturers": [
+      "TS0048",
+      "_TZ3000_vp6clf9d",
+      "_TZ3000_xabckq1v"
+    ],
+    "models": [
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS0046",
+      "TS0048",
+      "TS0003",
+      "TS0013"
+    ],
+    "manufacturer_count": 3,
+    "model_count": 8,
+    "capabilities": [
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -8692,7 +8877,7 @@
     "capabilities": [
       "alarm_contact",
       "measure_temperature",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -8796,8 +8981,7 @@
     "model_count": 40,
     "capabilities": [
       "alarm_contact",
-      "measure_battery",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -8854,7 +9038,7 @@
     "manufacturer_count": 34,
     "model_count": 7,
     "capabilities": [
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -8906,7 +9090,7 @@
     "model_count": 4,
     "capabilities": [
       "alarm_contact",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -8969,8 +9153,7 @@
     "manufacturer_count": 39,
     "model_count": 8,
     "capabilities": [
-      "measure_battery",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -9033,7 +9216,7 @@
     "manufacturer_count": 40,
     "model_count": 7,
     "capabilities": [
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -9085,7 +9268,7 @@
     "model_count": 4,
     "capabilities": [
       "alarm_contact",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -9186,8 +9369,7 @@
     "manufacturer_count": 55,
     "model_count": 30,
     "capabilities": [
-      "measure_battery",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -9678,8 +9860,7 @@
     "manufacturer_count": 47,
     "model_count": 35,
     "capabilities": [
-      "measure_battery",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -10439,7 +10620,7 @@
     "manufacturer_count": 58,
     "model_count": 4,
     "capabilities": [
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -10617,8 +10798,7 @@
     "manufacturer_count": 67,
     "model_count": 9,
     "capabilities": [
-      "measure_battery",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -10739,8 +10919,7 @@
       "measure_humidity",
       "measure_battery",
       "target_temperature",
-      "thermostat_mode",
-      "alarm_battery"
+      "thermostat_mode"
     ],
     "power_source": "battery",
     "clusters": []
@@ -10801,7 +10980,7 @@
     "capabilities": [
       "measure_temperature",
       "measure_humidity",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -11254,7 +11433,7 @@
     "capabilities": [
       "alarm_motion",
       "measure_luminance",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -11304,7 +11483,7 @@
     "capabilities": [
       "alarm_motion",
       "measure_luminance",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -11364,7 +11543,7 @@
     "model_count": 4,
     "capabilities": [
       "alarm_motion",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -11429,7 +11608,7 @@
     "model_count": 4,
     "capabilities": [
       "alarm_motion",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -11474,7 +11653,7 @@
     "model_count": 4,
     "capabilities": [
       "alarm_water",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -11534,9 +11713,264 @@
     "model_count": 4,
     "capabilities": [
       "alarm_motion",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
+    "clusters": []
+  },
+  {
+    "driver_id": "switch_touch_1gang",
+    "name": "1-Gang Touch Switch",
+    "class": "socket",
+    "manufacturers": [
+      "TS0601",
+      "_TZE200_7tdtqgwv",
+      "_TZE200_tz32mtza",
+      "_TZE200_9cxuhakf",
+      "_TZE200_2wg5qrjy",
+      "_TZE200_vhy3iakz"
+    ],
+    "models": [
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0006",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS0016",
+      "TS0601"
+    ],
+    "manufacturer_count": 6,
+    "model_count": 11,
+    "capabilities": [
+      "onoff"
+    ],
+    "power_source": "ac",
+    "clusters": []
+  },
+  {
+    "driver_id": "switch_touch_3gang",
+    "name": "3-Gang Touch Switch",
+    "class": "socket",
+    "manufacturers": [
+      "TS0601",
+      "_TZE200_go3tvswy",
+      "_TZE200_aqnazj70",
+      "_TZE200_1agwnems",
+      "_TZE200_k6jhsr0q"
+    ],
+    "models": [
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0006",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS0016",
+      "TS0601"
+    ],
+    "manufacturer_count": 5,
+    "model_count": 11,
+    "capabilities": [
+      "onoff",
+      "onoff.switch_2",
+      "onoff.switch_3"
+    ],
+    "power_source": "ac",
+    "clusters": []
+  },
+  {
+    "driver_id": "switch_wall_1gang",
+    "name": "1-Gang Wall Switch",
+    "class": "socket",
+    "manufacturers": [
+      "TS0001",
+      "TS0011",
+      "_TZ3000_tgddllx4",
+      "_TZ3000_o4cjetlm",
+      "_TZ3000_yujkchbz",
+      "_TZ3000_npzfdzhq",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_5ucujjts",
+      "_TZ3000_w0qqde0g",
+      "_TZ3000_pdevogdj",
+      "_TYZB01_mtunwanm",
+      "_TZ3000_kdi2o9m6",
+      "_TZ3000_uxuxkcvd"
+    ],
+    "models": [
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0006",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS0016",
+      "TS0601"
+    ],
+    "manufacturer_count": 13,
+    "model_count": 11,
+    "capabilities": [
+      "onoff"
+    ],
+    "power_source": "ac",
+    "clusters": []
+  },
+  {
+    "driver_id": "switch_wall_2gang",
+    "name": "2-Gang Wall Switch",
+    "class": "socket",
+    "manufacturers": [
+      "TS0002",
+      "TS0012",
+      "_TZ3000_18ejxno0",
+      "_TZ3000_nPGIPl5D",
+      "_TZ3000_4zf0crgo",
+      "_TZ3000_h1ipgkwn",
+      "_TZ3000_ruxexjfz",
+      "_TZ3000_fisb3ajo",
+      "_TYZB01_2gxbngba",
+      "_TZ3000_cehuw1lw"
+    ],
+    "models": [
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0006",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS0016",
+      "TS0601"
+    ],
+    "manufacturer_count": 10,
+    "model_count": 11,
+    "capabilities": [
+      "onoff",
+      "onoff.switch_2"
+    ],
+    "power_source": "ac",
+    "clusters": []
+  },
+  {
+    "driver_id": "switch_wall_3gang",
+    "name": "3-Gang Wall Switch",
+    "class": "socket",
+    "manufacturers": [
+      "TS0003",
+      "TS0013",
+      "_TZ3000_pdevogdj",
+      "_TZ3000_vjhcenzo",
+      "_TZ3000_odygigth",
+      "_TZ3000_4xfqlgqo",
+      "_TZ3000_mlswgkc3",
+      "_TZ3000_excgg5kb",
+      "_TZ3000_qmi1cfuq",
+      "_TYZB01_ncutbjdi"
+    ],
+    "models": [
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0006",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS0016",
+      "TS0601"
+    ],
+    "manufacturer_count": 10,
+    "model_count": 11,
+    "capabilities": [
+      "onoff",
+      "onoff.switch_2",
+      "onoff.switch_3"
+    ],
+    "power_source": "ac",
+    "clusters": []
+  },
+  {
+    "driver_id": "switch_wall_4gang",
+    "name": "4-Gang Wall Switch",
+    "class": "socket",
+    "manufacturers": [
+      "TS0004",
+      "TS0014",
+      "_TZ3000_tygpud44",
+      "_TZ3000_excgg5kb",
+      "_TZ3000_w0qqde0g"
+    ],
+    "models": [
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0006",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS0016",
+      "TS0601"
+    ],
+    "manufacturer_count": 5,
+    "model_count": 11,
+    "capabilities": [
+      "onoff",
+      "onoff.switch_2",
+      "onoff.switch_3",
+      "onoff.switch_4"
+    ],
+    "power_source": "ac",
+    "clusters": []
+  },
+  {
+    "driver_id": "switch_wall_6gang",
+    "name": "6-Gang Wall Switch",
+    "class": "socket",
+    "manufacturers": [
+      "TS0006",
+      "TS0016",
+      "_TZ3000_tygpud44",
+      "_TZ3000_4xfqlgqo"
+    ],
+    "models": [
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0006",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS0016",
+      "TS0601"
+    ],
+    "manufacturer_count": 4,
+    "model_count": 11,
+    "capabilities": [
+      "onoff",
+      "onoff.switch_2",
+      "onoff.switch_3",
+      "onoff.switch_4",
+      "onoff.switch_5",
+      "onoff.switch_6"
+    ],
+    "power_source": "ac",
     "clusters": []
   },
   {
@@ -12015,8 +12449,7 @@
       "measure_battery",
       "alarm_contact",
       "alarm_generic",
-      "volume_set",
-      "alarm_battery"
+      "volume_set"
     ],
     "power_source": "battery",
     "clusters": []
@@ -12251,8 +12684,7 @@
       "alarm_contact",
       "alarm_generic",
       "volume_set",
-      "onoff",
-      "alarm_battery"
+      "onoff"
     ],
     "power_source": "battery",
     "clusters": []
@@ -12835,10 +13267,85 @@
       "measure_temperature",
       "measure_humidity",
       "measure_luminance",
-      "measure_battery",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
+    "clusters": []
+  },
+  {
+    "driver_id": "wireless_button",
+    "name": "Wireless Button (Universal)",
+    "class": "button",
+    "manufacturers": [
+      "_TZ3000_0dumfk2z",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_4uuaja4a",
+      "_TZ3000_a7ouggvs",
+      "_TZ3000_axpdxqgu",
+      "_TZ3000_cehuw1lw",
+      "_TZ3000_cphmq0q7",
+      "_TZ3000_dbou1ap4",
+      "_TZ3000_el5kt5im",
+      "_TZ3000_fa9mlvja",
+      "_TZ3000_fkp5zyho",
+      "_TZ3000_fsiepnrh",
+      "_TZ3000_g5xawfcq",
+      "_TZ3000_itb0omhv",
+      "_TZ3000_iystcadi",
+      "_TZ3000_ji4araar",
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_mcxw5ehu",
+      "_TZ3000_mmtwjmaq",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_obacbukl",
+      "_TZ3000_odygigth",
+      "_TZ3000_oikiyf3b",
+      "_TZ3000_owgcnkrh",
+      "_TZ3000_p6ju8myv",
+      "_TZ3000_peszejy7",
+      "_TZ3000_pzui3skt",
+      "_TZ3000_qzjcsmar",
+      "_TZ3000_tk3s5tyg",
+      "_TZ3000_uim07oem",
+      "_TZ3000_vp6clf9d",
+      "_TZ3000_wkai4ga5",
+      "_TZ3000_xabckq1v",
+      "_TZ3000_zsh6uat3",
+      "_TZE200_7bztmfm1",
+      "_TZE200_9cxuhakf",
+      "_TZE200_azqp6ssj",
+      "_TZE200_b6wax7g0",
+      "_TZE200_bjawzodf",
+      "_TZE200_bq5c8xfe",
+      "_TZE200_ckud7u2l",
+      "_TZE200_locansqn",
+      "_TZE200_m9skfctm",
+      "_TZE200_ryfmq5rl",
+      "_TZE200_t1blo2bj",
+      "_TZE200_wfxuhoea",
+      "_TZE200_whpb9yts",
+      "_TZE200_ye5jkfsb",
+      "_TZE200_yw7cahqs",
+      "_TZE200_zl1kmjqx",
+      "_TZE200_ztc6ggyl",
+      "_TZE204_mtoaryre",
+      "lumi.remote.b186acn01",
+      "lumi.remote.b186acn02",
+      "lumi.remote.b286acn01",
+      "lumi.remote.b286acn02",
+      "lumi.remote.b486opcn01"
+    ],
+    "models": [
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS004F"
+    ],
+    "manufacturer_count": 57,
+    "model_count": 5,
+    "capabilities": [],
+    "power_source": "ac",
     "clusters": []
   },
   {
@@ -13464,8 +13971,7 @@
       "measure_battery",
       "alarm_contact",
       "alarm_generic",
-      "volume_set",
-      "alarm_battery"
+      "volume_set"
     ],
     "power_source": "battery",
     "clusters": []
@@ -13720,8 +14226,7 @@
       "measure_temperature",
       "alarm_motion",
       "alarm_co",
-      "measure_battery",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -13971,8 +14476,7 @@
       "locked",
       "alarm_tamper",
       "measure_battery",
-      "alarm_contact",
-      "alarm_battery"
+      "alarm_contact"
     ],
     "power_source": "battery",
     "clusters": []
@@ -14091,8 +14595,7 @@
     "capabilities": [
       "locked",
       "measure_battery",
-      "alarm_generic",
-      "alarm_battery"
+      "alarm_generic"
     ],
     "power_source": "battery",
     "clusters": []
@@ -14193,8 +14696,7 @@
     "capabilities": [
       "locked",
       "alarm_generic",
-      "measure_battery",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -15263,8 +15765,7 @@
     "capabilities": [
       "onoff",
       "measure_temperature",
-      "measure_battery",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -16191,8 +16692,7 @@
       "onoff",
       "dim",
       "windowcoverings_tilt_set",
-      "measure_battery",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -16327,7 +16827,8 @@
     "manufacturer_count": 92,
     "model_count": 27,
     "capabilities": [
-      "onoff"
+      "onoff",
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -16463,8 +16964,7 @@
     "capabilities": [
       "alarm_smoke",
       "measure_battery",
-      "alarm_tamper",
-      "alarm_battery"
+      "alarm_tamper"
     ],
     "power_source": "battery",
     "clusters": []
@@ -17294,8 +17794,7 @@
       "onoff",
       "onoff.gang2",
       "onoff.gang3",
-      "measure_battery",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -17594,8 +18093,7 @@
       "button.4",
       "measure_battery",
       "onoff",
-      "dim",
-      "alarm_battery"
+      "dim"
     ],
     "power_source": "battery",
     "clusters": []
@@ -17745,8 +18243,7 @@
       "alarm_smoke",
       "measure_temperature",
       "measure_humidity",
-      "measure_battery",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -17913,8 +18410,7 @@
       "measure_humidity",
       "measure_battery",
       "alarm_motion",
-      "measure_luminance",
-      "alarm_battery"
+      "measure_luminance"
     ],
     "power_source": "battery",
     "clusters": []
@@ -18058,8 +18554,7 @@
       "measure_voltage",
       "measure_current",
       "measure_battery",
-      "onoff",
-      "alarm_battery"
+      "onoff"
     ],
     "power_source": "battery",
     "clusters": []
@@ -18203,8 +18698,7 @@
       "measure_voltage",
       "measure_current",
       "measure_battery",
-      "onoff",
-      "alarm_battery"
+      "onoff"
     ],
     "power_source": "battery",
     "clusters": []
@@ -18282,8 +18776,7 @@
     "manufacturer_count": 53,
     "model_count": 9,
     "capabilities": [
-      "measure_battery",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -18930,8 +19423,7 @@
       "measure_battery",
       "alarm_motion",
       "measure_luminance",
-      "alarm_water",
-      "alarm_battery"
+      "alarm_water"
     ],
     "power_source": "battery",
     "clusters": []
@@ -19233,8 +19725,7 @@
       "measure_battery",
       "alarm_motion",
       "measure_luminance",
-      "alarm_generic",
-      "alarm_battery"
+      "alarm_generic"
     ],
     "power_source": "battery",
     "clusters": []
@@ -19400,8 +19891,7 @@
       "measure_battery",
       "alarm_motion",
       "measure_luminance",
-      "alarm_generic",
-      "alarm_battery"
+      "alarm_generic"
     ],
     "power_source": "battery",
     "clusters": []
@@ -19733,8 +20223,7 @@
       "measure_battery",
       "alarm_motion",
       "measure_luminance",
-      "alarm_generic",
-      "alarm_battery"
+      "alarm_generic"
     ],
     "power_source": "battery",
     "clusters": []
@@ -20066,8 +20555,7 @@
       "measure_battery",
       "alarm_motion",
       "measure_luminance",
-      "alarm_generic",
-      "alarm_battery"
+      "alarm_generic"
     ],
     "power_source": "battery",
     "clusters": []
@@ -20477,8 +20965,7 @@
     "model_count": 25,
     "capabilities": [
       "onoff",
-      "measure_battery",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -21260,8 +21747,7 @@
       "measure_temperature",
       "alarm_motion",
       "measure_luminance",
-      "alarm_water",
-      "alarm_battery"
+      "alarm_water"
     ],
     "power_source": "battery",
     "clusters": []
@@ -21545,16 +22031,15 @@
     "model_count": 27,
     "capabilities": [
       "onoff",
-      "measure_battery",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
   },
   {
     "driver_id": "zemismart_wireless_switch_1button_cr2450",
-    "name": "Scene Controller (Battery) (CR2450)",
-    "class": "sensor",
+    "name": "Wireless Button (1 Button)",
+    "class": "button",
     "manufacturers": [
       "QBCZ03LM",
       "TS0001",
@@ -21697,9 +22182,7 @@
     "manufacturer_count": 108,
     "model_count": 27,
     "capabilities": [
-      "onoff",
-      "measure_battery",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -21857,8 +22340,7 @@
     "capabilities": [
       "measure_battery",
       "onoff",
-      "dim",
-      "alarm_battery"
+      "dim"
     ],
     "power_source": "battery",
     "clusters": []
@@ -22007,8 +22489,7 @@
     "capabilities": [
       "onoff",
       "button.2",
-      "measure_battery",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -22167,8 +22648,7 @@
       "onoff",
       "onoff.gang2",
       "onoff.gang3",
-      "measure_battery",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -22329,8 +22809,7 @@
       "button.2",
       "button.3",
       "button.4",
-      "measure_battery",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -22484,8 +22963,7 @@
       "button.4",
       "button.5",
       "button.6",
-      "measure_battery",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -22640,8 +23118,7 @@
       "button.6",
       "button.7",
       "button.8",
-      "measure_battery",
-      "alarm_battery"
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
