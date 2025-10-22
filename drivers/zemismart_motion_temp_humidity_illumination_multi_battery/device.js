@@ -70,38 +70,58 @@ class MotionTempHumidityIlluminationSensorDevice extends ZigBeeDevice {
       }
     });
     
-    // Write IAS CIE Address proactively
+    // ==========================================
+    // IAS ZONE (Motion Sensor) - CRITICAL FIX
+    // ==========================================
     try {
-      // Get IEEE address from zclNode (SDK3 compatible)
-      const ieeeAddress = this.zclNode.ieeeAddress;
+      // Get IEEE address from multiple sources (SDK3 compatible)
+      let ieeeAddress = this.zclNode?.ieeeAddress || this.homey?.zigbee?.ieeeAddress;
+      
+      // Fallback: try to get from Homey API
+      if (!ieeeAddress) {
+        try {
+          ieeeAddress = await this.homey.zigbee.getIeeeAddress?.();
+        } catch (e) {
+          this.log('Could not get IEEE from Homey API');
+        }
+      }
+      
       if (ieeeAddress) {
         await iasZoneCluster.writeAttributes({
           iasCieAddr: ieeeAddress
         });
-        this.log('Wrote IAS CIE address:', ieeeAddress);
+        this.log('✅ Wrote IAS CIE address:', ieeeAddress);
       } else {
-        this.error('IEEE address not available');
+        this.error('⚠️ IEEE address not available - motion detection may not work until re-paired');
       }
     } catch (err) {
-      this.error('Failed to write IAS CIE address:', err);
+      this.error('Failed to write IAS CIE address (non-critical):', err.message);
     }
     // ==========================================
     // BATTERY MANAGEMENT - OPTIMIZED
     // ==========================================
     
-    // Configure battery reporting
+    // Configure battery reporting (optional - device may not support it)
     try {
-      await this.configureAttributeReporting([{
-        endpointId: 1,
-        cluster: CLUSTER.POWER_CONFIGURATION,  // SDK3: Use CLUSTER constant
-        attributeName: 'batteryPercentageRemaining',
-        minInterval: 3600,
-        maxInterval: 65535,  // MAX uint16 (18.2h) - was 86400 (24h) causing range error
-        minChange: 2  // FIXED: Minimum 2 for battery (0-200 scale)
-      }]);
-      this.log('Battery reporting configured');
+      const endpoint = this.zclNode.endpoints[1];
+      const powerConfigCluster = endpoint?.clusters?.powerConfiguration;
+      
+      // Only configure if cluster exists and supports the attribute
+      if (powerConfigCluster && powerConfigCluster.attributes?.batteryPercentageRemaining) {
+        await this.configureAttributeReporting([{
+          endpointId: 1,
+          cluster: CLUSTER.POWER_CONFIGURATION,  // SDK3: Use CLUSTER constant
+          attributeName: 'batteryPercentageRemaining',
+          minInterval: 3600,
+          maxInterval: 65535,  // MAX uint16 (18.2h) - was 86400 (24h) causing range error
+          minChange: 2  // FIXED: Minimum 2 for battery (0-200 scale)
+        }]);
+        this.log('Battery reporting configured');
+      } else {
+        this.log('Battery reporting not supported by device (will poll instead)');
+      }
     } catch (err) {
-      this.log('Battery report config failed (non-critical):', err.message);
+      this.log('Battery report config failed (non-critical, will use polling):', err.message);
     }
     
     // Battery capability will be registered later with other sensors (line ~207)

@@ -227,11 +227,20 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
 
       // Write IAS CIE Address (v2.15.71 working pattern)
       try {
-        // Get IEEE address from zclNode (SDK3 compatible - FIXED!)
-        const ieeeAddress = zclNode.ieeeAddress;
+        // Get IEEE address from multiple sources (SDK3 compatible - FIXED!)
+        let ieeeAddress = zclNode.ieeeAddress || this.homey?.zigbee?.ieeeAddress;
+        
+        // Fallback: try to get from Homey API
+        if (!ieeeAddress) {
+          try {
+            ieeeAddress = await this.homey.zigbee.getIeeeAddress?.();
+          } catch (e) {
+            this.log('Could not get IEEE from Homey API');
+          }
+        }
         
         if (!ieeeAddress) {
-          throw new Error('IEEE address not available from zclNode');
+          throw new Error('IEEE address not available - will retry on next pairing');
         }
 
         this.log('📡 Homey IEEE:', ieeeAddress);
