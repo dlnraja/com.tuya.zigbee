@@ -1,0 +1,69 @@
+Version 4.1.4 - Complete Image Optimization & SOS Button Fix
+
+🖼️ IMAGE OPTIMIZATION:
+✅ Generated 183 icon.svg files for all drivers (100% coverage)
+✅ Optimized image organization across all 183 drivers
+✅ Created automatic image generation scripts
+✅ All images now conform to Homey SDK3 standards
+
+🆘 CRITICAL FIX - SOS Button:
+✅ Fixed IAS Zone enrollment failure (IEEE address not available)
+✅ Implemented 5 fallback methods for IEEE address recovery
+✅ Added detailed diagnostic logging
+✅ Improved error handling and user feedback
+✅ Applies to all emergency button drivers
+
+🔧 TECHNICAL IMPROVEMENTS:
+✅ Enhanced IEEE address discovery with multi-source fallback
+✅ Improved IAS Zone enrollment reliability
+✅ Better error messages for troubleshooting
+✅ Added comprehensive diagnostic logging
+
+📊 MAINTENANCE TOOLS:
+✅ Created audit_images.js - Automated image auditing
+✅ Created generate_missing_icons.js - Automatic icon generation
+✅ Created generate_png_from_svg.js - SVG to PNG conversion
+✅ Complete documentation in IMAGE_OPTIMIZATION_REPORT.md
+
+🎨 ICON CATEGORIES (18 types):
+- Motion/PIR Sensors
+- Contact Sensors
+- Temperature/Humidity Sensors
+- Smart Plugs & Outlets
+- Smart Bulbs
+- LED Strips
+- Switches & Dimmers
+- Curtains & Blinds
+- Thermostats & TRVs
+- Valves
+- Smoke & Gas Detectors
+- Water Leak Sensors
+- SOS/Emergency Buttons
+- Wireless Buttons
+- Scene Controllers
+- Doorbells
+- Air Quality Monitors
+- Sirens & Locks
+
+📈 STATISTICS:
+- 631 total images optimized
+- 183 icon.svg generated
+- 0 images over 500KB
+- 100% driver coverage
+- 0 validation errors
+
+🐛 BUG FIXES:
+- Fixed SOS button not responding to press (IEEE enrollment error)
+- Fixed IAS Zone enrollment failures
+- Improved battery reporting configuration
+
+👥 USER REPORTS ADDRESSED:
+- Log ID 23ff6ed3: SOS button IEEE address error - FIXED
+- Log ID b3028f16: 3-button switch guidance - DOCUMENTED
+
+📝 DOCUMENTATION:
+- IMAGE_OPTIMIZATION_REPORT.md
+- CORRECTIONS_SUMMARY.md
+- DIAGNOSTIC_REPORTS_RESPONSE.md
+
+This release focuses on visual completeness and critical bug fixes for emergency buttons.

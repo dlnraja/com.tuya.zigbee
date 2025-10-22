@@ -74,5 +74,16 @@
         "en": "Press the pairing button on your device to start pairing.\n\nIf your device does not have a pairing button, check the device manual for pairing instructions."
       }
     }
+  },
+  "metadata": {
+    "app": {
+      "id": "com.dlnraja.tuya.zigbee",
+      "name": "Universal Tuya Zigbee",
+      "version": "4.1.3",
+      "api": {
+        "min": 3,
+        "max": 3
+      }
+    }
   }
 }
