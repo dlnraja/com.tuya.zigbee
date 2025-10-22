@@ -6,7 +6,7 @@
   "class": "sensor",
   "capabilities": [
     "alarm_water",
-    "alarm_battery"
+    "measure_battery"
   ],
   "images": {
     "small": "drivers/samsung_water_leak_sensor_cr2032/assets/images/small.png",

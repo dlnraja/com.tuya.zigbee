@@ -195,11 +195,29 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
     const iasZoneCluster = sosEndpoint.clusters.iasZone;
 
     if (iasZoneCluster) {
-      // Listen for zone status changes (attribute reports)
-      iasZoneCluster.on('attr.zoneStatus', (value) => {
+      // Listen for zoneStatus attribute changes
+      iasZoneCluster.on('attr.zoneStatus', async (value) => {
+        this.log('🔔 Zone Status changed (attr):', value);
         const alarmActive = (value & 0x01) === 0x01; // Bit 0 = alarm1 (button pressed)
         this.log('🔔 SOS Button (attr):', alarmActive);
+        
+        // Update capability
         this.setCapabilityValue('alarm_generic', alarmActive).catch(this.error);
+        
+        // TRIGGER FLOW CARDS when button pressed
+        if (alarmActive) {
+          this.log('🚨 Triggering SOS Button flow cards (attribute)');
+          
+          // Trigger generic button pressed
+          this.homey.flow.getDeviceTriggerCard('button_pressed')
+            .trigger(this, {}, {})
+            .catch(err => this.error('Failed to trigger button_pressed:', err));
+          
+          // Trigger SOS-specific
+          this.homey.flow.getDeviceTriggerCard('sos_button_pressed')
+            .trigger(this, {}, {})
+            .catch(err => this.error('Failed to trigger sos_button_pressed:', err));
+        }
       });
       
       // CRITICAL: Listen for zone status change notifications (command-based)
@@ -208,7 +226,36 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
         this.log('📨 SOS Button notification received:', payload);
         const alarmActive = (payload.zoneStatus & 0x01) === 0x01;
         this.log('🔔 SOS Button (notification):', alarmActive);
+        
+        // Update capability
         this.setCapabilityValue('alarm_generic', alarmActive).catch(this.error);
+        
+        // TRIGGER FLOW CARDS when button pressed
+        if (alarmActive) {
+          this.log('🚨 Triggering SOS Button flow cards');
+          
+          // Trigger generic button pressed
+          this.homey.flow.getDeviceTriggerCard('button_pressed')
+            .trigger(this, {}, {})
+            .catch(err => this.error('Failed to trigger button_pressed:', err));
+          
+          // Trigger SOS-specific
+          this.homey.flow.getDeviceTriggerCard('sos_button_pressed')
+            .trigger(this, {}, {})
+            .catch(err => this.error('Failed to trigger sos_button_pressed:', err));
+          
+          // Trigger alarm activated
+          this.homey.flow.getDeviceTriggerCard('alarm_generic_true')
+            .trigger(this, {}, {})
+            .catch(err => this.log('alarm_generic_true trigger not available'));
+        } else {
+          this.log('✅ SOS Button alarm cleared');
+          
+          // Trigger alarm cleared
+          this.homey.flow.getDeviceTriggerCard('alarm_generic_false')
+            .trigger(this, {}, {})
+            .catch(err => this.log('alarm_generic_false trigger not available'));
+        }
       });
 
       // Proactive enrollment response
@@ -225,73 +272,54 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
         }
       });
 
-      // Write IAS CIE Address (v2.15.71 working pattern) - ENHANCED IEEE RECOVERY
+      // Write IAS CIE Address (SDK3 CORRECT METHOD - v4.1.7)
       try {
-        this.log('🔍 Starting IEEE address discovery...');
+        this.log('🔍 Getting Homey coordinator IEEE address...');
         
-        // Try multiple sources for IEEE address
-        let ieeeAddress = null;
+        // CRITICAL: Need HOMEY's IEEE address, not the device's!
+        // This is the coordinator address that IAS devices enroll to
+        let homeyIeee = null;
         
-        // Method 1: From zclNode directly
-        if (zclNode.ieeeAddress) {
-          ieeeAddress = zclNode.ieeeAddress;
-          this.log('✅ Method 1: Got IEEE from zclNode:', ieeeAddress);
+        // Method 1: Direct from homey.zigbee.ieee (MOST RELIABLE)
+        if (this.homey?.zigbee?.ieee) {
+          homeyIeee = this.homey.zigbee.ieee;
+          this.log('✅ Got Homey IEEE from homey.zigbee.ieee:', homeyIeee);
         }
         
-        // Method 2: From homey.zigbee property
-        if (!ieeeAddress && this.homey?.zigbee?.ieeeAddress) {
-          ieeeAddress = this.homey.zigbee.ieeeAddress;
-          this.log('✅ Method 2: Got IEEE from homey.zigbee:', ieeeAddress);
+        // Method 2: Try alternative property names
+        if (!homeyIeee && this.homey?.zigbee?.ieeeAddress) {
+          homeyIeee = this.homey.zigbee.ieeeAddress;
+          this.log('✅ Got Homey IEEE from homey.zigbee.ieeeAddress:', homeyIeee);
         }
         
-        // Method 3: From homey.zigbee.getIeeeAddress() function
-        if (!ieeeAddress && typeof this.homey?.zigbee?.getIeeeAddress === 'function') {
-          try {
-            ieeeAddress = await this.homey.zigbee.getIeeeAddress();
-            this.log('✅ Method 3: Got IEEE from getIeeeAddress():', ieeeAddress);
-          } catch (e) {
-            this.log('⚠️ Method 3 failed:', e.message);
-          }
+        // Method 3: Try from manager
+        if (!homeyIeee && this.homey?.zigbee?.manager?.ieeeAddress) {
+          homeyIeee = this.homey.zigbee.manager.ieeeAddress;
+          this.log('✅ Got Homey IEEE from manager:', homeyIeee);
         }
         
-        // Method 4: From device data
-        if (!ieeeAddress && this.getData()?.ieeeAddress) {
-          ieeeAddress = this.getData().ieeeAddress;
-          this.log('✅ Method 4: Got IEEE from device data:', ieeeAddress);
-        }
-        
-        // Method 5: Try to read from basic cluster
-        if (!ieeeAddress) {
-          try {
-            const basicCluster = zclNode.endpoints[1]?.clusters?.basic;
-            if (basicCluster) {
-              const attrs = await basicCluster.readAttributes(['manufacturerName', 'modelId']);
-              this.log('ℹ️ Device info:', attrs);
-            }
-          } catch (e) {
-            this.log('⚠️ Method 5 failed:', e.message);
-          }
-        }
-        
-        // If still no IEEE, try to use a fallback coordinator address
-        if (!ieeeAddress) {
-          // Log all available properties for debugging
-          this.log('⚠️ IEEE address not found. Available sources:');
-          this.log('  - zclNode.ieeeAddress:', zclNode.ieeeAddress);
-          this.log('  - homey.zigbee:', this.homey?.zigbee ? 'exists' : 'undefined');
-          
-          throw new Error('IEEE address not available from any source. Please re-pair the device.');
+        if (!homeyIeee) {
+          // Log debug info
+          this.log('❌ Available zigbee properties:', Object.keys(this.homey?.zigbee || {}));
+          throw new Error('IEEE address not available from zclNode');
         }
 
-        this.log('📡 Using Homey IEEE address:', ieeeAddress);
+        this.log('📡 Using Homey coordinator IEEE address:', homeyIeee);
 
-        // Write CIE Address (SDK3 expects string, not Buffer)
+        // Convert IEEE to Buffer (reverse byte order for Zigbee)
+        const ieeeBuffer = Buffer.from(
+          homeyIeee.replace(/:/g, '').match(/.{2}/g).reverse().join(''),
+          'hex'
+        );
+        this.log('📡 IEEE Buffer (reversed):', ieeeBuffer.toString('hex'));
+
+        // Write CIE Address using SDK3 method
         await iasZoneCluster.writeAttributes({
-          iasCieAddr: ieeeAddress
+          iasCieAddr: ieeeBuffer
         });
-        this.log('✅ IAS CIE Address written (SDK3 method)');
+        this.log('✅ IAS CIE Address written successfully (SDK3 method)');
 
-        // VERIFY enrollment (v2.15.71 pattern)
+        // VERIFY enrollment
         const verify = await iasZoneCluster.readAttributes(['iasCieAddr']);
         this.log('✅ Enrollment verified:', verify.iasCieAddr?.toString('hex'));
 

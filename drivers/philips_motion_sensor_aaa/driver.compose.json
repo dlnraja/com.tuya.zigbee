@@ -7,7 +7,7 @@
   "capabilities": [
     "alarm_motion",
     "measure_luminance",
-    "alarm_battery"
+    "measure_battery"
   ],
   "images": {
     "small": "drivers/philips_motion_sensor_aaa/assets/images/small.png",

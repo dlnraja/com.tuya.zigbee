@@ -46,8 +46,8 @@ class TuyaZigbeeDevice extends ZigBeeDevice {
     if (this.hasCapability('measure_battery')) {
       this.registerCapability('measure_battery', 1);
     }
-    if (this.hasCapability('alarm_battery')) {
-      this.registerCapability('alarm_battery', 1);
+    if (this.hasCapability('measure_battery')) {
+      this.registerCapability('measure_battery', 1);
     }
         // Register capabilities based on driver config
         const capabilities = this.getCapabilities();

@@ -24,7 +24,7 @@ class MiniSwitchDevice extends ZigBeeDevice {
         this.registerCapability('measure_humidity', 1029);
         
         // Register battery alarm
-        this.registerCapability('alarm_battery', 1);
+        this.registerCapability('measure_battery', 1);
         
         try {
         await this.configureAttributeReporting([

@@ -1,10 +1,6 @@
 'use strict';
-const { ZigBeeDevice } = require('homey-zigbeedriver');
-const { CLUSTER } = require('zigbee-clusters');
-const IASZoneEnroller = require('../../lib/IASZoneEnroller');
-const batteryConverter = require('../../lib/tuya-engine/converters/battery');
-const FallbackSystem = require('../../lib/FallbackSystem');
-class Device extends ZigBeeDevice {
+const SmartSwitchDriver = require('../../lib/SmartSwitchDriver');
+class Device extends SmartSwitchDriver {
     async onNodeInit({ zclNode }) {
     // IAS Zone enrollment (motion/contact sensors)
     if (this.hasCapability('alarm_motion') || this.hasCapability('alarm_contact') || 

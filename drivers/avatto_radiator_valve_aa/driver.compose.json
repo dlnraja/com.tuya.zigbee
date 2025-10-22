@@ -5,8 +5,7 @@
   "class": "other",
   "capabilities": [
     "measure_battery",
-    "onoff",
-    "alarm_battery"
+    "onoff"
   ],
   "zigbee": {
     "manufacturerName": [
