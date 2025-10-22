@@ -12,8 +12,16 @@
   ],
   "zigbee": {
     "manufacturerName": [
+      "QBCZ11LM",
+      "SP120",
+      "SP220",
+      "SSM-U01",
+      "SSM-U02",
+      "SSM-U03",
+      "SSM-U04",
       "TS011F",
       "TS0121",
+      "ZNCZ02LM",
       "_TZ1800_ejwkn2h2",
       "_TZ1800_fcdjzz3s",
       "_TZ2000_a476raq2",
@@ -28,12 +36,15 @@
       "_TZ3000_18ejxno0",
       "_TZ3000_1obwwnmq",
       "_TZ3000_26fmupbb",
+      "_TZ3000_2putqrmw",
       "_TZ3000_2xlvlnez",
+      "_TZ3000_3ooaz3ng",
       "_TZ3000_4rbqgcuv",
       "_TZ3000_4uf3d0ax",
       "_TZ3000_4uuaja4a",
       "_TZ3000_7ysdnebc",
       "_TZ3000_8bxrzyxz",
+      "_TZ3000_8lkizccl",
       "_TZ3000_8nkb7mof",
       "_TZ3000_9djocypn",
       "_TZ3000_cehuw1lw",
@@ -74,7 +85,9 @@
       "_TZE200_81isopgh",
       "_TZE200_bqcqqjpb",
       "_TZE200_m9skfctm",
-      "_TZE200_wfxuhoea"
+      "_TZE200_wfxuhoea",
+      "lumi.plug",
+      "lumi.plug.mmeu01"
     ],
     "productId": [
       "TS0001",

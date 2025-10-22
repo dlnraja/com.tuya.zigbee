@@ -23,6 +23,9 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "3321-G",
+      "3321-S",
+      "SNZB-04",
       "TS0203",
       "TS0215",
       "_TZ1800_ejwkn2h2",
@@ -111,7 +114,9 @@
       "_TZE200_m9skfctm",
       "_TZE200_ryfmq5rl",
       "_TZE200_wfxuhoea",
-      "_TZE204_sbyx0lm6"
+      "_TZE204_sbyx0lm6",
+      "lumi.sensor_magnet",
+      "lumi.sensor_magnet.aq2"
     ],
     "productId": [
       "RH3001",

@@ -18,6 +18,7 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "JTYJ-GD-01LM/BW",
       "TS0205",
       "TS0502B",
       "TS0505B",
@@ -110,7 +111,9 @@
       "_TZE200_vzekyi4c",
       "_TZE200_wfxuhoea",
       "_TZE200_yh7aoahi",
-      "_TZE204_ntcy3xu1"
+      "_TZE204_ntcy3xu1",
+      "lumi.sensor_smoke",
+      "lumi.sensor_smoke.acn03"
     ],
     "productId": [
       "TS0205",

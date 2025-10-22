@@ -16,6 +16,9 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "3321-G",
+      "3321-S",
+      "SNZB-04",
       "Signify Netherlands B.V.",
       "TS0001",
       "TS0002",
@@ -46,6 +49,8 @@
       "_TZ1800_ejwkn2h2",
       "_TZ3000_",
       "_TZ3000_26fmupbb",
+      "_TZ3000_2mbfxlzr",
+      "_TZ3000_402jjyro",
       "_TZ3000_4ugnzsli",
       "_TZ3000_7d8yme6f",
       "_TZ3000_7tbsruql",
@@ -74,7 +79,9 @@
       "_TZE200_",
       "_TZE200_ar0slwnd",
       "_TZE204_",
-      "_TZE204_sbyx0lm6"
+      "_TZE204_sbyx0lm6",
+      "lumi.sensor_magnet",
+      "lumi.sensor_magnet.aq2"
     ],
     "productId": [
       "HDB001",
