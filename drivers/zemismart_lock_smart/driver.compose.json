@@ -4,7 +4,12 @@
     "fr": "Zemismart Lock Smart"
   },
   "class": "lock",
-  "capabilities": [],
+  "capabilities": [
+    "locked",
+    "lock_mode",
+    "alarm_battery",
+    "measure_battery"
+  ],
   "energy": {
     "batteries": [
       "CR2032",

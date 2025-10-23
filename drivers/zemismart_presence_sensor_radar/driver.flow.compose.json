@@ -1,0 +1,18 @@
+{
+  "triggers": [
+    {
+      "id": "zemismart_presence_sensor_radar_alarm_motion_true",
+      "title": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté"
+      }
+    },
+    {
+      "id": "zemismart_presence_sensor_radar_alarm_motion_false",
+      "title": {
+        "en": "No motion",
+        "fr": "Aucun mouvement"
+      }
+    }
+  ]
+}

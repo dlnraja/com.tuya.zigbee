@@ -4,7 +4,12 @@
     "fr": "Zemismart Temperature Sensor Advanced"
   },
   "class": "sensor",
-  "capabilities": [],
+  "capabilities": [
+    "alarm_motion",
+    "measure_temperature",
+    "alarm_battery",
+    "measure_battery"
+  ],
   "energy": {
     "batteries": [
       "CR2032",

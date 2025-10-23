@@ -1,0 +1,36 @@
+{
+  "triggers": [
+    {
+      "id": "zemismart_temperature_sensor_alarm_motion_true",
+      "title": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté"
+      }
+    },
+    {
+      "id": "zemismart_temperature_sensor_alarm_motion_false",
+      "title": {
+        "en": "No motion",
+        "fr": "Aucun mouvement"
+      }
+    },
+    {
+      "id": "zemismart_temperature_sensor_measure_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          },
+          "example": 20.5
+        }
+      ]
+    }
+  ]
+}
