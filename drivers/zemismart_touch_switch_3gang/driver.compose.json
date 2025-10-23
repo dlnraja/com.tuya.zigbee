@@ -434,5 +434,11 @@
     "large": "drivers/zemismart_touch_switch_3gang/assets/images/large.png",
     "xlarge": "drivers/zemismart_touch_switch_3gang/assets/images/xlarge.png"
   },
-  "id": "zemismart_touch_switch_3gang"
+  "id": "zemismart_touch_switch_3gang",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }

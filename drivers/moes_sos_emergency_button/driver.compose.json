@@ -265,5 +265,11 @@
     "large": "drivers/moes_sos_emergency_button/assets/images/large.png",
     "xlarge": "drivers/moes_sos_emergency_button/assets/images/xlarge.png"
   },
-  "id": "moes_sos_emergency_button"
+  "id": "moes_sos_emergency_button",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }

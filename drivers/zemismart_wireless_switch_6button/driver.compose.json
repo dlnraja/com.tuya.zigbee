@@ -407,5 +407,11 @@
     "large": "drivers/zemismart_wireless_switch_6button/assets/images/large.png",
     "xlarge": "drivers/zemismart_wireless_switch_6button/assets/images/xlarge.png"
   },
-  "id": "zemismart_wireless_switch_6button"
+  "id": "zemismart_wireless_switch_6button",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }
