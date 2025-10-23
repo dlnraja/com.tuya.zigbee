@@ -4,7 +4,14 @@
     "fr": "Zemismart Smoke Detector Temp Humidity Advanced"
   },
   "class": "sensor",
-  "capabilities": [],
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_smoke",
+    "alarm_fire",
+    "alarm_battery",
+    "measure_battery"
+  ],
   "energy": {
     "batteries": [
       "CR2032",

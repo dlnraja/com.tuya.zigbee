@@ -1,0 +1,43 @@
+{
+  "triggers": [
+    {
+      "id": "zemismart_lock_fingerprint_locked",
+      "title": {
+        "en": "Locked",
+        "fr": "Verrouillé"
+      }
+    },
+    {
+      "id": "zemismart_lock_fingerprint_unlocked",
+      "title": {
+        "en": "Unlocked",
+        "fr": "Déverrouillé"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "zemismart_lock_fingerprint_is_locked",
+      "title": {
+        "en": "Is !{{locked|unlocked}}",
+        "fr": "Est !{{verrouillé|déverrouillé}}"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "zemismart_lock_fingerprint_lock",
+      "title": {
+        "en": "Lock",
+        "fr": "Verrouiller"
+      }
+    },
+    {
+      "id": "zemismart_lock_fingerprint_unlock",
+      "title": {
+        "en": "Unlock",
+        "fr": "Déverrouiller"
+      }
+    }
+  ]
+}

@@ -4,7 +4,9 @@
     "fr": "Zemismart Smart Switch 3gang"
   },
   "class": "socket",
-  "capabilities": [],
+  "capabilities": [
+    "onoff"
+  ],
   "energy": {
     "batteries": [
       "CR2032",

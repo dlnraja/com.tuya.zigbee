@@ -4,7 +4,9 @@
     "fr": "Zemismart Wireless Switch 3button"
   },
   "class": "socket",
-  "capabilities": [],
+  "capabilities": [
+    "onoff"
+  ],
   "energy": {
     "batteries": [
       "CR2032",

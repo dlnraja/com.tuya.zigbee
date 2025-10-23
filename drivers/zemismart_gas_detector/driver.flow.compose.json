@@ -1,0 +1,32 @@
+{
+  "triggers": [
+    {
+      "id": "zemismart_gas_detector_alarm_motion_true",
+      "title": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté"
+      }
+    },
+    {
+      "id": "zemismart_gas_detector_alarm_motion_false",
+      "title": {
+        "en": "No motion",
+        "fr": "Aucun mouvement"
+      }
+    },
+    {
+      "id": "zemismart_gas_detector_alarm_co_true",
+      "title": {
+        "en": "Carbon monoxide detected",
+        "fr": "Monoxyde de carbone détecté"
+      }
+    },
+    {
+      "id": "zemismart_gas_detector_alarm_co2_true",
+      "title": {
+        "en": "CO2 alarm triggered",
+        "fr": "Alarme CO2 déclenchée"
+      }
+    }
+  ]
+}
