@@ -145,7 +145,20 @@ const ADVANCED_SETTINGS = [
     value: false,
     hint: {
       en: 'Display raw battery voltage in device settings',
-      fr: 'Afficher la tension brute de la batterie dans les paramètres du périphérique'
+      fr: 'Afficher la tension brute de la batterie dans les paramètres'
+    }
+  },
+  {
+    id: 'enable_power_estimation',
+    type: 'checkbox',
+    label: {
+      en: 'Enable Power Estimation',
+      fr: 'Activer Estimation Puissance'
+    },
+    value: true,
+    hint: {
+      en: 'Estimate power consumption when real measurement is not available (AC/DC devices only)',
+      fr: 'Estimer la consommation quand la mesure réelle n\'est pas disponible (appareils AC/DC seulement)'
     }
   }
 ];
