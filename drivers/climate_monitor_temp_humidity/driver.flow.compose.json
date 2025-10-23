@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "moes_climate_monitor_measure_temperature_changed",
+      "id": "climate_monitor_temp_humidity_climate_monitor_measure_temperature_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée"
@@ -19,21 +19,21 @@
       ]
     },
     {
-      "id": "moes_climate_monitor_alarm_battery_true",
+      "id": "climate_monitor_temp_humidity_climate_monitor_alarm_battery_true",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible"
       }
     },
     {
-      "id": "moes_climate_monitor_alarm_battery_false",
+      "id": "climate_monitor_temp_humidity_climate_monitor_alarm_battery_false",
       "title": {
         "en": "Battery OK",
         "fr": "Batterie OK"
       }
     },
     {
-      "id": "moes_climate_monitor_measure_battery_changed",
+      "id": "climate_monitor_temp_humidity_climate_monitor_measure_battery_changed",
       "title": {
         "en": "Battery level changed",
         "fr": "Niveau batterie changé"

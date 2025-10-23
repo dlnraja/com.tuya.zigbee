@@ -1,0 +1,50 @@
+{
+  "triggers": [
+    {
+      "id": "bulb_white_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "Allumé"
+      }
+    },
+    {
+      "id": "bulb_white_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Éteint"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "bulb_white_is_on",
+      "title": {
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "bulb_white_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      }
+    },
+    {
+      "id": "bulb_white_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Éteindre"
+      }
+    },
+    {
+      "id": "bulb_white_toggle",
+      "title": {
+        "en": "Toggle on or off",
+        "fr": "Basculer"
+      }
+    }
+  ]
+}

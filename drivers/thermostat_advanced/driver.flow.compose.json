@@ -1,7 +1,7 @@
 {
   "actions": [
     {
-      "id": "avatto_thermostat_smart_internal_tuya_thermostat_smart_internal_set_thermostat_mode",
+      "id": "thermostat_advanced_thermostat_smart_internal_thermostat_smart_internal_set_thermostat_mode",
       "title": {
         "en": "Set mode",
         "fr": "Définir mode"
@@ -54,7 +54,7 @@
   ],
   "conditions": [
     {
-      "id": "avatto_thermostat_smart_internal_tuya_thermostat_smart_internal_mode_is",
+      "id": "thermostat_advanced_thermostat_smart_internal_thermostat_smart_internal_mode_is",
       "title": {
         "en": "Mode is...",
         "fr": "Mode est..."
@@ -100,7 +100,7 @@
   ],
   "triggers": [
     {
-      "id": "avatto_thermostat_smart_internal_measure_battery_changed",
+      "id": "thermostat_advanced_thermostat_smart_internal_measure_battery_changed",
       "title": {
         "en": "Battery level changed",
         "fr": "Niveau batterie changé"

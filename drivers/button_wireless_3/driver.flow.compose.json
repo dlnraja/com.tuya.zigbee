@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "button_3gang_button_pressed",
+      "id": "button_wireless_3_button_3gang_button_pressed",
       "title": {
         "en": "Button pressed",
         "fr": "Bouton appuyé",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "button_3gang_button_double_press",
+      "id": "button_wireless_3_button_3gang_button_double_press",
       "title": {
         "en": "Button double-pressed",
         "fr": "Bouton double-cliqué",
@@ -87,7 +87,7 @@
       ]
     },
     {
-      "id": "button_3gang_button_long_press",
+      "id": "button_wireless_3_button_3gang_button_long_press",
       "title": {
         "en": "Button long-pressed",
         "fr": "Bouton pressé longtemps",
@@ -130,7 +130,7 @@
       ]
     },
     {
-      "id": "button_3gang_button_multi_press",
+      "id": "button_wireless_3_button_3gang_button_multi_press",
       "title": {
         "en": "Button multi-pressed",
         "fr": "Bouton multi-cliqué",
@@ -189,7 +189,7 @@
       ]
     },
     {
-      "id": "button_3gang_button_1_pressed",
+      "id": "button_wireless_3_button_3gang_button_1_pressed",
       "title": {
         "en": "Button 1 pressed",
         "fr": "Bouton 1 appuyé",
@@ -203,7 +203,7 @@
       }
     },
     {
-      "id": "button_3gang_button_2_pressed",
+      "id": "button_wireless_3_button_3gang_button_2_pressed",
       "title": {
         "en": "Button 2 pressed",
         "fr": "Bouton 2 appuyé",
@@ -217,7 +217,7 @@
       }
     },
     {
-      "id": "button_3gang_button_3_pressed",
+      "id": "button_wireless_3_button_3gang_button_3_pressed",
       "title": {
         "en": "Button 3 pressed",
         "fr": "Bouton 3 appuyé",
@@ -231,7 +231,7 @@
       }
     },
     {
-      "id": "button_3gang_button_1_double",
+      "id": "button_wireless_3_button_3gang_button_1_double",
       "title": {
         "en": "Button 1 double-pressed",
         "fr": "Bouton 1 double-cliqué",
@@ -245,7 +245,7 @@
       }
     },
     {
-      "id": "button_3gang_button_2_double",
+      "id": "button_wireless_3_button_3gang_button_2_double",
       "title": {
         "en": "Button 2 double-pressed",
         "fr": "Bouton 2 double-cliqué",
@@ -259,7 +259,7 @@
       }
     },
     {
-      "id": "button_3gang_button_3_double",
+      "id": "button_wireless_3_button_3gang_button_3_double",
       "title": {
         "en": "Button 3 double-pressed",
         "fr": "Bouton 3 double-cliqué",
@@ -273,7 +273,7 @@
       }
     },
     {
-      "id": "button_3gang_button_1_long",
+      "id": "button_wireless_3_button_3gang_button_1_long",
       "title": {
         "en": "Button 1 long-pressed",
         "fr": "Bouton 1 pressé longtemps",
@@ -287,7 +287,7 @@
       }
     },
     {
-      "id": "button_3gang_button_2_long",
+      "id": "button_wireless_3_button_3gang_button_2_long",
       "title": {
         "en": "Button 2 long-pressed",
         "fr": "Bouton 2 pressé longtemps",
@@ -301,7 +301,7 @@
       }
     },
     {
-      "id": "button_3gang_button_3_long",
+      "id": "button_wireless_3_button_3gang_button_3_long",
       "title": {
         "en": "Button 3 long-pressed",
         "fr": "Bouton 3 pressé longtemps",
@@ -315,7 +315,7 @@
       }
     },
     {
-      "id": "button_3gang_measure_battery_changed",
+      "id": "button_wireless_3_button_3gang_measure_battery_changed",
       "title": {
         "en": "Battery level changed",
         "fr": "Niveau batterie changé"

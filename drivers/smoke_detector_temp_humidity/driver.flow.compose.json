@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "zemismart_smoke_detector_temp_humidity_advanced_measure_temperature_changed",
+      "id": "smoke_detector_temp_humidity_advanced_measure_temperature_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée"
@@ -19,7 +19,7 @@
       ]
     },
     {
-      "id": "zemismart_smoke_detector_temp_humidity_advanced_measure_humidity_changed",
+      "id": "smoke_detector_temp_humidity_advanced_measure_humidity_changed",
       "title": {
         "en": "Humidity changed",
         "fr": "Humidité changée"
@@ -37,28 +37,28 @@
       ]
     },
     {
-      "id": "zemismart_smoke_detector_temp_humidity_advanced_alarm_smoke_true",
+      "id": "smoke_detector_temp_humidity_advanced_alarm_smoke_true",
       "title": {
         "en": "Smoke detected",
         "fr": "Fumée détectée"
       }
     },
     {
-      "id": "zemismart_smoke_detector_temp_humidity_advanced_alarm_battery_true",
+      "id": "smoke_detector_temp_humidity_advanced_alarm_battery_true",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible"
       }
     },
     {
-      "id": "zemismart_smoke_detector_temp_humidity_advanced_alarm_battery_false",
+      "id": "smoke_detector_temp_humidity_advanced_alarm_battery_false",
       "title": {
         "en": "Battery OK",
         "fr": "Batterie OK"
       }
     },
     {
-      "id": "zemismart_smoke_detector_temp_humidity_advanced_measure_battery_changed",
+      "id": "smoke_detector_temp_humidity_advanced_measure_battery_changed",
       "title": {
         "en": "Battery level changed",
         "fr": "Niveau batterie changé"
