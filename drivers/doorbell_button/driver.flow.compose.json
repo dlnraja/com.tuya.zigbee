@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "zemismart_doorbell_button_internal_tuya_doorbell_button_internal_contact_opened",
+      "id": "doorbell_button_internal_doorbell_button_internal_contact_opened",
       "title": {
         "en": "Opened",
         "fr": "Ouvert"
@@ -16,7 +16,7 @@
       }
     },
     {
-      "id": "zemismart_doorbell_button_internal_tuya_doorbell_button_internal_contact_closed",
+      "id": "doorbell_button_internal_doorbell_button_internal_contact_closed",
       "title": {
         "en": "Closed",
         "fr": "Fermé"
@@ -31,7 +31,7 @@
       }
     },
     {
-      "id": "zemismart_doorbell_button_internal_measure_battery_changed",
+      "id": "doorbell_button_internal_measure_battery_changed",
       "title": {
         "en": "Battery level changed",
         "fr": "Niveau batterie changé"
@@ -51,7 +51,7 @@
   ],
   "conditions": [
     {
-      "id": "zemismart_doorbell_button_internal_tuya_doorbell_button_internal_is_open",
+      "id": "doorbell_button_internal_doorbell_button_internal_is_open",
       "title": {
         "en": "Is open",
         "fr": "Est ouvert"
@@ -63,7 +63,7 @@
       }
     },
     {
-      "id": "zemismart_doorbell_button_internal_tuya_doorbell_button_internal_is_closed",
+      "id": "doorbell_button_internal_doorbell_button_internal_is_closed",
       "title": {
         "en": "Is closed",
         "fr": "Est fermé"

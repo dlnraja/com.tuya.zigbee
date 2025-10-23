@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "zemismart_air_quality_monitor_pro_internal_measure_temperature_changed",
+      "id": "air_quality_monitor_pro_internal_measure_temperature_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée"
@@ -19,7 +19,7 @@
       ]
     },
     {
-      "id": "zemismart_air_quality_monitor_pro_internal_measure_battery_changed",
+      "id": "air_quality_monitor_pro_internal_measure_battery_changed",
       "title": {
         "en": "Battery level changed",
         "fr": "Niveau batterie changé"

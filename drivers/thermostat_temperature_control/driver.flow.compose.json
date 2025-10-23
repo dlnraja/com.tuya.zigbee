@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "zemismart_temperature_controller_hybrid_target_temperature_changed",
+      "id": "thermostat_temperature_control_temperature_controller_hybrid_target_temperature_changed",
       "title": {
         "en": "Target temperature changed",
         "fr": "Température cible changée"
@@ -19,7 +19,7 @@
       ]
     },
     {
-      "id": "zemismart_temperature_controller_hybrid_measure_temperature_changed",
+      "id": "thermostat_temperature_control_temperature_controller_hybrid_measure_temperature_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée"
@@ -37,7 +37,7 @@
       ]
     },
     {
-      "id": "zemismart_temperature_controller_hybrid_measure_humidity_changed",
+      "id": "thermostat_temperature_control_temperature_controller_hybrid_measure_humidity_changed",
       "title": {
         "en": "Humidity changed",
         "fr": "Humidité changée"
@@ -55,7 +55,7 @@
       ]
     },
     {
-      "id": "zemismart_temperature_controller_hybrid_measure_battery_changed",
+      "id": "thermostat_temperature_control_temperature_controller_hybrid_measure_battery_changed",
       "title": {
         "en": "Battery level changed",
         "fr": "Niveau batterie changé"
@@ -75,7 +75,7 @@
   ],
   "actions": [
     {
-      "id": "zemismart_temperature_controller_hybrid_set_target_temperature",
+      "id": "thermostat_temperature_control_temperature_controller_hybrid_set_target_temperature",
       "title": {
         "en": "Set temperature to...",
         "fr": "Régler la température à..."

@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "zemismart_scene_controller_scene_controller_button_pressed",
+      "id": "scene_controller_wireless_scene_controller_scene_controller_button_pressed",
       "title": {
         "en": "Button pressed",
         "fr": "Bouton appuyé"
@@ -36,7 +36,7 @@
       }
     },
     {
-      "id": "zemismart_scene_controller_measure_battery_changed",
+      "id": "scene_controller_wireless_scene_controller_measure_battery_changed",
       "title": {
         "en": "Battery level changed",
         "fr": "Niveau batterie changé"
