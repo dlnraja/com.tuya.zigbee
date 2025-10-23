@@ -1,0 +1,171 @@
+{
+  "wrongPaths": [],
+  "missingImages": [
+    {
+      "driver": "lonsonho_shortcut_button_other",
+      "file": "driver.compose.json",
+      "field": "images.small",
+      "path": "{{driverAssetsPath}}/images/small.png"
+    },
+    {
+      "driver": "lonsonho_shortcut_button_other",
+      "file": "driver.compose.json",
+      "field": "images.large",
+      "path": "{{driverAssetsPath}}/images/large.png"
+    },
+    {
+      "driver": "lonsonho_shortcut_button_other",
+      "file": "driver.compose.json",
+      "field": "images.xlarge",
+      "path": "{{driverAssetsPath}}/images/xlarge.png"
+    },
+    {
+      "driver": "lsc_wireless_switch_4button_other",
+      "file": "driver.compose.json",
+      "field": "images.small",
+      "path": "{{driverAssetsPath}}/images/small.png"
+    },
+    {
+      "driver": "lsc_wireless_switch_4button_other",
+      "file": "driver.compose.json",
+      "field": "images.large",
+      "path": "{{driverAssetsPath}}/images/large.png"
+    },
+    {
+      "driver": "lsc_wireless_switch_4button_other",
+      "file": "driver.compose.json",
+      "field": "images.xlarge",
+      "path": "{{driverAssetsPath}}/images/xlarge.png"
+    },
+    {
+      "driver": "tuya_air_conditioner_hybrid",
+      "file": "driver.compose.json",
+      "field": "images.small",
+      "path": "{{driverAssetsPath}}/images/small.png"
+    },
+    {
+      "driver": "tuya_air_conditioner_hybrid",
+      "file": "driver.compose.json",
+      "field": "images.large",
+      "path": "{{driverAssetsPath}}/images/large.png"
+    },
+    {
+      "driver": "tuya_air_conditioner_hybrid",
+      "file": "driver.compose.json",
+      "field": "images.xlarge",
+      "path": "{{driverAssetsPath}}/images/xlarge.png"
+    },
+    {
+      "driver": "tuya_dehumidifier_hybrid",
+      "file": "driver.compose.json",
+      "field": "images.small",
+      "path": "{{driverAssetsPath}}/images/small.png"
+    },
+    {
+      "driver": "tuya_dehumidifier_hybrid",
+      "file": "driver.compose.json",
+      "field": "images.large",
+      "path": "{{driverAssetsPath}}/images/large.png"
+    },
+    {
+      "driver": "tuya_dehumidifier_hybrid",
+      "file": "driver.compose.json",
+      "field": "images.xlarge",
+      "path": "{{driverAssetsPath}}/images/xlarge.png"
+    },
+    {
+      "driver": "wireless_button",
+      "file": "driver.compose.json",
+      "field": "images.small",
+      "path": "{{driverAssetsPath}}/images/small.png"
+    },
+    {
+      "driver": "wireless_button",
+      "file": "driver.compose.json",
+      "field": "images.large",
+      "path": "{{driverAssetsPath}}/images/large.png"
+    },
+    {
+      "driver": "zemismart_sound_controller_other",
+      "file": "driver.compose.json",
+      "field": "images.small",
+      "path": "{{driverAssetsPath}}/images/small.png"
+    },
+    {
+      "driver": "zemismart_sound_controller_other",
+      "file": "driver.compose.json",
+      "field": "images.large",
+      "path": "{{driverAssetsPath}}/images/large.png"
+    },
+    {
+      "driver": "zemismart_sound_controller_other",
+      "file": "driver.compose.json",
+      "field": "images.xlarge",
+      "path": "{{driverAssetsPath}}/images/xlarge.png"
+    }
+  ],
+  "wrongSizes": [],
+  "codeReferences": [],
+  "learnmodeIssues": [
+    {
+      "driver": "avatto_radiator_valve_smart_hybrid",
+      "path": "./assets/learnmode.svg"
+    },
+    {
+      "driver": "avatto_smart_switch_2gang_hybrid",
+      "path": "./assets/learnmode.svg"
+    },
+    {
+      "driver": "avatto_smart_switch_4gang_hybrid",
+      "path": "./assets/learnmode.svg"
+    },
+    {
+      "driver": "avatto_switch_2gang_hybrid",
+      "path": "./assets/learnmode.svg"
+    },
+    {
+      "driver": "avatto_thermostat_hybrid",
+      "path": "./assets/learnmode.svg"
+    },
+    {
+      "driver": "avatto_thermostat_smart_internal",
+      "path": "./assets/learnmode.svg"
+    },
+    {
+      "driver": "avatto_water_valve_smart_hybrid",
+      "path": "./assets/learnmode.svg"
+    },
+    {
+      "driver": "zemismart_air_quality_monitor_pro_internal",
+      "path": "./assets/learnmode.svg"
+    },
+    {
+      "driver": "zemismart_curtain_motor_internal",
+      "path": "./assets/learnmode.svg"
+    },
+    {
+      "driver": "zemismart_doorbell_button_internal",
+      "path": "./assets/learnmode.svg"
+    },
+    {
+      "driver": "zemismart_scene_controller",
+      "path": "./assets/learnmode.svg"
+    },
+    {
+      "driver": "zemismart_smart_switch_1gang_hybrid",
+      "path": "./assets/learnmode.svg"
+    },
+    {
+      "driver": "zemismart_smart_switch_1gang_internal",
+      "path": "./assets/learnmode.svg"
+    },
+    {
+      "driver": "zemismart_smart_switch_3gang_hybrid",
+      "path": "./assets/learnmode.svg"
+    },
+    {
+      "driver": "zemismart_temperature_controller_hybrid",
+      "path": "./assets/learnmode.svg"
+    }
+  ]
+}
