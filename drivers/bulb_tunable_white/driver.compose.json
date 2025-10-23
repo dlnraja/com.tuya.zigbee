@@ -103,7 +103,11 @@
       "lumi.light.aqcn02",
       "lumi.light.cb2acn",
       "lumi.light.cwopcn02",
-      "lumi.light.cwopcn03"
+      "lumi.light.cwopcn03",
+      "_OSRAM_generic",
+      "_INNR_generic",
+      "_TZ3000_8uaoilu9",
+      "_PHILIPS_generic"
     ],
     "productId": [
       "73693",
@@ -182,7 +186,9 @@
       "TS0505B",
       "TS0601",
       "Z01-A19NAE26",
-      "ZB-CL01"
+      "ZB-CL01",
+      "generic",
+      "LTA027"
     ],
     "endpoints": {
       "1": {

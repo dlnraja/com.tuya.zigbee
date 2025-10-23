@@ -121,7 +121,12 @@
       "lumi.plug",
       "lumi.plug.maeu01",
       "lumi.plug.maus01",
-      "lumi.plug.mmeu01"
+      "lumi.plug.mmeu01",
+      "_OSRAM_generic",
+      "_INNR_generic",
+      "_PHILIPS_generic",
+      "_SAMSUNG_generic",
+      "_SONOFF_generic"
     ],
     "productId": [
       "7A-PL-Z-J2",
@@ -155,7 +160,8 @@
       "TS0216",
       "TS0501",
       "TS0601",
-      "outletv4"
+      "outletv4",
+      "generic"
     ],
     "endpoints": {
       "1": {
