@@ -239,7 +239,7 @@
       }
     },
     {
-      "id": "energy_optimization",
+      "id": "optimization_mode",
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
@@ -287,5 +287,10 @@
         "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
       }
     }
-  ]
+  ],
+  "images": {
+    "small": "./drivers/philips_outdoor_sensor/assets/images/small.png",
+    "large": "./drivers/philips_outdoor_sensor/assets/images/large.png",
+    "xlarge": "./drivers/philips_outdoor_sensor/assets/images/xlarge.png"
+  }
 }

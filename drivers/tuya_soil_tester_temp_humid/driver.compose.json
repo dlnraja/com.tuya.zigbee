@@ -313,7 +313,7 @@
       }
     },
     {
-      "id": "energy_optimization",
+      "id": "optimization_mode",
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
@@ -361,5 +361,10 @@
         "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
       }
     }
-  ]
+  ],
+  "images": {
+    "small": "./drivers/tuya_soil_tester_temp_humid/assets/images/small.png",
+    "large": "./drivers/tuya_soil_tester_temp_humid/assets/images/large.png",
+    "xlarge": "./drivers/tuya_soil_tester_temp_humid/assets/images/xlarge.png"
+  }
 }

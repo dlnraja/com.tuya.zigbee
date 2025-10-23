@@ -256,7 +256,7 @@
       }
     },
     {
-      "id": "energy_optimization",
+      "id": "optimization_mode",
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
@@ -304,5 +304,10 @@
         "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
       }
     }
-  ]
+  ],
+  "images": {
+    "small": "./drivers/nous_zigbee_gateway_hub/assets/images/small.png",
+    "large": "./drivers/nous_zigbee_gateway_hub/assets/images/large.png",
+    "xlarge": "./drivers/nous_zigbee_gateway_hub/assets/images/xlarge.png"
+  }
 }

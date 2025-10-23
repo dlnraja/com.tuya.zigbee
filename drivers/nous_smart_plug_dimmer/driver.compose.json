@@ -312,7 +312,7 @@
       }
     },
     {
-      "id": "energy_optimization",
+      "id": "optimization_mode",
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
@@ -360,5 +360,10 @@
         "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
       }
     }
-  ]
+  ],
+  "images": {
+    "small": "./drivers/nous_smart_plug_dimmer/assets/images/small.png",
+    "large": "./drivers/nous_smart_plug_dimmer/assets/images/large.png",
+    "xlarge": "./drivers/nous_smart_plug_dimmer/assets/images/xlarge.png"
+  }
 }

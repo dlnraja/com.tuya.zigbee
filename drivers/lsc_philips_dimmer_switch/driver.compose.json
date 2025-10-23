@@ -269,7 +269,7 @@
       }
     },
     {
-      "id": "energy_optimization",
+      "id": "optimization_mode",
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
@@ -317,5 +317,10 @@
         "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
       }
     }
-  ]
+  ],
+  "images": {
+    "small": "./drivers/lsc_philips_dimmer_switch/assets/images/small.png",
+    "large": "./drivers/lsc_philips_dimmer_switch/assets/images/large.png",
+    "xlarge": "./drivers/lsc_philips_dimmer_switch/assets/images/xlarge.png"
+  }
 }
