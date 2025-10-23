@@ -90,36 +90,93 @@ All energy-capable devices now have complete flow cards:
 
 ## 📋 Device Request Archive Integration
 
-I have reviewed the **[Tuya Zigbee App - Device Request Archive](https://community.homey.app/t/app-pro-tuya-zigbee-app-device-request-archive/)** on the Homey Community Forum. This archive contains valuable device requests and compatibility reports from the community.
+I actively monitor and integrate requests from the **[Tuya Zigbee App - Device Request Archive](https://community.homey.app/t/app-pro-tuya-zigbee-app-device-request-archive/)** on the Homey Community Forum. This archive is your direct channel to suggest new devices and report compatibility issues.
 
 ### Your Device Requests Matter
 If you have a Tuya Zigbee device that's not yet supported or not working correctly:
 
-1. **Check the Device Request Archive** first to see if it's already reported
+1. **Check the Device Request Archive** first: https://community.homey.app/t/app-pro-tuya-zigbee-app-device-request-archive/
 2. **Submit detailed information**:
    - Device model number and brand
-   - Manufacturer ID (visible during pairing)
-   - What works and what doesn't
-   - Photos of the device if possible
+   - Manufacturer ID (visible during pairing - CRITICAL for support)
+   - What capabilities work and what doesn't
+   - Photos of the device and packaging
+   - Interview data from Homey Developer Tools
 3. **Include diagnostics reports** for devices that pair but don't work correctly
 
-### Currently Supported Device Categories
-The app now supports **186 device drivers** across these categories:
-- 🏠 Smart Switches & Plugs (wall switches, touch switches, smart plugs)
-- 💡 Lighting (bulbs, dimmers, LED strips, RGB controllers)
-- 🌡️ Climate Sensors (temperature, humidity, air quality)
-- 🚪 Contact & Motion Sensors (door/window, PIR, mmWave radar)
-- 🔋 Battery-Powered Devices (wireless buttons, emergency buttons, sensors)
-- ⚡ Energy Monitoring (power meters, voltage/current monitoring)
-- 🎛️ Scene Controllers (wireless switches, scene buttons)
-- 🪟 Window Coverings (curtain motors, roller blinds)
-- 🔐 Security (locks, smoke detectors, water leak sensors)
+### 📊 Complete Device & Brand Support
 
-### Device Compatibility Notes
-- **18,000+ manufacturer IDs** supported across all drivers
-- **100% local Zigbee control** - no cloud required
-- **Unified hybrid drivers** - automatic power source detection
-- **Dynamic capability management** - capabilities adjust based on device features
+#### **186 Device Drivers** Across 9 Categories:
+- 🏠 **Smart Switches & Plugs** (60+ drivers)
+  - Wall switches: 1-8 gang variants (AC/DC/Battery/Hybrid)
+  - Touch switches: 1-6 gang with dimming
+  - Smart plugs: Basic, energy monitoring, USB outlets
+  - Timer modules, mini switches, remote switches
+
+- 💡 **Lighting** (40+ drivers)
+  - Smart bulbs: White, tunable, RGB, RGBW, RGB+CCT
+  - LED strips: Basic, advanced, outdoor, professional
+  - Dimmers: 1-4 gang, touch, timer modules
+  - Ceiling lights, spots, fans with lights
+
+- 🌡️ **Climate & Air Quality** (25+ drivers)
+  - Temperature sensors: CR2032, AAA, AA, hybrid
+  - Humidity sensors: Basic, advanced, with display
+  - Air quality monitors: PM2.5, CO2, VOC, formaldehyde
+  - Thermostats: Smart, programmable, hybrid
+
+- 🚪 **Motion & Presence** (20+ drivers)
+  - PIR sensors: Basic, advanced, with illuminance
+  - mmWave radar: Motion detection, presence sensing
+  - Multi-sensors: Motion + temp + humidity + illuminance
+  - Contact sensors: Door/window, magnetic, wireless
+
+- 🔋 **Battery-Powered Devices** (15+ drivers)
+  - SOS emergency buttons: CR2032, CR2450
+  - Wireless buttons: 1-8 buttons, scene controllers
+  - Battery sensors: Temperature, humidity, motion
+  - Remote controllers: Scene switches, dimmers
+
+- ⚡ **Energy Monitoring** (15+ drivers)
+  - Power meters: 16A, advanced monitoring
+  - Energy plugs: Real-time consumption tracking
+  - Voltage/current monitoring
+  - Smart sockets with energy reporting
+
+- 🎛️ **Scene Controllers** (10+ drivers)
+  - Wireless scene switches: 1-8 buttons
+  - Rotary knobs: Dimmer control
+  - Remote controls: Multi-function
+  - Scene buttons: Programmable actions
+
+- 🪟 **Window Coverings** (5+ drivers)
+  - Curtain motors: AC/Battery/Internal powered
+  - Roller blinds: Smart controllers
+  - Shutter controllers: AC powered
+  - Switch controllers: Wireless
+
+- 🔐 **Security & Safety** (10+ drivers)
+  - Smart locks: Fingerprint, PIN, basic
+  - Smoke detectors: Basic, advanced, with temp/humidity
+  - Water leak sensors: Battery powered
+  - Door sensors: Magnetic, wireless
+  - Gas detectors: Combustible gas, CO
+
+#### **25+ Major Brands Supported**:
+**Tuya Ecosystem**: Tuya, Smart Life, Lidl, Nous, Neo Coolcam, Moes  
+**Popular Brands**: Avatto, Zemismart, Blitzwolf, Lonsonho, Girier  
+**European**: Silvercrest (Lidl), Samotech, Immax  
+**Asian**: Aubess, Moes, Tuyatec, Woox  
+**Compatible**: Works with 18,000+ manufacturer IDs across all Tuya-compatible devices
+
+### Device Compatibility Details
+- **18,000+ manufacturer IDs** supported (complete list in drivers)
+- **100% local Zigbee control** - no cloud or internet required
+- **Unified hybrid drivers** - automatic power source detection (AC/DC/Battery)
+- **Dynamic capability management** - adapts based on device features
+- **Battery type auto-detection** - CR2032, CR2450, AAA, AA
+- **Energy management** - Advanced flow cards for power monitoring
+- **Multi-endpoint support** - For gang switches and complex devices
 
 ## 🔧 What You Need to Do
 
