@@ -1,20 +1,18 @@
 # Device Matrix
 
-**Generated:** 2025-10-23T01:01:09.134Z
+**Generated:** 2025-10-23T01:36:05.450Z
 
 **Total Devices:** 186
 
 ## Devices by Class
 
-- **sensor:** 62 drivers
+- **sensor:** 65 drivers
 - **socket:** 59 drivers
-- **light:** 28 drivers
-- **button:** 22 drivers
-- **other:** 10 drivers
+- **light:** 29 drivers
+- **button:** 23 drivers
+- **thermostat:** 5 drivers
+- **windowcoverings:** 3 drivers
 - **lock:** 2 drivers
-- **unknown:** 1 drivers
-- **thermostat:** 1 drivers
-- **humidifier:** 1 drivers
 
 ## Statistics
 
