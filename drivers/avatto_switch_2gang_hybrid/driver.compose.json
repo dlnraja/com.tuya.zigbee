@@ -183,169 +183,214 @@
   ],
   "settings": [
     {
+      "id": "power_source",
       "type": "dropdown",
-      "id": "debug_level",
-      "value": "INFO",
       "label": {
-        "en": "Debug Level",
-        "nl": "Debug Niveau",
-        "de": "Debug-Ebene",
-        "fr": "Niveau de Debug",
-        "it": "Livello Debug",
-        "sv": "Felsökningsnivå",
-        "no": "Feilsøkingsnivå",
-        "es": "Nivel de Depuración",
-        "da": "Fejlsøgningsniveau"
+        "en": "Power Source",
+        "fr": "Source d'Alimentation"
       },
-      "hint": {
-        "en": "Set logging verbosity. TRACE is very detailed, ERROR shows only critical issues.",
-        "nl": "Stel logging verbositeit in. TRACE is zeer gedetailleerd, ERROR toont alleen kritieke problemen.",
-        "de": "Protokollierungsstufe festlegen. TRACE ist sehr detailliert, ERROR zeigt nur kritische Probleme.",
-        "fr": "Définir la verbosité des logs. TRACE est très détaillé, ERROR montre uniquement les problèmes critiques.",
-        "it": "Imposta verbosità logging. TRACE è molto dettagliato, ERROR mostra solo problemi critici.",
-        "sv": "Ställ in loggningsnivå. TRACE är mycket detaljerad, ERROR visar bara kritiska problem.",
-        "no": "Angi loggingsnivå. TRACE er svært detaljert, ERROR viser bare kritiske problemer.",
-        "es": "Establecer nivel de registro. TRACE es muy detallado, ERROR muestra solo problemas críticos.",
-        "da": "Indstil logningsniveau. TRACE er meget detaljeret, ERROR viser kun kritiske problemer."
-      },
+      "value": "auto",
       "values": [
         {
-          "id": "TRACE",
+          "id": "auto",
           "label": {
-            "en": "TRACE (Very Verbose)",
-            "nl": "TRACE (Zeer Uitgebreid)",
-            "de": "TRACE (Sehr Ausführlich)",
-            "fr": "TRACE (Très Verbeux)",
-            "it": "TRACE (Molto Verboso)",
-            "sv": "TRACE (Mycket Utförlig)",
-            "no": "TRACE (Veldig Detaljert)",
-            "es": "TRACE (Muy Detallado)",
-            "da": "TRACE (Meget Detaljeret)"
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
           }
         },
         {
-          "id": "DEBUG",
+          "id": "ac",
           "label": {
-            "en": "DEBUG (Verbose)",
-            "nl": "DEBUG (Uitgebreid)",
-            "de": "DEBUG (Ausführlich)",
-            "fr": "DEBUG (Verbeux)",
-            "it": "DEBUG (Verboso)",
-            "sv": "DEBUG (Utförlig)",
-            "no": "DEBUG (Detaljert)",
-            "es": "DEBUG (Detallado)",
-            "da": "DEBUG (Detaljeret)"
+            "en": "AC Powered",
+            "fr": "Alimentation Secteur"
           }
         },
         {
-          "id": "INFO",
+          "id": "dc",
           "label": {
-            "en": "INFO (Normal)",
-            "nl": "INFO (Normaal)",
-            "de": "INFO (Normal)",
-            "fr": "INFO (Normal)",
-            "it": "INFO (Normale)",
-            "sv": "INFO (Normal)",
-            "no": "INFO (Normal)",
-            "es": "INFO (Normal)",
-            "da": "INFO (Normal)"
+            "en": "DC Powered",
+            "fr": "Alimentation DC"
           }
         },
         {
-          "id": "WARN",
+          "id": "battery",
           "label": {
-            "en": "WARN (Warnings Only)",
-            "nl": "WARN (Alleen Waarschuwingen)",
-            "de": "WARN (Nur Warnungen)",
-            "fr": "WARN (Avertissements Uniquement)",
-            "it": "WARN (Solo Avvisi)",
-            "sv": "WARN (Endast Varningar)",
-            "no": "WARN (Bare Advarsler)",
-            "es": "WARN (Solo Advertencias)",
-            "da": "WARN (Kun Advarsler)"
-          }
-        },
-        {
-          "id": "ERROR",
-          "label": {
-            "en": "ERROR (Errors Only)",
-            "nl": "ERROR (Alleen Fouten)",
-            "de": "ERROR (Nur Fehler)",
-            "fr": "ERROR (Erreurs Uniquement)",
-            "it": "ERROR (Solo Errori)",
-            "sv": "ERROR (Endast Fel)",
-            "no": "ERROR (Bare Feil)",
-            "es": "ERROR (Solo Errores)",
-            "da": "ERROR (Kun Fejl)"
+            "en": "Battery Powered",
+            "fr": "Sur Batterie"
           }
         }
-      ]
+      ],
+      "hint": {
+        "en": "Select power source manually or use auto-detection",
+        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+      }
     },
     {
-      "type": "group",
+      "id": "battery_type",
+      "type": "dropdown",
       "label": {
-        "en": "SDK3 Advanced Settings",
-        "fr": "Paramètres Avancés SDK3"
+        "en": "Battery Type",
+        "fr": "Type de Batterie"
       },
-      "children": [
+      "value": "auto",
+      "values": [
         {
-          "id": "switch_mode",
-          "type": "dropdown",
+          "id": "auto",
           "label": {
-            "en": "Switch Mode",
-            "fr": "Mode Interrupteur"
-          },
-          "value": "toggle",
-          "values": [
-            {
-              "id": "toggle",
-              "label": {
-                "en": "Toggle",
-                "fr": "Bascule"
-              }
-            },
-            {
-              "id": "momentary",
-              "label": {
-                "en": "Momentary",
-                "fr": "Momentané"
-              }
-            }
-          ]
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
         },
         {
-          "id": "power_on_state",
-          "type": "dropdown",
+          "id": "CR2032",
           "label": {
-            "en": "Power-On State",
-            "fr": "État Allumage"
-          },
-          "value": "last",
-          "values": [
-            {
-              "id": "last",
-              "label": {
-                "en": "Last State",
-                "fr": "Dernier État"
-              }
-            },
-            {
-              "id": "on",
-              "label": {
-                "en": "On",
-                "fr": "Allumé"
-              }
-            },
-            {
-              "id": "off",
-              "label": {
-                "en": "Off",
-                "fr": "Éteint"
-              }
-            }
-          ]
+            "en": "CR2032 (3V Button Cell)",
+            "fr": "CR2032 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "CR2450",
+          "label": {
+            "en": "CR2450 (3V Button Cell)",
+            "fr": "CR2450 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "AAA",
+          "label": {
+            "en": "AAA (1.5V)",
+            "fr": "AAA (1.5V)"
+          }
+        },
+        {
+          "id": "AA",
+          "label": {
+            "en": "AA (1.5V)",
+            "fr": "AA (1.5V)"
+          }
+        },
+        {
+          "id": "CR123A",
+          "label": {
+            "en": "CR123A (3V)",
+            "fr": "CR123A (3V)"
+          }
         }
-      ]
+      ],
+      "hint": {
+        "en": "Select battery type manually or use auto-detection based on voltage",
+        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+      }
+    },
+    {
+      "id": "battery_low_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold (%)",
+        "fr": "Seuil Batterie Faible (%)"
+      },
+      "value": 20,
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "hint": {
+        "en": "Trigger low battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "battery_critical_threshold",
+      "type": "number",
+      "label": {
+        "en": "Critical Battery Threshold (%)",
+        "fr": "Seuil Batterie Critique (%)"
+      },
+      "value": 10,
+      "min": 0,
+      "max": 30,
+      "step": 5,
+      "hint": {
+        "en": "Trigger critical battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "enable_battery_notifications",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Battery Notifications",
+        "fr": "Activer Notifications Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Send flow notifications for battery events",
+        "fr": "Envoyer des notifications de flow pour les événements de batterie"
+      }
+    },
+    {
+      "id": "battery_report_interval",
+      "type": "number",
+      "label": {
+        "en": "Battery Report Interval (hours)",
+        "fr": "Intervalle Rapport Batterie (heures)"
+      },
+      "value": 24,
+      "min": 1,
+      "max": 168,
+      "step": 1,
+      "hint": {
+        "en": "How often to request battery status updates",
+        "fr": "Fréquence de demande des mises à jour d'état de batterie"
+      }
+    },
+    {
+      "id": "energy_optimization",
+      "type": "dropdown",
+      "label": {
+        "en": "Energy Optimization Mode",
+        "fr": "Mode Optimisation Énergétique"
+      },
+      "value": "balanced",
+      "values": [
+        {
+          "id": "performance",
+          "label": {
+            "en": "Performance (More responsive)",
+            "fr": "Performance (Plus réactif)"
+          }
+        },
+        {
+          "id": "balanced",
+          "label": {
+            "en": "Balanced",
+            "fr": "Équilibré"
+          }
+        },
+        {
+          "id": "power_saving",
+          "label": {
+            "en": "Power Saving (Longer battery)",
+            "fr": "Économie d'énergie (Batterie plus longue)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Balance between responsiveness and battery life",
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+      }
+    },
+    {
+      "id": "show_voltage",
+      "type": "checkbox",
+      "label": {
+        "en": "Show Battery Voltage",
+        "fr": "Afficher Tension Batterie"
+      },
+      "value": false,
+      "hint": {
+        "en": "Display raw battery voltage in device settings",
+        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+      }
     }
   ],
   "learnmode": {
@@ -364,6 +409,18 @@
         "min": 3,
         "max": 3
       }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "AAA",
+      "AA",
+      "CR123A"
+    ],
+    "approximation": {
+      "usageConstant": 0.5
     }
   }
 }
