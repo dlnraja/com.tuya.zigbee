@@ -355,5 +355,11 @@
     "large": "drivers/zemismart_valve_smart/assets/images/large.png",
     "xlarge": "drivers/zemismart_valve_smart/assets/images/xlarge.png"
   },
-  "id": "zemismart_valve_smart"
+  "id": "zemismart_valve_smart",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }

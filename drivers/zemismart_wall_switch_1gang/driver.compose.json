@@ -436,5 +436,11 @@
     "large": "drivers/zemismart_wall_switch_1gang/assets/images/large.png",
     "xlarge": "drivers/zemismart_wall_switch_1gang/assets/images/xlarge.png"
   },
-  "id": "zemismart_wall_switch_1gang"
+  "id": "zemismart_wall_switch_1gang",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }

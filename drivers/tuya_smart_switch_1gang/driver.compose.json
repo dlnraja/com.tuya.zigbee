@@ -454,5 +454,11 @@
     "large": "drivers/tuya_smart_switch_1gang/assets/images/large.png",
     "xlarge": "drivers/tuya_smart_switch_1gang/assets/images/xlarge.png"
   },
-  "id": "tuya_smart_switch_1gang"
+  "id": "tuya_smart_switch_1gang",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }

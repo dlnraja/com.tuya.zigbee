@@ -431,5 +431,11 @@
     "large": "drivers/zemismart_smoke_temp_humid_sensor/assets/images/large.png",
     "xlarge": "drivers/zemismart_smoke_temp_humid_sensor/assets/images/xlarge.png"
   },
-  "id": "zemismart_smoke_temp_humid_sensor"
+  "id": "zemismart_smoke_temp_humid_sensor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }
