@@ -4,7 +4,9 @@
     "fr": "Lsc Philips Led Strip"
   },
   "class": "light",
-  "capabilities": [],
+  "capabilities": [
+    "onoff"
+  ],
   "energy": {
     "batteries": [
       "CR2032",

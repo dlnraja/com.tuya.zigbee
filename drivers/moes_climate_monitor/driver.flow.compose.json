@@ -1,0 +1,22 @@
+{
+  "triggers": [
+    {
+      "id": "moes_climate_monitor_measure_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          },
+          "example": 20.5
+        }
+      ]
+    }
+  ]
+}

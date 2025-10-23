@@ -11,7 +11,9 @@
     "da": "Trådløs Knap (Universal)"
   },
   "class": "button",
-  "capabilities": [],
+  "capabilities": [
+    "alarm_generic"
+  ],
   "capabilitiesOptions": {},
   "zigbee": {
     "manufacturerName": [

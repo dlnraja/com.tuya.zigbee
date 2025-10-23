@@ -4,7 +4,9 @@
     "fr": "Lonsonho Samsung Button"
   },
   "class": "button",
-  "capabilities": [],
+  "capabilities": [
+    "alarm_generic"
+  ],
   "energy": {
     "batteries": [
       "CR2032",

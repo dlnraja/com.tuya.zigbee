@@ -1,0 +1,50 @@
+{
+  "triggers": [
+    {
+      "id": "lsc_philips_bulb_color_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "Allumé"
+      }
+    },
+    {
+      "id": "lsc_philips_bulb_color_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Éteint"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "lsc_philips_bulb_color_is_on",
+      "title": {
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "lsc_philips_bulb_color_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      }
+    },
+    {
+      "id": "lsc_philips_bulb_color_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Éteindre"
+      }
+    },
+    {
+      "id": "lsc_philips_bulb_color_toggle",
+      "title": {
+        "en": "Toggle on or off",
+        "fr": "Basculer"
+      }
+    }
+  ]
+}

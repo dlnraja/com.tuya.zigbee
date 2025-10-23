@@ -1,0 +1,18 @@
+{
+  "triggers": [
+    {
+      "id": "philips_outdoor_sensor_alarm_contact_true",
+      "title": {
+        "en": "Contact alarm activated",
+        "fr": "Alarme de contact activée"
+      }
+    },
+    {
+      "id": "philips_outdoor_sensor_alarm_contact_false",
+      "title": {
+        "en": "Contact alarm deactivated",
+        "fr": "Alarme de contact désactivée"
+      }
+    }
+  ]
+}

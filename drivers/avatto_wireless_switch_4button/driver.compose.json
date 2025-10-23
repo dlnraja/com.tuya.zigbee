@@ -4,7 +4,10 @@
     "fr": "Avatto Wireless Switch 4button"
   },
   "class": "socket",
-  "capabilities": [],
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
   "energy": {
     "batteries": [
       "CR2032",

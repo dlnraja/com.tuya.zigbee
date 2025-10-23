@@ -1,0 +1,18 @@
+{
+  "triggers": [
+    {
+      "id": "samsung_water_leak_sensor_alarm_water_true",
+      "title": {
+        "en": "Water leak detected",
+        "fr": "Fuite d'eau détectée"
+      }
+    },
+    {
+      "id": "samsung_water_leak_sensor_alarm_water_false",
+      "title": {
+        "en": "No water leak",
+        "fr": "Aucune fuite d'eau"
+      }
+    }
+  ]
+}
