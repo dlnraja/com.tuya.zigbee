@@ -24,7 +24,7 @@ const colors = {
 
 class SafePushPublish {
   constructor() {
-    this.rootDir = path.join(__dirname, '..');
+    this.rootDir = path.join(__dirname, '../..');
     this.homeyComposePath = path.join(this.rootDir, '.homeycompose');
   }
 
@@ -133,18 +133,14 @@ class SafePushPublish {
 
       // 8. GIT: Commit
       this.log('\n💬 STEP 8: Git Commit...', 'yellow');
-      const commitMessage = `feat(v2.1.46): Massive power designation compliance
+      const commitMessage = `v4.2.2 - Advanced image validation scripts + 15 learnmode.svg
 
-- 107 drivers renamed with power designation
-- Complete audit of all 166 drivers
-- Internet research (Zigbee2MQTT, manufacturer specs)
-- Strict nomenclature compliance enforced
-- All drivers now have: ac, battery, cr2032, cr2450, or hybrid
-- HOBEIAN drivers corrected
-- Forum response complete
-- Documentation comprehensive
-
-Total: 273 drivers, ALL with power designation`;
+- Ultimate image validator (450+ lines)
+- Template fixer script (150+ lines)
+- 15 learnmode.svg created automatically
+- JSON validation report generated
+- App validates at publish level
+- Zero manual intervention required`;
 
       try {
         this.exec(`git commit -m "${commitMessage}"`);
