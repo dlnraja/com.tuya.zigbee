@@ -33,8 +33,13 @@
     "batteries": [
       "CR2032",
       "CR2450",
-      "AAA"
-    ]
+      "AAA",
+      "AA",
+      "CR123A"
+    ],
+    "approximation": {
+      "usageConstant": 0.5
+    }
   },
   "zigbee": {
     "manufacturerName": [
@@ -135,144 +140,214 @@
   ],
   "settings": [
     {
-      "type": "group",
+      "id": "power_source",
+      "type": "dropdown",
       "label": {
-        "en": "Button Detection",
-        "fr": "Détection Boutons",
-        "nl": "Détection Boutons",
-        "de": "Détection Boutons",
-        "it": "Détection Boutons",
-        "sv": "Détection Boutons",
-        "no": "Détection Boutons",
-        "es": "Détection Boutons",
-        "da": "Détection Boutons"
+        "en": "Power Source",
+        "fr": "Source d'Alimentation"
       },
-      "children": [
+      "value": "auto",
+      "values": [
         {
-          "id": "enable_double_press",
-          "type": "checkbox",
+          "id": "auto",
           "label": {
-            "en": "Enable Double-Press Detection",
-            "fr": "Activer Détection Double-Pression",
-            "nl": "Activer Détection Double-Pression",
-            "de": "Activer Détection Double-Pression",
-            "it": "Activer Détection Double-Pression",
-            "sv": "Activer Détection Double-Pression",
-            "no": "Activer Détection Double-Pression",
-            "es": "Activer Détection Double-Pression",
-            "da": "Activer Détection Double-Pression"
-          },
-          "value": true
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
         },
         {
-          "id": "double_press_window",
-          "type": "number",
+          "id": "ac",
           "label": {
-            "en": "Double-Press Time Window (ms)",
-            "fr": "Fenêtre Double-Pression (ms)",
-            "nl": "Fenêtre Double-Pression (ms)",
-            "de": "Fenêtre Double-Pression (ms)",
-            "it": "Fenêtre Double-Pression (ms)",
-            "sv": "Fenêtre Double-Pression (ms)",
-            "no": "Fenêtre Double-Pression (ms)",
-            "es": "Fenêtre Double-Pression (ms)",
-            "da": "Fenêtre Double-Pression (ms)"
-          },
-          "value": 400,
-          "min": 200,
-          "max": 1000,
-          "step": 50
+            "en": "AC Powered",
+            "fr": "Alimentation Secteur"
+          }
         },
         {
-          "id": "enable_long_press",
-          "type": "checkbox",
+          "id": "dc",
           "label": {
-            "en": "Enable Long-Press Detection",
-            "fr": "Activer Détection Pression Longue",
-            "nl": "Activer Détection Pression Longue",
-            "de": "Activer Détection Pression Longue",
-            "it": "Activer Détection Pression Longue",
-            "sv": "Activer Détection Pression Longue",
-            "no": "Activer Détection Pression Longue",
-            "es": "Activer Détection Pression Longue",
-            "da": "Activer Détection Pression Longue"
-          },
-          "value": true
+            "en": "DC Powered",
+            "fr": "Alimentation DC"
+          }
         },
         {
-          "id": "long_press_duration",
-          "type": "number",
+          "id": "battery",
           "label": {
-            "en": "Long-Press Duration (ms)",
-            "fr": "Durée Pression Longue (ms)",
-            "nl": "Durée Pression Longue (ms)",
-            "de": "Durée Pression Longue (ms)",
-            "it": "Durée Pression Longue (ms)",
-            "sv": "Durée Pression Longue (ms)",
-            "no": "Durée Pression Longue (ms)",
-            "es": "Durée Pression Longue (ms)",
-            "da": "Durée Pression Longue (ms)"
-          },
-          "value": 1000,
-          "min": 500,
-          "max": 3000,
-          "step": 100
+            "en": "Battery Powered",
+            "fr": "Sur Batterie"
+          }
         }
-      ]
+      ],
+      "hint": {
+        "en": "Select power source manually or use auto-detection",
+        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+      }
     },
     {
-      "type": "group",
+      "id": "battery_type",
+      "type": "dropdown",
       "label": {
-        "en": "Battery Management",
-        "fr": "Gestion Batterie",
-        "nl": "Gestion Batterie",
-        "de": "Gestion Batterie",
-        "it": "Gestion Batterie",
-        "sv": "Gestion Batterie",
-        "no": "Gestion Batterie",
-        "es": "Gestion Batterie",
-        "da": "Gestion Batterie"
+        "en": "Battery Type",
+        "fr": "Type de Batterie"
       },
-      "children": [
+      "value": "auto",
+      "values": [
         {
-          "id": "battery_low_threshold",
-          "type": "number",
+          "id": "auto",
           "label": {
-            "en": "Low Battery Threshold (%)",
-            "fr": "Seuil Batterie Faible (%)",
-            "nl": "Seuil Batterie Faible (%)",
-            "de": "Seuil Batterie Faible (%)",
-            "it": "Seuil Batterie Faible (%)",
-            "sv": "Seuil Batterie Faible (%)",
-            "no": "Seuil Batterie Faible (%)",
-            "es": "Seuil Batterie Faible (%)",
-            "da": "Seuil Batterie Faible (%)"
-          },
-          "value": 20,
-          "min": 5,
-          "max": 50,
-          "step": 5
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
         },
         {
-          "id": "battery_reporting_interval",
-          "type": "number",
+          "id": "CR2032",
           "label": {
-            "en": "Battery Reporting Interval (min)",
-            "fr": "Intervalle Rapport Batterie (min)",
-            "nl": "Intervalle Rapport Batterie (min)",
-            "de": "Intervalle Rapport Batterie (min)",
-            "it": "Intervalle Rapport Batterie (min)",
-            "sv": "Intervalle Rapport Batterie (min)",
-            "no": "Intervalle Rapport Batterie (min)",
-            "es": "Intervalle Rapport Batterie (min)",
-            "da": "Intervalle Rapport Batterie (min)"
-          },
-          "value": 60,
-          "min": 15,
-          "max": 1440,
-          "step": 15
+            "en": "CR2032 (3V Button Cell)",
+            "fr": "CR2032 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "CR2450",
+          "label": {
+            "en": "CR2450 (3V Button Cell)",
+            "fr": "CR2450 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "AAA",
+          "label": {
+            "en": "AAA (1.5V)",
+            "fr": "AAA (1.5V)"
+          }
+        },
+        {
+          "id": "AA",
+          "label": {
+            "en": "AA (1.5V)",
+            "fr": "AA (1.5V)"
+          }
+        },
+        {
+          "id": "CR123A",
+          "label": {
+            "en": "CR123A (3V)",
+            "fr": "CR123A (3V)"
+          }
         }
-      ]
+      ],
+      "hint": {
+        "en": "Select battery type manually or use auto-detection based on voltage",
+        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+      }
+    },
+    {
+      "id": "battery_low_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold (%)",
+        "fr": "Seuil Batterie Faible (%)"
+      },
+      "value": 20,
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "hint": {
+        "en": "Trigger low battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "battery_critical_threshold",
+      "type": "number",
+      "label": {
+        "en": "Critical Battery Threshold (%)",
+        "fr": "Seuil Batterie Critique (%)"
+      },
+      "value": 10,
+      "min": 0,
+      "max": 30,
+      "step": 5,
+      "hint": {
+        "en": "Trigger critical battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "enable_battery_notifications",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Battery Notifications",
+        "fr": "Activer Notifications Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Send flow notifications for battery events",
+        "fr": "Envoyer des notifications de flow pour les événements de batterie"
+      }
+    },
+    {
+      "id": "battery_report_interval",
+      "type": "number",
+      "label": {
+        "en": "Battery Report Interval (hours)",
+        "fr": "Intervalle Rapport Batterie (heures)"
+      },
+      "value": 24,
+      "min": 1,
+      "max": 168,
+      "step": 1,
+      "hint": {
+        "en": "How often to request battery status updates",
+        "fr": "Fréquence de demande des mises à jour d'état de batterie"
+      }
+    },
+    {
+      "id": "energy_optimization",
+      "type": "dropdown",
+      "label": {
+        "en": "Energy Optimization Mode",
+        "fr": "Mode Optimisation Énergétique"
+      },
+      "value": "balanced",
+      "values": [
+        {
+          "id": "performance",
+          "label": {
+            "en": "Performance (More responsive)",
+            "fr": "Performance (Plus réactif)"
+          }
+        },
+        {
+          "id": "balanced",
+          "label": {
+            "en": "Balanced",
+            "fr": "Équilibré"
+          }
+        },
+        {
+          "id": "power_saving",
+          "label": {
+            "en": "Power Saving (Longer battery)",
+            "fr": "Économie d'énergie (Batterie plus longue)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Balance between responsiveness and battery life",
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+      }
+    },
+    {
+      "id": "show_voltage",
+      "type": "checkbox",
+      "label": {
+        "en": "Show Battery Voltage",
+        "fr": "Afficher Tension Batterie"
+      },
+      "value": false,
+      "hint": {
+        "en": "Display raw battery voltage in device settings",
+        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+      }
     }
   ]
 }

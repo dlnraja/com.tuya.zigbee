@@ -25,9 +25,15 @@
   },
   "energy": {
     "approximation": {
-      "usageOn": 0.5,
-      "usageOff": 0.5
-    }
+      "usageConstant": 0.5
+    },
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "AAA",
+      "AA",
+      "CR123A"
+    ]
   },
   "zigbee": {
     "manufacturerName": [
@@ -108,91 +114,214 @@
   ],
   "settings": [
     {
-      "type": "group",
+      "id": "power_source",
+      "type": "dropdown",
       "label": {
-        "en": "Power Management",
-        "fr": "Gestion Énergie"
+        "en": "Power Source",
+        "fr": "Source d'Alimentation"
       },
-      "children": [
+      "value": "auto",
+      "values": [
         {
-          "id": "power_reporting",
-          "type": "checkbox",
+          "id": "auto",
           "label": {
-            "en": "Enable Power Reporting",
-            "fr": "Activer Rapport Énergie"
-          },
-          "value": true,
-          "hint": {
-            "en": "Report power consumption (AC only)",
-            "fr": "Rapporter consommation (AC uniquement)"
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
           }
         },
         {
-          "id": "power_reporting_interval",
-          "type": "number",
+          "id": "ac",
           "label": {
-            "en": "Reporting Interval (seconds)",
-            "fr": "Intervalle Rapport (secondes)"
-          },
-          "value": 60,
-          "min": 10,
-          "max": 3600
+            "en": "AC Powered",
+            "fr": "Alimentation Secteur"
+          }
+        },
+        {
+          "id": "dc",
+          "label": {
+            "en": "DC Powered",
+            "fr": "Alimentation DC"
+          }
+        },
+        {
+          "id": "battery",
+          "label": {
+            "en": "Battery Powered",
+            "fr": "Sur Batterie"
+          }
         }
-      ]
+      ],
+      "hint": {
+        "en": "Select power source manually or use auto-detection",
+        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+      }
     },
     {
-      "type": "group",
+      "id": "battery_type",
+      "type": "dropdown",
       "label": {
-        "en": "Switch Behavior",
-        "fr": "Comportement Interrupteur"
+        "en": "Battery Type",
+        "fr": "Type de Batterie"
       },
-      "children": [
+      "value": "auto",
+      "values": [
         {
-          "id": "power_on_behavior",
-          "type": "dropdown",
+          "id": "auto",
           "label": {
-            "en": "Power-On Behavior",
-            "fr": "Comportement au Démarrage"
-          },
-          "value": "previous",
-          "values": [
-            {
-              "id": "off",
-              "label": {
-                "en": "Always Off",
-                "fr": "Toujours Éteint"
-              }
-            },
-            {
-              "id": "on",
-              "label": {
-                "en": "Always On",
-                "fr": "Toujours Allumé"
-              }
-            },
-            {
-              "id": "previous",
-              "label": {
-                "en": "Restore Previous State",
-                "fr": "Restaurer État Précédent"
-              }
-            }
-          ]
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
         },
         {
-          "id": "invert_switch",
-          "type": "checkbox",
+          "id": "CR2032",
           "label": {
-            "en": "Invert Switch Logic",
-            "fr": "Inverser Logique Interrupteur"
-          },
-          "value": false,
-          "hint": {
-            "en": "Swap ON/OFF behavior",
-            "fr": "Inverser ON/OFF"
+            "en": "CR2032 (3V Button Cell)",
+            "fr": "CR2032 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "CR2450",
+          "label": {
+            "en": "CR2450 (3V Button Cell)",
+            "fr": "CR2450 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "AAA",
+          "label": {
+            "en": "AAA (1.5V)",
+            "fr": "AAA (1.5V)"
+          }
+        },
+        {
+          "id": "AA",
+          "label": {
+            "en": "AA (1.5V)",
+            "fr": "AA (1.5V)"
+          }
+        },
+        {
+          "id": "CR123A",
+          "label": {
+            "en": "CR123A (3V)",
+            "fr": "CR123A (3V)"
           }
         }
-      ]
+      ],
+      "hint": {
+        "en": "Select battery type manually or use auto-detection based on voltage",
+        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+      }
+    },
+    {
+      "id": "battery_low_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold (%)",
+        "fr": "Seuil Batterie Faible (%)"
+      },
+      "value": 20,
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "hint": {
+        "en": "Trigger low battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "battery_critical_threshold",
+      "type": "number",
+      "label": {
+        "en": "Critical Battery Threshold (%)",
+        "fr": "Seuil Batterie Critique (%)"
+      },
+      "value": 10,
+      "min": 0,
+      "max": 30,
+      "step": 5,
+      "hint": {
+        "en": "Trigger critical battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "enable_battery_notifications",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Battery Notifications",
+        "fr": "Activer Notifications Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Send flow notifications for battery events",
+        "fr": "Envoyer des notifications de flow pour les événements de batterie"
+      }
+    },
+    {
+      "id": "battery_report_interval",
+      "type": "number",
+      "label": {
+        "en": "Battery Report Interval (hours)",
+        "fr": "Intervalle Rapport Batterie (heures)"
+      },
+      "value": 24,
+      "min": 1,
+      "max": 168,
+      "step": 1,
+      "hint": {
+        "en": "How often to request battery status updates",
+        "fr": "Fréquence de demande des mises à jour d'état de batterie"
+      }
+    },
+    {
+      "id": "energy_optimization",
+      "type": "dropdown",
+      "label": {
+        "en": "Energy Optimization Mode",
+        "fr": "Mode Optimisation Énergétique"
+      },
+      "value": "balanced",
+      "values": [
+        {
+          "id": "performance",
+          "label": {
+            "en": "Performance (More responsive)",
+            "fr": "Performance (Plus réactif)"
+          }
+        },
+        {
+          "id": "balanced",
+          "label": {
+            "en": "Balanced",
+            "fr": "Équilibré"
+          }
+        },
+        {
+          "id": "power_saving",
+          "label": {
+            "en": "Power Saving (Longer battery)",
+            "fr": "Économie d'énergie (Batterie plus longue)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Balance between responsiveness and battery life",
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+      }
+    },
+    {
+      "id": "show_voltage",
+      "type": "checkbox",
+      "label": {
+        "en": "Show Battery Voltage",
+        "fr": "Afficher Tension Batterie"
+      },
+      "value": false,
+      "hint": {
+        "en": "Display raw battery voltage in device settings",
+        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+      }
     }
   ]
 }
