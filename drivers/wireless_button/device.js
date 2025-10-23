@@ -52,6 +52,7 @@ class UniversalWirelessButtonDevice extends ZigBeeDevice {
   /**
    * Détecte automatiquement le nombre de boutons
    */
+  }
   async detectButtonCount(zclNode) {
     // Check user setting first
     const settingCount = this.getSetting('button_count');
@@ -74,6 +75,7 @@ class UniversalWirelessButtonDevice extends ZigBeeDevice {
   /**
    * Détecte si le device a une batterie
    */
+  }
   async detectBattery(zclNode) {
     try {
       const endpoint = zclNode.endpoints[1];
@@ -101,6 +103,7 @@ class UniversalWirelessButtonDevice extends ZigBeeDevice {
   /**
    * Configure les capabilities dynamiquement
    */
+  }
   async setupDynamicCapabilities(buttonCount, hasBattery) {
     this.log(`Setting up capabilities: ${buttonCount} buttons, battery: ${hasBattery}`);
     
@@ -142,6 +145,7 @@ class UniversalWirelessButtonDevice extends ZigBeeDevice {
   /**
    * Configure battery reporting
    */
+  }
   async configureBatteryReporting(zclNode) {
     try {
       const endpoint = zclNode.endpoints[1];
@@ -190,6 +194,7 @@ class UniversalWirelessButtonDevice extends ZigBeeDevice {
   /**
    * Configure button clusters
    */
+  }
   async configureButtonClusters(zclNode, buttonCount) {
     for (let i = 1; i <= buttonCount; i++) {
       const endpoint = zclNode.endpoints[i];
@@ -231,6 +236,7 @@ class UniversalWirelessButtonDevice extends ZigBeeDevice {
   /**
    * Handle settings changes
    */
+  }
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     this.log('Settings changed:', changedKeys);
     

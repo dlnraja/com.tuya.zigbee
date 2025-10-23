@@ -37,66 +37,36 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
   /**
    * Register global flow cards for advanced energy management
+   * NOTE: Flow cards must be defined in app.json first
    */
   registerFlowCards() {
     this.log('📋 Registering global flow cards...');
 
-    // Condition: Check if battery below threshold
-    this.homey.flow.getConditionCard('battery_below_threshold')
-      .registerRunListener(async (args, state) => {
-        const device = args.device;
-        const threshold = args.threshold;
-        
-        if (!device.hasCapability('measure_battery')) {
-          return false;
-        }
-        
-        const batteryLevel = device.getCapabilityValue('measure_battery');
-        return batteryLevel < threshold;
-      });
+    try {
+      // Only register flow cards that exist in app.json
+      // Uncomment these when flow cards are added to app.json
+      
+      /*
+      // Condition: Check if battery below threshold
+      this.homey.flow.getConditionCard('battery_below_threshold')
+        .registerRunListener(async (args, state) => {
+          const device = args.device;
+          const threshold = args.threshold;
+          
+          if (!device.hasCapability('measure_battery')) {
+            return false;
+          }
+          
+          const batteryLevel = device.getCapabilityValue('measure_battery');
+          return batteryLevel < threshold;
+        });
+      */
 
-    // Condition: Check if battery powered
-    this.homey.flow.getConditionCard('is_battery_powered')
-      .registerRunListener(async (args, state) => {
-        const device = args.device;
-        return device.isBatteryPowered && device.isBatteryPowered();
-      });
-
-    // Condition: Check if AC powered
-    this.homey.flow.getConditionCard('is_ac_powered')
-      .registerRunListener(async (args, state) => {
-        const device = args.device;
-        return device.isACPowered && device.isACPowered();
-      });
-
-    // Action: Request battery update
-    this.homey.flow.getActionCard('request_battery_update')
-      .registerRunListener(async (args, state) => {
-        const device = args.device;
-        
-        if (!device.requestBatteryUpdate) {
-          throw new Error('Device does not support battery update');
-        }
-        
-        await device.requestBatteryUpdate();
-        return true;
-      });
-
-    // Action: Set energy mode
-    this.homey.flow.getActionCard('set_energy_mode')
-      .registerRunListener(async (args, state) => {
-        const device = args.device;
-        const mode = args.mode;
-        
-        if (!device.applyEnergyOptimization) {
-          throw new Error('Device does not support energy optimization');
-        }
-        
-        await device.applyEnergyOptimization(mode);
-        return true;
-      });
-
-    this.log('✅ Global flow cards registered');
+      this.log('✅ Global flow cards registered (none defined yet)');
+    } catch (err) {
+      this.error('⚠️  Error registering flow cards:', err.message);
+      // Don't crash the app if flow cards fail to register
+    }
   }
 
 }
