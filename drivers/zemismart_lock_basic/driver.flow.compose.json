@@ -1,0 +1,18 @@
+{
+  "triggers": [
+    {
+      "id": "zemismart_lock_basic_alarm_motion_true",
+      "title": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté"
+      }
+    },
+    {
+      "id": "zemismart_lock_basic_alarm_motion_false",
+      "title": {
+        "en": "No motion",
+        "fr": "Aucun mouvement"
+      }
+    }
+  ]
+}

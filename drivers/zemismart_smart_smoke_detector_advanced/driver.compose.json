@@ -4,7 +4,12 @@
     "fr": "Zemismart Smart Smoke Detector Advanced"
   },
   "class": "sensor",
-  "capabilities": [],
+  "capabilities": [
+    "alarm_smoke",
+    "alarm_fire",
+    "alarm_battery",
+    "measure_battery"
+  ],
   "energy": {
     "batteries": [
       "CR2032",

@@ -1,0 +1,43 @@
+{
+  "triggers": [
+    {
+      "id": "zemismart_lock_smart_locked",
+      "title": {
+        "en": "Locked",
+        "fr": "Verrouillé"
+      }
+    },
+    {
+      "id": "zemismart_lock_smart_unlocked",
+      "title": {
+        "en": "Unlocked",
+        "fr": "Déverrouillé"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "zemismart_lock_smart_is_locked",
+      "title": {
+        "en": "Is !{{locked|unlocked}}",
+        "fr": "Est !{{verrouillé|déverrouillé}}"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "zemismart_lock_smart_lock",
+      "title": {
+        "en": "Lock",
+        "fr": "Verrouiller"
+      }
+    },
+    {
+      "id": "zemismart_lock_smart_unlock",
+      "title": {
+        "en": "Unlock",
+        "fr": "Déverrouiller"
+      }
+    }
+  ]
+}

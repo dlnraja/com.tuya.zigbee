@@ -4,7 +4,12 @@
     "fr": "Zemismart Pm25 Detector"
   },
   "class": "sensor",
-  "capabilities": [],
+  "capabilities": [
+    "measure_temperature",
+    "measure_pm25",
+    "alarm_battery",
+    "measure_battery"
+  ],
   "energy": {
     "batteries": [
       "CR2032",
