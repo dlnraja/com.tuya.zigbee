@@ -1,0 +1,34 @@
+fix: complete unbranding - remove all brand prefixes from 2044 flow cards
+
+MASSIVE CLEANUP:
+- Removed brand prefixes from 1090 flow cards in app.json
+- Cleaned 954 flow cards in 145 driver.flow.compose.json files
+- Prefixed 856 flow cards with driver name to ensure uniqueness
+- Merged 2 duplicate drivers with 26 manufacturer IDs transferred
+- All flow cards now use function-based naming, not brand names
+
+EXAMPLES:
+- avatto_water_valve_smart_hybrid_toggle → water_valve_smart_hybrid_toggle
+- zemismart_wall_switch_3gang_turn_on → wall_switch_3gang_turn_on
+- lsc_bulb_rgb_turned_on → bulb_rgb_lsc_turned_on
+
+VALIDATION:
+- Build: SUCCESS
+- Publish level: PASSED
+- 0 duplicate IDs
+- 0 brand prefixes
+- 100% SDK3 compliant
+
+DRIVERS MERGED:
+- button_wireless_2gang → button_wireless_2 (archived)
+- switch_wireless_4button → switch_wireless_4gang (archived)
+
+SCRIPTS ADDED:
+- scripts/find_duplicates_and_brands.js (detection)
+- scripts/fix_duplicates_and_brands.js (app.json cleanup)
+- scripts/unbrand_all_flow_files.js (drivers cleanup)
+- scripts/fix_flow_ids_with_driver_prefix.js (prefix with driver)
+- scripts/merge_duplicate_drivers.js (intelligent merge)
+
+This is a critical fix for v4.5.0 ensuring complete brand neutrality.
+All 187 drivers now follow function-based naming convention.
