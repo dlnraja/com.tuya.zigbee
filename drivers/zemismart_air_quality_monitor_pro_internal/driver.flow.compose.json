@@ -1,0 +1,22 @@
+{
+  "triggers": [
+    {
+      "id": "zemismart_air_quality_monitor_pro_internal_measure_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          },
+          "example": 20.5
+        }
+      ]
+    }
+  ]
+}
