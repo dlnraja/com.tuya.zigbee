@@ -35,6 +35,24 @@
           "example": 0.75
         }
       ]
+    },
+    {
+      "id": "zemismart_curtain_motor_internal_measure_battery_changed",
+      "title": {
+        "en": "Battery level changed",
+        "fr": "Niveau batterie changé"
+      },
+      "tokens": [
+        {
+          "name": "battery",
+          "type": "number",
+          "title": {
+            "en": "Battery (%)",
+            "fr": "Batterie (%)"
+          },
+          "example": 75
+        }
+      ]
     }
   ],
   "actions": [
@@ -58,7 +76,11 @@
             "fr": "Position"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set position to [[position]]%",
+        "fr": "Régler la position à [[position]]%"
+      }
     },
     {
       "id": "zemismart_curtain_motor_internal_windowcoverings_open",
@@ -94,7 +116,11 @@
             "fr": "Luminosité"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set brightness to [[brightness]]%",
+        "fr": "Régler la luminosité à [[brightness]]%"
+      }
     }
   ]
 }

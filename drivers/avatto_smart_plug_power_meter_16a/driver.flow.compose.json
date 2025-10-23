@@ -67,6 +67,24 @@
           "example": 0.5
         }
       ]
+    },
+    {
+      "id": "avatto_smart_plug_power_meter_16a_meter_power_changed",
+      "title": {
+        "en": "Energy consumption changed",
+        "fr": "Consommation énergétique changée"
+      },
+      "tokens": [
+        {
+          "name": "meter_power",
+          "type": "number",
+          "title": {
+            "en": "Energy (kWh)",
+            "fr": "Énergie (kWh)"
+          },
+          "example": 1.5
+        }
+      ]
     }
   ],
   "conditions": [

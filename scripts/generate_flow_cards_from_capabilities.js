@@ -198,6 +198,23 @@ const CAPABILITY_FLOWS = {
     ]
   },
   
+  'meter_power': {
+    triggers: [
+      {
+        id: 'meter_power_changed',
+        title: { en: 'Energy consumption changed', fr: 'Consommation énergétique changée' },
+        tokens: [
+          {
+            name: 'meter_power',
+            type: 'number',
+            title: { en: 'Energy (kWh)', fr: 'Énergie (kWh)' },
+            example: 1.5
+          }
+        ]
+      }
+    ]
+  },
+  
   'measure_voltage': {
     triggers: [
       {
@@ -228,6 +245,36 @@ const CAPABILITY_FLOWS = {
             example: 0.5
           }
         ]
+      }
+    ]
+  },
+  
+  'measure_battery': {
+    triggers: [
+      {
+        id: 'measure_battery_changed',
+        title: { en: 'Battery level changed', fr: 'Niveau batterie changé' },
+        tokens: [
+          {
+            name: 'battery',
+            type: 'number',
+            title: { en: 'Battery (%)', fr: 'Batterie (%)' },
+            example: 75
+          }
+        ]
+      }
+    ]
+  },
+  
+  'alarm_battery': {
+    triggers: [
+      {
+        id: 'alarm_battery_true',
+        title: { en: 'Battery low', fr: 'Batterie faible' }
+      },
+      {
+        id: 'alarm_battery_false',
+        title: { en: 'Battery OK', fr: 'Batterie OK' }
       }
     ]
   },

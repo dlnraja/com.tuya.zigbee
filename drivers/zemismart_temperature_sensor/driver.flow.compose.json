@@ -31,6 +31,38 @@
           "example": 20.5
         }
       ]
+    },
+    {
+      "id": "zemismart_temperature_sensor_alarm_battery_true",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible"
+      }
+    },
+    {
+      "id": "zemismart_temperature_sensor_alarm_battery_false",
+      "title": {
+        "en": "Battery OK",
+        "fr": "Batterie OK"
+      }
+    },
+    {
+      "id": "zemismart_temperature_sensor_measure_battery_changed",
+      "title": {
+        "en": "Battery level changed",
+        "fr": "Niveau batterie changé"
+      },
+      "tokens": [
+        {
+          "name": "battery",
+          "type": "number",
+          "title": {
+            "en": "Battery (%)",
+            "fr": "Batterie (%)"
+          },
+          "example": 75
+        }
+      ]
     }
   ]
 }
