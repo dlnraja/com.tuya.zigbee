@@ -2864,7 +2864,7 @@
       "target_temperature",
       "measure_temperature"
     ],
-    "power_source": "ac",
+    "power_source": "battery",
     "clusters": []
   },
   {
@@ -4371,7 +4371,7 @@
       "onoff",
       "onoff.gang2"
     ],
-    "power_source": "ac",
+    "power_source": "battery",
     "clusters": []
   },
   {
@@ -4668,7 +4668,7 @@
       "button.4",
       "dim"
     ],
-    "power_source": "ac",
+    "power_source": "battery",
     "clusters": []
   },
   {
@@ -5472,7 +5472,7 @@
       "onoff",
       "onoff.gang2"
     ],
-    "power_source": "ac",
+    "power_source": "battery",
     "clusters": []
   },
   {
@@ -11073,7 +11073,7 @@
     "capabilities": [
       "onoff"
     ],
-    "power_source": "ac",
+    "power_source": "battery",
     "clusters": []
   },
   {
@@ -11107,7 +11107,7 @@
       "onoff.switch_2",
       "onoff.switch_3"
     ],
-    "power_source": "ac",
+    "power_source": "battery",
     "clusters": []
   },
   {
@@ -11147,7 +11147,7 @@
     "capabilities": [
       "onoff"
     ],
-    "power_source": "ac",
+    "power_source": "battery",
     "clusters": []
   },
   {
@@ -11185,7 +11185,7 @@
       "onoff",
       "onoff.switch_2"
     ],
-    "power_source": "ac",
+    "power_source": "battery",
     "clusters": []
   },
   {
@@ -11224,7 +11224,7 @@
       "onoff.switch_2",
       "onoff.switch_3"
     ],
-    "power_source": "ac",
+    "power_source": "battery",
     "clusters": []
   },
   {
@@ -11259,7 +11259,7 @@
       "onoff.switch_3",
       "onoff.switch_4"
     ],
-    "power_source": "ac",
+    "power_source": "battery",
     "clusters": []
   },
   {
@@ -11295,7 +11295,7 @@
       "onoff.switch_5",
       "onoff.switch_6"
     ],
-    "power_source": "ac",
+    "power_source": "battery",
     "clusters": []
   },
   {
@@ -11371,7 +11371,7 @@
       "thermostat_mode",
       "fan_speed"
     ],
-    "power_source": "ac",
+    "power_source": "battery",
     "clusters": []
   },
   {
@@ -11536,7 +11536,7 @@
       "measure_power",
       "alarm_water"
     ],
-    "power_source": "ac",
+    "power_source": "battery",
     "clusters": []
   },
   {
@@ -12630,7 +12630,7 @@
     "manufacturer_count": 57,
     "model_count": 5,
     "capabilities": [],
-    "power_source": "ac",
+    "power_source": "battery",
     "clusters": []
   },
   {
@@ -16282,7 +16282,7 @@
       "onoff",
       "dim"
     ],
-    "power_source": "ac",
+    "power_source": "battery",
     "clusters": []
   },
   {
@@ -16790,7 +16790,7 @@
       "onoff.gang2",
       "onoff.gang3"
     ],
-    "power_source": "ac",
+    "power_source": "battery",
     "clusters": []
   },
   {
