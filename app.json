@@ -28682,7 +28682,8 @@
       ],
       "images": {
         "small": "drivers/avatto_radiator_valve_smart_hybrid/assets/images/small.png",
-        "large": "drivers/avatto_radiator_valve_smart_hybrid/assets/images/large.png"
+        "large": "drivers/avatto_radiator_valve_smart_hybrid/assets/images/large.png",
+        "xlarge": "drivers/avatto_radiator_valve_smart_hybrid/assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -33573,7 +33574,8 @@
       },
       "images": {
         "small": "drivers/avatto_smart_switch_2gang_hybrid/assets/images/small.png",
-        "large": "drivers/avatto_smart_switch_2gang_hybrid/assets/images/large.png"
+        "large": "drivers/avatto_smart_switch_2gang_hybrid/assets/images/large.png",
+        "xlarge": "drivers/avatto_smart_switch_2gang_hybrid/assets/images/xlarge.png"
       },
       "settings": [
         {
@@ -34434,7 +34436,8 @@
       },
       "images": {
         "small": "drivers/avatto_smart_switch_4gang_hybrid/assets/images/small.png",
-        "large": "drivers/avatto_smart_switch_4gang_hybrid/assets/images/large.png"
+        "large": "drivers/avatto_smart_switch_4gang_hybrid/assets/images/large.png",
+        "xlarge": "drivers/avatto_smart_switch_4gang_hybrid/assets/images/xlarge.png"
       },
       "settings": [
         {
@@ -36879,7 +36882,8 @@
       },
       "images": {
         "small": "drivers/avatto_switch_2gang_hybrid/assets/images/small.png",
-        "large": "drivers/avatto_switch_2gang_hybrid/assets/images/large.png"
+        "large": "drivers/avatto_switch_2gang_hybrid/assets/images/large.png",
+        "xlarge": "drivers/avatto_switch_2gang_hybrid/assets/images/xlarge.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -37280,7 +37284,8 @@
       },
       "images": {
         "small": "drivers/avatto_thermostat_hybrid/assets/images/small.png",
-        "large": "drivers/avatto_thermostat_hybrid/assets/images/large.png"
+        "large": "drivers/avatto_thermostat_hybrid/assets/images/large.png",
+        "xlarge": "drivers/avatto_thermostat_hybrid/assets/images/xlarge.png"
       },
       "community": {
         "sources": [
@@ -37755,7 +37760,8 @@
       },
       "images": {
         "small": "drivers/avatto_thermostat_smart_internal/assets/images/small.png",
-        "large": "drivers/avatto_thermostat_smart_internal/assets/images/large.png"
+        "large": "drivers/avatto_thermostat_smart_internal/assets/images/large.png",
+        "xlarge": "drivers/avatto_thermostat_smart_internal/assets/images/xlarge.png"
       },
       "platforms": [
         "local"
@@ -42470,7 +42476,8 @@
       },
       "images": {
         "small": "drivers/avatto_water_valve_smart_hybrid/assets/images/small.png",
-        "large": "drivers/avatto_water_valve_smart_hybrid/assets/images/large.png"
+        "large": "drivers/avatto_water_valve_smart_hybrid/assets/images/large.png",
+        "xlarge": "drivers/avatto_water_valve_smart_hybrid/assets/images/xlarge.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -45354,8 +45361,9 @@
         }
       },
       "images": {
-        "small": "/drivers/button_1gang/assets/images/small.png",
-        "large": "/drivers/button_1gang/assets/images/large.png"
+        "small": "drivers/button_1gang/assets/images/small.png",
+        "large": "drivers/button_1gang/assets/images/large.png",
+        "xlarge": "drivers/button_1gang/assets/images/xlarge.png"
       },
       "platforms": [
         "local"
@@ -45699,8 +45707,9 @@
         }
       },
       "images": {
-        "small": "/drivers/button_2gang/assets/images/small.png",
-        "large": "/drivers/button_2gang/assets/images/large.png"
+        "small": "drivers/button_2gang/assets/images/small.png",
+        "large": "drivers/button_2gang/assets/images/large.png",
+        "xlarge": "drivers/button_2gang/assets/images/xlarge.png"
       },
       "platforms": [
         "local"
@@ -46070,8 +46079,9 @@
         }
       },
       "images": {
-        "small": "/drivers/button_3gang/assets/images/small.png",
-        "large": "/drivers/button_3gang/assets/images/large.png"
+        "small": "drivers/button_3gang/assets/images/small.png",
+        "large": "drivers/button_3gang/assets/images/large.png",
+        "xlarge": "drivers/button_3gang/assets/images/xlarge.png"
       },
       "platforms": [
         "local"
@@ -46437,8 +46447,9 @@
         }
       },
       "images": {
-        "small": "/drivers/button_4gang/assets/images/small.png",
-        "large": "/drivers/button_4gang/assets/images/large.png"
+        "small": "drivers/button_4gang/assets/images/small.png",
+        "large": "drivers/button_4gang/assets/images/large.png",
+        "xlarge": "drivers/button_4gang/assets/images/xlarge.png"
       },
       "platforms": [
         "local"
@@ -46825,8 +46836,9 @@
         }
       },
       "images": {
-        "small": "/drivers/button_6gang/assets/images/small.png",
-        "large": "/drivers/button_6gang/assets/images/large.png"
+        "small": "drivers/button_6gang/assets/images/small.png",
+        "large": "drivers/button_6gang/assets/images/large.png",
+        "xlarge": "drivers/button_6gang/assets/images/xlarge.png"
       },
       "platforms": [
         "local"
@@ -47236,8 +47248,9 @@
         }
       },
       "images": {
-        "small": "/drivers/button_8gang/assets/images/small.png",
-        "large": "/drivers/button_8gang/assets/images/large.png"
+        "small": "drivers/button_8gang/assets/images/small.png",
+        "large": "drivers/button_8gang/assets/images/large.png",
+        "xlarge": "drivers/button_8gang/assets/images/xlarge.png"
       },
       "platforms": [
         "local"
@@ -48781,9 +48794,9 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/lonsonho_shortcut_button_other/assets/images/small.png",
-        "large": "/drivers/lonsonho_shortcut_button_other/assets/images/large.png",
-        "xlarge": "/drivers/lonsonho_shortcut_button_other/assets/images/xlarge.png"
+        "small": "drivers/lonsonho_shortcut_button_other/assets/images/small.png",
+        "large": "drivers/lonsonho_shortcut_button_other/assets/images/large.png",
+        "xlarge": "drivers/lonsonho_shortcut_button_other/assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -56248,9 +56261,9 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/lsc_wireless_switch_4button_other/assets/images/small.png",
-        "large": "/drivers/lsc_wireless_switch_4button_other/assets/images/large.png",
-        "xlarge": "/drivers/lsc_wireless_switch_4button_other/assets/images/xlarge.png"
+        "small": "drivers/lsc_wireless_switch_4button_other/assets/images/small.png",
+        "large": "drivers/lsc_wireless_switch_4button_other/assets/images/large.png",
+        "xlarge": "drivers/lsc_wireless_switch_4button_other/assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -61319,8 +61332,9 @@
         }
       },
       "images": {
-        "small": "/drivers/switch_touch_1gang/assets/images/small.png",
-        "large": "/drivers/switch_touch_1gang/assets/images/large.png"
+        "small": "drivers/switch_touch_1gang/assets/images/small.png",
+        "large": "drivers/switch_touch_1gang/assets/images/large.png",
+        "xlarge": "drivers/switch_touch_1gang/assets/images/xlarge.png"
       },
       "platforms": [
         "local"
@@ -61666,8 +61680,9 @@
         }
       },
       "images": {
-        "small": "/drivers/switch_touch_3gang/assets/images/small.png",
-        "large": "/drivers/switch_touch_3gang/assets/images/large.png"
+        "small": "drivers/switch_touch_3gang/assets/images/small.png",
+        "large": "drivers/switch_touch_3gang/assets/images/large.png",
+        "xlarge": "drivers/switch_touch_3gang/assets/images/xlarge.png"
       },
       "platforms": [
         "local"
@@ -61999,8 +62014,9 @@
         }
       },
       "images": {
-        "small": "/drivers/switch_wall_1gang/assets/images/small.png",
-        "large": "/drivers/switch_wall_1gang/assets/images/large.png"
+        "small": "drivers/switch_wall_1gang/assets/images/small.png",
+        "large": "drivers/switch_wall_1gang/assets/images/large.png",
+        "xlarge": "drivers/switch_wall_1gang/assets/images/xlarge.png"
       },
       "platforms": [
         "local"
@@ -62340,8 +62356,9 @@
         }
       },
       "images": {
-        "small": "/drivers/switch_wall_2gang/assets/images/small.png",
-        "large": "/drivers/switch_wall_2gang/assets/images/large.png"
+        "small": "drivers/switch_wall_2gang/assets/images/small.png",
+        "large": "drivers/switch_wall_2gang/assets/images/large.png",
+        "xlarge": "drivers/switch_wall_2gang/assets/images/xlarge.png"
       },
       "platforms": [
         "local"
@@ -62692,8 +62709,9 @@
         }
       },
       "images": {
-        "small": "/drivers/switch_wall_3gang/assets/images/small.png",
-        "large": "/drivers/switch_wall_3gang/assets/images/large.png"
+        "small": "drivers/switch_wall_3gang/assets/images/small.png",
+        "large": "drivers/switch_wall_3gang/assets/images/large.png",
+        "xlarge": "drivers/switch_wall_3gang/assets/images/xlarge.png"
       },
       "platforms": [
         "local"
@@ -63050,8 +63068,9 @@
         }
       },
       "images": {
-        "small": "/drivers/switch_wall_4gang/assets/images/small.png",
-        "large": "/drivers/switch_wall_4gang/assets/images/large.png"
+        "small": "drivers/switch_wall_4gang/assets/images/small.png",
+        "large": "drivers/switch_wall_4gang/assets/images/large.png",
+        "xlarge": "drivers/switch_wall_4gang/assets/images/xlarge.png"
       },
       "platforms": [
         "local"
@@ -63429,8 +63448,9 @@
         }
       },
       "images": {
-        "small": "/drivers/switch_wall_6gang/assets/images/small.png",
-        "large": "/drivers/switch_wall_6gang/assets/images/large.png"
+        "small": "drivers/switch_wall_6gang/assets/images/small.png",
+        "large": "drivers/switch_wall_6gang/assets/images/large.png",
+        "xlarge": "drivers/switch_wall_6gang/assets/images/xlarge.png"
       },
       "platforms": [
         "local"
@@ -63805,9 +63825,9 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/tuya_air_conditioner_hybrid/assets/images/small.png",
-        "large": "/drivers/tuya_air_conditioner_hybrid/assets/images/large.png",
-        "xlarge": "/drivers/tuya_air_conditioner_hybrid/assets/images/xlarge.png"
+        "small": "drivers/tuya_air_conditioner_hybrid/assets/images/small.png",
+        "large": "drivers/tuya_air_conditioner_hybrid/assets/images/large.png",
+        "xlarge": "drivers/tuya_air_conditioner_hybrid/assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -64548,9 +64568,9 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/tuya_dehumidifier_hybrid/assets/images/small.png",
-        "large": "/drivers/tuya_dehumidifier_hybrid/assets/images/large.png",
-        "xlarge": "/drivers/tuya_dehumidifier_hybrid/assets/images/xlarge.png"
+        "small": "drivers/tuya_dehumidifier_hybrid/assets/images/small.png",
+        "large": "drivers/tuya_dehumidifier_hybrid/assets/images/large.png",
+        "xlarge": "drivers/tuya_dehumidifier_hybrid/assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -68238,8 +68258,9 @@
         }
       },
       "images": {
-        "small": "/drivers/wireless_button/assets/images/small.png",
-        "large": "/drivers/wireless_button/assets/images/large.png"
+        "small": "drivers/wireless_button/assets/images/small.png",
+        "large": "drivers/wireless_button/assets/images/large.png",
+        "xlarge": "drivers/wireless_button/assets/images/xlarge.png"
       },
       "settings": [
         {
@@ -68608,7 +68629,8 @@
       },
       "images": {
         "small": "drivers/zemismart_air_quality_monitor_pro_internal/assets/images/small.png",
-        "large": "drivers/zemismart_air_quality_monitor_pro_internal/assets/images/large.png"
+        "large": "drivers/zemismart_air_quality_monitor_pro_internal/assets/images/large.png",
+        "xlarge": "drivers/zemismart_air_quality_monitor_pro_internal/assets/images/xlarge.png"
       },
       "platforms": [
         "local"
@@ -69293,7 +69315,8 @@
       ],
       "images": {
         "small": "drivers/zemismart_curtain_motor_internal/assets/images/small.png",
-        "large": "drivers/zemismart_curtain_motor_internal/assets/images/large.png"
+        "large": "drivers/zemismart_curtain_motor_internal/assets/images/large.png",
+        "xlarge": "drivers/zemismart_curtain_motor_internal/assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -70106,7 +70129,8 @@
       ],
       "images": {
         "small": "drivers/zemismart_doorbell_button_internal/assets/images/small.png",
-        "large": "drivers/zemismart_doorbell_button_internal/assets/images/large.png"
+        "large": "drivers/zemismart_doorbell_button_internal/assets/images/large.png",
+        "xlarge": "drivers/zemismart_doorbell_button_internal/assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -77817,7 +77841,8 @@
       ],
       "images": {
         "small": "drivers/zemismart_scene_controller/assets/images/small.png",
-        "large": "drivers/zemismart_scene_controller/assets/images/large.png"
+        "large": "drivers/zemismart_scene_controller/assets/images/large.png",
+        "xlarge": "drivers/zemismart_scene_controller/assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -79225,7 +79250,8 @@
       },
       "images": {
         "small": "drivers/zemismart_smart_switch_1gang_hybrid/assets/images/small.png",
-        "large": "drivers/zemismart_smart_switch_1gang_hybrid/assets/images/large.png"
+        "large": "drivers/zemismart_smart_switch_1gang_hybrid/assets/images/large.png",
+        "xlarge": "drivers/zemismart_smart_switch_1gang_hybrid/assets/images/xlarge.png"
       },
       "settings": [
         {
@@ -79692,7 +79718,8 @@
       },
       "images": {
         "small": "drivers/zemismart_smart_switch_1gang_internal/assets/images/small.png",
-        "large": "drivers/zemismart_smart_switch_1gang_internal/assets/images/large.png"
+        "large": "drivers/zemismart_smart_switch_1gang_internal/assets/images/large.png",
+        "xlarge": "drivers/zemismart_smart_switch_1gang_internal/assets/images/xlarge.png"
       },
       "capabilitiesOptions": {
         "windowcoverings_set": {
@@ -80628,7 +80655,8 @@
       },
       "images": {
         "small": "drivers/zemismart_smart_switch_3gang_hybrid/assets/images/small.png",
-        "large": "drivers/zemismart_smart_switch_3gang_hybrid/assets/images/large.png"
+        "large": "drivers/zemismart_smart_switch_3gang_hybrid/assets/images/large.png",
+        "xlarge": "drivers/zemismart_smart_switch_3gang_hybrid/assets/images/xlarge.png"
       },
       "settings": [
         {
@@ -82609,9 +82637,9 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/zemismart_sound_controller_other/assets/images/small.png",
-        "large": "/drivers/zemismart_sound_controller_other/assets/images/large.png",
-        "xlarge": "/drivers/zemismart_sound_controller_other/assets/images/xlarge.png"
+        "small": "drivers/zemismart_sound_controller_other/assets/images/small.png",
+        "large": "drivers/zemismart_sound_controller_other/assets/images/large.png",
+        "xlarge": "drivers/zemismart_sound_controller_other/assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -84801,8 +84829,9 @@
         }
       },
       "images": {
+        "small": "drivers/zemismart_temperature_controller_hybrid/assets/images/small.png",
         "large": "drivers/zemismart_temperature_controller_hybrid/assets/images/large.png",
-        "small": "drivers/zemismart_temperature_controller_hybrid/assets/images/small.png"
+        "xlarge": "drivers/zemismart_temperature_controller_hybrid/assets/images/xlarge.png"
       },
       "pair": [
         {
