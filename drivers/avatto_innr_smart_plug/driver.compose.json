@@ -4,7 +4,9 @@
     "fr": "Avatto Innr Smart Plug"
   },
   "class": "socket",
-  "capabilities": [],
+  "capabilities": [
+    "onoff"
+  ],
   "energy": {
     "batteries": [
       "CR2032",

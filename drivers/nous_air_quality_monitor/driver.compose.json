@@ -4,7 +4,11 @@
     "fr": "Nous Air Quality Monitor"
   },
   "class": "sensor",
-  "capabilities": [],
+  "capabilities": [
+    "measure_pm25",
+    "alarm_battery",
+    "measure_battery"
+  ],
   "energy": {
     "batteries": [
       "CR2032",

@@ -4,7 +4,9 @@
     "fr": "Avatto Smart Switch 2gang"
   },
   "class": "socket",
-  "capabilities": [],
+  "capabilities": [
+    "onoff"
+  ],
   "energy": {
     "batteries": [
       "CR2032",

@@ -4,7 +4,9 @@
     "fr": "Avatto Samsung Outlet"
   },
   "class": "socket",
-  "capabilities": [],
+  "capabilities": [
+    "onoff"
+  ],
   "energy": {
     "batteries": [
       "CR2032",

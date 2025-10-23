@@ -4,7 +4,10 @@
     "fr": "Lsc Bulb White"
   },
   "class": "light",
-  "capabilities": [],
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
   "energy": {
     "batteries": [
       "CR2032",

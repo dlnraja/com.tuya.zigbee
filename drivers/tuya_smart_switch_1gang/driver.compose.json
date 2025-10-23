@@ -4,7 +4,10 @@
     "fr": "Tuya Smart Switch 1gang"
   },
   "class": "socket",
-  "capabilities": [],
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
   "energy": {
     "batteries": [
       "CR2032",

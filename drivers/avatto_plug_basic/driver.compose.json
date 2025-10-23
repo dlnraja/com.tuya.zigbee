@@ -4,7 +4,13 @@
     "fr": "Avatto Plug Basic"
   },
   "class": "socket",
-  "capabilities": [],
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "meter_power",
+    "measure_voltage",
+    "measure_current"
+  ],
   "energy": {
     "batteries": [
       "CR2032",

@@ -4,7 +4,14 @@
     "fr": "Avatto Co2 Temp Humidity"
   },
   "class": "sensor",
-  "capabilities": [],
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_co",
+    "alarm_co2",
+    "alarm_battery",
+    "measure_battery"
+  ],
   "energy": {
     "batteries": [
       "CR2032",

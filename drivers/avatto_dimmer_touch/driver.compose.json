@@ -4,7 +4,10 @@
     "fr": "Avatto Dimmer Touch"
   },
   "class": "light",
-  "capabilities": [],
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
   "energy": {
     "batteries": [
       "CR2032",

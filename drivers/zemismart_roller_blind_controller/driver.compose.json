@@ -4,7 +4,9 @@
     "fr": "Zemismart Roller Blind Controller"
   },
   "class": "sensor",
-  "capabilities": [],
+  "capabilities": [
+    "alarm_generic"
+  ],
   "energy": {
     "batteries": [
       "CR2032",

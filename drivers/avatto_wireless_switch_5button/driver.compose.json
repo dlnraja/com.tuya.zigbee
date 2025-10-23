@@ -4,7 +4,10 @@
     "fr": "Avatto Wireless Switch 5button"
   },
   "class": "socket",
-  "capabilities": [],
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
   "energy": {
     "batteries": [
       "CR2032",

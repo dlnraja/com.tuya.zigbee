@@ -4,7 +4,14 @@
     "fr": "Avatto Smart Bulb Dimmer"
   },
   "class": "light",
-  "capabilities": [],
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature",
+    "light_mode"
+  ],
   "energy": {
     "batteries": [
       "CR2032",

@@ -1,0 +1,32 @@
+{
+  "triggers": [
+    {
+      "id": "lonsonho_contact_sensor_basic_alarm_motion_true",
+      "title": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté"
+      }
+    },
+    {
+      "id": "lonsonho_contact_sensor_basic_alarm_motion_false",
+      "title": {
+        "en": "No motion",
+        "fr": "Aucun mouvement"
+      }
+    },
+    {
+      "id": "lonsonho_contact_sensor_basic_alarm_contact_true",
+      "title": {
+        "en": "Contact alarm activated",
+        "fr": "Alarme de contact activée"
+      }
+    },
+    {
+      "id": "lonsonho_contact_sensor_basic_alarm_contact_false",
+      "title": {
+        "en": "Contact alarm deactivated",
+        "fr": "Alarme de contact désactivée"
+      }
+    }
+  ]
+}

@@ -4,7 +4,11 @@
     "fr": "Moes Climate Monitor"
   },
   "class": "sensor",
-  "capabilities": [],
+  "capabilities": [
+    "measure_temperature",
+    "alarm_battery",
+    "measure_battery"
+  ],
   "energy": {
     "batteries": [
       "CR2032",

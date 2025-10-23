@@ -4,7 +4,12 @@
     "fr": "Tuya Soil Tester Temp Humid"
   },
   "class": "sensor",
-  "capabilities": [],
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_battery",
+    "measure_battery"
+  ],
   "energy": {
     "batteries": [
       "CR2032",

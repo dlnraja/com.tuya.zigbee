@@ -4,7 +4,10 @@
     "fr": "Avatto Wall Switch 4gang"
   },
   "class": "socket",
-  "capabilities": [],
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
   "energy": {
     "batteries": [
       "CR2032",
