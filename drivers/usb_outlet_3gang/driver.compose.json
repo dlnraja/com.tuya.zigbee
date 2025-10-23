@@ -46,7 +46,7 @@
       "AA"
     ],
     "approximation": {
-      "usageConstant": 1.0
+      "usageConstant": 1
     }
   },
   "zigbee": {
@@ -217,5 +217,6 @@
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible"
       }
     }
-  ]
+  ],
+  "id": "usb_outlet_3gang"
 }
