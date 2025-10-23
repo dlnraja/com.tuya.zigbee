@@ -138,6 +138,24 @@
         "en": "Button 2 long-pressed",
         "fr": "Bouton 2 pressé longtemps"
       }
+    },
+    {
+      "id": "button_2gang_measure_battery_changed",
+      "title": {
+        "en": "Battery level changed",
+        "fr": "Niveau batterie changé"
+      },
+      "tokens": [
+        {
+          "name": "battery",
+          "type": "number",
+          "title": {
+            "en": "Battery (%)",
+            "fr": "Batterie (%)"
+          },
+          "example": 75
+        }
+      ]
     }
   ]
 }

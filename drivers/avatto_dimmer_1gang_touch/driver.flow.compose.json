@@ -84,7 +84,11 @@
             "fr": "Luminosité"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set brightness to [[brightness]]%",
+        "fr": "Régler la luminosité à [[brightness]]%"
+      }
     }
   ]
 }

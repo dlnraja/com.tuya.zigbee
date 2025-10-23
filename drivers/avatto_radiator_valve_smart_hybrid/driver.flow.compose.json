@@ -56,7 +56,11 @@
             "fr": "Température"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set temperature to [[temperature]]°C",
+        "fr": "Régler la température à [[temperature]]°C"
+      }
     }
   ]
 }
