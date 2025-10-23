@@ -164,7 +164,14 @@
     ],
     "manufacturer_count": 78,
     "model_count": 77,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_hue",
+      "light_saturation",
+      "light_temperature",
+      "light_mode"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -251,7 +258,10 @@
     ],
     "manufacturer_count": 48,
     "model_count": 25,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -362,7 +372,14 @@
     ],
     "manufacturer_count": 72,
     "model_count": 25,
-    "capabilities": [],
+    "capabilities": [
+      "measure_temperature",
+      "measure_humidity",
+      "alarm_co",
+      "alarm_co2",
+      "alarm_battery",
+      "measure_battery"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -492,7 +509,10 @@
     ],
     "manufacturer_count": 79,
     "model_count": 37,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -634,7 +654,10 @@
     ],
     "manufacturer_count": 91,
     "model_count": 37,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -776,7 +799,10 @@
     ],
     "manufacturer_count": 91,
     "model_count": 37,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -954,7 +980,10 @@
     ],
     "manufacturer_count": 107,
     "model_count": 57,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -1084,7 +1113,10 @@
     ],
     "manufacturer_count": 78,
     "model_count": 38,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -1213,7 +1245,13 @@
     ],
     "manufacturer_count": 89,
     "model_count": 26,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "measure_power",
+      "meter_power",
+      "measure_voltage",
+      "measure_current"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -1341,7 +1379,13 @@
     ],
     "manufacturer_count": 88,
     "model_count": 26,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "measure_power",
+      "meter_power",
+      "measure_voltage",
+      "measure_current"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -1397,7 +1441,9 @@
     ],
     "manufacturer_count": 38,
     "model_count": 4,
-    "capabilities": [],
+    "capabilities": [
+      "onoff"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -1515,7 +1561,14 @@
     ],
     "manufacturer_count": 68,
     "model_count": 36,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_hue",
+      "light_saturation",
+      "light_temperature",
+      "light_mode"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -1626,7 +1679,9 @@
     ],
     "manufacturer_count": 59,
     "model_count": 38,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_generic"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -1744,7 +1799,9 @@
     ],
     "manufacturer_count": 68,
     "model_count": 36,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_generic"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -1831,7 +1888,9 @@
     ],
     "manufacturer_count": 48,
     "model_count": 25,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_generic"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -1956,7 +2015,9 @@
     ],
     "manufacturer_count": 87,
     "model_count": 24,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_generic"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -2075,7 +2136,11 @@
     ],
     "manufacturer_count": 66,
     "model_count": 39,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_motion",
+      "alarm_battery",
+      "measure_battery"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -2131,7 +2196,9 @@
     ],
     "manufacturer_count": 38,
     "model_count": 4,
-    "capabilities": [],
+    "capabilities": [
+      "onoff"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -2187,7 +2254,9 @@
     ],
     "manufacturer_count": 38,
     "model_count": 4,
-    "capabilities": [],
+    "capabilities": [
+      "onoff"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -2303,7 +2372,13 @@
     ],
     "manufacturer_count": 76,
     "model_count": 26,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "measure_power",
+      "meter_power",
+      "measure_voltage",
+      "measure_current"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -2431,7 +2506,13 @@
     ],
     "manufacturer_count": 88,
     "model_count": 26,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "measure_power",
+      "meter_power",
+      "measure_voltage",
+      "measure_current"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -2557,7 +2638,9 @@
     ],
     "manufacturer_count": 86,
     "model_count": 26,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_generic"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -2675,7 +2758,13 @@
     ],
     "manufacturer_count": 78,
     "model_count": 26,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "measure_power",
+      "meter_power",
+      "measure_voltage",
+      "measure_current"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -2771,7 +2860,11 @@
     ],
     "manufacturer_count": 59,
     "model_count": 23,
-    "capabilities": [],
+    "capabilities": [
+      "target_temperature",
+      "measure_temperature",
+      "thermostat_mode"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -3009,7 +3102,9 @@
     ],
     "manufacturer_count": 105,
     "model_count": 27,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_generic"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -3060,7 +3155,9 @@
     ],
     "manufacturer_count": 33,
     "model_count": 4,
-    "capabilities": [],
+    "capabilities": [
+      "onoff"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -3116,7 +3213,9 @@
     ],
     "manufacturer_count": 38,
     "model_count": 4,
-    "capabilities": [],
+    "capabilities": [
+      "onoff"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -3300,7 +3399,14 @@
     ],
     "manufacturer_count": 87,
     "model_count": 83,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_hue",
+      "light_saturation",
+      "light_temperature",
+      "light_mode"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -3470,7 +3576,14 @@
     ],
     "manufacturer_count": 79,
     "model_count": 77,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_hue",
+      "light_saturation",
+      "light_temperature",
+      "light_mode"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -3639,7 +3752,14 @@
     ],
     "manufacturer_count": 78,
     "model_count": 77,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_hue",
+      "light_saturation",
+      "light_temperature",
+      "light_mode"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -3766,7 +3886,13 @@
     ],
     "manufacturer_count": 81,
     "model_count": 32,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "measure_power",
+      "meter_power",
+      "measure_voltage",
+      "measure_current"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -3896,7 +4022,13 @@
     ],
     "manufacturer_count": 90,
     "model_count": 26,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "measure_power",
+      "meter_power",
+      "measure_voltage",
+      "measure_current"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -3982,7 +4114,13 @@
     ],
     "manufacturer_count": 49,
     "model_count": 23,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "measure_power",
+      "meter_power",
+      "measure_voltage",
+      "measure_current"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -4071,7 +4209,14 @@
     ],
     "manufacturer_count": 48,
     "model_count": 27,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_hue",
+      "light_saturation",
+      "light_temperature",
+      "light_mode"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -4237,7 +4382,9 @@
     ],
     "manufacturer_count": 96,
     "model_count": 56,
-    "capabilities": [],
+    "capabilities": [
+      "onoff"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -4533,7 +4680,10 @@
     ],
     "manufacturer_count": 94,
     "model_count": 55,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -4828,7 +4978,10 @@
     ],
     "manufacturer_count": 92,
     "model_count": 55,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -4989,7 +5142,10 @@
     ],
     "manufacturer_count": 92,
     "model_count": 55,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -5045,7 +5201,9 @@
     ],
     "manufacturer_count": 38,
     "model_count": 4,
-    "capabilities": [],
+    "capabilities": [
+      "onoff"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -5172,7 +5330,9 @@
     ],
     "manufacturer_count": 86,
     "model_count": 27,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_generic"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -5338,7 +5498,9 @@
     ],
     "manufacturer_count": 97,
     "model_count": 55,
-    "capabilities": [],
+    "capabilities": [
+      "onoff"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -5826,7 +5988,9 @@
     ],
     "manufacturer_count": 94,
     "model_count": 41,
-    "capabilities": [],
+    "capabilities": [
+      "onoff"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -5973,7 +6137,10 @@
     ],
     "manufacturer_count": 92,
     "model_count": 41,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -6095,7 +6262,13 @@
     ],
     "manufacturer_count": 82,
     "model_count": 26,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "measure_power",
+      "meter_power",
+      "measure_voltage",
+      "measure_current"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -6217,7 +6390,13 @@
     ],
     "manufacturer_count": 82,
     "model_count": 26,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "measure_power",
+      "meter_power",
+      "measure_voltage",
+      "measure_current"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -6384,7 +6563,9 @@
     ],
     "manufacturer_count": 98,
     "model_count": 55,
-    "capabilities": [],
+    "capabilities": [
+      "onoff"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -6547,7 +6728,10 @@
     ],
     "manufacturer_count": 94,
     "model_count": 55,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -6708,7 +6892,10 @@
     ],
     "manufacturer_count": 92,
     "model_count": 55,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -6869,7 +7056,10 @@
     ],
     "manufacturer_count": 92,
     "model_count": 55,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -6987,7 +7177,13 @@
     ],
     "manufacturer_count": 81,
     "model_count": 23,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_motion",
+      "measure_temperature",
+      "alarm_water",
+      "alarm_battery",
+      "measure_battery"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -7105,7 +7301,13 @@
     ],
     "manufacturer_count": 81,
     "model_count": 23,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_motion",
+      "measure_temperature",
+      "alarm_water",
+      "alarm_battery",
+      "measure_battery"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -7394,7 +7596,9 @@
     ],
     "manufacturer_count": 119,
     "model_count": 31,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_generic"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -7536,7 +7740,9 @@
     ],
     "manufacturer_count": 103,
     "model_count": 25,
-    "capabilities": [],
+    "capabilities": [
+      "onoff"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -7685,7 +7891,10 @@
     ],
     "manufacturer_count": 109,
     "model_count": 26,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -7823,7 +8032,9 @@
     ],
     "manufacturer_count": 99,
     "model_count": 25,
-    "capabilities": [],
+    "capabilities": [
+      "onoff"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -7970,7 +8181,10 @@
     ],
     "manufacturer_count": 107,
     "model_count": 26,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -8106,7 +8320,10 @@
     ],
     "manufacturer_count": 97,
     "model_count": 25,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -8322,7 +8539,9 @@
     ],
     "manufacturer_count": 1,
     "model_count": 1,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_generic"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -8423,7 +8642,12 @@
     ],
     "manufacturer_count": 47,
     "model_count": 40,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_motion",
+      "alarm_contact",
+      "alarm_battery",
+      "measure_battery"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -8478,7 +8702,9 @@
     ],
     "manufacturer_count": 34,
     "model_count": 7,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_generic"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -8527,7 +8753,11 @@
     ],
     "manufacturer_count": 31,
     "model_count": 4,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_contact",
+      "alarm_battery",
+      "measure_battery"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -8651,7 +8881,9 @@
     ],
     "manufacturer_count": 40,
     "model_count": 7,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_generic"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -8700,7 +8932,11 @@
     ],
     "manufacturer_count": 31,
     "model_count": 4,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_contact",
+      "alarm_battery",
+      "measure_battery"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -8799,7 +9035,9 @@
     ],
     "manufacturer_count": 55,
     "model_count": 30,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_generic"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -8932,7 +9170,14 @@
     ],
     "manufacturer_count": 44,
     "model_count": 75,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_hue",
+      "light_saturation",
+      "light_temperature",
+      "light_mode"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -9055,7 +9300,10 @@
     ],
     "manufacturer_count": 35,
     "model_count": 74,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -9178,7 +9426,14 @@
     ],
     "manufacturer_count": 35,
     "model_count": 74,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_hue",
+      "light_saturation",
+      "light_temperature",
+      "light_mode"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -9274,7 +9529,10 @@
     ],
     "manufacturer_count": 47,
     "model_count": 35,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -9324,7 +9582,13 @@
     ],
     "manufacturer_count": 30,
     "model_count": 6,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "light_hue",
+      "light_saturation",
+      "light_temperature",
+      "light_mode"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -9374,7 +9638,12 @@
     ],
     "manufacturer_count": 30,
     "model_count": 6,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_temperature",
+      "light_mode"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -9424,7 +9693,9 @@
     ],
     "manufacturer_count": 30,
     "model_count": 6,
-    "capabilities": [],
+    "capabilities": [
+      "onoff"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -9555,7 +9826,14 @@
     ],
     "manufacturer_count": 81,
     "model_count": 36,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_hue",
+      "light_saturation",
+      "light_temperature",
+      "light_mode"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -9606,7 +9884,13 @@
     ],
     "manufacturer_count": 31,
     "model_count": 6,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "light_hue",
+      "light_saturation",
+      "light_temperature",
+      "light_mode"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -9656,7 +9940,12 @@
     ],
     "manufacturer_count": 30,
     "model_count": 6,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim",
+      "light_temperature",
+      "light_mode"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -9706,7 +9995,9 @@
     ],
     "manufacturer_count": 30,
     "model_count": 6,
-    "capabilities": [],
+    "capabilities": [
+      "onoff"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -9760,7 +10051,13 @@
     ],
     "manufacturer_count": 34,
     "model_count": 6,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "light_hue",
+      "light_saturation",
+      "light_temperature",
+      "light_mode"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -9810,7 +10107,13 @@
     ],
     "manufacturer_count": 30,
     "model_count": 6,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "light_hue",
+      "light_saturation",
+      "light_temperature",
+      "light_mode"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -9860,7 +10163,9 @@
     ],
     "manufacturer_count": 30,
     "model_count": 6,
-    "capabilities": [],
+    "capabilities": [
+      "onoff"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -9910,7 +10215,11 @@
     ],
     "manufacturer_count": 30,
     "model_count": 6,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "light_temperature",
+      "light_mode"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -9986,7 +10295,9 @@
     ],
     "manufacturer_count": 58,
     "model_count": 4,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_generic"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -10024,7 +10335,9 @@
     ],
     "manufacturer_count": 18,
     "model_count": 6,
-    "capabilities": [],
+    "capabilities": [
+      "onoff"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -10062,7 +10375,9 @@
     ],
     "manufacturer_count": 18,
     "model_count": 6,
-    "capabilities": [],
+    "capabilities": [
+      "onoff"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -10268,7 +10583,11 @@
     ],
     "manufacturer_count": 75,
     "model_count": 25,
-    "capabilities": [],
+    "capabilities": [
+      "measure_temperature",
+      "alarm_battery",
+      "measure_battery"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -10325,7 +10644,12 @@
     ],
     "manufacturer_count": 37,
     "model_count": 6,
-    "capabilities": [],
+    "capabilities": [
+      "measure_temperature",
+      "measure_humidity",
+      "alarm_battery",
+      "measure_battery"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -10339,7 +10663,9 @@
     ],
     "manufacturer_count": 0,
     "model_count": 1,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_generic"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -10415,7 +10741,11 @@
     ],
     "manufacturer_count": 36,
     "model_count": 26,
-    "capabilities": [],
+    "capabilities": [
+      "measure_pm25",
+      "alarm_battery",
+      "measure_battery"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -10472,7 +10802,9 @@
     ],
     "manufacturer_count": 39,
     "model_count": 4,
-    "capabilities": [],
+    "capabilities": [
+      "onoff"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -10587,7 +10919,10 @@
     ],
     "manufacturer_count": 60,
     "model_count": 41,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -10651,7 +10986,9 @@
     ],
     "manufacturer_count": 24,
     "model_count": 26,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_generic"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -10715,7 +11052,9 @@
     ],
     "manufacturer_count": 24,
     "model_count": 26,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_generic"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -10772,7 +11111,11 @@
     ],
     "manufacturer_count": 39,
     "model_count": 4,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_motion",
+      "alarm_battery",
+      "measure_battery"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -10818,7 +11161,11 @@
     ],
     "manufacturer_count": 28,
     "model_count": 4,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_contact",
+      "alarm_battery",
+      "measure_battery"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -10875,7 +11222,11 @@
     ],
     "manufacturer_count": 39,
     "model_count": 4,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_motion",
+      "alarm_battery",
+      "measure_battery"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -10982,7 +11333,11 @@
     ],
     "manufacturer_count": 24,
     "model_count": 4,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_water",
+      "alarm_battery",
+      "measure_battery"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -11039,7 +11394,11 @@
     ],
     "manufacturer_count": 39,
     "model_count": 4,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_motion",
+      "alarm_battery",
+      "measure_battery"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -11458,7 +11817,12 @@
     ],
     "manufacturer_count": 49,
     "model_count": 25,
-    "capabilities": [],
+    "capabilities": [
+      "measure_temperature",
+      "measure_humidity",
+      "alarm_battery",
+      "measure_battery"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -11656,7 +12020,12 @@
     ],
     "manufacturer_count": 83,
     "model_count": 24,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_motion",
+      "alarm_contact",
+      "alarm_battery",
+      "measure_battery"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -11761,7 +12130,12 @@
     ],
     "manufacturer_count": 66,
     "model_count": 25,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_motion",
+      "alarm_contact",
+      "alarm_battery",
+      "measure_battery"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -11860,7 +12234,12 @@
     ],
     "manufacturer_count": 45,
     "model_count": 40,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_co",
+      "alarm_co2",
+      "alarm_battery",
+      "measure_battery"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -11986,7 +12365,12 @@
     ],
     "manufacturer_count": 87,
     "model_count": 25,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_motion",
+      "alarm_contact",
+      "alarm_battery",
+      "measure_battery"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -12064,7 +12448,11 @@
     ],
     "manufacturer_count": 40,
     "model_count": 24,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_motion",
+      "alarm_battery",
+      "measure_battery"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -12255,7 +12643,10 @@
     ],
     "manufacturer_count": 121,
     "model_count": 56,
-    "capabilities": [],
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -12433,7 +12824,9 @@
     ],
     "manufacturer_count": 108,
     "model_count": 56,
-    "capabilities": [],
+    "capabilities": [
+      "onoff"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -12553,7 +12946,12 @@
     ],
     "manufacturer_count": 81,
     "model_count": 25,
-    "capabilities": [],
+    "capabilities": [
+      "measure_temperature",
+      "measure_humidity",
+      "alarm_battery",
+      "measure_battery"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -12629,7 +13027,9 @@
     ],
     "manufacturer_count": 57,
     "model_count": 5,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_generic"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -15493,7 +15893,9 @@
     ],
     "manufacturer_count": 74,
     "model_count": 40,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_generic"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -15621,7 +16023,9 @@
     ],
     "manufacturer_count": 74,
     "model_count": 40,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_generic"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -17495,7 +17899,9 @@
     ],
     "manufacturer_count": 97,
     "model_count": 27,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_generic"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -19079,7 +19485,9 @@
     ],
     "manufacturer_count": 55,
     "model_count": 25,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_generic"
+    ],
     "power_source": "battery",
     "clusters": []
   },
@@ -19865,7 +20273,9 @@
     ],
     "manufacturer_count": 108,
     "model_count": 27,
-    "capabilities": [],
+    "capabilities": [
+      "alarm_generic"
+    ],
     "power_source": "battery",
     "clusters": []
   },
