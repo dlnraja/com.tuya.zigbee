@@ -3,7 +3,7 @@
     "en": "Avatto Radiator Valve",
     "fr": "Avatto Radiator Valve"
   },
-  "class": "other",
+  "class": "thermostat",
   "capabilities": [],
   "energy": {
     "batteries": [
@@ -354,8 +354,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/avatto_radiator_valve/assets/images/small.png",
-    "large": "./drivers/avatto_radiator_valve/assets/images/large.png",
-    "xlarge": "./drivers/avatto_radiator_valve/assets/images/xlarge.png"
+    "small": "drivers/avatto_radiator_valve/assets/images/small.png",
+    "large": "drivers/avatto_radiator_valve/assets/images/large.png",
+    "xlarge": "drivers/avatto_radiator_valve/assets/images/xlarge.png"
   }
 }

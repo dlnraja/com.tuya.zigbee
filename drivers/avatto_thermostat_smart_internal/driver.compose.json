@@ -2,7 +2,7 @@
   "name": {
     "en": "Smart Thermostat (INTERNAL)"
   },
-  "class": "other",
+  "class": "thermostat",
   "capabilities": [
     "target_temperature",
     "measure_temperature",

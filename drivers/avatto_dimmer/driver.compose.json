@@ -387,8 +387,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/avatto_dimmer/assets/images/small.png",
-    "large": "./drivers/avatto_dimmer/assets/images/large.png",
-    "xlarge": "./drivers/avatto_dimmer/assets/images/xlarge.png"
+    "small": "drivers/avatto_dimmer/assets/images/small.png",
+    "large": "drivers/avatto_dimmer/assets/images/large.png",
+    "xlarge": "drivers/avatto_dimmer/assets/images/xlarge.png"
   }
 }

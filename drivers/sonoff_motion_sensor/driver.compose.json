@@ -313,8 +313,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/sonoff_motion_sensor/assets/images/small.png",
-    "large": "./drivers/sonoff_motion_sensor/assets/images/large.png",
-    "xlarge": "./drivers/sonoff_motion_sensor/assets/images/xlarge.png"
+    "small": "drivers/sonoff_motion_sensor/assets/images/small.png",
+    "large": "drivers/sonoff_motion_sensor/assets/images/large.png",
+    "xlarge": "drivers/sonoff_motion_sensor/assets/images/xlarge.png"
   }
 }

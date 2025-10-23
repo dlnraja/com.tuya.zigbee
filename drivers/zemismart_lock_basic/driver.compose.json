@@ -367,8 +367,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/zemismart_lock_basic/assets/images/small.png",
-    "large": "./drivers/zemismart_lock_basic/assets/images/large.png",
-    "xlarge": "./drivers/zemismart_lock_basic/assets/images/xlarge.png"
+    "small": "drivers/zemismart_lock_basic/assets/images/small.png",
+    "large": "drivers/zemismart_lock_basic/assets/images/large.png",
+    "xlarge": "drivers/zemismart_lock_basic/assets/images/xlarge.png"
   }
 }

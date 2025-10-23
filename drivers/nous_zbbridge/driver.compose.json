@@ -319,8 +319,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/nous_zbbridge/assets/images/small.png",
-    "large": "./drivers/nous_zbbridge/assets/images/large.png",
-    "xlarge": "./drivers/nous_zbbridge/assets/images/xlarge.png"
+    "small": "drivers/nous_zbbridge/assets/images/small.png",
+    "large": "drivers/nous_zbbridge/assets/images/large.png",
+    "xlarge": "drivers/nous_zbbridge/assets/images/xlarge.png"
   }
 }

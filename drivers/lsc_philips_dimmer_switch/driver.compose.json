@@ -332,8 +332,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/lsc_philips_dimmer_switch/assets/images/small.png",
-    "large": "./drivers/lsc_philips_dimmer_switch/assets/images/large.png",
-    "xlarge": "./drivers/lsc_philips_dimmer_switch/assets/images/xlarge.png"
+    "small": "drivers/lsc_philips_dimmer_switch/assets/images/small.png",
+    "large": "drivers/lsc_philips_dimmer_switch/assets/images/large.png",
+    "xlarge": "drivers/lsc_philips_dimmer_switch/assets/images/xlarge.png"
   }
 }

@@ -367,8 +367,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/avatto_co2_temp_humidity/assets/images/small.png",
-    "large": "./drivers/avatto_co2_temp_humidity/assets/images/large.png",
-    "xlarge": "./drivers/avatto_co2_temp_humidity/assets/images/xlarge.png"
+    "small": "drivers/avatto_co2_temp_humidity/assets/images/small.png",
+    "large": "drivers/avatto_co2_temp_humidity/assets/images/large.png",
+    "xlarge": "drivers/avatto_co2_temp_humidity/assets/images/xlarge.png"
   }
 }

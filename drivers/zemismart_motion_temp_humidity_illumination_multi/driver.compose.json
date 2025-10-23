@@ -419,8 +419,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/zemismart_motion_temp_humidity_illumination_multi/assets/images/small.png",
-    "large": "./drivers/zemismart_motion_temp_humidity_illumination_multi/assets/images/large.png",
-    "xlarge": "./drivers/zemismart_motion_temp_humidity_illumination_multi/assets/images/xlarge.png"
+    "small": "drivers/zemismart_motion_temp_humidity_illumination_multi/assets/images/small.png",
+    "large": "drivers/zemismart_motion_temp_humidity_illumination_multi/assets/images/large.png",
+    "xlarge": "drivers/zemismart_motion_temp_humidity_illumination_multi/assets/images/xlarge.png"
   }
 }

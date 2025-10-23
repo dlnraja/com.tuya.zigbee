@@ -385,8 +385,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/avatto_smart_plug/assets/images/small.png",
-    "large": "./drivers/avatto_smart_plug/assets/images/large.png",
-    "xlarge": "./drivers/avatto_smart_plug/assets/images/xlarge.png"
+    "small": "drivers/avatto_smart_plug/assets/images/small.png",
+    "large": "drivers/avatto_smart_plug/assets/images/large.png",
+    "xlarge": "drivers/avatto_smart_plug/assets/images/xlarge.png"
   }
 }

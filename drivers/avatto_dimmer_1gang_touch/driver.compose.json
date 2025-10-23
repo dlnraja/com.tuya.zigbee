@@ -398,8 +398,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/avatto_dimmer_1gang_touch/assets/images/small.png",
-    "large": "./drivers/avatto_dimmer_1gang_touch/assets/images/large.png",
-    "xlarge": "./drivers/avatto_dimmer_1gang_touch/assets/images/xlarge.png"
+    "small": "drivers/avatto_dimmer_1gang_touch/assets/images/small.png",
+    "large": "drivers/avatto_dimmer_1gang_touch/assets/images/large.png",
+    "xlarge": "drivers/avatto_dimmer_1gang_touch/assets/images/xlarge.png"
   }
 }

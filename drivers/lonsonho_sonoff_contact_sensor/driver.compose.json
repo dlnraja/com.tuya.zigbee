@@ -305,8 +305,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/lonsonho_sonoff_contact_sensor/assets/images/small.png",
-    "large": "./drivers/lonsonho_sonoff_contact_sensor/assets/images/large.png",
-    "xlarge": "./drivers/lonsonho_sonoff_contact_sensor/assets/images/xlarge.png"
+    "small": "drivers/lonsonho_sonoff_contact_sensor/assets/images/small.png",
+    "large": "drivers/lonsonho_sonoff_contact_sensor/assets/images/large.png",
+    "xlarge": "drivers/lonsonho_sonoff_contact_sensor/assets/images/xlarge.png"
   }
 }

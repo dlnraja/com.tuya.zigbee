@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "button_pressed",
+      "id": "button_8gang_button_pressed",
       "title": {
         "en": "Button pressed",
         "fr": "Bouton appuyé"
@@ -23,7 +23,7 @@
       ]
     },
     {
-      "id": "button_double_press",
+      "id": "button_8gang_button_double_press",
       "title": {
         "en": "Button double-pressed",
         "fr": "Bouton double-cliqué"
@@ -45,7 +45,7 @@
       ]
     },
     {
-      "id": "button_long_press",
+      "id": "button_8gang_button_long_press",
       "title": {
         "en": "Button long-pressed",
         "fr": "Bouton pressé longtemps"
@@ -67,7 +67,7 @@
       ]
     },
     {
-      "id": "button_multi_press",
+      "id": "button_8gang_button_multi_press",
       "title": {
         "en": "Button multi-pressed",
         "fr": "Bouton multi-cliqué"
