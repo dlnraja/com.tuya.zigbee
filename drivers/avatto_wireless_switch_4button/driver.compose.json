@@ -407,8 +407,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/avatto_wireless_switch_4button/assets/images/small.png",
-    "large": "./drivers/avatto_wireless_switch_4button/assets/images/large.png",
-    "xlarge": "./drivers/avatto_wireless_switch_4button/assets/images/xlarge.png"
+    "small": "drivers/avatto_wireless_switch_4button/assets/images/small.png",
+    "large": "drivers/avatto_wireless_switch_4button/assets/images/large.png",
+    "xlarge": "drivers/avatto_wireless_switch_4button/assets/images/xlarge.png"
   }
 }

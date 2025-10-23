@@ -411,8 +411,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/zemismart_smart_switch_4gang/assets/images/small.png",
-    "large": "./drivers/zemismart_smart_switch_4gang/assets/images/large.png",
-    "xlarge": "./drivers/zemismart_smart_switch_4gang/assets/images/xlarge.png"
+    "small": "drivers/zemismart_smart_switch_4gang/assets/images/small.png",
+    "large": "drivers/zemismart_smart_switch_4gang/assets/images/large.png",
+    "xlarge": "drivers/zemismart_smart_switch_4gang/assets/images/xlarge.png"
   }
 }

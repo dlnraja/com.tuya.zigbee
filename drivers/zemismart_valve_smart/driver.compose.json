@@ -349,8 +349,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/zemismart_valve_smart/assets/images/small.png",
-    "large": "./drivers/zemismart_valve_smart/assets/images/large.png",
-    "xlarge": "./drivers/zemismart_valve_smart/assets/images/xlarge.png"
+    "small": "drivers/zemismart_valve_smart/assets/images/small.png",
+    "large": "drivers/zemismart_valve_smart/assets/images/large.png",
+    "xlarge": "drivers/zemismart_valve_smart/assets/images/xlarge.png"
   }
 }

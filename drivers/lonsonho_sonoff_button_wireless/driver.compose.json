@@ -317,8 +317,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/lonsonho_sonoff_button_wireless/assets/images/small.png",
-    "large": "./drivers/lonsonho_sonoff_button_wireless/assets/images/large.png",
-    "xlarge": "./drivers/lonsonho_sonoff_button_wireless/assets/images/xlarge.png"
+    "small": "drivers/lonsonho_sonoff_button_wireless/assets/images/small.png",
+    "large": "drivers/lonsonho_sonoff_button_wireless/assets/images/large.png",
+    "xlarge": "drivers/lonsonho_sonoff_button_wireless/assets/images/xlarge.png"
   }
 }

@@ -3,7 +3,7 @@
     "en": "Zemismart Curtain Motor",
     "fr": "Zemismart Curtain Motor"
   },
-  "class": "other",
+  "class": "windowcoverings",
   "capabilities": [],
   "energy": {
     "batteries": [
@@ -383,8 +383,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/zemismart_curtain_motor/assets/images/small.png",
-    "large": "./drivers/zemismart_curtain_motor/assets/images/large.png",
-    "xlarge": "./drivers/zemismart_curtain_motor/assets/images/xlarge.png"
+    "small": "drivers/zemismart_curtain_motor/assets/images/small.png",
+    "large": "drivers/zemismart_curtain_motor/assets/images/large.png",
+    "xlarge": "drivers/zemismart_curtain_motor/assets/images/xlarge.png"
   }
 }

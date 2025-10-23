@@ -3,7 +3,7 @@
     "en": "Tuya Siren",
     "fr": "Tuya Siren"
   },
-  "class": "other",
+  "class": "sensor",
   "capabilities": [],
   "energy": {
     "batteries": [
@@ -335,8 +335,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/tuya_siren/assets/images/small.png",
-    "large": "./drivers/tuya_siren/assets/images/large.png",
-    "xlarge": "./drivers/tuya_siren/assets/images/xlarge.png"
+    "small": "drivers/tuya_siren/assets/images/small.png",
+    "large": "drivers/tuya_siren/assets/images/large.png",
+    "xlarge": "drivers/tuya_siren/assets/images/xlarge.png"
   }
 }

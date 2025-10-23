@@ -319,8 +319,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/nous_zigbee_gateway_hub/assets/images/small.png",
-    "large": "./drivers/nous_zigbee_gateway_hub/assets/images/large.png",
-    "xlarge": "./drivers/nous_zigbee_gateway_hub/assets/images/xlarge.png"
+    "small": "drivers/nous_zigbee_gateway_hub/assets/images/small.png",
+    "large": "drivers/nous_zigbee_gateway_hub/assets/images/large.png",
+    "xlarge": "drivers/nous_zigbee_gateway_hub/assets/images/xlarge.png"
   }
 }

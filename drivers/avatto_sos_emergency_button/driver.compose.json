@@ -384,8 +384,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/avatto_sos_emergency_button/assets/images/small.png",
-    "large": "./drivers/avatto_sos_emergency_button/assets/images/large.png",
-    "xlarge": "./drivers/avatto_sos_emergency_button/assets/images/xlarge.png"
+    "small": "drivers/avatto_sos_emergency_button/assets/images/small.png",
+    "large": "drivers/avatto_sos_emergency_button/assets/images/large.png",
+    "xlarge": "drivers/avatto_sos_emergency_button/assets/images/xlarge.png"
   }
 }

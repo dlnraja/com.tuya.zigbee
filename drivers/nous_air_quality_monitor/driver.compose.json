@@ -332,8 +332,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/nous_air_quality_monitor/assets/images/small.png",
-    "large": "./drivers/nous_air_quality_monitor/assets/images/large.png",
-    "xlarge": "./drivers/nous_air_quality_monitor/assets/images/xlarge.png"
+    "small": "drivers/nous_air_quality_monitor/assets/images/small.png",
+    "large": "drivers/nous_air_quality_monitor/assets/images/large.png",
+    "xlarge": "drivers/nous_air_quality_monitor/assets/images/xlarge.png"
   }
 }

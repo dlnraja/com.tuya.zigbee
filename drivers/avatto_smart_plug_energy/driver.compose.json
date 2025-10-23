@@ -388,8 +388,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/avatto_smart_plug_energy/assets/images/small.png",
-    "large": "./drivers/avatto_smart_plug_energy/assets/images/large.png",
-    "xlarge": "./drivers/avatto_smart_plug_energy/assets/images/xlarge.png"
+    "small": "drivers/avatto_smart_plug_energy/assets/images/small.png",
+    "large": "drivers/avatto_smart_plug_energy/assets/images/large.png",
+    "xlarge": "drivers/avatto_smart_plug_energy/assets/images/xlarge.png"
   }
 }

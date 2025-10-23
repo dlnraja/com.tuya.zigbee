@@ -374,8 +374,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/avatto_water_valve/assets/images/small.png",
-    "large": "./drivers/avatto_water_valve/assets/images/large.png",
-    "xlarge": "./drivers/avatto_water_valve/assets/images/xlarge.png"
+    "small": "drivers/avatto_water_valve/assets/images/small.png",
+    "large": "drivers/avatto_water_valve/assets/images/large.png",
+    "xlarge": "drivers/avatto_water_valve/assets/images/xlarge.png"
   }
 }

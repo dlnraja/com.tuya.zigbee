@@ -410,8 +410,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/zemismart_water_leak_sensor/assets/images/small.png",
-    "large": "./drivers/zemismart_water_leak_sensor/assets/images/large.png",
-    "xlarge": "./drivers/zemismart_water_leak_sensor/assets/images/xlarge.png"
+    "small": "drivers/zemismart_water_leak_sensor/assets/images/small.png",
+    "large": "drivers/zemismart_water_leak_sensor/assets/images/large.png",
+    "xlarge": "drivers/zemismart_water_leak_sensor/assets/images/xlarge.png"
   }
 }

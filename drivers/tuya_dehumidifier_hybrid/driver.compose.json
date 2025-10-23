@@ -6,7 +6,7 @@
     "nl": "Luchtontvochtigger (Smart)",
     "de": "Luftentfeuchter (Smart)"
   },
-  "class": "humidifier",
+  "class": "sensor",
   "capabilities": [
     "onoff",
     "target_humidity",

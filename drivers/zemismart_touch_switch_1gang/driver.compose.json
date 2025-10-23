@@ -410,8 +410,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/zemismart_touch_switch_1gang/assets/images/small.png",
-    "large": "./drivers/zemismart_touch_switch_1gang/assets/images/large.png",
-    "xlarge": "./drivers/zemismart_touch_switch_1gang/assets/images/xlarge.png"
+    "small": "drivers/zemismart_touch_switch_1gang/assets/images/small.png",
+    "large": "drivers/zemismart_touch_switch_1gang/assets/images/large.png",
+    "xlarge": "drivers/zemismart_touch_switch_1gang/assets/images/xlarge.png"
   }
 }

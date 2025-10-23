@@ -313,8 +313,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/moes_sonoff_temperature_humidity/assets/images/small.png",
-    "large": "./drivers/moes_sonoff_temperature_humidity/assets/images/large.png",
-    "xlarge": "./drivers/moes_sonoff_temperature_humidity/assets/images/xlarge.png"
+    "small": "drivers/moes_sonoff_temperature_humidity/assets/images/small.png",
+    "large": "drivers/moes_sonoff_temperature_humidity/assets/images/large.png",
+    "xlarge": "drivers/moes_sonoff_temperature_humidity/assets/images/xlarge.png"
   }
 }

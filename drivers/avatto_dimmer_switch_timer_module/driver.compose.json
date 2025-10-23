@@ -434,8 +434,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/avatto_dimmer_switch_timer_module/assets/images/small.png",
-    "large": "./drivers/avatto_dimmer_switch_timer_module/assets/images/large.png",
-    "xlarge": "./drivers/avatto_dimmer_switch_timer_module/assets/images/xlarge.png"
+    "small": "drivers/avatto_dimmer_switch_timer_module/assets/images/small.png",
+    "large": "drivers/avatto_dimmer_switch_timer_module/assets/images/large.png",
+    "xlarge": "drivers/avatto_dimmer_switch_timer_module/assets/images/xlarge.png"
   }
 }

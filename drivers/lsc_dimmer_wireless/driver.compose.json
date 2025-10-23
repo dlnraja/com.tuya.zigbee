@@ -3,7 +3,7 @@
     "en": "Lsc Dimmer Wireless",
     "fr": "Lsc Dimmer Wireless"
   },
-  "class": "other",
+  "class": "light",
   "capabilities": [],
   "energy": {
     "batteries": [
@@ -356,8 +356,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/lsc_dimmer_wireless/assets/images/small.png",
-    "large": "./drivers/lsc_dimmer_wireless/assets/images/large.png",
-    "xlarge": "./drivers/lsc_dimmer_wireless/assets/images/xlarge.png"
+    "small": "drivers/lsc_dimmer_wireless/assets/images/small.png",
+    "large": "drivers/lsc_dimmer_wireless/assets/images/large.png",
+    "xlarge": "drivers/lsc_dimmer_wireless/assets/images/xlarge.png"
   }
 }

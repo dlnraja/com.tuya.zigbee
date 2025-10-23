@@ -416,8 +416,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/zemismart_temperature_sensor_advanced/assets/images/small.png",
-    "large": "./drivers/zemismart_temperature_sensor_advanced/assets/images/large.png",
-    "xlarge": "./drivers/zemismart_temperature_sensor_advanced/assets/images/xlarge.png"
+    "small": "drivers/zemismart_temperature_sensor_advanced/assets/images/small.png",
+    "large": "drivers/zemismart_temperature_sensor_advanced/assets/images/large.png",
+    "xlarge": "drivers/zemismart_temperature_sensor_advanced/assets/images/xlarge.png"
   }
 }

@@ -376,8 +376,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/tuya_doorbell/assets/images/small.png",
-    "large": "./drivers/tuya_doorbell/assets/images/large.png",
-    "xlarge": "./drivers/tuya_doorbell/assets/images/xlarge.png"
+    "small": "drivers/tuya_doorbell/assets/images/small.png",
+    "large": "drivers/tuya_doorbell/assets/images/large.png",
+    "xlarge": "drivers/tuya_doorbell/assets/images/xlarge.png"
   }
 }
