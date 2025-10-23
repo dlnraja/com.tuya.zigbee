@@ -1,7 +1,7 @@
 {
   "actions": [
     {
-      "id": "avatto_thermostat_hybrid_thermostat_hybrid_set_thermostat_mode",
+      "id": "thermostat_smart_thermostat_hybrid_thermostat_hybrid_set_thermostat_mode",
       "title": {
         "en": "Set mode",
         "fr": "Définir mode"
@@ -54,7 +54,7 @@
   ],
   "conditions": [
     {
-      "id": "avatto_thermostat_hybrid_thermostat_hybrid_mode_is",
+      "id": "thermostat_smart_thermostat_hybrid_thermostat_hybrid_mode_is",
       "title": {
         "en": "Mode is...",
         "fr": "Mode est..."
@@ -100,7 +100,7 @@
   ],
   "triggers": [
     {
-      "id": "avatto_thermostat_hybrid_measure_battery_changed",
+      "id": "thermostat_smart_thermostat_hybrid_measure_battery_changed",
       "title": {
         "en": "Battery level changed",
         "fr": "Niveau batterie changé"

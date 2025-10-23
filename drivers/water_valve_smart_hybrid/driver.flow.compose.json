@@ -1,35 +1,35 @@
 {
   "triggers": [
     {
-      "id": "avatto_water_valve_smart_hybrid_turned_on",
+      "id": "water_valve_smart_hybrid_turned_on",
       "title": {
         "en": "Turned on",
         "fr": "Allumé"
       }
     },
     {
-      "id": "avatto_water_valve_smart_hybrid_turned_off",
+      "id": "water_valve_smart_hybrid_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Éteint"
       }
     },
     {
-      "id": "avatto_water_valve_smart_hybrid_alarm_water_true",
+      "id": "water_valve_smart_hybrid_alarm_water_true",
       "title": {
         "en": "Water leak detected",
         "fr": "Fuite d'eau détectée"
       }
     },
     {
-      "id": "avatto_water_valve_smart_hybrid_alarm_water_false",
+      "id": "water_valve_smart_hybrid_alarm_water_false",
       "title": {
         "en": "No water leak",
         "fr": "Aucune fuite d'eau"
       }
     },
     {
-      "id": "avatto_water_valve_smart_hybrid_measure_temperature_changed",
+      "id": "water_valve_smart_hybrid_measure_temperature_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée"
@@ -47,7 +47,7 @@
       ]
     },
     {
-      "id": "avatto_water_valve_smart_hybrid_measure_battery_changed",
+      "id": "water_valve_smart_hybrid_measure_battery_changed",
       "title": {
         "en": "Battery level changed",
         "fr": "Niveau batterie changé"
@@ -67,7 +67,7 @@
   ],
   "conditions": [
     {
-      "id": "avatto_water_valve_smart_hybrid_is_on",
+      "id": "water_valve_smart_hybrid_is_on",
       "title": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allumé|éteint}}"
@@ -76,21 +76,21 @@
   ],
   "actions": [
     {
-      "id": "avatto_water_valve_smart_hybrid_turn_on",
+      "id": "water_valve_smart_hybrid_turn_on",
       "title": {
         "en": "Turn on",
         "fr": "Allumer"
       }
     },
     {
-      "id": "avatto_water_valve_smart_hybrid_turn_off",
+      "id": "water_valve_smart_hybrid_turn_off",
       "title": {
         "en": "Turn off",
         "fr": "Éteindre"
       }
     },
     {
-      "id": "avatto_water_valve_smart_hybrid_toggle",
+      "id": "water_valve_smart_hybrid_toggle",
       "title": {
         "en": "Toggle on or off",
         "fr": "Basculer"

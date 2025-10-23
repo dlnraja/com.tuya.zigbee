@@ -1,21 +1,21 @@
 {
   "triggers": [
     {
-      "id": "avatto_dimmer_switch_timer_module_turned_on",
+      "id": "module_dimmer_timer_dimmer_switch_timer_module_turned_on",
       "title": {
         "en": "Turned on",
         "fr": "Allumé"
       }
     },
     {
-      "id": "avatto_dimmer_switch_timer_module_turned_off",
+      "id": "module_dimmer_timer_dimmer_switch_timer_module_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Éteint"
       }
     },
     {
-      "id": "avatto_dimmer_switch_timer_module_dim_changed",
+      "id": "module_dimmer_timer_dimmer_switch_timer_module_dim_changed",
       "title": {
         "en": "Brightness changed",
         "fr": "Luminosité changée"
@@ -35,7 +35,7 @@
   ],
   "conditions": [
     {
-      "id": "avatto_dimmer_switch_timer_module_is_on",
+      "id": "module_dimmer_timer_dimmer_switch_timer_module_is_on",
       "title": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allumé|éteint}}"
@@ -44,28 +44,28 @@
   ],
   "actions": [
     {
-      "id": "avatto_dimmer_switch_timer_module_turn_on",
+      "id": "module_dimmer_timer_dimmer_switch_timer_module_turn_on",
       "title": {
         "en": "Turn on",
         "fr": "Allumer"
       }
     },
     {
-      "id": "avatto_dimmer_switch_timer_module_turn_off",
+      "id": "module_dimmer_timer_dimmer_switch_timer_module_turn_off",
       "title": {
         "en": "Turn off",
         "fr": "Éteindre"
       }
     },
     {
-      "id": "avatto_dimmer_switch_timer_module_toggle",
+      "id": "module_dimmer_timer_dimmer_switch_timer_module_toggle",
       "title": {
         "en": "Toggle on or off",
         "fr": "Basculer"
       }
     },
     {
-      "id": "avatto_dimmer_switch_timer_module_set_dim",
+      "id": "module_dimmer_timer_dimmer_switch_timer_module_set_dim",
       "title": {
         "en": "Set brightness to...",
         "fr": "Régler la luminosité à..."

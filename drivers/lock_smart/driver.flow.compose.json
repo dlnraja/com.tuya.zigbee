@@ -1,35 +1,35 @@
 {
   "triggers": [
     {
-      "id": "zemismart_lock_smart_locked",
+      "id": "lock_smart_locked",
       "title": {
         "en": "Locked",
         "fr": "Verrouillé"
       }
     },
     {
-      "id": "zemismart_lock_smart_unlocked",
+      "id": "lock_smart_unlocked",
       "title": {
         "en": "Unlocked",
         "fr": "Déverrouillé"
       }
     },
     {
-      "id": "zemismart_lock_smart_alarm_battery_true",
+      "id": "lock_smart_alarm_battery_true",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible"
       }
     },
     {
-      "id": "zemismart_lock_smart_alarm_battery_false",
+      "id": "lock_smart_alarm_battery_false",
       "title": {
         "en": "Battery OK",
         "fr": "Batterie OK"
       }
     },
     {
-      "id": "zemismart_lock_smart_measure_battery_changed",
+      "id": "lock_smart_measure_battery_changed",
       "title": {
         "en": "Battery level changed",
         "fr": "Niveau batterie changé"
@@ -49,7 +49,7 @@
   ],
   "conditions": [
     {
-      "id": "zemismart_lock_smart_is_locked",
+      "id": "lock_smart_is_locked",
       "title": {
         "en": "Is !{{locked|unlocked}}",
         "fr": "Est !{{verrouillé|déverrouillé}}"
@@ -58,14 +58,14 @@
   ],
   "actions": [
     {
-      "id": "zemismart_lock_smart_lock",
+      "id": "lock_smart_lock",
       "title": {
         "en": "Lock",
         "fr": "Verrouiller"
       }
     },
     {
-      "id": "zemismart_lock_smart_unlock",
+      "id": "lock_smart_unlock",
       "title": {
         "en": "Unlock",
         "fr": "Déverrouiller"

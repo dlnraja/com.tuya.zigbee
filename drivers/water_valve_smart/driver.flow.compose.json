@@ -1,21 +1,21 @@
 {
   "triggers": [
     {
-      "id": "avatto_water_valve_smart_alarm_motion_true",
+      "id": "water_valve_smart_alarm_motion_true",
       "title": {
         "en": "Motion detected",
         "fr": "Mouvement détecté"
       }
     },
     {
-      "id": "avatto_water_valve_smart_alarm_motion_false",
+      "id": "water_valve_smart_alarm_motion_false",
       "title": {
         "en": "No motion",
         "fr": "Aucun mouvement"
       }
     },
     {
-      "id": "avatto_water_valve_smart_measure_temperature_changed",
+      "id": "water_valve_smart_measure_temperature_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée"
@@ -33,35 +33,35 @@
       ]
     },
     {
-      "id": "avatto_water_valve_smart_alarm_water_true",
+      "id": "water_valve_smart_alarm_water_true",
       "title": {
         "en": "Water leak detected",
         "fr": "Fuite d'eau détectée"
       }
     },
     {
-      "id": "avatto_water_valve_smart_alarm_water_false",
+      "id": "water_valve_smart_alarm_water_false",
       "title": {
         "en": "No water leak",
         "fr": "Aucune fuite d'eau"
       }
     },
     {
-      "id": "avatto_water_valve_smart_alarm_battery_true",
+      "id": "water_valve_smart_alarm_battery_true",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible"
       }
     },
     {
-      "id": "avatto_water_valve_smart_alarm_battery_false",
+      "id": "water_valve_smart_alarm_battery_false",
       "title": {
         "en": "Battery OK",
         "fr": "Batterie OK"
       }
     },
     {
-      "id": "avatto_water_valve_smart_measure_battery_changed",
+      "id": "water_valve_smart_measure_battery_changed",
       "title": {
         "en": "Battery level changed",
         "fr": "Niveau batterie changé"

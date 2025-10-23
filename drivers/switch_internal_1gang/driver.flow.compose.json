@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "zemismart_smart_switch_1gang_internal_tuya_smart_switch_1gang_internal_button_pressed",
+      "id": "switch_internal_1gang_smart_switch_1gang_internal_smart_switch_1gang_internal_button_pressed",
       "title": {
         "en": "Button pressed",
         "fr": "Bouton appuyé"
@@ -37,7 +37,7 @@
       }
     },
     {
-      "id": "zemismart_smart_switch_1gang_internal_tuya_smart_switch_1gang_internal_single_press",
+      "id": "switch_internal_1gang_smart_switch_1gang_internal_smart_switch_1gang_internal_single_press",
       "title": {
         "en": "Button single press",
         "fr": "Bouton pression simple"
@@ -64,7 +64,7 @@
       }
     },
     {
-      "id": "zemismart_smart_switch_1gang_internal_tuya_smart_switch_1gang_internal_double_press",
+      "id": "switch_internal_1gang_smart_switch_1gang_internal_smart_switch_1gang_internal_double_press",
       "title": {
         "en": "Button double press",
         "fr": "Bouton double pression"
@@ -91,7 +91,7 @@
       }
     },
     {
-      "id": "zemismart_smart_switch_1gang_internal_tuya_smart_switch_1gang_internal_long_press",
+      "id": "switch_internal_1gang_smart_switch_1gang_internal_smart_switch_1gang_internal_long_press",
       "title": {
         "en": "Button long press",
         "fr": "Bouton pression longue"
@@ -118,7 +118,7 @@
       }
     },
     {
-      "id": "zemismart_smart_switch_1gang_internal_tuya_smart_switch_1gang_internal_battery_low",
+      "id": "switch_internal_1gang_smart_switch_1gang_internal_smart_switch_1gang_internal_battery_low",
       "title": {
         "en": "Battery is low",
         "fr": "Batterie faible"
@@ -145,7 +145,7 @@
       }
     },
     {
-      "id": "zemismart_smart_switch_1gang_internal_measure_power_changed",
+      "id": "switch_internal_1gang_smart_switch_1gang_internal_measure_power_changed",
       "title": {
         "en": "Power changed",
         "fr": "Puissance changée"
@@ -163,7 +163,7 @@
       ]
     },
     {
-      "id": "zemismart_smart_switch_1gang_internal_measure_battery_changed",
+      "id": "switch_internal_1gang_smart_switch_1gang_internal_measure_battery_changed",
       "title": {
         "en": "Battery level changed",
         "fr": "Niveau batterie changé"
@@ -183,7 +183,7 @@
   ],
   "actions": [
     {
-      "id": "zemismart_smart_switch_1gang_internal_tuya_smart_switch_1gang_internal_trigger_button",
+      "id": "switch_internal_1gang_smart_switch_1gang_internal_smart_switch_1gang_internal_trigger_button",
       "title": {
         "en": "Trigger button manually",
         "fr": "Activer bouton manuellement"
@@ -255,7 +255,7 @@
       }
     },
     {
-      "id": "zemismart_smart_switch_1gang_internal_tuya_smart_switch_1gang_internal_set_gang",
+      "id": "switch_internal_1gang_smart_switch_1gang_internal_smart_switch_1gang_internal_set_gang",
       "title": {
         "en": "Turn gang on/off",
         "fr": "Allumer/éteindre bouton"

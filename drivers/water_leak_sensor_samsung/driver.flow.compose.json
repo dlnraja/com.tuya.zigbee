@@ -1,35 +1,35 @@
 {
   "triggers": [
     {
-      "id": "samsung_water_leak_sensor_alarm_water_true",
+      "id": "water_leak_sensor_samsung_water_leak_sensor_alarm_water_true",
       "title": {
         "en": "Water leak detected",
         "fr": "Fuite d'eau détectée"
       }
     },
     {
-      "id": "samsung_water_leak_sensor_alarm_water_false",
+      "id": "water_leak_sensor_samsung_water_leak_sensor_alarm_water_false",
       "title": {
         "en": "No water leak",
         "fr": "Aucune fuite d'eau"
       }
     },
     {
-      "id": "samsung_water_leak_sensor_alarm_battery_true",
+      "id": "water_leak_sensor_samsung_water_leak_sensor_alarm_battery_true",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible"
       }
     },
     {
-      "id": "samsung_water_leak_sensor_alarm_battery_false",
+      "id": "water_leak_sensor_samsung_water_leak_sensor_alarm_battery_false",
       "title": {
         "en": "Battery OK",
         "fr": "Batterie OK"
       }
     },
     {
-      "id": "samsung_water_leak_sensor_measure_battery_changed",
+      "id": "water_leak_sensor_samsung_water_leak_sensor_measure_battery_changed",
       "title": {
         "en": "Battery level changed",
         "fr": "Niveau batterie changé"

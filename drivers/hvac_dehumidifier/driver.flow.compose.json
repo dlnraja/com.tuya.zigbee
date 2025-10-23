@@ -1,21 +1,21 @@
 {
   "triggers": [
     {
-      "id": "tuya_dehumidifier_hybrid_turned_on",
+      "id": "hvac_dehumidifier_dehumidifier_hybrid_turned_on",
       "title": {
         "en": "Turned on",
         "fr": "Allumé"
       }
     },
     {
-      "id": "tuya_dehumidifier_hybrid_turned_off",
+      "id": "hvac_dehumidifier_dehumidifier_hybrid_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Éteint"
       }
     },
     {
-      "id": "tuya_dehumidifier_hybrid_measure_humidity_changed",
+      "id": "hvac_dehumidifier_dehumidifier_hybrid_measure_humidity_changed",
       "title": {
         "en": "Humidity changed",
         "fr": "Humidité changée"
@@ -33,7 +33,7 @@
       ]
     },
     {
-      "id": "tuya_dehumidifier_hybrid_measure_temperature_changed",
+      "id": "hvac_dehumidifier_dehumidifier_hybrid_measure_temperature_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée"
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "id": "tuya_dehumidifier_hybrid_measure_power_changed",
+      "id": "hvac_dehumidifier_dehumidifier_hybrid_measure_power_changed",
       "title": {
         "en": "Power changed",
         "fr": "Puissance changée"
@@ -69,14 +69,14 @@
       ]
     },
     {
-      "id": "tuya_dehumidifier_hybrid_alarm_water_true",
+      "id": "hvac_dehumidifier_dehumidifier_hybrid_alarm_water_true",
       "title": {
         "en": "Water leak detected",
         "fr": "Fuite d'eau détectée"
       }
     },
     {
-      "id": "tuya_dehumidifier_hybrid_alarm_water_false",
+      "id": "hvac_dehumidifier_dehumidifier_hybrid_alarm_water_false",
       "title": {
         "en": "No water leak",
         "fr": "Aucune fuite d'eau"
@@ -85,7 +85,7 @@
   ],
   "conditions": [
     {
-      "id": "tuya_dehumidifier_hybrid_is_on",
+      "id": "hvac_dehumidifier_dehumidifier_hybrid_is_on",
       "title": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allumé|éteint}}"
@@ -94,21 +94,21 @@
   ],
   "actions": [
     {
-      "id": "tuya_dehumidifier_hybrid_turn_on",
+      "id": "hvac_dehumidifier_dehumidifier_hybrid_turn_on",
       "title": {
         "en": "Turn on",
         "fr": "Allumer"
       }
     },
     {
-      "id": "tuya_dehumidifier_hybrid_turn_off",
+      "id": "hvac_dehumidifier_dehumidifier_hybrid_turn_off",
       "title": {
         "en": "Turn off",
         "fr": "Éteindre"
       }
     },
     {
-      "id": "tuya_dehumidifier_hybrid_toggle",
+      "id": "hvac_dehumidifier_dehumidifier_hybrid_toggle",
       "title": {
         "en": "Toggle on or off",
         "fr": "Basculer"

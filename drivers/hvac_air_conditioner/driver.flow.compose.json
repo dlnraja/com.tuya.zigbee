@@ -1,21 +1,21 @@
 {
   "triggers": [
     {
-      "id": "tuya_air_conditioner_hybrid_turned_on",
+      "id": "hvac_air_conditioner_air_conditioner_hybrid_turned_on",
       "title": {
         "en": "Turned on",
         "fr": "Allumé"
       }
     },
     {
-      "id": "tuya_air_conditioner_hybrid_turned_off",
+      "id": "hvac_air_conditioner_air_conditioner_hybrid_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Éteint"
       }
     },
     {
-      "id": "tuya_air_conditioner_hybrid_target_temperature_changed",
+      "id": "hvac_air_conditioner_air_conditioner_hybrid_target_temperature_changed",
       "title": {
         "en": "Target temperature changed",
         "fr": "Température cible changée"
@@ -33,7 +33,7 @@
       ]
     },
     {
-      "id": "tuya_air_conditioner_hybrid_measure_temperature_changed",
+      "id": "hvac_air_conditioner_air_conditioner_hybrid_measure_temperature_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée"
@@ -53,7 +53,7 @@
   ],
   "conditions": [
     {
-      "id": "tuya_air_conditioner_hybrid_is_on",
+      "id": "hvac_air_conditioner_air_conditioner_hybrid_is_on",
       "title": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allumé|éteint}}"
@@ -62,28 +62,28 @@
   ],
   "actions": [
     {
-      "id": "tuya_air_conditioner_hybrid_turn_on",
+      "id": "hvac_air_conditioner_air_conditioner_hybrid_turn_on",
       "title": {
         "en": "Turn on",
         "fr": "Allumer"
       }
     },
     {
-      "id": "tuya_air_conditioner_hybrid_turn_off",
+      "id": "hvac_air_conditioner_air_conditioner_hybrid_turn_off",
       "title": {
         "en": "Turn off",
         "fr": "Éteindre"
       }
     },
     {
-      "id": "tuya_air_conditioner_hybrid_toggle",
+      "id": "hvac_air_conditioner_air_conditioner_hybrid_toggle",
       "title": {
         "en": "Toggle on or off",
         "fr": "Basculer"
       }
     },
     {
-      "id": "tuya_air_conditioner_hybrid_set_target_temperature",
+      "id": "hvac_air_conditioner_air_conditioner_hybrid_set_target_temperature",
       "title": {
         "en": "Set temperature to...",
         "fr": "Régler la température à..."

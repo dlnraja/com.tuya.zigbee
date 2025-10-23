@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "zemismart_roller_shutter_switch_windowcoverings_set_changed",
+      "id": "shutter_roller_switch_roller_shutter_switch_windowcoverings_set_changed",
       "title": {
         "en": "Position changed",
         "fr": "Position changée"
@@ -21,7 +21,7 @@
   ],
   "actions": [
     {
-      "id": "zemismart_roller_shutter_switch_set_windowcoverings_set",
+      "id": "shutter_roller_switch_roller_shutter_switch_set_windowcoverings_set",
       "title": {
         "en": "Set position to...",
         "fr": "Régler la position à..."
@@ -47,14 +47,14 @@
       }
     },
     {
-      "id": "zemismart_roller_shutter_switch_windowcoverings_open",
+      "id": "shutter_roller_switch_roller_shutter_switch_windowcoverings_open",
       "title": {
         "en": "Open",
         "fr": "Ouvrir"
       }
     },
     {
-      "id": "zemismart_roller_shutter_switch_windowcoverings_close",
+      "id": "shutter_roller_switch_roller_shutter_switch_windowcoverings_close",
       "title": {
         "en": "Close",
         "fr": "Fermer"
