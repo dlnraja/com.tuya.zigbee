@@ -53,6 +53,24 @@
           "example": 65
         }
       ]
+    },
+    {
+      "id": "zemismart_temperature_controller_hybrid_measure_battery_changed",
+      "title": {
+        "en": "Battery level changed",
+        "fr": "Niveau batterie changé"
+      },
+      "tokens": [
+        {
+          "name": "battery",
+          "type": "number",
+          "title": {
+            "en": "Battery (%)",
+            "fr": "Batterie (%)"
+          },
+          "example": 75
+        }
+      ]
     }
   ],
   "actions": [
@@ -74,7 +92,11 @@
             "fr": "Température"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set temperature to [[temperature]]°C",
+        "fr": "Régler la température à [[temperature]]°C"
+      }
     }
   ]
 }
