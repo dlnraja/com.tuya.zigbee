@@ -142,7 +142,7 @@ const commitMessage = `v4.2.2 - Advanced image validation scripts + 15 learnmode
 - `PUBLISH_TO_HOMEY.js`
 
 ### **Dans `scripts/automation/`:**
-- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js`
+- `scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/scripts/automation/auto-publish.js`
 - `final-publish.ps1`
 - `SMART_PUBLISH.ps1`
 
