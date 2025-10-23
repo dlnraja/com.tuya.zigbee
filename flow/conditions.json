@@ -1,0 +1,48 @@
+[
+  {
+    "id": "is_battery_powered",
+    "title": {
+      "en": "Is battery powered",
+      "fr": "Fonctionne sur batterie"
+    },
+    "hint": {
+      "en": "Check if device is currently running on battery",
+      "fr": "Vérifier si l'appareil fonctionne actuellement sur batterie"
+    }
+  },
+  {
+    "id": "is_ac_powered",
+    "title": {
+      "en": "Is AC powered",
+      "fr": "Fonctionne sur secteur"
+    },
+    "hint": {
+      "en": "Check if device is currently running on AC power",
+      "fr": "Vérifier si l'appareil fonctionne actuellement sur secteur"
+    }
+  },
+  {
+    "id": "battery_below_threshold",
+    "title": {
+      "en": "Battery below !{{threshold}}%",
+      "fr": "Batterie en dessous de !{{threshold}}%"
+    },
+    "titleFormatted": {
+      "en": "Battery below [[threshold]]%",
+      "fr": "Batterie en dessous de [[threshold]]%"
+    },
+    "args": [
+      {
+        "name": "threshold",
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "placeholder": {
+          "en": "20",
+          "fr": "20"
+        }
+      }
+    ]
+  }
+]

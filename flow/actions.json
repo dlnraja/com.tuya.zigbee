@@ -1,0 +1,53 @@
+[
+  {
+    "id": "request_battery_update",
+    "title": {
+      "en": "Request battery update",
+      "fr": "Demander mise à jour batterie"
+    },
+    "hint": {
+      "en": "Force device to report current battery status",
+      "fr": "Forcer l'appareil à rapporter l'état actuel de la batterie"
+    }
+  },
+  {
+    "id": "set_energy_mode",
+    "title": {
+      "en": "Set energy mode to !{{mode}}",
+      "fr": "Définir mode énergie à !{{mode}}"
+    },
+    "titleFormatted": {
+      "en": "Set energy mode to [[mode]]",
+      "fr": "Définir mode énergie à [[mode]]"
+    },
+    "args": [
+      {
+        "name": "mode",
+        "type": "dropdown",
+        "values": [
+          {
+            "id": "performance",
+            "label": {
+              "en": "Performance",
+              "fr": "Performance"
+            }
+          },
+          {
+            "id": "balanced",
+            "label": {
+              "en": "Balanced",
+              "fr": "Équilibré"
+            }
+          },
+          {
+            "id": "power_saving",
+            "label": {
+              "en": "Power Saving",
+              "fr": "Économie d'énergie"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

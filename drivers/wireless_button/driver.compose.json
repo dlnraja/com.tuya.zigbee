@@ -82,36 +82,85 @@
     ],
     "endpoints": {
       "1": {
-        "clusters": [0, 1, 3, 6],
-        "bindings": [6]
+        "clusters": [
+          0,
+          1,
+          3,
+          6
+        ],
+        "bindings": [
+          6
+        ]
       },
       "2": {
-        "clusters": [0, 3, 6],
-        "bindings": [6]
+        "clusters": [
+          0,
+          3,
+          6
+        ],
+        "bindings": [
+          6
+        ]
       },
       "3": {
-        "clusters": [0, 3, 6],
-        "bindings": [6]
+        "clusters": [
+          0,
+          3,
+          6
+        ],
+        "bindings": [
+          6
+        ]
       },
       "4": {
-        "clusters": [0, 3, 6],
-        "bindings": [6]
+        "clusters": [
+          0,
+          3,
+          6
+        ],
+        "bindings": [
+          6
+        ]
       },
       "5": {
-        "clusters": [0, 3, 6],
-        "bindings": [6]
+        "clusters": [
+          0,
+          3,
+          6
+        ],
+        "bindings": [
+          6
+        ]
       },
       "6": {
-        "clusters": [0, 3, 6],
-        "bindings": [6]
+        "clusters": [
+          0,
+          3,
+          6
+        ],
+        "bindings": [
+          6
+        ]
       },
       "7": {
-        "clusters": [0, 3, 6],
-        "bindings": [6]
+        "clusters": [
+          0,
+          3,
+          6
+        ],
+        "bindings": [
+          6
+        ]
       },
       "8": {
-        "clusters": [0, 3, 6],
-        "bindings": [6]
+        "clusters": [
+          0,
+          3,
+          6
+        ],
+        "bindings": [
+          6
+        ]
       }
     },
     "learnmode": {
@@ -134,96 +183,232 @@
   },
   "settings": [
     {
-      "type": "group",
+      "id": "power_source",
+      "type": "dropdown",
       "label": {
-        "en": "Device Configuration",
-        "fr": "Configuration de l'Appareil",
-        "nl": "Apparaatconfiguratie",
-        "de": "Gerätekonfiguration",
-        "it": "Configurazione Dispositivo",
-        "sv": "Enhetskonfiguration",
-        "no": "Enhetskonfigurasjon",
-        "es": "Configuración del Dispositivo",
-        "da": "Enhedskonfiguration"
+        "en": "Power Source",
+        "fr": "Source d'Alimentation"
       },
-      "children": [
+      "value": "auto",
+      "values": [
         {
-          "id": "button_count",
-          "type": "dropdown",
+          "id": "auto",
           "label": {
-            "en": "Number of Buttons",
-            "fr": "Nombre de Boutons",
-            "nl": "Aantal Knoppen",
-            "de": "Anzahl der Tasten",
-            "it": "Numero di Pulsanti",
-            "sv": "Antal Knappar",
-            "no": "Antall Knapper",
-            "es": "Número de Botones",
-            "da": "Antal Knapper"
-          },
-          "hint": {
-            "en": "Auto-detect or manually set the number of buttons",
-            "fr": "Détection automatique ou configuration manuelle du nombre de boutons"
-          },
-          "value": "auto",
-          "values": [
-            {"id": "auto", "label": {"en": "Auto-detect", "fr": "Détection automatique"}},
-            {"id": "1", "label": {"en": "1 Button", "fr": "1 Bouton"}},
-            {"id": "2", "label": {"en": "2 Buttons", "fr": "2 Boutons"}},
-            {"id": "3", "label": {"en": "3 Buttons", "fr": "3 Boutons"}},
-            {"id": "4", "label": {"en": "4 Buttons", "fr": "4 Boutons"}},
-            {"id": "6", "label": {"en": "6 Buttons", "fr": "6 Boutons"}},
-            {"id": "8", "label": {"en": "8 Buttons", "fr": "8 Boutons"}}
-          ]
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
         },
         {
-          "id": "battery_type",
-          "type": "dropdown",
+          "id": "ac",
           "label": {
-            "en": "Battery Type",
-            "fr": "Type de Pile"
-          },
-          "hint": {
-            "en": "Select your battery type for accurate reporting",
-            "fr": "Sélectionnez le type de pile pour un rapport précis"
-          },
-          "value": "CR2032",
-          "values": [
-            {"id": "CR2032", "label": {"en": "CR2032"}},
-            {"id": "CR2450", "label": {"en": "CR2450"}},
-            {"id": "CR123A", "label": {"en": "CR123A"}},
-            {"id": "AAA", "label": {"en": "AAA"}},
-            {"id": "AA", "label": {"en": "AA"}}
-          ]
+            "en": "AC Powered",
+            "fr": "Alimentation Secteur"
+          }
+        },
+        {
+          "id": "dc",
+          "label": {
+            "en": "DC Powered",
+            "fr": "Alimentation DC"
+          }
+        },
+        {
+          "id": "battery",
+          "label": {
+            "en": "Battery Powered",
+            "fr": "Sur Batterie"
+          }
         }
-      ]
+      ],
+      "hint": {
+        "en": "Select power source manually or use auto-detection",
+        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+      }
     },
     {
-      "type": "group",
+      "id": "battery_type",
+      "type": "dropdown",
       "label": {
-        "en": "Battery Management",
-        "fr": "Gestion Batterie"
+        "en": "Battery Type",
+        "fr": "Type de Batterie"
       },
-      "children": [
+      "value": "auto",
+      "values": [
         {
-          "id": "battery_threshold",
-          "type": "number",
+          "id": "auto",
           "label": {
-            "en": "Low Battery Threshold (%)",
-            "fr": "Seuil Batterie Faible (%)"
-          },
-          "hint": {
-            "en": "Trigger low battery warning at this percentage",
-            "fr": "Déclencher l'alerte batterie faible à ce pourcentage"
-          },
-          "value": 20,
-          "min": 5,
-          "max": 50,
-          "units": "%"
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "CR2032",
+          "label": {
+            "en": "CR2032 (3V Button Cell)",
+            "fr": "CR2032 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "CR2450",
+          "label": {
+            "en": "CR2450 (3V Button Cell)",
+            "fr": "CR2450 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "AAA",
+          "label": {
+            "en": "AAA (1.5V)",
+            "fr": "AAA (1.5V)"
+          }
+        },
+        {
+          "id": "AA",
+          "label": {
+            "en": "AA (1.5V)",
+            "fr": "AA (1.5V)"
+          }
+        },
+        {
+          "id": "CR123A",
+          "label": {
+            "en": "CR123A (3V)",
+            "fr": "CR123A (3V)"
+          }
         }
-      ]
+      ],
+      "hint": {
+        "en": "Select battery type manually or use auto-detection based on voltage",
+        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+      }
+    },
+    {
+      "id": "battery_low_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold (%)",
+        "fr": "Seuil Batterie Faible (%)"
+      },
+      "value": 20,
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "hint": {
+        "en": "Trigger low battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "battery_critical_threshold",
+      "type": "number",
+      "label": {
+        "en": "Critical Battery Threshold (%)",
+        "fr": "Seuil Batterie Critique (%)"
+      },
+      "value": 10,
+      "min": 0,
+      "max": 30,
+      "step": 5,
+      "hint": {
+        "en": "Trigger critical battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "enable_battery_notifications",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Battery Notifications",
+        "fr": "Activer Notifications Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Send flow notifications for battery events",
+        "fr": "Envoyer des notifications de flow pour les événements de batterie"
+      }
+    },
+    {
+      "id": "battery_report_interval",
+      "type": "number",
+      "label": {
+        "en": "Battery Report Interval (hours)",
+        "fr": "Intervalle Rapport Batterie (heures)"
+      },
+      "value": 24,
+      "min": 1,
+      "max": 168,
+      "step": 1,
+      "hint": {
+        "en": "How often to request battery status updates",
+        "fr": "Fréquence de demande des mises à jour d'état de batterie"
+      }
+    },
+    {
+      "id": "energy_optimization",
+      "type": "dropdown",
+      "label": {
+        "en": "Energy Optimization Mode",
+        "fr": "Mode Optimisation Énergétique"
+      },
+      "value": "balanced",
+      "values": [
+        {
+          "id": "performance",
+          "label": {
+            "en": "Performance (More responsive)",
+            "fr": "Performance (Plus réactif)"
+          }
+        },
+        {
+          "id": "balanced",
+          "label": {
+            "en": "Balanced",
+            "fr": "Équilibré"
+          }
+        },
+        {
+          "id": "power_saving",
+          "label": {
+            "en": "Power Saving (Longer battery)",
+            "fr": "Économie d'énergie (Batterie plus longue)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Balance between responsiveness and battery life",
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+      }
+    },
+    {
+      "id": "show_voltage",
+      "type": "checkbox",
+      "label": {
+        "en": "Show Battery Voltage",
+        "fr": "Afficher Tension Batterie"
+      },
+      "value": false,
+      "hint": {
+        "en": "Display raw battery voltage in device settings",
+        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+      }
     }
   ],
-  "connectivity": ["zigbee"],
-  "platforms": ["local"]
+  "connectivity": [
+    "zigbee"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "AAA",
+      "AA",
+      "CR123A"
+    ],
+    "approximation": {
+      "usageConstant": 0.5
+    }
+  }
 }

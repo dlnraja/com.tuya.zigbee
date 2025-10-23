@@ -1,0 +1,97 @@
+[
+  {
+    "id": "battery_low",
+    "title": {
+      "en": "Battery is Low",
+      "fr": "Batterie Faible"
+    },
+    "hint": {
+      "en": "Triggered when battery level drops below low threshold",
+      "fr": "Déclenché lorsque le niveau de batterie passe en dessous du seuil faible"
+    },
+    "tokens": [
+      {
+        "name": "battery",
+        "type": "number",
+        "title": {
+          "en": "Battery Level (%)",
+          "fr": "Niveau Batterie (%)"
+        },
+        "example": 15
+      },
+      {
+        "name": "voltage",
+        "type": "number",
+        "title": {
+          "en": "Voltage (V)",
+          "fr": "Tension (V)"
+        },
+        "example": 2.8
+      }
+    ]
+  },
+  {
+    "id": "battery_critical",
+    "title": {
+      "en": "Battery is Critical",
+      "fr": "Batterie Critique"
+    },
+    "hint": {
+      "en": "Triggered when battery level drops below critical threshold",
+      "fr": "Déclenché lorsque le niveau de batterie passe en dessous du seuil critique"
+    },
+    "tokens": [
+      {
+        "name": "battery",
+        "type": "number",
+        "title": {
+          "en": "Battery Level (%)",
+          "fr": "Niveau Batterie (%)"
+        },
+        "example": 5
+      },
+      {
+        "name": "voltage",
+        "type": "number",
+        "title": {
+          "en": "Voltage (V)",
+          "fr": "Tension (V)"
+        },
+        "example": 2.4
+      }
+    ]
+  },
+  {
+    "id": "battery_charged",
+    "title": {
+      "en": "Battery Fully Charged",
+      "fr": "Batterie Complètement Chargée"
+    },
+    "hint": {
+      "en": "Triggered when battery reaches 100%",
+      "fr": "Déclenché lorsque la batterie atteint 100%"
+    }
+  },
+  {
+    "id": "power_source_changed",
+    "title": {
+      "en": "Power Source Changed",
+      "fr": "Source d'Alimentation Changée"
+    },
+    "hint": {
+      "en": "Triggered when device switches power source",
+      "fr": "Déclenché lorsque l'appareil change de source d'alimentation"
+    },
+    "tokens": [
+      {
+        "name": "power_source",
+        "type": "string",
+        "title": {
+          "en": "Power Source",
+          "fr": "Source d'Alimentation"
+        },
+        "example": "battery"
+      }
+    ]
+  }
+]
