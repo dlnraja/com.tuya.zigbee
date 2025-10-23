@@ -416,5 +416,11 @@
     "large": "drivers/zemismart_switch_5gang/assets/images/large.png",
     "xlarge": "drivers/zemismart_switch_5gang/assets/images/xlarge.png"
   },
-  "id": "zemismart_switch_5gang"
+  "id": "zemismart_switch_5gang",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }

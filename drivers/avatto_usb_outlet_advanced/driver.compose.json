@@ -390,5 +390,11 @@
     "large": "drivers/avatto_usb_outlet_advanced/assets/images/large.png",
     "xlarge": "drivers/avatto_usb_outlet_advanced/assets/images/xlarge.png"
   },
-  "id": "avatto_usb_outlet_advanced"
+  "id": "avatto_usb_outlet_advanced",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }

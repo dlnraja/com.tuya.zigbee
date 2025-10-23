@@ -416,5 +416,11 @@
     "large": "drivers/zemismart_wireless_switch_4button/assets/images/large.png",
     "xlarge": "drivers/zemismart_wireless_switch_4button/assets/images/xlarge.png"
   },
-  "id": "zemismart_wireless_switch_4button"
+  "id": "zemismart_wireless_switch_4button",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }

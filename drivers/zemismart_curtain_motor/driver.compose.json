@@ -389,5 +389,11 @@
     "large": "drivers/zemismart_curtain_motor/assets/images/large.png",
     "xlarge": "drivers/zemismart_curtain_motor/assets/images/xlarge.png"
   },
-  "id": "zemismart_curtain_motor"
+  "id": "zemismart_curtain_motor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }

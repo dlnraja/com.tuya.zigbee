@@ -340,5 +340,11 @@
     "large": "drivers/nous_air_quality_monitor/assets/images/large.png",
     "xlarge": "drivers/nous_air_quality_monitor/assets/images/xlarge.png"
   },
-  "id": "nous_air_quality_monitor"
+  "id": "nous_air_quality_monitor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }

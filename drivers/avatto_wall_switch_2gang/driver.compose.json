@@ -441,5 +441,11 @@
     "large": "drivers/avatto_wall_switch_2gang/assets/images/large.png",
     "xlarge": "drivers/avatto_wall_switch_2gang/assets/images/xlarge.png"
   },
-  "id": "avatto_wall_switch_2gang"
+  "id": "avatto_wall_switch_2gang",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }
