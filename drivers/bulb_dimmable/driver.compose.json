@@ -216,7 +216,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/avatto_smart_bulb_dimmer/assets/learnmode.svg",
+      "image": "/drivers/bulb_dimmable/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -449,11 +449,11 @@
     }
   ],
   "images": {
-    "small": "drivers/avatto_smart_bulb_dimmer/assets/images/small.png",
-    "large": "drivers/avatto_smart_bulb_dimmer/assets/images/large.png",
-    "xlarge": "drivers/avatto_smart_bulb_dimmer/assets/images/xlarge.png"
+    "small": "drivers/bulb_dimmable/assets/images/small.png",
+    "large": "drivers/bulb_dimmable/assets/images/large.png",
+    "xlarge": "drivers/bulb_dimmable/assets/images/xlarge.png"
   },
-  "id": "avatto_smart_bulb_dimmer",
+  "id": "bulb_dimmable",
   "platforms": [
     "local"
   ],

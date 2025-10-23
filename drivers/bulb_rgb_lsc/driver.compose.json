@@ -168,7 +168,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/lsc_bulb_rgb/assets/learnmode.svg",
+      "image": "/drivers/bulb_rgb_lsc/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -401,11 +401,11 @@
     }
   ],
   "images": {
-    "small": "drivers/lsc_bulb_rgb/assets/images/small.png",
-    "large": "drivers/lsc_bulb_rgb/assets/images/large.png",
-    "xlarge": "drivers/lsc_bulb_rgb/assets/images/xlarge.png"
+    "small": "drivers/bulb_rgb_lsc/assets/images/small.png",
+    "large": "drivers/bulb_rgb_lsc/assets/images/large.png",
+    "xlarge": "drivers/bulb_rgb_lsc/assets/images/xlarge.png"
   },
-  "id": "lsc_bulb_rgb",
+  "id": "bulb_rgb_lsc",
   "platforms": [
     "local"
   ],

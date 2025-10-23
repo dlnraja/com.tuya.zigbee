@@ -174,7 +174,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/avatto_plug_smart/assets/learnmode.svg",
+      "image": "/drivers/plug_smart/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -407,11 +407,11 @@
     }
   ],
   "images": {
-    "small": "drivers/avatto_plug_smart/assets/images/small.png",
-    "large": "drivers/avatto_plug_smart/assets/images/large.png",
-    "xlarge": "drivers/avatto_plug_smart/assets/images/xlarge.png"
+    "small": "drivers/plug_smart/assets/images/small.png",
+    "large": "drivers/plug_smart/assets/images/large.png",
+    "xlarge": "drivers/plug_smart/assets/images/xlarge.png"
   },
-  "id": "avatto_plug_smart",
+  "id": "plug_smart",
   "platforms": [
     "local"
   ],

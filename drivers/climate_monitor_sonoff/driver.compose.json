@@ -85,7 +85,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/moes_sonoff_temperature_humidity/assets/learnmode.svg",
+      "image": "/drivers/climate_monitor_sonoff/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -318,11 +318,11 @@
     }
   ],
   "images": {
-    "small": "drivers/moes_sonoff_temperature_humidity/assets/images/small.png",
-    "large": "drivers/moes_sonoff_temperature_humidity/assets/images/large.png",
-    "xlarge": "drivers/moes_sonoff_temperature_humidity/assets/images/xlarge.png"
+    "small": "drivers/climate_monitor_sonoff/assets/images/small.png",
+    "large": "drivers/climate_monitor_sonoff/assets/images/large.png",
+    "xlarge": "drivers/climate_monitor_sonoff/assets/images/xlarge.png"
   },
-  "id": "moes_sonoff_temperature_humidity",
+  "id": "climate_monitor_sonoff",
   "platforms": [
     "local"
   ],

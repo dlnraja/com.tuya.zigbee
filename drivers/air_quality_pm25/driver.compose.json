@@ -140,7 +140,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/zemismart_pm25_detector/assets/learnmode.svg",
+      "image": "/drivers/air_quality_pm25/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -373,11 +373,11 @@
     }
   ],
   "images": {
-    "small": "drivers/zemismart_pm25_detector/assets/images/small.png",
-    "large": "drivers/zemismart_pm25_detector/assets/images/large.png",
-    "xlarge": "drivers/zemismart_pm25_detector/assets/images/xlarge.png"
+    "small": "drivers/air_quality_pm25/assets/images/small.png",
+    "large": "drivers/air_quality_pm25/assets/images/large.png",
+    "xlarge": "drivers/air_quality_pm25/assets/images/xlarge.png"
   },
-  "id": "zemismart_pm25_detector",
+  "id": "air_quality_pm25",
   "platforms": [
     "local"
   ],

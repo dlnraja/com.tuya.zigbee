@@ -176,7 +176,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/zemismart_pir_sensor_advanced/assets/learnmode.svg",
+      "image": "/drivers/motion_sensor_pir_advanced/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -409,11 +409,11 @@
     }
   ],
   "images": {
-    "small": "drivers/zemismart_pir_sensor_advanced/assets/images/small.png",
-    "large": "drivers/zemismart_pir_sensor_advanced/assets/images/large.png",
-    "xlarge": "drivers/zemismart_pir_sensor_advanced/assets/images/xlarge.png"
+    "small": "drivers/motion_sensor_pir_advanced/assets/images/small.png",
+    "large": "drivers/motion_sensor_pir_advanced/assets/images/large.png",
+    "xlarge": "drivers/motion_sensor_pir_advanced/assets/images/xlarge.png"
   },
-  "id": "zemismart_pir_sensor_advanced",
+  "id": "motion_sensor_pir_advanced",
   "platforms": [
     "local"
   ],

@@ -138,7 +138,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/zemismart_lock_basic/assets/learnmode.svg",
+      "image": "/drivers/lock_smart_basic/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -371,11 +371,11 @@
     }
   ],
   "images": {
-    "small": "drivers/zemismart_lock_basic/assets/images/small.png",
-    "large": "drivers/zemismart_lock_basic/assets/images/large.png",
-    "xlarge": "drivers/zemismart_lock_basic/assets/images/xlarge.png"
+    "small": "drivers/lock_smart_basic/assets/images/small.png",
+    "large": "drivers/lock_smart_basic/assets/images/large.png",
+    "xlarge": "drivers/lock_smart_basic/assets/images/xlarge.png"
   },
-  "id": "zemismart_lock_basic",
+  "id": "lock_smart_basic",
   "platforms": [
     "local"
   ],

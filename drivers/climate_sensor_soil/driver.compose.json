@@ -148,7 +148,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/tuya_soil_tester_temp_humid/assets/learnmode.svg",
+      "image": "/drivers/climate_sensor_soil/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -381,11 +381,11 @@
     }
   ],
   "images": {
-    "small": "drivers/tuya_soil_tester_temp_humid/assets/images/small.png",
-    "large": "drivers/tuya_soil_tester_temp_humid/assets/images/large.png",
-    "xlarge": "drivers/tuya_soil_tester_temp_humid/assets/images/xlarge.png"
+    "small": "drivers/climate_sensor_soil/assets/images/small.png",
+    "large": "drivers/climate_sensor_soil/assets/images/large.png",
+    "xlarge": "drivers/climate_sensor_soil/assets/images/xlarge.png"
   },
-  "id": "tuya_soil_tester_temp_humid",
+  "id": "climate_sensor_soil",
   "platforms": [
     "local"
   ],

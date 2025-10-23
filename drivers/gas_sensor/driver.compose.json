@@ -124,7 +124,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/tuya_gas_sensor_ts0601/assets/learnmode.svg",
+      "image": "/drivers/gas_sensor/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -357,11 +357,11 @@
     }
   ],
   "images": {
-    "small": "drivers/tuya_gas_sensor_ts0601/assets/images/small.png",
-    "large": "drivers/tuya_gas_sensor_ts0601/assets/images/large.png",
-    "xlarge": "drivers/tuya_gas_sensor_ts0601/assets/images/xlarge.png"
+    "small": "drivers/gas_sensor/assets/images/small.png",
+    "large": "drivers/gas_sensor/assets/images/large.png",
+    "xlarge": "drivers/gas_sensor/assets/images/xlarge.png"
   },
-  "id": "tuya_gas_sensor_ts0601",
+  "id": "gas_sensor",
   "platforms": [
     "local"
   ],

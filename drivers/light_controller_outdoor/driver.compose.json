@@ -157,7 +157,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/zemismart_outdoor_light_controller/assets/learnmode.svg",
+      "image": "/drivers/light_controller_outdoor/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -390,11 +390,11 @@
     }
   ],
   "images": {
-    "small": "drivers/zemismart_outdoor_light_controller/assets/images/small.png",
-    "large": "drivers/zemismart_outdoor_light_controller/assets/images/large.png",
-    "xlarge": "drivers/zemismart_outdoor_light_controller/assets/images/xlarge.png"
+    "small": "drivers/light_controller_outdoor/assets/images/small.png",
+    "large": "drivers/light_controller_outdoor/assets/images/large.png",
+    "xlarge": "drivers/light_controller_outdoor/assets/images/xlarge.png"
   },
-  "id": "zemismart_outdoor_light_controller",
+  "id": "light_controller_outdoor",
   "platforms": [
     "local"
   ],

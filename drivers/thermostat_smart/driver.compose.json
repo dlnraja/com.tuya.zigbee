@@ -121,8 +121,8 @@
     }
   },
   "images": {
-    "small": "drivers/avatto_thermostat_hybrid/assets/images/small.png",
-    "large": "drivers/avatto_thermostat_hybrid/assets/images/large.png"
+    "small": "drivers/thermostat_smart/assets/images/small.png",
+    "large": "drivers/thermostat_smart/assets/images/large.png"
   },
   "community": {
     "sources": [
@@ -191,7 +191,7 @@
       "usageConstant": 0.5
     }
   },
-  "id": "avatto_thermostat_hybrid",
+  "id": "thermostat_smart",
   "settings": [
     {
       "id": "power_source",

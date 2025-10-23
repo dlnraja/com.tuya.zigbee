@@ -1,5 +1,5 @@
 {
-  "id": "lonsonho_shortcut_button_other",
+  "id": "button_shortcut",
   "name": {
     "en": "Shortcut Button (OTHER)",
     "fr": "Shortcut Button (Battery)"
@@ -15,9 +15,9 @@
     "zigbee"
   ],
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+    "small": "drivers/button_shortcut/assets/images/small.png",
+    "large": "drivers/button_shortcut/assets/images/large.png",
+    "xlarge": "drivers/button_shortcut/assets/images/xlarge.png"
   },
   "zigbee": {
     "manufacturerName": [
@@ -84,7 +84,7 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/learnmode.svg",
+      "image": "/drivers/button_shortcut/assets/learnmode.svg",
       "instruction": {
         "en": "Follow device pairing instructions",
         "fr": "Suivre les instructions d'appairage"

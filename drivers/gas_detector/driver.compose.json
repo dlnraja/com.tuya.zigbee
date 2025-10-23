@@ -146,7 +146,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/zemismart_gas_detector/assets/learnmode.svg",
+      "image": "/drivers/gas_detector/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -379,11 +379,11 @@
     }
   ],
   "images": {
-    "small": "drivers/zemismart_gas_detector/assets/images/small.png",
-    "large": "drivers/zemismart_gas_detector/assets/images/large.png",
-    "xlarge": "drivers/zemismart_gas_detector/assets/images/xlarge.png"
+    "small": "drivers/gas_detector/assets/images/small.png",
+    "large": "drivers/gas_detector/assets/images/large.png",
+    "xlarge": "drivers/gas_detector/assets/images/xlarge.png"
   },
-  "id": "zemismart_gas_detector",
+  "id": "gas_detector",
   "platforms": [
     "local"
   ],

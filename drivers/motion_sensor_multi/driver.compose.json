@@ -193,7 +193,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/zemismart_motion_temp_humidity_illumination_multi/assets/learnmode.svg",
+      "image": "/drivers/motion_sensor_multi/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -426,11 +426,11 @@
     }
   ],
   "images": {
-    "small": "drivers/zemismart_motion_temp_humidity_illumination_multi/assets/images/small.png",
-    "large": "drivers/zemismart_motion_temp_humidity_illumination_multi/assets/images/large.png",
-    "xlarge": "drivers/zemismart_motion_temp_humidity_illumination_multi/assets/images/xlarge.png"
+    "small": "drivers/motion_sensor_multi/assets/images/small.png",
+    "large": "drivers/motion_sensor_multi/assets/images/large.png",
+    "xlarge": "drivers/motion_sensor_multi/assets/images/xlarge.png"
   },
-  "id": "zemismart_motion_temp_humidity_illumination_multi",
+  "id": "motion_sensor_multi",
   "platforms": [
     "local"
   ],

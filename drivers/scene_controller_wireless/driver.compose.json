@@ -8,8 +8,8 @@
     "measure_battery"
   ],
   "images": {
-    "small": "drivers/zemismart_scene_controller/assets/images/small.png",
-    "large": "drivers/zemismart_scene_controller/assets/images/large.png"
+    "small": "drivers/scene_controller_wireless/assets/images/small.png",
+    "large": "drivers/scene_controller_wireless/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [
@@ -158,7 +158,7 @@
   "platforms": [
     "local"
   ],
-  "id": "zemismart_scene_controller",
+  "id": "scene_controller_wireless",
   "connectivity": [
     "zigbee"
   ],

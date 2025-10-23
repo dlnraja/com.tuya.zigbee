@@ -63,7 +63,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/lsc_philips_led_strip/assets/learnmode.svg",
+      "image": "/drivers/led_strip_philips/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -296,11 +296,11 @@
     }
   ],
   "images": {
-    "small": "drivers/lsc_philips_led_strip/assets/images/small.png",
-    "large": "drivers/lsc_philips_led_strip/assets/images/large.png",
-    "xlarge": "drivers/lsc_philips_led_strip/assets/images/xlarge.png"
+    "small": "drivers/led_strip_philips/assets/images/small.png",
+    "large": "drivers/led_strip_philips/assets/images/large.png",
+    "xlarge": "drivers/led_strip_philips/assets/images/xlarge.png"
   },
-  "id": "lsc_philips_led_strip",
+  "id": "led_strip_philips",
   "platforms": [
     "local"
   ],

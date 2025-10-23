@@ -182,7 +182,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/zemismart_wireless_switch_1gang/assets/learnmode.svg",
+      "image": "/drivers/switch_wireless_1gang/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -415,11 +415,11 @@
     }
   ],
   "images": {
-    "small": "drivers/zemismart_wireless_switch_1gang/assets/images/small.png",
-    "large": "drivers/zemismart_wireless_switch_1gang/assets/images/large.png",
-    "xlarge": "drivers/zemismart_wireless_switch_1gang/assets/images/xlarge.png"
+    "small": "drivers/switch_wireless_1gang/assets/images/small.png",
+    "large": "drivers/switch_wireless_1gang/assets/images/large.png",
+    "xlarge": "drivers/switch_wireless_1gang/assets/images/xlarge.png"
   },
-  "id": "zemismart_wireless_switch_1gang",
+  "id": "switch_wireless_1gang",
   "platforms": [
     "local"
   ],

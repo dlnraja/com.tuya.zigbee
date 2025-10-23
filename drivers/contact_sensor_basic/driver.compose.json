@@ -131,7 +131,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/lonsonho_contact_sensor_basic/assets/learnmode.svg",
+      "image": "/drivers/contact_sensor_basic/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -364,11 +364,11 @@
     }
   ],
   "images": {
-    "small": "drivers/lonsonho_contact_sensor_basic/assets/images/small.png",
-    "large": "drivers/lonsonho_contact_sensor_basic/assets/images/large.png",
-    "xlarge": "drivers/lonsonho_contact_sensor_basic/assets/images/xlarge.png"
+    "small": "drivers/contact_sensor_basic/assets/images/small.png",
+    "large": "drivers/contact_sensor_basic/assets/images/large.png",
+    "xlarge": "drivers/contact_sensor_basic/assets/images/xlarge.png"
   },
-  "id": "lonsonho_contact_sensor_basic",
+  "id": "contact_sensor_basic",
   "platforms": [
     "local"
   ],

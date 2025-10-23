@@ -73,7 +73,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/philips_outdoor_sensor/assets/learnmode.svg",
+      "image": "/drivers/motion_sensor_outdoor_philips/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -306,11 +306,11 @@
     }
   ],
   "images": {
-    "small": "drivers/philips_outdoor_sensor/assets/images/small.png",
-    "large": "drivers/philips_outdoor_sensor/assets/images/large.png",
-    "xlarge": "drivers/philips_outdoor_sensor/assets/images/xlarge.png"
+    "small": "drivers/motion_sensor_outdoor_philips/assets/images/small.png",
+    "large": "drivers/motion_sensor_outdoor_philips/assets/images/large.png",
+    "xlarge": "drivers/motion_sensor_outdoor_philips/assets/images/xlarge.png"
   },
-  "id": "philips_outdoor_sensor",
+  "id": "motion_sensor_outdoor_philips",
   "platforms": [
     "local"
   ],

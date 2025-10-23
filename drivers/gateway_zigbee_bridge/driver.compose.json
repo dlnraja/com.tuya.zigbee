@@ -88,7 +88,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/nous_zbbridge/assets/learnmode.svg",
+      "image": "/drivers/gateway_zigbee_bridge/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -321,11 +321,11 @@
     }
   ],
   "images": {
-    "small": "drivers/nous_zbbridge/assets/images/small.png",
-    "large": "drivers/nous_zbbridge/assets/images/large.png",
-    "xlarge": "drivers/nous_zbbridge/assets/images/xlarge.png"
+    "small": "drivers/gateway_zigbee_bridge/assets/images/small.png",
+    "large": "drivers/gateway_zigbee_bridge/assets/images/large.png",
+    "xlarge": "drivers/gateway_zigbee_bridge/assets/images/xlarge.png"
   },
-  "id": "nous_zbbridge",
+  "id": "gateway_zigbee_bridge",
   "platforms": [
     "local"
   ],

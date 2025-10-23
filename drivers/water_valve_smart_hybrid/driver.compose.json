@@ -141,8 +141,8 @@
     }
   },
   "images": {
-    "small": "drivers/avatto_water_valve_smart_hybrid/assets/images/small.png",
-    "large": "drivers/avatto_water_valve_smart_hybrid/assets/images/large.png"
+    "small": "drivers/water_valve_smart_hybrid/assets/images/small.png",
+    "large": "drivers/water_valve_smart_hybrid/assets/images/large.png"
   },
   "capabilitiesOptions": {
     "measure_temperature": {
@@ -166,7 +166,7 @@
       "usageConstant": 0.5
     }
   },
-  "id": "avatto_water_valve_smart_hybrid",
+  "id": "water_valve_smart_hybrid",
   "connectivity": [
     "zigbee"
   ],
