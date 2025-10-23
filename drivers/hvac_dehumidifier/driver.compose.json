@@ -1,5 +1,5 @@
 {
-  "id": "tuya_dehumidifier_hybrid",
+  "id": "hvac_dehumidifier",
   "name": {
     "en": "Dehumidifier (Smart)",
     "fr": "Déshumidificateur (Smart)",
@@ -56,9 +56,9 @@
     "zigbee"
   ],
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+    "small": "drivers/hvac_dehumidifier/assets/images/small.png",
+    "large": "drivers/hvac_dehumidifier/assets/images/large.png",
+    "xlarge": "drivers/hvac_dehumidifier/assets/images/xlarge.png"
   },
   "zigbee": {
     "manufacturerName": [
@@ -136,7 +136,7 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/learnmode.svg",
+      "image": "/drivers/hvac_dehumidifier/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the power button for 5 seconds until LED blinks rapidly",
         "fr": "Appuyez et maintenez le bouton d'alimentation pendant 5 secondes jusqu'à ce que la LED clignote rapidement",

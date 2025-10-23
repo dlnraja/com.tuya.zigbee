@@ -150,7 +150,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/zemismart_roller_shutter_controller/assets/learnmode.svg",
+      "image": "/drivers/shutter_roller_controller/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -383,11 +383,11 @@
     }
   ],
   "images": {
-    "small": "drivers/zemismart_roller_shutter_controller/assets/images/small.png",
-    "large": "drivers/zemismart_roller_shutter_controller/assets/images/large.png",
-    "xlarge": "drivers/zemismart_roller_shutter_controller/assets/images/xlarge.png"
+    "small": "drivers/shutter_roller_controller/assets/images/small.png",
+    "large": "drivers/shutter_roller_controller/assets/images/large.png",
+    "xlarge": "drivers/shutter_roller_controller/assets/images/xlarge.png"
   },
-  "id": "zemismart_roller_shutter_controller",
+  "id": "shutter_roller_controller",
   "platforms": [
     "local"
   ],

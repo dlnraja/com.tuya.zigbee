@@ -15,9 +15,9 @@
     "zigbee"
   ],
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+    "small": "drivers/lsc_wireless_switch_4button_other/assets/images/small.png",
+    "large": "drivers/lsc_wireless_switch_4button_other/assets/images/large.png",
+    "xlarge": "drivers/lsc_wireless_switch_4button_other/assets/images/xlarge.png"
   },
   "zigbee": {
     "manufacturerName": [
@@ -114,7 +114,7 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/learnmode.svg",
+      "image": "/drivers/lsc_wireless_switch_4button_other/assets/learnmode.svg",
       "instruction": {
         "en": "Follow device pairing instructions",
         "fr": "Suivre les instructions d'appairage"

@@ -122,7 +122,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/avatto_smart_spot/assets/learnmode.svg",
+      "image": "/drivers/spot_light_smart/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -355,11 +355,11 @@
     }
   ],
   "images": {
-    "small": "drivers/avatto_smart_spot/assets/images/small.png",
-    "large": "drivers/avatto_smart_spot/assets/images/large.png",
-    "xlarge": "drivers/avatto_smart_spot/assets/images/xlarge.png"
+    "small": "drivers/spot_light_smart/assets/images/small.png",
+    "large": "drivers/spot_light_smart/assets/images/large.png",
+    "xlarge": "drivers/spot_light_smart/assets/images/xlarge.png"
   },
-  "id": "avatto_smart_spot",
+  "id": "spot_light_smart",
   "platforms": [
     "local"
   ],

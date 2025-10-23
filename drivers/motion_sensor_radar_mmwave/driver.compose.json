@@ -192,7 +192,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/zemismart_radar_motion_sensor_mmwave/assets/learnmode.svg",
+      "image": "/drivers/motion_sensor_radar_mmwave/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -425,11 +425,11 @@
     }
   ],
   "images": {
-    "small": "drivers/zemismart_radar_motion_sensor_mmwave/assets/images/small.png",
-    "large": "drivers/zemismart_radar_motion_sensor_mmwave/assets/images/large.png",
-    "xlarge": "drivers/zemismart_radar_motion_sensor_mmwave/assets/images/xlarge.png"
+    "small": "drivers/motion_sensor_radar_mmwave/assets/images/small.png",
+    "large": "drivers/motion_sensor_radar_mmwave/assets/images/large.png",
+    "xlarge": "drivers/motion_sensor_radar_mmwave/assets/images/xlarge.png"
   },
-  "id": "zemismart_radar_motion_sensor_mmwave",
+  "id": "motion_sensor_radar_mmwave",
   "platforms": [
     "local"
   ],

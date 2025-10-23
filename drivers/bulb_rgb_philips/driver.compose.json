@@ -79,7 +79,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/lsc_philips_bulb_color/assets/learnmode.svg",
+      "image": "/drivers/bulb_rgb_philips/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -312,11 +312,11 @@
     }
   ],
   "images": {
-    "small": "drivers/lsc_philips_bulb_color/assets/images/small.png",
-    "large": "drivers/lsc_philips_bulb_color/assets/images/large.png",
-    "xlarge": "drivers/lsc_philips_bulb_color/assets/images/xlarge.png"
+    "small": "drivers/bulb_rgb_philips/assets/images/small.png",
+    "large": "drivers/bulb_rgb_philips/assets/images/large.png",
+    "xlarge": "drivers/bulb_rgb_philips/assets/images/xlarge.png"
   },
-  "id": "lsc_philips_bulb_color",
+  "id": "bulb_rgb_philips",
   "platforms": [
     "local"
   ],

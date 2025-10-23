@@ -204,7 +204,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/avatto_dimmer_switch_timer_module/assets/learnmode.svg",
+      "image": "/drivers/module_dimmer_timer/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -437,11 +437,11 @@
     }
   ],
   "images": {
-    "small": "drivers/avatto_dimmer_switch_timer_module/assets/images/small.png",
-    "large": "drivers/avatto_dimmer_switch_timer_module/assets/images/large.png",
-    "xlarge": "drivers/avatto_dimmer_switch_timer_module/assets/images/xlarge.png"
+    "small": "drivers/module_dimmer_timer/assets/images/small.png",
+    "large": "drivers/module_dimmer_timer/assets/images/large.png",
+    "xlarge": "drivers/module_dimmer_timer/assets/images/xlarge.png"
   },
-  "id": "avatto_dimmer_switch_timer_module",
+  "id": "module_dimmer_timer",
   "platforms": [
     "local"
   ],

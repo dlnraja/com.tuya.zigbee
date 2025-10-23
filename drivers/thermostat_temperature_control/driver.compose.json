@@ -152,8 +152,8 @@
     }
   },
   "images": {
-    "large": "drivers/zemismart_temperature_controller_hybrid/assets/images/large.png",
-    "small": "drivers/zemismart_temperature_controller_hybrid/assets/images/small.png"
+    "large": "drivers/thermostat_temperature_control/assets/images/large.png",
+    "small": "drivers/thermostat_temperature_control/assets/images/small.png"
   },
   "pair": [
     {
@@ -201,7 +201,7 @@
       "usageConstant": 0.5
     }
   },
-  "id": "zemismart_temperature_controller_hybrid",
+  "id": "thermostat_temperature_control",
   "settings": [
     {
       "id": "power_source",

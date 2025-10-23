@@ -1,5 +1,5 @@
 {
-  "id": "tuya_air_conditioner_hybrid",
+  "id": "hvac_air_conditioner",
   "name": {
     "en": "Air Conditioner (Smart)",
     "fr": "Climatiseur (Smart)",
@@ -138,9 +138,9 @@
     "zigbee"
   ],
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+    "small": "drivers/hvac_air_conditioner/assets/images/small.png",
+    "large": "drivers/hvac_air_conditioner/assets/images/large.png",
+    "xlarge": "drivers/hvac_air_conditioner/assets/images/xlarge.png"
   },
   "zigbee": {
     "manufacturerName": [
@@ -220,7 +220,7 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/learnmode.svg",
+      "image": "/drivers/hvac_air_conditioner/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the WiFi button for 5 seconds until LED blinks rapidly",
         "fr": "Appuyez et maintenez le bouton WiFi pendant 5 secondes jusqu'à ce que la LED clignote rapidement",

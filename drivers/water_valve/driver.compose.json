@@ -147,7 +147,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/avatto_water_valve/assets/learnmode.svg",
+      "image": "/drivers/water_valve/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -380,11 +380,11 @@
     }
   ],
   "images": {
-    "small": "drivers/avatto_water_valve/assets/images/small.png",
-    "large": "drivers/avatto_water_valve/assets/images/large.png",
-    "xlarge": "drivers/avatto_water_valve/assets/images/xlarge.png"
+    "small": "drivers/water_valve/assets/images/small.png",
+    "large": "drivers/water_valve/assets/images/large.png",
+    "xlarge": "drivers/water_valve/assets/images/xlarge.png"
   },
-  "id": "avatto_water_valve",
+  "id": "water_valve",
   "platforms": [
     "local"
   ],

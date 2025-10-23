@@ -14,8 +14,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "drivers/avatto_radiator_valve_smart_hybrid/assets/images/small.png",
-    "large": "drivers/avatto_radiator_valve_smart_hybrid/assets/images/large.png"
+    "small": "drivers/radiator_valve_smart/assets/images/small.png",
+    "large": "drivers/radiator_valve_smart/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [
@@ -112,7 +112,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/tuya_radiator_valve_smart_hybrid/assets/large.png",
+      "image": "/drivers/radiator_valve_smart/assets/large.png",
       "instruction": {
         "en": "Follow the pairing instructions for your Smart Radiator Valve."
       }
@@ -353,7 +353,7 @@
       }
     }
   },
-  "id": "avatto_radiator_valve_smart_hybrid",
+  "id": "radiator_valve_smart",
   "learnmode": {
     "image": "./assets/learnmode.svg",
     "instruction": {

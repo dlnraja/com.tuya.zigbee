@@ -17,8 +17,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "drivers/zemismart_doorbell_button_internal/assets/images/small.png",
-    "large": "drivers/zemismart_doorbell_button_internal/assets/images/large.png"
+    "small": "drivers/doorbell_button/assets/images/small.png",
+    "large": "drivers/doorbell_button/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [
@@ -157,7 +157,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/zemismart_doorbell_button_internal/assets/large.png",
+      "image": "/drivers/doorbell_button/assets/large.png",
       "instruction": {
         "en": "Follow the pairing instructions for your Smart Doorbell."
       }
@@ -410,7 +410,7 @@
       "usageConstant": 0.5
     }
   },
-  "id": "zemismart_doorbell_button_internal",
+  "id": "doorbell_button",
   "learnmode": {
     "image": "./assets/learnmode.svg",
     "instruction": {

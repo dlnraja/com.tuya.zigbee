@@ -169,7 +169,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/zemismart_pir_radar_illumination_sensor/assets/learnmode.svg",
+      "image": "/drivers/motion_sensor_pir_radar/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -402,11 +402,11 @@
     }
   ],
   "images": {
-    "small": "drivers/zemismart_pir_radar_illumination_sensor/assets/images/small.png",
-    "large": "drivers/zemismart_pir_radar_illumination_sensor/assets/images/large.png",
-    "xlarge": "drivers/zemismart_pir_radar_illumination_sensor/assets/images/xlarge.png"
+    "small": "drivers/motion_sensor_pir_radar/assets/images/small.png",
+    "large": "drivers/motion_sensor_pir_radar/assets/images/large.png",
+    "xlarge": "drivers/motion_sensor_pir_radar/assets/images/xlarge.png"
   },
-  "id": "zemismart_pir_radar_illumination_sensor",
+  "id": "motion_sensor_pir_radar",
   "platforms": [
     "local"
   ],

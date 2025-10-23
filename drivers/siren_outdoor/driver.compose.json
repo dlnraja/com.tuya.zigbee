@@ -153,7 +153,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/tuya_outdoor_siren/assets/learnmode.svg",
+      "image": "/drivers/siren_outdoor/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -386,11 +386,11 @@
     }
   ],
   "images": {
-    "small": "drivers/tuya_outdoor_siren/assets/images/small.png",
-    "large": "drivers/tuya_outdoor_siren/assets/images/large.png",
-    "xlarge": "drivers/tuya_outdoor_siren/assets/images/xlarge.png"
+    "small": "drivers/siren_outdoor/assets/images/small.png",
+    "large": "drivers/siren_outdoor/assets/images/large.png",
+    "xlarge": "drivers/siren_outdoor/assets/images/xlarge.png"
   },
-  "id": "tuya_outdoor_siren",
+  "id": "siren_outdoor",
   "platforms": [
     "local"
   ],

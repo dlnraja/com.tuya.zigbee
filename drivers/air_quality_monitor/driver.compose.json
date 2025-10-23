@@ -137,8 +137,9 @@
     }
   },
   "images": {
-    "small": "drivers/zemismart_air_quality_monitor_pro_internal/assets/images/small.png",
-    "large": "drivers/zemismart_air_quality_monitor_pro_internal/assets/images/large.png"
+    "small": "drivers/air_quality_monitor/assets/images/small.png",
+    "large": "drivers/air_quality_monitor/assets/images/large.png",
+    "xlarge": "drivers/air_quality_monitor/assets/images/xlarge.png"
   },
   "platforms": [
     "local"
@@ -155,7 +156,7 @@
       "usageConstant": 0.5
     }
   },
-  "id": "zemismart_air_quality_monitor_pro_internal",
+  "id": "air_quality_monitor",
   "connectivity": [
     "zigbee"
   ],
