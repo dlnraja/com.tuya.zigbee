@@ -249,7 +249,7 @@
       }
     },
     {
-      "id": "energy_optimization",
+      "id": "optimization_mode",
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
@@ -297,5 +297,10 @@
         "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
       }
     }
-  ]
+  ],
+  "images": {
+    "small": "./drivers/avatto_osram_smart_plug/assets/images/small.png",
+    "large": "./drivers/avatto_osram_smart_plug/assets/images/large.png",
+    "xlarge": "./drivers/avatto_osram_smart_plug/assets/images/xlarge.png"
+  }
 }

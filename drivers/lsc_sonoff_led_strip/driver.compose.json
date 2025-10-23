@@ -231,7 +231,7 @@
       }
     },
     {
-      "id": "energy_optimization",
+      "id": "optimization_mode",
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
@@ -279,5 +279,10 @@
         "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
       }
     }
-  ]
+  ],
+  "images": {
+    "small": "./drivers/lsc_sonoff_led_strip/assets/images/small.png",
+    "large": "./drivers/lsc_sonoff_led_strip/assets/images/large.png",
+    "xlarge": "./drivers/lsc_sonoff_led_strip/assets/images/xlarge.png"
+  }
 }

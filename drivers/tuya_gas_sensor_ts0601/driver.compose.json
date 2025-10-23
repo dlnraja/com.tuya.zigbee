@@ -289,7 +289,7 @@
       }
     },
     {
-      "id": "energy_optimization",
+      "id": "optimization_mode",
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
@@ -337,5 +337,10 @@
         "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
       }
     }
-  ]
+  ],
+  "images": {
+    "small": "./drivers/tuya_gas_sensor_ts0601/assets/images/small.png",
+    "large": "./drivers/tuya_gas_sensor_ts0601/assets/images/large.png",
+    "xlarge": "./drivers/tuya_gas_sensor_ts0601/assets/images/xlarge.png"
+  }
 }
