@@ -184,7 +184,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/avatto_touch_switch_2gang/assets/learnmode.svg",
+      "image": "/drivers/switch_touch_2gang/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -417,11 +417,11 @@
     }
   ],
   "images": {
-    "small": "drivers/avatto_touch_switch_2gang/assets/images/small.png",
-    "large": "drivers/avatto_touch_switch_2gang/assets/images/large.png",
-    "xlarge": "drivers/avatto_touch_switch_2gang/assets/images/xlarge.png"
+    "small": "drivers/switch_touch_2gang/assets/images/small.png",
+    "large": "drivers/switch_touch_2gang/assets/images/large.png",
+    "xlarge": "drivers/switch_touch_2gang/assets/images/xlarge.png"
   },
-  "id": "avatto_touch_switch_2gang",
+  "id": "switch_touch_2gang",
   "platforms": [
     "local"
   ],

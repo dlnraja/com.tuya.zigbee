@@ -78,7 +78,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/lsc_osram_bulb_tunable_white/assets/learnmode.svg",
+      "image": "/drivers/bulb_tunable_white_osram/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -311,11 +311,11 @@
     }
   ],
   "images": {
-    "small": "drivers/lsc_osram_bulb_tunable_white/assets/images/small.png",
-    "large": "drivers/lsc_osram_bulb_tunable_white/assets/images/large.png",
-    "xlarge": "drivers/lsc_osram_bulb_tunable_white/assets/images/xlarge.png"
+    "small": "drivers/bulb_tunable_white_osram/assets/images/small.png",
+    "large": "drivers/bulb_tunable_white_osram/assets/images/large.png",
+    "xlarge": "drivers/bulb_tunable_white_osram/assets/images/xlarge.png"
   },
-  "id": "lsc_osram_bulb_tunable_white",
+  "id": "bulb_tunable_white_osram",
   "platforms": [
     "local"
   ],

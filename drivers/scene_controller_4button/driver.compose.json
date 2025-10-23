@@ -158,7 +158,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/zemismart_wireless_scene_controller_4button/assets/learnmode.svg",
+      "image": "/drivers/scene_controller_4button/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -391,11 +391,11 @@
     }
   ],
   "images": {
-    "small": "drivers/zemismart_wireless_scene_controller_4button/assets/images/small.png",
-    "large": "drivers/zemismart_wireless_scene_controller_4button/assets/images/large.png",
-    "xlarge": "drivers/zemismart_wireless_scene_controller_4button/assets/images/xlarge.png"
+    "small": "drivers/scene_controller_4button/assets/images/small.png",
+    "large": "drivers/scene_controller_4button/assets/images/large.png",
+    "xlarge": "drivers/scene_controller_4button/assets/images/xlarge.png"
   },
-  "id": "zemismart_wireless_scene_controller_4button",
+  "id": "scene_controller_4button",
   "platforms": [
     "local"
   ],

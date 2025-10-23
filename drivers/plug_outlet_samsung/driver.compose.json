@@ -76,7 +76,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/avatto_samsung_outlet/assets/learnmode.svg",
+      "image": "/drivers/plug_outlet_samsung/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -309,11 +309,11 @@
     }
   ],
   "images": {
-    "small": "drivers/avatto_samsung_outlet/assets/images/small.png",
-    "large": "drivers/avatto_samsung_outlet/assets/images/large.png",
-    "xlarge": "drivers/avatto_samsung_outlet/assets/images/xlarge.png"
+    "small": "drivers/plug_outlet_samsung/assets/images/small.png",
+    "large": "drivers/plug_outlet_samsung/assets/images/large.png",
+    "xlarge": "drivers/plug_outlet_samsung/assets/images/xlarge.png"
   },
-  "id": "avatto_samsung_outlet",
+  "id": "plug_outlet_samsung",
   "platforms": [
     "local"
   ],

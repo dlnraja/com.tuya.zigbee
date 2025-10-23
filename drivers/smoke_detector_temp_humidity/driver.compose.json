@@ -195,7 +195,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/zemismart_smoke_detector_temp_humidity_advanced/assets/learnmode.svg",
+      "image": "/drivers/smoke_detector_temp_humidity/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -428,11 +428,11 @@
     }
   ],
   "images": {
-    "small": "drivers/zemismart_smoke_detector_temp_humidity_advanced/assets/images/small.png",
-    "large": "drivers/zemismart_smoke_detector_temp_humidity_advanced/assets/images/large.png",
-    "xlarge": "drivers/zemismart_smoke_detector_temp_humidity_advanced/assets/images/xlarge.png"
+    "small": "drivers/smoke_detector_temp_humidity/assets/images/small.png",
+    "large": "drivers/smoke_detector_temp_humidity/assets/images/large.png",
+    "xlarge": "drivers/smoke_detector_temp_humidity/assets/images/xlarge.png"
   },
-  "id": "zemismart_smoke_detector_temp_humidity_advanced",
+  "id": "smoke_detector_temp_humidity",
   "platforms": [
     "local"
   ],

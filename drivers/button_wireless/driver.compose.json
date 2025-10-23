@@ -180,8 +180,8 @@
     }
   },
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "drivers/button_wireless/assets/images/small.png",
+    "large": "drivers/button_wireless/assets/images/large.png"
   },
   "settings": [
     {
@@ -426,5 +426,5 @@
       "usageConstant": 0.5
     }
   },
-  "id": "wireless_button"
+  "id": "button_wireless"
 }

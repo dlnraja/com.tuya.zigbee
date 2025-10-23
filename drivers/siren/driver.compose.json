@@ -106,7 +106,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/tuya_siren/assets/learnmode.svg",
+      "image": "/drivers/siren/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -339,11 +339,11 @@
     }
   ],
   "images": {
-    "small": "drivers/tuya_siren/assets/images/small.png",
-    "large": "drivers/tuya_siren/assets/images/large.png",
-    "xlarge": "drivers/tuya_siren/assets/images/xlarge.png"
+    "small": "drivers/siren/assets/images/small.png",
+    "large": "drivers/siren/assets/images/large.png",
+    "xlarge": "drivers/siren/assets/images/xlarge.png"
   },
-  "id": "tuya_siren",
+  "id": "siren",
   "platforms": [
     "local"
   ],

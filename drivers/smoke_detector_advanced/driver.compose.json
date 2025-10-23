@@ -160,7 +160,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/zemismart_smart_smoke_detector_advanced/assets/learnmode.svg",
+      "image": "/drivers/smoke_detector_advanced/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -393,11 +393,11 @@
     }
   ],
   "images": {
-    "small": "drivers/zemismart_smart_smoke_detector_advanced/assets/images/small.png",
-    "large": "drivers/zemismart_smart_smoke_detector_advanced/assets/images/large.png",
-    "xlarge": "drivers/zemismart_smart_smoke_detector_advanced/assets/images/xlarge.png"
+    "small": "drivers/smoke_detector_advanced/assets/images/small.png",
+    "large": "drivers/smoke_detector_advanced/assets/images/large.png",
+    "xlarge": "drivers/smoke_detector_advanced/assets/images/xlarge.png"
   },
-  "id": "zemismart_smart_smoke_detector_advanced",
+  "id": "smoke_detector_advanced",
   "platforms": [
     "local"
   ],

@@ -187,7 +187,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/avatto_smart_switch_6gang/assets/learnmode.svg",
+      "image": "/drivers/switch_wall_6gang_smart/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -420,11 +420,11 @@
     }
   ],
   "images": {
-    "small": "drivers/avatto_smart_switch_6gang/assets/images/small.png",
-    "large": "drivers/avatto_smart_switch_6gang/assets/images/large.png",
-    "xlarge": "drivers/avatto_smart_switch_6gang/assets/images/xlarge.png"
+    "small": "drivers/switch_wall_6gang_smart/assets/images/small.png",
+    "large": "drivers/switch_wall_6gang_smart/assets/images/large.png",
+    "xlarge": "drivers/switch_wall_6gang_smart/assets/images/xlarge.png"
   },
-  "id": "avatto_smart_switch_6gang",
+  "id": "switch_wall_6gang_smart",
   "platforms": [
     "local"
   ],

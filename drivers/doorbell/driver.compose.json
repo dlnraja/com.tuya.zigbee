@@ -148,7 +148,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/tuya_doorbell/assets/learnmode.svg",
+      "image": "/drivers/doorbell/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -381,11 +381,11 @@
     }
   ],
   "images": {
-    "small": "drivers/tuya_doorbell/assets/images/small.png",
-    "large": "drivers/tuya_doorbell/assets/images/large.png",
-    "xlarge": "drivers/tuya_doorbell/assets/images/xlarge.png"
+    "small": "drivers/doorbell/assets/images/small.png",
+    "large": "drivers/doorbell/assets/images/large.png",
+    "xlarge": "drivers/doorbell/assets/images/xlarge.png"
   },
-  "id": "tuya_doorbell",
+  "id": "doorbell",
   "platforms": [
     "local"
   ],

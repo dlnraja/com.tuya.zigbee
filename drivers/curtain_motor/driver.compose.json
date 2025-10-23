@@ -17,8 +17,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "drivers/zemismart_curtain_motor_internal/assets/images/small.png",
-    "large": "drivers/zemismart_curtain_motor_internal/assets/images/large.png"
+    "small": "drivers/curtain_motor/assets/images/small.png",
+    "large": "drivers/curtain_motor/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [
@@ -154,7 +154,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/zemismart_curtain_motor_internal/assets/large.png",
+      "image": "/drivers/curtain_motor/assets/large.png",
       "instruction": {
         "en": "Follow the pairing instructions for your Smart Curtain Motor."
       }
@@ -415,7 +415,7 @@
       "usageConstant": 0.5
     }
   },
-  "id": "zemismart_curtain_motor_internal",
+  "id": "curtain_motor",
   "learnmode": {
     "image": "./assets/learnmode.svg",
     "instruction": {

@@ -245,7 +245,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/button_4gang/assets/learnmode.svg",
+      "image": "/drivers/button_wireless_4/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
         "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
@@ -260,8 +260,8 @@
     }
   },
   "images": {
-    "small": "/drivers/button_4gang/assets/images/small.png",
-    "large": "/drivers/button_4gang/assets/images/large.png"
+    "small": "drivers/button_wireless_4/assets/images/small.png",
+    "large": "drivers/button_wireless_4/assets/images/large.png"
   },
   "platforms": [
     "local"
@@ -494,5 +494,5 @@
       }
     }
   ],
-  "id": "button_4gang"
+  "id": "button_wireless_4"
 }

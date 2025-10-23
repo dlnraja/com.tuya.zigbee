@@ -145,7 +145,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/nous_smart_plug_dimmer/assets/learnmode.svg",
+      "image": "/drivers/plug_dimmer/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -378,11 +378,11 @@
     }
   ],
   "images": {
-    "small": "drivers/nous_smart_plug_dimmer/assets/images/small.png",
-    "large": "drivers/nous_smart_plug_dimmer/assets/images/large.png",
-    "xlarge": "drivers/nous_smart_plug_dimmer/assets/images/xlarge.png"
+    "small": "drivers/plug_dimmer/assets/images/small.png",
+    "large": "drivers/plug_dimmer/assets/images/large.png",
+    "xlarge": "drivers/plug_dimmer/assets/images/xlarge.png"
   },
-  "id": "nous_smart_plug_dimmer",
+  "id": "plug_dimmer",
   "platforms": [
     "local"
   ],

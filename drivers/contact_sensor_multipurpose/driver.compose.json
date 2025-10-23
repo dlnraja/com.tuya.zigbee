@@ -41,7 +41,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/generic_samsung_multipurpose_sensor/assets/learnmode.svg",
+      "image": "/drivers/contact_sensor_multipurpose/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -274,11 +274,11 @@
     }
   ],
   "images": {
-    "small": "drivers/generic_samsung_multipurpose_sensor/assets/images/small.png",
-    "large": "drivers/generic_samsung_multipurpose_sensor/assets/images/large.png",
-    "xlarge": "drivers/generic_samsung_multipurpose_sensor/assets/images/xlarge.png"
+    "small": "drivers/contact_sensor_multipurpose/assets/images/small.png",
+    "large": "drivers/contact_sensor_multipurpose/assets/images/large.png",
+    "xlarge": "drivers/contact_sensor_multipurpose/assets/images/xlarge.png"
   },
-  "id": "generic_samsung_multipurpose_sensor",
+  "id": "contact_sensor_multipurpose",
   "platforms": [
     "local"
   ],

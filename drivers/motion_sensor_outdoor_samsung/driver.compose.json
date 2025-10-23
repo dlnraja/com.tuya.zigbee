@@ -1,5 +1,5 @@
 {
-  "id": "samsung_motion_sensor_outdoor_cr123a",
+  "id": "motion_sensor_outdoor_samsung",
   "name": {
     "en": "Samsung Outdoor Motion (CR123A)"
   },
@@ -9,9 +9,9 @@
     "measure_battery"
   ],
   "images": {
-    "small": "drivers/samsung_motion_sensor_outdoor_cr123a/assets/images/small.png",
-    "large": "drivers/samsung_motion_sensor_outdoor_cr123a/assets/images/large.png",
-    "xlarge": "drivers/samsung_motion_sensor_outdoor_cr123a/assets/images/xlarge.png"
+    "small": "drivers/motion_sensor_outdoor_samsung/assets/images/small.png",
+    "large": "drivers/motion_sensor_outdoor_samsung/assets/images/large.png",
+    "xlarge": "drivers/motion_sensor_outdoor_samsung/assets/images/xlarge.png"
   },
   "zigbee": {
     "manufacturerName": [
