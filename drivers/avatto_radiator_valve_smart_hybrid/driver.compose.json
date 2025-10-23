@@ -2,7 +2,7 @@
   "name": {
     "en": "Smart Radiator Valve (Hybrid)"
   },
-  "class": "other",
+  "class": "thermostat",
   "capabilities": [
     "target_temperature",
     "measure_temperature"
@@ -14,8 +14,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "drivers/tuya_radiator_valve_smart_hybrid/assets/images/small.png",
-    "large": "drivers/tuya_radiator_valve_smart_hybrid/assets/images/large.png"
+    "small": "drivers/avatto_radiator_valve_smart_hybrid/assets/images/small.png",
+    "large": "drivers/avatto_radiator_valve_smart_hybrid/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [

@@ -386,8 +386,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/zemismart_outdoor_light_controller/assets/images/small.png",
-    "large": "./drivers/zemismart_outdoor_light_controller/assets/images/large.png",
-    "xlarge": "./drivers/zemismart_outdoor_light_controller/assets/images/xlarge.png"
+    "small": "drivers/zemismart_outdoor_light_controller/assets/images/small.png",
+    "large": "drivers/zemismart_outdoor_light_controller/assets/images/large.png",
+    "xlarge": "drivers/zemismart_outdoor_light_controller/assets/images/xlarge.png"
   }
 }

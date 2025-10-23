@@ -409,8 +409,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/zemismart_presence_sensor_radar/assets/images/small.png",
-    "large": "./drivers/zemismart_presence_sensor_radar/assets/images/large.png",
-    "xlarge": "./drivers/zemismart_presence_sensor_radar/assets/images/xlarge.png"
+    "small": "drivers/zemismart_presence_sensor_radar/assets/images/small.png",
+    "large": "drivers/zemismart_presence_sensor_radar/assets/images/large.png",
+    "xlarge": "drivers/zemismart_presence_sensor_radar/assets/images/xlarge.png"
   }
 }

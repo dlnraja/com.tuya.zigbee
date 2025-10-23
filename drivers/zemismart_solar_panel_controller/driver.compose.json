@@ -396,8 +396,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/zemismart_solar_panel_controller/assets/images/small.png",
-    "large": "./drivers/zemismart_solar_panel_controller/assets/images/large.png",
-    "xlarge": "./drivers/zemismart_solar_panel_controller/assets/images/xlarge.png"
+    "small": "drivers/zemismart_solar_panel_controller/assets/images/small.png",
+    "large": "drivers/zemismart_solar_panel_controller/assets/images/large.png",
+    "xlarge": "drivers/zemismart_solar_panel_controller/assets/images/xlarge.png"
   }
 }

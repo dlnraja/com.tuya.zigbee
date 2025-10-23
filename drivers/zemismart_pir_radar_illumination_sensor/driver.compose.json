@@ -397,8 +397,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/zemismart_pir_radar_illumination_sensor/assets/images/small.png",
-    "large": "./drivers/zemismart_pir_radar_illumination_sensor/assets/images/large.png",
-    "xlarge": "./drivers/zemismart_pir_radar_illumination_sensor/assets/images/xlarge.png"
+    "small": "drivers/zemismart_pir_radar_illumination_sensor/assets/images/small.png",
+    "large": "drivers/zemismart_pir_radar_illumination_sensor/assets/images/large.png",
+    "xlarge": "drivers/zemismart_pir_radar_illumination_sensor/assets/images/xlarge.png"
   }
 }

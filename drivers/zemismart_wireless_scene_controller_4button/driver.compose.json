@@ -389,8 +389,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/zemismart_wireless_scene_controller_4button/assets/images/small.png",
-    "large": "./drivers/zemismart_wireless_scene_controller_4button/assets/images/large.png",
-    "xlarge": "./drivers/zemismart_wireless_scene_controller_4button/assets/images/xlarge.png"
+    "small": "drivers/zemismart_wireless_scene_controller_4button/assets/images/small.png",
+    "large": "drivers/zemismart_wireless_scene_controller_4button/assets/images/large.png",
+    "xlarge": "drivers/zemismart_wireless_scene_controller_4button/assets/images/xlarge.png"
   }
 }

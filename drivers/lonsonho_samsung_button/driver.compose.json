@@ -311,8 +311,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/lonsonho_samsung_button/assets/images/small.png",
-    "large": "./drivers/lonsonho_samsung_button/assets/images/large.png",
-    "xlarge": "./drivers/lonsonho_samsung_button/assets/images/xlarge.png"
+    "small": "drivers/lonsonho_samsung_button/assets/images/small.png",
+    "large": "drivers/lonsonho_samsung_button/assets/images/large.png",
+    "xlarge": "drivers/lonsonho_samsung_button/assets/images/xlarge.png"
   }
 }

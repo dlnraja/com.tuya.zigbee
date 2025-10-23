@@ -432,8 +432,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/avatto_switch_2gang/assets/images/small.png",
-    "large": "./drivers/avatto_switch_2gang/assets/images/large.png",
-    "xlarge": "./drivers/avatto_switch_2gang/assets/images/xlarge.png"
+    "small": "drivers/avatto_switch_2gang/assets/images/small.png",
+    "large": "drivers/avatto_switch_2gang/assets/images/large.png",
+    "xlarge": "drivers/avatto_switch_2gang/assets/images/xlarge.png"
   }
 }

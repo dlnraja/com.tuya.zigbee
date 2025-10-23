@@ -405,8 +405,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/zemismart_wireless_switch_1button/assets/images/small.png",
-    "large": "./drivers/zemismart_wireless_switch_1button/assets/images/large.png",
-    "xlarge": "./drivers/zemismart_wireless_switch_1button/assets/images/xlarge.png"
+    "small": "drivers/zemismart_wireless_switch_1button/assets/images/small.png",
+    "large": "drivers/zemismart_wireless_switch_1button/assets/images/large.png",
+    "xlarge": "drivers/zemismart_wireless_switch_1button/assets/images/xlarge.png"
   }
 }

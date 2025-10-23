@@ -306,8 +306,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/lsc_osram_bulb_tunable_white/assets/images/small.png",
-    "large": "./drivers/lsc_osram_bulb_tunable_white/assets/images/large.png",
-    "xlarge": "./drivers/lsc_osram_bulb_tunable_white/assets/images/xlarge.png"
+    "small": "drivers/lsc_osram_bulb_tunable_white/assets/images/small.png",
+    "large": "drivers/lsc_osram_bulb_tunable_white/assets/images/large.png",
+    "xlarge": "drivers/lsc_osram_bulb_tunable_white/assets/images/xlarge.png"
   }
 }

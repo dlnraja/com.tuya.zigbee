@@ -376,8 +376,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/avatto_led_strip_pro/assets/images/small.png",
-    "large": "./drivers/avatto_led_strip_pro/assets/images/large.png",
-    "xlarge": "./drivers/avatto_led_strip_pro/assets/images/xlarge.png"
+    "small": "drivers/avatto_led_strip_pro/assets/images/small.png",
+    "large": "drivers/avatto_led_strip_pro/assets/images/large.png",
+    "xlarge": "drivers/avatto_led_strip_pro/assets/images/xlarge.png"
   }
 }

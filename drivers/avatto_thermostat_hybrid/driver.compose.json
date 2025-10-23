@@ -2,7 +2,7 @@
   "name": {
     "en": "Thermostat Basic (Hybrid) (CR2032/AAA)"
   },
-  "class": "other",
+  "class": "thermostat",
   "capabilities": [
     "target_temperature",
     "measure_temperature",

@@ -348,8 +348,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/avatto_smart_spot/assets/images/small.png",
-    "large": "./drivers/avatto_smart_spot/assets/images/large.png",
-    "xlarge": "./drivers/avatto_smart_spot/assets/images/xlarge.png"
+    "small": "drivers/avatto_smart_spot/assets/images/small.png",
+    "large": "drivers/avatto_smart_spot/assets/images/large.png",
+    "xlarge": "drivers/avatto_smart_spot/assets/images/xlarge.png"
   }
 }

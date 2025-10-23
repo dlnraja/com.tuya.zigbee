@@ -357,8 +357,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/lonsonho_wireless_button_2gang/assets/images/small.png",
-    "large": "./drivers/lonsonho_wireless_button_2gang/assets/images/large.png",
-    "xlarge": "./drivers/lonsonho_wireless_button_2gang/assets/images/xlarge.png"
+    "small": "drivers/lonsonho_wireless_button_2gang/assets/images/small.png",
+    "large": "drivers/lonsonho_wireless_button_2gang/assets/images/large.png",
+    "xlarge": "drivers/lonsonho_wireless_button_2gang/assets/images/xlarge.png"
   }
 }

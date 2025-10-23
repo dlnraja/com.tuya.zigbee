@@ -383,8 +383,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/zemismart_garage_door_controller/assets/images/small.png",
-    "large": "./drivers/zemismart_garage_door_controller/assets/images/large.png",
-    "xlarge": "./drivers/zemismart_garage_door_controller/assets/images/xlarge.png"
+    "small": "drivers/zemismart_garage_door_controller/assets/images/small.png",
+    "large": "drivers/zemismart_garage_door_controller/assets/images/large.png",
+    "xlarge": "drivers/zemismart_garage_door_controller/assets/images/xlarge.png"
   }
 }

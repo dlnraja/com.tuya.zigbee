@@ -428,8 +428,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/avatto_smart_bulb_rgb/assets/images/small.png",
-    "large": "./drivers/avatto_smart_bulb_rgb/assets/images/large.png",
-    "xlarge": "./drivers/avatto_smart_bulb_rgb/assets/images/xlarge.png"
+    "small": "drivers/avatto_smart_bulb_rgb/assets/images/small.png",
+    "large": "drivers/avatto_smart_bulb_rgb/assets/images/large.png",
+    "xlarge": "drivers/avatto_smart_bulb_rgb/assets/images/xlarge.png"
   }
 }

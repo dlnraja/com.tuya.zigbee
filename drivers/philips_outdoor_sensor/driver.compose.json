@@ -302,8 +302,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/philips_outdoor_sensor/assets/images/small.png",
-    "large": "./drivers/philips_outdoor_sensor/assets/images/large.png",
-    "xlarge": "./drivers/philips_outdoor_sensor/assets/images/xlarge.png"
+    "small": "drivers/philips_outdoor_sensor/assets/images/small.png",
+    "large": "drivers/philips_outdoor_sensor/assets/images/large.png",
+    "xlarge": "drivers/philips_outdoor_sensor/assets/images/xlarge.png"
   }
 }

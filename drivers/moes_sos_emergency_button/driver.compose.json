@@ -3,7 +3,7 @@
     "en": "Moes Sos Emergency Button",
     "fr": "Moes Sos Emergency Button"
   },
-  "class": "unknown",
+  "class": "button",
   "capabilities": [],
   "energy": {
     "batteries": [
@@ -259,8 +259,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/moes_sos_emergency_button/assets/images/small.png",
-    "large": "./drivers/moes_sos_emergency_button/assets/images/large.png",
-    "xlarge": "./drivers/moes_sos_emergency_button/assets/images/xlarge.png"
+    "small": "drivers/moes_sos_emergency_button/assets/images/small.png",
+    "large": "drivers/moes_sos_emergency_button/assets/images/large.png",
+    "xlarge": "drivers/moes_sos_emergency_button/assets/images/xlarge.png"
   }
 }

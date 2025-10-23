@@ -313,8 +313,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/philips_motion_sensor/assets/images/small.png",
-    "large": "./drivers/philips_motion_sensor/assets/images/large.png",
-    "xlarge": "./drivers/philips_motion_sensor/assets/images/xlarge.png"
+    "small": "drivers/philips_motion_sensor/assets/images/small.png",
+    "large": "drivers/philips_motion_sensor/assets/images/large.png",
+    "xlarge": "drivers/philips_motion_sensor/assets/images/xlarge.png"
   }
 }

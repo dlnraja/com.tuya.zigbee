@@ -368,8 +368,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/zemismart_pm25_detector/assets/images/small.png",
-    "large": "./drivers/zemismart_pm25_detector/assets/images/large.png",
-    "xlarge": "./drivers/zemismart_pm25_detector/assets/images/xlarge.png"
+    "small": "drivers/zemismart_pm25_detector/assets/images/small.png",
+    "large": "drivers/zemismart_pm25_detector/assets/images/large.png",
+    "xlarge": "drivers/zemismart_pm25_detector/assets/images/xlarge.png"
   }
 }
