@@ -2682,7 +2682,7 @@
   {
     "driver_id": "avatto_radiator_valve",
     "name": "Avatto Radiator Valve",
-    "class": "other",
+    "class": "thermostat",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
       "_TZ1800_fcdjzz3s",
@@ -2778,7 +2778,7 @@
   {
     "driver_id": "avatto_radiator_valve_smart_hybrid",
     "name": "Smart Radiator Valve (Hybrid)",
-    "class": "other",
+    "class": "thermostat",
     "manufacturers": [
       "_TZ1800_ejwkn2h2",
       "_TZ1800_fcdjzz3s",
@@ -5478,7 +5478,7 @@
   {
     "driver_id": "avatto_thermostat_hybrid",
     "name": "Thermostat Basic (Hybrid) (CR2032/AAA)",
-    "class": "other",
+    "class": "thermostat",
     "manufacturers": [
       "GZCGQ01LM",
       "RTCGQ11LM",
@@ -5581,7 +5581,7 @@
   {
     "driver_id": "avatto_thermostat_smart_internal",
     "name": "Smart Thermostat (INTERNAL)",
-    "class": "other",
+    "class": "thermostat",
     "manufacturers": [
       "GZCGQ01LM",
       "RTCGQ11LM",
@@ -9185,7 +9185,7 @@
   {
     "driver_id": "lsc_dimmer_wireless",
     "name": "Lsc Dimmer Wireless",
-    "class": "other",
+    "class": "light",
     "manufacturers": [
       "IKEA of Sweden",
       "Legrand",
@@ -10332,7 +10332,7 @@
   {
     "driver_id": "moes_sos_emergency_button",
     "name": "Moes Sos Emergency Button",
-    "class": "unknown",
+    "class": "button",
     "manufacturers": [],
     "models": [
       "default"
@@ -11465,7 +11465,7 @@
   {
     "driver_id": "tuya_dehumidifier_hybrid",
     "name": "Dehumidifier (Smart)",
-    "class": "humidifier",
+    "class": "sensor",
     "manufacturers": [
       "_TZE200_oisqyl4o",
       "_TZE200_myd45weu",
@@ -11993,7 +11993,7 @@
   {
     "driver_id": "tuya_siren",
     "name": "Tuya Siren",
-    "class": "other",
+    "class": "sensor",
     "manufacturers": [
       "Signify Netherlands B.V.",
       "_TZ3000_ssp0maqm",
@@ -12741,7 +12741,7 @@
   {
     "driver_id": "zemismart_curtain_motor",
     "name": "Zemismart Curtain Motor",
-    "class": "other",
+    "class": "windowcoverings",
     "manufacturers": [
       "Legrand",
       "Schneider Electric",
@@ -12870,7 +12870,7 @@
   {
     "driver_id": "zemismart_curtain_motor_internal",
     "name": "Smart Curtain Motor (INTERNAL)",
-    "class": "other",
+    "class": "windowcoverings",
     "manufacturers": [
       "Legrand",
       "Schneider Electric",
@@ -15550,7 +15550,7 @@
   {
     "driver_id": "zemismart_roller_shutter_switch",
     "name": "Zemismart Roller Shutter Switch",
-    "class": "other",
+    "class": "windowcoverings",
     "manufacturers": [
       "Legrand",
       "QBCZ03LM",
@@ -16288,7 +16288,7 @@
   {
     "driver_id": "zemismart_smart_switch_1gang_internal",
     "name": "Roller Shutter Switch Advanced (INTERNAL)",
-    "class": "other",
+    "class": "sensor",
     "manufacturers": [
       "Legrand",
       "Philips",
