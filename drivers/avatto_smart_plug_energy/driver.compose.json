@@ -325,7 +325,7 @@
       }
     },
     {
-      "id": "energy_optimization",
+      "id": "optimization_mode",
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
@@ -373,5 +373,10 @@
         "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
       }
     }
-  ]
+  ],
+  "images": {
+    "small": "./drivers/avatto_smart_plug_energy/assets/images/small.png",
+    "large": "./drivers/avatto_smart_plug_energy/assets/images/large.png",
+    "xlarge": "./drivers/avatto_smart_plug_energy/assets/images/xlarge.png"
+  }
 }

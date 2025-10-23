@@ -118,7 +118,7 @@ const ADVANCED_SETTINGS = [
     }
   },
   {
-    id: 'energy_optimization',
+    id: 'optimization_mode',
     type: 'dropdown',
     label: {
       en: 'Energy Optimization Mode',
