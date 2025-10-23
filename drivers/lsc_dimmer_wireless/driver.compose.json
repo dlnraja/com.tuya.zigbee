@@ -4,7 +4,10 @@
     "fr": "Lsc Dimmer Wireless"
   },
   "class": "light",
-  "capabilities": [],
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
   "energy": {
     "batteries": [
       "CR2032",

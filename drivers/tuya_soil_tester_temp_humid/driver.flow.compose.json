@@ -1,0 +1,40 @@
+{
+  "triggers": [
+    {
+      "id": "tuya_soil_tester_temp_humid_measure_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          },
+          "example": 20.5
+        }
+      ]
+    },
+    {
+      "id": "tuya_soil_tester_temp_humid_measure_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      },
+      "tokens": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "title": {
+            "en": "Humidity",
+            "fr": "Humidité"
+          },
+          "example": 65
+        }
+      ]
+    }
+  ]
+}

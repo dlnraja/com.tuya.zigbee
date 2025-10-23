@@ -4,7 +4,9 @@
     "fr": "Avatto Wireless Switch 4gang"
   },
   "class": "socket",
-  "capabilities": [],
+  "capabilities": [
+    "onoff"
+  ],
   "energy": {
     "batteries": [
       "CR2032",
