@@ -83,6 +83,7 @@ class SmartRadiatorValveHybridDevice extends ZigBeeDevice {
   /**
    * Register standard Zigbee capabilities (fallback)
    */
+  }
   async registerStandardCapabilities() {
     // Battery
     if (this.hasCapability('measure_battery')) {
@@ -110,6 +111,7 @@ class SmartRadiatorValveHybridDevice extends ZigBeeDevice {
   /**
    * Trigger flow with context data
    */
+  }
   async triggerFlowCard(cardId, tokens = {}) {
     try {
       const flowCard = this.homey.flow.getDeviceTriggerCard(cardId);
@@ -123,6 +125,7 @@ class SmartRadiatorValveHybridDevice extends ZigBeeDevice {
   /**
    * Check if any alarm is active
    */
+  }
   async checkAnyAlarm() {
     const capabilities = this.getCapabilities();
     for (const cap of capabilities) {
@@ -178,13 +181,15 @@ class SmartRadiatorValveHybridDevice extends ZigBeeDevice {
    * Poll tous les attributes pour forcer mise à jour
    * Résout: Données non visibles après pairing (Peter + autres)
    */
+  }
+  }
   async pollAttributes() {
     const promises = [];
     
     // Battery
     if (this.hasCapability('measure_battery')) {
       promises.push(
-        this.zclNode.endpoints[1]?.clusters.powerConfiguration?.readAttributes('batteryPercentageRemaining')
+        this.zclNode.endpoints[1]?.clusters.powerConfiguration?.readAttributes(['batteryPercentageRemaining'])
           .catch(err => this.log('Battery read failed (ignorable):', err.message))
       );
     }
@@ -192,7 +197,7 @@ class SmartRadiatorValveHybridDevice extends ZigBeeDevice {
     // Temperature
     if (this.hasCapability('measure_temperature')) {
       promises.push(
-        this.zclNode.endpoints[1]?.clusters.temperatureMeasurement?.readAttributes('measuredValue')
+        this.zclNode.endpoints[1]?.clusters.temperatureMeasurement?.readAttributes(['measuredValue'])
           .catch(err => this.log('Temperature read failed (ignorable):', err.message))
       );
     }
@@ -200,7 +205,7 @@ class SmartRadiatorValveHybridDevice extends ZigBeeDevice {
     // Humidity
     if (this.hasCapability('measure_humidity')) {
       promises.push(
-        this.zclNode.endpoints[1]?.clusters.relativeHumidity?.readAttributes('measuredValue')
+        this.zclNode.endpoints[1]?.clusters.relativeHumidity?.readAttributes(['measuredValue'])
           .catch(err => this.log('Humidity read failed (ignorable):', err.message))
       );
     }
@@ -208,7 +213,7 @@ class SmartRadiatorValveHybridDevice extends ZigBeeDevice {
     // Illuminance
     if (this.hasCapability('measure_luminance')) {
       promises.push(
-        this.zclNode.endpoints[1]?.clusters.illuminanceMeasurement?.readAttributes('measuredValue')
+        this.zclNode.endpoints[1]?.clusters.illuminanceMeasurement?.readAttributes(['measuredValue'])
           .catch(err => this.log('Illuminance read failed (ignorable):', err.message))
       );
     }
@@ -216,7 +221,7 @@ class SmartRadiatorValveHybridDevice extends ZigBeeDevice {
     // Alarm status (IAS Zone)
     if (this.hasCapability('alarm_motion') || this.hasCapability('alarm_contact')) {
       promises.push(
-        this.zclNode.endpoints[1]?.clusters.iasZone?.readAttributes('zoneStatus')
+        this.zclNode.endpoints[1]?.clusters.iasZone?.readAttributes(['zoneStatus'])
           .catch(err => this.log('IAS Zone read failed (ignorable):', err.message))
       );
     }
@@ -233,6 +238,7 @@ class SmartRadiatorValveHybridDevice extends ZigBeeDevice {
    * Read attribute with intelligent fallback
    * Tries multiple strategies until success
    */
+  }
   async readAttributeSafe(cluster, attribute) {
     try {
       return await this.fallback.readAttributeWithFallback(cluster, attribute);
@@ -245,6 +251,7 @@ class SmartRadiatorValveHybridDevice extends ZigBeeDevice {
   /**
    * Configure report with intelligent fallback
    */
+  }
   async configureReportSafe(config) {
     try {
       return await this.fallback.configureReportWithFallback(config);
@@ -258,6 +265,7 @@ class SmartRadiatorValveHybridDevice extends ZigBeeDevice {
   /**
    * IAS Zone enrollment with fallback
    */
+  }
   async enrollIASZoneSafe() {
     try {
       return await this.fallback.iasEnrollWithFallback();
