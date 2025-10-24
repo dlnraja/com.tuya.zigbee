@@ -110,6 +110,7 @@ class UsbOutlet3GangDevice extends ZigBeeDevice {
     this.registerCapabilityListener('onoff', async (value) => {
       this.log('Port 1 turned', value ? 'on' : 'off');
       
+      // TODO: Wrap in try/catch
       await this.zclNode.endpoints[1].clusters.onOff.toggle();
       
       // Trigger flow card
@@ -128,6 +129,7 @@ class UsbOutlet3GangDevice extends ZigBeeDevice {
     this.registerCapabilityListener('onoff.usb2', async (value) => {
       this.log('Port 2 turned', value ? 'on' : 'off');
       
+      // TODO: Wrap in try/catch
       await this.zclNode.endpoints[2].clusters.onOff.toggle();
       
       // Trigger flow card
@@ -146,6 +148,7 @@ class UsbOutlet3GangDevice extends ZigBeeDevice {
     this.registerCapabilityListener('onoff.usb3', async (value) => {
       this.log('Port 3 turned', value ? 'on' : 'off');
       
+      // TODO: Wrap in try/catch
       await this.zclNode.endpoints[3].clusters.onOff.toggle();
       
       // Trigger flow card

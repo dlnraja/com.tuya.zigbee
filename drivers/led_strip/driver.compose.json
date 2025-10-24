@@ -22,7 +22,6 @@
   "zigbee": {
     "manufacturerName": [
       "TS0505",
-      "_PHILIPS_generic",
       "_TZ3000_5bsf8vaj",
       "_TZ3000_7ysdnebc",
       "_TZ3000_9cpuaca6",
@@ -35,13 +34,10 @@
       "_TZ3000_qqjaziws",
       "_TZ3000_riwp3k79",
       "_TZ3000_ukuvyhaa",
-      "_TZ3000_utagpnzs",
-      "_TZ3210_iystcadi",
-      "_TZ3210_k1pe6ibm",
-      "_TZ3210_r0xgkft5",
-      "_SONOFF_generic"
+      "_TZ3000_utagpnzs"
     ],
     "productId": [
+      "TS0505",
       "TS0503A",
       "TS0503B",
       "TS0504B",
