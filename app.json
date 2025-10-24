@@ -17202,8 +17202,8 @@
   "drivers": [
     {
       "name": {
-        "en": "Tuya Comprehensive Air Monitor",
-        "fr": "Tuya Comprehensive Air Monitor"
+        "en": "Comprehensive Air Monitor",
+        "fr": "Comprehensive Air Monitor"
       },
       "class": "sensor",
       "capabilities": [
@@ -17820,8 +17820,8 @@
     },
     {
       "name": {
-        "en": "Nous Air Quality Monitor",
-        "fr": "Nous Air Quality Monitor"
+        "en": "Air Quality Monitor",
+        "fr": "Air Quality Monitor"
       },
       "class": "sensor",
       "capabilities": [
@@ -18111,8 +18111,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Pm25 Detector",
-        "fr": "Zemismart Pm25 Detector"
+        "en": "Pm25 Detector",
+        "fr": "Pm25 Detector"
       },
       "class": "sensor",
       "capabilities": [
@@ -18405,8 +18405,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Roller Blind Controller",
-        "fr": "Zemismart Roller Blind Controller"
+        "en": "Roller Blind Controller",
+        "fr": "Roller Blind Controller"
       },
       "class": "sensor",
       "capabilities": [
@@ -18698,8 +18698,8 @@
     },
     {
       "name": {
-        "en": "Avatto Smart Bulb Dimmer",
-        "fr": "Avatto Smart Bulb Dimmer"
+        "en": "Smart Bulb Dimmer",
+        "fr": "Smart Bulb Dimmer"
       },
       "class": "light",
       "capabilities": [
@@ -19000,8 +19000,8 @@
     },
     {
       "name": {
-        "en": "Avatto Smart Bulb Rgb",
-        "fr": "Avatto Smart Bulb Rgb"
+        "en": "Smart Bulb Rgb",
+        "fr": "Smart Bulb Rgb"
       },
       "class": "light",
       "capabilities": [
@@ -19302,8 +19302,8 @@
     },
     {
       "name": {
-        "en": "Lsc Osram Bulb Rgbw",
-        "fr": "Lsc Osram Bulb Rgbw"
+        "en": "Smart Bulb Bulb Rgbw",
+        "fr": "Smart Bulb Bulb Rgbw"
       },
       "class": "light",
       "capabilities": [
@@ -19603,8 +19603,8 @@
     },
     {
       "name": {
-        "en": "Avatto Bulb Tunable",
-        "fr": "Avatto Bulb Tunable"
+        "en": "Bulb Tunable",
+        "fr": "Bulb Tunable"
       },
       "class": "light",
       "capabilities": [
@@ -19902,8 +19902,8 @@
     },
     {
       "name": {
-        "en": "Avatto Smart Bulb White",
-        "fr": "Avatto Smart Bulb White"
+        "en": "Smart Bulb White",
+        "fr": "Smart Bulb White"
       },
       "class": "light",
       "capabilities": [
@@ -20201,8 +20201,8 @@
     },
     {
       "name": {
-        "en": "Moes Sos Emergency Button",
-        "fr": "Moes Sos Emergency Button"
+        "en": "Sos Emergency Button",
+        "fr": "Sos Emergency Button"
       },
       "class": "button",
       "capabilities": [
@@ -20481,8 +20481,8 @@
     },
     {
       "name": {
-        "en": "Avatto Sos Emergency Button",
-        "fr": "Avatto Sos Emergency Button"
+        "en": "Sos Emergency Button",
+        "fr": "Sos Emergency Button"
       },
       "class": "button",
       "capabilities": [
@@ -20821,8 +20821,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Wireless Switch 1button",
-        "fr": "Zemismart Wireless Switch 1button"
+        "en": "Wireless Switch 1button",
+        "fr": "Wireless Switch 1button"
       },
       "class": "sensor",
       "capabilities": [
@@ -21152,8 +21152,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Wireless Switch 2button",
-        "fr": "Zemismart Wireless Switch 2button"
+        "en": "Wireless Switch 2button",
+        "fr": "Wireless Switch 2button"
       },
       "class": "button",
       "capabilities": [
@@ -21442,8 +21442,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Wireless Switch 3button",
-        "fr": "Zemismart Wireless Switch 3button"
+        "en": "Wireless Switch 3button",
+        "fr": "Wireless Switch 3button"
       },
       "class": "socket",
       "capabilities": [
@@ -21763,8 +21763,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Wireless Switch 4button",
-        "fr": "Zemismart Wireless Switch 4button"
+        "en": "Wireless Switch 4button",
+        "fr": "Wireless Switch 4button"
       },
       "class": "button",
       "capabilities": [
@@ -22060,8 +22060,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Wireless Switch 6button",
-        "fr": "Zemismart Wireless Switch 6button"
+        "en": "Wireless Switch 6button",
+        "fr": "Wireless Switch 6button"
       },
       "class": "button",
       "capabilities": [
@@ -22350,8 +22350,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Wireless Switch 8button",
-        "fr": "Zemismart Wireless Switch 8button"
+        "en": "Wireless Switch 8button",
+        "fr": "Wireless Switch 8button"
       },
       "class": "button",
       "capabilities": [
@@ -25538,8 +25538,8 @@
     },
     {
       "name": {
-        "en": "Avatto Ceiling Fan",
-        "fr": "Avatto Ceiling Fan"
+        "en": "Ceiling Fan",
+        "fr": "Ceiling Fan"
       },
       "class": "light",
       "capabilities": [
@@ -25832,8 +25832,8 @@
     },
     {
       "name": {
-        "en": "Moes Sonoff Temperature Humidity",
-        "fr": "Moes Sonoff Temperature Humidity"
+        "en": "Temperature Humidity",
+        "fr": "Temperature Humidity"
       },
       "class": "sensor",
       "capabilities": [
@@ -26139,8 +26139,8 @@
     },
     {
       "name": {
-        "en": "Avatto Co2 Temp Humidity",
-        "fr": "Avatto Co2 Temp Humidity"
+        "en": "Co2 Temp Humidity",
+        "fr": "Co2 Temp Humidity"
       },
       "class": "sensor",
       "capabilities": [
@@ -26452,8 +26452,8 @@
     },
     {
       "name": {
-        "en": "Moes Climate Monitor",
-        "fr": "Moes Climate Monitor"
+        "en": "Climate Monitor",
+        "fr": "Climate Monitor"
       },
       "class": "sensor",
       "capabilities": [
@@ -26756,8 +26756,8 @@
     },
     {
       "name": {
-        "en": "Tuya Soil Tester Temp Humid",
-        "fr": "Tuya Soil Tester Temp Humid"
+        "en": "Soil Tester Temp Humid",
+        "fr": "Soil Tester Temp Humid"
       },
       "class": "sensor",
       "capabilities": [
@@ -27062,8 +27062,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Temp Humid Sensor Advanced",
-        "fr": "Zemismart Temp Humid Sensor Advanced"
+        "en": "Temp Humid Sensor Advanced",
+        "fr": "Temp Humid Sensor Advanced"
       },
       "class": "sensor",
       "capabilities": [
@@ -27362,8 +27362,8 @@
     },
     {
       "name": {
-        "en": "Lonsonho Samsung Contact Sensor",
-        "fr": "Lonsonho Samsung Contact Sensor"
+        "en": "Contact Sensor",
+        "fr": "Contact Sensor"
       },
       "class": "sensor",
       "capabilities": [
@@ -27660,8 +27660,8 @@
     },
     {
       "name": {
-        "en": "Lonsonho Contact Sensor Basic",
-        "fr": "Lonsonho Contact Sensor Basic"
+        "en": "Contact Sensor Basic",
+        "fr": "Contact Sensor Basic"
       },
       "class": "sensor",
       "capabilities": [
@@ -27959,8 +27959,8 @@
     },
     {
       "name": {
-        "en": "Generic Samsung Multipurpose Sensor",
-        "fr": "Generic Samsung Multipurpose Sensor"
+        "en": "Generic Multipurpose Sensor",
+        "fr": "Generic Multipurpose Sensor"
       },
       "class": "sensor",
       "capabilities": [
@@ -28582,8 +28582,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Curtain Motor",
-        "fr": "Zemismart Curtain Motor"
+        "en": "Curtain Motor",
+        "fr": "Curtain Motor"
       },
       "class": "windowcoverings",
       "capabilities": [
@@ -28873,8 +28873,8 @@
     },
     {
       "name": {
-        "en": "Avatto Dimmer Touch",
-        "fr": "Avatto Dimmer Touch"
+        "en": "Dimmer Touch",
+        "fr": "Dimmer Touch"
       },
       "class": "light",
       "capabilities": [
@@ -29171,8 +29171,8 @@
     },
     {
       "name": {
-        "en": "Avatto Dimmer 1gang Touch",
-        "fr": "Avatto Dimmer 1gang Touch"
+        "en": "Dimmer 1gang Touch",
+        "fr": "Dimmer 1gang Touch"
       },
       "class": "light",
       "capabilities": [
@@ -29465,8 +29465,8 @@
     },
     {
       "name": {
-        "en": "Avatto Dimmer",
-        "fr": "Avatto Dimmer"
+        "en": "Dimmer Dimmer",
+        "fr": "Dimmer Dimmer"
       },
       "class": "light",
       "capabilities": [
@@ -29760,8 +29760,8 @@
     },
     {
       "name": {
-        "en": "Avatto Dimmer 1gang",
-        "fr": "Avatto Dimmer 1gang"
+        "en": "Dimmer 1gang",
+        "fr": "Dimmer 1gang"
       },
       "class": "light",
       "capabilities": [
@@ -30054,8 +30054,8 @@
     },
     {
       "name": {
-        "en": "Lsc Dimmer Wireless",
-        "fr": "Lsc Dimmer Wireless"
+        "en": "Dimmer Wireless",
+        "fr": "Dimmer Wireless"
       },
       "class": "light",
       "capabilities": [
@@ -30352,8 +30352,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Door Controller",
-        "fr": "Zemismart Door Controller"
+        "en": "Door Controller",
+        "fr": "Door Controller"
       },
       "class": "sensor",
       "capabilities": [
@@ -30644,8 +30644,8 @@
     },
     {
       "name": {
-        "en": "Tuya Doorbell",
-        "fr": "Tuya Doorbell"
+        "en": "Doorbell Doorbell",
+        "fr": "Doorbell Doorbell"
       },
       "class": "sensor",
       "capabilities": [
@@ -31285,8 +31285,8 @@
     },
     {
       "name": {
-        "en": "Tuya Doorbell Camera",
-        "fr": "Tuya Doorbell Camera"
+        "en": "Doorbell Camera",
+        "fr": "Doorbell Camera"
       },
       "class": "sensor",
       "capabilities": [
@@ -31580,8 +31580,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Garage Door Controller",
-        "fr": "Zemismart Garage Door Controller"
+        "en": "Garage Door Controller",
+        "fr": "Garage Door Controller"
       },
       "class": "sensor",
       "capabilities": [
@@ -31872,8 +31872,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Gas Detector",
-        "fr": "Zemismart Gas Detector"
+        "en": "Gas Detector",
+        "fr": "Gas Detector"
       },
       "class": "sensor",
       "capabilities": [
@@ -32170,8 +32170,8 @@
     },
     {
       "name": {
-        "en": "Tuya Gas Sensor Ts0601",
-        "fr": "Tuya Gas Sensor Ts0601"
+        "en": "Gas Sensor Ts0601",
+        "fr": "Gas Sensor Ts0601"
       },
       "class": "sensor",
       "capabilities": [
@@ -32464,8 +32464,8 @@
     },
     {
       "name": {
-        "en": "Nous Zbbridge",
-        "fr": "Nous Zbbridge"
+        "en": "Zbbridge",
+        "fr": "Zbbridge"
       },
       "class": "sensor",
       "capabilities": [
@@ -32751,8 +32751,8 @@
     },
     {
       "name": {
-        "en": "Nous Zigbee Gateway Hub",
-        "fr": "Nous Zigbee Gateway Hub"
+        "en": "Zigbee Gateway Hub",
+        "fr": "Zigbee Gateway Hub"
       },
       "class": "sensor",
       "capabilities": [
@@ -33039,8 +33039,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Humidity Controller",
-        "fr": "Zemismart Humidity Controller"
+        "en": "Humidity Controller",
+        "fr": "Humidity Controller"
       },
       "class": "sensor",
       "capabilities": [
@@ -34075,8 +34075,8 @@
     },
     {
       "name": {
-        "en": "Lsc Philips Led Strip",
-        "fr": "Lsc Philips Led Strip"
+        "en": "LED Strip Led Strip",
+        "fr": "LED Strip Led Strip"
       },
       "class": "light",
       "capabilities": [
@@ -34379,8 +34379,8 @@
     },
     {
       "name": {
-        "en": "Avatto Led Strip Advanced",
-        "fr": "Avatto Led Strip Advanced"
+        "en": "Led Strip Advanced",
+        "fr": "Led Strip Advanced"
       },
       "class": "light",
       "capabilities": [
@@ -34678,8 +34678,8 @@
     },
     {
       "name": {
-        "en": "Avatto Led Strip Basic",
-        "fr": "Avatto Led Strip Basic"
+        "en": "Led Strip Basic",
+        "fr": "Led Strip Basic"
       },
       "class": "sensor",
       "capabilities": [
@@ -34973,8 +34973,8 @@
     },
     {
       "name": {
-        "en": "Lsc Led Strip Outdoor Color",
-        "fr": "Lsc Led Strip Outdoor Color"
+        "en": "Led Strip Outdoor Color",
+        "fr": "Led Strip Outdoor Color"
       },
       "class": "light",
       "capabilities": [
@@ -35276,8 +35276,8 @@
     },
     {
       "name": {
-        "en": "Avatto Led Strip Pro",
-        "fr": "Avatto Led Strip Pro"
+        "en": "Led Strip Pro",
+        "fr": "Led Strip Pro"
       },
       "class": "sensor",
       "capabilities": [
@@ -35570,8 +35570,8 @@
     },
     {
       "name": {
-        "en": "Lsc Osram Led Strip Rgbw",
-        "fr": "Lsc Osram Led Strip Rgbw"
+        "en": "Led Strip Rgbw",
+        "fr": "Led Strip Rgbw"
       },
       "class": "light",
       "capabilities": [
@@ -35883,8 +35883,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Outdoor Light Controller",
-        "fr": "Zemismart Outdoor Light Controller"
+        "en": "Outdoor Light Controller",
+        "fr": "Outdoor Light Controller"
       },
       "class": "sensor",
       "capabilities": [
@@ -36182,8 +36182,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Lock Smart",
-        "fr": "Zemismart Lock Smart"
+        "en": "Lock Smart",
+        "fr": "Lock Smart"
       },
       "class": "lock",
       "capabilities": [
@@ -36473,8 +36473,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Lock Basic",
-        "fr": "Zemismart Lock Basic"
+        "en": "Lock Basic",
+        "fr": "Lock Basic"
       },
       "class": "sensor",
       "capabilities": [
@@ -36764,8 +36764,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Lock Fingerprint",
-        "fr": "Zemismart Lock Fingerprint"
+        "en": "Lock Fingerprint",
+        "fr": "Lock Fingerprint"
       },
       "class": "lock",
       "capabilities": [
@@ -37059,8 +37059,8 @@
     },
     {
       "name": {
-        "en": "Avatto Dimmer Switch Timer Module",
-        "fr": "Avatto Dimmer Switch Timer Module"
+        "en": "Dimmer Switch Timer Module",
+        "fr": "Dimmer Switch Timer Module"
       },
       "class": "light",
       "capabilities": [
@@ -37647,8 +37647,8 @@
     },
     {
       "name": {
-        "en": "Avatto Mini Switch",
-        "fr": "Avatto Mini Switch"
+        "en": "Mini Switch",
+        "fr": "Mini Switch"
       },
       "class": "sensor",
       "capabilities": [
@@ -37966,8 +37966,8 @@
     },
     {
       "name": {
-        "en": "Philips Motion Sensor",
-        "fr": "Philips Motion Sensor"
+        "en": "Motion Sensor",
+        "fr": "Motion Sensor"
       },
       "class": "sensor",
       "capabilities": [
@@ -38269,8 +38269,8 @@
     },
     {
       "name": {
-        "en": "Avatto Motion Sensor Mmwave Basic",
-        "fr": "Avatto Motion Sensor Mmwave Basic"
+        "en": "Motion Sensor Mmwave Basic",
+        "fr": "Motion Sensor Mmwave Basic"
       },
       "class": "sensor",
       "capabilities": [
@@ -38573,8 +38573,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Motion Temp Humidity Illumination Multi",
-        "fr": "Zemismart Motion Temp Humidity Illumination Multi"
+        "en": "Motion Temp Humidity Illumination Multi",
+        "fr": "Motion Temp Humidity Illumination Multi"
       },
       "class": "sensor",
       "capabilities": [
@@ -38878,8 +38878,8 @@
     },
     {
       "name": {
-        "en": "Philips Outdoor Sensor",
-        "fr": "Philips Outdoor Sensor"
+        "en": "Outdoor Sensor",
+        "fr": "Outdoor Sensor"
       },
       "class": "sensor",
       "capabilities": [
@@ -39177,8 +39177,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Motion Sensor",
-        "fr": "Zemismart Motion Sensor"
+        "en": "Motion Sensor",
+        "fr": "Motion Sensor"
       },
       "class": "sensor",
       "capabilities": [
@@ -39482,8 +39482,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Pir Sensor Advanced",
-        "fr": "Zemismart Pir Sensor Advanced"
+        "en": "Pir Sensor Advanced",
+        "fr": "Pir Sensor Advanced"
       },
       "class": "sensor",
       "capabilities": [
@@ -39782,8 +39782,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Pir Radar Illumination Sensor",
-        "fr": "Zemismart Pir Radar Illumination Sensor"
+        "en": "Pir Radar Illumination Sensor",
+        "fr": "Pir Radar Illumination Sensor"
       },
       "class": "sensor",
       "capabilities": [
@@ -40083,8 +40083,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Radar Motion Sensor Advanced",
-        "fr": "Zemismart Radar Motion Sensor Advanced"
+        "en": "Radar Motion Sensor Advanced",
+        "fr": "Radar Motion Sensor Advanced"
       },
       "class": "sensor",
       "capabilities": [
@@ -40383,8 +40383,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Radar Motion Sensor Mmwave",
-        "fr": "Zemismart Radar Motion Sensor Mmwave"
+        "en": "Radar Motion Sensor Mmwave",
+        "fr": "Radar Motion Sensor Mmwave"
       },
       "class": "sensor",
       "capabilities": [
@@ -40683,8 +40683,8 @@
     },
     {
       "name": {
-        "en": "Nous Smart Plug Dimmer",
-        "fr": "Nous Smart Plug Dimmer"
+        "en": "Smart Plug Dimmer",
+        "fr": "Smart Plug Dimmer"
       },
       "class": "socket",
       "capabilities": [
@@ -40988,8 +40988,8 @@
     },
     {
       "name": {
-        "en": "Avatto Energy Plug Advanced",
-        "fr": "Avatto Energy Plug Advanced"
+        "en": "Energy Plug Advanced",
+        "fr": "Energy Plug Advanced"
       },
       "class": "socket",
       "capabilities": [
@@ -41291,8 +41291,8 @@
     },
     {
       "name": {
-        "en": "Avatto Plug Energy Monitor",
-        "fr": "Avatto Plug Energy Monitor"
+        "en": "Plug Energy Monitor",
+        "fr": "Plug Energy Monitor"
       },
       "class": "socket",
       "capabilities": [
@@ -41593,8 +41593,8 @@
     },
     {
       "name": {
-        "en": "Avatto Energy Monitoring Plug Advanced",
-        "fr": "Avatto Energy Monitoring Plug Advanced"
+        "en": "Energy Monitoring Plug Advanced",
+        "fr": "Energy Monitoring Plug Advanced"
       },
       "class": "socket",
       "capabilities": [
@@ -41895,8 +41895,8 @@
     },
     {
       "name": {
-        "en": "Avatto Smart Plug Energy",
-        "fr": "Avatto Smart Plug Energy"
+        "en": "Smart Plug Energy",
+        "fr": "Smart Plug Energy"
       },
       "class": "socket",
       "capabilities": [
@@ -42197,8 +42197,8 @@
     },
     {
       "name": {
-        "en": "Nous Osram Outdoor Plug",
-        "fr": "Nous Osram Outdoor Plug"
+        "en": "Outdoor Plug",
+        "fr": "Outdoor Plug"
       },
       "class": "socket",
       "capabilities": [
@@ -42493,8 +42493,8 @@
     },
     {
       "name": {
-        "en": "Avatto Samsung Outlet",
-        "fr": "Avatto Samsung Outlet"
+        "en": "Smart Plug Outlet",
+        "fr": "Smart Plug Outlet"
       },
       "class": "socket",
       "capabilities": [
@@ -42790,8 +42790,8 @@
     },
     {
       "name": {
-        "en": "Avatto Power Meter Socket",
-        "fr": "Avatto Power Meter Socket"
+        "en": "Power Meter Socket",
+        "fr": "Power Meter Socket"
       },
       "class": "socket",
       "capabilities": [
@@ -43092,8 +43092,8 @@
     },
     {
       "name": {
-        "en": "Avatto Smart Plug Power Meter 16a",
-        "fr": "Avatto Smart Plug Power Meter 16a"
+        "en": "Smart Plug Power Meter 16a",
+        "fr": "Smart Plug Power Meter 16a"
       },
       "class": "socket",
       "capabilities": [
@@ -43396,8 +43396,8 @@
     },
     {
       "name": {
-        "en": "Avatto Plug Smart",
-        "fr": "Avatto Plug Smart"
+        "en": "Plug Smart",
+        "fr": "Plug Smart"
       },
       "class": "sensor",
       "capabilities": [
@@ -43695,8 +43695,8 @@
     },
     {
       "name": {
-        "en": "Avatto Smart Plug",
-        "fr": "Avatto Smart Plug"
+        "en": "Smart Plug",
+        "fr": "Smart Plug"
       },
       "class": "socket",
       "capabilities": [
@@ -43997,8 +43997,8 @@
     },
     {
       "name": {
-        "en": "Avatto Plug Basic",
-        "fr": "Avatto Plug Basic"
+        "en": "Plug Basic",
+        "fr": "Plug Basic"
       },
       "class": "socket",
       "capabilities": [
@@ -44299,8 +44299,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Presence Sensor Radar",
-        "fr": "Zemismart Presence Sensor Radar"
+        "en": "Presence Sensor Radar",
+        "fr": "Presence Sensor Radar"
       },
       "class": "sensor",
       "capabilities": [
@@ -44593,8 +44593,8 @@
     },
     {
       "name": {
-        "en": "Avatto Radiator Valve",
-        "fr": "Avatto Radiator Valve"
+        "en": "Radiator Valve",
+        "fr": "Radiator Valve"
       },
       "class": "thermostat",
       "capabilities": [
@@ -45204,8 +45204,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Wireless Scene Controller 4button",
-        "fr": "Zemismart Wireless Scene Controller 4button"
+        "en": "Wireless Scene Controller 4button",
+        "fr": "Wireless Scene Controller 4button"
       },
       "class": "button",
       "capabilities": [
@@ -45843,8 +45843,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Roller Shutter Controller",
-        "fr": "Zemismart Roller Shutter Controller"
+        "en": "Roller Shutter Controller",
+        "fr": "Roller Shutter Controller"
       },
       "class": "sensor",
       "capabilities": [
@@ -46132,8 +46132,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Roller Shutter Switch",
-        "fr": "Zemismart Roller Shutter Switch"
+        "en": "Roller Shutter Switch",
+        "fr": "Roller Shutter Switch"
       },
       "class": "windowcoverings",
       "capabilities": [
@@ -46438,8 +46438,8 @@
     },
     {
       "name": {
-        "en": "Tuya Siren",
-        "fr": "Tuya Siren"
+        "en": "Siren Siren",
+        "fr": "Siren Siren"
       },
       "class": "sensor",
       "capabilities": [
@@ -46738,8 +46738,8 @@
     },
     {
       "name": {
-        "en": "Tuya Outdoor Siren",
-        "fr": "Tuya Outdoor Siren"
+        "en": "Outdoor Siren",
+        "fr": "Outdoor Siren"
       },
       "class": "sensor",
       "capabilities": [
@@ -47033,8 +47033,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Smart Smoke Detector Advanced",
-        "fr": "Zemismart Smart Smoke Detector Advanced"
+        "en": "Smart Smoke Detector Advanced",
+        "fr": "Smart Smoke Detector Advanced"
       },
       "class": "sensor",
       "capabilities": [
@@ -47334,8 +47334,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Smoke Temp Humid Sensor",
-        "fr": "Zemismart Smoke Temp Humid Sensor"
+        "en": "Smoke Temp Humid Sensor",
+        "fr": "Smoke Temp Humid Sensor"
       },
       "class": "sensor",
       "capabilities": [
@@ -47638,8 +47638,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Smoke Detector Temp Humidity Advanced",
-        "fr": "Zemismart Smoke Detector Temp Humidity Advanced"
+        "en": "Smoke Detector Temp Humidity Advanced",
+        "fr": "Smoke Detector Temp Humidity Advanced"
       },
       "class": "sensor",
       "capabilities": [
@@ -47934,8 +47934,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Solar Panel Controller",
-        "fr": "Zemismart Solar Panel Controller"
+        "en": "Solar Panel Controller",
+        "fr": "Solar Panel Controller"
       },
       "class": "sensor",
       "capabilities": [
@@ -48226,8 +48226,8 @@
     {
       "id": "sound_controller",
       "name": {
-        "en": "Sound Controller (IKEA)",
-        "fr": "Contrôleur audio (IKEA)"
+        "en": "Sound Controller ()",
+        "fr": "Contrôleur audio ()"
       },
       "class": "button",
       "capabilities": [
@@ -48524,8 +48524,8 @@
     },
     {
       "name": {
-        "en": "Avatto Smart Spot",
-        "fr": "Avatto Smart Spot"
+        "en": "Smart Spot",
+        "fr": "Smart Spot"
       },
       "class": "light",
       "capabilities": [
@@ -48818,8 +48818,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Switch 1gang",
-        "fr": "Zemismart Switch 1gang"
+        "en": "Switch 1gang",
+        "fr": "Switch 1gang"
       },
       "class": "socket",
       "capabilities": [
@@ -49130,8 +49130,8 @@
     },
     {
       "name": {
-        "en": "Avatto Switch 2gang",
-        "fr": "Avatto Switch 2gang"
+        "en": "Switch 2gang",
+        "fr": "Switch 2gang"
       },
       "class": "socket",
       "capabilities": [
@@ -49445,8 +49445,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Switch 5gang",
-        "fr": "Zemismart Switch 5gang"
+        "en": "Switch 5gang",
+        "fr": "Switch 5gang"
       },
       "class": "socket",
       "capabilities": [
@@ -49796,8 +49796,8 @@
     },
     {
       "name": {
-        "en": "Tuya Smart Switch 1gang",
-        "fr": "Tuya Smart Switch 1gang"
+        "en": "Smart Switch 1gang",
+        "fr": "Smart Switch 1gang"
       },
       "class": "socket",
       "capabilities": [
@@ -50100,8 +50100,8 @@
     },
     {
       "name": {
-        "en": "Tuya Smart Switch 3gang",
-        "fr": "Tuya Smart Switch 3gang"
+        "en": "Smart Switch 3gang",
+        "fr": "Smart Switch 3gang"
       },
       "class": "socket",
       "capabilities": [
@@ -52481,8 +52481,8 @@
     },
     {
       "name": {
-        "en": "Avatto Remote Switch",
-        "fr": "Avatto Remote Switch"
+        "en": "Remote Switch",
+        "fr": "Remote Switch"
       },
       "class": "button",
       "capabilities": [
@@ -52790,8 +52790,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Smart Switch 1gang",
-        "fr": "Zemismart Smart Switch 1gang"
+        "en": "Smart Switch 1gang",
+        "fr": "Smart Switch 1gang"
       },
       "class": "socket",
       "capabilities": [
@@ -53093,8 +53093,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Smart Switch 3gang",
-        "fr": "Zemismart Smart Switch 3gang"
+        "en": "Smart Switch 3gang",
+        "fr": "Smart Switch 3gang"
       },
       "class": "socket",
       "capabilities": [
@@ -53418,8 +53418,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Smart Switch 4gang",
-        "fr": "Zemismart Smart Switch 4gang"
+        "en": "Smart Switch 4gang",
+        "fr": "Smart Switch 4gang"
       },
       "class": "socket",
       "capabilities": [
@@ -54082,8 +54082,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Touch Switch 1gang",
-        "fr": "Zemismart Touch Switch 1gang"
+        "en": "Touch Switch 1gang",
+        "fr": "Touch Switch 1gang"
       },
       "class": "socket",
       "capabilities": [
@@ -54385,8 +54385,8 @@
     },
     {
       "name": {
-        "en": "Avatto Touch Switch 2gang",
-        "fr": "Avatto Touch Switch 2gang"
+        "en": "Touch Switch 2gang",
+        "fr": "Touch Switch 2gang"
       },
       "class": "socket",
       "capabilities": [
@@ -55044,8 +55044,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Touch Switch 3gang",
-        "fr": "Zemismart Touch Switch 3gang"
+        "en": "Touch Switch 3gang",
+        "fr": "Touch Switch 3gang"
       },
       "class": "socket",
       "capabilities": [
@@ -55367,8 +55367,8 @@
     },
     {
       "name": {
-        "en": "Avatto Touch Switch 4gang",
-        "fr": "Avatto Touch Switch 4gang"
+        "en": "Touch Switch 4gang",
+        "fr": "Touch Switch 4gang"
       },
       "class": "socket",
       "capabilities": [
@@ -56039,8 +56039,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Wall Switch 1gang",
-        "fr": "Zemismart Wall Switch 1gang"
+        "en": "Wall Switch 1gang",
+        "fr": "Wall Switch 1gang"
       },
       "class": "socket",
       "capabilities": [
@@ -56684,8 +56684,8 @@
     },
     {
       "name": {
-        "en": "Avatto Wall Switch 2gang",
-        "fr": "Avatto Wall Switch 2gang"
+        "en": "Wall Switch 2gang",
+        "fr": "Wall Switch 2gang"
       },
       "class": "socket",
       "capabilities": [
@@ -57000,8 +57000,8 @@
     },
     {
       "name": {
-        "en": "Avatto Smart Switch 2gang",
-        "fr": "Avatto Smart Switch 2gang"
+        "en": "Smart Switch 2gang",
+        "fr": "Smart Switch 2gang"
       },
       "class": "socket",
       "capabilities": [
@@ -57665,8 +57665,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Wall Switch 3gang",
-        "fr": "Zemismart Wall Switch 3gang"
+        "en": "Wall Switch 3gang",
+        "fr": "Wall Switch 3gang"
       },
       "class": "socket",
       "capabilities": [
@@ -58352,8 +58352,8 @@
     },
     {
       "name": {
-        "en": "Avatto Wall Switch 4gang",
-        "fr": "Avatto Wall Switch 4gang"
+        "en": "Wall Switch 4gang",
+        "fr": "Wall Switch 4gang"
       },
       "class": "socket",
       "capabilities": [
@@ -58699,8 +58699,8 @@
     },
     {
       "name": {
-        "en": "Avatto Smart Switch 4gang",
-        "fr": "Avatto Smart Switch 4gang"
+        "en": "Smart Switch 4gang",
+        "fr": "Smart Switch 4gang"
       },
       "class": "socket",
       "capabilities": [
@@ -59039,8 +59039,8 @@
     },
     {
       "name": {
-        "en": "Avatto Wall Switch 5gang",
-        "fr": "Avatto Wall Switch 5gang"
+        "en": "Wall Switch 5gang",
+        "fr": "Wall Switch 5gang"
       },
       "class": "socket",
       "capabilities": [
@@ -59782,8 +59782,8 @@
     },
     {
       "name": {
-        "en": "Avatto Wall Switch 6gang",
-        "fr": "Avatto Wall Switch 6gang"
+        "en": "Wall Switch 6gang",
+        "fr": "Wall Switch 6gang"
       },
       "class": "socket",
       "capabilities": [
@@ -60157,8 +60157,8 @@
     },
     {
       "name": {
-        "en": "Avatto Smart Switch 6gang",
-        "fr": "Avatto Smart Switch 6gang"
+        "en": "Smart Switch 6gang",
+        "fr": "Smart Switch 6gang"
       },
       "class": "socket",
       "capabilities": [
@@ -60521,8 +60521,8 @@
     },
     {
       "name": {
-        "en": "Avatto Smart Switch 8gang",
-        "fr": "Avatto Smart Switch 8gang"
+        "en": "Smart Switch 8gang",
+        "fr": "Smart Switch 8gang"
       },
       "class": "socket",
       "capabilities": [
@@ -60908,8 +60908,8 @@
     },
     {
       "name": {
-        "en": "Avatto Wireless Switch",
-        "fr": "Avatto Wireless Switch"
+        "en": "Wireless Switch",
+        "fr": "Wireless Switch"
       },
       "class": "button",
       "capabilities": [
@@ -61202,8 +61202,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Wireless Switch 1gang",
-        "fr": "Zemismart Wireless Switch 1gang"
+        "en": "Wireless Switch 1gang",
+        "fr": "Wireless Switch 1gang"
       },
       "class": "socket",
       "capabilities": [
@@ -61509,8 +61509,8 @@
     },
     {
       "name": {
-        "en": "Avatto Wireless Switch 2gang",
-        "fr": "Avatto Wireless Switch 2gang"
+        "en": "Wireless Switch 2gang",
+        "fr": "Wireless Switch 2gang"
       },
       "class": "socket",
       "capabilities": [
@@ -62173,8 +62173,8 @@
     },
     {
       "name": {
-        "en": "Avatto Wireless Switch 4gang",
-        "fr": "Avatto Wireless Switch 4gang"
+        "en": "Wireless Switch 4gang",
+        "fr": "Wireless Switch 4gang"
       },
       "class": "socket",
       "capabilities": [
@@ -62492,8 +62492,8 @@
     },
     {
       "name": {
-        "en": "Avatto Wireless Switch 5button",
-        "fr": "Avatto Wireless Switch 5button"
+        "en": "Wireless Switch 5button",
+        "fr": "Wireless Switch 5button"
       },
       "class": "socket",
       "capabilities": [
@@ -62845,8 +62845,8 @@
     },
     {
       "name": {
-        "en": "Avatto Wireless Switch 6gang",
-        "fr": "Avatto Wireless Switch 6gang"
+        "en": "Wireless Switch 6gang",
+        "fr": "Wireless Switch 6gang"
       },
       "class": "socket",
       "capabilities": [
@@ -63209,8 +63209,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Temperature Sensor",
-        "fr": "Zemismart Temperature Sensor"
+        "en": "Temperature Sensor",
+        "fr": "Temperature Sensor"
       },
       "class": "sensor",
       "capabilities": [
@@ -63506,8 +63506,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Temperature Sensor Advanced",
-        "fr": "Zemismart Temperature Sensor Advanced"
+        "en": "Temperature Sensor Advanced",
+        "fr": "Temperature Sensor Advanced"
       },
       "class": "sensor",
       "capabilities": [
@@ -65456,8 +65456,8 @@
     },
     {
       "name": {
-        "en": "Avatto Usb Outlet Advanced",
-        "fr": "Avatto Usb Outlet Advanced"
+        "en": "Usb Outlet Advanced",
+        "fr": "Usb Outlet Advanced"
       },
       "class": "socket",
       "capabilities": [
@@ -65754,8 +65754,8 @@
     },
     {
       "name": {
-        "en": "Avatto Usb Outlet",
-        "fr": "Avatto Usb Outlet"
+        "en": "Usb Outlet",
+        "fr": "Usb Outlet"
       },
       "class": "socket",
       "capabilities": [
@@ -66052,8 +66052,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Valve Smart",
-        "fr": "Zemismart Valve Smart"
+        "en": "Valve Smart",
+        "fr": "Valve Smart"
       },
       "class": "sensor",
       "capabilities": [
@@ -66339,8 +66339,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Water Leak Sensor",
-        "fr": "Zemismart Water Leak Sensor"
+        "en": "Water Leak Sensor",
+        "fr": "Water Leak Sensor"
       },
       "class": "sensor",
       "capabilities": [
@@ -66641,8 +66641,8 @@
     },
     {
       "name": {
-        "en": "Zemismart Temp Humid Sensor Leak Detector",
-        "fr": "Zemismart Temp Humid Sensor Leak Detector"
+        "en": "Temp Humid Sensor Leak Detector",
+        "fr": "Temp Humid Sensor Leak Detector"
       },
       "class": "sensor",
       "capabilities": [
@@ -66940,8 +66940,8 @@
     },
     {
       "name": {
-        "en": "Avatto Water Valve",
-        "fr": "Avatto Water Valve"
+        "en": "Water Valve",
+        "fr": "Water Valve"
       },
       "class": "sensor",
       "capabilities": [
@@ -67239,8 +67239,8 @@
     },
     {
       "name": {
-        "en": "Avatto Water Valve Smart",
-        "fr": "Avatto Water Valve Smart"
+        "en": "Water Valve Smart",
+        "fr": "Water Valve Smart"
       },
       "class": "sensor",
       "capabilities": [
