@@ -1,6 +1,6 @@
 'use strict';
 
-const ButtonDevice = require('../lib/ButtonDevice');
+const ButtonDevice = require('../../lib/ButtonDevice');
 
 /**
  * ZemismartWirelessSwitch8buttonDevice - Unified Hybrid Driver
