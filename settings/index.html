@@ -550,8 +550,8 @@
         // Event listener for DOM content loaded
         document.addEventListener('DOMContentLoaded', initializeApp);
         
-        // Homey ready handler
-        function onHomeyReady(homeyInstance) {
+        // Homey ready handler - MUST be global for Homey.js to call it
+        window.onHomeyReady = function(homeyInstance) {
             console.log('Homey API is ready');
             Homey = homeyInstance;
             Homey.ready();
@@ -562,6 +562,11 @@
             } else {
                 document.addEventListener('DOMContentLoaded', initializeApp);
             }
+        };
+        
+        // Fallback: If Homey doesn't call onHomeyReady, initialize anyway
+        if (typeof Homey !== 'undefined') {
+            window.onHomeyReady(Homey);
         }
     </script>
 </body>

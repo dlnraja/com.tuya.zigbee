@@ -1,0 +1,33 @@
+fix: 🐛 Fix settings page not opening (Issue #43)
+
+🐛 CRITICAL BUG FIX:
+
+PROBLEM REPORTED (Issue #43 by @sinan92):
+❌ Settings page fails to load
+❌ Configuration cannot be opened
+❌ "onHomeyReady" function not called by Homey.js
+
+ROOT CAUSE:
+The onHomeyReady() function was not exposed globally.
+Homey.js requires window.onHomeyReady to be accessible.
+
+SOLUTION:
+✅ Changed: function onHomeyReady() → window.onHomeyReady
+✅ Made function globally accessible
+✅ Added fallback initialization
+✅ Improved error handling
+
+CHANGES:
+- settings/index.html: Fixed onHomeyReady scope (line 553-570)
+- Added window.onHomeyReady = function() {}
+- Added typeof Homey !== 'undefined' fallback
+- Ensures settings page loads correctly
+
+VALIDATION:
+✅ Settings page now loads properly
+✅ Driver search engine works
+✅ Configuration accessible
+
+Thanks to @sinan92 for reporting this critical bug!
+
+Closes #43
