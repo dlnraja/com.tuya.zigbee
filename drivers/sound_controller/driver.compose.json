@@ -6,7 +6,8 @@
   },
   "class": "button",
   "capabilities": [
-    "measure_battery"
+    "measure_battery",
+    "windowcoverings_state"
   ],
   "platforms": [
     "local"

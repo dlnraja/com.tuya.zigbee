@@ -7,7 +7,8 @@
   "capabilities": [
     "alarm_contact",
     "alarm_battery",
-    "measure_battery"
+    "measure_battery",
+    "alarm_motion"
   ],
   "energy": {
     "batteries": [
@@ -28,7 +29,11 @@
       "_TZ3000_mmtwjmaq",
       "_TZ3000_msl6wxk9",
       "_TZ3040_bb6xaihh",
-      "_TZE200_3towulqd"
+      "_TZE200_3towulqd",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "endpoints": {
       "1": {

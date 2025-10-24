@@ -37,13 +37,22 @@
     }
   },
   "energy": {
-    "batteries": ["CR2032", "CR2450", "AAA", "AA"]
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "AAA",
+      "AA"
+    ]
   },
   "zigbee": {
     "manufacturerName": [
       "HOBEIAN",
       "_TZ3000_26fmupbb",
-      "_TZ3000_kmh5qpmb"
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "productId": [
       "ZG-102ZM",
@@ -81,8 +90,12 @@
     "large": "/drivers/contact_sensor_vibration/assets/images/large.png",
     "xlarge": "/drivers/contact_sensor_vibration/assets/images/xlarge.png"
   },
-  "platforms": ["local"],
-  "connectivity": ["zigbee"],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
   "settings": [
     {
       "id": "sensitivity",

@@ -8,7 +8,8 @@
     "measure_temperature",
     "measure_humidity",
     "alarm_battery",
-    "measure_battery"
+    "measure_battery",
+    "windowcoverings_state"
   ],
   "energy": {
     "batteries": [
