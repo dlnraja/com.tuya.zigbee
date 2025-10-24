@@ -38,8 +38,15 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "TS011F",
+      "_TZ3000_",
+      "_TZ3400_"
+    ],
+    "productId": [
+      "TS011F",
+      "TS0115"
+    ],
     "endpoints": {
       "1": {
         "clusters": [

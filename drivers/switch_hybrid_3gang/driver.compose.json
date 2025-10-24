@@ -6,7 +6,16 @@
     "onoff.gang3"
   ],
   "zigbee": {
-    "productId": [],
+    "productId": [
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -48,7 +57,18 @@
         "en": "Turn the switch on/off 3 times quickly"
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "_TZ3000_",
+      "_TZ3400_"
+    ]
   },
   "images": {
     "small": "drivers/switch_hybrid_3gang/assets/images/small.png",
