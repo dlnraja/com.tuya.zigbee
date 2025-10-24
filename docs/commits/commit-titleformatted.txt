@@ -1,0 +1,18 @@
+fix: Add titleFormatted to all 15 flow cards - 0 warnings, validation 100% clean
+
+QUALITY IMPROVEMENT:
+✅ Added titleFormatted with [[device]] token to all flow cards
+✅ 2 conditions: is_on, alarm_motion_is_true
+✅ 3 actions: turn_on, turn_off, toggle  
+✅ 10 triggers: motion, contact, temp, humidity, luminance, battery, water, smoke, onoff x2
+
+RESULT:
+✅ Validation: PASSED (0 warnings, 0 errors)
+✅ SDK3 future-proof compliance
+✅ Better UX in Homey Flows
+✅ All flow cards now have proper formatted titles
+
+BEFORE: 15 warnings about missing titleFormatted
+AFTER: 0 warnings, 100% clean validation
+
+All flows now display correctly with device names in Homey Flow editor.
