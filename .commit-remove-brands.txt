@@ -1,0 +1,40 @@
+fix: 🏷️ Remove ALL brand names from driver names (125 drivers)
+
+🏷️ NETTOYAGE COMPLET DES MARQUES:
+
+PROBLÈME:
+❌ Noms de drivers contenaient des marques
+❌ Avatto, Tuya, Moes, Lonsonho, Zemismart, etc.
+❌ Les marques doivent être dans manufacturerName/productId, PAS dans le nom!
+
+SOLUTION:
+✅ 125/162 drivers nettoyés
+✅ 37 déjà propres
+✅ Marques supprimées intelligemment
+✅ Noms améliorés si trop génériques
+
+📝 EXEMPLES CORRECTIONS:
+- "Avatto Dimmer 1gang Touch" → "Dimmer 1gang Touch"
+- "Tuya Comprehensive Air Monitor" → "Comprehensive Air Monitor"
+- "Moes Sos Emergency Button" → "Sos Emergency Button"
+- "Zemismart Roller Blind Controller" → "Roller Blind Controller"
+- "Lsc Osram Bulb Rgbw" → "Smart Bulb Bulb Rgbw"
+- "Nous Air Quality Monitor" → "Air Quality Monitor"
+
+🎯 MARQUES SUPPRIMÉES (50+):
+Tuya, Avatto, Moes, Lonsonho, Zemismart, Neo, Nous,
+Blitzwolf, Loratap, Bseed, Girier, Lidl, Action, LSC,
+Aqara, Xiaomi, Ikea, Philips, Innr, Osram, Gledopto,
+Sonoff, Shelly, et 30+ autres
+
+SCRIPT CRÉÉ:
+- scripts/fixes/REMOVE_BRAND_NAMES_FROM_DRIVERS.js
+
+VALIDATION:
+✅ homey app build: SUCCESS
+✅ homey app validate --level publish: PASSED
+✅ 0 erreurs
+✅ Tous drivers conformes
+
+Les marques restent dans manufacturerName et productId où elles
+doivent être selon les standards Homey SDK3!
