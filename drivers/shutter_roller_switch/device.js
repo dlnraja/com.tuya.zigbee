@@ -3,25 +3,25 @@
 const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
- * ZemismartRollerShutterSwitchDevice - Unified Hybrid Driver
+ * RollerShutterSwitchDevice - Unified Hybrid Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class ZemismartRollerShutterSwitchDevice extends BaseHybridDevice {
+class RollerShutterSwitchDevice extends BaseHybridDevice {
 
   async onNodeInit() {
-    this.log('ZemismartRollerShutterSwitchDevice initializing...');
+    this.log('RollerShutterSwitchDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit().catch(err => this.error(err));
     
-    this.log('ZemismartRollerShutterSwitchDevice initialized - Power source:', this.powerSource || 'unknown');
+    this.log('RollerShutterSwitchDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
-    this.log('ZemismartRollerShutterSwitchDevice deleted');
+    this.log('RollerShutterSwitchDevice deleted');
     await super.onDeleted().catch(err => this.error(err));
   }
 }
 
-module.exports = ZemismartRollerShutterSwitchDevice;
+module.exports = RollerShutterSwitchDevice;

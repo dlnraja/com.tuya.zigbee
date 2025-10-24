@@ -3,25 +3,25 @@
 const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
- * ZemismartValveSmartDevice - Unified Hybrid Driver
+ * ValveSmartDevice - Unified Hybrid Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class ZemismartValveSmartDevice extends BaseHybridDevice {
+class ValveSmartDevice extends BaseHybridDevice {
 
   async onNodeInit() {
-    this.log('ZemismartValveSmartDevice initializing...');
+    this.log('ValveSmartDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit().catch(err => this.error(err));
     
-    this.log('ZemismartValveSmartDevice initialized - Power source:', this.powerSource || 'unknown');
+    this.log('ValveSmartDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
-    this.log('ZemismartValveSmartDevice deleted');
+    this.log('ValveSmartDevice deleted');
     await super.onDeleted().catch(err => this.error(err));
   }
 }
 
-module.exports = ZemismartValveSmartDevice;
+module.exports = ValveSmartDevice;

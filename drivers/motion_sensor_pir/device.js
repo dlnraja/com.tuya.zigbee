@@ -3,25 +3,25 @@
 const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
- * ZemismartMotionSensorDevice - Unified Hybrid Driver
+ * MotionSensorDevice - Unified Hybrid Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class ZemismartMotionSensorDevice extends BaseHybridDevice {
+class MotionSensorDevice extends BaseHybridDevice {
 
   async onNodeInit() {
-    this.log('ZemismartMotionSensorDevice initializing...');
+    this.log('MotionSensorDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit().catch(err => this.error(err));
     
-    this.log('ZemismartMotionSensorDevice initialized - Power source:', this.powerSource || 'unknown');
+    this.log('MotionSensorDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
-    this.log('ZemismartMotionSensorDevice deleted');
+    this.log('MotionSensorDevice deleted');
     await super.onDeleted().catch(err => this.error(err));
   }
 }
 
-module.exports = ZemismartMotionSensorDevice;
+module.exports = MotionSensorDevice;

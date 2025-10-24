@@ -3,25 +3,25 @@
 const SwitchDevice = require('../../lib/SwitchDevice');
 
 /**
- * NousOsramOutdoorPlugDevice - Unified Hybrid Driver
+ * OutdoorPlugDevice - Unified Hybrid Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class NousOsramOutdoorPlugDevice extends SwitchDevice {
+class OutdoorPlugDevice extends SwitchDevice {
 
   async onNodeInit() {
-    this.log('NousOsramOutdoorPlugDevice initializing...');
+    this.log('OutdoorPlugDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit().catch(err => this.error(err));
     
-    this.log('NousOsramOutdoorPlugDevice initialized - Power source:', this.powerSource || 'unknown');
+    this.log('OutdoorPlugDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
-    this.log('NousOsramOutdoorPlugDevice deleted');
+    this.log('OutdoorPlugDevice deleted');
     await super.onDeleted().catch(err => this.error(err));
   }
 }
 
-module.exports = NousOsramOutdoorPlugDevice;
+module.exports = OutdoorPlugDevice;

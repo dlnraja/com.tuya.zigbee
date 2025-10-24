@@ -2,11 +2,11 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class AvattoMotionSensorMmwaveBasicDriver extends ZigBeeDriver {
+class MotionSensorMmwaveBasicDriver extends ZigBeeDriver {
 
   async onInit() {
-    this.log('AvattoMotionSensorMmwaveBasicDriver initialized');
+    this.log('MotionSensorMmwaveBasicDriver initialized');
   }
 }
 
-module.exports = AvattoMotionSensorMmwaveBasicDriver;
+module.exports = MotionSensorMmwaveBasicDriver;

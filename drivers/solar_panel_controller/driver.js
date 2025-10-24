@@ -2,11 +2,11 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class ZemismartSolarPanelControllerDriver extends ZigBeeDriver {
+class SolarPanelControllerDriver extends ZigBeeDriver {
 
   async onInit() {
-    this.log('ZemismartSolarPanelControllerDriver initialized');
+    this.log('SolarPanelControllerDriver initialized');
   }
 }
 
-module.exports = ZemismartSolarPanelControllerDriver;
+module.exports = SolarPanelControllerDriver;

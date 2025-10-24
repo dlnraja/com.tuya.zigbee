@@ -3,25 +3,25 @@
 const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
- * AvattoWaterValveSmartDevice - Unified Hybrid Driver
+ * WaterValveSmartDevice - Unified Hybrid Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class AvattoWaterValveSmartDevice extends BaseHybridDevice {
+class WaterValveSmartDevice extends BaseHybridDevice {
 
   async onNodeInit() {
-    this.log('AvattoWaterValveSmartDevice initializing...');
+    this.log('WaterValveSmartDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit().catch(err => this.error(err));
     
-    this.log('AvattoWaterValveSmartDevice initialized - Power source:', this.powerSource || 'unknown');
+    this.log('WaterValveSmartDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
-    this.log('AvattoWaterValveSmartDevice deleted');
+    this.log('WaterValveSmartDevice deleted');
     await super.onDeleted().catch(err => this.error(err));
   }
 }
 
-module.exports = AvattoWaterValveSmartDevice;
+module.exports = WaterValveSmartDevice;

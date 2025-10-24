@@ -1,0 +1,59 @@
+refactor: 🏷️ Remove ALL brand names from class names (231 classes)
+
+🏷️ NETTOYAGE COMPLET DES MARQUES DANS LES CLASSES
+
+PROBLÈME:
+Les noms de classes contenaient des marques (Zemismart, Avatto, Nous, Philips, etc.)
+Ce qui n'est pas conforme aux bonnes pratiques SDK3.
+
+MARQUES NETTOYÉES:
+- Zemismart
+- Avatto
+- Nous  
+- Philips
+- Osram
+- Samsung
+- Innr
+- Sonoff
+- Lsc
+- Gledopto
+- Lidl
+- Moes
+- Girier
+- Woox
+- Neo
+- Aqara
+- Xiaomi
+- Ikea
+- Lonsonho
+- Generic
+
+CORRECTIONS APPLIQUÉES:
+
+1. DRIVER CLASSES (115 fichiers)
+Ex: ZemismartMotionSensorDriver → MotionSensorDriver
+Ex: AvattoSmartPlugDriver → SmartPlugDriver
+Ex: SonoffButtonDriver → ButtonDriver
+
+2. DEVICE CLASSES (116 fichiers)
+Ex: ZemismartMotionSensorDevice → MotionSensorDevice
+Ex: AvattoSmartPlugDevice → SmartPlugDevice
+Ex: PhilipsLedStripDevice → LedStripDevice
+
+SCRIPTS CRÉÉS:
+- scripts/fixes/REMOVE_BRANDS_FROM_CLASSES.js
+- scripts/fixes/REMOVE_BRANDS_FROM_DEVICE_CLASSES.js
+
+RÉSULTAT:
+✅ 231 classes nettoyées (115 drivers + 116 devices)
+✅ Code plus propre et conforme SDK3
+✅ Marques restent dans manufacturerName et productId
+✅ Build: SUCCESS
+✅ Validation: PASSED
+
+Les marques ne doivent apparaître QUE dans:
+- manufacturerName (Zigbee)
+- productId (Zigbee)
+- JAMAIS dans les noms de classes, drivers ou fichiers
+
+Réponse au feedback du forum.

@@ -3,25 +3,25 @@
 const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
- * LscOsramLedStripRgbwDevice - Unified Hybrid Driver
+ * LedStripRgbwDevice - Unified Hybrid Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class LscOsramLedStripRgbwDevice extends BaseHybridDevice {
+class LedStripRgbwDevice extends BaseHybridDevice {
 
   async onNodeInit() {
-    this.log('LscOsramLedStripRgbwDevice initializing...');
+    this.log('LedStripRgbwDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit().catch(err => this.error(err));
     
-    this.log('LscOsramLedStripRgbwDevice initialized - Power source:', this.powerSource || 'unknown');
+    this.log('LedStripRgbwDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
-    this.log('LscOsramLedStripRgbwDevice deleted');
+    this.log('LedStripRgbwDevice deleted');
     await super.onDeleted().catch(err => this.error(err));
   }
 }
 
-module.exports = LscOsramLedStripRgbwDevice;
+module.exports = LedStripRgbwDevice;

@@ -2,11 +2,11 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class AvattoWaterValveDriver extends ZigBeeDriver {
+class WaterValveDriver extends ZigBeeDriver {
 
   async onInit() {
-    this.log('AvattoWaterValveDriver initialized');
+    this.log('WaterValveDriver initialized');
   }
 }
 
-module.exports = AvattoWaterValveDriver;
+module.exports = WaterValveDriver;

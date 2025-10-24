@@ -3,25 +3,25 @@
 const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
- * ZemismartWaterLeakSensorDevice - Unified Hybrid Driver
+ * WaterLeakSensorDevice - Unified Hybrid Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class ZemismartWaterLeakSensorDevice extends BaseHybridDevice {
+class WaterLeakSensorDevice extends BaseHybridDevice {
 
   async onNodeInit() {
-    this.log('ZemismartWaterLeakSensorDevice initializing...');
+    this.log('WaterLeakSensorDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit().catch(err => this.error(err));
     
-    this.log('ZemismartWaterLeakSensorDevice initialized - Power source:', this.powerSource || 'unknown');
+    this.log('WaterLeakSensorDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
-    this.log('ZemismartWaterLeakSensorDevice deleted');
+    this.log('WaterLeakSensorDevice deleted');
     await super.onDeleted().catch(err => this.error(err));
   }
 }
 
-module.exports = ZemismartWaterLeakSensorDevice;
+module.exports = WaterLeakSensorDevice;

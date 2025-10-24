@@ -2,11 +2,11 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class AvattoSmartPlugEnergyDriver extends ZigBeeDriver {
+class SmartPlugEnergyDriver extends ZigBeeDriver {
 
   async onInit() {
-    this.log('AvattoSmartPlugEnergyDriver initialized');
+    this.log('SmartPlugEnergyDriver initialized');
   }
 }
 
-module.exports = AvattoSmartPlugEnergyDriver;
+module.exports = SmartPlugEnergyDriver;
