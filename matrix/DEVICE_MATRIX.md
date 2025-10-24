@@ -1,6 +1,6 @@
 # Device Matrix
 
-**Generated:** 2025-10-23T23:23:23.176Z
+**Generated:** 2025-10-24T00:18:55.157Z
 
 **Total Devices:** 189
 
@@ -17,7 +17,7 @@
 ## Statistics
 
 - Total Drivers: 189
-- Total Manufacturer IDs: 14563
-- Total Model IDs: 5629
+- Total Manufacturer IDs: 5981
+- Total Model IDs: 1876
 - Battery Devices: 189
 - AC Devices: 0
