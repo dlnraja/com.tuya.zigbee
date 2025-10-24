@@ -39,37 +39,11 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "TS011F",
-      "_TZ3000_01gpyda5",
-      "_TZ3000_0dumfk2z",
-      "_TZ3000_0s1izerx",
-      "_TZ3000_26fmupbb",
-      "_TZ3000_4uuaja4a",
-      "_TZ3000_odygigth",
-      "_TZ3000_plyvnuf5",
-      "_TZ3000_qd7hej8u",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_ss98ec5d",
-      "_TZ3000_tk3s5tyg",
-      "_TZ3000_u5u4cakc",
-      "_TZ3000_uim07oem",
-      "_TZ3000_vp6clf9d",
-      "_TZ3000_w0qqde0g",
-      "_TZ3000_xabckq1v",
-      "_TZE200_9cxuhakf",
-      "_TZE200_c88teujp",
-      "_TZE200_ckud7u2l",
-      "_TZE200_dwcarsat",
-      "_TZE200_ryfmq5rl",
-      "_TZE200_wfxuhoea",
-      "_TZE200_whpb9yts",
-      "_TZE200_yw7cahqs",
-      "lumi.plug",
-      "lumi.plug.mmeu01"
+      "TS011F"
     ],
     "productId": [
-      "TS0011",
       "TS011F",
+      "TS0011",
       "TS0001"
     ],
     "endpoints": {
