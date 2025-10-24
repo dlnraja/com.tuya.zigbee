@@ -12,7 +12,8 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_battery"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -20,6 +21,26 @@
         "en": "Switch",
         "fr": "Interrupteur"
       }
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie"
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "CR2477",
+      "AAA",
+      "AA",
+      "CR123A",
+      "INTERNAL"
+    ],
+    "approximation": {
+      "usageConstant": 0.5
     }
   },
   "zigbee": {
