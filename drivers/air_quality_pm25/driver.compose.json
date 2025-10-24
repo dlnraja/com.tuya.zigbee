@@ -7,7 +7,6 @@
   "capabilities": [
     "measure_temperature",
     "measure_pm25",
-    "alarm_battery",
     "measure_battery"
   ],
   "energy": {

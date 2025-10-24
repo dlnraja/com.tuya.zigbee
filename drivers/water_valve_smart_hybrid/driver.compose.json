@@ -5,7 +5,7 @@
   "class": "sensor",
   "capabilities": [
     "onoff",
-    "measure_water",
+    "meter_water",
     "alarm_water",
     "measure_battery",
     "measure_temperature"
