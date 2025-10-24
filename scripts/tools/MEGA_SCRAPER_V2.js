@@ -257,7 +257,7 @@ function generateEnrichmentReport(data) {
         device: device.name,
         driver: device.driver,
         action: 'Request Zigbee interview data from user',
-        user: device.source.replace('forum_post_', 'Post #'),
+        user: device.String(source).replace('forum_post_', 'Post #'),
         priority: device.priority
       });
     }

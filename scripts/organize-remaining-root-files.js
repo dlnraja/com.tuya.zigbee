@@ -141,7 +141,7 @@ class RemainingOrganizer {
     this.log('╚══════════════════════════════════════════════════════════════════════╝\n', 'magenta');
     
     for (const [category, files] of Object.entries(REMAINING_FILES)) {
-      const targetDir = category === 'peter' ? 'docs/users/peter' : `docs/${category.replace('_', '-')}`;
+      const targetDir = category === 'peter' ? 'docs/users/peter' : `docs/${String(category).replace('_', '-')}`;
       
       this.log(`\n📦 ${targetDir} (${files.length} fichiers)`, 'cyan');
       

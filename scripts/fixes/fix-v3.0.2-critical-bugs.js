@@ -75,17 +75,17 @@ function fixClusterIDErrors(deviceJsPath) {
   for (const [wrong, correct] of Object.entries(clusterFixes)) {
     if (content.includes(wrong)) {
       // Fix in registerCapability calls
-      const regex1 = new RegExp(`registerCapability\\(([^,]+),\\s*${wrong.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, 'g');
+      const regex1 = new RegExp(`registerCapability\\(([^,]+),\\s*${String(wrong).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, 'g');
       if (regex1.test(content)) {
-        content = content.replace(regex1, `registerCapability($1, ${correct}`);
+        content = String(content).replace(regex1, `registerCapability($1, ${correct}`);
         modified = true;
         console.log(`  ✅ Fixed: ${wrong} → ${correct}`);
       }
       
       // Fix in cluster references
-      const regex2 = new RegExp(`cluster:\\s*${wrong.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, 'g');
+      const regex2 = new RegExp(`cluster:\\s*${String(wrong).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, 'g');
       if (regex2.test(content)) {
-        content = content.replace(regex2, `cluster: ${correct}`);
+        content = String(content).replace(regex2, `cluster: ${correct}`);
         modified = true;
         console.log(`  ✅ Fixed: cluster: ${wrong} → ${correct}`);
       }

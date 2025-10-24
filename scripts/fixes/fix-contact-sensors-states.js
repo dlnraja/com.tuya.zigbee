@@ -118,7 +118,7 @@ for (const driverId of CONTACT_DRIVERS) {
   const iasBlockMatch = code.match(/\/\/\s*IAS.*?(?=\n\s{2,4}\/\/|$)/s);
   
   if (iasBlockMatch) {
-    code = code.replace(iasBlockMatch[0], CORRECT_CONTACT_TEMPLATE);
+    code = String(code).replace(iasBlockMatch[0], CORRECT_CONTACT_TEMPLATE);
     console.log('  ✅ Replaced existing IAS implementation');
   } else {
     const insertPos = onInitMatch.index + onInitMatch[0].length;

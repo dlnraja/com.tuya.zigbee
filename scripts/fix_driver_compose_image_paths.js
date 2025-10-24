@@ -40,8 +40,8 @@ RENAMES.forEach(rename => {
     const regex1 = new RegExp(`/drivers/${rename.old}/`, 'g');
     const regex2 = new RegExp(`drivers/${rename.old}/`, 'g');
     
-    content = content.replace(regex1, `/drivers/${rename.new}/`);
-    content = content.replace(regex2, `drivers/${rename.new}/`);
+    content = String(content).replace(regex1, `/drivers/${rename.new}/`);
+    content = String(content).replace(regex2, `drivers/${rename.new}/`);
     
     if (content !== originalContent) {
       // Backup

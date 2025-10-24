@@ -32,7 +32,7 @@ if (fs.existsSync(appJsonPath)) {
   // Update description
   if (appJson.description) {
     if (!appJson.description.en.includes('300+')) {
-      appJson.description.en = appJson.description.en.replace(/\d+ drivers?/, '300+ drivers');
+      appJson.description.en = appJson.description.String(en).replace(/\d+ drivers?/, '300+ drivers');
     }
   }
   
@@ -47,7 +47,7 @@ if (fs.existsSync(readmePath)) {
   let readme = fs.readFileSync(readmePath, 'utf8');
   
   // Update driver count
-  readme = readme.replace(/\d+ drivers?/gi, '300+ drivers');
+  readme = String(readme).replace(/\d+ drivers?/gi, '300+ drivers');
   
   // Add breaking change notice si pas déjà présent
   if (!readme.includes('## ⚠️ Breaking Change v4.0.0')) {
@@ -102,7 +102,7 @@ See [MIGRATION_GUIDE_v4.md](docs/MIGRATION_GUIDE_v4.md) for details.
 `;
 
 // Insérer après le titre
-changelog = changelog.replace('# Changelog\n\n', '# Changelog\n\n' + newEntry);
+changelog = String(changelog).replace('# Changelog\n\n', '# Changelog\n\n' + newEntry);
 fs.writeFileSync(changelogPath, changelog);
 console.log('  ✅ CHANGELOG.md updated\n');
 

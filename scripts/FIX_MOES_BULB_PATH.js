@@ -12,7 +12,7 @@ let content = fs.readFileSync(APP_JSON, 'utf8');
 const before = content;
 
 // Remplacer toutes les occurrences
-content = content.replace(/drivers\/moes_bulb_tunable_ac\//g, 'drivers/avatto_bulb_tunable_ac/');
+content = String(content).replace(/drivers\/moes_bulb_tunable_ac\//g, 'drivers/avatto_bulb_tunable_ac/');
 
 if (content !== before) {
   fs.writeFileSync(APP_JSON, content);

@@ -75,7 +75,7 @@ function fixMotionSensorIASZone() {
     // Vérifier endpoint 1
     if (!code.includes('endpoints[1]')) {
       console.log(`  ⚠️  ${driverId}: Using wrong endpoint`);
-      code = code.replace(/endpoints\[0\]/g, 'endpoints[1]');
+      code = String(code).replace(/endpoints\[0\]/g, 'endpoints[1]');
       fs.writeFileSync(deviceJsPath, code, 'utf8');
       console.log(`  ✅ ${driverId}: Fixed endpoint to [1]`);
       fixes.motionSensors++;

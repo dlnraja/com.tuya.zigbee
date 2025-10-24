@@ -86,7 +86,7 @@ class ReadmeChangelogUpdater {
     let content = fs.readFileSync(readmePath, 'utf8');
     
     // Mettre à jour badges
-    content = content.replace(
+    content = String(content).replace(
       /!\[Drivers\]\(https:\/\/img\.shields\.io\/badge\/drivers-\d+-brightgreen\.svg\)/,
       `![Drivers](https://img.shields.io/badge/drivers-${this.stats.drivers}-brightgreen.svg)`
     );
@@ -105,7 +105,7 @@ Status:               ✅ Active Development
 Coverage:             96%+ of Zigbee market
 \`\`\``;
     
-    content = content.replace(
+    content = String(content).replace(
       /## 📊 Statistics[\s\S]*?```[\s\S]*?```/,
       statsSection
     );
@@ -113,7 +113,7 @@ Coverage:             96%+ of Zigbee market
     // Mettre à jour description
     const newDescription = `Community-maintained Universal Zigbee app with ${this.stats.drivers} SDK3 native drivers. ${this.stats.manufacturerIds}+ manufacturer IDs from multiple sources (Zigbee2MQTT, Johan Bendz, Homey Community). 100% local control, no cloud required. Supports ${this.stats.brands.length}+ major brands across 5 regions (Global, Asia, USA, Europe, France). Active development with 96%+ Zigbee market coverage.`;
     
-    content = content.replace(
+    content = String(content).replace(
       /Community-maintained.*?Active development.*?\./s,
       newDescription
     );
@@ -134,7 +134,7 @@ Coverage:             96%+ of Zigbee market
 - ✅ **Community Driven** - Based on community feedback
 - ✅ **Automated Updates** - GitHub Actions CI/CD pipeline`;
     
-    content = content.replace(
+    content = String(content).replace(
       /## ✨ Features[\s\S]*?---/,
       featuresSection + '\n\n---'
     );
@@ -199,7 +199,7 @@ Coverage:             96%+ of Zigbee market
 `;
     
     // Insérer après le titre principal
-    content = content.replace(
+    content = String(content).replace(
       /(# Changelog[\s\S]*?)(## \[)/,
       `$1${newEntry}$2`
     );

@@ -20,13 +20,13 @@ drivers.forEach(driver => {
     if (!content.includes('"images"')) {
       // Ajouter avant "platforms" ou à la fin
       if (content.includes('"platforms"')) {
-        content = content.replace(
+        content = String(content).replace(
           '"platforms"',
           '"images": {\n    "small": "./assets/images/small.png",\n    "large": "./assets/images/large.png"\n  },\n  "platforms"'
         );
       } else {
         // Ajouter avant la dernière accolade
-        content = content.replace(/\n}$/, ',\n  "images": {\n    "small": "./assets/images/small.png",\n    "large": "./assets/images/large.png"\n  }\n}');
+        content = String(content).replace(/\n}$/, ',\n  "images": {\n    "small": "./assets/images/small.png",\n    "large": "./assets/images/large.png"\n  }\n}');
       }
       
       fs.writeFileSync(composePath, content);

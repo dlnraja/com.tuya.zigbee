@@ -122,7 +122,7 @@ function processDriver(driverName) {
       
       if (matches && matches.length > 0) {
         const lastRequire = matches[matches.length - 1];
-        content = content.replace(lastRequire, `${lastRequire}\n${FALLBACK_IMPORT}`);
+        content = String(content).replace(lastRequire, `${lastRequire}\n${FALLBACK_IMPORT}`);
         modified = true;
       }
     }
@@ -134,7 +134,7 @@ function processDriver(driverName) {
       const match = content.match(onNodeInitRegex);
       
       if (match) {
-        content = content.replace(match[1], `${match[1]}${FALLBACK_INIT}`);
+        content = String(content).replace(match[1], `${match[1]}${FALLBACK_INIT}`);
         modified = true;
       }
     }

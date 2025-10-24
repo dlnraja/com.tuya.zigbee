@@ -53,9 +53,9 @@ for (const driver of drivers) {
     for (const [constant, stringName] of Object.entries(clusterMapping)) {
       if (content.includes(constant)) {
         // Only replace in registerCapability context
-        const regex = new RegExp(`(registerCapability\\s*\\([^,]+,\\s*)${constant.replace('.', '\\.')}`, 'g');
+        const regex = new RegExp(`(registerCapability\\s*\\([^,]+,\\s*)${String(constant).replace('.', '\\.')}`, 'g');
         if (regex.test(content)) {
-          content = content.replace(regex, `$1${stringName}`);
+          content = String(content).replace(regex, `$1${stringName}`);
           modified = true;
         }
       }

@@ -87,7 +87,7 @@ function generateNewPhases(analysis) {
             fs.writeFileSync(devicePath + '.backup', content);
             
             // Apply fix
-            content = content.replace(
+            content = String(content).replace(
               /await\\s+endpoint\\.clusters\\.iasZone\\.enrollResponse\\([^)]+\\);?/g,
               \`// IAS Zone enrollment - FIXED by auto-upgrade
             await endpoint.clusters.iasZone.writeAttributes({

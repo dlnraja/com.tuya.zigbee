@@ -92,10 +92,10 @@ class ClusterRegressionFixer {
       // Fix 1: Replace CLUSTER.* references
       let replacementsMade = 0;
       for (const [oldFormat, newFormat] of Object.entries(this.clusterMappings)) {
-        const regex = new RegExp(oldFormat.replace('.', '\\.'), 'g');
+        const regex = new RegExp(String(oldFormat).replace('.', '\\.'), 'g');
         const matches = content.match(regex);
         if (matches) {
-          content = content.replace(regex, newFormat);
+          content = String(content).replace(regex, newFormat);
           replacementsMade += matches.length;
         }
       }
@@ -105,7 +105,7 @@ class ClusterRegressionFixer {
       if (endpointMatches && endpointMatches.length > 1) {
         // Keep first occurrence, comment out others
         let firstFound = false;
-        content = content.replace(/const endpoint/g, match => {
+        content = String(content).replace(/const endpoint/g, match => {
           if (!firstFound) {
             firstFound = true;
             return match;

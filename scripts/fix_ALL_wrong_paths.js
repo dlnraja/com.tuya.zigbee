@@ -24,7 +24,7 @@ drivers.forEach(driverName => {
     // Regex global pour tous les chemins de drivers dans images
     // Pattern: drivers/ANYTHING/assets où ANYTHING != driverName
     const imagePathRegex = new RegExp(`drivers/([a-z_0-9]+)/assets/images/(small|large|xlarge)\\.png`, 'g');
-    content = content.replace(imagePathRegex, (match, oldDriver, size) => {
+    content = String(content).replace(imagePathRegex, (match, oldDriver, size) => {
       if (oldDriver !== driverName) {
         return `drivers/${driverName}/assets/images/${size}.png`;
       }
@@ -33,7 +33,7 @@ drivers.forEach(driverName => {
     
     // Regex global pour tous les chemins de learnmode
     const learnmodePathRegex = new RegExp(`/drivers/([a-z_0-9]+)/assets/learnmode\\.svg`, 'g');
-    content = content.replace(learnmodePathRegex, (match, oldDriver) => {
+    content = String(content).replace(learnmodePathRegex, (match, oldDriver) => {
       if (oldDriver !== driverName) {
         return `/drivers/${driverName}/assets/learnmode.svg`;
       }

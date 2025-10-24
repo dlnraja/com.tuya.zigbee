@@ -17,7 +17,7 @@ class SwitchTouch3GangDevice extends SwitchDevice {
     this.switchType = 'touch';
     
     // Initialize base (power detection + switch control)
-    await super.onNodeInit();
+    await super.onNodeInit().catch(err => this.error(err));
     
     this.log('SwitchTouch3GangDevice initialized - 3 switches ready');
   }
@@ -43,7 +43,7 @@ class SwitchTouch3GangDevice extends SwitchDevice {
 
   async onDeleted() {
     this.log('SwitchTouch3GangDevice deleted');
-    await super.onDeleted();
+    await super.onDeleted().catch(err => this.error(err));
   }
 }
 

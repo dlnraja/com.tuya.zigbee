@@ -1,6 +1,6 @@
 'use strict';
 
-const BaseHybridDevice = require('../lib/BaseHybridDevice');
+const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
  * ZemismartSmokeDetectorTempHumidityAdvancedDevice - Unified Hybrid Driver
@@ -13,14 +13,14 @@ class ZemismartSmokeDetectorTempHumidityAdvancedDevice extends BaseHybridDevice 
     this.log('ZemismartSmokeDetectorTempHumidityAdvancedDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit();
+    await super.onNodeInit().catch(err => this.error(err));
     
     this.log('ZemismartSmokeDetectorTempHumidityAdvancedDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
     this.log('ZemismartSmokeDetectorTempHumidityAdvancedDevice deleted');
-    await super.onDeleted();
+    await super.onDeleted().catch(err => this.error(err));
   }
 }
 

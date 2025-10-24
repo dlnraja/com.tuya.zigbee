@@ -17,7 +17,7 @@ class SmartSwitch4gangHybridDevice extends ZigBeeDevice {
 
         // Mark device as available
         try {
-        await this.setAvailable();
+        await this.setAvailable().catch(err => this.error(err));
         } catch (err) { this.error('Await error:', err); }
     }
 
@@ -26,9 +26,9 @@ class SmartSwitch4gangHybridDevice extends ZigBeeDevice {
         
         try {
             if (value) {
-                await this.zclNode.endpoints[1].clusters.onOff.setOn();
+                await this.zclNode.endpoints[1].clusters.onOff.setOn().catch(err => this.error(err));
             } else {
-                await this.zclNode.endpoints[1].clusters.onOff.setOff();
+                await this.zclNode.endpoints[1].clusters.onOff.setOff().catch(err => this.error(err));
             }
             
             return Promise.resolve();
@@ -45,9 +45,9 @@ class SmartSwitch4gangHybridDevice extends ZigBeeDevice {
 
   async setCapabilityValue(capabilityId, value) {
     try {
-    await super.setCapabilityValue(capabilityId, value);
+    await super.setCapabilityValue(capabilityId, value).catch(err => this.error(err));
     } catch (err) { this.error('Await error:', err); }
-    await this.triggerCapabilityFlow(capabilityId, value);
+    await this.triggerCapabilityFlow(capabilityId, value).catch(err => this.error(err));
   }
 
 
@@ -128,7 +128,7 @@ class SmartSwitch4gangHybridDevice extends ZigBeeDevice {
       const turnOnCard = this.homey.flow.getDeviceActionCard('smart_switch_4gang_hybrid_turn_on');
       if (turnOnCard) {
         turnOnCard.registerRunListener(async (args, state) => {
-          await args.device.setCapabilityValue('onoff', true);
+          await args.device.setCapabilityValue('onoff', true).catch(err => this.error(err));
         });
       }
     } catch (error) {
@@ -140,7 +140,7 @@ class SmartSwitch4gangHybridDevice extends ZigBeeDevice {
       const turnOffCard = this.homey.flow.getDeviceActionCard('smart_switch_4gang_hybrid_turn_off');
       if (turnOffCard) {
         turnOffCard.registerRunListener(async (args, state) => {
-          await args.device.setCapabilityValue('onoff', false);
+          await args.device.setCapabilityValue('onoff', false).catch(err => this.error(err));
         });
       }
     } catch (error) {
@@ -153,7 +153,7 @@ class SmartSwitch4gangHybridDevice extends ZigBeeDevice {
       if (toggleCard) {
         toggleCard.registerRunListener(async (args, state) => {
           const current = args.device.getCapabilityValue('onoff');
-          await args.device.setCapabilityValue('onoff', !current);
+          await args.device.setCapabilityValue('onoff', !current).catch(err => this.error(err));
         });
       }
     } catch (error) {
@@ -165,7 +165,7 @@ class SmartSwitch4gangHybridDevice extends ZigBeeDevice {
       const setDimCard = this.homey.flow.getDeviceActionCard('smart_switch_4gang_hybrid_set_dim');
       if (setDimCard) {
         setDimCard.registerRunListener(async (args, state) => {
-          await args.device.setCapabilityValue('dim', args.dim);
+          await args.device.setCapabilityValue('dim', args.dim).catch(err => this.error(err));
         });
       }
     } catch (error) {
@@ -177,7 +177,7 @@ class SmartSwitch4gangHybridDevice extends ZigBeeDevice {
       const setTempCard = this.homey.flow.getDeviceActionCard('smart_switch_4gang_hybrid_set_temperature');
       if (setTempCard) {
         setTempCard.registerRunListener(async (args, state) => {
-          await args.device.setCapabilityValue('target_temperature', args.temperature);
+          await args.device.setCapabilityValue('target_temperature', args.temperature).catch(err => this.error(err));
         });
       }
     } catch (error) {
@@ -189,7 +189,7 @@ class SmartSwitch4gangHybridDevice extends ZigBeeDevice {
       const openCard = this.homey.flow.getDeviceActionCard('smart_switch_4gang_hybrid_open');
       if (openCard) {
         openCard.registerRunListener(async (args, state) => {
-          await args.device.setCapabilityValue('windowcoverings_set', 1);
+          await args.device.setCapabilityValue('windowcoverings_set', 1).catch(err => this.error(err));
         });
       }
 
@@ -197,7 +197,7 @@ class SmartSwitch4gangHybridDevice extends ZigBeeDevice {
       if (closeCard) {
         closeCard.registerRunListener(async (args, state) => {
           try {
-          await args.device.setCapabilityValue('windowcoverings_set', 0);
+          await args.device.setCapabilityValue('windowcoverings_set', 0).catch(err => this.error(err));
           } catch (err) { this.error('Await error:', err); }
         });
       }
@@ -205,7 +205,7 @@ class SmartSwitch4gangHybridDevice extends ZigBeeDevice {
       const setPosCard = this.homey.flow.getDeviceActionCard('smart_switch_4gang_hybrid_set_position');
       if (setPosCard) {
         setPosCard.registerRunListener(async (args, state) => {
-          await args.device.setCapabilityValue('windowcoverings_set', args.position);
+          await args.device.setCapabilityValue('windowcoverings_set', args.position).catch(err => this.error(err));
         });
       }
     } catch (error) {
@@ -221,14 +221,14 @@ class SmartSwitch4gangHybridDevice extends ZigBeeDevice {
           if (args.device.hasCapability('onoff')) {
             const original = args.device.getCapabilityValue('onoff');
             for (let i = 0; i < 3; i++) {
-              await args.device.setCapabilityValue('onoff', true);
-              await new Promise(resolve => setTimeout(resolve, 300));
-              await args.device.setCapabilityValue('onoff', false);
+              await args.device.setCapabilityValue('onoff', true).catch(err => this.error(err));
+              await new Promise(resolve => setTimeout(resolve, 300)).catch(err => this.error(err));
+              await args.device.setCapabilityValue('onoff', false).catch(err => this.error(err));
               try {
-              await new Promise(resolve => setTimeout(resolve, 300));
+              await new Promise(resolve => setTimeout(resolve, 300)).catch(err => this.error(err));
               } catch (err) { this.error('Await error:', err); }
             }
-            await args.device.setCapabilityValue('onoff', original);
+            await args.device.setCapabilityValue('onoff', original).catch(err => this.error(err));
           }
         });
       }
@@ -242,7 +242,7 @@ class SmartSwitch4gangHybridDevice extends ZigBeeDevice {
       if (resetMeterCard) {
         resetMeterCard.registerRunListener(async (args, state) => {
           if (args.device.hasCapability('meter_power')) {
-            await args.device.setCapabilityValue('meter_power', 0);
+            await args.device.setCapabilityValue('meter_power', 0).catch(err => this.error(err));
             this.log('Power meter reset');
           }
         });
@@ -266,10 +266,10 @@ class SmartSwitch4gangHybridDevice extends ZigBeeDevice {
       
       try {
         if (value === true) {
-          await this.homey.flow.getDeviceTriggerCard(triggerIdTrue).trigger(this);
+          await this.homey.flow.getDeviceTriggerCard(triggerIdTrue).trigger(this).catch(err => this.error(err));
           this.log(`Triggered: ${triggerIdTrue}`);
         } else if (value === false) {
-          await this.homey.flow.getDeviceTriggerCard(triggerIdFalse).trigger(this);
+          await this.homey.flow.getDeviceTriggerCard(triggerIdFalse).trigger(this).catch(err => this.error(err));
           this.log(`Triggered: ${triggerIdFalse}`);
         }
       } catch (error) {
@@ -281,7 +281,7 @@ class SmartSwitch4gangHybridDevice extends ZigBeeDevice {
     if (capabilityId.startsWith('measure_')) {
       const triggerId = `${driverId}_${capabilityId}_changed`;
       try {
-        await this.homey.flow.getDeviceTriggerCard(triggerId).trigger(this, { value });
+        await this.homey.flow.getDeviceTriggerCard(triggerId).trigger(this, { value }).catch(err => this.error(err));
         this.log(`Triggered: ${triggerId} with value: ${value}`);
       } catch (error) {
         this.error(`Error triggering ${capabilityId}:`, error.message);
@@ -292,7 +292,7 @@ class SmartSwitch4gangHybridDevice extends ZigBeeDevice {
     if (capabilityId === 'onoff') {
       const triggerId = value ? `${driverId}_turned_on` : `${driverId}_turned_off`;
       try {
-        await this.homey.flow.getDeviceTriggerCard(triggerId).trigger(this);
+        await this.homey.flow.getDeviceTriggerCard(triggerId).trigger(this).catch(err => this.error(err));
         this.log(`Triggered: ${triggerId}`);
       } catch (error) {
         this.error(`Error triggering onoff:`, error.message);
@@ -310,7 +310,7 @@ class SmartSwitch4gangHybridDevice extends ZigBeeDevice {
   async triggerFlowCard(cardId, tokens = {}) {
     try {
       const flowCard = this.homey.flow.getDeviceTriggerCard(cardId);
-      await flowCard.trigger(this, tokens);
+      await flowCard.trigger(this, tokens).catch(err => this.error(err));
       this.log(`✅ Flow triggered: ${cardId}`, tokens);
     } catch (err) {
       this.error(`❌ Flow trigger error: ${cardId}`, err);
@@ -427,7 +427,7 @@ class SmartSwitch4gangHybridDevice extends ZigBeeDevice {
     }
     
     try {
-    await Promise.allSettled(promises);
+    await Promise.allSettled(promises).catch(err => this.error(err));
     } catch (err) { this.error('Await error:', err); }
     this.log('✅ Poll attributes completed');
   }
@@ -441,7 +441,7 @@ class SmartSwitch4gangHybridDevice extends ZigBeeDevice {
   }
   async readAttributeSafe(cluster, attribute) {
     try {
-      return await this.fallback.readAttributeWithFallback(cluster, attribute);
+      return await this.fallback.readAttributeWithFallback(cluster, attribute).catch(err => this.error(err));
     } catch (err) {
       this.error(`Failed to read ${cluster}.${attribute} after all fallback strategies:`, err);
       throw err;
@@ -454,7 +454,7 @@ class SmartSwitch4gangHybridDevice extends ZigBeeDevice {
   }
   async configureReportSafe(config) {
     try {
-      return await this.fallback.configureReportWithFallback(config);
+      return await this.fallback.configureReportWithFallback(config).catch(err => this.error(err));
     } catch (err) {
       this.error(`Failed to configure report after all fallback strategies:`, err);
       // Don't throw - use polling as ultimate fallback
@@ -468,7 +468,7 @@ class SmartSwitch4gangHybridDevice extends ZigBeeDevice {
   }
   async enrollIASZoneSafe() {
     try {
-      return await this.fallback.iasEnrollWithFallback();
+      return await this.fallback.iasEnrollWithFallback().catch(err => this.error(err));
     } catch (err) {
       this.error('Failed to enroll IAS Zone after all fallback strategies:', err);
       throw err;

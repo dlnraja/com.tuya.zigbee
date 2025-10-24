@@ -13,14 +13,14 @@ class LonsonhoSonoffContactSensorDevice extends BaseHybridDevice {
     this.log('LonsonhoSonoffContactSensorDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit();
+    await super.onNodeInit().catch(err => this.error(err));
     
     this.log('LonsonhoSonoffContactSensorDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
     this.log('LonsonhoSonoffContactSensorDevice deleted');
-    await super.onDeleted();
+    await super.onDeleted().catch(err => this.error(err));
   }
 }
 

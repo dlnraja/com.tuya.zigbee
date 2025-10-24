@@ -26,7 +26,7 @@ let renamed = 0;
 let errors = 0;
 
 for (const oldName of toFix) {
-  const newName = oldName.replace('tuya_tuya_', 'tuya_');
+  const newName = String(oldName).replace('tuya_tuya_', 'tuya_');
   const oldPath = path.join(driversDir, oldName);
   const newPath = path.join(driversDir, newName);
   

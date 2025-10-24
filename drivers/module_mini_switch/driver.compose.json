@@ -5,7 +5,11 @@
   },
   "class": "sensor",
   "capabilities": [
-    "alarm_generic"
+    "alarm_generic",
+    "onoff",
+    "measure_power",
+    "measure_voltage",
+    "measure_current"
   ],
   "energy": {
     "batteries": [
@@ -21,35 +25,35 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0011"
+      "_TZ3000_tgddllx4",
+      "_TZ3000_vmpbygs5"
     ],
     "productId": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0005",
-      "TS0006",
-      "TS0041",
-      "TS0042",
-      "TS0043"
+      "TS011F"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
+          3,
           4,
           5,
-          6,
-          8
+          6
         ],
         "bindings": [
-          1
+          6
+        ]
+      },
+      "2": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
         ]
       }
     },
@@ -284,6 +288,15 @@
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
+    },
+    {
+      "id": "tuya_dp_configuration",
+      "type": "label",
+      "label": {
+        "en": "Tuya Datapoint Configuration",
+        "fr": "Configuration Tuya Datapoint"
+      },
+      "value": "{\n  \"1\": \"switch_1\",\n  \"2\": \"switch_2\",\n  \"9\": \"countdown_timer\",\n  \"17\": \"indicator_light\"\n}"
     }
   ],
   "images": {

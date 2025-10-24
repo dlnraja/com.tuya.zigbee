@@ -9,7 +9,8 @@
     "light_hue",
     "light_saturation",
     "light_temperature",
-    "light_mode"
+    "light_mode",
+    "dim"
   ],
   "energy": {
     "batteries": [
@@ -25,34 +26,15 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "TS0505",
       "_TZ3000_12sxjap4",
-      "_TZ3000_5bsf8vaj",
-      "_TZ3000_7ysdnebc",
-      "_TZ3000_9cpuaca6",
-      "_TZ3000_dbou1ap4",
-      "_TZ3000_dl4pxp1r",
-      "_TZ3000_gek6snaj",
       "_TZ3000_hlijwsai",
-      "_TZ3000_i8l0nqdu",
-      "_TZ3000_kdpxju99",
       "_TZ3000_keabpigv",
+      "_TZ3000_qd7hej8u",
+      "_TZ3210_r0xgkft5",
+      "_TZ3210_sroezl0s",
       "_TZ3000_obacbukl",
       "_TZ3000_odygigth",
-      "_TZ3000_qd7hej8u",
-      "_TZ3000_qqjaziws",
-      "_TZ3000_riwp3k79",
-      "_TZ3000_ukuvyhaa",
-      "_TZ3000_utagpnzs"
-    ],
-    "productId": [
-      "TS0505",
-      "TS0503A",
-      "TS0503B",
-      "TS0504B",
-      "TS0505A",
-      "TS0505B",
-      "generic"
+      "_TZ3000_kdpxju99"
     ],
     "endpoints": {
       "1": {
@@ -299,6 +281,15 @@
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
+    },
+    {
+      "id": "tuya_dp_configuration",
+      "type": "label",
+      "label": {
+        "en": "Tuya Datapoint Configuration",
+        "fr": "Configuration Tuya Datapoint"
+      },
+      "value": "{\n  \"20\": \"led_mode\",\n  \"21\": \"color_data\",\n  \"24\": \"scene_mode\",\n  \"25\": \"countdown_timer\"\n}"
     }
   ],
   "images": {

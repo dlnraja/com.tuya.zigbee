@@ -97,7 +97,7 @@ drivers.forEach(d => {
 markdown += `| Category | Drivers |\n`;
 markdown += `|----------|--------:|\n`;
 Object.keys(categoryStats).sort().forEach(cat => {
-  markdown += `| ${cat.replace('/', ' / ')} | ${categoryStats[cat]} |\n`;
+  markdown += `| ${String(cat).replace('/', ' / ')} | ${categoryStats[cat]} |\n`;
 });
 
 markdown += `\n---\n\n## 📋 Complete Device List\n\n`;

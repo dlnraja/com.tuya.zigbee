@@ -30,7 +30,7 @@ class ImagePathValidator {
     
     if (appJson.images) {
       for (const [key, imgPath] of Object.entries(appJson.images)) {
-        const cleanPath = imgPath.replace(/^\//, '');
+        const cleanPath = String(imgPath).replace(/^\//, '');
         const fullPath = path.join(__dirname, '../..', cleanPath);
         
         try {
@@ -81,7 +81,7 @@ class ImagePathValidator {
           // Validate images section
           if (compose.images) {
             for (const [key, imgPath] of Object.entries(compose.images)) {
-              const cleanPath = imgPath.replace(/^\.\//, '');
+              const cleanPath = String(imgPath).replace(/^\.\//, '');
               const fullPath = path.join(driverPath, cleanPath);
               
               try {

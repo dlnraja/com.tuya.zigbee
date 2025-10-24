@@ -1,6 +1,6 @@
 'use strict';
 
-const BaseHybridDevice = require('../lib/BaseHybridDevice');
+const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
  * AvattoCo2TempHumidityDevice - Unified Hybrid Driver
@@ -13,14 +13,14 @@ class AvattoCo2TempHumidityDevice extends BaseHybridDevice {
     this.log('AvattoCo2TempHumidityDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit();
+    await super.onNodeInit().catch(err => this.error(err));
     
     this.log('AvattoCo2TempHumidityDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
     this.log('AvattoCo2TempHumidityDevice deleted');
-    await super.onDeleted();
+    await super.onDeleted().catch(err => this.error(err));
   }
 }
 

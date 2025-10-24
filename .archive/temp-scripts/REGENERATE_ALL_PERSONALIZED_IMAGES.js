@@ -115,7 +115,7 @@ for (const driver of drivers) {
   
   // Driver name
   ctx.font = 'bold 24px Arial';
-  ctx.fillText(driver.replace(/_/g, ' ').substring(0, 30), 250, 450);
+  ctx.fillText(String(driver).replace(/_/g, ' ').substring(0, 30), 250, 450);
   
   fs.writeFileSync(path.join(imagesPath, 'large.png'), canvas.toBuffer('image/png'));
   created++;

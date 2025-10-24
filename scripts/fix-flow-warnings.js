@@ -32,7 +32,7 @@ async function fixFlowWarnings() {
     
     // Add guard flag at class level
     if (!content.includes('this._flowCardsRegistered')) {
-      content = content.replace(
+      content = String(content).replace(
         /(class\s+\w+\s+extends\s+Homey\.App\s*{)/,
         '$1\n  _flowCardsRegistered = false;\n'
       );
@@ -43,13 +43,13 @@ async function fixFlowWarnings() {
     
     if (!guardPattern.test(content)) {
       // Find onInit method and add guard
-      content = content.replace(
+      content = String(content).replace(
         /(async\s+onInit\s*\(\s*\)\s*{)/,
         '$1\n    if (this._flowCardsRegistered) {\n      this.log(\'⏭️  Flow cards already registered\');\n      return;\n    }\n'
       );
       
       // Add flag set at end of onInit
-      content = content.replace(
+      content = String(content).replace(
         /(async\s+onInit\s*\(\s*\)\s*{[^}]+)(}\s*$)/m,
         '$1    this._flowCardsRegistered = true;\n  $2'
       );
@@ -71,8 +71,8 @@ async function fixFlowWarnings() {
         const originalLength = deviceContent.length;
         
         // Remove flow card registration code
-        deviceContent = deviceContent.replace(/\/\/\s*Register flow cards[\s\S]*?registerRunListener[\s\S]*?}\s*\);?/g, '');
-        deviceContent = deviceContent.replace(/this\.homey\.flow\.get\w+Card\(['"][^'"]+['"]\)\.registerRunListener[\s\S]*?}\s*\);?/g, '');
+        deviceContent = String(deviceContent).replace(/\/\/\s*Register flow cards[\s\S]*?registerRunListener[\s\S]*?}\s*\);?/g, '');
+        deviceContent = String(deviceContent).replace(/this\.homey\.flow\.get\w+Card\(['"][^'"]+['"]\)\.registerRunListener[\s\S]*?}\s*\);?/g, '');
         
         if (deviceContent.length !== originalLength) {
           await fs.writeFile(deviceJsPath, deviceContent, 'utf8');

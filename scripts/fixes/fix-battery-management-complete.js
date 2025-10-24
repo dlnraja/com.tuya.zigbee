@@ -264,7 +264,7 @@ for (const driver of batteryDrivers) {
   const batteryMatch = code.match(/\/\/\s*(Battery|Configure battery).*?(?=\n\s{2,4}\/\/|$)/si);
   
   if (batteryMatch) {
-    code = code.replace(batteryMatch[0], batteryCode);
+    code = String(code).replace(batteryMatch[0], batteryCode);
     console.log('   ✅ Replaced existing battery code');
   } else {
     // Insérer après onNodeInit

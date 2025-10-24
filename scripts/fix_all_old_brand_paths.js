@@ -45,8 +45,8 @@ drivers.forEach(driverName => {
       
       if (content.match(oldPathPattern1) || content.match(oldPathPattern2)) {
         // Remplacer par le nom du driver actuel
-        content = content.replace(oldPathPattern1, `drivers/${driverName}/assets`);
-        content = content.replace(oldPathPattern2, `/drivers/${driverName}/assets`);
+        content = String(content).replace(oldPathPattern1, `drivers/${driverName}/assets`);
+        content = String(content).replace(oldPathPattern2, `/drivers/${driverName}/assets`);
         modified = true;
       }
     });

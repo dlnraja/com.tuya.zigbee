@@ -21,7 +21,7 @@ if (appData.flow && appData.flow.actions) {
       const allDriverIds = deviceArgs
         .map(arg => arg.filter)
         .filter(f => f && f.startsWith('driver_id='))
-        .map(f => f.replace('driver_id=', ''))
+        .map(f => String(f).replace('driver_id=', ''))
         .filter((v, i, a) => a.indexOf(v) === i); // unique
       
       // Remove all device args

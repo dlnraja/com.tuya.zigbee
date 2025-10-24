@@ -178,7 +178,7 @@ function generateNewDriverId(oldId, brand, battery, driverData) {
   }
   else {
     // Fallback générique
-    const cleaned = oldId.replace(/_battery$|_ac$|_dc$|_hybrid$|_cr\d+$/gi, '');
+    const cleaned = String(oldId).replace(/_battery$|_ac$|_dc$|_hybrid$|_cr\d+$/gi, '');
     parts.push(cleaned);
   }
   

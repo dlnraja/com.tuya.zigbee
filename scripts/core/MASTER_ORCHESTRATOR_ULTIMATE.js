@@ -415,7 +415,7 @@ Generated: ${new Date().toISOString()}
       
       const result = this.runStep(
         'Committing & pushing changes',
-        `git sc -Message "${message.replace(/"/g, '\\"').replace(/\n/g, ' ')}"`
+        `git sc -Message "${String(message).replace(/"/g, '\\"').replace(/\n/g, ' ')}"`
       );
       
       this.results.phases.gitCommit = result;

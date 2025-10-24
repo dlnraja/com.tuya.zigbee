@@ -30,7 +30,7 @@ drivers.forEach(driverName => {
     // Find all image paths that don't match the driver name
     const imageRegex = /"(small|large|xlarge)":\s*"drivers\/([^"]+)\/assets\/images\/(small|large|xlarge)\.png"/g;
     
-    content = content.replace(imageRegex, (match, type, pathDriver, file) => {
+    content = String(content).replace(imageRegex, (match, type, pathDriver, file) => {
       if (pathDriver !== driverName) {
         console.log(`   ❌ ${driverName}: Fixed ${type} path from ${pathDriver}`);
         modified = true;
@@ -41,7 +41,7 @@ drivers.forEach(driverName => {
     
     // Also fix learnmode image paths
     const learnRegex = /"image":\s*"\/drivers\/([^"]+)\/assets\/(large|small)\.png"/g;
-    content = content.replace(learnRegex, (match, pathDriver, file) => {
+    content = String(content).replace(learnRegex, (match, pathDriver, file) => {
       if (pathDriver !== driverName) {
         console.log(`   ❌ ${driverName}: Fixed learnmode image from ${pathDriver}`);
         modified = true;

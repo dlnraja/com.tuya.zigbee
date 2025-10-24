@@ -260,8 +260,8 @@ class UltimateProjectFixer {
           let content = fs.readFileSync(filePath, 'utf8');
           
           // Replace common patterns
-          content = content.replace(/CLUSTER\.POWER_CONFIGURATION/g, "'genPowerCfg'");
-          content = content.replace(/CLUSTER\.IAS_ZONE/g, "'ssIasZone'");
+          content = String(content).replace(/CLUSTER\.POWER_CONFIGURATION/g, "'genPowerCfg'");
+          content = String(content).replace(/CLUSTER\.IAS_ZONE/g, "'ssIasZone'");
           
           fs.writeFileSync(filePath, content, 'utf8');
           fixCount++;

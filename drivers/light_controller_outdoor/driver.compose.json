@@ -22,25 +22,8 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "TS0203",
-      "_TZ3000_26fmupbb",
-      "_TZ3000_n2egfsli",
-      "lumi.sensor_magnet",
-      "lumi.sensor_magnet.aq2"
-    ],
-    "productId": [
-      "TS0203",
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011",
-      "TS0012",
-      "TS0013"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [

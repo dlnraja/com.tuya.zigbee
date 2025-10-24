@@ -166,8 +166,8 @@ drivers.forEach((driverFolder, idx) => {
       const brandedTerms = ['Tuya', 'Aqara', 'HOBEIAN', 'Xiaomi', 'Sonoff', '_TZ', '_TZE'];
       brandedTerms.forEach(brand => {
         if (displayName.includes(brand)) {
-          displayName = displayName.replace(new RegExp(brand, 'gi'), '').trim();
-          displayName = displayName.replace(/\s+/g, ' '); // Nettoyer espaces multiples
+          displayName = String(displayName).replace(new RegExp(brand, 'gi'), '').trim();
+          displayName = String(displayName).replace(/\s+/g, ' '); // Nettoyer espaces multiples
           wasChanged = true;
         }
       });

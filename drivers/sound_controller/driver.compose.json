@@ -20,22 +20,8 @@
     "xlarge": "drivers/sound_controller/assets/images/xlarge.png"
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_8rppvwda",
-      "_TZ3000_a7ouggvs",
-      "_TZ3000_axpdxqgu",
-      "_TZ3000_dku2cfsc",
-      "_TZ3000_f97vq5mn"
-    ],
-    "productId": [
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044",
-      "TS004F",
-      "TS0215A",
-      "TS0601"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [

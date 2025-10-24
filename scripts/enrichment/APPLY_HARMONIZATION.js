@@ -12,15 +12,15 @@ mapping = mapping.map(m => {
   let newName = m.new;
   
   // Supprimer les doublons de battery types
-  newName = newName.replace(/_(cr2032)_\1/g, '_$1');
-  newName = newName.replace(/_(cr2450)_\1/g, '_$1');
-  newName = newName.replace(/_(aa)_\1/g, '_$1');
-  newName = newName.replace(/_(battery)_\1/g, '_$1');
-  newName = newName.replace(/_(ac)_\1/g, '_$1');
-  newName = newName.replace(/_(dc)_\1/g, '_$1');
+  newName = String(newName).replace(/_(cr2032)_\1/g, '_$1');
+  newName = String(newName).replace(/_(cr2450)_\1/g, '_$1');
+  newName = String(newName).replace(/_(aa)_\1/g, '_$1');
+  newName = String(newName).replace(/_(battery)_\1/g, '_$1');
+  newName = String(newName).replace(/_(ac)_\1/g, '_$1');
+  newName = String(newName).replace(/_(dc)_\1/g, '_$1');
   
   // Nettoyer underscores multiples
-  newName = newName.replace(/_+/g, '_').replace(/^_|_$/g, '');
+  newName = String(newName).replace(/_+/g, '_').replace(/^_|_$/g, '');
   
   if (newName !== m.new) {
     console.log(`   🔧 Cleaned: ${m.new} → ${newName}`);
@@ -78,7 +78,7 @@ const replaceInObject = (obj) => {
     let newStr = obj;
     Object.entries(renameDict).forEach(([oldName, newName]) => {
       if (newStr.includes(oldName)) {
-        newStr = newStr.replace(new RegExp(oldName, 'g'), newName);
+        newStr = String(newStr).replace(new RegExp(oldName, 'g'), newName);
         updated++;
       }
     });

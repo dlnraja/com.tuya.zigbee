@@ -114,7 +114,7 @@ function generateImage(width, height, brand, deviceType, colors) {
 }
 
 function adjustBrightness(hex, percent) {
-  const num = parseInt(hex.replace('#', ''), 16);
+  const num = parseInt(String(hex).replace('#', ''), 16);
   const amt = Math.round(2.55 * percent);
   const R = Math.max(0, Math.min(255, (num >> 16) + amt));
   const G = Math.max(0, Math.min(255, (num >> 8 & 0x00FF) + amt));

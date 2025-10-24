@@ -13,14 +13,14 @@ class LscPhilipsBulbColorDevice extends BaseHybridDevice {
     this.log('LscPhilipsBulbColorDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit();
+    await super.onNodeInit().catch(err => this.error(err));
     
     this.log('LscPhilipsBulbColorDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
     this.log('LscPhilipsBulbColorDevice deleted');
-    await super.onDeleted();
+    await super.onDeleted().catch(err => this.error(err));
   }
 }
 

@@ -219,7 +219,7 @@ Based on community feedback and Johan Bendz best practices
 `;
       
       // Insert after first # (main title)
-      changelog = changelog.replace(/^(# .*?\n)/, `$1${newEntry}`);
+      changelog = String(changelog).replace(/^(# .*?\n)/, `$1${newEntry}`);
       fs.writeFileSync(changelogPath, changelog, 'utf-8');
       log.success('CHANGELOG.md updated');
     }

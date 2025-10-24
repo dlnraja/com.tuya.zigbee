@@ -81,13 +81,13 @@ async function phase2_fixIASBugs(diagnosticData) {
       console.log(`  ✓ Fixing IAS Zone bug in ${driverName}`);
       
       // Corriger la conversion IEEE
-      content = content.replace(
+      content = String(content).replace(
         /const ieeeBuffer = Buffer\.from\(homeyIeee\.replace\(/g,
         'const ieeeBuffer = Buffer.from(String(homeyIeee).replace('
       );
       
       // Corriger toString() sur des valeurs undefined
-      content = content.replace(
+      content = String(content).replace(
         /homeyIeee\.toString\(\)/g,
         'String(homeyIeee || "")'
       );

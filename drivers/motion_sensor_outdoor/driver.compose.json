@@ -23,20 +23,12 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "lumi.sensor_magnet",
-      "lumi.sensor_magnet.aq2",
-      "_TZ3000_kmh5qpmb",
       "_TZ3000_mmtwjmaq",
-      "lumi.motion.ac01",
-      "lumi.motion.ac02",
-      "lumi.motion.agl04",
-      "lumi.sensor_motion"
-    ],
-    "productId": [
-      "TS0203",
-      "generic",
-      "TS0202",
-      "TS0601"
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_mcxw5ehu",
+      "_TZ3040_bb6xaihh",
+      "_TZ3000_msl6wxk9",
+      "_TZE200_3towulqd"
     ],
     "endpoints": {
       "1": {

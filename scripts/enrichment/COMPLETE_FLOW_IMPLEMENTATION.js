@@ -370,9 +370,9 @@ function generateDeviceMethods(intelligence, driverName) {
       // Implement logic based on capabilities
       ${condition.capabilities.map(cap => {
         if (cap.startsWith('alarm_')) {
-          return `const ${cap.replace('alarm_', '')}Alarm = this.getCapabilityValue('${cap}') || false;`;
+          return `const ${String(cap).replace('alarm_', '')}Alarm = this.getCapabilityValue('${cap}') || false;`;
         } else if (cap.startsWith('measure_')) {
-          return `const ${cap.replace('measure_', '')}Value = this.getCapabilityValue('${cap}') || 0;`;
+          return `const ${String(cap).replace('measure_', '')}Value = this.getCapabilityValue('${cap}') || 0;`;
         } else {
           return `const ${cap}Value = this.getCapabilityValue('${cap}');`;
         }

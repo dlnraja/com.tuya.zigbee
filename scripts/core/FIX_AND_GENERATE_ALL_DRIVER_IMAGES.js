@@ -117,15 +117,15 @@ class FixAndGenerateAllDriverImages {
       const original = content;
       
       // Corriger chemins images
-      content = content.replace(/"small":\s*"\.\/assets\/small\.png"/g, '"small": "./assets/images/small.png"');
-      content = content.replace(/"large":\s*"\.\/assets\/large\.png"/g, '"large": "./assets/images/large.png"');
-      content = content.replace(/"xlarge":\s*"\.\/assets\/xlarge\.png"/g, '"xlarge": "./assets/images/xlarge.png"');
+      content = String(content).replace(/"small":\s*"\.\/assets\/small\.png"/g, '"small": "./assets/images/small.png"');
+      content = String(content).replace(/"large":\s*"\.\/assets\/large\.png"/g, '"large": "./assets/images/large.png"');
+      content = String(content).replace(/"xlarge":\s*"\.\/assets\/xlarge\.png"/g, '"xlarge": "./assets/images/xlarge.png"');
       
       // Corriger icon
-      content = content.replace(/"icon":\s*"\.\/assets\/icon\.svg"/g, '"icon": "./assets/icon.svg"');
+      content = String(content).replace(/"icon":\s*"\.\/assets\/icon\.svg"/g, '"icon": "./assets/icon.svg"');
       
       // Corriger learnmode image
-      content = content.replace(/"image":\s*"\.\/assets\/learnmode\.svg"/g, '"image": "./assets/learnmode.svg"');
+      content = String(content).replace(/"image":\s*"\.\/assets\/learnmode\.svg"/g, '"image": "./assets/learnmode.svg"');
 
       if (content !== original) {
         fs.writeFileSync(composePath, content);

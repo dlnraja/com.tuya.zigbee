@@ -122,8 +122,8 @@ function scanDirectory(dir, depth = 0) {
         if (shouldDelete) {
           try {
             fs.unlinkSync(fullPath);
-            actions.deleted.push(fullPath.replace(ROOT, ''));
-            console.log(`   🗑️  ${fullPath.replace(ROOT, '')}`);
+            actions.deleted.push(String(fullPath).replace(ROOT, ''));
+            console.log(`   🗑️  ${String(fullPath).replace(ROOT, '')}`);
           } catch (err) {
             console.log(`   ⚠️  Could not delete ${item}: ${err.message}`);
           }

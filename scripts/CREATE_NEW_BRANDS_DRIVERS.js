@@ -141,7 +141,7 @@ function createDriver(brand, device) {
   const compose = {
     id: driverName,
     name: {
-      en: `${brand.name} ${device.type.replace(/_/g, ' ')} (${device.battery.toUpperCase()})`
+      en: `${brand.name} ${device.String(type).replace(/_/g, ' ')} (${device.battery.toUpperCase()})`
     },
     class: getDriverClass(device.type),
     capabilities: device.capabilities,
@@ -185,7 +185,7 @@ function createDriver(brand, device) {
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-class ${brand.name.replace(/[^a-zA-Z]/g, '')}${device.type.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join('')}Device extends ZigBeeDevice {
+class ${brand.String(name).replace(/[^a-zA-Z]/g, '')}${device.type.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join('')}Device extends ZigBeeDevice {
   
   async onNodeInit({ zclNode }) {
     this.log('${brand.name} ${device.type} initialized');
@@ -195,7 +195,7 @@ class ${brand.name.replace(/[^a-zA-Z]/g, '')}${device.type.split('_').map(w => w
   
 }
 
-module.exports = ${brand.name.replace(/[^a-zA-Z]/g, '')}${device.type.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join('')}Device;
+module.exports = ${brand.String(name).replace(/[^a-zA-Z]/g, '')}${device.type.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join('')}Device;
 `;
   
   fs.writeFileSync(path.join(driverPath, 'device.js'), deviceJs);

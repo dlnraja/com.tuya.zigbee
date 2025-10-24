@@ -1,6 +1,6 @@
 'use strict';
 
-const BaseHybridDevice = require('../lib/BaseHybridDevice');
+const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
  * MoesSonoffTemperatureHumidityDevice - Unified Hybrid Driver
@@ -13,14 +13,14 @@ class MoesSonoffTemperatureHumidityDevice extends BaseHybridDevice {
     this.log('MoesSonoffTemperatureHumidityDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit();
+    await super.onNodeInit().catch(err => this.error(err));
     
     this.log('MoesSonoffTemperatureHumidityDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
     this.log('MoesSonoffTemperatureHumidityDevice deleted');
-    await super.onDeleted();
+    await super.onDeleted().catch(err => this.error(err));
   }
 }
 

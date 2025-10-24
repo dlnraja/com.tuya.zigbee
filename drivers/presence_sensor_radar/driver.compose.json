@@ -22,26 +22,8 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_mmtwjmaq",
-      "lumi.motion.ac01",
-      "lumi.motion.ac02",
-      "lumi.motion.agl04",
-      "lumi.sensor_motion"
-    ],
-    "productId": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014",
-      "TS0041",
-      "TS0042"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [

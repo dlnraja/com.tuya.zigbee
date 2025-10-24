@@ -1,6 +1,6 @@
 'use strict';
 
-const BaseHybridDevice = require('../lib/BaseHybridDevice');
+const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
  * MoesSosEmergencyButtonDevice - Unified Hybrid Driver
@@ -13,14 +13,14 @@ class MoesSosEmergencyButtonDevice extends BaseHybridDevice {
     this.log('MoesSosEmergencyButtonDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit();
+    await super.onNodeInit().catch(err => this.error(err));
     
     this.log('MoesSosEmergencyButtonDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
     this.log('MoesSosEmergencyButtonDevice deleted');
-    await super.onDeleted();
+    await super.onDeleted().catch(err => this.error(err));
   }
 }
 

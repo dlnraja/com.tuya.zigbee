@@ -371,7 +371,7 @@ class FlowEnricher {
     
     // Default
     return `
-        <p>${instructions.replace(/\n/g, '</p><p>')}</p>
+        <p>${String(instructions).replace(/\n/g, '</p><p>')}</p>
         <div class="note">
             <strong>Tip:</strong> Make sure the device is close to your Homey during pairing.
         </div>

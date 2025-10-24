@@ -79,7 +79,7 @@ for (const driverId of drivers) {
       });
       
       // Fix it
-      const fixed = content.replace(
+      const fixed = String(content).replace(
         /async pollAttributes\(\)\s*\n\s*\^\^/g,
         'async pollAttributes() {'
       );

@@ -42,7 +42,7 @@ for (const [driverName, cardIds] of Object.entries(driverFlowCards)) {
       
       // Replace in "id" field
       const idPattern = new RegExp(`"id":\\s*"${cardId}"`, 'g');
-      modified = modified.replace(idPattern, `"id": "${newId}"`);
+      modified = String(modified).replace(idPattern, `"id": "${newId}"`);
       
       console.log(`   ${cardId} → ${newId}`);
     }

@@ -166,7 +166,7 @@ function createDriverImages() {
         ctxSmall.fillStyle = '#333333';
         ctxSmall.font = '8px Arial';
         ctxSmall.textAlign = 'center';
-        const shortName = driver.replace(/_/g, ' ').substring(0, 15);
+        const shortName = String(driver).replace(/_/g, ' ').substring(0, 15);
         ctxSmall.fillText(shortName, 37.5, 62);
         
         const bufferSmall = canvasSmall.toBuffer('image/png');
@@ -193,7 +193,7 @@ function createDriverImages() {
         ctxLarge.fillStyle = '#333333';
         ctxLarge.font = 'bold 20px Arial';
         ctxLarge.textAlign = 'center';
-        const fullName = driver.replace(/_/g, ' ');
+        const fullName = String(driver).replace(/_/g, ' ');
         ctxLarge.fillText(fullName, 250, 380);
         ctxLarge.font = '16px Arial';
         ctxLarge.fillText('Local Zigbee', 250, 410);
@@ -206,7 +206,7 @@ function createDriverImages() {
 }
 
 function adjustColorBrightness(hex, percent) {
-    const num = parseInt(hex.replace('#', ''), 16);
+    const num = parseInt(String(hex).replace('#', ''), 16);
     const amt = Math.round(2.55 * percent);
     const R = (num >> 16) + amt;
     const G = (num >> 8 & 0x00FF) + amt;

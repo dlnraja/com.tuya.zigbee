@@ -311,7 +311,7 @@ appJson.drivers.forEach((driver, index) => {
 
     // Also add call to registerFlowCardHandlers in onInit
     if (deviceCode.includes('async onInit()')) {
-      deviceCode = deviceCode.replace(
+      deviceCode = String(deviceCode).replace(
         /(async onInit\(\)[^{]*{)/,
         '$1\n    await this.registerFlowCardHandlers();'
       );

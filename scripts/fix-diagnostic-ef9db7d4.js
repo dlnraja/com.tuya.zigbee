@@ -50,10 +50,10 @@ class DiagnosticFixer {
         this.error('IEEE address not available');
       }`;
       
-      content = content.replace(oldIeeeAddress, newIeeeAddress);
+      content = String(content).replace(oldIeeeAddress, newIeeeAddress);
       
       // FIX 2: Remplacer 'genPowerCfg' par numeric 1 dans registerCapability
-      content = content.replace(
+      content = String(content).replace(
         /this\.registerCapability\('measure_battery', 'genPowerCfg',/,
         "this.registerCapability('measure_battery', 1,"
       );
@@ -81,7 +81,7 @@ class DiagnosticFixer {
         
         // S'assurer que TOUS les registerCapability utilisent des IDs numériques
         if (content.includes("this.registerCapability('onoff', 'genOnOff'")) {
-          content = content.replace(
+          content = String(content).replace(
             /this\.registerCapability\('onoff', 'genOnOff',/,
             "this.registerCapability('onoff', 6,"
           );
@@ -94,7 +94,7 @@ class DiagnosticFixer {
         
       } else {
         // Remplacer 'genPowerCfg' par 1 si trouvé
-        content = content.replace(
+        content = String(content).replace(
           /this\.registerCapability\('measure_battery', 'genPowerCfg',/,
           "this.registerCapability('measure_battery', 1,"
         );

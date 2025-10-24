@@ -59,7 +59,7 @@ for (const item of toRename) {
       // Ajouter battery type si applicable
       if (item.battery && item.battery !== 'none') {
         if (!newName.includes(`(${item.battery})`)) {
-          newName = newName.replace(/\((Battery|AC|DC|Hybrid)\)$/i, `(${item.battery})`);
+          newName = String(newName).replace(/\((Battery|AC|DC|Hybrid)\)$/i, `(${item.battery})`);
           if (!newName.includes('(')) {
             newName += ` (${item.battery})`;
           }
@@ -77,7 +77,7 @@ for (const item of toRename) {
       let flowContent = fs.readFileSync(flowPath, 'utf8');
       
       // Replace driver_id
-      flowContent = flowContent.replace(
+      flowContent = String(flowContent).replace(
         new RegExp(`driver_id=${item.oldId}`, 'g'),
         `driver_id=${item.newId}`
       );
@@ -86,19 +86,19 @@ for (const item of toRename) {
       
       if (flow.triggers) {
         flow.triggers.forEach(trigger => {
-          trigger.id = trigger.id.replace(item.oldId, item.newId);
+          trigger.id = trigger.String(id).replace(item.oldId, item.newId);
         });
       }
       
       if (flow.actions) {
         flow.actions.forEach(action => {
-          action.id = action.id.replace(item.oldId, item.newId);
+          action.id = action.String(id).replace(item.oldId, item.newId);
         });
       }
       
       if (flow.conditions) {
         flow.conditions.forEach(condition => {
-          condition.id = condition.id.replace(item.oldId, item.newId);
+          condition.id = condition.String(id).replace(item.oldId, item.newId);
         });
       }
       

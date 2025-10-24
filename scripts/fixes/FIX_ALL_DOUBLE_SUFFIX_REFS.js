@@ -23,7 +23,7 @@ function applyFixes(str) {
   
   let result = str;
   for (const pattern of patterns) {
-    result = result.replace(pattern.from, pattern.to);
+    result = String(result).replace(pattern.from, pattern.to);
   }
   return result;
 }

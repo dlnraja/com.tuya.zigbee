@@ -22,7 +22,7 @@ for (const driver of drivers) {
     let content = fs.readFileSync(composePath, 'utf-8');
     
     if (content.includes('"energy_optimization"')) {
-      content = content.replace(/"energy_optimization"/g, '"optimization_mode"');
+      content = String(content).replace(/"energy_optimization"/g, '"optimization_mode"');
       fs.writeFileSync(composePath, content);
       console.log(`✅ Fixed: ${driver}`);
       fixed++;

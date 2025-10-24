@@ -70,7 +70,7 @@ function generateImage(width, height, text, colors) {
 }
 
 function adjustBrightness(hex, percent) {
-  const num = parseInt(hex.replace('#', ''), 16);
+  const num = parseInt(String(hex).replace('#', ''), 16);
   const amt = Math.round(2.55 * percent);
   const R = (num >> 16) + amt;
   const G = (num >> 8 & 0x00FF) + amt;

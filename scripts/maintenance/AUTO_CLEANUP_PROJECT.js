@@ -113,7 +113,7 @@ class AutoCleanup {
     
     rootFiles.forEach(file => {
       const shouldDelete = tempPatterns.some(pattern => {
-        const regex = new RegExp(pattern.replace('*', '.*'));
+        const regex = new RegExp(String(pattern).replace('*', '.*'));
         return regex.test(file);
       });
 

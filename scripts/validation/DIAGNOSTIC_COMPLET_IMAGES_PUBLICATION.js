@@ -381,7 +381,7 @@ class DiagnosticComplet {
 
     // Générer Markdown
     const mdReport = this.generateMarkdownReport(report);
-    const mdPath = reportPath.replace('.json', '.md');
+    const mdPath = String(reportPath).replace('.json', '.md');
     fs.writeFileSync(mdPath, mdReport);
     console.log(`  📄 Rapport Markdown: ${mdPath}`);
 

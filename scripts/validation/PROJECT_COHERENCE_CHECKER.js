@@ -147,7 +147,7 @@ class ProjectCoherenceChecker {
   // Détecter code dupliqué
   checkDuplicateCode(filePath, code) {
     // Hash simple du code (sans whitespace)
-    const normalized = code.replace(/\s+/g, ' ').trim();
+    const normalized = String(code).replace(/\s+/g, ' ').trim();
     const hash = normalized.substring(0, 200); // Premier 200 chars
 
     if (this.seenCode.has(hash)) {

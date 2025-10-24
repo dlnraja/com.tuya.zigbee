@@ -200,7 +200,7 @@ class GitHubIssuesProcessor {
       const drivers = await fs.readdir(CONFIG.driversDir);
       
       // Chercher par pattern
-      const pattern = deviceType.driverPattern.replace('*', '');
+      const pattern = deviceType.String(driverPattern).replace('*', '');
       const matchingDrivers = drivers.filter(d => d.includes(pattern));
 
       if (matchingDrivers.length > 0) {

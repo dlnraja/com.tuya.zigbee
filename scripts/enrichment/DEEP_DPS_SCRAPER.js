@@ -272,7 +272,7 @@ Object.entries(ENHANCED_DPS_DATABASE).forEach(([deviceType, dps]) => {
     if (config.capability && config.capability.startsWith('alarm_')) {
       flowCardsConfig.triggers.push({
         id: `${deviceType.toLowerCase()}_${config.name}_true`,
-        title: { en: `${config.name.replace(/_/g, ' ')} activated` },
+        title: { en: `${config.String(name).replace(/_/g, ' ')} activated` },
         tokens: [
           { name: 'value', type: 'boolean', title: { en: 'State' } }
         ]
@@ -280,7 +280,7 @@ Object.entries(ENHANCED_DPS_DATABASE).forEach(([deviceType, dps]) => {
       
       flowCardsConfig.triggers.push({
         id: `${deviceType.toLowerCase()}_${config.name}_false`,
-        title: { en: `${config.name.replace(/_/g, ' ')} cleared` },
+        title: { en: `${config.String(name).replace(/_/g, ' ')} cleared` },
         tokens: [
           { name: 'value', type: 'boolean', title: { en: 'State' } }
         ]
@@ -291,7 +291,7 @@ Object.entries(ENHANCED_DPS_DATABASE).forEach(([deviceType, dps]) => {
     if (config.capability && config.capability.startsWith('measure_')) {
       flowCardsConfig.triggers.push({
         id: `${deviceType.toLowerCase()}_${config.name}_changed`,
-        title: { en: `${config.name.replace(/_/g, ' ')} changed` },
+        title: { en: `${config.String(name).replace(/_/g, ' ')} changed` },
         tokens: [
           { name: 'value', type: 'number', title: { en: 'Value' } },
           { name: 'unit', type: 'string', title: { en: 'Unit' }, example: config.unit || '' }
@@ -307,7 +307,7 @@ Object.entries(ENHANCED_DPS_DATABASE).forEach(([deviceType, dps]) => {
     if (config.capability && config.capability.startsWith('measure_')) {
       flowCardsConfig.conditions.push({
         id: `${deviceType.toLowerCase()}_${config.name}_greater_than`,
-        title: { en: `${config.name.replace(/_/g, ' ')} is greater than` },
+        title: { en: `${config.String(name).replace(/_/g, ' ')} is greater than` },
         args: [
           { name: 'value', type: 'number', placeholder: { en: 'Value' } }
         ]
@@ -315,7 +315,7 @@ Object.entries(ENHANCED_DPS_DATABASE).forEach(([deviceType, dps]) => {
       
       flowCardsConfig.conditions.push({
         id: `${deviceType.toLowerCase()}_${config.name}_less_than`,
-        title: { en: `${config.name.replace(/_/g, ' ')} is less than` },
+        title: { en: `${config.String(name).replace(/_/g, ' ')} is less than` },
         args: [
           { name: 'value', type: 'number', placeholder: { en: 'Value' } }
         ]
@@ -331,7 +331,7 @@ Object.entries(ENHANCED_DPS_DATABASE).forEach(([deviceType, dps]) => {
       if (config.type === 'bool') {
         flowCardsConfig.actions.push({
           id: `${deviceType.toLowerCase()}_set_${config.name}`,
-          title: { en: `Set ${config.name.replace(/_/g, ' ')}` },
+          title: { en: `Set ${config.String(name).replace(/_/g, ' ')}` },
           args: [
             { 
               name: 'value',
@@ -351,7 +351,7 @@ Object.entries(ENHANCED_DPS_DATABASE).forEach(([deviceType, dps]) => {
         
         flowCardsConfig.actions.push({
           id: `${deviceType.toLowerCase()}_set_${config.name}`,
-          title: { en: `Set ${config.name.replace(/_/g, ' ')}` },
+          title: { en: `Set ${config.String(name).replace(/_/g, ' ')}` },
           args: [
             { name: 'value', type: 'dropdown', values }
           ]
@@ -359,7 +359,7 @@ Object.entries(ENHANCED_DPS_DATABASE).forEach(([deviceType, dps]) => {
       } else if (config.type === 'value') {
         flowCardsConfig.actions.push({
           id: `${deviceType.toLowerCase()}_set_${config.name}`,
-          title: { en: `Set ${config.name.replace(/_/g, ' ')}` },
+          title: { en: `Set ${config.String(name).replace(/_/g, ' ')}` },
           args: [
             { 
               name: 'value',
@@ -394,7 +394,7 @@ Object.entries(ENHANCED_DPS_DATABASE).forEach(([deviceType, dps]) => {
               config.type === 'enum' ? 'dropdown' : 
               'number',
         id: `dp_${dpId}_${config.name}`,
-        label: { en: config.name.replace(/_/g, ' ') },
+        label: { en: config.String(name).replace(/_/g, ' ') },
         value: config.type === 'bool' ? false : 
                config.type === 'enum' ? Object.keys(config.values)[0] :
                config.min || 0

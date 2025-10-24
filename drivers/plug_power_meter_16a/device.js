@@ -13,14 +13,14 @@ class AvattoSmartPlugPowerMeter16aDevice extends SwitchDevice {
     this.log('AvattoSmartPlugPowerMeter16aDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit();
+    await super.onNodeInit().catch(err => this.error(err));
     
     this.log('AvattoSmartPlugPowerMeter16aDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
     this.log('AvattoSmartPlugPowerMeter16aDevice deleted');
-    await super.onDeleted();
+    await super.onDeleted().catch(err => this.error(err));
   }
 }
 
