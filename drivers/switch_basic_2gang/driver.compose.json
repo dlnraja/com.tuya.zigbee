@@ -5,8 +5,31 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_battery"
   ],
+  "capabilitiesOptions": {
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie"
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "CR2477",
+      "AAA",
+      "AA",
+      "CR123A",
+      "INTERNAL"
+    ],
+    "approximation": {
+      "usageConstant": 0.5
+    }
+  },
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_4fjiwweb",
