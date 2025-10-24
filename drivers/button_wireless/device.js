@@ -1,6 +1,6 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const ButtonDevice = require('../../lib/ButtonDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
 /**
@@ -8,9 +8,12 @@ const { CLUSTER } = require('zigbee-clusters');
  * Auto-détecte: nombre de boutons, type de batterie
  * Supporte: 1-8 boutons, CR2032/CR2450/AAA/AA
  */
-class UniversalWirelessButtonDevice extends ZigBeeDevice {
+class UniversalWirelessButtonDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
+    // Initialize hybrid base (power detection)
+    await super.onNodeInit();
+
     this.log('🔄 Initializing Universal Wireless Button');
     
     try {
