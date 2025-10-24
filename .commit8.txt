@@ -1,8 +1,0 @@
-Bump version to 4.1.3 to resolve GitHub Actions conflict
-
-FIX: Version conflict in GitHub Actions workflow
-- Updated app.json version from 4.1.0 to 4.1.3
-- Resolves "Version conflict detected" error
-- Required due to existing tags: v4.1.0, 4.1.1, 4.1.2
-
-This should allow the GitHub Actions workflow to complete successfully.

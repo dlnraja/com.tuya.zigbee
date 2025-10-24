@@ -1,9 +1,0 @@
-fix: replace all invalid capabilities with SDK3 equivalents
-
-Replaced or removed invalid capabilities:
-- alarm_button: Removed (buttons use flow triggers)
-- Other invalid capabilities replaced with SDK3 standard equivalents
-
-All drivers now 100% SDK3 compliant
-
-Version: 4.0.0
