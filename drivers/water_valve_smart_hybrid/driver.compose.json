@@ -35,7 +35,10 @@
       "instruction": {
         "en": "Press the pairing button on your device to start pairing.\n\nIf your device does not have a pairing button, check the device manual for pairing instructions."
       }
-    }
+    },
+    "productId": [
+      "TS0601"
+    ]
   },
   "images": {
     "small": "drivers/water_valve_smart_hybrid/assets/images/small.png",

@@ -70,6 +70,7 @@ Fixes appliqués:
 - `reports/AUTO_FIX_REPORT.json`
 
 ### 4. scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/ULTIMATE_ORCHESTRATOR.js
+### 4. scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/ULTIMATE_ORCHESTRATOR.js
 **Script maître - Coordonne tout le système**
 
 Pipeline d'exécution:
@@ -90,6 +91,7 @@ npm install fast-glob --save-dev
 
 # Vérifier les prérequis
 node scripts/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/ULTIMATE_ORCHESTRATOR.js --check
+node scripts/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/ULTIMATE_ORCHESTRATOR.js --check
 ```
 
 ### Exécution complète (recommandé)
@@ -97,6 +99,7 @@ node scripts/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/uti
 ```bash
 # Lancer l'orchestrateur complet
 node scripts/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/ULTIMATE_ORCHESTRATOR.js
+node scripts/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/ULTIMATE_ORCHESTRATOR.js
 ```
 
 Cette commande exécute automatiquement:
@@ -265,6 +268,7 @@ homey app validate --level publish
 # Restaurer et réessayer
 git reset --hard HEAD
 node scripts/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/ULTIMATE_ORCHESTRATOR.js
+node scripts/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/scripts/utils/ULTIMATE_ORCHESTRATOR.js
 ```
 
 ### Trop de modifications
