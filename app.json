@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "4.6.3",
+  "version": "4.7.0",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
@@ -18044,7 +18044,6 @@
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -18665,7 +18664,6 @@
       "class": "sensor",
       "capabilities": [
         "measure_pm25",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -18957,7 +18955,6 @@
       "capabilities": [
         "measure_temperature",
         "measure_pm25",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -26670,7 +26667,6 @@
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -26981,7 +26977,6 @@
         "measure_humidity",
         "alarm_co",
         "alarm_co2",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -27293,7 +27288,6 @@
       "class": "sensor",
       "capabilities": [
         "measure_temperature",
-        "alarm_battery",
         "measure_battery",
         "measure_humidity"
       ],
@@ -27602,7 +27596,6 @@
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
-        "alarm_battery",
         "measure_battery",
         "measure_humidity.soil",
         "alarm_contact"
@@ -27914,7 +27907,6 @@
         "alarm_motion",
         "measure_temperature",
         "measure_humidity",
-        "alarm_battery",
         "measure_battery",
         "alarm_contact"
       ],
@@ -28217,7 +28209,6 @@
       "class": "sensor",
       "capabilities": [
         "alarm_contact",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -28519,7 +28510,6 @@
       "capabilities": [
         "alarm_motion",
         "alarm_contact",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -29124,8 +29114,7 @@
       "capabilities": [
         "alarm_contact",
         "alarm_tamper",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "alarm_contact": {
@@ -31401,7 +31390,6 @@
       "capabilities": [
         "alarm_motion",
         "alarm_contact",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -31696,7 +31684,6 @@
       "capabilities": [
         "alarm_motion",
         "alarm_contact",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -32342,7 +32329,6 @@
       "capabilities": [
         "alarm_motion",
         "alarm_contact",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -32639,7 +32625,6 @@
       "capabilities": [
         "alarm_motion",
         "alarm_contact",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -32935,7 +32920,6 @@
         "alarm_motion",
         "alarm_co",
         "alarm_co2",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -33234,7 +33218,6 @@
       "capabilities": [
         "alarm_co",
         "alarm_co2",
-        "alarm_battery",
         "measure_battery",
         "alarm_contact"
       ],
@@ -34109,7 +34092,6 @@
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
-        "alarm_battery",
         "measure_battery",
         "windowcoverings_state"
       ],
@@ -36968,7 +36950,6 @@
       "class": "sensor",
       "capabilities": [
         "alarm_contact",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -37269,7 +37250,6 @@
       "capabilities": [
         "locked",
         "lock_mode",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -37557,7 +37537,6 @@
       "class": "sensor",
       "capabilities": [
         "alarm_motion",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -37847,7 +37826,6 @@
       "capabilities": [
         "locked",
         "lock_mode",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -39035,7 +39013,6 @@
       "class": "sensor",
       "capabilities": [
         "alarm_motion",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -39339,7 +39316,6 @@
       "class": "sensor",
       "capabilities": [
         "alarm_motion",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -39647,7 +39623,6 @@
         "measure_temperature",
         "measure_humidity",
         "measure_luminance",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -39950,7 +39925,6 @@
       "class": "sensor",
       "capabilities": [
         "alarm_contact",
-        "alarm_battery",
         "measure_battery",
         "alarm_motion"
       ],
@@ -40251,7 +40225,6 @@
       "class": "sensor",
       "capabilities": [
         "alarm_motion",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -40557,7 +40530,6 @@
       "class": "sensor",
       "capabilities": [
         "alarm_motion",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -40859,7 +40831,6 @@
       "capabilities": [
         "alarm_motion",
         "measure_luminance",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -41160,7 +41131,6 @@
       "class": "sensor",
       "capabilities": [
         "alarm_motion",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -41461,7 +41431,6 @@
       "class": "sensor",
       "capabilities": [
         "alarm_motion",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -45405,7 +45374,6 @@
       "class": "sensor",
       "capabilities": [
         "alarm_motion",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -47523,7 +47491,6 @@
       "class": "sensor",
       "capabilities": [
         "alarm_motion",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -47826,7 +47793,6 @@
       "capabilities": [
         "alarm_motion",
         "alarm_contact",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -48125,7 +48091,6 @@
       "capabilities": [
         "alarm_smoke",
         "alarm_fire",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -48431,7 +48396,6 @@
         "measure_humidity",
         "alarm_smoke",
         "alarm_fire",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -48734,7 +48698,6 @@
         "measure_humidity",
         "alarm_smoke",
         "alarm_fire",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -53215,7 +53178,7 @@
       },
       "class": "sensor",
       "capabilities": [
-        "windowcoverings_closed",
+        "windowcoverings_state",
         "windowcoverings_set",
         "button.up",
         "button.down",
@@ -64339,7 +64302,6 @@
       "capabilities": [
         "alarm_motion",
         "measure_temperature",
-        "alarm_battery",
         "measure_battery",
         "alarm_contact"
       ],
@@ -64641,7 +64603,6 @@
       "capabilities": [
         "alarm_motion",
         "measure_temperature",
-        "alarm_battery",
         "measure_battery",
         "alarm_contact"
       ],
@@ -67475,7 +67436,6 @@
         "alarm_motion",
         "measure_temperature",
         "alarm_water",
-        "alarm_battery",
         "measure_battery",
         "alarm_contact"
       ],
@@ -67783,7 +67743,6 @@
         "measure_temperature",
         "measure_humidity",
         "alarm_water",
-        "alarm_battery",
         "measure_battery",
         "alarm_contact"
       ],
@@ -68086,7 +68045,6 @@
         "alarm_motion",
         "measure_temperature",
         "alarm_water",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -68387,7 +68345,6 @@
         "alarm_motion",
         "measure_temperature",
         "alarm_water",
-        "alarm_battery",
         "measure_battery"
       ],
       "energy": {
@@ -68684,7 +68641,7 @@
       "class": "sensor",
       "capabilities": [
         "onoff",
-        "measure_water",
+        "meter_water",
         "alarm_water",
         "measure_battery",
         "measure_temperature"
@@ -68998,5 +68955,82 @@
         }
       }
     }
-  ]
+  ],
+  "capabilities": {
+    "fan_speed": {
+      "type": "enum",
+      "title": {
+        "en": "Fan Speed",
+        "fr": "Vitesse Ventilateur",
+        "nl": "Ventilatorsnelheid",
+        "de": "Lüftergeschwindigkeit"
+      },
+      "desc": {
+        "en": "Fan speed level",
+        "fr": "Niveau de vitesse du ventilateur"
+      },
+      "values": [
+        {
+          "id": "low",
+          "title": {
+            "en": "Low",
+            "fr": "Bas",
+            "nl": "Laag",
+            "de": "Niedrig"
+          }
+        },
+        {
+          "id": "medium",
+          "title": {
+            "en": "Medium",
+            "fr": "Moyen",
+            "nl": "Middel",
+            "de": "Mittel"
+          }
+        },
+        {
+          "id": "high",
+          "title": {
+            "en": "High",
+            "fr": "Haut",
+            "nl": "Hoog",
+            "de": "Hoch"
+          }
+        },
+        {
+          "id": "auto",
+          "title": {
+            "en": "Auto",
+            "fr": "Auto",
+            "nl": "Auto",
+            "de": "Auto"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker"
+    },
+    "target_humidity": {
+      "type": "number",
+      "title": {
+        "en": "Target Humidity",
+        "fr": "Humidité Cible",
+        "nl": "Doel Luchtvochtigheid",
+        "de": "Ziel Luftfeuchtigkeit"
+      },
+      "desc": {
+        "en": "Target humidity level (%)",
+        "fr": "Niveau d'humidité cible (%)"
+      },
+      "units": "%",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "decimals": 0,
+      "getable": true,
+      "setable": true,
+      "uiComponent": "slider"
+    }
+  }
 }
