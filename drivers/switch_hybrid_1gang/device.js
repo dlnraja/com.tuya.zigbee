@@ -384,6 +384,7 @@ class SmartSwitch1gangHybridDevice extends ZigBeeDevice {
     // Battery
     if (this.hasCapability('measure_battery')) {
       promises.push(
+      // TODO: Wrap in try/catch
         this.zclNode.endpoints[1]?.clusters.powerConfiguration?.readAttributes(['batteryPercentageRemaining'])
           .catch(err => this.log('Battery read failed (ignorable):', err.message))
       );
@@ -392,6 +393,7 @@ class SmartSwitch1gangHybridDevice extends ZigBeeDevice {
     // Temperature
     if (this.hasCapability('measure_temperature')) {
       promises.push(
+      // TODO: Wrap in try/catch
         this.zclNode.endpoints[1]?.clusters.temperatureMeasurement?.readAttributes(['measuredValue'])
           .catch(err => this.log('Temperature read failed (ignorable):', err.message))
       );
@@ -400,6 +402,7 @@ class SmartSwitch1gangHybridDevice extends ZigBeeDevice {
     // Humidity
     if (this.hasCapability('measure_humidity')) {
       promises.push(
+      // TODO: Wrap in try/catch
         this.zclNode.endpoints[1]?.clusters.relativeHumidity?.readAttributes(['measuredValue'])
           .catch(err => this.log('Humidity read failed (ignorable):', err.message))
       );
@@ -408,6 +411,7 @@ class SmartSwitch1gangHybridDevice extends ZigBeeDevice {
     // Illuminance
     if (this.hasCapability('measure_luminance')) {
       promises.push(
+      // TODO: Wrap in try/catch
         this.zclNode.endpoints[1]?.clusters.illuminanceMeasurement?.readAttributes(['measuredValue'])
           .catch(err => this.log('Illuminance read failed (ignorable):', err.message))
       );
@@ -416,6 +420,7 @@ class SmartSwitch1gangHybridDevice extends ZigBeeDevice {
     // Alarm status (IAS Zone)
     if (this.hasCapability('alarm_motion') || this.hasCapability('alarm_contact')) {
       promises.push(
+      // TODO: Wrap in try/catch
         this.zclNode.endpoints[1]?.clusters.iasZone?.readAttributes(['zoneStatus'])
           .catch(err => this.log('IAS Zone read failed (ignorable):', err.message))
       );
