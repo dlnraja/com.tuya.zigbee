@@ -38,7 +38,7 @@ console.log(`Found ${app218.drivers.length} drivers in commit 2e7c6cc64\n`);
 // Create mapping: base driver ID → full driver objects
 const current183 = new Map();
 app.drivers.forEach(d => {
-  const base = d.id.replace(/_aaa$|_aa$|_cr2032$|_cr2450$|_cr1632$|_battery$/, '')
+  const base = d.String(id).replace(/_aaa$|_aa$|_cr2032$|_cr2450$|_cr1632$|_battery$/, '')
     .replace(/_advanced$|_basic$/, '');
   current183.set(d.id, d);
 });
@@ -52,13 +52,13 @@ let merged = 0;
 let added = 0;
 
 missing.forEach(missingDriver => {
-  const base = missingDriver.id.replace(/_aaa$|_aa$|_cr2032$|_cr2450$|_cr1632$|_battery$/, '')
+  const base = missingDriver.String(id).replace(/_aaa$|_aa$|_cr2032$|_cr2450$|_cr1632$|_battery$/, '')
     .replace(/_advanced$|_basic$/, '');
   
   // Find parent driver in current 183
   let parentDriver = null;
   for (const [id, driver] of current183.entries()) {
-    const driverBase = id.replace(/_aaa$|_aa$|_cr2032$|_cr2450$|_cr1632$|_battery$/, '')
+    const driverBase = String(id).replace(/_aaa$|_aa$|_cr2032$|_cr2450$|_cr1632$|_battery$/, '')
       .replace(/_advanced$|_basic$/, '');
     
     if (driverBase === base || id.includes(base) || base.includes(id.split('_').slice(0, 3).join('_'))) {

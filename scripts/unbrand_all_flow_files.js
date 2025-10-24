@@ -45,7 +45,7 @@ drivers.forEach(driverName => {
       if (!id) return id;
       let cleaned = id;
       BRAND_PREFIXES.forEach(prefix => {
-        cleaned = cleaned.replace(new RegExp(prefix, 'g'), '');
+        cleaned = String(cleaned).replace(new RegExp(prefix, 'g'), '');
       });
       return cleaned;
     }

@@ -132,7 +132,7 @@ class VersionChecker {
         
         for (const match of matches) {
           if (!match.includes(this.targetVersion)) {
-            content = content.replace(match, `version: "${this.targetVersion}"`);
+            content = String(content).replace(match, `version: "${this.targetVersion}"`);
             updated = true;
           }
         }

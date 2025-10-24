@@ -54,7 +54,7 @@ async function diagnoseDriverImages(options = {}) {
           results.totalImageRefs++;
           
           // Track pattern
-          const pattern = imagePath.replace(/\/[^/]+$/, '/*');
+          const pattern = String(imagePath).replace(/\/[^/]+$/, '/*');
           results.imagePatterns[pattern] = (results.imagePatterns[pattern] || 0) + 1;
           
           // Check if image exists

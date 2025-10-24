@@ -178,7 +178,7 @@ function shouldAddCapability(cap, driverName) {
   
   // Alarms
   if (cap.startsWith('alarm_')) {
-    const alarmType = cap.replace('alarm_', '');
+    const alarmType = String(cap).replace('alarm_', '');
     if (driverName.includes(alarmType)) {
       return true;
     }

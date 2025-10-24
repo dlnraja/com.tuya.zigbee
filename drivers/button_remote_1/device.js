@@ -1,6 +1,6 @@
 'use strict';
 
-const BaseHybridDevice = require('../lib/BaseHybridDevice');
+const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
  * ZemismartWirelessSwitch1buttonDevice - Unified Hybrid Driver
@@ -13,14 +13,14 @@ class ZemismartWirelessSwitch1buttonDevice extends BaseHybridDevice {
     this.log('ZemismartWirelessSwitch1buttonDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit();
+    await super.onNodeInit().catch(err => this.error(err));
     
     this.log('ZemismartWirelessSwitch1buttonDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
     this.log('ZemismartWirelessSwitch1buttonDevice deleted');
-    await super.onDeleted();
+    await super.onDeleted().catch(err => this.error(err));
   }
 }
 

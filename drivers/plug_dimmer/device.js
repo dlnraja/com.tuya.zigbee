@@ -13,14 +13,14 @@ class NousSmartPlugDimmerDevice extends SwitchDevice {
     this.log('NousSmartPlugDimmerDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit();
+    await super.onNodeInit().catch(err => this.error(err));
     
     this.log('NousSmartPlugDimmerDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
     this.log('NousSmartPlugDimmerDevice deleted');
-    await super.onDeleted();
+    await super.onDeleted().catch(err => this.error(err));
   }
 }
 

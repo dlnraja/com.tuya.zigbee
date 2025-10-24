@@ -77,7 +77,7 @@ function fixDataVisibility(driverPath, content) {
     }, 300000); // 5 minutes
   `;
     
-    newContent = newContent.replace(
+    newContent = String(newContent).replace(
       /async onNodeInit\(\{ zclNode \}\) \{/,
       `async onNodeInit({ zclNode }) {${pollCode}`
     );
@@ -152,11 +152,11 @@ function fixDataVisibility(driverPath, content) {
   
   // 3. Force read après pairing
   if (!content.includes('// Force initial read')) {
-    newContent = newContent.replace(
+    newContent = String(newContent).replace(
       /async onNodeInit\(\{ zclNode \}\) \{([^}]+)\}/s,
       (match) => {
         if (!match.includes('Force initial read')) {
-          return match.replace(
+          return String(match).replace(
             /async onNodeInit\(\{ zclNode \}\) \{/,
             `async onNodeInit({ zclNode }) {
     // Force initial read après pairing (résout données non visibles)
@@ -192,14 +192,14 @@ function fixBatteryReporting(driverPath, content) {
       console.log(`   → Fix battery converter: ${path.basename(path.dirname(driverPath))}`);
       
       // Remplacer ancien code battery
-      newContent = newContent.replace(
+      newContent = String(newContent).replace(
         /value\s*\/\s*2\s*(?:\/\/.*)?$/gm,
         'batteryConverter.fromZclBatteryPercentageRemaining(value)'
       );
       
       // Ajouter import si manquant
       if (!newContent.includes("require('../../lib/tuya-engine/converters/battery')")) {
-        newContent = newContent.replace(
+        newContent = String(newContent).replace(
           /const \{ ZigBeeDevice \} = require\('homey-zigbeedriver'\);/,
           `const { ZigBeeDevice } = require('homey-zigbeedriver');\nconst batteryConverter = require('../../lib/tuya-engine/converters/battery');`
         );
@@ -223,7 +223,7 @@ function fixBatteryReporting(driverPath, content) {
     }]).catch(err => this.log('Battery report config failed (ignorable):', err.message));
 `;
       
-      newContent = newContent.replace(
+      newContent = String(newContent).replace(
         /async onNodeInit\(\{ zclNode \}\) \{/,
         `async onNodeInit({ zclNode }) {${reportConfig}`
       );
@@ -248,7 +248,7 @@ function fixErrorHandling(driverPath, content) {
   if (emptyCatchPattern.test(content)) {
     console.log(`   → Fix empty catch: ${path.basename(path.dirname(driverPath))}`);
     
-    newContent = newContent.replace(
+    newContent = String(newContent).replace(
       emptyCatchPattern,
       'catch (err) {\n      this.error(\'Error:\', err);\n    }'
     );
@@ -305,7 +305,7 @@ function fixIASZone(driverPath, content) {
     
     // Import
     if (!newContent.includes("require('../../lib/IASZoneEnroller')")) {
-      newContent = newContent.replace(
+      newContent = String(newContent).replace(
         /const \{ ZigBeeDevice \} = require\('homey-zigbeedriver'\);/,
         `const { ZigBeeDevice } = require('homey-zigbeedriver');\nconst IASZoneEnroller = require('../../lib/IASZoneEnroller');`
       );
@@ -313,7 +313,7 @@ function fixIASZone(driverPath, content) {
     
     // Enrollment dans onNodeInit
     if (!newContent.includes('new IASZoneEnroller')) {
-      newContent = newContent.replace(
+      newContent = String(newContent).replace(
         /async onNodeInit\(\{ zclNode \}\) \{/,
         `async onNodeInit({ zclNode }) {
     // IAS Zone enrollment (motion/contact sensors)

@@ -57,7 +57,7 @@ function fixStringClusters(filePath, content) {
   patterns.forEach(pattern => {
     const matches = (modified.match(pattern.from) || []).length;
     if (matches > 0) {
-      modified = modified.replace(pattern.from, pattern.to);
+      modified = String(modified).replace(pattern.from, pattern.to);
       changes += matches;
     }
   });
@@ -104,7 +104,7 @@ function fixConsoleLogs(content) {
   patterns.forEach(pattern => {
     const matches = (modified.match(pattern.from) || []).length;
     if (matches > 0) {
-      modified = modified.replace(pattern.from, pattern.to);
+      modified = String(modified).replace(pattern.from, pattern.to);
       changes += matches;
     }
   });

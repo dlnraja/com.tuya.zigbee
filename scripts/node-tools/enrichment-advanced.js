@@ -456,7 +456,7 @@ class AdvancedEnrichment {
    * Helper: Extract vendor from filename
    */
   extractVendorFromFilename(filename) {
-    const name = filename.replace(/\.(ts|js)$/, '');
+    const name = String(filename).replace(/\.(ts|js)$/, '');
     return name.split('_')[0] || 'Unknown';
   }
 

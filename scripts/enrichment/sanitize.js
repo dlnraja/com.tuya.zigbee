@@ -30,7 +30,7 @@ function sanitizeHomeyChangelog(input, maxLength = 500) {
     return String(input)
         // Supprimer tirets initiaux de chaque ligne
         .split('\n')
-        .map(line => line.replace(/^[- ]*/, '').trim())
+        .map(line => String(line).replace(/^[- ]*/, '').trim())
         .filter(line => line.length > 0)
         .join('; ')  // Joindre avec point-virgule
         // Nettoyer caractères problématiques

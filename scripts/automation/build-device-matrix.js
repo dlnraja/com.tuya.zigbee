@@ -104,7 +104,7 @@ function toCSV(data) {
     if (value == null) return '';
     const str = String(value);
     if (str.includes(',') || str.includes('"') || str.includes('\n')) {
-      return `"${str.replace(/"/g, '""')}"`;
+      return `"${String(str).replace(/"/g, '""')}"`;
     }
     return str;
   };

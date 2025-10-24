@@ -71,7 +71,7 @@ function removeBrandPrefixes(text) {
   BRAND_PREFIXES.forEach(prefix => {
     // Enlever le préfixe mais garder le reste
     const regex = new RegExp(prefix, 'g');
-    cleaned = cleaned.replace(regex, '');
+    cleaned = String(cleaned).replace(regex, '');
   });
   return cleaned;
 }
@@ -86,7 +86,7 @@ function cleanFlowCards(cards, type) {
     // Nettoyer l'ID
     BRAND_PREFIXES.forEach(prefix => {
       if (card.id && card.id.includes(prefix)) {
-        card.id = card.id.replace(new RegExp(prefix, 'g'), '');
+        card.id = card.String(id).replace(new RegExp(prefix, 'g'), '');
         updated++;
       }
     });

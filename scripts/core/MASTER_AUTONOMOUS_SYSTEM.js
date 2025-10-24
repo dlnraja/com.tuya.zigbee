@@ -239,7 +239,7 @@ class MasterAutonomousSystem {
       const driverMatches = content.match(this.config.patterns.driverReference);
       if (driverMatches) {
         driverMatches.forEach(match => {
-          const driverId = match.replace('drivers/', '');
+          const driverId = String(match).replace('drivers/', '');
           references.drivers.add(driverId);
         });
       }
@@ -248,7 +248,7 @@ class MasterAutonomousSystem {
       const filterMatches = content.match(this.config.patterns.filterReference);
       if (filterMatches) {
         filterMatches.forEach(match => {
-          const driverId = match.replace('driver_id=', '');
+          const driverId = String(match).replace('driver_id=', '');
           references.filters.add(driverId);
         });
       }
@@ -276,7 +276,7 @@ class MasterAutonomousSystem {
       const matches = content.match(regex);
       
       if (matches) {
-        content = content.replace(regex, newValue);
+        content = String(content).replace(regex, newValue);
         changes += matches.length;
       }
     });
@@ -293,7 +293,7 @@ class MasterAutonomousSystem {
    * ESCAPE REGEX
    */
   escapeRegex(string) {
-    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return String(string).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   }
 
   /**

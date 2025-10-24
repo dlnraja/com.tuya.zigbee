@@ -23,7 +23,7 @@ class FlowCardGenerator {
 
   // Generate trigger for alarm capability
   generateAlarmTriggers(driverId, driverName, capability) {
-    const capName = capability.replace('alarm_', '');
+    const capName = String(capability).replace('alarm_', '');
     const capTitle = capName.charAt(0).toUpperCase() + capName.slice(1);
     
     // Trigger when alarm becomes true
@@ -73,7 +73,7 @@ class FlowCardGenerator {
 
   // Generate trigger for measure capability
   generateMeasureTriggers(driverId, driverName, capability) {
-    const capName = capability.replace('measure_', '');
+    const capName = String(capability).replace('measure_', '');
     const capTitle = capName.charAt(0).toUpperCase() + capName.slice(1);
     
     let units = '';
@@ -155,7 +155,7 @@ class FlowCardGenerator {
   // Generate conditions
   generateConditions(driverId, driverName, capability) {
     if (capability.startsWith('alarm_')) {
-      const capName = capability.replace('alarm_', '');
+      const capName = String(capability).replace('alarm_', '');
       const capTitle = capName.charAt(0).toUpperCase() + capName.slice(1);
       
       this.conditions.push({
@@ -177,7 +177,7 @@ class FlowCardGenerator {
     }
 
     if (capability.startsWith('measure_')) {
-      const capName = capability.replace('measure_', '');
+      const capName = String(capability).replace('measure_', '');
       const capTitle = capName.charAt(0).toUpperCase() + capName.slice(1);
       
       let units = '';

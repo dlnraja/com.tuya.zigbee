@@ -52,7 +52,7 @@ function step1_fixDoubleSuffixFolders() {
     
     for (const fix of fixes) {
       if (fix.pattern.test(newName)) {
-        newName = newName.replace(fix.pattern, fix.replacement);
+        newName = String(newName).replace(fix.pattern, fix.replacement);
         modified = true;
       }
     }
@@ -111,11 +111,11 @@ function step2_fixDriverComposeJson() {
       const originalContent = content;
       
       // Apply all double suffix fixes
-      content = content.replace(/ikea_ikea_/g, 'ikea_');
-      content = content.replace(/_other_other/g, '_other');
-      content = content.replace(/_aaa_aaa/g, '_aaa');
-      content = content.replace(/_aa_aa/g, '_aa');
-      content = content.replace(/_internal_internal/g, '_internal');
+      content = String(content).replace(/ikea_ikea_/g, 'ikea_');
+      content = String(content).replace(/_other_other/g, '_other');
+      content = String(content).replace(/_aaa_aaa/g, '_aaa');
+      content = String(content).replace(/_aa_aa/g, '_aa');
+      content = String(content).replace(/_internal_internal/g, '_internal');
       
       if (content !== originalContent) {
         fs.writeFileSync(composeFile, content, 'utf8');
@@ -229,7 +229,7 @@ function step4_fixTitleFormatted() {
               const hasDeviceArg = card.args && card.args.some(arg => arg.name === 'device');
               
               if (!hasDeviceArg) {
-                const newTitle = titleFormatted.replace(/\[\[device\]\]\s*/g, '').trim();
+                const newTitle = String(titleFormatted).replace(/\[\[device\]\]\s*/g, '').trim();
                 card.titleFormatted[lang] = newTitle;
                 fileModified = true;
                 totalFixed++;
@@ -309,11 +309,11 @@ function step6_fixAppJsonSuffixes() {
   const before = appJsonStr;
   
   // Apply all fixes
-  appJsonStr = appJsonStr.replace(/ikea_ikea_/g, 'ikea_');
-  appJsonStr = appJsonStr.replace(/_other_other/g, '_other');
-  appJsonStr = appJsonStr.replace(/_aaa_aaa/g, '_aaa');
-  appJsonStr = appJsonStr.replace(/_aa_aa/g, '_aa');
-  appJsonStr = appJsonStr.replace(/_internal_internal/g, '_internal');
+  appJsonStr = String(appJsonStr).replace(/ikea_ikea_/g, 'ikea_');
+  appJsonStr = String(appJsonStr).replace(/_other_other/g, '_other');
+  appJsonStr = String(appJsonStr).replace(/_aaa_aaa/g, '_aaa');
+  appJsonStr = String(appJsonStr).replace(/_aa_aa/g, '_aa');
+  appJsonStr = String(appJsonStr).replace(/_internal_internal/g, '_internal');
   
   const replacements = before.length - appJsonStr.length;
   

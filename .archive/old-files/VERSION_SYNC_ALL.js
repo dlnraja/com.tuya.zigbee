@@ -96,7 +96,7 @@ class VersionSynchronizer {
       
       for (const oldVer of oldVersions) {
         if (content.includes(oldVer)) {
-          content = content.replace(new RegExp(oldVer.replace(/\./g, '\\.'), 'g'), TARGET_VERSION);
+          content = String(content).replace(new RegExp(String(oldVer).replace(/\./g, '\\.'), 'g'), TARGET_VERSION);
           modified = true;
           this.error(`Found old version ${oldVer} in ${file}`);
         }
@@ -136,7 +136,7 @@ class VersionSynchronizer {
 
       for (const oldVer of oldVersions) {
         if (content.includes(oldVer)) {
-          content = content.replace(new RegExp(oldVer.replace(/\./g, '\\.'), 'g'), TARGET_VERSION);
+          content = String(content).replace(new RegExp(String(oldVer).replace(/\./g, '\\.'), 'g'), TARGET_VERSION);
           modified = true;
           this.error(`Found old version ${oldVer} in ${path.relative(ROOT, file)}`);
         }

@@ -180,7 +180,7 @@ class DriverGenerator {
   
   async generateDevice(spec, driverDir) {
     const capabilities = spec.capabilities.map(cap => {
-      const capName = cap.replace('_', '');
+      const capName = String(cap).replace('_', '');
       const cluster = this.getClusterForCapability(cap);
       return `
     // ${cap} capability

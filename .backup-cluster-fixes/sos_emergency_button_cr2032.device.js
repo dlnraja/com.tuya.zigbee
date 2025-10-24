@@ -221,7 +221,7 @@ class SOSEmergencyButtonDevice extends ZigBeeDevice {
         // Get Homey IEEE address as Buffer with reversed byte order (CRITICAL!)
         const homeyIeee = await this.homey.zigbee.getIeeeAddress();
         const ieeeBuffer = Buffer.from(
-          homeyIeee.replace(/:/g, '').match(/.{2}/g).reverse().join(''),
+          String(homeyIeee).replace(/:/g, '').match(/.{2}/g).reverse().join(''),
           'hex'
         );
 

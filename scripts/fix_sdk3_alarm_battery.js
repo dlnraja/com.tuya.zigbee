@@ -29,14 +29,14 @@ function fixDriverCompose(filePath) {
     let fixedContent = content;
     
     // Pattern 1: ",\n    \"alarm_battery\""
-    fixedContent = fixedContent.replace(/,\s*\n\s*"alarm_battery"/g, '');
+    fixedContent = String(fixedContent).replace(/,\s*\n\s*"alarm_battery"/g, '');
     
     // Pattern 2: "alarm_battery",
-    fixedContent = fixedContent.replace(/"alarm_battery",\s*\n/g, '');
+    fixedContent = String(fixedContent).replace(/"alarm_battery",\s*\n/g, '');
     
     // Pattern 3: Dernier élément avant ]
-    fixedContent = fixedContent.replace(/,\s*"alarm_battery"\s*\]/g, ']');
-    fixedContent = fixedContent.replace(/\[\s*"alarm_battery"\s*\]/g, '[]');
+    fixedContent = String(fixedContent).replace(/,\s*"alarm_battery"\s*\]/g, ']');
+    fixedContent = String(fixedContent).replace(/\[\s*"alarm_battery"\s*\]/g, '[]');
     
     // Vérifier si changement effectué
     if (fixedContent === content) {

@@ -32,7 +32,7 @@ async function cleanDriver(driverPath, driverName) {
     await fs.writeFile(devicePath + '.BACKUP', code);
     
     // Remove duplicate IAS Zone code
-    const cleaned = code.replace(DUPLICATE_CODE_PATTERN, '\n');
+    const cleaned = String(code).replace(DUPLICATE_CODE_PATTERN, '\n');
     
     if (cleaned === code) {
       return { skipped: true, reason: 'Pattern did not match' };

@@ -55,7 +55,7 @@ for (const driverName of report.drivers.missingBatteryConverter) {
     }
     
     // Appliquer le converter dans reportParser
-    content = content.replace(
+    content = String(content).replace(
       /reportParser:\s*value\s*=>\s*{\s*this\.log\(['"](Battery raw value|Battery):['"],\s*value\);\s*return\s+value\s*\/\s*2;\s*}/g,
       `reportParser: value => {
           this.log('Battery raw value:', value);

@@ -67,8 +67,8 @@ export class SmartMatcher {
     
     if (pattern1 && pattern2 && pattern1[1] === pattern2[1]) {
       // Same prefix, compare suffix
-      const suffix1 = id1.replace(pattern1[1], '');
-      const suffix2 = id2.replace(pattern2[1], '');
+      const suffix1 = String(id1).replace(pattern1[1], '');
+      const suffix2 = String(id2).replace(pattern2[1], '');
       return 0.7 + (0.3 * this.similarity(suffix1, suffix2));
     }
     

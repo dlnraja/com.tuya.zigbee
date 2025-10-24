@@ -85,7 +85,7 @@ async function integrateHealthCheck() {
       
       // Check if already integrated
       if (content.includes('initializeHealthCheck') || content.includes('this.healthCheck')) {
-        console.log(`⏭️  ${driverDir.replace('/', '')} - Already has HealthCheck`);
+        console.log(`⏭️  ${String(driverDir).replace('/', '')} - Already has HealthCheck`);
         skipped++;
         continue;
       }
@@ -93,13 +93,13 @@ async function integrateHealthCheck() {
       // Find onInit method
       const onInitRegex = /async\s+onInit\s*\(\s*\)\s*{/;
       if (!onInitRegex.test(content)) {
-        console.log(`⚠️  ${driverDir.replace('/', '')} - No onInit method found`);
+        console.log(`⚠️  ${String(driverDir).replace('/', '')} - No onInit method found`);
         skipped++;
         continue;
       }
       
       // Add initializeHealthCheck call in onInit
-      content = content.replace(
+      content = String(content).replace(
         onInitRegex,
         `async onInit() {
     // Initialize HealthCheck
@@ -114,11 +114,11 @@ async function integrateHealthCheck() {
       // Write back
       await fs.writeFile(devicePath, content, 'utf8');
       
-      console.log(`✅ ${driverDir.replace('/', '')} - HealthCheck integrated`);
+      console.log(`✅ ${String(driverDir).replace('/', '')} - HealthCheck integrated`);
       integrated++;
       
     } catch (err) {
-      console.error(`❌ ${driverDir.replace('/', '')} - Error:`, err.message);
+      console.error(`❌ ${String(driverDir).replace('/', '')} - Error:`, err.message);
       errors++;
     }
   }

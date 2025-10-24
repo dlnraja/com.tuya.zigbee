@@ -152,7 +152,7 @@ Object.entries(batteryTypes).forEach(([type, driverList]) => {
   if (driverList.length > 0) {
     console.log('   Exemples:');
     driverList.slice(0, 3).forEach(d => {
-      const newId = d.id.replace(/_battery$|_cr\d+$|_aa$|_aaa$/i, '') + strategy.suffix;
+      const newId = d.String(id).replace(/_battery$|_cr\d+$|_aa$|_aaa$/i, '') + strategy.suffix;
       if (newId !== d.id) {
         console.log(`      ${d.id} → ${newId}`);
       } else {

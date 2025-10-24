@@ -39,7 +39,7 @@ for (const driverFolder of driverFolders) {
             
             if (!hasDeviceArg) {
               // Remove [[device]] from titleFormatted
-              const newTitle = titleFormatted.replace(/\[\[device\]\]\s*/g, '').trim();
+              const newTitle = String(titleFormatted).replace(/\[\[device\]\]\s*/g, '').trim();
               card.titleFormatted[lang] = newTitle;
               
               console.log(`  ✂️  ${driverFolder}/`);

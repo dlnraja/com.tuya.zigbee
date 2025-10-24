@@ -88,7 +88,7 @@ Object.entries(duplicates).forEach(([cardType, cards]) => {
         
         // Replace the ID (be precise to only replace in "id" field)
         const pattern = new RegExp(`("id":\\s*)"${cardId}"`, 'g');
-        const modified = content.replace(pattern, `$1"${newId}"`);
+        const modified = String(content).replace(pattern, `$1"${newId}"`);
         
         if (modified !== content) {
           fs.writeFileSync(composeJsonPath, modified, 'utf8');

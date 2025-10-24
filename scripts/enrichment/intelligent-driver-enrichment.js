@@ -469,7 +469,7 @@ function detectDriverType(driverName) {
 function findDatabaseMatch(driverName) {
   // Try exact match first
   for (const [key, data] of Object.entries(MANUFACTURER_IDS_DATABASE)) {
-    if (driverName.includes(key.replace(/_/g, '_'))) {
+    if (driverName.includes(String(key).replace(/_/g, '_'))) {
       return data;
     }
   }

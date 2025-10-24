@@ -13,10 +13,10 @@ class UsbOutlet2PortDevice extends ZigBeeDevice {
     this.registerCapabilityListeners();
 
     // Detect and configure power source (hybrid intelligent detection)
-    await this.detectAndConfigurePowerSource(zclNode);
+    await this.detectAndConfigurePowerSource(zclNode).catch(err => this.error(err));
 
     // Configure power monitoring if available
-    await this.configurePowerMonitoring();
+    await this.configurePowerMonitoring().catch(err => this.error(err));
   }
 
   /**
@@ -28,7 +28,7 @@ class UsbOutlet2PortDevice extends ZigBeeDevice {
       this.log('Port 1 turned', value ? 'on' : 'off');
       
       // TODO: Wrap in try/catch
-      await this.zclNode.endpoints[1].clusters.onOff.toggle();
+      await this.zclNode.endpoints[1].clusters.onOff.toggle().catch(err => this.error(err));
       
       // Trigger flow card
       const triggerCard = value ? 
@@ -47,7 +47,7 @@ class UsbOutlet2PortDevice extends ZigBeeDevice {
       this.log('Port 2 turned', value ? 'on' : 'off');
       
       // TODO: Wrap in try/catch
-      await this.zclNode.endpoints[2].clusters.onOff.toggle();
+      await this.zclNode.endpoints[2].clusters.onOff.toggle().catch(err => this.error(err));
       
       // Trigger flow card
       const triggerCard = value ? 

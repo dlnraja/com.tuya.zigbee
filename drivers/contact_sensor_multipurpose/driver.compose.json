@@ -21,10 +21,15 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_SAMSUNG_generic"
+      "_SAMSUNG_generic",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_msl2rxjn",
+      "_TZ3000_oxslv1c9",
+      "_TZ3000_402jjyro"
     ],
     "productId": [
-      "generic"
+      "TS0203"
     ],
     "endpoints": {
       "1": {

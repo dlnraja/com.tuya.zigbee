@@ -196,7 +196,7 @@ function testClusterConversion(tester) {
     };
     
     Object.entries(mapping).forEach(([str, num]) => {
-      assert.strictEqual(KNOWLEDGE_BASE.sdk3.clusterIDs[str.replace('gen', '').replace('ms', '').toUpperCase().replace('POWERCFG', 'POWER_CONFIGURATION').replace('ONOFF', 'ON_OFF')], num, `${str} should map to ${num}`);
+      assert.strictEqual(KNOWLEDGE_BASE.sdk3.clusterIDs[String(str).replace('gen', '').replace('ms', '').toUpperCase().replace('POWERCFG', 'POWER_CONFIGURATION').replace('ONOFF', 'ON_OFF')], num, `${str} should map to ${num}`);
     });
   });
   

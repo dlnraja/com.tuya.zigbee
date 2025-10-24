@@ -118,7 +118,7 @@ if (fs.existsSync(pirAcBatteryDeviceJs)) {
     console.log('✅ Fixing syntax errors...');
     
     // Remove orphan catch block
-    const fixed = content.replace(/\n\s+catch \(err\) \{[\s\S]*?\n\s+\}\n\s+\}\n/, '\n}\n');
+    const fixed = String(content).replace(/\n\s+catch \(err\) \{[\s\S]*?\n\s+\}\n\s+\}\n/, '\n}\n');
     fs.writeFileSync(pirAcBatteryDeviceJs, fixed, 'utf8');
     console.log('✅ Syntax errors fixed');
   }

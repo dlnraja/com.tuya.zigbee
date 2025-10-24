@@ -34,7 +34,7 @@ appJson.drivers.forEach((driver, index) => {
   PATTERNS_TO_REMOVE.forEach(pattern => {
     if (pattern.test(cleanName)) {
       hasPattern = true;
-      cleanName = cleanName.replace(pattern, '').replace(/_+/g, '_').replace(/^_|_$/g, '');
+      cleanName = String(cleanName).replace(pattern, '').replace(/_+/g, '_').replace(/^_|_$/g, '');
     }
   });
   

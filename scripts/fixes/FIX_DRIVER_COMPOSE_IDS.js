@@ -25,11 +25,11 @@ for (const driverFolder of drivers) {
     const originalContent = content;
     
     // Apply all fixes
-    content = content.replace(/ikea_ikea_/g, 'ikea_');
-    content = content.replace(/_other_other/g, '_other');
-    content = content.replace(/_aaa_aaa/g, '_aaa');
-    content = content.replace(/_aa_aa/g, '_aa');
-    content = content.replace(/_internal_internal/g, '_internal');
+    content = String(content).replace(/ikea_ikea_/g, 'ikea_');
+    content = String(content).replace(/_other_other/g, '_other');
+    content = String(content).replace(/_aaa_aaa/g, '_aaa');
+    content = String(content).replace(/_aa_aa/g, '_aa');
+    content = String(content).replace(/_internal_internal/g, '_internal');
     
     if (content !== originalContent) {
       fs.writeFileSync(composeFile, content, 'utf8');

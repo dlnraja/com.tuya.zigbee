@@ -21,19 +21,19 @@ if (appJson.drivers) {
         
         // Apply same fixes as folder names
         if (/ikea_ikea_/.test(imagePath)) {
-          imagePath = imagePath.replace(/ikea_ikea_/g, 'ikea_');
+          imagePath = String(imagePath).replace(/ikea_ikea_/g, 'ikea_');
         }
         if (/_other_other/.test(imagePath)) {
-          imagePath = imagePath.replace(/_other_other/g, '_other');
+          imagePath = String(imagePath).replace(/_other_other/g, '_other');
         }
         if (/_aaa_aaa/.test(imagePath)) {
-          imagePath = imagePath.replace(/_aaa_aaa/g, '_aaa');
+          imagePath = String(imagePath).replace(/_aaa_aaa/g, '_aaa');
         }
         if (/_aa_aa/.test(imagePath)) {
-          imagePath = imagePath.replace(/_aa_aa/g, '_aa');
+          imagePath = String(imagePath).replace(/_aa_aa/g, '_aa');
         }
         if (/_internal_internal/.test(imagePath)) {
-          imagePath = imagePath.replace(/_internal_internal/g, '_internal');
+          imagePath = String(imagePath).replace(/_internal_internal/g, '_internal');
         }
         
         driver.images[imageSize] = imagePath;
@@ -53,19 +53,19 @@ if (appJson.drivers) {
       let newIcon = oldIcon;
       
       if (/ikea_ikea_/.test(newIcon)) {
-        newIcon = newIcon.replace(/ikea_ikea_/g, 'ikea_');
+        newIcon = String(newIcon).replace(/ikea_ikea_/g, 'ikea_');
       }
       if (/_other_other/.test(newIcon)) {
-        newIcon = newIcon.replace(/_other_other/g, '_other');
+        newIcon = String(newIcon).replace(/_other_other/g, '_other');
       }
       if (/_aaa_aaa/.test(newIcon)) {
-        newIcon = newIcon.replace(/_aaa_aaa/g, '_aaa');
+        newIcon = String(newIcon).replace(/_aaa_aaa/g, '_aaa');
       }
       if (/_aa_aa/.test(newIcon)) {
-        newIcon = newIcon.replace(/_aa_aa/g, '_aa');
+        newIcon = String(newIcon).replace(/_aa_aa/g, '_aa');
       }
       if (/_internal_internal/.test(newIcon)) {
-        newIcon = newIcon.replace(/_internal_internal/g, '_internal');
+        newIcon = String(newIcon).replace(/_internal_internal/g, '_internal');
       }
       
       if (oldIcon !== newIcon) {

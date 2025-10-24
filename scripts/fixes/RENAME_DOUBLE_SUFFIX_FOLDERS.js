@@ -21,31 +21,31 @@ for (const driver of drivers) {
   
   // Fix ikea_ikea_ -> ikea_
   if (/^ikea_ikea_/.test(newName)) {
-    newName = newName.replace(/^ikea_ikea_/, 'ikea_');
+    newName = String(newName).replace(/^ikea_ikea_/, 'ikea_');
     modified = true;
   }
   
   // Fix _other_other$ -> _other
   if (/_other_other$/.test(newName)) {
-    newName = newName.replace(/_other_other$/, '_other');
+    newName = String(newName).replace(/_other_other$/, '_other');
     modified = true;
   }
   
   // Fix _aaa_aaa$ -> _aaa
   if (/_aaa_aaa$/.test(newName)) {
-    newName = newName.replace(/_aaa_aaa$/, '_aaa');
+    newName = String(newName).replace(/_aaa_aaa$/, '_aaa');
     modified = true;
   }
   
   // Fix _aa_aa$ -> _aa
   if (/_aa_aa$/.test(newName)) {
-    newName = newName.replace(/_aa_aa$/, '_aa');
+    newName = String(newName).replace(/_aa_aa$/, '_aa');
     modified = true;
   }
   
   // Fix _internal_internal$ -> _internal
   if (/_internal_internal$/.test(newName)) {
-    newName = newName.replace(/_internal_internal$/, '_internal');
+    newName = String(newName).replace(/_internal_internal$/, '_internal');
     modified = true;
   }
   
@@ -90,19 +90,19 @@ if (appJson.drivers) {
     
     // Apply same fixes to IDs
     if (/^ikea_ikea_/.test(newId)) {
-      newId = newId.replace(/^ikea_ikea_/, 'ikea_');
+      newId = String(newId).replace(/^ikea_ikea_/, 'ikea_');
     }
     if (/_other_other$/.test(newId)) {
-      newId = newId.replace(/_other_other$/, '_other');
+      newId = String(newId).replace(/_other_other$/, '_other');
     }
     if (/_aaa_aaa$/.test(newId)) {
-      newId = newId.replace(/_aaa_aaa$/, '_aaa');
+      newId = String(newId).replace(/_aaa_aaa$/, '_aaa');
     }
     if (/_aa_aa$/.test(newId)) {
-      newId = newId.replace(/_aa_aa$/, '_aa');
+      newId = String(newId).replace(/_aa_aa$/, '_aa');
     }
     if (/_internal_internal$/.test(newId)) {
-      newId = newId.replace(/_internal_internal$/, '_internal');
+      newId = String(newId).replace(/_internal_internal$/, '_internal');
     }
     
     if (oldId !== newId) {
@@ -128,19 +128,19 @@ if (appJson.flow) {
           
           // Apply same fixes
           if (/ikea_ikea_/.test(newFilter)) {
-            newFilter = newFilter.replace(/ikea_ikea_/g, 'ikea_');
+            newFilter = String(newFilter).replace(/ikea_ikea_/g, 'ikea_');
           }
           if (/_other_other/.test(newFilter)) {
-            newFilter = newFilter.replace(/_other_other/g, '_other');
+            newFilter = String(newFilter).replace(/_other_other/g, '_other');
           }
           if (/_aaa_aaa/.test(newFilter)) {
-            newFilter = newFilter.replace(/_aaa_aaa/g, '_aaa');
+            newFilter = String(newFilter).replace(/_aaa_aaa/g, '_aaa');
           }
           if (/_aa_aa/.test(newFilter)) {
-            newFilter = newFilter.replace(/_aa_aa/g, '_aa');
+            newFilter = String(newFilter).replace(/_aa_aa/g, '_aa');
           }
           if (/_internal_internal/.test(newFilter)) {
-            newFilter = newFilter.replace(/_internal_internal/g, '_internal');
+            newFilter = String(newFilter).replace(/_internal_internal/g, '_internal');
           }
           
           if (oldFilter !== newFilter) {

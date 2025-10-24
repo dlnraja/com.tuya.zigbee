@@ -211,12 +211,12 @@ async function fixDiagnosticIssues() {
     
     // Add fix at appropriate location (before onDeleted or at end of onNodeInit)
     if (content.includes('async onDeleted()')) {
-      content = content.replace(
+      content = String(content).replace(
         'async onDeleted()',
         fixInfo.fix + '\n\n  async onDeleted()'
       );
     } else if (content.includes('await this.setAvailable()')) {
-      content = content.replace(
+      content = String(content).replace(
         'await this.setAvailable();',
         'await this.setAvailable();' + fixInfo.fix
       );

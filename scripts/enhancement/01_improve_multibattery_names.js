@@ -48,7 +48,7 @@ for (const driverId of drivers) {
     let newName = currentName;
     
     // Retirer ancien (Battery) générique
-    newName = newName.replace(/\s*\(Battery\)\s*$/i, '');
+    newName = String(newName).replace(/\s*\(Battery\)\s*$/i, '');
     
     // Ajouter batterie supportées
     newName = `${newName} (${batteryStr})`;

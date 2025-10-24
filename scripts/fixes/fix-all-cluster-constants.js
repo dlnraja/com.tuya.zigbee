@@ -39,9 +39,9 @@ function fixFile(filePath) {
   
   // Replace each CLUSTER constant
   for (const [clusterName, numericId] of Object.entries(CLUSTER_MAPPINGS)) {
-    const regex = new RegExp(clusterName.replace(/\./g, '\\.'), 'g');
+    const regex = new RegExp(String(clusterName).replace(/\./g, '\\.'), 'g');
     if (content.includes(clusterName)) {
-      content = content.replace(regex, numericId);
+      content = String(content).replace(regex, numericId);
       modified = true;
       console.log(`  ✅ Replaced ${clusterName} with ${numericId}`);
     }

@@ -13,14 +13,14 @@ class AvattoWirelessSwitch5buttonDevice extends SwitchDevice {
     this.log('AvattoWirelessSwitch5buttonDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit();
+    await super.onNodeInit().catch(err => this.error(err));
     
     this.log('AvattoWirelessSwitch5buttonDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
     this.log('AvattoWirelessSwitch5buttonDevice deleted');
-    await super.onDeleted();
+    await super.onDeleted().catch(err => this.error(err));
   }
 }
 

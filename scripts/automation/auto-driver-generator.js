@@ -397,7 +397,7 @@ class AutoDriverGenerator {
     // Ajouter suffix pour manufacturer spécifique si nécessaire
     if (manufacturerId && !name.includes(manufacturerId.toLowerCase())) {
       // Extraire suffix manufacturer (_TZE204_ → tze204)
-      const mfrSuffix = manufacturerId.replace(/[_\s]/g, '').toLowerCase();
+      const mfrSuffix = String(manufacturerId).replace(/[_\s]/g, '').toLowerCase();
       if (mfrSuffix.length < 15) { // éviter noms trop longs
         name += `_${mfrSuffix}`;
       }

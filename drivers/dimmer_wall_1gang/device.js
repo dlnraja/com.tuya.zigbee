@@ -1,6 +1,6 @@
 'use strict';
 
-const BaseHybridDevice = require('../lib/BaseHybridDevice');
+const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
  * AvattoDimmer1gangDevice - Unified Hybrid Driver
@@ -13,14 +13,14 @@ class AvattoDimmer1gangDevice extends BaseHybridDevice {
     this.log('AvattoDimmer1gangDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit();
+    await super.onNodeInit().catch(err => this.error(err));
     
     this.log('AvattoDimmer1gangDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
     this.log('AvattoDimmer1gangDevice deleted');
-    await super.onDeleted();
+    await super.onDeleted().catch(err => this.error(err));
   }
 }
 

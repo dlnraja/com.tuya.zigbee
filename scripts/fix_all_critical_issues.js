@@ -24,14 +24,14 @@ function fixReadAttributesCalls(content, driverPath) {
   // Pattern 1: readAttributes('string')
   const pattern1 = /\.readAttributes\('([^']+)'\)/g;
   if (pattern1.test(content)) {
-    content = content.replace(pattern1, ".readAttributes(['$1'])");
+    content = String(content).replace(pattern1, ".readAttributes(['$1'])");
     modified = true;
   }
   
   // Pattern 2: readAttributes("string")
   const pattern2 = /\.readAttributes\("([^"]+)"\)/g;
   if (pattern2.test(content)) {
-    content = content.replace(pattern2, ".readAttributes(['$1'])");
+    content = String(content).replace(pattern2, ".readAttributes(['$1'])");
     modified = true;
   }
   
@@ -44,7 +44,7 @@ function fixReadAttributesCalls(content, driverPath) {
       const varName = match.match(/\.readAttributes\((\w+)\)/)[1];
       // If the variable doesn't look like it's an array, wrap it
       if (!content.includes(`${varName} = [`)) {
-        content = content.replace(
+        content = String(content).replace(
           new RegExp(`\\.readAttributes\\(${varName}\\)`, 'g'),
           `.readAttributes([${varName}])`
         );
@@ -69,7 +69,7 @@ function fixIEEEAddressIssues(content, driverPath) {
     
     const ieeePattern = /const ieeeAddress = this\.zclNode\.ieeeAddress;/g;
     if (ieeePattern.test(content)) {
-      content = content.replace(
+      content = String(content).replace(
         ieeePattern,
         `let ieeeAddress;
     try {

@@ -103,7 +103,7 @@ function getLatestChanges() {
   return {
     version,
     date,
-    changes: bullets.slice(0, 5).map(b => b.replace(/^- /, ''))
+    changes: bullets.slice(0, 5).map(b => String(b).replace(/^- /, ''))
   };
 }
 

@@ -77,7 +77,7 @@ function fixLogging(filePath, content) {
   HOMEY_BEST_PRACTICES.logging.patterns.forEach(({ from, to }) => {
     const matches = (modified.match(from) || []).length;
     if (matches > 0) {
-      modified = modified.replace(from, to);
+      modified = String(modified).replace(from, to);
       changes += matches;
     }
   });
@@ -101,7 +101,7 @@ function improveErrorHandling(content) {
       // Extract error variable name
       const errorVar = match.match(/catch\s*\(([^)]*)\)/)[1] || 'err';
       const improved = `catch(${errorVar}) {\n    this.error('Error occurred:', ${errorVar});\n  }`;
-      modified = modified.replace(match, improved);
+      modified = String(modified).replace(match, improved);
       changes++;
     });
   }

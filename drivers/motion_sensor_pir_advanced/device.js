@@ -1,6 +1,6 @@
 'use strict';
 
-const BaseHybridDevice = require('../lib/BaseHybridDevice');
+const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
  * ZemismartPirSensorAdvancedDevice - Unified Hybrid Driver
@@ -13,14 +13,14 @@ class ZemismartPirSensorAdvancedDevice extends BaseHybridDevice {
     this.log('ZemismartPirSensorAdvancedDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit();
+    await super.onNodeInit().catch(err => this.error(err));
     
     this.log('ZemismartPirSensorAdvancedDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
     this.log('ZemismartPirSensorAdvancedDevice deleted');
-    await super.onDeleted();
+    await super.onDeleted().catch(err => this.error(err));
   }
 }
 

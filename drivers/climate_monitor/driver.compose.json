@@ -24,7 +24,6 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "TS0201",
       "_TZE200_7hfcudw5",
       "_TZE200_bjawzodf",
       "_TZE200_bq5c8xfe",
@@ -35,12 +34,14 @@
       "_TZE200_whpb9yts",
       "_TZE200_zl1kmjqx",
       "lumi.sensor_ht",
-      "lumi.weather"
+      "lumi.weather",
+      "_TZ3000_ywagc4rj",
+      "_TZ3000_zl1kmjqx",
+      "_TZE200_a8sdabtg"
     ],
     "productId": [
-      "TS0201",
       "TS0601",
-      "generic"
+      "TS0201"
     ],
     "endpoints": {
       "1": {

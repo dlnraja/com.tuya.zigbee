@@ -40,7 +40,7 @@ for (const driverId of drivers) {
           // Check if path is incorrect (points to different driver directory)
           if (currentPath.includes('drivers/') && !currentPath.includes(`drivers/${driverId}/`)) {
             // Extract the incorrect driver name and replace with correct one
-            const correctPath = currentPath.replace(/drivers\/[^\/]+\//, `drivers/${driverId}/`);
+            const correctPath = String(currentPath).replace(/drivers\/[^\/]+\//, `drivers/${driverId}/`);
             compose.images[size] = correctPath;
             console.log(`✅ ${driverId}: Fixed ${size} image path`);
             console.log(`   From: ${currentPath}`);
@@ -62,7 +62,7 @@ for (const driverId of drivers) {
       const currentPath = compose.learnmode.image;
       
       if (currentPath.includes('/drivers/') && !currentPath.includes(`/drivers/${driverId}/`)) {
-        const correctPath = currentPath.replace(/\/drivers\/[^\/]+\//, `/drivers/${driverId}/`);
+        const correctPath = String(currentPath).replace(/\/drivers\/[^\/]+\//, `/drivers/${driverId}/`);
         compose.learnmode.image = correctPath;
         console.log(`✅ ${driverId}: Fixed learnmode image path`);
         console.log(`   From: ${currentPath}`);
@@ -80,7 +80,7 @@ for (const driverId of drivers) {
               const currentPath = compose.pair[i].images[size];
               
               if (currentPath.includes('/drivers/') && !currentPath.includes(`/drivers/${driverId}/`)) {
-                const correctPath = currentPath.replace(/\/drivers\/[^\/]+\//, `/drivers/${driverId}/`);
+                const correctPath = String(currentPath).replace(/\/drivers\/[^\/]+\//, `/drivers/${driverId}/`);
                 compose.pair[i].images[size] = correctPath;
                 modified = true;
               }

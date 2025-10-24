@@ -323,7 +323,7 @@ class HeuristicAnalyzer {
   }
 
   generateDriverId() {
-    const category = this.analysis.category.replace('/', '_');
+    const category = this.analysis.String(category).replace('/', '_');
     const type = this.analysis.device_type;
     const power = (this.data.powerSource || 'ac').toLowerCase().includes('battery') ? 'battery' : 'ac';
     
@@ -333,7 +333,7 @@ class HeuristicAnalyzer {
   generateDriverName() {
     const brand = this.data.brand || 'Tuya';
     const model = this.data.model || 'Device';
-    const type = this.analysis.device_type.replace('_', ' ');
+    const type = this.analysis.String(device_type).replace('_', ' ');
     
     return `${brand} ${model} (${type})`;
   }

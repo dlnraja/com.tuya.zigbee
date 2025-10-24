@@ -112,7 +112,7 @@ class ProjectOrganizer {
           files.push(...findPsFiles(fullPath));
         } else if (item.endsWith('.ps1')) {
           // Vérifier si un équivalent .js existe
-          const jsPath = fullPath.replace('.ps1', '.js');
+          const jsPath = String(fullPath).replace('.ps1', '.js');
           if (fs.existsSync(jsPath)) {
             files.push(fullPath);
           }

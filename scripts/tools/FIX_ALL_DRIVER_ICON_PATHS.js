@@ -57,7 +57,7 @@ class FixAllDriverIconPaths {
 
       for (const pattern of patterns) {
         if (pattern.from.test(content)) {
-          content = content.replace(pattern.from, pattern.to);
+          content = String(content).replace(pattern.from, pattern.to);
           modified = true;
         }
       }
@@ -95,7 +95,7 @@ class FixAllDriverIconPaths {
 
       for (const pattern of patterns) {
         if (pattern.from.test(content)) {
-          content = content.replace(pattern.from, pattern.to);
+          content = String(content).replace(pattern.from, pattern.to);
           modified = true;
         }
       }
@@ -132,7 +132,7 @@ class FixAllDriverIconPaths {
 
       for (const pattern of patterns) {
         if (pattern.from.test(content)) {
-          content = content.replace(pattern.from, pattern.to);
+          content = String(content).replace(pattern.from, pattern.to);
           modified = true;
         }
       }
@@ -174,7 +174,7 @@ class FixAllDriverIconPaths {
 
           for (const pattern of patterns) {
             if (pattern.from.test(content)) {
-              content = content.replace(pattern.from, pattern.to);
+              content = String(content).replace(pattern.from, pattern.to);
               modified = true;
             }
           }

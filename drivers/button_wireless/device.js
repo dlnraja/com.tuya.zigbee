@@ -17,30 +17,30 @@ class UniversalWirelessButtonDevice extends ZigBeeDevice {
       // ==========================================
       // STEP 1: DETECT BUTTON COUNT
       // ==========================================
-      const buttonCount = await this.detectButtonCount(zclNode);
+      const buttonCount = await this.detectButtonCount(zclNode).catch(err => this.error(err));
       this.log(`✅ Detected ${buttonCount} button(s)`);
-      await this.setStoreValue('button_count', buttonCount);
+      await this.setStoreValue('button_count', buttonCount).catch(err => this.error(err));
       
       // ==========================================
       // STEP 2: DETECT POWER TYPE & BATTERY
       // ==========================================
-      const hasBattery = await this.detectBattery(zclNode);
+      const hasBattery = await this.detectBattery(zclNode).catch(err => this.error(err));
       this.log(`✅ Battery powered: ${hasBattery}`);
-      await this.setStoreValue('has_battery', hasBattery);
+      await this.setStoreValue('has_battery', hasBattery).catch(err => this.error(err));
       
       // ==========================================
       // STEP 3: SETUP CAPABILITIES DYNAMICALLY
       // ==========================================
-      await this.setupDynamicCapabilities(buttonCount, hasBattery);
+      await this.setupDynamicCapabilities(buttonCount, hasBattery).catch(err => this.error(err));
       
       // ==========================================
       // STEP 4: CONFIGURE CLUSTERS
       // ==========================================
       if (hasBattery) {
-        await this.configureBatteryReporting(zclNode);
+        await this.configureBatteryReporting(zclNode).catch(err => this.error(err));
       }
       
-      await this.configureButtonClusters(zclNode, buttonCount);
+      await this.configureButtonClusters(zclNode, buttonCount).catch(err => this.error(err));
       
       this.log('✅ Universal Wireless Button initialized successfully');
       
@@ -120,7 +120,7 @@ class UniversalWirelessButtonDevice extends ZigBeeDevice {
       const capId = i === 1 ? 'button' : `button.button${i}`;
       
       if (!this.hasCapability(capId)) {
-        await this.addCapability(capId);
+        await this.addCapability(capId).catch(err => this.error(err));
         this.log(`Added capability: ${capId}`);
       }
       
@@ -131,12 +131,12 @@ class UniversalWirelessButtonDevice extends ZigBeeDevice {
     // Battery capability
     if (hasBattery) {
       if (!this.hasCapability('measure_battery')) {
-        await this.addCapability('measure_battery');
+        await this.addCapability('measure_battery').catch(err => this.error(err));
         this.log('Added capability: measure_battery');
       }
     } else {
       if (this.hasCapability('measure_battery')) {
-        await this.removeCapability('measure_battery');
+        await this.removeCapability('measure_battery').catch(err => this.error(err));
         this.log('Removed capability: measure_battery (no battery)');
       }
     }
@@ -247,8 +247,8 @@ class UniversalWirelessButtonDevice extends ZigBeeDevice {
         : parseInt(newSettings.button_count);
       
       const hasBattery = this.getStoreValue('has_battery');
-      await this.setupDynamicCapabilities(newCount, hasBattery);
-      await this.configureButtonClusters(this.zclNode, newCount);
+      await this.setupDynamicCapabilities(newCount, hasBattery).catch(err => this.error(err));
+      await this.configureButtonClusters(this.zclNode, newCount).catch(err => this.error(err));
       
       this.log(`Button count updated to: ${newCount}`);
     }

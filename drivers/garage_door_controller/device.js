@@ -1,6 +1,6 @@
 'use strict';
 
-const BaseHybridDevice = require('../lib/BaseHybridDevice');
+const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
  * ZemismartGarageDoorControllerDevice - Unified Hybrid Driver
@@ -13,14 +13,14 @@ class ZemismartGarageDoorControllerDevice extends BaseHybridDevice {
     this.log('ZemismartGarageDoorControllerDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit();
+    await super.onNodeInit().catch(err => this.error(err));
     
     this.log('ZemismartGarageDoorControllerDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
     this.log('ZemismartGarageDoorControllerDevice deleted');
-    await super.onDeleted();
+    await super.onDeleted().catch(err => this.error(err));
   }
 }
 

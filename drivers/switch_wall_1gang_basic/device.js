@@ -13,14 +13,14 @@ class ZemismartWallSwitch1gangDevice extends SwitchDevice {
     this.log('ZemismartWallSwitch1gangDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit();
+    await super.onNodeInit().catch(err => this.error(err));
     
     this.log('ZemismartWallSwitch1gangDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
     this.log('ZemismartWallSwitch1gangDevice deleted');
-    await super.onDeleted();
+    await super.onDeleted().catch(err => this.error(err));
   }
 }
 

@@ -107,7 +107,7 @@ drivers.forEach(driverName => {
     
     // Ajouter imports si manquants
     if (!deviceJs.includes('CLUSTER')) {
-      deviceJs = deviceJs.replace(
+      deviceJs = String(deviceJs).replace(
         "const { ZigBeeDevice } = require('homey-zigbeedriver');",
         "const { ZigBeeDevice } = require('homey-zigbeedriver');\nconst { CLUSTER } = require('zigbee-clusters');"
       );
@@ -155,7 +155,7 @@ drivers.forEach(driverName => {
     });`;
       
       // Insérer après onNodeInit
-      deviceJs = deviceJs.replace(
+      deviceJs = String(deviceJs).replace(
         /async onNodeInit\(\{ zclNode \}\) \{[\s\S]*?this\.log\(['"](.*?) initialized['"].*?\);/,
         (match, logText) => {
           return match + batteryCode;
@@ -199,7 +199,7 @@ drivers.forEach(driverName => {
     return Math.floor(hoursRemaining / 24);
   }`;
       
-      deviceJs = deviceJs.replace(/\n\}\n\nmodule\.exports/, voltageMethod + '\n}\n\nmodule.exports');
+      deviceJs = String(deviceJs).replace(/\n\}\n\nmodule\.exports/, voltageMethod + '\n}\n\nmodule.exports');
     }
     
     fs.writeFileSync(devicePath, deviceJs);

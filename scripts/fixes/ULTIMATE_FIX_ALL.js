@@ -99,7 +99,7 @@ for (const driver of drivers) {
       ctx.textBaseline = 'middle';
       ctx.fillText(icon, 250, 250);
       ctx.font = 'bold 24px Arial';
-      ctx.fillText(driver.replace(/_/g, ' ').substring(0, 30), 250, 450);
+      ctx.fillText(String(driver).replace(/_/g, ' ').substring(0, 30), 250, 450);
       fs.writeFileSync(largePath, canvas.toBuffer('image/png'));
       imagesCreated++;
     }

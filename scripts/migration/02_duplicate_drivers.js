@@ -96,7 +96,7 @@ for (const [oldId, variants] of Object.entries(grouped)) {
         let flowContent = fs.readFileSync(flowPath, 'utf8');
         
         // Replace driver_id dans filters
-        flowContent = flowContent.replace(
+        flowContent = String(flowContent).replace(
           new RegExp(`driver_id=${oldId}`, 'g'),
           `driver_id=${variant.newId}`
         );
@@ -106,19 +106,19 @@ for (const [oldId, variants] of Object.entries(grouped)) {
         
         if (flow.triggers) {
           flow.triggers.forEach(trigger => {
-            trigger.id = trigger.id.replace(oldId, variant.newId);
+            trigger.id = trigger.String(id).replace(oldId, variant.newId);
           });
         }
         
         if (flow.actions) {
           flow.actions.forEach(action => {
-            action.id = action.id.replace(oldId, variant.newId);
+            action.id = action.String(id).replace(oldId, variant.newId);
           });
         }
         
         if (flow.conditions) {
           flow.conditions.forEach(condition => {
-            condition.id = condition.id.replace(oldId, variant.newId);
+            condition.id = condition.String(id).replace(oldId, variant.newId);
           });
         }
         

@@ -13,14 +13,14 @@ class AvattoUsbOutletAdvancedDevice extends SwitchDevice {
     this.log('AvattoUsbOutletAdvancedDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit();
+    await super.onNodeInit().catch(err => this.error(err));
     
     this.log('AvattoUsbOutletAdvancedDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
     this.log('AvattoUsbOutletAdvancedDevice deleted');
-    await super.onDeleted();
+    await super.onDeleted().catch(err => this.error(err));
   }
 }
 

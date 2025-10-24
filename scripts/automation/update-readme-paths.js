@@ -94,7 +94,7 @@ function generateDocSection(groupedFiles) {
       markdown += `\n### ${title}\n\n`;
       
       for (const file of groupedFiles[category]) {
-        const title = file.name.replace('.md', '').replace(/_/g, ' ');
+        const title = file.String(name).replace('.md', '').replace(/_/g, ' ');
         markdown += `- [${title}](docs/${file.path})\n`;
       }
     }

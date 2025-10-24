@@ -61,7 +61,7 @@ class ImageOptimizer {
           this.stats.png_images++;
           
           // Check size
-          const type = file.replace('.png', '');
+          const type = String(file).replace('.png', '');
           const spec = HOMEY_IMAGE_SPECS.app[type];
           
           if (spec && stats.size > spec.maxSize) {
@@ -160,7 +160,7 @@ class ImageOptimizer {
     
     if (appJson.images) {
       for (const [key, imgPath] of Object.entries(appJson.images)) {
-        const fullPath = path.join(__dirname, '../..', imgPath.replace(/^\//, ''));
+        const fullPath = path.join(__dirname, '../..', String(imgPath).replace(/^\//, ''));
         try {
           await fs.access(fullPath);
           console.log(`  ✅ app.json.images.${key}: ${imgPath}`);
@@ -191,7 +191,7 @@ class ImageOptimizer {
           
           if (compose.images) {
             for (const [key, imgPath] of Object.entries(compose.images)) {
-              const fullPath = path.join(driverPath, imgPath.replace(/^\.\//, ''));
+              const fullPath = path.join(driverPath, String(imgPath).replace(/^\.\//, ''));
               try {
                 await fs.access(fullPath);
               } catch (err) {

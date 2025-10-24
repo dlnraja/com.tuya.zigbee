@@ -50,7 +50,7 @@ console.log('\n');
 
 let totalCount = 0;
 Object.keys(extractedManufacturerIDs).forEach(category => {
-  console.log(`\n### ${category.replace(/_/g, ' ')}`);
+  console.log(`\n### ${String(category).replace(/_/g, ' ')}`);
   extractedManufacturerIDs[category].forEach(device => {
     console.log(`- **${device.manufacturer}** (${device.model})`);
     console.log(`  Type: ${device.type}`);

@@ -42,13 +42,13 @@ function upgradeBatteryCalculation(devicePath) {
   const simplePattern = /reportParser:\s*value\s*=>\s*Math\.max\(0,\s*Math\.min\(100,\s*value\s*\/\s*2\)\)/;
   
   if (simplePattern.test(content)) {
-    content = content.replace(simplePattern, SMART_BATTERY_CODE.replace(/\s+/g, ' '));
+    content = String(content).replace(simplePattern, String(SMART_BATTERY_CODE).replace(/\s+/g, ' '));
     upgraded = true;
   }
   
   // Add getParser if missing
   if (upgraded && !/getParser:/.test(content) && /reportParser:/.test(content)) {
-    content = content.replace(
+    content = String(content).replace(
       /(reportParser:[^}]+}),/,
       `$1,\n          ${SMART_BATTERY_GETTER},`
     );
