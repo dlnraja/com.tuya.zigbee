@@ -27,8 +27,12 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "_TYZB01_",
+      "_TZ3000_",
+      "_TZ3000_mwd3c2at",
       "_TZ3000_tk3s5tyg",
-      "_TZ3000_mwd3c2at"
+      "_TZE200_",
+      "_TZE204_"
     ],
     "endpoints": {
       "1": {
@@ -55,7 +59,9 @@
       }
     },
     "productId": [
-      "TS0205"
+      "TS0201",
+      "TS0205",
+      "TS0601"
     ]
   },
   "settings": [

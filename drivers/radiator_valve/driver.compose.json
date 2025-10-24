@@ -23,10 +23,14 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "_TZE200_",
       "_TZE200_5toc8efa",
-      "_TZE200_hue3yfsn"
+      "_TZE200_hue3yfsn",
+      "_TZE204_"
     ],
-    "productId": [],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [

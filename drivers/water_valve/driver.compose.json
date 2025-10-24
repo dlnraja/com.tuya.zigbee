@@ -25,11 +25,13 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_jthf7vb6",
-      "_TZ3000_kyb656no",
+      "_TZ3000_",
       "_TZ3000_k4ej3ww2",
-      "_TZE200_sh1btabb",
-      "_TZE200_htnnfasr"
+      "_TZ3000_kyb656no",
+      "_TZE200_",
+      "_TZE200_htnnfasr",
+      "_TZE200_jthf7vb6",
+      "_TZE200_sh1btabb"
     ],
     "endpoints": {
       "1": {
@@ -53,6 +55,7 @@
       }
     },
     "productId": [
+      "TS0207",
       "TS0601"
     ]
   },
