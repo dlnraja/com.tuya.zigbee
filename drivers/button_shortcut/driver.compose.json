@@ -20,8 +20,13 @@
     "xlarge": "drivers/button_shortcut/assets/images/xlarge.png"
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TYZB01_",
+      "_TZ3000_",
+      "_TZ3400_"
+    ],
     "productId": [
+      "TS0041",
       "TS004F",
       "TS0215A"
     ],

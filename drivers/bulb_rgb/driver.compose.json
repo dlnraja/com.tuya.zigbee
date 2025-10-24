@@ -26,11 +26,13 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "lumi.light.cwopcn02",
-      "lumi.light.cwopcn03",
+      "_TZ3000_",
+      "_TZ3000_kdpxju99",
       "_TZ3000_obacbukl",
       "_TZ3000_odygigth",
-      "_TZ3000_kdpxju99"
+      "_TZ3210_",
+      "lumi.light.cwopcn02",
+      "lumi.light.cwopcn03"
     ],
     "endpoints": {
       "1": {
@@ -56,8 +58,8 @@
       }
     },
     "productId": [
-      "TS0505B",
-      "TS0505A"
+      "TS0505A",
+      "TS0505B"
     ]
   },
   "settings": [

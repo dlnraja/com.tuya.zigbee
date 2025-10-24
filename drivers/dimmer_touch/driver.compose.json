@@ -22,13 +22,19 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "_TZ3000_",
       "_TZ3000_7ed9cqgi",
       "_TZ3000_7ysdnebc",
       "_TZ3000_92chsky7",
       "_TZ3000_ktuoyvt5",
-      "_TZ3000_vzopcetz"
+      "_TZ3000_vzopcetz",
+      "_TZ3210_",
+      "_TZE200_"
     ],
-    "productId": [],
+    "productId": [
+      "TS110E",
+      "TS110F"
+    ],
     "endpoints": {
       "1": {
         "clusters": [

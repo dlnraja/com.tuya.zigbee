@@ -25,10 +25,15 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "_TZ3000_",
       "_TZ3000_tgddllx4",
-      "_TZ3000_vmpbygs5"
+      "_TZ3000_vmpbygs5",
+      "_TZ3400_",
+      "lumi.ctrl_ln1"
     ],
     "productId": [
+      "TS0001",
+      "TS0011",
       "TS011F"
     ],
     "endpoints": {

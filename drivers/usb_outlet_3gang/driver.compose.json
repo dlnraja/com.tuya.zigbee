@@ -51,14 +51,20 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "SSM-U03",
+      "_TZ3000_",
       "_TZ3000_rdtixbnu",
       "_TZ3000_typdpbpg",
       "_TZ3000_typdpdpg",
       "_TZ3000_vtscrpmw",
       "_TZ3000_zloso4jk",
-      "SSM-U03"
+      "_TZ3400_"
     ],
-    "productId": [],
+    "productId": [
+      "TS0115",
+      "TS011F",
+      "TS0121"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
