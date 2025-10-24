@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "4.6.2",
+  "version": "4.6.3",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
@@ -3449,6 +3449,181 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=contact_sensor_basic"
+          }
+        ]
+      },
+      {
+        "id": "contact_sensor_vibration_contact_alarm_true",
+        "title": {
+          "en": "Contact opened",
+          "fr": "Contact ouvert",
+          "nl": "Contact geopend",
+          "de": "Kontakt geöffnet",
+          "it": "Contatto aperto",
+          "es": "Contacto abierto"
+        },
+        "hint": {
+          "en": "Triggered when door/window is opened",
+          "fr": "Déclenché quand la porte/fenêtre est ouverte"
+        },
+        "tokens": [
+          {
+            "name": "timestamp",
+            "type": "string",
+            "title": {
+              "en": "Timestamp",
+              "fr": "Horodatage"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=contact_sensor_vibration"
+          }
+        ]
+      },
+      {
+        "id": "contact_sensor_vibration_contact_alarm_false",
+        "title": {
+          "en": "Contact closed",
+          "fr": "Contact fermé",
+          "nl": "Contact gesloten",
+          "de": "Kontakt geschlossen",
+          "it": "Contatto chiuso",
+          "es": "Contacto cerrado"
+        },
+        "hint": {
+          "en": "Triggered when door/window is closed",
+          "fr": "Déclenché quand la porte/fenêtre est fermée"
+        },
+        "tokens": [
+          {
+            "name": "timestamp",
+            "type": "string",
+            "title": {
+              "en": "Timestamp",
+              "fr": "Horodatage"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=contact_sensor_vibration"
+          }
+        ]
+      },
+      {
+        "id": "contact_sensor_vibration_vibration_alarm_true",
+        "title": {
+          "en": "Vibration detected",
+          "fr": "Vibration détectée",
+          "nl": "Vibratie gedetecteerd",
+          "de": "Vibration erkannt",
+          "it": "Vibrazione rilevata",
+          "es": "Vibración detectada"
+        },
+        "hint": {
+          "en": "Triggered when vibration/shock is detected",
+          "fr": "Déclenché quand une vibration/choc est détectée"
+        },
+        "tokens": [
+          {
+            "name": "timestamp",
+            "type": "string",
+            "title": {
+              "en": "Timestamp",
+              "fr": "Horodatage"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=contact_sensor_vibration"
+          }
+        ]
+      },
+      {
+        "id": "contact_sensor_vibration_vibration_alarm_false",
+        "title": {
+          "en": "Vibration stopped",
+          "fr": "Vibration arrêtée",
+          "nl": "Vibratie gestopt",
+          "de": "Vibration gestoppt",
+          "it": "Vibrazione fermata",
+          "es": "Vibración detenida"
+        },
+        "tokens": [
+          {
+            "name": "timestamp",
+            "type": "string",
+            "title": {
+              "en": "Timestamp",
+              "fr": "Horodatage"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=contact_sensor_vibration"
+          }
+        ]
+      },
+      {
+        "id": "contact_sensor_vibration_battery_changed",
+        "title": {
+          "en": "Battery level changed",
+          "fr": "Niveau batterie changé",
+          "nl": "Batterijniveau gewijzigd",
+          "de": "Batteriestand geändert",
+          "it": "Livello batteria cambiato",
+          "es": "Nivel de batería cambiado"
+        },
+        "tokens": [
+          {
+            "name": "battery",
+            "type": "number",
+            "title": {
+              "en": "Battery",
+              "fr": "Batterie"
+            },
+            "example": 75
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=contact_sensor_vibration"
+          }
+        ]
+      },
+      {
+        "id": "contact_sensor_vibration_battery_low_true",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach",
+          "it": "Batteria scarica",
+          "es": "Batería baja"
+        },
+        "hint": {
+          "en": "Battery level is below the configured threshold",
+          "fr": "Niveau de batterie sous le seuil configuré"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=contact_sensor_vibration"
           }
         ]
       },
@@ -11340,6 +11515,71 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=ceiling_fan"
+          }
+        ]
+      },
+      {
+        "id": "contact_sensor_vibration_is_contact_open",
+        "title": {
+          "en": "Contact is !{{opened|closed}}",
+          "fr": "Contact est !{{ouvert|fermé}}",
+          "nl": "Contact is !{{geopend|gesloten}}",
+          "de": "Kontakt ist !{{geöffnet|geschlossen}}",
+          "it": "Contatto è !{{aperto|chiuso}}",
+          "es": "Contacto está !{{abierto|cerrado}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=contact_sensor_vibration"
+          }
+        ]
+      },
+      {
+        "id": "contact_sensor_vibration_is_vibrating",
+        "title": {
+          "en": "Vibration is !{{detected|not detected}}",
+          "fr": "Vibration est !{{détectée|non détectée}}",
+          "nl": "Vibratie is !{{gedetecteerd|niet gedetecteerd}}",
+          "de": "Vibration ist !{{erkannt|nicht erkannt}}",
+          "it": "Vibrazione è !{{rilevata|non rilevata}}",
+          "es": "Vibración está !{{detectada|no detectada}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=contact_sensor_vibration"
+          }
+        ]
+      },
+      {
+        "id": "contact_sensor_vibration_battery_below",
+        "title": {
+          "en": "Battery level is below",
+          "fr": "Niveau batterie est inférieur à",
+          "nl": "Batterijniveau is lager dan",
+          "de": "Batteriestand ist unter",
+          "it": "Livello batteria è sotto",
+          "es": "Nivel de batería está por debajo"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=contact_sensor_vibration"
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "placeholder": {
+              "en": "Percentage",
+              "fr": "Pourcentage"
+            }
           }
         ]
       },
@@ -28170,6 +28410,204 @@
     },
     {
       "name": {
+        "en": "Contact & Vibration Sensor",
+        "fr": "Capteur Contact & Vibration",
+        "nl": "Contact & Vibratiesensor",
+        "de": "Kontakt & Vibrationssensor",
+        "it": "Sensore Contatto & Vibrazione",
+        "es": "Sensor de Contacto y Vibración"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_contact",
+        "alarm_tamper",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "capabilitiesOptions": {
+        "alarm_contact": {
+          "title": {
+            "en": "Contact",
+            "fr": "Contact",
+            "nl": "Contact",
+            "de": "Kontakt",
+            "it": "Contatto",
+            "es": "Contacto"
+          }
+        },
+        "alarm_tamper": {
+          "title": {
+            "en": "Vibration",
+            "fr": "Vibration",
+            "nl": "Vibratie",
+            "de": "Vibration",
+            "it": "Vibrazione",
+            "es": "Vibración"
+          }
+        }
+      },
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "HOBEIAN",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_kmh5qpmb"
+        ],
+        "productId": [
+          "ZG-102ZM",
+          "TS0203"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1280,
+              1282
+            ],
+            "bindings": [
+              1,
+              1280
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/contact_sensor_vibration/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press and hold the button for 5 seconds until the LED blinks",
+            "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote",
+            "nl": "Houd de knop 5 seconden ingedrukt totdat de LED knippert",
+            "de": "Halten Sie die Taste 5 Sekunden lang gedrückt, bis die LED blinkt",
+            "it": "Tenere premuto il pulsante per 5 secondi fino a quando il LED lampeggia",
+            "es": "Mantenga presionado el botón durante 5 segundos hasta que el LED parpadee"
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/contact_sensor_vibration/assets/images/small.png",
+        "large": "/drivers/contact_sensor_vibration/assets/images/large.png",
+        "xlarge": "/drivers/contact_sensor_vibration/assets/images/xlarge.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "settings": [
+        {
+          "id": "sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Vibration Sensitivity",
+            "fr": "Sensibilité Vibration",
+            "nl": "Vibratie Gevoeligheid",
+            "de": "Vibrationsempfindlichkeit",
+            "it": "Sensibilità Vibrazione",
+            "es": "Sensibilidad Vibración"
+          },
+          "value": 25,
+          "min": 1,
+          "max": 50,
+          "step": 1,
+          "hint": {
+            "en": "Vibration sensitivity (1-50). Higher value = more sensitive. Changes apply only when device is active.",
+            "fr": "Sensibilité vibration (1-50). Valeur plus élevée = plus sensible. Changements appliqués uniquement quand actif.",
+            "nl": "Vibratie gevoeligheid (1-50). Hogere waarde = gevoeliger. Wijzigingen alleen actief wanneer apparaat actief is.",
+            "de": "Vibrationsempfindlichkeit (1-50). Höherer Wert = empfindlicher. Änderungen nur aktiv wenn Gerät aktiv ist.",
+            "it": "Sensibilità vibrazione (1-50). Valore più alto = più sensibile. Modifiche attive solo quando dispositivo attivo.",
+            "es": "Sensibilidad vibración (1-50). Valor más alto = más sensible. Cambios se aplican solo cuando dispositivo está activo."
+          }
+        },
+        {
+          "id": "power_source",
+          "type": "dropdown",
+          "label": {
+            "en": "Power Source",
+            "fr": "Source d'Alimentation"
+          },
+          "value": "battery",
+          "values": [
+            {
+              "id": "battery",
+              "label": {
+                "en": "Battery Powered",
+                "fr": "Sur Batterie"
+              }
+            }
+          ]
+        },
+        {
+          "id": "battery_type",
+          "type": "dropdown",
+          "label": {
+            "en": "Battery Type",
+            "fr": "Type de Batterie"
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto Detect",
+                "fr": "Détection Automatique"
+              }
+            },
+            {
+              "id": "CR2032",
+              "label": {
+                "en": "CR2032 (3V Button Cell)",
+                "fr": "CR2032 (Pile Bouton 3V)"
+              }
+            },
+            {
+              "id": "CR2450",
+              "label": {
+                "en": "CR2450 (3V Button Cell)",
+                "fr": "CR2450 (Pile Bouton 3V)"
+              }
+            },
+            {
+              "id": "AAA",
+              "label": {
+                "en": "AAA (1.5V)",
+                "fr": "AAA (1.5V)"
+              }
+            },
+            {
+              "id": "AA",
+              "label": {
+                "en": "AA (1.5V)",
+                "fr": "AA (1.5V)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "battery_low_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold (%)",
+            "fr": "Seuil Batterie Faible (%)"
+          },
+          "value": 20,
+          "min": 0,
+          "max": 50,
+          "step": 5
+        }
+      ],
+      "id": "contact_sensor_vibration"
+    },
+    {
+      "name": {
         "en": "Smart Curtain Motor (INTERNAL)"
       },
       "class": "windowcoverings",
@@ -41101,6 +41539,7 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "_TZ3000_ww6drja5",
           "_TZ3000_g5xawfcq",
           "_TZ3000_8nkb7mof",
           "_TZ3000_cehuw1lw",
@@ -56634,6 +57073,7 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "_TZ3000_kqvb5akv",
           "_TZ3000_4fjiwweb",
           "_TZ3000_ji4araar",
           "_TZ3000_o005nuxx",
