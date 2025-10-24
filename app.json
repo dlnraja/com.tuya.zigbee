@@ -11833,12 +11833,12 @@
           }
         ],
         "titleFormatted": {
-          "en": "Battery level is below",
-          "fr": "Niveau batterie est inférieur à",
-          "nl": "Batterijniveau is lager dan",
-          "de": "Batteriestand ist unter",
-          "it": "Livello batteria è sotto",
-          "es": "Nivel de batería está por debajo"
+          "en": "Battery level is below [[threshold]]%",
+          "fr": "Niveau batterie est inférieur à [[threshold]]%",
+          "nl": "Batterijniveau is lager dan [[threshold]]%",
+          "de": "Batteriestand ist unter [[threshold]]%",
+          "it": "Livello batteria è sotto [[threshold]]%",
+          "es": "Nivel de batería está por debajo de [[threshold]]%"
         }
       },
       {
