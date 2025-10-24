@@ -1,6 +1,6 @@
 'use strict';
 
-const SwitchDevice = require('../lib/SwitchDevice');
+const SwitchDevice = require('../../lib/SwitchDevice');
 
 /**
  * AvattoWallSwitch5gangDevice - Unified Hybrid Driver
