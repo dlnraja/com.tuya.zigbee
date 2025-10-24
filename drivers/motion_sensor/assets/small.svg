@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="75" height="75" viewBox="0 0 75 75" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2196F3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#03A9F4;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background circle with gradient -->
+  <circle cx="37.5" cy="37.5" r="33.75" fill="url(#grad1)" filter="url(#shadow)"/>
+  
+  <!-- Icon placeholder (contextuel selon le type) -->
+  
+      <circle cx="37.5" cy="34.5" r="7.5" fill="#FFFFFF" opacity="0.9"/>
+      <circle cx="33.75" cy="34.5" r="2.25" fill="#000000" opacity="0.3"/>
+      <circle cx="41.25" cy="34.5" r="2.25" fill="#000000" opacity="0.3"/>
+      <path d="M 33 43.5 Q 37.5 46.5 42 43.5" stroke="#FFFFFF" stroke-width="1.2" fill="none" opacity="0.9"/>
+    
+  
+  <!-- Device type text (pour les grandes images) -->
+  
+</svg>

@@ -1,0 +1,77 @@
+name: Manual Publish to Homey
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version bump type'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+      changelog:
+        description: 'Changelog for this version'
+        required: true
+        default: 'Bug fixes and improvements'
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    name: Manual Publish
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+      
+      - name: ✅ Validate App
+        uses: athombv/github-action-homey-app-validate@master
+        with:
+          level: publish
+      
+      - name: 🆙 Update Version
+        uses: athombv/github-action-homey-app-version@master
+        id: update_version
+        with:
+          version: ${{ inputs.version }}
+          changelog: ${{ inputs.changelog }}
+      
+      - name: 💾 Commit Version
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "chore: bump version to v${{ steps.update_version.outputs.version }} [skip ci]"
+            git tag "v${{ steps.update_version.outputs.version }}"
+            git push origin HEAD --tags
+          fi
+      
+      - name: 🚀 Publish to Homey
+        uses: athombv/github-action-homey-app-publish@master
+        id: publish
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+      
+      - name: 📦 Create Release
+        run: |
+          gh release create "v${{ steps.update_version.outputs.version }}" \
+            --title "v${{ steps.update_version.outputs.version }}" \
+            --notes "${{ inputs.changelog }}" \
+            --generate-notes || echo "Release skipped"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: 🎉 Success Report
+        run: |
+          echo "# 🎉 Publication Successful!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Version**: v${{ steps.update_version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Homey**: ${{ steps.publish.outputs.url }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Release**: https://github.com/${{ github.repository }}/releases/tag/v${{ steps.update_version.outputs.version }}" >> $GITHUB_STEP_SUMMARY

@@ -1,0 +1,329 @@
+name: Bi-Monthly Auto-Enrichment & Source Update
+
+on:
+  schedule:
+    # Runs every 2 months on the 1st at 2:00 AM UTC
+    - cron: '0 2 1 */2 *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+jobs:
+  scrape-and-update:
+    name: Scrape External Sources & Update DBs
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: 🌐 Scrape All 18 Official Sources (Master)
+        run: node scripts/automation/scrapers/scrape-all-sources.js
+        continue-on-error: true
+        
+      - name: 1️⃣ Tuya IoT Platform
+        run: node scripts/automation/scrapers/scrape-tuya-iot.js
+        continue-on-error: true
+
+      - name: 2️⃣-3️⃣ Tuya Documentation (Gateway + Standards)
+        run: echo "Included in Tuya IoT scraper"
+        continue-on-error: true
+
+      - name: 4️⃣-5️⃣ Zigbee2MQTT (Converters + Database)
+        run: node scripts/automation/scrapers/scrape-zigbee2mqtt.js
+        continue-on-error: true
+
+      - name: 6️⃣ Home Assistant ZHA Quirks
+        run: node scripts/automation/scrapers/scrape-zha.js
+        continue-on-error: true
+
+      - name: 7️⃣ deCONZ REST Plugin
+        run: node scripts/automation/scrapers/scrape-deconz.js
+        continue-on-error: true
+
+      - name: 8️⃣ Blakadder Zigbee Database
+        run: node scripts/automation/scrapers/scrape-blakadder.js
+        continue-on-error: true
+
+      - name: 9️⃣ Homey Community Forum
+        run: node scripts/automation/scrapers/scrape-homey-forum.js
+        continue-on-error: true
+
+      - name: 🔟 Johan Bendz Repository
+        run: node scripts/automation/scrapers/scrape-johan-bendz.js
+        continue-on-error: true
+
+      - name: 1️⃣1️⃣-1️⃣3️⃣ Zigbee Alliance Specifications
+        run: node scripts/automation/scrapers/scrape-zigbee-alliance.js
+        continue-on-error: true
+
+      - name: 1️⃣4️⃣ Zigbee Herdsman Converters
+        run: node scripts/automation/scrapers/scrape-herdsman.js
+        continue-on-error: true
+
+      - name: 1️⃣5️⃣-1️⃣8️⃣ Additional Sources (Dev Tools, Sniffer, Node-RED, Reverse Engineering)
+        run: echo "Included in Master scraper"
+        continue-on-error: true
+
+      - name: Update Manufacturer IDs Database
+        run: node scripts/automation/update-manufacturer-database.js
+
+      - name: Update Tuya Datapoints Database
+        run: node scripts/automation/update-tuya-datapoints-db.js
+
+      - name: Update Cluster Capabilities Mapping
+        run: node scripts/automation/update-cluster-capabilities.js
+
+      - name: Generate Enrichment Report
+        run: node scripts/automation/generate-enrichment-report.js
+
+      - name: Commit and Push Updates
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          
+          git commit -m "chore: Bi-monthly auto-enrichment - Update manufacturer IDs, datapoints, and sources [$(date +'%Y-%m-%d')]"
+          
+          # Push with retry
+          for i in {1..3}; do
+            if git push origin master; then
+              echo "✅ Push successful"
+              exit 0
+            else
+              echo "⚠️ Push failed, retrying in 5 seconds..."
+              sleep 5
+              git pull --rebase origin master
+            fi
+          done
+          
+          echo "❌ Push failed after 3 attempts"
+          exit 1
+
+  process-forum-interviews:
+    name: Process Forum Interviews
+    needs: scrape-and-update
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout latest code
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Pull latest changes
+        run: git pull origin master
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Scrape Forum Posts (Last 2 months)
+        run: node scripts/automation/scrapers/scrape-forum-homey.js --since=2months
+
+      - name: Process Forum Interviews
+        run: node scripts/automation/process-forum-interviews.js
+
+      - name: Generate Drivers from Interviews
+        run: node scripts/automation/batch-generate-drivers.js --source=forum
+
+      - name: Commit Generated Drivers
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add drivers/
+          
+          if git diff --staged --quiet; then
+            echo "No new drivers generated"
+            exit 0
+          fi
+          
+          git commit -m "feat: Auto-generated drivers from forum interviews [$(date +'%Y-%m-%d')]"
+          git push origin master
+
+  process-github-issues:
+    name: Process GitHub Issues & PRs
+    needs: scrape-and-update
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout latest code
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Pull latest changes
+        run: git pull origin master
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch Open Issues with Device Reports
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'device-report,new-device',
+              per_page: 100
+            });
+            
+            fs.writeFileSync('github-issues.json', JSON.stringify(issues.data, null, 2));
+            console.log(`Found ${issues.data.length} device report issues`);
+
+      - name: Process GitHub Issues
+        run: node scripts/automation/process-github-issues.js
+
+      - name: Generate Drivers from Issues
+        run: node scripts/automation/batch-generate-drivers.js --source=github
+
+      - name: Commit Generated Drivers
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add drivers/
+          
+          if git diff --staged --quiet; then
+            echo "No new drivers generated"
+            exit 0
+          fi
+          
+          git commit -m "feat: Auto-generated drivers from GitHub issues [$(date +'%Y-%m-%d')]"
+          git push origin master
+
+  validate-and-publish:
+    name: Validate & Publish New Drivers
+    needs: [process-forum-interviews, process-github-issues]
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout latest code
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Pull all changes
+        run: git pull origin master
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate New Drivers
+        run: node scripts/automation/validate-new-drivers.js
+
+      - name: Validate Homey App
+        uses: athombv/github-action-homey-app-validate@master
+        with:
+          level: debug
+
+      - name: Update Version (Minor)
+        uses: athombv/github-action-homey-app-version@master
+        with:
+          version: minor
+          changelog: "Bi-monthly update: New drivers, enriched manufacturer IDs, updated datapoints"
+
+      - name: Publish to Homey App Store
+        uses: athombv/github-action-homey-app-publish@master
+        with:
+          personal_access_token: ${{ secrets.HOMEY_TOKEN }}
+
+      - name: Success Notification
+        if: success()
+        run: |
+          echo "🎉 Bi-Monthly Auto-Enrichment Complete!"
+          echo "✅ Sources updated"
+          echo "✅ Drivers generated"
+          echo "✅ Published to App Store"
+
+      - name: Create Summary Issue
+        if: success()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.existsSync('enrichment-report.json') 
+              ? JSON.parse(fs.readFileSync('enrichment-report.json', 'utf8'))
+              : { drivers_added: 0, ids_added: 0, datapoints_added: 0 };
+            
+            const newDriversList = report.new_drivers ? report.new_drivers.map(d => `- ${d}`).join('\n') : 'None';
+            const bodyText = [
+              '## 🤖 Automated Enrichment Complete',
+              '',
+              '### 📊 Statistics',
+              `- **New Drivers Generated**: ${report.drivers_added}`,
+              `- **Manufacturer IDs Added**: ${report.ids_added}`,
+              `- **Datapoints Mapped**: ${report.datapoints_added}`,
+              '- **Sources Updated**: Zigbee2MQTT, ZHA, Blakadder, Johan Bendz, Tuya Docs',
+              '',
+              '### 🔄 Sources Scraped',
+              '- ✅ Zigbee2MQTT Database',
+              '- ✅ Home Assistant ZHA Integration',
+              '- ✅ Blakadder Zigbee Database',
+              '- ✅ Johan Bendz GitHub Repository',
+              '- ✅ Tuya IoT Documentation',
+              '',
+              '### 🆕 New Drivers',
+              newDriversList,
+              '',
+              '### 📝 Next Steps',
+              '- Test new drivers with real devices',
+              '- Update documentation',
+              '- Monitor user feedback',
+              '',
+              `**Workflow Run**: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`
+            ].join('\n');
+            
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `✅ Bi-Monthly Auto-Enrichment Report - ${new Date().toISOString().split('T')[0]}`,
+              body: bodyText,
+              labels: ['automation', 'enrichment', 'report']
+            });

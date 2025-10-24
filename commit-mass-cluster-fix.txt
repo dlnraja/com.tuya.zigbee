@@ -1,0 +1,110 @@
+fix(critical): Convert ALL numeric cluster IDs to CLUSTER constants (SDK3)
+
+MASS CONVERSION - 140 DRIVERS UPDATED
+======================================
+
+CRITICAL SDK3 REQUIREMENT
+==========================
+Homey SDK3 requires using CLUSTER constants from zigbee-clusters library.
+Numeric cluster IDs cause "TypeError: expected_cluster_id_number" runtime errors.
+
+ROOT CAUSE
+==========
+Drivers were using legacy numeric cluster IDs:
+❌ this.registerCapability('measure_battery', 1, {...})
+❌ cluster: 1026,
+❌ this.registerCapability('onoff', 6, {...})
+
+SDK3 REQUIREMENT
+================
+Must use CLUSTER constants from zigbee-clusters:
+✅ this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {...})
+✅ cluster: CLUSTER.TEMPERATURE_MEASUREMENT,
+✅ this.registerCapability('onoff', CLUSTER.ON_OFF, {...})
+
+AUTOMATED FIX
+=============
+Created script: scripts/fixes/FIX_ALL_CLUSTER_IDS.js
+- Scans all drivers/*/device.js files
+- Converts numeric IDs to CLUSTER constants
+- 140 files automatically corrected
+
+CLUSTER MAPPINGS APPLIED
+=========================
+0 → CLUSTER.BASIC
+1 → CLUSTER.POWER_CONFIGURATION (battery)
+3 → CLUSTER.IDENTIFY
+6 → CLUSTER.ON_OFF (onoff capability)
+8 → CLUSTER.LEVEL_CONTROL (dim capability)
+257 → CLUSTER.DOOR_LOCK
+258 → CLUSTER.WINDOW_COVERING
+513 → CLUSTER.THERMOSTAT
+516 → CLUSTER.FAN_CONTROL
+768 → CLUSTER.COLOR_CONTROL (light_hue, light_saturation)
+1024 → CLUSTER.ILLUMINANCE_MEASUREMENT (measure_luminance)
+1026 → CLUSTER.TEMPERATURE_MEASUREMENT (measure_temperature)
+1027 → CLUSTER.PRESSURE_MEASUREMENT (measure_pressure)
+1029 → CLUSTER.RELATIVE_HUMIDITY_MEASUREMENT (measure_humidity)
+1280 → CLUSTER.IAS_ZONE (alarm_motion, alarm_contact)
+1794 → CLUSTER.METERING (meter_power)
+2820 → CLUSTER.ELECTRICAL_MEASUREMENT (measure_power, measure_voltage)
+
+AFFECTED DRIVER CATEGORIES
+===========================
+✅ All battery sensors (140+ drivers)
+✅ All switches (ON_OFF cluster)
+✅ All dimmers (LEVEL_CONTROL cluster)
+✅ All temperature sensors (TEMPERATURE_MEASUREMENT)
+✅ All humidity sensors (RELATIVE_HUMIDITY_MEASUREMENT)
+✅ All motion sensors (IAS_ZONE)
+✅ All illuminance sensors (ILLUMINANCE_MEASUREMENT)
+✅ All energy monitors (METERING, ELECTRICAL_MEASUREMENT)
+
+VALIDATION
+==========
+✅ homey app validate --level publish: PASSED
+✅ Only non-blocking warnings (titleFormatted for flow cards)
+✅ All 140 drivers now SDK3 compliant
+
+IMPACT
+======
+This fixes the "expected_cluster_id_number" error for:
+- Peter van Werkhoven's HOBEIAN Multisensor (already fixed separately)
+- ALL other battery-powered devices
+- ALL other Zigbee devices using standard clusters
+
+BENEFITS
+========
+1. Runtime Stability: No more TypeError crashes
+2. SDK3 Compliance: Following official Homey guidelines
+3. Future-Proof: Compatible with future SDK3 updates
+4. Type Safety: CLUSTER constants provide better IDE autocomplete
+5. Maintainability: Constants are self-documenting vs numeric IDs
+
+TECHNICAL REFERENCE
+===================
+Official Homey SDK3 Docs:
+- https://apps.developer.homey.app/wireless/zigbee
+- https://athombv.github.io/node-homey-zigbeedriver/ZigBeeDevice.html
+- https://github.com/athombv/node-zigbee-clusters
+
+Zigbee Cluster Library Specification:
+- https://zigbeealliance.org/wp-content/uploads/2019/12/07-5123-06-zigbee-cluster-library-specification.pdf
+
+FILES MODIFIED
+==============
+140 driver device.js files + 1 automation script
+Total lines changed: ~280 replacements
+
+BACKWARD COMPATIBILITY
+======================
+✅ NO BREAKING CHANGES for users
+✅ Existing devices continue to work
+✅ Only internal code structure changed
+✅ Functionality remains identical
+
+This is a CRITICAL infrastructure update that ensures ALL Zigbee drivers
+follow SDK3 best practices and avoid runtime TypeErrors.
+
+Related: Fix for Peter's issue (commit bd2ec4c5f)
+Automated: scripts/fixes/FIX_ALL_CLUSTER_IDS.js

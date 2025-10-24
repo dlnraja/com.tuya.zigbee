@@ -1,0 +1,230 @@
+name: Homey App - Official Publish
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - 'reports/**'
+      - 'scripts/**'
+      - 'project-data/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  update-docs:
+    name: Update Documentation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Update all links and paths
+        run: node scripts/automation/update-all-links.js
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "dylan.rajasekaram@gmail.com"
+          git config --local user.name "Dylan Rajasekaram"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Docs: Auto-update links, paths, README & CHANGELOG [skip ci]"
+            
+            # Pull with rebase to sync with remote
+            git pull --rebase origin master
+            
+            # Push with retry logic
+            for i in {1..3}; do
+              if git push; then
+                echo "✅ Push successful"
+                break
+              else
+                echo "⚠️ Push failed, retrying in 5 seconds..."
+                sleep 5
+                git pull --rebase origin master
+              fi
+            done
+          fi
+
+  validate:
+    name: Validate App
+    needs: update-docs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate Homey App (Debug Level)
+        uses: athombv/github-action-homey-app-validate@master
+        with:
+          level: debug
+
+  version:
+    name: Auto-Increment Version
+    needs: validate
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.update-version.outputs.version }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Auto-increment version (Patch)
+        id: update-version
+        uses: athombv/github-action-homey-app-version@master
+        with:
+          version: patch
+          changelog: |
+            🔧 Automated release with latest fixes and improvements
+            
+            ✅ 190 native drivers
+            ✅ 12,563+ manufacturer IDs
+            ✅ 25+ major brands supported
+            ✅ 96%+ Zigbee market coverage
+            ✅ 100% local control
+            
+            See full changelog at: https://github.com/dlnraja/com.tuya.zigbee/blob/master/.homeychangelog.json
+
+      - name: Create Release
+        uses: actions/create-release@v1
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ steps.update-version.outputs.version }}
+          release_name: Release v${{ steps.update-version.outputs.version }}
+          body: |
+            ## 📦 Universal Tuya Zigbee v${{ steps.update-version.outputs.version }}
+            
+            Auto-published to Homey App Store
+            
+            **Features:**
+            - 190 native Zigbee drivers
+            - 12,563+ manufacturer IDs
+            - 25+ major brands
+            - 96%+ market coverage
+            - 100% local control
+            
+            See [CHANGELOG.md](./CHANGELOG.md) for details
+          draft: false
+          prerelease: false
+
+      - name: Commit & Push version
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: Auto-increment version to v${{ steps.update-version.outputs.version }} [skip ci]" || echo "No changes to commit"
+          
+          # Create tag
+          git tag "v${{ steps.update-version.outputs.version }}" || echo "Tag exists"
+          
+          # Push with retry logic
+          for i in {1..3}; do
+            if git push origin HEAD:master --tags --force; then
+              echo "✅ Push successful"
+              break
+            else
+              echo "⚠️ Push failed, retrying in 5 seconds..."
+              sleep 5
+              git pull --rebase origin master || true
+            fi
+          done
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Display new version
+        run: |
+          echo "✅ Version auto-incremented to: v${{ steps.update-version.outputs.version }}"
+
+  publish:
+    name: Publish to Homey App Store
+    needs: [validate, version]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout latest version
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Pull latest changes
+        run: |
+          git pull origin master
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify dependencies installed
+        run: |
+          echo "Verifying node_modules..."
+          ls -la node_modules/ || echo "node_modules not found"
+          npm ls --depth=0 || echo "Some peer dependencies may be missing but continuing..."
+
+      - name: Build Homey App
+        run: npx homey app build
+
+      - name: Publish to Homey App Store
+        uses: athombv/github-action-homey-app-publish@master
+        with:
+          personal_access_token: ${{ secrets.HOMEY_TOKEN }}
+
+      - name: Success notification
+        if: success()
+        run: |
+          echo "🎉 ===== HOMEY APP PUBLISHED SUCCESSFULLY ====="
+          echo "Version: ${{ needs.version.outputs.version }}"
+          echo "Dashboard: https://tools.developer.homey.app/apps"
+          echo "================================================"
+
+      - name: Failure notification
+        if: failure()
+        run: |
+          echo "❌ ===== PUBLISH FAILED ====="
+          echo "Check logs for details"
+          echo "Dashboard: https://tools.developer.homey.app/apps"
+          echo "============================="

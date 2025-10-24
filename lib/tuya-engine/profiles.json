@@ -1,0 +1,293 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "description": "Device profiles with capabilities and cluster mappings",
+    "last_updated": "2025-10-16",
+    "total": 25
+  },
+  "profiles": {
+    "smart_plug_metering": {
+      "name": "Smart Plug with Energy Monitoring",
+      "class": "socket",
+      "capabilities": ["onoff", "measure_power", "measure_current", "measure_voltage", "meter_power"],
+      "clusters": {
+        "onOff": 6,
+        "electricalMeasurement": 2820,
+        "metering": 1794
+      },
+      "flows": ["onoff_changed", "power_threshold"],
+      "settings": ["power_threshold", "overload_protection"]
+    },
+    "smart_plug_basic": {
+      "name": "Smart Plug Basic (No Metering)",
+      "class": "socket",
+      "capabilities": ["onoff"],
+      "clusters": {
+        "onOff": 6
+      },
+      "flows": ["onoff_changed"]
+    },
+    "gas_detector_tuya": {
+      "name": "Gas Detector (Tuya Proprietary)",
+      "class": "sensor",
+      "capabilities": ["alarm_co", "alarm_gas", "measure_gas_concentration"],
+      "clusters": {
+        "tuyaCluster": 61184
+      },
+      "datapoints": {
+        "1": "gas_alarm",
+        "2": "gas_value",
+        "13": "self_test"
+      },
+      "flows": ["gas_alarm_triggered", "gas_level_threshold"]
+    },
+    "temp_humidity_sensor": {
+      "name": "Temperature & Humidity Sensor",
+      "class": "sensor",
+      "capabilities": ["measure_temperature", "measure_humidity", "measure_battery"],
+      "clusters": {
+        "temperatureMeasurement": 1026,
+        "relativeHumidity": 1029,
+        "powerConfiguration": 1
+      },
+      "flows": ["temperature_changed", "humidity_changed"]
+    },
+    "contact_sensor": {
+      "name": "Door/Window Contact Sensor",
+      "class": "sensor",
+      "capabilities": ["alarm_contact", "measure_battery"],
+      "clusters": {
+        "iasZone": 1280,
+        "powerConfiguration": 1
+      },
+      "flows": ["contact_alarm"]
+    },
+    "motion_sensor": {
+      "name": "Motion Sensor (PIR)",
+      "class": "sensor",
+      "capabilities": ["alarm_motion", "measure_battery"],
+      "clusters": {
+        "iasZone": 1280,
+        "occupancySensing": 1030,
+        "powerConfiguration": 1
+      },
+      "flows": ["motion_alarm", "occupancy_detected"]
+    },
+    "motion_temp_humidity_illumination": {
+      "name": "Multi-Sensor (Motion + Temp + Humidity + Light)",
+      "class": "sensor",
+      "capabilities": ["alarm_motion", "measure_temperature", "measure_humidity", "measure_luminance", "measure_battery"],
+      "clusters": {
+        "iasZone": 1280,
+        "temperatureMeasurement": 1026,
+        "relativeHumidity": 1029,
+        "illuminanceMeasurement": 1024,
+        "powerConfiguration": 1
+      },
+      "flows": ["motion_alarm", "temperature_changed", "humidity_changed", "luminance_changed"]
+    },
+    "curtain_motor": {
+      "name": "Curtain/Blind Motor",
+      "class": "windowcoverings",
+      "capabilities": ["windowcoverings_state", "windowcoverings_set", "measure_battery"],
+      "clusters": {
+        "windowCovering": 258,
+        "powerConfiguration": 1
+      },
+      "flows": ["position_changed", "fully_open", "fully_closed"]
+    },
+    "sos_button": {
+      "name": "SOS Emergency Button",
+      "class": "button",
+      "capabilities": ["alarm_generic", "measure_battery"],
+      "clusters": {
+        "iasZone": 1280,
+        "powerConfiguration": 1
+      },
+      "flows": ["button_pressed", "emergency_triggered"]
+    },
+    "smoke_detector": {
+      "name": "Smoke Detector",
+      "class": "sensor",
+      "capabilities": ["alarm_smoke", "alarm_battery", "measure_battery"],
+      "clusters": {
+        "iasZone": 1280,
+        "powerConfiguration": 1
+      },
+      "flows": ["smoke_alarm"]
+    },
+    "water_leak_detector": {
+      "name": "Water Leak Detector",
+      "class": "sensor",
+      "capabilities": ["alarm_water", "measure_battery"],
+      "clusters": {
+        "iasZone": 1280,
+        "powerConfiguration": 1
+      },
+      "flows": ["water_alarm"]
+    },
+    "dimmer_bulb": {
+      "name": "Dimmable Light Bulb",
+      "class": "light",
+      "capabilities": ["onoff", "dim"],
+      "clusters": {
+        "onOff": 6,
+        "levelControl": 8
+      },
+      "flows": ["onoff_changed", "dim_changed"]
+    },
+    "color_bulb": {
+      "name": "Color Light Bulb (RGB + Temperature)",
+      "class": "light",
+      "capabilities": ["onoff", "dim", "light_hue", "light_saturation", "light_temperature", "light_mode"],
+      "clusters": {
+        "onOff": 6,
+        "levelControl": 8,
+        "colorControl": 768
+      },
+      "flows": ["onoff_changed", "dim_changed", "color_changed"]
+    },
+    "thermostat_trv": {
+      "name": "Thermostatic Radiator Valve",
+      "class": "thermostat",
+      "capabilities": ["target_temperature", "measure_temperature", "thermostat_mode", "measure_battery"],
+      "clusters": {
+        "thermostat": 513,
+        "temperatureMeasurement": 1026,
+        "powerConfiguration": 1
+      },
+      "datapoints": {
+        "16": "target_temp",
+        "24": "current_temp",
+        "2": "mode"
+      },
+      "flows": ["temperature_changed", "mode_changed"]
+    },
+    "wall_switch_1gang": {
+      "name": "Wall Switch 1 Gang",
+      "class": "socket",
+      "capabilities": ["onoff"],
+      "clusters": {
+        "onOff": 6
+      },
+      "flows": ["onoff_changed"]
+    },
+    "wall_switch_2gang": {
+      "name": "Wall Switch 2 Gang",
+      "class": "socket",
+      "capabilities": ["onoff.gang1", "onoff.gang2"],
+      "clusters": {
+        "onOff": 6
+      },
+      "endpoints": {
+        "gang1": 1,
+        "gang2": 2
+      },
+      "flows": ["gang1_changed", "gang2_changed"]
+    },
+    "wall_switch_3gang": {
+      "name": "Wall Switch 3 Gang",
+      "class": "socket",
+      "capabilities": ["onoff.gang1", "onoff.gang2", "onoff.gang3"],
+      "clusters": {
+        "onOff": 6
+      },
+      "endpoints": {
+        "gang1": 1,
+        "gang2": 2,
+        "gang3": 3
+      },
+      "flows": ["gang1_changed", "gang2_changed", "gang3_changed"]
+    },
+    "wireless_switch_1button": {
+      "name": "Wireless Switch 1 Button",
+      "class": "button",
+      "capabilities": ["measure_battery"],
+      "clusters": {
+        "onOff": 6,
+        "powerConfiguration": 1
+      },
+      "flows": ["button_press", "button_hold", "button_release"]
+    },
+    "wireless_switch_2button": {
+      "name": "Wireless Switch 2 Button",
+      "class": "button",
+      "capabilities": ["measure_battery"],
+      "clusters": {
+        "onOff": 6,
+        "powerConfiguration": 1
+      },
+      "flows": ["button1_press", "button1_hold", "button2_press", "button2_hold"]
+    },
+    "air_quality_sensor": {
+      "name": "Air Quality Sensor (PM2.5, CO2, TVOC)",
+      "class": "sensor",
+      "capabilities": ["measure_pm25", "measure_co2", "measure_tvoc", "measure_temperature", "measure_humidity"],
+      "clusters": {
+        "temperatureMeasurement": 1026,
+        "relativeHumidity": 1029,
+        "tuyaCluster": 61184
+      },
+      "datapoints": {
+        "18": "pm25",
+        "19": "co2",
+        "21": "tvoc"
+      },
+      "flows": ["air_quality_threshold", "poor_air_quality"]
+    },
+    "siren_alarm": {
+      "name": "Siren Alarm",
+      "class": "other",
+      "capabilities": ["onoff", "alarm_generic", "volume_set"],
+      "clusters": {
+        "onOff": 6,
+        "iasWd": 1282
+      },
+      "flows": ["alarm_triggered", "alarm_stopped"]
+    },
+    "vibration_sensor": {
+      "name": "Vibration/Shock Sensor",
+      "class": "sensor",
+      "capabilities": ["alarm_tamper", "measure_battery"],
+      "clusters": {
+        "iasZone": 1280,
+        "powerConfiguration": 1
+      },
+      "flows": ["vibration_detected", "tamper_alarm"]
+    },
+    "smart_lock": {
+      "name": "Smart Lock",
+      "class": "lock",
+      "capabilities": ["locked", "alarm_tamper", "measure_battery"],
+      "clusters": {
+        "doorLock": 257,
+        "powerConfiguration": 1
+      },
+      "flows": ["locked_changed", "unlocked", "tamper_detected"]
+    },
+    "irrigation_valve": {
+      "name": "Water Valve / Irrigation Controller",
+      "class": "other",
+      "capabilities": ["onoff", "measure_battery"],
+      "clusters": {
+        "onOff": 6,
+        "powerConfiguration": 1
+      },
+      "flows": ["valve_opened", "valve_closed"]
+    },
+    "presence_sensor_mmwave": {
+      "name": "Presence Sensor (mmWave Radar)",
+      "class": "sensor",
+      "capabilities": ["alarm_motion", "measure_distance", "target_distance"],
+      "clusters": {
+        "occupancySensing": 1030,
+        "tuyaCluster": 61184
+      },
+      "datapoints": {
+        "1": "presence",
+        "9": "distance"
+      },
+      "flows": ["presence_detected", "presence_cleared"]
+    }
+  }
+}

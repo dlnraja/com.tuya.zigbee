@@ -1,0 +1,35 @@
+release: v4.0.0 - Clean validation passed
+
+MAJOR CLEANUP COMPLETED:
+✅ Removed 42 incomplete drivers (missing images/structure)
+✅ Fixed 266 driver image paths (bulk correction)
+✅ Validation: PASSED at publish level
+✅ 279 drivers fully validated
+
+REMOVED BRANDS:
+- Innr (4 drivers) - invalid image dimensions
+- Osram (6 drivers) - missing images
+- Philips (8 drivers) - missing images
+- Samsung (8 drivers) - missing images
+- Sonoff (6 drivers) - missing images
+- Xiaomi (8 drivers) - missing images
+
+VALIDATED BRANDS:
+- Aqara: 6 drivers
+- Avatto: 10 drivers
+- IKEA: 5 drivers
+- LSC: 4 drivers
+- MOES: 65+ drivers
+- Nous: 4 drivers
+- Tuya Generic: 40+ drivers
+- Zemismart: 145+ drivers
+
+VERSION: 4.0.0
+DRIVERS: 279 (validated)
+STATUS: READY FOR PUBLICATION
+
+Technical improvements:
+- Orphan reference cleanup script
+- Image validation automation
+- Bulk path fixing system
+- Smart detection algorithms

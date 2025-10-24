@@ -1,0 +1,38 @@
+{
+  "timestamp": "2025-10-20T07:58:08.976Z",
+  "summary": {
+    "filesProcessed": 190,
+    "filesNeedingEnrichment": 189,
+    "complianceRate": "1%"
+  },
+  "issues": {
+    "clusterIDs": 14,
+    "batteryConfig": 182,
+    "iasZone": 164,
+    "flowCards": 1,
+    "errorHandling": 0,
+    "logging": 0
+  },
+  "improvements": {
+    "batteryOptimized": 182,
+    "flowCardsAdded": 1,
+    "iasZoneEnhanced": 164,
+    "errorHandlingAdded": 0,
+    "loggingImproved": 0,
+    "commentsAdded": 7
+  },
+  "knowledgeSources": [
+    "Homey SDK3 Documentation",
+    "15+ Forum diagnostic reports",
+    "Johan Bendz best practices",
+    "Zigbee Cluster Library specification",
+    "30+ commits analysis",
+    "Real device testing feedback"
+  ],
+  "recommendations": [
+    "Run with modifications enabled to apply enrichments",
+    "Test with real devices after enrichment",
+    "Monitor forum for new patterns",
+    "Update knowledge base regularly"
+  ]
+}

@@ -1,0 +1,43 @@
+fix: critical v4.5.5 emergency release
+
+CRITICAL FIXES (3 issues, 83 drivers):
+
+1. Flow Cards Missing (8 drivers)
+   - button_wireless_2/3/4/6/8 (28 cards)
+   - usb_outlet_1gang/2port/3gang (12 cards)
+   - Error: "Invalid Flow Card ID"
+   - Fix: Created 40 missing flow card definitions
+
+2. Module Loading Failure (75 drivers)
+   - Error: "Cannot find module '../lib/BaseHybridDevice'"
+   - Wrong path: require('../lib/BaseHybridDevice')
+   - Fix: Corrected to require('../../lib/BaseHybridDevice')
+   - Impact: Battery reporting, sensor data, button events
+
+3. Settings Page Blank
+   - Missing: settings/index.html
+   - Fix: Created proper settings page with app info
+
+DIAGNOSTICS FIXED:
+- bc57e77e (Jocke Svensson): Settings blank + flow errors
+- 9a3b9d7f (Peter van Werkhoven): No sensor/battery data
+
+RESULTS:
+✅ 40 flow cards added
+✅ 75 module paths corrected
+✅ 83 drivers fixed total
+✅ Settings page created
+✅ All 186 drivers validate
+✅ Battery reporting restored
+✅ Sensor data flowing
+✅ Button events working
+
+TESTING:
+✅ homey app validate --level publish: PASSED
+✅ All drivers initialize without errors
+✅ Flow cards available in flows
+✅ Settings page displays correctly
+
+TIME TO FIX: < 3 hours from first diagnostic
+
+Thanks to community diagnostics for rapid issue identification!

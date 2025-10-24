@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#607D8B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#78909C;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background circle with gradient -->
+  <circle cx="250" cy="250" r="225" fill="url(#grad1)" filter="url(#shadow)"/>
+  
+  <!-- Icon placeholder (contextuel selon le type) -->
+  
+      <rect x="185" y="220" width="35" height="60" rx="6" fill="#FFFFFF" opacity="0.9"/>
+      <rect x="232.5" y="220" width="35" height="60" rx="6" fill="#FFFFFF" opacity="0.9"/>
+      <rect x="280" y="220" width="35" height="60" rx="6" fill="#FFFFFF" opacity="0.9"/>
+    
+  
+  <!-- Device type text (pour les grandes images) -->
+  
+  <text x="250" y="460" 
+        font-family="Arial, sans-serif" 
+        font-size="24" 
+        font-weight="bold" 
+        text-anchor="middle" 
+        fill="#FFFFFF" 
+        opacity="0.9">
+    Wireless Button 3-Gang
+  </text>
+</svg>

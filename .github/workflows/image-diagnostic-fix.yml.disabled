@@ -1,0 +1,341 @@
+name: Image Diagnostic & Auto-Fix
+
+on:
+  schedule:
+    # Tous les jours à 4h UTC
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+    inputs:
+      auto_fix:
+        description: 'Auto-fix issues found'
+        required: false
+        default: true
+        type: boolean
+      check_live:
+        description: 'Check live dashboard/test-channel'
+        required: false
+        default: true
+        type: boolean
+
+jobs:
+  # ============================================
+  # Diagnostic Complet Images
+  # ============================================
+  diagnostic:
+    name: Image Diagnostic
+    runs-on: ubuntu-latest
+    outputs:
+      issues_found: ${{ steps.diag.outputs.issues_count }}
+      critical_issues: ${{ steps.diag.outputs.critical_count }}
+    
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+      
+      - name: 🔧 Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: 📦 Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick
+          npm install puppeteer
+      
+      - name: 🔍 Run Image Diagnostic
+        id: diag
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          HOMEY_APP_ID: ${{ secrets.HOMEY_APP_ID || 'com.dlnraja.tuya.zigbee' }}
+          CHECK_LIVE: ${{ github.event.inputs.check_live || 'true' }}
+        run: |
+          echo "🔍 Starting image diagnostic..."
+          node scripts/diagnostics/IMAGE_DIAGNOSTIC_AGENT.js
+          
+          # Extract metrics
+          if [ -f "docs/reports/IMAGE_DIAGNOSTIC_REPORT.json" ]; then
+            ISSUES=$(cat docs/reports/IMAGE_DIAGNOSTIC_REPORT.json | jq '.summary.totalIssues')
+            CRITICAL=$(cat docs/reports/IMAGE_DIAGNOSTIC_REPORT.json | jq '.summary.criticalIssues')
+            
+            echo "issues_count=$ISSUES" >> $GITHUB_OUTPUT
+            echo "critical_count=$CRITICAL" >> $GITHUB_OUTPUT
+            
+            echo "📊 Found $ISSUES issues ($CRITICAL critical)"
+          else
+            echo "issues_count=0" >> $GITHUB_OUTPUT
+            echo "critical_count=0" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: 📤 Upload Diagnostic Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: image-diagnostic-report
+          path: |
+            docs/reports/IMAGE_DIAGNOSTIC_REPORT.*
+            docs/screenshots/image-diagnostics/
+          retention-days: 30
+      
+      - name: 📊 Diagnostic Summary
+        run: |
+          echo "## 🔍 Image Diagnostic Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ -f "docs/reports/IMAGE_DIAGNOSTIC_REPORT.json" ]; then
+            cat docs/reports/IMAGE_DIAGNOSTIC_REPORT.md >> $GITHUB_STEP_SUMMARY
+          else
+            echo "✅ No diagnostic report generated" >> $GITHUB_STEP_SUMMARY
+          fi
+
+  # ============================================
+  # Auto-Fix Issues
+  # ============================================
+  auto-fix:
+    name: Auto-Fix Image Issues
+    needs: diagnostic
+    if: needs.diagnostic.outputs.issues_found > 0 && github.event.inputs.auto_fix == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+      
+      - name: 📥 Download Diagnostic
+        uses: actions/download-artifact@v4
+        with:
+          name: image-diagnostic-report
+          path: docs/
+      
+      - name: 🔧 Setup
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick
+          npm install sharp
+      
+      - name: 🤖 Auto-Fix Images
+        run: |
+          cat > auto-fix-images.js << 'FIX_SCRIPT'
+          const fs = require('fs');
+          const { execSync } = require('child_process');
+          const sharp = require('sharp');
+          
+          class AutoFixer {
+            async run() {
+              console.log('🤖 Auto-fixing image issues...');
+              
+              const report = JSON.parse(
+                fs.readFileSync('docs/reports/IMAGE_DIAGNOSTIC_REPORT.json', 'utf8')
+              );
+              
+              let fixed = 0;
+              
+              for (const correction of report.corrections) {
+                if (!correction.automated) {
+                  console.log(`⏭️  Skipping non-automated: ${correction.action}`);
+                  continue;
+                }
+                
+                console.log(`\\n🔧 Applying: ${correction.action}`);
+                
+                try {
+                  switch (correction.action) {
+                    case 'resize-images':
+                      fixed += await this.resizeImages(correction);
+                      break;
+                    
+                    case 'generate-missing-images':
+                      fixed += await this.generateMissingImages(correction);
+                      break;
+                    
+                    case 'replace-placeholders':
+                      fixed += await this.replacePlaceholders(correction);
+                      break;
+                  }
+                } catch (error) {
+                  console.error(`  ❌ Error: ${error.message}`);
+                }
+              }
+              
+              console.log(`\\n✅ Fixed ${fixed} issues!`);
+              
+              // Save fix report
+              fs.writeFileSync(
+                'docs/reports/IMAGE_FIX_REPORT.json',
+                JSON.stringify({
+                  timestamp: new Date().toISOString(),
+                  fixed: fixed,
+                  corrections: report.corrections
+                }, null, 2)
+              );
+            }
+            
+            async resizeImages(correction) {
+              let fixed = 0;
+              
+              for (const detail of correction.details || []) {
+                if (!detail.file || !fs.existsSync(detail.file)) continue;
+                
+                const [width, height] = detail.to.split('x').map(Number);
+                
+                try {
+                  await sharp(detail.file)
+                    .resize(width, height, {
+                      fit: 'contain',
+                      background: { r: 255, g: 255, b: 255, alpha: 1 }
+                    })
+                    .png()
+                    .toFile(detail.file + '.tmp');
+                  
+                  fs.renameSync(detail.file + '.tmp', detail.file);
+                  console.log(`  ✅ Resized: ${detail.file} to ${detail.to}`);
+                  fixed++;
+                } catch (error) {
+                  console.error(`  ❌ Failed to resize ${detail.file}: ${error.message}`);
+                }
+              }
+              
+              return fixed;
+            }
+            
+            async generateMissingImages(correction) {
+              // Call generation script
+              try {
+                execSync('node scripts/generation/GENERATE_MISSING_IMAGES.js', {
+                  stdio: 'inherit'
+                });
+                return correction.affectedFiles?.length || 0;
+              } catch (error) {
+                console.error(`  ❌ Generation failed: ${error.message}`);
+                return 0;
+              }
+            }
+            
+            async replacePlaceholders(correction) {
+              // Similar to generate missing
+              return this.generateMissingImages(correction);
+            }
+          }
+          
+          const fixer = new AutoFixer();
+          fixer.run().catch(console.error);
+          FIX_SCRIPT
+          
+          node auto-fix-images.js
+      
+      - name: 💾 Commit Fixes
+        run: |
+          git config user.name "Image Fix Bot"
+          git config user.email "image-fix@github.com"
+          
+          if [ -n "$(git status --porcelain)" ]; then
+            git add assets/ drivers/ docs/reports/
+            git commit -m "🔧 Auto-fix image issues - $(date +%Y-%m-%d)
+            
+            Automated fixes applied by Image Diagnostic Agent:
+            - Resized incorrect dimensions
+            - Generated missing images
+            - Replaced placeholders
+            
+            See docs/reports/IMAGE_FIX_REPORT.json for details"
+            
+            git push
+            echo "✅ Fixes committed and pushed"
+          else
+            echo "ℹ️  No changes to commit"
+          fi
+      
+      - name: 📤 Upload Fix Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: image-fix-report
+          path: docs/reports/IMAGE_FIX_REPORT.json
+
+  # ============================================
+  # Create Issue if Critical
+  # ============================================
+  alert:
+    name: Alert on Critical Issues
+    needs: diagnostic
+    if: needs.diagnostic.outputs.critical_issues > 0
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Download Report
+        uses: actions/download-artifact@v4
+        with:
+          name: image-diagnostic-report
+          path: docs/
+      
+      - name: 🚨 Create GitHub Issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            
+            let reportMd = 'No report available';
+            try {
+              reportMd = fs.readFileSync('docs/reports/IMAGE_DIAGNOSTIC_REPORT.md', 'utf8');
+            } catch (error) {
+              console.error('Could not read report:', error.message);
+            }
+            
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: '🚨 Critical Image Issues Found - Requires Attention',
+              body: `## Critical Image Issues Detected\\n\\n${reportMd}\\n\\n---\\n\\nGenerated by automated image diagnostic.`,
+              labels: ['bug', 'images', 'critical', 'auto-detected']
+            });
+  
+  # ============================================
+  # Post-Fix Verification
+  # ============================================
+  verify:
+    name: Verify Fixes
+    needs: [auto-fix]
+    if: always() && needs.auto-fix.result == 'success'
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout (latest with fixes)
+        uses: actions/checkout@v4
+        with:
+          ref: master
+      
+      - name: 🔧 Setup
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: 📦 Install
+        run: |
+          sudo apt-get install -y imagemagick
+          npm install puppeteer
+      
+      - name: 🔍 Re-run Diagnostic
+        run: |
+          node scripts/diagnostics/IMAGE_DIAGNOSTIC_AGENT.js
+          
+          if [ -f "docs/reports/IMAGE_DIAGNOSTIC_REPORT.json" ]; then
+            REMAINING=$(cat docs/reports/IMAGE_DIAGNOSTIC_REPORT.json | jq '.summary.totalIssues')
+            echo "📊 Remaining issues after fixes: $REMAINING"
+            
+            if [ "$REMAINING" -eq 0 ]; then
+              echo "✅ All issues fixed!"
+            else
+              echo "⚠️  $REMAINING issues remain"
+            fi
+          fi
+      
+      - name: 📊 Verification Summary
+        run: |
+          echo "## 🔍 Post-Fix Verification" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ -f "docs/reports/IMAGE_DIAGNOSTIC_REPORT.json" ]; then
+            REMAINING=$(cat docs/reports/IMAGE_DIAGNOSTIC_REPORT.json | jq '.summary.totalIssues')
+            echo "**Remaining Issues:** $REMAINING" >> $GITHUB_STEP_SUMMARY
+          fi

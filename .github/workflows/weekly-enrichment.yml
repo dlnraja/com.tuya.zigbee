@@ -1,0 +1,75 @@
+name: Weekly Auto-Enrichment
+
+on:
+  schedule:
+    # Tous les lundis à 2h du matin (UTC)
+    - cron: '0 2 * * 1'
+  workflow_dispatch: # Permet exécution manuelle
+
+jobs:
+  auto-enrichment:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Run MEGA_SCRAPER_V2
+        run: |
+          echo "🔍 Scraping all sources (Forum, GitHub, Databases)..."
+          node scripts/enrichment/MEGA_SCRAPER_V2.js
+      
+      - name: Run ENRICH_ALL_DRIVERS
+        run: |
+          echo "🔧 Analyzing and enriching drivers..."
+          node scripts/enrichment/ENRICH_ALL_DRIVERS.js
+      
+      - name: Check for changes
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Commit enrichment reports
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          git add docs/enrichment/
+          git commit -m "chore: weekly enrichment reports $(date +%Y-%m-%d)
+          
+          🤖 AUTOMATED WEEKLY ENRICHMENT
+          
+          - Forum scraping completed
+          - GitHub sources analyzed
+          - Device databases checked
+          - Enrichment plan generated
+          
+          See docs/enrichment/ for details
+          
+          [weekly-auto-enrichment]"
+          git push
+      
+      - name: Create summary
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          echo "## 📊 Weekly Enrichment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Scraping completed" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Enrichment analysis done" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Reports committed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "📄 Check \`docs/enrichment/\` for detailed reports" >> $GITHUB_STEP_SUMMARY

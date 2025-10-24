@@ -1,0 +1,239 @@
+name: 🚀 Auto-Publish to Homey App Store
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'app.json'
+      - 'drivers/**'
+      - 'lib/**'
+      - 'assets/**'
+      - 'locales/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: homey-publish-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    name: Validate Before Publish
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.get_version.outputs.version }}
+      should_publish: ${{ steps.check_version.outputs.should_publish }}
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Homey CLI
+        run: npm install -g homey
+
+      - name: Get app version
+        id: get_version
+        run: |
+          VERSION=$(node -p "require('./app.json').version")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "📦 Version: $VERSION"
+
+      - name: Check if version changed
+        id: check_version
+        run: |
+          git fetch origin master
+          if git diff HEAD^ HEAD -- app.json | grep -q '"version"'; then
+            echo "should_publish=true" >> $GITHUB_OUTPUT
+            echo "✅ Version changed, will publish"
+          else
+            echo "should_publish=false" >> $GITHUB_OUTPUT
+            echo "ℹ️ Version unchanged, skipping publish"
+          fi
+
+      - name: Clean build
+        run: rm -rf .homeybuild
+
+      - name: Validate app (publish level)
+        id: validate
+        run: |
+          homey app validate --level publish 2>&1 | tee validation.log
+          if grep -q "validated successfully" validation.log; then
+            echo "✅ Validation PASSED"
+            echo "status=success" >> $GITHUB_OUTPUT
+            exit 0
+          else
+            echo "❌ Validation FAILED"
+            echo "status=failed" >> $GITHUB_OUTPUT
+            cat validation.log
+            exit 1
+          fi
+
+      - name: Upload validation log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-log
+          path: validation.log
+          retention-days: 30
+
+  publish:
+    name: Publish to Homey App Store
+    runs-on: ubuntu-latest
+    needs: validate
+    if: needs.validate.outputs.should_publish == 'true'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Homey CLI
+        run: npm install -g homey
+
+      - name: Configure Homey authentication
+        run: |
+          mkdir -p ~/.homey
+          echo "${{ secrets.HOMEY_TOKEN }}" > ~/.homey/token
+        env:
+          HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
+
+      - name: Publish to Homey App Store
+        id: publish
+        run: |
+          echo "🚀 Publishing version ${{ needs.validate.outputs.version }}..."
+          
+          # Try to publish with timeout
+          timeout 300 homey app publish --skip-build 2>&1 | tee publish.log || PUBLISH_RESULT=$?
+          
+          if [ ${PUBLISH_RESULT:-0} -eq 0 ]; then
+            if grep -qE "(successfully|published)" publish.log; then
+              echo "status=success" >> $GITHUB_OUTPUT
+              echo "✅ Successfully published to Homey App Store!"
+              exit 0
+            fi
+          fi
+          
+          # Check if it's a "no changes" error (not a real failure)
+          if grep -qE "(no changes|already published|up to date)" publish.log; then
+            echo "status=no_changes" >> $GITHUB_OUTPUT
+            echo "ℹ️ No changes to publish (app already up to date)"
+            exit 0
+          fi
+          
+          # Real failure
+          echo "status=failed" >> $GITHUB_OUTPUT
+          echo "❌ Publish failed"
+          cat publish.log
+          exit 1
+
+      - name: Upload publish log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: publish-log
+          path: publish.log
+          retention-days: 30
+
+      - name: Create success comment
+        if: steps.publish.outputs.status == 'success'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const version = '${{ needs.validate.outputs.version }}';
+            const message = `## ✅ Successfully Published to Homey App Store
+            
+            **Version:** ${version}
+            **Commit:** ${{ github.sha }}
+            **Time:** ${new Date().toISOString()}
+            
+            The app has been published and should be available on the Homey App Store within a few minutes.`;
+            
+            github.rest.repos.createCommitComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              commit_sha: context.sha,
+              body: message
+            });
+
+      - name: Create issue on failure
+        if: failure() && steps.publish.outputs.status == 'failed'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const version = '${{ needs.validate.outputs.version }}';
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `❌ Homey App Store Publish Failed - v${version}`,
+              body: `## Publish Failed
+              
+              **Version:** ${version}
+              **Commit:** ${{ github.sha }}
+              **Workflow:** [Run ${{ github.run_number }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+              
+              The automatic publish to Homey App Store has failed. Please check the workflow logs for details.
+              
+              ### Next Steps
+              1. Review the publish log artifact
+              2. Check for validation errors
+              3. Manually publish if needed: \`homey app publish\`
+              
+              **Auto-generated by GitHub Actions**`,
+              labels: ['bug', 'automated', 'publish-failure']
+            });
+
+  summary:
+    name: Publish Summary
+    runs-on: ubuntu-latest
+    needs: [validate, publish]
+    if: always()
+    
+    steps:
+      - name: Create workflow summary
+        run: |
+          echo "# 🚀 Homey App Store Publish Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** ${{ needs.validate.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ needs.validate.result }}" = "success" ]; then
+            echo "✅ **Validation:** Passed" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ **Validation:** Failed" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          if [ "${{ needs.validate.outputs.should_publish }}" = "true" ]; then
+            if [ "${{ needs.publish.result }}" = "success" ]; then
+              echo "✅ **Publish:** Success" >> $GITHUB_STEP_SUMMARY
+            elif [ "${{ needs.publish.result }}" = "skipped" ]; then
+              echo "⏭️ **Publish:** Skipped" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "❌ **Publish:** Failed" >> $GITHUB_STEP_SUMMARY
+            fi
+          else
+            echo "⏭️ **Publish:** Skipped (version unchanged)" >> $GITHUB_STEP_SUMMARY
+          fi
