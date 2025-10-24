@@ -3,25 +3,25 @@
 const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
- * LonsonhoContactSensorBasicDevice - Unified Hybrid Driver
+ * ContactSensorBasicDevice - Unified Hybrid Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class LonsonhoContactSensorBasicDevice extends BaseHybridDevice {
+class ContactSensorBasicDevice extends BaseHybridDevice {
 
   async onNodeInit() {
-    this.log('LonsonhoContactSensorBasicDevice initializing...');
+    this.log('ContactSensorBasicDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit().catch(err => this.error(err));
     
-    this.log('LonsonhoContactSensorBasicDevice initialized - Power source:', this.powerSource || 'unknown');
+    this.log('ContactSensorBasicDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
-    this.log('LonsonhoContactSensorBasicDevice deleted');
+    this.log('ContactSensorBasicDevice deleted');
     await super.onDeleted().catch(err => this.error(err));
   }
 }
 
-module.exports = LonsonhoContactSensorBasicDevice;
+module.exports = ContactSensorBasicDevice;

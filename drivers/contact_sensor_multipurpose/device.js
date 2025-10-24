@@ -3,25 +3,25 @@
 const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
- * GenericSamsungMultipurposeSensorDevice - Unified Hybrid Driver
+ * MultipurposeSensorDevice - Unified Hybrid Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class GenericSamsungMultipurposeSensorDevice extends BaseHybridDevice {
+class MultipurposeSensorDevice extends BaseHybridDevice {
 
   async onNodeInit() {
-    this.log('GenericSamsungMultipurposeSensorDevice initializing...');
+    this.log('MultipurposeSensorDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit().catch(err => this.error(err));
     
-    this.log('GenericSamsungMultipurposeSensorDevice initialized - Power source:', this.powerSource || 'unknown');
+    this.log('MultipurposeSensorDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
-    this.log('GenericSamsungMultipurposeSensorDevice deleted');
+    this.log('MultipurposeSensorDevice deleted');
     await super.onDeleted().catch(err => this.error(err));
   }
 }
 
-module.exports = GenericSamsungMultipurposeSensorDevice;
+module.exports = MultipurposeSensorDevice;

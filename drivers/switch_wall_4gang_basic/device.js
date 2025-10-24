@@ -3,25 +3,25 @@
 const SwitchDevice = require('../../lib/SwitchDevice');
 
 /**
- * AvattoWallSwitch4gangDevice - Unified Hybrid Driver
+ * WallSwitch4gangDevice - Unified Hybrid Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class AvattoWallSwitch4gangDevice extends SwitchDevice {
+class WallSwitch4gangDevice extends SwitchDevice {
 
   async onNodeInit() {
-    this.log('AvattoWallSwitch4gangDevice initializing...');
+    this.log('WallSwitch4gangDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit().catch(err => this.error(err));
     
-    this.log('AvattoWallSwitch4gangDevice initialized - Power source:', this.powerSource || 'unknown');
+    this.log('WallSwitch4gangDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
-    this.log('AvattoWallSwitch4gangDevice deleted');
+    this.log('WallSwitch4gangDevice deleted');
     await super.onDeleted().catch(err => this.error(err));
   }
 }
 
-module.exports = AvattoWallSwitch4gangDevice;
+module.exports = WallSwitch4gangDevice;

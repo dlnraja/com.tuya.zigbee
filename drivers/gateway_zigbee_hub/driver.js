@@ -2,11 +2,11 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class NousZigbeeGatewayHubDriver extends ZigBeeDriver {
+class ZigbeeGatewayHubDriver extends ZigBeeDriver {
 
   async onInit() {
-    this.log('NousZigbeeGatewayHubDriver initialized');
+    this.log('ZigbeeGatewayHubDriver initialized');
   }
 }
 
-module.exports = NousZigbeeGatewayHubDriver;
+module.exports = ZigbeeGatewayHubDriver;

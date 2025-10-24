@@ -2,11 +2,11 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class PhilipsMotionSensorDriver extends ZigBeeDriver {
+class MotionSensorDriver extends ZigBeeDriver {
 
   async onInit() {
-    this.log('PhilipsMotionSensorDriver initialized');
+    this.log('MotionSensorDriver initialized');
   }
 }
 
-module.exports = PhilipsMotionSensorDriver;
+module.exports = MotionSensorDriver;

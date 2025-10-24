@@ -2,11 +2,11 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class ZemismartWirelessSwitch8buttonDriver extends ZigBeeDriver {
+class WirelessSwitch8buttonDriver extends ZigBeeDriver {
 
   async onInit() {
-    this.log('ZemismartWirelessSwitch8buttonDriver initialized');
+    this.log('WirelessSwitch8buttonDriver initialized');
   }
 }
 
-module.exports = ZemismartWirelessSwitch8buttonDriver;
+module.exports = WirelessSwitch8buttonDriver;

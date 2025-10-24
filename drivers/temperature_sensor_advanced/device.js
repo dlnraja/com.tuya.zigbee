@@ -3,25 +3,25 @@
 const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
- * ZemismartTemperatureSensorAdvancedDevice - Unified Hybrid Driver
+ * TemperatureSensorAdvancedDevice - Unified Hybrid Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class ZemismartTemperatureSensorAdvancedDevice extends BaseHybridDevice {
+class TemperatureSensorAdvancedDevice extends BaseHybridDevice {
 
   async onNodeInit() {
-    this.log('ZemismartTemperatureSensorAdvancedDevice initializing...');
+    this.log('TemperatureSensorAdvancedDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit().catch(err => this.error(err));
     
-    this.log('ZemismartTemperatureSensorAdvancedDevice initialized - Power source:', this.powerSource || 'unknown');
+    this.log('TemperatureSensorAdvancedDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
-    this.log('ZemismartTemperatureSensorAdvancedDevice deleted');
+    this.log('TemperatureSensorAdvancedDevice deleted');
     await super.onDeleted().catch(err => this.error(err));
   }
 }
 
-module.exports = ZemismartTemperatureSensorAdvancedDevice;
+module.exports = TemperatureSensorAdvancedDevice;

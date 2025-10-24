@@ -3,25 +3,25 @@
 const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
- * ZemismartLockSmartDevice - Unified Hybrid Driver
+ * LockSmartDevice - Unified Hybrid Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class ZemismartLockSmartDevice extends BaseHybridDevice {
+class LockSmartDevice extends BaseHybridDevice {
 
   async onNodeInit() {
-    this.log('ZemismartLockSmartDevice initializing...');
+    this.log('LockSmartDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit().catch(err => this.error(err));
     
-    this.log('ZemismartLockSmartDevice initialized - Power source:', this.powerSource || 'unknown');
+    this.log('LockSmartDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
-    this.log('ZemismartLockSmartDevice deleted');
+    this.log('LockSmartDevice deleted');
     await super.onDeleted().catch(err => this.error(err));
   }
 }
 
-module.exports = ZemismartLockSmartDevice;
+module.exports = LockSmartDevice;
