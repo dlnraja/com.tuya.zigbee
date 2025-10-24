@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75">
+  <defs>
+    <linearGradient id="grad-temperature_sensor-75" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF9800;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF5722;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow-temperature_sensor-75">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.5"/>
+      <feOffset dx="0" dy="1.5" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background with gradient -->
+  <rect width="75" height="75" fill="url(#grad-temperature_sensor-75)" rx="6.25"/>
+  
+  <!-- Emoji Icon -->
+  <text x="50%" y="50%" font-size="35" text-anchor="middle" dominant-baseline="middle" filter="url(#shadow-temperature_sensor-75)">🌡️</text>
+  
+  
+</svg>
