@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="1000" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad_1000" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8BC34A;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1000" height="1000" fill="url(#grad_1000)" rx="100"/>
+  
+  <!-- Icon -->
+  <text x="500" y="560" font-size="400" text-anchor="middle" opacity="0.9">🎚️</text>
+  
+  <!-- Label (only for large sizes) -->
+  <text x="500" y="928" font-size="28.8" text-anchor="middle" fill="white" opacity="0.7" font-family="Arial, sans-serif">Dimmer Wireless</text>
+</svg>
