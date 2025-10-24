@@ -24,11 +24,14 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_d0yu2xgi",
+      "_TYZB01_",
+      "_TZ3000_",
       "_TZ3000_26fmupbb",
+      "_TZ3000_d0yu2xgi",
       "_TZE200_t1blo2bj"
     ],
     "productId": [
+      "TS0219",
       "TS0601_siren"
     ],
     "endpoints": {

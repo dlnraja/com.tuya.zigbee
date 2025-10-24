@@ -8,7 +8,10 @@
     "dim"
   ],
   "zigbee": {
-    "productId": [],
+    "productId": [
+      "TS0001",
+      "TS0011"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -66,7 +69,10 @@
       }
     },
     "manufacturerName": [
-      "_TZ3000_mdj7kra9"
+      "_TZ3000_",
+      "_TZ3000_mdj7kra9",
+      "_TZ3400_",
+      "lumi.ctrl_ln1"
     ]
   },
   "images": {
