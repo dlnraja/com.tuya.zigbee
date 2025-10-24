@@ -144,11 +144,27 @@
         "de": "Kontakt ist !{{geöffnet|geschlossen}}",
         "it": "Contatto è !{{aperto|chiuso}}",
         "es": "Contacto está !{{abierto|cerrado}}"
+      },
+      "titleFormatted": {
+        "en": "Contact is !{{opened|closed}}",
+        "fr": "Contact est !{{ouvert|fermé}}",
+        "nl": "Contact is !{{geopend|gesloten}}",
+        "de": "Kontakt ist !{{geöffnet|geschlossen}}",
+        "it": "Contatto è !{{aperto|chiuso}}",
+        "es": "Contacto está !{{abierto|cerrado}}"
       }
     },
     {
       "id": "contact_sensor_vibration_is_vibrating",
       "title": {
+        "en": "Vibration is !{{detected|not detected}}",
+        "fr": "Vibration est !{{détectée|non détectée}}",
+        "nl": "Vibratie is !{{gedetecteerd|niet gedetecteerd}}",
+        "de": "Vibration ist !{{erkannt|nicht erkannt}}",
+        "it": "Vibrazione è !{{rilevata|non rilevata}}",
+        "es": "Vibración está !{{detectada|no detectada}}"
+      },
+      "titleFormatted": {
         "en": "Vibration is !{{detected|not detected}}",
         "fr": "Vibration est !{{détectée|non détectée}}",
         "nl": "Vibratie is !{{gedetecteerd|niet gedetecteerd}}",
@@ -178,9 +194,24 @@
             "en": "Percentage",
             "fr": "Pourcentage"
           },
-          "title": "Threshold"
+          "title": {
+            "en": "Threshold",
+            "fr": "Seuil",
+            "nl": "Drempel",
+            "de": "Schwellenwert",
+            "it": "Soglia",
+            "es": "Umbral"
+          }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Battery level is below",
+        "fr": "Niveau batterie est inférieur à",
+        "nl": "Batterijniveau is lager dan",
+        "de": "Batteriestand ist unter",
+        "it": "Livello batteria è sotto",
+        "es": "Nivel de batería está por debajo"
+      }
     }
   ]
 }
