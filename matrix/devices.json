@@ -2068,9 +2068,12 @@
       "_TZ3000_odygigth",
       "_TZ3000_kdpxju99"
     ],
-    "models": [],
+    "models": [
+      "TS0505B",
+      "TS0505A"
+    ],
     "manufacturer_count": 5,
-    "model_count": 0,
+    "model_count": 2,
     "capabilities": [
       "onoff",
       "dim",
@@ -3168,9 +3171,11 @@
       "_TZ3000_tk3s5tyg",
       "_TZ3000_mwd3c2at"
     ],
-    "models": [],
+    "models": [
+      "TS0601"
+    ],
     "manufacturer_count": 3,
-    "model_count": 0,
+    "model_count": 1,
     "capabilities": [
       "alarm_motion",
       "alarm_co",
@@ -3192,9 +3197,11 @@
       "_TZ3000_tk3s5tyg",
       "_TZ3000_mwd3c2at"
     ],
-    "models": [],
+    "models": [
+      "TS0601"
+    ],
     "manufacturer_count": 5,
-    "model_count": 0,
+    "model_count": 1,
     "capabilities": [
       "alarm_co",
       "alarm_co2",
@@ -3348,9 +3355,11 @@
       "_TZ3000_odygigth",
       "_TZ3000_kdpxju99"
     ],
-    "models": [],
+    "models": [
+      "TS0505B"
+    ],
     "manufacturer_count": 3,
-    "model_count": 0,
+    "model_count": 1,
     "capabilities": [
       "onoff",
       "dim",
@@ -3372,9 +3381,11 @@
       "_TZ3000_odygigth",
       "_TZ3000_kdpxju99"
     ],
-    "models": [],
+    "models": [
+      "TS0505B"
+    ],
     "manufacturer_count": 4,
-    "model_count": 0,
+    "model_count": 1,
     "capabilities": [
       "alarm_generic"
     ],
@@ -3390,9 +3401,11 @@
       "_TZ3000_odygigth",
       "_TZ3000_kdpxju99"
     ],
-    "models": [],
+    "models": [
+      "TS0505B"
+    ],
     "manufacturer_count": 3,
-    "model_count": 0,
+    "model_count": 1,
     "capabilities": [
       "onoff",
       "dim",
@@ -3413,9 +3426,11 @@
       "_TZ3000_odygigth",
       "_TZ3000_kdpxju99"
     ],
-    "models": [],
+    "models": [
+      "TS0505B"
+    ],
     "manufacturer_count": 3,
-    "model_count": 0,
+    "model_count": 1,
     "capabilities": [
       "alarm_generic"
     ],
@@ -3437,9 +3452,11 @@
       "_TZ3000_odygigth",
       "_TZ3000_kdpxju99"
     ],
-    "models": [],
+    "models": [
+      "TS0505B"
+    ],
     "manufacturer_count": 9,
-    "model_count": 0,
+    "model_count": 1,
     "capabilities": [
       "onoff",
       "light_hue",
@@ -3648,9 +3665,11 @@
       "_TZ3000_msl6wxk9",
       "_TZE200_3towulqd"
     ],
-    "models": [],
+    "models": [
+      "TS0601"
+    ],
     "manufacturer_count": 6,
-    "model_count": 0,
+    "model_count": 1,
     "capabilities": [
       "alarm_motion",
       "alarm_battery",
@@ -3671,9 +3690,11 @@
       "_TZ3000_msl6wxk9",
       "_TZE200_3towulqd"
     ],
-    "models": [],
+    "models": [
+      "TS0202"
+    ],
     "manufacturer_count": 6,
-    "model_count": 0,
+    "model_count": 1,
     "capabilities": [
       "alarm_motion",
       "measure_temperature",
@@ -3697,9 +3718,11 @@
       "_TZ3000_msl6wxk9",
       "_TZE200_3towulqd"
     ],
-    "models": [],
+    "models": [
+      "TS0202"
+    ],
     "manufacturer_count": 6,
-    "model_count": 0,
+    "model_count": 1,
     "capabilities": [
       "alarm_contact",
       "alarm_battery",
@@ -3748,9 +3771,11 @@
       "_TZ3000_msl6wxk9",
       "_TZE200_3towulqd"
     ],
-    "models": [],
+    "models": [
+      "TS0202"
+    ],
     "manufacturer_count": 6,
-    "model_count": 0,
+    "model_count": 1,
     "capabilities": [
       "alarm_motion",
       "alarm_battery",
@@ -3771,9 +3796,11 @@
       "_TZ3000_msl6wxk9",
       "_TZE200_3towulqd"
     ],
-    "models": [],
+    "models": [
+      "TS0601"
+    ],
     "manufacturer_count": 6,
-    "model_count": 0,
+    "model_count": 1,
     "capabilities": [
       "alarm_motion",
       "measure_luminance",
@@ -3795,9 +3822,11 @@
       "_TZ3000_msl6wxk9",
       "_TZE200_3towulqd"
     ],
-    "models": [],
+    "models": [
+      "TS0601"
+    ],
     "manufacturer_count": 6,
-    "model_count": 0,
+    "model_count": 1,
     "capabilities": [
       "alarm_motion",
       "alarm_battery",
@@ -3818,9 +3847,11 @@
       "_TZ3000_msl6wxk9",
       "_TZE200_3towulqd"
     ],
-    "models": [],
+    "models": [
+      "TS0601"
+    ],
     "manufacturer_count": 6,
-    "model_count": 0,
+    "model_count": 1,
     "capabilities": [
       "alarm_motion",
       "alarm_battery",
@@ -4366,9 +4397,11 @@
       "_TZ3000_tk3s5tyg",
       "_TZ3000_mwd3c2at"
     ],
-    "models": [],
+    "models": [
+      "TS0205"
+    ],
     "manufacturer_count": 9,
-    "model_count": 0,
+    "model_count": 1,
     "capabilities": [
       "alarm_smoke",
       "alarm_fire",
@@ -4386,9 +4419,11 @@
       "_TZ3000_tk3s5tyg",
       "_TZ3000_mwd3c2at"
     ],
-    "models": [],
+    "models": [
+      "TS0205"
+    ],
     "manufacturer_count": 2,
-    "model_count": 0,
+    "model_count": 1,
     "capabilities": [
       "alarm_motion",
       "measure_temperature",
@@ -4409,9 +4444,11 @@
       "_TZ3000_tk3s5tyg",
       "_TZ3000_mwd3c2at"
     ],
-    "models": [],
+    "models": [
+      "TS0205"
+    ],
     "manufacturer_count": 2,
-    "model_count": 0,
+    "model_count": 1,
     "capabilities": [
       "measure_temperature",
       "measure_humidity",
@@ -6062,9 +6099,11 @@
       "_TZE200_sh1btabb",
       "_TZE200_htnnfasr"
     ],
-    "models": [],
+    "models": [
+      "TS0207"
+    ],
     "manufacturer_count": 4,
-    "model_count": 0,
+    "model_count": 1,
     "capabilities": [
       "alarm_motion",
       "measure_temperature",
@@ -6087,9 +6126,11 @@
       "_TZE200_sh1btabb",
       "_TZE200_htnnfasr"
     ],
-    "models": [],
+    "models": [
+      "TS0601"
+    ],
     "manufacturer_count": 5,
-    "model_count": 0,
+    "model_count": 1,
     "capabilities": [
       "alarm_motion",
       "measure_temperature",
@@ -6110,9 +6151,11 @@
       "_TZE200_sh1btabb",
       "_TZE200_htnnfasr"
     ],
-    "models": [],
+    "models": [
+      "TS0601"
+    ],
     "manufacturer_count": 4,
-    "model_count": 0,
+    "model_count": 1,
     "capabilities": [
       "alarm_motion",
       "measure_temperature",
@@ -6133,9 +6176,11 @@
       "_TZE200_sh1btabb",
       "_TZE200_htnnfasr"
     ],
-    "models": [],
+    "models": [
+      "TS0601"
+    ],
     "manufacturer_count": 4,
-    "model_count": 0,
+    "model_count": 1,
     "capabilities": [
       "onoff",
       "measure_water",
