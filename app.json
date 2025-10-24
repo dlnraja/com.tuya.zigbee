@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "4.7.0",
+  "version": "4.7.1",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
@@ -11624,6 +11624,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -11635,6 +11639,10 @@
       {
         "id": "bulb_rgb_smart_bulb_rgb_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -11652,6 +11660,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -11663,6 +11675,10 @@
       {
         "id": "bulb_tunable_white_bulb_tunable_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -11680,6 +11696,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -11694,6 +11714,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -11705,6 +11729,10 @@
       {
         "id": "ceiling_fan_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -11726,6 +11754,14 @@
           "it": "Contatto è !{{aperto|chiuso}}",
           "es": "Contacto está !{{abierto|cerrado}}"
         },
+        "titleFormatted": {
+          "en": "Contact is !{{opened|closed}}",
+          "fr": "Contact est !{{ouvert|fermé}}",
+          "nl": "Contact is !{{geopend|gesloten}}",
+          "de": "Kontakt ist !{{geöffnet|geschlossen}}",
+          "it": "Contatto è !{{aperto|chiuso}}",
+          "es": "Contacto está !{{abierto|cerrado}}"
+        },
         "args": [
           {
             "type": "device",
@@ -11737,6 +11773,14 @@
       {
         "id": "contact_sensor_vibration_is_vibrating",
         "title": {
+          "en": "Vibration is !{{detected|not detected}}",
+          "fr": "Vibration est !{{détectée|non détectée}}",
+          "nl": "Vibratie is !{{gedetecteerd|niet gedetecteerd}}",
+          "de": "Vibration ist !{{erkannt|nicht erkannt}}",
+          "it": "Vibrazione è !{{rilevata|non rilevata}}",
+          "es": "Vibración está !{{detectada|no detectada}}"
+        },
+        "titleFormatted": {
           "en": "Vibration is !{{detected|not detected}}",
           "fr": "Vibration est !{{détectée|non détectée}}",
           "nl": "Vibratie is !{{gedetecteerd|niet gedetecteerd}}",
@@ -11778,13 +11822,32 @@
               "en": "Percentage",
               "fr": "Pourcentage"
             },
-            "title": "Threshold"
+            "title": {
+              "en": "Threshold",
+              "fr": "Seuil",
+              "nl": "Drempel",
+              "de": "Schwellenwert",
+              "it": "Soglia",
+              "es": "Umbral"
+            }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Battery level is below",
+          "fr": "Niveau batterie est inférieur à",
+          "nl": "Batterijniveau is lager dan",
+          "de": "Batteriestand ist unter",
+          "it": "Livello batteria è sotto",
+          "es": "Nivel de batería está por debajo"
+        }
       },
       {
         "id": "dimmer_touch_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -11802,6 +11865,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -11813,6 +11880,10 @@
       {
         "id": "dimmer_wall_dimmer_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -11830,6 +11901,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -11841,6 +11916,10 @@
       {
         "id": "dimmer_wireless_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -11894,6 +11973,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -11905,6 +11988,10 @@
       {
         "id": "hvac_dehumidifier_dehumidifier_hybrid_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -11922,6 +12009,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -11933,6 +12024,10 @@
       {
         "id": "led_strip_advanced_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -11961,6 +12056,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -11986,6 +12085,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -11997,6 +12100,10 @@
       {
         "id": "lock_smart_is_locked",
         "title": {
+          "en": "Is !{{locked|unlocked}}",
+          "fr": "Est !{{verrouillé|déverrouillé}}"
+        },
+        "titleFormatted": {
           "en": "Is !{{locked|unlocked}}",
           "fr": "Est !{{verrouillé|déverrouillé}}"
         },
@@ -12014,6 +12121,10 @@
           "en": "Is !{{locked|unlocked}}",
           "fr": "Est !{{verrouillé|déverrouillé}}"
         },
+        "titleFormatted": {
+          "en": "Is !{{locked|unlocked}}",
+          "fr": "Est !{{verrouillé|déverrouillé}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12025,6 +12136,10 @@
       {
         "id": "module_dimmer_timer_dimmer_switch_timer_module_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -12053,6 +12168,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12064,6 +12183,10 @@
       {
         "id": "plug_energy_advanced_energy_plug_advanced_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -12081,6 +12204,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12092,6 +12219,10 @@
       {
         "id": "plug_energy_monitor_advanced_energy_monitoring_plug_advanced_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -12109,6 +12240,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12120,6 +12255,10 @@
       {
         "id": "plug_outdoor_outdoor_plug_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -12137,6 +12276,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12151,6 +12294,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12162,6 +12309,10 @@
       {
         "id": "plug_power_meter_16a_smart_plug_power_meter_16a_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -12190,6 +12341,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12201,6 +12356,10 @@
       {
         "id": "plug_smart_basic_plug_basic_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -12218,6 +12377,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12229,6 +12392,10 @@
       {
         "id": "switch_basic_1gang_switch_1gang_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -12246,6 +12413,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12257,6 +12428,10 @@
       {
         "id": "switch_basic_5gang_switch_5gang_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -12274,6 +12449,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12285,6 +12464,10 @@
       {
         "id": "switch_generic_3gang_smart_switch_3gang_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -12302,6 +12485,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12313,6 +12500,10 @@
       {
         "id": "switch_hybrid_2gang_smart_switch_2gang_hybrid_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -12330,6 +12521,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12344,6 +12539,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12355,6 +12554,10 @@
       {
         "id": "switch_hybrid_4gang_smart_switch_4gang_hybrid_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -12383,6 +12586,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12394,6 +12601,10 @@
       {
         "id": "switch_smart_3gang_smart_switch_3gang_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -12411,6 +12622,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12422,6 +12637,10 @@
       {
         "id": "switch_touch_1gang_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -12439,6 +12658,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12450,6 +12673,10 @@
       {
         "id": "switch_touch_2gang_touch_switch_2gang_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -12467,6 +12694,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12478,6 +12709,10 @@
       {
         "id": "switch_touch_3gang_basic_touch_switch_3gang_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -12495,6 +12730,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12506,6 +12745,10 @@
       {
         "id": "switch_wall_1gang_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -12523,6 +12766,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12534,6 +12781,10 @@
       {
         "id": "switch_wall_2gang_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -12551,6 +12802,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12562,6 +12817,10 @@
       {
         "id": "switch_wall_2gang_smart_smart_switch_2gang_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -12579,6 +12838,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12590,6 +12853,10 @@
       {
         "id": "switch_wall_3gang_basic_wall_switch_3gang_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -12607,6 +12874,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12618,6 +12889,10 @@
       {
         "id": "switch_wall_4gang_basic_wall_switch_4gang_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -12635,6 +12910,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12646,6 +12925,10 @@
       {
         "id": "switch_wall_5gang_wall_switch_5gang_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -12663,6 +12946,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12674,6 +12961,10 @@
       {
         "id": "switch_wall_6gang_basic_wall_switch_6gang_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -12691,6 +12982,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12702,6 +12997,10 @@
       {
         "id": "switch_wall_8gang_smart_smart_switch_8gang_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -12730,6 +13029,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12741,6 +13044,10 @@
       {
         "id": "switch_wireless_2gang_wireless_switch_2gang_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -12758,6 +13065,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12772,6 +13083,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12783,6 +13098,10 @@
       {
         "id": "switch_wireless_6gang_wireless_switch_6gang_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
@@ -12931,6 +13250,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12945,6 +13268,10 @@
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
+        "titleFormatted": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
         "args": [
           {
             "type": "device",
@@ -12956,6 +13283,10 @@
       {
         "id": "water_valve_smart_hybrid_is_on",
         "title": {
+          "en": "Is turned !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}"
+        },
+        "titleFormatted": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
         },
