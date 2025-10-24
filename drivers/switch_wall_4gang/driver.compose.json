@@ -25,18 +25,6 @@
       }
     }
   },
-  "energy": {
-    "approximation": {
-      "usageConstant": 0.5
-    },
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "AAA",
-      "AA",
-      "CR123A"
-    ]
-  },
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_4fjiwweb",
