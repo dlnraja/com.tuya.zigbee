@@ -1,1051 +1,1491 @@
 {
-  "date": "2025-10-24T01:04:52.131Z",
-  "totalDrivers": 162,
-  "valid": 45,
-  "issues": 117,
-  "details": [
+  "date": "2025-10-24T08:55:09.033Z",
+  "stats": {
+    "total": 162,
+    "withImages": 162,
+    "missingSmall": 0,
+    "missingLarge": 0,
+    "missingXlarge": 0,
+    "wrongFormat": 0,
+    "tooSmall": 0,
+    "tooBig": 0
+  },
+  "issues": [
+    {
+      "driver": "air_quality_comprehensive",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "air_quality_monitor",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: icon.svg",
+      "file": "icon.svg"
+    },
+    {
+      "driver": "air_quality_monitor",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "air_quality_monitor",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
+    },
+    {
+      "driver": "air_quality_monitor_advanced",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
     {
       "driver": "air_quality_pm25",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "blind_roller_controller",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "bulb_dimmable",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "bulb_rgb",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "bulb_rgbw",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "bulb_tunable_white",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "bulb_white",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "button_emergency_advanced",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "button_emergency_sos",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "button_remote_1",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "button_remote_2",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "button_remote_3",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "button_remote_4",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "button_remote_6",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "button_remote_8",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "button_shortcut",
-      "issue": "missing_sizes",
-      "missing": [
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: icon.svg",
+      "file": "icon.svg"
+    },
+    {
+      "driver": "button_shortcut",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "button_wireless",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "button_wireless_1",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "button_wireless_1",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
+    },
+    {
+      "driver": "button_wireless_2",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "button_wireless_2",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
+    },
+    {
+      "driver": "button_wireless_3",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "button_wireless_3",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
+    },
+    {
+      "driver": "button_wireless_4",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "button_wireless_4",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
     },
     {
       "driver": "button_wireless_6",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "button_wireless_6",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
     },
     {
       "driver": "button_wireless_8",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "button_wireless_8",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
     },
     {
       "driver": "ceiling_fan",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "climate_monitor",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "climate_monitor_co2",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "climate_monitor_temp_humidity",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "climate_sensor_soil",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "climate_sensor_temp_humidity_advanced",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "contact_sensor",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "contact_sensor_basic",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "contact_sensor_multipurpose",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "curtain_motor",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: icon.svg",
+      "file": "icon.svg"
+    },
+    {
+      "driver": "curtain_motor",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "curtain_motor",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
     },
     {
       "driver": "curtain_motor_advanced",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "dimmer_touch",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "dimmer_touch_1gang",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "dimmer_wall",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "dimmer_wall_1gang",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "dimmer_wireless",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "doorbell",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "doorbell_button",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: icon.svg",
+      "file": "icon.svg"
+    },
+    {
+      "driver": "doorbell_button",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "doorbell_button",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
     },
     {
       "driver": "doorbell_camera",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "door_controller",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "garage_door_controller",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "gas_detector",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "gas_sensor",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "gateway_zigbee_bridge",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "gateway_zigbee_hub",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "humidity_controller",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "hvac_air_conditioner",
-      "issue": "missing_sizes",
-      "missing": [
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: icon.svg",
+      "file": "icon.svg"
+    },
+    {
+      "driver": "hvac_air_conditioner",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "hvac_dehumidifier",
-      "issue": "missing_sizes",
-      "missing": [
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: icon.svg",
+      "file": "icon.svg"
+    },
+    {
+      "driver": "hvac_dehumidifier",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "led_strip",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "led_strip_advanced",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "led_strip_basic",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "led_strip_outdoor_rgb",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "led_strip_pro",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "led_strip_rgbw",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "light_controller_outdoor",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "lock_smart",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "lock_smart_basic",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "lock_smart_fingerprint",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "module_dimmer_timer",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "module_mini",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "module_mini_switch",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "motion_sensor",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "motion_sensor_mmwave",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "motion_sensor_multi",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "motion_sensor_outdoor",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "motion_sensor_pir",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "motion_sensor_pir_advanced",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "motion_sensor_pir_radar",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "motion_sensor_radar_advanced",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "motion_sensor_radar_mmwave",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "plug_dimmer",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "plug_energy_advanced",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "plug_energy_monitor",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "plug_energy_monitor_advanced",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "plug_energy_smart",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "plug_outdoor",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "plug_outlet",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "plug_power_meter",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "plug_power_meter_16a",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "plug_smart",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "plug_smart_advanced",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "plug_smart_basic",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "presence_sensor_radar",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "radiator_valve",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "radiator_valve_smart",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: icon.svg",
+      "file": "icon.svg"
+    },
+    {
+      "driver": "radiator_valve_smart",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "radiator_valve_smart",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
     },
     {
       "driver": "scene_controller_4button",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "scene_controller_wireless",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: icon.svg",
+      "file": "icon.svg"
+    },
+    {
+      "driver": "scene_controller_wireless",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "scene_controller_wireless",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
     },
     {
       "driver": "shutter_roller_controller",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "shutter_roller_switch",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "siren",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "siren_outdoor",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "smoke_detector_advanced",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "smoke_detector_climate",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "smoke_detector_temp_humidity",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "solar_panel_controller",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "sound_controller",
-      "issue": "missing_sizes",
-      "missing": [
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: icon.svg",
+      "file": "icon.svg"
+    },
+    {
+      "driver": "sound_controller",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "spot_light_smart",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "switch_basic_1gang",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "switch_basic_2gang",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "switch_basic_5gang",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "switch_generic_1gang",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "switch_generic_3gang",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "switch_hybrid_1gang",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: icon.svg",
+      "file": "icon.svg"
+    },
+    {
+      "driver": "switch_hybrid_1gang",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "switch_hybrid_1gang",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
+    },
+    {
+      "driver": "switch_hybrid_2gang",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: icon.svg",
+      "file": "icon.svg"
+    },
+    {
+      "driver": "switch_hybrid_2gang",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "switch_hybrid_2gang",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
+    },
+    {
+      "driver": "switch_hybrid_2gang_alt",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: icon.svg",
+      "file": "icon.svg"
+    },
+    {
+      "driver": "switch_hybrid_2gang_alt",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "switch_hybrid_2gang_alt",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
+    },
+    {
+      "driver": "switch_hybrid_3gang",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: icon.svg",
+      "file": "icon.svg"
+    },
+    {
+      "driver": "switch_hybrid_3gang",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "switch_hybrid_3gang",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
+    },
+    {
+      "driver": "switch_hybrid_4gang",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: icon.svg",
+      "file": "icon.svg"
+    },
+    {
+      "driver": "switch_hybrid_4gang",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "switch_hybrid_4gang",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
+    },
+    {
+      "driver": "switch_internal_1gang",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: icon.svg",
+      "file": "icon.svg"
+    },
+    {
+      "driver": "switch_internal_1gang",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "switch_internal_1gang",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
     },
     {
       "driver": "switch_remote",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "switch_smart_1gang",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "switch_smart_3gang",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "switch_smart_4gang",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "switch_touch_1gang",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "switch_touch_1gang",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
     },
     {
       "driver": "switch_touch_1gang_basic",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "switch_touch_2gang",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "switch_touch_3gang",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "switch_touch_3gang",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
     },
     {
       "driver": "switch_touch_3gang_basic",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "switch_touch_4gang",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "switch_wall_1gang",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "switch_wall_1gang",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
     },
     {
       "driver": "switch_wall_1gang_basic",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "switch_wall_2gang",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "switch_wall_2gang",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
     },
     {
       "driver": "switch_wall_2gang_basic",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "switch_wall_2gang_smart",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "switch_wall_3gang",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "switch_wall_3gang",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
     },
     {
       "driver": "switch_wall_3gang_basic",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "switch_wall_4gang",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "switch_wall_4gang",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
     },
     {
       "driver": "switch_wall_4gang_basic",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "switch_wall_4gang_smart",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "switch_wall_5gang",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "switch_wall_6gang",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "switch_wall_6gang",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
     },
     {
       "driver": "switch_wall_6gang_basic",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "switch_wall_6gang_smart",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "switch_wall_8gang_smart",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "switch_wireless",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "switch_wireless_1gang",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "switch_wireless_2gang",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "switch_wireless_4button_alt",
-      "issue": "missing_sizes",
-      "missing": [
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: icon.svg",
+      "file": "icon.svg"
+    },
+    {
+      "driver": "switch_wireless_4button_alt",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "switch_wireless_4gang",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "switch_wireless_5button",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "switch_wireless_6gang",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "temperature_sensor",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "temperature_sensor_advanced",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "thermostat_advanced",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: icon.svg",
+      "file": "icon.svg"
+    },
+    {
+      "driver": "thermostat_advanced",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "thermostat_advanced",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
+    },
+    {
+      "driver": "thermostat_smart",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: icon.svg",
+      "file": "icon.svg"
+    },
+    {
+      "driver": "thermostat_smart",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "thermostat_smart",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
+    },
+    {
+      "driver": "thermostat_temperature_control",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: icon.svg",
+      "file": "icon.svg"
+    },
+    {
+      "driver": "thermostat_temperature_control",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "thermostat_temperature_control",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
     },
     {
       "driver": "usb_outlet_1gang",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "usb_outlet_2port",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "usb_outlet_3gang",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "usb_outlet_advanced",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "usb_outlet_basic",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "valve_smart",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "water_leak_sensor",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "water_leak_sensor_temp_humidity",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "water_valve",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
     },
     {
       "driver": "water_valve_smart",
-      "issue": "missing_sizes",
-      "missing": [
-        "small",
-        "large",
-        "xlarge"
-      ]
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "water_valve_smart_hybrid",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: icon.svg",
+      "file": "icon.svg"
+    },
+    {
+      "driver": "water_valve_smart_hybrid",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: images",
+      "file": "images"
+    },
+    {
+      "driver": "water_valve_smart_hybrid",
+      "type": "unexpected_file",
+      "severity": "low",
+      "message": "Fichier non-standard: learnmode.svg",
+      "file": "learnmode.svg"
     }
-  ]
+  ],
+  "summary": {
+    "total": 210,
+    "high": 0,
+    "medium": 0,
+    "low": 210
+  }
 }
