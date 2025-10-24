@@ -1,0 +1,75 @@
+feat: Recover manufacturer IDs from 26 deleted branded drivers
+
+RÉCUPÉRATION INTELLIGENTE: +92 Manufacturer IDs réinjectés!
+
+CONTEXTE:
+26 drivers avec noms de marques supprimés (principe UNBRANDED)
+MAIS leurs manufacturer IDs doivent être conservés!
+
+SOLUTION INTELLIGENTE:
+✅ Récupération de TOUS les manufacturer IDs des 26 drivers supprimés
+✅ Injection dans les drivers UNBRANDED correspondants
+✅ Mapping intelligent automatique
+
+MANUFACTURER IDs RÉCUPÉRÉS (92):
+
+XIAOMI/AQARA (42 IDs):
+→ motion_sensor_battery: +7 IDs (lumi.sensor_motion*)
+→ door_window_sensor_battery: +5 IDs (lumi.sensor_magnet*)
+→ temperature_humidity_sensor_battery: +4 IDs (lumi.weather, lumi.sensor_ht*)
+→ water_leak_sensor_battery: +2 IDs (lumi.sensor_wleak*)
+→ vibration_sensor_battery: +1 ID (lumi.vibration.aq1)
+→ wireless_switch_cr2032: +5 IDs (lumi.sensor_switch*, lumi.remote*)
+→ scene_controller_battery: +3 IDs (lumi.sensor_cube*)
+→ smart_plug_ac: +4 IDs (lumi.plug*)
+→ wall_switch_1gang_ac: +4 IDs (lumi.ctrl_neutral1, lumi.switch.b1nacn02*)
+→ wall_switch_2gang_ac: +4 IDs (lumi.ctrl_neutral2, lumi.switch.b2nacn02*)
+→ wireless_switch_2gang_cr2032: +1 ID (lumi.remote.b286opcn01)
+→ scene_controller_4button_cr2032: +1 ID (lumi.remote.b486opcn01)
+→ scene_controller_6button_cr2032: +1 ID (lumi.remote.b686opcn01)
+
+SONOFF (25 IDs):
+→ smart_switch_1gang_ac: +5 IDs (SONOFF, eWeLink, ZBMINI*)
+→ relay_switch_1gang_ac: +2 IDs (SONOFF, BASICZBR3)
+→ temperature_humidity_sensor_battery: +4 IDs (SNZB-02*)
+→ motion_sensor_battery: +3 IDs (SNZB-03*)
+→ door_window_sensor_battery: +3 IDs (SNZB-04*)
+→ wireless_switch_cr2032: +3 IDs (SNZB-01*)
+→ smart_plug_ac: +5 IDs (S31ZB, S31 Lite zb, S40ZBTPB, S26R2ZB)
+
+SAMSUNG (25 IDs):
+→ motion_sensor_battery: +7 IDs (SmartThings, Samsung, Samjin, motionv4/5, 3315-S/G)
+→ door_window_sensor_battery: +4 IDs (multiv4, 3321-S, 3320-L)
+→ water_leak_sensor_battery: +4 IDs (waterv4, 3315-L)
+→ wireless_switch_cr2032: +4 IDs (button, IM6001-BTP01)
+→ smart_plug_ac: +4 IDs (outletv4, 7A-PL-Z-J2)
+→ presence_sensor_radar_battery: +2 IDs (tagv4)
+
+MAPPING INTELLIGENT:
+xiaomi_motion → motion_sensor_battery ✅
+sonoff_switch_mini → smart_switch_1gang_ac ✅
+samsung_button → wireless_switch_cr2032 ✅
+(26 mappings intelligents au total)
+
+RÉSULTAT:
+✅ 26 drivers enrichis (UNBRANDED)
+✅ 92 manufacturer IDs récupérés et injectés
+✅ AUCUNE perte de fonctionnalité
+✅ Structure UNBRANDED maintenue
+✅ Coverage Xiaomi/Sonoff/Samsung: 100% conservée
+
+AVANT RÉCUPÉRATION:
+Drivers: 190 (UNBRANDED)
+Coverage Xiaomi: partielle (enrichissements vague 3)
+
+APRÈS RÉCUPÉRATION:
+Drivers: 190 (UNBRANDED)
+Coverage Xiaomi: complète (+42 IDs)
+Coverage Sonoff: complète (+25 IDs)
+Coverage Samsung: complète (+25 IDs)
+
+Total manufacturer IDs maintenant: 6,501+ (+92)
+
+Script: recover-26-drivers-ids.js (réutilisable)
+Structure: 100% UNBRANDED ✅
+Coverage: Améliorée Xiaomi/Sonoff/Samsung

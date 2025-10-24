@@ -1,0 +1,1617 @@
+{
+  "withEnergyCapabilities": [
+    {
+      "driver": "avatto_co2_temp_humidity",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "avatto_energy_monitoring_plug_advanced",
+      "class": "socket",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ]
+    },
+    {
+      "driver": "avatto_energy_plug_advanced",
+      "class": "socket",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ]
+    },
+    {
+      "driver": "avatto_motion_sensor_mmwave_basic",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "avatto_plug_basic",
+      "class": "socket",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ]
+    },
+    {
+      "driver": "avatto_plug_energy_monitor",
+      "class": "socket",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ]
+    },
+    {
+      "driver": "avatto_power_meter_socket",
+      "class": "socket",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ]
+    },
+    {
+      "driver": "avatto_smart_plug",
+      "class": "socket",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ]
+    },
+    {
+      "driver": "avatto_smart_plug_energy",
+      "class": "socket",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ]
+    },
+    {
+      "driver": "avatto_smart_plug_power_meter_16a",
+      "class": "socket",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ]
+    },
+    {
+      "driver": "avatto_thermostat_hybrid",
+      "class": "thermostat",
+      "capabilities": [
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "avatto_thermostat_smart_internal",
+      "class": "thermostat",
+      "capabilities": [
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "avatto_usb_outlet",
+      "class": "socket",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ]
+    },
+    {
+      "driver": "avatto_usb_outlet_advanced",
+      "class": "socket",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ]
+    },
+    {
+      "driver": "avatto_water_valve",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "avatto_water_valve_smart",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "avatto_water_valve_smart_hybrid",
+      "class": "sensor",
+      "capabilities": [
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "button_1gang",
+      "class": "button",
+      "capabilities": [
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "button_2gang",
+      "class": "button",
+      "capabilities": [
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "button_3gang",
+      "class": "button",
+      "capabilities": [
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "button_4gang",
+      "class": "button",
+      "capabilities": [
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "button_6gang",
+      "class": "button",
+      "capabilities": [
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "button_8gang",
+      "class": "button",
+      "capabilities": [
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "lonsonho_contact_sensor_basic",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "lonsonho_samsung_contact_sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "lonsonho_shortcut_button_other",
+      "class": "button",
+      "capabilities": [
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "lonsonho_sonoff_contact_sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "lsc_wireless_switch_4button_other",
+      "class": "button",
+      "capabilities": [
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "moes_climate_monitor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "moes_sonoff_temperature_humidity",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "nous_air_quality_monitor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "philips_motion_sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "philips_outdoor_sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "samsung_motion_sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "samsung_motion_sensor_outdoor_cr123a",
+      "class": "sensor",
+      "capabilities": [
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "samsung_water_leak_sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "sonoff_motion_sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "tuya_comprehensive_air_monitor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "tuya_dehumidifier_hybrid",
+      "class": "sensor",
+      "capabilities": [
+        "measure_power"
+      ]
+    },
+    {
+      "driver": "tuya_doorbell",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "tuya_doorbell_camera",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "tuya_gas_sensor_ts0601",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "tuya_outdoor_siren",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "tuya_siren",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "tuya_soil_tester_temp_humid",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_air_quality_monitor_pro_internal",
+      "class": "sensor",
+      "capabilities": [
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_curtain_motor_internal",
+      "class": "windowcoverings",
+      "capabilities": [
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_door_controller",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_doorbell_button_internal",
+      "class": "sensor",
+      "capabilities": [
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_garage_door_controller",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_gas_detector",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_humidity_controller",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_lock_basic",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_lock_fingerprint",
+      "class": "lock",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_lock_smart",
+      "class": "lock",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_motion_sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_motion_temp_humidity_illumination_multi",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_outdoor_light_controller",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_pir_radar_illumination_sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_pir_sensor_advanced",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_pm25_detector",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_presence_sensor_radar",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_radar_motion_sensor_advanced",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_radar_motion_sensor_mmwave",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_scene_controller",
+      "class": "sensor",
+      "capabilities": [
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_smart_smoke_detector_advanced",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_smart_switch_1gang_internal",
+      "class": "sensor",
+      "capabilities": [
+        "measure_power",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_smoke_detector_temp_humidity_advanced",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_smoke_temp_humid_sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_sound_controller_other",
+      "class": "button",
+      "capabilities": [
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_temp_humid_sensor_advanced",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_temp_humid_sensor_leak_detector",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_temperature_controller_hybrid",
+      "class": "sensor",
+      "capabilities": [
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_temperature_sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_temperature_sensor_advanced",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    {
+      "driver": "zemismart_water_leak_sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ]
+    }
+  ],
+  "missingEnergyFlows": [],
+  "completeEnergyFlows": [
+    {
+      "driver": "avatto_co2_temp_humidity",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "avatto_energy_monitoring_plug_advanced",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "triggers": 4
+    },
+    {
+      "driver": "avatto_energy_plug_advanced",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "triggers": 4
+    },
+    {
+      "driver": "avatto_motion_sensor_mmwave_basic",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "avatto_plug_basic",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "triggers": 4
+    },
+    {
+      "driver": "avatto_plug_energy_monitor",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "triggers": 4
+    },
+    {
+      "driver": "avatto_power_meter_socket",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "triggers": 6
+    },
+    {
+      "driver": "avatto_smart_plug",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "triggers": 4
+    },
+    {
+      "driver": "avatto_smart_plug_energy",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "triggers": 4
+    },
+    {
+      "driver": "avatto_smart_plug_power_meter_16a",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "triggers": 6
+    },
+    {
+      "driver": "avatto_thermostat_hybrid",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "triggers": 1
+    },
+    {
+      "driver": "avatto_thermostat_smart_internal",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "triggers": 1
+    },
+    {
+      "driver": "avatto_usb_outlet",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "triggers": 4
+    },
+    {
+      "driver": "avatto_usb_outlet_advanced",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "triggers": 4
+    },
+    {
+      "driver": "avatto_water_valve",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "avatto_water_valve_smart",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "avatto_water_valve_smart_hybrid",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "triggers": 1
+    },
+    {
+      "driver": "button_1gang",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "triggers": 1
+    },
+    {
+      "driver": "button_2gang",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "triggers": 1
+    },
+    {
+      "driver": "button_3gang",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "triggers": 1
+    },
+    {
+      "driver": "button_4gang",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "triggers": 1
+    },
+    {
+      "driver": "button_6gang",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "triggers": 1
+    },
+    {
+      "driver": "button_8gang",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "triggers": 1
+    },
+    {
+      "driver": "lonsonho_contact_sensor_basic",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "lonsonho_samsung_contact_sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "lonsonho_shortcut_button_other",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "triggers": 1
+    },
+    {
+      "driver": "lonsonho_sonoff_contact_sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "lsc_wireless_switch_4button_other",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "triggers": 1
+    },
+    {
+      "driver": "moes_climate_monitor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "moes_sonoff_temperature_humidity",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "nous_air_quality_monitor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "philips_motion_sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "philips_outdoor_sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "samsung_motion_sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "samsung_motion_sensor_outdoor_cr123a",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "triggers": 1
+    },
+    {
+      "driver": "samsung_water_leak_sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "sonoff_motion_sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "tuya_comprehensive_air_monitor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "tuya_dehumidifier_hybrid",
+      "capabilities": [
+        "measure_power"
+      ],
+      "triggers": 1
+    },
+    {
+      "driver": "tuya_doorbell",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "tuya_doorbell_camera",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "tuya_gas_sensor_ts0601",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "tuya_outdoor_siren",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "tuya_siren",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "tuya_soil_tester_temp_humid",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "zemismart_air_quality_monitor_pro_internal",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "triggers": 1
+    },
+    {
+      "driver": "zemismart_curtain_motor_internal",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "triggers": 1
+    },
+    {
+      "driver": "zemismart_door_controller",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "zemismart_doorbell_button_internal",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "triggers": 1
+    },
+    {
+      "driver": "zemismart_garage_door_controller",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "zemismart_gas_detector",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "zemismart_humidity_controller",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "zemismart_lock_basic",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "zemismart_lock_fingerprint",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "zemismart_lock_smart",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "zemismart_motion_sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "zemismart_motion_temp_humidity_illumination_multi",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "zemismart_outdoor_light_controller",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "zemismart_pir_radar_illumination_sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "zemismart_pir_sensor_advanced",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "zemismart_pm25_detector",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "zemismart_presence_sensor_radar",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "zemismart_radar_motion_sensor_advanced",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "zemismart_radar_motion_sensor_mmwave",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "zemismart_scene_controller",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "triggers": 1
+    },
+    {
+      "driver": "zemismart_smart_smoke_detector_advanced",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "zemismart_smart_switch_1gang_internal",
+      "capabilities": [
+        "measure_power",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "zemismart_smoke_detector_temp_humidity_advanced",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "zemismart_smoke_temp_humid_sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "zemismart_sound_controller_other",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "triggers": 1
+    },
+    {
+      "driver": "zemismart_temp_humid_sensor_advanced",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "zemismart_temp_humid_sensor_leak_detector",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "zemismart_temperature_controller_hybrid",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "triggers": 1
+    },
+    {
+      "driver": "zemismart_temperature_sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "zemismart_temperature_sensor_advanced",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    },
+    {
+      "driver": "zemismart_water_leak_sensor",
+      "capabilities": [
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "triggers": 3
+    }
+  ],
+  "batteryManagement": [
+    {
+      "driver": "avatto_co2_temp_humidity",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "avatto_motion_sensor_mmwave_basic",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "avatto_thermostat_hybrid",
+      "class": "thermostat",
+      "hasMeasure": true,
+      "hasAlarm": false
+    },
+    {
+      "driver": "avatto_thermostat_smart_internal",
+      "class": "thermostat",
+      "hasMeasure": true,
+      "hasAlarm": false
+    },
+    {
+      "driver": "avatto_water_valve",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "avatto_water_valve_smart",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "avatto_water_valve_smart_hybrid",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": false
+    },
+    {
+      "driver": "button_1gang",
+      "class": "button",
+      "hasMeasure": true,
+      "hasAlarm": false
+    },
+    {
+      "driver": "button_2gang",
+      "class": "button",
+      "hasMeasure": true,
+      "hasAlarm": false
+    },
+    {
+      "driver": "button_3gang",
+      "class": "button",
+      "hasMeasure": true,
+      "hasAlarm": false
+    },
+    {
+      "driver": "button_4gang",
+      "class": "button",
+      "hasMeasure": true,
+      "hasAlarm": false
+    },
+    {
+      "driver": "button_6gang",
+      "class": "button",
+      "hasMeasure": true,
+      "hasAlarm": false
+    },
+    {
+      "driver": "button_8gang",
+      "class": "button",
+      "hasMeasure": true,
+      "hasAlarm": false
+    },
+    {
+      "driver": "lonsonho_contact_sensor_basic",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "lonsonho_samsung_contact_sensor",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "lonsonho_shortcut_button_other",
+      "class": "button",
+      "hasMeasure": true,
+      "hasAlarm": false
+    },
+    {
+      "driver": "lonsonho_sonoff_contact_sensor",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "lsc_wireless_switch_4button_other",
+      "class": "button",
+      "hasMeasure": true,
+      "hasAlarm": false
+    },
+    {
+      "driver": "moes_climate_monitor",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "moes_sonoff_temperature_humidity",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "nous_air_quality_monitor",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "philips_motion_sensor",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "philips_outdoor_sensor",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "samsung_motion_sensor",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "samsung_motion_sensor_outdoor_cr123a",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": false
+    },
+    {
+      "driver": "samsung_water_leak_sensor",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "sonoff_motion_sensor",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "tuya_comprehensive_air_monitor",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "tuya_doorbell",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "tuya_doorbell_camera",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "tuya_gas_sensor_ts0601",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "tuya_outdoor_siren",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "tuya_siren",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "tuya_soil_tester_temp_humid",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "zemismart_air_quality_monitor_pro_internal",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": false
+    },
+    {
+      "driver": "zemismart_curtain_motor_internal",
+      "class": "windowcoverings",
+      "hasMeasure": true,
+      "hasAlarm": false
+    },
+    {
+      "driver": "zemismart_door_controller",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "zemismart_doorbell_button_internal",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": false
+    },
+    {
+      "driver": "zemismart_garage_door_controller",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "zemismart_gas_detector",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "zemismart_humidity_controller",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "zemismart_lock_basic",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "zemismart_lock_fingerprint",
+      "class": "lock",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "zemismart_lock_smart",
+      "class": "lock",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "zemismart_motion_sensor",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "zemismart_motion_temp_humidity_illumination_multi",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "zemismart_outdoor_light_controller",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "zemismart_pir_radar_illumination_sensor",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "zemismart_pir_sensor_advanced",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "zemismart_pm25_detector",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "zemismart_presence_sensor_radar",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "zemismart_radar_motion_sensor_advanced",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "zemismart_radar_motion_sensor_mmwave",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "zemismart_scene_controller",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": false
+    },
+    {
+      "driver": "zemismart_smart_smoke_detector_advanced",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "zemismart_smart_switch_1gang_internal",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": false
+    },
+    {
+      "driver": "zemismart_smoke_detector_temp_humidity_advanced",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "zemismart_smoke_temp_humid_sensor",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "zemismart_sound_controller_other",
+      "class": "button",
+      "hasMeasure": true,
+      "hasAlarm": false
+    },
+    {
+      "driver": "zemismart_temp_humid_sensor_advanced",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "zemismart_temp_humid_sensor_leak_detector",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "zemismart_temperature_controller_hybrid",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": false
+    },
+    {
+      "driver": "zemismart_temperature_sensor",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "zemismart_temperature_sensor_advanced",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    },
+    {
+      "driver": "zemismart_water_leak_sensor",
+      "class": "sensor",
+      "hasMeasure": true,
+      "hasAlarm": true
+    }
+  ]
+}

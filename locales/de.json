@@ -1,0 +1,24 @@
+{
+  "settings": {
+    "title": "Einstellungen",
+    "debug_logging": "Debug-Protokollierung aktivieren",
+    "debug_logging_hint": "Detaillierte Protokollierung für Fehlerbehebung",
+    "community_updates": "Community-Updates aktivieren",
+    "community_updates_hint": "Benachrichtigungen über neue Geräteunterstützung erhalten",
+    "reporting_interval": "Berichtsintervall (Sekunden)",
+    "temperature_offset": "Temperatur-Offset (°C)",
+    "humidity_offset": "Luftfeuchtigkeit-Offset (%)"
+  },
+  "tabs": {
+    "general": "Allgemein",
+    "advanced": "Erweitert",
+    "about": "Über"
+  },
+  "common": {
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "ok": "OK",
+    "delete": "Löschen",
+    "edit": "Bearbeiten"
+  }
+}

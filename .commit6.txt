@@ -1,0 +1,18 @@
+Add driver search engine and fix diagnostic issues (v4.1.2)
+
+FEATURES:
+- Added interactive driver search engine in settings page
+- Search by brand, category, product type, or model
+- Database of 183 drivers with categories and brands
+- Step-by-step pairing instructions for each driver
+
+BUG FIXES:
+- Fixed SOS button IEEE address retrieval issue
+- Enhanced IEEE address fallback methods
+- Fixed battery reporting configuration error (motion sensor)
+- Graceful handling of unsupported battery reporting
+
+RESPONSE:
+- Addressed user diagnostic report (Log ID: 23ff6ed3)
+- Motion sensor: Working correctly (log warning resolved)
+- SOS button: Fixed IAS Zone enrollment issue

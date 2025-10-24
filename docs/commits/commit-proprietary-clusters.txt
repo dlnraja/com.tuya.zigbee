@@ -1,0 +1,34 @@
+docs: Clarify proprietary/custom Zigbee clusters are OK (100% local)
+
+CLARIFICATION IMPORTANTE:
+Les clusters propriétaires/custom sont 100% OK tant qu'ils utilisent Zigbee local!
+
+CLUSTERS PROPRIÉTAIRES ACCEPTÉS:
+✅ Tuya Cluster 61184 (0xEF00) - Zigbee local, datapoints custom
+✅ Xiaomi clusters 0xFCC0 - Zigbee local
+✅ IKEA TRADFRI clusters - Zigbee local
+✅ Philips Hue clusters - Zigbee local
+✅ Tous manufacturer-specific clusters - Zigbee local
+
+PROTOCOLES OK:
+✅ Zigbee 3.0 (standard + propriétaire)
+✅ Communication locale Homey ↔ Device
+✅ Pas d'internet requis
+✅ Privacy totale
+✅ Offline capable
+
+PROTOCOLES PAS OK:
+❌ WiFi devices (nécessitent cloud)
+❌ Cloud API (internet requis)
+❌ Communication serveurs externes
+
+RÈGLE SIMPLE:
+SI Zigbee local = OK (même si propriétaire)
+SI Cloud/WiFi = PAS OK
+
+EXEMPLES:
+✅ Tuya dehumidifier (cluster 61184, Zigbee local)
+✅ Xiaomi sensor (cluster 0xFCC0, Zigbee local)
+❌ Tuya WiFi plug (cloud requis)
+
+Documentation: PROPRIETARY_CLUSTERS_OK.md
