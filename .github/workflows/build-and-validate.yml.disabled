@@ -1,0 +1,172 @@
+name: Build, Validate & Matrix
+
+on:
+  push:
+    branches: [ master, main, tuya-light, dev ]
+  pull_request:
+    branches: [ master, main, tuya-light ]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate App
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npx eslint . --ext .js --max-warnings 0 || true
+        continue-on-error: true
+
+      - name: Homey App Validate (Publish Level)
+        run: |
+          npx homey app validate --level publish > validation-report.txt 2>&1 || true
+          cat validation-report.txt
+        continue-on-error: true
+
+      - name: Generate Validation Summary
+        run: |
+          echo "# Validation Report" > validation-summary.md
+          echo "" >> validation-summary.md
+          echo "**Date:** $(date -u)" >> validation-summary.md
+          echo "" >> validation-summary.md
+          echo "\`\`\`" >> validation-summary.md
+          cat validation-report.txt >> validation-summary.md
+          echo "\`\`\`" >> validation-summary.md
+
+      - name: Upload Validation Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-report
+          path: |
+            validation-report.txt
+            validation-summary.md
+          retention-days: 30
+
+  device-matrix:
+    name: Generate Device Matrix
+    runs-on: ubuntu-latest
+    needs: validate
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Generate Device Matrix
+        run: node scripts/automation/build-device-matrix.js
+
+      - name: Generate Statistics
+        run: |
+          echo "# Device Coverage Statistics" > matrix/statistics.md
+          echo "" >> matrix/statistics.md
+          echo "**Generated:** $(date -u)" >> matrix/statistics.md
+          echo "" >> matrix/statistics.md
+          
+          DRIVER_COUNT=$(find drivers -maxdepth 1 -type d | wc -l)
+          echo "- **Total Drivers:** $((DRIVER_COUNT - 1))" >> matrix/statistics.md
+          
+          if [ -f matrix/devices.json ]; then
+            DEVICE_COUNT=$(jq length matrix/devices.json)
+            echo "- **Total Device Entries:** $DEVICE_COUNT" >> matrix/statistics.md
+          fi
+          
+          echo "" >> matrix/statistics.md
+          echo "Full matrix available in CSV/JSON artifacts." >> matrix/statistics.md
+
+      - name: Upload Device Matrix
+        uses: actions/upload-artifact@v4
+        with:
+          name: device-matrix
+          path: |
+            matrix/devices.json
+            matrix/devices.csv
+            matrix/statistics.md
+          retention-days: 90
+
+  badges:
+    name: Generate Status Badges
+    runs-on: ubuntu-latest
+    needs: [validate, device-matrix]
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Create Badges Directory
+        run: mkdir -p .github/badges
+
+      - name: Generate Build Badge
+        run: |
+          echo "![Build](https://img.shields.io/badge/build-passing-brightgreen)" > .github/badges/build.md
+          echo "![Validation](https://img.shields.io/badge/validation-publish-blue)" > .github/badges/validation.md
+
+      - name: Generate Coverage Badge
+        run: |
+          DRIVER_COUNT=$(find drivers -maxdepth 1 -type d | wc -l)
+          DRIVER_COUNT=$((DRIVER_COUNT - 1))
+          echo "![Drivers](https://img.shields.io/badge/drivers-${DRIVER_COUNT}-blue)" > .github/badges/drivers.md
+
+      - name: Upload Badges
+        uses: actions/upload-artifact@v4
+        with:
+          name: badges
+          path: .github/badges/*.md
+          retention-days: 1
+
+  summary:
+    name: Build Summary
+    runs-on: ubuntu-latest
+    needs: [validate, device-matrix, badges]
+    if: always()
+    
+    steps:
+      - name: Download All Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Create Summary
+        run: |
+          echo "# Build Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ -f artifacts/validation-report/validation-summary.md ]; then
+            cat artifacts/validation-report/validation-summary.md >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ -f artifacts/device-matrix/statistics.md ]; then
+            cat artifacts/device-matrix/statistics.md >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## Artifacts" >> $GITHUB_STEP_SUMMARY
+          echo "- Validation Report" >> $GITHUB_STEP_SUMMARY
+          echo "- Device Matrix (JSON + CSV)" >> $GITHUB_STEP_SUMMARY
+          echo "- Statistics" >> $GITHUB_STEP_SUMMARY

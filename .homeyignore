@@ -1,0 +1,81 @@
+# Build & Development Directories
+.homeybuild/
+.homeycompose/
+node_modules/
+.dev/
+.backup-enrichment/
+.git/
+.github/
+
+# Documentation & Reports
+docs/
+reports/
+github-analysis/
+project-data/
+matrix/
+
+# Scripts (not needed for runtime)
+scripts/
+
+# Configuration Files
+.gitignore
+.gitattributes
+.eslintrc.json
+tsconfig.json
+.editorconfig
+
+# Markdown Files
+*.md
+!README.md
+
+# Logs & Temporary Files
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Test Files
+test/
+tests/
+*.test.js
+*.spec.js
+
+# CI/CD Files
+.gitlab-ci.yml
+azure-pipelines.yml
+bitbucket-pipelines.yml
+
+# IDE Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Package Manager Files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Sensitive Files
+.env
+.env.local
+.env.*.local
+secrets/
+*.key
+*.pem
+*.cert
+
+# Backup Files
+*.backup
+backup/
+backups/
+
+# Large Asset Files (if any)
+*.zip
+*.tar.gz
+*.rar
+*.7z

@@ -1,0 +1,39 @@
+name: Publish to Homey App Store
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '.homeycompose/app.json'
+      - 'app.json'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Install Homey CLI
+        run: npm install -g homey
+        
+      - name: Build app
+        run: homey app build
+        
+      - name: Validate app
+        run: homey app validate --level publish
+        
+      - name: Publish to Homey App Store
+        env:
+          HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
+        run: |
+          echo "Publishing v4.0.0 to Homey App Store..."
+          homey login --token $HOMEY_TOKEN
+          homey app publish --skip-build

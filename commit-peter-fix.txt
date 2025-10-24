@@ -1,0 +1,71 @@
+fix(critical): Fix "expected_cluster_id_number" error for HOBEIAN & SOS Button
+
+CRITICAL FIX FOR PETER VAN WERKHOVEN
+=====================================
+Diagnostic codes: 4c01f1f3, dabf50d7
+
+PROBLEM IDENTIFIED
+==================
+TypeError: expected_cluster_id_number
+- Device: HOBEIAN Multisensor (motion_temp_humidity_illumination_multi_battery)
+- Device: SOS Emergency Button (sos_emergency_button_cr2032)
+- Impact: No battery data, no sensor readings, devices not working
+- User: Peter van Werkhoven tested v3.1.9 and v3.1.10 without success
+
+ROOT CAUSES
+===========
+1. HOBEIAN Multisensor: DUPLICATE registerCapability for measure_battery
+   - Line 91: First registration (removed)
+   - Line 207: Second registration (kept)
+   - SDK3 does NOT allow registering same capability twice
+
+2. Both Drivers: Using numeric cluster IDs instead of CLUSTER constants
+   - Old: this.registerCapability('measure_battery', 1, {...})
+   - New: this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {...})
+   - SDK3 requires CLUSTER constants from zigbee-clusters library
+
+FIXES APPLIED
+=============
+
+motion_temp_humidity_illumination_multi_battery/device.js:
+----------------------------------------------------------
+✅ Removed duplicate registerCapability for measure_battery (line 91)
+✅ Changed cluster IDs to CLUSTER constants:
+   - CLUSTER.POWER_CONFIGURATION (was: 1)
+   - CLUSTER.TEMPERATURE_MEASUREMENT (was: 1026)
+   - CLUSTER.RELATIVE_HUMIDITY_MEASUREMENT (was: 1029)
+   - CLUSTER.ILLUMINANCE_MEASUREMENT (was: 1024)
+✅ Updated configureAttributeReporting to use CLUSTER.POWER_CONFIGURATION
+
+sos_emergency_button_cr2032/device.js:
+--------------------------------------
+✅ Changed cluster IDs to CLUSTER constants:
+   - CLUSTER.POWER_CONFIGURATION in registerCapability
+   - CLUSTER.POWER_CONFIGURATION in configureAttributeReporting
+✅ Maintained single registration (no duplication issue here)
+
+VALIDATION
+==========
+✅ homey app validate --level publish: PASSED
+✅ Only non-blocking warnings (titleFormatted for flow cards)
+
+EXPECTED RESULTS
+================
+After Peter updates to v3.1.12:
+✅ HOBEIAN Multisensor will show battery percentage
+✅ HOBEIAN Multisensor will show temperature, humidity, illuminance
+✅ HOBEIAN Multisensor will detect motion and trigger flows
+✅ SOS Button will show battery percentage
+✅ SOS Button will trigger flows on press
+✅ No more "expected_cluster_id_number" errors
+
+TECHNICAL NOTES
+===============
+SDK3 Requirement: Always use CLUSTER constants from 'zigbee-clusters':
+- import { CLUSTER } from 'zigbee-clusters'
+- Use CLUSTER.POWER_CONFIGURATION instead of 1
+- Use CLUSTER.TEMPERATURE_MEASUREMENT instead of 1026
+- Never register same capability twice
+
+This is a CRITICAL fix that affects ALL battery-powered Zigbee devices.
+Future drivers MUST follow this pattern to avoid runtime errors.

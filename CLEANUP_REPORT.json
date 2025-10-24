@@ -1,0 +1,662 @@
+{
+  "deleted": [],
+  "merged": [
+    {
+      "old": "avatto_bulb_tunable_ac",
+      "new": "avatto_bulb_tunable"
+    },
+    {
+      "old": "avatto_ceiling_fan_ac",
+      "new": "avatto_ceiling_fan"
+    },
+    {
+      "old": "avatto_co2_temp_humidity_cr2032",
+      "new": "avatto_co2_temp_humidity"
+    },
+    {
+      "old": "avatto_dimmer_1gang_ac",
+      "new": "avatto_dimmer_1gang"
+    },
+    {
+      "old": "avatto_dimmer_1gang_touch_ac",
+      "new": "avatto_dimmer_1gang_touch"
+    },
+    {
+      "old": "avatto_dimmer_ac",
+      "new": "avatto_dimmer"
+    },
+    {
+      "old": "avatto_dimmer_switch_timer_module_ac",
+      "new": "avatto_dimmer_switch_timer_module"
+    },
+    {
+      "old": "avatto_dimmer_touch_ac",
+      "new": "avatto_dimmer_touch"
+    },
+    {
+      "old": "avatto_energy_monitoring_plug_advanced_ac",
+      "new": "avatto_energy_monitoring_plug_advanced"
+    },
+    {
+      "old": "avatto_energy_plug_advanced_ac",
+      "new": "avatto_energy_plug_advanced"
+    },
+    {
+      "old": "avatto_innr_smart_plug_ac",
+      "new": "avatto_innr_smart_plug"
+    },
+    {
+      "old": "avatto_led_strip_advanced_ac",
+      "new": "avatto_led_strip_advanced"
+    },
+    {
+      "old": "avatto_led_strip_basic_ac",
+      "new": "avatto_led_strip_basic"
+    },
+    {
+      "old": "avatto_led_strip_pro_ac",
+      "new": "avatto_led_strip_pro"
+    },
+    {
+      "old": "avatto_mini_ac",
+      "new": "avatto_mini"
+    },
+    {
+      "old": "avatto_mini_switch_cr2032",
+      "new": "avatto_mini_switch"
+    },
+    {
+      "old": "avatto_motion_sensor_mmwave_basic_cr2450",
+      "new": "avatto_motion_sensor_mmwave_basic"
+    },
+    {
+      "old": "avatto_osram_smart_plug_ac",
+      "new": "avatto_osram_smart_plug"
+    },
+    {
+      "old": "avatto_philips_smart_plug_ac",
+      "new": "avatto_philips_smart_plug"
+    },
+    {
+      "old": "avatto_plug_basic_ac",
+      "new": "avatto_plug_basic"
+    },
+    {
+      "old": "avatto_plug_energy_monitor_ac",
+      "new": "avatto_plug_energy_monitor"
+    },
+    {
+      "old": "avatto_plug_smart_ac",
+      "new": "avatto_plug_smart"
+    },
+    {
+      "old": "avatto_power_meter_socket_ac",
+      "new": "avatto_power_meter_socket"
+    },
+    {
+      "old": "avatto_radiator_valve_aa",
+      "new": "avatto_radiator_valve"
+    },
+    {
+      "old": "avatto_remote_switch_cr2032",
+      "new": "avatto_remote_switch"
+    },
+    {
+      "old": "avatto_samsung_outlet_ac",
+      "new": "avatto_samsung_outlet"
+    },
+    {
+      "old": "avatto_samsung_smart_plug_ac",
+      "new": "avatto_samsung_smart_plug"
+    },
+    {
+      "old": "avatto_smart_bulb_dimmer_ac",
+      "new": "avatto_smart_bulb_dimmer"
+    },
+    {
+      "old": "avatto_smart_bulb_rgb_ac",
+      "new": "avatto_smart_bulb_rgb"
+    },
+    {
+      "old": "avatto_smart_bulb_white_ac",
+      "new": "avatto_smart_bulb_white"
+    },
+    {
+      "old": "avatto_smart_plug_ac",
+      "new": "avatto_smart_plug"
+    },
+    {
+      "old": "avatto_smart_plug_energy_ac",
+      "new": "avatto_smart_plug_energy"
+    },
+    {
+      "old": "avatto_smart_plug_power_meter_16a_ac",
+      "new": "avatto_smart_plug_power_meter_16a"
+    },
+    {
+      "old": "avatto_smart_spot_ac",
+      "new": "avatto_smart_spot"
+    },
+    {
+      "old": "avatto_smart_switch_2gang_ac",
+      "new": "avatto_smart_switch_2gang"
+    },
+    {
+      "old": "avatto_smart_switch_4gang_ac",
+      "new": "avatto_smart_switch_4gang"
+    },
+    {
+      "old": "avatto_smart_switch_6gang_ac",
+      "new": "avatto_smart_switch_6gang"
+    },
+    {
+      "old": "avatto_smart_switch_8gang_ac",
+      "new": "avatto_smart_switch_8gang"
+    },
+    {
+      "old": "avatto_sonoff_smart_plug_ac",
+      "new": "avatto_sonoff_smart_plug"
+    },
+    {
+      "old": "avatto_sos_emergency_button_cr2032",
+      "new": "avatto_sos_emergency_button"
+    },
+    {
+      "old": "avatto_switch_2gang_ac",
+      "new": "avatto_switch_2gang"
+    },
+    {
+      "old": "avatto_touch_switch_2gang_ac",
+      "new": "avatto_touch_switch_2gang"
+    },
+    {
+      "old": "avatto_touch_switch_4gang_ac",
+      "new": "avatto_touch_switch_4gang"
+    },
+    {
+      "old": "avatto_usb_outlet_ac",
+      "new": "avatto_usb_outlet"
+    },
+    {
+      "old": "avatto_usb_outlet_advanced_ac",
+      "new": "avatto_usb_outlet_advanced"
+    },
+    {
+      "old": "avatto_wall_switch_2gang_ac",
+      "new": "avatto_wall_switch_2gang"
+    },
+    {
+      "old": "avatto_wall_switch_2gang_dc",
+      "new": "avatto_wall_switch_2gang"
+    },
+    {
+      "old": "avatto_wall_switch_4gang_ac",
+      "new": "avatto_wall_switch_4gang"
+    },
+    {
+      "old": "avatto_wall_switch_4gang_dc",
+      "new": "avatto_wall_switch_4gang"
+    },
+    {
+      "old": "avatto_wall_switch_5gang_ac",
+      "new": "avatto_wall_switch_5gang"
+    },
+    {
+      "old": "avatto_wall_switch_6gang_ac",
+      "new": "avatto_wall_switch_6gang"
+    },
+    {
+      "old": "avatto_water_valve_aa",
+      "new": "avatto_water_valve"
+    },
+    {
+      "old": "avatto_water_valve_smart_aa",
+      "new": "avatto_water_valve_smart"
+    },
+    {
+      "old": "avatto_wireless_switch_2gang_cr2032",
+      "new": "avatto_wireless_switch_2gang"
+    },
+    {
+      "old": "avatto_wireless_switch_4button_cr2450",
+      "new": "avatto_wireless_switch_4button"
+    },
+    {
+      "old": "avatto_wireless_switch_4gang_cr2032",
+      "new": "avatto_wireless_switch_4gang"
+    },
+    {
+      "old": "avatto_wireless_switch_5button_cr2032",
+      "new": "avatto_wireless_switch_5button"
+    },
+    {
+      "old": "avatto_wireless_switch_6gang_cr2032",
+      "new": "avatto_wireless_switch_6gang"
+    },
+    {
+      "old": "avatto_wireless_switch_cr2032",
+      "new": "avatto_wireless_switch"
+    },
+    {
+      "old": "generic_samsung_multipurpose_sensor_cr2032",
+      "new": "generic_samsung_multipurpose_sensor"
+    },
+    {
+      "old": "lonsonho_contact_sensor_basic_cr2032",
+      "new": "lonsonho_contact_sensor_basic"
+    },
+    {
+      "old": "lonsonho_samsung_button_cr2450",
+      "new": "lonsonho_samsung_button"
+    },
+    {
+      "old": "lonsonho_samsung_contact_sensor_cr2032",
+      "new": "lonsonho_samsung_contact_sensor"
+    },
+    {
+      "old": "lonsonho_sonoff_button_wireless_cr2450",
+      "new": "lonsonho_sonoff_button_wireless"
+    },
+    {
+      "old": "lonsonho_sonoff_contact_sensor_cr2032",
+      "new": "lonsonho_sonoff_contact_sensor"
+    },
+    {
+      "old": "lonsonho_wireless_button_2gang_cr2032",
+      "new": "lonsonho_wireless_button_2gang"
+    },
+    {
+      "old": "lsc_bulb_rgb_ac",
+      "new": "lsc_bulb_rgb"
+    },
+    {
+      "old": "lsc_bulb_white_ac",
+      "new": "lsc_bulb_white"
+    },
+    {
+      "old": "lsc_bulb_white_ambiance_ac",
+      "new": "lsc_bulb_white_ambiance"
+    },
+    {
+      "old": "lsc_dimmer_wireless_cr2032",
+      "new": "lsc_dimmer_wireless"
+    },
+    {
+      "old": "lsc_innr_bulb_color_ac",
+      "new": "lsc_innr_bulb_color"
+    },
+    {
+      "old": "lsc_innr_bulb_tunable_white_ac",
+      "new": "lsc_innr_bulb_tunable_white"
+    },
+    {
+      "old": "lsc_innr_bulb_white_ac",
+      "new": "lsc_innr_bulb_white"
+    },
+    {
+      "old": "lsc_led_strip_outdoor_color_ac",
+      "new": "lsc_led_strip_outdoor_color"
+    },
+    {
+      "old": "lsc_osram_bulb_rgbw_ac",
+      "new": "lsc_osram_bulb_rgbw"
+    },
+    {
+      "old": "lsc_osram_bulb_tunable_white_ac",
+      "new": "lsc_osram_bulb_tunable_white"
+    },
+    {
+      "old": "lsc_osram_bulb_white_ac",
+      "new": "lsc_osram_bulb_white"
+    },
+    {
+      "old": "lsc_osram_led_strip_rgbw_ac",
+      "new": "lsc_osram_led_strip_rgbw"
+    },
+    {
+      "old": "lsc_philips_bulb_color_ac",
+      "new": "lsc_philips_bulb_color"
+    },
+    {
+      "old": "lsc_philips_bulb_white_ac",
+      "new": "lsc_philips_bulb_white"
+    },
+    {
+      "old": "lsc_philips_bulb_white_ambiance_ac",
+      "new": "lsc_philips_bulb_white_ambiance"
+    },
+    {
+      "old": "lsc_philips_dimmer_switch_aaa",
+      "new": "lsc_philips_dimmer_switch"
+    },
+    {
+      "old": "lsc_philips_led_strip_ac",
+      "new": "lsc_philips_led_strip"
+    },
+    {
+      "old": "lsc_sonoff_led_strip_ac",
+      "new": "lsc_sonoff_led_strip"
+    },
+    {
+      "old": "moes_climate_monitor_cr2032",
+      "new": "moes_climate_monitor"
+    },
+    {
+      "old": "moes_sonoff_temperature_humidity_cr2450",
+      "new": "moes_sonoff_temperature_humidity"
+    },
+    {
+      "old": "nous_air_quality_monitor_ac",
+      "new": "nous_air_quality_monitor"
+    },
+    {
+      "old": "nous_osram_outdoor_plug_ac",
+      "new": "nous_osram_outdoor_plug"
+    },
+    {
+      "old": "nous_smart_plug_dimmer_ac",
+      "new": "nous_smart_plug_dimmer"
+    },
+    {
+      "old": "nous_zbbridge_ac",
+      "new": "nous_zbbridge"
+    },
+    {
+      "old": "nous_zigbee_gateway_hub_ac",
+      "new": "nous_zigbee_gateway_hub"
+    },
+    {
+      "old": "philips_motion_sensor_aaa",
+      "new": "philips_motion_sensor"
+    },
+    {
+      "old": "philips_outdoor_sensor_aaa",
+      "new": "philips_outdoor_sensor"
+    },
+    {
+      "old": "samsung_motion_sensor_cr2450",
+      "new": "samsung_motion_sensor"
+    },
+    {
+      "old": "samsung_water_leak_sensor_cr2032",
+      "new": "samsung_water_leak_sensor"
+    },
+    {
+      "old": "sonoff_motion_sensor_cr2450",
+      "new": "sonoff_motion_sensor"
+    },
+    {
+      "old": "tuya_comprehensive_air_monitor_ac",
+      "new": "tuya_comprehensive_air_monitor"
+    },
+    {
+      "old": "tuya_doorbell_camera_ac",
+      "new": "tuya_doorbell_camera"
+    },
+    {
+      "old": "tuya_doorbell_cr2032",
+      "new": "tuya_doorbell"
+    },
+    {
+      "old": "tuya_gas_sensor_ts0601_ac",
+      "new": "tuya_gas_sensor_ts0601"
+    },
+    {
+      "old": "tuya_outdoor_siren_cr2032",
+      "new": "tuya_outdoor_siren"
+    },
+    {
+      "old": "tuya_siren_ac",
+      "new": "tuya_siren"
+    },
+    {
+      "old": "tuya_smart_switch_1gang_ac",
+      "new": "tuya_smart_switch_1gang"
+    },
+    {
+      "old": "tuya_smart_switch_3gang_ac",
+      "new": "tuya_smart_switch_3gang"
+    },
+    {
+      "old": "tuya_soil_tester_temp_humid_cr2032",
+      "new": "tuya_soil_tester_temp_humid"
+    },
+    {
+      "old": "zemismart_curtain_motor_ac",
+      "new": "zemismart_curtain_motor"
+    },
+    {
+      "old": "zemismart_door_controller_ac",
+      "new": "zemismart_door_controller"
+    },
+    {
+      "old": "zemismart_garage_door_controller_ac",
+      "new": "zemismart_garage_door_controller"
+    },
+    {
+      "old": "zemismart_gas_detector_cr2032",
+      "new": "zemismart_gas_detector"
+    },
+    {
+      "old": "zemismart_humidity_controller_ac",
+      "new": "zemismart_humidity_controller"
+    },
+    {
+      "old": "zemismart_lock_basic_aa",
+      "new": "zemismart_lock_basic"
+    },
+    {
+      "old": "zemismart_lock_fingerprint_aa",
+      "new": "zemismart_lock_fingerprint"
+    },
+    {
+      "old": "zemismart_lock_smart_aa",
+      "new": "zemismart_lock_smart"
+    },
+    {
+      "old": "zemismart_motion_sensor_battery",
+      "new": "zemismart_motion_sensor"
+    },
+    {
+      "old": "zemismart_motion_sensor_pir_ac_battery",
+      "new": "zemismart_motion_sensor_pir_ac"
+    },
+    {
+      "old": "zemismart_motion_temp_humidity_illumination_multi_battery",
+      "new": "zemismart_motion_temp_humidity_illumination_multi"
+    },
+    {
+      "old": "zemismart_outdoor_light_controller_ac",
+      "new": "zemismart_outdoor_light_controller"
+    },
+    {
+      "old": "zemismart_pir_radar_illumination_sensor_battery",
+      "new": "zemismart_pir_radar_illumination_sensor"
+    },
+    {
+      "old": "zemismart_pir_sensor_advanced_battery",
+      "new": "zemismart_pir_sensor_advanced"
+    },
+    {
+      "old": "zemismart_pm25_detector_cr2032",
+      "new": "zemismart_pm25_detector"
+    },
+    {
+      "old": "zemismart_presence_sensor_radar_battery",
+      "new": "zemismart_presence_sensor_radar"
+    },
+    {
+      "old": "zemismart_radar_motion_sensor_advanced_battery",
+      "new": "zemismart_radar_motion_sensor_advanced"
+    },
+    {
+      "old": "zemismart_radar_motion_sensor_mmwave_battery",
+      "new": "zemismart_radar_motion_sensor_mmwave"
+    },
+    {
+      "old": "zemismart_roller_blind_controller_ac",
+      "new": "zemismart_roller_blind_controller"
+    },
+    {
+      "old": "zemismart_roller_shutter_controller_ac",
+      "new": "zemismart_roller_shutter_controller"
+    },
+    {
+      "old": "zemismart_roller_shutter_switch_cr2032",
+      "new": "zemismart_roller_shutter_switch"
+    },
+    {
+      "old": "zemismart_smart_smoke_detector_advanced_battery",
+      "new": "zemismart_smart_smoke_detector_advanced"
+    },
+    {
+      "old": "zemismart_smart_switch_1gang_ac",
+      "new": "zemismart_smart_switch_1gang"
+    },
+    {
+      "old": "zemismart_smart_switch_3gang_ac",
+      "new": "zemismart_smart_switch_3gang"
+    },
+    {
+      "old": "zemismart_smart_switch_3gang_cr2032",
+      "new": "zemismart_smart_switch_3gang"
+    },
+    {
+      "old": "zemismart_smart_switch_4gang_cr2032",
+      "new": "zemismart_smart_switch_4gang"
+    },
+    {
+      "old": "zemismart_smoke_detector_temp_humidity_advanced_battery",
+      "new": "zemismart_smoke_detector_temp_humidity_advanced"
+    },
+    {
+      "old": "zemismart_smoke_temp_humid_sensor_battery",
+      "new": "zemismart_smoke_temp_humid_sensor"
+    },
+    {
+      "old": "zemismart_solar_panel_controller_aaa",
+      "new": "zemismart_solar_panel_controller"
+    },
+    {
+      "old": "zemismart_solar_panel_controller_cr2032",
+      "new": "zemismart_solar_panel_controller"
+    },
+    {
+      "old": "zemismart_switch_1gang_battery",
+      "new": "zemismart_switch_1gang"
+    },
+    {
+      "old": "zemismart_switch_5gang_battery",
+      "new": "zemismart_switch_5gang"
+    },
+    {
+      "old": "zemismart_temp_humid_sensor_advanced_battery",
+      "new": "zemismart_temp_humid_sensor_advanced"
+    },
+    {
+      "old": "zemismart_temp_humid_sensor_leak_detector_battery",
+      "new": "zemismart_temp_humid_sensor_leak_detector"
+    },
+    {
+      "old": "zemismart_temperature_sensor_aaa",
+      "new": "zemismart_temperature_sensor"
+    },
+    {
+      "old": "zemismart_temperature_sensor_advanced_aaa",
+      "new": "zemismart_temperature_sensor_advanced"
+    },
+    {
+      "old": "zemismart_temperature_sensor_advanced_battery",
+      "new": "zemismart_temperature_sensor_advanced"
+    },
+    {
+      "old": "zemismart_temperature_sensor_advanced_cr2032",
+      "new": "zemismart_temperature_sensor_advanced"
+    },
+    {
+      "old": "zemismart_temperature_sensor_battery",
+      "new": "zemismart_temperature_sensor"
+    },
+    {
+      "old": "zemismart_temperature_sensor_cr2032",
+      "new": "zemismart_temperature_sensor"
+    },
+    {
+      "old": "zemismart_touch_switch_1gang_ac",
+      "new": "zemismart_touch_switch_1gang"
+    },
+    {
+      "old": "zemismart_touch_switch_3gang_ac",
+      "new": "zemismart_touch_switch_3gang"
+    },
+    {
+      "old": "zemismart_valve_smart_aa",
+      "new": "zemismart_valve_smart"
+    },
+    {
+      "old": "zemismart_wall_switch_1gang_ac",
+      "new": "zemismart_wall_switch_1gang"
+    },
+    {
+      "old": "zemismart_wall_switch_1gang_dc",
+      "new": "zemismart_wall_switch_1gang"
+    },
+    {
+      "old": "zemismart_wall_switch_3gang_ac",
+      "new": "zemismart_wall_switch_3gang"
+    },
+    {
+      "old": "zemismart_wall_switch_3gang_dc",
+      "new": "zemismart_wall_switch_3gang"
+    },
+    {
+      "old": "zemismart_water_leak_sensor_battery",
+      "new": "zemismart_water_leak_sensor"
+    },
+    {
+      "old": "zemismart_wireless_scene_controller_4button_battery",
+      "new": "zemismart_wireless_scene_controller_4button"
+    },
+    {
+      "old": "zemismart_wireless_switch_1button_cr2032",
+      "new": "zemismart_wireless_switch_1button"
+    },
+    {
+      "old": "zemismart_wireless_switch_1button_cr2450",
+      "new": "zemismart_wireless_switch_1button"
+    },
+    {
+      "old": "zemismart_wireless_switch_1gang_cr2032",
+      "new": "zemismart_wireless_switch_1gang"
+    },
+    {
+      "old": "zemismart_wireless_switch_2button_cr2032",
+      "new": "zemismart_wireless_switch_2button"
+    },
+    {
+      "old": "zemismart_wireless_switch_3button_cr2032",
+      "new": "zemismart_wireless_switch_3button"
+    },
+    {
+      "old": "zemismart_wireless_switch_4button_cr2032",
+      "new": "zemismart_wireless_switch_4button"
+    },
+    {
+      "old": "zemismart_wireless_switch_6button_cr2032",
+      "new": "zemismart_wireless_switch_6button"
+    },
+    {
+      "old": "zemismart_wireless_switch_8button_cr2032",
+      "new": "zemismart_wireless_switch_8button"
+    }
+  ],
+  "kept": [
+    "zemismart_motion_sensor_pir_ac"
+  ],
+  "errors": [
+    {
+      "driver": "moes_sos_emergency_button_cr2032",
+      "reason": "Merge failed"
+    }
+  ]
+}

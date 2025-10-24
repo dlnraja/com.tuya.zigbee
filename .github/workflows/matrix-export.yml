@@ -1,0 +1,168 @@
+name: Matrix Export
+
+on:
+  push:
+    branches: [ master, main ]
+  schedule:
+    - cron: '0 0 * * 0'  # Weekly on Sunday
+  workflow_dispatch:
+
+jobs:
+  export-matrix:
+    name: Export Device Matrix
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Create matrix directory
+        run: mkdir -p matrix
+        
+      - name: Generate device matrix
+        run: |
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+          
+          const devices = [];
+          const driversPath = path.join(process.cwd(), 'drivers');
+          
+          if (!fs.existsSync(driversPath)) {
+            console.log('No drivers directory found');
+            process.exit(0);
+          }
+          
+          const driverDirs = fs.readdirSync(driversPath);
+          
+          for (const driverDir of driverDirs) {
+            const driverPath = path.join(driversPath, driverDir);
+            if (!fs.statSync(driverPath).isDirectory()) continue;
+            
+            const composePath = path.join(driverPath, 'driver.compose.json');
+            if (!fs.existsSync(composePath)) continue;
+            
+            try {
+              const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
+              const manufacturers = Array.isArray(compose.zigbee?.manufacturerName) 
+                ? compose.zigbee.manufacturerName 
+                : [compose.zigbee?.manufacturerName].filter(Boolean);
+              
+              const models = Array.isArray(compose.zigbee?.productId)
+                ? compose.zigbee.productId
+                : [compose.zigbee?.productId].filter(Boolean);
+              
+              devices.push({
+                driver_id: driverDir,
+                name: compose.name?.en || driverDir,
+                class: compose.class,
+                manufacturers: manufacturers,
+                models: models,
+                manufacturer_count: manufacturers.length,
+                model_count: models.length,
+                capabilities: compose.capabilities || [],
+                power_source: compose.energy?.batteries ? 'battery' : 'ac',
+                clusters: compose.zigbee?.clusters || []
+              });
+            } catch (e) {
+              console.error('Error processing', driverDir, e.message);
+            }
+          }
+          
+          // Save as JSON
+          fs.writeFileSync('matrix/devices.json', JSON.stringify(devices, null, 2));
+          
+          // Generate CSV
+          const csv = ['Driver ID,Name,Class,Manufacturers,Models,Capabilities,Power Source'];
+          for (const device of devices) {
+            csv.push([
+              device.driver_id,
+              device.name,
+              device.class,
+              device.manufacturers.join(';'),
+              device.models.join(';'),
+              device.capabilities.join(';'),
+              device.power_source
+            ].map(v => '\"' + (v || '').toString().replace(/\"/g, '\"\"') + '\"').join(','));
+          }
+          fs.writeFileSync('matrix/devices.csv', csv.join('\\n'));
+          
+          // Generate Markdown
+          let md = '# Device Matrix\\n\\n';
+          md += '**Generated:** ' + new Date().toISOString() + '\\n\\n';
+          md += '**Total Devices:** ' + devices.length + '\\n\\n';
+          md += '## Devices by Class\\n\\n';
+          
+          const byClass = {};
+          devices.forEach(d => {
+            if (!byClass[d.class]) byClass[d.class] = 0;
+            byClass[d.class]++;
+          });
+          
+          for (const [cls, count] of Object.entries(byClass).sort((a,b) => b[1] - a[1])) {
+            md += '- **' + cls + ':** ' + count + ' drivers\\n';
+          }
+          
+          md += '\\n## Statistics\\n\\n';
+          md += '- Total Drivers: ' + devices.length + '\\n';
+          md += '- Total Manufacturer IDs: ' + devices.reduce((sum, d) => sum + d.manufacturer_count, 0) + '\\n';
+          md += '- Total Model IDs: ' + devices.reduce((sum, d) => sum + d.model_count, 0) + '\\n';
+          md += '- Battery Devices: ' + devices.filter(d => d.power_source === 'battery').length + '\\n';
+          md += '- AC Devices: ' + devices.filter(d => d.power_source === 'ac').length + '\\n';
+          
+          fs.writeFileSync('matrix/DEVICE_MATRIX.md', md);
+          
+          console.log('✅ Matrix exported successfully');
+          console.log('Devices:', devices.length);
+          "
+          
+      - name: Upload matrix artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: device-matrix
+          path: |
+            matrix/devices.json
+            matrix/devices.csv
+            matrix/DEVICE_MATRIX.md
+          retention-days: 90
+          
+      - name: Commit matrix files
+        if: github.event_name != 'pull_request'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add matrix/
+          
+          # Check if there are changes
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          
+          # Commit changes
+          git commit -m "chore: update device matrix [skip ci]"
+          
+          # Push with retry logic (handles race conditions)
+          for i in {1..5}; do
+            if git push origin HEAD:master; then
+              echo "✅ Push successful"
+              break
+            else
+              echo "⚠️ Push failed (attempt $i/5), pulling and retrying..."
+              git pull --rebase origin master
+              if [ $i -eq 5 ]; then
+                echo "❌ Failed after 5 attempts"
+                exit 1
+              fi
+              sleep 5
+            fi
+          done

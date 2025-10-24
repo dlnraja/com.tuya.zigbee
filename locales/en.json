@@ -1,0 +1,24 @@
+{
+  "settings": {
+    "title": "Settings",
+    "debug_logging": "Enable debug logging",
+    "debug_logging_hint": "Enable detailed logging for troubleshooting device issues",
+    "community_updates": "Enable community updates",
+    "community_updates_hint": "Receive notifications about new device support from community",
+    "reporting_interval": "Reporting interval (seconds)",
+    "temperature_offset": "Temperature offset (°C)",
+    "humidity_offset": "Humidity offset (%)"
+  },
+  "tabs": {
+    "general": "General",
+    "advanced": "Advanced",
+    "about": "About"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "ok": "OK",
+    "delete": "Delete",
+    "edit": "Edit"
+  }
+}

@@ -1,0 +1,107 @@
+# Homey build
+.homeybuild/
+.homeycompose/
+env.json
+node_modules/
+
+# GitHub Pages (désactivé - mais on garde docs/ pour notre documentation)
+# docs/ <- ne plus ignorer, on utilise docs/ pour notre documentation
+_site/
+.jekyll-cache/
+.jekyll-metadata
+npm-debug.log*
+
+# Sensitive data - NEVER COMMIT
+*.env*
+*.key
+*.pem
+*.token
+config.json
+secrets.json
+homey-auth.*
+
+# Large files
+*.zip
+*.tar.gz
+*.7z
+
+# Excessively large documentation
+docs/releases/ULTIMATE_AUDIT_REPORT_v2.15.60.md
+**/ULTIMATE_AUDIT_REPORT*.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Backup complete system - NEVER COMMIT (too large)
+backup/
+backup/*/
+backup/*/*
+ultimate_system/backup/
+ultimate_system/backup/*/
+ultimate_system/backup/*/*
+ultimate_system/backup/*/*/*
+.backup-enrichment/
+
+# Git clones history - NEVER COMMIT
+backup/git_clones/
+backup/git_history/
+backup/branches/
+backup/commits/
+backup/versions/
+
+# Dumps and archives - NEVER COMMIT (generated files)
+dumps/
+dumps/*
+archives/large/
+temp_clones/
+archive/
+archive/*
+
+# Development files (organized)
+.dev/
+archive_old/
+
+*.backup-auto
+# Auto-cleanup rules - Ne pas créer ces fichiers à la racine
+*_REPORT*.md
+*_STATUS*.md
+*_SUMMARY*.md
+*_COMPLETE*.md
+*_FIX*.md
+*_DEPLOY*.md
+*_SESSION*.md
+*.tmp
+*.log
+*.bak
+temp_*.bat
+temp_*.js
+
+# Large project status files
+docs/project-status/PROJECT_STRUCTURE.md
+docs/project-status/*_LARGE*.md
+docs/releases/ULTIMATE_AUDIT_REPORT_*.md
+# Bloated docs
+docs/workflow/README_WORKFLOW.md
+docs/community/TUYA_ZIGBEE_LOCAL_SUPPORT.md
+docs/community/QUICK_IMPROVEMENTS.md
+docs/project-status/FINAL_ANALYSIS_PUBLICATION.md
+docs/workflow/QUICK_WORKFLOW.md
+
+# Bloated docs
+docs/workflow/README_WORKFLOW.md
+docs/community/TUYA_ZIGBEE_LOCAL_SUPPORT.md
+docs/community/QUICK_IMPROVEMENTS.md
+docs/project-status/FINAL_ANALYSIS_PUBLICATION.md
+docs/workflow/QUICK_WORKFLOW.md
+
+# Bloated docs
+docs/workflow/README_WORKFLOW.md
+docs/community/TUYA_ZIGBEE_LOCAL_SUPPORT.md
+docs/community/QUICK_IMPROVEMENTS.md
+docs/project-status/FINAL_ANALYSIS_PUBLICATION.md
+docs/workflow/QUICK_WORKFLOW.md

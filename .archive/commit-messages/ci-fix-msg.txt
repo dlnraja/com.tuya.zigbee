@@ -1,0 +1,15 @@
+fix: CI workflow - Download artifacts before export
+
+Job "Export Device Matrix" échouait car il essayait d'accéder
+à DEVICE_MATRIX.md et COVERAGE_STATS.json sans les télécharger.
+
+Ces fichiers sont créés dans le job précédent (generate-matrix)
+et doivent être téléchargés via actions/download-artifact@v4.
+
+Ajouté:
+- Download Device Matrix artifact
+- Download Coverage Stats artifact
+
+Avant export CSV/JSON.
+
+Résultat: Job peut maintenant accéder aux fichiers nécessaires.

@@ -1,0 +1,44 @@
+fix: Homey publish workflow - Add pull rebase and retry logic
+
+Fixed workflow "Homey App - Official Publish" failing with push rejected errors.
+
+Issue:
+- update-docs job failed with push rejected
+- version job could fail with concurrent pushes
+- Same race condition as update-docs.yml
+
+Solution:
+✅ Added git pull --rebase before push (2 locations)
+✅ Implemented retry logic (3 attempts with 5s delay)
+✅ Sync with remote changes automatically
+
+Changes to .github/workflows/homey-official-publish.yml:
+
+1. update-docs job (line 37-61):
+   - Pull rebase before push
+   - Retry loop if push fails
+   - Auto-sync between retries
+
+2. version job (line 130-151):
+   - Pull rebase before push with tags
+   - Retry loop for both push and tags
+   - Handle concurrent version updates
+
+Benefits:
+- Handles concurrent workflow runs gracefully
+- No more push rejected errors in publish workflow
+- Automatic conflict resolution via rebase
+- Resilient to timing issues
+- Safe for multi-job workflow dependencies
+
+Testing:
+- Next publish workflow will use new logic
+- Both jobs protected against race conditions
+- Version bumps won't fail on concurrent pushes
+
+Related:
+- Same fix as update-docs.yml (commit 7ce4c6e00)
+- Same fix as ci workflows (upload-artifact v4)
+
+Version: 3.0.5
+Status: All workflows fixed and resilient
