@@ -290,6 +290,13 @@
       "units": {
         "en": "%"
       }
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie"
+      },
+      "preventInsights": false
     }
   },
   "energy": {

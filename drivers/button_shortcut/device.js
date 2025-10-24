@@ -1,6 +1,6 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const ButtonDevice = require('../../lib/ButtonDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
 /**
@@ -17,9 +17,12 @@ const { CLUSTER } = require('zigbee-clusters');
  * Brand identification happens via manufacturerName and productId fields.
  */
 
-class ShortcutButtonBatteryDevice extends ZigBeeDevice {
+class ShortcutButtonBatteryDevice extends ButtonDevice {
   
   async onNodeInit({ zclNode }) {
+    // Initialize hybrid base (power detection)
+    await super.onNodeInit();
+
     this.printNode();
     
     // IKEA SOMRIG Shortcut Button

@@ -13,7 +13,8 @@
     "measure_humidity",
     "measure_temperature",
     "measure_power",
-    "alarm_water"
+    "alarm_water",
+    "measure_battery"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -35,6 +36,13 @@
       "max": 80,
       "step": 5,
       "units": "%"
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie"
+      },
+      "preventInsights": false
     }
   },
   "energy": {

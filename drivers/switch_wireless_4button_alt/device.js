@@ -1,11 +1,14 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const ButtonDevice = require('../../lib/ButtonDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
-class Remote4buttonStyrbarBatteryDevice extends ZigBeeDevice {
+class Remote4buttonStyrbarBatteryDevice extends ButtonDevice {
   
   async onNodeInit({ zclNode }) {
+    // Initialize hybrid base (power detection)
+    await super.onNodeInit();
+
     this.printNode();
     
     // IKEA STYRBAR Remote Control

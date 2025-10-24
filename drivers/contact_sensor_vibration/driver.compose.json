@@ -33,6 +33,13 @@
         "it": "Vibrazione",
         "es": "Vibración"
       }
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie"
+      },
+      "preventInsights": false
     }
   },
   "energy": {
@@ -41,7 +48,10 @@
       "CR2450",
       "AAA",
       "AA"
-    ]
+    ],
+    "approximation": {
+      "usageConstant": 0.5
+    }
   },
   "zigbee": {
     "manufacturerName": [

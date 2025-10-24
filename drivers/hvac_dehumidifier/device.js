@@ -1,11 +1,14 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
-class DehumidifierDevice extends ZigBeeDevice {
+class DehumidifierDevice extends BaseHybridDevice {
   
   async onNodeInit({ zclNode }) {
+    // Initialize hybrid base (power detection)
+    await super.onNodeInit();
+
     this.printNode();
     
     // onoff capability

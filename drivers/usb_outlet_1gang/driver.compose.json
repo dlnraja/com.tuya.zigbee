@@ -13,7 +13,8 @@
     "measure_power",
     "meter_power",
     "measure_voltage",
-    "measure_current"
+    "measure_current",
+    "measure_battery"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -23,6 +24,13 @@
         "nl": "Stroom",
         "de": "Strom"
       }
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie"
+      },
+      "preventInsights": false
     }
   },
   "energy": {

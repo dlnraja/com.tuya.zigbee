@@ -1,11 +1,14 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const PlugDevice = require('../../lib/PlugDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
-class UsbOutlet2PortDevice extends ZigBeeDevice {
+class UsbOutlet2PortDevice extends PlugDevice {
 
   async onNodeInit({ zclNode }) {
+    // Initialize hybrid base (power detection)
+    await super.onNodeInit();
+
     this.log('UsbOutlet2PortDevice initialized');
     this.log('Device model:', this.getData().manufacturerName, this.getData().productId);
 

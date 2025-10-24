@@ -5,7 +5,8 @@
     "button.2",
     "button.3",
     "button.4",
-    "dim"
+    "dim",
+    "measure_battery"
   ],
   "zigbee": {
     "productId": [
@@ -315,7 +316,15 @@
   "connectivity": [
     "zigbee"
   ],
-  "capabilitiesOptions": {},
+  "capabilitiesOptions": {
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie"
+      },
+      "preventInsights": false
+    }
+  },
   "id": "switch_hybrid_4gang",
   "learnmode": {
     "image": "./assets/learnmode.svg",

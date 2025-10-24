@@ -18741,6 +18741,13 @@
           "title": {
             "en": "Temperature"
           }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie"
+          },
+          "preventInsights": false
         }
       },
       "settings": [
@@ -24105,6 +24112,15 @@
             "max": 3
           }
         }
+      },
+      "capabilitiesOptions": {
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie"
+          },
+          "preventInsights": false
+        }
       }
     },
     {
@@ -24121,9 +24137,18 @@
       },
       "class": "button",
       "capabilities": [
-        "alarm_generic"
+        "alarm_generic",
+        "measure_battery"
       ],
-      "capabilitiesOptions": {},
+      "capabilitiesOptions": {
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie"
+          },
+          "preventInsights": false
+        }
+      },
       "zigbee": {
         "manufacturerName": [],
         "productId": [
@@ -29485,6 +29510,13 @@
             "it": "Vibrazione",
             "es": "Vibración"
           }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie"
+          },
+          "preventInsights": false
         }
       },
       "energy": {
@@ -29493,7 +29525,10 @@
           "CR2450",
           "AAA",
           "AA"
-        ]
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
       },
       "zigbee": {
         "manufacturerName": [
@@ -29943,6 +29978,13 @@
           "units": {
             "en": "%"
           }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie"
+          },
+          "preventInsights": false
         }
       },
       "energy": {
@@ -32635,6 +32677,13 @@
           "units": {
             "en": "%"
           }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie"
+          },
+          "preventInsights": false
         }
       },
       "energy": {
@@ -34736,7 +34785,8 @@
         "target_temperature",
         "measure_temperature",
         "thermostat_mode",
-        "fan_speed"
+        "fan_speed",
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -34841,6 +34891,13 @@
               }
             }
           ]
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie"
+          },
+          "preventInsights": false
         }
       },
       "energy": {
@@ -35150,7 +35207,8 @@
         "measure_humidity",
         "measure_temperature",
         "measure_power",
-        "alarm_water"
+        "alarm_water",
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -35172,6 +35230,13 @@
           "max": 80,
           "step": 5,
           "units": "%"
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie"
+          },
+          "preventInsights": false
         }
       },
       "energy": {
@@ -46321,7 +46386,8 @@
       "class": "thermostat",
       "capabilities": [
         "target_temperature",
-        "measure_temperature"
+        "measure_temperature",
+        "measure_battery"
       ],
       "platforms": [
         "local"
@@ -46592,6 +46658,13 @@
           "units": {
             "en": "°C"
           }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie"
+          },
+          "preventInsights": false
         }
       },
       "id": "radiator_valve_smart",
@@ -47256,6 +47329,15 @@
             "min": 3,
             "max": 3
           }
+        }
+      },
+      "capabilitiesOptions": {
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie"
+          },
+          "preventInsights": false
         }
       }
     },
@@ -49928,6 +50010,15 @@
             "max": 3
           }
         }
+      },
+      "capabilitiesOptions": {
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie"
+          },
+          "preventInsights": false
+        }
       }
     },
     {
@@ -51854,7 +51945,8 @@
       "class": "socket",
       "capabilities": [
         "onoff",
-        "dim"
+        "dim",
+        "measure_battery"
       ],
       "zigbee": {
         "productId": [
@@ -52133,7 +52225,15 @@
       "connectivity": [
         "zigbee"
       ],
-      "capabilitiesOptions": {},
+      "capabilitiesOptions": {
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie"
+          },
+          "preventInsights": false
+        }
+      },
       "id": "switch_hybrid_1gang",
       "learnmode": {
         "image": "./assets/learnmode.svg",
@@ -52170,7 +52270,8 @@
       "class": "socket",
       "capabilities": [
         "onoff",
-        "onoff.gang2"
+        "onoff.gang2",
+        "measure_battery"
       ],
       "zigbee": {
         "productId": [
@@ -52469,6 +52570,13 @@
           "title": {
             "en": "Gang 2"
           }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie"
+          },
+          "preventInsights": false
         }
       },
       "id": "switch_hybrid_2gang",
@@ -52510,7 +52618,8 @@
       "class": "socket",
       "capabilities": [
         "onoff",
-        "onoff.gang2"
+        "onoff.gang2",
+        "measure_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -52574,6 +52683,13 @@
           "title": {
             "en": "Gang 2"
           }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie"
+          },
+          "preventInsights": false
         }
       },
       "platforms": [
@@ -52844,7 +52960,8 @@
       "capabilities": [
         "onoff",
         "onoff.gang2",
-        "onoff.gang3"
+        "onoff.gang3",
+        "measure_battery"
       ],
       "zigbee": {
         "productId": [
@@ -53159,6 +53276,13 @@
           "title": {
             "en": "Gang 3"
           }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie"
+          },
+          "preventInsights": false
         }
       },
       "id": "switch_hybrid_3gang",
@@ -53200,7 +53324,8 @@
         "button.2",
         "button.3",
         "button.4",
-        "dim"
+        "dim",
+        "measure_battery"
       ],
       "zigbee": {
         "productId": [
@@ -53510,7 +53635,15 @@
       "connectivity": [
         "zigbee"
       ],
-      "capabilitiesOptions": {},
+      "capabilitiesOptions": {
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie"
+          },
+          "preventInsights": false
+        }
+      },
       "id": "switch_hybrid_4gang",
       "learnmode": {
         "image": "./assets/learnmode.svg",
@@ -53615,6 +53748,13 @@
           "units": {
             "en": "%"
           }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie"
+          },
+          "preventInsights": false
         }
       },
       "platforms": [
@@ -63669,6 +63809,15 @@
             "max": 3
           }
         }
+      },
+      "capabilitiesOptions": {
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie"
+          },
+          "preventInsights": false
+        }
       }
     },
     {
@@ -65360,6 +65509,13 @@
           "title": {
             "en": "Temperature"
           }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie"
+          },
+          "preventInsights": false
         }
       },
       "zigbee": {
@@ -65756,6 +65912,13 @@
               }
             }
           ]
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie"
+          },
+          "preventInsights": false
         }
       },
       "energy": {
@@ -66089,6 +66252,13 @@
           "title": {
             "en": "Humidity"
           }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie"
+          },
+          "preventInsights": false
         }
       },
       "energy": {
@@ -66363,7 +66533,8 @@
         "measure_power",
         "meter_power",
         "measure_voltage",
-        "measure_current"
+        "measure_current",
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -66373,6 +66544,13 @@
             "nl": "Stroom",
             "de": "Strom"
           }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie"
+          },
+          "preventInsights": false
         }
       },
       "energy": {
@@ -66545,7 +66723,8 @@
       "class": "socket",
       "capabilities": [
         "onoff",
-        "onoff.usb2"
+        "onoff.usb2",
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -66567,6 +66746,13 @@
             "it": "Porta USB 2",
             "es": "Puerto USB 2"
           }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie"
+          },
+          "preventInsights": false
         }
       },
       "energy": {
@@ -66753,7 +66939,8 @@
         "onoff.usb2",
         "onoff.usb3",
         "measure_power",
-        "meter_power"
+        "meter_power",
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -66776,6 +66963,13 @@
             "fr": "Port USB 3",
             "nl": "USB Poort 3"
           }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie"
+          },
+          "preventInsights": false
         }
       },
       "energy": {
@@ -69109,6 +69303,13 @@
           "title": {
             "en": "Temperature"
           }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie"
+          },
+          "preventInsights": false
         }
       },
       "platforms": [
