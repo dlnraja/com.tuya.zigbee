@@ -4,9 +4,6 @@
     "name": "Lsc Innr Bulb Color",
     "class": "light",
     "manufacturers": [
-      "TS0502",
-      "TS0503",
-      "TS0505",
       "ZNCJMB11LM",
       "ZNCJMB14LM",
       "ZNDDMK11LM",
@@ -14,7 +11,6 @@
       "ZNDDMK13LM",
       "ZNDDMK14LM",
       "ZNDDMK15LM",
-      "ZNLDP12LM",
       "_INNR_generic",
       "_TZ3000_12sxjap4",
       "_TZ3000_49qchf10",
@@ -29,7 +25,6 @@
       "_TZ3000_q50zhdsc",
       "_TZ3000_qd7hej8u",
       "_TZ3210_mja6r5ix",
-      "eWeLight",
       "lumi.light.aqcn02",
       "lumi.light.cb2acn",
       "lumi.light.cwopcn02",
@@ -43,7 +38,7 @@
       "ZB-CL01",
       "generic"
     ],
-    "manufacturer_count": 30,
+    "manufacturer_count": 25,
     "model_count": 6,
     "capabilities": [
       "onoff",
@@ -60,14 +55,8 @@
     "name": "Lsc Bulb Rgb",
     "class": "light",
     "manufacturers": [
-      "GE",
       "IKEA of Sweden",
-      "Philips",
-      "Sengled",
       "Signify Netherlands B.V.",
-      "TS0502",
-      "TS0503",
-      "TS0505",
       "ZNCJMB11LM",
       "ZNCJMB14LM",
       "ZNDDMK11LM",
@@ -75,7 +64,6 @@
       "ZNDDMK13LM",
       "ZNDDMK14LM",
       "ZNDDMK15LM",
-      "ZNLDP12LM",
       "_TZ3000_12sxjap4",
       "_TZ3000_49qchf10",
       "_TZ3000_5bsf8vaj",
@@ -99,7 +87,6 @@
       "_TZ3210_r0xgkft5",
       "_TZ3210_r5afgmkl",
       "_TZ3210_sroezl0s",
-      "eWeLight",
       "lumi.light.aqcn02",
       "lumi.light.cb2acn",
       "lumi.light.cwopcn02",
@@ -182,7 +169,7 @@
       "Z01-A19NAE26",
       "ZB-CL01"
     ],
-    "manufacturer_count": 44,
+    "manufacturer_count": 36,
     "model_count": 75,
     "capabilities": [
       "onoff",
@@ -200,9 +187,6 @@
     "name": "Lsc Philips Bulb Color",
     "class": "light",
     "manufacturers": [
-      "TS0502",
-      "TS0503",
-      "TS0505",
       "ZNCJMB11LM",
       "ZNCJMB14LM",
       "ZNDDMK11LM",
@@ -210,7 +194,6 @@
       "ZNDDMK13LM",
       "ZNDDMK14LM",
       "ZNDDMK15LM",
-      "ZNLDP12LM",
       "_PHILIPS_generic",
       "_TZ3000_12sxjap4",
       "_TZ3000_49qchf10",
@@ -225,7 +208,6 @@
       "_TZ3000_q50zhdsc",
       "_TZ3000_qd7hej8u",
       "_TZ3210_mja6r5ix",
-      "eWeLight",
       "lumi.light.aqcn02",
       "lumi.light.cb2acn",
       "lumi.light.cwopcn02",
@@ -239,7 +221,7 @@
       "ZB-CL01",
       "generic"
     ],
-    "manufacturer_count": 30,
+    "manufacturer_count": 25,
     "model_count": 6,
     "capabilities": [
       "onoff",
@@ -256,9 +238,6 @@
     "name": "Lsc Innr Bulb Tunable White",
     "class": "light",
     "manufacturers": [
-      "TS0502",
-      "TS0503",
-      "TS0505",
       "ZNCJMB11LM",
       "ZNCJMB14LM",
       "ZNDDMK11LM",
@@ -266,7 +245,6 @@
       "ZNDDMK13LM",
       "ZNDDMK14LM",
       "ZNDDMK15LM",
-      "ZNLDP12LM",
       "_INNR_generic",
       "_TZ3000_12sxjap4",
       "_TZ3000_49qchf10",
@@ -281,7 +259,6 @@
       "_TZ3000_q50zhdsc",
       "_TZ3000_qd7hej8u",
       "_TZ3210_mja6r5ix",
-      "eWeLight",
       "lumi.light.aqcn02",
       "lumi.light.cb2acn",
       "lumi.light.cwopcn02",
@@ -295,7 +272,7 @@
       "ZB-CL01",
       "generic"
     ],
-    "manufacturer_count": 30,
+    "manufacturer_count": 25,
     "model_count": 6,
     "capabilities": [
       "onoff",
@@ -311,13 +288,7 @@
     "name": "Lsc Bulb White Ambiance",
     "class": "light",
     "manufacturers": [
-      "GE",
-      "Philips",
-      "Sengled",
       "Signify Netherlands B.V.",
-      "TS0502",
-      "TS0503",
-      "TS0505",
       "ZNCJMB11LM",
       "ZNCJMB14LM",
       "ZNDDMK11LM",
@@ -325,7 +296,6 @@
       "ZNDDMK13LM",
       "ZNDDMK14LM",
       "ZNDDMK15LM",
-      "ZNLDP12LM",
       "_TZ3000_12sxjap4",
       "_TZ3000_49qchf10",
       "_TZ3000_8uaoilu9",
@@ -341,7 +311,6 @@
       "_TZ3000_qd7hej8u",
       "_TZ3210_mja6r5ix",
       "_TZ3210_r0xgkft5",
-      "eWeLight",
       "lumi.light.aqcn02",
       "lumi.light.cb2acn",
       "lumi.light.cwopcn02",
@@ -423,7 +392,7 @@
       "Z01-A19NAE26",
       "ZB-CL01"
     ],
-    "manufacturer_count": 35,
+    "manufacturer_count": 27,
     "model_count": 74,
     "capabilities": [
       "onoff",
@@ -441,9 +410,6 @@
     "name": "Lsc Osram Bulb Tunable White",
     "class": "light",
     "manufacturers": [
-      "TS0502",
-      "TS0503",
-      "TS0505",
       "ZNCJMB11LM",
       "ZNCJMB14LM",
       "ZNDDMK11LM",
@@ -451,7 +417,6 @@
       "ZNDDMK13LM",
       "ZNDDMK14LM",
       "ZNDDMK15LM",
-      "ZNLDP12LM",
       "_OSRAM_generic",
       "_TZ3000_12sxjap4",
       "_TZ3000_49qchf10",
@@ -466,7 +431,6 @@
       "_TZ3000_q50zhdsc",
       "_TZ3000_qd7hej8u",
       "_TZ3210_mja6r5ix",
-      "eWeLight",
       "lumi.light.aqcn02",
       "lumi.light.cb2acn",
       "lumi.light.cwopcn02",
@@ -480,7 +444,7 @@
       "ZB-CL01",
       "generic"
     ],
-    "manufacturer_count": 30,
+    "manufacturer_count": 25,
     "model_count": 6,
     "capabilities": [
       "onoff",
@@ -496,9 +460,6 @@
     "name": "Lsc Philips Bulb White Ambiance",
     "class": "light",
     "manufacturers": [
-      "TS0502",
-      "TS0503",
-      "TS0505",
       "ZNCJMB11LM",
       "ZNCJMB14LM",
       "ZNDDMK11LM",
@@ -506,7 +467,6 @@
       "ZNDDMK13LM",
       "ZNDDMK14LM",
       "ZNDDMK15LM",
-      "ZNLDP12LM",
       "_PHILIPS_generic",
       "_TZ3000_12sxjap4",
       "_TZ3000_49qchf10",
@@ -521,7 +481,6 @@
       "_TZ3000_q50zhdsc",
       "_TZ3000_qd7hej8u",
       "_TZ3210_mja6r5ix",
-      "eWeLight",
       "lumi.light.aqcn02",
       "lumi.light.cb2acn",
       "lumi.light.cwopcn02",
@@ -535,7 +494,7 @@
       "ZB-CL01",
       "generic"
     ],
-    "manufacturer_count": 30,
+    "manufacturer_count": 25,
     "model_count": 6,
     "capabilities": [
       "onoff",
@@ -550,9 +509,6 @@
     "name": "Lsc Innr Bulb White",
     "class": "light",
     "manufacturers": [
-      "TS0502",
-      "TS0503",
-      "TS0505",
       "ZNCJMB11LM",
       "ZNCJMB14LM",
       "ZNDDMK11LM",
@@ -560,7 +516,6 @@
       "ZNDDMK13LM",
       "ZNDDMK14LM",
       "ZNDDMK15LM",
-      "ZNLDP12LM",
       "_INNR_generic",
       "_TZ3000_12sxjap4",
       "_TZ3000_49qchf10",
@@ -575,7 +530,6 @@
       "_TZ3000_q50zhdsc",
       "_TZ3000_qd7hej8u",
       "_TZ3210_mja6r5ix",
-      "eWeLight",
       "lumi.light.aqcn02",
       "lumi.light.cb2acn",
       "lumi.light.cwopcn02",
@@ -589,7 +543,7 @@
       "ZB-CL01",
       "generic"
     ],
-    "manufacturer_count": 30,
+    "manufacturer_count": 25,
     "model_count": 6,
     "capabilities": [
       "onoff"
@@ -602,13 +556,7 @@
     "name": "Lsc Bulb White",
     "class": "light",
     "manufacturers": [
-      "GE",
-      "Philips",
-      "Sengled",
       "Signify Netherlands B.V.",
-      "TS0502",
-      "TS0503",
-      "TS0505",
       "ZNCJMB11LM",
       "ZNCJMB14LM",
       "ZNDDMK11LM",
@@ -616,7 +564,6 @@
       "ZNDDMK13LM",
       "ZNDDMK14LM",
       "ZNDDMK15LM",
-      "ZNLDP12LM",
       "_TZ3000_12sxjap4",
       "_TZ3000_49qchf10",
       "_TZ3000_dbou1ap4",
@@ -632,7 +579,6 @@
       "_TZ3210_mja6r5ix",
       "_TZ3210_r0xgkft5",
       "_TZ3210_zdrhqmo0",
-      "eWeLight",
       "lumi.light.aqcn02",
       "lumi.light.cb2acn",
       "lumi.light.cwopcn02",
@@ -714,7 +660,7 @@
       "Z01-A19NAE26",
       "ZB-CL01"
     ],
-    "manufacturer_count": 35,
+    "manufacturer_count": 27,
     "model_count": 74,
     "capabilities": [
       "onoff",
@@ -728,9 +674,6 @@
     "name": "Lsc Osram Bulb White",
     "class": "light",
     "manufacturers": [
-      "TS0502",
-      "TS0503",
-      "TS0505",
       "ZNCJMB11LM",
       "ZNCJMB14LM",
       "ZNDDMK11LM",
@@ -738,7 +681,6 @@
       "ZNDDMK13LM",
       "ZNDDMK14LM",
       "ZNDDMK15LM",
-      "ZNLDP12LM",
       "_OSRAM_generic",
       "_TZ3000_12sxjap4",
       "_TZ3000_49qchf10",
@@ -753,7 +695,6 @@
       "_TZ3000_q50zhdsc",
       "_TZ3000_qd7hej8u",
       "_TZ3210_mja6r5ix",
-      "eWeLight",
       "lumi.light.aqcn02",
       "lumi.light.cb2acn",
       "lumi.light.cwopcn02",
@@ -767,7 +708,7 @@
       "ZB-CL01",
       "generic"
     ],
-    "manufacturer_count": 30,
+    "manufacturer_count": 25,
     "model_count": 6,
     "capabilities": [
       "onoff"
@@ -780,9 +721,6 @@
     "name": "Lsc Philips Bulb White",
     "class": "light",
     "manufacturers": [
-      "TS0502",
-      "TS0503",
-      "TS0505",
       "ZNCJMB11LM",
       "ZNCJMB14LM",
       "ZNDDMK11LM",
@@ -790,7 +728,6 @@
       "ZNDDMK13LM",
       "ZNDDMK14LM",
       "ZNDDMK15LM",
-      "ZNLDP12LM",
       "_PHILIPS_generic",
       "_TZ3000_12sxjap4",
       "_TZ3000_49qchf10",
@@ -805,7 +742,6 @@
       "_TZ3000_q50zhdsc",
       "_TZ3000_qd7hej8u",
       "_TZ3210_mja6r5ix",
-      "eWeLight",
       "lumi.light.aqcn02",
       "lumi.light.cb2acn",
       "lumi.light.cwopcn02",
@@ -819,7 +755,7 @@
       "ZB-CL01",
       "generic"
     ],
-    "manufacturer_count": 30,
+    "manufacturer_count": 25,
     "model_count": 6,
     "capabilities": [
       "onoff"
@@ -832,26 +768,8 @@
     "name": "Lonsonho Wireless Button 2gang",
     "class": "button",
     "manufacturers": [
-      "FYRTUR",
-      "IKEA",
       "IKEA of Sweden",
-      "KADRILJ",
-      "Philips",
-      "QBCZ03LM",
-      "SYMFONISK",
       "Signify Netherlands B.V.",
-      "TRADFRI",
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044",
-      "WXKG01LM",
-      "WXKG02LM",
-      "WXKG03LM",
-      "WXKG11LM",
-      "WXKG12LM",
-      "WXKG13LM",
-      "WXKG14LM",
       "_TYZB02_key8kk7r",
       "_TYZB02_keyjhapk",
       "_TZ3000_46t1rvdu",
@@ -920,7 +838,7 @@
       "TS0216",
       "TS0601"
     ],
-    "manufacturer_count": 55,
+    "manufacturer_count": 37,
     "model_count": 30,
     "capabilities": [
       "alarm_generic"
@@ -933,16 +851,6 @@
     "name": "Lonsonho Samsung Button",
     "class": "button",
     "manufacturers": [
-      "WXKG01LM",
-      "WXKG02LM",
-      "WXKG03LM",
-      "WXKG04LM",
-      "WXKG05LM",
-      "WXKG06LM",
-      "WXKG07LM",
-      "WXKG08LM",
-      "WXKG09LM",
-      "WXKG10LM",
       "_SAMSUNG_generic",
       "_TYZB02_key8kk7r",
       "_TYZB02_keyjhapk",
@@ -977,7 +885,7 @@
       "TS0215A",
       "generic"
     ],
-    "manufacturer_count": 34,
+    "manufacturer_count": 24,
     "model_count": 7,
     "capabilities": [
       "alarm_generic"
@@ -990,20 +898,6 @@
     "name": "Lonsonho Sonoff Button Wireless",
     "class": "button",
     "manufacturers": [
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044",
-      "WXKG01LM",
-      "WXKG02LM",
-      "WXKG03LM",
-      "WXKG04LM",
-      "WXKG05LM",
-      "WXKG06LM",
-      "WXKG07LM",
-      "WXKG08LM",
-      "WXKG09LM",
-      "WXKG10LM",
       "_SONOFF_generic",
       "_TYZB02_key8kk7r",
       "_TYZB02_keyjhapk",
@@ -1040,7 +934,7 @@
       "TS0215A",
       "generic"
     ],
-    "manufacturer_count": 40,
+    "manufacturer_count": 26,
     "model_count": 7,
     "capabilities": [
       "alarm_generic"
@@ -1053,10 +947,6 @@
     "name": "Lonsonho Sonoff Contact Sensor",
     "class": "sensor",
     "manufacturers": [
-      "3321-G",
-      "3321-S",
-      "SNZB-04",
-      "TS0203",
       "_SONOFF_generic",
       "_TYZB01_xph99wvr",
       "_TZ1800_ejwkn2h2",
@@ -1091,7 +981,7 @@
       "TY0203",
       "generic"
     ],
-    "manufacturer_count": 31,
+    "manufacturer_count": 27,
     "model_count": 4,
     "capabilities": [
       "alarm_contact",
@@ -1106,23 +996,6 @@
     "name": "Lsc Philips Dimmer Switch",
     "class": "button",
     "manufacturers": [
-      "QBCZ03LM",
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0012",
-      "TS110E",
-      "TS110F",
-      "WXKG01LM",
-      "WXKG02LM",
-      "WXKG03LM",
-      "WXKG11LM",
-      "WXKG12LM",
-      "WXKG13LM",
-      "WXKG14LM",
-      "ZNLDP12LM",
       "_PHILIPS_generic",
       "_TYZB01_qezuin6k",
       "_TYZB01_v8gtiaed",
@@ -1171,7 +1044,7 @@
       "TS110F",
       "generic"
     ],
-    "manufacturer_count": 58,
+    "manufacturer_count": 41,
     "model_count": 4,
     "capabilities": [
       "alarm_generic"
@@ -1184,7 +1057,6 @@
     "name": "Lsc Sonoff Led Strip",
     "class": "light",
     "manufacturers": [
-      "TS0505",
       "_SONOFF_generic",
       "_TZ3000_5bsf8vaj",
       "_TZ3000_7ysdnebc",
@@ -1211,7 +1083,7 @@
       "TS0505B",
       "generic"
     ],
-    "manufacturer_count": 18,
+    "manufacturer_count": 17,
     "model_count": 6,
     "capabilities": [
       "onoff"
@@ -1224,11 +1096,6 @@
     "name": "Samsung Outdoor Motion (CR123A)",
     "class": "sensor",
     "manufacturers": [
-      "3315-G",
-      "3315-S",
-      "SNZB-03",
-      "SNZB-03P",
-      "TS0203",
       "_SAMSUNG_generic",
       "_TYZB01_dl7cejts",
       "_TYZB01_jytabjkb",
@@ -1275,7 +1142,7 @@
       "TY0202",
       "generic"
     ],
-    "manufacturer_count": 44,
+    "manufacturer_count": 39,
     "model_count": 4,
     "capabilities": [
       "alarm_motion",
@@ -1289,10 +1156,6 @@
     "name": "Samsung Motion Sensor",
     "class": "sensor",
     "manufacturers": [
-      "3315-G",
-      "3315-S",
-      "SNZB-03",
-      "SNZB-03P",
       "_SAMSUNG_generic",
       "_TYZB01_dl7cejts",
       "_TYZB01_jytabjkb",
@@ -1335,7 +1198,7 @@
       "TY0202",
       "generic"
     ],
-    "manufacturer_count": 39,
+    "manufacturer_count": 35,
     "model_count": 4,
     "capabilities": [
       "alarm_motion",
@@ -1350,10 +1213,6 @@
     "name": "Sonoff Motion Sensor",
     "class": "sensor",
     "manufacturers": [
-      "3315-G",
-      "3315-S",
-      "SNZB-03",
-      "SNZB-03P",
       "_SONOFF_generic",
       "_TYZB01_dl7cejts",
       "_TYZB01_jytabjkb",
@@ -1396,7 +1255,7 @@
       "TY0202",
       "generic"
     ],
-    "manufacturer_count": 39,
+    "manufacturer_count": 35,
     "model_count": 4,
     "capabilities": [
       "alarm_motion",
@@ -1411,16 +1270,6 @@
     "name": "Avatto Innr Smart Plug",
     "class": "socket",
     "manufacturers": [
-      "QBCZ11LM",
-      "SP120",
-      "SP220",
-      "SSM-U01",
-      "SSM-U02",
-      "SSM-U03",
-      "SSM-U04",
-      "TS011F",
-      "TS0121",
-      "ZNCZ02LM",
       "_INNR_generic",
       "_TZ3000_00mk2xzy",
       "_TZ3000_1obwwnmq",
@@ -1447,7 +1296,6 @@
       "_TZ3000_vtscrpmw",
       "_TZ3000_w0qqde0g",
       "_TZ3000_zloso4jk",
-      "lumi.plug",
       "lumi.plug.mmeu01"
     ],
     "models": [
@@ -1456,7 +1304,7 @@
       "TS0121",
       "generic"
     ],
-    "manufacturer_count": 38,
+    "manufacturer_count": 27,
     "model_count": 4,
     "capabilities": [
       "onoff"
@@ -1469,16 +1317,6 @@
     "name": "Avatto Osram Smart Plug",
     "class": "socket",
     "manufacturers": [
-      "QBCZ11LM",
-      "SP120",
-      "SP220",
-      "SSM-U01",
-      "SSM-U02",
-      "SSM-U03",
-      "SSM-U04",
-      "TS011F",
-      "TS0121",
-      "ZNCZ02LM",
       "_OSRAM_generic",
       "_TZ3000_00mk2xzy",
       "_TZ3000_1obwwnmq",
@@ -1505,7 +1343,6 @@
       "_TZ3000_vtscrpmw",
       "_TZ3000_w0qqde0g",
       "_TZ3000_zloso4jk",
-      "lumi.plug",
       "lumi.plug.mmeu01"
     ],
     "models": [
@@ -1514,7 +1351,7 @@
       "TS0121",
       "generic"
     ],
-    "manufacturer_count": 38,
+    "manufacturer_count": 27,
     "model_count": 4,
     "capabilities": [
       "onoff"
@@ -1527,16 +1364,6 @@
     "name": "Avatto Philips Smart Plug",
     "class": "socket",
     "manufacturers": [
-      "QBCZ11LM",
-      "SP120",
-      "SP220",
-      "SSM-U01",
-      "SSM-U02",
-      "SSM-U03",
-      "SSM-U04",
-      "TS011F",
-      "TS0121",
-      "ZNCZ02LM",
       "_PHILIPS_generic",
       "_TZ3000_00mk2xzy",
       "_TZ3000_1obwwnmq",
@@ -1563,7 +1390,6 @@
       "_TZ3000_vtscrpmw",
       "_TZ3000_w0qqde0g",
       "_TZ3000_zloso4jk",
-      "lumi.plug",
       "lumi.plug.mmeu01"
     ],
     "models": [
@@ -1572,7 +1398,7 @@
       "TS0121",
       "generic"
     ],
-    "manufacturer_count": 38,
+    "manufacturer_count": 27,
     "model_count": 4,
     "capabilities": [
       "onoff"
@@ -1585,16 +1411,6 @@
     "name": "Avatto Samsung Smart Plug",
     "class": "socket",
     "manufacturers": [
-      "QBCZ11LM",
-      "SP120",
-      "SP220",
-      "SSM-U01",
-      "SSM-U02",
-      "SSM-U03",
-      "SSM-U04",
-      "TS011F",
-      "TS0121",
-      "ZNCZ02LM",
       "_SAMSUNG_generic",
       "_TZ3000_00mk2xzy",
       "_TZ3000_1obwwnmq",
@@ -1621,7 +1437,6 @@
       "_TZ3000_vtscrpmw",
       "_TZ3000_w0qqde0g",
       "_TZ3000_zloso4jk",
-      "lumi.plug",
       "lumi.plug.mmeu01"
     ],
     "models": [
@@ -1630,7 +1445,7 @@
       "TS0121",
       "generic"
     ],
-    "manufacturer_count": 38,
+    "manufacturer_count": 27,
     "model_count": 4,
     "capabilities": [
       "onoff"
@@ -1643,16 +1458,6 @@
     "name": "Avatto Sonoff Smart Plug",
     "class": "socket",
     "manufacturers": [
-      "QBCZ11LM",
-      "SP120",
-      "SP220",
-      "SSM-U01",
-      "SSM-U02",
-      "SSM-U03",
-      "SSM-U04",
-      "TS011F",
-      "TS0121",
-      "ZNCZ02LM",
       "_SONOFF_generic",
       "_TZ3000_00mk2xzy",
       "_TZ3000_1obwwnmq",
@@ -1679,7 +1484,6 @@
       "_TZ3000_vtscrpmw",
       "_TZ3000_w0qqde0g",
       "_TZ3000_zloso4jk",
-      "lumi.plug",
       "lumi.plug.mmeu01"
     ],
     "models": [
@@ -1688,7 +1492,7 @@
       "TS0121",
       "generic"
     ],
-    "manufacturer_count": 38,
+    "manufacturer_count": 27,
     "model_count": 4,
     "capabilities": [
       "onoff"
@@ -1701,30 +1505,7 @@
     "name": "Avatto Wireless Switch 4button",
     "class": "socket",
     "manufacturers": [
-      "FYRTUR",
-      "IKEA",
       "IKEA of Sweden",
-      "KADRILJ",
-      "QBCZ03LM",
-      "SYMFONISK",
-      "TRADFRI",
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0012",
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044",
-      "WXKG01LM",
-      "WXKG02LM",
-      "WXKG03LM",
-      "WXKG11LM",
-      "WXKG12LM",
-      "WXKG13LM",
-      "WXKG14LM",
       "_TYZB02_key8kk7r",
       "_TYZB02_keyjhapk",
       "_TZ1800_ejwkn2h2",
@@ -1848,7 +1629,7 @@
       "TS0216",
       "TS0601"
     ],
-    "manufacturer_count": 115,
+    "manufacturer_count": 92,
     "model_count": 29,
     "capabilities": [
       "onoff",
@@ -1862,13 +1643,6 @@
     "name": "Samsung Water Leak Sensor",
     "class": "sensor",
     "manufacturers": [
-      "SJCGQ11LM",
-      "SJCGQ12LM",
-      "SJCGQ13LM",
-      "SJCGQ14LM",
-      "SJCGQ15LM",
-      "SJCGQ16LM",
-      "TS0207",
       "_SAMSUNG_generic",
       "_TYZB01_sqmd19i1",
       "_TZ3000_0s9gukzt",
@@ -1893,7 +1667,7 @@
       "generic",
       "q9mpfhw"
     ],
-    "manufacturer_count": 24,
+    "manufacturer_count": 17,
     "model_count": 4,
     "capabilities": [
       "alarm_water",
@@ -1912,7 +1686,11 @@
       "_TZ3000_0dumfk2z",
       "_TZ3000_0ghwhypc",
       "_TZ3000_0ht8dnxj",
-      "_TZ3000_0s1izerx"
+      "_TZ3000_0s1izerx",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0005",
@@ -1926,12 +1704,11 @@
       "TS0012",
       "TS0013"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 9,
     "model_count": 10,
     "capabilities": [
       "measure_temperature",
       "measure_humidity",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -1976,7 +1753,6 @@
     "model_count": 4,
     "capabilities": [
       "measure_pm25",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -1986,20 +1762,15 @@
     "driver_id": "air_quality_pm25",
     "name": "Pm25 Detector",
     "class": "sensor",
-    "manufacturers": [
-      "TS0601",
-      "_TZE200_",
-      "_TZE204_"
-    ],
+    "manufacturers": [],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 3,
+    "manufacturer_count": 0,
     "model_count": 1,
     "capabilities": [
       "measure_temperature",
       "measure_pm25",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -2010,22 +1781,21 @@
     "name": "Roller Blind Controller",
     "class": "sensor",
     "manufacturers": [
-      "_TZE200_",
       "_TZE200_5zbp6j0u",
       "_TZE200_cowvfni3",
       "_TZE200_fctwhugx",
       "_TZE200_nogaemzt",
-      "_TZE200_xuzcvlku",
-      "_TZE204_"
+      "_TZE200_xuzcvlku"
     ],
     "models": [
       "TS0601",
       "TS130F"
     ],
-    "manufacturer_count": 7,
+    "manufacturer_count": 5,
     "model_count": 2,
     "capabilities": [
-      "alarm_generic"
+      "alarm_generic",
+      "windowcoverings_state"
     ],
     "power_source": "battery",
     "clusters": []
@@ -2065,19 +1835,21 @@
     "name": "Smart Bulb Rgb",
     "class": "light",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_kdpxju99",
       "_TZ3000_obacbukl",
       "_TZ3000_odygigth",
-      "_TZ3210_",
       "lumi.light.cwopcn02",
-      "lumi.light.cwopcn03"
+      "lumi.light.cwopcn03",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0505A",
       "TS0505B"
     ],
-    "manufacturer_count": 7,
+    "manufacturer_count": 9,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -2095,11 +1867,13 @@
     "name": "Smart Bulb Bulb Rgbw",
     "class": "light",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_kdpxju99",
       "_TZ3000_obacbukl",
       "_TZ3000_odygigth",
-      "_TZ3210_"
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0502A",
@@ -2109,14 +1883,15 @@
       "ZB-CL01",
       "generic"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 7,
     "model_count": 6,
     "capabilities": [
       "onoff",
       "light_hue",
       "light_saturation",
       "light_temperature",
-      "light_mode"
+      "light_mode",
+      "dim"
     ],
     "power_source": "battery",
     "clusters": []
@@ -2129,13 +1904,17 @@
       "_TZ3210_ngqk6jia",
       "_TZ3210_p9ao60da",
       "_TZ3000_obacbukl",
-      "_TZ3000_kdpxju99"
+      "_TZ3000_kdpxju99",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0502B",
       "TS0502A"
     ],
-    "manufacturer_count": 4,
+    "manufacturer_count": 8,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -2156,13 +1935,17 @@
       "_TZ3210_ngqk6jia",
       "_TZ3210_p9ao60da",
       "_TZ3000_obacbukl",
-      "_TZ3000_kdpxju99"
+      "_TZ3000_kdpxju99",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0502B",
       "TS0502A"
     ],
-    "manufacturer_count": 4,
+    "manufacturer_count": 8,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -2179,16 +1962,12 @@
     "driver_id": "button_emergency_advanced",
     "name": "Sos Emergency Button",
     "class": "button",
-    "manufacturers": [
-      "_TYZB01_",
-      "_TZ3000_",
-      "_TZ3400_"
-    ],
+    "manufacturers": [],
     "models": [
       "TS0041",
       "default"
     ],
-    "manufacturer_count": 3,
+    "manufacturer_count": 0,
     "model_count": 2,
     "capabilities": [
       "alarm_generic"
@@ -2201,10 +1980,13 @@
     "name": "Sos Emergency Button",
     "class": "button",
     "manufacturers": [
+      "_TZ3000_0dumfk2z",
       "_TZ3000_26fmupbb",
       "_TZ3000_4uuaja4a",
       "_TZ3000_8rppvwda",
       "_TZ3000_a7ouggvs",
+      "_TZ3000_mmtwjmaq",
+      "_TZ3000_kmh5qpmb",
       "_TZ3000_axpdxqgu",
       "_TZ3000_cehuw1lw",
       "_TZ3000_cphmq0q7",
@@ -2220,9 +2002,7 @@
       "_TZ3000_itb0omhv",
       "_TZ3000_iystcadi",
       "_TZ3000_ji4araar",
-      "_TZ3000_kmh5qpmb",
       "_TZ3000_mcxw5ehu",
-      "_TZ3000_mmtwjmaq",
       "_TZ3000_n2egfsli",
       "_TZ3000_obacbukl",
       "_TZ3000_odygigth",
@@ -2242,13 +2022,17 @@
       "lumi.remote.b186acn02",
       "lumi.remote.b286acn01",
       "lumi.remote.b286acn02",
-      "lumi.remote.b486opcn01"
+      "lumi.remote.b486opcn01",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0041",
       "TS0215A"
     ],
-    "manufacturer_count": 42,
+    "manufacturer_count": 47,
     "model_count": 2,
     "capabilities": [
       "alarm_generic",
@@ -2262,8 +2046,6 @@
     "name": "Wireless Switch 1button",
     "class": "sensor",
     "manufacturers": [
-      "_TYZB01_",
-      "_TZ3000_",
       "_TZ3000_18ejxno0",
       "_TZ3000_1dd0d5yi",
       "_TZ3000_402jjyro",
@@ -2301,16 +2083,19 @@
       "_TZ3000_wxtp7c5y",
       "_TZ3000_zmy1waw6",
       "_TZ3000_zmy4lslw",
-      "_TZ3400_",
       "lumi.ctrl_ln1",
       "lumi.ctrl_ln2",
       "lumi.ctrl_neutral1",
-      "lumi.ctrl_neutral2"
+      "lumi.ctrl_neutral2",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0041"
     ],
-    "manufacturer_count": 44,
+    "manufacturer_count": 45,
     "model_count": 1,
     "capabilities": [
       "alarm_generic"
@@ -2323,15 +2108,16 @@
     "name": "Wireless Switch 2button",
     "class": "button",
     "manufacturers": [
-      "_TYZB01_",
-      "_TZ3000_",
       "_TZ3000_fvh3pjaz",
-      "_TZ3400_"
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0041"
     ],
-    "manufacturer_count": 4,
+    "manufacturer_count": 5,
     "model_count": 1,
     "capabilities": [
       "alarm_generic"
@@ -2344,20 +2130,21 @@
     "name": "Wireless Switch 3button",
     "class": "socket",
     "manufacturers": [
-      "_TYZB01_",
-      "_TZ3000_",
       "_TZ3000_2mbfxlzr",
       "_TZ3000_arfwfgoa",
       "_TZ3000_bi6lpsew",
       "_TZ3000_bvrlqyj7",
       "_TZ3000_dfgbtub0",
       "_TZ3000_ixla93vd",
-      "_TZ3400_"
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0041"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 10,
     "model_count": 1,
     "capabilities": [
       "onoff"
@@ -2370,8 +2157,6 @@
     "name": "Wireless Switch 4button",
     "class": "button",
     "manufacturers": [
-      "_TYZB01_",
-      "_TZ3000_",
       "_TZ3000_4fjiwweb",
       "_TZ3000_abrsvsou",
       "_TZ3000_an5rjiwd",
@@ -2380,12 +2165,15 @@
       "_TZ3000_pcqjmcud",
       "_TZ3000_qja6nq5z",
       "_TZ3000_uri7ongn",
-      "_TZ3400_"
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0041"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 12,
     "model_count": 1,
     "capabilities": [
       "alarm_generic"
@@ -2398,15 +2186,12 @@
     "name": "Wireless Switch 6button",
     "class": "button",
     "manufacturers": [
-      "_TYZB01_",
-      "_TZ3000_",
-      "_TZ3400_",
       "lumi.remote.b686opcn01"
     ],
     "models": [
       "TS0041"
     ],
-    "manufacturer_count": 4,
+    "manufacturer_count": 1,
     "model_count": 1,
     "capabilities": [
       "alarm_generic"
@@ -2418,22 +2203,14 @@
     "driver_id": "button_remote_8",
     "name": "Wireless Switch 8button",
     "class": "button",
-    "manufacturers": [
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044",
-      "_TZ3000_",
-      "_TZ3400_",
-      "_TYZB01_"
-    ],
+    "manufacturers": [],
     "models": [
       "TS0041",
       "TS0042",
       "TS0043",
       "TS0044"
     ],
-    "manufacturer_count": 7,
+    "manufacturer_count": 0,
     "model_count": 4,
     "capabilities": [
       "alarm_generic"
@@ -2445,17 +2222,13 @@
     "driver_id": "button_shortcut",
     "name": "Shortcut Button (OTHER)",
     "class": "button",
-    "manufacturers": [
-      "_TYZB01_",
-      "_TZ3000_",
-      "_TZ3400_"
-    ],
+    "manufacturers": [],
     "models": [
       "TS0041",
       "TS004F",
       "TS0215A"
     ],
-    "manufacturer_count": 3,
+    "manufacturer_count": 0,
     "model_count": 3,
     "capabilities": [
       "measure_battery"
@@ -2467,25 +2240,18 @@
     "driver_id": "button_wireless",
     "name": "Wireless Button (Universal)",
     "class": "button",
-    "manufacturers": [
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044",
-      "_TZ3000_",
-      "_TZ3400_",
-      "_TYZB01_"
-    ],
+    "manufacturers": [],
     "models": [
       "TS0041",
       "TS0042",
       "TS0043",
       "TS0044"
     ],
-    "manufacturer_count": 7,
+    "manufacturer_count": 0,
     "model_count": 4,
     "capabilities": [
-      "alarm_generic"
+      "alarm_generic",
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -2495,8 +2261,8 @@
     "name": "1-Buttons Wireless Controller",
     "class": "button",
     "manufacturers": [
-      "_TYZB01_",
-      "_TZ3000_",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_qzjcsmar",
       "_TZ3000_a7ouggvs",
       "_TZ3000_adkvzooy",
       "_TZ3000_bi6lpsew",
@@ -2505,8 +2271,11 @@
       "_TZ3000_tk3s5tya",
       "_TZ3000_vp6clf9d",
       "_TZ3000_xabckq1v",
-      "_TZ3400_",
-      "_TZ3400_tk3s5tyg"
+      "_TZ3400_tk3s5tyg",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0041",
@@ -2514,7 +2283,7 @@
       "TS0043",
       "TS0044"
     ],
-    "manufacturer_count": 12,
+    "manufacturer_count": 15,
     "model_count": 4,
     "capabilities": [
       "measure_battery"
@@ -2527,8 +2296,8 @@
     "name": "2-Buttons Wireless Controller",
     "class": "button",
     "manufacturers": [
-      "_TYZB01_",
-      "_TZ3000_",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_qzjcsmar",
       "_TZ3000_a7ouggvs",
       "_TZ3000_adkvzooy",
       "_TZ3000_bi6lpsew",
@@ -2537,8 +2306,11 @@
       "_TZ3000_fvh3pjaz",
       "_TZ3000_vp6clf9d",
       "_TZ3000_xabckq1v",
-      "_TZ3400_",
-      "_TZ3400_key8kk7r"
+      "_TZ3400_key8kk7r",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0041",
@@ -2546,7 +2318,7 @@
       "TS0043",
       "TS0044"
     ],
-    "manufacturer_count": 12,
+    "manufacturer_count": 15,
     "model_count": 4,
     "capabilities": [
       "measure_battery"
@@ -2559,15 +2331,19 @@
     "name": "3-Button Wireless Controller",
     "class": "button",
     "manufacturers": [
-      "_TYZB01_",
-      "_TZ3000_",
       "_TZ3000_a7ouggvs",
       "_TZ3000_adkvzooy",
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_bczr4e10",
       "_TZ3000_bi6lpsew",
       "_TZ3000_fvh3pjaz",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_rrjr1q0u",
       "_TZ3000_vp6clf9d",
-      "_TZ3000_xabckq1v",
-      "_TZ3400_"
+      "_TZ3000_w8jwkczz",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_xabckq1v"
     ],
     "models": [
       "TS0041",
@@ -2576,7 +2352,7 @@
       "TS0044",
       "TS004F"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 13,
     "model_count": 5,
     "capabilities": [
       "measure_battery",
@@ -2590,17 +2366,22 @@
     "name": "4-Buttons Wireless Controller",
     "class": "button",
     "manufacturers": [
-      "_TYZB01_",
-      "_TZ3000_",
       "_TZ3000_a7ouggvs",
       "_TZ3000_adkvzooy",
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_bgtzm4ny",
       "_TZ3000_bi6lpsew",
       "_TZ3000_ee8nrt2l",
       "_TZ3000_fvh3pjaz",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_pcqjmcud",
+      "_TZ3000_rrjr1q0u",
+      "_TZ3000_tk3s5tyg",
       "_TZ3000_vp6clf9d",
       "_TZ3000_w8jwkczz",
-      "_TZ3000_xabckq1v",
-      "_TZ3400_"
+      "_TZ3000_ww6drja5",
+      "_TZ3000_xabckq1v"
     ],
     "models": [
       "TS0041",
@@ -2609,7 +2390,7 @@
       "TS0044",
       "TS004F"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 16,
     "model_count": 5,
     "capabilities": [
       "measure_battery",
@@ -2623,15 +2404,16 @@
     "name": "6-Buttons Wireless Controller",
     "class": "button",
     "manufacturers": [
-      "_TYZB01_",
-      "_TZ3000_",
       "_TZ3000_a7ouggvs",
       "_TZ3000_adkvzooy",
       "_TZ3000_bi6lpsew",
       "_TZ3000_fvh3pjaz",
       "_TZ3000_vp6clf9d",
       "_TZ3000_xabckq1v",
-      "_TZ3400_"
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0041",
@@ -2639,7 +2421,7 @@
       "TS0043",
       "TS0044"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 10,
     "model_count": 4,
     "capabilities": [
       "measure_battery"
@@ -2652,15 +2434,16 @@
     "name": "8-Buttons Wireless Controller",
     "class": "button",
     "manufacturers": [
-      "_TYZB01_",
-      "_TZ3000_",
       "_TZ3000_a7ouggvs",
       "_TZ3000_adkvzooy",
       "_TZ3000_bi6lpsew",
       "_TZ3000_fvh3pjaz",
       "_TZ3000_vp6clf9d",
       "_TZ3000_xabckq1v",
-      "_TZ3400_"
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0041",
@@ -2668,7 +2451,7 @@
       "TS0043",
       "TS0044"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 10,
     "model_count": 4,
     "capabilities": [
       "measure_battery"
@@ -2680,15 +2463,11 @@
     "driver_id": "ceiling_fan",
     "name": "Ceiling Fan",
     "class": "light",
-    "manufacturers": [
-      "TS0601",
-      "_TZE200_",
-      "_TZE204_"
-    ],
+    "manufacturers": [],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 3,
+    "manufacturer_count": 0,
     "model_count": 1,
     "capabilities": [
       "onoff",
@@ -2704,7 +2483,6 @@
     "manufacturers": [
       "_TZ3000_ywagc4rj",
       "_TZ3000_zl1kmjqx",
-      "_TZE200_",
       "_TZE200_7hfcudw5",
       "_TZE200_a8sdabtg",
       "_TZE200_bjawzodf",
@@ -2715,20 +2493,22 @@
       "_TZE200_qoy0ekbd",
       "_TZE200_whpb9yts",
       "_TZE200_zl1kmjqx",
-      "_TZE204_",
       "lumi.sensor_ht",
-      "lumi.weather"
+      "lumi.weather",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0201",
       "TS0601"
     ],
-    "manufacturer_count": 16,
+    "manufacturer_count": 18,
     "model_count": 2,
     "capabilities": [
       "measure_temperature",
       "measure_humidity",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -2741,7 +2521,6 @@
     "manufacturers": [
       "_TZ3000_ywagc4rj",
       "_TZ3000_zl1kmjqx",
-      "_TZE200_",
       "_TZE200_7bztmfm1",
       "_TZE200_81isopgh",
       "_TZE200_9cxuhakf",
@@ -2758,20 +2537,22 @@
       "_TZE200_yvx5lh6k",
       "_TZE200_yw7cahqs",
       "_TZE200_znbl8dj5",
-      "_TZE204_"
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0201",
       "TS0601"
     ],
-    "manufacturer_count": 20,
+    "manufacturer_count": 22,
     "model_count": 2,
     "capabilities": [
       "measure_temperature",
       "measure_humidity",
       "alarm_co",
       "alarm_co2",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -2782,22 +2563,31 @@
     "name": "Climate Monitor",
     "class": "sensor",
     "manufacturers": [
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_fllyghyj",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_ww6drja5",
       "_TZ3000_ywagc4rj",
       "_TZ3000_zl1kmjqx",
-      "_TZE200_",
       "_TZE200_a8sdabtg",
-      "_TZE204_",
-      "_TZE204_upagmta9"
+      "_TZE200_bjawzodf",
+      "_TZE200_cirvgep4",
+      "_TZE200_locansqn",
+      "_TZE200_vzqtvljm",
+      "_TZE200_whpb9yts",
+      "_TZE204_upagmta9",
+      "_TZE284_sgabhwa6",
+      "_TZE284_vvmbj46n"
     ],
     "models": [
       "TS0201",
       "TS0601"
     ],
-    "manufacturer_count": 6,
+    "manufacturer_count": 16,
     "model_count": 2,
     "capabilities": [
       "measure_temperature",
-      "alarm_battery",
       "measure_battery",
       "measure_humidity"
     ],
@@ -2809,28 +2599,36 @@
     "name": "Soil Tester Temp Humid",
     "class": "sensor",
     "manufacturers": [
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ltt60asa",
       "_TZ3000_qomxlryd",
+      "_TZ3000_ww6drja5",
       "_TZ3000_ywagc4rj",
       "_TZ3000_zl1kmjqx",
-      "_TZE200_",
       "_TZE200_a8sdabtg",
+      "_TZE200_c7emyjom",
       "_TZE200_ga1maeof",
       "_TZE200_myd45weu",
-      "_TZE204_",
-      "_TZE204_myd45weu"
+      "_TZE200_ycrd8ywq",
+      "_TZE204_c7emyjom",
+      "_TZE204_myd45weu",
+      "_TZE284_oitavov2"
     ],
     "models": [
       "TS0201",
-      "TS0601"
+      "TS0601",
+      "TS0203"
     ],
-    "manufacturer_count": 9,
-    "model_count": 2,
+    "manufacturer_count": 16,
+    "model_count": 3,
     "capabilities": [
       "measure_temperature",
       "measure_humidity",
-      "alarm_battery",
       "measure_battery",
-      "measure_humidity.soil"
+      "measure_humidity.soil",
+      "alarm_contact"
     ],
     "power_source": "battery",
     "clusters": []
@@ -2842,22 +2640,26 @@
     "manufacturers": [
       "_TZ3000_ywagc4rj",
       "_TZ3000_zl1kmjqx",
-      "_TZE200_",
       "_TZE200_a8sdabtg",
-      "_TZE204_"
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0201",
-      "TS0601"
+      "TS0601",
+      "TS0203"
     ],
-    "manufacturer_count": 5,
-    "model_count": 2,
+    "manufacturer_count": 8,
+    "model_count": 3,
     "capabilities": [
       "alarm_motion",
       "measure_temperature",
       "measure_humidity",
-      "alarm_battery",
-      "measure_battery"
+      "measure_battery",
+      "alarm_contact"
     ],
     "power_source": "battery",
     "clusters": []
@@ -2867,24 +2669,26 @@
     "name": "Contact Sensor",
     "class": "sensor",
     "manufacturers": [
-      "_TYZB01_",
-      "_TZ3000_",
       "_TZ3000_26fmupbb",
+      "_TZ3000_n2egfsli",
       "_TZ3000_402jjyro",
       "_TZ3000_msl2rxjn",
-      "_TZ3000_n2egfsli",
       "_TZ3000_oxslv1c9",
       "lumi.sensor_magnet",
-      "lumi.sensor_magnet.aq2"
+      "lumi.sensor_magnet.aq2",
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0203"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 12,
     "model_count": 1,
     "capabilities": [
       "alarm_contact",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -2895,23 +2699,25 @@
     "name": "Contact Sensor Basic",
     "class": "sensor",
     "manufacturers": [
-      "_TYZB01_",
-      "_TZ3000_",
       "_TZ3000_26fmupbb",
       "_TZ3000_402jjyro",
       "_TZ3000_msl2rxjn",
       "_TZ3000_n2egfsli",
-      "_TZ3000_oxslv1c9"
+      "_TZ3000_oxslv1c9",
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0203"
     ],
-    "manufacturer_count": 7,
+    "manufacturer_count": 10,
     "model_count": 1,
     "capabilities": [
       "alarm_motion",
       "alarm_contact",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -2923,21 +2729,52 @@
     "class": "sensor",
     "manufacturers": [
       "_SAMSUNG_generic",
-      "_TYZB01_",
-      "_TZ3000_",
       "_TZ3000_26fmupbb",
       "_TZ3000_402jjyro",
       "_TZ3000_msl2rxjn",
       "_TZ3000_n2egfsli",
-      "_TZ3000_oxslv1c9"
+      "_TZ3000_oxslv1c9",
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0203"
     ],
-    "manufacturer_count": 8,
+    "manufacturer_count": 11,
     "model_count": 1,
     "capabilities": [
-      "alarm_generic"
+      "alarm_generic",
+      "alarm_contact"
+    ],
+    "power_source": "battery",
+    "clusters": []
+  },
+  {
+    "driver_id": "contact_sensor_vibration",
+    "name": "Contact & Vibration Sensor",
+    "class": "sensor",
+    "manufacturers": [
+      "HOBEIAN",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
+    ],
+    "models": [
+      "ZG-102ZM",
+      "TS0203"
+    ],
+    "manufacturer_count": 7,
+    "model_count": 2,
+    "capabilities": [
+      "alarm_contact",
+      "alarm_tamper",
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -2947,17 +2784,15 @@
     "name": "Smart Curtain Motor (INTERNAL)",
     "class": "windowcoverings",
     "manufacturers": [
-      "_TZE200_",
       "_TZE200_5zbp6j0u",
       "_TZE200_nogaemzt",
-      "_TZE200_xuzcvlku",
-      "_TZE204_"
+      "_TZE200_xuzcvlku"
     ],
     "models": [
       "TS0601",
       "TS130F"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 3,
     "model_count": 2,
     "capabilities": [
       "windowcoverings_state",
@@ -2974,20 +2809,19 @@
     "name": "Curtain Motor",
     "class": "windowcoverings",
     "manufacturers": [
-      "_TZE200_",
       "_TZE200_5zbp6j0u",
       "_TZE200_nogaemzt",
-      "_TZE200_xuzcvlku",
-      "_TZE204_"
+      "_TZE200_xuzcvlku"
     ],
     "models": [
       "TS0601",
       "TS130F"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 3,
     "model_count": 2,
     "capabilities": [
-      "windowcoverings_set"
+      "windowcoverings_set",
+      "windowcoverings_state"
     ],
     "power_source": "battery",
     "clusters": []
@@ -2997,20 +2831,21 @@
     "name": "Dimmer Touch",
     "class": "light",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_7ed9cqgi",
       "_TZ3000_7ysdnebc",
       "_TZ3000_92chsky7",
       "_TZ3000_ktuoyvt5",
       "_TZ3000_vzopcetz",
-      "_TZ3210_",
-      "_TZE200_"
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS110E",
       "TS110F"
     ],
-    "manufacturer_count": 8,
+    "manufacturer_count": 9,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -3023,18 +2858,12 @@
     "driver_id": "dimmer_touch_1gang",
     "name": "Dimmer 1gang Touch",
     "class": "light",
-    "manufacturers": [
-      "TS110E",
-      "TS110F",
-      "_TZ3210_",
-      "_TZE200_",
-      "_TZ3000_"
-    ],
+    "manufacturers": [],
     "models": [
       "TS110E",
       "TS110F"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 0,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -3047,18 +2876,12 @@
     "driver_id": "dimmer_wall",
     "name": "Dimmer Dimmer",
     "class": "light",
-    "manufacturers": [
-      "TS110E",
-      "TS110F",
-      "_TZ3210_",
-      "_TZE200_",
-      "_TZ3000_"
-    ],
+    "manufacturers": [],
     "models": [
       "TS110E",
       "TS110F"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 0,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -3071,18 +2894,12 @@
     "driver_id": "dimmer_wall_1gang",
     "name": "Dimmer 1gang",
     "class": "light",
-    "manufacturers": [
-      "TS110E",
-      "TS110F",
-      "_TZ3210_",
-      "_TZE200_",
-      "_TZ3000_"
-    ],
+    "manufacturers": [],
     "models": [
       "TS110E",
       "TS110F"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 0,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -3096,17 +2913,18 @@
     "name": "Dimmer Wireless",
     "class": "light",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_49qchf10",
       "_TZ3000_kdpxju99",
-      "_TZ3210_",
-      "_TZE200_"
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS110E",
       "TS110F"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 6,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -3120,19 +2938,21 @@
     "name": "Door Controller",
     "class": "sensor",
     "manufacturers": [
-      "TS0601",
-      "_TZE200_",
-      "_TZE204_"
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
-      "TS0601"
+      "TS0601",
+      "TS0203"
     ],
-    "manufacturer_count": 3,
-    "model_count": 1,
+    "manufacturer_count": 5,
+    "model_count": 2,
     "capabilities": [
       "alarm_motion",
       "alarm_contact",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -3143,20 +2963,21 @@
     "name": "Doorbell Doorbell",
     "class": "sensor",
     "manufacturers": [
-      "_TZ3000_",
-      "_TYZB01_",
-      "TS0211"
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0211",
       "TS0203"
     ],
-    "manufacturer_count": 3,
+    "manufacturer_count": 5,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
       "alarm_contact",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -3167,8 +2988,6 @@
     "name": "Smart Doorbell Camera (INTERNAL)",
     "class": "sensor",
     "manufacturers": [
-      "_TYZB01_",
-      "_TZ3000_",
       "_TZ3000_5e2f3n2h",
       "_TZ3000_7tbsruql",
       "_TZ3000_8nkb7mof",
@@ -3199,13 +3018,18 @@
       "_TZ3000_yxqnffam",
       "_TZ3000_zfmxvprs",
       "_TZ3000_zgrffiwg",
-      "_TZ3400_"
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
-      "TS0041"
+      "TS0041",
+      "TS0203"
     ],
-    "manufacturer_count": 33,
-    "model_count": 1,
+    "manufacturer_count": 35,
+    "model_count": 2,
     "capabilities": [
       "locked",
       "measure_battery",
@@ -3221,20 +3045,21 @@
     "name": "Doorbell Camera",
     "class": "sensor",
     "manufacturers": [
-      "_TZ3000_",
-      "_TYZB01_",
-      "TS0211"
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0211",
       "TS0203"
     ],
-    "manufacturer_count": 3,
+    "manufacturer_count": 5,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
       "alarm_contact",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -3245,19 +3070,21 @@
     "name": "Garage Door Controller",
     "class": "sensor",
     "manufacturers": [
-      "TS0601",
-      "_TZE200_",
-      "_TZE204_"
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
-      "TS0601"
+      "TS0601",
+      "TS0203"
     ],
-    "manufacturer_count": 3,
-    "model_count": 1,
+    "manufacturer_count": 5,
+    "model_count": 2,
     "capabilities": [
       "alarm_motion",
       "alarm_contact",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -3270,20 +3097,21 @@
     "manufacturers": [
       "_TZ3000_mwd3c2at",
       "_TZ3000_tk3s5tyg",
-      "_TZE200_",
       "_TZE200_wfxuhoea",
-      "_TZE204_"
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 7,
     "model_count": 1,
     "capabilities": [
       "alarm_motion",
       "alarm_co",
       "alarm_co2",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -3296,22 +3124,26 @@
     "manufacturers": [
       "_TZ3000_mwd3c2at",
       "_TZ3000_tk3s5tyg",
-      "_TZE200_",
       "_TZE200_ezqy5pvh",
       "_TZE200_ux5v4tgb",
       "_TZE200_yojqa8xn",
-      "_TZE204_"
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
-      "TS0601"
+      "TS0601",
+      "TS0203"
     ],
-    "manufacturer_count": 7,
-    "model_count": 1,
+    "manufacturer_count": 10,
+    "model_count": 2,
     "capabilities": [
       "alarm_co",
       "alarm_co2",
-      "alarm_battery",
-      "measure_battery"
+      "measure_battery",
+      "alarm_contact"
     ],
     "power_source": "battery",
     "clusters": []
@@ -3323,10 +3155,14 @@
     "manufacturers": [
       "_TZ3000_ksw8qtmt",
       "_TZ3000_2xlvlnez",
-      "_TZ3000_o1jzcxou"
+      "_TZ3000_o1jzcxou",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [],
-    "manufacturer_count": 3,
+    "manufacturer_count": 7,
     "model_count": 0,
     "capabilities": [
       "alarm_generic"
@@ -3338,14 +3174,11 @@
     "driver_id": "gateway_zigbee_hub",
     "name": "Zigbee Gateway Hub",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_",
-      "TS0601"
-    ],
+    "manufacturers": [],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 2,
+    "manufacturer_count": 0,
     "model_count": 1,
     "capabilities": [
       "alarm_generic"
@@ -3357,23 +3190,18 @@
     "driver_id": "humidity_controller",
     "name": "Humidity Controller",
     "class": "sensor",
-    "manufacturers": [
-      "TS0201",
-      "TS0601",
-      "_TZE200_",
-      "_TZE204_"
-    ],
+    "manufacturers": [],
     "models": [
       "TS0201",
       "TS0601"
     ],
-    "manufacturer_count": 4,
+    "manufacturer_count": 0,
     "model_count": 2,
     "capabilities": [
       "measure_temperature",
       "measure_humidity",
-      "alarm_battery",
-      "measure_battery"
+      "measure_battery",
+      "windowcoverings_state"
     ],
     "power_source": "battery",
     "clusters": []
@@ -3394,7 +3222,8 @@
       "target_temperature",
       "measure_temperature",
       "thermostat_mode",
-      "fan_speed"
+      "fan_speed",
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -3415,7 +3244,8 @@
       "measure_humidity",
       "measure_temperature",
       "measure_power",
-      "alarm_water"
+      "alarm_water",
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -3425,7 +3255,6 @@
     "name": "LED Strip Led Strip",
     "class": "light",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_5bsf8vaj",
       "_TZ3000_9cpuaca6",
       "_TZ3000_dl4pxp1r",
@@ -3438,7 +3267,10 @@
       "_TZ3000_riwp3k79",
       "_TZ3000_ukuvyhaa",
       "_TZ3000_utagpnzs",
-      "_TZ3210_"
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0503A",
@@ -3446,10 +3278,11 @@
       "TS0504B",
       "TS0505B"
     ],
-    "manufacturer_count": 14,
+    "manufacturer_count": 16,
     "model_count": 4,
     "capabilities": [
-      "onoff"
+      "onoff",
+      "dim"
     ],
     "power_source": "battery",
     "clusters": []
@@ -3459,16 +3292,18 @@
     "name": "Led Strip Advanced",
     "class": "light",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_kdpxju99",
       "_TZ3000_obacbukl",
       "_TZ3000_odygigth",
-      "_TZ3210_"
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0505B"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 7,
     "model_count": 1,
     "capabilities": [
       "onoff",
@@ -3486,20 +3321,24 @@
     "name": "Led Strip Basic",
     "class": "sensor",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_kdpxju99",
       "_TZ3000_obacbukl",
       "_TZ3000_odygigth",
-      "_TZ3210_",
-      "_TZE200_bqcqqjpb"
+      "_TZE200_bqcqqjpb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0505B"
     ],
-    "manufacturer_count": 6,
+    "manufacturer_count": 8,
     "model_count": 1,
     "capabilities": [
-      "alarm_generic"
+      "alarm_generic",
+      "onoff",
+      "dim"
     ],
     "power_source": "battery",
     "clusters": []
@@ -3509,25 +3348,30 @@
     "name": "Led Strip Outdoor Color",
     "class": "light",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_kdpxju99",
       "_TZ3000_obacbukl",
       "_TZ3000_odygigth",
-      "_TZ3210_"
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0505A",
-      "TS0505B"
+      "TS0505B",
+      "TS0203"
     ],
-    "manufacturer_count": 5,
-    "model_count": 2,
+    "manufacturer_count": 8,
+    "model_count": 3,
     "capabilities": [
       "onoff",
       "dim",
       "light_hue",
       "light_saturation",
       "light_temperature",
-      "light_mode"
+      "light_mode",
+      "alarm_contact"
     ],
     "power_source": "battery",
     "clusters": []
@@ -3537,19 +3381,23 @@
     "name": "Led Strip Pro",
     "class": "sensor",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_kdpxju99",
       "_TZ3000_obacbukl",
       "_TZ3000_odygigth",
-      "_TZ3210_"
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0505B"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 7,
     "model_count": 1,
     "capabilities": [
-      "alarm_generic"
+      "alarm_generic",
+      "onoff",
+      "dim"
     ],
     "power_source": "battery",
     "clusters": []
@@ -3559,7 +3407,6 @@
     "name": "Led Strip Rgbw",
     "class": "light",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_12sxjap4",
       "_TZ3000_hlijwsai",
       "_TZ3000_kdpxju99",
@@ -3567,15 +3414,18 @@
       "_TZ3000_obacbukl",
       "_TZ3000_odygigth",
       "_TZ3000_qd7hej8u",
-      "_TZ3210_",
       "_TZ3210_r0xgkft5",
-      "_TZ3210_sroezl0s"
+      "_TZ3210_sroezl0s",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0505A",
       "TS0505B"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 13,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -3593,23 +3443,23 @@
     "name": "Outdoor Light Controller",
     "class": "sensor",
     "manufacturers": [
-      "TS0001",
-      "TS0002",
-      "TS0011",
-      "TS0012",
-      "_TZ3000_"
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
       "TS0002",
       "TS0011",
-      "TS0012"
+      "TS0012",
+      "TS0203"
     ],
     "manufacturer_count": 5,
-    "model_count": 4,
+    "model_count": 5,
     "capabilities": [
       "alarm_contact",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -3620,19 +3470,16 @@
     "name": "Lock Smart",
     "class": "lock",
     "manufacturers": [
-      "_TZE200_",
-      "_TZE200_mgstdyz3",
-      "_TZE204_"
+      "_TZE200_mgstdyz3"
     ],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 3,
+    "manufacturer_count": 1,
     "model_count": 1,
     "capabilities": [
       "locked",
       "lock_mode",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -3643,18 +3490,15 @@
     "name": "Lock Basic",
     "class": "sensor",
     "manufacturers": [
-      "_TZE200_",
-      "_TZE200_ar0slwnd",
-      "_TZE204_"
+      "_TZE200_ar0slwnd"
     ],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 3,
+    "manufacturer_count": 1,
     "model_count": 1,
     "capabilities": [
       "alarm_motion",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -3664,20 +3508,15 @@
     "driver_id": "lock_smart_fingerprint",
     "name": "Lock Fingerprint",
     "class": "lock",
-    "manufacturers": [
-      "_TZE200_",
-      "_TZE204_",
-      "TS0601"
-    ],
+    "manufacturers": [],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 3,
+    "manufacturer_count": 0,
     "model_count": 1,
     "capabilities": [
       "locked",
       "lock_mode",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -3687,18 +3526,12 @@
     "driver_id": "module_dimmer_timer",
     "name": "Dimmer Switch Timer Module",
     "class": "light",
-    "manufacturers": [
-      "TS110E",
-      "TS110F",
-      "_TZ3210_",
-      "_TZE200_",
-      "_TZ3000_"
-    ],
+    "manufacturers": [],
     "models": [
       "TS110E",
       "TS110F"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 0,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -3711,17 +3544,12 @@
     "driver_id": "module_mini",
     "name": "Avatto Mini",
     "class": "sensor",
-    "manufacturers": [
-      "TS0001",
-      "TS0002",
-      "_TZ3000_",
-      "_TZ3400_"
-    ],
+    "manufacturers": [],
     "models": [
       "TS0001",
       "TS0002"
     ],
-    "manufacturer_count": 4,
+    "manufacturer_count": 0,
     "model_count": 2,
     "capabilities": [
       "alarm_generic"
@@ -3734,18 +3562,20 @@
     "name": "Mini Switch",
     "class": "sensor",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_tgddllx4",
       "_TZ3000_vmpbygs5",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
       "TS0011",
       "TS011F"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 7,
     "model_count": 3,
     "capabilities": [
       "alarm_generic",
@@ -3762,29 +3592,29 @@
     "name": "Motion Sensor",
     "class": "sensor",
     "manufacturers": [
-      "_TZ3000_",
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_mcxw5ehu",
       "_TZ3000_mmtwjmaq",
-      "_TZ3000_msl6wxk9",
-      "_TZ3040_bb6xaihh",
-      "_TZE200_",
+      "_TZ3000_kmh5qpmb",
       "_TZE200_3towulqd",
-      "_TZE204_",
+      "_TZ3000_msl6wxk9",
+      "_TZ3000_mcxw5ehu",
+      "_TZ3040_bb6xaihh",
       "lumi.motion.ac01",
       "lumi.motion.ac02",
       "lumi.motion.agl04",
-      "lumi.sensor_motion"
+      "lumi.sensor_motion",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0202",
       "TS0601"
     ],
-    "manufacturer_count": 13,
+    "manufacturer_count": 14,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -3795,25 +3625,25 @@
     "name": "Motion Sensor Mmwave Basic",
     "class": "sensor",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_kmh5qpmb",
       "_TZ3000_mcxw5ehu",
       "_TZ3000_mmtwjmaq",
       "_TZ3000_msl6wxk9",
       "_TZ3040_bb6xaihh",
-      "_TZE200_",
       "_TZE200_3towulqd",
-      "_TZE204_"
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0202",
       "TS0601"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 10,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -3824,25 +3654,28 @@
     "name": "Motion Temp Humidity Illumination Multi",
     "class": "sensor",
     "manufacturers": [
+      "_TZ3000_mmtwjmaq",
       "_TZ3000_kmh5qpmb",
       "_TZ3000_mcxw5ehu",
-      "_TZ3000_mmtwjmaq",
       "_TZ3000_msl6wxk9",
       "_TZ3040_bb6xaihh",
-      "_TZE200_3towulqd"
+      "_TZE200_3towulqd",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0202",
       "TS0601"
     ],
-    "manufacturer_count": 6,
+    "manufacturer_count": 10,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
       "measure_temperature",
       "measure_humidity",
       "measure_luminance",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -3853,26 +3686,27 @@
     "name": "Outdoor Sensor",
     "class": "sensor",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_kmh5qpmb",
       "_TZ3000_mcxw5ehu",
       "_TZ3000_mmtwjmaq",
       "_TZ3000_msl6wxk9",
       "_TZ3040_bb6xaihh",
-      "_TZE200_",
       "_TZE200_3towulqd",
-      "_TZE204_"
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0202",
       "TS0601"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 10,
     "model_count": 2,
     "capabilities": [
       "alarm_contact",
-      "alarm_battery",
-      "measure_battery"
+      "measure_battery",
+      "alarm_motion"
     ],
     "power_source": "battery",
     "clusters": []
@@ -3882,15 +3716,20 @@
     "name": "Motion Sensor",
     "class": "sensor",
     "manufacturers": [
-      "_TZ3000_",
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_bsvqrk3b",
+      "_TZ3000_hgu1dlak",
       "_TZ3000_kmh5qpmb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ltt60asa",
       "_TZ3000_mcxw5ehu",
       "_TZ3000_mmtwjmaq",
       "_TZ3000_msl6wxk9",
+      "_TZ3000_ww6drja5",
       "_TZ3040_bb6xaihh",
-      "_TZE200_",
       "_TZE200_3towulqd",
-      "_TZE204_",
+      "_TYZB01_qeqvmvti",
+      "_TYZB01_tv3wxhcz",
       "lumi.motion.agl02",
       "lumi.sensor_motion.aq2",
       "lumi.sensor_motion.aq2b"
@@ -3900,11 +3739,10 @@
       "TS0202",
       "TS0601"
     ],
-    "manufacturer_count": 12,
+    "manufacturer_count": 17,
     "model_count": 3,
     "capabilities": [
       "alarm_motion",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -3915,25 +3753,25 @@
     "name": "Pir Sensor Advanced",
     "class": "sensor",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_kmh5qpmb",
       "_TZ3000_mcxw5ehu",
       "_TZ3000_mmtwjmaq",
       "_TZ3000_msl6wxk9",
       "_TZ3040_bb6xaihh",
-      "_TZE200_",
       "_TZE200_3towulqd",
-      "_TZE204_"
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0202",
       "TS0601"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 10,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -3944,26 +3782,26 @@
     "name": "Pir Radar Illumination Sensor",
     "class": "sensor",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_kmh5qpmb",
       "_TZ3000_mcxw5ehu",
       "_TZ3000_mmtwjmaq",
       "_TZ3000_msl6wxk9",
       "_TZ3040_bb6xaihh",
-      "_TZE200_",
       "_TZE200_3towulqd",
-      "_TZE204_"
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0202",
       "TS0601"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 10,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
       "measure_luminance",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -3974,25 +3812,25 @@
     "name": "Radar Motion Sensor Advanced",
     "class": "sensor",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_kmh5qpmb",
       "_TZ3000_mcxw5ehu",
       "_TZ3000_mmtwjmaq",
       "_TZ3000_msl6wxk9",
       "_TZ3040_bb6xaihh",
-      "_TZE200_",
       "_TZE200_3towulqd",
-      "_TZE204_"
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0202",
       "TS0601"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 10,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -4003,25 +3841,26 @@
     "name": "Radar Motion Sensor Mmwave",
     "class": "sensor",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_kmh5qpmb",
       "_TZ3000_mcxw5ehu",
       "_TZ3000_mmtwjmaq",
       "_TZ3000_msl6wxk9",
       "_TZ3040_bb6xaihh",
-      "_TZE200_",
       "_TZE200_3towulqd",
-      "_TZE204_"
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7",
+      "_TZE204_qasjif9e"
     ],
     "models": [
       "TS0202",
       "TS0601"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 11,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -4032,16 +3871,16 @@
     "name": "Smart Plug Dimmer",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_8nkb7mof",
       "_TZ3000_cehuw1lw",
       "_TZ3000_g5xawfcq",
       "_TZ3000_okaz9tjs",
       "_TZ3000_tvuarksa",
       "_TZ3000_typdpbpg",
-      "_TZ3210_",
-      "_TZ3400_",
-      "_TZE200_"
+      "_TZ3000_ww6drja5",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS011F",
@@ -4063,20 +3902,22 @@
     "name": "Energy Plug Advanced",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_8nkb7mof",
       "_TZ3000_cehuw1lw",
       "_TZ3000_g5xawfcq",
       "_TZ3000_okaz9tjs",
       "_TZ3000_tvuarksa",
       "_TZ3000_typdpbpg",
-      "_TZ3400_"
+      "_TZ3000_ww6drja5",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 8,
+    "manufacturer_count": 10,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -4093,20 +3934,22 @@
     "name": "Plug Energy Monitor",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_g5xawfcq",
       "_TZ3000_8nkb7mof",
       "_TZ3000_cehuw1lw",
-      "_TZ3000_g5xawfcq",
       "_TZ3000_okaz9tjs",
       "_TZ3000_tvuarksa",
       "_TZ3000_typdpbpg",
-      "_TZ3400_"
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 8,
+    "manufacturer_count": 10,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -4123,20 +3966,22 @@
     "name": "Energy Monitoring Plug Advanced",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_8nkb7mof",
       "_TZ3000_cehuw1lw",
       "_TZ3000_g5xawfcq",
       "_TZ3000_okaz9tjs",
       "_TZ3000_tvuarksa",
       "_TZ3000_typdpbpg",
-      "_TZ3400_"
+      "_TZ3000_ww6drja5",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 8,
+    "manufacturer_count": 10,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -4153,20 +3998,22 @@
     "name": "Smart Plug Energy",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_8nkb7mof",
       "_TZ3000_cehuw1lw",
       "_TZ3000_g5xawfcq",
       "_TZ3000_okaz9tjs",
       "_TZ3000_tvuarksa",
       "_TZ3000_typdpbpg",
-      "_TZ3400_"
+      "_TZ3000_ww6drja5",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 8,
+    "manufacturer_count": 10,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -4183,23 +4030,28 @@
     "name": "Outdoor Plug",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_8nkb7mof",
       "_TZ3000_cehuw1lw",
       "_TZ3000_g5xawfcq",
       "_TZ3000_okaz9tjs",
       "_TZ3000_tvuarksa",
       "_TZ3000_typdpbpg",
-      "_TZ3400_"
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS011F",
-      "TS0121"
+      "TS0121",
+      "TS0203"
     ],
-    "manufacturer_count": 8,
-    "model_count": 2,
+    "manufacturer_count": 11,
+    "model_count": 3,
     "capabilities": [
-      "onoff"
+      "onoff",
+      "alarm_contact"
     ],
     "power_source": "battery",
     "clusters": []
@@ -4209,21 +4061,23 @@
     "name": "Smart Plug Outlet",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_8nkb7mof",
       "_TZ3000_cehuw1lw",
       "_TZ3000_g5xawfcq",
       "_TZ3000_okaz9tjs",
       "_TZ3000_tvuarksa",
       "_TZ3000_typdpbpg",
-      "_TZ3400_"
+      "_TZ3000_ww6drja5",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0115",
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 8,
+    "manufacturer_count": 10,
     "model_count": 3,
     "capabilities": [
       "onoff"
@@ -4236,20 +4090,22 @@
     "name": "Power Meter Socket",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_8nkb7mof",
       "_TZ3000_cehuw1lw",
       "_TZ3000_g5xawfcq",
       "_TZ3000_okaz9tjs",
       "_TZ3000_tvuarksa",
       "_TZ3000_typdpbpg",
-      "_TZ3400_"
+      "_TZ3000_ww6drja5",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 8,
+    "manufacturer_count": 10,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -4266,20 +4122,22 @@
     "name": "Smart Plug Power Meter 16a",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_8nkb7mof",
       "_TZ3000_cehuw1lw",
       "_TZ3000_g5xawfcq",
       "_TZ3000_okaz9tjs",
       "_TZ3000_tvuarksa",
       "_TZ3000_typdpbpg",
-      "_TZ3400_"
+      "_TZ3000_ww6drja5",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 8,
+    "manufacturer_count": 10,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -4296,24 +4154,34 @@
     "name": "Plug Smart",
     "class": "sensor",
     "manufacturers": [
-      "_TZ3000_",
+      "_TZ3000_2xlvlnez",
+      "_TZ3000_3ooaz3ng",
+      "_TZ3000_5f43h46r",
       "_TZ3000_8nkb7mof",
+      "_TZ3000_akqdg6g7",
       "_TZ3000_cehuw1lw",
+      "_TZ3000_cphmq0q7",
+      "_TZ3000_ew3ldmgx",
       "_TZ3000_g5xawfcq",
+      "_TZ3000_kdi2o9m6",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ltt60asa",
       "_TZ3000_okaz9tjs",
+      "_TZ3000_plyvnuf5",
       "_TZ3000_tvuarksa",
       "_TZ3000_typdpbpg",
-      "_TZ3400_"
+      "_TZ3000_ww6drja5"
     ],
     "models": [
       "S26R2ZB",
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 8,
+    "manufacturer_count": 17,
     "model_count": 3,
     "capabilities": [
-      "alarm_generic"
+      "alarm_generic",
+      "onoff"
     ],
     "power_source": "battery",
     "clusters": []
@@ -4323,20 +4191,22 @@
     "name": "Smart Plug",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_8nkb7mof",
       "_TZ3000_cehuw1lw",
       "_TZ3000_g5xawfcq",
       "_TZ3000_okaz9tjs",
       "_TZ3000_tvuarksa",
       "_TZ3000_typdpbpg",
-      "_TZ3400_"
+      "_TZ3000_ww6drja5",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 8,
+    "manufacturer_count": 10,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -4353,20 +4223,22 @@
     "name": "Plug Basic",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_8nkb7mof",
       "_TZ3000_cehuw1lw",
       "_TZ3000_g5xawfcq",
       "_TZ3000_okaz9tjs",
       "_TZ3000_tvuarksa",
       "_TZ3000_typdpbpg",
-      "_TZ3400_"
+      "_TZ3000_ww6drja5",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 8,
+    "manufacturer_count": 10,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -4383,22 +4255,35 @@
     "name": "Presence Sensor Radar",
     "class": "sensor",
     "manufacturers": [
-      "TS0601",
-      "_TZE200_",
-      "_TZE204_",
-      "_TZ3000_"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_mmtwjmaq",
+      "_TZ3000_ww6drja5",
+      "_TZE200_0u3bj3rc",
+      "_TZE200_ar0slwnd",
+      "_TZE200_holel4dk",
+      "_TZE200_mx6u6l4y",
+      "_TZE200_rhgsbacq",
+      "_TZE200_sfiy5tfs",
+      "_TZE200_v6ossqfy",
+      "_TZE204_clrdrnya",
+      "_TZE204_mtoaryre",
+      "_TZE204_qasjif9e",
+      "_TZE204_sxm7l9xa"
     ],
     "models": [
-      "TS0601"
+      "TS0601",
+      "TS0202"
     ],
-    "manufacturer_count": 4,
-    "model_count": 1,
+    "manufacturer_count": 16,
+    "model_count": 2,
     "capabilities": [
       "alarm_motion",
-      "alarm_battery",
+      "measure_luminance",
       "measure_battery"
     ],
-    "power_source": "battery",
+    "power_source": "ac",
     "clusters": []
   },
   {
@@ -4406,15 +4291,13 @@
     "name": "Radiator Valve",
     "class": "thermostat",
     "manufacturers": [
-      "_TZE200_",
       "_TZE200_5toc8efa",
-      "_TZE200_hue3yfsn",
-      "_TZE204_"
+      "_TZE200_hue3yfsn"
     ],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 4,
+    "manufacturer_count": 2,
     "model_count": 1,
     "capabilities": [
       "target_temperature",
@@ -4428,19 +4311,16 @@
     "driver_id": "radiator_valve_smart",
     "name": "Smart Radiator Valve (Hybrid)",
     "class": "thermostat",
-    "manufacturers": [
-      "TS0601",
-      "_TZE200_",
-      "_TZE204_"
-    ],
+    "manufacturers": [],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 3,
+    "manufacturer_count": 0,
     "model_count": 1,
     "capabilities": [
       "target_temperature",
-      "measure_temperature"
+      "measure_temperature",
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -4450,9 +4330,6 @@
     "name": "Wireless Scene Controller 4button",
     "class": "button",
     "manufacturers": [
-      "_TYZB01_",
-      "_TZ3000_",
-      "_TZ3400_",
       "lumi.curtain",
       "lumi.curtain.aq2",
       "lumi.curtain.hagl04"
@@ -4460,10 +4337,11 @@
     "models": [
       "TS0041"
     ],
-    "manufacturer_count": 6,
+    "manufacturer_count": 3,
     "model_count": 1,
     "capabilities": [
-      "alarm_generic"
+      "alarm_generic",
+      "windowcoverings_state"
     ],
     "power_source": "battery",
     "clusters": []
@@ -4472,21 +4350,17 @@
     "driver_id": "scene_controller_wireless",
     "name": "Scene Controller (CR2032/CR2450)",
     "class": "sensor",
-    "manufacturers": [
-      "TS0044",
-      "TS004F",
-      "_TZ3400_",
-      "_TZ3000_"
-    ],
+    "manufacturers": [],
     "models": [
       "TS0044",
       "TS004F"
     ],
-    "manufacturer_count": 4,
+    "manufacturer_count": 0,
     "model_count": 2,
     "capabilities": [
       "onoff",
-      "measure_battery"
+      "measure_battery",
+      "windowcoverings_state"
     ],
     "power_source": "battery",
     "clusters": []
@@ -4495,20 +4369,16 @@
     "driver_id": "shutter_roller_controller",
     "name": "Roller Shutter Controller",
     "class": "sensor",
-    "manufacturers": [
-      "TS130F",
-      "TS0601",
-      "_TZE200_",
-      "_TZE204_"
-    ],
+    "manufacturers": [],
     "models": [
       "TS130F",
       "TS0601"
     ],
-    "manufacturer_count": 4,
+    "manufacturer_count": 0,
     "model_count": 2,
     "capabilities": [
-      "alarm_generic"
+      "alarm_generic",
+      "windowcoverings_state"
     ],
     "power_source": "battery",
     "clusters": []
@@ -4518,19 +4388,11 @@
     "name": "Roller Shutter Switch",
     "class": "windowcoverings",
     "manufacturers": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014",
-      "_TZ3000_",
-      "_TZ3400_",
-      "_TZE200_",
-      "_TZE204_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -4544,10 +4406,11 @@
       "TS0601",
       "TS130F"
     ],
-    "manufacturer_count": 13,
+    "manufacturer_count": 5,
     "model_count": 10,
     "capabilities": [
-      "windowcoverings_set"
+      "windowcoverings_set",
+      "onoff"
     ],
     "power_source": "battery",
     "clusters": []
@@ -4557,25 +4420,26 @@
     "name": "Siren Siren",
     "class": "sensor",
     "manufacturers": [
-      "_TYZB01_",
-      "_TZ3000_",
       "_TZ3000_26fmupbb",
       "_TZ3000_d0yl2hsy",
       "_TZ3000_d0yu2xgi",
       "_TZ3000_ssp0maqm",
       "_TZ3000_t13n5zo0",
       "_TZ3000_t6jsgizp",
-      "_TZE200_t1blo2bj"
+      "_TZE200_t1blo2bj",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0219",
       "TS0601_siren"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 11,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -4586,22 +4450,25 @@
     "name": "Outdoor Siren",
     "class": "sensor",
     "manufacturers": [
-      "_TYZB01_",
-      "_TZ3000_",
       "_TZ3000_26fmupbb",
       "_TZ3000_d0yu2xgi",
-      "_TZE200_t1blo2bj"
+      "_TZE200_t1blo2bj",
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0219",
-      "TS0601_siren"
+      "TS0601_siren",
+      "TS0203"
     ],
-    "manufacturer_count": 5,
-    "model_count": 2,
+    "manufacturer_count": 8,
+    "model_count": 3,
     "capabilities": [
       "alarm_motion",
       "alarm_contact",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -4612,8 +4479,6 @@
     "name": "Smart Smoke Detector Advanced",
     "class": "sensor",
     "manufacturers": [
-      "_TYZB01_",
-      "_TZ3000_",
       "_TZ3000_mwd3c2at",
       "_TZ3000_tk3s5tyg",
       "_TZE200_dq1mfjug",
@@ -4622,17 +4487,20 @@
       "_TZE200_t5p1vj8r",
       "_TZE200_uebojraa",
       "_TZE200_vzekyi4c",
-      "_TZE200_yh7aoahi"
+      "_TZE200_yh7aoahi",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0205"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 13,
     "model_count": 1,
     "capabilities": [
       "alarm_smoke",
       "alarm_fire",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -4643,12 +4511,12 @@
     "name": "Smoke Temp Humid Sensor",
     "class": "sensor",
     "manufacturers": [
-      "_TYZB01_",
-      "_TZ3000_",
       "_TZ3000_mwd3c2at",
       "_TZ3000_tk3s5tyg",
-      "_TZE200_",
-      "_TZE204_"
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0201",
@@ -4663,7 +4531,6 @@
       "measure_humidity",
       "alarm_smoke",
       "alarm_fire",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -4674,22 +4541,23 @@
     "name": "Smoke Detector Temp Humidity Advanced",
     "class": "sensor",
     "manufacturers": [
-      "_TYZB01_",
-      "_TZ3000_",
       "_TZ3000_mwd3c2at",
-      "_TZ3000_tk3s5tyg"
+      "_TZ3000_tk3s5tyg",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0205"
     ],
-    "manufacturer_count": 4,
+    "manufacturer_count": 6,
     "model_count": 1,
     "capabilities": [
       "measure_temperature",
       "measure_humidity",
       "alarm_smoke",
       "alarm_fire",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -4699,17 +4567,15 @@
     "driver_id": "solar_panel_controller",
     "name": "Solar Panel Controller",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_",
-      "TS0601"
-    ],
+    "manufacturers": [],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 2,
+    "manufacturer_count": 0,
     "model_count": 1,
     "capabilities": [
-      "alarm_generic"
+      "alarm_generic",
+      "windowcoverings_state"
     ],
     "power_source": "battery",
     "clusters": []
@@ -4718,17 +4584,15 @@
     "driver_id": "sound_controller",
     "name": "Sound Controller ()",
     "class": "button",
-    "manufacturers": [
-      "TS0601",
-      "_TZE200_"
-    ],
+    "manufacturers": [],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 2,
+    "manufacturer_count": 0,
     "model_count": 1,
     "capabilities": [
-      "measure_battery"
+      "measure_battery",
+      "windowcoverings_state"
     ],
     "power_source": "battery",
     "clusters": []
@@ -4759,7 +4623,6 @@
     "name": "Switch 1gang",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_4fjiwweb",
       "_TZ3000_4js9lo5d",
       "_TZ3000_fisb3ajo",
@@ -4775,8 +4638,11 @@
       "_TZ3000_vjhcenzw",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -4787,7 +4653,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 18,
+    "manufacturer_count": 20,
     "model_count": 7,
     "capabilities": [
       "onoff",
@@ -4801,7 +4667,6 @@
     "name": "Switch 2gang",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_4fjiwweb",
       "_TZ3000_h1ipgkwn",
       "_TZ3000_ji4araar",
@@ -4811,8 +4676,11 @@
       "_TZ3000_qzjcsmar",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -4823,10 +4691,11 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 12,
+    "manufacturer_count": 14,
     "model_count": 7,
     "capabilities": [
-      "onoff"
+      "onoff",
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -4836,15 +4705,17 @@
     "name": "Switch 5gang",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_4fjiwweb",
       "_TZ3000_ji4araar",
       "_TZ3000_o005nuxx",
       "_TZ3000_qzjcsmar",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -4855,7 +4726,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 11,
     "model_count": 7,
     "capabilities": [
       "onoff",
@@ -4869,7 +4740,6 @@
     "name": "Smart Switch 1gang",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_4fjiwweb",
       "_TZ3000_ji4araar",
       "_TZ3000_mgusv51k",
@@ -4877,8 +4747,11 @@
       "_TZ3000_qzjcsmar",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -4889,7 +4762,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 10,
+    "manufacturer_count": 12,
     "model_count": 7,
     "capabilities": [
       "onoff",
@@ -4903,15 +4776,17 @@
     "name": "Smart Switch 3gang",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_4fjiwweb",
       "_TZ3000_ji4araar",
       "_TZ3000_o005nuxx",
       "_TZ3000_qzjcsmar",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -4922,7 +4797,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 11,
     "model_count": 7,
     "capabilities": [
       "onoff"
@@ -4935,17 +4810,11 @@
     "name": "1-Gang Smart Switch (Hybrid)",
     "class": "socket",
     "manufacturers": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014",
-      "_TZ3000_",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -4957,11 +4826,12 @@
       "TS0013",
       "TS0014"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 5,
     "model_count": 8,
     "capabilities": [
       "onoff",
-      "dim"
+      "dim",
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -4971,17 +4841,11 @@
     "name": "2-Gang Smart Switch (Hybrid)",
     "class": "socket",
     "manufacturers": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014",
-      "_TZ3000_",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -4993,11 +4857,12 @@
       "TS0013",
       "TS0014"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 5,
     "model_count": 8,
     "capabilities": [
       "onoff",
-      "onoff.gang2"
+      "onoff.gang2",
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -5007,17 +4872,11 @@
     "name": "2-Gang Switch (Hybrid)",
     "class": "socket",
     "manufacturers": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014",
-      "_TZ3000_",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -5029,11 +4888,12 @@
       "TS0013",
       "TS0014"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 5,
     "model_count": 8,
     "capabilities": [
       "onoff",
-      "onoff.gang2"
+      "onoff.gang2",
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -5043,17 +4903,11 @@
     "name": "3-Gang Smart Switch (Hybrid)",
     "class": "socket",
     "manufacturers": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014",
-      "_TZ3000_",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -5065,12 +4919,13 @@
       "TS0013",
       "TS0014"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 5,
     "model_count": 8,
     "capabilities": [
       "onoff",
       "onoff.gang2",
-      "onoff.gang3"
+      "onoff.gang3",
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -5080,23 +4935,26 @@
     "name": "4-Gang Smart Switch (Hybrid)",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_mdj7kra9",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
       "TS0011"
     ],
-    "manufacturer_count": 4,
+    "manufacturer_count": 6,
     "model_count": 2,
     "capabilities": [
       "onoff",
       "button.2",
       "button.3",
       "button.4",
-      "dim"
+      "dim",
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -5106,17 +4964,11 @@
     "name": "Roller Shutter Switch Advanced (INTERNAL)",
     "class": "sensor",
     "manufacturers": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014",
-      "_TZ3000_",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -5128,10 +4980,10 @@
       "TS0013",
       "TS0014"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 5,
     "model_count": 8,
     "capabilities": [
-      "windowcoverings_closed",
+      "windowcoverings_state",
       "windowcoverings_set",
       "button.up",
       "button.down",
@@ -5150,18 +5002,11 @@
     "name": "Remote Switch",
     "class": "button",
     "manufacturers": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014",
-      "_TYZB01_",
-      "_TZ3000_",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -5174,10 +5019,11 @@
       "TS0014",
       "TS0041"
     ],
-    "manufacturer_count": 12,
+    "manufacturer_count": 5,
     "model_count": 9,
     "capabilities": [
-      "alarm_generic"
+      "alarm_generic",
+      "onoff"
     ],
     "power_source": "battery",
     "clusters": []
@@ -5187,15 +5033,17 @@
     "name": "Smart Switch 1gang",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_4fjiwweb",
       "_TZ3000_ji4araar",
       "_TZ3000_o005nuxx",
       "_TZ3000_qzjcsmar",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -5206,7 +5054,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 11,
     "model_count": 7,
     "capabilities": [
       "onoff",
@@ -5220,15 +5068,17 @@
     "name": "Smart Switch 3gang",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_4fjiwweb",
       "_TZ3000_ji4araar",
       "_TZ3000_o005nuxx",
       "_TZ3000_qzjcsmar",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -5239,7 +5089,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 11,
     "model_count": 7,
     "capabilities": [
       "onoff"
@@ -5252,15 +5102,17 @@
     "name": "Smart Switch 4gang",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_4fjiwweb",
       "_TZ3000_ji4araar",
       "_TZ3000_o005nuxx",
       "_TZ3000_qzjcsmar",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -5271,7 +5123,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 11,
     "model_count": 7,
     "capabilities": [
       "onoff",
@@ -5285,15 +5137,17 @@
     "name": "1-Gang Touch Switch",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_4fjiwweb",
       "_TZ3000_ji4araar",
       "_TZ3000_o005nuxx",
       "_TZ3000_qzjcsmar",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -5304,7 +5158,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 11,
     "model_count": 7,
     "capabilities": [
       "onoff"
@@ -5317,15 +5171,17 @@
     "name": "Touch Switch 1gang",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_4fjiwweb",
       "_TZ3000_ji4araar",
       "_TZ3000_o005nuxx",
       "_TZ3000_qzjcsmar",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -5336,7 +5192,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 11,
     "model_count": 7,
     "capabilities": [
       "onoff",
@@ -5350,15 +5206,17 @@
     "name": "Touch Switch 2gang",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_4fjiwweb",
       "_TZ3000_ji4araar",
       "_TZ3000_o005nuxx",
       "_TZ3000_qzjcsmar",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -5369,7 +5227,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 11,
     "model_count": 7,
     "capabilities": [
       "onoff"
@@ -5382,15 +5240,17 @@
     "name": "3-Gang Touch Switch",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_4fjiwweb",
       "_TZ3000_ji4araar",
       "_TZ3000_o005nuxx",
       "_TZ3000_qzjcsmar",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -5401,7 +5261,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 11,
     "model_count": 7,
     "capabilities": [
       "onoff",
@@ -5416,15 +5276,17 @@
     "name": "Touch Switch 3gang",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_4fjiwweb",
       "_TZ3000_ji4araar",
       "_TZ3000_o005nuxx",
       "_TZ3000_qzjcsmar",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -5435,7 +5297,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 11,
     "model_count": 7,
     "capabilities": [
       "onoff"
@@ -5448,15 +5310,17 @@
     "name": "Touch Switch 4gang",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_4fjiwweb",
       "_TZ3000_ji4araar",
       "_TZ3000_o005nuxx",
       "_TZ3000_qzjcsmar",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -5467,7 +5331,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 11,
     "model_count": 7,
     "capabilities": [
       "onoff",
@@ -5481,10 +5345,13 @@
     "name": "1-Gang Wall Switch",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_4fjiwweb",
       "_TZ3000_5ucujjts",
+      "_TZ3000_akqdg6g7",
       "_TZ3000_ji4araar",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_ltt60asa",
       "_TZ3000_mx3vgyea",
       "_TZ3000_npzfdzhq",
       "_TZ3000_o005nuxx",
@@ -5493,10 +5360,10 @@
       "_TZ3000_tgddllx4",
       "_TZ3000_uxuxkcvd",
       "_TZ3000_w0qqde0g",
+      "_TZ3000_ww6drja5",
       "_TZ3000_yujkchbz",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
       "lumi.ctrl_ln1"
     ],
     "models": [
@@ -5508,10 +5375,11 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 17,
+    "manufacturer_count": 20,
     "model_count": 7,
     "capabilities": [
-      "onoff"
+      "onoff",
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -5521,15 +5389,17 @@
     "name": "Wall Switch 1gang",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_4fjiwweb",
       "_TZ3000_ji4araar",
       "_TZ3000_o005nuxx",
       "_TZ3000_qzjcsmar",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -5540,7 +5410,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 11,
     "model_count": 7,
     "capabilities": [
       "onoff",
@@ -5554,17 +5424,24 @@
     "name": "2-Gang Wall Switch",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
+      "_TZ3000_18ejxno0",
       "_TZ3000_4fjiwweb",
       "_TZ3000_4zf0crgo",
+      "_TZ3000_akqdg6g7",
       "_TZ3000_ji4araar",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_l9brjwau",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_lwlhprgx",
+      "_TZ3000_neo2aqj4",
       "_TZ3000_nPGIPl5D",
       "_TZ3000_o005nuxx",
       "_TZ3000_qzjcsmar",
       "_TZ3000_ruxexjfz",
+      "_TZ3000_ww6drja5",
       "_TZ3000_yw8z2axp",
+      "_TZ3000_zmlunnhy",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
       "lumi.ctrl_ln1",
       "lumi.ctrl_ln2"
     ],
@@ -5578,11 +5455,12 @@
       "TS0011",
       "TS0012"
     ],
-    "manufacturer_count": 13,
+    "manufacturer_count": 20,
     "model_count": 8,
     "capabilities": [
       "onoff",
-      "onoff.switch_2"
+      "onoff.switch_2",
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -5592,16 +5470,18 @@
     "name": "Wall Switch 2gang",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_4fjiwweb",
       "_TZ3000_ji4araar",
       "_TZ3000_o005nuxx",
       "_TZ3000_qzjcsmar",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
       "lumi.ctrl_ln1",
-      "lumi.ctrl_ln2"
+      "lumi.ctrl_ln2",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -5613,7 +5493,7 @@
       "TS0011",
       "TS0012"
     ],
-    "manufacturer_count": 10,
+    "manufacturer_count": 12,
     "model_count": 8,
     "capabilities": [
       "onoff"
@@ -5626,16 +5506,18 @@
     "name": "Smart Switch 2gang",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
+      "_TZ3000_kqvb5akv",
       "_TZ3000_4fjiwweb",
       "_TZ3000_ji4araar",
       "_TZ3000_o005nuxx",
       "_TZ3000_qzjcsmar",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
       "lumi.ctrl_ln1",
-      "lumi.ctrl_ln2"
+      "lumi.ctrl_ln2",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -5647,7 +5529,7 @@
       "TS0011",
       "TS0012"
     ],
-    "manufacturer_count": 10,
+    "manufacturer_count": 12,
     "model_count": 8,
     "capabilities": [
       "onoff"
@@ -5660,17 +5542,21 @@
     "name": "3-Gang Wall Switch",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
+      "_TZ3000_18ejxno0",
       "_TZ3000_4fjiwweb",
       "_TZ3000_4xfqlgqo",
+      "_TZ3000_akqdg6g7",
       "_TZ3000_excgg5kb",
       "_TZ3000_ji4araar",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ltt60asa",
       "_TZ3000_mlswgkc3",
       "_TZ3000_o005nuxx",
+      "_TZ3000_odygigth",
       "_TZ3000_qzjcsmar",
+      "_TZ3000_ww6drja5",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
       "lumi.ctrl_ln1"
     ],
     "models": [
@@ -5683,12 +5569,13 @@
       "TS0011",
       "TS0013"
     ],
-    "manufacturer_count": 12,
+    "manufacturer_count": 16,
     "model_count": 8,
     "capabilities": [
       "onoff",
       "onoff.switch_2",
-      "onoff.switch_3"
+      "onoff.switch_3",
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -5698,15 +5585,17 @@
     "name": "Wall Switch 3gang",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_4fjiwweb",
       "_TZ3000_ji4araar",
       "_TZ3000_o005nuxx",
       "_TZ3000_qzjcsmar",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -5718,7 +5607,7 @@
       "TS0011",
       "TS0013"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 11,
     "model_count": 8,
     "capabilities": [
       "onoff"
@@ -5731,15 +5620,20 @@
     "name": "4-Gang Wall Switch",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
+      "_TZ3000_1obwwnmq",
       "_TZ3000_4fjiwweb",
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_excgg5kb",
       "_TZ3000_ji4araar",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ltt60asa",
       "_TZ3000_o005nuxx",
       "_TZ3000_qzjcsmar",
       "_TZ3000_tygpud44",
+      "_TZ3000_vzopcetz",
+      "_TZ3000_ww6drja5",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
       "lumi.ctrl_ln1"
     ],
     "models": [
@@ -5752,13 +5646,14 @@
       "TS0011",
       "TS0014"
     ],
-    "manufacturer_count": 10,
+    "manufacturer_count": 15,
     "model_count": 8,
     "capabilities": [
       "onoff",
       "onoff.switch_2",
       "onoff.switch_3",
-      "onoff.switch_4"
+      "onoff.switch_4",
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -5768,15 +5663,17 @@
     "name": "Wall Switch 4gang",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_4fjiwweb",
       "_TZ3000_ji4araar",
       "_TZ3000_o005nuxx",
       "_TZ3000_qzjcsmar",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -5788,7 +5685,7 @@
       "TS0011",
       "TS0014"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 11,
     "model_count": 8,
     "capabilities": [
       "onoff",
@@ -5802,15 +5699,17 @@
     "name": "Smart Switch 4gang",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_4fjiwweb",
       "_TZ3000_ji4araar",
       "_TZ3000_o005nuxx",
       "_TZ3000_qzjcsmar",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -5822,7 +5721,7 @@
       "TS0011",
       "TS0014"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 11,
     "model_count": 8,
     "capabilities": [
       "onoff",
@@ -5836,15 +5735,17 @@
     "name": "Wall Switch 5gang",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_4fjiwweb",
       "_TZ3000_ji4araar",
       "_TZ3000_o005nuxx",
       "_TZ3000_qzjcsmar",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -5856,7 +5757,7 @@
       "TS0011",
       "TS0015"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 11,
     "model_count": 8,
     "capabilities": [
       "onoff",
@@ -5870,15 +5771,17 @@
     "name": "6-Gang Wall Switch",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_4fjiwweb",
       "_TZ3000_ji4araar",
       "_TZ3000_o005nuxx",
       "_TZ3000_qzjcsmar",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -5890,7 +5793,7 @@
       "TS0011",
       "TS0016"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 11,
     "model_count": 8,
     "capabilities": [
       "onoff",
@@ -5908,15 +5811,17 @@
     "name": "Wall Switch 6gang",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_4fjiwweb",
       "_TZ3000_ji4araar",
       "_TZ3000_o005nuxx",
       "_TZ3000_qzjcsmar",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -5928,7 +5833,7 @@
       "TS0011",
       "TS0016"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 11,
     "model_count": 8,
     "capabilities": [
       "onoff",
@@ -5942,15 +5847,17 @@
     "name": "Smart Switch 6gang",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_4fjiwweb",
       "_TZ3000_ji4araar",
       "_TZ3000_o005nuxx",
       "_TZ3000_qzjcsmar",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -5962,7 +5869,7 @@
       "TS0011",
       "TS0016"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 11,
     "model_count": 8,
     "capabilities": [
       "onoff",
@@ -5976,15 +5883,17 @@
     "name": "Smart Switch 8gang",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_4fjiwweb",
       "_TZ3000_ji4araar",
       "_TZ3000_o005nuxx",
       "_TZ3000_qzjcsmar",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -5995,7 +5904,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 11,
     "model_count": 7,
     "capabilities": [
       "onoff",
@@ -6009,19 +5918,22 @@
     "name": "Wireless Switch",
     "class": "button",
     "manufacturers": [
-      "_TZ3000_",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "SNZB-01",
       "TS0001",
       "TS0011"
     ],
-    "manufacturer_count": 3,
+    "manufacturer_count": 5,
     "model_count": 3,
     "capabilities": [
-      "alarm_generic"
+      "alarm_generic",
+      "onoff"
     ],
     "power_source": "battery",
     "clusters": []
@@ -6031,7 +5943,6 @@
     "name": "Wireless Switch 1gang",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_5bpeda8u",
       "_TZ3000_a7ouggvs",
       "_TZ3000_bi6lpsew",
@@ -6041,8 +5952,11 @@
       "_TZ3000_xabckq1v",
       "_TZ3000_xrqsdxq6",
       "_TZ3000_yj6k7vfo",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -6052,7 +5966,7 @@
       "TS0043",
       "TS0044"
     ],
-    "manufacturer_count": 12,
+    "manufacturer_count": 14,
     "model_count": 6,
     "capabilities": [
       "onoff",
@@ -6066,7 +5980,6 @@
     "name": "Wireless Switch 2gang",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_a7ouggvs",
       "_TZ3000_adkvzooy",
       "_TZ3000_b3mgfu0d",
@@ -6074,8 +5987,11 @@
       "_TZ3000_fvh3pjaz",
       "_TZ3000_vp6clf9d",
       "_TZ3000_xabckq1v",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -6085,7 +6001,7 @@
       "TS0043",
       "TS0044"
     ],
-    "manufacturer_count": 10,
+    "manufacturer_count": 12,
     "model_count": 6,
     "capabilities": [
       "onoff"
@@ -6098,16 +6014,17 @@
     "name": "4-Button Remote STYRBAR (OTHER)",
     "class": "button",
     "manufacturers": [
-      "_TYZB01_",
-      "_TZ3000_",
       "_TZ3000_a7ouggvs",
       "_TZ3000_adkvzooy",
       "_TZ3000_bi6lpsew",
       "_TZ3000_fvh3pjaz",
       "_TZ3000_vp6clf9d",
       "_TZ3000_xabckq1v",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "STYRBAR",
@@ -6118,10 +6035,11 @@
       "TS0043",
       "TS0044"
     ],
-    "manufacturer_count": 10,
+    "manufacturer_count": 11,
     "model_count": 7,
     "capabilities": [
-      "measure_battery"
+      "measure_battery",
+      "onoff"
     ],
     "power_source": "battery",
     "clusters": []
@@ -6131,15 +6049,17 @@
     "name": "Wireless Switch 4gang",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_a7ouggvs",
       "_TZ3000_adkvzooy",
       "_TZ3000_bi6lpsew",
       "_TZ3000_fvh3pjaz",
       "_TZ3000_vp6clf9d",
       "_TZ3000_xabckq1v",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -6149,7 +6069,7 @@
       "TS0043",
       "TS0044"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 11,
     "model_count": 6,
     "capabilities": [
       "onoff"
@@ -6162,16 +6082,17 @@
     "name": "Wireless Switch 5button",
     "class": "socket",
     "manufacturers": [
-      "_TYZB01_",
-      "_TZ3000_",
       "_TZ3000_a7ouggvs",
       "_TZ3000_adkvzooy",
       "_TZ3000_bi6lpsew",
       "_TZ3000_fvh3pjaz",
       "_TZ3000_vp6clf9d",
       "_TZ3000_xabckq1v",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -6181,7 +6102,7 @@
       "TS0043",
       "TS0044"
     ],
-    "manufacturer_count": 10,
+    "manufacturer_count": 11,
     "model_count": 6,
     "capabilities": [
       "onoff",
@@ -6195,15 +6116,17 @@
     "name": "Wireless Switch 6gang",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_a7ouggvs",
       "_TZ3000_adkvzooy",
       "_TZ3000_bi6lpsew",
       "_TZ3000_fvh3pjaz",
       "_TZ3000_vp6clf9d",
       "_TZ3000_xabckq1v",
-      "_TZ3400_",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0001",
@@ -6213,7 +6136,7 @@
       "TS0043",
       "TS0044"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 11,
     "model_count": 6,
     "capabilities": [
       "onoff",
@@ -6229,21 +6152,25 @@
     "manufacturers": [
       "_TZ3000_ywagc4rj",
       "_TZ3000_zl1kmjqx",
-      "_TZE200_",
       "_TZE200_a8sdabtg",
-      "_TZE204_"
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0201",
-      "TS0601"
+      "TS0601",
+      "TS0203"
     ],
-    "manufacturer_count": 5,
-    "model_count": 2,
+    "manufacturer_count": 8,
+    "model_count": 3,
     "capabilities": [
       "alarm_motion",
       "measure_temperature",
-      "alarm_battery",
-      "measure_battery"
+      "measure_battery",
+      "alarm_contact"
     ],
     "power_source": "battery",
     "clusters": []
@@ -6255,21 +6182,25 @@
     "manufacturers": [
       "_TZ3000_ywagc4rj",
       "_TZ3000_zl1kmjqx",
-      "_TZE200_",
       "_TZE200_a8sdabtg",
-      "_TZE204_"
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0201",
-      "TS0601"
+      "TS0601",
+      "TS0203"
     ],
-    "manufacturer_count": 5,
-    "model_count": 2,
+    "manufacturer_count": 8,
+    "model_count": 3,
     "capabilities": [
       "alarm_motion",
       "measure_temperature",
-      "alarm_battery",
-      "measure_battery"
+      "measure_battery",
+      "alarm_contact"
     ],
     "power_source": "battery",
     "clusters": []
@@ -6279,17 +6210,15 @@
     "name": "Smart Thermostat (INTERNAL)",
     "class": "thermostat",
     "manufacturers": [
-      "_TZE200_",
       "_TZE200_0dvm9mva",
       "_TZE200_a4bpgplm",
       "_TZE200_aoclfnxz",
-      "_TZE200_ztvwu4nk",
-      "_TZE204_"
+      "_TZE200_ztvwu4nk"
     ],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 6,
+    "manufacturer_count": 4,
     "model_count": 1,
     "capabilities": [
       "target_temperature",
@@ -6304,15 +6233,11 @@
     "driver_id": "thermostat_smart",
     "name": "Thermostat Basic (Hybrid) (CR2032/AAA)",
     "class": "thermostat",
-    "manufacturers": [
-      "TS0601",
-      "_TZE200_",
-      "_TZE204_"
-    ],
+    "manufacturers": [],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 3,
+    "manufacturer_count": 0,
     "model_count": 1,
     "capabilities": [
       "target_temperature",
@@ -6327,16 +6252,12 @@
     "driver_id": "thermostat_temperature_control",
     "name": "Temperature Controller (Hybrid) (CR2032/AAA)",
     "class": "sensor",
-    "manufacturers": [
-      "TS0601",
-      "_TZE200_",
-      "_TZE204_"
-    ],
+    "manufacturers": [],
     "models": [
       "TS0201",
       "TS0601"
     ],
-    "manufacturer_count": 3,
+    "manufacturer_count": 0,
     "model_count": 2,
     "capabilities": [
       "target_temperature",
@@ -6353,23 +6274,25 @@
     "name": "USB Outlet - 1 Gang",
     "class": "socket",
     "manufacturers": [
-      "TS011F",
-      "_TZ3000_",
-      "_TZ3400_"
+      "_TZ3000_ww6drja5",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0115",
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 3,
+    "manufacturer_count": 4,
     "model_count": 3,
     "capabilities": [
       "onoff",
       "measure_power",
       "meter_power",
       "measure_voltage",
-      "measure_current"
+      "measure_current",
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -6379,20 +6302,22 @@
     "name": "USB Outlet - 2 Ports",
     "class": "socket",
     "manufacturers": [
-      "TS011F",
-      "_TZ3000_",
-      "_TZ3400_"
+      "_TZ3000_ww6drja5",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0115",
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 3,
+    "manufacturer_count": 4,
     "model_count": 3,
     "capabilities": [
       "onoff",
-      "onoff.usb2"
+      "onoff.usb2",
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -6402,28 +6327,30 @@
     "name": "USB Outlet - 3 Gang",
     "class": "socket",
     "manufacturers": [
-      "SSM-U03",
-      "_TZ3000_",
       "_TZ3000_rdtixbnu",
       "_TZ3000_typdpbpg",
       "_TZ3000_typdpdpg",
       "_TZ3000_vtscrpmw",
       "_TZ3000_zloso4jk",
-      "_TZ3400_"
+      "_TZ3000_ww6drja5",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0115",
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 8,
+    "manufacturer_count": 9,
     "model_count": 3,
     "capabilities": [
       "onoff",
       "onoff.usb2",
       "onoff.usb3",
       "measure_power",
-      "meter_power"
+      "meter_power",
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -6433,16 +6360,17 @@
     "name": "Usb Outlet Advanced",
     "class": "socket",
     "manufacturers": [
-      "TS011F",
-      "_TZ3000_",
-      "_TZ3400_"
+      "_TZ3000_ww6drja5",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0115",
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 3,
+    "manufacturer_count": 4,
     "model_count": 3,
     "capabilities": [
       "onoff",
@@ -6459,16 +6387,17 @@
     "name": "Usb Outlet",
     "class": "socket",
     "manufacturers": [
-      "TS011F",
-      "_TZ3000_",
-      "_TZ3400_"
+      "_TZ3000_ww6drja5",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0115",
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 3,
+    "manufacturer_count": 4,
     "model_count": 3,
     "capabilities": [
       "onoff",
@@ -6503,30 +6432,34 @@
     "name": "Water Leak Sensor",
     "class": "sensor",
     "manufacturers": [
-      "_TZ3000_",
-      "_TZ3000_k4ej3ww2",
       "_TZ3000_kyb656no",
-      "_TZ3000_upgcbody",
-      "_TZE200_",
-      "_TZE200_htnnfasr",
       "_TZE200_qq9mpfhw",
+      "_TZ3000_k4ej3ww2",
+      "_TZ3000_upgcbody",
+      "_TZE200_htnnfasr",
       "_TZE200_sh1btabb",
       "lumi.sensor_wleak",
-      "lumi.sensor_wleak.aq1"
+      "lumi.sensor_wleak.aq1",
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0207",
       "TS0601",
-      "q9mpfhw"
+      "q9mpfhw",
+      "TS0203"
     ],
-    "manufacturer_count": 10,
-    "model_count": 3,
+    "manufacturer_count": 13,
+    "model_count": 4,
     "capabilities": [
       "alarm_motion",
       "measure_temperature",
       "alarm_water",
-      "alarm_battery",
-      "measure_battery"
+      "measure_battery",
+      "alarm_contact"
     ],
     "power_source": "battery",
     "clusters": []
@@ -6536,26 +6469,30 @@
     "name": "Temp Humid Sensor Leak Detector",
     "class": "sensor",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_k4ej3ww2",
       "_TZ3000_kyb656no",
-      "_TZE200_",
       "_TZE200_htnnfasr",
-      "_TZE200_sh1btabb"
+      "_TZE200_sh1btabb",
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0207",
-      "TS0601"
+      "TS0601",
+      "TS0203"
     ],
-    "manufacturer_count": 6,
-    "model_count": 2,
+    "manufacturer_count": 9,
+    "model_count": 3,
     "capabilities": [
       "alarm_motion",
       "measure_temperature",
       "measure_humidity",
       "alarm_water",
-      "alarm_battery",
-      "measure_battery"
+      "measure_battery",
+      "alarm_contact"
     ],
     "power_source": "battery",
     "clusters": []
@@ -6565,25 +6502,26 @@
     "name": "Water Valve",
     "class": "sensor",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_k4ej3ww2",
       "_TZ3000_kyb656no",
-      "_TZE200_",
       "_TZE200_htnnfasr",
       "_TZE200_jthf7vb6",
-      "_TZE200_sh1btabb"
+      "_TZE200_sh1btabb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0207",
       "TS0601"
     ],
-    "manufacturer_count": 7,
+    "manufacturer_count": 9,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
       "measure_temperature",
       "alarm_water",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -6594,24 +6532,25 @@
     "name": "Water Valve Smart",
     "class": "sensor",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_k4ej3ww2",
       "_TZ3000_kyb656no",
-      "_TZE200_",
       "_TZE200_htnnfasr",
-      "_TZE200_sh1btabb"
+      "_TZE200_sh1btabb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0207",
       "TS0601"
     ],
-    "manufacturer_count": 6,
+    "manufacturer_count": 8,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
       "measure_temperature",
       "alarm_water",
-      "alarm_battery",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -6622,22 +6561,24 @@
     "name": "Smart Water Valve Controller (Hybrid)",
     "class": "sensor",
     "manufacturers": [
-      "_TZ3000_",
       "_TZ3000_k4ej3ww2",
       "_TZ3000_kyb656no",
-      "_TZE200_",
       "_TZE200_htnnfasr",
-      "_TZE200_sh1btabb"
+      "_TZE200_sh1btabb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "models": [
       "TS0207",
       "TS0601"
     ],
-    "manufacturer_count": 6,
+    "manufacturer_count": 8,
     "model_count": 2,
     "capabilities": [
       "onoff",
-      "measure_water",
+      "meter_water",
       "alarm_water",
       "measure_battery",
       "measure_temperature"
