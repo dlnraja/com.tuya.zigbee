@@ -1,15 +1,18 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const ButtonDevice = require('../../lib/ButtonDevice');
 const IASZoneEnroller = require('../../lib/IASZoneEnroller');
 const batteryConverter = require('../../lib/tuya-engine/converters/battery');
 const { CLUSTER } = require('zigbee-clusters');
 const TuyaClusterHandler = require('../../utils/tuya-cluster-handler');
 const FallbackSystem = require('../../lib/FallbackSystem');
 
-class SmartDoorbellBatteryDevice extends ZigBeeDevice {
+class SmartDoorbellBatteryDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
+    // Initialize hybrid base (power detection)
+    await super.onNodeInit();
+
     // IAS Zone enrollment (motion/contact sensors)
     if (this.hasCapability('alarm_motion') || this.hasCapability('alarm_contact') || 
         this.hasCapability('alarm_water') || this.hasCapability('alarm_smoke')) {

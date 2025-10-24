@@ -10,7 +10,8 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "onoff.usb2"
+    "onoff.usb2",
+    "measure_battery"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -32,6 +33,13 @@
         "it": "Porta USB 2",
         "es": "Puerto USB 2"
       }
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie"
+      },
+      "preventInsights": false
     }
   },
   "energy": {

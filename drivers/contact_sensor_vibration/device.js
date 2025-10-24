@@ -1,6 +1,6 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const SensorDevice = require('../../lib/SensorDevice');
 const { Cluster, CLUSTER } = require('zigbee-clusters');
 
 /**
@@ -12,9 +12,12 @@ const { Cluster, CLUSTER } = require('zigbee-clusters');
  * - measure_battery: Battery percentage
  * - alarm_battery: Low battery alarm
  */
-class ContactVibrationSensor extends ZigBeeDevice {
+class ContactVibrationSensor extends SensorDevice {
 
   async onNodeInit({ zclNode }) {
+    // Initialize hybrid base (power detection)
+    await super.onNodeInit();
+
     this.printNode();
     
     // Enable debug

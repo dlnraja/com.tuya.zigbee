@@ -1,15 +1,18 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const ButtonDevice = require('../../lib/ButtonDevice');
 const IASZoneEnroller = require('../../lib/IASZoneEnroller');
 const { CLUSTER } = require('zigbee-clusters');
 const TuyaClusterHandler = require('../../utils/tuya-cluster-handler');
 const { fromZclBatteryPercentageRemaining } = require('../../lib/tuya-engine/converters/battery');
 const FallbackSystem = require('../../lib/FallbackSystem');
 
-class SceneControllerDevice extends ZigBeeDevice {
+class SceneControllerDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
+    // Initialize hybrid base (power detection)
+    await super.onNodeInit();
+
 
 // ==========================================
     // BUTTON CLICK DETECTION - OPTIMIZED

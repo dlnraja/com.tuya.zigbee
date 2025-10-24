@@ -12,9 +12,18 @@
   },
   "class": "button",
   "capabilities": [
-    "alarm_generic"
+    "alarm_generic",
+    "measure_battery"
   ],
-  "capabilitiesOptions": {},
+  "capabilitiesOptions": {
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie"
+      },
+      "preventInsights": false
+    }
+  },
   "zigbee": {
     "manufacturerName": [],
     "productId": [

@@ -299,5 +299,14 @@
         "max": 3
       }
     }
+  },
+  "capabilitiesOptions": {
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie"
+      },
+      "preventInsights": false
+    }
   }
 }

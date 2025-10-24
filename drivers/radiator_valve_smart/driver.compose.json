@@ -5,7 +5,8 @@
   "class": "thermostat",
   "capabilities": [
     "target_temperature",
-    "measure_temperature"
+    "measure_temperature",
+    "measure_battery"
   ],
   "platforms": [
     "local"
@@ -276,6 +277,13 @@
       "units": {
         "en": "°C"
       }
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie"
+      },
+      "preventInsights": false
     }
   },
   "id": "radiator_valve_smart",

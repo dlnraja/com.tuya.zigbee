@@ -1,14 +1,17 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const SwitchDevice = require('../../lib/SwitchDevice');
 const { CLUSTER } = require('zigbee-clusters');
 const batteryConverter = require('../../lib/tuya-engine/converters/battery');
 const IASZoneEnroller = require('../../lib/IASZoneEnroller');
 const FallbackSystem = require('../../lib/FallbackSystem');
 
-class TuyaZigbeeDevice extends ZigBeeDevice {
+class TuyaZigbeeDevice extends SwitchDevice {
 
     async onNodeInit() {
+    // Initialize hybrid base (power detection)
+    await super.onNodeInit();
+
         this.enableDebug();
         this.printNode();
         
