@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "4.7.5",
+  "version": "4.7.6",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
@@ -57085,18 +57085,6 @@
           }
         }
       },
-      "energy": {
-        "approximation": {
-          "usageConstant": 0.5
-        },
-        "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_qzjcsmar",
@@ -57727,20 +57715,9 @@
           }
         }
       },
-      "energy": {
-        "approximation": {
-          "usageConstant": 0.5
-        },
-        "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
+          "_TZ3000_l9brjwau",
           "_TZ3000_qzjcsmar",
           "_TZ3000_ji4araar",
           "_TZ3000_4fjiwweb",
@@ -58706,18 +58683,6 @@
           }
         }
       },
-      "energy": {
-        "approximation": {
-          "usageConstant": 0.5
-        },
-        "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
-        ]
-      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_qzjcsmar",
@@ -59388,18 +59353,6 @@
             "fr": "Interrupteur 1"
           }
         }
-      },
-      "energy": {
-        "approximation": {
-          "usageConstant": 0.5
-        },
-        "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
-        ]
       },
       "zigbee": {
         "manufacturerName": [
