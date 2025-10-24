@@ -40,7 +40,7 @@ if (brandedDrivers.length === 0) {
   
   Object.keys(byBrand).forEach(brand => {
     if (byBrand[brand].length > 0) {
-      console.log(`\n📦 ${brand.replace('_', '').toUpperCase()} (${byBrand[brand].length}):`);
+      console.log(`\n📦 ${String(brand).replace('_', '').toUpperCase()} (${byBrand[brand].length}):`);
       byBrand[brand].forEach(d => console.log(`   - ${d}`));
     }
   });

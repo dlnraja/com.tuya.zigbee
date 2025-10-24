@@ -163,7 +163,7 @@ drivers.forEach(driverName => {
     // Add optional capabilities if device seems to support them
     rules.capabilities_optional.forEach(cap => {
       // Check if device name suggests this capability
-      const capName = cap.replace('alarm_', '').replace('measure_', '');
+      const capName = String(cap).replace('alarm_', '').replace('measure_', '');
       if (lower.includes(capName) && !manifest.capabilities.includes(cap)) {
         manifest.capabilities.push(cap);
         modified = true;

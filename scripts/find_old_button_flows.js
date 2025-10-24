@@ -30,7 +30,7 @@ if (appJson.flow && appJson.flow.triggers) {
           type: 'trigger',
           id: trigger.id,
           index: idx,
-          oldDriver: prefix.replace('_', ''),
+          oldDriver: String(prefix).replace('_', ''),
           title: trigger.title?.en || 'No title'
         });
       }
@@ -47,7 +47,7 @@ if (appJson.flow && appJson.flow.conditions) {
           type: 'condition',
           id: condition.id,
           index: idx,
-          oldDriver: prefix.replace('_', ''),
+          oldDriver: String(prefix).replace('_', ''),
           title: condition.title?.en || 'No title'
         });
       }
@@ -64,7 +64,7 @@ if (appJson.flow && appJson.flow.actions) {
           type: 'action',
           id: action.id,
           index: idx,
-          oldDriver: prefix.replace('_', ''),
+          oldDriver: String(prefix).replace('_', ''),
           title: action.title?.en || 'No title'
         });
       }

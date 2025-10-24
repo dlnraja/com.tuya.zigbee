@@ -279,7 +279,7 @@ READY FOR:
 ARCHITECTURE: UNBRANDED + SDK3 Compliant + Professional Quality`;
 
         console.log('Committing...\n');
-        execSync(`git commit -m "${commitMsg.replace(/"/g, '\\"')}"`, {
+        execSync(`git commit -m "${String(commitMsg).replace(/"/g, '\\"')}"`, {
           cwd: ROOT,
           stdio: 'inherit'
         });

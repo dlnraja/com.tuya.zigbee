@@ -258,7 +258,7 @@ class IntelligentAppJsonUpdater {
           const setting = {
             id: settingId,
             type: config.type,
-            title: { en: settingId.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) },
+            title: { en: String(settingId).replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) },
             value: config.default
           };
           

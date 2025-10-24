@@ -101,13 +101,13 @@ $errors = 0
 
     oversized.forEach((img, i) => {
       const fullPath = path.join(__dirname, '../..', img.path);
-      const backupPath = fullPath.replace('.png', '.png.backup');
+      const backupPath = String(fullPath).replace('.png', '.png.backup');
       
       script += `
 # File ${i + 1}/${oversized.length}: ${img.path}
 try {
-    $inputFile = "${fullPath.replace(/\\/g, '\\\\')}"
-    $backupFile = "${backupPath.replace(/\\/g, '\\\\')}"
+    $inputFile = "${String(fullPath).replace(/\\/g, '\\\\')}"
+    $backupFile = "${String(backupPath).replace(/\\/g, '\\\\')}"
     
     # Backup original
     Copy-Item $inputFile $backupFile -Force

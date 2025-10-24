@@ -45,7 +45,7 @@ async function analyzeAppImages() {
   
   // Vérifier les images réelles
   for (const [key, imgPath] of Object.entries(images)) {
-    const fullPath = path.join(ROOT, imgPath.replace(/^\//, ''));
+    const fullPath = path.join(ROOT, String(imgPath).replace(/^\//, ''));
     if (await fs.pathExists(fullPath)) {
       const dims = await getImageDimensions(fullPath);
       console.log(`✅ ${key}: ${imgPath}`);
@@ -231,7 +231,7 @@ async function analyzeAppJsonStructure() {
   console.log('Image path patterns:');
   const patterns = {};
   imagePaths.forEach(p => {
-    const pattern = p.replace(/\/[^/]+\//, '/{driver}/');
+    const pattern = String(p).replace(/\/[^/]+\//, '/{driver}/');
     patterns[pattern] = (patterns[pattern] || 0) + 1;
   });
   

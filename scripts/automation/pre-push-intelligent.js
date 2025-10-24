@@ -80,7 +80,7 @@ async function prePush() {
     if (fs.existsSync(filePath)) {
       let content = fs.readFileSync(filePath, 'utf8');
       // Fix double paths
-      content = content.replace(/\/docs\/fixes\/docs\/fixes\//g, '/docs/fixes/');
+      content = String(content).replace(/\/docs\/fixes\/docs\/fixes\//g, '/docs/fixes/');
       fs.writeFileSync(filePath, content, 'utf8');
     }
   });

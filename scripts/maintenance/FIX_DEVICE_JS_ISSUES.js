@@ -80,18 +80,18 @@ module.exports = MyDevice;
   // 1. Vérifier imports SDK v2
   if (content.includes('homey-meshdriver')) {
     issues.oldSDKImports.push(driverName);
-    content = content.replace(
+    content = String(content).replace(
       /require\(['"]homey-meshdriver['"]\)/g,
       `require('homey-zigbeedriver')`
     );
-    content = content.replace(/MeshDevice/g, 'ZigBeeDevice');
+    content = String(content).replace(/MeshDevice/g, 'ZigBeeDevice');
     modified = true;
   }
   
   // 2. Vérifier onMeshInit deprecated
   if (content.includes('onMeshInit')) {
     issues.deprecatedMethods.push(driverName);
-    content = content.replace(
+    content = String(content).replace(
       /async onMeshInit\(\s*\)/g,
       'async onNodeInit({ zclNode })'
     );
@@ -101,7 +101,7 @@ module.exports = MyDevice;
   // 3. Vérifier this.node au lieu de this.zclNode
   if (content.includes('this.node') && !content.includes('this.zclNode')) {
     issues.wrongThisNode.push(driverName);
-    content = content.replace(/this\.node\b/g, 'this.zclNode');
+    content = String(content).replace(/this\.node\b/g, 'this.zclNode');
     modified = true;
   }
   

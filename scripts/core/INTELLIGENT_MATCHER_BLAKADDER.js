@@ -159,7 +159,7 @@ function similarityScore(str1, str2) {
   
   // Wildcard matching
   if (str1.includes('*') || str2.includes('*')) {
-    const regex = new RegExp(str1.replace(/\*/g, '.*'));
+    const regex = new RegExp(String(str1).replace(/\*/g, '.*'));
     return regex.test(str2) ? 90 : 0;
   }
   

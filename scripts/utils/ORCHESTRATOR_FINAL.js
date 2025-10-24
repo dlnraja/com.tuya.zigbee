@@ -24,7 +24,7 @@ for (const driver of iasDrivers) {
     
     // Fix: v.replace is not a function
     if (content.includes('homeyIeee.replace')) {
-      content = content.replace(
+      content = String(content).replace(
         /homeyIeee\.replace\(/g,
         'String(homeyIeee).replace('
       );

@@ -131,7 +131,7 @@ function processFile(filePath) {
       
       for (const pattern of BATTERY_PATTERNS) {
         const before = content;
-        content = content.replace(pattern.find, pattern.replace);
+        content = String(content).replace(pattern.find, pattern.replace);
         if (content !== before) {
           batteryModified = true;
         }
@@ -150,7 +150,7 @@ function processFile(filePath) {
       
       for (const pattern of ILLUMINANCE_PATTERNS) {
         const before = content;
-        content = content.replace(pattern.find, pattern.replace);
+        content = String(content).replace(pattern.find, pattern.replace);
         if (content !== before) {
           illuminanceModified = true;
         }

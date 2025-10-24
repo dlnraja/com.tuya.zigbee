@@ -186,7 +186,7 @@ class ClusterNumericFixer {
         const pattern1 = new RegExp(`registerCapability\\(([^,]+),\\s*['"\`]${clusterName}['"\`],`, 'g');
         const matches1 = content.match(pattern1);
         if (matches1) {
-          content = content.replace(pattern1, `registerCapability($1, ${clusterId},`);
+          content = String(content).replace(pattern1, `registerCapability($1, ${clusterId},`);
           replacements += matches1.length;
         }
         
@@ -194,7 +194,7 @@ class ClusterNumericFixer {
         const pattern2 = new RegExp(`this\\.registerCapability\\(([^,]+),\\s*['"\`]${clusterName}['"\`],`, 'g');
         const matches2 = content.match(pattern2);
         if (matches2) {
-          content = content.replace(pattern2, `this.registerCapability($1, ${clusterId},`);
+          content = String(content).replace(pattern2, `this.registerCapability($1, ${clusterId},`);
           replacements += matches2.length;
         }
       }
@@ -208,7 +208,7 @@ class ClusterNumericFixer {
         const lowerProp = propName.toLowerCase();
         for (const [clusterName, clusterId] of Object.entries(CLUSTER_MAP)) {
           if (clusterName.toLowerCase().includes(lowerProp) || lowerProp.includes(clusterName.toLowerCase())) {
-            content = content.replace(`CLUSTER.${propName}`, `${clusterId}`);
+            content = String(content).replace(`CLUSTER.${propName}`, `${clusterId}`);
             replacements++;
             break;
           }

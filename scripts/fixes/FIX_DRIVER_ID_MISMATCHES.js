@@ -31,7 +31,7 @@ for (const driverFolder of driverFolders) {
         
         for (const arg of action.args) {
           if (arg.name === 'device' && arg.filter && arg.filter.startsWith('driver_id=')) {
-            const currentDriverId = arg.filter.replace('driver_id=', '');
+            const currentDriverId = arg.String(filter).replace('driver_id=', '');
             
             // Check if it matches the folder name
             if (currentDriverId !== driverFolder) {
@@ -56,7 +56,7 @@ for (const driverFolder of driverFolders) {
         
         for (const arg of trigger.args) {
           if (arg.name === 'device' && arg.filter && arg.filter.startsWith('driver_id=')) {
-            const currentDriverId = arg.filter.replace('driver_id=', '');
+            const currentDriverId = arg.String(filter).replace('driver_id=', '');
             
             if (currentDriverId !== driverFolder) {
               console.log(`  📁 ${driverFolder}/`);

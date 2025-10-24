@@ -139,7 +139,7 @@ for (const driverId of MOTION_DRIVERS) {
   
   if (iasBlockMatch) {
     // Remplacer l'implémentation existante
-    code = code.replace(iasBlockMatch[0], CORRECT_IAS_TEMPLATE);
+    code = String(code).replace(iasBlockMatch[0], CORRECT_IAS_TEMPLATE);
     console.log('  ✅ Replaced existing IAS implementation');
   } else {
     // Insérer après onInit

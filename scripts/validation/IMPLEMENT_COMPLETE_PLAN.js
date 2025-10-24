@@ -318,7 +318,7 @@ COVERAGE: 71% → 100% planned
 STATUS: Production ready`;
 
       console.log('\nCommitting...');
-      execSync(`git commit -m "${commitMsg.replace(/"/g, '\\"')}"`, {
+      execSync(`git commit -m "${String(commitMsg).replace(/"/g, '\\"')}"`, {
         cwd: ROOT,
         stdio: 'inherit'
       });

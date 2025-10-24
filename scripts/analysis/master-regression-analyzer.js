@@ -255,7 +255,7 @@ class MasterRegressionAnalyzer {
       this.log(`  📦 Version actuelle: ${currentVersion}`, 'blue');
       
       // Check if v3.1.4+ (fixes applied)
-      const versionNum = parseFloat(currentVersion.replace('v', '').substring(0, 5));
+      const versionNum = parseFloat(String(currentVersion).replace('v', '').substring(0, 5));
       
       if (versionNum >= 3.14) {
         this.log(`  ✅ Version contient les fixes Peter`, 'green');

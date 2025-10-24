@@ -71,7 +71,7 @@ mergeable.forEach(([baseName, drivers]) => {
   
   const variants = [];
   drivers.forEach(d => {
-    const variant = d.id.replace(baseName, '').replace(/^_/, '');
+    const variant = d.String(id).replace(baseName, '').replace(/^_/, '');
     console.log(`   - ${d.id} (${variant || 'base'})`);
     variants.push(variant || 'base');
   });

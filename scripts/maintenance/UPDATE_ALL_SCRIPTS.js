@@ -25,7 +25,7 @@ const updateFile = (filePath) => {
   Object.entries(renameDict).forEach(([oldName, newName]) => {
     const regex = new RegExp(oldName, 'g');
     if (regex.test(content)) {
-      content = content.replace(regex, newName);
+      content = String(content).replace(regex, newName);
       changes++;
     }
   });

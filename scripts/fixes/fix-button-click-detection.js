@@ -221,7 +221,7 @@ for (const driverId of BUTTON_DRIVERS) {
   const buttonMatch = code.match(/\/\/\s*(Button|Click|onOff cluster).*?(?=\n\s{2,4}\/\/|$)/si);
   
   if (buttonMatch) {
-    code = code.replace(buttonMatch[0], OPTIMIZED_CLICK_TEMPLATE);
+    code = String(code).replace(buttonMatch[0], OPTIMIZED_CLICK_TEMPLATE);
     console.log('   ✅ Replaced existing button code');
   } else {
     const insertPos = onInitMatch.index + onInitMatch[0].length;

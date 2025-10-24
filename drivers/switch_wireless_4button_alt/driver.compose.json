@@ -21,59 +21,19 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0012",
-      "_TZ3000_18ejxno0",
-      "_TZ3000_46t1rvdu",
-      "_TZ3000_4rbqgcuv",
-      "_TZ3000_6axxqqi2",
-      "_TZ3000_8bxrzyxz",
-      "_TZ3000_8rppvwda",
-      "_TZ3000_a7ouggvs",
-      "_TZ3000_axpdxqgu",
-      "_TZ3000_f97vq5mn",
-      "_TZ3000_fa9mlvja",
-      "_TZ3000_fkp5zyho",
-      "_TZ3000_fsiepnrh",
-      "_TZ3000_hhiodade",
-      "_TZ3000_itb0omhv",
-      "_TZ3000_ji4araar",
-      "_TZ3000_majwnphg",
-      "_TZ3000_nnwehhst",
-      "_TZ3000_npzfdcof",
-      "_TZ3000_odygigth",
-      "_TZ3000_oikiyf3b",
-      "_TZ3000_owgcnkrh",
-      "_TZ3000_pdevogdj",
-      "_TZ3000_peszejy7",
-      "_TZ3000_pzui3skt",
-      "_TZ3000_qmi1cfuq",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_rmjr4ufz",
-      "_TZ3000_tk3s5tyg",
-      "_TZ3000_tqlv4ug4",
-      "_TZ3000_vjhcenzo",
-      "_TZ3000_vp6clf9d",
-      "_TZ3000_wkai4ga5",
-      "_TZ3000_wxtp7c5y",
       "_TZ3000_xabckq1v",
-      "_TZ3000_zmy1waw6"
+      "_TZ3000_vp6clf9d",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_bi6lpsew",
+      "_TZ3000_a7ouggvs",
+      "_TZ3000_adkvzooy"
     ],
     "productId": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0012",
       "STYRBAR",
       "TS0041",
       "TS0042",
-      "TS0043"
+      "TS0043",
+      "TS0044"
     ],
     "endpoints": {
       "1": {
@@ -82,6 +42,42 @@
           1,
           6,
           8
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "2": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "3": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "4": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
         ],
         "bindings": [
           6

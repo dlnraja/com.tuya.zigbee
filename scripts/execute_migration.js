@@ -226,7 +226,7 @@ function applyBugFixes(driverPath, driverId) {
     const originalContent = content;
     
     // Fix flow card prefixes
-    content = content.replace(
+    content = String(content).replace(
       /homey\.flow\.getDeviceTriggerCard\(['"]([^'"]+)['"]\)/g,
       (match, cardId) => {
         if (!cardId.startsWith(driverId)) {

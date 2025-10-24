@@ -263,7 +263,7 @@ function generateCompactList(categorized) {
     
     if (drivers.length === 0) continue;
     
-    markdown += `### ${catData.emoji} ${catData.name.replace(catData.emoji + ' ', '')}\n\n`;
+    markdown += `### ${catData.emoji} ${catData.String(name).replace(catData.emoji + ' ', '')}\n\n`;
     
     // Compact list
     markdown += '<details>\n';

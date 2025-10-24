@@ -34,19 +34,19 @@ class FixDriverImagePathsFinal {
       // et les remplacer par les bonnes
       
       // Pattern 1: Images pointant vers assets racine (INCORRECT)
-      content = content.replace(
+      content = String(content).replace(
         /"images":\s*{\s*"small":\s*"\.\/assets\/small\.png"\s*,\s*"large":\s*"\.\/assets\/large\.png"\s*}/g,
         '"images": {\n    "small": "./assets/images/small.png",\n    "large": "./assets/images/large.png"\n  }'
       );
       
       // Pattern 2: Images avec seulement small (INCORRECT)
-      content = content.replace(
+      content = String(content).replace(
         /"images":\s*{\s*"small":\s*"\.\/assets\/small\.png"\s*}/g,
         '"images": {\n    "small": "./assets/images/small.png",\n    "large": "./assets/images/large.png"\n  }'
       );
       
       // Pattern 3: Images avec seulement large (INCORRECT)  
-      content = content.replace(
+      content = String(content).replace(
         /"images":\s*{\s*"large":\s*"\.\/assets\/large\.png"\s*}/g,
         '"images": {\n    "small": "./assets/images/small.png",\n    "large": "./assets/images/large.png"\n  }'
       );

@@ -18,7 +18,7 @@ let categories = {};
 try {
   const catData = fs.readFileSync('DRIVER_CATEGORIES.json', 'utf8');
   // Remove BOM if present
-  const cleanData = catData.replace(/^\uFEFF/, '');
+  const cleanData = String(catData).replace(/^\uFEFF/, '');
   categories = JSON.parse(cleanData).categories || {};
 } catch (err) {
   console.log('Warning: Could not load DRIVER_CATEGORIES.json:', err.message);

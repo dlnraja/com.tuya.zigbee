@@ -417,7 +417,7 @@ module.exports = ${JSON.stringify(this.existingDB, null, 2)};
     await fs.writeFile(this.dbPath, dbContent);
     
     // Créer backup
-    const backupPath = this.dbPath.replace('.js', `.backup.${Date.now()}.js`);
+    const backupPath = this.String(dbPath).replace('.js', `.backup.${Date.now()}.js`);
     await fs.writeFile(backupPath, dbContent);
   }
 

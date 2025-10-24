@@ -48,39 +48,12 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "TS0601",
       "_TZE200_0dvm9mva",
-      "_TZE200_81isopgh",
       "_TZE200_a4bpgplm",
       "_TZE200_aoclfnxz",
-      "_TZE200_azqp6ssj",
-      "_TZE200_b6wax7g0",
-      "_TZE200_bjawzodf",
-      "_TZE200_bqcqqjpb",
-      "_TZE200_ckud7u2l",
-      "_TZE200_cwbvmsar",
-      "_TZE200_dwcarsat",
-      "_TZE200_husqqvux",
-      "_TZE200_locansqn",
-      "_TZE200_m9skfctm",
-      "_TZE200_qoy0ekbd",
-      "_TZE200_ryfmq5rl",
-      "_TZE200_ye5jkfsb",
-      "_TZE200_yw7cahqs",
       "_TZE200_ztvwu4nk"
     ],
-    "productId": [
-      "TS0601",
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014",
-      "TS0041"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [

@@ -22,7 +22,7 @@ drivers.forEach(driverName => {
     const original = content;
     
     // Fix image paths
-    content = content.replace(/"(small|large|xlarge)":\s*"drivers\/([^"\/]+)\/assets\/images\/(small|large|xlarge)\.png"/g, (match, type, pathDriver, file) => {
+    content = String(content).replace(/"(small|large|xlarge)":\s*"drivers\/([^"\/]+)\/assets\/images\/(small|large|xlarge)\.png"/g, (match, type, pathDriver, file) => {
       if (pathDriver !== driverName) {
         console.log(`   ❌ ${driverName}: Fixed ${type} (was ${pathDriver})`);
         modified = true;
@@ -32,7 +32,7 @@ drivers.forEach(driverName => {
     });
     
     // Fix learnmode image paths
-    content = content.replace(/"image":\s*"\/drivers\/([^"\/]+)\/assets\/(large|small)\.png"/g, (match, pathDriver, file) => {
+    content = String(content).replace(/"image":\s*"\/drivers\/([^"\/]+)\/assets\/(large|small)\.png"/g, (match, pathDriver, file) => {
       if (pathDriver !== driverName) {
         console.log(`   ❌ ${driverName}: Fixed learnmode (was ${pathDriver})`);
         modified = true;

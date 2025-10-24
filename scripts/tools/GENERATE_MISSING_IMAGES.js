@@ -268,7 +268,7 @@ class ImageGenerator {
 
     // Pour l'instant, on sauvegarde le SVG
     // Dans un vrai projet, il faudrait convertir en PNG avec sharp ou imagemagick
-    const svgPath = filepath.replace('.png', '.svg');
+    const svgPath = String(filepath).replace('.png', '.svg');
     fs.writeFileSync(svgPath, svg);
     
     console.log(`  Created placeholder: ${path.basename(filepath)} (${size}x${size})`);

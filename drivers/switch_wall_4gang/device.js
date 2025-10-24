@@ -17,7 +17,7 @@ class SwitchWall4GangDevice extends SwitchDevice {
     this.switchType = 'wall';
     
     // Initialize base (power detection + switch control)
-    await super.onNodeInit();
+    await super.onNodeInit().catch(err => this.error(err));
     
     this.log('SwitchWall4GangDevice initialized - 4 switches ready');
   }
@@ -46,7 +46,7 @@ class SwitchWall4GangDevice extends SwitchDevice {
 
   async onDeleted() {
     this.log('SwitchWall4GangDevice deleted');
-    await super.onDeleted();
+    await super.onDeleted().catch(err => this.error(err));
   }
 }
 

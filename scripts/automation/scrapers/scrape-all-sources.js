@@ -444,7 +444,7 @@ class MasterSourceScraper {
 ## Sources Status
 
 ${Object.entries(report.sources).map(([name, data]) => `
-### ${name.replace(/-/g, ' ').toUpperCase()}
+### ${String(name).replace(/-/g, ' ').toUpperCase()}
 - Status: ${data.success ? '✅ Success' : '❌ Failed'}
 - Data: ${data.devices ? data.devices.length : 0} devices
 `).join('\n')}

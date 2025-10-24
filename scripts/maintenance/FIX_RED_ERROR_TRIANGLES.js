@@ -35,11 +35,11 @@ async function fixDriver(driverPath, driverName) {
     // Find and remove lines 68-128 (the duplicate SDK3 fix inside battery try)
     const duplicatePattern = /\s+\/\/ ={40}\n\s+\/\/ IAS ZONE ENROLLMENT - SDK3 FIXED\n\s+\/\/ ={40}[\s\S]*?this\.log\('Device may require re-pairing or will auto-enroll'\);\n\s+\}\n/;
     
-    code = code.replace(duplicatePattern, '');
+    code = String(code).replace(duplicatePattern, '');
     
     // Remove orphan catch block (line 129-132)
     const orphanCatchPattern = /\s+\} catch \(err\) \{\n\s+this\.log\('Could not register battery capability:', err\.message\);\n\s+\}\n\s+\}/;
-    code = code.replace(orphanCatchPattern, `
+    code = String(code).replace(orphanCatchPattern, `
       } catch (err) {
         this.log('Could not register battery capability:', err.message);
       }

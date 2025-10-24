@@ -514,7 +514,7 @@ class UltraMasterSystem {
     ];
 
     patterns.forEach(([pattern, replacement]) => {
-      content = content.replace(pattern, replacement);
+      content = String(content).replace(pattern, replacement);
     });
 
     if (content.length !== originalLength) {
@@ -585,11 +585,11 @@ class UltraMasterSystem {
     let changes = 0;
 
     for (const [oldName, newName] of Object.entries(replacements)) {
-      const regex = new RegExp(oldName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+      const regex = new RegExp(String(oldName).replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
       const matches = content.match(regex);
       
       if (matches) {
-        content = content.replace(regex, newName);
+        content = String(content).replace(regex, newName);
         changes += matches.length;
       }
     }

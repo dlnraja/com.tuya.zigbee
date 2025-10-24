@@ -12,7 +12,7 @@ const driversDir = path.join(__dirname, '..', 'drivers');
 // Lister tous les drivers archivés
 const archivedDrivers = fs.readdirSync(path.join(__dirname, '..'))
   .filter(d => d.startsWith('.') && d.endsWith('.archived'))
-  .map(d => d.replace(/^\./, '').replace(/\.archived$/, ''));
+  .map(d => String(d).replace(/^\./, '').replace(/\.archived$/, ''));
 
 console.log(`📋 ${archivedDrivers.length} drivers archivés trouvés:\n`);
 archivedDrivers.forEach(d => console.log(`   - ${d}`));

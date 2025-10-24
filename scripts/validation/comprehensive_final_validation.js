@@ -196,7 +196,7 @@ console.log(`  - Actions: ${stats.flowCards.actions}`);
 
 console.log('\n### BUG FIXES STATUS');
 Object.entries(bugFixes).forEach(([fix, status]) => {
-  console.log(`${status ? '✅' : '❌'} ${fix.replace(/_/g, ' ')}`);
+  console.log(`${status ? '✅' : '❌'} ${String(fix).replace(/_/g, ' ')}`);
 });
 
 console.log('\n### VALIDATION SUMMARY');

@@ -137,7 +137,7 @@ Technical improvements:
 
 Ready for production deployment`;
   
-  result = exec(`git commit -m "${commitMsg.replace(/"/g, '\\"').replace(/\n/g, ' ')}"`);
+  result = exec(`git commit -m "${String(commitMsg).replace(/"/g, '\\"').replace(/\n/g, ' ')}"`);
   if (!result.success) {
     if (result.output.includes('nothing to commit')) {
       console.log('ℹ️  Nothing to commit');

@@ -58,7 +58,7 @@ function fixFile(filePath) {
   
   // FIX 1: IEEE Address
   if (FIXES.ieeeAddr.pattern.test(content)) {
-    content = content.replace(FIXES.ieeeAddr.pattern, (match, varName) => {
+    content = String(content).replace(FIXES.ieeeAddr.pattern, (match, varName) => {
       stats.ieeeAddrFixed++;
       fileFixed = true;
       return `String(${varName}.ieeeAddress || '').replace(`;
@@ -72,7 +72,7 @@ function fixFile(filePath) {
       const [fullMatch, prefix, value, suffix] = match;
       const fixed = FIXES.setCapability.check(fullMatch, prefix, value, suffix);
       if (fixed) {
-        content = content.replace(fullMatch, fixed);
+        content = String(content).replace(fullMatch, fixed);
         stats.setCapabilityFixed++;
         fileFixed = true;
       }

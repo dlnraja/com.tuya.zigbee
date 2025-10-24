@@ -8,15 +8,12 @@
     "measure_temperature",
     "measure_humidity",
     "alarm_battery",
-    "measure_battery"
+    "measure_battery",
+    "measure_humidity.soil"
   ],
   "energy": {
     "batteries": [
-      "CR2032",
-      "CR2450",
-      "AAA",
-      "AA",
-      "CR123A"
+      "CR2032"
     ],
     "approximation": {
       "usageConstant": 0.5
@@ -24,34 +21,17 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "TS0201",
-      "_TZE200_",
-      "_TZE200_81isopgh",
-      "_TZE200_bjawzodf",
-      "_TZE200_cwbvmsar",
-      "_TZE200_dwcarsat",
       "_TZE200_ga1maeof",
-      "_TZE200_locansqn",
-      "_TZE200_m9skfctm",
       "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd",
-      "_TZE200_ryfmq5rl",
-      "_TZE200_yvx5lh6k",
-      "_TZE200_znbl8dj5",
-      "lumi.sensor_ht",
-      "lumi.weather"
+      "_TZE204_myd45weu",
+      "_TZ3000_qomxlryd",
+      "_TZ3000_ywagc4rj",
+      "_TZ3000_zl1kmjqx",
+      "_TZE200_a8sdabtg"
     ],
     "productId": [
-      "TS0201",
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014",
-      "TS0041"
+      "TS0601",
+      "TS0201"
     ],
     "endpoints": {
       "1": {
@@ -298,6 +278,15 @@
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
+    },
+    {
+      "id": "tuya_dp_configuration",
+      "type": "label",
+      "label": {
+        "en": "Tuya Datapoint Configuration",
+        "fr": "Configuration Tuya Datapoint"
+      },
+      "value": "{\n  \"1\": \"temperature\",\n  \"2\": \"soil_humidity\",\n  \"4\": \"battery_percentage\",\n  \"5\": \"battery_state\"\n}"
     }
   ],
   "images": {

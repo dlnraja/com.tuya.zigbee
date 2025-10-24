@@ -13,14 +13,14 @@ class AvattoSamsungSmartPlugDevice extends SwitchDevice {
     this.log('AvattoSamsungSmartPlugDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit();
+    await super.onNodeInit().catch(err => this.error(err));
     
     this.log('AvattoSamsungSmartPlugDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
     this.log('AvattoSamsungSmartPlugDevice deleted');
-    await super.onDeleted();
+    await super.onDeleted().catch(err => this.error(err));
   }
 }
 

@@ -496,7 +496,7 @@ class UltimateEnrichment {
       
       // Check 6: Improve logging
       if (content.includes('console.log')) {
-        content = content.replace(/console\.log\(/g, 'this.log(');
+        content = String(content).replace(/console\.log\(/g, 'this.log(');
         improvements.push('Fix console.log → this.log');
         this.stats.issues.logging++;
         this.stats.improvements.loggingImproved++;

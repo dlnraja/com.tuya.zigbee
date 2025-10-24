@@ -173,7 +173,7 @@ class ZHAScraper {
     for (let i = startIndex - 1; i >= Math.max(0, startIndex - 5); i--) {
       const line = lines[i].trim();
       if (line.startsWith('"""') || line.startsWith('#')) {
-        return line.replace(/["""#]/g, '').trim();
+        return String(line).replace(/["""#]/g, '').trim();
       }
     }
     return '';

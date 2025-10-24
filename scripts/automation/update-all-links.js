@@ -84,17 +84,17 @@ function updateLinksInFile(filePath) {
   // Remplacer les anciens chemins par les nouveaux
   for (const [oldPath, newPath] of Object.entries(PATH_MAPPINGS)) {
     // Pattern pour liens Markdown
-    const mdPattern = new RegExp(`\\[([^\\]]+)\\]\\(${oldPath.replace(/\./g, '\\.')}\\)`, 'g');
+    const mdPattern = new RegExp(`\\[([^\\]]+)\\]\\(${String(oldPath).replace(/\./g, '\\.')}\\)`, 'g');
     if (mdPattern.test(content)) {
-      content = content.replace(mdPattern, `[$1](${newPath})`);
+      content = String(content).replace(mdPattern, `[$1](${newPath})`);
       updated = true;
       console.log(`  ✓ Updated MD link: ${oldPath} → ${newPath}`);
     }
     
     // Pattern pour chemins directs
-    const directPattern = new RegExp(`(?<!\\[)${oldPath.replace(/\./g, '\\.')}(?!\\))`, 'g');
+    const directPattern = new RegExp(`(?<!\\[)${String(oldPath).replace(/\./g, '\\.')}(?!\\))`, 'g');
     if (directPattern.test(content)) {
-      content = content.replace(directPattern, newPath);
+      content = String(content).replace(directPattern, newPath);
       updated = true;
       console.log(`  ✓ Updated path: ${oldPath} → ${newPath}`);
     }
@@ -163,7 +163,7 @@ function updateReadme() {
       
       // Mettre à jour la date au moins
       const today = new Date().toISOString().split('T')[0];
-      content = content.replace(/Last Updated:\s+\d{4}-\d{2}-\d{2}/, `Last Updated:     ${today}`);
+      content = String(content).replace(/Last Updated:\s+\d{4}-\d{2}-\d{2}/, `Last Updated:     ${today}`);
       
       fs.writeFileSync(readmePath, content, 'utf8');
       console.log('✅ README.md date updated');
@@ -212,7 +212,7 @@ function updateChangelog() {
 `;
   
   // Insérer après le titre principal
-  content = content.replace(/(# Changelog\n)/, `$1${newEntry}`);
+  content = String(content).replace(/(# Changelog\n)/, `$1${newEntry}`);
   
   fs.writeFileSync(changelogPath, content, 'utf8');
   console.log(`✅ Updated CHANGELOG.md with version ${version}`);

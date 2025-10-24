@@ -36,7 +36,7 @@ class SyntaxErrorFixer {
         
         if (startMarker.test(code)) {
           // Retirer le code mal inséré
-          code = code.replace(/\/\*\*[\s\S]*?INTELLIGENT BATTERY MONITORING[\s\S]*?async detectBatteryChange[\s\S]*?\n\s*\}\s*\n\s*\}/m, '');
+          code = String(code).replace(/\/\*\*[\s\S]*?INTELLIGENT BATTERY MONITORING[\s\S]*?async detectBatteryChange[\s\S]*?\n\s*\}\s*\n\s*\}/m, '');
           modified = true;
           this.log(`Removed broken battery monitoring from ${path.basename(path.dirname(filePath))}`, '  ');
         }

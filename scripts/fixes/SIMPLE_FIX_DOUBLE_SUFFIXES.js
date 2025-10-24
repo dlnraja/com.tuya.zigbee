@@ -20,7 +20,7 @@ let totalReplaced = 0;
 
 for (const replacement of replacements) {
   const before = appJsonStr;
-  appJsonStr = appJsonStr.replace(replacement.from, replacement.to);
+  appJsonStr = String(appJsonStr).replace(replacement.from, replacement.to);
   const matches = (before.match(replacement.from) || []).length;
   
   if (matches > 0) {

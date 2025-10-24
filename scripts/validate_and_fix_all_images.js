@@ -88,7 +88,7 @@ function isPathCorrect(imagePath, driverId) {
  */
 function fixPath(imagePath, driverId) {
   if (!imagePath) return imagePath;
-  return imagePath.replace(/drivers\/[^\/]+\//, `drivers/${driverId}/`);
+  return String(imagePath).replace(/drivers\/[^\/]+\//, `drivers/${driverId}/`);
 }
 
 /**

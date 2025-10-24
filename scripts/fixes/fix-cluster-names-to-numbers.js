@@ -98,7 +98,7 @@ function fixClusterNamesInFile(filePath) {
     );
     
     if (pattern1.test(content)) {
-      content = content.replace(pattern1, `$1${clusterId}$2`);
+      content = String(content).replace(pattern1, `$1${clusterId}$2`);
       modified = true;
       changes.push(`  '${clusterName}' → ${clusterId}`);
     }
@@ -111,7 +111,7 @@ function fixClusterNamesInFile(filePath) {
     
     const originalContent = fs.readFileSync(filePath, 'utf8');
     if (pattern2.test(originalContent)) {
-      content = originalContent.replace(pattern2, `$1${clusterId}$2`);
+      content = String(originalContent).replace(pattern2, `$1${clusterId}$2`);
       modified = true;
       if (!changes.find(c => c.includes(clusterName))) {
         changes.push(`  '${clusterName}' → ${clusterId}`);

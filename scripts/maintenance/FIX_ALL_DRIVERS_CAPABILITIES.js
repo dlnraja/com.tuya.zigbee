@@ -298,7 +298,7 @@ report.drivers.forEach((driverReport, index) => {
       
       // Replace capability name for sub-capabilities
       if (subId) {
-        capCode = capCode.replace(/registerCapability\('([^']+)'/, `registerCapability('${cap}'`);
+        capCode = String(capCode).replace(/registerCapability\('([^']+)'/, `registerCapability('${cap}'`);
       }
       
       codeToInsert += capCode;
@@ -307,7 +307,7 @@ report.drivers.forEach((driverReport, index) => {
       // Handle sub-capabilities with numbered suffixes
       const baseTemplate = CAPABILITY_TEMPLATES[baseCap];
       if (baseTemplate) {
-        let capCode = baseTemplate.replace(/registerCapability\('([^']+)'/, `registerCapability('${cap}'`);
+        let capCode = String(baseTemplate).replace(/registerCapability\('([^']+)'/, `registerCapability('${cap}'`);
         codeToInsert += capCode;
         capsAddedForDriver++;
       }

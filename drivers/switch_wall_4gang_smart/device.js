@@ -13,14 +13,14 @@ class AvattoSmartSwitch4gangDevice extends SwitchDevice {
     this.log('AvattoSmartSwitch4gangDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit();
+    await super.onNodeInit().catch(err => this.error(err));
     
     this.log('AvattoSmartSwitch4gangDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
     this.log('AvattoSmartSwitch4gangDevice deleted');
-    await super.onDeleted();
+    await super.onDeleted().catch(err => this.error(err));
   }
 }
 

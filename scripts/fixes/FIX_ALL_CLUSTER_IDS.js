@@ -59,7 +59,7 @@ function fixFile(filePath) {
         'g'
       );
       if (regex1.test(content)) {
-        content = content.replace(regex1, `$1${clusterConst}$2`);
+        content = String(content).replace(regex1, `$1${clusterConst}$2`);
         modified = true;
         console.log(`  ✅ ${path.basename(filePath)}: ${numId} → ${clusterConst}`);
       }
@@ -72,7 +72,7 @@ function fixFile(filePath) {
         'g'
       );
       if (regex2.test(content)) {
-        content = content.replace(regex2, `$1${clusterConst}$2`);
+        content = String(content).replace(regex2, `$1${clusterConst}$2`);
         modified = true;
         console.log(`  ✅ ${path.basename(filePath)}: cluster: ${numId} → ${clusterConst}`);
       }

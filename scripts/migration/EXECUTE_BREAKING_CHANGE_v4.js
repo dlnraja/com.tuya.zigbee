@@ -245,7 +245,7 @@ function generateNewDriverId(oldId, brand, batteries) {
   }
   else {
     // Generic fallback
-    category = oldId.replace(/_battery$|_ac$|_dc$|_hybrid$|_cr\d+$/gi, '');
+    category = String(oldId).replace(/_battery$|_ac$|_dc$|_hybrid$|_cr\d+$/gi, '');
     type = '';
     variant = '';
   }

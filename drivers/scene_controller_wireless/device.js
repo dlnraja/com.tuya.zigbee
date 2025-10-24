@@ -175,7 +175,7 @@ class SceneControllerDevice extends ZigBeeDevice {
     this.registerPollInterval(async () => {
       try {
         // Force read de tous les attributes critiques
-        await this.pollAttributes();
+        await this.pollAttributes().catch(err => this.error(err));
       } catch (err) {
         this.error('Poll failed:', err);
       }
@@ -185,7 +185,7 @@ class SceneControllerDevice extends ZigBeeDevice {
 
     // Call parent
     try {
-    await super.onNodeInit({ zclNode });
+    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
     // Initialize Fallback System
     this.fallback = new FallbackSystem(this, {
       maxRetries: 3,
@@ -198,7 +198,7 @@ class SceneControllerDevice extends ZigBeeDevice {
 
     // Auto-detect device type and initialize Tuya cluster handler
     const deviceType = TuyaClusterHandler.detectDeviceType('scene_controller');
-    const tuyaInitialized = await TuyaClusterHandler.init(this, zclNode, deviceType);
+    const tuyaInitialized = await TuyaClusterHandler.init(this, zclNode, deviceType).catch(err => this.error(err));
     
     if (tuyaInitialized) {
       this.log('✅ Tuya cluster handler initialized for type:', deviceType);
@@ -207,12 +207,12 @@ class SceneControllerDevice extends ZigBeeDevice {
       
       // Fallback to standard cluster handling if needed
       try {
-      await this.registerStandardCapabilities();
+      await this.registerStandardCapabilities().catch(err => this.error(err));
       } catch (err) { this.error('Await error:', err); }
     }
 
     // Mark device as available
-    await this.setAvailable();
+    await this.setAvailable().catch(err => this.error(err));
   }
 
   /**
@@ -249,7 +249,7 @@ class SceneControllerDevice extends ZigBeeDevice {
   async triggerFlowCard(cardId, tokens = {}) {
     try {
       const flowCard = this.homey.flow.getDeviceTriggerCard(cardId);
-      await flowCard.trigger(this, tokens);
+      await flowCard.trigger(this, tokens).catch(err => this.error(err));
       this.log(`✅ Flow triggered: ${cardId}`, tokens);
     } catch (err) {
       this.error(`❌ Flow trigger error: ${cardId}`, err);
@@ -366,7 +366,7 @@ class SceneControllerDevice extends ZigBeeDevice {
     }
     
     try {
-    await Promise.allSettled(promises);
+    await Promise.allSettled(promises).catch(err => this.error(err));
     } catch (err) { this.error('Await error:', err); }
     this.log('✅ Poll attributes completed');
   }
@@ -380,7 +380,7 @@ class SceneControllerDevice extends ZigBeeDevice {
   }
   async readAttributeSafe(cluster, attribute) {
     try {
-      return await this.fallback.readAttributeWithFallback(cluster, attribute);
+      return await this.fallback.readAttributeWithFallback(cluster, attribute).catch(err => this.error(err));
     } catch (err) {
       this.error(`Failed to read ${cluster}.${attribute} after all fallback strategies:`, err);
       throw err;
@@ -393,7 +393,7 @@ class SceneControllerDevice extends ZigBeeDevice {
   }
   async configureReportSafe(config) {
     try {
-      return await this.fallback.configureReportWithFallback(config);
+      return await this.fallback.configureReportWithFallback(config).catch(err => this.error(err));
     } catch (err) {
       this.error(`Failed to configure report after all fallback strategies:`, err);
       // Don't throw - use polling as ultimate fallback
@@ -407,7 +407,7 @@ class SceneControllerDevice extends ZigBeeDevice {
   }
   async enrollIASZoneSafe() {
     try {
-      return await this.fallback.iasEnrollWithFallback();
+      return await this.fallback.iasEnrollWithFallback().catch(err => this.error(err));
     } catch (err) {
       this.error('Failed to enroll IAS Zone after all fallback strategies:', err);
       throw err;

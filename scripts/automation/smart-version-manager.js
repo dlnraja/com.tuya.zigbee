@@ -208,7 +208,7 @@ class SmartVersionManager {
     // Update version badges
     const versionBadgeRegex = /!\[Version\]\(https:\/\/img\.shields\.io\/badge\/version-([^)]+)\)/g;
     if (versionBadgeRegex.test(readme)) {
-      readme = readme.replace(
+      readme = String(readme).replace(
         versionBadgeRegex,
         `![Version](https://img.shields.io/badge/version-${newVersion}-blue)`
       );

@@ -260,13 +260,13 @@ class ImageDiagnosticAgent {
         );
 
         if (capData.icon) {
-          const iconPath = path.join(this.root, capData.icon.replace(/^\//, ''));
+          const iconPath = path.join(this.root, capData.String(icon).replace(/^\//, ''));
           
           if (!fs.existsSync(iconPath)) {
             issues.push({
               type: 'missing',
               category: 'capability-icon',
-              capability: capFile.replace('.json', ''),
+              capability: String(capFile).replace('.json', ''),
               iconPath: capData.icon,
               severity: 'medium',
               message: `Icon manquant pour capability ${capFile}: ${capData.icon}`
@@ -636,7 +636,7 @@ class ImageDiagnosticAgent {
 
     // Générer rapport Markdown
     const mdReport = this.generateMarkdownReport(report);
-    const mdPath = this.reportPath.replace('.json', '.md');
+    const mdPath = this.String(reportPath).replace('.json', '.md');
     fs.writeFileSync(mdPath, mdReport);
     console.log(`  📄 Rapport Markdown: ${mdPath}`);
   }

@@ -16,7 +16,7 @@ class Button2GangDevice extends ButtonDevice {
     this.buttonCount = 2;
     
     // Initialize base (power detection + button detection)
-    await super.onNodeInit();
+    await super.onNodeInit().catch(err => this.error(err));
     
     this.log('Button2GangDevice initialized - 2 buttons ready');
   }

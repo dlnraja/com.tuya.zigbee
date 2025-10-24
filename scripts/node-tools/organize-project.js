@@ -181,14 +181,14 @@ class ProjectOrganizer {
     for (const [category, config] of Object.entries(ORGANIZATION_MAP)) {
       // Check if file should be excluded
       if (config.exclude?.some(pattern => 
-        filename.match(new RegExp(pattern.replace('*', '.*')))
+        filename.match(new RegExp(String(pattern).replace('*', '.*')))
       )) {
         continue;
       }
       
       // Check if file matches patterns
       const matchesPattern = config.patterns?.some(pattern => {
-        const regex = new RegExp(pattern.replace('*', '.*').replace('.', '\\.'));
+        const regex = new RegExp(String(pattern).replace('*', '.*').replace('.', '\\.'));
         return regex.test(filename);
       });
       
@@ -197,7 +197,7 @@ class ProjectOrganizer {
       // Check for subdirectory placement
       for (const [subdir, patterns] of Object.entries(config.subdirs || {})) {
         if (patterns.some(pattern => {
-          const regex = new RegExp(pattern.replace('*', '.*'), 'i');
+          const regex = new RegExp(String(pattern).replace('*', '.*'), 'i');
           return regex.test(filename);
         })) {
           return path.join(config.path, subdir);

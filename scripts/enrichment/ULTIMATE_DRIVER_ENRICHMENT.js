@@ -131,10 +131,10 @@ driverFolders.forEach((driverFolder, idx) => {
     // Motion sensors
     if (driverFolder.includes('motion') || currentName.toLowerCase().includes('motion')) {
       if (driverFolder.includes('mmwave') && !currentName.includes('mmWave')) {
-        newName = newName.replace(/mmwave/gi, 'mmWave');
+        newName = String(newName).replace(/mmwave/gi, 'mmWave');
       }
       if (driverFolder.includes('pir') && !currentName.includes('PIR')) {
-        newName = newName.replace(/pir/gi, 'PIR');
+        newName = String(newName).replace(/pir/gi, 'PIR');
       }
       // Multi-sensor enrichment
       if ((driverFolder.includes('temp') || driverFolder.includes('humidity') || driverFolder.includes('illuminance')) 
@@ -165,7 +165,7 @@ driverFolders.forEach((driverFolder, idx) => {
     
     // CO2 sensors - enrichir symbole
     if (currentName.includes('CO2') && !currentName.includes('CO₂')) {
-      newName = newName.replace(/CO2/g, 'CO₂');
+      newName = String(newName).replace(/CO2/g, 'CO₂');
     }
     
     // Wall switches - standardiser format

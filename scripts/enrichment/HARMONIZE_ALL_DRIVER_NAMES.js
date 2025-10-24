@@ -60,7 +60,7 @@ appJson.drivers.forEach((driver, index) => {
   // 1. Supprimer les caractères spéciaux
   RULES.specialChars.forEach(rule => {
     const before = newName;
-    newName = newName.replace(rule.pattern, rule.replace);
+    newName = String(newName).replace(rule.pattern, rule.replace);
     if (before !== newName) {
       changes.push('removed_special_chars');
     }
@@ -72,7 +72,7 @@ appJson.drivers.forEach((driver, index) => {
     if (rule.pattern.test(newName)) {
       hasPowerType = true;
       // Remplacer par le standard
-      newName = newName.replace(rule.pattern, rule.standard);
+      newName = String(newName).replace(rule.pattern, rule.standard);
     }
   });
   
@@ -112,13 +112,13 @@ appJson.drivers.forEach((driver, index) => {
   // 4. Standardiser les gangs
   RULES.gangs.forEach(rule => {
     if (rule.pattern.test(newName)) {
-      newName = newName.replace(rule.pattern, rule.standard);
+      newName = String(newName).replace(rule.pattern, rule.standard);
       changes.push('standardized_gang');
     }
   });
   
   // 5. Nettoyer les underscores multiples
-  newName = newName.replace(/_+/g, '_').replace(/^_|_$/g, '');
+  newName = String(newName).replace(/_+/g, '_').replace(/^_|_$/g, '');
   
   // 6. Convertir en minuscules
   newName = newName.toLowerCase();

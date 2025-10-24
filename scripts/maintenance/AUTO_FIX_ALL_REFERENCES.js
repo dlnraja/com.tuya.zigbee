@@ -51,7 +51,7 @@ class AutoFixer {
         let newStr = obj;
         Object.entries(renameDict).forEach(([oldName, newName]) => {
           if (newStr.includes(oldName)) {
-            newStr = newStr.replace(new RegExp(oldName, 'g'), newName);
+            newStr = String(newStr).replace(new RegExp(oldName, 'g'), newName);
             fixed++;
           }
         });

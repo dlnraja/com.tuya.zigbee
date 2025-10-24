@@ -54,8 +54,8 @@ function generateTitleFormatted(title, args) {
     if (match) {
       // Pour les conditions avec négation, on utilise [[arg]] syntax
       return {
-        en: title.en.replace(/!\{\{([^|]+)\|([^}]+)\}\}/, '[[$1|$2]]'),
-        fr: title.fr ? title.fr.replace(/!\{\{([^|]+)\|([^}]+)\}\}/, '[[$1|$2]]') : undefined
+        en: title.String(en).replace(/!\{\{([^|]+)\|([^}]+)\}\}/, '[[$1|$2]]'),
+        fr: title.fr ? title.String(fr).replace(/!\{\{([^|]+)\|([^}]+)\}\}/, '[[$1|$2]]') : undefined
       };
     }
   }

@@ -101,17 +101,17 @@ function updateLinksInFile(filePath) {
   // Remplacer les anciens chemins par les nouveaux
   for (const [oldPath, newPath] of Object.entries(PATH_MAPPINGS)) {
     // Pattern pour liens Markdown
-    const mdPattern = new RegExp(`\\[([^\\]]+)\\]\\(${oldPath.replace(/\./g, '\\.')}\\)`, 'g');
+    const mdPattern = new RegExp(`\\[([^\\]]+)\\]\\(${String(oldPath).replace(/\./g, '\\.')}\\)`, 'g');
     if (mdPattern.test(content)) {
-      content = content.replace(mdPattern, `[$1](${newPath})`);
+      content = String(content).replace(mdPattern, `[$1](${newPath})`);
       updated = true;
       console.log(`  ✓ Updated MD link: ${oldPath} → ${newPath}`);
     }
     
     // Pattern pour chemins directs
-    const directPattern = new RegExp(`(?<!\\[)${oldPath.replace(/\./g, '\\.')}(?!\\))`, 'g');
+    const directPattern = new RegExp(`(?<!\\[)${String(oldPath).replace(/\./g, '\\.')}(?!\\))`, 'g');
     if (directPattern.test(content)) {
-      content = content.replace(directPattern, newPath);
+      content = String(content).replace(directPattern, newPath);
       updated = true;
       console.log(`  ✓ Updated path: ${oldPath} → ${newPath}`);
     }

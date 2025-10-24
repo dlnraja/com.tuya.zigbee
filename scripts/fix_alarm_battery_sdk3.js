@@ -128,7 +128,7 @@ function fixDeviceJs(dirPath) {
 
     patterns.forEach(pattern => {
       if (pattern.from.test(content)) {
-        content = content.replace(pattern.from, pattern.to);
+        content = String(content).replace(pattern.from, pattern.to);
         modified = true;
       }
     });

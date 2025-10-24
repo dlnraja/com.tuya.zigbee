@@ -13,14 +13,14 @@ class ZemismartWirelessSwitch3buttonDevice extends SwitchDevice {
     this.log('ZemismartWirelessSwitch3buttonDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit();
+    await super.onNodeInit().catch(err => this.error(err));
     
     this.log('ZemismartWirelessSwitch3buttonDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
     this.log('ZemismartWirelessSwitch3buttonDevice deleted');
-    await super.onDeleted();
+    await super.onDeleted().catch(err => this.error(err));
   }
 }
 

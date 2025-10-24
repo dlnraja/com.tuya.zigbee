@@ -37,13 +37,13 @@ drivers.forEach(driverName => {
       stats.total++;
       
       // Fix the bug
-      content = content.replace(
+      content = String(content).replace(
         /this\.registerCapability\('measure_battery', CLUSTER\.POWER_CONFIGURATION,/g,
         "this.registerCapability('measure_battery', 'genPowerCfg',"
       );
       
       // Also remove unused CLUSTER import if present
-      content = content.replace(
+      content = String(content).replace(
         /const { CLUSTER } = require\('zigbee-clusters'\);\n/g,
         ''
       );

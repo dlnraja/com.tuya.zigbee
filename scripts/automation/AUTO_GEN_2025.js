@@ -84,13 +84,13 @@ module.exports = ${className};
     const driverCode = `'use strict';
 const { Driver } = require('homey');
 
-class ${className.replace('Device', 'Driver')} extends Driver {
+class ${String(className).replace('Device', 'Driver')} extends Driver {
   async onInit() {
     this.log('${spec.id} driver initialized');
   }
 }
 
-module.exports = ${className.replace('Device', 'Driver')};
+module.exports = ${String(className).replace('Device', 'Driver')};
 `;
     await fs.writeFile(path.join(driverDir, 'driver.js'), driverCode);
     

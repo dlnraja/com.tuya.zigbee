@@ -172,7 +172,7 @@ function validateAndFixDriver(driverPath, driverName) {
       // Renommer settings
       invalidSettings.forEach(setting => {
         const oldId = setting.id;
-        setting.id = oldId.replace(/^(energy_|homey_|app_)/, 'device_');
+        setting.id = String(oldId).replace(/^(energy_|homey_|app_)/, 'device_');
       });
       modified = true;
     }

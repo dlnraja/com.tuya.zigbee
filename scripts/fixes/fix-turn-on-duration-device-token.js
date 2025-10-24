@@ -46,7 +46,7 @@ for (const driverName of driversToFix) {
         if (action.titleFormatted) {
           // Add [[device]] to English title
           if (action.titleFormatted.en && !action.titleFormatted.en.includes('[[device]]')) {
-            action.titleFormatted.en = action.titleFormatted.en.replace(
+            action.titleFormatted.en = action.titleFormatted.String(en).replace(
               'Turn on',
               'Turn [[device]] on'
             );
@@ -55,7 +55,7 @@ for (const driverName of driversToFix) {
           
           // Add [[device]] to French title
           if (action.titleFormatted.fr && !action.titleFormatted.fr.includes('[[device]]')) {
-            action.titleFormatted.fr = action.titleFormatted.fr.replace(
+            action.titleFormatted.fr = action.titleFormatted.String(fr).replace(
               'Allumer',
               'Allumer [[device]]'
             );

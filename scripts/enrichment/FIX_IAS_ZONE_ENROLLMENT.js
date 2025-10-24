@@ -41,7 +41,7 @@ const CORRECT_IAS_ENROLLMENT = `
         this.log('📍 Homey IEEE address:', ieee);
         
         // Convert to proper format for IAS CIE Address
-        const ieeeAddress = ieee.replace(/:/g, '');
+        const ieeeAddress = String(ieee).replace(/:/g, '');
         
         // Write CIE Address to device
         await endpoint.clusters.iasZone.writeAttributes({
@@ -112,7 +112,7 @@ async function fixDriver(driverPath, driverName) {
     ];
     
     patterns.forEach(pattern => {
-      deviceCode = deviceCode.replace(pattern, '');
+      deviceCode = String(deviceCode).replace(pattern, '');
     });
     
     // Find where to insert (after capability registration, before onDeleted)
@@ -125,7 +125,7 @@ async function fixDriver(driverPath, driverName) {
     let inserted = false;
     for (const pattern of insertPatterns) {
       if (pattern.test(deviceCode)) {
-        deviceCode = deviceCode.replace(pattern, `$1\n${CORRECT_IAS_ENROLLMENT}`);
+        deviceCode = String(deviceCode).replace(pattern, `$1\n${CORRECT_IAS_ENROLLMENT}`);
         inserted = true;
         break;
       }
@@ -135,7 +135,7 @@ async function fixDriver(driverPath, driverName) {
       // Fallback: insert before onDeleted
       const onDeletedMatch = deviceCode.match(/(async onDeleted\(\))/);
       if (onDeletedMatch) {
-        deviceCode = deviceCode.replace(onDeletedMatch[0], `${CORRECT_IAS_ENROLLMENT}\n\n  ${onDeletedMatch[0]}`);
+        deviceCode = String(deviceCode).replace(onDeletedMatch[0], `${CORRECT_IAS_ENROLLMENT}\n\n  ${onDeletedMatch[0]}`);
         inserted = true;
       }
     }

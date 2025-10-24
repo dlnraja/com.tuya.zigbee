@@ -13,14 +13,14 @@ class LonsonhoSonoffButtonWirelessDevice extends ButtonDevice {
     this.log('LonsonhoSonoffButtonWirelessDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit();
+    await super.onNodeInit().catch(err => this.error(err));
     
     this.log('LonsonhoSonoffButtonWirelessDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
     this.log('LonsonhoSonoffButtonWirelessDevice deleted');
-    await super.onDeleted();
+    await super.onDeleted().catch(err => this.error(err));
   }
 }
 

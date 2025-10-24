@@ -13,14 +13,14 @@ class LonsonhoSamsungButtonDevice extends ButtonDevice {
     this.log('LonsonhoSamsungButtonDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit();
+    await super.onNodeInit().catch(err => this.error(err));
     
     this.log('LonsonhoSamsungButtonDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
     this.log('LonsonhoSamsungButtonDevice deleted');
-    await super.onDeleted();
+    await super.onDeleted().catch(err => this.error(err));
   }
 }
 

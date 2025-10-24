@@ -61,7 +61,7 @@ class EnhancedMatrixGenerator {
     console.log('→ Loading categories...');
     try {
       const catData = fs.readFileSync('DRIVER_CATEGORIES.json', 'utf8');
-      const cleanData = catData.replace(/^\uFEFF/, '');
+      const cleanData = String(catData).replace(/^\uFEFF/, '');
       const parsed = JSON.parse(cleanData);
       this.categories = parsed.categories || {};
       console.log(`  ✅ ${Object.keys(this.categories).length} categorized\n`);

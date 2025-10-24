@@ -41,7 +41,7 @@ async function fixAllTitleFormattedPlaceholders() {
           if (!title.includes(placeholder)) {
             // Add placeholder
             if (titleFormatted[lang]) {
-              titleFormatted[lang] = title.replace('[[device]]', `${placeholder} [[device]]`);
+              titleFormatted[lang] = String(title).replace('[[device]]', `${placeholder} [[device]]`);
             }
             fixed++;
             console.log(`  ✅ Fixed ${flowType}.${card.id}.${lang}: Added ${placeholder}`);

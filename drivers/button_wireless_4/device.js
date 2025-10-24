@@ -16,7 +16,7 @@ class Button4GangDevice extends ButtonDevice {
     this.buttonCount = 4;
     
     // Initialize base (power detection + button detection)
-    await super.onNodeInit();
+    await super.onNodeInit().catch(err => this.error(err));
     
     this.log('Button4GangDevice initialized - 4 buttons ready');
   }

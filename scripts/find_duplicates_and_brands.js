@@ -75,7 +75,7 @@ drivers.forEach(driver => {
       issues.brandPrefixes.push({
         driver,
         prefix,
-        suggested: driver.replace(prefix, '')
+        suggested: String(driver).replace(prefix, '')
       });
     }
   });

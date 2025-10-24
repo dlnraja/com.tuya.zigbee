@@ -50,14 +50,14 @@ function applyBatteryConverter(content) {
   
   // Pattern 1: value / 2
   if (content.includes('value / 2') && content.includes('measure_battery')) {
-    content = content.replace(
+    content = String(content).replace(
       /reportParser:\s*value\s*=>\s*{\s*this\.log\(['"](Battery raw value|Battery):['"],\s*value\);\s*return\s+value\s*\/\s*2;\s*}/g,
       `reportParser: value => {
           this.log('Battery raw value:', value);
           return fromZclBatteryPercentageRemaining(value);
         }`
     );
-    content = content.replace(
+    content = String(content).replace(
       /reportParser:\s*value\s*=>\s*value\s*\/\s*2/g,
       'reportParser: value => fromZclBatteryPercentageRemaining(value)'
     );
@@ -66,7 +66,7 @@ function applyBatteryConverter(content) {
   
   // Pattern 2: value <= 100 ? value : value / 2
   if (content.includes('value <= 100 ? value : value / 2')) {
-    content = content.replace(
+    content = String(content).replace(
       /value\s*<=\s*100\s*\?\s*value\s*:\s*value\s*\/\s*2/g,
       'fromZclBatteryPercentageRemaining(value)'
     );
@@ -75,7 +75,7 @@ function applyBatteryConverter(content) {
   
   // Pattern 3: Math.max/min avec division
   if (content.includes('Math.max(0, Math.min(100,') && content.includes('/ 2')) {
-    content = content.replace(
+    content = String(content).replace(
       /Math\.max\(0,\s*Math\.min\(100,\s*[^)]*\/\s*2\s*\)\)/g,
       'fromZclBatteryPercentageRemaining(value)'
     );
@@ -93,7 +93,7 @@ function applyIlluminanceConverter(content) {
   
   // Pattern: Math.pow(10, (value - 1) / 10000)
   if (content.includes('Math.pow(10,') && content.includes('10000')) {
-    content = content.replace(
+    content = String(content).replace(
       /Math\.pow\(10,\s*\(value\s*-\s*1\)\s*\/\s*10000\)/g,
       'fromZigbeeMeasuredValue(value)'
     );

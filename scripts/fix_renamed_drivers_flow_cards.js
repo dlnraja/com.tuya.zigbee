@@ -41,7 +41,7 @@ RENAMES.forEach(rename => {
     
     // Remplacer toutes les occurrences de l'ancien préfixe
     const regex = new RegExp(rename.old, 'g');
-    content = content.replace(regex, rename.new);
+    content = String(content).replace(regex, rename.new);
     
     if (content !== originalContent) {
       // Backup
