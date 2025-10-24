@@ -10,7 +10,8 @@
     "light_hue",
     "light_saturation",
     "light_temperature",
-    "light_mode"
+    "light_mode",
+    "alarm_contact"
   ],
   "energy": {
     "batteries": [
@@ -28,7 +29,12 @@
     "manufacturerName": [
       "_TZ3000_kdpxju99",
       "_TZ3000_obacbukl",
-      "_TZ3000_odygigth"
+      "_TZ3000_odygigth",
+      "_TZ3000_kmh5qpmb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7"
     ],
     "endpoints": {
       "1": {
@@ -58,7 +64,8 @@
     },
     "productId": [
       "TS0505A",
-      "TS0505B"
+      "TS0505B",
+      "TS0203"
     ]
   },
   "settings": [
