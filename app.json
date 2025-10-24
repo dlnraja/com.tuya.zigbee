@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "4.7.7",
+  "version": "4.8.0",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
@@ -25204,15 +25204,17 @@
         "manufacturerName": [
           "_TZ3000_a7ouggvs",
           "_TZ3000_adkvzooy",
+          "_TZ3000_akqdg6g7",
           "_TZ3000_bczr4e10",
           "_TZ3000_bi6lpsew",
           "_TZ3000_fvh3pjaz",
-          "_TZ3000_vp6clf9d",
-          "_TZ3000_xabckq1v",
           "_TZ3000_kqvb5akv",
-          "_TZ3000_ww6drja5",
           "_TZ3000_ltt60asa",
-          "_TZ3000_akqdg6g7"
+          "_TZ3000_rrjr1q0u",
+          "_TZ3000_vp6clf9d",
+          "_TZ3000_w8jwkczz",
+          "_TZ3000_ww6drja5",
+          "_TZ3000_xabckq1v"
         ],
         "productId": [
           "TS0041",
@@ -25566,17 +25568,20 @@
         "manufacturerName": [
           "_TZ3000_a7ouggvs",
           "_TZ3000_adkvzooy",
+          "_TZ3000_akqdg6g7",
           "_TZ3000_bgtzm4ny",
           "_TZ3000_bi6lpsew",
           "_TZ3000_ee8nrt2l",
           "_TZ3000_fvh3pjaz",
+          "_TZ3000_kqvb5akv",
+          "_TZ3000_ltt60asa",
+          "_TZ3000_pcqjmcud",
+          "_TZ3000_rrjr1q0u",
+          "_TZ3000_tk3s5tyg",
           "_TZ3000_vp6clf9d",
           "_TZ3000_w8jwkczz",
-          "_TZ3000_xabckq1v",
-          "_TZ3000_kqvb5akv",
           "_TZ3000_ww6drja5",
-          "_TZ3000_ltt60asa",
-          "_TZ3000_akqdg6g7"
+          "_TZ3000_xabckq1v"
         ],
         "productId": [
           "TS0041",
@@ -27635,17 +27640,22 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "_TZ3000_akqdg6g7",
           "_TZ3000_fllyghyj",
-          "_TZE200_bjawzodf",
+          "_TZ3000_kqvb5akv",
+          "_TZ3000_ltt60asa",
+          "_TZ3000_ww6drja5",
           "_TZ3000_ywagc4rj",
           "_TZ3000_zl1kmjqx",
           "_TZE200_a8sdabtg",
+          "_TZE200_bjawzodf",
+          "_TZE200_cirvgep4",
+          "_TZE200_locansqn",
+          "_TZE200_vzqtvljm",
+          "_TZE200_whpb9yts",
           "_TZE204_upagmta9",
-          "_TZE284_vvmbj46n",
-          "_TZ3000_kqvb5akv",
-          "_TZ3000_ww6drja5",
-          "_TZ3000_ltt60asa",
-          "_TZ3000_akqdg6g7"
+          "_TZE284_sgabhwa6",
+          "_TZE284_vvmbj46n"
         ],
         "productId": [
           "TS0201",
@@ -27945,19 +27955,22 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "_TZ3000_akqdg6g7",
+          "_TZ3000_kmh5qpmb",
+          "_TZ3000_kqvb5akv",
+          "_TZ3000_ltt60asa",
           "_TZ3000_qomxlryd",
+          "_TZ3000_ww6drja5",
           "_TZ3000_ywagc4rj",
           "_TZ3000_zl1kmjqx",
           "_TZE200_a8sdabtg",
+          "_TZE200_c7emyjom",
           "_TZE200_ga1maeof",
           "_TZE200_myd45weu",
+          "_TZE200_ycrd8ywq",
+          "_TZE204_c7emyjom",
           "_TZE204_myd45weu",
-          "_TZE284_oitavov2",
-          "_TZ3000_kmh5qpmb",
-          "_TZ3000_kqvb5akv",
-          "_TZ3000_ww6drja5",
-          "_TZ3000_ltt60asa",
-          "_TZ3000_akqdg6g7"
+          "_TZE284_oitavov2"
         ],
         "productId": [
           "TS0201",
@@ -40577,19 +40590,23 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_mmtwjmaq",
+          "_TZ3000_akqdg6g7",
+          "_TZ3000_bsvqrk3b",
+          "_TZ3000_hgu1dlak",
           "_TZ3000_kmh5qpmb",
-          "_TZE200_3towulqd",
+          "_TZ3000_kqvb5akv",
+          "_TZ3000_ltt60asa",
           "_TZ3000_mcxw5ehu",
+          "_TZ3000_mmtwjmaq",
           "_TZ3000_msl6wxk9",
+          "_TZ3000_ww6drja5",
           "_TZ3040_bb6xaihh",
+          "_TZE200_3towulqd",
+          "_TYZB01_qeqvmvti",
+          "_TYZB01_tv3wxhcz",
           "lumi.motion.agl02",
           "lumi.sensor_motion.aq2",
-          "lumi.sensor_motion.aq2b",
-          "_TZ3000_kqvb5akv",
-          "_TZ3000_ww6drja5",
-          "_TZ3000_ltt60asa",
-          "_TZ3000_akqdg6g7"
+          "lumi.sensor_motion.aq2b"
         ],
         "productId": [
           "SNZB-03",
@@ -44816,17 +44833,23 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_g5xawfcq",
-          "_TZ3000_cehuw1lw",
-          "_TZ3000_plyvnuf5",
+          "_TZ3000_2xlvlnez",
+          "_TZ3000_3ooaz3ng",
+          "_TZ3000_5f43h46r",
           "_TZ3000_8nkb7mof",
-          "_TZ3000_okaz9tjs",
-          "_TZ3000_tvuarksa",
-          "_TZ3000_typdpbpg",
-          "_TZ3000_ww6drja5",
+          "_TZ3000_akqdg6g7",
+          "_TZ3000_cehuw1lw",
+          "_TZ3000_cphmq0q7",
+          "_TZ3000_ew3ldmgx",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_kdi2o9m6",
           "_TZ3000_kqvb5akv",
           "_TZ3000_ltt60asa",
-          "_TZ3000_akqdg6g7"
+          "_TZ3000_okaz9tjs",
+          "_TZ3000_plyvnuf5",
+          "_TZ3000_tvuarksa",
+          "_TZ3000_typdpbpg",
+          "_TZ3000_ww6drja5"
         ],
         "productId": [
           "S26R2ZB",
@@ -45716,12 +45739,22 @@
       ],
       "zigbee": {
         "manufacturerName": [
-          "_TZE200_rhgsbacq",
-          "_TZ3000_mmtwjmaq",
+          "_TZ3000_akqdg6g7",
           "_TZ3000_kqvb5akv",
-          "_TZ3000_ww6drja5",
           "_TZ3000_ltt60asa",
-          "_TZ3000_akqdg6g7"
+          "_TZ3000_mmtwjmaq",
+          "_TZ3000_ww6drja5",
+          "_TZE200_0u3bj3rc",
+          "_TZE200_ar0slwnd",
+          "_TZE200_holel4dk",
+          "_TZE200_mx6u6l4y",
+          "_TZE200_rhgsbacq",
+          "_TZE200_sfiy5tfs",
+          "_TZE200_v6ossqfy",
+          "_TZE204_clrdrnya",
+          "_TZE204_mtoaryre",
+          "_TZE204_qasjif9e",
+          "_TZE204_sxm7l9xa"
         ],
         "productId": [
           "TS0601",
@@ -57131,25 +57164,26 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_qzjcsmar",
-          "_TZ3000_ji4araar",
-          "_TZ3000_zmy1waw6",
           "_TZ3000_4fjiwweb",
           "_TZ3000_5ucujjts",
+          "_TZ3000_akqdg6g7",
+          "_TZ3000_ji4araar",
+          "_TZ3000_kqvb5akv",
+          "_TZ3000_lupfd8zu",
+          "_TZ3000_ltt60asa",
           "_TZ3000_mx3vgyea",
           "_TZ3000_npzfdzhq",
           "_TZ3000_o005nuxx",
           "_TZ3000_o4cjetlm",
+          "_TZ3000_qzjcsmar",
           "_TZ3000_tgddllx4",
           "_TZ3000_uxuxkcvd",
           "_TZ3000_w0qqde0g",
+          "_TZ3000_ww6drja5",
           "_TZ3000_yujkchbz",
           "_TZ3000_yw8z2axp",
-          "lumi.ctrl_ln1",
-          "_TZ3000_kqvb5akv",
-          "_TZ3000_ww6drja5",
-          "_TZ3000_ltt60asa",
-          "_TZ3000_akqdg6g7"
+          "_TZ3000_zmy1waw6",
+          "lumi.ctrl_ln1"
         ],
         "productId": [
           "TS0001",
@@ -57783,23 +57817,26 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_l9brjwau",
-          "_TZ3000_qzjcsmar",
-          "_TZ3000_ji4araar",
+          "_TZ3000_18ejxno0",
           "_TZ3000_4fjiwweb",
           "_TZ3000_4zf0crgo",
+          "_TZ3000_akqdg6g7",
+          "_TZ3000_ji4araar",
+          "_TZ3000_kqvb5akv",
+          "_TZ3000_l9brjwau",
+          "_TZ3000_ltt60asa",
+          "_TZ3000_lwlhprgx",
+          "_TZ3000_neo2aqj4",
           "_TZ3000_nPGIPl5D",
           "_TZ3000_o005nuxx",
+          "_TZ3000_qzjcsmar",
           "_TZ3000_ruxexjfz",
+          "_TZ3000_ww6drja5",
           "_TZ3000_yw8z2axp",
+          "_TZ3000_zmlunnhy",
           "_TZ3000_zmy1waw6",
           "lumi.ctrl_ln1",
-          "lumi.ctrl_ln2",
-          "_TZ3000_kqvb5akv",
-          "_TZ3000_ww6drja5",
-          "_TZ3000_ltt60asa",
-          "_TZ3000_akqdg6g7",
-          "_TZ3000_zmlunnhy"
+          "lumi.ctrl_ln2"
         ],
         "productId": [
           "TS0001",
@@ -58772,20 +58809,22 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_qzjcsmar",
-          "_TZ3000_ji4araar",
+          "_TZ3000_18ejxno0",
           "_TZ3000_4fjiwweb",
           "_TZ3000_4xfqlgqo",
+          "_TZ3000_akqdg6g7",
           "_TZ3000_excgg5kb",
+          "_TZ3000_ji4araar",
+          "_TZ3000_kqvb5akv",
+          "_TZ3000_ltt60asa",
           "_TZ3000_mlswgkc3",
           "_TZ3000_o005nuxx",
+          "_TZ3000_odygigth",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_ww6drja5",
           "_TZ3000_yw8z2axp",
           "_TZ3000_zmy1waw6",
-          "lumi.ctrl_ln1",
-          "_TZ3000_kqvb5akv",
-          "_TZ3000_ww6drja5",
-          "_TZ3000_ltt60asa",
-          "_TZ3000_akqdg6g7"
+          "lumi.ctrl_ln1"
         ],
         "productId": [
           "TS0001",
@@ -59464,18 +59503,21 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "_TZ3000_1obwwnmq",
           "_TZ3000_4fjiwweb",
+          "_TZ3000_akqdg6g7",
+          "_TZ3000_excgg5kb",
           "_TZ3000_ji4araar",
+          "_TZ3000_kqvb5akv",
+          "_TZ3000_ltt60asa",
           "_TZ3000_o005nuxx",
           "_TZ3000_qzjcsmar",
           "_TZ3000_tygpud44",
+          "_TZ3000_vzopcetz",
+          "_TZ3000_ww6drja5",
           "_TZ3000_yw8z2axp",
           "_TZ3000_zmy1waw6",
-          "lumi.ctrl_ln1",
-          "_TZ3000_kqvb5akv",
-          "_TZ3000_ww6drja5",
-          "_TZ3000_ltt60asa",
-          "_TZ3000_akqdg6g7"
+          "lumi.ctrl_ln1"
         ],
         "productId": [
           "TS0001",
