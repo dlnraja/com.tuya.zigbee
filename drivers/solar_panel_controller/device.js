@@ -3,25 +3,25 @@
 const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
- * ZemismartSolarPanelControllerDevice - Unified Hybrid Driver
+ * SolarPanelControllerDevice - Unified Hybrid Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class ZemismartSolarPanelControllerDevice extends BaseHybridDevice {
+class SolarPanelControllerDevice extends BaseHybridDevice {
 
   async onNodeInit() {
-    this.log('ZemismartSolarPanelControllerDevice initializing...');
+    this.log('SolarPanelControllerDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit().catch(err => this.error(err));
     
-    this.log('ZemismartSolarPanelControllerDevice initialized - Power source:', this.powerSource || 'unknown');
+    this.log('SolarPanelControllerDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
-    this.log('ZemismartSolarPanelControllerDevice deleted');
+    this.log('SolarPanelControllerDevice deleted');
     await super.onDeleted().catch(err => this.error(err));
   }
 }
 
-module.exports = ZemismartSolarPanelControllerDevice;
+module.exports = SolarPanelControllerDevice;

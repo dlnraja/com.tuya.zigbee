@@ -3,25 +3,25 @@
 const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
- * AvattoLedStripProDevice - Unified Hybrid Driver
+ * LedStripProDevice - Unified Hybrid Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class AvattoLedStripProDevice extends BaseHybridDevice {
+class LedStripProDevice extends BaseHybridDevice {
 
   async onNodeInit() {
-    this.log('AvattoLedStripProDevice initializing...');
+    this.log('LedStripProDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit().catch(err => this.error(err));
     
-    this.log('AvattoLedStripProDevice initialized - Power source:', this.powerSource || 'unknown');
+    this.log('LedStripProDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
-    this.log('AvattoLedStripProDevice deleted');
+    this.log('LedStripProDevice deleted');
     await super.onDeleted().catch(err => this.error(err));
   }
 }
 
-module.exports = AvattoLedStripProDevice;
+module.exports = LedStripProDevice;

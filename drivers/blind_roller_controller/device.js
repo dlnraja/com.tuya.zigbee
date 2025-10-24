@@ -3,25 +3,25 @@
 const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
- * ZemismartRollerBlindControllerDevice - Unified Hybrid Driver
+ * RollerBlindControllerDevice - Unified Hybrid Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class ZemismartRollerBlindControllerDevice extends BaseHybridDevice {
+class RollerBlindControllerDevice extends BaseHybridDevice {
 
   async onNodeInit() {
-    this.log('ZemismartRollerBlindControllerDevice initializing...');
+    this.log('RollerBlindControllerDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit().catch(err => this.error(err));
     
-    this.log('ZemismartRollerBlindControllerDevice initialized - Power source:', this.powerSource || 'unknown');
+    this.log('RollerBlindControllerDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
-    this.log('ZemismartRollerBlindControllerDevice deleted');
+    this.log('RollerBlindControllerDevice deleted');
     await super.onDeleted().catch(err => this.error(err));
   }
 }
 
-module.exports = ZemismartRollerBlindControllerDevice;
+module.exports = RollerBlindControllerDevice;

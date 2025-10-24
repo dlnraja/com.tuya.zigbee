@@ -3,25 +3,25 @@
 const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
- * AvattoSmartSpotDevice - Unified Hybrid Driver
+ * SmartSpotDevice - Unified Hybrid Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class AvattoSmartSpotDevice extends BaseHybridDevice {
+class SmartSpotDevice extends BaseHybridDevice {
 
   async onNodeInit() {
-    this.log('AvattoSmartSpotDevice initializing...');
+    this.log('SmartSpotDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit().catch(err => this.error(err));
     
-    this.log('AvattoSmartSpotDevice initialized - Power source:', this.powerSource || 'unknown');
+    this.log('SmartSpotDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
-    this.log('AvattoSmartSpotDevice deleted');
+    this.log('SmartSpotDevice deleted');
     await super.onDeleted().catch(err => this.error(err));
   }
 }
 
-module.exports = AvattoSmartSpotDevice;
+module.exports = SmartSpotDevice;

@@ -2,11 +2,11 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class AvattoSmartSwitch4gangDriver extends ZigBeeDriver {
+class SmartSwitch4gangDriver extends ZigBeeDriver {
 
   async onInit() {
-    this.log('AvattoSmartSwitch4gangDriver initialized');
+    this.log('SmartSwitch4gangDriver initialized');
   }
 }
 
-module.exports = AvattoSmartSwitch4gangDriver;
+module.exports = SmartSwitch4gangDriver;

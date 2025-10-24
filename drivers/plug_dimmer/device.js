@@ -3,25 +3,25 @@
 const SwitchDevice = require('../../lib/SwitchDevice');
 
 /**
- * NousSmartPlugDimmerDevice - Unified Hybrid Driver
+ * SmartPlugDimmerDevice - Unified Hybrid Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class NousSmartPlugDimmerDevice extends SwitchDevice {
+class SmartPlugDimmerDevice extends SwitchDevice {
 
   async onNodeInit() {
-    this.log('NousSmartPlugDimmerDevice initializing...');
+    this.log('SmartPlugDimmerDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit().catch(err => this.error(err));
     
-    this.log('NousSmartPlugDimmerDevice initialized - Power source:', this.powerSource || 'unknown');
+    this.log('SmartPlugDimmerDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
-    this.log('NousSmartPlugDimmerDevice deleted');
+    this.log('SmartPlugDimmerDevice deleted');
     await super.onDeleted().catch(err => this.error(err));
   }
 }
 
-module.exports = NousSmartPlugDimmerDevice;
+module.exports = SmartPlugDimmerDevice;

@@ -3,25 +3,25 @@
 const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
- * NousAirQualityMonitorDevice - Unified Hybrid Driver
+ * AirQualityMonitorDevice - Unified Hybrid Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class NousAirQualityMonitorDevice extends BaseHybridDevice {
+class AirQualityMonitorDevice extends BaseHybridDevice {
 
   async onNodeInit() {
-    this.log('NousAirQualityMonitorDevice initializing...');
+    this.log('AirQualityMonitorDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit().catch(err => this.error(err));
     
-    this.log('NousAirQualityMonitorDevice initialized - Power source:', this.powerSource || 'unknown');
+    this.log('AirQualityMonitorDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
-    this.log('NousAirQualityMonitorDevice deleted');
+    this.log('AirQualityMonitorDevice deleted');
     await super.onDeleted().catch(err => this.error(err));
   }
 }
 
-module.exports = NousAirQualityMonitorDevice;
+module.exports = AirQualityMonitorDevice;

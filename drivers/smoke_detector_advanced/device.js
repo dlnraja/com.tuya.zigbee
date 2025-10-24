@@ -3,25 +3,25 @@
 const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
- * ZemismartSmartSmokeDetectorAdvancedDevice - Unified Hybrid Driver
+ * SmartSmokeDetectorAdvancedDevice - Unified Hybrid Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class ZemismartSmartSmokeDetectorAdvancedDevice extends BaseHybridDevice {
+class SmartSmokeDetectorAdvancedDevice extends BaseHybridDevice {
 
   async onNodeInit() {
-    this.log('ZemismartSmartSmokeDetectorAdvancedDevice initializing...');
+    this.log('SmartSmokeDetectorAdvancedDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit().catch(err => this.error(err));
     
-    this.log('ZemismartSmartSmokeDetectorAdvancedDevice initialized - Power source:', this.powerSource || 'unknown');
+    this.log('SmartSmokeDetectorAdvancedDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
-    this.log('ZemismartSmartSmokeDetectorAdvancedDevice deleted');
+    this.log('SmartSmokeDetectorAdvancedDevice deleted');
     await super.onDeleted().catch(err => this.error(err));
   }
 }
 
-module.exports = ZemismartSmartSmokeDetectorAdvancedDevice;
+module.exports = SmartSmokeDetectorAdvancedDevice;

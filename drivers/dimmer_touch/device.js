@@ -3,25 +3,25 @@
 const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
- * AvattoDimmerTouchDevice - Unified Hybrid Driver
+ * DimmerTouchDevice - Unified Hybrid Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class AvattoDimmerTouchDevice extends BaseHybridDevice {
+class DimmerTouchDevice extends BaseHybridDevice {
 
   async onNodeInit() {
-    this.log('AvattoDimmerTouchDevice initializing...');
+    this.log('DimmerTouchDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit().catch(err => this.error(err));
     
-    this.log('AvattoDimmerTouchDevice initialized - Power source:', this.powerSource || 'unknown');
+    this.log('DimmerTouchDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
-    this.log('AvattoDimmerTouchDevice deleted');
+    this.log('DimmerTouchDevice deleted');
     await super.onDeleted().catch(err => this.error(err));
   }
 }
 
-module.exports = AvattoDimmerTouchDevice;
+module.exports = DimmerTouchDevice;

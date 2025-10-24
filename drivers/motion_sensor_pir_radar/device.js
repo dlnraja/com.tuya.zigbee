@@ -3,25 +3,25 @@
 const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
- * ZemismartPirRadarIlluminationSensorDevice - Unified Hybrid Driver
+ * PirRadarIlluminationSensorDevice - Unified Hybrid Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class ZemismartPirRadarIlluminationSensorDevice extends BaseHybridDevice {
+class PirRadarIlluminationSensorDevice extends BaseHybridDevice {
 
   async onNodeInit() {
-    this.log('ZemismartPirRadarIlluminationSensorDevice initializing...');
+    this.log('PirRadarIlluminationSensorDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit().catch(err => this.error(err));
     
-    this.log('ZemismartPirRadarIlluminationSensorDevice initialized - Power source:', this.powerSource || 'unknown');
+    this.log('PirRadarIlluminationSensorDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
-    this.log('ZemismartPirRadarIlluminationSensorDevice deleted');
+    this.log('PirRadarIlluminationSensorDevice deleted');
     await super.onDeleted().catch(err => this.error(err));
   }
 }
 
-module.exports = ZemismartPirRadarIlluminationSensorDevice;
+module.exports = PirRadarIlluminationSensorDevice;
