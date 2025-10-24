@@ -1,6 +1,0 @@
-Fix all incorrect image paths in app.json
-
-- Corrected 92 driver image paths
-- All paths now match actual driver directory structure
-- Removed leading slashes and fixed brand prefixes
-- Ready for SDK3 validation
