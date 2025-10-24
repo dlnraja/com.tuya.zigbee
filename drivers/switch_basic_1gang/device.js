@@ -1,6 +1,6 @@
 'use strict';
 
-const SwitchDevice = require('../lib/SwitchDevice');
+const SwitchDevice = require('../../lib/SwitchDevice');
 
 /**
  * ZemismartSwitch1gangDevice - Unified Hybrid Driver

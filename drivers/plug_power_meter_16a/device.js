@@ -1,6 +1,6 @@
 'use strict';
 
-const SwitchDevice = require('../lib/SwitchDevice');
+const SwitchDevice = require('../../lib/SwitchDevice');
 
 /**
  * AvattoSmartPlugPowerMeter16aDevice - Unified Hybrid Driver
