@@ -6,7 +6,6 @@
   "class": "sensor",
   "capabilities": [
     "alarm_motion",
-    "alarm_battery",
     "measure_battery"
   ],
   "energy": {

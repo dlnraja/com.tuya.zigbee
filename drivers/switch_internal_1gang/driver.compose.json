@@ -4,7 +4,7 @@
   },
   "class": "sensor",
   "capabilities": [
-    "windowcoverings_closed",
+    "windowcoverings_state",
     "windowcoverings_set",
     "button.up",
     "button.down",
