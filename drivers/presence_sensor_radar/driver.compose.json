@@ -6,22 +6,12 @@
   "class": "sensor",
   "capabilities": [
     "alarm_motion",
+    "measure_luminance",
     "measure_battery"
   ],
-  "energy": {
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "AAA",
-      "AA",
-      "CR123A"
-    ],
-    "approximation": {
-      "usageConstant": 0.5
-    }
-  },
   "zigbee": {
     "manufacturerName": [
+      "_TZE200_rhgsbacq",
       "_TZ3000_mmtwjmaq",
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
