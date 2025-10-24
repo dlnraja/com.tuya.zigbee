@@ -5,7 +5,8 @@
   },
   "class": "windowcoverings",
   "capabilities": [
-    "windowcoverings_set"
+    "windowcoverings_set",
+    "windowcoverings_state"
   ],
   "energy": {
     "batteries": [

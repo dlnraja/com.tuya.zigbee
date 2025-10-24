@@ -5,7 +5,8 @@
   "class": "sensor",
   "capabilities": [
     "onoff",
-    "measure_battery"
+    "measure_battery",
+    "windowcoverings_state"
   ],
   "images": {
     "small": "drivers/scene_controller_wireless/assets/images/small.png",
