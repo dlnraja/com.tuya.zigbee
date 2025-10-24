@@ -20,8 +20,13 @@
     "xlarge": "drivers/sound_controller/assets/images/xlarge.png"
   },
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "TS0601",
+      "_TZE200_"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [

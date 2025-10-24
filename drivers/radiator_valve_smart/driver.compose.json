@@ -18,8 +18,14 @@
     "large": "drivers/radiator_valve_smart/assets/images/large.png"
   },
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "TS0601",
+      "_TZE200_",
+      "_TZE204_"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
