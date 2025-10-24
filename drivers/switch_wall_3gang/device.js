@@ -25,7 +25,6 @@ class SwitchWall3GangDevice extends SwitchDevice {
   /**
    * Register capabilities for 3 switches
    */
-  }
   async registerSwitchCapabilities() {
     // Main switch (endpoint 1)
     this.registerCapability('onoff', this.CLUSTER.ON_OFF, {
