@@ -3,25 +3,25 @@
 const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
- * MoesSosEmergencyButtonDevice - Unified Hybrid Driver
+ * SosEmergencyButtonDevice - Unified Hybrid Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class MoesSosEmergencyButtonDevice extends BaseHybridDevice {
+class SosEmergencyButtonDevice extends BaseHybridDevice {
 
   async onNodeInit() {
-    this.log('MoesSosEmergencyButtonDevice initializing...');
+    this.log('SosEmergencyButtonDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit().catch(err => this.error(err));
     
-    this.log('MoesSosEmergencyButtonDevice initialized - Power source:', this.powerSource || 'unknown');
+    this.log('SosEmergencyButtonDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
-    this.log('MoesSosEmergencyButtonDevice deleted');
+    this.log('SosEmergencyButtonDevice deleted');
     await super.onDeleted().catch(err => this.error(err));
   }
 }
 
-module.exports = MoesSosEmergencyButtonDevice;
+module.exports = SosEmergencyButtonDevice;

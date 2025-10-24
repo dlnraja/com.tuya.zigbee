@@ -2,11 +2,11 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class GenericSamsungMultipurposeSensorDriver extends ZigBeeDriver {
+class GenericMultipurposeSensorDriver extends ZigBeeDriver {
 
   async onInit() {
-    this.log('GenericSamsungMultipurposeSensorDriver initialized');
+    this.log('GenericMultipurposeSensorDriver initialized');
   }
 }
 
-module.exports = GenericSamsungMultipurposeSensorDriver;
+module.exports = GenericMultipurposeSensorDriver;

@@ -2,11 +2,11 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class PhilipsOutdoorSensorDriver extends ZigBeeDriver {
+class OutdoorSensorDriver extends ZigBeeDriver {
 
   async onInit() {
-    this.log('PhilipsOutdoorSensorDriver initialized');
+    this.log('OutdoorSensorDriver initialized');
   }
 }
 
-module.exports = PhilipsOutdoorSensorDriver;
+module.exports = OutdoorSensorDriver;

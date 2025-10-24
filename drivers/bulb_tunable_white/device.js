@@ -3,25 +3,25 @@
 const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
- * AvattoBulbTunableDevice - Unified Hybrid Driver
+ * BulbTunableDevice - Unified Hybrid Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class AvattoBulbTunableDevice extends BaseHybridDevice {
+class BulbTunableDevice extends BaseHybridDevice {
 
   async onNodeInit() {
-    this.log('AvattoBulbTunableDevice initializing...');
+    this.log('BulbTunableDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit().catch(err => this.error(err));
     
-    this.log('AvattoBulbTunableDevice initialized - Power source:', this.powerSource || 'unknown');
+    this.log('BulbTunableDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
-    this.log('AvattoBulbTunableDevice deleted');
+    this.log('BulbTunableDevice deleted');
     await super.onDeleted().catch(err => this.error(err));
   }
 }
 
-module.exports = AvattoBulbTunableDevice;
+module.exports = BulbTunableDevice;

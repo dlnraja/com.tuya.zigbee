@@ -2,11 +2,11 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class LonsonhoSamsungContactSensorDriver extends ZigBeeDriver {
+class LonsonhoContactSensorDriver extends ZigBeeDriver {
 
   async onInit() {
-    this.log('LonsonhoSamsungContactSensorDriver initialized');
+    this.log('LonsonhoContactSensorDriver initialized');
   }
 }
 
-module.exports = LonsonhoSamsungContactSensorDriver;
+module.exports = LonsonhoContactSensorDriver;

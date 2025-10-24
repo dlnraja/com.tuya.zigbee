@@ -2,11 +2,11 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class NousOsramOutdoorPlugDriver extends ZigBeeDriver {
+class OutdoorPlugDriver extends ZigBeeDriver {
 
   async onInit() {
-    this.log('NousOsramOutdoorPlugDriver initialized');
+    this.log('OutdoorPlugDriver initialized');
   }
 }
 
-module.exports = NousOsramOutdoorPlugDriver;
+module.exports = OutdoorPlugDriver;

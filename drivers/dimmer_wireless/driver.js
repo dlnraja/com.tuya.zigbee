@@ -2,11 +2,11 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class LscDimmerWirelessDriver extends ZigBeeDriver {
+class DimmerWirelessDriver extends ZigBeeDriver {
 
   async onInit() {
-    this.log('LscDimmerWirelessDriver initialized');
+    this.log('DimmerWirelessDriver initialized');
   }
 }
 
-module.exports = LscDimmerWirelessDriver;
+module.exports = DimmerWirelessDriver;

@@ -2,11 +2,11 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class ZemismartLockFingerprintDriver extends ZigBeeDriver {
+class LockFingerprintDriver extends ZigBeeDriver {
 
   async onInit() {
-    this.log('ZemismartLockFingerprintDriver initialized');
+    this.log('LockFingerprintDriver initialized');
   }
 }
 
-module.exports = ZemismartLockFingerprintDriver;
+module.exports = LockFingerprintDriver;

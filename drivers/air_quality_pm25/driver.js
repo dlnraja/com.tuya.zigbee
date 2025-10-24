@@ -2,11 +2,11 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class ZemismartPm25DetectorDriver extends ZigBeeDriver {
+class Pm25DetectorDriver extends ZigBeeDriver {
 
   async onInit() {
-    this.log('ZemismartPm25DetectorDriver initialized');
+    this.log('Pm25DetectorDriver initialized');
   }
 }
 
-module.exports = ZemismartPm25DetectorDriver;
+module.exports = Pm25DetectorDriver;

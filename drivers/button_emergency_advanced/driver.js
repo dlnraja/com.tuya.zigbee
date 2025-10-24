@@ -2,11 +2,11 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class MoesSosEmergencyButtonDriver extends ZigBeeDriver {
+class SosEmergencyButtonDriver extends ZigBeeDriver {
 
   async onInit() {
-    this.log('MoesSosEmergencyButtonDriver initialized');
+    this.log('SosEmergencyButtonDriver initialized');
   }
 }
 
-module.exports = MoesSosEmergencyButtonDriver;
+module.exports = SosEmergencyButtonDriver;

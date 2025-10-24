@@ -3,25 +3,25 @@
 const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 
 /**
- * AvattoCeilingFanDevice - Unified Hybrid Driver
+ * CeilingFanDevice - Unified Hybrid Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class AvattoCeilingFanDevice extends BaseHybridDevice {
+class CeilingFanDevice extends BaseHybridDevice {
 
   async onNodeInit() {
-    this.log('AvattoCeilingFanDevice initializing...');
+    this.log('CeilingFanDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit().catch(err => this.error(err));
     
-    this.log('AvattoCeilingFanDevice initialized - Power source:', this.powerSource || 'unknown');
+    this.log('CeilingFanDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   async onDeleted() {
-    this.log('AvattoCeilingFanDevice deleted');
+    this.log('CeilingFanDevice deleted');
     await super.onDeleted().catch(err => this.error(err));
   }
 }
 
-module.exports = AvattoCeilingFanDevice;
+module.exports = CeilingFanDevice;

@@ -2,11 +2,11 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class MoesSonoffTemperatureHumidityDriver extends ZigBeeDriver {
+class TemperatureHumidityDriver extends ZigBeeDriver {
 
   async onInit() {
-    this.log('MoesSonoffTemperatureHumidityDriver initialized');
+    this.log('TemperatureHumidityDriver initialized');
   }
 }
 
-module.exports = MoesSonoffTemperatureHumidityDriver;
+module.exports = TemperatureHumidityDriver;
