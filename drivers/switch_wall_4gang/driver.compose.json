@@ -15,7 +15,8 @@
     "onoff",
     "onoff.switch_2",
     "onoff.switch_3",
-    "onoff.switch_4"
+    "onoff.switch_4",
+    "measure_battery"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -23,6 +24,26 @@
         "en": "Switch 1",
         "fr": "Interrupteur 1"
       }
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie"
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "CR2477",
+      "AAA",
+      "AA",
+      "CR123A",
+      "INTERNAL"
+    ],
+    "approximation": {
+      "usageConstant": 0.5
     }
   },
   "zigbee": {
