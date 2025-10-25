@@ -1,181 +1,131 @@
-═══════════════════════════════════════════════════════════════════════════
-  UNIVERSAL TUYA ZIGBEE - HOMEY APP v4.6.1
-  Community-Maintained Universal Zigbee Driver Collection
-═══════════════════════════════════════════════════════════════════════════
+# Universal Tuya Zigbee
 
-📱 DESCRIPTION
---------------
-Application Zigbee universelle avec 189 drivers hybrides unifiés supportant 
-plus de 18,000+ manufacturer IDs différents.
+![Version](https://img.shields.io/badge/version-4.9.7-blue)
+![Drivers](https://img.shields.io/badge/drivers-163-green)
+![SDK](https://img.shields.io/badge/SDK-3-orange)
+![License](https://img.shields.io/badge/license-GPL--3.0-red)
 
-✨ CARACTÉRISTIQUES
--------------------
-✅ 100% Contrôle Local (pas de cloud requis)
-✅ 189 Drivers Hybrides Unifiés
-✅ 18,000+ Manufacturer IDs supportés
-✅ Détection Automatique Source d'Alimentation
-✅ Détection Automatique Type de Batterie
-✅ Gestion Énergétique Avancée
-✅ Flow Cards Complets
-✅ SDK3 Compliant
-✅ Multi-langues (EN, FR, NL, DE, IT, ES, SV, NO, DA)
+Community-maintained Universal Zigbee app with 186 unified hybrid drivers and 18,000+ manufacturer IDs. 100% local control, no cloud required. Intelligent auto-detection of power source and battery type. Advanced energy management with flow cards. SDK3 compliant.
 
-📦 CATÉGORIES DE DEVICES SUPPORTÉS
------------------------------------
-1. Motion & Presence Detection (PIR, radar, mmWave)
-2. Contact & Security (door/window sensors, locks)
-3. Temperature & Climate (sensors, thermostats)
-4. Smart Lighting (bulbs, switches, dimmers, RGB/RGBW LED strips)
-5. Power & Energy (plugs, outlets, energy monitoring)
-6. Safety & Detection (smoke, water leak, CO detectors)
-7. Automation Control (buttons, scene switches, remotes)
-8. Covers (curtains, blinds, shutters)
-9. Appliances (fans, valves, controllers)
+## 📊 Statistics
 
-🔧 INSTALLATION
----------------
-1. Ouvrir Homey App Store
-2. Chercher "Universal Tuya Zigbee"
-3. Installer l'application
-4. Ajouter vos devices Zigbee
+- **Total Drivers:** 163
+- **SDK Version:** 3
+- **Homey Compatibility:** >=12.2.0
+- **Last Updated:** 2025-10-25
 
-⚙️ PAIRING INTELLIGENT
------------------------
-L'application utilise un système de pairing multi-critères:
-• manufacturerName (ID fabricant)
-• productId (modèle du produit)
-• endpoints (configuration Zigbee)
-• clusters (fonctionnalités)
+### Drivers by Category
 
-Cela garantit que chaque device paire avec le BON driver, même si plusieurs
-drivers partagent certains manufacturer IDs.
+- **Other:** 57 drivers
+- **Switches:** 45 drivers
+- **Sensors:** 21 drivers
+- **Buttons:** 18 drivers
+- **Power:** 17 drivers
+- **Lighting:** 7 drivers
+- **Climate:** 6 drivers
 
-🔋 DÉTECTION AUTOMATIQUE
--------------------------
-✅ Source d'Alimentation (AC/DC/Batterie)
-   L'app détecte automatiquement si votre device est:
-   - Alimenté secteur (AC)
-   - Alimenté DC
-   - Sur batterie
+## 🚀 Latest Updates
 
-✅ Type de Batterie
-   Détection automatique du type:
-   - CR2032 (pile bouton 3V)
-   - CR2450 (pile bouton 3V) 
-   - AAA (1.5V)
-   - AA (1.5V)
-   - CR123A (3V)
+- [`eb5052b93`] Fix: Deep coherence fixes - 39 automatic corrections *(11 minutes ago)*
+- [`db7bf3785`] chore: Auto-increment version to v4.9.7 [skip ci] *(17 minutes ago)*
+- [`9d62e6b50`] Docs: Auto-update links, paths, README & CHANGELOG [skip ci] *(22 minutes ago)*
+- [`f52c73041`] chore: update device matrix [skip ci] *(23 minutes ago)*
+- [`95f5a161f`] Fix: Bseed 2-gang switch + Forum issues tracking *(26 minutes ago)*
 
-💡 MODES D'OPTIMISATION
------------------------
-Trois modes disponibles pour chaque device:
-• Performance: Plus réactif, consomme plus
-• Balanced: Équilibre optimal (par défaut)
-• Power Saving: Économie batterie maximale
+## 📦 Installation
 
-📊 ENERGY MANAGEMENT
---------------------
-✅ Monitoring consommation en temps réel
-✅ Estimation intelligente si pas de mesure directe
-✅ Historiques de consommation
-✅ Alertes seuil batterie (Low/Critical)
-✅ Notifications batterie faible
-✅ Rapports automatiques
+### From Homey App Store
+1. Open Homey app
+2. Go to "More" → "Apps"
+3. Search for "Universal Tuya Zigbee"
+4. Click "Install"
 
-🎛️ FLOW CARDS
---------------
-Chaque driver inclut des flow cards pour:
-• WHEN (triggers): changements d'état, alarmes, mesures
-• AND (conditions): vérifications d'état
-• THEN (actions): contrôles, configurations
+### Manual Installation (Development)
+```bash
+git clone https://github.com/dlnraja/com.tuya.zigbee.git
+cd com.tuya.zigbee
+npm install
+homey app run
+```
 
-📱 DEVICES POPULAIRES SUPPORTÉS
---------------------------------
-✅ Tuya Zigbee devices (18,000+ models)
-✅ MOES switches & sensors
-✅ BSEED wall switches
-✅ Lonsonho devices
-✅ Aqara sensors (Lumi)
-✅ Neo Coolcam devices
-✅ Et beaucoup d'autres marques compatibles Tuya!
+## 🔧 Development
 
-🆘 SUPPORT & FORUM
-------------------
-Forum Homey Community:
-https://community.homey.app/
+### Prerequisites
+- Node.js 18+
+- Homey CLI: `npm install -g homey`
 
-GitHub Repository:
-https://github.com/dlnraja/com.tuya.zigbee
+### Build & Validate
+```bash
+# Build app
+homey app build
 
-Issues & Feature Requests:
-https://github.com/dlnraja/com.tuya.zigbee/issues
+# Validate (publish level)
+homey app validate --level publish
 
-📝 NOTES IMPORTANTES
---------------------
-• Cette app est maintenue par la communauté
-• 100% local, pas de connexion cloud requise
-• Compatible avec tous les devices Tuya Zigbee standards
-• Mises à jour régulières avec nouveaux devices
-• Respect de la vie privée (aucune donnée transmise)
+# Run locally
+homey app run
+```
 
-🔐 CONFIDENTIALITÉ
-------------------
-✅ Aucune donnée collectée
-✅ Aucune connexion internet requise
-✅ 100% local sur votre Homey
-✅ Aucun tracking
-✅ Open source (communauté)
+### Scripts Available
+```bash
+# Deep coherence check
+node scripts/validation/DEEP_COHERENCE_CHECKER.js
 
-⚡ QUICK START
---------------
-1. Installer l'app depuis Homey App Store
-2. Aller dans Devices → Ajouter Device
-3. Sélectionner "Universal Tuya Zigbee"
-4. Choisir la catégorie de votre device
-5. Mettre le device en mode pairing
-6. Homey détectera automatiquement le bon driver!
+# Auto-fix issues
+node scripts/validation/DEEP_COHERENCE_FIXER.js
 
-💻 DÉVELOPPEURS
-----------------
-SDK: Homey SDK3
-Language: JavaScript (Node.js)
-Repository: GitHub (dlnraja/com.tuya.zigbee)
-Contributions: Bienvenues via Pull Requests
+# Update README (automatic)
+node scripts/automation/AUTO_README_UPDATER.js
 
-📜 LICENCE
-----------
-Licence Open Source
-Copyright (c) 2025 Community Contributors
+# Safe push & publish
+node scripts/deployment/SAFE_PUSH_AND_PUBLISH.js
+```
 
-🎯 VERSION ACTUELLE: v4.6.1
-----------------------------
-✅ 189 drivers unifiés
-✅ 18,000+ manufacturer IDs
-✅ 567 icônes SVG personnalisées
-✅ 0 conflits de pairing
-✅ Support forum users priority
-✅ Validation SDK3 complète
+## 📁 Project Structure
 
-🔄 DERNIÈRES MISES À JOUR
---------------------------
-v4.6.1 (24/10/2025):
-• Optimisation pairing multi-critères
-• Ajout IDs génériques SAFE
-• README.txt complet
-• Documentation complète
+```
+tuya_repair/
+├── drivers/           # 163 Zigbee device drivers
+├── lib/              # Shared libraries
+├── scripts/          # Automation & validation scripts
+│   ├── automation/   # Auto-update & organization
+│   ├── validation/   # Coherence checking & fixing
+│   └── deployment/   # Safe push & publish
+├── diagnostics/      # Issue tracking & reports
+├── flow/             # Flow cards (triggers, actions, conditions)
+├── locales/          # Translations (en, fr, de, nl)
+└── app.json          # App manifest
+```
 
-v4.6.0 (24/10/2025):
-• 567 images SVG personnalisées
-• Priorité forum users (47 IDs)
-• Nettoyage organisation projet
-• Scripts diagnostiques
+## 🤝 Contributing
 
-v4.5.9 (23/10/2025):
-• Wildcard cleanup
-• Emergency fixes
-• Validation complète
+Contributions are welcome! Please:
 
-═══════════════════════════════════════════════════════════════════════════
-  MERCI D'UTILISER UNIVERSAL TUYA ZIGBEE!
-  Support: https://community.homey.app/
-═══════════════════════════════════════════════════════════════════════════
+1. Fork the repository
+2. Create a feature branch
+3. Run validation: `homey app validate`
+4. Submit a pull request
+
+## 📝 License
+
+GPL-3.0 - See LICENSE file
+
+## 🔗 Links
+
+- **Homey App Store:** https://homey.app/a/com.dlnraja.tuya.zigbee/
+- **GitHub Repository:** https://github.com/dlnraja/com.tuya.zigbee
+- **GitHub Actions:** https://github.com/dlnraja/com.tuya.zigbee/actions
+- **Issues & Support:** https://github.com/dlnraja/com.tuya.zigbee/issues
+
+## 📞 Support
+
+For issues and questions:
+- Check existing issues: [GitHub Issues](https://github.com/dlnraja/com.tuya.zigbee/issues)
+- Homey Community Forum: [Universal TUYA Zigbee](https://community.homey.app/)
+- Diagnostic reports: Submit via Homey app settings
+
+---
+
+*This README is automatically updated on each commit by AUTO_README_UPDATER.js*
+
+*Last auto-update: 2025-10-25*
