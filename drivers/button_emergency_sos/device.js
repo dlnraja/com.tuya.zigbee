@@ -10,13 +10,13 @@ const ButtonDevice = require('../../lib/ButtonDevice');
 class SosEmergencyButtonDevice extends ButtonDevice {
 
   async onNodeInit() {
-    // Critical: IAS Zone for SOS detection
-    await this.setupIasZone();
-
     this.log('SosEmergencyButtonDevice initializing...');
     
-    // Initialize base (auto power detection + dynamic capabilities)
+    // Initialize base FIRST (auto power detection + dynamic capabilities)
     await super.onNodeInit().catch(err => this.error(err));
+    
+    // THEN setup IAS Zone (zclNode now exists)
+    await this.setupIasZone();
     
     this.log('SosEmergencyButtonDevice initialized - Power source:', this.powerSource || 'unknown');
   }
@@ -31,52 +31,67 @@ class SosEmergencyButtonDevice extends ButtonDevice {
    */
   async setupIasZone() {
     try {
-      this.log('🆘 Setting up IAS Zone for SOS button...');
+      this.log('🆘 Setting up IAS Zone for SOS button (SDK3 latest)...');
       
       const endpoint = this.zclNode.endpoints[1];
-      if (!endpoint?.clusters?.ssIasZone) {
-        this.error('IAS Zone cluster not found');
+      if (!endpoint?.clusters?.iasZone) {
+        this.log('ℹ️  IAS Zone cluster not available on this device');
         return;
       }
       
-      // Get Homey's IEEE address
-      const ieeeAddress = await this.homey.zigbee.getIeeeAddress();
-      this.log('Homey IEEE Address:', ieeeAddress);
+      // Setup Zone Enroll Request listener (SDK3 property assignment)
+      endpoint.clusters.iasZone.onZoneEnrollRequest = () => {
+        this.log('📨 Zone Enroll Request received');
+        
+        try {
+          endpoint.clusters.iasZone.zoneEnrollResponse({
+            enrollResponseCode: 0,
+            zoneId: 10
+          });
+          this.log('✅ Zone Enroll Response sent');
+        } catch (err) {
+          this.error('Zone enroll response failed:', err.message);
+        }
+      };
       
-      // Write CIE Address (enroll Homey as the IAS Zone coordinator)
-      await endpoint.clusters.ssIasZone.writeAttributes({
-        iasCieAddr: ieeeAddress
-      });
+      // Send proactive Zone Enroll Response (SDK3 official method)
+      try {
+        endpoint.clusters.iasZone.zoneEnrollResponse({
+          enrollResponseCode: 0,
+          zoneId: 10
+        });
+        this.log('✅ Proactive Zone Enroll Response sent');
+      } catch (err) {
+        this.log('⚠️  Proactive response failed (normal):', err.message);
+      }
       
-      this.log('✅ IAS Zone CIE address written');
-      
-      // Register for zone status change notifications (DUAL listeners)
-      endpoint.clusters.ssIasZone.on('zoneStatusChangeNotification', async (data) => {
-        this.log('🚨 SOS BUTTON PRESSED!', data);
+      // Setup Zone Status Change listener (SDK3 property assignment)
+      endpoint.clusters.iasZone.onZoneStatusChangeNotification = (payload) => {
+        this.log('🚨 SOS BUTTON PRESSED!', payload);
         
         // Trigger flow card
         if (this.driver.sosButtonPressedTrigger) {
-          await this.driver.sosButtonPressedTrigger.trigger(this, {}, {}).catch(this.error);
+          this.driver.sosButtonPressedTrigger.trigger(this, {}, {}).catch(this.error);
         }
         
         // Update capability
         if (this.hasCapability('alarm_generic')) {
-          await this.setCapabilityValue('alarm_generic', true).catch(this.error);
+          this.setCapabilityValue('alarm_generic', true).catch(this.error);
           
           // Auto-reset after 5 seconds
-          setTimeout(async () => {
-            await this.setCapabilityValue('alarm_generic', false).catch(this.error);
+          setTimeout(() => {
+            this.setCapabilityValue('alarm_generic', false).catch(this.error);
           }, 5000);
         }
-      });
+      };
       
-      // Also register attribute listener (backup)
-      endpoint.clusters.ssIasZone.on('attr.zoneStatus', async (value) => {
-        this.log('🚨 SOS Zone Status Changed:', value);
+      // Also setup attribute listener (SDK3 property assignment)
+      endpoint.clusters.iasZone.onZoneStatus = (zoneStatus) => {
+        this.log('🚨 SOS Zone Status Changed:', zoneStatus);
         if (this.driver.sosButtonPressedTrigger) {
-          await this.driver.sosButtonPressedTrigger.trigger(this, {}, {}).catch(this.error);
+          this.driver.sosButtonPressedTrigger.trigger(this, {}, {}).catch(this.error);
         }
-      });
+      };
       
       // Battery reporting
       if (endpoint?.clusters?.genPowerCfg) {
