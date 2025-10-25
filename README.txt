@@ -1,6 +1,6 @@
 # [APP][Pro] Universal TUYA Zigbee - Local-First Control
 
-![Version](https://img.shields.io/badge/version-4.9.8-blue)
+![Version](https://img.shields.io/badge/version-4.9.10-blue)
 ![Drivers](https://img.shields.io/badge/drivers-163-green)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
 ![License](https://img.shields.io/badge/license-GPL--3.0-red)
@@ -32,11 +32,11 @@
 
 ## 🚀 Latest Updates
 
-- [`a469995c9`] feat: Autonomous automation system + 39 coherence fixes *(23 minutes ago)*
-- [`7e7f7aaf2`] docs: Auto-update links, paths, README & CHANGELOG [skip ci] *(24 minutes ago)*
-- [`45d9e125b`] Docs: Auto-update links, paths, README & CHANGELOG [skip ci] *(26 minutes ago)*
-- [`a121eb6df`] chore: update device matrix [skip ci] *(27 minutes ago)*
-- [`b31a5c50c`] feat: Autonomous automation system + 39 coherence fixes *(30 minutes ago)*
+- [`27ccbebbe`] fix: Flow coherence - 49 flows synchronized to app.json *(19 minutes ago)*
+- [`6f62f074a`] chore: Auto-increment version to v4.9.10 [skip ci] *(37 minutes ago)*
+- [`009c3ce0b`] Docs: Auto-update links, paths, README & CHANGELOG [skip ci] *(42 minutes ago)*
+- [`0dc62fea4`] chore: update device matrix [skip ci] *(43 minutes ago)*
+- [`4d519a2cb`] chore: Auto-increment version to v4.9.9 [skip ci] *(44 minutes ago)*
 
 ## 📦 Installation
 

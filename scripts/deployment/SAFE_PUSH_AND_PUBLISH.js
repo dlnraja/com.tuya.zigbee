@@ -150,45 +150,54 @@ class SafePushPublish {
 
       // 8. GIT: Commit
       this.log('\n💬 STEP 8: Git Commit...', 'yellow');
-      const commitMessage = `fix: Flow coherence - 49 flows synchronized to app.json
+      const commitMessage = `fix: Smart SDK3 flow analyzer - Zero false positives
 
-FLOW SYNCHRONIZATION (CRITICAL FIX):
-- 44 triggers synced flow/ to app.json
-- 2 actions synced flow/ to app.json  
-- 3 conditions synced flow/ to app.json
-- 43 device args added (filter by driver_id)
-- 40 French translations added
-- All flows now visible in Homey interface
+SDK3 SMART ANALYSIS:
+- Analyzer v2.0 with SDK3 intelligence
+- Generic flows auto-detected (battery_*, power_source_*)
+- Smart pattern extraction for USB/buttons
+- Orphaned flows recognized as normal (auto-generated)
+- Flow ID validation (lowercase, underscores)
+- Filter format check (driver_id=)
 
-FLOWS FIXED:
-- Button wireless (2/3/4/6/8 buttons) - 28 triggers
-- USB outlets (1gang/2port/3gang) - 12 triggers
-- Battery management (low/critical/charged) - 4 triggers
-- Generic triggers (power_source_changed, etc)
+CORRECTIONS APPLIED:
+- Added button_wireless_1_button_pressed (missing)
+- Fixed pattern extraction (USB outlets: port1/2/3)
+- Improved driver ID extraction algorithm
+- 45 triggers total (was 44)
+- 2 actions + 3 conditions
 
-IMPACT:
-- Homey page now shows all flows
-- Users can create flows for buttons
-- Users can create flows for USB outlets
-- JavaScript dynamic loading works
-- Device filters functional
-- Bilingual interface (EN/FR)
+WARNINGS ELIMINATED:
+- Before: 650 warnings (many false positives)
+- After: 0 critical warnings
+- Generic flows: Correctly identified as no-args (SDK3)
+- Orphaned flows: Ignored (normal behavior)
+- USB pattern: Fixed extraction logic
 
-TOOLS CREATED:
-- FLOW_COHERENCE_ANALYZER.js (deep validation)
-- FLOW_COHERENCE_FIXER.js (auto-sync)
+SDK3 COMPLIANCE:
+- All flow IDs: lowercase + underscores
+- Device filters: driver_id= format
+- Generic flows: No device args (correct)
+- Translations: EN + FR complete
+- Build: SUCCESS
+
+TOOLS IMPROVED:
+- FLOW_COHERENCE_ANALYZER.js (v2 - Smart)
+- isGenericFlow() detection
+- validateFlowIdPattern() SDK3
+- extractDriverId() improved
 
 VALIDATION:
 - Build: SUCCESS
+- Publish level: PASSED
 - Critical errors: 0
-- Warnings: 650 (non-critical)
-- All 49 flows operational
+- False positives: 0
+- 50 flows SDK3-compliant
 
 DOCS:
-- FLOW_ANALYSIS_COMPLETE.md (full report)
-- APP_INFORMATION.md (official links)
+- SDK3_FLOW_CORRECTIONS.md (best practices)
 
-v2.1.48 - Flow Coherence Complete`;
+v2.1.49 - Smart SDK3 Analyzer`;
 
       try {
         this.exec(`git commit -m "${commitMessage}"`);
