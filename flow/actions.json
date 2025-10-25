@@ -8,7 +8,14 @@
     "hint": {
       "en": "Force device to report current battery status",
       "fr": "Forcer l'appareil à rapporter l'état actuel de la batterie"
-    }
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "driver_id=request_battery_update"
+      }
+    ]
   },
   {
     "id": "set_energy_mode",

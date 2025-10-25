@@ -1,0 +1,4593 @@
+{
+  "timestamp": "2025-10-25T14:48:37.104Z",
+  "stats": {
+    "triggersInFlow": 44,
+    "triggersInAppJson": 0,
+    "actionsInFlow": 2,
+    "actionsInAppJson": 0,
+    "conditionsInFlow": 3,
+    "conditionsInAppJson": 0,
+    "driversChecked": 171,
+    "missingArgs": 4,
+    "missingTranslations": 0,
+    "orphanedFlows": 626,
+    "duplicateIds": 0
+  },
+  "issues": [],
+  "warnings": [
+    {
+      "type": "MISSING_ARGS",
+      "flowType": "trigger",
+      "flowId": "battery_low",
+      "message": "Flow card has no args (device filter missing)",
+      "severity": "medium"
+    },
+    {
+      "type": "DRIVER_NOT_FOUND",
+      "flowType": "trigger",
+      "flowId": "battery_low",
+      "driverId": "battery_low",
+      "message": "Driver battery_low not found for trigger",
+      "severity": "medium"
+    },
+    {
+      "type": "MISSING_ARGS",
+      "flowType": "trigger",
+      "flowId": "battery_critical",
+      "message": "Flow card has no args (device filter missing)",
+      "severity": "medium"
+    },
+    {
+      "type": "DRIVER_NOT_FOUND",
+      "flowType": "trigger",
+      "flowId": "battery_critical",
+      "driverId": "battery_critical",
+      "message": "Driver battery_critical not found for trigger",
+      "severity": "medium"
+    },
+    {
+      "type": "MISSING_ARGS",
+      "flowType": "trigger",
+      "flowId": "battery_charged",
+      "message": "Flow card has no args (device filter missing)",
+      "severity": "medium"
+    },
+    {
+      "type": "DRIVER_NOT_FOUND",
+      "flowType": "trigger",
+      "flowId": "battery_charged",
+      "driverId": "battery_charged",
+      "message": "Driver battery_charged not found for trigger",
+      "severity": "medium"
+    },
+    {
+      "type": "MISSING_ARGS",
+      "flowType": "trigger",
+      "flowId": "power_source_changed",
+      "message": "Flow card has no args (device filter missing)",
+      "severity": "medium"
+    },
+    {
+      "type": "DRIVER_NOT_FOUND",
+      "flowType": "trigger",
+      "flowId": "power_source_changed",
+      "driverId": "power_source_changed",
+      "message": "Driver power_source_changed not found for trigger",
+      "severity": "medium"
+    },
+    {
+      "type": "DRIVER_NOT_FOUND",
+      "flowType": "trigger",
+      "flowId": "button_wireless_2_button_pressed",
+      "driverId": "button_wireless_2_button_pressed",
+      "message": "Driver button_wireless_2_button_pressed not found for trigger",
+      "severity": "medium"
+    },
+    {
+      "type": "DRIVER_NOT_FOUND",
+      "flowType": "trigger",
+      "flowId": "button_wireless_3_button_pressed",
+      "driverId": "button_wireless_3_button_pressed",
+      "message": "Driver button_wireless_3_button_pressed not found for trigger",
+      "severity": "medium"
+    },
+    {
+      "type": "DRIVER_NOT_FOUND",
+      "flowType": "trigger",
+      "flowId": "button_wireless_4_button_pressed",
+      "driverId": "button_wireless_4_button_pressed",
+      "message": "Driver button_wireless_4_button_pressed not found for trigger",
+      "severity": "medium"
+    },
+    {
+      "type": "DRIVER_NOT_FOUND",
+      "flowType": "trigger",
+      "flowId": "button_wireless_6_button_pressed",
+      "driverId": "button_wireless_6_button_pressed",
+      "message": "Driver button_wireless_6_button_pressed not found for trigger",
+      "severity": "medium"
+    },
+    {
+      "type": "DRIVER_NOT_FOUND",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_pressed",
+      "driverId": "button_wireless_8_button_pressed",
+      "message": "Driver button_wireless_8_button_pressed not found for trigger",
+      "severity": "medium"
+    },
+    {
+      "type": "DRIVER_NOT_FOUND",
+      "flowType": "trigger",
+      "flowId": "usb_outlet_2port_port1_turned_on",
+      "driverId": "usb_outlet_2port_port1",
+      "message": "Driver usb_outlet_2port_port1 not found for trigger",
+      "severity": "medium"
+    },
+    {
+      "type": "DRIVER_NOT_FOUND",
+      "flowType": "trigger",
+      "flowId": "usb_outlet_2port_port1_turned_off",
+      "driverId": "usb_outlet_2port_port1",
+      "message": "Driver usb_outlet_2port_port1 not found for trigger",
+      "severity": "medium"
+    },
+    {
+      "type": "DRIVER_NOT_FOUND",
+      "flowType": "trigger",
+      "flowId": "usb_outlet_2port_port2_turned_on",
+      "driverId": "usb_outlet_2port_port2",
+      "message": "Driver usb_outlet_2port_port2 not found for trigger",
+      "severity": "medium"
+    },
+    {
+      "type": "DRIVER_NOT_FOUND",
+      "flowType": "trigger",
+      "flowId": "usb_outlet_2port_port2_turned_off",
+      "driverId": "usb_outlet_2port_port2",
+      "message": "Driver usb_outlet_2port_port2 not found for trigger",
+      "severity": "medium"
+    },
+    {
+      "type": "DRIVER_NOT_FOUND",
+      "flowType": "trigger",
+      "flowId": "usb_outlet_3gang_port1_turned_on",
+      "driverId": "usb_outlet_3gang_port1",
+      "message": "Driver usb_outlet_3gang_port1 not found for trigger",
+      "severity": "medium"
+    },
+    {
+      "type": "DRIVER_NOT_FOUND",
+      "flowType": "trigger",
+      "flowId": "usb_outlet_3gang_port1_turned_off",
+      "driverId": "usb_outlet_3gang_port1",
+      "message": "Driver usb_outlet_3gang_port1 not found for trigger",
+      "severity": "medium"
+    },
+    {
+      "type": "DRIVER_NOT_FOUND",
+      "flowType": "trigger",
+      "flowId": "usb_outlet_3gang_port2_turned_on",
+      "driverId": "usb_outlet_3gang_port2",
+      "message": "Driver usb_outlet_3gang_port2 not found for trigger",
+      "severity": "medium"
+    },
+    {
+      "type": "DRIVER_NOT_FOUND",
+      "flowType": "trigger",
+      "flowId": "usb_outlet_3gang_port2_turned_off",
+      "driverId": "usb_outlet_3gang_port2",
+      "message": "Driver usb_outlet_3gang_port2 not found for trigger",
+      "severity": "medium"
+    },
+    {
+      "type": "DRIVER_NOT_FOUND",
+      "flowType": "trigger",
+      "flowId": "usb_outlet_3gang_port3_turned_on",
+      "driverId": "usb_outlet_3gang_port3",
+      "message": "Driver usb_outlet_3gang_port3 not found for trigger",
+      "severity": "medium"
+    },
+    {
+      "type": "DRIVER_NOT_FOUND",
+      "flowType": "trigger",
+      "flowId": "usb_outlet_3gang_port3_turned_off",
+      "driverId": "usb_outlet_3gang_port3",
+      "message": "Driver usb_outlet_3gang_port3 not found for trigger",
+      "severity": "medium"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "air_quality_comprehensive_comprehensive_air_monitor_measure_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "air_quality_comprehensive_comprehensive_air_monitor_measure_humidity_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "air_quality_comprehensive_comprehensive_air_monitor_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "air_quality_comprehensive_comprehensive_air_monitor_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "air_quality_comprehensive_comprehensive_air_monitor_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "air_quality_monitor_pro_internal_measure_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "air_quality_monitor_pro_internal_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "air_quality_monitor_advanced_air_quality_monitor_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "air_quality_monitor_advanced_air_quality_monitor_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "air_quality_monitor_advanced_air_quality_monitor_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "air_quality_pm25_pm25_detector_measure_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "air_quality_pm25_pm25_detector_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "air_quality_pm25_pm25_detector_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "air_quality_pm25_pm25_detector_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "bulb_dimmable_smart_bulb_dimmer_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "bulb_dimmable_smart_bulb_dimmer_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "bulb_dimmable_smart_bulb_dimmer_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "bulb_rgb_smart_bulb_rgb_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "bulb_rgb_smart_bulb_rgb_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "bulb_rgb_smart_bulb_rgb_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "bulb_rgbw_bulb_rgbw_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "bulb_rgbw_bulb_rgbw_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "bulb_tunable_white_bulb_tunable_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "bulb_tunable_white_bulb_tunable_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "bulb_tunable_white_bulb_tunable_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "bulb_white_smart_bulb_white_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "bulb_white_smart_bulb_white_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "bulb_white_smart_bulb_white_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_emergency_sos_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_remote_3_wireless_switch_3button_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_remote_3_wireless_switch_3button_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_shortcut_shortcut_button_other_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_1_button_1gang_button_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_1_button_1gang_button_double_press",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_1_button_1gang_button_long_press",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_1_button_1gang_button_multi_press",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_1_button_1gang_button_1_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_1_button_1gang_button_1_double",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_1_button_1gang_button_1_long",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_1_button_1gang_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_2_button_2gang_button_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_2_button_2gang_button_double_press",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_2_button_2gang_button_long_press",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_2_button_2gang_button_multi_press",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_2_button_2gang_button_1_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_2_button_2gang_button_1_double",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_2_button_2gang_button_1_long",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_2_button_2gang_button_2_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_2_button_2gang_button_2_double",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_2_button_2gang_button_2_long",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_2_button_2gang_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_3_button_3gang_button_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_3_button_3gang_button_double_press",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_3_button_3gang_button_long_press",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_3_button_3gang_button_multi_press",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_3_button_3gang_button_1_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_3_button_3gang_button_2_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_3_button_3gang_button_3_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_3_button_3gang_button_1_double",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_3_button_3gang_button_2_double",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_3_button_3gang_button_3_double",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_3_button_3gang_button_1_long",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_3_button_3gang_button_2_long",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_3_button_3gang_button_3_long",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_3_button_3gang_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_4_button_4gang_button_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_4_button_4gang_button_double_press",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_4_button_4gang_button_long_press",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_4_button_4gang_button_multi_press",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_4_button_4gang_button_1_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_4_button_4gang_button_1_double",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_4_button_4gang_button_1_long",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_4_button_4gang_button_2_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_4_button_4gang_button_2_double",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_4_button_4gang_button_2_long",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_4_button_4gang_button_3_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_4_button_4gang_button_3_double",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_4_button_4gang_button_3_long",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_4_button_4gang_button_4_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_4_button_4gang_button_4_double",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_4_button_4gang_button_4_long",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_4_button_4gang_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_6_button_6gang_button_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_6_button_6gang_button_double_press",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_6_button_6gang_button_long_press",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_6_button_6gang_button_multi_press",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_6_button_6gang_button_1_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_6_button_6gang_button_1_double",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_6_button_6gang_button_1_long",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_6_button_6gang_button_2_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_6_button_6gang_button_2_double",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_6_button_6gang_button_2_long",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_6_button_6gang_button_3_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_6_button_6gang_button_3_double",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_6_button_6gang_button_3_long",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_6_button_6gang_button_4_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_6_button_6gang_button_4_double",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_6_button_6gang_button_4_long",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_6_button_6gang_button_5_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_6_button_6gang_button_5_double",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_6_button_6gang_button_5_long",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_6_button_6gang_button_6_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_6_button_6gang_button_6_double",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_6_button_6gang_button_6_long",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_6_button_6gang_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_double_press",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_long_press",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_multi_press",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_1_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_1_double",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_1_long",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_2_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_2_double",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_2_long",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_3_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_3_double",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_3_long",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_4_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_4_double",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_4_long",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_5_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_5_double",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_5_long",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_6_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_6_double",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_6_long",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_7_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_7_double",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_7_long",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_8_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_8_double",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_button_8_long",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "button_wireless_8_button_8gang_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "ceiling_fan_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "ceiling_fan_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "ceiling_fan_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_monitor_temperature_humidity_measure_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_monitor_temperature_humidity_measure_humidity_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_monitor_temperature_humidity_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_monitor_temperature_humidity_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_monitor_temperature_humidity_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_monitor_co2_co2_temp_humidity_measure_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_monitor_co2_co2_temp_humidity_measure_humidity_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_monitor_co2_co2_temp_humidity_alarm_co_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_monitor_co2_co2_temp_humidity_alarm_co2_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_monitor_co2_co2_temp_humidity_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_monitor_co2_co2_temp_humidity_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_monitor_co2_co2_temp_humidity_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_monitor_temp_humidity_climate_monitor_measure_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_monitor_temp_humidity_climate_monitor_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_monitor_temp_humidity_climate_monitor_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_monitor_temp_humidity_climate_monitor_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_sensor_soil_soil_tester_temp_humid_measure_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_sensor_soil_soil_tester_temp_humid_measure_humidity_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_sensor_soil_soil_tester_temp_humid_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_sensor_soil_soil_tester_temp_humid_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_sensor_soil_soil_tester_temp_humid_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_sensor_temp_humidity_advanced_temp_humid_sensor_advanced_alarm_motion_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_sensor_temp_humidity_advanced_temp_humid_sensor_advanced_alarm_motion_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_sensor_temp_humidity_advanced_temp_humid_sensor_advanced_measure_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_sensor_temp_humidity_advanced_temp_humid_sensor_advanced_measure_humidity_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_sensor_temp_humidity_advanced_temp_humid_sensor_advanced_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_sensor_temp_humidity_advanced_temp_humid_sensor_advanced_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "climate_sensor_temp_humidity_advanced_temp_humid_sensor_advanced_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "contact_sensor_contact_sensor_alarm_contact_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "contact_sensor_contact_sensor_alarm_contact_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "contact_sensor_contact_sensor_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "contact_sensor_contact_sensor_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "contact_sensor_contact_sensor_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "contact_sensor_basic_alarm_motion_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "contact_sensor_basic_alarm_motion_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "contact_sensor_basic_alarm_contact_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "contact_sensor_basic_alarm_contact_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "contact_sensor_basic_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "contact_sensor_basic_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "contact_sensor_basic_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "contact_sensor_multipurpose_alarm_contact_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "contact_sensor_vibration_contact_alarm_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "contact_sensor_vibration_contact_alarm_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "contact_sensor_vibration_vibration_alarm_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "contact_sensor_vibration_vibration_alarm_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "contact_sensor_vibration_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "contact_sensor_vibration_battery_low_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "curtain_motor_internal_windowcoverings_set_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "curtain_motor_internal_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "curtain_motor_internal_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "curtain_motor_advanced_curtain_motor_windowcoverings_set_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "dimmer_touch_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "dimmer_touch_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "dimmer_touch_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "dimmer_touch_1gang_dimmer_1gang_touch_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "dimmer_touch_1gang_dimmer_1gang_touch_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "dimmer_touch_1gang_dimmer_1gang_touch_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "dimmer_wall_dimmer_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "dimmer_wall_dimmer_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "dimmer_wall_dimmer_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "dimmer_wall_1gang_dimmer_1gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "dimmer_wall_1gang_dimmer_1gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "dimmer_wall_1gang_dimmer_1gang_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "dimmer_wireless_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "dimmer_wireless_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "dimmer_wireless_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "door_controller_alarm_motion_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "door_controller_alarm_motion_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "door_controller_alarm_contact_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "door_controller_alarm_contact_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "door_controller_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "door_controller_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "door_controller_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "doorbell_alarm_motion_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "doorbell_alarm_motion_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "doorbell_alarm_contact_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "doorbell_alarm_contact_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "doorbell_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "doorbell_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "doorbell_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "doorbell_button_internal_doorbell_button_internal_contact_opened",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "doorbell_button_internal_doorbell_button_internal_contact_closed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "doorbell_button_internal_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "doorbell_camera_alarm_motion_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "doorbell_camera_alarm_motion_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "doorbell_camera_alarm_contact_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "doorbell_camera_alarm_contact_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "doorbell_camera_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "doorbell_camera_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "doorbell_camera_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "garage_door_controller_alarm_motion_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "garage_door_controller_alarm_motion_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "garage_door_controller_alarm_contact_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "garage_door_controller_alarm_contact_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "garage_door_controller_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "garage_door_controller_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "garage_door_controller_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "gas_detector_alarm_motion_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "gas_detector_alarm_motion_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "gas_detector_alarm_co_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "gas_detector_alarm_co2_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "gas_detector_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "gas_detector_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "gas_detector_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "gas_sensor_ts0601_alarm_co_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "gas_sensor_ts0601_alarm_co2_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "gas_sensor_ts0601_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "gas_sensor_ts0601_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "gas_sensor_ts0601_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "humidity_controller_measure_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "humidity_controller_measure_humidity_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "humidity_controller_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "humidity_controller_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "humidity_controller_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "hvac_air_conditioner_air_conditioner_hybrid_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "hvac_air_conditioner_air_conditioner_hybrid_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "hvac_air_conditioner_air_conditioner_hybrid_target_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "hvac_air_conditioner_air_conditioner_hybrid_measure_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "hvac_dehumidifier_dehumidifier_hybrid_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "hvac_dehumidifier_dehumidifier_hybrid_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "hvac_dehumidifier_dehumidifier_hybrid_measure_humidity_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "hvac_dehumidifier_dehumidifier_hybrid_measure_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "hvac_dehumidifier_dehumidifier_hybrid_measure_power_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "hvac_dehumidifier_dehumidifier_hybrid_alarm_water_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "hvac_dehumidifier_dehumidifier_hybrid_alarm_water_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "led_strip_led_strip_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "led_strip_led_strip_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "led_strip_advanced_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "led_strip_advanced_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "led_strip_advanced_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "led_strip_basic_onoff_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "led_strip_outdoor_rgb_led_strip_outdoor_color_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "led_strip_outdoor_rgb_led_strip_outdoor_color_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "led_strip_outdoor_rgb_led_strip_outdoor_color_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "led_strip_pro_onoff_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "led_strip_rgbw_led_strip_rgbw_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "led_strip_rgbw_led_strip_rgbw_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "light_controller_outdoor_outdoor_light_controller_alarm_contact_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "light_controller_outdoor_outdoor_light_controller_alarm_contact_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "light_controller_outdoor_outdoor_light_controller_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "light_controller_outdoor_outdoor_light_controller_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "light_controller_outdoor_outdoor_light_controller_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "lock_smart_locked",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "lock_smart_unlocked",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "lock_smart_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "lock_smart_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "lock_smart_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "lock_smart_basic_lock_basic_alarm_motion_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "lock_smart_basic_lock_basic_alarm_motion_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "lock_smart_basic_lock_basic_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "lock_smart_basic_lock_basic_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "lock_smart_basic_lock_basic_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "lock_smart_fingerprint_lock_fingerprint_locked",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "lock_smart_fingerprint_lock_fingerprint_unlocked",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "lock_smart_fingerprint_lock_fingerprint_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "lock_smart_fingerprint_lock_fingerprint_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "lock_smart_fingerprint_lock_fingerprint_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "module_dimmer_timer_dimmer_switch_timer_module_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "module_dimmer_timer_dimmer_switch_timer_module_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "module_dimmer_timer_dimmer_switch_timer_module_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "module_mini_switch_onoff_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_motion_sensor_alarm_motion_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_motion_sensor_alarm_motion_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_motion_sensor_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_motion_sensor_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_motion_sensor_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_mmwave_basic_alarm_motion_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_mmwave_basic_alarm_motion_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_mmwave_basic_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_mmwave_basic_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_mmwave_basic_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_multi_motion_temp_humidity_illumination_multi_alarm_motion_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_multi_motion_temp_humidity_illumination_multi_alarm_motion_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_multi_motion_temp_humidity_illumination_multi_measure_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_multi_motion_temp_humidity_illumination_multi_measure_humidity_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_multi_motion_temp_humidity_illumination_multi_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_multi_motion_temp_humidity_illumination_multi_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_multi_motion_temp_humidity_illumination_multi_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_outdoor_outdoor_sensor_alarm_contact_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_outdoor_outdoor_sensor_alarm_contact_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_outdoor_outdoor_sensor_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_outdoor_outdoor_sensor_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_outdoor_outdoor_sensor_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_pir_motion_sensor_alarm_motion_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_pir_motion_sensor_alarm_motion_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_pir_motion_sensor_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_pir_motion_sensor_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_pir_motion_sensor_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_pir_advanced_pir_sensor_advanced_alarm_motion_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_pir_advanced_pir_sensor_advanced_alarm_motion_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_pir_advanced_pir_sensor_advanced_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_pir_advanced_pir_sensor_advanced_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_pir_advanced_pir_sensor_advanced_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_pir_radar_pir_radar_illumination_sensor_alarm_motion_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_pir_radar_pir_radar_illumination_sensor_alarm_motion_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_pir_radar_pir_radar_illumination_sensor_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_pir_radar_pir_radar_illumination_sensor_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_pir_radar_pir_radar_illumination_sensor_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_radar_advanced_radar_motion_sensor_advanced_alarm_motion_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_radar_advanced_radar_motion_sensor_advanced_alarm_motion_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_radar_advanced_radar_motion_sensor_advanced_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_radar_advanced_radar_motion_sensor_advanced_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_radar_advanced_radar_motion_sensor_advanced_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_radar_mmwave_radar_motion_sensor_mmwave_alarm_motion_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_radar_mmwave_radar_motion_sensor_mmwave_alarm_motion_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_radar_mmwave_radar_motion_sensor_mmwave_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_radar_mmwave_radar_motion_sensor_mmwave_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "motion_sensor_radar_mmwave_radar_motion_sensor_mmwave_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_dimmer_smart_plug_dimmer_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_dimmer_smart_plug_dimmer_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_dimmer_smart_plug_dimmer_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_energy_advanced_energy_plug_advanced_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_energy_advanced_energy_plug_advanced_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_energy_advanced_energy_plug_advanced_measure_power_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_energy_advanced_energy_plug_advanced_measure_voltage_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_energy_advanced_energy_plug_advanced_measure_current_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_energy_advanced_energy_plug_advanced_meter_power_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_energy_monitor_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_energy_monitor_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_energy_monitor_measure_power_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_energy_monitor_measure_voltage_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_energy_monitor_measure_current_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_energy_monitor_meter_power_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_energy_monitor_advanced_energy_monitoring_plug_advanced_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_energy_monitor_advanced_energy_monitoring_plug_advanced_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_energy_monitor_advanced_energy_monitoring_plug_advanced_measure_power_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_energy_monitor_advanced_energy_monitoring_plug_advanced_measure_voltage_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_energy_monitor_advanced_energy_monitoring_plug_advanced_measure_current_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_energy_monitor_advanced_energy_monitoring_plug_advanced_meter_power_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_energy_smart_smart_plug_energy_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_energy_smart_smart_plug_energy_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_energy_smart_smart_plug_energy_measure_power_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_energy_smart_smart_plug_energy_measure_voltage_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_energy_smart_smart_plug_energy_measure_current_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_energy_smart_smart_plug_energy_meter_power_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_outdoor_outdoor_plug_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_outdoor_outdoor_plug_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_outlet_outlet_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_outlet_outlet_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_power_meter_power_meter_socket_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_power_meter_power_meter_socket_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_power_meter_power_meter_socket_measure_power_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_power_meter_power_meter_socket_measure_voltage_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_power_meter_power_meter_socket_measure_current_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_power_meter_power_meter_socket_meter_power_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_power_meter_16a_smart_plug_power_meter_16a_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_power_meter_16a_smart_plug_power_meter_16a_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_power_meter_16a_smart_plug_power_meter_16a_measure_power_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_power_meter_16a_smart_plug_power_meter_16a_measure_voltage_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_power_meter_16a_smart_plug_power_meter_16a_measure_current_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_power_meter_16a_smart_plug_power_meter_16a_meter_power_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_smart_onoff_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_smart_advanced_smart_plug_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_smart_advanced_smart_plug_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_smart_advanced_smart_plug_measure_power_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_smart_advanced_smart_plug_measure_voltage_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_smart_advanced_smart_plug_measure_current_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_smart_advanced_smart_plug_meter_power_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_smart_basic_plug_basic_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_smart_basic_plug_basic_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_smart_basic_plug_basic_measure_power_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_smart_basic_plug_basic_measure_voltage_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_smart_basic_plug_basic_measure_current_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "plug_smart_basic_plug_basic_meter_power_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "presence_sensor_radar_alarm_motion_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "presence_sensor_radar_alarm_motion_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "presence_sensor_radar_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "presence_sensor_radar_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "presence_sensor_radar_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "radiator_valve_target_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "radiator_valve_measure_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "radiator_valve_smart_hybrid_target_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "radiator_valve_smart_hybrid_measure_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "scene_controller_wireless_scene_controller_scene_controller_button_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "scene_controller_wireless_scene_controller_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "shutter_roller_switch_roller_shutter_switch_windowcoverings_set_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "siren_alarm_motion_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "siren_alarm_motion_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "siren_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "siren_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "siren_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "siren_outdoor_outdoor_siren_alarm_motion_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "siren_outdoor_outdoor_siren_alarm_motion_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "siren_outdoor_outdoor_siren_alarm_contact_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "siren_outdoor_outdoor_siren_alarm_contact_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "siren_outdoor_outdoor_siren_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "siren_outdoor_outdoor_siren_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "siren_outdoor_outdoor_siren_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "smoke_detector_advanced_smart_smoke_detector_advanced_alarm_smoke_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "smoke_detector_advanced_smart_smoke_detector_advanced_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "smoke_detector_advanced_smart_smoke_detector_advanced_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "smoke_detector_advanced_smart_smoke_detector_advanced_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "smoke_detector_climate_smoke_temp_humid_sensor_alarm_motion_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "smoke_detector_climate_smoke_temp_humid_sensor_alarm_motion_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "smoke_detector_climate_smoke_temp_humid_sensor_measure_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "smoke_detector_climate_smoke_temp_humid_sensor_measure_humidity_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "smoke_detector_climate_smoke_temp_humid_sensor_alarm_smoke_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "smoke_detector_climate_smoke_temp_humid_sensor_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "smoke_detector_climate_smoke_temp_humid_sensor_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "smoke_detector_climate_smoke_temp_humid_sensor_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "smoke_detector_temp_humidity_advanced_measure_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "smoke_detector_temp_humidity_advanced_measure_humidity_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "smoke_detector_temp_humidity_advanced_alarm_smoke_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "smoke_detector_temp_humidity_advanced_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "smoke_detector_temp_humidity_advanced_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "smoke_detector_temp_humidity_advanced_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "sound_controller_other_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "spot_light_smart_smart_spot_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "spot_light_smart_smart_spot_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "spot_light_smart_smart_spot_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_basic_1gang_switch_1gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_basic_1gang_switch_1gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_basic_1gang_switch_1gang_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_basic_2gang_switch_2gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_basic_2gang_switch_2gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_basic_5gang_switch_5gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_basic_5gang_switch_5gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_basic_5gang_switch_5gang_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_generic_1gang_smart_switch_1gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_generic_1gang_smart_switch_1gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_generic_1gang_smart_switch_1gang_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_generic_3gang_smart_switch_3gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_generic_3gang_smart_switch_3gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_hybrid_1gang_smart_switch_1gang_hybrid_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_hybrid_1gang_smart_switch_1gang_hybrid_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_hybrid_1gang_smart_switch_1gang_hybrid_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_hybrid_2gang_smart_switch_2gang_hybrid_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_hybrid_2gang_smart_switch_2gang_hybrid_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_hybrid_2gang_alt_switch_2gang_hybrid_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_hybrid_2gang_alt_switch_2gang_hybrid_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_hybrid_3gang_smart_switch_3gang_hybrid_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_hybrid_3gang_smart_switch_3gang_hybrid_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_hybrid_4gang_smart_switch_4gang_hybrid_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_hybrid_4gang_smart_switch_4gang_hybrid_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_hybrid_4gang_smart_switch_4gang_hybrid_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_internal_1gang_smart_switch_1gang_internal_smart_switch_1gang_internal_button_pressed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_internal_1gang_smart_switch_1gang_internal_smart_switch_1gang_internal_single_press",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_internal_1gang_smart_switch_1gang_internal_smart_switch_1gang_internal_double_press",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_internal_1gang_smart_switch_1gang_internal_smart_switch_1gang_internal_long_press",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_internal_1gang_smart_switch_1gang_internal_smart_switch_1gang_internal_battery_low",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_internal_1gang_smart_switch_1gang_internal_measure_power_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_internal_1gang_smart_switch_1gang_internal_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_remote_onoff_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_smart_1gang_smart_switch_1gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_smart_1gang_smart_switch_1gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_smart_1gang_smart_switch_1gang_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_smart_3gang_smart_switch_3gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_smart_3gang_smart_switch_3gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_smart_4gang_smart_switch_4gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_smart_4gang_smart_switch_4gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_smart_4gang_smart_switch_4gang_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_touch_1gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_touch_1gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_touch_1gang_basic_touch_switch_1gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_touch_1gang_basic_touch_switch_1gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_touch_1gang_basic_touch_switch_1gang_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_touch_2gang_touch_switch_2gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_touch_2gang_touch_switch_2gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_touch_3gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_touch_3gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_touch_3gang_basic_touch_switch_3gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_touch_3gang_basic_touch_switch_3gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_touch_4gang_touch_switch_4gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_touch_4gang_touch_switch_4gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_touch_4gang_touch_switch_4gang_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_1gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_1gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_1gang_basic_wall_switch_1gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_1gang_basic_wall_switch_1gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_1gang_basic_wall_switch_1gang_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_2gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_2gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_2gang_basic_wall_switch_2gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_2gang_basic_wall_switch_2gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_2gang_smart_smart_switch_2gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_2gang_smart_smart_switch_2gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_3gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_3gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_3gang_basic_wall_switch_3gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_3gang_basic_wall_switch_3gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_4gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_4gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_4gang_basic_wall_switch_4gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_4gang_basic_wall_switch_4gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_4gang_basic_wall_switch_4gang_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_4gang_smart_smart_switch_4gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_4gang_smart_smart_switch_4gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_4gang_smart_smart_switch_4gang_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_5gang_wall_switch_5gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_5gang_wall_switch_5gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_5gang_wall_switch_5gang_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_6gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_6gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_6gang_basic_wall_switch_6gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_6gang_basic_wall_switch_6gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_6gang_basic_wall_switch_6gang_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_6gang_smart_smart_switch_6gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_6gang_smart_smart_switch_6gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_6gang_smart_smart_switch_6gang_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_8gang_smart_smart_switch_8gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_8gang_smart_smart_switch_8gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wall_8gang_smart_smart_switch_8gang_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wireless_onoff_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wireless_1gang_wireless_switch_1gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wireless_1gang_wireless_switch_1gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wireless_1gang_wireless_switch_1gang_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wireless_2gang_wireless_switch_2gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wireless_2gang_wireless_switch_2gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wireless_4button_alt_wireless_switch_4button_other_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wireless_4gang_wireless_switch_4gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wireless_4gang_wireless_switch_4gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wireless_5button_wireless_switch_5button_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wireless_5button_wireless_switch_5button_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wireless_5button_wireless_switch_5button_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wireless_6gang_wireless_switch_6gang_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wireless_6gang_wireless_switch_6gang_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "switch_wireless_6gang_wireless_switch_6gang_dim_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "temperature_sensor_alarm_motion_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "temperature_sensor_alarm_motion_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "temperature_sensor_measure_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "temperature_sensor_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "temperature_sensor_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "temperature_sensor_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "temperature_sensor_advanced_alarm_motion_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "temperature_sensor_advanced_alarm_motion_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "temperature_sensor_advanced_measure_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "temperature_sensor_advanced_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "temperature_sensor_advanced_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "temperature_sensor_advanced_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "thermostat_advanced_thermostat_smart_internal_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "thermostat_smart_thermostat_hybrid_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "thermostat_temperature_control_temperature_controller_hybrid_target_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "thermostat_temperature_control_temperature_controller_hybrid_measure_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "thermostat_temperature_control_temperature_controller_hybrid_measure_humidity_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "thermostat_temperature_control_temperature_controller_hybrid_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "usb_outlet_1gang_onoff_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "usb_outlet_2port_onoff_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "usb_outlet_3gang_onoff_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "usb_outlet_advanced_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "usb_outlet_advanced_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "usb_outlet_advanced_measure_power_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "usb_outlet_advanced_measure_voltage_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "usb_outlet_advanced_measure_current_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "usb_outlet_advanced_meter_power_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "usb_outlet_basic_usb_outlet_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "usb_outlet_basic_usb_outlet_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "usb_outlet_basic_usb_outlet_measure_power_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "usb_outlet_basic_usb_outlet_measure_voltage_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "usb_outlet_basic_usb_outlet_measure_current_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "usb_outlet_basic_usb_outlet_meter_power_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_leak_sensor_alarm_motion_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_leak_sensor_alarm_motion_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_leak_sensor_measure_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_leak_sensor_alarm_water_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_leak_sensor_alarm_water_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_leak_sensor_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_leak_sensor_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_leak_sensor_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_leak_sensor_temp_humidity_temp_humid_sensor_leak_detector_alarm_motion_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_leak_sensor_temp_humidity_temp_humid_sensor_leak_detector_alarm_motion_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_leak_sensor_temp_humidity_temp_humid_sensor_leak_detector_measure_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_leak_sensor_temp_humidity_temp_humid_sensor_leak_detector_measure_humidity_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_leak_sensor_temp_humidity_temp_humid_sensor_leak_detector_alarm_water_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_leak_sensor_temp_humidity_temp_humid_sensor_leak_detector_alarm_water_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_leak_sensor_temp_humidity_temp_humid_sensor_leak_detector_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_leak_sensor_temp_humidity_temp_humid_sensor_leak_detector_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_leak_sensor_temp_humidity_temp_humid_sensor_leak_detector_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_valve_alarm_motion_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_valve_alarm_motion_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_valve_measure_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_valve_alarm_water_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_valve_alarm_water_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_valve_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_valve_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_valve_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_valve_smart_alarm_motion_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_valve_smart_alarm_motion_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_valve_smart_measure_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_valve_smart_alarm_water_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_valve_smart_alarm_water_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_valve_smart_alarm_battery_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_valve_smart_alarm_battery_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_valve_smart_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_valve_smart_hybrid_turned_on",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_valve_smart_hybrid_turned_off",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_valve_smart_hybrid_alarm_water_true",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_valve_smart_hybrid_alarm_water_false",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_valve_smart_hybrid_measure_temperature_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "ORPHANED_IN_APPJSON",
+      "flowType": "trigger",
+      "flowId": "water_valve_smart_hybrid_measure_battery_changed",
+      "message": "Trigger in app.json but not in flow/triggers.json (auto-generated)",
+      "severity": "low"
+    },
+    {
+      "type": "MISSING_GENERIC_BUTTON",
+      "driver": "button_wireless_1",
+      "message": "Missing generic button_pressed trigger for button_wireless_1",
+      "severity": "medium"
+    }
+  ],
+  "summary": {
+    "totalIssues": 0,
+    "criticalIssues": 0,
+    "highIssues": 0,
+    "totalWarnings": 650
+  }
+}
