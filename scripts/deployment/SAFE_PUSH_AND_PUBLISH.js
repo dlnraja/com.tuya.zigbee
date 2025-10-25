@@ -133,14 +133,21 @@ class SafePushPublish {
 
       // 8. GIT: Commit
       this.log('\n💬 STEP 8: Git Commit...', 'yellow');
-      const commitMessage = `Fix: Resolve 54 duplicate Flow card IDs
+      const commitMessage = `Fix: Bseed 2-gang switch + Forum issues tracking
 
-- Fixed 16 duplicate condition IDs
-- Fixed 38 duplicate action IDs
-- Created FIX_DUPLICATE_CONDITION_IDS.js script
-- App now validates successfully at debug level
-- All Flow cards have unique IDs
-- Ready for publication`;
+- Fixed Bseed TS0002 switch (_TZ3000_l9brjwau)
+  * Corrected capability naming: onoff.switch_2 → onoff.gang2
+  * Fixed device.js: switchCount → gangCount
+  * Added proper capabilitiesOptions
+  * Multi-endpoint reporting now working
+  
+- Created FORUM_ISSUES_OCT25_2025.md
+  * Tracking 7 active forum issues
+  * 1 critical app crash
+  * 4 high priority device issues
+  * Priority action plan documented
+  
+- Ready for deployment to help Loïc and others`;
 
       try {
         this.exec(`git commit -m "${commitMessage}"`);
