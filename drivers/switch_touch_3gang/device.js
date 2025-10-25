@@ -28,15 +28,15 @@ class SwitchTouch3GangDevice extends SwitchDevice {
   }
   async registerSwitchCapabilities() {
     // Main switch (endpoint 1)
-    this.registerCapability('onoff', this.CLUSTER.ON_OFF, {
+    this.registerCapability('onoff', 6, {
       endpoint: 1
     });
     
     // Additional switches (endpoints 2-3)
-    this.registerCapability('onoff.switch_2', this.CLUSTER.ON_OFF, {
+    this.registerCapability('onoff.switch_2', 6, {
       endpoint: 2
     });
-    this.registerCapability('onoff.switch_3', this.CLUSTER.ON_OFF, {
+    this.registerCapability('onoff.switch_3', 6, {
       endpoint: 3
     });
   }
