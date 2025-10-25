@@ -11,12 +11,15 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
 
   async onNodeInit() {
     // Critical: Attribute reporting for data transmission
+    await super.onNodeInit().catch(err => this.error(err));
+    
+    // THEN setup (zclNode now exists)
     await this.setupAttributeReporting();
 
     this.log('PresenceSensorRadarDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit().catch(err => this.error(err));
+    
 
     // Setup IAS Zone (SDK3 - based on Peter's success patterns)
     await this.setupIASZone();
@@ -236,15 +239,15 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
         endpoint.clusters.iasZone.onZoneStatusChangeNotification = (data) => {
           this.log('🚶 Motion detected:', data);
           const motion = !!(data.zoneStatus & 1);
-          await this.setCapabilityValue('alarm_motion', motion).catch(this.error);
-        });
+          this.setCapabilityValue('alarm_motion', motion).catch(this.error);
+        };
         
         // Attribute listener (backup)
         endpoint.clusters.iasZone.onZoneStatus = (value) => {
           this.log('🚶 Motion status:', value);
           const motion = !!(value & 1);
-          await this.setCapabilityValue('alarm_motion', motion).catch(this.error);
-        });
+          this.setCapabilityValue('alarm_motion', motion).catch(this.error);
+        };
       }
       
       // Configure reporting intervals (numbers only)

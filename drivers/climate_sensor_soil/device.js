@@ -13,10 +13,13 @@ class TuyaSoilTesterTempHumidDevice extends BaseHybridDevice {
     this.log('TuyaSoilTesterTempHumidDevice initializing...');
     
     // Setup sensor reporting
+    await super.onNodeInit().catch(err => this.error(err));
+    
+    // THEN setup (zclNode now exists)
     await this.setupSensorReporting();
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit().catch(err => this.error(err));
+    
 
     // Setup IAS Zone (SDK3 - based on Peter's success patterns)
     await this.setupIASZone();

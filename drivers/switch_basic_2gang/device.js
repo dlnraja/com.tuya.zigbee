@@ -10,13 +10,13 @@ const SwitchDevice = require('../../lib/SwitchDevice');
 class Switch2gangDevice extends SwitchDevice {
 
   async onNodeInit() {
-    // Multi-endpoint + energy monitoring
-    await this.setupMultiEndpoint();
-
     this.log('Switch2gangDevice initializing...');
     
-    // Initialize base (auto power detection + dynamic capabilities)
+    // Initialize base FIRST (auto power detection + dynamic capabilities)
     await super.onNodeInit().catch(err => this.error(err));
+    
+    // THEN setup multi-endpoint (zclNode now exists)
+    await this.setupMultiEndpoint();
     
     this.log('Switch2gangDevice initialized - Power source:', this.powerSource || 'unknown');
   }
