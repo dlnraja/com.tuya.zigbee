@@ -28,7 +28,7 @@ class SwitchWall1GangDevice extends SwitchDevice {
   }
   async registerSwitchCapabilities() {
     // Main switch (endpoint 1)
-    this.registerCapability('onoff', this.CLUSTER.ON_OFF, {
+    this.registerCapability('onoff', 6, {
       endpoint: 1
     });
     
