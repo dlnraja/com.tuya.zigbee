@@ -30,7 +30,7 @@ class AirQualityMonitorProBatteryDevice extends SensorDevice {
     try {
       await this.configureAttributeReporting([{
         endpointId: 1,
-        cluster: 'genPowerCfg',
+        cluster: 1,
         attributeName: 'batteryPercentageRemaining',
         minInterval: 7200,
         maxInterval: 86400,
