@@ -442,6 +442,8 @@
     "manufacturer_count": 5,
     "model_count": 1,
     "capabilities": [
+      "onoff",
+      "onoff.button2",
       "alarm_generic"
     ],
     "power_source": "battery",
@@ -469,7 +471,9 @@
     "manufacturer_count": 10,
     "model_count": 1,
     "capabilities": [
-      "onoff"
+      "onoff",
+      "onoff.button2",
+      "onoff.button3"
     ],
     "power_source": "battery",
     "clusters": []
@@ -498,6 +502,10 @@
     "manufacturer_count": 12,
     "model_count": 1,
     "capabilities": [
+      "onoff",
+      "onoff.button2",
+      "onoff.button3",
+      "onoff.button4",
       "alarm_generic"
     ],
     "power_source": "battery",
@@ -516,6 +524,12 @@
     "manufacturer_count": 1,
     "model_count": 1,
     "capabilities": [
+      "onoff",
+      "onoff.button2",
+      "onoff.button3",
+      "onoff.button4",
+      "onoff.button5",
+      "onoff.button6",
       "alarm_generic"
     ],
     "power_source": "battery",
@@ -535,6 +549,14 @@
     "manufacturer_count": 0,
     "model_count": 4,
     "capabilities": [
+      "onoff",
+      "onoff.button2",
+      "onoff.button3",
+      "onoff.button4",
+      "onoff.button5",
+      "onoff.button6",
+      "onoff.button7",
+      "onoff.button8",
       "alarm_generic"
     ],
     "power_source": "battery",
@@ -2662,6 +2684,10 @@
     "manufacturer_count": 3,
     "model_count": 1,
     "capabilities": [
+      "onoff",
+      "onoff.button2",
+      "onoff.button3",
+      "onoff.button4",
       "alarm_generic",
       "windowcoverings_state"
     ],
@@ -3017,6 +3043,7 @@
     "model_count": 7,
     "capabilities": [
       "onoff",
+      "onoff.button2",
       "measure_battery"
     ],
     "power_source": "battery",
@@ -3122,7 +3149,9 @@
     "manufacturer_count": 11,
     "model_count": 7,
     "capabilities": [
-      "onoff"
+      "onoff",
+      "onoff.button2",
+      "onoff.button3"
     ],
     "power_source": "battery",
     "clusters": []
@@ -3272,6 +3301,9 @@
     "model_count": 2,
     "capabilities": [
       "onoff",
+      "onoff.button2",
+      "onoff.button3",
+      "onoff.button4",
       "button.2",
       "button.3",
       "button.4",
@@ -3414,7 +3446,9 @@
     "manufacturer_count": 11,
     "model_count": 7,
     "capabilities": [
-      "onoff"
+      "onoff",
+      "onoff.button2",
+      "onoff.button3"
     ],
     "power_source": "battery",
     "clusters": []
@@ -3449,6 +3483,9 @@
     "model_count": 7,
     "capabilities": [
       "onoff",
+      "onoff.button2",
+      "onoff.button3",
+      "onoff.button4",
       "dim"
     ],
     "power_source": "battery",
@@ -3552,7 +3589,8 @@
     "manufacturer_count": 11,
     "model_count": 7,
     "capabilities": [
-      "onoff"
+      "onoff",
+      "onoff.button2"
     ],
     "power_source": "battery",
     "clusters": []
@@ -3622,7 +3660,9 @@
     "manufacturer_count": 11,
     "model_count": 7,
     "capabilities": [
-      "onoff"
+      "onoff",
+      "onoff.button2",
+      "onoff.button3"
     ],
     "power_source": "battery",
     "clusters": []
@@ -3657,6 +3697,9 @@
     "model_count": 7,
     "capabilities": [
       "onoff",
+      "onoff.button2",
+      "onoff.button3",
+      "onoff.button4",
       "dim"
     ],
     "power_source": "battery",
@@ -3818,7 +3861,8 @@
     "manufacturer_count": 12,
     "model_count": 8,
     "capabilities": [
-      "onoff"
+      "onoff",
+      "onoff.button2"
     ],
     "power_source": "battery",
     "clusters": []
@@ -3854,7 +3898,8 @@
     "manufacturer_count": 12,
     "model_count": 8,
     "capabilities": [
-      "onoff"
+      "onoff",
+      "onoff.button2"
     ],
     "power_source": "battery",
     "clusters": []
@@ -3932,7 +3977,9 @@
     "manufacturer_count": 11,
     "model_count": 8,
     "capabilities": [
-      "onoff"
+      "onoff",
+      "onoff.button2",
+      "onoff.button3"
     ],
     "power_source": "battery",
     "clusters": []
@@ -4011,6 +4058,9 @@
     "model_count": 8,
     "capabilities": [
       "onoff",
+      "onoff.button2",
+      "onoff.button3",
+      "onoff.button4",
       "dim"
     ],
     "power_source": "battery",
@@ -4047,6 +4097,9 @@
     "model_count": 8,
     "capabilities": [
       "onoff",
+      "onoff.button2",
+      "onoff.button3",
+      "onoff.button4",
       "dim"
     ],
     "power_source": "battery",
@@ -4159,6 +4212,11 @@
     "model_count": 8,
     "capabilities": [
       "onoff",
+      "onoff.button2",
+      "onoff.button3",
+      "onoff.button4",
+      "onoff.button5",
+      "onoff.button6",
       "dim"
     ],
     "power_source": "battery",
@@ -4195,6 +4253,11 @@
     "model_count": 8,
     "capabilities": [
       "onoff",
+      "onoff.button2",
+      "onoff.button3",
+      "onoff.button4",
+      "onoff.button5",
+      "onoff.button6",
       "dim"
     ],
     "power_source": "battery",
@@ -4230,6 +4293,13 @@
     "model_count": 7,
     "capabilities": [
       "onoff",
+      "onoff.button2",
+      "onoff.button3",
+      "onoff.button4",
+      "onoff.button5",
+      "onoff.button6",
+      "onoff.button7",
+      "onoff.button8",
       "dim"
     ],
     "power_source": "battery",
@@ -4326,7 +4396,8 @@
     "manufacturer_count": 12,
     "model_count": 6,
     "capabilities": [
-      "onoff"
+      "onoff",
+      "onoff.button2"
     ],
     "power_source": "battery",
     "clusters": []
@@ -4360,8 +4431,11 @@
     "manufacturer_count": 11,
     "model_count": 7,
     "capabilities": [
-      "measure_battery",
-      "onoff"
+      "onoff",
+      "onoff.button2",
+      "onoff.button3",
+      "onoff.button4",
+      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -4394,7 +4468,10 @@
     "manufacturer_count": 11,
     "model_count": 6,
     "capabilities": [
-      "onoff"
+      "onoff",
+      "onoff.button2",
+      "onoff.button3",
+      "onoff.button4"
     ],
     "power_source": "battery",
     "clusters": []
@@ -4462,6 +4539,11 @@
     "model_count": 6,
     "capabilities": [
       "onoff",
+      "onoff.button2",
+      "onoff.button3",
+      "onoff.button4",
+      "onoff.button5",
+      "onoff.button6",
       "dim"
     ],
     "power_source": "battery",
