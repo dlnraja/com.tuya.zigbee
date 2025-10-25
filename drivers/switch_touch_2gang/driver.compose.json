@@ -5,7 +5,8 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "onoff.button2"
   ],
   "energy": {
     "batteries": [
@@ -310,5 +311,19 @@
   ],
   "connectivity": [
     "zigbee"
-  ]
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Gang 1",
+        "fr": "Gang 1"
+      }
+    },
+    "onoff.button2": {
+      "title": {
+        "en": "Gang 2",
+        "fr": "Gang 2"
+      }
+    }
+  }
 }
