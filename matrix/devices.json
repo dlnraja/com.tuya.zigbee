@@ -4283,7 +4283,7 @@
       "measure_luminance",
       "measure_battery"
     ],
-    "power_source": "ac",
+    "power_source": "battery",
     "clusters": []
   },
   {
@@ -6423,6 +6423,35 @@
     "model_count": 0,
     "capabilities": [
       "alarm_generic"
+    ],
+    "power_source": "battery",
+    "clusters": []
+  },
+  {
+    "driver_id": "wall_touch_3gang_hybrid",
+    "name": "Wall Touch Button 3 Gang (Hybrid)",
+    "class": "socket",
+    "manufacturers": [
+      "_TZ3000_xabckq1v",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_4fjiwweb",
+      "_TZ3000_kjfzuycl"
+    ],
+    "models": [
+      "TS004F",
+      "TS0043",
+      "TS0044"
+    ],
+    "manufacturer_count": 4,
+    "model_count": 3,
+    "capabilities": [
+      "onoff.button1",
+      "onoff.button2",
+      "onoff.button3",
+      "measure_temperature",
+      "measure_battery",
+      "alarm_battery",
+      "alarm_tamper"
     ],
     "power_source": "battery",
     "clusters": []
