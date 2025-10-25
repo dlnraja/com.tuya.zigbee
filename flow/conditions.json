@@ -8,7 +8,14 @@
     "hint": {
       "en": "Check if device is currently running on battery",
       "fr": "Vérifier si l'appareil fonctionne actuellement sur batterie"
-    }
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "driver_id=is_battery_powered"
+      }
+    ]
   },
   {
     "id": "is_ac_powered",
@@ -19,7 +26,14 @@
     "hint": {
       "en": "Check if device is currently running on AC power",
       "fr": "Vérifier si l'appareil fonctionne actuellement sur secteur"
-    }
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "driver_id=is_ac_powered"
+      }
+    ]
   },
   {
     "id": "battery_below_threshold",

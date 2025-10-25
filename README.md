@@ -1,11 +1,17 @@
-# Universal Tuya Zigbee
+# [APP][Pro] Universal TUYA Zigbee - Local-First Control
 
 ![Version](https://img.shields.io/badge/version-4.9.8-blue)
 ![Drivers](https://img.shields.io/badge/drivers-163-green)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
 ![License](https://img.shields.io/badge/license-GPL--3.0-red)
+![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)
 
-Community-maintained Universal Zigbee app with 186 unified hybrid drivers and 18,000+ manufacturer IDs. 100% local control, no cloud required. Intelligent auto-detection of power source and battery type. Advanced energy management with flow cards. SDK3 compliant.
+**Community-maintained Universal Zigbee app with unified hybrid drivers and 18,000+ manufacturer IDs.**
+
+🏠 100% Local Control - No Cloud Required  
+🔋 Intelligent Auto-Detection - Power Source & Battery Type  
+⚡ Advanced Energy Management - Flow Cards Included  
+🛠️ SDK3 Compliant - Latest Homey Standards
 
 ## 📊 Statistics
 
@@ -26,11 +32,11 @@ Community-maintained Universal Zigbee app with 186 unified hybrid drivers and 18
 
 ## 🚀 Latest Updates
 
-- [`b31a5c50c`] feat: Autonomous automation system + 39 coherence fixes *(5 minutes ago)*
-- [`2bbf8bb19`] chore: Auto-increment version to v4.9.8 [skip ci] *(11 minutes ago)*
-- [`24d9f1e2a`] Docs: Auto-update links, paths, README & CHANGELOG [skip ci] *(17 minutes ago)*
-- [`19c02a263`] chore: update device matrix [skip ci] *(18 minutes ago)*
-- [`eb5052b93`] Fix: Deep coherence fixes - 39 automatic corrections *(21 minutes ago)*
+- [`a469995c9`] feat: Autonomous automation system + 39 coherence fixes *(23 minutes ago)*
+- [`7e7f7aaf2`] docs: Auto-update links, paths, README & CHANGELOG [skip ci] *(24 minutes ago)*
+- [`45d9e125b`] Docs: Auto-update links, paths, README & CHANGELOG [skip ci] *(26 minutes ago)*
+- [`a121eb6df`] chore: update device matrix [skip ci] *(27 minutes ago)*
+- [`b31a5c50c`] feat: Autonomous automation system + 39 coherence fixes *(30 minutes ago)*
 
 ## 📦 Installation
 
@@ -112,10 +118,12 @@ GPL-3.0 - See LICENSE file
 
 ## 🔗 Links
 
+- **Test App (Homey):** https://homey.app/a/com.dlnraja.tuya.zigbee/test/
 - **Homey App Store:** https://homey.app/a/com.dlnraja.tuya.zigbee/
 - **GitHub Repository:** https://github.com/dlnraja/com.tuya.zigbee
 - **GitHub Actions:** https://github.com/dlnraja/com.tuya.zigbee/actions
 - **Issues & Support:** https://github.com/dlnraja/com.tuya.zigbee/issues
+- **Community Forum:** https://community.homey.app/
 
 ## 📞 Support
 

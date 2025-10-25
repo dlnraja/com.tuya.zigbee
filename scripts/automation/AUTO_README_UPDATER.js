@@ -114,14 +114,20 @@ class AutoReadmeUpdater {
     const driverStats = this.getDriverStats();
     const now = new Date().toISOString().split('T')[0];
 
-    return `# ${appInfo.name}
+    return `# [APP][Pro] Universal TUYA Zigbee - Local-First Control
 
 ![Version](https://img.shields.io/badge/version-${appInfo.version}-blue)
 ![Drivers](https://img.shields.io/badge/drivers-${appInfo.driverCount}-green)
 ![SDK](https://img.shields.io/badge/SDK-${appInfo.sdk}-orange)
 ![License](https://img.shields.io/badge/license-GPL--3.0-red)
+![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)
 
-${appInfo.description || 'Universal Tuya Zigbee Device Support for Homey'}
+**Community-maintained Universal Zigbee app with unified hybrid drivers and 18,000+ manufacturer IDs.**
+
+🏠 100% Local Control - No Cloud Required  
+🔋 Intelligent Auto-Detection - Power Source & Battery Type  
+⚡ Advanced Energy Management - Flow Cards Included  
+🛠️ SDK3 Compliant - Latest Homey Standards
 
 ## 📊 Statistics
 
@@ -221,10 +227,12 @@ GPL-3.0 - See LICENSE file
 
 ## 🔗 Links
 
+- **Test App (Homey):** https://homey.app/a/com.dlnraja.tuya.zigbee/test/
 - **Homey App Store:** https://homey.app/a/com.dlnraja.tuya.zigbee/
 - **GitHub Repository:** https://github.com/dlnraja/com.tuya.zigbee
 - **GitHub Actions:** https://github.com/dlnraja/com.tuya.zigbee/actions
 - **Issues & Support:** https://github.com/dlnraja/com.tuya.zigbee/issues
+- **Community Forum:** https://community.homey.app/
 
 ## 📞 Support
 
