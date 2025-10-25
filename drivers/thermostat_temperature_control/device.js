@@ -13,6 +13,10 @@ class TemperatureControllerHybridDevice extends BaseHybridDevice {
     // Initialize hybrid base (power detection)
     await super.onNodeInit();
 
+    // Setup sensor capabilities (SDK3)
+    await this.setupTemperatureSensor();
+    await this.setupHumiditySensor();
+
     // IAS Zone enrollment (motion/contact sensors)
     if (this.hasCapability('alarm_motion') || this.hasCapability('alarm_contact') || 
         this.hasCapability('alarm_water') || this.hasCapability('alarm_smoke')) {
@@ -347,6 +351,88 @@ class TemperatureControllerHybridDevice extends BaseHybridDevice {
    */
   getFallbackStats() {
     return this.fallback ? this.fallback.getStats() : null;
+  }
+}
+
+
+  /**
+   * Setup measure_temperature capability (SDK3)
+   * Cluster 1026 - measuredValue
+   */
+  async setupTemperatureSensor() {
+    if (!this.hasCapability('measure_temperature')) {
+      return;
+    }
+    
+    this.log('🌡️  Setting up measure_temperature (cluster 1026)...');
+    
+    const endpoint = this.zclNode.endpoints[1];
+    if (!endpoint?.clusters[1026]) {
+      this.log('⚠️  Cluster 1026 not available');
+      return;
+    }
+    
+    try {
+      this.registerCapability('measure_temperature', 1026, {
+        get: 'measuredValue',
+        report: 'measuredValue',
+        reportParser: value => value / 100,
+        reportOpts: {
+          configureAttributeReporting: {
+            minInterval: 60,
+            maxInterval: 3600,
+            minChange: 10
+          }
+        },
+        getOpts: {
+          getOnStart: true
+        }
+      });
+      
+      this.log('✅ measure_temperature configured (cluster 1026)');
+    } catch (err) {
+      this.error('measure_temperature setup failed:', err);
+    }
+  }
+
+  /**
+   * Setup measure_humidity capability (SDK3)
+   * Cluster 1029 - measuredValue
+   */
+  async setupHumiditySensor() {
+    if (!this.hasCapability('measure_humidity')) {
+      return;
+    }
+    
+    this.log('🌡️  Setting up measure_humidity (cluster 1029)...');
+    
+    const endpoint = this.zclNode.endpoints[1];
+    if (!endpoint?.clusters[1029]) {
+      this.log('⚠️  Cluster 1029 not available');
+      return;
+    }
+    
+    try {
+      this.registerCapability('measure_humidity', 1029, {
+        get: 'measuredValue',
+        report: 'measuredValue',
+        reportParser: value => value / 100,
+        reportOpts: {
+          configureAttributeReporting: {
+            minInterval: 60,
+            maxInterval: 3600,
+            minChange: 100
+          }
+        },
+        getOpts: {
+          getOnStart: true
+        }
+      });
+      
+      this.log('✅ measure_humidity configured (cluster 1029)');
+    } catch (err) {
+      this.error('measure_humidity setup failed:', err);
+    }
   }
 }
 
