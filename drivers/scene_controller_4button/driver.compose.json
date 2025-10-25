@@ -5,6 +5,10 @@
   },
   "class": "button",
   "capabilities": [
+    "onoff",
+    "onoff.button2",
+    "onoff.button3",
+    "onoff.button4",
     "alarm_generic",
     "windowcoverings_state"
   ],
@@ -326,5 +330,31 @@
   ],
   "connectivity": [
     "zigbee"
-  ]
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Gang 1",
+        "fr": "Gang 1"
+      }
+    },
+    "onoff.button2": {
+      "title": {
+        "en": "Gang 2",
+        "fr": "Gang 2"
+      }
+    },
+    "onoff.button3": {
+      "title": {
+        "en": "Gang 3",
+        "fr": "Gang 3"
+      }
+    },
+    "onoff.button4": {
+      "title": {
+        "en": "Gang 4",
+        "fr": "Gang 4"
+      }
+    }
+  }
 }
