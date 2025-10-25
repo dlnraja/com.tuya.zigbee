@@ -216,5 +216,8 @@
   "4.9.17": {
     "en": "🚨 CRITICAL FIX - Force Re-Publish SDK3 Compliance\n\n✅ Removes ALL deprecated API (registerAttrReportListener)\n✅ Fixes production errors in v4.9.13-v4.9.16\n✅ All 171 drivers validated SDK3 compliant\n✅ Zero deprecated APIs\n✅ Zero errors\n✅ All capabilities preserved\n\nFixed drivers:\n• Presence Sensor Radar\n• SOS Button\n• Climate Sensor Soil\n• Switch 2gang\n• All battery-powered devices\n\nThis version ensures correct SDK3 code is deployed to production.",
     "fr": "🚨 CORRECTION CRITIQUE - Re-Publication Forcée SDK3\n\n✅ Suppression de TOUTES les APIs obsolètes\n✅ Correction erreurs production v4.9.13-v4.9.16\n✅ 171 drivers validés SDK3\n✅ Zéro API obsolète\n✅ Zéro erreur\n✅ Toutes fonctionnalités préservées\n\nDrivers corrigés:\n• Presence Sensor Radar\n• Bouton SOS\n• Capteur Sol\n• Switch 2gang\n• Tous appareils à batterie\n\nCette version assure le déploiement du code SDK3 correct."
+  },
+  "4.9.18": {
+    "en": "🔧 Automated release with latest fixes and improvements\n\n✅ 190 native drivers\n✅ 12,563+ manufacturer IDs\n✅ 25+ major brands supported\n✅ 96%+ Zigbee market coverage\n✅ 100% local control\n\nSee full changelog at: https://github.com/dlnraja/com.tuya.zigbee/blob/master/.homeychangelog.json\n"
   }
 }
