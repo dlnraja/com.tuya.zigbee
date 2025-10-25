@@ -13,6 +13,10 @@ class AirQualityMonitorProBatteryDevice extends SensorDevice {
     // Initialize hybrid base (power detection)
     await super.onNodeInit();
 
+    // Setup sensor capabilities (SDK3)
+    await this.setupCo2Sensor();
+    await this.setupTemperatureSensor();
+
     // IAS Zone enrollment (motion/contact sensors)
     if (this.hasCapability('alarm_motion') || this.hasCapability('alarm_contact') || 
         this.hasCapability('alarm_water') || this.hasCapability('alarm_smoke')) {
@@ -347,6 +351,88 @@ class AirQualityMonitorProBatteryDevice extends SensorDevice {
    */
   getFallbackStats() {
     return this.fallback ? this.fallback.getStats() : null;
+  }
+}
+
+
+  /**
+   * Setup measure_co2 capability (SDK3)
+   * Cluster 1037 - measuredValue
+   */
+  async setupCo2Sensor() {
+    if (!this.hasCapability('measure_co2')) {
+      return;
+    }
+    
+    this.log('🌡️  Setting up measure_co2 (cluster 1037)...');
+    
+    const endpoint = this.zclNode.endpoints[1];
+    if (!endpoint?.clusters[1037]) {
+      this.log('⚠️  Cluster 1037 not available');
+      return;
+    }
+    
+    try {
+      this.registerCapability('measure_co2', 1037, {
+        get: 'measuredValue',
+        report: 'measuredValue',
+        reportParser: value => value * 1e-6,
+        reportOpts: {
+          configureAttributeReporting: {
+            minInterval: 300,
+            maxInterval: 3600,
+            minChange: 10
+          }
+        },
+        getOpts: {
+          getOnStart: true
+        }
+      });
+      
+      this.log('✅ measure_co2 configured (cluster 1037)');
+    } catch (err) {
+      this.error('measure_co2 setup failed:', err);
+    }
+  }
+
+  /**
+   * Setup measure_temperature capability (SDK3)
+   * Cluster 1026 - measuredValue
+   */
+  async setupTemperatureSensor() {
+    if (!this.hasCapability('measure_temperature')) {
+      return;
+    }
+    
+    this.log('🌡️  Setting up measure_temperature (cluster 1026)...');
+    
+    const endpoint = this.zclNode.endpoints[1];
+    if (!endpoint?.clusters[1026]) {
+      this.log('⚠️  Cluster 1026 not available');
+      return;
+    }
+    
+    try {
+      this.registerCapability('measure_temperature', 1026, {
+        get: 'measuredValue',
+        report: 'measuredValue',
+        reportParser: value => value / 100,
+        reportOpts: {
+          configureAttributeReporting: {
+            minInterval: 60,
+            maxInterval: 3600,
+            minChange: 10
+          }
+        },
+        getOpts: {
+          getOnStart: true
+        }
+      });
+      
+      this.log('✅ measure_temperature configured (cluster 1026)');
+    } catch (err) {
+      this.error('measure_temperature setup failed:', err);
+    }
   }
 }
 
