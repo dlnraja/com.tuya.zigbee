@@ -13,14 +13,20 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "onoff.switch_2",
+    "onoff.gang2",
     "measure_battery"
   ],
   "capabilitiesOptions": {
     "onoff": {
       "title": {
-        "en": "Switch 1",
-        "fr": "Interrupteur 1"
+        "en": "Gang 1",
+        "fr": "Gang 1"
+      }
+    },
+    "onoff.gang2": {
+      "title": {
+        "en": "Gang 2",
+        "fr": "Gang 2"
       }
     },
     "measure_battery": {
