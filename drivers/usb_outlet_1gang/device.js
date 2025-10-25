@@ -1,139 +1,188 @@
 'use strict';
 
-const PlugDevice = require('../../lib/PlugDevice');
-const { CLUSTER } = require('zigbee-clusters');
+const SwitchDevice = require('../../lib/SwitchDevice');
 
-class UsbOutlet1GangDevice extends PlugDevice {
+/**
+ * UsbOutlet1GangDevice - SDK3 Compliant Single Gang USB Outlet
+ * 
+ * Features:
+ * - Single outlet control via OnOff cluster (6)
+ * - Power measurement (cluster 2820): measure_power, measure_voltage, measure_current
+ * - Energy metering (cluster 1794): meter_power
+ * - Hybrid power detection: AC/DC/Battery with intelligent auto-detection
+ * - SDK3 compliant: Numeric cluster IDs only, proper attribute reporting
+ * 
+ * Clusters:
+ * - 0 (Basic): Power source detection
+ * - 1 (PowerConfiguration): Battery monitoring (if present)
+ * - 3 (Identify): Device identification
+ * - 4 (Groups): Group management
+ * - 5 (Scenes): Scene support
+ * - 6 (OnOff): Main outlet control
+ * - 1794 (Metering): Energy consumption
+ * - 2820 (ElectricalMeasurement): Power, voltage, current
+ */
+class UsbOutlet1GangDevice extends SwitchDevice {
 
-  async onNodeInit({ zclNode }) {
-    // Initialize hybrid base (power detection)
-    await super.onNodeInit();
-
-    this.log('UsbOutlet1GangDevice initialized');
-    this.log('Device model:', this.getData().manufacturerName, this.getData().productId);
-
-    // Register capability listeners
-    this.registerCapabilityListeners();
-
-    // Detect and configure power source (hybrid intelligent detection)
-    await this.detectAndConfigurePowerSource(zclNode).catch(err => this.error(err));
-
-    // Configure power monitoring if available
-    await this.configurePowerMonitoring().catch(err => this.error(err));
+  async onNodeInit() {
+    this.log('⚡ UsbOutlet1GangDevice initializing (SDK3)...');
+    
+    // Set gang count for SwitchDevice base class
+    this.gangCount = 1;
+    
+    // Initialize base (power detection + switch control)
+    await super.onNodeInit().catch(err => this.error('Base init failed:', err));
+    
+    // Setup power measurement capabilities (SDK3)
+    await this.setupPowerMeasurement();
+    
+    this.log('✅ UsbOutlet1GangDevice ready');
+    this.log(`   Power source: ${this.powerType || 'unknown'}`);
+    this.log(`   Model: ${this.getData().manufacturerName}`);
   }
 
   /**
-   * Hybrid intelligent power source detection
-   * Detects AC, DC, or Battery power and configures appropriately
+   * Setup power measurement capabilities (SDK3)
+   * Uses numeric cluster IDs as required by SDK3
    */
-  async detectAndConfigurePowerSource(zclNode) {
-    try {
-      const powerSourceSetting = this.getSetting('power_source');
-      
-      if (powerSourceSetting !== 'auto') {
-        this.log('✅ Manual power source selected:', powerSourceSetting);
-        this.powerSource = powerSourceSetting;
-        return;
-      }
-
-      // Auto-detect power source from device
-      const basicCluster = zclNode.endpoints[1]?.clusters?.basic;
-      if (basicCluster?.attributes?.powerSource) {
-        const detectedSource = basicCluster.attributes.powerSource;
-        this.log('🔍 Detected power source from device:', detectedSource);
-        
-        // Map Zigbee power source values
-        const powerSourceMap = {
-          0: 'unknown',
-          1: 'ac',      // Mains (single phase)
-          2: 'ac',      // Mains (3 phase)
-          3: 'battery', // Battery
-          4: 'dc',      // DC source
-          5: 'battery', // Emergency mains constantly powered
-          6: 'battery'  // Emergency mains and transfer switch
-        };
-        
-        this.powerSource = powerSourceMap[detectedSource] || 'ac';
-        this.log('✅ Auto-detected power source:', this.powerSource);
-        
-        // USB outlets reporting battery are usually AC powered (firmware bug)
-        if (this.powerSource === 'battery') {
-          this.log('⚠️  USB outlet reports battery but is likely AC powered');
-          this.log('💡 Assuming AC power for USB outlet (user can override in settings)');
-          this.powerSource = 'ac';
+  async setupPowerMeasurement() {
+    // Skip power measurement if running on battery
+    if (this.powerType === 'BATTERY') {
+      this.log('⏭️  Skipping power measurement (battery mode)');
+      return;
+    }
+    
+    const endpoint = this.zclNode.endpoints[1];
+    if (!endpoint) {
+      this.log('⚠️  Endpoint 1 not available');
+      return;
+    }
+    
+    this.log('🔌 Setting up power measurement (SDK3)...');
+    
+    // Cluster 2820 (ElectricalMeasurement): Power, Voltage, Current
+    if (endpoint.clusters[2820]) {
+      try {
+        // measure_power (activePower)
+        if (this.hasCapability('measure_power')) {
+          this.registerCapability('measure_power', 2820, {
+            get: 'activePower',
+            report: 'activePower',
+            reportParser: value => {
+              // Convert to Watts (device reports in 0.1W units)
+              const watts = value / 10;
+              this.log('📊 Power:', watts, 'W');
+              return watts;
+            },
+            reportOpts: {
+              configureAttributeReporting: {
+                minInterval: 5,        // 5 seconds minimum
+                maxInterval: 300,      // 5 minutes maximum
+                minChange: 1           // 0.1W change
+              }
+            },
+            getOpts: {
+              getOnStart: true
+            }
+          });
+          this.log('✅ measure_power configured (cluster 2820)');
         }
-      } else {
-        this.log('⚠️  Could not detect power source, assuming AC for USB device');
-        this.powerSource = 'ac';
-      }
-    } catch (err) {
-      this.error('Error detecting power source:', err);
-      this.powerSource = 'ac'; // Safe default for USB outlets
-    }
-  }
-
-  /**
-   * Configure power monitoring if capabilities are available
-   */
-  async configurePowerMonitoring() {
-    // Power measurement
-    if (this.hasCapability('measure_power')) {
-      try {
-        this.registerCapability('measure_power', CLUSTER.ELECTRICAL_MEASUREMENT, {
-          get: 'activePower',
-          report: 'activePower',
-          reportParser: value => value / 10 // Convert to Watts
-        });
-        this.log('✅ Power monitoring configured');
+        
+        // measure_voltage (rmsVoltage)
+        if (this.hasCapability('measure_voltage')) {
+          this.registerCapability('measure_voltage', 2820, {
+            get: 'rmsVoltage',
+            report: 'rmsVoltage',
+            reportParser: value => {
+              const volts = value;
+              this.log('📊 Voltage:', volts, 'V');
+              return volts;
+            },
+            reportOpts: {
+              configureAttributeReporting: {
+                minInterval: 60,       // 1 minute
+                maxInterval: 600,      // 10 minutes
+                minChange: 10          // 10V change
+              }
+            },
+            getOpts: {
+              getOnStart: true
+            }
+          });
+          this.log('✅ measure_voltage configured (cluster 2820)');
+        }
+        
+        // measure_current (rmsCurrent)
+        if (this.hasCapability('measure_current')) {
+          this.registerCapability('measure_current', 2820, {
+            get: 'rmsCurrent',
+            report: 'rmsCurrent',
+            reportParser: value => {
+              // Convert to Amps (device reports in mA)
+              const amps = value / 1000;
+              this.log('📊 Current:', amps, 'A');
+              return amps;
+            },
+            reportOpts: {
+              configureAttributeReporting: {
+                minInterval: 60,       // 1 minute
+                maxInterval: 600,      // 10 minutes
+                minChange: 100         // 100mA change
+              }
+            },
+            getOpts: {
+              getOnStart: true
+            }
+          });
+          this.log('✅ measure_current configured (cluster 2820)');
+        }
       } catch (err) {
-        this.log('Power monitoring not available:', err.message);
+        this.error('Electrical measurement setup failed:', err);
       }
+    } else {
+      this.log('ℹ️  Cluster 2820 (ElectricalMeasurement) not available');
     }
-
-    // Energy meter
-    if (this.hasCapability('meter_power')) {
+    
+    // Cluster 1794 (Metering): Energy consumption
+    if (endpoint.clusters[1794]) {
       try {
-        this.registerCapability('meter_power', CLUSTER.METERING, {
-          get: 'currentSummationDelivered',
-          report: 'currentSummationDelivered',
-          reportParser: value => value / 1000 // Convert to kWh
-        });
-        this.log('✅ Energy meter configured');
+        // meter_power (currentSummationDelivered)
+        if (this.hasCapability('meter_power')) {
+          this.registerCapability('meter_power', 1794, {
+            get: 'currentSummationDelivered',
+            report: 'currentSummationDelivered',
+            reportParser: value => {
+              // Convert to kWh (device reports in Wh)
+              const kwh = value / 1000;
+              this.log('📊 Energy:', kwh, 'kWh');
+              return kwh;
+            },
+            reportOpts: {
+              configureAttributeReporting: {
+                minInterval: 300,      // 5 minutes
+                maxInterval: 3600,     // 1 hour
+                minChange: 100         // 100Wh change
+              }
+            },
+            getOpts: {
+              getOnStart: true
+            }
+          });
+          this.log('✅ meter_power configured (cluster 1794)');
+        }
       } catch (err) {
-        this.log('Energy meter not available:', err.message);
+        this.error('Metering setup failed:', err);
       }
+    } else {
+      this.log('ℹ️  Cluster 1794 (Metering) not available');
     }
+    
+    this.log('✅ Power measurement setup complete');
   }
 
-  /**
-   * Register capability listeners for outlet control
-   */
-  registerCapabilityListeners() {
-    // Main onoff
-    this.registerCapabilityListener('onoff', async (value) => {
-      this.log('USB Outlet turned', value ? 'on' : 'off');
-      
-      // TODO: Wrap in try/catch
-      await this.zclNode.endpoints[1].clusters.onOff.toggle().catch(err => this.error(err));
-      
-      // Trigger flow card
-      const triggerCard = value ? 
-        'usb_outlet_1gang_turned_on' : 
-        'usb_outlet_1gang_turned_off';
-      
-      await this.homey.flow.getDeviceTriggerCard(triggerCard)
-        .trigger(this)
-        .catch(err => this.error('Error triggering flow card:', err));
-      
-      return value;
-    });
-  }
-
-  /**
-   * Handle device removal
-   */
   async onDeleted() {
-    this.log('UsbOutlet1GangDevice removed');
+    this.log('UsbOutlet1GangDevice deleted');
+    await super.onDeleted().catch(err => this.error(err));
   }
 }
 

@@ -291,6 +291,22 @@
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
+    },
+    {
+      "id": "backlight_auto_off",
+      "type": "number",
+      "label": {
+        "en": "Backlight Duration (seconds)",
+        "fr": "Durée Éclairage (secondes)"
+      },
+      "value": 10,
+      "min": 0,
+      "max": 300,
+      "step": 5,
+      "hint": {
+        "en": "How long to keep screen backlight on when button pressed (0 = always on)",
+        "fr": "Durée d'activation de l'éclairage de l'écran (0 = toujours allumé)"
+      }
     }
   ],
   "images": {
