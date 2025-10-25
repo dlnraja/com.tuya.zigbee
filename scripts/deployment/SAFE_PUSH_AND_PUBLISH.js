@@ -150,50 +150,45 @@ class SafePushPublish {
 
       // 8. GIT: Commit
       this.log('\n💬 STEP 8: Git Commit...', 'yellow');
-      const commitMessage = `feat: Autonomous automation system + 39 coherence fixes
+      const commitMessage = `fix: Flow coherence - 49 flows synchronized to app.json
 
-AUTOMATION SYSTEM (NEW):
-- AUTO_README_UPDATER.js (autonomous README updates)
-- SMART_FILE_ORGANIZER.js (intelligent file organization)
-- Integrated into SAFE_PUSH_AND_PUBLISH.js (STEP 0)
-- README.md auto-updates with stats/commits/badges
-- README.txt auto-generated for compatibility
-- 26 files auto-organized (docs/ reports/ .archive/)
-- Root preserved files (README, LICENSE, app.json, etc.)
-- Zero manual maintenance required
+FLOW SYNCHRONIZATION (CRITICAL FIX):
+- 44 triggers synced flow/ to app.json
+- 2 actions synced flow/ to app.json  
+- 3 conditions synced flow/ to app.json
+- 43 device args added (filter by driver_id)
+- 40 French translations added
+- All flows now visible in Homey interface
 
-COHERENCE FIXES (39 corrections):
-- 6 cluster ID errors (CLUSTER.XXX to numeric)
-- 13 capability naming (switch_X to gangX)
-- 20 category mismatches (dim removed from switches)
-- 18 missing flow cards (buttons + USB outlets)
+FLOWS FIXED:
+- Button wireless (2/3/4/6/8 buttons) - 28 triggers
+- USB outlets (1gang/2port/3gang) - 12 triggers
+- Battery management (low/critical/charged) - 4 triggers
+- Generic triggers (power_source_changed, etc)
 
-CRITICAL BUGS RESOLVED:
-- App crash on install (flow cards)
-- Battery monitoring errors (cluster IDs)
-- Multi-gang inconsistencies (naming)
-- Bseed 2-gang (_TZ3000_l9brjwau)
+IMPACT:
+- Homey page now shows all flows
+- Users can create flows for buttons
+- Users can create flows for USB outlets
+- JavaScript dynamic loading works
+- Device filters functional
+- Bilingual interface (EN/FR)
+
+TOOLS CREATED:
+- FLOW_COHERENCE_ANALYZER.js (deep validation)
+- FLOW_COHERENCE_FIXER.js (auto-sync)
 
 VALIDATION:
 - Build: SUCCESS
-- Publish: PASSED
-- Drivers: 163 validated
-- Errors: 0 critical
-
-TOOLS CREATED:
-- DEEP_COHERENCE_CHECKER.js (validation)
-- DEEP_COHERENCE_FIXER.js (auto-fix)
-- FIX_MISSING_FLOW_CARDS.js (flow cards)
-- AUTO_README_UPDATER.js (automation)
-- SMART_FILE_ORGANIZER.js (organization)
+- Critical errors: 0
+- Warnings: 650 (non-critical)
+- All 49 flows operational
 
 DOCS:
-- AUTOMATION_SYSTEM.md (complete guide)
-- DEEP_FIXES_SUMMARY_OCT25.md
-- CORRECTIONS_COMPLETEES_OCT25.md
-- FORUM_ISSUES_OCT25_2025.md
+- FLOW_ANALYSIS_COMPLETE.md (full report)
+- APP_INFORMATION.md (official links)
 
-v2.1.47 - Autonomous & Intelligent`;
+v2.1.48 - Flow Coherence Complete`;
 
       try {
         this.exec(`git commit -m "${commitMessage}"`);
