@@ -31,75 +31,94 @@ class TuyaDoorbellCameraDevice extends BaseHybridDevice {
    * 
    * Cluster 1280 (IASZone) - Motion/Alarm detection
    */
+  /**
+   * Setup IAS Zone (SDK3 - Based on IASZoneEnroller_SIMPLE_v4.0.6.js)
+   * Version la plus récente du projet (2025-10-21)
+   */
   async setupIASZone() {
-    this.log('🔐 Setting up IAS Zone (SDK3)...');
+    this.log('🔐 Setting up IAS Zone (SDK3 latest method)...');
     
     const endpoint = this.zclNode.endpoints[1];
     
-    if (!endpoint?.clusters[1280]) {
-      this.log('ℹ️  IAS Zone cluster (1280) not available');
+    if (!endpoint?.clusters?.iasZone) {
+      this.log('ℹ️  IAS Zone cluster not available');
       return;
     }
     
     try {
-      // Step 1: Write CIE Address (SDK3 method)
-      // OLD (broken): await endpoint.clusters.iasZone.write(...)
-      // NEW (working): await endpoint.clusters[1280].writeAttributes({...})
-      await endpoint.clusters[1280].writeAttributes({
-        iasCIEAddress: this.homey.zigbee.ieee
-      }).catch(err => {
-        this.log('CIE address write failed (non-critical):', err.message);
-      });
-      
-      this.log('✅ CIE address configured:', this.homey.zigbee.ieee);
-      
-      // Step 2: Listen for zone status change notifications (SDK3 method)
-      endpoint.clusters[1280].on('zoneStatusChangeNotification', async (notification) => {
-        this.log('📥 Zone status changed:', notification.zoneStatus);
-        
-        // Parse alarm status from bitmap
-        const alarm = notification.zoneStatus.alarm1 === 1;
-        
-        // Update capability
-        await this.setCapabilityValue('alarm_motion', alarm).catch(this.error);
-        
-        this.log(`${alarm ? '🚨' : '✅'} Motion detection: ${alarm ? 'TRIGGERED' : 'cleared'}`);
-      });
-      
-      this.log('✅ Zone status listener registered');
-      
-      // Step 3: Setup enrollment response handler
-      endpoint.clusters[1280].onZoneEnrollRequest = async () => {
-        this.log('📨 Zone enroll request received');
+      // Step 1: Setup Zone Enroll Request listener (SYNCHRONOUS - property assignment)
+      // SDK3: Use property assignment, NOT .on() event listener
+      endpoint.clusters.iasZone.onZoneEnrollRequest = () => {
+        this.log('📨 Zone Enroll Request received');
         
         try {
-          await endpoint.clusters[1280].zoneEnrollResponse({
-            enrollResponseCode: 0, // Success
+          // Send response IMMEDIATELY (synchronous, no async, no delay)
+          endpoint.clusters.iasZone.zoneEnrollResponse({
+            enrollResponseCode: 0, // 0 = Success
             zoneId: 10
           });
           
-          this.log('✅ Zone enrollment response sent');
+          this.log('✅ Zone Enroll Response sent (zoneId: 10)');
         } catch (err) {
-          this.error('Zone enroll response failed:', err);
+          this.error('Failed to send Zone Enroll Response:', err.message);
         }
       };
       
-      // Step 4: Proactive enrollment (SDK3 best practice)
-      // Device might send request during pairing before listener is ready
-      // Send proactive response to ensure enrollment
+      this.log('✅ Zone Enroll Request listener configured');
+      
+      // Step 2: Send proactive Zone Enroll Response (SDK3 official method)
+      // Per Homey docs: "driver could send Zone Enroll Response when initializing
+      // regardless of having received Zone Enroll Request"
+      this.log('📤 Sending proactive Zone Enroll Response...');
+      
       try {
-        await endpoint.clusters[1280].zoneEnrollResponse({
+        endpoint.clusters.iasZone.zoneEnrollResponse({
           enrollResponseCode: 0,
           zoneId: 10
         });
         
-        this.log('✅ Proactive enrollment response sent');
+        this.log('✅ Proactive Zone Enroll Response sent');
       } catch (err) {
-        // Non-critical: device might not accept proactive response
-        this.log('Proactive enrollment skipped (normal if already enrolled)');
+        this.log('⚠️  Proactive response failed (normal if device not ready):', err.message);
       }
       
-      this.log('✅ IAS Zone configured successfully (SDK3)');
+      // Step 3: Setup Zone Status Change listener (property assignment)
+      // SDK3: Use .onZoneStatusChangeNotification property, NOT .on() event
+      endpoint.clusters.iasZone.onZoneStatusChangeNotification = (payload) => {
+        this.log('📨 Zone notification received:', payload);
+        
+        if (payload && payload.zoneStatus !== undefined) {
+          // Convert Bitmap to value if needed
+          let status = payload.zoneStatus;
+          if (status && typeof status.valueOf === 'function') {
+            status = status.valueOf();
+          }
+          
+          // Check alarm1 bit (motion/alarm detected)
+          const alarm = (status & 0x01) !== 0;
+          
+          this.setCapabilityValue('alarm_motion', alarm).catch(this.error);
+          this.log(`${alarm ? '🚨' : '✅'} Alarm: ${alarm ? 'TRIGGERED' : 'cleared'}`);
+        }
+      };
+      
+      this.log('✅ Zone Status listener configured');
+      
+      // Step 4: Setup Zone Status attribute listener (property assignment)
+      // Alternative listener for attribute reports
+      endpoint.clusters.iasZone.onZoneStatus = (zoneStatus) => {
+        this.log('📊 Zone attribute report:', zoneStatus);
+        
+        let status = zoneStatus;
+        if (status && typeof status.valueOf === 'function') {
+          status = status.valueOf();
+        }
+        
+        const alarm = (status & 0x01) !== 0;
+        this.setCapabilityValue('alarm_motion', alarm).catch(this.error);
+      };
+      
+      this.log('✅ IAS Zone configured successfully (SDK3 latest method)');
       
     } catch (err) {
       this.error('IAS Zone setup failed:', err);
