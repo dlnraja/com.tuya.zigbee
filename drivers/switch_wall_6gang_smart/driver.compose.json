@@ -6,7 +6,12 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "dim"
+    "dim",
+    "onoff.button2",
+    "onoff.button3",
+    "onoff.button4",
+    "onoff.button5",
+    "onoff.button6"
   ],
   "energy": {
     "batteries": [

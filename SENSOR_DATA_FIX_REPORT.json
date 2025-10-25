@@ -1,0 +1,629 @@
+{
+  "timestamp": "2025-10-25T16:25:27.715Z",
+  "analysis": {
+    "driversAnalyzed": 171,
+    "noDeviceFile": 0,
+    "missingReporting": 73,
+    "incorrectReporting": 9
+  },
+  "filesCreated": 0,
+  "details": {
+    "noDeviceFile": [],
+    "missingReporting": [
+      {
+        "driver": "air_quality_comprehensive",
+        "capabilities": {
+          "temperature": true,
+          "humidity": true,
+          "battery": true,
+          "illuminance": false,
+          "motion": false,
+          "contact": false
+        }
+      },
+      {
+        "driver": "air_quality_monitor_advanced",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": false,
+          "contact": false
+        }
+      },
+      {
+        "driver": "air_quality_pm25",
+        "capabilities": {
+          "temperature": true,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": false,
+          "contact": false
+        }
+      },
+      {
+        "driver": "button_emergency_sos",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": false,
+          "contact": false
+        }
+      },
+      {
+        "driver": "button_shortcut",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": false,
+          "contact": false
+        }
+      },
+      {
+        "driver": "button_wireless",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": false,
+          "contact": false
+        }
+      },
+      {
+        "driver": "button_wireless_1",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": false,
+          "contact": false
+        }
+      },
+      {
+        "driver": "button_wireless_2",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": false,
+          "contact": false
+        }
+      },
+      {
+        "driver": "button_wireless_3",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": false,
+          "contact": false
+        }
+      },
+      {
+        "driver": "button_wireless_4",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": false,
+          "contact": false
+        }
+      },
+      {
+        "driver": "button_wireless_6",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": false,
+          "contact": false
+        }
+      },
+      {
+        "driver": "button_wireless_8",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": false,
+          "contact": false
+        }
+      },
+      {
+        "driver": "climate_monitor",
+        "capabilities": {
+          "temperature": true,
+          "humidity": true,
+          "battery": true,
+          "illuminance": false,
+          "motion": false,
+          "contact": false
+        }
+      },
+      {
+        "driver": "climate_monitor_co2",
+        "capabilities": {
+          "temperature": true,
+          "humidity": true,
+          "battery": true,
+          "illuminance": false,
+          "motion": false,
+          "contact": false
+        }
+      },
+      {
+        "driver": "climate_monitor_temp_humidity",
+        "capabilities": {
+          "temperature": true,
+          "humidity": true,
+          "battery": true,
+          "illuminance": false,
+          "motion": false,
+          "contact": false
+        }
+      },
+      {
+        "driver": "climate_sensor_soil",
+        "capabilities": {
+          "temperature": true,
+          "humidity": true,
+          "battery": true,
+          "illuminance": false,
+          "motion": false,
+          "contact": true
+        }
+      },
+      {
+        "driver": "climate_sensor_temp_humidity_advanced",
+        "capabilities": {
+          "temperature": true,
+          "humidity": true,
+          "battery": true,
+          "illuminance": false,
+          "motion": true,
+          "contact": true
+        }
+      },
+      {
+        "driver": "contact_sensor",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": false,
+          "contact": true
+        }
+      },
+      {
+        "driver": "contact_sensor_basic",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": true,
+          "contact": true
+        }
+      },
+      {
+        "driver": "contact_sensor_multipurpose",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": false,
+          "illuminance": false,
+          "motion": false,
+          "contact": true
+        }
+      },
+      {
+        "driver": "contact_sensor_vibration",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": false,
+          "contact": true
+        }
+      },
+      {
+        "driver": "doorbell",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": true,
+          "contact": true
+        }
+      },
+      {
+        "driver": "doorbell_camera",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": true,
+          "contact": true
+        }
+      },
+      {
+        "driver": "door_controller",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": true,
+          "contact": true
+        }
+      },
+      {
+        "driver": "garage_door_controller",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": true,
+          "contact": true
+        }
+      },
+      {
+        "driver": "gas_detector",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": true,
+          "contact": false
+        }
+      },
+      {
+        "driver": "gas_sensor",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": false,
+          "contact": true
+        }
+      },
+      {
+        "driver": "humidity_controller",
+        "capabilities": {
+          "temperature": true,
+          "humidity": true,
+          "battery": true,
+          "illuminance": false,
+          "motion": false,
+          "contact": false
+        }
+      },
+      {
+        "driver": "hvac_air_conditioner",
+        "capabilities": {
+          "temperature": true,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": false,
+          "contact": false
+        }
+      },
+      {
+        "driver": "hvac_dehumidifier",
+        "capabilities": {
+          "temperature": true,
+          "humidity": true,
+          "battery": true,
+          "illuminance": false,
+          "motion": false,
+          "contact": false
+        }
+      },
+      {
+        "driver": "led_strip_outdoor_rgb",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": false,
+          "illuminance": false,
+          "motion": false,
+          "contact": true
+        }
+      },
+      {
+        "driver": "light_controller_outdoor",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": false,
+          "contact": true
+        }
+      },
+      {
+        "driver": "lock_smart",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": false,
+          "contact": false
+        }
+      },
+      {
+        "driver": "lock_smart_basic",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": true,
+          "contact": false
+        }
+      },
+      {
+        "driver": "lock_smart_fingerprint",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": false,
+          "contact": false
+        }
+      },
+      {
+        "driver": "motion_sensor",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": true,
+          "contact": false
+        }
+      },
+      {
+        "driver": "motion_sensor_mmwave",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": true,
+          "contact": false
+        }
+      },
+      {
+        "driver": "motion_sensor_multi",
+        "capabilities": {
+          "temperature": true,
+          "humidity": true,
+          "battery": true,
+          "illuminance": true,
+          "motion": true,
+          "contact": false
+        }
+      },
+      {
+        "driver": "motion_sensor_outdoor",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": true,
+          "contact": true
+        }
+      },
+      {
+        "driver": "motion_sensor_pir",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": true,
+          "contact": false
+        }
+      },
+      {
+        "driver": "motion_sensor_pir_advanced",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": true,
+          "contact": false
+        }
+      },
+      {
+        "driver": "motion_sensor_pir_radar",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": true,
+          "motion": true,
+          "contact": false
+        }
+      },
+      {
+        "driver": "motion_sensor_radar_advanced",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": true,
+          "contact": false
+        }
+      },
+      {
+        "driver": "motion_sensor_radar_mmwave",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": true,
+          "contact": false
+        }
+      },
+      {
+        "driver": "plug_outdoor",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": false,
+          "illuminance": false,
+          "motion": false,
+          "contact": true
+        }
+      },
+      {
+        "driver": "presence_sensor_radar",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": true,
+          "motion": true,
+          "contact": false
+        }
+      },
+      {
+        "driver": "radiator_valve",
+        "capabilities": {
+          "temperature": true,
+          "humidity": false,
+          "battery": false,
+          "illuminance": false,
+          "motion": false,
+          "contact": false
+        }
+      },
+      {
+        "driver": "siren",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": true,
+          "contact": false
+        }
+      },
+      {
+        "driver": "siren_outdoor",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": true,
+          "contact": true
+        }
+      },
+      {
+        "driver": "smoke_detector_advanced",
+        "capabilities": {
+          "temperature": false,
+          "humidity": false,
+          "battery": true,
+          "illuminance": false,
+          "motion": false,
+          "contact": false
+        }
+      }
+    ],
+    "incorrectReporting": [
+      {
+        "driver": "doorbell_button",
+        "problems": [
+          "Missing IAS Zone notification listener"
+        ]
+      },
+      {
+        "driver": "wall_touch_1gang",
+        "problems": [
+          "Missing error handlers"
+        ]
+      },
+      {
+        "driver": "wall_touch_2gang",
+        "problems": [
+          "Missing error handlers"
+        ]
+      },
+      {
+        "driver": "wall_touch_3gang",
+        "problems": [
+          "Missing error handlers"
+        ]
+      },
+      {
+        "driver": "wall_touch_4gang",
+        "problems": [
+          "Missing error handlers"
+        ]
+      },
+      {
+        "driver": "wall_touch_5gang",
+        "problems": [
+          "Missing error handlers"
+        ]
+      },
+      {
+        "driver": "wall_touch_6gang",
+        "problems": [
+          "Missing error handlers"
+        ]
+      },
+      {
+        "driver": "wall_touch_7gang",
+        "problems": [
+          "Missing error handlers"
+        ]
+      },
+      {
+        "driver": "wall_touch_8gang",
+        "problems": [
+          "Missing error handlers"
+        ]
+      }
+    ]
+  },
+  "templates": [
+    "temperature",
+    "humidity",
+    "battery",
+    "illuminance",
+    "motion",
+    "contact"
+  ]
+}
