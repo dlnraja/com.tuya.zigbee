@@ -232,5 +232,8 @@
   "4.9.23": {
     "en": "🔧 SDK3 FIX - Wall Touch Drivers Complete Migration\n\n✅ Fixed 8 wall_touch drivers (1-8 gang)\n✅ Created new WallTouchDevice base class (SDK3)\n✅ Removed deprecated registerCapability\n✅ Removed deprecated registerMultipleCapabilityListener\n✅ Direct cluster listeners implemented\n✅ Debounced button combination detection\n✅ 100% SDK3 compliant\n\nAffected drivers:\n• wall_touch_1gang through wall_touch_8gang\n• All button combinations now work\n• Temperature + tamper detection improved\n\nAutomated deprecation scan: 0 MEDIUM issues ✅",
     "fr": "🔧 CORRECTION SDK3 - Migration Complète Drivers Wall Touch\n\n✅ Correction 8 drivers wall_touch (1-8 gang)\n✅ Nouvelle classe base WallTouchDevice (SDK3)\n✅ Suppression registerCapability obsolète\n✅ Suppression registerMultipleCapabilityListener obsolète\n✅ Listeners cluster directs implémentés\n✅ Détection combinaisons boutons avec debounce\n✅ 100% conforme SDK3\n\nDrivers affectés:\n• wall_touch_1gang à wall_touch_8gang\n• Toutes combinaisons boutons fonctionnent\n• Température + détection tamper améliorées\n\nScan automatisé: 0 problèmes MEDIUM ✅"
+  },
+  "4.9.24": {
+    "en": "🔧 Automated release with latest fixes and improvements\n\n✅ 190 native drivers\n✅ 12,563+ manufacturer IDs\n✅ 25+ major brands supported\n✅ 96%+ Zigbee market coverage\n✅ 100% local control\n\nSee full changelog at: https://github.com/dlnraja/com.tuya.zigbee/blob/master/.homeychangelog.json\n"
   }
 }
