@@ -73,16 +73,37 @@ class FlowCoherenceAnalyzer {
   }
 
   /**
+   * Check if flow is generic (applies to all devices)
+   */
+  isGenericFlow(flowId) {
+    // Generic flows that don't need device filter (SDK3)
+    const genericPatterns = [
+      /^battery_/,
+      /^power_source_/,
+      /^alarm_/,
+      /^measure_/,
+      /^meter_/
+    ];
+
+    return genericPatterns.some(pattern => pattern.test(flowId));
+  }
+
+  /**
    * Check for missing args (device filter)
    */
   checkMissingArgs(flowCard, type) {
+    // Skip check for generic flows (SDK3 best practice)
+    if (this.isGenericFlow(flowCard.id)) {
+      return true;
+    }
+
     if (!flowCard.args || flowCard.args.length === 0) {
       this.warnings.push({
         type: 'MISSING_ARGS',
         flowType: type,
         flowId: flowCard.id,
         message: `Flow card has no args (device filter missing)`,
-        severity: 'medium'
+        severity: 'high'
       });
       this.stats.missingArgs++;
       return false;
@@ -96,9 +117,20 @@ class FlowCoherenceAnalyzer {
         flowType: type,
         flowId: flowCard.id,
         message: `No device argument found`,
-        severity: 'low'
+        severity: 'medium'
       });
       return false;
+    }
+
+    // Verify filter format (SDK3)
+    if (deviceArg.filter && !deviceArg.filter.includes('driver_id=')) {
+      this.warnings.push({
+        type: 'INVALID_FILTER',
+        flowType: type,
+        flowId: flowCard.id,
+        message: `Filter should use 'driver_id=' format (SDK3 standard)`,
+        severity: 'medium'
+      });
     }
 
     return true;
@@ -126,25 +158,36 @@ class FlowCoherenceAnalyzer {
   }
 
   /**
-   * Extract driver ID from flow card ID
+   * Extract driver ID from flow card ID (SDK3 patterns)
    */
   extractDriverId(flowId) {
-    // Patterns:
+    // Patterns (order matters!):
     // button_wireless_2_button_pressed → button_wireless_2
+    // button_wireless_2_button_1_pressed → button_wireless_2
     // usb_outlet_3gang_port1_turned_on → usb_outlet_3gang
+    // usb_outlet_2port_port1_turned_on → usb_outlet_2port
     
     const patterns = [
-      /_button_\d+_pressed$/,
-      /_turned_on$/,
-      /_turned_off$/,
-      /_measure_\w+_changed$/,
-      /_alarm_\w+$/
+      /_button_\d+_pressed$/,     // button_X_pressed
+      /_button_pressed$/,         // generic button_pressed
+      /_port\d+_turned_on$/,      // portX_turned_on
+      /_port\d+_turned_off$/,     // portX_turned_off
+      /_turned_on$/,              // generic turned_on
+      /_turned_off$/,             // generic turned_off
+      /_measure_\w+_changed$/,    // measure_X_changed
+      /_alarm_\w+$/               // alarm_X
     ];
 
     let driverId = flowId;
-    patterns.forEach(pattern => {
-      driverId = driverId.replace(pattern, '');
-    });
+    
+    // Apply patterns in order
+    for (const pattern of patterns) {
+      const newId = driverId.replace(pattern, '');
+      if (newId !== driverId) {
+        driverId = newId;
+        break; // Stop at first match
+      }
+    }
 
     return driverId;
   }
@@ -155,6 +198,30 @@ class FlowCoherenceAnalyzer {
   driverExists(driverId) {
     const driverPath = path.join(this.driversPath, driverId);
     return fs.existsSync(driverPath);
+  }
+
+  /**
+   * Check if flow ID pattern is valid (SDK3)
+   */
+  validateFlowIdPattern(flowId) {
+    const issues = [];
+
+    // SDK3: Flow IDs should be lowercase with underscores
+    if (flowId !== flowId.toLowerCase()) {
+      issues.push('Flow ID should be lowercase (SDK3)');
+    }
+
+    // Check for spaces (not allowed)
+    if (flowId.includes(' ')) {
+      issues.push('Flow ID cannot contain spaces');
+    }
+
+    // Check for special chars (except underscore)
+    if (/[^a-z0-9_]/.test(flowId)) {
+      issues.push('Flow ID should only contain a-z, 0-9, and underscores');
+    }
+
+    return issues;
   }
 
   /**
@@ -185,6 +252,18 @@ class FlowCoherenceAnalyzer {
 
     // Check each trigger
     flowTriggers.forEach(trigger => {
+      // Validate flow ID pattern (SDK3)
+      const patternIssues = this.validateFlowIdPattern(trigger.id);
+      patternIssues.forEach(issue => {
+        this.warnings.push({
+          type: 'INVALID_PATTERN',
+          flowType: 'trigger',
+          flowId: trigger.id,
+          message: issue,
+          severity: 'low'
+        });
+      });
+
       // Check if in app.json
       if (!appIds.has(trigger.id)) {
         this.issues.push({
@@ -202,35 +281,26 @@ class FlowCoherenceAnalyzer {
       // Check translations
       this.checkTranslations(trigger, 'trigger');
 
-      // Check if driver exists (for device-specific triggers)
-      if (trigger.id.includes('_')) {
+      // Check if driver exists (for device-specific triggers only, not generic)
+      if (trigger.id.includes('_') && !this.isGenericFlow(trigger.id)) {
         const driverId = this.extractDriverId(trigger.id);
-        if (!this.driverExists(driverId)) {
+        
+        // Only warn if driver should exist (not for generic flows)
+        if (driverId && driverId !== trigger.id && !this.driverExists(driverId)) {
           this.warnings.push({
             type: 'DRIVER_NOT_FOUND',
             flowType: 'trigger',
             flowId: trigger.id,
             driverId: driverId,
             message: `Driver ${driverId} not found for trigger`,
-            severity: 'medium'
+            severity: 'low'
           });
         }
       }
     });
 
-    // Check for orphaned triggers in app.json
-    appTriggers.forEach(trigger => {
-      if (!flowIds.has(trigger.id)) {
-        this.warnings.push({
-          type: 'ORPHANED_IN_APPJSON',
-          flowType: 'trigger',
-          flowId: trigger.id,
-          message: `Trigger in app.json but not in flow/triggers.json (auto-generated)`,
-          severity: 'low'
-        });
-        this.stats.orphanedFlows++;
-      }
-    });
+    // Note: Orphaned flows in app.json are OK (auto-generated from drivers)
+    // We don't warn about these as they're intentional
   }
 
   /**
