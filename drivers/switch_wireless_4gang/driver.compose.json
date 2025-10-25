@@ -5,7 +5,10 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "onoff.button2",
+    "onoff.button3",
+    "onoff.button4"
   ],
   "energy": {
     "batteries": [

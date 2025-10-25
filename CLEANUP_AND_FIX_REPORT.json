@@ -1,0 +1,71 @@
+{
+  "timestamp": "2025-10-25T16:16:15.714Z",
+  "cleanup": {
+    "backupsFound": 50,
+    "backupsMoved": 50
+  },
+  "analysis": {
+    "driversAnalyzed": 171,
+    "issuesFound": 506,
+    "issuesFixed": 21
+  },
+  "remainingIssues": {
+    "endpointsMissing": 0,
+    "imagesInvalid": 485
+  },
+  "details": {
+    "endpointsMissing": [],
+    "imagesInvalid": [
+      {
+        "driver": "air_quality_comprehensive",
+        "size": "small",
+        "path": "drivers/air_quality_comprehensive/assets/images/small.png"
+      },
+      {
+        "driver": "air_quality_comprehensive",
+        "size": "large",
+        "path": "drivers/air_quality_comprehensive/assets/images/large.png"
+      },
+      {
+        "driver": "air_quality_comprehensive",
+        "size": "xlarge",
+        "path": "drivers/air_quality_comprehensive/assets/images/xlarge.png"
+      },
+      {
+        "driver": "air_quality_monitor",
+        "size": "small",
+        "path": "drivers/air_quality_monitor/assets/images/small.png"
+      },
+      {
+        "driver": "air_quality_monitor",
+        "size": "large",
+        "path": "drivers/air_quality_monitor/assets/images/large.png"
+      },
+      {
+        "driver": "air_quality_monitor",
+        "size": "xlarge",
+        "path": "drivers/air_quality_monitor/assets/images/xlarge.png"
+      },
+      {
+        "driver": "air_quality_monitor_advanced",
+        "size": "small",
+        "path": "drivers/air_quality_monitor_advanced/assets/images/small.png"
+      },
+      {
+        "driver": "air_quality_monitor_advanced",
+        "size": "large",
+        "path": "drivers/air_quality_monitor_advanced/assets/images/large.png"
+      },
+      {
+        "driver": "air_quality_monitor_advanced",
+        "size": "xlarge",
+        "path": "drivers/air_quality_monitor_advanced/assets/images/xlarge.png"
+      },
+      {
+        "driver": "air_quality_pm25",
+        "size": "small",
+        "path": "drivers/air_quality_pm25/assets/images/small.png"
+      }
+    ]
+  }
+}

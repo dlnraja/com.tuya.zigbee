@@ -6,7 +6,8 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "measure_battery"
+    "measure_battery",
+    "onoff.button2"
   ],
   "capabilitiesOptions": {
     "measure_battery": {

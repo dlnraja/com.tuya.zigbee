@@ -1,0 +1,846 @@
+{
+  "timestamp": "2025-10-25T15:45:55.262Z",
+  "stats": {
+    "filesScanned": 396,
+    "clusterStringUsage": 86,
+    "missingGangSetup": 5,
+    "powerSourceIssues": 18,
+    "pathIssues": 0
+  },
+  "issues": [
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\air_quality_monitor\\device.js",
+      "driver": "air_quality_monitor",
+      "lines": [
+        46
+      ],
+      "matches": [
+        "CLUSTER.POWER_CONFIGURATION"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\button_shortcut\\device.js",
+      "driver": "button_shortcut",
+      "lines": [
+        32,
+        57
+      ],
+      "matches": [
+        "CLUSTER.POWER_CONFIGURATION",
+        "CLUSTER.POWER_CONFIGURATION"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\button_wireless\\device.js",
+      "driver": "button_wireless",
+      "lines": [
+        157
+      ],
+      "matches": [
+        "CLUSTER.POWER_CONFIGURATION"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\contact_sensor_vibration\\device.js",
+      "driver": "contact_sensor_vibration",
+      "lines": [
+        63
+      ],
+      "matches": [
+        "CLUSTER.POWER_CONFIGURATION"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\curtain_motor\\device.js",
+      "driver": "curtain_motor",
+      "lines": [
+        323,
+        335
+      ],
+      "matches": [
+        "CLUSTER.POWER_CONFIGURATION",
+        "CLUSTER.POWER_CONFIGURATION"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\doorbell_button\\device.js",
+      "driver": "doorbell_button",
+      "lines": [
+        33,
+        46
+      ],
+      "matches": [
+        "CLUSTER.POWER_CONFIGURATION",
+        "CLUSTER.POWER_CONFIGURATION"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\hvac_air_conditioner\\device.js",
+      "driver": "hvac_air_conditioner",
+      "lines": [
+        16,
+        23,
+        33
+      ],
+      "matches": [
+        "CLUSTER.ON_OFF",
+        "CLUSTER.THERMOSTAT",
+        "CLUSTER.THERMOSTAT"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\hvac_dehumidifier\\device.js",
+      "driver": "hvac_dehumidifier",
+      "lines": [
+        16
+      ],
+      "matches": [
+        "CLUSTER.ON_OFF"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\radiator_valve_smart\\device.js",
+      "driver": "radiator_valve_smart",
+      "lines": [
+        30,
+        95
+      ],
+      "matches": [
+        "CLUSTER.POWER_CONFIGURATION",
+        "CLUSTER.POWER_CONFIGURATION"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_controller_wireless\\device.js",
+      "driver": "scene_controller_wireless",
+      "lines": [
+        38,
+        165,
+        229
+      ],
+      "matches": [
+        "CLUSTER.ON_OFF",
+        "CLUSTER.POWER_CONFIGURATION",
+        "CLUSTER.POWER_CONFIGURATION"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sound_controller\\device.js",
+      "driver": "sound_controller",
+      "lines": [
+        32,
+        57
+      ],
+      "matches": [
+        "CLUSTER.POWER_CONFIGURATION",
+        "CLUSTER.POWER_CONFIGURATION"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "MISSING_GANG_SETUP",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_hybrid_2gang\\device.js",
+      "driver": "switch_hybrid_2gang",
+      "expected": 2,
+      "found": 1,
+      "message": "Driver expects 2 gangs but only gang 1 is configured",
+      "fix": "Add setup for gangs 2-2"
+    },
+    {
+      "type": "MISSING_GANG_SETUP",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_hybrid_3gang\\device.js",
+      "driver": "switch_hybrid_3gang",
+      "expected": 3,
+      "found": 1,
+      "message": "Driver expects 3 gangs but only gang 1 is configured",
+      "fix": "Add setup for gangs 2-3"
+    },
+    {
+      "type": "MISSING_GANG_SETUP",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_hybrid_4gang\\device.js",
+      "driver": "switch_hybrid_4gang",
+      "expected": 4,
+      "found": 1,
+      "message": "Driver expects 4 gangs but only gang 1 is configured",
+      "fix": "Add setup for gangs 2-4"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_internal_1gang\\device.js",
+      "driver": "switch_internal_1gang",
+      "lines": [
+        357,
+        369
+      ],
+      "matches": [
+        "CLUSTER.POWER_CONFIGURATION",
+        "CLUSTER.POWER_CONFIGURATION"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_wireless_4button_alt\\device.js",
+      "driver": "switch_wireless_4button_alt",
+      "lines": [
+        18,
+        43
+      ],
+      "matches": [
+        "CLUSTER.POWER_CONFIGURATION",
+        "CLUSTER.POWER_CONFIGURATION"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\thermostat_advanced\\device.js",
+      "driver": "thermostat_advanced",
+      "lines": [
+        33,
+        46
+      ],
+      "matches": [
+        "CLUSTER.POWER_CONFIGURATION",
+        "CLUSTER.POWER_CONFIGURATION"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\thermostat_smart\\device.js",
+      "driver": "thermostat_smart",
+      "lines": [
+        33,
+        46
+      ],
+      "matches": [
+        "CLUSTER.POWER_CONFIGURATION",
+        "CLUSTER.POWER_CONFIGURATION"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\thermostat_temperature_control\\device.js",
+      "driver": "thermostat_temperature_control",
+      "lines": [
+        33,
+        46
+      ],
+      "matches": [
+        "CLUSTER.POWER_CONFIGURATION",
+        "CLUSTER.POWER_CONFIGURATION"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\usb_outlet_1gang\\device.js",
+      "driver": "usb_outlet_1gang",
+      "lines": [
+        82,
+        96
+      ],
+      "matches": [
+        "CLUSTER.ELECTRICAL_MEASUREMENT",
+        "CLUSTER.METERING"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\usb_outlet_2port\\device.js",
+      "driver": "usb_outlet_2port",
+      "lines": [
+        125,
+        139
+      ],
+      "matches": [
+        "CLUSTER.ELECTRICAL_MEASUREMENT",
+        "CLUSTER.METERING"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "MISSING_GANG_SETUP",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\usb_outlet_2port\\device.js",
+      "driver": "usb_outlet_2port",
+      "expected": 2,
+      "found": 1,
+      "message": "Driver expects 2 gangs but only gang 1 is configured",
+      "fix": "Add setup for gangs 2-2"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\usb_outlet_3gang\\device.js",
+      "driver": "usb_outlet_3gang",
+      "lines": [
+        82,
+        96
+      ],
+      "matches": [
+        "CLUSTER.ELECTRICAL_MEASUREMENT",
+        "CLUSTER.METERING"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "MISSING_GANG_SETUP",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\usb_outlet_3gang\\device.js",
+      "driver": "usb_outlet_3gang",
+      "expected": 3,
+      "found": 1,
+      "message": "Driver expects 3 gangs but only gang 1 is configured",
+      "fix": "Add setup for gangs 2-3"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_touch_1gang\\device.js",
+      "driver": "wall_touch_1gang",
+      "lines": [
+        60,
+        127,
+        286,
+        304
+      ],
+      "matches": [
+        "CLUSTER.ON_OFF",
+        "CLUSTER.TEMPERATURE_MEASUREMENT",
+        "CLUSTER.POWER_CONFIGURATION",
+        "CLUSTER.TEMPERATURE_MEASUREMENT"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "POWER_SOURCE_NOT_SAVED",
+      "severity": "HIGH",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_touch_1gang\\device.js",
+      "driver": "wall_touch_1gang",
+      "hasDetection": true,
+      "storesValue": false,
+      "setsCapability": false,
+      "message": "Power source detected but not properly saved",
+      "fix": "Add setStoreValue and setCapabilityValue after detection"
+    },
+    {
+      "type": "POWER_SOURCE_NOT_SAVED",
+      "severity": "HIGH",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_touch_1gang\\driver.js",
+      "driver": "wall_touch_1gang",
+      "hasDetection": true,
+      "storesValue": false,
+      "setsCapability": false,
+      "message": "Power source detected but not properly saved",
+      "fix": "Add setStoreValue and setCapabilityValue after detection"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_touch_2gang\\device.js",
+      "driver": "wall_touch_2gang",
+      "lines": [
+        60,
+        127,
+        286,
+        304
+      ],
+      "matches": [
+        "CLUSTER.ON_OFF",
+        "CLUSTER.TEMPERATURE_MEASUREMENT",
+        "CLUSTER.POWER_CONFIGURATION",
+        "CLUSTER.TEMPERATURE_MEASUREMENT"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "POWER_SOURCE_NOT_SAVED",
+      "severity": "HIGH",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_touch_2gang\\device.js",
+      "driver": "wall_touch_2gang",
+      "hasDetection": true,
+      "storesValue": false,
+      "setsCapability": false,
+      "message": "Power source detected but not properly saved",
+      "fix": "Add setStoreValue and setCapabilityValue after detection"
+    },
+    {
+      "type": "POWER_SOURCE_NOT_SAVED",
+      "severity": "HIGH",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_touch_2gang\\driver.js",
+      "driver": "wall_touch_2gang",
+      "hasDetection": true,
+      "storesValue": false,
+      "setsCapability": false,
+      "message": "Power source detected but not properly saved",
+      "fix": "Add setStoreValue and setCapabilityValue after detection"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_touch_3gang\\device.js",
+      "driver": "wall_touch_3gang",
+      "lines": [
+        60,
+        127,
+        286,
+        304
+      ],
+      "matches": [
+        "CLUSTER.ON_OFF",
+        "CLUSTER.TEMPERATURE_MEASUREMENT",
+        "CLUSTER.POWER_CONFIGURATION",
+        "CLUSTER.TEMPERATURE_MEASUREMENT"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "POWER_SOURCE_NOT_SAVED",
+      "severity": "HIGH",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_touch_3gang\\device.js",
+      "driver": "wall_touch_3gang",
+      "hasDetection": true,
+      "storesValue": false,
+      "setsCapability": false,
+      "message": "Power source detected but not properly saved",
+      "fix": "Add setStoreValue and setCapabilityValue after detection"
+    },
+    {
+      "type": "POWER_SOURCE_NOT_SAVED",
+      "severity": "HIGH",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_touch_3gang\\driver.js",
+      "driver": "wall_touch_3gang",
+      "hasDetection": true,
+      "storesValue": false,
+      "setsCapability": false,
+      "message": "Power source detected but not properly saved",
+      "fix": "Add setStoreValue and setCapabilityValue after detection"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_touch_4gang\\device.js",
+      "driver": "wall_touch_4gang",
+      "lines": [
+        60,
+        127,
+        286,
+        304
+      ],
+      "matches": [
+        "CLUSTER.ON_OFF",
+        "CLUSTER.TEMPERATURE_MEASUREMENT",
+        "CLUSTER.POWER_CONFIGURATION",
+        "CLUSTER.TEMPERATURE_MEASUREMENT"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "POWER_SOURCE_NOT_SAVED",
+      "severity": "HIGH",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_touch_4gang\\device.js",
+      "driver": "wall_touch_4gang",
+      "hasDetection": true,
+      "storesValue": false,
+      "setsCapability": false,
+      "message": "Power source detected but not properly saved",
+      "fix": "Add setStoreValue and setCapabilityValue after detection"
+    },
+    {
+      "type": "POWER_SOURCE_NOT_SAVED",
+      "severity": "HIGH",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_touch_4gang\\driver.js",
+      "driver": "wall_touch_4gang",
+      "hasDetection": true,
+      "storesValue": false,
+      "setsCapability": false,
+      "message": "Power source detected but not properly saved",
+      "fix": "Add setStoreValue and setCapabilityValue after detection"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_touch_5gang\\device.js",
+      "driver": "wall_touch_5gang",
+      "lines": [
+        60,
+        127,
+        286,
+        304
+      ],
+      "matches": [
+        "CLUSTER.ON_OFF",
+        "CLUSTER.TEMPERATURE_MEASUREMENT",
+        "CLUSTER.POWER_CONFIGURATION",
+        "CLUSTER.TEMPERATURE_MEASUREMENT"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "POWER_SOURCE_NOT_SAVED",
+      "severity": "HIGH",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_touch_5gang\\device.js",
+      "driver": "wall_touch_5gang",
+      "hasDetection": true,
+      "storesValue": false,
+      "setsCapability": false,
+      "message": "Power source detected but not properly saved",
+      "fix": "Add setStoreValue and setCapabilityValue after detection"
+    },
+    {
+      "type": "POWER_SOURCE_NOT_SAVED",
+      "severity": "HIGH",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_touch_5gang\\driver.js",
+      "driver": "wall_touch_5gang",
+      "hasDetection": true,
+      "storesValue": false,
+      "setsCapability": false,
+      "message": "Power source detected but not properly saved",
+      "fix": "Add setStoreValue and setCapabilityValue after detection"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_touch_6gang\\device.js",
+      "driver": "wall_touch_6gang",
+      "lines": [
+        60,
+        127,
+        286,
+        304
+      ],
+      "matches": [
+        "CLUSTER.ON_OFF",
+        "CLUSTER.TEMPERATURE_MEASUREMENT",
+        "CLUSTER.POWER_CONFIGURATION",
+        "CLUSTER.TEMPERATURE_MEASUREMENT"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "POWER_SOURCE_NOT_SAVED",
+      "severity": "HIGH",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_touch_6gang\\device.js",
+      "driver": "wall_touch_6gang",
+      "hasDetection": true,
+      "storesValue": false,
+      "setsCapability": false,
+      "message": "Power source detected but not properly saved",
+      "fix": "Add setStoreValue and setCapabilityValue after detection"
+    },
+    {
+      "type": "POWER_SOURCE_NOT_SAVED",
+      "severity": "HIGH",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_touch_6gang\\driver.js",
+      "driver": "wall_touch_6gang",
+      "hasDetection": true,
+      "storesValue": false,
+      "setsCapability": false,
+      "message": "Power source detected but not properly saved",
+      "fix": "Add setStoreValue and setCapabilityValue after detection"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_touch_7gang\\device.js",
+      "driver": "wall_touch_7gang",
+      "lines": [
+        60,
+        127,
+        286,
+        304
+      ],
+      "matches": [
+        "CLUSTER.ON_OFF",
+        "CLUSTER.TEMPERATURE_MEASUREMENT",
+        "CLUSTER.POWER_CONFIGURATION",
+        "CLUSTER.TEMPERATURE_MEASUREMENT"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "POWER_SOURCE_NOT_SAVED",
+      "severity": "HIGH",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_touch_7gang\\device.js",
+      "driver": "wall_touch_7gang",
+      "hasDetection": true,
+      "storesValue": false,
+      "setsCapability": false,
+      "message": "Power source detected but not properly saved",
+      "fix": "Add setStoreValue and setCapabilityValue after detection"
+    },
+    {
+      "type": "POWER_SOURCE_NOT_SAVED",
+      "severity": "HIGH",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_touch_7gang\\driver.js",
+      "driver": "wall_touch_7gang",
+      "hasDetection": true,
+      "storesValue": false,
+      "setsCapability": false,
+      "message": "Power source detected but not properly saved",
+      "fix": "Add setStoreValue and setCapabilityValue after detection"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_touch_8gang\\device.js",
+      "driver": "wall_touch_8gang",
+      "lines": [
+        60,
+        127,
+        286,
+        304
+      ],
+      "matches": [
+        "CLUSTER.ON_OFF",
+        "CLUSTER.TEMPERATURE_MEASUREMENT",
+        "CLUSTER.POWER_CONFIGURATION",
+        "CLUSTER.TEMPERATURE_MEASUREMENT"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "POWER_SOURCE_NOT_SAVED",
+      "severity": "HIGH",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_touch_8gang\\device.js",
+      "driver": "wall_touch_8gang",
+      "hasDetection": true,
+      "storesValue": false,
+      "setsCapability": false,
+      "message": "Power source detected but not properly saved",
+      "fix": "Add setStoreValue and setCapabilityValue after detection"
+    },
+    {
+      "type": "POWER_SOURCE_NOT_SAVED",
+      "severity": "HIGH",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_touch_8gang\\driver.js",
+      "driver": "wall_touch_8gang",
+      "hasDetection": true,
+      "storesValue": false,
+      "setsCapability": false,
+      "message": "Power source detected but not properly saved",
+      "fix": "Add setStoreValue and setCapabilityValue after detection"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\water_valve_smart_hybrid\\device.js",
+      "driver": "water_valve_smart_hybrid",
+      "lines": [
+        33,
+        46
+      ],
+      "matches": [
+        "CLUSTER.POWER_CONFIGURATION",
+        "CLUSTER.POWER_CONFIGURATION"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "POWER_SOURCE_NOT_SAVED",
+      "severity": "HIGH",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\lib\\BaseHybridDevice.js",
+      "driver": "lib",
+      "hasDetection": true,
+      "storesValue": false,
+      "setsCapability": false,
+      "message": "Power source detected but not properly saved",
+      "fix": "Add setStoreValue and setCapabilityValue after detection"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\lib\\BatteryCalculator.example.js",
+      "driver": "lib",
+      "lines": [
+        14
+      ],
+      "matches": [
+        "CLUSTER.POWER_CONFIGURATION"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "POWER_SOURCE_NOT_SAVED",
+      "severity": "HIGH",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\lib\\HybridEnergyManager.js",
+      "driver": "lib",
+      "hasDetection": true,
+      "storesValue": false,
+      "setsCapability": false,
+      "message": "Power source detected but not properly saved",
+      "fix": "Add setStoreValue and setCapabilityValue after detection"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\lib\\PlugDevice.js",
+      "driver": "lib",
+      "lines": [
+        35,
+        59,
+        64,
+        69,
+        74
+      ],
+      "matches": [
+        "CLUSTER.ON_OFF",
+        "CLUSTER.ELECTRICAL_MEASUREMENT",
+        "CLUSTER.METERING",
+        "CLUSTER.ELECTRICAL_MEASUREMENT",
+        "CLUSTER.ELECTRICAL_MEASUREMENT"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\lib\\SensorDevice.js",
+      "driver": "lib",
+      "lines": [
+        49,
+        55,
+        61
+      ],
+      "matches": [
+        "CLUSTER.TEMPERATURE_MEASUREMENT",
+        "CLUSTER.RELATIVE_HUMIDITY_MEASUREMENT",
+        "CLUSTER.ILLUMINANCE_MEASUREMENT"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\lib\\templates\\BEST_PRACTICE_DEVICE_TEMPLATE.js",
+      "driver": "lib",
+      "lines": [
+        41,
+        82,
+        116,
+        150
+      ],
+      "matches": [
+        "CLUSTER.POWER_CONFIGURATION",
+        "CLUSTER.TEMPERATURE_MEASUREMENT",
+        "CLUSTER.RELATIVE_HUMIDITY_MEASUREMENT",
+        "CLUSTER.IAS_ZONE"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\lib\\zigbee-cluster-map-usage-example.js",
+      "driver": "lib",
+      "lines": [
+        123,
+        126
+      ],
+      "matches": [
+        "CLUSTER.ON_OFF",
+        "CLUSTER.ON_OFF"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    },
+    {
+      "type": "CLUSTER_STRING_USAGE",
+      "severity": "CRITICAL",
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\lib\\zigbee-cluster-map.js",
+      "driver": "lib",
+      "lines": [
+        252
+      ],
+      "matches": [
+        "CLUSTER.POWER_CONFIGURATION"
+      ],
+      "message": "Using cluster strings instead of numeric IDs",
+      "fix": "Replace cluster strings with numeric cluster IDs"
+    }
+  ],
+  "summary": {
+    "total": 57,
+    "critical": 39,
+    "high": 18,
+    "medium": 0
+  }
+}

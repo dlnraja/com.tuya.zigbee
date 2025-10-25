@@ -6,7 +6,10 @@
     "button.3",
     "button.4",
     "dim",
-    "measure_battery"
+    "measure_battery",
+    "onoff.button2",
+    "onoff.button3",
+    "onoff.button4"
   ],
   "zigbee": {
     "productId": [
