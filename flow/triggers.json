@@ -95,6 +95,20 @@
     ]
   },
   {
+    "id": "button_wireless_1_button_pressed",
+    "title": {
+      "en": "Button pressed",
+      "fr": "Bouton pressé"
+    },
+    "args": [
+      {
+        "type": "device",
+        "name": "device",
+        "filter": "driver_id=button_wireless_1"
+      }
+    ]
+  },
+  {
     "id": "button_wireless_2_button_pressed",
     "title": {
       "en": "Button pressed",
