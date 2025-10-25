@@ -1,6 +1,6 @@
 # Universal Tuya Zigbee
 
-![Version](https://img.shields.io/badge/version-4.9.7-blue)
+![Version](https://img.shields.io/badge/version-4.9.8-blue)
 ![Drivers](https://img.shields.io/badge/drivers-163-green)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
 ![License](https://img.shields.io/badge/license-GPL--3.0-red)
@@ -26,11 +26,11 @@ Community-maintained Universal Zigbee app with 186 unified hybrid drivers and 18
 
 ## 🚀 Latest Updates
 
-- [`eb5052b93`] Fix: Deep coherence fixes - 39 automatic corrections *(11 minutes ago)*
-- [`db7bf3785`] chore: Auto-increment version to v4.9.7 [skip ci] *(17 minutes ago)*
-- [`9d62e6b50`] Docs: Auto-update links, paths, README & CHANGELOG [skip ci] *(22 minutes ago)*
-- [`f52c73041`] chore: update device matrix [skip ci] *(23 minutes ago)*
-- [`95f5a161f`] Fix: Bseed 2-gang switch + Forum issues tracking *(26 minutes ago)*
+- [`b31a5c50c`] feat: Autonomous automation system + 39 coherence fixes *(5 minutes ago)*
+- [`2bbf8bb19`] chore: Auto-increment version to v4.9.8 [skip ci] *(11 minutes ago)*
+- [`24d9f1e2a`] Docs: Auto-update links, paths, README & CHANGELOG [skip ci] *(17 minutes ago)*
+- [`19c02a263`] chore: update device matrix [skip ci] *(18 minutes ago)*
+- [`eb5052b93`] Fix: Deep coherence fixes - 39 automatic corrections *(21 minutes ago)*
 
 ## 📦 Installation
 
