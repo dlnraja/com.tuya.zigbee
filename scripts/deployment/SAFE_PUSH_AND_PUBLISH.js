@@ -133,14 +133,14 @@ class SafePushPublish {
 
       // 8. GIT: Commit
       this.log('\n💬 STEP 8: Git Commit...', 'yellow');
-      const commitMessage = `v4.2.2 - Advanced image validation scripts + 15 learnmode.svg
+      const commitMessage = `Fix: Resolve 54 duplicate Flow card IDs
 
-- Ultimate image validator (450+ lines)
-- Template fixer script (150+ lines)
-- 15 learnmode.svg created automatically
-- JSON validation report generated
-- App validates at publish level
-- Zero manual intervention required`;
+- Fixed 16 duplicate condition IDs
+- Fixed 38 duplicate action IDs
+- Created FIX_DUPLICATE_CONDITION_IDS.js script
+- App now validates successfully at debug level
+- All Flow cards have unique IDs
+- Ready for publication`;
 
       try {
         this.exec(`git commit -m "${commitMessage}"`);
