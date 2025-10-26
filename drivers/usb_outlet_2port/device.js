@@ -84,20 +84,22 @@ class UsbOutlet2PortDevice extends SwitchDevice {
       }
       
       // Endpoint 2: Secondary USB port (onoff.usb2)
+      this.log('🔌 Configuring Port 2 (endpoint 2)...');
       if (this.hasCapability('onoff.usb2')) {
-        /* REFACTOR: registerCapability deprecated with cluster spec.
-   Original: this.registerCapability('onoff.usb2', 6,
-   Replace with SDK3 pattern - see ZigbeeDevice docs
-   Capability: 'onoff.usb2', Cluster: 6
-*/
-// this.registerCapability('onoff.usb2', 6, {
+        this.log('  - Capability onoff.usb2 exists');
+        this.log('  - Registering with CLUSTER.ON_OFF on endpoint 2');
+        
+        this.registerCapability('onoff.usb2', CLUSTER.ON_OFF, {
           endpoint: 2,
           get: 'onOff',
           set: 'onOff',
-          setParser: value => ({ value }),
+          setParser: value => {
+            this.log(`[SEND] Port 2 → ${value ? 'ON' : 'OFF'}`);
+            return { value };
+          },
           report: 'onOff',
           reportParser: value => {
-            this.log('[RECV] Port 2 state:', value ? 'on' : 'off');
+            this.log(`[RECV] Port 2 state: ${value ? 'ON' : 'OFF'}`);
             return value;
           },
           reportOpts: {
@@ -111,10 +113,12 @@ class UsbOutlet2PortDevice extends SwitchDevice {
             getOnStart: true
           }
         });
-        this.log('[OK] Port 2 (endpoint 2) configured');
+        this.log('[OK] ✅ Port 2 (endpoint 2) configured successfully');
+      } else {
+        this.log('[WARN] ⚠️ onoff.usb2 capability missing!');
       }
       
-      this.log('[OK] Multi-endpoint control configured successfully');
+      this.log('[OK] ✅ Multi-endpoint control configured - 2 ports ready');
     } catch (err) {
       this.error('Multi-endpoint setup failed:', err);
     }
