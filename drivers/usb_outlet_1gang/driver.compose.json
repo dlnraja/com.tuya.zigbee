@@ -13,8 +13,7 @@
     "measure_power",
     "meter_power",
     "measure_voltage",
-    "measure_current",
-    "measure_battery"
+    "measure_current"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -24,25 +23,6 @@
         "nl": "Stroom",
         "de": "Strom"
       }
-    },
-    "measure_battery": {
-      "title": {
-        "en": "Battery",
-        "fr": "Batterie"
-      },
-      "preventInsights": false
-    }
-  },
-  "energy": {
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "AAA",
-      "AA",
-      "CR123A"
-    ],
-    "approximation": {
-      "usageConstant": 0.5
     }
   },
   "zigbee": {
