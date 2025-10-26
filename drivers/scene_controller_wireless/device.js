@@ -196,7 +196,7 @@ class SceneControllerDevice extends ButtonDevice {
       verbosity: this.getSetting('debug_level') || 'INFO',
       trackPerformance: true
     });
-    this.log('✅ FallbackSystem initialized');
+    this.log('[OK] FallbackSystem initialized');
     } catch (err) { this.error('Await error:', err); }
 
     // Auto-detect device type and initialize Tuya cluster handler
@@ -204,9 +204,9 @@ class SceneControllerDevice extends ButtonDevice {
     const tuyaInitialized = await TuyaClusterHandler.init(this, zclNode, deviceType).catch(err => this.error(err));
     
     if (tuyaInitialized) {
-      this.log('✅ Tuya cluster handler initialized for type:', deviceType);
+      this.log('[OK] Tuya cluster handler initialized for type:', deviceType);
     } else {
-      this.log('⚠️  No Tuya cluster found, using standard Zigbee');
+      this.log('[WARN]  No Tuya cluster found, using standard Zigbee');
       
       // Fallback to standard cluster handling if needed
       try {
@@ -253,9 +253,9 @@ class SceneControllerDevice extends ButtonDevice {
     try {
       const flowCard = this.homey.flow.getDeviceTriggerCard(cardId);
       await flowCard.trigger(this, tokens).catch(err => this.error(err));
-      this.log(`✅ Flow triggered: ${cardId}`, tokens);
+      this.log(`[OK] Flow triggered: ${cardId}`, tokens);
     } catch (err) {
-      this.error(`❌ Flow trigger error: ${cardId}`, err);
+      this.error(`[ERROR] Flow trigger error: ${cardId}`, err);
     }
   }
 
@@ -371,7 +371,7 @@ class SceneControllerDevice extends ButtonDevice {
     try {
     await Promise.allSettled(promises).catch(err => this.error(err));
     } catch (err) { this.error('Await error:', err); }
-    this.log('✅ Poll attributes completed');
+    this.log('[OK] Poll attributes completed');
   }
 
 

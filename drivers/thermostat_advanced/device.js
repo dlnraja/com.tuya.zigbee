@@ -91,7 +91,7 @@ class SmartThermostatHybridDevice extends BaseHybridDevice {
           
           // Low battery alert
           if (percentage <= 20 && percentage > 10) {
-            this.log('⚠️  Low battery warning:', percentage + '%');
+            this.log('[WARN]  Low battery warning:', percentage + '%');
             await this.homey.notifications.createNotification({
               excerpt: `${this.getName()} battery low (${percentage}%)`
             }).catch(() => {});
@@ -143,7 +143,7 @@ class SmartThermostatHybridDevice extends BaseHybridDevice {
       verbosity: this.getSetting('debug_level') || 'INFO',
       trackPerformance: true
     });
-    this.log('✅ FallbackSystem initialized');
+    this.log('[OK] FallbackSystem initialized');
     } catch (err) { this.error('Await error:', err); }
 
     // Auto-detect device type and initialize Tuya cluster handler
@@ -151,9 +151,9 @@ class SmartThermostatHybridDevice extends BaseHybridDevice {
     const tuyaInitialized = await TuyaClusterHandler.init(this, zclNode, deviceType).catch(err => this.error(err));
     
     if (tuyaInitialized) {
-      this.log('✅ Tuya cluster handler initialized for type:', deviceType);
+      this.log('[OK] Tuya cluster handler initialized for type:', deviceType);
     } else {
-      this.log('⚠️  No Tuya cluster found, using standard Zigbee');
+      this.log('[WARN]  No Tuya cluster found, using standard Zigbee');
       
       // Fallback to standard cluster handling if needed
       try {
@@ -181,9 +181,9 @@ class SmartThermostatHybridDevice extends BaseHybridDevice {
     try {
       const flowCard = this.homey.flow.getDeviceTriggerCard(cardId);
       await flowCard.trigger(this, tokens).catch(err => this.error(err));
-      this.log(`✅ Flow triggered: ${cardId}`, tokens);
+      this.log(`[OK] Flow triggered: ${cardId}`, tokens);
     } catch (err) {
-      this.error(`❌ Flow trigger error: ${cardId}`, err);
+      this.error(`[ERROR] Flow trigger error: ${cardId}`, err);
     }
   }
 
@@ -299,7 +299,7 @@ class SmartThermostatHybridDevice extends BaseHybridDevice {
     try {
     await Promise.allSettled(promises).catch(err => this.error(err));
     } catch (err) { this.error('Await error:', err); }
-    this.log('✅ Poll attributes completed');
+    this.log('[OK] Poll attributes completed');
   }
 
 
@@ -363,11 +363,11 @@ class SmartThermostatHybridDevice extends BaseHybridDevice {
       return;
     }
     
-    this.log('🌡️  Setting up measure_temperature (cluster 1026)...');
+    this.log('[TEMP]  Setting up measure_temperature (cluster 1026)...');
     
     const endpoint = this.zclNode.endpoints[1];
     if (!endpoint?.clusters[1026]) {
-      this.log('⚠️  Cluster 1026 not available');
+      this.log('[WARN]  Cluster 1026 not available');
       return;
     }
     
@@ -393,7 +393,7 @@ class SmartThermostatHybridDevice extends BaseHybridDevice {
         }
       });
       
-      this.log('✅ measure_temperature configured (cluster 1026)');
+      this.log('[OK] measure_temperature configured (cluster 1026)');
     } catch (err) {
       this.error('measure_temperature setup failed:', err);
     }

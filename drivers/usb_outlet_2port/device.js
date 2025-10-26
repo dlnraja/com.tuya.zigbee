@@ -34,7 +34,7 @@ class UsbOutlet2PortDevice extends SwitchDevice {
     // Setup multi-endpoint control
     await this.setupMultiEndpointControl();
     
-    this.log('✅ UsbOutlet2PortDevice ready');
+    this.log('[OK] UsbOutlet2PortDevice ready');
     this.log(`   Power source: ${this.powerType || 'unknown'}`);
     this.log(`   Model: ${this.getData().manufacturerName}`);
   }
@@ -44,7 +44,7 @@ class UsbOutlet2PortDevice extends SwitchDevice {
    * Uses numeric cluster IDs as required by SDK3
    */
   async setupMultiEndpointControl() {
-    this.log('🔌 Setting up 2-port multi-endpoint control (SDK3)...');
+    this.log('[POWER] Setting up 2-port multi-endpoint control (SDK3)...');
     
     try {
       // Endpoint 1: Main USB port (onoff)
@@ -61,7 +61,7 @@ class UsbOutlet2PortDevice extends SwitchDevice {
           setParser: value => ({ value }),
           report: 'onOff',
           reportParser: value => {
-            this.log('📥 Port 1 state:', value ? 'on' : 'off');
+            this.log('[RECV] Port 1 state:', value ? 'on' : 'off');
             return value;
           },
           reportOpts: {
@@ -75,7 +75,7 @@ class UsbOutlet2PortDevice extends SwitchDevice {
             getOnStart: true
           }
         });
-        this.log('✅ Port 1 (endpoint 1) configured');
+        this.log('[OK] Port 1 (endpoint 1) configured');
       }
       
       // Endpoint 2: Secondary USB port (onoff.usb2)
@@ -92,7 +92,7 @@ class UsbOutlet2PortDevice extends SwitchDevice {
           setParser: value => ({ value }),
           report: 'onOff',
           reportParser: value => {
-            this.log('📥 Port 2 state:', value ? 'on' : 'off');
+            this.log('[RECV] Port 2 state:', value ? 'on' : 'off');
             return value;
           },
           reportOpts: {
@@ -106,10 +106,10 @@ class UsbOutlet2PortDevice extends SwitchDevice {
             getOnStart: true
           }
         });
-        this.log('✅ Port 2 (endpoint 2) configured');
+        this.log('[OK] Port 2 (endpoint 2) configured');
       }
       
-      this.log('✅ Multi-endpoint control configured successfully');
+      this.log('[OK] Multi-endpoint control configured successfully');
     } catch (err) {
       this.error('Multi-endpoint setup failed:', err);
     }

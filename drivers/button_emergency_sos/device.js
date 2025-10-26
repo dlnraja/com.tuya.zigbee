@@ -31,24 +31,24 @@ class SosEmergencyButtonDevice extends ButtonDevice {
    */
   async setupIasZone() {
     try {
-      this.log('🆘 Setting up IAS Zone for SOS button (SDK3 latest)...');
+      this.log('[SOS] Setting up IAS Zone for SOS button (SDK3 latest)...');
       
       const endpoint = this.zclNode.endpoints[1];
       if (!endpoint?.clusters?.iasZone) {
-        this.log('ℹ️  IAS Zone cluster not available on this device');
+        this.log('[INFO] IAS Zone cluster not available on this device');
         return;
       }
       
       // Setup Zone Enroll Request listener (SDK3 property assignment)
       endpoint.clusters.iasZone.onZoneEnrollRequest = async () => {
-        this.log('📨 Zone Enroll Request received');
+        this.log('[ENROLL] Zone Enroll Request received');
         
         try {
           await endpoint.clusters.iasZone.zoneEnrollResponse({
             enrollResponseCode: 0,
             zoneId: 10
           });
-          this.log('✅ Zone Enroll Response sent');
+          this.log('[OK] Zone Enroll Response sent');
         } catch (err) {
           this.error('Zone enroll response failed:', err.message);
         }
@@ -60,14 +60,14 @@ class SosEmergencyButtonDevice extends ButtonDevice {
           enrollResponseCode: 0,
           zoneId: 10
         });
-        this.log('✅ Proactive Zone Enroll Response sent');
+        this.log('[OK] Proactive Zone Enroll Response sent');
       } catch (err) {
-        this.log('⚠️  Proactive response failed (normal if device sleeping):', err.message);
+        this.log('[WARN] Proactive response failed (normal if device sleeping):', err.message);
       }
       
       // Setup Zone Status Change listener (SDK3 property assignment)
       endpoint.clusters.iasZone.onZoneStatusChangeNotification = (payload) => {
-        this.log('🚨 SOS BUTTON PRESSED!', payload);
+        this.log('[ALARM] SOS BUTTON PRESSED!', payload);
         
         // Trigger flow card
         if (this.driver.sosButtonPressedTrigger) {
@@ -87,7 +87,7 @@ class SosEmergencyButtonDevice extends ButtonDevice {
       
       // Also setup attribute listener (SDK3 property assignment)
       endpoint.clusters.iasZone.onZoneStatus = (zoneStatus) => {
-        this.log('🚨 SOS Zone Status Changed:', zoneStatus);
+        this.log('[ALARM] SOS Zone Status Changed:', zoneStatus);
         if (this.driver.sosButtonPressedTrigger) {
           this.driver.sosButtonPressedTrigger.trigger(this, {}, {}).catch(this.error);
         }
@@ -97,7 +97,7 @@ class SosEmergencyButtonDevice extends ButtonDevice {
       if (endpoint?.clusters?.genPowerCfg) {
         endpoint.clusters.genPowerCfg.on('attr.batteryPercentageRemaining', async (value) => {
           const battery = value / 2;
-          this.log('🔋 Battery:', battery, '%');
+          this.log('[BATTERY] Battery:', battery, '%');
           if (this.hasCapability('measure_battery')) {
             await this.setCapabilityValue('measure_battery', battery).catch(this.error);
           }
@@ -109,7 +109,7 @@ class SosEmergencyButtonDevice extends ButtonDevice {
         ]).catch(err => this.log('Battery reporting config (non-critical):', err.message));
       }
       
-      this.log('✅ SOS Button IAS Zone configured - READY');
+      this.log('[OK] SOS Button IAS Zone configured - READY');
       
     } catch (err) {
       this.error('IAS Zone setup failed:', err);

@@ -14,21 +14,21 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
     // Initialize hybrid base (power detection)
     await super.onNodeInit();
 
-    this.log('🔄 Initializing Universal Wireless Button');
+    this.log('[SYNC] Initializing Universal Wireless Button');
     
     try {
       // ==========================================
       // STEP 1: DETECT BUTTON COUNT
       // ==========================================
       const buttonCount = await this.detectButtonCount(zclNode).catch(err => this.error(err));
-      this.log(`✅ Detected ${buttonCount} button(s)`);
+      this.log(`[OK] Detected ${buttonCount} button(s)`);
       await this.setStoreValue('button_count', buttonCount).catch(err => this.error(err));
       
       // ==========================================
       // STEP 2: DETECT POWER TYPE & BATTERY
       // ==========================================
       const hasBattery = await this.detectBattery(zclNode).catch(err => this.error(err));
-      this.log(`✅ Battery powered: ${hasBattery}`);
+      this.log(`[OK] Battery powered: ${hasBattery}`);
       await this.setStoreValue('has_battery', hasBattery).catch(err => this.error(err));
       
       // ==========================================
@@ -45,7 +45,7 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
       
       await this.configureButtonClusters(zclNode, buttonCount).catch(err => this.error(err));
       
-      this.log('✅ Universal Wireless Button initialized successfully');
+      this.log('[OK] Universal Wireless Button initialized successfully');
       
     } catch (err) {
       this.error('Initialization error:', err);
@@ -164,7 +164,7 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
           // Check low battery threshold
           const threshold = this.getSetting('battery_threshold') || 20;
           if (percentage <= threshold) {
-            this.log(`⚠️ Low battery: ${percentage}% (threshold: ${threshold}%)`);
+            this.log(`[WARN] Low battery: ${percentage}% (threshold: ${threshold}%)`);
           }
           
           return percentage;
@@ -187,7 +187,7 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
         this.log('Battery reporting config failed (may not be supported):', err.message);
       });
       
-      this.log('✅ Battery reporting configured');
+      this.log('[OK] Battery reporting configured');
       
     } catch (err) {
       this.error('Battery configuration error:', err);

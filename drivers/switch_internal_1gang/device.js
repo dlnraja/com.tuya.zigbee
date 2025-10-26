@@ -411,7 +411,7 @@ class TuyaZigbeeDevice extends SwitchDevice {
           
           // Low battery alert
           if (percentage <= 20 && percentage > 10) {
-            this.log('⚠️  Low battery warning:', percentage + '%');
+            this.log('[WARN]  Low battery warning:', percentage + '%');
             await this.homey.notifications.createNotification({
               excerpt: `${this.getName()} battery low (${percentage}%)`
             }).catch(() => {});
@@ -475,7 +475,7 @@ class TuyaZigbeeDevice extends SwitchDevice {
     try {
     await Promise.allSettled(promises).catch(err => this.error(err));
     } catch (err) { this.error('Await error:', err); }
-    this.log('✅ Poll attributes completed');
+    this.log('[OK] Poll attributes completed');
   }
 
 

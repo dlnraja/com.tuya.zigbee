@@ -32,7 +32,7 @@ class Switch2gangDevice extends SwitchDevice {
    */
   async setupMultiEndpoint() {
     try {
-      this.log('🔌 Setting up multi-endpoint control...');
+      this.log('[POWER] Setting up multi-endpoint control...');
       
       // Gang 2 (endpoint 2) - Gang 1 already configured by parent SwitchDevice
       if (this.hasCapability('onoff.button2')) {
@@ -41,13 +41,13 @@ class Switch2gangDevice extends SwitchDevice {
         if (endpoint2?.clusters?.onOff) {
           // Listen for state changes
           endpoint2.clusters.onOff.on('attr.onOff', async (value) => {
-            this.log('🔌 Gang 2 state changed:', value);
+            this.log('[POWER] Gang 2 state changed:', value);
             await this.setCapabilityValue('onoff.button2', value).catch(this.error);
           });
           
           // Control capability
           this.registerCapabilityListener('onoff.button2', async (value) => {
-            this.log('🔌 Setting Gang 2 to:', value);
+            this.log('[POWER] Setting Gang 2 to:', value);
             await endpoint2.clusters.onOff[value ? 'setOn' : 'setOff']();
           });
         }
@@ -107,7 +107,7 @@ class Switch2gangDevice extends SwitchDevice {
         ]).catch(err => this.log('Electrical reporting config (non-critical):', err.message));
       }
       
-      this.log('✅ Multi-endpoint control configured');
+      this.log('[OK] Multi-endpoint control configured');
       
     } catch (err) {
       this.error('Multi-endpoint setup failed:', err);

@@ -40,11 +40,11 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
       return;
     }
     
-    this.log('🌡️  Setting up measure_luminance (cluster 1024)...');
+    this.log('[TEMP]  Setting up measure_luminance (cluster 1024)...');
     
     const endpoint = this.zclNode.endpoints[1];
     if (!endpoint?.clusters[1024]) {
-      this.log('⚠️  Cluster 1024 not available');
+      this.log('[WARN]  Cluster 1024 not available');
       return;
     }
     
@@ -70,7 +70,7 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
         }
       });
       
-      this.log('✅ measure_luminance configured (cluster 1024)');
+      this.log('[OK] measure_luminance configured (cluster 1024)');
     } catch (err) {
       this.error('measure_luminance setup failed:', err);
     }
@@ -81,7 +81,7 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
    * Setup IAS Zone for Motion detection (SDK3 Compliant)
    * 
    * Based on Peter's successful diagnostic patterns:
-   * - Temperature/Humidity/Lux work via standard clusters ✅
+   * - Temperature/Humidity/Lux work via standard clusters [OK]
    * - IAS Zone requires special SDK3 enrollment method
    * 
    * Cluster 1280 (IASZone) - Motion/Alarm detection
@@ -96,7 +96,7 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
     const endpoint = this.zclNode.endpoints[1];
     
     if (!endpoint?.clusters?.iasZone) {
-      this.log('ℹ️  IAS Zone cluster not available');
+      this.log('[INFO]  IAS Zone cluster not available');
       return;
     }
     
@@ -104,7 +104,7 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
       // Step 1: Setup Zone Enroll Request listener (SYNCHRONOUS - property assignment)
       // SDK3: Use property assignment, NOT .on() event listener
       endpoint.clusters.iasZone.onZoneEnrollRequest = async () => {
-        this.log('📨 Zone Enroll Request received');
+        this.log('[MSG] Zone Enroll Request received');
         
         try {
           // Send response IMMEDIATELY
@@ -113,18 +113,18 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
             zoneId: 10
           });
           
-          this.log('✅ Zone Enroll Response sent (zoneId: 10)');
+          this.log('[OK] Zone Enroll Response sent (zoneId: 10)');
         } catch (err) {
           this.error('Failed to send Zone Enroll Response:', err.message);
         }
       };
       
-      this.log('✅ Zone Enroll Request listener configured');
+      this.log('[OK] Zone Enroll Request listener configured');
       
       // Step 2: Send proactive Zone Enroll Response (SDK3 official method)
       // Per Homey docs: "driver could send Zone Enroll Response when initializing
       // regardless of having received Zone Enroll Request"
-      this.log('📤 Sending proactive Zone Enroll Response...');
+      this.log('[SEND] Sending proactive Zone Enroll Response...');
       
       try {
         await endpoint.clusters.iasZone.zoneEnrollResponse({
@@ -132,15 +132,15 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
           zoneId: 10
         });
         
-        this.log('✅ Proactive Zone Enroll Response sent');
+        this.log('[OK] Proactive Zone Enroll Response sent');
       } catch (err) {
-        this.log('⚠️  Proactive response failed (normal if device not ready):', err.message);
+        this.log('[WARN]  Proactive response failed (normal if device not ready):', err.message);
       }
       
       // Step 3: Setup Zone Status Change listener (property assignment)
       // SDK3: Use .onZoneStatusChangeNotification property, NOT .on() event
       endpoint.clusters.iasZone.onZoneStatusChangeNotification = (payload) => {
-        this.log('📨 Zone notification received:', payload);
+        this.log('[MSG] Zone notification received:', payload);
         
         if (payload && payload.zoneStatus !== undefined) {
           // Convert Bitmap to value if needed
@@ -153,16 +153,16 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
           const alarm = (status & 0x01) !== 0;
           
           await this.setCapabilityValue('alarm_motion', alarm).catch(this.error);
-          this.log(`${alarm ? '🚨' : '✅'} Alarm: ${alarm ? 'TRIGGERED' : 'cleared'}`);
+          this.log(`${alarm ? '[ALARM]' : '[OK]'} Alarm: ${alarm ? 'TRIGGERED' : 'cleared'}`);
         }
       };
       
-      this.log('✅ Zone Status listener configured');
+      this.log('[OK] Zone Status listener configured');
       
       // Step 4: Setup Zone Status attribute listener (property assignment)
       // Alternative listener for attribute reports
       endpoint.clusters.iasZone.onZoneStatus = (zoneStatus) => {
-        this.log('📊 Zone attribute report:', zoneStatus);
+        this.log('[DATA] Zone attribute report:', zoneStatus);
         
         let status = zoneStatus;
         if (status && typeof status.valueOf === 'function') {
@@ -173,7 +173,7 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
         await this.setCapabilityValue('alarm_motion', alarm).catch(this.error);
       };
       
-      this.log('✅ IAS Zone configured successfully (SDK3 latest method)');
+      this.log('[OK] IAS Zone configured successfully (SDK3 latest method)');
       
     } catch (err) {
       this.error('IAS Zone setup failed:', err);
@@ -190,7 +190,7 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
    */
   async setupAttributeReporting() {
     try {
-      this.log('📊 Setting up attribute reporting...');
+      this.log('[DATA] Setting up attribute reporting...');
       
       const endpoint = this.zclNode.endpoints[1];
       
@@ -200,7 +200,7 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
       if (endpoint?.clusters?.msTemperatureMeasurement) {
         endpoint.clusters.msTemperatureMeasurement.on('attr.measuredValue', async (value) => {
           const temperature = value / 100;
-          this.log('🌡️ Temperature:', temperature);
+          this.log('[TEMP] Temperature:', temperature);
           await this.setCapabilityValue('measure_temperature', temperature).catch(this.error);
         });
       }
@@ -209,7 +209,7 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
       if (endpoint?.clusters?.msRelativeHumidity) {
         endpoint.clusters.msRelativeHumidity.on('attr.measuredValue', async (value) => {
           const humidity = value / 100;
-          this.log('💧 Humidity:', humidity);
+          this.log('[HUMID] Humidity:', humidity);
           await this.setCapabilityValue('measure_humidity', humidity).catch(this.error);
         });
       }
@@ -218,7 +218,7 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
       if (endpoint?.clusters?.genPowerCfg) {
         endpoint.clusters.genPowerCfg.on('attr.batteryPercentageRemaining', async (value) => {
           const battery = value / 2;
-          this.log('🔋 Battery:', battery, '%');
+          this.log('[BATTERY] Battery:', battery, '%');
           await this.setCapabilityValue('measure_battery', battery).catch(this.error);
         });
       }
@@ -227,7 +227,7 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
       if (endpoint?.clusters?.msIlluminanceMeasurement) {
         endpoint.clusters.msIlluminanceMeasurement.on('attr.measuredValue', async (value) => {
           const lux = Math.pow(10, (value - 1) / 10000);
-          this.log('💡 Illuminance:', lux, 'lux');
+          this.log('[BULB] Illuminance:', lux, 'lux');
           await this.setCapabilityValue('measure_luminance', lux).catch(this.error);
         });
       }
@@ -241,9 +241,9 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
             await endpoint.clusters.iasZone.writeAttributes({
               iasCieAddr: ieeeAddress
             }).catch(err => this.log('IAS enrollment (non-critical):', err.message));
-            this.log('✅ IAS Zone enrolled with IEEE:', ieeeAddress);
+            this.log('[OK] IAS Zone enrolled with IEEE:', ieeeAddress);
           } else {
-            this.log('⚠️  IAS enrollment skipped: IEEE address not available');
+            this.log('[WARN]  IAS enrollment skipped: IEEE address not available');
           }
         } catch (err) {
           this.log('IAS enrollment error:', err.message);
@@ -272,7 +272,7 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
         { endpointId: 1, cluster: 1024, attributeName: 'measuredValue', minInterval: 60, maxInterval: 3600, minChange: 100 }
       ]).catch(err => this.log('Configure reporting (non-critical):', err.message));
       
-      this.log('✅ Attribute reporting configured');
+      this.log('[OK] Attribute reporting configured');
       
     } catch (err) {
       this.error('Attribute reporting setup failed:', err);

@@ -36,7 +36,7 @@ class UsbOutlet1GangDevice extends SwitchDevice {
     // Setup power measurement capabilities (SDK3)
     await this.setupPowerMeasurement();
     
-    this.log('✅ UsbOutlet1GangDevice ready');
+    this.log('[OK] UsbOutlet1GangDevice ready');
     this.log(`   Power source: ${this.powerType || 'unknown'}`);
     this.log(`   Model: ${this.getData().manufacturerName}`);
   }
@@ -54,11 +54,11 @@ class UsbOutlet1GangDevice extends SwitchDevice {
     
     const endpoint = this.zclNode.endpoints[1];
     if (!endpoint) {
-      this.log('⚠️  Endpoint 1 not available');
+      this.log('[WARN]  Endpoint 1 not available');
       return;
     }
     
-    this.log('🔌 Setting up power measurement (SDK3)...');
+    this.log('[POWER] Setting up power measurement (SDK3)...');
     
     // Cluster 2820 (ElectricalMeasurement): Power, Voltage, Current
     if (endpoint.clusters[2820]) {
@@ -76,7 +76,7 @@ class UsbOutlet1GangDevice extends SwitchDevice {
             reportParser: value => {
               // Convert to Watts (device reports in 0.1W units)
               const watts = value / 10;
-              this.log('📊 Power:', watts, 'W');
+              this.log('[DATA] Power:', watts, 'W');
               return watts;
             },
             reportOpts: {
@@ -90,7 +90,7 @@ class UsbOutlet1GangDevice extends SwitchDevice {
               getOnStart: true
             }
           });
-          this.log('✅ measure_power configured (cluster 2820)');
+          this.log('[OK] measure_power configured (cluster 2820)');
         }
         
         // measure_voltage (rmsVoltage)
@@ -105,7 +105,7 @@ class UsbOutlet1GangDevice extends SwitchDevice {
             report: 'rmsVoltage',
             reportParser: value => {
               const volts = value;
-              this.log('📊 Voltage:', volts, 'V');
+              this.log('[DATA] Voltage:', volts, 'V');
               return volts;
             },
             reportOpts: {
@@ -119,7 +119,7 @@ class UsbOutlet1GangDevice extends SwitchDevice {
               getOnStart: true
             }
           });
-          this.log('✅ measure_voltage configured (cluster 2820)');
+          this.log('[OK] measure_voltage configured (cluster 2820)');
         }
         
         // measure_current (rmsCurrent)
@@ -135,7 +135,7 @@ class UsbOutlet1GangDevice extends SwitchDevice {
             reportParser: value => {
               // Convert to Amps (device reports in mA)
               const amps = value / 1000;
-              this.log('📊 Current:', amps, 'A');
+              this.log('[DATA] Current:', amps, 'A');
               return amps;
             },
             reportOpts: {
@@ -149,13 +149,13 @@ class UsbOutlet1GangDevice extends SwitchDevice {
               getOnStart: true
             }
           });
-          this.log('✅ measure_current configured (cluster 2820)');
+          this.log('[OK] measure_current configured (cluster 2820)');
         }
       } catch (err) {
         this.error('Electrical measurement setup failed:', err);
       }
     } else {
-      this.log('ℹ️  Cluster 2820 (ElectricalMeasurement) not available');
+      this.log('[INFO]  Cluster 2820 (ElectricalMeasurement) not available');
     }
     
     // Cluster 1794 (Metering): Energy consumption
@@ -174,7 +174,7 @@ class UsbOutlet1GangDevice extends SwitchDevice {
             reportParser: value => {
               // Convert to kWh (device reports in Wh)
               const kwh = value / 1000;
-              this.log('📊 Energy:', kwh, 'kWh');
+              this.log('[DATA] Energy:', kwh, 'kWh');
               return kwh;
             },
             reportOpts: {
@@ -188,16 +188,16 @@ class UsbOutlet1GangDevice extends SwitchDevice {
               getOnStart: true
             }
           });
-          this.log('✅ meter_power configured (cluster 1794)');
+          this.log('[OK] meter_power configured (cluster 1794)');
         }
       } catch (err) {
         this.error('Metering setup failed:', err);
       }
     } else {
-      this.log('ℹ️  Cluster 1794 (Metering) not available');
+      this.log('[INFO]  Cluster 1794 (Metering) not available');
     }
     
-    this.log('✅ Power measurement setup complete');
+    this.log('[OK] Power measurement setup complete');
   }
 
   async onDeleted() {
