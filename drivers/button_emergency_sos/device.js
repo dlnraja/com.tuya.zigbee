@@ -44,7 +44,7 @@ class SosEmergencyButtonDevice extends ButtonDevice {
         this.log('📨 Zone Enroll Request received');
         
         try {
-          endpoint.clusters.iasZone.zoneEnrollResponse({
+          await endpoint.clusters.iasZone.zoneEnrollResponse({
             enrollResponseCode: 0,
             zoneId: 10
           });
@@ -56,13 +56,13 @@ class SosEmergencyButtonDevice extends ButtonDevice {
       
       // Send proactive Zone Enroll Response (SDK3 official method)
       try {
-        endpoint.clusters.iasZone.zoneEnrollResponse({
+        await endpoint.clusters.iasZone.zoneEnrollResponse({
           enrollResponseCode: 0,
           zoneId: 10
         });
         this.log('✅ Proactive Zone Enroll Response sent');
       } catch (err) {
-        this.log('⚠️  Proactive response failed (normal):', err.message);
+        this.log('⚠️  Proactive response failed (normal if device sleeping):', err.message);
       }
       
       // Setup Zone Status Change listener (SDK3 property assignment)
