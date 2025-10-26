@@ -31,11 +31,11 @@ class RadiatorValveDevice extends BaseHybridDevice {
       return;
     }
     
-    this.log('🌡️  Setting up measure_temperature (cluster 1026)...');
+    this.log('[TEMP]  Setting up measure_temperature (cluster 1026)...');
     
     const endpoint = this.zclNode.endpoints[1];
     if (!endpoint?.clusters[1026]) {
-      this.log('⚠️  Cluster 1026 not available');
+      this.log('[WARN]  Cluster 1026 not available');
       return;
     }
     
@@ -61,7 +61,7 @@ class RadiatorValveDevice extends BaseHybridDevice {
         }
       });
       
-      this.log('✅ measure_temperature configured (cluster 1026)');
+      this.log('[OK] measure_temperature configured (cluster 1026)');
     } catch (err) {
       this.error('measure_temperature setup failed:', err);
     }

@@ -59,7 +59,7 @@ class SoundControllerBatteryDevice extends ButtonDevice {
       reportParser: value => {
         const isLowBattery = value > 0;
         if (isLowBattery) {
-          this.log('⚠️ Low battery alarm triggered!');
+          this.log('[WARN] Low battery alarm triggered!');
           this.setWarning('Low battery detected').catch(this.error);
         }
         return isLowBattery;

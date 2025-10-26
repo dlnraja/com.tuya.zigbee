@@ -338,9 +338,9 @@ class TuyaZigbeeDevice extends SwitchDevice {
     try {
       const flowCard = this.homey.flow.getDeviceTriggerCard(cardId);
       await flowCard.trigger(this, tokens).catch(err => this.error(err));
-      this.log(`✅ Flow triggered: ${cardId}`, tokens);
+      this.log(`[OK] Flow triggered: ${cardId}`, tokens);
     } catch (err) {
-      this.error(`❌ Flow trigger error: ${cardId}`, err);
+      this.error(`[ERROR] Flow trigger error: ${cardId}`, err);
     }
   }
 
@@ -456,7 +456,7 @@ class TuyaZigbeeDevice extends SwitchDevice {
     try {
     await Promise.allSettled(promises).catch(err => this.error(err));
     } catch (err) { this.error('Await error:', err); }
-    this.log('✅ Poll attributes completed');
+    this.log('[OK] Poll attributes completed');
   }
 
 

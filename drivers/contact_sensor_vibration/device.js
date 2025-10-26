@@ -168,7 +168,7 @@ class ContactVibrationSensor extends SensorDevice {
    * Setup IAS Zone for Contact sensor (SDK3 Compliant)
    * 
    * Based on Peter's successful diagnostic patterns:
-   * - Temperature/Humidity/Lux work via standard clusters ✅
+   * - Temperature/Humidity/Lux work via standard clusters [OK]
    * - IAS Zone requires special SDK3 enrollment method
    * 
    * Cluster 1280 (IASZone) - Motion/Alarm detection
@@ -183,7 +183,7 @@ class ContactVibrationSensor extends SensorDevice {
     const endpoint = this.zclNode.endpoints[1];
     
     if (!endpoint?.clusters?.iasZone) {
-      this.log('ℹ️  IAS Zone cluster not available');
+      this.log('[INFO]  IAS Zone cluster not available');
       return;
     }
     
@@ -191,7 +191,7 @@ class ContactVibrationSensor extends SensorDevice {
       // Step 1: Setup Zone Enroll Request listener (SYNCHRONOUS - property assignment)
       // SDK3: Use property assignment, NOT .on() event listener
       endpoint.clusters.iasZone.onZoneEnrollRequest = () => {
-        this.log('📨 Zone Enroll Request received');
+        this.log('[MSG] Zone Enroll Request received');
         
         try {
           // Send response IMMEDIATELY (synchronous, no async, no delay)
@@ -200,18 +200,18 @@ class ContactVibrationSensor extends SensorDevice {
             zoneId: 10
           });
           
-          this.log('✅ Zone Enroll Response sent (zoneId: 10)');
+          this.log('[OK] Zone Enroll Response sent (zoneId: 10)');
         } catch (err) {
           this.error('Failed to send Zone Enroll Response:', err.message);
         }
       };
       
-      this.log('✅ Zone Enroll Request listener configured');
+      this.log('[OK] Zone Enroll Request listener configured');
       
       // Step 2: Send proactive Zone Enroll Response (SDK3 official method)
       // Per Homey docs: "driver could send Zone Enroll Response when initializing
       // regardless of having received Zone Enroll Request"
-      this.log('📤 Sending proactive Zone Enroll Response...');
+      this.log('[SEND] Sending proactive Zone Enroll Response...');
       
       try {
         await endpoint.clusters.iasZone.zoneEnrollResponse({
@@ -219,15 +219,15 @@ class ContactVibrationSensor extends SensorDevice {
           zoneId: 10
         });
         
-        this.log('✅ Proactive Zone Enroll Response sent');
+        this.log('[OK] Proactive Zone Enroll Response sent');
       } catch (err) {
-        this.log('⚠️  Proactive response failed (normal if device not ready):', err.message);
+        this.log('[WARN]  Proactive response failed (normal if device not ready):', err.message);
       }
       
       // Step 3: Setup Zone Status Change listener (property assignment)
       // SDK3: Use .onZoneStatusChangeNotification property, NOT .on() event
       endpoint.clusters.iasZone.onZoneStatusChangeNotification = (payload) => {
-        this.log('📨 Zone notification received:', payload);
+        this.log('[MSG] Zone notification received:', payload);
         
         if (payload && payload.zoneStatus !== undefined) {
           // Convert Bitmap to value if needed
@@ -240,16 +240,16 @@ class ContactVibrationSensor extends SensorDevice {
           const alarm = (status & 0x01) !== 0;
           
           await this.setCapabilityValue('alarm_contact', alarm).catch(this.error);
-          this.log(`${alarm ? '🚨' : '✅'} Alarm: ${alarm ? 'TRIGGERED' : 'cleared'}`);
+          this.log(`${alarm ? '[ALARM]' : '[OK]'} Alarm: ${alarm ? 'TRIGGERED' : 'cleared'}`);
         }
       };
       
-      this.log('✅ Zone Status listener configured');
+      this.log('[OK] Zone Status listener configured');
       
       // Step 4: Setup Zone Status attribute listener (property assignment)
       // Alternative listener for attribute reports
       endpoint.clusters.iasZone.onZoneStatus = (zoneStatus) => {
-        this.log('📊 Zone attribute report:', zoneStatus);
+        this.log('[DATA] Zone attribute report:', zoneStatus);
         
         let status = zoneStatus;
         if (status && typeof status.valueOf === 'function') {
@@ -260,7 +260,7 @@ class ContactVibrationSensor extends SensorDevice {
         await this.setCapabilityValue('alarm_contact', alarm).catch(this.error);
       };
       
-      this.log('✅ IAS Zone configured successfully (SDK3 latest method)');
+      this.log('[OK] IAS Zone configured successfully (SDK3 latest method)');
       
     } catch (err) {
       this.error('IAS Zone setup failed:', err);
