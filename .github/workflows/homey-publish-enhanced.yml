@@ -88,7 +88,7 @@ jobs:
       - name: Test build
         run: |
           npm install -g homey
-          homey app build --production
+          homey app build
           
           if [ -d ".homeybuild" ]; then
             BUILD_SIZE=$(du -sh .homeybuild | cut -f1)
