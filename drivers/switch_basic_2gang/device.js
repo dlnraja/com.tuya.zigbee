@@ -34,16 +34,23 @@ class Switch2gangDevice extends SwitchDevice {
     try {
       this.log('🔌 Setting up multi-endpoint control...');
       
-      // Gang 1 (endpoint 1)
-      this.registerCapability('onoff', 6, {
-        endpoint: 1
-      });
-      
-      // Gang 2 (endpoint 2)
+      // Gang 2 (endpoint 2) - Gang 1 already configured by parent SwitchDevice
       if (this.hasCapability('onoff.button2')) {
-        this.registerCapability('onoff.button2', 6, {
-          endpoint: 2
-        });
+        // Manual listener for Gang 2 since registerCapability fails with multi-endpoint
+        const endpoint2 = this.zclNode.endpoints[2];
+        if (endpoint2?.clusters?.onOff) {
+          // Listen for state changes
+          endpoint2.clusters.onOff.on('attr.onOff', async (value) => {
+            this.log('🔌 Gang 2 state changed:', value);
+            await this.setCapabilityValue('onoff.button2', value).catch(this.error);
+          });
+          
+          // Control capability
+          this.registerCapabilityListener('onoff.button2', async (value) => {
+            this.log('🔌 Setting Gang 2 to:', value);
+            await endpoint2.clusters.onOff[value ? 'setOn' : 'setOff']();
+          });
+        }
       }
       
       // Energy monitoring (if available on endpoint 1)
