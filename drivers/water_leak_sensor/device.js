@@ -43,7 +43,12 @@ class WaterLeakSensorDevice extends BaseHybridDevice {
     }
     
     try {
-      this.registerCapability('measure_temperature', 1026, {
+      /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('measure_temperature', 1026,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'measure_temperature', Cluster: 1026
+*/
+// this.registerCapability('measure_temperature', 1026, {
         get: 'measuredValue',
         report: 'measuredValue',
         reportParser: value => value / 100,
@@ -141,7 +146,7 @@ class WaterLeakSensorDevice extends BaseHybridDevice {
           // Check alarm1 bit (motion/alarm detected)
           const alarm = (status & 0x01) !== 0;
           
-          this.setCapabilityValue('alarm_motion', alarm).catch(this.error);
+          await this.setCapabilityValue('alarm_motion', alarm).catch(this.error);
           this.log(`${alarm ? '🚨' : '✅'} Alarm: ${alarm ? 'TRIGGERED' : 'cleared'}`);
         }
       };
@@ -159,7 +164,7 @@ class WaterLeakSensorDevice extends BaseHybridDevice {
         }
         
         const alarm = (status & 0x01) !== 0;
-        this.setCapabilityValue('alarm_motion', alarm).catch(this.error);
+        await this.setCapabilityValue('alarm_motion', alarm).catch(this.error);
       };
       
       this.log('✅ IAS Zone configured successfully (SDK3 latest method)');

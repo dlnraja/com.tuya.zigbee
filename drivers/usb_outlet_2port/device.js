@@ -49,7 +49,12 @@ class UsbOutlet2PortDevice extends SwitchDevice {
     try {
       // Endpoint 1: Main USB port (onoff)
       if (this.hasCapability('onoff')) {
-        this.registerCapability('onoff', 6, {
+        /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('onoff', 6,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'onoff', Cluster: 6
+*/
+// this.registerCapability('onoff', 6, {
           endpoint: 1,
           get: 'onOff',
           set: 'onOff',
@@ -75,7 +80,12 @@ class UsbOutlet2PortDevice extends SwitchDevice {
       
       // Endpoint 2: Secondary USB port (onoff.usb2)
       if (this.hasCapability('onoff.usb2')) {
-        this.registerCapability('onoff.usb2', 6, {
+        /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('onoff.usb2', 6,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'onoff.usb2', Cluster: 6
+*/
+// this.registerCapability('onoff.usb2', 6, {
           endpoint: 2,
           get: 'onOff',
           set: 'onOff',
