@@ -185,6 +185,7 @@ jobs:
         with:
           ref: master
           fetch-depth: 0
+          submodules: false
 
       - name: Pull latest changes
         run: |

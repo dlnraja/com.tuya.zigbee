@@ -36,7 +36,8 @@ class ClimateMonitorDevice extends BaseHybridDevice {
     
     const endpoint = this.zclNode.endpoints[1];
     if (!endpoint?.clusters[1026]) {
-      this.log('⚠️  Cluster 1026 not available');
+      this.log('⚠️  Cluster 1026 not available, trying Tuya DP fallback...');
+      await this.setupTuyaTemperatureFallback();
       return;
     }
     
@@ -76,7 +77,8 @@ class ClimateMonitorDevice extends BaseHybridDevice {
     
     const endpoint = this.zclNode.endpoints[1];
     if (!endpoint?.clusters[1029]) {
-      this.log('⚠️  Cluster 1029 not available');
+      this.log('⚠️  Cluster 1029 not available, trying Tuya DP fallback...');
+      await this.setupTuyaHumidityFallback();
       return;
     }
     
@@ -100,6 +102,108 @@ class ClimateMonitorDevice extends BaseHybridDevice {
       this.log('✅ measure_humidity configured (cluster 1029)');
     } catch (err) {
       this.error('measure_humidity setup failed:', err);
+    }
+  }
+
+  /**
+   * Setup Tuya DP fallback for temperature (DP 1)
+   * Used when standard cluster 1026 is not available
+   */
+  async setupTuyaTemperatureFallback() {
+    try {
+      const endpoint = this.zclNode.endpoints[1];
+      const tuyaCluster = endpoint?.clusters?.manuSpecificTuya || endpoint?.clusters?.['0xEF00'];
+      
+      if (!tuyaCluster) {
+        this.log('⚠️  Tuya cluster (0xEF00) not available for temperature');
+        return;
+      }
+      
+      this.log('📱 Using Tuya DP fallback for temperature');
+      
+      // Listen for Tuya DP reporting
+      tuyaCluster.on('reporting', async (data) => {
+        try {
+          // DP 1 is typically temperature in Tuya devices
+          if (data.dp === 1 || data.datapoint === 1) {
+            const rawTemp = data.value || data.data;
+            // Tuya usually sends temperature in 0.1°C units
+            const temperature = typeof rawTemp === 'number' ? rawTemp / 10 : rawTemp;
+            this.log(`🌡️ Tuya temperature update: ${temperature}°C (DP1)`);
+            if (this.hasCapability('measure_temperature')) {
+              await this.setCapabilityValue('measure_temperature', temperature).catch(this.error);
+            }
+          }
+        } catch (err) {
+          this.error('Tuya temperature DP error:', err.message);
+        }
+      });
+      
+      // Try to read initial value
+      try {
+        const tempData = await tuyaCluster.read('dp', 1).catch(() => null);
+        if (tempData?.value !== undefined && tempData?.value !== null) {
+          const temperature = tempData.value / 10;
+          this.log(`🌡️ Tuya initial temperature: ${temperature}°C`);
+          await this.setCapabilityValue('measure_temperature', temperature).catch(this.error);
+        }
+      } catch (err) {
+        this.log('Tuya temperature read (non-critical):', err.message);
+      }
+      
+      this.log('✅ Tuya temperature fallback configured (DP1)');
+    } catch (err) {
+      this.error('Tuya temperature fallback failed:', err.message);
+    }
+  }
+
+  /**
+   * Setup Tuya DP fallback for humidity (DP 2)
+   * Used when standard cluster 1029 is not available
+   */
+  async setupTuyaHumidityFallback() {
+    try {
+      const endpoint = this.zclNode.endpoints[1];
+      const tuyaCluster = endpoint?.clusters?.manuSpecificTuya || endpoint?.clusters?.['0xEF00'];
+      
+      if (!tuyaCluster) {
+        this.log('⚠️  Tuya cluster (0xEF00) not available for humidity');
+        return;
+      }
+      
+      this.log('📱 Using Tuya DP fallback for humidity');
+      
+      // Listen for Tuya DP reporting
+      tuyaCluster.on('reporting', async (data) => {
+        try {
+          // DP 2 is typically humidity in Tuya devices
+          if (data.dp === 2 || data.datapoint === 2) {
+            const humidity = data.value || data.data;
+            // Tuya usually sends humidity as percentage directly
+            this.log(`💧 Tuya humidity update: ${humidity}% (DP2)`);
+            if (this.hasCapability('measure_humidity')) {
+              await this.setCapabilityValue('measure_humidity', humidity).catch(this.error);
+            }
+          }
+        } catch (err) {
+          this.error('Tuya humidity DP error:', err.message);
+        }
+      });
+      
+      // Try to read initial value
+      try {
+        const humidityData = await tuyaCluster.read('dp', 2).catch(() => null);
+        if (humidityData?.value !== undefined && humidityData?.value !== null) {
+          this.log(`💧 Tuya initial humidity: ${humidityData.value}%`);
+          await this.setCapabilityValue('measure_humidity', humidityData.value).catch(this.error);
+        }
+      } catch (err) {
+        this.log('Tuya humidity read (non-critical):', err.message);
+      }
+      
+      this.log('✅ Tuya humidity fallback configured (DP2)');
+    } catch (err) {
+      this.error('Tuya humidity fallback failed:', err.message);
     }
   }
 

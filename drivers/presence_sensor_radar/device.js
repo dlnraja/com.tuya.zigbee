@@ -229,11 +229,20 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
       
       // Motion detection via IAS Zone (cluster 1280)
       if (endpoint?.clusters?.iasZone) {
-        // Enroll IAS Zone first
-        const ieeeAddress = await this.homey.zigbee.getIeeeAddress();
-        await endpoint.clusters.iasZone.writeAttributes({
-          iasCieAddr: ieeeAddress
-        }).catch(err => this.log('IAS enrollment (non-critical):', err.message));
+        // Enroll IAS Zone first - use ZigbeeHelpers for robust IEEE address retrieval
+        try {
+          const ieeeAddress = await this.getIeeeAddress();
+          if (ieeeAddress) {
+            await endpoint.clusters.iasZone.writeAttributes({
+              iasCieAddr: ieeeAddress
+            }).catch(err => this.log('IAS enrollment (non-critical):', err.message));
+            this.log('✅ IAS Zone enrolled with IEEE:', ieeeAddress);
+          } else {
+            this.log('⚠️  IAS enrollment skipped: IEEE address not available');
+          }
+        } catch (err) {
+          this.log('IAS enrollment error:', err.message);
+        }
         
         // Zone notifications (motion detection)
         endpoint.clusters.iasZone.onZoneStatusChangeNotification = (data) => {
