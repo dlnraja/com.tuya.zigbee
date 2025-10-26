@@ -32,11 +32,11 @@ class ClimateMonitorDevice extends BaseHybridDevice {
       return;
     }
     
-    this.log('🌡️  Setting up measure_temperature (cluster 1026)...');
+    this.log('[TEMP]  Setting up measure_temperature (cluster 1026)...');
     
     const endpoint = this.zclNode.endpoints[1];
     if (!endpoint?.clusters[1026]) {
-      this.log('⚠️  Cluster 1026 not available, trying Tuya DP fallback...');
+      this.log('[WARN]  Cluster 1026 not available, trying Tuya DP fallback...');
       await this.setupTuyaTemperatureFallback();
       return;
     }
@@ -63,7 +63,7 @@ class ClimateMonitorDevice extends BaseHybridDevice {
         }
       });
       
-      this.log('✅ measure_temperature configured (cluster 1026)');
+      this.log('[OK] measure_temperature configured (cluster 1026)');
     } catch (err) {
       this.error('measure_temperature setup failed:', err);
     }
@@ -78,11 +78,11 @@ class ClimateMonitorDevice extends BaseHybridDevice {
       return;
     }
     
-    this.log('🌡️  Setting up measure_humidity (cluster 1029)...');
+    this.log('[TEMP]  Setting up measure_humidity (cluster 1029)...');
     
     const endpoint = this.zclNode.endpoints[1];
     if (!endpoint?.clusters[1029]) {
-      this.log('⚠️  Cluster 1029 not available, trying Tuya DP fallback...');
+      this.log('[WARN]  Cluster 1029 not available, trying Tuya DP fallback...');
       await this.setupTuyaHumidityFallback();
       return;
     }
@@ -109,7 +109,7 @@ class ClimateMonitorDevice extends BaseHybridDevice {
         }
       });
       
-      this.log('✅ measure_humidity configured (cluster 1029)');
+      this.log('[OK] measure_humidity configured (cluster 1029)');
     } catch (err) {
       this.error('measure_humidity setup failed:', err);
     }
@@ -125,7 +125,7 @@ class ClimateMonitorDevice extends BaseHybridDevice {
       const tuyaCluster = endpoint?.clusters?.manuSpecificTuya || endpoint?.clusters?.['0xEF00'];
       
       if (!tuyaCluster) {
-        this.log('⚠️  Tuya cluster (0xEF00) not available for temperature');
+        this.log('[WARN]  Tuya cluster (0xEF00) not available for temperature');
         return;
       }
       
@@ -139,7 +139,7 @@ class ClimateMonitorDevice extends BaseHybridDevice {
             const rawTemp = data.value || data.data;
             // Tuya usually sends temperature in 0.1°C units
             const temperature = typeof rawTemp === 'number' ? rawTemp / 10 : rawTemp;
-            this.log(`🌡️ Tuya temperature update: ${temperature}°C (DP1)`);
+            this.log(`[TEMP] Tuya temperature update: ${temperature}°C (DP1)`);
             if (this.hasCapability('measure_temperature')) {
               await this.setCapabilityValue('measure_temperature', temperature).catch(this.error);
             }
@@ -154,14 +154,14 @@ class ClimateMonitorDevice extends BaseHybridDevice {
         const tempData = await tuyaCluster.read('dp', 1).catch(() => null);
         if (tempData?.value !== undefined && tempData?.value !== null) {
           const temperature = tempData.value / 10;
-          this.log(`🌡️ Tuya initial temperature: ${temperature}°C`);
+          this.log(`[TEMP] Tuya initial temperature: ${temperature}°C`);
           await this.setCapabilityValue('measure_temperature', temperature).catch(this.error);
         }
       } catch (err) {
         this.log('Tuya temperature read (non-critical):', err.message);
       }
       
-      this.log('✅ Tuya temperature fallback configured (DP1)');
+      this.log('[OK] Tuya temperature fallback configured (DP1)');
     } catch (err) {
       this.error('Tuya temperature fallback failed:', err.message);
     }
@@ -177,7 +177,7 @@ class ClimateMonitorDevice extends BaseHybridDevice {
       const tuyaCluster = endpoint?.clusters?.manuSpecificTuya || endpoint?.clusters?.['0xEF00'];
       
       if (!tuyaCluster) {
-        this.log('⚠️  Tuya cluster (0xEF00) not available for humidity');
+        this.log('[WARN]  Tuya cluster (0xEF00) not available for humidity');
         return;
       }
       
@@ -190,7 +190,7 @@ class ClimateMonitorDevice extends BaseHybridDevice {
           if (data.dp === 2 || data.datapoint === 2) {
             const humidity = data.value || data.data;
             // Tuya usually sends humidity as percentage directly
-            this.log(`💧 Tuya humidity update: ${humidity}% (DP2)`);
+            this.log(`[HUMID] Tuya humidity update: ${humidity}% (DP2)`);
             if (this.hasCapability('measure_humidity')) {
               await this.setCapabilityValue('measure_humidity', humidity).catch(this.error);
             }
@@ -204,14 +204,14 @@ class ClimateMonitorDevice extends BaseHybridDevice {
       try {
         const humidityData = await tuyaCluster.read('dp', 2).catch(() => null);
         if (humidityData?.value !== undefined && humidityData?.value !== null) {
-          this.log(`💧 Tuya initial humidity: ${humidityData.value}%`);
+          this.log(`[HUMID] Tuya initial humidity: ${humidityData.value}%`);
           await this.setCapabilityValue('measure_humidity', humidityData.value).catch(this.error);
         }
       } catch (err) {
         this.log('Tuya humidity read (non-critical):', err.message);
       }
       
-      this.log('✅ Tuya humidity fallback configured (DP2)');
+      this.log('[OK] Tuya humidity fallback configured (DP2)');
     } catch (err) {
       this.error('Tuya humidity fallback failed:', err.message);
     }

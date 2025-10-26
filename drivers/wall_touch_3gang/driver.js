@@ -105,7 +105,7 @@ class WallTouch3GangHybridDriver extends Driver {
         await args.device.configureReporting();
       });
     
-    this.log('✅ Flow cards registered');
+    this.log('[OK] Flow cards registered');
   }
 
   /**
@@ -169,7 +169,7 @@ class WallTouch3GangHybridDriver extends Driver {
    * Repair handler
    */
   async onRepair(session, device) {
-    this.log('🔧 Repair started for:', device.getName());
+    this.log('[FIX] Repair started for:', device.getName());
     
     session.setHandler('refresh', async () => {
       await device.detectPowerSource();

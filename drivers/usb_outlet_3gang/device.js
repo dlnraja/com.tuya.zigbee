@@ -39,7 +39,7 @@ class UsbOutlet3GangDevice extends SwitchDevice {
     // Setup aggregate power measurement
     await this.setupAggregatePowerMeasurement();
     
-    this.log('✅ UsbOutlet3GangDevice ready');
+    this.log('[OK] UsbOutlet3GangDevice ready');
     this.log(`   Power source: ${this.powerType || 'unknown'}`);
     this.log(`   Model: ${this.getData().manufacturerName}`);
   }
@@ -49,7 +49,7 @@ class UsbOutlet3GangDevice extends SwitchDevice {
    * Uses numeric cluster IDs as required by SDK3
    */
   async setupMultiEndpointControl() {
-    this.log('🔌 Setting up 3-port multi-endpoint control (SDK3)...');
+    this.log('[POWER] Setting up 3-port multi-endpoint control (SDK3)...');
     
     try {
       // Endpoint 1: Main USB port (onoff)
@@ -66,7 +66,7 @@ class UsbOutlet3GangDevice extends SwitchDevice {
           setParser: value => ({ value }),
           report: 'onOff',
           reportParser: value => {
-            this.log('📥 Port 1 state:', value ? 'on' : 'off');
+            this.log('[RECV] Port 1 state:', value ? 'on' : 'off');
             return value;
           },
           reportOpts: {
@@ -80,7 +80,7 @@ class UsbOutlet3GangDevice extends SwitchDevice {
             getOnStart: true
           }
         });
-        this.log('✅ Port 1 (endpoint 1) configured');
+        this.log('[OK] Port 1 (endpoint 1) configured');
       }
       
       // Endpoint 2: Secondary USB port (onoff.usb2)
@@ -97,7 +97,7 @@ class UsbOutlet3GangDevice extends SwitchDevice {
           setParser: value => ({ value }),
           report: 'onOff',
           reportParser: value => {
-            this.log('📥 Port 2 state:', value ? 'on' : 'off');
+            this.log('[RECV] Port 2 state:', value ? 'on' : 'off');
             return value;
           },
           reportOpts: {
@@ -111,7 +111,7 @@ class UsbOutlet3GangDevice extends SwitchDevice {
             getOnStart: true
           }
         });
-        this.log('✅ Port 2 (endpoint 2) configured');
+        this.log('[OK] Port 2 (endpoint 2) configured');
       }
       
       // Endpoint 3: Tertiary USB port (onoff.usb3)
@@ -128,7 +128,7 @@ class UsbOutlet3GangDevice extends SwitchDevice {
           setParser: value => ({ value }),
           report: 'onOff',
           reportParser: value => {
-            this.log('📥 Port 3 state:', value ? 'on' : 'off');
+            this.log('[RECV] Port 3 state:', value ? 'on' : 'off');
             return value;
           },
           reportOpts: {
@@ -142,10 +142,10 @@ class UsbOutlet3GangDevice extends SwitchDevice {
             getOnStart: true
           }
         });
-        this.log('✅ Port 3 (endpoint 3) configured');
+        this.log('[OK] Port 3 (endpoint 3) configured');
       }
       
-      this.log('✅ Multi-endpoint control configured successfully');
+      this.log('[OK] Multi-endpoint control configured successfully');
     } catch (err) {
       this.error('Multi-endpoint setup failed:', err);
     }
@@ -164,11 +164,11 @@ class UsbOutlet3GangDevice extends SwitchDevice {
     
     const endpoint = this.zclNode.endpoints[1];
     if (!endpoint) {
-      this.log('⚠️  Endpoint 1 not available');
+      this.log('[WARN]  Endpoint 1 not available');
       return;
     }
     
-    this.log('🔌 Setting up aggregate power measurement (SDK3)...');
+    this.log('[POWER] Setting up aggregate power measurement (SDK3)...');
     
     // Cluster 2820 (ElectricalMeasurement): Total power for all ports
     if (endpoint.clusters[2820]) {
@@ -186,7 +186,7 @@ class UsbOutlet3GangDevice extends SwitchDevice {
             reportParser: value => {
               // Convert to Watts (device reports in 0.1W units)
               const watts = value / 10;
-              this.log('📊 Total Power (3 ports):', watts, 'W');
+              this.log('[DATA] Total Power (3 ports):', watts, 'W');
               return watts;
             },
             reportOpts: {
@@ -200,13 +200,13 @@ class UsbOutlet3GangDevice extends SwitchDevice {
               getOnStart: true
             }
           });
-          this.log('✅ measure_power configured (cluster 2820)');
+          this.log('[OK] measure_power configured (cluster 2820)');
         }
       } catch (err) {
         this.error('Electrical measurement setup failed:', err);
       }
     } else {
-      this.log('ℹ️  Cluster 2820 (ElectricalMeasurement) not available');
+      this.log('[INFO]  Cluster 2820 (ElectricalMeasurement) not available');
     }
     
     // Cluster 1794 (Metering): Total energy consumption
@@ -225,7 +225,7 @@ class UsbOutlet3GangDevice extends SwitchDevice {
             reportParser: value => {
               // Convert to kWh (device reports in Wh)
               const kwh = value / 1000;
-              this.log('📊 Total Energy (3 ports):', kwh, 'kWh');
+              this.log('[DATA] Total Energy (3 ports):', kwh, 'kWh');
               return kwh;
             },
             reportOpts: {
@@ -239,16 +239,16 @@ class UsbOutlet3GangDevice extends SwitchDevice {
               getOnStart: true
             }
           });
-          this.log('✅ meter_power configured (cluster 1794)');
+          this.log('[OK] meter_power configured (cluster 1794)');
         }
       } catch (err) {
         this.error('Metering setup failed:', err);
       }
     } else {
-      this.log('ℹ️  Cluster 1794 (Metering) not available');
+      this.log('[INFO]  Cluster 1794 (Metering) not available');
     }
     
-    this.log('✅ Aggregate power measurement setup complete');
+    this.log('[OK] Aggregate power measurement setup complete');
   }
 
   async onDeleted() {
