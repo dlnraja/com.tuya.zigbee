@@ -411,7 +411,20 @@
         async function loadDriversDatabase() {
             try {
                 console.log('Fetching drivers from static database...');
-                const response = await fetch('drivers-database.json');
+                
+                // Add timeout to prevent infinite loading
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+                
+                const response = await fetch('/app/com.dlnraja.tuya.zigbee/settings/drivers-database.json', {
+                    signal: controller.signal
+                }).catch(err => {
+                    // Fallback: try relative path
+                    console.log('Trying relative path...');
+                    return fetch('drivers-database.json');
+                });
+                
+                clearTimeout(timeoutId);
                 
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -420,7 +433,7 @@
                 const data = await response.json();
                 driversData = data.drivers || [];
                 
-                console.log('Loaded', driversData.length, 'drivers from static database');
+                console.log('✅ Loaded', driversData.length, 'drivers from static database');
                 console.log('Database generated:', data.generated);
                 
                 // Populate filters
@@ -431,7 +444,13 @@
                 
             } catch (err) {
                 console.error('Failed to load drivers database:', err);
-                showError(`Failed to load drivers database: ${err.message || 'Unknown error'}. Please rebuild the database with: npm run build:drivers-db`);
+                if (err.name === 'AbortError') {
+                    showError('Request timeout. The drivers database is too large or unavailable. Please try refreshing the page.');
+                } else {
+                    showError(`Failed to load drivers database: ${err.message || 'Unknown error'}. The page will still work for basic settings.`);
+                }
+                // Don't block the page - just show empty results
+                document.getElementById('resultsContainer').innerHTML = '<div class="no-results">Driver search unavailable. Basic settings are still functional.</div>';
             }
         }
         
