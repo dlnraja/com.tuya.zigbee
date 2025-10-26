@@ -1,0 +1,45 @@
+name: Auto-Publish to Homey App Store
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'app.json'
+      - 'lib/**'
+      - 'drivers/**'
+      - '.homeycompose/**'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Install Homey CLI
+        run: npm install -g homey
+        
+      - name: Validate app
+        run: homey app validate --level publish
+        
+      - name: Publish to Homey App Store
+        env:
+          HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
+        run: |
+          homey login --token $HOMEY_TOKEN
+          homey app publish
+          
+      - name: Notify on success
+        if: success()
+        run: echo "✅ App published successfully to Homey App Store!"
+        
+      - name: Notify on failure
+        if: failure()
+        run: echo "❌ Publication failed. Check logs above."
