@@ -27,17 +27,6 @@ jobs:
           
       - name: Install Homey CLI
         run: npm install -g homey
-      
-      - name: Generate Drivers Database
-        run: npm run build:drivers-db
-        
-      - name: Commit drivers database if changed
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add settings/drivers-database.json
-          git diff --staged --quiet || git commit -m "chore: update drivers database [skip ci]"
-          git push || echo "No changes to push"
         
       - name: Build app
         run: homey app build
