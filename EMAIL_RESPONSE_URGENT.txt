@@ -1,0 +1,55 @@
+Bonjour,
+
+**URGENT** - Je vois le problème maintenant.
+
+## 🚨 Situation
+
+v4.9.50 casse TOUS les pairings - c'est TRÈS grave. Je prépare v4.9.51 immédiatement.
+
+## ⚠️ NE PAS UTILISER v4.9.50!
+
+Si possible:
+1. **NE PAS pairer** de nouveaux devices pour le moment
+2. **NE PAS retirer** vos anciens devices qui marchaient
+3. **ATTENDRE** v4.9.51 (dans ~30 minutes)
+
+## 🔍 Besoin d'info URGENT
+
+Pour corriger rapidement, j'ai besoin d'un diagnostic COMPLET:
+
+**SVP envoyer diagnostic MAINTENANT avec**:
+- Les erreurs complètes (pas "n/a")
+- Pendant ou juste après un pairing qui échoue
+- Depuis Settings → Apps → Universal Tuya Zigbee → Send Diagnostic
+
+Le dernier diagnostic (4092b48f) montrait "stdout: n/a" et "stderr: n/a" - je ne peux pas voir les erreurs!
+
+## 🔧 Ce que je fais
+
+1. **13:30** - Analyse du problème  
+2. **13:45** - v4.9.51 avec correction  
+3. **14:00** - Publication (estimé)
+
+## 💡 Si vous devez absolument pairer maintenant
+
+**Option temporaire**: 
+- Désinstaller Universal Tuya Zigbee
+- Réinstaller v4.9.48 ou v4.9.49 (versions stables avant mon changement)
+- Pairer vos devices
+- Attendre v4.9.51 pour mise à jour
+
+Mais **MIEUX**: Attendez v4.9.51!
+
+## 📧 Réponse attendue
+
+Envoyez-moi:
+1. ✅ Diagnostic complet avec erreurs
+2. ✅ Type exact des devices qui échouent (marque/modèle)
+3. ✅ Si d'anciens devices fonctionnent encore
+
+Désolé pour ce problème - je corrige ça maintenant en PRIORITÉ ABSOLUE.
+
+Dylan Rajasekaram
+Universal Tuya Zigbee Developer
+
+P.S. Merci ÉNORMÉMENT pour vos tests rapides - vous m'aidez à corriger ça avant que ça affecte des centaines d'utilisateurs!
