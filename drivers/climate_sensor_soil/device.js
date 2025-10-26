@@ -83,7 +83,12 @@ class TuyaSoilTesterTempHumidDevice extends BaseHybridDevice {
     }
     
     try {
-      this.registerCapability('measure_temperature', 1026, {
+      /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('measure_temperature', 1026,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'measure_temperature', Cluster: 1026
+*/
+// this.registerCapability('measure_temperature', 1026, {
         get: 'measuredValue',
         report: 'measuredValue',
         reportParser: value => value / 100,
@@ -123,7 +128,12 @@ class TuyaSoilTesterTempHumidDevice extends BaseHybridDevice {
     }
     
     try {
-      this.registerCapability('measure_humidity', 1029, {
+      /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('measure_humidity', 1029,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'measure_humidity', Cluster: 1029
+*/
+// this.registerCapability('measure_humidity', 1029, {
         get: 'measuredValue',
         report: 'measuredValue',
         reportParser: value => value / 100,
@@ -221,7 +231,7 @@ class TuyaSoilTesterTempHumidDevice extends BaseHybridDevice {
           // Check alarm1 bit (motion/alarm detected)
           const alarm = (status & 0x01) !== 0;
           
-          this.setCapabilityValue('alarm_contact', alarm).catch(this.error);
+          await this.setCapabilityValue('alarm_contact', alarm).catch(this.error);
           this.log(`${alarm ? '🚨' : '✅'} Alarm: ${alarm ? 'TRIGGERED' : 'cleared'}`);
         }
       };
@@ -239,7 +249,7 @@ class TuyaSoilTesterTempHumidDevice extends BaseHybridDevice {
         }
         
         const alarm = (status & 0x01) !== 0;
-        this.setCapabilityValue('alarm_contact', alarm).catch(this.error);
+        await this.setCapabilityValue('alarm_contact', alarm).catch(this.error);
       };
       
       this.log('✅ IAS Zone configured successfully (SDK3 latest method)');

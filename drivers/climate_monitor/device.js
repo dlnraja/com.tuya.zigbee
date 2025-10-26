@@ -68,7 +68,12 @@ class ClimateMonitorDevice extends BaseHybridDevice {
     try {
       // Cluster 1026 (TemperatureMeasurement)
       if (this.hasCapability('measure_temperature') && endpoint.clusters[1026]) {
-        this.registerCapability('measure_temperature', 1026, {
+        /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('measure_temperature', 1026,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'measure_temperature', Cluster: 1026
+*/
+// this.registerCapability('measure_temperature', 1026, {
           get: 'measuredValue',
           report: 'measuredValue',
           reportParser: value => {
@@ -92,7 +97,12 @@ class ClimateMonitorDevice extends BaseHybridDevice {
       
       // Cluster 1029 (RelativeHumidity)
       if (this.hasCapability('measure_humidity') && endpoint.clusters[1029]) {
-        this.registerCapability('measure_humidity', 1029, {
+        /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('measure_humidity', 1029,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'measure_humidity', Cluster: 1029
+*/
+// this.registerCapability('measure_humidity', 1029, {
           get: 'measuredValue',
           report: 'measuredValue',
           reportParser: value => {
@@ -137,7 +147,12 @@ class ClimateMonitorDevice extends BaseHybridDevice {
     // Method 1: Standard Zigbee (Cluster 1 - PowerConfiguration)
     if (endpoint?.clusters[1]) {
       try {
-        this.registerCapability('measure_battery', 1, {
+        /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('measure_battery', 1,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'measure_battery', Cluster: 1
+*/
+// this.registerCapability('measure_battery', 1, {
           get: 'batteryPercentageRemaining',
           report: 'batteryPercentageRemaining',
           reportParser: value => {

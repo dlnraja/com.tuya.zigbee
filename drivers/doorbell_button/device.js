@@ -33,7 +33,7 @@ class SmartDoorbellBatteryDevice extends ButtonDevice {
     try {
       await this.configureAttributeReporting([{
         endpointId: 1,
-        cluster: CLUSTER.POWER_CONFIGURATION,
+        cluster: 1,
         attributeName: 'batteryPercentageRemaining',
         minInterval: 3600,
         maxInterval: 86400,
@@ -429,7 +429,7 @@ class SmartDoorbellBatteryDevice extends ButtonDevice {
           // Check alarm1 bit (motion/alarm detected)
           const alarm = (status & 0x01) !== 0;
           
-          this.setCapabilityValue('alarm_contact', alarm).catch(this.error);
+          await this.setCapabilityValue('alarm_contact', alarm).catch(this.error);
           this.log(`${alarm ? '🚨' : '✅'} Alarm: ${alarm ? 'TRIGGERED' : 'cleared'}`);
         }
       };
@@ -447,7 +447,7 @@ class SmartDoorbellBatteryDevice extends ButtonDevice {
         }
         
         const alarm = (status & 0x01) !== 0;
-        this.setCapabilityValue('alarm_contact', alarm).catch(this.error);
+        await this.setCapabilityValue('alarm_contact', alarm).catch(this.error);
       };
       
       this.log('✅ IAS Zone configured successfully (SDK3 latest method)');

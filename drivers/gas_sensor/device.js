@@ -97,7 +97,7 @@ class TuyaGasSensorTs0601Device extends BaseHybridDevice {
           // Check alarm1 bit (motion/alarm detected)
           const alarm = (status & 0x01) !== 0;
           
-          this.setCapabilityValue('alarm_co', alarm).catch(this.error);
+          await this.setCapabilityValue('alarm_co', alarm).catch(this.error);
           this.log(`${alarm ? '🚨' : '✅'} Alarm: ${alarm ? 'TRIGGERED' : 'cleared'}`);
         }
       };
@@ -115,7 +115,7 @@ class TuyaGasSensorTs0601Device extends BaseHybridDevice {
         }
         
         const alarm = (status & 0x01) !== 0;
-        this.setCapabilityValue('alarm_co', alarm).catch(this.error);
+        await this.setCapabilityValue('alarm_co', alarm).catch(this.error);
       };
       
       this.log('✅ IAS Zone configured successfully (SDK3 latest method)');

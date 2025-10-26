@@ -23,7 +23,12 @@ class AirConditionerDevice extends BaseHybridDevice {
     
     // target_temperature capability
     if (this.hasCapability('target_temperature')) {
-      this.registerCapability('target_temperature', CLUSTER.THERMOSTAT, {
+      /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('target_temperature', CLUSTER.THERMOSTAT,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'target_temperature', Cluster: CLUSTER.THERMOSTAT
+*/
+// this.registerCapability('target_temperature', CLUSTER.THERMOSTAT, {
         endpoint: 1,
         getOpts: {
           getOnStart: true
@@ -33,7 +38,12 @@ class AirConditionerDevice extends BaseHybridDevice {
     
     // measure_temperature capability
     if (this.hasCapability('measure_temperature')) {
-      this.registerCapability('measure_temperature', CLUSTER.THERMOSTAT, {
+      /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('measure_temperature', CLUSTER.THERMOSTAT,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'measure_temperature', Cluster: CLUSTER.THERMOSTAT
+*/
+// this.registerCapability('measure_temperature', CLUSTER.THERMOSTAT, {
         endpoint: 1,
         getOpts: {
           getOnStart: true
@@ -43,7 +53,12 @@ class AirConditionerDevice extends BaseHybridDevice {
     
     // thermostat_mode capability
     if (this.hasCapability('thermostat_mode')) {
-      this.registerCapability('thermostat_mode', 61184, {
+      /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('thermostat_mode', 61184,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'thermostat_mode', Cluster: 61184
+*/
+// this.registerCapability('thermostat_mode', 61184, {
         endpoint: 1,
         set: async (value) => {
           const modes = {
@@ -72,7 +87,12 @@ class AirConditionerDevice extends BaseHybridDevice {
     
     // fan_speed capability
     if (this.hasCapability('fan_speed')) {
-      this.registerCapability('fan_speed', 61184, {
+      /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('fan_speed', 61184,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'fan_speed', Cluster: 61184
+*/
+// this.registerCapability('fan_speed', 61184, {
         endpoint: 1,
         set: async (value) => {
           const speeds = {
@@ -122,7 +142,12 @@ class AirConditionerDevice extends BaseHybridDevice {
     }
     
     try {
-      this.registerCapability('measure_temperature', 1026, {
+      /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('measure_temperature', 1026,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'measure_temperature', Cluster: 1026
+*/
+// this.registerCapability('measure_temperature', 1026, {
         get: 'measuredValue',
         report: 'measuredValue',
         reportParser: value => value / 100,

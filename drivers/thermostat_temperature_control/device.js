@@ -34,7 +34,7 @@ class TemperatureControllerHybridDevice extends BaseHybridDevice {
     try {
       await this.configureAttributeReporting([{
         endpointId: 1,
-        cluster: CLUSTER.POWER_CONFIGURATION,
+        cluster: 1,
         attributeName: 'batteryPercentageRemaining',
         minInterval: 7200,
         maxInterval: 86400,
@@ -373,7 +373,12 @@ class TemperatureControllerHybridDevice extends BaseHybridDevice {
     }
     
     try {
-      this.registerCapability('measure_temperature', 1026, {
+      /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('measure_temperature', 1026,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'measure_temperature', Cluster: 1026
+*/
+// this.registerCapability('measure_temperature', 1026, {
         get: 'measuredValue',
         report: 'measuredValue',
         reportParser: value => value / 100,
@@ -413,7 +418,12 @@ class TemperatureControllerHybridDevice extends BaseHybridDevice {
     }
     
     try {
-      this.registerCapability('measure_humidity', 1029, {
+      /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('measure_humidity', 1029,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'measure_humidity', Cluster: 1029
+*/
+// this.registerCapability('measure_humidity', 1029, {
         get: 'measuredValue',
         report: 'measuredValue',
         reportParser: value => value / 100,
