@@ -29,9 +29,12 @@ homey-auth.*
 docs/releases/ULTIMATE_AUDIT_REPORT_v2.15.60.md
 **/ULTIMATE_AUDIT_REPORT*.md
 
-# OS files
+# Temporary files
+*.tmp
+*.temp
 .DS_Store
 Thumbs.db
+.temp-repos/
 
 # IDE
 .vscode/
