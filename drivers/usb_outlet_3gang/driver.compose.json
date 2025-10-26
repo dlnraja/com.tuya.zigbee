@@ -37,24 +37,6 @@
         "fr": "Port USB 3",
         "nl": "USB Poort 3"
       }
-    },
-    "measure_battery": {
-      "title": {
-        "en": "Battery",
-        "fr": "Batterie"
-      },
-      "preventInsights": false
-    }
-  },
-  "energy": {
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "AAA",
-      "AA"
-    ],
-    "approximation": {
-      "usageConstant": 1
     }
   },
   "zigbee": {
