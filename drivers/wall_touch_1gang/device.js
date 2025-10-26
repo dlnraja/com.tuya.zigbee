@@ -16,7 +16,7 @@ const WallTouchDevice = require('../../lib/WallTouchDevice');
 class WallTouch1GangDevice extends WallTouchDevice {
 
   async onNodeInit() {
-    this.log('🎨 WallTouch1Gang initializing...');
+    this.log('[COLOR] WallTouch1Gang initializing...');
     
     // Set button count (required by base class)
     this.buttonCount = 1;
@@ -27,7 +27,7 @@ class WallTouch1GangDevice extends WallTouchDevice {
     // Setup sensor capabilities (SDK3)
     await this.setupTemperatureSensor();
     
-    this.log('✅ WallTouch1Gang ready (SDK3)');
+    this.log('[OK] WallTouch1Gang ready (SDK3)');
   }
 }
 
@@ -41,11 +41,11 @@ class WallTouch1GangDevice extends WallTouchDevice {
       return;
     }
     
-    this.log('🌡️  Setting up measure_temperature (cluster 1026)...');
+    this.log('[TEMP]  Setting up measure_temperature (cluster 1026)...');
     
     const endpoint = this.zclNode.endpoints[1];
     if (!endpoint?.clusters[1026]) {
-      this.log('⚠️  Cluster 1026 not available');
+      this.log('[WARN]  Cluster 1026 not available');
       return;
     }
     
@@ -71,7 +71,7 @@ class WallTouch1GangDevice extends WallTouchDevice {
         }
       });
       
-      this.log('✅ measure_temperature configured (cluster 1026)');
+      this.log('[OK] measure_temperature configured (cluster 1026)');
     } catch (err) {
       this.error('measure_temperature setup failed:', err);
     }
