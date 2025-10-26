@@ -373,7 +373,12 @@ class AirQualityMonitorProBatteryDevice extends SensorDevice {
     }
     
     try {
-      this.registerCapability('measure_co2', 1037, {
+      /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('measure_co2', 1037,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'measure_co2', Cluster: 1037
+*/
+// this.registerCapability('measure_co2', 1037, {
         get: 'measuredValue',
         report: 'measuredValue',
         reportParser: value => value * 1e-6,
@@ -413,7 +418,12 @@ class AirQualityMonitorProBatteryDevice extends SensorDevice {
     }
     
     try {
-      this.registerCapability('measure_temperature', 1026, {
+      /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('measure_temperature', 1026,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'measure_temperature', Cluster: 1026
+*/
+// this.registerCapability('measure_temperature', 1026, {
         get: 'measuredValue',
         report: 'measuredValue',
         reportParser: value => value / 100,

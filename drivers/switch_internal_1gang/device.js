@@ -354,7 +354,7 @@ class TuyaZigbeeDevice extends SwitchDevice {
     try {
       await this.configureAttributeReporting([{
         endpointId: 1,
-        cluster: CLUSTER.POWER_CONFIGURATION,
+        cluster: 1,
         attributeName: 'batteryPercentageRemaining',
         minInterval: 7200,
         maxInterval: 172800,

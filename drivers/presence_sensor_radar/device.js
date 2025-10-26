@@ -49,7 +49,12 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
     }
     
     try {
-      this.registerCapability('measure_luminance', 1024, {
+      /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('measure_luminance', 1024,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'measure_luminance', Cluster: 1024
+*/
+// this.registerCapability('measure_luminance', 1024, {
         get: 'measuredValue',
         report: 'measuredValue',
         reportParser: value => Math.pow(10, (value - 1) / 10000),
@@ -147,7 +152,7 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
           // Check alarm1 bit (motion/alarm detected)
           const alarm = (status & 0x01) !== 0;
           
-          this.setCapabilityValue('alarm_motion', alarm).catch(this.error);
+          await this.setCapabilityValue('alarm_motion', alarm).catch(this.error);
           this.log(`${alarm ? '🚨' : '✅'} Alarm: ${alarm ? 'TRIGGERED' : 'cleared'}`);
         }
       };
@@ -165,7 +170,7 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
         }
         
         const alarm = (status & 0x01) !== 0;
-        this.setCapabilityValue('alarm_motion', alarm).catch(this.error);
+        await this.setCapabilityValue('alarm_motion', alarm).catch(this.error);
       };
       
       this.log('✅ IAS Zone configured successfully (SDK3 latest method)');
@@ -248,14 +253,14 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
         endpoint.clusters.iasZone.onZoneStatusChangeNotification = (data) => {
           this.log('🚶 Motion detected:', data);
           const motion = !!(data.zoneStatus & 1);
-          this.setCapabilityValue('alarm_motion', motion).catch(this.error);
+          await this.setCapabilityValue('alarm_motion', motion).catch(this.error);
         };
         
         // Attribute listener (backup)
         endpoint.clusters.iasZone.onZoneStatus = (value) => {
           this.log('🚶 Motion status:', value);
           const motion = !!(value & 1);
-          this.setCapabilityValue('alarm_motion', motion).catch(this.error);
+          await this.setCapabilityValue('alarm_motion', motion).catch(this.error);
         };
       }
       
