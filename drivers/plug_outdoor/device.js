@@ -53,7 +53,7 @@ class OutdoorPlugDevice extends SwitchDevice {
         
         try {
           // Send response IMMEDIATELY (synchronous, no async, no delay)
-          endpoint.clusters.iasZone.zoneEnrollResponse({
+          await endpoint.clusters.iasZone.zoneEnrollResponse({
             enrollResponseCode: 0, // 0 = Success
             zoneId: 10
           });
@@ -72,7 +72,7 @@ class OutdoorPlugDevice extends SwitchDevice {
       this.log('📤 Sending proactive Zone Enroll Response...');
       
       try {
-        endpoint.clusters.iasZone.zoneEnrollResponse({
+        await endpoint.clusters.iasZone.zoneEnrollResponse({
           enrollResponseCode: 0,
           zoneId: 10
         });
