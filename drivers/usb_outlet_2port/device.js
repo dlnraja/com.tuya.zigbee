@@ -1,5 +1,6 @@
 'use strict';
 
+const { CLUSTER } = require('zigbee-clusters');
 const SwitchDevice = require('../../lib/SwitchDevice');
 
 /**
@@ -48,20 +49,22 @@ class UsbOutlet2PortDevice extends SwitchDevice {
     
     try {
       // Endpoint 1: Main USB port (onoff)
+      this.log('🔌 Configuring Port 1 (endpoint 1)...');
       if (this.hasCapability('onoff')) {
-        /* REFACTOR: registerCapability deprecated with cluster spec.
-   Original: this.registerCapability('onoff', 6,
-   Replace with SDK3 pattern - see ZigbeeDevice docs
-   Capability: 'onoff', Cluster: 6
-*/
-// this.registerCapability('onoff', 6, {
+        this.log('  - Capability onoff exists');
+        this.log('  - Registering with CLUSTER.ON_OFF on endpoint 1');
+        
+        this.registerCapability('onoff', CLUSTER.ON_OFF, {
           endpoint: 1,
           get: 'onOff',
           set: 'onOff',
-          setParser: value => ({ value }),
+          setParser: value => {
+            this.log(`[SEND] Port 1 → ${value ? 'ON' : 'OFF'}`);
+            return { value };
+          },
           report: 'onOff',
           reportParser: value => {
-            this.log('[RECV] Port 1 state:', value ? 'on' : 'off');
+            this.log(`[RECV] Port 1 state: ${value ? 'ON' : 'OFF'}`);
             return value;
           },
           reportOpts: {
@@ -75,7 +78,9 @@ class UsbOutlet2PortDevice extends SwitchDevice {
             getOnStart: true
           }
         });
-        this.log('[OK] Port 1 (endpoint 1) configured');
+        this.log('[OK] ✅ Port 1 (endpoint 1) configured successfully');
+      } else {
+        this.log('[WARN] ⚠️ onoff capability missing!');
       }
       
       // Endpoint 2: Secondary USB port (onoff.usb2)

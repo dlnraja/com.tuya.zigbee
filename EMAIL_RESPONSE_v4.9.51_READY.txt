@@ -1,0 +1,145 @@
+Bonjour,
+
+## ✅ v4.9.51 PRÊT - Logs Ultra-Détaillés
+
+J'ai créé une version **SPÉCIALE DIAGNOSTIC** avec des logs TRÈS détaillés.
+
+### 📊 Ce que v4.9.51 va montrer
+
+Quand vous pairez un device, vous verrez dans les logs:
+
+```
+════════════════════════════════════════════════════════════════
+🔍 DIAGNOSTIC MODE - Detailed Device Information
+════════════════════════════════════════════════════════════════
+
+📱 DEVICE IDENTITY:
+  - Driver ID: usb_outlet_2port
+  - Device Name: USB Outlet
+  - Device ID: abc123...
+  - IEEE Address: 00:12:4b:00:1c:a1:b3:f7
+  - Network Address: 0x1234
+  - Manufacturer: _TZ3000_abcd1234
+  - Model ID: TS011F
+  - Endpoints: 1, 2
+
+🔌 AVAILABLE CLUSTERS PER ENDPOINT:
+  Endpoint 1:
+    Clusters: basic (ID: 0), onOff (ID: 6), powerConfiguration (ID: 1)
+  Endpoint 2:
+    Clusters: onOff (ID: 6)
+
+⚡ POWER DETECTION:
+  Expected: Cluster POWER_CONFIGURATION (ID: 1) or attribute powerSource
+  📡 PowerSource attribute read:
+    - Raw value: {"powerSource":"mains"}
+    - powerSource: mains
+    - Type: string
+    - Is battery string: false
+    - Is battery numeric: false
+  [OK] Detected: AC Mains Power
+
+  Checking cluster availability:
+    - Endpoint 1 exists: true
+    - Available clusters: basic, onOff, powerConfiguration
+    - powerConfiguration: true
+    - genPowerCfg: false
+    - Selected cluster: FOUND
+
+  Configuring attribute reporting:
+    - CLUSTER object available: object
+    - CLUSTER.POWER_CONFIGURATION available: true
+    - CLUSTER.POWER_CONFIGURATION.ID: 1
+    - CLUSTER.POWER_CONFIGURATION.NAME: powerConfiguration
+    - Config to send: {
+        "endpointId": 1,
+        "cluster": {"ID":1,"NAME":"powerConfiguration"},
+        "attributeName": "batteryPercentageRemaining",
+        "minInterval": 0,
+        "maxInterval": 3600,
+        "minChange": 1
+      }
+```
+
+### 🎯 Pourquoi C'est Important
+
+Ces logs vont me montrer **EXACTEMENT**:
+
+1. ✅ **Si le device est détecté**
+   - Manufacturer ID, Model ID
+   - Si c'est bien un device Tuya
+
+2. ✅ **Quels clusters sont disponibles**
+   - Par endpoint
+   - Si powerConfiguration existe
+   - Si onOff existe
+
+3. ✅ **Si CLUSTER object fonctionne**
+   - Si CLUSTER.POWER_CONFIGURATION est disponible
+   - Si .ID et .NAME sont corrects
+   - La config exacte envoyée
+
+4. ✅ **Où ça échoue**
+   - Quelle étape exacte
+   - Quel message d'erreur
+   - Pourquoi "Zigbee Inconnu"
+
+### 📱 Procédure SVP
+
+**1. Attendre v4.9.51** (~15-20 minutes)
+
+**2. Mettre à jour l'app**
+   - Settings → Apps → Universal Tuya Zigbee
+   - Update
+
+**3. Pairer UN device**
+   - N'importe lequel (USB, Climate, etc.)
+   - Distance <2m de Homey
+
+**4. IMMÉDIATEMENT envoyer diagnostic**
+   - Ne pas attendre!
+   - Settings → Apps → Universal Tuya Zigbee → Send Diagnostic
+   - Ajouter message: "Test v4.9.51 avec device [NOM]"
+
+**5. Les logs seront COMPLETS**
+   - Pas de "n/a" comme avant
+   - Tout sera visible
+   - Je pourrai voir EXACTEMENT le problème
+
+### 🔍 Ce que je cherche
+
+Dans les logs, je vais chercher:
+
+**Si "Zigbee Inconnu"**:
+- ⚠️ Driver ID = "unknown" → Device pas reconnu au pairing
+- ⚠️ Manufacturer manquant → Device ne s'identifie pas
+- ⚠️ CLUSTER.POWER_CONFIGURATION = undefined → Import échoue
+- ⚠️ Erreur pendant configuration → Quelque chose casse
+
+**Si ça marche**:
+- ✅ Driver ID correct
+- ✅ Tous les clusters détectés
+- ✅ CLUSTER objects disponibles
+- ✅ Configuration réussie
+
+### ⏰ Timeline
+
+- **13:40** - v4.9.51 en cours de publication
+- **13:55** - Disponible dans Homey App Store
+- **14:00** - Vous testez avec logs détaillés
+- **14:05** - Diagnostic envoyé
+- **14:10** - J'analyse et corrige
+
+### 💡 Astuce
+
+Si vous avez PLUSIEURS devices qui montrent "Zigbee Inconnu":
+- Testez avec le plus simple d'abord (USB outlet?)
+- Envoyez UN diagnostic par device
+- Mentionnez le type dans le message
+
+Merci ÉNORMÉMENT pour votre patience! Ces logs vont me permettre de corriger ça définitivement.
+
+Dylan Rajasekaram
+Universal Tuya Zigbee Developer
+
+P.S. v4.9.51 = Version DIAGNOSTIC spéciale. Si ça marche, tant mieux! Sinon, les logs me diront exactement quoi corriger.
