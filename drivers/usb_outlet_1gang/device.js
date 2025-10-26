@@ -65,7 +65,12 @@ class UsbOutlet1GangDevice extends SwitchDevice {
       try {
         // measure_power (activePower)
         if (this.hasCapability('measure_power')) {
-          this.registerCapability('measure_power', 2820, {
+          /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('measure_power', 2820,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'measure_power', Cluster: 2820
+*/
+// this.registerCapability('measure_power', 2820, {
             get: 'activePower',
             report: 'activePower',
             reportParser: value => {
@@ -90,7 +95,12 @@ class UsbOutlet1GangDevice extends SwitchDevice {
         
         // measure_voltage (rmsVoltage)
         if (this.hasCapability('measure_voltage')) {
-          this.registerCapability('measure_voltage', 2820, {
+          /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('measure_voltage', 2820,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'measure_voltage', Cluster: 2820
+*/
+// this.registerCapability('measure_voltage', 2820, {
             get: 'rmsVoltage',
             report: 'rmsVoltage',
             reportParser: value => {
@@ -114,7 +124,12 @@ class UsbOutlet1GangDevice extends SwitchDevice {
         
         // measure_current (rmsCurrent)
         if (this.hasCapability('measure_current')) {
-          this.registerCapability('measure_current', 2820, {
+          /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('measure_current', 2820,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'measure_current', Cluster: 2820
+*/
+// this.registerCapability('measure_current', 2820, {
             get: 'rmsCurrent',
             report: 'rmsCurrent',
             reportParser: value => {
@@ -148,7 +163,12 @@ class UsbOutlet1GangDevice extends SwitchDevice {
       try {
         // meter_power (currentSummationDelivered)
         if (this.hasCapability('meter_power')) {
-          this.registerCapability('meter_power', 1794, {
+          /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('meter_power', 1794,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'meter_power', Cluster: 1794
+*/
+// this.registerCapability('meter_power', 1794, {
             get: 'currentSummationDelivered',
             report: 'currentSummationDelivered',
             reportParser: value => {

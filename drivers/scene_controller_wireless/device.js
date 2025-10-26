@@ -162,7 +162,7 @@ class SceneControllerDevice extends ButtonDevice {
     await this.configureAttributeReporting([{
     } catch (err) { this.error('Await error:', err); }
       endpointId: 1,
-      cluster: CLUSTER.POWER_CONFIGURATION,
+      cluster: 1,
       attributeName: 'batteryPercentageRemaining',
       minInterval: 3600,
       maxInterval: 86400,

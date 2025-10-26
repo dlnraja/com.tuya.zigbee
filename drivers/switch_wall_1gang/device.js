@@ -28,7 +28,12 @@ class SwitchWall1GangDevice extends SwitchDevice {
   }
   async registerSwitchCapabilities() {
     // Main switch (endpoint 1)
-    this.registerCapability('onoff', 6, {
+    /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('onoff', 6,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'onoff', Cluster: 6
+*/
+// this.registerCapability('onoff', 6, {
       endpoint: 1
     });
     

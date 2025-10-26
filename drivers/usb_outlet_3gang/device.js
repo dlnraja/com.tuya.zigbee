@@ -54,7 +54,12 @@ class UsbOutlet3GangDevice extends SwitchDevice {
     try {
       // Endpoint 1: Main USB port (onoff)
       if (this.hasCapability('onoff')) {
-        this.registerCapability('onoff', 6, {
+        /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('onoff', 6,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'onoff', Cluster: 6
+*/
+// this.registerCapability('onoff', 6, {
           endpoint: 1,
           get: 'onOff',
           set: 'onOff',
@@ -80,7 +85,12 @@ class UsbOutlet3GangDevice extends SwitchDevice {
       
       // Endpoint 2: Secondary USB port (onoff.usb2)
       if (this.hasCapability('onoff.usb2')) {
-        this.registerCapability('onoff.usb2', 6, {
+        /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('onoff.usb2', 6,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'onoff.usb2', Cluster: 6
+*/
+// this.registerCapability('onoff.usb2', 6, {
           endpoint: 2,
           get: 'onOff',
           set: 'onOff',
@@ -106,7 +116,12 @@ class UsbOutlet3GangDevice extends SwitchDevice {
       
       // Endpoint 3: Tertiary USB port (onoff.usb3)
       if (this.hasCapability('onoff.usb3')) {
-        this.registerCapability('onoff.usb3', 6, {
+        /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('onoff.usb3', 6,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'onoff.usb3', Cluster: 6
+*/
+// this.registerCapability('onoff.usb3', 6, {
           endpoint: 3,
           get: 'onOff',
           set: 'onOff',
@@ -160,7 +175,12 @@ class UsbOutlet3GangDevice extends SwitchDevice {
       try {
         // measure_power (activePower) - Aggregate for all 3 ports
         if (this.hasCapability('measure_power')) {
-          this.registerCapability('measure_power', 2820, {
+          /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('measure_power', 2820,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'measure_power', Cluster: 2820
+*/
+// this.registerCapability('measure_power', 2820, {
             get: 'activePower',
             report: 'activePower',
             reportParser: value => {
@@ -194,7 +214,12 @@ class UsbOutlet3GangDevice extends SwitchDevice {
       try {
         // meter_power (currentSummationDelivered) - Aggregate for all 3 ports
         if (this.hasCapability('meter_power')) {
-          this.registerCapability('meter_power', 1794, {
+          /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('meter_power', 1794,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'meter_power', Cluster: 1794
+*/
+// this.registerCapability('meter_power', 1794, {
             get: 'currentSummationDelivered',
             report: 'currentSummationDelivered',
             reportParser: value => {
