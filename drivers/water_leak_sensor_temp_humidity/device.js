@@ -138,7 +138,7 @@ class TempHumidSensorLeakDetectorDevice extends BaseHybridDevice {
         
         try {
           // Send response IMMEDIATELY (synchronous, no async, no delay)
-          endpoint.clusters.iasZone.zoneEnrollResponse({
+          await endpoint.clusters.iasZone.zoneEnrollResponse({
             enrollResponseCode: 0, // 0 = Success
             zoneId: 10
           });
@@ -157,7 +157,7 @@ class TempHumidSensorLeakDetectorDevice extends BaseHybridDevice {
       this.log('📤 Sending proactive Zone Enroll Response...');
       
       try {
-        endpoint.clusters.iasZone.zoneEnrollResponse({
+        await endpoint.clusters.iasZone.zoneEnrollResponse({
           enrollResponseCode: 0,
           zoneId: 10
         });
