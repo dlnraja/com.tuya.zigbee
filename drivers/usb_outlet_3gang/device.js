@@ -2,6 +2,7 @@
 
 const { CLUSTER } = require('zigbee-clusters');
 const SwitchDevice = require('../../lib/SwitchDevice');
+const ReportingConfig = require('../../lib/ReportingConfig');
 
 /**
  * UsbOutlet3GangDevice - SDK3 Compliant 3-Port USB Outlet
@@ -70,15 +71,9 @@ class UsbOutlet3GangDevice extends SwitchDevice {
             return value;
           },
           reportOpts: {
-            configureAttributeReporting: {
-              minInterval: 0,
-              maxInterval: 300,
-              minChange: 1
-            }
+            configureAttributeReporting: ReportingConfig.getConfig('onoff')
           },
-          getOpts: {
-            getOnStart: true
-          }
+          getOpts: ReportingConfig.getGetOpts('onoff')
         });
         this.log('[OK] ✅ Port 1 (endpoint 1) configured successfully');
       }
@@ -100,15 +95,9 @@ class UsbOutlet3GangDevice extends SwitchDevice {
             return value;
           },
           reportOpts: {
-            configureAttributeReporting: {
-              minInterval: 0,
-              maxInterval: 300,
-              minChange: 1
-            }
+            configureAttributeReporting: ReportingConfig.getConfig('onoff')
           },
-          getOpts: {
-            getOnStart: true
-          }
+          getOpts: ReportingConfig.getGetOpts('onoff')
         });
         this.log('[OK] ✅ Port 2 (endpoint 2) configured successfully');
       }
@@ -130,15 +119,9 @@ class UsbOutlet3GangDevice extends SwitchDevice {
             return value;
           },
           reportOpts: {
-            configureAttributeReporting: {
-              minInterval: 0,
-              maxInterval: 300,
-              minChange: 1
-            }
+            configureAttributeReporting: ReportingConfig.getConfig('onoff')
           },
-          getOpts: {
-            getOnStart: true
-          }
+          getOpts: ReportingConfig.getGetOpts('onoff')
         });
         this.log('[OK] ✅ Port 3 (endpoint 3) configured successfully');
       }
@@ -185,15 +168,9 @@ class UsbOutlet3GangDevice extends SwitchDevice {
               return watts;
             },
             reportOpts: {
-              configureAttributeReporting: {
-                minInterval: 5,        // 5 seconds minimum
-                maxInterval: 300,      // 5 minutes maximum
-                minChange: 1           // 0.1W change
-              }
+              configureAttributeReporting: ReportingConfig.getConfig('measure_power')
             },
-            getOpts: {
-              getOnStart: true
-            }
+            getOpts: ReportingConfig.getGetOpts('measure_power')
           });
           this.log('[OK] measure_power configured (cluster 2820)');
         }
@@ -221,15 +198,9 @@ class UsbOutlet3GangDevice extends SwitchDevice {
               return kwh;
             },
             reportOpts: {
-              configureAttributeReporting: {
-                minInterval: 300,      // 5 minutes
-                maxInterval: 3600,     // 1 hour
-                minChange: 100         // 100Wh change
-              }
+              configureAttributeReporting: ReportingConfig.getConfig('meter_power')
             },
-            getOpts: {
-              getOnStart: true
-            }
+            getOpts: ReportingConfig.getGetOpts('meter_power')
           });
           this.log('[OK] meter_power configured (cluster 1794)');
         }
