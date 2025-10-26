@@ -172,11 +172,11 @@ class TuyaSoilTesterTempHumidDevice extends BaseHybridDevice {
     try {
       // Step 1: Setup Zone Enroll Request listener (SYNCHRONOUS - property assignment)
       // SDK3: Use property assignment, NOT .on() event listener
-      endpoint.clusters.iasZone.onZoneEnrollRequest = () => {
+      endpoint.clusters.iasZone.onZoneEnrollRequest = async () => {
         this.log('📨 Zone Enroll Request received');
         
         try {
-          // Send response IMMEDIATELY (synchronous, no async, no delay)
+          // Send response IMMEDIATELY
           await endpoint.clusters.iasZone.zoneEnrollResponse({
             enrollResponseCode: 0, // 0 = Success
             zoneId: 10

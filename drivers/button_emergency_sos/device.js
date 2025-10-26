@@ -40,7 +40,7 @@ class SosEmergencyButtonDevice extends ButtonDevice {
       }
       
       // Setup Zone Enroll Request listener (SDK3 property assignment)
-      endpoint.clusters.iasZone.onZoneEnrollRequest = () => {
+      endpoint.clusters.iasZone.onZoneEnrollRequest = async () => {
         this.log('📨 Zone Enroll Request received');
         
         try {
