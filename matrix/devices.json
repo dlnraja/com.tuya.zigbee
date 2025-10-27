@@ -3016,7 +3016,6 @@
     "class": "socket",
     "manufacturers": [
       "_TZ3000_4fjiwweb",
-      "_TZ3000_h1ipgkwn",
       "_TZ3000_ji4araar",
       "_TZ3000_kpatq5pq",
       "_TZ3000_npzfykbs",
@@ -3024,11 +3023,7 @@
       "_TZ3000_qzjcsmar",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "lumi.ctrl_ln1"
     ],
     "models": [
       "TS0001",
@@ -3039,14 +3034,14 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 14,
+    "manufacturer_count": 9,
     "model_count": 7,
     "capabilities": [
       "onoff",
       "onoff.button2",
       "measure_battery"
     ],
-    "power_source": "battery",
+    "power_source": "ac",
     "clusters": []
   },
   {
@@ -4695,10 +4690,9 @@
       "measure_power",
       "meter_power",
       "measure_voltage",
-      "measure_current",
-      "measure_battery"
+      "measure_current"
     ],
-    "power_source": "battery",
+    "power_source": "ac",
     "clusters": []
   },
   {
@@ -4723,7 +4717,7 @@
       "onoff.usb2",
       "measure_battery"
     ],
-    "power_source": "battery",
+    "power_source": "ac",
     "clusters": []
   },
   {
@@ -4756,7 +4750,7 @@
       "meter_power",
       "measure_battery"
     ],
-    "power_source": "battery",
+    "power_source": "ac",
     "clusters": []
   },
   {
