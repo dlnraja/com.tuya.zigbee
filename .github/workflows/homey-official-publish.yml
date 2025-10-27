@@ -120,7 +120,8 @@ jobs:
             else
               echo "⚠️ Push failed, retrying in 5 seconds..."
               sleep 5
-              git pull --rebase origin master || true
+              git fetch origin master || true
+              git reset --hard origin/master || true
             fi
           done
         env:
@@ -144,7 +145,8 @@ jobs:
 
       - name: Pull latest changes
         run: |
-          git pull origin master
+          git fetch origin master
+          git reset --hard origin/master
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
