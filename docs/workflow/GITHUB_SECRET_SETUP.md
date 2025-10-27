@@ -9,7 +9,7 @@ Unknown argument: token
 
 ## 🔍 Cause
 
-Le workflow utilisait `HOMEY_TOKEN` mais l'action officielle Athom attend `HOMEY_PAT`.
+L'action officielle Athom (`athombv/github-action-homey-app-publish@master`) utilise une **CLI Homey obsolète** qui essaie `homey login --token`, une syntaxe qui n'existe plus.
 
 ## ✅ Solution: Mettre à Jour le Secret GitHub
 
