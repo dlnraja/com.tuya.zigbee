@@ -49,26 +49,27 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
     }
     
     try {
-      /* REFACTOR: registerCapability deprecated with cluster spec.
-   Original: this.registerCapability('measure_luminance', 1024,
-   Replace with SDK3 pattern - see ZigbeeDevice docs
-   Capability: 'measure_luminance', Cluster: 1024
-*/
-// this.registerCapability('measure_luminance', 1024, {
-        get: 'measuredValue',
-        report: 'measuredValue',
-        reportParser: value => Math.pow(10, (value - 1) / 10000),
-        reportOpts: {
-          configureAttributeReporting: {
+      // SDK3: Direct cluster listener for illuminance
+      const illuminanceMeasurementCluster = endpoint.clusters[1024];
+      
+      await illuminanceMeasurementCluster.on('attr.measuredValue', value => {
+        const lux = Math.pow(10, (value - 1) / 10000);
+        this.setCapabilityValue('measure_luminance', lux).catch(this.error);
+        this.log(`[ILLUMINANCE] Updated: ${lux} lux`);
+      });
+
+      // Configure reporting
+      try {
+        await illuminanceMeasurementCluster.configureReporting({
+          measuredValue: {
             minInterval: 60,
             maxInterval: 3600,
             minChange: 100
           }
-        },
-        getOpts: {
-          getOnStart: true
-        }
-      });
+        });
+      } catch (err) {
+        this.log('[WARN] Illuminance reporting config failed:', err.message);
+      }
       
       this.log('[OK] measure_luminance configured (cluster 1024)');
     } catch (err) {
