@@ -31,7 +31,12 @@
     "images:regenerate": "node scripts/images/batch-regenerate-all.js",
     "images:verify": "node scripts/images/verify-all-images.js",
     "fix-nomenclature": "node scripts/FIX_DRIVER_NOMENCLATURE.js",
-    "build:drivers-db": "node scripts/build_driver_database.js"
+    "build:drivers-db": "node scripts/build_driver_database.js",
+    "extract:z2m": "node scripts/intelligence/auto-extract-zigbee2mqtt.js",
+    "extract:blakadder": "node scripts/intelligence/auto-extract-blakadder.js",
+    "extract:all": "npm run extract:z2m && npm run extract:blakadder",
+    "consolidate": "node scripts/intelligence/consolidate-and-generate.js",
+    "intelligence:full": "npm run extract:all && npm run consolidate"
   },
   "keywords": [
     "homey",
