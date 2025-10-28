@@ -29,9 +29,9 @@ class AirConditionerDevice extends BaseHybridDevice {
    Capability: 'target_temperature', Cluster: CLUSTER.THERMOSTAT
 */
 // this.registerCapability('target_temperature', CLUSTER.THERMOSTAT, {
-        endpoint: 1,
-        getOpts: {
-          getOnStart: true
+//         endpoint: 1,
+//         getOpts: {
+//           getOnStart: true
         }
       });
     }
@@ -44,9 +44,9 @@ class AirConditionerDevice extends BaseHybridDevice {
    Capability: 'measure_temperature', Cluster: CLUSTER.THERMOSTAT
 */
 // this.registerCapability('measure_temperature', CLUSTER.THERMOSTAT, {
-        endpoint: 1,
-        getOpts: {
-          getOnStart: true
+//         endpoint: 1,
+//         getOpts: {
+//           getOnStart: true
         }
       });
     }
@@ -59,8 +59,8 @@ class AirConditionerDevice extends BaseHybridDevice {
    Capability: 'thermostat_mode', Cluster: 61184
 */
 // this.registerCapability('thermostat_mode', 61184, {
-        endpoint: 1,
-        set: async (value) => {
+//         endpoint: 1,
+//         set: async (value) => {
           const modes = {
             'cool': 0,
             'heat': 1,
@@ -93,8 +93,8 @@ class AirConditionerDevice extends BaseHybridDevice {
    Capability: 'fan_speed', Cluster: 61184
 */
 // this.registerCapability('fan_speed', 61184, {
-        endpoint: 1,
-        set: async (value) => {
+//         endpoint: 1,
+//         set: async (value) => {
           const speeds = {
             'low': 0,
             'medium': 1,
@@ -148,14 +148,14 @@ class AirConditionerDevice extends BaseHybridDevice {
    Capability: 'measure_temperature', Cluster: 1026
 */
 // this.registerCapability('measure_temperature', 1026, {
-        get: 'measuredValue',
-        report: 'measuredValue',
-        reportParser: value => value / 100,
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 60,
-            maxInterval: 3600,
-            minChange: 10
+//         get: 'measuredValue',
+//         report: 'measuredValue',
+//         reportParser: value => value / 100,
+//         reportOpts: {
+//           configureAttributeReporting: {
+//             minInterval: 60,
+//             maxInterval: 3600,
+//             minChange: 10
           }
         },
         getOpts: {

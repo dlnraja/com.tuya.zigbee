@@ -33,8 +33,8 @@ class DehumidifierDevice extends BaseHybridDevice {
    Capability: 'target_humidity', Cluster: 61184
 */
 // this.registerCapability('target_humidity', 61184, {
-        endpoint: 1,
-        set: async (value) => {
+//         endpoint: 1,
+//         set: async (value) => {
           return {
             dp: 2, // Tuya datapoint for target humidity
             datatype: 2, // Value type
@@ -59,9 +59,9 @@ class DehumidifierDevice extends BaseHybridDevice {
    Capability: 'measure_humidity', Cluster: 61184
 */
 // this.registerCapability('measure_humidity', 61184, {
-        endpoint: 1,
-        get: 'data',
-        reportParser: (value) => {
+//         endpoint: 1,
+//         get: 'data',
+//         reportParser: (value) => {
           if (value && value.dp === 1) { // Current humidity datapoint
             return value.data;
           }
@@ -78,9 +78,9 @@ class DehumidifierDevice extends BaseHybridDevice {
    Capability: 'measure_temperature', Cluster: 61184
 */
 // this.registerCapability('measure_temperature', 61184, {
-        endpoint: 1,
-        get: 'data',
-        reportParser: (value) => {
+//         endpoint: 1,
+//         get: 'data',
+//         reportParser: (value) => {
           if (value && value.dp === 3) { // Temperature datapoint
             return value.data / 10; // Usually in 0.1°C units
           }
@@ -97,9 +97,9 @@ class DehumidifierDevice extends BaseHybridDevice {
    Capability: 'measure_power', Cluster: 61184
 */
 // this.registerCapability('measure_power', 61184, {
-        endpoint: 1,
-        get: 'data',
-        reportParser: (value) => {
+//         endpoint: 1,
+//         get: 'data',
+//         reportParser: (value) => {
           if (value && value.dp === 5) { // Power datapoint
             return value.data;
           }
@@ -116,9 +116,9 @@ class DehumidifierDevice extends BaseHybridDevice {
    Capability: 'alarm_water', Cluster: 61184
 */
 // this.registerCapability('alarm_water', 61184, {
-        endpoint: 1,
-        get: 'data',
-        reportParser: (value) => {
+//         endpoint: 1,
+//         get: 'data',
+//         reportParser: (value) => {
           if (value && value.dp === 11) { // Water tank status
             return value.data === 1; // 1 = full, 0 = not full
           }
@@ -157,14 +157,14 @@ class DehumidifierDevice extends BaseHybridDevice {
    Capability: 'measure_humidity', Cluster: 1029
 */
 // this.registerCapability('measure_humidity', 1029, {
-        get: 'measuredValue',
-        report: 'measuredValue',
-        reportParser: value => value / 100,
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 60,
-            maxInterval: 3600,
-            minChange: 100
+//         get: 'measuredValue',
+//         report: 'measuredValue',
+//         reportParser: value => value / 100,
+//         reportOpts: {
+//           configureAttributeReporting: {
+//             minInterval: 60,
+//             maxInterval: 3600,
+//             minChange: 100
           }
         },
         getOpts: {
@@ -202,14 +202,14 @@ class DehumidifierDevice extends BaseHybridDevice {
    Capability: 'measure_temperature', Cluster: 1026
 */
 // this.registerCapability('measure_temperature', 1026, {
-        get: 'measuredValue',
-        report: 'measuredValue',
-        reportParser: value => value / 100,
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 60,
-            maxInterval: 3600,
-            minChange: 10
+//         get: 'measuredValue',
+//         report: 'measuredValue',
+//         reportParser: value => value / 100,
+//         reportOpts: {
+//           configureAttributeReporting: {
+//             minInterval: 60,
+//             maxInterval: 3600,
+//             minChange: 10
           }
         },
         getOpts: {
