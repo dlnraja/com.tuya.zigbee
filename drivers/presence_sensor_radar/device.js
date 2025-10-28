@@ -162,7 +162,7 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
       
       // Step 4: Setup Zone Status attribute listener (property assignment)
       // Alternative listener for attribute reports
-      endpoint.clusters.iasZone.onZoneStatus = (zoneStatus) => {
+      endpoint.clusters.iasZone.onZoneStatus = async (zoneStatus) => {
         this.log('[DATA] Zone attribute report:', zoneStatus);
         
         let status = zoneStatus;
