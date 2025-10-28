@@ -1,25 +1,138 @@
 'use strict';
 
 const BaseHybridDevice = require('../../lib/BaseHybridDevice');
+const TuyaDataPointEngine = require('../../lib/TuyaDataPointEngine');
 
 /**
  * ClimateMonitorDevice - Unified Hybrid Driver
+ * Supports BOTH standard Zigbee AND Tuya TS0601 DataPoint devices
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
- * Dynamically manages capabilities based on power source
  */
 class ClimateMonitorDevice extends BaseHybridDevice {
 
   async onNodeInit({ zclNode }) {
-    this.log('ClimateMonitorDevice initializing...');
+    this.log('════════════════════════════════════════');
+    this.log('[CLIMATE] 🌡️  Climate Monitor initializing...');
+    this.log('════════════════════════════════════════');
     
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit({ zclNode }).catch(err => this.error(err));
 
-    // Setup sensor capabilities (SDK3)
+    // Detect device type
+    await this.detectDeviceType();
+    
+    // Setup based on device type
+    if (this.isTuyaDevice) {
+      this.log('[CLIMATE] 🔧 Setting up Tuya TS0601 DataPoint device...');
+      await this.setupTuyaDataPoints();
+    } else {
+      this.log('[CLIMATE] 🔧 Setting up standard Zigbee device...');
+      await this.setupStandardZigbee();
+    }
+    
+    this.log('[CLIMATE] ✅ Climate Monitor initialized!');
+    this.log('[CLIMATE] Power:', this.powerType || 'unknown');
+    this.log('[CLIMATE] Type:', this.isTuyaDevice ? 'Tuya TS0601' : 'Standard Zigbee');
+    this.log('════════════════════════════════════════\n');
+  }
+  
+  /**
+   * Detect if this is a Tuya TS0601 device
+   */
+  async detectDeviceType() {
+    this.log('[CLIMATE] 🔍 Detecting device type...');
+    
+    const endpoint = this.zclNode.endpoints[1];
+    const clusters = endpoint?.clusters || {};
+    
+    this.log('[CLIMATE] 📋 Available clusters:', Object.keys(clusters).join(', '));
+    
+    // Check for Tuya cluster
+    const tuyaCluster = clusters.manuSpecificTuya || 
+                       clusters.tuyaManufacturer || 
+                       clusters.tuya || 
+                       clusters['0xEF00'] || 
+                       clusters[61184];
+    
+    if (tuyaCluster) {
+      this.log('[CLIMATE] ✅ Tuya cluster FOUND!');
+      this.log('[CLIMATE] Cluster name:', Object.keys(clusters).find(k => clusters[k] === tuyaCluster));
+      this.isTuyaDevice = true;
+      this.tuyaCluster = tuyaCluster;
+    } else {
+      this.log('[CLIMATE] ℹ️  No Tuya cluster - using standard Zigbee');
+      this.isTuyaDevice = false;
+    }
+  }
+  
+  /**
+   * Setup Tuya TS0601 DataPoints
+   */
+  async setupTuyaDataPoints() {
+    this.log('[TUYA] 🔧 Setting up Tuya DataPoint engine...');
+    
+    try {
+      // Create DP engine
+      this.tuyaEngine = new TuyaDataPointEngine(this, this.tuyaCluster);
+      
+      // Define DP mapping for climate monitor
+      // Common TS0601 climate monitor DPs:
+      // DP 1 = Temperature (°C * 10)
+      // DP 2 = Humidity (%)
+      // DP 4 = Battery (%)
+      const dpMapping = {
+        'measure_temperature': {
+          dp: 1,
+          parser: (value) => {
+            const temp = value / 10;
+            this.log(`[TUYA] 🌡️  Temperature DP: ${value} → ${temp}°C`);
+            return temp;
+          }
+        },
+        'measure_humidity': {
+          dp: 2,
+          parser: (value) => {
+            this.log(`[TUYA] 💧 Humidity DP: ${value}%`);
+            return value;
+          }
+        },
+        'measure_battery': {
+          dp: 4,
+          parser: (value) => {
+            this.log(`[TUYA] 🔋 Battery DP: ${value}%`);
+            return value;
+          }
+        }
+      };
+      
+      this.log('[TUYA] 📋 DP Mapping configured:');
+      this.log('[TUYA]   DP 1 → Temperature');
+      this.log('[TUYA]   DP 2 → Humidity');
+      this.log('[TUYA]   DP 4 → Battery');
+      
+      // Setup listeners and read initial values
+      await this.tuyaEngine.setupDataPoints(dpMapping);
+      
+      this.log('[TUYA] ✅ Tuya DataPoints configured!');
+      
+    } catch (err) {
+      this.error('[TUYA] ❌ DataPoint setup failed:', err);
+      this.error('[TUYA] Stack:', err.stack);
+      this.log('[TUYA] ⚠️  Falling back to standard Zigbee...');
+      await this.setupStandardZigbee();
+    }
+  }
+  
+  /**
+   * Setup standard Zigbee clusters
+   */
+  async setupStandardZigbee() {
+    this.log('[ZIGBEE] 🔧 Setting up standard Zigbee clusters...');
+    
     await this.setupTemperatureSensor();
     await this.setupHumiditySensor();
     
-    this.log('ClimateMonitorDevice initialized - Power source:', this.powerSource || 'unknown');
+    this.log('[ZIGBEE] ✅ Standard Zigbee configured!');
   }
 
   
