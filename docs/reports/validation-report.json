@@ -1,8 +1,8 @@
 {
-  "timestamp": "2025-10-28T10:01:22.480Z",
+  "timestamp": "2025-10-28T11:49:18.720Z",
   "scanned": {
-    "files": 7049,
-    "dirs": 1065
+    "files": 7063,
+    "dirs": 1064
   },
   "errors": [
     {
@@ -2008,6 +2008,11 @@
       "message": "Mismatched braces: 35 open, 34 close; Mismatched parentheses: 90 open, 88 close"
     },
     {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\validation\\auto-fix-common-issues.js",
+      "type": "js_potential_issues",
+      "message": "Mismatched braces: 39 open, 42 close; Mismatched parentheses: 91 open, 92 close"
+    },
+    {
       "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\validation\\check-project-coherence.js",
       "type": "js_potential_issues",
       "message": "Mismatched parentheses: 261 open, 260 close"
@@ -2077,10 +2082,6 @@
   "skipped": [
     {
       "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.backup-enrichment",
-      "reason": "ignored_pattern"
-    },
-    {
-      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.cache",
       "reason": "ignored_pattern"
     },
     {
