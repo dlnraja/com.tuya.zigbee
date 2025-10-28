@@ -1,13 +1,188 @@
 {
+  "capabilities": {
+    "measure_battery": {
+      "title": "Battery",
+      "units": "%"
+    },
+    "alarm_generic": {
+      "title": "Alarm"
+    },
+    "alarm_motion": {
+      "title": "Motion"
+    },
+    "alarm_contact": {
+      "title": "Contact"
+    },
+    "alarm_water": {
+      "title": "Water leak"
+    },
+    "alarm_smoke": {
+      "title": "Smoke"
+    },
+    "alarm_co": {
+      "title": "CO"
+    },
+    "alarm_co2": {
+      "title": "CO₂"
+    },
+    "alarm_tamper": {
+      "title": "Tamper"
+    },
+    "alarm_vibration": {
+      "title": "Vibration"
+    },
+    "onoff": {
+      "title": "Power"
+    },
+    "dim": {
+      "title": "Brightness",
+      "units": "%"
+    },
+    "light_hue": {
+      "title": "Hue"
+    },
+    "light_saturation": {
+      "title": "Saturation"
+    },
+    "light_temperature": {
+      "title": "Temperature"
+    },
+    "light_mode": {
+      "title": "Light mode"
+    },
+    "measure_temperature": {
+      "title": "Temperature",
+      "units": "°C"
+    },
+    "measure_humidity": {
+      "title": "Humidity",
+      "units": "%"
+    },
+    "measure_pressure": {
+      "title": "Pressure",
+      "units": "mbar"
+    },
+    "measure_co2": {
+      "title": "CO₂",
+      "units": "ppm"
+    },
+    "measure_pm25": {
+      "title": "PM2.5",
+      "units": "µg/m³"
+    },
+    "measure_voc": {
+      "title": "VOC",
+      "units": "ppb"
+    },
+    "measure_luminance": {
+      "title": "Luminance",
+      "units": "lux"
+    },
+    "measure_power": {
+      "title": "Power",
+      "units": "W"
+    },
+    "measure_voltage": {
+      "title": "Voltage",
+      "units": "V"
+    },
+    "measure_current": {
+      "title": "Current",
+      "units": "A"
+    },
+    "meter_power": {
+      "title": "Energy",
+      "units": "kWh"
+    },
+    "target_temperature": {
+      "title": "Target temperature",
+      "units": "°C"
+    },
+    "windowcoverings_state": {
+      "title": "Window coverings",
+      "values": {
+        "up": "Up",
+        "idle": "Idle",
+        "down": "Down"
+      }
+    },
+    "windowcoverings_set": {
+      "title": "Position",
+      "units": "%"
+    },
+    "button": {
+      "title": "Button"
+    }
+  },
   "settings": {
-    "title": "Settings",
-    "debug_logging": "Enable debug logging",
-    "debug_logging_hint": "Enable detailed logging for troubleshooting device issues",
-    "community_updates": "Enable community updates",
-    "community_updates_hint": "Receive notifications about new device support from community",
-    "reporting_interval": "Reporting interval (seconds)",
-    "temperature_offset": "Temperature offset (°C)",
-    "humidity_offset": "Humidity offset (%)"
+    "power_source": {
+      "label": "Power Source",
+      "hint": "Select power source manually or use auto-detection",
+      "values": {
+        "auto": {
+          "en": "Auto Detect",
+          "fr": "Détection Automatique"
+        },
+        "ac": {
+          "en": "AC Powered",
+          "fr": "Alimentation Secteur"
+        },
+        "dc": {
+          "en": "DC Powered",
+          "fr": "Alimentation DC"
+        },
+        "battery": {
+          "en": "Battery Powered",
+          "fr": "Sur Batterie"
+        }
+      }
+    },
+    "battery_type": {
+      "label": "Battery Type",
+      "hint": "Select battery type manually or use auto-detection based on voltage"
+    },
+    "battery_low_threshold": {
+      "label": "Low Battery Threshold (%)",
+      "hint": "Trigger low battery warning when below this percentage"
+    },
+    "battery_critical_threshold": {
+      "label": "Critical Battery Threshold (%)",
+      "hint": "Trigger critical battery warning when below this percentage"
+    },
+    "enable_battery_notifications": {
+      "label": "Enable Battery Notifications",
+      "hint": "Send flow notifications for battery events"
+    },
+    "battery_report_interval": {
+      "label": "Battery Report Interval (hours)",
+      "hint": "How often to request battery status updates"
+    },
+    "optimization_mode": {
+      "label": "Energy Optimization Mode",
+      "hint": "Balance between responsiveness and battery life",
+      "values": {
+        "performance": {
+          "en": "Performance (More responsive)",
+          "fr": "Performance (Plus réactif)"
+        },
+        "balanced": {
+          "en": "Balanced",
+          "fr": "Équilibré"
+        },
+        "power_saving": {
+          "en": "Power Saving (Longer battery)",
+          "fr": "Économie d'énergie (Batterie plus longue)"
+        }
+      }
+    },
+    "show_voltage": {
+      "label": "Show Battery Voltage",
+      "hint": "Display raw battery voltage in device settings"
+    },
+    "enable_power_estimation": {
+      "label": "Enable Power Estimation",
+      "hint": "Estimate power consumption when real measurement is not available (AC/DC devices only)"
+    }
   },
   "tabs": {
     "general": "General",
