@@ -93,22 +93,24 @@ class ClimateMonitorDevice extends BaseHybridDevice {
    Original: this.registerCapability('measure_humidity', 1029,
    Replace with SDK3 pattern - see ZigbeeDevice docs
    Capability: 'measure_humidity', Cluster: 1029
+   
+   Code commented out - needs SDK3 direct cluster access implementation
 */
-// this.registerCapability('measure_humidity', 1029, {
-        get: 'measuredValue',
-        report: 'measuredValue',
-        reportParser: value => value / 100,
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 60,
-            maxInterval: 3600,
-            minChange: 100
-          }
-        },
-        getOpts: {
-          getOnStart: true
-        }
-      });
+      // this.registerCapability('measure_humidity', 1029, {
+      //   get: 'measuredValue',
+      //   report: 'measuredValue',
+      //   reportParser: value => value / 100,
+      //   reportOpts: {
+      //     configureAttributeReporting: {
+      //       minInterval: 60,
+      //       maxInterval: 3600,
+      //       minChange: 100
+      //     }
+      //   },
+      //   getOpts: {
+      //     getOnStart: true
+      //   }
+      // });
       
       this.log('[OK] measure_humidity configured (cluster 1029)');
     } catch (err) {
