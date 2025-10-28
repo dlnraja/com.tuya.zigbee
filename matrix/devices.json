@@ -2211,6 +2211,33 @@
     "clusters": []
   },
   {
+    "driver_id": "pir_sensor_3in1",
+    "name": "PIR Sensor 3-in-1",
+    "class": "sensor",
+    "manufacturers": [
+      "HOBEIAN",
+      "_TZE200_3towulqd",
+      "_TZE200_ppuj1vem",
+      "_TZE200_pay2byax",
+      "_TZE200_mrf6vtua"
+    ],
+    "models": [
+      "ZG-204ZV",
+      "TS0601"
+    ],
+    "manufacturer_count": 5,
+    "model_count": 2,
+    "capabilities": [
+      "alarm_motion",
+      "measure_temperature",
+      "measure_humidity",
+      "measure_luminance",
+      "measure_battery"
+    ],
+    "power_source": "battery",
+    "clusters": []
+  },
+  {
     "driver_id": "plug_dimmer",
     "name": "Smart Plug Dimmer",
     "class": "socket",
