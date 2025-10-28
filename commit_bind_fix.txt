@@ -1,0 +1,6 @@
+fix: Add defensive checks for cluster.bind - SDK3 compatibility
+
+Cannot read properties of undefined reading bind
+
+Fixed in MultiEndpointCommandListener and ButtonDevice
+Check typeof cluster.bind before calling
