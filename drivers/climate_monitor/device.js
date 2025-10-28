@@ -66,61 +66,83 @@ class ClimateMonitorDevice extends BaseHybridDevice {
     }
     
     try {
-      // Cluster 1026 (TemperatureMeasurement)
-      if (this.hasCapability('measure_temperature') && endpoint.clusters[1026]) {
-        /* REFACTOR: registerCapability deprecated with cluster spec.
-   Original: this.registerCapability('measure_temperature', 1026,
-   Replace with SDK3 pattern - see ZigbeeDevice docs
-   Capability: 'measure_temperature', Cluster: 1026
-*/
-// this.registerCapability('measure_temperature', 1026, {
-          get: 'measuredValue',
-          report: 'measuredValue',
-          reportParser: value => {
-            const temp = value / 100; // Convert from centidegrees
-            this.log('[TEMP]  Temperature:', temp, '°C');
-            return temp;
-          },
-          reportOpts: {
-            configureAttributeReporting: {
-              minInterval: 60,       // 1 minute
-              maxInterval: 3600,     // 1 hour
-              minChange: 10          // 0.1°C change
-            }
-          },
-          getOpts: {
-            getOnStart: true
-          }
+      // Temperature (Cluster 1026) - WORKING SDK3 VERSION
+      const tempCluster = endpoint.clusters?.msTemperatureMeasurement;
+      if (this.hasCapability('measure_temperature') && tempCluster) {
+        this.log('[TEMP] Configuring temperature sensor...');
+        
+        // Read initial value
+        try {
+          const { measuredValue } = await tempCluster.readAttributes(['measuredValue']);
+          const temp = measuredValue / 100;
+          this.log('[TEMP] ✅ Initial temperature:', temp, '°C');
+          await this.setCapabilityValue('measure_temperature', temp);
+        } catch (readErr) {
+          this.log('[TEMP] ⚠️  Initial read failed');
+        }
+        
+        // Listen for reports
+        tempCluster.on('attr.measuredValue', async (value) => {
+          const temp = value / 100;
+          this.log('[TEMP] 📊 Temperature update:', temp, '°C');
+          await this.setCapabilityValue('measure_temperature', temp).catch(this.error);
         });
+        
+        // Configure reporting
+        try {
+          await this.configureAttributeReporting([{
+            endpointId: 1,
+            cluster: 'msTemperatureMeasurement',
+            attributeName: 'measuredValue',
+            minInterval: 60,
+            maxInterval: 3600,
+            minChange: 10
+          }]);
+          this.log('[TEMP] ✅ Reporting configured');
+        } catch (reportErr) {
+          this.log('[TEMP] ⚠️  Reporting config failed');
+        }
+        
         this.log('[OK] Temperature sensor configured (cluster 1026)');
       }
       
-      // Cluster 1029 (RelativeHumidity)
-      if (this.hasCapability('measure_humidity') && endpoint.clusters[1029]) {
-        /* REFACTOR: registerCapability deprecated with cluster spec.
-   Original: this.registerCapability('measure_humidity', 1029,
-   Replace with SDK3 pattern - see ZigbeeDevice docs
-   Capability: 'measure_humidity', Cluster: 1029
-*/
-// this.registerCapability('measure_humidity', 1029, {
-          get: 'measuredValue',
-          report: 'measuredValue',
-          reportParser: value => {
-            const humidity = value / 100; // Convert from percentage * 100
-            this.log('[HUMID] Humidity:', humidity, '%');
-            return humidity;
-          },
-          reportOpts: {
-            configureAttributeReporting: {
-              minInterval: 60,       // 1 minute
-              maxInterval: 3600,     // 1 hour
-              minChange: 100         // 1% change
-            }
-          },
-          getOpts: {
-            getOnStart: true
-          }
+      // Humidity (Cluster 1029) - WORKING SDK3 VERSION
+      const humidityCluster = endpoint.clusters?.msRelativeHumidity;
+      if (this.hasCapability('measure_humidity') && humidityCluster) {
+        this.log('[HUMID] Configuring humidity sensor...');
+        
+        // Read initial value
+        try {
+          const { measuredValue } = await humidityCluster.readAttributes(['measuredValue']);
+          const humidity = measuredValue / 100;
+          this.log('[HUMID] ✅ Initial humidity:', humidity, '%');
+          await this.setCapabilityValue('measure_humidity', humidity);
+        } catch (readErr) {
+          this.log('[HUMID] ⚠️  Initial read failed');
+        }
+        
+        // Listen for reports
+        humidityCluster.on('attr.measuredValue', async (value) => {
+          const humidity = value / 100;
+          this.log('[HUMID] 📊 Humidity update:', humidity, '%');
+          await this.setCapabilityValue('measure_humidity', humidity).catch(this.error);
         });
+        
+        // Configure reporting
+        try {
+          await this.configureAttributeReporting([{
+            endpointId: 1,
+            cluster: 'msRelativeHumidity',
+            attributeName: 'measuredValue',
+            minInterval: 60,
+            maxInterval: 3600,
+            minChange: 100
+          }]);
+          this.log('[HUMID] ✅ Reporting configured');
+        } catch (reportErr) {
+          this.log('[HUMID] ⚠️  Reporting config failed');
+        }
+        
         this.log('[OK] Humidity sensor configured (cluster 1029)');
       }
       
@@ -144,33 +166,44 @@ class ClimateMonitorDevice extends BaseHybridDevice {
     const endpoint = this.zclNode.endpoints[1];
     const manufacturer = this.getData().manufacturerName || '';
     
-    // Method 1: Standard Zigbee (Cluster 1 - PowerConfiguration)
-    if (endpoint?.clusters[1]) {
+    // Method 1: Standard Zigbee (Cluster 1 - PowerConfiguration) - WORKING VERSION
+    const powerCluster = endpoint?.clusters?.powerConfiguration;
+    if (powerCluster) {
       try {
-        /* REFACTOR: registerCapability deprecated with cluster spec.
-   Original: this.registerCapability('measure_battery', 1,
-   Replace with SDK3 pattern - see ZigbeeDevice docs
-   Capability: 'measure_battery', Cluster: 1
-*/
-// this.registerCapability('measure_battery', 1, {
-          get: 'batteryPercentageRemaining',
-          report: 'batteryPercentageRemaining',
-          reportParser: value => {
-            const battery = Math.round(value / 2); // Convert 0-200 to 0-100%
-            this.log('[BATTERY] Battery (Zigbee):', battery, '%');
-            return battery;
-          },
-          reportOpts: {
-            configureAttributeReporting: {
-              minInterval: 300,      // 5 minutes
-              maxInterval: 3600,     // 1 hour
-              minChange: 2           // 1% change (raw value 2)
-            }
-          },
-          getOpts: {
-            getOnStart: true
-          }
+        this.log('[BATTERY] Using Standard Zigbee battery...');
+        
+        // Read initial value
+        try {
+          const { batteryPercentageRemaining } = await powerCluster.readAttributes(['batteryPercentageRemaining']);
+          const battery = Math.round(batteryPercentageRemaining / 2);
+          this.log('[BATTERY] ✅ Initial battery:', battery, '%');
+          await this.setCapabilityValue('measure_battery', battery);
+        } catch (readErr) {
+          this.log('[BATTERY] ⚠️  Initial read failed');
+        }
+        
+        // Listen for reports
+        powerCluster.on('attr.batteryPercentageRemaining', async (value) => {
+          const battery = Math.round(value / 2);
+          this.log('[BATTERY] 📊 Battery update:', battery, '%');
+          await this.setCapabilityValue('measure_battery', battery).catch(this.error);
         });
+        
+        // Configure reporting
+        try {
+          await this.configureAttributeReporting([{
+            endpointId: 1,
+            cluster: 'powerConfiguration',
+            attributeName: 'batteryPercentageRemaining',
+            minInterval: 300,
+            maxInterval: 3600,
+            minChange: 2
+          }]);
+          this.log('[BATTERY] ✅ Reporting configured');
+        } catch (reportErr) {
+          this.log('[BATTERY] ⚠️  Reporting config failed');
+        }
+        
         this.log('[OK] Battery: Standard Zigbee (cluster 1)');
         this.batteryMethod = 'zigbee_standard';
         return;
