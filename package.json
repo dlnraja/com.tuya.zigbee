@@ -39,7 +39,10 @@
     "intelligence:full": "npm run extract:all && npm run consolidate",
     "maintenance": "node scripts/automation/intelligent-maintenance.js",
     "maintenance:full": "node scripts/automation/intelligent-maintenance.js --full",
-    "maintenance:dry-run": "node scripts/automation/intelligent-maintenance.js --dry-run"
+    "maintenance:dry-run": "node scripts/automation/intelligent-maintenance.js --dry-run",
+    "validate:recursive": "node scripts/validation/comprehensive-recursive-validator.js",
+    "fix:auto": "node scripts/validation/auto-fix-common-issues.js",
+    "validate:fix": "npm run validate:recursive && npm run fix:auto && npm run validate:recursive"
   },
   "keywords": [
     "homey",
