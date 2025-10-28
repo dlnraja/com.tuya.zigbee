@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class ZigbeeGatewayHubDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('ZigbeeGatewayHubDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

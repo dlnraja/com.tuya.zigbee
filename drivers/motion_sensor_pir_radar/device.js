@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class PirRadarIlluminationSensorDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('PirRadarIlluminationSensorDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

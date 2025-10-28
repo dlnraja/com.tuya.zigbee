@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class Pm25DetectorDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('Pm25DetectorDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

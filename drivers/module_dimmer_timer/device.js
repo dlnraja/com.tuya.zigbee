@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class DimmerSwitchTimerModuleDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('DimmerSwitchTimerModuleDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

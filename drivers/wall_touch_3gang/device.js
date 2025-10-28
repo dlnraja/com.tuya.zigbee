@@ -15,14 +15,14 @@ const WallTouchDevice = require('../../lib/WallTouchDevice');
  */
 class WallTouch3GangDevice extends WallTouchDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('[COLOR] WallTouch3Gang initializing...');
     
     // Set button count (required by base class)
     this.buttonCount = 3;
     
     // Initialize via SDK3 base class
-    await super.onNodeInit();
+    await super.onNodeInit({ zclNode });
 
     // Setup sensor capabilities (SDK3)
     await this.setupTemperatureSensor();

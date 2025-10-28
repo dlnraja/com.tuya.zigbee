@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class CeilingFanDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('CeilingFanDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

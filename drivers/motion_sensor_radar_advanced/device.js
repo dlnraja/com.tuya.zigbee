@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class RadarMotionSensorAdvancedDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('RadarMotionSensorAdvancedDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

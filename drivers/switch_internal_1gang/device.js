@@ -8,9 +8,9 @@ const FallbackSystem = require('../../lib/FallbackSystem');
 
 class TuyaZigbeeDevice extends SwitchDevice {
 
-    async onNodeInit() {
+    async onNodeInit({ zclNode }) {
     // Initialize hybrid base (power detection)
-    await super.onNodeInit();
+    await super.onNodeInit({ zclNode });
 
         this.enableDebug();
         this.printNode();
