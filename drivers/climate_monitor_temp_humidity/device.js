@@ -13,7 +13,7 @@ class ClimateMonitorDevice extends BaseHybridDevice {
     this.log('ClimateMonitorDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit().catch(err => this.error(err));
+    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
 
     // Setup sensor capabilities (SDK3)
     await this.setupTemperatureSensor();

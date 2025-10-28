@@ -13,7 +13,7 @@ class Switch2gangDevice extends SwitchDevice {
     this.log('Switch2gangDevice initializing...');
     
     // Initialize base FIRST (auto power detection + dynamic capabilities)
-    await super.onNodeInit().catch(err => this.error(err));
+    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
     
     // THEN setup multi-endpoint (zclNode now exists)
     await this.setupMultiEndpoint();

@@ -13,7 +13,7 @@ class UsbOutletDevice extends SwitchDevice {
     this.log('UsbOutletDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit().catch(err => this.error(err));
+    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
     
     this.log('UsbOutletDevice initialized - Power source:', this.powerSource || 'unknown');
   }

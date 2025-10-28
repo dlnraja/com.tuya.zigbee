@@ -13,7 +13,7 @@ class WirelessSwitch1buttonDevice extends BaseHybridDevice {
     this.log('WirelessSwitch1buttonDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit().catch(err => this.error(err));
+    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
     
     this.log('WirelessSwitch1buttonDevice initialized - Power source:', this.powerSource || 'unknown');
   }

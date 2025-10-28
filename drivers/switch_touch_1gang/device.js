@@ -17,7 +17,7 @@ class SwitchTouch1GangDevice extends SwitchDevice {
     this.switchType = 'touch';
     
     // Initialize base (power detection + switch control)
-    await super.onNodeInit().catch(err => this.error(err));
+    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
     
     this.log('SwitchTouch1GangDevice initialized - 1 switch ready');
   }

@@ -13,7 +13,7 @@ class Switch1gangDevice extends SwitchDevice {
     this.log('Switch1gangDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit().catch(err => this.error(err));
+    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
     
     this.log('Switch1gangDevice initialized - Power source:', this.powerSource || 'unknown');
   }
