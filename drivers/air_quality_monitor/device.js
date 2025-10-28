@@ -379,14 +379,14 @@ class AirQualityMonitorProBatteryDevice extends SensorDevice {
    Capability: 'measure_co2', Cluster: 1037
 */
 // this.registerCapability('measure_co2', 1037, {
-        get: 'measuredValue',
-        report: 'measuredValue',
-        reportParser: value => value * 1e-6,
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 300,
-            maxInterval: 3600,
-            minChange: 10
+//         get: 'measuredValue',
+//         report: 'measuredValue',
+//         reportParser: value => value * 1e-6,
+//         reportOpts: {
+//           configureAttributeReporting: {
+//             minInterval: 300,
+//             maxInterval: 3600,
+//             minChange: 10
           }
         },
         getOpts: {
@@ -424,14 +424,14 @@ class AirQualityMonitorProBatteryDevice extends SensorDevice {
    Capability: 'measure_temperature', Cluster: 1026
 */
 // this.registerCapability('measure_temperature', 1026, {
-        get: 'measuredValue',
-        report: 'measuredValue',
-        reportParser: value => value / 100,
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 60,
-            maxInterval: 3600,
-            minChange: 10
+//         get: 'measuredValue',
+//         report: 'measuredValue',
+//         reportParser: value => value / 100,
+//         reportOpts: {
+//           configureAttributeReporting: {
+//             minInterval: 60,
+//             maxInterval: 3600,
+//             minChange: 10
           }
         },
         getOpts: {

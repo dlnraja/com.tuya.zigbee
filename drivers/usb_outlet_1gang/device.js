@@ -71,9 +71,9 @@ class UsbOutlet1GangDevice extends SwitchDevice {
    Capability: 'measure_power', Cluster: 2820
 */
 // this.registerCapability('measure_power', 2820, {
-            get: 'activePower',
-            report: 'activePower',
-            reportParser: value => {
+//             get: 'activePower',
+//             report: 'activePower',
+//             reportParser: value => {
               // Convert to Watts (device reports in 0.1W units)
               const watts = value / 10;
               this.log('[DATA] Power:', watts, 'W');
@@ -101,9 +101,9 @@ class UsbOutlet1GangDevice extends SwitchDevice {
    Capability: 'measure_voltage', Cluster: 2820
 */
 // this.registerCapability('measure_voltage', 2820, {
-            get: 'rmsVoltage',
-            report: 'rmsVoltage',
-            reportParser: value => {
+//             get: 'rmsVoltage',
+//             report: 'rmsVoltage',
+//             reportParser: value => {
               const volts = value;
               this.log('[DATA] Voltage:', volts, 'V');
               return volts;
@@ -130,9 +130,9 @@ class UsbOutlet1GangDevice extends SwitchDevice {
    Capability: 'measure_current', Cluster: 2820
 */
 // this.registerCapability('measure_current', 2820, {
-            get: 'rmsCurrent',
-            report: 'rmsCurrent',
-            reportParser: value => {
+//             get: 'rmsCurrent',
+//             report: 'rmsCurrent',
+//             reportParser: value => {
               // Convert to Amps (device reports in mA)
               const amps = value / 1000;
               this.log('[DATA] Current:', amps, 'A');
@@ -169,9 +169,9 @@ class UsbOutlet1GangDevice extends SwitchDevice {
    Capability: 'meter_power', Cluster: 1794
 */
 // this.registerCapability('meter_power', 1794, {
-            get: 'currentSummationDelivered',
-            report: 'currentSummationDelivered',
-            reportParser: value => {
+//             get: 'currentSummationDelivered',
+//             report: 'currentSummationDelivered',
+//             reportParser: value => {
               // Convert to kWh (device reports in Wh)
               const kwh = value / 1000;
               this.log('[DATA] Energy:', kwh, 'kWh');

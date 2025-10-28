@@ -49,14 +49,14 @@ class PirRadarIlluminationSensorDevice extends BaseHybridDevice {
    Capability: 'measure_luminance', Cluster: 1024
 */
 // this.registerCapability('measure_luminance', 1024, {
-        get: 'measuredValue',
-        report: 'measuredValue',
-        reportParser: value => Math.pow(10, (value - 1) / 10000),
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 60,
-            maxInterval: 3600,
-            minChange: 100
+//         get: 'measuredValue',
+//         report: 'measuredValue',
+//         reportParser: value => Math.pow(10, (value - 1) / 10000),
+//         reportOpts: {
+//           configureAttributeReporting: {
+//             minInterval: 60,
+//             maxInterval: 3600,
+//             minChange: 100
           }
         },
         getOpts: {

@@ -34,7 +34,7 @@ class SwitchTouch1GangDevice extends SwitchDevice {
    Capability: 'onoff', Cluster: 6
 */
 // this.registerCapability('onoff', 6, {
-      endpoint: 1
+//       endpoint: 1
     });
     
     

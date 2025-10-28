@@ -47,14 +47,14 @@ class HumidityControllerDevice extends BaseHybridDevice {
    Capability: 'measure_temperature', Cluster: 1026
 */
 // this.registerCapability('measure_temperature', 1026, {
-        get: 'measuredValue',
-        report: 'measuredValue',
-        reportParser: value => value / 100,
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 60,
-            maxInterval: 3600,
-            minChange: 10
+//         get: 'measuredValue',
+//         report: 'measuredValue',
+//         reportParser: value => value / 100,
+//         reportOpts: {
+//           configureAttributeReporting: {
+//             minInterval: 60,
+//             maxInterval: 3600,
+//             minChange: 10
           }
         },
         getOpts: {
@@ -92,14 +92,14 @@ class HumidityControllerDevice extends BaseHybridDevice {
    Capability: 'measure_humidity', Cluster: 1029
 */
 // this.registerCapability('measure_humidity', 1029, {
-        get: 'measuredValue',
-        report: 'measuredValue',
-        reportParser: value => value / 100,
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 60,
-            maxInterval: 3600,
-            minChange: 100
+//         get: 'measuredValue',
+//         report: 'measuredValue',
+//         reportParser: value => value / 100,
+//         reportOpts: {
+//           configureAttributeReporting: {
+//             minInterval: 60,
+//             maxInterval: 3600,
+//             minChange: 100
           }
         },
         getOpts: {
