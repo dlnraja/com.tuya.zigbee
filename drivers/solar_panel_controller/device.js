@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class SolarPanelControllerDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('SolarPanelControllerDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

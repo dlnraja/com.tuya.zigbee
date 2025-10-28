@@ -7,7 +7,7 @@ class AirConditionerDevice extends BaseHybridDevice {
   
   async onNodeInit({ zclNode }) {
     // Initialize hybrid base (power detection)
-    await super.onNodeInit();
+    await super.onNodeInit({ zclNode });
 
     // Setup sensor capabilities (SDK3)
     await this.setupTemperatureSensor();

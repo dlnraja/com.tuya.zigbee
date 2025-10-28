@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class Co2TempHumidityDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('Co2TempHumidityDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

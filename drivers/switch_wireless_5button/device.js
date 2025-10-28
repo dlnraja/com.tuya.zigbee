@@ -9,7 +9,7 @@ const SwitchDevice = require('../../lib/SwitchDevice');
  */
 class WirelessSwitch5buttonDevice extends SwitchDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('WirelessSwitch5buttonDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

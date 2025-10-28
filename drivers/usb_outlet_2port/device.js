@@ -23,7 +23,7 @@ const SwitchDevice = require('../../lib/SwitchDevice');
  */
 class UsbOutlet2PortDevice extends SwitchDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('⚡ UsbOutlet2PortDevice initializing (SDK3)...');
     
     // Set gang count for SwitchDevice base class

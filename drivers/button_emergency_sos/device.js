@@ -9,7 +9,7 @@ const ButtonDevice = require('../../lib/ButtonDevice');
  */
 class SosEmergencyButtonDevice extends ButtonDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('SosEmergencyButtonDevice initializing...');
     
     // Initialize base FIRST (auto power detection + dynamic capabilities)

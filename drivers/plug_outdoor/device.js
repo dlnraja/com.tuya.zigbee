@@ -9,7 +9,7 @@ const SwitchDevice = require('../../lib/SwitchDevice');
  */
 class OutdoorPlugDevice extends SwitchDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('OutdoorPlugDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

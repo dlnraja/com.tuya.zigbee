@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class MultipurposeSensorDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('MultipurposeSensorDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

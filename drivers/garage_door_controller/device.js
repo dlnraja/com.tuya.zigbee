@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class GarageDoorControllerDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('GarageDoorControllerDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

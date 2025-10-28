@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class DimmerTouchDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('DimmerTouchDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

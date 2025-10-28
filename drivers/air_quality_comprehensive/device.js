@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class TuyaComprehensiveAirMonitorDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('TuyaComprehensiveAirMonitorDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

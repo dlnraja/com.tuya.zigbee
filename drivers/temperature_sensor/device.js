@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class TemperatureSensorDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('TemperatureSensorDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

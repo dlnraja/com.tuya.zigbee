@@ -9,7 +9,7 @@ const SwitchDevice = require('../../lib/SwitchDevice');
  */
 class EnergyPlugAdvancedDevice extends SwitchDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('EnergyPlugAdvancedDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

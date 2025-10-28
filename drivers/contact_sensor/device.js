@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class ContactSensorDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('ContactSensorDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

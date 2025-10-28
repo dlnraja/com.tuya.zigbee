@@ -9,7 +9,7 @@ const SwitchDevice = require('../../lib/SwitchDevice');
  */
 class SwitchWall2GangDevice extends SwitchDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('SwitchWall2GangDevice initializing...');
     
     // Set gang count for this device (used by SwitchDevice base class)

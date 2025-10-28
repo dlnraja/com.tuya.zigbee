@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class AirQualityMonitorDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('AirQualityMonitorDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

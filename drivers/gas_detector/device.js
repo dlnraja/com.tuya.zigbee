@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class GasDetectorDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('GasDetectorDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

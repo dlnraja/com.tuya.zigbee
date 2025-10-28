@@ -11,7 +11,7 @@ class AirQualityMonitorProBatteryDevice extends SensorDevice {
 
   async onNodeInit({ zclNode }) {
     // Initialize hybrid base (power detection)
-    await super.onNodeInit();
+    await super.onNodeInit({ zclNode });
 
     // Setup sensor capabilities (SDK3)
     await this.setupCo2Sensor();

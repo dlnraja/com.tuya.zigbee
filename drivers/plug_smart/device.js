@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class PlugSmartDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('PlugSmartDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

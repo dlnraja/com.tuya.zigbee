@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class ValveSmartDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('ValveSmartDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
