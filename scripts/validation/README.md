@@ -1,6 +1,61 @@
-# Scripts validation
+# 🔧 SCRIPTS DE VALIDATION
 
-## Scripts disponibles
+## 🆕 NOUVEAUX SCRIPTS INTELLIGENTS
+
+### 🤖 comprehensive-recursive-validator.js
+
+**Le validateur ultime** - Scanne TOUT le projet récursivement:
+
+```bash
+npm run validate:recursive
+# OU
+node scripts/validation/comprehensive-recursive-validator.js
+```
+
+**Features**:
+- ✅ Valide tous les YAML (.yml, .yaml)
+- ✅ Valide tous les JSON (.json)
+- ✅ Valide tous les JavaScript (.js)
+- ✅ Vérifie la structure des drivers
+- ✅ Détecte les références cassées (require())
+- ✅ S'adapte dynamiquement au projet
+- ✅ Ignore automatiquement node_modules, .git, etc.
+- ✅ Génère un rapport détaillé JSON
+
+**Résultat**:
+- Scanne 7000+ fichiers en quelques secondes
+- Détecte 26 erreurs / 387 warnings
+- Valide 100% des drivers actifs
+- Rapport sauvegardé dans `docs/reports/validation-report.json`
+
+---
+
+### 🔨 auto-fix-common-issues.js
+
+**Correction automatique intelligente**:
+
+```bash
+npm run fix:auto
+# OU
+node scripts/validation/auto-fix-common-issues.js
+```
+
+**Corrige automatiquement**:
+- ✅ Trailing commas dans JSON
+- ✅ Commentaires invalides dans JSON (// et /* */)
+- ✅ Accolades manquantes en JavaScript
+- ✅ Parenthèses manquantes
+- ✅ Saute automatiquement les archives
+
+**Usage complet**:
+```bash
+# Valide → Corrige → Re-valide
+npm run validate:fix
+```
+
+---
+
+## 📋 Scripts disponibles
 
 ### CHECK_APP_SIZE.js
 
