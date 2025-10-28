@@ -76,11 +76,11 @@ class SosEmergencyButtonDevice extends ButtonDevice {
         
         // Update capability
         if (this.hasCapability('alarm_generic')) {
-          await this.setCapabilityValue('alarm_generic', true).catch(this.error);
+          this.setCapabilityValue('alarm_generic', true).catch(this.error);
           
           // Auto-reset after 5 seconds
           setTimeout(() => {
-            await this.setCapabilityValue('alarm_generic', false).catch(this.error);
+            this.setCapabilityValue('alarm_generic', false).catch(this.error);
           }, 5000);
         }
       };
