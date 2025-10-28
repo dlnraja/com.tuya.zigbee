@@ -41,7 +41,7 @@ class WaterValveSmartHybridDevice extends BaseHybridDevice {
         minInterval: 7200,
         maxInterval: 86400,
         minChange: 10
-      }]);
+      } catch (err) { this.error(err); }]);
       this.log('Battery reporting configured');
     } catch (err) {
       this.log('Battery report config failed (non-critical):', err.message);
@@ -71,7 +71,7 @@ class WaterValveSmartHybridDevice extends BaseHybridDevice {
       try {
         await this.pollAttributes().catch(err => this.error(err));
         this.log('Initial battery poll completed');
-      } catch (err) {
+      } catch (err) { this.error(err); } catch (err) {
         this.error('Initial battery poll failed:', err);
       }
     }, 5000);
@@ -96,7 +96,7 @@ class WaterValveSmartHybridDevice extends BaseHybridDevice {
           if (percentage <= 20 && percentage > 10) {
             this.log('[WARN]  Low battery warning:', percentage + '%');
             await this.homey.notifications.createNotification({
-              excerpt: `${this.getName()} battery low (${percentage}%)`
+              excerpt: `${this.getName()} catch (err) { this.error(err); }battery low (${percentage}%)`
             }).catch(() => {});
           }
           
@@ -129,7 +129,7 @@ class WaterValveSmartHybridDevice extends BaseHybridDevice {
       try {
         // Force read de tous les attributes critiques
         await this.pollAttributes().catch(err => this.error(err));
-      } catch (err) {
+      } catch (err) { this.error(err); } catch (err) {
         this.error('Poll failed:', err);
       }
     }, 300000); // 5 minutes
@@ -138,7 +138,7 @@ class WaterValveSmartHybridDevice extends BaseHybridDevice {
 
     // Call parent
     try {
-    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
+    await super.onNodeInit({ zclNode } catch (err) { this.error(err); }).catch(err => this.error(err));
     // Initialize Fallback System
     this.fallback = new FallbackSystem(this, {
       maxRetries: 3,
@@ -161,7 +161,7 @@ class WaterValveSmartHybridDevice extends BaseHybridDevice {
       // Fallback to standard cluster handling if needed
       try {
       await this.registerStandardCapabilities().catch(err => this.error(err));
-      } catch (err) { this.error('Await error:', err); }
+      } catch (err) { this.error(err); } catch (err) { this.error('Await error:', err); }
     }
 
     // Mark device as available
@@ -184,7 +184,7 @@ class WaterValveSmartHybridDevice extends BaseHybridDevice {
     try {
       const flowCard = this.homey.flow.getDeviceTriggerCard(cardId);
       await flowCard.trigger(this, tokens).catch(err => this.error(err));
-      this.log(`[OK] Flow triggered: ${cardId}`, tokens);
+      this.log(`[OK] Flow triggered: ${cardId} catch (err) { this.error(err); }`, tokens);
     } catch (err) {
       this.error(`[ERROR] Flow trigger error: ${cardId}`, err);
     }
@@ -301,7 +301,7 @@ class WaterValveSmartHybridDevice extends BaseHybridDevice {
     
     try {
     await Promise.allSettled(promises).catch(err => this.error(err));
-    } catch (err) { this.error('Await error:', err); }
+    } catch (err) { this.error(err); } catch (err) { this.error('Await error:', err); }
     this.log('[OK] Poll attributes completed');
   }
 
@@ -315,7 +315,7 @@ class WaterValveSmartHybridDevice extends BaseHybridDevice {
   async readAttributeSafe(cluster, attribute) {
     try {
       return await this.fallback.readAttributeWithFallback(cluster, attribute).catch(err => this.error(err));
-    } catch (err) {
+    } catch (err) { this.error(err); } catch (err) {
       this.error(`Failed to read ${cluster}.${attribute} after all fallback strategies:`, err);
       throw err;
     }
@@ -328,7 +328,7 @@ class WaterValveSmartHybridDevice extends BaseHybridDevice {
   async configureReportSafe(config) {
     try {
       return await this.fallback.configureReportWithFallback(config).catch(err => this.error(err));
-    } catch (err) {
+    } catch (err) { this.error(err); } catch (err) {
       this.error(`Failed to configure report after all fallback strategies:`, err);
       // Don't throw - use polling as ultimate fallback
       return { success: false, method: 'polling' };
@@ -342,7 +342,7 @@ class WaterValveSmartHybridDevice extends BaseHybridDevice {
   async enrollIASZoneSafe() {
     try {
       return await this.fallback.iasEnrollWithFallback().catch(err => this.error(err));
-    } catch (err) {
+    } catch (err) { this.error(err); } catch (err) {
       this.error('Failed to enroll IAS Zone after all fallback strategies:', err);
       throw err;
     }
@@ -381,16 +381,15 @@ class WaterValveSmartHybridDevice extends BaseHybridDevice {
    Capability: 'measure_temperature', Cluster: 1026
 */
 // this.registerCapability('measure_temperature', 1026, {
-        get: 'measuredValue',
-        report: 'measuredValue',
-        reportParser: value => value / 100,
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 60,
-            maxInterval: 3600,
-            minChange: 10
-          }
-        },
+//         get: 'measuredValue',
+//         report: 'measuredValue',
+//         reportParser: value => value / 100,
+//         reportOpts: {
+//           configureAttributeReporting: {
+//             minInterval: 60,
+//             maxInterval: 3600,
+//             minChange: 10
+          } catch (err) { this.error(err); }},
         getOpts: {
           getOnStart: true
         }
@@ -438,7 +437,7 @@ class WaterValveSmartHybridDevice extends BaseHybridDevice {
           await endpoint.clusters.iasZone.zoneEnrollResponse({
             enrollResponseCode: 0, // 0 = Success
             zoneId: 10
-          });
+          } catch (err) { this.error(err); });
           
           this.log('[OK] Zone Enroll Response sent (zoneId: 10)');
         } catch (err) {
@@ -457,7 +456,7 @@ class WaterValveSmartHybridDevice extends BaseHybridDevice {
         await endpoint.clusters.iasZone.zoneEnrollResponse({
           enrollResponseCode: 0,
           zoneId: 10
-        });
+        } catch (err) { this.error(err); });
         
         this.log('[OK] Proactive Zone Enroll Response sent');
       } catch (err) {

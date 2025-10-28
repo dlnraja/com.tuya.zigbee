@@ -49,16 +49,15 @@ class WaterValveSmartDevice extends BaseHybridDevice {
    Capability: 'measure_temperature', Cluster: 1026
 */
 // this.registerCapability('measure_temperature', 1026, {
-        get: 'measuredValue',
-        report: 'measuredValue',
-        reportParser: value => value / 100,
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 60,
-            maxInterval: 3600,
-            minChange: 10
-          }
-        },
+//         get: 'measuredValue',
+//         report: 'measuredValue',
+//         reportParser: value => value / 100,
+//         reportOpts: {
+//           configureAttributeReporting: {
+//             minInterval: 60,
+//             maxInterval: 3600,
+//             minChange: 10
+          } catch (err) { this.error(err); }},
         getOpts: {
           getOnStart: true
         }
@@ -105,7 +104,7 @@ class WaterValveSmartDevice extends BaseHybridDevice {
           await endpoint.clusters.iasZone.zoneEnrollResponse({
             enrollResponseCode: 0, // 0 = Success
             zoneId: 10
-          });
+          } catch (err) { this.error(err); });
           
           this.log('[OK] Zone Enroll Response sent (zoneId: 10)');
         } catch (err) {
@@ -124,7 +123,7 @@ class WaterValveSmartDevice extends BaseHybridDevice {
         await endpoint.clusters.iasZone.zoneEnrollResponse({
           enrollResponseCode: 0,
           zoneId: 10
-        });
+        } catch (err) { this.error(err); });
         
         this.log('[OK] Proactive Zone Enroll Response sent');
       } catch (err) {
