@@ -1,0 +1,30 @@
+fix: CRITICAL - Restore broken drivers from failed enrichment
+
+PROBLEM: Mass enrichment script BROKE 6 drivers by removing class declarations
+
+BROKEN FILES RESTORED:
+- climate_monitor_temp_humidity/device.js
+- climate_sensor_soil/device.js
+- air_quality_monitor/device.js
+- air_quality_comprehensive/device.js
+- air_quality_pm25/device.js
+- presence_sensor_radar/device.js
+
+CAUSE:
+Enrichment script (APPLY_BEST_PRACTICES_MASSIVE.js) had bug that:
+1. Removed 'use strict' and class declaration
+2. Left only methods without wrapping class
+3. Result: "No class found" error + drivers non-functional
+
+FIXED:
+Restored all files from commit 765e170cdd (before enrichment)
+Files now have correct structure with class declarations
+
+VERIFICATION:
+All drivers now have:
+✅ 'use strict';
+✅ const BaseHybridDevice = require...
+✅ class XxxDevice extends BaseHybridDevice {
+✅ Complete methods
+
+STATUS: Drivers restored to working state from v4.9.145
