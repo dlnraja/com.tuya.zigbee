@@ -25,9 +25,9 @@ homey-auth.*
 *.tar.gz
 *.7z
 
-# Excessively large documentation
-docs/releases/ULTIMATE_AUDIT_REPORT_v2.15.60.md
-**/ULTIMATE_AUDIT_REPORT*.md
+# Excessively large documentation (DÉSACTIVÉ - on commit tout maintenant)
+# docs/releases/ULTIMATE_AUDIT_REPORT_v2.15.60.md
+# **/ULTIMATE_AUDIT_REPORT*.md
 
 # Temporary files
 *.tmp
@@ -70,41 +70,28 @@ archive/*
 archive_old/
 
 *.backup-auto
-# Auto-cleanup rules - Ne pas créer ces fichiers à la racine
-*_REPORT*.md
-*_STATUS*.md
-*_SUMMARY*.md
-*_COMPLETE*.md
-*_FIX*.md
-*_DEPLOY*.md
-*_SESSION*.md
+# Auto-cleanup rules - Ne pas créer ces fichiers à la racine (DÉSACTIVÉ)
+# *_REPORT*.md
+# *_STATUS*.md
+# *_SUMMARY*.md
+# *_COMPLETE*.md
+# *_FIX*.md
+# *_DEPLOY*.md
+# *_SESSION*.md
 *.tmp
 *.log
 *.bak
 temp_*.bat
 temp_*.js
 
-# Large project status files
-docs/project-status/PROJECT_STRUCTURE.md
-docs/project-status/*_LARGE*.md
-docs/releases/ULTIMATE_AUDIT_REPORT_*.md
-# Bloated docs
-docs/workflow/README_WORKFLOW.md
-docs/community/TUYA_ZIGBEE_LOCAL_SUPPORT.md
-docs/community/QUICK_IMPROVEMENTS.md
-docs/project-status/FINAL_ANALYSIS_PUBLICATION.md
-docs/workflow/QUICK_WORKFLOW.md
+# Large project status files (DÉSACTIVÉ - on commit tout)
+# docs/project-status/PROJECT_STRUCTURE.md
+# docs/project-status/*_LARGE*.md
+# docs/releases/ULTIMATE_AUDIT_REPORT_*.md
 
-# Bloated docs
-docs/workflow/README_WORKFLOW.md
-docs/community/TUYA_ZIGBEE_LOCAL_SUPPORT.md
-docs/community/QUICK_IMPROVEMENTS.md
-docs/project-status/FINAL_ANALYSIS_PUBLICATION.md
-docs/workflow/QUICK_WORKFLOW.md
-
-# Bloated docs
-docs/workflow/README_WORKFLOW.md
-docs/community/TUYA_ZIGBEE_LOCAL_SUPPORT.md
-docs/community/QUICK_IMPROVEMENTS.md
-docs/project-status/FINAL_ANALYSIS_PUBLICATION.md
-docs/workflow/QUICK_WORKFLOW.md
+# Bloated docs (DÉSACTIVÉ - on commit tout maintenant)
+# docs/workflow/README_WORKFLOW.md
+# docs/community/TUYA_ZIGBEE_LOCAL_SUPPORT.md
+# docs/community/QUICK_IMPROVEMENTS.md
+# docs/project-status/FINAL_ANALYSIS_PUBLICATION.md
+# docs/workflow/QUICK_WORKFLOW.md
