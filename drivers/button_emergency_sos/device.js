@@ -13,7 +13,7 @@ class SosEmergencyButtonDevice extends ButtonDevice {
     this.log('SosEmergencyButtonDevice initializing...');
     
     // Initialize base FIRST (auto power detection + dynamic capabilities)
-    await super.onNodeInit().catch(err => this.error(err));
+    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
     
     // THEN setup IAS Zone (zclNode now exists)
     await this.setupIasZone();

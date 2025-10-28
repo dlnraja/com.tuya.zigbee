@@ -18,7 +18,7 @@ class SwitchWall4GangDevice extends SwitchDevice {
     this.switchType = 'wall';
     
     // Initialize base (power detection + switch control)
-    await super.onNodeInit().catch(err => this.error(err));
+    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
     
     this.log('SwitchWall4GangDevice initialized - 4 switches ready');
   }

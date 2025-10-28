@@ -11,7 +11,7 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
 
   async onNodeInit({ zclNode }) {
     // Critical: Attribute reporting for data transmission
-    await super.onNodeInit().catch(err => this.error(err));
+    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
     
     // THEN setup (zclNode now exists)
     await this.setupAttributeReporting();
