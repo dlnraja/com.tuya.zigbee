@@ -1,15 +1,4 @@
-'use strict';
-
-const BaseHybridDevice = require('../../lib/BaseHybridDevice');
-
-/**
- * ClimateMonitorDevice - Unified Hybrid Driver
- * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
- * Dynamically manages capabilities based on power source
- */
-class ClimateMonitorDevice extends BaseHybridDevice {
-
-  async onNodeInit({ zclNode }) {
+async onNodeInit({ zclNode }) {
     this.log('ClimateMonitorDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
@@ -168,6 +157,9 @@ class ClimateMonitorDevice extends BaseHybridDevice {
     } catch (err) {
       this.error('Tuya temperature fallback failed:', err.message);
     }
+    await this.setupTemperature();
+    await this.setupHumidity();
+
   }
 
   /**
@@ -220,10 +212,4 @@ class ClimateMonitorDevice extends BaseHybridDevice {
     }
   }
 
-  async onDeleted() {
-    this.log('ClimateMonitorDevice deleted');
-    await super.onDeleted().catch(err => this.error(err));
-  }
-}
-
-module.exports = ClimateMonitorDevice;
+  async 

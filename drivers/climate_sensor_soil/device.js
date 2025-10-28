@@ -266,6 +266,187 @@ class TuyaSoilTesterTempHumidDevice extends BaseHybridDevice {
     this.log('TuyaSoilTesterTempHumidDevice deleted');
     await super.onDeleted().catch(err => this.error(err));
   }
+
+  async setupTemperature() {
+    if (!this.hasCapability('measure_temperature')) {
+      return;
+    }
+    
+    const endpoint = this.zclNode.endpoints[1];
+    const tempCluster = endpoint?.clusters?.msTemperatureMeasurement;
+    
+    if (!tempCluster) {
+      this.log('[TEMP] ⚠️  Temperature cluster not available');
+      return;
+    }
+    
+    try {
+      this.log('[TEMP] 🌡️  Configuring temperature sensor...');
+      
+      // 1. Lecture initiale
+      try {
+        const { measuredValue } = await tempCluster.readAttributes(['measuredValue']);
+        const temp = measuredValue / 100;
+        this.log('[TEMP] ✅ Initial temperature:', temp, '°C');
+        await this.setCapabilityValue('measure_temperature', temp);
+      } catch (readErr) {
+        this.log('[TEMP] ⚠️  Initial read failed:', readErr.message);
+      }
+      
+      // 2. Listener pour mises à jour
+      tempCluster.on('attr.measuredValue', async (value) => {
+        const temp = value / 100;
+        this.log('[TEMP] 📊 Temperature update:', temp, '°C');
+        await this.setCapabilityValue('measure_temperature', temp).catch(this.error);
+      });
+      
+      // 3. Configuration du reporting
+      try {
+        await this.configureAttributeReporting([{
+          endpointId: 1,
+          cluster: 'msTemperatureMeasurement',
+          attributeName: 'measuredValue',
+          minInterval: 60,
+          maxInterval: 3600,
+          minChange: 10
+        }]);
+        this.log('[TEMP] ✅ Reporting configured');
+      } catch (reportErr) {
+        this.log('[TEMP] ⚠️  Reporting config failed (non-critical)');
+      }
+      
+      this.log('[OK] ✅ Temperature sensor configured');
+    } catch (err) {
+      this.error('[TEMP] ❌ Setup failed:', err.message);
+    }
+  }
+
+  async setupHumidity() {
+    if (!this.hasCapability('measure_humidity')) {
+      return;
+    }
+    
+    const endpoint = this.zclNode.endpoints[1];
+    const humidityCluster = endpoint?.clusters?.msRelativeHumidity;
+    
+    if (!humidityCluster) {
+      this.log('[HUMID] ⚠️  Humidity cluster not available');
+      return;
+    }
+    
+    try {
+      this.log('[HUMID] 💧 Configuring humidity sensor...');
+      
+      // 1. Lecture initiale
+      try {
+        const { measuredValue } = await humidityCluster.readAttributes(['measuredValue']);
+        const humidity = measuredValue / 100;
+        this.log('[HUMID] ✅ Initial humidity:', humidity, '%');
+        await this.setCapabilityValue('measure_humidity', humidity);
+      } catch (readErr) {
+        this.log('[HUMID] ⚠️  Initial read failed:', readErr.message);
+      }
+      
+      // 2. Listener pour mises à jour
+      humidityCluster.on('attr.measuredValue', async (value) => {
+        const humidity = value / 100;
+        this.log('[HUMID] 📊 Humidity update:', humidity, '%');
+        await this.setCapabilityValue('measure_humidity', humidity).catch(this.error);
+      });
+      
+      // 3. Configuration du reporting
+      try {
+        await this.configureAttributeReporting([{
+          endpointId: 1,
+          cluster: 'msRelativeHumidity',
+          attributeName: 'measuredValue',
+          minInterval: 60,
+          maxInterval: 3600,
+          minChange: 100
+        }]);
+        this.log('[HUMID] ✅ Reporting configured');
+      } catch (reportErr) {
+        this.log('[HUMID] ⚠️  Reporting config failed (non-critical)');
+      }
+      
+      this.log('[OK] ✅ Humidity sensor configured');
+    } catch (err) {
+      this.error('[HUMID] ❌ Setup failed:', err.message);
+    }
+  }
+
+  async setupBattery() {
+    if (!this.hasCapability('measure_battery')) {
+      return;
+    }
+    
+    const endpoint = this.zclNode.endpoints[1];
+    const powerCluster = endpoint?.clusters?.powerConfiguration;
+    
+    if (!powerCluster) {
+      this.log('[BATTERY] ⚠️  PowerConfiguration cluster not available');
+      return;
+    }
+    
+    try {
+      this.log('[BATTERY] 🔋 Configuring battery monitoring...');
+      
+      // 1. Lecture initiale
+      try {
+        const { batteryPercentageRemaining } = await powerCluster.readAttributes(['batteryPercentageRemaining']);
+        const battery = Math.round(batteryPercentageRemaining / 2);
+        this.log('[BATTERY] ✅ Initial battery:', battery, '%');
+        await this.setCapabilityValue('measure_battery', battery);
+      } catch (readErr) {
+        this.log('[BATTERY] ⚠️  Trying voltage fallback...');
+        
+        // Fallback: lecture depuis voltage
+        try {
+          const { batteryVoltage } = await powerCluster.readAttributes(['batteryVoltage']);
+          const voltage = batteryVoltage / 10;
+          const battery = this.calculateBatteryFromVoltage(voltage);
+          this.log('[BATTERY] ✅ Battery from voltage:', battery, '% (', voltage, 'V)');
+          await this.setCapabilityValue('measure_battery', battery);
+        } catch (voltErr) {
+          this.log('[BATTERY] ❌ Could not read battery');
+        }
+      }
+      
+      // 2. Listener pour mises à jour
+      powerCluster.on('attr.batteryPercentageRemaining', async (value) => {
+        const battery = Math.round(value / 2);
+        this.log('[BATTERY] 📊 Battery update:', battery, '%');
+        await this.setCapabilityValue('measure_battery', battery).catch(this.error);
+      });
+      
+      // 3. Configuration du reporting
+      try {
+        await this.configureAttributeReporting([{
+          endpointId: 1,
+          cluster: 'powerConfiguration',
+          attributeName: 'batteryPercentageRemaining',
+          minInterval: 300,
+          maxInterval: 3600,
+          minChange: 2
+        }]);
+        this.log('[BATTERY] ✅ Reporting configured');
+      } catch (reportErr) {
+        this.log('[BATTERY] ⚠️  Reporting config failed (non-critical)');
+      }
+      
+      this.log('[OK] ✅ Battery monitoring configured');
+    } catch (err) {
+      this.error('[BATTERY] ❌ Setup failed:', err.message);
+    }
+  }
+  
+  calculateBatteryFromVoltage(voltage) {
+    // CR2032: 3.0V (100%) → 2.0V (0%)
+    if (voltage >= 3.0) return 100;
+    if (voltage <= 2.0) return 0;
+    return Math.round(((voltage - 2.0) / 1.0) * 100);
+  }
+
 }
 
 module.exports = TuyaSoilTesterTempHumidDevice;
