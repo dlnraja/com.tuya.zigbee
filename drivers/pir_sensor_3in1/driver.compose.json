@@ -1,0 +1,128 @@
+{
+  "id": "pir_sensor_3in1",
+  "name": {
+    "en": "PIR Sensor 3-in-1",
+    "fr": "Capteur PIR 3-en-1"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_luminance",
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "alarm_motion": {
+      "title": {
+        "en": "Motion",
+        "fr": "Mouvement"
+      }
+    },
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature",
+        "fr": "Température"
+      },
+      "decimals": 1
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Humidity",
+        "fr": "Humidité"
+      },
+      "decimals": 0
+    },
+    "measure_luminance": {
+      "title": {
+        "en": "Luminance",
+        "fr": "Luminosité"
+      },
+      "decimals": 0
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie"
+      }
+    }
+  },
+  "energy": {
+    "batteries": ["INTERNAL"]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "HOBEIAN",
+      "_TZE200_3towulqd",
+      "_TZE200_ppuj1vem",
+      "_TZE200_pay2byax",
+      "_TZE200_mrf6vtua"
+    ],
+    "productId": [
+      "ZG-204ZV",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          61184
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the button on the sensor for 5 seconds until the LED blinks rapidly",
+        "fr": "Maintenez le bouton du capteur pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "pir_sensitivity",
+      "type": "dropdown",
+      "label": {
+        "en": "PIR Sensitivity",
+        "fr": "Sensibilité PIR"
+      },
+      "value": "2",
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "Low",
+            "fr": "Basse"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "Medium",
+            "fr": "Moyenne"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "High",
+            "fr": "Haute"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Adjust the sensitivity of the motion detector",
+        "fr": "Ajustez la sensibilité du détecteur de mouvement"
+      }
+    }
+  ],
+  "images": {
+    "small": "/drivers/pir_sensor_3in1/assets/images/small.png",
+    "large": "/drivers/pir_sensor_3in1/assets/images/large.png",
+    "xlarge": "/drivers/pir_sensor_3in1/assets/images/xlarge.png"
+  }
+}
