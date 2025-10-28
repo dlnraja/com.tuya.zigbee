@@ -34,7 +34,7 @@ class SwitchTouch3GangDevice extends SwitchDevice {
    Capability: 'onoff', Cluster: 6
 */
 // this.registerCapability('onoff', 6, {
-      endpoint: 1
+//       endpoint: 1
     });
     
     // Additional switches (endpoints 2-3)
@@ -44,7 +44,7 @@ class SwitchTouch3GangDevice extends SwitchDevice {
    Capability: 'onoff.switch_2', Cluster: 6
 */
 // this.registerCapability('onoff.switch_2', 6, {
-      endpoint: 2
+//       endpoint: 2
     });
     /* REFACTOR: registerCapability deprecated with cluster spec.
    Original: this.registerCapability('onoff.switch_3', 6,
@@ -52,7 +52,7 @@ class SwitchTouch3GangDevice extends SwitchDevice {
    Capability: 'onoff.switch_3', Cluster: 6
 */
 // this.registerCapability('onoff.switch_3', 6, {
-      endpoint: 3
+//       endpoint: 3
     });
   }
 

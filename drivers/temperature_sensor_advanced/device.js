@@ -49,14 +49,14 @@ class TemperatureSensorAdvancedDevice extends BaseHybridDevice {
    Capability: 'measure_temperature', Cluster: 1026
 */
 // this.registerCapability('measure_temperature', 1026, {
-        get: 'measuredValue',
-        report: 'measuredValue',
-        reportParser: value => value / 100,
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 60,
-            maxInterval: 3600,
-            minChange: 10
+//         get: 'measuredValue',
+//         report: 'measuredValue',
+//         reportParser: value => value / 100,
+//         reportOpts: {
+//           configureAttributeReporting: {
+//             minInterval: 60,
+//             maxInterval: 3600,
+//             minChange: 10
           }
         },
         getOpts: {
