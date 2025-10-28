@@ -1,0 +1,27 @@
+feat: Add Dynamic Capability Manager for auto-discovery
+
+PROBLEM: Multi-endpoint devices show only 1 button/socket
+ROOT CAUSE: Capabilities created statically, not per endpoint
+
+SOLUTION - Dynamic Capability Manager:
+- Auto-inspects all endpoints and clusters at init
+- Creates capabilities dynamically for each endpoint
+- Maps cluster ID to Homey capability automatically
+- Adds endpoint suffix for multi-endpoint (onoff.2, onoff.3)
+- Sets up listeners and binds for each capability
+- Reads initial values to populate Homey UI
+- Generates proper titles with endpoint numbers
+
+IMPACT:
+- USB 2-gang switch now shows 2 buttons
+- 4-button remotes show all 4 buttons
+- All metrics (temperature, humidity, battery) now populate
+- Flow cards created for all endpoints
+- Binds only called if cluster.bind exists (fixes crashes)
+
+FIXES:
+- Multi-endpoint visibility
+- Missing capabilities
+- Empty values in Homey UI
+- Incomplete flow cards
+- cluster.bind crashes
