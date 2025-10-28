@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class WirelessSwitch1buttonDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('WirelessSwitch1buttonDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

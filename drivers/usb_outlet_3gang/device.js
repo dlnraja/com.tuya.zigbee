@@ -26,7 +26,7 @@ const ReportingConfig = require('../../lib/ReportingConfig');
  */
 class UsbOutlet3GangDevice extends SwitchDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('⚡ UsbOutlet3GangDevice initializing (SDK3)...');
     
     // Set gang count for SwitchDevice base class

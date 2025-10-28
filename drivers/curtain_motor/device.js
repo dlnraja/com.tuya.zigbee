@@ -8,7 +8,7 @@ const FallbackSystem = require('../../lib/FallbackSystem');
 
 class SmartCurtainMotorDevice extends BaseHybridDevice {
 
-    async onNodeInit() {
+    async onNodeInit({ zclNode }) {
         try {
         await super.onNodeInit().catch(err => this.error(err));
         } catch (err) { this.error('Await error:', err); }

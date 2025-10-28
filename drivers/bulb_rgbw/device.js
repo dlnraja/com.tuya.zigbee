@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class BulbRgbwDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('BulbRgbwDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

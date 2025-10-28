@@ -9,7 +9,7 @@ const ButtonDevice = require('../../lib/ButtonDevice');
  */
 class Button8GangDevice extends ButtonDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('Button8GangDevice initializing...');
     
     // Set button count for this device

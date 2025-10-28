@@ -9,7 +9,7 @@ const ButtonDevice = require('../../lib/ButtonDevice');
  */
 class RemoteSwitchDevice extends ButtonDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('RemoteSwitchDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

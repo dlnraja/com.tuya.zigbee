@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class TuyaSoilTesterTempHumidDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('TuyaSoilTesterTempHumidDevice initializing...');
     
     // Setup sensor reporting

@@ -9,7 +9,7 @@ const SwitchDevice = require('../../lib/SwitchDevice');
  */
 class SmartPlugDimmerDevice extends SwitchDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('SmartPlugDimmerDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

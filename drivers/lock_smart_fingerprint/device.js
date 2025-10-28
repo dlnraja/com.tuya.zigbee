@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class LockFingerprintDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('LockFingerprintDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

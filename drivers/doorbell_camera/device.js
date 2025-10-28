@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class TuyaDoorbellCameraDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('TuyaDoorbellCameraDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

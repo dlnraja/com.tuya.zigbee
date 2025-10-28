@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class MotionTempHumidityIlluminationMultiDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('MotionTempHumidityIlluminationMultiDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

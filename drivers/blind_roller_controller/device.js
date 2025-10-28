@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class RollerBlindControllerDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('RollerBlindControllerDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

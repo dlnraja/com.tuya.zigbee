@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class PresenceSensorRadarDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     // Critical: Attribute reporting for data transmission
     await super.onNodeInit().catch(err => this.error(err));
     
