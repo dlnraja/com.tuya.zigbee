@@ -13,7 +13,7 @@ class EnergyMonitoringPlugAdvancedDevice extends SwitchDevice {
     this.log('EnergyMonitoringPlugAdvancedDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit().catch(err => this.error(err));
+    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
     
     this.log('EnergyMonitoringPlugAdvancedDevice initialized - Power source:', this.powerSource || 'unknown');
   }

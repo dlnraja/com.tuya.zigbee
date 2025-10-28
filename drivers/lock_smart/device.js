@@ -13,7 +13,7 @@ class LockSmartDevice extends BaseHybridDevice {
     this.log('LockSmartDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit().catch(err => this.error(err));
+    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
     
     this.log('LockSmartDevice initialized - Power source:', this.powerSource || 'unknown');
   }
