@@ -65,30 +65,41 @@ async function fetchURL(url) {
 async function fetchZ2MDevices() {
   console.log('📥 Fetching Zigbee2MQTT devices database...');
   
-  const url = 'https://raw.githubusercontent.com/Koenkk/zigbee2mqtt.io/master/public/supported-devices.json';
+  // Try multiple URLs as structure may change
+  const urls = [
+    'https://raw.githubusercontent.com/Koenkk/zigbee2mqtt.io/master/docs/supported-devices.json',
+    'https://raw.githubusercontent.com/Koenkk/zigbee2mqtt.io/master/public/supported-devices.json',
+    'https://zigbee2mqtt.io/supported-devices.json'
+  ];
   
-  try {
-    const data = await fetchURL(url);
-    const devices = JSON.parse(data);
+  for (const url of urls) {
+    console.log(`  Trying: ${url.substring(0, 60)}...`);
     
-    // Cache it
-    const cachePath = path.join(CACHE_DIR, 'z2m-devices.json');
-    fs.writeFileSync(cachePath, JSON.stringify(devices, null, 2));
-    
-    console.log(`✅ Fetched ${devices.length} devices from Z2M`);
-    return devices;
-  } catch (err) {
-    console.error(`❌ Failed to fetch Z2M devices: ${err.message}`);
-    
-    // Try cache
-    const cachePath = path.join(CACHE_DIR, 'z2m-devices.json');
-    if (fs.existsSync(cachePath)) {
-      console.log('📂 Using cached Z2M devices');
-      return JSON.parse(fs.readFileSync(cachePath, 'utf8'));
+    try {
+      const data = await fetchURL(url);
+      const devices = JSON.parse(data);
+      
+      // Cache it
+      const cachePath = path.join(CACHE_DIR, 'z2m-devices.json');
+      fs.writeFileSync(cachePath, JSON.stringify(devices, null, 2));
+      
+      console.log(`✅ Fetched ${devices.length} devices from Z2M`);
+      return devices;
+    } catch (err) {
+      console.log(`  ⚠️ Failed: ${err.message}`);
+      // Continue to next URL
     }
-    
-    return [];
   }
+  
+  // All URLs failed, try cache
+  console.error('❌ All Z2M URLs failed');
+  const cachePath = path.join(CACHE_DIR, 'z2m-devices.json');
+  if (fs.existsSync(cachePath)) {
+    console.log('📂 Using cached Z2M devices');
+    return JSON.parse(fs.readFileSync(cachePath, 'utf8'));
+  }
+  
+  return [];
 }
 
 /**

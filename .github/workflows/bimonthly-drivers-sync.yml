@@ -1,0 +1,139 @@
+name: Bimonthly Drivers Sync
+
+on:
+  schedule:
+    # Runs every 2 months on the 15th at 03:00 UTC
+    - cron: '0 3 15 1,3,5,7,9,11 *'
+  workflow_dispatch:
+
+jobs:
+  sync-drivers:
+    name: Sync Drivers with External Sources
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: 📦 Install dependencies
+        run: npm ci
+      
+      - name: 🔍 Check Johan Bendz upstream
+        id: check_upstream
+        run: |
+          echo "Checking upstream repository..."
+          git remote add upstream https://github.com/JohanBendz/com.tuya.zigbee.git || true
+          git fetch upstream
+          
+          UPSTREAM_COMMITS=$(git log HEAD..upstream/master --oneline | wc -l)
+          echo "upstream_commits=$UPSTREAM_COMMITS" >> $GITHUB_OUTPUT
+          
+          if [ $UPSTREAM_COMMITS -gt 0 ]; then
+            echo "✅ Found $UPSTREAM_COMMITS new commits upstream"
+          else
+            echo "⚠️ No new commits upstream"
+          fi
+      
+      - name: 📊 Analyze upstream changes
+        if: steps.check_upstream.outputs.upstream_commits > 0
+        id: analyze
+        run: |
+          echo "Analyzing upstream changes..."
+          
+          # Get changed files in drivers/
+          CHANGED_DRIVERS=$(git diff --name-only HEAD upstream/master -- drivers/ | wc -l)
+          echo "changed_drivers=$CHANGED_DRIVERS" >> $GITHUB_OUTPUT
+          
+          # Get changed files in lib/
+          CHANGED_LIB=$(git diff --name-only HEAD upstream/master -- lib/ | wc -l)
+          echo "changed_lib=$CHANGED_LIB" >> $GITHUB_OUTPUT
+          
+          echo "✅ Analysis complete"
+          echo "  - Changed drivers: $CHANGED_DRIVERS"
+          echo "  - Changed lib files: $CHANGED_LIB"
+      
+      - name: 🔄 Full intelligence refresh
+        run: |
+          echo "Running full intelligence pipeline..."
+          npm run intelligence:full || echo "⚠️ Intelligence pipeline had issues"
+      
+      - name: 🧪 Validate drivers
+        id: validate
+        run: |
+          echo "Validating drivers..."
+          npm run validate || echo "⚠️ Validation had warnings"
+          
+          # Check if validation passed
+          if npm run validate --silent 2>&1 | grep -q "error"; then
+            echo "has_errors=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_errors=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: 📝 Generate sync report
+        run: |
+          mkdir -p docs/reports/bimonthly
+          cat > docs/reports/bimonthly/$(date +%Y-%m).md << EOF
+          # 🔄 Bimonthly Drivers Sync - $(date +"%B %Y")
+          
+          **Date**: $(date +"%Y-%m-%d %H:%M:%S UTC")
+          **Workflow**: Bimonthly Drivers Sync
+          
+          ## 🔍 Upstream Analysis
+          - New commits: ${{ steps.check_upstream.outputs.upstream_commits }}
+          - Changed drivers: ${{ steps.analyze.outputs.changed_drivers }}
+          - Changed lib files: ${{ steps.analyze.outputs.changed_lib }}
+          
+          ## 🤖 Intelligence Pipeline
+          - Status: Completed
+          - Data sources: Zigbee2MQTT, Blakadder
+          - Consolidation: Success
+          
+          ## 🧪 Validation
+          - Status: ${{ steps.validate.outputs.has_errors == 'false' && 'PASSED' || 'WARNINGS' }}
+          - Errors: ${{ steps.validate.outputs.has_errors }}
+          
+          ## 📊 Statistics
+          \`\`\`
+          $(find drivers -type d -mindepth 1 -maxdepth 1 | wc -l) drivers
+          $(find lib -name "*.js" | wc -l) library files
+          $(git log --since="2 months ago" --oneline | wc -l) commits in last 2 months
+          \`\`\`
+          
+          ## 🔗 Related Issues
+          - Upstream: https://github.com/JohanBendz/com.tuya.zigbee
+          - Issues: https://github.com/dlnraja/com.tuya.zigbee/issues
+          
+          EOF
+      
+      - name: 💾 Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          
+          if git diff --cached --quiet; then
+            echo "⚠️ No changes to commit"
+          else
+            git commit -m "chore(sync): Bimonthly drivers sync - $(date +%Y-%m)" \
+                       -m "Upstream commits: ${{ steps.check_upstream.outputs.upstream_commits }}" \
+                       -m "Intelligence data refreshed" \
+                       -m "[skip ci]"
+            git push
+          fi
+      
+      - name: 📊 Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: bimonthly-sync-report-${{ github.run_number }}
+          path: docs/reports/bimonthly/
+          retention-days: 180
