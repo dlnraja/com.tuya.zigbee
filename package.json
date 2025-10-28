@@ -36,7 +36,10 @@
     "extract:blakadder": "node scripts/intelligence/auto-extract-blakadder.js",
     "extract:all": "npm run extract:z2m && npm run extract:blakadder",
     "consolidate": "node scripts/intelligence/consolidate-and-generate.js",
-    "intelligence:full": "npm run extract:all && npm run consolidate"
+    "intelligence:full": "npm run extract:all && npm run consolidate",
+    "maintenance": "node scripts/automation/intelligent-maintenance.js",
+    "maintenance:full": "node scripts/automation/intelligent-maintenance.js --full",
+    "maintenance:dry-run": "node scripts/automation/intelligent-maintenance.js --dry-run"
   },
   "keywords": [
     "homey",
