@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class TuyaGasSensorTs0601Device extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('TuyaGasSensorTs0601Device initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

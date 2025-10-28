@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class RadiatorValveDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('RadiatorValveDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

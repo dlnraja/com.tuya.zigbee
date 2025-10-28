@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class ZbbridgeDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('ZbbridgeDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

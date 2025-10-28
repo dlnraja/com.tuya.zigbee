@@ -11,7 +11,7 @@ class SceneControllerDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
     // Initialize hybrid base (power detection)
-    await super.onNodeInit();
+    await super.onNodeInit({ zclNode });
 
 
 // ==========================================

@@ -12,7 +12,7 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
     // Initialize hybrid base (power detection)
-    await super.onNodeInit();
+    await super.onNodeInit({ zclNode });
 
     this.log('[SYNC] Initializing Universal Wireless Button');
     

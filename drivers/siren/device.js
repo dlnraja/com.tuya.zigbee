@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class TuyaSirenDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('TuyaSirenDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

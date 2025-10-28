@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class SosEmergencyButtonDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('SosEmergencyButtonDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

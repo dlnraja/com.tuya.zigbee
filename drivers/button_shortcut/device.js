@@ -21,7 +21,7 @@ class ShortcutButtonBatteryDevice extends ButtonDevice {
   
   async onNodeInit({ zclNode }) {
     // Initialize hybrid base (power detection)
-    await super.onNodeInit();
+    await super.onNodeInit({ zclNode });
 
     this.printNode();
     

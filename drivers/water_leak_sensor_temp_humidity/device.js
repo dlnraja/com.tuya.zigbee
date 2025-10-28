@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class TempHumidSensorLeakDetectorDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('TempHumidSensorLeakDetectorDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

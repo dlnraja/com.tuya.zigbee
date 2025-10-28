@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class LedStripOutdoorColorDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('LedStripOutdoorColorDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

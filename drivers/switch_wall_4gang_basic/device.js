@@ -9,7 +9,7 @@ const SwitchDevice = require('../../lib/SwitchDevice');
  */
 class WallSwitch4gangDevice extends SwitchDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('WallSwitch4gangDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

@@ -7,7 +7,7 @@ class DehumidifierDevice extends BaseHybridDevice {
   
   async onNodeInit({ zclNode }) {
     // Initialize hybrid base (power detection)
-    await super.onNodeInit();
+    await super.onNodeInit({ zclNode });
 
     // Setup IAS Zone (SDK3 - based on Peter's success patterns)
     await this.setupIASZone();

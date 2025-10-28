@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class LockBasicDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('LockBasicDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

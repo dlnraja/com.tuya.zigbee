@@ -9,7 +9,7 @@ const SwitchDevice = require('../../lib/SwitchDevice');
  */
 class SmartPlugPowerMeter16aDevice extends SwitchDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('SmartPlugPowerMeter16aDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

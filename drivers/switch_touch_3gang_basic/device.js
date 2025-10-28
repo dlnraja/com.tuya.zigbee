@@ -9,7 +9,7 @@ const SwitchDevice = require('../../lib/SwitchDevice');
  */
 class TouchSwitch3gangDevice extends SwitchDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('TouchSwitch3gangDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

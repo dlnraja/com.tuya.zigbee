@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class SmartSmokeDetectorAdvancedDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('SmartSmokeDetectorAdvancedDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

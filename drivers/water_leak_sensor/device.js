@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
  */
 class WaterLeakSensorDevice extends BaseHybridDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('WaterLeakSensorDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

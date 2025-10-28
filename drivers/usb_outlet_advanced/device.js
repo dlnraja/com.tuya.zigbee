@@ -9,7 +9,7 @@ const SwitchDevice = require('../../lib/SwitchDevice');
  */
 class UsbOutletAdvancedDevice extends SwitchDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('UsbOutletAdvancedDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

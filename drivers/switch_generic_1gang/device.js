@@ -9,7 +9,7 @@ const SwitchDevice = require('../../lib/SwitchDevice');
  */
 class TuyaSmartSwitch1gangDevice extends SwitchDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('TuyaSmartSwitch1gangDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)

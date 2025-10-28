@@ -7,9 +7,9 @@ const FallbackSystem = require('../../lib/FallbackSystem');
 
 class SmartSwitch4gangHybridDevice extends SwitchDevice {
 
-    async onNodeInit() {
+    async onNodeInit({ zclNode }) {
     // Initialize hybrid base (power detection)
-    await super.onNodeInit();
+    await super.onNodeInit({ zclNode });
 
         this.log('smart_switch_4gang_hybrid device initialized');
 
