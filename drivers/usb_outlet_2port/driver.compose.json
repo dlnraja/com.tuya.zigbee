@@ -10,8 +10,7 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "onoff.usb2",
-    "measure_battery"
+    "onoff.usb2"
   ],
   "capabilitiesOptions": {
     "onoff": {
