@@ -1,13 +1,188 @@
 {
+  "capabilities": {
+    "measure_battery": {
+      "title": "Batterie",
+      "units": "%"
+    },
+    "alarm_generic": {
+      "title": "Alarme"
+    },
+    "alarm_motion": {
+      "title": "Mouvement"
+    },
+    "alarm_contact": {
+      "title": "Contact"
+    },
+    "alarm_water": {
+      "title": "Fuite d'eau"
+    },
+    "alarm_smoke": {
+      "title": "Fumée"
+    },
+    "alarm_co": {
+      "title": "CO"
+    },
+    "alarm_co2": {
+      "title": "CO₂"
+    },
+    "alarm_tamper": {
+      "title": "Sabotage"
+    },
+    "alarm_vibration": {
+      "title": "Vibration"
+    },
+    "onoff": {
+      "title": "Alimentation"
+    },
+    "dim": {
+      "title": "Luminosité",
+      "units": "%"
+    },
+    "light_hue": {
+      "title": "Teinte"
+    },
+    "light_saturation": {
+      "title": "Saturation"
+    },
+    "light_temperature": {
+      "title": "Température"
+    },
+    "light_mode": {
+      "title": "Mode lumineux"
+    },
+    "measure_temperature": {
+      "title": "Température",
+      "units": "°C"
+    },
+    "measure_humidity": {
+      "title": "Humidité",
+      "units": "%"
+    },
+    "measure_pressure": {
+      "title": "Pression",
+      "units": "mbar"
+    },
+    "measure_co2": {
+      "title": "CO₂",
+      "units": "ppm"
+    },
+    "measure_pm25": {
+      "title": "PM2.5",
+      "units": "µg/m³"
+    },
+    "measure_voc": {
+      "title": "COV",
+      "units": "ppb"
+    },
+    "measure_luminance": {
+      "title": "Luminance",
+      "units": "lux"
+    },
+    "measure_power": {
+      "title": "Puissance",
+      "units": "W"
+    },
+    "measure_voltage": {
+      "title": "Tension",
+      "units": "V"
+    },
+    "measure_current": {
+      "title": "Courant",
+      "units": "A"
+    },
+    "meter_power": {
+      "title": "Énergie",
+      "units": "kWh"
+    },
+    "target_temperature": {
+      "title": "Température cible",
+      "units": "°C"
+    },
+    "windowcoverings_state": {
+      "title": "Stores",
+      "values": {
+        "up": "Haut",
+        "idle": "Arrêt",
+        "down": "Bas"
+      }
+    },
+    "windowcoverings_set": {
+      "title": "Position",
+      "units": "%"
+    },
+    "button": {
+      "title": "Bouton"
+    }
+  },
   "settings": {
-    "title": "Paramètres",
-    "debug_logging": "Activer les logs de débogage",
-    "debug_logging_hint": "Activer la journalisation détaillée pour le dépannage",
-    "community_updates": "Activer les mises à jour communautaires",
-    "community_updates_hint": "Recevoir des notifications sur le support de nouveaux appareils",
-    "reporting_interval": "Intervalle de rapport (secondes)",
-    "temperature_offset": "Décalage température (°C)",
-    "humidity_offset": "Décalage humidité (%)"
+    "power_source": {
+      "label": "Source d'Alimentation",
+      "hint": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique",
+      "values": {
+        "auto": {
+          "en": "Auto Detect",
+          "fr": "Détection Automatique"
+        },
+        "ac": {
+          "en": "AC Powered",
+          "fr": "Alimentation Secteur"
+        },
+        "dc": {
+          "en": "DC Powered",
+          "fr": "Alimentation DC"
+        },
+        "battery": {
+          "en": "Battery Powered",
+          "fr": "Sur Batterie"
+        }
+      }
+    },
+    "battery_type": {
+      "label": "Type de Batterie",
+      "hint": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+    },
+    "battery_low_threshold": {
+      "label": "Seuil Batterie Faible (%)",
+      "hint": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+    },
+    "battery_critical_threshold": {
+      "label": "Seuil Batterie Critique (%)",
+      "hint": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+    },
+    "enable_battery_notifications": {
+      "label": "Activer Notifications Batterie",
+      "hint": "Envoyer des notifications de flow pour les événements de batterie"
+    },
+    "battery_report_interval": {
+      "label": "Intervalle Rapport Batterie (heures)",
+      "hint": "Fréquence de demande des mises à jour d'état de batterie"
+    },
+    "optimization_mode": {
+      "label": "Mode Optimisation Énergétique",
+      "hint": "Équilibre entre réactivité et durée de vie de la batterie",
+      "values": {
+        "performance": {
+          "en": "Performance (More responsive)",
+          "fr": "Performance (Plus réactif)"
+        },
+        "balanced": {
+          "en": "Balanced",
+          "fr": "Équilibré"
+        },
+        "power_saving": {
+          "en": "Power Saving (Longer battery)",
+          "fr": "Économie d'énergie (Batterie plus longue)"
+        }
+      }
+    },
+    "show_voltage": {
+      "label": "Afficher Tension Batterie",
+      "hint": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+    },
+    "enable_power_estimation": {
+      "label": "Activer Estimation Puissance",
+      "hint": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+    }
   },
   "tabs": {
     "general": "Général",
