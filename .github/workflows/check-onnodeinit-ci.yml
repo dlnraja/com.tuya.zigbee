@@ -1,0 +1,91 @@
+name: Check onNodeInit Signatures (CI)
+
+on:
+  push:
+    branches: [ master, main, develop ]
+    paths:
+      - 'drivers/**/*.js'
+      - 'lib/**/*.js'
+  pull_request:
+    branches: [ master, main ]
+
+jobs:
+  check-signatures:
+    runs-on: ubuntu-latest
+    name: Verify onNodeInit compliance
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check for super.onNodeInit() without parameters
+        run: |
+          echo "🔍 Checking for super.onNodeInit() calls without parameters..."
+          
+          # Search for problematic patterns
+          ISSUES=$(git grep -n "super\.onNodeInit()" -- '*.js' ':!node_modules' ':!*.md' ':!tools' || true)
+          
+          if [ -n "$ISSUES" ]; then
+            echo "❌ Found super.onNodeInit() calls without parameters:"
+            echo "$ISSUES"
+            echo ""
+            echo "These must forward nodeContext:"
+            echo "  await super.onNodeInit(nodeContext);"
+            echo "  OR"
+            echo "  await super.onNodeInit({ zclNode });"
+            exit 1
+          else
+            echo "✅ No super.onNodeInit() without parameters"
+          fi
+
+      - name: Check onNodeInit parameter destructuring
+        run: |
+          echo "🔍 Checking onNodeInit signatures..."
+          
+          # Check for async onNodeInit() without parameters (should accept nodeContext)
+          MISSING=$(git grep -l "async onNodeInit()" -- 'drivers/**/*.js' 'lib/**/*.js' || true)
+          
+          if [ -n "$MISSING" ]; then
+            echo "⚠️  Found onNodeInit without parameter:"
+            echo "$MISSING"
+            echo ""
+            echo "Should be:"
+            echo "  async onNodeInit({ zclNode }) { ... }"
+            echo "  OR"
+            echo "  async onNodeInit(nodeContext = {}) { ... }"
+            exit 1
+          else
+            echo "✅ All onNodeInit methods have correct signature"
+          fi
+
+      - name: Verify zclNode usage
+        run: |
+          echo "🔍 Checking zclNode usage patterns..."
+          
+          # Check that zclNode is extracted from nodeContext
+          FILES_WITH_ONNODEINIT=$(git grep -l "async onNodeInit" -- 'drivers/**/*.js' 'lib/**/*.js' || true)
+          
+          MISSING_EXTRACTION=""
+          for file in $FILES_WITH_ONNODEINIT; do
+            # Check if file has zclNode extraction
+            if ! grep -q "{ zclNode }" "$file" && ! grep -q "zclNode" "$file"; then
+              MISSING_EXTRACTION="$MISSING_EXTRACTION\n$file"
+            fi
+          done
+          
+          if [ -n "$MISSING_EXTRACTION" ]; then
+            echo "⚠️  Files with onNodeInit but no zclNode usage:"
+            echo -e "$MISSING_EXTRACTION"
+            echo ""
+            echo "These may need to extract zclNode from nodeContext"
+          else
+            echo "✅ All files properly use zclNode"
+          fi
+
+      - name: Summary
+        if: success()
+        run: |
+          echo "✅ All onNodeInit checks passed!"
+          echo "  • No super.onNodeInit() without parameters"
+          echo "  • All signatures accept nodeContext or { zclNode }"
+          echo "  • zclNode usage verified"
