@@ -1,15 +1,4 @@
-'use strict';
-
-const BaseHybridDevice = require('../../lib/BaseHybridDevice');
-
-/**
- * PresenceSensorRadarDevice - Unified Hybrid Driver
- * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
- * Dynamically manages capabilities based on power source
- */
-class PresenceSensorRadarDevice extends BaseHybridDevice {
-
-  async onNodeInit({ zclNode }) {
+async onNodeInit({ zclNode }) {
     // Critical: Attribute reporting for data transmission
     await super.onNodeInit({ zclNode }).catch(err => this.error(err));
     
@@ -75,6 +64,10 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
     } catch (err) {
       this.error('measure_luminance setup failed:', err);
     }
+    await this.setupTemperature();
+    await this.setupHumidity();
+    await this.setupBattery();
+
   }
 
   
@@ -181,105 +174,4 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
     }
   }
 
-  async onDeleted() {
-    this.log('PresenceSensorRadarDevice deleted');
-    await super.onDeleted().catch(err => this.error(err));
-  }
-  /**
-   * Setup Attribute Reporting for Presence Sensor
-   * Temperature, Humidity, Battery, Illuminance, Motion
-   */
-  async setupAttributeReporting() {
-    try {
-      this.log('[DATA] Setting up attribute reporting...');
-      
-      const endpoint = this.zclNode.endpoints[1];
-      
-      // Setup cluster listeners FIRST (before configureAttributeReporting)
-      
-      // Temperature listener (cluster 1026)
-      if (endpoint?.clusters?.msTemperatureMeasurement) {
-        endpoint.clusters.msTemperatureMeasurement.on('attr.measuredValue', async (value) => {
-          const temperature = value / 100;
-          this.log('[TEMP] Temperature:', temperature);
-          await this.setCapabilityValue('measure_temperature', temperature).catch(this.error);
-        });
-      }
-      
-      // Humidity listener (cluster 1029)
-      if (endpoint?.clusters?.msRelativeHumidity) {
-        endpoint.clusters.msRelativeHumidity.on('attr.measuredValue', async (value) => {
-          const humidity = value / 100;
-          this.log('[HUMID] Humidity:', humidity);
-          await this.setCapabilityValue('measure_humidity', humidity).catch(this.error);
-        });
-      }
-      
-      // Battery listener (cluster 1)
-      if (endpoint?.clusters?.genPowerCfg) {
-        endpoint.clusters.genPowerCfg.on('attr.batteryPercentageRemaining', async (value) => {
-          const battery = value / 2;
-          this.log('[BATTERY] Battery:', battery, '%');
-          await this.setCapabilityValue('measure_battery', battery).catch(this.error);
-        });
-      }
-      
-      // Illuminance listener (cluster 1024)
-      if (endpoint?.clusters?.msIlluminanceMeasurement) {
-        endpoint.clusters.msIlluminanceMeasurement.on('attr.measuredValue', async (value) => {
-          const lux = Math.pow(10, (value - 1) / 10000);
-          this.log('[BULB] Illuminance:', lux, 'lux');
-          await this.setCapabilityValue('measure_luminance', lux).catch(this.error);
-        });
-      }
-      
-      // Motion detection via IAS Zone (cluster 1280)
-      if (endpoint?.clusters?.iasZone) {
-        // Enroll IAS Zone first - use ZigbeeHelpers for robust IEEE address retrieval
-        try {
-          const ieeeAddress = await this.getIeeeAddress();
-          if (ieeeAddress) {
-            await endpoint.clusters.iasZone.writeAttributes({
-              iasCieAddr: ieeeAddress
-            }).catch(err => this.log('IAS enrollment (non-critical):', err.message));
-            this.log('[OK] IAS Zone enrolled with IEEE:', ieeeAddress);
-          } else {
-            this.log('[WARN]  IAS enrollment skipped: IEEE address not available');
-          }
-        } catch (err) {
-          this.log('IAS enrollment error:', err.message);
-        }
-        
-        // Zone notifications (motion detection)
-        endpoint.clusters.iasZone.onZoneStatusChangeNotification = (data) => {
-          this.log('🚶 Motion detected:', data);
-          const motion = !!(data.zoneStatus & 1);
-          await this.setCapabilityValue('alarm_motion', motion).catch(this.error);
-        };
-        
-        // Attribute listener (backup)
-        endpoint.clusters.iasZone.onZoneStatus = (value) => {
-          this.log('🚶 Motion status:', value);
-          const motion = !!(value & 1);
-          await this.setCapabilityValue('alarm_motion', motion).catch(this.error);
-        };
-      }
-      
-      // Configure reporting intervals (numbers only)
-      await this.configureAttributeReporting([
-        { endpointId: 1, cluster: 1026, attributeName: 'measuredValue', minInterval: 60, maxInterval: 3600, minChange: 50 },
-        { endpointId: 1, cluster: 1029, attributeName: 'measuredValue', minInterval: 60, maxInterval: 3600, minChange: 50 },
-        { endpointId: 1, cluster: 1, attributeName: 'batteryPercentageRemaining', minInterval: 3600, maxInterval: 43200, minChange: 2 },
-        { endpointId: 1, cluster: 1024, attributeName: 'measuredValue', minInterval: 60, maxInterval: 3600, minChange: 100 }
-      ]).catch(err => this.log('Configure reporting (non-critical):', err.message));
-      
-      this.log('[OK] Attribute reporting configured');
-      
-    } catch (err) {
-      this.error('Attribute reporting setup failed:', err);
-    }
-  }
-
-}
-
-module.exports = PresenceSensorRadarDevice;
+  async 

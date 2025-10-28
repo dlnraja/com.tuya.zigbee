@@ -1,15 +1,4 @@
-'use strict';
-
-const SensorDevice = require('../../lib/SensorDevice');
-const IASZoneEnroller = require('../../lib/IASZoneEnroller');
-const batteryConverter = require('../../lib/tuya-engine/converters/battery');
-const { CLUSTER } = require('zigbee-clusters');
-const TuyaClusterHandler = require('../../utils/tuya-cluster-handler');
-const FallbackSystem = require('../../lib/FallbackSystem');
-
-class AirQualityMonitorProBatteryDevice extends SensorDevice {
-
-  async onNodeInit({ zclNode }) {
+async onNodeInit({ zclNode }) {
     // Initialize hybrid base (power detection)
     await super.onNodeInit({ zclNode });
 
@@ -398,6 +387,10 @@ class AirQualityMonitorProBatteryDevice extends SensorDevice {
     } catch (err) {
       this.error('measure_co2 setup failed:', err);
     }
+    await this.setupTemperature();
+    await this.setupHumidity();
+    await this.setupBattery();
+
   }
 
   /**
@@ -444,6 +437,5 @@ class AirQualityMonitorProBatteryDevice extends SensorDevice {
       this.error('measure_temperature setup failed:', err);
     }
   }
-}
 
-module.exports = AirQualityMonitorProBatteryDevice;
+  async 

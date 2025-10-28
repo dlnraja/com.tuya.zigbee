@@ -1,15 +1,4 @@
-'use strict';
-
-const BaseHybridDevice = require('../../lib/BaseHybridDevice');
-
-/**
- * TuyaComprehensiveAirMonitorDevice - Unified Hybrid Driver
- * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
- * Dynamically manages capabilities based on power source
- */
-class TuyaComprehensiveAirMonitorDevice extends BaseHybridDevice {
-
-  async onNodeInit({ zclNode }) {
+async onNodeInit({ zclNode }) {
     this.log('TuyaComprehensiveAirMonitorDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
@@ -66,6 +55,9 @@ class TuyaComprehensiveAirMonitorDevice extends BaseHybridDevice {
     } catch (err) {
       this.error('measure_temperature setup failed:', err);
     }
+    await this.setupTemperature();
+    await this.setupHumidity();
+
   }
 
   /**
@@ -113,10 +105,4 @@ class TuyaComprehensiveAirMonitorDevice extends BaseHybridDevice {
     }
   }
 
-  async onDeleted() {
-    this.log('TuyaComprehensiveAirMonitorDevice deleted');
-    await super.onDeleted().catch(err => this.error(err));
-  }
-}
-
-module.exports = TuyaComprehensiveAirMonitorDevice;
+  async 
