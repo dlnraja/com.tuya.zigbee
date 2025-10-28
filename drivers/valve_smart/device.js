@@ -13,7 +13,7 @@ class ValveSmartDevice extends BaseHybridDevice {
     this.log('ValveSmartDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit().catch(err => this.error(err));
+    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
     
     this.log('ValveSmartDevice initialized - Power source:', this.powerSource || 'unknown');
   }

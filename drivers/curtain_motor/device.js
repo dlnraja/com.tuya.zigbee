@@ -10,7 +10,7 @@ class SmartCurtainMotorDevice extends BaseHybridDevice {
 
     async onNodeInit({ zclNode }) {
         try {
-        await super.onNodeInit().catch(err => this.error(err));
+        await super.onNodeInit({ zclNode }).catch(err => this.error(err));
         } catch (err) { this.error('Await error:', err); }
         
         this.log('Smart Curtain Motor device initialized');

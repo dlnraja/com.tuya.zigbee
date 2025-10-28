@@ -31,7 +31,7 @@ class UsbOutlet1GangDevice extends SwitchDevice {
     this.gangCount = 1;
     
     // Initialize base (power detection + switch control)
-    await super.onNodeInit().catch(err => this.error('Base init failed:', err));
+    await super.onNodeInit({ zclNode }).catch(err => this.error('Base init failed:', err));
     
     // Setup power measurement capabilities (SDK3)
     await this.setupPowerMeasurement();

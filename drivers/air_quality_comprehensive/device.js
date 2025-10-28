@@ -13,7 +13,7 @@ class TuyaComprehensiveAirMonitorDevice extends BaseHybridDevice {
     this.log('TuyaComprehensiveAirMonitorDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit().catch(err => this.error(err));
+    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
 
     // Setup sensor capabilities (SDK3)
     await this.setupTemperatureSensor();

@@ -17,7 +17,7 @@ class SwitchTouch3GangDevice extends SwitchDevice {
     this.switchType = 'touch';
     
     // Initialize base (power detection + switch control)
-    await super.onNodeInit().catch(err => this.error(err));
+    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
     
     this.log('SwitchTouch3GangDevice initialized - 3 switches ready');
   }

@@ -13,7 +13,7 @@ class OutletDevice extends SwitchDevice {
     this.log('OutletDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit().catch(err => this.error(err));
+    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
     
     this.log('OutletDevice initialized - Power source:', this.powerSource || 'unknown');
   }

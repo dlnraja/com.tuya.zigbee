@@ -1,0 +1,73 @@
+name: Check onNodeInit Signatures
+
+on:
+  push:
+    branches: [ master, main, develop ]
+  pull_request:
+    branches: [ master, main ]
+
+jobs:
+  check-super-calls:
+    runs-on: ubuntu-latest
+    name: Verify onNodeInit implementations
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install --production
+
+      - name: Check for super.onNodeInit() without parameters
+        run: |
+          echo "🔍 Checking for super.onNodeInit() calls without parameters..."
+          ISSUES=$(git grep -n "super.onNodeInit()" -- ':!node_modules' ':!.github' || true)
+          
+          if [ -n "$ISSUES" ]; then
+            echo "❌ Found super.onNodeInit() calls without parameters:"
+            echo "$ISSUES"
+            echo ""
+            echo "These should be:"
+            echo "  await super.onNodeInit({ zclNode });"
+            echo "  OR"
+            echo "  await super.onNodeInit(nodeContext);"
+            exit 1
+          else
+            echo "✅ No issues found"
+          fi
+
+      - name: Check onNodeInit signatures
+        run: |
+          echo "🔍 Checking onNodeInit method signatures..."
+          
+          # Find files with onNodeInit but missing { zclNode } parameter
+          MISSING=$(git grep -l "async onNodeInit()" -- '*.js' ':!node_modules' ':!.github' || true)
+          
+          if [ -n "$MISSING" ]; then
+            echo "⚠️  Found onNodeInit without { zclNode } parameter:"
+            echo "$MISSING"
+            echo ""
+            echo "These should accept nodeContext:"
+            echo "  async onNodeInit({ zclNode }) { ... }"
+            exit 1
+          else
+            echo "✅ All onNodeInit methods have correct signature"
+          fi
+
+      - name: Run smoke tests
+        run: |
+          echo "🧪 Running onNodeInit smoke tests..."
+          node tools/test_onNodeInit.js
+
+      - name: Summary
+        if: success()
+        run: |
+          echo "✅ All onNodeInit checks passed!"
+          echo "  • No super.onNodeInit() without parameters"
+          echo "  • All signatures accept nodeContext"
+          echo "  • Smoke tests passed"

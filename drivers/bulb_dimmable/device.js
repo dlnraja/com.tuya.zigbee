@@ -13,7 +13,7 @@ class SmartBulbDimmerDevice extends BaseHybridDevice {
     this.log('SmartBulbDimmerDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit().catch(err => this.error(err));
+    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
     
     this.log('SmartBulbDimmerDevice initialized - Power source:', this.powerSource || 'unknown');
   }

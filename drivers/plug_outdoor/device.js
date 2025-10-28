@@ -13,7 +13,7 @@ class OutdoorPlugDevice extends SwitchDevice {
     this.log('OutdoorPlugDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit().catch(err => this.error(err));
+    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
 
     // Setup IAS Zone (SDK3 - based on Peter's success patterns)
     await this.setupIASZone();

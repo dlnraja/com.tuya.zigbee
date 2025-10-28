@@ -13,7 +13,7 @@ class PlugBasicDevice extends SwitchDevice {
     this.log('PlugBasicDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit().catch(err => this.error(err));
+    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
     
     this.log('PlugBasicDevice initialized - Power source:', this.powerSource || 'unknown');
   }

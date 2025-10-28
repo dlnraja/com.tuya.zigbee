@@ -16,7 +16,7 @@ class Button8GangDevice extends ButtonDevice {
     this.buttonCount = 8;
     
     // Initialize base (power detection + button detection)
-    await super.onNodeInit().catch(err => this.error(err));
+    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
     
     this.log('Button8GangDevice initialized - 8 buttons ready');
   }

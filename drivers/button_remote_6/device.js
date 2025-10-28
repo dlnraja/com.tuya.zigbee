@@ -13,7 +13,7 @@ class WirelessSwitch6buttonDevice extends ButtonDevice {
     this.log('WirelessSwitch6buttonDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit().catch(err => this.error(err));
+    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
     
     this.log('WirelessSwitch6buttonDevice initialized - Power source:', this.powerSource || 'unknown');
   }

@@ -13,7 +13,7 @@ class Dimmer1gangTouchDevice extends BaseHybridDevice {
     this.log('Dimmer1gangTouchDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit().catch(err => this.error(err));
+    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
     
     this.log('Dimmer1gangTouchDevice initialized - Power source:', this.powerSource || 'unknown');
   }

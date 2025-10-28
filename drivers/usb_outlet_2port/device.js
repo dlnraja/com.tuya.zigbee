@@ -30,7 +30,7 @@ class UsbOutlet2PortDevice extends SwitchDevice {
     this.gangCount = 2;
     
     // Initialize base (power detection + switch control)
-    await super.onNodeInit().catch(err => this.error('Base init failed:', err));
+    await super.onNodeInit({ zclNode }).catch(err => this.error('Base init failed:', err));
     
     // Setup multi-endpoint control
     await this.setupMultiEndpointControl();

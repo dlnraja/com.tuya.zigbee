@@ -16,7 +16,7 @@ class Button3GangDevice extends ButtonDevice {
     this.buttonCount = 3;
     
     // Initialize base (power detection + button detection)
-    await super.onNodeInit().catch(err => this.error(err));
+    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
     
     this.log('Button3GangDevice initialized - 3 buttons ready');
   }
