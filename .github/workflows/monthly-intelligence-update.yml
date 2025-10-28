@@ -1,0 +1,190 @@
+name: Monthly Intelligence Update
+
+on:
+  schedule:
+    # Runs on 1st of every month at 02:00 UTC
+    - cron: '0 2 1 * *'
+  workflow_dispatch:
+    inputs:
+      force_update:
+        description: 'Force update even if no changes'
+        required: false
+        default: 'false'
+
+jobs:
+  extract-and-consolidate:
+    name: Extract & Consolidate External Data
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: 📦 Install dependencies
+        run: npm ci
+      
+      - name: 🤖 Extract Zigbee2MQTT data
+        id: extract_z2m
+        continue-on-error: true
+        run: |
+          echo "Starting Zigbee2MQTT extraction..."
+          npm run extract:z2m
+          if [ -f "data/extracted/zigbee2mqtt-extracted.json" ]; then
+            DEVICES=$(jq '.total' data/extracted/zigbee2mqtt-extracted.json)
+            echo "devices_extracted=$DEVICES" >> $GITHUB_OUTPUT
+            echo "✅ Extracted $DEVICES devices from Zigbee2MQTT"
+          else
+            echo "⚠️ No data extracted"
+            echo "devices_extracted=0" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: 🔗 Extract Blakadder data
+        id: extract_blakadder
+        continue-on-error: true
+        run: |
+          echo "Starting Blakadder extraction..."
+          npm run extract:blakadder
+          if [ -f "data/extracted/blakadder-extracted.json" ]; then
+            DEVICES=$(jq '.total' data/extracted/blakadder-extracted.json)
+            echo "devices_extracted=$DEVICES" >> $GITHUB_OUTPUT
+            echo "✅ Extracted $DEVICES devices from Blakadder"
+          else
+            echo "⚠️ No data extracted"
+            echo "devices_extracted=0" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: 🔄 Consolidate data
+        id: consolidate
+        continue-on-error: true
+        run: |
+          echo "Starting consolidation..."
+          npm run consolidate
+          if [ -f "data/consolidated/consolidation-stats.json" ]; then
+            TOTAL=$(jq '.total' data/consolidated/consolidation-stats.json)
+            CONFLICTS=$(jq '.conflicts | length' data/consolidated/consolidation-stats.json)
+            echo "total_datapoints=$TOTAL" >> $GITHUB_OUTPUT
+            echo "conflicts=$CONFLICTS" >> $GITHUB_OUTPUT
+            echo "✅ Consolidated $TOTAL DataPoints ($CONFLICTS conflicts)"
+          fi
+      
+      - name: 📊 Generate monthly report
+        run: |
+          mkdir -p docs/reports/monthly
+          cat > docs/reports/monthly/$(date +%Y-%m).md << EOF
+          # 📊 Monthly Intelligence Update - $(date +"%B %Y")
+          
+          **Date**: $(date +"%Y-%m-%d %H:%M:%S UTC")
+          **Workflow**: Monthly Intelligence Update
+          
+          ## 📥 Extraction Results
+          
+          ### Zigbee2MQTT
+          - Devices extracted: ${{ steps.extract_z2m.outputs.devices_extracted }}
+          - Status: ${{ steps.extract_z2m.outcome }}
+          
+          ### Blakadder
+          - Devices extracted: ${{ steps.extract_blakadder.outputs.devices_extracted }}
+          - Status: ${{ steps.extract_blakadder.outcome }}
+          
+          ## 🔄 Consolidation
+          - Total DataPoints: ${{ steps.consolidate.outputs.total_datapoints }}
+          - Conflicts found: ${{ steps.consolidate.outputs.conflicts }}
+          - Status: ${{ steps.consolidate.outcome }}
+          
+          ## 🔍 Changes Detection
+          $(git diff --stat data/consolidated/ || echo "No changes")
+          
+          ## 📝 Notes
+          - Automatic extraction from external sources
+          - Data cached in .cache/ for 30 days
+          - Conflicts require manual review if any
+          
+          EOF
+      
+      - name: 🔍 Check for changes
+        id: check_changes
+        run: |
+          git add data/
+          if git diff --cached --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "⚠️ No changes detected"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            CHANGES=$(git diff --cached --stat)
+            echo "changes<<EOF" >> $GITHUB_OUTPUT
+            echo "$CHANGES" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+            echo "✅ Changes detected"
+          fi
+      
+      - name: 💾 Commit changes
+        if: steps.check_changes.outputs.has_changes == 'true' || github.event.inputs.force_update == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "chore(intelligence): Monthly data update - $(date +%Y-%m)" \
+                     -m "Auto-extracted from Zigbee2MQTT and Blakadder" \
+                     -m "Z2M devices: ${{ steps.extract_z2m.outputs.devices_extracted }}" \
+                     -m "Blakadder devices: ${{ steps.extract_blakadder.outputs.devices_extracted }}" \
+                     -m "Total DataPoints: ${{ steps.consolidate.outputs.total_datapoints }}" \
+                     -m "[skip ci]"
+      
+      - name: 🚀 Push changes
+        if: steps.check_changes.outputs.has_changes == 'true' || github.event.inputs.force_update == 'true'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+      
+      - name: 📢 Create issue if conflicts
+        if: steps.consolidate.outputs.conflicts > 0
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const conflicts = ${{ steps.consolidate.outputs.conflicts }};
+            if (conflicts > 0) {
+              github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: `⚠️ DataPoint Conflicts Detected - ${new Date().toISOString().split('T')[0]}`,
+                body: `## 🚨 Conflicts Found\n\n` +
+                      `Monthly intelligence update found **${conflicts} conflicts** in DataPoint mappings.\n\n` +
+                      `### Action Required\n` +
+                      `- Review \`data/consolidated/consolidation-stats.json\`\n` +
+                      `- Resolve conflicts manually\n` +
+                      `- Update \`lib/tuya-universal-mapping.js\` if needed\n\n` +
+                      `### Details\n` +
+                      `See [monthly report](docs/reports/monthly/${new Date().toISOString().split('T')[0].substring(0,7)}.md)`,
+                labels: ['maintenance', 'data-quality', 'needs-review']
+              });
+            }
+      
+      - name: 📊 Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: intelligence-data-${{ github.run_number }}
+          path: |
+            data/extracted/
+            data/consolidated/
+            docs/reports/monthly/
+          retention-days: 90
+      
+      - name: ✅ Summary
+        run: |
+          echo "## 📊 Monthly Intelligence Update Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Z2M Devices**: ${{ steps.extract_z2m.outputs.devices_extracted }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Blakadder Devices**: ${{ steps.extract_blakadder.outputs.devices_extracted }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Total DataPoints**: ${{ steps.consolidate.outputs.total_datapoints }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Conflicts**: ${{ steps.consolidate.outputs.conflicts }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Changes**: ${{ steps.check_changes.outputs.has_changes }}" >> $GITHUB_STEP_SUMMARY
