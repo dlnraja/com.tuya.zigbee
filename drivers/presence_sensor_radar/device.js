@@ -153,7 +153,7 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
           // Check alarm1 bit (motion/alarm detected)
           const alarm = (status & 0x01) !== 0;
           
-          await this.setCapabilityValue('alarm_motion', alarm).catch(this.error);
+          this.setCapabilityValue('alarm_motion', alarm).catch(this.error);
           this.log(`${alarm ? '[ALARM]' : '[OK]'} Alarm: ${alarm ? 'TRIGGERED' : 'cleared'}`);
         }
       };
