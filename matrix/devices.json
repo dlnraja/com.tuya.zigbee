@@ -3065,8 +3065,7 @@
     "model_count": 7,
     "capabilities": [
       "onoff",
-      "onoff.button2",
-      "measure_battery"
+      "onoff.button2"
     ],
     "power_source": "ac",
     "clusters": []
@@ -4741,8 +4740,7 @@
     "model_count": 3,
     "capabilities": [
       "onoff",
-      "onoff.usb2",
-      "measure_battery"
+      "onoff.usb2"
     ],
     "power_source": "ac",
     "clusters": []
