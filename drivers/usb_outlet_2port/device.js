@@ -21,18 +21,22 @@ const SwitchDevice = require('../../lib/SwitchDevice');
  * - 5 (Scenes): Scene support
  * - 6 (OnOff): Port control
  */
-class UsbOutlet2PortDevice extends SwitchDevice {
+class USBOutlet2PortDevice extends BaseHybridDevice {
 
   async onNodeInit({ zclNode }) {
-    this.log('⚡ UsbOutlet2PortDevice initializing (SDK3)...');
+    this.log('USBOutlet2PortDevice initializing...');
     
-    // Set gang count for SwitchDevice base class
-    this.gangCount = 2;
+    // CRITICAL: Setup multi-endpoint BEFORE super.onNodeInit
+    // This ensures BaseHybridDevice configures both endpoints correctly
+    this.endpoints = {
+      1: { clusters: ['onOff', 'electricalMeasurement'] },
+      2: { clusters: ['onOff'] }
+    };
     
-    // Initialize base (power detection + switch control)
-    await super.onNodeInit({ zclNode }).catch(err => this.error('Base init failed:', err));
+    await super.onNodeInit({ zclNode });
     
-    // Setup multi-endpoint control
+    // Register capabilities for both USB ports
+    this.log('[USB] Registering capabilities for 2 USB ports...');
     await this.setupMultiEndpointControl();
     
     this.log('[OK] UsbOutlet2PortDevice ready');
