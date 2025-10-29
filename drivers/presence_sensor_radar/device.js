@@ -251,14 +251,14 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
         }
         
         // Zone notifications (motion detection)
-        endpoint.clusters.iasZone.onZoneStatusChangeNotification = (data) => {
+        endpoint.clusters.iasZone.onZoneStatusChangeNotification = async (data) => {
           this.log('🚶 Motion detected:', data);
           const motion = !!(data.zoneStatus & 1);
           await this.setCapabilityValue('alarm_motion', motion).catch(this.error);
         };
         
         // Attribute listener (backup)
-        endpoint.clusters.iasZone.onZoneStatus = (value) => {
+        endpoint.clusters.iasZone.onZoneStatus = async (value) => {
           this.log('🚶 Motion status:', value);
           const motion = !!(value & 1);
           await this.setCapabilityValue('alarm_motion', motion).catch(this.error);
