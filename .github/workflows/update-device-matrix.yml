@@ -1,0 +1,41 @@
+name: Update Device Matrix
+
+'on':
+  push:
+    branches: 
+      - master
+    paths:
+      - 'drivers/**/*.json'
+      - 'scripts/generate-device-matrix.js'
+  workflow_dispatch: {}
+
+jobs:
+  generate-matrix:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Generate device matrix
+        run: |
+          node scripts/generate-device-matrix.js
+          
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          publish_branch: gh-pages
+          commit_message: 'Auto-update device matrix'
+          
+      - name: Upload matrix artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: device-matrix
+          path: docs/device-matrix.json
