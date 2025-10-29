@@ -24,7 +24,8 @@ class TuyaSoilTesterTempHumidDevice extends BaseHybridDevice {
     if (isTuyaEF00Device) {
       this.log('[TUYA] ✅ TS0601 detected - using Tuya EF00 ONLY (no standard clusters)');
       this.log('[TUYA] ℹ️  All data will come via DataReport events from TuyaEF00Manager');
-      // Don't setup standard cluster listeners - TS0601 doesn't have them!
+      // Setup Tuya DP listeners for soil sensor
+      await this.setupTuyaDPListeners();
     } else {
       this.log('[STANDARD] Using standard Zigbee clusters');
       // Setup standard sensor reporting
@@ -37,6 +38,78 @@ class TuyaSoilTesterTempHumidDevice extends BaseHybridDevice {
     }
     
     this.log('TuyaSoilTesterTempHumidDevice initialized - Power source:', this.powerSource || 'unknown');
+  }
+
+  /**
+   * Setup Tuya DP listeners for soil sensor (TS0601 devices)
+   */
+  async setupTuyaDPListeners() {
+    this.log('[SOIL] Setting up Tuya DP listeners...');
+    
+    if (!this.tuyaEF00Manager || !this.tuyaEF00Manager.tuyaCluster) {
+      this.error('[SOIL] ❌ No Tuya EF00 Manager available!');
+      return;
+    }
+    
+    try {
+      // Register DP listeners
+      // DP 1 = Temperature (divide by 10)
+      this.tuyaEF00Manager.on('dp-1', (value) => {
+        const temp = value / 10;
+        this.log(`[SOIL] 🌡️ Temperature: ${temp}°C (DP1 raw: ${value})`);
+        if (this.hasCapability('measure_temperature')) {
+          this.setCapabilityValue('measure_temperature', temp).catch(this.error);
+        }
+      });
+      
+      // DP 2 = Air Humidity
+      this.tuyaEF00Manager.on('dp-2', (value) => {
+        this.log(`[SOIL] 💧 Air Humidity: ${value}% (DP2)`);
+        if (this.hasCapability('measure_humidity')) {
+          this.setCapabilityValue('measure_humidity', value).catch(this.error);
+        }
+      });
+      
+      // DP 3 = Soil Moisture
+      this.tuyaEF00Manager.on('dp-3', (value) => {
+        this.log(`[SOIL] 🌱 Soil Moisture: ${value}% (DP3)`);
+        if (this.hasCapability('measure_humidity.soil')) {
+          this.setCapabilityValue('measure_humidity.soil', value).catch(this.error);
+        }
+      });
+      
+      // DP 4 = Battery
+      this.tuyaEF00Manager.on('dp-4', (value) => {
+        this.log(`[SOIL] 🔋 Battery: ${value}% (DP4)`);
+        if (this.hasCapability('measure_battery')) {
+          this.setCapabilityValue('measure_battery', value).catch(this.error);
+        }
+      });
+      
+      // DP 5 = Wetness Alarm
+      this.tuyaEF00Manager.on('dp-5', (value) => {
+        const isWet = Boolean(value);
+        this.log(`[SOIL] 💦 Wetness: ${isWet ? 'WET' : 'DRY'} (DP5)`);
+        if (this.hasCapability('alarm_contact')) {
+          this.setCapabilityValue('alarm_contact', isWet).catch(this.error);
+        }
+      });
+      
+      this.log('[SOIL] ✅ Tuya DP listeners configured');
+      
+      // Request initial values
+      this.log('[SOIL] Requesting initial DP values...');
+      setTimeout(() => {
+        [1, 2, 3, 4, 5].forEach(dp => {
+          this.tuyaEF00Manager.requestDP(dp).catch(err => 
+            this.log(`[SOIL] DP${dp} request failed:`, err.message)
+          );
+        });
+      }, 2000); // Wait 2s for device to be ready
+      
+    } catch (err) {
+      this.error('[SOIL] ❌ Tuya DP setup failed:', err);
+    }
   }
 
   async setupSensorReporting() {
