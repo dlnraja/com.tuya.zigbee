@@ -69664,6 +69664,78 @@
       "getable": true,
       "setable": true,
       "uiComponent": "slider"
+    },
+    "tuya_dp_1": {
+      "type": "number",
+      "title": {"en": "Tuya DP 1", "fr": "Tuya DP 1"},
+      "getable": true,
+      "setable": false
+    },
+    "tuya_dp_2": {
+      "type": "number",
+      "title": {"en": "Tuya DP 2", "fr": "Tuya DP 2"},
+      "getable": true,
+      "setable": false
+    },
+    "tuya_dp_3": {
+      "type": "number",
+      "title": {"en": "Tuya DP 3", "fr": "Tuya DP 3"},
+      "getable": true,
+      "setable": false
+    },
+    "tuya_dp_4": {
+      "type": "number",
+      "title": {"en": "Tuya DP 4", "fr": "Tuya DP 4"},
+      "getable": true,
+      "setable": false
+    },
+    "tuya_dp_5": {
+      "type": "number",
+      "title": {"en": "Tuya DP 5", "fr": "Tuya DP 5"},
+      "getable": true,
+      "setable": false
+    },
+    "tuya_dp_6": {
+      "type": "number",
+      "title": {"en": "Tuya DP 6", "fr": "Tuya DP 6"},
+      "getable": true,
+      "setable": false
+    },
+    "tuya_dp_7": {
+      "type": "number",
+      "title": {"en": "Tuya DP 7", "fr": "Tuya DP 7"},
+      "getable": true,
+      "setable": false
+    },
+    "tuya_dp_8": {
+      "type": "number",
+      "title": {"en": "Tuya DP 8", "fr": "Tuya DP 8"},
+      "getable": true,
+      "setable": false
+    },
+    "tuya_dp_9": {
+      "type": "number",
+      "title": {"en": "Tuya DP 9", "fr": "Tuya DP 9"},
+      "getable": true,
+      "setable": false
+    },
+    "tuya_dp_10": {
+      "type": "number",
+      "title": {"en": "Tuya DP 10", "fr": "Tuya DP 10"},
+      "getable": true,
+      "setable": false
+    },
+    "tuya_dp_11": {
+      "type": "number",
+      "title": {"en": "Tuya DP 11", "fr": "Tuya DP 11"},
+      "getable": true,
+      "setable": false
+    },
+    "tuya_dp_12": {
+      "type": "number",
+      "title": {"en": "Tuya DP 12", "fr": "Tuya DP 12"},
+      "getable": true,
+      "setable": false
     }
   }
 }

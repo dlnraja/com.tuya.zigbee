@@ -36,20 +36,20 @@ class TuyaSoilTesterTempHumidDevice extends BaseHybridDevice {
       const endpoint = this.zclNode.endpoints[1];
       
       if (endpoint?.clusters?.msTemperatureMeasurement) {
-        endpoint.clusters.msTemperatureMeasurement.on('attr.measuredValue', async (value) => {
-          await this.setCapabilityValue('measure_temperature', value / 100).catch(this.error);
+        endpoint.clusters.msTemperatureMeasurement.on('attr.measuredValue', (value) => {
+          this.setCapabilityValue('measure_temperature', value / 100).catch(this.error);
         });
       }
       
       if (endpoint?.clusters?.msRelativeHumidity) {
-        endpoint.clusters.msRelativeHumidity.on('attr.measuredValue', async (value) => {
-          await this.setCapabilityValue('measure_humidity', value / 100).catch(this.error);
+        endpoint.clusters.msRelativeHumidity.on('attr.measuredValue', (value) => {
+          this.setCapabilityValue('measure_humidity', value / 100).catch(this.error);
         });
       }
       
       if (endpoint?.clusters?.genPowerCfg) {
-        endpoint.clusters.genPowerCfg.on('attr.batteryPercentageRemaining', async (value) => {
-          await this.setCapabilityValue('measure_battery', value / 2).catch(this.error);
+        endpoint.clusters.genPowerCfg.on('attr.batteryPercentageRemaining', (value) => {
+          this.setCapabilityValue('measure_battery', value / 2).catch(this.error);
         });
       }
       
