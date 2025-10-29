@@ -12,21 +12,29 @@ class TuyaSoilTesterTempHumidDevice extends BaseHybridDevice {
   async onNodeInit({ zclNode }) {
     this.log('TuyaSoilTesterTempHumidDevice initializing...');
     
-    // Setup sensor reporting
+    // Initialize base FIRST (power detection + Tuya EF00)
     await super.onNodeInit({ zclNode }).catch(err => this.error(err));
     
-    // THEN setup (zclNode now exists)
-    await this.setupSensorReporting();
+    // Check if device has Tuya EF00 cluster (TS0601 uses ONLY EF00, not standard clusters)
+    const endpoint = this.zclNode?.endpoints?.[1];
+    const isTuyaEF00Device = endpoint?.clusters?.tuyaSpecific 
+                          || endpoint?.clusters?.tuyaManufacturer 
+                          || endpoint?.clusters?.manuSpecificTuya;
     
-    // Initialize base (auto power detection + dynamic capabilities)
-    
-
-    // Setup IAS Zone (SDK3 - based on Peter's success patterns)
-    await this.setupIASZone();
-
-    // Setup sensor capabilities (SDK3)
-    await this.setupTemperatureSensor();
-    await this.setupHumiditySensor();
+    if (isTuyaEF00Device) {
+      this.log('[TUYA] ✅ TS0601 detected - using Tuya EF00 ONLY (no standard clusters)');
+      this.log('[TUYA] ℹ️  All data will come via DataReport events from TuyaEF00Manager');
+      // Don't setup standard cluster listeners - TS0601 doesn't have them!
+    } else {
+      this.log('[STANDARD] Using standard Zigbee clusters');
+      // Setup standard sensor reporting
+      await this.setupSensorReporting();
+      // Setup IAS Zone
+      await this.setupIASZone();
+      // Setup sensor capabilities
+      await this.setupTemperatureSensor();
+      await this.setupHumiditySensor();
+    }
     
     this.log('TuyaSoilTesterTempHumidDevice initialized - Power source:', this.powerSource || 'unknown');
   }
