@@ -3054,15 +3054,10 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
       "TS0011"
     ],
     "manufacturer_count": 9,
-    "model_count": 7,
+    "model_count": 2,
     "capabilities": [
       "onoff",
       "onoff.button2"
@@ -4729,15 +4724,17 @@
       "_TZ3000_ww6drja5",
       "_TZ3000_kqvb5akv",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_h1ipgkwn"
     ],
     "models": [
       "TS0115",
       "TS011F",
-      "TS0121"
+      "TS0121",
+      "TS0002"
     ],
-    "manufacturer_count": 4,
-    "model_count": 3,
+    "manufacturer_count": 5,
+    "model_count": 4,
     "capabilities": [
       "onoff",
       "onoff.usb2",
