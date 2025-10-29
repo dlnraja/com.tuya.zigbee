@@ -1,7 +1,11 @@
 'use strict';
 
+const { Cluster } = require('zigbee-clusters');
 const BaseHybridDevice = require('../../lib/BaseHybridDevice');
-const TuyaDataPointEngine = require('../../lib/TuyaDataPointEngine');
+const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
+
+// CRITICAL: Register Tuya custom cluster for Homey SDK3
+Cluster.addCluster(TuyaSpecificCluster);
 
 /**
  * ClimateMonitorDevice - Unified Hybrid Driver
@@ -47,79 +51,126 @@ class ClimateMonitorDevice extends BaseHybridDevice {
     
     this.log('[CLIMATE] 📋 Available clusters:', Object.keys(clusters).join(', '));
     
-    // Check for Tuya cluster
-    const tuyaCluster = clusters.manuSpecificTuya || 
-                       clusters.tuyaManufacturer || 
-                       clusters.tuya || 
-                       clusters['0xEF00'] || 
-                       clusters[61184];
+    // CRITICAL: In Homey SDK3, Tuya cluster might be named:
+    // - tuyaManufacturer (most common)
+    // - tuyaSpecific (our custom cluster)
+    // - manuSpecificTuya (zigbee2mqtt)
+    const tuyaCluster = clusters.tuyaSpecific ||     // Our custom cluster
+                       clusters.tuyaManufacturer ||  // Real Homey cluster name
+                       clusters.tuya;                // Alternative name
     
     if (tuyaCluster) {
+      const clusterName = Object.keys(clusters).find(k => clusters[k] === tuyaCluster);
       this.log('[CLIMATE] ✅ Tuya cluster FOUND!');
-      this.log('[CLIMATE] Cluster name:', Object.keys(clusters).find(k => clusters[k] === tuyaCluster));
+      this.log('[CLIMATE] 🏷️  Cluster name:', clusterName);
+      this.log('[CLIMATE] 🔢 Cluster ID:', tuyaCluster.id || 'unknown');
       this.isTuyaDevice = true;
       this.tuyaCluster = tuyaCluster;
     } else {
-      this.log('[CLIMATE] ℹ️  No Tuya cluster - using standard Zigbee');
+      this.log('[CLIMATE] ℹ️  No Tuya cluster detected');
+      this.log('[CLIMATE] 📋 Available clusters:', Object.keys(clusters));
+      this.log('[CLIMATE] 🔧 Using standard Zigbee clusters instead');
       this.isTuyaDevice = false;
     }
   }
   
   /**
-   * Setup Tuya TS0601 DataPoints
+   * Setup Tuya TS0601 DataPoints - Homey SDK3 Native Approach
    */
   async setupTuyaDataPoints() {
-    this.log('[TUYA] 🔧 Setting up Tuya DataPoint engine...');
+    this.log('[TUYA] 🔧 Setting up Tuya DataPoint listeners (Homey SDK3)...');
     
     try {
-      // Create DP engine
-      this.tuyaEngine = new TuyaDataPointEngine(this, this.tuyaCluster);
+      this.log('[TUYA] 📌 Cluster:', this.tuyaCluster);
+      this.log('[TUYA] 📌 Type:', typeof this.tuyaCluster);
+      this.log('[TUYA] 📌 Available methods:', Object.getOwnPropertyNames(Object.getPrototypeOf(this.tuyaCluster)));
       
-      // Define DP mapping for climate monitor
-      // Common TS0601 climate monitor DPs:
-      // DP 1 = Temperature (°C * 10)
-      // DP 2 = Humidity (%)
-      // DP 4 = Battery (%)
-      const dpMapping = {
-        'measure_temperature': {
-          dp: 1,
-          parser: (value) => {
-            const temp = value / 10;
-            this.log(`[TUYA] 🌡️  Temperature DP: ${value} → ${temp}°C`);
-            return temp;
+      // Listen for dataReport command (Tuya devices send this)
+      this.log('[TUYA] 📡 Registering dataReport listener...');
+      
+      this.tuyaCluster.on('dataReport', async (payload) => {
+        this.log('[TUYA] 📥 DATA REPORT RECEIVED!');
+        this.log('[TUYA] 📋 Raw payload:', JSON.stringify(payload, null, 2));
+        
+        try {
+          // Parse DataPoints from payload
+          const dpBuffer = payload.dpValues || payload.data || payload;
+          
+          if (!Buffer.isBuffer(dpBuffer)) {
+            this.log('[TUYA] ⚠️  Payload is not a buffer, converting...');
+            return;
           }
-        },
-        'measure_humidity': {
-          dp: 2,
-          parser: (value) => {
-            this.log(`[TUYA] 💧 Humidity DP: ${value}%`);
-            return value;
+          
+          const datapoints = TuyaSpecificCluster.parseDataPoints(dpBuffer);
+          this.log('[TUYA] 🔍 Parsed DataPoints:', JSON.stringify(datapoints, null, 2));
+          
+          // Process each datapoint
+          for (const dp of datapoints) {
+            await this.handleTuyaDataPoint(dp);
           }
-        },
-        'measure_battery': {
-          dp: 4,
-          parser: (value) => {
-            this.log(`[TUYA] 🔋 Battery DP: ${value}%`);
-            return value;
-          }
+          
+        } catch (parseErr) {
+          this.error('[TUYA] ❌ Parse error:', parseErr);
+          this.error('[TUYA] Stack:', parseErr.stack);
         }
-      };
+      });
       
-      this.log('[TUYA] 📋 DP Mapping configured:');
-      this.log('[TUYA]   DP 1 → Temperature');
-      this.log('[TUYA]   DP 2 → Humidity');
-      this.log('[TUYA]   DP 4 → Battery');
+      // Also listen for raw 'response' events
+      this.tuyaCluster.on('response', async (data) => {
+        this.log('[TUYA] 📥 RESPONSE EVENT:', JSON.stringify(data, null, 2));
+      });
       
-      // Setup listeners and read initial values
-      await this.tuyaEngine.setupDataPoints(dpMapping);
+      // Try to query initial values
+      this.log('[TUYA] 📝 Querying initial DataPoint values...');
+      try {
+        await this.tuyaCluster.getData({ seq: 0, datapoints: Buffer.from([1, 2, 4]) });
+        this.log('[TUYA] ✅ Initial query sent');
+      } catch (queryErr) {
+        this.log('[TUYA] ⚠️  Initial query failed (device will report automatically):', queryErr.message);
+      }
       
-      this.log('[TUYA] ✅ Tuya DataPoints configured!');
+      this.log('[TUYA] ✅ Tuya DataPoint system ready!');
       
     } catch (err) {
       this.error('[TUYA] ❌ DataPoint setup failed:', err);
       this.error('[TUYA] Stack:', err.stack);
       this.log('[TUYA] ⚠️  Falling back to standard Zigbee...');
       await this.setupStandardZigbee();
+    }
+  }
+  
+  /**
+   * Handle individual Tuya DataPoint
+   */
+  async handleTuyaDataPoint(dp) {
+    this.log(`[TUYA-DP] 📍 DP ${dp.dp}: ${dp.value} (type: ${dp.dataType})`);
+    
+    try {
+      // DP 1 = Temperature (°C * 10)
+      if (dp.dp === 1 && this.hasCapability('measure_temperature')) {
+        const temp = dp.value / 10;
+        this.log(`[TUYA] 🌡️  Temperature: ${dp.value} → ${temp}°C`);
+        await this.setCapabilityValue('measure_temperature', temp);
+      }
+      
+      // DP 2 = Humidity (%)
+      else if (dp.dp === 2 && this.hasCapability('measure_humidity')) {
+        this.log(`[TUYA] 💧 Humidity: ${dp.value}%`);
+        await this.setCapabilityValue('measure_humidity', dp.value);
+      }
+      
+      // DP 4 = Battery (%)
+      else if (dp.dp === 4 && this.hasCapability('measure_battery')) {
+        this.log(`[TUYA] 🔋 Battery: ${dp.value}%`);
+        await this.setCapabilityValue('measure_battery', dp.value);
+      }
+      
+      else {
+        this.log(`[TUYA-DP] ℹ️  Unknown DP ${dp.dp} - value: ${dp.value}`);
+      }
+      
+    } catch (setErr) {
+      this.error(`[TUYA-DP] ❌ Failed to set value for DP ${dp.dp}:`, setErr);
     }
   }
   
