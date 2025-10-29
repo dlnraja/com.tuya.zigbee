@@ -3,10 +3,12 @@
 const Homey = require('homey');
 const { registerCustomClusters } = require('./lib/registerClusters');
 const FlowCardManager = require('./lib/FlowCardManager');
+const CapabilityManager = require('./lib/utils/CapabilityManager');
 
 class UniversalTuyaZigbeeApp extends Homey.App {
   _flowCardsRegistered = false;
   flowCardManager = null;
+  capabilityManager = null;
 
 
   /**
@@ -21,6 +23,10 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     this._flowCardsRegistered = true;
 
     this.log('Universal Tuya Zigbee App is initializing...');
+
+    // Initialize CapabilityManager for safe capability creation
+    this.capabilityManager = new CapabilityManager(this.homey);
+    this.log('✅ CapabilityManager initialized');
 
     // CRITICAL: Register custom Zigbee clusters FIRST
     // This must happen before any devices initialize
@@ -40,6 +46,10 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     this.registerFlowCards();
 
     this.log('✅ Universal Tuya Zigbee App has been initialized');
+    
+    // Log capability stats
+    const stats = this.capabilityManager.getStats();
+    this.log(`📊 Capabilities managed: ${stats.created}`);
   }
 
   /**
