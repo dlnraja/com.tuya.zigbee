@@ -10,7 +10,6 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "onoff.usb2",
     "led_mode",
     "measure_voltage",
     "measure_current"
@@ -18,22 +17,12 @@
   "capabilitiesOptions": {
     "onoff": {
       "title": {
-        "en": "USB Port 1",
-        "fr": "Port USB 1",
-        "nl": "USB Poort 1",
-        "de": "USB Anschluss 1",
-        "it": "Porta USB 1",
-        "es": "Puerto USB 1"
-      }
-    },
-    "onoff.usb2": {
-      "title": {
-        "en": "USB Port 2",
-        "fr": "Port USB 2",
-        "nl": "USB Poort 2",
-        "de": "USB Anschluss 2",
-        "it": "Porta USB 2",
-        "es": "Puerto USB 2"
+        "en": "Port 1",
+        "fr": "Port 1",
+        "nl": "Poort 1",
+        "de": "Anschluss 1",
+        "it": "Porta 1",
+        "es": "Puerto 1"
       }
     },
     "led_mode": {
@@ -69,42 +58,42 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_ww6drja5",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_h1ipgkwn"
+      "_TZ3000_1obwwnmq",
+      "_TZ3000_w0qqde0g",
+      "_TZ3000_gjnozsaz",
+      "_TZ3000_8gs8h2e4"
     ],
     "productId": [
-      "TS0115",
-      "TS011F",
-      "TS0121",
-      "TS0002"
+      "TS011F"
     ],
     "endpoints": {
       "1": {
-        "clusters": [
-          0,
-          4,
-          5,
-          6
-        ],
-        "bindings": [
-          6,
-          1
-        ]
+        "clusters": [0, 3, 4, 5, 6, 1794, 2820],
+        "bindings": [6, 1794, 2820]
       },
       "2": {
-        "clusters": [
-          0,
-          4,
-          5,
-          6
-        ],
-        "bindings": [
-          6,
-          1
-        ]
+        "clusters": [6],
+        "bindings": [6]
+      }
+    },
+    "devices": {
+      "port2": {
+        "class": "socket",
+        "capabilities": ["onoff"],
+        "name": {
+          "en": "USB Port 2",
+          "nl": "USB Poort 2",
+          "de": "USB-Anschluss 2",
+          "fr": "Port USB 2",
+          "it": "Porta USB 2",
+          "sv": "USB-port 2",
+          "no": "USB-port 2",
+          "es": "Puerto USB 2",
+          "da": "USB-port 2",
+          "ru": "USB-порт 2",
+          "pl": "Port USB 2"
+        },
+        "settings": []
       }
     },
     "learnmode": {
