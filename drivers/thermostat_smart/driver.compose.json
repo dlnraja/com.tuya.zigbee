@@ -10,7 +10,11 @@
     "measure_battery"
   ],
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZE200_cwbvmsar",
+      "_TZE200_locansqn",
+      "_TZE284_aagrxlbd"
+    ],
     "productId": [
       "TS0601"
     ],
