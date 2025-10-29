@@ -4740,7 +4740,10 @@
     "model_count": 3,
     "capabilities": [
       "onoff",
-      "onoff.usb2"
+      "onoff.usb2",
+      "led_mode",
+      "measure_voltage",
+      "measure_current"
     ],
     "power_source": "ac",
     "clusters": []
