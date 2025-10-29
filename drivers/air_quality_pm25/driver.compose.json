@@ -22,7 +22,11 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZE200_dwcarsat",
+      "_TZE200_ryfmq5rl",
+      "_TZE284_sgabhwa6"
+    ],
     "productId": [
       "TS0601"
     ],
