@@ -2,9 +2,11 @@
 
 const Homey = require('homey');
 const { registerCustomClusters } = require('./lib/registerClusters');
+const FlowCardManager = require('./lib/FlowCardManager');
 
 class UniversalTuyaZigbeeApp extends Homey.App {
   _flowCardsRegistered = false;
+  flowCardManager = null;
 
 
   /**
@@ -29,7 +31,12 @@ class UniversalTuyaZigbeeApp extends Homey.App {
       this.error('❌ Failed to register custom clusters:', err);
     }
 
-    // Register global flow cards for energy management
+    // Register ALL flow cards (+33 nouveaux!)
+    this.flowCardManager = new FlowCardManager(this.homey);
+    this.flowCardManager.registerAll();
+    this.log('✅ Flow cards registered (+33 nouveaux)');
+    
+    // Register additional global flow cards
     this.registerFlowCards();
 
     this.log('✅ Universal Tuya Zigbee App has been initialized');
