@@ -10,7 +10,10 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "onoff.usb2"
+    "onoff.usb2",
+    "led_mode",
+    "measure_voltage",
+    "measure_current"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -31,6 +34,36 @@
         "de": "USB Anschluss 2",
         "it": "Porta USB 2",
         "es": "Puerto USB 2"
+      }
+    },
+    "led_mode": {
+      "title": {
+        "en": "LED Indicator",
+        "fr": "Indicateur LED",
+        "nl": "LED Indicator",
+        "de": "LED Anzeige",
+        "it": "Indicatore LED",
+        "es": "Indicador LED"
+      }
+    },
+    "measure_voltage": {
+      "title": {
+        "en": "Voltage",
+        "fr": "Tension",
+        "nl": "Spanning",
+        "de": "Spannung",
+        "it": "Tensione",
+        "es": "Voltaje"
+      }
+    },
+    "measure_current": {
+      "title": {
+        "en": "Current",
+        "fr": "Courant",
+        "nl": "Stroom",
+        "de": "Strom",
+        "it": "Corrente",
+        "es": "Corriente"
       }
     }
   },
