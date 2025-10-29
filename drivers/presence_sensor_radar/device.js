@@ -52,7 +52,7 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
       // SDK3: Direct cluster listener for illuminance
       const illuminanceMeasurementCluster = endpoint.clusters[1024];
       
-      await illuminanceMeasurementCluster.on('attr.measuredValue', value => {
+      illuminanceMeasurementCluster.on('attr.measuredValue', value => {
         const lux = Math.pow(10, (value - 1) / 10000);
         this.setCapabilityValue('measure_luminance', lux).catch(this.error);
         this.log(`[ILLUMINANCE] Updated: ${lux} lux`);
