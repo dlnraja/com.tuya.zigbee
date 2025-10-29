@@ -35,6 +35,11 @@ class ClimateMonitorDevice extends BaseHybridDevice {
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit({ zclNode }).catch(err => this.error(err));
     
+    // Setup Tuya DP listeners for climate data
+    if (this.tuyaEF00Manager && this.tuyaEF00Manager.tuyaCluster) {
+      await this.setupClimateListeners();
+    }
+    
     // Setup climate sensing (temperature & humidity)
     await this.setupClimateSensing();
     
