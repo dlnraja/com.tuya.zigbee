@@ -1,6 +1,6 @@
 # Device Matrix
 
-**Generated:** 2025-10-28T18:36:35.600Z
+**Generated:** 2025-10-29T12:13:17.569Z
 
 **Total Devices:** 172
 
