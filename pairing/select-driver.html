@@ -2,152 +2,292 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Select Driver</title>
+    <title>Universal Tuya Zigbee - Driver Selector</title>
     <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             padding: 20px;
-            max-width: 600px;
-            margin: 0 auto;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
         }
+        
+        .container { max-width: 1200px; margin: 0 auto; }
+        
+        header {
+            background: rgba(255,255,255,0.95);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        h1 { font-size: 24px; color: #333; margin-bottom: 8px; }
+        .subtitle { color: #666; font-size: 14px; }
+        
         .warning {
             background: #fff3cd;
-            border: 1px solid #ffc107;
+            border: 2px solid #ffc107;
             border-radius: 8px;
             padding: 15px;
             margin-bottom: 20px;
+            animation: pulse 2s infinite;
         }
-        .driver-list {
-            list-style: none;
-            padding: 0;
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
         }
+        
+        .grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; margin-bottom: 20px; }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .device-info {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        
+        .actions { display: flex; flex-direction: column; gap: 10px; }
+        
+        .btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+        
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(102,126,234,0.4); }
+        .btn-primary:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+        
+        .btn-secondary {
+            background: #f59e0b;
+            color: white;
+        }
+        
+        .btn-secondary:hover { background: #d97706; }
+        
+        .btn-tertiary {
+            background: #e5e7eb;
+            color: #374151;
+        }
+        
+        .search-box {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .search-box:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .driver-list { list-style: none; padding: 0; }
+        
         .driver-option {
+            background: white;
             border: 2px solid #e0e0e0;
             border-radius: 8px;
             padding: 15px;
             margin-bottom: 10px;
             cursor: pointer;
             transition: all 0.2s;
+            position: relative;
         }
+        
         .driver-option:hover {
-            border-color: #2196F3;
-            background: #f5f5f5;
+            border-color: #667eea;
+            transform: translateX(4px);
+            box-shadow: 0 4px 8px rgba(102,126,234,0.2);
         }
+        
         .driver-option.selected {
-            border-color: #2196F3;
-            background: #e3f2fd;
+            border-color: #667eea;
+            background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(118,75,162,0.1));
+            box-shadow: 0 0 0 3px rgba(102,126,234,0.2);
         }
-        .driver-icon {
-            width: 48px;
-            height: 48px;
-            float: left;
-            margin-right: 15px;
-            border-radius: 8px;
+        
+        .driver-option.selected::before {
+            content: '✓';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #667eea;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
         }
-        .driver-info {
-            overflow: hidden;
+        
+        .driver-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 10px;
         }
+        
         .driver-name {
             font-weight: bold;
             font-size: 16px;
-            margin-bottom: 5px;
+            color: #333;
         }
-        .driver-description {
-            color: #666;
-            font-size: 14px;
+        
+        .driver-id {
+            font-size: 11px;
+            color: #999;
+            font-family: 'Courier New', monospace;
         }
-        .device-info {
-            background: #f5f5f5;
-            border-radius: 8px;
-            padding: 10px;
-            margin-bottom: 20px;
+        
+        .driver-score {
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .driver-meta {
+            display: flex;
+            gap: 15px;
             font-size: 12px;
             color: #666;
+            margin-top: 8px;
         }
-        button {
-            background: #2196F3;
-            color: white;
-            border: none;
-            padding: 12px 24px;
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .badge {
+            background: #e5e7eb;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+        
+        .message {
+            background: #dbeafe;
+            border: 1px solid #3b82f6;
             border-radius: 8px;
-            font-size: 16px;
-            cursor: pointer;
-            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 14px;
         }
-        button:disabled {
-            background: #ccc;
-            cursor: not-allowed;
+        
+        .message.error {
+            background: #fee2e2;
+            border-color: #ef4444;
+        }
+        
+        .message.success {
+            background: #d1fae5;
+            border-color: #10b981;
+        }
+        
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <div class="warning">
-        <strong>⚠️ Multiple drivers match this device</strong>
-        <p>Please select the correct driver based on your device type.</p>
-    </div>
+    <div class="container">
+        <header>
+            <h1>🔍 Universal Tuya Zigbee - Driver Selector</h1>
+            <p class="subtitle">Choose the correct driver for your device during pairing</p>
+        </header>
 
-    <div class="device-info" id="deviceInfo">
-        <strong>Device Information:</strong><br>
-        <span id="deviceDetails">Loading...</span>
-    </div>
+        <div class="warning">
+            <strong>⚠️ Multiple drivers match this device</strong>
+            <p>Please select the most appropriate driver based on your device specifications below.</p>
+        </div>
 
-    <h3>Available Drivers:</h3>
-    <ul class="driver-list" id="driverList">
-        <!-- Populated by JavaScript -->
-    </ul>
-
-    <button id="continueBtn" disabled>Continue with Selected Driver</button>
-
-    <script>
-        let selectedDriver = null;
-
-        // Populated by Homey
-        const candidates = window.candidates || [];
-        const deviceInfo = window.deviceInfo || {};
-
-        // Display device info
-        document.getElementById('deviceDetails').innerHTML = `
-            Manufacturer: ${deviceInfo.manufacturerName || 'Unknown'}<br>
-            Product ID: ${deviceInfo.productId || 'Unknown'}<br>
-            Model: ${deviceInfo.modelId || 'N/A'}
-        `;
-
-        // Populate driver list
-        const driverList = document.getElementById('driverList');
-        candidates.forEach(driver => {
-            const li = document.createElement('li');
-            li.className = 'driver-option';
-            li.innerHTML = `
-                <img class="driver-icon" src="${driver.icon || '/assets/icon.svg'}" alt="${driver.name}">
-                <div class="driver-info">
-                    <div class="driver-name">${driver.name}</div>
-                    <div class="driver-description">${driver.description || ''}</div>
+        <div class="grid">
+            <div class="card">
+                <h3 style="margin-bottom: 15px;">📱 Device Information</h3>
+                <div class="device-info" id="deviceInfo">
+                    <div>Loading device information...</div>
                 </div>
-            `;
-            li.onclick = () => selectDriver(driver.id, li);
-            driverList.appendChild(li);
-        });
+                
+                <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                    <button class="btn btn-tertiary" onclick="copyDeviceInfo()">📋 Copy JSON</button>
+                    <button class="btn btn-tertiary" onclick="refreshDeviceInfo()">🔄 Refresh</button>
+                </div>
 
-        function selectDriver(driverId, element) {
-            // Remove previous selection
-            document.querySelectorAll('.driver-option').forEach(el => {
-                el.classList.remove('selected');
-            });
-            
-            // Mark selected
-            element.classList.add('selected');
-            selectedDriver = driverId;
-            
-            // Enable continue button
-            document.getElementById('continueBtn').disabled = false;
-        }
+                <h3 style="margin: 20px 0 15px 0;">🎯 Available Drivers (<span id="driverCount">0</span>)</h3>
+                <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search by name, manufacturer, product ID...">
+                
+                <div style="max-height: 400px; overflow-y: auto;">
+                    <ul class="driver-list" id="driverList">
+                        <!-- Populated by JavaScript -->
+                    </ul>
+                </div>
+            </div>
 
-        // Continue button handler
-        document.getElementById('continueBtn').onclick = () => {
-            if (selectedDriver) {
-                window.Homey.emit('driver_selected', selectedDriver);
-            }
-        };
-    </script>
+            <div class="card">
+                <h3 style="margin-bottom: 15px;">⚡ Actions</h3>
+                
+                <div class="actions">
+                    <button class="btn btn-primary" id="continueBtn" onclick="confirmSelection()" disabled>
+                        ✓ Use Selected Driver
+                    </button>
+                    
+                    <button class="btn btn-secondary" id="reportBtn" onclick="reportDevice()">
+                        📤 Report Device (Crowdsource)
+                    </button>
+                    
+                    <button class="btn btn-tertiary" onclick="window.location.reload()">
+                        🔄 Start Over
+                    </button>
+                </div>
+
+                <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 8px; font-size: 12px; color: #666;">
+                    <strong>ℹ️ Help</strong>
+                    <ul style="margin: 10px 0 0 20px; line-height: 1.6;">
+                        <li>Drivers are scored by compatibility</li>
+                        <li>Higher score = better match</li>
+                        <li>Select driver and click "Use Selected Driver"</li>
+                        <li>Report unknown devices to improve database</li>
+                    </ul>
+                </div>
+
+                <div id="messageBox"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./select-driver-client.js"></script>
 </body>
 </html>

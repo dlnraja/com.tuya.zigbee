@@ -24,7 +24,10 @@
     "manufacturerName": [
       "_TZE200_eevqq1uv",
       "_TZE200_3towulqd",
-      "_TZE284_1emhi5mm"
+      "_TZE284_1emhi5mm",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "productId": [
       "TS0601"
@@ -290,5 +293,24 @@
   ],
   "connectivity": [
     "zigbee"
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
   ]
 }

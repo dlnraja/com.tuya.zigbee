@@ -60,7 +60,12 @@
       "_TZ3000_xkwalgne",
       "_TZ3000_ya9ekqwp",
       "_TZ3000_zhhcsbrz",
-      "_TZ3000_zmy4lslw"
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_ejwkn2h2"
     ],
     "productId": [
       "TS0005",
@@ -331,5 +336,24 @@
   ],
   "connectivity": [
     "zigbee"
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
   ]
 }

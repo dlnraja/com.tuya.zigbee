@@ -35,7 +35,15 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "productId": [
       "TS0001",
@@ -365,5 +373,24 @@
         "fr": "Gang 4"
       }
     }
-  }
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
 }
