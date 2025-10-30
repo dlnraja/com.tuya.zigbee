@@ -118,12 +118,20 @@ GPL-3.0 - See LICENSE file
 
 ## 🔗 Links
 
+### 🏠 Homey Platform
 - **Test App (Homey):** https://homey.app/a/com.dlnraja.tuya.zigbee/test/
 - **Homey App Store:** https://homey.app/a/com.dlnraja.tuya.zigbee/
+- **Community Forum:** https://community.homey.app/
+
+### 🔍 Device Database & Tools
+- **Device Database:** https://dlnraja.github.io/com.tuya.zigbee/
+- **Smart Device Finder:** https://dlnraja.github.io/com.tuya.zigbee/device-finder.html
+- **Device Matrix:** https://dlnraja.github.io/com.tuya.zigbee/matrix.html
+
+### 💻 Development
 - **GitHub Repository:** https://github.com/dlnraja/com.tuya.zigbee
 - **GitHub Actions:** https://github.com/dlnraja/com.tuya.zigbee/actions
 - **Issues & Support:** https://github.com/dlnraja/com.tuya.zigbee/issues
-- **Community Forum:** https://community.homey.app/
 
 ## 📞 Support
 
