@@ -134,4 +134,4 @@ class USBOutlet2PortDevice extends BaseHybridDevice {
   }
 }
 
-module.exports = UsbOutlet2PortDevice;
+module.exports = USBOutlet2PortDevice;
