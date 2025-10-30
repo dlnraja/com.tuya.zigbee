@@ -17,7 +17,10 @@
       "_TZ3000_fllyghyj",
       "_TZE200_cwbvmsar",
       "_TZE200_locansqn",
-      "_TZE284_aagrxlbd"
+      "_TZE284_aagrxlbd",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "productId": [
       "TS0201",
@@ -51,6 +54,12 @@
     {
       "id": "list_devices",
       "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
       "navigation": {
         "next": "add_devices"
       }

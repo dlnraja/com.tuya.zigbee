@@ -48,7 +48,9 @@
     }
   },
   "energy": {
-    "batteries": ["INTERNAL"]
+    "batteries": [
+      "INTERNAL"
+    ]
   },
   "zigbee": {
     "manufacturerName": [
@@ -56,7 +58,10 @@
       "_TZE200_3towulqd",
       "_TZE200_ppuj1vem",
       "_TZE200_pay2byax",
-      "_TZE200_mrf6vtua"
+      "_TZE200_mrf6vtua",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "productId": [
       "ZG-204ZV",
@@ -124,5 +129,24 @@
     "small": "/drivers/pir_sensor_3in1/assets/images/small.png",
     "large": "/drivers/pir_sensor_3in1/assets/images/large.png",
     "xlarge": "/drivers/pir_sensor_3in1/assets/images/xlarge.png"
-  }
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
 }

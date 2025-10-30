@@ -61,25 +61,45 @@
       "_TZ3000_1obwwnmq",
       "_TZ3000_w0qqde0g",
       "_TZ3000_gjnozsaz",
-      "_TZ3000_8gs8h2e4"
+      "_TZ3000_8gs8h2e4",
+      "_TZ3000_vzopcetz",
+      "_TZ3000_g5xawfcq"
     ],
     "productId": [
       "TS011F"
     ],
     "endpoints": {
       "1": {
-        "clusters": [0, 3, 4, 5, 6, 1794, 2820],
-        "bindings": [6, 1794, 2820]
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          1794,
+          2820
+        ],
+        "bindings": [
+          6,
+          1794,
+          2820
+        ]
       },
       "2": {
-        "clusters": [6],
-        "bindings": [6]
+        "clusters": [
+          6
+        ],
+        "bindings": [
+          6
+        ]
       }
     },
     "devices": {
       "port2": {
         "class": "socket",
-        "capabilities": ["onoff"],
+        "capabilities": [
+          "onoff"
+        ],
         "name": {
           "en": "USB Port 2",
           "nl": "USB Poort 2",
@@ -213,5 +233,24 @@
       }
     }
   ],
-  "id": "usb_outlet_2port"
+  "id": "usb_outlet_2port",
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
 }

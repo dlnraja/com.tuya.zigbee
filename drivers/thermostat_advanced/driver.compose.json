@@ -58,7 +58,10 @@
       "_TZE200_0dvm9mva",
       "_TZE200_a4bpgplm",
       "_TZE200_aoclfnxz",
-      "_TZE200_ztvwu4nk"
+      "_TZE200_ztvwu4nk",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "productId": [
       "TS0601"
@@ -350,5 +353,24 @@
         "max": 3
       }
     }
-  }
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
 }
