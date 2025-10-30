@@ -1,0 +1,36 @@
+{
+  "timestamp": "2025-10-12T12:25:40.897Z",
+  "drivers": [
+    {
+      "driver": "motion_temp_humidity_illumination_multi_battery",
+      "priority": 10,
+      "actions": []
+    },
+    {
+      "driver": "sos_emergency_button_cr2032",
+      "priority": 10,
+      "actions": []
+    }
+  ],
+  "userRequests": [
+    {
+      "driver": "motion_temp_humidity_illumination_multi_battery",
+      "user": "forum_post_280",
+      "diagnosticCode": "32546f72-a816-4e43-afce-74cd9a6837e3",
+      "priority": 10
+    },
+    {
+      "driver": "sos_emergency_button_cr2032",
+      "user": "forum_post_280",
+      "diagnosticCode": "32546f72-a816-4e43-afce-74cd9a6837e3",
+      "priority": 10
+    }
+  ],
+  "autoUpdates": [],
+  "stats": {
+    "totalDrivers": 2,
+    "needsUserData": 2,
+    "canAutoEnrich": 0,
+    "alreadyFixed": 0
+  }
+}

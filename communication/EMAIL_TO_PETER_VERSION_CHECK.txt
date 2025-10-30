@@ -1,0 +1,52 @@
+Subject: RE: Universal Tuya Zigbee - Diagnostic 46c66060
+
+Hi Peter,
+
+Thank you for the detailed update and the new diagnostic report (46c66060).
+
+I understand the frustration - you've been very thorough with your troubleshooting steps.
+
+Before I analyze the new diagnostic, I need to verify one critical thing:
+
+**IMPORTANT: Which version of the Universal Tuya Zigbee app do you currently have installed?**
+
+To check:
+1. Open Homey App
+2. Go to Settings > Apps
+3. Find "Universal Tuya Zigbee"
+4. Check the version number shown
+
+The latest hotfix is **v3.1.4**, which was released today (about 1-2 hours ago) specifically to fix the issues you reported.
+
+**If you see v3.1.2 or v3.1.3:**
+The hotfix hasn't reached you yet. The Homey App Store can take up to 24 hours to propagate updates to all users. In this case, please wait for the auto-update or try manually updating the app.
+
+**If you see v3.1.4:**
+The hotfix is installed, but there may be additional issues I need to investigate. I'll analyze your new diagnostic report (46c66060) in detail to identify any remaining problems.
+
+Please let me know the version number, and I'll proceed accordingly.
+
+---
+
+**What was fixed in v3.1.4:**
+1. Motion sensor initialization error (duplicate variable declaration)
+2. SOS button battery registration error (cluster format issue)
+3. 100+ additional cluster format corrections across all battery-powered devices
+
+**Expected behavior after v3.1.4:**
+- Devices initialize correctly
+- Battery level reports properly
+- Motion detection triggers work
+- Temperature/humidity/lux data appears
+
+---
+
+Thank you for your patience, Peter. I'm committed to getting your devices working properly.
+
+Best regards,
+Dylan Rajasekaram
+Developer - Universal Tuya Zigbee App
+
+---
+
+P.S. If you'd like to help speed up the process, you can manually check for updates in the Homey App Store or force restart the Homey app after checking for updates.
