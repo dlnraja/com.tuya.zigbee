@@ -9,25 +9,53 @@
       "_TZ3000_0ghwhypc",
       "_TZ3000_0ht8dnxj",
       "_TZ3000_0s1izerx",
+      "_TZ3000_49qchf10",
+      "_TZ3000_4rbqgcuv",
+      "_TZ3000_4uf3d0ax",
+      "_TZ3000_8gs8h2e4",
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_gjnozsaz",
+      "_TZ3000_h1ipgkwn",
+      "_TZ3000_ji4araar",
+      "_TZ3000_jr2atpww",
+      "_TZ3000_kpatq5pq",
       "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
+      "_TZ3000_kqvb8qa8",
+      "_TZ3000_krajfo4p",
+      "_TZ3000_ljhbw1c9",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_m7wtqkfw",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_nnwehhst",
+      "_TZ3000_odygigth",
+      "_TZ3000_pmz6mjyu",
+      "_TZ3000_qzjcsmar",
+      "_TZ3000_rqbjepe8",
+      "_TZ3000_tqlv4ug4",
+      "_TZ3000_tx5b5gp3",
+      "_TZ3000_vjhcenzo",
+      "_TZ3000_vsasbzkf",
+      "_TZ3000_w0qqde0g",
+      "_TZ3000_wrhhi5h2",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_xkwalgne",
+      "_TZ3000_ya9ekqwp",
+      "_TZ3000_zhhcsbrz",
+      "_TZ3000_zmy4lslw"
     ],
     "models": [
       "TS0005",
       "TS0006",
       "TS0501",
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0011",
       "TS0012",
       "TS0013"
     ],
-    "manufacturer_count": 9,
-    "model_count": 10,
+    "manufacturer_count": 38,
+    "model_count": 9,
     "capabilities": [
       "measure_temperature",
       "measure_humidity",
@@ -45,12 +73,15 @@
       "_TZ1800_fcdjzz3s",
       "_TZ2000_a476raq2",
       "_TZ2000_avdnvykf",
-      "_TZ2000_hjsgdkfl"
+      "_TZ2000_hjsgdkfl",
+      "_TZ3000_bvrlqyj7",
+      "_TZ3000_o005nuxx",
+      "_TZ3000_ssp0maqm"
     ],
     "models": [
       "TS0014"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 8,
     "model_count": 1,
     "capabilities": [
       "measure_co2",
@@ -84,11 +115,15 @@
     "driver_id": "air_quality_pm25",
     "name": "Pm25 Detector",
     "class": "sensor",
-    "manufacturers": [],
+    "manufacturers": [
+      "_TZE200_dwcarsat",
+      "_TZE200_ryfmq5rl",
+      "_TZE284_sgabhwa6"
+    ],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 0,
+    "manufacturer_count": 3,
     "model_count": 1,
     "capabilities": [
       "measure_temperature",
@@ -807,11 +842,15 @@
     "driver_id": "ceiling_fan",
     "name": "Ceiling Fan",
     "class": "light",
-    "manufacturers": [],
+    "manufacturers": [
+      "_TZE200_eevqq1uv",
+      "_TZE200_3towulqd",
+      "_TZE284_1emhi5mm"
+    ],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 0,
+    "manufacturer_count": 3,
     "model_count": 1,
     "capabilities": [
       "onoff",
@@ -1518,11 +1557,14 @@
     "driver_id": "gateway_zigbee_hub",
     "name": "Zigbee Gateway Hub",
     "class": "sensor",
-    "manufacturers": [],
+    "manufacturers": [
+      "_TZE200_bjzrowv2",
+      "_TZE200_vm1gyrso"
+    ],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 0,
+    "manufacturer_count": 2,
     "model_count": 1,
     "capabilities": [
       "alarm_generic"
@@ -1534,12 +1576,19 @@
     "driver_id": "humidity_controller",
     "name": "Humidity Controller",
     "class": "sensor",
-    "manufacturers": [],
+    "manufacturers": [
+      "_TZ3000_zl1kmjqx",
+      "_TZ3000_yd2e749y",
+      "_TZ3000_fllyghyj",
+      "_TZE200_locansqn",
+      "_TZE200_bjawzodf",
+      "_TZE284_aagrxlbd"
+    ],
     "models": [
       "TS0201",
       "TS0601"
     ],
-    "manufacturer_count": 0,
+    "manufacturer_count": 6,
     "model_count": 2,
     "capabilities": [
       "measure_temperature",
@@ -1795,13 +1844,12 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0011",
       "TS0012",
       "TS0203"
     ],
     "manufacturer_count": 5,
-    "model_count": 5,
+    "model_count": 4,
     "capabilities": [
       "alarm_contact",
       "measure_battery"
@@ -1852,11 +1900,14 @@
     "driver_id": "lock_smart_fingerprint",
     "name": "Lock Fingerprint",
     "class": "lock",
-    "manufacturers": [],
+    "manufacturers": [
+      "_TZE200_bmzphld8",
+      "_TZE200_eaac7dkw"
+    ],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 0,
+    "manufacturer_count": 2,
     "model_count": 1,
     "capabilities": [
       "locked",
@@ -1888,13 +1939,19 @@
     "driver_id": "module_mini",
     "name": "Avatto Mini",
     "class": "sensor",
-    "manufacturers": [],
-    "models": [
-      "TS0001",
-      "TS0002"
+    "manufacturers": [
+      "_TZ3000_qzjcsmar",
+      "_TZ3000_ji4araar",
+      "_TZ3000_tqlv4ug4",
+      "_TZ3000_h1ipgkwn",
+      "_TZ3000_w0qqde0g",
+      "_TZ3000_gjnozsaz"
     ],
-    "manufacturer_count": 0,
-    "model_count": 2,
+    "models": [
+      "TS0001"
+    ],
+    "manufacturer_count": 6,
+    "model_count": 1,
     "capabilities": [
       "alarm_generic"
     ],
@@ -2682,11 +2739,15 @@
     "driver_id": "radiator_valve_smart",
     "name": "Smart Radiator Valve (Hybrid)",
     "class": "thermostat",
-    "manufacturers": [],
+    "manufacturers": [
+      "_TZE200_b6wax7g0",
+      "_TZE200_9gvruqf5",
+      "_TZE284_aao6qtcs"
+    ],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 0,
+    "manufacturer_count": 3,
     "model_count": 1,
     "capabilities": [
       "target_temperature",
@@ -2744,12 +2805,17 @@
     "driver_id": "shutter_roller_controller",
     "name": "Roller Shutter Controller",
     "class": "sensor",
-    "manufacturers": [],
+    "manufacturers": [
+      "_TZE200_fctwhugx",
+      "_TZE200_cowvfni3",
+      "_TZ3000_vd43bbfq",
+      "_TZE200_zpzndjez"
+    ],
     "models": [
       "TS130F",
       "TS0601"
     ],
-    "manufacturer_count": 0,
+    "manufacturer_count": 4,
     "model_count": 2,
     "capabilities": [
       "alarm_generic",
@@ -2771,7 +2837,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0011",
@@ -2782,7 +2847,7 @@
       "TS130F"
     ],
     "manufacturer_count": 5,
-    "model_count": 10,
+    "model_count": 9,
     "capabilities": [
       "windowcoverings_set",
       "onoff"
@@ -2942,11 +3007,14 @@
     "driver_id": "solar_panel_controller",
     "name": "Solar Panel Controller",
     "class": "sensor",
-    "manufacturers": [],
+    "manufacturers": [
+      "_TZE200_lsanae15",
+      "_TZE284_sgabhwa6"
+    ],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 0,
+    "manufacturer_count": 2,
     "model_count": 1,
     "capabilities": [
       "alarm_generic",
@@ -2959,11 +3027,14 @@
     "driver_id": "sound_controller",
     "name": "Sound Controller ()",
     "class": "button",
-    "manufacturers": [],
+    "manufacturers": [
+      "_TZE200_9yapgbuv",
+      "_TZE284_rccgwzz8"
+    ],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 0,
+    "manufacturer_count": 2,
     "model_count": 1,
     "capabilities": [
       "measure_battery",
@@ -3021,7 +3092,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0005",
@@ -3029,7 +3099,7 @@
       "TS0011"
     ],
     "manufacturer_count": 20,
-    "model_count": 7,
+    "model_count": 6,
     "capabilities": [
       "onoff",
       "dim"
@@ -3084,7 +3154,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0005",
@@ -3092,7 +3161,7 @@
       "TS0011"
     ],
     "manufacturer_count": 11,
-    "model_count": 7,
+    "model_count": 6,
     "capabilities": [
       "onoff",
       "dim"
@@ -3120,7 +3189,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0005",
@@ -3128,7 +3196,7 @@
       "TS0011"
     ],
     "manufacturer_count": 12,
-    "model_count": 7,
+    "model_count": 6,
     "capabilities": [
       "onoff",
       "dim"
@@ -3155,7 +3223,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0005",
@@ -3163,7 +3230,7 @@
       "TS0011"
     ],
     "manufacturer_count": 11,
-    "model_count": 7,
+    "model_count": 6,
     "capabilities": [
       "onoff",
       "onoff.button2",
@@ -3185,7 +3252,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0011",
@@ -3194,7 +3260,7 @@
       "TS0014"
     ],
     "manufacturer_count": 5,
-    "model_count": 8,
+    "model_count": 7,
     "capabilities": [
       "onoff",
       "dim",
@@ -3278,7 +3344,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0011",
@@ -3287,7 +3352,7 @@
       "TS0014"
     ],
     "manufacturer_count": 5,
-    "model_count": 8,
+    "model_count": 7,
     "capabilities": [
       "onoff",
       "onoff.gang2",
@@ -3342,7 +3407,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0011",
@@ -3351,7 +3415,7 @@
       "TS0014"
     ],
     "manufacturer_count": 5,
-    "model_count": 8,
+    "model_count": 7,
     "capabilities": [
       "windowcoverings_state",
       "windowcoverings_set",
@@ -3417,7 +3481,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0005",
@@ -3425,7 +3488,7 @@
       "TS0011"
     ],
     "manufacturer_count": 11,
-    "model_count": 7,
+    "model_count": 6,
     "capabilities": [
       "onoff",
       "dim"
@@ -3452,7 +3515,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0005",
@@ -3460,7 +3522,7 @@
       "TS0011"
     ],
     "manufacturer_count": 11,
-    "model_count": 7,
+    "model_count": 6,
     "capabilities": [
       "onoff",
       "onoff.button2",
@@ -3488,7 +3550,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0005",
@@ -3496,7 +3557,7 @@
       "TS0011"
     ],
     "manufacturer_count": 11,
-    "model_count": 7,
+    "model_count": 6,
     "capabilities": [
       "onoff",
       "onoff.button2",
@@ -3526,7 +3587,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0005",
@@ -3534,7 +3594,7 @@
       "TS0011"
     ],
     "manufacturer_count": 11,
-    "model_count": 7,
+    "model_count": 6,
     "capabilities": [
       "onoff"
     ],
@@ -3560,7 +3620,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0005",
@@ -3568,7 +3627,7 @@
       "TS0011"
     ],
     "manufacturer_count": 11,
-    "model_count": 7,
+    "model_count": 6,
     "capabilities": [
       "onoff",
       "dim"
@@ -3630,7 +3689,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0005",
@@ -3638,7 +3696,7 @@
       "TS0011"
     ],
     "manufacturer_count": 11,
-    "model_count": 7,
+    "model_count": 6,
     "capabilities": [
       "onoff",
       "onoff.switch_2",
@@ -3666,7 +3724,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0005",
@@ -3674,7 +3731,7 @@
       "TS0011"
     ],
     "manufacturer_count": 11,
-    "model_count": 7,
+    "model_count": 6,
     "capabilities": [
       "onoff",
       "onoff.button2",
@@ -3702,7 +3759,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0005",
@@ -3710,7 +3766,7 @@
       "TS0011"
     ],
     "manufacturer_count": 11,
-    "model_count": 7,
+    "model_count": 6,
     "capabilities": [
       "onoff",
       "onoff.button2",
@@ -3749,7 +3805,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0005",
@@ -3757,7 +3812,7 @@
       "TS0011"
     ],
     "manufacturer_count": 20,
-    "model_count": 7,
+    "model_count": 6,
     "capabilities": [
       "onoff",
       "measure_battery"
@@ -3784,7 +3839,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0005",
@@ -3792,7 +3846,7 @@
       "TS0011"
     ],
     "manufacturer_count": 11,
-    "model_count": 7,
+    "model_count": 6,
     "capabilities": [
       "onoff",
       "dim"
@@ -3944,7 +3998,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0005",
@@ -3953,7 +4006,7 @@
       "TS0013"
     ],
     "manufacturer_count": 16,
-    "model_count": 8,
+    "model_count": 7,
     "capabilities": [
       "onoff",
       "onoff.switch_2",
@@ -3982,7 +4035,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0005",
@@ -3991,7 +4043,7 @@
       "TS0013"
     ],
     "manufacturer_count": 11,
-    "model_count": 8,
+    "model_count": 7,
     "capabilities": [
       "onoff",
       "onoff.button2",
@@ -4023,7 +4075,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0005",
@@ -4032,7 +4083,7 @@
       "TS0014"
     ],
     "manufacturer_count": 15,
-    "model_count": 8,
+    "model_count": 7,
     "capabilities": [
       "onoff",
       "onoff.switch_2",
@@ -4062,7 +4113,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0005",
@@ -4071,7 +4121,7 @@
       "TS0014"
     ],
     "manufacturer_count": 11,
-    "model_count": 8,
+    "model_count": 7,
     "capabilities": [
       "onoff",
       "onoff.button2",
@@ -4101,7 +4151,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0005",
@@ -4110,7 +4159,7 @@
       "TS0014"
     ],
     "manufacturer_count": 11,
-    "model_count": 8,
+    "model_count": 7,
     "capabilities": [
       "onoff",
       "onoff.button2",
@@ -4140,7 +4189,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0005",
@@ -4149,7 +4197,7 @@
       "TS0015"
     ],
     "manufacturer_count": 11,
-    "model_count": 8,
+    "model_count": 7,
     "capabilities": [
       "onoff",
       "dim"
@@ -4176,7 +4224,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0005",
@@ -4185,7 +4232,7 @@
       "TS0016"
     ],
     "manufacturer_count": 11,
-    "model_count": 8,
+    "model_count": 7,
     "capabilities": [
       "onoff",
       "onoff.switch_2",
@@ -4216,7 +4263,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0005",
@@ -4225,7 +4271,7 @@
       "TS0016"
     ],
     "manufacturer_count": 11,
-    "model_count": 8,
+    "model_count": 7,
     "capabilities": [
       "onoff",
       "onoff.button2",
@@ -4257,7 +4303,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0005",
@@ -4266,7 +4311,7 @@
       "TS0016"
     ],
     "manufacturer_count": 11,
-    "model_count": 8,
+    "model_count": 7,
     "capabilities": [
       "onoff",
       "onoff.button2",
@@ -4298,7 +4343,6 @@
     ],
     "models": [
       "TS0001",
-      "TS0002",
       "TS0003",
       "TS0004",
       "TS0005",
@@ -4306,7 +4350,7 @@
       "TS0011"
     ],
     "manufacturer_count": 11,
-    "model_count": 7,
+    "model_count": 6,
     "capabilities": [
       "onoff",
       "onoff.button2",
@@ -4653,11 +4697,15 @@
     "driver_id": "thermostat_smart",
     "name": "Thermostat Basic (Hybrid) (CR2032/AAA)",
     "class": "thermostat",
-    "manufacturers": [],
+    "manufacturers": [
+      "_TZE200_cwbvmsar",
+      "_TZE200_locansqn",
+      "_TZE284_aagrxlbd"
+    ],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 0,
+    "manufacturer_count": 3,
     "model_count": 1,
     "capabilities": [
       "target_temperature",
@@ -4672,12 +4720,19 @@
     "driver_id": "thermostat_temperature_control",
     "name": "Temperature Controller (Hybrid) (CR2032/AAA)",
     "class": "sensor",
-    "manufacturers": [],
+    "manufacturers": [
+      "_TZ3000_zl1kmjqx",
+      "_TZ3000_yd2e749y",
+      "_TZ3000_fllyghyj",
+      "_TZE200_cwbvmsar",
+      "_TZE200_locansqn",
+      "_TZE284_aagrxlbd"
+    ],
     "models": [
       "TS0201",
       "TS0601"
     ],
-    "manufacturer_count": 0,
+    "manufacturer_count": 6,
     "model_count": 2,
     "capabilities": [
       "target_temperature",
@@ -4721,23 +4776,18 @@
     "name": "USB Outlet - 2 Ports",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_ww6drja5",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_h1ipgkwn"
+      "_TZ3000_1obwwnmq",
+      "_TZ3000_w0qqde0g",
+      "_TZ3000_gjnozsaz",
+      "_TZ3000_8gs8h2e4"
     ],
     "models": [
-      "TS0115",
-      "TS011F",
-      "TS0121",
-      "TS0002"
+      "TS011F"
     ],
-    "manufacturer_count": 5,
-    "model_count": 4,
+    "manufacturer_count": 4,
+    "model_count": 1,
     "capabilities": [
       "onoff",
-      "onoff.usb2",
       "led_mode",
       "measure_voltage",
       "measure_current"
