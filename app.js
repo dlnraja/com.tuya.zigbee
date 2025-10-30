@@ -15,6 +15,16 @@ class UniversalTuyaZigbeeApp extends Homey.App {
    * onInit is called when the app is initialized.
    */
   async onInit() {
+    // PATCH 5: Global unhandledRejection handler to prevent cascade crashes
+    process.on('unhandledRejection', (reason, promise) => {
+      try {
+        this.error('UNHANDLED REJECTION at:', promise, 'reason:', reason);
+        // Log but don't crash the entire app
+      } catch (e) {
+        console.error('Error logging unhandledRejection', e);
+      }
+    });
+
     if (this._flowCardsRegistered) {
       this.log('⏭️  Flow cards already registered');
       return;
