@@ -144,14 +144,8 @@ class TuyaSoilTesterTempHumidDevice extends BaseHybridDevice {
       this.log('[SOIL] ✅ Tuya DP listeners configured');
       
       // Request initial values
-      this.log('[SOIL] Requesting initial DP values...');
-      setTimeout(() => {
-        [1, 2, 3, 4, 5].forEach(dp => {
-          this.tuyaEF00Manager.requestDP(dp).catch(err => 
-            this.log(`[SOIL] DP${dp} request failed:`, err.message)
-          );
-        });
-      }, 2000); // Wait 2s for device to be ready
+      this.log('[SOIL] Tuya DP device detected, waiting for data reports...');
+      // Note: Data will arrive via DP reports, no need to manually request
       
     } catch (err) {
       this.error('[SOIL] ❌ Tuya DP setup failed:', err);
