@@ -34,7 +34,13 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_4ugnzsli"
     ],
     "endpoints": {
       "1": {
@@ -299,5 +305,24 @@
   ],
   "connectivity": [
     "zigbee"
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
   ]
 }

@@ -375,5 +375,24 @@
       "value": "{\n  \"1\": \"button_1_action\",\n  \"2\": \"button_2_action\",\n  \"3\": \"button_3_action\",\n  \"4\": \"button_4_action\",\n  \"101\": \"battery_percentage\"\n}"
     }
   ],
-  "id": "button_wireless_4"
+  "id": "button_wireless_4",
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
 }
