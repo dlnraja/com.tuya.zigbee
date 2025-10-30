@@ -5381,7 +5381,7 @@
       "meter_power",
       "measure_battery"
     ],
-    "power_source": "ac",
+    "power_source": "battery",
     "clusters": []
   },
   {
@@ -5483,7 +5483,6 @@
       "onoff.button1",
       "measure_temperature",
       "measure_battery",
-      "alarm_battery",
       "alarm_tamper"
     ],
     "power_source": "battery",
@@ -5509,7 +5508,6 @@
       "onoff.button2",
       "measure_temperature",
       "measure_battery",
-      "alarm_battery",
       "alarm_tamper"
     ],
     "power_source": "battery",
@@ -5538,7 +5536,6 @@
       "onoff.button3",
       "measure_temperature",
       "measure_battery",
-      "alarm_battery",
       "alarm_tamper"
     ],
     "power_source": "battery",
@@ -5567,7 +5564,6 @@
       "onoff.button4",
       "measure_temperature",
       "measure_battery",
-      "alarm_battery",
       "alarm_tamper"
     ],
     "power_source": "battery",
@@ -5597,7 +5593,6 @@
       "onoff.button5",
       "measure_temperature",
       "measure_battery",
-      "alarm_battery",
       "alarm_tamper"
     ],
     "power_source": "battery",
@@ -5628,7 +5623,6 @@
       "onoff.button6",
       "measure_temperature",
       "measure_battery",
-      "alarm_battery",
       "alarm_tamper"
     ],
     "power_source": "battery",
@@ -5660,7 +5654,6 @@
       "onoff.button7",
       "measure_temperature",
       "measure_battery",
-      "alarm_battery",
       "alarm_tamper"
     ],
     "power_source": "battery",
@@ -5693,7 +5686,6 @@
       "onoff.button8",
       "measure_temperature",
       "measure_battery",
-      "alarm_battery",
       "alarm_tamper"
     ],
     "power_source": "battery",
