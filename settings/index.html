@@ -292,6 +292,11 @@
         <p><strong>📱 Supported Devices:</strong> 1600+ Tuya Zigbee devices supported with 183 specialized drivers.</p>
     </div>
     
+    <div class="info">
+        <p><strong>🔍 Finding Drivers:</strong> To find and add a device, go to Homey's "Devices" page and click "Add Device" → Select "Universal Tuya Zigbee" → Choose your device type.</p>
+        <p><strong>📱 Supported Devices:</strong> 1600+ Tuya Zigbee devices supported with 183 specialized drivers.</p>
+    </div>
+    
     <div class="section">
         <h2>📊 Statistics</h2>
         <div class="stat-grid">
@@ -365,209 +370,11 @@
     </div>
     
     <script>
-        // Utility function to show error messages
-        function showError(message) {
-            const resultsContainer = document.getElementById('resultsContainer');
-            if (resultsContainer) {
-                resultsContainer.innerHTML = `
-                    <div class="no-results">
-                        <div style="color: #e74c3c; margin-bottom: 10px;">
-                            ❌ Error: ${message}
-                        </div>
-                        <button onclick="window.location.reload()" 
-                                style="padding: 8px 16px; 
-                                       background: #3498db; 
-                                       color: white; 
-                                       border: none; 
-                                       border-radius: 4px; 
-                                       cursor: pointer;">
-                            🔄 Refresh Page
-                        </button>
-                    </div>`;
-            }
-        }
-        let driversData = [];
-        
-        // Load drivers database from static JSON file
-        async function loadDriversDatabase() {
-            try {
-                console.log('Fetching drivers from static database...');
-                
-                // Add timeout to prevent infinite loading
-                const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
-                
-                const response = await fetch('/app/com.dlnraja.tuya.zigbee/settings/drivers-database.json', {
-                    signal: controller.signal
-                }).catch(err => {
-                    // Fallback: try relative path
-                    console.log('Trying relative path...');
-                    return fetch('drivers-database.json');
-                });
-                
-                clearTimeout(timeoutId);
-                
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                
-                const data = await response.json();
-                driversData = data.drivers || [];
-                
-                console.log('✅ Loaded', driversData.length, 'drivers from static database');
-                console.log('Database generated:', data.generated);
-                
-                // Populate filters
-                populateFilters();
-                
-                // Show all drivers initially
-                displayResults(driversData);
-                
-            } catch (err) {
-                console.error('Failed to load drivers database:', err);
-                if (err.name === 'AbortError') {
-                    showError('Request timeout. The drivers database is too large or unavailable. Please try refreshing the page.');
-                } else {
-                    showError(`Failed to load drivers database: ${err.message || 'Unknown error'}. The page will still work for basic settings.`);
-                }
-                // Don't block the page - just show empty results
-                document.getElementById('resultsContainer').innerHTML = '<div class="no-results">Driver search unavailable. Basic settings are still functional.</div>';
-            }
-        }
-        
-        function populateFilters() {
-            // Get unique brands and categories
-            const brands = [...new Set(driversData.map(d => d.brand))].sort();
-            const categories = [...new Set(driversData.map(d => d.category))].sort();
-            
-            // Populate brand filter
-            const brandSelect = document.getElementById('brandFilter');
-            brands.forEach(brand => {
-                const option = document.createElement('option');
-                option.value = brand;
-                option.textContent = brand;
-                brandSelect.appendChild(option);
-            });
-            
-            // Populate category filter
-            const categorySelect = document.getElementById('categoryFilter');
-            categories.forEach(category => {
-                const option = document.createElement('option');
-                option.value = category;
-                option.textContent = category;
-                categorySelect.appendChild(option);
-            });
-        }
-        
-        function searchDrivers() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            const brandFilter = document.getElementById('brandFilter').value;
-            const categoryFilter = document.getElementById('categoryFilter').value;
-            
-            let filtered = driversData;
-            
-            // Apply filters
-            if (brandFilter) {
-                filtered = filtered.filter(d => d.brand === brandFilter);
-            }
-            if (categoryFilter) {
-                filtered = filtered.filter(d => d.category === categoryFilter);
-            }
-            
-            // Apply search
-            if (searchTerm) {
-                filtered = filtered.filter(d => {
-                    return d.name.toLowerCase().includes(searchTerm) ||
-                           d.brand.toLowerCase().includes(searchTerm) ||
-                           d.category.toLowerCase().includes(searchTerm) ||
-                           d.id.toLowerCase().includes(searchTerm) ||
-                           d.productIds.some(p => p.toLowerCase().includes(searchTerm)) ||
-                           d.manufacturerIds.some(m => m.toLowerCase().includes(searchTerm));
-                });
-            }
-            
-            displayResults(filtered);
-        }
-        
-        function displayResults(drivers) {
-            const container = document.getElementById('resultsContainer');
-            const countEl = document.getElementById('resultCount');
-            
-            if (drivers.length === 0) {
-                container.innerHTML = '<div class="no-results">😔 No drivers found. Try different search terms.</div>';
-                countEl.textContent = '';
-                return;
-            }
-            
-            countEl.textContent = `Found ${drivers.length} driver(s)`;
-            
-            container.innerHTML = drivers.map(driver => `
-                <div class="driver-card">
-                    <h3>${driver.name}</h3>
-                    <div class="driver-meta">
-                        <span class="driver-tag brand">🏷️ ${driver.brand}</span>
-                        <span class="driver-tag category">📦 ${driver.category}</span>
-                        <span class="driver-tag">💡 ${driver.class}</span>
-                    </div>
-                    ${driver.productIds.length > 0 ? `
-                        <div style="margin-top: 8px; font-size: 12px; color: #666;">
-                            <strong>Product IDs:</strong> ${driver.productIds.slice(0, 5).join(', ')}${driver.productIds.length > 5 ? '...' : ''}
-                        </div>
-                    ` : ''}
-                    <div class="driver-instructions">
-                        <strong>✅ How to use this driver:</strong><br>
-                        1. Add a new device in Homey<br>
-                        2. Select "Universal Tuya Zigbee" app<br>
-                        3. Choose "<strong>${driver.name}</strong>"<br>
-                        4. Follow the pairing instructions
-                    </div>
-                </div>
-            `).join('');
-        }
-        
-        // Global Homey reference
-        let Homey;
-        
-        // Initialize the settings page
-        function initializeApp() {
-            console.log('Initializing Universal Tuya Zigbee Settings...');
-            
-            // Setup event listeners
-            document.getElementById('searchInput').addEventListener('input', searchDrivers);
-            document.getElementById('brandFilter').addEventListener('change', searchDrivers);
-            document.getElementById('categoryFilter').addEventListener('change', searchDrivers);
-            
-            // Show loading state
-            const resultsContainer = document.getElementById('resultsContainer');
-            if (resultsContainer) {
-                resultsContainer.innerHTML = '<div class="no-results">🔍 Loading drivers database...</div>';
-            }
-            
-            // Load drivers after a short delay to ensure Homey is ready
-            setTimeout(loadDriversDatabase, 500);
-        }
-        
-        // Event listener for DOM content loaded
-        document.addEventListener('DOMContentLoaded', initializeApp);
-        
-        // Homey ready handler - MUST be global for Homey.js to call it
+        // Simple initialization - no complex search
         window.onHomeyReady = function(homeyInstance) {
-            console.log('Homey API is ready');
-            Homey = homeyInstance;
-            Homey.ready();
-            
-            // If DOM is already loaded, initialize the app
-            if (document.readyState === 'complete' || document.readyState === 'interactive') {
-                initializeApp();
-            } else {
-                document.addEventListener('DOMContentLoaded', initializeApp);
-            }
+            console.log('✅ Universal Tuya Zigbee Settings Ready');
+            homeyInstance.ready();
         };
-        
-        // Fallback: If Homey doesn't call onHomeyReady, initialize anyway
-        if (typeof Homey !== 'undefined') {
-            window.onHomeyReady(Homey);
-        }
     </script>
 </body>
 </html>
