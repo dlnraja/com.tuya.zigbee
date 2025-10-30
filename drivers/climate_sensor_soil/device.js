@@ -10,34 +10,63 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 class TuyaSoilTesterTempHumidDevice extends BaseHybridDevice {
 
   async onNodeInit({ zclNode }) {
-    this.log('TuyaSoilTesterTempHumidDevice initializing...');
-    
-    // Initialize base FIRST (power detection + Tuya EF00)
-    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
-    
-    // Check if device has Tuya EF00 cluster (TS0601 uses ONLY EF00, not standard clusters)
-    const endpoint = this.zclNode?.endpoints?.[1];
-    const isTuyaEF00Device = endpoint?.clusters?.tuyaSpecific 
-                          || endpoint?.clusters?.tuyaManufacturer 
-                          || endpoint?.clusters?.manuSpecificTuya;
-    
-    if (isTuyaEF00Device) {
-      this.log('[TUYA] ✅ TS0601 detected - using Tuya EF00 ONLY (no standard clusters)');
-      this.log('[TUYA] ℹ️  All data will come via DataReport events from TuyaEF00Manager');
-      // Setup Tuya DP listeners for soil sensor
-      await this.setupTuyaDPListeners();
-    } else {
-      this.log('[STANDARD] Using standard Zigbee clusters');
-      // Setup standard sensor reporting
-      await this.setupSensorReporting();
-      // Setup IAS Zone
-      await this.setupIASZone();
-      // Setup sensor capabilities
-      await this.setupTemperatureSensor();
-      await this.setupHumiditySensor();
+    try {
+      // Sanity checks
+      if (!zclNode) {
+        this.log('[ERROR] onNodeInit: missing zclNode');
+        return;
+      }
+
+      this.log('TuyaSoilTesterTempHumidDevice initializing...');
+      
+      // Initialize base FIRST (power detection + Tuya EF00)
+      await super.onNodeInit({ zclNode }).catch(err => this.error(err));
+      
+      // Check if device has Tuya EF00 cluster (TS0601 uses ONLY EF00, not standard clusters)
+      const endpoint = this.zclNode?.endpoints?.[1];
+      const isTuyaEF00Device = endpoint?.clusters?.tuyaSpecific 
+                            || endpoint?.clusters?.tuyaManufacturer 
+                            || endpoint?.clusters?.manuSpecificTuya;
+      
+      if (isTuyaEF00Device) {
+        this.log('[TUYA] ✅ TS0601 detected - using Tuya EF00 ONLY (no standard clusters)');
+        this.log('[TUYA] ℹ️  All data will come via DataReport events from TuyaEF00Manager');
+        // Setup Tuya DP listeners for soil sensor with timeout catch
+        try {
+          await this.setupTuyaDPListeners();
+        } catch (err) {
+          this.log('[WARN] Tuya DP setup failed or timed out, fallback to generic clusters:', err);
+          // Fallback: continue initialization with standard clusters
+          await this.setupSensorReporting();
+          await this.setupIASZone();
+          await this.setupTemperatureSensor();
+          await this.setupHumiditySensor();
+        }
+      } else {
+        this.log('[STANDARD] Using standard Zigbee clusters');
+        // Setup standard sensor reporting
+        await this.setupSensorReporting();
+        // Setup IAS Zone
+        await this.setupIASZone();
+        // Setup sensor capabilities
+        await this.setupTemperatureSensor();
+        await this.setupHumiditySensor();
+      }
+      
+      // Safe set available
+      if (typeof this._safeResolveAvailable === 'function') {
+        this._safeResolveAvailable(true);
+      } else if (typeof this.setAvailable === 'function') {
+        this.setAvailable();
+      }
+      
+      this.log('TuyaSoilTesterTempHumidDevice initialized - Power source:', this.powerSource || 'unknown');
+    } catch (err) {
+      this.log('[ERROR] onNodeInit outer catch:', err);
+      if (typeof this._safeRejectAvailable === 'function') {
+        this._safeRejectAvailable(err);
+      }
     }
-    
-    this.log('TuyaSoilTesterTempHumidDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
   /**
@@ -49,22 +78,21 @@ class TuyaSoilTesterTempHumidDevice extends BaseHybridDevice {
     // CRITICAL FIX: Wait for tuyaEF00Manager to be initialized
     // It's initialized in background, so we need to wait for it
     if (!this.tuyaEF00Manager) {
-      this.error('[SOIL] ❌ tuyaEF00Manager not created!');
-      return;
+      this.log('[WARN] tuyaEF00Manager not created, device may not be TS0601');
+      throw new Error('tuyaEF00Manager not initialized');
     }
     
-    // Wait for initialization to complete (max 10 seconds)
+    // Wait for initialization to complete (max 8 seconds) - non-blocking fallback
     let retries = 0;
-    while (!this.tuyaEF00Manager.tuyaCluster && retries < 100) {
-      this.log(`[SOIL] ⏳ Waiting for Tuya EF00 initialization... (${retries * 100}ms)`);
+    while (!this.tuyaEF00Manager.tuyaCluster && retries < 80) {
       await new Promise(resolve => setTimeout(resolve, 100));
       retries++;
     }
     
     if (!this.tuyaEF00Manager.tuyaCluster) {
-      this.error('[SOIL] ❌ Tuya EF00 Manager initialization timed out!');
-      this.error('[SOIL] 💡 This device may not have Tuya EF00 cluster (not TS0601)');
-      return;
+      this.log('[WARN] Tuya EF00 Manager init timed out or not present, device may not be TS0601');
+      this.log('[INFO] Falling back to generic cluster parsing');
+      throw new Error('Tuya EF00 not available');
     }
     
     this.log('[SOIL] ✅ Tuya EF00 Manager is ready');
