@@ -6,27 +6,124 @@ node_modules/
 .backup-enrichment/
 .git/
 .github/
+.githooks/
+.vscode/
 
-# Documentation & Reports
+# Documentation & Reports (ALL)
 docs/
 reports/
 github-analysis/
 project-data/
 matrix/
+achievements/
+analysis/
+archive/
+audit/
+audits/
+automation/
+backup/
+commits/
+communication/
+community/
+compatibility/
+contributions/
+conversion/
+data/
+debug/
+deployments/
+diagnostics/
+enrichment/
+finalization/
+fixes/
+flow/
+forum/
+forum-responses/
+forum_requests/
+github-issues/
+guides/
+implementation/
+instructions/
+misc/
+orchestrator/
+organized/
+pairing/
+planning/
+planning_v5/
+project-status/
+readme-variants/
+references/
+releases/
+research/
+run-everything/
+sdk3/
+sessions/
+stats/
+summaries/
+support/
+technical/
+templates/
+troubleshooting/
+ultimate_system/
+users/
+v3/
+validation/
+workflow/
 
-# Scripts (not needed for runtime)
+# Scripts (ALL - not needed for runtime)
 scripts/
+tools/
+fix-all-drivers.bat
+fix-drivers.js
+*.bat
+
+# ALL Markdown Files (except README.md)
+*.md
+!README.md
+
+# ALL Commit Messages
+.commit*
+commit-*
+commit_*
+.git-*
+.gitmsg*
+COMMIT_*
+
+# ALL Text Files (except required)
+*.txt
+!v4.1.9_files.txt
+
+# JSON Data Files (not needed at runtime)
+device-matrix.json
+deprecation_report.json
+driver-flow-mapping.json
+drivers_flows_advanced_full.json
+CAPABILITIES_FLOW_MATRIX.json
+COMPLETE_DRIVER_FLOW_MAPPING.json
+DIAGNOSTICS_ANALYSIS.json
+DEVICE_ANALYSIS_REPORT.json
+CRITICAL_PRODUCTION_FIXES_REPORT.json
+MANIFEST_EXAMPLE_IMPROVED.json
+IMPLEMENTATION_REPORT_V3.json
+
+# JavaScript Files (not drivers/lib/utils)
+*.js
+!app.js
+!jest.config.js
+!drivers/**/*.js
+!lib/**/*.js
+!utils/**/*.js
+!api/**/*.js
+!settings/**/*.js
 
 # Configuration Files
 .gitignore
 .gitattributes
 .eslintrc.json
+.prettierrc
+.prettierignore
 tsconfig.json
 .editorconfig
-
-# Markdown Files
-*.md
-!README.md
+jest.config.js
 
 # Logs & Temporary Files
 *.log
@@ -37,6 +134,7 @@ tsconfig.json
 *~
 .DS_Store
 Thumbs.db
+validation_output.txt
 
 # Test Files
 test/
@@ -50,7 +148,6 @@ azure-pipelines.yml
 bitbucket-pipelines.yml
 
 # IDE Files
-.vscode/
 .idea/
 *.sublime-project
 *.sublime-workspace
@@ -62,8 +159,7 @@ pnpm-lock.yaml
 
 # Sensitive Files
 .env
-.env.local
-.env.*.local
+.env.example
 secrets/
 *.key
 *.pem
@@ -71,10 +167,8 @@ secrets/
 
 # Backup Files
 *.backup
-backup/
-backups/
 
-# Large Asset Files (if any)
+# Large Asset Files
 *.zip
 *.tar.gz
 *.rar
