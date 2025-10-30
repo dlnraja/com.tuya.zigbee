@@ -10,24 +10,41 @@ const BaseHybridDevice = require('../../lib/BaseHybridDevice');
 class PresenceSensorRadarDevice extends BaseHybridDevice {
 
   async onNodeInit({ zclNode }) {
-    // Critical: Attribute reporting for data transmission
-    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
-    
-    // THEN setup (zclNode now exists)
-    await this.setupAttributeReporting();
+    try {
+      // Sanity checks
+      if (!zclNode) {
+        this.log('[ERROR] onNodeInit: missing zclNode');
+        return;
+      }
 
-    this.log('PresenceSensorRadarDevice initializing...');
-    
-    // Initialize base (auto power detection + dynamic capabilities)
-    
+      this.log('PresenceSensorRadarDevice initializing...');
+      
+      // Critical: Attribute reporting for data transmission
+      await super.onNodeInit({ zclNode }).catch(err => this.error(err));
+      
+      // THEN setup (zclNode now exists)
+      await this.setupAttributeReporting();
 
-    // Setup IAS Zone (SDK3 - based on Peter's success patterns)
-    await this.setupIASZone();
+      // Setup IAS Zone (SDK3 - based on Peter's success patterns)
+      await this.setupIASZone();
 
-    // Setup sensor capabilities (SDK3)
-    await this.setupLuminanceSensor();
-    
-    this.log('PresenceSensorRadarDevice initialized - Power source:', this.powerSource || 'unknown');
+      // Setup sensor capabilities (SDK3)
+      await this.setupLuminanceSensor();
+      
+      // Safe set available
+      if (typeof this._safeResolveAvailable === 'function') {
+        this._safeResolveAvailable(true);
+      } else if (typeof this.setAvailable === 'function') {
+        this.setAvailable();
+      }
+      
+      this.log('PresenceSensorRadarDevice initialized - Power source:', this.powerSource || 'unknown');
+    } catch (err) {
+      this.log('[ERROR] onNodeInit outer catch:', err);
+      if (typeof this._safeRejectAvailable === 'function') {
+        this._safeRejectAvailable(err);
+      }
+    }
   }
 
   
