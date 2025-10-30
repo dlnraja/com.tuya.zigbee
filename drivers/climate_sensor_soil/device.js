@@ -46,10 +46,28 @@ class TuyaSoilTesterTempHumidDevice extends BaseHybridDevice {
   async setupTuyaDPListeners() {
     this.log('[SOIL] Setting up Tuya DP listeners...');
     
-    if (!this.tuyaEF00Manager || !this.tuyaEF00Manager.tuyaCluster) {
-      this.error('[SOIL] ❌ No Tuya EF00 Manager available!');
+    // CRITICAL FIX: Wait for tuyaEF00Manager to be initialized
+    // It's initialized in background, so we need to wait for it
+    if (!this.tuyaEF00Manager) {
+      this.error('[SOIL] ❌ tuyaEF00Manager not created!');
       return;
     }
+    
+    // Wait for initialization to complete (max 10 seconds)
+    let retries = 0;
+    while (!this.tuyaEF00Manager.tuyaCluster && retries < 100) {
+      this.log(`[SOIL] ⏳ Waiting for Tuya EF00 initialization... (${retries * 100}ms)`);
+      await new Promise(resolve => setTimeout(resolve, 100));
+      retries++;
+    }
+    
+    if (!this.tuyaEF00Manager.tuyaCluster) {
+      this.error('[SOIL] ❌ Tuya EF00 Manager initialization timed out!');
+      this.error('[SOIL] 💡 This device may not have Tuya EF00 cluster (not TS0601)');
+      return;
+    }
+    
+    this.log('[SOIL] ✅ Tuya EF00 Manager is ready');
     
     try {
       // Register DP listeners
