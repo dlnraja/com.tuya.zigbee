@@ -195,7 +195,7 @@ function generateFlowCardsForDriver(driver) {
   // Special handling for button drivers
   if (driverClass === 'button' || driverId.includes('button') || driverId.includes('switch')) {
     const buttonCount = extractButtonCount(driverId);
-    const buttonTemplate = FLOW_CARD_TEMPLATES['button'].trigger;
+    const buttonTemplate = JSON.parse(JSON.stringify(FLOW_CARD_TEMPLATES['button'].trigger));
     
     // Generate button dropdown values
     const buttonValues = [];
@@ -206,11 +206,14 @@ function generateFlowCardsForDriver(driver) {
       });
     }
     
+    // Remove the template id to avoid duplication
+    delete buttonTemplate.id;
+    
     // Create flow card with correct ID format
     const gangSuffix = buttonCount > 1 ? `_${buttonCount}gang` : '';
     const flowCard = {
       id: `${driverId}${gangSuffix}_button_pressed`,
-      ...JSON.parse(JSON.stringify(buttonTemplate))
+      ...buttonTemplate
     };
     
     // Replace $dynamic with actual values
@@ -230,9 +233,13 @@ function generateFlowCardsForDriver(driver) {
     
     // Handle single trigger
     if (template.trigger) {
+      const triggerCopy = JSON.parse(JSON.stringify(template.trigger));
+      // Remove id from copy to avoid duplication
+      delete triggerCopy.id;
+      
       const flowCard = {
         id: `${driverId}${template.trigger.id}`,
-        ...JSON.parse(JSON.stringify(template.trigger))
+        ...triggerCopy
       };
       flowCards.push(flowCard);
       console.log(`[GEN]   ✅ Generated: ${flowCard.id}`);
@@ -241,9 +248,13 @@ function generateFlowCardsForDriver(driver) {
     // Handle multiple triggers
     if (template.triggers) {
       for (const trig of template.triggers) {
+        const trigCopy = JSON.parse(JSON.stringify(trig));
+        // Remove id from copy to avoid duplication
+        delete trigCopy.id;
+        
         const flowCard = {
           id: `${driverId}${trig.id}`,
-          ...JSON.parse(JSON.stringify(trig))
+          ...trigCopy
         };
         flowCards.push(flowCard);
         console.log(`[GEN]   ✅ Generated: ${flowCard.id}`);
