@@ -1,0 +1,36 @@
+fix: Correct all CLUSTER.* references to legacy string format (119 fixes)
+
+MASS FIX: 119 cluster references in 106 drivers
+
+Changed all registerCapability() calls from CLUSTER.* object format
+to legacy string format for guaranteed Homey SDK3 compatibility.
+
+Example: CLUSTER.POWER_CONFIGURATION → 'genPowerCfg'
+
+This prevents TypeError: expected_cluster_id_number errors and ensures
+full compatibility with homey-zigbeedriver validation.
+
+Statistics:
+- 183 device.js files scanned
+- 106 drivers modified
+- 119 cluster references corrected
+- 0 errors encountered
+
+Most common fix:
+- measure_battery: CLUSTER.POWER_CONFIGURATION → 'genPowerCfg' (106x)
+- scene buttons: CLUSTER.ON_OFF → 'genOnOff' (8x)
+- poll control: CLUSTER.POLL_CONTROL → 'genPollCtrl' (5x)
+
+Validation: PASSED (homey app validate --level publish)
+
+Documentation:
+- CLUSTER_CORRESPONDENCE_TABLE.md (complete reference)
+- CLUSTER_FIXES_COMPLETE_v3.1.4.md (detailed report)
+- CLUSTER_FIX_REPORT.json (machine-readable)
+
+Tools created:
+- scripts/fixes/fix-all-cluster-references.js (reusable script)
+
+Related to:
+- Hotfix v3.1.4 (SOS button cluster ID error)
+- Proactive fix for all similar issues across codebase

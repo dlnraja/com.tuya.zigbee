@@ -1,0 +1,29 @@
+ci: Add publish-v3.yml workflow for automated Homey App Store publication
+
+New workflow for v3.0.5+ publication:
+- Auto-detects version from app.json
+- Validates version is 3.0.0 or higher
+- Automated Homey App Store publish with HOMEY_TOKEN
+- Creates GitHub release with complete changelog
+- Includes all v3.0.5 improvements in release notes
+- No hardcoded versions (dynamic from app.json)
+
+Features:
+- Homey app validate --level publish
+- Homey app build
+- Automated publish with changelog
+- GitHub release creation
+- Version verification (3.0.x or higher)
+
+Fixes previous workflow issues:
+- No more hardcoded version numbers
+- No VERSION_CHECKER.js dependency
+- Proper v3.0.5 support
+- Complete release notes
+
+Workflow triggers:
+- Push to master (when app.json or drivers change)
+- Manual workflow_dispatch
+
+Version: 3.0.5
+Status: READY FOR AUTOMATED PUBLICATION
