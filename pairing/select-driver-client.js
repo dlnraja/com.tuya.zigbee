@@ -9,8 +9,22 @@ let deviceInfo = null;
 let allDrivers = [];
 let filteredDrivers = [];
 
+// ZCL Cluster constants from spec
+const ZCL_CLUSTERS = {
+    BASIC: '0',
+    POWER_CONFIGURATION: '1',
+    IDENTIFY: '3',
+    ON_OFF: '6',
+    LEVEL_CONTROL: '8',
+    TIME: '10', // 0x000A
+    ELECTRICAL_MEASUREMENT: '2820', // 0x0B04
+    TEMPERATURE_MEASUREMENT: '1026',
+    RELATIVE_HUMIDITY: '1029',
+    IAS_ZONE: '1280'
+};
+
 /**
- * Score driver compatibility with device
+ * Score driver compatibility with device (ZCL Spec-aware)
  */
 function scoreDriver(device, driver) {
     let score = 0;
@@ -18,8 +32,9 @@ function scoreDriver(device, driver) {
 
     const dman = (device.manufacturerName || '').toLowerCase();
     const dprod = (device.productId || '').toLowerCase();
+    const dmodel = (device.modelId || '').toLowerCase();
 
-    // Manufacturer exact/partial match
+    // === MANUFACTURER MATCH (0-40 points) ===
     const manufacturers = Array.isArray(driver.manufacturerName) ? driver.manufacturerName : [driver.manufacturerName];
     for (const m of manufacturers) {
         if (!m) continue;
@@ -28,7 +43,7 @@ function scoreDriver(device, driver) {
         else if (dman.includes(mm) || mm.includes(dman)) score += 15;
     }
 
-    // ProductId exact/partial match
+    // === PRODUCT ID MATCH (0-40 points) ===
     const productIds = Array.isArray(driver.productId) ? driver.productId : [driver.productId];
     for (const p of productIds) {
         if (!p) continue;
@@ -37,27 +52,72 @@ function scoreDriver(device, driver) {
         else if (dprod.includes(pp) || pp.includes(dprod)) score += 10;
     }
 
-    // Endpoint count match
+    // === PENALIZE GENERIC TS0002 DRIVER (-80 points) ===
+    // TS0002 is too generic and matches ~39 drivers
+    if (productIds.some(p => p === 'TS0002') && productIds.length === 1) {
+        score -= 80;
+    }
+
+    // === ENDPOINT COUNT MATCH (0-10 points) ===
     const driverEndpoints = driver.endpoints ? Object.keys(driver.endpoints).length : 0;
     const deviceEndpoints = device.endpoints ? Object.keys(device.endpoints).length : 0;
-    if (driverEndpoints === deviceEndpoints) score += 5;
-    else if (Math.abs(driverEndpoints - deviceEndpoints) === 1) score += 2;
+    if (driverEndpoints === deviceEndpoints && driverEndpoints > 0) score += 10;
+    else if (Math.abs(driverEndpoints - deviceEndpoints) === 1) score += 5;
 
-    // Clusters match (bonus)
+    // === ZCL CLUSTER MATCH (0-50 points) ===
+    // Based on ZCL spec: match specific clusters
     if (device.clusters && driver.clusters) {
-        const deviceClusters = new Set();
-        Object.values(device.clusters).forEach(arr => {
-            if (Array.isArray(arr)) {
-                arr.forEach(c => deviceClusters.add(String(c).toLowerCase()));
-            }
-        });
+        const deviceClusters = extractDeviceClusters(device.clusters);
+        const driverClusters = new Set(driver.clusters.map(c => String(c).toLowerCase()));
         
-        for (const c of driver.clusters) {
-            if (deviceClusters.has(String(c).toLowerCase())) score += 5;
+        let clusterMatches = 0;
+        for (const c of driverClusters) {
+            if (deviceClusters.has(c)) {
+                clusterMatches++;
+                // Important clusters get bonus
+                if (c === ZCL_CLUSTERS.ON_OFF || c === '6') score += 8;
+                else if (c === ZCL_CLUSTERS.ELECTRICAL_MEASUREMENT || c === '2820') score += 10;
+                else if (c === ZCL_CLUSTERS.POWER_CONFIGURATION || c === '1') score += 6;
+                else if (c === ZCL_CLUSTERS.TIME || c === '10') score += 5;
+                else score += 4;
+            }
+        }
+        
+        // Bonus for high cluster match ratio
+        if (driverClusters.size > 0) {
+            const matchRatio = clusterMatches / driverClusters.size;
+            if (matchRatio > 0.8) score += 15;
+            else if (matchRatio > 0.5) score += 8;
         }
     }
 
-    return score;
+    // === SPECIFICITY BONUS (0-20 points) ===
+    // Prefer drivers with more specific fingerprints
+    const hasManufacturer = manufacturers.some(m => m && m.length > 0);
+    const hasProductId = productIds.some(p => p && p.length > 0);
+    const hasModel = dmodel && dmodel.length > 0;
+    
+    if (hasManufacturer && hasProductId && hasModel) score += 20;
+    else if (hasManufacturer && hasProductId) score += 10;
+    
+    // Penalize drivers with too many productIds (too generic)
+    if (productIds.length > 5) score -= 10;
+    if (productIds.length > 10) score -= 20;
+
+    return Math.max(0, score); // Never negative
+}
+
+/**
+ * Extract all clusters from device endpoints
+ */
+function extractDeviceClusters(clustersByEndpoint) {
+    const clusters = new Set();
+    Object.values(clustersByEndpoint || {}).forEach(arr => {
+        if (Array.isArray(arr)) {
+            arr.forEach(c => clusters.add(String(c).toLowerCase()));
+        }
+    });
+    return clusters;
 }
 
 /**
@@ -107,11 +167,31 @@ async function fetchDeviceInfo() {
 }
 
 /**
- * Display device information
+ * Display device information (with ZCL cluster details)
  */
 function displayDeviceInfo(device) {
     const infoEl = document.getElementById('deviceInfo');
     if (!infoEl) return;
+    
+    // Extract important clusters
+    const deviceClusters = extractDeviceClusters(device.clusters || {});
+    const importantClusters = [];
+    
+    if (deviceClusters.has('6') || deviceClusters.has(ZCL_CLUSTERS.ON_OFF)) {
+        importantClusters.push('🔌 On/Off');
+    }
+    if (deviceClusters.has('2820') || deviceClusters.has(ZCL_CLUSTERS.ELECTRICAL_MEASUREMENT)) {
+        importantClusters.push('⚡ Electrical Measurement');
+    }
+    if (deviceClusters.has('1') || deviceClusters.has(ZCL_CLUSTERS.POWER_CONFIGURATION)) {
+        importantClusters.push('🔋 Power Config');
+    }
+    if (deviceClusters.has('10') || deviceClusters.has(ZCL_CLUSTERS.TIME)) {
+        importantClusters.push('⏰ Time');
+    }
+    if (deviceClusters.has('1026')) importantClusters.push('🌡️ Temperature');
+    if (deviceClusters.has('1029')) importantClusters.push('💧 Humidity');
+    if (deviceClusters.has('1280')) importantClusters.push('🚨 IAS Zone');
     
     const html = `
         <strong>Manufacturer:</strong> ${device.manufacturerName || 'Unknown'}<br>
@@ -119,7 +199,8 @@ function displayDeviceInfo(device) {
         <strong>Model ID:</strong> ${device.modelId || 'N/A'}<br>
         <strong>IEEE Address:</strong> ${device.ieee || 'Unknown'}<br>
         <strong>Endpoints:</strong> ${Object.keys(device.endpoints || {}).join(', ') || 'None'}<br>
-        <strong>Clusters:</strong> ${Object.keys(device.clusters || {}).length} endpoints with clusters
+        <strong>Total Clusters:</strong> ${deviceClusters.size} detected<br>
+        ${importantClusters.length > 0 ? `<strong>Key Features:</strong> ${importantClusters.join(', ')}` : ''}
     `;
     
     infoEl.innerHTML = html;
@@ -219,11 +300,22 @@ function displayDrivers(drivers) {
             : driver.productId || 'N/A';
         const endpoints = driver.endpoints ? Object.keys(driver.endpoints).join(', ') : 'N/A';
         
+        // Show why this driver matches
+        const reasons = [];
+        if (driver.score >= 60) reasons.push('✅ Good match');
+        else if (driver.score >= 30) reasons.push('⚠️ Possible match');
+        else reasons.push('❌ Poor match');
+        
+        if (productIds.includes('TS0002') && driver.score < 40) {
+            reasons.push('⚠️ Generic driver');
+        }
+        
         li.innerHTML = `
             <div class="driver-header">
                 <div>
                     <div class="driver-name">${driver.name || driver.id}</div>
                     <div class="driver-id">${driver.id}</div>
+                    <div style="font-size: 11px; color: #666; margin-top: 4px;">${reasons.join(' • ')}</div>
                 </div>
                 <div class="driver-score">${driver.score || 0}</div>
             </div>
