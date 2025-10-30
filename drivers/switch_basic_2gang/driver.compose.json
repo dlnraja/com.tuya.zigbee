@@ -32,7 +32,10 @@
       "_TZ3000_qzjcsmar",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea"
     ],
     "productId": [
       "TS0001",
@@ -306,5 +309,24 @@
   ],
   "connectivity": [
     "zigbee"
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
   ]
 }

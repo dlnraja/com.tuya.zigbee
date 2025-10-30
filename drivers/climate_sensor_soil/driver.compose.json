@@ -36,7 +36,12 @@
       "_TZE200_ycrd8ywq",
       "_TZE204_c7emyjom",
       "_TZE204_myd45weu",
-      "_TZE284_oitavov2"
+      "_TZE284_oitavov2",
+      "_TZE200_cowvfni3",
+      "_TZE200_qoy0ekbd",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_4ugnzsli"
     ],
     "productId": [
       "TS0201",
@@ -310,5 +315,24 @@
   ],
   "connectivity": [
     "zigbee"
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
   ]
 }

@@ -38,7 +38,10 @@
       "_TYZB01_tv3wxhcz",
       "lumi.motion.agl02",
       "lumi.sensor_motion.aq2",
-      "lumi.sensor_motion.aq2b"
+      "lumi.sensor_motion.aq2b",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "productId": [
       "SNZB-03",
@@ -305,5 +308,24 @@
   ],
   "connectivity": [
     "zigbee"
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
   ]
 }
