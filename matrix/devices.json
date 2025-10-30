@@ -41,7 +41,12 @@
       "_TZ3000_xkwalgne",
       "_TZ3000_ya9ekqwp",
       "_TZ3000_zhhcsbrz",
-      "_TZ3000_zmy4lslw"
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_ejwkn2h2"
     ],
     "models": [
       "TS0005",
@@ -54,7 +59,7 @@
       "TS0012",
       "TS0013"
     ],
-    "manufacturer_count": 38,
+    "manufacturer_count": 43,
     "model_count": 9,
     "capabilities": [
       "measure_temperature",
@@ -118,12 +123,15 @@
     "manufacturers": [
       "_TZE200_dwcarsat",
       "_TZE200_ryfmq5rl",
-      "_TZE284_sgabhwa6"
+      "_TZE284_sgabhwa6",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 3,
+    "manufacturer_count": 6,
     "model_count": 1,
     "capabilities": [
       "measure_temperature",
@@ -142,13 +150,15 @@
       "_TZE200_cowvfni3",
       "_TZE200_fctwhugx",
       "_TZE200_nogaemzt",
-      "_TZE200_xuzcvlku"
+      "_TZE200_xuzcvlku",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0601",
       "TS130F"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 7,
     "model_count": 2,
     "capabilities": [
       "alarm_generic",
@@ -845,12 +855,15 @@
     "manufacturers": [
       "_TZE200_eevqq1uv",
       "_TZE200_3towulqd",
-      "_TZE284_1emhi5mm"
+      "_TZE284_1emhi5mm",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 3,
+    "manufacturer_count": 6,
     "model_count": 1,
     "capabilities": [
       "onoff",
@@ -881,13 +894,15 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu"
     ],
     "models": [
       "TS0201",
       "TS0601"
     ],
-    "manufacturer_count": 18,
+    "manufacturer_count": 20,
     "model_count": 2,
     "capabilities": [
       "measure_temperature",
@@ -923,13 +938,16 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0201",
       "TS0601"
     ],
-    "manufacturer_count": 22,
+    "manufacturer_count": 25,
     "model_count": 2,
     "capabilities": [
       "measure_temperature",
@@ -961,13 +979,16 @@
       "_TZE200_whpb9yts",
       "_TZE204_upagmta9",
       "_TZE284_sgabhwa6",
-      "_TZE284_vvmbj46n"
+      "_TZE284_vvmbj46n",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0201",
       "TS0601"
     ],
-    "manufacturer_count": 16,
+    "manufacturer_count": 19,
     "model_count": 2,
     "capabilities": [
       "measure_temperature",
@@ -997,14 +1018,19 @@
       "_TZE200_ycrd8ywq",
       "_TZE204_c7emyjom",
       "_TZE204_myd45weu",
-      "_TZE284_oitavov2"
+      "_TZE284_oitavov2",
+      "_TZE200_cowvfni3",
+      "_TZE200_qoy0ekbd",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_4ugnzsli"
     ],
     "models": [
       "TS0201",
       "TS0601",
       "TS0203"
     ],
-    "manufacturer_count": 16,
+    "manufacturer_count": 21,
     "model_count": 3,
     "capabilities": [
       "measure_temperature",
@@ -1028,14 +1054,20 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_4ugnzsli"
     ],
     "models": [
       "TS0201",
       "TS0601",
       "TS0203"
     ],
-    "manufacturer_count": 8,
+    "manufacturer_count": 14,
     "model_count": 3,
     "capabilities": [
       "alarm_motion",
@@ -1063,12 +1095,13 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_4ugnzsli"
     ],
     "models": [
       "TS0203"
     ],
-    "manufacturer_count": 12,
+    "manufacturer_count": 13,
     "model_count": 1,
     "capabilities": [
       "alarm_contact",
@@ -1091,12 +1124,13 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_4ugnzsli"
     ],
     "models": [
       "TS0203"
     ],
-    "manufacturer_count": 10,
+    "manufacturer_count": 11,
     "model_count": 1,
     "capabilities": [
       "alarm_motion",
@@ -1121,12 +1155,13 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_4ugnzsli"
     ],
     "models": [
       "TS0203"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 12,
     "model_count": 1,
     "capabilities": [
       "alarm_generic",
@@ -1146,13 +1181,15 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_4ugnzsli"
     ],
     "models": [
       "ZG-102ZM",
       "TS0203"
     ],
-    "manufacturer_count": 7,
+    "manufacturer_count": 9,
     "model_count": 2,
     "capabilities": [
       "alarm_contact",
@@ -1169,13 +1206,16 @@
     "manufacturers": [
       "_TZE200_5zbp6j0u",
       "_TZE200_nogaemzt",
-      "_TZE200_xuzcvlku"
+      "_TZE200_xuzcvlku",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0601",
       "TS130F"
     ],
-    "manufacturer_count": 3,
+    "manufacturer_count": 6,
     "model_count": 2,
     "capabilities": [
       "windowcoverings_state",
@@ -1194,13 +1234,16 @@
     "manufacturers": [
       "_TZE200_5zbp6j0u",
       "_TZE200_nogaemzt",
-      "_TZE200_xuzcvlku"
+      "_TZE200_xuzcvlku",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0601",
       "TS130F"
     ],
-    "manufacturer_count": 3,
+    "manufacturer_count": 6,
     "model_count": 2,
     "capabilities": [
       "windowcoverings_set",
@@ -1325,13 +1368,19 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_4ugnzsli"
     ],
     "models": [
       "TS0601",
       "TS0203"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 11,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
@@ -1350,13 +1399,16 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_4ugnzsli"
     ],
     "models": [
       "TS0211",
       "TS0203"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 8,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
@@ -1405,13 +1457,16 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_4ugnzsli"
     ],
     "models": [
       "TS0041",
       "TS0203"
     ],
-    "manufacturer_count": 35,
+    "manufacturer_count": 38,
     "model_count": 2,
     "capabilities": [
       "locked",
@@ -1432,13 +1487,16 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_4ugnzsli"
     ],
     "models": [
       "TS0211",
       "TS0203"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 8,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
@@ -1457,13 +1515,19 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_4ugnzsli"
     ],
     "models": [
       "TS0601",
       "TS0203"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 11,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
@@ -1484,12 +1548,15 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 7,
+    "manufacturer_count": 10,
     "model_count": 1,
     "capabilities": [
       "alarm_motion",
@@ -1514,13 +1581,19 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_4ugnzsli"
     ],
     "models": [
       "TS0601",
       "TS0203"
     ],
-    "manufacturer_count": 10,
+    "manufacturer_count": 16,
     "model_count": 2,
     "capabilities": [
       "alarm_co",
@@ -1559,12 +1632,15 @@
     "class": "sensor",
     "manufacturers": [
       "_TZE200_bjzrowv2",
-      "_TZE200_vm1gyrso"
+      "_TZE200_vm1gyrso",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 2,
+    "manufacturer_count": 5,
     "model_count": 1,
     "capabilities": [
       "alarm_generic"
@@ -1582,13 +1658,16 @@
       "_TZ3000_fllyghyj",
       "_TZE200_locansqn",
       "_TZE200_bjawzodf",
-      "_TZE284_aagrxlbd"
+      "_TZE284_aagrxlbd",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0201",
       "TS0601"
     ],
-    "manufacturer_count": 6,
+    "manufacturer_count": 9,
     "model_count": 2,
     "capabilities": [
       "measure_temperature",
@@ -1748,14 +1827,17 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_4ugnzsli"
     ],
     "models": [
       "TS0505A",
       "TS0505B",
       "TS0203"
     ],
-    "manufacturer_count": 8,
+    "manufacturer_count": 11,
     "model_count": 3,
     "capabilities": [
       "onoff",
@@ -1840,7 +1922,13 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_4ugnzsli"
     ],
     "models": [
       "TS0001",
@@ -1848,7 +1936,7 @@
       "TS0012",
       "TS0203"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 11,
     "model_count": 4,
     "capabilities": [
       "alarm_contact",
@@ -1862,12 +1950,15 @@
     "name": "Lock Smart",
     "class": "lock",
     "manufacturers": [
-      "_TZE200_mgstdyz3"
+      "_TZE200_mgstdyz3",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 1,
+    "manufacturer_count": 4,
     "model_count": 1,
     "capabilities": [
       "locked",
@@ -1882,12 +1973,15 @@
     "name": "Lock Basic",
     "class": "sensor",
     "manufacturers": [
-      "_TZE200_ar0slwnd"
+      "_TZE200_ar0slwnd",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 1,
+    "manufacturer_count": 4,
     "model_count": 1,
     "capabilities": [
       "alarm_motion",
@@ -1902,12 +1996,15 @@
     "class": "lock",
     "manufacturers": [
       "_TZE200_bmzphld8",
-      "_TZE200_eaac7dkw"
+      "_TZE200_eaac7dkw",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 2,
+    "manufacturer_count": 5,
     "model_count": 1,
     "capabilities": [
       "locked",
@@ -1945,12 +2042,15 @@
       "_TZ3000_tqlv4ug4",
       "_TZ3000_h1ipgkwn",
       "_TZ3000_w0qqde0g",
-      "_TZ3000_gjnozsaz"
+      "_TZ3000_gjnozsaz",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea"
     ],
     "models": [
       "TS0001"
     ],
-    "manufacturer_count": 6,
+    "manufacturer_count": 9,
     "model_count": 1,
     "capabilities": [
       "alarm_generic"
@@ -1969,14 +2069,21 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_1obwwnmq",
+      "_TZ3000_w0qqde0g",
+      "_TZ3000_vzopcetz",
+      "_TZ3000_g5xawfcq"
     ],
     "models": [
       "TS0001",
       "TS0011",
       "TS011F"
     ],
-    "manufacturer_count": 7,
+    "manufacturer_count": 14,
     "model_count": 3,
     "capabilities": [
       "alarm_generic",
@@ -2006,13 +2113,16 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0202",
       "TS0601"
     ],
-    "manufacturer_count": 14,
+    "manufacturer_count": 17,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
@@ -2035,13 +2145,16 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0202",
       "TS0601"
     ],
-    "manufacturer_count": 10,
+    "manufacturer_count": 13,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
@@ -2064,13 +2177,16 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0202",
       "TS0601"
     ],
-    "manufacturer_count": 10,
+    "manufacturer_count": 13,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
@@ -2096,13 +2212,16 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0202",
       "TS0601"
     ],
-    "manufacturer_count": 10,
+    "manufacturer_count": 13,
     "model_count": 2,
     "capabilities": [
       "alarm_contact",
@@ -2133,14 +2252,17 @@
       "_TYZB01_tv3wxhcz",
       "lumi.motion.agl02",
       "lumi.sensor_motion.aq2",
-      "lumi.sensor_motion.aq2b"
+      "lumi.sensor_motion.aq2b",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "SNZB-03",
       "TS0202",
       "TS0601"
     ],
-    "manufacturer_count": 17,
+    "manufacturer_count": 20,
     "model_count": 3,
     "capabilities": [
       "alarm_motion",
@@ -2163,13 +2285,16 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0202",
       "TS0601"
     ],
-    "manufacturer_count": 10,
+    "manufacturer_count": 13,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
@@ -2192,13 +2317,16 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0202",
       "TS0601"
     ],
-    "manufacturer_count": 10,
+    "manufacturer_count": 13,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
@@ -2222,13 +2350,16 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0202",
       "TS0601"
     ],
-    "manufacturer_count": 10,
+    "manufacturer_count": 13,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
@@ -2252,13 +2383,16 @@
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
       "_TZ3000_akqdg6g7",
-      "_TZE204_qasjif9e"
+      "_TZE204_qasjif9e",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0202",
       "TS0601"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 14,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
@@ -2276,13 +2410,16 @@
       "_TZE200_3towulqd",
       "_TZE200_ppuj1vem",
       "_TZE200_pay2byax",
-      "_TZE200_mrf6vtua"
+      "_TZE200_mrf6vtua",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "ZG-204ZV",
       "TS0601"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 8,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
@@ -2308,7 +2445,10 @@
       "_TZ3000_ww6drja5",
       "_TZ3000_kqvb5akv",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_1obwwnmq",
+      "_TZ3000_w0qqde0g",
+      "_TZ3000_vzopcetz"
     ],
     "models": [
       "TS011F",
@@ -2316,7 +2456,7 @@
       "TS110E",
       "TS110F"
     ],
-    "manufacturer_count": 10,
+    "manufacturer_count": 13,
     "model_count": 4,
     "capabilities": [
       "onoff",
@@ -2339,13 +2479,16 @@
       "_TZ3000_ww6drja5",
       "_TZ3000_kqvb5akv",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_1obwwnmq",
+      "_TZ3000_w0qqde0g",
+      "_TZ3000_vzopcetz"
     ],
     "models": [
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 10,
+    "manufacturer_count": 13,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -2371,13 +2514,16 @@
       "_TZ3000_typdpbpg",
       "_TZ3000_kqvb5akv",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_1obwwnmq",
+      "_TZ3000_w0qqde0g",
+      "_TZ3000_vzopcetz"
     ],
     "models": [
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 10,
+    "manufacturer_count": 13,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -2403,13 +2549,16 @@
       "_TZ3000_ww6drja5",
       "_TZ3000_kqvb5akv",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_1obwwnmq",
+      "_TZ3000_w0qqde0g",
+      "_TZ3000_vzopcetz"
     ],
     "models": [
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 10,
+    "manufacturer_count": 13,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -2435,13 +2584,16 @@
       "_TZ3000_ww6drja5",
       "_TZ3000_kqvb5akv",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_1obwwnmq",
+      "_TZ3000_w0qqde0g",
+      "_TZ3000_vzopcetz"
     ],
     "models": [
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 10,
+    "manufacturer_count": 13,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -2468,14 +2620,20 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_1obwwnmq",
+      "_TZ3000_w0qqde0g",
+      "_TZ3000_vzopcetz",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_4ugnzsli"
     ],
     "models": [
       "TS011F",
       "TS0121",
       "TS0203"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 17,
     "model_count": 3,
     "capabilities": [
       "onoff",
@@ -2498,14 +2656,17 @@
       "_TZ3000_ww6drja5",
       "_TZ3000_kqvb5akv",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_1obwwnmq",
+      "_TZ3000_w0qqde0g",
+      "_TZ3000_vzopcetz"
     ],
     "models": [
       "TS0115",
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 10,
+    "manufacturer_count": 13,
     "model_count": 3,
     "capabilities": [
       "onoff"
@@ -2527,13 +2688,16 @@
       "_TZ3000_ww6drja5",
       "_TZ3000_kqvb5akv",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_1obwwnmq",
+      "_TZ3000_w0qqde0g",
+      "_TZ3000_vzopcetz"
     ],
     "models": [
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 10,
+    "manufacturer_count": 13,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -2559,13 +2723,16 @@
       "_TZ3000_ww6drja5",
       "_TZ3000_kqvb5akv",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_1obwwnmq",
+      "_TZ3000_w0qqde0g",
+      "_TZ3000_vzopcetz"
     ],
     "models": [
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 10,
+    "manufacturer_count": 13,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -2598,14 +2765,17 @@
       "_TZ3000_plyvnuf5",
       "_TZ3000_tvuarksa",
       "_TZ3000_typdpbpg",
-      "_TZ3000_ww6drja5"
+      "_TZ3000_ww6drja5",
+      "_TZ3000_1obwwnmq",
+      "_TZ3000_w0qqde0g",
+      "_TZ3000_vzopcetz"
     ],
     "models": [
       "S26R2ZB",
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 17,
+    "manufacturer_count": 20,
     "model_count": 3,
     "capabilities": [
       "alarm_generic",
@@ -2628,13 +2798,16 @@
       "_TZ3000_ww6drja5",
       "_TZ3000_kqvb5akv",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_1obwwnmq",
+      "_TZ3000_w0qqde0g",
+      "_TZ3000_vzopcetz"
     ],
     "models": [
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 10,
+    "manufacturer_count": 13,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -2660,13 +2833,16 @@
       "_TZ3000_ww6drja5",
       "_TZ3000_kqvb5akv",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_1obwwnmq",
+      "_TZ3000_w0qqde0g",
+      "_TZ3000_vzopcetz"
     ],
     "models": [
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 10,
+    "manufacturer_count": 13,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -2698,13 +2874,18 @@
       "_TZE204_clrdrnya",
       "_TZE204_mtoaryre",
       "_TZE204_qasjif9e",
-      "_TZE204_sxm7l9xa"
+      "_TZE204_sxm7l9xa",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd",
+      "_TZ3000_kmh5qpmb",
+      "_TZE200_3towulqd"
     ],
     "models": [
       "TS0601",
       "TS0202"
     ],
-    "manufacturer_count": 16,
+    "manufacturer_count": 21,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
@@ -2720,12 +2901,15 @@
     "class": "thermostat",
     "manufacturers": [
       "_TZE200_5toc8efa",
-      "_TZE200_hue3yfsn"
+      "_TZE200_hue3yfsn",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 2,
+    "manufacturer_count": 5,
     "model_count": 1,
     "capabilities": [
       "target_temperature",
@@ -2742,12 +2926,15 @@
     "manufacturers": [
       "_TZE200_b6wax7g0",
       "_TZE200_9gvruqf5",
-      "_TZE284_aao6qtcs"
+      "_TZE284_aao6qtcs",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 3,
+    "manufacturer_count": 6,
     "model_count": 1,
     "capabilities": [
       "target_temperature",
@@ -2809,13 +2996,15 @@
       "_TZE200_fctwhugx",
       "_TZE200_cowvfni3",
       "_TZ3000_vd43bbfq",
-      "_TZE200_zpzndjez"
+      "_TZE200_zpzndjez",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS130F",
       "TS0601"
     ],
-    "manufacturer_count": 4,
+    "manufacturer_count": 6,
     "model_count": 2,
     "capabilities": [
       "alarm_generic",
@@ -2833,7 +3022,18 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0001",
@@ -2846,7 +3046,7 @@
       "TS0601",
       "TS130F"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 16,
     "model_count": 9,
     "capabilities": [
       "windowcoverings_set",
@@ -2897,14 +3097,16 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_4ugnzsli"
     ],
     "models": [
       "TS0219",
       "TS0601_siren",
       "TS0203"
     ],
-    "manufacturer_count": 8,
+    "manufacturer_count": 10,
     "model_count": 3,
     "capabilities": [
       "alarm_motion",
@@ -2956,14 +3158,17 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0201",
       "TS0205",
       "TS0601"
     ],
-    "manufacturer_count": 6,
+    "manufacturer_count": 9,
     "model_count": 3,
     "capabilities": [
       "alarm_motion",
@@ -3009,12 +3214,15 @@
     "class": "sensor",
     "manufacturers": [
       "_TZE200_lsanae15",
-      "_TZE284_sgabhwa6"
+      "_TZE284_sgabhwa6",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 2,
+    "manufacturer_count": 5,
     "model_count": 1,
     "capabilities": [
       "alarm_generic",
@@ -3029,12 +3237,15 @@
     "class": "button",
     "manufacturers": [
       "_TZE200_9yapgbuv",
-      "_TZE284_rccgwzz8"
+      "_TZE284_rccgwzz8",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 2,
+    "manufacturer_count": 5,
     "model_count": 1,
     "capabilities": [
       "measure_battery",
@@ -3088,7 +3299,13 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -3098,7 +3315,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 20,
+    "manufacturer_count": 26,
     "model_count": 6,
     "capabilities": [
       "onoff",
@@ -3120,13 +3337,16 @@
       "_TZ3000_qzjcsmar",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea"
     ],
     "models": [
       "TS0001",
       "TS0011"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 12,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -3150,7 +3370,15 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -3160,7 +3388,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 19,
     "model_count": 6,
     "capabilities": [
       "onoff",
@@ -3185,7 +3413,15 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -3195,7 +3431,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 12,
+    "manufacturer_count": 20,
     "model_count": 6,
     "capabilities": [
       "onoff",
@@ -3219,7 +3455,15 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -3229,7 +3473,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 19,
     "model_count": 6,
     "capabilities": [
       "onoff",
@@ -3248,7 +3492,15 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -3259,7 +3511,7 @@
       "TS0013",
       "TS0014"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 13,
     "model_count": 7,
     "capabilities": [
       "onoff",
@@ -3278,7 +3530,19 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_4fjiwweb",
+      "_TZ3000_ji4araar",
+      "_TZ3000_qmi1cfuq",
+      "_TZ3000_18ejxno0",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -3290,7 +3554,7 @@
       "TS0013",
       "TS0014"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 17,
     "model_count": 8,
     "capabilities": [
       "onoff",
@@ -3309,7 +3573,19 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_4fjiwweb",
+      "_TZ3000_ji4araar",
+      "_TZ3000_qmi1cfuq",
+      "_TZ3000_18ejxno0",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -3321,7 +3597,7 @@
       "TS0013",
       "TS0014"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 17,
     "model_count": 8,
     "capabilities": [
       "onoff",
@@ -3340,7 +3616,15 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -3351,7 +3635,7 @@
       "TS0013",
       "TS0014"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 13,
     "model_count": 7,
     "capabilities": [
       "onoff",
@@ -3372,13 +3656,16 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea"
     ],
     "models": [
       "TS0001",
       "TS0011"
     ],
-    "manufacturer_count": 6,
+    "manufacturer_count": 9,
     "model_count": 2,
     "capabilities": [
       "onoff",
@@ -3403,7 +3690,15 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -3414,7 +3709,7 @@
       "TS0013",
       "TS0014"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 13,
     "model_count": 7,
     "capabilities": [
       "windowcoverings_state",
@@ -3440,7 +3735,19 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_4fjiwweb",
+      "_TZ3000_ji4araar",
+      "_TZ3000_qmi1cfuq",
+      "_TZ3000_18ejxno0",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -3453,7 +3760,7 @@
       "TS0014",
       "TS0041"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 17,
     "model_count": 9,
     "capabilities": [
       "alarm_generic",
@@ -3477,7 +3784,15 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -3487,7 +3802,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 19,
     "model_count": 6,
     "capabilities": [
       "onoff",
@@ -3511,7 +3826,15 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -3521,7 +3844,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 19,
     "model_count": 6,
     "capabilities": [
       "onoff",
@@ -3546,7 +3869,15 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -3556,7 +3887,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 19,
     "model_count": 6,
     "capabilities": [
       "onoff",
@@ -3583,7 +3914,15 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -3593,7 +3932,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 19,
     "model_count": 6,
     "capabilities": [
       "onoff"
@@ -3616,7 +3955,15 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -3626,7 +3973,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 19,
     "model_count": 6,
     "capabilities": [
       "onoff",
@@ -3650,7 +3997,17 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_qmi1cfuq",
+      "_TZ3000_18ejxno0",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -3661,7 +4018,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 21,
     "model_count": 7,
     "capabilities": [
       "onoff",
@@ -3685,7 +4042,15 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -3695,7 +4060,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 19,
     "model_count": 6,
     "capabilities": [
       "onoff",
@@ -3720,7 +4085,15 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -3730,7 +4103,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 19,
     "model_count": 6,
     "capabilities": [
       "onoff",
@@ -3755,7 +4128,15 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -3765,7 +4146,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 19,
     "model_count": 6,
     "capabilities": [
       "onoff",
@@ -3801,7 +4182,13 @@
       "_TZ3000_yujkchbz",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -3811,7 +4198,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 20,
+    "manufacturer_count": 26,
     "model_count": 6,
     "capabilities": [
       "onoff",
@@ -3835,7 +4222,15 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -3845,7 +4240,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 19,
     "model_count": 6,
     "capabilities": [
       "onoff",
@@ -3878,7 +4273,16 @@
       "_TZ3000_zmlunnhy",
       "_TZ3000_zmy1waw6",
       "lumi.ctrl_ln1",
-      "lumi.ctrl_ln2"
+      "lumi.ctrl_ln2",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_qmi1cfuq",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -3890,7 +4294,7 @@
       "TS0011",
       "TS0012"
     ],
-    "manufacturer_count": 20,
+    "manufacturer_count": 29,
     "model_count": 8,
     "capabilities": [
       "onoff",
@@ -3916,7 +4320,17 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_qmi1cfuq",
+      "_TZ3000_18ejxno0",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -3928,7 +4342,7 @@
       "TS0011",
       "TS0012"
     ],
-    "manufacturer_count": 12,
+    "manufacturer_count": 22,
     "model_count": 8,
     "capabilities": [
       "onoff",
@@ -3953,7 +4367,17 @@
       "lumi.ctrl_ln2",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_qmi1cfuq",
+      "_TZ3000_18ejxno0",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -3965,7 +4389,7 @@
       "TS0011",
       "TS0012"
     ],
-    "manufacturer_count": 12,
+    "manufacturer_count": 22,
     "model_count": 8,
     "capabilities": [
       "onoff",
@@ -3994,7 +4418,15 @@
       "_TZ3000_ww6drja5",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -4005,7 +4437,7 @@
       "TS0011",
       "TS0013"
     ],
-    "manufacturer_count": 16,
+    "manufacturer_count": 24,
     "model_count": 7,
     "capabilities": [
       "onoff",
@@ -4031,7 +4463,15 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -4042,7 +4482,7 @@
       "TS0011",
       "TS0013"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 19,
     "model_count": 7,
     "capabilities": [
       "onoff",
@@ -4071,7 +4511,15 @@
       "_TZ3000_ww6drja5",
       "_TZ3000_yw8z2axp",
       "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1"
+      "lumi.ctrl_ln1",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -4082,7 +4530,7 @@
       "TS0011",
       "TS0014"
     ],
-    "manufacturer_count": 15,
+    "manufacturer_count": 23,
     "model_count": 7,
     "capabilities": [
       "onoff",
@@ -4109,7 +4557,15 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -4120,7 +4576,7 @@
       "TS0011",
       "TS0014"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 19,
     "model_count": 7,
     "capabilities": [
       "onoff",
@@ -4147,7 +4603,15 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -4158,7 +4622,7 @@
       "TS0011",
       "TS0014"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 19,
     "model_count": 7,
     "capabilities": [
       "onoff",
@@ -4185,7 +4649,15 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -4196,7 +4668,7 @@
       "TS0011",
       "TS0015"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 19,
     "model_count": 7,
     "capabilities": [
       "onoff",
@@ -4220,7 +4692,15 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -4231,7 +4711,7 @@
       "TS0011",
       "TS0016"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 19,
     "model_count": 7,
     "capabilities": [
       "onoff",
@@ -4259,7 +4739,15 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -4270,7 +4758,7 @@
       "TS0011",
       "TS0016"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 19,
     "model_count": 7,
     "capabilities": [
       "onoff",
@@ -4299,7 +4787,15 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -4310,7 +4806,7 @@
       "TS0011",
       "TS0016"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 19,
     "model_count": 7,
     "capabilities": [
       "onoff",
@@ -4339,7 +4835,15 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
     ],
     "models": [
       "TS0001",
@@ -4349,7 +4853,7 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 19,
     "model_count": 6,
     "capabilities": [
       "onoff",
@@ -4374,14 +4878,17 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea"
     ],
     "models": [
       "SNZB-01",
       "TS0001",
       "TS0011"
     ],
-    "manufacturer_count": 5,
+    "manufacturer_count": 8,
     "model_count": 3,
     "capabilities": [
       "alarm_generic",
@@ -4408,7 +4915,10 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea"
     ],
     "models": [
       "TS0001",
@@ -4418,7 +4928,7 @@
       "TS0043",
       "TS0044"
     ],
-    "manufacturer_count": 14,
+    "manufacturer_count": 17,
     "model_count": 6,
     "capabilities": [
       "onoff",
@@ -4443,7 +4953,10 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea"
     ],
     "models": [
       "TS0001",
@@ -4453,7 +4966,7 @@
       "TS0043",
       "TS0044"
     ],
-    "manufacturer_count": 12,
+    "manufacturer_count": 15,
     "model_count": 6,
     "capabilities": [
       "onoff",
@@ -4477,7 +4990,10 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea"
     ],
     "models": [
       "STYRBAR",
@@ -4488,7 +5004,7 @@
       "TS0043",
       "TS0044"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 14,
     "model_count": 7,
     "capabilities": [
       "onoff",
@@ -4515,7 +5031,10 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea"
     ],
     "models": [
       "TS0001",
@@ -4525,7 +5044,7 @@
       "TS0043",
       "TS0044"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 14,
     "model_count": 6,
     "capabilities": [
       "onoff",
@@ -4551,7 +5070,10 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea"
     ],
     "models": [
       "TS0001",
@@ -4561,7 +5083,7 @@
       "TS0043",
       "TS0044"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 14,
     "model_count": 6,
     "capabilities": [
       "onoff",
@@ -4585,7 +5107,10 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea"
     ],
     "models": [
       "TS0001",
@@ -4595,7 +5120,7 @@
       "TS0043",
       "TS0044"
     ],
-    "manufacturer_count": 11,
+    "manufacturer_count": 14,
     "model_count": 6,
     "capabilities": [
       "onoff",
@@ -4621,14 +5146,20 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_4ugnzsli"
     ],
     "models": [
       "TS0201",
       "TS0601",
       "TS0203"
     ],
-    "manufacturer_count": 8,
+    "manufacturer_count": 14,
     "model_count": 3,
     "capabilities": [
       "alarm_motion",
@@ -4651,14 +5182,20 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_4ugnzsli"
     ],
     "models": [
       "TS0201",
       "TS0601",
       "TS0203"
     ],
-    "manufacturer_count": 8,
+    "manufacturer_count": 14,
     "model_count": 3,
     "capabilities": [
       "alarm_motion",
@@ -4677,12 +5214,15 @@
       "_TZE200_0dvm9mva",
       "_TZE200_a4bpgplm",
       "_TZE200_aoclfnxz",
-      "_TZE200_ztvwu4nk"
+      "_TZE200_ztvwu4nk",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 4,
+    "manufacturer_count": 7,
     "model_count": 1,
     "capabilities": [
       "target_temperature",
@@ -4700,12 +5240,15 @@
     "manufacturers": [
       "_TZE200_cwbvmsar",
       "_TZE200_locansqn",
-      "_TZE284_aagrxlbd"
+      "_TZE284_aagrxlbd",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0601"
     ],
-    "manufacturer_count": 3,
+    "manufacturer_count": 6,
     "model_count": 1,
     "capabilities": [
       "target_temperature",
@@ -4726,13 +5269,16 @@
       "_TZ3000_fllyghyj",
       "_TZE200_cwbvmsar",
       "_TZE200_locansqn",
-      "_TZE284_aagrxlbd"
+      "_TZE284_aagrxlbd",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0201",
       "TS0601"
     ],
-    "manufacturer_count": 6,
+    "manufacturer_count": 9,
     "model_count": 2,
     "capabilities": [
       "target_temperature",
@@ -4752,14 +5298,18 @@
       "_TZ3000_ww6drja5",
       "_TZ3000_kqvb5akv",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_1obwwnmq",
+      "_TZ3000_w0qqde0g",
+      "_TZ3000_vzopcetz",
+      "_TZ3000_g5xawfcq"
     ],
     "models": [
       "TS0115",
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 4,
+    "manufacturer_count": 8,
     "model_count": 3,
     "capabilities": [
       "onoff",
@@ -4779,12 +5329,14 @@
       "_TZ3000_1obwwnmq",
       "_TZ3000_w0qqde0g",
       "_TZ3000_gjnozsaz",
-      "_TZ3000_8gs8h2e4"
+      "_TZ3000_8gs8h2e4",
+      "_TZ3000_vzopcetz",
+      "_TZ3000_g5xawfcq"
     ],
     "models": [
       "TS011F"
     ],
-    "manufacturer_count": 4,
+    "manufacturer_count": 6,
     "model_count": 1,
     "capabilities": [
       "onoff",
@@ -4808,14 +5360,18 @@
       "_TZ3000_ww6drja5",
       "_TZ3000_kqvb5akv",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_1obwwnmq",
+      "_TZ3000_w0qqde0g",
+      "_TZ3000_vzopcetz",
+      "_TZ3000_g5xawfcq"
     ],
     "models": [
       "TS0115",
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 13,
     "model_count": 3,
     "capabilities": [
       "onoff",
@@ -4836,14 +5392,18 @@
       "_TZ3000_ww6drja5",
       "_TZ3000_kqvb5akv",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_1obwwnmq",
+      "_TZ3000_w0qqde0g",
+      "_TZ3000_vzopcetz",
+      "_TZ3000_g5xawfcq"
     ],
     "models": [
       "TS0115",
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 4,
+    "manufacturer_count": 8,
     "model_count": 3,
     "capabilities": [
       "onoff",
@@ -4863,14 +5423,18 @@
       "_TZ3000_ww6drja5",
       "_TZ3000_kqvb5akv",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_1obwwnmq",
+      "_TZ3000_w0qqde0g",
+      "_TZ3000_vzopcetz",
+      "_TZ3000_g5xawfcq"
     ],
     "models": [
       "TS0115",
       "TS011F",
       "TS0121"
     ],
-    "manufacturer_count": 4,
+    "manufacturer_count": 8,
     "model_count": 3,
     "capabilities": [
       "onoff",
@@ -5152,7 +5716,13 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_4ugnzsli"
     ],
     "models": [
       "TS0207",
@@ -5160,7 +5730,7 @@
       "q9mpfhw",
       "TS0203"
     ],
-    "manufacturer_count": 13,
+    "manufacturer_count": 19,
     "model_count": 4,
     "capabilities": [
       "alarm_motion",
@@ -5185,14 +5755,20 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd",
+      "_TZ3000_26fmupbb",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_4ugnzsli"
     ],
     "models": [
       "TS0207",
       "TS0601",
       "TS0203"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 15,
     "model_count": 3,
     "capabilities": [
       "alarm_motion",
@@ -5218,13 +5794,16 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0207",
       "TS0601"
     ],
-    "manufacturer_count": 9,
+    "manufacturer_count": 12,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
@@ -5247,13 +5826,16 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0207",
       "TS0601"
     ],
-    "manufacturer_count": 8,
+    "manufacturer_count": 11,
     "model_count": 2,
     "capabilities": [
       "alarm_motion",
@@ -5276,13 +5858,16 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
     ],
     "models": [
       "TS0207",
       "TS0601"
     ],
-    "manufacturer_count": 8,
+    "manufacturer_count": 11,
     "model_count": 2,
     "capabilities": [
       "onoff",
