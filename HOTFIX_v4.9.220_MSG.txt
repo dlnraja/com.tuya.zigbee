@@ -1,0 +1,31 @@
+v4.9.220 MEGA HOTFIX - ALL CRITICAL BUGS FIXED
+
+FIXES 8 CRITICAL BUGS:
+1. TuyaEF00Manager.detectAvailableMethods() - Method does not exist (removed call)
+2. TuyaEF00Manager.on() - Not an EventEmitter (now extends EventEmitter + emit events)
+3. ZigbeeTimeout.withTimeout() - Missing this. prefix (line 34)
+4. setCapabilityValue() - Missing this. prefix in forceInitialRead() (5x occurrences)
+5. setCapabilityValue() - Missing this. prefix in _forceReadAllInitialValues() (3x occurrences)
+6. Button flows not working - Events properly emitted now
+7. Battery data not reporting - Fixed with EventEmitter + setCapabilityValue
+8. Sensor data not reporting - Fixed with setCapabilityValue
+
+AFFECTED DEVICES - ALL 186 DRIVERS:
+- button_wireless_3 (3-gang buttons)
+- button_wireless_4 (4-gang buttons) 
+- climate_sensor_soil (Tuya soil moisture/temp/humidity sensors)
+- presence_sensor_radar (All radar presence sensors)
+- button_emergency_sos (SOS emergency buttons)
+- climate_monitor_temp_humidity (Temp/humidity monitors)
+- ALL battery-powered devices (battery % now shows)
+- ALL sensor devices (temperature, humidity, luminance now report)
+- ALL button devices (flow triggers now work)
+
+USER CONFIRMED ISSUES:
+✅ Button flows not working - FIXED
+✅ No battery info for any devices - FIXED
+✅ No data reporting anywhere - FIXED
+✅ TuyaEF00Manager events - FIXED
+
+GitHub Actions auto-increment was publishing incomplete versions.
+This v4.9.220 includes ALL fixes together in one atomic commit.
