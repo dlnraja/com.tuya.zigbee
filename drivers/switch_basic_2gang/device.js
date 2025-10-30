@@ -10,15 +10,35 @@ const SwitchDevice = require('../../lib/SwitchDevice');
 class Switch2gangDevice extends SwitchDevice {
 
   async onNodeInit({ zclNode }) {
-    this.log('Switch2gangDevice initializing...');
-    
-    // Initialize base FIRST (auto power detection + dynamic capabilities)
-    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
-    
-    // THEN setup multi-endpoint (zclNode now exists)
-    await this.setupMultiEndpoint();
-    
-    this.log('Switch2gangDevice initialized - Power source:', this.powerSource || 'unknown');
+    try {
+      // Sanity checks
+      if (!zclNode) {
+        this.log('[ERROR] onNodeInit: missing zclNode');
+        return;
+      }
+
+      this.log('Switch2gangDevice initializing...');
+      
+      // Initialize base FIRST (auto power detection + dynamic capabilities)
+      await super.onNodeInit({ zclNode }).catch(err => this.error(err));
+      
+      // THEN setup multi-endpoint (zclNode now exists)
+      await this.setupMultiEndpoint();
+      
+      // Safe set available
+      if (typeof this._safeResolveAvailable === 'function') {
+        this._safeResolveAvailable(true);
+      } else if (typeof this.setAvailable === 'function') {
+        this.setAvailable();
+      }
+      
+      this.log('Switch2gangDevice initialized - Power source:', this.powerSource || 'unknown');
+    } catch (err) {
+      this.log('[ERROR] onNodeInit outer catch:', err);
+      if (typeof this._safeRejectAvailable === 'function') {
+        this._safeRejectAvailable(err);
+      }
+    }
   }
 
   async onDeleted() {
