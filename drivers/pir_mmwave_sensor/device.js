@@ -50,6 +50,8 @@ const getDataValue = (dpValue) => {
 class pir_mmwave_sensor extends ZigBeeDevice {
 
     async onNodeInit({ zclNode }) {
+        // Initialize transaction ID for Tuya commands
+        this.transactionID = 0;
 
         this.printNode();
 
@@ -158,7 +160,7 @@ class pir_mmwave_sensor extends ZigBeeDevice {
 
         switch (dp) {
             case 1:
-                // Motion detection - can be boolean or number (1/0)
+                // Presence/Motion detection - can be boolean or number (1/0)
                 this.log('Motion detected via Tuya DP1:', measuredValue);
                 if (typeof measuredValue === 'boolean') {
                     this.setCapabilityValue('alarm_motion', measuredValue).catch(this.error);
@@ -170,19 +172,18 @@ class pir_mmwave_sensor extends ZigBeeDevice {
                 break;
 
             case 2:
-                // Temperature - device shows 12 for ~22°C, needs 10°C offset
+                // Motion detection sensitivity (0-19, higher = more sensitive)
                 if (typeof measuredValue === 'number') {
-                    const temperature = measuredValue + 10.0;
-                    this.log('Temperature:', temperature, '°C (raw:', measuredValue, ')');
-                    this.setCapabilityValue('measure_temperature', temperature).catch(this.error);
+                    this.log('Motion detection sensitivity:', measuredValue);
+                    // Note: Don't call setSettings here - it will be set by onSettings or read on init
                 }
                 break;
 
             case 102:
-                // Humidity (confirmed working - saw value 30)
+                // Fading time / Motion keep time (0-28800 seconds)
                 if (typeof measuredValue === 'number') {
-                    this.log('Humidity:', measuredValue, '%RH');
-                    this.setCapabilityValue('measure_humidity', measuredValue).catch(this.error);
+                    this.log('Fading time (motion keep time):', measuredValue, 'seconds');
+                    // Note: Don't call setSettings here - it will be set by onSettings or read on init
                 }
                 break;
 
@@ -195,23 +196,128 @@ class pir_mmwave_sensor extends ZigBeeDevice {
                 break;
 
             case 107:
-                // Sensitivity setting (confirmed - saw value 1)
-                this.log('Sensitivity setting:', measuredValue);
+                // Illuminance interval (1-720 minutes)
+                if (typeof measuredValue === 'number') {
+                    this.log('Illuminance interval:', measuredValue, 'minutes');
+                    // Note: Don't call setSettings here - it will be set by onSettings or read on init
+                }
                 break;
 
             case 108:
-                // Device mode/setting (confirmed - saw value true)
-                this.log('Device mode/setting:', measuredValue);
+                // LED indicator on/off
+                if (typeof measuredValue === 'boolean') {
+                    this.log('LED indicator:', measuredValue ? 'ON' : 'OFF');
+                    // Note: Don't call setSettings here - it will be set by onSettings or read on init
+                } else if (typeof measuredValue === 'number') {
+                    const indicatorOn = measuredValue === 1;
+                    this.log('LED indicator:', indicatorOn ? 'ON' : 'OFF');
+                    // Note: Don't call setSettings here - it will be set by onSettings or read on init
+                }
                 break;
 
             case 110:
-                // Device setting (confirmed - saw value 100)
-                this.log('Device setting (DP110):', measuredValue);
+                // Battery percentage
+                if (typeof measuredValue === 'number') {
+                    this.log('🔋 Battery via Tuya DP110:', measuredValue, '%');
+                    this.setCapabilityValue('measure_battery', measuredValue).catch(this.error);
+                    const batteryThreshold = this.getSetting('batteryThreshold') || 20;
+                    this.setCapabilityValue('alarm_battery', measuredValue < batteryThreshold).catch(this.error);
+                }
                 break;
 
             default:
                 this.log(`Unknown Tuya DP: ${dp} = ${measuredValue}`);
                 break;
+        }
+    }
+
+    // Handle settings changes
+    async onSettings({ newSettings, changedKeys }) {
+        this.log('Settings changed:', changedKeys);
+
+        for (const key of changedKeys) {
+            const value = newSettings[key];
+
+            switch (key) {
+                case 'fading_time':
+                    // DP102: Fading time (motion keep time) in seconds
+                    this.log('Setting fading time to:', value, 'seconds');
+                    await this.writeTuyaData(102, dataTypes.value, value);
+                    break;
+
+                case 'motion_detection_sensitivity':
+                    // DP2: Motion detection sensitivity (0-19)
+                    this.log('Setting motion detection sensitivity to:', value);
+                    await this.writeTuyaData(2, dataTypes.value, value);
+                    break;
+
+                case 'illuminance_interval':
+                    // DP107: Illuminance interval in minutes
+                    this.log('Setting illuminance interval to:', value, 'minutes');
+                    await this.writeTuyaData(107, dataTypes.value, value);
+                    break;
+
+                case 'indicator':
+                    // DP108: LED indicator on/off
+                    this.log('Setting LED indicator to:', value ? 'ON' : 'OFF');
+                    await this.writeTuyaData(108, dataTypes.bool, value ? 1 : 0);
+                    break;
+
+                case 'batteryThreshold':
+                    // This is a local setting, no need to send to device
+                    this.log('Battery threshold changed to:', value, '%');
+                    break;
+
+                default:
+                    this.log('Unknown setting changed:', key);
+                    break;
+            }
+        }
+    }
+
+    // Write data to Tuya cluster
+    async writeTuyaData(dp, dataType, value) {
+        try {
+            let data;
+            let length;
+
+            // Prepare data buffer based on data type
+            switch (dataType) {
+                case dataTypes.bool:
+                    data = Buffer.alloc(1);
+                    data.writeUInt8(value ? 0x01 : 0x00, 0);
+                    length = 1;
+                    break;
+
+                case dataTypes.value:
+                    data = Buffer.alloc(4);
+                    data.writeUInt32BE(value, 0);
+                    length = 4;
+                    break;
+
+                case dataTypes.enum:
+                    data = Buffer.alloc(1);
+                    data.writeUInt8(value, 0);
+                    length = 1;
+                    break;
+
+                default:
+                    throw new Error(`Unsupported data type: ${dataType}`);
+            }
+
+            await this.zclNode.endpoints[1].clusters.tuya.datapoint({
+                status: 0,
+                transid: this.transactionID++,
+                dp,
+                datatype: dataType,
+                length,
+                data
+            });
+
+            this.log(`✅ Successfully sent Tuya DP${dp} with value:`, value);
+        } catch (error) {
+            this.error(`❌ Failed to send Tuya DP${dp}:`, error);
+            throw error;
         }
     }
 
