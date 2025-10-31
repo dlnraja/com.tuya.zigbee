@@ -25,10 +25,24 @@ class motion_sensor extends ZigBeeDevice {
         
         // Set up IAS Zone
         const iasZone = zclNode.endpoints[1].clusters[CLUSTER.IAS_ZONE.NAME];
-        
+
         // Bind handler for zone status changes
         iasZone.onZoneStatusChangeNotification = this.onZoneStatusChanged.bind(this);
-        
+
+        // Handle enrollment requests from device
+        iasZone.onZoneEnrollRequest = async (payload) => {
+            this.log('IAS Zone enrollment request received:', payload);
+            try {
+                await iasZone.enrollResponse({
+                    enrollResponseCode: 0, // Success
+                    zoneId: 0, // Assign zone ID 0
+                });
+                this.log('✅ IAS Zone enrollment response sent');
+            } catch (err) {
+                this.error('❌ Failed to send enrollment response:', err);
+            }
+        };
+
         // Set up battery updates with throttling
         this._syncBattery = Util.throttle(
             this._updateBattery.bind(this),
@@ -37,32 +51,41 @@ class motion_sensor extends ZigBeeDevice {
 
         if (this.isFirstInit()) {
             try {
+                // Initialize capabilities
+                await this.setCapabilityValue('alarm_motion', false).catch(this.error);
+                await this.setCapabilityValue('alarm_tamper', false).catch(this.error);
+                await this.setCapabilityValue('alarm_battery', false).catch(this.error);
+
                 // Set IAS CIE address
+                this.log('Setting IAS CIE address...');
                 await iasZone.writeAttributes({
                     iasCIEAddress: Buffer.from(this.homey.zigbee.controller.ieeeAddress, 'hex').reverse()
-                }).catch(err => this.log('Failed to write IAS CIE address:', err));
-                
-                // Trigger enrollment
-                await iasZone.enrollResponse({
-                    enrollResponseCode: 0,
-                    zoneId: 255,
-                }).catch(err => this.log('Failed to enroll IAS Zone:', err));
-                
+                });
+                this.log('✅ IAS CIE address set');
+
+                // Read current zone state
+                const zoneState = await iasZone.readAttributes(['zoneState', 'zoneId', 'iasCIEAddress'])
+                    .catch(err => {
+                        this.log('Could not read zone state:', err.message);
+                        return null;
+                    });
+                this.log('IAS Zone state after init:', zoneState);
+
                 // Initial battery read - only on motion events afterwards
-                await this._updateBattery().catch(err => 
+                await this._updateBattery().catch(err =>
                     this.log('Initial battery read failed (will retry on motion):', err)
                 );
             } catch (err) {
-                this.log('Failed during initialization:', err);
+                this.error('Failed during initialization:', err);
             }
         }
     }
 
     onZoneStatusChanged({zoneStatus, extendedStatus, zoneId, delay,}) {
         this.log('onZoneStatusChanged received:', zoneStatus, extendedStatus, zoneId, delay);
-        
+
         const motionDetected = zoneStatus.alarm1;
-        
+
         if (this.isTS0202) {
             // Use timing logic for TS0202
             this._handleMotionState(motionDetected);
@@ -70,7 +93,19 @@ class motion_sensor extends ZigBeeDevice {
             // Direct state setting for other devices
             this.setCapabilityValue('alarm_motion', motionDetected).catch(this.error);
         }
-        
+
+        // Handle tamper alarm (bit 2)
+        if (typeof zoneStatus.tamper === 'boolean') {
+            this.log('Tamper status:', zoneStatus.tamper);
+            this.setCapabilityValue('alarm_tamper', zoneStatus.tamper).catch(this.error);
+        }
+
+        // Handle battery low alarm (bit 3)
+        if (typeof zoneStatus.batteryLow === 'boolean') {
+            this.log('Battery low status:', zoneStatus.batteryLow);
+            this.setCapabilityValue('alarm_battery', zoneStatus.batteryLow).catch(this.error);
+        }
+
         // Try to update battery on motion when device is awake
         this._syncBattery();
     }
@@ -123,12 +158,24 @@ class motion_sensor extends ZigBeeDevice {
     async _updateBattery() {
         try {
             const attrs = await this._powerConfiguration.readAttributes(
-                ["batteryPercentageRemaining"]
+                ["batteryPercentageRemaining", "batteryVoltage"]
             );
+
             if (attrs && attrs.hasOwnProperty('batteryPercentageRemaining')) {
                 const percent = attrs.batteryPercentageRemaining;
-                this.log('Set measure_battery: ', percent / 2);
+                this.log('Battery percentage:', percent / 2, '%');
                 await this.setCapabilityValue('measure_battery', percent / 2);
+
+                // Update battery alarm based on percentage (< 20%)
+                const batteryLow = (percent / 2) < 20;
+                await this.setCapabilityValue('alarm_battery', batteryLow);
+            }
+
+            if (attrs && attrs.hasOwnProperty('batteryVoltage')) {
+                const voltage = attrs.batteryVoltage;
+                this.log('Battery voltage:', voltage, 'decisvolts (', voltage * 100, 'mV)');
+                // Most devices report in decisvolts (0.1V), so multiply by 100 to get mV
+                // If your device needs a different conversion, adjust here
             }
         } catch (err) {
             this.log('Failed to read battery:', err);
