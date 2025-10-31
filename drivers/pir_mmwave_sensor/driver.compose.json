@@ -9,10 +9,8 @@
   "capabilities": [
     "alarm_motion",
     "measure_battery",
-    "alarm_battery", 
-    "measure_luminance",
-    "measure_temperature",
-    "measure_humidity"
+    "alarm_battery",
+    "measure_luminance"
   ],
   "energy": {
     "batteries": ["CR2450"]
