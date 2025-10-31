@@ -1,0 +1,35 @@
+╔══════════════════════════════════════════════════════════╗
+║  🔑 CONFIGURATION REQUISE: Secret HOMEY_PAT              ║
+╚══════════════════════════════════════════════════════════╝
+
+✅ WORKFLOW API OFFICIEL ACTIF
+❌ MAIS BESOIN DU SECRET HOMEY_PAT!
+
+═══════════════════════════════════════════════════════════
+
+📋 ÉTAPES RAPIDES:
+
+1️⃣ Créer Token Homey
+   → https://tools.developer.homey.app/
+   → Settings → Personal Access Tokens
+   → Create New Token
+   → Permission: "Publish apps"
+   → Copier le token (homey_pat_xxx...)
+
+2️⃣ Ajouter Secret GitHub
+   → https://github.com/dlnraja/com.tuya.zigbee/settings/secrets/actions
+   → New repository secret
+   → Name: HOMEY_PAT
+   → Value: [votre token]
+   → Add secret
+
+3️⃣ Tester
+   → git push origin master
+   → Workflow se déclenche automatiquement!
+
+═══════════════════════════════════════════════════════════
+
+📚 DOCUMENTATION COMPLÈTE:
+Voir: .github/workflows/README-OFFICIAL-API.md
+
+═══════════════════════════════════════════════════════════
