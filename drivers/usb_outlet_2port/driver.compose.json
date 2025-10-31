@@ -10,6 +10,7 @@
   "class": "socket",
   "capabilities": [
     "onoff",
+    "onoff.usb2",
     "led_mode",
     "measure_voltage",
     "measure_current"
@@ -23,6 +24,16 @@
         "de": "Anschluss 1",
         "it": "Porta 1",
         "es": "Puerto 1"
+      }
+    },
+    "onoff.usb2": {
+      "title": {
+        "en": "Port 2",
+        "fr": "Port 2",
+        "nl": "Poort 2",
+        "de": "Anschluss 2",
+        "it": "Porta 2",
+        "es": "Puerto 2"
       }
     },
     "led_mode": {
