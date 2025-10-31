@@ -3,7 +3,10 @@
   "capabilities": [
     "onoff",
     "onoff.gang2",
-    "measure_battery"
+    "measure_battery",
+    "measure_power",
+    "measure_voltage",
+    "measure_current"
   ],
   "zigbee": {
     "productId": [
@@ -52,6 +55,7 @@
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
       "_TZ3000_akqdg6g7",
+      "_TZ3000_h1ipgkwn",
       "_TZ3000_xkap8wtb",
       "_TZ3000_lupfd8zu",
       "_TZ3000_mx3vgyea",

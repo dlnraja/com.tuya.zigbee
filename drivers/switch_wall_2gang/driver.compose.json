@@ -14,7 +14,10 @@
   "capabilities": [
     "onoff",
     "onoff.gang2",
-    "measure_battery"
+    "measure_battery",
+    "measure_power",
+    "measure_voltage",
+    "measure_current"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -57,6 +60,7 @@
       "_TZ3000_4fjiwweb",
       "_TZ3000_4zf0crgo",
       "_TZ3000_akqdg6g7",
+      "_TZ3000_h1ipgkwn",
       "_TZ3000_ji4araar",
       "_TZ3000_kqvb5akv",
       "_TZ3000_l9brjwau",

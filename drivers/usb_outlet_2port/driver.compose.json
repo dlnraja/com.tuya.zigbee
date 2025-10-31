@@ -11,9 +11,11 @@
   "capabilities": [
     "onoff",
     "onoff.usb2",
-    "led_mode",
+    "measure_power",
+    "meter_power",
     "measure_voltage",
-    "measure_current"
+    "measure_current",
+    "led_mode"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -74,7 +76,8 @@
       "_TZ3000_gjnozsaz",
       "_TZ3000_8gs8h2e4",
       "_TZ3000_vzopcetz",
-      "_TZ3000_g5xawfcq"
+      "_TZ3000_g5xawfcq",
+      "_TZ3000_h1ipgkwn"
     ],
     "productId": [
       "TS011F"

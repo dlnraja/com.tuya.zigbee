@@ -6,7 +6,10 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "onoff.button2"
+    "onoff.button2",
+    "measure_power",
+    "measure_voltage",
+    "measure_current"
   ],
   "energy": {
     "batteries": [
@@ -24,6 +27,7 @@
     "manufacturerName": [
       "_TZ3000_kqvb5akv",
       "_TZ3000_4fjiwweb",
+      "_TZ3000_h1ipgkwn",
       "_TZ3000_ji4araar",
       "_TZ3000_o005nuxx",
       "_TZ3000_qzjcsmar",
