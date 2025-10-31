@@ -1200,34 +1200,6 @@
     "clusters": []
   },
   {
-    "driver_id": "curtain_motor",
-    "name": "Smart Curtain Motor (INTERNAL)",
-    "class": "windowcoverings",
-    "manufacturers": [
-      "_TZE200_5zbp6j0u",
-      "_TZE200_nogaemzt",
-      "_TZE200_xuzcvlku",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0601",
-      "TS130F"
-    ],
-    "manufacturer_count": 6,
-    "model_count": 2,
-    "capabilities": [
-      "windowcoverings_state",
-      "windowcoverings_set",
-      "windowcoverings_tilt_set",
-      "measure_battery",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
     "driver_id": "curtain_motor_advanced",
     "name": "Curtain Motor",
     "class": "windowcoverings",
