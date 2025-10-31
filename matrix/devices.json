@@ -5313,6 +5313,7 @@
     "model_count": 1,
     "capabilities": [
       "onoff",
+      "onoff.usb2",
       "led_mode",
       "measure_voltage",
       "measure_current"
