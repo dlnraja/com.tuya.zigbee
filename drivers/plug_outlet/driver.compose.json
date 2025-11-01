@@ -5,7 +5,10 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_current",
+    "measure_voltage",
+    "meter_power"
   ],
   "energy": {
     "batteries": [
