@@ -45,7 +45,7 @@ const TUYA_MASSIVE_IDS = {
   led_strip: ['_TZ3000_49qchf10', '_TZ3210_5vbjzw54', '_TZ3210_jtifm80b'],
   
   // Curtains/Blinds (15 IDs)
-  curtain: ['_TZE200_fzo2pocs', '_TZE200_5zbp6j0u', '_TZE200_fdtjuw7u', '_TZ3000_1dd0d5yi'],
+  curtain: ['_TZE200_fzo2pocs', '_TZE200_5zbp6j0u', '_TZE200_fdtjuw7u', '_TZ3000_1dd0d5yi','_TZE200_nv6nxo0c'],
   
   // Thermostats (15 IDs)
   thermostat: ['_TZE200_ye5jkfsb', '_TZE200_a4bpgplm', '_TZE200_b6wax7g0'],
