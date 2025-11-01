@@ -219,7 +219,7 @@ const MANUFACTURER_PATTERNS = {
     pattern: /^(curtain|blind)/,
     commonIds: [
       'TS130F', '_TZE200_fctwhugx', '_TZE200_cowvfni3', '_TZE200_xuzcvlku',
-      '_TZE200_5zbp6j0u', '_TZE200_nogaemzt'
+      '_TZE200_5zbp6j0u', '_TZE200_nogaemzt', '_TZE200_nv6nxo0c'
     ],
     shouldShareIds: true
   },
