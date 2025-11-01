@@ -3504,6 +3504,7 @@
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
       "_TZ3000_akqdg6g7",
+      "_TZ3000_h1ipgkwn",
       "_TZ3000_xkap8wtb",
       "_TZ3000_lupfd8zu",
       "_TZ3000_mx3vgyea",
@@ -3527,12 +3528,15 @@
       "TS0013",
       "TS0014"
     ],
-    "manufacturer_count": 17,
+    "manufacturer_count": 18,
     "model_count": 8,
     "capabilities": [
       "onoff",
       "onoff.gang2",
-      "measure_battery"
+      "measure_battery",
+      "measure_power",
+      "measure_voltage",
+      "measure_current"
     ],
     "power_source": "battery",
     "clusters": []
@@ -3961,6 +3965,7 @@
     "class": "socket",
     "manufacturers": [
       "_TZ3000_4fjiwweb",
+      "_TZ3000_h1ipgkwn",
       "_TZ3000_ji4araar",
       "_TZ3000_o005nuxx",
       "_TZ3000_qzjcsmar",
@@ -3991,11 +3996,14 @@
       "TS0006",
       "TS0011"
     ],
-    "manufacturer_count": 21,
+    "manufacturer_count": 22,
     "model_count": 7,
     "capabilities": [
       "onoff",
-      "onoff.button2"
+      "onoff.button2",
+      "measure_power",
+      "measure_voltage",
+      "measure_current"
     ],
     "power_source": "battery",
     "clusters": []
@@ -4231,6 +4239,7 @@
       "_TZ3000_4fjiwweb",
       "_TZ3000_4zf0crgo",
       "_TZ3000_akqdg6g7",
+      "_TZ3000_h1ipgkwn",
       "_TZ3000_ji4araar",
       "_TZ3000_kqvb5akv",
       "_TZ3000_l9brjwau",
@@ -4267,12 +4276,15 @@
       "TS0011",
       "TS0012"
     ],
-    "manufacturer_count": 29,
+    "manufacturer_count": 30,
     "model_count": 8,
     "capabilities": [
       "onoff",
       "onoff.gang2",
-      "measure_battery"
+      "measure_battery",
+      "measure_power",
+      "measure_voltage",
+      "measure_current"
     ],
     "power_source": "battery",
     "clusters": []
@@ -4331,6 +4343,7 @@
     "manufacturers": [
       "_TZ3000_kqvb5akv",
       "_TZ3000_4fjiwweb",
+      "_TZ3000_h1ipgkwn",
       "_TZ3000_ji4araar",
       "_TZ3000_o005nuxx",
       "_TZ3000_qzjcsmar",
@@ -4362,11 +4375,14 @@
       "TS0011",
       "TS0012"
     ],
-    "manufacturer_count": 22,
+    "manufacturer_count": 23,
     "model_count": 8,
     "capabilities": [
       "onoff",
-      "onoff.button2"
+      "onoff.button2",
+      "measure_power",
+      "measure_voltage",
+      "measure_current"
     ],
     "power_source": "battery",
     "clusters": []
@@ -5304,19 +5320,22 @@
       "_TZ3000_gjnozsaz",
       "_TZ3000_8gs8h2e4",
       "_TZ3000_vzopcetz",
-      "_TZ3000_g5xawfcq"
+      "_TZ3000_g5xawfcq",
+      "_TZ3000_h1ipgkwn"
     ],
     "models": [
       "TS011F"
     ],
-    "manufacturer_count": 6,
+    "manufacturer_count": 7,
     "model_count": 1,
     "capabilities": [
       "onoff",
       "onoff.usb2",
-      "led_mode",
+      "measure_power",
+      "meter_power",
       "measure_voltage",
-      "measure_current"
+      "measure_current",
+      "led_mode"
     ],
     "power_source": "ac",
     "clusters": []
