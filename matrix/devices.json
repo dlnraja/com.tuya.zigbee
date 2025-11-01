@@ -2432,7 +2432,10 @@
     "model_count": 4,
     "capabilities": [
       "onoff",
-      "dim"
+      "dim",
+      "measure_current",
+      "measure_voltage",
+      "meter_power"
     ],
     "power_source": "battery",
     "clusters": []
@@ -2610,7 +2613,10 @@
     "model_count": 3,
     "capabilities": [
       "onoff",
-      "alarm_contact"
+      "alarm_contact",
+      "measure_current",
+      "measure_voltage",
+      "meter_power"
     ],
     "power_source": "battery",
     "clusters": []
@@ -2642,7 +2648,10 @@
     "manufacturer_count": 13,
     "model_count": 3,
     "capabilities": [
-      "onoff"
+      "onoff",
+      "measure_current",
+      "measure_voltage",
+      "meter_power"
     ],
     "power_source": "battery",
     "clusters": []
@@ -2752,7 +2761,10 @@
     "model_count": 3,
     "capabilities": [
       "alarm_generic",
-      "onoff"
+      "onoff",
+      "measure_current",
+      "measure_voltage",
+      "meter_power"
     ],
     "power_source": "battery",
     "clusters": []
@@ -5154,7 +5166,8 @@
       "alarm_motion",
       "measure_temperature",
       "measure_battery",
-      "alarm_contact"
+      "alarm_contact",
+      "alarm_temperature"
     ],
     "power_source": "battery",
     "clusters": []
@@ -5190,7 +5203,8 @@
       "alarm_motion",
       "measure_temperature",
       "measure_battery",
-      "alarm_contact"
+      "alarm_contact",
+      "alarm_temperature"
     ],
     "power_source": "battery",
     "clusters": []
@@ -5274,7 +5288,8 @@
       "measure_temperature",
       "measure_humidity",
       "measure_battery",
-      "alarm_generic"
+      "alarm_generic",
+      "alarm_temperature"
     ],
     "power_source": "battery",
     "clusters": []
