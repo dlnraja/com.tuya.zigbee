@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 const SwitchDevice = require('../../lib/SwitchDevice');
 
@@ -11,6 +11,9 @@ class SmartSwitch4gangDevice extends SwitchDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('SmartSwitch4gangDevice initializing...');
+
+      // CRITICAL: Set gang count BEFORE parent init
+      this.gangCount = 4;
     
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit({ zclNode }).catch(err => this.error(err));

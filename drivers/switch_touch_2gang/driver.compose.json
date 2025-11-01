@@ -1,4 +1,4 @@
-{
+﻿{
   "name": {
     "en": "Touch Switch 2gang",
     "fr": "Touch Switch 2gang"
@@ -6,7 +6,7 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "onoff.button2",
+    "onoff.gang2",
     "measure_power",
     "measure_voltage",
     "measure_current"
@@ -333,7 +333,7 @@
         "fr": "Gang 1"
       }
     },
-    "onoff.button2": {
+    "onoff.gang2": {
       "title": {
         "en": "Gang 2",
         "fr": "Gang 2"
