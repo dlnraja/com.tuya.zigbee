@@ -6,7 +6,10 @@
   "class": "sensor",
   "capabilities": [
     "alarm_generic",
-    "onoff"
+    "onoff",
+    "measure_current",
+    "measure_voltage",
+    "meter_power"
   ],
   "energy": {
     "batteries": [
