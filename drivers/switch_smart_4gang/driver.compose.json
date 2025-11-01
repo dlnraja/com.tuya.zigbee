@@ -1,4 +1,4 @@
-{
+﻿{
   "name": {
     "en": "Smart Switch 4gang",
     "fr": "Smart Switch 4gang"
@@ -6,9 +6,9 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "onoff.button2",
-    "onoff.button3",
-    "onoff.button4",
+    "onoff.gang2",
+    "onoff.gang3",
+    "onoff.gang4",
     "dim"
   ],
   "energy": {
@@ -355,19 +355,19 @@
         "fr": "Gang 1"
       }
     },
-    "onoff.button2": {
+    "onoff.gang2": {
       "title": {
         "en": "Gang 2",
         "fr": "Gang 2"
       }
     },
-    "onoff.button3": {
+    "onoff.gang3": {
       "title": {
         "en": "Gang 3",
         "fr": "Gang 3"
       }
     },
-    "onoff.button4": {
+    "onoff.gang4": {
       "title": {
         "en": "Gang 4",
         "fr": "Gang 4"

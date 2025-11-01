@@ -29,7 +29,7 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
       await this.setupIASZone();
 
       // Setup sensor capabilities (SDK3)
-      await this.setupLuminanceSensor();
+      await this.registerLuminanceCapability();
       
       // Safe set available
       if (typeof this._safeResolveAvailable === 'function') {
@@ -44,53 +44,6 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
       if (typeof this._safeRejectAvailable === 'function') {
         this._safeRejectAvailable(err);
       }
-    }
-  }
-
-  
-  /**
-   * Setup measure_luminance capability (SDK3)
-   * Cluster 1024 - measuredValue
-   */
-  async setupLuminanceSensor() {
-    if (!this.hasCapability('measure_luminance')) {
-      return;
-    }
-    
-    this.log('[TEMP]  Setting up measure_luminance (cluster 1024)...');
-    
-    const endpoint = this.zclNode.endpoints[1];
-    if (!endpoint?.clusters[1024]) {
-      this.log('[WARN]  Cluster 1024 not available');
-      return;
-    }
-    
-    try {
-      // SDK3: Direct cluster listener for illuminance
-      const illuminanceMeasurementCluster = endpoint.clusters[1024];
-      
-      illuminanceMeasurementCluster.on('attr.measuredValue', value => {
-        const lux = Math.pow(10, (value - 1) / 10000);
-        this.setCapabilityValue('measure_luminance', lux).catch(this.error);
-        this.log(`[ILLUMINANCE] Updated: ${lux} lux`);
-      });
-
-      // Configure reporting
-      try {
-        await illuminanceMeasurementCluster.configureReporting({
-          measuredValue: {
-            minInterval: 60,
-            maxInterval: 3600,
-            minChange: 100
-          }
-        });
-      } catch (err) {
-        this.log('[WARN] Illuminance reporting config failed:', err.message);
-      }
-      
-      this.log('[OK] measure_luminance configured (cluster 1024)');
-    } catch (err) {
-      this.error('measure_luminance setup failed:', err);
     }
   }
 

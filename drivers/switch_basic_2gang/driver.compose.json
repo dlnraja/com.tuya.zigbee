@@ -6,7 +6,7 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "onoff.button2"
+    "onoff.gang2"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -15,7 +15,7 @@
         "fr": "Gang 1"
       }
     },
-    "onoff.button2": {
+    "onoff.gang2": {
       "title": {
         "en": "Gang 2",
         "fr": "Gang 2"
