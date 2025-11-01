@@ -19,6 +19,9 @@ class Switch2gangDevice extends SwitchDevice {
 
       this.log('Switch2gangDevice initializing...');
       
+      // CRITICAL: Set gang count BEFORE parent init
+      this.gangCount = 2;
+      
       // Initialize base FIRST (auto power detection + dynamic capabilities)
       await super.onNodeInit({ zclNode }).catch(err => this.error(err));
       
@@ -54,24 +57,9 @@ class Switch2gangDevice extends SwitchDevice {
     try {
       this.log('[POWER] Setting up multi-endpoint control...');
       
-      // Gang 2 (endpoint 2) - Gang 1 already configured by parent SwitchDevice
-      if (this.hasCapability('onoff.button2')) {
-        // Manual listener for Gang 2 since registerCapability fails with multi-endpoint
-        const endpoint2 = this.zclNode.endpoints[2];
-        if (endpoint2?.clusters?.onOff) {
-          // Listen for state changes
-          endpoint2.clusters.onOff.on('attr.onOff', async (value) => {
-            this.log('[POWER] Gang 2 state changed:', value);
-            await this.setCapabilityValue('onoff.button2', value).catch(this.error);
-          });
-          
-          // Control capability
-          this.registerCapabilityListener('onoff.button2', async (value) => {
-            this.log('[POWER] Setting Gang 2 to:', value);
-            await endpoint2.clusters.onOff[value ? 'setOn' : 'setOff']();
-          });
-        }
-      }
+      // Gang 2 handled by parent SwitchDevice.setupSwitchControl()
+      // No need for manual setup here - parent handles all gangs automatically
+      this.log('[POWER] Gang 2 configured by parent SwitchDevice');
       
       // Energy monitoring (if available on endpoint 1)
       const endpoint1 = this.zclNode.endpoints[1];
