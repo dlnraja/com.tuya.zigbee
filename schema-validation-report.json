@@ -1,0 +1,45 @@
+{
+  "timestamp": "2025-11-01T11:31:55.991Z",
+  "total": 172,
+  "valid": 163,
+  "invalid": 9,
+  "health_score": 95,
+  "errors": [
+    {
+      "driver": "curtain_motor",
+      "error": "Invalid JSON: Unexpected token ''', ...\"d\",\n      '_TZE200_n\"... is not valid JSON"
+    },
+    {
+      "driver": "wall_touch_1gang",
+      "error": "Missing required fields: id"
+    },
+    {
+      "driver": "wall_touch_2gang",
+      "error": "Missing required fields: id"
+    },
+    {
+      "driver": "wall_touch_3gang",
+      "error": "Missing required fields: id"
+    },
+    {
+      "driver": "wall_touch_4gang",
+      "error": "Missing required fields: id"
+    },
+    {
+      "driver": "wall_touch_5gang",
+      "error": "Missing required fields: id"
+    },
+    {
+      "driver": "wall_touch_6gang",
+      "error": "Missing required fields: id"
+    },
+    {
+      "driver": "wall_touch_7gang",
+      "error": "Missing required fields: id"
+    },
+    {
+      "driver": "wall_touch_8gang",
+      "error": "Missing required fields: id"
+    }
+  ]
+}
