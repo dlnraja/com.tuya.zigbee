@@ -1,4 +1,4 @@
-{
+﻿{
   "name": {
     "en": "Wireless Switch 6gang",
     "fr": "Wireless Switch 6gang"
@@ -6,11 +6,11 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "onoff.button2",
-    "onoff.button3",
-    "onoff.button4",
-    "onoff.button5",
-    "onoff.button6",
+    "onoff.gang2",
+    "onoff.gang3",
+    "onoff.gang4",
+    "onoff.gang5",
+    "onoff.gang6",
     "dim"
   ],
   "energy": {
@@ -378,31 +378,31 @@
         "fr": "Gang 1"
       }
     },
-    "onoff.button2": {
+    "onoff.gang2": {
       "title": {
         "en": "Gang 2",
         "fr": "Gang 2"
       }
     },
-    "onoff.button3": {
+    "onoff.gang3": {
       "title": {
         "en": "Gang 3",
         "fr": "Gang 3"
       }
     },
-    "onoff.button4": {
+    "onoff.gang4": {
       "title": {
         "en": "Gang 4",
         "fr": "Gang 4"
       }
     },
-    "onoff.button5": {
+    "onoff.gang5": {
       "title": {
         "en": "Gang 5",
         "fr": "Gang 5"
       }
     },
-    "onoff.button6": {
+    "onoff.gang6": {
       "title": {
         "en": "Gang 6",
         "fr": "Gang 6"

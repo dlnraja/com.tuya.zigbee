@@ -1,4 +1,4 @@
-{
+﻿{
   "name": {
     "en": "Wireless Switch 2gang",
     "fr": "Wireless Switch 2gang"
@@ -6,7 +6,7 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "onoff.button2"
+    "onoff.gang2"
   ],
   "energy": {
     "batteries": [
@@ -325,7 +325,7 @@
         "fr": "Gang 1"
       }
     },
-    "onoff.button2": {
+    "onoff.gang2": {
       "title": {
         "en": "Gang 2",
         "fr": "Gang 2"
