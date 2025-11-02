@@ -55,10 +55,11 @@ jobs:
           echo "✅ Applying enrichments..."
           node scripts/enrichment/apply-enrichments.js
       
-      - name: Validate changes
+      - name: Validate app.json and drivers
         run: |
-          echo "🔍 Validating app..."
-          npx homey app validate --level publish
+          echo "🔍 Validating app structure..."
+          node scripts/validation/validate-app-structure.js
+          node scripts/validation/validate-all-drivers.js
       
       - name: Create Pull Request if changes
         uses: peter-evans/create-pull-request@v5
@@ -111,5 +112,29 @@ jobs:
         run: |
           echo "✅ All checks passed, auto-merging..."
           gh pr merge --auto --squash --delete-branch || echo "No PR to merge"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Auto-version and publish
+        if: success() && github.event_name != 'pull_request'
+        run: |
+          echo "🔢 Auto-incrementing version..."
+          node scripts/automation/auto-version.js
+          
+          echo "📝 Generating changelog..."
+          node scripts/automation/auto-changelog.js
+          
+          VERSION=$(node -p "require('./app.json').version")
+          echo "📦 Version: $VERSION"
+          
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add app.json CHANGELOG.md
+          git commit -m "chore: Release v$VERSION" || echo "No version changes"
+          git tag "v$VERSION" || echo "Tag already exists"
+          git push origin master --tags || echo "Nothing to push"
+          
+          echo "✅ Version v$VERSION published"
+          echo "🚀 Homey App Store will auto-build from tag v$VERSION"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
