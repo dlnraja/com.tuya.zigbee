@@ -136,6 +136,16 @@ jest.config.js
 Thumbs.db
 validation_output.txt
 
+# AI-generated files (not needed at runtime)
+reports/ai-consensus/
+reports/batch-runs/
+reports/optimization/
+TEST_*.md
+
+# Cache files
+.cache/
+*.cache
+
 # Test Files
 test/
 tests/
