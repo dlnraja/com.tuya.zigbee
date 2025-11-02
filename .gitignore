@@ -84,6 +84,41 @@ archive_old/
 temp_*.bat
 temp_*.js
 
+# AI-generated temporary files
+reports/ai-consensus/consensus-*.md
+!reports/ai-consensus/LATEST_CONSENSUS.md
+reports/batch-runs/batch-run-*.md
+!reports/batch-runs/LATEST_BATCH_RUN.md
+
+# Old metrics (keep only last 30)
+reports/analytics/metrics-*.json
+!reports/analytics/metrics.json
+
+# Test artifacts
+TEST_*.md
+!TEST_PR.md
+coverage/
+.nyc_output/
+
+# Cache files
+.cache/
+*.cache
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# CRITICAL EXCEPTIONS (NEVER DELETE)
+# These files are required for Homey validation:
+!README.txt
+!readme.txt
+!README.TXT
+# Keep all README files
+!README.md
+!*/README.md
+!*/readme.txt
+
 # Large project status files (DÉSACTIVÉ - on commit tout)
 # docs/project-status/PROJECT_STRUCTURE.md
 # docs/project-status/*_LARGE*.md
