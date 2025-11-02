@@ -1,0 +1,236 @@
+name: Forum Auto Responder
+
+on:
+  schedule:
+    # Check every 12 hours
+    - cron: '0 */12 * * *'
+  workflow_dispatch:
+
+permissions:
+  discussions: write
+  issues: write
+
+jobs:
+  respond-to-community:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Check Homey Community Forum
+        id: forum_check
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // This would integrate with Homey Community API
+            // For now, we'll use GitHub Discussions as proxy
+            
+            console.log('🔍 Checking for community mentions...');
+            
+            // Check GitHub discussions
+            const { data: discussions } = await github.rest.search.issuesAndPullRequests({
+              q: 'repo:dlnraja/com.tuya.zigbee type:issue is:open label:question',
+              sort: 'created',
+              order: 'desc',
+              per_page: 10
+            });
+            
+            console.log(`Found ${discussions.total_count} questions`);
+            
+            return discussions.total_count;
+      
+      - name: Auto-respond to common questions
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // Common questions and responses
+            const responses = {
+              'device not working': {
+                title: '🔧 Device Not Working - Troubleshooting Guide',
+                body: `Thank you for reaching out!
+
+            ## Quick Troubleshooting Steps:
+
+            ### 1. Check App Version
+            - Make sure you're on the latest version
+            - Current stable: Check [releases](https://github.com/dlnraja/com.tuya.zigbee/releases)
+
+            ### 2. Device Pairing
+            - Reset the device (consult device manual)
+            - Enable pairing mode in Homey
+            - Bring device close to Homey during pairing
+
+            ### 3. Check Device Support
+            - Find your device manufacturer ID in Homey developer tools
+            - Check if it's in our [supported devices list](https://github.com/dlnraja/com.tuya.zigbee#supported-devices)
+
+            ### 4. Logs
+            If still not working, please provide:
+            - Device brand and model
+            - Manufacturer ID (\`_TZ....\`)
+            - Homey app logs
+            - Pairing logs
+
+            ## Resources:
+            - [Full Documentation](https://github.com/dlnraja/com.tuya.zigbee)
+            - [Common Issues](https://github.com/dlnraja/com.tuya.zigbee/issues?q=is%3Aissue+label%3Afaq)
+            - [Community Forum](https://community.homey.app/)
+
+            ---
+
+            *This is an automated response. A maintainer will review your specific case soon!*`
+              },
+              
+              'how to add device': {
+                title: '📝 How to Add a New Device',
+                body: `Great question! Here's how to add device support:
+
+            ## For Users:
+
+            ### Option 1: Open an Issue
+            1. Go to [Issues](https://github.com/dlnraja/com.tuya.zigbee/issues/new)
+            2. Provide:
+               - Device brand and model
+               - Manufacturer ID (\`_TZ....\`)
+               - Product ID (e.g., \`TS0001\`)
+               - Device capabilities (switch, dimmer, sensor, etc.)
+
+            ### Option 2: Submit a PR (Advanced)
+            1. Fork this repository
+            2. Find similar driver in \`drivers/\` folder
+            3. Add your manufacturer ID to \`driver.compose.json\`:
+               \`\`\`json
+               "manufacturerName": [
+                 "_TZ3000_existing",
+                 "_TZ3000_your_new_id"
+               ]
+               \`\`\`
+            4. Test locally
+            5. Submit Pull Request
+
+            ## For Developers:
+
+            Check our [Contributing Guide](https://github.com/dlnraja/com.tuya.zigbee/blob/master/CONTRIBUTING.md)
+
+            ## Automated Process:
+
+            This app has **auto-enrichment**! New devices from:
+            - Zigbee2MQTT database
+            - ZHA integration
+            - Community contributions
+
+            are automatically added weekly!
+
+            ---
+
+            *Automated response - Questions? Comment below!*`
+              },
+              
+              'battery not updating': {
+                title: '🔋 Battery Reporting Issue - Solution',
+                body: `Battery reporting issue - common problem with a solution!
+
+            ## Quick Fixes:
+
+            ### 1. Enable Battery Reporting (in app settings)
+            - Open device settings in Homey app
+            - Enable "Battery Reporting"
+            - Wait 24-48 hours for first report
+
+            ### 2. Check Report Interval
+            - Default: 24 hours
+            - Some devices: only when battery low
+            - Increase interval if needed
+
+            ### 3. Battery Threshold
+            - Set "Low Battery Threshold" (default 20%)
+            - Device will report when below threshold
+
+            ### 4. Device-Specific
+            Some devices only report battery:
+            - On wake-up events
+            - When battery critically low
+            - Every 7-14 days (manufacturer setting)
+
+            ## Advanced Settings:
+
+            \`\`\`
+            Battery Report Interval: 24 hours (default)
+            Low Battery Threshold: 20% (default)
+            Apply Battery Fix: Enable for problematic devices
+            \`\`\`
+
+            ## Still Not Working?
+
+            Provide:
+            - Device model
+            - Current app version
+            - Last battery report date
+            - App logs
+
+            ---
+
+            *This is an automated response based on common battery issues.*`
+              }
+            };
+            
+            // Search for issues matching patterns
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'question',
+              per_page: 20
+            });
+            
+            for (const issue of issues) {
+              const title = issue.title.toLowerCase();
+              const body = (issue.body || '').toLowerCase();
+              const text = title + ' ' + body;
+              
+              // Check if already responded
+              const { data: comments } = await github.rest.issues.listComments({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number
+              });
+              
+              const hasAutoResponse = comments.some(c => 
+                c.body.includes('*This is an automated response')
+              );
+              
+              if (hasAutoResponse) continue;
+              
+              // Match against patterns
+              for (const [pattern, response] of Object.entries(responses)) {
+                if (text.includes(pattern)) {
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    body: response.body
+                  });
+                  
+                  await github.rest.issues.addLabels({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    labels: ['auto-responded', 'needs-review']
+                  });
+                  
+                  console.log(`✅ Auto-responded to #${issue.number}`);
+                  break;
+                }
+              }
+            }
+      
+      - name: Update FAQ
+        run: |
+          echo "📝 Updating FAQ based on common questions..."
+          # This could generate an updated FAQ.md file
