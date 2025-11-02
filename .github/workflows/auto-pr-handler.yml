@@ -6,8 +6,8 @@ on:
   issues:
     types: [opened, reopened]
   schedule:
-    # Check every 6 hours
-    - cron: '0 */6 * * *'
+    # Check every 3 hours (Phase 3 optimization)
+    - cron: '0 */3 * * *'
   workflow_dispatch:
 
 permissions:
