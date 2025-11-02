@@ -114,6 +114,37 @@ const initial = await tempCluster.readAttributes(['measuredValue']);
 **Impact**: ✅ `homey app validate --level publish` now passes
 
 
+### 5. BSEED 2-Gang Firmware Bug 🆕
+**Problem**: BSEED _TZ3000_l9brjwau has firmware bug where both gangs switch together
+
+**Root Cause**:
+- Hardware-level endpoint grouping in firmware
+- When controlling Gang 1, Gang 2 also switches
+- When controlling Gang 2, Gang 1 also switches
+- Confirmed via extensive diagnostic logs from Loïc Salmona
+
+**Fix Applied**:
+- Created dedicated driver `switch_wall_2gang_bseed`
+- Implements intelligent state tracking workaround
+- Automatically corrects opposite gang after each command
+- Configurable sync delay to prevent firmware conflicts
+- Clear warning in pairing instructions
+
+**Workaround Strategy**:
+```javascript
+1. Track desired states for both gangs
+2. Send primary gang command
+3. Wait for firmware to settle (500ms default)
+4. Check if opposite gang was affected
+5. Send correction command if needed
+6. Update capabilities to reflect true states
+```
+
+**Impact**: ✅ BSEED users can now control both gangs independently
+
+**Contributor**: Loïc Salmona (extensive testing + diagnostic logs)
+
+
 ---
 
 ## 📊 VALIDATION RESULTS
@@ -157,6 +188,23 @@ All sensors now read initial values on startup:
 
 ---
 
+## 🎁 COMMUNITY CONTRIBUTIONS
+
+### PR #46 - MOES AM25 Tubular Motor
+**Status**: ✅ ALREADY MERGED
+- Contributor: vl14-dev
+- Device: _TZE200_nv6nxo0c / TS0601
+- Note: Manufacturer ID was already present in curtain_motor driver (line 31)
+- Impact: No action needed, device already supported
+
+### BSEED Firmware Bug Report
+**Contributor**: Loïc Salmona
+- Device: _TZ3000_l9brjwau / TS0002
+- Contribution: Extensive diagnostic logs exposing firmware bug
+- Impact: New dedicated driver with workaround created
+- Special Thanks: For patience during multiple testing iterations!
+
+
 ## 📝 FILES MODIFIED
 
 ### Core Libraries
@@ -179,9 +227,15 @@ All sensors now read initial values on startup:
 - `drivers/presence_sensor_radar/device.js`
 - `drivers/climate_sensor_soil/device.js` (uses SDK3 methods)
 
+### New Driver (BSEED)
+- `drivers/switch_wall_2gang_bseed/driver.compose.json` - BSEED-specific config
+- `drivers/switch_wall_2gang_bseed/device.js` - Firmware bug workaround
+- `drivers/switch_wall_2gang_bseed/pair/select_driver.html` - Warning instructions
+
 ### Project Root
 - `readme.txt` - Created for validation
 - `app.json` - Version bump to 4.9.258
+- `CONTRIBUTORS.md` - Created with all contributors + acknowledgments
 
 ---
 
@@ -193,10 +247,12 @@ All sensors now read initial values on startup:
 | 2-Gang Switches | ❌ 1 gang only | ✅ All gangs | All multi-gang switches (2-6 gang) |
 | Sensor Data | ❌ No data | ✅ Real-time | Climate, soil, presence, motion sensors |
 | Validation | ❌ Failed | ✅ Passed | App publishing |
+| BSEED Firmware Bug | ❌ Both gangs switch | ✅ Workaround | _TZ3000_l9brjwau |
 
-**Total Drivers Fixed**: 20+  
+**Total Drivers Fixed**: 23+ (including new BSEED driver)  
 **Total Users Impacted**: All users with affected devices  
-**Breaking Changes**: None (backward compatible)
+**Breaking Changes**: None (backward compatible)  
+**New Drivers**: 1 (BSEED 2-gang with workaround)
 
 ---
 
@@ -266,8 +322,13 @@ If issues persist after update:
 ## 👨‍💻 CONTRIBUTORS
 
 **Primary Developer**: Dylan Rajasekaram  
+**Bug Discovery**: Loïc Salmona (BSEED firmware bug + extensive testing)  
+**PR Contributions**: vl14-dev (MOES AM25 support)  
+**Community Support**: LIUOI, Peter van Werkhoven, Jocke Svensson  
 **Testing**: Community testers  
 **Issue Reports**: Users on Homey Community Forum
+
+See **CONTRIBUTORS.md** for complete acknowledgments.
 
 ---
 
