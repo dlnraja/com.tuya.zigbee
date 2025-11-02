@@ -3335,7 +3335,7 @@
     "model_count": 2,
     "capabilities": [
       "onoff",
-      "onoff.button2"
+      "onoff.gang2"
     ],
     "power_source": "ac",
     "clusters": []
@@ -3421,49 +3421,6 @@
     "capabilities": [
       "onoff",
       "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
-    "driver_id": "switch_generic_3gang",
-    "name": "Smart Switch 3gang",
-    "class": "socket",
-    "manufacturers": [
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011"
-    ],
-    "manufacturer_count": 19,
-    "model_count": 6,
-    "capabilities": [
-      "onoff",
-      "onoff.button2",
-      "onoff.button3"
     ],
     "power_source": "battery",
     "clusters": []
@@ -3801,94 +3758,6 @@
     "clusters": []
   },
   {
-    "driver_id": "switch_smart_3gang",
-    "name": "Smart Switch 3gang",
-    "class": "socket",
-    "manufacturers": [
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011"
-    ],
-    "manufacturer_count": 19,
-    "model_count": 6,
-    "capabilities": [
-      "onoff",
-      "onoff.button2",
-      "onoff.button3"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
-    "driver_id": "switch_smart_4gang",
-    "name": "Smart Switch 4gang",
-    "class": "socket",
-    "manufacturers": [
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011"
-    ],
-    "manufacturer_count": 19,
-    "model_count": 6,
-    "capabilities": [
-      "onoff",
-      "onoff.button2",
-      "onoff.button3",
-      "onoff.button4",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
     "driver_id": "switch_touch_1gang",
     "name": "1-Gang Touch Switch",
     "class": "socket",
@@ -3967,55 +3836,6 @@
     "capabilities": [
       "onoff",
       "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
-    "driver_id": "switch_touch_2gang",
-    "name": "Touch Switch 2gang",
-    "class": "socket",
-    "manufacturers": [
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_h1ipgkwn",
-      "_TZ3000_ji4araar",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_qmi1cfuq",
-      "_TZ3000_18ejxno0",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011"
-    ],
-    "manufacturer_count": 22,
-    "model_count": 7,
-    "capabilities": [
-      "onoff",
-      "onoff.button2",
-      "measure_power",
-      "measure_voltage",
-      "measure_current"
     ],
     "power_source": "battery",
     "clusters": []
@@ -4102,51 +3922,6 @@
       "onoff",
       "onoff.button2",
       "onoff.button3"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
-    "driver_id": "switch_touch_4gang",
-    "name": "Touch Switch 4gang",
-    "class": "socket",
-    "manufacturers": [
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011"
-    ],
-    "manufacturer_count": 19,
-    "model_count": 6,
-    "capabilities": [
-      "onoff",
-      "onoff.button2",
-      "onoff.button3",
-      "onoff.button4",
-      "dim"
     ],
     "power_source": "battery",
     "clusters": []
@@ -4302,99 +4077,20 @@
     "clusters": []
   },
   {
-    "driver_id": "switch_wall_2gang_basic",
-    "name": "Wall Switch 2gang",
+    "driver_id": "switch_wall_2gang_bseed",
+    "name": "Wall Switch 2 Gang (BSEED)",
     "class": "socket",
     "manufacturers": [
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "lumi.ctrl_ln2",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_qmi1cfuq",
-      "_TZ3000_18ejxno0",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
+      "_TZ3000_l9brjwau"
     ],
     "models": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011",
-      "TS0012"
+      "TS0002"
     ],
-    "manufacturer_count": 22,
-    "model_count": 8,
+    "manufacturer_count": 1,
+    "model_count": 1,
     "capabilities": [
       "onoff",
-      "onoff.button2"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
-    "driver_id": "switch_wall_2gang_smart",
-    "name": "Smart Switch 2gang",
-    "class": "socket",
-    "manufacturers": [
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_h1ipgkwn",
-      "_TZ3000_ji4araar",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "lumi.ctrl_ln2",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_qmi1cfuq",
-      "_TZ3000_18ejxno0",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011",
-      "TS0012"
-    ],
-    "manufacturer_count": 23,
-    "model_count": 8,
-    "capabilities": [
-      "onoff",
-      "onoff.button2",
-      "measure_power",
-      "measure_voltage",
-      "measure_current"
+      "onoff.gang2"
     ],
     "power_source": "battery",
     "clusters": []
@@ -4939,44 +4635,6 @@
     "clusters": []
   },
   {
-    "driver_id": "switch_wireless_2gang",
-    "name": "Wireless Switch 2gang",
-    "class": "socket",
-    "manufacturers": [
-      "_TZ3000_a7ouggvs",
-      "_TZ3000_adkvzooy",
-      "_TZ3000_b3mgfu0d",
-      "_TZ3000_bi6lpsew",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_vp6clf9d",
-      "_TZ3000_xabckq1v",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea"
-    ],
-    "models": [
-      "TS0001",
-      "TS0011",
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044"
-    ],
-    "manufacturer_count": 15,
-    "model_count": 6,
-    "capabilities": [
-      "onoff",
-      "onoff.button2"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
     "driver_id": "switch_wireless_4button_alt",
     "name": "4-Button Remote STYRBAR (OTHER)",
     "class": "button",
@@ -5018,45 +4676,6 @@
     "clusters": []
   },
   {
-    "driver_id": "switch_wireless_4gang",
-    "name": "Wireless Switch 4gang",
-    "class": "socket",
-    "manufacturers": [
-      "_TZ3000_a7ouggvs",
-      "_TZ3000_adkvzooy",
-      "_TZ3000_bi6lpsew",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_vp6clf9d",
-      "_TZ3000_xabckq1v",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea"
-    ],
-    "models": [
-      "TS0001",
-      "TS0011",
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044"
-    ],
-    "manufacturer_count": 14,
-    "model_count": 6,
-    "capabilities": [
-      "onoff",
-      "onoff.button2",
-      "onoff.button3",
-      "onoff.button4"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
     "driver_id": "switch_wireless_5button",
     "name": "Wireless Switch 5button",
     "class": "socket",
@@ -5088,48 +4707,6 @@
     "model_count": 6,
     "capabilities": [
       "onoff",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
-    "driver_id": "switch_wireless_6gang",
-    "name": "Wireless Switch 6gang",
-    "class": "socket",
-    "manufacturers": [
-      "_TZ3000_a7ouggvs",
-      "_TZ3000_adkvzooy",
-      "_TZ3000_bi6lpsew",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_vp6clf9d",
-      "_TZ3000_xabckq1v",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea"
-    ],
-    "models": [
-      "TS0001",
-      "TS0011",
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044"
-    ],
-    "manufacturer_count": 14,
-    "model_count": 6,
-    "capabilities": [
-      "onoff",
-      "onoff.button2",
-      "onoff.button3",
-      "onoff.button4",
-      "onoff.button5",
-      "onoff.button6",
       "dim"
     ],
     "power_source": "battery",
