@@ -1,0 +1,219 @@
+name: Metrics Collector & Analytics
+
+on:
+  pull_request:
+    types: [opened, closed]
+  issues:
+    types: [opened, closed]
+  schedule:
+    # Daily at 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: read
+  issues: read
+
+jobs:
+  collect-metrics:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Collect GitHub Metrics
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            
+            // Date ranges
+            const now = new Date();
+            const oneWeekAgo = new Date(now - 7 * 24 * 60 * 60 * 1000);
+            const oneMonthAgo = new Date(now - 30 * 24 * 60 * 60 * 1000);
+            
+            // Collect PRs
+            const { data: allPRs } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'all',
+              per_page: 100
+            });
+            
+            const weekPRs = allPRs.filter(pr => new Date(pr.created_at) >= oneWeekAgo);
+            const monthPRs = allPRs.filter(pr => new Date(pr.created_at) >= oneMonthAgo);
+            
+            const autoMergedPRs = allPRs.filter(pr => 
+              pr.merged_at && 
+              pr.labels.some(l => l.name === 'automated' || l.name === 'auto-merged')
+            );
+            
+            const deviceSupportPRs = allPRs.filter(pr =>
+              pr.labels.some(l => l.name === 'device-support')
+            );
+            
+            // Collect Issues
+            const { data: allIssues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'all',
+              per_page: 100
+            });
+            
+            const weekIssues = allIssues.filter(issue => 
+              !issue.pull_request && new Date(issue.created_at) >= oneWeekAgo
+            );
+            const monthIssues = allIssues.filter(issue => 
+              !issue.pull_request && new Date(issue.created_at) >= oneMonthAgo
+            );
+            
+            const autoRespondedIssues = allIssues.filter(issue =>
+              !issue.pull_request &&
+              issue.labels.some(l => l.name === 'auto-responded')
+            );
+            
+            // Metrics object
+            const metrics = {
+              date: now.toISOString(),
+              period: {
+                week: {
+                  prs: {
+                    total: weekPRs.length,
+                    merged: weekPRs.filter(pr => pr.merged_at).length,
+                    autoMerged: autoMergedPRs.filter(pr => 
+                      new Date(pr.created_at) >= oneWeekAgo
+                    ).length,
+                    deviceSupport: deviceSupportPRs.filter(pr =>
+                      new Date(pr.created_at) >= oneWeekAgo
+                    ).length
+                  },
+                  issues: {
+                    total: weekIssues.length,
+                    closed: weekIssues.filter(i => i.state === 'closed').length,
+                    autoResponded: autoRespondedIssues.filter(i =>
+                      new Date(i.created_at) >= oneWeekAgo
+                    ).length
+                  }
+                },
+                month: {
+                  prs: {
+                    total: monthPRs.length,
+                    merged: monthPRs.filter(pr => pr.merged_at).length,
+                    autoMerged: autoMergedPRs.filter(pr =>
+                      new Date(pr.created_at) >= oneMonthAgo
+                    ).length,
+                    deviceSupport: deviceSupportPRs.filter(pr =>
+                      new Date(pr.created_at) >= oneMonthAgo
+                    ).length
+                  },
+                  issues: {
+                    total: monthIssues.length,
+                    closed: monthIssues.filter(i => i.state === 'closed').length,
+                    autoResponded: autoRespondedIssues.filter(i =>
+                      new Date(i.created_at) >= oneMonthAgo
+                    ).length
+                  }
+                },
+                allTime: {
+                  prs: {
+                    total: allPRs.length,
+                    merged: allPRs.filter(pr => pr.merged_at).length,
+                    autoMerged: autoMergedPRs.length,
+                    deviceSupport: deviceSupportPRs.length
+                  },
+                  issues: {
+                    total: allIssues.filter(i => !i.pull_request).length,
+                    closed: allIssues.filter(i => !i.pull_request && i.state === 'closed').length,
+                    autoResponded: autoRespondedIssues.length
+                  }
+                }
+              },
+              rates: {
+                week: {
+                  prAutoMergeRate: weekPRs.length > 0 
+                    ? ((autoMergedPRs.filter(pr => new Date(pr.created_at) >= oneWeekAgo).length / weekPRs.length) * 100).toFixed(1)
+                    : 0,
+                  issueAutoRespondRate: weekIssues.length > 0
+                    ? ((autoRespondedIssues.filter(i => new Date(i.created_at) >= oneWeekAgo).length / weekIssues.length) * 100).toFixed(1)
+                    : 0
+                },
+                month: {
+                  prAutoMergeRate: monthPRs.length > 0
+                    ? ((autoMergedPRs.filter(pr => new Date(pr.created_at) >= oneMonthAgo).length / monthPRs.length) * 100).toFixed(1)
+                    : 0,
+                  issueAutoRespondRate: monthIssues.length > 0
+                    ? ((autoRespondedIssues.filter(i => new Date(i.created_at) >= oneMonthAgo).length / monthIssues.length) * 100).toFixed(1)
+                    : 0
+                }
+              }
+            };
+            
+            console.log('📊 METRICS COLLECTED');
+            console.log(JSON.stringify(metrics, null, 2));
+            
+            // Save to outputs
+            core.setOutput('metrics', JSON.stringify(metrics));
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Count Devices Added
+        id: devices
+        run: |
+          echo "🔍 Counting devices added..."
+          node scripts/monitoring/count-devices.js
+      
+      - name: Generate Metrics Report
+        run: |
+          echo "📄 Generating metrics report..."
+          node scripts/monitoring/generate-metrics-report.js
+      
+      - name: Update Metrics Dashboard
+        run: |
+          echo "📊 Updating metrics dashboard..."
+          node scripts/monitoring/update-dashboard.js
+      
+      - name: Commit Metrics
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add reports/metrics/
+          git diff --staged --quiet || git commit -m "chore: Update metrics $(date +%Y-%m-%d)"
+          git push || echo "No changes to push"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Create Metrics Summary Comment
+        if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const metrics = JSON.parse('${{ steps.collect.outputs.metrics }}');
+            
+            const summary = `## 📊 Automation Metrics Update
+            
+            **This Week:**
+            - PRs Auto-Merged: ${metrics.period.week.prs.autoMerged}/${metrics.period.week.prs.total} (${metrics.rates.week.prAutoMergeRate}%)
+            - Issues Auto-Responded: ${metrics.period.week.issues.autoResponded}/${metrics.period.week.issues.total} (${metrics.rates.week.issueAutoRespondRate}%)
+            
+            **This Month:**
+            - PRs Auto-Merged: ${metrics.period.month.prs.autoMerged}/${metrics.period.month.prs.total} (${metrics.rates.month.prAutoMergeRate}%)
+            - Issues Auto-Responded: ${metrics.period.month.issues.autoResponded}/${metrics.period.month.issues.total} (${metrics.rates.month.issueAutoRespondRate}%)
+            
+            ---
+            *Updated: ${new Date().toLocaleString()}*`;
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              body: summary
+            });

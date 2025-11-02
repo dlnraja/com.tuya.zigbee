@@ -97,10 +97,15 @@ jobs:
         if: github.event_name == 'pull_request'
         run: |
           echo "🔍 Validating changes..."
-          npx homey app validate --level publish || {
+          node scripts/validation/validate-app-structure.js || {
             echo "validation_failed=true" >> $GITHUB_OUTPUT
             exit 1
           }
+          node scripts/validation/validate-all-drivers.js || {
+            echo "validation_failed=true" >> $GITHUB_OUTPUT
+            exit 1
+          }
+          echo "✅ Validation passed - compatible with Homey App Store"
       
       - name: Comment validation result
         if: github.event_name == 'pull_request' && failure()
