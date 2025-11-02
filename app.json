@@ -8965,7 +8965,7 @@
         "titleFormatted": "Turned off"
       },
       {
-        "id": "switch_hybrid_1gang_smart_switch_1gang_hybrid_turned_on",
+        "id": "switch_1gang_smart_switch_1gang_hybrid_turned_on",
         "title": {
           "en": "Turned on",
           "fr": "Allumé"
@@ -8974,13 +8974,13 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_1gang"
+            "filter": "driver_id=switch_1gang"
           }
         ],
         "titleFormatted": "Turned on"
       },
       {
-        "id": "switch_hybrid_1gang_smart_switch_1gang_hybrid_turned_off",
+        "id": "switch_1gang_smart_switch_1gang_hybrid_turned_off",
         "title": {
           "en": "Turned off",
           "fr": "Éteint"
@@ -8989,13 +8989,13 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_1gang"
+            "filter": "driver_id=switch_1gang"
           }
         ],
         "titleFormatted": "Turned off"
       },
       {
-        "id": "switch_hybrid_1gang_smart_switch_1gang_hybrid_dim_changed",
+        "id": "switch_1gang_smart_switch_1gang_hybrid_dim_changed",
         "title": {
           "en": "Brightness changed",
           "fr": "Luminosité changée"
@@ -9015,13 +9015,13 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_1gang"
+            "filter": "driver_id=switch_1gang"
           }
         ],
         "titleFormatted": "Brightness changed"
       },
       {
-        "id": "switch_hybrid_2gang_smart_switch_2gang_hybrid_turned_on",
+        "id": "switch_2gang_smart_switch_2gang_hybrid_turned_on",
         "title": {
           "en": "Turned on",
           "fr": "Allumé"
@@ -9030,13 +9030,13 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_2gang"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": "Turned on"
       },
       {
-        "id": "switch_hybrid_2gang_smart_switch_2gang_hybrid_turned_off",
+        "id": "switch_2gang_smart_switch_2gang_hybrid_turned_off",
         "title": {
           "en": "Turned off",
           "fr": "Éteint"
@@ -9045,13 +9045,13 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_2gang"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": "Turned off"
       },
       {
-        "id": "switch_hybrid_2gang_alt_switch_2gang_hybrid_turned_on",
+        "id": "switch_2gang_alt_switch_2gang_hybrid_turned_on",
         "title": {
           "en": "Turned on",
           "fr": "Allumé"
@@ -9060,13 +9060,13 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_2gang_alt"
+            "filter": "driver_id=switch_2gang_alt"
           }
         ],
         "titleFormatted": "Turned on"
       },
       {
-        "id": "switch_hybrid_2gang_alt_switch_2gang_hybrid_turned_off",
+        "id": "switch_2gang_alt_switch_2gang_hybrid_turned_off",
         "title": {
           "en": "Turned off",
           "fr": "Éteint"
@@ -9075,13 +9075,13 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_2gang_alt"
+            "filter": "driver_id=switch_2gang_alt"
           }
         ],
         "titleFormatted": "Turned off"
       },
       {
-        "id": "switch_hybrid_3gang_smart_switch_3gang_hybrid_turned_on",
+        "id": "switch_3gang_smart_switch_3gang_hybrid_turned_on",
         "title": {
           "en": "Turned on",
           "fr": "Allumé"
@@ -9090,13 +9090,13 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_3gang"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": "Turned on"
       },
       {
-        "id": "switch_hybrid_3gang_smart_switch_3gang_hybrid_turned_off",
+        "id": "switch_3gang_smart_switch_3gang_hybrid_turned_off",
         "title": {
           "en": "Turned off",
           "fr": "Éteint"
@@ -9105,13 +9105,13 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_3gang"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": "Turned off"
       },
       {
-        "id": "switch_hybrid_4gang_smart_switch_4gang_hybrid_turned_on",
+        "id": "switch_4gang_smart_switch_4gang_hybrid_turned_on",
         "title": {
           "en": "Turned on",
           "fr": "Allumé"
@@ -9120,13 +9120,13 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_4gang"
+            "filter": "driver_id=switch_4gang"
           }
         ],
         "titleFormatted": "Turned on"
       },
       {
-        "id": "switch_hybrid_4gang_smart_switch_4gang_hybrid_turned_off",
+        "id": "switch_4gang_smart_switch_4gang_hybrid_turned_off",
         "title": {
           "en": "Turned off",
           "fr": "Éteint"
@@ -9135,13 +9135,13 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_4gang"
+            "filter": "driver_id=switch_4gang"
           }
         ],
         "titleFormatted": "Turned off"
       },
       {
-        "id": "switch_hybrid_4gang_smart_switch_4gang_hybrid_dim_changed",
+        "id": "switch_4gang_smart_switch_4gang_hybrid_dim_changed",
         "title": {
           "en": "Brightness changed",
           "fr": "Luminosité changée"
@@ -9161,7 +9161,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_4gang"
+            "filter": "driver_id=switch_4gang"
           }
         ],
         "titleFormatted": "Brightness changed"
@@ -11975,7 +11975,7 @@
         "titleFormatted": "Battery level changed"
       },
       {
-        "id": "water_valve_smart_hybrid_turned_on",
+        "id": "water_valve_controller_turned_on",
         "title": {
           "en": "Turned on",
           "fr": "Allumé"
@@ -11984,13 +11984,13 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=water_valve_smart_hybrid"
+            "filter": "driver_id=water_valve_controller"
           }
         ],
         "titleFormatted": "Turned on"
       },
       {
-        "id": "water_valve_smart_hybrid_turned_off",
+        "id": "water_valve_controller_turned_off",
         "title": {
           "en": "Turned off",
           "fr": "Éteint"
@@ -11999,13 +11999,13 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=water_valve_smart_hybrid"
+            "filter": "driver_id=water_valve_controller"
           }
         ],
         "titleFormatted": "Turned off"
       },
       {
-        "id": "water_valve_smart_hybrid_alarm_water_true",
+        "id": "water_valve_controller_alarm_water_true",
         "title": {
           "en": "Water leak detected",
           "fr": "Fuite d'eau détectée"
@@ -12014,13 +12014,13 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=water_valve_smart_hybrid"
+            "filter": "driver_id=water_valve_controller"
           }
         ],
         "titleFormatted": "Water leak detected"
       },
       {
-        "id": "water_valve_smart_hybrid_alarm_water_false",
+        "id": "water_valve_controller_alarm_water_false",
         "title": {
           "en": "No water leak",
           "fr": "Aucune fuite d'eau"
@@ -12029,13 +12029,13 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=water_valve_smart_hybrid"
+            "filter": "driver_id=water_valve_controller"
           }
         ],
         "titleFormatted": "No water leak"
       },
       {
-        "id": "water_valve_smart_hybrid_measure_temperature_changed",
+        "id": "water_valve_controller_measure_temperature_changed",
         "title": {
           "en": "Temperature changed",
           "fr": "Température changée"
@@ -12055,13 +12055,13 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=water_valve_smart_hybrid"
+            "filter": "driver_id=water_valve_controller"
           }
         ],
         "titleFormatted": "Temperature changed"
       },
       {
-        "id": "water_valve_smart_hybrid_measure_battery_changed",
+        "id": "water_valve_controller_measure_battery_changed",
         "title": {
           "en": "Battery level changed",
           "fr": "Niveau batterie changé"
@@ -12081,7 +12081,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=water_valve_smart_hybrid"
+            "filter": "driver_id=water_valve_controller"
           }
         ],
         "titleFormatted": "Battery level changed"
@@ -21637,7 +21637,7 @@
         "titleFormatted": "Button pressed [[button]] [[action]]"
       },
       {
-        "id": "switch_hybrid_1gang_button_pressed",
+        "id": "switch_1gang_button_pressed",
         "title": {
           "en": "Button pressed",
           "fr": "Bouton appuyé"
@@ -21666,7 +21666,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_1gang"
+            "filter": "driver_id=switch_1gang"
           },
           {
             "name": "button",
@@ -21720,7 +21720,7 @@
         "titleFormatted": "Button pressed [[button]] [[action]]"
       },
       {
-        "id": "switch_hybrid_1gang_battery_low",
+        "id": "switch_1gang_battery_low",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible"
@@ -21748,12 +21748,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_1gang"
+            "filter": "driver_id=switch_1gang"
           }
         ]
       },
       {
-        "id": "switch_hybrid_1gang_battery_critical",
+        "id": "switch_1gang_battery_critical",
         "title": {
           "en": "Battery critical",
           "fr": "Batterie critique"
@@ -21781,12 +21781,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_1gang"
+            "filter": "driver_id=switch_1gang"
           }
         ]
       },
       {
-        "id": "switch_hybrid_2gang_2gang_button_pressed",
+        "id": "switch_2gang_2gang_button_pressed",
         "title": {
           "en": "Button pressed",
           "fr": "Bouton appuyé"
@@ -21815,163 +21815,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_2gang_2gang"
-          },
-          {
-            "name": "button",
-            "type": "dropdown",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "values": [
-              {
-                "id": "1",
-                "title": {
-                  "en": "Button 1",
-                  "fr": "Bouton 1"
-                }
-              },
-              {
-                "id": "2",
-                "title": {
-                  "en": "Button 2",
-                  "fr": "Bouton 2"
-                }
-              }
-            ]
-          },
-          {
-            "name": "action",
-            "type": "dropdown",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "values": [
-              {
-                "id": "single",
-                "title": {
-                  "en": "Single press",
-                  "fr": "Appui simple"
-                }
-              },
-              {
-                "id": "double",
-                "title": {
-                  "en": "Double press",
-                  "fr": "Double appui"
-                }
-              },
-              {
-                "id": "long",
-                "title": {
-                  "en": "Long press",
-                  "fr": "Appui long"
-                }
-              }
-            ]
-          }
-        ],
-        "titleFormatted": "Button pressed [[button]] [[action]]"
-      },
-      {
-        "id": "switch_hybrid_2gang_battery_low",
-        "title": {
-          "en": "Battery low",
-          "fr": "Batterie faible"
-        },
-        "tokens": [
-          {
-            "name": "battery",
-            "type": "number",
-            "title": {
-              "en": "Battery (%)",
-              "fr": "Batterie (%)"
-            }
-          },
-          {
-            "name": "voltage",
-            "type": "number",
-            "title": {
-              "en": "Voltage (V)",
-              "fr": "Tension (V)"
-            }
-          }
-        ],
-        "titleFormatted": "Battery low",
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_hybrid_2gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_hybrid_2gang_battery_critical",
-        "title": {
-          "en": "Battery critical",
-          "fr": "Batterie critique"
-        },
-        "tokens": [
-          {
-            "name": "battery",
-            "type": "number",
-            "title": {
-              "en": "Battery (%)",
-              "fr": "Batterie (%)"
-            }
-          },
-          {
-            "name": "voltage",
-            "type": "number",
-            "title": {
-              "en": "Voltage (V)",
-              "fr": "Tension (V)"
-            }
-          }
-        ],
-        "titleFormatted": "Battery critical",
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_hybrid_2gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_hybrid_2gang_alt_2gang_button_pressed",
-        "title": {
-          "en": "Button pressed",
-          "fr": "Bouton appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "1"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "single"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_hybrid_2gang_alt_2gang"
+            "filter": "driver_id=switch_2gang_2gang"
           },
           {
             "name": "button",
@@ -22032,7 +21876,7 @@
         "titleFormatted": "Button pressed [[button]] [[action]]"
       },
       {
-        "id": "switch_hybrid_2gang_alt_battery_low",
+        "id": "switch_2gang_battery_low",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible"
@@ -22060,12 +21904,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_2gang_alt"
+            "filter": "driver_id=switch_2gang"
           }
         ]
       },
       {
-        "id": "switch_hybrid_2gang_alt_battery_critical",
+        "id": "switch_2gang_battery_critical",
         "title": {
           "en": "Battery critical",
           "fr": "Batterie critique"
@@ -22093,12 +21937,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_2gang_alt"
+            "filter": "driver_id=switch_2gang"
           }
         ]
       },
       {
-        "id": "switch_hybrid_3gang_3gang_button_pressed",
+        "id": "switch_2gang_alt_2gang_button_pressed",
         "title": {
           "en": "Button pressed",
           "fr": "Bouton appuyé"
@@ -22127,7 +21971,163 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_3gang_3gang"
+            "filter": "driver_id=switch_2gang_alt_2gang"
+          },
+          {
+            "name": "button",
+            "type": "dropdown",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "values": [
+              {
+                "id": "1",
+                "title": {
+                  "en": "Button 1",
+                  "fr": "Bouton 1"
+                }
+              },
+              {
+                "id": "2",
+                "title": {
+                  "en": "Button 2",
+                  "fr": "Bouton 2"
+                }
+              }
+            ]
+          },
+          {
+            "name": "action",
+            "type": "dropdown",
+            "title": {
+              "en": "Action",
+              "fr": "Action"
+            },
+            "values": [
+              {
+                "id": "single",
+                "title": {
+                  "en": "Single press",
+                  "fr": "Appui simple"
+                }
+              },
+              {
+                "id": "double",
+                "title": {
+                  "en": "Double press",
+                  "fr": "Double appui"
+                }
+              },
+              {
+                "id": "long",
+                "title": {
+                  "en": "Long press",
+                  "fr": "Appui long"
+                }
+              }
+            ]
+          }
+        ],
+        "titleFormatted": "Button pressed [[button]] [[action]]"
+      },
+      {
+        "id": "switch_2gang_alt_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible"
+        },
+        "tokens": [
+          {
+            "name": "battery",
+            "type": "number",
+            "title": {
+              "en": "Battery (%)",
+              "fr": "Batterie (%)"
+            }
+          },
+          {
+            "name": "voltage",
+            "type": "number",
+            "title": {
+              "en": "Voltage (V)",
+              "fr": "Tension (V)"
+            }
+          }
+        ],
+        "titleFormatted": "Battery low",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_2gang_alt"
+          }
+        ]
+      },
+      {
+        "id": "switch_2gang_alt_battery_critical",
+        "title": {
+          "en": "Battery critical",
+          "fr": "Batterie critique"
+        },
+        "tokens": [
+          {
+            "name": "battery",
+            "type": "number",
+            "title": {
+              "en": "Battery (%)",
+              "fr": "Batterie (%)"
+            }
+          },
+          {
+            "name": "voltage",
+            "type": "number",
+            "title": {
+              "en": "Voltage (V)",
+              "fr": "Tension (V)"
+            }
+          }
+        ],
+        "titleFormatted": "Battery critical",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_2gang_alt"
+          }
+        ]
+      },
+      {
+        "id": "switch_3gang_3gang_button_pressed",
+        "title": {
+          "en": "Button pressed",
+          "fr": "Bouton appuyé"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": "1"
+          },
+          {
+            "name": "action",
+            "type": "string",
+            "title": {
+              "en": "Action",
+              "fr": "Action"
+            },
+            "example": "single"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_3gang_3gang"
           },
           {
             "name": "button",
@@ -22195,7 +22195,7 @@
         "titleFormatted": "Button pressed [[button]] [[action]]"
       },
       {
-        "id": "switch_hybrid_3gang_battery_low",
+        "id": "switch_3gang_battery_low",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible"
@@ -22223,12 +22223,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_3gang"
+            "filter": "driver_id=switch_3gang"
           }
         ]
       },
       {
-        "id": "switch_hybrid_3gang_battery_critical",
+        "id": "switch_3gang_battery_critical",
         "title": {
           "en": "Battery critical",
           "fr": "Batterie critique"
@@ -22256,12 +22256,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_3gang"
+            "filter": "driver_id=switch_3gang"
           }
         ]
       },
       {
-        "id": "switch_hybrid_4gang_4gang_button_pressed",
+        "id": "switch_4gang_4gang_button_pressed",
         "title": {
           "en": "Button pressed",
           "fr": "Bouton appuyé"
@@ -22290,7 +22290,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_4gang_4gang"
+            "filter": "driver_id=switch_4gang_4gang"
           },
           {
             "name": "button",
@@ -22365,7 +22365,7 @@
         "titleFormatted": "Button pressed [[button]] [[action]]"
       },
       {
-        "id": "switch_hybrid_4gang_battery_low",
+        "id": "switch_4gang_battery_low",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible"
@@ -22393,12 +22393,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_4gang"
+            "filter": "driver_id=switch_4gang"
           }
         ]
       },
       {
-        "id": "switch_hybrid_4gang_battery_critical",
+        "id": "switch_4gang_battery_critical",
         "title": {
           "en": "Battery critical",
           "fr": "Batterie critique"
@@ -22426,7 +22426,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_4gang"
+            "filter": "driver_id=switch_4gang"
           }
         ]
       },
@@ -28593,7 +28593,7 @@
         ]
       },
       {
-        "id": "water_valve_smart_hybrid_battery_low",
+        "id": "water_valve_controller_battery_low",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible"
@@ -28621,12 +28621,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=water_valve_smart_hybrid"
+            "filter": "driver_id=water_valve_controller"
           }
         ]
       },
       {
-        "id": "water_valve_smart_hybrid_battery_critical",
+        "id": "water_valve_controller_battery_critical",
         "title": {
           "en": "Battery critical",
           "fr": "Batterie critique"
@@ -28654,12 +28654,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=water_valve_smart_hybrid"
+            "filter": "driver_id=water_valve_controller"
           }
         ]
       },
       {
-        "id": "water_valve_smart_hybrid_temperature_changed",
+        "id": "water_valve_controller_temperature_changed",
         "title": {
           "en": "Temperature changed",
           "fr": "Température changée"
@@ -28695,7 +28695,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=water_valve_smart_hybrid"
+            "filter": "driver_id=water_valve_controller"
           }
         ]
       }
@@ -29563,7 +29563,7 @@
         ]
       },
       {
-        "id": "switch_hybrid_1gang_smart_switch_1gang_hybrid_is_on",
+        "id": "switch_1gang_smart_switch_1gang_hybrid_is_on",
         "title": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
@@ -29576,12 +29576,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_1gang"
+            "filter": "driver_id=switch_1gang"
           }
         ]
       },
       {
-        "id": "switch_hybrid_2gang_smart_switch_2gang_hybrid_is_on",
+        "id": "switch_2gang_smart_switch_2gang_hybrid_is_on",
         "title": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
@@ -29594,12 +29594,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_2gang"
+            "filter": "driver_id=switch_2gang"
           }
         ]
       },
       {
-        "id": "switch_hybrid_2gang_alt_switch_2gang_hybrid_is_on",
+        "id": "switch_2gang_alt_switch_2gang_hybrid_is_on",
         "title": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
@@ -29612,12 +29612,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_2gang_alt"
+            "filter": "driver_id=switch_2gang_alt"
           }
         ]
       },
       {
-        "id": "switch_hybrid_3gang_smart_switch_3gang_hybrid_is_on",
+        "id": "switch_3gang_smart_switch_3gang_hybrid_is_on",
         "title": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
@@ -29630,12 +29630,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_3gang"
+            "filter": "driver_id=switch_3gang"
           }
         ]
       },
       {
-        "id": "switch_hybrid_4gang_smart_switch_4gang_hybrid_is_on",
+        "id": "switch_4gang_smart_switch_4gang_hybrid_is_on",
         "title": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
@@ -29648,7 +29648,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_4gang"
+            "filter": "driver_id=switch_4gang"
           }
         ]
       },
@@ -30364,7 +30364,7 @@
         ]
       },
       {
-        "id": "water_valve_smart_hybrid_is_on",
+        "id": "water_valve_controller_is_on",
         "title": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
@@ -30377,7 +30377,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=water_valve_smart_hybrid"
+            "filter": "driver_id=water_valve_controller"
           }
         ]
       }
@@ -32937,7 +32937,7 @@
         ]
       },
       {
-        "id": "switch_hybrid_1gang_smart_switch_1gang_hybrid_turn_on",
+        "id": "switch_1gang_smart_switch_1gang_hybrid_turn_on",
         "title": {
           "en": "Turn on",
           "fr": "Allumer"
@@ -32946,12 +32946,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_1gang"
+            "filter": "driver_id=switch_1gang"
           }
         ]
       },
       {
-        "id": "switch_hybrid_1gang_smart_switch_1gang_hybrid_turn_off",
+        "id": "switch_1gang_smart_switch_1gang_hybrid_turn_off",
         "title": {
           "en": "Turn off",
           "fr": "Éteindre"
@@ -32960,12 +32960,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_1gang"
+            "filter": "driver_id=switch_1gang"
           }
         ]
       },
       {
-        "id": "switch_hybrid_1gang_smart_switch_1gang_hybrid_toggle",
+        "id": "switch_1gang_smart_switch_1gang_hybrid_toggle",
         "title": {
           "en": "Toggle on or off",
           "fr": "Basculer"
@@ -32974,12 +32974,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_1gang"
+            "filter": "driver_id=switch_1gang"
           }
         ]
       },
       {
-        "id": "switch_hybrid_1gang_smart_switch_1gang_hybrid_set_dim",
+        "id": "switch_1gang_smart_switch_1gang_hybrid_set_dim",
         "title": {
           "en": "Set brightness to...",
           "fr": "Régler la luminosité à..."
@@ -32988,7 +32988,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_1gang"
+            "filter": "driver_id=switch_1gang"
           },
           {
             "name": "brightness",
@@ -33010,7 +33010,7 @@
         }
       },
       {
-        "id": "switch_hybrid_2gang_smart_switch_2gang_hybrid_turn_on",
+        "id": "switch_2gang_smart_switch_2gang_hybrid_turn_on",
         "title": {
           "en": "Turn on",
           "fr": "Allumer"
@@ -33019,12 +33019,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_2gang"
+            "filter": "driver_id=switch_2gang"
           }
         ]
       },
       {
-        "id": "switch_hybrid_2gang_smart_switch_2gang_hybrid_turn_off",
+        "id": "switch_2gang_smart_switch_2gang_hybrid_turn_off",
         "title": {
           "en": "Turn off",
           "fr": "Éteindre"
@@ -33033,12 +33033,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_2gang"
+            "filter": "driver_id=switch_2gang"
           }
         ]
       },
       {
-        "id": "switch_hybrid_2gang_smart_switch_2gang_hybrid_toggle",
+        "id": "switch_2gang_smart_switch_2gang_hybrid_toggle",
         "title": {
           "en": "Toggle on or off",
           "fr": "Basculer"
@@ -33047,12 +33047,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_2gang"
+            "filter": "driver_id=switch_2gang"
           }
         ]
       },
       {
-        "id": "switch_hybrid_2gang_alt_switch_2gang_hybrid_turn_on",
+        "id": "switch_2gang_alt_switch_2gang_hybrid_turn_on",
         "title": {
           "en": "Turn on",
           "fr": "Allumer"
@@ -33061,12 +33061,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_2gang_alt"
+            "filter": "driver_id=switch_2gang_alt"
           }
         ]
       },
       {
-        "id": "switch_hybrid_2gang_alt_switch_2gang_hybrid_turn_off",
+        "id": "switch_2gang_alt_switch_2gang_hybrid_turn_off",
         "title": {
           "en": "Turn off",
           "fr": "Éteindre"
@@ -33075,12 +33075,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_2gang_alt"
+            "filter": "driver_id=switch_2gang_alt"
           }
         ]
       },
       {
-        "id": "switch_hybrid_2gang_alt_switch_2gang_hybrid_toggle",
+        "id": "switch_2gang_alt_switch_2gang_hybrid_toggle",
         "title": {
           "en": "Toggle on or off",
           "fr": "Basculer"
@@ -33089,12 +33089,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_2gang_alt"
+            "filter": "driver_id=switch_2gang_alt"
           }
         ]
       },
       {
-        "id": "switch_hybrid_3gang_smart_switch_3gang_hybrid_turn_on",
+        "id": "switch_3gang_smart_switch_3gang_hybrid_turn_on",
         "title": {
           "en": "Turn on",
           "fr": "Allumer"
@@ -33103,12 +33103,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_3gang"
+            "filter": "driver_id=switch_3gang"
           }
         ]
       },
       {
-        "id": "switch_hybrid_3gang_smart_switch_3gang_hybrid_turn_off",
+        "id": "switch_3gang_smart_switch_3gang_hybrid_turn_off",
         "title": {
           "en": "Turn off",
           "fr": "Éteindre"
@@ -33117,12 +33117,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_3gang"
+            "filter": "driver_id=switch_3gang"
           }
         ]
       },
       {
-        "id": "switch_hybrid_3gang_smart_switch_3gang_hybrid_toggle",
+        "id": "switch_3gang_smart_switch_3gang_hybrid_toggle",
         "title": {
           "en": "Toggle on or off",
           "fr": "Basculer"
@@ -33131,12 +33131,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_3gang"
+            "filter": "driver_id=switch_3gang"
           }
         ]
       },
       {
-        "id": "switch_hybrid_4gang_smart_switch_4gang_hybrid_turn_on",
+        "id": "switch_4gang_smart_switch_4gang_hybrid_turn_on",
         "title": {
           "en": "Turn on",
           "fr": "Allumer"
@@ -33145,12 +33145,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_4gang"
+            "filter": "driver_id=switch_4gang"
           }
         ]
       },
       {
-        "id": "switch_hybrid_4gang_smart_switch_4gang_hybrid_turn_off",
+        "id": "switch_4gang_smart_switch_4gang_hybrid_turn_off",
         "title": {
           "en": "Turn off",
           "fr": "Éteindre"
@@ -33159,12 +33159,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_4gang"
+            "filter": "driver_id=switch_4gang"
           }
         ]
       },
       {
-        "id": "switch_hybrid_4gang_smart_switch_4gang_hybrid_toggle",
+        "id": "switch_4gang_smart_switch_4gang_hybrid_toggle",
         "title": {
           "en": "Toggle on or off",
           "fr": "Basculer"
@@ -33173,12 +33173,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_4gang"
+            "filter": "driver_id=switch_4gang"
           }
         ]
       },
       {
-        "id": "switch_hybrid_4gang_smart_switch_4gang_hybrid_set_dim",
+        "id": "switch_4gang_smart_switch_4gang_hybrid_set_dim",
         "title": {
           "en": "Set brightness to...",
           "fr": "Régler la luminosité à..."
@@ -33187,7 +33187,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_hybrid_4gang"
+            "filter": "driver_id=switch_4gang"
           },
           {
             "name": "brightness",
@@ -35405,7 +35405,7 @@
         ]
       },
       {
-        "id": "water_valve_smart_hybrid_turn_on",
+        "id": "water_valve_controller_turn_on",
         "title": {
           "en": "Turn on",
           "fr": "Allumer"
@@ -35414,12 +35414,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=water_valve_smart_hybrid"
+            "filter": "driver_id=water_valve_controller"
           }
         ]
       },
       {
-        "id": "water_valve_smart_hybrid_turn_off",
+        "id": "water_valve_controller_turn_off",
         "title": {
           "en": "Turn off",
           "fr": "Éteindre"
@@ -35428,12 +35428,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=water_valve_smart_hybrid"
+            "filter": "driver_id=water_valve_controller"
           }
         ]
       },
       {
-        "id": "water_valve_smart_hybrid_toggle",
+        "id": "water_valve_controller_toggle",
         "title": {
           "en": "Toggle on or off",
           "fr": "Basculer"
@@ -35442,7 +35442,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=water_valve_smart_hybrid"
+            "filter": "driver_id=water_valve_controller"
           }
         ]
       }
@@ -71588,7 +71588,7 @@
       ]
     },
     {
-      "id": "switch_hybrid_1gang",
+      "id": "switch_1gang",
       "class": "socket",
       "capabilities": [
         "onoff",
@@ -71620,7 +71620,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/switch_hybrid_1gang/assets/learnmode.svg",
+          "image": "/drivers/switch_1gang/assets/learnmode.svg",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -71642,8 +71642,8 @@
         ]
       },
       "images": {
-        "small": "drivers/switch_hybrid_1gang/assets/images/small.png",
-        "large": "drivers/switch_hybrid_1gang/assets/images/large.png"
+        "small": "drivers/switch_1gang/assets/images/small.png",
+        "large": "drivers/switch_1gang/assets/images/large.png"
       },
       "settings": [
         {
@@ -71939,7 +71939,7 @@
       ]
     },
     {
-      "id": "switch_hybrid_2gang",
+      "id": "switch_2gang",
       "class": "socket",
       "capabilities": [
         "onoff",
@@ -71985,7 +71985,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/switch_hybrid_2gang/assets/learnmode.svg",
+          "image": "/drivers/switch_2gang/assets/learnmode.svg",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -72012,8 +72012,8 @@
         ]
       },
       "images": {
-        "small": "drivers/switch_hybrid_2gang/assets/images/small.png",
-        "large": "drivers/switch_hybrid_2gang/assets/images/large.png"
+        "small": "drivers/switch_2gang/assets/images/small.png",
+        "large": "drivers/switch_2gang/assets/images/large.png"
       },
       "settings": [
         {
@@ -72319,7 +72319,7 @@
       ]
     },
     {
-      "id": "switch_hybrid_2gang_alt",
+      "id": "switch_2gang_alt",
       "name": {
         "en": "2-Gang Switch (Hybrid)"
       },
@@ -72390,8 +72390,8 @@
         }
       },
       "images": {
-        "small": "drivers/switch_hybrid_2gang_alt/assets/images/small.png",
-        "large": "drivers/switch_hybrid_2gang_alt/assets/images/large.png"
+        "small": "drivers/switch_2gang_alt/assets/images/small.png",
+        "large": "drivers/switch_2gang_alt/assets/images/large.png"
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -72694,7 +72694,7 @@
       ]
     },
     {
-      "id": "switch_hybrid_3gang",
+      "id": "switch_3gang",
       "class": "socket",
       "capabilities": [
         "onoff",
@@ -72748,7 +72748,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/switch_hybrid_3gang/assets/learnmode.svg",
+          "image": "/drivers/switch_3gang/assets/learnmode.svg",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -72770,8 +72770,8 @@
         ]
       },
       "images": {
-        "small": "drivers/switch_hybrid_3gang/assets/images/small.png",
-        "large": "drivers/switch_hybrid_3gang/assets/images/large.png"
+        "small": "drivers/switch_3gang/assets/images/small.png",
+        "large": "drivers/switch_3gang/assets/images/large.png"
       },
       "settings": [
         {
@@ -73082,7 +73082,7 @@
       ]
     },
     {
-      "id": "switch_hybrid_4gang",
+      "id": "switch_4gang",
       "class": "socket",
       "capabilities": [
         "onoff",
@@ -73151,7 +73151,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/switch_hybrid_4gang/assets/learnmode.svg",
+          "image": "/drivers/switch_4gang/assets/learnmode.svg",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -73169,8 +73169,8 @@
         ]
       },
       "images": {
-        "small": "drivers/switch_hybrid_4gang/assets/images/small.png",
-        "large": "drivers/switch_hybrid_4gang/assets/images/large.png"
+        "small": "drivers/switch_4gang/assets/images/small.png",
+        "large": "drivers/switch_4gang/assets/images/large.png"
       },
       "settings": [
         {
@@ -90739,7 +90739,7 @@
       ]
     },
     {
-      "id": "water_valve_smart_hybrid",
+      "id": "water_valve_controller",
       "name": {
         "en": "Smart Water Valve Controller (Hybrid)"
       },
@@ -90790,8 +90790,8 @@
         ]
       },
       "images": {
-        "small": "drivers/water_valve_smart_hybrid/assets/images/small.png",
-        "large": "drivers/water_valve_smart_hybrid/assets/images/large.png"
+        "small": "drivers/water_valve_controller/assets/images/small.png",
+        "large": "drivers/water_valve_controller/assets/images/large.png"
       },
       "capabilitiesOptions": {
         "measure_temperature": {

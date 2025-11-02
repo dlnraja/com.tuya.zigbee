@@ -99,36 +99,36 @@
         {
           "id": "CR2032",
           "label": {
-            "en": "CR2032 (3V Button Cell)",
+            "en": "CR2032",
             "fr": "CR2032 (Pile Bouton 3V)"
           }
         },
         {
           "id": "CR2450",
           "label": {
-            "en": "CR2450 (3V Button Cell)",
+            "en": "CR2450",
             "fr": "CR2450 (Pile Bouton 3V)"
           }
         },
         {
           "id": "AAA",
           "label": {
-            "en": "AAA (1.5V)",
-            "fr": "AAA (1.5V)"
+            "en": "AAA",
+            "fr": "AAA"
           }
         },
         {
           "id": "AA",
           "label": {
-            "en": "AA (1.5V)",
-            "fr": "AA (1.5V)"
+            "en": "AA",
+            "fr": "AA"
           }
         },
         {
           "id": "CR123A",
           "label": {
-            "en": "CR123A (3V)",
-            "fr": "CR123A (3V)"
+            "en": "CR123A",
+            "fr": "CR123A"
           }
         }
       ],
@@ -141,7 +141,7 @@
       "id": "battery_low_threshold",
       "type": "number",
       "label": {
-        "en": "Low Battery Threshold (%)",
+        "en": "Low Battery Threshold",
         "fr": "Seuil Batterie Faible (%)"
       },
       "value": 20,
@@ -157,7 +157,7 @@
       "id": "battery_critical_threshold",
       "type": "number",
       "label": {
-        "en": "Critical Battery Threshold (%)",
+        "en": "Critical Battery Threshold",
         "fr": "Seuil Batterie Critique (%)"
       },
       "value": 10,
@@ -186,7 +186,7 @@
       "id": "battery_report_interval",
       "type": "number",
       "label": {
-        "en": "Battery Report Interval (hours)",
+        "en": "Battery Report Interval",
         "fr": "Intervalle Rapport Batterie (heures)"
       },
       "value": 24,
