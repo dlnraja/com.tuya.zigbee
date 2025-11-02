@@ -1200,6 +1200,35 @@
     "clusters": []
   },
   {
+    "driver_id": "curtain_motor",
+    "name": "Smart Curtain Motor (INTERNAL)",
+    "class": "windowcoverings",
+    "manufacturers": [
+      "_TZE200_5zbp6j0u",
+      "_TZE200_nogaemzt",
+      "_TZE200_xuzcvlku",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd",
+      "_TZE200_nv6nxo0c"
+    ],
+    "models": [
+      "TS0601",
+      "TS130F"
+    ],
+    "manufacturer_count": 7,
+    "model_count": 2,
+    "capabilities": [
+      "windowcoverings_state",
+      "windowcoverings_set",
+      "windowcoverings_tilt_set",
+      "measure_battery",
+      "dim"
+    ],
+    "power_source": "battery",
+    "clusters": []
+  },
+  {
     "driver_id": "curtain_motor_advanced",
     "name": "Curtain Motor",
     "class": "windowcoverings",
@@ -2906,7 +2935,7 @@
   },
   {
     "driver_id": "radiator_valve_smart",
-    "name": "Smart Radiator Valve (Hybrid)",
+    "name": "Smart Radiator Valve",
     "class": "thermostat",
     "manufacturers": [
       "_TZE200_b6wax7g0",
@@ -3261,6 +3290,208 @@
     "clusters": []
   },
   {
+    "driver_id": "switch_1gang",
+    "name": "1-Gang Smart Switch",
+    "class": "socket",
+    "manufacturers": [
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
+    ],
+    "models": [
+      "TS0001",
+      "TS0003",
+      "TS0004",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014"
+    ],
+    "manufacturer_count": 13,
+    "model_count": 7,
+    "capabilities": [
+      "onoff",
+      "dim",
+      "measure_battery"
+    ],
+    "power_source": "battery",
+    "clusters": []
+  },
+  {
+    "driver_id": "switch_2gang",
+    "name": "2-Gang Smart Switch",
+    "class": "socket",
+    "manufacturers": [
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_h1ipgkwn",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_4fjiwweb",
+      "_TZ3000_ji4araar",
+      "_TZ3000_qmi1cfuq",
+      "_TZ3000_18ejxno0",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
+    ],
+    "models": [
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014"
+    ],
+    "manufacturer_count": 18,
+    "model_count": 8,
+    "capabilities": [
+      "onoff",
+      "onoff.gang2",
+      "measure_battery",
+      "measure_power",
+      "measure_voltage",
+      "measure_current"
+    ],
+    "power_source": "battery",
+    "clusters": []
+  },
+  {
+    "driver_id": "switch_2gang_alt",
+    "name": "2-Gang Switch",
+    "class": "socket",
+    "manufacturers": [
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_4fjiwweb",
+      "_TZ3000_ji4araar",
+      "_TZ3000_qmi1cfuq",
+      "_TZ3000_18ejxno0",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
+    ],
+    "models": [
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014"
+    ],
+    "manufacturer_count": 17,
+    "model_count": 8,
+    "capabilities": [
+      "onoff",
+      "onoff.gang2",
+      "measure_battery"
+    ],
+    "power_source": "battery",
+    "clusters": []
+  },
+  {
+    "driver_id": "switch_3gang",
+    "name": "3-Gang Smart Switch",
+    "class": "socket",
+    "manufacturers": [
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_nnwehhst"
+    ],
+    "models": [
+      "TS0001",
+      "TS0003",
+      "TS0004",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014"
+    ],
+    "manufacturer_count": 13,
+    "model_count": 7,
+    "capabilities": [
+      "onoff",
+      "onoff.gang2",
+      "onoff.gang3",
+      "measure_battery"
+    ],
+    "power_source": "battery",
+    "clusters": []
+  },
+  {
+    "driver_id": "switch_4gang",
+    "name": "4-Gang Smart Switch",
+    "class": "socket",
+    "manufacturers": [
+      "_TZ3000_mdj7kra9",
+      "lumi.ctrl_ln1",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mx3vgyea"
+    ],
+    "models": [
+      "TS0001",
+      "TS0011"
+    ],
+    "manufacturer_count": 9,
+    "model_count": 2,
+    "capabilities": [
+      "onoff",
+      "onoff.button2",
+      "onoff.button3",
+      "onoff.button4",
+      "button.2",
+      "button.3",
+      "button.4",
+      "dim",
+      "measure_battery"
+    ],
+    "power_source": "battery",
+    "clusters": []
+  },
+  {
     "driver_id": "switch_basic_1gang",
     "name": "Switch 1gang",
     "class": "socket",
@@ -3421,208 +3652,6 @@
     "capabilities": [
       "onoff",
       "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
-    "driver_id": "switch_hybrid_1gang",
-    "name": "1-Gang Smart Switch (Hybrid)",
-    "class": "socket",
-    "manufacturers": [
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014"
-    ],
-    "manufacturer_count": 13,
-    "model_count": 7,
-    "capabilities": [
-      "onoff",
-      "dim",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
-    "driver_id": "switch_hybrid_2gang",
-    "name": "2-Gang Smart Switch (Hybrid)",
-    "class": "socket",
-    "manufacturers": [
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_h1ipgkwn",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_qmi1cfuq",
-      "_TZ3000_18ejxno0",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014"
-    ],
-    "manufacturer_count": 18,
-    "model_count": 8,
-    "capabilities": [
-      "onoff",
-      "onoff.gang2",
-      "measure_battery",
-      "measure_power",
-      "measure_voltage",
-      "measure_current"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
-    "driver_id": "switch_hybrid_2gang_alt",
-    "name": "2-Gang Switch (Hybrid)",
-    "class": "socket",
-    "manufacturers": [
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_qmi1cfuq",
-      "_TZ3000_18ejxno0",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014"
-    ],
-    "manufacturer_count": 17,
-    "model_count": 8,
-    "capabilities": [
-      "onoff",
-      "onoff.gang2",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
-    "driver_id": "switch_hybrid_3gang",
-    "name": "3-Gang Smart Switch (Hybrid)",
-    "class": "socket",
-    "manufacturers": [
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014"
-    ],
-    "manufacturer_count": 13,
-    "model_count": 7,
-    "capabilities": [
-      "onoff",
-      "onoff.gang2",
-      "onoff.gang3",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
-    "driver_id": "switch_hybrid_4gang",
-    "name": "4-Gang Smart Switch (Hybrid)",
-    "class": "socket",
-    "manufacturers": [
-      "_TZ3000_mdj7kra9",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea"
-    ],
-    "models": [
-      "TS0001",
-      "TS0011"
-    ],
-    "manufacturer_count": 9,
-    "model_count": 2,
-    "capabilities": [
-      "onoff",
-      "onoff.button2",
-      "onoff.button3",
-      "onoff.button4",
-      "button.2",
-      "button.3",
-      "button.4",
-      "dim",
-      "measure_battery"
     ],
     "power_source": "battery",
     "clusters": []
@@ -4815,7 +4844,7 @@
   },
   {
     "driver_id": "thermostat_smart",
-    "name": "Thermostat Basic (Hybrid) (CR2032/AAA)",
+    "name": "Thermostat Basic (CR2032/AAA)",
     "class": "thermostat",
     "manufacturers": [
       "_TZE200_cwbvmsar",
@@ -4841,7 +4870,7 @@
   },
   {
     "driver_id": "thermostat_temperature_control",
-    "name": "Temperature Controller (Hybrid) (CR2032/AAA)",
+    "name": "Temperature Controller (CR2032/AAA)",
     "class": "sensor",
     "manufacturers": [
       "_TZ3000_zl1kmjqx",
@@ -5100,7 +5129,7 @@
   },
   {
     "driver_id": "wall_touch_3gang",
-    "name": "Wall Touch Button 3 Gang (Hybrid)",
+    "name": "Wall Touch Button 3 Gang",
     "class": "socket",
     "manufacturers": [
       "_TZ3000_xabckq1v",
@@ -5392,6 +5421,39 @@
     "clusters": []
   },
   {
+    "driver_id": "water_valve_controller",
+    "name": "Smart Water Valve Controller",
+    "class": "sensor",
+    "manufacturers": [
+      "_TZ3000_k4ej3ww2",
+      "_TZ3000_kyb656no",
+      "_TZE200_htnnfasr",
+      "_TZE200_sh1btabb",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ww6drja5",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_akqdg6g7",
+      "_TZE200_cowvfni3",
+      "_TZE200_myd45weu",
+      "_TZE200_qoy0ekbd"
+    ],
+    "models": [
+      "TS0207",
+      "TS0601"
+    ],
+    "manufacturer_count": 11,
+    "model_count": 2,
+    "capabilities": [
+      "onoff",
+      "meter_water",
+      "alarm_water",
+      "measure_battery",
+      "measure_temperature"
+    ],
+    "power_source": "battery",
+    "clusters": []
+  },
+  {
     "driver_id": "water_valve_smart",
     "name": "Water Valve Smart",
     "class": "sensor",
@@ -5419,39 +5481,6 @@
       "measure_temperature",
       "alarm_water",
       "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
-    "driver_id": "water_valve_smart_hybrid",
-    "name": "Smart Water Valve Controller (Hybrid)",
-    "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_k4ej3ww2",
-      "_TZ3000_kyb656no",
-      "_TZE200_htnnfasr",
-      "_TZE200_sh1btabb",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0207",
-      "TS0601"
-    ],
-    "manufacturer_count": 11,
-    "model_count": 2,
-    "capabilities": [
-      "onoff",
-      "meter_water",
-      "alarm_water",
-      "measure_battery",
-      "measure_temperature"
     ],
     "power_source": "battery",
     "clusters": []

@@ -1,8 +1,8 @@
 # Device Matrix
 
-**Generated:** 2025-11-02T02:01:36.548Z
+**Generated:** 2025-11-02T03:22:59.568Z
 
-**Total Devices:** 162
+**Total Devices:** 163
 
 ## Devices by Class
 
@@ -11,13 +11,13 @@
 - **button:** 19 drivers
 - **light:** 17 drivers
 - **thermostat:** 5 drivers
-- **windowcoverings:** 2 drivers
+- **windowcoverings:** 3 drivers
 - **lock:** 2 drivers
 
 ## Statistics
 
-- Total Drivers: 162
-- Total Manufacturer IDs: 1921
-- Total Model IDs: 495
-- Battery Devices: 159
+- Total Drivers: 163
+- Total Manufacturer IDs: 1928
+- Total Model IDs: 497
+- Battery Devices: 160
 - AC Devices: 3
