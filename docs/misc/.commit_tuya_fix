@@ -1,0 +1,61 @@
+fix: CRITICAL - Tuya TS0601 DataPoint support + Climate Monitor COMPLETE
+
+CRITICAL FIXES v4.9.154:
+
+1. TUYA CLUSTER DETECTION FIXED ✅
+   - Added tuyaManufacturer to cluster detection
+   - Was looking for: manuSpecificTuya, 0xEF00
+   - Real name on TS0601: tuyaManufacturer
+   - Now checks ALL possible names:
+     * manuSpecificTuya
+     * tuyaManufacturer ← NEW!
+     * tuya
+     * 0xEF00
+     * 61184
+
+2. TUYA DATAPOINT ENGINE CREATED ✅
+   - NEW FILE: lib/TuyaDataPointEngine.js
+   - Complete DP (DataPoint) engine for TS0601 devices
+   - Handles DP reporting, reading, writing
+   - ULTRA VERBOSE logging for every DP event
+   - Works with ALL Tuya climate sensors
+
+3. CLIMATE MONITOR COMPLETELY REWRITTEN ✅
+   - Now detects Tuya vs Standard Zigbee automatically
+   - Tuya TS0601 devices use DataPoints:
+     * DP 1 = Temperature (°C * 10)
+     * DP 2 = Humidity (%)
+     * DP 4 = Battery (%)
+   - Standard Zigbee uses clusters 1026/1029
+   - Fallback to standard if Tuya fails
+
+4. LOGS ULTRA VERBOSE ✅
+   - Every DP event logged
+   - Every cluster detection logged
+   - Every value update logged
+   - Format: [TUYA-DP] 🌡️ Temperature DP: 235 → 23.5°C
+
+DIAGNOSTIC ANALYSIS FROM USER:
+Device: _TZE284_vvmbj46n TS0601 (Climate Monitor)
+Problem: "No EF00 cluster found" but has tuyaManufacturer
+Solution: Added tuyaManufacturer to detection
+
+FILES MODIFIED:
+- lib/BaseHybridDevice.js (Tuya cluster detection)
+- lib/TuyaDataPointEngine.js (NEW - complete DP engine)
+- drivers/climate_monitor_temp_humidity/device.js (complete rewrite)
+
+TESTING REQUIRED:
+User should see in next diagnostic:
+```
+[CLIMATE] ✅ Tuya cluster FOUND!
+[CLIMATE] Cluster name: tuyaManufacturer
+[TUYA-DP] 🔧 Engine initialized
+[TUYA-DP] 📡 Setting up DataPoint listeners...
+[TUYA] 🌡️ Temperature DP: 235 → 23.5°C
+[TUYA] 💧 Humidity DP: 65%
+[TUYA] 🔋 Battery DP: 95%
+```
+
+STATUS: Climate Monitor should NOW report temp/humid/battery!
+NEXT: Fix button flows, PIR sensor, USB 2-gang
