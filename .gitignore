@@ -35,6 +35,7 @@ homey-auth.*
 .DS_Store
 Thumbs.db
 .temp-repos/
+schema-validation-report.json
 
 # IDE
 .vscode/
