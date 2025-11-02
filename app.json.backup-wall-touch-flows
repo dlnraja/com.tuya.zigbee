@@ -28698,1854 +28698,6 @@
             "filter": "driver_id=water_valve_controller"
           }
         ]
-      },
-      {
-        "id": "wall_touch_1gang_button_1_pressed",
-        "title": {
-          "en": "Button 1 pressed",
-          "fr": "Bouton 1 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 1 pressed",
-          "fr": "Bouton 1 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 1 is pressed",
-          "fr": "Déclenché quand le bouton 1 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "1"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_1gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_1gang_button_pressed",
-        "title": {
-          "en": "Any button pressed",
-          "fr": "N'importe quel bouton appuyé"
-        },
-        "titleFormatted": {
-          "en": "Any button pressed",
-          "fr": "N'importe quel bouton appuyé"
-        },
-        "hint": {
-          "en": "Triggered when any button is pressed",
-          "fr": "Déclenché quand n'importe quel bouton est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "1"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_1gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_2gang_button_1_pressed",
-        "title": {
-          "en": "Button 1 pressed",
-          "fr": "Bouton 1 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 1 pressed",
-          "fr": "Bouton 1 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 1 is pressed",
-          "fr": "Déclenché quand le bouton 1 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "1"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_2gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_2gang_button_2_pressed",
-        "title": {
-          "en": "Button 2 pressed",
-          "fr": "Bouton 2 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 2 pressed",
-          "fr": "Bouton 2 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 2 is pressed",
-          "fr": "Déclenché quand le bouton 2 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "2"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_2gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_2gang_button_pressed",
-        "title": {
-          "en": "Any button pressed",
-          "fr": "N'importe quel bouton appuyé"
-        },
-        "titleFormatted": {
-          "en": "Any button pressed",
-          "fr": "N'importe quel bouton appuyé"
-        },
-        "hint": {
-          "en": "Triggered when any button is pressed",
-          "fr": "Déclenché quand n'importe quel bouton est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "1"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_2gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_3gang_button_1_pressed",
-        "title": {
-          "en": "Button 1 pressed",
-          "fr": "Bouton 1 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 1 pressed",
-          "fr": "Bouton 1 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 1 is pressed",
-          "fr": "Déclenché quand le bouton 1 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "1"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_3gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_3gang_button_2_pressed",
-        "title": {
-          "en": "Button 2 pressed",
-          "fr": "Bouton 2 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 2 pressed",
-          "fr": "Bouton 2 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 2 is pressed",
-          "fr": "Déclenché quand le bouton 2 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "2"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_3gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_3gang_button_3_pressed",
-        "title": {
-          "en": "Button 3 pressed",
-          "fr": "Bouton 3 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 3 pressed",
-          "fr": "Bouton 3 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 3 is pressed",
-          "fr": "Déclenché quand le bouton 3 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "3"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_3gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_3gang_button_pressed",
-        "title": {
-          "en": "Any button pressed",
-          "fr": "N'importe quel bouton appuyé"
-        },
-        "titleFormatted": {
-          "en": "Any button pressed",
-          "fr": "N'importe quel bouton appuyé"
-        },
-        "hint": {
-          "en": "Triggered when any button is pressed",
-          "fr": "Déclenché quand n'importe quel bouton est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "1"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_3gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_4gang_button_1_pressed",
-        "title": {
-          "en": "Button 1 pressed",
-          "fr": "Bouton 1 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 1 pressed",
-          "fr": "Bouton 1 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 1 is pressed",
-          "fr": "Déclenché quand le bouton 1 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "1"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_4gang_button_2_pressed",
-        "title": {
-          "en": "Button 2 pressed",
-          "fr": "Bouton 2 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 2 pressed",
-          "fr": "Bouton 2 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 2 is pressed",
-          "fr": "Déclenché quand le bouton 2 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "2"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_4gang_button_3_pressed",
-        "title": {
-          "en": "Button 3 pressed",
-          "fr": "Bouton 3 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 3 pressed",
-          "fr": "Bouton 3 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 3 is pressed",
-          "fr": "Déclenché quand le bouton 3 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "3"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_4gang_button_4_pressed",
-        "title": {
-          "en": "Button 4 pressed",
-          "fr": "Bouton 4 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 4 pressed",
-          "fr": "Bouton 4 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 4 is pressed",
-          "fr": "Déclenché quand le bouton 4 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "4"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_4gang_button_pressed",
-        "title": {
-          "en": "Any button pressed",
-          "fr": "N'importe quel bouton appuyé"
-        },
-        "titleFormatted": {
-          "en": "Any button pressed",
-          "fr": "N'importe quel bouton appuyé"
-        },
-        "hint": {
-          "en": "Triggered when any button is pressed",
-          "fr": "Déclenché quand n'importe quel bouton est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "1"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_5gang_button_1_pressed",
-        "title": {
-          "en": "Button 1 pressed",
-          "fr": "Bouton 1 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 1 pressed",
-          "fr": "Bouton 1 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 1 is pressed",
-          "fr": "Déclenché quand le bouton 1 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "1"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_5gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_5gang_button_2_pressed",
-        "title": {
-          "en": "Button 2 pressed",
-          "fr": "Bouton 2 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 2 pressed",
-          "fr": "Bouton 2 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 2 is pressed",
-          "fr": "Déclenché quand le bouton 2 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "2"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_5gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_5gang_button_3_pressed",
-        "title": {
-          "en": "Button 3 pressed",
-          "fr": "Bouton 3 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 3 pressed",
-          "fr": "Bouton 3 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 3 is pressed",
-          "fr": "Déclenché quand le bouton 3 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "3"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_5gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_5gang_button_4_pressed",
-        "title": {
-          "en": "Button 4 pressed",
-          "fr": "Bouton 4 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 4 pressed",
-          "fr": "Bouton 4 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 4 is pressed",
-          "fr": "Déclenché quand le bouton 4 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "4"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_5gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_5gang_button_5_pressed",
-        "title": {
-          "en": "Button 5 pressed",
-          "fr": "Bouton 5 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 5 pressed",
-          "fr": "Bouton 5 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 5 is pressed",
-          "fr": "Déclenché quand le bouton 5 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "5"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_5gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_5gang_button_pressed",
-        "title": {
-          "en": "Any button pressed",
-          "fr": "N'importe quel bouton appuyé"
-        },
-        "titleFormatted": {
-          "en": "Any button pressed",
-          "fr": "N'importe quel bouton appuyé"
-        },
-        "hint": {
-          "en": "Triggered when any button is pressed",
-          "fr": "Déclenché quand n'importe quel bouton est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "1"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_5gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_6gang_button_1_pressed",
-        "title": {
-          "en": "Button 1 pressed",
-          "fr": "Bouton 1 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 1 pressed",
-          "fr": "Bouton 1 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 1 is pressed",
-          "fr": "Déclenché quand le bouton 1 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "1"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_6gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_6gang_button_2_pressed",
-        "title": {
-          "en": "Button 2 pressed",
-          "fr": "Bouton 2 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 2 pressed",
-          "fr": "Bouton 2 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 2 is pressed",
-          "fr": "Déclenché quand le bouton 2 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "2"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_6gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_6gang_button_3_pressed",
-        "title": {
-          "en": "Button 3 pressed",
-          "fr": "Bouton 3 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 3 pressed",
-          "fr": "Bouton 3 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 3 is pressed",
-          "fr": "Déclenché quand le bouton 3 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "3"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_6gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_6gang_button_4_pressed",
-        "title": {
-          "en": "Button 4 pressed",
-          "fr": "Bouton 4 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 4 pressed",
-          "fr": "Bouton 4 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 4 is pressed",
-          "fr": "Déclenché quand le bouton 4 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "4"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_6gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_6gang_button_5_pressed",
-        "title": {
-          "en": "Button 5 pressed",
-          "fr": "Bouton 5 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 5 pressed",
-          "fr": "Bouton 5 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 5 is pressed",
-          "fr": "Déclenché quand le bouton 5 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "5"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_6gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_6gang_button_6_pressed",
-        "title": {
-          "en": "Button 6 pressed",
-          "fr": "Bouton 6 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 6 pressed",
-          "fr": "Bouton 6 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 6 is pressed",
-          "fr": "Déclenché quand le bouton 6 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "6"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_6gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_6gang_button_pressed",
-        "title": {
-          "en": "Any button pressed",
-          "fr": "N'importe quel bouton appuyé"
-        },
-        "titleFormatted": {
-          "en": "Any button pressed",
-          "fr": "N'importe quel bouton appuyé"
-        },
-        "hint": {
-          "en": "Triggered when any button is pressed",
-          "fr": "Déclenché quand n'importe quel bouton est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "1"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_6gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_7gang_button_1_pressed",
-        "title": {
-          "en": "Button 1 pressed",
-          "fr": "Bouton 1 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 1 pressed",
-          "fr": "Bouton 1 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 1 is pressed",
-          "fr": "Déclenché quand le bouton 1 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "1"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_7gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_7gang_button_2_pressed",
-        "title": {
-          "en": "Button 2 pressed",
-          "fr": "Bouton 2 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 2 pressed",
-          "fr": "Bouton 2 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 2 is pressed",
-          "fr": "Déclenché quand le bouton 2 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "2"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_7gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_7gang_button_3_pressed",
-        "title": {
-          "en": "Button 3 pressed",
-          "fr": "Bouton 3 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 3 pressed",
-          "fr": "Bouton 3 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 3 is pressed",
-          "fr": "Déclenché quand le bouton 3 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "3"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_7gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_7gang_button_4_pressed",
-        "title": {
-          "en": "Button 4 pressed",
-          "fr": "Bouton 4 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 4 pressed",
-          "fr": "Bouton 4 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 4 is pressed",
-          "fr": "Déclenché quand le bouton 4 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "4"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_7gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_7gang_button_5_pressed",
-        "title": {
-          "en": "Button 5 pressed",
-          "fr": "Bouton 5 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 5 pressed",
-          "fr": "Bouton 5 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 5 is pressed",
-          "fr": "Déclenché quand le bouton 5 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "5"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_7gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_7gang_button_6_pressed",
-        "title": {
-          "en": "Button 6 pressed",
-          "fr": "Bouton 6 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 6 pressed",
-          "fr": "Bouton 6 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 6 is pressed",
-          "fr": "Déclenché quand le bouton 6 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "6"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_7gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_7gang_button_7_pressed",
-        "title": {
-          "en": "Button 7 pressed",
-          "fr": "Bouton 7 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 7 pressed",
-          "fr": "Bouton 7 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 7 is pressed",
-          "fr": "Déclenché quand le bouton 7 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "7"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_7gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_7gang_button_pressed",
-        "title": {
-          "en": "Any button pressed",
-          "fr": "N'importe quel bouton appuyé"
-        },
-        "titleFormatted": {
-          "en": "Any button pressed",
-          "fr": "N'importe quel bouton appuyé"
-        },
-        "hint": {
-          "en": "Triggered when any button is pressed",
-          "fr": "Déclenché quand n'importe quel bouton est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "1"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_7gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_8gang_button_1_pressed",
-        "title": {
-          "en": "Button 1 pressed",
-          "fr": "Bouton 1 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 1 pressed",
-          "fr": "Bouton 1 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 1 is pressed",
-          "fr": "Déclenché quand le bouton 1 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "1"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_8gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_8gang_button_2_pressed",
-        "title": {
-          "en": "Button 2 pressed",
-          "fr": "Bouton 2 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 2 pressed",
-          "fr": "Bouton 2 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 2 is pressed",
-          "fr": "Déclenché quand le bouton 2 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "2"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_8gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_8gang_button_3_pressed",
-        "title": {
-          "en": "Button 3 pressed",
-          "fr": "Bouton 3 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 3 pressed",
-          "fr": "Bouton 3 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 3 is pressed",
-          "fr": "Déclenché quand le bouton 3 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "3"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_8gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_8gang_button_4_pressed",
-        "title": {
-          "en": "Button 4 pressed",
-          "fr": "Bouton 4 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 4 pressed",
-          "fr": "Bouton 4 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 4 is pressed",
-          "fr": "Déclenché quand le bouton 4 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "4"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_8gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_8gang_button_5_pressed",
-        "title": {
-          "en": "Button 5 pressed",
-          "fr": "Bouton 5 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 5 pressed",
-          "fr": "Bouton 5 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 5 is pressed",
-          "fr": "Déclenché quand le bouton 5 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "5"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_8gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_8gang_button_6_pressed",
-        "title": {
-          "en": "Button 6 pressed",
-          "fr": "Bouton 6 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 6 pressed",
-          "fr": "Bouton 6 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 6 is pressed",
-          "fr": "Déclenché quand le bouton 6 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "6"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_8gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_8gang_button_7_pressed",
-        "title": {
-          "en": "Button 7 pressed",
-          "fr": "Bouton 7 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 7 pressed",
-          "fr": "Bouton 7 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 7 is pressed",
-          "fr": "Déclenché quand le bouton 7 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "7"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_8gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_8gang_button_8_pressed",
-        "title": {
-          "en": "Button 8 pressed",
-          "fr": "Bouton 8 appuyé"
-        },
-        "titleFormatted": {
-          "en": "Button 8 pressed",
-          "fr": "Bouton 8 appuyé"
-        },
-        "hint": {
-          "en": "Triggered when button 8 is pressed",
-          "fr": "Déclenché quand le bouton 8 est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "8"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_8gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_touch_8gang_button_pressed",
-        "title": {
-          "en": "Any button pressed",
-          "fr": "N'importe quel bouton appuyé"
-        },
-        "titleFormatted": {
-          "en": "Any button pressed",
-          "fr": "N'importe quel bouton appuyé"
-        },
-        "hint": {
-          "en": "Triggered when any button is pressed",
-          "fr": "Déclenché quand n'importe quel bouton est appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "1"
-          },
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "fr": "Action"
-            },
-            "example": "pressed"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_touch_8gang"
-          }
-        ]
       }
     ],
     "conditions": [
@@ -37654,12 +35806,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "air_quality_monitor",
@@ -37738,8 +35885,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         }
       },
       "settings": [
@@ -38312,12 +36458,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "air_quality_pm25",
@@ -38632,12 +36773,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "blind_roller_controller",
@@ -41217,12 +39353,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "button_remote_1",
@@ -43628,8 +41759,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         }
       },
       "pair": [
@@ -43676,8 +41806,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         }
       },
       "zigbee": {
@@ -44081,8 +42210,7 @@
             "no": "Trådløs",
             "es": "Controlador",
             "da": "Trådløs"
-          },
-          "maintenanceAction": true
+          }
         }
       },
       "energy": {
@@ -44436,8 +42564,7 @@
             "no": "Trådløs",
             "es": "Controlador",
             "da": "Trådløs"
-          },
-          "maintenanceAction": true
+          }
         }
       },
       "energy": {
@@ -44804,8 +42931,7 @@
             "no": "Batteri",
             "es": "Batería",
             "da": "Batteri"
-          },
-          "maintenanceAction": true
+          }
         }
       },
       "energy": {
@@ -45188,8 +43314,7 @@
             "no": "Trådløs",
             "es": "Controlador",
             "da": "Trådløs"
-          },
-          "maintenanceAction": true
+          }
         }
       },
       "energy": {
@@ -45586,8 +43711,7 @@
             "no": "Trådløs",
             "es": "Controlador",
             "da": "Trådløs"
-          },
-          "maintenanceAction": true
+          }
         }
       },
       "energy": {
@@ -45996,8 +44120,7 @@
             "no": "Trådløs",
             "es": "Controlador",
             "da": "Trådløs"
-          },
-          "maintenanceAction": true
+          }
         }
       },
       "energy": {
@@ -47060,12 +45183,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "climate_monitor_co2",
@@ -47401,12 +45519,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "climate_monitor_temp_humidity",
@@ -47741,12 +45854,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "climate_sensor_soil",
@@ -48084,12 +46192,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "climate_sensor_temp_humidity_advanced",
@@ -48418,12 +46521,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "contact_sensor",
@@ -48743,12 +46841,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "contact_sensor_basic",
@@ -49069,12 +47162,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "contact_sensor_multipurpose",
@@ -49437,8 +47525,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         }
       },
       "energy": {
@@ -49926,8 +48013,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         }
       },
       "energy": {
@@ -52149,12 +50235,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "doorbell",
@@ -52470,12 +50551,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "doorbell_button",
@@ -52804,8 +50880,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         }
       },
       "energy": {
@@ -53174,12 +51249,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "garage_door_controller",
@@ -53498,12 +51568,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "gas_detector",
@@ -53824,12 +51889,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "gas_sensor",
@@ -54152,12 +52212,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "gateway_zigbee_bridge",
@@ -55096,12 +53151,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "hvac_air_conditioner",
@@ -55189,8 +53239,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         }
       },
       "energy": {
@@ -55548,8 +53597,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         }
       },
       "energy": {
@@ -58126,12 +56174,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "lock_smart",
@@ -58441,12 +56484,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "lock_smart_basic",
@@ -58756,12 +56794,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "lock_smart_fingerprint",
@@ -59076,12 +57109,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "module_dimmer_timer",
@@ -60377,12 +58405,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "motion_sensor_mmwave",
@@ -60708,12 +58731,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "motion_sensor_multi",
@@ -61040,12 +59058,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "motion_sensor_outdoor",
@@ -61367,12 +59380,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "motion_sensor_pir",
@@ -61703,12 +59711,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "motion_sensor_pir_advanced",
@@ -62030,12 +60033,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "motion_sensor_pir_radar",
@@ -62358,12 +60356,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "motion_sensor_radar_advanced",
@@ -62685,12 +60678,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "motion_sensor_radar_mmwave",
@@ -63013,12 +61001,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "plug_dimmer",
@@ -67279,12 +65262,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "radiator_valve",
@@ -67894,8 +65872,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         }
       },
       "learnmode": {
@@ -68635,8 +66612,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         }
       },
       "pair": [
@@ -69616,12 +67592,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "siren_outdoor",
@@ -69940,12 +67911,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "smoke_detector_advanced",
@@ -70266,12 +68232,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "smoke_detector_climate",
@@ -70596,12 +68557,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "smoke_detector_temp_humidity",
@@ -70917,12 +68873,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "solar_panel_controller",
@@ -71546,8 +69497,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         }
       },
       "pair": [
@@ -73935,8 +71885,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         }
       },
       "learnmode": {
@@ -74316,8 +72265,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         }
       },
       "learnmode": {
@@ -74461,8 +72409,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         }
       },
       "platforms": [
@@ -75081,8 +73028,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         }
       },
       "learnmode": {
@@ -75490,8 +73436,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         }
       },
       "learnmode": {
@@ -75630,8 +73575,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         }
       },
       "platforms": [
@@ -79570,8 +77514,7 @@
           "title": {
             "en": "Battery",
             "fr": "Batterie"
-          },
-          "maintenanceAction": true
+          }
         }
       },
       "energy": {
@@ -80283,8 +78226,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         }
       },
       "energy": {
@@ -81397,8 +79339,7 @@
           "title": {
             "en": "Battery",
             "fr": "Batterie"
-          },
-          "maintenanceAction": true
+          }
         }
       },
       "energy": {
@@ -82166,8 +80107,7 @@
           "title": {
             "en": "Battery",
             "fr": "Batterie"
-          },
-          "maintenanceAction": true
+          }
         }
       },
       "energy": {
@@ -86878,8 +84818,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         }
       },
       "pair": [
@@ -88405,12 +86344,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "temperature_sensor_advanced",
@@ -88736,12 +86670,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "thermostat_advanced",
@@ -88796,8 +86725,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         }
       },
       "zigbee": {
@@ -89229,8 +87157,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         }
       },
       "energy": {
@@ -89605,8 +87532,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         }
       },
       "energy": {
@@ -90360,9 +88286,6 @@
             "fr": "Port USB 3",
             "nl": "USB Poort 3"
           }
-        },
-        "measure_battery": {
-          "maintenanceAction": true
         }
       },
       "zigbee": {
@@ -91842,12 +89765,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "water_leak_sensor_temp_humidity",
@@ -92175,12 +90093,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "water_valve",
@@ -92502,12 +90415,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "water_valve_smart",
@@ -92828,12 +90736,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {
-        "measure_battery": {
-          "maintenanceAction": true
-        }
-      }
+      ]
     },
     {
       "id": "water_valve_controller",
@@ -92901,8 +90804,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         }
       },
       "platforms": [
@@ -93232,8 +91134,7 @@
           "title": {
             "en": "Battery",
             "fr": "Batterie"
-          },
-          "maintenanceAction": true
+          }
         }
       },
       "energy": {
@@ -93372,8 +91273,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         },
         "measure_temperature": {
           "title": {
@@ -93617,8 +91517,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         },
         "measure_temperature": {
           "title": {
@@ -93885,8 +91784,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         },
         "measure_temperature": {
           "title": {
@@ -94178,8 +92076,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         },
         "measure_temperature": {
           "title": {
@@ -94493,8 +92390,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         },
         "measure_temperature": {
           "title": {
@@ -94831,8 +92727,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         },
         "measure_temperature": {
           "title": {
@@ -95192,8 +93087,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         },
         "measure_temperature": {
           "title": {
@@ -95576,8 +93470,7 @@
             "en": "Battery",
             "fr": "Batterie"
           },
-          "preventInsights": false,
-          "maintenanceAction": true
+          "preventInsights": false
         },
         "measure_temperature": {
           "title": {
