@@ -4,6 +4,8 @@ on:
   schedule:
     # Every Monday at 02:00 UTC
     - cron: '0 2 * * 1'
+    # Every Thursday at 02:00 UTC (Phase 3 optimization)
+    - cron: '0 2 * * 4'
   workflow_dispatch:
     inputs:
       force:
