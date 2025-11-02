@@ -1,4 +1,4 @@
-{
+﻿{
   "name": {
     "en": "Smart Switch 2gang",
     "fr": "Smart Switch 2gang"
@@ -6,7 +6,7 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "onoff.button2",
+    "onoff.gang2",
     "measure_power",
     "measure_voltage",
     "measure_current"
@@ -335,7 +335,7 @@
         "fr": "Gang 1"
       }
     },
-    "onoff.button2": {
+    "onoff.gang2": {
       "title": {
         "en": "Gang 2",
         "fr": "Gang 2"
