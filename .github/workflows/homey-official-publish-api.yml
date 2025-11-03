@@ -22,12 +22,54 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  validate:
-    name: Validate App (Official)
+  pre-cleanup:
+    name: Auto-Organize Files
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Auto-organize temporary files
+        id: organize
+        run: |
+          node scripts/cleanup/AUTO_ORGANIZE_PROJECT.js
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "organized=true" >> $GITHUB_OUTPUT
+          else
+            echo "organized=false" >> $GITHUB_OUTPUT
+          fi
+        continue-on-error: false
+
+      - name: Commit organized files
+        if: steps.organize.outputs.organized == 'true'
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: Auto-organize files before publish [skip ci]"
+          git push
+
+  validate:
+    name: Validate App (Official)
+    needs: pre-cleanup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: master
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -124,7 +166,7 @@ jobs:
       - name: Publish to Homey App Store (Official Action)
         uses: athombv/github-action-homey-app-publish@master
         with:
-          personal-access-token: ${{ secrets.HOMEY_PAT }}
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
 
       - name: Success notification
         if: success()
