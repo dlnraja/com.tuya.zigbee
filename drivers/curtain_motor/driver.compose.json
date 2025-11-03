@@ -28,23 +28,17 @@
       "_TZE200_cowvfni3",
       "_TZE200_myd45weu",
       "_TZE200_qoy0ekbd",
-      "_TZE200_nv6nxo0c"
+      "_TZE200_nv6nxo0c",
+      "_TZE284_uqfph8ah"
     ],
     "productId": [
       "TS0601",
       "TS130F"
     ],
     "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          258,
-          3
-        ],
-        "bindings": [
-          1
-        ]
-      }
+      "1": [
+        60672
+      ]
     },
     "learnmode": {
       "image": "/drivers/curtain_motor/assets/large.png",
