@@ -1,6 +1,0 @@
-fix: syntax errors in 4 drivers - await and commented blocks
-
-button_emergency_sos - await in non-async
-presence_sensor_radar - await in non-async
-climate_monitor_temp_humidity - partial comment
-climate_sensor_soil - partial comment

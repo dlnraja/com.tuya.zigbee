@@ -1,7 +1,0 @@
-fix: Add scenes cluster support for Tuya TS0043/TS0044 buttons
-
-Diagnostic e29cd366 - Buttons not triggering events
-
-ROOT CAUSE: Tuya buttons use scenes.recall cluster, not onOff
-SOLUTION: Listen to scenes cluster with priority over onOff/levelControl
-IMPACT: All Tuya button devices now working (~50 drivers)
