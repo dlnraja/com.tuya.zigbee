@@ -77414,6 +77414,13 @@
         "dim"
       ],
       "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
         "approximation": {
           "usageConstant": 0.5
         }
@@ -77445,13 +77452,7 @@
           "_TZ3000_fvh3pjaz",
           "_TZ3000_zmy4lslw",
           "_TZ3000_ejwkn2h2",
-          "_TZ3000_nnwehhst",
-          "_TZ3000_KJ0NWDZ6",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_18EJXRZK",
-          "_TZ3000_VTSCRPMX",
-          "_TZ3000_h1ipgkwn",
-          "_TZ3000_l9brjwau"
+          "_TZ3000_nnwehhst"
         ],
         "productId": [
           "TS0001",
@@ -77459,14 +77460,21 @@
           "TS0004",
           "TS0005",
           "TS0006",
-          "TS0011",
-          "TS0002"
+          "TS0011"
         ],
         "endpoints": {
-          "1": [
-            57344,
-            57345
-          ]
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              1
+            ]
+          }
         },
         "learnmode": {
           "image": "/drivers/switch_basic_1gang/assets/learnmode.svg",
@@ -77474,12 +77482,7 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        },
-        "tuyaClusters": [
-          57344,
-          57345
-        ],
-        "supportsCountdown": true
+        }
       },
       "settings": [
         {
@@ -77768,21 +77771,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "countdown_gang1",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 1 (seconds)",
-            "fr": "Minuterie Gang 1 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
         }
       ],
       "images": {
@@ -77910,27 +77898,35 @@
           "lumi.ctrl_ln1",
           "_TZ3000_xkap8wtb",
           "_TZ3000_lupfd8zu",
-          "_TZ3000_mx3vgyea",
-          "_TZ3000_KJ0NWDZ6",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_18EJXRZK",
-          "_TZ3000_VTSCRPMX",
-          "_TZ3000_h1ipgkwn",
-          "_TZ3000_l9brjwau"
+          "_TZ3000_mx3vgyea"
         ],
         "productId": [
           "TS0001",
-          "TS0011",
-          "TS0002"
+          "TS0011"
         ],
         "endpoints": {
-          "1": [
-            57344,
-            57345
-          ],
-          "2": [
-            57345
-          ]
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              1
+            ]
+          },
+          "2": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          }
         },
         "learnmode": {
           "image": "/drivers/switch_basic_2gang/assets/learnmode.svg",
@@ -77938,12 +77934,7 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        },
-        "tuyaClusters": [
-          57344,
-          57345
-        ],
-        "supportsCountdown": true
+        }
       },
       "settings": [
         {
@@ -78232,36 +78223,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "countdown_gang1",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 1 (seconds)",
-            "fr": "Minuterie Gang 1 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang2",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 2 (seconds)",
-            "fr": "Minuterie Gang 2 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
         }
       ],
       "images": {
@@ -78364,6 +78325,13 @@
         "dim"
       ],
       "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
         "approximation": {
           "usageConstant": 0.5
         }
@@ -78388,13 +78356,7 @@
           "_TZ3000_odzoiovu",
           "_TZ3000_zmy4lslw",
           "_TZ3000_ejwkn2h2",
-          "_TZ3000_nnwehhst",
-          "_TZ3000_KJ0NWDZ6",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_18EJXRZK",
-          "_TZ3000_VTSCRPMX",
-          "_TZ3000_h1ipgkwn",
-          "_TZ3000_l9brjwau"
+          "_TZ3000_nnwehhst"
         ],
         "productId": [
           "TS0001",
@@ -78402,17 +78364,33 @@
           "TS0004",
           "TS0005",
           "TS0006",
-          "TS0011",
-          "TS0002"
+          "TS0011"
         ],
         "endpoints": {
-          "1": [
-            57344,
-            57345
-          ],
-          "2": [
-            57345
-          ],
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              1
+            ]
+          },
+          "2": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
           "3": {
             "clusters": [
               0,
@@ -78456,12 +78434,7 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        },
-        "tuyaClusters": [
-          57344,
-          57345
-        ],
-        "supportsCountdown": true
+        }
       },
       "settings": [
         {
@@ -78750,81 +78723,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "countdown_gang1",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 1 (seconds)",
-            "fr": "Minuterie Gang 1 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang2",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 2 (seconds)",
-            "fr": "Minuterie Gang 2 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang3",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 3 (seconds)",
-            "fr": "Minuterie Gang 3 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang4",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 4 (seconds)",
-            "fr": "Minuterie Gang 4 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang5",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 5 (seconds)",
-            "fr": "Minuterie Gang 5 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
         }
       ],
       "images": {
@@ -83631,6 +83529,13 @@
         "dim"
       ],
       "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
         "approximation": {
           "usageConstant": 0.5
         }
@@ -83655,13 +83560,7 @@
           "_TZ3000_odzoiovu",
           "_TZ3000_zmy4lslw",
           "_TZ3000_ejwkn2h2",
-          "_TZ3000_nnwehhst",
-          "_TZ3000_KJ0NWDZ6",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_18EJXRZK",
-          "_TZ3000_VTSCRPMX",
-          "_TZ3000_h1ipgkwn",
-          "_TZ3000_l9brjwau"
+          "_TZ3000_nnwehhst"
         ],
         "productId": [
           "TS0001",
@@ -83669,14 +83568,21 @@
           "TS0004",
           "TS0005",
           "TS0006",
-          "TS0011",
-          "TS0002"
+          "TS0011"
         ],
         "endpoints": {
-          "1": [
-            57344,
-            57345
-          ]
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              1
+            ]
+          }
         },
         "learnmode": {
           "image": "/drivers/switch_smart_1gang/assets/learnmode.svg",
@@ -83684,12 +83590,7 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        },
-        "tuyaClusters": [
-          57344,
-          57345
-        ],
-        "supportsCountdown": true
+        }
       },
       "settings": [
         {
@@ -83978,21 +83879,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "countdown_gang1",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 1 (seconds)",
-            "fr": "Minuterie Gang 1 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
         }
       ],
       "images": {
@@ -84095,6 +83981,13 @@
         "onoff.button3"
       ],
       "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
         "approximation": {
           "usageConstant": 0.5
         }
@@ -84119,13 +84012,7 @@
           "_TZ3000_odzoiovu",
           "_TZ3000_zmy4lslw",
           "_TZ3000_ejwkn2h2",
-          "_TZ3000_nnwehhst",
-          "_TZ3000_KJ0NWDZ6",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_18EJXRZK",
-          "_TZ3000_VTSCRPMX",
-          "_TZ3000_h1ipgkwn",
-          "_TZ3000_l9brjwau"
+          "_TZ3000_nnwehhst"
         ],
         "productId": [
           "TS0001",
@@ -84133,17 +84020,32 @@
           "TS0004",
           "TS0005",
           "TS0006",
-          "TS0011",
-          "TS0002"
+          "TS0011"
         ],
         "endpoints": {
-          "1": [
-            57344,
-            57345
-          ],
-          "2": [
-            57345
-          ],
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              1
+            ]
+          },
+          "2": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6,
+              1
+            ]
+          },
           "3": {
             "clusters": [
               0,
@@ -84163,12 +84065,7 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        },
-        "tuyaClusters": [
-          57344,
-          57345
-        ],
-        "supportsCountdown": true
+        }
       },
       "settings": [
         {
@@ -84457,51 +84354,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "countdown_gang1",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 1 (seconds)",
-            "fr": "Minuterie Gang 1 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang2",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 2 (seconds)",
-            "fr": "Minuterie Gang 2 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang3",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 3 (seconds)",
-            "fr": "Minuterie Gang 3 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
         }
       ],
       "images": {
@@ -84626,6 +84478,13 @@
         "dim"
       ],
       "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
         "approximation": {
           "usageConstant": 0.5
         }
@@ -84650,13 +84509,7 @@
           "_TZ3000_odzoiovu",
           "_TZ3000_zmy4lslw",
           "_TZ3000_ejwkn2h2",
-          "_TZ3000_nnwehhst",
-          "_TZ3000_KJ0NWDZ6",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_18EJXRZK",
-          "_TZ3000_VTSCRPMX",
-          "_TZ3000_h1ipgkwn",
-          "_TZ3000_l9brjwau"
+          "_TZ3000_nnwehhst"
         ],
         "productId": [
           "TS0001",
@@ -84664,17 +84517,33 @@
           "TS0004",
           "TS0005",
           "TS0006",
-          "TS0011",
-          "TS0002"
+          "TS0011"
         ],
         "endpoints": {
-          "1": [
-            57344,
-            57345
-          ],
-          "2": [
-            57345
-          ],
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              1
+            ]
+          },
+          "2": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
           "3": {
             "clusters": [
               0,
@@ -84706,12 +84575,7 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        },
-        "tuyaClusters": [
-          57344,
-          57345
-        ],
-        "supportsCountdown": true
+        }
       },
       "settings": [
         {
@@ -85000,66 +84864,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "countdown_gang1",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 1 (seconds)",
-            "fr": "Minuterie Gang 1 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang2",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 2 (seconds)",
-            "fr": "Minuterie Gang 2 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang3",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 3 (seconds)",
-            "fr": "Minuterie Gang 3 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang4",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 4 (seconds)",
-            "fr": "Minuterie Gang 4 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
         }
       ],
       "images": {
@@ -85203,7 +85007,14 @@
       "energy": {
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -85225,13 +85036,7 @@
           "_TZ3000_odzoiovu",
           "_TZ3000_zmy4lslw",
           "_TZ3000_ejwkn2h2",
-          "_TZ3000_nnwehhst",
-          "_TZ3000_KJ0NWDZ6",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_18EJXRZK",
-          "_TZ3000_VTSCRPMX",
-          "_TZ3000_h1ipgkwn",
-          "_TZ3000_l9brjwau"
+          "_TZ3000_nnwehhst"
         ],
         "productId": [
           "TS0001",
@@ -85239,14 +85044,24 @@
           "TS0004",
           "TS0005",
           "TS0006",
-          "TS0011",
-          "TS0002"
+          "TS0011"
         ],
         "endpoints": {
-          "1": [
-            57344,
-            57345
-          ],
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              1794,
+              2820
+            ],
+            "bindings": [
+              6,
+              1794
+            ]
+          },
           "242": {
             "clusters": [],
             "bindings": [
@@ -85260,12 +85075,7 @@
             "en": "Press and hold the power button for 5 seconds until the LED blinks",
             "fr": "Appuyez et maintenez le bouton d'alimentation pendant 5 secondes jusqu'à ce que la LED clignote"
           }
-        },
-        "tuyaClusters": [
-          57344,
-          57345
-        ],
-        "supportsCountdown": true
+        }
       },
       "images": {
         "small": "/drivers/switch_touch_1gang/assets/images/small.png",
@@ -85564,21 +85374,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "countdown_gang1",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 1 (seconds)",
-            "fr": "Minuterie Gang 1 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
         }
       ],
       "pair": [
@@ -85669,6 +85464,13 @@
         "dim"
       ],
       "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
         "approximation": {
           "usageConstant": 0.5
         }
@@ -85693,13 +85495,7 @@
           "_TZ3000_odzoiovu",
           "_TZ3000_zmy4lslw",
           "_TZ3000_ejwkn2h2",
-          "_TZ3000_nnwehhst",
-          "_TZ3000_KJ0NWDZ6",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_18EJXRZK",
-          "_TZ3000_VTSCRPMX",
-          "_TZ3000_h1ipgkwn",
-          "_TZ3000_l9brjwau"
+          "_TZ3000_nnwehhst"
         ],
         "productId": [
           "TS0001",
@@ -85707,14 +85503,21 @@
           "TS0004",
           "TS0005",
           "TS0006",
-          "TS0011",
-          "TS0002"
+          "TS0011"
         ],
         "endpoints": {
-          "1": [
-            57344,
-            57345
-          ]
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              1
+            ]
+          }
         },
         "learnmode": {
           "image": "/drivers/switch_touch_1gang_basic/assets/learnmode.svg",
@@ -85722,12 +85525,7 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        },
-        "tuyaClusters": [
-          57344,
-          57345
-        ],
-        "supportsCountdown": true
+        }
       },
       "settings": [
         {
@@ -86016,21 +85814,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "countdown_gang1",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 1 (seconds)",
-            "fr": "Minuterie Gang 1 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
         }
       ],
       "images": {
@@ -86135,6 +85918,13 @@
         "measure_current"
       ],
       "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
         "approximation": {
           "usageConstant": 0.5
         }
@@ -86162,12 +85952,7 @@
           "_TZ3000_odzoiovu",
           "_TZ3000_zmy4lslw",
           "_TZ3000_ejwkn2h2",
-          "_TZ3000_nnwehhst",
-          "_TZ3000_KJ0NWDZ6",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_18EJXRZK",
-          "_TZ3000_VTSCRPMX",
-          "_TZ3000_l9brjwau"
+          "_TZ3000_nnwehhst"
         ],
         "productId": [
           "TS0001",
@@ -86179,13 +85964,28 @@
           "TS0011"
         ],
         "endpoints": {
-          "1": [
-            57344,
-            57345
-          ],
-          "2": [
-            57345
-          ]
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              1
+            ]
+          },
+          "2": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          }
         },
         "learnmode": {
           "image": "/drivers/switch_touch_2gang/assets/learnmode.svg",
@@ -86193,12 +85993,7 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        },
-        "tuyaClusters": [
-          57344,
-          57345
-        ],
-        "supportsCountdown": true
+        }
       },
       "settings": [
         {
@@ -86487,36 +86282,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "countdown_gang1",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 1 (seconds)",
-            "fr": "Minuterie Gang 1 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang2",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 2 (seconds)",
-            "fr": "Minuterie Gang 2 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
         }
       ],
       "images": {
@@ -86650,7 +86415,14 @@
       "energy": {
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -86672,13 +86444,7 @@
           "_TZ3000_odzoiovu",
           "_TZ3000_zmy4lslw",
           "_TZ3000_ejwkn2h2",
-          "_TZ3000_nnwehhst",
-          "_TZ3000_KJ0NWDZ6",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_18EJXRZK",
-          "_TZ3000_VTSCRPMX",
-          "_TZ3000_h1ipgkwn",
-          "_TZ3000_l9brjwau"
+          "_TZ3000_nnwehhst"
         ],
         "productId": [
           "TS0001",
@@ -86686,17 +86452,34 @@
           "TS0004",
           "TS0005",
           "TS0006",
-          "TS0011",
-          "TS0002"
+          "TS0011"
         ],
         "endpoints": {
-          "1": [
-            57344,
-            57345
-          ],
-          "2": [
-            57345
-          ],
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              1794,
+              2820
+            ],
+            "bindings": [
+              6,
+              1794
+            ]
+          },
+          "2": {
+            "clusters": [
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
           "3": {
             "clusters": [
               4,
@@ -86720,12 +86503,7 @@
             "en": "Press and hold the power button for 5 seconds until the LED blinks",
             "fr": "Appuyez et maintenez le bouton d'alimentation pendant 5 secondes jusqu'à ce que la LED clignote"
           }
-        },
-        "tuyaClusters": [
-          57344,
-          57345
-        ],
-        "supportsCountdown": true
+        }
       },
       "images": {
         "small": "/drivers/switch_touch_3gang/assets/images/small.png",
@@ -87024,51 +86802,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "countdown_gang1",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 1 (seconds)",
-            "fr": "Minuterie Gang 1 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang2",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 2 (seconds)",
-            "fr": "Minuterie Gang 2 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang3",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 3 (seconds)",
-            "fr": "Minuterie Gang 3 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
         }
       ],
       "pair": [
@@ -87160,6 +86893,13 @@
         "onoff.button3"
       ],
       "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
         "approximation": {
           "usageConstant": 0.5
         }
@@ -87184,13 +86924,7 @@
           "_TZ3000_odzoiovu",
           "_TZ3000_zmy4lslw",
           "_TZ3000_ejwkn2h2",
-          "_TZ3000_nnwehhst",
-          "_TZ3000_KJ0NWDZ6",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_18EJXRZK",
-          "_TZ3000_VTSCRPMX",
-          "_TZ3000_h1ipgkwn",
-          "_TZ3000_l9brjwau"
+          "_TZ3000_nnwehhst"
         ],
         "productId": [
           "TS0001",
@@ -87198,17 +86932,31 @@
           "TS0004",
           "TS0005",
           "TS0006",
-          "TS0011",
-          "TS0002"
+          "TS0011"
         ],
         "endpoints": {
-          "1": [
-            57344,
-            57345
-          ],
-          "2": [
-            57345
-          ],
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              1
+            ]
+          },
+          "2": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
           "3": {
             "clusters": [
               0,
@@ -87227,12 +86975,7 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        },
-        "tuyaClusters": [
-          57344,
-          57345
-        ],
-        "supportsCountdown": true
+        }
       },
       "settings": [
         {
@@ -87521,51 +87264,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "countdown_gang1",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 1 (seconds)",
-            "fr": "Minuterie Gang 1 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang2",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 2 (seconds)",
-            "fr": "Minuterie Gang 2 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang3",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 3 (seconds)",
-            "fr": "Minuterie Gang 3 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
         }
       ],
       "images": {
@@ -87690,6 +87388,13 @@
         "dim"
       ],
       "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
         "approximation": {
           "usageConstant": 0.5
         }
@@ -87714,13 +87419,7 @@
           "_TZ3000_odzoiovu",
           "_TZ3000_zmy4lslw",
           "_TZ3000_ejwkn2h2",
-          "_TZ3000_nnwehhst",
-          "_TZ3000_KJ0NWDZ6",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_18EJXRZK",
-          "_TZ3000_VTSCRPMX",
-          "_TZ3000_h1ipgkwn",
-          "_TZ3000_l9brjwau"
+          "_TZ3000_nnwehhst"
         ],
         "productId": [
           "TS0001",
@@ -87728,17 +87427,33 @@
           "TS0004",
           "TS0005",
           "TS0006",
-          "TS0011",
-          "TS0002"
+          "TS0011"
         ],
         "endpoints": {
-          "1": [
-            57344,
-            57345
-          ],
-          "2": [
-            57345
-          ],
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              1
+            ]
+          },
+          "2": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
           "3": {
             "clusters": [
               0,
@@ -87770,12 +87485,7 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        },
-        "tuyaClusters": [
-          57344,
-          57345
-        ],
-        "supportsCountdown": true
+        }
       },
       "settings": [
         {
@@ -88064,66 +87774,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "countdown_gang1",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 1 (seconds)",
-            "fr": "Minuterie Gang 1 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang2",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 2 (seconds)",
-            "fr": "Minuterie Gang 2 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang3",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 3 (seconds)",
-            "fr": "Minuterie Gang 3 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang4",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 4 (seconds)",
-            "fr": "Minuterie Gang 4 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
         }
       ],
       "images": {
@@ -88254,7 +87904,8 @@
       },
       "class": "socket",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -88272,6 +87923,15 @@
         }
       },
       "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "CR2477",
+          "AAA",
+          "AA",
+          "CR123A",
+          "INTERNAL"
+        ],
         "approximation": {
           "usageConstant": 0.5
         }
@@ -88303,13 +87963,7 @@
           "_TZ3000_odzoiovu",
           "_TZ3000_zmy4lslw",
           "_TZ3000_ejwkn2h2",
-          "_TZ3000_nnwehhst",
-          "_TZ3000_KJ0NWDZ6",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_18EJXRZK",
-          "_TZ3000_VTSCRPMX",
-          "_TZ3000_h1ipgkwn",
-          "_TZ3000_l9brjwau"
+          "_TZ3000_nnwehhst"
         ],
         "productId": [
           "TS0001",
@@ -88317,14 +87971,24 @@
           "TS0004",
           "TS0005",
           "TS0006",
-          "TS0011",
-          "TS0002"
+          "TS0011"
         ],
         "endpoints": {
-          "1": [
-            57344,
-            57345
-          ],
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              1794,
+              2820
+            ],
+            "bindings": [
+              6,
+              1794
+            ]
+          },
           "242": {
             "clusters": [],
             "bindings": [
@@ -88338,12 +88002,7 @@
             "en": "Press and hold the power button for 5 seconds until the LED blinks",
             "fr": "Appuyez et maintenez le bouton d'alimentation pendant 5 secondes jusqu'à ce que la LED clignote"
           }
-        },
-        "tuyaClusters": [
-          57344,
-          57345
-        ],
-        "supportsCountdown": true
+        }
       },
       "images": {
         "small": "/drivers/switch_wall_1gang/assets/images/small.png",
@@ -88654,21 +88313,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "countdown_gang1",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 1 (seconds)",
-            "fr": "Minuterie Gang 1 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
         }
       ],
       "pair": [
@@ -88801,6 +88445,13 @@
         "dim"
       ],
       "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
         "approximation": {
           "usageConstant": 0.5
         }
@@ -88825,13 +88476,7 @@
           "_TZ3000_odzoiovu",
           "_TZ3000_zmy4lslw",
           "_TZ3000_ejwkn2h2",
-          "_TZ3000_nnwehhst",
-          "_TZ3000_KJ0NWDZ6",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_18EJXRZK",
-          "_TZ3000_VTSCRPMX",
-          "_TZ3000_h1ipgkwn",
-          "_TZ3000_l9brjwau"
+          "_TZ3000_nnwehhst"
         ],
         "productId": [
           "TS0001",
@@ -88839,14 +88484,22 @@
           "TS0004",
           "TS0005",
           "TS0006",
-          "TS0011",
-          "TS0002"
+          "TS0011"
         ],
         "endpoints": {
-          "1": [
-            57344,
-            57345
-          ]
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              1
+            ]
+          }
         },
         "learnmode": {
           "image": "/drivers/switch_wall_1gang_basic/assets/learnmode.svg",
@@ -88854,12 +88507,7 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        },
-        "tuyaClusters": [
-          57344,
-          57345
-        ],
-        "supportsCountdown": true
+        }
       },
       "settings": [
         {
@@ -89148,21 +88796,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "countdown_gang1",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 1 (seconds)",
-            "fr": "Minuterie Gang 1 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
         }
       ],
       "images": {
@@ -89269,6 +88902,7 @@
       "capabilities": [
         "onoff",
         "onoff.gang2",
+        "measure_battery",
         "measure_power",
         "measure_voltage",
         "measure_current"
@@ -89296,6 +88930,15 @@
         }
       },
       "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "CR2477",
+          "AAA",
+          "AA",
+          "CR123A",
+          "INTERNAL"
+        ],
         "approximation": {
           "usageConstant": 0.5
         }
@@ -89331,11 +88974,7 @@
           "_TZ3000_odzoiovu",
           "_TZ3000_zmy4lslw",
           "_TZ3000_ejwkn2h2",
-          "_TZ3000_nnwehhst",
-          "_TZ3000_KJ0NWDZ6",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_18EJXRZK",
-          "_TZ3000_VTSCRPMX"
+          "_TZ3000_nnwehhst"
         ],
         "productId": [
           "TS0001",
@@ -89348,13 +88987,31 @@
           "TS0012"
         ],
         "endpoints": {
-          "1": [
-            57344,
-            57345
-          ],
-          "2": [
-            57345
-          ],
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              1794,
+              2820
+            ],
+            "bindings": [
+              6,
+              1794
+            ]
+          },
+          "2": {
+            "clusters": [
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
           "242": {
             "clusters": [],
             "bindings": [
@@ -89368,12 +89025,7 @@
             "en": "Press and hold the power button for 5 seconds until the LED blinks",
             "fr": "Appuyez et maintenez le bouton d'alimentation pendant 5 secondes jusqu'à ce que la LED clignote"
           }
-        },
-        "tuyaClusters": [
-          57344,
-          57345
-        ],
-        "supportsCountdown": true
+        }
       },
       "images": {
         "small": "/drivers/switch_wall_2gang/assets/images/small.png",
@@ -89684,36 +89336,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "countdown_gang1",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 1 (seconds)",
-            "fr": "Minuterie Gang 1 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang2",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 2 (seconds)",
-            "fr": "Minuterie Gang 2 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
         }
       ],
       "pair": [
@@ -89846,6 +89468,13 @@
         "onoff.button2"
       ],
       "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
         "approximation": {
           "usageConstant": 0.5
         }
@@ -89873,13 +89502,7 @@
           "_TZ3000_odzoiovu",
           "_TZ3000_zmy4lslw",
           "_TZ3000_ejwkn2h2",
-          "_TZ3000_nnwehhst",
-          "_TZ3000_KJ0NWDZ6",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_18EJXRZK",
-          "_TZ3000_VTSCRPMX",
-          "_TZ3000_h1ipgkwn",
-          "_TZ3000_l9brjwau"
+          "_TZ3000_nnwehhst"
         ],
         "productId": [
           "TS0001",
@@ -89892,13 +89515,30 @@
           "TS0012"
         ],
         "endpoints": {
-          "1": [
-            57344,
-            57345
-          ],
-          "2": [
-            57345
-          ]
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              1
+            ]
+          },
+          "2": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          }
         },
         "learnmode": {
           "image": "/drivers/switch_wall_2gang_basic/assets/learnmode.svg",
@@ -89906,12 +89546,7 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        },
-        "tuyaClusters": [
-          57344,
-          57345
-        ],
-        "supportsCountdown": true
+        }
       },
       "settings": [
         {
@@ -90200,36 +89835,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "countdown_gang1",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 1 (seconds)",
-            "fr": "Minuterie Gang 1 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang2",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 2 (seconds)",
-            "fr": "Minuterie Gang 2 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
         }
       ],
       "images": {
@@ -90348,6 +89953,13 @@
         "measure_current"
       ],
       "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
         "approximation": {
           "usageConstant": 0.5
         }
@@ -90376,12 +89988,7 @@
           "_TZ3000_odzoiovu",
           "_TZ3000_zmy4lslw",
           "_TZ3000_ejwkn2h2",
-          "_TZ3000_nnwehhst",
-          "_TZ3000_KJ0NWDZ6",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_18EJXRZK",
-          "_TZ3000_VTSCRPMX",
-          "_TZ3000_l9brjwau"
+          "_TZ3000_nnwehhst"
         ],
         "productId": [
           "TS0001",
@@ -90394,13 +90001,28 @@
           "TS0012"
         ],
         "endpoints": {
-          "1": [
-            57344,
-            57345
-          ],
-          "2": [
-            57345
-          ]
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              1
+            ]
+          },
+          "2": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          }
         },
         "learnmode": {
           "image": "/drivers/switch_wall_2gang_smart/assets/learnmode.svg",
@@ -90408,12 +90030,7 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        },
-        "tuyaClusters": [
-          57344,
-          57345
-        ],
-        "supportsCountdown": true
+        }
       },
       "settings": [
         {
@@ -90702,36 +90319,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "countdown_gang1",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 1 (seconds)",
-            "fr": "Minuterie Gang 1 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang2",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 2 (seconds)",
-            "fr": "Minuterie Gang 2 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
         }
       ],
       "images": {
@@ -90852,7 +90439,8 @@
       "capabilities": [
         "onoff",
         "onoff.switch_2",
-        "onoff.switch_3"
+        "onoff.switch_3",
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -90870,6 +90458,15 @@
         }
       },
       "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "CR2477",
+          "AAA",
+          "AA",
+          "CR123A",
+          "INTERNAL"
+        ],
         "approximation": {
           "usageConstant": 0.5
         }
@@ -90899,13 +90496,7 @@
           "_TZ3000_odzoiovu",
           "_TZ3000_zmy4lslw",
           "_TZ3000_ejwkn2h2",
-          "_TZ3000_nnwehhst",
-          "_TZ3000_KJ0NWDZ6",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_18EJXRZK",
-          "_TZ3000_VTSCRPMX",
-          "_TZ3000_h1ipgkwn",
-          "_TZ3000_l9brjwau"
+          "_TZ3000_nnwehhst"
         ],
         "productId": [
           "TS0001",
@@ -90914,17 +90505,34 @@
           "TS0005",
           "TS0006",
           "TS0011",
-          "TS0013",
-          "TS0002"
+          "TS0013"
         ],
         "endpoints": {
-          "1": [
-            57344,
-            57345
-          ],
-          "2": [
-            57345
-          ],
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              1794,
+              2820
+            ],
+            "bindings": [
+              6,
+              1794
+            ]
+          },
+          "2": {
+            "clusters": [
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
           "3": {
             "clusters": [
               4,
@@ -90948,12 +90556,7 @@
             "en": "Press and hold the power button for 5 seconds until the LED blinks",
             "fr": "Appuyez et maintenez le bouton d'alimentation pendant 5 secondes jusqu'à ce que la LED clignote"
           }
-        },
-        "tuyaClusters": [
-          57344,
-          57345
-        ],
-        "supportsCountdown": true
+        }
       },
       "images": {
         "small": "/drivers/switch_wall_3gang/assets/images/small.png",
@@ -91264,51 +90867,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "countdown_gang1",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 1 (seconds)",
-            "fr": "Minuterie Gang 1 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang2",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 2 (seconds)",
-            "fr": "Minuterie Gang 2 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang3",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 3 (seconds)",
-            "fr": "Minuterie Gang 3 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
         }
       ],
       "pair": [
@@ -91442,6 +91000,13 @@
         "onoff.button3"
       ],
       "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
         "approximation": {
           "usageConstant": 0.5
         }
@@ -91466,13 +91031,7 @@
           "_TZ3000_odzoiovu",
           "_TZ3000_zmy4lslw",
           "_TZ3000_ejwkn2h2",
-          "_TZ3000_nnwehhst",
-          "_TZ3000_KJ0NWDZ6",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_18EJXRZK",
-          "_TZ3000_VTSCRPMX",
-          "_TZ3000_h1ipgkwn",
-          "_TZ3000_l9brjwau"
+          "_TZ3000_nnwehhst"
         ],
         "productId": [
           "TS0001",
@@ -91481,17 +91040,33 @@
           "TS0005",
           "TS0006",
           "TS0011",
-          "TS0013",
-          "TS0002"
+          "TS0013"
         ],
         "endpoints": {
-          "1": [
-            57344,
-            57345
-          ],
-          "2": [
-            57345
-          ],
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              1
+            ]
+          },
+          "2": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
           "3": {
             "clusters": [
               0,
@@ -91511,12 +91086,7 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        },
-        "tuyaClusters": [
-          57344,
-          57345
-        ],
-        "supportsCountdown": true
+        }
       },
       "settings": [
         {
@@ -91805,51 +91375,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "countdown_gang1",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 1 (seconds)",
-            "fr": "Minuterie Gang 1 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang2",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 2 (seconds)",
-            "fr": "Minuterie Gang 2 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang3",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 3 (seconds)",
-            "fr": "Minuterie Gang 3 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
         }
       ],
       "images": {
@@ -91977,7 +91502,8 @@
         "onoff",
         "onoff.switch_2",
         "onoff.switch_3",
-        "onoff.switch_4"
+        "onoff.switch_4",
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -91995,6 +91521,15 @@
         }
       },
       "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "CR2477",
+          "AAA",
+          "AA",
+          "CR123A",
+          "INTERNAL"
+        ],
         "approximation": {
           "usageConstant": 0.5
         }
@@ -92023,13 +91558,7 @@
           "_TZ3000_odzoiovu",
           "_TZ3000_zmy4lslw",
           "_TZ3000_ejwkn2h2",
-          "_TZ3000_nnwehhst",
-          "_TZ3000_KJ0NWDZ6",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_18EJXRZK",
-          "_TZ3000_VTSCRPMX",
-          "_TZ3000_h1ipgkwn",
-          "_TZ3000_l9brjwau"
+          "_TZ3000_nnwehhst"
         ],
         "productId": [
           "TS0001",
@@ -92038,17 +91567,34 @@
           "TS0005",
           "TS0006",
           "TS0011",
-          "TS0014",
-          "TS0002"
+          "TS0014"
         ],
         "endpoints": {
-          "1": [
-            57344,
-            57345
-          ],
-          "2": [
-            57345
-          ],
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              1794,
+              2820
+            ],
+            "bindings": [
+              6,
+              1794
+            ]
+          },
+          "2": {
+            "clusters": [
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
           "3": {
             "clusters": [
               4,
@@ -92082,12 +91628,7 @@
             "en": "Press and hold the power button for 5 seconds until the LED blinks",
             "fr": "Appuyez et maintenez le bouton d'alimentation pendant 5 secondes jusqu'à ce que la LED clignote"
           }
-        },
-        "tuyaClusters": [
-          57344,
-          57345
-        ],
-        "supportsCountdown": true
+        }
       },
       "images": {
         "small": "/drivers/switch_wall_4gang/assets/images/small.png",
@@ -92398,66 +91939,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "countdown_gang1",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 1 (seconds)",
-            "fr": "Minuterie Gang 1 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang2",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 2 (seconds)",
-            "fr": "Minuterie Gang 2 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang3",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 3 (seconds)",
-            "fr": "Minuterie Gang 3 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang4",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 4 (seconds)",
-            "fr": "Minuterie Gang 4 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
         }
       ],
       "pair": [
@@ -92593,6 +92074,13 @@
         "dim"
       ],
       "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
         "approximation": {
           "usageConstant": 0.5
         }
@@ -92617,13 +92105,7 @@
           "_TZ3000_odzoiovu",
           "_TZ3000_zmy4lslw",
           "_TZ3000_ejwkn2h2",
-          "_TZ3000_nnwehhst",
-          "_TZ3000_KJ0NWDZ6",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_18EJXRZK",
-          "_TZ3000_VTSCRPMX",
-          "_TZ3000_h1ipgkwn",
-          "_TZ3000_l9brjwau"
+          "_TZ3000_nnwehhst"
         ],
         "productId": [
           "TS0001",
@@ -92632,17 +92114,36 @@
           "TS0005",
           "TS0006",
           "TS0011",
-          "TS0014",
-          "TS0002"
+          "TS0014"
         ],
         "endpoints": {
-          "1": [
-            57344,
-            57345
-          ],
-          "2": [
-            57345
-          ],
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              1
+            ]
+          },
+          "2": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          },
           "3": {
             "clusters": [
               0,
@@ -92678,12 +92179,7 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        },
-        "tuyaClusters": [
-          57344,
-          57345
-        ],
-        "supportsCountdown": true
+        }
       },
       "settings": [
         {
@@ -92972,66 +92468,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "countdown_gang1",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 1 (seconds)",
-            "fr": "Minuterie Gang 1 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang2",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 2 (seconds)",
-            "fr": "Minuterie Gang 2 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang3",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 3 (seconds)",
-            "fr": "Minuterie Gang 3 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang4",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 4 (seconds)",
-            "fr": "Minuterie Gang 4 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
         }
       ],
       "images": {
@@ -93162,6 +92598,13 @@
         "dim"
       ],
       "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
         "approximation": {
           "usageConstant": 0.5
         }
@@ -93186,13 +92629,7 @@
           "_TZ3000_odzoiovu",
           "_TZ3000_zmy4lslw",
           "_TZ3000_ejwkn2h2",
-          "_TZ3000_nnwehhst",
-          "_TZ3000_KJ0NWDZ6",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_18EJXRZK",
-          "_TZ3000_VTSCRPMX",
-          "_TZ3000_h1ipgkwn",
-          "_TZ3000_l9brjwau"
+          "_TZ3000_nnwehhst"
         ],
         "productId": [
           "TS0001",
@@ -93201,17 +92638,33 @@
           "TS0005",
           "TS0006",
           "TS0011",
-          "TS0014",
-          "TS0002"
+          "TS0014"
         ],
         "endpoints": {
-          "1": [
-            57344,
-            57345
-          ],
-          "2": [
-            57345
-          ],
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              1
+            ]
+          },
+          "2": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
           "3": {
             "clusters": [
               0,
@@ -93243,12 +92696,7 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        },
-        "tuyaClusters": [
-          57344,
-          57345
-        ],
-        "supportsCountdown": true
+        }
       },
       "settings": [
         {
@@ -93537,66 +92985,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "countdown_gang1",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 1 (seconds)",
-            "fr": "Minuterie Gang 1 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang2",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 2 (seconds)",
-            "fr": "Minuterie Gang 2 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang3",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 3 (seconds)",
-            "fr": "Minuterie Gang 3 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang4",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 4 (seconds)",
-            "fr": "Minuterie Gang 4 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
         }
       ],
       "images": {
@@ -93724,6 +93112,13 @@
         "dim"
       ],
       "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
         "approximation": {
           "usageConstant": 0.5
         }
@@ -93748,13 +93143,7 @@
           "_TZ3000_odzoiovu",
           "_TZ3000_zmy4lslw",
           "_TZ3000_ejwkn2h2",
-          "_TZ3000_nnwehhst",
-          "_TZ3000_KJ0NWDZ6",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_18EJXRZK",
-          "_TZ3000_VTSCRPMX",
-          "_TZ3000_h1ipgkwn",
-          "_TZ3000_l9brjwau"
+          "_TZ3000_nnwehhst"
         ],
         "productId": [
           "TS0001",
@@ -93763,17 +93152,37 @@
           "TS0005",
           "TS0006",
           "TS0011",
-          "TS0015",
-          "TS0002"
+          "TS0015"
         ],
         "endpoints": {
-          "1": [
-            57344,
-            57345
-          ],
-          "2": [
-            57345
-          ],
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8,
+              61184
+            ],
+            "bindings": [
+              1
+            ]
+          },
+          "2": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          },
           "3": {
             "clusters": [
               0,
@@ -93823,12 +93232,7 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        },
-        "tuyaClusters": [
-          57344,
-          57345
-        ],
-        "supportsCountdown": true
+        }
       },
       "settings": [
         {
@@ -94117,81 +93521,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "countdown_gang1",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 1 (seconds)",
-            "fr": "Minuterie Gang 1 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang2",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 2 (seconds)",
-            "fr": "Minuterie Gang 2 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang3",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 3 (seconds)",
-            "fr": "Minuterie Gang 3 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang4",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 4 (seconds)",
-            "fr": "Minuterie Gang 4 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang5",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 5 (seconds)",
-            "fr": "Minuterie Gang 5 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
         }
       ],
       "images": {
@@ -94314,7 +93643,14 @@
       "energy": {
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -94336,13 +93672,7 @@
           "_TZ3000_odzoiovu",
           "_TZ3000_zmy4lslw",
           "_TZ3000_ejwkn2h2",
-          "_TZ3000_nnwehhst",
-          "_TZ3000_KJ0NWDZ6",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_18EJXRZK",
-          "_TZ3000_VTSCRPMX",
-          "_TZ3000_h1ipgkwn",
-          "_TZ3000_l9brjwau"
+          "_TZ3000_nnwehhst"
         ],
         "productId": [
           "TS0001",
@@ -94351,17 +93681,34 @@
           "TS0005",
           "TS0006",
           "TS0011",
-          "TS0016",
-          "TS0002"
+          "TS0016"
         ],
         "endpoints": {
-          "1": [
-            57344,
-            57345
-          ],
-          "2": [
-            57345
-          ],
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              1794,
+              2820
+            ],
+            "bindings": [
+              6,
+              1794
+            ]
+          },
+          "2": {
+            "clusters": [
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
           "3": {
             "clusters": [
               4,
@@ -94415,12 +93762,7 @@
             "en": "Press and hold the power button for 5 seconds until the LED blinks",
             "fr": "Appuyez et maintenez le bouton d'alimentation pendant 5 secondes jusqu'à ce que la LED clignote"
           }
-        },
-        "tuyaClusters": [
-          57344,
-          57345
-        ],
-        "supportsCountdown": true
+        }
       },
       "images": {
         "small": "/drivers/switch_wall_6gang/assets/images/small.png",
@@ -94719,96 +94061,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "countdown_gang1",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 1 (seconds)",
-            "fr": "Minuterie Gang 1 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang2",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 2 (seconds)",
-            "fr": "Minuterie Gang 2 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang3",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 3 (seconds)",
-            "fr": "Minuterie Gang 3 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang4",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 4 (seconds)",
-            "fr": "Minuterie Gang 4 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang5",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 5 (seconds)",
-            "fr": "Minuterie Gang 5 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang6",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 6 (seconds)",
-            "fr": "Minuterie Gang 6 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
         }
       ],
       "pair": [
@@ -94904,6 +94156,13 @@
         "dim"
       ],
       "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
         "approximation": {
           "usageConstant": 0.5
         }
@@ -94928,13 +94187,7 @@
           "_TZ3000_odzoiovu",
           "_TZ3000_zmy4lslw",
           "_TZ3000_ejwkn2h2",
-          "_TZ3000_nnwehhst",
-          "_TZ3000_KJ0NWDZ6",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_18EJXRZK",
-          "_TZ3000_VTSCRPMX",
-          "_TZ3000_h1ipgkwn",
-          "_TZ3000_l9brjwau"
+          "_TZ3000_nnwehhst"
         ],
         "productId": [
           "TS0001",
@@ -94943,17 +94196,36 @@
           "TS0005",
           "TS0006",
           "TS0011",
-          "TS0016",
-          "TS0002"
+          "TS0016"
         ],
         "endpoints": {
-          "1": [
-            57344,
-            57345
-          ],
-          "2": [
-            57345
-          ],
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              1
+            ]
+          },
+          "2": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          },
           "3": {
             "clusters": [
               0,
@@ -95017,12 +94289,7 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        },
-        "tuyaClusters": [
-          57344,
-          57345
-        ],
-        "supportsCountdown": true
+        }
       },
       "settings": [
         {
@@ -95311,96 +94578,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "countdown_gang1",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 1 (seconds)",
-            "fr": "Minuterie Gang 1 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang2",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 2 (seconds)",
-            "fr": "Minuterie Gang 2 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang3",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 3 (seconds)",
-            "fr": "Minuterie Gang 3 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang4",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 4 (seconds)",
-            "fr": "Minuterie Gang 4 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang5",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 5 (seconds)",
-            "fr": "Minuterie Gang 5 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang6",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 6 (seconds)",
-            "fr": "Minuterie Gang 6 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
         }
       ],
       "images": {
@@ -95545,6 +94722,13 @@
         "dim"
       ],
       "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
         "approximation": {
           "usageConstant": 0.5
         }
@@ -95569,13 +94753,7 @@
           "_TZ3000_odzoiovu",
           "_TZ3000_zmy4lslw",
           "_TZ3000_ejwkn2h2",
-          "_TZ3000_nnwehhst",
-          "_TZ3000_KJ0NWDZ6",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_18EJXRZK",
-          "_TZ3000_VTSCRPMX",
-          "_TZ3000_h1ipgkwn",
-          "_TZ3000_l9brjwau"
+          "_TZ3000_nnwehhst"
         ],
         "productId": [
           "TS0001",
@@ -95584,17 +94762,33 @@
           "TS0005",
           "TS0006",
           "TS0011",
-          "TS0016",
-          "TS0002"
+          "TS0016"
         ],
         "endpoints": {
-          "1": [
-            57344,
-            57345
-          ],
-          "2": [
-            57345
-          ],
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              1
+            ]
+          },
+          "2": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
           "3": {
             "clusters": [
               0,
@@ -95650,12 +94844,7 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        },
-        "tuyaClusters": [
-          57344,
-          57345
-        ],
-        "supportsCountdown": true
+        }
       },
       "settings": [
         {
@@ -95944,96 +95133,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "countdown_gang1",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 1 (seconds)",
-            "fr": "Minuterie Gang 1 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang2",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 2 (seconds)",
-            "fr": "Minuterie Gang 2 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang3",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 3 (seconds)",
-            "fr": "Minuterie Gang 3 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang4",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 4 (seconds)",
-            "fr": "Minuterie Gang 4 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang5",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 5 (seconds)",
-            "fr": "Minuterie Gang 5 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang6",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 6 (seconds)",
-            "fr": "Minuterie Gang 6 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
         }
       ],
       "images": {
@@ -96180,6 +95279,13 @@
         "dim"
       ],
       "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
         "approximation": {
           "usageConstant": 0.5
         }
@@ -96204,13 +95310,7 @@
           "_TZ3000_odzoiovu",
           "_TZ3000_zmy4lslw",
           "_TZ3000_ejwkn2h2",
-          "_TZ3000_nnwehhst",
-          "_TZ3000_KJ0NWDZ6",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_18EJXRZK",
-          "_TZ3000_VTSCRPMX",
-          "_TZ3000_h1ipgkwn",
-          "_TZ3000_l9brjwau"
+          "_TZ3000_nnwehhst"
         ],
         "productId": [
           "TS0001",
@@ -96218,17 +95318,33 @@
           "TS0004",
           "TS0005",
           "TS0006",
-          "TS0011",
-          "TS0002"
+          "TS0011"
         ],
         "endpoints": {
-          "1": [
-            57344,
-            57345
-          ],
-          "2": [
-            57345
-          ],
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              1
+            ]
+          },
+          "2": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
           "3": {
             "clusters": [
               0,
@@ -96308,12 +95424,7 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        },
-        "tuyaClusters": [
-          57344,
-          57345
-        ],
-        "supportsCountdown": true
+        }
       },
       "settings": [
         {
@@ -96602,126 +95713,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "countdown_gang1",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 1 (seconds)",
-            "fr": "Minuterie Gang 1 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang2",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 2 (seconds)",
-            "fr": "Minuterie Gang 2 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang3",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 3 (seconds)",
-            "fr": "Minuterie Gang 3 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang4",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 4 (seconds)",
-            "fr": "Minuterie Gang 4 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang5",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 5 (seconds)",
-            "fr": "Minuterie Gang 5 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang6",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 6 (seconds)",
-            "fr": "Minuterie Gang 6 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang7",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 7 (seconds)",
-            "fr": "Minuterie Gang 7 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
-        },
-        {
-          "id": "countdown_gang8",
-          "type": "number",
-          "label": {
-            "en": "Countdown Timer Gang 8 (seconds)",
-            "fr": "Minuterie Gang 8 (secondes)"
-          },
-          "hint": {
-            "en": "Auto turn-off after specified time (0 = disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 86400,
-          "units": "s"
         }
       ],
       "images": {

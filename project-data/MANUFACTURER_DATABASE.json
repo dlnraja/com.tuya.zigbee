@@ -13,6 +13,27 @@
     ]
   },
   "manufacturers": {
+    "HOBEIAN": {
+      "brand": "HOBEIAN",
+      "productName": "ZG-204ZV Multisensor",
+      "productId": "ZG-204ZV",
+      "category": "Motion & Presence",
+      "description": "Advanced multisensor with motion (PIR+mmWave), temperature, humidity, and illuminance detection",
+      "features": [
+        "PIR + mmWave motion detection",
+        "Temperature measurement (-20°C to +60°C)",
+        "Humidity measurement (0-100%)",
+        "Illuminance sensor (0-4000 lux)",
+        "Battery powered (CR2032)",
+        "IAS Zone certified",
+        "Tuya protocol support"
+      ],
+      "driver": "motion_temp_humidity_lux",
+      "powerSource": "battery",
+      "batteryLife": "12+ months (CR2032)",
+      "region": "Global",
+      "verified": true
+    },
     "_TZ3000_12sxjap4": {
       "brand": "YANDHI",
       "productName": "RGB Smart Bulb E27",
