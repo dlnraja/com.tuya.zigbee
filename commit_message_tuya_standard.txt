@@ -1,0 +1,45 @@
+📚 TUYA STANDARD - Official Multi-Gang Switch Documentation & Implementation
+
+DOCUMENTATION OFFICIELLE TUYA ANALYSEE:
+Source: https://developer.tuya.com/en/docs/connect-subdevices-to-gateways/tuya-zigbee-multiple-switch-access-standard
+
+NOUVEAUX FICHIERS:
+
+1. docs/technical/TUYA_MULTI_GANG_SWITCH_STANDARD.md
+   - Documentation complete standard Tuya
+   - Tous Data Points (DPs 1-4, 7-10, 14-16, 19, 29-32, 209-210)
+   - Clusters supportes (Basic, On/Off, Tuya Private 0xEF00)
+   - Settings recommandes
+   - Roadmap implementation
+
+2. lib/TuyaMultiGangManager.js
+   - Manager complet fonctionnalites Tuya
+   - Methods: setLEDBehavior, setBacklight, setCountdownTimer
+   - Methods: setMainPowerOnBehavior, setGangPowerOnBehavior
+   - Method: setInchingMode (pulse mode)
+   - Method: applyAllSettings (apply all at once)
+
+FONCTIONNALITES SUPPORTEES:
+
+✅ DP1-4: On/Off per gang (deja implemente)
+✅ DP14: Main power-on behavior (deja implemente)
+🔄 DP7-10: Countdown timers (pret pour v4.11.0)
+🔄 DP15: LED indicator behavior (pret pour v4.11.0)
+🔄 DP16: Backlight control (pret pour v4.11.0)
+🔄 DP19: Inching/Pulse mode (pret pour v4.11.0)
+🔄 DP29-32: Per-gang power-on (pret pour v4.11.0)
+🚀 DP209: Weekly schedules (planifie v4.12.0)
+🚀 DP210: Random timing (planifie v4.12.0)
+
+IMPACT:
+- Documentation officielle Tuya completement analysee
+- Toutes fonctionnalites Tuya identifiees
+- Implementation manager complete
+- Roadmap clair v4.11.0 et v4.12.0
+
+NEXT STEPS:
+v4.11.0: Integration TuyaMultiGangManager dans BaseHybridDevice
+v4.11.0: Settings UI pour toutes options
+v4.12.0: Weekly schedules + Random timing
+
+Reference: User request Nov 2 2025
