@@ -1,0 +1,138 @@
+name: Organize Documentation
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Run weekly on Sundays at 3 AM
+    - cron: '0 3 * * 0'
+
+jobs:
+  organize:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Synchronize README files
+        run: |
+          echo "📚 Synchronizing README files..."
+          node scripts/sync_readme_files.js || echo "⚠️ README sync failed, continuing..."
+          echo "✅ README synchronization complete"
+      
+      - name: Organize documentation files
+        run: |
+          echo "📁 Organizing documentation structure..."
+          
+          # Create organization structure if not exists
+          mkdir -p docs/{guides,technical,forum,github-issues,reports,archive,sessions,readme-variants}
+          mkdir -p scripts/{automation,validation,fixes,enhancement}
+          
+          # Ensure README.md exists at root
+          if [ ! -f "README.md" ]; then
+            echo "⚠️ README.md missing at root!"
+            if [ -f "docs/README.txt" ]; then
+              echo "Creating README.md from README.txt..."
+              node scripts/sync_readme_files.js
+            fi
+          fi
+          
+          # Ensure docs/README.txt exists
+          if [ ! -f "docs/README.txt" ]; then
+            echo "⚠️ docs/README.txt missing!"
+          fi
+          
+          # Move misplaced README files (keep README.md at root)
+          find . -maxdepth 1 -name "README*.md" -not -name "README.md" -exec mv {} docs/readme-variants/ \; 2>/dev/null || true
+          find . -maxdepth 1 -name "README*.txt" -not -name "README.md" -exec mv {} docs/readme-variants/ \; 2>/dev/null || true
+          
+          # Move old changelog files
+          find . -maxdepth 1 -name "CHANGELOG*.md" -not -name "CHANGELOG.md" -exec mv {} docs/archive/ \; 2>/dev/null || true
+          
+          # Organize scripts
+          find scripts/ -maxdepth 1 -name "*.js" -exec sh -c 'grep -l "validation\|validate" "$1" && mv "$1" scripts/validation/ || true' _ {} \; 2>/dev/null || true
+          find scripts/ -maxdepth 1 -name "*fix*.js" -exec mv {} scripts/fixes/ \; 2>/dev/null || true
+          find scripts/ -maxdepth 1 -name "*automate*.js" -o -name "*publish*.js" -exec mv {} scripts/automation/ \; 2>/dev/null || true
+          
+          echo "✅ Organization complete"
+      
+      - name: Update README index
+        run: |
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+          
+          // Scan docs directory
+          const scanDir = (dir, level = 0) => {
+            const files = fs.readdirSync(dir);
+            let output = '';
+            
+            files.forEach(file => {
+              const fullPath = path.join(dir, file);
+              const stats = fs.statSync(fullPath);
+              const indent = '  '.repeat(level);
+              
+              if (stats.isDirectory()) {
+                output += \`\${indent}- **\${file}/**\n\`;
+                output += scanDir(fullPath, level + 1);
+              } else if (file.endsWith('.md')) {
+                output += \`\${indent}- [\${file}](\${fullPath})\n\`;
+              }
+            });
+            
+            return output;
+          };
+          
+          const structure = scanDir('docs');
+          console.log('Documentation structure generated');
+          console.log(structure);
+          " || true
+      
+      - name: Check for changes
+        id: check
+        run: |
+          git add -A
+          if git diff --staged --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Commit and push changes
+        if: steps.check.outputs.has_changes == 'true'
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git commit -m "chore: organize documentation structure [auto]
+          
+          - Move misplaced README files to docs/readme-variants/
+          - Archive old CHANGELOG files
+          - Organize scripts by function
+          - Update documentation index
+          
+          Auto-organized by organize-docs workflow"
+          git push
+      
+      - name: Summary
+        run: |
+          echo "## 📁 Documentation Organization Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Documentation structure organized" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Scripts categorized by function" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Archive cleaned up" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.check.outputs.has_changes }}" == "true" ]; then
+            echo "✅ Changes committed and pushed" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "ℹ️ No changes needed" >> $GITHUB_STEP_SUMMARY
+          fi

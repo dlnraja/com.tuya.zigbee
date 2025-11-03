@@ -374,23 +374,59 @@
             try {
                 const response = await fetch('device-matrix.json');
                 const data = await response.json();
-                allDevices = data.drivers || [];
+                
+                // ✅ FIX: device-matrix.json uses "devices" array, not "drivers"
+                const rawDevices = data.devices || data.drivers || [];
+                
+                // Transform to expected format
+                allDevices = rawDevices.map(device => ({
+                    id: device.driverId || device.id,
+                    name: device.driverName || device.name,
+                    category: device.category || 'Unknown',
+                    class: device.class || 'sensor',
+                    brand: extractBrand(device.manufacturerName || ''),
+                    productIds: device.productId ? [device.productId] : [],
+                    manufacturerIds: device.manufacturerName ? [device.manufacturerName] : [],
+                    capabilities: device.capabilities || []
+                }));
+                
+                // Remove duplicates by driver ID
+                const uniqueDevices = [];
+                const seen = new Set();
+                for (const device of allDevices) {
+                    if (!seen.has(device.id)) {
+                        seen.add(device.id);
+                        uniqueDevices.push(device);
+                    }
+                }
+                allDevices = uniqueDevices;
                 
                 populateFilters();
                 displayResults(allDevices);
                 updateStats();
                 
-                console.log(`✅ Loaded ${allDevices.length} drivers`);
+                console.log(`✅ Loaded ${allDevices.length} unique drivers from ${rawDevices.length} total devices`);
             } catch (error) {
                 console.error('Failed to load devices:', error);
                 document.getElementById('results').innerHTML = `
                     <div class="no-results">
                         <div class="no-results-icon">❌</div>
                         <div class="no-results-text">Failed to load device database</div>
-                        <div class="no-results-hint">Please try refreshing the page</div>
+                        <div class="no-results-hint">Error: ${error.message}<br>Please try refreshing the page</div>
                     </div>
                 `;
             }
+        }
+        
+        // Extract brand from manufacturer name
+        function extractBrand(manufacturerName) {
+            if (!manufacturerName) return 'Generic';
+            // Remove underscores and extract brand prefix
+            if (manufacturerName.startsWith('_TZ')) return 'Tuya';
+            if (manufacturerName.includes('MOES')) return 'MOES';
+            if (manufacturerName.includes('BSEED')) return 'BSEED';
+            if (manufacturerName.includes('Lonsonho')) return 'Lonsonho';
+            return manufacturerName.replace(/_/g, ' ');
         }
         
         // Populate filter dropdowns

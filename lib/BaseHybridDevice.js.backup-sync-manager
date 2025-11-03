@@ -11,7 +11,6 @@ const IASZoneManager = require('./IASZoneManager');
 const MultiEndpointManager = require('./MultiEndpointManager');
 const TuyaEF00Manager = require('./TuyaEF00Manager');
 const IntelligentProtocolRouter = require('./IntelligentProtocolRouter');
-const TuyaSyncManager = require('./TuyaSyncManager');
 const MultiEndpointCommandListener = require('./MultiEndpointCommandListener');
 const DynamicCapabilityManager = require('./DynamicCapabilityManager');
 const FlowTriggerHelpers = require('./FlowTriggerHelpers');
@@ -119,7 +118,6 @@ class BaseHybridDevice extends ZigBeeDevice {
       this.multiEndpointManager = new MultiEndpointManager(this);
       this.tuyaEF00Manager = new TuyaEF00Manager(this);
       this.protocolRouter = new IntelligentProtocolRouter(this);
-    this.syncManager = new TuyaSyncManager(this);
       this.commandListener = new MultiEndpointCommandListener(this);
       this.flowTriggers = new FlowTriggerHelpers(this);
       

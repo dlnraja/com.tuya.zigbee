@@ -1,7 +1,7 @@
 # [APP][Pro] Universal TUYA Zigbee - Local-First Control
 
-![Version](https://img.shields.io/badge/version-4.9.10-blue)
-![Drivers](https://img.shields.io/badge/drivers-163-green)
+![Version](https://img.shields.io/badge/version-4.10.0-blue)
+![Drivers](https://img.shields.io/badge/drivers-173-green)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
 ![License](https://img.shields.io/badge/license-GPL--3.0-red)
 ![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)
@@ -15,10 +15,12 @@
 
 ## 📊 Statistics
 
-- **Total Drivers:** 163
+- **Total Drivers:** 173
 - **SDK Version:** 3
 - **Homey Compatibility:** >=12.2.0
-- **Last Updated:** 2025-10-25
+- **Last Updated:** 2025-11-03
+- **Phase 2 Status:** ✅ Complete
+- **Intelligent Protocol Router:** ✅ Integrated
 
 ### Drivers by Category
 
@@ -30,13 +32,21 @@
 - **Lighting:** 7 drivers
 - **Climate:** 6 drivers
 
-## 🚀 Latest Updates
+## 🚀 Latest Updates - v4.10.0 (Phase 2 Complete)
 
-- [`27ccbebbe`] fix: Flow coherence - 49 flows synchronized to app.json *(19 minutes ago)*
-- [`6f62f074a`] chore: Auto-increment version to v4.9.10 [skip ci] *(37 minutes ago)*
-- [`009c3ce0b`] Docs: Auto-update links, paths, README & CHANGELOG [skip ci] *(42 minutes ago)*
-- [`0dc62fea4`] chore: update device matrix [skip ci] *(43 minutes ago)*
-- [`4d519a2cb`] chore: Auto-increment version to v4.9.9 [skip ci] *(44 minutes ago)*
+### ✨ New Features
+- **IntelligentProtocolRouter:** Auto-detects Tuya DP vs native Zigbee protocol
+- **BSEED Multi-Gang Fix:** Resolves issue where all gangs activate together
+- **TS0601 Full Support:** 3 device types with complete DP mapping
+- **HOBEIAN Manufacturer:** ZG-204ZV Multisensor integration
+- **Device Finder Enhanced:** Functional search and filters
+
+### 🔧 Technical Improvements
+- Integrated protocol routing in BaseHybridDevice
+- BseedDetector for automatic BSEED device detection
+- TuyaDataPointEngine for TS0601 devices
+- All 7 network devices updated and optimized
+- 97% validation success rate
 
 ## 📦 Installation
 

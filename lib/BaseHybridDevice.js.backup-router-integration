@@ -10,8 +10,6 @@ const ReportingConfig = require('./ReportingConfig');
 const IASZoneManager = require('./IASZoneManager');
 const MultiEndpointManager = require('./MultiEndpointManager');
 const TuyaEF00Manager = require('./TuyaEF00Manager');
-const IntelligentProtocolRouter = require('./IntelligentProtocolRouter');
-const TuyaSyncManager = require('./TuyaSyncManager');
 const MultiEndpointCommandListener = require('./MultiEndpointCommandListener');
 const DynamicCapabilityManager = require('./DynamicCapabilityManager');
 const FlowTriggerHelpers = require('./FlowTriggerHelpers');
@@ -118,8 +116,6 @@ class BaseHybridDevice extends ZigBeeDevice {
       this.iasZoneManager = new IASZoneManager(this);
       this.multiEndpointManager = new MultiEndpointManager(this);
       this.tuyaEF00Manager = new TuyaEF00Manager(this);
-      this.protocolRouter = new IntelligentProtocolRouter(this);
-    this.syncManager = new TuyaSyncManager(this);
       this.commandListener = new MultiEndpointCommandListener(this);
       this.flowTriggers = new FlowTriggerHelpers(this);
       
@@ -245,25 +241,6 @@ class BaseHybridDevice extends ZigBeeDevice {
         this.log('[BACKGROUND] ✅ Tuya EF00 manager initialized');
       } else {
         this.log('[BACKGROUND] ✅ Standard Zigbee device (Tuya EF00 not needed)');
-      }
-      
-      // Step 4b: INTELLIGENT PROTOCOL DETECTION (NEW)
-      this.log('[BACKGROUND] Step 3c.1/7: Detecting optimal protocol...');
-      try {
-        const deviceData = this.getData();
-        const manufacturerName = deviceData.manufacturerName || '';
-        const protocol = await this.protocolRouter.detectProtocol(this.zclNode, manufacturerName);
-        this.log(`[PROTOCOL] ✅ Selected protocol: ${protocol}`);
-        
-        // Log diagnostics
-        const diagnostics = this.protocolRouter.getDiagnostics();
-        this.log('[PROTOCOL] Diagnostics:', JSON.stringify(diagnostics, null, 2));
-        
-        // Store for later use
-        this.selectedProtocol = protocol;
-      } catch (err) {
-        this.error('[PROTOCOL] Detection failed:', err);
-        this.selectedProtocol = 'ZIGBEE_NATIVE'; // Safe fallback
       }
       
       // Step 5: Setup command listeners on ALL endpoints
