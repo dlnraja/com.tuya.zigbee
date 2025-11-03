@@ -1,0 +1,726 @@
+{
+  "timestamp": "2025-11-03T04:38:02.847Z",
+  "summary": {
+    "totalIssues": 23,
+    "totalPRs": 1,
+    "totalActions": 24,
+    "highPriority": 1,
+    "readyToClose": 0,
+    "readyToMerge": 0
+  },
+  "issues": [
+    {
+      "author": {
+        "id": "U_kgDOBnNu5w",
+        "is_bot": false,
+        "login": "Rickert1993",
+        "name": ""
+      },
+      "createdAt": "2025-10-30T09:26:06Z",
+      "labels": [],
+      "number": 44,
+      "title": "[DEVICE] TS011F Tuya zigbee Smart plug 20 Ampere _TZ3210_fgwhjm9j"
+    },
+    {
+      "author": {
+        "is_bot": true,
+        "login": "app/github-actions"
+      },
+      "createdAt": "2025-10-19T22:41:46Z",
+      "labels": [
+        {
+          "id": "LA_kwDOPPue0s8AAAACFupBcw",
+          "name": "bug",
+          "description": "Something isn't working",
+          "color": "d73a4a"
+        },
+        {
+          "id": "LA_kwDOPPue0s8AAAACNYKRTQ",
+          "name": "automated",
+          "description": "",
+          "color": "ededed"
+        },
+        {
+          "id": "LA_kwDOPPue0s8AAAACNYKRTg",
+          "name": "publish-failure",
+          "description": "",
+          "color": "ededed"
+        }
+      ],
+      "number": 42,
+      "title": "❌ Homey App Store Publish Failed - v3.1.9"
+    },
+    {
+      "author": {
+        "is_bot": true,
+        "login": "app/github-actions"
+      },
+      "createdAt": "2025-10-19T15:56:14Z",
+      "labels": [
+        {
+          "id": "LA_kwDOPPue0s8AAAACFupBcw",
+          "name": "bug",
+          "description": "Something isn't working",
+          "color": "d73a4a"
+        },
+        {
+          "id": "LA_kwDOPPue0s8AAAACNYKRTQ",
+          "name": "automated",
+          "description": "",
+          "color": "ededed"
+        },
+        {
+          "id": "LA_kwDOPPue0s8AAAACNYKRTg",
+          "name": "publish-failure",
+          "description": "",
+          "color": "ededed"
+        }
+      ],
+      "number": 41,
+      "title": "❌ Homey App Store Publish Failed - v3.1.5"
+    },
+    {
+      "author": {
+        "is_bot": true,
+        "login": "app/github-actions"
+      },
+      "createdAt": "2025-10-19T08:19:01Z",
+      "labels": [
+        {
+          "id": "LA_kwDOPPue0s8AAAACFupBcw",
+          "name": "bug",
+          "description": "Something isn't working",
+          "color": "d73a4a"
+        },
+        {
+          "id": "LA_kwDOPPue0s8AAAACNYKRTQ",
+          "name": "automated",
+          "description": "",
+          "color": "ededed"
+        },
+        {
+          "id": "LA_kwDOPPue0s8AAAACNYKRTg",
+          "name": "publish-failure",
+          "description": "",
+          "color": "ededed"
+        }
+      ],
+      "number": 40,
+      "title": "❌ Homey App Store Publish Failed - v3.1.1"
+    },
+    {
+      "author": {
+        "is_bot": true,
+        "login": "app/github-actions"
+      },
+      "createdAt": "2025-10-19T07:48:04Z",
+      "labels": [
+        {
+          "id": "LA_kwDOPPue0s8AAAACFupBcw",
+          "name": "bug",
+          "description": "Something isn't working",
+          "color": "d73a4a"
+        },
+        {
+          "id": "LA_kwDOPPue0s8AAAACNYKRTQ",
+          "name": "automated",
+          "description": "",
+          "color": "ededed"
+        },
+        {
+          "id": "LA_kwDOPPue0s8AAAACNYKRTg",
+          "name": "publish-failure",
+          "description": "",
+          "color": "ededed"
+        }
+      ],
+      "number": 39,
+      "title": "❌ Homey App Store Publish Failed - v3.1.0"
+    },
+    {
+      "author": {
+        "is_bot": true,
+        "login": "app/github-actions"
+      },
+      "createdAt": "2025-10-19T00:03:19Z",
+      "labels": [
+        {
+          "id": "LA_kwDOPPue0s8AAAACFupBcw",
+          "name": "bug",
+          "description": "Something isn't working",
+          "color": "d73a4a"
+        },
+        {
+          "id": "LA_kwDOPPue0s8AAAACNOj2AQ",
+          "name": "automated-diagnostic",
+          "description": "",
+          "color": "ededed"
+        }
+      ],
+      "number": 38,
+      "title": "🔴 System Health Check Failed"
+    },
+    {
+      "author": {
+        "id": "U_kgDODjtJzA",
+        "is_bot": false,
+        "login": "laborhexe0210",
+        "name": ""
+      },
+      "createdAt": "2025-10-18T07:54:01Z",
+      "labels": [
+        {
+          "id": "LA_kwDOPPue0s8AAAACFupBhQ",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        }
+      ],
+      "number": 37,
+      "title": "[DEVICE] TS0201 _TZ3000_1o6x1bl0 Temperature and Humidity Sensor with buzzer and external sensor"
+    },
+    {
+      "author": {
+        "id": "MDQ6VXNlcjQ5NjM2MTA=",
+        "is_bot": false,
+        "login": "gore-",
+        "name": ""
+      },
+      "createdAt": "2025-10-10T13:06:28Z",
+      "labels": [
+        {
+          "id": "LA_kwDOPPue0s8AAAACFupBhQ",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        }
+      ],
+      "number": 35,
+      "title": "[DEVICE] TS0601 MOES CO detector"
+    },
+    {
+      "author": {
+        "id": "MDQ6VXNlcjU1NjM1OTYz",
+        "is_bot": false,
+        "login": "massari46",
+        "name": ""
+      },
+      "createdAt": "2025-10-10T06:32:50Z",
+      "labels": [
+        {
+          "id": "LA_kwDOPPue0s8AAAACFupBhQ",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        }
+      ],
+      "number": 34,
+      "title": "Device Request Tuya Zigbee 3.0 Smart RGB COLOR LED Strip Controller - _TZ3210_0zabbfa / TS0503B"
+    },
+    {
+      "author": {
+        "id": "U_kgDOBgKFzQ",
+        "is_bot": false,
+        "login": "gfi63",
+        "name": ""
+      },
+      "createdAt": "2025-10-09T14:23:53Z",
+      "labels": [
+        {
+          "id": "LA_kwDOPPue0s8AAAACFupBcw",
+          "name": "bug",
+          "description": "Something isn't working",
+          "color": "d73a4a"
+        }
+      ],
+      "number": 33,
+      "title": "[BUG]  #26 & #27 implemented but not working"
+    },
+    {
+      "author": {
+        "id": "MDQ6VXNlcjI2NjgyMTMz",
+        "is_bot": false,
+        "login": "kodalissri",
+        "name": ""
+      },
+      "createdAt": "2025-10-09T00:18:22Z",
+      "labels": [
+        {
+          "id": "LA_kwDOPPue0s8AAAACFupBhQ",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        }
+      ],
+      "number": 32,
+      "title": "[DEVICE] TS0201 Temp and Humidity Sensor with Screen"
+    },
+    {
+      "author": {
+        "id": "MDQ6VXNlcjEyOTg1MjA1",
+        "is_bot": false,
+        "login": "askseb",
+        "name": "Sebastian J Roberts"
+      },
+      "createdAt": "2025-10-08T21:54:33Z",
+      "labels": [
+        {
+          "id": "LA_kwDOPPue0s8AAAACFupBhQ",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        }
+      ],
+      "number": 31,
+      "title": "[DEVICE] TS0203"
+    },
+    {
+      "author": {
+        "id": "MDQ6VXNlcjEyOTg1MjA1",
+        "is_bot": false,
+        "login": "askseb",
+        "name": "Sebastian J Roberts"
+      },
+      "createdAt": "2025-10-08T21:51:38Z",
+      "labels": [
+        {
+          "id": "LA_kwDOPPue0s8AAAACFupBhQ",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        }
+      ],
+      "number": 30,
+      "title": "[DEVICE]  TS0041"
+    },
+    {
+      "author": {
+        "id": "MDQ6VXNlcjI2NjgyMTMz",
+        "is_bot": false,
+        "login": "kodalissri",
+        "name": ""
+      },
+      "createdAt": "2025-10-07T12:08:58Z",
+      "labels": [
+        {
+          "id": "LA_kwDOPPue0s8AAAACFupBhQ",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        }
+      ],
+      "number": 29,
+      "title": "[DEVICE] ZG-204ZM PIR radar and illumination sensor"
+    },
+    {
+      "author": {
+        "id": "MDQ6VXNlcjI2NjgyMTMz",
+        "is_bot": false,
+        "login": "kodalissri",
+        "name": ""
+      },
+      "createdAt": "2025-10-07T11:56:48Z",
+      "labels": [
+        {
+          "id": "LA_kwDOPPue0s8AAAACFupBhQ",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        }
+      ],
+      "number": 28,
+      "title": "[DEVICE] ZG-204ZV Motion, Temp,Humidity and Illumination Sensor"
+    },
+    {
+      "author": {
+        "id": "U_kgDODgIoMg",
+        "is_bot": false,
+        "login": "GXA064",
+        "name": ""
+      },
+      "createdAt": "2025-09-29T04:22:25Z",
+      "labels": [
+        {
+          "id": "LA_kwDOPPue0s8AAAACFupBhQ",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        }
+      ],
+      "number": 25,
+      "title": "Device Request - Aqara precision motion sensor"
+    },
+    {
+      "author": {
+        "id": "MDQ6VXNlcjc4NDI4Nw==",
+        "is_bot": false,
+        "login": "l-i-n-k",
+        "name": "Thomas Link"
+      },
+      "createdAt": "2025-09-24T07:26:06Z",
+      "labels": [
+        {
+          "id": "LA_kwDOPPue0s8AAAACFupBcw",
+          "name": "bug",
+          "description": "Something isn't working",
+          "color": "d73a4a"
+        }
+      ],
+      "number": 24,
+      "title": "[BUG] Settings screen - spinning wheel"
+    },
+    {
+      "author": {
+        "id": "U_kgDODcZlNA",
+        "is_bot": false,
+        "login": "luuk0412-wq",
+        "name": ""
+      },
+      "createdAt": "2025-09-22T13:22:09Z",
+      "labels": [
+        {
+          "id": "LA_kwDOPPue0s8AAAACFupBhQ",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        }
+      ],
+      "number": 23,
+      "title": "Device Request - Tuya Smart Temperature And Humidity Sensor- Tuya / CK-TLSR8656-SS5-01(7014)"
+    },
+    {
+      "author": {
+        "id": "MDQ6VXNlcjQ2MzU3MjA2",
+        "is_bot": false,
+        "login": "rsalinger",
+        "name": "Ryan Salinger"
+      },
+      "createdAt": "2025-09-19T15:54:06Z",
+      "labels": [
+        {
+          "id": "LA_kwDOPPue0s8AAAACFupBhQ",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        }
+      ],
+      "number": 22,
+      "title": "Device Request - [Smart Knob] - [_TZ3000_gwkzibhs] / [TS004F]"
+    },
+    {
+      "author": {
+        "id": "MDQ6VXNlcjcxNTU5NTcz",
+        "is_bot": false,
+        "login": "MarceloSilvaLeite",
+        "name": ""
+      },
+      "createdAt": "2025-09-19T11:39:31Z",
+      "labels": [
+        {
+          "id": "LA_kwDOPPue0s8AAAACFupBhQ",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        }
+      ],
+      "number": 21,
+      "title": "Device Request - ZigBee Smart Inline Switch - 3A Smart Home DE / LXN59-2S7LX1.0"
+    },
+    {
+      "author": {
+        "id": "MDQ6VXNlcjcxNTU5NTcz",
+        "is_bot": false,
+        "login": "MarceloSilvaLeite",
+        "name": ""
+      },
+      "createdAt": "2025-09-19T11:32:40Z",
+      "labels": [
+        {
+          "id": "LA_kwDOPPue0s8AAAACFupBhQ",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        }
+      ],
+      "number": 20,
+      "title": "Device Request - Human Presence Detector mm wave radar - MOES Human Presence Sensor - _TZ3218_t9ynfz4x / TS0225"
+    },
+    {
+      "author": {
+        "id": "MDQ6VXNlcjcxNTU5NTcz",
+        "is_bot": false,
+        "login": "MarceloSilvaLeite",
+        "name": ""
+      },
+      "createdAt": "2025-09-19T11:30:13Z",
+      "labels": [
+        {
+          "id": "LA_kwDOPPue0s8AAAACFupBhQ",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        }
+      ],
+      "number": 19,
+      "title": "Device Request - Human Presence Detector mm wave radar - MOES Human Presence Sensor - _TZ3218_awarhusb / TS0225"
+    },
+    {
+      "author": {
+        "id": "MDQ6VXNlcjk3NDY4OTg=",
+        "is_bot": false,
+        "login": "dlnraja",
+        "name": "dlnraja"
+      },
+      "createdAt": "2025-07-20T16:06:02Z",
+      "labels": [
+        {
+          "id": "LA_kwDOPPue0s8AAAACFupBcw",
+          "name": "bug",
+          "description": "Something isn't working",
+          "color": "d73a4a"
+        }
+      ],
+      "number": 4,
+      "title": "[FIX] Résoudre le rejet du push (rejected master -> master)"
+    }
+  ],
+  "prs": [
+    {
+      "author": {
+        "id": "U_kgDOBXwOdw",
+        "is_bot": false,
+        "login": "AreAArseth",
+        "name": ""
+      },
+      "createdAt": "2025-11-02T12:25:50Z",
+      "labels": [],
+      "number": 47,
+      "reviews": [],
+      "title": "Copilot/add soil moisture device support"
+    }
+  ],
+  "actions": [
+    {
+      "type": "PR",
+      "number": 47,
+      "title": "HOBEIAN ZG-303Z Support",
+      "action": "COMMENT_AND_LABEL",
+      "priority": "HIGH",
+      "comment": "# ✅ PR Review Complete - HOBEIAN ZG-303Z Soil Moisture Sensor\n\nThank you @AreAArseth for this contribution! 🎉\n\n## 📊 Review Summary\n\n**Status**: ✅ **APPROVED** - Pending manufacturer ID\n\n### ✅ Code Quality\n- Clean implementation\n- Proper capabilities: temperature, humidity, soil moisture, battery, contact alarm\n- Follows project structure\n- No console.log() statements\n\n### ✅ Configuration\n- `driver.compose.json`: Well structured\n- Capabilities properly mapped\n- Settings appropriate\n\n### ⏳ Missing Information\n\nTo complete this PR, we need:\n\n**Exact Manufacturer ID**: `_TZ****_********`\n\n**How to find it**:\n1. Pair device with Homey\n2. Go to device settings\n3. Look for \"Zigbee information\"\n4. Copy the manufacturer ID (format: `_TZ****_********`)\n\n**Or** check the device in developer tools:\n```javascript\n// In Homey developer console\nconst device = await Homey.devices.getDevice('your-device-id');\nconsole.log(device.getData());\n// Look for \"manufacturer\" field\n```\n\n### 📝 Next Steps\n\n1. ✅ You provide manufacturer ID\n2. ✅ We add it to driver.compose.json\n3. ✅ Merge PR #47\n4. ✅ Include in v4.10.0 release\n5. 🎉 Your device is officially supported!\n\n### 🧪 Testing Checklist (for you to verify)\n\n- [ ] Device pairs successfully\n- [ ] Temperature readings accurate\n- [ ] Air humidity readings work\n- [ ] Soil moisture readings work\n- [ ] Battery percentage displays correctly\n- [ ] Contact alarm triggers properly\n\n### 📚 Documentation\n\nI've created comprehensive review documentation:\n- Review analysis: `docs/support/PR47_SOIL_MOISTURE_REVIEW.md`\n- Merge script ready: `scripts/pr/MERGE_PR47.ps1`\n\n### 🎯 Timeline\n\n- **Today**: Awaiting manufacturer ID from you\n- **Within 24h**: Merge PR after confirmation\n- **Within 48h**: Release v4.10.0 with your contribution\n\nThank you again for contributing! 🙏\n\n---\n\n**Maintainer**: Dylan Rajasekaram  \n**Contact**: senetmarne@gmail.com",
+      "labels": [
+        "approved",
+        "enhancement",
+        "awaiting-info"
+      ],
+      "autoMerge": false,
+      "reason": "Waiting for manufacturer ID"
+    },
+    {
+      "type": "ISSUE",
+      "number": 44,
+      "title": "[DEVICE] TS011F Tuya zigbee Smart plug 20 Ampere _TZ3210_fgwhjm9j",
+      "action": "RESPOND",
+      "priority": "MEDIUM",
+      "comment": "Thank you for reporting this issue!\n\nWe're reviewing your report and will respond shortly.\n\n**Status**: Under investigation\n**Priority**: LOW\n\nPlease provide:\n1. Homey firmware version\n2. App version\n3. Device manufacturer and model\n4. Diagnostic report ID (if available)\n\nWe'll update you as soon as possible.",
+      "autoClose": false
+    },
+    {
+      "type": "ISSUE",
+      "number": 42,
+      "title": "❌ Homey App Store Publish Failed - v3.1.9",
+      "action": "RESPOND",
+      "priority": "MEDIUM",
+      "comment": "Thank you for reporting this issue!\n\nWe're reviewing your report and will respond shortly.\n\n**Status**: Under investigation\n**Priority**: LOW\n\nPlease provide:\n1. Homey firmware version\n2. App version\n3. Device manufacturer and model\n4. Diagnostic report ID (if available)\n\nWe'll update you as soon as possible.",
+      "autoClose": false
+    },
+    {
+      "type": "ISSUE",
+      "number": 41,
+      "title": "❌ Homey App Store Publish Failed - v3.1.5",
+      "action": "RESPOND",
+      "priority": "MEDIUM",
+      "comment": "Thank you for reporting this issue!\n\nWe're reviewing your report and will respond shortly.\n\n**Status**: Under investigation\n**Priority**: LOW\n\nPlease provide:\n1. Homey firmware version\n2. App version\n3. Device manufacturer and model\n4. Diagnostic report ID (if available)\n\nWe'll update you as soon as possible.",
+      "autoClose": false
+    },
+    {
+      "type": "ISSUE",
+      "number": 40,
+      "title": "❌ Homey App Store Publish Failed - v3.1.1",
+      "action": "RESPOND",
+      "priority": "MEDIUM",
+      "comment": "Thank you for reporting this issue!\n\nWe're reviewing your report and will respond shortly.\n\n**Status**: Under investigation\n**Priority**: LOW\n\nPlease provide:\n1. Homey firmware version\n2. App version\n3. Device manufacturer and model\n4. Diagnostic report ID (if available)\n\nWe'll update you as soon as possible.",
+      "autoClose": false
+    },
+    {
+      "type": "ISSUE",
+      "number": 39,
+      "title": "❌ Homey App Store Publish Failed - v3.1.0",
+      "action": "RESPOND",
+      "priority": "MEDIUM",
+      "comment": "Thank you for reporting this issue!\n\nWe're reviewing your report and will respond shortly.\n\n**Status**: Under investigation\n**Priority**: LOW\n\nPlease provide:\n1. Homey firmware version\n2. App version\n3. Device manufacturer and model\n4. Diagnostic report ID (if available)\n\nWe'll update you as soon as possible.",
+      "autoClose": false
+    },
+    {
+      "type": "ISSUE",
+      "number": 38,
+      "title": "🔴 System Health Check Failed",
+      "action": "RESPOND",
+      "priority": "MEDIUM",
+      "comment": "Thank you for reporting this issue!\n\nWe're reviewing your report and will respond shortly.\n\n**Status**: Under investigation\n**Priority**: LOW\n\nPlease provide:\n1. Homey firmware version\n2. App version\n3. Device manufacturer and model\n4. Diagnostic report ID (if available)\n\nWe'll update you as soon as possible.",
+      "autoClose": false
+    },
+    {
+      "type": "ISSUE",
+      "number": 37,
+      "title": "[DEVICE] TS0201 _TZ3000_1o6x1bl0 Temperature and Humidity Sensor with buzzer and external sensor",
+      "action": "RESPOND",
+      "priority": "MEDIUM",
+      "comment": "Thank you for reporting this issue!\n\nWe're reviewing your report and will respond shortly.\n\n**Status**: Under investigation\n**Priority**: LOW\n\nPlease provide:\n1. Homey firmware version\n2. App version\n3. Device manufacturer and model\n4. Diagnostic report ID (if available)\n\nWe'll update you as soon as possible.",
+      "autoClose": false
+    },
+    {
+      "type": "ISSUE",
+      "number": 35,
+      "title": "[DEVICE] TS0601 MOES CO detector",
+      "action": "RESPOND",
+      "priority": "MEDIUM",
+      "comment": "Thank you for reporting this issue!\n\nWe're reviewing your report and will respond shortly.\n\n**Status**: Under investigation\n**Priority**: LOW\n\nPlease provide:\n1. Homey firmware version\n2. App version\n3. Device manufacturer and model\n4. Diagnostic report ID (if available)\n\nWe'll update you as soon as possible.",
+      "autoClose": false
+    },
+    {
+      "type": "ISSUE",
+      "number": 34,
+      "title": "Device Request Tuya Zigbee 3.0 Smart RGB COLOR LED Strip Controller - _TZ3210_0zabbfa / TS0503B",
+      "action": "RESPOND",
+      "priority": "MEDIUM",
+      "comment": "Thank you for reporting this issue!\n\nWe're reviewing your report and will respond shortly.\n\n**Status**: Under investigation\n**Priority**: LOW\n\nPlease provide:\n1. Homey firmware version\n2. App version\n3. Device manufacturer and model\n4. Diagnostic report ID (if available)\n\nWe'll update you as soon as possible.",
+      "autoClose": false
+    },
+    {
+      "type": "ISSUE",
+      "number": 33,
+      "title": "[BUG]  #26 & #27 implemented but not working",
+      "action": "RESPOND",
+      "priority": "MEDIUM",
+      "comment": "Thank you for reporting this issue!\n\nWe're reviewing your report and will respond shortly.\n\n**Status**: Under investigation\n**Priority**: MEDIUM\n\nPlease provide:\n1. Homey firmware version\n2. App version\n3. Device manufacturer and model\n4. Diagnostic report ID (if available)\n\nWe'll update you as soon as possible.",
+      "autoClose": false
+    },
+    {
+      "type": "ISSUE",
+      "number": 32,
+      "title": "[DEVICE] TS0201 Temp and Humidity Sensor with Screen",
+      "action": "RESPOND",
+      "priority": "MEDIUM",
+      "comment": "Thank you for reporting this issue!\n\nWe're reviewing your report and will respond shortly.\n\n**Status**: Under investigation\n**Priority**: LOW\n\nPlease provide:\n1. Homey firmware version\n2. App version\n3. Device manufacturer and model\n4. Diagnostic report ID (if available)\n\nWe'll update you as soon as possible.",
+      "autoClose": false
+    },
+    {
+      "type": "ISSUE",
+      "number": 31,
+      "title": "[DEVICE] TS0203",
+      "action": "RESPOND",
+      "priority": "MEDIUM",
+      "comment": "Thank you for reporting this issue!\n\nWe're reviewing your report and will respond shortly.\n\n**Status**: Under investigation\n**Priority**: LOW\n\nPlease provide:\n1. Homey firmware version\n2. App version\n3. Device manufacturer and model\n4. Diagnostic report ID (if available)\n\nWe'll update you as soon as possible.",
+      "autoClose": false
+    },
+    {
+      "type": "ISSUE",
+      "number": 30,
+      "title": "[DEVICE]  TS0041",
+      "action": "RESPOND",
+      "priority": "MEDIUM",
+      "comment": "Thank you for reporting this issue!\n\nWe're reviewing your report and will respond shortly.\n\n**Status**: Under investigation\n**Priority**: LOW\n\nPlease provide:\n1. Homey firmware version\n2. App version\n3. Device manufacturer and model\n4. Diagnostic report ID (if available)\n\nWe'll update you as soon as possible.",
+      "autoClose": false
+    },
+    {
+      "type": "ISSUE",
+      "number": 29,
+      "title": "[DEVICE] ZG-204ZM PIR radar and illumination sensor",
+      "action": "RESPOND",
+      "priority": "MEDIUM",
+      "comment": "Thank you for reporting this issue!\n\nWe're reviewing your report and will respond shortly.\n\n**Status**: Under investigation\n**Priority**: LOW\n\nPlease provide:\n1. Homey firmware version\n2. App version\n3. Device manufacturer and model\n4. Diagnostic report ID (if available)\n\nWe'll update you as soon as possible.",
+      "autoClose": false
+    },
+    {
+      "type": "ISSUE",
+      "number": 28,
+      "title": "[DEVICE] ZG-204ZV Motion, Temp,Humidity and Illumination Sensor",
+      "action": "RESPOND",
+      "priority": "MEDIUM",
+      "comment": "Thank you for reporting this issue!\n\nWe're reviewing your report and will respond shortly.\n\n**Status**: Under investigation\n**Priority**: LOW\n\nPlease provide:\n1. Homey firmware version\n2. App version\n3. Device manufacturer and model\n4. Diagnostic report ID (if available)\n\nWe'll update you as soon as possible.",
+      "autoClose": false
+    },
+    {
+      "type": "ISSUE",
+      "number": 25,
+      "title": "Device Request - Aqara precision motion sensor",
+      "action": "RESPOND",
+      "priority": "MEDIUM",
+      "comment": "Thank you for reporting this issue!\n\nWe're reviewing your report and will respond shortly.\n\n**Status**: Under investigation\n**Priority**: LOW\n\nPlease provide:\n1. Homey firmware version\n2. App version\n3. Device manufacturer and model\n4. Diagnostic report ID (if available)\n\nWe'll update you as soon as possible.",
+      "autoClose": false
+    },
+    {
+      "type": "ISSUE",
+      "number": 24,
+      "title": "[BUG] Settings screen - spinning wheel",
+      "action": "RESPOND",
+      "priority": "MEDIUM",
+      "comment": "Thank you for reporting this issue!\n\nWe're reviewing your report and will respond shortly.\n\n**Status**: Under investigation\n**Priority**: MEDIUM\n\nPlease provide:\n1. Homey firmware version\n2. App version\n3. Device manufacturer and model\n4. Diagnostic report ID (if available)\n\nWe'll update you as soon as possible.",
+      "autoClose": false
+    },
+    {
+      "type": "ISSUE",
+      "number": 23,
+      "title": "Device Request - Tuya Smart Temperature And Humidity Sensor- Tuya / CK-TLSR8656-SS5-01(7014)",
+      "action": "RESPOND",
+      "priority": "MEDIUM",
+      "comment": "Thank you for reporting this issue!\n\nWe're reviewing your report and will respond shortly.\n\n**Status**: Under investigation\n**Priority**: LOW\n\nPlease provide:\n1. Homey firmware version\n2. App version\n3. Device manufacturer and model\n4. Diagnostic report ID (if available)\n\nWe'll update you as soon as possible.",
+      "autoClose": false
+    },
+    {
+      "type": "ISSUE",
+      "number": 22,
+      "title": "Device Request - [Smart Knob] - [_TZ3000_gwkzibhs] / [TS004F]",
+      "action": "RESPOND",
+      "priority": "MEDIUM",
+      "comment": "Thank you for reporting this issue!\n\nWe're reviewing your report and will respond shortly.\n\n**Status**: Under investigation\n**Priority**: LOW\n\nPlease provide:\n1. Homey firmware version\n2. App version\n3. Device manufacturer and model\n4. Diagnostic report ID (if available)\n\nWe'll update you as soon as possible.",
+      "autoClose": false
+    },
+    {
+      "type": "ISSUE",
+      "number": 21,
+      "title": "Device Request - ZigBee Smart Inline Switch - 3A Smart Home DE / LXN59-2S7LX1.0",
+      "action": "RESPOND",
+      "priority": "MEDIUM",
+      "comment": "Thank you for reporting this issue!\n\nWe're reviewing your report and will respond shortly.\n\n**Status**: Under investigation\n**Priority**: LOW\n\nPlease provide:\n1. Homey firmware version\n2. App version\n3. Device manufacturer and model\n4. Diagnostic report ID (if available)\n\nWe'll update you as soon as possible.",
+      "autoClose": false
+    },
+    {
+      "type": "ISSUE",
+      "number": 20,
+      "title": "Device Request - Human Presence Detector mm wave radar - MOES Human Presence Sensor - _TZ3218_t9ynfz4x / TS0225",
+      "action": "RESPOND",
+      "priority": "MEDIUM",
+      "comment": "Thank you for reporting this issue!\n\nWe're reviewing your report and will respond shortly.\n\n**Status**: Under investigation\n**Priority**: LOW\n\nPlease provide:\n1. Homey firmware version\n2. App version\n3. Device manufacturer and model\n4. Diagnostic report ID (if available)\n\nWe'll update you as soon as possible.",
+      "autoClose": false
+    },
+    {
+      "type": "ISSUE",
+      "number": 19,
+      "title": "Device Request - Human Presence Detector mm wave radar - MOES Human Presence Sensor - _TZ3218_awarhusb / TS0225",
+      "action": "RESPOND",
+      "priority": "MEDIUM",
+      "comment": "Thank you for reporting this issue!\n\nWe're reviewing your report and will respond shortly.\n\n**Status**: Under investigation\n**Priority**: LOW\n\nPlease provide:\n1. Homey firmware version\n2. App version\n3. Device manufacturer and model\n4. Diagnostic report ID (if available)\n\nWe'll update you as soon as possible.",
+      "autoClose": false
+    },
+    {
+      "type": "ISSUE",
+      "number": 4,
+      "title": "[FIX] Résoudre le rejet du push (rejected master -> master)",
+      "action": "RESPOND",
+      "priority": "MEDIUM",
+      "comment": "Thank you for reporting this issue!\n\nWe're reviewing your report and will respond shortly.\n\n**Status**: Under investigation\n**Priority**: LOW\n\nPlease provide:\n1. Homey firmware version\n2. App version\n3. Device manufacturer and model\n4. Diagnostic report ID (if available)\n\nWe'll update you as soon as possible.",
+      "autoClose": false
+    }
+  ]
+}
