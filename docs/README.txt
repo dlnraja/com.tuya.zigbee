@@ -2,10 +2,11 @@
 UNIVERSAL TUYA ZIGBEE - README
 ================================================================================
 
-Version: 2.1.51
-Last Updated: 2025-10-11
+Version: 4.10.0 (Phase 2 - Intelligent System)
+Last Updated: 2025-11-03
 Status: PRODUCTION READY
 SDK: Homey SDK v3
+New: Intelligent Protocol Router, BSEED Fix, HOBEIAN Support
 
 ================================================================================
 QUICK START
@@ -25,7 +26,7 @@ QUICK START
 
 2. DEVICE SUPPORT
 
-   - 164 Drivers (all validated SDK3)
+   - 173 Drivers (all validated SDK3)
    - 2,000+ Manufacturer IDs
    - 1,500+ Product IDs
    - 100% Local Zigbee (no cloud required)
@@ -40,6 +41,45 @@ QUICK START
    6. Safety & Detection
    7. Automation Control
    8. Curtains & Blinds
+
+================================================================================
+PHASE 2 NEW FEATURES (v4.10.0)
+================================================================================
+
+1. INTELLIGENT PROTOCOL ROUTER
+   - Automatically detects Tuya DP vs native Zigbee
+   - Routes commands to optimal protocol
+   - Fixes BSEED multi-gang switches
+   - Supports hybrid Tuya/Zigbee devices
+
+2. BSEED DEVICE SUPPORT
+   - Automatic BSEED device detection
+   - Tuya DP protocol for proper gang control
+   - Fixes issue where all gangs activate together
+   - Email response system for user support
+
+3. HOBEIAN MANUFACTURER
+   - ZG-204ZV Multisensor support
+   - PIR + mmWave motion detection
+   - Temperature, Humidity, Illuminance
+   - IAS Zone enrollment
+   - Added to manufacturer database
+
+4. DEVICE FINDER ENHANCEMENT
+   - Fixed device-matrix.json loading
+   - Working search by name/ID
+   - Filter by category/class/brand
+   - Manufacturer ID search
+   - Product ID search
+   - GitHub Pages deployment ready
+
+5. TUYA DATAPOINT ENGINE
+   - Complete DP1-32 support
+   - Multi-gang switch standard
+   - Countdown timers, LED control
+   - Backlight, power-on behavior
+   - Inching/pulse mode
+   - Future: Weekly schedules, random timing
 
 ================================================================================
 PUBLICATION METHODS
@@ -148,7 +188,7 @@ STATISTICS
 ================================================================================
 
 Version: 2.1.51
-Drivers: 164 (all validated SDK3)
+Drivers: 173 (all validated SDK3)
 Manufacturer IDs: 2,000+
 Product IDs: 1,500+
 Flow Cards: 1,767
