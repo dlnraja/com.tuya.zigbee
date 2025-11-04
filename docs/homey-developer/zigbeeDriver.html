@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Home - Homey ZigbeeDriver</title>
+
+  <meta property="og:image" content="https://etc.athom.com/logo/white/256.png"/>
+  <link rel="icon" href="https://etc.athom.com/logo/transparent/128.png"/>
+  <link rel="icon" type="image/png" href="https://etc.athom.com/logo/transparent/128.png"/>
+  <link rel="preload" as="image" href="images/logo.png">
+  <link rel="preload" href="styles/homey.min.css" as="style">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="styles/atom-one-light.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Roboto:wght@100;300;400;500;700&display=swap"
+    rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="styles/homey.min.css">
+
+  <!-- preload javascript -->
+  <link rel="preload" as="script" href="scripts/ready.js">
+  <link rel="preload" as="script" href="scripts/navigation.js">
+  <link rel="preload" as="script" href="scripts/toc.js">
+  <link rel="preload" as="script" href="scripts/table.js">
+  <link rel="preload" as="script" href="scripts/hash-link.js">
+  <link rel="preload" as="script" href="scripts/docs-nav.js">
+  <link rel="preload" as="script" href="scripts/hash-highlight.js">
+  <link rel="preload" as="script" href="scripts/darkmode.js">
+
+  <!-- Start DarkMode -->
+  <script>
+    if (localStorage.getItem('darkmode') === 'true') {
+      document.documentElement.classList.add('darkmode');
+    }
+  </script>
+  <!-- End DarkMode -->
+</head>
+
+<body>
+
+
+<div class="container">
+  <div class="container__top-nav">
+    <button data-darkmode-toggle class="darkmode-toggle">
+      <span class="darkmode-toggle__icon --mask"></span>
+    </button>
+    <div class="docs-nav">
+      <button data-docs-nav-toggle class="docs-nav__button" title="All documentation"><span
+          class="docs-nav__button-icon --mask"></span></button>
+      <nav data-docs-nav-menu class="docs-nav__menu component">
+        <div class="docs-nav__banner trim">
+          <h2>Homey Developers</h2>
+        </div>
+        <div class="docs-nav__columns">
+          <div class="docs-nav__column trim">
+            <h3>Homey Apps SDK</h3>
+            <ul class="docs-nav__list">
+              <li class="docs-nav__item"><a target="_blank" href="https://apps.developer.homey.app/">Documentation</a>
+              </li>
+              <li class="docs-nav__item"><a target="_blank"
+                                            href="https://apps-sdk-v3.developer.homey.app/">Reference</a></li>
+            </ul>
+            <h3>Homey Web API</h3>
+            <ul class="docs-nav__list">
+              <li class="docs-nav__item"><a target="_blank" href="https://api.developer.homey.app/">Documentation</a>
+              </li>
+              <li class="docs-nav__item"><a target="_blank"
+                                            href="https://athombv.github.io/node-homey-api/">Reference</a></li>
+            </ul>
+            <h3>Tools</h3>
+            <ul class="docs-nav__list">
+              <li class="docs-nav__item"><a target="_blank" href="https://tools.developer.homey.app/">Developer
+                  Tools</a></li>
+            </ul>
+          </div>
+          <div class="docs-nav__column trim">
+            <h3>Node.js Modules</h3>
+            <ul class="docs-nav__list">
+              <li class="docs-nav__item"><a target="_blank" href="https://athombv.github.io/node-homey-zigbeedriver/">Homey
+                  ZigbeeDriver</a>
+              </li>
+              <li class="docs-nav__item"><a target="_blank" href="https://athombv.github.io/node-homey-zwavedriver/">Homey
+                  ZWaveDriver</a>
+              </li>
+              <li class="docs-nav__item"><a target="_blank" href="https://athombv.github.io/node-homey-rfdriver/">Homey
+                  RFDriver</a>
+              </li>
+              <li class="docs-nav__item"><a target="_blank" href="https://athombv.github.io/node-homey-log/">Homey
+                  Log</a></li>
+              <li class="docs-nav__item"><a target="_blank" href="https://athombv.github.io/node-zigbee-clusters/">Zigbee
+                  Clusters</a>
+              </li>
+              <li class="docs-nav__item"><a target="_blank" href="https://athombv.github.io/node-homey-oauth2app/">Homey
+                  OAuth2</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <nav class="navigation container__navigation component">
+    <header class="navigation__header">
+                <div class="navigation__logo"><a href="index.html"><img class="display-block" src="images/logo.png" width="40" height="40" alt="Homey"></a></div>
+                <h2 class="navigation__title"><a href="index.html">Homey ZigbeeDriver</a></h2>
+                <button data-navigation-toggle class="navigation__button" title="menu"></button>
+             </header><div class="navigation__content" data-navigation-target><div class="navigation__search search">
+            <input title="filter" placeholder="Filter..." data-navigation-search class="search__input" type="search">
+            <button data-navigation-search-reset class="search__reset --mask" type="button" title="Reset"></button>
+           </div><div data-navigation-scroll class="navigation__scroll scroll trim"><div data-navigation class="navigation__menu trim"><nav class="nav-group"><h3 class="nav-group__title">Classes</h3><ul class="nav-group__list"><li data-lvl="0" data-search-key="util" class="nav-group__item"><a href="Util.html"> Util</a></li><li data-lvl="0" data-search-key="zigbeedevice" class="nav-group__item"><a href="ZigBeeDevice.html"> ZigBeeDevice</a></li><li data-lvl="0" data-search-key="zigbeelightdevice" class="nav-group__item"><a href="ZigBeeLightDevice.html"> ZigBeeLightDevice</a></li></ul></nav><h3 class="nav-group__title">Global</h3><ul class="nav-group__list"><li class="nav-group__item"><a href="global.html">Overview</a></li></ul></div></div></div>
+  </nav>
+
+  <main id="main" class="main container__main">
+    
+  
+  
+    
+  
+
+
+  
+  
+  <div class="main__center">
+    <div class="main__content align-baseline main-page trim">
+      
+
+
+    <section>
+        <article class="main-page__content"><h1>Homey ZigbeeDriver</h1>
+<p><a href="https://www.npmjs.com/package/homey-zigbeedriver"><img src="https://img.shields.io/npm/v/homey-zigbeedriver" alt="npm"></a> <a href="https://github.com/athombv/node-homey-zigbeedriver/actions/workflows/lint.yml"><img src="https://github.com/athombv/node-homey-zigbeedriver/actions/workflows/lint.yml/badge.svg?branch=master" alt="Lint"></a> <a href="https://github.com/athombv/node-homey-zigbeedriver/actions/workflows/deploy.yml"><img src="https://github.com/athombv/node-homey-zigbeedriver/actions/workflows/deploy.yml/badge.svg" alt="NPM"></a> <a href="https://github.com/athombv/node-homey-zigbeedriver/actions/workflows/docs.yml"><img src="https://github.com/athombv/node-homey-zigbeedriver/actions/workflows/docs.yml/badge.svg?branch=master" alt="Deploy Documentation To GitHub Pages"></a></p>
+<p>This module can be used to make the development of Zigbee apps for Homey easier.</p>
+<p>It is essentially a map-tool from Homey-capabilities to Zigbee endpoints and clusters.</p>
+<p>This module requires Homey Apps SDK v3.</p>
+<h2>Related Modules</h2>
+<ul>
+<li><a href="https://athombv.github.io/node-homey-rfdriver">node-homey-rfdriver</a> — Module for RF drivers</li>
+<li><a href="https://athombv.github.io/node-homey-zwavedriver">node-homey-zwavedriver</a> — Module for Z-Wave drivers</li>
+<li><a href="https://athombv.github.io/node-homey-oauth2app">node-homey-oauth2app</a> — Module for OAuth2 apps</li>
+<li><a href="https://athombv.github.io/node-homey-log">node-homey-log</a> — Module to log unhandled errors to Sentry</li>
+</ul>
+<h2>Installation</h2>
+<pre class="prettyprint source lang-bash"><code>$ npm install homey-zigbeedriver
+</code></pre>
+<p>Also checkout <a href="https://github.com/athombv/node-zigbee-clusters"><code>zigbee-clusters</code></a> if you want to do more advanced things or implement a driver for a Zigbee device without <code>homey-zigbeedriver</code>.</p>
+<pre class="prettyprint source lang-bash"><code>$ npm install zigbee-clusters
+</code></pre>
+<h2>Changelog</h2>
+<h1>2.0.0</h1>
+<p>Breaking: <a href="https://github.com/athombv/node-homey-zigbeedriver/commit/9edeb2713c9476ea2d5cde4a05ab8cf8d4ab52a2">don't invert windowcoverings_set values.</a></p>
+<h2>Release</h2>
+<p>Merge to production and include <code>#patch</code>, <code>#minor</code> or <code>#major</code> in the PR/commit message. Or merge to production and run the &quot;Deploy&quot; workflow and provide a version bump parameter.</p>
+<h2>Requirements</h2>
+<p>This module requires Homey Apps SDK v3.</p>
+<h2>Usage</h2>
+<p>Your device should extend ZigBeeDevice. Start by looking at the docs for <a href="https://athombv.github.io/node-homey-zigbeedriver/ZigBeeDevice.html"><code>ZigBeeDevice</code></a>. This is the class you most likely want to extend from. If you are implementing a <code>light</code> device take a look at <a href="https://athombv.github.io/node-homey-zigbeedriver/ZigBeeLightDevice.html"><code>ZigBeeLightDevice</code></a>.</p>
+<p>See <a href="https://github.com/athombv/node-homey-zigbeedriver/blob/master/examples/exampleBulb.js">examples/exampleBulb.js</a> and <a href="https://github.com/athombv/node-homey-zigbeedriver/blob/master/examples/exampleBulb.json">examples/tradfriBulb.json</a></p>
+<h2>Documentation</h2>
+<p>See <a href="https://athombv.github.io/node-homey-zigbeedriver">https://athombv.github.io/node-homey-zigbeedriver</a></p>
+<h2>Deprecations and breaking changes for homey-zigbeedriver</h2>
+<p>This is a non exhaustive list of deprecations and breaking changes in <code>homey-zigbeedriver</code> with respect to <code>homey-meshdriver</code> which might be good to be aware of:</p>
+<ul>
+<li><code>MeshDevice</code> is removed in favour of <code>ZigBeeDevice</code>.</li>
+<li><code>onMeshInit()</code> is deprecated in favour of <code>onNodeInit()</code>.</li>
+<li><code>this.node.on(‘online’)</code> is removed in favour of <code>this.onEndDeviceAnnounce()</code>.</li>
+<li><code>getClusterEndpoint</code> returns <code>null</code> if not found.</li>
+<li><code>cluster</code> property is changed from string value (e.g. <code>genOnOff</code>) to an object which is exported by <code>const { CLUSTER } = require(‘zigbee-clusters’);</code></li>
+<li><code>registerReportListener</code> is deprecated in favour of <code>BoundCluster</code> implementation.</li>
+<li><code>registerAttrReportListener</code> is deprecated in favour of <code>configureAttributeReporting</code>.</li>
+<li><code>calculateZigbeeDimDuration</code> renamed to <code>calculateLevelControlTransitionTime</code>.</li>
+<li><code>calculateColorControlTransitionTime</code> is added for the <code>colorControl</code> cluster.</li>
+<li><code>ZigBeeXYLightDevice</code> is removed in favour of <code>ZigBeeLightDevice</code>, it detects if the light supports hue and saturation or XY only.</li>
+</ul></article>
+    </section>
+
+
+    </div>
+  </div>
+  
+
+
+
+  </main>
+</div>
+
+<script src="scripts/ready.js"></script>
+<script src="scripts/navigation.js"></script>
+<script src="scripts/toc.js"></script>
+<script src="scripts/table.js"></script>
+<script src="scripts/hash-link.js"></script>
+<script src="scripts/docs-nav.js"></script>
+<script src="scripts/hash-highlight.js"></script>
+<script src="scripts/darkmode.js"></script>
+
+<link type="text/css" rel="stylesheet" href="styles/atom-one-light.css">
+<script src="scripts/highlight.min.js"></script>
+<!--<script src="scripts/linenumber.js"></script>-->
+
+
+<script async defer src="https://sa.athom.com/latest.js"></script>
+
+</body>
+</html>
