@@ -25,9 +25,9 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          61184
+          "basic",
+          "powerConfiguration",
+          "manuSpecificTuya"
         ],
         "bindings": [
           1

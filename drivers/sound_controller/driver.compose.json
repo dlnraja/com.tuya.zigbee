@@ -34,10 +34,10 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          6,
-          8
+          "basic",
+          "powerConfiguration",
+          "onOff",
+          "levelControl"
         ],
         "bindings": [
           6

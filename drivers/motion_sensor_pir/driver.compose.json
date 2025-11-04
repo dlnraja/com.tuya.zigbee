@@ -51,12 +51,12 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          1024,
-          1030,
-          1280,
-          61184
+          "basic",
+          "powerConfiguration",
+          "illuminanceMeasurement",
+          "occupancySensing",
+          "iasZone",
+          "manuSpecificTuya"
         ],
         "bindings": [
           1,

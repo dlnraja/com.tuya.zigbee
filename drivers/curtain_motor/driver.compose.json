@@ -36,9 +36,9 @@
       "TS130F"
     ],
     "endpoints": {
-      "1": [
-        60672
-      ]
+      "1": {
+        "clusters": []
+      }
     },
     "learnmode": {
       "image": "/drivers/curtain_motor/assets/large.png",

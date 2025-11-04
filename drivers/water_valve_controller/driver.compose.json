@@ -27,11 +27,11 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          1026,
-          1280,
-          61184
+          "basic",
+          "powerConfiguration",
+          "temperatureMeasurement",
+          "iasZone",
+          "manuSpecificTuya"
         ],
         "bindings": [
           1
@@ -81,7 +81,7 @@
       "usageConstant": 0.5
     }
   },
-  "id": "water_valve_smart_hybrid",
+  "id": "water_valve_smart",
   "connectivity": [
     "zigbee"
   ],

@@ -80,34 +80,19 @@
       "TS0006",
       "TS0011"
     ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          1794,
-          2820
-        ],
-        "bindings": [
-          6,
-          1794
-        ]
-      },
-      "242": {
-        "clusters": [],
-        "bindings": [
-          33
-        ]
-      }
-    },
     "learnmode": {
       "image": "/drivers/switch_wall_1gang/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the power button for 5 seconds until the LED blinks",
         "fr": "Appuyez et maintenez le bouton d'alimentation pendant 5 secondes jusqu'à ce que la LED clignote"
+      }
+    },
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "basic",
+          "onOff"
+        ]
       }
     }
   },

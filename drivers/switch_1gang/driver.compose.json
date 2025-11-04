@@ -18,11 +18,11 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          4,
-          5,
-          6,
-          8
+          "basic",
+          "groups",
+          "scenes",
+          "onOff",
+          "levelControl"
         ],
         "bindings": [
           1
@@ -52,8 +52,8 @@
     ]
   },
   "images": {
-    "small": "drivers/switch_hybrid_1gang/assets/images/small.png",
-    "large": "drivers/switch_hybrid_1gang/assets/images/large.png"
+    "small": "drivers/switch_1gang/assets/images/small.png",
+    "large": "drivers/switch_1gang/assets/images/large.png"
   },
   "settings": [
     {
@@ -298,7 +298,7 @@
       "preventInsights": false
     }
   },
-  "id": "switch_hybrid_1gang",
+  "id": "switch_1gang",
   "learnmode": {
     "image": "./assets/learnmode.svg",
     "instruction": {
