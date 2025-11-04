@@ -14,39 +14,13 @@ jobs:
       - name: 📥 Checkout code
         uses: actions/checkout@v4
         
-      - name: 📦 Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-          
-      - name: 📚 Install dependencies
-        run: npm ci
-        
-      - name: 🔧 Install Homey CLI
-        run: npm install -g homey
-        
-      - name: ✅ Validate app
-        run: homey app validate --level publish
-        
-      - name: 🔨 Build app
-        run: homey app build
-        
       - name: 🚀 Publish to Homey App Store
-        if: github.event_name == 'release'
-        env:
-          HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
-        run: |
-          echo "📦 Publishing to Homey App Store..."
-          echo $HOMEY_TOKEN > ~/.athom-cli-token
-          homey app publish --changelog "CRITICAL FIX - Correct TuyaManufacturerCluster import path. Fixes app crash on startup for all users."
-          echo "✅ Published successfully!"
-          
-      - name: 📤 Upload build artifact
-        uses: actions/upload-artifact@v4
+        uses: athombv/github-action-homey-app-publish@master
+        id: publish
         with:
-          name: homey-app-build
-          path: |
-            ./build/
-            *.tar.gz
-          retention-days: 90
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+          
+      - name: 📝 Summary
+        run: |
+          echo "✅ App published successfully!" >> $GITHUB_STEP_SUMMARY
+          echo "🔗 Manage your app at ${{ steps.publish.outputs.url }}" >> $GITHUB_STEP_SUMMARY
