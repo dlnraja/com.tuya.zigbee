@@ -1,4 +1,4 @@
-﻿{
+{
   "name": {
     "en": "Touch Switch 2gang",
     "fr": "Touch Switch 2gang"
@@ -57,35 +57,24 @@
       "TS0006",
       "TS0011"
     ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          4,
-          5,
-          6
-        ],
-        "bindings": [
-          1
-        ]
-      },
-      "2": {
-        "clusters": [
-          0,
-          4,
-          5,
-          6
-        ],
-        "bindings": [
-          6
-        ]
-      }
-    },
     "learnmode": {
       "image": "/drivers/switch_touch_2gang/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
+    },
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "basic",
+          "onOff"
+        ]
+      },
+      "2": {
+        "clusters": [
+          "onOff"
+        ]
       }
     }
   },

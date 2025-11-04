@@ -33,10 +33,10 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          3,
-          6,
-          61184
+          "basic",
+          "identify",
+          "onOff",
+          "manuSpecificTuya"
         ],
         "bindings": [
           1

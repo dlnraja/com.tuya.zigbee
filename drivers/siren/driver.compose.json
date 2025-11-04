@@ -41,11 +41,11 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          3,
-          4,
-          5,
-          1280
+          "basic",
+          "identify",
+          "groups",
+          "scenes",
+          "iasZone"
         ],
         "bindings": [
           5,

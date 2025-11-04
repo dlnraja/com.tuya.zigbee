@@ -76,11 +76,11 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          4,
-          5,
-          6,
-          61184
+          "basic",
+          "groups",
+          "scenes",
+          "onOff",
+          "manuSpecificTuya"
         ],
         "bindings": [
           6

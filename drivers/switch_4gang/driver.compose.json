@@ -19,11 +19,11 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          4,
-          5,
-          6,
-          8
+          "basic",
+          "groups",
+          "scenes",
+          "onOff",
+          "levelControl"
         ],
         "bindings": [
           1
@@ -31,11 +31,11 @@
       },
       "2": {
         "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6
+          "basic",
+          "identify",
+          "groups",
+          "scenes",
+          "onOff"
         ],
         "bindings": [
           6
@@ -43,11 +43,11 @@
       },
       "3": {
         "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6
+          "basic",
+          "identify",
+          "groups",
+          "scenes",
+          "onOff"
         ],
         "bindings": [
           6
@@ -55,11 +55,11 @@
       },
       "4": {
         "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6
+          "basic",
+          "identify",
+          "groups",
+          "scenes",
+          "onOff"
         ],
         "bindings": [
           6
@@ -85,8 +85,8 @@
     ]
   },
   "images": {
-    "small": "drivers/switch_hybrid_4gang/assets/images/small.png",
-    "large": "drivers/switch_hybrid_4gang/assets/images/large.png"
+    "small": "drivers/switch_4gang/assets/images/small.png",
+    "large": "drivers/switch_4gang/assets/images/large.png"
   },
   "settings": [
     {
@@ -355,7 +355,7 @@
       "preventInsights": false
     }
   },
-  "id": "switch_hybrid_4gang",
+  "id": "switch_4gang",
   "learnmode": {
     "image": "./assets/learnmode.svg",
     "instruction": {

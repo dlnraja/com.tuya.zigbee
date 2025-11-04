@@ -29,10 +29,10 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          6,
-          61184
+          "basic",
+          "powerConfiguration",
+          "onOff",
+          "manuSpecificTuya"
         ],
         "bindings": [
           1

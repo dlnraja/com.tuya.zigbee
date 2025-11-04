@@ -45,11 +45,11 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          1026,
-          1280,
-          1029
+          "basic",
+          "powerConfiguration",
+          "temperatureMeasurement",
+          "iasZone",
+          "relativeHumidity"
         ],
         "bindings": [
           1

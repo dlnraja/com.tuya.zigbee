@@ -54,68 +54,34 @@
       "TS0011",
       "TS0014"
     ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          8
-        ],
-        "bindings": [
-          1
-        ]
-      },
-      "2": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          8
-        ],
-        "bindings": [
-          6,
-          8
-        ]
-      },
-      "3": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          8
-        ],
-        "bindings": [
-          6,
-          8
-        ]
-      },
-      "4": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          8
-        ],
-        "bindings": [
-          6,
-          8
-        ]
-      }
-    },
     "learnmode": {
       "image": "/drivers/switch_wall_4gang_basic/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
+    },
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "basic",
+          "onOff"
+        ]
+      },
+      "2": {
+        "clusters": [
+          "onOff"
+        ]
+      },
+      "3": {
+        "clusters": [
+          "onOff"
+        ]
+      },
+      "4": {
+        "clusters": [
+          "onOff"
+        ]
       }
     }
   },

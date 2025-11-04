@@ -1,4 +1,4 @@
-﻿{
+{
   "name": {
     "en": "Wireless Switch 4gang",
     "fr": "Wireless Switch 4gang"
@@ -50,11 +50,11 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          6,
-          57344,
-          3
+          "basic",
+          "powerConfiguration",
+          "onOff",
+          "0xE000",
+          "identify"
         ],
         "bindings": [
           1
@@ -62,20 +62,20 @@
       },
       "2": {
         "clusters": [
-          1,
-          6
+          "powerConfiguration",
+          "onOff"
         ]
       },
       "3": {
         "clusters": [
-          1,
-          6
+          "powerConfiguration",
+          "onOff"
         ]
       },
       "4": {
         "clusters": [
-          1,
-          6
+          "powerConfiguration",
+          "onOff"
         ]
       }
     },

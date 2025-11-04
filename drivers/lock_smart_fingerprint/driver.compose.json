@@ -35,13 +35,13 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          3,
-          4,
-          5,
-          6,
-          61184
+          "basic",
+          "powerConfiguration",
+          "identify",
+          "groups",
+          "scenes",
+          "onOff",
+          "manuSpecificTuya"
         ],
         "bindings": [
           1

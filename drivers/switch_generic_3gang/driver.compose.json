@@ -1,4 +1,4 @@
-﻿{
+{
   "name": {
     "en": "Smart Switch 3gang",
     "fr": "Smart Switch 3gang"
@@ -54,10 +54,10 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          4,
-          5,
-          6
+          "basic",
+          "groups",
+          "scenes",
+          "onOff"
         ],
         "bindings": [
           1
@@ -65,10 +65,10 @@
       },
       "2": {
         "clusters": [
-          0,
-          4,
-          5,
-          6
+          "basic",
+          "groups",
+          "scenes",
+          "onOff"
         ],
         "bindings": [
           6
@@ -76,10 +76,10 @@
       },
       "3": {
         "clusters": [
-          0,
-          4,
-          5,
-          6
+          "basic",
+          "groups",
+          "scenes",
+          "onOff"
         ],
         "bindings": [
           6
