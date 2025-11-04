@@ -42,10 +42,10 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          1280,
-          61184
+          "basic",
+          "powerConfiguration",
+          "iasZone",
+          "manuSpecificTuya"
         ],
         "bindings": [
           1

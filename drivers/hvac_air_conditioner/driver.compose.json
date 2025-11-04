@@ -119,12 +119,12 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          4,
-          5,
-          6,
-          513,
-          61184
+          "basic",
+          "groups",
+          "scenes",
+          "onOff",
+          "thermostat",
+          "manuSpecificTuya"
         ],
         "bindings": [
           6,

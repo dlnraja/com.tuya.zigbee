@@ -41,10 +41,10 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          4,
-          5,
-          6
+          "basic",
+          "groups",
+          "scenes",
+          "onOff"
         ],
         "bindings": [
           1
@@ -52,10 +52,10 @@
       },
       "2": {
         "clusters": [
-          0,
-          4,
-          5,
-          6
+          "basic",
+          "groups",
+          "scenes",
+          "onOff"
         ],
         "bindings": [
           6
@@ -69,8 +69,8 @@
     }
   },
   "images": {
-    "small": "drivers/switch_hybrid_2gang_alt/assets/images/small.png",
-    "large": "drivers/switch_hybrid_2gang_alt/assets/images/large.png"
+    "small": "drivers/switch_2gang_alt/assets/images/small.png",
+    "large": "drivers/switch_2gang_alt/assets/images/large.png"
   },
   "capabilitiesOptions": {
     "onoff": {
@@ -94,7 +94,7 @@
   "platforms": [
     "local"
   ],
-  "id": "switch_hybrid_2gang_alt",
+  "id": "switch_2gang_alt",
   "connectivity": [
     "zigbee"
   ],

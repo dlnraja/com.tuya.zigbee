@@ -39,14 +39,14 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          1024,
-          1030,
-          1280,
-          61184,
-          1026,
-          1029
+          "basic",
+          "powerConfiguration",
+          "illuminanceMeasurement",
+          "occupancySensing",
+          "iasZone",
+          "manuSpecificTuya",
+          "temperatureMeasurement",
+          "relativeHumidity"
         ],
         "bindings": [
           1

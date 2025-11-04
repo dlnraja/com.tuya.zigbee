@@ -19,30 +19,6 @@
       "TS0013",
       "TS0014"
     ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          4,
-          5,
-          6
-        ],
-        "bindings": [
-          1
-        ]
-      },
-      "2": {
-        "clusters": [
-          0,
-          4,
-          5,
-          6
-        ],
-        "bindings": [
-          6
-        ]
-      }
-    },
     "learnmode": {
       "image": "/drivers/switch_2gang/assets/learnmode.svg",
       "instruction": {
@@ -68,11 +44,24 @@
       "_TZ3000_zmy4lslw",
       "_TZ3000_ejwkn2h2",
       "_TZ3000_nnwehhst"
-    ]
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "basic",
+          "onOff"
+        ]
+      },
+      "2": {
+        "clusters": [
+          "onOff"
+        ]
+      }
+    }
   },
   "images": {
-    "small": "drivers/switch_hybrid_2gang/assets/images/small.png",
-    "large": "drivers/switch_hybrid_2gang/assets/images/large.png"
+    "small": "drivers/switch_2gang/assets/images/small.png",
+    "large": "drivers/switch_2gang/assets/images/large.png"
   },
   "settings": [
     {
@@ -327,7 +316,7 @@
       "preventInsights": false
     }
   },
-  "id": "switch_hybrid_2gang",
+  "id": "switch_2gang",
   "learnmode": {
     "image": "./assets/learnmode.svg",
     "instruction": {

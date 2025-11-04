@@ -29,12 +29,12 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          8
+          "basic",
+          "identify",
+          "groups",
+          "scenes",
+          "onOff",
+          "levelControl"
         ],
         "bindings": [
           1

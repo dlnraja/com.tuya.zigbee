@@ -25,14 +25,19 @@
       "TS0041",
       "default"
     ],
-    "endpoints": {
-      "1": {}
-    },
     "learnmode": {
       "image": "/drivers/button_emergency_advanced/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
+    },
+    "endpoints": {
+      "1": {
+        "clusters": [
+          "basic",
+          "onOff"
+        ]
       }
     }
   },

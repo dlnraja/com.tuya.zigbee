@@ -30,11 +30,11 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          1026,
-          1029,
-          61184
+          "basic",
+          "powerConfiguration",
+          "temperatureMeasurement",
+          "relativeHumidity",
+          "manuSpecificTuya"
         ],
         "bindings": [
           1

@@ -19,10 +19,10 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          4,
-          5,
-          6
+          "basic",
+          "groups",
+          "scenes",
+          "onOff"
         ],
         "bindings": [
           1
@@ -30,10 +30,10 @@
       },
       "2": {
         "clusters": [
-          0,
-          4,
-          5,
-          6
+          "basic",
+          "groups",
+          "scenes",
+          "onOff"
         ],
         "bindings": [
           6
@@ -41,10 +41,10 @@
       },
       "3": {
         "clusters": [
-          0,
-          4,
-          5,
-          6
+          "basic",
+          "groups",
+          "scenes",
+          "onOff"
         ],
         "bindings": [
           6
@@ -74,8 +74,8 @@
     ]
   },
   "images": {
-    "small": "drivers/switch_hybrid_3gang/assets/images/small.png",
-    "large": "drivers/switch_hybrid_3gang/assets/images/large.png"
+    "small": "drivers/switch_3gang/assets/images/small.png",
+    "large": "drivers/switch_3gang/assets/images/large.png"
   },
   "settings": [
     {
@@ -335,7 +335,7 @@
       "preventInsights": false
     }
   },
-  "id": "switch_hybrid_3gang",
+  "id": "switch_3gang",
   "learnmode": {
     "image": "./assets/learnmode.svg",
     "instruction": {
