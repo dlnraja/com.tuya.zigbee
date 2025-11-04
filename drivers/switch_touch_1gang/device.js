@@ -1,6 +1,6 @@
 'use strict';
 
-const SwitchDevice = require('../../lib/SwitchDevice');
+const SwitchDevice = require('../../lib/devices/SwitchDevice');
 
 /**
  * SwitchTouch1GangDevice - Unified 1-gang touch switch

@@ -1,6 +1,6 @@
 'use strict';
 
-const BaseHybridDevice = require('../../lib/BaseHybridDevice');
+const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
 
 /**
  * Dimmer1gangDevice - Unified Hybrid Driver

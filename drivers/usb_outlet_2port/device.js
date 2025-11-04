@@ -1,7 +1,7 @@
 'use strict';
 
 const { CLUSTER } = require('zigbee-clusters');
-const BaseHybridDevice = require('../../lib/BaseHybridDevice');
+const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
 
 /**
  * UsbOutlet2PortDevice - SDK3 Compliant 2-Port USB Outlet

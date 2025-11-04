@@ -1,7 +1,7 @@
 'use strict';
 
 const { Cluster } = require('zigbee-clusters');
-const BaseHybridDevice = require('../../lib/BaseHybridDevice');
+const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
 const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
 
 // CRITICAL: Register Tuya custom cluster for Homey SDK3
