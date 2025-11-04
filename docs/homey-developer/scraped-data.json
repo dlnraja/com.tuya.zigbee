@@ -1,0 +1,545 @@
+{
+  "timestamp": "2025-11-04T10:46:16.885Z",
+  "sources": {
+    "sdk3": {
+      "url": "https://apps-sdk-v3.developer.homey.app/",
+      "file": "sdk3.html",
+      "scraped": "2025-11-04T10:46:17.488Z",
+      "size": 17606,
+      "features": 6
+    },
+    "appsApi": {
+      "url": "https://apps.developer.homey.app/",
+      "file": "appsApi.html",
+      "scraped": "2025-11-04T10:46:18.713Z",
+      "size": 255322,
+      "features": 1
+    },
+    "zigbeeDriver": {
+      "url": "https://athombv.github.io/node-homey-zigbeedriver/",
+      "file": "zigbeeDriver.html",
+      "scraped": "2025-11-04T10:46:20.577Z",
+      "size": 11767,
+      "features": 2
+    },
+    "upgradeGuide": {
+      "url": "https://apps.developer.homey.app/upgrade-guides/upgrading-to-sdk-v3",
+      "file": "upgradeGuide.html",
+      "scraped": "2025-11-04T10:46:22.804Z",
+      "size": 563335,
+      "features": 24
+    },
+    "publishGuide": {
+      "url": "https://apps.developer.homey.app/the-basics/getting-started",
+      "file": "publishGuide.html",
+      "scraped": "2025-11-04T10:46:24.218Z",
+      "size": 306564,
+      "features": 2
+    },
+    "webApi": {
+      "url": "https://api.developer.homey.app/",
+      "file": "webApi.html",
+      "scraped": "2025-11-04T10:46:25.485Z",
+      "size": 238313,
+      "features": 2
+    },
+    "zigbeeRepo": {
+      "url": "https://api.github.com/repos/athombv/node-homey-zigbeedriver/contents",
+      "file": "zigbeeRepo.json",
+      "scraped": "2025-11-04T10:46:28.049Z",
+      "size": 14531,
+      "features": 11
+    }
+  },
+  "features": [
+    {
+      "name": "this.homey.drivers.getDriver",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "this.homey.flow",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "flowcard",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "FlowCard",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "pairsession",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "PairSession",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "Flow card",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "class you",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "cluster",
+      "type": "zigbee_feature",
+      "occurrences": 12
+    },
+    {
+      "name": "this.homey.flow.getConditionCard",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "this.homey.images.createImage",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "this.homey.flow",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "this.homey.drivers.getDriver",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "this.homey.app",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "this.homey.clock.getTimezone",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "this.homey.setTimeout",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "this.homey.clearTimeout",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "this.homey.setInterval",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "this.homey.clearInterval",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "this.homey.on",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "async onInit(",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "async getSomething(",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "async onPairListDevices(",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "async onNodeInit(",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "class Driver",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "class Device",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "capability",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "Flow card",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "FlowCard",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "flow card",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "PairSession",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "cluster",
+      "type": "zigbee_feature",
+      "occurrences": 22
+    },
+    {
+      "name": "command",
+      "type": "zigbee_feature",
+      "occurrences": 14
+    },
+    {
+      "name": "Flow card",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "command",
+      "type": "zigbee_feature",
+      "occurrences": 42
+    },
+    {
+      "name": "Capability",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": "capability",
+      "type": "sdk3_feature",
+      "context": "Homey SDK3"
+    },
+    {
+      "name": ".editorconfig",
+      "type": "file",
+      "url": "https://raw.githubusercontent.com/athombv/node-homey-zigbeedriver/master/.editorconfig",
+      "path": ".editorconfig"
+    },
+    {
+      "name": ".eslintignore",
+      "type": "file",
+      "url": "https://raw.githubusercontent.com/athombv/node-homey-zigbeedriver/master/.eslintignore",
+      "path": ".eslintignore"
+    },
+    {
+      "name": ".eslintrc.json",
+      "type": "file",
+      "url": "https://raw.githubusercontent.com/athombv/node-homey-zigbeedriver/master/.eslintrc.json",
+      "path": ".eslintrc.json"
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "url": "https://raw.githubusercontent.com/athombv/node-homey-zigbeedriver/master/.gitignore",
+      "path": ".gitignore"
+    },
+    {
+      "name": ".npmignore",
+      "type": "file",
+      "url": "https://raw.githubusercontent.com/athombv/node-homey-zigbeedriver/master/.npmignore",
+      "path": ".npmignore"
+    },
+    {
+      "name": "CONTRIBUTING.md",
+      "type": "file",
+      "url": "https://raw.githubusercontent.com/athombv/node-homey-zigbeedriver/master/CONTRIBUTING.md",
+      "path": "CONTRIBUTING.md"
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "url": "https://raw.githubusercontent.com/athombv/node-homey-zigbeedriver/master/LICENSE",
+      "path": "LICENSE"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "url": "https://raw.githubusercontent.com/athombv/node-homey-zigbeedriver/master/README.md",
+      "path": "README.md"
+    },
+    {
+      "name": "index.js",
+      "type": "file",
+      "url": "https://raw.githubusercontent.com/athombv/node-homey-zigbeedriver/master/index.js",
+      "path": "index.js"
+    },
+    {
+      "name": "package-lock.json",
+      "type": "file",
+      "url": "https://raw.githubusercontent.com/athombv/node-homey-zigbeedriver/master/package-lock.json",
+      "path": "package-lock.json"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "url": "https://raw.githubusercontent.com/athombv/node-homey-zigbeedriver/master/package.json",
+      "path": "package.json"
+    }
+  ],
+  "bestPractices": [
+    {
+      "category": "SDK3 Compliance",
+      "practice": "Use this.homey for all Homey APIs"
+    },
+    {
+      "category": "SDK3 Compliance",
+      "practice": "All async operations must use Promises/async-await"
+    },
+    {
+      "category": "SDK3 Compliance",
+      "practice": "Flow cards via this.homey.flow.getXXXCard()"
+    },
+    {
+      "category": "SDK3 Compliance",
+      "practice": "No global state, use instance variables"
+    },
+    {
+      "category": "SDK3 Compliance",
+      "practice": "Properties instead of methods (driver.manifest, device.driver)"
+    },
+    {
+      "category": "Zigbee Best Practices",
+      "practice": "Use cluster names instead of numeric IDs"
+    },
+    {
+      "category": "Zigbee Best Practices",
+      "practice": "Configure reporting for sensor data"
+    },
+    {
+      "category": "Zigbee Best Practices",
+      "practice": "Implement proper endpoint configuration"
+    },
+    {
+      "category": "Zigbee Best Practices",
+      "practice": "Handle manufacturer-specific clusters"
+    },
+    {
+      "category": "Zigbee Best Practices",
+      "practice": "Graceful error handling for Zigbee operations"
+    },
+    {
+      "category": "Zigbee Best Practices",
+      "practice": "Battery reporting with proper intervals"
+    },
+    {
+      "category": "Performance",
+      "practice": "Batch multiple attribute reads"
+    },
+    {
+      "category": "Performance",
+      "practice": "Cache frequently accessed data"
+    },
+    {
+      "category": "Performance",
+      "practice": "Use debouncing for rapid updates"
+    },
+    {
+      "category": "Performance",
+      "practice": "Implement exponential backoff for retries"
+    },
+    {
+      "category": "Performance",
+      "practice": "Minimize polling, prefer reporting"
+    },
+    {
+      "category": "User Experience",
+      "practice": "Clear pairing instructions with images"
+    },
+    {
+      "category": "User Experience",
+      "practice": "Localization for all strings"
+    },
+    {
+      "category": "User Experience",
+      "practice": "Meaningful device names and icons"
+    },
+    {
+      "category": "User Experience",
+      "practice": "Proper error messages to users"
+    },
+    {
+      "category": "User Experience",
+      "practice": "Settings with validation and hints"
+    },
+    {
+      "category": "Reliability",
+      "practice": "Graceful degradation on errors"
+    },
+    {
+      "category": "Reliability",
+      "practice": "Reconnection logic for offline devices"
+    },
+    {
+      "category": "Reliability",
+      "practice": "Health monitoring and diagnostics"
+    },
+    {
+      "category": "Reliability",
+      "practice": "Proper cleanup in onDeleted()"
+    },
+    {
+      "category": "Reliability",
+      "practice": "State persistence across restarts"
+    }
+  ],
+  "zigbeeFeatures": [],
+  "sdk3Features": [],
+  "recommendations": [
+    {
+      "feature": "Advanced Zigbee Health Monitoring",
+      "priority": "HIGH",
+      "description": "Implement comprehensive health checks: LQI, RSSI, route quality, offline detection",
+      "implementation": "lib/zigbee/ZigbeeHealthMonitor.js",
+      "benefits": [
+        "Better reliability",
+        "Proactive issue detection",
+        "User satisfaction"
+      ]
+    },
+    {
+      "feature": "Smart Pairing System",
+      "priority": "HIGH",
+      "description": "Auto-detect device type, apply quirks, configure endpoints automatically",
+      "implementation": "lib/pairing/UniversalPairingManager.js",
+      "benefits": [
+        "Easier pairing",
+        "Better compatibility",
+        "Reduced support tickets"
+      ]
+    },
+    {
+      "feature": "OTA Firmware Updates",
+      "priority": "MEDIUM",
+      "description": "Support OTA updates from multiple sources with caching",
+      "implementation": "lib/ota/OTAUpdateManager.js",
+      "benefits": [
+        "Device improvements",
+        "Bug fixes",
+        "New features"
+      ]
+    },
+    {
+      "feature": "Battery Intelligence",
+      "priority": "MEDIUM",
+      "description": "Smart battery reporting, voltage conversion, low battery alerts",
+      "implementation": "lib/battery/BatterySystem.js + BatteryIconDetector.js",
+      "benefits": [
+        "Better UX",
+        "Predictive maintenance",
+        "Visual feedback"
+      ]
+    },
+    {
+      "feature": "Tuya DP Complete Mapper",
+      "priority": "HIGH",
+      "description": "Comprehensive mapping of all Tuya DataPoints",
+      "implementation": "lib/tuya/TuyaDPMapperComplete.js",
+      "benefits": [
+        "Better Tuya support",
+        "2000+ devices covered",
+        "Auto-configuration"
+      ]
+    },
+    {
+      "feature": "Error Recovery System",
+      "priority": "HIGH",
+      "description": "Automatic error detection and recovery with retry logic",
+      "implementation": "lib/zigbee/ZigbeeErrorCodes.js + ZigbeeCommandManager.js",
+      "benefits": [
+        "Better reliability",
+        "Self-healing",
+        "Reduced manual intervention"
+      ]
+    },
+    {
+      "feature": "Multi-gang Switch Manager",
+      "priority": "MEDIUM",
+      "description": "Advanced multi-gang switch control with per-gang settings",
+      "implementation": "lib/TuyaMultiGangManager.js",
+      "benefits": [
+        "LED control",
+        "Power-on behavior",
+        "Countdown timers"
+      ]
+    },
+    {
+      "feature": "Xiaomi Special Handler",
+      "priority": "MEDIUM",
+      "description": "Handle Xiaomi-specific attributes and keep-alive",
+      "implementation": "lib/xiaomi/XiaomiSpecialHandler.js",
+      "benefits": [
+        "Better Xiaomi support",
+        "Lumi devices",
+        "Keep-alive management"
+      ]
+    },
+    {
+      "feature": "RGB Color Effects",
+      "priority": "LOW",
+      "description": "Beautiful color effects for RGB lights",
+      "implementation": "lib/lighting/ColorEffectManager.js",
+      "benefits": [
+        "Better UX",
+        "6 effects",
+        "Smooth transitions"
+      ]
+    },
+    {
+      "feature": "Device Quirks Database",
+      "priority": "HIGH",
+      "description": "Database of device-specific quirks and fixes",
+      "implementation": "lib/quirks/QuirksDatabase.js",
+      "benefits": [
+        "Better compatibility",
+        "Known issues handled",
+        "Community contributions"
+      ]
+    }
+  ],
+  "projectAnalysis": {
+    "implemented": [
+      "BatterySystem",
+      "BatteryIconDetector",
+      "ZigbeeHealthMonitor",
+      "ZigbeeErrorCodes",
+      "ZigbeeCommandManager",
+      "QuirksDatabase",
+      "OTARepository",
+      "OTAUpdateManager",
+      "TuyaDPMapperComplete",
+      "XiaomiSpecialHandler",
+      "ColorEffectManager",
+      "UniversalPairingManager"
+    ],
+    "missing": [],
+    "coverage": "100%"
+  }
+}
