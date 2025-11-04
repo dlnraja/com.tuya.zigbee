@@ -9,7 +9,9 @@
     "onoff",
     "measure_current",
     "measure_voltage",
-    "meter_power"
+    "meter_power",
+    "measure_power",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
@@ -60,7 +62,8 @@
           "scenes",
           "onOff",
           "metering",
-          "electricalMeasurement"
+          "electricalMeasurement",
+          61184
         ],
         "bindings": [
           1

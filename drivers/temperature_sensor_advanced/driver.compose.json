@@ -9,7 +9,8 @@
     "measure_temperature",
     "measure_battery",
     "alarm_contact",
-    "alarm_temperature"
+    "alarm_temperature",
+    "onoff"
   ],
   "energy": {
     "batteries": [
@@ -53,7 +54,8 @@
           "illuminanceMeasurement",
           "occupancySensing",
           "iasZone",
-          "manuSpecificTuya"
+          "manuSpecificTuya",
+          61184
         ],
         "bindings": [
           1

@@ -7,7 +7,8 @@
   "class": "button",
   "capabilities": [
     "measure_battery",
-    "windowcoverings_state"
+    "windowcoverings_state",
+    "onoff"
   ],
   "platforms": [
     "local"
@@ -37,7 +38,8 @@
           "basic",
           "powerConfiguration",
           "onOff",
-          "levelControl"
+          "levelControl",
+          61184
         ],
         "bindings": [
           6

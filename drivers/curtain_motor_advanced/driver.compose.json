@@ -6,7 +6,8 @@
   "class": "windowcoverings",
   "capabilities": [
     "windowcoverings_set",
-    "windowcoverings_state"
+    "windowcoverings_state",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
@@ -38,7 +39,8 @@
         "clusters": [
           "basic",
           "windowCovering",
-          "identify"
+          "identify",
+          61184
         ],
         "bindings": [
           1

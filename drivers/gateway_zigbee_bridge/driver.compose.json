@@ -5,7 +5,9 @@
   },
   "class": "sensor",
   "capabilities": [
-    "alarm_generic"
+    "alarm_generic",
+    "onoff",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
@@ -36,7 +38,8 @@
           "basic",
           "identify",
           "onOff",
-          "manuSpecificTuya"
+          "manuSpecificTuya",
+          61184
         ],
         "bindings": [
           1

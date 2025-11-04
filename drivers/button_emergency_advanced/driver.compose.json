@@ -5,7 +5,8 @@
   },
   "class": "button",
   "capabilities": [
-    "alarm_generic"
+    "alarm_generic",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [

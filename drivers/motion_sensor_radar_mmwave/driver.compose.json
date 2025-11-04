@@ -6,7 +6,8 @@
   "class": "sensor",
   "capabilities": [
     "alarm_motion",
-    "measure_battery"
+    "measure_battery",
+    "measure_luminance"
   ],
   "energy": {
     "batteries": [
@@ -45,7 +46,8 @@
           "illuminanceMeasurement",
           "occupancySensing",
           "iasZone",
-          "manuSpecificTuya"
+          "manuSpecificTuya",
+          61184
         ],
         "bindings": [
           1

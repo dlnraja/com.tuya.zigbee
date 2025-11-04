@@ -9,7 +9,8 @@
     "measure_humidity",
     "alarm_smoke",
     "alarm_fire",
-    "measure_battery"
+    "measure_battery",
+    "onoff"
   ],
   "energy": {
     "batteries": [
@@ -39,7 +40,8 @@
           "powerConfiguration",
           "temperatureMeasurement",
           "relativeHumidity",
-          "manuSpecificTuya"
+          "manuSpecificTuya",
+          61184
         ],
         "bindings": [
           1

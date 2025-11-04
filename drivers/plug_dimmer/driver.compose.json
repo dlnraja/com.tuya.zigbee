@@ -9,7 +9,8 @@
     "dim",
     "measure_current",
     "measure_voltage",
-    "meter_power"
+    "meter_power",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [

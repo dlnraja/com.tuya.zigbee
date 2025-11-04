@@ -6,7 +6,8 @@
   "class": "sensor",
   "capabilities": [
     "alarm_motion",
-    "measure_battery"
+    "measure_battery",
+    "onoff"
   ],
   "energy": {
     "batteries": [
@@ -36,7 +37,8 @@
           "basic",
           "powerConfiguration",
           "iasZone",
-          "manuSpecificTuya"
+          "manuSpecificTuya",
+          61184
         ],
         "bindings": [
           1

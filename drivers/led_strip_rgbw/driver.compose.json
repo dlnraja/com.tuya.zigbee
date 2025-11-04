@@ -10,7 +10,8 @@
     "light_saturation",
     "light_temperature",
     "light_mode",
-    "dim"
+    "dim",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
@@ -47,7 +48,8 @@
           "identify",
           "groups",
           "scenes",
-          "onOff"
+          "onOff",
+          61184
         ],
         "bindings": [
           6

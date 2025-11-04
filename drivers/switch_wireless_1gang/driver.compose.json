@@ -6,7 +6,8 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "dim"
+    "dim",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
@@ -57,7 +58,8 @@
           "onOff",
           "levelControl",
           "powerConfiguration",
-          "identify"
+          "identify",
+          61184
         ],
         "bindings": [
           1

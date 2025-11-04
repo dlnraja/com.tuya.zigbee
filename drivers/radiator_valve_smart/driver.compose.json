@@ -6,7 +6,8 @@
   "capabilities": [
     "target_temperature",
     "measure_temperature",
-    "measure_battery"
+    "measure_battery",
+    "onoff"
   ],
   "platforms": [
     "local"
@@ -37,7 +38,8 @@
           "identify",
           "thermostat",
           "temperatureMeasurement",
-          "manuSpecificTuya"
+          "manuSpecificTuya",
+          61184
         ],
         "bindings": [
           1
