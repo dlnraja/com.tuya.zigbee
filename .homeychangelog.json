@@ -802,5 +802,9 @@
   },
   "4.9.272": {
     "en": "🔧 Automated release with latest fixes and improvements\n\n✅ 319 native drivers\n✅ 12,563+ manufacturer IDs  \n✅ 25+ major brands supported\n✅ 96%+ Zigbee market coverage\n✅ 100% local control\n✅ Zero duplicate device args\n✅ Zero double suffixes\n\nSee full changelog at: https://github.com/dlnraja/com.tuya.zigbee/blob/master/.homeychangelog.json\n"
+  },
+  "4.9.274": {
+    "en": "🚨 CRITICAL FIX - App Crash Resolved\n\n✅ Fixed app crash on startup for ALL users\n✅ Corrected TuyaManufacturerCluster import path\n✅ All v4.9.273 features now working correctly:\n   • Advanced Analytics & Insights\n   • Smart Device Discovery  \n   • Performance Optimization Suite\n✅ No data loss or configuration changes\n✅ Immediate update HIGHLY recommended\n\nFixed: 'Cannot find module TuyaManufacturerCluster' error",
+    "fr": "🚨 CORRECTION CRITIQUE - Crash Résolu\n\n✅ Crash au démarrage résolu pour TOUS les utilisateurs\n✅ Chemin import TuyaManufacturerCluster corrigé\n✅ Toutes fonctionnalités v4.9.273 maintenant opérationnelles:\n   • Analytics Avancées & Insights\n   • Découverte Intelligente Devices\n   • Suite Optimisation Performance\n✅ Aucune perte données ou changement config\n✅ Mise à jour FORTEMENT recommandée\n\nCorrigé: Erreur 'Cannot find module TuyaManufacturerCluster'"
   }
 }
