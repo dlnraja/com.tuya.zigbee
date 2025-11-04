@@ -44,19 +44,46 @@ class ContactVibrationSensor extends SensorDevice {
           // Bit 0: Alarm 1 (Contact)
           const contactAlarm = (payload.zoneStatus & 0x01) === 0x01;
           if (this.hasCapability('alarm_contact')) {
-            await this.setCapabilityValue('alarm_contact', contactAlarm).catch(this.error);
+            await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_contact'} = ${contactAlarm}`);
+        try {
+          await this.setCapabilityValue('alarm_contact', contactAlarm);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'alarm_contact'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'alarm_contact'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
           }
           
           // Bit 1: Alarm 2 (Tamper/Vibration)
           const tamperAlarm = (payload.zoneStatus & 0x02) === 0x02;
           if (this.hasCapability('alarm_tamper')) {
-            await this.setCapabilityValue('alarm_tamper', tamperAlarm).catch(this.error);
+            await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_tamper'} = ${tamperAlarm}`);
+        try {
+          await this.setCapabilityValue('alarm_tamper', tamperAlarm);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'alarm_tamper'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'alarm_tamper'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
           }
           
           // Bit 3: Battery low
           const batteryLow = (payload.zoneStatus & 0x08) === 0x08;
           if (this.hasCapability('alarm_battery')) {
-            await this.setCapabilityValue('alarm_battery', batteryLow).catch(this.error);
+            await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_battery'} = ${batteryLow}`);
+        try {
+          await this.setCapabilityValue('alarm_battery', batteryLow);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'alarm_battery'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'alarm_battery'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
           }
         });
     }
@@ -70,7 +97,16 @@ class ContactVibrationSensor extends SensorDevice {
           const percentage = value / 2;
           
           if (this.hasCapability('alarm_battery')) {
-            await this.setCapabilityValue('alarm_battery', percentage < batteryThreshold).catch(this.error);
+            await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_battery'} = ${percentage < batteryThreshold}`);
+        try {
+          await this.setCapabilityValue('alarm_battery', percentage < batteryThreshold);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'alarm_battery'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'alarm_battery'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
           }
           
           return percentage;
@@ -142,7 +178,16 @@ class ContactVibrationSensor extends SensorDevice {
       const threshold = newSettings.battery_low_threshold;
       
       if (currentBattery !== null && this.hasCapability('alarm_battery')) {
-        await this.setCapabilityValue('alarm_battery', currentBattery < threshold).catch(this.error);
+        await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_battery'} = ${currentBattery < threshold}`);
+        try {
+          await this.setCapabilityValue('alarm_battery', currentBattery < threshold);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'alarm_battery'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'alarm_battery'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
       }
     }
   }
@@ -239,7 +284,16 @@ class ContactVibrationSensor extends SensorDevice {
           // Check alarm1 bit (motion/alarm detected)
           const alarm = (status & 0x01) !== 0;
           
-          await this.setCapabilityValue('alarm_contact', alarm).catch(this.error);
+          await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_contact'} = ${alarm}`);
+        try {
+          await this.setCapabilityValue('alarm_contact', alarm);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'alarm_contact'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'alarm_contact'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
           this.log(`${alarm ? '[ALARM]' : '[OK]'} Alarm: ${alarm ? 'TRIGGERED' : 'cleared'}`);
         }
       };
@@ -257,7 +311,16 @@ class ContactVibrationSensor extends SensorDevice {
         }
         
         const alarm = (status & 0x01) !== 0;
-        await this.setCapabilityValue('alarm_contact', alarm).catch(this.error);
+        await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_contact'} = ${alarm}`);
+        try {
+          await this.setCapabilityValue('alarm_contact', alarm);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'alarm_contact'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'alarm_contact'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
       };
       
       this.log('[OK] IAS Zone configured successfully (SDK3 latest method)');
