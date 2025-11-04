@@ -8,6 +8,7 @@ const AdvancedAnalytics = require('./lib/analytics/AdvancedAnalytics');
 const SmartDeviceDiscovery = require('./lib/discovery/SmartDeviceDiscovery');
 const PerformanceOptimizer = require('./lib/performance/PerformanceOptimizer');
 const UnknownDeviceHandler = require('./lib/UnknownDeviceHandler');
+const SystemLogsCollector = require('./lib/SystemLogsCollector');
 
 class UniversalTuyaZigbeeApp extends Homey.App {
   _flowCardsRegistered = false;
@@ -17,6 +18,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
   discovery = null;
   optimizer = null;
   unknownHandler = null;
+  systemLogsCollector = null;
 
 
   /**
@@ -81,6 +83,10 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     this.unknownHandler = new UnknownDeviceHandler(this.homey);
     this.log('✅ Unknown Device Handler initialized');
     
+    // Initialize System Logs Collector for Diagnostics
+    this.systemLogsCollector = new SystemLogsCollector(this.homey);
+    this.log('✅ System Logs Collector initialized');
+    
     // Register additional global flow cards
     this.registerFlowCards();
     
@@ -88,11 +94,63 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     await this.initializeInsights();
 
     this.log('✅ Universal Tuya Zigbee App has been initialized');
-    this.log('🚀 Advanced systems: Analytics, Discovery, Performance, Unknown Device Detection');
+    this.log('🚀 Advanced systems: Analytics, Discovery, Performance, Unknown Device Detection, System Logs');
     
     // Log capability stats
     const stats = this.capabilityManager.getStats();
     this.log(`📊 Capabilities managed: ${stats.created}`);
+  }
+  
+  /**
+   * Get system logs for diagnostic reports
+   * This method is called by Homey when generating diagnostic reports
+   */
+  async onDiagnostic() {
+    this.log('📊 Generating diagnostic report with system logs...');
+    
+    try {
+      // Collect all system logs
+      const systemLogsReport = await this.systemLogsCollector.formatForDiagnosticReport();
+      
+      // Get app-specific information
+      const appInfo = {
+        appId: this.homey.manifest.id,
+        version: this.homey.manifest.version,
+        capabilities: this.capabilityManager ? this.capabilityManager.getStats() : {},
+        analytics: this.analytics ? await this.analytics.getAnalyticsReport() : {},
+        performance: this.optimizer ? this.optimizer.getStats() : {}
+      };
+      
+      // Combine everything
+      const report = [
+        '═'.repeat(80),
+        '📊 UNIVERSAL TUYA ZIGBEE - COMPREHENSIVE DIAGNOSTIC REPORT',
+        '═'.repeat(80),
+        '',
+        `Generated: ${new Date().toISOString()}`,
+        `App: ${appInfo.appId} v${appInfo.version}`,
+        '',
+        '─'.repeat(80),
+        '📱 APP-SPECIFIC INFORMATION',
+        '─'.repeat(80),
+        `Capabilities Created: ${appInfo.capabilities.created || 0}`,
+        `Capabilities Cached: ${appInfo.capabilities.cached || 0}`,
+        '',
+        systemLogsReport,
+        '',
+        '═'.repeat(80),
+        'END OF DIAGNOSTIC REPORT',
+        '═'.repeat(80)
+      ].join('\n');
+      
+      this.log('✅ Diagnostic report generated successfully');
+      
+      return report;
+      
+    } catch (err) {
+      this.error('❌ Failed to generate diagnostic report:', err);
+      return `Error generating diagnostic report: ${err.message}`;
+    }
   }
 
   /**
