@@ -11,7 +11,8 @@
     "onoff.gang4",
     "onoff.gang5",
     "onoff.gang6",
-    "dim"
+    "dim",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
@@ -59,7 +60,8 @@
           "onOff",
           "levelControl",
           "powerConfiguration",
-          "identify"
+          "identify",
+          61184
         ],
         "bindings": [
           1

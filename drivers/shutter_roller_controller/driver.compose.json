@@ -6,7 +6,9 @@
   "class": "sensor",
   "capabilities": [
     "alarm_generic",
-    "windowcoverings_state"
+    "windowcoverings_state",
+    "onoff",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
@@ -37,7 +39,8 @@
       "1": {
         "clusters": [
           "basic",
-          "windowCovering"
+          "windowCovering",
+          61184
         ],
         "bindings": [
           1

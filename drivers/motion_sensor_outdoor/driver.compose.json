@@ -7,7 +7,8 @@
   "capabilities": [
     "alarm_contact",
     "measure_battery",
-    "alarm_motion"
+    "alarm_motion",
+    "measure_luminance"
   ],
   "energy": {
     "batteries": [
@@ -44,7 +45,8 @@
           "identify",
           "groups",
           "scenes",
-          "onOff"
+          "onOff",
+          61184
         ],
         "bindings": [
           6

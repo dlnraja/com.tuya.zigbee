@@ -7,7 +7,8 @@
   "capabilities": [
     "onoff",
     "onoff.gang2",
-    "onoff.gang3"
+    "onoff.gang3",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
@@ -57,7 +58,8 @@
           "basic",
           "groups",
           "scenes",
-          "onOff"
+          "onOff",
+          61184
         ],
         "bindings": [
           1

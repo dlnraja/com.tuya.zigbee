@@ -8,7 +8,8 @@
     "alarm_co",
     "alarm_co2",
     "measure_battery",
-    "alarm_contact"
+    "alarm_contact",
+    "onoff"
   ],
   "energy": {
     "batteries": [
@@ -47,7 +48,8 @@
           "basic",
           "groups",
           "scenes",
-          "manuSpecificTuya"
+          "manuSpecificTuya",
+          61184
         ],
         "bindings": []
       }
