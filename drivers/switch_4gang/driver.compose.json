@@ -7,9 +7,7 @@
     "onoff.button4",
     "button.2",
     "button.3",
-    "button.4",
-    "dim",
-    "measure_battery"
+    "button.4"
   ],
   "zigbee": {
     "productId": [
@@ -376,13 +374,6 @@
     }
   },
   "energy": {
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "AAA",
-      "AA",
-      "CR123A"
-    ],
     "approximation": {
       "usageConstant": 0.5
     }
