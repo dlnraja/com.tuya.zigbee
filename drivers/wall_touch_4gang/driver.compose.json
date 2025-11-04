@@ -10,7 +10,6 @@
     "onoff.button3",
     "onoff.button4",
     "measure_temperature",
-    "measure_battery",
     "alarm_tamper",
     "onoff"
   ],
@@ -92,10 +91,6 @@
     }
   },
   "energy": {
-    "batteries": [
-      "CR2032",
-      "CR2032"
-    ],
     "approximation": {
       "usageConstant": 0.5
     }

@@ -300,6 +300,32 @@
         "fr": "Configuration Tuya Datapoint"
       },
       "value": "{\n  \"1\": \"temperature\",\n  \"2\": \"humidity\",\n  \"4\": \"battery_percentage\",\n  \"9\": \"temp_unit_convert\",\n  \"10\": \"max_temp_alarm\",\n  \"11\": \"min_temp_alarm\",\n  \"12\": \"max_humidity_alarm\",\n  \"13\": \"min_humidity_alarm\"\n}"
+    },
+    {
+      "id": "dp_debug_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "DP Debug Mode",
+        "fr": "Mode Debug DP"
+      },
+      "value": false,
+      "hint": {
+        "en": "Log all Tuya DP data for troubleshooting",
+        "fr": "Logger toutes les données Tuya DP pour diagnostic"
+      }
+    },
+    {
+      "id": "enable_time_sync",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Time Sync",
+        "fr": "Activer Synchro Heure"
+      },
+      "value": true,
+      "hint": {
+        "en": "Sync device time with Homey",
+        "fr": "Synchroniser l'heure du device avec Homey"
+      }
     }
   ],
   "images": {
