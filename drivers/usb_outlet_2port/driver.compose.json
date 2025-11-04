@@ -1,7 +1,7 @@
 {
   "name": {
-    "en": "USB Outlet 1 AC + 2 USB (NOT 1gang switch)",
-    "fr": "Prise USB 1 AC + 2 USB (PAS switch 1gang)"
+    "en": "⚡ USB Outlet 2-Port (1 AC + 2 USB) - NOT DIMMER!",
+    "fr": "⚡ Prise USB 2-Port (1 AC + 2 USB) - PAS DIMMER!"
   },
   "class": "socket",
   "capabilities": [
@@ -73,15 +73,25 @@
       "_TZ3000_8gs8h2e4",
       "_TZ3000_vzopcetz",
       "_TZ3000_g5xawfcq",
-      "_TZ3000_h1ipgkwn"
+      "_TZ3000_h1ipgkwn",
+      "_TZ3000_rdtixbnu",
+      "_TZ3000_2xlvlnvp",
+      "_TZ3000_typdpbpg",
+      "_TZ3000_cymsnfvf",
+      "_TZ3000_okaz9tjs",
+      "_TZ3000_9hpxg80k",
+      "_TZ3000_wxtp7c5y",
+      "_TZ3000_o005nuxx",
+      "_TZ3000_ksw8qtmt",
+      "_TZ3000_7ysdnebc",
+      "_TZ3000_cphmq0q7"
     ],
     "productId": [
       "TS011F",
       "TS0121",
-      "_TZ3000_rdtixbnu",
-      "_TZ3000_2xlvlnvp",
-      "_TZ3000_typdpbpg",
-      "_TZ3000_cymsnfvf"
+      "TS011E",
+      "TS0001",
+      "TS0002"
     ],
     "endpoints": {
       "1": {
