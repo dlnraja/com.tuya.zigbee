@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Home - Homey Apps SDK v3</title>
+
+  <meta property="og:image" content="https://etc.athom.com/logo/white/256.png"/>
+  <link rel="icon" href="https://etc.athom.com/logo/transparent/128.png"/>
+  <link rel="icon" type="image/png" href="https://etc.athom.com/logo/transparent/128.png"/>
+  <link rel="preload" as="image" href="images/logo.png">
+  <link rel="preload" href="styles/homey.min.css" as="style">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="styles/atom-one-light.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Roboto:wght@100;300;400;500;700&display=swap"
+    rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="styles/homey.min.css">
+
+  <!-- preload javascript -->
+  <link rel="preload" as="script" href="scripts/ready.js">
+  <link rel="preload" as="script" href="scripts/navigation.js">
+  <link rel="preload" as="script" href="scripts/toc.js">
+  <link rel="preload" as="script" href="scripts/table.js">
+  <link rel="preload" as="script" href="scripts/hash-link.js">
+  <link rel="preload" as="script" href="scripts/docs-nav.js">
+  <link rel="preload" as="script" href="scripts/hash-highlight.js">
+  <link rel="preload" as="script" href="scripts/darkmode.js">
+
+  <!-- Start DarkMode -->
+  <script>
+    if (localStorage.getItem('darkmode') === 'true') {
+      document.documentElement.classList.add('darkmode');
+    }
+  </script>
+  <!-- End DarkMode -->
+</head>
+
+<body>
+
+
+<div class="container">
+  <div class="container__top-nav">
+    <button data-darkmode-toggle class="darkmode-toggle">
+      <span class="darkmode-toggle__icon --mask"></span>
+    </button>
+    <div class="docs-nav">
+      <button data-docs-nav-toggle class="docs-nav__button" title="All documentation"><span
+          class="docs-nav__button-icon --mask"></span></button>
+      <nav data-docs-nav-menu class="docs-nav__menu component">
+        <div class="docs-nav__banner trim">
+          <h2>Homey Developers</h2>
+        </div>
+        <div class="docs-nav__columns">
+          <div class="docs-nav__column trim">
+            <h3>Homey Apps SDK</h3>
+            <ul class="docs-nav__list">
+              <li class="docs-nav__item"><a target="_blank" href="https://apps.developer.homey.app/">Documentation</a>
+              </li>
+              <li class="docs-nav__item"><a target="_blank"
+                                            href="https://apps-sdk-v3.developer.homey.app/">Reference</a></li>
+            </ul>
+            <h3>Homey Web API</h3>
+            <ul class="docs-nav__list">
+              <li class="docs-nav__item"><a target="_blank" href="https://api.developer.homey.app/">Documentation</a>
+              </li>
+              <li class="docs-nav__item"><a target="_blank"
+                                            href="https://athombv.github.io/node-homey-api/">Reference</a></li>
+            </ul>
+            <h3>Tools</h3>
+            <ul class="docs-nav__list">
+              <li class="docs-nav__item"><a target="_blank" href="https://tools.developer.homey.app/">Developer
+                  Tools</a></li>
+            </ul>
+          </div>
+          <div class="docs-nav__column trim">
+            <h3>Node.js Modules</h3>
+            <ul class="docs-nav__list">
+              <li class="docs-nav__item"><a target="_blank" href="https://athombv.github.io/node-homey-zigbeedriver/">Homey
+                  ZigbeeDriver</a>
+              </li>
+              <li class="docs-nav__item"><a target="_blank" href="https://athombv.github.io/node-homey-zwavedriver/">Homey
+                  ZWaveDriver</a>
+              </li>
+              <li class="docs-nav__item"><a target="_blank" href="https://athombv.github.io/node-homey-rfdriver/">Homey
+                  RFDriver</a>
+              </li>
+              <li class="docs-nav__item"><a target="_blank" href="https://athombv.github.io/node-homey-log/">Homey
+                  Log</a></li>
+              <li class="docs-nav__item"><a target="_blank" href="https://athombv.github.io/node-zigbee-clusters/">Zigbee
+                  Clusters</a>
+              </li>
+              <li class="docs-nav__item"><a target="_blank" href="https://athombv.github.io/node-homey-oauth2app/">Homey
+                  OAuth2</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <nav class="navigation container__navigation component">
+    <header class="navigation__header">
+                <div class="navigation__logo"><a href="index.html"><img class="display-block" src="images/logo.png" width="40" height="40" alt="Homey"></a></div>
+                <h2 class="navigation__title"><a href="index.html">Homey Apps SDK v3</a></h2>
+                <button data-navigation-toggle class="navigation__button" title="menu"></button>
+             </header><div class="navigation__content" data-navigation-target><div class="navigation__search search">
+            <input title="filter" placeholder="Filter..." data-navigation-search class="search__input" type="search">
+            <button data-navigation-search-reset class="search__reset --mask" type="button" title="Reset"></button>
+           </div><div data-navigation-scroll class="navigation__scroll scroll trim"><div data-navigation class="navigation__menu trim"><nav class="nav-group"><ul class="nav-group__list"><li data-lvl="0" data-search-key="device-capabilities" class="nav-group__item"><a href="tutorial-device-capabilities.html">Device Capabilities</a></li><li data-lvl="0" data-search-key="device-classes" class="nav-group__item"><a href="tutorial-device-classes.html">Device Classes</a></li></ul></nav><nav class="nav-group"><h3 class="nav-group__title">Managers</h3><ul class="nav-group__list"><li data-lvl="0" data-search-key="managerapi" class="nav-group__item"><a href="ManagerApi.html"> ManagerApi</a></li><li data-lvl="0" data-search-key="managerapps" class="nav-group__item"><a href="ManagerApps.html"> ManagerApps</a></li><li data-lvl="0" data-search-key="managerarp" class="nav-group__item"><a href="ManagerArp.html"> ManagerArp</a></li><li data-lvl="0" data-search-key="manageraudio" class="nav-group__item"><a href="ManagerAudio.html"> ManagerAudio</a></li><li data-lvl="0" data-search-key="managerble" class="nav-group__item"><a href="ManagerBLE.html"> ManagerBLE</a></li><li data-lvl="0" data-search-key="managerclock" class="nav-group__item"><a href="ManagerClock.html"> ManagerClock</a></li><li data-lvl="0" data-search-key="managercloud" class="nav-group__item"><a href="ManagerCloud.html"> ManagerCloud</a></li><li data-lvl="0" data-search-key="managerdiscovery" class="nav-group__item"><a href="ManagerDiscovery.html"> ManagerDiscovery</a></li><li data-lvl="0" data-search-key="managerdrivers" class="nav-group__item"><a href="ManagerDrivers.html"> ManagerDrivers</a></li><li data-lvl="0" data-search-key="managerflow" class="nav-group__item"><a href="ManagerFlow.html"> ManagerFlow</a></li><li data-lvl="0" data-search-key="managergeolocation" class="nav-group__item"><a href="ManagerGeolocation.html"> ManagerGeolocation</a></li><li data-lvl="0" data-search-key="manageri18n" class="nav-group__item"><a href="ManagerI18n.html"> ManagerI18n</a></li><li data-lvl="0" data-search-key="managerimages" class="nav-group__item"><a href="ManagerImages.html"> ManagerImages</a></li><li data-lvl="0" data-search-key="managerinsights" class="nav-group__item"><a href="ManagerInsights.html"> ManagerInsights</a></li><li data-lvl="0" data-search-key="managerledring" class="nav-group__item"><a href="ManagerLedring.html"> ManagerLedring</a></li><li data-lvl="0" data-search-key="managernfc" class="nav-group__item"><a href="ManagerNFC.html"> ManagerNFC</a></li><li data-lvl="0" data-search-key="managernotifications" class="nav-group__item"><a href="ManagerNotifications.html"> ManagerNotifications</a></li><li data-lvl="0" data-search-key="managerrf" class="nav-group__item"><a href="ManagerRF.html"> ManagerRF</a></li><li data-lvl="0" data-search-key="managersettings" class="nav-group__item"><a href="ManagerSettings.html"> ManagerSettings</a></li><li data-lvl="0" data-search-key="managerspeechoutput" class="nav-group__item"><a href="ManagerSpeechOutput.html"> ManagerSpeechOutput</a></li><li data-lvl="0" data-search-key="managervideos" class="nav-group__item"><a href="ManagerVideos.html"> ManagerVideos</a></li><li data-lvl="0" data-search-key="managerzigbee" class="nav-group__item"><a href="ManagerZigBee.html"> ManagerZigBee</a></li><li data-lvl="0" data-search-key="managerzwave" class="nav-group__item"><a href="ManagerZwave.html"> ManagerZwave</a></li></ul></nav><nav class="nav-group"><h3 class="nav-group__title">Classes</h3><ul class="nav-group__list"><li data-lvl="0" data-search-key="api" class="nav-group__item"><a href="Api.html"> Api</a></li><li data-lvl="0" data-search-key="apiapp" class="nav-group__item"><a href="ApiApp.html"> ApiApp</a></li><li data-lvl="0" data-search-key="app" class="nav-group__item"><a href="App.html"> App</a></li><li data-lvl="0" data-search-key="bleadvertisement" class="nav-group__item"><a href="BleAdvertisement.html"> BleAdvertisement</a></li><li data-lvl="0" data-search-key="blecharacteristic" class="nav-group__item"><a href="BleCharacteristic.html"> BleCharacteristic</a></li><li data-lvl="0" data-search-key="bledescriptor" class="nav-group__item"><a href="BleDescriptor.html"> BleDescriptor</a></li><li data-lvl="0" data-search-key="bleperipheral" class="nav-group__item"><a href="BlePeripheral.html"> BlePeripheral</a></li><li data-lvl="0" data-search-key="bleservice" class="nav-group__item"><a href="BleService.html"> BleService</a></li><li data-lvl="0" data-search-key="cloudoauth2callback" class="nav-group__item"><a href="CloudOAuth2Callback.html"> CloudOAuth2Callback</a></li><li data-lvl="0" data-search-key="cloudwebhook" class="nav-group__item"><a href="CloudWebhook.html"> CloudWebhook</a></li><li data-lvl="0" data-search-key="device" class="nav-group__item"><a href="Device.html"> Device</a></li><li data-lvl="0" data-search-key="discoveryresult" class="nav-group__item"><a href="DiscoveryResult.html"> DiscoveryResult</a></li><li data-lvl="0" data-search-key="discoveryresultmac" class="nav-group__item"><a href="DiscoveryResultMAC.html"> DiscoveryResultMAC</a></li><li data-lvl="0" data-search-key="discoveryresultmdnssd" class="nav-group__item"><a href="DiscoveryResultMDNSSD.html"> DiscoveryResultMDNSSD</a></li><li data-lvl="0" data-search-key="discoveryresultssdp" class="nav-group__item"><a href="DiscoveryResultSSDP.html"> DiscoveryResultSSDP</a></li><li data-lvl="0" data-search-key="discoverystrategy" class="nav-group__item"><a href="DiscoveryStrategy.html"> DiscoveryStrategy</a></li><li data-lvl="0" data-search-key="driver" class="nav-group__item"><a href="Driver.html"> Driver</a></li><li data-lvl="0" data-search-key="flowargument" class="nav-group__item"><a href="FlowArgument.html"> FlowArgument</a></li><li data-lvl="0" data-search-key="flowcard" class="nav-group__item"><a href="FlowCard.html"> FlowCard</a></li><li data-lvl="0" data-search-key="flowcardaction" class="nav-group__item"><a href="FlowCardAction.html"> FlowCardAction</a></li><li data-lvl="0" data-search-key="flowcardcondition" class="nav-group__item"><a href="FlowCardCondition.html"> FlowCardCondition</a></li><li data-lvl="0" data-search-key="flowcardtrigger" class="nav-group__item"><a href="FlowCardTrigger.html"> FlowCardTrigger</a></li><li data-lvl="0" data-search-key="flowcardtriggerdevice" class="nav-group__item"><a href="FlowCardTriggerDevice.html"> FlowCardTriggerDevice</a></li><li data-lvl="0" data-search-key="flowtoken" class="nav-group__item"><a href="FlowToken.html"> FlowToken</a></li><li data-lvl="0" data-search-key="homey" class="nav-group__item"><a href="Homey.html"> Homey</a></li><li data-lvl="0" data-search-key="image" class="nav-group__item"><a href="Image.html"> Image</a></li><li data-lvl="0" data-search-key="insightslog" class="nav-group__item"><a href="InsightsLog.html"> InsightsLog</a></li><li data-lvl="0" data-search-key="ledringanimation" class="nav-group__item"><a href="LedringAnimation.html"> LedringAnimation</a></li><li data-lvl="0" data-search-key="ledringanimationsystem" class="nav-group__item"><a href="LedringAnimationSystem.html"> LedringAnimationSystem</a></li><li data-lvl="0" data-search-key="ledringanimationsystemprogress" class="nav-group__item"><a href="LedringAnimationSystemProgress.html"> LedringAnimationSystemProgress</a></li><li data-lvl="0" data-search-key="pairsession" class="nav-group__item"><a href="PairSession.html"> PairSession</a></li><li data-lvl="0" data-search-key="signal" class="nav-group__item"><a href="Signal.html"> Signal</a></li><li data-lvl="0" data-search-key="signal433" class="nav-group__item"><a href="Signal433.html"> Signal433</a></li><li data-lvl="0" data-search-key="signal868" class="nav-group__item"><a href="Signal868.html"> Signal868</a></li><li data-lvl="0" data-search-key="signalinfrared" class="nav-group__item"><a href="SignalInfrared.html"> SignalInfrared</a></li><li data-lvl="0" data-search-key="simpleclass" class="nav-group__item"><a href="SimpleClass.html"> SimpleClass</a></li><li data-lvl="0" data-search-key="video" class="nav-group__item"><a href="Video.html"> Video</a></li><li data-lvl="0" data-search-key="videodash" class="nav-group__item"><a href="VideoDASH.html"> VideoDASH</a></li><li data-lvl="0" data-search-key="videohls" class="nav-group__item"><a href="VideoHLS.html"> VideoHLS</a></li><li data-lvl="0" data-search-key="videoother" class="nav-group__item"><a href="VideoOther.html"> VideoOther</a></li><li data-lvl="0" data-search-key="videortmp" class="nav-group__item"><a href="VideoRTMP.html"> VideoRTMP</a></li><li data-lvl="0" data-search-key="videortsp" class="nav-group__item"><a href="VideoRTSP.html"> VideoRTSP</a></li><li data-lvl="0" data-search-key="videowebrtc" class="nav-group__item"><a href="VideoWebRTC.html"> VideoWebRTC</a></li><li data-lvl="0" data-search-key="videowithurl" class="nav-group__item"><a href="VideoWithURL.html"> VideoWithURL</a></li><li data-lvl="0" data-search-key="zigbeenode" class="nav-group__item"><a href="ZigBeeNode.html"> ZigBeeNode</a></li><li data-lvl="0" data-search-key="zwavecommandclass" class="nav-group__item"><a href="ZwaveCommandClass.html"> ZwaveCommandClass</a></li><li data-lvl="0" data-search-key="zwavenode" class="nav-group__item"><a href="ZwaveNode.html"> ZwaveNode</a></li></ul></nav></div></div></div>
+  </nav>
+
+  <main id="main" class="main container__main">
+    
+  
+  
+    
+  
+
+
+  
+  
+  <div class="main__center">
+    <div class="main__content align-baseline main-page trim">
+      
+
+
+    <section>
+        <article class="main-page__content"><h1>Welcome to the Homey Apps SDK v3 reference 👋</h1>
+<p>The Homey Apps SDK v3 reference is the documentation of all managers &amp; classes in the Homey Apps SDK.</p>
+<p>It is recommended to read the <a href="https://apps.developer.homey.app/">Homey Apps SDK</a> guide first before you use this reference.</p>
+<h2>Managers</h2>
+<p>Almost all functionality can be accessed through a <em>Manager</em>. For example, <a href="ManagerDrivers.html">ManagerDrivers</a> is your entrypoint to get a <a href="Driver.html"><code>Driver</code></a> by calling <code>this.homey.drivers.getDriver()</code>. This method then returns a <em>Class</em> <a href="Driver.html"><code>Driver</code></a>.</p>
+<p>You can access any manager through the <a href="Homey.html">Homey</a> instance using <code>this.homey.&lt;managerId&gt;</code>. For example, write <code>this.homey.flow</code> to access the instance of <a href="ManagerFlow.html">ManagerFlow</a>.</p>
+<h2>Classes</h2>
+<p>Most classes are accessed through a manager. There are three 'special' classes in the SDK that you can extend in your app:</p>
+<ul>
+<li><a href="App.html"><code>App</code></a> — Export from <code>app.js</code></li>
+<li><a href="Driver.html"><code>Driver</code></a> — Export from <code>driver.js</code></li>
+<li><a href="Device.html"><code>Device</code></a> — Export from <code>device.js</code></li>
+</ul>
+<p>These classes are the basis for your app, you are expected to extend and export them from your app.</p>
+<h2>Issues</h2>
+<p>Please report any issues you find in the <a href="https://github.com/athombv/homey-apps-sdk-issues/issues">Apps SDK Issue Tracker</a>.</p>
+<h2>Related Projects</h2>
+<ul>
+<li><a href="https://athombv.github.io/node-homey-zwavedriver/">Homey Z-Wave Driver</a></li>
+<li><a href="https://athombv.github.io/node-homey-zigbeedriver/">Homey Zigbee Driver</a></li>
+<li><a href="https://github.com/athombv/node-homey-rfdriver/">Homey RF Driver</a></li>
+<li><a href="https://github.com/athombv/node-homey-oauth2app/">Homey OAuth2 App</a></li>
+<li><a href="https://github.com/athombv/node-homey-log">Homey Log</a></li>
+</ul></article>
+    </section>
+
+
+    </div>
+  </div>
+  
+
+
+
+  </main>
+</div>
+
+<script src="scripts/ready.js"></script>
+<script src="scripts/navigation.js"></script>
+<script src="scripts/toc.js"></script>
+<script src="scripts/table.js"></script>
+<script src="scripts/hash-link.js"></script>
+<script src="scripts/docs-nav.js"></script>
+<script src="scripts/hash-highlight.js"></script>
+<script src="scripts/darkmode.js"></script>
+
+<link type="text/css" rel="stylesheet" href="styles/atom-one-light.css">
+<script src="scripts/highlight.min.js"></script>
+<!--<script src="scripts/linenumber.js"></script>-->
+
+
+<script async defer src="https://sa.athom.com/latest.js"></script>
+
+</body>
+</html>
