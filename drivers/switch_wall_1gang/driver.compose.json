@@ -12,8 +12,7 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff",
-    "measure_battery"
+    "onoff"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -30,15 +29,6 @@
     }
   },
   "energy": {
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "CR2477",
-      "AAA",
-      "AA",
-      "CR123A",
-      "INTERNAL"
-    ],
     "approximation": {
       "usageConstant": 0.5
     }

@@ -14,8 +14,7 @@
   "capabilities": [
     "onoff",
     "onoff.switch_2",
-    "onoff.switch_3",
-    "measure_battery"
+    "onoff.switch_3"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -32,15 +31,6 @@
     }
   },
   "energy": {
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "CR2477",
-      "AAA",
-      "AA",
-      "CR123A",
-      "INTERNAL"
-    ],
     "approximation": {
       "usageConstant": 0.5
     }
