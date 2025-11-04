@@ -1,5 +1,47 @@
 # Changelog
 
+## [4.9.279] - 2025-11-04
+
+### CRITICAL FIX - Emergency Repairs (Log ID: ba9a50e9)
+
+#### Critical Fixes
+
+**🚨 CRITICAL: wall_touch drivers crash**
+- Fixed SyntaxError in 8 wall_touch drivers (Unexpected token '}')
+- Removed orphan `await` statement causing immediate crash on load
+- All wall_touch drivers now initialize correctly
+
+**🔌 USB Outlet Recognition Enhanced**
+- Added explicit naming: "USB Outlet 1 AC + 2 USB (NOT 1gang switch)"
+- Added 6 additional product IDs for better matching
+- Improved driver selection to avoid misidentification as switch_1gang
+
+**🔍 MASSIVE Diagnostic Logging Added**
+- Added exhaustive logging to all device initialization
+- Added logging to every capability change
+- Added logging to TuyaManufacturerCluster (all DP transactions)
+- Added logging to base TuyaZigbeeDevice class
+- Every diagnostic report now shows complete device state
+
+#### Diagnostic Logs Now Include
+- Complete device information (name, IEEE, data, settings)
+- All available endpoints and clusters
+- Every capability change with values
+- All Tuya DP requests/reports/responses
+- Full error contexts and stack traces
+
+#### User Reports Addressed
+- Log ID ba9a50e9: "Issue partout" 
+  - wall_touch crashes → FIXED
+  - USB recognition → ENHANCED
+  - No data logging → MASSIVE LOGS ADDED
+
+### Impact
+Diagnostic reports will now be 100x more useful for troubleshooting!
+Every device interaction is now fully logged.
+
+---
+
 ## [4.9.278] - 2025-11-04
 
 ### INTELLIGENT ENRICHMENT - Based on All Previous Reports

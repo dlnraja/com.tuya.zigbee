@@ -62,11 +62,13 @@ class BseedSwitch2GangDevice extends SwitchDevice {
     
     // Override onoff capability (Gang 1)
     this.registerCapabilityListener('onoff', async (value) => {
+      this.log(`📤 [DIAG] CAPABILITY CHANGE: onoff = ${value}`);
       return await this.handleBseedGangCommand('gang1', value);
     });
     
     // Override onoff.gang2 capability (Gang 2)
     this.registerCapabilityListener('onoff.gang2', async (value) => {
+      this.log(`📤 [DIAG] CAPABILITY CHANGE: onoff.gang2 = ${value}`);
       return await this.handleBseedGangCommand('gang2', value);
     });
     

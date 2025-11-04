@@ -12,8 +12,8 @@ class WallTouch3GangHybridDriver extends Driver {
     this.log('WallTouch3GangHybridDriver has been initialized');
     
     // Register flow cards
-    await // TEMPORARY FIX v4.9.276: Disabled due to missing flow cards
- // this.registerFlowCards();
+    // TEMPORARY FIX v4.9.276: Disabled due to missing flow cards
+    // this.registerFlowCards();
   }
 
   /**
