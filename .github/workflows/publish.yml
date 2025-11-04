@@ -38,8 +38,8 @@ jobs:
           HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
         run: |
           echo "📦 Publishing to Homey App Store..."
-          homey login --token $HOMEY_TOKEN
-          homey app publish
+          echo $HOMEY_TOKEN > ~/.athom-cli-token
+          homey app publish --changelog "CRITICAL FIX - Correct TuyaManufacturerCluster import path. Fixes app crash on startup for all users."
           echo "✅ Published successfully!"
           
       - name: 📤 Upload build artifact
