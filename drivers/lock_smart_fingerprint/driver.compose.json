@@ -7,7 +7,8 @@
   "capabilities": [
     "locked",
     "lock_mode",
-    "measure_battery"
+    "measure_battery",
+    "onoff"
   ],
   "energy": {
     "batteries": [
@@ -41,7 +42,8 @@
           "groups",
           "scenes",
           "onOff",
-          "manuSpecificTuya"
+          "manuSpecificTuya",
+          61184
         ],
         "bindings": [
           1

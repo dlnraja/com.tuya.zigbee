@@ -11,7 +11,8 @@
     "light_saturation",
     "light_temperature",
     "light_mode",
-    "alarm_contact"
+    "alarm_contact",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
@@ -48,7 +49,8 @@
           "scenes",
           "onOff",
           "levelControl",
-          "colorControl"
+          "colorControl",
+          61184
         ],
         "bindings": [
           5,

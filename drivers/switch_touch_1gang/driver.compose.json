@@ -12,7 +12,8 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_battery"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -78,7 +79,8 @@
           3,
           4,
           5,
-          6
+          6,
+          61184
         ],
         "bindings": [
           6

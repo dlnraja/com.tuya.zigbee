@@ -6,7 +6,9 @@
   "class": "sensor",
   "capabilities": [
     "alarm_motion",
-    "measure_battery"
+    "measure_battery",
+    "onoff",
+    "alarm_generic"
   ],
   "energy": {
     "batteries": [
@@ -45,7 +47,8 @@
           "identify",
           "groups",
           "scenes",
-          "iasZone"
+          "iasZone",
+          61184
         ],
         "bindings": [
           5,

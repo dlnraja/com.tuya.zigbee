@@ -6,7 +6,8 @@
   "class": "windowcoverings",
   "capabilities": [
     "windowcoverings_set",
-    "onoff"
+    "onoff",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
@@ -54,7 +55,8 @@
       "1": {
         "clusters": [
           "basic",
-          "windowCovering"
+          "windowCovering",
+          61184
         ],
         "bindings": [
           1

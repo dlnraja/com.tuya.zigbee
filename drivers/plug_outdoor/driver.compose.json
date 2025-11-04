@@ -9,7 +9,8 @@
     "alarm_contact",
     "measure_current",
     "measure_voltage",
-    "meter_power"
+    "meter_power",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
@@ -55,7 +56,8 @@
           "identify",
           "groups",
           "scenes",
-          "onOff"
+          "onOff",
+          61184
         ],
         "bindings": [
           6

@@ -7,7 +7,9 @@
   "capabilities": [
     "target_temperature",
     "measure_temperature",
-    "thermostat_mode"
+    "thermostat_mode",
+    "onoff",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
@@ -41,7 +43,8 @@
           "groups",
           "scenes",
           "onOff",
-          "manuSpecificTuya"
+          "manuSpecificTuya",
+          61184
         ],
         "bindings": [
           1

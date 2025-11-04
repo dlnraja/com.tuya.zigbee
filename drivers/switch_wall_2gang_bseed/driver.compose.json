@@ -6,7 +6,8 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "onoff.gang2"
+    "onoff.gang2",
+    "measure_battery"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -45,7 +46,8 @@
           "identify",
           "groups",
           "scenes",
-          "onOff"
+          "onOff",
+          61184
         ],
         "bindings": [
           6

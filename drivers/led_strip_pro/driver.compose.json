@@ -7,7 +7,8 @@
   "capabilities": [
     "alarm_generic",
     "onoff",
-    "dim"
+    "dim",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
@@ -40,7 +41,8 @@
           "onOff",
           "levelControl",
           "colorControl",
-          "manuSpecificTuya"
+          "manuSpecificTuya",
+          61184
         ],
         "bindings": [
           1
