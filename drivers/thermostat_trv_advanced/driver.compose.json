@@ -1,0 +1,70 @@
+{
+  "name": {
+    "en": "Smart TRV Advanced",
+    "fr": "TRV Intelligent Avancé"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature",
+    "thermostat_mode",
+    "child_lock",
+    "window_detection",
+    "valve_position",
+    "measure_battery",
+    "anti_scale"
+  ],
+  "capabilitiesOptions": {},
+  "energy": {},
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_zivfvd7h",
+      "_TZE200_kfvq6avy",
+      "_TZE200_ckud7u2l",
+      "_TZE200_c88teujp",
+      "_TYST11_KGbxAXL2"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": [
+        0,
+        4,
+        5,
+        61184
+      ]
+    }
+  },
+  "settings": [
+    {
+      "id": "temp_offset",
+      "type": "number",
+      "value": 0,
+      "min": -5,
+      "max": 5,
+      "units": "°C"
+    },
+    {
+      "id": "window_detection",
+      "type": "checkbox",
+      "value": true
+    },
+    {
+      "id": "anti_scale",
+      "type": "checkbox",
+      "value": true
+    },
+    {
+      "id": "frost_protection",
+      "type": "number",
+      "value": 5,
+      "min": 0,
+      "max": 10
+    }
+  ],
+  "images": {
+    "small": "./drivers/thermostat_trv_advanced/assets/icon.svg",
+    "large": "./drivers/thermostat_trv_advanced/assets/icon.svg"
+  }
+}

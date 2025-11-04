@@ -1,0 +1,96 @@
+{
+  "name": {
+    "en": "Smart Siren Alarm Advanced",
+    "fr": "Sirène intelligente avancée"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_generic",
+    "alarm_temperature",
+    "alarm_humidity",
+    "measure_temperature",
+    "measure_humidity",
+    "volume_set"
+  ],
+  "capabilitiesOptions": {},
+  "energy": {},
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_d0yu2xgi",
+      "_TZE200_*"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": [
+        0,
+        3,
+        61184
+      ]
+    }
+  },
+  "settings": [
+    {
+      "id": "melody",
+      "type": "dropdown",
+      "value": "1",
+      "values": [
+        {
+          "id": "1",
+          "label": {
+            "en": "Melody 1"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "Melody 2"
+          }
+        },
+        {
+          "id": "3",
+          "label": {
+            "en": "Melody 3"
+          }
+        }
+      ]
+    },
+    {
+      "id": "duration",
+      "type": "number",
+      "value": 60,
+      "min": 1,
+      "max": 600,
+      "units": "s"
+    },
+    {
+      "id": "volume",
+      "type": "slider",
+      "value": 50,
+      "min": 0,
+      "max": 100,
+      "units": "%"
+    },
+    {
+      "id": "temp_alarm_min",
+      "type": "number",
+      "value": 0,
+      "min": -20,
+      "max": 50,
+      "units": "°C"
+    },
+    {
+      "id": "temp_alarm_max",
+      "type": "number",
+      "value": 40,
+      "min": 0,
+      "max": 80,
+      "units": "°C"
+    }
+  ],
+  "images": {
+    "small": "./drivers/siren_alarm_advanced/assets/icon.svg",
+    "large": "./drivers/siren_alarm_advanced/assets/icon.svg"
+  }
+}
