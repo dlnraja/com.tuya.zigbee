@@ -12,8 +12,7 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff",
-    "measure_battery"
+    "onoff"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -26,14 +25,7 @@
   "energy": {
     "approximation": {
       "usageConstant": 0.5
-    },
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "AAA",
-      "AA",
-      "CR123A"
-    ]
+    }
   },
   "zigbee": {
     "manufacturerName": [
