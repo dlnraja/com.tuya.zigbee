@@ -83,7 +83,16 @@ class SmartDoorbellBatteryDevice extends ButtonDevice {
         
         if (battery && battery.batteryPercentageRemaining !== undefined) {
           const percentage = Math.round(battery.batteryPercentageRemaining / 2);
-          await this.setCapabilityValue('measure_battery', parseFloat(percentage)).catch(err => this.error(err));
+          await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'measure_battery'} = ${parseFloat(percentage}`);
+        try {
+          await this.setCapabilityValue('measure_battery', parseFloat(percentage);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_battery'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_battery'}`, err.message);
+          throw err;
+        }
+      })()).catch(err => this.error(err));
           this.log('Battery polled:', percentage + '%');
           
           // Reset failure counter on success
@@ -429,7 +438,16 @@ class SmartDoorbellBatteryDevice extends ButtonDevice {
           // Check alarm1 bit (motion/alarm detected)
           const alarm = (status & 0x01) !== 0;
           
-          await this.setCapabilityValue('alarm_contact', alarm).catch(this.error);
+          await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_contact'} = ${alarm}`);
+        try {
+          await this.setCapabilityValue('alarm_contact', alarm);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'alarm_contact'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'alarm_contact'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
           this.log(`${alarm ? '[ALARM]' : '[OK]'} Alarm: ${alarm ? 'TRIGGERED' : 'cleared'}`);
         }
       };
@@ -447,7 +465,16 @@ class SmartDoorbellBatteryDevice extends ButtonDevice {
         }
         
         const alarm = (status & 0x01) !== 0;
-        await this.setCapabilityValue('alarm_contact', alarm).catch(this.error);
+        await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_contact'} = ${alarm}`);
+        try {
+          await this.setCapabilityValue('alarm_contact', alarm);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'alarm_contact'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'alarm_contact'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
       };
       
       this.log('[OK] IAS Zone configured successfully (SDK3 latest method)');

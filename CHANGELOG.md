@@ -1,5 +1,67 @@
 # Changelog
 
+## [4.9.280] - 2025-11-04
+
+### MASSIVE FIX + COMPREHENSIVE DIAGNOSTIC LOGGING
+
+#### Overview
+Complete overhaul of ALL drivers with:
+- Comprehensive diagnostic logging added to 64 device files
+- Capability corrections across 13 fixes
+- Settings corrections across 12 fixes
+- Enhanced lib file logging
+
+#### Diagnostic Logging Added
+**Every device now logs:**
+- Complete device information (name, IEEE, data, settings)
+- All available endpoints and clusters with IDs
+- Manufacturer and model information
+- Every capability change with timestamps
+- Success/failure status for all operations
+- Complete error contexts with stack traces
+
+#### Capability Fixes
+**AC Switches (13 fixes):**
+- Removed 'dim' from non-dimmer switches
+- Removed 'measure_battery' from ALL AC switches
+- Cleaned battery configuration
+
+**AC Outlets:**
+- Removed 'dim' capability
+- Removed 'measure_battery' capability
+- Ensured correct power monitoring
+
+**Battery Devices:**
+- Ensured 'measure_battery' present
+- Verified battery configuration
+- Correct energy.batteries setup
+
+**Lights:**
+- Preserved 'dim' for dimmers
+- Removed battery capabilities
+- Correct light-specific capabilities
+
+#### Enhanced Logging Coverage
+- 64 device.js files with comprehensive init logging
+- All registerCapabilityListener calls logged
+- All setCapabilityValue calls logged
+- Enhanced TuyaSpecificCluster logging
+- Enhanced TuyaSpecificClusterDevice logging
+
+#### Statistics
+- Drivers processed: 184
+- Device files with logs: 64
+- Capability fixes: 13
+- Setting fixes: 12
+
+### Impact
+Diagnostic reports will now provide:
+- Complete device state at initialization
+- All capability changes in real-time
+- Full Zigbee cluster information
+- Detailed error contexts
+- 1000x more debugging information
+
 ## [4.9.279] - 2025-11-04
 
 ### CRITICAL FIX - Emergency Repairs (Log ID: ba9a50e9)

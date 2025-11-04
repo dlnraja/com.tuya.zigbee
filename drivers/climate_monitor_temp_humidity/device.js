@@ -150,19 +150,46 @@ class ClimateMonitorDevice extends BaseHybridDevice {
       if (dp.dp === 1 && this.hasCapability('measure_temperature')) {
         const temp = dp.value / 10;
         this.log(`[TUYA] 🌡️  Temperature: ${dp.value} → ${temp}°C`);
-        await this.setCapabilityValue('measure_temperature', temp);
+        await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'measure_temperature'} = ${temp}`);
+        try {
+          await this.setCapabilityValue('measure_temperature', temp);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_temperature'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_temperature'}`, err.message);
+          throw err;
+        }
+      })();
       }
       
       // DP 2 = Humidity (%)
       else if (dp.dp === 2 && this.hasCapability('measure_humidity')) {
         this.log(`[TUYA] 💧 Humidity: ${dp.value}%`);
-        await this.setCapabilityValue('measure_humidity', dp.value);
+        await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'measure_humidity'} = ${dp.value}`);
+        try {
+          await this.setCapabilityValue('measure_humidity', dp.value);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_humidity'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_humidity'}`, err.message);
+          throw err;
+        }
+      })();
       }
       
       // DP 4 = Battery (%)
       else if (dp.dp === 4 && this.hasCapability('measure_battery')) {
         this.log(`[TUYA] 🔋 Battery: ${dp.value}%`);
-        await this.setCapabilityValue('measure_battery', dp.value);
+        await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'measure_battery'} = ${dp.value}`);
+        try {
+          await this.setCapabilityValue('measure_battery', dp.value);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_battery'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_battery'}`, err.message);
+          throw err;
+        }
+      })();
       }
       
       else {
@@ -308,7 +335,16 @@ class ClimateMonitorDevice extends BaseHybridDevice {
             const temperature = typeof rawTemp === 'number' ? rawTemp / 10 : rawTemp;
             this.log(`[TEMP] Tuya temperature update: ${temperature}°C (DP1)`);
             if (this.hasCapability('measure_temperature')) {
-              await this.setCapabilityValue('measure_temperature', temperature).catch(this.error);
+              await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'measure_temperature'} = ${temperature}`);
+        try {
+          await this.setCapabilityValue('measure_temperature', temperature);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_temperature'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_temperature'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
             }
           }
         } catch (err) {
@@ -322,7 +358,16 @@ class ClimateMonitorDevice extends BaseHybridDevice {
         if (tempData?.value !== undefined && tempData?.value !== null) {
           const temperature = tempData.value / 10;
           this.log(`[TEMP] Tuya initial temperature: ${temperature}°C`);
-          await this.setCapabilityValue('measure_temperature', temperature).catch(this.error);
+          await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'measure_temperature'} = ${temperature}`);
+        try {
+          await this.setCapabilityValue('measure_temperature', temperature);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_temperature'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_temperature'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
         }
       } catch (err) {
         this.log('Tuya temperature read (non-critical):', err.message);
@@ -359,7 +404,16 @@ class ClimateMonitorDevice extends BaseHybridDevice {
             // Tuya usually sends humidity as percentage directly
             this.log(`[HUMID] Tuya humidity update: ${humidity}% (DP2)`);
             if (this.hasCapability('measure_humidity')) {
-              await this.setCapabilityValue('measure_humidity', humidity).catch(this.error);
+              await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'measure_humidity'} = ${humidity}`);
+        try {
+          await this.setCapabilityValue('measure_humidity', humidity);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_humidity'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_humidity'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
             }
           }
         } catch (err) {
@@ -372,7 +426,16 @@ class ClimateMonitorDevice extends BaseHybridDevice {
         const humidityData = await tuyaCluster.read('dp', 2).catch(() => null);
         if (humidityData?.value !== undefined && humidityData?.value !== null) {
           this.log(`[HUMID] Tuya initial humidity: ${humidityData.value}%`);
-          await this.setCapabilityValue('measure_humidity', humidityData.value).catch(this.error);
+          await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'measure_humidity'} = ${humidityData.value}`);
+        try {
+          await this.setCapabilityValue('measure_humidity', humidityData.value);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_humidity'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_humidity'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
         }
       } catch (err) {
         this.log('Tuya humidity read (non-critical):', err.message);

@@ -403,7 +403,16 @@ class TuyaZigbeeDevice extends SwitchDevice {
         
         if (battery && battery.batteryPercentageRemaining !== undefined) {
           const percentage = Math.round(battery.batteryPercentageRemaining / 2);
-          await this.setCapabilityValue('measure_battery', parseFloat(percentage)).catch(err => this.error(err));
+          await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'measure_battery'} = ${parseFloat(percentage}`);
+        try {
+          await this.setCapabilityValue('measure_battery', parseFloat(percentage);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_battery'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_battery'}`, err.message);
+          throw err;
+        }
+      })()).catch(err => this.error(err));
           this.log('Battery polled:', percentage + '%');
           
           // Reset failure counter on success

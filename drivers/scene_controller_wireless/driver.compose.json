@@ -4,7 +4,6 @@
   },
   "class": "sensor",
   "capabilities": [
-    "onoff",
     "measure_battery",
     "windowcoverings_state"
   ],

@@ -69,7 +69,16 @@ class Switch2gangDevice extends SwitchDevice {
           const energy = value / 100; // Convert to kWh
           this.log('⚡ Energy:', energy, 'kWh');
           if (this.hasCapability('meter_power')) {
-            await this.setCapabilityValue('meter_power', energy).catch(this.error);
+            await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'meter_power'} = ${energy}`);
+        try {
+          await this.setCapabilityValue('meter_power', energy);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'meter_power'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'meter_power'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
           }
         });
         
@@ -85,7 +94,16 @@ class Switch2gangDevice extends SwitchDevice {
           const power = value; // Watts
           this.log('⚡ Power:', power, 'W');
           if (this.hasCapability('measure_power')) {
-            await this.setCapabilityValue('measure_power', power).catch(this.error);
+            await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'measure_power'} = ${power}`);
+        try {
+          await this.setCapabilityValue('measure_power', power);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_power'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_power'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
           }
         });
         
@@ -94,7 +112,16 @@ class Switch2gangDevice extends SwitchDevice {
           const voltage = value;
           this.log('⚡ Voltage:', voltage, 'V');
           if (this.hasCapability('measure_voltage')) {
-            await this.setCapabilityValue('measure_voltage', voltage).catch(this.error);
+            await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'measure_voltage'} = ${voltage}`);
+        try {
+          await this.setCapabilityValue('measure_voltage', voltage);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_voltage'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_voltage'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
           }
         });
         
@@ -103,7 +130,16 @@ class Switch2gangDevice extends SwitchDevice {
           const current = value / 1000; // Convert mA to A
           this.log('⚡ Current:', current, 'A');
           if (this.hasCapability('measure_current')) {
-            await this.setCapabilityValue('measure_current', current).catch(this.error);
+            await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'measure_current'} = ${current}`);
+        try {
+          await this.setCapabilityValue('measure_current', current);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_current'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_current'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
           }
         });
         

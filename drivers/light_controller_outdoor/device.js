@@ -97,7 +97,16 @@ class OutdoorLightControllerDevice extends BaseHybridDevice {
           // Check alarm1 bit (motion/alarm detected)
           const alarm = (status & 0x01) !== 0;
           
-          await this.setCapabilityValue('alarm_contact', alarm).catch(this.error);
+          await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_contact'} = ${alarm}`);
+        try {
+          await this.setCapabilityValue('alarm_contact', alarm);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'alarm_contact'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'alarm_contact'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
           this.log(`${alarm ? '[ALARM]' : '[OK]'} Alarm: ${alarm ? 'TRIGGERED' : 'cleared'}`);
         }
       };
@@ -115,7 +124,16 @@ class OutdoorLightControllerDevice extends BaseHybridDevice {
         }
         
         const alarm = (status & 0x01) !== 0;
-        await this.setCapabilityValue('alarm_contact', alarm).catch(this.error);
+        await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_contact'} = ${alarm}`);
+        try {
+          await this.setCapabilityValue('alarm_contact', alarm);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'alarm_contact'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'alarm_contact'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
       };
       
       this.log('[OK] IAS Zone configured successfully (SDK3 latest method)');

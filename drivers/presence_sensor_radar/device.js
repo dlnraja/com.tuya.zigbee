@@ -141,7 +141,16 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
         }
         
         const alarm = (status & 0x01) !== 0;
-        await this.setCapabilityValue('alarm_motion', alarm).catch(this.error);
+        await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_motion'} = ${alarm}`);
+        try {
+          await this.setCapabilityValue('alarm_motion', alarm);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'alarm_motion'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'alarm_motion'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
       };
       
       this.log('[OK] IAS Zone configured successfully (SDK3 latest method)');
@@ -172,7 +181,16 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
         endpoint.clusters.msTemperatureMeasurement.on('attr.measuredValue', async (value) => {
           const temperature = value / 100;
           this.log('[TEMP] Temperature:', temperature);
-          await this.setCapabilityValue('measure_temperature', temperature).catch(this.error);
+          await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'measure_temperature'} = ${temperature}`);
+        try {
+          await this.setCapabilityValue('measure_temperature', temperature);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_temperature'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_temperature'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
         });
       }
       
@@ -181,7 +199,16 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
         endpoint.clusters.msRelativeHumidity.on('attr.measuredValue', async (value) => {
           const humidity = value / 100;
           this.log('[HUMID] Humidity:', humidity);
-          await this.setCapabilityValue('measure_humidity', humidity).catch(this.error);
+          await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'measure_humidity'} = ${humidity}`);
+        try {
+          await this.setCapabilityValue('measure_humidity', humidity);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_humidity'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_humidity'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
         });
       }
       
@@ -190,7 +217,16 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
         endpoint.clusters.genPowerCfg.on('attr.batteryPercentageRemaining', async (value) => {
           const battery = value / 2;
           this.log('[BATTERY] Battery:', battery, '%');
-          await this.setCapabilityValue('measure_battery', battery).catch(this.error);
+          await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'measure_battery'} = ${battery}`);
+        try {
+          await this.setCapabilityValue('measure_battery', battery);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_battery'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_battery'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
         });
       }
       
@@ -199,7 +235,16 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
         endpoint.clusters.msIlluminanceMeasurement.on('attr.measuredValue', async (value) => {
           const lux = Math.pow(10, (value - 1) / 10000);
           this.log('[BULB] Illuminance:', lux, 'lux');
-          await this.setCapabilityValue('measure_luminance', lux).catch(this.error);
+          await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'measure_luminance'} = ${lux}`);
+        try {
+          await this.setCapabilityValue('measure_luminance', lux);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_luminance'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_luminance'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
         });
       }
       
@@ -224,14 +269,32 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
         endpoint.clusters.iasZone.onZoneStatusChangeNotification = async (data) => {
           this.log('🚶 Motion detected:', data);
           const motion = !!(data.zoneStatus & 1);
-          await this.setCapabilityValue('alarm_motion', motion).catch(this.error);
+          await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_motion'} = ${motion}`);
+        try {
+          await this.setCapabilityValue('alarm_motion', motion);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'alarm_motion'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'alarm_motion'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
         };
         
         // Attribute listener (backup)
         endpoint.clusters.iasZone.onZoneStatus = async (value) => {
           this.log('🚶 Motion status:', value);
           const motion = !!(value & 1);
-          await this.setCapabilityValue('alarm_motion', motion).catch(this.error);
+          await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_motion'} = ${motion}`);
+        try {
+          await this.setCapabilityValue('alarm_motion', motion);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'alarm_motion'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'alarm_motion'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
         };
       }
       
