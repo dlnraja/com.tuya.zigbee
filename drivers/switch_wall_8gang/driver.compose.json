@@ -1,0 +1,121 @@
+{
+  "name": {
+    "en": "Wall Switch 8-Gang",
+    "fr": "Interrupteur mural 8 gangs"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "onoff.gang2",
+    "onoff.gang3",
+    "onoff.gang4",
+    "onoff.gang5",
+    "onoff.gang6",
+    "onoff.gang7",
+    "onoff.gang8"
+  ],
+  "capabilitiesOptions": {
+    "onoff.gang2": {
+      "title": {
+        "en": "Gang 2"
+      }
+    },
+    "onoff.gang3": {
+      "title": {
+        "en": "Gang 3"
+      }
+    },
+    "onoff.gang4": {
+      "title": {
+        "en": "Gang 4"
+      }
+    },
+    "onoff.gang5": {
+      "title": {
+        "en": "Gang 5"
+      }
+    },
+    "onoff.gang6": {
+      "title": {
+        "en": "Gang 6"
+      }
+    },
+    "onoff.gang7": {
+      "title": {
+        "en": "Gang 7"
+      }
+    },
+    "onoff.gang8": {
+      "title": {
+        "en": "Gang 8"
+      }
+    }
+  },
+  "energy": {},
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_*"
+    ],
+    "productId": [
+      "TS0008"
+    ],
+    "endpoints": {
+      "1": [
+        0,
+        3,
+        4,
+        5,
+        6,
+        57344,
+        57345
+      ],
+      "2": [
+        4,
+        5,
+        6,
+        57345
+      ],
+      "3": [
+        4,
+        5,
+        6,
+        57345
+      ],
+      "4": [
+        4,
+        5,
+        6,
+        57345
+      ],
+      "5": [
+        4,
+        5,
+        6,
+        57345
+      ],
+      "6": [
+        4,
+        5,
+        6,
+        57345
+      ],
+      "7": [
+        4,
+        5,
+        6,
+        57345
+      ],
+      "8": [
+        4,
+        5,
+        6,
+        57345
+      ]
+    }
+  },
+  "settings": [],
+  "images": {
+    "small": "./drivers/switch_wall_8gang/assets/icon.svg",
+    "large": "./drivers/switch_wall_8gang/assets/icon.svg"
+  }
+}
