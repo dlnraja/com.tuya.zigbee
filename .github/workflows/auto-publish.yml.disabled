@@ -6,9 +6,9 @@ on:
       - master
     paths:
       - 'app.json'
-      - 'drivers/**'
       - 'lib/**'
-      - 'assets/**'
+      - 'drivers/**'
+      - '.homeycompose/**'
 
 jobs:
   publish:
@@ -17,32 +17,29 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
+        
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-
-      - name: Install dependencies
-        run: npm install
-
+          
       - name: Install Homey CLI
         run: npm install -g homey
-
+        
       - name: Validate app
         run: homey app validate --level publish
-        continue-on-error: false
-
+        
       - name: Publish to Homey App Store
-        run: homey app publish
         env:
           HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
-        continue-on-error: true
-        
-      - name: Publish Status
         run: |
-          if [ $? -eq 0 ]; then
-            echo "✅ Successfully published to Homey App Store"
-          else
-            echo "⚠️ Publish step skipped or failed (may require manual review)"
-          fi
+          homey login --token $HOMEY_TOKEN
+          homey app publish
+          
+      - name: Notify on success
+        if: success()
+        run: echo "✅ App published successfully to Homey App Store!"
+        
+      - name: Notify on failure
+        if: failure()
+        run: echo "❌ Publication failed. Check logs above."
