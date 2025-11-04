@@ -17,8 +17,7 @@
     "onoff.switch_3",
     "onoff.switch_4",
     "onoff.switch_5",
-    "onoff.switch_6",
-    "measure_battery"
+    "onoff.switch_6"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -31,14 +30,7 @@
   "energy": {
     "approximation": {
       "usageConstant": 0.5
-    },
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "AAA",
-      "AA",
-      "CR123A"
-    ]
+    }
   },
   "zigbee": {
     "manufacturerName": [

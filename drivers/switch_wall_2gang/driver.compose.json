@@ -14,7 +14,6 @@
   "capabilities": [
     "onoff",
     "onoff.gang2",
-    "measure_battery",
     "measure_power",
     "measure_voltage",
     "measure_current"
@@ -41,15 +40,6 @@
     }
   },
   "energy": {
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "CR2477",
-      "AAA",
-      "AA",
-      "CR123A",
-      "INTERNAL"
-    ],
     "approximation": {
       "usageConstant": 0.5
     }

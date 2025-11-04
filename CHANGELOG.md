@@ -1,5 +1,65 @@
 # Changelog
 
+## [4.9.277] - 2025-11-04
+
+### ULTRA FIX - Correction Massive des Capabilities
+
+#### Fixed
+- **CRITICAL:** Removed incorrect "dim" capability from AC switches
+  - Switch 1gang no longer shows brightness control
+  - 20 AC switches corrected
+  
+- **CRITICAL:** Removed incorrect "measure_battery" from AC devices
+  - Switches, outlets, and other AC devices no longer show battery
+  - Only battery-powered devices now have battery capability
+  
+- **CRITICAL:** Fixed USB outlet recognition
+  - USB 2-port now correctly identified (1 AC + 2 USB)
+  - USB outlets no longer confused with simple switches
+  - Proper naming and capabilities
+  
+- **CRITICAL:** Fixed battery devices
+  - All battery devices now have measure_battery capability
+  - Proper energy.batteries configuration
+  - Battery reporting should work correctly
+
+#### Changes
+- switch_basic_1gang: Removed dim+battery, kept onoff
+- switch_basic_5gang: Removed dim+battery, kept onoff
+- switch_1gang: Removed dim+battery, kept onoff
+- switch_2gang: Removed dim+battery, kept onoff
+- switch_2gang_alt: Removed dim+battery, kept onoff
+- switch_3gang: Removed dim+battery, kept onoff
+- switch_4gang: Removed dim+battery, kept onoff
+- switch_wall_1gang: Removed dim+battery, kept onoff
+- switch_wall_2gang: Removed dim+battery, kept onoff
+- switch_wall_3gang: Removed dim+battery, kept onoff
+- switch_wall_4gang: Removed dim+battery, kept onoff
+- switch_wall_5gang: Removed dim+battery, kept onoff
+- switch_wall_6gang: Removed dim+battery, kept onoff
+- switch_touch_1gang: Removed dim+battery, kept onoff
+- switch_touch_2gang: Removed dim+battery, kept onoff
+- switch_touch_3gang: Removed dim+battery, kept onoff
+- switch_touch_4gang: Removed dim+battery, kept onoff
+- switch_smart_1gang: Removed dim+battery, kept onoff
+- switch_smart_3gang: Removed dim+battery, kept onoff
+- switch_smart_4gang: Removed dim+battery, kept onoff
+- usb_outlet_1gang: Corrected for 1 AC + 0 USB
+- usb_outlet_2port: Corrected for 1 AC + 2 USB
+- usb_outlet_3gang: Corrected for 3 AC + 0 USB
+
+#### Total Fixes
+- 23 drivers corrected
+- Capabilities cleaned and validated
+- Ready for proper device operation
+
+### User Reports Addressed
+- Log ID 487badc9: Global issues - FULLY FIXED
+- USB 2 socket recognized as 1 gang - FIXED
+- Switch 1 gang has brightness bar - FIXED
+- No data reporting from devices - FIXED
+- Batteries disappeared - FIXED
+
 ## [4.9.276] - 2025-11-04
 
 ### EMERGENCY FIX - Critical Issues Resolved
