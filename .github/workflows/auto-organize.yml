@@ -1,18 +1,10 @@
-name: Auto Organize Project
+name: Auto Organize Root
 
 on:
-  schedule:
-    - cron: '0 3 */2 * *'  # Every 2 days at 3 AM
-  workflow_dispatch:  # Manual trigger
   push:
     branches:
       - master
-    paths:
-      - '**.md'
-      - '**.txt'
-      - '**.js'
-      - 'commit**'
-      - 'EMAIL_**'
+  workflow_dispatch:  # Manual trigger
 
 jobs:
   organize:
@@ -36,7 +28,7 @@ jobs:
       - name: 🧹 Run organization script
         id: organize
         run: |
-          node scripts/cleanup/AUTO_ORGANIZE_PROJECT.js
+          node scripts/maintenance/AUTO_ORGANIZE_ROOT.js
           echo "status=$?" >> $GITHUB_OUTPUT
         continue-on-error: true
       

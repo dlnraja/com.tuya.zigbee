@@ -1,0 +1,56 @@
+feat: Auto-organize system - clean root after each push
+
+AUTO-ORGANIZE SYSTEM:
+- Runs automatically after every push to master
+- Keeps root clean with only essential files
+- Moves all documentation to docs/ organized by category
+
+SCRIPT CREATED:
+- scripts/maintenance/AUTO_ORGANIZE_ROOT.js
+  * Deletes app.json.backup-* files (3 deleted)
+  * Moves 57 files to docs/ by category
+  * Keeps 17 essential files at root
+  * Creates ROOT_ORGANIZATION.md index
+  * Duration: 0.4s
+
+GITHUB ACTION UPDATED:
+- .github/workflows/auto-organize.yml
+  * Triggers on push to master
+  * Runs organization script
+  * Validates with homey app validate
+  * Auto-commits if validation passes
+  * Rollback if validation fails
+  * [skip ci] to prevent loops
+
+FILES AT ROOT (17 kept):
+- README.md, README.txt (created)
+- CHANGELOG.md, CONTRIBUTING.md, LICENSE
+- app.json, app.js
+- package.json, package-lock.json
+- .gitignore, .homeyignore
+- Configuration files
+- ROOT_ORGANIZATION.md (index)
+- AUTO_ORGANIZE_SYSTEM.md (documentation)
+
+ORGANIZED IN DOCS/:
+- docs/sessions/ - Development sessions (13 files)
+- docs/commits/ - Commit messages (21 files)
+- docs/analysis/ - Analyses & diagnostics (8 files)
+- docs/guides/ - Guides & tutorials (2 files)
+- docs/implementation/ - Implementation docs (5 files)
+- docs/compliance/ - SDK3 & Homey Pro (2 files)
+- docs/drivers/ - Driver updates (1 file)
+- docs/readme-variants/ - README variants (2 files)
+- docs/deployment/ - Deployment (1 file)
+- docs/misc/ - Miscellaneous (2 files)
+
+BENEFITS:
+- Clean root directory
+- Automatic organization
+- Structured documentation
+- Validation guaranteed
+- No manual intervention needed
+
+VALIDATION: homey app validate --level publish PASSED ✓
+
+Result: Root is now clean and stays clean automatically!
