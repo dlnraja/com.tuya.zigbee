@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-const SwitchDevice = require('../../lib/SwitchDevice');
+const SwitchDevice = require('../../lib/devices/SwitchDevice');
 
 /**
  * WallSwitch2gangDevice - Unified Hybrid Driver

@@ -1,6 +1,6 @@
 'use strict';
 
-const ButtonDevice = require('../../lib/ButtonDevice');
+const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
 /**
  * WirelessSwitchDevice - Unified Hybrid Driver

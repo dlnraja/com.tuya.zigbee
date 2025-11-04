@@ -1,6 +1,6 @@
 'use strict';
 
-const SwitchDevice = require('../../lib/SwitchDevice');
+const SwitchDevice = require('../../lib/devices/SwitchDevice');
 const batteryConverter = require('../../lib/tuya-engine/converters/battery');
 const IASZoneEnroller = require('../../lib/IASZoneEnroller');
 const FallbackSystem = require('../../lib/FallbackSystem');
