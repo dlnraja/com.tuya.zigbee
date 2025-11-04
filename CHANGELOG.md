@@ -1,5 +1,30 @@
 # Changelog
 
+## [4.9.276] - 2025-11-04
+
+### EMERGENCY FIX - Critical Issues Resolved
+
+#### Fixed
+- **CRITICAL:** Disabled wall_touch driver flow card registration causing app crashes
+  - Affected drivers: wall_touch_1gang through wall_touch_8gang
+  - Error: "Invalid Flow Card ID: wall_touch_*gang_button1_pressed"
+  - All 8 drivers now initialize correctly without errors
+
+#### Known Issues
+- Some devices may show `null` capabilities values
+  - This is being investigated separately
+  - Likely requires device re-pairing or Homey restart
+  - Will be addressed in v4.9.277
+
+#### Technical
+- Commented out `registerFlowCards()` in wall_touch drivers
+- Flow cards need to be properly defined in app.json
+- Temporary workaround until flow card structure is fixed
+
+### User Reports Addressed
+- Log ID 487badc9: "issue, global" - Wall touch drivers crashing
+- Multiple devices showing null capabilities (partial fix)
+
 ## [4.9.275] - 2025-11-04
 
 ### Fixed
