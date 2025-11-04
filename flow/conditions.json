@@ -1,62 +1,37 @@
-[
-  {
-    "id": "is_battery_powered",
+{
+  "is_online": {
     "title": {
-      "en": "Is battery powered",
-      "fr": "Fonctionne sur batterie"
-    },
-    "hint": {
-      "en": "Check if device is currently running on battery",
-      "fr": "Vérifier si l'appareil fonctionne actuellement sur batterie"
+      "en": "Device is !{{online|offline}}",
+      "fr": "Appareil !{{en ligne|hors ligne}}"
     },
     "args": [
       {
-        "type": "device",
         "name": "device",
-        "filter": "driver_id=is_battery_powered"
+        "type": "device",
+        "filter": "driver_id=*"
       }
     ]
   },
-  {
-    "id": "is_ac_powered",
+  "battery_below": {
     "title": {
-      "en": "Is AC powered",
-      "fr": "Fonctionne sur secteur"
-    },
-    "hint": {
-      "en": "Check if device is currently running on AC power",
-      "fr": "Vérifier si l'appareil fonctionne actuellement sur secteur"
+      "en": "Battery is below",
+      "fr": "Batterie en dessous de"
     },
     "args": [
       {
-        "type": "device",
         "name": "device",
-        "filter": "driver_id=is_ac_powered"
-      }
-    ]
-  },
-  {
-    "id": "battery_below_threshold",
-    "title": {
-      "en": "Battery below !{{threshold}}%",
-      "fr": "Batterie en dessous de !{{threshold}}%"
-    },
-    "titleFormatted": {
-      "en": "Battery below [[threshold]]%",
-      "fr": "Batterie en dessous de [[threshold]]%"
-    },
-    "args": [
+        "type": "device",
+        "filter": "capabilities=measure_battery"
+      },
       {
-        "name": "threshold",
-        "type": "number",
+        "name": "percentage",
+        "type": "range",
         "min": 0,
         "max": 100,
         "step": 5,
-        "placeholder": {
-          "en": "20",
-          "fr": "20"
-        }
+        "label": "%",
+        "labelMultiplier": 1
       }
     ]
   }
-]
+}

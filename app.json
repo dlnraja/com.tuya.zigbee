@@ -21,7 +21,7 @@
   "author": {
     "name": "Dylan Rajasekaram"
   },
-  "brandColor": "#1E88E5",
+  "brandColor": "#00E6A0",
   "flow": {
     "triggers": [
       {
@@ -110940,6 +110940,20 @@
       },
       "getable": true,
       "setable": false
+    }
+  },
+  "notifications": {
+    "battery_low": {
+      "en": "Battery low on {{device}}",
+      "fr": "Batterie faible sur {{device}}"
+    },
+    "device_offline": {
+      "en": "{{device}} went offline",
+      "fr": "{{device}} hors ligne"
+    },
+    "firmware_update": {
+      "en": "Firmware update available for {{device}}",
+      "fr": "Mise à jour disponible pour {{device}}"
     }
   }
 }
