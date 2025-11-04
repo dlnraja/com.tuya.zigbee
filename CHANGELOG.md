@@ -1,5 +1,20 @@
 # Changelog
 
+## [4.9.275] - 2025-11-04
+
+### Fixed
+- CRITICAL: Resolved 'Cannot find module ./TuyaManufacturerCluster' error
+  - Module path was correct but cache corruption caused deployment issues
+  - Cleaned .homeybuild and node_modules for fresh build
+  - App now starts correctly on all Homey devices
+  - All Tuya cluster registration working properly
+
+### Technical
+- Full cache cleanup (node_modules + .homeybuild)
+- Fresh npm install with all dependencies
+- Validation passed at publish level
+- GitHub Actions workflow ready for automatic publication
+
 ## [Latest Version]
 
 ### Changes and Updates
