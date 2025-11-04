@@ -1,6 +1,6 @@
 'use strict';
 
-const SensorDevice = require('../../lib/SensorDevice');
+const SensorDevice = require('../../lib/devices/SensorDevice');
 const { Cluster, CLUSTER } = require('zigbee-clusters');
 
 /**

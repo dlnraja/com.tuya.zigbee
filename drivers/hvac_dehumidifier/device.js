@@ -1,6 +1,6 @@
 'use strict';
 
-const BaseHybridDevice = require('../../lib/BaseHybridDevice');
+const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
 class DehumidifierDevice extends BaseHybridDevice {

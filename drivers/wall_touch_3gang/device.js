@@ -1,6 +1,6 @@
 'use strict';
 
-const WallTouchDevice = require('../../lib/WallTouchDevice');
+const WallTouchDevice = require('../../lib/devices/WallTouchDevice');
 
 /**
  * Wall Touch Button 3 Gang - SDK3 Compliant
