@@ -48,14 +48,14 @@
     "endpoints": {
       "11": {
         "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          8,
-          4096,
-          64515
+          "basic",
+          "identify",
+          "groups",
+          "scenes",
+          "onOff",
+          "levelControl",
+          "0x1000",
+          "0xFC03"
         ],
         "bindings": [
           6,

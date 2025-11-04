@@ -37,9 +37,9 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          258,
-          3
+          "basic",
+          "windowCovering",
+          "identify"
         ],
         "bindings": [
           1

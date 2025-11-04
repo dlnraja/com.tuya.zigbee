@@ -46,13 +46,13 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          1794,
-          2820
+          "basic",
+          "identify",
+          "groups",
+          "scenes",
+          "onOff",
+          "metering",
+          "electricalMeasurement"
         ],
         "bindings": [
           5,

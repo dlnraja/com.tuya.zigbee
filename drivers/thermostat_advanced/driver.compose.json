@@ -69,13 +69,13 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          513,
-          516,
-          1026,
-          61184,
-          3
+          "basic",
+          "powerConfiguration",
+          "thermostat",
+          "0x0204",
+          "temperatureMeasurement",
+          "manuSpecificTuya",
+          "identify"
         ],
         "bindings": [
           1
