@@ -11,9 +11,7 @@
     "button.stop",
     "measure_power",
     "onoff",
-    "dim",
-    "windowcoverings_tilt_set",
-    "measure_battery"
+    "windowcoverings_tilt_set"
   ],
   "zigbee": {
     "manufacturerName": [
@@ -91,13 +89,6 @@
     "local"
   ],
   "energy": {
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "AAA",
-      "AA",
-      "CR123A"
-    ],
     "approximation": {
       "usageConstant": 0.5
     }
