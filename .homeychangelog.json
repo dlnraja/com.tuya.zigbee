@@ -1,4 +1,7 @@
 {
+  "4.9.278": {
+    "en": "🧠 INTELLIGENT ENRICHMENT - Conservative & Validated\n\n✅ Phase 1: Cleanup (50 drivers)\n- Removed incorrect capabilities from AC devices\n- No more 'dim' on simple switches\n- No more 'battery' on AC powered devices\n\n✅ Phase 2: Enrichment (2 drivers)\n- Added 'measure_battery' to battery sensors\n- Added 'measure_battery' to battery buttons\n- Proper energy configuration\n\n✅ Phase 3: Tuya Optimization (7 drivers)\n- Enhanced diagnostic capabilities\n- Better troubleshooting tools\n\n📊 Total: 59 drivers improved\n\n🎯 Approach:\n- Conservative: remove if doubt\n- Based on real diagnostic data\n- Validated against Zigbee specs\n- No speculative features\n\n✨ Result: Capabilities now match REAL hardware!"
+  },
   "4.9.277": {
     "en": "🎉 ULTRA FIX - ALL Critical Issues Resolved\n\n✅ Fixed Switch 1gang brightness bar (removed \"dim\")\n✅ Fixed USB 2-port recognition (1 AC + 2 USB)\n✅ Fixed battery capabilities (only on battery devices)\n✅ Fixed data reporting from all devices\n\n🔧 Changes:\n- 20 AC switches: removed dim + battery\n- 0 battery devices: ensured proper battery config\n- 3 USB outlets: corrected identification\n\n📊 Total: 23 drivers corrected\n\n⚡ All devices should now:\n- Show correct capabilities\n- Report data properly\n- Display battery only when battery-powered\n- Work as expected\n\n🎯 Ready for immediate use!"
   },

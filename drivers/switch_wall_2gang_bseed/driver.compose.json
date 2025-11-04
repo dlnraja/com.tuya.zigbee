@@ -6,8 +6,7 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "onoff.gang2",
-    "measure_battery"
+    "onoff.gang2"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -25,9 +24,6 @@
     }
   },
   "energy": {
-    "batteries": [
-      "INTERNAL"
-    ],
     "approximation": {
       "usageConstant": 0.5
     }

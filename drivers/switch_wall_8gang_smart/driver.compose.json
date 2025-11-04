@@ -12,18 +12,9 @@
     "onoff.button5",
     "onoff.button6",
     "onoff.button7",
-    "onoff.button8",
-    "dim",
-    "measure_battery"
+    "onoff.button8"
   ],
   "energy": {
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "AAA",
-      "AA",
-      "CR123A"
-    ],
     "approximation": {
       "usageConstant": 0.5
     }
