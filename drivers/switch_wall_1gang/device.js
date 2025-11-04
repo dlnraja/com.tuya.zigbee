@@ -1,6 +1,6 @@
 'use strict';
 
-const SwitchDevice = require('../../lib/SwitchDevice');
+const SwitchDevice = require('../../lib/devices/SwitchDevice');
 
 /**
  * SwitchWall1GangDevice - Unified 1-gang wall switch

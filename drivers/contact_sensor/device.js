@@ -1,6 +1,6 @@
 'use strict';
 
-const BaseHybridDevice = require('../../lib/BaseHybridDevice');
+const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
 
 /**
  * ContactSensorDevice - Unified Hybrid Driver

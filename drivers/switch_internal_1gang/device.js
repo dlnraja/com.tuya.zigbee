@@ -1,6 +1,6 @@
 'use strict';
 
-const SwitchDevice = require('../../lib/SwitchDevice');
+const SwitchDevice = require('../../lib/devices/SwitchDevice');
 const { CLUSTER } = require('zigbee-clusters');
 const batteryConverter = require('../../lib/tuya-engine/converters/battery');
 const IASZoneEnroller = require('../../lib/IASZoneEnroller');

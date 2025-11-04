@@ -1,7 +1,7 @@
 'use strict';
 
 const { CLUSTER } = require('zigbee-clusters');
-const SwitchDevice = require('../../lib/SwitchDevice');
+const SwitchDevice = require('../../lib/devices/SwitchDevice');
 
 /**
  * SwitchWall6GangDevice - Unified 6-gang wall switch

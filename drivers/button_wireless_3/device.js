@@ -1,6 +1,6 @@
 'use strict';
 
-const ButtonDevice = require('../../lib/ButtonDevice');
+const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
 /**
  * Button3GangDevice - Unified 3-button wireless controller
