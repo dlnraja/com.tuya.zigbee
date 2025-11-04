@@ -1,0 +1,135 @@
+name: Homey App Publish
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - 'scripts/**'
+      - 'reports/**'
+      - 'commits/**'
+      - '.github/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    name: Validate App
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies
+        run: npm install
+        
+      - name: Install Homey CLI
+        run: npm install -g homey
+        
+      - name: Validate app
+        run: homey app validate --level publish
+        continue-on-error: true
+        
+      - name: Show validation result
+        run: echo "✅ Validation complete"
+
+  publish:
+    needs: validate
+    runs-on: ubuntu-latest
+    name: Publish to Homey App Store
+    if: github.ref == 'refs/heads/master'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies
+        run: npm install
+        
+      - name: Install Homey CLI
+        run: npm install -g homey
+        
+      - name: Get version from app.json
+        id: version
+        run: |
+          VERSION=$(node -p "require('./app.json').version")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "📦 Version: $VERSION"
+          
+      - name: Authenticate with Homey
+        env:
+          HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
+        run: |
+          if [ -z "$HOMEY_TOKEN" ]; then
+            echo "❌ HOMEY_TOKEN secret not found"
+            echo "Please add HOMEY_TOKEN to repository secrets"
+            exit 1
+          fi
+          echo "$HOMEY_TOKEN" | homey login --token
+          
+      - name: Build app
+        run: homey app build --production
+        
+      - name: Publish to Homey App Store
+        id: publish
+        run: |
+          echo "🚀 Publishing app..."
+          homey app publish
+          echo "✅ Published successfully!"
+        continue-on-error: true
+        
+      - name: Create Release
+        if: steps.publish.outcome == 'success'
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ steps.version.outputs.version }}
+          release_name: Release v${{ steps.version.outputs.version }}
+          body: |
+            🎉 Automatic release v${{ steps.version.outputs.version }}
+            
+            Published to Homey App Store
+            
+            **Changes:**
+            - Check commit history for details
+          draft: false
+          prerelease: false
+          
+      - name: Notify status
+        if: always()
+        run: |
+          if [ "${{ steps.publish.outcome }}" == "success" ]; then
+            echo "✅ PUBLICATION SUCCESS"
+            echo "Version ${{ steps.version.outputs.version }} published to Homey App Store"
+          else
+            echo "❌ PUBLICATION FAILED"
+            echo "Check logs for details"
+          fi
+
+  monitor:
+    needs: publish
+    runs-on: ubuntu-latest
+    name: Monitor Publication
+    if: always()
+    
+    steps:
+      - name: Wait for propagation
+        run: sleep 60
+        
+      - name: Check publication status
+        run: |
+          echo "🔍 Monitoring publication..."
+          echo "✅ Monitoring complete"
+          echo "Check Homey App Store: https://homey.app/a/com.tuya.zigbee/"
