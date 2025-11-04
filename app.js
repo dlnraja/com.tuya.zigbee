@@ -7,6 +7,7 @@ const CapabilityManager = require('./lib/utils/CapabilityManager');
 const AdvancedAnalytics = require('./lib/analytics/AdvancedAnalytics');
 const SmartDeviceDiscovery = require('./lib/discovery/SmartDeviceDiscovery');
 const PerformanceOptimizer = require('./lib/performance/PerformanceOptimizer');
+const UnknownDeviceHandler = require('./lib/UnknownDeviceHandler');
 
 class UniversalTuyaZigbeeApp extends Homey.App {
   _flowCardsRegistered = false;
@@ -15,6 +16,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
   analytics = null;
   discovery = null;
   optimizer = null;
+  unknownHandler = null;
 
 
   /**
@@ -75,6 +77,10 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     });
     this.log('✅ Performance Optimizer initialized');
     
+    // Initialize Unknown Device Handler
+    this.unknownHandler = new UnknownDeviceHandler(this.homey);
+    this.log('✅ Unknown Device Handler initialized');
+    
     // Register additional global flow cards
     this.registerFlowCards();
     
@@ -82,7 +88,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     await this.initializeInsights();
 
     this.log('✅ Universal Tuya Zigbee App has been initialized');
-    this.log('🚀 Advanced systems: Analytics, Discovery, Performance Optimization');
+    this.log('🚀 Advanced systems: Analytics, Discovery, Performance, Unknown Device Detection');
     
     // Log capability stats
     const stats = this.capabilityManager.getStats();
