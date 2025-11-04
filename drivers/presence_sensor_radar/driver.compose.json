@@ -47,8 +47,14 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "onOff"
+          0,
+          1,
+          3,
+          1030
+        ],
+        "bindings": [
+          0,
+          1
         ]
       }
     }
