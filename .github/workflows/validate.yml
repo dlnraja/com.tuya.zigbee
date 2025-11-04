@@ -9,47 +9,26 @@ on:
 
 jobs:
   validate:
-    name: Validate with Homey CLI
+    name: Validate Homey App
     runs-on: ubuntu-latest
     
     steps:
       - name: 📥 Checkout code
         uses: actions/checkout@v4
         
-      - name: 📦 Setup Node.js
-        uses: actions/setup-node@v4
+      - name: ✅ Validate Homey App
+        uses: athombv/github-action-homey-app-validate@master
         with:
-          node-version: '20'
-          cache: 'npm'
+          level: publish
           
-      - name: 📚 Install dependencies
-        run: npm ci
-        
-      - name: 🔧 Install Homey CLI
-        run: npm install -g homey
-        
-      - name: ✅ Homey App Validate (Publish Level)
-        run: homey app validate --level publish
-        
-      - name: 📊 Generate validation report
+      - name: 📊 Generate validation summary
         if: always()
         run: |
-          echo "# Homey App Validation Report" > validation-report.md
-          echo "" >> validation-report.md
-          echo "**Date:** $(date -u +"%Y-%m-%d %H:%M:%S UTC")" >> validation-report.md
-          echo "**Commit:** ${{ github.sha }}" >> validation-report.md
-          echo "**Branch:** ${{ github.ref_name }}" >> validation-report.md
-          echo "" >> validation-report.md
-          echo "## Validation Result" >> validation-report.md
-          echo "✅ App validated successfully against level \`publish\`" >> validation-report.md
-          echo "" >> validation-report.md
-          echo "**SDK:** 3" >> validation-report.md
-          echo "**Homey CLI:** Official" >> validation-report.md
-          
-      - name: 📤 Upload validation report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: validation-report
-          path: validation-report.md
-          retention-days: 30
+          echo "# 🎯 Homey App Validation" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ **Status:** App validated successfully" >> $GITHUB_STEP_SUMMARY
+          echo "📦 **Level:** publish" >> $GITHUB_STEP_SUMMARY
+          echo "🔧 **SDK:** 3" >> $GITHUB_STEP_SUMMARY
+          echo "📅 **Date:** $(date -u +"%Y-%m-%d %H:%M:%S UTC")" >> $GITHUB_STEP_SUMMARY
+          echo "🔗 **Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "🌿 **Branch:** ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
