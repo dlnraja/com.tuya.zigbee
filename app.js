@@ -4,11 +4,17 @@ const Homey = require('homey');
 const { registerCustomClusters } = require('./lib/registerClusters');
 const FlowCardManager = require('./lib/FlowCardManager');
 const CapabilityManager = require('./lib/utils/CapabilityManager');
+const AdvancedAnalytics = require('./lib/analytics/AdvancedAnalytics');
+const SmartDeviceDiscovery = require('./lib/discovery/SmartDeviceDiscovery');
+const PerformanceOptimizer = require('./lib/performance/PerformanceOptimizer');
 
 class UniversalTuyaZigbeeApp extends Homey.App {
   _flowCardsRegistered = false;
   flowCardManager = null;
   capabilityManager = null;
+  analytics = null;
+  discovery = null;
+  optimizer = null;
 
 
   /**
@@ -52,6 +58,23 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     this.flowCardManager.registerAll();
     this.log('✅ Flow cards registered (+33 nouveaux)');
     
+    // Initialize Advanced Analytics
+    this.analytics = new AdvancedAnalytics(this.homey);
+    await this.analytics.initialize();
+    this.log('✅ Advanced Analytics initialized');
+    
+    // Initialize Smart Device Discovery
+    this.discovery = new SmartDeviceDiscovery(this.homey);
+    await this.discovery.initialize();
+    this.log('✅ Smart Device Discovery initialized');
+    
+    // Initialize Performance Optimizer
+    this.optimizer = new PerformanceOptimizer({
+      maxCacheSize: 1000,
+      maxCacheMemory: 10 * 1024 * 1024 // 10 MB
+    });
+    this.log('✅ Performance Optimizer initialized');
+    
     // Register additional global flow cards
     this.registerFlowCards();
     
@@ -59,6 +82,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     await this.initializeInsights();
 
     this.log('✅ Universal Tuya Zigbee App has been initialized');
+    this.log('🚀 Advanced systems: Analytics, Discovery, Performance Optimization');
     
     // Log capability stats
     const stats = this.capabilityManager.getStats();
