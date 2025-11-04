@@ -54,6 +54,9 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     
     // Register additional global flow cards
     this.registerFlowCards();
+    
+    // Initialize Homey Insights
+    await this.initializeInsights();
 
     this.log('✅ Universal Tuya Zigbee App has been initialized');
     
@@ -63,36 +66,110 @@ class UniversalTuyaZigbeeApp extends Homey.App {
   }
 
   /**
-   * Register global flow cards for advanced energy management
-   * NOTE: Flow cards must be defined in app.json first
+   * Register Homey Native Flow Cards
+   * Implements all native Homey SDK3 flow functionality
    */
   registerFlowCards() {
-    this.log('📋 Registering global flow cards...');
+    this.log('📋 Registering Homey Native Flow Cards...');
 
     try {
-      // Only register flow cards that exist in app.json
-      // Uncomment these when flow cards are added to app.json
+      // CONDITION: Device is online/offline
+      this.homey.flow.getConditionCard('is_online')
+        .registerRunListener(async (args) => {
+          return args.device.getAvailable();
+        });
       
-      /*
-      // Condition: Check if battery below threshold
-      this.homey.flow.getConditionCard('battery_below_threshold')
-        .registerRunListener(async (args, state) => {
-          const device = args.device;
-          const threshold = args.threshold;
-          
-          if (!device.hasCapability('measure_battery')) {
+      // CONDITION: Battery below threshold
+      this.homey.flow.getConditionCard('battery_below')
+        .registerRunListener(async (args) => {
+          if (!args.device.hasCapability('measure_battery')) {
             return false;
           }
-          
-          const batteryLevel = device.getCapabilityValue('measure_battery');
-          return batteryLevel < threshold;
+          const batteryLevel = args.device.getCapabilityValue('measure_battery');
+          return batteryLevel < args.percentage;
         });
-      */
+      
+      // ACTION: Identify device (blink/beep)
+      this.homey.flow.getActionCard('identify_device')
+        .registerRunListener(async (args) => {
+          if (typeof args.device.identify === 'function') {
+            await args.device.identify();
+          } else {
+            // Fallback: toggle device quickly
+            if (args.device.hasCapability('onoff')) {
+              const original = args.device.getCapabilityValue('onoff');
+              await args.device.setCapabilityValue('onoff', !original);
+              await new Promise(resolve => setTimeout(resolve, 500));
+              await args.device.setCapabilityValue('onoff', original);
+            }
+          }
+        });
+      
+      // ACTION: Check firmware updates
+      this.homey.flow.getActionCard('check_firmware_update')
+        .registerRunListener(async (args) => {
+          if (typeof args.device.checkFirmwareUpdate === 'function') {
+            await args.device.checkFirmwareUpdate();
+          }
+        });
+      
+      // ACTION: Reset device to defaults
+      this.homey.flow.getActionCard('reset_device')
+        .registerRunListener(async (args) => {
+          if (typeof args.device.resetDevice === 'function') {
+            await args.device.resetDevice();
+          }
+        });
 
-      this.log('✅ Global flow cards registered (none defined yet)');
+      this.log('✅ Homey Native Flow Cards registered (5 cards)');
     } catch (err) {
       this.error('⚠️  Error registering flow cards:', err.message);
       // Don't crash the app if flow cards fail to register
+    }
+  }
+  
+  /**
+   * Initialize Homey Insights
+   */
+  async initializeInsights() {
+    this.log('📊 Initializing Homey Insights...');
+    
+    try {
+      // Battery health insight
+      await this.homey.insights.createLog('battery_health', {
+        title: { en: 'Battery Health', fr: 'Santé Batterie' },
+        type: 'number',
+        units: '%',
+        decimals: 0
+      }).catch(() => {}); // Already exists
+      
+      // Device uptime insight
+      await this.homey.insights.createLog('device_uptime', {
+        title: { en: 'Device Uptime', fr: 'Disponibilité' },
+        type: 'number',
+        units: '%',
+        decimals: 1
+      }).catch(() => {});
+      
+      // Zigbee LQI insight
+      await this.homey.insights.createLog('zigbee_lqi', {
+        title: { en: 'Zigbee Link Quality', fr: 'Qualité Lien Zigbee' },
+        type: 'number',
+        units: '',
+        decimals: 0
+      }).catch(() => {});
+      
+      // Command success rate insight
+      await this.homey.insights.createLog('command_success_rate', {
+        title: { en: 'Command Success Rate', fr: 'Taux Succès Commandes' },
+        type: 'number',
+        units: '%',
+        decimals: 1
+      }).catch(() => {});
+      
+      this.log('✅ Homey Insights initialized (4 logs)');
+    } catch (err) {
+      this.error('⚠️  Error initializing insights:', err.message);
     }
   }
 
