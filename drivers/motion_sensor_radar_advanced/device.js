@@ -97,7 +97,16 @@ class RadarMotionSensorAdvancedDevice extends BaseHybridDevice {
           // Check alarm1 bit (motion/alarm detected)
           const alarm = (status & 0x01) !== 0;
           
-          await this.setCapabilityValue('alarm_motion', alarm).catch(this.error);
+          await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_motion'} = ${alarm}`);
+        try {
+          await this.setCapabilityValue('alarm_motion', alarm);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'alarm_motion'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'alarm_motion'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
           this.log(`${alarm ? '[ALARM]' : '[OK]'} Alarm: ${alarm ? 'TRIGGERED' : 'cleared'}`);
         }
       };
@@ -115,7 +124,16 @@ class RadarMotionSensorAdvancedDevice extends BaseHybridDevice {
         }
         
         const alarm = (status & 0x01) !== 0;
-        await this.setCapabilityValue('alarm_motion', alarm).catch(this.error);
+        await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_motion'} = ${alarm}`);
+        try {
+          await this.setCapabilityValue('alarm_motion', alarm);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'alarm_motion'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'alarm_motion'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
       };
       
       this.log('[OK] IAS Zone configured successfully (SDK3 latest method)');

@@ -10,17 +10,9 @@
     "light_hue",
     "light_saturation",
     "light_temperature",
-    "light_mode",
-    "measure_battery"
+    "light_mode"
   ],
   "energy": {
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "AAA",
-      "AA",
-      "CR123A"
-    ],
     "approximation": {
       "usageConstant": 0.5
     }

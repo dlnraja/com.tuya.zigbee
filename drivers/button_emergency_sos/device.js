@@ -99,7 +99,16 @@ class SosEmergencyButtonDevice extends ButtonDevice {
           const battery = value / 2;
           this.log('[BATTERY] Battery:', battery, '%');
           if (this.hasCapability('measure_battery')) {
-            await this.setCapabilityValue('measure_battery', battery).catch(this.error);
+            await (async () => {
+        this.log(`📝 [DIAG] setCapabilityValue: ${'measure_battery'} = ${battery}`);
+        try {
+          await this.setCapabilityValue('measure_battery', battery);
+          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_battery'}`);
+        } catch (err) {
+          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_battery'}`, err.message);
+          throw err;
+        }
+      })().catch(this.error);
           }
         });
         
