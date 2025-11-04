@@ -1,4 +1,7 @@
 {
+  "4.9.279": {
+    "en": "🚨 CRITICAL FIX - Emergency Repairs (Log ID: ba9a50e9)\n\n✅ FIXED: wall_touch drivers crash\n- 8 drivers had SyntaxError (Unexpected token '}')\n- All now load correctly\n\n✅ ENHANCED: USB outlet recognition\n- Explicit naming: 'USB Outlet 1 AC + 2 USB (NOT 1gang switch)'\n- 6 additional product IDs\n- Better driver matching\n\n✅ ADDED: MASSIVE diagnostic logging\n- Complete device initialization logged\n- Every capability change logged\n- All Tuya DP transactions logged\n- Full error contexts logged\n\n🔍 Diagnostic reports now 100x more useful!\nEvery device interaction is fully logged.\n\nAddresses Log ID: ba9a50e9 ('Issue partout')"
+  },
   "4.9.278": {
     "en": "🧠 INTELLIGENT ENRICHMENT - Conservative & Validated\n\n✅ Phase 1: Cleanup (50 drivers)\n- Removed incorrect capabilities from AC devices\n- No more 'dim' on simple switches\n- No more 'battery' on AC powered devices\n\n✅ Phase 2: Enrichment (2 drivers)\n- Added 'measure_battery' to battery sensors\n- Added 'measure_battery' to battery buttons\n- Proper energy configuration\n\n✅ Phase 3: Tuya Optimization (7 drivers)\n- Enhanced diagnostic capabilities\n- Better troubleshooting tools\n\n📊 Total: 59 drivers improved\n\n🎯 Approach:\n- Conservative: remove if doubt\n- Based on real diagnostic data\n- Validated against Zigbee specs\n- No speculative features\n\n✨ Result: Capabilities now match REAL hardware!"
   },

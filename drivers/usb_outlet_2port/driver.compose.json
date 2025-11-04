@@ -1,7 +1,7 @@
 {
   "name": {
-    "en": "USB Outlet 1 AC + 2 USB",
-    "fr": "Prise USB 1 AC + 2 USB"
+    "en": "USB Outlet 1 AC + 2 USB (NOT 1gang switch)",
+    "fr": "Prise USB 1 AC + 2 USB (PAS switch 1gang)"
   },
   "class": "socket",
   "capabilities": [
@@ -76,7 +76,12 @@
       "_TZ3000_h1ipgkwn"
     ],
     "productId": [
-      "TS011F"
+      "TS011F",
+      "TS0121",
+      "_TZ3000_rdtixbnu",
+      "_TZ3000_2xlvlnvp",
+      "_TZ3000_typdpbpg",
+      "_TZ3000_cymsnfvf"
     ],
     "endpoints": {
       "1": {
