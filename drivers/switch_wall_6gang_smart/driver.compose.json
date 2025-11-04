@@ -11,7 +11,8 @@
     "onoff.button4",
     "onoff.button5",
     "onoff.button6",
-    "dim"
+    "dim",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
@@ -70,7 +71,8 @@
           3,
           4,
           5,
-          6
+          6,
+          61184
         ],
         "bindings": [
           6

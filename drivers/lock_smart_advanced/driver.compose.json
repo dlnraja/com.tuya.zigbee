@@ -9,7 +9,8 @@
     "lock_mode",
     "alarm_tamper",
     "measure_battery",
-    "lock_status"
+    "lock_status",
+    "onoff"
   ],
   "capabilitiesOptions": {},
   "energy": {},
@@ -23,7 +24,9 @@
     ],
     "endpoints": {
       "1": {
-        "clusters": []
+        "clusters": [
+          61184
+        ]
       }
     }
   },

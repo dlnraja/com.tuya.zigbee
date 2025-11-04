@@ -7,7 +7,8 @@
   "capabilities": [
     "alarm_smoke",
     "alarm_fire",
-    "measure_battery"
+    "measure_battery",
+    "onoff"
   ],
   "energy": {
     "batteries": [
@@ -44,7 +45,8 @@
           "groups",
           "scenes",
           "manuSpecificTuya2",
-          "manuSpecificTuya"
+          "manuSpecificTuya",
+          61184
         ],
         "bindings": [
           1

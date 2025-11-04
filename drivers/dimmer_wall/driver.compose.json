@@ -6,7 +6,8 @@
   "class": "light",
   "capabilities": [
     "onoff",
-    "dim"
+    "dim",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
@@ -34,7 +35,8 @@
           "groups",
           "scenes",
           "onOff",
-          "levelControl"
+          "levelControl",
+          61184
         ],
         "bindings": [
           1

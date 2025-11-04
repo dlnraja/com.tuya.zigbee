@@ -13,7 +13,8 @@
     "onoff.button6",
     "measure_temperature",
     "measure_battery",
-    "alarm_tamper"
+    "alarm_tamper",
+    "onoff"
   ],
   "capabilitiesOptions": {
     "onoff.button1": {
@@ -159,7 +160,8 @@
           "identify",
           "onOff",
           "0x1000",
-          "0xFCC0"
+          "0xFCC0",
+          61184
         ],
         "bindings": [
           6,

@@ -6,7 +6,8 @@
   "capabilities": [
     "measure_co2",
     "measure_temperature",
-    "measure_battery"
+    "measure_battery",
+    "measure_humidity"
   ],
   "zigbee": {
     "manufacturerName": [
@@ -27,7 +28,8 @@
         "clusters": [
           "basic",
           "powerConfiguration",
-          "manuSpecificTuya"
+          "manuSpecificTuya",
+          61184
         ],
         "bindings": [
           1

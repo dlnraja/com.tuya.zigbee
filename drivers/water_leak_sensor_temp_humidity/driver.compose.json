@@ -10,7 +10,8 @@
     "measure_humidity",
     "alarm_water",
     "measure_battery",
-    "alarm_contact"
+    "alarm_contact",
+    "onoff"
   ],
   "energy": {
     "batteries": [
@@ -49,7 +50,8 @@
           "powerConfiguration",
           "temperatureMeasurement",
           "iasZone",
-          "relativeHumidity"
+          "relativeHumidity",
+          61184
         ],
         "bindings": [
           1

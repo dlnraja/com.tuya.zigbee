@@ -6,7 +6,8 @@
   "class": "button",
   "capabilities": [
     "alarm_generic",
-    "onoff"
+    "onoff",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
@@ -60,7 +61,8 @@
           "onOff",
           "levelControl",
           "powerConfiguration",
-          "identify"
+          "identify",
+          61184
         ],
         "bindings": [
           1

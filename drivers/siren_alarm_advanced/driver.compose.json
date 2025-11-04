@@ -10,7 +10,8 @@
     "alarm_humidity",
     "measure_temperature",
     "measure_humidity",
-    "volume_set"
+    "volume_set",
+    "onoff"
   ],
   "capabilitiesOptions": {},
   "energy": {},
@@ -24,7 +25,9 @@
     ],
     "endpoints": {
       "1": {
-        "clusters": []
+        "clusters": [
+          61184
+        ]
       }
     }
   },

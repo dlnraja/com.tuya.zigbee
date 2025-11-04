@@ -11,7 +11,8 @@
     "measure_voc",
     "measure_pm25",
     "measure_pm10",
-    "measure_hcho"
+    "measure_hcho",
+    "measure_battery"
   ],
   "capabilitiesOptions": {},
   "energy": {},
@@ -25,7 +26,9 @@
     ],
     "endpoints": {
       "1": {
-        "clusters": []
+        "clusters": [
+          61184
+        ]
       }
     }
   },

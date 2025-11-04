@@ -14,7 +14,9 @@
     "onoff.usb3",
     "measure_power",
     "meter_power",
-    "measure_battery"
+    "measure_battery",
+    "measure_current",
+    "measure_voltage"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -66,7 +68,8 @@
           "basic",
           "groups",
           "scenes",
-          "onOff"
+          "onOff",
+          61184
         ],
         "bindings": [
           6,

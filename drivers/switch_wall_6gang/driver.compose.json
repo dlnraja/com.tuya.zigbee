@@ -17,7 +17,8 @@
     "onoff.switch_3",
     "onoff.switch_4",
     "onoff.switch_5",
-    "onoff.switch_6"
+    "onoff.switch_6",
+    "measure_battery"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -84,7 +85,8 @@
           3,
           4,
           5,
-          6
+          6,
+          61184
         ],
         "bindings": [
           6

@@ -6,7 +6,9 @@
   "class": "sensor",
   "capabilities": [
     "measure_pm25",
-    "measure_battery"
+    "measure_battery",
+    "measure_temperature",
+    "measure_humidity"
   ],
   "energy": {
     "batteries": [
@@ -35,7 +37,8 @@
           "powerConfiguration",
           "identify",
           "onOff",
-          "manuSpecificTuya"
+          "manuSpecificTuya",
+          61184
         ],
         "bindings": [
           1

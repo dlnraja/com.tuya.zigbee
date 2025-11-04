@@ -9,7 +9,8 @@
     "measure_luminance",
     "measure_distance",
     "presence_sensitivity",
-    "presence_timeout"
+    "presence_timeout",
+    "measure_battery"
   ],
   "capabilitiesOptions": {},
   "energy": {},
@@ -23,7 +24,9 @@
     ],
     "endpoints": {
       "1": {
-        "clusters": []
+        "clusters": [
+          61184
+        ]
       }
     }
   },
