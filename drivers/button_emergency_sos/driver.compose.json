@@ -325,6 +325,32 @@
         "fr": "Configuration Tuya Datapoint"
       },
       "value": "{\n  \"1\": \"button_press\",\n  \"101\": \"battery_percentage\"\n}"
+    },
+    {
+      "id": "dp_debug_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "DP Debug Mode",
+        "fr": "Mode Debug DP"
+      },
+      "value": false,
+      "hint": {
+        "en": "Log all Tuya DP data for troubleshooting",
+        "fr": "Logger toutes les données Tuya DP pour diagnostic"
+      }
+    },
+    {
+      "id": "enable_time_sync",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Time Sync",
+        "fr": "Activer Synchro Heure"
+      },
+      "value": true,
+      "hint": {
+        "en": "Sync device time with Homey",
+        "fr": "Synchroniser l'heure du device avec Homey"
+      }
     }
   ],
   "images": {
