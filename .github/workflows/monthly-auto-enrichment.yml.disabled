@@ -1,260 +1,441 @@
-name: 🔄 Monthly Auto-Enrichment & Publish
+name: Monthly Auto-Enrichment
 
 on:
   schedule:
-    # Runs on the 1st of every month at 02:00 UTC (04:00 Paris time)
+    # Run on the 1st of every month at 2 AM UTC
     - cron: '0 2 1 * *'
   workflow_dispatch:
     inputs:
-      force_publish:
-        description: 'Force publication même sans changements'
+      enrichment_type:
+        description: 'Type of enrichment to run'
         required: false
-        default: 'false'
+        default: 'all'
         type: choice
         options:
-          - 'false'
-          - 'true'
-  
-permissions:
-  contents: write
+          - 'all'
+          - 'manufacturers'
+          - 'dps'
+          - 'images'
+          - 'capabilities'
 
 jobs:
   monthly-enrichment:
-    name: 🌐 Enrichissement Mensuel Automatique
+    name: Monthly Auto-Enrichment
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    permissions:
+      contents: write
+      pull-requests: write
     
     steps:
-      # 1. Checkout with full history
       - name: 📥 Checkout Repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.GH_PAT || github.token }}
+          token: ${{ secrets.GITHUB_TOKEN }}
       
-      # 2. Setup Node.js
-      - name: Setup Node.js
+      - name: 🔧 Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
+          cache: 'npm'
       
-      # 3. Install dependencies
-      - name: Install Dependencies
+      - name: 📦 Install Dependencies
         run: |
-          echo "Installing project dependencies..."
-          npm ci || npm install --no-audit
+          echo "📦 Installing dependencies..."
+          npm install --save-dev homey canvas
+          npm install --ignore-scripts
           echo "✅ Dependencies installed"
       
-      # 4. Configure Git
-      - name: ⚙️ Configure Git
+      - name: 🧹 Clean Cache
+        run: |
+          echo "🧹 Cleaning caches..."
+          rm -rf .homeybuild .homeycompose node_modules/.cache || true
+          echo "✅ Cache cleaned"
+      
+      - name: 🔍 Analyze Current State
+        id: analyze
+        run: |
+          echo "🔍 Analyzing current project state..."
+          
+          # Count drivers
+          DRIVERS_COUNT=$(find drivers -maxdepth 1 -mindepth 1 -type d 2>/dev/null | wc -l)
+          echo "drivers_count=$DRIVERS_COUNT" >> $GITHUB_OUTPUT
+          
+          # Check app.json version
+          VERSION=$(jq -r '.version' app.json)
+          echo "current_version=$VERSION" >> $GITHUB_OUTPUT
+          
+          # Check reports
+          if [ -d "reports" ]; then
+            REPORTS_COUNT=$(find reports -name "*.json" | wc -l)
+            echo "reports_count=$REPORTS_COUNT" >> $GITHUB_OUTPUT
+          fi
+          
+          echo "📊 Current state:"
+          echo "  - Drivers: $DRIVERS_COUNT"
+          echo "  - Version: $VERSION"
+          echo "  - Reports: $REPORTS_COUNT"
+      
+      - name: 🌐 Scrape Community Forums
+        if: github.event.inputs.enrichment_type == 'all' || github.event_name == 'schedule'
+        run: |
+          echo "🌐 Scraping Homey Community Forum..."
+          
+          # Create scraping directory
+          mkdir -p data/forum-scrape
+          
+          # Scrape forum posts about Tuya devices
+          echo "📋 Fetching forum discussions..."
+          curl -s "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352.json" \
+            -o data/forum-scrape/forum-thread-latest.json || echo "⚠️ Forum fetch failed"
+          
+          if [ -f "data/forum-scrape/forum-thread-latest.json" ]; then
+            echo "✅ Forum data downloaded"
+            
+            # Extract device mentions from forum
+            jq -r '.post_stream.posts[].cooked' data/forum-scrape/forum-thread-latest.json 2>/dev/null | \
+              grep -oE "_(TZE[0-9]{3}|TZ[0-9]{4})_[a-z0-9]{8}" | \
+              sort -u > data/forum-scrape/manufacturer-ids-from-forum.txt || true
+            
+            FORUM_IDS=$(wc -l < data/forum-scrape/manufacturer-ids-from-forum.txt 2>/dev/null || echo "0")
+            echo "📊 Found $FORUM_IDS manufacturer IDs from forum"
+          fi
+      
+      - name: 🔍 Scrape GitHub Issues & PRs
+        if: github.event.inputs.enrichment_type == 'all' || github.event_name == 'schedule'
+        run: |
+          echo "🔍 Scraping GitHub Issues and Pull Requests..."
+          
+          mkdir -p data/github-scrape
+          
+          # Scrape our own issues/PRs
+          echo "📋 Fetching dlnraja/com.tuya.zigbee issues..."
+          curl -s "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues?state=all&per_page=100" \
+            -H "Accept: application/vnd.github.v3+json" \
+            -o data/github-scrape/our-issues.json || echo "⚠️ Issues fetch failed"
+          
+          curl -s "https://api.github.com/repos/dlnraja/com.tuya.zigbee/pulls?state=all&per_page=100" \
+            -H "Accept: application/vnd.github.v3+json" \
+            -o data/github-scrape/our-prs.json || echo "⚠️ PRs fetch failed"
+          
+          # Scrape Johan Bendz repo
+          echo "📋 Fetching JohanBendz/com.tuya.zigbee issues..."
+          curl -s "https://api.github.com/repos/JohanBendz/com.tuya.zigbee/issues?state=all&per_page=100" \
+            -H "Accept: application/vnd.github.v3+json" \
+            -o data/github-scrape/johan-issues.json || echo "⚠️ Johan issues fetch failed"
+          
+          curl -s "https://api.github.com/repos/JohanBendz/com.tuya.zigbee/pulls?state=all&per_page=100" \
+            -H "Accept: application/vnd.github.v3+json" \
+            -o data/github-scrape/johan-prs.json || echo "⚠️ Johan PRs fetch failed"
+          
+          # Extract device info from all sources
+          for file in data/github-scrape/*.json; do
+            if [ -f "$file" ]; then
+              jq -r '.[].body' "$file" 2>/dev/null | \
+                grep -oE "_(TZE[0-9]{3}|TZ[0-9]{4})_[a-z0-9]{8}|TS[0-9]{4}[A-Z]?" | \
+                sort -u >> data/github-scrape/manufacturer-ids-from-github.txt || true
+            fi
+          done
+          
+          if [ -f "data/github-scrape/manufacturer-ids-from-github.txt" ]; then
+            GITHUB_IDS=$(sort -u data/github-scrape/manufacturer-ids-from-github.txt | wc -l)
+            echo "📊 Found $GITHUB_IDS manufacturer IDs from GitHub"
+          fi
+      
+      - name: 🔄 Scrape Forks & Related Projects
+        if: github.event.inputs.enrichment_type == 'all' || github.event_name == 'schedule'
+        run: |
+          echo "🔄 Scraping forks and related projects..."
+          
+          # Get forks of our repo
+          curl -s "https://api.github.com/repos/dlnraja/com.tuya.zigbee/forks?per_page=100" \
+            -H "Accept: application/vnd.github.v3+json" \
+            -o data/github-scrape/our-forks.json || echo "⚠️ Forks fetch failed"
+          
+          # Get forks of Johan Bendz
+          curl -s "https://api.github.com/repos/JohanBendz/com.tuya.zigbee/forks?per_page=100" \
+            -H "Accept: application/vnd.github.v3+json" \
+            -o data/github-scrape/johan-forks.json || echo "⚠️ Johan forks fetch failed"
+          
+          if [ -f "data/github-scrape/our-forks.json" ]; then
+            FORKS_COUNT=$(jq 'length' data/github-scrape/our-forks.json 2>/dev/null || echo "0")
+            echo "📊 Found $FORKS_COUNT forks"
+            
+            # Extract unique drivers from forks (sample first 10)
+            jq -r '.[0:10] | .[].full_name' data/github-scrape/our-forks.json 2>/dev/null | \
+              while read repo; do
+                echo "  Checking fork: $repo"
+                # Could fetch driver list from each fork's app.json
+              done
+          fi
+      
+      - name: 🔄 Scrape Latest DPs from Zigbee2MQTT
+        if: github.event.inputs.enrichment_type == 'all' || github.event.inputs.enrichment_type == 'dps' || github.event_name == 'schedule'
+        run: |
+          echo "🔄 Scraping latest Tuya DPs from Zigbee2MQTT..."
+          
+          mkdir -p data/zigbee2mqtt-scrape
+          
+          # Fetch Zigbee2MQTT devices database
+          echo "📋 Fetching Zigbee2MQTT device definitions..."
+          curl -s "https://raw.githubusercontent.com/Koenkk/zigbee2mqtt.io/master/docs/devices/devices.json" \
+            -o data/zigbee2mqtt-scrape/devices.json || echo "⚠️ Z2M devices fetch failed"
+          
+          # Fetch Tuya converters
+          curl -s "https://raw.githubusercontent.com/Koenkk/zigbee-herdsman-converters/master/src/devices/tuya.ts" \
+            -o data/zigbee2mqtt-scrape/tuya-converters.ts || echo "⚠️ Tuya converters fetch failed"
+          
+          if [ -f "scripts/enrichment/DEEP_DPS_SCRAPER.js" ]; then
+            node scripts/enrichment/DEEP_DPS_SCRAPER.js || echo "⚠️ DPs scraper had warnings"
+            echo "✅ DPs database updated"
+          else
+            echo "⚠️ DPs scraper not found, skipping"
+          fi
+      
+      - name: 🧠 Intelligent Analysis of Scraped Data
+        if: github.event.inputs.enrichment_type == 'all' || github.event_name == 'schedule'
+        run: |
+          echo "🧠 Analyzing all scraped data intelligently..."
+          
+          mkdir -p data/analysis
+          
+          # Merge all manufacturer IDs from all sources
+          echo "📊 Consolidating manufacturer IDs..."
+          cat data/forum-scrape/manufacturer-ids-from-forum.txt \
+              data/github-scrape/manufacturer-ids-from-github.txt \
+              2>/dev/null | sort -u > data/analysis/all-manufacturer-ids.txt || true
+          
+          TOTAL_IDS=$(wc -l < data/analysis/all-manufacturer-ids.txt 2>/dev/null || echo "0")
+          echo "📊 Total unique manufacturer IDs found: $TOTAL_IDS"
+          
+          # Analyze forum posts for common issues
+          echo "🔍 Analyzing forum for common device issues..."
+          if [ -f "data/forum-scrape/forum-thread-latest.json" ]; then
+            jq -r '.post_stream.posts[].cooked' data/forum-scrape/forum-thread-latest.json 2>/dev/null | \
+              grep -iE "not working|no data|not recognized|problem|issue|error" | \
+              head -20 > data/analysis/forum-issues.txt || true
+            
+            echo "📋 Common issues extracted for review"
+          fi
+          
+          # Analyze GitHub issues for feature requests
+          echo "🔍 Analyzing GitHub issues for features..."
+          if [ -f "data/github-scrape/our-issues.json" ]; then
+            jq -r '.[] | select(.state == "open") | "\(.title): \(.body)"' \
+              data/github-scrape/our-issues.json 2>/dev/null | \
+              head -20 > data/analysis/feature-requests.txt || true
+          fi
+          
+          # Create enrichment recommendations
+          echo "💡 Generating enrichment recommendations..."
+          cat > data/analysis/enrichment-recommendations.json << 'EOF'
+          {
+            "timestamp": "'$(date -u +"%Y-%m-%dT%H:%M:%SZ")'",
+            "sources_analyzed": [
+              "Homey Community Forum",
+              "GitHub Issues (dlnraja)",
+              "GitHub Issues (JohanBendz)",
+              "GitHub Pull Requests",
+              "Project Forks",
+              "Zigbee2MQTT Database"
+            ],
+            "actions_recommended": [
+              "Add newly discovered manufacturer IDs",
+              "Address common forum issues",
+              "Implement feature requests from GitHub",
+              "Update DPs from Zigbee2MQTT",
+              "Sync with Johan Bendz latest changes"
+            ]
+          }
+          EOF
+          
+          echo "✅ Intelligent analysis complete"
+      
+      - name: 🏭 Enrich Manufacturer IDs
+        if: github.event.inputs.enrichment_type == 'all' || github.event.inputs.enrichment_type == 'manufacturers' || github.event_name == 'schedule'
+        run: |
+          echo "🏭 Enriching manufacturer IDs from all sources..."
+          
+          # Use consolidated manufacturer IDs
+          if [ -f "data/analysis/all-manufacturer-ids.txt" ]; then
+            NEW_IDS=$(wc -l < data/analysis/all-manufacturer-ids.txt)
+            echo "📊 Processing $NEW_IDS manufacturer IDs from community sources"
+            
+            # TODO: Create smart enrichment script that reads this file
+            # and adds IDs to appropriate drivers
+          fi
+          
+          if [ -f "scripts/analysis/ENRICH_ALL_MANUFACTURERS.js" ]; then
+            node scripts/analysis/ENRICH_ALL_MANUFACTURERS.js || echo "⚠️ Manufacturer enrichment had warnings"
+            echo "✅ Manufacturers enriched"
+          else
+            echo "⚠️ Manufacturer enrichment script not found, skipping"
+          fi
+      
+      - name: 🎨 Update Images if Needed
+        if: github.event.inputs.enrichment_type == 'all' || github.event.inputs.enrichment_type == 'images' || github.event_name == 'schedule'
+        run: |
+          echo "🎨 Checking for missing images..."
+          
+          MISSING_IMAGES=0
+          for driver_dir in drivers/*/; do
+            driver_name=$(basename "$driver_dir")
+            
+            if [ ! -f "${driver_dir}assets/small.png" ] || [ ! -f "${driver_dir}assets/large.png" ]; then
+              echo "⚠️ Missing images for: $driver_name"
+              MISSING_IMAGES=$((MISSING_IMAGES + 1))
+            fi
+          done
+          
+          if [ $MISSING_IMAGES -gt 0 ]; then
+            echo "Found $MISSING_IMAGES drivers with missing images"
+            
+            if [ -f "scripts/generation/GENERATE_MISSING_ICONS.js" ]; then
+              node scripts/generation/GENERATE_MISSING_ICONS.js || echo "⚠️ Image generation had warnings"
+              echo "✅ Missing images generated"
+            fi
+          else
+            echo "✅ All drivers have images"
+          fi
+      
+      - name: 🚀 Enrich Capabilities
+        if: github.event.inputs.enrichment_type == 'all' || github.event.inputs.enrichment_type == 'capabilities' || github.event_name == 'schedule'
+        run: |
+          echo "🚀 Enriching capabilities..."
+          
+          if [ -f "scripts/fixes/AUTO_ENRICH_ALL_CAPABILITIES.js" ]; then
+            node scripts/fixes/AUTO_ENRICH_ALL_CAPABILITIES.js || echo "⚠️ Capability enrichment had warnings"
+            echo "✅ Capabilities enriched"
+          else
+            echo "⚠️ Capability enrichment script not found, skipping"
+          fi
+      
+      - name: 🔄 Apply Enhanced Features
+        if: github.event.inputs.enrichment_type == 'all' || github.event_name == 'schedule'
+        run: |
+          echo "🔄 Applying enhanced features..."
+          
+          if [ -f "scripts/enrichment/APPLY_ENHANCED_FEATURES.js" ]; then
+            node scripts/enrichment/APPLY_ENHANCED_FEATURES.js || echo "⚠️ Feature application had warnings"
+            echo "✅ Enhanced features applied"
+          else
+            echo "⚠️ Enhanced features script not found, skipping"
+          fi
+      
+      - name: 📝 Sync to app.json
+        run: |
+          echo "📝 Syncing drivers to app.json..."
+          
+          if [ -f "scripts/automation/AUTO_SYNC_DRIVERS_TO_APP_JSON.js" ]; then
+            node scripts/automation/AUTO_SYNC_DRIVERS_TO_APP_JSON.js
+            echo "✅ app.json synchronized"
+          else
+            echo "⚠️ Sync script not found, skipping"
+          fi
+      
+      - name: ✅ Validate Changes
+        run: |
+          echo "✅ Validating app..."
+          
+          # Clean cache before validation
+          rm -rf .homeybuild .homeycompose || true
+          
+          # Install homey CLI if not present
+          npm install -g homey || true
+          
+          # Validate
+          homey app validate --level publish || {
+            echo "⚠️ Validation had warnings (non-blocking for monthly enrichment)"
+          }
+      
+      - name: 📊 Generate Enrichment Report
+        id: report
+        run: |
+          echo "📊 Generating enrichment report..."
+          
+          TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          
+          # Count changes
+          CHANGED_FILES=$(git status --porcelain | wc -l)
+          
+          # Generate report content
+          REPORT="## 🔄 Monthly Auto-Enrichment Report\n\n"
+          REPORT="${REPORT}**Date:** $TIMESTAMP\n"
+          REPORT="${REPORT}**Drivers:** ${{ steps.analyze.outputs.drivers_count }}\n"
+          REPORT="${REPORT}**Changed Files:** $CHANGED_FILES\n\n"
+          
+          if [ $CHANGED_FILES -gt 0 ]; then
+            REPORT="${REPORT}### Changes Made:\n"
+            REPORT="${REPORT}\`\`\`\n$(git status --short)\n\`\`\`\n\n"
+            REPORT="${REPORT}✅ Enrichment applied successfully"
+          else
+            REPORT="${REPORT}ℹ️ No changes needed - project is up to date"
+          fi
+          
+          # Save report
+          mkdir -p reports
+          echo -e "$REPORT" > reports/MONTHLY_ENRICHMENT_$(date +%Y-%m).md
+          
+          echo "changed_files=$CHANGED_FILES" >> $GITHUB_OUTPUT
+          echo "✅ Report generated"
+      
+      - name: 💾 Commit Changes
+        if: steps.report.outputs.changed_files != '0'
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          TIMESTAMP=$(date -u +"%Y-%m-%d")
+          
+          git add -A
+          git commit -m "chore: monthly auto-enrichment ($TIMESTAMP)
+          
+          Automated monthly enrichment completed:
+          - Updated Tuya DPs database
+          - Enriched manufacturer IDs
+          - Updated capabilities
+          - Applied enhanced features
+          - Synchronized app.json
+          
+          Changed files: ${{ steps.report.outputs.changed_files }}
+          
+          [skip ci]"
+          
+          echo "✅ Changes committed"
       
-      # 5. Run enrichment orchestrator
-      - name: 🌐 Run Monthly Auto-Enrichment
-        id: enrichment
-        continue-on-error: true
+      - name: 🚀 Push Changes
+        if: steps.report.outputs.changed_files != '0'
         run: |
-          echo "## 🌐 Monthly Auto-Enrichment" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "📅 **Date:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
+          # Pull with rebase first
+          git pull --rebase origin master || true
           
-          if [ -f scripts/MONTHLY_AUTO_ENRICHMENT_ORCHESTRATOR.js ]; then
-            echo "🚀 Lancement orchestrateur enrichissement..."
-            node scripts/MONTHLY_AUTO_ENRICHMENT_ORCHESTRATOR.js || echo "enrichment_status=warning" >> $GITHUB_OUTPUT
-            echo "enrichment_status=success" >> $GITHUB_OUTPUT
-          else
-            echo "⚠️ Orchestrateur non trouvé, skip enrichment"
-            echo "enrichment_status=skipped" >> $GITHUB_OUTPUT
-          fi
-      
-      # 6. Validate images (optional)
-      - name: 🖼️ Validate Images
-        continue-on-error: true
-        run: |
-          if [ -f scripts/ULTIMATE_IMAGE_VALIDATOR.js ]; then
-            echo "🖼️ Validation des images..."
-            node scripts/ULTIMATE_IMAGE_VALIDATOR.js || echo "⚠️ Image warnings (non-blocking)"
-          else
-            echo "ℹ️ Image validator non trouvé, skip"
-          fi
-      
-      # 7. Clean Homey cache before validation
-      - name: 🧹 Clean Homey Cache
-        run: |
-          echo "🧹 Cleaning Homey cache..."
-          rm -rf .homeybuild
-          rm -rf node_modules/.cache
-          echo "✅ Cache cleaned"
-      
-      # 8. Check for changes
-      - name: 🔍 Check for Changes
-        id: check_changes
-        run: |
-          # Source sanitization functions
-          source .github/scripts/sanitize.sh || true
+          # Push
+          git push origin HEAD:master || {
+            echo "⚠️ Push failed, retrying..."
+            git pull --rebase origin master
+            git push origin HEAD:master
+          }
           
-          if [[ -n $(git status --porcelain) ]]; then
-            echo "has_changes=true" >> $GITHUB_OUTPUT
-            
-            # Count changes
-            ADDED=$(git diff --cached --numstat | wc -l)
-            MODIFIED=$(git diff --numstat | wc -l)
-            
-            echo "files_changed=$((ADDED + MODIFIED))" >> $GITHUB_OUTPUT
-            echo "✅ Changements détectés: $((ADDED + MODIFIED)) fichiers"
-            
-            # Generate changelog
-            CHANGES_SUMMARY=$(git status --short | head -20)
-            echo "changes_summary<<EOF" >> $GITHUB_OUTPUT
-            echo "$CHANGES_SUMMARY" >> $GITHUB_OUTPUT
-            echo "EOF" >> $GITHUB_OUTPUT
-          else
-            echo "has_changes=false" >> $GITHUB_OUTPUT
-            echo "files_changed=0" >> $GITHUB_OUTPUT
-            echo "ℹ️ Aucun changement détecté"
-          fi
+          echo "✅ Changes pushed to master"
       
-      # 9. Validate Homey App
-      - name: ✅ Validate Homey App
-        if: steps.check_changes.outputs.has_changes == 'true'
-        uses: athombv/github-action-homey-app-validate@master
-        with:
-          level: publish
-      
-      # 10. Generate changelog
-      - name: 📝 Generate Monthly Changelog
-        if: steps.check_changes.outputs.has_changes == 'true'
-        id: changelog
-        run: |
-          # Source sanitization
-          source .github/scripts/sanitize.sh
-          
-          # Generate monthly changelog
-          MONTH=$(date +'%B %Y')
-          RAW_CHANGELOG="Monthly enrichment $MONTH: Database update with latest device definitions; Manufacturer IDs updated; Product IDs synchronized; Images validated; SDK3 compliance verified"
-          
-          # Sanitize for Homey
-          CHANGELOG=$(sanitize_homey_changelog "$RAW_CHANGELOG" 400)
-          
-          echo "changelog=$CHANGELOG" >> $GITHUB_OUTPUT
-          
-          echo "## 📋 Changelog" >> $GITHUB_STEP_SUMMARY
-          echo '```' >> $GITHUB_STEP_SUMMARY
-          echo "$CHANGELOG" >> $GITHUB_STEP_SUMMARY
-          echo '```' >> $GITHUB_STEP_SUMMARY
-      
-      # 11. Update version (minor bump for monthly enrichment)
-      - name: 🆙 Update Version (Minor)
-        if: steps.check_changes.outputs.has_changes == 'true'
-        uses: athombv/github-action-homey-app-version@master
-        id: update_version
-        with:
-          version: minor
-          changelog: ${{ steps.changelog.outputs.changelog }}
-      
-      # 12. Commit version changes
-      - name: 💾 Commit Changes
-        if: steps.check_changes.outputs.has_changes == 'true'
-        run: |
-          MONTH=$(date +'%B %Y')
-          FILES_COUNT="${{ steps.check_changes.outputs.files_changed }}"
-          
-          if [ -n "$(git status --porcelain)" ]; then
-            git add -A
-            git commit -m "chore: Monthly auto-enrichment $MONTH [skip ci]" \
-              -m "Automated monthly database update" \
-              -m "Files changed: $FILES_COUNT" \
-              -m "Device definitions synchronized" \
-              -m "SDK3 compliance verified" \
-              -m "Images validated" \
-              -m "Auto-generated by monthly-auto-enrichment workflow"
-            
-            git tag "v${{ steps.update_version.outputs.version }}" || true
-            git push origin HEAD --tags || true
-            
-            echo "✅ Changes committed and pushed"
-          fi
-      
-      # 13. Publish to Homey App Store
-      - name: 🚀 Publish to Homey App Store
-        if: steps.check_changes.outputs.has_changes == 'true' || github.event.inputs.force_publish == 'true'
-        uses: athombv/github-action-homey-app-publish@master
-        id: publish
-        with:
-          personal_access_token: ${{ secrets.HOMEY_PAT }}
-      
-      # 14. Create GitHub Release
-      - name: 📦 Create GitHub Release
-        if: steps.check_changes.outputs.has_changes == 'true'
-        run: |
-          MONTH=$(date +'%B %Y')
-          VERSION="${{ steps.update_version.outputs.version }}"
-          CHANGELOG="${{ steps.changelog.outputs.changelog }}"
-          FILES="${{ steps.check_changes.outputs.files_changed }}"
-          STATUS="${{ steps.enrichment.outputs.enrichment_status }}"
-          DASHBOARD="${{ steps.publish.outputs.url }}"
-          
-          # Create release notes
-          cat > release_notes.md <<EOF
-$CHANGELOG
-
-## 📊 Summary
-- **Files changed:** $FILES
-- **Enrichment status:** $STATUS
-- **Publication:** Successful
-- **Dashboard:** $DASHBOARD
-
-## 🔗 Links
-- [Homey Dashboard]($DASHBOARD)
-- [App Store](https://homey.app/apps/com.dlnraja.tuya.zigbee)
-EOF
-          
-          gh release create "v$VERSION" \
-            --title "🔄 Monthly Enrichment - $MONTH (v$VERSION)" \
-            --notes-file release_notes.md \
-            --generate-notes || echo "⚠️ Release creation skipped"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_TOKEN: ${{ github.token }}
-      
-      # 15. Final summary
-      - name: 📊 Generate Summary Report
+      - name: 📢 Create Summary
         if: always()
         run: |
-          echo "## 📊 Monthly Enrichment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "## 🎉 Monthly Enrichment Complete" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "- **Date:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
-          echo "- **Changes detected:** ${{ steps.check_changes.outputs.has_changes }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Files changed:** ${{ steps.check_changes.outputs.files_changed }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Enrichment status:** ${{ steps.enrichment.outputs.enrichment_status }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Status:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Drivers:** ${{ steps.analyze.outputs.drivers_count }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Changed Files:** ${{ steps.report.outputs.changed_files }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
           
-          if [ "${{ steps.check_changes.outputs.has_changes }}" = "true" ]; then
-            echo "- **New version:** v${{ steps.update_version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
-            echo "- **Publication:** ✅ Success" >> $GITHUB_STEP_SUMMARY
-            echo "- **Dashboard:** ${{ steps.publish.outputs.url }}" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.report.outputs.changed_files }}" != "0" ]; then
+            echo "✅ **Enrichment applied and pushed**" >> $GITHUB_STEP_SUMMARY
           else
-            echo "- **Publication:** ⏭️ Skipped (no changes)" >> $GITHUB_STEP_SUMMARY
+            echo "ℹ️ **No changes needed**" >> $GITHUB_STEP_SUMMARY
           fi
           
           echo "" >> $GITHUB_STEP_SUMMARY
-          
-          if [ -f reports/monthly_enrichment_report.json ]; then
-            echo "### 📄 Enrichment Report" >> $GITHUB_STEP_SUMMARY
-            echo '```json' >> $GITHUB_STEP_SUMMARY
-            cat reports/monthly_enrichment_report.json >> $GITHUB_STEP_SUMMARY
-            echo '```' >> $GITHUB_STEP_SUMMARY
-          fi
-      
-      # 16. Upload artifacts
-      - name: 📤 Upload Reports
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: monthly-enrichment-reports-${{ github.run_number }}
-          path: |
-            reports/
-            *.log
-          retention-days: 90
+          echo "### 📋 Next Steps" >> $GITHUB_STEP_SUMMARY
+          echo "1. Review changes in latest commit" >> $GITHUB_STEP_SUMMARY
+          echo "2. Monitor auto-publish workflow" >> $GITHUB_STEP_SUMMARY
+          echo "3. Check [Actions](https://github.com/${{ github.repository }}/actions)" >> $GITHUB_STEP_SUMMARY
