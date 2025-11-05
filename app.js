@@ -9,6 +9,7 @@ const SmartDeviceDiscovery = require('./lib/discovery/SmartDeviceDiscovery');
 const PerformanceOptimizer = require('./lib/performance/PerformanceOptimizer');
 const UnknownDeviceHandler = require('./lib/UnknownDeviceHandler');
 const SystemLogsCollector = require('./lib/SystemLogsCollector');
+const DeviceIdentificationDatabase = require('./lib/DeviceIdentificationDatabase');
 
 class UniversalTuyaZigbeeApp extends Homey.App {
   _flowCardsRegistered = false;
@@ -19,6 +20,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
   optimizer = null;
   unknownHandler = null;
   systemLogsCollector = null;
+  identificationDatabase = null;
 
 
   /**
@@ -47,6 +49,12 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     // Initialize CapabilityManager for safe capability creation
     this.capabilityManager = new CapabilityManager(this.homey);
     this.log('✅ CapabilityManager initialized');
+    
+    // 🤖 Initialize Intelligent Device Identification Database
+    // Scans ALL drivers and builds comprehensive ID database
+    this.identificationDatabase = new DeviceIdentificationDatabase(this.homey);
+    await this.identificationDatabase.buildDatabase();
+    this.log('✅ Intelligent Device Identification Database built');
 
     // CRITICAL: Register custom Zigbee clusters FIRST
     // This must happen before any devices initialize
@@ -94,7 +102,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     await this.initializeInsights();
 
     this.log('✅ Universal Tuya Zigbee App has been initialized');
-    this.log('🚀 Advanced systems: Analytics, Discovery, Performance, Unknown Device Detection, System Logs');
+    this.log('🚀 Advanced systems: Analytics, Discovery, Performance, Unknown Device Detection, System Logs, Intelligent ID Database');
     
     // Log capability stats
     const stats = this.capabilityManager.getStats();
@@ -118,7 +126,8 @@ class UniversalTuyaZigbeeApp extends Homey.App {
         version: this.homey.manifest.version,
         capabilities: this.capabilityManager ? this.capabilityManager.getStats() : {},
         analytics: this.analytics ? await this.analytics.getAnalyticsReport() : {},
-        performance: this.optimizer ? this.optimizer.getStats() : {}
+        performance: this.optimizer ? this.optimizer.getStats() : {},
+        identificationDatabase: this.identificationDatabase ? this.identificationDatabase.getStats() : null
       };
       
       // Combine everything
@@ -136,6 +145,17 @@ class UniversalTuyaZigbeeApp extends Homey.App {
         `Capabilities Created: ${appInfo.capabilities.created || 0}`,
         `Capabilities Cached: ${appInfo.capabilities.cached || 0}`,
         '',
+        appInfo.identificationDatabase ? [
+          '─'.repeat(80),
+          '🤖 INTELLIGENT DEVICE IDENTIFICATION DATABASE',
+          '─'.repeat(80),
+          `Device Types: ${appInfo.identificationDatabase.deviceTypes || 0}`,
+          `Total Manufacturer IDs: ${appInfo.identificationDatabase.totalManufacturerIds || 0}`,
+          `Total Product IDs: ${appInfo.identificationDatabase.totalProductIds || 0}`,
+          `Drivers Scanned: ${appInfo.identificationDatabase.drivers || 0}`,
+          `Last Update: ${appInfo.identificationDatabase.lastUpdate || 'Never'}`,
+          ''
+        ].join('\n') : '',
         systemLogsReport,
         '',
         '═'.repeat(80),
