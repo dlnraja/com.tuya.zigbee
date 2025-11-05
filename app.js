@@ -181,11 +181,11 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     this.log('📋 Registering Homey Native Flow Cards...');
 
     try {
-      // CONDITION: Device is online/offline
-      this.homey.flow.getConditionCard('is_online')
-        .registerRunListener(async (args) => {
-          return args.device.getAvailable();
-        });
+      // CONDITION: Device is online/offline - REMOVED (not defined in flow cards)
+      // this.homey.flow.getConditionCard('is_online')
+      //   .registerRunListener(async (args) => {
+      //     return args.device.getAvailable();
+      //   });
       
       // CONDITION: Battery below threshold
       this.homey.flow.getConditionCard('battery_below')
