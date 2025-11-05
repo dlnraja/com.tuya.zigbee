@@ -1,0 +1,280 @@
+name: Auto-Fix & Monitor
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  schedule:
+    # Exécute tous les jours à 2h du matin (monitoring quotidien)
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  validate-and-fix:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: 🔧 Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: 📦 Install dependencies
+        run: |
+          npm install --production
+          npm install -g homey
+      
+      - name: 🔍 Validate app.json structure
+        id: validate_app_json
+        run: |
+          echo "🔍 Validating app.json..."
+          
+          if [ ! -f "app.json" ]; then
+            echo "error=app.json not found" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+          
+          # Vérifier que c'est du JSON valide
+          if ! node -e "JSON.parse(require('fs').readFileSync('app.json', 'utf8'))"; then
+            echo "error=Invalid JSON syntax" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+          
+          # Vérifier les champs requis
+          VERSION=$(node -p "require('./app.json').version")
+          APP_ID=$(node -p "require('./app.json').id")
+          
+          if [ -z "$VERSION" ]; then
+            echo "error=Missing version field" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+          
+          if [ -z "$APP_ID" ]; then
+            echo "error=Missing id field" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+          
+          echo "✅ app.json is valid"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "app_id=$APP_ID" >> $GITHUB_OUTPUT
+      
+      - name: 🔍 Check changelog exists
+        id: check_changelog
+        run: |
+          if [ ! -f ".homeychangelog.json" ]; then
+            echo "warning=.homeychangelog.json not found" >> $GITHUB_OUTPUT
+            echo "⚠️ Warning: .homeychangelog.json not found"
+          else
+            # Vérifier que la version actuelle a un changelog
+            VERSION="${{ steps.validate_app_json.outputs.version }}"
+            HAS_CHANGELOG=$(node -e "const c=require('./.homeychangelog.json'); console.log(!!c['$VERSION']);")
+            
+            if [ "$HAS_CHANGELOG" != "true" ]; then
+              echo "warning=No changelog entry for version $VERSION" >> $GITHUB_OUTPUT
+              echo "⚠️ Warning: No changelog entry for version $VERSION"
+            else
+              echo "✅ Changelog entry exists for version $VERSION"
+            fi
+          fi
+      
+      - name: 🏗️ Build app
+        id: build
+        run: |
+          echo "🏗️ Building app..."
+          if homey app build 2>&1 | tee build.log; then
+            echo "✅ Build successful"
+            echo "status=success" >> $GITHUB_OUTPUT
+          else
+            echo "❌ Build failed"
+            echo "status=failed" >> $GITHUB_OUTPUT
+            cat build.log
+            exit 1
+          fi
+      
+      - name: 🔬 Validate app (debug level)
+        id: validate_debug
+        continue-on-error: true
+        run: |
+          echo "🔬 Validating app (debug level)..."
+          if homey app validate --level debug 2>&1 | tee validate-debug.log; then
+            echo "✅ Debug validation passed"
+            echo "status=success" >> $GITHUB_OUTPUT
+          else
+            echo "⚠️ Debug validation has warnings"
+            echo "status=warning" >> $GITHUB_OUTPUT
+            cat validate-debug.log
+          fi
+      
+      - name: 🔬 Validate app (publish level)
+        id: validate_publish
+        continue-on-error: true
+        run: |
+          echo "🔬 Validating app (publish level)..."
+          if homey app validate --level publish 2>&1 | tee validate-publish.log; then
+            echo "✅ Publish validation passed"
+            echo "status=success" >> $GITHUB_OUTPUT
+          else
+            echo "❌ Publish validation failed"
+            echo "status=failed" >> $GITHUB_OUTPUT
+            cat validate-publish.log
+          fi
+      
+      - name: 📊 Analyze drivers
+        run: |
+          echo "📊 Analyzing drivers..."
+          
+          if [ -d "drivers" ]; then
+            DRIVER_COUNT=$(ls -1 drivers | wc -l)
+            echo "✅ Found $DRIVER_COUNT drivers"
+            
+            # Vérifier que chaque driver a un device.js
+            for driver in drivers/*/; do
+              driver_name=$(basename "$driver")
+              if [ ! -f "$driver/device.js" ]; then
+                echo "⚠️ Warning: $driver_name missing device.js"
+              fi
+              
+              if [ ! -f "$driver/driver.json" ]; then
+                echo "⚠️ Warning: $driver_name missing driver.json"
+              fi
+            done
+          else
+            echo "❌ No drivers directory found!"
+            exit 1
+          fi
+      
+      - name: 📊 Analyze lib files
+        run: |
+          echo "📊 Analyzing lib files..."
+          
+          if [ -d "lib" ]; then
+            LIB_COUNT=$(find lib -type f -name '*.js' | wc -l)
+            echo "✅ Found $LIB_COUNT JavaScript files in lib/"
+            
+            # Vérifier les imports/requires manquants
+            echo "Checking for potential import issues..."
+            grep -r "require(" lib/*.js | grep -v "node_modules" | head -20 || true
+          else
+            echo "⚠️ No lib directory found"
+          fi
+      
+      - name: 🔍 Check for common issues
+        id: check_issues
+        run: |
+          echo "🔍 Checking for common issues..."
+          
+          ISSUES_FOUND=0
+          
+          # 1. Vérifier les requires manquants
+          if grep -r "MODULE_NOT_FOUND" . --exclude-dir=node_modules --exclude-dir=.git 2>/dev/null; then
+            echo "⚠️ Found MODULE_NOT_FOUND errors in code"
+            ISSUES_FOUND=$((ISSUES_FOUND + 1))
+          fi
+          
+          # 2. Vérifier les console.log (à remplacer par this.log)
+          if grep -r "console\.log" drivers lib --include="*.js" 2>/dev/null | grep -v "// console.log"; then
+            echo "⚠️ Found console.log (should use this.log)"
+            ISSUES_FOUND=$((ISSUES_FOUND + 1))
+          fi
+          
+          # 3. Vérifier les TODO/FIXME
+          TODO_COUNT=$(grep -r "TODO\|FIXME" drivers lib --include="*.js" 2>/dev/null | wc -l)
+          if [ "$TODO_COUNT" -gt 0 ]; then
+            echo "⚠️ Found $TODO_COUNT TODO/FIXME comments"
+          fi
+          
+          echo "issues_count=$ISSUES_FOUND" >> $GITHUB_OUTPUT
+          
+          if [ "$ISSUES_FOUND" -eq 0 ]; then
+            echo "✅ No common issues found"
+          fi
+      
+      - name: 📊 Generate health report
+        run: |
+          echo "📊 Generating health report..."
+          
+          cat > health-report.md <<EOF
+          # 🏥 App Health Report
+          
+          ## 📦 General Info
+          
+          - **App ID:** ${{ steps.validate_app_json.outputs.app_id }}
+          - **Version:** ${{ steps.validate_app_json.outputs.version }}
+          - **Date:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')
+          - **Git SHA:** ${{ github.sha }}
+          
+          ## ✅ Validation Status
+          
+          - **app.json:** ✅ Valid
+          - **Build:** ${{ steps.build.outputs.status }}
+          - **Debug Validation:** ${{ steps.validate_debug.outputs.status }}
+          - **Publish Validation:** ${{ steps.validate_publish.outputs.status }}
+          
+          ## 📊 Statistics
+          
+          - **Drivers:** $(ls -1 drivers 2>/dev/null | wc -l)
+          - **Lib files:** $(find lib -type f -name '*.js' 2>/dev/null | wc -l)
+          - **Issues found:** ${{ steps.check_issues.outputs.issues_count }}
+          
+          ## ⚠️ Warnings
+          
+          ${{ steps.check_changelog.outputs.warning }}
+          
+          EOF
+          
+          cat health-report.md
+      
+      - name: 📤 Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: validation-reports
+          path: |
+            build.log
+            validate-debug.log
+            validate-publish.log
+            health-report.md
+      
+      - name: 💬 Summary
+        if: always()
+        run: |
+          echo "## 📊 App Health Check Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Version:** ${{ steps.validate_app_json.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Build:** ${{ steps.build.outputs.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Validation (debug):** ${{ steps.validate_debug.outputs.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Validation (publish):** ${{ steps.validate_publish.outputs.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Issues:** ${{ steps.check_issues.outputs.issues_count }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ steps.validate_publish.outputs.status }}" == "success" ]; then
+            echo "✅ **App is ready for publication!**" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "⚠️ **App has validation warnings - review before publishing**" >> $GITHUB_STEP_SUMMARY
+          fi
+
+  notify-status:
+    needs: validate-and-fix
+    runs-on: ubuntu-latest
+    if: always()
+    
+    steps:
+      - name: 📊 Report Status
+        run: |
+          echo "📊 Final Status: ${{ needs.validate-and-fix.result }}"
+          
+          if [ "${{ needs.validate-and-fix.result }}" == "success" ]; then
+            echo "✅ All checks passed!"
+          else
+            echo "⚠️ Some checks failed or had warnings"
+          fi

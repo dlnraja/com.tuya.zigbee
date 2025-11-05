@@ -1,0 +1,172 @@
+name: Homey App Store Publisher
+
+on:
+  push:
+    tags:
+      - 'v*'  # Déclenche sur les tags de version (v4.9.294, etc.)
+  workflow_dispatch:  # Permet déclenchement manuel
+
+jobs:
+  validate-and-publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: 🔧 Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: 📦 Install dependencies
+        run: |
+          npm install --production
+          npm install -g homey
+      
+      - name: 🔍 Get version from tag
+        id: version
+        run: |
+          if [ "${{ github.ref_type }}" == "tag" ]; then
+            VERSION=${GITHUB_REF#refs/tags/v}
+            echo "version=$VERSION" >> $GITHUB_OUTPUT
+            echo "📌 Version from tag: $VERSION"
+          else
+            VERSION=$(node -p "require('./app.json').version")
+            echo "version=$VERSION" >> $GITHUB_OUTPUT
+            echo "📌 Version from app.json: $VERSION"
+          fi
+      
+      - name: ✅ Validate app structure
+        run: |
+          echo "🔍 Validating app structure..."
+          
+          # Check required files
+          if [ ! -f "app.json" ]; then
+            echo "❌ app.json not found!"
+            exit 1
+          fi
+          
+          if [ ! -f ".homeychangelog.json" ]; then
+            echo "⚠️ .homeychangelog.json not found!"
+          fi
+          
+          if [ ! -d "drivers" ]; then
+            echo "❌ drivers/ directory not found!"
+            exit 1
+          fi
+          
+          echo "✅ Basic structure validation passed"
+      
+      - name: 🏗️ Build Homey app
+        run: |
+          echo "🏗️ Building Homey app..."
+          homey app build
+          echo "✅ Build successful"
+      
+      - name: 🔬 Validate with Homey CLI (publish level)
+        run: |
+          echo "🔬 Running Homey validation (publish level)..."
+          homey app validate --level publish
+          echo "✅ Validation passed (publish level)"
+      
+      - name: 📊 Generate build report
+        run: |
+          echo "📊 Build Report:" > build-report.txt
+          echo "================" >> build-report.txt
+          echo "" >> build-report.txt
+          echo "Version: ${{ steps.version.outputs.version }}" >> build-report.txt
+          echo "Git SHA: ${{ github.sha }}" >> build-report.txt
+          echo "Git Ref: ${{ github.ref }}" >> build-report.txt
+          echo "Date: $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> build-report.txt
+          echo "" >> build-report.txt
+          echo "App Structure:" >> build-report.txt
+          echo "- Drivers: $(ls -1 drivers | wc -l)" >> build-report.txt
+          echo "- Lib files: $(find lib -type f -name '*.js' | wc -l)" >> build-report.txt
+          echo "" >> build-report.txt
+          
+          if [ -f ".homeychangelog.json" ]; then
+            echo "Latest Changelog:" >> build-report.txt
+            node -e "const c=require('./.homeychangelog.json'); const v='${{ steps.version.outputs.version }}'; if(c[v]) console.log(c[v].en.substring(0,500)+'...');" >> build-report.txt
+          fi
+          
+          cat build-report.txt
+      
+      - name: 🚀 Publish to Homey App Store
+        env:
+          HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
+        run: |
+          echo "🚀 Publishing to Homey App Store..."
+          
+          if [ -z "$HOMEY_TOKEN" ]; then
+            echo "❌ ERROR: HOMEY_TOKEN secret not set!"
+            echo "Please add your Homey CLI token as a GitHub secret named HOMEY_TOKEN"
+            echo ""
+            echo "To get your token:"
+            echo "1. Run: homey login"
+            echo "2. Run: homey settings token get"
+            echo "3. Add the token as HOMEY_TOKEN secret in GitHub repo settings"
+            exit 1
+          fi
+          
+          # Configure Homey CLI with token
+          mkdir -p ~/.homey
+          echo "{\"token\":\"$HOMEY_TOKEN\"}" > ~/.homey/config.json
+          
+          # Publish
+          homey app publish
+          
+          echo "✅ Published successfully to Homey App Store!"
+          echo "Version ${{ steps.version.outputs.version }} is now available"
+      
+      - name: 📝 Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          name: Release v${{ steps.version.outputs.version }}
+          body_path: build-report.txt
+          files: |
+            build/*.tar.gz
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: 💬 Post success comment
+        if: success()
+        run: |
+          echo "✅ DEPLOYMENT SUCCESS!"
+          echo "Version: ${{ steps.version.outputs.version }}"
+          echo "Published to: Homey App Store"
+          echo "Available in: ~15-30 minutes for all users"
+      
+      - name: 🚨 Handle failure
+        if: failure()
+        run: |
+          echo "❌ DEPLOYMENT FAILED!"
+          echo "Check the logs above for details"
+          echo "Common issues:"
+          echo "- HOMEY_TOKEN not set or invalid"
+          echo "- Validation errors in app.json"
+          echo "- Missing required files"
+          exit 1
+
+  monitor:
+    needs: validate-and-publish
+    runs-on: ubuntu-latest
+    if: always()
+    
+    steps:
+      - name: 📊 Monitor deployment status
+        run: |
+          echo "📊 Monitoring deployment..."
+          echo "Status: ${{ needs.validate-and-publish.result }}"
+          
+          if [ "${{ needs.validate-and-publish.result }}" == "success" ]; then
+            echo "✅ Deployment successful!"
+            echo "App should be available in Homey App Store within 15-30 minutes"
+          else
+            echo "❌ Deployment failed!"
+            echo "Check logs for error details"
+          fi
