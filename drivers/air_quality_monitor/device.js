@@ -1,11 +1,11 @@
 'use strict';
 
 const SensorDevice = require('../../lib/devices/SensorDevice');
-const IASZoneEnroller = require('../../lib/IASZoneEnroller');
+// const IASZoneEnroller = require('../../lib/IASZoneEnroller'); // Deprecated - use IASZoneManager
 const batteryConverter = require('../../lib/tuya-engine/converters/battery');
 const { CLUSTER } = require('zigbee-clusters');
 const TuyaClusterHandler = require('../../utils/tuya-cluster-handler');
-const FallbackSystem = require('../../lib/FallbackSystem');
+// const FallbackSystem = require('../../lib/FallbackSystem'); // Deprecated
 
 class AirQualityMonitorProBatteryDevice extends SensorDevice {
 
