@@ -187,15 +187,15 @@ class UniversalTuyaZigbeeApp extends Homey.App {
       //     return args.device.getAvailable();
       //   });
       
-      // CONDITION: Battery below threshold
-      this.homey.flow.getConditionCard('battery_below')
-        .registerRunListener(async (args) => {
-          if (!args.device.hasCapability('measure_battery')) {
-            return false;
-          }
-          const batteryLevel = args.device.getCapabilityValue('measure_battery');
-          return batteryLevel < args.percentage;
-        });
+      // CONDITION: Battery below threshold - REMOVED (not defined in flow cards)
+      // this.homey.flow.getConditionCard('battery_below')
+      //   .registerRunListener(async (args) => {
+      //     if (!args.device.hasCapability('measure_battery')) {
+      //       return false;
+      //     }
+      //     const batteryLevel = args.device.getCapabilityValue('measure_battery');
+      //     return batteryLevel < args.percentage;
+      //   });
       
       // ACTION: Identify device (blink/beep)
       this.homey.flow.getActionCard('identify_device')
