@@ -31,6 +31,32 @@ class PIRSensor3in1 extends TuyaSpecificDevice {
    * - Energy/Battery capabilities
    * - Multi-endpoint (si applicable)
    */
+  
+  /**
+   * DP Mapping pour PIR 3-in-1 sensors
+   * INSPIRÉ DE: Johan Bendz + Homey community research
+   */
+  get dpMapping() {
+    return {
+      alarm_motion: { 
+        dp: 1, 
+        parser: v => v === true || v === 'active' || v === 1 
+      },
+      measure_temperature: { 
+        dp: 2, 
+        parser: v => v / 10 // Tuya sends temp * 10
+      },
+      measure_humidity: { 
+        dp: 3 // Already in %
+      },
+      measure_luminance: { 
+        dp: 4 // Lux value
+      },
+      measure_battery: { 
+        dp: 15 // Battery %
+      }
+    };
+  }
 
   /**
    * onSettings pour configuration device

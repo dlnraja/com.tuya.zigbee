@@ -203,14 +203,21 @@ class ClimateMonitorDevice extends BaseHybridDevice {
   
   /**
    * Setup standard Zigbee clusters
+   * 
+   * NOTE: BaseHybridDevice.registerAllCapabilitiesWithReporting() handles
+   * standard cluster registration automatically. This function is kept for
+   * Tuya-specific fallbacks only.
    */
   async setupStandardZigbee() {
-    this.log('[ZIGBEE] 🔧 Setting up standard Zigbee clusters...');
-    
-    await this.setupTemperatureSensor();
-    await this.setupHumiditySensor();
-    
+    this.log('[ZIGBEE] 🔧 Standard Zigbee clusters will be handled by BaseHybridDevice');
+    this.log('[ZIGBEE] 📋 BaseHybridDevice.registerAllCapabilitiesWithReporting() called automatically');
     this.log('[ZIGBEE] ✅ Standard Zigbee configured!');
+    
+    // BaseHybridDevice automatically registers:
+    // - measure_battery (cluster 0x0001 - powerConfiguration)
+    // - measure_temperature (cluster 0x0402 - temperatureMeasurement)  
+    // - measure_humidity (cluster 0x0405 - relativeHumidity)
+    // No need to duplicate here
   }
 
   
