@@ -10,6 +10,7 @@ const PerformanceOptimizer = require('./lib/performance/PerformanceOptimizer');
 const UnknownDeviceHandler = require('./lib/UnknownDeviceHandler');
 const SystemLogsCollector = require('./lib/SystemLogsCollector');
 const DeviceIdentificationDatabase = require('./lib/DeviceIdentificationDatabase');
+const DiagnosticAPI = require('./lib/diagnostics/DiagnosticAPI');
 
 class UniversalTuyaZigbeeApp extends Homey.App {
   _flowCardsRegistered = false;
@@ -21,6 +22,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
   unknownHandler = null;
   systemLogsCollector = null;
   identificationDatabase = null;
+  diagnosticAPI = null; // 🔬 For MCP/AI integration
 
 
   /**
@@ -95,6 +97,13 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     this.systemLogsCollector = new SystemLogsCollector(this.homey);
     this.log('✅ System Logs Collector initialized');
     
+    // 🔬 Initialize Diagnostic API for MCP/AI integration
+    this.diagnosticAPI = new DiagnosticAPI(this);
+    this.log('✅ Diagnostic API initialized (MCP-ready)');
+    
+    // Override console.log/error to capture in DiagnosticAPI
+    this._setupDiagnosticLogging();
+    
     // Register additional global flow cards
     this.registerFlowCards();
     
@@ -127,7 +136,8 @@ class UniversalTuyaZigbeeApp extends Homey.App {
         capabilities: this.capabilityManager ? this.capabilityManager.getStats() : {},
         analytics: this.analytics ? await this.analytics.getAnalyticsReport() : {},
         performance: this.optimizer ? this.optimizer.getStats() : {},
-        identificationDatabase: this.identificationDatabase ? this.identificationDatabase.getStats() : null
+        identificationDatabase: this.identificationDatabase ? this.identificationDatabase.getStats() : null,
+        diagnostics: this.diagnosticAPI ? this.diagnosticAPI.getFullReport(true) : null // 🔬 MCP/AI data
       };
       
       // Combine everything
@@ -155,6 +165,31 @@ class UniversalTuyaZigbeeApp extends Homey.App {
           `Drivers Scanned: ${appInfo.identificationDatabase.drivers || 0}`,
           `Last Update: ${appInfo.identificationDatabase.lastUpdate || 'Never'}`,
           ''
+        ].join('\n') : '',
+        appInfo.diagnostics ? [
+          '─'.repeat(80),
+          '🔬 DIAGNOSTIC API - MCP/AI INTEGRATION',
+          '─'.repeat(80),
+          `Total Logs: ${appInfo.diagnostics.diagnostics.summary.totalLogs || 0}`,
+          `Total Errors: ${appInfo.diagnostics.diagnostics.summary.totalErrors || 0}`,
+          `Total Devices: ${appInfo.diagnostics.diagnostics.summary.totalDevices || 0}`,
+          `Critical Errors: ${appInfo.diagnostics.diagnostics.summary.criticalErrors || 0}`,
+          `Recent Errors (5min): ${appInfo.diagnostics.diagnostics.summary.recentErrors || 0}`,
+          '',
+          appInfo.diagnostics.diagnostics.topErrors.length > 0 ? [
+            'Top Errors:',
+            ...appInfo.diagnostics.diagnostics.topErrors.slice(0, 5).map((e, i) => 
+              `  ${i + 1}. [${e.category}] ${e.message.substring(0, 80)} (${e.count}x)`
+            ),
+            ''
+          ].join('\n') : '',
+          appInfo.diagnostics.diagnostics.recommendations.length > 0 ? [
+            'AI Recommendations:',
+            ...appInfo.diagnostics.diagnostics.recommendations.slice(0, 3).map((r, i) => 
+              `  ${i + 1}. [${r.priority}] ${r.suggestedFix}`
+            ),
+            ''
+          ].join('\n') : ''
         ].join('\n') : '',
         systemLogsReport,
         '',
@@ -237,6 +272,71 @@ class UniversalTuyaZigbeeApp extends Homey.App {
       this.error('⚠️  Error registering flow cards:', err.message);
       // Don't crash the app if flow cards fail to register
     }
+  }
+  
+  /**
+   * Setup diagnostic logging to capture all logs for MCP/AI
+   */
+  _setupDiagnosticLogging() {
+    // Store original methods
+    const originalLog = this.log.bind(this);
+    const originalError = this.error.bind(this);
+    
+    // Override log method
+    this.log = (...args) => {
+      const message = args.join(' ');
+      
+      // Determine category and level
+      let category = 'APP';
+      let level = 'INFO';
+      
+      if (message.includes('ZIGBEE')) category = 'ZIGBEE';
+      else if (message.includes('CLUSTER')) category = 'CLUSTER';
+      else if (message.includes('DEVICE')) category = 'DEVICE';
+      else if (message.includes('FLOW')) category = 'FLOW';
+      else if (message.includes('BATTERY')) category = 'BATTERY';
+      
+      if (message.includes('⚠️') || message.includes('WARN')) level = 'WARN';
+      
+      // Add to diagnostic API
+      if (this.diagnosticAPI) {
+        this.diagnosticAPI.addLog(level, category, message);
+      }
+      
+      // Call original
+      originalLog(...args);
+    };
+    
+    // Override error method
+    this.error = (...args) => {
+      const message = args.join(' ');
+      
+      // Determine category
+      let category = 'APP';
+      if (message.includes('ZIGBEE')) category = 'ZIGBEE';
+      else if (message.includes('CLUSTER')) category = 'CLUSTER';
+      else if (message.includes('DEVICE')) category = 'DEVICE';
+      else if (message.includes('FLOW')) category = 'FLOW';
+      
+      // Add to diagnostic API
+      if (this.diagnosticAPI) {
+        this.diagnosticAPI.addLog('ERROR', category, message);
+      }
+      
+      // Call original
+      originalError(...args);
+    };
+  }
+  
+  /**
+   * Get diagnostic API report (accessible for MCP/AI)
+   * Can be called externally for real-time diagnostics
+   */
+  getDiagnosticReport() {
+    if (!this.diagnosticAPI) {
+      return { error: 'DiagnosticAPI not initialized' };
+    }
+    return this.diagnosticAPI.exportForAI();
   }
   
   /**
