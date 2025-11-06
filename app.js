@@ -198,38 +198,41 @@ class UniversalTuyaZigbeeApp extends Homey.App {
       //   });
       
       // ACTION: Identify device (blink/beep)
-      this.homey.flow.getActionCard('identify_device')
-        .registerRunListener(async (args) => {
-          if (typeof args.device.identify === 'function') {
-            await args.device.identify();
-          } else {
-            // Fallback: toggle device quickly
-            if (args.device.hasCapability('onoff')) {
-              const original = args.device.getCapabilityValue('onoff');
-              await args.device.setCapabilityValue('onoff', !original);
-              await new Promise(resolve => setTimeout(resolve, 500));
-              await args.device.setCapabilityValue('onoff', original);
-            }
-          }
-        });
+      // DISABLED: Flow card not defined in app.json - causes "Invalid Flow Card ID: identify_device" error
+      // this.homey.flow.getActionCard('identify_device')
+      //   .registerRunListener(async (args) => {
+      //     if (typeof args.device.identify === 'function') {
+      //       await args.device.identify();
+      //     } else {
+      //       // Fallback: toggle device quickly
+      //       if (args.device.hasCapability('onoff')) {
+      //         const original = args.device.getCapabilityValue('onoff');
+      //         await args.device.setCapabilityValue('onoff', !original);
+      //         await new Promise(resolve => setTimeout(resolve, 500));
+      //         await args.device.setCapabilityValue('onoff', original);
+      //       }
+      //     }
+      //   });
       
       // ACTION: Check firmware updates
-      this.homey.flow.getActionCard('check_firmware_update')
-        .registerRunListener(async (args) => {
-          if (typeof args.device.checkFirmwareUpdate === 'function') {
-            await args.device.checkFirmwareUpdate();
-          }
-        });
+      // DISABLED: Flow card not defined in app.json - would cause "Invalid Flow Card ID" error
+      // this.homey.flow.getActionCard('check_firmware_update')
+      //   .registerRunListener(async (args) => {
+      //     if (typeof args.device.checkFirmwareUpdate === 'function') {
+      //       await args.device.checkFirmwareUpdate();
+      //     }
+      //   });
       
       // ACTION: Reset device to defaults
-      this.homey.flow.getActionCard('reset_device')
-        .registerRunListener(async (args) => {
-          if (typeof args.device.resetDevice === 'function') {
-            await args.device.resetDevice();
-          }
-        });
+      // DISABLED: Flow card not defined in app.json - would cause "Invalid Flow Card ID" error
+      // this.homey.flow.getActionCard('reset_device')
+      //   .registerRunListener(async (args) => {
+      //     if (typeof args.device.resetDevice === 'function') {
+      //       await args.device.resetDevice();
+      //     }
+      //   });
 
-      this.log('✅ Homey Native Flow Cards registered (5 cards)');
+      this.log('✅ Homey Native Flow Cards registered (0 cards - all custom cards disabled to prevent errors)');
     } catch (err) {
       this.error('⚠️  Error registering flow cards:', err.message);
       // Don't crash the app if flow cards fail to register
