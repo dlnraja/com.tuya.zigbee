@@ -113,8 +113,9 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     this.suggestionEngine = new SuggestionEngine(this.homey, this.logBuffer);
     this.log('✅ SuggestionEngine initialized (non-destructive mode)');
     
-    // Override console.log/error to capture in DiagnosticAPI + LogBuffer
-    this._setupDiagnosticLogging();
+    // DISABLED: SDK3 doesn't allow overriding this.log (read-only property)
+    // this._setupDiagnosticLogging();
+    // DiagnosticAPI and LogBuffer still work via direct calls
     
     // Register additional global flow cards
     this.registerFlowCards();
