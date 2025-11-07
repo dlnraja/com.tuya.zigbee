@@ -95,6 +95,15 @@ jobs:
           
           cat build-report.txt
       
+      - name: 🔄 Commit build artifacts
+        run: |
+          echo "🔄 Committing build artifacts..."
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add -A
+          git diff --quiet && git diff --staged --quiet || git commit -m "chore: build artifacts [skip ci]"
+          echo "✅ Build artifacts committed"
+      
       - name: 🚀 Publish to Homey App Store
         env:
           HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
@@ -116,8 +125,8 @@ jobs:
           mkdir -p ~/.homey
           echo "{\"token\":\"$HOMEY_TOKEN\"}" > ~/.homey/config.json
           
-          # Publish
-          homey app publish
+          # Publish with force flag
+          homey app publish --force
           
           echo "✅ Published successfully to Homey App Store!"
           echo "Version ${{ steps.version.outputs.version }} is now available"
