@@ -11,6 +11,8 @@ const UnknownDeviceHandler = require('./lib/UnknownDeviceHandler');
 const SystemLogsCollector = require('./lib/SystemLogsCollector');
 const DeviceIdentificationDatabase = require('./lib/DeviceIdentificationDatabase');
 const DiagnosticAPI = require('./lib/diagnostics/DiagnosticAPI');
+const { LogBuffer } = require('./lib/utils/LogBuffer');
+const SuggestionEngine = require('./lib/smartadapt/SuggestionEngine');
 
 class UniversalTuyaZigbeeApp extends Homey.App {
   _flowCardsRegistered = false;
@@ -23,6 +25,8 @@ class UniversalTuyaZigbeeApp extends Homey.App {
   systemLogsCollector = null;
   identificationDatabase = null;
   diagnosticAPI = null; // 🔬 For MCP/AI integration
+  logBuffer = null; // 📝 MCP-accessible log buffer
+  suggestionEngine = null; // 🤖 Non-destructive Smart-Adapt
 
 
   /**
@@ -101,7 +105,15 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     this.diagnosticAPI = new DiagnosticAPI(this);
     this.log('✅ Diagnostic API initialized (MCP-ready)');
     
-    // Override console.log/error to capture in DiagnosticAPI
+    // 📝 Initialize LogBuffer for MCP-accessible logs
+    this.logBuffer = new LogBuffer(this.homey);
+    this.log('✅ LogBuffer initialized (accessible via ManagerSettings)');
+    
+    // 🤖 Initialize SuggestionEngine for non-destructive Smart-Adapt
+    this.suggestionEngine = new SuggestionEngine(this.homey, this.logBuffer);
+    this.log('✅ SuggestionEngine initialized (non-destructive mode)');
+    
+    // Override console.log/error to capture in DiagnosticAPI + LogBuffer
     this._setupDiagnosticLogging();
     
     // Register additional global flow cards
@@ -303,6 +315,13 @@ class UniversalTuyaZigbeeApp extends Homey.App {
         this.diagnosticAPI.addLog(level, category, message);
       }
       
+      // Add to LogBuffer (for MCP access via ManagerSettings)
+      if (this.logBuffer) {
+        this.logBuffer.push(level, category, message).catch(() => {
+          // Ignore errors to prevent crash
+        });
+      }
+      
       // Call original
       originalLog(...args);
     };
@@ -323,6 +342,13 @@ class UniversalTuyaZigbeeApp extends Homey.App {
         this.diagnosticAPI.addLog('ERROR', category, message);
       }
       
+      // Add to LogBuffer (for MCP access via ManagerSettings)
+      if (this.logBuffer) {
+        this.logBuffer.push('ERROR', category, message).catch(() => {
+          // Ignore errors to prevent crash
+        });
+      }
+      
       // Call original
       originalError(...args);
     };
@@ -337,6 +363,47 @@ class UniversalTuyaZigbeeApp extends Homey.App {
       return { error: 'DiagnosticAPI not initialized' };
     }
     return this.diagnosticAPI.exportForAI();
+  }
+  
+  /**
+   * Get LogBuffer logs (MCP-accessible via ManagerSettings)
+   * @returns {Promise<Object>} MCP-formatted log export
+   */
+  async getMCPLogs() {
+    if (!this.logBuffer) {
+      return { error: 'LogBuffer not initialized' };
+    }
+    return await this.logBuffer.exportForMCP();
+  }
+  
+  /**
+   * Get Smart-Adapt suggestions (non-destructive)
+   * @returns {Object} MCP-formatted suggestions export
+   */
+  getMCPSuggestions() {
+    if (!this.suggestionEngine) {
+      return { error: 'SuggestionEngine not initialized' };
+    }
+    return this.suggestionEngine.exportForMCP();
+  }
+  
+  /**
+   * Get complete MCP diagnostic package
+   * @returns {Promise<Object>} All diagnostic data for MCP/AI
+   */
+  async getCompleteMCPDiagnostics() {
+    return {
+      version: '1.0.0',
+      exported: new Date().toISOString(),
+      diagnosticAPI: this.getDiagnosticReport(),
+      logBuffer: await this.getMCPLogs(),
+      suggestions: this.getMCPSuggestions(),
+      mcp: {
+        protocol: 'homey-universal-tuya-zigbee',
+        readable: true,
+        settingsKey: 'debug_log_buffer'
+      }
+    };
   }
   
   /**
