@@ -95,41 +95,17 @@ jobs:
           
           cat build-report.txt
       
-      - name: 🔄 Commit build artifacts
-        run: |
-          echo "🔄 Committing build artifacts..."
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          git add -A
-          git diff --quiet && git diff --staged --quiet || git commit -m "chore: build artifacts [skip ci]"
-          echo "✅ Build artifacts committed"
+      - name: 🚀 Publish to Homey App Store (Official Action)
+        uses: athombv/github-action-homey-app-publish@master
+        id: publish
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
       
-      - name: 🚀 Publish to Homey App Store
-        env:
-          HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
+      - name: 📝 Publication Success
         run: |
-          echo "🚀 Publishing to Homey App Store..."
-          
-          if [ -z "$HOMEY_TOKEN" ]; then
-            echo "❌ ERROR: HOMEY_TOKEN secret not set!"
-            echo "Please add your Homey CLI token as a GitHub secret named HOMEY_TOKEN"
-            echo ""
-            echo "To get your token:"
-            echo "1. Run: homey login"
-            echo "2. Run: homey settings token get"
-            echo "3. Add the token as HOMEY_TOKEN secret in GitHub repo settings"
-            exit 1
-          fi
-          
-          # Configure Homey CLI with token
-          mkdir -p ~/.homey
-          echo "{\"token\":\"$HOMEY_TOKEN\"}" > ~/.homey/config.json
-          
-          # Publish with force flag
-          homey app publish --force
-          
           echo "✅ Published successfully to Homey App Store!"
           echo "Version ${{ steps.version.outputs.version }} is now available"
+          echo "Manage URL: ${{ steps.publish.outputs.url }}"
       
       - name: 📝 Create GitHub Release
         uses: softprops/action-gh-release@v1
