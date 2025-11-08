@@ -318,4 +318,164 @@ await this.zclNode.endpoints[1].clusters.basic.readAttributes(...);
 
 ---
 
+## **DEC-009: Archiving Mega-Prompt V3 (Device-Specific Fixtures & Testing)**
+
+**Date:** Nov 8, 2025 12:45am  
+**Decision:** Archive user's device-specific analysis and testing framework  
+**Status:** ✅ Decided
+
+### **Context:**
+
+User provided comprehensive analysis of 6 specific nodes:
+1. Switch 1gang (TS0002) - powerSource validation
+2. Presence Sensor Radar (TS0601) - mapping fallback needed
+3. SOS Emergency Button (TS0215A) - alarm capabilities
+4. Climate Monitor (TS0601) - battery KPI missing
+5. 4-Buttons Controller (TS0044) - multi-endpoint
+6. 3-Buttons Controller (TS0043) - multi-endpoint
+
+**Proposed solutions:**
+- `config/device_overrides.json` - Model-specific configuration
+- Enhanced `lib/device_helpers.js` - Override loading
+- Test fixtures for all 6 devices
+- `tests/run_fixtures_tests.js` - Fixture test runner
+- `scripts/create_issue.sh` - Auto-issue creation
+- TS0601 presence fallback with re-interview
+
+### **Reason for Archiving:**
+
+**v4.9.308 published 20 minutes ago:**
+- Just released (12:30am)
+- Zero user feedback yet
+- Need 24-48h validation
+- Too risky to add more changes
+
+**Problems already addressed:**
+- ✅ TS0601 detection (Tuya DP bypass)
+- ✅ Multi-gang detection (TS0002, TS0003, TS0004)
+- ✅ Protected drivers (prevents destructive adapt)
+- ✅ Safety checks (sensor→switch prevention)
+
+**Proposed features are enhancements:**
+- Config overrides = nice-to-have
+- Fixture tests = validation tool (good for later)
+- Auto-issue = over-engineering (not critical)
+- Presence fallback = already protected by v4.9.308
+
+### **Decision:**
+
+1. **ARCHIVE** complete mega-prompt in `docs/MEGA_PROMPT_V3_FIXTURES_TESTING.md`
+2. **WAIT** for v4.9.308 feedback (24-48h)
+3. **EVALUATE** need for overrides config based on feedback
+4. **IMPLEMENT** gradually if validated:
+   - Priority 1: Config overrides (safe, no driver changes)
+   - Priority 2: Fixture tests (validation only)
+   - Priority 3: Driver integration (after validation)
+
+### **Implementation Priority (IF NEEDED):**
+
+**Priority 1: Configuration & Tests (safe, no production impact)**
+- ⏳ `config/device_overrides.json`
+- ⏳ `.artifacts/tests/fixtures/*.json` (6 devices)
+- ⏳ `tests/run_fixtures_tests.js`
+- ⏳ `scripts/create_issue.sh`
+
+**Priority 2: Helper Integration (after v4.9.308 validation)**
+- ⏳ `getOverrideForModel()` in device_helpers
+- ⏳ Blacklist logic in `safeAddCapability()`
+- ⏳ Load overrides in driver init
+
+**Priority 3: Advanced Features (Phase 3)**
+- ⏳ TS0601 re-interview logic
+- ⏳ Presence fallback with retry
+- ⏳ Auto-issue creation on failure
+- ⏳ CI integration for fixture tests
+
+### **Why These Features Are Good But Not Urgent:**
+
+**1. Config Overrides:**
+- Pro: Explicit model-specific rules
+- Pro: Easy to maintain
+- Con: v4.9.308 already protects TS0601
+- Con: Can wait until proven need
+
+**2. Fixture Tests:**
+- Pro: Good validation tool
+- Pro: Helps catch regressions
+- Con: No production impact
+- Con: Can be added anytime
+
+**3. TS0601 Presence Fallback:**
+- Pro: Handles edge cases
+- Pro: Re-interview on failure
+- Con: Already protected by Tuya DP detection
+- Con: Complex logic (needs careful testing)
+
+**4. Auto-Issue Creation:**
+- Pro: Automatic bug tracking
+- Pro: Reduces manual work
+- Con: Over-engineering at this stage
+- Con: May create spam issues
+
+### **Success Criteria for Implementation:**
+
+**v4.9.308 must be validated first:**
+- ✅ No TS0601 devices broken
+- ✅ Multi-gang switches detected
+- ✅ Battery KPI reporting
+- ✅ No new crashes
+- ✅ User feedback positive
+
+**Then Priority 1 can be added if:**
+- ✅ Specific model issues identified
+- ✅ Override config would help
+- ✅ Test fixtures would catch bugs
+- ✅ Simple, non-invasive changes
+
+**Priority 2-3 only if:**
+- ✅ Priority 1 validated
+- ✅ Clear need demonstrated
+- ✅ Careful testing completed
+- ✅ No regressions
+
+### **Alternatives Considered:**
+
+**Option A: Implement everything now** ❌
+- Risk: Too many changes on top of v4.9.308
+- Risk: Cannot isolate bugs
+- Risk: User confusion
+
+**Option B: Implement Priority 1 only (config + fixtures)** ⏳
+- Pro: Safe (no driver changes)
+- Pro: Useful for validation
+- Con: Still too soon (v4.9.308 not validated)
+- Decision: Wait 24h, then reconsider
+
+**Option C: Archive and implement after validation** ✅ CHOSEN
+- Pro: Safe approach
+- Pro: Based on real feedback
+- Pro: Gradual rollout
+- Con: Takes longer
+- Decision: This is the right approach
+
+### **Timeline:**
+
+- **Nov 8, 12:45am:** Mega-Prompt V3 archived
+- **Nov 9-10:** Wait for v4.9.308 feedback
+- **Nov 10:** Decision point
+  - ✅ If OK: Consider Priority 1 (config + fixtures)
+  - ⚠️ If issues: Targeted fix first
+- **Nov 11+:** Priority 2-3 if validated and needed
+
+### **References:**
+
+- Mega-Prompt V3: `docs/MEGA_PROMPT_V3_FIXTURES_TESTING.md`
+- User message: Nov 8, 2025 12:42am
+- 6 specific nodes analyzed
+- TS0601 presence mapping (primary concern)
+- Config overrides proposal
+- Test fixtures for validation
+
+---
+
 **END OF DECISION LOG**
