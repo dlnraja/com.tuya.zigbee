@@ -100,6 +100,8 @@ jobs:
         id: publish
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
+          # Note: Builds are published to Test channel by default
+          # Manual promotion to Live required in Homey Developer dashboard
       
       - name: 📝 Publication Success
         run: |
