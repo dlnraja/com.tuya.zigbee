@@ -13,6 +13,7 @@ const DeviceIdentificationDatabase = require('./lib/DeviceIdentificationDatabase
 const DiagnosticAPI = require('./lib/diagnostics/DiagnosticAPI');
 const { LogBuffer } = require('./lib/utils/LogBuffer');
 const SuggestionEngine = require('./lib/smartadapt/SuggestionEngine');
+const { processMigrationQueue } = require('./lib/utils/migration-queue'); // ✅ FIX CRITIQUE
 
 class UniversalTuyaZigbeeApp extends Homey.App {
   _flowCardsRegistered = false;
@@ -129,6 +130,27 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     // Log capability stats
     const stats = this.capabilityManager.getStats();
     this.log(`📊 Capabilities managed: ${stats.created}`);
+    
+    // ✅ FIX CRITIQUE: Worker migration queue (60s delay)
+    setTimeout(() => {
+      this.processMigrations().catch(err => {
+        this.error('[MIGRATION-WORKER] Error:', err.message);
+      });
+    }, 60000); // Wait 60s for Zigbee to be ready
+  }
+  
+  /**
+   * Process migration queue worker
+   * ✅ FIX: Exécute les migrations en queue de manière sécurisée
+   */
+  async processMigrations() {
+    try {
+      this.log('[MIGRATION-WORKER] 🔄 Starting...');
+      const processed = await processMigrationQueue(this.homey);
+      this.log(`[MIGRATION-WORKER] ✅ Processed ${processed} migrations`);
+    } catch (err) {
+      this.error('[MIGRATION-WORKER] ❌ Error:', err.message);
+    }
   }
   
   /**
