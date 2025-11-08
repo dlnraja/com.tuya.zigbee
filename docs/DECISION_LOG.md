@@ -478,4 +478,268 @@ User provided comprehensive analysis of 6 specific nodes:
 
 ---
 
+## **DEC-010: Archiving Mega-Prompt V4 (Enriched Endpoint/Cluster Detection)**
+
+**Date:** Nov 8, 2025 12:55am  
+**Decision:** Archive comprehensive endpoint/cluster detection improvements  
+**Status:** ✅ Decided
+
+### **Context:**
+
+User feedback: "je pense que la recuperation et la detection des endpoints et clusters de tous les peripheriques sont incompletes"
+
+Translation: "I think that the recovery and detection of endpoints and clusters for all devices are incomplete"
+
+**Current limitations (lines 179-206):**
+- ❌ Only reads cluster names (Object.keys)
+- ❌ Only reads attribute names (Object.keys)
+- ❌ No distinction between server vs client clusters
+- ❌ No attribute values
+- ❌ No command listing
+- ❌ No node descriptor
+- ❌ Power source guessed (not read)
+
+**Proposed improvements:**
+- ✅ Read node descriptor (type, power source, receiverOnWhenIdle)
+- ✅ Distinguish server (inputClusters) vs client (outputClusters)
+- ✅ Read selective attribute values
+- ✅ List available commands
+- ✅ Read attribute metadata (reportable, readable, writable)
+- ✅ Detect bindings
+- ✅ Comprehensive error handling
+
+### **Research Conducted:**
+
+**SDK3 Documentation:**
+- https://apps.developer.homey.app/wireless/zigbee
+- Server clusters: device implements attributes
+- Client clusters: device sends commands
+- Best practice: Always catch promises
+- Use `isFirstInit()` to avoid repeated reads
+
+**Key findings:**
+```javascript
+// Correct way to read attributes
+const value = await zclNode.endpoints[1].clusters.onOff
+  .readAttributes(['onOff'])
+  .catch(err => this.error(err));
+
+// Node descriptor contains power source
+nodeDescriptor.powerSource === 'mains' // AC device
+nodeDescriptor.powerSource === 'battery' // Battery device
+```
+
+### **Benefits of Improvements:**
+
+**1. Accurate Power Source Detection:**
+- ✅ Read from node descriptor (not guessed)
+- ✅ Prevents adding measure_battery to AC devices
+- ✅ 100% accurate
+
+**2. Button/Remote vs Switch:**
+- ✅ Client-only onOff = button/remote (sends commands)
+- ✅ Server onOff = switch/outlet (receives commands)
+- ✅ Eliminates false positives
+
+**3. TS0601 Tuya DP Detection:**
+- ✅ Node descriptor + limited clusters = Tuya DP
+- ✅ Better detection logic
+- ✅ Combined with model ID check
+
+**4. Multi-Gang Detection:**
+- ✅ Count inputClusters.includes('onOff') per endpoint
+- ✅ More accurate than just endpoint count
+- ✅ Distinguishes control vs data endpoints
+
+**5. Attribute Metadata:**
+- ✅ Know which attributes are reportable
+- ✅ Set up correct listeners
+- ✅ Avoid non-reportable attributes
+
+### **Reason for Archiving:**
+
+**v4.9.308 published 40 minutes ago:**
+- Just released (12:30am)
+- Zero user feedback yet
+- Need 24-48h validation
+- Too risky to add more changes
+
+**Current detection already works:**
+- ✅ Tuya DP devices protected (bypass cluster analysis)
+- ✅ Multi-gang switches detected (endpoint count)
+- ✅ Protected drivers (whitelist)
+- ✅ Safety checks in place
+
+**Improvements are enhancements, not critical fixes:**
+- Enriched data = better decisions
+- More accurate detection = fewer errors
+- BUT: Not urgent (current system works)
+
+### **Decision:**
+
+1. **ARCHIVE** complete improvements in `docs/MEGA_PROMPT_V4_ENRICHED_DETECTION.md`
+2. **WAIT** for v4.9.308 feedback (24-48h)
+3. **EVALUATE** if enriched detection would solve remaining issues
+4. **IMPLEMENT** if validated and beneficial
+
+### **Implementation Plan (IF NEEDED):**
+
+**Priority 1: Core Improvements**
+- ⏳ Replace `collectDeviceInfo()` method
+- ⏳ Add node descriptor reading
+- ⏳ Add server/client distinction
+- ⏳ Add selective attribute reading
+- ⏳ Add error handling
+
+**Priority 2: Use Improved Data**
+- ⏳ Update `analyzeClusters()` logic
+- ⏳ Update power source detection
+- ⏳ Update button/remote detection
+- ⏳ Update multi-gang detection
+
+**Priority 3: Advanced Features**
+- ⏳ Binding detection
+- ⏳ Attribute metadata usage
+- ⏳ Command availability checks
+- ⏳ Reportable attribute subscription
+
+### **Why These Improvements Are Good:**
+
+**1. SDK3 Compliant:**
+- Uses official APIs
+- Follows best practices
+- Based on Homey documentation
+- Compatible with zigbee-clusters library
+
+**2. Comprehensive:**
+- Node descriptor (device type, power source)
+- Input vs output clusters (server vs client)
+- Attribute values (current state)
+- Command listing (available actions)
+- Binding detection (relationships)
+
+**3. Backward Compatible:**
+- Old `info.clusters` still populated
+- New `info.endpoints[].clusterDetails` adds data
+- Gradual adoption possible
+- No breaking changes
+
+**4. Well Error-Handled:**
+- All reads wrapped in try-catch
+- Silent fails for non-critical data
+- Continues processing on errors
+- Logs failures for debugging
+
+**5. Performance-Conscious:**
+- Selective attribute reading (only important ones)
+- Skip large arrays/structures
+- Can use cached data (isFirstInit)
+- Non-blocking errors
+
+### **Why Not Implement Now:**
+
+**1. Timing:**
+- v4.9.308 published 40 min ago
+- Need validation first
+- 4 versions in 3 hours already
+
+**2. Current System Works:**
+- Tuya DP bypass solves main issue
+- Multi-gang detection improved
+- Protected drivers prevent errors
+- Safety checks in place
+
+**3. Complexity:**
+- Large code change (~200 lines)
+- Needs thorough testing
+- Affects core detection logic
+- Risk of regressions
+
+**4. User Feedback Priority:**
+- Need to confirm v4.9.308 solves problems
+- Then evaluate if more enrichment needed
+- Don't over-engineer before validation
+
+### **Success Criteria for Implementation:**
+
+**v4.9.308 must be validated:**
+- ✅ Tuya DP devices work correctly
+- ✅ Multi-gang switches detected
+- ✅ Battery KPIs report
+- ✅ No false positives (sensor→switch)
+- ✅ User feedback positive
+
+**Then enriched detection beneficial if:**
+- ⚠️ Power source still incorrectly detected
+- ⚠️ Button/remote confusion remains
+- ⚠️ Attribute values needed for decisions
+- ⚠️ Current detection insufficient
+
+**Implementation only if:**
+- ✅ Clear benefit demonstrated
+- ✅ Testing plan prepared
+- ✅ Fixtures created
+- ✅ Gradual rollout planned
+
+### **Alternatives Considered:**
+
+**Option A: Implement full enrichment now** ❌
+- Risk: Too complex on top of v4.9.308
+- Risk: Cannot isolate bugs
+- Risk: Performance impact unknown
+
+**Option B: Implement node descriptor only** ⏳
+- Pro: Small change (~20 lines)
+- Pro: High value (power source)
+- Con: Still too soon (wait for v4.9.308)
+- Decision: Could reconsider after validation
+
+**Option C: Archive and implement after validation** ✅ CHOSEN
+- Pro: Safe approach
+- Pro: Based on real needs
+- Pro: Thoroughly tested first
+- Con: Takes longer
+- Decision: Correct approach given timeline
+
+### **Testing Approach:**
+
+**When implemented, test with:**
+
+1. **Known Devices:**
+   - TS0601 (Tuya DP) → nodeDescriptor.type = 'endDevice'
+   - TS0002 (2-gang) → 2 endpoints with inputClusters
+   - Button/remote → client clusters only
+   - AC switch → nodeDescriptor.powerSource = 'mains'
+   - Battery sensor → nodeDescriptor.powerSource = 'battery'
+
+2. **Fixtures:**
+   - Create test fixtures with expected output
+   - Validate enriched data structure
+   - Compare before/after logs
+
+3. **Performance:**
+   - Measure init time increase
+   - Verify no blocking reads
+   - Check error handling works
+
+### **Timeline:**
+
+- **Nov 8, 12:55am:** Mega-Prompt V4 archived
+- **Nov 9-10:** Wait for v4.9.308 feedback
+- **Nov 10:** Decision point
+  - ✅ If OK and beneficial: Implement Priority 1
+  - ⚠️ If issues: Fix first
+  - ❌ If not needed: Keep archived
+- **Nov 11+:** Priority 2-3 if validated
+
+### **References:**
+
+- Mega-Prompt V4: `docs/MEGA_PROMPT_V4_ENRICHED_DETECTION.md`
+- User message: "recuperation et detection des endpoints et clusters incompletes"
+- Current code: `lib/SmartDriverAdaptation.js` lines 179-206
+- SDK3 docs: https://apps.developer.homey.app/wireless/zigbee
+- homey-zigbeedriver: https://athombv.github.io/node-homey-zigbeedriver/
+
+---
+
 **END OF DECISION LOG**
