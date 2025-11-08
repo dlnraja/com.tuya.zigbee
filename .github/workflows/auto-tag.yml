@@ -1,0 +1,149 @@
+name: Auto Tag on Version Change
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - 'README*'
+      - 'CHANGELOG*'
+      - 'LICENSE'
+      - '.github/ISSUE_TEMPLATE/**'
+      - '.github/PULL_REQUEST_TEMPLATE/**'
+
+jobs:
+  auto-tag:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: 📊 Get version from app.json
+        id: version
+        run: |
+          VERSION=$(node -p "require('./app.json').version")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "📌 Current version in app.json: $VERSION"
+      
+      - name: 🔍 Check if tag already exists
+        id: check_tag
+        run: |
+          TAG="v${{ steps.version.outputs.version }}"
+          
+          if git rev-parse "$TAG" >/dev/null 2>&1; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "⚠️  Tag $TAG already exists - skipping"
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+            echo "✅ Tag $TAG does not exist - will create"
+          fi
+      
+      - name: 🔍 Check if only docs changed
+        id: check_docs
+        run: |
+          # Get changed files in last commit
+          CHANGED_FILES=$(git diff-tree --no-commit-id --name-only -r HEAD)
+          
+          echo "📝 Changed files:"
+          echo "$CHANGED_FILES"
+          
+          # Check if all changes are docs
+          DOCS_ONLY=true
+          while IFS= read -r file; do
+            # Skip if file matches docs patterns
+            if [[ "$file" =~ \.(md|txt)$ ]] || [[ "$file" =~ ^docs/ ]] || [[ "$file" =~ ^README ]] || [[ "$file" =~ ^CHANGELOG ]]; then
+              echo "  📄 Doc file: $file"
+            else
+              echo "  📦 Code file: $file"
+              DOCS_ONLY=false
+            fi
+          done <<< "$CHANGED_FILES"
+          
+          if [ "$DOCS_ONLY" = true ]; then
+            echo "docs_only=true" >> $GITHUB_OUTPUT
+            echo "⚠️  Only documentation changed - skipping tag"
+          else
+            echo "docs_only=false" >> $GITHUB_OUTPUT
+            echo "✅ Code changes detected - will create tag"
+          fi
+      
+      - name: 🔍 Check if version changed
+        id: version_changed
+        run: |
+          # Get previous version from previous commit
+          git checkout HEAD~1 -- app.json 2>/dev/null || true
+          if [ -f app.json ]; then
+            PREV_VERSION=$(node -p "require('./app.json').version")
+            git checkout HEAD -- app.json
+            
+            CURR_VERSION="${{ steps.version.outputs.version }}"
+            
+            echo "Previous version: $PREV_VERSION"
+            echo "Current version: $CURR_VERSION"
+            
+            if [ "$PREV_VERSION" = "$CURR_VERSION" ]; then
+              echo "changed=false" >> $GITHUB_OUTPUT
+              echo "⚠️  Version unchanged - skipping tag"
+            else
+              echo "changed=true" >> $GITHUB_OUTPUT
+              echo "✅ Version changed: $PREV_VERSION → $CURR_VERSION"
+            fi
+          else
+            # First commit or app.json didn't exist before
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "✅ First version or new app.json"
+          fi
+      
+      - name: 🏷️ Create and push tag
+        if: steps.check_tag.outputs.exists == 'false' && steps.check_docs.outputs.docs_only == 'false' && steps.version_changed.outputs.changed == 'true'
+        run: |
+          TAG="v${{ steps.version.outputs.version }}"
+          
+          # Get commit message for tag annotation
+          COMMIT_MSG=$(git log -1 --pretty=%B)
+          
+          # Configure git
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          
+          # Create annotated tag
+          git tag -a "$TAG" -m "Auto-tagged version ${{ steps.version.outputs.version }}" -m "" -m "Commit: $COMMIT_MSG"
+          
+          # Push tag
+          git push origin "$TAG"
+          
+          echo "✅ Tag $TAG created and pushed!"
+          echo "🚀 This will trigger the Homey App Store publish workflow"
+      
+      - name: 📝 Summary
+        run: |
+          echo "📊 Auto-Tag Summary:"
+          echo "===================="
+          echo ""
+          echo "Version: ${{ steps.version.outputs.version }}"
+          echo "Tag exists: ${{ steps.check_tag.outputs.exists }}"
+          echo "Docs only: ${{ steps.check_docs.outputs.docs_only }}"
+          echo "Version changed: ${{ steps.version_changed.outputs.changed }}"
+          echo ""
+          
+          if [ "${{ steps.check_tag.outputs.exists }}" = "true" ]; then
+            echo "⏭️  Skipped: Tag already exists"
+          elif [ "${{ steps.check_docs.outputs.docs_only }}" = "true" ]; then
+            echo "⏭️  Skipped: Only documentation changed"
+          elif [ "${{ steps.version_changed.outputs.changed }}" = "false" ]; then
+            echo "⏭️  Skipped: Version unchanged"
+          else
+            echo "✅ Tag v${{ steps.version.outputs.version }} created and pushed!"
+            echo "🚀 Homey publish workflow triggered"
+          fi
