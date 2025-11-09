@@ -1,5 +1,108 @@
 # Changelog
 
+## [4.9.325] - 2025-11-09
+
+### ENHANCEMENT: Centralized Driver Mapping Database
+
+**New Feature: driver-mapping-database.json**
+
+Created a centralized JSON database for all device mappings, eliminating scattered mappings across multiple files. This improves maintainability, consistency, and makes it easier to add new devices.
+
+**Structure:**
+```json
+{
+  "devices": {
+    "TS0601": {
+      "manufacturers": {
+        "_TZE284_vvmbj46n": {
+          "name": "Climate Monitor",
+          "driver": "sensor_climate_tuya",
+          "dps": { "1": {...}, "2": {...}, "15": {...} }
+        }
+      }
+    }
+  },
+  "parsers": { "divide_by_10": {...}, "boolean": {...} },
+  "driver_rules": { "usb_outlet": { "deprecated": true, "mapTo": {...} } }
+}
+```
+
+**Integration:**
+
+1. **DriverMappingLoader (NEW)**
+   - `lib/utils/DriverMappingLoader.js` - Singleton loader for database
+   - Methods:
+     - `getDeviceInfo(model, manufacturer)` - Get device info
+     - `getDPMappings(model, manufacturer)` - Get DP mappings
+     - `getRecommendedDriver(model, manufacturer)` - Get driver
+     - `parseValue(parser, value)` - Parse DP values
+     - `checkDeprecated(driverType, subType)` - Check deprecation
+     - `searchDevices(query)` - Search database
+     - `getStats()` - Database statistics
+
+2. **TuyaEF00Manager Integration**
+   - Loads device-specific DP mappings from database
+   - Auto-requests DPs based on database (not hardcoded list)
+   - Uses database parsers for DP value conversion
+   - Logs device name and recommended driver at startup
+
+3. **SmartDriverAdaptation Integration**
+   - Checks database during device info collection
+   - Logs database recommendations
+   - Detects deprecated drivers and suggests replacements
+   - Falls back to cluster detection if device not in database
+
+**Current Database Coverage:**
+- TS0601 Tuya DP sensors (3 devices):
+  - Climate Monitor (_TZE284_vvmbj46n)
+  - Presence Radar (_TZE200_rhgsbacq)
+  - Soil Tester (_TZE284_oitavov2)
+- TS0002 2-gang switch (_TZ3000_h1ipgkwn)
+- TS0043 3-button remote (_TZ3000_bczr4e10)
+- TS0044 4-button remote (_TZ3000_bgtzm4ny)
+- TS0215A SOS button (_TZ3000_0dumfk2z)
+
+**Parsers Defined:**
+- `identity` - Return as-is
+- `boolean` - Convert to bool
+- `divide_by_10` - Temperature, humidity
+- `divide_by_100` - Distance (cm → m)
+- `divide_by_1000` - Current (mA → A)
+
+**Driver Rules:**
+- `usb_outlet` marked as deprecated → maps to `switch_X_gang`
+- `button_wireless` forbidden capabilities: onoff, dim
+
+**Common Issues Documented:**
+- battery_not_showing (fixed in v4.9.322)
+- ts0601_no_data (fixed in v4.9.323)
+- usb_outlet_wrong_driver (fixed in v4.9.324)
+- migration_queue_crash (fixed in v4.9.322)
+
+**Benefits:**
+- ✅ Single source of truth for device mappings
+- ✅ Easy to add new devices (just edit JSON)
+- ✅ Consistent DP parsing across all devices
+- ✅ Deprecation tracking and automatic mapping
+- ✅ Searchable device database
+- ✅ Better diagnostic logging
+
+**Files Added:**
+- driver-mapping-database.json (305 lines)
+- lib/utils/DriverMappingLoader.js (259 lines)
+
+**Files Modified:**
+- lib/tuya/TuyaEF00Manager.js - Database integration
+- lib/SmartDriverAdaptation.js - Database lookups
+
+**Next Steps:**
+- Expand database with more TS0601 manufacturers
+- Add more device models (TS0011, TS0012, etc.)
+- Community contributions to database
+- Auto-generation from Zigbee2MQTT database
+
+---
+
 ## [4.9.324] - 2025-11-09
 
 ### CRITICAL FIX: Invalid usb_outlet Driver
