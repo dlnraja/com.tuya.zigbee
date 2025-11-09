@@ -1,0 +1,156 @@
+name: CI/CD Pipeline
+
+'on':
+  push:
+    branches: [ master, develop ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  
+  # Job 1: Lint & Validate
+  lint:
+    name: Lint & Validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Run ESLint
+        run: npm run lint || echo "Linting issues found"
+        continue-on-error: true
+        
+      - name: Validate app structure
+        run: npm run validate
+  
+  # Job 2: Unit Tests
+  test:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Run tests
+        run: npm test
+        
+      - name: Generate coverage report
+        run: npm run test:coverage || echo "Coverage generation failed"
+        continue-on-error: true
+        
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3
+        if: success()
+        with:
+          files: ./coverage/lcov.info
+          fail_ci_if_error: false
+  
+  # Job 3: Build Documentation
+  build-docs:
+    name: Build Documentation
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Generate drivers index
+        run: npm run build-docs
+        
+      - name: Upload docs artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: docs
+          path: docs/
+          retention-days: 30
+  
+  # Job 4: Deploy GitHub Pages
+  deploy-pages:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: build-docs
+    if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Download docs artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: docs
+          path: docs/
+          
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          publish_branch: gh-pages
+          cname: tuya-zigbee.dlnraja.com
+  
+  # Job 5: Validate Publish
+  validate-publish:
+    name: Validate for Publishing
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Validate for publish
+        run: npm run validate:publish
+  
+  # Job 6: Slack Notification (optional)
+  notify:
+    name: Notify
+    runs-on: ubuntu-latest
+    needs: [lint, test, build-docs]
+    if: always()
+    steps:
+      - name: Success notification
+        if: ${{ success() }}
+        run: echo "✅ CI/CD pipeline completed successfully"
+        
+      - name: Failure notification
+        if: ${{ failure() }}
+        run: echo "❌ CI/CD pipeline failed"
