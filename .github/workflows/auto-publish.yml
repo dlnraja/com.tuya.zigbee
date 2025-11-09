@@ -1,0 +1,143 @@
+name: 🚀 Auto-Publish on Push
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '**.md'
+      - '.github/**'
+      - 'archive/**'
+      - 'tools/**'
+      - 'docs/**'
+
+jobs:
+  auto-validate-and-publish:
+    name: 🚀 Auto Validate & Publish
+    runs-on: ubuntu-latest
+    
+    # Skip if commit message contains [skip ci] or [no publish]
+    if: |
+      !contains(github.event.head_commit.message, '[skip ci]') &&
+      !contains(github.event.head_commit.message, '[no publish]')
+    
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: 📦 Install dependencies
+        run: npm ci --production
+      
+      - name: 🔍 Get version
+        id: version
+        run: |
+          VERSION=$(node -p "require('./app.json').version")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "📌 Version detected: $VERSION"
+      
+      - name: ✅ Validate app (Athom official)
+        id: validate
+        uses: athombv/github-action-homey-app-validate@master
+        with:
+          level: publish
+        continue-on-error: true
+      
+      - name: 📊 Check validation result
+        id: check_validation
+        run: |
+          if [ "${{ steps.validate.outcome }}" == "success" ]; then
+            echo "✅ Validation passed - proceeding to publish"
+            echo "should_publish=true" >> $GITHUB_OUTPUT
+          else
+            echo "❌ Validation failed - skipping publish"
+            echo "⚠️  Fix validation errors and push again"
+            echo "should_publish=false" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+      
+      - name: 🏗️ Build app
+        if: steps.check_validation.outputs.should_publish == 'true'
+        run: |
+          npm install -g homey
+          homey app build --skipNpmInstall
+          echo "✅ Build complete"
+      
+      - name: 🚀 Publish to Homey App Store (TEST channel)
+        if: steps.check_validation.outputs.should_publish == 'true'
+        id: publish
+        uses: athombv/github-action-homey-app-publish@master
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+      
+      - name: 📝 Create GitHub Release
+        if: steps.check_validation.outputs.should_publish == 'true'
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ steps.version.outputs.version }}
+          name: Release v${{ steps.version.outputs.version }}
+          body: |
+            # 🎉 Auto-Published v${{ steps.version.outputs.version }}
+            
+            **Commit:** ${{ github.sha }}
+            **Author:** ${{ github.event.head_commit.author.name }}
+            **Date:** ${{ github.event.head_commit.timestamp }}
+            **Channel:** Test
+            
+            ## Commit Message
+            ${{ github.event.head_commit.message }}
+            
+            ## What's Changed
+            See CHANGELOG.md for details
+            
+            ## Next Steps
+            - Monitor app for 24-48h
+            - Check diagnostic reports
+            - Collect user feedback
+            - Promote to Live if stable
+            
+            ---
+            **Published automatically via GitHub Actions**
+          draft: false
+          prerelease: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: 💬 Success summary
+        if: steps.check_validation.outputs.should_publish == 'true'
+        run: |
+          echo "# 🎉 Auto-Publish SUCCESS!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** ${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Channel:** Test" >> $GITHUB_STEP_SUMMARY
+          echo "**Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Available in:** 15-30 minutes" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ App published to Homey App Store"
+          echo "📦 Version: ${{ steps.version.outputs.version }}"
+          echo "🕐 Available in: 15-30 minutes"
+      
+      - name: ❌ Failure summary
+        if: failure()
+        run: |
+          echo "# ❌ Auto-Publish FAILED!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** ${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## Possible Reasons" >> $GITHUB_STEP_SUMMARY
+          echo "- ❌ Validation failed (fix errors in code)" >> $GITHUB_STEP_SUMMARY
+          echo "- ❌ Build failed (check dependencies)" >> $GITHUB_STEP_SUMMARY
+          echo "- ❌ HOMEY_PAT secret missing or invalid" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## Fix & Retry" >> $GITHUB_STEP_SUMMARY
+          echo "1. Fix the errors" >> $GITHUB_STEP_SUMMARY
+          echo "2. Commit changes" >> $GITHUB_STEP_SUMMARY
+          echo "3. Push to master → Auto-publish will retry" >> $GITHUB_STEP_SUMMARY
