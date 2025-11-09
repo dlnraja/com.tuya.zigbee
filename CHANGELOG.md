@@ -1,5 +1,38 @@
 # Changelog
 
+## [4.9.323] - 2025-11-09
+
+### EMERGENCY FIX: TS0601 Sensors Not Reporting Data
+
+**Critical Fix for TS0601 Sensors:**
+
+1. **TS0601 Emergency Fix Module**
+   - Created dedicated emergency fix for TS0601 sensors not reporting data
+   - Affects: Climate Monitor, Presence Radar, Soil Tester
+   - Forces cluster 0xEF00 detection and listener setup
+   - Auto-requests critical DPs immediately on device init
+
+2. **Device-Specific DP Mappings**
+   - Climate Monitor (_TZE284_vvmbj46n): DP 1,2,15 → temp, humidity, battery
+   - Presence Radar (_TZE200_rhgsbacq): DP 1,9,101,102,15 → motion, distance, sensitivity, battery
+   - Soil Tester (_TZE284_oitavov2): DP 1,2,3,5,15 → temp, humidity, soil temp, soil moisture, battery
+
+3. **Enhanced Logging**
+   - Detailed diagnostic logs for TS0601 initialization
+   - Shows cluster detection, listener setup, DP requests
+   - Counts dataReport responses received
+
+**Impact:**
+- TS0601 sensors will now report data immediately after pairing
+- No more "dead" sensors that don't update
+- Emergency listener ensures data reception even if standard manager fails
+
+**Affected Devices:**
+- All TS0601 models with _TZE200_* and _TZE284_* manufacturers
+- Specifically tested with user's 3 sensors
+
+---
+
 ## [4.9.322] - 2025-11-09
 
 ### HOTFIX: Battery Reader & Migration Queue
