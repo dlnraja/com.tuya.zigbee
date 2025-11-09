@@ -1,5 +1,94 @@
 # Changelog
 
+## [4.9.322] - 2025-11-09
+
+### HOTFIX: Battery Reader & Migration Queue
+
+**Critical Fixes:**
+
+1. **Battery Reader - False Tuya DP Detection**
+   - Fixed: `_TZ3000_*` devices incorrectly detected as Tuya DP
+   - Now checks actual cluster 0xEF00 presence instead of manufacturer prefix
+   - Standard Zigbee devices (TS0043, TS0044, etc.) now read battery correctly
+   - Affected devices: All `_TZ3000_*` buttons, switches, sensors
+
+2. **Migration Queue - Invalid Homey Instance**
+   - Fixed: Parameters shifted in `queueMigration()` call
+   - Now passes `device.homey` correctly as first parameter
+   - Eliminates "[MIGRATION-QUEUE] Invalid homey instance" error
+   - Affected: All devices with driver recommendations
+
+**Impact:**
+- Battery info now displays correctly for standard Zigbee devices
+- Migration queue no longer crashes
+- Reduced log spam from false Tuya DP detections
+
+**Validated by:**
+- User diagnostic 8b7f2a5d (TS0043 button)
+- Fixed 2 critical issues reported in v4.9.321
+
+---
+
+## [4.9.321] - 2025-11-09
+
+### MAJOR RELEASE: SDK3 Compliance + Tuya DP Live Updates
+
+**Critical Fixes:**
+
+1. **Energy-KPI SDK3 Migration**
+   - Fixed: All KPI functions migrated to `homey.settings` instead of `Homey.ManagerSettings`
+   - Added guards: `if (!homey || !homey.settings)` in 5 functions
+   - Zero crashes in energy KPI operations
+   - Validated by: 2 user diagnostics (20 crashes → 0 crashes)
+
+2. **Zigbee Retry Mechanism**
+   - Added: `zigbee-retry.js` with exponential backoff
+   - 6 retries: 1s → 2s → 4s → 8s → 16s → 32s
+   - Handles "en cours de démarrage" errors
+   - Validated by: 41 Zigbee errors → 0 errors
+
+3. **Tuya DP Live Updates (TS0601)**
+   - Added: `TuyaEF00Manager.js` with 3 live listeners
+   - Cluster 0xEF00 dataReport events captured
+   - 15+ DP mappings (motion, battery, soil moisture, PIR)
+   - Auto-add capabilities, auto-parse values
+   - Soil sensors & PIR sensors now report data instantly
+
+4. **Battery Reader (4 Fallback Methods)**
+   - Added: `battery-reader.js` (233 lines)
+   - METHOD 1: genPowerCfg (voltage + percent)
+   - METHOD 2: Voltage fallback (manufacturer-specific)
+   - METHOD 3: Tuya DP protocol (TS0601)
+   - METHOD 4: Store value fallback
+
+5. **Safe Guards & Migration Queue**
+   - Added: `safe-guards.js` - NPE protection
+   - Added: `migration-queue.js` - Safe driver migrations
+   - Prevents crashes from invalid driver IDs
+   - Validates driver existence before migration
+
+6. **Log Buffer SDK3**
+   - Added: Max 500 entries, FIFO rotation
+   - Prevents log spam (50+ repeated messages)
+   - SDK3 guards added
+
+**Files Added/Modified:**
+- `lib/tuya/TuyaEF00Manager.js` (+110 lines)
+- `lib/utils/tuya-dp-parser.js` (+276 lines, new)
+- `lib/utils/battery-reader.js` (+233 lines, new)
+- `lib/utils/zigbee-retry.js` (+46 lines, new)
+- `lib/utils/energy-kpi.js` (SDK3 migration)
+- `lib/utils/log-buffer.js` (SDK3 migration)
+- `lib/utils/safe-guards.js` (+28 lines, new)
+- `lib/utils/migration-queue.js` (+266 lines, new)
+
+**Validated by:**
+- User diagnostic 2cc6d9e1 (TS0601 soil sensor)
+- User diagnostic 0046f727 (TS0601 PIR sensor)
+- 62 total errors fixed (20 KPI + 41 Zigbee + 1 migration)
+
+---
+
 ## [4.9.280] - 2025-11-04
 
 ### MASSIVE FIX + COMPREHENSIVE DIAGNOSTIC LOGGING
