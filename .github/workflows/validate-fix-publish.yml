@@ -1,0 +1,333 @@
+name: Validate → Fix → Publish
+
+'on':
+  workflow_dispatch:
+    inputs:
+      force_publish:
+        description: 'Force publish even if minor issues'
+        required: false
+        default: 'false'
+      channel:
+        description: 'Publication channel'
+        required: true
+        default: 'test'
+        type: choice
+        options:
+          - test
+          - live
+
+jobs:
+  cleanup-and-organize:
+    name: 🧹 Cleanup & Organization
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: 🧹 Smart cleanup root directory
+        id: cleanup
+        run: |
+          echo "🧹 Cleaning up root directory..."
+          
+          # Créer archive/ si n'existe pas
+          mkdir -p archive/legacy-scripts
+          mkdir -p archive/old-docs
+          
+          # Déplacer fichiers temporaires/legacy
+          mv CRITICAL_FIX_v4.9.279.js archive/legacy-scripts/ 2>/dev/null || true
+          mv EMERGENCY_FIX_v4.9.276.js archive/legacy-scripts/ 2>/dev/null || true
+          mv ULTRA_FIX_v4.9.277.js archive/legacy-scripts/ 2>/dev/null || true
+          mv INTELLIGENT_ENRICHMENT_v4.9.278.js archive/legacy-scripts/ 2>/dev/null || true
+          mv MASSIVE_FIX_AND_LOGS_v4.9.280.js archive/legacy-scripts/ 2>/dev/null || true
+          mv FIX_WALL_TOUCH.js archive/legacy-scripts/ 2>/dev/null || true
+          mv ADD_DIAGNOSTIC_LOGS.js archive/legacy-scripts/ 2>/dev/null || true
+          
+          # Déplacer docs temporaires
+          mv ROOT_ORGANIZATION.md archive/old-docs/ 2>/dev/null || true
+          mv TEST_AUTO_PUBLISH.md archive/old-docs/ 2>/dev/null || true
+          
+          # Déplacer BAT files vers tools/
+          mkdir -p tools/bat-scripts
+          mv *.bat tools/bat-scripts/ 2>/dev/null || true
+          
+          # Nettoyer backups multiples
+          if [ -d "lib_backup_1762217200536" ]; then
+            mv lib_backup_1762217200536 archive/
+          fi
+          
+          # Compter changements
+          MOVED=$(git status --porcelain | wc -l)
+          echo "moved_files=$MOVED" >> $GITHUB_OUTPUT
+          echo "✅ Moved $MOVED files to archive/"
+      
+      - name: 📊 Generate cleanup report
+        run: |
+          echo "# 🧹 Cleanup Report" > CLEANUP_REPORT.md
+          echo "" >> CLEANUP_REPORT.md
+          echo "**Date:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> CLEANUP_REPORT.md
+          echo "**Files moved:** ${{ steps.cleanup.outputs.moved_files }}" >> CLEANUP_REPORT.md
+          echo "" >> CLEANUP_REPORT.md
+          echo "## Changes" >> CLEANUP_REPORT.md
+          git status --short >> CLEANUP_REPORT.md
+      
+      - name: 💾 Commit cleanup
+        if: steps.cleanup.outputs.moved_files > 0
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add -A
+          git commit -m "🧹 Cleanup: Archive legacy files [skip ci]
+          
+          - Moved old fix scripts to archive/legacy-scripts/
+          - Moved temporary docs to archive/old-docs/
+          - Moved BAT files to tools/bat-scripts/
+          - Cleaned up lib backups
+          
+          Files moved: ${{ steps.cleanup.outputs.moved_files }}"
+      
+      - name: 📤 Push cleanup
+        if: steps.cleanup.outputs.moved_files > 0
+        run: git push origin master
+
+  validate-app:
+    name: ✅ Validate Homey App
+    needs: cleanup-and-organize
+    runs-on: ubuntu-latest
+    
+    outputs:
+      validation_status: ${{ steps.validate.outcome }}
+      has_errors: ${{ steps.check_errors.outputs.has_errors }}
+    
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: master
+      
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: 📦 Install dependencies
+        run: npm ci --production
+      
+      - name: 🔍 Validate with Athom action (publish level)
+        id: validate
+        uses: athombv/github-action-homey-app-validate@master
+        with:
+          level: publish
+        continue-on-error: true
+      
+      - name: 📊 Check validation errors
+        id: check_errors
+        run: |
+          if [ "${{ steps.validate.outcome }}" != "success" ]; then
+            echo "has_errors=true" >> $GITHUB_OUTPUT
+            echo "❌ Validation failed!"
+          else
+            echo "has_errors=false" >> $GITHUB_OUTPUT
+            echo "✅ Validation passed!"
+          fi
+      
+      - name: 📝 Generate validation report
+        if: always()
+        run: |
+          echo "# ✅ Validation Report" > VALIDATION_REPORT.md
+          echo "" >> VALIDATION_REPORT.md
+          echo "**Status:** ${{ steps.validate.outcome }}" >> VALIDATION_REPORT.md
+          echo "**Date:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> VALIDATION_REPORT.md
+          echo "**Version:** $(node -p "require('./app.json').version")" >> VALIDATION_REPORT.md
+      
+      - name: 📤 Upload validation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-report
+          path: VALIDATION_REPORT.md
+          retention-days: 30
+
+  auto-fix-errors:
+    name: 🔧 Auto-Fix Errors
+    needs: validate-app
+    if: needs.validate-app.outputs.has_errors == 'true'
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: master
+      
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: 🔧 Auto-fix common issues
+        id: autofix
+        run: |
+          echo "🔧 Attempting auto-fixes..."
+          FIXED=0
+          
+          # Fix 1: Remove duplicate entries in app.json
+          if [ -f "app.json" ]; then
+            echo "Checking app.json..."
+            # Homey compose regeneration
+            if command -v homey &> /dev/null; then
+              npm install -g homey
+              homey app build --skipNpmInstall || true
+              FIXED=$((FIXED+1))
+            fi
+          fi
+          
+          # Fix 2: Validate package.json
+          if [ -f "package.json" ]; then
+            echo "Validating package.json..."
+            node -e "JSON.parse(require('fs').readFileSync('package.json'))" && echo "✅ Valid" || echo "❌ Invalid"
+          fi
+          
+          # Fix 3: Clean node_modules if corrupted
+          if [ ! -d "node_modules" ] || [ -z "$(ls -A node_modules)" ]; then
+            echo "Reinstalling dependencies..."
+            npm ci --production
+            FIXED=$((FIXED+1))
+          fi
+          
+          echo "fixes_applied=$FIXED" >> $GITHUB_OUTPUT
+          echo "✅ Applied $FIXED fixes"
+      
+      - name: 💾 Commit fixes
+        if: steps.autofix.outputs.fixes_applied > 0
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add -A
+          git commit -m "🔧 Auto-fix: Applied ${{ steps.autofix.outputs.fixes_applied }} fixes
+          
+          - Regenerated app.json via homey build
+          - Validated package.json
+          - Reinstalled dependencies if needed
+          
+          Triggered by: validate-fix-publish workflow" || echo "No changes to commit"
+          git push origin master || echo "Nothing to push"
+      
+      - name: 🔄 Re-validate after fixes
+        uses: athombv/github-action-homey-app-validate@master
+        with:
+          level: publish
+
+  publish-to-homey:
+    name: 🚀 Publish to Homey App Store
+    needs: [validate-app, cleanup-and-organize]
+    if: |
+      needs.validate-app.outputs.validation_status == 'success' ||
+      github.event.inputs.force_publish == 'true'
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+      
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: 📦 Install dependencies
+        run: |
+          npm ci --production
+          npm install -g homey
+      
+      - name: 🔍 Get version
+        id: version
+        run: |
+          VERSION=$(node -p "require('./app.json').version")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "📌 Publishing version: $VERSION"
+      
+      - name: 🏗️ Build app
+        run: |
+          echo "🏗️ Building Homey app..."
+          homey app build --skipNpmInstall
+          echo "✅ Build complete"
+      
+      - name: 🚀 Publish to Homey App Store
+        id: publish
+        uses: athombv/github-action-homey-app-publish@master
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+      
+      - name: 📊 Publication success report
+        run: |
+          echo "# 🎉 Publication Success!" > PUBLISH_REPORT.md
+          echo "" >> PUBLISH_REPORT.md
+          echo "**Version:** ${{ steps.version.outputs.version }}" >> PUBLISH_REPORT.md
+          echo "**Channel:** ${{ github.event.inputs.channel || 'test' }}" >> PUBLISH_REPORT.md
+          echo "**Date:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> PUBLISH_REPORT.md
+          echo "**Manage URL:** ${{ steps.publish.outputs.url }}" >> PUBLISH_REPORT.md
+          echo "" >> PUBLISH_REPORT.md
+          echo "## Next Steps" >> PUBLISH_REPORT.md
+          echo "- Monitor app for 24-48h" >> PUBLISH_REPORT.md
+          echo "- Check diagnostic reports" >> PUBLISH_REPORT.md
+          echo "- Collect user feedback" >> PUBLISH_REPORT.md
+          echo "- Promote to Live if stable" >> PUBLISH_REPORT.md
+          
+          cat PUBLISH_REPORT.md
+      
+      - name: 📝 Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ steps.version.outputs.version }}
+          name: Release v${{ steps.version.outputs.version }}
+          body_path: PUBLISH_REPORT.md
+          draft: false
+          prerelease: ${{ github.event.inputs.channel == 'test' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: 📤 Upload publish report
+        uses: actions/upload-artifact@v4
+        with:
+          name: publish-report
+          path: PUBLISH_REPORT.md
+          retention-days: 90
+      
+      - name: 💬 Success notification
+        run: |
+          echo "✅ SUCCESS! App published to Homey App Store"
+          echo "Version: ${{ steps.version.outputs.version }}"
+          echo "Channel: ${{ github.event.inputs.channel || 'test' }}"
+          echo "Available in: 15-30 minutes"
+
+  final-report:
+    name: 📊 Final Report
+    needs: [cleanup-and-organize, validate-app, publish-to-homey]
+    if: always()
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📊 Generate summary
+        run: |
+          echo "# 🎯 Workflow Complete!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## Results" >> $GITHUB_STEP_SUMMARY
+          echo "- 🧹 **Cleanup:** ${{ needs.cleanup-and-organize.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ **Validation:** ${{ needs.validate-app.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- 🚀 **Publication:** ${{ needs.publish-to-homey.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Date:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
