@@ -1,0 +1,333 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Universal Tuya Zigbee - Driver Mapping Database",
+  "description": "Centralized database for manufacturer/model to driver mapping",
+  "version": "4.9.324",
+  "lastUpdated": "2025-11-09",
+  
+  "devices": {
+    "TS0601": {
+      "description": "Tuya DP devices (cluster 0xEF00)",
+      "type": "tuya_dp",
+      "cluster": "0xEF00",
+      "manufacturers": {
+        "_TZE284_vvmbj46n": {
+          "name": "Climate Monitor",
+          "driver": "sensor_climate_tuya",
+          "capabilities": ["measure_temperature", "measure_humidity", "measure_battery"],
+          "dps": {
+            "1": {
+              "capability": "measure_temperature",
+              "parser": "divide_by_10",
+              "unit": "°C"
+            },
+            "2": {
+              "capability": "measure_humidity",
+              "parser": "divide_by_10",
+              "unit": "%"
+            },
+            "15": {
+              "capability": "measure_battery",
+              "parser": "identity",
+              "unit": "%"
+            }
+          },
+          "polling": {
+            "initial": "3s",
+            "interval": "5m"
+          }
+        },
+        "_TZE200_rhgsbacq": {
+          "name": "Presence Radar Sensor",
+          "driver": "sensor_presence_radar",
+          "capabilities": ["alarm_motion", "target_distance", "radar_sensitivity", "illuminance_threshold", "measure_battery"],
+          "dps": {
+            "1": {
+              "capability": "alarm_motion",
+              "parser": "boolean",
+              "unit": null
+            },
+            "9": {
+              "capability": "target_distance",
+              "parser": "divide_by_100",
+              "unit": "m"
+            },
+            "101": {
+              "capability": "radar_sensitivity",
+              "parser": "identity",
+              "unit": null
+            },
+            "102": {
+              "capability": "illuminance_threshold",
+              "parser": "identity",
+              "unit": "lux"
+            },
+            "15": {
+              "capability": "measure_battery",
+              "parser": "identity",
+              "unit": "%"
+            }
+          },
+          "polling": {
+            "initial": "3s",
+            "interval": "5m"
+          }
+        },
+        "_TZE284_oitavov2": {
+          "name": "Soil Tester (Temperature + Humidity + Moisture)",
+          "driver": "sensor_soil_tuya",
+          "capabilities": ["measure_temperature", "measure_humidity", "measure_temperature.soil", "measure_humidity.soil", "measure_battery"],
+          "dps": {
+            "1": {
+              "capability": "measure_temperature",
+              "parser": "divide_by_10",
+              "unit": "°C",
+              "description": "Air temperature"
+            },
+            "2": {
+              "capability": "measure_humidity",
+              "parser": "divide_by_10",
+              "unit": "%",
+              "description": "Air humidity"
+            },
+            "3": {
+              "capability": "measure_temperature.soil",
+              "parser": "divide_by_10",
+              "unit": "°C",
+              "description": "Soil temperature"
+            },
+            "5": {
+              "capability": "measure_humidity.soil",
+              "parser": "identity",
+              "unit": "%",
+              "description": "Soil moisture"
+            },
+            "15": {
+              "capability": "measure_battery",
+              "parser": "identity",
+              "unit": "%"
+            }
+          },
+          "polling": {
+            "initial": "3s",
+            "interval": "5m"
+          }
+        }
+      }
+    },
+    
+    "TS0002": {
+      "description": "2-gang switch (standard Zigbee)",
+      "type": "standard_zigbee",
+      "manufacturers": {
+        "_TZ3000_h1ipgkwn": {
+          "name": "2-Gang USB Switch/Outlet",
+          "driver": "switch_2_gang",
+          "capabilities": ["onoff", "onoff.gang2", "measure_power", "measure_voltage", "measure_current", "meter_power"],
+          "endpoints": {
+            "1": {
+              "clusters": ["onOff", "electricalMeasurement", "metering"],
+              "capabilities": ["onoff", "measure_power", "measure_voltage", "measure_current", "meter_power"]
+            },
+            "2": {
+              "clusters": ["onOff"],
+              "capabilities": ["onoff.gang2"]
+            }
+          },
+          "polling": {
+            "initial": "immediate",
+            "interval": "6h"
+          }
+        }
+      }
+    },
+    
+    "TS0043": {
+      "description": "3-button wireless remote (standard Zigbee)",
+      "type": "standard_zigbee",
+      "manufacturers": {
+        "_TZ3000_bczr4e10": {
+          "name": "3-Button Wireless Controller",
+          "driver": "button_wireless_3",
+          "capabilities": ["measure_battery"],
+          "endpoints": {
+            "1": {
+              "clusters": ["onOff", "genPowerCfg"],
+              "button": 1
+            },
+            "2": {
+              "clusters": ["onOff"],
+              "button": 2
+            },
+            "3": {
+              "clusters": ["onOff"],
+              "button": 3
+            }
+          },
+          "battery": {
+            "type": "CR2032",
+            "cluster": "genPowerCfg",
+            "reportOnWake": true
+          },
+          "polling": {
+            "initial": "on_wake",
+            "interval": "6h"
+          }
+        }
+      }
+    },
+    
+    "TS0044": {
+      "description": "4-button wireless remote (standard Zigbee)",
+      "type": "standard_zigbee",
+      "manufacturers": {
+        "_TZ3000_bgtzm4ny": {
+          "name": "4-Button Wireless Controller",
+          "driver": "button_wireless_4",
+          "capabilities": ["measure_battery"],
+          "endpoints": {
+            "1": {"clusters": ["onOff", "genPowerCfg"], "button": 1},
+            "2": {"clusters": ["onOff"], "button": 2},
+            "3": {"clusters": ["onOff"], "button": 3},
+            "4": {"clusters": ["onOff"], "button": 4}
+          },
+          "battery": {
+            "type": "CR2032",
+            "cluster": "genPowerCfg",
+            "reportOnWake": true
+          },
+          "polling": {
+            "initial": "on_wake",
+            "interval": "6h"
+          }
+        }
+      }
+    },
+    
+    "TS0215A": {
+      "description": "SOS Emergency Button (IAS Zone)",
+      "type": "standard_zigbee_ias",
+      "manufacturers": {
+        "_TZ3000_0dumfk2z": {
+          "name": "SOS Emergency Button",
+          "driver": "button_sos",
+          "capabilities": ["alarm_generic", "measure_battery"],
+          "endpoints": {
+            "1": {
+              "clusters": ["ssIasZone", "genPowerCfg"],
+              "iasZone": true
+            }
+          },
+          "battery": {
+            "type": "CR2450",
+            "cluster": "genPowerCfg",
+            "reportOnWake": true
+          },
+          "polling": {
+            "initial": "on_wake",
+            "interval": "6h"
+          }
+        }
+      }
+    }
+  },
+  
+  "parsers": {
+    "identity": {
+      "description": "Return value as-is",
+      "function": "v => v"
+    },
+    "boolean": {
+      "description": "Convert to boolean",
+      "function": "v => Boolean(v)"
+    },
+    "divide_by_10": {
+      "description": "Divide value by 10 (temp, humidity)",
+      "function": "v => typeof v === 'number' ? v / 10 : v"
+    },
+    "divide_by_100": {
+      "description": "Divide value by 100 (distance cm to m)",
+      "function": "v => typeof v === 'number' ? v / 100 : v"
+    },
+    "divide_by_1000": {
+      "description": "Divide value by 1000 (mA to A)",
+      "function": "v => typeof v === 'number' ? v / 1000 : v"
+    }
+  },
+  
+  "driver_rules": {
+    "usb_outlet": {
+      "deprecated": true,
+      "reason": "Driver does not exist",
+      "mapTo": {
+        "1gang": "switch_1_gang",
+        "2gang": "switch_2_gang",
+        "3gang": "switch_3_gang"
+      }
+    },
+    "button_wireless": {
+      "note": "Buttons are CONTROLLERS, not CONTROLLED",
+      "capabilities": ["measure_battery"],
+      "forbidden_capabilities": ["onoff", "dim"],
+      "reason": "Buttons send commands, they don't receive them"
+    }
+  },
+  
+  "detection_priority": {
+    "order": [
+      "button_remote_wireless",
+      "sos_button",
+      "usb_outlet",
+      "switch",
+      "dimmer",
+      "sensor_tuya_dp",
+      "sensor_standard"
+    ],
+    "rules": {
+      "button_remote_wireless": {
+        "check": "driver_name_contains_button",
+        "confidence": 0.99
+      },
+      "sos_button": {
+        "check": "has_ias_zone",
+        "confidence": 0.99
+      },
+      "usb_outlet": {
+        "check": "model_contains_usb_or_outlet",
+        "confidence": 0.98,
+        "mapTo": "switch"
+      },
+      "sensor_tuya_dp": {
+        "check": "has_cluster_0xEF00",
+        "confidence": 0.95
+      }
+    }
+  },
+  
+  "common_issues": {
+    "battery_not_showing": {
+      "devices": ["TS0043", "TS0044", "TS0215A"],
+      "cause": "Battery reports on wake only",
+      "solution": "Press button to wake device",
+      "fixed_in": "v4.9.322"
+    },
+    "ts0601_no_data": {
+      "devices": ["TS0601 sensors"],
+      "cause": "Cluster 0xEF00 not detected or listeners not setup",
+      "solution": "Emergency fix forces detection",
+      "fixed_in": "v4.9.323"
+    },
+    "usb_outlet_wrong_driver": {
+      "devices": ["USB outlets/switches"],
+      "cause": "usb_outlet driver does not exist",
+      "solution": "Map to switch_X_gang drivers",
+      "fixed_in": "v4.9.324"
+    },
+    "migration_queue_crash": {
+      "devices": ["All devices"],
+      "cause": "Invalid homey instance parameter",
+      "solution": "Pass device.homey as first parameter",
+      "fixed_in": "v4.9.322"
+    }
+  }
+}
