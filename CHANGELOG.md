@@ -1,5 +1,40 @@
 # Changelog
 
+## [4.9.324] - 2025-11-09
+
+### CRITICAL FIX: Invalid usb_outlet Driver
+
+**Problem:**
+SmartDriverAdaptation was recommending `usb_outlet` driver which does not exist, causing migration errors:
+```
+[SAFE-MIGRATE] Target driver not found: usb_outlet
+This is an INVALID DRIVER ID - cannot migrate
+```
+
+**Fix:**
+USB outlets now correctly map to existing switch drivers:
+- 1-gang USB → `switch_1_gang`
+- 2-gang USB → `switch_2_gang`
+- 3-gang USB → `switch_3_gang`
+- etc.
+
+**Changes:**
+- lib/SmartDriverAdaptation.js: USB detection logic updated
+  - `analysis.deviceType = 'usb_outlet'` → `analysis.deviceType = 'switch'`
+  - Capabilities: `onoff.usb2` → `onoff.gang2` (standard naming)
+  - Logs now show: "USB OUTLET 2-GANG → switch_2_gang"
+
+**Impact:**
+- USB outlets/switches will migrate to correct drivers
+- No more "driver not found" errors
+- Maintains all functionality (power monitoring, multi-gang support)
+
+**Affected Devices:**
+- All USB outlets/switches (TS0002, TS0011, etc.)
+- User's 2-gang USB switch specifically
+
+---
+
 ## [4.9.323] - 2025-11-09
 
 ### EMERGENCY FIX: TS0601 Sensors Not Reporting Data
