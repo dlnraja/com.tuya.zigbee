@@ -1,8 +1,8 @@
 # 📚 Universal Tuya Zigbee - Documentation
 
-**Version**: v2.15.85  
-**Last Updated**: 2025-10-14  
-**Status**: Production Ready
+**Version**: v4.9.322  
+**Last Updated**: 2025-11-09  
+**Status**: Production Ready - Auto-Publish Active
 
 ---
 
@@ -15,6 +15,14 @@
 ### 🔧 Diagnostics
 - **[Diagnostic Reports](diagnostics/)** - Rapports de diagnostic détaillés
 - **[IAS Zone Fixes](diagnostics/)** - Corrections critiques motion sensors + SOS buttons
+
+### 📖 Technical Documentation (NEW!)
+- **[RESOURCES.md](RESOURCES.md)** - All official links (Tuya, Homey, Zigbee)
+- **[TUYA_DP_COMPLETE_MAPPING.md](TUYA_DP_COMPLETE_MAPPING.md)** - Complete DP mappings reference
+- **[DEVICE_IDENTIFICATION_GUIDE.md](DEVICE_IDENTIFICATION_GUIDE.md)** - Standard Zigbee vs Tuya DP
+- **[SDK3_MIGRATION_COMPLETE.md](SDK3_MIGRATION_COMPLETE.md)** - All SDK3 fixes documented
+- **[PAIRING_OPTIMIZATION.md](PAIRING_OPTIMIZATION.md)** - Pairing process explained
+- **[TROUBLESHOOTING_COMPLETE.md](TROUBLESHOOTING_COMPLETE.md)** - Complete troubleshooting guide
 
 ### 📦 Release Notes
 - **[Version History](releases/)** - Historique complet des versions
