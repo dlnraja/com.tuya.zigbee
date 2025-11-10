@@ -93,10 +93,35 @@ jobs:
           echo ""
           
           # The CLI uses HOMEY_API_TOKEN env var automatically - NO LOGIN NEEDED!
-          # Pipe y for uncommitted changes, n for version bump
-          printf "y\nn\n" | homey app publish 2>&1 | tee publish.log
+          # Use expect to handle interactive prompts
+          sudo apt-get update -qq
+          sudo apt-get install -y expect
           
-          EXIT_CODE=${PIPESTATUS[1]}
+          expect << 'EOF' 2>&1 | tee publish.log
+          set timeout 300
+          spawn homey app publish
+          
+          expect {
+            "There are uncommitted changes" {
+              send "y\r"
+              exp_continue
+            }
+            "Do you want to update your app's version number?" {
+              send "n\r"
+              exp_continue
+            }
+            "published" {
+              puts "✅ App published successfully!"
+            }
+            timeout {
+              puts "⏱️ Timeout waiting for publish"
+              exit 1
+            }
+            eof
+          }
+          EOF
+          
+          EXIT_CODE=$?
           
           if [ $EXIT_CODE -eq 0 ] || grep -q "published" publish.log; then
             echo ""
