@@ -2,10 +2,8 @@ name: 🔧 MASTER Auto-Fix & Monitor
 
 'on':
   workflow_dispatch:
-  # push:
-  #   branches: [master]
-  # schedule:
-  #   - cron: '*/30 * * * *' # Every 30 minutes - DISABLED to prevent excessive runs
+  schedule:
+    - cron: '0 */6 * * *' # Every 6 hours - Reasonable frequency for monitoring
 
 jobs:
   

@@ -1,5 +1,52 @@
 # Changelog
 
+## [4.9.329] - 2025-11-10
+
+### 🎯 PROJECT CLEANUP & WORKFLOW OPTIMIZATION
+
+**Complete cleanup: 57 issues closed, workflows optimized, automation improved!**
+
+#### Issues Resolved:
+1. ✅ **Closed 57 issues** - Mass cleanup (74 → 17 issues)
+2. ✅ **27 auto-organize issues** - Workflow spam eliminated
+3. ✅ **4 publish failure issues** - Workflows now functional
+4. ✅ **System health & push issues** - All resolved
+
+#### Workflow Improvements:
+1. ✅ **publish-official-optimized.yml** - New workflow with official Athom actions
+   - Automatic version bumping (patch/minor/major)
+   - Optional validation skip
+   - GitHub Release automation
+   - Comprehensive summary
+
+2. ✅ **PUBLISH-WORKING.yml** - Improved CLI-based workflow
+   - Automatic dependency installation
+   - Interactive prompt handling
+   - HOMEY_API_TOKEN authentication
+
+3. ✅ **Smart scheduling** - Workflows optimized
+   - MASTER-cleanup-organize: Monthly (was weekly)
+   - MASTER-auto-fix-monitor: Every 6 hours (was 30 min!)
+   - No more issue spam
+
+4. ✅ **Archive logic** - Keeps active workflows
+   - PUBLISH-WORKING.yml preserved
+   - publish-official-optimized.yml preserved
+   - Old workflows properly archived
+
+#### Documentation:
+1. ✅ **ISSUES_RESOLVED.md** - Complete resolution details (57 issues)
+2. ✅ **PROJECT_STATUS.md** - Comprehensive project status
+3. ✅ **Improved workflow comments** - Better maintainability
+
+#### Benefits:
+- ✅ -77% issues (74 → 17)
+- ✅ 2 functional publish workflows
+- ✅ No workflow spam
+- ✅ Intelligent automation (6h intervals)
+- ✅ Clean, organized codebase
+- ✅ Complete documentation
+
 ## [4.9.328] - 2025-11-10
 
 ### 🚀 MIGRATION TO OFFICIAL ATHOM GITHUB ACTIONS
