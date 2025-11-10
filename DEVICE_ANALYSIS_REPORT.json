@@ -1,0 +1,50 @@
+{
+  "timestamp": "2025-10-19T17:20:34.178Z",
+  "devices_analyzed": 7,
+  "issues_identified": 20,
+  "solutions_proposed": 7,
+  "devices": {
+    "peter_multisensor": {
+      "name": "Motion/Temp/Humidity/Illumination Multi Sensor",
+      "driver": "motion_temp_humidity_illumination_multi_battery",
+      "issues": 3,
+      "has_solution": true
+    },
+    "peter_sos_button": {
+      "name": "SOS Emergency Button",
+      "driver": "sos_emergency_button_cr2032",
+      "issues": 3,
+      "has_solution": true
+    },
+    "dutchduke_temperature_sensor_as_smoke": {
+      "name": "Temperature Sensor (detected as Smoke Detector)",
+      "driver": "temperature_sensor_battery",
+      "issues": 3,
+      "has_solution": true
+    },
+    "dutchduke_soil_sensor": {
+      "name": "Soil Moisture/Temperature Sensor",
+      "driver": "soil_moisture_temperature_sensor_battery",
+      "issues": 2,
+      "has_solution": true
+    },
+    "ian_gibbo_scene_controller_4button": {
+      "name": "4 Button Scene Controller",
+      "driver": "scene_controller_4button_cr2032",
+      "issues": 3,
+      "has_solution": true
+    },
+    "github_wireless_switch_single_click": {
+      "name": "Wireless Switch TS004F",
+      "driver": "wireless_switch_cr2032",
+      "issues": 3,
+      "has_solution": true
+    },
+    "github_app_crashes": {
+      "name": "App Stability Issues",
+      "driver": "multiple",
+      "issues": 3,
+      "has_solution": true
+    }
+  }
+}

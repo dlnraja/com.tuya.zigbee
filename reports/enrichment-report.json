@@ -1,0 +1,191 @@
+{
+  "timestamp": "2025-10-16T20:18:35.924Z",
+  "steps": [
+    {
+      "step": 1,
+      "name": "Scrape All Sources",
+      "status": "success",
+      "data": {
+        "total_sources": 18,
+        "successful": 18,
+        "failed": 0,
+        "manufacturer_ids": {},
+        "datapoints": {
+          "1": {
+            "name": "switch",
+            "type": "bool",
+            "description": "Main switch",
+            "category": "control"
+          },
+          "2": {
+            "name": "brightness",
+            "type": "value",
+            "description": "Brightness level",
+            "category": "control",
+            "max": 1000
+          },
+          "3": {
+            "name": "mode",
+            "type": "enum",
+            "description": "Working mode",
+            "category": "control"
+          },
+          "4": {
+            "name": "battery",
+            "type": "value",
+            "description": "Battery percentage",
+            "category": "status"
+          },
+          "5": {
+            "name": "color_data",
+            "type": "hex",
+            "description": "Color HSV data",
+            "category": "control"
+          },
+          "6": {
+            "name": "scene",
+            "type": "enum",
+            "description": "Scene selection",
+            "category": "control"
+          },
+          "7": {
+            "name": "countdown",
+            "type": "value",
+            "description": "Countdown timer",
+            "category": "control"
+          },
+          "8": {
+            "name": "color_temp",
+            "type": "value",
+            "description": "Color temperature",
+            "category": "control"
+          },
+          "9": {
+            "name": "sensitivity",
+            "type": "enum",
+            "description": "Sensor sensitivity",
+            "category": "settings"
+          },
+          "10": {
+            "name": "max_value",
+            "type": "value",
+            "description": "Maximum threshold",
+            "category": "settings"
+          },
+          "11": {
+            "name": "min_value",
+            "type": "value",
+            "description": "Minimum threshold",
+            "category": "settings"
+          },
+          "12": {
+            "name": "max_threshold",
+            "type": "value",
+            "description": "Max alarm threshold",
+            "category": "settings"
+          },
+          "13": {
+            "name": "min_threshold",
+            "type": "value",
+            "description": "Min alarm threshold",
+            "category": "settings"
+          },
+          "14": {
+            "name": "window_detection",
+            "type": "bool",
+            "description": "Window open detection",
+            "category": "settings"
+          },
+          "15": {
+            "name": "volume",
+            "type": "enum",
+            "description": "Alarm volume",
+            "category": "settings"
+          },
+          "16": {
+            "name": "mute",
+            "type": "bool",
+            "description": "Mute alarm",
+            "category": "control"
+          },
+          "17": {
+            "name": "alarm_type",
+            "type": "enum",
+            "description": "Alarm type",
+            "category": "status"
+          },
+          "18": {
+            "name": "fault",
+            "type": "bitmap",
+            "description": "Fault status",
+            "category": "status"
+          },
+          "19": {
+            "name": "calibration",
+            "type": "value",
+            "description": "Calibration offset",
+            "category": "settings"
+          },
+          "20": {
+            "name": "humidity_calibration",
+            "type": "value",
+            "description": "Humidity calibration",
+            "category": "settings"
+          },
+          "101": {
+            "name": "advanced_setting_1",
+            "type": "value",
+            "description": "Advanced setting 1",
+            "category": "advanced"
+          },
+          "102": {
+            "name": "advanced_setting_2",
+            "type": "value",
+            "description": "Advanced setting 2",
+            "category": "advanced"
+          }
+        },
+        "devices": []
+      }
+    },
+    {
+      "step": 2,
+      "name": "Consolidate Data",
+      "status": "success",
+      "data": {
+        "manufacturerIds": 21,
+        "datapoints": 0,
+        "devices": 0
+      }
+    },
+    {
+      "step": 3,
+      "name": "Apply Manufacturer IDs",
+      "status": "success",
+      "data": {
+        "driversScanned": 183,
+        "driversUpdated": 0,
+        "idsAdded": 0,
+        "idsByCategory": {}
+      }
+    },
+    {
+      "step": 4,
+      "name": "Update Datapoints DB",
+      "status": "success",
+      "data": {
+        "total_sources": 0,
+        "new_datapoints": 17,
+        "updated_datapoints": 8,
+        "total_datapoints": 118
+      }
+    }
+  ],
+  "statistics": {
+    "sources_scraped": 18,
+    "manufacturer_ids_found": 21,
+    "datapoints_found": 0,
+    "drivers_updated": 0,
+    "ids_added_to_drivers": 0
+  }
+}

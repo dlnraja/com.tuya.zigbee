@@ -1,0 +1,5978 @@
+[
+  {
+    "driver": "aqara_motion_sensor_pir_basic_ac",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": []
+  },
+  {
+    "driver": "aqara_motion_sensor_pir_basic_cr2450",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1,
+      1030,
+      1280
+    ]
+  },
+  {
+    "driver": "aqara_motion_sensor_pir_basic_other",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": []
+  },
+  {
+    "driver": "aqara_temperature_humidity_sensor_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "aqara_temperature_humidity_sensor_battery",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "avatto_led_strip_basic_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "avatto_led_strip_basic_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "avatto_led_strip_basic_ac",
+    "capability": "light_hue",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "avatto_led_strip_basic_ac",
+    "capability": "light_saturation",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "avatto_led_strip_basic_ac",
+    "capability": "light_temperature",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "avatto_plug_basic_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "avatto_plug_basic_ac",
+    "capability": "measure_power",
+    "missing": [
+      2820
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "avatto_plug_basic_ac",
+    "capability": "meter_power",
+    "missing": [
+      1794
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "avatto_smart_plug_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "avatto_smart_plug_ac",
+    "capability": "measure_power",
+    "missing": [
+      2820
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "avatto_smart_plug_ac",
+    "capability": "meter_power",
+    "missing": [
+      1794
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "avatto_smart_plug_energy_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "avatto_smart_plug_energy_ac",
+    "capability": "measure_power",
+    "missing": [
+      2820
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "avatto_smart_plug_energy_ac",
+    "capability": "meter_power",
+    "missing": [
+      1794
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "avatto_smart_plug_power_meter_16a_ac",
+    "capability": "meter_power",
+    "missing": [
+      1794
+    ],
+    "current": [
+      5,
+      6,
+      2820
+    ]
+  },
+  {
+    "driver": "avatto_thermostat_aaa",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "avatto_thermostat_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "avatto_thermostat_hybrid",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "avatto_thermostat_smart_internal",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "innr_bulb_color_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "innr_bulb_color_ac",
+    "capability": "light_hue",
+    "missing": [
+      768
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "innr_bulb_color_ac",
+    "capability": "light_saturation",
+    "missing": [
+      768
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "innr_bulb_tunable_white_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "innr_bulb_tunable_white_ac",
+    "capability": "light_temperature",
+    "missing": [
+      768
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "innr_bulb_white_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "moes_bulb_tunable_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_bulb_tunable_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_bulb_tunable_ac",
+    "capability": "light_temperature",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_bulb_tunable_ac",
+    "capability": "light_hue",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_bulb_tunable_ac",
+    "capability": "light_saturation",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_bulb_white_aaa",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_bulb_white_aaa",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_bulb_white_aaa",
+    "capability": "light_hue",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_bulb_white_aaa",
+    "capability": "light_saturation",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_bulb_white_aaa",
+    "capability": "light_temperature",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_bulb_white_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_bulb_white_cr2032",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_bulb_white_cr2032",
+    "capability": "light_hue",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_bulb_white_cr2032",
+    "capability": "light_saturation",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_bulb_white_cr2032",
+    "capability": "light_temperature",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_ceiling_light_rgb_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_ceiling_light_rgb_ac",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_ceiling_light_rgb_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_ceiling_light_rgb_ac",
+    "capability": "light_hue",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_ceiling_light_rgb_ac",
+    "capability": "light_saturation",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_ceiling_light_rgb_ac",
+    "capability": "light_temperature",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_climate_monitor_aaa",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_climate_monitor_aaa",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_climate_monitor_aaa",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_climate_monitor_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_climate_monitor_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_climate_monitor_cr2032",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_co2_temp_humidity_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_co2_temp_humidity_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_co2_temp_humidity_cr2032",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_dimmer_1gang_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_dimmer_1gang_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_dimmer_1gang_ac",
+    "capability": "measure_power",
+    "missing": [
+      2820
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_dimmer_1gang_ac",
+    "capability": "meter_power",
+    "missing": [
+      1794
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_dimmer_1gang_touch_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_dimmer_1gang_touch_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_dimmer_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_dimmer_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_dimmer_switch_timer_module_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_dimmer_switch_timer_module_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_dimmer_touch_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_dimmer_touch_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_energy_monitoring_plug_advanced_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_energy_monitoring_plug_advanced_ac",
+    "capability": "measure_power",
+    "missing": [
+      2820
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_energy_monitoring_plug_advanced_ac",
+    "capability": "meter_power",
+    "missing": [
+      1794
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_energy_plug_advanced_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_energy_plug_advanced_ac",
+    "capability": "measure_power",
+    "missing": [
+      2820
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_energy_plug_advanced_ac",
+    "capability": "meter_power",
+    "missing": [
+      1794
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_led_strip_advanced_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_led_strip_advanced_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_led_strip_advanced_ac",
+    "capability": "light_hue",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_led_strip_advanced_ac",
+    "capability": "light_saturation",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_led_strip_advanced_ac",
+    "capability": "light_temperature",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_led_strip_pro_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_led_strip_pro_ac",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_led_strip_pro_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_led_strip_pro_ac",
+    "capability": "light_hue",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_led_strip_pro_ac",
+    "capability": "light_saturation",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_led_strip_pro_ac",
+    "capability": "light_temperature",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_mini_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_mini_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_mini_switch_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_mini_switch_cr2032",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_outdoor_light_controller_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_outdoor_light_controller_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_outdoor_light_controller_ac",
+    "capability": "light_hue",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_outdoor_light_controller_ac",
+    "capability": "light_saturation",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_outdoor_light_controller_ac",
+    "capability": "light_temperature",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_plug_energy_monitor_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_plug_energy_monitor_ac",
+    "capability": "measure_power",
+    "missing": [
+      2820
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_plug_energy_monitor_ac",
+    "capability": "meter_power",
+    "missing": [
+      1794
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_plug_smart_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_plug_smart_ac",
+    "capability": "measure_power",
+    "missing": [
+      2820
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_plug_smart_ac",
+    "capability": "meter_power",
+    "missing": [
+      1794
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_power_meter_socket_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_power_meter_socket_ac",
+    "capability": "measure_power",
+    "missing": [
+      2820
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_power_meter_socket_ac",
+    "capability": "meter_power",
+    "missing": [
+      1794
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_radiator_valve_aa",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_remote_switch_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_remote_switch_cr2032",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_bulb_dimmer_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_bulb_dimmer_ac",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_bulb_dimmer_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_bulb_dimmer_ac",
+    "capability": "light_hue",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_bulb_dimmer_ac",
+    "capability": "light_saturation",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_bulb_dimmer_ac",
+    "capability": "light_temperature",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_bulb_rgb_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_bulb_rgb_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_bulb_rgb_ac",
+    "capability": "light_temperature",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_bulb_rgb_ac",
+    "capability": "light_hue",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_bulb_rgb_ac",
+    "capability": "light_saturation",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_bulb_white_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_bulb_white_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_bulb_white_ac",
+    "capability": "light_hue",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_bulb_white_ac",
+    "capability": "light_saturation",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_bulb_white_ac",
+    "capability": "light_temperature",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_spot_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_spot_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_switch_1gang_aaa",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_switch_1gang_aaa",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_switch_1gang_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_switch_1gang_cr2032",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_switch_4gang_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_switch_4gang_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_switch_4gang_hybrid",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_switch_4gang_hybrid",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_switch_6gang_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_switch_6gang_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_switch_8gang_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_smart_switch_8gang_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_temp_humidity_sensor_basic_aaa",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_temp_humidity_sensor_basic_aaa",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_temp_humidity_sensor_basic_aaa",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_temp_humidity_sensor_basic_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_temp_humidity_sensor_basic_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_temp_humidity_sensor_basic_cr2032",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_touch_switch_4gang_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_touch_switch_4gang_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_usb_outlet_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_usb_outlet_ac",
+    "capability": "measure_power",
+    "missing": [
+      2820
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_usb_outlet_ac",
+    "capability": "meter_power",
+    "missing": [
+      1794
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_usb_outlet_advanced_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_usb_outlet_advanced_ac",
+    "capability": "measure_power",
+    "missing": [
+      2820
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_usb_outlet_advanced_ac",
+    "capability": "meter_power",
+    "missing": [
+      1794
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_wireless_switch_4button_cr2450",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_wireless_switch_4button_cr2450",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_wireless_switch_4gang_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_wireless_switch_4gang_cr2032",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_wireless_switch_5button_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_wireless_switch_5button_cr2032",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_wireless_switch_6gang_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_wireless_switch_6gang_cr2032",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_wireless_switch_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "moes_wireless_switch_cr2032",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "nous_air_quality_monitor_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "nous_smart_plug_dimmer_ac",
+    "capability": "measure_power",
+    "missing": [
+      2820
+    ],
+    "current": [
+      6,
+      8
+    ]
+  },
+  {
+    "driver": "nous_smart_plug_dimmer_ac",
+    "capability": "meter_power",
+    "missing": [
+      1794
+    ],
+    "current": [
+      6,
+      8
+    ]
+  },
+  {
+    "driver": "nous_zbbridge_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "nous_zigbee_gateway_hub_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "osram_bulb_rgbw_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "osram_bulb_rgbw_ac",
+    "capability": "light_hue",
+    "missing": [
+      768
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "osram_bulb_rgbw_ac",
+    "capability": "light_saturation",
+    "missing": [
+      768
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "osram_bulb_tunable_white_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "osram_bulb_tunable_white_ac",
+    "capability": "light_temperature",
+    "missing": [
+      768
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "osram_bulb_white_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "osram_led_strip_rgbw_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "osram_led_strip_rgbw_ac",
+    "capability": "light_hue",
+    "missing": [
+      768
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "osram_led_strip_rgbw_ac",
+    "capability": "light_saturation",
+    "missing": [
+      768
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "philips_bulb_color_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "philips_bulb_color_ac",
+    "capability": "light_hue",
+    "missing": [
+      768
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "philips_bulb_color_ac",
+    "capability": "light_saturation",
+    "missing": [
+      768
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "philips_bulb_white_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "philips_bulb_white_ambiance_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "philips_bulb_white_ambiance_ac",
+    "capability": "light_temperature",
+    "missing": [
+      768
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "philips_led_strip_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "philips_led_strip_ac",
+    "capability": "light_hue",
+    "missing": [
+      768
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "philips_led_strip_ac",
+    "capability": "light_saturation",
+    "missing": [
+      768
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "philips_motion_sensor_aaa",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "philips_motion_sensor_aaa",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "philips_outdoor_sensor_aaa",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "philips_outdoor_sensor_aaa",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "samsung_motion_sensor_cr2450",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "samsung_motion_sensor_outdoor_cr123a",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "samsung_multipurpose_sensor_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "samsung_smart_plug_ac",
+    "capability": "measure_power",
+    "missing": [
+      2820
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "sonoff_led_strip_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "sonoff_led_strip_ac",
+    "capability": "light_hue",
+    "missing": [
+      768
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "sonoff_led_strip_ac",
+    "capability": "light_saturation",
+    "missing": [
+      768
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "sonoff_motion_sensor_cr2450",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "sonoff_smart_plug_ac",
+    "capability": "measure_power",
+    "missing": [
+      2820
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "sonoff_temperature_humidity_cr2450",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "sonoff_temperature_humidity_cr2450",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "tuya_air_conditioner_hybrid",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      6,
+      513
+    ]
+  },
+  {
+    "driver": "tuya_climate_monitor_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_climate_monitor_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_climate_monitor_cr2032",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_comprehensive_air_monitor_ac",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_comprehensive_air_monitor_ac",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_dehumidifier_hybrid",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "tuya_dehumidifier_hybrid",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "tuya_dehumidifier_hybrid",
+    "capability": "measure_power",
+    "missing": [
+      2820
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "tuya_door_controller_aaa",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_door_controller_aaa",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_door_controller_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_door_controller_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_door_controller_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_door_controller_cr2032",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_doorbell_camera_ac",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      5,
+      1280
+    ]
+  },
+  {
+    "driver": "tuya_humidity_controller_aaa",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_humidity_controller_aaa",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_humidity_controller_aaa",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_humidity_controller_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_humidity_controller_ac",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_humidity_controller_ac",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_humidity_controller_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_humidity_controller_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_humidity_controller_cr2032",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_outdoor_siren_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_pet_feeder_aaa",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_pet_feeder_aaa",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_pet_feeder_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_pet_feeder_cr2032",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_radiator_valve_smart_hybrid",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_siren_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      5,
+      1280
+    ]
+  },
+  {
+    "driver": "tuya_siren_outdoor_aaa",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_siren_outdoor_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_smart_switch_1gang_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_smart_switch_1gang_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_smoke_detector_basic_aaa",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_smoke_detector_basic_aaa",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_smoke_detector_basic_aaa",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_smoke_detector_basic_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_smoke_detector_basic_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_smoke_detector_basic_cr2032",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_smoke_detector_battery",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_smoke_detector_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_smoke_detector_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_soil_moisture_sensor_aaa",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_soil_moisture_sensor_aaa",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_soil_moisture_sensor_aaa",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_soil_moisture_sensor_aaa",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_soil_moisture_sensor_battery",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_soil_moisture_sensor_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_soil_moisture_sensor_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_soil_moisture_sensor_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_soil_moisture_sensor_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_soil_moisture_sensor_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_soil_moisture_sensor_cr2032",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_soil_moisture_sensor_cr2032",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_soil_tester_temp_humid_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_soil_tester_temp_humid_cr2032",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_soil_tester_temp_humid_cr2032",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_temperature_controller_aaa",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_temperature_controller_aaa",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_temperature_controller_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_temperature_controller_cr2032",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_temperature_controller_hybrid",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_temperature_controller_hybrid",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_water_valve_aa",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_water_valve_smart_aa",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_water_valve_smart_hybrid",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "tuya_water_valve_smart_hybrid",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "xiaomi_motion_sensor_cr2450",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "xiaomi_motion_sensor_cr2450",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "xiaomi_smart_plug_ac",
+    "capability": "measure_power",
+    "missing": [
+      2820
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "xiaomi_temperature_humidity_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "xiaomi_temperature_humidity_cr2032",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      6
+    ]
+  },
+  {
+    "driver": "zemismart_air_quality_monitor_pro_internal",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_ceiling_light_controller_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_ceiling_light_controller_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_ceiling_light_controller_ac",
+    "capability": "light_hue",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_ceiling_light_controller_ac",
+    "capability": "light_saturation",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_ceiling_light_controller_ac",
+    "capability": "light_temperature",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_co2_sensor_basic_aaa",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_co2_sensor_basic_aaa",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_co2_sensor_basic_aaa",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_co2_sensor_basic_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_co2_sensor_basic_cr2032",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_co2_sensor_basic_cr2032",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_co2_sensor_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_co2_sensor_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_co2_sensor_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_curtain_motor_aaa",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_curtain_motor_aaa",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_curtain_motor_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_curtain_motor_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_curtain_motor_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_curtain_motor_cr2032",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_curtain_motor_internal",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_door_window_sensor_basic_aaa",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_door_window_sensor_basic_aaa",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_door_window_sensor_basic_aaa",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_door_window_sensor_basic_aaa",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_door_window_sensor_basic_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_door_window_sensor_basic_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_door_window_sensor_basic_cr2032",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_door_window_sensor_basic_cr2032",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_door_window_sensor_battery",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_door_window_sensor_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_door_window_sensor_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_door_window_sensor_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_fan_controller_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_fan_controller_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_formaldehyde_sensor_aaa",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_formaldehyde_sensor_aaa",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_formaldehyde_sensor_aaa",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_formaldehyde_sensor_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_formaldehyde_sensor_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_formaldehyde_sensor_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_formaldehyde_sensor_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_formaldehyde_sensor_cr2032",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_formaldehyde_sensor_cr2032",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_gas_detector_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_gas_detector_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_gas_detector_cr2032",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_hvac_controller_ac",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_lux_sensor_aaa",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_lux_sensor_aaa",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_lux_sensor_aaa",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_lux_sensor_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_lux_sensor_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_lux_sensor_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_lux_sensor_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_lux_sensor_cr2032",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_lux_sensor_cr2032",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_milight_controller_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_milight_controller_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_milight_controller_ac",
+    "capability": "light_hue",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_milight_controller_ac",
+    "capability": "light_saturation",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_milight_controller_ac",
+    "capability": "light_temperature",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_milight_controller_ac",
+    "capability": "light_mode",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_battery",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1,
+      1280
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1,
+      1280
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1,
+      1280
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_mmwave_advanced_aaa",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_mmwave_advanced_aaa",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_mmwave_advanced_cr2032",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_mmwave_advanced_cr2032",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_mmwave_basic_aaa",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_mmwave_basic_aaa",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_mmwave_basic_cr2032",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_mmwave_basic_cr2032",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_mmwave_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_mmwave_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_pir_ac_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_pir_ac_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_pir_advanced_aaa",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_pir_advanced_aaa",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_pir_advanced_cr2032",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_pir_advanced_cr2032",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_pir_basic_aaa",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1,
+      1280
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_pir_basic_aaa",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1,
+      1280
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_pir_basic_aaa",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1,
+      1280
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_pir_basic_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1,
+      1280
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_pir_basic_cr2032",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1,
+      1280
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_pir_basic_cr2032",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1,
+      1280
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_pir_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1,
+      1280
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_pir_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1,
+      1280
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_zigbee_204z_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_motion_sensor_zigbee_204z_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_motion_temp_humidity_illumination_multi_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_motion_temp_humidity_illumination_multi_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_motion_temp_humidity_illumination_multi_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_motion_temp_humidity_illumination_multi_battery",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_multisensor_aaa",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_multisensor_aaa",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_multisensor_aaa",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_multisensor_aaa",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_multisensor_battery",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_multisensor_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_multisensor_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_multisensor_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_multisensor_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_multisensor_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_multisensor_cr2032",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_multisensor_cr2032",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_noise_level_sensor_aaa",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_noise_level_sensor_aaa",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_noise_level_sensor_aaa",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_noise_level_sensor_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_noise_level_sensor_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_noise_level_sensor_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_noise_level_sensor_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_noise_level_sensor_cr2032",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_noise_level_sensor_cr2032",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_pir_radar_illumination_sensor_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_pir_radar_illumination_sensor_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_pir_sensor_advanced_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_pir_sensor_advanced_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_pm25_detector_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_pm25_detector_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_pm25_sensor_aaa",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_pm25_sensor_aaa",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_pm25_sensor_aaa",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_pm25_sensor_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_pm25_sensor_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_pm25_sensor_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_pm25_sensor_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_pm25_sensor_cr2032",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_pm25_sensor_cr2032",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_pool_pump_controller_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_pool_pump_controller_ac",
+    "capability": "measure_power",
+    "missing": [
+      2820
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_pool_pump_controller_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_presence_sensor_radar_battery",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_presence_sensor_radar_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_presence_sensor_radar_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_presence_sensor_radar_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_pressure_sensor_aaa",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_pressure_sensor_aaa",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_pressure_sensor_aaa",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_pressure_sensor_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_pressure_sensor_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_pressure_sensor_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_pressure_sensor_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_pressure_sensor_cr2032",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_pressure_sensor_cr2032",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_projector_screen_controller_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_radar_motion_sensor_advanced_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_radar_motion_sensor_advanced_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_radar_motion_sensor_mmwave_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_radar_motion_sensor_mmwave_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_radar_motion_sensor_tank_level_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_radar_motion_sensor_tank_level_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_relay_switch_1gang_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_relay_switch_1gang_ac",
+    "capability": "measure_power",
+    "missing": [
+      2820
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_relay_switch_1gang_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_rgb_led_controller_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_rgb_led_controller_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_rgb_led_controller_ac",
+    "capability": "light_hue",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_rgb_led_controller_ac",
+    "capability": "light_saturation",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_rgb_led_controller_ac",
+    "capability": "light_temperature",
+    "missing": [
+      768
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_roller_blind_aaa",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_roller_blind_controller_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_roller_blind_cr2032",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_roller_shutter_switch_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_roller_shutter_switch_cr2032",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_scene_controller",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_scene_controller_battery",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_shade_controller_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_smart_garden_sprinkler_internal",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_smart_garden_sprinkler_internal",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_smart_irrigation_controller_internal",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_smart_switch_1gang_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_smart_switch_1gang_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_smart_switch_1gang_hybrid",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_smart_switch_1gang_hybrid",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_smart_switch_1gang_internal",
+    "capability": "measure_power",
+    "missing": [
+      2820
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_smart_switch_1gang_internal",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_smart_switch_1gang_internal",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_smart_switch_4gang_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_smart_switch_4gang_cr2032",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_smart_switch_5gang_aaa",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_smart_switch_5gang_aaa",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_smart_switch_5gang_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_smart_switch_5gang_cr2032",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_smoke_detector_temp_humidity_advanced_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_smoke_detector_temp_humidity_advanced_battery",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_smoke_temp_humid_sensor_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_smoke_temp_humid_sensor_battery",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_smoke_temp_humid_sensor_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_smoke_temp_humid_sensor_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_soil_moisture_temperature_sensor_aaa",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_soil_moisture_temperature_sensor_aaa",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_soil_moisture_temperature_sensor_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_soil_moisture_temperature_sensor_battery",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_soil_moisture_temperature_sensor_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_soil_moisture_temperature_sensor_cr2032",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_solar_panel_controller_aaa",
+    "capability": "measure_power",
+    "missing": [
+      2820
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_solar_panel_controller_aaa",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_solar_panel_controller_cr2032",
+    "capability": "measure_power",
+    "missing": [
+      2820
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_solar_panel_controller_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_solar_panel_controller_hybrid",
+    "capability": "measure_power",
+    "missing": [
+      2820
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_solar_panel_controller_hybrid",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_switch_1gang_battery",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_switch_1gang_battery",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_switch_5gang_battery",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_switch_5gang_battery",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temp_humid_sensor_advanced_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temp_humid_sensor_advanced_battery",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temp_humid_sensor_advanced_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temp_humid_sensor_advanced_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temp_humid_sensor_dd_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temp_humid_sensor_dd_battery",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temp_humid_sensor_dd_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temp_humid_sensor_dd_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temp_humid_sensor_leak_detector_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temp_humid_sensor_leak_detector_battery",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temp_humid_sensor_leak_detector_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temp_humid_sensor_leak_detector_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temp_sensor_pro_aaa",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temp_sensor_pro_aaa",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temp_sensor_pro_aaa",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temp_sensor_pro_aaa",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temp_sensor_pro_aaa",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temp_sensor_pro_battery",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temp_sensor_pro_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temp_sensor_pro_battery",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temp_sensor_pro_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temp_sensor_pro_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temp_sensor_pro_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temp_sensor_pro_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temp_sensor_pro_cr2032",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temp_sensor_pro_cr2032",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temp_sensor_pro_cr2032",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temperature_sensor_aaa",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temperature_sensor_aaa",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temperature_sensor_aaa",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temperature_sensor_aaa",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temperature_sensor_advanced_aaa",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temperature_sensor_advanced_aaa",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temperature_sensor_advanced_aaa",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temperature_sensor_advanced_aaa",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temperature_sensor_advanced_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temperature_sensor_advanced_battery",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temperature_sensor_advanced_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temperature_sensor_advanced_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temperature_sensor_advanced_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temperature_sensor_advanced_cr2032",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temperature_sensor_advanced_cr2032",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temperature_sensor_advanced_cr2032",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temperature_sensor_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temperature_sensor_battery",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temperature_sensor_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temperature_sensor_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temperature_sensor_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temperature_sensor_cr2032",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temperature_sensor_cr2032",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_temperature_sensor_cr2032",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_touch_switch_1gang_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_touch_switch_1gang_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_tvoc_sensor_aaa",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_tvoc_sensor_aaa",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_tvoc_sensor_aaa",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_tvoc_sensor_advanced_aaa",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_tvoc_sensor_advanced_aaa",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_tvoc_sensor_advanced_aaa",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_tvoc_sensor_advanced_aaa",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_tvoc_sensor_advanced_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_tvoc_sensor_advanced_battery",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_tvoc_sensor_advanced_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_tvoc_sensor_advanced_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_tvoc_sensor_advanced_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_tvoc_sensor_advanced_cr2032",
+    "capability": "measure_humidity",
+    "missing": [
+      1029
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_tvoc_sensor_advanced_cr2032",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_tvoc_sensor_advanced_cr2032",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_tvoc_sensor_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_tvoc_sensor_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_tvoc_sensor_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_tvoc_sensor_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_tvoc_sensor_cr2032",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_tvoc_sensor_cr2032",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_valve_smart_aa",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_vibration_sensor_aaa",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_vibration_sensor_aaa",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_vibration_sensor_aaa",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_vibration_sensor_aaa",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_vibration_sensor_battery",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_vibration_sensor_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_vibration_sensor_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_vibration_sensor_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_vibration_sensor_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_vibration_sensor_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_vibration_sensor_cr2032",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_vibration_sensor_cr2032",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_wall_switch_1gang_ac",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_wall_switch_1gang_ac",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_wall_switch_1gang_dc",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_wall_switch_1gang_dc",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_water_leak_detector_advanced_aaa",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_water_leak_detector_advanced_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_water_leak_detector_advanced_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_water_leak_detector_basic_aaa",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_water_leak_detector_basic_cr2032",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_water_leak_detector_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_water_leak_sensor_battery",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_water_leak_sensor_battery",
+    "capability": "measure_temperature",
+    "missing": [
+      1026
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_water_leak_sensor_battery",
+    "capability": "alarm_motion",
+    "missing": [
+      1030
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_water_leak_sensor_battery",
+    "capability": "measure_luminance",
+    "missing": [
+      1024
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_wireless_switch_1button_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_wireless_switch_1button_cr2450",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_wireless_switch_1gang_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_wireless_switch_1gang_cr2032",
+    "capability": "dim",
+    "missing": [
+      8
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_wireless_switch_2button_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_wireless_switch_4button_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_wireless_switch_6button_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  },
+  {
+    "driver": "zemismart_wireless_switch_8button_cr2032",
+    "capability": "onoff",
+    "missing": [
+      6
+    ],
+    "current": [
+      1
+    ]
+  }
+]

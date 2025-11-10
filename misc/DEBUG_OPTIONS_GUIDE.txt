@@ -1,0 +1,206 @@
+═══════════════════════════════════════════════════════════════════════════════
+   🔍 OPTIONS POUR DEBUG EN TEMPS RÉEL
+═══════════════════════════════════════════════════════════════════════════════
+
+IMPORTANT: Je ne peux PAS me connecter directement en SSH sur votre Homey.
+Mais nous pouvons debugger ensemble avec ces méthodes:
+
+───────────────────────────────────────────────────────────────────────────────
+OPTION 1: DEBUG RUN (⭐ LE MEILLEUR si ça marche)
+───────────────────────────────────────────────────────────────────────────────
+
+Double-cliquer: DEBUG_RUN_NOW.bat
+
+CE QUE ÇA FAIT:
+✓ Lance l'app sur votre Homey
+✓ Affiche TOUS les logs en temps réel
+✓ Recharge automatiquement si vous modifiez le code
+✓ Debug interactif
+
+PROBLÈME:
+⚠️ Peut timeout si Homey pas accessible sur réseau local
+⚠️ On a eu ce problème avant
+
+SI TIMEOUT:
+→ Le script vous proposera d'utiliser LIVE_DEBUG.bat automatiquement
+
+───────────────────────────────────────────────────────────────────────────────
+OPTION 2: LIVE DEBUG (⭐ FONCTIONNE TOUJOURS)
+───────────────────────────────────────────────────────────────────────────────
+
+Double-cliquer: LIVE_DEBUG.bat
+
+CE QUE ÇA FAIT:
+1. Vérifie connexion Homey
+2. Build l'app
+3. Installe sur Homey
+4. Affiche les logs en temps réel
+
+AVANTAGES:
+✓ Pas de timeout
+✓ Fonctionne même si réseau lent
+✓ Logs clairs et précis
+
+WORKFLOW:
+1. Lancez le script
+2. Observez les logs
+3. Trouvez l'erreur
+4. Ctrl+C pour arrêter
+5. Modifiez le code
+6. Relancez le script
+7. Répétez jusqu'à fix
+
+───────────────────────────────────────────────────────────────────────────────
+OPTION 3: COLLECTER INFO DEBUG (Pour partage)
+───────────────────────────────────────────────────────────────────────────────
+
+Double-cliquer: COLLECT_DEBUG_INFO.bat
+
+CE QUE ÇA FAIT:
+✓ Collecte infos Homey
+✓ Collecte logs app
+✓ Liste devices
+✓ Info Zigbee
+✓ Tout dans un fichier texte
+
+UTILISATION:
+1. Lancez le script
+2. Fichier texte créé automatiquement
+3. Partagez-moi le contenu
+4. Je peux analyser et fournir corrections
+
+───────────────────────────────────────────────────────────────────────────────
+OPTION 4: DIAGNOSTIC REPORT (Via Homey App)
+───────────────────────────────────────────────────────────────────────────────
+
+SUR VOTRE SMARTPHONE:
+1. Ouvrir app Homey
+2. Paramètres → Apps
+3. Universal Tuya Zigbee
+4. ⋮ (menu) → Send diagnostic report
+5. Ajouter message: "capabilities null" ou autre problème
+
+AVANTAGES:
+✓ Logs complets automatiques
+✓ Stack traces inclus
+✓ Configuration devices
+✓ Je reçois par email
+
+───────────────────────────────────────────────────────────────────────────────
+🎯 QUELLE OPTION CHOISIR?
+───────────────────────────────────────────────────────────────────────────────
+
+POUR DEBUG RAPIDE:
+→ OPTION 2 (LIVE_DEBUG.bat)
+  Meilleure option pour itération rapide
+
+POUR ANALYSE COMPLÈTE:
+→ OPTION 3 (COLLECT_DEBUG_INFO.bat)
+  Si vous voulez me partager toutes les infos
+
+POUR PROBLÈME SPÉCIFIQUE:
+→ OPTION 4 (Diagnostic Report)
+  Via app Homey, je reçois tout automatiquement
+
+POUR TEST INTERACTIF:
+→ OPTION 1 (DEBUG_RUN_NOW.bat)
+  Si votre Homey est accessible localement
+
+───────────────────────────────────────────────────────────────────────────────
+📊 WORKFLOW RECOMMANDÉ
+───────────────────────────────────────────────────────────────────────────────
+
+1. IDENTIFIER LE PROBLÈME
+   → Lancez LIVE_DEBUG.bat ou COLLECT_DEBUG_INFO.bat
+   → Observez les erreurs
+
+2. PARTAGER LES INFOS
+   → Copiez les logs
+   → Partagez-moi dans le chat
+   → Ou envoyez Diagnostic Report
+
+3. JE FOURNIS LE FIX
+   → J'analyse les logs
+   → Je crée le code de correction
+   → Je teste la validation
+
+4. VOUS TESTEZ
+   → Code automatiquement déployé (git push)
+   → Relancez LIVE_DEBUG.bat
+   → Vérifiez que c'est corrigé
+
+5. PUBLICATION
+   → Si OK, je publie nouvelle version
+   → Disponible sur App Store en 30-60 min
+
+───────────────────────────────────────────────────────────────────────────────
+🔧 COMMANDES MANUELLES UTILES
+───────────────────────────────────────────────────────────────────────────────
+
+SI VOUS VOULEZ FAIRE MANUELLEMENT:
+
+# Voir logs en temps réel
+homey app log com.dlnraja.tuya.zigbee
+
+# Installer version locale
+homey app install
+
+# Lancer en debug
+homey app run
+
+# Voir info Homey
+homey info
+
+# Lister devices
+homey devices list
+
+# Voir réseau Zigbee
+homey zigbee list
+
+───────────────────────────────────────────────────────────────────────────────
+❓ PROBLÈMES ACTUELS IDENTIFIÉS
+───────────────────────────────────────────────────────────────────────────────
+
+D'après Log ID 487badc9, il reste potentiellement:
+
+⚠️ Capabilities NULL sur certains devices:
+   - Switch 1gang: onoff = null
+   - 4-Boutons: measure_battery = null
+   - Climate Monitor: temperature = null
+   - Etc.
+
+POUR DEBUGGER:
+1. Lancez LIVE_DEBUG.bat
+2. Observez logs d'initialization
+3. Cherchez erreurs type:
+   - "Cannot read attribute"
+   - "Cluster not found"
+   - "Device not responding"
+4. Partagez-moi les logs exacts
+
+───────────────────────────────────────────────────────────────────────────────
+✅ PROCHAINES ÉTAPES SUGGÉRÉES
+───────────────────────────────────────────────────────────────────────────────
+
+IMMÉDIAT:
+1. Double-cliquer LIVE_DEBUG.bat
+2. Observer les logs
+3. Copier les erreurs
+4. Me les partager
+
+OU ALTERNATIF:
+1. Double-cliquer COLLECT_DEBUG_INFO.bat
+2. M'envoyer le fichier texte généré
+
+OU VIA HOMEY:
+1. App Homey → Diagnostic Report
+2. J'analyse automatiquement
+
+═══════════════════════════════════════════════════════════════════════════════
+   💡 JE SUIS PRÊT À ANALYSER VOS LOGS!
+═══════════════════════════════════════════════════════════════════════════════
+
+Choisissez une option ci-dessus et partagez-moi les résultats.
+Je fournirai les corrections immédiatement!
+
+Documentation complète: REAL_TIME_DEBUG_GUIDE.md

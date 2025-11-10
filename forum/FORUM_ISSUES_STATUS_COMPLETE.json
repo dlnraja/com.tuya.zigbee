@@ -1,0 +1,136 @@
+{
+  "timestamp": "2025-10-12T13:41:28.041Z",
+  "summary": {
+    "total": 4,
+    "fixed": 3,
+    "documented": 1,
+    "pending": 0,
+    "issues": [
+      {
+        "post": "#279",
+        "issue": "App uninstalls on update - devices removed",
+        "status": "documented",
+        "verified": true,
+        "checks": [
+          {
+            "type": "response_doc",
+            "status": "OK"
+          }
+        ]
+      },
+      {
+        "post": "#280",
+        "issue": "SOS Emergency Button - Battery shows 1% instead of correct value (3.36V measured)",
+        "status": "FIXED",
+        "verified": true,
+        "checks": [
+          {
+            "type": "fix_file",
+            "status": "OK"
+          },
+          {
+            "type": "response_doc",
+            "status": "OK"
+          }
+        ]
+      },
+      {
+        "post": "#280",
+        "issue": "HOBEIAN Multisensor ZG-204ZV - No sensor data (temp/humidity/lux/motion)",
+        "status": "FIXED",
+        "verified": true,
+        "checks": [
+          {
+            "type": "fix_file",
+            "status": "OK"
+          },
+          {
+            "type": "response_doc",
+            "status": "OK"
+          }
+        ]
+      },
+      {
+        "post": "#281",
+        "issue": "Device icons showing as black squares in dashboard",
+        "status": "FIXED",
+        "verified": true,
+        "checks": [
+          {
+            "type": "response_doc",
+            "status": "OK"
+          }
+        ]
+      }
+    ]
+  },
+  "issues": [
+    {
+      "post": "#279",
+      "user": "Ian_Gibbo",
+      "issue": "App uninstalls on update - devices removed",
+      "category": "test_mode_behavior",
+      "severity": "medium",
+      "status": "documented",
+      "solution": "Expected during test phase - will be fixed on official release",
+      "response": "docs/forum/FORUM_RESPONSE_IAN_UPDATE_ISSUE.md",
+      "version": "N/A - Not a bug",
+      "notes": "User informed about test mode vs production behavior"
+    },
+    {
+      "post": "#280",
+      "user": "Peter_van_Werkhoven",
+      "issue": "SOS Emergency Button - Battery shows 1% instead of correct value (3.36V measured)",
+      "category": "battery_calculation",
+      "severity": "critical",
+      "status": "FIXED",
+      "solution": "Smart battery calculation (0-100 vs 0-200 detection)",
+      "response": "docs/forum/FORUM_RESPONSE_PETER_DIAGNOSTIC.md",
+      "version": "v2.15.1",
+      "driver": "sos_emergency_button_cr2032",
+      "diagnosticCode": "32546f72-a816-4e43-afce-74cd9a6837e3",
+      "fixApplied": "drivers/sos_emergency_button_cr2032/device.js",
+      "notes": "Added smart parser + IAS Zone enrollment"
+    },
+    {
+      "post": "#280",
+      "user": "Peter_van_Werkhoven",
+      "issue": "HOBEIAN Multisensor ZG-204ZV - No sensor data (temp/humidity/lux/motion)",
+      "category": "sensor_data_reception",
+      "severity": "critical",
+      "status": "FIXED",
+      "solution": "Auto-detect endpoint + fallback to standard Zigbee clusters",
+      "response": "docs/forum/FORUM_RESPONSE_PETER_DIAGNOSTIC.md",
+      "version": "v2.15.1",
+      "driver": "motion_temp_humidity_illumination_multi_battery",
+      "diagnosticCode": "32546f72-a816-4e43-afce-74cd9a6837e3",
+      "fixApplied": "drivers/motion_temp_humidity_illumination_multi_battery/device.js",
+      "notes": "Added auto-endpoint detection + enhanced logging"
+    },
+    {
+      "post": "#281",
+      "user": "Peter_van_Werkhoven",
+      "issue": "Device icons showing as black squares in dashboard",
+      "category": "icons_cache",
+      "severity": "low",
+      "status": "FIXED",
+      "solution": "New minimalist icons + cache refresh instructions",
+      "response": "docs/forum/FORUM_RESPONSE_PETER_ICONS.md",
+      "version": "v2.15.9",
+      "notes": "Regenerated icons with correct dimensions (250x175, 500x350, 1000x700) + .force-update"
+    }
+  ],
+  "byUser": {
+    "Ian_Gibbo": {
+      "total": 1,
+      "fixed": 0,
+      "documented": 1
+    },
+    "Peter_van_Werkhoven": {
+      "total": 3,
+      "fixed": 3,
+      "documented": 0
+    }
+  },
+  "allCriticalFixed": true
+}

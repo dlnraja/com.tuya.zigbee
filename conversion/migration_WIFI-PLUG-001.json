@@ -1,0 +1,152 @@
+{
+  "device": {
+    "model": "WIFI-PLUG-001",
+    "manufacturer": "Tuya",
+    "description": "Smart Plug WiFi",
+    "capabilities": [
+      "switch_1",
+      "cur_power",
+      "cur_current",
+      "add_ele"
+    ]
+  },
+  "identification": {
+    "type": "wifi",
+    "confidence": "high",
+    "compatible": false,
+    "app": "LocalTuya (community)",
+    "note": "⚠️ WiFi device - cloud or local WiFi required"
+  },
+  "compatibility": {
+    "type": "wifi",
+    "supported": false,
+    "app": "LocalTuya (community)",
+    "confidence": "high"
+  },
+  "capabilities": {
+    "cloud": [
+      "switch_1",
+      "cur_power",
+      "cur_current",
+      "add_ele"
+    ],
+    "conversions": [
+      {
+        "cloud": "switch_1",
+        "zigbee": "onoff",
+        "cluster": 6,
+        "note": "On/Off",
+        "supported": true
+      },
+      {
+        "cloud": "cur_power",
+        "zigbee": "measure_power",
+        "cluster": 2820,
+        "note": "Power W",
+        "supported": true
+      },
+      {
+        "cloud": "cur_current",
+        "zigbee": "measure_current",
+        "cluster": 2820,
+        "note": "Current A",
+        "supported": true
+      },
+      {
+        "cloud": "add_ele",
+        "zigbee": "meter_power",
+        "cluster": 1794,
+        "note": "Energy kWh",
+        "supported": true
+      }
+    ],
+    "zigbeeCapabilities": [
+      "onoff",
+      "measure_power",
+      "measure_current",
+      "meter_power"
+    ],
+    "unsupported": []
+  },
+  "recommendedDrivers": [
+    {
+      "driverId": "plug_energy_advanced",
+      "name": "Energy Plug Advanced",
+      "matchCount": 4,
+      "totalCaps": 5,
+      "matchPercent": 100,
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ]
+    },
+    {
+      "driverId": "plug_energy_monitor",
+      "name": "Plug Energy Monitor",
+      "matchCount": 4,
+      "totalCaps": 5,
+      "matchPercent": 100,
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ]
+    },
+    {
+      "driverId": "plug_energy_monitor_advanced",
+      "name": "Energy Monitoring Plug Advanced",
+      "matchCount": 4,
+      "totalCaps": 5,
+      "matchPercent": 100,
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ]
+    },
+    {
+      "driverId": "plug_energy_smart",
+      "name": "Smart Plug Energy",
+      "matchCount": 4,
+      "totalCaps": 5,
+      "matchPercent": 100,
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ]
+    },
+    {
+      "driverId": "plug_power_meter",
+      "name": "Power Meter Socket",
+      "matchCount": 4,
+      "totalCaps": 5,
+      "matchPercent": 100,
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ]
+    }
+  ],
+  "migrationSteps": [
+    "1. ⚠️  Device is WiFi (not Zigbee)",
+    "2. ❌ NOT supported by Ultimate Zigbee app",
+    "3. Options:",
+    "   a) Use LocalTuya app (WiFi local, no cloud)",
+    "   b) Replace with Zigbee equivalent",
+    "   c) Use different brand (Shelly, Sonoff)",
+    "4. Recommendation: Buy Zigbee devices for better local control"
+  ]
+}

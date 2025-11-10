@@ -1,0 +1,84 @@
+{
+  "timestamp": "2025-11-03T04:00:03.408Z",
+  "summary": {
+    "totalLines": 2,
+    "falsePositives": 2,
+    "confusingMessages": 1,
+    "criticalErrors": 0,
+    "performanceIssues": 0
+  },
+  "severityBreakdown": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 2
+  },
+  "autofixable": 2,
+  "issues": [
+    {
+      "line": 3,
+      "content": "2025-11-01T20:17:19.513Z [log] [ManagerDrivers] [Driver:switch_wall_2gang] [Device:8f8fb9c4-0bc4-4754-8129-1a6aec9549d8] [TUYA] No EF00 cluster found (not a Tuya DP device)",
+      "issues": [
+        {
+          "type": "FALSE_POSITIVE",
+          "pattern": "/\\[TUYA\\] No EF00 cluster found \\(not a Tuya DP device\\)/",
+          "reason": "Normal behavior for standard Zigbee devices",
+          "action": "Improve log message clarity",
+          "severity": "info",
+          "autofix": true
+        },
+        {
+          "type": "CONFUSING_MESSAGE",
+          "pattern": "/\\[TUYA\\].*No EF00/",
+          "reason": "Message sounds like error but is normal",
+          "suggestion": "Use informative icon (ℹ️) and positive language",
+          "autofix": true
+        }
+      ],
+      "fixes": [],
+      "severity": "info"
+    },
+    {
+      "line": 4,
+      "content": "2025-11-01T20:17:19.514Z [log] [ManagerDrivers] [Driver:switch_wall_2gang] [Device:8f8fb9c4-0bc4-4754-8129-1a6aec9549d8] [TUYA] Available clusters: basic, identify, groups, scenes, onOff, metering, electricalMeasurement",
+      "issues": [
+        {
+          "type": "FALSE_POSITIVE",
+          "pattern": "/\\[TUYA\\].*Available clusters:.*basic.*onOff/",
+          "reason": "Device uses standard Zigbee clusters (expected)",
+          "action": "Add positive confirmation message",
+          "severity": "info",
+          "autofix": true
+        }
+      ],
+      "fixes": [],
+      "severity": "info"
+    }
+  ],
+  "fixes": {
+    "tuyaEF00Manager": [
+      {
+        "file": "lib/TuyaEF00Manager.js",
+        "issue": "Normal behavior for standard Zigbee devices",
+        "fix": "Improve log message with positive language and context",
+        "code": "\n// BEFORE:\nthis.device.log('[TUYA] No EF00 cluster found (not a Tuya DP device)');\n\n// AFTER:\nthis.device.log('[TUYA] ℹ️  Device uses standard Zigbee clusters (not Tuya DP protocol)');\nthis.device.log('[TUYA] ✅ Available clusters:', Object.keys(endpoint.clusters).join(', '));\nthis.device.log('[TUYA] ℹ️  Tuya EF00 manager not needed for this device');\n"
+      },
+      {
+        "file": "lib/TuyaEF00Manager.js",
+        "issue": "Message sounds like error but is normal",
+        "fix": "Improve log message with positive language and context",
+        "code": "\n// BEFORE:\nthis.device.log('[TUYA] No EF00 cluster found (not a Tuya DP device)');\n\n// AFTER:\nthis.device.log('[TUYA] ℹ️  Device uses standard Zigbee clusters (not Tuya DP protocol)');\nthis.device.log('[TUYA] ✅ Available clusters:', Object.keys(endpoint.clusters).join(', '));\nthis.device.log('[TUYA] ℹ️  Tuya EF00 manager not needed for this device');\n"
+      },
+      {
+        "file": "lib/TuyaEF00Manager.js",
+        "issue": "Device uses standard Zigbee clusters (expected)",
+        "fix": "Improve log message with positive language and context",
+        "code": "\n// BEFORE:\nthis.device.log('[TUYA] No EF00 cluster found (not a Tuya DP device)');\n\n// AFTER:\nthis.device.log('[TUYA] ℹ️  Device uses standard Zigbee clusters (not Tuya DP protocol)');\nthis.device.log('[TUYA] ✅ Available clusters:', Object.keys(endpoint.clusters).join(', '));\nthis.device.log('[TUYA] ℹ️  Tuya EF00 manager not needed for this device');\n"
+      }
+    ],
+    "baseHybridDevice": [],
+    "switchDevice": [],
+    "general": []
+  }
+}
