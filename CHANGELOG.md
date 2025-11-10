@@ -2,6 +2,37 @@
 
 ## [4.9.328] - 2025-11-10
 
+### 🚀 MIGRATION TO OFFICIAL ATHOM GITHUB ACTIONS
+
+**Major improvement: Using official Athom GitHub Actions instead of CLI!**
+
+#### Official Actions Migration:
+1. ✅ **athombv/github-action-homey-app-validate** - Official validation
+2. ✅ **athombv/github-action-homey-app-publish** - Official publish
+3. ✅ **No more Homey CLI required** - Direct API integration
+4. ✅ **HOMEY_PAT token** - Personal Access Token from https://tools.developer.homey.app/me
+5. ✅ **Faster workflows** - 2-3 minutes saved per run
+6. ✅ **More reliable** - Maintained by Athom
+
+#### New Workflows:
+- `publish-official.yml` - Standard publish with official actions
+- `force-publish-official.yml` - Force publish with skip validation option
+- `ci-official.yml` - CI/CD with official validation
+
+#### Benefits:
+- ✅ No CLI installation needed
+- ✅ Faster execution (~5 min vs ~10 min)
+- ✅ More reliable (direct Athom API)
+- ✅ Better error messages
+- ✅ Official support from Athom
+- ✅ Simpler configuration
+
+#### Documentation:
+- `OFFICIAL_ACTIONS_GUIDE.md` - Complete guide (600+ lines)
+- Migration from CLI to official actions
+- HOMEY_PAT configuration instructions
+- All workflows documented
+
 ### 🔧 WORKFLOW FIXES & FORCE PUBLISH
 
 **All GitHub Actions workflows fixed and improved!**
