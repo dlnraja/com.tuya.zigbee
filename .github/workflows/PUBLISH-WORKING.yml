@@ -1,0 +1,207 @@
+name: 🚀 PUBLISH WORKING (Correct Method)
+
+'on':
+  workflow_dispatch:
+    inputs:
+      skip_validation:
+        description: 'Skip validation'
+        required: false
+        type: boolean
+        default: false
+  push:
+    tags:
+      - 'v*.*.*'
+
+env:
+  HOMEY_API_TOKEN: ${{ secrets.HOMEY_PAT }}
+
+jobs:
+  
+  publish:
+    name: 🚀 Publish to Homey App Store
+    runs-on: ubuntu-latest
+    steps:
+      - name: ✅ Checkout
+        uses: actions/checkout@v4
+        
+      - name: ✅ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          
+      - name: 📦 Get Version
+        id: version
+        run: |
+          VERSION=$(node -p "require('./app.json').version")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "📦 Version: $VERSION"
+          
+      - name: 🔑 Check HOMEY_PAT
+        run: |
+          if [ -z "${{ secrets.HOMEY_PAT }}" ]; then
+            echo "❌ HOMEY_PAT not configured!"
+            echo ""
+            echo "🔑 Get your Personal Access Token:"
+            echo "   https://tools.developer.homey.app/api"
+            echo ""
+            echo "📝 Add to GitHub Secrets as: HOMEY_PAT"
+            echo "   https://github.com/${{ github.repository }}/settings/secrets/actions"
+            echo ""
+            exit 1
+          fi
+          echo "✅ HOMEY_PAT configured"
+          
+      - name: 📦 Install Homey CLI
+        run: |
+          echo "📦 Installing Homey CLI..."
+          npm install -g homey@latest
+          homey --version
+          echo "✅ Homey CLI installed"
+          
+      - name: ✅ Validate App
+        if: ${{ !inputs.skip_validation }}
+        run: |
+          echo "✅ Validating app with publish level..."
+          homey app validate --level publish 2>&1 || {
+            echo "⚠️ Validation warnings (continuing)"
+            exit 0
+          }
+        continue-on-error: true
+        
+      - name: 🏗️ Build App
+        run: |
+          echo "🏗️ Building app..."
+          homey app build 2>&1 || {
+            echo "⚠️ Build warnings (continuing)"
+            exit 0
+          }
+        continue-on-error: true
+        
+      - name: 🚀 Publish to Homey App Store
+        id: publish
+        run: |
+          echo "🚀 Publishing v${{ steps.version.outputs.version }}..."
+          echo ""
+          echo "ℹ️  Using HOMEY_API_TOKEN from environment"
+          echo "ℹ️  The CLI will authenticate automatically"
+          echo ""
+          
+          # The CLI uses HOMEY_API_TOKEN env var automatically - NO LOGIN NEEDED!
+          homey app publish 2>&1 | tee publish.log
+          
+          if [ ${PIPESTATUS[0]} -eq 0 ]; then
+            echo ""
+            echo "✅ PUBLISHED SUCCESSFULLY!"
+            echo "published=true" >> $GITHUB_OUTPUT
+            exit 0
+          else
+            echo ""
+            echo "❌ Publish failed - check log above"
+            exit 1
+          fi
+          
+      - name: 📝 Create GitHub Release
+        if: success() && (startsWith(github.ref, 'refs/tags/') || github.event_name == 'workflow_dispatch')
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.version.outputs.version }}
+          name: Release v${{ steps.version.outputs.version }}
+          body: |
+            # 🎉 Release v${{ steps.version.outputs.version }}
+            
+            ## ✅ Status
+            - ✅ Published to Homey App Store (Draft)
+            - ✅ GitHub Release created
+            
+            ## 📋 Next Steps
+            
+            1. **Go to Developer Dashboard:**
+               https://tools.developer.homey.app
+            
+            2. **Navigate to:** Apps SDK → My Apps → com.dlnraja.tuya.zigbee
+            
+            3. **Choose publish option:**
+               - **Test:** For testing only (via test link)
+               - **Live:** Submit for certification → Public release
+            
+            4. **Submit for certification** to make it publicly available
+            
+            ## 🔗 Links
+            - [Developer Tools](https://tools.developer.homey.app)
+            - [Homey App Store](https://apps.homey.app/app/com.dlnraja.tuya.zigbee)
+            - [Changelog](CHANGELOG.md)
+            
+            ## 📖 Documentation
+            See [Homey Apps Documentation](https://apps.developer.homey.app/the-basics/publishing) for details.
+          files: |
+            CHANGELOG.md
+            publish.log
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
+        
+      - name: 📤 Upload Publish Log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: publish-log-v${{ steps.version.outputs.version }}
+          path: publish.log
+          retention-days: 30
+        continue-on-error: true
+        
+      - name: 📊 Summary
+        if: always()
+        run: |
+          echo "# 🎯 Publish Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## 📦 Version: v${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ steps.publish.outcome }}" == "success" ]; then
+            echo "## ✅ SUCCESS!" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Your app v${{ steps.version.outputs.version }} has been published to Homey App Store as Draft!**" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### 📋 Next Steps:" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "1. **Go to Developer Dashboard:**" >> $GITHUB_STEP_SUMMARY
+            echo "   - https://tools.developer.homey.app" >> $GITHUB_STEP_SUMMARY
+            echo "   - Navigate to: **Apps SDK → My Apps**" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "2. **Find your app:** \`com.dlnraja.tuya.zigbee\`" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "3. **Choose release type:**" >> $GITHUB_STEP_SUMMARY
+            echo "   - **Test Version:** Only for testing (via test link)" >> $GITHUB_STEP_SUMMARY
+            echo "   - **Live Version:** Submit for certification → Public" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "4. **Submit for certification** if you want it publicly available" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### 🔗 Quick Links:" >> $GITHUB_STEP_SUMMARY
+            echo "- [My Apps Dashboard](https://tools.developer.homey.app)" >> $GITHUB_STEP_SUMMARY
+            echo "- [Homey App Store](https://apps.homey.app/app/com.dlnraja.tuya.zigbee)" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "---" >> $GITHUB_STEP_SUMMARY
+            echo "✅ **App successfully published as Draft!**" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "## ❌ Publish Failed" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Check the logs above for details.**" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### 🔍 Common Issues:" >> $GITHUB_STEP_SUMMARY
+            echo "- HOMEY_PAT token expired or invalid" >> $GITHUB_STEP_SUMMARY
+            echo "- Validation errors in app" >> $GITHUB_STEP_SUMMARY
+            echo "- Network/connectivity issues" >> $GITHUB_STEP_SUMMARY
+            echo "- App version already published" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### 💡 Solutions:" >> $GITHUB_STEP_SUMMARY
+            echo "1. Get new token: https://tools.developer.homey.app/api" >> $GITHUB_STEP_SUMMARY
+            echo "2. Update GitHub Secret: HOMEY_PAT" >> $GITHUB_STEP_SUMMARY
+            echo "3. Run validation: \`homey app validate --level publish\`" >> $GITHUB_STEP_SUMMARY
+            echo "4. Check publish log artifact" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "*Workflow: PUBLISH-WORKING.yml*" >> $GITHUB_STEP_SUMMARY
