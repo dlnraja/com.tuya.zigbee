@@ -87,9 +87,10 @@ jobs:
           echo ""
           
           # The CLI uses HOMEY_API_TOKEN env var automatically - NO LOGIN NEEDED!
-          homey app publish 2>&1 | tee publish.log
+          # Use echo "n" to skip version bump prompt in non-interactive mode
+          echo "n" | homey app publish 2>&1 | tee publish.log
           
-          if [ ${PIPESTATUS[0]} -eq 0 ]; then
+          if [ ${PIPESTATUS[1]} -eq 0 ]; then
             echo ""
             echo "✅ PUBLISHED SUCCESSFULLY!"
             echo "published=true" >> $GITHUB_OUTPUT
