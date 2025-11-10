@@ -51,6 +51,12 @@ jobs:
           fi
           echo "✅ HOMEY_PAT configured"
           
+      - name: 📦 Install Dependencies
+        run: |
+          echo "📦 Installing app dependencies..."
+          npm install
+          echo "✅ Dependencies installed"
+          
       - name: 📦 Install Homey CLI
         run: |
           echo "📦 Installing Homey CLI..."
