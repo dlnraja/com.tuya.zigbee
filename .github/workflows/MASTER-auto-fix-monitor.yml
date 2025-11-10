@@ -79,6 +79,7 @@ jobs:
         continue-on-error: true
         
       - name: Auto-fix common issues
+        id: auto-fix
         if: always()
         run: |
           echo "🔧 Running auto-fixes..."
@@ -112,11 +113,13 @@ jobs:
           fi
           
           if [ "$FIXED" = "true" ]; then
-            echo "needs_commit=true" >> $GITHUB_ENV
+            echo "needs_commit=true" >> $GITHUB_OUTPUT
+          else
+            echo "needs_commit=false" >> $GITHUB_OUTPUT
           fi
           
       - name: Commit fixes
-        if: env.needs_commit == 'true'
+        if: ${{ steps.auto-fix.outputs.needs_commit == 'true' }}
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
