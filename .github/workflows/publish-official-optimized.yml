@@ -60,7 +60,7 @@ jobs:
       - name: 🔢 Update Version
         if: ${{ inputs.version_type != 'none' }}
         id: new-version
-        uses: athombv/github-action-homey-app-update-version@v1
+        uses: athombv/github-action-homey-app-version@v1
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
           version_type: ${{ inputs.version_type }}
