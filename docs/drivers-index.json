@@ -1,0 +1,7418 @@
+{
+  "generated": "2025-11-09T23:59:20.135Z",
+  "version": "4.9.327",
+  "totalDrivers": 172,
+  "drivers": [
+    {
+      "id": "air_quality_comprehensive",
+      "name": "Comprehensive Air Monitor",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/air_quality_comprehensive/assets/icon.svg",
+      "images": {
+        "small": "drivers/air_quality_comprehensive/assets/images/small.png",
+        "large": "drivers/air_quality_comprehensive/assets/images/large.png",
+        "xlarge": "drivers/air_quality_comprehensive/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "air_quality_monitor",
+      "name": "Air Quality Monitor Pro (INTERNAL)",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "measure_co2",
+        "measure_temperature",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/air_quality_monitor/assets/icon.svg",
+      "images": {
+        "small": "drivers/air_quality_monitor/assets/images/small.png",
+        "large": "drivers/air_quality_monitor/assets/images/large.png",
+        "xlarge": "drivers/air_quality_monitor/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "air_quality_monitor_advanced",
+      "name": "Air Quality Monitor",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "measure_pm25",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/air_quality_monitor_advanced/assets/icon.svg",
+      "images": {
+        "small": "drivers/air_quality_monitor_advanced/assets/images/small.png",
+        "large": "drivers/air_quality_monitor_advanced/assets/images/large.png",
+        "xlarge": "drivers/air_quality_monitor_advanced/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "air_quality_pm25",
+      "name": "Pm25 Detector",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_pm25",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/air_quality_pm25/assets/icon.svg",
+      "images": {
+        "small": "drivers/air_quality_pm25/assets/images/small.png",
+        "large": "drivers/air_quality_pm25/assets/images/large.png",
+        "xlarge": "drivers/air_quality_pm25/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "blind_roller_controller",
+      "name": "Roller Blind Controller",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_generic",
+        "windowcoverings_state"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/blind_roller_controller/assets/icon.svg",
+      "images": {
+        "small": "drivers/blind_roller_controller/assets/images/small.png",
+        "large": "drivers/blind_roller_controller/assets/images/large.png",
+        "xlarge": "drivers/blind_roller_controller/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "bulb_dimmable",
+      "name": "Smart Bulb Dimmer",
+      "description": "light",
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "light",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/bulb_dimmable/assets/icon.svg",
+      "images": {
+        "small": "drivers/bulb_dimmable/assets/images/small.png",
+        "large": "drivers/bulb_dimmable/assets/images/large.png",
+        "xlarge": "drivers/bulb_dimmable/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "bulb_rgb",
+      "name": "Smart Bulb Rgb",
+      "description": "light",
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "light",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/bulb_rgb/assets/icon.svg",
+      "images": {
+        "small": "drivers/bulb_rgb/assets/images/small.png",
+        "large": "drivers/bulb_rgb/assets/images/large.png",
+        "xlarge": "drivers/bulb_rgb/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "bulb_rgbw",
+      "name": "Smart Bulb Bulb Rgbw",
+      "description": "light",
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "light",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/bulb_rgbw/assets/icon.svg",
+      "images": {
+        "small": "drivers/bulb_rgbw/assets/images/small.png",
+        "large": "drivers/bulb_rgbw/assets/images/large.png",
+        "xlarge": "drivers/bulb_rgbw/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "bulb_tunable_white",
+      "name": "Bulb Tunable",
+      "description": "light",
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "light",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/bulb_tunable_white/assets/icon.svg",
+      "images": {
+        "small": "drivers/bulb_tunable_white/assets/images/small.png",
+        "large": "drivers/bulb_tunable_white/assets/images/large.png",
+        "xlarge": "drivers/bulb_tunable_white/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "bulb_white",
+      "name": "Smart Bulb White",
+      "description": "light",
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "light",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/bulb_white/assets/icon.svg",
+      "images": {
+        "small": "drivers/bulb_white/assets/images/small.png",
+        "large": "drivers/bulb_white/assets/images/large.png",
+        "xlarge": "drivers/bulb_white/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "button_emergency_advanced",
+      "name": "Sos Emergency Button",
+      "description": "button",
+      "class": "button",
+      "capabilities": [
+        "alarm_generic",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "button",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/button_emergency_advanced/assets/icon.svg",
+      "images": {
+        "small": "drivers/button_emergency_advanced/assets/images/small.png",
+        "large": "drivers/button_emergency_advanced/assets/images/large.png",
+        "xlarge": "drivers/button_emergency_advanced/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "button_emergency_sos",
+      "name": "Sos Emergency Button",
+      "description": "button",
+      "class": "button",
+      "capabilities": [
+        "alarm_generic",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "button",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/button_emergency_sos/assets/icon.svg",
+      "images": {
+        "small": "drivers/button_emergency_sos/assets/images/small.png",
+        "large": "drivers/button_emergency_sos/assets/images/large.png",
+        "xlarge": "drivers/button_emergency_sos/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "button_remote_1",
+      "name": "Wireless Switch 1button",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_generic",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/button_remote_1/assets/icon.svg",
+      "images": {
+        "small": "drivers/button_remote_1/assets/images/small.png",
+        "large": "drivers/button_remote_1/assets/images/large.png",
+        "xlarge": "drivers/button_remote_1/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "button_remote_2",
+      "name": "Wireless Switch 2button",
+      "description": "button",
+      "class": "button",
+      "capabilities": [
+        "onoff",
+        "onoff.button2",
+        "alarm_generic",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "button",
+        "switch",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/button_remote_2/assets/icon.svg",
+      "images": {
+        "small": "drivers/button_remote_2/assets/images/small.png",
+        "large": "drivers/button_remote_2/assets/images/large.png",
+        "xlarge": "drivers/button_remote_2/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "button_remote_3",
+      "name": "Wireless Switch 3button",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.button2",
+        "onoff.button3",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/button_remote_3/assets/icon.svg",
+      "images": {
+        "small": "drivers/button_remote_3/assets/images/small.png",
+        "large": "drivers/button_remote_3/assets/images/large.png",
+        "xlarge": "drivers/button_remote_3/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "button_remote_4",
+      "name": "Wireless Switch 4button",
+      "description": "button",
+      "class": "button",
+      "capabilities": [
+        "onoff",
+        "onoff.button2",
+        "onoff.button3",
+        "onoff.button4",
+        "alarm_generic",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "button",
+        "switch",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/button_remote_4/assets/icon.svg",
+      "images": {
+        "small": "drivers/button_remote_4/assets/images/small.png",
+        "large": "drivers/button_remote_4/assets/images/large.png",
+        "xlarge": "drivers/button_remote_4/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "button_remote_6",
+      "name": "Wireless Switch 6button",
+      "description": "button",
+      "class": "button",
+      "capabilities": [
+        "onoff",
+        "onoff.button2",
+        "onoff.button3",
+        "onoff.button4",
+        "onoff.button5",
+        "onoff.button6",
+        "alarm_generic",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "button",
+        "switch",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/button_remote_6/assets/icon.svg",
+      "images": {
+        "small": "drivers/button_remote_6/assets/images/small.png",
+        "large": "drivers/button_remote_6/assets/images/large.png",
+        "xlarge": "drivers/button_remote_6/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "button_remote_8",
+      "name": "Wireless Switch 8button",
+      "description": "button",
+      "class": "button",
+      "capabilities": [
+        "onoff",
+        "onoff.button2",
+        "onoff.button3",
+        "onoff.button4",
+        "onoff.button5",
+        "onoff.button6",
+        "onoff.button7",
+        "onoff.button8",
+        "alarm_generic",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "button",
+        "switch",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/button_remote_8/assets/icon.svg",
+      "images": {
+        "small": "drivers/button_remote_8/assets/images/small.png",
+        "large": "drivers/button_remote_8/assets/images/large.png",
+        "xlarge": "drivers/button_remote_8/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "button_shortcut",
+      "name": "Shortcut Button (OTHER)",
+      "description": "button",
+      "class": "button",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "button",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/button_shortcut/assets/icon.svg",
+      "images": {
+        "small": "drivers/button_shortcut/assets/images/small.png",
+        "large": "drivers/button_shortcut/assets/images/large.png",
+        "xlarge": "drivers/button_shortcut/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "button_wireless",
+      "name": "Wireless Button (Universal)",
+      "description": "button",
+      "class": "button",
+      "capabilities": [
+        "alarm_generic",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "button",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/button_wireless/assets/icon.svg",
+      "images": {
+        "small": "drivers/button_wireless/assets/images/small.png",
+        "large": "drivers/button_wireless/assets/images/large.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "button_wireless_1",
+      "name": "1-Buttons Wireless Controller",
+      "description": "button",
+      "class": "button",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "button",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/button_wireless_1/assets/icon.svg",
+      "images": {
+        "small": "drivers/button_wireless_1/assets/images/small.png",
+        "large": "drivers/button_wireless_1/assets/images/large.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "button_wireless_2",
+      "name": "2-Buttons Wireless Controller",
+      "description": "button",
+      "class": "button",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "button",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/button_wireless_2/assets/icon.svg",
+      "images": {
+        "small": "drivers/button_wireless_2/assets/images/small.png",
+        "large": "drivers/button_wireless_2/assets/images/large.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "button_wireless_3",
+      "name": "3-Button Wireless Controller",
+      "description": "button",
+      "class": "button",
+      "capabilities": [
+        "measure_battery",
+        "alarm_generic"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "button",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/button_wireless_3/assets/icon.svg",
+      "images": {
+        "small": "drivers/button_wireless_3/assets/images/small.png",
+        "large": "drivers/button_wireless_3/assets/images/large.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2450"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "button_wireless_4",
+      "name": "4-Buttons Wireless Controller",
+      "description": "button",
+      "class": "button",
+      "capabilities": [
+        "measure_battery",
+        "alarm_generic"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "button",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/button_wireless_4/assets/icon.svg",
+      "images": {
+        "small": "drivers/button_wireless_4/assets/images/small.png",
+        "large": "drivers/button_wireless_4/assets/images/large.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2450"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "button_wireless_6",
+      "name": "6-Buttons Wireless Controller",
+      "description": "button",
+      "class": "button",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "button",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/button_wireless_6/assets/icon.svg",
+      "images": {
+        "small": "drivers/button_wireless_6/assets/images/small.png",
+        "large": "drivers/button_wireless_6/assets/images/large.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "button_wireless_8",
+      "name": "8-Buttons Wireless Controller",
+      "description": "button",
+      "class": "button",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "button",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/button_wireless_8/assets/icon.svg",
+      "images": {
+        "small": "drivers/button_wireless_8/assets/images/small.png",
+        "large": "drivers/button_wireless_8/assets/images/large.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "ceiling_fan",
+      "name": "Ceiling Fan",
+      "description": "light",
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "light",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/ceiling_fan/assets/icon.svg",
+      "images": {
+        "small": "drivers/ceiling_fan/assets/images/small.png",
+        "large": "drivers/ceiling_fan/assets/images/large.png",
+        "xlarge": "drivers/ceiling_fan/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "climate_monitor",
+      "name": "Temperature Humidity",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/climate_monitor/assets/icon.svg",
+      "images": {
+        "small": "drivers/climate_monitor/assets/images/small.png",
+        "large": "drivers/climate_monitor/assets/images/large.png",
+        "xlarge": "drivers/climate_monitor/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "climate_monitor_co2",
+      "name": "Co2 Temp Humidity",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_co",
+        "alarm_co2",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/climate_monitor_co2/assets/icon.svg",
+      "images": {
+        "small": "drivers/climate_monitor_co2/assets/images/small.png",
+        "large": "drivers/climate_monitor_co2/assets/images/large.png",
+        "xlarge": "drivers/climate_monitor_co2/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "climate_monitor_temp_humidity",
+      "name": "Climate Monitor",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_battery",
+        "measure_humidity"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/climate_monitor_temp_humidity/assets/icon.svg",
+      "images": {
+        "small": "drivers/climate_monitor_temp_humidity/assets/images/small.png",
+        "large": "drivers/climate_monitor_temp_humidity/assets/images/large.png",
+        "xlarge": "drivers/climate_monitor_temp_humidity/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "climate_sensor_soil",
+      "name": "Soil Tester Temp Humid",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery",
+        "measure_humidity.soil",
+        "alarm_contact"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "contact",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/climate_sensor_soil/assets/icon.svg",
+      "images": {
+        "small": "drivers/climate_sensor_soil/assets/images/small.png",
+        "large": "drivers/climate_sensor_soil/assets/images/large.png",
+        "xlarge": "drivers/climate_sensor_soil/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "climate_sensor_temp_humidity_advanced",
+      "name": "Temp Humid Sensor Advanced",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery",
+        "alarm_contact"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "contact",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/climate_sensor_temp_humidity_advanced/assets/icon.svg",
+      "images": {
+        "small": "drivers/climate_sensor_temp_humidity_advanced/assets/images/small.png",
+        "large": "drivers/climate_sensor_temp_humidity_advanced/assets/images/large.png",
+        "xlarge": "drivers/climate_sensor_temp_humidity_advanced/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "contact_sensor",
+      "name": "Contact Sensor",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_contact",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "contact",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/contact_sensor/assets/icon.svg",
+      "images": {
+        "small": "drivers/contact_sensor/assets/images/small.png",
+        "large": "drivers/contact_sensor/assets/images/large.png",
+        "xlarge": "drivers/contact_sensor/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "contact_sensor_basic",
+      "name": "Contact Sensor Basic",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "alarm_contact",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "contact",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/contact_sensor_basic/assets/icon.svg",
+      "images": {
+        "small": "drivers/contact_sensor_basic/assets/images/small.png",
+        "large": "drivers/contact_sensor_basic/assets/images/large.png",
+        "xlarge": "drivers/contact_sensor_basic/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "contact_sensor_multipurpose",
+      "name": "Generic Multipurpose Sensor",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_generic",
+        "alarm_contact"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "contact",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/contact_sensor_multipurpose/assets/icon.svg",
+      "images": {
+        "small": "drivers/contact_sensor_multipurpose/assets/images/small.png",
+        "large": "drivers/contact_sensor_multipurpose/assets/images/large.png",
+        "xlarge": "drivers/contact_sensor_multipurpose/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "contact_sensor_vibration",
+      "name": "Contact & Vibration Sensor",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_contact",
+        "alarm_tamper",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "contact",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/contact_sensor_vibration/assets/icon.svg",
+      "images": {
+        "small": "/drivers/contact_sensor_vibration/assets/images/small.png",
+        "large": "/drivers/contact_sensor_vibration/assets/images/large.png",
+        "xlarge": "/drivers/contact_sensor_vibration/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "curtain_motor",
+      "name": "Smart Curtain Motor (INTERNAL)",
+      "description": "windowcoverings",
+      "class": "windowcoverings",
+      "capabilities": [
+        "windowcoverings_state",
+        "windowcoverings_set",
+        "windowcoverings_tilt_set",
+        "measure_battery",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "windowcoverings",
+        "dimmer",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/curtain_motor/assets/icon.svg",
+      "images": {
+        "small": "drivers/curtain_motor/assets/images/small.png",
+        "large": "drivers/curtain_motor/assets/images/large.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "curtain_motor_advanced",
+      "name": "Curtain Motor",
+      "description": "windowcoverings",
+      "class": "windowcoverings",
+      "capabilities": [
+        "windowcoverings_set",
+        "windowcoverings_state"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "windowcoverings",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/curtain_motor_advanced/assets/icon.svg",
+      "images": {
+        "small": "drivers/curtain_motor_advanced/assets/images/small.png",
+        "large": "drivers/curtain_motor_advanced/assets/images/large.png",
+        "xlarge": "drivers/curtain_motor_advanced/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "dimmer_touch",
+      "name": "Dimmer Touch",
+      "description": "light",
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "light",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/dimmer_touch/assets/icon.svg",
+      "images": {
+        "small": "drivers/dimmer_touch/assets/images/small.png",
+        "large": "drivers/dimmer_touch/assets/images/large.png",
+        "xlarge": "drivers/dimmer_touch/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "dimmer_touch_1gang",
+      "name": "Dimmer 1gang Touch",
+      "description": "light",
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "light",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/dimmer_touch_1gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/dimmer_touch_1gang/assets/images/small.png",
+        "large": "drivers/dimmer_touch_1gang/assets/images/large.png",
+        "xlarge": "drivers/dimmer_touch_1gang/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "dimmer_wall",
+      "name": "Dimmer Dimmer",
+      "description": "light",
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "light",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/dimmer_wall/assets/icon.svg",
+      "images": {
+        "small": "drivers/dimmer_wall/assets/images/small.png",
+        "large": "drivers/dimmer_wall/assets/images/large.png",
+        "xlarge": "drivers/dimmer_wall/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "dimmer_wall_1gang",
+      "name": "Dimmer 1gang",
+      "description": "light",
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "light",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/dimmer_wall_1gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/dimmer_wall_1gang/assets/images/small.png",
+        "large": "drivers/dimmer_wall_1gang/assets/images/large.png",
+        "xlarge": "drivers/dimmer_wall_1gang/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "dimmer_wireless",
+      "name": "Dimmer Wireless",
+      "description": "light",
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "light",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/dimmer_wireless/assets/icon.svg",
+      "images": {
+        "small": "drivers/dimmer_wireless/assets/images/small.png",
+        "large": "drivers/dimmer_wireless/assets/images/large.png",
+        "xlarge": "drivers/dimmer_wireless/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "door_controller",
+      "name": "Door Controller",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "alarm_contact",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "contact",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/door_controller/assets/icon.svg",
+      "images": {
+        "small": "drivers/door_controller/assets/images/small.png",
+        "large": "drivers/door_controller/assets/images/large.png",
+        "xlarge": "drivers/door_controller/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "doorbell",
+      "name": "Doorbell Doorbell",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "alarm_contact",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "contact",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/doorbell/assets/icon.svg",
+      "images": {
+        "small": "drivers/doorbell/assets/images/small.png",
+        "large": "drivers/doorbell/assets/images/large.png",
+        "xlarge": "drivers/doorbell/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "doorbell_button",
+      "name": "Smart Doorbell Camera (INTERNAL)",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "locked",
+        "measure_battery",
+        "alarm_contact",
+        "alarm_generic",
+        "volume_set"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "contact",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/doorbell_button/assets/icon.svg",
+      "images": {
+        "small": "drivers/doorbell_button/assets/images/small.png",
+        "large": "drivers/doorbell_button/assets/images/large.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "doorbell_camera",
+      "name": "Doorbell Camera",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "alarm_contact",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "contact",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/doorbell_camera/assets/icon.svg",
+      "images": {
+        "small": "drivers/doorbell_camera/assets/images/small.png",
+        "large": "drivers/doorbell_camera/assets/images/large.png",
+        "xlarge": "drivers/doorbell_camera/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "garage_door_controller",
+      "name": "Garage Door Controller",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "alarm_contact",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "contact",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/garage_door_controller/assets/icon.svg",
+      "images": {
+        "small": "drivers/garage_door_controller/assets/images/small.png",
+        "large": "drivers/garage_door_controller/assets/images/large.png",
+        "xlarge": "drivers/garage_door_controller/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "gas_detector",
+      "name": "Gas Detector",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "alarm_co",
+        "alarm_co2",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/gas_detector/assets/icon.svg",
+      "images": {
+        "small": "drivers/gas_detector/assets/images/small.png",
+        "large": "drivers/gas_detector/assets/images/large.png",
+        "xlarge": "drivers/gas_detector/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "gas_sensor",
+      "name": "Gas Sensor Ts0601",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_co",
+        "alarm_co2",
+        "measure_battery",
+        "alarm_contact"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "contact",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/gas_sensor/assets/icon.svg",
+      "images": {
+        "small": "drivers/gas_sensor/assets/images/small.png",
+        "large": "drivers/gas_sensor/assets/images/large.png",
+        "xlarge": "drivers/gas_sensor/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "gateway_zigbee_bridge",
+      "name": "Zbbridge",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_generic"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/gateway_zigbee_bridge/assets/icon.svg",
+      "images": {
+        "small": "drivers/gateway_zigbee_bridge/assets/images/small.png",
+        "large": "drivers/gateway_zigbee_bridge/assets/images/large.png",
+        "xlarge": "drivers/gateway_zigbee_bridge/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "gateway_zigbee_hub",
+      "name": "Zigbee Gateway Hub",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_generic"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/gateway_zigbee_hub/assets/icon.svg",
+      "images": {
+        "small": "drivers/gateway_zigbee_hub/assets/images/small.png",
+        "large": "drivers/gateway_zigbee_hub/assets/images/large.png",
+        "xlarge": "drivers/gateway_zigbee_hub/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "humidity_controller",
+      "name": "Humidity Controller",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery",
+        "windowcoverings_state"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/humidity_controller/assets/icon.svg",
+      "images": {
+        "small": "drivers/humidity_controller/assets/images/small.png",
+        "large": "drivers/humidity_controller/assets/images/large.png",
+        "xlarge": "drivers/humidity_controller/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "hvac_air_conditioner",
+      "name": "Air Conditioner (Smart)",
+      "description": "thermostat",
+      "class": "thermostat",
+      "capabilities": [
+        "onoff",
+        "target_temperature",
+        "measure_temperature",
+        "thermostat_mode",
+        "fan_speed",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "thermostat",
+        "switch",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/hvac_air_conditioner/assets/icon.svg",
+      "images": {
+        "small": "drivers/hvac_air_conditioner/assets/images/small.png",
+        "large": "drivers/hvac_air_conditioner/assets/images/large.png",
+        "xlarge": "drivers/hvac_air_conditioner/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        },
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ]
+      }
+    },
+    {
+      "id": "hvac_dehumidifier",
+      "name": "Dehumidifier (Smart)",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "onoff",
+        "target_humidity",
+        "measure_humidity",
+        "measure_temperature",
+        "measure_power",
+        "alarm_water",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "switch",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/hvac_dehumidifier/assets/icon.svg",
+      "images": {
+        "small": "drivers/hvac_dehumidifier/assets/images/small.png",
+        "large": "drivers/hvac_dehumidifier/assets/images/large.png",
+        "xlarge": "drivers/hvac_dehumidifier/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        },
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ]
+      }
+    },
+    {
+      "id": "led_strip",
+      "name": "LED Strip Led Strip",
+      "description": "light",
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "light",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/led_strip/assets/icon.svg",
+      "images": {
+        "small": "drivers/led_strip/assets/images/small.png",
+        "large": "drivers/led_strip/assets/images/large.png",
+        "xlarge": "drivers/led_strip/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "led_strip_advanced",
+      "name": "Led Strip Advanced",
+      "description": "light",
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "light",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/led_strip_advanced/assets/icon.svg",
+      "images": {
+        "small": "drivers/led_strip_advanced/assets/images/small.png",
+        "large": "drivers/led_strip_advanced/assets/images/large.png",
+        "xlarge": "drivers/led_strip_advanced/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "led_strip_basic",
+      "name": "Led Strip Basic",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_generic",
+        "onoff",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/led_strip_basic/assets/icon.svg",
+      "images": {
+        "small": "drivers/led_strip_basic/assets/images/small.png",
+        "large": "drivers/led_strip_basic/assets/images/large.png",
+        "xlarge": "drivers/led_strip_basic/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "led_strip_outdoor_rgb",
+      "name": "Led Strip Outdoor Color",
+      "description": "light",
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode",
+        "alarm_contact"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "light",
+        "switch",
+        "dimmer",
+        "contact",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/led_strip_outdoor_rgb/assets/icon.svg",
+      "images": {
+        "small": "drivers/led_strip_outdoor_rgb/assets/images/small.png",
+        "large": "drivers/led_strip_outdoor_rgb/assets/images/large.png",
+        "xlarge": "drivers/led_strip_outdoor_rgb/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "led_strip_pro",
+      "name": "Led Strip Pro",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_generic",
+        "onoff",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/led_strip_pro/assets/icon.svg",
+      "images": {
+        "small": "drivers/led_strip_pro/assets/images/small.png",
+        "large": "drivers/led_strip_pro/assets/images/large.png",
+        "xlarge": "drivers/led_strip_pro/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "led_strip_rgbw",
+      "name": "Led Strip Rgbw",
+      "description": "light",
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "light",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/led_strip_rgbw/assets/icon.svg",
+      "images": {
+        "small": "drivers/led_strip_rgbw/assets/images/small.png",
+        "large": "drivers/led_strip_rgbw/assets/images/large.png",
+        "xlarge": "drivers/led_strip_rgbw/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "light_controller_outdoor",
+      "name": "Outdoor Light Controller",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_contact",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "contact",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/light_controller_outdoor/assets/icon.svg",
+      "images": {
+        "small": "drivers/light_controller_outdoor/assets/images/small.png",
+        "large": "drivers/light_controller_outdoor/assets/images/large.png",
+        "xlarge": "drivers/light_controller_outdoor/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "lock_smart",
+      "name": "Lock Smart",
+      "description": "lock",
+      "class": "lock",
+      "capabilities": [
+        "locked",
+        "lock_mode",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "lock",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/lock_smart/assets/icon.svg",
+      "images": {
+        "small": "drivers/lock_smart/assets/images/small.png",
+        "large": "drivers/lock_smart/assets/images/large.png",
+        "xlarge": "drivers/lock_smart/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "lock_smart_basic",
+      "name": "Lock Basic",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/lock_smart_basic/assets/icon.svg",
+      "images": {
+        "small": "drivers/lock_smart_basic/assets/images/small.png",
+        "large": "drivers/lock_smart_basic/assets/images/large.png",
+        "xlarge": "drivers/lock_smart_basic/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "lock_smart_fingerprint",
+      "name": "Lock Fingerprint",
+      "description": "lock",
+      "class": "lock",
+      "capabilities": [
+        "locked",
+        "lock_mode",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "lock",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/lock_smart_fingerprint/assets/icon.svg",
+      "images": {
+        "small": "drivers/lock_smart_fingerprint/assets/images/small.png",
+        "large": "drivers/lock_smart_fingerprint/assets/images/large.png",
+        "xlarge": "drivers/lock_smart_fingerprint/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "module_dimmer_timer",
+      "name": "Dimmer Switch Timer Module",
+      "description": "light",
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "light",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/module_dimmer_timer/assets/icon.svg",
+      "images": {
+        "small": "drivers/module_dimmer_timer/assets/images/small.png",
+        "large": "drivers/module_dimmer_timer/assets/images/large.png",
+        "xlarge": "drivers/module_dimmer_timer/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "module_mini",
+      "name": "Avatto Mini",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_generic"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/module_mini/assets/icon.svg",
+      "images": {
+        "small": "drivers/module_mini/assets/images/small.png",
+        "large": "drivers/module_mini/assets/images/large.png",
+        "xlarge": "drivers/module_mini/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "module_mini_switch",
+      "name": "Mini Switch",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_generic",
+        "onoff",
+        "measure_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "switch",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/module_mini_switch/assets/icon.svg",
+      "images": {
+        "small": "drivers/module_mini_switch/assets/images/small.png",
+        "large": "drivers/module_mini_switch/assets/images/large.png",
+        "xlarge": "drivers/module_mini_switch/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "motion_sensor",
+      "name": "Motion Sensor",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/motion_sensor/assets/icon.svg",
+      "images": {
+        "small": "drivers/motion_sensor/assets/images/small.png",
+        "large": "drivers/motion_sensor/assets/images/large.png",
+        "xlarge": "drivers/motion_sensor/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "motion_sensor_mmwave",
+      "name": "Motion Sensor Mmwave Basic",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/motion_sensor_mmwave/assets/icon.svg",
+      "images": {
+        "small": "drivers/motion_sensor_mmwave/assets/images/small.png",
+        "large": "drivers/motion_sensor_mmwave/assets/images/large.png",
+        "xlarge": "drivers/motion_sensor_mmwave/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "motion_sensor_multi",
+      "name": "Motion Temp Humidity Illumination Multi",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_temperature",
+        "measure_humidity",
+        "measure_luminance",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/motion_sensor_multi/assets/icon.svg",
+      "images": {
+        "small": "drivers/motion_sensor_multi/assets/images/small.png",
+        "large": "drivers/motion_sensor_multi/assets/images/large.png",
+        "xlarge": "drivers/motion_sensor_multi/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "motion_sensor_outdoor",
+      "name": "Outdoor Sensor",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_contact",
+        "measure_battery",
+        "alarm_motion"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "contact",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/motion_sensor_outdoor/assets/icon.svg",
+      "images": {
+        "small": "drivers/motion_sensor_outdoor/assets/images/small.png",
+        "large": "drivers/motion_sensor_outdoor/assets/images/large.png",
+        "xlarge": "drivers/motion_sensor_outdoor/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "motion_sensor_pir",
+      "name": "Motion Sensor",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/motion_sensor_pir/assets/icon.svg",
+      "images": {
+        "small": "drivers/motion_sensor_pir/assets/images/small.png",
+        "large": "drivers/motion_sensor_pir/assets/images/large.png",
+        "xlarge": "drivers/motion_sensor_pir/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "motion_sensor_pir_advanced",
+      "name": "Pir Sensor Advanced",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/motion_sensor_pir_advanced/assets/icon.svg",
+      "images": {
+        "small": "drivers/motion_sensor_pir_advanced/assets/images/small.png",
+        "large": "drivers/motion_sensor_pir_advanced/assets/images/large.png",
+        "xlarge": "drivers/motion_sensor_pir_advanced/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "motion_sensor_pir_radar",
+      "name": "Pir Radar Illumination Sensor",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_luminance",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/motion_sensor_pir_radar/assets/icon.svg",
+      "images": {
+        "small": "drivers/motion_sensor_pir_radar/assets/images/small.png",
+        "large": "drivers/motion_sensor_pir_radar/assets/images/large.png",
+        "xlarge": "drivers/motion_sensor_pir_radar/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "motion_sensor_radar_advanced",
+      "name": "Radar Motion Sensor Advanced",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/motion_sensor_radar_advanced/assets/icon.svg",
+      "images": {
+        "small": "drivers/motion_sensor_radar_advanced/assets/images/small.png",
+        "large": "drivers/motion_sensor_radar_advanced/assets/images/large.png",
+        "xlarge": "drivers/motion_sensor_radar_advanced/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "motion_sensor_radar_mmwave",
+      "name": "Radar Motion Sensor Mmwave",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/motion_sensor_radar_mmwave/assets/icon.svg",
+      "images": {
+        "small": "drivers/motion_sensor_radar_mmwave/assets/images/small.png",
+        "large": "drivers/motion_sensor_radar_mmwave/assets/images/large.png",
+        "xlarge": "drivers/motion_sensor_radar_mmwave/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "plug_dimmer",
+      "name": "Smart Plug Dimmer",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_current",
+        "measure_voltage",
+        "meter_power"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "dimmer",
+        "sensor",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/plug_dimmer/assets/icon.svg",
+      "images": {
+        "small": "drivers/plug_dimmer/assets/images/small.png",
+        "large": "drivers/plug_dimmer/assets/images/large.png",
+        "xlarge": "drivers/plug_dimmer/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "plug_energy_advanced",
+      "name": "Energy Plug Advanced",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "sensor",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/plug_energy_advanced/assets/icon.svg",
+      "images": {
+        "small": "drivers/plug_energy_advanced/assets/images/small.png",
+        "large": "drivers/plug_energy_advanced/assets/images/large.png",
+        "xlarge": "drivers/plug_energy_advanced/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "plug_energy_monitor",
+      "name": "Plug Energy Monitor",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "sensor",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/plug_energy_monitor/assets/icon.svg",
+      "images": {
+        "small": "drivers/plug_energy_monitor/assets/images/small.png",
+        "large": "drivers/plug_energy_monitor/assets/images/large.png",
+        "xlarge": "drivers/plug_energy_monitor/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "plug_energy_monitor_advanced",
+      "name": "Energy Monitoring Plug Advanced",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "sensor",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/plug_energy_monitor_advanced/assets/icon.svg",
+      "images": {
+        "small": "drivers/plug_energy_monitor_advanced/assets/images/small.png",
+        "large": "drivers/plug_energy_monitor_advanced/assets/images/large.png",
+        "xlarge": "drivers/plug_energy_monitor_advanced/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "plug_energy_smart",
+      "name": "Smart Plug Energy",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "sensor",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/plug_energy_smart/assets/icon.svg",
+      "images": {
+        "small": "drivers/plug_energy_smart/assets/images/small.png",
+        "large": "drivers/plug_energy_smart/assets/images/large.png",
+        "xlarge": "drivers/plug_energy_smart/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "plug_outdoor",
+      "name": "Outdoor Plug",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "alarm_contact",
+        "measure_current",
+        "measure_voltage",
+        "meter_power"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "sensor",
+        "contact",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/plug_outdoor/assets/icon.svg",
+      "images": {
+        "small": "drivers/plug_outdoor/assets/images/small.png",
+        "large": "drivers/plug_outdoor/assets/images/large.png",
+        "xlarge": "drivers/plug_outdoor/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "plug_outlet",
+      "name": "Smart Plug Outlet",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_current",
+        "measure_voltage",
+        "meter_power"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "sensor",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/plug_outlet/assets/icon.svg",
+      "images": {
+        "small": "drivers/plug_outlet/assets/images/small.png",
+        "large": "drivers/plug_outlet/assets/images/large.png",
+        "xlarge": "drivers/plug_outlet/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "plug_power_meter",
+      "name": "Power Meter Socket",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "sensor",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/plug_power_meter/assets/icon.svg",
+      "images": {
+        "small": "drivers/plug_power_meter/assets/images/small.png",
+        "large": "drivers/plug_power_meter/assets/images/large.png",
+        "xlarge": "drivers/plug_power_meter/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "plug_power_meter_16a",
+      "name": "Smart Plug Power Meter 16a",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "sensor",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/plug_power_meter_16a/assets/icon.svg",
+      "images": {
+        "small": "drivers/plug_power_meter_16a/assets/images/small.png",
+        "large": "drivers/plug_power_meter_16a/assets/images/large.png",
+        "xlarge": "drivers/plug_power_meter_16a/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "plug_smart",
+      "name": "Plug Smart",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_generic",
+        "onoff",
+        "measure_current",
+        "measure_voltage",
+        "meter_power"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "switch",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/plug_smart/assets/icon.svg",
+      "images": {
+        "small": "drivers/plug_smart/assets/images/small.png",
+        "large": "drivers/plug_smart/assets/images/large.png",
+        "xlarge": "drivers/plug_smart/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "plug_smart_advanced",
+      "name": "Smart Plug",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "sensor",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/plug_smart_advanced/assets/icon.svg",
+      "images": {
+        "small": "drivers/plug_smart_advanced/assets/images/small.png",
+        "large": "drivers/plug_smart_advanced/assets/images/large.png",
+        "xlarge": "drivers/plug_smart_advanced/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "plug_smart_basic",
+      "name": "Plug Basic",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "sensor",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/plug_smart_basic/assets/icon.svg",
+      "images": {
+        "small": "drivers/plug_smart_basic/assets/images/small.png",
+        "large": "drivers/plug_smart_basic/assets/images/large.png",
+        "xlarge": "drivers/plug_smart_basic/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "presence_sensor_radar",
+      "name": "Presence Sensor Radar",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_luminance",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/presence_sensor_radar/assets/icon.svg",
+      "images": {
+        "small": "drivers/presence_sensor_radar/assets/images/small.png",
+        "large": "drivers/presence_sensor_radar/assets/images/large.png",
+        "xlarge": "drivers/presence_sensor_radar/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A",
+          "INTERNAL"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "radiator_valve",
+      "name": "Radiator Valve",
+      "description": "thermostat",
+      "class": "thermostat",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "thermostat_mode"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "thermostat",
+        "sensor",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/radiator_valve/assets/icon.svg",
+      "images": {
+        "small": "drivers/radiator_valve/assets/images/small.png",
+        "large": "drivers/radiator_valve/assets/images/large.png",
+        "xlarge": "drivers/radiator_valve/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "radiator_valve_smart",
+      "name": "Smart Radiator Valve (Hybrid)",
+      "description": "thermostat",
+      "class": "thermostat",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "thermostat",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/radiator_valve_smart/assets/icon.svg",
+      "images": {
+        "small": "drivers/radiator_valve_smart/assets/images/small.png",
+        "large": "drivers/radiator_valve_smart/assets/images/large.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "scene_controller_4button",
+      "name": "Wireless Scene Controller 4button",
+      "description": "button",
+      "class": "button",
+      "capabilities": [
+        "onoff",
+        "onoff.button2",
+        "onoff.button3",
+        "onoff.button4",
+        "alarm_generic",
+        "windowcoverings_state",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "button",
+        "switch",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/scene_controller_4button/assets/icon.svg",
+      "images": {
+        "small": "drivers/scene_controller_4button/assets/images/small.png",
+        "large": "drivers/scene_controller_4button/assets/images/large.png",
+        "xlarge": "drivers/scene_controller_4button/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "scene_controller_wireless",
+      "name": "Scene Controller (CR2032/CR2450)",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "onoff",
+        "measure_battery",
+        "windowcoverings_state"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "switch",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/scene_controller_wireless/assets/icon.svg",
+      "images": {
+        "small": "drivers/scene_controller_wireless/assets/images/small.png",
+        "large": "drivers/scene_controller_wireless/assets/images/large.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "shutter_roller_controller",
+      "name": "Roller Shutter Controller",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_generic",
+        "windowcoverings_state"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/shutter_roller_controller/assets/icon.svg",
+      "images": {
+        "small": "drivers/shutter_roller_controller/assets/images/small.png",
+        "large": "drivers/shutter_roller_controller/assets/images/large.png",
+        "xlarge": "drivers/shutter_roller_controller/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "shutter_roller_switch",
+      "name": "Roller Shutter Switch",
+      "description": "windowcoverings",
+      "class": "windowcoverings",
+      "capabilities": [
+        "windowcoverings_set",
+        "onoff"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "windowcoverings",
+        "switch",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/shutter_roller_switch/assets/icon.svg",
+      "images": {
+        "small": "drivers/shutter_roller_switch/assets/images/small.png",
+        "large": "drivers/shutter_roller_switch/assets/images/large.png",
+        "xlarge": "drivers/shutter_roller_switch/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "siren",
+      "name": "Siren Siren",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/siren/assets/icon.svg",
+      "images": {
+        "small": "drivers/siren/assets/images/small.png",
+        "large": "drivers/siren/assets/images/large.png",
+        "xlarge": "drivers/siren/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "siren_outdoor",
+      "name": "Outdoor Siren",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "alarm_contact",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "contact",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/siren_outdoor/assets/icon.svg",
+      "images": {
+        "small": "drivers/siren_outdoor/assets/images/small.png",
+        "large": "drivers/siren_outdoor/assets/images/large.png",
+        "xlarge": "drivers/siren_outdoor/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "smoke_detector_advanced",
+      "name": "Smart Smoke Detector Advanced",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_smoke",
+        "alarm_fire",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/smoke_detector_advanced/assets/icon.svg",
+      "images": {
+        "small": "drivers/smoke_detector_advanced/assets/images/small.png",
+        "large": "drivers/smoke_detector_advanced/assets/images/large.png",
+        "xlarge": "drivers/smoke_detector_advanced/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "smoke_detector_climate",
+      "name": "Smoke Temp Humid Sensor",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_smoke",
+        "alarm_fire",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/smoke_detector_climate/assets/icon.svg",
+      "images": {
+        "small": "drivers/smoke_detector_climate/assets/images/small.png",
+        "large": "drivers/smoke_detector_climate/assets/images/large.png",
+        "xlarge": "drivers/smoke_detector_climate/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "smoke_detector_temp_humidity",
+      "name": "Smoke Detector Temp Humidity Advanced",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_smoke",
+        "alarm_fire",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/smoke_detector_temp_humidity/assets/icon.svg",
+      "images": {
+        "small": "drivers/smoke_detector_temp_humidity/assets/images/small.png",
+        "large": "drivers/smoke_detector_temp_humidity/assets/images/large.png",
+        "xlarge": "drivers/smoke_detector_temp_humidity/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "solar_panel_controller",
+      "name": "Solar Panel Controller",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_generic",
+        "windowcoverings_state"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/solar_panel_controller/assets/icon.svg",
+      "images": {
+        "small": "drivers/solar_panel_controller/assets/images/small.png",
+        "large": "drivers/solar_panel_controller/assets/images/large.png",
+        "xlarge": "drivers/solar_panel_controller/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "sound_controller",
+      "name": "Sound Controller ()",
+      "description": "button",
+      "class": "button",
+      "capabilities": [
+        "measure_battery",
+        "windowcoverings_state"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "button",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/sound_controller/assets/icon.svg",
+      "images": {
+        "small": "drivers/sound_controller/assets/images/small.png",
+        "large": "drivers/sound_controller/assets/images/large.png",
+        "xlarge": "drivers/sound_controller/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "spot_light_smart",
+      "name": "Smart Spot",
+      "description": "light",
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "light",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/spot_light_smart/assets/icon.svg",
+      "images": {
+        "small": "drivers/spot_light_smart/assets/images/small.png",
+        "large": "drivers/spot_light_smart/assets/images/large.png",
+        "xlarge": "drivers/spot_light_smart/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_basic_1gang",
+      "name": "Switch 1gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_basic_1gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_basic_1gang/assets/images/small.png",
+        "large": "drivers/switch_basic_1gang/assets/images/large.png",
+        "xlarge": "drivers/switch_basic_1gang/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_basic_2gang",
+      "name": "Switch 2gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.button2"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_basic_2gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_basic_2gang/assets/images/small.png",
+        "large": "drivers/switch_basic_2gang/assets/images/large.png",
+        "xlarge": "drivers/switch_basic_2gang/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {}
+    },
+    {
+      "id": "switch_basic_5gang",
+      "name": "Switch 5gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_basic_5gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_basic_5gang/assets/images/small.png",
+        "large": "drivers/switch_basic_5gang/assets/images/large.png",
+        "xlarge": "drivers/switch_basic_5gang/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_generic_1gang",
+      "name": "Smart Switch 1gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_generic_1gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_generic_1gang/assets/images/small.png",
+        "large": "drivers/switch_generic_1gang/assets/images/large.png",
+        "xlarge": "drivers/switch_generic_1gang/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_generic_3gang",
+      "name": "Smart Switch 3gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.button2",
+        "onoff.button3"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_generic_3gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_generic_3gang/assets/images/small.png",
+        "large": "drivers/switch_generic_3gang/assets/images/large.png",
+        "xlarge": "drivers/switch_generic_3gang/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_1gang",
+      "name": "1-Gang Smart Switch (Hybrid)",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "dimmer",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_1gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_1gang/assets/images/small.png",
+        "large": "drivers/switch_1gang/assets/images/large.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_2gang",
+      "name": "2-Gang Smart Switch (Hybrid)",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.gang2",
+        "measure_battery",
+        "measure_power",
+        "measure_voltage",
+        "measure_current",
+        "onoff.2"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "sensor",
+        "battery",
+        "2-gang",
+        "multi-gang",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_2gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_2gang/assets/images/small.png",
+        "large": "drivers/switch_2gang/assets/images/large.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_2gang_alt",
+      "name": "2-Gang Switch (Hybrid)",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.gang2",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "sensor",
+        "battery",
+        "2-gang",
+        "multi-gang",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_2gang_alt/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_2gang_alt/assets/images/small.png",
+        "large": "drivers/switch_2gang_alt/assets/images/large.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_3gang",
+      "name": "3-Gang Smart Switch (Hybrid)",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.gang2",
+        "onoff.gang3",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "sensor",
+        "battery",
+        "3-gang",
+        "multi-gang",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_3gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_3gang/assets/images/small.png",
+        "large": "drivers/switch_3gang/assets/images/large.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_4gang",
+      "name": "4-Gang Smart Switch (Hybrid)",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.button2",
+        "onoff.button3",
+        "onoff.button4",
+        "button.2",
+        "button.3",
+        "button.4",
+        "dim",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "dimmer",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_4gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_4gang/assets/images/small.png",
+        "large": "drivers/switch_4gang/assets/images/large.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_internal_1gang",
+      "name": "Roller Shutter Switch Advanced (INTERNAL)",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "windowcoverings_state",
+        "windowcoverings_set",
+        "button.up",
+        "button.down",
+        "button.stop",
+        "measure_power",
+        "onoff",
+        "dim",
+        "windowcoverings_tilt_set",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "switch",
+        "dimmer",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_internal_1gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_internal_1gang/assets/images/small.png",
+        "large": "drivers/switch_internal_1gang/assets/images/large.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_remote",
+      "name": "Remote Switch",
+      "description": "button",
+      "class": "button",
+      "capabilities": [
+        "alarm_generic",
+        "onoff"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "button",
+        "switch",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_remote/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_remote/assets/images/small.png",
+        "large": "drivers/switch_remote/assets/images/large.png",
+        "xlarge": "drivers/switch_remote/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_smart_1gang",
+      "name": "Smart Switch 1gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_smart_1gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_smart_1gang/assets/images/small.png",
+        "large": "drivers/switch_smart_1gang/assets/images/large.png",
+        "xlarge": "drivers/switch_smart_1gang/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_smart_3gang",
+      "name": "Smart Switch 3gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.button2",
+        "onoff.button3"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_smart_3gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_smart_3gang/assets/images/small.png",
+        "large": "drivers/switch_smart_3gang/assets/images/large.png",
+        "xlarge": "drivers/switch_smart_3gang/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_smart_4gang",
+      "name": "Smart Switch 4gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.button2",
+        "onoff.button3",
+        "onoff.button4",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_smart_4gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_smart_4gang/assets/images/small.png",
+        "large": "drivers/switch_smart_4gang/assets/images/large.png",
+        "xlarge": "drivers/switch_smart_4gang/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_touch_1gang",
+      "name": "1-Gang Touch Switch",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_touch_1gang/assets/icon.svg",
+      "images": {
+        "small": "/drivers/switch_touch_1gang/assets/images/small.png",
+        "large": "/drivers/switch_touch_1gang/assets/images/large.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_touch_1gang_basic",
+      "name": "Touch Switch 1gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_touch_1gang_basic/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_touch_1gang_basic/assets/images/small.png",
+        "large": "drivers/switch_touch_1gang_basic/assets/images/large.png",
+        "xlarge": "drivers/switch_touch_1gang_basic/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_touch_2gang",
+      "name": "Touch Switch 2gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.button2",
+        "measure_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "sensor",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_touch_2gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_touch_2gang/assets/images/small.png",
+        "large": "drivers/switch_touch_2gang/assets/images/large.png",
+        "xlarge": "drivers/switch_touch_2gang/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_touch_3gang",
+      "name": "3-Gang Touch Switch",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.switch_2",
+        "onoff.switch_3"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_touch_3gang/assets/icon.svg",
+      "images": {
+        "small": "/drivers/switch_touch_3gang/assets/images/small.png",
+        "large": "/drivers/switch_touch_3gang/assets/images/large.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_touch_3gang_basic",
+      "name": "Touch Switch 3gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.button2",
+        "onoff.button3"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_touch_3gang_basic/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_touch_3gang_basic/assets/images/small.png",
+        "large": "drivers/switch_touch_3gang_basic/assets/images/large.png",
+        "xlarge": "drivers/switch_touch_3gang_basic/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_touch_4gang",
+      "name": "Touch Switch 4gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.button2",
+        "onoff.button3",
+        "onoff.button4",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_touch_4gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_touch_4gang/assets/images/small.png",
+        "large": "drivers/switch_touch_4gang/assets/images/large.png",
+        "xlarge": "drivers/switch_touch_4gang/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_wall_1gang",
+      "name": "1-Gang Wall Switch",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_wall_1gang/assets/icon.svg",
+      "images": {
+        "small": "/drivers/switch_wall_1gang/assets/images/small.png",
+        "large": "/drivers/switch_wall_1gang/assets/images/large.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_wall_1gang_basic",
+      "name": "Wall Switch 1gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_wall_1gang_basic/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_wall_1gang_basic/assets/images/small.png",
+        "large": "drivers/switch_wall_1gang_basic/assets/images/large.png",
+        "xlarge": "drivers/switch_wall_1gang_basic/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_wall_2gang",
+      "name": "2-Gang Wall Switch",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.gang2",
+        "measure_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "sensor",
+        "2-gang",
+        "multi-gang",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_wall_2gang/assets/icon.svg",
+      "images": {
+        "small": "/drivers/switch_wall_2gang/assets/images/small.png",
+        "large": "/drivers/switch_wall_2gang/assets/images/large.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_wall_2gang_basic",
+      "name": "Wall Switch 2gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.button2"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_wall_2gang_basic/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_wall_2gang_basic/assets/images/small.png",
+        "large": "drivers/switch_wall_2gang_basic/assets/images/large.png",
+        "xlarge": "drivers/switch_wall_2gang_basic/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_wall_2gang_smart",
+      "name": "Smart Switch 2gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.button2",
+        "measure_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "sensor",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_wall_2gang_smart/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_wall_2gang_smart/assets/images/small.png",
+        "large": "drivers/switch_wall_2gang_smart/assets/images/large.png",
+        "xlarge": "drivers/switch_wall_2gang_smart/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_wall_3gang",
+      "name": "3-Gang Wall Switch",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.switch_2",
+        "onoff.switch_3"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_wall_3gang/assets/icon.svg",
+      "images": {
+        "small": "/drivers/switch_wall_3gang/assets/images/small.png",
+        "large": "/drivers/switch_wall_3gang/assets/images/large.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_wall_3gang_basic",
+      "name": "Wall Switch 3gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.button2",
+        "onoff.button3"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_wall_3gang_basic/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_wall_3gang_basic/assets/images/small.png",
+        "large": "drivers/switch_wall_3gang_basic/assets/images/large.png",
+        "xlarge": "drivers/switch_wall_3gang_basic/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_wall_4gang",
+      "name": "4-Gang Wall Switch",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.switch_2",
+        "onoff.switch_3",
+        "onoff.switch_4"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_wall_4gang/assets/icon.svg",
+      "images": {
+        "small": "/drivers/switch_wall_4gang/assets/images/small.png",
+        "large": "/drivers/switch_wall_4gang/assets/images/large.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_wall_4gang_basic",
+      "name": "Wall Switch 4gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.button2",
+        "onoff.button3",
+        "onoff.button4",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_wall_4gang_basic/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_wall_4gang_basic/assets/images/small.png",
+        "large": "drivers/switch_wall_4gang_basic/assets/images/large.png",
+        "xlarge": "drivers/switch_wall_4gang_basic/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_wall_4gang_smart",
+      "name": "Smart Switch 4gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.button2",
+        "onoff.button3",
+        "onoff.button4",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_wall_4gang_smart/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_wall_4gang_smart/assets/images/small.png",
+        "large": "drivers/switch_wall_4gang_smart/assets/images/large.png",
+        "xlarge": "drivers/switch_wall_4gang_smart/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_wall_5gang",
+      "name": "Wall Switch 5gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_wall_5gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_wall_5gang/assets/images/small.png",
+        "large": "drivers/switch_wall_5gang/assets/images/large.png",
+        "xlarge": "drivers/switch_wall_5gang/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_wall_6gang",
+      "name": "6-Gang Wall Switch",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.switch_2",
+        "onoff.switch_3",
+        "onoff.switch_4",
+        "onoff.switch_5",
+        "onoff.switch_6"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_wall_6gang/assets/icon.svg",
+      "images": {
+        "small": "/drivers/switch_wall_6gang/assets/images/small.png",
+        "large": "/drivers/switch_wall_6gang/assets/images/large.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_wall_6gang_basic",
+      "name": "Wall Switch 6gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.button2",
+        "onoff.button3",
+        "onoff.button4",
+        "onoff.button5",
+        "onoff.button6",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_wall_6gang_basic/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_wall_6gang_basic/assets/images/small.png",
+        "large": "drivers/switch_wall_6gang_basic/assets/images/large.png",
+        "xlarge": "drivers/switch_wall_6gang_basic/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_wall_6gang_smart",
+      "name": "Smart Switch 6gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.button2",
+        "onoff.button3",
+        "onoff.button4",
+        "onoff.button5",
+        "onoff.button6",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_wall_6gang_smart/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_wall_6gang_smart/assets/images/small.png",
+        "large": "drivers/switch_wall_6gang_smart/assets/images/large.png",
+        "xlarge": "drivers/switch_wall_6gang_smart/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_wall_8gang_smart",
+      "name": "Smart Switch 8gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.button2",
+        "onoff.button3",
+        "onoff.button4",
+        "onoff.button5",
+        "onoff.button6",
+        "onoff.button7",
+        "onoff.button8",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_wall_8gang_smart/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_wall_8gang_smart/assets/images/small.png",
+        "large": "drivers/switch_wall_8gang_smart/assets/images/large.png",
+        "xlarge": "drivers/switch_wall_8gang_smart/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_wireless",
+      "name": "Wireless Switch",
+      "description": "button",
+      "class": "button",
+      "capabilities": [
+        "alarm_generic",
+        "onoff"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "button",
+        "switch",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_wireless/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_wireless/assets/images/small.png",
+        "large": "drivers/switch_wireless/assets/images/large.png",
+        "xlarge": "drivers/switch_wireless/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_wireless_1gang",
+      "name": "Wireless Switch 1gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_wireless_1gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_wireless_1gang/assets/images/small.png",
+        "large": "drivers/switch_wireless_1gang/assets/images/large.png",
+        "xlarge": "drivers/switch_wireless_1gang/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_wireless_2gang",
+      "name": "Wireless Switch 2gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.button2"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_wireless_2gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_wireless_2gang/assets/images/small.png",
+        "large": "drivers/switch_wireless_2gang/assets/images/large.png",
+        "xlarge": "drivers/switch_wireless_2gang/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_wireless_4button_alt",
+      "name": "4-Button Remote STYRBAR (OTHER)",
+      "description": "button",
+      "class": "button",
+      "capabilities": [
+        "onoff",
+        "onoff.button2",
+        "onoff.button3",
+        "onoff.button4",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "button",
+        "switch",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_wireless_4button_alt/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_wireless_4button_alt/assets/images/small.png",
+        "large": "drivers/switch_wireless_4button_alt/assets/images/large.png",
+        "xlarge": "drivers/switch_wireless_4button_alt/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_wireless_4gang",
+      "name": "Wireless Switch 4gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.button2",
+        "onoff.button3",
+        "onoff.button4"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_wireless_4gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_wireless_4gang/assets/images/small.png",
+        "large": "drivers/switch_wireless_4gang/assets/images/large.png",
+        "xlarge": "drivers/switch_wireless_4gang/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_wireless_5button",
+      "name": "Wireless Switch 5button",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_wireless_5button/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_wireless_5button/assets/images/small.png",
+        "large": "drivers/switch_wireless_5button/assets/images/large.png",
+        "xlarge": "drivers/switch_wireless_5button/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "switch_wireless_6gang",
+      "name": "Wireless Switch 6gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.button2",
+        "onoff.button3",
+        "onoff.button4",
+        "onoff.button5",
+        "onoff.button6",
+        "dim"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "dimmer",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/switch_wireless_6gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/switch_wireless_6gang/assets/images/small.png",
+        "large": "drivers/switch_wireless_6gang/assets/images/large.png",
+        "xlarge": "drivers/switch_wireless_6gang/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "temperature_sensor",
+      "name": "Temperature Sensor",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_temperature",
+        "measure_battery",
+        "alarm_contact"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "contact",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/temperature_sensor/assets/icon.svg",
+      "images": {
+        "small": "drivers/temperature_sensor/assets/images/small.png",
+        "large": "drivers/temperature_sensor/assets/images/large.png",
+        "xlarge": "drivers/temperature_sensor/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "temperature_sensor_advanced",
+      "name": "Temperature Sensor Advanced",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_temperature",
+        "measure_battery",
+        "alarm_contact"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "contact",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/temperature_sensor_advanced/assets/icon.svg",
+      "images": {
+        "small": "drivers/temperature_sensor_advanced/assets/images/small.png",
+        "large": "drivers/temperature_sensor_advanced/assets/images/large.png",
+        "xlarge": "drivers/temperature_sensor_advanced/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "thermostat_advanced",
+      "name": "Smart Thermostat (INTERNAL)",
+      "description": "thermostat",
+      "class": "thermostat",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "thermostat_mode",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "thermostat",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/thermostat_advanced/assets/icon.svg",
+      "images": {
+        "small": "drivers/thermostat_advanced/assets/images/small.png",
+        "large": "drivers/thermostat_advanced/assets/images/large.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "thermostat_smart",
+      "name": "Thermostat Basic (Hybrid) (CR2032/AAA)",
+      "description": "thermostat",
+      "class": "thermostat",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "thermostat_mode",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "thermostat",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/thermostat_smart/assets/icon.svg",
+      "images": {
+        "small": "drivers/thermostat_smart/assets/images/small.png",
+        "large": "drivers/thermostat_smart/assets/images/large.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "thermostat_temperature_control",
+      "name": "Temperature Controller (Hybrid) (CR2032/AAA)",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery",
+        "alarm_generic"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/thermostat_temperature_control/assets/icon.svg",
+      "images": {
+        "large": "drivers/thermostat_temperature_control/assets/images/large.png",
+        "small": "drivers/thermostat_temperature_control/assets/images/small.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "usb_outlet_1gang",
+      "name": "USB Outlet - 1 Gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "sensor",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/usb_outlet_1gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/usb_outlet_1gang/assets/images/small.png",
+        "large": "drivers/usb_outlet_1gang/assets/images/large.png",
+        "xlarge": "drivers/usb_outlet_1gang/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {}
+    },
+    {
+      "id": "usb_outlet_2port",
+      "name": "USB Outlet - 2 Ports",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.usb2",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "sensor",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/usb_outlet_2port/assets/icon.svg",
+      "images": {
+        "small": "drivers/usb_outlet_2port/assets/images/small.png",
+        "large": "drivers/usb_outlet_2port/assets/images/large.png",
+        "xlarge": "drivers/usb_outlet_2port/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {}
+    },
+    {
+      "id": "usb_outlet_3gang",
+      "name": "USB Outlet - 3 Gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.usb2",
+        "onoff.usb3",
+        "measure_power",
+        "meter_power",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/usb_outlet_3gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/usb_outlet_3gang/assets/images/small.png",
+        "large": "drivers/usb_outlet_3gang/assets/images/large.png",
+        "xlarge": "drivers/usb_outlet_3gang/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      }
+    },
+    {
+      "id": "usb_outlet_advanced",
+      "name": "Usb Outlet Advanced",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "sensor",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/usb_outlet_advanced/assets/icon.svg",
+      "images": {
+        "small": "drivers/usb_outlet_advanced/assets/images/small.png",
+        "large": "drivers/usb_outlet_advanced/assets/images/large.png",
+        "xlarge": "drivers/usb_outlet_advanced/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "usb_outlet_basic",
+      "name": "Usb Outlet",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "switch",
+        "sensor",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/usb_outlet_basic/assets/icon.svg",
+      "images": {
+        "small": "drivers/usb_outlet_basic/assets/images/small.png",
+        "large": "drivers/usb_outlet_basic/assets/images/large.png",
+        "xlarge": "drivers/usb_outlet_basic/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "valve_smart",
+      "name": "Valve Smart",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_generic"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/valve_smart/assets/icon.svg",
+      "images": {
+        "small": "drivers/valve_smart/assets/images/small.png",
+        "large": "drivers/valve_smart/assets/images/large.png",
+        "xlarge": "drivers/valve_smart/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "water_leak_sensor",
+      "name": "Water Leak Sensor",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_temperature",
+        "alarm_water",
+        "measure_battery",
+        "alarm_contact"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "contact",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/water_leak_sensor/assets/icon.svg",
+      "images": {
+        "small": "drivers/water_leak_sensor/assets/images/small.png",
+        "large": "drivers/water_leak_sensor/assets/images/large.png",
+        "xlarge": "drivers/water_leak_sensor/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "water_leak_sensor_temp_humidity",
+      "name": "Temp Humid Sensor Leak Detector",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_water",
+        "measure_battery",
+        "alarm_contact"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "contact",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/water_leak_sensor_temp_humidity/assets/icon.svg",
+      "images": {
+        "small": "drivers/water_leak_sensor_temp_humidity/assets/images/small.png",
+        "large": "drivers/water_leak_sensor_temp_humidity/assets/images/large.png",
+        "xlarge": "drivers/water_leak_sensor_temp_humidity/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "water_valve",
+      "name": "Water Valve",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_temperature",
+        "alarm_water",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/water_valve/assets/icon.svg",
+      "images": {
+        "small": "drivers/water_valve/assets/images/small.png",
+        "large": "drivers/water_valve/assets/images/large.png",
+        "xlarge": "drivers/water_valve/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "water_valve_smart",
+      "name": "Water Valve Smart",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_temperature",
+        "alarm_water",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/water_valve_smart/assets/icon.svg",
+      "images": {
+        "small": "drivers/water_valve_smart/assets/images/small.png",
+        "large": "drivers/water_valve_smart/assets/images/large.png",
+        "xlarge": "drivers/water_valve_smart/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "water_valve_controller",
+      "name": "Smart Water Valve Controller (Hybrid)",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "onoff",
+        "meter_water",
+        "alarm_water",
+        "measure_battery",
+        "measure_temperature"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "switch",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/water_valve_controller/assets/icon.svg",
+      "images": {
+        "small": "drivers/water_valve_controller/assets/images/small.png",
+        "large": "drivers/water_valve_controller/assets/images/large.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "pir_sensor_3in1",
+      "name": "PIR Sensor 3-in-1",
+      "description": "sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_temperature",
+        "measure_humidity",
+        "measure_luminance",
+        "measure_battery"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "sensor",
+        "motion",
+        "battery",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/pir_sensor_3in1/assets/icon.svg",
+      "images": {
+        "small": "/drivers/pir_sensor_3in1/assets/images/small.png",
+        "large": "/drivers/pir_sensor_3in1/assets/images/large.png",
+        "xlarge": "/drivers/pir_sensor_3in1/assets/images/xlarge.png"
+      },
+      "connectivity": [],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      }
+    },
+    {
+      "id": "wall_touch_1gang",
+      "name": "Wall Touch Button 1 Gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff.button1",
+        "measure_temperature",
+        "measure_battery",
+        "alarm_tamper"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/wall_touch_1gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/wall_touch_1gang/assets/images/small.png",
+        "large": "drivers/wall_touch_1gang/assets/images/large.png",
+        "xlarge": "drivers/wall_touch_1gang/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2032"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "wall_touch_2gang",
+      "name": "Wall Touch Button 2 Gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff.button1",
+        "onoff.button2",
+        "measure_temperature",
+        "measure_battery",
+        "alarm_tamper"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/wall_touch_2gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/wall_touch_2gang/assets/images/small.png",
+        "large": "drivers/wall_touch_2gang/assets/images/large.png",
+        "xlarge": "drivers/wall_touch_2gang/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2032"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "wall_touch_3gang",
+      "name": "Wall Touch Button 3 Gang (Hybrid)",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff.button1",
+        "onoff.button2",
+        "onoff.button3",
+        "measure_temperature",
+        "measure_battery",
+        "alarm_tamper"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/wall_touch_3gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/wall_touch_3gang/assets/images/small.png",
+        "large": "drivers/wall_touch_3gang/assets/images/large.png",
+        "xlarge": "drivers/wall_touch_3gang/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2032"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "wall_touch_4gang",
+      "name": "Wall Touch Button 4 Gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff.button1",
+        "onoff.button2",
+        "onoff.button3",
+        "onoff.button4",
+        "measure_temperature",
+        "measure_battery",
+        "alarm_tamper"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/wall_touch_4gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/wall_touch_4gang/assets/images/small.png",
+        "large": "drivers/wall_touch_4gang/assets/images/large.png",
+        "xlarge": "drivers/wall_touch_4gang/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2032"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "wall_touch_5gang",
+      "name": "Wall Touch Button 5 Gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff.button1",
+        "onoff.button2",
+        "onoff.button3",
+        "onoff.button4",
+        "onoff.button5",
+        "measure_temperature",
+        "measure_battery",
+        "alarm_tamper"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/wall_touch_5gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/wall_touch_5gang/assets/images/small.png",
+        "large": "drivers/wall_touch_5gang/assets/images/large.png",
+        "xlarge": "drivers/wall_touch_5gang/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2032"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "wall_touch_6gang",
+      "name": "Wall Touch Button 6 Gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff.button1",
+        "onoff.button2",
+        "onoff.button3",
+        "onoff.button4",
+        "onoff.button5",
+        "onoff.button6",
+        "measure_temperature",
+        "measure_battery",
+        "alarm_tamper"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/wall_touch_6gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/wall_touch_6gang/assets/images/small.png",
+        "large": "drivers/wall_touch_6gang/assets/images/large.png",
+        "xlarge": "drivers/wall_touch_6gang/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2032"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "wall_touch_7gang",
+      "name": "Wall Touch Button 7 Gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff.button1",
+        "onoff.button2",
+        "onoff.button3",
+        "onoff.button4",
+        "onoff.button5",
+        "onoff.button6",
+        "onoff.button7",
+        "measure_temperature",
+        "measure_battery",
+        "alarm_tamper"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/wall_touch_7gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/wall_touch_7gang/assets/images/small.png",
+        "large": "drivers/wall_touch_7gang/assets/images/large.png",
+        "xlarge": "drivers/wall_touch_7gang/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2032"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    },
+    {
+      "id": "wall_touch_8gang",
+      "name": "Wall Touch Button 8 Gang",
+      "description": "socket",
+      "class": "socket",
+      "capabilities": [
+        "onoff.button1",
+        "onoff.button2",
+        "onoff.button3",
+        "onoff.button4",
+        "onoff.button5",
+        "onoff.button6",
+        "onoff.button7",
+        "onoff.button8",
+        "measure_temperature",
+        "measure_battery",
+        "alarm_tamper"
+      ],
+      "models": [],
+      "manufacturers": [],
+      "tags": [
+        "socket",
+        "sensor",
+        "battery",
+        "zigbee",
+        "energy-monitor"
+      ],
+      "icon": "/drivers/wall_touch_8gang/assets/icon.svg",
+      "images": {
+        "small": "drivers/wall_touch_8gang/assets/images/small.png",
+        "large": "drivers/wall_touch_8gang/assets/images/large.png",
+        "xlarge": "drivers/wall_touch_8gang/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2032"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      }
+    }
+  ]
+}
