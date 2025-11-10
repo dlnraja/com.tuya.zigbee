@@ -2,8 +2,8 @@ name: 🧹 MASTER Cleanup & Organize
 
 'on':
   workflow_dispatch:
-  # schedule:
-  #   - cron: '0 2 * * 0' # Weekly on Sunday at 2am - DISABLED to prevent issue spam
+  schedule:
+    - cron: '0 3 1 * *' # Monthly on 1st at 3am - Reduced frequency
 
 jobs:
   
@@ -30,32 +30,38 @@ jobs:
           # Create archive directory
           mkdir -p .github/workflows/archive
           
-          # List of workflows to keep
+          # List of workflows to keep (active workflows)
           KEEP_WORKFLOWS=(
             "MASTER-publish.yml"
             "MASTER-cleanup-organize.yml"
             "MASTER-auto-fix-monitor.yml"
+            "PUBLISH-WORKING.yml"
+            "publish-official-optimized.yml"
           )
           
           # Move old workflows to archive
           cd .github/workflows
           
           for file in *.yml; do
-            # Skip if it's a MASTER workflow
-            if [[ $file == MASTER-* ]]; then
+            # Skip if it's a MASTER workflow or in KEEP list
+            if [[ $file == MASTER-* ]] || [[ $file == PUBLISH-WORKING.yml ]] || [[ $file == publish-official-optimized.yml ]]; then
               echo "✅ Keeping: $file"
               continue
             fi
             
-            # Skip if it's disabled
-            if [[ $file == *.disabled ]]; then
+            # Skip if it's disabled or already in archive
+            if [[ $file == *.disabled ]] || [[ -d "archive" && -f "archive/$file.disabled" ]]; then
               echo "⏭️  Already disabled: $file"
               continue
             fi
             
-            # Move to archive
-            echo "📦 Archiving: $file → archive/$file.disabled"
-            mv "$file" "archive/$file.disabled" 2>/dev/null || echo "Already archived"
+            # Only archive old/unused workflows (not the active publish ones)
+            if [[ $file == publish*.yml ]] || [[ $file == force-publish*.yml ]] || [[ $file == ci*.yml ]] || [[ $file == auto-*.yml ]]; then
+              echo "📦 Archiving old workflow: $file → archive/$file.disabled"
+              mv "$file" "archive/$file.disabled" 2>/dev/null || echo "Already archived"
+            else
+              echo "ℹ️  Keeping: $file (not in archive list)"
+            fi
           done
           
       - name: Organize documentation
