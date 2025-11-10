@@ -1,0 +1,95 @@
+{
+  "timestamp": "2025-10-12T12:25:29.842Z",
+  "summary": {
+    "totalSources": 4,
+    "userReports": 2,
+    "githubDevices": 2,
+    "totalDevices": 4
+  },
+  "priorityDevices": [
+    {
+      "name": "SOS Emergency Button",
+      "driver": "sos_emergency_button_cr2032",
+      "issue": "Battery 1% instead of correct value (3.36V)",
+      "diagnosticCode": "32546f72-a816-4e43-afce-74cd9a6837e3",
+      "status": "fixed_v2.15.1",
+      "manufacturerId": "unknown",
+      "realDevice": true,
+      "needsEnrichment": true,
+      "priority": 10,
+      "source": "forum_post_280",
+      "recommendations": []
+    },
+    {
+      "name": "HOBEIAN Multisensor",
+      "driver": "motion_temp_humidity_illumination_multi_battery",
+      "modelId": "ZG-204ZV",
+      "issue": "No sensor data (temp/humidity/lux/motion)",
+      "diagnosticCode": "32546f72-a816-4e43-afce-74cd9a6837e3",
+      "status": "fixed_v2.15.1",
+      "manufacturerId": "unknown",
+      "realDevice": true,
+      "needsEnrichment": true,
+      "priority": 10,
+      "source": "forum_post_280",
+      "recommendations": [
+        {
+          "type": "code_fix",
+          "file": "drivers/motion_temp_humidity_illumination_multi_battery/device.js",
+          "issue": "Sensor data not received",
+          "fix": "Auto-detect endpoint + fallback standard clusters",
+          "status": "implemented_v2.15.1"
+        }
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "device": "SOS Emergency Button",
+      "driver": "sos_emergency_button_cr2032",
+      "action": "Request Zigbee interview data from user",
+      "user": "Post #280",
+      "priority": 10
+    },
+    {
+      "device": "HOBEIAN Multisensor",
+      "driver": "motion_temp_humidity_illumination_multi_battery",
+      "action": "Request Zigbee interview data from user",
+      "user": "Post #280",
+      "priority": 10
+    },
+    {
+      "type": "code_fix",
+      "file": "drivers/motion_temp_humidity_illumination_multi_battery/device.js",
+      "issue": "Sensor data not received",
+      "fix": "Auto-detect endpoint + fallback standard clusters",
+      "status": "implemented_v2.15.1"
+    }
+  ],
+  "nextSteps": [
+    {
+      "step": 1,
+      "action": "Request diagnostic logs from forum users",
+      "target": "Peter_van_Werkhoven, Ian_Gibbo",
+      "status": "pending"
+    },
+    {
+      "step": 2,
+      "action": "Extract manufacturer IDs from diagnostic logs",
+      "automated": true,
+      "status": "pending"
+    },
+    {
+      "step": 3,
+      "action": "Update driver manifests with new IDs",
+      "automated": true,
+      "status": "pending"
+    },
+    {
+      "step": 4,
+      "action": "Test with user devices (v2.15.1)",
+      "target": "Community beta testers",
+      "status": "in_progress"
+    }
+  ]
+}

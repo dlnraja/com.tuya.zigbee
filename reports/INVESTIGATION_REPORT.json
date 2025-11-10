@@ -1,0 +1,91 @@
+{
+  "drivers": {
+    "total": 183,
+    "withBattery": 105,
+    "withIlluminance": 35,
+    "withAlarm": 63,
+    "withIAS": 12,
+    "missingBatteryConverter": [
+      "roller_shutter_controller_ac"
+    ],
+    "missingIlluminanceConverter": [],
+    "missingIAS": [
+      "co2_sensor_battery",
+      "contact_sensor_battery",
+      "co_detector_pro_battery",
+      "doorbell_cr2032",
+      "door_controller_ac",
+      "door_lock_battery",
+      "fingerprint_lock_battery",
+      "formaldehyde_sensor_battery",
+      "garage_door_controller_ac",
+      "garage_door_opener_cr2032",
+      "gas_detector_battery",
+      "gas_sensor_ts0601_ac",
+      "gas_sensor_ts0601_battery",
+      "lux_sensor_battery",
+      "motion_sensor_mmwave_battery",
+      "motion_sensor_pir_ac_battery",
+      "motion_sensor_zigbee_204z_battery",
+      "multisensor_battery",
+      "noise_level_sensor_battery",
+      "outdoor_light_controller_ac",
+      "outdoor_siren_cr2032",
+      "pir_radar_illumination_sensor_battery",
+      "pir_sensor_advanced_battery",
+      "pm25_sensor_battery",
+      "presence_sensor_mmwave_battery",
+      "presence_sensor_radar_battery",
+      "pressure_sensor_battery",
+      "radar_motion_sensor_advanced_battery",
+      "radar_motion_sensor_mmwave_battery",
+      "radar_motion_sensor_tank_level_battery",
+      "smart_doorbell_battery",
+      "smart_irrigation_controller_hybrid",
+      "smart_lock_battery",
+      "smart_smoke_detector_advanced_battery",
+      "smart_water_valve_hybrid",
+      "smoke_detector_battery",
+      "smoke_detector_temperature_battery",
+      "smoke_detector_temp_humidity_advanced_battery",
+      "smoke_temp_humid_sensor_battery",
+      "soil_moisture_sensor_battery",
+      "tank_level_monitor_cr2032",
+      "temperature_sensor_advanced_battery",
+      "temperature_sensor_battery",
+      "temp_humid_sensor_advanced_battery",
+      "temp_humid_sensor_dd_battery",
+      "temp_sensor_pro_battery",
+      "tvoc_sensor_advanced_battery",
+      "tvoc_sensor_battery",
+      "vibration_sensor_battery",
+      "water_valve_hybrid",
+      "water_valve_smart_hybrid"
+    ],
+    "orphanedCode": [],
+    "missingImports": []
+  },
+  "validation": {
+    "homey": {
+      "passed": true,
+      "errors": []
+    },
+    "eslint": {
+      "passed": false,
+      "warnings": 0
+    },
+    "matrix": {
+      "generated": true,
+      "deviceCount": 183
+    }
+  },
+  "critical": [],
+  "warnings": [
+    "1 drivers need battery converter",
+    "51 drivers need IASZoneEnroller"
+  ],
+  "suggestions": [
+    "Run: node scripts/audit-and-fix-all.js to fix battery converters",
+    "Run: node scripts/apply-ias-zone-enroller.js to add IASZoneEnroller"
+  ]
+}

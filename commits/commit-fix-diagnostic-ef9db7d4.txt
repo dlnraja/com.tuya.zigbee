@@ -1,0 +1,54 @@
+fix: Diagnostic ef9db7d4 - Motion sensor and SOS button battery/readings
+
+DIAGNOSTIC ID: ef9db7d4-331e-492b-99bf-2d85993c0d21
+USER MESSAGE: "Still no readings and battery indicator at all on both devices"
+APP VERSION: v3.1.8
+HOMEY VERSION: v12.8.0
+
+DEVICES AFFECTED:
+1. motion_temp_humidity_illumination_multi_battery (0b14ceae-0b7a-4177-b85c-90d148cf464a)
+2. sos_emergency_button_cr2032 (284e47cb-a706-40ef-954f-1cb9bbbdb8ee)
+
+ROOT CAUSES IDENTIFIED:
+1. ❌ this.homey.zigbee.getIeeeAddress is not a function
+   → API changed in SDK3, method doesn't exist anymore
+   
+2. ❌ expected_cluster_id_number
+   → registerCapability() requires NUMERIC cluster IDs, not strings
+
+FIXES APPLIED:
+
+motion_temp_humidity_illumination_multi_battery:
+✅ Fixed IEEE address retrieval:
+   OLD: await this.homey.zigbee.getIeeeAddress()
+   NEW: this.zclNode.ieeeAddress (SDK3 compatible)
+
+✅ Fixed battery cluster ID:
+   OLD: this.registerCapability('measure_battery', 'genPowerCfg', {...})
+   NEW: this.registerCapability('measure_battery', 1, {...})
+
+sos_emergency_button_cr2032:
+✅ Fixed onOff cluster ID:
+   OLD: this.registerCapability('onoff', 'genOnOff', {...})
+   NEW: this.registerCapability('onoff', 6, {...})
+
+✅ Battery already had numeric ID (1) - OK
+
+TECHNICAL DETAILS:
+- SDK3 requires numeric cluster IDs in registerCapability()
+- this.zclNode.ieeeAddress is the correct way to get IEEE address in SDK3
+- Cluster IDs: genPowerCfg=1, genOnOff=6, iasZone=1280
+
+EXPECTED RESULT:
+✅ Motion, temperature, humidity, illuminance readings should appear
+✅ Battery percentage should be visible
+✅ Button clicks should be detected
+
+USER INSTRUCTIONS:
+1. Wait for next app update (will be published automatically)
+2. Or: Remove and re-add both devices to force re-initialization
+3. Readings and battery should appear immediately after
+
+Script created: fix-diagnostic-ef9db7d4.js (reusable for similar issues)
+
+Issue will be resolved in next published version.

@@ -1,0 +1,69 @@
+Subject: RE: Universal Tuya Zigbee - Diagnostic bf38b171 ("unable to get service by id")
+
+Hi,
+
+Thank you for submitting the diagnostic report (bf38b171).
+
+I see you're encountering an "unable to get service by id" error when trying to add a 4-way device as a remote.
+
+To help me investigate and fix this issue, I need a bit more information:
+
+**1. Which specific device are you trying to add?**
+   - Scene controller with 4 buttons (wireless remote)?
+   - Wall switch with 4 gangs (wired)?
+   - Touch switch with 4 gangs?
+   - Other?
+
+**2. At which step does the error appear?**
+   - During the device search/discovery?
+   - When selecting the device from the list?
+   - After pairing completes?
+   - When trying to configure the device?
+
+**3. Device details (if you can see them):**
+   - Brand/model name on the device?
+   - Any model numbers visible?
+
+**4. Have you successfully paired other Tuya devices before?**
+   - Yes, other devices work fine
+   - No, this is my first device
+
+**5. Optional but helpful:**
+   - Screenshot of the error message if possible
+
+---
+
+**In the meantime**, you can try these workaround steps:
+
+1. **Factory reset the device**:
+   - For wireless remotes: Press and hold bottom-left button for 10 seconds until LEDs flash
+   - For wired switches: Hold the button for 10 seconds
+
+2. **Ensure fresh batteries** (if battery-powered):
+   - Low batteries can cause pairing issues
+   - Try brand new batteries
+
+3. **Pair close to Homey**:
+   - Within 1-2 meters during pairing
+   - Move closer to other Zigbee devices after pairing
+
+4. **Try a different driver** (if applicable):
+   - If you have a 4-button scene controller, try searching for "scene controller" or "wireless switch"
+   - Different driver entries might work
+
+---
+
+**Technical Details** (for reference):
+- App Version: v3.1.4 (latest)
+- Homey Version: v12.8.0
+- Log ID: bf38b171-6fff-4a92-b95b-117639f5140f
+
+I'll investigate the code in parallel and prepare a fix if needed. Your additional information will help me identify the root cause faster.
+
+Thank you for your patience!
+
+Best regards,
+Dylan Rajasekaram
+Developer - Universal Tuya Zigbee App
+
+P.S. This error is specific to v3.1.4, so I'm prioritizing this investigation to ensure a quick fix if necessary.

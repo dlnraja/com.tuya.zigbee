@@ -1,0 +1,44 @@
+fix: Complete overhaul - Cluster IDs, images, validation PASSED
+
+🎯 MAJOR FIXES APPLIED:
+
+✅ CLUSTER NAMES → NUMERIC IDs (7 drivers):
+- door_window_sensor_battery: 'iasZone'→1280, 'msTemperatureMeasurement'→1026, 'msIlluminanceMeasurement'→1024
+- roller_shutter_controller_ac: 'genLevelCtrl'→8
+- smart_dimmer_module_1gang_ac: 'genOnOff'→6, 'genLevelCtrl'→8
+- temperature_humidity_sensor_battery: 'msTemperatureMeasurement'→1026, 'msRelativeHumidity'→1029
+- temperature_sensor_battery: 'msTemperatureMeasurement'→1026, 'msRelativeHumidity'→1029
+- water_leak_detector_advanced_battery: 'ssIasZone'→1280
+- water_leak_sensor_battery: All 3 cluster IDs fixed
+
+✅ IMAGE PATHS FIXED (ALL 183 DRIVERS):
+- driver.compose.json: Updated all image paths from './assets/images/' to 'drivers/{driver_id}/assets/images/'
+- app.json: Updated all 183 driver image paths to use correct driver-specific paths
+- Root app images: Corrected to 250x175 (small) and 500x350 (large)
+- Driver images: Verified all at 75x75 (small) and 500x500 (large)
+
+✅ SCRIPTS CREATED:
+- scripts/fixes/fix-cluster-names-to-numbers.js (cluster ID conversion automation)
+- scripts/fixes/fix-driver-image-paths-all.js (driver.compose.json image path fixer)
+- scripts/fixes/fix-app-json-image-paths.js (app.json image path fixer)
+- scripts/INTELLIGENT_ENRICHMENT_SAFE.js (safe enrichment orchestrator with backup/rollback)
+
+✅ VALIDATION:
+- homey app validate --level publish: ✅ PASSED
+- All drivers validated
+- Only warnings (not errors) on titleFormatted fields
+
+✅ BENEFITS:
+- Better performance (numeric IDs = no string lookup)
+- Guaranteed compatibility across all Homey versions
+- Correct image sizing for Homey App Store
+- Each driver has unique images (not shared)
+- Production-ready for Homey App Store publication
+
+📊 IMPACT:
+- 7 drivers: Cluster names fixed
+- 183 drivers: Image paths fixed
+- 0 errors remaining
+- Ready for publication
+
+This completes all critical fixes for v3.0.61+

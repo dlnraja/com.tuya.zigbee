@@ -1,0 +1,238 @@
+═══════════════════════════════════════════════════════════════════════════════
+   📚 INDEX DES FICHIERS D'AIDE - v4.9.275
+═══════════════════════════════════════════════════════════════════════════════
+
+🎯 COMMENCER ICI
+───────────────────────────────────────────────────────────────────────────────
+
+⭐ START_HERE.txt
+   → Point de départ ultra-simple (10 lignes)
+   → Solution immédiate au problème debug
+
+⭐ QUICK_TEST_GUIDE.txt
+   → Guide rapide complet
+   → Comparaison des 3 méthodes de test
+   → Recommandations et troubleshooting
+
+───────────────────────────────────────────────────────────────────────────────
+📊 RÉSUMÉS EXÉCUTIFS
+───────────────────────────────────────────────────────────────────────────────
+
+EXECUTIVE_SUMMARY.txt
+   → Vue d'ensemble ultra-concise
+   → Statut déploiement v4.9.275
+   → Timeline et résultats
+
+SESSION_COMPLETE_SUMMARY.md
+   → Résumé complet de la session
+   → 2 problèmes résolus
+   → 19 fichiers créés
+   → Métriques et statistiques
+
+───────────────────────────────────────────────────────────────────────────────
+📖 DOCUMENTATION DÉTAILLÉE
+───────────────────────────────────────────────────────────────────────────────
+
+SUCCESS_DEPLOYMENT_v4.9.275.md
+   → Rapport complet du déploiement
+   → Détails techniques
+   → Templates de réponse utilisateurs
+   → Monitoring et vérification
+
+FIX_COMPLETE_SUMMARY_v4.9.275.md
+   → Analyse technique du fix
+   → Root cause investigation
+   → Solution méthodologie
+   → Impact metrics
+
+README_FIX_v4.9.275.md
+   → Guide de tous les fichiers
+   → Usage des scripts
+   → Comparaison des options
+   → Quick commands
+
+───────────────────────────────────────────────────────────────────────────────
+🔧 DEBUG LOCAL - PROBLÈME TIMEOUT
+───────────────────────────────────────────────────────────────────────────────
+
+DEBUG_LOCAL_FIX.md
+   → Documentation complète timeout
+   → 4 options de test détaillées
+   → Checklist diagnostic
+   → Solutions pas-à-pas
+
+DEBUG_RUN_PROBLEM_SUMMARY.txt
+   → Résumé du problème timeout
+   → Causes et solutions
+   → Alternatives recommandées
+   → Liens directs
+
+───────────────────────────────────────────────────────────────────────────────
+🤖 SCRIPTS - DÉPLOIEMENT
+───────────────────────────────────────────────────────────────────────────────
+
+CRITICAL_FIX_AND_PUBLISH.js (Node.js)
+   → Script automatisé principal
+   → Version increment
+   → Changelog update
+   → Git commit + push
+   → GitHub Actions trigger
+
+PUBLISH_GITHUB.bat (Batch)
+   → Trigger GitHub Actions (simple)
+   → Vérifie gh CLI
+   → Instructions fallback
+
+MONITOR_PUBLISH.bat (Batch)
+   → Monitoring temps réel
+   → Liste workflows récents
+   → Commandes watch
+
+TRIGGER_GITHUB_PUBLISH.ps1 (PowerShell)
+   → Trigger API avancé
+   → Requiert GitHub token
+   → Gestion d'erreurs complète
+
+PUBLISH_NOW_SIMPLE.ps1 (PowerShell)
+   → Trigger simple via gh CLI
+   → Instructions installation
+   → Fallback manuel
+
+SHOW_STATUS.bat (Batch)
+   → Affiche EXECUTIVE_SUMMARY.txt
+   → Ouvre liens monitoring
+   → Vue rapide statut
+
+───────────────────────────────────────────────────────────────────────────────
+🤖 SCRIPTS - DEBUG LOCAL
+───────────────────────────────────────────────────────────────────────────────
+
+DEBUG_CHECK.bat (Batch) ⭐
+   → Diagnostic automatique complet
+   → Vérifie build, connexion, validation
+   → 4 options d'action
+   → Recommandé pour troubleshooting
+
+INSTALL_LOCAL.bat (Batch) ⭐
+   → Installation locale simple
+   → Alternative au debug mode
+   → Évite timeout
+   → Vérifications automatiques
+
+OPEN_TEST_VERSION.bat (Batch) ⭐
+   → Ouvre version test en navigateur
+   → Solution la plus simple
+   → Aucune config réseau
+   → 1 clic installation
+
+───────────────────────────────────────────────────────────────────────────────
+📋 FICHIERS INDEX
+───────────────────────────────────────────────────────────────────────────────
+
+INDEX_FICHIERS_AIDE.txt
+   → Ce fichier
+   → Liste complète avec descriptions
+   → Guide de navigation
+
+───────────────────────────────────────────────────────────────────────────────
+🎯 USAGE RECOMMANDÉ PAR SITUATION
+───────────────────────────────────────────────────────────────────────────────
+
+BESOIN: Tester l'app rapidement
+ACTION: Double-cliquer OPEN_TEST_VERSION.bat
+TEMPS: 30 secondes
+
+BESOIN: Comprendre le problème debug
+ACTION: Lire QUICK_TEST_GUIDE.txt
+TEMPS: 5 minutes
+
+BESOIN: Voir le statut déploiement
+ACTION: Lire EXECUTIVE_SUMMARY.txt
+TEMPS: 2 minutes
+
+BESOIN: Diagnostic complet
+ACTION: Double-cliquer DEBUG_CHECK.bat
+TEMPS: 1 minute
+
+BESOIN: Installation version locale
+ACTION: Double-cliquer INSTALL_LOCAL.bat
+TEMPS: 60 secondes
+
+BESOIN: Détails techniques complets
+ACTION: Lire SUCCESS_DEPLOYMENT_v4.9.275.md
+TEMPS: 10 minutes
+
+BESOIN: Vue d'ensemble session
+ACTION: Lire SESSION_COMPLETE_SUMMARY.md
+TEMPS: 5 minutes
+
+───────────────────────────────────────────────────────────────────────────────
+📊 STATISTIQUES FICHIERS
+───────────────────────────────────────────────────────────────────────────────
+
+Documentation:       10 fichiers (~8,000 lignes)
+Scripts Batch:        6 fichiers
+Scripts PowerShell:   2 fichiers  
+Scripts Node.js:      1 fichier
+Total:               19 fichiers
+
+Langues: Français, Anglais
+Formats: TXT, MD, BAT, PS1, JS
+
+───────────────────────────────────────────────────────────────────────────────
+🔗 LIENS EXTERNES UTILES
+───────────────────────────────────────────────────────────────────────────────
+
+Version Test (Installation 1-clic):
+https://homey.app/app/com.dlnraja.tuya.zigbee/test/
+
+App Store (Version stable):
+https://homey.app/app/com.dlnraja.tuya.zigbee
+
+Build Dashboard:
+https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee/build/575
+
+GitHub Actions:
+https://github.com/dlnraja/com.tuya.zigbee/actions/runs/19077180920
+
+Repository:
+https://github.com/dlnraja/com.tuya.zigbee
+
+───────────────────────────────────────────────────────────────────────────────
+💡 CONSEILS
+───────────────────────────────────────────────────────────────────────────────
+
+1. Commencez TOUJOURS par START_HERE.txt
+2. Pour tester: utilisez OPEN_TEST_VERSION.bat
+3. Pour diagnostiquer: utilisez DEBUG_CHECK.bat
+4. Pour détails: lisez les fichiers .md
+5. Tous les scripts .bat sont double-cliquables
+
+───────────────────────────────────────────────────────────────────────────────
+🎯 ORDRE DE LECTURE RECOMMANDÉ
+───────────────────────────────────────────────────────────────────────────────
+
+Débutant (10 minutes):
+1. START_HERE.txt
+2. QUICK_TEST_GUIDE.txt
+3. Double-cliquer: OPEN_TEST_VERSION.bat
+
+Intermédiaire (30 minutes):
+1. EXECUTIVE_SUMMARY.txt
+2. DEBUG_LOCAL_FIX.md
+3. Essayer: DEBUG_CHECK.bat ou INSTALL_LOCAL.bat
+
+Avancé (1 heure):
+1. SESSION_COMPLETE_SUMMARY.md
+2. SUCCESS_DEPLOYMENT_v4.9.275.md
+3. FIX_COMPLETE_SUMMARY_v4.9.275.md
+4. Étudier tous les scripts
+
+═══════════════════════════════════════════════════════════════════════════════
+   ✨ TOUS LES FICHIERS SONT PRÊTS À L'EMPLOI
+═══════════════════════════════════════════════════════════════════════════════
+
+Dernière mise à jour: 2025-11-04 18:35
+Version app: 4.9.275
+Build: 575
+Statut: ✅ PRODUCTION READY

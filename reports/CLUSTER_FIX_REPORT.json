@@ -1,0 +1,1442 @@
+{
+  "timestamp": "2025-10-19T14:51:46.776Z",
+  "stats": {
+    "filesScanned": 183,
+    "filesModified": 106,
+    "replacements": 119,
+    "errors": [],
+    "changes": [
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\air_quality_monitor_pro_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\climate_monitor_cr2032\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\co2_sensor_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\co2_temp_humidity_cr2032\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\contact_sensor_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\co_detector_pro_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\curtain_motor_ac\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\doorbell_cr2032\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\door_controller_ac\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\door_lock_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\door_window_sensor_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\fingerprint_lock_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\formaldehyde_sensor_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\garage_door_controller_ac\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\garage_door_opener_cr2032\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\gas_detector_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\gas_sensor_ts0601_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\humidity_controller_ac\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\lux_sensor_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\mini_switch_cr2032\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\motion_sensor_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\motion_sensor_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\motion_sensor_illuminance_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\motion_sensor_mmwave_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\motion_sensor_pir_ac_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\motion_sensor_pir_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\motion_sensor_zigbee_204z_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\motion_temp_humidity_illumination_multi_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\multisensor_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\noise_level_sensor_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\outdoor_light_controller_ac\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\outdoor_siren_cr2032\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\pet_feeder_cr2032\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\pir_radar_illumination_sensor_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\pir_sensor_advanced_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\pm25_detector_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\pm25_sensor_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\presence_sensor_mmwave_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\presence_sensor_radar_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\pressure_sensor_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\radar_motion_sensor_advanced_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\radar_motion_sensor_mmwave_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\radar_motion_sensor_tank_level_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\radiator_valve_hybrid\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\remote_switch_cr2032\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\roller_blind_controller_ac\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\roller_shutter_controller_ac\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\roller_shutter_switch_advanced_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\roller_shutter_switch_cr2032\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_controller\\device.js",
+        "capability": "onoff",
+        "from": "CLUSTER.ON_OFF",
+        "to": "genOnOff"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_controller_2button_cr2032\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_controller_2button_cr2032\\device.js",
+        "capability": "onoff",
+        "from": "CLUSTER.ON_OFF",
+        "to": "genOnOff"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_controller_4button_cr2032\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_controller_4button_cr2032\\device.js",
+        "capability": "onoff",
+        "from": "CLUSTER.ON_OFF",
+        "to": "genOnOff"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_controller_6button_cr2032\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_controller_6button_cr2032\\device.js",
+        "capability": "onoff",
+        "from": "CLUSTER.ON_OFF",
+        "to": "genOnOff"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_controller_8button_cr2032\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_controller_8button_cr2032\\device.js",
+        "capability": "onoff",
+        "from": "CLUSTER.ON_OFF",
+        "to": "genOnOff"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_controller_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_controller_battery\\device.js",
+        "capability": "onoff",
+        "from": "CLUSTER.ON_OFF",
+        "to": "genOnOff"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_curtain_motor_hybrid\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_doorbell_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_garden_sprinkler_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_irrigation_controller_hybrid\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_lock_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_smoke_detector_advanced_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_thermostat_hybrid\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_valve_controller_hybrid\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_water_valve_hybrid\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smoke_detector_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smoke_detector_temperature_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smoke_detector_temp_humidity_advanced_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smoke_temp_humid_sensor_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\soil_moisture_sensor_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\soil_moisture_temperature_sensor_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\soil_tester_temp_humid_cr2032\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\solar_panel_controller_hybrid\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sos_emergency_button_cr2032\\device.js",
+        "capability": "onoff",
+        "from": "CLUSTER.ON_OFF",
+        "to": "genOnOff"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_1gang_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_3gang_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_4gang_battery_cr2032\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_5gang_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\tank_level_monitor_cr2032\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\temperature_controller_hybrid\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\temperature_humidity_display_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\temperature_humidity_sensor_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\temperature_sensor_advanced_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\temperature_sensor_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\temp_humid_sensor_advanced_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\temp_humid_sensor_dd_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\temp_humid_sensor_leak_detector_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\temp_sensor_pro_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\thermostat_hybrid\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\tvoc_sensor_advanced_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\tvoc_sensor_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\vibration_sensor_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\water_leak_detector_advanced_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\water_leak_detector_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\water_leak_sensor_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\water_valve_hybrid\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\water_valve_smart_hybrid\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_button_2gang_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_dimmer_scroll_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_scene_controller_4button_battery\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_1gang_cr2032\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_1gang_cr2032\\device.js",
+        "capability": "onoff",
+        "from": "CLUSTER.ON_OFF",
+        "to": "genOnOff"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_2gang_cr2032\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_2gang_cr2032\\device.js",
+        "capability": "onoff",
+        "from": "CLUSTER.ON_OFF",
+        "to": "genOnOff"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_3gang_cr2032\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_3gang_cr2032\\device.js",
+        "capability": "onoff",
+        "from": "CLUSTER.ON_OFF",
+        "to": "genOnOff"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_4gang_cr2032\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_4gang_cr2032\\device.js",
+        "capability": "onoff",
+        "from": "CLUSTER.ON_OFF",
+        "to": "genOnOff"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_4gang_cr2450\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_5gang_cr2032\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_5gang_cr2032\\device.js",
+        "capability": "onoff",
+        "from": "CLUSTER.ON_OFF",
+        "to": "genOnOff"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_6gang_cr2032\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_6gang_cr2032\\device.js",
+        "capability": "onoff",
+        "from": "CLUSTER.ON_OFF",
+        "to": "genOnOff"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_cr2032\\device.js",
+        "capability": "measure_battery",
+        "from": "'genPowerCfg'",
+        "to": "genPowerCfg"
+      },
+      {
+        "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_cr2032\\device.js",
+        "capability": "onoff",
+        "from": "CLUSTER.ON_OFF",
+        "to": "genOnOff"
+      }
+    ]
+  },
+  "changes": [
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\air_quality_monitor_pro_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\climate_monitor_cr2032\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\co2_sensor_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\co2_temp_humidity_cr2032\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\contact_sensor_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\co_detector_pro_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\curtain_motor_ac\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\doorbell_cr2032\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\door_controller_ac\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\door_lock_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\door_window_sensor_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\fingerprint_lock_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\formaldehyde_sensor_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\garage_door_controller_ac\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\garage_door_opener_cr2032\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\gas_detector_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\gas_sensor_ts0601_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\humidity_controller_ac\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\lux_sensor_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\mini_switch_cr2032\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\motion_sensor_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\motion_sensor_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\motion_sensor_illuminance_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\motion_sensor_mmwave_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\motion_sensor_pir_ac_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\motion_sensor_pir_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\motion_sensor_zigbee_204z_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\motion_temp_humidity_illumination_multi_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\multisensor_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\noise_level_sensor_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\outdoor_light_controller_ac\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\outdoor_siren_cr2032\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\pet_feeder_cr2032\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\pir_radar_illumination_sensor_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\pir_sensor_advanced_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\pm25_detector_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\pm25_sensor_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\presence_sensor_mmwave_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\presence_sensor_radar_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\pressure_sensor_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\radar_motion_sensor_advanced_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\radar_motion_sensor_mmwave_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\radar_motion_sensor_tank_level_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\radiator_valve_hybrid\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\remote_switch_cr2032\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\roller_blind_controller_ac\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\roller_shutter_controller_ac\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\roller_shutter_switch_advanced_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\roller_shutter_switch_cr2032\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_controller\\device.js",
+      "capability": "onoff",
+      "from": "CLUSTER.ON_OFF",
+      "to": "genOnOff"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_controller_2button_cr2032\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_controller_2button_cr2032\\device.js",
+      "capability": "onoff",
+      "from": "CLUSTER.ON_OFF",
+      "to": "genOnOff"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_controller_4button_cr2032\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_controller_4button_cr2032\\device.js",
+      "capability": "onoff",
+      "from": "CLUSTER.ON_OFF",
+      "to": "genOnOff"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_controller_6button_cr2032\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_controller_6button_cr2032\\device.js",
+      "capability": "onoff",
+      "from": "CLUSTER.ON_OFF",
+      "to": "genOnOff"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_controller_8button_cr2032\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_controller_8button_cr2032\\device.js",
+      "capability": "onoff",
+      "from": "CLUSTER.ON_OFF",
+      "to": "genOnOff"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_controller_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_controller_battery\\device.js",
+      "capability": "onoff",
+      "from": "CLUSTER.ON_OFF",
+      "to": "genOnOff"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_curtain_motor_hybrid\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_doorbell_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_garden_sprinkler_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_irrigation_controller_hybrid\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_lock_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_smoke_detector_advanced_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_thermostat_hybrid\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_valve_controller_hybrid\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_water_valve_hybrid\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smoke_detector_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smoke_detector_temperature_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smoke_detector_temp_humidity_advanced_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smoke_temp_humid_sensor_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\soil_moisture_sensor_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\soil_moisture_temperature_sensor_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\soil_tester_temp_humid_cr2032\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\solar_panel_controller_hybrid\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sos_emergency_button_cr2032\\device.js",
+      "capability": "onoff",
+      "from": "CLUSTER.ON_OFF",
+      "to": "genOnOff"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_1gang_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_3gang_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_4gang_battery_cr2032\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_5gang_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\tank_level_monitor_cr2032\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\temperature_controller_hybrid\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\temperature_humidity_display_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\temperature_humidity_sensor_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\temperature_sensor_advanced_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\temperature_sensor_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\temp_humid_sensor_advanced_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\temp_humid_sensor_dd_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\temp_humid_sensor_leak_detector_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\temp_sensor_pro_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\thermostat_hybrid\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\tvoc_sensor_advanced_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\tvoc_sensor_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\vibration_sensor_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\water_leak_detector_advanced_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\water_leak_detector_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\water_leak_sensor_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\water_valve_hybrid\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\water_valve_smart_hybrid\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_button_2gang_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_dimmer_scroll_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_scene_controller_4button_battery\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_1gang_cr2032\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_1gang_cr2032\\device.js",
+      "capability": "onoff",
+      "from": "CLUSTER.ON_OFF",
+      "to": "genOnOff"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_2gang_cr2032\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_2gang_cr2032\\device.js",
+      "capability": "onoff",
+      "from": "CLUSTER.ON_OFF",
+      "to": "genOnOff"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_3gang_cr2032\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_3gang_cr2032\\device.js",
+      "capability": "onoff",
+      "from": "CLUSTER.ON_OFF",
+      "to": "genOnOff"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_4gang_cr2032\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_4gang_cr2032\\device.js",
+      "capability": "onoff",
+      "from": "CLUSTER.ON_OFF",
+      "to": "genOnOff"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_4gang_cr2450\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_5gang_cr2032\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_5gang_cr2032\\device.js",
+      "capability": "onoff",
+      "from": "CLUSTER.ON_OFF",
+      "to": "genOnOff"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_6gang_cr2032\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_6gang_cr2032\\device.js",
+      "capability": "onoff",
+      "from": "CLUSTER.ON_OFF",
+      "to": "genOnOff"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_cr2032\\device.js",
+      "capability": "measure_battery",
+      "from": "'genPowerCfg'",
+      "to": "genPowerCfg"
+    },
+    {
+      "file": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wireless_switch_cr2032\\device.js",
+      "capability": "onoff",
+      "from": "CLUSTER.ON_OFF",
+      "to": "genOnOff"
+    }
+  ],
+  "errors": []
+}

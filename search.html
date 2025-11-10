@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Search - Universal Tuya Zigbee</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        header {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 12px;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 18px;
+        }
+        .stats {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .stat {
+            background: #f5f5f5;
+            padding: 12px 24px;
+            border-radius: 8px;
+        }
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+        .search-section {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .search-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        #search-input {
+            width: 100%;
+            padding: 16px 20px 16px 50px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+        #search-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            font-size: 20px;
+        }
+        .filters {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            background: #f5f5f5;
+            border: 2px solid transparent;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+        .filter-btn:hover {
+            background: #e0e0e0;
+        }
+        .filter-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        .results-section {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .results-count {
+            font-size: 18px;
+            color: #333;
+        }
+        .sort-controls select {
+            padding: 8px 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        .driver-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+        .driver-card {
+            background: #f9f9f9;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .driver-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+        .driver-icon {
+            width: 48px;
+            height: 48px;
+            background: #667eea;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        .driver-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        .driver-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .driver-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+        .tag {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .driver-models {
+            font-size: 12px;
+            color: #999;
+            font-family: 'Monaco', 'Courier New', monospace;
+        }
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+        }
+        .no-results-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔌 Driver Search</h1>
+            <p class="subtitle">Find the perfect driver for your Zigbee device</p>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-value" id="total-drivers">-</div>
+                    <div class="stat-label">Total Drivers</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="total-models">-</div>
+                    <div class="stat-label">Supported Models</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="total-manufacturers">-</div>
+                    <div class="stat-label">Manufacturers</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="search-section">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search-input" placeholder="Search by name, model, manufacturer, capability...">
+            </div>
+            
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="switch">Switches</button>
+                <button class="filter-btn" data-filter="sensor">Sensors</button>
+                <button class="filter-btn" data-filter="dimmer">Dimmers</button>
+                <button class="filter-btn" data-filter="multi-gang">Multi-Gang</button>
+                <button class="filter-btn" data-filter="battery">Battery</button>
+                <button class="filter-btn" data-filter="tuya">Tuya DP</button>
+                <button class="filter-btn" data-filter="energy-monitor">Energy Monitor</button>
+            </div>
+        </div>
+
+        <div class="results-section">
+            <div class="results-header">
+                <div class="results-count">
+                    <span id="results-count">0</span> drivers found
+                </div>
+                <div class="sort-controls">
+                    <select id="sort-select">
+                        <option value="name">Sort by Name</option>
+                        <option value="class">Sort by Class</option>
+                        <option value="models">Sort by Models</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Loading drivers...</p>
+            </div>
+
+            <div id="driver-grid" class="driver-grid" style="display: none;"></div>
+
+            <div id="no-results" class="no-results" style="display: none;">
+                <div class="no-results-icon">🔍</div>
+                <h3>No drivers found</h3>
+                <p>Try adjusting your search or filters</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let driversData = [];
+        let currentFilter = 'all';
+        let currentQuery = '';
+
+        // Load drivers index
+        async function loadDrivers() {
+            try {
+                const response = await fetch('drivers-index.json');
+                const data = await response.json();
+                driversData = data.drivers;
+
+                // Update stats
+                document.getElementById('total-drivers').textContent = data.totalDrivers;
+                document.getElementById('total-models').textContent = 
+                    driversData.reduce((sum, d) => sum + d.models.length, 0);
+                document.getElementById('total-manufacturers').textContent = 
+                    driversData.reduce((sum, d) => sum + d.manufacturers.length, 0);
+
+                // Hide loading, show results
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('driver-grid').style.display = 'grid';
+
+                // Display all drivers initially
+                displayDrivers(driversData);
+
+            } catch (err) {
+                console.error('Failed to load drivers:', err);
+                document.getElementById('loading').innerHTML = 
+                    '<p style="color: #f44336;">Failed to load drivers. Please refresh the page.</p>';
+            }
+        }
+
+        // Display drivers
+        function displayDrivers(drivers) {
+            const grid = document.getElementById('driver-grid');
+            const noResults = document.getElementById('no-results');
+
+            if (drivers.length === 0) {
+                grid.style.display = 'none';
+                noResults.style.display = 'block';
+                document.getElementById('results-count').textContent = '0';
+                return;
+            }
+
+            grid.style.display = 'grid';
+            noResults.style.display = 'none';
+            document.getElementById('results-count').textContent = drivers.length;
+
+            grid.innerHTML = drivers.map(driver => `
+                <div class="driver-card" onclick="window.open('https://github.com/dlnraja/com.tuya.zigbee/tree/master/drivers/${driver.id}', '_blank')">
+                    <div class="driver-icon">${getDriverIcon(driver)}</div>
+                    <div class="driver-name">${driver.name}</div>
+                    <div class="driver-description">${driver.description}</div>
+                    <div class="driver-tags">
+                        ${driver.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                    </div>
+                    <div class="driver-models">
+                        ${driver.models.length > 0 ? driver.models.slice(0, 3).join(', ') : 'No models listed'}
+                        ${driver.models.length > 3 ? ` +${driver.models.length - 3} more` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Get icon for driver
+        function getDriverIcon(driver) {
+            if (driver.class === 'socket') return '🔌';
+            if (driver.class === 'light') return '💡';
+            if (driver.class === 'sensor') return '📡';
+            if (driver.class === 'thermostat') return '🌡️';
+            if (driver.class === 'lock') return '🔒';
+            if (driver.class === 'doorbell') return '🔔';
+            if (driver.class === 'button') return '🔘';
+            return '⚡';
+        }
+
+        // Filter drivers
+        function filterDrivers() {
+            let filtered = driversData;
+
+            // Apply filter
+            if (currentFilter !== 'all') {
+                filtered = filtered.filter(driver => 
+                    driver.tags.includes(currentFilter)
+                );
+            }
+
+            // Apply search
+            if (currentQuery) {
+                const query = currentQuery.toLowerCase();
+                filtered = filtered.filter(driver => 
+                    driver.name.toLowerCase().includes(query) ||
+                    driver.description.toLowerCase().includes(query) ||
+                    driver.tags.some(tag => tag.toLowerCase().includes(query)) ||
+                    driver.models.some(model => model.toLowerCase().includes(query)) ||
+                    driver.manufacturers.some(mfg => mfg.toLowerCase().includes(query))
+                );
+            }
+
+            // Apply sort
+            const sortBy = document.getElementById('sort-select').value;
+            if (sortBy === 'name') {
+                filtered.sort((a, b) => a.name.localeCompare(b.name));
+            } else if (sortBy === 'class') {
+                filtered.sort((a, b) => a.class.localeCompare(b.class));
+            } else if (sortBy === 'models') {
+                filtered.sort((a, b) => b.models.length - a.models.length);
+            }
+
+            displayDrivers(filtered);
+        }
+
+        // Search input
+        document.getElementById('search-input').addEventListener('input', (e) => {
+            currentQuery = e.target.value;
+            filterDrivers();
+        });
+
+        // Filter buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.dataset.filter;
+                filterDrivers();
+            });
+        });
+
+        // Sort select
+        document.getElementById('sort-select').addEventListener('change', filterDrivers);
+
+        // Load on page load
+        loadDrivers();
+    </script>
+</body>
+</html>

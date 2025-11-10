@@ -1,0 +1,899 @@
+{
+  "timestamp": "2025-10-19T12:23:06.735Z",
+  "improvements": {
+    "logging": {
+      "fixed": 0,
+      "files": []
+    },
+    "errorHandling": {
+      "improved": 0,
+      "files": []
+    },
+    "performance": {
+      "optimized": 182,
+      "files": [
+        {
+          "driver": "air_quality_monitor_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "air_quality_monitor_pro_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "alarm_siren_chime_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "bulb_color_rgbcct_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "bulb_white_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "bulb_white_ambiance_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "ceiling_fan_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "ceiling_light_controller_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "ceiling_light_rgb_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "climate_monitor_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "co2_sensor_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "co2_temp_humidity_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "comprehensive_air_monitor_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "contact_sensor_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "co_detector_pro_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "curtain_motor_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "dimmer_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "dimmer_switch_1gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "dimmer_switch_3gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "dimmer_switch_timer_module_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "doorbell_camera_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "doorbell_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "door_controller_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "door_lock_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "door_window_sensor_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "energy_monitoring_plug_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "energy_monitoring_plug_advanced_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "energy_plug_advanced_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "extension_plug_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "fan_controller_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "fingerprint_lock_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "formaldehyde_sensor_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "garage_door_controller_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "garage_door_opener_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "gas_detector_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "gas_sensor_ts0601_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "humidity_controller_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "hvac_controller_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "led_strip_advanced_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "led_strip_controller_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "led_strip_controller_pro_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "led_strip_outdoor_color_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "lux_sensor_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "milight_controller_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "mini_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "mini_switch_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "motion_sensor_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "motion_sensor_illuminance_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "motion_sensor_mmwave_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "motion_sensor_pir_ac_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "motion_sensor_pir_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "motion_sensor_zigbee_204z_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "motion_temp_humidity_illumination_multi_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "multisensor_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "noise_level_sensor_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "outdoor_light_controller_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "outdoor_siren_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "pet_feeder_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "pir_radar_illumination_sensor_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "pir_sensor_advanced_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "pm25_detector_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "pm25_sensor_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "pool_pump_controller_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "power_meter_socket_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "presence_sensor_mmwave_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "presence_sensor_radar_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "pressure_sensor_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "projector_screen_controller_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "radar_motion_sensor_advanced_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "radar_motion_sensor_mmwave_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "radar_motion_sensor_tank_level_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "radiator_valve_hybrid",
+          "fixes": 1
+        },
+        {
+          "driver": "relay_switch_1gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "remote_switch_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "rgb_led_controller_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "roller_blind_controller_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "roller_shutter_controller_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "roller_shutter_switch_advanced_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "roller_shutter_switch_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "scene_controller",
+          "fixes": 1
+        },
+        {
+          "driver": "scene_controller_2button_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "scene_controller_4button_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "scene_controller_6button_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "scene_controller_8button_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "scene_controller_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "shade_controller_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_bulb_dimmer_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_bulb_rgb_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_bulb_tunable_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_bulb_white_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_curtain_motor_hybrid",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_dimmer_module_1gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_doorbell_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_garden_sprinkler_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_irrigation_controller_hybrid",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_lock_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_outlet_monitor_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_plug_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_plug_dimmer_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_plug_energy_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_plug_power_meter_16a_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_radiator_valve_hybrid",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_smoke_detector_advanced_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_spot_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_switch_1gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_switch_1gang_hybrid",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_switch_2gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_switch_2gang_hybrid",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_switch_3gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_switch_3gang_hybrid",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_switch_4gang_hybrid",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_thermostat_hybrid",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_valve_controller_hybrid",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_water_valve_hybrid",
+          "fixes": 1
+        },
+        {
+          "driver": "smoke_detector_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "smoke_detector_temperature_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "smoke_detector_temp_humidity_advanced_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "smoke_temp_humid_sensor_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "soil_moisture_sensor_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "soil_moisture_temperature_sensor_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "soil_tester_temp_humid_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "solar_panel_controller_hybrid",
+          "fixes": 1
+        },
+        {
+          "driver": "sos_emergency_button_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "switch_1gang_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "switch_2gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "switch_2gang_hybrid",
+          "fixes": 1
+        },
+        {
+          "driver": "switch_3gang_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "switch_4gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "switch_4gang_battery_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "switch_5gang_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "switch_6gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "switch_8gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "tank_level_monitor_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "temperature_controller_hybrid",
+          "fixes": 1
+        },
+        {
+          "driver": "temperature_humidity_display_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "temperature_humidity_sensor_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "temperature_sensor_advanced_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "temperature_sensor_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "temp_humid_sensor_advanced_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "temp_humid_sensor_dd_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "temp_humid_sensor_leak_detector_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "temp_sensor_pro_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "thermostat_hybrid",
+          "fixes": 1
+        },
+        {
+          "driver": "touch_dimmer_1gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "touch_dimmer_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "touch_switch_1gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "touch_switch_2gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "touch_switch_3gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "touch_switch_4gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "tvoc_sensor_advanced_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "tvoc_sensor_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "usb_outlet_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "usb_outlet_advanced_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "vibration_sensor_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "wall_switch_1gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "wall_switch_1gang_dc",
+          "fixes": 1
+        },
+        {
+          "driver": "wall_switch_2gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "wall_switch_2gang_dc",
+          "fixes": 1
+        },
+        {
+          "driver": "wall_switch_3gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "wall_switch_3gang_dc",
+          "fixes": 1
+        },
+        {
+          "driver": "wall_switch_4gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "wall_switch_4gang_dc",
+          "fixes": 1
+        },
+        {
+          "driver": "wall_switch_5gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "wall_switch_6gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "water_leak_detector_advanced_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "water_leak_detector_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "water_leak_sensor_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "water_valve_hybrid",
+          "fixes": 1
+        },
+        {
+          "driver": "water_valve_smart_hybrid",
+          "fixes": 1
+        },
+        {
+          "driver": "wireless_button_2gang_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "wireless_dimmer_scroll_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "wireless_scene_controller_4button_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "wireless_switch_1gang_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "wireless_switch_2gang_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "wireless_switch_3gang_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "wireless_switch_4gang_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "wireless_switch_4gang_cr2450",
+          "fixes": 1
+        },
+        {
+          "driver": "wireless_switch_5gang_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "wireless_switch_6gang_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "wireless_switch_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "zbbridge_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "zigbee_gateway_hub_ac",
+          "fixes": 1
+        }
+      ]
+    },
+    "bestPractices": {
+      "applied": 36,
+      "files": [
+        {
+          "driver": "comprehensive_air_monitor_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "curtain_motor_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "dimmer_switch_1gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "dimmer_switch_3gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "dimmer_switch_timer_module_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "gas_sensor_ts0601_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "mini_switch_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "remote_switch_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "roller_blind_controller_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "roller_shutter_switch_advanced_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "roller_shutter_switch_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "scene_controller_2button_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "scene_controller_4button_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "scene_controller_6button_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "scene_controller_8button_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_curtain_motor_hybrid",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_dimmer_module_1gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_plug_energy_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_switch_1gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_switch_2gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "smart_switch_3gang_ac",
+          "fixes": 1
+        },
+        {
+          "driver": "smoke_detector_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "switch_1gang_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "switch_3gang_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "switch_4gang_battery_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "switch_5gang_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "temp_humid_sensor_leak_detector_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "water_leak_detector_battery",
+          "fixes": 1
+        },
+        {
+          "driver": "wireless_switch_1gang_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "wireless_switch_2gang_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "wireless_switch_3gang_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "wireless_switch_4gang_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "wireless_switch_4gang_cr2450",
+          "fixes": 1
+        },
+        {
+          "driver": "wireless_switch_5gang_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "wireless_switch_6gang_cr2032",
+          "fixes": 1
+        },
+        {
+          "driver": "wireless_switch_cr2032",
+          "fixes": 1
+        }
+      ]
+    }
+  },
+  "homeySDK": {
+    "compliance": [],
+    "recommendations": []
+  }
+}
