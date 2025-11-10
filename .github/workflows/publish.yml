@@ -63,8 +63,10 @@ jobs:
           homey --version || echo "Homey CLI installed"
         
       - name: Authenticate with Homey
+        env:
+          HOMEY_TOKEN: ${{ secrets.HOMEY_API_TOKEN }}
         run: |
-          if [ -z "${{ secrets.HOMEY_API_TOKEN }}" ]; then
+          if [ -z "$HOMEY_TOKEN" ]; then
             echo "⚠️  HOMEY_API_TOKEN not configured!"
             echo "Please add your Homey token to GitHub Secrets:"
             echo "Settings → Secrets → Actions → New repository secret"
@@ -73,7 +75,7 @@ jobs:
             exit 1
           fi
           echo "Setting up Homey authentication..."
-          homey login --token ${{ secrets.HOMEY_API_TOKEN }}
+          homey login --token "$HOMEY_TOKEN"
         
       - name: Validate app structure
         run: |
