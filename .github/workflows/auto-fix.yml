@@ -234,9 +234,8 @@ jobs:
           
           cat health-report.md
       
-      - name: 📤 Upload artifacts
-        if: always()
-        uses: actions/upload-artifact@v3
+      - name: Upload validation report
+        uses: actions/upload-artifact@v4
         with:
           name: validation-reports
           path: |
