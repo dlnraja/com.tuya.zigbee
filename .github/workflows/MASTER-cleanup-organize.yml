@@ -2,8 +2,8 @@ name: 🧹 MASTER Cleanup & Organize
 
 'on':
   workflow_dispatch:
-  schedule:
-    - cron: '0 2 * * 0' # Weekly on Sunday at 2am
+  # schedule:
+  #   - cron: '0 2 * * 0' # Weekly on Sunday at 2am - DISABLED to prevent issue spam
 
 jobs:
   
