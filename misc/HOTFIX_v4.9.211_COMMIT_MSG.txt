@@ -1,0 +1,16 @@
+v4.9.211 CRITICAL HOTFIX - Device crashes fixed
+
+FIXES:
+- ReferenceError: setAvailable is not defined (BaseHybridDevice.js:130)
+- ReferenceError: _runBackgroundInitialization is not defined (BaseHybridDevice.js:151)
+
+AFFECTED DEVICES:
+- switch_basic_2gang
+- climate_monitor_temp_humidity
+- button_emergency_sos
+- presence_sensor_radar
+- climate_sensor_soil
+- button_wireless_3
+- button_wireless_4
+
+All devices now initialize correctly without crashes.

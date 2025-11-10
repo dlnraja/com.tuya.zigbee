@@ -1,0 +1,29 @@
+fix: CRITICAL - Fix undefined bind() crashes
+
+ROOT CAUSE: Cannot read properties of undefined (reading 'bind')
+Multiple locations trying to call .bind() without checking existence
+
+AFFECTED FILES:
+- lib/FallbackSystem.js (line 253)
+- lib/ButtonDevice.js (line 72)
+- lib/BaseHybridDevice.js (command listener setup)
+
+FIXES APPLIED:
+✅ Add defensive checks before ALL .bind() calls
+✅ Wrap command listener setup in try-catch
+✅ Wrap monitoring setup in try-catch  
+✅ Wrap KPI reading in try-catch with fallback
+✅ Ensure initialization NEVER fails completely
+
+IMPACT:
+✅ Devices will initialize even if bind fails
+✅ Values (battery, sensors) will be read despite errors
+✅ No more "Cannot read properties of undefined" crashes
+✅ Background init completes successfully
+
+SYMPTOMS FIXED:
+✅ No battery data → Will read battery even if bind fails
+✅ No sensor values → Will read values even if bind fails
+✅ Device init crash → Init continues with safe fallbacks
+
+STATUS: CRITICAL BUG FIX - Test immediately

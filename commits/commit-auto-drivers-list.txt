@@ -1,0 +1,72 @@
+feat: Auto-generated drivers list in README with GitHub Actions
+
+FONCTIONNALITÉ: Liste automatique des drivers dans README
+Ajout d'un système de génération automatique d'une liste organisée et jolie de tous les drivers.
+
+SCRIPT CRÉÉ - generate-drivers-list.js:
+✅ Analyse automatique de tous les drivers
+✅ Catégorisation intelligente par fonction (pas par marque!)
+✅ 8 catégories: Climate, Lighting, Power, Control, Security, Safety, Covers, Other
+✅ Format compact avec <details> expandables
+✅ Compte automatique des device IDs
+✅ Support driver.compose.json (SDK3) et driver.json
+✅ Tri alphabétique par catégorie
+✅ Mise à jour automatique du README
+
+RÉSULTAT DANS README:
+📱 183 drivers listés
+📊 6,834+ device IDs comptés
+🗂️ 8 catégories organisées
+📋 Format joli et professionnel
+🔄 Auto-update markers (<!-- AUTO-GENERATED-DRIVERS-START/END -->)
+
+INTÉGRATION AUTO-UPDATE:
+✅ Ajouté au script update-all-links.js
+✅ S'exécute automatiquement via GitHub Actions workflow update-docs
+✅ Chaque push → README mis à jour automatiquement
+✅ Liste toujours à jour avec les derniers drivers
+
+FORMAT GÉNÉRÉ:
+```markdown
+## 📱 Supported Devices
+
+**Total:** 183 drivers | 6834+ device IDs
+
+### 🌡️ Temperature & Climate
+<details>
+<summary><strong>93 drivers</strong> - Click to expand</summary>
+- **Driver Name** - X device IDs
+...
+</details>
+```
+
+CATÉGORIES (Icons + Names):
+🌡️ Temperature & Climate (93 drivers)
+💡 Smart Lighting (17 drivers)  
+🔌 Power & Energy (51 drivers)
+🎛️ Automation Control (8 drivers)
+🔔 Contact & Security (7 drivers)
+🚨 Safety & Detection (0 drivers - will be filled)
+🪟 Covers & Blinds (3 drivers)
+🔧 Other Devices (4 drivers)
+
+AVANTAGES:
+✅ Liste toujours à jour automatiquement
+✅ Organisée par fonction (UNBRANDED principle)
+✅ Joli format avec sections expandables
+✅ Facile à maintenir (aucun travail manuel)
+✅ Professional presentation
+✅ SEO friendly (search engines can index)
+
+WORKFLOW:
+1. Developer ajoute/modifie driver
+2. Commit + push
+3. GitHub Actions trigger update-docs workflow
+4. Script update-all-links.js exécuté
+5. Script generate-drivers-list.js appelé
+6. README.md auto-updated
+7. Commit automatique [skip ci]
+
+Version: 3.0.11
+Status: Auto-update system fully operational
+Quality: Professional, maintainable, user-friendly

@@ -1,0 +1,56 @@
+feat: Intelligent enrichment plan - All brands & regions (+415 devices)
+
+ENRICHISSEMENT INTELLIGENT MAXIMUM:
+Plan complet pour enrichir avec toutes marques et régions
+
+POTENTIEL IDENTIFIÉ:
+✅ +415 devices minimum
+✅ 16+ marques (Tuya, Xiaomi, Samsung, IKEA, Sonoff, Enki, Lidl, etc.)
+✅ Toutes régions (Europe, USA, Asie, Global)
+✅ 5 phases prioritisées
+
+MARQUES ACTUELLES (185 drivers):
+✅ Tuya: 5,387 devices (excellente couverture)
+✅ Enki/Lidl/Nedis: 3,880-4,783 devices (Europe)
+✅ IKEA: 8 devices
+✅ Philips: 3 devices
+
+MARQUES À AJOUTER (potentiel):
+⚠️ Xiaomi/Aqara: +75 devices (HIGH priority)
+⚠️ Samsung SmartThings: +50 devices (MEDIUM)
+⚠️ Sonoff: +40 devices (HIGH)
+⚠️ OSRAM/LEDVANCE: +15 devices (LOW)
+⚠️ Tuya expansion: +150 devices (HIGH)
+
+PLAN 5 PHASES:
+Phase 1: Tuya expansion (+150 devices, 2-3h)
+Phase 2: Xiaomi/Aqara complet (+75 devices, 1-2h)
+Phase 3: Marques régionales EU (+65 devices, 2h)
+Phase 4: Samsung & Sonoff (+70 devices, 2h)
+Phase 5: IKEA & autres (+55 devices, 1-2h)
+
+TOTAL: 8-11 heures (2-3h avec automatisation)
+
+INTELLIGENCE:
+- Détection automatique capabilities
+- Scraping Zigbee2MQTT & Blakadder
+- Génération drivers automatique
+- Groupement par types
+
+COUVERTURE FINALE:
+Avant: 185 drivers, 328 IDs, ~10 marques
+Après: 600+ drivers, 750+ IDs, 16+ marques
+
+RÉGIONS COUVERTES:
+✅ Global (Tuya, Xiaomi, Samsung, Sonoff)
+✅ Europe (IKEA, OSRAM, Lidl, Enki)
+✅ France (Leroy Merlin, Castorama, Brico)
+✅ USA (Samsung SmartThings)
+✅ Asie (Tuya, Xiaomi, Aqara)
+
+VISION: Devenir THE Universal Zigbee App pour Homey
+Couverture estimée: 80-90% de tous devices Zigbee
+
+Script créé: intelligent-enrichment-all-brands.js
+Documentation: ENRICHISSEMENT_INTELLIGENT_MAXIMUM.md
+Rapport: references/INTELLIGENT_ENRICHMENT_PLAN.json

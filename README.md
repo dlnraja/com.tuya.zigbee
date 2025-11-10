@@ -1,1 +1,244 @@
-# 🚀 Universal Tuya Zigbee Device<div align="center">![Tuya Zigbee](https://img.shields.io/badge/Tuya-Zigbee-blue?style=for-the-badge&logo=zigbee)![Homey SDK3](https://img.shields.io/badge/Homey-SDK3-green?style=for-the-badge&logo=homey)![Local Mode](https://img.shields.io/badge/Local-Mode-orange?style=for-the-badge&logo=shield)![Smart Life](https://img.shields.io/badge/Smart-Life-purple?style=for-the-badge&logo=lightbulb)**Intégration locale maximale des appareils Tuya/Zigbee dans Homey**[![Drivers](https://img.shields.io/badge/Drivers-152-blue)](https://github.com/tuya/tuya-zigbee)[![Workflows](https://img.shields.io/badge/Workflows-106-green)](https://github.com/tuya/tuya-zigbee/actions)[![Languages](https://img.shields.io/badge/Languages-8-yellow)](https://github.com/tuya/tuya-zigbee)[![Modules](https://img.shields.io/badge/Modules-7-purple)](https://github.com/tuya/tuya-zigbee)[📖 Documentation](https://github.com/tuya/tuya-zigbee/wiki) • [🔧 Installation](https://github.com/tuya/tuya-zigbee#installation) • [🌍 Traductions](https://github.com/tuya/tuya-zigbee#translations) • [📊 Dashboard](https://github.com/tuya/tuya-zigbee#dashboard)</div>---## 🎯 **OBJECTIF PRINCIPAL****Intégration locale maximale des appareils Tuya/Zigbee dans Homey avec fonctionnement 100% autonome sans dépendance API externe.**### ✅ **PRIORITÉS**- **Mode local prioritaire**: Fonctionnement sans API Tuya- **Compatibilité maximale**: Support des anciens/legacy/génériques drivers- **Modules intelligents**: Amélioration automatique des drivers- **Mise à jour mensuelle**: Processus de maintenance autonome- **Documentation multilingue**: Support EN/FR/TA/NL/DE/ES/IT### ❌ **NON PRIORITAIRE**- **600 intégrations**: Annulé- **Dépendance API excessive**: Priorité au mode local- **Fonctionnalités complexes**: Approche simple---## 📊 **MÉTRIQUES DU PROJET**### 🏠 **Drivers Tuya Zigbee**| Métrique | Valeur | Statut ||----------|--------|--------|| **Total** | 152 drivers | ✅ Complet || **SDK3 Compatible** | 148 drivers | ✅ 100% || **Smart Life** | 4 drivers | ✅ Intégré || **Performance** | < 1 seconde | ✅ Optimal || **Migration** | Complète | ✅ Terminée |### ⚙️ **Workflows GitHub Actions**| Métrique | Valeur | Statut ||----------|--------|--------|| **Total** | 106 workflows | ✅ Actifs || **CI/CD** | Validation automatique | ✅ Fonctionnel || **Traduction** | 8 langues | ✅ Complète || **Monitoring** | Surveillance 24/7 | ✅ Actif |### 🧠 **Modules Intelligents**| Module | Statut | Fonctionnalité ||--------|--------|----------------|| **AutoDetectionModule** | ✅ Actif | Détection automatique || **LegacyConversionModule** | ✅ Actif | Conversion SDK2→SDK3 || **GenericCompatibilityModule** | ✅ Actif | Compatibilité générique || **IntelligentMappingModule** | ✅ Actif | Mapping intelligent || **AutomaticFallbackModule** | ✅ Actif | Système de secours || **SmartLifeModule** | ✅ Actif | Intégration Smart Life || **LocalTuyaMode** | ✅ Actif | Mode local |### 🌍 **Documentation**| Langue | Statut | Fichier ||--------|--------|---------|| **🇺🇸 English** | ✅ Complet | `docs/locales/en.md` || **🇫🇷 Français** | ✅ Complet | `docs/locales/fr.md` || **🇮🇳 Tamil** | ✅ Complet | `docs/locales/ta.md` || **🇳🇱 Nederlands** | ✅ Complet | `docs/locales/nl.md` || **🇩🇪 Deutsch** | ✅ Complet | `docs/locales/de.md` || **🇪🇸 Español** | ✅ Complet | `docs/locales/es.md` || **🇮🇹 Italiano** | ✅ Complet | `docs/locales/it.md` |---## 🚀 **INSTALLATION**### 📋 **Prérequis**- ✅ Homey 5.0.0 ou supérieur- ✅ Appareils Tuya Zigbee- ✅ Réseau local- ✅ Mode local activé### 🔧 **Étapes d'installation**```bash# 1. Installer depuis Homey App Store📱 Homey App Store → Universal Tuya Zigbee Device# 2. Ajouter les appareils Tuya🔌 Ajouter appareil → Tuya Zigbee → Sélectionner type# 3. Activer le mode local⚙️ Paramètres → Mode local → Activé# 4. Créer les automatisations🤖 Scripts → Conditions → Actions```### 🎯 **Configuration rapide**```javascript// Exemple de configuration automatique{ "localMode": true, "noApiRequired": true, "autoDetection": true, "smartLifeIntegration": true, "fallbackSystems": true}```---## 🔧 **UTILISATION**### 📱 **Ajout d'appareil**1. **Ajouter un nouvel appareil dans Homey** - Interface Homey → Appareils → Ajouter - Sélectionner "Tuya Zigbee"2. **Sélectionner le type Tuya Zigbee** - Choisir la catégorie appropriée - L'app détecte automatiquement le type3. **Activer le mode local** - Paramètres → Mode local → Activé - Aucune connexion API requise4. **Tester l'appareil** - Vérifier la connectivité - Tester les fonctionnalités### 🤖 **Automatisations**```javascript// Exemple d'automatisation{ "trigger": "motion_sensor", "condition": "time_between", "action": "smart_plug_on", "localMode": true}```---## 🛡️ **SÉCURITÉ**### 🔒 **Mode local**- **Aucune dépendance API**: Fonctionnement entièrement local- **Protection des données**: Stockage local sécurisé- **Confidentialité**: Aucune donnée envoyée à l'extérieur- **Chiffrement**: Données chiffrées localement### 🛠️ **Gestion des erreurs**- **Récupération automatique**: Correction automatique des erreurs- **Systèmes de fallback**: Plans de secours pour les échecs- **Surveillance des logs**: Enregistrements d'erreurs détaillés- **Monitoring 24/7**: Surveillance continue---## 📈 **PERFORMANCE**### ⚡ **Vitesse**| Métrique | Valeur | Statut ||----------|--------|--------|| **Temps de réponse** | < 1 seconde | ✅ Optimal || **Temps de démarrage** | < 5 secondes | ✅ Rapide || **Utilisation mémoire** | < 50MB | ✅ Efficace |### 🛡️ **Stabilité**| Métrique | Valeur | Statut ||----------|--------|--------|| **Uptime** | 99.9% | ✅ Excellent || **Taux d'erreur** | < 0.1% | ✅ Minimal || **Récupération automatique** | 100% | ✅ Garanti |---## 🔗 **SUPPORT**### 📚 **Documentation**- **📖 README**: Explications complètes- **📝 CHANGELOG**: Changements détaillés- **🔧 API Reference**: Détails techniques- **🌍 Traductions**: 8 langues supportées### 👥 **Communauté**- **🐙 GitHub**: [tuya/tuya-zigbee](https://github.com/tuya/tuya-zigbee)- **💬 Discord**: Tuya Zigbee Community- **🏠 Forum**: Homey Community- **📊 Dashboard**: [Dashboard en temps réel](https://github.com/tuya/tuya-zigbee#dashboard)---## 📊 **DASHBOARD**<div align="center">### 🎯 **Métriques en temps réel**![Drivers](https://img.shields.io/badge/Drivers_SDK3-148-blue)![Smart Life](https://img.shields.io/badge/Smart_Life-4-purple)![Workflows](https://img.shields.io/badge/Workflows-106-green)![Languages](https://img.shields.io/badge/Languages-8-yellow)### 📈 **Graphiques dynamiques**```javascript// Métriques mises à jour automatiquement{ "drivers": { "sdk3": 148, "smartLife": 4, "total": 152 }, "workflows": 106, "languages": 8, "modules": 7}```</div>---## 🎉 **CONTRIBUTION**### 🤝 **Comment contribuer**1. **Fork le projet**2. **Créer une branche feature** (`git checkout -b feature/AmazingFeature`)3. **Commit les changements** (`git commit -m 'Add AmazingFeature'`)4. **Push vers la branche** (`git push origin feature/AmazingFeature`)5. **Ouvrir une Pull Request**### 📋 **Guidelines**- ✅ Respecter le mode local prioritaire- ✅ Maintenir la compatibilité SDK3- ✅ Ajouter des tests automatisés- ✅ Documenter les changements- ✅ Suivre les conventions de nommage---## 📄 **LICENCE**Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.---<div align="center">**🚀 Universal Tuya Zigbee Device - Mode Local Intelligent***Intégration locale maximale des appareils Tuya/Zigbee dans Homey*[![GitHub stars](https://img.shields.io/github/stars/tuya/tuya-zigbee?style=social)](https://github.com/tuya/tuya-zigbee)[![GitHub forks](https://img.shields.io/github/forks/tuya/tuya-zigbee?style=social)](https://github.com/tuya/tuya-zigbee)[![GitHub issues](https://img.shields.io/github/issues/tuya/tuya-zigbee)](https://github.com/tuya/tuya-zigbee/issues)[![GitHub pull requests](https://img.shields.io/github/issues-pr/tuya/tuya-zigbee)](https://github.com/tuya/tuya-zigbee/pulls)**📅 Dernière mise à jour**: $(Get-Date -Format "yyyy-MM-dd HH:mm:ss")**🎯 Objectif**: Intégration locale Tuya Zigbee**🚀 Mode**: Priorité locale**🛡️ Sécurité**: Mode local complet</div>
+# 📚 Universal Tuya Zigbee - Documentation
+
+**Version**: v4.9.322  
+**Last Updated**: 2025-11-09  
+**Status**: Production Ready - Auto-Publish Active
+
+---
+
+## 📖 Quick Navigation
+
+### 🆘 Forum Support
+- **[Forum Issues Tracker](forum-responses/FORUM_ISSUES_TRACKER.md)** - Suivi des problèmes utilisateurs
+- **[Response Templates](forum-responses/)** - Réponses pré-rédigées pour Cam, Peter, etc.
+
+### 🔧 Diagnostics
+- **[Diagnostic Reports](diagnostics/)** - Rapports de diagnostic détaillés
+- **[IAS Zone Fixes](diagnostics/)** - Corrections critiques motion sensors + SOS buttons
+
+### 📖 Technical Documentation (NEW!)
+- **[RESOURCES.md](RESOURCES.md)** - All official links (Tuya, Homey, Zigbee)
+- **[TUYA_DP_COMPLETE_MAPPING.md](TUYA_DP_COMPLETE_MAPPING.md)** - Complete DP mappings reference
+- **[DEVICE_IDENTIFICATION_GUIDE.md](DEVICE_IDENTIFICATION_GUIDE.md)** - Standard Zigbee vs Tuya DP
+- **[SDK3_MIGRATION_COMPLETE.md](SDK3_MIGRATION_COMPLETE.md)** - All SDK3 fixes documented
+- **[PAIRING_OPTIMIZATION.md](PAIRING_OPTIMIZATION.md)** - Pairing process explained
+- **[TROUBLESHOOTING_COMPLETE.md](TROUBLESHOOTING_COMPLETE.md)** - Complete troubleshooting guide
+
+### 📦 Release Notes
+- **[Version History](releases/)** - Historique complet des versions
+- **[Session Summaries](releases/)** - Résumés des sessions de développement
+
+### 📘 Guides
+- **[Driver Selection Guide](guides/DRIVER_SELECTION_GUIDE.md)** - Choisir le bon driver
+- **[Setup Guide](guides/SETUP_HOMEY_TOKEN.md)** - Configuration Homey Token
+- **[Contributing](guides/CONTRIBUTING.md)** - Contribuer au projet
+
+### 📊 Project Status
+- **[App Store Status](project-status/APP_STORE_STATUS.md)** - État publication
+- **[Certification](project-status/CERTIFICATION_READY.md)** - État certification
+- **[Trigger Publish](project-status/TRIGGER_PUBLISH.md)** - Guide publication manuelle
+
+### 🔍 Audits
+- **[Project Audits](audits/)** - Audits de code et qualité
+- **[Battery Intelligence](audits/BATTERY_INTELLIGENCE_SYSTEM.md)** - Système de gestion batterie
+
+### 🐛 GitHub Issues
+- **[Issue Fixes](github-issues/)** - Résolution problèmes GitHub
+- **[Actions Hotfix](github-issues/GITHUB_ACTIONS_HOTFIX.md)** - Corrections GitHub Actions
+
+---
+
+## 🎯 Most Important Documents
+
+### For Users
+1. **[FORUM_ISSUES_TRACKER.md](forum-responses/FORUM_ISSUES_TRACKER.md)** - Toutes les erreurs forum résolues
+2. **[DRIVER_SELECTION_GUIDE.md](guides/DRIVER_SELECTION_GUIDE.md)** - Quel driver choisir?
+3. **Latest Release Notes** - Dans `releases/`
+
+### For Developers
+1. **[CONTRIBUTING.md](guides/CONTRIBUTING.md)** - Comment contribuer
+2. **[Project Audits](audits/)** - Comprendre l'architecture
+3. **[Diagnostic Reports](diagnostics/)** - Apprendre des bugs résolus
+
+### For Maintainers
+1. **[SETUP_HOMEY_TOKEN.md](guides/SETUP_HOMEY_TOKEN.md)** - Configuration déploiement
+2. **[TRIGGER_PUBLISH.md](project-status/TRIGGER_PUBLISH.md)** - Publication manuelle
+3. **[GitHub Issues](github-issues/)** - Résolution problèmes CI/CD
+
+---
+
+## 📂 Documentation Structure
+
+```
+docs/
+├── README.md (this file)
+├── INDEX.md (full index)
+│
+├── forum-responses/          # Forum Homey Community
+│   ├── FORUM_ISSUES_TRACKER.md    ⭐ IMPORTANT
+│   ├── FORUM_RESPONSE_FOR_CAM.md
+│   ├── FORUM_RESPONSE_FOR_PETER.md
+│   ├── FORUM_RESPONSE_CAM_PETER.md
+│   ├── COMMUNITY_RESPONSE_CAM.md
+│   └── FORUM_ANALYSIS_COMPLETE.md
+│
+├── diagnostics/              # Diagnostic Reports
+│   ├── DIAGNOSTIC_RESPONSE_1c9d6ce6.md
+│   ├── HOBEIAN_ISSUES_ANALYSIS_COMPLETE.md
+│   ├── HOBEIAN_ZG204Z_DEBUG_REPORT.md
+│   ├── CRITICAL_IAS_ZONE_FIX_v2.15.81.md
+│   └── IAS_ZONE_FIX_v2.15.71_COMPLETE.md
+│
+├── releases/                 # Version History
+│   ├── COMPLETE_FIX_REPORT_v2.15.59.md
+│   ├── ENRICHMENT_REPORT_v2.15.60.md
+│   ├── FINAL_STATUS_REPORT.md
+│   ├── FINAL_STATUS_v2.15.72.md
+│   ├── SESSION_COMPLETE_FINAL_v2.15.62.md
+│   ├── SESSION_SUMMARY_2025-10-13.md
+│   └── ... (10 files total)
+│
+├── guides/                   # User & Developer Guides
+│   ├── DRIVER_SELECTION_GUIDE.md
+│   ├── SETUP_HOMEY_TOKEN.md
+│   ├── UX_IMPROVEMENT_PLAN.md
+│   └── CONTRIBUTING.md
+│
+├── project-status/           # Project Status Reports
+│   ├── APP_STORE_STATUS.md
+│   ├── CERTIFICATION_READY.md
+│   ├── READY_TO_PUBLISH.md
+│   ├── TRIGGER_PUBLISH.md
+│   ├── VISUAL_ASSETS_COMPLETE.md
+│   └── IMAGE_FIX_SUMMARY.md
+│
+├── audits/                   # Code Quality Audits
+│   ├── PROJECT_AUDIT_v2.15.56.md
+│   ├── NAMING_AUDIT_REPORT.md
+│   ├── DRIVER_RENAMES_v2.15.55.md
+│   └── BATTERY_INTELLIGENCE_SYSTEM.md
+│
+└── github-issues/            # GitHub Issues Resolution
+    ├── FIX_GITHUB_ISSUES_1267_1268.md
+    ├── GITHUB_ISSUES_ANALYSIS.md
+    └── GITHUB_ACTIONS_HOTFIX.md
+```
+
+---
+
+## 🔥 Critical Issues Resolved
+
+### v2.15.83 - Red Error Triangles
+**Users Affected**: Cam, Peter  
+**Symptom**: Devices unselectable, red triangles  
+**Fix**: Removed duplicate IAS Zone code, fixed syntax errors  
+**Status**: ✅ RESOLVED
+
+**Details**: [FORUM_ISSUES_TRACKER.md](forum-responses/FORUM_ISSUES_TRACKER.md#issue-001-002)
+
+### v2.15.81 - IAS Zone Enrollment
+**Users Affected**: Peter, Community  
+**Symptom**: Motion sensors don't detect, SOS buttons don't trigger  
+**Fix**: SDK3 compliance - `zclNode.bridgeId` instead of deprecated API  
+**Status**: ✅ RESOLVED
+
+**Details**: [FORUM_ISSUES_TRACKER.md](forum-responses/FORUM_ISSUES_TRACKER.md#issue-003-004)
+
+### v2.15.85 - Validation Warnings
+**Impact**: 28 warnings on publish validation  
+**Fix**: Added `titleFormatted` to all intelligent flows  
+**Status**: ✅ RESOLVED
+
+**Details**: [FORUM_ISSUES_TRACKER.md](forum-responses/FORUM_ISSUES_TRACKER.md#issue-005)
+
+---
+
+## 📊 Version Timeline
+
+| Version | Date | Major Changes | Status |
+|---------|------|---------------|--------|
+| v2.15.85 | 2025-10-14 | Validation warnings fixed | ✅ Current |
+| v2.15.84 | 2025-10-14 | Multi-gang flows (104 total) | ✅ Released |
+| v2.15.83 | 2025-10-14 | Red triangles fixed | ✅ Released |
+| v2.15.82 | 2025-10-14 | Flow coherence (82 flows) | ✅ Released |
+| v2.15.81 | 2025-10-13 | IAS Zone SDK3 fix | ✅ Released |
+| v2.15.80 | 2025-10-13 | Capability flows (71 total) | ✅ Released |
+
+**Full History**: See `releases/` directory
+
+---
+
+## 🎯 App Features
+
+### 104 Flow Cards Total
+- **54 Triggers**: Motion, contact, temperature, buttons, etc.
+- **25 Conditions**: Smart checks for automation
+- **25 Actions**: Control devices, scenes, protocols
+
+### 183 Drivers
+- All SDK3 compliant
+- Universal flow methods
+- Battery intelligence
+- Multi-gang support (1-6 buttons)
+
+### Press Type Detection
+- Short press
+- Long press (customizable duration)
+- Double press (customizable window)
+
+---
+
+## 🆘 Getting Help
+
+### Forum Support
+- **Thread**: [Universal TUYA Zigbee Device App](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352)
+- **Response Time**: < 24 hours
+- **Language**: English, Français
+
+### Issue Reporting
+1. Check **[FORUM_ISSUES_TRACKER.md](forum-responses/FORUM_ISSUES_TRACKER.md)** first
+2. Search existing GitHub issues
+3. Post on Homey Community forum
+4. Include diagnostic report ID
+
+### Common Issues
+- **Red triangles**: Update to v2.15.83+, re-pair devices
+- **Motion not detected**: Update to v2.15.81+, check batteries
+- **SOS button no trigger**: Update to v2.15.81+, re-pair
+- **Flows not visible**: Update app, restart Homey
+
+---
+
+## 🚀 Contributing
+
+See **[CONTRIBUTING.md](guides/CONTRIBUTING.md)** for:
+- Code style guidelines
+- Pull request process
+- Testing requirements
+- Documentation standards
+
+---
+
+## 📝 Changelog
+
+**Latest**: See `.homeychangelog.json` in root
+
+**Detailed**: See `releases/` directory for session summaries
+
+---
+
+## 🏆 Achievements
+
+- ✅ 104 flow cards (most complete Tuya app)
+- ✅ 183 drivers SDK3 compliant
+- ✅ Zero validation warnings
+- ✅ Community issues resolved < 72 hours
+- ✅ Active forum support
+- ✅ Automated testing & deployment
+
+---
+
+**Maintainer**: Dylan (dlnraja)  
+**License**: See LICENSE file  
+**Repository**: https://github.com/dlnraja/com.tuya.zigbee  
+**App Store**: https://homey.app/ (search "Universal Tuya Zigbee")

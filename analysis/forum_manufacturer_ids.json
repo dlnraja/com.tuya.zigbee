@@ -1,0 +1,50 @@
+{
+  "PIR_Sensors": [
+    {
+      "manufacturer": "_TZE200_3towulqd",
+      "model": "TS0601",
+      "type": "PIR Sensor",
+      "source": "Page 34"
+    }
+  ],
+  "Soil_Sensors": [
+    {
+      "manufacturer": "_TZE200_myd45weu",
+      "model": "TS0601",
+      "type": "Soil Sensor",
+      "source": "Page 31"
+    }
+  ],
+  "Gas_Sensors": [
+    {
+      "manufacturer": "_TZE204_yojqa8xn",
+      "model": "TS0601",
+      "type": "Gas Sensor",
+      "source": "Page 31"
+    }
+  ],
+  "Scene_Switches": [
+    {
+      "manufacturer": "_TZ3000_xabckq1v",
+      "model": "TS004F",
+      "type": "4-Button Scene Switch",
+      "source": "Page 10"
+    }
+  ],
+  "Smart_Plugs": [
+    {
+      "manufacturer": "_TZE200_amp6tsvy",
+      "model": "TS0601",
+      "type": "Smart Plug/Thermostat",
+      "source": "Page 10"
+    }
+  ],
+  "Wall_Switches": [
+    {
+      "manufacturer": "_TYZB01_6g8b7at8",
+      "model": "Unknown",
+      "type": "2 Gang Switch",
+      "source": "Page 34"
+    }
+  ]
+}

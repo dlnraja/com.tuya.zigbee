@@ -1,0 +1,95 @@
+fix(critical): Fix cluster ID NaN errors causing device initialization failures
+
+CRITICAL FIX - Multiple users affected with completely non-functional devices
+
+Problem Reports:
+- Log ID: cf19866c-1fc1-4c53-ba44-f87e05df41d3 (v3.0.7)
+- User message: "No readings at all, no data, no battery and no triggers"
+- Error: TypeError: expected_cluster_id_number
+- Impact: Motion sensors, SOS buttons completely broken
+
+Root Cause:
+Using literal cluster ID numbers (1, 1024, 1026, etc.) instead of CLUSTER constants
+caused Homey ZigBee Driver to fail validation with NaN errors.
+
+Example error log:
+```
+Endpoint 1 clusters: basic (0xNaN), powerConfiguration (0xNaN), ...
+TypeError: expected_cluster_id_number
+at assertClusterSpecification
+```
+
+Fix Applied:
+Changed from literal numbers to CLUSTER constants in device.js files:
+
+BEFORE (BROKEN):
+```javascript
+this.registerCapability('measure_temperature', 1026, { ... });
+this.registerCapability('measure_battery', 1, { ... });
+```
+
+AFTER (FIXED):
+```javascript
+this.registerCapability('measure_temperature', CLUSTER.TEMPERATURE_MEASUREMENT, { ... });
+this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, { ... });
+```
+
+Files Modified:
+- drivers/motion_temp_humidity_illumination_multi_battery/device.js
+  * measure_temperature: 1026 → CLUSTER.TEMPERATURE_MEASUREMENT
+  * measure_humidity: 1029 → CLUSTER.RELATIVE_HUMIDITY
+  * measure_luminance: 1024 → CLUSTER.ILLUMINANCE_MEASUREMENT
+  * measure_battery: 1 → CLUSTER.POWER_CONFIGURATION
+
+- drivers/sos_emergency_button_cr2032/device.js
+  * measure_battery: 1 → CLUSTER.POWER_CONFIGURATION
+
+Documentation Added:
+- docs/troubleshooting/CRITICAL_USER_REPORTS_IAS_ZONE.md
+  * Complete analysis of user reports
+  * Root cause investigation
+  * Impact assessment
+  
+- docs/troubleshooting/FIX_CRITICAL_IAS_ZONE_CLUSTER_IDS.md
+  * Detailed fix documentation
+  * Before/After comparison
+  * Developer checklist
+  * Rollout plan for remaining drivers
+
+Impact:
+BEFORE FIX:
+❌ Motion sensors: No readings, no triggers
+❌ SOS buttons: No alarms, no data
+❌ Temperature/Humidity: No data
+❌ Battery: No data
+❌ Device initialization: Complete failure
+
+AFTER FIX:
+✅ Motion sensors: Detect motion correctly
+✅ SOS buttons: Trigger alarms properly
+✅ Temperature/Humidity: Report data
+✅ Battery: Report percentage
+✅ Device initialization: Success
+✅ IAS Zone enrollment: Works with fallbacks
+
+Affected Users:
+Multiple users with motion sensors and SOS buttons experiencing complete device failure.
+This fix restores full functionality.
+
+Testing:
+✅ Validated cluster constant usage
+✅ Confirmed device initialization succeeds
+✅ Verified all capabilities register correctly
+✅ IAS Zone enrollment works
+
+Next Steps:
+Phase 2: Audit all remaining IAS Zone drivers for same issue
+Phase 3: Audit ALL drivers for literal cluster IDs
+Goal: Replace ALL literal IDs with CLUSTER constants
+
+Breaking Changes: None
+Migration Required: None - automatic on app update
+
+Version: 3.0.13
+Priority: CRITICAL
+Status: TESTED & READY FOR DEPLOYMENT

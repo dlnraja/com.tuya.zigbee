@@ -1,0 +1,130 @@
+{
+  "status": "unhealthy",
+  "checks": [
+    {
+      "name": "app.json",
+      "passed": true,
+      "details": {
+        "version": "2.15.41",
+        "drivers": 183,
+        "hasCompatibility": true,
+        "sdk3Compliant": true,
+        "hasFlowCards": false
+      }
+    },
+    {
+      "name": "drivers",
+      "passed": true,
+      "details": {
+        "total": 183,
+        "issues": [],
+        "validSample": "20/20"
+      }
+    },
+    {
+      "name": "images",
+      "passed": true,
+      "details": {
+        "appImages": [
+          {
+            "file": "small.png",
+            "exists": true
+          },
+          {
+            "file": "large.png",
+            "exists": true
+          },
+          {
+            "file": "xlarge.png",
+            "exists": true
+          }
+        ],
+        "tempAlarmIcon": true,
+        "sampleDriverImages": [
+          {
+            "driver": "air_quality_monitor_ac",
+            "hasSmall": true,
+            "hasLarge": true
+          },
+          {
+            "driver": "air_quality_monitor_pro_battery",
+            "hasSmall": true,
+            "hasLarge": true
+          },
+          {
+            "driver": "alarm_siren_chime_ac",
+            "hasSmall": true,
+            "hasLarge": true
+          },
+          {
+            "driver": "bulb_color_rgbcct_ac",
+            "hasSmall": true,
+            "hasLarge": true
+          },
+          {
+            "driver": "bulb_white_ac",
+            "hasSmall": true,
+            "hasLarge": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "workflows",
+      "passed": true,
+      "details": {
+        "active": 4,
+        "disabled": 7,
+        "autoFixDisabled": true,
+        "hasPublishWorkflow": true
+      }
+    },
+    {
+      "name": "dependencies",
+      "passed": false,
+      "details": {
+        "hasHomey": false,
+        "nodeVersion": ">=18.0.0",
+        "totalDeps": 3,
+        "totalDevDeps": 5
+      }
+    },
+    {
+      "name": "documentation",
+      "passed": true,
+      "details": {
+        "required": [
+          {
+            "file": "ACCOMPLISHMENTS_COMPLETE_v2.15.33.md",
+            "exists": true
+          },
+          {
+            "file": "PROJECT_OPTIMIZATION_DEBUG_GUIDE.md",
+            "exists": true
+          },
+          {
+            "file": "FINAL_PROJECT_AUDIT_2025-10-12.md",
+            "exists": true
+          },
+          {
+            "file": "GITHUB_ACTIONS_PUBLISHING_STATUS.md",
+            "exists": true
+          }
+        ],
+        "totalDocs": 96
+      }
+    },
+    {
+      "name": "git",
+      "passed": true,
+      "details": {
+        "uncommittedChanges": 2,
+        "isClean": false,
+        "branch": "master",
+        "lastCommit": "7219237e1 ✅ FIX DÉFINITIF: alarm_temperature → temp_alarm (SDK3)"
+      }
+    }
+  ],
+  "timestamp": "2025-10-12T19:50:08.920Z",
+  "version": "v2.15.33"
+}
