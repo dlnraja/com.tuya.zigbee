@@ -1,5 +1,37 @@
 # Changelog
 
+## [4.9.330] - 2025-11-10
+
+### 🔧 FIX PUBLICATION WORKFLOW
+
+**Correction critique du workflow de publication!**
+
+#### Problème Identifié:
+- ❌ v4.9.329 n'apparaît PAS sur le Developer Dashboard
+- ❌ Le workflow `expect` ne gérait pas correctement les prompts
+- ❌ L'app n'était pas réellement publiée malgré le "SUCCESS"
+
+#### Solution Implémentée:
+1. ✅ **Regex patterns améliorés** - Détection fiable des prompts
+   - `-re "(uncommitted changes|Are you sure)"` → `y`
+   - `-re "(version number|current)"` → `n`
+   - `-re "(published|Successfully published)"` → SUCCESS
+   
+2. ✅ **Meilleure gestion des erreurs**
+   - `log_user 1` pour voir toute la sortie
+   - Double vérification: exit code + grep dans le log
+   - Log complet en cas d'échec
+
+3. ✅ **Détection du succès robuste**
+   - Exit 0 si expect réussit
+   - Grep case-insensitive pour "published|successfully"
+   - Messages clairs pour debugging
+
+#### Test:
+- Version bumpée à **4.9.330**
+- Doit apparaître sur https://tools.developer.homey.app
+- Build #607 attendu en statut "Draft"
+
 ## [4.9.329] - 2025-11-10
 
 ### 🎯 PROJECT CLEANUP & WORKFLOW OPTIMIZATION
