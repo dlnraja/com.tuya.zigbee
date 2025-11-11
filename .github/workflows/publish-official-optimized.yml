@@ -45,32 +45,17 @@ jobs:
           echo "✅ Dependencies installed"
           
       - name: 🔍 Get Current Version
-        id: current-version
+        id: version
         run: |
           VERSION=$(node -p "require('./app.json').version")
           echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "📌 Current version: $VERSION"
+          echo "📌 Version to publish: $VERSION"
           
       - name: ✅ Validate App
         if: ${{ !inputs.skip_validation }}
         uses: athombv/github-action-homey-app-validate@v1
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
-          
-      - name: 🔢 Update Version
-        if: ${{ inputs.version_type != 'none' }}
-        id: new-version
-        uses: athombv/github-action-homey-app-version@v1
-        with:
-          personal_access_token: ${{ secrets.HOMEY_PAT }}
-          version_type: ${{ inputs.version_type }}
-          
-      - name: 📝 Get Updated Version
-        id: version
-        run: |
-          VERSION=$(node -p "require('./app.json').version")
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "📌 Version to publish: $VERSION"
           
       - name: 🚀 Publish to Homey App Store
         id: publish
