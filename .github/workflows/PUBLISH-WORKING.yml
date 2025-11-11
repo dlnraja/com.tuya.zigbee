@@ -99,38 +99,48 @@ jobs:
           
           expect << 'EOF' 2>&1 | tee publish.log
           set timeout 300
+          log_user 1
+          
           spawn homey app publish
           
           expect {
-            "There are uncommitted changes" {
+            -re "(uncommitted changes|Are you sure)" {
               send "y\r"
               exp_continue
             }
-            "Do you want to update your app's version number?" {
+            -re "(version number|current)" {
               send "n\r"
               exp_continue
             }
-            "published" {
-              puts "✅ App published successfully!"
+            -re "(published|Successfully published)" {
+              puts "\n✅ App published successfully!"
+              exit 0
             }
             timeout {
-              puts "⏱️ Timeout waiting for publish"
+              puts "\n⏱️ Timeout after 5 minutes"
               exit 1
             }
-            eof
+            eof {
+              puts "\nℹ️ Process ended"
+            }
           }
           EOF
           
           EXIT_CODE=$?
+          echo "Exit code: $EXIT_CODE"
           
-          if [ $EXIT_CODE -eq 0 ] || grep -q "published" publish.log; then
-            echo ""
-            echo "✅ PUBLISHED SUCCESSFULLY!"
+          # Check for success indicators in log
+          if [ $EXIT_CODE -eq 0 ]; then
+            echo "✅ EXPECT returned success (0)"
+            echo "published=true" >> $GITHUB_OUTPUT
+            exit 0
+          elif grep -qi "published\|successfully" publish.log; then
+            echo "✅ Found 'published' in log"
             echo "published=true" >> $GITHUB_OUTPUT
             exit 0
           else
-            echo ""
-            echo "❌ Publish failed - check log above"
+            echo "❌ Publish failed"
+            echo "=== FULL LOG ==="
             cat publish.log
             exit 1
           fi
