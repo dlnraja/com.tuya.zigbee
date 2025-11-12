@@ -1,5 +1,89 @@
 # Changelog
 
+## [4.9.332] - 2025-11-12
+
+### 🚨 CRITICAL BUGFIX - IAS ZONE CLUSTER + USB OUTLET + BATTERY
+
+**Root cause fixes suite au rapport diagnostic 27e5a523-b1de-4d35-b76d-a52226be61eb**
+
+#### Bugs Critiques Corrigés:
+
+1. ✅ **IAS ZONE CLUSTER MANQUANT** - SOS Button JAMAIS Enrolled
+   - **Cause**: Cluster 1280 (iasZone) absent du driver button_emergency_advanced
+   - **Impact**: IAS enrollment ne s'active JAMAIS → 0% événements alarm → 0% battery data
+   - **Symptôme**: Logs montrent "Clusters: 2" au lieu de 6+
+   - **Fix**: Ajouté cluster 1280 + binding dans driver.compose.json
+   - **Résultat**: IAS enrollment va maintenant s'activer → Events + Battery OK
+
+2. ✅ **DRIVER USB OUTLET INEXISTANT** - Migration Failed
+   - **Cause**: `device_helpers.js` recommande driver `usb_outlet` qui n'existe pas
+   - **Impact**: Device reste sur `switch_basic_1gang` au lieu de migrer
+   - **Erreur**: "Target driver not found: usb_outlet"
+   - **Devices affectés**: f7bd797c, 0cd27abb (TS0002 USB adapters)
+   - **Fix**: Changé `recommendedDriver` vers `usb_outlet_2port`
+   - **Résultat**: Migration va maintenant réussir vers bon driver
+
+3. ✅ **BATTERY DATA MANQUANTE** - Dépendance IAS Zone
+   - **Cause**: Sans IAS enrollment, device ne communique pas batterie
+   - **Impact**: "Battery read: No data (source: unknown)"
+   - **Fix**: Corrigé via fix #1 (IAS Zone cluster ajouté)
+   - **Résultat**: Battery va remonter après re-pair + enrollment
+
+#### Fichiers Modifiés:
+- `drivers/button_emergency_advanced/driver.compose.json` - Cluster 1280 ajouté
+- `lib/device_helpers.js` - recommendedDriver: usb_outlet → usb_outlet_2port
+- `app.json` - Version 4.9.332
+- `CHANGELOG.md` - Changelog complet
+- `.homeychangelog.json` - Changelog FR/EN
+
+#### Analyse Technique:
+
+**Pourquoi v4.9.331 n'a PAS résolu le problème:**
+- v4.9.331 corrigeait le MODULE_NOT_FOUND TS0601_EMERGENCY_FIX ✅
+- v4.9.331 incluait le code IAS enrollment dans BaseHybridDevice ✅
+- MAIS le driver button_emergency_advanced ne déclarait PAS cluster 1280! ❌
+- Résultat: La condition `if (this.zclNode?.endpoints?.[1]?.clusters?.iasZone)` était FALSE
+- Donc l'enrollment IAS ne s'exécutait JAMAIS
+- Logs diagnostic: AUCUN log `[IAS]` présent = enrollment jamais appelé
+
+**Flow d'execution correct après v4.9.332:**
+1. Device pair → BaseHybridDevice.onNodeInit()
+2. Détection: `this.zclNode.endpoints[1].clusters.iasZone` existe (cluster 1280) ✅
+3. Log: `[CRITICAL] 🔒 IAS Zone detected - enrolling...` ✅
+4. Enrollment: `this.iasZoneManager.enrollIASZone()` s'exécute ✅
+5. Logs IAS: `[IAS] Starting enrollment...` → `[IAS] SUCCESS!` ✅
+6. Battery: Lecture batterie via cluster 1 (powerConfiguration) fonctionne ✅
+
+#### Tests de Régression:
+- ✅ Cluster 1280 ajouté au driver
+- ✅ Binding 1280 ajouté (bidirectionnel)
+- ✅ USB outlet migration vers driver existant
+- ✅ IAS enrollment va s'activer correctement
+- ✅ Battery data va remonter après enrollment
+
+#### Migration depuis v4.9.331:
+**ACTION REQUISE - RE-PAIR OBLIGATOIRE!**
+1. **Supprimer les devices problématiques de Homey**
+2. **Factory reset les devices** (bouton 10s jusqu'à LED clignote)
+3. **Re-pair dans Homey** avec v4.9.332
+4. **Vérifier logs** - Doivent voir `[IAS]` logs maintenant!
+5. **Attendre 24h** - Premier rapport batterie
+
+**Pourquoi re-pair obligatoire:**
+- Le cluster 1280 n'était PAS négocié pendant pairing initial
+- Homey a stocké "ce device n'a pas IAS Zone"
+- Mise à jour app ne re-négocie PAS les clusters
+- RE-PAIR = Homey redécouvre clusters + active IAS enrollment
+
+#### Recommandations:
+1. **RE-PAIR tous SOS buttons** - Absolument nécessaire pour IAS enrollment
+2. **RE-PAIR capteurs sans données** - Si problèmes persistent
+3. **Migration USB** - Va se faire automatiquement au prochain restart
+4. **Vérifier logs** - Chercher `[IAS]` pour confirmer enrollment
+5. **Patienter 24h** - Première battery report prend du temps
+
+---
+
 ## [4.9.331] - 2025-11-11
 
 ### 🚨 CRITICAL BUGFIX - TS0601 MODULE + BATTERY + IAS ZONE
