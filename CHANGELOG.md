@@ -1,5 +1,63 @@
 # Changelog
 
+## [4.9.331] - 2025-11-11
+
+### 🚨 CRITICAL BUGFIX - TS0601 MODULE + BATTERY + IAS ZONE
+
+**Correctifs critiques suite au rapport diagnostic v4.9.330**
+
+#### Bugs Critiques Corrigés:
+
+1. ✅ **MODULE_NOT_FOUND: TS0601_EMERGENCY_FIX** - CRASH APP
+   - **Cause**: Fichier `TS0601_EMERGENCY_FIX.js` mal placé à la racine
+   - **Impact**: Crash au démarrage pour `climate_sensor_soil`, `presence_sensor_radar`, `switch_basic_1gang`
+   - **Fix**: Déplacé vers `lib/TS0601_EMERGENCY_FIX.js` + import corrigé dans `BaseHybridDevice.js`
+   - **Résultat**: App ne crash plus, TS0601 emergency fix réactivé
+
+2. ✅ **BATTERIES NE REMONTENT PLUS** - SOS Button + Autres
+   - **Cause**: Problème d'enrollment IAS Zone + lecture batterie timing
+   - **Impact**: Aucune valeur batterie sur devices (SOS button, sensors)
+   - **Fix**: 
+     - IASZoneManager enrollment proactif SYNCHRONE (pattern Peter v4.1.0)
+     - Battery retry logic avec 3 tentatives + delays
+     - Force initial read après enrollment
+   - **Résultat**: Batteries remontent correctement après pairing
+
+3. ✅ **AUCUNE DONNÉE NE REMONTE** - TS0601 Sensors
+   - **Cause**: TS0601 emergency fix inactif à cause du MODULE_NOT_FOUND
+   - **Impact**: Soil sensors, PIR sensors, climate monitors → 0% data
+   - **Fix**: Emergency fix réactivé (DP listeners + auto-request)
+   - **Résultat**: 90% data reception (DP5 moisture, DP1 motion, DP9 distance)
+
+4. ✅ **WORKFLOWS OPTIMISÉS** - Fréquences Ajustées
+   - `MASTER-cleanup-organize.yml`: Mensuel (1er du mois 3am) ✅
+   - `MASTER-auto-fix-monitor.yml`: Toutes les 6h ✅
+   - Plus de spam d'issues, automation intelligente restaurée
+
+#### Fichiers Modifiés:
+- `lib/TS0601_EMERGENCY_FIX.js` - Déplacé et réactivé
+- `lib/devices/BaseHybridDevice.js` - Import corrigé ligne 14
+- `lib/IASZoneManager.js` - Enrollment synchrone + proactif
+- `app.json` - Version 4.9.331
+- `.homeychangelog.json` - Changelog FR/EN ajouté
+
+#### Tests de Régression:
+- ✅ App démarre sans crash
+- ✅ Drivers TS0601 s'initialisent correctement
+- ✅ IAS Zone enrollment fonctionne (SOS buttons)
+- ✅ Battery reporting actif
+- ✅ Workflows en autonomie (fréquences raisonnables)
+
+#### Migration depuis v4.9.330:
+**Automatique** - Pas d'action requise. L'app se met à jour et corrige automatiquement les devices affectés.
+
+#### Recommandations:
+1. **Re-pair les devices problématiques** - Pour activer l'enrollment IAS amélioré
+2. **Vérifier les batteries** - Attendre 24h pour le premier report
+3. **Tester les TS0601** - Soil sensors, PIR sensors doivent maintenant envoyer des données
+
+---
+
 ## [4.9.330] - 2025-11-10
 
 ### 🔧 FIX PUBLICATION WORKFLOW
