@@ -90,7 +90,6 @@
       "TS011F",
       "TS0121",
       "TS011E",
-      "TS0001",
       "TS0002"
     ],
     "endpoints": {
@@ -145,12 +144,15 @@
     "learnmode": {
       "image": "/drivers/usb_outlet_2port/assets/learnmode.svg",
       "instruction": {
-        "en": "Press and hold the power button for 5 seconds until the LED blinks",
-        "fr": "Appuyez et maintenez le bouton d'alimentation pendant 5 secondes jusqu'à ce que la LED clignote",
-        "nl": "Houd de aan/uit-knop 5 seconden ingedrukt totdat de LED knippert",
-        "de": "Halten Sie die Power-Taste 5 Sekunden lang gedrückt, bis die LED blinkt",
-        "it": "Tenere premuto il pulsante di accensione per 5 secondi fino a quando il LED lampeggia",
-        "es": "Mantenga presionado el botón de encendido durante 5 segundos hasta que el LED parpadee"
+        "en": "⚡ USB OUTLET MODULE ONLY! Press and hold the button for 5 seconds until LED blinks rapidly. This driver is for USB outlet modules with 1 AC socket + 2 USB ports (TS0002). If you have a wall switch without USB ports, cancel and choose another driver.",
+        "fr": "⚡ MODULE PRISE USB UNIQUEMENT! Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement. Ce driver est pour les modules prise USB avec 1 prise AC + 2 ports USB (TS0002). Si vous avez un interrupteur mural sans ports USB, annulez et choisissez un autre driver.",
+        "nl": "⚡ ALLEEN USB-STOPCONTACTMODULE! Houd de knop 5 seconden ingedrukt tot de LED snel knippert. Deze driver is voor USB-stopcontactmodules met 1 AC-stopcontact + 2 USB-poorten.",
+        "de": "⚡ NUR USB-STECKDOSENMODUL! Halten Sie die Taste 5 Sekunden lang gedrückt, bis die LED schnell blinkt. Dieser Treiber ist für USB-Steckdosenmodule mit 1 AC-Steckdose + 2 USB-Anschlüssen.",
+        "it": "⚡ SOLO MODULO PRESA USB! Tenere premuto il pulsante per 5 secondi fino a quando il LED lampeggia rapidamente. Questo driver è per moduli presa USB con 1 presa AC + 2 porte USB.",
+        "sv": "⚡ ENDAST USB-UTTAGSMODUL! Tryck och håll knappen i 5 sekunder tills LED blinkar snabbt. Denna drivrutin är för USB-uttagsmoduler med 1 AC-uttag + 2 USB-portar.",
+        "no": "⚡ KUN USB-UTTAKSMODUL! Trykk og hold knappen i 5 sekunder til LED blinker raskt. Denne driveren er for USB-uttaksmoduler med 1 AC-uttak + 2 USB-porter.",
+        "es": "⚡ SOLO MÓDULO DE ENCHUFE USB! Mantenga presionado el botón durante 5 segundos hasta que el LED parpadee rápidamente. Este controlador es para módulos de enchufe USB con 1 toma AC + 2 puertos USB.",
+        "da": "⚡ KUN USB-STIKMODUL! Tryk og hold knappen i 5 sekunder, indtil LED blinker hurtigt. Denne driver er til USB-stikmoduler med 1 AC-stik + 2 USB-porte."
       }
     }
   },
