@@ -19,7 +19,10 @@ class ClimateMonitorDevice extends BaseHybridDevice {
     this.log('[CLIMATE] 🌡️  Climate Monitor initializing...');
     this.log('════════════════════════════════════════');
 
-    // CRITICAL v4.9.342: FORCE Tuya DP mode for TS0601
+    // Store zclNode reference
+    this.zclNode = zclNode;
+
+    // CRITICAL: FORCE Tuya DP mode for ALL TS0601
     const productId = this.getData()?.productId || this.getSetting('zb_product_id');
     const isTS0601 = productId === 'TS0601';
 
@@ -28,21 +31,19 @@ class ClimateMonitorDevice extends BaseHybridDevice {
     if (isTS0601) {
       this.log('[CLIMATE] 🚨 TS0601 detected - FORCING Tuya DP mode');
       this.usesTuyaDP = true;
+      this.usesTuyaDPBattery = true; // Battery via DP 4
       this.hasTuyaCluster = true;
       this.isTuyaDevice = true;
+
+      // Init Tuya DP engine BEFORE base
+      await this._initTuyaDpEngine();
     }
 
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit({ zclNode }).catch(err => this.error(err));
 
-    // Detect device type (may override force above if cluster not present)
-    await this.detectDeviceType();
-
-    // Setup based on device type
-    if (this.isTuyaDevice) {
-      this.log('[CLIMATE] 🔧 Setting up Tuya TS0601 DataPoint device...');
-      await this._initTuyaDpEngine();
-    } else {
+    // Only setup standard Zigbee if NOT Tuya DP
+    if (!this.isTuyaDevice) {
       this.log('[CLIMATE] 🔧 Setting up standard Zigbee device...');
       await this.setupStandardZigbee();
     }
@@ -89,16 +90,16 @@ class ClimateMonitorDevice extends BaseHybridDevice {
 
   /**
    * Initialize Tuya DP engine with mapping from settings
-   * v4.9.342 - User patch implementation
+   * CRITICAL: Must be called BEFORE super.onNodeInit() for TS0601
    */
   async _initTuyaDpEngine() {
+    this.log('[TS0601] 🔧 Initializing Tuya DP engine...');
+
     const dpConfigRaw = this.getSetting('tuya_dp_configuration');
     let dpMap = {};
 
     try {
-      if (dpConfigRaw) {
-        dpMap = JSON.parse(dpConfigRaw);
-      }
+      if (dpConfigRaw) dpMap = JSON.parse(dpConfigRaw);
     } catch (err) {
       this.error('[TS0601] Invalid tuya_dp_configuration JSON', err, dpConfigRaw);
     }
