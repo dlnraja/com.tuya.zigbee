@@ -19,7 +19,10 @@ class TuyaSoilTesterTempHumidDevice extends BaseHybridDevice {
 
       this.log('[SOIL] 🌱 Soil Sensor initializing...');
 
-      // CRITICAL v4.9.342: FORCE Tuya DP mode for TS0601
+      // Store zclNode
+      this.zclNode = zclNode;
+
+      // CRITICAL: FORCE Tuya DP mode for ALL TS0601
       const productId = this.getData()?.productId || this.getSetting('zb_product_id');
       const isTS0601 = productId === 'TS0601';
 
@@ -28,34 +31,19 @@ class TuyaSoilTesterTempHumidDevice extends BaseHybridDevice {
       if (isTS0601) {
         this.log('[SOIL] 🚨 TS0601 detected - FORCING Tuya DP mode');
         this.usesTuyaDP = true;
+        this.usesTuyaDPBattery = true; // Battery via DP 4
         this.hasTuyaCluster = true;
         this.isTuyaDevice = true;
+
+        // Init Tuya DP engine BEFORE base
+        await this._initTuyaDpEngine();
       }
 
-      // Initialize base FIRST (power detection + Tuya EF00)
+      // Initialize base (power detection + dynamic capabilities)
       await super.onNodeInit({ zclNode }).catch(err => this.error(err));
 
-      // Check if device has Tuya EF00 cluster (TS0601 uses ONLY EF00, not standard clusters)
-      const endpoint = this.zclNode?.endpoints?.[1];
-      const isTuyaEF00Device = endpoint?.clusters?.tuyaSpecific
-        || endpoint?.clusters?.tuyaManufacturer
-        || endpoint?.clusters?.manuSpecificTuya;
-
-      if (isTuyaEF00Device || isTS0601) {
-        this.log('[TUYA] ✅ TS0601 detected - using Tuya EF00 ONLY (no standard clusters)');
-        this.log('[TUYA] ℹ️  All data will come via DataReport events from TuyaEF00Manager');
-        // Setup Tuya DP engine with mapping
-        try {
-          await this._initTuyaDpEngine();
-        } catch (err) {
-          this.log('[WARN] Tuya DP setup failed or timed out, fallback to generic clusters:', err);
-          // Fallback: continue initialization with standard clusters
-          await this.setupSensorReporting();
-          await this.setupIASZone();
-          await this.setupTemperatureSensor();
-          await this.setupHumiditySensor();
-        }
-      } else {
+      // Only setup standard Zigbee if NOT Tuya DP
+      if (!this.isTuyaDevice) {
         this.log('[STANDARD] Using standard Zigbee clusters');
         // Setup standard sensor reporting
         await this.setupSensorReporting();
