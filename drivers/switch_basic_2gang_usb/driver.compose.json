@@ -1,0 +1,74 @@
+{
+  "id": "switch_basic_2gang_usb",
+  "name": {
+    "en": "Basic Switch 2-gang + USB (TS0002)",
+    "fr": "Interrupteur 2-gang + USB (TS0002)",
+    "nl": "Basis Schakelaar 2-gang + USB (TS0002)"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff.l1",
+    "onoff.l2"
+  ],
+  "capabilitiesOptions": {
+    "onoff.l1": {
+      "title": {
+        "en": "USB Port 1",
+        "fr": "Port USB 1",
+        "nl": "USB-poort 1"
+      }
+    },
+    "onoff.l2": {
+      "title": {
+        "en": "USB Port 2",
+        "fr": "Port USB 2",
+        "nl": "USB-poort 2"
+      }
+    }
+  },
+  "images": {
+    "large": "/drivers/switch_basic_2gang_usb/assets/images/large.png",
+    "small": "/drivers/switch_basic_2gang_usb/assets/images/small.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_h1ipgkwn"
+    ],
+    "productId": [
+      "TS0002"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "2": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "1. Power on the USB module\n2. Press and hold the button for 5-10 seconds\n3. LED will blink rapidly when ready to pair\n4. Release button and wait for pairing to complete",
+        "fr": "1. Alimenter le module USB\n2. Appuyer et maintenir le bouton pendant 5-10 secondes\n3. La LED clignotera rapidement quand prêt à appairer\n4. Relâcher le bouton et attendre la fin du pairing",
+        "nl": "1. Schakel de USB-module in\n2. Houd de knop 5-10 seconden ingedrukt\n3. LED knippert snel wanneer klaar om te koppelen\n4. Laat de knop los en wacht tot het koppelen is voltooid"
+      }
+    }
+  }
+}
