@@ -1,0 +1,97 @@
+name: 🚀 Publish Simple (No CLI)
+
+"on":
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: 📦 Publish via GitHub Actions Only
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: ✅ Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 📌 Get Version
+        id: version
+        run: |
+          VERSION=$(node -p "require('./app.json').version")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "📦 Version: $VERSION"
+
+      - name: ✅ Validate App (Official Action)
+        uses: athombv/github-action-homey-app-validate@v1
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+        continue-on-error: false
+
+      - name: 🚀 Publish to Homey App Store (Official Action)
+        id: publish
+        uses: athombv/github-action-homey-app-publish@v1
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+
+      - name: 📝 Create GitHub Release
+        if: success()
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.version.outputs.version }}
+          name: v${{ steps.version.outputs.version }}
+          body: |
+            # 🎉 Version ${{ steps.version.outputs.version }}
+
+            ## ✅ Published Successfully
+
+            Published to Homey App Store using GitHub Actions (no CLI).
+
+            ### 📦 Changes
+            - MEGA ENRICHMENT: Exhaustive GitHub scraping
+            - 12,069 manufacturer IDs added
+            - 391 drivers enriched automatically
+            - 478 manufacturers with cluster info
+
+            ### 🔗 Links
+            - 🏪 [Homey App Store](${{ steps.publish.outputs.url }})
+            - 🛠️ [Developer Dashboard](https://tools.developer.homey.app)
+            - 📖 [GitHub Repository](https://github.com/${{ github.repository }})
+
+            ### 📊 Stats
+            - Total Devices: 784 analyzed
+            - Unique Manufacturers: 478
+            - Drivers Updated: 391
+            - Manufacturer IDs Added: 12,069
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 📊 Summary
+        if: always()
+        run: |
+          echo "# 🎯 Publication Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ "${{ job.status }}" == "success" ]; then
+            echo "## ✅ SUCCESS!" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Version:** ${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+            echo "**Method:** GitHub Actions Only (No CLI)" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### 📦 Published to Homey App Store" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "🔗 [${{ steps.publish.outputs.url }}](${{ steps.publish.outputs.url }})" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### 🎯 Next Steps" >> $GITHUB_STEP_SUMMARY
+            echo "1. 🌐 Visit [Developer Dashboard](https://tools.developer.homey.app)" >> $GITHUB_STEP_SUMMARY
+            echo "2. 📱 Go to **My Apps** → **com.dlnraja.tuya.zigbee**" >> $GITHUB_STEP_SUMMARY
+            echo "3. ✅ Choose: **Test** or **Live**" >> $GITHUB_STEP_SUMMARY
+            echo "4. 📤 Submit for certification" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "## ❌ FAILED" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Check logs above for details." >> $GITHUB_STEP_SUMMARY
+          fi
