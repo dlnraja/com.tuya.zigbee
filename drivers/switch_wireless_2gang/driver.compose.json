@@ -6,9 +6,17 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "onoff.gang2"
+    "onoff.gang2",
+    "measure_battery"
   ],
   "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "AAA",
+      "AA",
+      "CR123A"
+    ],
     "approximation": {
       "usageConstant": 0.5
     }
