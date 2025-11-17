@@ -3,7 +3,7 @@
     "en": "Mini Switch",
     "fr": "Mini Switch"
   },
-  "class": "sensor",
+  "class": "socket",
   "capabilities": [
     "measure_battery",
     "alarm_generic",

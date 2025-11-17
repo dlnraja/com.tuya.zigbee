@@ -3,7 +3,7 @@
     "en": "Outdoor Light Controller",
     "fr": "Outdoor Light Controller"
   },
-  "class": "sensor",
+  "class": "light",
   "capabilities": [
     "measure_battery",
     "alarm_contact",

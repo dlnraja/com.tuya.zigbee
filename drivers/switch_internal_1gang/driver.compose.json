@@ -2,7 +2,7 @@
   "name": {
     "en": "Roller Shutter Switch Advanced (INTERNAL)"
   },
-  "class": "sensor",
+  "class": "windowcoverings",
   "capabilities": [
     "measure_battery",
     "windowcoverings_state",
