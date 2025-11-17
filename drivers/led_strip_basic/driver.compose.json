@@ -3,7 +3,7 @@
     "en": "Led Strip Basic",
     "fr": "Led Strip Basic"
   },
-  "class": "sensor",
+  "class": "light",
   "capabilities": [
     "measure_battery",
     "alarm_generic",
