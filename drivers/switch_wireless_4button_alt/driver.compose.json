@@ -9,7 +9,8 @@
     "onoff",
     "onoff.button2",
     "onoff.button3",
-    "onoff.button4"
+    "onoff.button4",
+    "measure_battery"
   ],
   "platforms": [
     "local"
@@ -107,6 +108,13 @@
     }
   },
   "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "AAA",
+      "AA",
+      "CR123A"
+    ],
     "approximation": {
       "usageConstant": 0.5
     }
