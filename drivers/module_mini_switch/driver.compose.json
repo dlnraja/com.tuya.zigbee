@@ -5,6 +5,7 @@
   },
   "class": "sensor",
   "capabilities": [
+    "measure_battery",
     "alarm_generic",
     "onoff",
     "measure_power",
@@ -12,6 +13,14 @@
     "measure_current"
   ],
   "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "AAA",
+      "AA",
+      "CR123A",
+      "INTERNAL"
+    ],
     "approximation": {
       "usageConstant": 0.5
     }
