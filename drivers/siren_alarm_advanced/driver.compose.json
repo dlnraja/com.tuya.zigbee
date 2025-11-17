@@ -5,6 +5,7 @@
   },
   "class": "sensor",
   "capabilities": [
+    "measure_battery",
     "alarm_generic",
     "alarm_temperature",
     "alarm_humidity",
@@ -14,7 +15,16 @@
     "onoff"
   ],
   "capabilitiesOptions": {},
-  "energy": {},
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "AAA",
+      "AA",
+      "CR123A",
+      "INTERNAL"
+    ]
+  },
   "zigbee": {
     "manufacturerName": [
       "_TZE200_d0yu2xgi",
