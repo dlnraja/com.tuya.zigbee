@@ -5,6 +5,7 @@
   },
   "class": "sensor",
   "capabilities": [
+    "measure_battery",
     "alarm_contact",
     "onoff",
     "dim",
@@ -13,6 +14,14 @@
     "light_temperature"
   ],
   "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "AAA",
+      "AA",
+      "CR123A",
+      "INTERNAL"
+    ],
     "approximation": {
       "usageConstant": 0.5
     }
