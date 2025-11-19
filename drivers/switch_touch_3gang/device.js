@@ -52,13 +52,13 @@ class SwitchTouch3GangDevice extends SwitchDevice {
   */
     // this.registerCapability('onoff.switch_3', 6, {
     //       endpoint: 3
-  });
-}
+    //   });
+  }
 
   async onDeleted() {
-  this.log('SwitchTouch3GangDevice deleted');
-  await super.onDeleted().catch(err => this.error(err));
-}
+    this.log('SwitchTouch3GangDevice deleted');
+    await super.onDeleted().catch(err => this.error(err));
+  }
 }
 
 module.exports = SwitchTouch3GangDevice;
