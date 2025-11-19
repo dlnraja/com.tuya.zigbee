@@ -18,8 +18,8 @@ class AirQualityMonitorProBatteryDevice extends SensorDevice {
     await this.setupTemperatureSensor();
 
     // IAS Zone enrollment (motion/contact sensors)
-    if (this.hasCapability('alarm_motion') || this.hasCapability('alarm_contact') || 
-        this.hasCapability('alarm_water') || this.hasCapability('alarm_smoke')) {
+    if (this.hasCapability('alarm_motion') || this.hasCapability('alarm_contact') ||
+      this.hasCapability('alarm_water') || this.hasCapability('alarm_smoke')) {
       this.iasZoneEnroller = new IASZoneEnroller(this, zclNode);
       await this.iasZoneEnroller.enroll().catch(err => {
         this.error('IAS Zone enrollment failed:', err);
@@ -29,7 +29,7 @@ class AirQualityMonitorProBatteryDevice extends SensorDevice {
     // ==========================================
     // BATTERY MANAGEMENT - OPTIMIZED
     // ==========================================
-    
+
     // Configure battery reporting
     try {
       await this.configureAttributeReporting([{
@@ -44,9 +44,9 @@ class AirQualityMonitorProBatteryDevice extends SensorDevice {
     } catch (err) {
       this.log('Battery report config failed (non-critical):', err.message);
     }
-    
+
     // Register battery capability
-// TODO: Consider debouncing capability updates for better performance
+    // TODO: Consider debouncing capability updates for better performance
     this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
       endpoint: 1,
       get: 'batteryPercentageRemaining',
@@ -63,7 +63,7 @@ class AirQualityMonitorProBatteryDevice extends SensorDevice {
         return Math.max(0, Math.min(100, percentage));
       }
     });
-    
+
     // Initial battery poll after pairing
     setTimeout(async () => {
       try {
@@ -73,52 +73,52 @@ class AirQualityMonitorProBatteryDevice extends SensorDevice {
         this.error('Initial battery poll failed:', err);
       }
     }, 5000);
-    
+
     // Regular battery polling with exponential backoff on errors
     let pollFailures = 0;
     const maxPollFailures = 5;
-    
+
     this.registerPollInterval(async () => {
       try {
         const battery = await this.zclNode.endpoints[1].clusters.powerConfiguration.readAttributes(['batteryPercentageRemaining']).catch(err => this.error(err));
-        
+
         if (battery && battery.batteryPercentageRemaining !== undefined) {
           const percentage = Math.round(battery.batteryPercentageRemaining / 2);
           await (async () => {
-        this.log(`📝 [DIAG] setCapabilityValue: ${'measure_battery'} = ${parseFloat(percentage}`);
-        try {
-          await this.setCapabilityValue('measure_battery', parseFloat(percentage);
-          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_battery'}`);
-        } catch (err) {
-          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_battery'}`, err.message);
-          throw err;
-        }
-      })()).catch(err => this.error(err));
+            this.log(`📝 [DIAG] setCapabilityValue: ${'measure_battery'} = ${parseFloat(percentage)}`);
+            try {
+              await this.setCapabilityValue('measure_battery', parseFloat(percentage));
+              this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_battery'}`);
+            } catch (err) {
+              this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_battery'}`, err.message);
+              throw err;
+            }
+          })().catch(err => this.error(err));
           this.log('Battery polled:', percentage + '%');
-          
+
           // Reset failure counter on success
           pollFailures = 0;
-          
+
           // Low battery alert
           if (percentage <= 20 && percentage > 10) {
             this.log('[WARN]  Low battery warning:', percentage + '%');
             await this.homey.notifications.createNotification({
               excerpt: `${this.getName()} battery low (${percentage}%)`
-            }).catch(() => {});
+            }).catch(() => { });
           }
-          
+
           // Critical battery alert
           if (percentage <= 10) {
             this.log('🔴 Critical battery:', percentage + '%');
             await this.homey.notifications.createNotification({
               excerpt: `${this.getName()} battery critical (${percentage}%) - replace soon!`
-            }).catch(() => {});
+            }).catch(() => { });
           }
         }
       } catch (err) {
         pollFailures++;
         this.error(`Battery poll failed (${pollFailures}/${maxPollFailures}):`, err.message);
-        
+
         // Stop polling after max failures to preserve battery
         if (pollFailures >= maxPollFailures) {
           this.log('Max poll failures reached, reducing poll frequency');
@@ -140,34 +140,34 @@ class AirQualityMonitorProBatteryDevice extends SensorDevice {
         this.error('Poll failed:', err);
       }
     }, 300000); // 5 minutes
-  
+
     this.log('air_quality_monitor_pro_battery initialized');
 
     // Call parent
     try {
-    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
-    // Initialize Fallback System
-    this.fallback = new FallbackSystem(this, {
-      maxRetries: 3,
-      baseDelay: 1000,
-      verbosity: this.getSetting('debug_level') || 'INFO',
-      trackPerformance: true
-    });
-    this.log('[OK] FallbackSystem initialized');
+      await super.onNodeInit({ zclNode }).catch(err => this.error(err));
+      // Initialize Fallback System
+      this.fallback = new FallbackSystem(this, {
+        maxRetries: 3,
+        baseDelay: 1000,
+        verbosity: this.getSetting('debug_level') || 'INFO',
+        trackPerformance: true
+      });
+      this.log('[OK] FallbackSystem initialized');
     } catch (err) { this.error('Await error:', err); }
 
     // Auto-detect device type and initialize Tuya cluster handler
     const deviceType = TuyaClusterHandler.detectDeviceType('air_quality_monitor_pro_battery');
     const tuyaInitialized = await TuyaClusterHandler.init(this, zclNode, deviceType).catch(err => this.error(err));
-    
+
     if (tuyaInitialized) {
       this.log('[OK] Tuya cluster handler initialized for type:', deviceType);
     } else {
       this.log('[WARN]  No Tuya cluster found, using standard Zigbee');
-      
+
       // Fallback to standard cluster handling if needed
       try {
-      await this.registerStandardCapabilities().catch(err => this.error(err));
+        await this.registerStandardCapabilities().catch(err => this.error(err));
       } catch (err) { this.error('Await error:', err); }
     }
 
@@ -175,10 +175,10 @@ class AirQualityMonitorProBatteryDevice extends SensorDevice {
     await this.setAvailable().catch(err => this.error(err));
   }
 
-   catch (err) {
-      this.error('Battery change detection error:', err);
-    }
+  catch(err) {
+    this.error('Battery change detection error:', err);
   }
+}
   // ========================================
   // FLOW METHODS - Auto-generated
   // ========================================
@@ -188,67 +188,67 @@ class AirQualityMonitorProBatteryDevice extends SensorDevice {
    */
   }
   async triggerFlowCard(cardId, tokens = {}) {
-    try {
-      const flowCard = this.homey.flow.getDeviceTriggerCard(cardId);
-      await flowCard.trigger(this, tokens).catch(err => this.error(err));
-      this.log(`[OK] Flow triggered: ${cardId}`, tokens);
-    } catch (err) {
-      this.error(`[ERROR] Flow trigger error: ${cardId}`, err);
-    }
+  try {
+    const flowCard = this.homey.flow.getDeviceTriggerCard(cardId);
+    await flowCard.trigger(this, tokens).catch(err => this.error(err));
+    this.log(`[OK] Flow triggered: ${cardId}`, tokens);
+  } catch (err) {
+    this.error(`[ERROR] Flow trigger error: ${cardId}`, err);
   }
+}
 
   /**
    * Check if any alarm is active
    */
   }
   async checkAnyAlarm() {
-    const capabilities = this.getCapabilities();
-    for (const cap of capabilities) {
-      if (cap.startsWith('alarm_')) {
-        const value = this.getCapabilityValue(cap);
-        if (value === true) return true;
-      }
+  const capabilities = this.getCapabilities();
+  for (const cap of capabilities) {
+    if (cap.startsWith('alarm_')) {
+      const value = this.getCapabilityValue(cap);
+      if (value === true) return true;
     }
-    return false;
+  }
+  return false;
+}
+
+/**
+ * Get current context data
+ */
+getContextData() {
+  const context = {
+    time_of_day: this.getTimeOfDay(),
+    timestamp: new Date().toISOString()
+  };
+
+  // Add available sensor values
+  const caps = this.getCapabilities();
+  if (caps.includes('measure_luminance')) {
+    context.luminance = this.getCapabilityValue('measure_luminance') || 0;
+  }
+  if (caps.includes('measure_temperature')) {
+    context.temperature = this.getCapabilityValue('measure_temperature') || 0;
+  }
+  if (caps.includes('measure_humidity')) {
+    context.humidity = this.getCapabilityValue('measure_humidity') || 0;
+  }
+  if (caps.includes('measure_battery')) {
+    context.battery = this.getCapabilityValue('measure_battery') || 0;
   }
 
-  /**
-   * Get current context data
-   */
-  getContextData() {
-    const context = {
-      time_of_day: this.getTimeOfDay(),
-      timestamp: new Date().toISOString()
-    };
-    
-    // Add available sensor values
-    const caps = this.getCapabilities();
-    if (caps.includes('measure_luminance')) {
-      context.luminance = this.getCapabilityValue('measure_luminance') || 0;
-    }
-    if (caps.includes('measure_temperature')) {
-      context.temperature = this.getCapabilityValue('measure_temperature') || 0;
-    }
-    if (caps.includes('measure_humidity')) {
-      context.humidity = this.getCapabilityValue('measure_humidity') || 0;
-    }
-    if (caps.includes('measure_battery')) {
-      context.battery = this.getCapabilityValue('measure_battery') || 0;
-    }
-    
-    return context;
-  }
+  return context;
+}
 
-  /**
-   * Get time of day
-   */
-  getTimeOfDay() {
-    const hour = new Date().getHours();
-    if (hour >= 5 && hour < 12) return 'morning';
-    if (hour >= 12 && hour < 17) return 'afternoon';
-    if (hour >= 17 && hour < 22) return 'evening';
-    return 'night';
-  }
+/**
+ * Get time of day
+ */
+getTimeOfDay() {
+  const hour = new Date().getHours();
+  if (hour >= 5 && hour < 12) return 'morning';
+  if (hour >= 12 && hour < 17) return 'afternoon';
+  if (hour >= 17 && hour < 22) return 'evening';
+  return 'night';
+}
 
 
 
@@ -259,58 +259,58 @@ class AirQualityMonitorProBatteryDevice extends SensorDevice {
   }
   }
   async pollAttributes() {
-    const promises = [];
-    
-    // Battery
-    if (this.hasCapability('measure_battery')) {
-      promises.push(
+  const promises = [];
+
+  // Battery
+  if (this.hasCapability('measure_battery')) {
+    promises.push(
       // TODO: Wrap in try/catch
-        this.zclNode.endpoints[1]?.clusters.powerConfiguration?.readAttributes(['batteryPercentageRemaining'])
-          .catch(err => this.log('Battery read failed (ignorable):', err.message))
-      );
-    }
-    
-    // Temperature
-    if (this.hasCapability('measure_temperature')) {
-      promises.push(
-      // TODO: Wrap in try/catch
-        this.zclNode.endpoints[1]?.clusters.temperatureMeasurement?.readAttributes(['measuredValue'])
-          .catch(err => this.log('Temperature read failed (ignorable):', err.message))
-      );
-    }
-    
-    // Humidity
-    if (this.hasCapability('measure_humidity')) {
-      promises.push(
-      // TODO: Wrap in try/catch
-        this.zclNode.endpoints[1]?.clusters.relativeHumidity?.readAttributes(['measuredValue'])
-          .catch(err => this.log('Humidity read failed (ignorable):', err.message))
-      );
-    }
-    
-    // Illuminance
-    if (this.hasCapability('measure_luminance')) {
-      promises.push(
-      // TODO: Wrap in try/catch
-        this.zclNode.endpoints[1]?.clusters.illuminanceMeasurement?.readAttributes(['measuredValue'])
-          .catch(err => this.log('Illuminance read failed (ignorable):', err.message))
-      );
-    }
-    
-    // Alarm status (IAS Zone)
-    if (this.hasCapability('alarm_motion') || this.hasCapability('alarm_contact')) {
-      promises.push(
-      // TODO: Wrap in try/catch
-        this.zclNode.endpoints[1]?.clusters.iasZone?.readAttributes(['zoneStatus'])
-          .catch(err => this.log('IAS Zone read failed (ignorable):', err.message))
-      );
-    }
-    
-    try {
-    await Promise.allSettled(promises).catch(err => this.error(err));
-    } catch (err) { this.error('Await error:', err); }
-    this.log('[OK] Poll attributes completed');
+      this.zclNode.endpoints[1]?.clusters.powerConfiguration?.readAttributes(['batteryPercentageRemaining'])
+        .catch(err => this.log('Battery read failed (ignorable):', err.message))
+    );
   }
+
+  // Temperature
+  if (this.hasCapability('measure_temperature')) {
+    promises.push(
+      // TODO: Wrap in try/catch
+      this.zclNode.endpoints[1]?.clusters.temperatureMeasurement?.readAttributes(['measuredValue'])
+        .catch(err => this.log('Temperature read failed (ignorable):', err.message))
+    );
+  }
+
+  // Humidity
+  if (this.hasCapability('measure_humidity')) {
+    promises.push(
+      // TODO: Wrap in try/catch
+      this.zclNode.endpoints[1]?.clusters.relativeHumidity?.readAttributes(['measuredValue'])
+        .catch(err => this.log('Humidity read failed (ignorable):', err.message))
+    );
+  }
+
+  // Illuminance
+  if (this.hasCapability('measure_luminance')) {
+    promises.push(
+      // TODO: Wrap in try/catch
+      this.zclNode.endpoints[1]?.clusters.illuminanceMeasurement?.readAttributes(['measuredValue'])
+        .catch(err => this.log('Illuminance read failed (ignorable):', err.message))
+    );
+  }
+
+  // Alarm status (IAS Zone)
+  if (this.hasCapability('alarm_motion') || this.hasCapability('alarm_contact')) {
+    promises.push(
+      // TODO: Wrap in try/catch
+      this.zclNode.endpoints[1]?.clusters.iasZone?.readAttributes(['zoneStatus'])
+        .catch(err => this.log('IAS Zone read failed (ignorable):', err.message))
+    );
+  }
+
+  try {
+    await Promise.allSettled(promises).catch(err => this.error(err));
+  } catch (err) { this.error('Await error:', err); }
+  this.log('[OK] Poll attributes completed');
+}
 
 
 
@@ -320,47 +320,47 @@ class AirQualityMonitorProBatteryDevice extends SensorDevice {
    */
   }
   async readAttributeSafe(cluster, attribute) {
-    try {
-      return await this.fallback.readAttributeWithFallback(cluster, attribute).catch(err => this.error(err));
-    } catch (err) {
-      this.error(`Failed to read ${cluster}.${attribute} after all fallback strategies:`, err);
-      throw err;
-    }
+  try {
+    return await this.fallback.readAttributeWithFallback(cluster, attribute).catch(err => this.error(err));
+  } catch (err) {
+    this.error(`Failed to read ${cluster}.${attribute} after all fallback strategies:`, err);
+    throw err;
   }
+}
 
   /**
    * Configure report with intelligent fallback
    */
   }
   async configureReportSafe(config) {
-    try {
-      return await this.fallback.configureReportWithFallback(config).catch(err => this.error(err));
-    } catch (err) {
-      this.error(`Failed to configure report after all fallback strategies:`, err);
-      // Don't throw - use polling as ultimate fallback
-      return { success: false, method: 'polling' };
-    }
+  try {
+    return await this.fallback.configureReportWithFallback(config).catch(err => this.error(err));
+  } catch (err) {
+    this.error(`Failed to configure report after all fallback strategies:`, err);
+    // Don't throw - use polling as ultimate fallback
+    return { success: false, method: 'polling' };
   }
+}
 
   /**
    * IAS Zone enrollment with fallback
    */
   }
   async enrollIASZoneSafe() {
-    try {
-      return await this.fallback.iasEnrollWithFallback().catch(err => this.error(err));
-    } catch (err) {
-      this.error('Failed to enroll IAS Zone after all fallback strategies:', err);
-      throw err;
-    }
+  try {
+    return await this.fallback.iasEnrollWithFallback().catch(err => this.error(err));
+  } catch (err) {
+    this.error('Failed to enroll IAS Zone after all fallback strategies:', err);
+    throw err;
   }
+}
 
-  /**
-   * Get fallback system statistics
-   */
-  getFallbackStats() {
-    return this.fallback ? this.fallback.getStats() : null;
-  }
+/**
+ * Get fallback system statistics
+ */
+getFallbackStats() {
+  return this.fallback ? this.fallback.getStats() : null;
+}
 }
 
 
@@ -369,44 +369,44 @@ class AirQualityMonitorProBatteryDevice extends SensorDevice {
    * Cluster 1037 - measuredValue
    */
   async setupCo2Sensor() {
-    if (!this.hasCapability('measure_co2')) {
-      return;
-    }
-    
-    this.log('[TEMP]  Setting up measure_co2 (cluster 1037)...');
-    
-    const endpoint = this.zclNode.endpoints[1];
-    if (!endpoint?.clusters[1037]) {
-      this.log('[WARN]  Cluster 1037 not available');
-      return;
-    }
-    
-    try {
-      /* REFACTOR: registerCapability deprecated with cluster spec.
-   Original: this.registerCapability('measure_co2', 1037,
-   Replace with SDK3 pattern - see ZigbeeDevice docs
-   Capability: 'measure_co2', Cluster: 1037
+  if (!this.hasCapability('measure_co2')) {
+    return;
+  }
+
+  this.log('[TEMP]  Setting up measure_co2 (cluster 1037)...');
+
+  const endpoint = this.zclNode.endpoints[1];
+  if (!endpoint?.clusters[1037]) {
+    this.log('[WARN]  Cluster 1037 not available');
+    return;
+  }
+
+  try {
+    /* REFACTOR: registerCapability deprecated with cluster spec.
+ Original: this.registerCapability('measure_co2', 1037,
+ Replace with SDK3 pattern - see ZigbeeDevice docs
+ Capability: 'measure_co2', Cluster: 1037
 */
-// this.registerCapability('measure_co2', 1037, {
-//         get: 'measuredValue',
-//         report: 'measuredValue',
-//         reportParser: value => value * 1e-6,
-//         reportOpts: {
-//           configureAttributeReporting: {
-//             minInterval: 300,
-//             maxInterval: 3600,
-//             minChange: 10
-          }
+    // this.registerCapability('measure_co2', 1037, {
+    //         get: 'measuredValue',
+    //         report: 'measuredValue',
+    //         reportParser: value => value * 1e-6,
+    //         reportOpts: {
+    //           configureAttributeReporting: {
+    //             minInterval: 300,
+    //             maxInterval: 3600,
+    //             minChange: 10
+  }
         },
-        getOpts: {
-          getOnStart: true
-        }
+getOpts: {
+  getOnStart: true
+}
       });
-      
-      this.log('[OK] measure_co2 configured (cluster 1037)');
+
+this.log('[OK] measure_co2 configured (cluster 1037)');
     } catch (err) {
-      this.error('measure_co2 setup failed:', err);
-    }
+  this.error('measure_co2 setup failed:', err);
+}
   }
 
   /**
@@ -414,44 +414,44 @@ class AirQualityMonitorProBatteryDevice extends SensorDevice {
    * Cluster 1026 - measuredValue
    */
   async setupTemperatureSensor() {
-    if (!this.hasCapability('measure_temperature')) {
-      return;
-    }
-    
-    this.log('[TEMP]  Setting up measure_temperature (cluster 1026)...');
-    
-    const endpoint = this.zclNode.endpoints[1];
-    if (!endpoint?.clusters[1026]) {
-      this.log('[WARN]  Cluster 1026 not available');
-      return;
-    }
-    
-    try {
-      /* REFACTOR: registerCapability deprecated with cluster spec.
-   Original: this.registerCapability('measure_temperature', 1026,
-   Replace with SDK3 pattern - see ZigbeeDevice docs
-   Capability: 'measure_temperature', Cluster: 1026
+  if (!this.hasCapability('measure_temperature')) {
+    return;
+  }
+
+  this.log('[TEMP]  Setting up measure_temperature (cluster 1026)...');
+
+  const endpoint = this.zclNode.endpoints[1];
+  if (!endpoint?.clusters[1026]) {
+    this.log('[WARN]  Cluster 1026 not available');
+    return;
+  }
+
+  try {
+    /* REFACTOR: registerCapability deprecated with cluster spec.
+ Original: this.registerCapability('measure_temperature', 1026,
+ Replace with SDK3 pattern - see ZigbeeDevice docs
+ Capability: 'measure_temperature', Cluster: 1026
 */
-// this.registerCapability('measure_temperature', 1026, {
-//         get: 'measuredValue',
-//         report: 'measuredValue',
-//         reportParser: value => value / 100,
-//         reportOpts: {
-//           configureAttributeReporting: {
-//             minInterval: 60,
-//             maxInterval: 3600,
-//             minChange: 10
-          }
+    // this.registerCapability('measure_temperature', 1026, {
+    //         get: 'measuredValue',
+    //         report: 'measuredValue',
+    //         reportParser: value => value / 100,
+    //         reportOpts: {
+    //           configureAttributeReporting: {
+    //             minInterval: 60,
+    //             maxInterval: 3600,
+    //             minChange: 10
+  }
         },
-        getOpts: {
-          getOnStart: true
-        }
+getOpts: {
+  getOnStart: true
+}
       });
-      
-      this.log('[OK] measure_temperature configured (cluster 1026)');
+
+this.log('[OK] measure_temperature configured (cluster 1026)');
     } catch (err) {
-      this.error('measure_temperature setup failed:', err);
-    }
+  this.error('measure_temperature setup failed:', err);
+}
   }
 }
 

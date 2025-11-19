@@ -11,14 +11,14 @@ class SwitchTouch1GangDevice extends SwitchDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('SwitchTouch1GangDevice initializing...');
-    
+
     // Set switch count for this device
     this.switchCount = 1;
     this.switchType = 'touch';
-    
+
     // Initialize base (power detection + switch control)
     await super.onNodeInit({ zclNode }).catch(err => this.error(err));
-    
+
     this.log('SwitchTouch1GangDevice initialized - 1 switch ready');
   }
 
@@ -32,11 +32,11 @@ class SwitchTouch1GangDevice extends SwitchDevice {
    Replace with SDK3 pattern - see ZigbeeDevice docs
    Capability: 'onoff', Cluster: 6
 */
-// this.registerCapability('onoff', 6, {
-//       endpoint: 1
-    });
-    
-    
+    // this.registerCapability('onoff', 6, {
+    //       endpoint: 1
+    //     });
+
+
   }
 
   async onDeleted() {
