@@ -235,7 +235,7 @@ class ContactVibrationSensor extends SensorDevice {
     try {
       // Step 1: Setup Zone Enroll Request listener (SYNCHRONOUS - property assignment)
       // SDK3: Use property assignment, NOT .on() event listener
-      endpoint.clusters.iasZone.onZoneEnrollRequest = () => {
+      endpoint.clusters.iasZone.onZoneEnrollRequest = async () => {
         this.log('[MSG] Zone Enroll Request received');
         
         try {
@@ -271,7 +271,7 @@ class ContactVibrationSensor extends SensorDevice {
       
       // Step 3: Setup Zone Status Change listener (property assignment)
       // SDK3: Use .onZoneStatusChangeNotification property, NOT .on() event
-      endpoint.clusters.iasZone.onZoneStatusChangeNotification = (payload) => {
+      endpoint.clusters.iasZone.onZoneStatusChangeNotification = async (payload) => {
         this.log('[MSG] Zone notification received:', payload);
         
         if (payload && payload.zoneStatus !== undefined) {
