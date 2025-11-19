@@ -47,43 +47,43 @@ class AirConditionerDevice extends BaseHybridDevice {
       //         endpoint: 1,
       //         getOpts: {
       //           getOnStart: true
+      //     }
+      //   });
     }
+
+    // thermostat_mode capability
+    if (this.hasCapability('thermostat_mode')) {
+      /* REFACTOR: registerCapability deprecated with cluster spec.
+    Original: this.registerCapability('thermostat_mode', 61184,
+    Replace with SDK3 pattern - see ZigbeeDevice docs
+    Capability: 'thermostat_mode', Cluster: 61184
+    */
+      // this.registerCapability('thermostat_mode', 61184, {
+      //         endpoint: 1,
+      //         set: async (value) => {
+      const modes = {
+        'cool': 0,
+        'heat': 1,
+        'auto': 2,
+        'dry': 3,
+        'fan': 4
+      };
+      return {
+        dp: 4, // Tuya datapoint for mode
+        datatype: 4, // Enum type
+        data: modes[value] || 0
+      };
+    },
+    get: 'data',
+      reportParser: (value) => {
+        if (value && value.dp === 4) {
+          const modes = ['cool', 'heat', 'auto', 'dry', 'fan'];
+          return modes[value.data] || 'auto';
+        }
+        return null;
+      }
   });
 }
-
-// thermostat_mode capability
-if (this.hasCapability('thermostat_mode')) {
-  /* REFACTOR: registerCapability deprecated with cluster spec.
-Original: this.registerCapability('thermostat_mode', 61184,
-Replace with SDK3 pattern - see ZigbeeDevice docs
-Capability: 'thermostat_mode', Cluster: 61184
-*/
-  // this.registerCapability('thermostat_mode', 61184, {
-  //         endpoint: 1,
-  //         set: async (value) => {
-  const modes = {
-    'cool': 0,
-    'heat': 1,
-    'auto': 2,
-    'dry': 3,
-    'fan': 4
-  };
-  return {
-    dp: 4, // Tuya datapoint for mode
-    datatype: 4, // Enum type
-    data: modes[value] || 0
-  };
-},
-get: 'data',
-  reportParser: (value) => {
-    if (value && value.dp === 4) {
-      const modes = ['cool', 'heat', 'auto', 'dry', 'fan'];
-      return modes[value.data] || 'auto';
-    }
-    return null;
-  }
-      });
-    }
 
 // fan_speed capability
 if (this.hasCapability('fan_speed')) {

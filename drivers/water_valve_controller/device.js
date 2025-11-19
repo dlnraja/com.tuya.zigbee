@@ -87,9 +87,9 @@ class WaterValveSmartHybridDevice extends BaseHybridDevice {
         if (battery && battery.batteryPercentageRemaining !== undefined) {
           const percentage = Math.round(battery.batteryPercentageRemaining / 2);
           await (async () => {
-            this.log(`📝 [DIAG] setCapabilityValue: ${'measure_battery'} = ${parseFloat(percentage}`);
+            this.log(`📝 [DIAG] setCapabilityValue: ${'measure_battery'} = ${parseFloat(percentage)}`);
             try {
-              await this.setCapabilityValue('measure_battery', parseFloat(percentage);
+              await this.setCapabilityValue('measure_battery', parseFloat(percentage));
               this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_battery'}`);
             } catch (err) {
               this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_battery'}`, err.message);

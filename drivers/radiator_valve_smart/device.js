@@ -100,9 +100,16 @@ class SmartRadiatorValveHybridDevice extends BaseHybridDevice {
           get: 'batteryPercentageRemaining',
           report: 'batteryPercentageRemaining',
           reportParser: value => {
-            this.log('Battery raw value:', value); // Smart calculation: check if value is already 0-100 or 0-200 if (value <= 100) { return Math.max(0, Math.min(100, value)); } else { return fromZclBatteryPercentageRemaining(value); } },
-            getParser: value => fromZclBatteryPercentageRemaining(value)
-          });
+            this.log('Battery raw value:', value);
+            // Smart calculation: check if value is already 0-100 or 0-200
+            if (value <= 100) {
+              return Math.max(0, Math.min(100, value));
+            } else {
+              return fromZclBatteryPercentageRemaining(value);
+            }
+          },
+          getParser: value => fromZclBatteryPercentageRemaining(value)
+        });
       } catch (err) {
         this.log('Could not register battery capability:', err.message);
       }

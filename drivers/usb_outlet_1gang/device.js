@@ -86,69 +86,69 @@ class UsbOutlet1GangDevice extends SwitchDevice {
           //               minChange: 1           // 0.1W change
           //             }
           //           },
-          getOpts: {
-            getOnStart: true
-          }
-        });
-        this.log('[OK] measure_power configured (cluster 2820)');
-      }
+          //           getOpts: {
+          //             getOnStart: true
+          //           }
+          //         });
+          //         this.log('[OK] measure_power configured (cluster 2820)');
+        }
 
         // measure_voltage (rmsVoltage)
         if (this.hasCapability('measure_voltage')) {
-        /* REFACTOR: registerCapability deprecated with cluster spec.
- Original: this.registerCapability('measure_voltage', 2820,
- Replace with SDK3 pattern - see ZigbeeDevice docs
- Capability: 'measure_voltage', Cluster: 2820
-*/
-        // this.registerCapability('measure_voltage', 2820, {
-        //             get: 'rmsVoltage',
-        //             report: 'rmsVoltage',
-        //             reportParser: value => {
-        const volts = value;
-        this.log('[DATA] Voltage:', volts, 'V');
-        return volts;
-      },
-      reportOpts: {
-        configureAttributeReporting: {
-          minInterval: 60,       // 1 minute
-            maxInterval: 600,      // 10 minutes
-              minChange: 10          // 10V change
+          /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('measure_voltage', 2820,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'measure_voltage', Cluster: 2820
+  */
+          // this.registerCapability('measure_voltage', 2820, {
+          //             get: 'rmsVoltage',
+          //             report: 'rmsVoltage',
+          //             reportParser: value => {
+          const volts = value;
+          this.log('[DATA] Voltage:', volts, 'V');
+          return volts;
+        },
+        reportOpts: {
+          configureAttributeReporting: {
+            minInterval: 60,       // 1 minute
+              maxInterval: 600,      // 10 minutes
+                minChange: 10          // 10V change
+          }
+        },
+        getOpts: {
+          getOnStart: true
         }
-      },
-      getOpts: {
-        getOnStart: true
-      }
-    });
-    this.log('[OK] measure_voltage configured (cluster 2820)');
-  }
+      });
+      this.log('[OK] measure_voltage configured (cluster 2820)');
+    }
 
-  // measure_current (rmsCurrent)
-  if(this.hasCapability('measure_current')) {
-  /* REFACTOR: registerCapability deprecated with cluster spec.
-Original: this.registerCapability('measure_current', 2820,
-Replace with SDK3 pattern - see ZigbeeDevice docs
-Capability: 'measure_current', Cluster: 2820
-*/
-  // this.registerCapability('measure_current', 2820, {
-  //             get: 'rmsCurrent',
-  //             report: 'rmsCurrent',
-  //             reportParser: value => {
-  // Convert to Amps (device reports in mA)
-  const amps = value / 1000;
-  this.log('[DATA] Current:', amps, 'A');
-  return amps;
-},
-reportOpts: {
-  configureAttributeReporting: {
-    minInterval: 60,       // 1 minute
-      maxInterval: 600,      // 10 minutes
-        minChange: 100         // 100mA change
-  }
-},
-getOpts: {
-  getOnStart: true
-}
-          });
+    // measure_current (rmsCurrent)
+    if (this.hasCapability('measure_current')) {
+      /* REFACTOR: registerCapability deprecated with cluster spec.
+    Original: this.registerCapability('measure_current', 2820,
+    Replace with SDK3 pattern - see ZigbeeDevice docs
+    Capability: 'measure_current', Cluster: 2820
+    */
+      // this.registerCapability('measure_current', 2820, {
+      //             get: 'rmsCurrent',
+      //             report: 'rmsCurrent',
+      //             reportParser: value => {
+      // Convert to Amps (device reports in mA)
+      const amps = value / 1000;
+      this.log('[DATA] Current:', amps, 'A');
+      return amps;
+    },
+    reportOpts: {
+      configureAttributeReporting: {
+        minInterval: 60,       // 1 minute
+          maxInterval: 600,      // 10 minutes
+            minChange: 100         // 100mA change
+      }
+    },
+    getOpts: {
+      getOnStart: true
+    }
+  });
 this.log('[OK] measure_current configured (cluster 2820)');
         }
       } catch (err) {
