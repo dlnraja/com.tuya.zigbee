@@ -95,30 +95,30 @@ class AirConditionerDevice extends BaseHybridDevice {
       // this.registerCapability('fan_speed', 61184, {
       //         endpoint: 1,
       //         set: async (value) => {
-      const speeds = {
-        'low': 0,
-        'medium': 1,
-        'high': 2,
-        'auto': 3
-      };
-      return {
-        dp: 5, // Tuya datapoint for fan speed
-        datatype: 4, // Enum type
-        data: speeds[value] || 3
-      };
-    },
-    get: 'data',
-      reportParser: (value) => {
-        if (value && value.dp === 5) {
-          const speeds = ['low', 'medium', 'high', 'auto'];
-          return speeds[value.data] || 'auto';
-        }
-        return null;
-      }
-  });
-}
+      //       const speeds = {
+      //         'low': 0,
+      //         'medium': 1,
+      //         'high': 2,
+      //         'auto': 3
+      //       };
+      //       return {
+      //         dp: 5, // Tuya datapoint for fan speed
+      //         datatype: 4, // Enum type
+      //         data: speeds[value] || 3
+      //       };
+      //     },
+      //     get: 'data',
+      //       reportParser: (value) => {
+      //         if (value && value.dp === 5) {
+      //           const speeds = ['low', 'medium', 'high', 'auto'];
+      //           return speeds[value.data] || 'auto';
+      //         }
+      //         return null;
+      //       }
+      //   });
+    }
 
-this.log('Air conditioner device initialized');
+    this.log('Air conditioner device initialized');
   }
 
 }

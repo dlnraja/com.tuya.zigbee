@@ -81,55 +81,35 @@ class DehumidifierDevice extends BaseHybridDevice {
       //         endpoint: 1,
       //         get: 'data',
       //         reportParser: (value) => {
-      if (value && value.dp === 3) { // Temperature datapoint
-        return value.data / 10; // Usually in 0.1°C units
-      }
-      return null;
-    }
-  });
-}
-
-// measure_power capability (if available)
-if (this.hasCapability('measure_power')) {
-  /* REFACTOR: registerCapability deprecated with cluster spec.
-Original: this.registerCapability('measure_power', 61184,
-Replace with SDK3 pattern - see ZigbeeDevice docs
-Capability: 'measure_power', Cluster: 61184
-*/
-  // this.registerCapability('measure_power', 61184, {
-  //         endpoint: 1,
-  //         get: 'data',
-  //         reportParser: (value) => {
-  if (value && value.dp === 5) { // Power datapoint
-    return value.data;
-  }
-  return null;
-}
-      });
+      //       if (value && value.dp === 3) { // Temperature datapoint
+      //         return value.data / 10; // Usually in 0.1°C units
+      //       }
+      //       return null;
+      //     }
+      //   });
     }
 
-// alarm_water capability (water tank full)
-if (this.hasCapability('alarm_water')) {
-  /* REFACTOR: registerCapability deprecated with cluster spec.
-Original: this.registerCapability('alarm_water', 61184,
-Replace with SDK3 pattern - see ZigbeeDevice docs
-Capability: 'alarm_water', Cluster: 61184
-*/
-  // this.registerCapability('alarm_water', 61184, {
-  //         endpoint: 1,
-  //         get: 'data',
-  //         reportParser: (value) => {
-  if (value && value.dp === 11) { // Water tank status
-    return value.data === 1; // 1 = full, 0 = not full
-  }
-  return null;
-}
-      });
+    // measure_power capability (if available)
+    if (this.hasCapability('measure_power')) {
+      /* REFACTOR: registerCapability deprecated with cluster spec.
+    Original: this.registerCapability('measure_power', 61184,
+    Replace with SDK3 pattern - see ZigbeeDevice docs
+    Capability: 'measure_power', Cluster: 61184
+    */
+      // this.registerCapability('measure_power', 61184, {
+      //         endpoint: 1,
+      //         get: 'data',
+      //         reportParser: (value) => {
+      //           if (value && value.dp === 5) { // Power datapoint
+      //             return value.data;
+      //           }
+      //           return null;
+      //         }
+      //       });
     }
-
-this.log('Dehumidifier device initialized');
   }
 
+  this.log('Dehumidifier device initialized');
 }
 
 
