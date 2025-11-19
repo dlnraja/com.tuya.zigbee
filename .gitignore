@@ -24,6 +24,9 @@ homey-auth.*
 *.zip
 *.tar.gz
 *.7z
+*.pdf
+pdfhomey/
+lint_report.txt
 
 # Excessively large documentation (DÉSACTIVÉ - on commit tout maintenant)
 # docs/releases/ULTIMATE_AUDIT_REPORT_v2.15.60.md
