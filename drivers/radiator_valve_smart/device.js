@@ -149,22 +149,22 @@ class SmartRadiatorValveHybridDevice extends BaseHybridDevice {
       //             minInterval: 60,
       //             maxInterval: 3600,
       //             minChange: 10
-    }
-        },
-  getOpts: {
-    getOnStart: true
-  }
-});
+      //     }
+      //         },
+      //   getOpts: {
+      //     getOnStart: true
+      //   }
+      // });
 
-this.log('[OK] measure_temperature configured (cluster 1026)');
+      // this.log('[OK] measure_temperature configured (cluster 1026)');
     } catch (err) {
-  this.error('measure_temperature setup failed:', err);
-}
+      this.error('measure_temperature setup failed:', err);
+    }
   }
 
   async onDeleted() {
-  this.log('smart_radiator_valve_hybrid deleted');
-}
+    this.log('smart_radiator_valve_hybrid deleted');
+  }
   // ========================================
   // FLOW METHODS - Auto-generated
   // ========================================
@@ -172,7 +172,7 @@ this.log('[OK] measure_temperature configured (cluster 1026)');
   /**
    * Trigger flow with context data
    */
-  }
+}
   async triggerFlowCard(cardId, tokens = {}) {
   try {
     const flowCard = this.homey.flow.getDeviceTriggerCard(cardId);
