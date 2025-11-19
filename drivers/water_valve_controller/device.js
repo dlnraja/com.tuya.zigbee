@@ -138,7 +138,7 @@ class WaterValveSmartHybridDevice extends BaseHybridDevice {
       try {
         // Force read de tous les attributes critiques
         await this.pollAttributes().catch(err => this.error(err));
-      } catch (err) { this.error(err); } catch (err) {
+      } catch (err) {
         this.error('Poll failed:', err);
       }
     }, 300000); // 5 minutes
@@ -147,7 +147,7 @@ class WaterValveSmartHybridDevice extends BaseHybridDevice {
 
     // Call parent
     try {
-      await super.onNodeInit({ zclNode } catch (err) { this.error(err); }).catch (err => this.error(err));
+      await super.onNodeInit({ zclNode }).catch(err => this.error(err));
       // Initialize Fallback System
       this.fallback = new FallbackSystem(this, {
         maxRetries: 3,

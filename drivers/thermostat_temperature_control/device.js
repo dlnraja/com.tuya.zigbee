@@ -186,7 +186,6 @@ class TemperatureControllerHybridDevice extends BaseHybridDevice {
   /**
    * Trigger flow with context data
    */
-  }
   async triggerFlowCard(cardId, tokens = {}) {
   try {
     const flowCard = this.homey.flow.getDeviceTriggerCard(cardId);
@@ -200,7 +199,6 @@ class TemperatureControllerHybridDevice extends BaseHybridDevice {
   /**
    * Check if any alarm is active
    */
-  }
   async checkAnyAlarm() {
   const capabilities = this.getCapabilities();
   for (const cap of capabilities) {
