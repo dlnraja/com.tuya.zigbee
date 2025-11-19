@@ -61,62 +61,62 @@ class AirConditionerDevice extends BaseHybridDevice {
       // this.registerCapability('thermostat_mode', 61184, {
       //         endpoint: 1,
       //         set: async (value) => {
-      const modes = {
-        'cool': 0,
-        'heat': 1,
-        'auto': 2,
-        'dry': 3,
-        'fan': 4
+      //       const modes = {
+      //         'cool': 0,
+      //         'heat': 1,
+      //         'auto': 2,
+      //         'dry': 3,
+      //         'fan': 4
+      //       };
+      //       return {
+      //         dp: 4, // Tuya datapoint for mode
+      //         datatype: 4, // Enum type
+      //         data: modes[value] || 0
+      //       };
+      //     },
+      //     get: 'data',
+      //       reportParser: (value) => {
+      //         if (value && value.dp === 4) {
+      //           const modes = ['cool', 'heat', 'auto', 'dry', 'fan'];
+      //           return modes[value.data] || 'auto';
+      //         }
+      //         return null;
+      //       }
+      //   });
+    }
+
+    // fan_speed capability
+    if (this.hasCapability('fan_speed')) {
+      /* REFACTOR: registerCapability deprecated with cluster spec.
+    Original: this.registerCapability('fan_speed', 61184,
+    Replace with SDK3 pattern - see ZigbeeDevice docs
+    Capability: 'fan_speed', Cluster: 61184
+    */
+      // this.registerCapability('fan_speed', 61184, {
+      //         endpoint: 1,
+      //         set: async (value) => {
+      const speeds = {
+        'low': 0,
+        'medium': 1,
+        'high': 2,
+        'auto': 3
       };
       return {
-        dp: 4, // Tuya datapoint for mode
+        dp: 5, // Tuya datapoint for fan speed
         datatype: 4, // Enum type
-        data: modes[value] || 0
+        data: speeds[value] || 3
       };
     },
     get: 'data',
       reportParser: (value) => {
-        if (value && value.dp === 4) {
-          const modes = ['cool', 'heat', 'auto', 'dry', 'fan'];
-          return modes[value.data] || 'auto';
+        if (value && value.dp === 5) {
+          const speeds = ['low', 'medium', 'high', 'auto'];
+          return speeds[value.data] || 'auto';
         }
         return null;
       }
   });
 }
-
-// fan_speed capability
-if (this.hasCapability('fan_speed')) {
-  /* REFACTOR: registerCapability deprecated with cluster spec.
-Original: this.registerCapability('fan_speed', 61184,
-Replace with SDK3 pattern - see ZigbeeDevice docs
-Capability: 'fan_speed', Cluster: 61184
-*/
-  // this.registerCapability('fan_speed', 61184, {
-  //         endpoint: 1,
-  //         set: async (value) => {
-  const speeds = {
-    'low': 0,
-    'medium': 1,
-    'high': 2,
-    'auto': 3
-  };
-  return {
-    dp: 5, // Tuya datapoint for fan speed
-    datatype: 4, // Enum type
-    data: speeds[value] || 3
-  };
-},
-get: 'data',
-  reportParser: (value) => {
-    if (value && value.dp === 5) {
-      const speeds = ['low', 'medium', 'high', 'auto'];
-      return speeds[value.data] || 'auto';
-    }
-    return null;
-  }
-      });
-    }
 
 this.log('Air conditioner device initialized');
   }

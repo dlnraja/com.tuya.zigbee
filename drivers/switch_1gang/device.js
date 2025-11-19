@@ -436,34 +436,32 @@ class SmartSwitch1gangHybridDevice extends SwitchDevice {
    * Read attribute with intelligent fallback
    * Tries multiple strategies until success
    */
-}
   async readAttributeSafe(cluster, attribute) {
-  try {
-    return await this.fallback.readAttributeWithFallback(cluster, attribute).catch(err => this.error(err));
-  } catch (err) {
-    this.error(`Failed to read ${cluster}.${attribute} after all fallback strategies:`, err);
-    throw err;
+    try {
+      return await this.fallback.readAttributeWithFallback(cluster, attribute).catch(err => this.error(err));
+    } catch (err) {
+      this.error(`Failed to read ${cluster}.${attribute} after all fallback strategies:`, err);
+      throw err;
+    }
   }
-}
 
   /**
    * Configure report with intelligent fallback
    */
-  }
   async configureReportSafe(config) {
-  try {
-    return await this.fallback.configureReportWithFallback(config).catch(err => this.error(err));
-  } catch (err) {
-    this.error(`Failed to configure report after all fallback strategies:`, err);
-    // Don't throw - use polling as ultimate fallback
-    return { success: false, method: 'polling' };
+    try {
+      return await this.fallback.configureReportWithFallback(config).catch(err => this.error(err));
+    } catch (err) {
+      this.error(`Failed to configure report after all fallback strategies:`, err);
+      // Don't throw - use polling as ultimate fallback
+      return { success: false, method: 'polling' };
+    }
   }
-}
 
   /**
    * IAS Zone enrollment with fallback
    */
-  }
+}
   async enrollIASZoneSafe() {
   try {
     return await this.fallback.iasEnrollWithFallback().catch(err => this.error(err));

@@ -62,32 +62,32 @@ class DehumidifierDevice extends BaseHybridDevice {
       //         endpoint: 1,
       //         get: 'data',
       //         reportParser: (value) => {
-      if (value && value.dp === 1) { // Current humidity datapoint
-        return value.data;
+      //       if (value && value.dp === 1) { // Current humidity datapoint
+      //         return value.data;
+      //       }
+      //       return null;
+      //     }
+      //   });
+    }
+
+    // measure_temperature capability (if available)
+    if (this.hasCapability('measure_temperature')) {
+      /* REFACTOR: registerCapability deprecated with cluster spec.
+    Original: this.registerCapability('measure_temperature', 61184,
+    Replace with SDK3 pattern - see ZigbeeDevice docs
+    Capability: 'measure_temperature', Cluster: 61184
+    */
+      // this.registerCapability('measure_temperature', 61184, {
+      //         endpoint: 1,
+      //         get: 'data',
+      //         reportParser: (value) => {
+      if (value && value.dp === 3) { // Temperature datapoint
+        return value.data / 10; // Usually in 0.1°C units
       }
       return null;
     }
   });
 }
-
-// measure_temperature capability (if available)
-if (this.hasCapability('measure_temperature')) {
-  /* REFACTOR: registerCapability deprecated with cluster spec.
-Original: this.registerCapability('measure_temperature', 61184,
-Replace with SDK3 pattern - see ZigbeeDevice docs
-Capability: 'measure_temperature', Cluster: 61184
-*/
-  // this.registerCapability('measure_temperature', 61184, {
-  //         endpoint: 1,
-  //         get: 'data',
-  //         reportParser: (value) => {
-  if (value && value.dp === 3) { // Temperature datapoint
-    return value.data / 10; // Usually in 0.1°C units
-  }
-  return null;
-}
-      });
-    }
 
 // measure_power capability (if available)
 if (this.hasCapability('measure_power')) {
