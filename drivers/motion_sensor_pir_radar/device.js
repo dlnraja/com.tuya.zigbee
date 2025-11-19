@@ -97,7 +97,7 @@ class PirRadarIlluminationSensorDevice extends BaseHybridDevice {
     try {
       // Step 1: Setup Zone Enroll Request listener (SYNCHRONOUS - property assignment)
       // SDK3: Use property assignment, NOT .on() event listener
-      endpoint.clusters.iasZone.onZoneEnrollRequest = () => {
+      endpoint.clusters.iasZone.onZoneEnrollRequest = async () => {
         this.log('[MSG] Zone Enroll Request received');
         
         try {
@@ -164,7 +164,7 @@ class PirRadarIlluminationSensorDevice extends BaseHybridDevice {
       
       // Step 4: Setup Zone Status attribute listener (property assignment)
       // Alternative listener for attribute reports
-      endpoint.clusters.iasZone.onZoneStatus = (zoneStatus) => {
+      endpoint.clusters.iasZone.onZoneStatus = async (zoneStatus) => {
         this.log('[DATA] Zone attribute report:', zoneStatus);
         
         let status = zoneStatus;
