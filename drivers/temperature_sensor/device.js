@@ -57,12 +57,12 @@ class TemperatureSensorDevice extends BaseHybridDevice {
 //             minInterval: 60,
 //             maxInterval: 3600,
 //             minChange: 10
-          }
-        },
-        getOpts: {
-          getOnStart: true
-        }
-      });
+//           }
+//         },
+//         getOpts: {
+//           getOnStart: true
+//         }
+//       });
       
       this.log('[OK] measure_temperature configured (cluster 1026)');
     } catch (err) {
