@@ -170,15 +170,13 @@ class WaterValveSmartHybridDevice extends BaseHybridDevice {
       // Fallback to standard cluster handling if needed
       try {
         await this.registerStandardCapabilities().catch(err => this.error(err));
-      } catch (err) { this.error(err); } catch (err) { this.error('Await error:', err); }
+      } catch (err) {
+        this.error('Standard capabilities error:', err);
+      }
     }
 
     // Mark device as available
     await this.setAvailable().catch(err => this.error(err));
-  }
-
-  catch(err) {
-    this.error('Battery change detection error:', err);
   }
 }
   // ========================================
