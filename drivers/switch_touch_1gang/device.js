@@ -23,9 +23,8 @@ class SwitchTouch1GangDevice extends SwitchDevice {
   }
 
   /**
-   * Register capabilities for 1 switches
+   * Register capabilities for switches
    */
-  }
   async registerSwitchCapabilities() {
     // Main switch (endpoint 1)
     /* REFACTOR: registerCapability deprecated with cluster spec.
