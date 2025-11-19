@@ -8,38 +8,38 @@ const FallbackSystem = require('../../lib/FallbackSystem');
 
 class SmartCurtainMotorDevice extends BaseHybridDevice {
 
-    async onNodeInit({ zclNode }) {
-        try {
-        await super.onNodeInit({ zclNode }).catch(err => this.error(err));
-        } catch (err) { this.error('Await error:', err); }
-        
-        this.log('Smart Curtain Motor device initialized');
-        
-        
-        // Register window coverings capabilities
-// TODO: Consider debouncing capability updates for better performance
-        this.registerCapability('windowcoverings_state', 258);
-        this.registerCapability('windowcoverings_set', 258);
-        
-      // TODO: Wrap in try/catch
-        await this.configureAttributeReporting([
-            {
-                endpointId: 1,
-                cluster: {
-                    
-                id: 258,
-                attributes: ['currentPositionLiftPercentage']
-            
-                }
-            }
-        ]).catch(this.error);
-    }
+  async onNodeInit({ zclNode }) {
+    try {
+      await super.onNodeInit({ zclNode }).catch(err => this.error(err));
+    } catch (err) { this.error('Await error:', err); }
 
-    
+    this.log('Smart Curtain Motor device initialized');
+
+
+    // Register window coverings capabilities
+    // TODO: Consider debouncing capability updates for better performance
+    this.registerCapability('windowcoverings_state', 258);
+    this.registerCapability('windowcoverings_set', 258);
+
+    // TODO: Wrap in try/catch
+    await this.configureAttributeReporting([
+      {
+        endpointId: 1,
+        cluster: {
+
+          id: 258,
+          attributes: ['currentPositionLiftPercentage']
+
+        }
+      }
+    ]).catch(this.error);
+  }
+
+
 
   async setCapabilityValue(capabilityId, value) {
     try {
-    await super.setCapabilityValue(capabilityId, value).catch(err => this.error(err));
+      await super.setCapabilityValue(capabilityId, value).catch(err => this.error(err));
     } catch (err) { this.error('Await error:', err); }
     await this.triggerCapabilityFlow(capabilityId, value).catch(err => this.error(err));
   }
@@ -56,7 +56,7 @@ class SmartCurtainMotorDevice extends BaseHybridDevice {
     // Triggers are handled automatically via triggerCapabilityFlow()
 
     // CONDITIONS
-    
+
     // Condition: OnOff
     try {
       const isOnCard = this.homey.flow.getDeviceConditionCard('smart_curtain_motor_is_on');
@@ -113,10 +113,10 @@ class SmartCurtainMotorDevice extends BaseHybridDevice {
         // Card might not exist
       }
     });
-  
+
 
     // ACTIONS
-    
+
     // Action: Turn On
     try {
       const turnOnCard = this.homey.flow.getDeviceActionCard('smart_curtain_motor_turn_on');
@@ -191,7 +191,7 @@ class SmartCurtainMotorDevice extends BaseHybridDevice {
       if (closeCard) {
         closeCard.registerRunListener(async (args, state) => {
           try {
-          await args.device.setCapabilityValue('windowcoverings_set', 0).catch(err => this.error(err));
+            await args.device.setCapabilityValue('windowcoverings_set', 0).catch(err => this.error(err));
           } catch (err) { this.error('Await error:', err); }
         });
       }
@@ -219,7 +219,7 @@ class SmartCurtainMotorDevice extends BaseHybridDevice {
               await new Promise(resolve => setTimeout(resolve, 300)).catch(err => this.error(err));
               await args.device.setCapabilityValue('onoff', false).catch(err => this.error(err));
               try {
-              await new Promise(resolve => setTimeout(resolve, 300)).catch(err => this.error(err));
+                await new Promise(resolve => setTimeout(resolve, 300)).catch(err => this.error(err));
               } catch (err) { this.error('Await error:', err); }
             }
             await args.device.setCapabilityValue('onoff', original).catch(err => this.error(err));
@@ -244,20 +244,19 @@ class SmartCurtainMotorDevice extends BaseHybridDevice {
     } catch (error) {
       // Card might not exist
     }
-  
+
   }
 
   // Helper: Trigger flow when capability changes
-  }
   async triggerCapabilityFlow(capabilityId, value) {
     const driverId = this.driver.id;
-    
+
     // Alarm triggers
     if (capabilityId.startsWith('alarm_')) {
       const alarmName = capabilityId;
       const triggerIdTrue = `${driverId}_${alarmName}_true`;
       const triggerIdFalse = `${driverId}_${alarmName}_false`;
-      
+
       try {
         if (value === true) {
           await this.homey.flow.getDeviceTriggerCard(triggerIdTrue).trigger(this).catch(err => this.error(err));
@@ -270,7 +269,7 @@ class SmartCurtainMotorDevice extends BaseHybridDevice {
         this.error(`Error triggering ${alarmName}:`, error.message);
       }
     }
-    
+
     // Measure triggers
     if (capabilityId.startsWith('measure_')) {
       const triggerId = `${driverId}_${capabilityId}_changed`;
@@ -281,7 +280,7 @@ class SmartCurtainMotorDevice extends BaseHybridDevice {
         this.error(`Error triggering ${capabilityId}:`, error.message);
       }
     }
-    
+
     // OnOff triggers
     if (capabilityId === 'onoff') {
       const triggerId = value ? `${driverId}_turned_on` : `${driverId}_turned_off`;
@@ -297,10 +296,10 @@ class SmartCurtainMotorDevice extends BaseHybridDevice {
   // FLOW METHODS - Auto-generated
   // ========================================
 
-   catch (err) {
-      this.error('Battery change detection error:', err);
-    }
+  catch(err) {
+    this.error('Battery change detection error:', err);
   }
+}
 
 
   /**
@@ -310,147 +309,147 @@ class SmartCurtainMotorDevice extends BaseHybridDevice {
   }
   }
   async pollAttributes() {
-    const promises = [];
-    
-    // ==========================================
-    // BATTERY MANAGEMENT - OPTIMIZED
-    // ==========================================
-    
-    // Configure battery reporting
+  const promises = [];
+
+  // ==========================================
+  // BATTERY MANAGEMENT - OPTIMIZED
+  // ==========================================
+
+  // Configure battery reporting
+  try {
+    await this.configureAttributeReporting([{
+      endpointId: 1,
+      cluster: 1,
+      attributeName: 'batteryPercentageRemaining',
+      minInterval: 7200,
+      maxInterval: 86400,
+      minChange: 10
+    }]);
+    this.log('Battery reporting configured');
+  } catch (err) {
+    this.log('Battery report config failed (non-critical):', err.message);
+  }
+
+  // Register battery capability
+  this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
+    endpoint: 1,
+    get: 'batteryPercentageRemaining',
+    report: 'batteryPercentageRemaining',
+    reportParser: (value) => {
+      if (value === null || value === undefined) return null;
+      // Convert from 0-200 scale to 0-100%
+      const percentage = Math.round(value / 2);
+      return Math.max(0, Math.min(100, percentage));
+    },
+    getParser: (value) => {
+      if (value === null || value === undefined) return null;
+      const percentage = Math.round(value / 2);
+      return Math.max(0, Math.min(100, percentage));
+    }
+  });
+
+  // Initial battery poll after pairing
+  setTimeout(async () => {
     try {
-      await this.configureAttributeReporting([{
-        endpointId: 1,
-        cluster: 1,
-        attributeName: 'batteryPercentageRemaining',
-        minInterval: 7200,
-        maxInterval: 86400,
-        minChange: 10
-      }]);
-      this.log('Battery reporting configured');
+      await this.pollAttributes().catch(err => this.error(err));
+      this.log('Initial battery poll completed');
     } catch (err) {
-      this.log('Battery report config failed (non-critical):', err.message);
+      this.error('Initial battery poll failed:', err);
     }
-    
-    // Register battery capability
-    this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
-      endpoint: 1,
-      get: 'batteryPercentageRemaining',
-      report: 'batteryPercentageRemaining',
-      reportParser: (value) => {
-        if (value === null || value === undefined) return null;
-        // Convert from 0-200 scale to 0-100%
-        const percentage = Math.round(value / 2);
-        return Math.max(0, Math.min(100, percentage));
-      },
-      getParser: (value) => {
-        if (value === null || value === undefined) return null;
-        const percentage = Math.round(value / 2);
-        return Math.max(0, Math.min(100, percentage));
-      }
-    });
-    
-    // Initial battery poll after pairing
-    setTimeout(async () => {
-      try {
-        await this.pollAttributes().catch(err => this.error(err));
-        this.log('Initial battery poll completed');
-      } catch (err) {
-        this.error('Initial battery poll failed:', err);
-      }
-    }, 5000);
-    
-    // Regular battery polling with exponential backoff on errors
-    let pollFailures = 0;
-    const maxPollFailures = 5;
-    
-    this.registerPollInterval(async () => {
-      try {
-        const battery = await this.zclNode.endpoints[1].clusters.powerConfiguration.readAttributes(['batteryPercentageRemaining']).catch(err => this.error(err));
-        
-        if (battery && battery.batteryPercentageRemaining !== undefined) {
-          const percentage = Math.round(battery.batteryPercentageRemaining / 2);
-          await (async () => {
-        this.log(`📝 [DIAG] setCapabilityValue: ${'measure_battery'} = ${parseFloat(percentage}`);
-        try {
-          await this.setCapabilityValue('measure_battery', parseFloat(percentage);
-          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_battery'}`);
-        } catch (err) {
-          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_battery'}`, err.message);
-          throw err;
-        }
-      })()).catch(err => this.error(err));
-          this.log('Battery polled:', percentage + '%');
-          
-          // Reset failure counter on success
-          pollFailures = 0;
-          
-          // Low battery alert
-          if (percentage <= 20 && percentage > 10) {
-            this.log('[WARN]  Low battery warning:', percentage + '%');
-            await this.homey.notifications.createNotification({
-              excerpt: `${this.getName()} battery low (${percentage}%)`
-            }).catch(() => {});
-          }
-          
-          // Critical battery alert
-          if (percentage <= 10) {
-            this.log('🔴 Critical battery:', percentage + '%');
-            await this.homey.notifications.createNotification({
-              excerpt: `${this.getName()} battery critical (${percentage}%) - replace soon!`
-            }).catch(() => {});
-          }
-        }
-      } catch (err) {
-        pollFailures++;
-        this.error(`Battery poll failed (${pollFailures}/${maxPollFailures}):`, err.message);
-        
-        // Stop polling after max failures to preserve battery
-        if (pollFailures >= maxPollFailures) {
-          this.log('Max poll failures reached, reducing poll frequency');
-          // Polling will continue but less frequently
-        }
-      }
-    }, 600000);
-    // Temperature
-    if (this.hasCapability('measure_temperature')) {
-      promises.push(
-      // TODO: Wrap in try/catch
-        this.zclNode.endpoints[1]?.clusters.temperatureMeasurement?.readAttributes(['measuredValue'])
-          .catch(err => this.log('Temperature read failed (ignorable):', err.message))
-      );
-    }
-    
-    // Humidity
-    if (this.hasCapability('measure_humidity')) {
-      promises.push(
-      // TODO: Wrap in try/catch
-        this.zclNode.endpoints[1]?.clusters.relativeHumidity?.readAttributes(['measuredValue'])
-          .catch(err => this.log('Humidity read failed (ignorable):', err.message))
-      );
-    }
-    
-    // Illuminance
-    if (this.hasCapability('measure_luminance')) {
-      promises.push(
-      // TODO: Wrap in try/catch
-        this.zclNode.endpoints[1]?.clusters.illuminanceMeasurement?.readAttributes(['measuredValue'])
-          .catch(err => this.log('Illuminance read failed (ignorable):', err.message))
-      );
-    }
-    
-    // Alarm status (IAS Zone)
-    if (this.hasCapability('alarm_motion') || this.hasCapability('alarm_contact')) {
-      promises.push(
-      // TODO: Wrap in try/catch
-        this.zclNode.endpoints[1]?.clusters.iasZone?.readAttributes(['zoneStatus'])
-          .catch(err => this.log('IAS Zone read failed (ignorable):', err.message))
-      );
-    }
-    
+  }, 5000);
+
+  // Regular battery polling with exponential backoff on errors
+  let pollFailures = 0;
+  const maxPollFailures = 5;
+
+  this.registerPollInterval(async () => {
     try {
-    await Promise.allSettled(promises).catch(err => this.error(err));
-    } catch (err) { this.error('Await error:', err); }
-    this.log('[OK] Poll attributes completed');
+      const battery = await this.zclNode.endpoints[1].clusters.powerConfiguration.readAttributes(['batteryPercentageRemaining']).catch(err => this.error(err));
+
+      if (battery && battery.batteryPercentageRemaining !== undefined) {
+        const percentage = Math.round(battery.batteryPercentageRemaining / 2);
+        await (async () => {
+          this.log(`📝 [DIAG] setCapabilityValue: ${'measure_battery'} = ${parseFloat(percentage}`);
+          try {
+            await this.setCapabilityValue('measure_battery', parseFloat(percentage);
+            this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_battery'}`);
+          } catch (err) {
+            this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_battery'}`, err.message);
+            throw err;
+          }
+        })()).catch(err => this.error(err));
+  this.log('Battery polled:', percentage + '%');
+
+  // Reset failure counter on success
+  pollFailures = 0;
+
+  // Low battery alert
+  if (percentage <= 20 && percentage > 10) {
+    this.log('[WARN]  Low battery warning:', percentage + '%');
+    await this.homey.notifications.createNotification({
+      excerpt: `${this.getName()} battery low (${percentage}%)`
+    }).catch(() => { });
+  }
+
+  // Critical battery alert
+  if (percentage <= 10) {
+    this.log('🔴 Critical battery:', percentage + '%');
+    await this.homey.notifications.createNotification({
+      excerpt: `${this.getName()} battery critical (${percentage}%) - replace soon!`
+    }).catch(() => { });
+  }
+}
+      } catch (err) {
+  pollFailures++;
+  this.error(`Battery poll failed (${pollFailures}/${maxPollFailures}):`, err.message);
+
+  // Stop polling after max failures to preserve battery
+  if (pollFailures >= maxPollFailures) {
+    this.log('Max poll failures reached, reducing poll frequency');
+    // Polling will continue but less frequently
+  }
+}
+    }, 600000);
+// Temperature
+if (this.hasCapability('measure_temperature')) {
+  promises.push(
+    // TODO: Wrap in try/catch
+    this.zclNode.endpoints[1]?.clusters.temperatureMeasurement?.readAttributes(['measuredValue'])
+      .catch(err => this.log('Temperature read failed (ignorable):', err.message))
+  );
+}
+
+// Humidity
+if (this.hasCapability('measure_humidity')) {
+  promises.push(
+    // TODO: Wrap in try/catch
+    this.zclNode.endpoints[1]?.clusters.relativeHumidity?.readAttributes(['measuredValue'])
+      .catch(err => this.log('Humidity read failed (ignorable):', err.message))
+  );
+}
+
+// Illuminance
+if (this.hasCapability('measure_luminance')) {
+  promises.push(
+    // TODO: Wrap in try/catch
+    this.zclNode.endpoints[1]?.clusters.illuminanceMeasurement?.readAttributes(['measuredValue'])
+      .catch(err => this.log('Illuminance read failed (ignorable):', err.message))
+  );
+}
+
+// Alarm status (IAS Zone)
+if (this.hasCapability('alarm_motion') || this.hasCapability('alarm_contact')) {
+  promises.push(
+    // TODO: Wrap in try/catch
+    this.zclNode.endpoints[1]?.clusters.iasZone?.readAttributes(['zoneStatus'])
+      .catch(err => this.log('IAS Zone read failed (ignorable):', err.message))
+  );
+}
+
+try {
+  await Promise.allSettled(promises).catch(err => this.error(err));
+} catch (err) { this.error('Await error:', err); }
+this.log('[OK] Poll attributes completed');
   }
 
 
@@ -461,47 +460,47 @@ class SmartCurtainMotorDevice extends BaseHybridDevice {
    */
   }
   async readAttributeSafe(cluster, attribute) {
-    try {
-      return await this.fallback.readAttributeWithFallback(cluster, attribute).catch(err => this.error(err));
-    } catch (err) {
-      this.error(`Failed to read ${cluster}.${attribute} after all fallback strategies:`, err);
-      throw err;
-    }
+  try {
+    return await this.fallback.readAttributeWithFallback(cluster, attribute).catch(err => this.error(err));
+  } catch (err) {
+    this.error(`Failed to read ${cluster}.${attribute} after all fallback strategies:`, err);
+    throw err;
   }
+}
 
   /**
    * Configure report with intelligent fallback
    */
   }
   async configureReportSafe(config) {
-    try {
-      return await this.fallback.configureReportWithFallback(config).catch(err => this.error(err));
-    } catch (err) {
-      this.error(`Failed to configure report after all fallback strategies:`, err);
-      // Don't throw - use polling as ultimate fallback
-      return { success: false, method: 'polling' };
-    }
+  try {
+    return await this.fallback.configureReportWithFallback(config).catch(err => this.error(err));
+  } catch (err) {
+    this.error(`Failed to configure report after all fallback strategies:`, err);
+    // Don't throw - use polling as ultimate fallback
+    return { success: false, method: 'polling' };
   }
+}
 
   /**
    * IAS Zone enrollment with fallback
    */
   }
   async enrollIASZoneSafe() {
-    try {
-      return await this.fallback.iasEnrollWithFallback().catch(err => this.error(err));
-    } catch (err) {
-      this.error('Failed to enroll IAS Zone after all fallback strategies:', err);
-      throw err;
-    }
+  try {
+    return await this.fallback.iasEnrollWithFallback().catch(err => this.error(err));
+  } catch (err) {
+    this.error('Failed to enroll IAS Zone after all fallback strategies:', err);
+    throw err;
   }
+}
 
-  /**
-   * Get fallback system statistics
-   */
-  getFallbackStats() {
-    return this.fallback ? this.fallback.getStats() : null;
-  }
+/**
+ * Get fallback system statistics
+ */
+getFallbackStats() {
+  return this.fallback ? this.fallback.getStats() : null;
+}
 }
 
 module.exports = SmartCurtainMotorDevice;
