@@ -102412,323 +102412,6 @@
       }
     },
     {
-      "id": "usb_outlet_1gang",
-      "name": {
-        "en": "USB Outlet - 1 Gang",
-        "fr": "Prise USB - 1 Gang",
-        "nl": "USB Stopcontact - 1 Gang",
-        "de": "USB Steckdose - 1 Gang",
-        "it": "Presa USB - 1 Gang",
-        "es": "Enchufe USB - 1 Gang"
-      },
-      "class": "socket",
-      "capabilities": [
-        "onoff",
-        "measure_power",
-        "meter_power",
-        "measure_voltage",
-        "measure_current"
-      ],
-      "capabilitiesOptions": {
-        "onoff": {
-          "title": {
-            "en": "Power",
-            "fr": "Alimentation",
-            "nl": "Stroom",
-            "de": "Strom"
-          }
-        }
-      },
-      "zigbee": {
-        "manufacturerName": [
-          "_TZ3000_ww6drja5",
-          "_TZ3000_kqvb5akv",
-          "_TZ3000_ltt60asa",
-          "_TZ3000_akqdg6g7",
-          "_TZ3000_1obwwnmq",
-          "_TZ3000_w0qqde0g",
-          "_TZ3000_vzopcetz",
-          "_TZ3000_g5xawfcq"
-        ],
-        "productId": [
-          "TS0115",
-          "TS011F",
-          "TS0121"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              4,
-              5,
-              6,
-              1794,
-              2820
-            ],
-            "bindings": [
-              6,
-              1
-            ]
-          }
-        },
-        "learnmode": {
-          "image": "/drivers/usb_outlet_1gang/assets/learnmode.svg",
-          "instruction": {
-            "en": "Press and hold the power button for 5 seconds until the LED blinks",
-            "fr": "Appuyez et maintenez le bouton d'alimentation pendant 5 secondes jusqu'à ce que la LED clignote",
-            "nl": "Houd de aan/uit-knop 5 seconden ingedrukt totdat de LED knippert",
-            "de": "Halten Sie die Power-Taste 5 Sekunden lang gedrückt, bis die LED blinkt"
-          }
-        }
-      },
-      "images": {
-        "small": "drivers/usb_outlet_1gang/assets/images/small.png",
-        "large": "drivers/usb_outlet_1gang/assets/images/large.png",
-        "xlarge": "drivers/usb_outlet_1gang/assets/images/xlarge.png"
-      },
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "zigbee"
-      ],
-      "settings": [
-        {
-          "id": "power_source",
-          "type": "dropdown",
-          "label": {
-            "en": "Power Source",
-            "fr": "Source d'Alimentation"
-          },
-          "value": "auto",
-          "values": [
-            {
-              "id": "auto",
-              "label": {
-                "en": "Auto Detect",
-                "fr": "Détection Automatique"
-              }
-            },
-            {
-              "id": "ac",
-              "label": {
-                "en": "AC Powered",
-                "fr": "Alimentation Secteur"
-              }
-            },
-            {
-              "id": "dc",
-              "label": {
-                "en": "DC Powered",
-                "fr": "Alimentation DC"
-              }
-            },
-            {
-              "id": "battery",
-              "label": {
-                "en": "Battery Powered",
-                "fr": "Sur Batterie"
-              }
-            }
-          ],
-          "hint": {
-            "en": "Select power source manually or use auto-detection",
-            "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
-          }
-        },
-        {
-          "id": "optimization_mode",
-          "type": "dropdown",
-          "label": {
-            "en": "Energy Optimization Mode",
-            "fr": "Mode Optimisation Énergétique"
-          },
-          "value": "balanced",
-          "values": [
-            {
-              "id": "performance",
-              "label": {
-                "en": "Performance (More responsive)",
-                "fr": "Performance (Plus réactif)"
-              }
-            },
-            {
-              "id": "balanced",
-              "label": {
-                "en": "Balanced",
-                "fr": "Équilibré"
-              }
-            },
-            {
-              "id": "power_saving",
-              "label": {
-                "en": "Power Saving (Longer battery)",
-                "fr": "Économie d'énergie (Batterie plus longue)"
-              }
-            }
-          ],
-          "hint": {
-            "en": "Balance between responsiveness and battery life",
-            "fr": "Équilibre entre réactivité et durée de vie de la batterie"
-          }
-        },
-        {
-          "id": "enable_power_estimation",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Power Estimation",
-            "fr": "Activer Estimation Puissance"
-          },
-          "value": true,
-          "hint": {
-            "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
-            "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
-          }
-        },
-        {
-          "id": "power_on_behavior",
-          "type": "dropdown",
-          "label": {
-            "en": "Power-on behavior",
-            "fr": "Comportement au démarrage"
-          },
-          "value": "last_state",
-          "values": [
-            {
-              "id": "off",
-              "label": {
-                "en": "Always OFF"
-              }
-            },
-            {
-              "id": "on",
-              "label": {
-                "en": "Always ON"
-              }
-            },
-            {
-              "id": "last_state",
-              "label": {
-                "en": "Last state"
-              }
-            }
-          ]
-        },
-        {
-          "id": "led_indicator",
-          "type": "dropdown",
-          "label": {
-            "en": "LED indicator",
-            "fr": "Indicateur LED"
-          },
-          "value": "on_when_on",
-          "values": [
-            {
-              "id": "off",
-              "label": {
-                "en": "Always OFF"
-              }
-            },
-            {
-              "id": "on",
-              "label": {
-                "en": "Always ON"
-              }
-            },
-            {
-              "id": "on_when_on",
-              "label": {
-                "en": "ON when device ON"
-              }
-            },
-            {
-              "id": "on_when_off",
-              "label": {
-                "en": "ON when device OFF"
-              }
-            }
-          ]
-        }
-      ],
-      "pair": [
-        {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "select_driver"
-          }
-        },
-        {
-          "id": "select_driver",
-          "navigation": {
-            "next": "add_devices"
-          }
-        },
-        {
-          "id": "add_devices",
-          "template": "add_devices"
-        }
-      ],
-      "flow": {
-        "triggers": [],
-        "actions": [
-          {
-            "id": "set_countdown",
-            "title": {
-              "en": "Set countdown timer",
-              "fr": "Programmer minuterie"
-            },
-            "args": [
-              {
-                "name": "duration",
-                "type": "number",
-                "min": 0,
-                "max": 86400,
-                "step": 60,
-                "label": "s",
-                "placeholder": {
-                  "en": "Duration in seconds"
-                }
-              },
-              {
-                "name": "gang",
-                "type": "dropdown",
-                "values": [
-                  {
-                    "id": "1",
-                    "label": {
-                      "en": "Gang 1"
-                    }
-                  },
-                  {
-                    "id": "2",
-                    "label": {
-                      "en": "Gang 2"
-                    }
-                  },
-                  {
-                    "id": "3",
-                    "label": {
-                      "en": "Gang 3"
-                    }
-                  },
-                  {
-                    "id": "4",
-                    "label": {
-                      "en": "Gang 4"
-                    }
-                  }
-                ]
-              }
-            ]
-          }
-        ],
-        "conditions": []
-      },
-      "energy": {}
-    },
-    {
       "id": "usb_outlet_2port",
       "name": {
         "en": "USB Outlet - 2 Ports",
@@ -103053,6 +102736,323 @@
       "flow": {
         "triggers": [],
         "actions": [],
+        "conditions": []
+      },
+      "energy": {}
+    },
+    {
+      "id": "usb_outlet_1gang",
+      "name": {
+        "en": "USB Outlet - 1 Gang",
+        "fr": "Prise USB - 1 Gang",
+        "nl": "USB Stopcontact - 1 Gang",
+        "de": "USB Steckdose - 1 Gang",
+        "it": "Presa USB - 1 Gang",
+        "es": "Enchufe USB - 1 Gang"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Power",
+            "fr": "Alimentation",
+            "nl": "Stroom",
+            "de": "Strom"
+          }
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_ww6drja5",
+          "_TZ3000_kqvb5akv",
+          "_TZ3000_ltt60asa",
+          "_TZ3000_akqdg6g7",
+          "_TZ3000_1obwwnmq",
+          "_TZ3000_w0qqde0g",
+          "_TZ3000_vzopcetz",
+          "_TZ3000_g5xawfcq"
+        ],
+        "productId": [
+          "TS0115",
+          "TS011F",
+          "TS0121"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              1794,
+              2820
+            ],
+            "bindings": [
+              6,
+              1
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/usb_outlet_1gang/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press and hold the power button for 5 seconds until the LED blinks",
+            "fr": "Appuyez et maintenez le bouton d'alimentation pendant 5 secondes jusqu'à ce que la LED clignote",
+            "nl": "Houd de aan/uit-knop 5 seconden ingedrukt totdat de LED knippert",
+            "de": "Halten Sie die Power-Taste 5 Sekunden lang gedrückt, bis die LED blinkt"
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/usb_outlet_1gang/assets/images/small.png",
+        "large": "drivers/usb_outlet_1gang/assets/images/large.png",
+        "xlarge": "drivers/usb_outlet_1gang/assets/images/xlarge.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "settings": [
+        {
+          "id": "power_source",
+          "type": "dropdown",
+          "label": {
+            "en": "Power Source",
+            "fr": "Source d'Alimentation"
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto Detect",
+                "fr": "Détection Automatique"
+              }
+            },
+            {
+              "id": "ac",
+              "label": {
+                "en": "AC Powered",
+                "fr": "Alimentation Secteur"
+              }
+            },
+            {
+              "id": "dc",
+              "label": {
+                "en": "DC Powered",
+                "fr": "Alimentation DC"
+              }
+            },
+            {
+              "id": "battery",
+              "label": {
+                "en": "Battery Powered",
+                "fr": "Sur Batterie"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Select power source manually or use auto-detection",
+            "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+          }
+        },
+        {
+          "id": "optimization_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Energy Optimization Mode",
+            "fr": "Mode Optimisation Énergétique"
+          },
+          "value": "balanced",
+          "values": [
+            {
+              "id": "performance",
+              "label": {
+                "en": "Performance (More responsive)",
+                "fr": "Performance (Plus réactif)"
+              }
+            },
+            {
+              "id": "balanced",
+              "label": {
+                "en": "Balanced",
+                "fr": "Équilibré"
+              }
+            },
+            {
+              "id": "power_saving",
+              "label": {
+                "en": "Power Saving (Longer battery)",
+                "fr": "Économie d'énergie (Batterie plus longue)"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Balance between responsiveness and battery life",
+            "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+          }
+        },
+        {
+          "id": "enable_power_estimation",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Power Estimation",
+            "fr": "Activer Estimation Puissance"
+          },
+          "value": true,
+          "hint": {
+            "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
+            "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+          }
+        },
+        {
+          "id": "power_on_behavior",
+          "type": "dropdown",
+          "label": {
+            "en": "Power-on behavior",
+            "fr": "Comportement au démarrage"
+          },
+          "value": "last_state",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Always OFF"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "Always ON"
+              }
+            },
+            {
+              "id": "last_state",
+              "label": {
+                "en": "Last state"
+              }
+            }
+          ]
+        },
+        {
+          "id": "led_indicator",
+          "type": "dropdown",
+          "label": {
+            "en": "LED indicator",
+            "fr": "Indicateur LED"
+          },
+          "value": "on_when_on",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Always OFF"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "Always ON"
+              }
+            },
+            {
+              "id": "on_when_on",
+              "label": {
+                "en": "ON when device ON"
+              }
+            },
+            {
+              "id": "on_when_off",
+              "label": {
+                "en": "ON when device OFF"
+              }
+            }
+          ]
+        }
+      ],
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "select_driver"
+          }
+        },
+        {
+          "id": "select_driver",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "flow": {
+        "triggers": [],
+        "actions": [
+          {
+            "id": "set_countdown",
+            "title": {
+              "en": "Set countdown timer",
+              "fr": "Programmer minuterie"
+            },
+            "args": [
+              {
+                "name": "duration",
+                "type": "number",
+                "min": 0,
+                "max": 86400,
+                "step": 60,
+                "label": "s",
+                "placeholder": {
+                  "en": "Duration in seconds"
+                }
+              },
+              {
+                "name": "gang",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "1",
+                    "label": {
+                      "en": "Gang 1"
+                    }
+                  },
+                  {
+                    "id": "2",
+                    "label": {
+                      "en": "Gang 2"
+                    }
+                  },
+                  {
+                    "id": "3",
+                    "label": {
+                      "en": "Gang 3"
+                    }
+                  },
+                  {
+                    "id": "4",
+                    "label": {
+                      "en": "Gang 4"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
         "conditions": []
       },
       "energy": {}
