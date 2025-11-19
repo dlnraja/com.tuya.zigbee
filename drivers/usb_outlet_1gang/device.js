@@ -133,23 +133,23 @@ class UsbOutlet1GangDevice extends SwitchDevice {
           //             get: 'rmsCurrent',
           //             report: 'rmsCurrent',
           //             reportParser: value => {
-          // Convert to Amps (device reports in mA)
-          const amps = value / 1000;
-          this.log('[DATA] Current:', amps, 'A');
-          return amps;
-        },
-        reportOpts: {
-          configureAttributeReporting: {
-            minInterval: 60,       // 1 minute
-              maxInterval: 600,      // 10 minutes
-                minChange: 100         // 100mA change
-          }
-        },
-        getOpts: {
-          getOnStart: true
-        }
-      });
-      this.log('[OK] measure_current configured (cluster 2820)');
+//           // Convert to Amps (device reports in mA)
+//           const amps = value / 1000;
+//           this.log('[DATA] Current:', amps, 'A');
+//           return amps;
+//         },
+//         reportOpts: {
+//           configureAttributeReporting: {
+//             minInterval: 60,       // 1 minute
+//               maxInterval: 600,      // 10 minutes
+//                 minChange: 100         // 100mA change
+//           }
+//         },
+//         getOpts: {
+//           getOnStart: true
+//         }
+//       });
+//       this.log('[OK] measure_current configured (cluster 2820)');
     }
   } catch(err) {
     this.error('Electrical measurement setup failed:', err);
