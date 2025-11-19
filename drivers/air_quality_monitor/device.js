@@ -186,7 +186,6 @@ class AirQualityMonitorProBatteryDevice extends SensorDevice {
   /**
    * Trigger flow with context data
    */
-  }
   async triggerFlowCard(cardId, tokens = {}) {
   try {
     const flowCard = this.homey.flow.getDeviceTriggerCard(cardId);

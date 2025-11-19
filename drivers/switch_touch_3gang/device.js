@@ -44,16 +44,16 @@ class SwitchTouch3GangDevice extends SwitchDevice {
 */
     // this.registerCapability('onoff.switch_2', 6, {
     //       endpoint: 2
+    //   });
+    /* REFACTOR: registerCapability deprecated with cluster spec.
+   Original: this.registerCapability('onoff.switch_3', 6,
+   Replace with SDK3 pattern - see ZigbeeDevice docs
+   Capability: 'onoff.switch_3', Cluster: 6
+  */
+    // this.registerCapability('onoff.switch_3', 6, {
+    //       endpoint: 3
   });
-  /* REFACTOR: registerCapability deprecated with cluster spec.
- Original: this.registerCapability('onoff.switch_3', 6,
- Replace with SDK3 pattern - see ZigbeeDevice docs
- Capability: 'onoff.switch_3', Cluster: 6
-*/
-  // this.registerCapability('onoff.switch_3', 6, {
-  //       endpoint: 3
-});
-  }
+}
 
   async onDeleted() {
   this.log('SwitchTouch3GangDevice deleted');
