@@ -92,12 +92,12 @@ class ContactVibrationSensor extends SensorDevice {
     if (this.hasCapability('measure_battery')) {
       this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
         get: 'batteryPercentageRemaining',
-        reportParser: value => {
+        reportParser: async value => {
           const batteryThreshold = this.getSetting('battery_low_threshold') || 20;
           const percentage = value / 2;
 
           if (this.hasCapability('alarm_battery')) {
-            await(async () => {
+            await (async () => {
               this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_battery'} = ${percentage < batteryThreshold}`);
               try {
                 await this.setCapabilityValue('alarm_battery', percentage < batteryThreshold);

@@ -143,7 +143,7 @@ class TempHumidSensorLeakDetectorDevice extends BaseHybridDevice {
     try {
       // Step 1: Setup Zone Enroll Request listener (SYNCHRONOUS - property assignment)
       // SDK3: Use property assignment, NOT .on() event listener
-      endpoint.clusters.iasZone.onZoneEnrollRequest = () => {
+      endpoint.clusters.iasZone.onZoneEnrollRequest = async () => {
         this.log('[MSG] Zone Enroll Request received');
 
         try {
@@ -151,7 +151,7 @@ class TempHumidSensorLeakDetectorDevice extends BaseHybridDevice {
           await endpoint.clusters.iasZone.zoneEnrollResponse({
             enrollResponseCode: 0, // 0 = Success
             zoneId: 10
-          } catch (err) { this.error(err); });
+          });
 
           this.log('[OK] Zone Enroll Response sent (zoneId: 10)');
         } catch (err) {
