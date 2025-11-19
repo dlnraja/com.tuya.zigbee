@@ -124,7 +124,7 @@ class WaterValveDevice extends BaseHybridDevice {
         await endpoint.clusters.iasZone.zoneEnrollResponse({
           enrollResponseCode: 0,
           zoneId: 10
-        } catch (err) { this.error(err); });
+        });
 
         this.log('[OK] Proactive Zone Enroll Response sent');
       } catch (err) {
@@ -133,7 +133,7 @@ class WaterValveDevice extends BaseHybridDevice {
 
       // Step 3: Setup Zone Status Change listener (property assignment)
       // SDK3: Use .onZoneStatusChangeNotification property, NOT .on() event
-      endpoint.clusters.iasZone.onZoneStatusChangeNotification = (payload) => {
+      endpoint.clusters.iasZone.onZoneStatusChangeNotification = async (payload) => {
         this.log('[MSG] Zone notification received:', payload);
 
         if (payload && payload.zoneStatus !== undefined) {
@@ -146,7 +146,7 @@ class WaterValveDevice extends BaseHybridDevice {
           // Check alarm1 bit (motion/alarm detected)
           const alarm = (status & 0x01) !== 0;
 
-          await(async () => {
+          await (async () => {
             this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_motion'} = ${alarm}`);
             try {
               await this.setCapabilityValue('alarm_motion', alarm);
@@ -164,7 +164,7 @@ class WaterValveDevice extends BaseHybridDevice {
 
       // Step 4: Setup Zone Status attribute listener (property assignment)
       // Alternative listener for attribute reports
-      endpoint.clusters.iasZone.onZoneStatus = (zoneStatus) => {
+      endpoint.clusters.iasZone.onZoneStatus = async (zoneStatus) => {
         this.log('[DATA] Zone attribute report:', zoneStatus);
 
         let status = zoneStatus;
@@ -173,7 +173,7 @@ class WaterValveDevice extends BaseHybridDevice {
         }
 
         const alarm = (status & 0x01) !== 0;
-        await(async () => {
+        await (async () => {
           this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_motion'} = ${alarm}`);
           try {
             await this.setCapabilityValue('alarm_motion', alarm);
