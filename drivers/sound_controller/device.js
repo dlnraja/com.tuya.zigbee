@@ -46,7 +46,6 @@ class SoundControllerBatteryDevice extends ButtonDevice {
         return percentage;
       },
       report: 'batteryPercentageRemaining',
-      reportParser: value => Math.round(value / 2),
       getOpts: {
         getOnStart: true,
         pollInterval: (this.getSetting('battery_report_interval') || 1) * 3600000
