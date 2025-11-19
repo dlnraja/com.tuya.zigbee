@@ -69,9 +69,9 @@ class WaterValveSmartHybridDevice extends BaseHybridDevice {
     // Initial battery poll after pairing
     setTimeout(async () => {
       try {
-        await this.pollAttributes().catch(err => this.error(err));
+        await this.pollAttributes();
         this.log('Initial battery poll completed');
-      } catch (err) { this.error(err); } catch (err) {
+      } catch (err) {
         this.error('Initial battery poll failed:', err);
       }
     }, 5000);

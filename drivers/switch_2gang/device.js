@@ -321,55 +321,54 @@ class SmartSwitch2gangHybridDevice extends SwitchDevice {
   /**
    * Check if any alarm is active
    */
-}
   async checkAnyAlarm() {
-  const capabilities = this.getCapabilities();
-  for (const cap of capabilities) {
-    if (cap.startsWith('alarm_')) {
-      const value = this.getCapabilityValue(cap);
-      if (value === true) return true;
+    const capabilities = this.getCapabilities();
+    for (const cap of capabilities) {
+      if (cap.startsWith('alarm_')) {
+        const value = this.getCapabilityValue(cap);
+        if (value === true) return true;
+      }
     }
-  }
-  return false;
-}
-
-/**
- * Get current context data
- */
-getContextData() {
-  const context = {
-    time_of_day: this.getTimeOfDay(),
-    timestamp: new Date().toISOString()
-  };
-
-  // Add available sensor values
-  const caps = this.getCapabilities();
-  if (caps.includes('measure_luminance')) {
-    context.luminance = this.getCapabilityValue('measure_luminance') || 0;
-  }
-  if (caps.includes('measure_temperature')) {
-    context.temperature = this.getCapabilityValue('measure_temperature') || 0;
-  }
-  if (caps.includes('measure_humidity')) {
-    context.humidity = this.getCapabilityValue('measure_humidity') || 0;
-  }
-  if (caps.includes('measure_battery')) {
-    context.battery = this.getCapabilityValue('measure_battery') || 0;
+    return false;
   }
 
-  return context;
-}
+  /**
+   * Get current context data
+   */
+  getContextData() {
+    const context = {
+      time_of_day: this.getTimeOfDay(),
+      timestamp: new Date().toISOString()
+    };
 
-/**
- * Get time of day
- */
-getTimeOfDay() {
-  const hour = new Date().getHours();
-  if (hour >= 5 && hour < 12) return 'morning';
-  if (hour >= 12 && hour < 17) return 'afternoon';
-  if (hour >= 17 && hour < 22) return 'evening';
-  return 'night';
-}
+    // Add available sensor values
+    const caps = this.getCapabilities();
+    if (caps.includes('measure_luminance')) {
+      context.luminance = this.getCapabilityValue('measure_luminance') || 0;
+    }
+    if (caps.includes('measure_temperature')) {
+      context.temperature = this.getCapabilityValue('measure_temperature') || 0;
+    }
+    if (caps.includes('measure_humidity')) {
+      context.humidity = this.getCapabilityValue('measure_humidity') || 0;
+    }
+    if (caps.includes('measure_battery')) {
+      context.battery = this.getCapabilityValue('measure_battery') || 0;
+    }
+
+    return context;
+  }
+
+  /**
+   * Get time of day
+   */
+  getTimeOfDay() {
+    const hour = new Date().getHours();
+    if (hour >= 5 && hour < 12) return 'morning';
+    if (hour >= 12 && hour < 17) return 'afternoon';
+    if (hour >= 17 && hour < 22) return 'evening';
+    return 'night';
+  }
 
 
 
@@ -377,7 +376,7 @@ getTimeOfDay() {
    * Poll tous les attributes pour forcer mise à jour
    * Résout: Données non visibles après pairing (Peter + autres)
    */
-  }
+}
   }
   async pollAttributes() {
   const promises = [];
