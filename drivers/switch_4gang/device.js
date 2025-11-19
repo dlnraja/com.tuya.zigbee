@@ -308,21 +308,20 @@ class SmartSwitch4gangHybridDevice extends SwitchDevice {
   /**
    * Trigger flow with context data
    */
-}
   async triggerFlowCard(cardId, tokens = {}) {
-  try {
-    const flowCard = this.homey.flow.getDeviceTriggerCard(cardId);
-    await flowCard.trigger(this, tokens).catch(err => this.error(err));
-    this.log(`[OK] Flow triggered: ${cardId}`, tokens);
-  } catch (err) {
-    this.error(`[ERROR] Flow trigger error: ${cardId}`, err);
+    try {
+      const flowCard = this.homey.flow.getDeviceTriggerCard(cardId);
+      await flowCard.trigger(this, tokens).catch(err => this.error(err));
+      this.log(`[OK] Flow triggered: ${cardId}`, tokens);
+    } catch (err) {
+      this.error(`[ERROR] Flow trigger error: ${cardId}`, err);
+    }
   }
-}
 
   /**
    * Check if any alarm is active
    */
-  }
+}
   async checkAnyAlarm() {
   const capabilities = this.getCapabilities();
   for (const cap of capabilities) {
