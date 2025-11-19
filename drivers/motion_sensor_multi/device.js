@@ -59,12 +59,12 @@ class MotionTempHumidityIlluminationMultiDevice extends BaseHybridDevice {
 //             minInterval: 60,
 //             maxInterval: 3600,
 //             minChange: 10
-          }
-        },
-        getOpts: {
-          getOnStart: true
-        }
-      });
+          //           }
+        //         },
+        //         getOpts: {
+          //           getOnStart: true
+        //         }
+      //       });
       
       this.log('[OK] measure_temperature configured (cluster 1026)');
     } catch (err) {
@@ -104,12 +104,12 @@ class MotionTempHumidityIlluminationMultiDevice extends BaseHybridDevice {
 //             minInterval: 60,
 //             maxInterval: 3600,
 //             minChange: 100
-          }
-        },
-        getOpts: {
-          getOnStart: true
-        }
-      });
+          //           }
+        //         },
+        //         getOpts: {
+          //           getOnStart: true
+        //         }
+      //       });
       
       this.log('[OK] measure_humidity configured (cluster 1029)');
     } catch (err) {
@@ -149,12 +149,12 @@ class MotionTempHumidityIlluminationMultiDevice extends BaseHybridDevice {
 //             minInterval: 60,
 //             maxInterval: 3600,
 //             minChange: 100
-          }
-        },
-        getOpts: {
-          getOnStart: true
-        }
-      });
+          //           }
+        //         },
+        //         getOpts: {
+          //           getOnStart: true
+        //         }
+      //       });
       
       this.log('[OK] measure_luminance configured (cluster 1024)');
     } catch (err) {
@@ -225,7 +225,7 @@ class MotionTempHumidityIlluminationMultiDevice extends BaseHybridDevice {
       
       // Step 3: Setup Zone Status Change listener (property assignment)
       // SDK3: Use .onZoneStatusChangeNotification property, NOT .on() event
-      endpoint.clusters.iasZone.onZoneStatusChangeNotification = (payload) => {
+      endpoint.clusters.iasZone.onZoneStatusChangeNotification = async (payload) => {
         this.log('[MSG] Zone notification received:', payload);
         
         if (payload && payload.zoneStatus !== undefined) {
