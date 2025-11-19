@@ -48,27 +48,27 @@ class DehumidifierDevice extends BaseHybridDevice {
       //           }
       //           return null;
       //         }
-    });
-  }
-
-  // measure_humidity capability via Tuya datapoints
-  if(this.hasCapability('measure_humidity')) {
-  /* REFACTOR: registerCapability deprecated with cluster spec.
-Original: this.registerCapability('measure_humidity', 61184,
-Replace with SDK3 pattern - see ZigbeeDevice docs
-Capability: 'measure_humidity', Cluster: 61184
-*/
-  // this.registerCapability('measure_humidity', 61184, {
-  //         endpoint: 1,
-  //         get: 'data',
-  //         reportParser: (value) => {
-  if (value && value.dp === 1) { // Current humidity datapoint
-    return value.data;
-  }
-  return null;
-}
-      });
+      //     });
     }
+
+    // measure_humidity capability via Tuya datapoints
+    if (this.hasCapability('measure_humidity')) {
+      /* REFACTOR: registerCapability deprecated with cluster spec.
+    Original: this.registerCapability('measure_humidity', 61184,
+    Replace with SDK3 pattern - see ZigbeeDevice docs
+    Capability: 'measure_humidity', Cluster: 61184
+    */
+      // this.registerCapability('measure_humidity', 61184, {
+      //         endpoint: 1,
+      //         get: 'data',
+      //         reportParser: (value) => {
+      if (value && value.dp === 1) { // Current humidity datapoint
+        return value.data;
+      }
+      return null;
+    }
+  });
+}
 
 // measure_temperature capability (if available)
 if (this.hasCapability('measure_temperature')) {

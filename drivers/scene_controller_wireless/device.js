@@ -223,27 +223,33 @@ class SceneControllerDevice extends ButtonDevice {
   /**
    * Register standard Zigbee capabilities (fallback)
    */
-}
   async registerStandardCapabilities() {
-  // Battery
-  if (this.hasCapability('measure_battery')) {
-    try {
-      this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
-        get: 'batteryPercentageRemaining',
-        report: 'batteryPercentageRemaining',
-        reportParser: value => {
-          this.log('Battery raw value:', value); // Smart calculation: check if value is already 0-100 or 0-200 if (value <= 100) { return Math.max(0, Math.min(100, value)); } else { return fromZclBatteryPercentageRemaining(value); } },
+    // Battery
+    if (this.hasCapability('measure_battery')) {
+      try {
+        this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
+          get: 'batteryPercentageRemaining',
+          report: 'batteryPercentageRemaining',
+          reportParser: value => {
+            this.log('Battery raw value:', value);
+            // Smart calculation: check if value is already 0-100 or 0-200
+            if (value <= 100) {
+              return Math.max(0, Math.min(100, value));
+            } else {
+              return fromZclBatteryPercentageRemaining(value);
+            }
+          },
           getParser: value => fromZclBatteryPercentageRemaining(value)
         });
-    } catch (err) {
-      this.log('Could not register battery capability:', err.message);
+      } catch (err) {
+        this.log('Could not register battery capability:', err.message);
+      }
     }
   }
-}
 
   async onDeleted() {
-  this.log('scene_controller deleted');
-}
+    this.log('scene_controller deleted');
+  }
   // ========================================
   // FLOW METHODS - Auto-generated
   // ========================================

@@ -280,51 +280,50 @@ class TuyaZigbeeDevice extends SwitchDevice {
   }
 
   // Helper: Trigger flow when capability changes
-}
   async triggerCapabilityFlow(capabilityId, value) {
-  const driverId = this.driver.id;
+    const driverId = this.driver.id;
 
-  // Alarm triggers
-  if (capabilityId.startsWith('alarm_')) {
-    const alarmName = capabilityId;
-    const triggerIdTrue = `${driverId}_${alarmName}_true`;
-    const triggerIdFalse = `${driverId}_${alarmName}_false`;
+    // Alarm triggers
+    if (capabilityId.startsWith('alarm_')) {
+      const alarmName = capabilityId;
+      const triggerIdTrue = `${driverId}_${alarmName}_true`;
+      const triggerIdFalse = `${driverId}_${alarmName}_false`;
 
-    try {
-      if (value === true) {
-        await this.homey.flow.getDeviceTriggerCard(triggerIdTrue).trigger(this).catch(err => this.error(err));
-        this.log(`Triggered: ${triggerIdTrue}`);
-      } else if (value === false) {
-        await this.homey.flow.getDeviceTriggerCard(triggerIdFalse).trigger(this).catch(err => this.error(err));
-        this.log(`Triggered: ${triggerIdFalse}`);
+      try {
+        if (value === true) {
+          await this.homey.flow.getDeviceTriggerCard(triggerIdTrue).trigger(this).catch(err => this.error(err));
+          this.log(`Triggered: ${triggerIdTrue}`);
+        } else if (value === false) {
+          await this.homey.flow.getDeviceTriggerCard(triggerIdFalse).trigger(this).catch(err => this.error(err));
+          this.log(`Triggered: ${triggerIdFalse}`);
+        }
+      } catch (error) {
+        this.error(`Error triggering ${alarmName}:`, error.message);
       }
-    } catch (error) {
-      this.error(`Error triggering ${alarmName}:`, error.message);
     }
-  }
 
-  // Measure triggers
-  if (capabilityId.startsWith('measure_')) {
-    const triggerId = `${driverId}_${capabilityId}_changed`;
-    try {
-      await this.homey.flow.getDeviceTriggerCard(triggerId).trigger(this, { value }).catch(err => this.error(err));
-      this.log(`Triggered: ${triggerId} with value: ${value}`);
-    } catch (error) {
-      this.error(`Error triggering ${capabilityId}:`, error.message);
+    // Measure triggers
+    if (capabilityId.startsWith('measure_')) {
+      const triggerId = `${driverId}_${capabilityId}_changed`;
+      try {
+        await this.homey.flow.getDeviceTriggerCard(triggerId).trigger(this, { value }).catch(err => this.error(err));
+        this.log(`Triggered: ${triggerId} with value: ${value}`);
+      } catch (error) {
+        this.error(`Error triggering ${capabilityId}:`, error.message);
+      }
     }
-  }
 
-  // OnOff triggers
-  if (capabilityId === 'onoff') {
-    const triggerId = value ? `${driverId}_turned_on` : `${driverId}_turned_off`;
-    try {
-      await this.homey.flow.getDeviceTriggerCard(triggerId).trigger(this).catch(err => this.error(err));
-      this.log(`Triggered: ${triggerId}`);
-    } catch (error) {
-      this.error(`Error triggering onoff:`, error.message);
+    // OnOff triggers
+    if (capabilityId === 'onoff') {
+      const triggerId = value ? `${driverId}_turned_on` : `${driverId}_turned_off`;
+      try {
+        await this.homey.flow.getDeviceTriggerCard(triggerId).trigger(this).catch(err => this.error(err));
+        this.log(`Triggered: ${triggerId}`);
+      } catch (error) {
+        this.error(`Error triggering onoff:`, error.message);
+      }
     }
   }
-}
   // ========================================
   // FLOW METHODS - Auto-generated
   // ========================================
@@ -332,7 +331,7 @@ class TuyaZigbeeDevice extends SwitchDevice {
   /**
    * Trigger flow with context data
    */
-  }
+}
   async triggerFlowCard(cardId, tokens = {}) {
   try {
     const flowCard = this.homey.flow.getDeviceTriggerCard(cardId);
