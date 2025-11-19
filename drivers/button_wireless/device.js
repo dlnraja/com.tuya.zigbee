@@ -55,7 +55,6 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
   /**
    * Détecte automatiquement le nombre de boutons
    */
-  }
   async detectButtonCount(zclNode) {
     // Check user setting first
     const settingCount = this.getSetting('button_count');
@@ -78,7 +77,6 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
   /**
    * Détecte si le device a une batterie
    */
-  }
   async detectBattery(zclNode) {
     try {
       const endpoint = zclNode.endpoints[1];
@@ -106,7 +104,6 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
   /**
    * Configure les capabilities dynamiquement
    */
-  }
   async setupDynamicCapabilities(buttonCount, hasBattery) {
     this.log(`Setting up capabilities: ${buttonCount} buttons, battery: ${hasBattery}`);
     
@@ -148,7 +145,6 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
   /**
    * Configure battery reporting
    */
-  }
   async configureBatteryReporting(zclNode) {
     try {
       const endpoint = zclNode.endpoints[1];
@@ -197,7 +193,6 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
   /**
    * Configure button clusters
    */
-  }
   async configureButtonClusters(zclNode, buttonCount) {
     for (let i = 1; i <= buttonCount; i++) {
       const endpoint = zclNode.endpoints[i];
@@ -239,7 +234,6 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
   /**
    * Handle settings changes
    */
-  }
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     this.log('Settings changed:', changedKeys);
     
