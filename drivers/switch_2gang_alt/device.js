@@ -7,16 +7,16 @@ const FallbackSystem = require('../../lib/FallbackSystem');
 
 class TuyaZigbeeDevice extends SwitchDevice {
 
-    async onNodeInit({ zclNode }) {
+  async onNodeInit({ zclNode }) {
     // Initialize hybrid base (power detection)
     await super.onNodeInit({ zclNode });
 
-        this.enableDebug();
-        this.printNode();
-        
+    this.enableDebug();
+    this.printNode();
+
     // Register capabilities with numeric Zigbee clusters
     if (this.hasCapability('onoff')) {
-// TODO: Consider debouncing capability updates for better performance
+      // TODO: Consider debouncing capability updates for better performance
       this.registerCapability('onoff', 6);
     }
     if (this.hasCapability('dim')) {
@@ -52,27 +52,26 @@ class TuyaZigbeeDevice extends SwitchDevice {
     if (this.hasCapability('measure_battery')) {
       this.registerCapability('measure_battery', 1);
     }
-        // Register capabilities based on driver config
-        const capabilities = this.getCapabilities();
-        
-        // Register measure capabilities
-        capabilities.filter(cap => cap.startsWith('measure_')).forEach(capability => {
-            // replaced by numeric cluster registration
-        });
-        
-        // Register alarm capabilities  
-        capabilities.filter(cap => cap.startsWith('alarm_')).forEach(capability => {
-            // replaced by numeric cluster registration
-        });
-        }
-        
-        this.log('Tuya Zigbee device initialized');
-    }
+    // Register capabilities based on driver config
+    const capabilities = this.getCapabilities();
+
+    // Register measure capabilities
+    capabilities.filter(cap => cap.startsWith('measure_')).forEach(capability => {
+      // replaced by numeric cluster registration
+    });
+
+    // Register alarm capabilities
+    capabilities.filter(cap => cap.startsWith('alarm_')).forEach(capability => {
+      // replaced by numeric cluster registration
+    });
+
+    this.log('Tuya Zigbee device initialized');
+  }
 
 
   async setCapabilityValue(capabilityId, value) {
     try {
-    await super.setCapabilityValue(capabilityId, value).catch(err => this.error(err));
+      await super.setCapabilityValue(capabilityId, value).catch(err => this.error(err));
     } catch (err) { this.error('Await error:', err); }
     await this.triggerCapabilityFlow(capabilityId, value).catch(err => this.error(err));
   }
@@ -89,7 +88,7 @@ class TuyaZigbeeDevice extends SwitchDevice {
     // Triggers are handled automatically via triggerCapabilityFlow()
 
     // CONDITIONS
-    
+
     // Condition: OnOff
     try {
       const isOnCard = this.homey.flow.getDeviceConditionCard('switch_2gang_hybrid_is_on');
@@ -146,10 +145,10 @@ class TuyaZigbeeDevice extends SwitchDevice {
         // Card might not exist
       }
     });
-  
+
 
     // ACTIONS
-    
+
     // Action: Turn On
     try {
       const turnOnCard = this.homey.flow.getDeviceActionCard('switch_2gang_hybrid_turn_on');
@@ -224,7 +223,7 @@ class TuyaZigbeeDevice extends SwitchDevice {
       if (closeCard) {
         closeCard.registerRunListener(async (args, state) => {
           try {
-          await args.device.setCapabilityValue('windowcoverings_set', 0).catch(err => this.error(err));
+            await args.device.setCapabilityValue('windowcoverings_set', 0).catch(err => this.error(err));
           } catch (err) { this.error('Await error:', err); }
         });
       }
@@ -252,7 +251,7 @@ class TuyaZigbeeDevice extends SwitchDevice {
               await new Promise(resolve => setTimeout(resolve, 300)).catch(err => this.error(err));
               await args.device.setCapabilityValue('onoff', false).catch(err => this.error(err));
               try {
-              await new Promise(resolve => setTimeout(resolve, 300)).catch(err => this.error(err));
+                await new Promise(resolve => setTimeout(resolve, 300)).catch(err => this.error(err));
               } catch (err) { this.error('Await error:', err); }
             }
             await args.device.setCapabilityValue('onoff', original).catch(err => this.error(err));
@@ -277,55 +276,55 @@ class TuyaZigbeeDevice extends SwitchDevice {
     } catch (error) {
       // Card might not exist
     }
-  
+
   }
 
   // Helper: Trigger flow when capability changes
-  }
+}
   async triggerCapabilityFlow(capabilityId, value) {
-    const driverId = this.driver.id;
-    
-    // Alarm triggers
-    if (capabilityId.startsWith('alarm_')) {
-      const alarmName = capabilityId;
-      const triggerIdTrue = `${driverId}_${alarmName}_true`;
-      const triggerIdFalse = `${driverId}_${alarmName}_false`;
-      
-      try {
-        if (value === true) {
-          await this.homey.flow.getDeviceTriggerCard(triggerIdTrue).trigger(this).catch(err => this.error(err));
-          this.log(`Triggered: ${triggerIdTrue}`);
-        } else if (value === false) {
-          await this.homey.flow.getDeviceTriggerCard(triggerIdFalse).trigger(this).catch(err => this.error(err));
-          this.log(`Triggered: ${triggerIdFalse}`);
-        }
-      } catch (error) {
-        this.error(`Error triggering ${alarmName}:`, error.message);
+  const driverId = this.driver.id;
+
+  // Alarm triggers
+  if (capabilityId.startsWith('alarm_')) {
+    const alarmName = capabilityId;
+    const triggerIdTrue = `${driverId}_${alarmName}_true`;
+    const triggerIdFalse = `${driverId}_${alarmName}_false`;
+
+    try {
+      if (value === true) {
+        await this.homey.flow.getDeviceTriggerCard(triggerIdTrue).trigger(this).catch(err => this.error(err));
+        this.log(`Triggered: ${triggerIdTrue}`);
+      } else if (value === false) {
+        await this.homey.flow.getDeviceTriggerCard(triggerIdFalse).trigger(this).catch(err => this.error(err));
+        this.log(`Triggered: ${triggerIdFalse}`);
       }
-    }
-    
-    // Measure triggers
-    if (capabilityId.startsWith('measure_')) {
-      const triggerId = `${driverId}_${capabilityId}_changed`;
-      try {
-        await this.homey.flow.getDeviceTriggerCard(triggerId).trigger(this, { value }).catch(err => this.error(err));
-        this.log(`Triggered: ${triggerId} with value: ${value}`);
-      } catch (error) {
-        this.error(`Error triggering ${capabilityId}:`, error.message);
-      }
-    }
-    
-    // OnOff triggers
-    if (capabilityId === 'onoff') {
-      const triggerId = value ? `${driverId}_turned_on` : `${driverId}_turned_off`;
-      try {
-        await this.homey.flow.getDeviceTriggerCard(triggerId).trigger(this).catch(err => this.error(err));
-        this.log(`Triggered: ${triggerId}`);
-      } catch (error) {
-        this.error(`Error triggering onoff:`, error.message);
-      }
+    } catch (error) {
+      this.error(`Error triggering ${alarmName}:`, error.message);
     }
   }
+
+  // Measure triggers
+  if (capabilityId.startsWith('measure_')) {
+    const triggerId = `${driverId}_${capabilityId}_changed`;
+    try {
+      await this.homey.flow.getDeviceTriggerCard(triggerId).trigger(this, { value }).catch(err => this.error(err));
+      this.log(`Triggered: ${triggerId} with value: ${value}`);
+    } catch (error) {
+      this.error(`Error triggering ${capabilityId}:`, error.message);
+    }
+  }
+
+  // OnOff triggers
+  if (capabilityId === 'onoff') {
+    const triggerId = value ? `${driverId}_turned_on` : `${driverId}_turned_off`;
+    try {
+      await this.homey.flow.getDeviceTriggerCard(triggerId).trigger(this).catch(err => this.error(err));
+      this.log(`Triggered: ${triggerId}`);
+    } catch (error) {
+      this.error(`Error triggering onoff:`, error.message);
+    }
+  }
+}
   // ========================================
   // FLOW METHODS - Auto-generated
   // ========================================
@@ -335,67 +334,67 @@ class TuyaZigbeeDevice extends SwitchDevice {
    */
   }
   async triggerFlowCard(cardId, tokens = {}) {
-    try {
-      const flowCard = this.homey.flow.getDeviceTriggerCard(cardId);
-      await flowCard.trigger(this, tokens).catch(err => this.error(err));
-      this.log(`[OK] Flow triggered: ${cardId}`, tokens);
-    } catch (err) {
-      this.error(`[ERROR] Flow trigger error: ${cardId}`, err);
-    }
+  try {
+    const flowCard = this.homey.flow.getDeviceTriggerCard(cardId);
+    await flowCard.trigger(this, tokens).catch(err => this.error(err));
+    this.log(`[OK] Flow triggered: ${cardId}`, tokens);
+  } catch (err) {
+    this.error(`[ERROR] Flow trigger error: ${cardId}`, err);
   }
+}
 
   /**
    * Check if any alarm is active
    */
   }
   async checkAnyAlarm() {
-    const capabilities = this.getCapabilities();
-    for (const cap of capabilities) {
-      if (cap.startsWith('alarm_')) {
-        const value = this.getCapabilityValue(cap);
-        if (value === true) return true;
-      }
+  const capabilities = this.getCapabilities();
+  for (const cap of capabilities) {
+    if (cap.startsWith('alarm_')) {
+      const value = this.getCapabilityValue(cap);
+      if (value === true) return true;
     }
-    return false;
+  }
+  return false;
+}
+
+/**
+ * Get current context data
+ */
+getContextData() {
+  const context = {
+    time_of_day: this.getTimeOfDay(),
+    timestamp: new Date().toISOString()
+  };
+
+  // Add available sensor values
+  const caps = this.getCapabilities();
+  if (caps.includes('measure_luminance')) {
+    context.luminance = this.getCapabilityValue('measure_luminance') || 0;
+  }
+  if (caps.includes('measure_temperature')) {
+    context.temperature = this.getCapabilityValue('measure_temperature') || 0;
+  }
+  if (caps.includes('measure_humidity')) {
+    context.humidity = this.getCapabilityValue('measure_humidity') || 0;
+  }
+  if (caps.includes('measure_battery')) {
+    context.battery = this.getCapabilityValue('measure_battery') || 0;
   }
 
-  /**
-   * Get current context data
-   */
-  getContextData() {
-    const context = {
-      time_of_day: this.getTimeOfDay(),
-      timestamp: new Date().toISOString()
-    };
-    
-    // Add available sensor values
-    const caps = this.getCapabilities();
-    if (caps.includes('measure_luminance')) {
-      context.luminance = this.getCapabilityValue('measure_luminance') || 0;
-    }
-    if (caps.includes('measure_temperature')) {
-      context.temperature = this.getCapabilityValue('measure_temperature') || 0;
-    }
-    if (caps.includes('measure_humidity')) {
-      context.humidity = this.getCapabilityValue('measure_humidity') || 0;
-    }
-    if (caps.includes('measure_battery')) {
-      context.battery = this.getCapabilityValue('measure_battery') || 0;
-    }
-    
-    return context;
-  }
+  return context;
+}
 
-  /**
-   * Get time of day
-   */
-  getTimeOfDay() {
-    const hour = new Date().getHours();
-    if (hour >= 5 && hour < 12) return 'morning';
-    if (hour >= 12 && hour < 17) return 'afternoon';
-    if (hour >= 17 && hour < 22) return 'evening';
-    return 'night';
-  }
+/**
+ * Get time of day
+ */
+getTimeOfDay() {
+  const hour = new Date().getHours();
+  if (hour >= 5 && hour < 12) return 'morning';
+  if (hour >= 12 && hour < 17) return 'afternoon';
+  if (hour >= 17 && hour < 22) return 'evening';
+  return 'night';
+}
 
 
 
@@ -406,58 +405,58 @@ class TuyaZigbeeDevice extends SwitchDevice {
   }
   }
   async pollAttributes() {
-    const promises = [];
-    
-    // Battery
-    if (this.hasCapability('measure_battery')) {
-      promises.push(
+  const promises = [];
+
+  // Battery
+  if (this.hasCapability('measure_battery')) {
+    promises.push(
       // TODO: Wrap in try/catch
-        this.zclNode.endpoints[1]?.clusters.powerConfiguration?.readAttributes(['batteryPercentageRemaining'])
-          .catch(err => this.log('Battery read failed (ignorable):', err.message))
-      );
-    }
-    
-    // Temperature
-    if (this.hasCapability('measure_temperature')) {
-      promises.push(
-      // TODO: Wrap in try/catch
-        this.zclNode.endpoints[1]?.clusters.temperatureMeasurement?.readAttributes(['measuredValue'])
-          .catch(err => this.log('Temperature read failed (ignorable):', err.message))
-      );
-    }
-    
-    // Humidity
-    if (this.hasCapability('measure_humidity')) {
-      promises.push(
-      // TODO: Wrap in try/catch
-        this.zclNode.endpoints[1]?.clusters.relativeHumidity?.readAttributes(['measuredValue'])
-          .catch(err => this.log('Humidity read failed (ignorable):', err.message))
-      );
-    }
-    
-    // Illuminance
-    if (this.hasCapability('measure_luminance')) {
-      promises.push(
-      // TODO: Wrap in try/catch
-        this.zclNode.endpoints[1]?.clusters.illuminanceMeasurement?.readAttributes(['measuredValue'])
-          .catch(err => this.log('Illuminance read failed (ignorable):', err.message))
-      );
-    }
-    
-    // Alarm status (IAS Zone)
-    if (this.hasCapability('alarm_motion') || this.hasCapability('alarm_contact')) {
-      promises.push(
-      // TODO: Wrap in try/catch
-        this.zclNode.endpoints[1]?.clusters.iasZone?.readAttributes(['zoneStatus'])
-          .catch(err => this.log('IAS Zone read failed (ignorable):', err.message))
-      );
-    }
-    
-    try {
-    await Promise.allSettled(promises).catch(err => this.error(err));
-    } catch (err) { this.error('Await error:', err); }
-    this.log('[OK] Poll attributes completed');
+      this.zclNode.endpoints[1]?.clusters.powerConfiguration?.readAttributes(['batteryPercentageRemaining'])
+        .catch(err => this.log('Battery read failed (ignorable):', err.message))
+    );
   }
+
+  // Temperature
+  if (this.hasCapability('measure_temperature')) {
+    promises.push(
+      // TODO: Wrap in try/catch
+      this.zclNode.endpoints[1]?.clusters.temperatureMeasurement?.readAttributes(['measuredValue'])
+        .catch(err => this.log('Temperature read failed (ignorable):', err.message))
+    );
+  }
+
+  // Humidity
+  if (this.hasCapability('measure_humidity')) {
+    promises.push(
+      // TODO: Wrap in try/catch
+      this.zclNode.endpoints[1]?.clusters.relativeHumidity?.readAttributes(['measuredValue'])
+        .catch(err => this.log('Humidity read failed (ignorable):', err.message))
+    );
+  }
+
+  // Illuminance
+  if (this.hasCapability('measure_luminance')) {
+    promises.push(
+      // TODO: Wrap in try/catch
+      this.zclNode.endpoints[1]?.clusters.illuminanceMeasurement?.readAttributes(['measuredValue'])
+        .catch(err => this.log('Illuminance read failed (ignorable):', err.message))
+    );
+  }
+
+  // Alarm status (IAS Zone)
+  if (this.hasCapability('alarm_motion') || this.hasCapability('alarm_contact')) {
+    promises.push(
+      // TODO: Wrap in try/catch
+      this.zclNode.endpoints[1]?.clusters.iasZone?.readAttributes(['zoneStatus'])
+        .catch(err => this.log('IAS Zone read failed (ignorable):', err.message))
+    );
+  }
+
+  try {
+    await Promise.allSettled(promises).catch(err => this.error(err));
+  } catch (err) { this.error('Await error:', err); }
+  this.log('[OK] Poll attributes completed');
+}
 
 
 
@@ -467,47 +466,47 @@ class TuyaZigbeeDevice extends SwitchDevice {
    */
   }
   async readAttributeSafe(cluster, attribute) {
-    try {
-      return await this.fallback.readAttributeWithFallback(cluster, attribute).catch(err => this.error(err));
-    } catch (err) {
-      this.error(`Failed to read ${cluster}.${attribute} after all fallback strategies:`, err);
-      throw err;
-    }
+  try {
+    return await this.fallback.readAttributeWithFallback(cluster, attribute).catch(err => this.error(err));
+  } catch (err) {
+    this.error(`Failed to read ${cluster}.${attribute} after all fallback strategies:`, err);
+    throw err;
   }
+}
 
   /**
    * Configure report with intelligent fallback
    */
   }
   async configureReportSafe(config) {
-    try {
-      return await this.fallback.configureReportWithFallback(config).catch(err => this.error(err));
-    } catch (err) {
-      this.error(`Failed to configure report after all fallback strategies:`, err);
-      // Don't throw - use polling as ultimate fallback
-      return { success: false, method: 'polling' };
-    }
+  try {
+    return await this.fallback.configureReportWithFallback(config).catch(err => this.error(err));
+  } catch (err) {
+    this.error(`Failed to configure report after all fallback strategies:`, err);
+    // Don't throw - use polling as ultimate fallback
+    return { success: false, method: 'polling' };
   }
+}
 
   /**
    * IAS Zone enrollment with fallback
    */
   }
   async enrollIASZoneSafe() {
-    try {
-      return await this.fallback.iasEnrollWithFallback().catch(err => this.error(err));
-    } catch (err) {
-      this.error('Failed to enroll IAS Zone after all fallback strategies:', err);
-      throw err;
-    }
+  try {
+    return await this.fallback.iasEnrollWithFallback().catch(err => this.error(err));
+  } catch (err) {
+    this.error('Failed to enroll IAS Zone after all fallback strategies:', err);
+    throw err;
   }
+}
 
-  /**
-   * Get fallback system statistics
-   */
-  getFallbackStats() {
-    return this.fallback ? this.fallback.getStats() : null;
-  }
+/**
+ * Get fallback system statistics
+ */
+getFallbackStats() {
+  return this.fallback ? this.fallback.getStats() : null;
+}
 }
 
 module.exports = TuyaZigbeeDevice;

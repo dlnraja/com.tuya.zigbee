@@ -79,13 +79,13 @@ class UsbOutlet1GangDevice extends SwitchDevice {
           //               this.log('[DATA] Power:', watts, 'W');
           //               return watts;
           //             },
-          reportOpts: {
-            configureAttributeReporting: {
-              minInterval: 5,        // 5 seconds minimum
-                maxInterval: 300,      // 5 minutes maximum
-                  minChange: 1           // 0.1W change
-            }
-          },
+          //           reportOpts: {
+          //             configureAttributeReporting: {
+          //               minInterval: 5,        // 5 seconds minimum
+          //               maxInterval: 300,      // 5 minutes maximum
+          //               minChange: 1           // 0.1W change
+          //             }
+          //           },
           getOpts: {
             getOnStart: true
           }

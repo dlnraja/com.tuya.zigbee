@@ -199,7 +199,6 @@ class AirQualityMonitorProBatteryDevice extends SensorDevice {
   /**
    * Check if any alarm is active
    */
-  }
   async checkAnyAlarm() {
   const capabilities = this.getCapabilities();
   for (const cap of capabilities) {
