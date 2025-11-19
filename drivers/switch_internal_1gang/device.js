@@ -339,8 +339,6 @@ class TuyaZigbeeDevice extends SwitchDevice {
    * Poll tous les attributes pour forcer mise à jour
    * Résout: Données non visibles après pairing (Peter + autres)
    */
-  }
-  }
   async pollAttributes() {
   const promises = [];
 

@@ -93,92 +93,92 @@ class TemperatureControllerHybridDevice extends BaseHybridDevice {
               this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_battery'}`, err.message);
               throw err;
             }
-          })()).catch(err => this.error(err));
-    this.log('Battery polled:', percentage + '%');
+          })().catch(err => this.error(err));
+          this.log('Battery polled:', percentage + '%');
 
-    // Reset failure counter on success
-    pollFailures = 0;
+          // Reset failure counter on success
+          pollFailures = 0;
 
-    // Low battery alert
-    if (percentage <= 20 && percentage > 10) {
-      this.log('[WARN]  Low battery warning:', percentage + '%');
-      await this.homey.notifications.createNotification({
-        excerpt: `${this.getName()} battery low (${percentage}%)`
-      }).catch(() => { });
-    }
+          // Low battery alert
+          if (percentage <= 20 && percentage > 10) {
+            this.log('[WARN]  Low battery warning:', percentage + '%');
+            await this.homey.notifications.createNotification({
+              excerpt: `${this.getName()} battery low (${percentage}%)`
+            }).catch(() => { });
+          }
 
-    // Critical battery alert
-    if (percentage <= 10) {
-      this.log('🔴 Critical battery:', percentage + '%');
-      await this.homey.notifications.createNotification({
-        excerpt: `${this.getName()} battery critical (${percentage}%) - replace soon!`
-      }).catch(() => { });
-    }
-  }
-} catch (err) {
-  pollFailures++;
-  this.error(`Battery poll failed (${pollFailures}/${maxPollFailures}):`, err.message);
+          // Critical battery alert
+          if (percentage <= 10) {
+            this.log('🔴 Critical battery:', percentage + '%');
+            await this.homey.notifications.createNotification({
+              excerpt: `${this.getName()} battery critical (${percentage}%) - replace soon!`
+            }).catch(() => { });
+          }
+        }
+      } catch (err) {
+        pollFailures++;
+        this.error(`Battery poll failed (${pollFailures}/${maxPollFailures}):`, err.message);
 
-  // Stop polling after max failures to preserve battery
-  if (pollFailures >= maxPollFailures) {
-    this.log('Max poll failures reached, reducing poll frequency');
-    // Polling will continue but less frequently
-  }
-}
+        // Stop polling after max failures to preserve battery
+        if (pollFailures >= maxPollFailures) {
+          this.log('Max poll failures reached, reducing poll frequency');
+          // Polling will continue but less frequently
+        }
+      }
     }, 600000);
-// Force initial read après pairing (résout données non visibles)
-setTimeout(() => {
-  this.pollAttributes().catch(err => this.error('Initial poll failed:', err));
-}, 5000);
+    // Force initial read après pairing (résout données non visibles)
+    setTimeout(() => {
+      this.pollAttributes().catch(err => this.error('Initial poll failed:', err));
+    }, 5000);
 
-// Poll attributes régulièrement pour assurer visibilité données
-this.registerPollInterval(async () => {
-  try {
-    // Force read de tous les attributes critiques
-    await this.pollAttributes().catch(err => this.error(err));
-  } catch (err) {
-    this.error('Poll failed:', err);
+    // Poll attributes régulièrement pour assurer visibilité données
+    this.registerPollInterval(async () => {
+      try {
+        // Force read de tous les attributes critiques
+        await this.pollAttributes().catch(err => this.error(err));
+      } catch (err) {
+        this.error('Poll failed:', err);
+      }
+    }, 300000); // 5 minutes
+
+    this.log('temperature_controller_hybrid initialized');
+
+    // Call parent
+    try {
+      await super.onNodeInit({ zclNode }).catch(err => this.error(err));
+      // Initialize Fallback System
+      this.fallback = new FallbackSystem(this, {
+        maxRetries: 3,
+        baseDelay: 1000,
+        verbosity: this.getSetting('debug_level') || 'INFO',
+        trackPerformance: true
+      });
+      this.log('[OK] FallbackSystem initialized');
+    } catch (err) { this.error('Await error:', err); }
+
+    // Auto-detect device type and initialize Tuya cluster handler
+    const deviceType = TuyaClusterHandler.detectDeviceType('temperature_controller_hybrid');
+    const tuyaInitialized = await TuyaClusterHandler.init(this, zclNode, deviceType).catch(err => this.error(err));
+
+    if (tuyaInitialized) {
+      this.log('[OK] Tuya cluster handler initialized for type:', deviceType);
+    } else {
+      this.log('[WARN]  No Tuya cluster found, using standard Zigbee');
+
+      // Fallback to standard cluster handling if needed
+      try {
+        await this.registerStandardCapabilities().catch(err => this.error(err));
+      } catch (err) { this.error('Await error:', err); }
+    }
+
+    // Mark device as available
+    await this.setAvailable().catch(err => this.error(err));
   }
-}, 300000); // 5 minutes
 
-this.log('temperature_controller_hybrid initialized');
-
-// Call parent
-try {
-  await super.onNodeInit({ zclNode }).catch(err => this.error(err));
-  // Initialize Fallback System
-  this.fallback = new FallbackSystem(this, {
-    maxRetries: 3,
-    baseDelay: 1000,
-    verbosity: this.getSetting('debug_level') || 'INFO',
-    trackPerformance: true
-  });
-  this.log('[OK] FallbackSystem initialized');
-} catch (err) { this.error('Await error:', err); }
-
-// Auto-detect device type and initialize Tuya cluster handler
-const deviceType = TuyaClusterHandler.detectDeviceType('temperature_controller_hybrid');
-const tuyaInitialized = await TuyaClusterHandler.init(this, zclNode, deviceType).catch(err => this.error(err));
-
-if (tuyaInitialized) {
-  this.log('[OK] Tuya cluster handler initialized for type:', deviceType);
-} else {
-  this.log('[WARN]  No Tuya cluster found, using standard Zigbee');
-
-  // Fallback to standard cluster handling if needed
-  try {
-    await this.registerStandardCapabilities().catch(err => this.error(err));
-  } catch (err) { this.error('Await error:', err); }
+  catch(err) {
+    this.error('Battery change detection error:', err);
+  }
 }
-
-// Mark device as available
-await this.setAvailable().catch(err => this.error(err));
-  }
-
-   catch (err) {
-  this.error('Battery change detection error:', err);
-}
-  }
   // ========================================
   // FLOW METHODS - Auto-generated
   // ========================================
