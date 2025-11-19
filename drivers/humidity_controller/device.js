@@ -55,12 +55,12 @@ class HumidityControllerDevice extends BaseHybridDevice {
 //             minInterval: 60,
 //             maxInterval: 3600,
 //             minChange: 10
-          }
-        },
-        getOpts: {
-          getOnStart: true
-        }
-      });
+          //           }
+        //         },
+        //         getOpts: {
+          //           getOnStart: true
+        //         }
+      //       });
       
       this.log('[OK] measure_temperature configured (cluster 1026)');
     } catch (err) {
@@ -100,12 +100,12 @@ class HumidityControllerDevice extends BaseHybridDevice {
 //             minInterval: 60,
 //             maxInterval: 3600,
 //             minChange: 100
-          }
-        },
-        getOpts: {
-          getOnStart: true
-        }
-      });
+          //           }
+        //         },
+        //         getOpts: {
+          //           getOnStart: true
+        //         }
+      //       });
       
       this.log('[OK] measure_humidity configured (cluster 1029)');
     } catch (err) {
