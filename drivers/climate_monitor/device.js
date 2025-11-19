@@ -4,7 +4,7 @@ const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
 
 /**
  * ClimateMonitorDevice - Enhanced SDK3 Climate Monitor
- * 
+ *
  * Features:
  * - Temperature & Humidity sensing (clusters 1026, 1029)
  * - Multi-protocol battery detection (Zigbee/Tuya/Xiaomi)
@@ -12,12 +12,12 @@ const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
  * - Backlight control button
  * - Hybrid power support (AC/DC/Battery)
  * - SDK3 compliant: Numeric cluster IDs only
- * 
+ *
  * Supported Protocols:
  * - Standard Zigbee (TS0201, _TZ3000_* series)
  * - Tuya Custom (TS0601, _TZE200_* series, cluster 61184)
  * - Xiaomi/Aqara (lumi.* series)
- * 
+ *
  * Clusters:
  * - 0 (Basic): Device info, power source
  * - 1 (PowerConfiguration): Standard Zigbee battery
@@ -31,27 +31,27 @@ class ClimateMonitorDevice extends BaseHybridDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('[TEMP]  ClimateMonitorDevice initializing (SDK3)...');
-    
+
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit({ zclNode }).catch(err => this.error(err));
-    
+
     // Setup Tuya DP listeners for climate data
     if (this.tuyaEF00Manager && this.tuyaEF00Manager.tuyaCluster) {
       await this.setupClimateListeners();
     }
-    
+
     // Setup climate sensing (temperature & humidity)
     await this.setupClimateSensing();
-    
+
     // Setup multi-protocol battery detection
     await this.setupMultiProtocolBattery();
-    
+
     // Setup time synchronization
     await this.setupTimeSync();
-    
+
     // Setup backlight button control
     await this.setupBacklightButton();
-    
+
     this.log('[OK] ClimateMonitorDevice ready');
     this.log(`   Power source: ${this.powerType || 'unknown'}`);
     this.log(`   Model: ${this.getData().manufacturerName}`);
@@ -63,54 +63,54 @@ class ClimateMonitorDevice extends BaseHybridDevice {
    */
   async setupClimateSensing() {
     this.log('[TEMP]  Setting up climate sensing (SDK3)...');
-    
+
     const endpoint = this.zclNode.endpoints[1];
     if (!endpoint) {
       this.log('[WARN]  Endpoint 1 not available');
       return;
     }
-    
+
     try {
       // Temperature (Cluster 1026) - WORKING SDK3 VERSION
       const tempCluster = endpoint.clusters?.msTemperatureMeasurement;
       if (this.hasCapability('measure_temperature') && tempCluster) {
         this.log('[TEMP] Configuring temperature sensor...');
-        
+
         // Read initial value
         try {
           const { measuredValue } = await tempCluster.readAttributes(['measuredValue']);
           const temp = measuredValue / 100;
           this.log('[TEMP] ✅ Initial temperature:', temp, '°C');
           await (async () => {
-        this.log(`📝 [DIAG] setCapabilityValue: ${'measure_temperature'} = ${temp}`);
-        try {
-          await this.setCapabilityValue('measure_temperature', temp);
-          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_temperature'}`);
-        } catch (err) {
-          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_temperature'}`, err.message);
-          throw err;
-        }
-      })();
+            this.log(`📝 [DIAG] setCapabilityValue: ${'measure_temperature'} = ${temp}`);
+            try {
+              await this.setCapabilityValue('measure_temperature', temp);
+              this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_temperature'}`);
+            } catch (err) {
+              this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_temperature'}`, err.message);
+              throw err;
+            }
+          })();
         } catch (readErr) {
           this.log('[TEMP] ⚠️  Initial read failed');
         }
-        
+
         // Listen for reports
         tempCluster.on('attr.measuredValue', async (value) => {
           const temp = value / 100;
           this.log('[TEMP] 📊 Temperature update:', temp, '°C');
           await (async () => {
-        this.log(`📝 [DIAG] setCapabilityValue: ${'measure_temperature'} = ${temp}`);
-        try {
-          await this.setCapabilityValue('measure_temperature', temp);
-          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_temperature'}`);
-        } catch (err) {
-          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_temperature'}`, err.message);
-          throw err;
-        }
-      })().catch(this.error);
+            this.log(`📝 [DIAG] setCapabilityValue: ${'measure_temperature'} = ${temp}`);
+            try {
+              await this.setCapabilityValue('measure_temperature', temp);
+              this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_temperature'}`);
+            } catch (err) {
+              this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_temperature'}`, err.message);
+              throw err;
+            }
+          })().catch(this.error);
         });
-        
+
         // Configure reporting
         try {
           await this.configureAttributeReporting([{
@@ -125,50 +125,50 @@ class ClimateMonitorDevice extends BaseHybridDevice {
         } catch (reportErr) {
           this.log('[TEMP] ⚠️  Reporting config failed');
         }
-        
+
         this.log('[OK] Temperature sensor configured (cluster 1026)');
       }
-      
+
       // Humidity (Cluster 1029) - WORKING SDK3 VERSION
       const humidityCluster = endpoint.clusters?.msRelativeHumidity;
       if (this.hasCapability('measure_humidity') && humidityCluster) {
         this.log('[HUMID] Configuring humidity sensor...');
-        
+
         // Read initial value
         try {
           const { measuredValue } = await humidityCluster.readAttributes(['measuredValue']);
           const humidity = measuredValue / 100;
           this.log('[HUMID] ✅ Initial humidity:', humidity, '%');
           await (async () => {
-        this.log(`📝 [DIAG] setCapabilityValue: ${'measure_humidity'} = ${humidity}`);
-        try {
-          await this.setCapabilityValue('measure_humidity', humidity);
-          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_humidity'}`);
-        } catch (err) {
-          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_humidity'}`, err.message);
-          throw err;
-        }
-      })();
+            this.log(`📝 [DIAG] setCapabilityValue: ${'measure_humidity'} = ${humidity}`);
+            try {
+              await this.setCapabilityValue('measure_humidity', humidity);
+              this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_humidity'}`);
+            } catch (err) {
+              this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_humidity'}`, err.message);
+              throw err;
+            }
+          })();
         } catch (readErr) {
           this.log('[HUMID] ⚠️  Initial read failed');
         }
-        
+
         // Listen for reports
         humidityCluster.on('attr.measuredValue', async (value) => {
           const humidity = value / 100;
           this.log('[HUMID] 📊 Humidity update:', humidity, '%');
           await (async () => {
-        this.log(`📝 [DIAG] setCapabilityValue: ${'measure_humidity'} = ${humidity}`);
-        try {
-          await this.setCapabilityValue('measure_humidity', humidity);
-          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_humidity'}`);
-        } catch (err) {
-          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_humidity'}`, err.message);
-          throw err;
-        }
-      })().catch(this.error);
+            this.log(`📝 [DIAG] setCapabilityValue: ${'measure_humidity'} = ${humidity}`);
+            try {
+              await this.setCapabilityValue('measure_humidity', humidity);
+              this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_humidity'}`);
+            } catch (err) {
+              this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_humidity'}`, err.message);
+              throw err;
+            }
+          })().catch(this.error);
         });
-        
+
         // Configure reporting
         try {
           await this.configureAttributeReporting([{
@@ -183,10 +183,10 @@ class ClimateMonitorDevice extends BaseHybridDevice {
         } catch (reportErr) {
           this.log('[HUMID] ⚠️  Reporting config failed');
         }
-        
+
         this.log('[OK] Humidity sensor configured (cluster 1029)');
       }
-      
+
       this.log('[OK] Climate sensing configured');
     } catch (err) {
       this.error('Climate sensing setup failed:', err);
@@ -201,53 +201,53 @@ class ClimateMonitorDevice extends BaseHybridDevice {
     if (!this.hasCapability('measure_battery')) {
       return;
     }
-    
+
     this.log('[BATTERY] Setting up multi-protocol battery detection...');
-    
+
     const endpoint = this.zclNode.endpoints[1];
     const manufacturer = this.getData().manufacturerName || '';
-    
+
     // Method 1: Standard Zigbee (Cluster 1 - PowerConfiguration) - WORKING VERSION
     const powerCluster = endpoint?.clusters?.powerConfiguration;
     if (powerCluster) {
       try {
         this.log('[BATTERY] Using Standard Zigbee battery...');
-        
+
         // Read initial value
         try {
           const { batteryPercentageRemaining } = await powerCluster.readAttributes(['batteryPercentageRemaining']);
           const battery = Math.round(batteryPercentageRemaining / 2);
           this.log('[BATTERY] ✅ Initial battery:', battery, '%');
           await (async () => {
-        this.log(`📝 [DIAG] setCapabilityValue: ${'measure_battery'} = ${battery}`);
-        try {
-          await this.setCapabilityValue('measure_battery', battery);
-          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_battery'}`);
-        } catch (err) {
-          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_battery'}`, err.message);
-          throw err;
-        }
-      })();
+            this.log(`📝 [DIAG] setCapabilityValue: ${'measure_battery'} = ${battery}`);
+            try {
+              await this.setCapabilityValue('measure_battery', battery);
+              this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_battery'}`);
+            } catch (err) {
+              this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_battery'}`, err.message);
+              throw err;
+            }
+          })();
         } catch (readErr) {
           this.log('[BATTERY] ⚠️  Initial read failed');
         }
-        
+
         // Listen for reports
         powerCluster.on('attr.batteryPercentageRemaining', async (value) => {
           const battery = Math.round(value / 2);
           this.log('[BATTERY] 📊 Battery update:', battery, '%');
           await (async () => {
-        this.log(`📝 [DIAG] setCapabilityValue: ${'measure_battery'} = ${battery}`);
-        try {
-          await this.setCapabilityValue('measure_battery', battery);
-          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_battery'}`);
-        } catch (err) {
-          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_battery'}`, err.message);
-          throw err;
-        }
-      })().catch(this.error);
+            this.log(`📝 [DIAG] setCapabilityValue: ${'measure_battery'} = ${battery}`);
+            try {
+              await this.setCapabilityValue('measure_battery', battery);
+              this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_battery'}`);
+            } catch (err) {
+              this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_battery'}`, err.message);
+              throw err;
+            }
+          })().catch(this.error);
         });
-        
+
         // Configure reporting
         try {
           await this.configureAttributeReporting([{
@@ -262,7 +262,7 @@ class ClimateMonitorDevice extends BaseHybridDevice {
         } catch (reportErr) {
           this.log('[BATTERY] ⚠️  Reporting config failed');
         }
-        
+
         this.log('[OK] Battery: Standard Zigbee (cluster 1)');
         this.batteryMethod = 'zigbee_standard';
         return;
@@ -270,7 +270,7 @@ class ClimateMonitorDevice extends BaseHybridDevice {
         this.log('Standard battery failed:', err.message);
       }
     }
-    
+
     // Method 2: Tuya Custom (Cluster 61184 / 0xEF00, DP 101)
     if (endpoint?.clusters[61184]) {
       try {
@@ -278,22 +278,22 @@ class ClimateMonitorDevice extends BaseHybridDevice {
           if (data.dp === 101) { // Battery DP
             const battery = data.data.readUInt8(0);
             await (async () => {
-        this.log(`📝 [DIAG] setCapabilityValue: ${'measure_battery'} = ${battery}`);
-        try {
-          await this.setCapabilityValue('measure_battery', battery);
-          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_battery'}`);
-        } catch (err) {
-          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_battery'}`, err.message);
-          throw err;
-        }
-      })().catch(this.error);
+              this.log(`📝 [DIAG] setCapabilityValue: ${'measure_battery'} = ${battery}`);
+              try {
+                await this.setCapabilityValue('measure_battery', battery);
+                this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_battery'}`);
+              } catch (err) {
+                this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_battery'}`, err.message);
+                throw err;
+              }
+            })().catch(this.error);
             this.log('[BATTERY] Battery (Tuya):', battery, '%');
           }
         });
-        
+
         // Request initial battery status
-        await endpoint.clusters[61184].command('dataQuery', { dp: 101 }).catch(() => {});
-        
+        await endpoint.clusters[61184].command('dataQuery', { dp: 101 }).catch(() => { });
+
         this.log('[OK] Battery: Tuya Custom (cluster 61184, DP 101)');
         this.batteryMethod = 'tuya_custom';
         return;
@@ -301,7 +301,7 @@ class ClimateMonitorDevice extends BaseHybridDevice {
         this.log('Tuya battery failed:', err.message);
       }
     }
-    
+
     // Method 3: Xiaomi/Aqara (Basic cluster attribute 0xFF01)
     if (manufacturer.startsWith('lumi.') && endpoint?.clusters[0]) {
       try {
@@ -309,19 +309,19 @@ class ClimateMonitorDevice extends BaseHybridDevice {
           if (value.batteryVoltage) {
             const battery = this.voltageToBattery(value.batteryVoltage);
             await (async () => {
-        this.log(`📝 [DIAG] setCapabilityValue: ${'measure_battery'} = ${battery}`);
-        try {
-          await this.setCapabilityValue('measure_battery', battery);
-          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_battery'}`);
-        } catch (err) {
-          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_battery'}`, err.message);
-          throw err;
-        }
-      })().catch(this.error);
+              this.log(`📝 [DIAG] setCapabilityValue: ${'measure_battery'} = ${battery}`);
+              try {
+                await this.setCapabilityValue('measure_battery', battery);
+                this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_battery'}`);
+              } catch (err) {
+                this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_battery'}`, err.message);
+                throw err;
+              }
+            })().catch(this.error);
             this.log('[BATTERY] Battery (Xiaomi):', battery, '%');
           }
         });
-        
+
         this.log('[OK] Battery: Xiaomi/Aqara (attribute 0xFF01)');
         this.batteryMethod = 'xiaomi_custom';
         return;
@@ -329,7 +329,7 @@ class ClimateMonitorDevice extends BaseHybridDevice {
         this.log('Xiaomi battery failed:', err.message);
       }
     }
-    
+
     this.log('[WARN]  No battery detection method available');
     this.batteryMethod = 'none';
   }
@@ -340,12 +340,12 @@ class ClimateMonitorDevice extends BaseHybridDevice {
    */
   async setupTimeSync() {
     this.log('🕐 Setting up time synchronization...');
-    
+
     const endpoint = this.zclNode.endpoints[1];
-    
+
     // Detect supported time sync method
     this.timeSyncMethod = null;
-    
+
     if (endpoint?.clusters[10]) {
       this.timeSyncMethod = 'zigbee_standard';
       this.log('[OK] Time sync: Standard Zigbee (cluster 10)');
@@ -356,15 +356,15 @@ class ClimateMonitorDevice extends BaseHybridDevice {
       this.log('[INFO]  Time sync not available on this device');
       return;
     }
-    
+
     // Initial time sync
     await this.syncTimeToDevice();
-    
+
     // Auto-sync every hour
     this.timeSyncInterval = setInterval(async () => {
       await this.syncTimeToDevice();
     }, 60 * 60 * 1000); // 1 hour
-    
+
     this.log('[OK] Auto time sync configured (every 1 hour)');
   }
 
@@ -375,15 +375,15 @@ class ClimateMonitorDevice extends BaseHybridDevice {
     if (!this.timeSyncMethod) {
       return;
     }
-    
+
     try {
       const endpoint = this.zclNode.endpoints[1];
       const now = new Date();
-      
+
       if (this.timeSyncMethod === 'zigbee_standard') {
         // Method 1: Standard Zigbee Time Cluster (10)
         const zigbeeEpoch = Math.floor(Date.now() / 1000) - 946684800; // Seconds since 2000-01-01
-        
+
         await endpoint.clusters[10].writeAttributes({
           time: zigbeeEpoch,
           timeStatus: {
@@ -393,9 +393,9 @@ class ClimateMonitorDevice extends BaseHybridDevice {
             superseding: false
           }
         });
-        
+
         this.log('🕐 Time synced:', now.toLocaleString(), '(Zigbee standard)');
-        
+
       } else if (this.timeSyncMethod === 'tuya_custom') {
         // Method 2: Tuya Custom Cluster (61184, DP 0x19)
         const timeData = {
@@ -410,9 +410,9 @@ class ClimateMonitorDevice extends BaseHybridDevice {
             now.getSeconds()
           ])
         };
-        
+
         await endpoint.clusters[61184].command('dataReport', timeData);
-        
+
         this.log('🕐 Time synced:', now.toLocaleString(), '(Tuya custom)');
       }
     } catch (err) {
@@ -426,12 +426,12 @@ class ClimateMonitorDevice extends BaseHybridDevice {
    */
   async setupBacklightButton() {
     this.log('[BULB] Setting up backlight button...');
-    
+
     const endpoint = this.zclNode.endpoints[1];
-    
+
     // Detect supported backlight control method
     this.backlightMethod = null;
-    
+
     if (endpoint?.clusters[61184]) {
       this.backlightMethod = 'tuya_custom';
       this.log('[OK] Backlight: Tuya Custom (cluster 61184, DP 0x0E)');
@@ -442,7 +442,7 @@ class ClimateMonitorDevice extends BaseHybridDevice {
       this.log('[INFO]  Backlight control not available on this device');
       return;
     }
-    
+
     // Add button.backlight capability if not present
     if (!this.hasCapability('button.backlight')) {
       await this.addCapability('button.backlight').catch(err => {
@@ -450,14 +450,16 @@ class ClimateMonitorDevice extends BaseHybridDevice {
         return;
       });
     }
-    
+
     // Register button listener
     if (this.hasCapability('button.backlight')) {
       this.registerCapabilityListener('button.backlight', async () => {
-      this.log(`📤 [DIAG] CAPABILITY CHANGE: button.backlight = ${}`);
-      const startTime = Date.now();
-      try {
-        await this.toggleBacklight();
+        this.log('Backlight button pressed');
+        try {
+          await this.toggleBacklight();
+        } catch (err) {
+          this.error('Backlight toggle error:', err);
+        }
       });
       this.log('[OK] Backlight button configured');
     }
@@ -470,10 +472,10 @@ class ClimateMonitorDevice extends BaseHybridDevice {
     if (!this.backlightMethod) {
       return;
     }
-    
+
     try {
       const endpoint = this.zclNode.endpoints[1];
-      
+
       if (this.backlightMethod === 'tuya_custom') {
         // Method 1: Tuya Custom Cluster DP 0x0E
         await endpoint.clusters[61184].command('dataReport', {
@@ -481,15 +483,15 @@ class ClimateMonitorDevice extends BaseHybridDevice {
           datatype: 0x01, // Boolean
           data: Buffer.from([0x01]) // Toggle
         });
-        
+
         this.log('[BULB] Backlight toggled (Tuya custom)');
-        
+
       } else if (this.backlightMethod === 'identify') {
         // Method 2: Standard Identify cluster (flash briefly)
         const duration = this.getSetting('backlight_auto_off') || 10;
-        
+
         await endpoint.clusters[3].identify({ identifyTime: duration });
-        
+
         this.log(`[BULB] Screen flashed for ${duration}s (identify cluster)`);
       }
     } catch (err) {
@@ -502,7 +504,7 @@ class ClimateMonitorDevice extends BaseHybridDevice {
    */
   voltageToBattery(voltage) {
     const batteryType = this.getSetting('battery_type') || 'CR2032';
-    
+
     const voltageRanges = {
       'CR2032': { max: 3000, min: 2000 },
       'CR2450': { max: 3000, min: 2000 },
@@ -510,23 +512,23 @@ class ClimateMonitorDevice extends BaseHybridDevice {
       'AA': { max: 1500, min: 900 },
       'AAA': { max: 1500, min: 900 }
     };
-    
+
     const range = voltageRanges[batteryType] || voltageRanges['CR2032'];
     const percentage = Math.round(
       ((voltage - range.min) / (range.max - range.min)) * 100
     );
-    
+
     return Math.max(0, Math.min(100, percentage));
   }
 
   async onDeleted() {
     this.log('ClimateMonitorDevice deleted');
-    
+
     // Clear time sync interval
     if (this.timeSyncInterval) {
       clearInterval(this.timeSyncInterval);
     }
-    
+
     await super.onDeleted().catch(err => this.error(err));
   }
 }
