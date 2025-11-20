@@ -313,124 +313,104 @@ class TuyaZigbeeDevice extends SwitchDevice {
         this.error(`Error triggering ${capabilityId}:`, error.message);
       }
     }
-
-    // OnOff triggers
-    if (capabilityId === 'onoff') {
-      const triggerId = value ? `${driverId}_turned_on` : `${driverId}_turned_off`;
-      try {
-        await this.homey.flow.getDeviceTriggerCard(triggerId).trigger(this).catch(err => this.error(err));
-        this.log(`Triggered: ${triggerId}`);
-      } catch (error) {
-        this.error(`Error triggering onoff:`, error.message);
-      }
-    }
   }
-  // ========================================
-  // FLOW METHODS - Auto-generated
-  // ========================================
-
-  catch(err) {
-    this.error('Battery change detection error:', err);
-  }
-}
-
 
   /**
    * Poll tous les attributes pour forcer mise à jour
    * Résout: Données non visibles après pairing (Peter + autres)
    */
   async pollAttributes() {
-  const promises = [];
+    const promises = [];
 
-  // ==========================================
-  // BATTERY MANAGEMENT - OPTIMIZED
-  // ==========================================
+    // ==========================================
+    // BATTERY MANAGEMENT - OPTIMIZED
+    // ==========================================
 
-  // Configure battery reporting
-  try {
-    await this.configureAttributeReporting([{
-      endpointId: 1,
-      cluster: 1,
-      attributeName: 'batteryPercentageRemaining',
-      minInterval: 7200,
-      maxInterval: 172800,
-      minChange: 10
-    }]);
-    this.log('Battery reporting configured');
-  } catch (err) {
-    this.log('Battery report config failed (non-critical):', err.message);
-  }
-
-  // Register battery capability
-  this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
-    endpoint: 1,
-    get: 'batteryPercentageRemaining',
-    report: 'batteryPercentageRemaining',
-    reportParser: (value) => {
-      if (value === null || value === undefined) return null;
-      // Convert from 0-200 scale to 0-100%
-      const percentage = Math.round(value / 2);
-      return Math.max(0, Math.min(100, percentage));
-    },
-    getParser: (value) => {
-      if (value === null || value === undefined) return null;
-      const percentage = Math.round(value / 2);
-      return Math.max(0, Math.min(100, percentage));
-    }
-  });
-
-  // Initial battery poll after pairing
-  setTimeout(async () => {
+    // Configure battery reporting
     try {
-      await this.pollAttributes().catch(err => this.error(err));
-      this.log('Initial battery poll completed');
+      await this.configureAttributeReporting([{
+        endpointId: 1,
+        cluster: 1,
+        attributeName: 'batteryPercentageRemaining',
+        minInterval: 7200,
+        maxInterval: 172800,
+        minChange: 10
+      }]);
+      this.log('Battery reporting configured');
     } catch (err) {
-      this.error('Initial battery poll failed:', err);
+      this.log('Battery report config failed (non-critical):', err.message);
     }
-  }, 5000);
 
-  // Regular battery polling with exponential backoff on errors
-  let pollFailures = 0;
-  const maxPollFailures = 5;
+    // Register battery capability
+    this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
+      endpoint: 1,
+      get: 'batteryPercentageRemaining',
+      report: 'batteryPercentageRemaining',
+      reportParser: (value) => {
+        if (value === null || value === undefined) return null;
+        // Convert from 0-200 scale to 0-100%
+        const percentage = Math.round(value / 2);
+        return Math.max(0, Math.min(100, percentage));
+      },
+      getParser: (value) => {
+        if (value === null || value === undefined) return null;
+        const percentage = Math.round(value / 2);
+        return Math.max(0, Math.min(100, percentage));
+      }
+    });
 
-  this.registerPollInterval(async () => {
-    try {
-      const battery = await this.zclNode.endpoints[1].clusters.powerConfiguration.readAttributes(['batteryPercentageRemaining']).catch(err => this.error(err));
-
-      if (battery && battery.batteryPercentageRemaining !== undefined) {
-        const percentage = Math.round(battery.batteryPercentageRemaining / 2);
-        await (async () => {
-          this.log(`📝 [DIAG] setCapabilityValue: ${'measure_battery'} = ${parseFloat(percentage}`);
-          try {
-            await this.setCapabilityValue('measure_battery', parseFloat(percentage);
-            this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_battery'}`);
-          } catch (err) {
-            this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_battery'}`, err.message);
-            throw err;
-          }
-        })()).catch(err => this.error(err));
-  this.log('Battery polled:', percentage + '%');
-
-  // Reset failure counter on success
-  pollFailures = 0;
-
-  // Low battery alert
-  if (percentage <= 20 && percentage > 10) {
-    this.log('[WARN]  Low battery warning:', percentage + '%');
-    await this.homey.notifications.createNotification({
-      excerpt: `${this.getName()} battery low (${percentage}%)`
-    }).catch(() => { });
-  }
-
-  // Critical battery alert
-  if (percentage <= 10) {
-    this.log('🔴 Critical battery:', percentage + '%');
-    await this.homey.notifications.createNotification({
-      excerpt: `${this.getName()} battery critical (${percentage}%) - replace soon!`
-    }).catch(() => { });
-  }
-}
+    // Initial battery poll after pairing
+    setTimeout(async () => {
+      try {
+        await this.pollAttributes().catch(err => this.error(err));
+        this.log('Initial battery poll completed');
       } catch (err) {
+        this.error('Initial battery poll failed:', err);
+      }
+    }, 5000);
+
+    // Regular battery polling with exponential backoff on errors
+    let pollFailures = 0;
+    const maxPollFailures = 5;
+
+    this.registerPollInterval(async () => {
+      try {
+        const battery = await this.zclNode.endpoints[1].clusters.powerConfiguration.readAttributes(['batteryPercentageRemaining']).catch(err => this.error(err));
+
+        if (battery && battery.batteryPercentageRemaining !== undefined) {
+          const percentage = Math.round(battery.batteryPercentageRemaining / 2);
+          await (async () => {
+            this.log(`📝 [DIAG] setCapabilityValue: ${'measure_battery'} = ${parseFloat(percentage}`);
+            try {
+              await this.setCapabilityValue('measure_battery', parseFloat(percentage);
+              this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_battery'}`);
+            } catch (err) {
+              this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_battery'}`, err.message);
+              throw err;
+            }
+          })()).catch(err => this.error(err));
+    this.log('Battery polled:', percentage + '%');
+
+    // Reset failure counter on success
+    pollFailures = 0;
+
+    // Low battery alert
+    if (percentage <= 20 && percentage > 10) {
+      this.log('[WARN]  Low battery warning:', percentage + '%');
+      await this.homey.notifications.createNotification({
+        excerpt: `${this.getName()} battery low (${percentage}%)`
+      }).catch(() => { });
+    }
+
+    // Critical battery alert
+    if (percentage <= 10) {
+      this.log('🔴 Critical battery:', percentage + '%');
+      await this.homey.notifications.createNotification({
+        excerpt: `${this.getName()} battery critical (${percentage}%) - replace soon!`
+      }).catch(() => { });
+    }
+  }
+} catch (err) {
   pollFailures++;
   this.error(`Battery poll failed (${pollFailures}/${maxPollFailures}):`, err.message);
 
@@ -440,7 +420,7 @@ class TuyaZigbeeDevice extends SwitchDevice {
     // Polling will continue but less frequently
   }
 }
-    }, 3600000);
+}, 3600000);
 // Temperature
 if (this.hasCapability('measure_temperature')) {
   promises.push(
