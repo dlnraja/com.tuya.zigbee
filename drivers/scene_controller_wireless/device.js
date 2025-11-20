@@ -275,7 +275,9 @@ class SceneControllerDevice extends ButtonDevice {
     for (const cap of capabilities) {
       if (cap.startsWith('alarm_')) {
         const value = this.getCapabilityValue(cap);
-        if (value === true) return true;
+        if (value === true) {
+          return true;
+        }
       }
     }
     return false;
