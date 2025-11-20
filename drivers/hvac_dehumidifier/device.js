@@ -132,10 +132,10 @@ class DehumidifierDevice extends BaseHybridDevice {
 
   try {
     /* REFACTOR: registerCapability deprecated with cluster spec.
- Original: this.registerCapability('measure_humidity', 1029,
- Replace with SDK3 pattern - see ZigbeeDevice docs
- Capability: 'measure_humidity', Cluster: 1029
-*/
+  Original: this.registerCapability('measure_humidity', 1029,
+  Replace with SDK3 pattern - see ZigbeeDevice docs
+  Capability: 'measure_humidity', Cluster: 1029
+  */
     // this.registerCapability('measure_humidity', 1029, {
     //         get: 'measuredValue',
     //         report: 'measuredValue',

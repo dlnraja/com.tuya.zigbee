@@ -174,10 +174,6 @@ class SmartDoorbellBatteryDevice extends ButtonDevice {
     await this.setAvailable().catch(err => this.error(err));
   }
 
-  catch(err) {
-    this.error('Battery change detection error:', err);
-  }
-}
   // ========================================
   // FLOW METHODS - Auto-generated
   // ========================================
@@ -186,35 +182,37 @@ class SmartDoorbellBatteryDevice extends ButtonDevice {
    * Trigger flow with context data
    */
   async triggerFlowCard(cardId, tokens = {}) {
-  try {
-    const flowCard = this.homey.flow.getDeviceTriggerCard(cardId);
-    await flowCard.trigger(this, tokens).catch(err => this.error(err));
-    this.log(`[OK] Flow triggered: ${cardId}`, tokens);
-  } catch (err) {
-    this.error(`[ERROR] Flow trigger error: ${cardId}`, err);
+    try {
+      const flowCard = this.homey.flow.getDeviceTriggerCard(cardId);
+      await flowCard.trigger(this, tokens).catch(err => this.error(err));
+      this.log(`[OK] Flow triggered: ${cardId}`, tokens);
+    } catch (err) {
+      this.error(`[ERROR] Flow trigger error: ${cardId}`, err);
+    }
   }
-}
 
   /**
    * Check if any alarm is active
    */
   async checkAnyAlarm() {
-  const capabilities = this.getCapabilities();
-  for (const cap of capabilities) {
-    if (cap.startsWith('alarm_')) {
-      const value = this.getCapabilityValue(cap);
-      if (value === true) return true;
+    const capabilities = this.getCapabilities();
+    for (const cap of capabilities) {
+      if (cap.startsWith('alarm_')) {
+        const value = this.getCapabilityValue(cap);
+        if (value === true) return true;
+      }
     }
+    return false;
   }
-  return false;
-}
 
-/**
- * Get current context data
- */
-getContextData() {
-  const context = {
-    time_of_day: this.getTimeOfDay(),
+  /**
+   * Get current context data
+   */
+  getContextData() {
+    const context = {
+      time_of_day: this.getTimeOfDay(),
+      timestamp: new Date().toISOString()
+    };
     timestamp: new Date().toISOString()
   };
   const context = {
@@ -224,20 +222,20 @@ getContextData() {
 
   // Add available sensor values
   const caps = this.getCapabilities();
-  if (caps.includes('measure_luminance')) {
-    context.luminance = this.getCapabilityValue('measure_luminance') || 0;
-  }
-  if (caps.includes('measure_temperature')) {
-    context.temperature = this.getCapabilityValue('measure_temperature') || 0;
-  }
-  if (caps.includes('measure_humidity')) {
-    context.humidity = this.getCapabilityValue('measure_humidity') || 0;
-  }
-  if (caps.includes('measure_battery')) {
-    context.battery = this.getCapabilityValue('measure_battery') || 0;
-  }
+  if(caps.includes('measure_luminance')) {
+  context.luminance = this.getCapabilityValue('measure_luminance') || 0;
+}
+if (caps.includes('measure_temperature')) {
+  context.temperature = this.getCapabilityValue('measure_temperature') || 0;
+}
+if (caps.includes('measure_humidity')) {
+  context.humidity = this.getCapabilityValue('measure_humidity') || 0;
+}
+if (caps.includes('measure_battery')) {
+  context.battery = this.getCapabilityValue('measure_battery') || 0;
+}
 
-  return context;
+return context;
 }
 
 /**
