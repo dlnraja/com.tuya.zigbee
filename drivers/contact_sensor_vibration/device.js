@@ -289,6 +289,26 @@ class ContactVibrationSensor extends SensorDevice {
   } catch (err) {
     this.error('Failed to send Zone Enroll Response:', err.message);
   }
+};
+
+this.log('[OK] Zone Enroll Request listener configured');
+
+// Step 2: Send proactive Zone Enroll Response (SDK3 official method)
+// Per Homey docs: "driver could send Zone Enroll Response when initializing
+// regardless of having received Zone Enroll Request"
+this.log('[SEND] Sending proactive Zone Enroll Response...');
+
+try {
+  // Send response IMMEDIATELY (synchronous, no async, no delay)
+  await endpoint.clusters.iasZone.zoneEnrollResponse({
+    enrollResponseCode: 0, // 0 = Success
+    zoneId: 10
+  });
+
+  this.log('[OK] Zone Enroll Response sent (zoneId: 10)');
+} catch (err) {
+  this.error('Failed to send Zone Enroll Response:', err.message);
+}
 } catch (err) {
   this.error('IAS Zone setup error:', err);
 }
