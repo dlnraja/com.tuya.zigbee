@@ -1,0 +1,478 @@
+Dylan Rajasekaram <senetmarne@gmail.com>
+[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report
+1 message
+Homey <noreply@homey .app> 11 novembre 2025 à 17:20
+Répondre à : 6913626be09bc49db2183bf8@apps-api.athom.com
+À : senetmarne@gmail.com
+Hi Dylan Rajasekaram,
+Your app Universal T uya Zigbee  has received a diagnostics report.
+You can reply to this e-mail to get in touch with the user . Note that the
+user will then be able to see your e-mail address.
+App ID
+com.dlnraja.tuya.zigbee
+App V ersion
+v4.9.330
+Homey V ersion
+v12.9.0-rc.14
+Homey Model ID
+homey5q
+Homey Model Name
+Homey Pro (Early 2023)
+Stack T race
+Note: this log has been manually submitted by a user.
+Log ID: 48e49a2d-4f7f-4a05-afee- 652ed3b727c0
+User Message:
+Rien ne marche maitnent je n'ai plus de batterie sur sos  
+button aussi eg les autres . Aucune donne ne remonte et  
+
+pas de batterie et toujours pas de 2 gang USB corrigé et  
+c'est ko . Inspire toi de la version validé par piter  
+sur le forum et autres éléments
+stdout:
+2025-11-11T16:07:49.917Z [log] [ManagerDrivers]  
+[Driver:plug_energy_smart] SmartPlugEnergyDriver  
+initialized
+2025-11-11T16:07:49.920Z [log] [ManagerDrivers]  
+[Driver:plug_outdoor] OutdoorPlugDriver initialized
+2025-11-11T16:07:49.924Z [log] [ManagerDrivers]  
+[Driver:plug_outlet] OutletDriver initialized
+2025-11-11T16:07:49.927Z [log] [ManagerDrivers]  
+[Driver:plug_power_meter] PowerMeterSocketDriver  
+initialized
+2025-11-11T16:07:49.930Z [log] [ManagerDrivers]  
+[Driver:plug_power_meter_16a]  
+SmartPlugPowerMeter16aDriver initialized
+2025-11-11T16:07:49.933Z [log] [ManagerDrivers]  
+[Driver:plug_smart] PlugSmartDriver initialized
+2025-11-11T16:07:49.937Z [log] [ManagerDrivers]  
+[Driver:plug_smart_advanced] SmartPlugDriver initialized
+2025-11-11T16:07:49.940Z [log] [ManagerDrivers]  
+[Driver:plug_smart_basic] PlugBasicDriver initialized
+2025-11-11T16:07:49.945Z [log] [ManagerDrivers]  
+[Driver:radiator_valve] RadiatorValveDriver initialized
+2025-11-11T16:07:49.949Z [log] [ManagerDrivers]  
+[Driver:radiator_valve_smart] Tuya Zigbee Driver has  
+been initialized
+2025-11-11T16:07:49.952Z [log] [ManagerDrivers]  
+[Driver:scene_controller_ 4button]  
+WirelessSceneController4button Driver initialized
+2025-11-11T16:07:49.956Z [log] [ManagerDrivers]  
+[Driver:scene_controller_ wireless] Scene Controller  
+Driver has been initialized
+2025-11-11T16:07:49.960Z [log] [ManagerDrivers]  
+[Driver:shutter_roller_ controller]  
+RollerShutterControllerDriver initialized
+2025-11-11T16:07:49.963Z [log] [ManagerDrivers]  
+[Driver:shutter_roller_switch] RollerShutterSwitchDriver  
+initialized
+2025-11-11T16:07:49.967Z [log] [ManagerDrivers]  
+[Driver:siren] TuyaSirenDriver initialized
+2025-11-11T16:07:49.970Z [log] [ManagerDrivers]  
+[Driver:siren_outdoor] TuyaOutdoorSirenDriver  
+initialized
+2025-11-11T16:07:49.974Z [log] [ManagerDrivers]  
+[Driver:smoke_detector_ advanced]  
+SmartSmokeDetectorAdvancedDriv er initialized
+2025-11-11T16:07:49.977Z [log] [ManagerDrivers]  
+[Driver:smoke_detector_ climate]  
+SmokeTempHumidSensorDriver initialized
+2025-11-11T16:07:49.980Z [log] [ManagerDrivers]  
+[Driver:smoke_detector_temp_ humidity]  
+SmokeDetectorTempHumidityAdvan cedDriver initialized
+2025-11-11T16:07:49.983Z [log] [ManagerDrivers]  
+[Driver:solar_panel_ controller]  
+SolarPanelControllerDriver initialized
+2025-11-11T16:07:49.986Z [log] [ManagerDrivers]  
+[Driver:sound_controller] Driver has been initialized
+2025-11-11T16:07:49.989Z [log] [ManagerDrivers]  
+[Driver:spot_light_smart] SmartSpotDriver initialized
+2025-11-11T16:07:49.995Z [log] [ManagerDrivers]  
+[Driver:switch_basic_2gang] Switch2gangDriver  
+initialized
+2025-11-11T16:07:49.999Z [log] [ManagerDrivers]  
+[Driver:switch_basic_5gang] Switch5gangDriver  
+initialized
+2025-11-11T16:07:50.002Z [log] [ManagerDrivers]  
+[Driver:switch_generic_1gang] TuyaSmartSwitch1gangDriver  
+initialized
+2025-11-11T16:07:50.009Z [log] [ManagerDrivers]  
+[Driver:switch_generic_3gang] TuyaSmartSwitch3gangDriver  
+initialized
+2025-11-11T16:07:50.013Z [log] [ManagerDrivers]  
+[Driver:switch_1gang] Tuya Zigbee Driver has been  
+initialized
+2025-11-11T16:07:50.016Z [log] [ManagerDrivers]  
+[Driver:switch_2gang] Tuya Zigbee Driver has been  
+initialized
+2025-11-11T16:07:50.019Z [log] [ManagerDrivers]  
+[Driver:switch_2gang_alt] Tuya Zigbee Driver has been  
+initialized
+2025-11-11T16:07:50.023Z [log] [ManagerDrivers]  
+[Driver:switch_3gang] Tuya Zigbee Driver has been  
+initialized
+2025-11-11T16:07:50.026Z [log] [ManagerDrivers]  
+[Driver:switch_4gang] Tuya Zigbee Driver has been  
+initialized
+2025-11-11T16:07:50.029Z [log] [ManagerDrivers]  
+[Driver:switch_internal_1gang] Tuya Zigbee Driver has  
+been initialized
+2025-11-11T16:07:50.032Z [log] [ManagerDrivers]  
+[Driver:switch_remote] RemoteSwitchDriver initialized
+2025-11-11T16:07:50.035Z [log] [ManagerDrivers]  
+[Driver:switch_smart_1gang] SmartSwitch1gangDriver  
+initialized
+2025-11-11T16:07:50.039Z [log] [ManagerDrivers]  
+[Driver:switch_smart_3gang] SmartSwitch3gangDriver  
+initialized
+2025-11-11T16:07:50.042Z [log] [ManagerDrivers]  
+[Driver:switch_smart_4gang] SmartSwitch4gangDriver  
+initialized
+2025-11-11T16:07:50.045Z [log] [ManagerDrivers]  
+[Driver:switch_touch_1gang] SwitchTouch1GangDriver  
+initialized
+2025-11-11T16:07:50.048Z [log] [ManagerDrivers]  
+[Driver:switch_touch_1gang_ basic] TouchSwitch1gangDriver  
+initialized
+2025-11-11T16:07:50.052Z [log] [ManagerDrivers]  
+[Driver:switch_touch_2gang] TouchSwitch2gangDriver  
+initialized
+2025-11-11T16:07:50.055Z [log] [ManagerDrivers]  
+[Driver:switch_touch_3gang] SwitchTouch3GangDriver  
+initialized
+2025-11-11T16:07:50.059Z [log] [ManagerDrivers]  
+[Driver:switch_touch_3gang_ basic] TouchSwitch3gangDriver  
+initialized
+2025-11-11T16:07:50.063Z [log] [ManagerDrivers]  
+[Driver:switch_touch_4gang] TouchSwitch4gangDriver  
+initialized
+2025-11-11T16:07:50.066Z [log] [ManagerDrivers]  
+[Driver:switch_wall_1gang] SwitchWall1GangDriver  
+initialized
+2025-11-11T16:07:50.070Z [log] [ManagerDrivers]  
+[Driver:switch_wall_1gang_ basic] WallSwitch1gangDriver  
+initialized
+2025-11-11T16:07:50.073Z [log] [ManagerDrivers]  
+[Driver:switch_wall_2gang] SwitchWall2GangDriver  
+initialized
+2025-11-11T16:07:50.076Z [log] [ManagerDrivers]  
+[Driver:switch_wall_2gang_ basic] WallSwitch2gangDriver  
+initialized
+2025-11-11T16:07:50.080Z [log] [ManagerDrivers]  
+[Driver:switch_wall_2gang_ smart] SmartSwitch2gangDriver  
+initialized
+2025-11-11T16:07:50.083Z [log] [ManagerDrivers]  
+[Driver:switch_wall_3gang] SwitchWall3GangDriver  
+initialized
+2025-11-11T16:07:50.087Z [log] [ManagerDrivers]  
+[Driver:switch_wall_3gang_ basic] WallSwitch3gangDriver  
+initialized
+2025-11-11T16:07:50.090Z [log] [ManagerDrivers]  
+[Driver:switch_wall_4gang] SwitchWall4GangDriver  
+initialized
+2025-11-11T16:07:50.094Z [log] [ManagerDrivers]  
+[Driver:switch_wall_4gang_ basic] WallSwitch4gangDriver  
+initialized
+2025-11-11T16:07:50.098Z [log] [ManagerDrivers]  
+[Driver:switch_wall_4gang_ smart] SmartSwitch4gangDriver  
+initialized
+2025-11-11T16:07:50.102Z [log] [ManagerDrivers]  
+[Driver:switch_wall_5gang] WallSwitch5gangDriver  
+initialized
+2025-11-11T16:07:50.106Z [log] [ManagerDrivers]  
+[Driver:switch_wall_6gang] SwitchWall6GangDriver  
+initialized
+2025-11-11T16:07:50.110Z [log] [ManagerDrivers]  
+[Driver:switch_wall_6gang_ basic] WallSwitch6gangDriver  
+initialized
+2025-11-11T16:07:50.114Z [log] [ManagerDrivers]  
+[Driver:switch_wall_6gang_ smart] SmartSwitch6gangDriver  
+initialized
+2025-11-11T16:07:50.117Z [log] [ManagerDrivers]  
+[Driver:switch_wall_8gang_ smart] SmartSwitch8gangDriver  
+initialized
+2025-11-11T16:07:50.121Z [log] [ManagerDrivers]  
+[Driver:switch_wireless] WirelessSwitchDriver  
+initialized
+2025-11-11T16:07:50.125Z [log] [ManagerDrivers]  
+[Driver:switch_wireless_1gang] WirelessSwitch1gangDriver  
+initialized
+2025-11-11T16:07:50.129Z [log] [ManagerDrivers]  
+[Driver:switch_wireless_2gang] WirelessSwitch2gangDriver  
+initialized
+2025-11-11T16:07:50.133Z [log] [ManagerDrivers]  
+[Driver:switch_wireless_ 4button_alt] Driver has been  
+initialized
+2025-11-11T16:07:50.137Z [log] [ManagerDrivers]  
+[Driver:switch_wireless_4gang] WirelessSwitch4gangDriver  
+initialized
+2025-11-11T16:07:50.141Z [log] [ManagerDrivers]  
+[Driver:switch_wireless_ 5button]  
+WirelessSwitch5buttonDriver initialized
+2025-11-11T16:07:50.163Z [log] [ManagerDrivers]  
+[Driver:switch_wireless_6gang] WirelessSwitch6gangDriver  
+initialized
+2025-11-11T16:07:50.167Z [log] [ManagerDrivers]  
+[Driver:temperature_sensor] TemperatureSensorDriver  
+initialized
+2025-11-11T16:07:50.170Z [log] [ManagerDrivers]  
+[Driver:temperature_sensor_ advanced]  
+TemperatureSensorAdvancedDrive r initialized
+2025-11-11T16:07:50.173Z [log] [ManagerDrivers]  
+[Driver:thermostat_advanced] Smart Thermostat Driver has  
+been initialized
+2025-11-11T16:07:50.176Z [log] [ManagerDrivers]  
+[Driver:thermostat_smart] Tuya Zigbee Driver has been  
+initialized
+2025-11-11T16:07:50.180Z [log] [ManagerDrivers]  
+[Driver:thermostat_ temperature_control] Tuya Zigbee  
+Driver has been initialized
+2025-11-11T16:07:50.183Z [log] [ManagerDrivers]  
+[Driver:usb_outlet_1gang] UsbOutlet1gangDriver  
+initialized
+2025-11-11T16:07:50.220Z [log] [ManagerDrivers]  
+[Driver:usb_outlet_3gang] UsbOutlet3gangDriver  
+initialized
+2025-11-11T16:07:50.223Z [log] [ManagerDrivers]  
+[Driver:usb_outlet_advanced] UsbOutletAdvancedDriver  
+initialized
+2025-11-11T16:07:50.227Z [log] [ManagerDrivers]  
+[Driver:usb_outlet_basic] UsbOutletDriver initialized
+2025-11-11T16:07:50.230Z [log] [ManagerDrivers]  
+[Driver:valve_smart] ValveSmartDriver initialized
+2025-11-11T16:07:50.233Z [log] [ManagerDrivers]  
+[Driver:water_leak_sensor] WaterLeakSensorDriver  
+initialized
+2025-11-11T16:07:50.236Z [log] [ManagerDrivers]  
+[Driver:water_leak_sensor_ temp_humidity]  
+TempHumidSensorLeakDetectorDri ver initialized
+2025-11-11T16:07:50.240Z [log] [ManagerDrivers]  
+[Driver:water_valve] WaterValveDriver initialized
+2025-11-11T16:07:50.243Z [log] [ManagerDrivers]  
+[Driver:water_valve_smart] WaterValveSmartDriver  
+initialized
+2025-11-11T16:07:50.246Z [log] [ManagerDrivers]  
+[Driver:water_valve_ controller] Tuya Zigbee Driver has  
+been initialized
+2025-11-11T16:07:50.249Z [log] [ManagerDrivers]  
+[Driver:pir_sensor_3in1] PIR Sensor 3-in-1 Driver  
+initialized
+2025-11-11T16:07:50.252Z [log] [ManagerDrivers]  
+[Driver:wall_touch_1gang] WallTouch3GangHybridDriver has  
+been initialized
+2025-11-11T16:07:50.255Z [log] [ManagerDrivers]  
+[Driver:wall_touch_2gang] WallTouch3GangHybridDriver has  
+been initialized
+2025-11-11T16:07:50.258Z [log] [ManagerDrivers]  
+[Driver:wall_touch_3gang] WallTouch3GangHybridDriver has  
+been initialized
+2025-11-11T16:07:50.261Z [log] [ManagerDrivers]  
+[Driver:wall_touch_4gang] WallTouch3GangHybridDriver has  
+been initialized
+2025-11-11T16:07:50.264Z [log] [ManagerDrivers]  
+[Driver:wall_touch_5gang] WallTouch3GangHybridDriver has  
+been initialized
+2025-11-11T16:07:50.267Z [log] [ManagerDrivers]  
+[Driver:wall_touch_6gang] WallTouch3GangHybridDriver has  
+been initialized
+2025-11-11T16:07:50.270Z [log] [ManagerDrivers]  
+[Driver:wall_touch_7gang] WallTouch3GangHybridDriver has  
+been initialized
+2025-11-11T16:07:50.273Z [log] [ManagerDrivers]  
+[Driver:wall_touch_8gang] WallTouch3GangHybridDriver has  
+been initialized
+2025-11-11T16:07:50.303Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced]  
+SosEmergencyButtonDriver initialized
+2025-11-11T16:07:50.313Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] ButtonWireless3GangDriver  
+initialized
+2025-11-11T16:07:50.327Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] ButtonWireless4Driver  
+initialized
+2025-11-11T16:07:50.339Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity]  
+ClimateMonitorDriver initialized
+2025-11-11T16:07:50.353Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil]  
+TuyaSoilTesterTempHumidDriver initialized
+2025-11-11T16:07:50.381Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] PresenceSensorRadarDriver  
+initialized
+2025-11-11T16:07:50.393Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] Switch1gangDriver  
+initialized
+2025-11-11T16:08:49.590Z [log] [UniversalTuyaZigbeeApp]  
+[MIGRATION-WORKER] 🔄  Starting...
+[MIGRATION-QUEUE] 🔄  Processing migration queue...
+[MIGRATION-QUEUE] 📤  Popped 0 migration(s)
+[MIGRATION-QUEUE] No migrations to process
+2025-11-11T16:08:49.594Z [log] [UniversalTuyaZigbeeApp]  
+[MIGRATION-WORKER] ✅  Processed undefined migrations
+stderr:
+at Module.  (node:internal/modules/cjs/ loader:1463:12)
+at Module.homeyRequire [as require]  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/index.js:12:19)
+at require (node:internal/modules/ helpers:147:16)
+at Object.  (/app/lib/devices/ BaseHybridDevice.js:14:37)  
+{
+code: 'MODULE_NOT_FOUND',
+requireStack: [
+'/app/lib/devices/ BaseHybridDevice.js',
+'/app/drivers/climate_monitor_ temp_humidity/device.js',
+'/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/lib/Util.js',
+'/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/lib/Device.js',
+'/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/homey.js',
+'/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/index.js'
+]
+}
+2025-11-11T16:07:50.351Z [err] [ManagerDrivers]  
+[Driver:climate_sensor_soil] Error Initializing Device:  
+Error: Cannot find module '../../TS0601_EMERGENCY_FIX'
+Require stack:
+- /app/lib/devices/ BaseHybridDevice.js
+- /app/drivers/climate_sensor_ soil/device.js
+- /app/assets/app/node_modules/@ athombv/homey-apps-sdk-
+v3/lib/Util.js
+- /app/assets/app/node_modules/@ athombv/homey-apps-sdk-
+v3/lib/Device.js
+- /app/assets/app/node_modules/@ athombv/homey-apps-sdk-
+v3/homey.js
+- /app/assets/app/node_modules/@ athombv/homey-apps-sdk-
+v3/index.js
+at Function._resolveFilename (node:internal/modules/cjs/
+loader:1383:15)
+at defaultResolveImpl (node:internal/modules/cjs/
+loader:1025:19)
+at resolveForCJSWithHooks (node:internal/modules/cjs/
+loader:1030:22)
+at Function._load (node:internal/modules/cjs/
+loader:1192:37)
+at TracingChannel.traceSync  
+(node:diagnostics_channel:328: 14)
+at wrapModuleLoad (node:internal/modules/cjs/
+loader:237:24)
+at Module.  (node:internal/modules/cjs/ loader:1463:12)
+at Module.homeyRequire [as require]  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/index.js:12:19)
+at require (node:internal/modules/ helpers:147:16)
+at Object.  (/app/lib/devices/ BaseHybridDevice.js:14:37)  
+{
+code: 'MODULE_NOT_FOUND',
+requireStack: [
+'/app/lib/devices/ BaseHybridDevice.js',
+'/app/drivers/climate_sensor_ soil/device.js',
+'/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/lib/Util.js',
+'/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/lib/Device.js',
+'/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/homey.js',
+'/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/index.js'
+]
+}
+2025-11-11T16:07:50.379Z [err] [ManagerDrivers]  
+[Driver:presence_sensor_radar] Error Initializing  
+Device: Error: Cannot find module  
+'../../TS0601_EMERGENCY_FIX'
+Require stack:
+- /app/lib/devices/ BaseHybridDevice.js
+- /app/drivers/presence_sensor_ radar/device.js
+- /app/assets/app/node_modules/@ athombv/homey-apps-sdk-
+v3/lib/Util.js
+- /app/assets/app/node_modules/@ athombv/homey-apps-sdk-
+v3/lib/Device.js
+- /app/assets/app/node_modules/@ athombv/homey-apps-sdk-
+v3/homey.js
+- /app/assets/app/node_modules/@ athombv/homey-apps-sdk-
+v3/index.js
+at Function._resolveFilename (node:internal/modules/cjs/
+loader:1383:15)
+at defaultResolveImpl (node:internal/modules/cjs/
+loader:1025:19)
+at resolveForCJSWithHooks (node:internal/modules/cjs/
+loader:1030:22)
+at Function._load (node:internal/modules/cjs/
+loader:1192:37)
+at TracingChannel.traceSync  
+(node:diagnostics_channel:328: 14)
+at wrapModuleLoad (node:internal/modules/cjs/
+loader:237:24)
+at Module.  (node:internal/modules/cjs/ loader:1463:12)
+at Module.homeyRequire [as require]  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/index.js:12:19)
+at require (node:internal/modules/ helpers:147:16)
+at Object.  (/app/lib/devices/ BaseHybridDevice.js:14:37)  
+{
+code: 'MODULE_NOT_FOUND',
+requireStack: [
+'/app/lib/devices/ BaseHybridDevice.js',
+'/app/drivers/presence_sensor_ radar/device.js',
+'/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/lib/Util.js',
+'/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/lib/Device.js',
+'/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/homey.js',
+'/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/index.js'
+]
+}
+2025-11-11T16:07:50.391Z [err] [ManagerDrivers]  
+[Driver:switch_basic_1gang] Error Initializing Device:  
+Error: Cannot find module '../../TS0601_EMERGENCY_FIX'
+Require stack:
+- /app/lib/devices/ BaseHybridDevice.js
+- /app/lib/devices/SwitchDevice. js
+- /app/drivers/switch_basic_ 1gang/device.js
+- /app/assets/app/node_modules/@ athombv/homey-apps-sdk-
+v3/lib/Util.js
+- /app/assets/app/node_modules/@ athombv/homey-apps-sdk-
+v3/lib/Device.js
+- /app/assets/app/node_modules/@ athombv/homey-apps-sdk-
+v3/homey.js
+- /app/assets/app/node_modules/@ athombv/homey-apps-sdk-
+v3/index.js
+at Function._resolveFilename (node:internal/modules/cjs/
+loader:1383:15)
+at defaultResolveImpl (node:internal/modules/cjs/
+loader:1025:19)
+at resolveForCJSWithHooks (node:internal/modules/cjs/
+loader:1030:22)
+at Function._load (node:internal/modules/cjs/
+loader:1192:37)
+at TracingChannel.traceSync  
+(node:diagnostics_channel:328: 14)
+at wrapModuleLoad (node:internal/modules/cjs/
+loader:237:24)
+at Module.  (node:internal/modules/cjs/ loader:1463:12)
+at Module.homeyRequire [as require]  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/index.js:12:19)
+at require (node:internal/modules/ helpers:147:16)
+at Object.  (/app/lib/devices/ BaseHybridDevice.js:14:37)  
+{
+code: 'MODULE_NOT_FOUND',
+requireStack: [
+'/app/lib/devices/ BaseHybridDevice.js',
+'/app/lib/devices/ SwitchDevice.js',
+'/app/drivers/switch_basic_ 1gang/device.js',
+'/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/lib/Util.js',
+'/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/lib/Device.js',
+'/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/homey.js',
+'/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/index.js'
+]
+}
+You can manage your email settings in the Homey Developer Tools.
+
