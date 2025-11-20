@@ -107,9 +107,9 @@ class DehumidifierDevice extends BaseHybridDevice {
       //         }
       //       });
     }
-  }
 
-  this.log('Dehumidifier device initialized');
+    this.log('Dehumidifier device initialized');
+  }
 }
 
 
