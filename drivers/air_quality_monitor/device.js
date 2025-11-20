@@ -206,80 +206,82 @@ class AirQualityMonitorProBatteryDevice extends SensorDevice {
       }
 
       return context;
+    } catch (err) {
+      this.error('[ERROR] triggerFlowCard failed:', err);
+      throw err;
     }
+  }
 
   /**
    * Get time of day
    */
   getTimeOfDay() {
-      const hour = new Date().getHours();
-      if (hour >= 5 && hour < 12) return 'morning';
-      if (hour >= 12 && hour < 17) return 'afternoon';
-      if (hour >= 17 && hour < 22) return 'evening';
-      return 'night';
+    const hour = new Date().getHours();
+    if (hour >= 5 && hour < 12) return 'morning';
+    if (hour >= 12 && hour < 17) return 'afternoon';
+    if (hour >= 17 && hour < 22) return 'evening';
+    return 'night';
+  }
+
+
+
+  /**
+   * Poll tous les attributes pour forcer mise à jour
+   * Résout: Données non visibles après pairing (Peter + autres)
+   */
+  async pollAttributes() {
+    const promises = [];
+
+    // Battery
+    if (this.hasCapability('measure_battery')) {
+      promises.push(
+        // TODO: Wrap in try/catch
+        this.zclNode.endpoints[1]?.clusters.powerConfiguration?.readAttributes(['batteryPercentageRemaining'])
+          .catch(err => this.log('Battery read failed (ignorable):', err.message))
+      );
     }
 
+    // Temperature
+    if (this.hasCapability('measure_temperature')) {
+      promises.push(
+        // TODO: Wrap in try/catch
+        this.zclNode.endpoints[1]?.clusters.temperatureMeasurement?.readAttributes(['measuredValue'])
+          .catch(err => this.log('Temperature read failed (ignorable):', err.message))
+      );
+    }
 
+    // Humidity
+    if (this.hasCapability('measure_humidity')) {
+      promises.push(
+        // TODO: Wrap in try/catch
+        this.zclNode.endpoints[1]?.clusters.relativeHumidity?.readAttributes(['measuredValue'])
+          .catch(err => this.log('Humidity read failed (ignorable):', err.message))
+      );
+    }
 
-    /**
-     * Poll tous les attributes pour forcer mise à jour
-     * Résout: Données non visibles après pairing (Peter + autres)
-     */
+    // Illuminance
+    if (this.hasCapability('measure_luminance')) {
+      promises.push(
+        // TODO: Wrap in try/catch
+        this.zclNode.endpoints[1]?.clusters.illuminanceMeasurement?.readAttributes(['measuredValue'])
+          .catch(err => this.log('Illuminance read failed (ignorable):', err.message))
+      );
+    }
+
+    // Alarm status (IAS Zone)
+    if (this.hasCapability('alarm_motion') || this.hasCapability('alarm_contact')) {
+      promises.push(
+        // TODO: Wrap in try/catch
+        this.zclNode.endpoints[1]?.clusters.iasZone?.readAttributes(['zoneStatus'])
+          .catch(err => this.log('IAS Zone read failed (ignorable):', err.message))
+      );
+    }
+
+    try {
+      await Promise.allSettled(promises).catch(err => this.error(err));
+    } catch (err) { this.error('Await error:', err); }
+    this.log('[OK] Poll attributes completed');
   }
-}
-  async pollAttributes() {
-  const promises = [];
-
-  // Battery
-  if (this.hasCapability('measure_battery')) {
-    promises.push(
-      // TODO: Wrap in try/catch
-      this.zclNode.endpoints[1]?.clusters.powerConfiguration?.readAttributes(['batteryPercentageRemaining'])
-        .catch(err => this.log('Battery read failed (ignorable):', err.message))
-    );
-  }
-
-  // Temperature
-  if (this.hasCapability('measure_temperature')) {
-    promises.push(
-      // TODO: Wrap in try/catch
-      this.zclNode.endpoints[1]?.clusters.temperatureMeasurement?.readAttributes(['measuredValue'])
-        .catch(err => this.log('Temperature read failed (ignorable):', err.message))
-    );
-  }
-
-  // Humidity
-  if (this.hasCapability('measure_humidity')) {
-    promises.push(
-      // TODO: Wrap in try/catch
-      this.zclNode.endpoints[1]?.clusters.relativeHumidity?.readAttributes(['measuredValue'])
-        .catch(err => this.log('Humidity read failed (ignorable):', err.message))
-    );
-  }
-
-  // Illuminance
-  if (this.hasCapability('measure_luminance')) {
-    promises.push(
-      // TODO: Wrap in try/catch
-      this.zclNode.endpoints[1]?.clusters.illuminanceMeasurement?.readAttributes(['measuredValue'])
-        .catch(err => this.log('Illuminance read failed (ignorable):', err.message))
-    );
-  }
-
-  // Alarm status (IAS Zone)
-  if (this.hasCapability('alarm_motion') || this.hasCapability('alarm_contact')) {
-    promises.push(
-      // TODO: Wrap in try/catch
-      this.zclNode.endpoints[1]?.clusters.iasZone?.readAttributes(['zoneStatus'])
-        .catch(err => this.log('IAS Zone read failed (ignorable):', err.message))
-    );
-  }
-
-  try {
-    await Promise.allSettled(promises).catch(err => this.error(err));
-  } catch (err) { this.error('Await error:', err); }
-  this.log('[OK] Poll attributes completed');
-}
 
 
 
@@ -287,7 +289,7 @@ class AirQualityMonitorProBatteryDevice extends SensorDevice {
    * Read attribute with intelligent fallback
    * Tries multiple strategies until success
    */
-  }
+}
   async readAttributeSafe(cluster, attribute) {
   try {
     return await this.fallback.readAttributeWithFallback(cluster, attribute).catch(err => this.error(err));

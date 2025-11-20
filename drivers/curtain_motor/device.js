@@ -473,36 +473,40 @@ class SmartCurtainMotorDevice extends BaseHybridDevice {
   /**
    * Configure report with intelligent fallback
    */
-}
   async configureReportSafe(config) {
-  try {
-    return await this.fallback.configureReportWithFallback(config).catch(err => this.error(err));
-  } catch (err) {
-    this.error(`Failed to configure report after all fallback strategies:`, err);
-    // Don't throw - use polling as ultimate fallback
-    return { success: false, method: 'polling' };
+    try {
+      return await this.fallback.configureReportWithFallback(config).catch(err => this.error(err));
+    } catch (err) {
+      this.error(`Failed to configure report after all fallback strategies:`, err);
+      // Don't throw - use polling as ultimate fallback
+      return { success: false, method: 'polling' };
+    }
   }
-}
 
   /**
    * IAS Zone enrollment with fallback
    */
-  }
   async enrollIASZoneSafe() {
-  try {
-    return await this.fallback.iasEnrollWithFallback().catch(err => this.error(err));
-  } catch (err) {
-    this.error('Failed to enroll IAS Zone after all fallback strategies:', err);
-    throw err;
+    try {
+      return await this.fallback.iasEnrollWithFallback().catch(err => this.error(err));
+    } catch (err) {
+      this.error('Failed to enroll IAS Zone after all fallback strategies:', err);
+      throw err;
+    }
+    try {
+      return await this.fallback.iasEnrollWithFallback().catch(err => this.error(err));
+    } catch (err) {
+      this.error('Failed to enroll IAS Zone after all fallback strategies:', err);
+      throw err;
+    }
   }
-}
 
-/**
- * Get fallback system statistics
- */
-getFallbackStats() {
-  return this.fallback ? this.fallback.getStats() : null;
-}
+  /**
+   * Get fallback system statistics
+   */
+  getFallbackStats() {
+    return this.fallback ? this.fallback.getStats() : null;
+  }
 }
 
 module.exports = SmartCurtainMotorDevice;
