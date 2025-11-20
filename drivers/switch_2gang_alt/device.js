@@ -501,10 +501,6 @@ class TuyaZigbeeDevice extends SwitchDevice {
   getFallbackStats() {
     return this.fallback ? this.fallback.getStats() : null;
   }
-  */
-getFallbackStats() {
-  return this.fallback ? this.fallback.getStats() : null;
-}
 }
 
 module.exports = TuyaZigbeeDevice;
