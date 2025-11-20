@@ -217,6 +217,10 @@ getContextData() {
     time_of_day: this.getTimeOfDay(),
     timestamp: new Date().toISOString()
   };
+  const context = {
+    time_of_day: this.getTimeOfDay(),
+    timestamp: new Date().toISOString()
+  };
 
   // Add available sensor values
   const caps = this.getCapabilities();
