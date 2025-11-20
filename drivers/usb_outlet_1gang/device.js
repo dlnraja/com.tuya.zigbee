@@ -133,77 +133,77 @@ class UsbOutlet1GangDevice extends SwitchDevice {
           //             get: 'rmsCurrent',
           //             report: 'rmsCurrent',
           //             reportParser: value => {
-//           // Convert to Amps (device reports in mA)
-//           const amps = value / 1000;
-//           this.log('[DATA] Current:', amps, 'A');
-//           return amps;
-//         },
-//         reportOpts: {
-//           configureAttributeReporting: {
-//             minInterval: 60,       // 1 minute
-//               maxInterval: 600,      // 10 minutes
-//                 minChange: 100         // 100mA change
-//           }
-//         },
-//         getOpts: {
-//           getOnStart: true
-//         }
-//       });
-//       this.log('[OK] measure_current configured (cluster 2820)');
-    }
-  } catch(err) {
-    this.error('Electrical measurement setup failed:', err);
-  }
-} else {
-  this.log('[INFO]  Cluster 2820 (ElectricalMeasurement) not available');
-}
-
-// Cluster 1794 (Metering): Energy consumption
-if (endpoint.clusters[1794]) {
-  try {
-    // meter_power (currentSummationDelivered)
-    if (this.hasCapability('meter_power')) {
-      /* REFACTOR: registerCapability deprecated with cluster spec.
-Original: this.registerCapability('meter_power', 1794,
-Replace with SDK3 pattern - see ZigbeeDevice docs
-Capability: 'meter_power', Cluster: 1794
-*/
-      // this.registerCapability('meter_power', 1794, {
-      //             get: 'currentSummationDelivered',
-      //             report: 'currentSummationDelivered',
-      //             reportParser: value => {
-      // Convert to kWh (device reports in Wh)
-      const kwh = value / 1000;
-      this.log('[DATA] Energy:', kwh, 'kWh');
-      return kwh;
-    },
-    reportOpts: {
-      configureAttributeReporting: {
-        minInterval: 300,      // 5 minutes
-          maxInterval: 3600,     // 1 hour
-            minChange: 100         // 100Wh change
-      }
-    },
-    getOpts: {
-      getOnStart: true
-    }
-  });
-  this.log('[OK] meter_power configured (cluster 1794)');
-}
+          //           // Convert to Amps (device reports in mA)
+          //           const amps = value / 1000;
+          //           this.log('[DATA] Current:', amps, 'A');
+          //           return amps;
+          //         },
+          //         reportOpts: {
+          //           configureAttributeReporting: {
+          //             minInterval: 60,       // 1 minute
+          //               maxInterval: 600,      // 10 minutes
+          //                 minChange: 100         // 100mA change
+          //           }
+          //         },
+          //         getOpts: {
+          //           getOnStart: true
+          //         }
+          //       });
+          //       this.log('[OK] measure_current configured (cluster 2820)');
+        }
       } catch (err) {
-  this.error('Metering setup failed:', err);
-}
+        this.error('Electrical measurement setup failed:', err);
+      }
     } else {
-  this.log('[INFO]  Cluster 1794 (Metering) not available');
-}
+      this.log('[INFO]  Cluster 2820 (ElectricalMeasurement) not available');
+    }
 
-this.log('[OK] Power measurement setup complete');
+    // Cluster 1794 (Metering): Energy consumption
+    if (endpoint.clusters[1794]) {
+      try {
+        // meter_power (currentSummationDelivered)
+        if (this.hasCapability('meter_power')) {
+          /* REFACTOR: registerCapability deprecated with cluster spec.
+    Original: this.registerCapability('meter_power', 1794,
+    Replace with SDK3 pattern - see ZigbeeDevice docs
+    Capability: 'meter_power', Cluster: 1794
+    */
+          // this.registerCapability('meter_power', 1794, {
+          //             get: 'currentSummationDelivered',
+          //             report: 'currentSummationDelivered',
+          //             reportParser: value => {
+          //       // Convert to kWh (device reports in Wh)
+          //       const kwh = value / 1000;
+          //       this.log('[DATA] Energy:', kwh, 'kWh');
+          //       return kwh;
+          //     },
+          //     reportOpts: {
+          //       configureAttributeReporting: {
+          //         minInterval: 300,      // 5 minutes
+          //           maxInterval: 3600,     // 1 hour
+          //             minChange: 100         // 100Wh change
+          //       }
+          //     },
+          //     getOpts: {
+          //       getOnStart: true
+          //     }
+          //   });
+          //   this.log('[OK] meter_power configured (cluster 1794)');
+        }
+      } catch (err) {
+        // this.error('Metering setup failed:', err);
+      }
+    } else {
+      // this.log('[INFO]  Cluster 1794 (Metering) not available');
+    }
+
+    this.log('[OK] Power measurement setup complete');
   }
 
   async onDeleted() {
-  this.log('UsbOutlet1GangDevice deleted');
-  await super.onDeleted().catch(err => this.error(err));
-}
+    this.log('UsbOutlet1GangDevice deleted');
+    await super.onDeleted().catch(err => this.error(err));
+  }
 }
 
 module.exports = UsbOutlet1GangDevice;
