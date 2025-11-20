@@ -279,58 +279,53 @@ class ContactVibrationSensor extends SensorDevice {
   this.log('[SEND] Sending proactive Zone Enroll Response...');
 
   try {
+    // Send response IMMEDIATELY (synchronous, no async, no delay)
     await endpoint.clusters.iasZone.zoneEnrollResponse({
-      enrollResponseCode: 0,
+      enrollResponseCode: 0, // 0 = Success
       zoneId: 10
     });
 
-    this.log('[OK] Proactive Zone Enroll Response sent');
+    this.log('[OK] Zone Enroll Response sent (zoneId: 10)');
   } catch (err) {
-    this.log('[WARN]  Proactive response failed (normal if device not ready):', err.message);
+    this.error('Failed to send Zone Enroll Response:', err.message);
   }
+} catch (err) {
+  this.error('IAS Zone setup error:', err);
+}
 
-  // Step 3: Setup Zone Status Change listener (property assignment)
-  // SDK3: Use .onZoneStatusChangeNotification property, NOT .on() event
-  endpoint.clusters.iasZone.onZoneStatusChangeNotification = async (payload) => {
-    this.log('[MSG] Zone notification received:', payload);
+this.log('[OK] Zone Enroll Request listener configured');
 
-    if (payload && payload.zoneStatus !== undefined) {
-      // Convert Bitmap to value if needed
-      let status = payload.zoneStatus;
-      if (status && typeof status.valueOf === 'function') {
-        status = status.valueOf();
-      }
+// Step 2: Send proactive Zone Enroll Response (SDK3 official method)
+// Per Homey docs: "driver could send Zone Enroll Response when initializing
+// regardless of having received Zone Enroll Request"
+this.log('[SEND] Sending proactive Zone Enroll Response...');
 
-      // Check alarm1 bit (motion/alarm detected)
-      const alarm = (status & 0x01) !== 0;
+try {
+  await endpoint.clusters.iasZone.zoneEnrollResponse({
+    enrollResponseCode: 0,
+    zoneId: 10
+  });
 
-      await (async () => {
-        this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_contact'} = ${alarm}`);
-        try {
-          await this.setCapabilityValue('alarm_contact', alarm);
-          this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'alarm_contact'}`);
-        } catch (err) {
-          this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'alarm_contact'}`, err.message);
-          throw err;
-        }
-      })().catch(this.error);
-      this.log(`${alarm ? '[ALARM]' : '[OK]'} Alarm: ${alarm ? 'TRIGGERED' : 'cleared'}`);
-    }
-  };
+  this.log('[OK] Proactive Zone Enroll Response sent');
+} catch (err) {
+  this.log('[WARN]  Proactive response failed (normal if device not ready):', err.message);
+}
 
-  this.log('[OK] Zone Status listener configured');
+// Step 3: Setup Zone Status Change listener (property assignment)
+// SDK3: Use .onZoneStatusChangeNotification property, NOT .on() event
+endpoint.clusters.iasZone.onZoneStatusChangeNotification = async (payload) => {
+  this.log('[MSG] Zone notification received:', payload);
 
-  // Step 4: Setup Zone Status attribute listener (property assignment)
-  // Alternative listener for attribute reports
-  zclNode.endpoints[1].clusters.iasZone.onZoneStatus = async (zoneStatus) => {
-    this.log('[DATA] Zone attribute report:', zoneStatus);
-
-    let status = zoneStatus;
+  if (payload && payload.zoneStatus !== undefined) {
+    // Convert Bitmap to value if needed
+    let status = payload.zoneStatus;
     if (status && typeof status.valueOf === 'function') {
       status = status.valueOf();
     }
 
+    // Check alarm1 bit (motion/alarm detected)
     const alarm = (status & 0x01) !== 0;
+
     await (async () => {
       this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_contact'} = ${alarm}`);
       try {
@@ -341,9 +336,36 @@ class ContactVibrationSensor extends SensorDevice {
         throw err;
       }
     })().catch(this.error);
-  };
+    this.log(`${alarm ? '[ALARM]' : '[OK]'} Alarm: ${alarm ? 'TRIGGERED' : 'cleared'}`);
+  }
+};
 
-  this.log('[OK] IAS Zone configured successfully (SDK3 latest method)');
+this.log('[OK] Zone Status listener configured');
+
+// Step 4: Setup Zone Status attribute listener (property assignment)
+// Alternative listener for attribute reports
+zclNode.endpoints[1].clusters.iasZone.onZoneStatus = async (zoneStatus) => {
+  this.log('[DATA] Zone attribute report:', zoneStatus);
+
+  let status = zoneStatus;
+  if (status && typeof status.valueOf === 'function') {
+    status = status.valueOf();
+  }
+
+  const alarm = (status & 0x01) !== 0;
+  await (async () => {
+    this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_contact'} = ${alarm}`);
+    try {
+      await this.setCapabilityValue('alarm_contact', alarm);
+      this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'alarm_contact'}`);
+    } catch (err) {
+      this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'alarm_contact'}`, err.message);
+      throw err;
+    }
+  })().catch(this.error);
+};
+
+this.log('[OK] IAS Zone configured successfully (SDK3 latest method)');
 
 } catch (err) {
   this.error('IAS Zone setup failed:', err);
