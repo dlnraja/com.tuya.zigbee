@@ -380,87 +380,87 @@ class TuyaZigbeeDevice extends SwitchDevice {
         if (battery && battery.batteryPercentageRemaining !== undefined) {
           const percentage = Math.round(battery.batteryPercentageRemaining / 2);
           await (async () => {
-            this.log(`📝 [DIAG] setCapabilityValue: ${'measure_battery'} = ${parseFloat(percentage}`);
+            this.log(`📝 [DIAG] setCapabilityValue: ${'measure_battery'} = ${parseFloat(percentage)}`);
             try {
-              await this.setCapabilityValue('measure_battery', parseFloat(percentage);
+              await this.setCapabilityValue('measure_battery', parseFloat(percentage));
               this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_battery'}`);
             } catch (err) {
               this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_battery'}`, err.message);
               throw err;
             }
-          })()).catch(err => this.error(err));
-    this.log('Battery polled:', percentage + '%');
+          })().catch(err => this.error(err));
+          this.log('Battery polled:', percentage + '%');
 
-    // Reset failure counter on success
-    pollFailures = 0;
+          // Reset failure counter on success
+          pollFailures = 0;
 
-    // Low battery alert
-    if (percentage <= 20 && percentage > 10) {
-      this.log('[WARN]  Low battery warning:', percentage + '%');
-      await this.homey.notifications.createNotification({
-        excerpt: `${this.getName()} battery low (${percentage}%)`
-      }).catch(() => { });
+          // Low battery alert
+          if (percentage <= 20 && percentage > 10) {
+            this.log('[WARN]  Low battery warning:', percentage + '%');
+            await this.homey.notifications.createNotification({
+              excerpt: `${this.getName()} battery low (${percentage}%)`
+            }).catch(() => { });
+          }
+
+          // Critical battery alert
+          if (percentage <= 10) {
+            this.log('🔴 Critical battery:', percentage + '%');
+            await this.homey.notifications.createNotification({
+              excerpt: `${this.getName()} battery critical (${percentage}%) - replace soon!`
+            }).catch(() => { });
+          }
+        }
+      } catch (err) {
+        pollFailures++;
+        this.error(`Battery poll failed (${pollFailures}/${maxPollFailures}):`, err.message);
+
+        // Stop polling after max failures to preserve battery
+        if (pollFailures >= maxPollFailures) {
+          this.log('Max poll failures reached, reducing poll frequency');
+          // Polling will continue but less frequently
+        }
+      }
+    }, 3600000);
+    // Temperature
+    if (this.hasCapability('measure_temperature')) {
+      promises.push(
+        // TODO: Wrap in try/catch
+        this.zclNode.endpoints[1]?.clusters.temperatureMeasurement?.readAttributes(['measuredValue'])
+          .catch(err => this.log('Temperature read failed (ignorable):', err.message))
+      );
     }
 
-    // Critical battery alert
-    if (percentage <= 10) {
-      this.log('🔴 Critical battery:', percentage + '%');
-      await this.homey.notifications.createNotification({
-        excerpt: `${this.getName()} battery critical (${percentage}%) - replace soon!`
-      }).catch(() => { });
+    // Humidity
+    if (this.hasCapability('measure_humidity')) {
+      promises.push(
+        // TODO: Wrap in try/catch
+        this.zclNode.endpoints[1]?.clusters.relativeHumidity?.readAttributes(['measuredValue'])
+          .catch(err => this.log('Humidity read failed (ignorable):', err.message))
+      );
     }
-  }
-} catch (err) {
-  pollFailures++;
-  this.error(`Battery poll failed (${pollFailures}/${maxPollFailures}):`, err.message);
 
-  // Stop polling after max failures to preserve battery
-  if (pollFailures >= maxPollFailures) {
-    this.log('Max poll failures reached, reducing poll frequency');
-    // Polling will continue but less frequently
-  }
-}
-}, 3600000);
-// Temperature
-if (this.hasCapability('measure_temperature')) {
-  promises.push(
-    // TODO: Wrap in try/catch
-    this.zclNode.endpoints[1]?.clusters.temperatureMeasurement?.readAttributes(['measuredValue'])
-      .catch(err => this.log('Temperature read failed (ignorable):', err.message))
-  );
-}
+    // Illuminance
+    if (this.hasCapability('measure_luminance')) {
+      promises.push(
+        // TODO: Wrap in try/catch
+        this.zclNode.endpoints[1]?.clusters.illuminanceMeasurement?.readAttributes(['measuredValue'])
+          .catch(err => this.log('Illuminance read failed (ignorable):', err.message))
+      );
+    }
 
-// Humidity
-if (this.hasCapability('measure_humidity')) {
-  promises.push(
-    // TODO: Wrap in try/catch
-    this.zclNode.endpoints[1]?.clusters.relativeHumidity?.readAttributes(['measuredValue'])
-      .catch(err => this.log('Humidity read failed (ignorable):', err.message))
-  );
-}
+    // Alarm status (IAS Zone)
+    if (this.hasCapability('alarm_motion') || this.hasCapability('alarm_contact')) {
+      promises.push(
+        // TODO: Wrap in try/catch
+        this.zclNode.endpoints[1]?.clusters.iasZone?.readAttributes(['zoneStatus'])
+          .catch(err => this.log('IAS Zone read failed (ignorable):', err.message))
+      );
+    }
 
-// Illuminance
-if (this.hasCapability('measure_luminance')) {
-  promises.push(
-    // TODO: Wrap in try/catch
-    this.zclNode.endpoints[1]?.clusters.illuminanceMeasurement?.readAttributes(['measuredValue'])
-      .catch(err => this.log('Illuminance read failed (ignorable):', err.message))
-  );
-}
-
-// Alarm status (IAS Zone)
-if (this.hasCapability('alarm_motion') || this.hasCapability('alarm_contact')) {
-  promises.push(
-    // TODO: Wrap in try/catch
-    this.zclNode.endpoints[1]?.clusters.iasZone?.readAttributes(['zoneStatus'])
-      .catch(err => this.log('IAS Zone read failed (ignorable):', err.message))
-  );
-}
-
-try {
-  await Promise.allSettled(promises).catch(err => this.error(err));
-} catch (err) { this.error('Await error:', err); }
-this.log('[OK] Poll attributes completed');
+    try {
+      await Promise.allSettled(promises).catch(err => this.error(err));
+    } catch (err) { this.error('Await error:', err); }
+    this.log('[OK] Poll attributes completed');
   }
 
 
@@ -469,7 +469,7 @@ this.log('[OK] Poll attributes completed');
    * Read attribute with intelligent fallback
    * Tries multiple strategies until success
    */
-  }
+}
   async readAttributeSafe(cluster, attribute) {
   try {
     return await this.fallback.readAttributeWithFallback(cluster, attribute).catch(err => this.error(err));
