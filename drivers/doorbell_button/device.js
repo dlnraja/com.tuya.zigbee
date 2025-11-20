@@ -213,41 +213,35 @@ class SmartDoorbellBatteryDevice extends ButtonDevice {
       time_of_day: this.getTimeOfDay(),
       timestamp: new Date().toISOString()
     };
-    timestamp: new Date().toISOString()
-  };
-  const context = {
-    time_of_day: this.getTimeOfDay(),
-    timestamp: new Date().toISOString()
-  };
 
-  // Add available sensor values
-  const caps = this.getCapabilities();
-  if(caps.includes('measure_luminance')) {
-  context.luminance = this.getCapabilityValue('measure_luminance') || 0;
-}
-if (caps.includes('measure_temperature')) {
-  context.temperature = this.getCapabilityValue('measure_temperature') || 0;
-}
-if (caps.includes('measure_humidity')) {
-  context.humidity = this.getCapabilityValue('measure_humidity') || 0;
-}
-if (caps.includes('measure_battery')) {
-  context.battery = this.getCapabilityValue('measure_battery') || 0;
-}
+    // Add available sensor values
+    const caps = this.getCapabilities();
+    if (caps.includes('measure_luminance')) {
+      context.luminance = this.getCapabilityValue('measure_luminance') || 0;
+    }
+    if (caps.includes('measure_temperature')) {
+      context.temperature = this.getCapabilityValue('measure_temperature') || 0;
+    }
+    if (caps.includes('measure_humidity')) {
+      context.humidity = this.getCapabilityValue('measure_humidity') || 0;
+    }
+    if (caps.includes('measure_battery')) {
+      context.battery = this.getCapabilityValue('measure_battery') || 0;
+    }
 
-return context;
-}
+    return context;
+  }
 
-/**
- * Get time of day
- */
-getTimeOfDay() {
-  const hour = new Date().getHours();
-  if (hour >= 5 && hour < 12) return 'morning';
-  if (hour >= 12 && hour < 17) return 'afternoon';
-  if (hour >= 17 && hour < 22) return 'evening';
-  return 'night';
-}
+  /**
+   * Get time of day
+   */
+  getTimeOfDay() {
+    const hour = new Date().getHours();
+    if (hour >= 5 && hour < 12) return 'morning';
+    if (hour >= 12 && hour < 17) return 'afternoon';
+    if (hour >= 17 && hour < 22) return 'evening';
+    return 'night';
+  }
 
 
 
@@ -255,61 +249,59 @@ getTimeOfDay() {
    * Poll tous les attributes pour forcer mise à jour
    * Résout: Données non visibles après pairing (Peter + autres)
    */
-  }
-  }
   async pollAttributes() {
-  const promises = [];
+    const promises = [];
 
-  // Battery
-  if (this.hasCapability('measure_battery')) {
-    promises.push(
-      // TODO: Wrap in try/catch
-      this.zclNode.endpoints[1]?.clusters.powerConfiguration?.readAttributes(['batteryPercentageRemaining'])
-        .catch(err => this.log('Battery read failed (ignorable):', err.message))
-    );
+    // Battery
+    if (this.hasCapability('measure_battery')) {
+      promises.push(
+        // TODO: Wrap in try/catch
+        this.zclNode.endpoints[1]?.clusters.powerConfiguration?.readAttributes(['batteryPercentageRemaining'])
+          .catch(err => this.log('Battery read failed (ignorable):', err.message))
+      );
+    }
+
+    // Temperature
+    if (this.hasCapability('measure_temperature')) {
+      promises.push(
+        // TODO: Wrap in try/catch
+        this.zclNode.endpoints[1]?.clusters.temperatureMeasurement?.readAttributes(['measuredValue'])
+          .catch(err => this.log('Temperature read failed (ignorable):', err.message))
+      );
+    }
+
+    // Humidity
+    if (this.hasCapability('measure_humidity')) {
+      promises.push(
+        // TODO: Wrap in try/catch
+        this.zclNode.endpoints[1]?.clusters.relativeHumidity?.readAttributes(['measuredValue'])
+          .catch(err => this.log('Humidity read failed (ignorable):', err.message))
+      );
+    }
+
+    // Illuminance
+    if (this.hasCapability('measure_luminance')) {
+      promises.push(
+        // TODO: Wrap in try/catch
+        this.zclNode.endpoints[1]?.clusters.illuminanceMeasurement?.readAttributes(['measuredValue'])
+          .catch(err => this.log('Illuminance read failed (ignorable):', err.message))
+      );
+    }
+
+    // Alarm status (IAS Zone)
+    if (this.hasCapability('alarm_motion') || this.hasCapability('alarm_contact')) {
+      promises.push(
+        // TODO: Wrap in try/catch
+        this.zclNode.endpoints[1]?.clusters.iasZone?.readAttributes(['zoneStatus'])
+          .catch(err => this.log('IAS Zone read failed (ignorable):', err.message))
+      );
+    }
+
+    try {
+      await Promise.allSettled(promises).catch(err => this.error(err));
+    } catch (err) { this.error('Await error:', err); }
+    this.log('[OK] Poll attributes completed');
   }
-
-  // Temperature
-  if (this.hasCapability('measure_temperature')) {
-    promises.push(
-      // TODO: Wrap in try/catch
-      this.zclNode.endpoints[1]?.clusters.temperatureMeasurement?.readAttributes(['measuredValue'])
-        .catch(err => this.log('Temperature read failed (ignorable):', err.message))
-    );
-  }
-
-  // Humidity
-  if (this.hasCapability('measure_humidity')) {
-    promises.push(
-      // TODO: Wrap in try/catch
-      this.zclNode.endpoints[1]?.clusters.relativeHumidity?.readAttributes(['measuredValue'])
-        .catch(err => this.log('Humidity read failed (ignorable):', err.message))
-    );
-  }
-
-  // Illuminance
-  if (this.hasCapability('measure_luminance')) {
-    promises.push(
-      // TODO: Wrap in try/catch
-      this.zclNode.endpoints[1]?.clusters.illuminanceMeasurement?.readAttributes(['measuredValue'])
-        .catch(err => this.log('Illuminance read failed (ignorable):', err.message))
-    );
-  }
-
-  // Alarm status (IAS Zone)
-  if (this.hasCapability('alarm_motion') || this.hasCapability('alarm_contact')) {
-    promises.push(
-      // TODO: Wrap in try/catch
-      this.zclNode.endpoints[1]?.clusters.iasZone?.readAttributes(['zoneStatus'])
-        .catch(err => this.log('IAS Zone read failed (ignorable):', err.message))
-    );
-  }
-
-  try {
-    await Promise.allSettled(promises).catch(err => this.error(err));
-  } catch (err) { this.error('Await error:', err); }
-  this.log('[OK] Poll attributes completed');
-}
 
 
 
@@ -317,7 +309,7 @@ getTimeOfDay() {
    * Read attribute with intelligent fallback
    * Tries multiple strategies until success
    */
-  }
+}
   async readAttributeSafe(cluster, attribute) {
   try {
     return await this.fallback.readAttributeWithFallback(cluster, attribute).catch(err => this.error(err));
