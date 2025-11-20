@@ -1,0 +1,1452 @@
+Dylan Rajasekaram <senetmarne@gmail.com>
+[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report
+4 messages
+Homey <noreply@homey .app> 15 novembre 2025 à 15:45
+Répondre à : 6918920ea156f fc0e89f48ad@apps-api.athom.com
+À : senetmarne@gmail.com
+Hi Dylan Rajasekaram,
+Your app Universal T uya Zigbee  has received a diagnostics report.
+You can reply to this e-mail to get in touch with the user . Note that the
+user will then be able to see your e-mail address.
+App ID
+com.dlnraja.tuya.zigbee
+App V ersion
+v4.9.338
+Homey V ersion
+v12.9.0-rc.14
+Homey Model ID
+homey5q
+Homey Model Name
+Homey Pro (Early 2023)
+Stack T race
+Note: this log has been manually submitted by a user.
+Log ID: e107ca1d-5bc2-4d89-9eab- ae9790c1adb5
+User Message:
+Issue global et et batterie. Et problem du 2 gang usb  
+outlet
+
+stdout:
+2025-11-15T14:42:56.612Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [CMD-LISTENER] - scenes: not present
+2025-11-15T14:42:56.612Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [CMD-LISTENER] ✅  Setup complete - 8  
+listeners active
+2025-11-15T14:42:56.613Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [BACKGROUND] ✅  Command listeners  
+configured
+2025-11-15T14:42:56.613Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [BACKGROUND] Step 3e/7: Force initial  
+read + schedule polling...
+2025-11-15T14:42:56.613Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [INITIAL-READ] 📖  Force reading all  
+attributes...
+2025-11-15T14:42:56.613Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [INITIAL-READ] ✅  Force read complete
+2025-11-15T14:42:56.613Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [POLLING] 📅  Scheduling attribute  
+polling every 6h
+2025-11-15T14:42:56.613Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [BACKGROUND] Initial read + polling  
+configured
+2025-11-15T14:42:56.613Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [BACKGROUND] Step 3f/7: Reading  
+battery value...
+2025-11-15T14:43:04.633Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [BACKGROUND] Step 3f/7: Reading  
+sensor values...
+2025-11-15T14:43:04.634Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [BACKGROUND] Step 3g/7: Re-reading  
+manufacturer/model for Smart-Adapt...
+2025-11-15T14:43:11.727Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [BACKGROUND] ✅  Manufacturer:  
+_TZ3000_bgtzm4ny
+2025-11-15T14:43:11.728Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [BACKGROUND] ✅  Model: TS0044
+2025-11-15T14:43:11.729Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [BACKGROUND] Step FINAL: Smart driver  
+adaptation & migration check...
+2025-11-15T14:43:11.729Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121]
+2025-11-15T14:43:11.730Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ══════════════════════════════
+══════════════════════════════ ══════════
+2025-11-15T14:43:11.730Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] 🤖  [SMART ADAPT] INTELLIGENT DRIVER  
+ADAPTATION START
+2025-11-15T14:43:11.731Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ══════════════════════════════
+══════════════════════════════ ══════════
+2025-11-15T14:43:11.731Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] 📊  [SMART ADAPT] Collecting device  
+information (enriched)...
+2025-11-15T14:43:11.732Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ✅  [DATABASE] Found device: 4-Button  
+Wireless Controller
+2025-11-15T14:43:11.733Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] Recommended driver: button_wireless_4
+2025-11-15T14:43:11.733Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] Type: standard_zigbee
+2025-11-15T14:43:11.734Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] 📍  Found 4 endpoint(s): 1, 2, 3, 4
+2025-11-15T14:43:11.735Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] 🔋  [BATTERY-READER] Attempting  
+enhanced battery/energy read...
+2025-11-15T14:43:11.737Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [BATTERY-READER] Trying Tuya DP  
+protocol...
+2025-11-15T14:43:11.738Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [BATTERY-READER] ℹ  Not a Tuya DP  
+device - standard Zigbee
+2025-11-15T14:43:11.739Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ℹ  Battery read: No data (source:  
+unknown)
+2025-11-15T14:43:11.739Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ✅  Device info collected (enriched)
+2025-11-15T14:43:11.740Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] Manufacturer: _TZ3000_bgtzm4ny
+2025-11-15T14:43:11.740Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] Model: TS0044
+2025-11-15T14:43:11.741Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] Power Source: unknown
+2025-11-15T14:43:11.741Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] Endpoints: 4
+2025-11-15T14:43:11.742Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] Clusters: 2
+2025-11-15T14:43:11.742Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] 🔍  [SMART ADAPT] Analyzing  
+clusters...
+2025-11-15T14:43:11.743Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] 🎯  OVERRIDE FOUND: TS0044
+2025-11-15T14:43:11.744Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] 🔘  BUTTON/REMOTE DETECTED (from  
+driver name) - Controller device, NOT controllable!
+2025-11-15T14:43:11.744Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] 🔘  CRITICAL: Will NOT add onoff  
+capability (buttons send commands, not receive)
+2025-11-15T14:43:11.745Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] 🎯  [SMART ADAPT] Detecting real  
+capabilities...
+2025-11-15T14:43:11.745Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] 🎯  Override capabilities specified:  
+measure_battery
+2025-11-15T14:43:11.746Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ⚖  [SMART ADAPT] Comparing with  
+current driver...
+2025-11-15T14:43:11.747Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ✅  Comparison complete
+2025-11-15T14:43:11.747Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] Needs Adaptation: NO
+2025-11-15T14:43:11.747Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ✅  Correct: measure_battery
+2025-11-15T14:43:11.748Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ✅  [SMART ADAPT] Driver is CORRECT -  
+No adaptation needed
+2025-11-15T14:43:11.748Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ⚙  [SMART ADAPT] Auto-configuring  
+capabilities...
+2025-11-15T14:43:11.748Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ✅  Capabilities auto-configured
+2025-11-15T14:43:11.749Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] 🔄  [SMART ADAPT] Checking driver  
+assignment (SAFE mode)...
+2025-11-15T14:43:11.750Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ✅  [SAFE-SWITCH] Driver is correct -  
+No migration needed
+2025-11-15T14:43:11.750Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] 📡  [SMART ADAPT] Configuring data  
+collection & KPI...
+2025-11-15T14:43:11.750Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] 🔧  [CLUSTER-CONFIG] Auto-configuring  
+attribute reporting...
+2025-11-15T14:43:11.750Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [CLUSTER-CONFIG] 🔧  Auto-configuring  
+attribute reporting...
+2025-11-15T14:43:11.751Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [CLUSTER-CONFIG] ✅  Auto-
+configuration complete: {
+battery: false,
+power: false,
+climate: false,
+onoff: false,
+level: false
+}
+2025-11-15T14:43:11.751Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ✅  [CLUSTER-CONFIG] Configuration  
+complete: {
+battery: false,
+power: false,
+climate: false,
+onoff: false,
+level: false
+}
+2025-11-15T14:43:11.752Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] 📡  [DATA-COLLECTOR] Registering  
+attribute report listeners...
+2025-11-15T14:43:11.752Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [DATA-COLLECTOR] 📡  Registering  
+attribute report listeners...
+2025-11-15T14:43:11.752Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [DATA-COLLECTOR] ✅  Report listeners  
+registered
+2025-11-15T14:43:11.752Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ✅  [DATA-COLLECTOR] Listeners  
+registered
+2025-11-15T14:43:11.752Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] 🔄  [DATA-COLLECTOR] Starting periodic  
+polling (5min interval)...
+2025-11-15T14:43:11.752Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [DATA-COLLECTOR] 🔄  Starting periodic  
+polling (300s)...
+2025-11-15T14:43:11.752Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [DATA-COLLECTOR] 📊  Polling data...
+2025-11-15T14:43:11.753Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [BATTERY-READER] Trying Tuya DP  
+protocol...
+2025-11-15T14:43:11.753Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [BATTERY-READER] ℹ  Not a Tuya DP  
+device - standard Zigbee
+2025-11-15T14:43:11.753Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ✅  [DATA-COLLECTOR] Polling started
+2025-11-15T14:43:11.753Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [DATA-COLLECTOR] ✅  Polling complete
+2025-11-15T14:43:11.754Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ══════════════════════════════
+══════════════════════════════ ══════════
+2025-11-15T14:43:11.754Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] 🎉  [SMART ADAPT] ADAPTATION COMPLETE
+2025-11-15T14:43:11.754Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ══════════════════════════════
+══════════════════════════════ ══════════
+2025-11-15T14:43:11.754Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121]
+2025-11-15T14:43:11.754Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [SMART ADAPT] ✅  Analysis complete
+2025-11-15T14:43:11.754Z [log] 🔍  [MIGRATION]  
+Determining best driver...
+2025-11-15T14:43:11.754Z [log] ✅  Best driver: unknown  
+(confidence: 0)
+2025-11-15T14:43:11.754Z [log] Reasons:
+2025-11-15T14:43:11.754Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [MIGRATION] ✅  Driver is correct
+2025-11-15T14:43:11.755Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [OK] ✅  Background initialization  
+complete!
+2025-11-15T14:43:11.755Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] Final power type: BATTERY
+2025-11-15T14:43:11.755Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] Battery type: CR2032
+2025-11-15T14:43:18.534Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:318e6928-b560-414e-
+ad89-b55aab70f0e8] [DATA-COLLECTOR] 📊  Polling data...
+2025-11-15T14:43:18.535Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:318e6928-b560-414e-
+ad89-b55aab70f0e8] [BATTERY-READER] Trying Tuya DP  
+protocol...
+2025-11-15T14:43:18.535Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:318e6928-b560-414e-
+ad89-b55aab70f0e8] [BATTERY-READER] ℹ  Not a Tuya DP  
+device - standard Zigbee
+2025-11-15T14:43:18.536Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:318e6928-b560-414e-
+ad89-b55aab70f0e8] [DATA-COLLECTOR] ✅  Polling complete
+2025-11-15T14:43:50.122Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:318e6928-b560-414e-
+ad89-b55aab70f0e8] Gang 1 onoff: true
+2025-11-15T14:43:50.209Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:318e6928-b560-414e-
+ad89-b55aab70f0e8] [OK] Gang 1 set to: true
+2025-11-15T14:43:50.222Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:318e6928-b560-414e-
+ad89-b55aab70f0e8] [RECV] Gang 1 cluster update: true
+2025-11-15T14:43:53.182Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:318e6928-b560-414e-
+ad89-b55aab70f0e8] [RECV] Gang 1 cluster update: true
+2025-11-15T14:44:48.963Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:fef2424d-
+bcc8-412c- 8085-d5aa2d52db95] [DATA-COLLECTOR] 📊  Polling  
+data...
+2025-11-15T14:44:48.963Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:fef2424d-
+bcc8-412c- 8085-d5aa2d52db95] [BATTERY-READER] Trying  
+Tuya DP protocol...
+2025-11-15T14:44:48.964Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:fef2424d-
+bcc8-412c- 8085-d5aa2d52db95] [BATTERY-READER] ℹ  Not a 
+Tuya DP device - standard Zigbee
+2025-11-15T14:44:48.964Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:fef2424d-
+bcc8-412c- 8085-d5aa2d52db95] [DATA-COLLECTOR] ✅  Polling  
+complete
+stderr:
+n/a
+You can manage your email settings in the Homey Developer Tools.
+Homey <noreply@homey .app> 15 novembre 2025 à 15:51
+Répondre à : 6918938be09bc49db27a985c@apps-api.athom.com
+À : senetmarne@gmail.com
+
+Hi Dylan Rajasekaram,
+Your app Universal T uya Zigbee  has received a diagnostics report.
+You can reply to this e-mail to get in touch with the user . Note that the
+user will then be able to see your e-mail address.
+App ID
+com.dlnraja.tuya.zigbee
+App V ersion
+v4.9.338
+Homey V ersion
+v12.9.0-rc.14
+Homey Model ID
+homey5q
+Homey Model Name
+Homey Pro (Early 2023)
+Stack T race
+Note: this log has been manually submitted by a user.
+Log ID: 4bf7e106-6264-44a3-9720- 1d25b325a51b
+User Message:
+Aucune évolution toujours les mêmes problèmes
+stdout:
+2025-11-15T14:43:11.745Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] 🎯  Override capabilities specified:  
+measure_battery
+2025-11-15T14:43:11.746Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ⚖  [SMART ADAPT] Comparing with  
+current driver...
+2025-11-15T14:43:11.747Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ✅  Comparison complete
+2025-11-15T14:43:11.747Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] Needs Adaptation: NO
+2025-11-15T14:43:11.747Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ✅  Correct: measure_battery
+2025-11-15T14:43:11.748Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ✅  [SMART ADAPT] Driver is CORRECT -  
+No adaptation needed
+2025-11-15T14:43:11.748Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ⚙  [SMART ADAPT] Auto-configuring  
+capabilities...
+2025-11-15T14:43:11.748Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ✅  Capabilities auto-configured
+2025-11-15T14:43:11.749Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] 🔄  [SMART ADAPT] Checking driver  
+assignment (SAFE mode)...
+2025-11-15T14:43:11.750Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ✅  [SAFE-SWITCH] Driver is correct -  
+No migration needed
+2025-11-15T14:43:11.750Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] 📡  [SMART ADAPT] Configuring data  
+collection & KPI...
+2025-11-15T14:43:11.750Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] 🔧  [CLUSTER-CONFIG] Auto-configuring  
+attribute reporting...
+2025-11-15T14:43:11.750Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [CLUSTER-CONFIG] 🔧  Auto-configuring  
+attribute reporting...
+2025-11-15T14:43:11.751Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [CLUSTER-CONFIG] ✅  Auto-
+configuration complete: {
+battery: false,
+power: false,
+climate: false,
+onoff: false,
+level: false
+}
+2025-11-15T14:43:11.751Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ✅  [CLUSTER-CONFIG] Configuration  
+complete: {
+battery: false,
+power: false,
+climate: false,
+onoff: false,
+level: false
+}
+2025-11-15T14:43:11.752Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] 📡  [DATA-COLLECTOR] Registering  
+attribute report listeners...
+2025-11-15T14:43:11.752Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [DATA-COLLECTOR] 📡  Registering  
+attribute report listeners...
+2025-11-15T14:43:11.752Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [DATA-COLLECTOR] ✅  Report listeners  
+registered
+2025-11-15T14:43:11.752Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ✅  [DATA-COLLECTOR] Listeners  
+registered
+2025-11-15T14:43:11.752Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] 🔄  [DATA-COLLECTOR] Starting periodic  
+polling (5min interval)...
+2025-11-15T14:43:11.752Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [DATA-COLLECTOR] 🔄  Starting periodic  
+polling (300s)...
+2025-11-15T14:43:11.752Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [DATA-COLLECTOR] 📊  Polling data...
+2025-11-15T14:43:11.753Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [BATTERY-READER] Trying Tuya DP  
+protocol...
+2025-11-15T14:43:11.753Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [BATTERY-READER] ℹ  Not a Tuya DP  
+device - standard Zigbee
+2025-11-15T14:43:11.753Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ✅  [DATA-COLLECTOR] Polling started
+2025-11-15T14:43:11.753Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [DATA-COLLECTOR] ✅  Polling complete
+2025-11-15T14:43:11.754Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ══════════════════════════════
+══════════════════════════════ ══════════
+2025-11-15T14:43:11.754Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] 🎉  [SMART ADAPT] ADAPTATION COMPLETE
+2025-11-15T14:43:11.754Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] ══════════════════════════════
+══════════════════════════════ ══════════
+2025-11-15T14:43:11.754Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121]
+2025-11-15T14:43:11.754Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [SMART ADAPT] ✅  Analysis complete
+2025-11-15T14:43:11.754Z [log] 🔍  [MIGRATION]  
+Determining best driver...
+2025-11-15T14:43:11.754Z [log] ✅  Best driver: unknown  
+(confidence: 0)
+2025-11-15T14:43:11.754Z [log] Reasons:
+2025-11-15T14:43:11.754Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [MIGRATION] ✅  Driver is correct
+2025-11-15T14:43:11.755Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [OK] ✅  Background initialization  
+complete!
+2025-11-15T14:43:11.755Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] Final power type: BATTERY
+2025-11-15T14:43:11.755Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] Battery type: CR2032
+2025-11-15T14:43:18.534Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:318e6928-b560-414e-
+ad89-b55aab70f0e8] [DATA-COLLECTOR] 📊  Polling data...
+2025-11-15T14:43:18.535Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:318e6928-b560-414e-
+ad89-b55aab70f0e8] [BATTERY-READER] Trying Tuya DP  
+protocol...
+2025-11-15T14:43:18.535Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:318e6928-b560-414e-
+ad89-b55aab70f0e8] [BATTERY-READER] ℹ  Not a Tuya DP  
+device - standard Zigbee
+2025-11-15T14:43:18.536Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:318e6928-b560-414e-
+ad89-b55aab70f0e8] [DATA-COLLECTOR] ✅  Polling complete
+2025-11-15T14:43:50.122Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:318e6928-b560-414e-
+ad89-b55aab70f0e8] Gang 1 onoff: true
+2025-11-15T14:43:50.209Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:318e6928-b560-414e-
+ad89-b55aab70f0e8] [OK] Gang 1 set to: true
+2025-11-15T14:43:50.222Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:318e6928-b560-414e-
+ad89-b55aab70f0e8] [RECV] Gang 1 cluster update: true
+2025-11-15T14:43:53.182Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:318e6928-b560-414e-
+ad89-b55aab70f0e8] [RECV] Gang 1 cluster update: true
+2025-11-15T14:44:48.963Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:fef2424d-
+bcc8-412c- 8085-d5aa2d52db95] [DATA-COLLECTOR] 📊  Polling  
+data...
+2025-11-15T14:44:48.963Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:fef2424d-
+bcc8-412c- 8085-d5aa2d52db95] [BATTERY-READER] Trying  
+Tuya DP protocol...
+2025-11-15T14:44:48.964Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:fef2424d-
+bcc8-412c- 8085-d5aa2d52db95] [BATTERY-READER] ℹ  Not a 
+Tuya DP device - standard Zigbee
+2025-11-15T14:44:48.964Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:fef2424d-
+bcc8-412c- 8085-d5aa2d52db95] [DATA-COLLECTOR] ✅  Polling  
+complete
+2025-11-15T14:45:35.779Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:cdb4a6ee-a256-417e-
+82d0-a5946328d5f2] [DATA-COLLECTOR] 📊  Polling data...
+2025-11-15T14:45:35.780Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:cdb4a6ee-a256-417e-
+82d0-a5946328d5f2] [BATTERY-READER] Trying Tuya DP  
+protocol...
+2025-11-15T14:45:35.780Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:cdb4a6ee-a256-417e-
+82d0-a5946328d5f2] [BATTERY-READER] ℹ  Not a Tuya DP  
+device - standard Zigbee
+2025-11-15T14:45:35.781Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:cdb4a6ee-a256-417e-
+82d0-a5946328d5f2] [DATA-COLLECTOR] ✅  Polling complete
+2025-11-15T14:46:35.211Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:913c33c7-cdcb-
+487d-8021-83984774f26f] [DATA-COLLECTOR] 📊  Polling  
+data...
+2025-11-15T14:46:35.212Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:913c33c7-cdcb-
+487d-8021-83984774f26f] [BATTERY-READER] Trying Tuya DP  
+protocol...
+2025-11-15T14:46:35.212Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:913c33c7-cdcb-
+487d-8021-83984774f26f] [BATTERY-READER] ℹ  Not a Tuya  
+DP device - standard Zigbee
+2025-11-15T14:46:35.212Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:913c33c7-cdcb-
+487d-8021-83984774f26f] [DATA-COLLECTOR] ✅  Polling  
+complete
+2025-11-15T14:46:57.918Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:857f9b69-fd7e-4227-
+94a8-576fe885c773] [DATA-COLLECTOR] 📊  Polling data...
+2025-11-15T14:46:57.918Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:857f9b69-fd7e-4227-
+94a8-576fe885c773] [BATTERY-READER] Trying Tuya DP  
+protocol...
+2025-11-15T14:46:57.918Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:857f9b69-fd7e-4227-
+94a8-576fe885c773] [BATTERY-READER] ℹ  Not a Tuya DP  
+device - standard Zigbee
+2025-11-15T14:46:57.919Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:857f9b69-fd7e-4227-
+94a8-576fe885c773] [DATA-COLLECTOR] ✅  Polling complete
+2025-11-15T14:47:36.573Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:c30f993c-
+2dbd-4f7c- 924f-d39844b7aaa2] [DATA-COLLECTOR] 📊  Polling  
+data...
+2025-11-15T14:47:36.573Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:c30f993c-
+2dbd-4f7c- 924f-d39844b7aaa2] [BATTERY-READER] Trying  
+Tuya DP protocol...
+2025-11-15T14:47:36.573Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:c30f993c-
+2dbd-4f7c- 924f-d39844b7aaa2] [BATTERY-READER] ⚠  Tuya DP  
+device detected - cluster 0xEF00
+2025-11-15T14:47:36.573Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:c30f993c-
+2dbd-4f7c- 924f-d39844b7aaa2] [BATTERY-READER] ℹ  Battery  
+will be reported via TuyaEF00Manager (DP 4/14/15)
+2025-11-15T14:47:36.574Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:c30f993c-
+2dbd-4f7c- 924f-d39844b7aaa2] [DATA-COLLECTOR] ✅  Polling  
+complete
+2025-11-15T14:48:11.754Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [DATA-COLLECTOR] 📊  Polling data...
+2025-11-15T14:48:11.754Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [BATTERY-READER] Trying Tuya DP  
+protocol...
+2025-11-15T14:48:11.754Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [BATTERY-READER] ℹ  Not a Tuya DP  
+device - standard Zigbee
+2025-11-15T14:48:11.755Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:a19552bd-3c2f-40fe-
+8236-97a85da15121] [DATA-COLLECTOR] ✅  Polling complete
+2025-11-15T14:48:13.616Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:fef2424d-
+bcc8-412c- 8085-d5aa2d52db95] Received end device  
+announce indication
+2025-11-15T14:48:18.537Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:318e6928-b560-414e-
+ad89-b55aab70f0e8] [DATA-COLLECTOR] 📊  Polling data...
+2025-11-15T14:48:18.537Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:318e6928-b560-414e-
+ad89-b55aab70f0e8] [BATTERY-READER] Trying Tuya DP  
+protocol...
+2025-11-15T14:48:18.537Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:318e6928-b560-414e-
+ad89-b55aab70f0e8] [BATTERY-READER] ℹ  Not a Tuya DP  
+device - standard Zigbee
+2025-11-15T14:48:18.537Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:318e6928-b560-414e-
+ad89-b55aab70f0e8] [DATA-COLLECTOR] ✅  Polling complete
+2025-11-15T14:49:48.982Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:fef2424d-
+bcc8-412c- 8085-d5aa2d52db95] [DATA-COLLECTOR] 📊  Polling  
+data...
+2025-11-15T14:49:48.982Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:fef2424d-
+bcc8-412c- 8085-d5aa2d52db95] [BATTERY-READER] Trying  
+Tuya DP protocol...
+2025-11-15T14:49:48.983Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:fef2424d-
+bcc8-412c- 8085-d5aa2d52db95] [BATTERY-READER] ℹ  Not a 
+Tuya DP device - standard Zigbee
+2025-11-15T14:49:48.983Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:fef2424d-
+bcc8-412c- 8085-d5aa2d52db95] [DATA-COLLECTOR] ✅  Polling  
+complete
+2025-11-15T14:50:35.816Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:cdb4a6ee-a256-417e-
+82d0-a5946328d5f2] [DATA-COLLECTOR] 📊  Polling data...
+2025-11-15T14:50:35.816Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:cdb4a6ee-a256-417e-
+82d0-a5946328d5f2] [BATTERY-READER] Trying Tuya DP  
+protocol...
+2025-11-15T14:50:35.816Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:cdb4a6ee-a256-417e-
+82d0-a5946328d5f2] [BATTERY-READER] ℹ  Not a Tuya DP  
+device - standard Zigbee
+2025-11-15T14:50:35.817Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:cdb4a6ee-a256-417e-
+82d0-a5946328d5f2] [DATA-COLLECTOR] ✅  Polling complete
+2025-11-15T14:51:35.311Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:913c33c7-cdcb-
+487d-8021-83984774f26f] [DATA-COLLECTOR] 📊  Polling  
+data...
+2025-11-15T14:51:35.312Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:913c33c7-cdcb-
+487d-8021-83984774f26f] [BATTERY-READER] Trying Tuya DP  
+protocol...
+2025-11-15T14:51:35.312Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:913c33c7-cdcb-
+487d-8021-83984774f26f] [BATTERY-READER] ℹ  Not a Tuya  
+DP device - standard Zigbee
+2025-11-15T14:51:35.312Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:913c33c7-cdcb-
+487d-8021-83984774f26f] [DATA-COLLECTOR] ✅  Polling  
+complete
+stderr:
+n/a
+You can manage your email settings in the Homey Developer Tools.
+[Texte des messages précédents masqué]
+Homey <noreply@homey .app> 15 novembre 2025 à 21:58
+Répondre à : 6918e97ae09bc49db28218cf@apps-api.athom.com
+À : senetmarne@gmail.com
+Hi Dylan Rajasekaram,
+Your app Universal T uya Zigbee  has received a diagnostics report.
+You can reply to this e-mail to get in touch with the user . Note that the
+user will then be able to see your e-mail address.
+App ID
+com.dlnraja.tuya.zigbee
+App V ersion
+v4.9.339
+Homey V ersion
+v12.9.0-rc.14
+Homey Model ID
+homey5q
+Homey Model Name
+Homey Pro (Early 2023)
+Stack T race
+Note: this log has been manually submitted by a user.
+Log ID: 7b84575a-b19b-4fc3-88ff- 0f4ff28feb5d
+User Message:
+Même situation
+Le Usb n'est pas bon , les batteries pas visibles dans  
+les cards et les donnes non remontes et le pir manque  
+d'éléments en pir 3 in 1 et le soil sensor mandes des  
+donne et rein ne remonte
+stdout:
+2025-11-15T20:57:48.672Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ══════════════════════════════
+══════════════════════════════ ══════════
+2025-11-15T20:57:48.673Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] 🤖  [SMART ADAPT] INTELLIGENT  
+DRIVER ADAPTATION START
+2025-11-15T20:57:48.673Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ══════════════════════════════
+══════════════════════════════ ══════════
+2025-11-15T20:57:48.673Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] 📊  [SMART ADAPT] Collecting  
+device information (enriched)...
+2025-11-15T20:57:48.673Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ✅  [DATABASE] Found device:  
+Presence Radar Sensor
+2025-11-15T20:57:48.673Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] Recommended driver:  
+sensor_presence_radar
+2025-11-15T20:57:48.673Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] Type: tuya_dp
+2025-11-15T20:57:48.673Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] 📍  Found 1 endpoint(s): 1
+2025-11-15T20:57:48.673Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] 🔋  [BATTERY-READER] Attempting  
+enhanced battery/energy read...
+2025-11-15T20:57:48.673Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] [BATTERY-READER] Trying Tuya DP  
+protocol...
+2025-11-15T20:57:48.674Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] [BATTERY-READER] ℹ  Not a Tuya  
+DP device - standard Zigbee
+2025-11-15T20:57:48.674Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] [BATTERY-READER] Trying IAS Zone  
+battery listener...
+2025-11-15T20:57:48.674Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] [BATTERY-READER] ℹ  Recent 
+device (0d old) - assuming 100% battery
+2025-11-15T20:57:48.675Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ✅  Battery read: 100% (N/A)  
+[new_device_assumption]
+2025-11-15T20:57:48.688Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ✅  Device info collected  
+(enriched)
+2025-11-15T20:57:48.688Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] Manufacturer: _TZE200_rhgsbacq
+2025-11-15T20:57:48.688Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] Model: TS0601
+2025-11-15T20:57:48.689Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] Power Source: unknown
+2025-11-15T20:57:48.689Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] Endpoints: 1
+2025-11-15T20:57:48.689Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] Clusters: 2
+2025-11-15T20:57:48.689Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] Battery: 100%  
+[new_device_assumption]
+2025-11-15T20:57:48.689Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] 🔍  [SMART ADAPT] Analyzing  
+clusters...
+2025-11-15T20:57:48.689Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] 🎯  OVERRIDE FOUND: TS0601
+2025-11-15T20:57:48.689Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ⚠  TUYA DP DEVICE DETECTED  
+(TS0601 / _TZE*)
+2025-11-15T20:57:48.689Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ⚠  Cluster analysis will be  
+UNRELIABLE!
+2025-11-15T20:57:48.689Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ⚠  Device uses cluster 0xEF00  
+(not visible in standard list)
+2025-11-15T20:57:48.689Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ℹ  Will trust current driver  
+instead of cluster analysis
+2025-11-15T20:57:48.689Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ✓  Inferred from driver: sensor  
+(battery)
+2025-11-15T20:57:48.690Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ✅  Cluster analysis complete  
+(Tuya DP bypass)
+2025-11-15T20:57:48.690Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] Device Type: sensor (confidence:  
+0)
+2025-11-15T20:57:48.690Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] Power Source: battery
+2025-11-15T20:57:48.690Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] Note: Tuya DP devices require  
+current driver preservation
+2025-11-15T20:57:48.690Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] 🎯  [SMART ADAPT] Detecting real  
+capabilities...
+2025-11-15T20:57:48.690Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] 🎯  Override capabilities  
+specified: alarm_motion, measure_battery
+2025-11-15T20:57:48.690Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] 🎯  Presence sensor detected  
+(Tuya DP) - adding fallback
+2025-11-15T20:57:48.690Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ℹ  Capability alarm_motion  
+already exists
+2025-11-15T20:57:48.694Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ℹ  Capability measure_battery  
+already exists
+2025-11-15T20:57:48.695Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ⚖  [SMART ADAPT] Comparing with  
+current driver...
+2025-11-15T20:57:48.695Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ✅  Comparison complete
+2025-11-15T20:57:48.695Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] Needs Adaptation: NO
+2025-11-15T20:57:48.696Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ✅  Correct: alarm_motion,  
+measure_battery
+2025-11-15T20:57:48.696Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] 🛡  [SMART ADAPT] TUYA DP DEVICE  
+- Adaptation disabled
+2025-11-15T20:57:48.696Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] Model: TS0601
+2025-11-15T20:57:48.696Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] Manufacturer: _TZE200_rhgsbacq
+2025-11-15T20:57:48.696Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ⚠  Cluster 0xEF00 not visible -  
+cluster analysis unreliable
+2025-11-15T20:57:48.696Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ✓  Current driver will be  
+preserved: presence_sensor_radar
+2025-11-15T20:57:48.696Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ✅  [SMART ADAPT] Driver is  
+CORRECT - No adaptation needed
+2025-11-15T20:57:48.697Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ⚙  [SMART ADAPT] Auto-
+configuring capabilities...
+2025-11-15T20:57:48.697Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ✅  Capabilities auto-configured
+2025-11-15T20:57:48.697Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] 🔄  [SMART ADAPT] Checking driver  
+assignment (SAFE mode)...
+2025-11-15T20:57:48.698Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ✅  Driver correct:  
+presence_sensor_radar
+2025-11-15T20:57:48.698Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ✅  [SAFE-SWITCH] Driver is  
+correct - No migration needed
+2025-11-15T20:57:48.698Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] 📡  [SMART ADAPT] Configuring  
+data collection & KPI...
+2025-11-15T20:57:48.698Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] 🔧  [CLUSTER-CONFIG] Auto-
+configuring attribute reporting...
+2025-11-15T20:57:48.698Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] [CLUSTER-CONFIG] 🔧  Auto-
+configuring attribute reporting...
+2025-11-15T20:57:48.698Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] [CLUSTER-CONFIG] ✅  Auto-
+configuration complete: {
+battery: false,
+power: false,
+climate: false,
+onoff: false,
+level: false
+}
+2025-11-15T20:57:48.698Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ✅  [CLUSTER-CONFIG]  
+Configuration complete: {
+battery: false,
+power: false,
+climate: false,
+onoff: false,
+level: false
+}
+2025-11-15T20:57:48.699Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] 📡  [DATA-COLLECTOR] Registering  
+attribute report listeners...
+2025-11-15T20:57:48.699Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] [DATA-COLLECTOR] 📡  Registering  
+attribute report listeners...
+2025-11-15T20:57:48.699Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] [DATA-COLLECTOR] ✅  Report 
+listeners registered
+2025-11-15T20:57:48.699Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ✅  [DATA-COLLECTOR] Listeners  
+registered
+2025-11-15T20:57:48.699Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] 🔄  [DATA-COLLECTOR] Starting  
+periodic polling (5min interval)...
+2025-11-15T20:57:48.699Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] [DATA-COLLECTOR] 🔄  Starting  
+periodic polling (300s)...
+2025-11-15T20:57:48.699Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] [DATA-COLLECTOR] 📊  Polling  
+data...
+2025-11-15T20:57:48.699Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] [BATTERY-READER] Trying Tuya DP  
+protocol...
+2025-11-15T20:57:48.699Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] [BATTERY-READER] ℹ  Not a Tuya  
+DP device - standard Zigbee
+2025-11-15T20:57:48.699Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] [BATTERY-READER] Trying IAS Zone  
+battery listener...
+2025-11-15T20:57:48.699Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] [BATTERY-READER] ℹ  Using stored  
+battery value: 100%
+2025-11-15T20:57:48.700Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ✅  [DATA-COLLECTOR] Polling  
+started
+2025-11-15T20:57:48.701Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ══════════════════════════════
+══════════════════════════════ ══════════
+2025-11-15T20:57:48.701Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] 🎉  [SMART ADAPT] ADAPTATION  
+COMPLETE
+2025-11-15T20:57:48.701Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] ══════════════════════════════
+══════════════════════════════ ══════════
+2025-11-15T20:57:48.701Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b]
+2025-11-15T20:57:48.701Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] [SMART ADAPT] ✅  Analysis  
+complete
+2025-11-15T20:57:48.701Z [log] 🔍  [MIGRATION]  
+Determining best driver...
+2025-11-15T20:57:48.701Z [log] ✅  Best driver: unknown  
+(confidence: 0)
+2025-11-15T20:57:48.701Z [log] Reasons:
+2025-11-15T20:57:48.702Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] [MIGRATION] ✅  Driver is correct
+2025-11-15T20:57:48.702Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] [OK] ✅  Background  
+initialization complete!
+2025-11-15T20:57:48.702Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] Final power type: BATTERY
+2025-11-15T20:57:48.702Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] Battery type: CR2032
+2025-11-15T20:57:48.704Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:cca4e1f6-26fa-
+4b07-a547-35ab615b422b] [DATA-COLLECTOR] ✅  Polling  
+complete
+2025-11-15T20:58:13.800Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:b74a3422-
+2b4f-487b- 9437-064cca628a9c] [DATA-COLLECTOR] 📊  Polling  
+data...
+2025-11-15T20:58:13.801Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:b74a3422-
+2b4f-487b- 9437-064cca628a9c] [BATTERY-READER] Trying  
+Tuya DP protocol...
+2025-11-15T20:58:13.801Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:b74a3422-
+2b4f-487b- 9437-064cca628a9c] [BATTERY-READER] ℹ  Not a 
+Tuya DP device - standard Zigbee
+2025-11-15T20:58:13.802Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:b74a3422-
+2b4f-487b- 9437-064cca628a9c] [BATTERY-READER] Trying IAS  
+Zone battery listener...
+2025-11-15T20:58:13.802Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:b74a3422-
+2b4f-487b- 9437-064cca628a9c] [BATTERY-READER] ℹ  Using 
+stored battery value: 100%
+2025-11-15T20:58:13.805Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:b74a3422-
+2b4f-487b- 9437-064cca628a9c] [DATA-COLLECTOR] ✅  Polling  
+complete
+stderr:
+n/a
+You can manage your email settings in the Homey Developer Tools.
+[Texte des messages précédents masqué]
+Homey <noreply@homey .app> 16 novembre 2025 à 03:41
+Répondre à : 691939e9b1c15282f6eac991@apps-api.athom.com
+À : senetmarne@gmail.com
+Hi Dylan Rajasekaram,
+Your app Universal T uya Zigbee  has received a diagnostics report.
+You can reply to this e-mail to get in touch with the user . Note that the
+user will then be able to see your e-mail address.
+App ID
+com.dlnraja.tuya.zigbee
+App V ersion
+v4.9.342
+Homey V ersion
+v12.9.0-rc.14
+Homey Model ID
+homey5q
+Homey Model Name
+Homey Pro (Early 2023)
+Stack T race
+Note: this log has been manually submitted by a user.
+Log ID: 8e15e5bb-7178-4f41-b330- f697d01346ab
+User Message:
+Le truc USB affiche toujorus un gang avec u sommer ce  
+qui est fait . Les autres devices not pas la carte avec  
+l'affichage du procdntahtage de batterie et les donnes  
+ne Remontent pas sur soil , pir , et climat . Bref rien  
+ne marche alors que en 4.1.11 ça fonctionne d'apres  
+Peter
+stdout:
+2025-11-16T02:40:12.639Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] Type: standard_zigbee
+2025-11-16T02:40:12.639Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] 📍  Found 4 endpoint(s): 1, 2, 3, 4
+2025-11-16T02:40:12.640Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] 🔋  [BATTERY-READER] Attempting  
+enhanced battery/energy read...
+2025-11-16T02:40:12.640Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] [BATTERY-READER] Trying Tuya DP  
+protocol...
+2025-11-16T02:40:12.640Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] [BATTERY-READER] ℹ  Not a Tuya DP  
+device - standard Zigbee
+2025-11-16T02:40:12.640Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] [BATTERY-READER] Trying IAS Zone  
+battery listener...
+2025-11-16T02:40:12.641Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] [BATTERY-READER] ℹ  Recent device (0d  
+old) - assuming 100% battery
+2025-11-16T02:40:12.641Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] ✅  Battery read: 100% (N/A)  
+[new_device_assumption]
+2025-11-16T02:40:12.657Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] ✅  Device info collected (enriched)
+2025-11-16T02:40:12.657Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] Manufacturer: _TZ3000_bgtzm4ny
+2025-11-16T02:40:12.657Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] Model: TS0044
+2025-11-16T02:40:12.657Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] Power Source: unknown
+2025-11-16T02:40:12.657Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] Endpoints: 4
+2025-11-16T02:40:12.657Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] Clusters: 2
+2025-11-16T02:40:12.657Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] Battery: 100% [new_device_assumption]
+2025-11-16T02:40:12.657Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] 🔍  [SMART ADAPT] Analyzing  
+clusters...
+2025-11-16T02:40:12.658Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] 🎯  OVERRIDE FOUND: TS0044
+2025-11-16T02:40:12.658Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] 🔘  BUTTON/REMOTE DETECTED (from  
+driver name) - Controller device, NOT controllable!
+2025-11-16T02:40:12.658Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] 🔘  CRITICAL: Will NOT add onoff  
+capability (buttons send commands, not receive)
+2025-11-16T02:40:12.658Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] 🎯  [SMART ADAPT] Detecting real  
+capabilities...
+2025-11-16T02:40:12.658Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] 🎯  Override capabilities specified:  
+measure_battery
+2025-11-16T02:40:12.658Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] ⚖  [SMART ADAPT] Comparing with  
+current driver...
+2025-11-16T02:40:12.659Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] ✅  Comparison complete
+2025-11-16T02:40:12.659Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] Needs Adaptation: NO
+2025-11-16T02:40:12.659Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] ✅  Correct: measure_battery
+2025-11-16T02:40:12.660Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] ✅  [SMART ADAPT] Driver is CORRECT -  
+No adaptation needed
+2025-11-16T02:40:12.660Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] ⚙  [SMART ADAPT] Auto-configuring  
+capabilities...
+2025-11-16T02:40:12.660Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] ✅  Capabilities auto-configured
+2025-11-16T02:40:12.660Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] 🔄  [SMART ADAPT] Checking driver  
+assignment (SAFE mode)...
+2025-11-16T02:40:12.661Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] ✅  [SAFE-SWITCH] Driver is correct -  
+No migration needed
+2025-11-16T02:40:12.661Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] 📡  [SMART ADAPT] Configuring data  
+collection & KPI...
+2025-11-16T02:40:12.661Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] 🔧  [CLUSTER-CONFIG] Auto-configuring  
+attribute reporting...
+2025-11-16T02:40:12.661Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] [CLUSTER-CONFIG] 🔧  Auto-configuring  
+attribute reporting...
+2025-11-16T02:40:12.661Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] [CLUSTER-CONFIG] ✅  Auto-
+configuration complete: {
+battery: false,
+power: false,
+climate: false,
+onoff: false,
+level: false
+}
+2025-11-16T02:40:12.661Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] ✅  [CLUSTER-CONFIG] Configuration  
+complete: {
+battery: false,
+power: false,
+climate: false,
+onoff: false,
+level: false
+}
+2025-11-16T02:40:12.661Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] 📡  [DATA-COLLECTOR] Registering  
+attribute report listeners...
+2025-11-16T02:40:12.661Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] [DATA-COLLECTOR] 📡  Registering  
+attribute report listeners...
+2025-11-16T02:40:12.662Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] [DATA-COLLECTOR] ✅  Report listeners  
+registered
+2025-11-16T02:40:12.662Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] ✅  [DATA-COLLECTOR] Listeners  
+registered
+2025-11-16T02:40:12.662Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] 🔄  [DATA-COLLECTOR] Starting periodic  
+polling (5min interval)...
+2025-11-16T02:40:12.662Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] [DATA-COLLECTOR] 🔄  Starting periodic  
+polling (300s)...
+2025-11-16T02:40:12.662Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] [DATA-COLLECTOR] 📊  Polling data...
+2025-11-16T02:40:12.662Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] [BATTERY-READER] Trying Tuya DP  
+protocol...
+2025-11-16T02:40:12.662Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] [BATTERY-READER] ℹ  Not a Tuya DP  
+device - standard Zigbee
+2025-11-16T02:40:12.662Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] [BATTERY-READER] Trying IAS Zone  
+battery listener...
+2025-11-16T02:40:12.662Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] [BATTERY-READER] ℹ  Using stored  
+battery value: 100%
+2025-11-16T02:40:12.663Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] ✅  [DATA-COLLECTOR] Polling started
+2025-11-16T02:40:12.664Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] ══════════════════════════════
+══════════════════════════════ ══════════
+2025-11-16T02:40:12.664Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] 🎉  [SMART ADAPT] ADAPTATION COMPLETE
+2025-11-16T02:40:12.664Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] ══════════════════════════════
+══════════════════════════════ ══════════
+2025-11-16T02:40:12.664Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254]
+2025-11-16T02:40:12.664Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] [SMART ADAPT] ✅  Analysis complete
+2025-11-16T02:40:12.664Z [log] 🔍  [MIGRATION]  
+Determining best driver...
+2025-11-16T02:40:12.664Z [log] ✅  Best driver: unknown  
+(confidence: 0)
+2025-11-16T02:40:12.664Z [log] Reasons:
+2025-11-16T02:40:12.664Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] [MIGRATION] ✅  Driver is correct
+2025-11-16T02:40:12.665Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] [OK] ✅  Background initialization  
+complete!
+2025-11-16T02:40:12.665Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] Final power type: BATTERY
+2025-11-16T02:40:12.665Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] Battery type: CR2032
+2025-11-16T02:40:12.669Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:6cd991be-ba23-49d8-
+ae2c-4acdbc850254] [DATA-COLLECTOR] ✅  Polling complete
+2025-11-16T02:40:19.194Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:22e2404b-
+05f4-4ab3- b1c2-396449c98e78] Received end device  
+announce indication
+2025-11-16T02:40:23.554Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:22e2404b-
+05f4-4ab3- b1c2-396449c98e78] [INITIAL-READ] 🔋  Trying 
+voltage fallback...
+2025-11-16T02:40:28.655Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:c9758005-
+a0ad-4e6e- b3f0-af355f4225d9] [DATA-COLLECTOR] 📊  Polling  
+data...
+2025-11-16T02:40:28.655Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:c9758005-
+a0ad-4e6e- b3f0-af355f4225d9] [BATTERY-READER] Trying  
+Tuya DP protocol...
+2025-11-16T02:40:28.656Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:c9758005-
+a0ad-4e6e- b3f0-af355f4225d9] [BATTERY-READER] ℹ  Not a 
+Tuya DP device - standard Zigbee
+2025-11-16T02:40:28.656Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:c9758005-
+a0ad-4e6e- b3f0-af355f4225d9] [BATTERY-READER] Trying IAS  
+Zone battery listener...
+2025-11-16T02:40:28.656Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:c9758005-
+a0ad-4e6e- b3f0-af355f4225d9] [BATTERY-READER] ℹ  Using 
+stored battery value: 100%
+2025-11-16T02:40:28.658Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:c9758005-
+a0ad-4e6e- b3f0-af355f4225d9] [DATA-COLLECTOR] ✅  Polling  
+complete
+2025-11-16T02:40:34.486Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:22e2404b-
+05f4-4ab3- b1c2-396449c98e78] [TUYA] 🔄  Retry: Requesting  
+DPs again for stubborn devices...
+2025-11-16T02:40:34.487Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:22e2404b-
+05f4-4ab3- b1c2-396449c98e78] [TUYA] 🔍  Requesting DP  
+1...
+2025-11-16T02:40:34.488Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:22e2404b-
+05f4-4ab3- b1c2-396449c98e78] [TUYA] 🔍  Requesting DP  
+2...
+2025-11-16T02:40:34.488Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:22e2404b-
+05f4-4ab3- b1c2-396449c98e78] [TUYA] 🔍  Requesting DP  
+15...
+2025-11-16T02:40:34.488Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:22e2404b-
+05f4-4ab3- b1c2-396449c98e78] [TUYA] dataQuery failed:  
+tuyaSpecific.dataQuery: dp is an unexpected property
+2025-11-16T02:40:34.489Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:22e2404b-
+05f4-4ab3- b1c2-396449c98e78] [TUYA] dataQuery failed:  
+tuyaSpecific.dataQuery: dp is an unexpected property
+2025-11-16T02:40:34.490Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:22e2404b-
+05f4-4ab3- b1c2-396449c98e78] [TUYA] dataQuery failed:  
+tuyaSpecific.dataQuery: dp is an unexpected property
+2025-11-16T02:40:34.627Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:22e2404b-
+05f4-4ab3- b1c2-396449c98e78] [TUYA] ✅  DP 1 query sent  
+via sendFrame
+2025-11-16T02:40:34.749Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:22e2404b-
+05f4-4ab3- b1c2-396449c98e78] [TUYA] ✅  DP 2 query sent  
+via sendFrame
+2025-11-16T02:40:34.754Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:22e2404b-
+05f4-4ab3- b1c2-396449c98e78] [TUYA] sendFrame failed:  
+Impossible de joindre l'appareil. Est-il allumé ?
+2025-11-16T02:41:13.611Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:22e2404b-
+05f4-4ab3- b1c2-396449c98e78] [INITIAL-READ] ✅  Force 
+read complete
+2025-11-16T02:41:13.612Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:22e2404b-
+05f4-4ab3- b1c2-396449c98e78] [POLLING] 📅  Scheduling  
+attribute polling every 6h
+2025-11-16T02:41:13.612Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:22e2404b-
+05f4-4ab3- b1c2-396449c98e78] [BACKGROUND] Initial read +  
+polling configured
+2025-11-16T02:41:13.612Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:22e2404b-
+05f4-4ab3- b1c2-396449c98e78] [BACKGROUND] Step 3f/7:  
+Reading battery value...
+2025-11-16T02:41:30.854Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:d06cb0df-ed4c-4592-
+9bbf-bb9f9a5dc8c0] [DATA-COLLECTOR] 📊  Polling data...
+2025-11-16T02:41:30.855Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:d06cb0df-ed4c-4592-
+9bbf-bb9f9a5dc8c0] [BATTERY-READER] Trying Tuya DP  
+protocol...
+2025-11-16T02:41:30.855Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:d06cb0df-ed4c-4592-
+9bbf-bb9f9a5dc8c0] [BATTERY-READER] ℹ  Not a Tuya DP  
+device - standard Zigbee
+2025-11-16T02:41:30.856Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:d06cb0df-ed4c-4592-
+9bbf-bb9f9a5dc8c0] [BATTERY-READER] Trying IAS Zone  
+battery listener...
+2025-11-16T02:41:30.856Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:d06cb0df-ed4c-4592-
+9bbf-bb9f9a5dc8c0] [BATTERY-READER] ℹ  Using stored  
+battery value: 100%
+2025-11-16T02:41:30.857Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:d06cb0df-ed4c-4592-
+9bbf-bb9f9a5dc8c0] [DATA-COLLECTOR] ✅  Polling complete
+stderr:
+2025-11-16T02:40:26.554Z [err] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:22e2404b-
+05f4-4ab3- b1c2-396449c98e78] [BATTERY] Error configuring  
+standard reporting: Error: Timeout: Expected Response
+at Timeout._onTimeout (/app/node_modules/zigbee-
+clusters/lib/Cluster.js:966: 16)
+at listOnTimeout (node:internal/timers:588:17)
+at process.processTimers (node:internal/timers:523:7)
+You can manage your email settings in the Homey Developer Tools.
+[Texte des messages précédents masqué]

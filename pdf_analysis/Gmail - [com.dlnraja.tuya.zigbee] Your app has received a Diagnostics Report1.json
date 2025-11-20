@@ -1,0 +1,29 @@
+{
+  "filename": "Gmail - [com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report1.pdf",
+  "type": "diagnostic_report",
+  "manufacturerNames": [
+    "_TZE200_rhgsbacq",
+    "_TZ3000_bgtzm4ny"
+  ],
+  "modelIds": [
+    "TS0044",
+    "TS0601"
+  ],
+  "clusters": [
+    "EF00"
+  ],
+  "datapoints": [
+    "202",
+    "4",
+    "2",
+    "1",
+    "15"
+  ],
+  "endpoints": [],
+  "deviceId": null,
+  "battery": 202,
+  "temperature": null,
+  "humidity": null,
+  "zigbeeId": null,
+  "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n4 messages\nHomey <noreply@homey .app> 15 novembre 2025 à 15:45\nRépondre à : 6918920ea156f fc0e89f48ad@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigb"
+}

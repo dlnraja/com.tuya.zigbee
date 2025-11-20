@@ -1,0 +1,1510 @@
+Dylan Rajasekaram <senetmarne@gmail.com>
+[Homey Community Forum] [Apps] [APP][Pro] Universal TUY A Zigbee Device App
+- test
+98 messages
+Cam via Homey Community Forum <notifications@athom.discoursemail.com> 13 octobre 2025 à 01:39
+Répondre à : Homey Community Forum <incoming+9814c8e0f2e9707ac4f f253c26bc6049@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Cam
+October 12
+Thanks for the explanation, @dlnraja .
+From a user experience (UX) point of view , the user is looking for a description of the product they purchased, not
+how it works in the code. So, something more like the title they read when they purchased the product or an image,
+like Johan’ s app works. That speaks more to the user than the technical definition. In the case of the user buying a
+product that’ s called a 4 Gang Switch that makes sense though!
+I just tried your new update that targeted my devices and I’m sorry to say I had no luck. I’ll be honest, I only tried
+adding the motion sensor to about 3 dif ferent times and gave up, not knowing which one it was meant to be.
+Hopefully you can figure it out tomorrow , or someone with some expertise in all of this cough cough  Johan take some
+pain away for you 
+Visit T opic  or reply to this email to respond.
+To unsubscribe from these emails, click here .
+Cam via Homey Community Forum <notifications@athom.discoursemail.com> 13 octobre 2025 à 07:50
+Répondre à : Homey Community Forum <incoming+48b021063e6f222508e9486d6c703032@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Cam
+October 13
+v2.15.63 = same results.
+[Texte des messages précédents masqué]
+Cam via Homey Community Forum <notifications@athom.discoursemail.com> 13 octobre 2025 à 1 1:00
+Répondre à : Homey Community Forum <incoming+c500fcc36d39994588100df6c7ed88ab@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Cam
+October 13
+Hey @dlnraja
+Mine is the ZG-204ZL. I’ve just checked the store and it’ s still saying .63 is the latest so I’ll keep checking in and let
+you know how it goes when the update shows up.
+Thanks again for the ef forts!
+
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>13 octobre 2025 à
+11:25
+Répondre à : Homey Community Forum <incoming+d132edf2db01f5ae9b8deed105c3e05f@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 13
+Hi Dylan Good morning 
+  and you’ve been working almost whole time through 
+  as I can see.
+I’ve installed very 2.15.63 this morning and tried if the Motion was being detected on the HOBEIAN Multi sensor but
+still nothing happens 
+And also the SOS button still doesn’t react on pressing the red button 
+
+Even no reactions in specially created Flows to see if something happens there, but also no action processed there.
+Diagnostic code: 015426b4-01de-48da-8675- ef67e591 1b1d
+Thanks again and best regards Peter .
+[Texte des messages précédents masqué]
+DutchDuke via Homey Community Forum <notifications@athom.discoursemail.com> 13 octobre 2025 à 1 1:31
+Répondre à : Homey Community Forum <incoming+fe2da4a997423eb30a92b3d2ebc87ef7@athom.discoursemail.com>
+À : senetmarne@gmail.com
+DutchDuke
+October 13
+Hello @dlnraja , thank you so much for al your work on this app!!!
+I have 2 devices I’m trying to install.
+The first is a temperature and humidity sensor that is recognized as a smoke detector:
+TZ3000_akqdg6g7 / TS0201
+The other is a soil sensor that is not recognized:
+_TZE284_oitavov2 / TS0601
+[Texte des messages précédents masqué]
+Cam via Homey Community Forum <notifications@athom.discoursemail.com> 13 octobre 2025 à 12:56
+Répondre à : Homey Community Forum <incoming+9291fc600668a43b14196d9630dceb69@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Cam
+October 13
+Hi again @dlnraja
+Sad news again; No luck on either device.
+I didn’t see a device called “1-Button Wireless Scene Switch (Battery)“ as your notes suggested so I tried to install it
+via the “Scene Switch” device.
+Also, as per your notes I tried adding the motion sensor via the “ motion_temp_humidity_
+illumination_multi_battery “ device but as I mentioned above, no luck.
+I hope others are having more luck than me.
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>13 octobre 2025 à
+20:39
+Répondre à : Homey Community Forum <incoming+ce751260281caba4172738ba33c0e3e8@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 13
+Hi Dylan Good evening 
+  I just re-added the HOBEIAN Multisensor and the SOS Buttons again but still nothing on
+Motion and pressing the SOS button 
+
+Also no flow triggering.
+Code: 85f fbcee-f93f-4721-aaac- 0d0ba65150ea
+Sorry to bother you again and hopefully you don’t give up to get everything solved 
+Have a nice evening, best regards Peter .
+[Texte des messages précédents masqué]
+Cam via Homey Community Forum <notifications@athom.discoursemail.com> 13 octobre 2025 à 23:34
+Répondre à : Homey Community Forum <incoming+4ed4e94e18dd1907eed8cf6fc24044e0@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Cam
+October 13
+Hi Dylan, I’m running 2.15.79 and I don’t see this option.
+Also, SOS Emergency Button and the Motion Temp Humidity Sensor (the ones you mentioned you’ve fixed) show red
+error signs.
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>14 octobre 2025 à
+00:18
+Répondre à : Homey Community Forum <incoming+afb6f377e0774a1355cc3d2900e245c1@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 13
+Thx Dylan I will try 
+  and good night.
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>14 octobre 2025 à
+09:31
+Répondre à : Homey Community Forum <incoming+0d4fdb72ebd054e8745c194dd4a743f8@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 14
+Hi Dylan Good morning 
+  new relase V er 2.15.86 is installed this morning but the 2 items still got an exclamation
+ marks so still not selectable.
+Have a nice day , best regards Peter .
+[Texte des messages précédents masqué]
+DutchDuke via Homey Community Forum <notifications@athom.discoursemail.com> 14 octobre 2025 à 10:03
+Répondre à : Homey Community Forum <incoming+4e2ef032bbc7644830b1 1c9cd96b8db0@athom.discoursemail.com>
+À : senetmarne@gmail.com
+DutchDuke
+October 14
+I just tried again with the newest version of the app, but the same result.
+The diagnostic code is: 63d8fadd-7bc1-4c23-ac43- 7b973b89c605
+[Texte des messages précédents masqué]
+luca reina via Homey Community Forum <notifications@athom.discoursemail.com> 14 octobre 2025 à 17:01
+Répondre à : Homey Community Forum <incoming+4b6339424480dd6bccf480eac57399e6@athom.discoursemail.com>
+À : senetmarne@gmail.com
+luca_reina
+October 14
+Sorry for the question, I really don’t mean to be of fensive, but is there any device that actually works properly with
+this app?  
+ Thanks!
+[Texte des messages précédents masqué]
+Dylan Rajasekaram <senetmarne@gmail.com> 14 octobre 2025 à 17:45
+À : Homey Community Forum <incoming+4b6339424480dd6bccf480eac57399e6@athom.discoursemail.com>
+Idk I hope so. 
+Best regard.
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum <notifications@athom.discoursemail.com>14 octobre 2025 à
+18:17
+Répondre à : Homey Community Forum <incoming+1e7b078820ee93f02b0e6634704dc809@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 14
+Hi Luca, Dylan is very busy programming it’ s a dif ficult job because of all the white label device’ s to get everything
+working flawless, he added my multi sensor and 3 function’ s are working very well he is now trying to get the motion
+part working and My SOS Buttons.
+[Texte des messages précédents masqué]
+luca reina via Homey Community Forum <notifications@athom.discoursemail.com> 14 octobre 2025 à 18:30
+Répondre à : Homey Community Forum <incoming+a59ee28928819caa0f2c4f280324678c@athom.discoursemail.com>
+À : senetmarne@gmail.com
+luca_reina
+October 14
+Thank you for your kind reply . It’s encouraging to hear that thanks to Dylan’ s commitment, progress is being made.
+Still, I believe that at this point, it would only be fair if someone else of fered to help him I’ve seen that he’ s basically
+doing everything on his own, and I don’t think that’ s right. I’m not a programmer , but if I were, instead of complaining
+about the lack of support for Tuya devices (at least the Zigbee ones), I’d roll up my sleeves and contribute.
+Also, Athom’ s silence is quite embarrassing, I simply can’t and don’t want to believe that a company now owned by a
+giant like LG isn’t capable of coding an app for these Tuya devices, while other volunteer communities (like HA) have
+managed to do so without any issue.
+Sorry for the rant, but there are some things I just can’t understand…
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum <notifications@athom.discoursemail.com>14 octobre 2025 à
+18:58
+Répondre à : Homey Community Forum <incoming+aa3cb1fcc5de0c303258fa7ca7cfd63b@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 14
+Luca I agree with you that Athom who’ s selling the hardware should also provide the software for all the devices or at
+least pay a certain fee to the software developpers because they spend an awful lot of time to get everything working.
+I admire their drive and if I could program I would help them with it, now I can only contribute with testing and
+reporting the error ’s.
+Have a nice evening and
+Best regards Peter .
+[Texte des messages précédents masqué]
+Ian Gibbo via Homey Community Forum <notifications@athom.discoursemail.com> 14 octobre 2025 à 21:17
+Répondre à : Homey Community Forum <incoming+07027426178c6f619f4f31bdb4123ef4@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Ian_Gibbo
+October 14
+Luca… I too understand your frustration - but it is very dif ficult for 2 people to work on a programming project
+simultaneously . 1 maybe have completed the work but the other is halfway through. Do they publish knowing that one
+bit no is broken. Or wait til the second is finished. But then you may have a developer sitting idol
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum <notifications@athom.discoursemail.com>15 octobre 2025 à
+01:27
+Répondre à : Homey Community Forum <incoming+1045b49b0df9e8969a59f56e36d4cbe5@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 14
+Hi Dylan unfortunately no changes, I’ve deleted all 3 devices, restarted the Homey reconnected the device’ s again
+repairs the flow’ s but not Triggering the alarm and switching on the lights.
+Diagnostic code: c41 1abc2-e231-4b65-b9b4- 837786d78a6d
+Good luck and thanks 
+  again Peter .
+[Texte des messages précédents masqué]
+DutchDuke via Homey Community Forum <notifications@athom.discoursemail.com> 15 octobre 2025 à 09:57
+Répondre à : Homey Community Forum <incoming+b6c181e871960b247739740f61 191b35@athom.discoursemail.com>
+À : senetmarne@gmail.com
+DutchDuke
+October 15
+I just tried again with version 2.15.91 and the temperature sensor is still descovered as a smoke detector . The soil
+sensor is still not added.
+Diagnostic code: 8e499883-6e7e-4498-a63a- 46fdcb79c42c
+Thanks for all your work on the app, it is greatly appreciated!
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum <notifications@athom.discoursemail.com>15 octobre 2025 à
+13:14
+Répondre à : Homey Community Forum <incoming+22451f2b23502dc424fc0071357e9803@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 15
+Hi Dylan sorry 
+  nothing changed.
+Diagnostic code: e7455f4d-7b4d-4665-8a50- de29a10f2a47
+I noticed some strange behavior while trying to connect the SOS button, at first it was connected and than after
+rename and selecting the status indicator it came with an exclamation mark and after 3 times trying to repair it stayed
+connected.
+Good luck and best regards Peter .
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum <notifications@athom.discoursemail.com>15 octobre 2025 à
+19:37
+Répondre à : Homey Community Forum <incoming+797186c79de37a7fea06c480cfc23217@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 15
+Hi Dylan I try to install the device’ s again but if I want to go to install the devices in the choice menu keep loading,
+loading symbol is turning around continuesly . I went to the App page but that’ s not available 404 error my last installed
+version is 1.2.108.
+Best regards Peter .
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>15 octobre 2025 à
+22:38
+Répondre à : Homey Community Forum <incoming+7940987392053a4eb3807f1e80b2f681@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 15
+Hi Dylan, I’ve managed to get it installed again and now I’m @ ver 2.15.1 10 but after installing no data readings at all
+Dee screenshots back to 56 year ’s again.
+
+Diagnostic code: ebbeaa8a-0a64-4fd2-bce5- 22f86cae9e9c
+Good luck and nice evening Peter .
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>16 octobre 2025 à
+01:22
+Répondre à : Homey Community Forum <incoming+4b5d1bf0b1b9aed66522e163f65ece75@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 15
+Hi Dylan thanks for your work again, nothing changed for Multisensor , no data at all.
+SOS button has battery reading now but still no reaction on pressing the button.
+Diagnostic code: d19ee822-31bd-484c-a2c5- b4e04db64046
+Thanks and good night,
+Best regards Peter .
+[Texte des messages précédents masqué]
+ajmooseman via Homey Community Forum <notifications@athom.discoursemail.com> 16 octobre 2025 à 18:28
+Répondre à : Homey Community Forum <incoming+f4afd06f2324426f f3d9c1c873a6efce@athom.discoursemail.com>
+À : senetmarne@gmail.com
+James_Moorhouse
+October 16
+Hi guys brand new to Homey…haven’t even got my home pro yet…still researching…feel I’m being a bit silly but I
+can’t find this app in app search? what am I missing? research on Smart Click+ UK wall sockets has sent me down
+this rabbit hole Thanks in advance
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum <notifications@athom.discoursemail.com>16 octobre 2025 à
+22:08
+Répondre à : Homey Community Forum <incoming+bba0f19cf3fa5f01f fa30db9148de31b@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 16
+Hi Dylan
+SOS button is not Triggering, the app battery reading okay . Multisensor not been able to add anymore, it keeps
+blinking and can’t get connected, and then says device already added while it’ s not listed.
+Diagnostic code: 27752b0b-0616-4f1d-9cb4- 59982935ad9b
+I restarted the Homey try to add Multisensor that didn’t connect, deleted your app and reinstalled it after I tried to
+connect the Multisensor again and no luck same behavior .
+
+Using app version 3.0.23
+Regards Peter .
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>16 octobre 2025 à
+22:42
+Répondre à : Homey Community Forum <incoming+9f180b3965e77f fa92f35ac7be2e572b@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 16
+Good night 
+[Texte des messages précédents masqué]
+Cam via Homey Community Forum <notifications@athom.discoursemail.com> 17 octobre 2025 à 00:53
+Répondre à : Homey Community Forum <incoming+a680c05483f29ae08e4821e6681a9d5a@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Cam
+October 16
+Just installed the 3.0.35 and still no progress on my button or motion sensor .
+People seem to be throwing diagnostic codes around so here’ s mine as a Hail Mary too!
+5d3e1a5d-701b-4273-9fd8- 2e8ffcfbf2ee
+[Texte des messages précédents masqué]
+Cam via Homey Community Forum <notifications@athom.discoursemail.com> 17 octobre 2025 à 02:17
+Répondre à : Homey Community Forum <incoming+57f1b1fd5df9605a4da8c7400324acfd@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Cam
+October 17
+Hi Dylan
+I’ve done all of these things and posted them before. Nothing happens except an error when I press the button
+because it’ s a generic device. Same with motion sensor , they just have an on/of f card which doesn’t work.
+Thanks for trying.
+[Texte des messages précédents masqué]
+DutchDuke via Homey Community Forum <notifications@athom.discoursemail.com> 17 octobre 2025 à 09:42
+Répondre à : Homey Community Forum <incoming+b13e92d83debf30307e5fd06aa672a1d@athom.discoursemail.com>
+À : senetmarne@gmail.com
+DutchDuke
+October 17
+Hi Dylan,
+I just tried again with 3.0.41 and unfortunately I still get the same result. Temperature sensor added as smoke detector
+and soil sensor not added.
+The Diagnostic code is 2b7856d9-e8b2-43cd-ab31- 1516982f1eba
+You requested more information about the soils sensor . I bought it from Aliexpress  and I’ll add pictures of the
+packaging below .
+
+I hope this helps. Keep up the good work!
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>18 octobre 2025 à
+00:57
+Répondre à : Homey Community Forum <incoming+a3fb9c9aa5954f351ef6f85274131058@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 17
+Hi Dylan, sorry for the late response because I was out all the time 
+The 3 in 1 is probably the right one, but you never sure because it can be dif ferent hardware inside.
+But I will pay it for you and if you need an SOS button as well.
+Best regards Peter .
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>18 octobre 2025 à
+09:19
+Répondre à : Homey Community Forum <incoming+a1076d6c0826de5522e58d2b432d3b72@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 18
+Hi Dylan good morning,
+Here the Link for the SOS button:
+https://a.aliexpress.com/_ EQt105W
+I only payed € 4,25 a piece for it.
+And I’m going to try your new versioan and let you know if it works.
+Have a nice day and
+Best regards Peter .
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>18 octobre 2025 à
+10:33
+Répondre à : Homey Community Forum <incoming+2d0eb82fdb850754af fa81d96bf4a604@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 18
+Hi Dylan I tried after deleting and re-adding the device again, but no data and no battery and no triggering also not the
+flow’s.
+Diagnostic code: 9e43355e-9966-4dae-9608- ce4fb2c280ac
+Have a nice day and best regards Peter .
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>18 octobre 2025 à
+12:47
+Répondre à : Homey Community Forum <incoming+57de9813f f5cd0a85ef3dfbd59c14289@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 18
+Hi Dylan, thx for your new version but unfortunately no changes, No Data, battery and triggering.
+Diagnostic code: a3d39728-7220-477f-a59c- b0551a207ec3
+Good luck and success solving it.
+Regards Peter .
+[Texte des messages précédents masqué]
+Karsten Hille via Homey Community Forum <notifications@athom.discoursemail.com> 18 octobre 2025 à 18:16
+Répondre à : Homey Community Forum <incoming+674e203b39d0378edbba0bd1b2bc1c6e@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Karsten_Hille
+October 18
+Do you have a donation link ? W ould love to support this purchase!
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>18 octobre 2025 à
+20:27
+Répondre à : Homey Community Forum <incoming+6f4d92096ed1 15c4f08539a7460864b5@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 18
+I think you shouldn’t make such long logs, it might be annoying to others 
+[Texte des messages précédents masqué]
+Ian Gibbo via Homey Community Forum <notifications@athom.discoursemail.com> 19 octobre 2025 à 00:18
+Répondre à : Homey Community Forum <incoming+5e31ea63d3028094a4b9b412834b8cb0@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Ian_Gibbo
+October 18
+My 4 button scene controller thing has been picked up as a 4 button remote. It’ s close but not quite.
+[Texte des messages précédents masqué]
+Cam via Homey Community Forum <notifications@athom.discoursemail.com> 19 octobre 2025 à 05:12
+Répondre à : Homey Community Forum <incoming+f21378caf f14185b26ae2fa3fc0694a0@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Cam
+October 19
+Are the bugs solved for Peter ’s devices likely to have fixed every other person’ s devices too? W as it a fundamental
+error that makes the app work as intended for everyone?
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum <notifications@athom.discoursemail.com>19 octobre 2025 à
+16:15
+Répondre à : Homey Community Forum <incoming+f0d12b18a8f1d3613adbf6514b08780c@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 19
+Hi Dylan been trying it again but still the same no data or trigger and battery both devices, removed devices and app,
+restarted Homey and reinstalled everything again and restarted Homey again but no luck 
+Diagnostic code: 46c66060-701e-4542-9324- f55c743edb7c
+Good luck, regards Peter .
+[Texte des messages précédents masqué]
+Ian Gibbo via Homey Community Forum <notifications@athom.discoursemail.com> 19 octobre 2025 à 16:40
+Répondre à : Homey Community Forum <incoming+3548a6ce7f520142f3838ebb7f20cfa7@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Ian_Gibbo
+October 19
+Hi Dylan
+I’ve just tried the 4 way switch again. It still adds
+It as a 4 gang remote. The when I try to go into it I get a ‘could not get device by id’  error .
+Diagnostic is bf38b171-6f ff-4a92-b95b- 117639f5140f
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>19 octobre 2025 à
+19:06
+Répondre à : Homey Community Forum <incoming+37557e67eaf04a53ea1ca7f9d1c966e0@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 19
+Okay Dylan just tried 3.1.6 but lost battery reading from SOS button and still not triggering and Multisensor nothing at
+all.
+Diagnostic code: aa0f1571-f0e5-4462-9030- 565909a38ee5
+And see you’ve got already a new version so I’m going to test that now .
+Regards Peter .
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>19 octobre 2025 à
+22:34
+Répondre à : Homey Community Forum <incoming+f630236c04a127f f7e4985322345bb27@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 19
+The latest ones I can see from the updates is 3.1.7 and just now release 3.1.8 and not the 3.5.17 one I mentioned so
+something is not right with the version numbers ??
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>19 octobre 2025 à
+23:10
+Répondre à : Homey Community Forum <incoming+482e1 150a575e871a9e682a90ba8ddf9@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 19
+Okay have a good night sleep, I tried ver 3.1.8 but no change from my former report still No Data Battery or
+Triggering.
+Diagnostic code:ef9db7d4-331e-492b-99bf- 2d85993c0d21
+Good night Grtz Peter .
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum <notifications@athom.discoursemail.com>20 octobre 2025 à
+10:31
+Répondre à : Homey Community Forum <incoming+01831f63f4994d5a63c5b7162c1a8b54@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 20
+Hi Dylan Good morning 
+  thanks for releasing the new version, I’ve removed the old app from Homey , restarted the
+Homey and resetting all the devices.
+Installed the new version you uploaded 3.1.9 and added the HOBEIAN Multisensor and the SOS button again,
+unfortunately without success, no Data and battery reading on both devices and not responding in the flow’ s.
+Diagnostic code: 4c01f1f3-bea4-4a70-8407- 8a434cdc9727
+Have a nice day and good luck 
+  Peter .
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>20 octobre 2025 à
+11:48
+Répondre à : Homey Community Forum <incoming+da6e902a5a72ec70e210da187dc5080c@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 20
+I see V er 3.1.10 is uploaded now so I’m going to try that now . 
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>20 octobre 2025 à
+12:43
+Répondre à : Homey Community Forum <incoming+cdbdf fb058ee3df3e7474b8ea93f549e@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 20
+Hi Dylan no changes in this V er 3.1.10.
+Diagnostic code: dabf50d7-4699-499a-bbbe- 80a0c6ab58e5
+Success regards Peter .
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>20 octobre 2025 à
+16:36
+Répondre à : Homey Community Forum <incoming+fa6e76b30c3329602f192f58919cd31e@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 20
+Hi Dylan you almost did it, V er 3.1.17 installed. Multisensor is displaying data on Temp Hum & Luminance and Battery
+ indicator also. Only no Motion triggering.
+ Button has battery 
+  indicator now but still no triggering on pressing the button.
+Diagnostic code: 57b36f1e-76f5-4f75-a64e- 5a616e6f5cdc
+Keep up your good work you getting there at 
+Best regards Peter .
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>20 octobre 2025 à
+16:36
+Répondre à : Homey Community Forum <incoming+5f28b94a7e1ea24048abaf7bee8bfd30@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 20
+
+
+[Texte des messages précédents masqué]
+Ian Gibbo via Homey Community Forum <notifications@athom.discoursemail.com> 21 octobre 2025 à 00:34
+Répondre à : Homey Community Forum <incoming+6c09e420da3e3cdad7ca3848afcda64c@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Ian_Gibbo
+October 20
+Hi
+I’ve checked the 4 button switch. It’ s still choosing the wrong device I believe. Then it gives the same error re device id
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>21 octobre 2025 à
+15:21
+Répondre à : Homey Community Forum <incoming+397e7f349d950aaa8249b79410706f94@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 21
+Hi Dylan, I’ve seen this morning that you uploaded a new version 3.1.21 after installing and testing still no progress on
+Motion detection and SOS 
+  Button not triggering.
+Diagnostic code: 200a2ea9-fe54-4f97-966c- f44eb0c966c5
+Thx and Good luck 
+  
+Best regards Peter .
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>21 octobre 2025 à
+16:49
+Répondre à : Homey Community Forum <incoming+9a74fd4d695f ff674b8f82e8c18b3851@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 21
+Hi Dylan, did you want all these info from me or from Ian_Gibbo ??
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum <notifications@athom.discoursemail.com>21 octobre 2025 à
+17:31
+Répondre à : Homey Community Forum <incoming+460186c72a49e9901b95647c34fb7ad2@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 21
+Hi Dylan, installed the new version 4.0.5 But no Data at all anymore also no Battery reading
+…
+“ids”: { “modelId”: “ZG-204ZV”, “manufacturerName”: “HOBEIAN” }, “endpoints”: { “ieeeAddress”:
+“a4:c1:38:d5:15:e9:3c:ae”, “networkAddress”: 46771, “modelId”: “ZG-204ZV”, “manufacturerName”: “HOBEIAN”,
+“endpointDescriptors”: [ { “status”: “SUCCESS”, “nwkAddrOfInterest”: 46771, “_reserved”: 26, “endpointId”: 1,
+“applicationProfileId”: 260, “applicationDeviceId”: 1026, “applicationDeviceV ersion”: 0, “_reserved1”: 1, “inputClusters”:
+[ 0, 3, 1280, 61 184, 1026, 1029, 1, 1024 ], “outputClusters”: [ 3 ] } ], “deviceT ype”: “enddevice”, “receiveWhenIdle”:
+false, “swBuildId”: “0122052017”, “capabilities”: { “alternateP ANCoordinator”: false, “deviceT ype”: false,
+“powerSourceMains”: false, “receiveWhenIdle”: false, “security”: false, “allocateAddress”: true },
+“extendedEndpointDescriptors”: { “1”: { “clusters”: { “basic”: { “attributes”: [ { “acl”: [ “readable” ], “id”: 0, “name”:
+“zclV ersion” }, { “acl”: [ “readable” ], “id”: 1, “name”: “appV ersion” }, { “acl”: [ “readable” ], “id”: 2, “name”: “stackV ersion”
+}, { “acl”: [ “readable” ], “id”: 3, “name”: “hwV ersion” }, { “acl”: [ “readable”, “reportable” ], “id”: 4, “name”:
+“manufacturerName”, “reportingConfiguration”: { “status”: “NOT_FOUND”, “direction”: “reported” } }, { “acl”: [
+“readable” ], “id”: 5, “name”: “modelId” }, { “acl”: [ “readable” ], “id”: 7, “name”: “powerSource” }, { “acl”: [ “readable”,
+“writable” ], “id”: 18, “name”: “deviceEnabled” }, { “acl”: [ “readable” ], “id”: 16384, “name”: “swBuildId” }, { “acl”: [
+“readable” ], “id”: 65533, “name”: “clusterRevision” }, { “acl”: [ “readable” ], “id”: 6, “name”: “dateCode” } ],
+“commandsGenerated”: “UNSUP_GENERAL_COMMAND”, “commandsReceived”:
+“UNSUP_GENERAL_COMMAND” }, “identify”: { “attributes”: [ { “acl”: [ “readable”, “writable” ], “id”: 0, “name”:
+“identifyT ime”, “value”: 0 }, { “acl”: [ “readable” ], “id”: 65533, “name”: “clusterRevision”, “value”: 1 } ],
+“commandsGenerated”: “UNSUP_GENERAL_COMMAND”, “commandsReceived”:
+“UNSUP_GENERAL_COMMAND” }, “iasZone”: { “attributes”: [ { “acl”: [ “readable” ], “id”: 0, “name”: “zoneState”,
+“value”: “enrolled” }, { “acl”: [ “readable” ], “id”: 1, “name”: “zoneT ype”, “value”: “motionSensor” }, { “acl”: [ “readable” ],
+“id”: 2, “name”: “zoneStatus”, “value”: { “type”: “Buf fer”, “data”: [ 1, 0 ] } }, { “acl”: [ “readable”, “writable” ], “id”: 16,
+“name”: “iasCIEAddress”, “value”: “bc:02:6e:f f:fe:9f:ae:44” }, { “acl”: [ “readable” ], “id”: 17, “name”: “zoneId”, “value”: 0
+}, { “acl”: [ “readable”, “writable”, “reportable” ], “id”: 61441, “reportingConfiguration”: { “status”: “NOT_FOUND”,
+“direction”: “reported” } }, { “acl”: [ “readable”, “writable”, “reportable” ], “id”: 19, “reportingConfiguration”: { “status”:
+“NOT_FOUND”, “direction”: “reported” } }, { “acl”: [ “readable” ], “id”: 65533, “name”: “clusterRevision”, “value”: 1 } ],
+“commandsGenerated”: “UNSUP_GENERAL_COMMAND”, “commandsReceived”:
+“UNSUP_GENERAL_COMMAND” }, “temperatureMeasurement”: { “attributes”: [ { “acl”: [ “readable”, “reportable” ],
+“id”: 0, “name”: “measuredV alue”, “value”: 21 10, “reportingConfiguration”: { “status”: “NOT_FOUND”, “direction”:
+“reported” } }, { “acl”: [ “readable” ], “id”: 1, “name”: “minMeasuredV alue”, “value”: -32768 }, { “acl”: [ “readable” ], “id”: 2,
+“name”: “maxMeasuredV alue”, “value”: -32768 }, { “acl”: [ “readable” ], “id”: 3 }, { “acl”: [ “readable” ], “id”: 65533,
+“name”: “clusterRevision”, “value”: 1 } ], “commandsGenerated”: “UNSUP_GENERAL_COMMAND”,
+“commandsReceived”: “UNSUP_GENERAL_COMMAND” }, “relativeHumidity”: { “attributes”: [ { “acl”: [ “readable”,
+“reportable” ], “id”: 0, “name”: “measuredV alue”, “value”: 8500, “reportingConfiguration”: { “status”: “NOT_FOUND”,
+“direction”: “reported” } }, { “acl”: [ “readable” ], “id”: 1, “name”: “minMeasuredV alue”, “value”: 32768 }, { “acl”: [
+“readable” ], “id”: 2, “name”: “maxMeasuredV alue”, “value”: 32768 }, { “acl”: [ “readable” ], “id”: 3, “name”: “tolerance”,
+“value”: 0 }, { “acl”: [ “readable” ], “id”: 65533, “name”: “clusterRevision”, “value”: 1 } ], “commandsGenerated”:
+“UNSUP_GENERAL_COMMAND”, “commandsReceived”: “UNSUP_GENERAL_COMMAND” },
+“powerConfiguration”: { “attributes”: [ { “acl”: [ “readable”, “reportable” ], “id”: 32, “name”: “batteryV oltage”, “value”: 30,
+“reportingConfiguration”: { “status”: “NOT_FOUND”, “direction”: “reported” } }, { “acl”: [ “readable”, “reportable” ], “id”:
+33, “name”: “batteryPercentageRemaining”, “value”: 200, “reportingConfiguration”: { “status”: “NOT_FOUND”,
+“direction”: “reported” } }, { “acl”: [ “readable” ], “id”: 65533, “name”: “clusterRevision”, “value”: 1 } ],
+“commandsGenerated”: “UNSUP_GENERAL_COMMAND”, “commandsReceived”:
+“UNSUP_GENERAL_COMMAND” }, “illuminanceMeasurement”: { “attributes”: [ { “acl”: [ “readable”, “reportable” ], “id”:
+0, “name”: “measuredV alue”, “value”: 26016, “reportingConfiguration”: { “status”: “NOT_FOUND”, “direction”:
+“reported” } }, { “acl”: [ “readable” ], “id”: 1, “name”: “minMeasuredV alue”, “value”: 0 }, { “acl”: [ “readable” ], “id”: 2,
+“name”: “maxMeasuredV alue”, “value”: 4000 }, { “acl”: [ “readable” ], “id”: 65533, “name”: “clusterRevision”, “value”: 1 }
+], “commandsGenerated”: “UNSUP_GENERAL_COMMAND”, “commandsReceived”:
+“UNSUP_GENERAL_COMMAND” } }, “bindings”: { “identify”: { “attributes”: [ { “acl”: [ “readable”, “writable” ], “id”: 0,
+“name”: “identifyT ime”, “value”: 0 }, { “acl”: [ “readable” ], “id”: 65533, “name”: “clusterRevision”, “value”: 1 } ],
+“commandsGenerated”: “UNSUP_GENERAL_COMMAND”, “commandsReceived”:
+“UNSUP_GENERAL_COMMAND” } } } } }
+…
+Thanks and best regards Peter .
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>21 octobre 2025 à
+17:35
+Répondre à : Homey Community Forum <incoming+93d65083f44576850c854e1dddf0c43b@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 21
+Used this for my Multisensor and here the Diagnostic code: :
+2c72fd5f-7350-447c-9ab1- 24dd4dd39f8d
+Good luck Peter .
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum <notifications@athom.discoursemail.com>21 octobre 2025 à
+17:47
+Répondre à : Homey Community Forum <incoming+75e0227195f fae63dbe430d67afe47f1@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 21
+Interview from SOS Emergency button.
+…
+“ids”: { “modelId”: “TS0215A”, “manufacturerName”: “_TZ3000_0dumfk2z” }, “endpoints”: { “ieeeAddress”:
+“a4:c1:38:85:e2:7f:98:03”, “networkAddress”: 23067, “modelId”: “TS0215A”, “manufacturerName”:
+“_TZ3000_0dumfk2z”, “endpointDescriptors”: [ { “status”: “SUCCESS”, “nwkAddrOfInterest”: 23067, “_reserved”: 22,
+“endpointId”: 1, “applicationProfileId”: 260, “applicationDeviceId”: 1025, “applicationDeviceV ersion”: 0, “_reserved1”: 1,
+“inputClusters”: [ 1, 3, 1280, 0 ], “outputClusters”: [ 1281, 25, 10 ] } ], “deviceT ype”: “enddevice”, “receiveWhenIdle”:
+false, “capabilities”: { “alternateP ANCoordinator”: false, “deviceT ype”: false, “powerSourceMains”: false,
+“receiveWhenIdle”: false, “security”: false, “allocateAddress”: true }, “extendedEndpointDescriptors”: { “1”: { “clusters”:
+{ “powerConfiguration”: { “attributes”: [ { “acl”: [ “readable”, “reportable” ], “id”: 0, “reportingConfiguration”: { “status”:
+“NOT_FOUND”, “direction”: “reported” } }, { “acl”: [ “readable”, “reportable” ], “id”: 32, “name”: “batteryV oltage”, “value”:
+27, “reportingConfiguration”: { “status”: “NOT_FOUND”, “direction”: “reported” } }, { “acl”: [ “readable”, “reportable” ],
+“id”: 33, “name”: “batteryPercentageRemaining”, “value”: 1 16, “reportingConfiguration”: { “status”: “NOT_FOUND”,
+“direction”: “reported” } }, { “acl”: [ “readable”, “reportable” ], “id”: 65533, “name”: “clusterRevision”, “value”: 1,
+“reportingConfiguration”: { “status”: “NOT_FOUND”, “direction”: “reported” } } ] }, “identify”: { “attributes”: }, “iasZone”: {
+“attributes”: [ { “acl”: [ “readable”, “reportable” ], “id”: 0, “name”: “zoneState”, “value”: “notEnrolled”,
+“reportingConfiguration”: { “status”: “NOT_FOUND”, “direction”: “reported” } }, { “acl”: [ “readable”, “reportable” ], “id”: 1,
+“name”: “zoneT ype”, “value”: “remoteControl”, “reportingConfiguration”: { “status”: “NOT_FOUND”, “direction”:
+“reported” } }, { “acl”: [ “readable”, “reportable” ], “id”: 2, “name”: “zoneStatus”, “value”: { “type”: “Buf fer”, “data”: [ 0, 0 ]
+}, “reportingConfiguration”: { “status”: “NOT_FOUND”, “direction”: “reported” } }, { “acl”: [ “readable”, “writable”,
+“reportable” ], “id”: 16, “name”: “iasCIEAddress”, “value”: “bc:02:6e:f f:fe:9f:ae:44”, “reportingConfiguration”: { “status”:
+“NOT_FOUND”, “direction”: “reported” } }, { “acl”: [ “readable”, “reportable” ], “id”: 17, “name”: “zoneId”, “value”: 255,
+“reportingConfiguration”: { “status”: “NOT_FOUND”, “direction”: “reported” } }, { “acl”: [ “readable”, “reportable” ], “id”:
+65533, “name”: “clusterRevision”, “value”: 1, “reportingConfiguration”: { “status”: “NOT_FOUND”, “direction”:
+“reported” } } ] }, “basic”: { “attributes”: [ { “acl”: [ “readable”, “reportable” ], “id”: 0, “name”: “zclV ersion”, “value”: 3 }, {
+“acl”: [ “readable”, “reportable” ], “id”: 1, “name”: “appV ersion”, “value”: 68 }, { “acl”: [ “readable”, “reportable” ], “id”: 2,
+“name”: “stackV ersion”, “value”: 0 }, { “acl”: [ “readable”, “reportable” ], “id”: 3, “name”: “hwV ersion”, “value”: 1 }, { “acl”:
+[ “readable”, “reportable” ], “id”: 4, “name”: “manufacturerName”, “value”: “_TZ3000_0dumfk2z” }, { “acl”: [ “readable”,
+“reportable” ], “id”: 5, “name”: “modelId”, “value”: “TS0215A” }, { “acl”: [ “readable”, “reportable” ], “id”: 6, “name”:
+“dateCode”, “value”: “” }, { “acl”: [ “readable”, “reportable” ], “id”: 7, “name”: “powerSource”, “value”: “battery” }, { “acl”: [
+“readable”, “writable”, “reportable” ], “id”: 65502 }, { “acl”: [ “readable”, “reportable” ], “id”: 65533, “name”:
+“clusterRevision”, “value”: 2 }, { “acl”: [ “readable”, “reportable” ], “id”: 65534, “name”: “attributeReportingStatus”,
+“value”: “PENDING” }, { “acl”: [ “readable”, “reportable” ], “id”: 65506 }, { “acl”: [ “readable”, “reportable” ], “id”: 65507 } ]
+} }, “bindings”: { “iasACE”: { “attributes”: [ { “acl”: [ “readable” ], “id”: 65533, “name”: “clusterRevision”, “value”: 2 } ] },
+“ota”: {}, “time”: { “attributes”: [ { “acl”: [ “readable” ], “id”: 65533, “name”: “clusterRevision”, “value”: 1 } ] } } } } }
+…
+Good luck
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum <notifications@athom.discoursemail.com>22 octobre 2025 à
+11:38
+Répondre à : Homey Community Forum <incoming+1fc087d26ca0f56d0ba80bd574eb7226@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 22
+Hi Dylan you’re finally there with the Multisensor , Finally Motion sensor is working all the Data is correct. SOS button
+only battery reading is there, no response on pressing the button.
+Diagnostic code: 23f f6ed3-06c0-4865-884f- bc6ac1a6b159
+You’re a hero well done mate 
+
+Thanks and keep up the good work 
+Have a very nice day ,
+Best regards Peter .
+[Texte des messages précédents masqué]
+Dylan Rajasekaram <senetmarne@gmail.com> 22 octobre 2025 à 1 1:51
+À : Homey Community Forum <incoming+1fc087d26ca0f56d0ba80bd574eb7226@athom.discoursemail.com>
+Great news I will see it later 
+[Texte des messages précédents masqué]
+luca reina via Homey Community Forum <notifications@athom.discoursemail.com> 22 octobre 2025 à 12:05
+Répondre à : Homey Community Forum <incoming+bec319bb042a43629de4acc9c44d430b@athom.discoursemail.com>
+À : senetmarne@gmail.com
+luca_reina
+October 22
+Thank you from my side as well! I’ve avoided buying Tuya Zigbee devices until now because I’m still new to the
+Homey world and in the process of building my smart home.
+Thanks to your ef fort, dedication, and hard work, you’re making all of this possible!
+For now , I just want to express my gratitude with this message but once I start putting my smart home together , you’ll
+definitely be one of the first people I’ll feel the need to thank properly , with a cof fee. 
+Grazie, Luca 
+[Texte des messages précédents masqué]
+luca reina via Homey Community Forum <notifications@athom.discoursemail.com> 22 octobre 2025 à 12:07
+Répondre à : Homey Community Forum <incoming+d5b3430e0ef01067584dd8097eed9291@athom.discoursemail.com>
+À : senetmarne@gmail.com
+luca_reina
+October 22
+Good news 
+[Texte des messages précédents masqué]
+ugrbnk via Homey Community Forum <notifications@athom.discoursemail.com> 22 octobre 2025 à 17:29
+Répondre à : Homey Community Forum <incoming+626cc08499e892e1837ae4cbc03eab51@athom.discoursemail.com>
+À : senetmarne@gmail.com
+ugrbnk
+October 22
+b1fddeb8-7396-422e-bbfe- 40a291976d6f
+[APP][Pro] Universal TUY A Zigbee Device App - test  Apps
+Thank you for adding the device, but no data is coming through. When I smoke the device, the alarm goes of f,
+but there is no data on the Homey side. [IMG_0587.PNG]
+Hello, I installed all the updates so far , restarted the device, and added it, but nothing changed. No data is coming in.
+
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>22 octobre 2025 à
+19:52
+Répondre à : Homey Community Forum <incoming+5a581b0cf8bd62e6f38486fd0d70ef57@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 22
+Hi Dylan good evening, I’ve installed V er 4.1.7 but nothing changed to the SOS 
+  Button, not triggering App or Flow
+only battery 
+  reading.
+Diagnostic code: f654e98a-b2f6-49ce-93b3- d1966cdda2cd
+Good luck and thanks again for all your dedication and hard work 
+Best regards Peter .
+[Texte des messages précédents masqué]
+Cam via Homey Community Forum <notifications@athom.discoursemail.com> 23 octobre 2025 à 05:06
+Répondre à : Homey Community Forum <incoming+af9e28b1901dd4f1dc76c1 11698a77a1@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Cam
+October 23
+Hey Dylan!
+Great to see you’ve made progress with one of Peter ’s devices. Love your persistence and that gives me hope that
+you can deliver your original vision for a “catch all” for generic devices.
+I just read the notes to v4.2.6 and it has claims like “96%+ market coverage”, “319 native zigbee devices” etc. This
+feels like a wild and dishonest claim in its current state where most people here are saying their devices don’t work.
+I could be wrong and there may be plenty of people that are happily using their devices. After all, you’re less likely to
+come back unless something is wrong. People are generally quicker to complain than give praise.
+I just wanted to suggest keeping your vision  and the reality  separate in your release notes. So many times the notes
+have read “XYZ device is now working!” only for it to indeed not be working. I imagine that’ll require some retuning of
+the AI generated release notes.
+Anyway , thank you for continuing to look into plugging this hole in Homey’ s Tuya support, I look forward to having my
+devices work too!
+[Texte des messages précédents masqué]
+Jocke Svensson via Homey Community Forum <notifications@athom.discoursemail.com> 23 octobre 2025 à 07:18
+Répondre à : Homey Community Forum <incoming+5b34e64415143db676da626edf3bd7b7@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Jocke_Svensson
+October 23
+Crash on install.
+Uninstalled and re-installed with same result… 
+
+6c0cdbf0-150c-4c83-bf6c- 4b3954fb33be
+[Texte des messages précédents masqué]
+Dylan Rajasekaram <senetmarne@gmail.com> 23 octobre 2025 à 07:57
+À : Homey Community Forum <incoming+5b34e64415143db676da626edf3bd7b7@athom.discoursemail.com>
+I put in pose the development. 
+[Texte des messages précédents masqué]
+luca reina via Homey Community Forum <notifications@athom.discoursemail.com> 23 octobre 2025 à 08:34
+Répondre à : Homey Community Forum <incoming+aaf ff395f5e02bfdf1faf99f91f2ee67@athom.discoursemail.com>
+À : senetmarne@gmail.com
+luca_reina
+October 23
+Hi Dylan, did you mean that you’ve put the development on hold? Sorry , but I couldn’t quite understand the meaning
+of your last post. Thanks if you’d like to reply 
+[Texte des messages précédents masqué]
+Karsten Hille via Homey Community Forum <notifications@athom.discoursemail.com> 23 octobre 2025 à 16:41
+Répondre à : Homey Community Forum <incoming+7f73ac6102faa4f2b3372f0ae97a4086@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Karsten_Hille
+October 23
+Hu Dylan
+Seems like its finally recognizing a device now , but not the correct one.
+The Temperature sensor does not measure the Temp or Humidity . (It also believes it has a motion sensor)
+Diagnostic: 1220a7cf-f467-4b3d-a432- 446a2858134b
+[Texte des messages précédents masqué]
+Ton van den Berg via Homey Community Forum <notifications@athom.discoursemail.com> 23 octobre 2025 à 22:00
+Répondre à : Homey Community Forum <incoming+fc0dd444efaabf f52cd56d3cd534dcfe@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Ton_van_den_Berg1
+October 23
+I’m probably doing something wrong, but I can’t find the app in the Homey store.
+[Texte des messages précédents masqué]
+F3006 via Homey Community Forum <notifications@athom.discoursemail.com> 23 octobre 2025 à 22:29
+Répondre à : Homey Community Forum <incoming+7e6623e76b59eb36e15065afde7555d6@athom.discoursemail.com>
+À : senetmarne@gmail.com
+F3006
+October 23
+ homey .app
+Universal Tuya Zigbee | Homey
+Community-maintained Universal Zigbee app with 186 unified hybrid drivers and 18,000+
+manufacturer IDs. 100% local control, no cloud required. Intelligent auto-detection of power source and
+battery type. Advanced energy management with flow cards....
+[Texte des messages précédents masqué]
+Jocke Svensson via Homey Community Forum <notifications@athom.discoursemail.com> 24 octobre 2025 à 08:17
+Répondre à : Homey Community Forum <incoming+f12085cf78607e17642fe15d159c73bc@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Jocke_Svensson
+October 24
+I’m not sure if that’ s just my installation but when I click on settings I get just an empty window:
+Uninstalle, restarted Homey , re-installed, Even restarted the app itself.
+No change…
+bc57e77e-99f f-42ba-abe4- 80941f02cfba
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>24 octobre 2025 à
+09:59
+Répondre à : Homey Community Forum <incoming+5e25cbae4c8c290ade913c10f01f87ef@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 24
+Hi Dylan Good morning, I’ve installed V er. 4.5.4 from your app, but that’ s giving no readings at all.
+No Data readings anymore from Multisensor and also no Battery anymore.
+No response from SOS Button and also no Battery anymore.
+Diagnostic code: 9a3b9d7f-8c15-4f81-afb1- 4411d5c91be8
+I hope you can find the solution why it’ s not working anymore.
+Good luck and success,
+Best regards Peter .
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>24 octobre 2025 à
+11:55
+Répondre à : Homey Community Forum <incoming+c0e04f44467e37a316a7589cad9a6d16@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 24
+Also no changes in V er. 4.5.5.
+
+
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>24 octobre 2025 à
+15:54
+Répondre à : Homey Community Forum <incoming+0d774600d97d319355aac51 1b0ca7315@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 24
+Hi Dylan, after installing V er 4.5.7 it’ s not getting added the right devices anymore, Multisensor and SOS Button are
+added as Universal ZigBee device 
+
+Good luck and best regards Peter .
+Visit T opic  or reply to this email to respond.
+[Texte des messages précédents masqué]
+F3006 via Homey Community Forum <notifications@athom.discoursemail.com> 24 octobre 2025 à 19:36
+Répondre à : Homey Community Forum <incoming+0f8718d4d2d66deb96f51453762f90c3@athom.discoursemail.com>
+À : senetmarne@gmail.com
+F3006
+October 24
+hello , this mmw radar presence detekto adds as generic zigbee
+could you have a look?
+“ids”: {
+“modelId”: “TS0601”,
+“manufacturerName”: “_TZE204_qasjif9e”
+},
+“endpoints”: {
+“endpointDescriptors”: [
+{
+“endpointId”: 1,
+“applicationProfileId”: 260,
+“applicationDeviceId”: 81,
+“applicationDeviceV ersion”: 0,
+“_reserved1”: 1,
+“inputClusters”: [
+4,
+5,
+61184,
+0
+],
+“outputClusters”: [
+25,
+10
+]
+},
+{
+“endpointId”: 242,
+“applicationProfileId”: 41440,
+“applicationDeviceId”: 97,
+“applicationDeviceV ersion”: 0,
+“_reserved1”: 0,
+“inputClusters”: ,
+“outputClusters”: [
+33
+]
+}
+],
+“endpoints”: {
+“1”: {
+“clusters”: {
+“groups”: {},
+“scenes”: {},
+“basic”: {}
+},
+“bindings”: {
+“ota”: {},
+“time”: {}
+}
+},
+“242”: {
+“clusters”: {},
+“bindings”: {}
+}
+}
+}
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>25 octobre 2025 à
+00:10
+Répondre à : Homey Community Forum <incoming+3ddf713d24cf07f562651e6ef2417187@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 24
+Good to see your devices are in 
+It will be easier and quicker to fix the error ’s of those devices 
+
+Good luck with fixing 
+Best regards Peter .
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>25 octobre 2025 à
+01:45
+Répondre à : Homey Community Forum <incoming+fc955c65750086d6b3f732a9580c1a16@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 24
+Hi Dylan, Tried V er.4.7.2 same issue that they are only added as Universal ZigBee device.
+Goodnight and sleep 
+  well.
+Best regards Peter .
+[Texte des messages précédents masqué]
+Cam via Homey Community Forum <notifications@athom.discoursemail.com> 25 octobre 2025 à 09:36
+Répondre à : Homey Community Forum <incoming+afc435f00f7996ecc4f3eb700d57e231@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Cam
+October 25
+v4.9.5 and same result for my devices. Doesn’t matter what I choose for the button it always gets added as a 1 gang
+switch (which it isn’t) and has all of these extra flow cards that are irrelevant for the device (and the readouts for
+battery don’t work).
+41afb781-6af5-4f9d-9724- 5dc239d27df5
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum <notifications@athom.discoursemail.com>25 octobre 2025 à
+10:22
+Répondre à : Homey Community Forum <incoming+d6d356180998cca1b219a16886d4922f@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 25
+Hi Dylan good morning 
+  I’ve installed V er. 4.9.5 of the App and SOS Button is recognized now but not triggering
+and no battery reading. Multisensor still not recognized only Universal again.
+Diagnostic code: a623c419-9f7b-4123-9264- c68996a4e63f
+Have a nice day and good luck 
+BR Peter .
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum <notifications@athom.discoursemail.com>25 octobre 2025 à
+22:21
+Répondre à : Homey Community Forum <incoming+f029f481742bdfa5b02d3008b5f1f907@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 25
+Hi Dylan Good evening, I’ve been trying every new version today upto now V er 4.9.19 but Multisensor still not
+recognized as sensor , still universal ZigBee device and SOS is recognized but not triggering and no battery reading.
+I don’t know what’ s happening now , are you testing yourself because of all the new version’ s and if so, are you letting
+us know when you’re making progress and devices are all working.
+Thanks very very much for all your ef fort.
+Good night and best regards Peter .
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>25 octobre 2025 à
+22:51
+Répondre à : Homey Community Forum <incoming+dc4c517d37a09d4a99fce7adfaaebede@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 25
+Okay Dylan that’ s why nothing works at the moment, you should let’ s us all know here so me and others weren’t
+struggling to try adding devices 
+So to everyone here stop testing now until Dylan says you can again.
+Good luck Peter .
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>25 octobre 2025 à
+23:56
+Répondre à : Homey Community Forum <incoming+7b96371f7fe2d5b4a9ade836cfcf626b@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 25
+Okay let me know when you’re finished 
+Good luck 
+[Texte des messages précédents masqué]
+Cam via Homey Community Forum <notifications@athom.discoursemail.com> 26 octobre 2025 à 07:39
+Répondre à : Homey Community Forum <incoming+ce00d531722edfd195be96c2d8b3741 1@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Cam
+October 26
+Hopefully with real devices to test this yields a major breakthrough. Good luck!
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>27 octobre 2025 à
+11:40
+Répondre à : Homey Community Forum <incoming+40517b7320140fa6040a30822cc455c1@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 27
+I don’t understand your question 
+  but I’ve installed V er 4.9.68 but nothing changed from last time, I only got a
+message from Homey that the App crashed.
+
+
+Good luck and best regards,
+Peter .
+[Texte des messages précédents masqué]
+Robert Klep via Homey Community Forum <notifications@athom.discoursemail.com> 27 octobre 2025 à 1 1:50
+Répondre à : Homey Community Forum <incoming+5450fe272f619afd0c15031c75853abd@athom.discoursemail.com>
+À : senetmarne@gmail.com
+robertklep
+October 27
+ Peter_van_W erkhoven:
+I only got a message from Homey that the App crashed.
+This is something you should communicate to Athom.
+[Texte des messages précédents masqué]
+Dylan Rajasekaram <senetmarne@gmail.com> 27 octobre 2025 à 14:1 1
+À : Homey Community Forum <incoming+40517b7320140fa6040a30822cc455c1@athom.discoursemail.com>
+Witch version on previous time works the most with the most data or device feature .? 
+Yes I don't receive any crash log, perhaps an homey issue .
+Best regard 
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>27 octobre 2025 à
+16:46
+Répondre à : Homey Community Forum <incoming+47b8f6a6afc9b745bf446eb0793dc894@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+October 27
+Hi Dylan, must be V er 4.1.1
+I think,
+Best regards Peter .
+[Texte des messages précédents masqué]
+accordionman via Homey Community Forum <notifications@athom.discoursemail.com> 27 octobre 2025 à 19:58
+Répondre à : Homey Community Forum <incoming+0fb2dd7bb0f2d5f14ce716acb59d6419@athom.discoursemail.com>
+À : senetmarne@gmail.com
+accordionman
+October 27
+Hi Dylan,
+I’m pretty new to both Homey and Tuya. I’m having trouble adding a MOES IP55 smart button.
+https://moeshouse.com/ products/waterproof-zigbee- scene-switch .
+I tried to add it to Homey using your app as a “Wireless Button (Universal)”, but it’ s coming into Homey as an unknown
+Zigbee device.
+Here’ s the interview output:
+  "ids": {
+    "modelId": "TS004F",
+    "manufacturerName": "_TZ3000_ja5osu5g"
+  },
+  "endpoints": {
+    "ieeeAddress": "8c:8b:48:ff:fe:17:9d:85",
+    "networkAddress": 8389,
+    "modelId": "TS004F",
+    "manufacturerName": "_TZ3000_ja5osu5g",
+    "endpointDescriptors": [
+      {
+        "status": "SUCCESS",
+        "nwkAddrOfInterest": 8389,
+        "_reserved": 36,
+        "endpointId": 1,
+        "applicationProfileId": 260,
+        "applicationDeviceId": 260,
+        "applicationDeviceVersion": 0,
+        "_reserved1": 1,
+        "inputClusters": [
+          0,
+          1,
+          3,
+          4,
+          6,
+          4096,
+          57345
+        ],
+        "outputClusters": [
+          25,
+          10,
+          3,
+          4,
+          6,
+          8,
+          4096
+        ]
+      }
+    ],
+    "deviceType": "enddevice",
+    "receiveWhenIdle": false,
+    "capabilities": {
+      "alternatePANCoordinator": false,
+      "deviceType": false,
+      "powerSourceMains": false,
+      "receiveWhenIdle": false,
+      "security": false,
+      "allocateAddress": true
+    },
+    "extendedEndpointDescriptors": {
+      "1": {
+        "clusters": {
+          "basic": {
+            "attributes": [
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 0,
+                "name": "zclVersion",
+                "value": 3,
+                "reportingConfiguration": {
+                  "status": "NOT_FOUND",
+                  "direction": "reported"
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 1,
+                "name": "appVersion",
+                "value": 65,
+                "reportingConfiguration": {
+                  "direction": "reported",
+                  "attributeDataType": 32,
+                  "minInterval": 1,
+                  "maxInterval": 65534,
+                  "minChange": 0,
+                  "status": "SUCCESS"
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 2,
+                "name": "stackVersion",
+                "value": 0,
+                "reportingConfiguration": {
+                  "status": "NOT_FOUND",
+                  "direction": "reported"
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 3,
+                "name": "hwVersion",
+                "value": 1,
+                "reportingConfiguration": {
+                  "status": "NOT_FOUND",
+                  "direction": "reported"
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 4,
+                "name": "manufacturerName",
+                "value": "_TZ3000_ja5osu5g",
+                "reportingConfiguration": {
+                  "status": "NOT_FOUND",
+                  "direction": "reported"
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 5,
+                "name": "modelId",
+                "value": "TS004F",
+                "reportingConfiguration": {
+                  "status": "NOT_FOUND",
+                  "direction": "reported"
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 6,
+                "name": "dateCode",
+                "value": "",
+                "reportingConfiguration": {
+                  "status": "NOT_FOUND",
+                  "direction": "reported"
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 7,
+                "name": "powerSource",
+                "value": "battery",
+                "reportingConfiguration": {
+                  "status": "NOT_FOUND",
+                  "direction": "reported"
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "writable",
+                  "reportable"
+                ],
+                "id": 65502,
+                "reportingConfiguration": {
+                  "status": "NOT_FOUND",
+                  "direction": "reported"
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 65533,
+                "name": "clusterRevision",
+                "value": 2,
+                "reportingConfiguration": {
+                  "status": "NOT_FOUND",
+                  "direction": "reported"
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 65534,
+                "name": "attributeReportingStatus",
+                "value": "PENDING",
+                "reportingConfiguration": {
+                  "status": "NOT_FOUND",
+                  "direction": "reported"
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 65504,
+                "reportingConfiguration": {
+                  "status": "NOT_FOUND",
+                  "direction": "reported"
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 65505,
+                "reportingConfiguration": {
+                  "status": "NOT_FOUND",
+                  "direction": "reported"
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 65506,
+                "reportingConfiguration": {
+                  "status": "NOT_FOUND",
+                  "direction": "reported"
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 65507,
+                "reportingConfiguration": {
+                  "status": "NOT_FOUND",
+                  "direction": "reported"
+                }
+              }
+            ],
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          },
+          "powerConfiguration": {
+            "attributes": [
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 0
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 32,
+                "name": "batteryVoltage"
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 33,
+                "name": "batteryPercentageRemaining"
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 65533,
+                "name": "clusterRevision"
+              }
+            ]
+          },
+          "identify": {},
+          "groups": {},
+          "onOff": {},
+          "touchlink": {}
+        },
+        "bindings": {
+          "identify": {},
+          "groups": {},
+          "onOff": {},
+          "touchlink": {},
+          "ota": {},
+          "time": {},
+          "levelControl": {}
+        }
+      }
+    }
+  }
+Is this the right forum to post this? Thanks!
+[Texte des messages précédents masqué]
+André Ringendahl via Homey Community Forum <notifications@athom.discoursemail.com> 28 octobre 2025 à 1 1:17
+Répondre à : Homey Community Forum <incoming+b95a535dc0acebee0f8d124397202721@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Andre_Ringendahl
+October 28
+Hi together ,
+I have a Tuya-compatible presence sensor that is not recognized.
+Device details from Homey Developer Tools:
+zb_manufacturer_name: “HOBEIAN”
+zb_product_id: “ZG-204ZL”
+zb_sw_build_id: “0122052017”
+This is an OEM version of the Tuya ZG-204ZM (PIR + mmW ave + Lux).
+Please add this variant to the Universal Tuya Zigbee Device app.
+Thanks a lot for your great work!
+[Texte des messages précédents masqué]
+Cam via Homey Community Forum <notifications@athom.discoursemail.com> 29 octobre 2025 à 1 1:00
+Répondre à : Homey Community Forum <incoming+303153c1c69a8300d66dba075927a7db@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Cam
+October 29
+This looks to be the same device I’ve reported here ! Sadly , I’ve not had any luck with any of Dylan’ s builds yet.
+[Texte des messages précédents masqué]
+Cam via Homey Community Forum <notifications@athom.discoursemail.com> 30 octobre 2025 à 04:02
+Répondre à : Homey Community Forum <incoming+372adbdd4a4b8b92508e2f2826a05650@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Cam
+October 30
+Sounds great, Dylan. The link didn’t work for me, however!
+[Texte des messages précédents masqué]
+Andries de Jonge via Homey Community Forum <notifications@athom.discoursemail.com>7 novembre 2025 à
+11:00
+Répondre à : Homey Community Forum <incoming+1 1e262041e6ee2164f3754525d099d02@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Andries_de_Jonge
+November 7
+hi, i do have the Soil Tester Sensor from Tuya. Zigbee 3.0 version. i have installed this app
+ homey .app
+Universal Tuya Zigbee | Homey
+Community-maintained Universal Zigbee app with 186 unified hybrid drivers and 18,000+
+manufacturer IDs. 100% local control, no cloud required. Intelligent auto-detection of power source and
+battery type. Advanced energy management with flow cards....
+(thanks) and tried to add, choose for Soil Tester Temp Humid but still unknown device
+any suggestions how to add this device?
+thanks
+[Texte des messages précédents masqué]
+André Ringendahl via Homey Community Forum
+<notifications@athom.discoursemail.com>10 novembre 2025 à
+10:16
+Répondre à : Homey Community Forum <incoming+24824be651 1c44fa5413c8554f515c35@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Andre_Ringendahl
+November 10
+Thanks for the link. My device ZG-204ZL  still doesn´t work**.** Is it possible to add it too?
+[Texte des messages précédents masqué]
+Cam via Homey Community Forum <notifications@athom.discoursemail.com> 10 novembre 2025 à 12:21
+Répondre à : Homey Community Forum <incoming+2b8c658493cd14b9001da8de3fef036c@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Cam
+November 10
+I’m also waiting on this model to be added. I’m hoping Dylan is better able to understand what he’ s doing now with
+some real devices to test and debug with.
+[Texte des messages précédents masqué]
+Dylan Rajasekaram <senetmarne@gmail.com> 10 novembre 2025 à 15:48
+À : Homey Community Forum <incoming+2b8c658493cd14b9001da8de3fef036c@athom.discoursemail.com>
+Yes it make some time I have some medical issue to also fix 😅 . But all your current request are on the next version. 
+[Texte des messages précédents masqué]
+Wesley van de Kraats via Homey Community Forum
+<notifications@athom.discoursemail.com>10 novembre 2025 à
+18:22
+Répondre à : Homey Community Forum <incoming+666a015436e022b7660aa1a516cc7f31@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Wesley_van_de_Kraats
+November 10
+Hi Guys,
+I have 2 Zigbee Motion Sensor (Model: ZM-P1)
+It’s not working with the app?
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>10 novembre 2025 à
+18:39
+Répondre à : Homey Community Forum <incoming+5a0e0e2706cddb4529ea0531c7b17719@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+November 10
+Hi Dylan Good to hear you again and I’ve seen that you had a lot of version updates, I didn’t try non of them yet
+because everything is working now except the SOS Emergency button.
+I’ll wait until you are finished testing and give notice when it’ s ready to try your new version.
+And I read that you got some medical problems, I hope not to bad and that you getting well soon 
+Best regards Peter .
+[Texte des messages précédents masqué]
+Dylan Rajasekaram <senetmarne@gmail.com> 10 novembre 2025 à 19:06
+À : Homey Community Forum <incoming+5a0e0e2706cddb4529ea0531c7b17719@athom.discoursemail.com>
+Witch version do you use ? 
+Best regard.
+[Texte des messages précédents masqué]
+Wesley van de Kraats via Homey Community Forum
+<notifications@athom.discoursemail.com>10 novembre 2025 à
+21:14
+Répondre à : Homey Community Forum <incoming+fd85c18b162d9c7fb50b519f8b4a2ad3@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Wesley_van_de_Kraats
+November 10
+Hi Guys,
+I have 2 Zigbee Motion Sensor (Model: ZM-P1) (Round PIRSensor )**
+It’s not working with the app?**
+[Texte des messages précédents masqué]
+Peter van W erkhoven via Homey Community Forum
+<notifications@athom.discoursemail.com>10 novembre 2025 à
+21:41
+Répondre à : Homey Community Forum <incoming+f70e54f1a21de07f69dfa6b307f09aeb@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Peter_van_Werkhoven
+November 10
+Of you ment me I’m using V er 4.1.1
+[Texte des messages précédents masqué]
+David Piper via Homey Community Forum <notifications@athom.discoursemail.com> 14 novembre 2025 à 10:52
+Répondre à : Homey Community Forum <incoming+c1de74cf fed31a229b857dce0003be05@athom.discoursemail.com>
+À : senetmarne@gmail.com
+David_Piper
+November 14
+Morning @dlnraja
+Just tried the latest version of the Universal Tuya Zigbee App (4.9.332 Test). Sometime ago I posted an interview for a
+2-gang energy monitoring wall socket. The device still doesn’t seem to be supported. I re-attach the interview here (so
+you don’t have to go hunting).
+Interview Result (click for more details)
+I hope you will be able to find the time to add support for this device.
+Many thanks.
+[Texte des messages précédents masqué]
+Cam via Homey Community Forum <notifications@athom.discoursemail.com> 17 novembre 2025 à 00:14
+Répondre à : Homey Community Forum <incoming+127ba0d1 1c68e6a8058bc62e49f6179d@athom.discoursemail.com>
+À : senetmarne@gmail.com
+Cam
+November 16
+G’day @dlnraja
+I just tried adding my smart button and it now shows up as an actual device rather than a generic zigbee device which
+is great.
+I’ve set up a simple flow with a push notification on press but nothing comes through.
+Here’ s my diagnostic code: 027cb6c9-12a1-4ecd-ac25- 5b14c587fb20
+My PIR motion sensor with lux detection (ZG-204ZL) is still generic though. Good luck!
+[Texte des messages précédents masqué]

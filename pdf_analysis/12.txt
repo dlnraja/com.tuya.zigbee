@@ -1,0 +1,709 @@
+Dylan Rajasekaram <senetmarne@gmail.com>
+[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report
+2 messages
+Homey <noreply@homey .app> 31 octobre 2025 à 22:04
+Répondre à : 6905245f8eacca0499cbf0db@apps-api.athom.com
+À : senetmarne@gmail.com
+Hi Dylan Rajasekaram,
+Your app Universal T uya Zigbee  has received a diagnostics report.
+You can reply to this e-mail to get in touch with the user . Note that the
+user will then be able to see your e-mail address.
+App ID
+com.dlnraja.tuya.zigbee
+App V ersion
+v4.9.250
+Homey V ersion
+v12.9.0-rc.5
+Homey Model ID
+homey5q
+Homey Model Name
+Homey Pro (Early 2023)
+Stack T race
+Note: this log has been manually submitted by a user.
+Log ID: 50b1f72a-11da-46c0-b35e- 564211da5393
+User Message:
+Issue pareils que avant
+stdout:
+
+"clusters": {
+"1": [
+"basic",
+"powerConfiguration",
+"illuminanceMeasurement",
+"occupancySensing",
+"iasZone",
+"tuyaSpecific"
+]
+},
+"features": []
+}
+2025-10-31T21:02:19.631Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [SHIM] Current driver:  
+presence_sensor_radar
+2025-10-31T21:02:19.631Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [SHIM] Current capabilities: [  
+'alarm_motion', 'measure_luminance', 'measure_battery' ]
+2025-10-31T21:02:19.632Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [SHIM] ✅  Hardware matches  
+driver - no corrections needed
+2025-10-31T21:02:19.632Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [BACKGROUND] Step 3a/4: IAS Zone  
++ Multi-Endpoint setup...
+2025-10-31T21:02:19.632Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [CRITICAL] 🔒  IAS Zone detected  
+- enrolling...
+2025-10-31T21:02:19.632Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [IAS] 🔒  Starting IAS Zone  
+enrollment...
+2025-10-31T21:02:19.632Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [IAS] Cannot read zoneState:  
+Cannot read properties of undefined (reading 'resolve')
+2025-10-31T21:02:19.633Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [IAS]  
+homey.zigbee.getIeeeAddress failed: device.homey.zigbee.
+getIeeeAddress is not a function
+2025-10-31T21:02:19.633Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [IAS] Basic cluster read failed:  
+Cannot read properties of undefined (reading 'resolve')
+2025-10-31T21:02:19.634Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [BACKGROUND] Step 3b/8: Dynamic  
+capabilities DISABLED (testing)
+2025-10-31T21:02:19.634Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [BACKGROUND] Step 3c/7: Tuya  
+EF00 initialization...
+2025-10-31T21:02:19.634Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [TUYA] Initializing EF00  
+manager...
+2025-10-31T21:02:19.634Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [TUYA] ✅  EF00 cluster detected
+2025-10-31T21:02:19.634Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [TUYA] Sending time sync: {  
+date: '2025-10-31T21:02:19.634Z', payload:  
+'190a1f15021304' }
+2025-10-31T21:02:20.147Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [TUYA] Time sync sent via  
+sendFrame
+2025-10-31T21:02:20.147Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [TUYA] Next time sync in 6h
+2025-10-31T21:02:20.148Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [TUYA] 🎧  Setting up datapoint  
+listeners...
+2025-10-31T21:02:20.148Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [TUYA] 📋  Cluster type:  
+TuyaSpecificCluster
+2025-10-31T21:02:20.148Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [TUYA] 📋  Cluster ID: unknown
+2025-10-31T21:02:20.148Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [TUYA] 📋  Available commands:  
+setData, getData, dataReport, dataQuery
+2025-10-31T21:02:20.148Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [TUYA] ✅  Raw frame listener  
+registered
+2025-10-31T21:02:20.148Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [TUYA] ✅  Datapoint listener  
+configured (SDK3 frame mode)
+2025-10-31T21:02:20.148Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [BACKGROUND] Tuya EF00 checked
+2025-10-31T21:02:20.148Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [BACKGROUND] Step 3d/7: Setting  
+up command listeners...
+2025-10-31T21:02:20.149Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [CMD-LISTENER] 🎧  Setting up  
+command listeners on all endpoints...
+2025-10-31T21:02:20.149Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [CMD-LISTENER] Monitoring  
+clusters: onOff, levelControl, scenes
+2025-10-31T21:02:20.149Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [CMD-LISTENER] Checking endpoint  
+1...
+2025-10-31T21:02:20.149Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [CMD-LISTENER] - onOff: not  
+present
+2025-10-31T21:02:20.149Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [CMD-LISTENER] - levelControl:  
+not present
+2025-10-31T21:02:20.149Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [CMD-LISTENER] - scenes: not  
+present
+2025-10-31T21:02:20.149Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [CMD-LISTENER] ✅  Setup complete  
+- 0 listeners active
+2025-10-31T21:02:20.149Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [BACKGROUND] ✅  Command  
+listeners configured
+2025-10-31T21:02:20.149Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [BACKGROUND] Step 3e/7: Force  
+initial read + schedule polling...
+2025-10-31T21:02:20.149Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [INITIAL-READ] 📖  Force reading  
+all attributes...
+2025-10-31T21:02:20.150Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [INITIAL-READ] 🔋  Reading  
+battery...
+2025-10-31T21:02:20.612Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [INITIAL-READ] ✅  Battery: 100%
+2025-10-31T21:02:20.621Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [INITIAL-READ] ⚠  Luminance read  
+failed: Cannot read properties of undefined (reading  
+'resolve')
+2025-10-31T21:02:20.621Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [INITIAL-READ] ✅  Force read  
+complete
+2025-10-31T21:02:20.622Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [POLLING] 📅  Scheduling  
+attribute polling every 6h
+2025-10-31T21:02:20.622Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [BACKGROUND] Initial read +  
+polling configured
+2025-10-31T21:02:20.623Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [BACKGROUND] Step 3f/7: Reading  
+battery value...
+2025-10-31T21:02:21.163Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [BATTERY] ✅  Initial battery:  
+100 %
+2025-10-31T21:02:21.164Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [BACKGROUND] Step 3f/7: Reading  
+sensor values...
+2025-10-31T21:02:21.164Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [OK] ✅  Background  
+initialization complete!
+2025-10-31T21:02:21.164Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] Final power type: BATTERY
+2025-10-31T21:02:21.164Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] Battery type: CR2032
+2025-10-31T21:02:38.688Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:73bff94f-
+6261-4c55- badf-5b5a464985aa] [INITIAL-READ] ✅  Force 
+read complete
+2025-10-31T21:02:38.689Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:73bff94f-
+6261-4c55- badf-5b5a464985aa] [POLLING] 📅  Scheduling  
+attribute polling every 6h
+2025-10-31T21:02:38.689Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:73bff94f-
+6261-4c55- badf-5b5a464985aa] [BACKGROUND] Initial read +  
+polling configured
+2025-10-31T21:02:38.690Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:73bff94f-
+6261-4c55- badf-5b5a464985aa] [BACKGROUND] Step 3f/7:  
+Reading battery value...
+2025-10-31T21:02:47.542Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [MSG] Zone notification  
+received: iasZone. zoneStatusChangeNotification {
+zoneStatus: Bitmap [ ],
+extendedStatus: 0,
+zoneId: 0,
+delay: 0
+}
+2025-10-31T21:02:47.543Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [OK] Alarm: cleared
+2025-10-31T21:02:49.199Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:c290a0af-222d-47b9-
+b13b-8aaea5bf7f70] [BATTERY] ⚠  Could not read battery
+2025-10-31T21:02:49.199Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:c290a0af-222d-47b9-
+b13b-8aaea5bf7f70] [BACKGROUND] Step 3f/7: Reading  
+sensor values...
+2025-10-31T21:02:49.199Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:c290a0af-222d-47b9-
+b13b-8aaea5bf7f70] [OK] ✅  Background initialization  
+complete!
+2025-10-31T21:02:49.200Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:c290a0af-222d-47b9-
+b13b-8aaea5bf7f70] Final power type: BATTERY
+2025-10-31T21:02:49.200Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:c290a0af-222d-47b9-
+b13b-8aaea5bf7f70] Battery type: CR2032
+2025-10-31T21:02:49.386Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [MSG] Zone notification  
+received: iasZone. zoneStatusChangeNotification {
+zoneStatus: Bitmap [ alarm1 ],
+extendedStatus: 0,
+zoneId: 0,
+delay: 0
+}
+2025-10-31T21:02:49.387Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [OK] Alarm: cleared
+2025-10-31T21:03:28.702Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:73bff94f-
+6261-4c55- badf-5b5a464985aa] [BATTERY] ⚠  Could not read  
+battery
+2025-10-31T21:03:28.703Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:73bff94f-
+6261-4c55- badf-5b5a464985aa] [BACKGROUND] Step 3f/7:  
+Reading sensor values...
+2025-10-31T21:03:28.703Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:73bff94f-
+6261-4c55- badf-5b5a464985aa] [OK] ✅  Background  
+initialization complete!
+2025-10-31T21:03:28.704Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:73bff94f-
+6261-4c55- badf-5b5a464985aa] Final power type: BATTERY
+2025-10-31T21:03:28.704Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:73bff94f-
+6261-4c55- badf-5b5a464985aa] Battery type: CR2032
+2025-10-31T21:03:34.545Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [MSG] Zone notification  
+received: iasZone. zoneStatusChangeNotification {
+zoneStatus: Bitmap [ ],
+extendedStatus: 0,
+zoneId: 0,
+delay: 0
+}
+2025-10-31T21:03:34.546Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [OK] Alarm: cleared
+2025-10-31T21:04:01.267Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [MSG] Zone notification  
+received: iasZone. zoneStatusChangeNotification {
+zoneStatus: Bitmap [ alarm1 ],
+extendedStatus: 0,
+zoneId: 0,
+delay: 0
+}
+2025-10-31T21:04:01.268Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [OK] Alarm: cleared
+stderr:
+2025-10-31T20:58:08.031Z [err] [ManagerDrivers]  
+[Driver:button_emergency_sos] [Device:bb158b3e-284a-
+4593-a900-ff019f2aaa34] [IAS] ❌  ALL methods failed to  
+get IEEE address!
+2025-10-31T20:58:08.032Z [err] [ManagerDrivers]  
+[Driver:button_emergency_sos] [Device:bb158b3e-284a-
+4593-a900-ff019f2aaa34] [IAS] ❌  Cannot get IEEE  
+address!
+2025-10-31T21:02:19.633Z [err] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [IAS] ❌  ALL methods failed to  
+get IEEE address!
+2025-10-31T21:02:19.634Z [err] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [IAS] ❌  Cannot get IEEE  
+address!
+You can manage your email settings in the Homey Developer Tools.
+Homey <noreply@homey .app> 31 octobre 2025 à 23:41
+Répondre à : 69053b2bc29e6bcd20c2f f0e@apps-api.athom.com
+À : senetmarne@gmail.com
+Hi Dylan Rajasekaram,
+Your app Universal T uya Zigbee  has received a diagnostics report.
+You can reply to this e-mail to get in touch with the user . Note that the
+user will then be able to see your e-mail address.
+App ID
+com.dlnraja.tuya.zigbee
+App V ersion
+v4.9.252
+Homey V ersion
+v12.9.0-rc.5
+
+Homey Model ID
+homey5q
+Homey Model Name
+Homey Pro (Early 2023)
+Stack T race
+Note: this log has been manually submitted by a user.
+Log ID: 9ad3b5f6-875e-43dd-bcae- 278af552d3d1
+User Message:
+Même problème partout aucune data qui remonte et mauvais  
+usb . Au pire modifié le mail si USB pour gérer 2  
+boutons sur tout les drivers du même manufacturerid
+stdout:
+2025-10-31T22:40:39.163Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [OK] IAS Zone configured  
+successfully (SDK3 latest method)
+2025-10-31T22:40:39.163Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [TEMP] Setting up  
+measure_luminance (cluster 1024)...
+2025-10-31T22:40:39.163Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [WARN] Cluster 1024 not  
+available
+2025-10-31T22:40:39.164Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] PresenceSensorRadarDevice  
+initialized - Power source: unknown
+2025-10-31T22:40:39.591Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [DATA] Battery voltage: 3 V
+2025-10-31T22:40:39.597Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [OK] Intelligent detection:  
+CR2032 (voltage: 3V)
+2025-10-31T22:40:39.615Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [BACKGROUND] Power source  
+detected: BATTERY
+2025-10-31T22:40:39.616Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [BACKGROUND] Step 1.5/3:  
+Applying battery best practices...
+2025-10-31T22:40:39.616Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [PowerUtils] Detected power  
+source: unknown
+2025-10-31T22:40:39.616Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [BACKGROUND] Step 2/3:  
+Configuring power capabilities...
+2025-10-31T22:40:39.616Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] Configuring power-specific  
+capabilities with intelligent detection...
+2025-10-31T22:40:39.616Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [OK] Power capabilities  
+configured intelligently
+2025-10-31T22:40:39.616Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [BACKGROUND] Power capabilities  
+configured
+2025-10-31T22:40:39.616Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [BACKGROUND] Step 2b/8: Hardware  
+detection & auto-correction...
+2025-10-31T22:40:39.617Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [SHIM] 🔍  Hardware detection  
+started...
+2025-10-31T22:40:39.617Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [SHIM] Found 1 endpoints
+2025-10-31T22:40:39.617Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [SHIM] Power source: unknown
+2025-10-31T22:40:39.617Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [SHIM] 📊  Detection results: {
+"deviceType": "unknown",
+"powerSource": "unknown",
+"hasUSB": false,
+"hasTuyaEF00": false,
+"tuyaDPs": [],
+"endpoints": [
+1
+],
+"clusters": {
+"1": [
+"basic",
+"powerConfiguration",
+"illuminanceMeasurement",
+"occupancySensing",
+"iasZone",
+"tuyaSpecific"
+]
+},
+"features": []
+}
+2025-10-31T22:40:39.617Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [SHIM] Current driver:  
+presence_sensor_radar
+2025-10-31T22:40:39.617Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [SHIM] Current capabilities: [  
+'alarm_motion', 'measure_luminance', 'measure_battery' ]
+2025-10-31T22:40:39.618Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [SHIM] ✅  Hardware matches  
+driver - no corrections needed
+2025-10-31T22:40:39.618Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [BACKGROUND] Step 3a/4: IAS Zone  
++ Multi-Endpoint setup...
+2025-10-31T22:40:39.618Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [CRITICAL] 🔒  IAS Zone detected  
+- enrolling...
+2025-10-31T22:40:39.618Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [IAS] 🔒  Starting IAS Zone  
+enrollment...
+2025-10-31T22:40:39.618Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [IAS] Cannot read zoneState:  
+Cannot read properties of undefined (reading 'resolve')
+2025-10-31T22:40:39.619Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [IAS]  
+homey.zigbee.getIeeeAddress failed: device.homey.zigbee.
+getIeeeAddress is not a function
+2025-10-31T22:40:39.619Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [IAS] Basic cluster read failed:  
+Cannot read properties of undefined (reading 'resolve')
+2025-10-31T22:40:39.620Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [BACKGROUND] Step 3b/8: Dynamic  
+capabilities DISABLED (testing)
+2025-10-31T22:40:39.620Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [BACKGROUND] Step 3c/7: Tuya  
+EF00 initialization...
+2025-10-31T22:40:39.620Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [TUYA] Initializing EF00  
+manager...
+2025-10-31T22:40:39.620Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [TUYA] ✅  EF00 cluster detected
+2025-10-31T22:40:39.620Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [TUYA] Sending time sync: {  
+date: '2025-10-31T22:40:39.620Z', payload:  
+'190a1f16282704' }
+2025-10-31T22:40:41.058Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [TUYA] Time sync sent via  
+sendFrame
+2025-10-31T22:40:41.058Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [TUYA] Next time sync in 4h
+2025-10-31T22:40:41.058Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [TUYA] 🎧  Setting up datapoint  
+listeners...
+2025-10-31T22:40:41.058Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [TUYA] 📋  Cluster type:  
+TuyaSpecificCluster
+2025-10-31T22:40:41.058Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [TUYA] 📋  Cluster ID: unknown
+2025-10-31T22:40:41.058Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [TUYA] 📋  Available commands:  
+setData, getData, dataReport, dataQuery
+2025-10-31T22:40:41.059Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [TUYA] ✅  Raw frame listener  
+registered
+2025-10-31T22:40:41.059Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [TUYA] ✅  Datapoint listener  
+configured (SDK3 frame mode)
+2025-10-31T22:40:41.059Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [BACKGROUND] Tuya EF00 checked
+2025-10-31T22:40:41.059Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [BACKGROUND] Step 3d/7: Setting  
+up command listeners...
+2025-10-31T22:40:41.059Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [CMD-LISTENER] 🎧  Setting up  
+command listeners on all endpoints...
+2025-10-31T22:40:41.059Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [CMD-LISTENER] Monitoring  
+clusters: onOff, levelControl, scenes
+2025-10-31T22:40:41.059Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [CMD-LISTENER] Checking endpoint  
+1...
+2025-10-31T22:40:41.059Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [CMD-LISTENER] - onOff: not  
+present
+2025-10-31T22:40:41.059Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [CMD-LISTENER] - levelControl:  
+not present
+2025-10-31T22:40:41.060Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [CMD-LISTENER] - scenes: not  
+present
+2025-10-31T22:40:41.060Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [CMD-LISTENER] ✅  Setup complete  
+- 0 listeners active
+2025-10-31T22:40:41.060Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [BACKGROUND] ✅  Command  
+listeners configured
+2025-10-31T22:40:41.060Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [BACKGROUND] Step 3e/7: Force  
+initial read + schedule polling...
+2025-10-31T22:40:41.060Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [INITIAL-READ] 📖  Force reading  
+all attributes...
+2025-10-31T22:40:41.060Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [INITIAL-READ] 🔋  Reading  
+battery...
+2025-10-31T22:40:41.639Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [INITIAL-READ] ✅  Battery: 100%
+2025-10-31T22:40:41.647Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [INITIAL-READ] ⚠  Luminance read  
+failed: Cannot read properties of undefined (reading  
+'resolve')
+2025-10-31T22:40:41.647Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [INITIAL-READ] ✅  Force read  
+complete
+2025-10-31T22:40:41.648Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [POLLING] 📅  Scheduling  
+attribute polling every 6h
+2025-10-31T22:40:41.648Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [BACKGROUND] Initial read +  
+polling configured
+2025-10-31T22:40:41.648Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [BACKGROUND] Step 3f/7: Reading  
+battery value...
+2025-10-31T22:40:42.114Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [BATTERY] ✅  Initial battery:  
+100 %
+2025-10-31T22:40:42.114Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [BACKGROUND] Step 3f/7: Reading  
+sensor values...
+2025-10-31T22:40:42.114Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [OK] ✅  Background  
+initialization complete!
+2025-10-31T22:40:42.115Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] Final power type: BATTERY
+2025-10-31T22:40:42.115Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] Battery type: CR2032
+2025-10-31T22:40:55.444Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:fb488d0d-530c-44b5-
+9207-e0a0b3158fbb] [INITIAL-READ] ✅  Force read complete
+2025-10-31T22:40:55.444Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:fb488d0d-530c-44b5-
+9207-e0a0b3158fbb] [POLLING] 📅  Scheduling attribute  
+polling every 6h
+2025-10-31T22:40:55.445Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:fb488d0d-530c-44b5-
+9207-e0a0b3158fbb] [BACKGROUND] Initial read + polling  
+configured
+2025-10-31T22:40:55.445Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:fb488d0d-530c-44b5-
+9207-e0a0b3158fbb] [BACKGROUND] Step 3f/7: Reading  
+battery value...
+2025-10-31T22:41:02.546Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [MSG] Zone notification  
+received: iasZone. zoneStatusChangeNotification {
+zoneStatus: Bitmap [ ],
+extendedStatus: 0,
+zoneId: 0,
+delay: 0
+}
+2025-10-31T22:41:02.547Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [OK] Alarm: cleared
+2025-10-31T22:41:45.548Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:fb488d0d-530c-44b5-
+9207-e0a0b3158fbb] [BATTERY] ⚠  Could not read battery
+2025-10-31T22:41:45.550Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:fb488d0d-530c-44b5-
+9207-e0a0b3158fbb] [BACKGROUND] Step 3f/7: Reading  
+sensor values...
+2025-10-31T22:41:45.551Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:fb488d0d-530c-44b5-
+9207-e0a0b3158fbb] [OK] ✅  Background initialization  
+complete!
+2025-10-31T22:41:45.552Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:fb488d0d-530c-44b5-
+9207-e0a0b3158fbb] Final power type: BATTERY
+2025-10-31T22:41:45.552Z [log] [ManagerDrivers]  
+[Driver:climate_sensor_soil] [Device:fb488d0d-530c-44b5-
+9207-e0a0b3158fbb] Battery type: CR2032
+stderr:
+2025-10-31T22:35:07.923Z [err] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [IAS] ❌  ALL methods failed to  
+get IEEE address!
+2025-10-31T22:35:07.923Z [err] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:1f55575e-79ed-
+4d59-a667-732ae10d3304] [IAS] ❌  Cannot get IEEE  
+address!
+2025-10-31T22:35:09.828Z [err] [ManagerDrivers]  
+[Driver:button_emergency_sos] [Device:bb158b3e-284a-
+4593-a900-ff019f2aaa34] [IAS] ❌  ALL methods failed to  
+get IEEE address!
+2025-10-31T22:35:09.828Z [err] [ManagerDrivers]  
+[Driver:button_emergency_sos] [Device:bb158b3e-284a-
+4593-a900-ff019f2aaa34] [IAS] ❌  Cannot get IEEE  
+address!
+2025-10-31T22:38:07.243Z [err] [ManagerDrivers]  
+[Driver:button_emergency_sos] [Device:20ca15ce-2176-
+46be-be05-37c205082e11] [IAS] ❌  ALL methods failed to  
+get IEEE address!
+2025-10-31T22:38:07.244Z [err] [ManagerDrivers]  
+[Driver:button_emergency_sos] [Device:20ca15ce-2176-
+46be-be05-37c205082e11] [IAS] ❌  Cannot get IEEE  
+address!
+2025-10-31T22:40:39.620Z [err] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [IAS] ❌  ALL methods failed to  
+get IEEE address!
+2025-10-31T22:40:39.620Z [err] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:f88913de-03d3-
+43af-a816-a9fdfa93d75b] [IAS] ❌  Cannot get IEEE  
+address!
+You can manage your email settings in the Homey Developer Tools.
+[Texte des messages précédents masqué]

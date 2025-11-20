@@ -1,0 +1,786 @@
+{
+  "summary": {
+    "totalPdfs": 30,
+    "processedPdfs": 30,
+    "errors": 0,
+    "manufacturerNamesFound": 10,
+    "modelIdsFound": 9,
+    "clustersFound": 5,
+    "datapointsFound": 6,
+    "diagnosticReports": 3,
+    "suggestions": 1,
+    "forumPosts": 1,
+    "technicalInfo": 1
+  },
+  "manufacturerNames": [
+    "_TZ3000_0dumfk2z",
+    "_TZ3000_5bpeda8u",
+    "_TZ3000_bczr4e10",
+    "_TZ3000_bgtzm4ny",
+    "_TZ3000_ja5osu5g",
+    "_TZ3000_l9brjwau",
+    "_TZE200_rhgsbacq",
+    "_TZE204_qasjif9e",
+    "_TZE284_oitavov2",
+    "_TZE284_vvmbj46n"
+  ],
+  "modelIds": [
+    "TS0002",
+    "TS0041",
+    "TS0043",
+    "TS0044",
+    "TS0201",
+    "TS0215",
+    "TS0601",
+    "Ts0601",
+    "ts0601"
+  ],
+  "clusters": [
+    "1024",
+    "1026",
+    "1029",
+    "2025",
+    "EF00"
+  ],
+  "datapoints": [
+    "0",
+    "1",
+    "15",
+    "2",
+    "202",
+    "4"
+  ],
+  "diagnosticReports": [
+    {
+      "filename": "Gmail - [com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report.pdf",
+      "type": "diagnostic_report",
+      "manufacturerNames": [
+        "_TZ3000_5bpeda8u"
+      ],
+      "modelIds": [
+        "TS0041"
+      ],
+      "clusters": [],
+      "datapoints": [],
+      "endpoints": [],
+      "deviceId": null,
+      "battery": 202,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n1 message\nHomey <noreply@homey .app> 17 novembre 2025 à 00:01\nRépondre à : 691a57cee09bc49db29f8b93@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigbee"
+    },
+    {
+      "filename": "Gmail - [com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report1.pdf",
+      "type": "diagnostic_report",
+      "manufacturerNames": [
+        "_TZE200_rhgsbacq",
+        "_TZ3000_bgtzm4ny"
+      ],
+      "modelIds": [
+        "TS0044",
+        "TS0601"
+      ],
+      "clusters": [
+        "EF00"
+      ],
+      "datapoints": [
+        "202",
+        "4",
+        "2",
+        "1",
+        "15"
+      ],
+      "endpoints": [],
+      "deviceId": null,
+      "battery": 202,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n4 messages\nHomey <noreply@homey .app> 15 novembre 2025 à 15:45\nRépondre à : 6918920ea156f fc0e89f48ad@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigb"
+    },
+    {
+      "filename": "Gmail - [com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report2.pdf",
+      "type": "diagnostic_report",
+      "manufacturerNames": [],
+      "modelIds": [],
+      "clusters": [
+        "EF00"
+      ],
+      "datapoints": [
+        "4"
+      ],
+      "endpoints": [
+        "1"
+      ],
+      "deviceId": null,
+      "battery": 202,
+      "temperature": null,
+      "humidity": 2025.0,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n1 message\nHomey <noreply@homey .app> 14 novembre 2025 à 01:20\nRépondre à : 691675b69f f9841696443016@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigbe"
+    }
+  ],
+  "suggestions": [
+    {
+      "filename": "Gmail - [com.dlnraja.tuya.zigbee] Your app has received a suggestion.pdf",
+      "type": "suggestion",
+      "manufacturerNames": [
+        "_TZ3000_l9brjwau"
+      ],
+      "modelIds": [
+        "TS0002"
+      ],
+      "clusters": [],
+      "datapoints": [],
+      "endpoints": [],
+      "deviceId": null,
+      "battery": null,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a suggestion\n28 messages\nHomey <noreply@homey .app> 24 octobre 2025 à 19:27\nRépondre à : loic.salmona@gmail.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nLoïc Salmona has left a suggestion for your app Universal T uya\nZigbee .\n“Bseed 1/2/3/4 gang touch switches are extensively sold on\nAmazon but not supported anywhere. Any chance to get an\nupgrade for that? ”\nYou can reply to this e-mail to get in touch"
+    }
+  ],
+  "forumPosts": [
+    {
+      "filename": "Gmail - [Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test.pdf",
+      "type": "forum_post",
+      "manufacturerNames": [
+        "_TZE284_oitavov2",
+        "_TZE204_qasjif9e",
+        "_TZ3000_ja5osu5g",
+        "_TZ3000_0dumfk2z"
+      ],
+      "modelIds": [
+        "TS0601",
+        "TS0201",
+        "TS0215"
+      ],
+      "clusters": [],
+      "datapoints": [],
+      "endpoints": [],
+      "deviceId": null,
+      "battery": null,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[Homey Community Forum] [Apps] [APP][Pro] Universal TUY A Zigbee Device App\n- test\n98 messages\nCam via Homey Community Forum <notifications@athom.discoursemail.com> 13 octobre 2025 à 01:39\nRépondre à : Homey Community Forum <incoming+9814c8e0f2e9707ac4f f253c26bc6049@athom.discoursemail.com>\nÀ : senetmarne@gmail.com\nCam\nOctober 12\nThanks for the explanation, @dlnraja .\nFrom a user experience (UX) point of view , the user is looking for a description of th"
+    }
+  ],
+  "technicalInfo": [
+    {
+      "filename": "Gmail - Fwd_ [Zigbee 2-gang tactile device] Technical issue before order.pdf",
+      "type": "technical_inquiry",
+      "manufacturerNames": [],
+      "modelIds": [],
+      "clusters": [
+        "EF00"
+      ],
+      "datapoints": [],
+      "endpoints": [],
+      "deviceId": null,
+      "battery": null,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\nFwd: [Zigbee 2-gang tactile device] T echnical issue before order\n23 messages\nLoïc Salmona <loic.salmona@gmail.com> 1 novembre 2025 à 23:39\nÀ : Dylan Rajasekaram <senetmarne@gmail.com>\nFYI\n---------- Forwarded message ---------\nFrom: Loïc Salmona  <loic.salmona@gmail.com >\nDate: Sat, Nov 1, 2025 at 1 1:23 PM\nSubject: [Zigbee 2-gang tactile device] Technical issue before order\nTo: <shopify@bseed.com >\nHello,\nI would like to order your multi-gang tactile zi"
+    }
+  ],
+  "detailedResults": [
+    {
+      "filename": "10.pdf",
+      "type": "unknown",
+      "manufacturerNames": [],
+      "modelIds": [],
+      "clusters": [],
+      "datapoints": [],
+      "endpoints": [
+        "3",
+        "2",
+        "1"
+      ],
+      "deviceId": null,
+      "battery": 100,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n2 messages\nHomey <noreply@homey .app> 2 novembre 2025 à 1 1:05\nRépondre à : 69072cf484c9ae03698bf fda@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigb"
+    },
+    {
+      "filename": "11.pdf",
+      "type": "unknown",
+      "manufacturerNames": [],
+      "modelIds": [],
+      "clusters": [
+        "2025"
+      ],
+      "datapoints": [],
+      "endpoints": [
+        "1"
+      ],
+      "deviceId": null,
+      "battery": 69,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n1 message\nHomey <noreply@homey .app> 1 novembre 2025 à 12:31\nRépondre à : 6905ef806f015eeeb25c08ab@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigbee\n"
+    },
+    {
+      "filename": "12.pdf",
+      "type": "unknown",
+      "manufacturerNames": [],
+      "modelIds": [],
+      "clusters": [
+        "2025",
+        "1024"
+      ],
+      "datapoints": [],
+      "endpoints": [
+        "1"
+      ],
+      "deviceId": null,
+      "battery": 100,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n2 messages\nHomey <noreply@homey .app> 31 octobre 2025 à 22:04\nRépondre à : 6905245f8eacca0499cbf0db@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigbee"
+    },
+    {
+      "filename": "13.pdf",
+      "type": "unknown",
+      "manufacturerNames": [
+        "_TZE284_vvmbj46n",
+        "_TZ3000_0dumfk2z",
+        "_TZ3000_bczr4e10",
+        "_TZE284_oitavov2",
+        "_TZ3000_bgtzm4ny"
+      ],
+      "modelIds": [
+        "TS0044",
+        "TS0601",
+        "TS0043",
+        "TS0215"
+      ],
+      "clusters": [
+        "1029",
+        "2025",
+        "1024",
+        "1026"
+      ],
+      "datapoints": [
+        "0"
+      ],
+      "endpoints": [
+        "3",
+        "2025",
+        "4",
+        "2",
+        "1"
+      ],
+      "deviceId": null,
+      "battery": 202,
+      "temperature": 2025.0,
+      "humidity": 2025.0,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n35 messages\nHomey <noreply@homey .app> 27 octobre 2025 à 23:18\nRépondre à : 68f fefbe5f7aa28f55df908f@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigb"
+    },
+    {
+      "filename": "14.pdf",
+      "type": "unknown",
+      "manufacturerNames": [],
+      "modelIds": [],
+      "clusters": [
+        "1029",
+        "1024",
+        "1026"
+      ],
+      "datapoints": [],
+      "endpoints": [
+        "1"
+      ],
+      "deviceId": null,
+      "battery": 202,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n42 messages\nHomey <noreply@homey .app> 24 octobre 2025 à 08:07\nRépondre à : 68fb17a0f5b0f3606d940239@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigbe"
+    },
+    {
+      "filename": "15.pdf",
+      "type": "unknown",
+      "manufacturerNames": [],
+      "modelIds": [
+        "ts0601",
+        "Ts0601"
+      ],
+      "clusters": [],
+      "datapoints": [],
+      "endpoints": [],
+      "deviceId": null,
+      "battery": null,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n3 messages\nHomey <noreply@homey .app> 23 octobre 2025 à 15:51\nRépondre à : 68fa32cb3728fc3facb5cce4@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigbee"
+    },
+    {
+      "filename": "16.pdf",
+      "type": "unknown",
+      "manufacturerNames": [],
+      "modelIds": [
+        "TS0601",
+        "ts0601"
+      ],
+      "clusters": [],
+      "datapoints": [],
+      "endpoints": [
+        "1"
+      ],
+      "deviceId": null,
+      "battery": null,
+      "temperature": 15.1,
+      "humidity": 84.9,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n4 messages\nHomey <noreply@homey .app> 21 octobre 2025 à 15:06\nRépondre à : 68f78560f f1363b717176cbd@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigbe"
+    },
+    {
+      "filename": "17.pdf",
+      "type": "unknown",
+      "manufacturerNames": [],
+      "modelIds": [],
+      "clusters": [],
+      "datapoints": [],
+      "endpoints": [
+        "1"
+      ],
+      "deviceId": null,
+      "battery": null,
+      "temperature": 20.9,
+      "humidity": 71.7,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n6 messages\nHomey <noreply@homey .app> 19 octobre 2025 à 17:26\nRépondre à : 68f5031d0bfac070f107a6e1@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigbee"
+    },
+    {
+      "filename": "18.pdf",
+      "type": "unknown",
+      "manufacturerNames": [],
+      "modelIds": [],
+      "clusters": [],
+      "datapoints": [],
+      "endpoints": [
+        "1"
+      ],
+      "deviceId": null,
+      "battery": null,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n4 messages\nHomey <noreply@homey .app> 19 octobre 2025 à 1 1:47\nRépondre à : 68f4b3a90bfac070f1004b7a@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigbe"
+    },
+    {
+      "filename": "19.pdf",
+      "type": "unknown",
+      "manufacturerNames": [],
+      "modelIds": [],
+      "clusters": [],
+      "datapoints": [],
+      "endpoints": [],
+      "deviceId": null,
+      "battery": null,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n1 message\nHomey <noreply@homey .app> 19 octobre 2025 à 16:31\nRépondre à : 68f4f6330bfac070f10613d1@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigbee\n"
+    },
+    {
+      "filename": "20.pdf",
+      "type": "unknown",
+      "manufacturerNames": [],
+      "modelIds": [],
+      "clusters": [],
+      "datapoints": [],
+      "endpoints": [],
+      "deviceId": null,
+      "battery": null,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n2 messages\nHomey <noreply@homey .app> 18 octobre 2025 à 10:23\nRépondre à : 68f34e75b3cd7900fb097849@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigbee"
+    },
+    {
+      "filename": "21.pdf",
+      "type": "unknown",
+      "manufacturerNames": [],
+      "modelIds": [
+        "TS0601",
+        "ts0601"
+      ],
+      "clusters": [],
+      "datapoints": [],
+      "endpoints": [
+        "2025",
+        "1"
+      ],
+      "deviceId": null,
+      "battery": null,
+      "temperature": 14.2,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n21 messages\nHomey <noreply@homey .app> 15 octobre 2025 à 00:22\nRépondre à : 68eecd3829ead7788679768f@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigbe"
+    },
+    {
+      "filename": "22.pdf",
+      "type": "unknown",
+      "manufacturerNames": [],
+      "modelIds": [],
+      "clusters": [],
+      "datapoints": [],
+      "endpoints": [],
+      "deviceId": null,
+      "battery": null,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n1 message\nHomey <noreply@homey .app> 14 octobre 2025 à 09:52\nRépondre à : 68ee013329ead7788667246d@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigbee\n"
+    },
+    {
+      "filename": "23.pdf",
+      "type": "unknown",
+      "manufacturerNames": [],
+      "modelIds": [],
+      "clusters": [],
+      "datapoints": [],
+      "endpoints": [
+        "2025",
+        "1"
+      ],
+      "deviceId": null,
+      "battery": null,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n2 messages\nHomey <noreply@homey .app> 13 octobre 2025 à 12:36\nRépondre à : 68ecd6271e486d21840ce8a5@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigbee"
+    },
+    {
+      "filename": "24.pdf",
+      "type": "unknown",
+      "manufacturerNames": [],
+      "modelIds": [
+        "TS0601",
+        "ts0601"
+      ],
+      "clusters": [],
+      "datapoints": [],
+      "endpoints": [
+        "2025",
+        "1"
+      ],
+      "deviceId": null,
+      "battery": 3,
+      "temperature": 13.6,
+      "humidity": 91.6,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n9 messages\nHomey <noreply@homey .app> 12 octobre 2025 à 09:52\nRépondre à : 68eb5e261e486d2184e94269@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigbee"
+    },
+    {
+      "filename": "25.pdf",
+      "type": "unknown",
+      "manufacturerNames": [],
+      "modelIds": [
+        "TS0601",
+        "ts0601"
+      ],
+      "clusters": [],
+      "datapoints": [],
+      "endpoints": [],
+      "deviceId": null,
+      "battery": null,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n3 messages\nHomey <noreply@homey .app> 11 octobre 2025 à 16:50\nRépondre à : 68ea6ec81e486d2184d7376e@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigbee"
+    },
+    {
+      "filename": "26.pdf",
+      "type": "unknown",
+      "manufacturerNames": [],
+      "modelIds": [],
+      "clusters": [],
+      "datapoints": [],
+      "endpoints": [],
+      "deviceId": null,
+      "battery": null,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n1 message\nHomey <noreply@homey .app> 8 octobre 2025 à 13:32\nRépondre à : 68e64bcc0bfac070f1c7d1e5@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigbee\nA"
+    },
+    {
+      "filename": "27.pdf",
+      "type": "unknown",
+      "manufacturerNames": [],
+      "modelIds": [],
+      "clusters": [],
+      "datapoints": [],
+      "endpoints": [],
+      "deviceId": null,
+      "battery": null,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n1 message\nHomey <noreply@homey .app> 6 octobre 2025 à 22:33\nRépondre à : 68e4279a1e486d218457a42b@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigbee\nA"
+    },
+    {
+      "filename": "4.pdf",
+      "type": "unknown",
+      "manufacturerNames": [
+        "_TZ3000_0dumfk2z"
+      ],
+      "modelIds": [
+        "TS0215"
+      ],
+      "clusters": [],
+      "datapoints": [],
+      "endpoints": [],
+      "deviceId": null,
+      "battery": 202,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n1 message\nHomey <noreply@homey .app> 12 novembre 2025 à 22:37\nRépondre à : 6914fe2ea156f fc0e85f f40d@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigb"
+    },
+    {
+      "filename": "5.pdf",
+      "type": "unknown",
+      "manufacturerNames": [],
+      "modelIds": [
+        "TS0601"
+      ],
+      "clusters": [],
+      "datapoints": [],
+      "endpoints": [],
+      "deviceId": null,
+      "battery": null,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n1 message\nHomey <noreply@homey .app> 11 novembre 2025 à 17:20\nRépondre à : 6913626be09bc49db2183bf8@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigbee"
+    },
+    {
+      "filename": "6.pdf",
+      "type": "unknown",
+      "manufacturerNames": [
+        "_TZE284_oitavov2",
+        "_TZE200_rhgsbacq",
+        "_TZ3000_bczr4e10",
+        "_TZE284_vvmbj46n"
+      ],
+      "modelIds": [
+        "TS0601",
+        "TS0043"
+      ],
+      "clusters": [
+        "EF00"
+      ],
+      "datapoints": [],
+      "endpoints": [
+        "3",
+        "2",
+        "1"
+      ],
+      "deviceId": null,
+      "battery": 202,
+      "temperature": null,
+      "humidity": 2025.0,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n11 messages\nHomey <noreply@homey .app> 7 novembre 2025 à 20:1 1\nRépondre à : 690e447343450dcc2dd7d350@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigb"
+    },
+    {
+      "filename": "7.pdf",
+      "type": "unknown",
+      "manufacturerNames": [],
+      "modelIds": [],
+      "clusters": [],
+      "datapoints": [],
+      "endpoints": [
+        "4",
+        "1"
+      ],
+      "deviceId": null,
+      "battery": 202,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n2 messages\nHomey <noreply@homey .app> 6 novembre 2025 à 21:53\nRépondre à : 690d0ad443450dcc2dc1fbb3@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigbee"
+    },
+    {
+      "filename": "8.pdf",
+      "type": "unknown",
+      "manufacturerNames": [],
+      "modelIds": [],
+      "clusters": [],
+      "datapoints": [],
+      "endpoints": [
+        "4",
+        "3",
+        "2",
+        "1"
+      ],
+      "deviceId": null,
+      "battery": 202,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n13 messages\nHomey <noreply@homey .app> 4 novembre 2025 à 15:41\nRépondre à : 690a10aded9f159bcf317236@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigbe"
+    },
+    {
+      "filename": "9.pdf",
+      "type": "unknown",
+      "manufacturerNames": [],
+      "modelIds": [],
+      "clusters": [
+        "2025"
+      ],
+      "datapoints": [],
+      "endpoints": [
+        "1"
+      ],
+      "deviceId": null,
+      "battery": 69,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n1 message\nHomey <noreply@homey .app> 4 novembre 2025 à 00:24\nRépondre à : 690939ad82e7c1b45e4bd43b@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigbee\n"
+    },
+    {
+      "filename": "Gmail - Fwd_ [Zigbee 2-gang tactile device] Technical issue before order.pdf",
+      "type": "technical_inquiry",
+      "manufacturerNames": [],
+      "modelIds": [],
+      "clusters": [
+        "EF00"
+      ],
+      "datapoints": [],
+      "endpoints": [],
+      "deviceId": null,
+      "battery": null,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\nFwd: [Zigbee 2-gang tactile device] T echnical issue before order\n23 messages\nLoïc Salmona <loic.salmona@gmail.com> 1 novembre 2025 à 23:39\nÀ : Dylan Rajasekaram <senetmarne@gmail.com>\nFYI\n---------- Forwarded message ---------\nFrom: Loïc Salmona  <loic.salmona@gmail.com >\nDate: Sat, Nov 1, 2025 at 1 1:23 PM\nSubject: [Zigbee 2-gang tactile device] Technical issue before order\nTo: <shopify@bseed.com >\nHello,\nI would like to order your multi-gang tactile zi"
+    },
+    {
+      "filename": "Gmail - [com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report.pdf",
+      "type": "diagnostic_report",
+      "manufacturerNames": [
+        "_TZ3000_5bpeda8u"
+      ],
+      "modelIds": [
+        "TS0041"
+      ],
+      "clusters": [],
+      "datapoints": [],
+      "endpoints": [],
+      "deviceId": null,
+      "battery": 202,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n1 message\nHomey <noreply@homey .app> 17 novembre 2025 à 00:01\nRépondre à : 691a57cee09bc49db29f8b93@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigbee"
+    },
+    {
+      "filename": "Gmail - [com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report1.pdf",
+      "type": "diagnostic_report",
+      "manufacturerNames": [
+        "_TZE200_rhgsbacq",
+        "_TZ3000_bgtzm4ny"
+      ],
+      "modelIds": [
+        "TS0044",
+        "TS0601"
+      ],
+      "clusters": [
+        "EF00"
+      ],
+      "datapoints": [
+        "202",
+        "4",
+        "2",
+        "1",
+        "15"
+      ],
+      "endpoints": [],
+      "deviceId": null,
+      "battery": 202,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n4 messages\nHomey <noreply@homey .app> 15 novembre 2025 à 15:45\nRépondre à : 6918920ea156f fc0e89f48ad@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigb"
+    },
+    {
+      "filename": "Gmail - [com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report2.pdf",
+      "type": "diagnostic_report",
+      "manufacturerNames": [],
+      "modelIds": [],
+      "clusters": [
+        "EF00"
+      ],
+      "datapoints": [
+        "4"
+      ],
+      "endpoints": [
+        "1"
+      ],
+      "deviceId": null,
+      "battery": 202,
+      "temperature": null,
+      "humidity": 2025.0,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report\n1 message\nHomey <noreply@homey .app> 14 novembre 2025 à 01:20\nRépondre à : 691675b69f f9841696443016@apps-api.athom.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nYour app Universal T uya Zigbee  has received a diagnostics report.\nYou can reply to this e-mail to get in touch with the user . Note that the\nuser will then be able to see your e-mail address.\nApp ID\ncom.dlnraja.tuya.zigbe"
+    },
+    {
+      "filename": "Gmail - [com.dlnraja.tuya.zigbee] Your app has received a suggestion.pdf",
+      "type": "suggestion",
+      "manufacturerNames": [
+        "_TZ3000_l9brjwau"
+      ],
+      "modelIds": [
+        "TS0002"
+      ],
+      "clusters": [],
+      "datapoints": [],
+      "endpoints": [],
+      "deviceId": null,
+      "battery": null,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[com.dlnraja.tuya.zigbee] Your app has received a suggestion\n28 messages\nHomey <noreply@homey .app> 24 octobre 2025 à 19:27\nRépondre à : loic.salmona@gmail.com\nÀ : senetmarne@gmail.com\nHi Dylan Rajasekaram,\nLoïc Salmona has left a suggestion for your app Universal T uya\nZigbee .\n“Bseed 1/2/3/4 gang touch switches are extensively sold on\nAmazon but not supported anywhere. Any chance to get an\nupgrade for that? ”\nYou can reply to this e-mail to get in touch"
+    },
+    {
+      "filename": "Gmail - [Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test.pdf",
+      "type": "forum_post",
+      "manufacturerNames": [
+        "_TZE284_oitavov2",
+        "_TZE204_qasjif9e",
+        "_TZ3000_ja5osu5g",
+        "_TZ3000_0dumfk2z"
+      ],
+      "modelIds": [
+        "TS0601",
+        "TS0201",
+        "TS0215"
+      ],
+      "clusters": [],
+      "datapoints": [],
+      "endpoints": [],
+      "deviceId": null,
+      "battery": null,
+      "temperature": null,
+      "humidity": null,
+      "zigbeeId": null,
+      "rawTextPreview": "Dylan Rajasekaram <senetmarne@gmail.com>\n[Homey Community Forum] [Apps] [APP][Pro] Universal TUY A Zigbee Device App\n- test\n98 messages\nCam via Homey Community Forum <notifications@athom.discoursemail.com> 13 octobre 2025 à 01:39\nRépondre à : Homey Community Forum <incoming+9814c8e0f2e9707ac4f f253c26bc6049@athom.discoursemail.com>\nÀ : senetmarne@gmail.com\nCam\nOctober 12\nThanks for the explanation, @dlnraja .\nFrom a user experience (UX) point of view , the user is looking for a description of th"
+    }
+  ]
+}
