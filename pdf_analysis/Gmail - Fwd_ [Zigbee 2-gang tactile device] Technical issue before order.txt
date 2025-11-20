@@ -1,0 +1,206 @@
+Dylan Rajasekaram <senetmarne@gmail.com>
+Fwd: [Zigbee 2-gang tactile device] T echnical issue before order
+23 messages
+Loïc Salmona <loic.salmona@gmail.com> 1 novembre 2025 à 23:39
+À : Dylan Rajasekaram <senetmarne@gmail.com>
+FYI
+---------- Forwarded message ---------
+From: Loïc Salmona  <loic.salmona@gmail.com >
+Date: Sat, Nov 1, 2025 at 1 1:23 PM
+Subject: [Zigbee 2-gang tactile device] Technical issue before order
+To: <shopify@bseed.com >
+Hello,
+I would like to order your multi-gang tactile zigbee devices for my house.
+However , ahead of this order , I am trying to check how I can manage these devices with my homey pro local zigbee
+gateway .
+I tried with the 2-gang zigbee device.
+So far , I can read each gang status. 
+But when I trigger one gang (1 or 2) on homey through endpoint[1 or 2].clusters.onof f , both  switches are activated .
+I am not able to command only one gang with commands like setOn(), setOf f(), toggle().
+Is there any technical specification I should know to fix this?
+If I cannot fix this, it is a no go.
+Thanks a lot for your help
+Regards
+Loïc S.
+Dylan RAJASEKARAM <[redacted-email]> 1 novembre 2025 à 23:42
+À : loic.salmona@gmail.com
+👍
+Dylan a réagi depuis Gmail
+[Texte des messages précédents masqué]
+Dylan Rajasekaram <senetmarne@gmail.com> 2 novembre 2025 à 00:06
+À : Loïc Salmona <loic.salmona@gmail.com>
+D'après ce que j'observe après investigation. C'est bien un problème de firmware et non de code car avec les modifs
+de codes que je suis entrain de tester ça sera pareil. Il faudrait voir le comportement avec une box tuya et voir ce qui
+se passe. 
+Cdt.
+[redacted-phone] ;) 
+Le sam. 1 nov . 2025, 23:40, Loïc Salmona < loic.salmona@gmail.com > a écrit :
+[Texte des messages précédents masqué]
+Loïc Salmona <loic.salmona@gmail.com> 2 novembre 2025 à 00:25
+
+À : Dylan Rajasekaram <senetmarne@gmail.com>
+Ok merci. Je vais voir ce que Bseed me répond.
+Sinon tu te sens de snif fer la gateway Tuya si je te la paie?
+Je note le téléphone si besoin merci !
+[Texte des messages précédents masqué]
+Dylan Rajasekaram <senetmarne@gmail.com> 2 novembre 2025 à 00:47
+À : Loïc Salmona <loic.salmona@gmail.com>
+je vais chercher dans mon stock, il doit surement y en traîner un ( model lidl ou aliexpress ) mais le mieux est
+d'attendre une réponse de bseed , vue que c'est une société chinoise derriere ils devraient logement répondre plus
+rapidement par whatsapp.
+[Texte des messages précédents masqué]
+Loïc Salmona <loic.salmona@gmail.com> 2 novembre 2025 à 14:04
+À : Dylan Rajasekaram <senetmarne@gmail.com>
+Sinon tu as déjà lu cette page?
+https://developer .tuya.com/en/ docs/connect-subdevices-to- gateways/tuya-zigbee-multiple- switch-access-standard?id=
+K9ik6zvnqr09m
+Ça manque cruellement d’exemple, je n’ai pas encore bien capté le fonctionnement.
+[Texte des messages précédents masqué]
+Dylan Rajasekaram <senetmarne@gmail.com> 2 novembre 2025 à 14:31
+À : Loïc Salmona <loic.salmona@gmail.com>
+tuya utulsie les dp se sont des daya pints par dessus des clsuter , c'est une surcoihe d'implementatipn sur le zigbee
+stadard , j'ao crréer un parseur dp dasn le projet mais c'est une galiereè car les datta peuvent etre envoyé en stroing
+ou en raw .
+[Texte des messages précédents masqué]
+Dylan Rajasekaram <senetmarne@gmail.com> 2 novembre 2025 à 14:39
+À : Loïc Salmona <loic.salmona@gmail.com>
+Tuya utilise des DP  (Data Points), qui constituent une surcouche propriétaire au-dessus du standard Zigbee.
+Concrètement, même si l’appareil tourne sur des clusters Zigbee classiques, Tuya encapsule tout dans des DP , ce qui
+détourne le fonctionnement normal et complique énormément l’intégration.
+Dans mon projet dlnraja/com.tuya.zigbee, j’ai implémenté un parseur DP  générique capable de décoder ces trames. Il
+gère notamment :
+la lecture et l’écriture de DP ,
+les dif férents types de payloads Tuya (bool, value, enum, bitmap, string, raw , etc.),
+le mapping des DP  vers des capabilities Homey ,
+la logique multi-gang/multi-endpoints pour les interrupteurs,
+et les variations de structure entre appareils (puisque Tuya ne suit pas 100% sa propre spec…).
+Et effectivement, ce n’est pas trivial, car les données ne sont pas toujours envoyées au même format : selon le
+fabricant, un même DP  peut arriver en string ou en binaire (raw), ce qui oblige à traiter plusieurs cas et à adapter
+dynamiquement.
+Concernant la page que tu as partagée :
+https://developer .tuya.com/en/ docs/connect-subdevices-to- gateways/tuya-zigbee-multiple- switch-access-standard?id=
+K9ik6zvnqr09m
+Je me suis aidé de la discussion ici pour le parseur :
+https://github.com/zigpy/ zigpy/discussions/823
+Oui, je la connais. Elle donne la structure globale du TuyaMCU (format DP , commandes, retour d’état, multi-switch,
+etc.), mais je suis d’accord avec toi : il manque cruellement d’exemples concrets – surtout pour les scénarios réels
+comme :
+la gestion des multi-gang / multi-endpoints,
+la synchronisation d’état,
+la conversion DP  ↔ clusters Zigbee standard,
+les cas où le fabricant change la numérotation des DP  ou les types.
+C’est d’ailleurs pour combler ces zones floues que j’ai dû analyser des logs, snif fer du trafic Zigbee et tester plusieurs
+appareils, afin de déduire la logique réelle appliquée par Tuya.
+Si ça peut t’aider à mieux comprendre, tu peux jeter un œil à ce que j’ai déjà intégré dans mon repo — tu y trouveras
+du code concret couvrant la majorité des cas que la documentation n’explique pas.
+---
+Si tu veux, je peux aussi te fournir :
+🔹 un schéma visuel du cycle complet (DP  → parsing → mapping → capability)
+🔹 un exemple pas-à-pas pour un switch 2-gang (avec logs et explication du parsing)
+Souhaites-tu que je te prépare ça ?
+[Texte des messages précédents masqué]
+Loïc Salmona <loic.salmona@gmail.com> 2 novembre 2025 à 15:01
+À : Dylan Rajasekaram <senetmarne@gmail.com>
+Dans mes logs, il y a ce test. 
+Est ce qu’il détermine l’utilisation ou non de ta surcouche DP  ?
+Peut être que le test n’est pas bon pour mon device (il considère que ce n’est pas à Tuya device) et qu’on retombe
+dans le standard zigbee qui n’est pas adapté ???
+[Texte des messages précédents masqué]
+Dylan Rajasekaram <senetmarne@gmail.com> 2 novembre 2025 à 16:18
+À : Loïc Salmona <loic.salmona@gmail.com>
+Je catch tout et je regarde la donné derrière .
+Oui c'est bien ça je vérifie si c'est du tuya et après ça bascule en ZIGBEE natif.
+Mais visiblement il n'arrive pas a capturer le cluster . C'est dans ce cluster qui il ya les données data point .
+Peut être que ton appareil est en ZIGBEE natif .
+Et quand tu interview l'appareil dans https://tools.developer .homey .app/tools/zigbee
+Ça donne quoi ?
+
+
+Cluster 0xEF00
+[Texte des messages précédents masqué]
+Dylan Rajasekaram <senetmarne@gmail.com> 2 novembre 2025 à 16:19
+À : Loïc Salmona <loic.salmona@gmail.com>
+Renvoi moi aussi tes logs que je regarde de plus prêt dans un txt ou rfc ou autre stp
+Homey app run > logs.txt 
+[Texte des messages précédents masqué]
+Loïc Salmona <loic.salmona@gmail.com> 3 novembre 2025 à 13:00
+À : Dylan Rajasekaram <senetmarne@gmail.com>
+Salut,
+Voici l'interview report et les logs en pj.
+J'ai l'impression que le device n'est pas Tuya, contrairement à ce que m'a redit le constructeur . Donc ton driver
+basculerait en mode zigbee natif...
+Alors, chose incroyable et reproductible: suite à la génération de l'interview report, les deux boutons ne sont mis
+à fonctionner de manière séparée.  Donc l'interrupteur fonctionne totalement !!!
+J'ai réessayé avec un autre interrupteur 2 boutons. Même comportement: à l'intégration, il y a le problème de
+l'activation simultanée des 2 boutons. Et après interview report, les deux boutons se mettent à fonctionner
+séparément ! C'est incroyable. tu as déjà vu ça ???
+[Texte des messages précédents masqué]
+2 pièces jointes
+Bseed 2gang switch interview report.rtf
+15K
+logs (1).rtf
+64K
+Loïc Salmona <loic.salmona@gmail.com> 3 novembre 2025 à 13:01
+À : Dylan Rajasekaram <senetmarne@gmail.com>
+Je viens de recevoir un interrupteur Bseed 3 boutons et un interrupteur Bseed volets roulants.
+Je vais essayer de les intégrer . Je te tiens au courant
+[Texte des messages précédents masqué]
+Dylan Rajasekaram <senetmarne@gmail.com> 3 novembre 2025 à 13:03
+À : Loïc Salmona <loic.salmona@gmail.com>
+Oui c'est normal on appelle ça le mode iddle et c'est compliqué a catcher ducoup j'ai mis un listener en background
+pour catcher ces event. 
+Oui j'ai déjà vue ça mais pas les 2 en même temps qui semble un bug firmware du constructeur . 
+[Texte des messages précédents masqué]
+Loïc Salmona <loic.salmona@gmail.com> 3 novembre 2025 à 13:20
+À : Dylan Rajasekaram <senetmarne@gmail.com>
+Je n'ai pas tout compris.
+En tout cas, une fois installé + manip interview report, le fonctionnement a l'air stable.
+Même après recompile et redéploiement de l'app, les devices fonctionnent toujours.
+[Texte des messages précédents masqué]
+Dylan Rajasekaram <senetmarne@gmail.com> 3 novembre 2025 à 13:38
+À : Loïc Salmona <loic.salmona@gmail.com>
+Bah c'est surment un big qui s'est fix, en sortant du mode iddle par le scan interview 
+[Texte des messages précédents masqué]
+Dylan Rajasekaram <senetmarne@gmail.com> 3 novembre 2025 à 13:50
+À : Loïc Salmona <loic.salmona@gmail.com>
+J'ai mis a jours le projet avec dans le dossier lib une meilleure gestion des dp et de tuya et ZIGBEE 
+[Texte des messages précédents masqué]
+Loïc Salmona <loic.salmona@gmail.com> 3 novembre 2025 à 13:51
+À : Dylan Rajasekaram <senetmarne@gmail.com>
+Super je vais regarder
+Merci bcp!
+[Texte des messages précédents masqué]
+Loïc Salmona <loic.salmona@gmail.com> 3 novembre 2025 à 14:31
+À : Dylan Rajasekaram <senetmarne@gmail.com>
+L’interrupteur 3 boutons fonctionne avec la même astuce.
+Pour intégrer un volet roulant, c’est ‘curtain_motor ’ pour ajouter le device  ?
+[Texte des messages précédents masqué]
+Dylan Rajasekaram <senetmarne@gmail.com> 3 novembre 2025 à 17:52
+À : Loïc Salmona <loic.salmona@gmail.com>
+Curtain motor correspond a volet roulant oui 
+Peut être que ton manufacturer name est deja dedans .
+[Texte des messages précédents masqué]
+Loïc Salmona <loic.salmona@gmail.com> 3 novembre 2025 à 17:54
+À : Dylan Rajasekaram <senetmarne@gmail.com>
+Merci.
+Non, j’ai du l’ajouter . Pour l’instant ça ne marche pas. J’investisse :)
+[Texte des messages précédents masqué]
+Loïc Salmona <loic.salmona@gmail.com> 4 novembre 2025 à 00:16
+À : Dylan Rajasekaram <senetmarne@gmail.com>
+Salut,
+Je t'ennuie encore, c'est mon dernier device à tester avant d'équiper ma maison avec cette gamme Bseed.
+tu as déjà testé le curtain motor? J'ai ajouté mon device dans app.json et le driver .compose.json du Curtain Motor
+Advanced.
+Mais il n'y a aucun listener / capability qui se créent dans les logs.
+Et rien ne fonctionne ni dans un sens, ni dans l'autre. 
+Tu aurais une idée?
+[Texte des messages précédents masqué]
+2 pièces jointes
+logs curtain motor .rtf
+22K
+curtain motor interview report.rtf
+9K
+Dylan Rajasekaram <senetmarne@gmail.com> 4 novembre 2025 à 00:22
+À : Loïc Salmona <loic.salmona@gmail.com>
+Je vais regarder . 
+[Texte des messages précédents masqué]

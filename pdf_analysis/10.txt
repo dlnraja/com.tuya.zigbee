@@ -1,0 +1,585 @@
+Dylan Rajasekaram <senetmarne@gmail.com>
+[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report
+2 messages
+Homey <noreply@homey .app> 2 novembre 2025 à 1 1:05
+Répondre à : 69072cf484c9ae03698bf fda@apps-api.athom.com
+À : senetmarne@gmail.com
+Hi Dylan Rajasekaram,
+Your app Universal T uya Zigbee  has received a diagnostics report.
+You can reply to this e-mail to get in touch with the user . Note that the
+user will then be able to see your e-mail address.
+App ID
+com.dlnraja.tuya.zigbee
+App V ersion
+v4.9.261
+Homey V ersion
+v12.9.0-rc.9
+Homey Model ID
+homey5q
+Homey Model Name
+Homey Pro (Early 2023)
+Stack T race
+Note: this log has been manually submitted by a user.
+Log ID: b98e4faa-77fc-46b3-ab22- c55b784200d2
+User Message:
+Issue not installed
+stdout:
+
+n/a
+stderr:
+n/a
+You can manage your email settings in the Homey Developer Tools.
+Homey <noreply@homey .app> 2 novembre 2025 à 1 1:46
+Répondre à : 6907369a6f015eeeb277d89e@apps-api.athom.com
+À : senetmarne@gmail.com
+Hi Dylan Rajasekaram,
+Your app Universal T uya Zigbee  has received a diagnostics report.
+You can reply to this e-mail to get in touch with the user . Note that the
+user will then be able to see your e-mail address.
+App ID
+com.dlnraja.tuya.zigbee
+App V ersion
+v4.9.261
+Homey V ersion
+v12.9.0-rc.9
+Homey Model ID
+homey5q
+
+Homey Model Name
+Homey Pro (Early 2023)
+Stack T race
+Note: this log has been manually submitted by a user.
+Log ID: 5bbbabc5-9ff9-4d70-8c1b- 5c5ea1be5709
+User Message:
+Issue quelusdes devices s'améliore mais olnamnqke  
+beaocups de choses et c'est pas assez intelligent et  
+Smart pour que goût ce que les appareils permettent soit  
+pris en charge en intégralité avec max de couverture  
+zigee
+stdout:
+"groups",
+"scenes",
+"onOff"
+],
+"3": [
+"basic",
+"groups",
+"scenes",
+"onOff"
+]
+},
+"features": [
+"multi_endpoint"
+]
+}
+2025-11-02T10:42:42.294Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [SHIM] Current driver:  
+button_wireless_3
+2025-11-02T10:42:42.294Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [SHIM] Current capabilities: [  
+'measure_battery', 'alarm_generic' ]
+2025-11-02T10:42:42.295Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [SHIM] ✅  Hardware matches driver -  
+no corrections needed
+2025-11-02T10:42:42.295Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [BACKGROUND] Step 3a/4: IAS Zone +  
+Multi-Endpoint setup...
+2025-11-02T10:42:42.295Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CRITICAL] 🔌  Multi-endpoint device  
+detected
+2025-11-02T10:42:42.295Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [MULTI-EP] ℹ  Button device - onOff  
+handled via command listeners, skipping capability  
+config
+2025-11-02T10:42:42.295Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [BACKGROUND] Step 3b/8: Dynamic  
+capabilities DISABLED (testing)
+2025-11-02T10:42:42.295Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [BACKGROUND] Step 3c/7: Tuya EF00  
+initialization...
+2025-11-02T10:42:42.295Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [TUYA] Initializing EF00 manager...
+2025-11-02T10:42:42.295Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [TUYA] No EF00 cluster found (not a  
+Tuya DP device)
+2025-11-02T10:42:42.295Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [TUYA] Available clusters: basic,  
+powerConfiguration, identify, groups, scenes, onOff
+2025-11-02T10:42:42.295Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [BACKGROUND] Tuya EF00 checked
+2025-11-02T10:42:42.295Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [BACKGROUND] Step 3d/7: Setting up  
+command listeners...
+2025-11-02T10:42:42.296Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] 🎧  Setting up command  
+listeners on all endpoints...
+2025-11-02T10:42:42.296Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] Monitoring clusters:  
+onOff, levelControl, scenes
+2025-11-02T10:42:42.296Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] Checking endpoint 1...
+2025-11-02T10:42:42.296Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] - onOff: ℹ  bind 
+skipped (SDK3 - events work without bind)
+2025-11-02T10:42:42.296Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] - onOff: ✅  command  
+listener active
+2025-11-02T10:42:42.296Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] - onOff: ✅  attr 
+listener active
+2025-11-02T10:42:42.296Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] - onOff: reporting  
+failed (0 Does not exist (OnOffCluster))
+2025-11-02T10:42:42.297Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] - levelControl: not  
+present
+2025-11-02T10:42:42.297Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] - scenes: ℹ  bind 
+skipped (SDK3 - events work without bind)
+2025-11-02T10:42:42.297Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] - scenes: ✅  command  
+listener active
+2025-11-02T10:42:42.297Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] - scenes: ✅  attr 
+listener active
+2025-11-02T10:42:42.297Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] Checking endpoint 2...
+2025-11-02T10:42:42.297Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] - onOff: ℹ  bind 
+skipped (SDK3 - events work without bind)
+2025-11-02T10:42:42.297Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] - onOff: ✅  command  
+listener active
+2025-11-02T10:42:42.297Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] - onOff: ✅  attr 
+listener active
+2025-11-02T10:42:42.297Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] - onOff: reporting  
+failed (0 Does not exist (OnOffCluster))
+2025-11-02T10:42:42.297Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] - levelControl: not  
+present
+2025-11-02T10:42:42.297Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] - scenes: ℹ  bind 
+skipped (SDK3 - events work without bind)
+2025-11-02T10:42:42.298Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] - scenes: ✅  command  
+listener active
+2025-11-02T10:42:42.298Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] - scenes: ✅  attr 
+listener active
+2025-11-02T10:42:42.298Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] Checking endpoint 3...
+2025-11-02T10:42:42.298Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] - onOff: ℹ  bind 
+skipped (SDK3 - events work without bind)
+2025-11-02T10:42:42.298Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] - onOff: ✅  command  
+listener active
+2025-11-02T10:42:42.298Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] - onOff: ✅  attr 
+listener active
+2025-11-02T10:42:42.298Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] - onOff: reporting  
+failed (0 Does not exist (OnOffCluster))
+2025-11-02T10:42:42.298Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] - levelControl: not  
+present
+2025-11-02T10:42:42.298Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] - scenes: ℹ  bind 
+skipped (SDK3 - events work without bind)
+2025-11-02T10:42:42.298Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] - scenes: ✅  command  
+listener active
+2025-11-02T10:42:42.299Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] - scenes: ✅  attr 
+listener active
+2025-11-02T10:42:42.299Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [CMD-LISTENER] ✅  Setup complete - 12  
+listeners active
+2025-11-02T10:42:42.299Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [BACKGROUND] ✅  Command listeners  
+configured
+2025-11-02T10:42:42.299Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [BACKGROUND] Step 3e/7: Force initial  
+read + schedule polling...
+2025-11-02T10:42:42.299Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [INITIAL-READ] 📖  Force reading all  
+attributes...
+2025-11-02T10:42:42.299Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [INITIAL-READ] 🔋  Reading battery...
+2025-11-02T10:42:42.419Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [INITIAL-READ] ✅  Battery: 100%
+2025-11-02T10:42:42.425Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [INITIAL-READ] ✅  Force read complete
+2025-11-02T10:42:42.426Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [POLLING] 📅  Scheduling attribute  
+polling every 6h
+2025-11-02T10:42:42.426Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [BACKGROUND] Initial read + polling  
+configured
+2025-11-02T10:42:42.426Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [BACKGROUND] Step 3f/7: Reading  
+battery value...
+2025-11-02T10:42:42.567Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [BATTERY] ✅  Initial battery: 100 %
+2025-11-02T10:42:42.568Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [BACKGROUND] Step 3f/7: Reading  
+sensor values...
+2025-11-02T10:42:42.569Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] [OK] ✅  Background initialization  
+complete!
+2025-11-02T10:42:42.569Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] Final power type: BATTERY
+2025-11-02T10:42:42.569Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:82bc9237-91db-4bf4-
+9343-93b1dcfa746c] Battery type: CR2032
+2025-11-02T10:42:49.923Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:39eda123-864a-
+4dcb-b56e-ef5ac7a57c79] [MSG] Zone notification  
+received: iasZone. zoneStatusChangeNotification {
+zoneStatus: Bitmap [ alarm1 ],
+extendedStatus: 0,
+zoneId: 0,
+delay: 0
+}
+2025-11-02T10:42:49.924Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:39eda123-864a-
+4dcb-b56e-ef5ac7a57c79] [OK] Alarm: cleared
+2025-11-02T10:43:17.171Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:39eda123-864a-
+4dcb-b56e-ef5ac7a57c79] [MSG] Zone notification  
+received: iasZone. zoneStatusChangeNotification {
+zoneStatus: Bitmap [ ],
+extendedStatus: 0,
+zoneId: 0,
+delay: 0
+}
+2025-11-02T10:43:17.172Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:39eda123-864a-
+4dcb-b56e-ef5ac7a57c79] [OK] Alarm: cleared
+2025-11-02T10:45:11.441Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:39eda123-864a-
+4dcb-b56e-ef5ac7a57c79] [MSG] Zone notification  
+received: iasZone. zoneStatusChangeNotification {
+zoneStatus: Bitmap [ alarm1 ],
+extendedStatus: 0,
+zoneId: 0,
+delay: 0
+}
+2025-11-02T10:45:11.442Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:39eda123-864a-
+4dcb-b56e-ef5ac7a57c79] [OK] Alarm: cleared
+2025-11-02T10:45:47.543Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:39eda123-864a-
+4dcb-b56e-ef5ac7a57c79] [MSG] Zone notification  
+received: iasZone. zoneStatusChangeNotification {
+zoneStatus: Bitmap [ ],
+extendedStatus: 0,
+zoneId: 0,
+delay: 0
+}
+2025-11-02T10:45:47.544Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar] [Device:39eda123-864a-
+4dcb-b56e-ef5ac7a57c79] [OK] Alarm: cleared
+stderr:
+at WallTouch3GangHybridDriver. onInit 
+(/app/drivers/wall_touch_ 1gang/driver.js:15:16)
+at /app/assets/app/node_modules/@ athombv/homey-apps-sdk-
+v3/lib/Driver.js:69:18
+2025-11-02T10:26:26.727Z [err] [ManagerDrivers]  
+[Driver:wall_touch_2gang] Error: Invalid Flow Card ID:  
+wall_touch_2gang_button_ pressed
+at new FlowCard (/app/assets/app/node_modules/
+@athombv/homey-apps-sdk-v3/ lib/FlowCard.js:69:13)
+at new FlowCardTriggerDevice  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/lib/FlowCardTriggerDevice.js: 29:5)
+at ManagerFlow. getDeviceTriggerCard  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/manager/flow.js:102:18)
+at WallTouch3GangHybridDriver. registerFlowCards  
+(/app/drivers/wall_touch_ 2gang/driver.js:27:49)
+at WallTouch3GangHybridDriver. onInit 
+(/app/drivers/wall_touch_ 2gang/driver.js:15:16)
+at /app/assets/app/node_modules/@ athombv/homey-apps-sdk-
+v3/lib/Driver.js:69:18
+2025-11-02T10:26:26.731Z [err] [ManagerDrivers] Error  
+Initializing Driver wall_touch_2gang: Error: Invalid  
+Flow Card ID: wall_touch_2gang_button_ pressed
+at new FlowCard (/app/assets/app/node_modules/
+@athombv/homey-apps-sdk-v3/ lib/FlowCard.js:69:13)
+at new FlowCardTriggerDevice  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/lib/FlowCardTriggerDevice.js: 29:5)
+at ManagerFlow. getDeviceTriggerCard  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/manager/flow.js:102:18)
+at WallTouch3GangHybridDriver. registerFlowCards  
+(/app/drivers/wall_touch_ 2gang/driver.js:27:49)
+at WallTouch3GangHybridDriver. onInit 
+(/app/drivers/wall_touch_ 2gang/driver.js:15:16)
+at /app/assets/app/node_modules/@ athombv/homey-apps-sdk-
+v3/lib/Driver.js:69:18
+2025-11-02T10:26:26.744Z [err] [ManagerDrivers]  
+[Driver:wall_touch_3gang] Error: Invalid Flow Card ID:  
+wall_touch_3gang_button_ pressed
+at new FlowCard (/app/assets/app/node_modules/
+@athombv/homey-apps-sdk-v3/ lib/FlowCard.js:69:13)
+at new FlowCardTriggerDevice  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/lib/FlowCardTriggerDevice.js: 29:5)
+at ManagerFlow. getDeviceTriggerCard  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/manager/flow.js:102:18)
+at WallTouch3GangHybridDriver. registerFlowCards  
+(/app/drivers/wall_touch_ 3gang/driver.js:27:49)
+at WallTouch3GangHybridDriver. onInit 
+(/app/drivers/wall_touch_ 3gang/driver.js:15:16)
+at /app/assets/app/node_modules/@ athombv/homey-apps-sdk-
+v3/lib/Driver.js:69:18
+2025-11-02T10:26:26.750Z [err] [ManagerDrivers] Error  
+Initializing Driver wall_touch_3gang: Error: Invalid  
+Flow Card ID: wall_touch_3gang_button_ pressed
+at new FlowCard (/app/assets/app/node_modules/
+@athombv/homey-apps-sdk-v3/ lib/FlowCard.js:69:13)
+at new FlowCardTriggerDevice  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/lib/FlowCardTriggerDevice.js: 29:5)
+at ManagerFlow. getDeviceTriggerCard  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/manager/flow.js:102:18)
+at WallTouch3GangHybridDriver. registerFlowCards  
+(/app/drivers/wall_touch_ 3gang/driver.js:27:49)
+at WallTouch3GangHybridDriver. onInit 
+(/app/drivers/wall_touch_ 3gang/driver.js:15:16)
+at /app/assets/app/node_modules/@ athombv/homey-apps-sdk-
+v3/lib/Driver.js:69:18
+2025-11-02T10:26:26.758Z [err] [ManagerDrivers]  
+[Driver:wall_touch_4gang] Error: Invalid Flow Card ID:  
+wall_touch_4gang_button_ pressed
+at new FlowCard (/app/assets/app/node_modules/
+@athombv/homey-apps-sdk-v3/ lib/FlowCard.js:69:13)
+at new FlowCardTriggerDevice  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/lib/FlowCardTriggerDevice.js: 29:5)
+at ManagerFlow. getDeviceTriggerCard  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/manager/flow.js:102:18)
+at WallTouch3GangHybridDriver. registerFlowCards  
+(/app/drivers/wall_touch_ 4gang/driver.js:27:49)
+at WallTouch3GangHybridDriver. onInit 
+(/app/drivers/wall_touch_ 4gang/driver.js:15:16)
+at /app/assets/app/node_modules/@ athombv/homey-apps-sdk-
+v3/lib/Driver.js:69:18
+2025-11-02T10:26:26.763Z [err] [ManagerDrivers] Error  
+Initializing Driver wall_touch_4gang: Error: Invalid  
+Flow Card ID: wall_touch_4gang_button_ pressed
+at new FlowCard (/app/assets/app/node_modules/
+@athombv/homey-apps-sdk-v3/ lib/FlowCard.js:69:13)
+at new FlowCardTriggerDevice  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/lib/FlowCardTriggerDevice.js: 29:5)
+at ManagerFlow. getDeviceTriggerCard  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/manager/flow.js:102:18)
+at WallTouch3GangHybridDriver. registerFlowCards  
+(/app/drivers/wall_touch_ 4gang/driver.js:27:49)
+at WallTouch3GangHybridDriver. onInit 
+(/app/drivers/wall_touch_ 4gang/driver.js:15:16)
+at /app/assets/app/node_modules/@ athombv/homey-apps-sdk-
+v3/lib/Driver.js:69:18
+2025-11-02T10:26:26.771Z [err] [ManagerDrivers]  
+[Driver:wall_touch_5gang] Error: Invalid Flow Card ID:  
+wall_touch_5gang_button_ pressed
+at new FlowCard (/app/assets/app/node_modules/
+@athombv/homey-apps-sdk-v3/ lib/FlowCard.js:69:13)
+at new FlowCardTriggerDevice  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/lib/FlowCardTriggerDevice.js: 29:5)
+at ManagerFlow. getDeviceTriggerCard  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/manager/flow.js:102:18)
+at WallTouch3GangHybridDriver. registerFlowCards  
+(/app/drivers/wall_touch_ 5gang/driver.js:27:49)
+at WallTouch3GangHybridDriver. onInit 
+(/app/drivers/wall_touch_ 5gang/driver.js:15:16)
+at /app/assets/app/node_modules/@ athombv/homey-apps-sdk-
+v3/lib/Driver.js:69:18
+2025-11-02T10:26:26.779Z [err] [ManagerDrivers] Error  
+Initializing Driver wall_touch_5gang: Error: Invalid  
+Flow Card ID: wall_touch_5gang_button_ pressed
+at new FlowCard (/app/assets/app/node_modules/
+@athombv/homey-apps-sdk-v3/ lib/FlowCard.js:69:13)
+at new FlowCardTriggerDevice  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/lib/FlowCardTriggerDevice.js: 29:5)
+at ManagerFlow. getDeviceTriggerCard  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/manager/flow.js:102:18)
+at WallTouch3GangHybridDriver. registerFlowCards  
+(/app/drivers/wall_touch_ 5gang/driver.js:27:49)
+at WallTouch3GangHybridDriver. onInit 
+(/app/drivers/wall_touch_ 5gang/driver.js:15:16)
+at /app/assets/app/node_modules/@ athombv/homey-apps-sdk-
+v3/lib/Driver.js:69:18
+2025-11-02T10:26:26.785Z [err] [ManagerDrivers]  
+[Driver:wall_touch_6gang] Error: Invalid Flow Card ID:  
+wall_touch_6gang_button_ pressed
+at new FlowCard (/app/assets/app/node_modules/
+@athombv/homey-apps-sdk-v3/ lib/FlowCard.js:69:13)
+at new FlowCardTriggerDevice  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/lib/FlowCardTriggerDevice.js: 29:5)
+at ManagerFlow. getDeviceTriggerCard  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/manager/flow.js:102:18)
+at WallTouch3GangHybridDriver. registerFlowCards  
+(/app/drivers/wall_touch_ 6gang/driver.js:27:49)
+at WallTouch3GangHybridDriver. onInit 
+(/app/drivers/wall_touch_ 6gang/driver.js:15:16)
+at /app/assets/app/node_modules/@ athombv/homey-apps-sdk-
+v3/lib/Driver.js:69:18
+2025-11-02T10:26:26.786Z [err] [ManagerDrivers] Error  
+Initializing Driver wall_touch_6gang: Error: Invalid  
+Flow Card ID: wall_touch_6gang_button_ pressed
+at new FlowCard (/app/assets/app/node_modules/
+@athombv/homey-apps-sdk-v3/ lib/FlowCard.js:69:13)
+at new FlowCardTriggerDevice  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/lib/FlowCardTriggerDevice.js: 29:5)
+at ManagerFlow. getDeviceTriggerCard  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/manager/flow.js:102:18)
+at WallTouch3GangHybridDriver. registerFlowCards  
+(/app/drivers/wall_touch_ 6gang/driver.js:27:49)
+at WallTouch3GangHybridDriver. onInit 
+(/app/drivers/wall_touch_ 6gang/driver.js:15:16)
+at /app/assets/app/node_modules/@ athombv/homey-apps-sdk-
+v3/lib/Driver.js:69:18
+2025-11-02T10:26:26.792Z [err] [ManagerDrivers]  
+[Driver:wall_touch_7gang] Error: Invalid Flow Card ID:  
+wall_touch_7gang_button_ pressed
+at new FlowCard (/app/assets/app/node_modules/
+@athombv/homey-apps-sdk-v3/ lib/FlowCard.js:69:13)
+at new FlowCardTriggerDevice  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/lib/FlowCardTriggerDevice.js: 29:5)
+at ManagerFlow. getDeviceTriggerCard  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/manager/flow.js:102:18)
+at WallTouch3GangHybridDriver. registerFlowCards  
+(/app/drivers/wall_touch_ 7gang/driver.js:27:49)
+at WallTouch3GangHybridDriver. onInit 
+(/app/drivers/wall_touch_ 7gang/driver.js:15:16)
+at /app/assets/app/node_modules/@ athombv/homey-apps-sdk-
+v3/lib/Driver.js:69:18
+2025-11-02T10:26:26.793Z [err] [ManagerDrivers] Error  
+Initializing Driver wall_touch_7gang: Error: Invalid  
+Flow Card ID: wall_touch_7gang_button_ pressed
+at new FlowCard (/app/assets/app/node_modules/
+@athombv/homey-apps-sdk-v3/ lib/FlowCard.js:69:13)
+at new FlowCardTriggerDevice  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/lib/FlowCardTriggerDevice.js: 29:5)
+at ManagerFlow. getDeviceTriggerCard  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/manager/flow.js:102:18)
+at WallTouch3GangHybridDriver. registerFlowCards  
+(/app/drivers/wall_touch_ 7gang/driver.js:27:49)
+at WallTouch3GangHybridDriver. onInit 
+(/app/drivers/wall_touch_ 7gang/driver.js:15:16)
+at /app/assets/app/node_modules/@ athombv/homey-apps-sdk-
+v3/lib/Driver.js:69:18
+2025-11-02T10:26:26.800Z [err] [ManagerDrivers]  
+[Driver:wall_touch_8gang] Error: Invalid Flow Card ID:  
+wall_touch_8gang_button_ pressed
+at new FlowCard (/app/assets/app/node_modules/
+@athombv/homey-apps-sdk-v3/ lib/FlowCard.js:69:13)
+at new FlowCardTriggerDevice  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/lib/FlowCardTriggerDevice.js: 29:5)
+at ManagerFlow. getDeviceTriggerCard  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/manager/flow.js:102:18)
+at WallTouch3GangHybridDriver. registerFlowCards  
+(/app/drivers/wall_touch_ 8gang/driver.js:27:49)
+at WallTouch3GangHybridDriver. onInit 
+(/app/drivers/wall_touch_ 8gang/driver.js:15:16)
+at /app/assets/app/node_modules/@ athombv/homey-apps-sdk-
+v3/lib/Driver.js:69:18
+2025-11-02T10:26:26.803Z [err] [ManagerDrivers] Error  
+Initializing Driver wall_touch_8gang: Error: Invalid  
+Flow Card ID: wall_touch_8gang_button_ pressed
+at new FlowCard (/app/assets/app/node_modules/
+@athombv/homey-apps-sdk-v3/ lib/FlowCard.js:69:13)
+at new FlowCardTriggerDevice  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/lib/FlowCardTriggerDevice.js: 29:5)
+at ManagerFlow. getDeviceTriggerCard  
+(/app/assets/app/node_modules/ @athombv/homey-apps-sdk-
+v3/manager/flow.js:102:18)
+at WallTouch3GangHybridDriver. registerFlowCards  
+(/app/drivers/wall_touch_ 8gang/driver.js:27:49)
+at WallTouch3GangHybridDriver. onInit 
+(/app/drivers/wall_touch_ 8gang/driver.js:15:16)
+at /app/assets/app/node_modules/@ athombv/homey-apps-sdk-
+v3/lib/Driver.js:69:18
+You can manage your email settings in the Homey Developer Tools.
+[Texte des messages précédents masqué]

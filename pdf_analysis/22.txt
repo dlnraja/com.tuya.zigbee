@@ -1,0 +1,901 @@
+Dylan Rajasekaram <senetmarne@gmail.com>
+[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report
+1 message
+Homey <noreply@homey .app> 14 octobre 2025 à 09:52
+Répondre à : 68ee013329ead7788667246d@apps-api.athom.com
+À : senetmarne@gmail.com
+Hi Dylan Rajasekaram,
+Your app Universal T uya Zigbee  has received a diagnostics report.
+You can reply to this e-mail to get in touch with the user . Note that the
+user will then be able to see your e-mail address.
+App ID
+com.dlnraja.tuya.zigbee
+App V ersion
+v2.15.86
+Homey V ersion
+v12.6.1
+Stack T race
+Note: this log has been manually submitted by a user.
+Log ID: 63d8fadd-7bc1-4c23-ac43- 7b973b89c605
+User Message:
+Temperature sensor identified as smoke detector and soil  
+sensor not identified.
+---- stdout ----
+2025-10-14T05:11:27.189Z [log] [ManagerFlow]  
+[FlowCardCondition][any_ safety_alarm_active] Warning:  
+Run listener was already registered.
+2025-10-14T05:11:27.189Z [log] [ManagerFlow]  
+[FlowCardCondition][is_armed] Warning: Run listener was  
+already registered.
+
+2025-10-14T05:11:27.190Z [log] [ManagerFlow]  
+[FlowCardCondition][anyone_ home] Warning: Run listener  
+was already registered.
+2025-10-14T05:11:27.190Z [log] [ManagerFlow]  
+[FlowCardCondition][room_ occupied] Warning: Run listener  
+was already registered.
+2025-10-14T05:11:27.191Z [log] [ManagerFlow]  
+[FlowCardCondition][air_ quality_good] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:27.191Z [log] [ManagerFlow]  
+[FlowCardCondition][climate_ optimal] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:27.191Z [log] [ManagerFlow]  
+[FlowCardCondition][all_ entries_secured] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:27.192Z [log] [ManagerFlow]  
+[FlowCardCondition][is_ consuming_power] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:27.192Z [log] [ManagerFlow]  
+[FlowCardCondition][natural_ light_sufficient] Warning:  
+Run listener was already registered.
+2025-10-14T05:11:27.193Z [log] [ManagerDrivers]  
+[Driver:led_strip_outdoor_ color_ac] ✅  Flow cards  
+registered
+2025-10-14T05:11:27.193Z [log] [ManagerDrivers]  
+[Driver:led_strip_outdoor_ color_ac]  
+led_strip_outdoor_color_ac driver initialized
+2025-10-14T05:11:27.202Z [log] [ManagerDrivers]  
+[Driver:lux_sensor_battery] Tuya Zigbee Driver has been  
+initialized
+2025-10-14T05:11:27.211Z [log] [ManagerDrivers]  
+[Driver:milight_controller_ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:27.220Z [log] [ManagerDrivers]  
+[Driver:mini_ac] Tuya Zigbee Driver has been initialized
+2025-10-14T05:11:27.229Z [log] [ManagerDrivers]  
+[Driver:mini_switch_cr2032] Tuya Zigbee Driver has been  
+initialized
+2025-10-14T05:11:27.238Z [log] [ManagerDrivers]  
+[Driver:motion_sensor_battery] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:27.246Z [log] [ManagerFlow]  
+[FlowCardCondition][any_ safety_alarm_active] Warning:  
+Run listener was already registered.
+2025-10-14T05:11:27.247Z [log] [ManagerFlow]  
+[FlowCardCondition][is_armed] Warning: Run listener was  
+already registered.
+2025-10-14T05:11:27.247Z [log] [ManagerFlow]  
+[FlowCardCondition][anyone_ home] Warning: Run listener  
+was already registered.
+2025-10-14T05:11:27.248Z [log] [ManagerFlow]  
+[FlowCardCondition][room_ occupied] Warning: Run listener  
+was already registered.
+2025-10-14T05:11:27.248Z [log] [ManagerFlow]  
+[FlowCardCondition][air_ quality_good] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:27.248Z [log] [ManagerFlow]  
+[FlowCardCondition][climate_ optimal] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:27.248Z [log] [ManagerFlow]  
+[FlowCardCondition][all_ entries_secured] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:27.248Z [log] [ManagerFlow]  
+[FlowCardCondition][is_ consuming_power] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:27.249Z [log] [ManagerFlow]  
+[FlowCardCondition][natural_ light_sufficient] Warning:  
+Run listener was already registered.
+2025-10-14T05:11:27.249Z [log] [ManagerDrivers]  
+[Driver:motion_sensor_ illuminance_battery] ✅  Flow cards  
+registered
+2025-10-14T05:11:27.249Z [log] [ManagerDrivers]  
+[Driver:motion_sensor_ illuminance_battery]  
+motion_sensor_illuminance_ battery driver initialized
+2025-10-14T05:11:27.258Z [log] [ManagerDrivers]  
+[Driver:motion_sensor_mmwave_ battery] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:27.267Z [log] [ManagerDrivers]  
+[Driver:motion_sensor_pir_ac_ battery] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:27.276Z [log] [ManagerDrivers]  
+[Driver:motion_sensor_pir_ battery] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:27.285Z [log] [ManagerDrivers]  
+[Driver:motion_sensor_zigbee_ 204z_battery] Tuya Zigbee  
+Driver has been initialized
+2025-10-14T05:11:27.295Z [log] [ManagerFlow]  
+[FlowCardCondition][any_ safety_alarm_active] Warning:  
+Run listener was already registered.
+2025-10-14T05:11:27.296Z [log] [ManagerFlow]  
+[FlowCardCondition][is_armed] Warning: Run listener was  
+already registered.
+2025-10-14T05:11:27.296Z [log] [ManagerFlow]  
+[FlowCardCondition][anyone_ home] Warning: Run listener  
+was already registered.
+2025-10-14T05:11:27.297Z [log] [ManagerFlow]  
+[FlowCardCondition][room_ occupied] Warning: Run listener  
+was already registered.
+2025-10-14T05:11:27.297Z [log] [ManagerFlow]  
+[FlowCardCondition][air_ quality_good] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:27.297Z [log] [ManagerFlow]  
+[FlowCardCondition][climate_ optimal] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:27.298Z [log] [ManagerFlow]  
+[FlowCardCondition][all_ entries_secured] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:27.298Z [log] [ManagerFlow]  
+[FlowCardCondition][is_ consuming_power] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:27.299Z [log] [ManagerFlow]  
+[FlowCardCondition][natural_ light_sufficient] Warning:  
+Run listener was already registered.
+2025-10-14T05:11:27.299Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+✅ Flow cards registered
+2025-10-14T05:11:27.299Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+Tuya Zigbee Driver has been initialized
+2025-10-14T05:11:27.324Z [log] [ManagerDrivers]  
+[Driver:multisensor_battery] Tuya Zigbee Driver has been  
+initialized
+2025-10-14T05:11:27.333Z [log] [ManagerDrivers]  
+[Driver:outdoor_light_ controller_ac] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:27.340Z [log] [ManagerDrivers]  
+[Driver:noise_level_sensor_ battery] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:27.350Z [log] [ManagerDrivers]  
+[Driver:outdoor_siren_cr2032] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:27.357Z [log] [ManagerDrivers]  
+[Driver:pet_feeder_cr2032] Tuya Zigbee Driver has been  
+initialized
+2025-10-14T05:11:27.364Z [log] [ManagerDrivers]  
+[Driver:pir_radar_ illumination_sensor_battery] Tuya  
+Zigbee Driver has been initialized
+2025-10-14T05:11:27.379Z [log] [ManagerDrivers]  
+[Driver:pir_sensor_advanced_ battery] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:27.386Z [log] [ManagerDrivers]  
+[Driver:pm25_detector_battery] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:27.401Z [log] [ManagerDrivers]  
+[Driver:pm25_sensor_battery] Tuya Zigbee Driver has been  
+initialized
+2025-10-14T05:11:27.408Z [log] [ManagerDrivers]  
+[Driver:pool_pump_controller_ ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:27.419Z [log] [ManagerDrivers]  
+[Driver:power_meter_socket_ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:27.429Z [log] [ManagerFlow]  
+[FlowCardCondition][any_ safety_alarm_active] Warning:  
+Run listener was already registered.
+2025-10-14T05:11:27.432Z [log] [ManagerFlow]  
+[FlowCardCondition][is_armed] Warning: Run listener was  
+already registered.
+2025-10-14T05:11:27.433Z [log] [ManagerFlow]  
+[FlowCardCondition][anyone_ home] Warning: Run listener  
+was already registered.
+2025-10-14T05:11:27.433Z [log] [ManagerFlow]  
+[FlowCardCondition][room_ occupied] Warning: Run listener  
+was already registered.
+2025-10-14T05:11:27.433Z [log] [ManagerFlow]  
+[FlowCardCondition][air_ quality_good] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:27.434Z [log] [ManagerFlow]  
+[FlowCardCondition][climate_ optimal] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:27.434Z [log] [ManagerFlow]  
+[FlowCardCondition][all_ entries_secured] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:27.435Z [log] [ManagerFlow]  
+[FlowCardCondition][is_ consuming_power] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:27.435Z [log] [ManagerFlow]  
+[FlowCardCondition][natural_ light_sufficient] Warning:  
+Run listener was already registered.
+2025-10-14T05:11:27.435Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_ mmwave_battery] ✅  Flow cards  
+registered
+2025-10-14T05:11:27.435Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_ mmwave_battery]  
+presence_sensor_mmwave_battery driver initialized
+2025-10-14T05:11:27.445Z [log] [ManagerDrivers]  
+[Driver:presence_sensor_radar_ battery] Tuya Zigbee  
+Driver has been initialized
+2025-10-14T05:11:27.454Z [log] [ManagerDrivers]  
+[Driver:pressure_sensor_ battery] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:27.461Z [log] [ManagerDrivers]  
+[Driver:projector_screen_ controller_ac] Tuya Zigbee  
+Driver has been initialized
+2025-10-14T05:11:27.473Z [log] [ManagerDrivers]  
+[Driver:radar_motion_sensor_ advanced_battery] Tuya  
+Zigbee Driver has been initialized
+2025-10-14T05:11:27.482Z [log] [ManagerDrivers]  
+[Driver:radar_motion_sensor_ mmwave_battery] Tuya Zigbee  
+Driver has been initialized
+2025-10-14T05:11:27.491Z [log] [ManagerDrivers]  
+[Driver:radar_motion_sensor_ tank_level_battery] Tuya  
+Zigbee Driver has been initialized
+2025-10-14T05:11:27.501Z [log] [ManagerDrivers]  
+[Driver:radiator_valve_hybrid] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:27.508Z [log] [ManagerDrivers]  
+[Driver:relay_switch_1gang_ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:27.516Z [log] [ManagerDrivers]  
+[Driver:remote_switch_cr2032] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:27.528Z [log] [ManagerDrivers]  
+[Driver:rgb_led_controller_ac] RGB LED Controller Driver  
+has been initialized
+2025-10-14T05:11:27.537Z [log] [ManagerDrivers]  
+[Driver:roller_blind_ controller_ac] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:27.549Z [log] [ManagerDrivers]  
+[Driver:roller_shutter_ controller_ac] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:27.558Z [log] [ManagerDrivers]  
+[Driver:roller_shutter_switch_ advanced_battery] Tuya  
+Zigbee Driver has been initialized
+2025-10-14T05:11:27.567Z [log] [ManagerDrivers]  
+[Driver:roller_shutter_switch_ cr2032] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:27.575Z [log] [ManagerDrivers]  
+[Driver:scene_controller] Scene Controller Driver has  
+been initialized
+2025-10-14T05:11:27.584Z [log] [ManagerDrivers]  
+[Driver:scene_controller_ 2button_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-14T05:11:27.593Z [log] [ManagerDrivers]  
+[Driver:scene_controller_ 4button_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-14T05:11:27.605Z [log] [ManagerDrivers]  
+[Driver:scene_controller_ 6button_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-14T05:11:27.615Z [log] [ManagerDrivers]  
+[Driver:scene_controller_ 8button_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-14T05:11:27.627Z [log] [ManagerDrivers]  
+[Driver:scene_controller_ battery] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:27.636Z [log] [ManagerDrivers]  
+[Driver:shade_controller_ac] Tuya Zigbee Driver has been  
+initialized
+2025-10-14T05:11:27.645Z [log] [ManagerDrivers]  
+[Driver:smart_bulb_dimmer_ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:27.654Z [log] [ManagerDrivers]  
+[Driver:smart_bulb_rgb_ac] Tuya Zigbee Driver has been  
+initialized
+2025-10-14T05:11:27.663Z [log] [ManagerDrivers]  
+[Driver:smart_bulb_tunable_ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:27.672Z [log] [ManagerDrivers]  
+[Driver:smart_bulb_white_ac] Tuya Zigbee Driver has been  
+initialized
+2025-10-14T05:11:27.681Z [log] [ManagerDrivers]  
+[Driver:smart_curtain_motor_ hybrid] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:27.690Z [log] [ManagerDrivers]  
+[Driver:smart_dimmer_module_ 1gang_ac] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:27.699Z [log] [ManagerDrivers]  
+[Driver:smart_doorbell_ battery] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:27.707Z [log] [ManagerDrivers]  
+[Driver:smart_garden_ sprinkler_battery] Tuya Zigbee  
+Driver has been initialized
+2025-10-14T05:11:27.716Z [log] [ManagerDrivers]  
+[Driver:smart_irrigation_ controller_hybrid] Tuya Zigbee  
+Driver has been initialized
+2025-10-14T05:11:27.725Z [log] [ManagerDrivers]  
+[Driver:smart_lock_battery] Tuya Zigbee Driver has been  
+initialized
+2025-10-14T05:11:27.734Z [log] [ManagerDrivers]  
+[Driver:smart_outlet_monitor_ ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:27.752Z [log] [ManagerDrivers]  
+[Driver:smart_plug_ac] Tuya Zigbee Driver has been  
+initialized
+2025-10-14T05:11:27.761Z [log] [ManagerFlow]  
+[FlowCardCondition][any_ safety_alarm_active] Warning:  
+Run listener was already registered.
+2025-10-14T05:11:27.762Z [log] [ManagerFlow]  
+[FlowCardCondition][is_armed] Warning: Run listener was  
+already registered.
+2025-10-14T05:11:27.762Z [log] [ManagerFlow]  
+[FlowCardCondition][anyone_ home] Warning: Run listener  
+was already registered.
+2025-10-14T05:11:27.762Z [log] [ManagerFlow]  
+[FlowCardCondition][room_ occupied] Warning: Run listener  
+was already registered.
+2025-10-14T05:11:27.763Z [log] [ManagerFlow]  
+[FlowCardCondition][air_ quality_good] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:27.763Z [log] [ManagerFlow]  
+[FlowCardCondition][climate_ optimal] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:27.764Z [log] [ManagerFlow]  
+[FlowCardCondition][all_ entries_secured] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:27.764Z [log] [ManagerFlow]  
+[FlowCardCondition][is_ consuming_power] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:27.764Z [log] [ManagerFlow]  
+[FlowCardCondition][natural_ light_sufficient] Warning:  
+Run listener was already registered.
+2025-10-14T05:11:27.765Z [log] [ManagerDrivers]  
+[Driver:smart_plug_dimmer_ac] ✅  Flow cards registered
+2025-10-14T05:11:27.765Z [log] [ManagerDrivers]  
+[Driver:smart_plug_dimmer_ac] SmartPlugDimmerAcDriver  
+has been initialized
+2025-10-14T05:11:27.774Z [log] [ManagerDrivers]  
+[Driver:smart_plug_energy_ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:27.783Z [log] [ManagerFlow]  
+[FlowCardCondition][any_ safety_alarm_active] Warning:  
+Run listener was already registered.
+2025-10-14T05:11:27.783Z [log] [ManagerFlow]  
+[FlowCardCondition][is_armed] Warning: Run listener was  
+already registered.
+2025-10-14T05:11:27.784Z [log] [ManagerFlow]  
+[FlowCardCondition][anyone_ home] Warning: Run listener  
+was already registered.
+2025-10-14T05:11:27.784Z [log] [ManagerFlow]  
+[FlowCardCondition][room_ occupied] Warning: Run listener  
+was already registered.
+2025-10-14T05:11:27.785Z [log] [ManagerFlow]  
+[FlowCardCondition][air_ quality_good] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:27.785Z [log] [ManagerFlow]  
+[FlowCardCondition][climate_ optimal] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:27.785Z [log] [ManagerFlow]  
+[FlowCardCondition][all_ entries_secured] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:27.786Z [log] [ManagerFlow]  
+[FlowCardCondition][is_ consuming_power] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:27.786Z [log] [ManagerFlow]  
+[FlowCardCondition][natural_ light_sufficient] Warning:  
+Run listener was already registered.
+2025-10-14T05:11:27.787Z [log] [ManagerDrivers]  
+[Driver:smart_plug_power_ meter_16a_ac] ✅  Flow cards  
+registered
+2025-10-14T05:11:27.787Z [log] [ManagerDrivers]  
+[Driver:smart_plug_power_ meter_16a_ac]  
+smart_plug_power_meter_16a_ac driver initialized
+2025-10-14T05:11:27.796Z [log] [ManagerDrivers]  
+[Driver:smart_radiator_valve_ hybrid] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:27.805Z [log] [ManagerDrivers]  
+[Driver:smart_smoke_detector_ advanced_battery] Tuya  
+Zigbee Driver has been initialized
+2025-10-14T05:11:27.814Z [log] [ManagerDrivers]  
+[Driver:smart_spot_ac] Tuya Zigbee Driver has been  
+initialized
+2025-10-14T05:11:27.823Z [log] [ManagerDrivers]  
+[Driver:smart_switch_1gang_ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:27.832Z [log] [ManagerDrivers]  
+[Driver:smart_switch_1gang_ hybrid] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:27.841Z [log] [ManagerDrivers]  
+[Driver:smart_switch_2gang_ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:27.850Z [log] [ManagerDrivers]  
+[Driver:smart_switch_2gang_ hybrid] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:27.876Z [log] [ManagerDrivers]  
+[Driver:smart_switch_3gang_ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:27.889Z [log] [ManagerDrivers]  
+[Driver:smart_switch_3gang_ hybrid] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:27.898Z [log] [ManagerDrivers]  
+[Driver:smart_switch_4gang_ hybrid] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:27.919Z [log] [ManagerDrivers]  
+[Driver:smart_thermostat_ hybrid] Smart Thermostat Driver  
+has been initialized
+2025-10-14T05:11:27.946Z [log] [ManagerDrivers]  
+[Driver:smart_valve_ controller_hybrid] Smart Valve  
+Controller Driver has been initialized
+2025-10-14T05:11:27.979Z [log] [ManagerDrivers]  
+[Driver:smart_water_valve_ hybrid] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:28.057Z [log] [ManagerDrivers]  
+[Driver:smoke_detector_temp_ humidity_advanced_battery]  
+Tuya Zigbee Driver has been initialized
+2025-10-14T05:11:28.064Z [log] [ManagerFlow]  
+[FlowCardCondition][any_ safety_alarm_active] Warning:  
+Run listener was already registered.
+2025-10-14T05:11:28.065Z [log] [ManagerFlow]  
+[FlowCardCondition][is_armed] Warning: Run listener was  
+already registered.
+2025-10-14T05:11:28.065Z [log] [ManagerFlow]  
+[FlowCardCondition][anyone_ home] Warning: Run listener  
+was already registered.
+2025-10-14T05:11:28.068Z [log] [ManagerFlow]  
+[FlowCardCondition][room_ occupied] Warning: Run listener  
+was already registered.
+2025-10-14T05:11:28.069Z [log] [ManagerFlow]  
+[FlowCardCondition][air_ quality_good] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:28.069Z [log] [ManagerFlow]  
+[FlowCardCondition][climate_ optimal] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:28.069Z [log] [ManagerFlow]  
+[FlowCardCondition][all_ entries_secured] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:28.069Z [log] [ManagerFlow]  
+[FlowCardCondition][is_ consuming_power] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:28.070Z [log] [ManagerFlow]  
+[FlowCardCondition][natural_ light_sufficient] Warning:  
+Run listener was already registered.
+2025-10-14T05:11:28.070Z [log] [ManagerDrivers]  
+[Driver:smoke_detector_ temperature_battery] ✅  Flow 
+cards registered
+2025-10-14T05:11:28.070Z [log] [ManagerDrivers]  
+[Driver:smoke_detector_ temperature_battery]  
+smoke_detector_temperature_ battery driver initialized
+2025-10-14T05:11:28.076Z [log] [ManagerDrivers]  
+[Driver:smoke_temp_humid_ sensor_battery] Tuya Zigbee  
+Driver has been initialized
+2025-10-14T05:11:28.083Z [log] [ManagerDrivers]  
+[Driver:soil_moisture_sensor_ battery] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:28.090Z [log] [ManagerDrivers]  
+[Driver:soil_moisture_ temperature_sensor_battery] Tuya  
+Zigbee Driver has been initialized
+2025-10-14T05:11:28.097Z [log] [ManagerDrivers]  
+[Driver:soil_tester_temp_ humid_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-14T05:11:28.104Z [log] [ManagerDrivers]  
+[Driver:solar_panel_ controller_hybrid] Tuya Zigbee  
+Driver has been initialized
+2025-10-14T05:11:28.121Z [log] [ManagerFlow]  
+[FlowCardCondition][any_ safety_alarm_active] Warning:  
+Run listener was already registered.
+2025-10-14T05:11:28.122Z [log] [ManagerFlow]  
+[FlowCardCondition][is_armed] Warning: Run listener was  
+already registered.
+2025-10-14T05:11:28.122Z [log] [ManagerFlow]  
+[FlowCardCondition][anyone_ home] Warning: Run listener  
+was already registered.
+2025-10-14T05:11:28.123Z [log] [ManagerFlow]  
+[FlowCardCondition][room_ occupied] Warning: Run listener  
+was already registered.
+2025-10-14T05:11:28.123Z [log] [ManagerFlow]  
+[FlowCardCondition][air_ quality_good] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:28.123Z [log] [ManagerFlow]  
+[FlowCardCondition][climate_ optimal] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:28.124Z [log] [ManagerFlow]  
+[FlowCardCondition][all_ entries_secured] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:28.124Z [log] [ManagerFlow]  
+[FlowCardCondition][is_ consuming_power] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:28.125Z [log] [ManagerFlow]  
+[FlowCardCondition][natural_ light_sufficient] Warning:  
+Run listener was already registered.
+2025-10-14T05:11:28.125Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button_ cr2032] ✅  Flow cards  
+registered
+2025-10-14T05:11:28.125Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button_ cr2032] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:28.136Z [log] [ManagerDrivers]  
+[Driver:switch_1gang_battery] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:28.172Z [log] [ManagerDrivers]  
+[Driver:switch_2gang_ac] Tuya Zigbee Driver has been  
+initialized
+2025-10-14T05:11:28.186Z [log] [ManagerDrivers]  
+[Driver:switch_2gang_hybrid] Tuya Zigbee Driver has been  
+initialized
+2025-10-14T05:11:28.196Z [log] [ManagerDrivers]  
+[Driver:switch_3gang_battery] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:28.202Z [log] [ManagerDrivers]  
+[Driver:switch_4gang_ac] Tuya Zigbee Driver has been  
+initialized
+2025-10-14T05:11:28.211Z [log] [ManagerDrivers]  
+[Driver:switch_4gang_battery_ cr2032] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:28.223Z [log] [ManagerDrivers]  
+[Driver:switch_5gang_battery] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:28.232Z [log] [ManagerDrivers]  
+[Driver:switch_6gang_ac] Tuya Zigbee Driver has been  
+initialized
+2025-10-14T05:11:28.241Z [log] [ManagerDrivers]  
+[Driver:switch_8gang_ac] Tuya Zigbee Driver has been  
+initialized
+2025-10-14T05:11:28.251Z [log] [ManagerDrivers]  
+[Driver:tank_level_monitor_ cr2032] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:28.261Z [log] [ManagerDrivers]  
+[Driver:temp_humid_sensor_ advanced_battery] Tuya Zigbee  
+Driver has been initialized
+2025-10-14T05:11:28.271Z [log] [ManagerDrivers]  
+[Driver:temp_humid_sensor_dd_ battery] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:28.280Z [log] [ManagerDrivers]  
+[Driver:temp_humid_sensor_ leak_detector_battery] Tuya  
+Zigbee Driver has been initialized
+2025-10-14T05:11:28.291Z [log] [ManagerDrivers]  
+[Driver:temp_sensor_pro_ battery] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:28.300Z [log] [ManagerDrivers]  
+[Driver:temperature_ controller_hybrid] Tuya Zigbee  
+Driver has been initialized
+2025-10-14T05:11:28.309Z [log] [ManagerFlow]  
+[FlowCardCondition][any_ safety_alarm_active] Warning:  
+Run listener was already registered.
+2025-10-14T05:11:28.310Z [log] [ManagerFlow]  
+[FlowCardCondition][is_armed] Warning: Run listener was  
+already registered.
+2025-10-14T05:11:28.310Z [log] [ManagerFlow]  
+[FlowCardCondition][anyone_ home] Warning: Run listener  
+was already registered.
+2025-10-14T05:11:28.311Z [log] [ManagerFlow]  
+[FlowCardCondition][room_ occupied] Warning: Run listener  
+was already registered.
+2025-10-14T05:11:28.311Z [log] [ManagerFlow]  
+[FlowCardCondition][air_ quality_good] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:28.312Z [log] [ManagerFlow]  
+[FlowCardCondition][climate_ optimal] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:28.312Z [log] [ManagerFlow]  
+[FlowCardCondition][all_ entries_secured] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:28.312Z [log] [ManagerFlow]  
+[FlowCardCondition][is_ consuming_power] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:28.313Z [log] [ManagerFlow]  
+[FlowCardCondition][natural_ light_sufficient] Warning:  
+Run listener was already registered.
+2025-10-14T05:11:28.313Z [log] [ManagerDrivers]  
+[Driver:temperature_humidity_ display_battery] ✅  Flow 
+cards registered
+2025-10-14T05:11:28.313Z [log] [ManagerDrivers]  
+[Driver:temperature_humidity_ display_battery]  
+temperature_humidity_display_ battery driver initialized
+2025-10-14T05:11:28.320Z [log] [ManagerDrivers]  
+[Driver:temperature_humidity_ sensor_battery] Tuya Zigbee  
+Driver has been initialized
+2025-10-14T05:11:28.327Z [log] [ManagerDrivers]  
+[Driver:temperature_sensor_ advanced_battery] Tuya Zigbee  
+Driver has been initialized
+2025-10-14T05:11:28.335Z [log] [ManagerDrivers]  
+[Driver:temperature_sensor_ battery] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:28.346Z [log] [ManagerDrivers]  
+[Driver:thermostat_hybrid] Tuya Zigbee Driver has been  
+initialized
+2025-10-14T05:11:28.358Z [log] [ManagerDrivers]  
+[Driver:touch_dimmer_1gang_ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:28.367Z [log] [ManagerDrivers]  
+[Driver:touch_dimmer_ac] Tuya Zigbee Driver has been  
+initialized
+2025-10-14T05:11:28.374Z [log] [ManagerDrivers]  
+[Driver:touch_switch_1gang_ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:28.384Z [log] [ManagerDrivers]  
+[Driver:touch_switch_2gang_ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:28.393Z [log] [ManagerDrivers]  
+[Driver:touch_switch_3gang_ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:28.402Z [log] [ManagerDrivers]  
+[Driver:touch_switch_4gang_ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:28.411Z [log] [ManagerDrivers]  
+[Driver:tvoc_sensor_advanced_ battery] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:28.420Z [log] [ManagerDrivers]  
+[Driver:tvoc_sensor_battery] Tuya Zigbee Driver has been  
+initialized
+2025-10-14T05:11:28.429Z [log] [ManagerDrivers]  
+[Driver:usb_outlet_ac] Tuya Zigbee Driver has been  
+initialized
+2025-10-14T05:11:28.437Z [log] [ManagerDrivers]  
+[Driver:usb_outlet_advanced_ ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:28.446Z [log] [ManagerDrivers]  
+[Driver:vibration_sensor_ battery] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:28.455Z [log] [ManagerDrivers]  
+[Driver:wall_switch_1gang_ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:28.464Z [log] [ManagerDrivers]  
+[Driver:wall_switch_1gang_dc] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:28.473Z [log] [ManagerDrivers]  
+[Driver:wall_switch_2gang_ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:28.479Z [log] [ManagerDrivers]  
+[Driver:wall_switch_2gang_dc] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:28.490Z [log] [ManagerDrivers]  
+[Driver:wall_switch_3gang_ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:28.499Z [log] [ManagerDrivers]  
+[Driver:wall_switch_3gang_dc] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:28.506Z [log] [ManagerDrivers]  
+[Driver:wall_switch_4gang_ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:28.518Z [log] [ManagerDrivers]  
+[Driver:wall_switch_4gang_dc] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:28.527Z [log] [ManagerDrivers]  
+[Driver:wall_switch_5gang_ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:28.536Z [log] [ManagerDrivers]  
+[Driver:wall_switch_6gang_ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:28.557Z [log] [ManagerDrivers]  
+[Driver:water_leak_detector_ advanced_battery] Tuya  
+Zigbee Driver has been initialized
+2025-10-14T05:11:28.566Z [log] [ManagerDrivers]  
+[Driver:water_leak_detector_ battery] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:28.578Z [log] [ManagerDrivers]  
+[Driver:water_leak_sensor_ battery] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:28.587Z [log] [ManagerDrivers]  
+[Driver:water_valve_hybrid] Tuya Zigbee Driver has been  
+initialized
+2025-10-14T05:11:28.596Z [log] [ManagerDrivers]  
+[Driver:water_valve_smart_ hybrid] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:28.605Z [log] [ManagerFlow]  
+[FlowCardCondition][any_ safety_alarm_active] Warning:  
+Run listener was already registered.
+2025-10-14T05:11:28.606Z [log] [ManagerFlow]  
+[FlowCardCondition][is_armed] Warning: Run listener was  
+already registered.
+2025-10-14T05:11:28.606Z [log] [ManagerFlow]  
+[FlowCardCondition][anyone_ home] Warning: Run listener  
+was already registered.
+2025-10-14T05:11:28.607Z [log] [ManagerFlow]  
+[FlowCardCondition][room_ occupied] Warning: Run listener  
+was already registered.
+2025-10-14T05:11:28.609Z [log] [ManagerFlow]  
+[FlowCardCondition][air_ quality_good] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:28.610Z [log] [ManagerFlow]  
+[FlowCardCondition][climate_ optimal] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:28.610Z [log] [ManagerFlow]  
+[FlowCardCondition][all_ entries_secured] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:28.611Z [log] [ManagerFlow]  
+[FlowCardCondition][is_ consuming_power] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:28.611Z [log] [ManagerFlow]  
+[FlowCardCondition][natural_ light_sufficient] Warning:  
+Run listener was already registered.
+2025-10-14T05:11:28.612Z [log] [ManagerDrivers]  
+[Driver:wireless_button_2gang_ battery] ✅  Flow cards  
+registered
+2025-10-14T05:11:28.612Z [log] [ManagerDrivers]  
+[Driver:wireless_button_2gang_ battery]  
+wireless_button_2gang_battery driver initialized
+2025-10-14T05:11:28.651Z [log] [ManagerFlow]  
+[FlowCardCondition][any_ safety_alarm_active] Warning:  
+Run listener was already registered.
+2025-10-14T05:11:28.652Z [log] [ManagerFlow]  
+[FlowCardCondition][is_armed] Warning: Run listener was  
+already registered.
+2025-10-14T05:11:28.653Z [log] [ManagerFlow]  
+[FlowCardCondition][anyone_ home] Warning: Run listener  
+was already registered.
+2025-10-14T05:11:28.654Z [log] [ManagerFlow]  
+[FlowCardCondition][room_ occupied] Warning: Run listener  
+was already registered.
+2025-10-14T05:11:28.655Z [log] [ManagerFlow]  
+[FlowCardCondition][air_ quality_good] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:28.656Z [log] [ManagerFlow]  
+[FlowCardCondition][climate_ optimal] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:28.657Z [log] [ManagerFlow]  
+[FlowCardCondition][all_ entries_secured] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:28.657Z [log] [ManagerFlow]  
+[FlowCardCondition][is_ consuming_power] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:28.658Z [log] [ManagerFlow]  
+[FlowCardCondition][natural_ light_sufficient] Warning:  
+Run listener was already registered.
+2025-10-14T05:11:28.659Z [log] [ManagerDrivers]  
+[Driver:wireless_dimmer_ scroll_battery] ✅  Flow cards  
+registered
+2025-10-14T05:11:28.673Z [log] [ManagerDrivers]  
+[Driver:wireless_dimmer_ scroll_battery]  
+wireless_dimmer_scroll_battery driver initialized
+2025-10-14T05:11:28.686Z [log] [ManagerFlow]  
+[FlowCardCondition][any_ safety_alarm_active] Warning:  
+Run listener was already registered.
+2025-10-14T05:11:28.697Z [log] [ManagerFlow]  
+[FlowCardCondition][is_armed] Warning: Run listener was  
+already registered.
+2025-10-14T05:11:28.707Z [log] [ManagerFlow]  
+[FlowCardCondition][anyone_ home] Warning: Run listener  
+was already registered.
+2025-10-14T05:11:28.708Z [log] [ManagerFlow]  
+[FlowCardCondition][room_ occupied] Warning: Run listener  
+was already registered.
+2025-10-14T05:11:28.708Z [log] [ManagerFlow]  
+[FlowCardCondition][air_ quality_good] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:28.709Z [log] [ManagerFlow]  
+[FlowCardCondition][climate_ optimal] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:28.710Z [log] [ManagerFlow]  
+[FlowCardCondition][all_ entries_secured] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:28.712Z [log] [ManagerFlow]  
+[FlowCardCondition][is_ consuming_power] Warning: Run  
+listener was already registered.
+2025-10-14T05:11:28.713Z [log] [ManagerFlow]  
+[FlowCardCondition][natural_ light_sufficient] Warning:  
+Run listener was already registered.
+2025-10-14T05:11:28.714Z [log] [ManagerDrivers]  
+[Driver:wireless_scene_ controller_4button_battery] ✅ 
+Flow cards registered
+2025-10-14T05:11:28.715Z [log] [ManagerDrivers]  
+[Driver:wireless_scene_ controller_4button_battery]  
+wireless_scene_controller_ 4button_battery driver  
+initialized
+2025-10-14T05:11:28.727Z [log] [ManagerDrivers]  
+[Driver:wireless_switch_1gang_ cr2032] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:28.737Z [log] [ManagerDrivers]  
+[Driver:wireless_switch_2gang_ cr2032] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:28.747Z [log] [ManagerDrivers]  
+[Driver:wireless_switch_3gang_ cr2032] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:28.756Z [log] [ManagerDrivers]  
+[Driver:wireless_switch_4gang_ cr2032] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:28.766Z [log] [ManagerDrivers]  
+[Driver:wireless_switch_4gang_ cr2450] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:28.792Z [log] [ManagerDrivers]  
+[Driver:wireless_switch_5gang_ cr2032] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:28.812Z [log] [ManagerDrivers]  
+[Driver:wireless_switch_6gang_ cr2032] Tuya Zigbee Driver  
+has been initialized
+2025-10-14T05:11:28.821Z [log] [ManagerDrivers]  
+[Driver:wireless_switch_ cr2032] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:28.830Z [log] [ManagerDrivers]  
+[Driver:zbbridge_ac] Tuya Zigbee Driver has been  
+initialized
+2025-10-14T05:11:28.839Z [log] [ManagerDrivers]  
+[Driver:zigbee_gateway_hub_ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:28.879Z [log] [ManagerDrivers]  
+[Driver:smoke_detector_ battery] Tuya Zigbee Driver has  
+been initialized
+2025-10-14T05:11:29.110Z [log] [ManagerDrivers]  
+[Driver:smoke_detector_ battery] [Device:a3a95257-7dd9-
+4065-a90f-1cdddb6790d0] ZigBeeDevice has been  
+initialized { firstInit: false, isSubDevice: false }
+2025-10-14T05:11:29.126Z [log] [ManagerDrivers]  
+[Driver:smoke_detector_ battery] [Device:a3a95257-7dd9-
+4065-a90f-1cdddb6790d0] smoke_detector device  
+initialized
+2025-10-14T07:01:43.790Z [log] [ManagerDrivers]  
+[Driver:smoke_detector_ battery] [Device:a3a95257-7dd9-
+4065-a90f-1cdddb6790d0] smoke_detector device deleted
+2025-10-14T07:02:18.600Z [log] [ManagerDrivers]  
+[Driver:smoke_detector_ battery] [Device:74366d55-987a-
+406b-858a-641ec57be403] ZigBeeDevice has been  
+initialized { firstInit: true, isSubDevice: false }
+2025-10-14T07:02:18.601Z [log] [ManagerDrivers]  
+[Driver:smoke_detector_ battery] [Device:74366d55-987a-
+406b-858a-641ec57be403] smoke_detector device  
+initialized
+---- stderr ----
+2025-10-14T05:11:27.301Z [err] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+Error: Invalid Flow Card ID: is_motion_detected
+at new FlowCard (/opt/homey-client/system/
+manager/ManagerApps/ AppProcess/node_modules/@
+athombv/homey-apps-sdk-v3/lib/ FlowCard.js:1:701)
+at new FlowCardCondition (/opt/homey-client/system/
+manager/ManagerApps/ AppProcess/node_modules/@
+athombv/homey-apps-sdk-v3/lib/
+FlowCardCondition.js:1:112)
+at ManagerFlow.getConditionCard (/opt/homey-
+client/system/ manager/ManagerApps/
+AppProcess/node_modules/@ athombv/homey-apps-sdk-v3/
+manager/flow.js:66:18)
+at TuyaZigbeeDriver.onInit (/drivers/motion_temp_
+humidity_illumination_multi_ battery/driver.js:49:25)
+at async /opt/homey-client/system/ manager/ManagerApps/
+AppProcess/node_modules/@ athombv/homey-apps-sdk-v3/lib/
+Driver.js:1:600
+2025-10-14T05:11:27.314Z [err] [ManagerDrivers] Error  
+Initializing Driver motion_temp_humidity_
+illumination_multi_battery: Error: Invalid Flow Card ID:  
+is_motion_detected
+at new FlowCard (/opt/homey-client/system/
+manager/ManagerApps/ AppProcess/node_modules/@
+athombv/homey-apps-sdk-v3/lib/ FlowCard.js:1:701)
+at new FlowCardCondition (/opt/homey-client/system/
+manager/ManagerApps/ AppProcess/node_modules/@
+athombv/homey-apps-sdk-v3/lib/
+FlowCardCondition.js:1:112)
+at ManagerFlow.getConditionCard (/opt/homey-
+client/system/ manager/ManagerApps/
+AppProcess/node_modules/@ athombv/homey-apps-sdk-v3/
+manager/flow.js:66:18)
+at TuyaZigbeeDriver.onInit (/drivers/motion_temp_
+humidity_illumination_multi_ battery/driver.js:49:25)
+at async /opt/homey-client/system/ manager/ManagerApps/
+AppProcess/node_modules/@ athombv/homey-apps-sdk-v3/lib/
+Driver.js:1:600
+2025-10-14T05:11:28.127Z [err] [ManagerDrivers]  
+[Driver:sos_emergency_button_ cr2032] Error: Invalid Flow  
+Card ID: test_sos_button
+at new FlowCard (/opt/homey-client/system/
+manager/ManagerApps/ AppProcess/node_modules/@
+athombv/homey-apps-sdk-v3/lib/ FlowCard.js:1:701)
+at new FlowCardAction (/opt/homey-client/system/
+manager/ManagerApps/ AppProcess/node_modules/@
+athombv/homey-apps-sdk-v3/lib/ FlowCardAction.js:1:109)
+at ManagerFlow.getActionCard (/opt/homey-client/system/
+manager/ManagerApps/ AppProcess/node_modules/@
+athombv/homey-apps-sdk-v3/ manager/flow.js:48:18)
+at TuyaZigbeeDriver.onInit (/drivers/sos_emergency_
+button_cr2032/driver.js:49:25)
+at async /opt/homey-client/system/ manager/ManagerApps/
+AppProcess/node_modules/@ athombv/homey-apps-sdk-v3/lib/
+Driver.js:1:600
+2025-10-14T05:11:28.130Z [err] [ManagerDrivers] Error  
+Initializing Driver sos_emergency_button_cr2032: Error:  
+Invalid Flow Card ID: test_sos_button
+at new FlowCard (/opt/homey-client/system/
+manager/ManagerApps/ AppProcess/node_modules/@
+athombv/homey-apps-sdk-v3/lib/ FlowCard.js:1:701)
+at new FlowCardAction (/opt/homey-client/system/
+manager/ManagerApps/ AppProcess/node_modules/@
+athombv/homey-apps-sdk-v3/lib/ FlowCardAction.js:1:109)
+at ManagerFlow.getActionCard (/opt/homey-client/system/
+manager/ManagerApps/ AppProcess/node_modules/@
+athombv/homey-apps-sdk-v3/ manager/flow.js:48:18)
+at TuyaZigbeeDriver.onInit (/drivers/sos_emergency_
+button_cr2032/driver.js:49:25)
+at async /opt/homey-client/system/ manager/ManagerApps/
+AppProcess/node_modules/@ athombv/homey-apps-sdk-v3/lib/
+Driver.js:1:600
+You can manage your email settings in the Homey Developer Tools.
+

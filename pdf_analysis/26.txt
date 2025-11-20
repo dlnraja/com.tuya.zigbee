@@ -1,0 +1,457 @@
+Dylan Rajasekaram <senetmarne@gmail.com>
+[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report
+1 message
+Homey <noreply@homey .app> 8 octobre 2025 à 13:32
+Répondre à : 68e64bcc0bfac070f1c7d1e5@apps-api.athom.com
+À : senetmarne@gmail.com
+Hi Dylan Rajasekaram,
+Your app Universal T uya Zigbee  has received a diagnostics report.
+You can reply to this e-mail to get in touch with the user . Note that the
+user will then be able to see your e-mail address.
+App ID
+com.dlnraja.tuya.zigbee
+App V ersion
+v2.0.0
+Homey V ersion
+v12.7.0
+Stack T race
+Note: this log has been manually submitted by a user.
+Log ID: b3103648-8f88-4086-9939- 105bdcadb2c9
+User Message:
+SOS button not working.
+stdout:
+2025-10-08T11:14:43.712Z [log] [ManagerDrivers]  
+[Driver:smoke_temp_humid_ sensor] Tuya Zigbee Driver has  
+been initialized
+2025-10-08T11:14:43.716Z [log] [ManagerDrivers]  
+[Driver:soil_moisture_sensor] Tuya Zigbee Driver has  
+been initialized
+2025-10-08T11:14:43.719Z [log] [ManagerDrivers]  
+
+[Driver:soil_moisture_ temperature_sensor] Tuya Zigbee  
+Driver has been initialized
+2025-10-08T11:14:43.722Z [log] [ManagerDrivers]  
+[Driver:soil_tester_temp_ humid] Tuya Zigbee Driver has  
+been initialized
+2025-10-08T11:14:43.725Z [log] [ManagerDrivers]  
+[Driver:solar_panel_ controller] Tuya Zigbee Driver has  
+been initialized
+2025-10-08T11:14:43.732Z [log] [ManagerDrivers]  
+[Driver:switch_1gang_battery] Tuya Zigbee Driver has  
+been initialized
+2025-10-08T11:14:43.735Z [log] [ManagerDrivers]  
+[Driver:switch_2gang_hybrid] Tuya Zigbee Driver has been  
+initialized
+2025-10-08T11:14:43.738Z [log] [ManagerDrivers]  
+[Driver:switch_3gang_battery] Tuya Zigbee Driver has  
+been initialized
+2025-10-08T11:14:43.741Z [log] [ManagerDrivers]  
+[Driver:switch_2gang_ac] Tuya Zigbee Driver has been  
+initialized
+2025-10-08T11:14:43.745Z [log] [ManagerDrivers]  
+[Driver:switch_4gang_ac] Tuya Zigbee Driver has been  
+initialized
+2025-10-08T11:14:43.748Z [log] [ManagerDrivers]  
+[Driver:switch_4gang_battery_ cr2032] Tuya Zigbee Driver  
+has been initialized
+2025-10-08T11:14:43.751Z [log] [ManagerDrivers]  
+[Driver:switch_5gang_battery] Tuya Zigbee Driver has  
+been initialized
+2025-10-08T11:14:43.754Z [log] [ManagerDrivers]  
+[Driver:switch_6gang_ac] Tuya Zigbee Driver has been  
+initialized
+2025-10-08T11:14:43.758Z [log] [ManagerDrivers]  
+[Driver:switch_8gang_ac] Tuya Zigbee Driver has been  
+initialized
+2025-10-08T11:14:43.761Z [log] [ManagerDrivers]  
+[Driver:tank_level_monitor] Tuya Zigbee Driver has been  
+initialized
+2025-10-08T11:14:43.764Z [log] [ManagerDrivers]  
+[Driver:temp_humid_sensor_ advanced] Tuya Zigbee Driver  
+has been initialized
+2025-10-08T11:14:43.768Z [log] [ManagerDrivers]  
+[Driver:temp_humid_sensor_ leak_detector] Tuya Zigbee  
+Driver has been initialized
+2025-10-08T11:14:43.772Z [log] [ManagerDrivers]  
+[Driver:temp_humid_sensor_ v1w2k9dd] Tuya Zigbee Driver  
+has been initialized
+2025-10-08T11:14:43.776Z [log] [ManagerDrivers]  
+[Driver:temp_sensor_pro] Tuya Zigbee Driver has been  
+initialized
+2025-10-08T11:14:43.779Z [log] [ManagerDrivers]  
+[Driver:temperature_ controller] Tuya Zigbee Driver has  
+been initialized
+2025-10-08T11:14:43.782Z [log] [ManagerDrivers]  
+[Driver:temperature_humidity_ sensor] Tuya Zigbee Driver  
+has been initialized
+2025-10-08T11:14:43.786Z [log] [ManagerDrivers]  
+[Driver:temperature_sensor] Tuya Zigbee Driver has been  
+initialized
+2025-10-08T11:14:43.789Z [log] [ManagerDrivers]  
+[Driver:temperature_sensor_ advanced] Tuya Zigbee Driver  
+has been initialized
+2025-10-08T11:14:43.793Z [log] [ManagerDrivers]  
+[Driver:thermostat] Tuya Zigbee Driver has been  
+initialized
+2025-10-08T11:14:43.797Z [log] [ManagerDrivers]  
+[Driver:touch_dimmer] Tuya Zigbee Driver has been  
+initialized
+2025-10-08T11:14:43.801Z [log] [ManagerDrivers]  
+[Driver:touch_dimmer_1gang] Tuya Zigbee Driver has been  
+initialized
+2025-10-08T11:14:43.807Z [log] [ManagerDrivers]  
+[Driver:touch_switch_1gang] Tuya Zigbee Driver has been  
+initialized
+2025-10-08T11:14:43.810Z [log] [ManagerDrivers]  
+[Driver:touch_switch_2gang] Tuya Zigbee Driver has been  
+initialized
+2025-10-08T11:14:43.813Z [log] [ManagerDrivers]  
+[Driver:touch_switch_3gang] Tuya Zigbee Driver has been  
+initialized
+2025-10-08T11:14:43.816Z [log] [ManagerDrivers]  
+[Driver:touch_switch_4gang] Tuya Zigbee Driver has been  
+initialized
+2025-10-08T11:14:43.820Z [log] [ManagerDrivers]  
+[Driver:tvoc_sensor] Tuya Zigbee Driver has been  
+initialized
+2025-10-08T11:14:43.823Z [log] [ManagerDrivers]  
+[Driver:tvoc_sensor_advanced] Tuya Zigbee Driver has  
+been initialized
+2025-10-08T11:14:43.826Z [log] [ManagerDrivers]  
+[Driver:usb_outlet] Tuya Zigbee Driver has been  
+initialized
+2025-10-08T11:14:43.829Z [log] [ManagerDrivers]  
+[Driver:usb_outlet_advanced] Tuya Zigbee Driver has been  
+initialized
+2025-10-08T11:14:43.831Z [log] [ManagerDrivers]  
+[Driver:vibration_sensor] Tuya Zigbee Driver has been  
+initialized
+2025-10-08T11:14:43.834Z [log] [ManagerDrivers]  
+[Driver:wall_switch_1gang_ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-08T11:14:43.837Z [log] [ManagerDrivers]  
+[Driver:wall_switch_1gang_dc] Tuya Zigbee Driver has  
+been initialized
+2025-10-08T11:14:43.841Z [log] [ManagerDrivers]  
+[Driver:wall_switch_2gang_ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-08T11:14:43.845Z [log] [ManagerDrivers]  
+[Driver:wall_switch_2gang_dc] Tuya Zigbee Driver has  
+been initialized
+2025-10-08T11:14:43.848Z [log] [ManagerDrivers]  
+[Driver:wall_switch_3gang_ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-08T11:14:43.852Z [log] [ManagerDrivers]  
+[Driver:wall_switch_3gang_dc] Tuya Zigbee Driver has  
+been initialized
+2025-10-08T11:14:43.855Z [log] [ManagerDrivers]  
+[Driver:wall_switch_4gang_ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-08T11:14:43.858Z [log] [ManagerDrivers]  
+[Driver:wall_switch_4gang_dc] Tuya Zigbee Driver has  
+been initialized
+2025-10-08T11:14:43.862Z [log] [ManagerDrivers]  
+[Driver:wall_switch_5gang_ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-08T11:14:43.865Z [log] [ManagerDrivers]  
+[Driver:wall_switch_6gang_ac] Tuya Zigbee Driver has  
+been initialized
+2025-10-08T11:14:43.869Z [log] [ManagerDrivers]  
+[Driver:water_leak_detector_ sq510a] Tuya Zigbee Driver  
+has been initialized
+2025-10-08T11:14:43.873Z [log] [ManagerDrivers]  
+[Driver:water_leak_detector_ advanced] Tuya Zigbee Driver  
+has been initialized
+2025-10-08T11:14:43.877Z [log] [ManagerDrivers]  
+[Driver:water_leak_sensor] Tuya Zigbee Driver has been  
+initialized
+2025-10-08T11:14:43.880Z [log] [ManagerDrivers]  
+[Driver:water_valve] Tuya Zigbee Driver has been  
+initialized
+2025-10-08T11:14:43.883Z [log] [ManagerDrivers]  
+[Driver:water_valve_smart] Tuya Zigbee Driver has been  
+initialized
+2025-10-08T11:14:43.886Z [log] [ManagerDrivers]  
+[Driver:wireless_switch] Tuya Zigbee Driver has been  
+initialized
+2025-10-08T11:14:43.890Z [log] [ManagerDrivers]  
+[Driver:wireless_switch_1gang_ cr2032] Tuya Zigbee Driver  
+has been initialized
+2025-10-08T11:14:43.893Z [log] [ManagerDrivers]  
+[Driver:wireless_switch_2gang_ cr2032] Tuya Zigbee Driver  
+has been initialized
+2025-10-08T11:14:43.896Z [log] [ManagerDrivers]  
+[Driver:wireless_switch_3gang_ cr2032] Tuya Zigbee Driver  
+has been initialized
+2025-10-08T11:14:43.900Z [log] [ManagerDrivers]  
+[Driver:wireless_switch_4gang_ cr2032] Tuya Zigbee Driver  
+has been initialized
+2025-10-08T11:14:43.904Z [log] [ManagerDrivers]  
+[Driver:wireless_switch_4gang_ cr2450] Tuya Zigbee Driver  
+has been initialized
+2025-10-08T11:14:43.908Z [log] [ManagerDrivers]  
+[Driver:wireless_switch_5gang_ cr2032] Tuya Zigbee Driver  
+has been initialized
+2025-10-08T11:14:43.913Z [log] [ManagerDrivers]  
+[Driver:wireless_switch_6gang_ cr2032] Tuya Zigbee Driver  
+has been initialized
+2025-10-08T11:14:43.917Z [log] [ManagerDrivers]  
+[Driver:zbbridge] Tuya Zigbee Driver has been  
+initialized
+2025-10-08T11:14:43.920Z [log] [ManagerDrivers]  
+[Driver:zigbee_gateway_hub] Tuya Zigbee Driver has been  
+initialized
+2025-10-08T11:14:43.948Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] Tuya Zigbee Driver has  
+been initialized
+2025-10-08T11:14:44.018Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:937d27ac-5780-
+4b7a-a6a5-d56ca9899a37] ZigBeeDevice has been  
+initialized { firstInit: true, isSubDevice: false }
+2025-10-08T11:14:44.026Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:937d27ac-5780-
+4b7a-a6a5-d56ca9899a37] ------------------------------ --
+----------
+2025-10-08T11:14:44.027Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:937d27ac-5780-
+4b7a-a6a5-d56ca9899a37] Node: 0744b320-1848-4ec7-aebb-
+8cbb5e4d3ee6
+2025-10-08T11:14:44.027Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:937d27ac-5780-
+4b7a-a6a5-d56ca9899a37] - Receive when idle: false
+2025-10-08T11:14:44.028Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:937d27ac-5780-
+4b7a-a6a5-d56ca9899a37] - Endpoints: 1
+2025-10-08T11:14:44.028Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:937d27ac-5780-
+4b7a-a6a5-d56ca9899a37] -- Clusters:
+2025-10-08T11:14:44.028Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:937d27ac-5780-
+4b7a-a6a5-d56ca9899a37] --- basic
+2025-10-08T11:14:44.029Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:937d27ac-5780-
+4b7a-a6a5-d56ca9899a37] --- powerConfiguration
+2025-10-08T11:14:44.029Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:937d27ac-5780-
+4b7a-a6a5-d56ca9899a37] --- identify
+2025-10-08T11:14:44.030Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:937d27ac-5780-
+4b7a-a6a5-d56ca9899a37] --- onOff
+2025-10-08T11:14:44.030Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:937d27ac-5780-
+4b7a-a6a5-d56ca9899a37] --- iasZone
+2025-10-08T11:14:44.030Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:937d27ac-5780-
+4b7a-a6a5-d56ca9899a37] ------------------------------ --
+----------
+2025-10-08T11:15:45.794Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:937d27ac-5780-
+4b7a-a6a5-d56ca9899a37] [dbg] deleted ZigBeeDevice  
+instance
+2025-10-08T11:17:05.088Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] ZigBeeDevice has been  
+initialized { firstInit: true, isSubDevice: false }
+2025-10-08T11:17:05.089Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] ------------------------------ --
+----------
+2025-10-08T11:17:05.089Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] Node: 9da47e94-9ec7-455b-b5ee-
+9dd75c9e564a
+2025-10-08T11:17:05.089Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] - Receive when idle: false
+2025-10-08T11:17:05.090Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] - Endpoints: 1
+2025-10-08T11:17:05.090Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] -- Clusters:
+2025-10-08T11:17:05.090Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] --- basic
+2025-10-08T11:17:05.090Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] --- powerConfiguration
+2025-10-08T11:17:05.090Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] --- identify
+2025-10-08T11:17:05.090Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] --- onOff
+2025-10-08T11:17:05.090Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] --- iasZone
+2025-10-08T11:17:05.090Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] ------------------------------ --
+----------
+2025-10-08T11:18:17.898Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] Received end device announce  
+indication
+2025-10-08T11:18:22.082Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] [dbg] deleted ZigBeeDevice  
+instance
+2025-10-08T11:18:22.131Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] ZigBeeDevice has been  
+initialized { firstInit: true, isSubDevice: false }
+2025-10-08T11:18:22.132Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] ------------------------------ --
+----------
+2025-10-08T11:18:22.133Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] Node: 9da47e94-9ec7-455b-b5ee-
+9dd75c9e564a
+2025-10-08T11:18:22.133Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] - Receive when idle: false
+2025-10-08T11:18:22.133Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] - Endpoints: 1
+2025-10-08T11:18:22.134Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] -- Clusters:
+2025-10-08T11:18:22.134Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] --- basic
+2025-10-08T11:18:22.135Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] --- powerConfiguration
+2025-10-08T11:18:22.135Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] --- identify
+2025-10-08T11:18:22.135Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] --- onOff
+2025-10-08T11:18:22.136Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] --- iasZone
+2025-10-08T11:18:22.136Z [log] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] ------------------------------ --
+----------
+stderr:
+2025-10-08T11:14:39.032Z [err] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:937d27ac-5780-
+4b7a-a6a5-d56ca9899a37] Error: 'onNodeInit()' failed,  
+reason: TypeError: expected_cluster_id_number
+at assertClusterSpecification (/app/node_modules/homey-
+zigbeedriver/lib/util/index. js:172:45)
+at TuyaZigbeeDevice. registerCapability  
+(/app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice.
+js:308:5)
+at TuyaZigbeeDevice.onNodeInit  
+(/app/drivers/sos_emergency_ button/device.js:43:12)
+at /app/node_modules/homey-
+zigbeedriver/lib/ZigBeeDevice. js:976:22
+at process. processTicksAndRejections  
+(node:internal/process/task_ queues:95:5)
+2025-10-08T11:14:39.034Z [err] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:937d27ac-5780-
+4b7a-a6a5-d56ca9899a37] Error: could not initialize node  
+TypeError: expected_cluster_id_number
+at assertClusterSpecification (/app/node_modules/homey-
+zigbeedriver/lib/util/index. js:172:45)
+at TuyaZigbeeDevice. registerCapability  
+(/app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice.
+js:308:5)
+at TuyaZigbeeDevice.onNodeInit  
+(/app/drivers/sos_emergency_ button/device.js:43:12)
+at /app/node_modules/homey-
+zigbeedriver/lib/ZigBeeDevice. js:976:22
+at process. processTicksAndRejections  
+(node:internal/process/task_ queues:95:5)
+2025-10-08T11:14:44.032Z [err] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:937d27ac-5780-
+4b7a-a6a5-d56ca9899a37] Error: 'onNodeInit()' failed,  
+reason: TypeError: expected_cluster_id_number
+at assertClusterSpecification (/app/node_modules/homey-
+zigbeedriver/lib/util/index. js:172:45)
+at TuyaZigbeeDevice. registerCapability  
+(/app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice.
+js:308:5)
+at TuyaZigbeeDevice.onNodeInit  
+(/app/drivers/sos_emergency_ button/device.js:43:12)
+at /app/node_modules/homey-
+zigbeedriver/lib/ZigBeeDevice. js:976:22
+at process. processTicksAndRejections  
+(node:internal/process/task_ queues:95:5)
+2025-10-08T11:14:44.035Z [err] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:937d27ac-5780-
+4b7a-a6a5-d56ca9899a37] Error: could not initialize node  
+TypeError: expected_cluster_id_number
+at assertClusterSpecification (/app/node_modules/homey-
+zigbeedriver/lib/util/index. js:172:45)
+at TuyaZigbeeDevice. registerCapability  
+(/app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice.
+js:308:5)
+at TuyaZigbeeDevice.onNodeInit  
+(/app/drivers/sos_emergency_ button/device.js:43:12)
+at /app/node_modules/homey-
+zigbeedriver/lib/ZigBeeDevice. js:976:22
+at process. processTicksAndRejections  
+(node:internal/process/task_ queues:95:5)
+2025-10-08T11:17:05.091Z [err] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] Error: 'onNodeInit()' failed,  
+reason: TypeError: expected_cluster_id_number
+at assertClusterSpecification (/app/node_modules/homey-
+zigbeedriver/lib/util/index. js:172:45)
+at TuyaZigbeeDevice. registerCapability  
+(/app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice.
+js:308:5)
+at TuyaZigbeeDevice.onNodeInit  
+(/app/drivers/sos_emergency_ button/device.js:43:12)
+at /app/node_modules/homey-
+zigbeedriver/lib/ZigBeeDevice. js:976:22
+at process. processTicksAndRejections  
+(node:internal/process/task_ queues:95:5)
+2025-10-08T11:17:05.091Z [err] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] Error: could not initialize node  
+TypeError: expected_cluster_id_number
+at assertClusterSpecification (/app/node_modules/homey-
+zigbeedriver/lib/util/index. js:172:45)
+at TuyaZigbeeDevice. registerCapability  
+(/app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice.
+js:308:5)
+at TuyaZigbeeDevice.onNodeInit  
+(/app/drivers/sos_emergency_ button/device.js:43:12)
+at /app/node_modules/homey-
+zigbeedriver/lib/ZigBeeDevice. js:976:22
+at process. processTicksAndRejections  
+(node:internal/process/task_ queues:95:5)
+2025-10-08T11:18:22.137Z [err] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] Error: 'onNodeInit()' failed,  
+reason: TypeError: expected_cluster_id_number
+at assertClusterSpecification (/app/node_modules/homey-
+zigbeedriver/lib/util/index. js:172:45)
+at TuyaZigbeeDevice. registerCapability  
+(/app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice.
+js:308:5)
+at TuyaZigbeeDevice.onNodeInit  
+(/app/drivers/sos_emergency_ button/device.js:43:12)
+at /app/node_modules/homey-
+zigbeedriver/lib/ZigBeeDevice. js:976:22
+2025-10-08T11:18:22.138Z [err] [ManagerDrivers]  
+[Driver:sos_emergency_button] [Device:05eb4140-c2fd-
+4a75-8a92-4589f8ce69a6] Error: could not initialize node  
+TypeError: expected_cluster_id_number
+at assertClusterSpecification (/app/node_modules/homey-
+zigbeedriver/lib/util/index. js:172:45)
+at TuyaZigbeeDevice. registerCapability  
+(/app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice.
+js:308:5)
+at TuyaZigbeeDevice.onNodeInit  
+(/app/drivers/sos_emergency_ button/device.js:43:12)
+at /app/node_modules/homey-
+zigbeedriver/lib/ZigBeeDevice. js:976:22
+You can manage your email settings in the Homey Developer Tools.
+
