@@ -329,6 +329,15 @@ class ContactVibrationSensor extends SensorDevice {
     this.error('IAS Zone setup failed:', err);
   }
 }
+
+async triggerFlowCard(cardId, tokens = {}) {
+  try {
+    const flowCard = this.homey.flow.getDeviceTriggerCard(cardId);
+    await flowCard.trigger(this, tokens).catch(err => this.error(err));
+    this.log(`[OK] Flow triggered: ${cardId}`, tokens);
+  } catch (err) {
+    this.error(`[ERROR] Flow trigger error: ${cardId}`, err);
+  }
 }
 
 module.exports = ContactVibrationSensor;
