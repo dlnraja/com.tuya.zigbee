@@ -121,52 +121,33 @@ class AirConditionerDevice extends BaseHybridDevice {
     this.log('Air conditioner device initialized');
   }
 
-}
-
-
   /**
    * Setup measure_temperature capability (SDK3)
    * Cluster 1026 - measuredValue
    */
   async setupTemperatureSensor() {
-  if (!this.hasCapability('measure_temperature')) {
-    return;
-  }
+    if (!this.hasCapability('measure_temperature')) {
+      return;
+    }
 
-  this.log('[TEMP]  Setting up measure_temperature (cluster 1026)...');
+    this.log('[TEMP]  Setting up measure_temperature (cluster 1026)...');
 
-  const endpoint = this.zclNode.endpoints[1];
-  if (!endpoint?.clusters[1026]) {
-    this.log('[WARN]  Cluster 1026 not available');
-    return;
-  }
+    const endpoint = this.zclNode.endpoints[1];
+    if (!endpoint?.clusters[1026]) {
+      this.log('[WARN]  Cluster 1026 not available');
+      return;
+    }
 
-  try {
-    /* REFACTOR: registerCapability deprecated with cluster spec.
- Original: this.registerCapability('measure_temperature', 1026,
- Replace with SDK3 pattern - see ZigbeeDevice docs
- Capability: 'measure_temperature', Cluster: 1026
-*/
-    // this.registerCapability('measure_temperature', 1026, {
-    //         get: 'measuredValue',
-    //         report: 'measuredValue',
-    //         reportParser: value => value / 100,
-    //         reportOpts: {
-    //           configureAttributeReporting: {
-    //             minInterval: 60,
-    //             maxInterval: 3600,
-    //             minChange: 10
-  }
-        },
-getOpts: {
-  getOnStart: true
-}
-      });
-
-this.log('[OK] measure_temperature configured (cluster 1026)');
+    try {
+      /* REFACTOR: registerCapability deprecated with cluster spec.
+         Original: this.registerCapability('measure_temperature', 1026, {...})
+         Replace with SDK3 pattern - see ZigbeeDevice docs
+         Capability: 'measure_temperature', Cluster: 1026
+      */
+      this.log('[INFO] setupTemperatureSensor: Method needs SDK3 refactor');
     } catch (err) {
-  this.error('measure_temperature setup failed:', err);
-}
+      this.error('measure_temperature setup failed:', err);
+    }
   }
 }
 
