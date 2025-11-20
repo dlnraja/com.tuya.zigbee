@@ -329,49 +329,31 @@ class AirQualityMonitorProBatteryDevice extends SensorDevice {
   getFallbackStats() {
     return this.fallback ? this.fallback.getStats() : null;
   }
-}
-
 
   /**
    * Setup measure_co2 capability (SDK3)
    * Cluster 1037 - measuredValue
    */
   async setupCo2Sensor() {
-  if (!this.hasCapability('measure_co2')) {
-    return;
-  }
+    if (!this.hasCapability('measure_co2')) {
+      return;
+    }
 
-  this.log('[TEMP]  Setting up measure_co2 (cluster 1037)...');
+    this.log('[TEMP]  Setting up measure_co2 (cluster 1037)...');
 
-  const endpoint = this.zclNode.endpoints[1];
-  if (!endpoint?.clusters[1037]) {
-    this.log('[WARN]  Cluster 1037 not available');
-    return;
-  }
+    const endpoint = this.zclNode.endpoints[1];
+    if (!endpoint?.clusters[1037]) {
+      this.log('[WARN]  Cluster 1037 not available');
+      return;
+    }
 
-  try {
-    /* REFACTOR: registerCapability deprecated with cluster spec.
- Original: this.registerCapability('measure_co2', 1037,
- Replace with SDK3 pattern - see ZigbeeDevice docs
- Capability: 'measure_co2', Cluster: 1037
-*/
-    // this.registerCapability('measure_co2', 1037, {
-    //         get: 'measuredValue',
-    //         report: 'measuredValue',
-    //         reportParser: value => value * 1e-6,
-    //         reportOpts: {
-    //           configureAttributeReporting: {
-    //             minInterval: 300,
-    //             maxInterval: 3600,
-    //             minChange: 10
-  }
-        },
-getOpts: {
-  getOnStart: true
-}
-      });
-
-this.log('[OK] measure_co2 configured (cluster 1037)');
+    try {
+      /* REFACTOR: registerCapability deprecated with cluster spec.
+         Original: this.registerCapability('measure_co2', 1037, {...})
+         Replace with SDK3 pattern - see ZigbeeDevice docs
+         Capability: 'measure_co2', Cluster: 1037
+      */
+      this.log('[INFO] setupCo2Sensor: Method needs SDK3 refactor');
     } catch (err) {
   this.error('measure_co2 setup failed:', err);
 }
