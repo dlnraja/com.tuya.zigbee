@@ -223,16 +223,16 @@ class ContactVibrationSensor extends SensorDevice {
    * Version la plus récente du projet (2025-10-21)
    */
   async setupIASZone() {
-    this.log('🔐 Setting up IAS Zone (SDK3 latest method)...');
+  this.log('🔐 Setting up IAS Zone (SDK3 latest method)...');
 
-    const endpoint = this.zclNode.endpoints[1];
+  const endpoint = this.zclNode.endpoints[1];
 
-    if (!endpoint?.clusters?.iasZone) {
-      this.log('[INFO]  IAS Zone cluster not available');
-      return;
-    }
+  if (!endpoint?.clusters?.iasZone) {
+    this.log('[INFO]  IAS Zone cluster not available');
+    return;
+  }
 
-    try {
+  try {
     // Step 1: Setup Zone Enroll Request listener (SYNCHRONOUS - property assignment)
     // SDK3: Use property assignment, NOT .on() event listener
     endpoint.clusters.iasZone.onZoneEnrollRequest = async () => {
