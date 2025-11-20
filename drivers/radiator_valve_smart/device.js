@@ -323,22 +323,21 @@ class SmartRadiatorValveHybridDevice extends BaseHybridDevice {
   /**
    * IAS Zone enrollment with fallback
    */
-}
   async enrollIASZoneSafe() {
-  try {
-    return await this.fallback.iasEnrollWithFallback().catch(err => this.error(err));
-  } catch (err) {
-    this.error('Failed to enroll IAS Zone after all fallback strategies:', err);
-    throw err;
+    try {
+      return await this.fallback.iasEnrollWithFallback().catch(err => this.error(err));
+    } catch (err) {
+      this.error('Failed to enroll IAS Zone after all fallback strategies:', err);
+      throw err;
+    }
   }
-}
 
-/**
- * Get fallback system statistics
- */
-getFallbackStats() {
-  return this.fallback ? this.fallback.getStats() : null;
-}
+  /**
+   * Get fallback system statistics
+   */
+  getFallbackStats() {
+    return this.fallback ? this.fallback.getStats() : null;
+  }
 }
 
 module.exports = SmartRadiatorValveHybridDevice;
