@@ -208,8 +208,6 @@ class SmartDoorbellBatteryDevice extends ButtonDevice {
   }
   return false;
 }
-return false;
-}
 
 /**
  * Get current context data
