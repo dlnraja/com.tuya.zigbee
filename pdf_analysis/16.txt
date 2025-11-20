@@ -1,0 +1,1570 @@
+Dylan Rajasekaram <senetmarne@gmail.com>
+[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report
+4 messages
+Homey <noreply@homey .app> 21 octobre 2025 à 15:06
+Répondre à : 68f78560f f1363b717176cbd@apps-api.athom.com
+À : senetmarne@gmail.com
+Hi Dylan Rajasekaram,
+Your app Universal T uya Zigbee  has received a diagnostics report.
+You can reply to this e-mail to get in touch with the user . Note that the
+user will then be able to see your e-mail address.
+App ID
+com.dlnraja.tuya.zigbee
+App V ersion
+v3.1.21
+Homey V ersion
+v12.8.0
+Stack T race
+Note: this log has been manually submitted by a user.
+Log ID: 200a2ea9-fe54-4f97-966c- f44eb0c966c5
+User Message:
+Still no Motion reporting Multisensor and still no  
+triggering SOS button
+stdout:
+2025-10-21T12:05:51.169Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Temperature: 15.1
+2025-10-21T12:05:51.170Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: temperatureMeasurement, capability:  
+measure_temperature), parsed payload: 15.1
+2025-10-21T12:05:51.421Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] Humidity:  
+84.9
+2025-10-21T12:05:51.421Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: relativeHumidity, capability:  
+measure_humidity), parsed payload: 84.9
+2025-10-21T12:08:06.087Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2591
+2025-10-21T12:08:06.088Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2591
+2025-10-21T12:09:06.018Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2573
+2025-10-21T12:09:06.019Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2573
+2025-10-21T12:11:05.958Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2526
+2025-10-21T12:11:05.959Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2526
+2025-10-21T12:12:06.199Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2559
+2025-10-21T12:12:06.200Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2559
+2025-10-21T12:13:05.869Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2594
+2025-10-21T12:13:05.870Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2594
+2025-10-21T12:14:05.768Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2609
+2025-10-21T12:14:05.769Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2609
+2025-10-21T12:15:05.780Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2594
+2025-10-21T12:15:05.780Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2594
+2025-10-21T12:16:05.682Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2579
+2025-10-21T12:16:05.683Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2579
+2025-10-21T12:17:05.633Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2557
+2025-10-21T12:17:05.634Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2557
+2025-10-21T12:18:05.575Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2522
+2025-10-21T12:18:05.575Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2522
+2025-10-21T12:19:05.526Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2512
+2025-10-21T12:19:05.527Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2512
+2025-10-21T12:20:05.081Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2553
+2025-10-21T12:20:05.081Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2553
+2025-10-21T12:22:05.295Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2570
+2025-10-21T12:22:05.296Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2570
+2025-10-21T12:23:05.344Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2607
+2025-10-21T12:23:05.345Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2607
+2025-10-21T12:24:05.365Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2633
+2025-10-21T12:24:05.366Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2633
+2025-10-21T12:25:05.323Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2649
+2025-10-21T12:25:05.324Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2649
+2025-10-21T12:30:06.908Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2630
+2025-10-21T12:30:06.909Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2630
+2025-10-21T12:32:05.414Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2569
+2025-10-21T12:32:05.415Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2569
+2025-10-21T12:33:05.369Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2511
+2025-10-21T12:33:05.370Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2511
+2025-10-21T12:34:05.314Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2488
+2025-10-21T12:34:05.315Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2488
+2025-10-21T12:35:05.328Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2430
+2025-10-21T12:35:05.328Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2430
+2025-10-21T12:36:05.264Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2323
+2025-10-21T12:36:05.264Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2323
+2025-10-21T12:37:05.167Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2233
+2025-10-21T12:37:05.168Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2233
+2025-10-21T12:39:05.156Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2303
+2025-10-21T12:39:05.157Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2303
+2025-10-21T12:41:05.168Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2282
+2025-10-21T12:41:05.172Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2282
+2025-10-21T12:42:05.109Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2316
+2025-10-21T12:42:05.110Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2316
+2025-10-21T12:43:04.667Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2377
+2025-10-21T12:43:04.667Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2377
+2025-10-21T12:45:04.871Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2334
+2025-10-21T12:45:04.872Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2334
+2025-10-21T12:47:05.037Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2353
+2025-10-21T12:47:05.038Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2353
+2025-10-21T12:48:05.021Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2380
+2025-10-21T12:48:05.022Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2380
+2025-10-21T12:49:04.949Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2445
+2025-10-21T12:49:04.950Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2445
+2025-10-21T12:50:04.890Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2487
+2025-10-21T12:50:04.890Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2487
+2025-10-21T12:50:13.951Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Temperature: 14.9
+2025-10-21T12:50:13.952Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: temperatureMeasurement, capability:  
+measure_temperature), parsed payload: 14.9
+2025-10-21T12:51:04.942Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2501
+2025-10-21T12:51:04.943Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2501
+2025-10-21T12:55:04.992Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2522
+2025-10-21T12:55:04.992Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2522
+2025-10-21T12:57:05.059Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2500
+2025-10-21T12:57:05.060Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2500
+2025-10-21T12:57:11.126Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2496
+2025-10-21T12:57:11.126Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2496
+2025-10-21T12:57:47.070Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2473
+2025-10-21T12:57:47.071Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2473
+2025-10-21T12:58:46.249Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2405
+2025-10-21T12:58:46.250Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2405
+2025-10-21T12:59:46.303Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2288
+2025-10-21T12:59:46.304Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2288
+2025-10-21T13:00:46.347Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2149
+2025-10-21T13:00:46.348Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2149
+2025-10-21T13:01:46.405Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2019
+2025-10-21T13:01:46.406Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2019
+2025-10-21T13:02:46.495Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 1941
+2025-10-21T13:02:46.495Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 1941
+2025-10-21T13:03:46.411Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 1922
+2025-10-21T13:03:46.411Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 1922
+2025-10-21T13:04:46.414Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 1936
+2025-10-21T13:04:46.415Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 1936
+2025-10-21T13:05:47.694Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Illuminance: 2036
+2025-10-21T13:05:47.696Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: illuminanceMeasurement, capability:  
+measure_luminance), parsed payload: 2036
+2025-10-21T13:06:18.011Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040]  
+Temperature: 14.7
+2025-10-21T13:06:18.012Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: temperatureMeasurement, capability:  
+measure_temperature), parsed payload: 14.7
+2025-10-21T13:06:18.264Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] Humidity:  
+84.6
+2025-10-21T13:06:18.264Z [log] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] handle  
+report (cluster: relativeHumidity, capability:  
+measure_humidity), parsed payload: 84.6
+stderr:
+2025-10-21T09:00:39.728Z [err] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] IEEE  
+address not available
+2025-10-21T09:01:09.512Z [err] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] Error:  
+configuring attribute reporting (endpoint: 1, cluster:  
+powerConfiguration) {
+batteryPercentageRemaining: { minInterval: 3600,  
+maxInterval: 65535, minChange: 2 }
+} Error: NOT_FOUND
+at PowerConfigurationCluster. configureReporting  
+(/app/node_modules/zigbee- clusters/lib/Cluster.js:532:
+17)
+at process. processTicksAndRejections  
+(node:internal/process/task_ queues:95:5)
+at async Promise.all (index 0)
+at async MotionTempHumidityIllumination
+SensorDevice.onNodeInit (/app/drivers/motion_temp_
+humidity_illumination_multi_ battery/device.js:94:7)
+at async /app/node_modules/homey-
+zigbeedriver/lib/ZigBeeDevice. js:976:11
+2025-10-21T09:01:09.532Z [err] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] [IASZone]  
+❌ Device not available, cannot enroll
+2025-10-21T09:01:54.900Z [err] [ManagerDrivers]  
+[Driver:sos_emergency_button_ cr2032] [Device:c46f3359-
+185d-4183- 8a99-532d629ff7e0] Error: configuring  
+attribute reporting (endpoint: 1, cluster:  
+powerConfiguration) {
+batteryPercentageRemaining: { minInterval: 7200,  
+maxInterval: 43200, minChange: 2 }
+} Error: Timeout: Expected Response
+at Timeout._onTimeout (/app/node_modules/zigbee-
+clusters/lib/Cluster.js:966: 16)
+at listOnTimeout (node:internal/timers:569:17)
+at process.processTimers (node:internal/timers:512:7)
+2025-10-21T09:01:54.902Z [err] [ManagerDrivers]  
+[Driver:sos_emergency_button_ cr2032] [Device:c46f3359-
+185d-4183- 8a99-532d629ff7e0] Direct IAS enrollment  
+failed: Error: IEEE address not available from zclNode
+at SOSEmergencyButtonDevice. onNodeInit  
+(/app/drivers/sos_emergency_ button_cr2032/device.js:234:
+17)
+at async /app/node_modules/homey-
+zigbeedriver/lib/ZigBeeDevice. js:976:11
+2025-10-21T09:01:54.903Z [err] [ManagerDrivers]  
+[Driver:sos_emergency_button_ cr2032] [Device:c46f3359-
+185d-4183- 8a99-532d629ff7e0] [IASZone] ❌  Device not  
+available, cannot enroll
+2025-10-21T09:43:56.778Z [err] [ManagerDrivers]  
+[Driver:sos_emergency_button_ cr2032] [Device:c46f3359-
+185d-4183- 8a99-532d629ff7e0] Direct IAS enrollment  
+failed: Error: IEEE address not available from zclNode
+at SOSEmergencyButtonDevice. onNodeInit  
+(/app/drivers/sos_emergency_ button_cr2032/device.js:234:
+17)
+at process. processTicksAndRejections  
+(node:internal/process/task_ queues:95:5)
+at async /app/node_modules/homey-
+zigbeedriver/lib/ZigBeeDevice. js:976:11
+2025-10-21T09:43:56.781Z [err] [ManagerDrivers]  
+[Driver:sos_emergency_button_ cr2032] [Device:c46f3359-
+185d-4183- 8a99-532d629ff7e0] [IASZone] ❌  Device not  
+available, cannot enroll
+2025-10-21T09:46:15.182Z [err] [ManagerDrivers]  
+[Driver:sos_emergency_button_ cr2032] [Device:25d3991b-
+1b40-439e- 989e-e73a002091a9] Direct IAS enrollment  
+failed: Error: IEEE address not available from zclNode
+at SOSEmergencyButtonDevice. onNodeInit  
+(/app/drivers/sos_emergency_ button_cr2032/device.js:234:
+17)
+at process. processTicksAndRejections  
+(node:internal/process/task_ queues:95:5)
+at async /app/node_modules/homey-
+zigbeedriver/lib/ZigBeeDevice. js:976:11
+2025-10-21T09:46:15.183Z [err] [ManagerDrivers]  
+[Driver:sos_emergency_button_ cr2032] [Device:25d3991b-
+1b40-439e- 989e-e73a002091a9] [IASZone] ❌  Device not  
+available, cannot enroll
+2025-10-21T09:48:24.880Z [err] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] IEEE  
+address not available
+2025-10-21T09:48:26.791Z [err] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] Error:  
+configuring attribute reporting (endpoint: 1, cluster:  
+powerConfiguration) {
+batteryPercentageRemaining: { minInterval: 3600,  
+maxInterval: 65535, minChange: 2 }
+} Error: NOT_FOUND
+at PowerConfigurationCluster. configureReporting  
+(/app/node_modules/zigbee- clusters/lib/Cluster.js:532:
+17)
+at process. processTicksAndRejections  
+(node:internal/process/task_ queues:95:5)
+at async Promise.all (index 0)
+at async MotionTempHumidityIllumination
+SensorDevice.onNodeInit (/app/drivers/motion_temp_
+humidity_illumination_multi_ battery/device.js:94:7)
+at async /app/node_modules/homey-
+zigbeedriver/lib/ZigBeeDevice. js:976:11
+2025-10-21T09:48:26.803Z [err] [ManagerDrivers]  
+[Driver:motion_temp_humidity_ illumination_multi_battery]  
+[Device:b74ac43c-9b4c-4174- b8ab-5fa88b3b5040] [IASZone]  
+❌ Device not available, cannot enroll
+You can manage your email settings in the Homey Developer Tools.
+Homey <noreply@homey .app> 21 octobre 2025 à 17:05
+Répondre à : 68f7a129f f1363b7171a57c4@apps-api.athom.com
+À : senetmarne@gmail.com
+Hi Dylan Rajasekaram,
+Your app Universal T uya Zigbee  has received a diagnostics report.
+You can reply to this e-mail to get in touch with the user . Note that the
+user will then be able to see your e-mail address.
+App ID
+com.dlnraja.tuya.zigbee
+App V ersion
+v4.0.5
+Homey V ersion
+v12.4.5-rc.5
+Stack T race
+Note: this log has been manually submitted by a user.
+Log ID: c74e867d-0b67-4c87-9ee9- 6141ecd26b0d
+User Message:
+Dlnraja 3 gang zemismart
+stdout:
+2025-10-21T14:54:58.956Z [log] [ManagerDrivers]  
+[Driver:moes_wall_switch_ 4gang_dc] Tuya Zigbee Driver  
+has been initialized
+2025-10-21T14:54:58.959Z [log] [ManagerDrivers]  
+[Driver:moes_wall_switch_ 5gang_ac] Tuya Zigbee Driver  
+has been initialized
+
+2025-10-21T14:54:58.962Z [log] [ManagerDrivers]  
+[Driver:moes_wall_switch_ 6gang_ac] Tuya Zigbee Driver  
+has been initialized
+2025-10-21T14:54:58.965Z [log] [ManagerDrivers]  
+[Driver:moes_wireless_switch_ 2gang_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:58.968Z [log] [ManagerDrivers]  
+[Driver:moes_wireless_switch_ 4button_cr2450] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:58.970Z [log] [ManagerDrivers]  
+[Driver:moes_wireless_switch_ 4gang_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:58.973Z [log] [ManagerDrivers]  
+[Driver:moes_wireless_switch_ 5button_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:58.976Z [log] [ManagerDrivers]  
+[Driver:moes_wireless_switch_ 6gang_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:58.979Z [log] [ManagerDrivers]  
+[Driver:moes_wireless_switch_ cr2032] Tuya Zigbee Driver  
+has been initialized
+2025-10-21T14:54:58.981Z [log] [ManagerDrivers]  
+[Driver:nous_air_quality_ monitor_ac] Tuya Zigbee Driver  
+initialized
+2025-10-21T14:54:58.985Z [log] [ManagerDrivers]  
+[Driver:nous_smart_plug_ dimmer_ac] ✅  Flow cards  
+registered
+2025-10-21T14:54:58.985Z [log] [ManagerDrivers]  
+[Driver:nous_smart_plug_ dimmer_ac]  
+SmartPlugDimmerAcDriver has been initialized
+2025-10-21T14:54:58.988Z [log] [ManagerDrivers]  
+[Driver:nous_zbbridge_ac] Tuya Zigbee Driver has been  
+initialized
+2025-10-21T14:54:58.991Z [log] [ManagerDrivers]  
+[Driver:nous_zigbee_gateway_ hub_ac] Tuya Zigbee Driver  
+has been initialized
+2025-10-21T14:54:59.018Z [log] [ManagerDrivers]  
+[Driver:tuya_climate_monitor_ cr2032] Tuya Zigbee Driver  
+initialized
+2025-10-21T14:54:59.020Z [log] [ManagerDrivers]  
+[Driver:tuya_comprehensive_ air_monitor_ac] Comprehensive  
+Air Monitor Driver has been initialized
+2025-10-21T14:54:59.024Z [log] [ManagerDrivers]  
+[Driver:tuya_door_controller_ ac] Tuya Zigbee Driver  
+initialized
+2025-10-21T14:54:59.027Z [log] [ManagerDrivers]  
+[Driver:tuya_doorbell_camera_ ac] ✅ Flow cards  
+registered
+2025-10-21T14:54:59.028Z [log] [ManagerDrivers]  
+[Driver:tuya_doorbell_camera_ ac] doorbell_camera_ac  
+driver initialized
+2025-10-21T14:54:59.030Z [log] [ManagerDrivers]  
+[Driver:tuya_doorbell_cr2032] Tuya Zigbee Driver  
+initialized
+2025-10-21T14:54:59.033Z [log] [ManagerDrivers]  
+[Driver:tuya_garage_door_ controller_ac] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.036Z [log] [ManagerDrivers]  
+[Driver:tuya_gas_sensor_ ts0601_ac] ✅  Flow cards  
+registered
+2025-10-21T14:54:59.037Z [log] [ManagerDrivers]  
+[Driver:tuya_gas_sensor_ ts0601_ac] Gas Sensor TS0601  
+driver initialized
+2025-10-21T14:54:59.039Z [log] [ManagerDrivers]  
+[Driver:tuya_humidity_ controller_ac] Tuya Zigbee Driver  
+has been initialized
+2025-10-21T14:54:59.042Z [log] [ManagerDrivers]  
+[Driver:tuya_led_strip_ outdoor_color_ac] ✅  Flow cards  
+registered
+2025-10-21T14:54:59.043Z [log] [ManagerDrivers]  
+[Driver:tuya_led_strip_ outdoor_color_ac]  
+led_strip_outdoor_color_ac driver initialized
+2025-10-21T14:54:59.046Z [log] [ManagerDrivers]  
+[Driver:tuya_outdoor_siren_ cr2032] Tuya Zigbee Driver  
+has been initialized
+2025-10-21T14:54:59.048Z [log] [ManagerDrivers]  
+[Driver:tuya_radiator_valve_ smart_hybrid] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.052Z [log] [ManagerDrivers]  
+[Driver:tuya_siren_ac] ✅  Flow cards registered
+2025-10-21T14:54:59.052Z [log] [ManagerDrivers]  
+[Driver:tuya_siren_ac] alarm_siren_chime_ac driver  
+initialized
+2025-10-21T14:54:59.055Z [log] [ManagerDrivers]  
+[Driver:tuya_smart_switch_ 1gang_ac] Tuya Zigbee Driver  
+initialized
+2025-10-21T14:54:59.058Z [log] [ManagerDrivers]  
+[Driver:tuya_smart_switch_ 3gang_ac] Tuya Zigbee Driver  
+initialized
+2025-10-21T14:54:59.061Z [log] [ManagerDrivers]  
+[Driver:tuya_soil_tester_temp_ humid_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.064Z [log] [ManagerDrivers]  
+[Driver:tuya_temperature_ controller_hybrid] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.067Z [log] [ManagerDrivers]  
+[Driver:tuya_water_valve_aa] Tuya Zigbee Driver has been  
+initialized
+2025-10-21T14:54:59.070Z [log] [ManagerDrivers]  
+[Driver:tuya_water_valve_ smart_aa] Tuya Zigbee Driver  
+has been initialized
+2025-10-21T14:54:59.073Z [log] [ManagerDrivers]  
+[Driver:tuya_water_valve_ smart_hybrid] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.077Z [log] [ManagerDrivers]  
+[Driver:zemismart_air_quality_ monitor_pro_internal] Tuya  
+Zigbee Driver initialized
+2025-10-21T14:54:59.080Z [log] [ManagerDrivers]  
+[Driver:zemismart_curtain_ motor_ac] Tuya Zigbee Driver  
+initialized
+2025-10-21T14:54:59.083Z [log] [ManagerDrivers]  
+[Driver:zemismart_curtain_ motor_internal] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.086Z [log] [ManagerDrivers]  
+[Driver:zemismart_doorbell_ button_internal] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.090Z [log] [ManagerDrivers]  
+[Driver:zemismart_gas_ detector_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.093Z [log] [ManagerDrivers]  
+[Driver:zemismart_lock_basic_ aa] Tuya Zigbee Driver  
+initialized
+2025-10-21T14:54:59.097Z [log] [ManagerDrivers]  
+[Driver:zemismart_lock_ fingerprint_aa] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.100Z [log] [ManagerDrivers]  
+[Driver:zemismart_lock_smart_ aa] Tuya Zigbee Driver has  
+been initialized
+2025-10-21T14:54:59.104Z [log] [ManagerDrivers]  
+[Driver:zemismart_motion_ sensor_battery] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.107Z [log] [ManagerDrivers]  
+[Driver:zemismart_motion_ sensor_pir_ac_battery] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.111Z [log] [ManagerDrivers]  
+[Driver:zemismart_motion_temp_
+humidity_illumination_multi_ battery] ✅  Flow cards  
+registered
+2025-10-21T14:54:59.111Z [log] [ManagerDrivers]  
+[Driver:zemismart_motion_temp_
+humidity_illumination_multi_ battery] Tuya Zigbee Driver  
+has been initialized
+2025-10-21T14:54:59.112Z [log] [ManagerDrivers]  
+[Driver:zemismart_motion_temp_
+humidity_illumination_multi_ battery] ✅  Intelligent flow  
+cards registered
+2025-10-21T14:54:59.115Z [log] [ManagerDrivers]  
+[Driver:zemismart_pir_radar_ illumination_sensor_battery]  
+Tuya Zigbee Driver has been initialized
+2025-10-21T14:54:59.118Z [log] [ManagerDrivers]  
+[Driver:zemismart_pir_sensor_ advanced_battery] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.121Z [log] [ManagerDrivers]  
+[Driver:zemismart_pm25_ detector_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.124Z [log] [ManagerDrivers]  
+[Driver:zemismart_presence_ sensor_radar_battery] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.127Z [log] [ManagerDrivers]  
+[Driver:zemismart_radar_ motion_sensor_advanced_ battery]  
+Tuya Zigbee Driver has been initialized
+2025-10-21T14:54:59.130Z [log] [ManagerDrivers]  
+[Driver:zemismart_radar_ motion_sensor_mmwave_battery]  
+Tuya Zigbee Driver has been initialized
+2025-10-21T14:54:59.133Z [log] [ManagerDrivers]  
+[Driver:zemismart_roller_ blind_controller_ac] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.136Z [log] [ManagerDrivers]  
+[Driver:zemismart_roller_ shutter_controller_ac] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.140Z [log] [ManagerDrivers]  
+[Driver:zemismart_roller_ shutter_switch_cr2032] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.144Z [log] [ManagerDrivers]  
+[Driver:zemismart_scene_ controller] Scene Controller  
+Driver has been initialized
+2025-10-21T14:54:59.147Z [log] [ManagerDrivers]  
+[Driver:zemismart_smart_smoke_ detector_advanced_battery]  
+Tuya Zigbee Driver has been initialized
+2025-10-21T14:54:59.151Z [log] [ManagerDrivers]  
+[Driver:zemismart_smart_ switch_1gang_ac] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.155Z [log] [ManagerDrivers]  
+[Driver:zemismart_smart_ switch_1gang_hybrid] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.159Z [log] [ManagerDrivers]  
+[Driver:zemismart_smart_ switch_1gang_internal] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.163Z [log] [ManagerDrivers]  
+[Driver:zemismart_smart_ switch_3gang_ac] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.167Z [log] [ManagerDrivers]  
+[Driver:zemismart_smart_ switch_3gang_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.170Z [log] [ManagerDrivers]  
+[Driver:zemismart_smart_ switch_3gang_hybrid] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.173Z [log] [ManagerDrivers]  
+[Driver:zemismart_smart_ switch_4gang_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.175Z [log] [ManagerDrivers]  
+[Driver:zemismart_smoke_ detector_temp_humidity_
+advanced_battery] Tuya Zigbee Driver has been  
+initialized
+2025-10-21T14:54:59.178Z [log] [ManagerDrivers]  
+[Driver:zemismart_smoke_temp_ humid_sensor_battery] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.181Z [log] [ManagerDrivers]  
+[Driver:zemismart_solar_panel_ controller_aaa] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.184Z [log] [ManagerDrivers]  
+[Driver:zemismart_solar_panel_ controller_cr2032] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.187Z [log] [ManagerDrivers]  
+[Driver:zemismart_switch_ 1gang_battery] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.190Z [log] [ManagerDrivers]  
+[Driver:zemismart_switch_ 5gang_battery] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.194Z [log] [ManagerDrivers]  
+[Driver:zemismart_temp_humid_ sensor_advanced_battery]  
+Tuya Zigbee Driver has been initialized
+2025-10-21T14:54:59.197Z [log] [ManagerDrivers]  
+[Driver:zemismart_temp_humid_
+sensor_leak_detector_battery] Tuya Zigbee Driver has  
+been initialized
+2025-10-21T14:54:59.200Z [log] [ManagerDrivers]  
+[Driver:zemismart_temperature_ sensor_aaa] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.204Z [log] [ManagerDrivers]  
+[Driver:zemismart_temperature_ sensor_advanced_aaa] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.207Z [log] [ManagerDrivers]  
+[Driver:zemismart_temperature_ sensor_advanced_battery]  
+Tuya Zigbee Driver has been initialized
+2025-10-21T14:54:59.211Z [log] [ManagerDrivers]  
+[Driver:zemismart_temperature_ sensor_advanced_cr2032]  
+Tuya Zigbee Driver has been initialized
+2025-10-21T14:54:59.214Z [log] [ManagerDrivers]  
+[Driver:zemismart_temperature_ sensor_battery] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.217Z [log] [ManagerDrivers]  
+[Driver:zemismart_temperature_ sensor_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.221Z [log] [ManagerDrivers]  
+[Driver:zemismart_touch_ switch_1gang_ac] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.224Z [log] [ManagerDrivers]  
+[Driver:zemismart_touch_ switch_3gang_ac] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.226Z [log] [ManagerDrivers]  
+[Driver:zemismart_valve_smart_ aa] Smart Valve Controller  
+Driver has been initialized
+2025-10-21T14:54:59.229Z [log] [ManagerDrivers]  
+[Driver:zemismart_wall_switch_ 1gang_ac] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.232Z [log] [ManagerDrivers]  
+[Driver:zemismart_wall_switch_ 1gang_dc] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.235Z [log] [ManagerDrivers]  
+[Driver:zemismart_wall_switch_ 3gang_ac] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.238Z [log] [ManagerDrivers]  
+[Driver:zemismart_wall_switch_ 3gang_dc] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.241Z [log] [ManagerDrivers]  
+[Driver:zemismart_water_leak_ sensor_battery] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.246Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ scene_controller_4button_
+battery] ✅  Flow cards registered
+2025-10-21T14:54:59.246Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ scene_controller_4button_
+battery] wireless_scene_controller_ 4button_battery  
+driver initialized
+2025-10-21T14:54:59.249Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ switch_1button_cr2032] Scene  
+Controller Driver has been initialized
+2025-10-21T14:54:59.252Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ switch_1button_cr2450] Scene  
+Controller Driver has been initialized
+2025-10-21T14:54:59.255Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ switch_1gang_cr2032] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.258Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ switch_2button_cr2032] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.261Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ switch_3button_cr2032] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.264Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ switch_4button_cr2032] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.267Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ switch_6button_cr2032] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.270Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ switch_8button_cr2032] Tuya  
+Zigbee Driver has been initialized
+stderr:
+n/a
+You can manage your email settings in the Homey Developer Tools.
+[Texte des messages précédents masqué]
+Homey <noreply@homey .app> 21 octobre 2025 à 17:05
+Répondre à : 68f7a137a5ef92505e2b5713@apps-api.athom.com
+À : senetmarne@gmail.com
+Hi Dylan Rajasekaram,
+Your app Universal T uya Zigbee  has received a diagnostics report.
+You can reply to this e-mail to get in touch with the user . Note that the
+user will then be able to see your e-mail address.
+App ID
+com.dlnraja.tuya.zigbee
+App V ersion
+v4.0.5
+Homey V ersion
+v12.4.5-rc.5
+Stack T race
+Note: this log has been manually submitted by a user.
+Log ID: e8c595d9-0cd6-4866-90b0- ead9120dfc16
+User Message:
+Dlnraja rapport
+stdout:
+2025-10-21T14:54:58.956Z [log] [ManagerDrivers]  
+[Driver:moes_wall_switch_ 4gang_dc] Tuya Zigbee Driver  
+has been initialized
+2025-10-21T14:54:58.959Z [log] [ManagerDrivers]  
+[Driver:moes_wall_switch_ 5gang_ac] Tuya Zigbee Driver  
+has been initialized
+2025-10-21T14:54:58.962Z [log] [ManagerDrivers]  
+[Driver:moes_wall_switch_ 6gang_ac] Tuya Zigbee Driver  
+has been initialized
+2025-10-21T14:54:58.965Z [log] [ManagerDrivers]  
+[Driver:moes_wireless_switch_ 2gang_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:58.968Z [log] [ManagerDrivers]  
+[Driver:moes_wireless_switch_ 4button_cr2450] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:58.970Z [log] [ManagerDrivers]  
+[Driver:moes_wireless_switch_ 4gang_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:58.973Z [log] [ManagerDrivers]  
+[Driver:moes_wireless_switch_ 5button_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:58.976Z [log] [ManagerDrivers]  
+[Driver:moes_wireless_switch_ 6gang_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:58.979Z [log] [ManagerDrivers]  
+[Driver:moes_wireless_switch_ cr2032] Tuya Zigbee Driver  
+has been initialized
+2025-10-21T14:54:58.981Z [log] [ManagerDrivers]  
+[Driver:nous_air_quality_ monitor_ac] Tuya Zigbee Driver  
+initialized
+2025-10-21T14:54:58.985Z [log] [ManagerDrivers]  
+[Driver:nous_smart_plug_ dimmer_ac] ✅  Flow cards  
+registered
+2025-10-21T14:54:58.985Z [log] [ManagerDrivers]  
+[Driver:nous_smart_plug_ dimmer_ac]  
+SmartPlugDimmerAcDriver has been initialized
+2025-10-21T14:54:58.988Z [log] [ManagerDrivers]  
+[Driver:nous_zbbridge_ac] Tuya Zigbee Driver has been  
+initialized
+2025-10-21T14:54:58.991Z [log] [ManagerDrivers]  
+[Driver:nous_zigbee_gateway_ hub_ac] Tuya Zigbee Driver  
+has been initialized
+2025-10-21T14:54:59.018Z [log] [ManagerDrivers]  
+[Driver:tuya_climate_monitor_ cr2032] Tuya Zigbee Driver  
+initialized
+2025-10-21T14:54:59.020Z [log] [ManagerDrivers]  
+[Driver:tuya_comprehensive_ air_monitor_ac] Comprehensive  
+Air Monitor Driver has been initialized
+2025-10-21T14:54:59.024Z [log] [ManagerDrivers]  
+[Driver:tuya_door_controller_ ac] Tuya Zigbee Driver  
+initialized
+2025-10-21T14:54:59.027Z [log] [ManagerDrivers]  
+[Driver:tuya_doorbell_camera_ ac] ✅ Flow cards  
+registered
+2025-10-21T14:54:59.028Z [log] [ManagerDrivers]  
+[Driver:tuya_doorbell_camera_ ac] doorbell_camera_ac  
+driver initialized
+2025-10-21T14:54:59.030Z [log] [ManagerDrivers]  
+[Driver:tuya_doorbell_cr2032] Tuya Zigbee Driver  
+initialized
+2025-10-21T14:54:59.033Z [log] [ManagerDrivers]  
+[Driver:tuya_garage_door_ controller_ac] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.036Z [log] [ManagerDrivers]  
+[Driver:tuya_gas_sensor_ ts0601_ac] ✅  Flow cards  
+registered
+2025-10-21T14:54:59.037Z [log] [ManagerDrivers]  
+[Driver:tuya_gas_sensor_ ts0601_ac] Gas Sensor TS0601  
+driver initialized
+2025-10-21T14:54:59.039Z [log] [ManagerDrivers]  
+[Driver:tuya_humidity_ controller_ac] Tuya Zigbee Driver  
+has been initialized
+2025-10-21T14:54:59.042Z [log] [ManagerDrivers]  
+[Driver:tuya_led_strip_ outdoor_color_ac] ✅  Flow cards  
+registered
+2025-10-21T14:54:59.043Z [log] [ManagerDrivers]  
+[Driver:tuya_led_strip_ outdoor_color_ac]  
+led_strip_outdoor_color_ac driver initialized
+2025-10-21T14:54:59.046Z [log] [ManagerDrivers]  
+[Driver:tuya_outdoor_siren_ cr2032] Tuya Zigbee Driver  
+has been initialized
+2025-10-21T14:54:59.048Z [log] [ManagerDrivers]  
+[Driver:tuya_radiator_valve_ smart_hybrid] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.052Z [log] [ManagerDrivers]  
+[Driver:tuya_siren_ac] ✅  Flow cards registered
+2025-10-21T14:54:59.052Z [log] [ManagerDrivers]  
+[Driver:tuya_siren_ac] alarm_siren_chime_ac driver  
+initialized
+2025-10-21T14:54:59.055Z [log] [ManagerDrivers]  
+[Driver:tuya_smart_switch_ 1gang_ac] Tuya Zigbee Driver  
+initialized
+2025-10-21T14:54:59.058Z [log] [ManagerDrivers]  
+[Driver:tuya_smart_switch_ 3gang_ac] Tuya Zigbee Driver  
+initialized
+2025-10-21T14:54:59.061Z [log] [ManagerDrivers]  
+[Driver:tuya_soil_tester_temp_ humid_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.064Z [log] [ManagerDrivers]  
+[Driver:tuya_temperature_ controller_hybrid] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.067Z [log] [ManagerDrivers]  
+[Driver:tuya_water_valve_aa] Tuya Zigbee Driver has been  
+initialized
+2025-10-21T14:54:59.070Z [log] [ManagerDrivers]  
+[Driver:tuya_water_valve_ smart_aa] Tuya Zigbee Driver  
+has been initialized
+2025-10-21T14:54:59.073Z [log] [ManagerDrivers]  
+[Driver:tuya_water_valve_ smart_hybrid] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.077Z [log] [ManagerDrivers]  
+[Driver:zemismart_air_quality_ monitor_pro_internal] Tuya  
+Zigbee Driver initialized
+2025-10-21T14:54:59.080Z [log] [ManagerDrivers]  
+[Driver:zemismart_curtain_ motor_ac] Tuya Zigbee Driver  
+initialized
+2025-10-21T14:54:59.083Z [log] [ManagerDrivers]  
+[Driver:zemismart_curtain_ motor_internal] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.086Z [log] [ManagerDrivers]  
+[Driver:zemismart_doorbell_ button_internal] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.090Z [log] [ManagerDrivers]  
+[Driver:zemismart_gas_ detector_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.093Z [log] [ManagerDrivers]  
+[Driver:zemismart_lock_basic_ aa] Tuya Zigbee Driver  
+initialized
+2025-10-21T14:54:59.097Z [log] [ManagerDrivers]  
+[Driver:zemismart_lock_ fingerprint_aa] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.100Z [log] [ManagerDrivers]  
+[Driver:zemismart_lock_smart_ aa] Tuya Zigbee Driver has  
+been initialized
+2025-10-21T14:54:59.104Z [log] [ManagerDrivers]  
+[Driver:zemismart_motion_ sensor_battery] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.107Z [log] [ManagerDrivers]  
+[Driver:zemismart_motion_ sensor_pir_ac_battery] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.111Z [log] [ManagerDrivers]  
+[Driver:zemismart_motion_temp_
+humidity_illumination_multi_ battery] ✅  Flow cards  
+registered
+2025-10-21T14:54:59.111Z [log] [ManagerDrivers]  
+[Driver:zemismart_motion_temp_
+humidity_illumination_multi_ battery] Tuya Zigbee Driver  
+has been initialized
+2025-10-21T14:54:59.112Z [log] [ManagerDrivers]  
+[Driver:zemismart_motion_temp_
+humidity_illumination_multi_ battery] ✅  Intelligent flow  
+cards registered
+2025-10-21T14:54:59.115Z [log] [ManagerDrivers]  
+[Driver:zemismart_pir_radar_ illumination_sensor_battery]  
+Tuya Zigbee Driver has been initialized
+2025-10-21T14:54:59.118Z [log] [ManagerDrivers]  
+[Driver:zemismart_pir_sensor_ advanced_battery] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.121Z [log] [ManagerDrivers]  
+[Driver:zemismart_pm25_ detector_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.124Z [log] [ManagerDrivers]  
+[Driver:zemismart_presence_ sensor_radar_battery] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.127Z [log] [ManagerDrivers]  
+[Driver:zemismart_radar_ motion_sensor_advanced_ battery]  
+Tuya Zigbee Driver has been initialized
+2025-10-21T14:54:59.130Z [log] [ManagerDrivers]  
+[Driver:zemismart_radar_ motion_sensor_mmwave_battery]  
+Tuya Zigbee Driver has been initialized
+2025-10-21T14:54:59.133Z [log] [ManagerDrivers]  
+[Driver:zemismart_roller_ blind_controller_ac] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.136Z [log] [ManagerDrivers]  
+[Driver:zemismart_roller_ shutter_controller_ac] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.140Z [log] [ManagerDrivers]  
+[Driver:zemismart_roller_ shutter_switch_cr2032] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.144Z [log] [ManagerDrivers]  
+[Driver:zemismart_scene_ controller] Scene Controller  
+Driver has been initialized
+2025-10-21T14:54:59.147Z [log] [ManagerDrivers]  
+[Driver:zemismart_smart_smoke_ detector_advanced_battery]  
+Tuya Zigbee Driver has been initialized
+2025-10-21T14:54:59.151Z [log] [ManagerDrivers]  
+[Driver:zemismart_smart_ switch_1gang_ac] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.155Z [log] [ManagerDrivers]  
+[Driver:zemismart_smart_ switch_1gang_hybrid] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.159Z [log] [ManagerDrivers]  
+[Driver:zemismart_smart_ switch_1gang_internal] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.163Z [log] [ManagerDrivers]  
+[Driver:zemismart_smart_ switch_3gang_ac] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.167Z [log] [ManagerDrivers]  
+[Driver:zemismart_smart_ switch_3gang_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.170Z [log] [ManagerDrivers]  
+[Driver:zemismart_smart_ switch_3gang_hybrid] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.173Z [log] [ManagerDrivers]  
+[Driver:zemismart_smart_ switch_4gang_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.175Z [log] [ManagerDrivers]  
+[Driver:zemismart_smoke_ detector_temp_humidity_
+advanced_battery] Tuya Zigbee Driver has been  
+initialized
+2025-10-21T14:54:59.178Z [log] [ManagerDrivers]  
+[Driver:zemismart_smoke_temp_ humid_sensor_battery] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.181Z [log] [ManagerDrivers]  
+[Driver:zemismart_solar_panel_ controller_aaa] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.184Z [log] [ManagerDrivers]  
+[Driver:zemismart_solar_panel_ controller_cr2032] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.187Z [log] [ManagerDrivers]  
+[Driver:zemismart_switch_ 1gang_battery] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.190Z [log] [ManagerDrivers]  
+[Driver:zemismart_switch_ 5gang_battery] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.194Z [log] [ManagerDrivers]  
+[Driver:zemismart_temp_humid_ sensor_advanced_battery]  
+Tuya Zigbee Driver has been initialized
+2025-10-21T14:54:59.197Z [log] [ManagerDrivers]  
+[Driver:zemismart_temp_humid_
+sensor_leak_detector_battery] Tuya Zigbee Driver has  
+been initialized
+2025-10-21T14:54:59.200Z [log] [ManagerDrivers]  
+[Driver:zemismart_temperature_ sensor_aaa] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.204Z [log] [ManagerDrivers]  
+[Driver:zemismart_temperature_ sensor_advanced_aaa] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.207Z [log] [ManagerDrivers]  
+[Driver:zemismart_temperature_ sensor_advanced_battery]  
+Tuya Zigbee Driver has been initialized
+2025-10-21T14:54:59.211Z [log] [ManagerDrivers]  
+[Driver:zemismart_temperature_ sensor_advanced_cr2032]  
+Tuya Zigbee Driver has been initialized
+2025-10-21T14:54:59.214Z [log] [ManagerDrivers]  
+[Driver:zemismart_temperature_ sensor_battery] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.217Z [log] [ManagerDrivers]  
+[Driver:zemismart_temperature_ sensor_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.221Z [log] [ManagerDrivers]  
+[Driver:zemismart_touch_ switch_1gang_ac] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.224Z [log] [ManagerDrivers]  
+[Driver:zemismart_touch_ switch_3gang_ac] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.226Z [log] [ManagerDrivers]  
+[Driver:zemismart_valve_smart_ aa] Smart Valve Controller  
+Driver has been initialized
+2025-10-21T14:54:59.229Z [log] [ManagerDrivers]  
+[Driver:zemismart_wall_switch_ 1gang_ac] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.232Z [log] [ManagerDrivers]  
+[Driver:zemismart_wall_switch_ 1gang_dc] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.235Z [log] [ManagerDrivers]  
+[Driver:zemismart_wall_switch_ 3gang_ac] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.238Z [log] [ManagerDrivers]  
+[Driver:zemismart_wall_switch_ 3gang_dc] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.241Z [log] [ManagerDrivers]  
+[Driver:zemismart_water_leak_ sensor_battery] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T14:54:59.246Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ scene_controller_4button_
+battery] ✅  Flow cards registered
+2025-10-21T14:54:59.246Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ scene_controller_4button_
+battery] wireless_scene_controller_ 4button_battery  
+driver initialized
+2025-10-21T14:54:59.249Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ switch_1button_cr2032] Scene  
+Controller Driver has been initialized
+2025-10-21T14:54:59.252Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ switch_1button_cr2450] Scene  
+Controller Driver has been initialized
+2025-10-21T14:54:59.255Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ switch_1gang_cr2032] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.258Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ switch_2button_cr2032] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.261Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ switch_3button_cr2032] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.264Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ switch_4button_cr2032] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.267Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ switch_6button_cr2032] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T14:54:59.270Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ switch_8button_cr2032] Tuya  
+Zigbee Driver has been initialized
+stderr:
+n/a
+You can manage your email settings in the Homey Developer Tools.
+[Texte des messages précédents masqué]
+Homey <noreply@homey .app> 21 octobre 2025 à 17:22
+Répondre à : 68f7a53540a7ecafcb41c956@apps-api.athom.com
+À : senetmarne@gmail.com
+Hi Dylan Rajasekaram,
+Your app Universal T uya Zigbee  has received a diagnostics report.
+You can reply to this e-mail to get in touch with the user . Note that the
+user will then be able to see your e-mail address.
+App ID
+com.dlnraja.tuya.zigbee
+App V ersion
+v4.0.5
+Homey V ersion
+v12.8.0
+Stack T race
+Note: this log has been manually submitted by a user.
+Log ID: 2c72fd5f-7350-447c-9ab1- 24dd4dd39f8d
+User Message:
+No Data at all anymore on both devices
+stdout:
+2025-10-21T15:01:43.999Z [log] [ManagerDrivers]  
+[Driver:moes_wall_switch_ 4gang_dc] Tuya Zigbee Driver  
+has been initialized
+2025-10-21T15:01:44.032Z [log] [ManagerDrivers]  
+[Driver:moes_wall_switch_ 5gang_ac] Tuya Zigbee Driver  
+has been initialized
+2025-10-21T15:01:44.037Z [log] [ManagerDrivers]  
+[Driver:moes_wall_switch_ 6gang_ac] Tuya Zigbee Driver  
+has been initialized
+2025-10-21T15:01:44.156Z [log] [ManagerDrivers]  
+[Driver:moes_wireless_switch_ 2gang_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.160Z [log] [ManagerDrivers]  
+[Driver:moes_wireless_switch_ 4button_cr2450] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.164Z [log] [ManagerDrivers]  
+[Driver:moes_wireless_switch_ 4gang_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.168Z [log] [ManagerDrivers]  
+[Driver:moes_wireless_switch_ 5button_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.172Z [log] [ManagerDrivers]  
+[Driver:moes_wireless_switch_ 6gang_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.175Z [log] [ManagerDrivers]  
+[Driver:moes_wireless_switch_ cr2032] Tuya Zigbee Driver  
+has been initialized
+2025-10-21T15:01:44.178Z [log] [ManagerDrivers]  
+[Driver:nous_air_quality_ monitor_ac] Tuya Zigbee Driver  
+initialized
+2025-10-21T15:01:44.183Z [log] [ManagerDrivers]  
+[Driver:nous_smart_plug_ dimmer_ac] ✅  Flow cards  
+registered
+2025-10-21T15:01:44.183Z [log] [ManagerDrivers]  
+[Driver:nous_smart_plug_ dimmer_ac]  
+SmartPlugDimmerAcDriver has been initialized
+2025-10-21T15:01:44.186Z [log] [ManagerDrivers]  
+[Driver:nous_zbbridge_ac] Tuya Zigbee Driver has been  
+initialized
+2025-10-21T15:01:44.190Z [log] [ManagerDrivers]  
+[Driver:nous_zigbee_gateway_ hub_ac] Tuya Zigbee Driver  
+has been initialized
+2025-10-21T15:01:44.220Z [log] [ManagerDrivers]  
+[Driver:tuya_climate_monitor_ cr2032] Tuya Zigbee Driver  
+initialized
+2025-10-21T15:01:44.224Z [log] [ManagerDrivers]  
+[Driver:tuya_comprehensive_ air_monitor_ac] Comprehensive  
+Air Monitor Driver has been initialized
+2025-10-21T15:01:44.228Z [log] [ManagerDrivers]  
+[Driver:tuya_door_controller_ ac] Tuya Zigbee Driver  
+initialized
+2025-10-21T15:01:44.233Z [log] [ManagerDrivers]  
+[Driver:tuya_doorbell_camera_ ac] ✅ Flow cards  
+registered
+2025-10-21T15:01:44.233Z [log] [ManagerDrivers]  
+[Driver:tuya_doorbell_camera_ ac] doorbell_camera_ac  
+driver initialized
+2025-10-21T15:01:44.236Z [log] [ManagerDrivers]  
+[Driver:tuya_doorbell_cr2032] Tuya Zigbee Driver  
+initialized
+2025-10-21T15:01:44.240Z [log] [ManagerDrivers]  
+[Driver:tuya_garage_door_ controller_ac] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.245Z [log] [ManagerDrivers]  
+[Driver:tuya_gas_sensor_ ts0601_ac] ✅  Flow cards  
+registered
+2025-10-21T15:01:44.245Z [log] [ManagerDrivers]  
+[Driver:tuya_gas_sensor_ ts0601_ac] Gas Sensor TS0601  
+driver initialized
+2025-10-21T15:01:44.249Z [log] [ManagerDrivers]  
+[Driver:tuya_humidity_ controller_ac] Tuya Zigbee Driver  
+has been initialized
+2025-10-21T15:01:44.254Z [log] [ManagerDrivers]  
+[Driver:tuya_led_strip_ outdoor_color_ac] ✅  Flow cards  
+registered
+2025-10-21T15:01:44.255Z [log] [ManagerDrivers]  
+[Driver:tuya_led_strip_ outdoor_color_ac]  
+led_strip_outdoor_color_ac driver initialized
+2025-10-21T15:01:44.259Z [log] [ManagerDrivers]  
+[Driver:tuya_outdoor_siren_ cr2032] Tuya Zigbee Driver  
+has been initialized
+2025-10-21T15:01:44.375Z [log] [ManagerDrivers]  
+[Driver:tuya_radiator_valve_ smart_hybrid] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.379Z [log] [ManagerDrivers]  
+[Driver:tuya_siren_ac] ✅  Flow cards registered
+2025-10-21T15:01:44.379Z [log] [ManagerDrivers]  
+[Driver:tuya_siren_ac] alarm_siren_chime_ac driver  
+initialized
+2025-10-21T15:01:44.383Z [log] [ManagerDrivers]  
+[Driver:tuya_smart_switch_ 1gang_ac] Tuya Zigbee Driver  
+initialized
+2025-10-21T15:01:44.386Z [log] [ManagerDrivers]  
+[Driver:tuya_smart_switch_ 3gang_ac] Tuya Zigbee Driver  
+initialized
+2025-10-21T15:01:44.391Z [log] [ManagerDrivers]  
+[Driver:tuya_soil_tester_temp_ humid_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.398Z [log] [ManagerDrivers]  
+[Driver:tuya_temperature_ controller_hybrid] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.405Z [log] [ManagerDrivers]  
+[Driver:tuya_water_valve_aa] Tuya Zigbee Driver has been  
+initialized
+2025-10-21T15:01:44.429Z [log] [ManagerDrivers]  
+[Driver:tuya_water_valve_ smart_aa] Tuya Zigbee Driver  
+has been initialized
+2025-10-21T15:01:44.561Z [log] [ManagerDrivers]  
+[Driver:tuya_water_valve_ smart_hybrid] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.585Z [log] [ManagerDrivers]  
+[Driver:zemismart_air_quality_ monitor_pro_internal] Tuya  
+Zigbee Driver initialized
+2025-10-21T15:01:44.592Z [log] [ManagerDrivers]  
+[Driver:zemismart_curtain_ motor_ac] Tuya Zigbee Driver  
+initialized
+2025-10-21T15:01:44.611Z [log] [ManagerDrivers]  
+[Driver:zemismart_curtain_ motor_internal] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.644Z [log] [ManagerDrivers]  
+[Driver:zemismart_doorbell_ button_internal] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.648Z [log] [ManagerDrivers]  
+[Driver:zemismart_gas_ detector_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.669Z [log] [ManagerDrivers]  
+[Driver:zemismart_lock_basic_ aa] Tuya Zigbee Driver  
+initialized
+2025-10-21T15:01:44.720Z [log] [ManagerDrivers]  
+[Driver:zemismart_lock_ fingerprint_aa] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.729Z [log] [ManagerDrivers]  
+[Driver:zemismart_lock_smart_ aa] Tuya Zigbee Driver has  
+been initialized
+2025-10-21T15:01:44.740Z [log] [ManagerDrivers]  
+[Driver:zemismart_motion_ sensor_battery] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.744Z [log] [ManagerDrivers]  
+[Driver:zemismart_motion_ sensor_pir_ac_battery] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T15:01:44.749Z [log] [ManagerDrivers]  
+[Driver:zemismart_motion_temp_
+humidity_illumination_multi_ battery] ✅  Flow cards  
+registered
+2025-10-21T15:01:44.749Z [log] [ManagerDrivers]  
+[Driver:zemismart_motion_temp_
+humidity_illumination_multi_ battery] Tuya Zigbee Driver  
+has been initialized
+2025-10-21T15:01:44.750Z [log] [ManagerDrivers]  
+[Driver:zemismart_motion_temp_
+humidity_illumination_multi_ battery] ✅  Intelligent flow  
+cards registered
+2025-10-21T15:01:44.754Z [log] [ManagerDrivers]  
+[Driver:zemismart_pir_sensor_ advanced_battery] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T15:01:44.761Z [log] [ManagerDrivers]  
+[Driver:zemismart_pir_radar_ illumination_sensor_battery]  
+Tuya Zigbee Driver has been initialized
+2025-10-21T15:01:44.769Z [log] [ManagerDrivers]  
+[Driver:zemismart_pm25_ detector_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.779Z [log] [ManagerDrivers]  
+[Driver:zemismart_presence_ sensor_radar_battery] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T15:01:44.792Z [log] [ManagerDrivers]  
+[Driver:zemismart_radar_ motion_sensor_advanced_ battery]  
+Tuya Zigbee Driver has been initialized
+2025-10-21T15:01:44.796Z [log] [ManagerDrivers]  
+[Driver:zemismart_radar_ motion_sensor_mmwave_battery]  
+Tuya Zigbee Driver has been initialized
+2025-10-21T15:01:44.800Z [log] [ManagerDrivers]  
+[Driver:zemismart_roller_ blind_controller_ac] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T15:01:44.804Z [log] [ManagerDrivers]  
+[Driver:zemismart_roller_ shutter_controller_ac] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T15:01:44.808Z [log] [ManagerDrivers]  
+[Driver:zemismart_roller_ shutter_switch_cr2032] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T15:01:44.812Z [log] [ManagerDrivers]  
+[Driver:zemismart_scene_ controller] Scene Controller  
+Driver has been initialized
+2025-10-21T15:01:44.816Z [log] [ManagerDrivers]  
+[Driver:zemismart_smart_smoke_ detector_advanced_battery]  
+Tuya Zigbee Driver has been initialized
+2025-10-21T15:01:44.820Z [log] [ManagerDrivers]  
+[Driver:zemismart_smart_ switch_1gang_ac] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.824Z [log] [ManagerDrivers]  
+[Driver:zemismart_smart_ switch_1gang_hybrid] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.830Z [log] [ManagerDrivers]  
+[Driver:zemismart_smart_ switch_1gang_internal] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T15:01:44.834Z [log] [ManagerDrivers]  
+[Driver:zemismart_smart_ switch_3gang_ac] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.838Z [log] [ManagerDrivers]  
+[Driver:zemismart_smart_ switch_3gang_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.842Z [log] [ManagerDrivers]  
+[Driver:zemismart_smart_ switch_3gang_hybrid] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.846Z [log] [ManagerDrivers]  
+[Driver:zemismart_smart_ switch_4gang_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.849Z [log] [ManagerDrivers]  
+[Driver:zemismart_smoke_ detector_temp_humidity_
+advanced_battery] Tuya Zigbee Driver has been  
+initialized
+2025-10-21T15:01:44.853Z [log] [ManagerDrivers]  
+[Driver:zemismart_smoke_temp_ humid_sensor_battery] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T15:01:44.905Z [log] [ManagerDrivers]  
+[Driver:zemismart_solar_panel_ controller_aaa] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T15:01:44.912Z [log] [ManagerDrivers]  
+[Driver:zemismart_solar_panel_ controller_cr2032] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T15:01:44.916Z [log] [ManagerDrivers]  
+[Driver:zemismart_switch_ 1gang_battery] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.922Z [log] [ManagerDrivers]  
+[Driver:zemismart_switch_ 5gang_battery] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.926Z [log] [ManagerDrivers]  
+[Driver:zemismart_temp_humid_ sensor_advanced_battery]  
+Tuya Zigbee Driver has been initialized
+2025-10-21T15:01:44.931Z [log] [ManagerDrivers]  
+[Driver:zemismart_temp_humid_
+sensor_leak_detector_battery] Tuya Zigbee Driver has  
+been initialized
+2025-10-21T15:01:44.935Z [log] [ManagerDrivers]  
+[Driver:zemismart_temperature_ sensor_aaa] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.940Z [log] [ManagerDrivers]  
+[Driver:zemismart_temperature_ sensor_advanced_aaa] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T15:01:44.944Z [log] [ManagerDrivers]  
+[Driver:zemismart_temperature_ sensor_advanced_battery]  
+Tuya Zigbee Driver has been initialized
+2025-10-21T15:01:44.948Z [log] [ManagerDrivers]  
+[Driver:zemismart_temperature_ sensor_advanced_cr2032]  
+Tuya Zigbee Driver has been initialized
+2025-10-21T15:01:44.953Z [log] [ManagerDrivers]  
+[Driver:zemismart_temperature_ sensor_battery] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T15:01:44.958Z [log] [ManagerDrivers]  
+[Driver:zemismart_temperature_ sensor_cr2032] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.962Z [log] [ManagerDrivers]  
+[Driver:zemismart_touch_ switch_1gang_ac] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.979Z [log] [ManagerDrivers]  
+[Driver:zemismart_touch_ switch_3gang_ac] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:44.995Z [log] [ManagerDrivers]  
+[Driver:zemismart_valve_smart_ aa] Smart Valve Controller  
+Driver has been initialized
+2025-10-21T15:01:44.999Z [log] [ManagerDrivers]  
+[Driver:zemismart_wall_switch_ 1gang_ac] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:45.002Z [log] [ManagerDrivers]  
+[Driver:zemismart_wall_switch_ 1gang_dc] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:45.006Z [log] [ManagerDrivers]  
+[Driver:zemismart_wall_switch_ 3gang_ac] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:45.010Z [log] [ManagerDrivers]  
+[Driver:zemismart_wall_switch_ 3gang_dc] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:45.015Z [log] [ManagerDrivers]  
+[Driver:zemismart_water_leak_ sensor_battery] Tuya Zigbee  
+Driver has been initialized
+2025-10-21T15:01:45.019Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ scene_controller_4button_
+battery] ✅  Flow cards registered
+2025-10-21T15:01:45.020Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ scene_controller_4button_
+battery] wireless_scene_controller_ 4button_battery  
+driver initialized
+2025-10-21T15:01:45.024Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ switch_1button_cr2032] Scene  
+Controller Driver has been initialized
+2025-10-21T15:01:45.028Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ switch_1button_cr2450] Scene  
+Controller Driver has been initialized
+2025-10-21T15:01:45.031Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ switch_1gang_cr2032] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T15:01:45.036Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ switch_2button_cr2032] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T15:01:45.045Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ switch_3button_cr2032] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T15:01:45.068Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ switch_4button_cr2032] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T15:01:45.073Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ switch_6button_cr2032] Tuya  
+Zigbee Driver has been initialized
+2025-10-21T15:01:45.125Z [log] [ManagerDrivers]  
+[Driver:zemismart_wireless_ switch_8button_cr2032] Tuya  
+Zigbee Driver has been initialized
+stderr:
+n/a
+You can manage your email settings in the Homey Developer Tools.
+[Texte des messages précédents masqué]

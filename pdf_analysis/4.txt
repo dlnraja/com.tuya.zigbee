@@ -1,0 +1,393 @@
+Dylan Rajasekaram <senetmarne@gmail.com>
+[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report
+1 message
+Homey <noreply@homey .app> 12 novembre 2025 à 22:37
+Répondre à : 6914fe2ea156f fc0e85f f40d@apps-api.athom.com
+À : senetmarne@gmail.com
+Hi Dylan Rajasekaram,
+Your app Universal T uya Zigbee  has received a diagnostics report.
+You can reply to this e-mail to get in touch with the user . Note that the
+user will then be able to see your e-mail address.
+App ID
+com.dlnraja.tuya.zigbee
+App V ersion
+v4.9.331
+Homey V ersion
+v12.9.0-rc.14
+Homey Model ID
+homey5q
+Homey Model Name
+Homey Pro (Early 2023)
+Stack T race
+Note: this log has been manually submitted by a user.
+Log ID: 27e5a523-b1de-4d35-b76d- a52226be61eb
+User Message:
+Aucune amélioration après paring . Issue USB , pas de  
+data sur tout les autres devices , pas de sortie de  
+
+batterie ext ext
+stdout:
+2025-11-12T21:36:52.198Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] [BACKGROUND] Step FINAL:  
+Smart driver adaptation & migration check...
+2025-11-12T21:36:52.198Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697]
+2025-11-12T21:36:52.199Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697]  
+══════════════════════════════
+══════════════════════════════ ══════════
+2025-11-12T21:36:52.199Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] 🤖  [SMART ADAPT]  
+INTELLIGENT DRIVER ADAPTATION START
+2025-11-12T21:36:52.199Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697]  
+══════════════════════════════
+══════════════════════════════ ══════════
+2025-11-12T21:36:52.200Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] 📊  [SMART ADAPT] Collecting  
+device information (enriched)...
+2025-11-12T21:36:52.200Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] ✅  [DATABASE] Found device:  
+SOS Emergency Button
+2025-11-12T21:36:52.201Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] Recommended driver:  
+button_sos
+2025-11-12T21:36:52.201Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] Type: standard_zigbee_ias
+2025-11-12T21:36:52.202Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] 📍  Found 1 endpoint(s): 1
+2025-11-12T21:36:52.202Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] 🔋  [BATTERY-READER]  
+Attempting enhanced battery/energy read...
+2025-11-12T21:36:52.203Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] [BATTERY-READER] Trying  
+Tuya DP protocol...
+2025-11-12T21:36:52.203Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] [BATTERY-READER] ℹ  Not a 
+Tuya DP device - standard Zigbee
+2025-11-12T21:36:52.203Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] ℹ  Battery read: No data  
+(source: unknown)
+2025-11-12T21:36:52.204Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] ✅  Device info collected  
+(enriched)
+2025-11-12T21:36:52.204Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] Manufacturer:  
+_TZ3000_0dumfk2z
+2025-11-12T21:36:52.204Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] Model: TS0215A
+2025-11-12T21:36:52.205Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] Power Source: unknown
+2025-11-12T21:36:52.205Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] Endpoints: 1
+2025-11-12T21:36:52.206Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] Clusters: 2
+2025-11-12T21:36:52.206Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] 🔍  [SMART ADAPT] Analyzing  
+clusters...
+2025-11-12T21:36:52.207Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] 🔘  BUTTON/REMOTE DETECTED  
+(from driver name) - Controller device, NOT  
+controllable!
+2025-11-12T21:36:52.207Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] 🔘  CRITICAL: Will NOT add  
+onoff capability (buttons send commands, not receive)
+2025-11-12T21:36:52.207Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] 🎯  [SMART ADAPT] Detecting  
+real capabilities...
+2025-11-12T21:36:52.208Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] 🔘  BUTTON DEVICE - Special  
+capability rules:
+2025-11-12T21:36:52.208Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] ✅  Buttons ONLY need:  
+measure_battery
+2025-11-12T21:36:52.209Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] ❌  Buttons MUST NOT have:  
+onoff, dim, alarm_motion, etc.
+2025-11-12T21:36:52.209Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] 🔘  Button capabilities  
+configured correctly
+2025-11-12T21:36:52.210Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] ✅  Real capabilities  
+detected
+2025-11-12T21:36:52.210Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] Required: none
+2025-11-12T21:36:52.210Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] Optional: none
+2025-11-12T21:36:52.211Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] Forbidden: onoff, dim,  
+alarm_motion, alarm_contact, measure_power,  
+measure_voltage, measure_current
+2025-11-12T21:36:52.211Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] ⚖  [SMART ADAPT] Comparing  
+with current driver...
+2025-11-12T21:36:52.211Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] ✅  Comparison complete
+2025-11-12T21:36:52.212Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] Needs Adaptation: NO
+2025-11-12T21:36:52.212Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] ✅  Correct: all
+2025-11-12T21:36:52.212Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] ✅  [SMART ADAPT] Driver is  
+CORRECT - No adaptation needed
+2025-11-12T21:36:52.213Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] ⚙  [SMART ADAPT] Auto-
+configuring capabilities...
+2025-11-12T21:36:52.213Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] ✅  Capabilities auto-
+configured
+2025-11-12T21:36:52.214Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] 🔄  [SMART ADAPT] Checking  
+driver assignment (SAFE mode)...
+2025-11-12T21:36:52.214Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] ✅  [SAFE-SWITCH] Driver is  
+correct - No migration needed
+2025-11-12T21:36:52.215Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] 📡  [SMART ADAPT]  
+Configuring data collection & KPI...
+2025-11-12T21:36:52.215Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] 🔧  [CLUSTER-CONFIG] Auto-
+configuring attribute reporting...
+2025-11-12T21:36:52.216Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] [CLUSTER-CONFIG] 🔧  Auto-
+configuring attribute reporting...
+2025-11-12T21:36:52.216Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] [CLUSTER-CONFIG] ✅  Auto-
+configuration complete: {
+battery: false,
+power: false,
+climate: false,
+onoff: false,
+level: false
+}
+2025-11-12T21:36:52.217Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] ✅  [CLUSTER-CONFIG]  
+Configuration complete: {
+battery: false,
+power: false,
+climate: false,
+onoff: false,
+level: false
+}
+2025-11-12T21:36:52.217Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] 📡  [DATA-COLLECTOR]  
+Registering attribute report listeners...
+2025-11-12T21:36:52.218Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] [DATA-COLLECTOR] 📡 
+Registering attribute report listeners...
+2025-11-12T21:36:52.218Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] [DATA-COLLECTOR] ✅  Report 
+listeners registered
+2025-11-12T21:36:52.218Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] ✅  [DATA-COLLECTOR]  
+Listeners registered
+2025-11-12T21:36:52.219Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] 🔄  [DATA-COLLECTOR]  
+Starting periodic polling (5min interval)...
+2025-11-12T21:36:52.219Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] [DATA-COLLECTOR] 🔄 
+Starting periodic polling (300s)...
+2025-11-12T21:36:52.220Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] [DATA-COLLECTOR] 📊  Polling  
+data...
+2025-11-12T21:36:52.220Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] [BATTERY-READER] Trying  
+Tuya DP protocol...
+2025-11-12T21:36:52.220Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] [BATTERY-READER] ℹ  Not a 
+Tuya DP device - standard Zigbee
+2025-11-12T21:36:52.221Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] ✅  [DATA-COLLECTOR] Polling  
+started
+2025-11-12T21:36:52.222Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] [DATA-COLLECTOR] ✅  Polling  
+complete
+2025-11-12T21:36:52.222Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697]  
+══════════════════════════════
+══════════════════════════════ ══════════
+2025-11-12T21:36:52.222Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] 🎉  [SMART ADAPT] ADAPTATION  
+COMPLETE
+2025-11-12T21:36:52.223Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697]  
+══════════════════════════════
+══════════════════════════════ ══════════
+2025-11-12T21:36:52.223Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697]
+2025-11-12T21:36:52.224Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] [SMART ADAPT] ✅  Analysis  
+complete
+2025-11-12T21:36:52.224Z [log] 🔍  [MIGRATION]  
+Determining best driver...
+2025-11-12T21:36:52.224Z [log] ✅  Best driver: unknown  
+(confidence: 0)
+2025-11-12T21:36:52.225Z [log] Reasons:
+2025-11-12T21:36:52.225Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] [MIGRATION] ✅  Driver is  
+correct
+2025-11-12T21:36:52.225Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] [OK] ✅  Background  
+initialization complete!
+2025-11-12T21:36:52.226Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] Final power type: BATTERY
+2025-11-12T21:36:52.226Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:e107628d-
+3836-4741- 9615-e28116734697] Battery type: CR2032
+2025-11-12T21:37:02.566Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:0cd27abb-955c-4a0d-
+ad24-8dff6e19ffac] Gang 1 onoff: false
+2025-11-12T21:37:02.647Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:0cd27abb-955c-4a0d-
+ad24-8dff6e19ffac] [RECV] Gang 1 cluster update: false
+2025-11-12T21:37:02.651Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:0cd27abb-955c-4a0d-
+ad24-8dff6e19ffac] [OK] Gang 1 set to: false
+2025-11-12T21:37:03.127Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:0cd27abb-955c-4a0d-
+ad24-8dff6e19ffac] Gang 1 onoff: true
+2025-11-12T21:37:03.206Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:0cd27abb-955c-4a0d-
+ad24-8dff6e19ffac] [OK] Gang 1 set to: true
+2025-11-12T21:37:03.207Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:0cd27abb-955c-4a0d-
+ad24-8dff6e19ffac] [RECV] Gang 1 cluster update: true
+2025-11-12T21:37:05.628Z [log] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:0cd27abb-955c-4a0d-
+ad24-8dff6e19ffac] [RECV] Gang 1 cluster update: true
+2025-11-12T21:37:14.763Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:8b83343c-
+53f4-45dc- b596-36e86fff6bcd] [DATA-COLLECTOR] 📊  Polling  
+data...
+2025-11-12T21:37:14.764Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:8b83343c-
+53f4-45dc- b596-36e86fff6bcd] [BATTERY-READER] Trying  
+Tuya DP protocol...
+2025-11-12T21:37:14.764Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:8b83343c-
+53f4-45dc- b596-36e86fff6bcd] [BATTERY-READER] ℹ  Not a 
+Tuya DP device - standard Zigbee
+2025-11-12T21:37:14.765Z [log] [ManagerDrivers]  
+[Driver:button_emergency_ advanced] [Device:8b83343c-
+53f4-45dc- b596-36e86fff6bcd] [DATA-COLLECTOR] ✅  Polling  
+complete
+2025-11-12T21:37:14.765Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:5f042148-c6f1-4eb1-
+9dd5-dde50da023b7] [DATA-COLLECTOR] 📊  Polling data...
+2025-11-12T21:37:14.766Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:5f042148-c6f1-4eb1-
+9dd5-dde50da023b7] [BATTERY-READER] Trying Tuya DP  
+protocol...
+2025-11-12T21:37:14.766Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:5f042148-c6f1-4eb1-
+9dd5-dde50da023b7] [BATTERY-READER] ℹ  Not a Tuya DP  
+device - standard Zigbee
+2025-11-12T21:37:14.767Z [log] [ManagerDrivers]  
+[Driver:button_wireless_3] [Device:5f042148-c6f1-4eb1-
+9dd5-dde50da023b7] [DATA-COLLECTOR] ✅  Polling complete
+2025-11-12T21:37:14.767Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:75183716-0129-4133-
+8870-9244a0acc0d0] [DATA-COLLECTOR] 📊  Polling data...
+2025-11-12T21:37:14.768Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:75183716-0129-4133-
+8870-9244a0acc0d0] [BATTERY-READER] Trying Tuya DP  
+protocol...
+2025-11-12T21:37:14.768Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:75183716-0129-4133-
+8870-9244a0acc0d0] [BATTERY-READER] ℹ  Not a Tuya DP  
+device - standard Zigbee
+2025-11-12T21:37:14.769Z [log] [ManagerDrivers]  
+[Driver:button_wireless_4] [Device:75183716-0129-4133-
+8870-9244a0acc0d0] [DATA-COLLECTOR] ✅  Polling complete
+stderr:
+2025-11-12T00:35:05.261Z [err] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:f7bd797c-2bc7-4d77-
+b067-53d551a928e5] [SAFE-MIGRATE] ❌  Target driver not  
+found: usb_outlet
+2025-11-12T00:35:05.262Z [err] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:f7bd797c-2bc7-4d77-
+b067-53d551a928e5] This is an INVALID DRIVER ID - cannot  
+migrate
+2025-11-12T00:35:05.262Z [err] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:f7bd797c-2bc7-4d77-
+b067-53d551a928e5] Current driver will be preserved:  
+switch_basic_1gang
+2025-11-12T21:31:50.760Z [err] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:0cd27abb-955c-4a0d-
+ad24-8dff6e19ffac] [SAFE-MIGRATE] ❌  Target driver not  
+found: usb_outlet
+2025-11-12T21:31:50.761Z [err] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:0cd27abb-955c-4a0d-
+ad24-8dff6e19ffac] This is an INVALID DRIVER ID - cannot  
+migrate
+2025-11-12T21:31:50.761Z [err] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:0cd27abb-955c-4a0d-
+ad24-8dff6e19ffac] Current driver will be preserved:  
+switch_basic_1gang
+You can manage your email settings in the Homey Developer Tools.
+

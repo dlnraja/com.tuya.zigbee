@@ -1,0 +1,298 @@
+Dylan Rajasekaram <senetmarne@gmail.com>
+[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report
+1 message
+Homey <noreply@homey .app> 14 novembre 2025 à 01:20
+Répondre à : 691675b69f f9841696443016@apps-api.athom.com
+À : senetmarne@gmail.com
+Hi Dylan Rajasekaram,
+Your app Universal T uya Zigbee  has received a diagnostics report.
+You can reply to this e-mail to get in touch with the user . Note that the
+user will then be able to see your e-mail address.
+App ID
+com.dlnraja.tuya.zigbee
+App V ersion
+v4.9.332
+Homey V ersion
+v12.9.0-rc.14
+Homey Model ID
+homey5q
+Homey Model Name
+Homey Pro (Early 2023)
+Stack T race
+Note: this log has been manually submitted by a user.
+Log ID: 1970c147-4ca3-43cf-a604- d2ad322f9024
+User Message:
+Issue général
+stdout:
+
+2025-11-14T00:17:31.338Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] Model: Unknown
+2025-11-14T00:17:31.338Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] Power Source: unknown
+2025-11-14T00:17:31.338Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] Endpoints: 1
+2025-11-14T00:17:31.338Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] Clusters: 6
+2025-11-14T00:17:31.338Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] 🔍  [SMART ADAPT] Analyzing  
+clusters...
+2025-11-14T00:17:31.339Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] ✅  Cluster analysis  
+complete
+2025-11-14T00:17:31.339Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] Device Type: unknown  
+(confidence: 0)
+2025-11-14T00:17:31.339Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] Power Source: unknown
+2025-11-14T00:17:31.339Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] Features:
+2025-11-14T00:17:31.339Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] 🎯  [SMART ADAPT] Detecting  
+real capabilities...
+2025-11-14T00:17:31.339Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] ✅  Real capabilities  
+detected
+2025-11-14T00:17:31.339Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] Required: none
+2025-11-14T00:17:31.339Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] Optional: none
+2025-11-14T00:17:31.339Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] Forbidden: none
+2025-11-14T00:17:31.340Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] ⚖  [SMART ADAPT] Comparing  
+with current driver...
+2025-11-14T00:17:31.340Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] ✅  Comparison complete
+2025-11-14T00:17:31.340Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] Needs Adaptation: NO
+2025-11-14T00:17:31.340Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] ✅  Correct: all
+2025-11-14T00:17:31.340Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] 🛡  [SMART ADAPT] Driver is  
+PROTECTED - Adaptation disabled
+2025-11-14T00:17:31.340Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] Protected driver:  
+climate_monitor_temp_humidity
+2025-11-14T00:17:31.340Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] ✅  [SMART ADAPT] Driver is  
+CORRECT - No adaptation needed
+2025-11-14T00:17:31.340Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] ⚙  [SMART ADAPT] Auto-
+configuring capabilities...
+2025-11-14T00:17:31.340Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] ✅  Capabilities auto-
+configured
+2025-11-14T00:17:31.340Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] 🔄  [SMART ADAPT] Checking  
+driver assignment (SAFE mode)...
+2025-11-14T00:17:31.341Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] ✅  [SAFE-SWITCH] Driver is  
+correct - No migration needed
+2025-11-14T00:17:31.341Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] 📡  [SMART ADAPT]  
+Configuring data collection & KPI...
+2025-11-14T00:17:31.341Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] 🔧  [CLUSTER-CONFIG] Auto-
+configuring attribute reporting...
+2025-11-14T00:17:31.341Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] [CLUSTER-CONFIG] 🔧  Auto-
+configuring attribute reporting...
+2025-11-14T00:17:31.341Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] [CLUSTER-CONFIG] ✅  Auto-
+configuration complete: {
+battery: false,
+power: false,
+climate: false,
+onoff: false,
+level: false
+}
+2025-11-14T00:17:31.342Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] ✅  [CLUSTER-CONFIG]  
+Configuration complete: {
+battery: false,
+power: false,
+climate: false,
+onoff: false,
+level: false
+}
+2025-11-14T00:17:31.342Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] 📡  [DATA-COLLECTOR]  
+Registering attribute report listeners...
+2025-11-14T00:17:31.342Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] [DATA-COLLECTOR] 📡 
+Registering attribute report listeners...
+2025-11-14T00:17:31.342Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] [DATA-COLLECTOR] ✅  Report 
+listeners registered
+2025-11-14T00:17:31.342Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] ✅  [DATA-COLLECTOR]  
+Listeners registered
+2025-11-14T00:17:31.342Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] 🔄  [DATA-COLLECTOR]  
+Starting periodic polling (5min interval)...
+2025-11-14T00:17:31.342Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] [DATA-COLLECTOR] 🔄 
+Starting periodic polling (300s)...
+2025-11-14T00:17:31.342Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] [DATA-COLLECTOR] 📊  Polling  
+data...
+2025-11-14T00:17:31.342Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] [BATTERY-READER] Trying  
+Tuya DP protocol...
+2025-11-14T00:17:31.343Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] [BATTERY-READER] ⚠  Tuya DP  
+device detected - cluster 0xEF00
+2025-11-14T00:17:31.343Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] [BATTERY-READER] ℹ  Battery  
+will be reported via TuyaEF00Manager (DP 4/14/15)
+2025-11-14T00:17:31.343Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] ✅  [DATA-COLLECTOR] Polling  
+started
+2025-11-14T00:17:31.343Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] [DATA-COLLECTOR] ✅  Polling  
+complete
+2025-11-14T00:17:31.343Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803]  
+══════════════════════════════
+══════════════════════════════ ══════════
+2025-11-14T00:17:31.344Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] 🎉  [SMART ADAPT] ADAPTATION  
+COMPLETE
+2025-11-14T00:17:31.344Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803]  
+══════════════════════════════
+══════════════════════════════ ══════════
+2025-11-14T00:17:31.344Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803]
+2025-11-14T00:17:31.344Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] [SMART ADAPT] ✅  Analysis  
+complete
+2025-11-14T00:17:31.344Z [log] 🔍  [MIGRATION]  
+Determining best driver...
+2025-11-14T00:17:31.344Z [log] ✅  Best driver: unknown  
+(confidence: 0)
+2025-11-14T00:17:31.344Z [log] Reasons:
+2025-11-14T00:17:31.344Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] [MIGRATION] ✅  Driver is  
+correct
+2025-11-14T00:17:31.344Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] [OK] ✅  Background  
+initialization complete!
+2025-11-14T00:17:31.345Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] Final power type: BATTERY
+2025-11-14T00:17:31.345Z [log] [ManagerDrivers]  
+[Driver:climate_monitor_temp_ humidity] [Device:2759f25c-
+900b-488a- a5a1-14a74fe95803] Battery type: CR2032
+2025-11-14T00:18:16.217Z [log] [UniversalTuyaZigbeeApp]  
+[MIGRATION-WORKER] 🔄  Starting...
+[MIGRATION-QUEUE] 🔄  Processing migration queue...
+[MIGRATION-QUEUE] 📤  Popped 2 migration(s)
+[MIGRATION-QUEUE] Processing 2 migration(s)...
+[MIGRATION-QUEUE] 📋  Migration required:
+Device ID: undefined
+Current Driver: undefined
+Target Driver: climate_sensor_soil
+Reason: Auto-detected (confidence: 100%)
+Confidence: undefined%
+ℹ Manual migration steps:
+1. Open Homey app
+2. Go to device: undefined
+3. Remove device
+4. Re-pair device
+5. Select driver: climate_sensor_soil
+[MIGRATION-QUEUE] 📋  Migration required:
+Device ID: undefined
+Current Driver: undefined
+Target Driver: usb_outlet_2port
+Reason: Auto-detected (confidence: 100%)
+Confidence: undefined%
+ℹ Manual migration steps:
+1. Open Homey app
+2. Go to device: undefined
+3. Remove device
+4. Re-pair device
+5. Select driver: usb_outlet_2port
+[MIGRATION-QUEUE] ✅  Queue processing complete
+2025-11-14T00:18:16.264Z [log] [UniversalTuyaZigbeeApp]  
+[MIGRATION-WORKER] ✅  Processed undefined migrations
+stderr:
+2025-11-14T00:17:21.197Z [err] [ManagerDrivers]  
+[Driver:switch_basic_1gang] [Device:0cd27abb-955c-4a0d-
+ad24-8dff6e19ffac] Error: configuring attribute  
+reporting (endpoint: 1, cluster: onOff) { onOff: {  
+minInterval: 0, maxInterval: 300, minChange: 0 } }  
+Error: Zigbee est en cours de démarrage. Patientez une  
+minute et réessayez.
+at Remote Process
+at HomeyClient.emit (/app/assets/app/node_modules/
+@athombv/homey-apps-sdk-v3/ lib/HomeyClient.js:44:23)
+at Object.emit (/app/assets/app/node_modules/
+@athombv/homey-apps-sdk-v3/ manager/zigbee.js:129:30)
+at ZigBeeNode.sendFrame (/app/assets/app/node_modules/
+@athombv/homey-apps-sdk-v3/ lib/ZigBeeNode.js:80:26)
+at Node.sendFrame (/app/node_modules/zigbee-
+clusters/lib/Node.js:55:19)
+at Endpoint.sendFrame (/app/node_modules/zigbee-
+clusters/lib/Endpoint.js:94: 23)
+at OnOffCluster.sendFrame (/app/node_modules/zigbee-
+clusters/lib/Cluster.js:789: 27)
+at OnOffCluster. configureReporting  
+(/app/node_modules/zigbee- clusters/lib/Cluster.js:1117:
+20)
+at OnOffCluster. configureReporting  
+(/app/node_modules/zigbee- clusters/lib/Cluster.js:527:
+39)
+at executeMethod (/app/node_modules/homey-
+zigbeedriver/lib/util/index. js:300:7)
+You can manage your email settings in the Homey Developer Tools.
+
