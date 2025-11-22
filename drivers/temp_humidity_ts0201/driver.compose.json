@@ -1,0 +1,75 @@
+{
+  "name": {
+    "en": "Temperature and Humidity Sensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_bguser20",
+      "_TZ3000_xr3htd96",
+      "_TZ3000_1o6x1bl0",
+      "_TZ3000_qaaysllp"
+    ],
+    "productId": [
+      "TS0201"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1026,
+          1029
+        ],
+        "bindings": [
+          1026,
+          1029
+        ]
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2450"
+    ]
+  },
+  "settings": [
+    {
+      "id": "temperature_offset",
+      "type": "number",
+      "label": {
+        "en": "Temperature Offset"
+      },
+      "value": 0,
+      "attr": {
+        "min": -10,
+        "max": 10,
+        "step": 0.1
+      }
+    },
+    {
+      "id": "humidity_offset",
+      "type": "number",
+      "label": {
+        "en": "Humidity Offset"
+      },
+      "value": 0,
+      "attr": {
+        "min": -25,
+        "max": 25,
+        "step": 1
+      }
+    }
+  ]
+}

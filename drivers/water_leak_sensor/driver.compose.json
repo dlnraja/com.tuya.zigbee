@@ -256,10 +256,13 @@
           "powerConfiguration",
           "temperatureMeasurement",
           "iasZone",
-          61184
+          61184,
+          1280,
+          1
         ],
         "bindings": [
-          1
+          1,
+          1280
         ]
       }
     },

@@ -1,0 +1,91 @@
+{
+  "pdf": "24.pdf",
+  "errors": {
+    "errors": [
+      {
+        "error": "error:\n```",
+        "context": "when pressing --- ## 🔴  THE ROOT  CAUSE - IAS Zone Enrollment Failure Your logs show this critical error: ``` Method 1 failed, trying method 2: endpoint.clusters.iasZone. write is not a function Method 2 faile",
+        "pdf": "24.pdf"
+      },
+      {
+        "error": "ERROR: endpoint.clusters.iasZone. write is not a function",
+        "context": "* ```javascript // OLD CODE (v2.15.63 and earlier): await endpoint.clusters.iasZone. write(...); // ERROR: endpoint.clusters.iasZone. write is not a function ``` **What I fixed:** ```javascript // NEW CODE (v2.15.68): // 1. W rite CIE Address using Homey's",
+        "pdf": "24.pdf"
+      },
+      {
+        "error": "error:\n```",
+        "context": "when pressing --- ## 🔴  THE ROOT  CAUSE - IAS Zone Enrollment Failure Your logs show this critical error: ``` Method 1 failed, trying method 2: endpoint.clusters.iasZone. write is not a function Method 2 faile",
+        "pdf": "24.pdf"
+      },
+      {
+        "error": "ERROR: endpoint.clusters.iasZone. write is not a function",
+        "context": "* ```javascript // OLD CODE (v2.15.63 and earlier): await endpoint.clusters.iasZone. write(...); // ERROR: endpoint.clusters.iasZone. write is not a function ``` **What I fixed:** ```javascript // NEW CODE (v2.15.68): // 1. W rite CIE Address using Homey's",
+        "pdf": "24.pdf"
+      },
+      {
+        "error": "Cannot read properties of  ",
+        "context": "lti_battery]   [Device:cf1ca78f-4870-44c7- a238-5120bf67c46d] ⚠  Method  2 failed, trying method 3: Cannot read properties of   undefined (reading 'split') 2025-10-13T07:40:15.995Z [log] [ManagerDrivers]   [Driver:motion_temp_h",
+        "pdf": "24.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading 'split')",
+        "context": "ying method 2: endpoint.clusters.iasZone. write is not a function Method 2 failed, trying method 3: Cannot read properties of undefined (reading 'split') All CIE write methods failed, device may auto-enroll: endpoint.clusters.iasZone.read is not a funct",
+        "pdf": "24.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading 'split')",
+        "context": "essages**: ``` Method 1 failed: endpoint.clusters.iasZone. write is not a function Method 2 failed: Cannot read properties of undefined (reading 'split') Method 3 failed: endpoint.clusters.iasZone.read is not a function Motion IAS Zone status: Bitmap [",
+        "pdf": "24.pdf"
+      },
+      {
+        "error": "❌  NOT  WORKING:**",
+        "context": "s) - Illuminance: 2566 lux → 2692 lux (light sensor functional) - Battery: 100% (correct reading) **❌  NOT  WORKING:** - Motion detection: ALWAYS reports \"false\" even when you walk in front - SOS button: No events capt",
+        "pdf": "24.pdf"
+      },
+      {
+        "error": "❌ Motion via IAS Zone → Fails (enrollment broken)",
+        "context": "e detectors, etc.). The device sends: - ✅ Temperature/Humidity/Lux via standard clusters → W orks - ❌ Motion via IAS Zone → Fails (enrollment broken) --- ## ✅  THE FIX - V ersion 2.15.68 (Coming in 24-48h) I've completely **rewritten the IAS Zone en",
+        "pdf": "24.pdf"
+      },
+      {
+        "error": "❌ Motion: Always reports `false`",
+        "context": "2692 lux (daylight increasing) - ✅ Battery: 100% (raw value 200 = 100%) **Broken Capabilities**: - ❌ Motion: Always reports `false` - ❌ IAS Zone enrollment: All methods failed **Error Messages**: ``` Method 1 failed: endpoint.clust",
+        "pdf": "24.pdf"
+      },
+      {
+        "error": "❌ IAS Zone enrollment: All methods failed",
+        "context": "Battery: 100% (raw value 200 = 100%) **Broken Capabilities**: - ❌ Motion: Always reports `false` - ❌ IAS Zone enrollment: All methods failed **Error Messages**: ``` Method 1 failed: endpoint.clusters.iasZone. write is not a function Method",
+        "pdf": "24.pdf"
+      }
+    ],
+    "warnings": [],
+    "crashes": [],
+    "device_issues": [],
+    "cluster_errors": [],
+    "capability_errors": [],
+    "zigbee_errors": [],
+    "flow_issues": []
+  },
+  "device_info": {
+    "manufacturers": [],
+    "models": [
+      "TS0601",
+      "ts0601"
+    ],
+    "clusters": [],
+    "datapoints": [],
+    "endpoints": [
+      "1",
+      "2025"
+    ],
+    "error_codes": []
+  },
+  "critical_issues": [],
+  "improvements": [
+    {
+      "type": "error_handling",
+      "action": "Improve error handling and logging",
+      "priority": "LOW"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": {
+    "en": "Smart Knob (Rotary Controller)"
+  },
+  "class": "button",
+  "capabilities": [],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_gwkzibhs",
+      "_TZ3000_4fjiwweb"
+    ],
+    "productId": [
+      "TS004F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          8,
+          1280
+        ],
+        "bindings": [
+          6,
+          8,
+          1280
+        ]
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2450"
+    ]
+  }
+}

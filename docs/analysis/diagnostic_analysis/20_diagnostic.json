@@ -1,0 +1,384 @@
+{
+  "pdf": "20.pdf",
+  "errors": {
+    "errors": [],
+    "warnings": [
+      {
+        "error": "Warning:  \nRun listener was already registered.",
+        "context": "alized 2025-10-18T08:09:35.044Z [log] [ManagerFlow]   [FlowCardCondition][any_ safety_alarm_active] Warning:   Run listener was already registered. 2025-10-18T08:09:35.045Z [log] [ManagerFlow]   [FlowCardCondition][is_armed] Warning: Run listener",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run listener was  ",
+        "context": "as already registered. 2025-10-18T08:09:35.045Z [log] [ManagerFlow]   [FlowCardCondition][is_armed] Warning: Run listener was   already registered. 2025-10-18T08:09:35.045Z [log] [ManagerFlow]   [FlowCardCondition][anyone_ home",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run listener  ",
+        "context": "lready registered. 2025-10-18T08:09:35.045Z [log] [ManagerFlow]   [FlowCardCondition][anyone_ home] Warning: Run listener   was already registered. 2025-10-18T08:09:35.045Z [log] [ManagerFlow]   [FlowCardCondition][room_ oc",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run listener  ",
+        "context": "eady registered. 2025-10-18T08:09:35.045Z [log] [ManagerFlow]   [FlowCardCondition][room_ occupied] Warning: Run listener   was already registered. 2025-10-18T08:09:35.045Z [log] [ManagerFlow]   [FlowCardCondition][air_ qua",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "y registered. 2025-10-18T08:09:35.045Z [log] [ManagerFlow]   [FlowCardCondition][air_ quality_good] Warning: Run   listener was already registered. 2025-10-18T08:09:35.045Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "dy registered. 2025-10-18T08:09:35.045Z [log] [ManagerFlow]   [FlowCardCondition][climate_ optimal] Warning: Run   listener was already registered. 2025-10-18T08:09:35.046Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "egistered. 2025-10-18T08:09:35.046Z [log] [ManagerFlow]   [FlowCardCondition][all_ entries_secured] Warning: Run   listener was already registered. 2025-10-18T08:09:35.046Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "registered. 2025-10-18T08:09:35.046Z [log] [ManagerFlow]   [FlowCardCondition][is_ consuming_power] Warning: Run   listener was already registered. 2025-10-18T08:09:35.046Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning:  \nRun listener was already registered.",
+        "context": "ered. 2025-10-18T08:09:35.046Z [log] [ManagerFlow]   [FlowCardCondition][natural_ light_sufficient] Warning:   Run listener was already registered. 2025-10-18T08:09:35.046Z [log] [ManagerDrivers]   [Driver:temperature_humidity_ display_battery] ✅",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning:  \nRun listener was already registered.",
+        "context": "alized 2025-10-18T08:09:35.164Z [log] [ManagerFlow]   [FlowCardCondition][any_ safety_alarm_active] Warning:   Run listener was already registered. 2025-10-18T08:09:35.164Z [log] [ManagerFlow]   [FlowCardCondition][is_armed] Warning: Run listener",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run listener was  ",
+        "context": "as already registered. 2025-10-18T08:09:35.164Z [log] [ManagerFlow]   [FlowCardCondition][is_armed] Warning: Run listener was   already registered. 2025-10-18T08:09:35.164Z [log] [ManagerFlow]   [FlowCardCondition][anyone_ home",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run listener  ",
+        "context": "lready registered. 2025-10-18T08:09:35.164Z [log] [ManagerFlow]   [FlowCardCondition][anyone_ home] Warning: Run listener   was already registered. 2025-10-18T08:09:35.164Z [log] [ManagerFlow]   [FlowCardCondition][room_ oc",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run listener  ",
+        "context": "eady registered. 2025-10-18T08:09:35.164Z [log] [ManagerFlow]   [FlowCardCondition][room_ occupied] Warning: Run listener   was already registered. 2025-10-18T08:09:35.164Z [log] [ManagerFlow]   [FlowCardCondition][air_ qua",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "y registered. 2025-10-18T08:09:35.164Z [log] [ManagerFlow]   [FlowCardCondition][air_ quality_good] Warning: Run   listener was already registered. 2025-10-18T08:09:35.164Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "dy registered. 2025-10-18T08:09:35.164Z [log] [ManagerFlow]   [FlowCardCondition][climate_ optimal] Warning: Run   listener was already registered. 2025-10-18T08:09:35.164Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "egistered. 2025-10-18T08:09:35.164Z [log] [ManagerFlow]   [FlowCardCondition][all_ entries_secured] Warning: Run   listener was already registered. 2025-10-18T08:09:35.164Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "registered. 2025-10-18T08:09:35.164Z [log] [ManagerFlow]   [FlowCardCondition][is_ consuming_power] Warning: Run   listener was already registered. 2025-10-18T08:09:35.165Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning:  \nRun listener was already registered.",
+        "context": "ered. 2025-10-18T08:09:35.165Z [log] [ManagerFlow]   [FlowCardCondition][natural_ light_sufficient] Warning:   Run listener was already registered. 2025-10-18T08:09:35.165Z [log] [ManagerDrivers]   [Driver:wireless_button_2gang_ battery] ✅  Flow c",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning:  \nRun listener was already registered.",
+        "context": "alized 2025-10-18T08:09:35.169Z [log] [ManagerFlow]   [FlowCardCondition][any_ safety_alarm_active] Warning:   Run listener was already registered. 2025-10-18T08:09:35.169Z [log] [ManagerFlow]   [FlowCardCondition][is_armed] Warning: Run listener",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run listener was  ",
+        "context": "as already registered. 2025-10-18T08:09:35.169Z [log] [ManagerFlow]   [FlowCardCondition][is_armed] Warning: Run listener was   already registered. 2025-10-18T08:09:35.170Z [log] [ManagerFlow]   [FlowCardCondition][anyone_ home",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run listener  ",
+        "context": "lready registered. 2025-10-18T08:09:35.170Z [log] [ManagerFlow]   [FlowCardCondition][anyone_ home] Warning: Run listener   was already registered. 2025-10-18T08:09:35.170Z [log] [ManagerFlow]   [FlowCardCondition][room_ oc",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run listener  ",
+        "context": "eady registered. 2025-10-18T08:09:35.170Z [log] [ManagerFlow]   [FlowCardCondition][room_ occupied] Warning: Run listener   was already registered. 2025-10-18T08:09:35.170Z [log] [ManagerFlow]   [FlowCardCondition][air_ qua",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "y registered. 2025-10-18T08:09:35.170Z [log] [ManagerFlow]   [FlowCardCondition][air_ quality_good] Warning: Run   listener was already registered. 2025-10-18T08:09:35.170Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "dy registered. 2025-10-18T08:09:35.170Z [log] [ManagerFlow]   [FlowCardCondition][climate_ optimal] Warning: Run   listener was already registered. 2025-10-18T08:09:35.170Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "egistered. 2025-10-18T08:09:35.170Z [log] [ManagerFlow]   [FlowCardCondition][all_ entries_secured] Warning: Run   listener was already registered. 2025-10-18T08:09:35.170Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "registered. 2025-10-18T08:09:35.170Z [log] [ManagerFlow]   [FlowCardCondition][is_ consuming_power] Warning: Run   listener was already registered. 2025-10-18T08:09:35.170Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning:  \nRun listener was already registered.",
+        "context": "ered. 2025-10-18T08:09:35.170Z [log] [ManagerFlow]   [FlowCardCondition][natural_ light_sufficient] Warning:   Run listener was already registered. 2025-10-18T08:09:35.170Z [log] [ManagerDrivers]   [Driver:wireless_dimmer_ scroll_battery] ✅  Flow",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning:  \nRun listener was already registered.",
+        "context": "alized 2025-10-18T08:09:35.173Z [log] [ManagerFlow]   [FlowCardCondition][any_ safety_alarm_active] Warning:   Run listener was already registered. 2025-10-18T08:09:35.174Z [log] [ManagerFlow]   [FlowCardCondition][is_armed] Warning: Run listener",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run listener was  ",
+        "context": "as already registered. 2025-10-18T08:09:35.174Z [log] [ManagerFlow]   [FlowCardCondition][is_armed] Warning: Run listener was   already registered. 2025-10-18T08:09:35.174Z [log] [ManagerFlow]   [FlowCardCondition][anyone_ home",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run listener  ",
+        "context": "lready registered. 2025-10-18T08:09:35.174Z [log] [ManagerFlow]   [FlowCardCondition][anyone_ home] Warning: Run listener   was already registered. 2025-10-18T08:09:35.174Z [log] [ManagerFlow]   [FlowCardCondition][room_ oc",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run listener  ",
+        "context": "eady registered. 2025-10-18T08:09:35.174Z [log] [ManagerFlow]   [FlowCardCondition][room_ occupied] Warning: Run listener   was already registered. 2025-10-18T08:09:35.174Z [log] [ManagerFlow]   [FlowCardCondition][air_ qua",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "y registered. 2025-10-18T08:09:35.174Z [log] [ManagerFlow]   [FlowCardCondition][air_ quality_good] Warning: Run   listener was already registered. 2025-10-18T08:09:35.174Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "dy registered. 2025-10-18T08:09:35.174Z [log] [ManagerFlow]   [FlowCardCondition][climate_ optimal] Warning: Run   listener was already registered. 2025-10-18T08:09:35.174Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "egistered. 2025-10-18T08:09:35.174Z [log] [ManagerFlow]   [FlowCardCondition][all_ entries_secured] Warning: Run   listener was already registered. 2025-10-18T08:09:35.174Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "registered. 2025-10-18T08:09:35.174Z [log] [ManagerFlow]   [FlowCardCondition][is_ consuming_power] Warning: Run   listener was already registered. 2025-10-18T08:09:35.174Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning:  \nRun listener was already registered.",
+        "context": "ered. 2025-10-18T08:09:35.174Z [log] [ManagerFlow]   [FlowCardCondition][natural_ light_sufficient] Warning:   Run listener was already registered. 2025-10-18T08:09:35.174Z [log] [ManagerDrivers]   [Driver:wireless_scene_ controller_4button_batter",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning:  \nRun listener was already registered.",
+        "context": "alized 2025-10-18T10:21:43.363Z [log] [ManagerFlow]   [FlowCardCondition][any_ safety_alarm_active] Warning:   Run listener was already registered. 2025-10-18T10:21:43.364Z [log] [ManagerFlow]   [FlowCardCondition][is_armed] Warning: Run listener",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run listener was  ",
+        "context": "as already registered. 2025-10-18T10:21:43.364Z [log] [ManagerFlow]   [FlowCardCondition][is_armed] Warning: Run listener was   already registered. 2025-10-18T10:21:43.364Z [log] [ManagerFlow]   [FlowCardCondition][anyone_ home",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run listener  ",
+        "context": "lready registered. 2025-10-18T10:21:43.364Z [log] [ManagerFlow]   [FlowCardCondition][anyone_ home] Warning: Run listener   was already registered. 2025-10-18T10:21:43.364Z [log] [ManagerFlow]   [FlowCardCondition][room_ oc",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run listener  ",
+        "context": "eady registered. 2025-10-18T10:21:43.364Z [log] [ManagerFlow]   [FlowCardCondition][room_ occupied] Warning: Run listener   was already registered. 2025-10-18T10:21:43.364Z [log] [ManagerFlow]   [FlowCardCondition][air_ qua",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "y registered. 2025-10-18T10:21:43.364Z [log] [ManagerFlow]   [FlowCardCondition][air_ quality_good] Warning: Run   listener was already registered. 2025-10-18T10:21:43.365Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "dy registered. 2025-10-18T10:21:43.365Z [log] [ManagerFlow]   [FlowCardCondition][climate_ optimal] Warning: Run   listener was already registered. 2025-10-18T10:21:43.365Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "egistered. 2025-10-18T10:21:43.365Z [log] [ManagerFlow]   [FlowCardCondition][all_ entries_secured] Warning: Run   listener was already registered. 2025-10-18T10:21:43.365Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "registered. 2025-10-18T10:21:43.365Z [log] [ManagerFlow]   [FlowCardCondition][is_ consuming_power] Warning: Run   listener was already registered. 2025-10-18T10:21:43.365Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning:  \nRun listener was already registered.",
+        "context": "ered. 2025-10-18T10:21:43.365Z [log] [ManagerFlow]   [FlowCardCondition][natural_ light_sufficient] Warning:   Run listener was already registered. 2025-10-18T10:21:43.366Z [log] [ManagerDrivers]   [Driver:temperature_humidity_ display_battery] ✅",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning:  \nRun listener was already registered.",
+        "context": "alized 2025-10-18T10:21:43.531Z [log] [ManagerFlow]   [FlowCardCondition][any_ safety_alarm_active] Warning:   Run listener was already registered. 2025-10-18T10:21:43.531Z [log] [ManagerFlow]   [FlowCardCondition][is_armed] Warning: Run listener",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run listener was  ",
+        "context": "as already registered. 2025-10-18T10:21:43.531Z [log] [ManagerFlow]   [FlowCardCondition][is_armed] Warning: Run listener was   already registered. 2025-10-18T10:21:43.531Z [log] [ManagerFlow]   [FlowCardCondition][anyone_ home",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run listener  ",
+        "context": "lready registered. 2025-10-18T10:21:43.531Z [log] [ManagerFlow]   [FlowCardCondition][anyone_ home] Warning: Run listener   was already registered. 2025-10-18T10:21:43.532Z [log] [ManagerFlow]   [FlowCardCondition][room_ oc",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run listener  ",
+        "context": "eady registered. 2025-10-18T10:21:43.532Z [log] [ManagerFlow]   [FlowCardCondition][room_ occupied] Warning: Run listener   was already registered. 2025-10-18T10:21:43.532Z [log] [ManagerFlow]   [FlowCardCondition][air_ qua",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "y registered. 2025-10-18T10:21:43.532Z [log] [ManagerFlow]   [FlowCardCondition][air_ quality_good] Warning: Run   listener was already registered. 2025-10-18T10:21:43.532Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "dy registered. 2025-10-18T10:21:43.532Z [log] [ManagerFlow]   [FlowCardCondition][climate_ optimal] Warning: Run   listener was already registered. 2025-10-18T10:21:43.532Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "egistered. 2025-10-18T10:21:43.532Z [log] [ManagerFlow]   [FlowCardCondition][all_ entries_secured] Warning: Run   listener was already registered. 2025-10-18T10:21:43.532Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "registered. 2025-10-18T10:21:43.532Z [log] [ManagerFlow]   [FlowCardCondition][is_ consuming_power] Warning: Run   listener was already registered. 2025-10-18T10:21:43.532Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning:  \nRun listener was already registered.",
+        "context": "ered. 2025-10-18T10:21:43.532Z [log] [ManagerFlow]   [FlowCardCondition][natural_ light_sufficient] Warning:   Run listener was already registered. 2025-10-18T10:21:43.532Z [log] [ManagerDrivers]   [Driver:wireless_button_2gang_ battery] ✅  Flow c",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning:  \nRun listener was already registered.",
+        "context": "alized 2025-10-18T10:21:43.536Z [log] [ManagerFlow]   [FlowCardCondition][any_ safety_alarm_active] Warning:   Run listener was already registered. 2025-10-18T10:21:43.537Z [log] [ManagerFlow]   [FlowCardCondition][is_armed] Warning: Run listener",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run listener was  ",
+        "context": "as already registered. 2025-10-18T10:21:43.537Z [log] [ManagerFlow]   [FlowCardCondition][is_armed] Warning: Run listener was   already registered. 2025-10-18T10:21:43.537Z [log] [ManagerFlow]   [FlowCardCondition][anyone_ home",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run listener  ",
+        "context": "lready registered. 2025-10-18T10:21:43.537Z [log] [ManagerFlow]   [FlowCardCondition][anyone_ home] Warning: Run listener   was already registered. 2025-10-18T10:21:43.537Z [log] [ManagerFlow]   [FlowCardCondition][room_ oc",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run listener  ",
+        "context": "eady registered. 2025-10-18T10:21:43.537Z [log] [ManagerFlow]   [FlowCardCondition][room_ occupied] Warning: Run listener   was already registered. 2025-10-18T10:21:43.537Z [log] [ManagerFlow]   [FlowCardCondition][air_ qua",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "y registered. 2025-10-18T10:21:43.537Z [log] [ManagerFlow]   [FlowCardCondition][air_ quality_good] Warning: Run   listener was already registered. 2025-10-18T10:21:43.537Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "dy registered. 2025-10-18T10:21:43.537Z [log] [ManagerFlow]   [FlowCardCondition][climate_ optimal] Warning: Run   listener was already registered. 2025-10-18T10:21:43.537Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "egistered. 2025-10-18T10:21:43.537Z [log] [ManagerFlow]   [FlowCardCondition][all_ entries_secured] Warning: Run   listener was already registered. 2025-10-18T10:21:43.537Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "registered. 2025-10-18T10:21:43.537Z [log] [ManagerFlow]   [FlowCardCondition][is_ consuming_power] Warning: Run   listener was already registered. 2025-10-18T10:21:43.538Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning:  \nRun listener was already registered.",
+        "context": "ered. 2025-10-18T10:21:43.538Z [log] [ManagerFlow]   [FlowCardCondition][natural_ light_sufficient] Warning:   Run listener was already registered. 2025-10-18T10:21:43.538Z [log] [ManagerDrivers]   [Driver:wireless_dimmer_ scroll_battery] ✅  Flow",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning:  \nRun listener was already registered.",
+        "context": "alized 2025-10-18T10:21:43.542Z [log] [ManagerFlow]   [FlowCardCondition][any_ safety_alarm_active] Warning:   Run listener was already registered. 2025-10-18T10:21:43.542Z [log] [ManagerFlow]   [FlowCardCondition][is_armed] Warning: Run listener",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run listener was  ",
+        "context": "as already registered. 2025-10-18T10:21:43.542Z [log] [ManagerFlow]   [FlowCardCondition][is_armed] Warning: Run listener was   already registered. 2025-10-18T10:21:43.542Z [log] [ManagerFlow]   [FlowCardCondition][anyone_ home",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run listener  ",
+        "context": "lready registered. 2025-10-18T10:21:43.542Z [log] [ManagerFlow]   [FlowCardCondition][anyone_ home] Warning: Run listener   was already registered. 2025-10-18T10:21:43.542Z [log] [ManagerFlow]   [FlowCardCondition][room_ oc",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run listener  ",
+        "context": "eady registered. 2025-10-18T10:21:43.542Z [log] [ManagerFlow]   [FlowCardCondition][room_ occupied] Warning: Run listener   was already registered. 2025-10-18T10:21:43.542Z [log] [ManagerFlow]   [FlowCardCondition][air_ qua",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "y registered. 2025-10-18T10:21:43.542Z [log] [ManagerFlow]   [FlowCardCondition][air_ quality_good] Warning: Run   listener was already registered. 2025-10-18T10:21:43.542Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "dy registered. 2025-10-18T10:21:43.542Z [log] [ManagerFlow]   [FlowCardCondition][climate_ optimal] Warning: Run   listener was already registered. 2025-10-18T10:21:43.543Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "egistered. 2025-10-18T10:21:43.543Z [log] [ManagerFlow]   [FlowCardCondition][all_ entries_secured] Warning: Run   listener was already registered. 2025-10-18T10:21:43.543Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning: Run  ",
+        "context": "registered. 2025-10-18T10:21:43.543Z [log] [ManagerFlow]   [FlowCardCondition][is_ consuming_power] Warning: Run   listener was already registered. 2025-10-18T10:21:43.543Z [log] [ManagerFlow]   [FlowCardCondition]",
+        "pdf": "20.pdf"
+      },
+      {
+        "error": "Warning:  \nRun listener was already registered.",
+        "context": "ered. 2025-10-18T10:21:43.543Z [log] [ManagerFlow]   [FlowCardCondition][natural_ light_sufficient] Warning:   Run listener was already registered. 2025-10-18T10:21:43.543Z [log] [ManagerDrivers]   [Driver:wireless_scene_ controller_4button_batter",
+        "pdf": "20.pdf"
+      }
+    ],
+    "crashes": [],
+    "device_issues": [],
+    "cluster_errors": [],
+    "capability_errors": [],
+    "zigbee_errors": [],
+    "flow_issues": []
+  },
+  "device_info": {
+    "manufacturers": [],
+    "models": [],
+    "clusters": [],
+    "datapoints": [],
+    "endpoints": [],
+    "error_codes": []
+  },
+  "critical_issues": [],
+  "improvements": []
+}

@@ -85,10 +85,14 @@
           "identify",
           "onOff",
           "iasZone",
-          "manuSpecificTuya"
+          "manuSpecificTuya",
+          0,
+          1,
+          3
         ],
         "bindings": [
-          1
+          1,
+          1280
         ]
       }
     },
