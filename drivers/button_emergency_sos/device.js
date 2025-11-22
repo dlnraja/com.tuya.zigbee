@@ -1,5 +1,23 @@
 'use strict';
 
+// MIGRATED TO HYBRID SYSTEM v2.0
+const HybridDriverSystem = require('../../lib/HybridDriverSystem');
+const BatteryManagerV2 = require('../../lib/BatteryManagerV2');
+
+/**
+ * button_emergency_sos - Hybrid-Enhanced Driver
+ *
+ * MIGRATION: Original driver enhanced with Hybrid System
+ * - Auto-adaptive capabilities
+ * - Energy-aware management
+ * - Smart detection
+ */
+
+// Create hybrid base
+const HybridDevice = HybridDriverSystem.createHybridDevice();
+
+'use strict';
+
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
 /**
@@ -7,9 +25,13 @@ const ButtonDevice = require('../../lib/devices/ButtonDevice');
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class SosEmergencyButtonDevice extends ButtonDevice {
+class SosEmergencyButtonDevice extends HybridDevice {
 
   async onNodeInit({ zclNode }) {
+    // Hybrid system initialization
+    await super.onNodeInit({ zclNode });
+
+    // Original initialization below:
     this.log('SosEmergencyButtonDevice initializing...');
     
     // Initialize base FIRST (auto power detection + dynamic capabilities)
@@ -126,5 +148,8 @@ class SosEmergencyButtonDevice extends ButtonDevice {
   }
 
 }
+
+module.exports = SosEmergencyButtonDevice;
+
 
 module.exports = SosEmergencyButtonDevice;

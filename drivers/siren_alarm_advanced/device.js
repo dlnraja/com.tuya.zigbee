@@ -1,11 +1,33 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+// MIGRATED TO HYBRID SYSTEM v2.0
+const HybridDriverSystem = require('../../lib/HybridDriverSystem');
+const BatteryManagerV2 = require('../../lib/BatteryManagerV2');
+
+/**
+ * siren_alarm_advanced - Hybrid-Enhanced Driver
+ *
+ * MIGRATION: Original driver enhanced with Hybrid System
+ * - Auto-adaptive capabilities
+ * - Energy-aware management
+ * - Smart detection
+ */
+
+// Create hybrid base
+const HybridDevice = HybridDriverSystem.createHybridDevice();
+
+'use strict';
+
+
 const TuyaDataPointsComplete = require('../../lib/TuyaDataPointsComplete');
 
-class SirenAlarmAdvancedDevice extends ZigBeeDevice {
+class SirenAlarmAdvancedDevice extends HybridDevice {
   
   async onNodeInit({ zclNode }) {
+    // Hybrid system initialization
+    await super.onNodeInit({ zclNode });
+
+    // Original initialization below:
     this.log('Smart Siren Alarm Advanced initializing...');
     
     // Get Tuya EF00 cluster
@@ -58,5 +80,8 @@ class SirenAlarmAdvancedDevice extends ZigBeeDevice {
     this.log('Smart Siren Alarm Advanced initialized');
   }
 }
+
+module.exports = SirenAlarmAdvancedDevice;
+
 
 module.exports = SirenAlarmAdvancedDevice;

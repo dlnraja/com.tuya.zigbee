@@ -1,6 +1,24 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+// MIGRATED TO HYBRID SYSTEM v2.0
+const HybridDriverSystem = require('../../lib/HybridDriverSystem');
+const BatteryManagerV2 = require('../../lib/BatteryManagerV2');
+
+/**
+ * climate_sensor - Hybrid-Enhanced Driver
+ *
+ * MIGRATION: Original driver enhanced with Hybrid System
+ * - Auto-adaptive capabilities
+ * - Energy-aware management
+ * - Smart detection
+ */
+
+// Create hybrid base
+const HybridDevice = HybridDriverSystem.createHybridDevice();
+
+'use strict';
+
+
 const TuyaDataPointEngine = require('../../lib/TuyaDataPointEngine');
 
 /**
@@ -14,9 +32,13 @@ const TuyaDataPointEngine = require('../../lib/TuyaDataPointEngine');
  * This device does NOT use standard Zigbee clusters for sensors.
  * All data is transmitted via Tuya proprietary DP protocol.
  */
-class ClimateSensorDevice extends ZigBeeDevice {
+class ClimateSensorDevice extends HybridDevice {
   
   async onNodeInit({ zclNode }) {
+    // Hybrid system initialization
+    await super.onNodeInit({ zclNode });
+
+    // Original initialization below:
     this.log('Climate Monitor initializing...');
     this.log('Manufacturer:', '_TZE284_vvmbj46n');
     this.log('Product:', 'TS0601');
@@ -73,5 +95,8 @@ class ClimateSensorDevice extends ZigBeeDevice {
     this.log('Climate Monitor deleted');
   }
 }
+
+module.exports = ClimateSensorDevice;
+
 
 module.exports = ClimateSensorDevice;

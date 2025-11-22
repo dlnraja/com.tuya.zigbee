@@ -1,5 +1,23 @@
 'use strict';
 
+// MIGRATED TO HYBRID SYSTEM v2.0
+const HybridDriverSystem = require('../../lib/HybridDriverSystem');
+const BatteryManagerV2 = require('../../lib/BatteryManagerV2');
+
+/**
+ * pir_sensor_3in1 - Hybrid-Enhanced Driver
+ *
+ * MIGRATION: Original driver enhanced with Hybrid System
+ * - Auto-adaptive capabilities
+ * - Energy-aware management
+ * - Smart detection
+ */
+
+// Create hybrid base
+const HybridDevice = HybridDriverSystem.createHybridDevice();
+
+'use strict';
+
 const TuyaSpecificDevice = require('../../lib/TuyaSpecificDevice');
 
 /**
@@ -21,7 +39,7 @@ const TuyaSpecificDevice = require('../../lib/TuyaSpecificDevice');
  * TOUT EST AUTO-DÉTECTÉ par TuyaSpecificDevice!
  */
 
-class PIRSensor3in1 extends TuyaSpecificDevice {
+class PIRSensor3in1 extends HybridDevice {
   
   /**
    * onNodeInit est hérité de TuyaSpecificDevice
@@ -82,5 +100,8 @@ class PIRSensor3in1 extends TuyaSpecificDevice {
     return true;
   }
 }
+
+module.exports = PIRSensor3in1;
+
 
 module.exports = PIRSensor3in1;

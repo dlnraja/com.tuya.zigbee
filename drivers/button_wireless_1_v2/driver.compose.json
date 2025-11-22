@@ -1,0 +1,97 @@
+{
+  "name": {
+    "en": "Wireless Button (1 button) V2",
+    "fr": "Bouton Sans Fil (1 bouton) V2",
+    "nl": "Draadloze Knop (1 knop) V2",
+    "de": "Drahtlose Taste (1 Taste) V2"
+  },
+  "class": "button",
+  "capabilities": [
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_5bpeda8u",
+      "_TZ3000_vp6clf9d",
+      "_TZ3000_dfgbtub0",
+      "_TZ3000_tk3s5tyg",
+      "_TZ3000_adkvzooy",
+      "_TZ3000_*"
+    ],
+    "productId": [
+      "TS0041"
+    ],
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the button for 5 seconds until LED blinks rapidly",
+        "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+        "nl": "Houd de knop 5 seconden ingedrukt tot de LED snel knippert",
+        "de": "Halten Sie die Taste 5 Sekunden lang gedrückt, bis die LED schnell blinkt"
+      }
+    },
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          6,
+          8
+        ],
+        "bindings": [
+          6,
+          8
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/button_wireless_1_v2/assets/images/small.png",
+    "large": "/drivers/button_wireless_1_v2/assets/images/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "settings": [
+    {
+      "id": "battery_report_interval",
+      "type": "number",
+      "label": {
+        "en": "Battery Report Interval (hours)",
+        "fr": "Intervalle Rapport Batterie (heures)",
+        "nl": "Batterij Rapport Interval (uren)",
+        "de": "Batteriebericht-Intervall (Stunden)"
+      },
+      "value": 6,
+      "min": 1,
+      "max": 24,
+      "step": 1,
+      "hint": {
+        "en": "How often to check battery level",
+        "fr": "Fréquence de vérification du niveau de batterie",
+        "nl": "Hoe vaak het batterijniveau wordt gecontroleerd",
+        "de": "Wie oft der Batteriestand überprüft wird"
+      }
+    }
+  ],
+  "id": "button_wireless_1_v2"
+}

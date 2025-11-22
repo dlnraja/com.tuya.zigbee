@@ -1,13 +1,35 @@
 'use strict';
 
+// MIGRATED TO HYBRID SYSTEM v2.0
+const HybridDriverSystem = require('../../lib/HybridDriverSystem');
+const BatteryManagerV2 = require('../../lib/BatteryManagerV2');
+
+/**
+ * switch_1gang - Hybrid-Enhanced Driver
+ *
+ * MIGRATION: Original driver enhanced with Hybrid System
+ * - Auto-adaptive capabilities
+ * - Energy-aware management
+ * - Smart detection
+ */
+
+// Create hybrid base
+const HybridDevice = HybridDriverSystem.createHybridDevice();
+
+'use strict';
+
 const SwitchDevice = require('../../lib/devices/SwitchDevice');
 const IASZoneEnroller = require('../../lib/IASZoneEnroller');
 const batteryConverter = require('../../lib/tuya-engine/converters/battery');
 const FallbackSystem = require('../../lib/FallbackSystem');
 
-class SmartSwitch1gangHybridDevice extends SwitchDevice {
+class SmartSwitch1gangHybridDevice extends HybridDevice {
 
   async onNodeInit({ zclNode }) {
+    // Hybrid system initialization
+    await super.onNodeInit({ zclNode });
+
+    // Original initialization below:
     // Initialize hybrid base (power detection)
     await super.onNodeInit({ zclNode });
 
@@ -477,5 +499,8 @@ class SmartSwitch1gangHybridDevice extends SwitchDevice {
     return this.fallback ? this.fallback.getStats() : null;
   }
 }
+
+module.exports = SmartSwitch1gangHybridDevice;
+
 
 module.exports = SmartSwitch1gangHybridDevice;

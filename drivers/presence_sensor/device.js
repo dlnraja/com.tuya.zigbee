@@ -1,6 +1,24 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+// MIGRATED TO HYBRID SYSTEM v2.0
+const HybridDriverSystem = require('../../lib/HybridDriverSystem');
+const BatteryManagerV2 = require('../../lib/BatteryManagerV2');
+
+/**
+ * presence_sensor - Hybrid-Enhanced Driver
+ *
+ * MIGRATION: Original driver enhanced with Hybrid System
+ * - Auto-adaptive capabilities
+ * - Energy-aware management
+ * - Smart detection
+ */
+
+// Create hybrid base
+const HybridDevice = HybridDriverSystem.createHybridDevice();
+
+'use strict';
+
+
 const TuyaDataPointEngine = require('../../lib/TuyaDataPointEngine');
 
 /**
@@ -14,9 +32,13 @@ const TuyaDataPointEngine = require('../../lib/TuyaDataPointEngine');
  * This device does NOT use standard Zigbee clusters for sensors.
  * All data is transmitted via Tuya proprietary DP protocol.
  */
-class PresenceSensorDevice extends ZigBeeDevice {
+class PresenceSensorDevice extends HybridDevice {
   
   async onNodeInit({ zclNode }) {
+    // Hybrid system initialization
+    await super.onNodeInit({ zclNode });
+
+    // Original initialization below:
     this.log('Presence Sensor Radar initializing...');
     this.log('Manufacturer:', '_TZE200_rhgsbacq');
     this.log('Product:', 'TS0601');
@@ -70,5 +92,8 @@ class PresenceSensorDevice extends ZigBeeDevice {
     this.log('Presence Sensor Radar deleted');
   }
 }
+
+module.exports = PresenceSensorDevice;
+
 
 module.exports = PresenceSensorDevice;

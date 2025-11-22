@@ -1,29 +1,35 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const SensorDevice = require('../../lib/devices/SensorDevice');
 const { Cluster, CLUSTER } = require('zigbee-clusters');
 
 /**
  * Contact & Vibration Sensor (HOBEIAN ZG-102ZM)
- * 
+ *
  * Capabilities:
  * - alarm_contact: Door/Window contact status
- * - alarm_tamper: Vibration/Shock detection  
+ * - alarm_tamper: Vibration/Shock detection
  * - measure_battery: Battery percentage
  * - alarm_battery: Low battery alarm
  */
-class ContactVibrationSensor extends ZigBeeDevice {
+class ContactVibrationSensor extends SensorDevice {
 
   async onNodeInit({ zclNode }) {
+    // Initialize hybrid base (power detection)
+    await super.onNodeInit({ zclNode });
+
+    // Setup IAS Zone (SDK3 - based on Peter's success patterns)
+    await this.setupIASZone();
+
     this.printNode();
-    
+
     // Enable debug
     this.enableDebug();
     this.printDebug('Contact & Vibration Sensor initialized');
 
     // Register capabilities
     await this.registerCapabilities(zclNode);
-    
+
     // Configure reporting
     await this.configureReporting(zclNode);
   }
@@ -32,25 +38,52 @@ class ContactVibrationSensor extends ZigBeeDevice {
     // IAS Zone - Contact & Vibration
     if (this.hasCapability('alarm_contact') || this.hasCapability('alarm_tamper')) {
       zclNode.endpoints[1].clusters.iasZone
-        .on('zoneStatusChangeNotification', payload => {
+        .on('zoneStatusChangeNotification', async payload => {
           this.printDebug('IAS Zone Status:', payload);
-          
+
           // Bit 0: Alarm 1 (Contact)
           const contactAlarm = (payload.zoneStatus & 0x01) === 0x01;
           if (this.hasCapability('alarm_contact')) {
-            this.setCapabilityValue('alarm_contact', contactAlarm).catch(this.error);
+            await (async () => {
+              this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_contact'} = ${contactAlarm}`);
+              try {
+                await this.setCapabilityValue('alarm_contact', contactAlarm);
+                this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'alarm_contact'}`);
+              } catch (err) {
+                this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'alarm_contact'}`, err.message);
+                throw err;
+              }
+            })().catch(this.error);
           }
-          
+
           // Bit 1: Alarm 2 (Tamper/Vibration)
           const tamperAlarm = (payload.zoneStatus & 0x02) === 0x02;
           if (this.hasCapability('alarm_tamper')) {
-            this.setCapabilityValue('alarm_tamper', tamperAlarm).catch(this.error);
+            await (async () => {
+              this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_tamper'} = ${tamperAlarm}`);
+              try {
+                await this.setCapabilityValue('alarm_tamper', tamperAlarm);
+                this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'alarm_tamper'}`);
+              } catch (err) {
+                this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'alarm_tamper'}`, err.message);
+                throw err;
+              }
+            })().catch(this.error);
           }
-          
+
           // Bit 3: Battery low
           const batteryLow = (payload.zoneStatus & 0x08) === 0x08;
           if (this.hasCapability('alarm_battery')) {
-            this.setCapabilityValue('alarm_battery', batteryLow).catch(this.error);
+            await (async () => {
+              this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_battery'} = ${batteryLow}`);
+              try {
+                await this.setCapabilityValue('alarm_battery', batteryLow);
+                this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'alarm_battery'}`);
+              } catch (err) {
+                this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'alarm_battery'}`, err.message);
+                throw err;
+              }
+            })().catch(this.error);
           }
         });
     }
@@ -59,14 +92,23 @@ class ContactVibrationSensor extends ZigBeeDevice {
     if (this.hasCapability('measure_battery')) {
       this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
         get: 'batteryPercentageRemaining',
-        reportParser: value => {
+        reportParser: async value => {
           const batteryThreshold = this.getSetting('battery_low_threshold') || 20;
           const percentage = value / 2;
-          
+
           if (this.hasCapability('alarm_battery')) {
-            this.setCapabilityValue('alarm_battery', percentage < batteryThreshold).catch(this.error);
+            await (async () => {
+              this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_battery'} = ${percentage < batteryThreshold}`);
+              try {
+                await this.setCapabilityValue('alarm_battery', percentage < batteryThreshold);
+                this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'alarm_battery'}`);
+              } catch (err) {
+                this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'alarm_battery'}`, err.message);
+                throw err;
+              }
+            })().catch(this.error);
           }
-          
+
           return percentage;
         },
         report: 'batteryPercentageRemaining',
@@ -114,7 +156,7 @@ class ContactVibrationSensor extends ZigBeeDevice {
       try {
         const sensitivity = newSettings.sensitivity;
         this.printDebug('Setting sensitivity to:', sensitivity);
-        
+
         // Write sensitivity attribute (manufacturer specific)
         // Note: This may require manufacturer-specific cluster
         // Adjust cluster/attribute based on device behavior
@@ -123,7 +165,7 @@ class ContactVibrationSensor extends ZigBeeDevice {
         }).catch(err => {
           this.printDebug('Failed to set sensitivity (normal for some devices):', err);
         });
-        
+
       } catch (err) {
         this.error('Error setting sensitivity:', err);
         throw new Error(this.homey.__('settings.sensitivity_failed'));
@@ -134,9 +176,18 @@ class ContactVibrationSensor extends ZigBeeDevice {
     if (changedKeys.includes('battery_low_threshold')) {
       const currentBattery = this.getCapabilityValue('measure_battery');
       const threshold = newSettings.battery_low_threshold;
-      
+
       if (currentBattery !== null && this.hasCapability('alarm_battery')) {
-        this.setCapabilityValue('alarm_battery', currentBattery < threshold).catch(this.error);
+        await (async () => {
+          this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_battery'} = ${currentBattery < threshold}`);
+          try {
+            await this.setCapabilityValue('alarm_battery', currentBattery < threshold);
+            this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'alarm_battery'}`);
+          } catch (err) {
+            this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'alarm_battery'}`, err.message);
+            throw err;
+          }
+        })().catch(this.error);
       }
     }
   }
@@ -155,6 +206,69 @@ class ContactVibrationSensor extends ZigBeeDevice {
     this.isDebug = false;
   }
 
+  /**
+   * Setup IAS Zone (SDK3 Compliant)
+   */
+  async setupIASZone() {
+    this.log('🔐 Setting up IAS Zone...');
+
+    const endpoint = this.zclNode.endpoints[1];
+    if (!endpoint?.clusters?.iasZone) {
+      this.log('[INFO] IAS Zone cluster not available');
+      return;
+    }
+
+    try {
+      // Setup Zone Enroll Request listener
+      endpoint.clusters.iasZone.onZoneEnrollRequest = async () => {
+        this.log('[MSG] Zone Enroll Request received');
+        try {
+          await endpoint.clusters.iasZone.zoneEnrollResponse({
+            enrollResponseCode: 0,
+            zoneId: 10
+          });
+          this.log('[OK] Zone Enroll Response sent');
+        } catch (err) {
+          this.error('Zone Enroll Response failed:', err.message);
+        }
+      };
+
+      // Send proactive enrollment response
+      await endpoint.clusters.iasZone.zoneEnrollResponse({
+        enrollResponseCode: 0,
+        zoneId: 10
+      });
+      this.log('[OK] Proactive enrollment sent');
+
+      // Setup status change listener
+      endpoint.clusters.iasZone.onZoneStatusChangeNotification = async (payload) => {
+        if (payload?.zoneStatus !== undefined) {
+          let status = payload.zoneStatus;
+          if (typeof status.valueOf === 'function') {
+            status = status.valueOf();
+          }
+          const alarm = (status & 0x01) !== 0;
+          await this.setCapabilityValue('alarm_contact', alarm).catch(this.error);
+          this.log(`[STATUS] Alarm: ${alarm ? 'TRIGGERED' : 'cleared'}`);
+        }
+      };
+
+      this.log('[OK] IAS Zone configured');
+    } catch (err) {
+      this.error('IAS Zone setup failed:', err);
+    }
+  }
+
+
+  async triggerFlowCard(cardId, tokens = {}) {
+    try {
+      const flowCard = this.homey.flow.getDeviceTriggerCard(cardId);
+      await flowCard.trigger(this, tokens).catch(err => this.error(err));
+      this.log(`[OK] Flow triggered: ${cardId}`, tokens);
+    } catch (err) {
+      this.error(`[ERROR] Flow trigger error: ${cardId}`, err);
+    }
+  }
 }
 
 module.exports = ContactVibrationSensor;

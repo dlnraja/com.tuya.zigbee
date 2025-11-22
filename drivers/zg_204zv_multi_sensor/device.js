@@ -1,14 +1,36 @@
 'use strict';
 
+// MIGRATED TO HYBRID SYSTEM v2.0
+const HybridDriverSystem = require('../../lib/HybridDriverSystem');
+const BatteryManagerV2 = require('../../lib/BatteryManagerV2');
+
+/**
+ * zg_204zv_multi_sensor - Hybrid-Enhanced Driver
+ *
+ * MIGRATION: Original driver enhanced with Hybrid System
+ * - Auto-adaptive capabilities
+ * - Energy-aware management
+ * - Smart detection
+ */
+
+// Create hybrid base
+const HybridDevice = HybridDriverSystem.createHybridDevice();
+
+'use strict';
+
 const { TuyaSpecificClusterDevice } = require('../../lib/TuyaSpecificClusterDevice');
 
 /**
  * Multi-Sensor (Motion, Temp, Humidity, Light)
  * HOBEIAN, _TZE200_3towulqd / ZG-204ZV, TS0601
  */
-class Device extends TuyaSpecificClusterDevice {
+class Device extends HybridDevice {
 
   async onNodeInit({ zclNode }) {
+    // Hybrid system initialization
+    await super.onNodeInit({ zclNode });
+
+    // Original initialization below:
     this.log('Multi-Sensor (Motion, Temp, Humidity, Light) initialized');
 
     // Tuya Datapoint Handling
@@ -20,5 +42,8 @@ class Device extends TuyaSpecificClusterDevice {
   
   }
 }
+
+module.exports = Device;
+
 
 module.exports = Device;

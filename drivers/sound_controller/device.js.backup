@@ -1,6 +1,6 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const ButtonDevice = require('../../lib/devices/ButtonDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
 /**
@@ -17,9 +17,12 @@ const { CLUSTER } = require('zigbee-clusters');
  * Brand identification happens via manufacturerName and productId fields.
  */
 
-class SoundControllerBatteryDevice extends ZigBeeDevice {
+class SoundControllerBatteryDevice extends ButtonDevice {
   
   async onNodeInit({ zclNode }) {
+    // Initialize hybrid base (power detection)
+    await super.onNodeInit({ zclNode });
+
     this.printNode();
     
     // IKEA SYMFONISK Sound Controller
@@ -43,7 +46,6 @@ class SoundControllerBatteryDevice extends ZigBeeDevice {
         return percentage;
       },
       report: 'batteryPercentageRemaining',
-      reportParser: value => Math.round(value / 2),
       getOpts: {
         getOnStart: true,
         pollInterval: (this.getSetting('battery_report_interval') || 1) * 3600000
@@ -56,7 +58,7 @@ class SoundControllerBatteryDevice extends ZigBeeDevice {
       reportParser: value => {
         const isLowBattery = value > 0;
         if (isLowBattery) {
-          this.log('⚠️ Low battery alarm triggered!');
+          this.log('[WARN] Low battery alarm triggered!');
           this.setWarning('Low battery detected').catch(this.error);
         }
         return isLowBattery;
