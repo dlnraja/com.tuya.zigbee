@@ -1,5 +1,23 @@
 'use strict';
 
+// MIGRATED TO HYBRID SYSTEM v2.0
+const HybridDriverSystem = require('../../lib/HybridDriverSystem');
+const BatteryManagerV2 = require('../../lib/BatteryManagerV2');
+
+/**
+ * switch_wall_4gang - Hybrid-Enhanced Driver
+ *
+ * MIGRATION: Original driver enhanced with Hybrid System
+ * - Auto-adaptive capabilities
+ * - Energy-aware management
+ * - Smart detection
+ */
+
+// Create hybrid base
+const HybridDevice = HybridDriverSystem.createHybridDevice();
+
+'use strict';
+
 const { CLUSTER } = require('zigbee-clusters');
 const SwitchDevice = require('../../lib/devices/SwitchDevice');
 
@@ -8,9 +26,13 @@ const SwitchDevice = require('../../lib/devices/SwitchDevice');
  * Auto-detects AC/DC power source
  * Handles 4 independent switches
  */
-class SwitchWall4GangDevice extends SwitchDevice {
+class SwitchWall4GangDevice extends HybridDevice {
 
   async onNodeInit({ zclNode }) {
+    // Hybrid system initialization
+    await super.onNodeInit({ zclNode });
+
+    // Original initialization below:
     this.log('SwitchWall4GangDevice initializing...');
     
     // Set switch count for this device
@@ -93,5 +115,8 @@ class SwitchWall4GangDevice extends SwitchDevice {
     await super.onDeleted().catch(err => this.error(err));
   }
 }
+
+module.exports = SwitchWall4GangDevice;
+
 
 module.exports = SwitchWall4GangDevice;

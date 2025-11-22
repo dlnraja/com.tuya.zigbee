@@ -1,11 +1,14 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const ButtonDevice = require('../../lib/devices/ButtonDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
-class Remote4buttonStyrbarBatteryDevice extends ZigBeeDevice {
+class Remote4buttonStyrbarBatteryDevice extends ButtonDevice {
   
   async onNodeInit({ zclNode }) {
+    // Initialize hybrid base (power detection)
+    await super.onNodeInit({ zclNode });
+
     this.printNode();
     
     // IKEA STYRBAR Remote Control
@@ -42,7 +45,7 @@ class Remote4buttonStyrbarBatteryDevice extends ZigBeeDevice {
       reportParser: value => {
         const isLowBattery = value > 0;
         if (isLowBattery) {
-          this.log('⚠️ Low battery alarm triggered!');
+          this.log('[WARN] Low battery alarm triggered!');
           this.setWarning('Low battery detected').catch(this.error);
         }
         return isLowBattery;

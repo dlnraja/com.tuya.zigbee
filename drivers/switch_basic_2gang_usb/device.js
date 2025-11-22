@@ -1,15 +1,37 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+// MIGRATED TO HYBRID SYSTEM v2.0
+const HybridDriverSystem = require('../../lib/HybridDriverSystem');
+const BatteryManagerV2 = require('../../lib/BatteryManagerV2');
+
+/**
+ * switch_basic_2gang_usb - Hybrid-Enhanced Driver
+ *
+ * MIGRATION: Original driver enhanced with Hybrid System
+ * - Auto-adaptive capabilities
+ * - Energy-aware management
+ * - Smart detection
+ */
+
+// Create hybrid base
+const HybridDevice = HybridDriverSystem.createHybridDevice();
+
+'use strict';
+
+
 
 /**
  * Switch Basic 2-Gang USB - TS0002
  * 1 AC Socket + 2 USB Ports
  * Manufacturer: _TZ3000_h1ipgkwn
  */
-module.exports = class SwitchBasic2GangUsb extends ZigBeeDevice {
+module.exports = class SwitchBasic2GangUsb extends HybridDevice {
 
   async onNodeInit({ zclNode }) {
+    // Hybrid system initialization
+    await super.onNodeInit({ zclNode });
+
+    // Original initialization below:
     this.log('[TS0002-2GANG] 🔌 USB 2-Port Module initializing...');
     this.zclNode = zclNode;
 
@@ -50,3 +72,6 @@ module.exports = class SwitchBasic2GangUsb extends ZigBeeDevice {
     this.log('[TS0002-2GANG] ✅ USB 2-Port Module initialized!');
   }
 };
+
+
+module.exports = SwitchBasic2GangUsb;

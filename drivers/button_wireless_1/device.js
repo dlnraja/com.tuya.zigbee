@@ -1,5 +1,23 @@
 'use strict';
 
+// MIGRATED TO HYBRID SYSTEM v2.0
+const HybridDriverSystem = require('../../lib/HybridDriverSystem');
+const BatteryManagerV2 = require('../../lib/BatteryManagerV2');
+
+/**
+ * button_wireless_1 - Hybrid-Enhanced Driver
+ *
+ * MIGRATION: Original driver enhanced with Hybrid System
+ * - Auto-adaptive capabilities
+ * - Energy-aware management
+ * - Smart detection
+ */
+
+// Create hybrid base
+const HybridDevice = HybridDriverSystem.createHybridDevice();
+
+'use strict';
+
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
 /**
@@ -7,9 +25,13 @@ const ButtonDevice = require('../../lib/devices/ButtonDevice');
  * Auto-detects battery type (CR2032/CR2450/AAA)
  * Handles single/double/long press for each button
  */
-class Button1GangDevice extends ButtonDevice {
+class Button1GangDevice extends HybridDevice {
 
   async onNodeInit({ zclNode }) {
+    // Hybrid system initialization
+    await super.onNodeInit({ zclNode });
+
+    // Original initialization below:
     this.log('Button1GangDevice initializing...');
     
     // Set button count for this device
@@ -35,5 +57,8 @@ class Button1GangDevice extends ButtonDevice {
     }
   }
 }
+
+module.exports = Button1GangDevice;
+
 
 module.exports = Button1GangDevice;

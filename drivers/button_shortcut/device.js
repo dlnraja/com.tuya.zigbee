@@ -1,5 +1,23 @@
 'use strict';
 
+// MIGRATED TO HYBRID SYSTEM v2.0
+const HybridDriverSystem = require('../../lib/HybridDriverSystem');
+const BatteryManagerV2 = require('../../lib/BatteryManagerV2');
+
+/**
+ * button_shortcut - Hybrid-Enhanced Driver
+ *
+ * MIGRATION: Original driver enhanced with Hybrid System
+ * - Auto-adaptive capabilities
+ * - Energy-aware management
+ * - Smart detection
+ */
+
+// Create hybrid base
+const HybridDevice = HybridDriverSystem.createHybridDevice();
+
+'use strict';
+
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
@@ -17,9 +35,13 @@ const { CLUSTER } = require('zigbee-clusters');
  * Brand identification happens via manufacturerName and productId fields.
  */
 
-class ShortcutButtonBatteryDevice extends ButtonDevice {
+class ShortcutButtonBatteryDevice extends HybridDevice {
   
   async onNodeInit({ zclNode }) {
+    // Hybrid system initialization
+    await super.onNodeInit({ zclNode });
+
+    // Original initialization below:
     // Initialize hybrid base (power detection)
     await super.onNodeInit({ zclNode });
 
@@ -98,5 +120,8 @@ class ShortcutButtonBatteryDevice extends ButtonDevice {
     return Math.floor(hoursRemaining / 24);
   }
 }
+
+module.exports = ShortcutButtonBatteryDevice;
+
 
 module.exports = ShortcutButtonBatteryDevice;

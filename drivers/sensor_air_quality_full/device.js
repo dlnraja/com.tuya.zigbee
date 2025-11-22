@@ -1,11 +1,33 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+// MIGRATED TO HYBRID SYSTEM v2.0
+const HybridDriverSystem = require('../../lib/HybridDriverSystem');
+const BatteryManagerV2 = require('../../lib/BatteryManagerV2');
+
+/**
+ * sensor_air_quality_full - Hybrid-Enhanced Driver
+ *
+ * MIGRATION: Original driver enhanced with Hybrid System
+ * - Auto-adaptive capabilities
+ * - Energy-aware management
+ * - Smart detection
+ */
+
+// Create hybrid base
+const HybridDevice = HybridDriverSystem.createHybridDevice();
+
+'use strict';
+
+
 const TuyaDataPointsComplete = require('../../lib/TuyaDataPointsComplete');
 
-class SensorAirQualityFullDevice extends ZigBeeDevice {
+class SensorAirQualityFullDevice extends HybridDevice {
   
   async onNodeInit({ zclNode }) {
+    // Hybrid system initialization
+    await super.onNodeInit({ zclNode });
+
+    // Original initialization below:
     this.log('Air Quality Monitor Full initializing...');
     
     // Get Tuya EF00 cluster
@@ -52,5 +74,8 @@ class SensorAirQualityFullDevice extends ZigBeeDevice {
     this.log('Air Quality Monitor Full initialized');
   }
 }
+
+module.exports = SensorAirQualityFullDevice;
+
 
 module.exports = SensorAirQualityFullDevice;

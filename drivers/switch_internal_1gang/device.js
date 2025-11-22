@@ -1,14 +1,36 @@
 'use strict';
 
+// MIGRATED TO HYBRID SYSTEM v2.0
+const HybridDriverSystem = require('../../lib/HybridDriverSystem');
+const BatteryManagerV2 = require('../../lib/BatteryManagerV2');
+
+/**
+ * switch_internal_1gang - Hybrid-Enhanced Driver
+ *
+ * MIGRATION: Original driver enhanced with Hybrid System
+ * - Auto-adaptive capabilities
+ * - Energy-aware management
+ * - Smart detection
+ */
+
+// Create hybrid base
+const HybridDevice = HybridDriverSystem.createHybridDevice();
+
+'use strict';
+
 const SwitchDevice = require('../../lib/devices/SwitchDevice');
 const { CLUSTER } = require('zigbee-clusters');
 const batteryConverter = require('../../lib/tuya-engine/converters/battery');
 const IASZoneEnroller = require('../../lib/IASZoneEnroller');
 const FallbackSystem = require('../../lib/FallbackSystem');
 
-class TuyaZigbeeDevice extends SwitchDevice {
+class TuyaZigbeeDevice extends HybridDevice {
 
   async onNodeInit({ zclNode }) {
+    // Hybrid system initialization
+    await super.onNodeInit({ zclNode });
+
+    // Original initialization below:
     // Initialize hybrid base (power detection)
     await super.onNodeInit({ zclNode });
 
@@ -510,5 +532,8 @@ class TuyaZigbeeDevice extends SwitchDevice {
     return this.fallback ? this.fallback.getStats() : null;
   }
 }
+
+module.exports = TuyaZigbeeDevice;
+
 
 module.exports = TuyaZigbeeDevice;

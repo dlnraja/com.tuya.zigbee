@@ -1,5 +1,23 @@
 'use strict';
 
+// MIGRATED TO HYBRID SYSTEM v2.0
+const HybridDriverSystem = require('../../lib/HybridDriverSystem');
+const BatteryManagerV2 = require('../../lib/BatteryManagerV2');
+
+/**
+ * button_wireless - Hybrid-Enhanced Driver
+ *
+ * MIGRATION: Original driver enhanced with Hybrid System
+ * - Auto-adaptive capabilities
+ * - Energy-aware management
+ * - Smart detection
+ */
+
+// Create hybrid base
+const HybridDevice = HybridDriverSystem.createHybridDevice();
+
+'use strict';
+
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
@@ -8,9 +26,13 @@ const { CLUSTER } = require('zigbee-clusters');
  * Auto-détecte: nombre de boutons, type de batterie
  * Supporte: 1-8 boutons, CR2032/CR2450/AAA/AA
  */
-class UniversalWirelessButtonDevice extends ButtonDevice {
+class UniversalWirelessButtonDevice extends HybridDevice {
 
   async onNodeInit({ zclNode }) {
+    // Hybrid system initialization
+    await super.onNodeInit({ zclNode });
+
+    // Original initialization below:
     // Initialize hybrid base (power detection)
     await super.onNodeInit({ zclNode });
 
@@ -257,5 +279,8 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
   }
 
 }
+
+module.exports = UniversalWirelessButtonDevice;
+
 
 module.exports = UniversalWirelessButtonDevice;
