@@ -25,6 +25,7 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "HOBEIAN",
       "_TZ3000_1o6x1bl0",
       "_TZ3000_akqdg6g7",
       "_TZ3000_bsvqrxru",
@@ -222,10 +223,13 @@
           "relativeHumidity",
           "iasZone",
           "manuSpecificTuya",
-          61184
+          61184,
+          1280,
+          1
         ],
         "bindings": [
-          1
+          1,
+          1280
         ]
       }
     },
@@ -237,6 +241,8 @@
       }
     },
     "productId": [
+      "ZG-204ZL",
+      "ZG-204ZM",
       "TS0202",
       "TS0601"
     ]

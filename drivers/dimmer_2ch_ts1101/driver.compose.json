@@ -1,0 +1,45 @@
+{
+  "name": {
+    "en": "2-Channel Dimmer Module"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_7ysdnebc"
+    ],
+    "productId": [
+      "TS1101"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8
+        ],
+        "bindings": [
+          6,
+          8
+        ]
+      }
+    }
+  },
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": false
+    }
+  }
+}

@@ -76,7 +76,11 @@
       "_TZ3000_ww6drja5",
       "_TZ3000_xabckq1v",
       "_TZ3000_yj6k7vfo",
-      "_TZE284_oitavov2"
+      "_TZE284_oitavov2",
+      "_TZ3000_famkxci2",
+      "_TZ3000_gbm10jnj",
+      "_TZ3000_sj7jbgks",
+      "_TZ3400_key8kk7r"
     ],
     "productId": [
       "TS0041",
@@ -104,13 +108,15 @@
         "clusters": [
           0,
           1,
-          3
+          3,
+          1280
         ],
         "bindings": [
           1,
           3,
           6,
-          8
+          8,
+          1280
         ]
       }
     }

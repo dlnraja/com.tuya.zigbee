@@ -1,0 +1,54 @@
+{
+  "name": {
+    "en": "RGB LED Strip Controller"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_i8l0nqdu",
+      "_TZ3210_a5fxguxr",
+      "_TZ3000_g5xawfcq",
+      "_TZ3210_trm3l2aw",
+      "_TZ3210_0zabbfax",
+      "_TZ3210_95txyzbx"
+    ],
+    "productId": [
+      "TS0503B"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          768
+        ],
+        "bindings": [
+          6,
+          8,
+          768
+        ]
+      }
+    }
+  },
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/drivers/rgb_led_controller/assets/images/small.png",
+    "large": "/drivers/rgb_led_controller/assets/images/large.png"
+  }
+}

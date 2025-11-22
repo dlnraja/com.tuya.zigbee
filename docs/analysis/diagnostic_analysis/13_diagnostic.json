@@ -1,0 +1,2404 @@
+{
+  "pdf": "13.pdf",
+  "errors": {
+    "errors": [
+      {
+        "error": "Error: Unexpected token ':'",
+        "context": "alizing   Device: /app/drivers/presence_sensor_ radar/device.js:59 report: 'measuredValue', ^ SyntaxError: Unexpected token ':' at wrapSafe (node:internal/modules/cjs/ loader:1638:18) at Module._compile (node:internal/modules/c",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Unexpected token '.'",
+        "context": "e.js: 720 this.log('[WARN] Battery reporting config failed (non- critical):', err.message); ^ SyntaxError: Unexpected token '.' at wrapSafe (node:internal/modules/cjs/ loader:1638:18) at Module._compile (node:internal/modules/c",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot destructure  ",
+        "context": "] [ManagerDrivers]   [Driver:switch_basic_2gang] [Device:1c66e23a-6e97-4f3c- ae13-946f098d1af5] TypeError: Cannot destructure   property 'zclNode' of 'undefined' as it is undefined. at Switch2gangDevice.onNodeInit   (/app/lib/B",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot destructure  ",
+        "context": "r] [ManagerDrivers]   [Driver:button_wireless_3] [Device:59def83e-e5ca-458c- 9376-2828eb18e898] TypeError: Cannot destructure   property 'zclNode' of 'undefined' as it is undefined. at Button3GangDevice.onNodeInit   (/app/lib/B",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot destructure  ",
+        "context": "r] [ManagerDrivers]   [Driver:button_wireless_4] [Device:c61b369f-43d6-4777- a550-6e180c7cf4d5] TypeError: Cannot destructure   property 'zclNode' of 'undefined' as it is undefined. at Button4GangDevice.onNodeInit   (/app/lib/B",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: await is only valid in async functions and  ",
+        "context": "device.js:79 await this.setCapabilityValue(' alarm_generic',   true).catch(this.error); ^^^^^ SyntaxError: await is only valid in async functions and   the top level bodies of modules at wrapSafe (node:internal/modules/cjs/ loader:1638:18) at Module._",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Unexpected token ':'",
+        "context": "g Device: /app/drivers/climate_monitor_ temp_humidity/device.js:52 report: 'measuredValue', ^ SyntaxError: Unexpected token ':' at wrapSafe (node:internal/modules/cjs/ loader:1638:18) at Module._compile (node:internal/modules/c",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Unexpected token ':'",
+        "context": "tializing Device:   /app/drivers/climate_sensor_ soil/device.js:93 report: 'measuredValue', ^ SyntaxError: Unexpected token ':' at wrapSafe (node:internal/modules/cjs/ loader:1638:18) at Module._compile (node:internal/modules/c",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: await is only valid in async functions and  ",
+        "context": "evice.js:156 await this.setCapabilityValue(' alarm_motion',   alarm).catch(this.error); ^^^^^ SyntaxError: await is only valid in async functions and   the top level bodies of modules at wrapSafe (node:internal/modules/cjs/ loader:1638:18) at Module._",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Unexpected token ':'",
+        "context": "g Device: /app/drivers/climate_monitor_ temp_humidity/device.js:99 report: 'measuredValue', ^ SyntaxError: Unexpected token ':' at wrapSafe (node:internal/modules/cjs/ loader:1638:18) at Module._compile (node:internal/modules/c",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Unexpected token ':'",
+        "context": "ializing Device:   /app/drivers/climate_sensor_ soil/device.js:139 report: 'measuredValue', ^ SyntaxError: Unexpected token ':' at wrapSafe (node:internal/modules/cjs/ loader:1638:18) at Module._compile (node:internal/modules/c",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: await is only valid in async functions and  ",
+        "context": "evice.js:174 await this.setCapabilityValue(' alarm_motion',   alarm).catch(this.error); ^^^^^ SyntaxError: await is only valid in async functions and   the top level bodies of modules at wrapSafe (node:internal/modules/cjs/ loader:1638:18) at Module._",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: A Capability with ID homey:app:com.dlnraja.tuya.",
+        "context": "[Device:c4d89393- e3ec-465e- bf44-dc12c76109a7] Battery type: CR2032 stderr: ⚠ The app has crashed. Error: A Capability with ID homey:app:com.dlnraja.tuya. zigbee:fan_speed already exists. at ManagerDatabase.createEntry (file:///app/lib/ ManagerDatabase.m",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: await is only valid in async functions and  ",
+        "context": "vice.js:237 await this.setCapabilityValue(' alarm_contact',   alarm).catch(this.error); ^^^^^ SyntaxError: await is only valid in async functions and   the top level bodies of modules at wrapSafe (node:internal/modules/cjs/ loader:1638:18) at Module._",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: await is only valid in async functions and  ",
+        "context": "vice.js:257 await this.setCapabilityValue(' alarm_motion',   motion).catch(this.error); ^^^^^ SyntaxError: await is only valid in async functions and   the top level bodies of modules at wrapSafe (node:internal/modules/cjs/ loader:1638:18) at Module._",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot read  ",
+        "context": "vers]   [Driver:climate_monitor_temp_ humidity] [Device:7a2593c3- 44d9-4730- a2b9-59a4e3a16e42] TypeError: Cannot read   properties of undefined (reading 'catch') at ClimateMonitorDevice.onDeleted   (/app/lib/BaseHybridD",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot read  ",
+        "context": "ManagerDrivers]   [Driver:presence_sensor_radar] [Device:b6dc31c5-4cfe- 431f-861e-3615cf44bff6] TypeError: Cannot read   properties of undefined (reading 'catch') at PresenceSensorRadarDevice. onDeleted   (/app/lib/BaseH",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot read properties of  ",
+        "context": "[ManagerDrivers]   [Driver:climate_sensor_soil] [Device:a4fcafc5-f164-4a3e- aec9-a113ad6ca91f] TypeError: Cannot read properties of   undefined (reading 'catch') at TuyaSoilTesterTempHumidDevice. onDeleted   (/app/lib/BaseHybridDevic",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot read  ",
+        "context": "[ManagerDrivers]   [Driver:button_emergency_sos] [Device:c0ff6145-592b- 4799-abc2-f6f62d80b7ae] TypeError: Cannot read   properties of undefined (reading 'catch') at SosEmergencyButtonDevice. onDeleted   (/app/lib/BaseHy",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot read properties of  ",
+        "context": "] [ManagerDrivers]   [Driver:switch_basic_2gang] [Device:b7f2dfd2-90b6-4c62- ae5d-e63d02109dd6] TypeError: Cannot read properties of   undefined (reading 'catch') at Switch2gangDevice.onDeleted   (/app/lib/BaseHybridDevice.js: 1799:28",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: could not initialize  ",
+        "context": "rDrivers]   [Driver:climate_monitor_temp_ humidity] [Device:5b2f6dd4- 439a-4246- bd08-e5cb91591004] Error: could not initialize   node Error: Missing Zigbee Device at Remote Process at HomeyClient.emit (/app/assets/app/node_modul",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Missing Zigbee Device",
+        "context": "_temp_ humidity] [Device:5b2f6dd4- 439a-4246- bd08-e5cb91591004] Error: could not initialize   node Error: Missing Zigbee Device at Remote Process at HomeyClient.emit (/app/assets/app/node_modules/ @athombv/homey-apps-sdk-v3/ li",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error:  \nBaseHybridDevice is not defined",
+        "context": "5-10-29T23:18:19.280Z [err] [ManagerDrivers] Error   Initializing Driver usb_outlet_2port: ReferenceError:   BaseHybridDevice is not defined at Object.  (/app/drivers/usb_outlet_ 2port/device.js:24:36) at Module._compile (node:internal/modu",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot read properties of undefined (reading  ",
+        "context": "itor_temp_ humidity] [Device:0b5ef21a- 5c08-41a2- bf97-8c259a891f47] Failed to set available:   TypeError: Cannot read properties of undefined (reading   'resolve') at ClimateMonitorDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at process.",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error:  \nCannot read properties of undefined (reading 'resolve')",
+        "context": "er:climate_sensor_soil] [Device:d9ac2b1e-0586-48b6- b0eb-dbf6c4024dcb] Failed to set available: TypeError:   Cannot read properties of undefined (reading 'resolve') at TuyaSoilTesterTempHumidDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at process. pr",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot read properties of undefined (reading  ",
+        "context": "resence_sensor_radar] [Device:51e59f69-e909- 422a-8287-8e30e45cbc73] Failed to set available:   TypeError: Cannot read properties of undefined (reading   'resolve') at PresenceSensorRadarDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at proc",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error:  \nCannot read properties of undefined (reading 'resolve')",
+        "context": "ver:switch_basic_2gang] [Device:e5f864e4-6b20-42e1- a9db-19f47b3ef018] Failed to set available: TypeError:   Cannot read properties of undefined (reading 'resolve') at Switch2gangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at process. processTicksAnd",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot read properties of undefined (reading  ",
+        "context": "resence_sensor_radar] [Device:6e2576a6-a17a- 4884-b22e-4807d58bb6da] Failed to set available:   TypeError: Cannot read properties of undefined (reading   'resolve') at PresenceSensorRadarDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at proc",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error:  \nCannot read properties of undefined (reading 'resolve')",
+        "context": "ver:switch_basic_2gang] [Device:d540c62b-26c8-4da8- 8205-a6bf080423fa] Failed to set available: TypeError:   Cannot read properties of undefined (reading 'resolve') at Switch2gangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at process. processTicksAnd",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot read properties of undefined (reading  ",
+        "context": "background init: Cannot   read properties of undefined (reading 'resolve') unhandledRejection: TypeError: Cannot read properties of undefined (reading   'resolve') at OnOffCluster.  (/app/lib/SwitchDevice.js:61: 32) at OnOffCluster.emit (node:events:51",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot read properties of undefined (reading  ",
+        "context": "itor_temp_ humidity] [Device:ff521c45- 02ba-42e2- afde-866bcae36e5d] Failed to set available:   TypeError: Cannot read properties of undefined (reading   'resolve') at ClimateMonitorDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at process.",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error:  \nCannot read properties of undefined (reading 'resolve')",
+        "context": "iver:button_wireless_4] [Device:c175dbb4-b1e8-46da- adcb-fadee62c70f6] Failed to set available: TypeError:   Cannot read properties of undefined (reading 'resolve') at Button4GangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at process. processTicksAnd",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error:  \nCannot read properties of undefined (reading 'resolve')",
+        "context": "iver:button_wireless_3] [Device:3fa99ce2-4711-4efc- ad28-ab9853b634c8] Failed to set available: TypeError:   Cannot read properties of undefined (reading 'resolve') at Button3GangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at process. processTicksAnd",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot read properties of undefined (reading  ",
+        "context": "button_emergency_sos] [Device:42ea2089-46c3- 43b3-9cd1-fd12ced62afa] Failed to set available:   TypeError: Cannot read properties of undefined (reading   'resolve') at SosEmergencyButtonDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at proce",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error:  \nCannot read properties of undefined (reading 'resolve')",
+        "context": "er:climate_sensor_soil] [Device:17e289d5-b553-4cf8- b09a-fe93eb9022ca] Failed to set available: TypeError:   Cannot read properties of undefined (reading 'resolve') at TuyaSoilTesterTempHumidDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at process. pr",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "o start background init:   _runBackgroundInitialization is not defined unhandledRejection: ReferenceError: setAvailable is not defined at PresenceSensorRadarDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. proce",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "25-10-30T11:44:35.333Z [err] [UniversalTuyaZigbeeApp]   UNHANDLED REJECTION at: Promise {  ReferenceError: setAvailable is not defined at PresenceSensorRadarDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. proce",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "23:7) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 } reason: ReferenceError: setAvailable is not defined at PresenceSensorRadarDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. proce",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "ate_sensor_soil] [Device:a91de14f-cd87-498c- 8fea-b103ac571583] Failed to set available:   ReferenceError: setAvailable is not defined at TuyaSoilTesterTempHumidDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. p",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "o start background init:   _runBackgroundInitialization is not defined unhandledRejection: ReferenceError: setAvailable is not defined at TuyaSoilTesterTempHumidDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. p",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "25-10-30T11:46:14.832Z [err] [UniversalTuyaZigbeeApp]   UNHANDLED REJECTION at: Promise {  ReferenceError: setAvailable is not defined at TuyaSoilTesterTempHumidDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. p",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "23:7) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 } reason: ReferenceError: setAvailable is not defined at TuyaSoilTesterTempHumidDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. p",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "tton_wireless_3] [Device:d43723f1-753d-42b0- 854f-1e687e92d284] Failed to set available:   ReferenceError: setAvailable is not defined at Button3GangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. processTicksAn",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "o start background init:   _runBackgroundInitialization is not defined unhandledRejection: ReferenceError: setAvailable is not defined at Button3GangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. processTicksAn",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "25-10-30T11:46:47.092Z [err] [UniversalTuyaZigbeeApp]   UNHANDLED REJECTION at: Promise {  ReferenceError: setAvailable is not defined at Button3GangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. processTicksAn",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "19:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 } reason: ReferenceError: setAvailable is not defined at Button3GangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. processTicksAn",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "tton_wireless_4] [Device:e18db8f2-69a6-4f43- b0d5-c354d12b703a] Failed to set available:   ReferenceError: setAvailable is not defined at Button4GangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. processTicksAn",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "o start background init:   _runBackgroundInitialization is not defined unhandledRejection: ReferenceError: setAvailable is not defined at Button4GangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. processTicksAn",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "25-10-30T11:47:11.323Z [err] [UniversalTuyaZigbeeApp]   UNHANDLED REJECTION at: Promise {  ReferenceError: setAvailable is not defined at Button4GangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. processTicksAn",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "19:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 } reason: ReferenceError: setAvailable is not defined at Button4GangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. processTicksAn",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error:  \nwithTimeout is not defined",
+        "context": "river:presence_sensor_radar] [Device:688acbba-30af- 4b8a-9dc4-8ae6679f33b9] Error details: ReferenceError:   withTimeout is not defined at ZigbeeTimeout. withTimeoutAndDefault   (/app/lib/ZigbeeTimeout.js:34: 20) at ZigbeeTimeout.readA",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Missing Zigbee Node",
+        "context": "KGROUND] Initialization   failed: this.detectAvailableMethods is not a function unhandledRejection: Error: Missing Zigbee Node at Remote Process at HomeyClient.emit (/app/assets/app/node_modules/ @athombv/homey-apps-sdk-v3/ li",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Missing Zigbee Node",
+        "context": "79:48) 2025-10-30T15:50:15.066Z [err] [UniversalTuyaZigbeeApp]   UNHANDLED REJECTION at: Promise {  Error: Missing Zigbee Node at Remote Process at HomeyClient.emit (/app/assets/app/node_modules/ @athombv/homey-apps-sdk-v3/ li",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Missing Zigbee Node",
+        "context": "tonDevice. detectPowerSource   (/app/lib/BaseHybridDevice.js: 379:48) { statusCode: 404 } } reason: Error: Missing Zigbee Node at Remote Process at HomeyClient.emit (/app/assets/app/node_modules/ @athombv/homey-apps-sdk-v3/ li",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: this.tuyaEF00Manager.on is not a function",
+        "context": "e_sensor_soil] [Device:a91de14f-cd87-498c- 8fea-b103ac571583] [SOIL] ❌  Tuya DP setup failed:   TypeError: this.tuyaEF00Manager.on is not a function at TuyaSoilTesterTempHumidDevice. setupTuyaDPListeners   (/app/drivers/climate_sensor_ soil/device.",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Timeout: Expected Response",
+        "context": ":11) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 unhandledRejection: Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Timeout: Expected Response",
+        "context": "523:7) 2025-10-30T15:50:40.042Z [err] [UniversalTuyaZigbeeApp]   UNHANDLED REJECTION at: Promise {  Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Timeout: Expected Response",
+        "context": "meout (node:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) } reason: Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Timeout: Expected Response",
+        "context": "e:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) unhandledRejection: Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Timeout: Expected Response",
+        "context": "523:7) 2025-10-30T15:50:40.121Z [err] [UniversalTuyaZigbeeApp]   UNHANDLED REJECTION at: Promise {  Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Timeout: Expected Response",
+        "context": "meout (node:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) } reason: Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: this.tuyaEF00Manager.on is not a function",
+        "context": "e_sensor_soil] [Device:b837d6cc-7615-481e- 9faa-48a7ca346b26] [SOIL] ❌  Tuya DP setup failed:   TypeError: this.tuyaEF00Manager.on is not a function at TuyaSoilTesterTempHumidDevice. setupTuyaDPListeners   (/app/drivers/climate_sensor_ soil/device.",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: this.tuyaEF00Manager.on is not a function",
+        "context": "e_sensor_soil] [Device:b837d6cc-7615-481e- 9faa-48a7ca346b26] [SOIL] ❌  Tuya DP setup failed:   TypeError: this.tuyaEF00Manager.on is not a function at TuyaSoilTesterTempHumidDevice. setupTuyaDPListeners   (/app/drivers/climate_sensor_ soil/device.",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Timeout: Expected Response",
+        "context": ":11) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 unhandledRejection: Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Timeout: Expected Response",
+        "context": "523:7) 2025-10-30T16:14:53.944Z [err] [UniversalTuyaZigbeeApp]   UNHANDLED REJECTION at: Promise {  Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Timeout: Expected Response",
+        "context": "meout (node:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) } reason: Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Timeout: Expected Response",
+        "context": "e:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) unhandledRejection: Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Timeout: Expected Response",
+        "context": "523:7) 2025-10-30T16:14:53.990Z [err] [UniversalTuyaZigbeeApp]   UNHANDLED REJECTION at: Promise {  Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Timeout: Expected Response",
+        "context": "meout (node:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) } reason: Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Impossible de joindre l'appareil. Est-il allumé ?",
+        "context": "e:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) unhandledRejection: Error: Impossible de joindre l'appareil. Est-il allumé ? at Remote Process at HomeyClient.emit (/app/assets/app/node_modules/ @athombv/homey-apps-sdk-v3/ li",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Impossible de joindre l'appareil. Est-il allumé  ",
+        "context": "79:48) 2025-10-30T16:14:59.067Z [err] [UniversalTuyaZigbeeApp]   UNHANDLED REJECTION at: Promise {  Error: Impossible de joindre l'appareil. Est-il allumé   ? at Remote Process at HomeyClient.emit (/app/assets/app/node_modules/ @athombv/homey-apps-sdk-v3/",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Impossible de joindre l'appareil. Est-",
+        "context": ":49: 15) at Button4GangDevice. detectPowerSource   (/app/lib/BaseHybridDevice.js: 379:48) } reason: Error: Impossible de joindre l'appareil. Est- il allumé ? at Remote Process at HomeyClient.emit (/app/assets/app/node_modules/ @athombv/homey-app",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: this.tuyaEF00Manager.on is not a function",
+        "context": "e_sensor_soil] [Device:882225f6-8b81-4d36- 9edc-88fb89727ddf] [SOIL] ❌  Tuya DP setup failed:   TypeError: this.tuyaEF00Manager.on is not a function at TuyaSoilTesterTempHumidDevice. setupTuyaDPListeners   (/app/drivers/climate_sensor_ soil/device.",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Unexpected token '*'",
+        "context": "t:   /app/lib/BaseHybridDevice.js: 913 * CRITICAL FIX: Force read ALL initial values (KPIs) ^ SyntaxError: Unexpected token '*' at wrapSafe (node:internal/modules/cjs/ loader:1638:18) at Module._compile (node:internal/modules/c",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error:  \nUsbOutlet2PortDevice is not defined",
+        "context": "5-10-30T19:22:02.852Z [err] [ManagerDrivers] Error   Initializing Driver usb_outlet_2port: ReferenceError:   UsbOutlet2PortDevice is not defined at Object.  (/app/drivers/usb_outlet_ 2port/device.js:137:18) at Module._compile (node:internal/mod",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: this.tuyaEF00Manager.requestDP is not a  ",
+        "context": "e:2a8d82e9-9aa2- 4cf3-956b-783cbd227c50] [IAS] ❌  Cannot get IEEE   address! uncaughtException: TypeError: this.tuyaEF00Manager.requestDP is not a   function at /app/drivers/climate_sensor_ soil/device.js:150:32 at Array.forEach ( ) at Timeout._onT",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: this.tuyaEF00Manager.requestDP is not a  ",
+        "context": "nal/timers:588:17) at process.processTimers (node:internal/timers:523:7) ⚠ The app has crashed. TypeError: this.tuyaEF00Manager.requestDP is not a   function at /app/drivers/climate_sensor_ soil/device.js:150:32 at Array.forEach ( ) at Timeout._onT",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error:  \nUsbOutlet2PortDevice is not defined",
+        "context": "5-10-30T19:30:27.949Z [err] [ManagerDrivers] Error   Initializing Driver usb_outlet_2port: ReferenceError:   UsbOutlet2PortDevice is not defined at Object.  (/app/drivers/usb_outlet_ 2port/device.js:137:18) at Module._compile (node:internal/mod",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error:  \nUsbOutlet2PortDevice is not defined",
+        "context": "5-10-30T19:22:02.852Z [err] [ManagerDrivers] Error   Initializing Driver usb_outlet_2port: ReferenceError:   UsbOutlet2PortDevice is not defined at Object.  (/app/drivers/usb_outlet_ 2port/device.js:137:18) at Module._compile (node:internal/mod",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: this.tuyaEF00Manager.requestDP is not a  ",
+        "context": "e:2a8d82e9-9aa2- 4cf3-956b-783cbd227c50] [IAS] ❌  Cannot get IEEE   address! uncaughtException: TypeError: this.tuyaEF00Manager.requestDP is not a   function at /app/drivers/climate_sensor_ soil/device.js:150:32 at Array.forEach ( ) at Timeout._onT",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: this.tuyaEF00Manager.requestDP is not a  ",
+        "context": "nal/timers:588:17) at process.processTimers (node:internal/timers:523:7) ⚠ The app has crashed. TypeError: this.tuyaEF00Manager.requestDP is not a   function at /app/drivers/climate_sensor_ soil/device.js:150:32 at Array.forEach ( ) at Timeout._onT",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error:  \nUsbOutlet2PortDevice is not defined",
+        "context": "5-10-30T19:30:27.949Z [err] [ManagerDrivers] Error   Initializing Driver usb_outlet_2port: ReferenceError:   UsbOutlet2PortDevice is not defined at Object.  (/app/drivers/usb_outlet_ 2port/device.js:137:18) at Module._compile (node:internal/mod",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Unexpected token ':'",
+        "context": "alizing   Device: /app/drivers/presence_sensor_ radar/device.js:59 report: 'measuredValue', ^ SyntaxError: Unexpected token ':' at wrapSafe (node:internal/modules/cjs/ loader:1638:18) at Module._compile (node:internal/modules/c",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Unexpected token '.'",
+        "context": "e.js: 720 this.log('[WARN] Battery reporting config failed (non- critical):', err.message); ^ SyntaxError: Unexpected token '.' at wrapSafe (node:internal/modules/cjs/ loader:1638:18) at Module._compile (node:internal/modules/c",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot destructure  ",
+        "context": "] [ManagerDrivers]   [Driver:switch_basic_2gang] [Device:1c66e23a-6e97-4f3c- ae13-946f098d1af5] TypeError: Cannot destructure   property 'zclNode' of 'undefined' as it is undefined. at Switch2gangDevice.onNodeInit   (/app/lib/B",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot destructure  ",
+        "context": "r] [ManagerDrivers]   [Driver:button_wireless_3] [Device:59def83e-e5ca-458c- 9376-2828eb18e898] TypeError: Cannot destructure   property 'zclNode' of 'undefined' as it is undefined. at Button3GangDevice.onNodeInit   (/app/lib/B",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot destructure  ",
+        "context": "r] [ManagerDrivers]   [Driver:button_wireless_4] [Device:c61b369f-43d6-4777- a550-6e180c7cf4d5] TypeError: Cannot destructure   property 'zclNode' of 'undefined' as it is undefined. at Button4GangDevice.onNodeInit   (/app/lib/B",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: await is only valid in async functions and  ",
+        "context": "device.js:79 await this.setCapabilityValue(' alarm_generic',   true).catch(this.error); ^^^^^ SyntaxError: await is only valid in async functions and   the top level bodies of modules at wrapSafe (node:internal/modules/cjs/ loader:1638:18) at Module._",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Unexpected token ':'",
+        "context": "g Device: /app/drivers/climate_monitor_ temp_humidity/device.js:52 report: 'measuredValue', ^ SyntaxError: Unexpected token ':' at wrapSafe (node:internal/modules/cjs/ loader:1638:18) at Module._compile (node:internal/modules/c",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Unexpected token ':'",
+        "context": "tializing Device:   /app/drivers/climate_sensor_ soil/device.js:93 report: 'measuredValue', ^ SyntaxError: Unexpected token ':' at wrapSafe (node:internal/modules/cjs/ loader:1638:18) at Module._compile (node:internal/modules/c",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: await is only valid in async functions and  ",
+        "context": "evice.js:156 await this.setCapabilityValue(' alarm_motion',   alarm).catch(this.error); ^^^^^ SyntaxError: await is only valid in async functions and   the top level bodies of modules at wrapSafe (node:internal/modules/cjs/ loader:1638:18) at Module._",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Unexpected token ':'",
+        "context": "g Device: /app/drivers/climate_monitor_ temp_humidity/device.js:99 report: 'measuredValue', ^ SyntaxError: Unexpected token ':' at wrapSafe (node:internal/modules/cjs/ loader:1638:18) at Module._compile (node:internal/modules/c",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Unexpected token ':'",
+        "context": "ializing Device:   /app/drivers/climate_sensor_ soil/device.js:139 report: 'measuredValue', ^ SyntaxError: Unexpected token ':' at wrapSafe (node:internal/modules/cjs/ loader:1638:18) at Module._compile (node:internal/modules/c",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: await is only valid in async functions and  ",
+        "context": "evice.js:174 await this.setCapabilityValue(' alarm_motion',   alarm).catch(this.error); ^^^^^ SyntaxError: await is only valid in async functions and   the top level bodies of modules at wrapSafe (node:internal/modules/cjs/ loader:1638:18) at Module._",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: A Capability with ID homey:app:com.dlnraja.tuya.",
+        "context": "[Device:c4d89393- e3ec-465e- bf44-dc12c76109a7] Battery type: CR2032 stderr: ⚠ The app has crashed. Error: A Capability with ID homey:app:com.dlnraja.tuya. zigbee:fan_speed already exists. at ManagerDatabase.createEntry (file:///app/lib/ ManagerDatabase.m",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: await is only valid in async functions and  ",
+        "context": "vice.js:237 await this.setCapabilityValue(' alarm_contact',   alarm).catch(this.error); ^^^^^ SyntaxError: await is only valid in async functions and   the top level bodies of modules at wrapSafe (node:internal/modules/cjs/ loader:1638:18) at Module._",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: await is only valid in async functions and  ",
+        "context": "vice.js:257 await this.setCapabilityValue(' alarm_motion',   motion).catch(this.error); ^^^^^ SyntaxError: await is only valid in async functions and   the top level bodies of modules at wrapSafe (node:internal/modules/cjs/ loader:1638:18) at Module._",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot read  ",
+        "context": "vers]   [Driver:climate_monitor_temp_ humidity] [Device:7a2593c3- 44d9-4730- a2b9-59a4e3a16e42] TypeError: Cannot read   properties of undefined (reading 'catch') at ClimateMonitorDevice.onDeleted   (/app/lib/BaseHybridD",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot read  ",
+        "context": "ManagerDrivers]   [Driver:presence_sensor_radar] [Device:b6dc31c5-4cfe- 431f-861e-3615cf44bff6] TypeError: Cannot read   properties of undefined (reading 'catch') at PresenceSensorRadarDevice. onDeleted   (/app/lib/BaseH",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot read properties of  ",
+        "context": "[ManagerDrivers]   [Driver:climate_sensor_soil] [Device:a4fcafc5-f164-4a3e- aec9-a113ad6ca91f] TypeError: Cannot read properties of   undefined (reading 'catch') at TuyaSoilTesterTempHumidDevice. onDeleted   (/app/lib/BaseHybridDevic",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot read  ",
+        "context": "[ManagerDrivers]   [Driver:button_emergency_sos] [Device:c0ff6145-592b- 4799-abc2-f6f62d80b7ae] TypeError: Cannot read   properties of undefined (reading 'catch') at SosEmergencyButtonDevice. onDeleted   (/app/lib/BaseHy",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot read properties of  ",
+        "context": "] [ManagerDrivers]   [Driver:switch_basic_2gang] [Device:b7f2dfd2-90b6-4c62- ae5d-e63d02109dd6] TypeError: Cannot read properties of   undefined (reading 'catch') at Switch2gangDevice.onDeleted   (/app/lib/BaseHybridDevice.js: 1799:28",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: could not initialize  ",
+        "context": "rDrivers]   [Driver:climate_monitor_temp_ humidity] [Device:5b2f6dd4- 439a-4246- bd08-e5cb91591004] Error: could not initialize   node Error: Missing Zigbee Device at Remote Process at HomeyClient.emit (/app/assets/app/node_modul",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Missing Zigbee Device",
+        "context": "_temp_ humidity] [Device:5b2f6dd4- 439a-4246- bd08-e5cb91591004] Error: could not initialize   node Error: Missing Zigbee Device at Remote Process at HomeyClient.emit (/app/assets/app/node_modules/ @athombv/homey-apps-sdk-v3/ li",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error:  \nBaseHybridDevice is not defined",
+        "context": "5-10-29T23:18:19.280Z [err] [ManagerDrivers] Error   Initializing Driver usb_outlet_2port: ReferenceError:   BaseHybridDevice is not defined at Object.  (/app/drivers/usb_outlet_ 2port/device.js:24:36) at Module._compile (node:internal/modu",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot read properties of undefined (reading  ",
+        "context": "itor_temp_ humidity] [Device:0b5ef21a- 5c08-41a2- bf97-8c259a891f47] Failed to set available:   TypeError: Cannot read properties of undefined (reading   'resolve') at ClimateMonitorDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at process.",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error:  \nCannot read properties of undefined (reading 'resolve')",
+        "context": "er:climate_sensor_soil] [Device:d9ac2b1e-0586-48b6- b0eb-dbf6c4024dcb] Failed to set available: TypeError:   Cannot read properties of undefined (reading 'resolve') at TuyaSoilTesterTempHumidDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at process. pr",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot read properties of undefined (reading  ",
+        "context": "resence_sensor_radar] [Device:51e59f69-e909- 422a-8287-8e30e45cbc73] Failed to set available:   TypeError: Cannot read properties of undefined (reading   'resolve') at PresenceSensorRadarDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at proc",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error:  \nCannot read properties of undefined (reading 'resolve')",
+        "context": "ver:switch_basic_2gang] [Device:e5f864e4-6b20-42e1- a9db-19f47b3ef018] Failed to set available: TypeError:   Cannot read properties of undefined (reading 'resolve') at Switch2gangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at process. processTicksAnd",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot read properties of undefined (reading  ",
+        "context": "resence_sensor_radar] [Device:6e2576a6-a17a- 4884-b22e-4807d58bb6da] Failed to set available:   TypeError: Cannot read properties of undefined (reading   'resolve') at PresenceSensorRadarDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at proc",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error:  \nCannot read properties of undefined (reading 'resolve')",
+        "context": "ver:switch_basic_2gang] [Device:d540c62b-26c8-4da8- 8205-a6bf080423fa] Failed to set available: TypeError:   Cannot read properties of undefined (reading 'resolve') at Switch2gangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at process. processTicksAnd",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot read properties of undefined (reading  ",
+        "context": "background init: Cannot   read properties of undefined (reading 'resolve') unhandledRejection: TypeError: Cannot read properties of undefined (reading   'resolve') at OnOffCluster.  (/app/lib/SwitchDevice.js:61: 32) at OnOffCluster.emit (node:events:51",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot read properties of undefined (reading  ",
+        "context": "itor_temp_ humidity] [Device:ff521c45- 02ba-42e2- afde-866bcae36e5d] Failed to set available:   TypeError: Cannot read properties of undefined (reading   'resolve') at ClimateMonitorDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at process.",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error:  \nCannot read properties of undefined (reading 'resolve')",
+        "context": "iver:button_wireless_4] [Device:c175dbb4-b1e8-46da- adcb-fadee62c70f6] Failed to set available: TypeError:   Cannot read properties of undefined (reading 'resolve') at Button4GangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at process. processTicksAnd",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error:  \nCannot read properties of undefined (reading 'resolve')",
+        "context": "iver:button_wireless_3] [Device:3fa99ce2-4711-4efc- ad28-ab9853b634c8] Failed to set available: TypeError:   Cannot read properties of undefined (reading 'resolve') at Button3GangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at process. processTicksAnd",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Cannot read properties of undefined (reading  ",
+        "context": "button_emergency_sos] [Device:42ea2089-46c3- 43b3-9cd1-fd12ced62afa] Failed to set available:   TypeError: Cannot read properties of undefined (reading   'resolve') at SosEmergencyButtonDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at proce",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error:  \nCannot read properties of undefined (reading 'resolve')",
+        "context": "er:climate_sensor_soil] [Device:17e289d5-b553-4cf8- b09a-fe93eb9022ca] Failed to set available: TypeError:   Cannot read properties of undefined (reading 'resolve') at TuyaSoilTesterTempHumidDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at process. pr",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "o start background init:   _runBackgroundInitialization is not defined unhandledRejection: ReferenceError: setAvailable is not defined at PresenceSensorRadarDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. proce",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "25-10-30T11:44:35.333Z [err] [UniversalTuyaZigbeeApp]   UNHANDLED REJECTION at: Promise {  ReferenceError: setAvailable is not defined at PresenceSensorRadarDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. proce",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "23:7) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 } reason: ReferenceError: setAvailable is not defined at PresenceSensorRadarDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. proce",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "ate_sensor_soil] [Device:a91de14f-cd87-498c- 8fea-b103ac571583] Failed to set available:   ReferenceError: setAvailable is not defined at TuyaSoilTesterTempHumidDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. p",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "o start background init:   _runBackgroundInitialization is not defined unhandledRejection: ReferenceError: setAvailable is not defined at TuyaSoilTesterTempHumidDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. p",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "25-10-30T11:46:14.832Z [err] [UniversalTuyaZigbeeApp]   UNHANDLED REJECTION at: Promise {  ReferenceError: setAvailable is not defined at TuyaSoilTesterTempHumidDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. p",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "23:7) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 } reason: ReferenceError: setAvailable is not defined at TuyaSoilTesterTempHumidDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. p",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "tton_wireless_3] [Device:d43723f1-753d-42b0- 854f-1e687e92d284] Failed to set available:   ReferenceError: setAvailable is not defined at Button3GangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. processTicksAn",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "o start background init:   _runBackgroundInitialization is not defined unhandledRejection: ReferenceError: setAvailable is not defined at Button3GangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. processTicksAn",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "25-10-30T11:46:47.092Z [err] [UniversalTuyaZigbeeApp]   UNHANDLED REJECTION at: Promise {  ReferenceError: setAvailable is not defined at Button3GangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. processTicksAn",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "19:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 } reason: ReferenceError: setAvailable is not defined at Button3GangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. processTicksAn",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "tton_wireless_4] [Device:e18db8f2-69a6-4f43- b0d5-c354d12b703a] Failed to set available:   ReferenceError: setAvailable is not defined at Button4GangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. processTicksAn",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "o start background init:   _runBackgroundInitialization is not defined unhandledRejection: ReferenceError: setAvailable is not defined at Button4GangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. processTicksAn",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "25-10-30T11:47:11.323Z [err] [UniversalTuyaZigbeeApp]   UNHANDLED REJECTION at: Promise {  ReferenceError: setAvailable is not defined at Button4GangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. processTicksAn",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: setAvailable is not defined",
+        "context": "19:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 } reason: ReferenceError: setAvailable is not defined at Button4GangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 130:21) at process. processTicksAn",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error:  \nwithTimeout is not defined",
+        "context": "river:presence_sensor_radar] [Device:688acbba-30af- 4b8a-9dc4-8ae6679f33b9] Error details: ReferenceError:   withTimeout is not defined at ZigbeeTimeout. withTimeoutAndDefault   (/app/lib/ZigbeeTimeout.js:34: 20) at ZigbeeTimeout.readA",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Missing Zigbee Node",
+        "context": "KGROUND] Initialization   failed: this.detectAvailableMethods is not a function unhandledRejection: Error: Missing Zigbee Node at Remote Process at HomeyClient.emit (/app/assets/app/node_modules/ @athombv/homey-apps-sdk-v3/ li",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Missing Zigbee Node",
+        "context": "79:48) 2025-10-30T15:50:15.066Z [err] [UniversalTuyaZigbeeApp]   UNHANDLED REJECTION at: Promise {  Error: Missing Zigbee Node at Remote Process at HomeyClient.emit (/app/assets/app/node_modules/ @athombv/homey-apps-sdk-v3/ li",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Missing Zigbee Node",
+        "context": "tonDevice. detectPowerSource   (/app/lib/BaseHybridDevice.js: 379:48) { statusCode: 404 } } reason: Error: Missing Zigbee Node at Remote Process at HomeyClient.emit (/app/assets/app/node_modules/ @athombv/homey-apps-sdk-v3/ li",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: this.tuyaEF00Manager.on is not a function",
+        "context": "e_sensor_soil] [Device:a91de14f-cd87-498c- 8fea-b103ac571583] [SOIL] ❌  Tuya DP setup failed:   TypeError: this.tuyaEF00Manager.on is not a function at TuyaSoilTesterTempHumidDevice. setupTuyaDPListeners   (/app/drivers/climate_sensor_ soil/device.",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Timeout: Expected Response",
+        "context": ":11) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 unhandledRejection: Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Timeout: Expected Response",
+        "context": "523:7) 2025-10-30T15:50:40.042Z [err] [UniversalTuyaZigbeeApp]   UNHANDLED REJECTION at: Promise {  Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Timeout: Expected Response",
+        "context": "meout (node:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) } reason: Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Timeout: Expected Response",
+        "context": "e:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) unhandledRejection: Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Timeout: Expected Response",
+        "context": "523:7) 2025-10-30T15:50:40.121Z [err] [UniversalTuyaZigbeeApp]   UNHANDLED REJECTION at: Promise {  Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Timeout: Expected Response",
+        "context": "meout (node:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) } reason: Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: this.tuyaEF00Manager.on is not a function",
+        "context": "e_sensor_soil] [Device:b837d6cc-7615-481e- 9faa-48a7ca346b26] [SOIL] ❌  Tuya DP setup failed:   TypeError: this.tuyaEF00Manager.on is not a function at TuyaSoilTesterTempHumidDevice. setupTuyaDPListeners   (/app/drivers/climate_sensor_ soil/device.",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: this.tuyaEF00Manager.on is not a function",
+        "context": "e_sensor_soil] [Device:b837d6cc-7615-481e- 9faa-48a7ca346b26] [SOIL] ❌  Tuya DP setup failed:   TypeError: this.tuyaEF00Manager.on is not a function at TuyaSoilTesterTempHumidDevice. setupTuyaDPListeners   (/app/drivers/climate_sensor_ soil/device.",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Timeout: Expected Response",
+        "context": ":11) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 unhandledRejection: Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Timeout: Expected Response",
+        "context": "523:7) 2025-10-30T16:14:53.944Z [err] [UniversalTuyaZigbeeApp]   UNHANDLED REJECTION at: Promise {  Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Timeout: Expected Response",
+        "context": "meout (node:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) } reason: Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Timeout: Expected Response",
+        "context": "e:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) unhandledRejection: Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Timeout: Expected Response",
+        "context": "523:7) 2025-10-30T16:14:53.990Z [err] [UniversalTuyaZigbeeApp]   UNHANDLED REJECTION at: Promise {  Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Timeout: Expected Response",
+        "context": "meout (node:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) } reason: Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Impossible de joindre l'appareil. Est-il allumé ?",
+        "context": "e:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) unhandledRejection: Error: Impossible de joindre l'appareil. Est-il allumé ? at Remote Process at HomeyClient.emit (/app/assets/app/node_modules/ @athombv/homey-apps-sdk-v3/ li",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Impossible de joindre l'appareil. Est-il allumé  ",
+        "context": "79:48) 2025-10-30T16:14:59.067Z [err] [UniversalTuyaZigbeeApp]   UNHANDLED REJECTION at: Promise {  Error: Impossible de joindre l'appareil. Est-il allumé   ? at Remote Process at HomeyClient.emit (/app/assets/app/node_modules/ @athombv/homey-apps-sdk-v3/",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Impossible de joindre l'appareil. Est-",
+        "context": ":49: 15) at Button4GangDevice. detectPowerSource   (/app/lib/BaseHybridDevice.js: 379:48) } reason: Error: Impossible de joindre l'appareil. Est- il allumé ? at Remote Process at HomeyClient.emit (/app/assets/app/node_modules/ @athombv/homey-app",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: this.tuyaEF00Manager.on is not a function",
+        "context": "e_sensor_soil] [Device:882225f6-8b81-4d36- 9edc-88fb89727ddf] [SOIL] ❌  Tuya DP setup failed:   TypeError: this.tuyaEF00Manager.on is not a function at TuyaSoilTesterTempHumidDevice. setupTuyaDPListeners   (/app/drivers/climate_sensor_ soil/device.",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: Unexpected token '*'",
+        "context": "t:   /app/lib/BaseHybridDevice.js: 913 * CRITICAL FIX: Force read ALL initial values (KPIs) ^ SyntaxError: Unexpected token '*' at wrapSafe (node:internal/modules/cjs/ loader:1638:18) at Module._compile (node:internal/modules/c",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error:  \nUsbOutlet2PortDevice is not defined",
+        "context": "5-10-30T19:22:02.852Z [err] [ManagerDrivers] Error   Initializing Driver usb_outlet_2port: ReferenceError:   UsbOutlet2PortDevice is not defined at Object.  (/app/drivers/usb_outlet_ 2port/device.js:137:18) at Module._compile (node:internal/mod",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: this.tuyaEF00Manager.requestDP is not a  ",
+        "context": "e:2a8d82e9-9aa2- 4cf3-956b-783cbd227c50] [IAS] ❌  Cannot get IEEE   address! uncaughtException: TypeError: this.tuyaEF00Manager.requestDP is not a   function at /app/drivers/climate_sensor_ soil/device.js:150:32 at Array.forEach ( ) at Timeout._onT",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: this.tuyaEF00Manager.requestDP is not a  ",
+        "context": "nal/timers:588:17) at process.processTimers (node:internal/timers:523:7) ⚠ The app has crashed. TypeError: this.tuyaEF00Manager.requestDP is not a   function at /app/drivers/climate_sensor_ soil/device.js:150:32 at Array.forEach ( ) at Timeout._onT",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error:  \nUsbOutlet2PortDevice is not defined",
+        "context": "5-10-30T19:30:27.949Z [err] [ManagerDrivers] Error   Initializing Driver usb_outlet_2port: ReferenceError:   UsbOutlet2PortDevice is not defined at Object.  (/app/drivers/usb_outlet_ 2port/device.js:137:18) at Module._compile (node:internal/mod",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error:  \nUsbOutlet2PortDevice is not defined",
+        "context": "5-10-30T19:22:02.852Z [err] [ManagerDrivers] Error   Initializing Driver usb_outlet_2port: ReferenceError:   UsbOutlet2PortDevice is not defined at Object.  (/app/drivers/usb_outlet_ 2port/device.js:137:18) at Module._compile (node:internal/mod",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: this.tuyaEF00Manager.requestDP is not a  ",
+        "context": "e:2a8d82e9-9aa2- 4cf3-956b-783cbd227c50] [IAS] ❌  Cannot get IEEE   address! uncaughtException: TypeError: this.tuyaEF00Manager.requestDP is not a   function at /app/drivers/climate_sensor_ soil/device.js:150:32 at Array.forEach ( ) at Timeout._onT",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error: this.tuyaEF00Manager.requestDP is not a  ",
+        "context": "nal/timers:588:17) at process.processTimers (node:internal/timers:523:7) ⚠ The app has crashed. TypeError: this.tuyaEF00Manager.requestDP is not a   function at /app/drivers/climate_sensor_ soil/device.js:150:32 at Array.forEach ( ) at Timeout._onT",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Error:  \nUsbOutlet2PortDevice is not defined",
+        "context": "5-10-30T19:30:27.949Z [err] [ManagerDrivers] Error   Initializing Driver usb_outlet_2port: ReferenceError:   UsbOutlet2PortDevice is not defined at Object.  (/app/drivers/usb_outlet_ 2port/device.js:137:18) at Module._compile (node:internal/mod",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to read device info: Timeout: Expected  ",
+        "context": "s/ @athombv/homey-apps-sdk- v3/index.js:12:19) at require (node:internal/modules/ helpers:147:16) ❌ Failed to read device info: Timeout: Expected   Response ❌ Failed to read device info: Timeout: Expected   Response You can manage your email setti",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to read device info: Timeout: Expected  ",
+        "context": "node:internal/modules/ helpers:147:16) ❌ Failed to read device info: Timeout: Expected   Response ❌ Failed to read device info: Timeout: Expected   Response You can manage your email settings in the Homey Developer Tools. [Texte des messages précé",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to read device info: Impossible de joindre  ",
+        "context": "s/ @athombv/homey-apps-sdk- v3/index.js:12:19) at require (node:internal/modules/ helpers:147:16) ❌ Failed to read device info: Impossible de joindre   l'appareil. Est-il allumé ? ❌ Failed to read device info: Timeout: Expected   Response ❌ Failed to",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to read device info: Timeout: Expected  ",
+        "context": "helpers:147:16) ❌ Failed to read device info: Impossible de joindre   l'appareil. Est-il allumé ? ❌ Failed to read device info: Timeout: Expected   Response ❌ Failed to read device info: Timeout: Expected   Response 2025-10-28T20:32:41.391Z [err]",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to read device info: Timeout: Expected  ",
+        "context": "joindre   l'appareil. Est-il allumé ? ❌ Failed to read device info: Timeout: Expected   Response ❌ Failed to read device info: Timeout: Expected   Response 2025-10-28T20:32:41.391Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:67",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to read device info: Missing Zigbee Node",
+        "context": "s/ @athombv/homey-apps-sdk- v3/index.js:12:19) at require (node:internal/modules/ helpers:147:16) ❌ Failed to read device info: Missing Zigbee Node ❌ Failed to read device info: Impossible de joindre   l'appareil. Est-il allumé ? ❌ Failed to read",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to read device info: Impossible de joindre  ",
+        "context": "require (node:internal/modules/ helpers:147:16) ❌ Failed to read device info: Missing Zigbee Node ❌ Failed to read device info: Impossible de joindre   l'appareil. Est-il allumé ? ❌ Failed to read device info: Timeout: Expected   Response 2025-10-29T0",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to read device info: Timeout: Expected  ",
+        "context": "ing Zigbee Node ❌ Failed to read device info: Impossible de joindre   l'appareil. Est-il allumé ? ❌ Failed to read device info: Timeout: Expected   Response 2025-10-29T09:38:38.414Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:87",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to read device info: Impossible de joindre  ",
+        "context": "presence_sensor_radar] [Device:b6dc31c5-4cfe- 431f-861e-3615cf44bff6] [OK] Alarm: cleared stderr: ❌ Failed to read device info: Impossible de joindre   l'appareil. Est-il allumé ? ❌ Failed to read device info: Impossible de joindre   l'appareil. Est-i",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to read device info: Impossible de joindre  ",
+        "context": "cleared stderr: ❌ Failed to read device info: Impossible de joindre   l'appareil. Est-il allumé ? ❌ Failed to read device info: Impossible de joindre   l'appareil. Est-il allumé ? ❌ Failed to read device info: Timeout: Expected   Response 2025-10-29T1",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to read device info: Timeout: Expected  ",
+        "context": "Est-il allumé ? ❌ Failed to read device info: Impossible de joindre   l'appareil. Est-il allumé ? ❌ Failed to read device info: Timeout: Expected   Response 2025-10-29T12:30:13.960Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:ac",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to read device info: Impossible de joindre  ",
+        "context": "_2gang] [Device:9698af3e-9a31-42e3- a099-b828adf9d4b9] [RECV] Gang 1 cluster update: true stderr: ❌ Failed to read device info: Impossible de joindre   l'appareil. Est-il allumé ? ❌ Failed to read device info: Timeout: Expected   Response ❌ Failed to",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to read device info: Timeout: Expected  ",
+        "context": "e: true stderr: ❌ Failed to read device info: Impossible de joindre   l'appareil. Est-il allumé ? ❌ Failed to read device info: Timeout: Expected   Response ❌ Failed to read device info: Timeout: Expected   Response 2025-10-29T13:34:13.745Z [err]",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to read device info: Timeout: Expected  ",
+        "context": "joindre   l'appareil. Est-il allumé ? ❌ Failed to read device info: Timeout: Expected   Response ❌ Failed to read device info: Timeout: Expected   Response 2025-10-29T13:34:13.745Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:c0",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "failed to  \nget IEEE address!",
+        "context": "[Driver:button_emergency_sos] [Device:11e0c972-92e9- 48b5-a980-4ff520742909] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-29T23:19:14.672Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:11e0c972-92",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to start background init: Cannot  ",
+        "context": "d stderr: at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot r",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available: Cannot read  ",
+        "context": "o start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:16:16.300Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available:  ",
+        "context": "rDrivers]   [Driver:climate_monitor_temp_ humidity] [Device:0b5ef21a- 5c08-41a2- bf97-8c259a891f47] Failed to set available:   TypeError: Cannot read properties of undefined (reading   'resolve') at ClimateMonitorDevice. onNod",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to start background init: Cannot  ",
+        "context": ".js:23:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot r",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available: Cannot read  ",
+        "context": "o start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:16:16.304Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available: TypeError:  ",
+        "context": "err] [ManagerDrivers]   [Driver:climate_sensor_soil] [Device:d9ac2b1e-0586-48b6- b0eb-dbf6c4024dcb] Failed to set available: TypeError:   Cannot read properties of undefined (reading 'resolve') at TuyaSoilTesterTempHumidDevice. onNodeIni",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to start background init: Cannot  ",
+        "context": ".js:16:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot r",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available: Cannot read  ",
+        "context": "o start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:16:16.306Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available:  ",
+        "context": "r] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:51e59f69-e909- 422a-8287-8e30e45cbc73] Failed to set available:   TypeError: Cannot read properties of undefined (reading   'resolve') at PresenceSensorRadarDevice.",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to start background init: Cannot  ",
+        "context": ".js:14:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot r",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available: Cannot read  ",
+        "context": "o start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:16:16.309Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available: TypeError:  ",
+        "context": "[err] [ManagerDrivers]   [Driver:switch_basic_2gang] [Device:e5f864e4-6b20-42e1- a9db-19f47b3ef018] Failed to set available: TypeError:   Cannot read properties of undefined (reading 'resolve') at Switch2gangDevice.onNodeInit   (/app/lib",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to start background init: Cannot  ",
+        "context": ".js:16:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') 2025-10-30T09:16:26.450Z [err] [ManagerDrivers]",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available: Cannot read  ",
+        "context": "-dbf6c4024dcb] [SOIL] 💡  This device may not have   Tuya EF00 cluster (not TS0601) ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:17:44.156Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available:  ",
+        "context": "r] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:6e2576a6-a17a- 4884-b22e-4807d58bb6da] Failed to set available:   TypeError: Cannot read properties of undefined (reading   'resolve') at PresenceSensorRadarDevice.",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to start background init: Cannot  ",
+        "context": ".js:14:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot r",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available: Cannot read  ",
+        "context": "o start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:18:13.483Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available: TypeError:  ",
+        "context": "[err] [ManagerDrivers]   [Driver:switch_basic_2gang] [Device:d540c62b-26c8-4da8- 8205-a6bf080423fa] Failed to set available: TypeError:   Cannot read properties of undefined (reading 'resolve') at Switch2gangDevice.onNodeInit   (/app/lib",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to start background init: Cannot  ",
+        "context": ".js:16:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') unhandledRejection: TypeError: Cannot read propert",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available: Cannot read  ",
+        "context": "/app/assets/app/node_modules/@ athombv/homey-apps-sdk- v3/manager/zigbee.js:56:18 ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:19:22.366Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available:  ",
+        "context": "rDrivers]   [Driver:climate_monitor_temp_ humidity] [Device:ff521c45- 02ba-42e2- afde-866bcae36e5d] Failed to set available:   TypeError: Cannot read properties of undefined (reading   'resolve') at ClimateMonitorDevice. onNod",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to start background init: Cannot  ",
+        "context": ".js:23:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot r",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available: Cannot read  ",
+        "context": "o start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:20:19.272Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available: TypeError:  ",
+        "context": "[err] [ManagerDrivers]   [Driver:button_wireless_4] [Device:c175dbb4-b1e8-46da- adcb-fadee62c70f6] Failed to set available: TypeError:   Cannot read properties of undefined (reading 'resolve') at Button4GangDevice.onNodeInit   (/app/lib",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to start background init: Cannot  ",
+        "context": ".js:19:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot r",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available: Cannot read  ",
+        "context": "o start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:20:41.425Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available: TypeError:  ",
+        "context": "[err] [ManagerDrivers]   [Driver:button_wireless_3] [Device:3fa99ce2-4711-4efc- ad28-ab9853b634c8] Failed to set available: TypeError:   Cannot read properties of undefined (reading 'resolve') at Button3GangDevice.onNodeInit   (/app/lib",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to start background init: Cannot  ",
+        "context": ".js:19:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot r",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available: Cannot read  ",
+        "context": "o start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:21:21.163Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available:  ",
+        "context": "rr] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:42ea2089-46c3- 43b3-9cd1-fd12ced62afa] Failed to set available:   TypeError: Cannot read properties of undefined (reading   'resolve') at SosEmergencyButtonDevice. o",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to start background init: Cannot  ",
+        "context": ".js:16:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot r",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available: Cannot read  ",
+        "context": "o start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:23:06.467Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available: TypeError:  ",
+        "context": "err] [ManagerDrivers]   [Driver:climate_sensor_soil] [Device:17e289d5-b553-4cf8- b09a-fe93eb9022ca] Failed to set available: TypeError:   Cannot read properties of undefined (reading 'resolve') at TuyaSoilTesterTempHumidDevice. onNodeIni",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to start background init: Cannot  ",
+        "context": ".js:16:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') 2025-10-30T09:23:16.585Z [err] [ManagerDrivers]",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to start background init:  ",
+        "context": ".js:23:7) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init:   _runBackgroundInitialization is not defined unhandledRejection: ReferenceError: setAvailable is not",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available: setAvailable  ",
+        "context": "s:23:7) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [AVAILABILITY] Failed to set available: setAvailable   is not defined 2025-10-30T11:46:14.828Z [err] [ManagerDrivers]   [Driver:climate_sensor_soil] [Devi",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available:  ",
+        "context": "err] [ManagerDrivers]   [Driver:climate_sensor_soil] [Device:a91de14f-cd87-498c- 8fea-b103ac571583] Failed to set available:   ReferenceError: setAvailable is not defined at TuyaSoilTesterTempHumidDevice. onNodeInit   (/app/li",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to start background init:  ",
+        "context": ".js:23:7) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init:   _runBackgroundInitialization is not defined unhandledRejection: ReferenceError: setAvailable is not",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available: setAvailable  ",
+        "context": "s:23:7) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [AVAILABILITY] Failed to set available: setAvailable   is not defined 2025-10-30T11:46:47.083Z [err] [ManagerDrivers]   [Driver:button_wireless_3] [Device",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available:  ",
+        "context": "[err] [ManagerDrivers]   [Driver:button_wireless_3] [Device:d43723f1-753d-42b0- 854f-1e687e92d284] Failed to set available:   ReferenceError: setAvailable is not defined at Button3GangDevice.onNodeInit   (/app/lib/BaseHybridD",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to start background init:  ",
+        "context": ".js:19:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init:   _runBackgroundInitialization is not defined unhandledRejection: ReferenceError: setAvailable is not",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available: setAvailable  ",
+        "context": "s:19:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [AVAILABILITY] Failed to set available: setAvailable   is not defined 2025-10-30T11:47:11.315Z [err] [ManagerDrivers]   [Driver:button_wireless_4] [Device",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to set available:  ",
+        "context": "[err] [ManagerDrivers]   [Driver:button_wireless_4] [Device:e18db8f2-69a6-4f43- b0d5-c354d12b703a] Failed to set available:   ReferenceError: setAvailable is not defined at Button4GangDevice.onNodeInit   (/app/lib/BaseHybridD",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Failed to start background init:  ",
+        "context": ".js:19:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init:   _runBackgroundInitialization is not defined unhandledRejection: ReferenceError: setAvailable is not",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "failed to  \nget IEEE address!",
+        "context": "[Driver:button_emergency_sos] [Device:1187bedd-cd69- 4436-93e7-96e3391efc8c] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T15:50:15.018Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:1187bedd-cd",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "failed to  \nget IEEE address!",
+        "context": "[Driver:presence_sensor_radar] [Device:92aa9f11-4631- 445d-83f9-96ced20ad421] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T15:50:15.195Z [err] [ManagerDrivers]   [Driver:climate_monitor_temp_ humidity] [Device:1",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "failed to  \nget IEEE address!",
+        "context": "[Driver:button_emergency_sos] [Device:b8eed647-0cff- 4b3f-b50f-22d17f243a26] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T15:53:31.406Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:b8eed647-0c",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "failed to  \nget IEEE address!",
+        "context": "[Driver:presence_sensor_radar] [Device:688acbba-30af- 4b8a-9dc4-8ae6679f33b9] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T15:59:10.303Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:688acbba-3",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "failed to  \nget IEEE address!",
+        "context": "[Driver:button_emergency_sos] [Device:b8eed647-0cff- 4b3f-b50f-22d17f243a26] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T16:14:28.970Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:b8eed647-0c",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "failed to  \nget IEEE address!",
+        "context": "[Driver:presence_sensor_radar] [Device:688acbba-30af- 4b8a-9dc4-8ae6679f33b9] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T16:14:29.160Z [err] [ManagerDrivers]   [Driver:climate_monitor_temp_ humidity] [Device:f",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "failed to  \nget IEEE address!",
+        "context": "[Driver:button_emergency_sos] [Device:0ee08bb1-f820- 4a97-addf-9f60b0a9043a] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T16:17:11.659Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:0ee08bb1-f8",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "failed to  \nget IEEE address!",
+        "context": "[Driver:presence_sensor_radar] [Device:fe330859-fc51- 4258-95d8-eded3b1c7985] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T16:18:24.523Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:fe330859-f",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "failed to  \nget IEEE address!",
+        "context": "[Driver:presence_sensor_radar] [Device:9dbe2c70-3e76- 4d86-bd48-8a768b460a53] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T19:23:26.898Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:9dbe2c70-3",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "failed to  \nget IEEE address!",
+        "context": "[Driver:button_emergency_sos] [Device:2a8d82e9-9aa2- 4cf3-956b-783cbd227c50] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T19:28:02.053Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:2a8d82e9-9a",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "failed to  \nget IEEE address!",
+        "context": "[Driver:presence_sensor_radar] [Device:9dbe2c70-3e76- 4d86-bd48-8a768b460a53] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T19:30:31.103Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:9dbe2c70-3",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "failed to  \nget IEEE address!",
+        "context": "[Driver:button_emergency_sos] [Device:2a8d82e9-9aa2- 4cf3-956b-783cbd227c50] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T19:30:33.210Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:2a8d82e9-9a",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "failed to  \nget IEEE address!",
+        "context": "[Driver:presence_sensor_radar] [Device:9dbe2c70-3e76- 4d86-bd48-8a768b460a53] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T19:23:26.898Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:9dbe2c70-3",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "failed to  \nget IEEE address!",
+        "context": "[Driver:button_emergency_sos] [Device:2a8d82e9-9aa2- 4cf3-956b-783cbd227c50] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T19:28:02.053Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:2a8d82e9-9a",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "failed to  \nget IEEE address!",
+        "context": "[Driver:presence_sensor_radar] [Device:9dbe2c70-3e76- 4d86-bd48-8a768b460a53] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T19:30:31.103Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:9dbe2c70-3",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "failed to  \nget IEEE address!",
+        "context": "[Driver:button_emergency_sos] [Device:2a8d82e9-9aa2- 4cf3-956b-783cbd227c50] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T19:30:33.210Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:2a8d82e9-9a",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot destructure  ",
+        "context": "cf83fc6-5bf2-4cb7- aff1-3327977395b3] [BATTERY] Updated: 100% stderr: ❌ [SUPER] Parent init failed: Cannot destructure   property 'zclNode' of 'undefined' as it is undefined. ❌ [SUPER] Parent init failed: Cannot destruct",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot destructure  ",
+        "context": "t destructure   property 'zclNode' of 'undefined' as it is undefined. ❌ [SUPER] Parent init failed: Cannot destructure   property 'zclNode' of 'undefined' as it is undefined. ❌ [SUPER] Parent init failed: Cannot destruct",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot destructure  ",
+        "context": "t destructure   property 'zclNode' of 'undefined' as it is undefined. ❌ [SUPER] Parent init failed: Cannot destructure   property 'zclNode' of 'undefined' as it is undefined. You can manage your email settings in the Hom",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot destructure  ",
+        "context": "gerDrivers]   [Driver:switch_basic_2gang] [Device:1c66e23a-6e97-4f3c- ae13-946f098d1af5] TypeError: Cannot destructure   property 'zclNode' of 'undefined' as it is undefined. at Switch2gangDevice.onNodeInit   (/app/lib/B",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot destructure  ",
+        "context": "agerDrivers]   [Driver:button_wireless_3] [Device:59def83e-e5ca-458c- 9376-2828eb18e898] TypeError: Cannot destructure   property 'zclNode' of 'undefined' as it is undefined. at Button3GangDevice.onNodeInit   (/app/lib/B",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot destructure  ",
+        "context": "agerDrivers]   [Driver:button_wireless_4] [Device:c61b369f-43d6-4777- a550-6e180c7cf4d5] TypeError: Cannot destructure   property 'zclNode' of 'undefined' as it is undefined. at Button4GangDevice.onNodeInit   (/app/lib/B",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading 'bind')",
+        "context": "h_basic_2gang] [Device:208b575b-8003-4212- a124-48305cc30c4c] [BACKGROUND] Initialization failed:   Cannot read properties of undefined (reading 'bind') 2025-10-28T17:10:57.916Z [err] [ManagerDrivers]   [Driver:button_wireless_4] [Device:cf7d8dcb-59b1-",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading 'bind')",
+        "context": "on_wireless_4] [Device:cf7d8dcb-59b1-4b0b- 87d6-2fb489e6bc5d] [BACKGROUND] Initialization failed:   Cannot read properties of undefined (reading 'bind') 2025-10-28T17:11:22.809Z [err] [ManagerDrivers]   [Driver:button_wireless_3] [Device:c4d3d920-106e-",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading 'bind')",
+        "context": "on_wireless_3] [Device:c4d3d920-106e-4117- 8a8b-c3d45503fd54] [BACKGROUND] Initialization failed:   Cannot read properties of undefined (reading 'bind') 2025-10-28T17:12:25.762Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:cc99721a-e6",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading  ",
+        "context": "emergency_sos] [Device:cc99721a-e62d- 436e-99a2-1d74a722f4a4] [BACKGROUND] Initialization   failed: Cannot read properties of undefined (reading   'bind') You can manage your email settings in the Homey Developer Tools. [Texte des messages précéd",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading 'bind')",
+        "context": "h_basic_2gang] [Device:8230183b-ddea-4485- a0c9-27453d1043bd] [BACKGROUND] Initialization failed:   Cannot read properties of undefined (reading 'bind') 2025-10-28T19:07:22.290Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:65e80e51-3b",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading  ",
+        "context": "emergency_sos] [Device:65e80e51-3ba8- 46a9-9903-d44a7ef0d99a] [BACKGROUND] Initialization   failed: Cannot read properties of undefined (reading   'bind') 2025-10-28T19:08:00.861Z [err] [ManagerDrivers]   [Driver:button_wireless_4] [Device:a5cc26",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading 'bind')",
+        "context": "on_wireless_4] [Device:a5cc2648-178d-4056- a2fd-6dc77e57b4df] [BACKGROUND] Initialization failed:   Cannot read properties of undefined (reading 'bind') 2025-10-28T19:08:14.268Z [err] [ManagerDrivers]   [Driver:button_wireless_3] [Device:f71accd0-2d9e-",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading 'bind')",
+        "context": "on_wireless_3] [Device:f71accd0-2d9e-4403- a93f-62b56722fabf] [BACKGROUND] Initialization failed:   Cannot read properties of undefined (reading 'bind') 2025-10-28T19:11:40.640Z [err] [ManagerDrivers]   [Driver:button_wireless_4] [Device:a5cc2648-178d-",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading 'bind')",
+        "context": "on_wireless_4] [Device:a5cc2648-178d-4056- a2fd-6dc77e57b4df] [BACKGROUND] Initialization failed:   Cannot read properties of undefined (reading 'bind') You can manage your email settings in the Homey Developer Tools. [Texte des messages précédents mas",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined  ",
+        "context": "_3] [Device:21bdbde9-f0ed-46d3- 8a8f-38b9bf585022] [BACKGROUND] ⚠  Command listener   setup failed: Cannot read properties of undefined   (reading 'bind') 2025-10-28T19:45:21.376Z [log] [ManagerDrivers]   [Driver:button_wireless_3] [Devi",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined  ",
+        "context": "_4] [Device:e8dab227-c06e-4e70- b525-e8a94bf58637] [BACKGROUND] ⚠  Command listener   setup failed: Cannot read properties of undefined   (reading 'bind') 2025-10-28T20:12:40.961Z [log] [ManagerDrivers]   [Driver:button_wireless_4] [Devi",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined  ",
+        "context": "os] [Device:675878fb-fa2f- 4321-91e9-8aef21cc9ba4] [BACKGROUND] ⚠  Command listener   setup failed: Cannot read properties of undefined   (reading 'bind') 2025-10-28T20:13:07.599Z [log] [ManagerDrivers]   [Driver:button_emergency_sos] [D",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined  ",
+        "context": "os] [Device:fbbf71f3-feca- 40ab-bc1c-e61e920d4668] [BACKGROUND] ⚠  Command listener   setup failed: Cannot read properties of undefined   (reading 'bind') 2025-10-28T20:37:47.703Z [log] [ManagerDrivers]   [Driver:button_emergency_sos] [D",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "gerDrivers]   [Driver:button_emergency_sos] [Device:675878fb-fa2f- 4321-91e9-8aef21cc9ba4] [IAS] ❌  Cannot get IEEE   address! You can manage your email settings in the Homey Developer Tools. [Texte des messages précé",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined  ",
+        "context": "_4] [Device:14f2e131-b0ab-48ab- b9d1-6cab00b6a4d2] [BACKGROUND] ⚠  Command listener   setup failed: Cannot read properties of undefined   (reading 'bind') 2025-10-28T22:07:04.110Z [log] [ManagerDrivers]   [Driver:button_wireless_4] [Devi",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined  ",
+        "context": "os] [Device:a814d2df-77c4- 44b0-bf2f-1a3eec058f14] [BACKGROUND] ⚠  Command listener   setup failed: Cannot read properties of undefined   (reading 'bind') 2025-10-28T22:56:49.871Z [log] [ManagerDrivers]   [Driver:button_emergency_sos] [D",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of  ",
+        "context": "y] [Device:7b3b0ab3- e689-408c- 839b-29f8a8c40ce8] [BACKGROUND] ⚠  Command   listener setup failed: Cannot read properties of   undefined (reading 'bind') 2025-10-28T22:57:24.118Z [log] [ManagerDrivers]   [Driver:climate_monito",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined  ",
+        "context": "os] [Device:a814d2df-77c4- 44b0-bf2f-1a3eec058f14] [BACKGROUND] ⚠  Command listener   setup failed: Cannot read properties of undefined   (reading 'bind') 2025-10-28T22:56:49.871Z [log] [ManagerDrivers]   [Driver:button_emergency_sos] [D",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of  ",
+        "context": "y] [Device:7b3b0ab3- e689-408c- 839b-29f8a8c40ce8] [BACKGROUND] ⚠  Command   listener setup failed: Cannot read properties of   undefined (reading 'bind') 2025-10-28T22:57:24.118Z [log] [ManagerDrivers]   [Driver:climate_monito",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined  ",
+        "context": "_4] [Device:9efffec8-09f7-4c9d- 8bf0-6562ab286666] [BACKGROUND] ⚠  Command listener   setup failed: Cannot read properties of undefined   (reading 'bind') 2025-10-28T23:45:08.520Z [log] [ManagerDrivers]   [Driver:button_wireless_4] [Devi",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of  ",
+        "context": "y] [Device:c4d89393- e3ec-465e- bf44-dc12c76109a7] [BACKGROUND] ⚠  Command   listener setup failed: Cannot read properties of   undefined (reading 'bind') 2025-10-29T10:15:14.578Z [log] [ManagerDrivers]   [Driver:climate_monito",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "gerDrivers]   [Driver:button_emergency_sos] [Device:87eb0da8-5040- 4ccc-9c25-ec57cb311f40] [IAS] ❌  Cannot get IEEE   address! You can manage your email settings in the Homey Developer Tools. [Texte des messages précé",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "gerDrivers]   [Driver:button_emergency_sos] [Device:ac353b45-0adb- 4cda-97b7-56e7479c9282] [IAS] ❌  Cannot get IEEE   address! You can manage your email settings in the Homey Developer Tools. [Texte des messages précé",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "gerDrivers]   [Driver:button_emergency_sos] [Device:c0ff6145-592b- 4799-abc2-f6f62d80b7ae] [IAS] ❌  Cannot get IEEE   address! 2025-10-29T13:36:39.312Z [err] [ManagerDrivers]   [Driver:climate_monitor_temp_ humidity]",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read  ",
+        "context": "[Driver:climate_monitor_temp_ humidity] [Device:7a2593c3- 44d9-4730- a2b9-59a4e3a16e42] TypeError: Cannot read   properties of undefined (reading 'catch') at ClimateMonitorDevice.onDeleted   (/app/lib/BaseHybridD",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read  ",
+        "context": "Drivers]   [Driver:presence_sensor_radar] [Device:b6dc31c5-4cfe- 431f-861e-3615cf44bff6] TypeError: Cannot read   properties of undefined (reading 'catch') at PresenceSensorRadarDevice. onDeleted   (/app/lib/BaseH",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of  ",
+        "context": "erDrivers]   [Driver:climate_sensor_soil] [Device:a4fcafc5-f164-4a3e- aec9-a113ad6ca91f] TypeError: Cannot read properties of   undefined (reading 'catch') at TuyaSoilTesterTempHumidDevice. onDeleted   (/app/lib/BaseHybridDevic",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read  ",
+        "context": "rDrivers]   [Driver:button_emergency_sos] [Device:c0ff6145-592b- 4799-abc2-f6f62d80b7ae] TypeError: Cannot read   properties of undefined (reading 'catch') at SosEmergencyButtonDevice. onDeleted   (/app/lib/BaseHy",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of  ",
+        "context": "gerDrivers]   [Driver:switch_basic_2gang] [Device:b7f2dfd2-90b6-4c62- ae5d-e63d02109dd6] TypeError: Cannot read properties of   undefined (reading 'catch') at Switch2gangDevice.onDeleted   (/app/lib/BaseHybridDevice.js: 1799:28",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "gerDrivers]   [Driver:button_emergency_sos] [Device:93b55704-1483- 43d2-9fee-fb3b661d0513] [IAS] ❌  Cannot get IEEE   address! You can manage your email settings in the Homey Developer Tools. [Texte des messages précé",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "gerDrivers]   [Driver:button_emergency_sos] [Device:d934b8ee-fe44- 4290-9cd6-e6ed6f8a9974] [IAS] ❌  Cannot get IEEE   address! You can manage your email settings in the Homey Developer Tools. [Texte des messages précé",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "gerDrivers]   [Driver:button_emergency_sos] [Device:11e0c972-92e9- 48b5-a980-4ff520742909] [IAS] ❌  Cannot get IEEE   address! 2025-10-29T23:22:21.802Z [err] [ManagerDrivers]   [Driver:climate_sensor_soil] [Device:d9a",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot  \nread properties of undefined (reading 'resolve')",
+        "context": "les/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve')",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read  ",
+        "context": "Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:16:16.300Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading  ",
+        "context": "mp_ humidity] [Device:0b5ef21a- 5c08-41a2- bf97-8c259a891f47] Failed to set available:   TypeError: Cannot read properties of undefined (reading   'resolve') at ClimateMonitorDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at process.",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot  \nread properties of undefined (reading 'resolve')",
+        "context": "les/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve')",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read  ",
+        "context": "Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:16:16.304Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading 'resolve')",
+        "context": "e_sensor_soil] [Device:d9ac2b1e-0586-48b6- b0eb-dbf6c4024dcb] Failed to set available: TypeError:   Cannot read properties of undefined (reading 'resolve') at TuyaSoilTesterTempHumidDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at process. pr",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot  \nread properties of undefined (reading 'resolve')",
+        "context": "les/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve')",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read  ",
+        "context": "Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:16:16.306Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading  ",
+        "context": "_sensor_radar] [Device:51e59f69-e909- 422a-8287-8e30e45cbc73] Failed to set available:   TypeError: Cannot read properties of undefined (reading   'resolve') at PresenceSensorRadarDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at proc",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot  \nread properties of undefined (reading 'resolve')",
+        "context": "les/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve')",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read  ",
+        "context": "Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:16:16.309Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading 'resolve')",
+        "context": "h_basic_2gang] [Device:e5f864e4-6b20-42e1- a9db-19f47b3ef018] Failed to set available: TypeError:   Cannot read properties of undefined (reading 'resolve') at Switch2gangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at process. processTicksAnd",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot  \nread properties of undefined (reading 'resolve')",
+        "context": "les/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') 2025-10-30T09:16:26.450Z [err] [ManagerDrivers]   [Driver:climate_sensor_soil] [Device:d9ac2b1e-058",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read  ",
+        "context": "This device may not have   Tuya EF00 cluster (not TS0601) ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:17:44.156Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading  ",
+        "context": "_sensor_radar] [Device:6e2576a6-a17a- 4884-b22e-4807d58bb6da] Failed to set available:   TypeError: Cannot read properties of undefined (reading   'resolve') at PresenceSensorRadarDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at proc",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot  \nread properties of undefined (reading 'resolve')",
+        "context": "les/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve')",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read  ",
+        "context": "Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:18:13.483Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading 'resolve')",
+        "context": "h_basic_2gang] [Device:d540c62b-26c8-4da8- 8205-a6bf080423fa] Failed to set available: TypeError:   Cannot read properties of undefined (reading 'resolve') at Switch2gangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at process. processTicksAnd",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot  \nread properties of undefined (reading 'resolve')",
+        "context": "les/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') unhandledRejection: TypeError: Cannot read properties of undefined (reading   'resolve') at OnOffCl",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading  ",
+        "context": "ound init: Cannot   read properties of undefined (reading 'resolve') unhandledRejection: TypeError: Cannot read properties of undefined (reading   'resolve') at OnOffCluster.  (/app/lib/SwitchDevice.js:61: 32) at OnOffCluster.emit (node:events:51",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read  ",
+        "context": "ules/@ athombv/homey-apps-sdk- v3/manager/zigbee.js:56:18 ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:19:22.366Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading  ",
+        "context": "mp_ humidity] [Device:ff521c45- 02ba-42e2- afde-866bcae36e5d] Failed to set available:   TypeError: Cannot read properties of undefined (reading   'resolve') at ClimateMonitorDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at process.",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot  \nread properties of undefined (reading 'resolve')",
+        "context": "les/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve')",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read  ",
+        "context": "Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:20:19.272Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading 'resolve')",
+        "context": "on_wireless_4] [Device:c175dbb4-b1e8-46da- adcb-fadee62c70f6] Failed to set available: TypeError:   Cannot read properties of undefined (reading 'resolve') at Button4GangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at process. processTicksAnd",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot  \nread properties of undefined (reading 'resolve')",
+        "context": "les/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve')",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read  ",
+        "context": "Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:20:41.425Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading 'resolve')",
+        "context": "on_wireless_3] [Device:3fa99ce2-4711-4efc- ad28-ab9853b634c8] Failed to set available: TypeError:   Cannot read properties of undefined (reading 'resolve') at Button3GangDevice.onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at process. processTicksAnd",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot  \nread properties of undefined (reading 'resolve')",
+        "context": "les/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve')",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read  ",
+        "context": "Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:21:21.163Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading  ",
+        "context": "emergency_sos] [Device:42ea2089-46c3- 43b3-9cd1-fd12ced62afa] Failed to set available:   TypeError: Cannot read properties of undefined (reading   'resolve') at SosEmergencyButtonDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at proce",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot  \nread properties of undefined (reading 'resolve')",
+        "context": "les/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve')",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read  ",
+        "context": "Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:23:06.467Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading 'resolve')",
+        "context": "e_sensor_soil] [Device:17e289d5-b553-4cf8- b09a-fe93eb9022ca] Failed to set available: TypeError:   Cannot read properties of undefined (reading 'resolve') at TuyaSoilTesterTempHumidDevice. onNodeInit   (/app/lib/BaseHybridDevice.js: 92:26) at process. pr",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot  \nread properties of undefined (reading 'resolve')",
+        "context": "les/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') 2025-10-30T09:23:16.585Z [err] [ManagerDrivers]   [Driver:climate_sensor_soil] [Device:17e289d5-b55",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read zoneState:  ",
+        "context": "nagerDrivers]   [Driver:presence_sensor_radar] [Device:688acbba-30af- 4b8a-9dc4-8ae6679f33b9] [IAS] Cannot read zoneState:   Cannot read properties of undefined (reading 'resolve') 2025-10-30T15:59:10.302Z [log] [ManagerDriv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading 'resolve')",
+        "context": "resence_sensor_radar] [Device:688acbba-30af- 4b8a-9dc4-8ae6679f33b9] [IAS] Cannot read zoneState:   Cannot read properties of undefined (reading 'resolve') 2025-10-30T15:59:10.302Z [log] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:688acbba-3",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading 'resolve')",
+        "context": "nce_sensor_radar] [Device:688acbba-30af- 4b8a-9dc4-8ae6679f33b9] [IAS] Basic cluster read failed:   Cannot read properties of undefined (reading 'resolve') 2025-10-30T15:59:10.303Z [log] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:688acbba-3",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "gerDrivers]   [Driver:button_emergency_sos] [Device:1187bedd-cd69- 4436-93e7-96e3391efc8c] [IAS] ❌  Cannot get IEEE   address! 2025-10-30T15:50:15.019Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:11",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "erDrivers]   [Driver:presence_sensor_radar] [Device:92aa9f11-4631- 445d-83f9-96ced20ad421] [IAS] ❌  Cannot get IEEE   address! 2025-10-30T15:50:15.200Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:9",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "gerDrivers]   [Driver:button_emergency_sos] [Device:b8eed647-0cff- 4b3f-b50f-22d17f243a26] [IAS] ❌  Cannot get IEEE   address! 2025-10-30T15:53:31.407Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:b8",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "erDrivers]   [Driver:presence_sensor_radar] [Device:688acbba-30af- 4b8a-9dc4-8ae6679f33b9] [IAS] ❌  Cannot get IEEE   address! 2025-10-30T15:59:10.303Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:6",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "gerDrivers]   [Driver:button_emergency_sos] [Device:b8eed647-0cff- 4b3f-b50f-22d17f243a26] [IAS] ❌  Cannot get IEEE   address! 2025-10-30T16:14:28.971Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:b8",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "erDrivers]   [Driver:presence_sensor_radar] [Device:688acbba-30af- 4b8a-9dc4-8ae6679f33b9] [IAS] ❌  Cannot get IEEE   address! 2025-10-30T16:14:29.167Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:6",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "gerDrivers]   [Driver:button_emergency_sos] [Device:0ee08bb1-f820- 4a97-addf-9f60b0a9043a] [IAS] ❌  Cannot get IEEE   address! 2025-10-30T16:17:11.660Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:0e",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "erDrivers]   [Driver:presence_sensor_radar] [Device:fe330859-fc51- 4258-95d8-eded3b1c7985] [IAS] ❌  Cannot get IEEE   address! 2025-10-30T16:18:24.525Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:f",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "erDrivers]   [Driver:presence_sensor_radar] [Device:9dbe2c70-3e76- 4d86-bd48-8a768b460a53] [IAS] ❌  Cannot get IEEE   address! 2025-10-30T19:28:02.052Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:2a",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "gerDrivers]   [Driver:button_emergency_sos] [Device:2a8d82e9-9aa2- 4cf3-956b-783cbd227c50] [IAS] ❌  Cannot get IEEE   address! uncaughtException: TypeError: this.tuyaEF00Manager.requestDP is not a   function at /app/d",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "erDrivers]   [Driver:presence_sensor_radar] [Device:9dbe2c70-3e76- 4d86-bd48-8a768b460a53] [IAS] ❌  Cannot get IEEE   address! 2025-10-30T19:30:33.209Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:2a",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "gerDrivers]   [Driver:button_emergency_sos] [Device:2a8d82e9-9aa2- 4cf3-956b-783cbd227c50] [IAS] ❌  Cannot get IEEE   address! You can manage your email settings in the Homey Developer Tools. [Texte des messages précé",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "erDrivers]   [Driver:presence_sensor_radar] [Device:9dbe2c70-3e76- 4d86-bd48-8a768b460a53] [IAS] ❌  Cannot get IEEE   address! 2025-10-30T19:28:02.052Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:2a",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "gerDrivers]   [Driver:button_emergency_sos] [Device:2a8d82e9-9aa2- 4cf3-956b-783cbd227c50] [IAS] ❌  Cannot get IEEE   address! uncaughtException: TypeError: this.tuyaEF00Manager.requestDP is not a   function at /app/d",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "erDrivers]   [Driver:presence_sensor_radar] [Device:9dbe2c70-3e76- 4d86-bd48-8a768b460a53] [IAS] ❌  Cannot get IEEE   address! 2025-10-30T19:30:33.209Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:2a",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "gerDrivers]   [Driver:button_emergency_sos] [Device:2a8d82e9-9aa2- 4cf3-956b-783cbd227c50] [IAS] ❌  Cannot get IEEE   address! You can manage your email settings in the Homey Developer Tools. [Texte des messages précé",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [SUPER] Parent init failed: Cannot destructure  ",
+        "context": "r:button_wireless_4] [Device:1cf83fc6-5bf2-4cb7- aff1-3327977395b3] [BATTERY] Updated: 100% stderr: ❌ [SUPER] Parent init failed: Cannot destructure   property 'zclNode' of 'undefined' as it is undefined. ❌ [SUPER] Parent init failed: Cannot destruct",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [SUPER] Parent init failed: Cannot destructure  ",
+        "context": "PER] Parent init failed: Cannot destructure   property 'zclNode' of 'undefined' as it is undefined. ❌ [SUPER] Parent init failed: Cannot destructure   property 'zclNode' of 'undefined' as it is undefined. ❌ [SUPER] Parent init failed: Cannot destruct",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [SUPER] Parent init failed: Cannot destructure  ",
+        "context": "PER] Parent init failed: Cannot destructure   property 'zclNode' of 'undefined' as it is undefined. ❌ [SUPER] Parent init failed: Cannot destructure   property 'zclNode' of 'undefined' as it is undefined. You can manage your email settings in the Hom",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ Failed to read device info: Timeout: Expected  ",
+        "context": "les/ @athombv/homey-apps-sdk- v3/index.js:12:19) at require (node:internal/modules/ helpers:147:16) ❌ Failed to read device info: Timeout: Expected   Response ❌ Failed to read device info: Timeout: Expected   Response You can manage your email setti",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ Failed to read device info: Timeout: Expected  ",
+        "context": "(node:internal/modules/ helpers:147:16) ❌ Failed to read device info: Timeout: Expected   Response ❌ Failed to read device info: Timeout: Expected   Response You can manage your email settings in the Homey Developer Tools. [Texte des messages précé",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ Failed to read device info: Impossible de joindre  ",
+        "context": "les/ @athombv/homey-apps-sdk- v3/index.js:12:19) at require (node:internal/modules/ helpers:147:16) ❌ Failed to read device info: Impossible de joindre   l'appareil. Est-il allumé ? ❌ Failed to read device info: Timeout: Expected   Response ❌ Failed to",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ Failed to read device info: Timeout: Expected  ",
+        "context": "/ helpers:147:16) ❌ Failed to read device info: Impossible de joindre   l'appareil. Est-il allumé ? ❌ Failed to read device info: Timeout: Expected   Response ❌ Failed to read device info: Timeout: Expected   Response 2025-10-28T20:32:41.391Z [err]",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ Failed to read device info: Timeout: Expected  ",
+        "context": "de joindre   l'appareil. Est-il allumé ? ❌ Failed to read device info: Timeout: Expected   Response ❌ Failed to read device info: Timeout: Expected   Response 2025-10-28T20:32:41.391Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:67",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:675878fb-fa2f- 4321-91e9-8aef21cc9ba4] [IAS] ❌  Cannot get IEEE   address! You can manage your email settings in the Homey Developer Tools. [Texte des messages précé",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ Failed to read device info: Missing Zigbee Node",
+        "context": "les/ @athombv/homey-apps-sdk- v3/index.js:12:19) at require (node:internal/modules/ helpers:147:16) ❌ Failed to read device info: Missing Zigbee Node ❌ Failed to read device info: Impossible de joindre   l'appareil. Est-il allumé ? ❌ Failed to read",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ Failed to read device info: Impossible de joindre  ",
+        "context": "t require (node:internal/modules/ helpers:147:16) ❌ Failed to read device info: Missing Zigbee Node ❌ Failed to read device info: Impossible de joindre   l'appareil. Est-il allumé ? ❌ Failed to read device info: Timeout: Expected   Response 2025-10-29T0",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ Failed to read device info: Timeout: Expected  ",
+        "context": "ssing Zigbee Node ❌ Failed to read device info: Impossible de joindre   l'appareil. Est-il allumé ? ❌ Failed to read device info: Timeout: Expected   Response 2025-10-29T09:38:38.414Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:87",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:87eb0da8-5040- 4ccc-9c25-ec57cb311f40] [IAS] ❌  Cannot get IEEE   address! You can manage your email settings in the Homey Developer Tools. [Texte des messages précé",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ Failed to read device info: Impossible de joindre  ",
+        "context": "r:presence_sensor_radar] [Device:b6dc31c5-4cfe- 431f-861e-3615cf44bff6] [OK] Alarm: cleared stderr: ❌ Failed to read device info: Impossible de joindre   l'appareil. Est-il allumé ? ❌ Failed to read device info: Impossible de joindre   l'appareil. Est-i",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ Failed to read device info: Impossible de joindre  ",
+        "context": ": cleared stderr: ❌ Failed to read device info: Impossible de joindre   l'appareil. Est-il allumé ? ❌ Failed to read device info: Impossible de joindre   l'appareil. Est-il allumé ? ❌ Failed to read device info: Timeout: Expected   Response 2025-10-29T1",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ Failed to read device info: Timeout: Expected  ",
+        "context": ". Est-il allumé ? ❌ Failed to read device info: Impossible de joindre   l'appareil. Est-il allumé ? ❌ Failed to read device info: Timeout: Expected   Response 2025-10-29T12:30:13.960Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:ac",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:ac353b45-0adb- 4cda-97b7-56e7479c9282] [IAS] ❌  Cannot get IEEE   address! You can manage your email settings in the Homey Developer Tools. [Texte des messages précé",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ Failed to read device info: Impossible de joindre  ",
+        "context": "ic_2gang] [Device:9698af3e-9a31-42e3- a099-b828adf9d4b9] [RECV] Gang 1 cluster update: true stderr: ❌ Failed to read device info: Impossible de joindre   l'appareil. Est-il allumé ? ❌ Failed to read device info: Timeout: Expected   Response ❌ Failed to",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ Failed to read device info: Timeout: Expected  ",
+        "context": "ate: true stderr: ❌ Failed to read device info: Impossible de joindre   l'appareil. Est-il allumé ? ❌ Failed to read device info: Timeout: Expected   Response ❌ Failed to read device info: Timeout: Expected   Response 2025-10-29T13:34:13.745Z [err]",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ Failed to read device info: Timeout: Expected  ",
+        "context": "de joindre   l'appareil. Est-il allumé ? ❌ Failed to read device info: Timeout: Expected   Response ❌ Failed to read device info: Timeout: Expected   Response 2025-10-29T13:34:13.745Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:c0",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:c0ff6145-592b- 4799-abc2-f6f62d80b7ae] [IAS] ❌  Cannot get IEEE   address! 2025-10-29T13:36:39.312Z [err] [ManagerDrivers]   [Driver:climate_monitor_temp_ humidity]",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:93b55704-1483- 43d2-9fee-fb3b661d0513] [IAS] ❌  Cannot get IEEE   address! You can manage your email settings in the Homey Developer Tools. [Texte des messages précé",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:d934b8ee-fe44- 4290-9cd6-e6ed6f8a9974] [IAS] ❌  Cannot get IEEE   address! You can manage your email settings in the Homey Developer Tools. [Texte des messages précé",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  No Tuya EF00 Manager  ",
+        "context": "anagerDrivers]   [Driver:climate_sensor_soil] [Device:27322a8d-ba83-431c- 9ef0-59ef6dc62808] [SOIL] ❌  No Tuya EF00 Manager   available! 2025-10-29T23:19:14.672Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  ALL methods failed to  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:11e0c972-92e9- 48b5-a980-4ff520742909] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-29T23:19:14.672Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:11e0c972-92e9- 48b5-a980-4ff520742909] [IAS] ❌  Cannot get IEEE   address! 2025-10-29T23:22:21.802Z [err] [ManagerDrivers]   [Driver:climate_sensor_soil] [Device:d9a",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  No Tuya EF00 Manager  ",
+        "context": "anagerDrivers]   [Driver:climate_sensor_soil] [Device:d9ac2b1e-0586-48b6- b0eb-dbf6c4024dcb] [SOIL] ❌  No Tuya EF00 Manager   available! You can manage your email settings in the Homey Developer Tools. [Texte des messages pré",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [BACKGROUND] Failed to start background init: Cannot  ",
+        "context": "] Alarm: cleared stderr: at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot r",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [AVAILABILITY] Failed to set available: Cannot read  ",
+        "context": "KGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:16:16.300Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [BACKGROUND] Failed to start background init: Cannot  ",
+        "context": "humidity/device.js:23:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot r",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [AVAILABILITY] Failed to set available: Cannot read  ",
+        "context": "KGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:16:16.304Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [BACKGROUND] Failed to start background init: Cannot  ",
+        "context": "or_ soil/device.js:16:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot r",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [AVAILABILITY] Failed to set available: Cannot read  ",
+        "context": "KGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:16:16.306Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [BACKGROUND] Failed to start background init: Cannot  ",
+        "context": "r_ radar/device.js:14:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot r",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [AVAILABILITY] Failed to set available: Cannot read  ",
+        "context": "KGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:16:16.309Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [BACKGROUND] Failed to start background init: Cannot  ",
+        "context": "c_ 2gang/device.js:16:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') 2025-10-30T09:16:26.450Z [err] [ManagerDrivers]",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Tuya EF00 Manager  ",
+        "context": "anagerDrivers]   [Driver:climate_sensor_soil] [Device:d9ac2b1e-0586-48b6- b0eb-dbf6c4024dcb] [SOIL] ❌  Tuya EF00 Manager   initialization timed out! 2025-10-30T09:16:26.451Z [err] [ManagerDrivers]   [Driver:climate_sensor_",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [AVAILABILITY] Failed to set available: Cannot read  ",
+        "context": "e-0586-48b6- b0eb-dbf6c4024dcb] [SOIL] 💡  This device may not have   Tuya EF00 cluster (not TS0601) ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:17:44.156Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [BACKGROUND] Failed to start background init: Cannot  ",
+        "context": "r_ radar/device.js:14:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot r",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [AVAILABILITY] Failed to set available: Cannot read  ",
+        "context": "KGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:18:13.483Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [BACKGROUND] Failed to start background init: Cannot  ",
+        "context": "c_ 2gang/device.js:16:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') unhandledRejection: TypeError: Cannot read propert",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [AVAILABILITY] Failed to set available: Cannot read  ",
+        "context": "Node.js:96:40) at /app/assets/app/node_modules/@ athombv/homey-apps-sdk- v3/manager/zigbee.js:56:18 ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:19:22.366Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [BACKGROUND] Failed to start background init: Cannot  ",
+        "context": "humidity/device.js:23:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot r",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [AVAILABILITY] Failed to set available: Cannot read  ",
+        "context": "KGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:20:19.272Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [BACKGROUND] Failed to start background init: Cannot  ",
+        "context": "eless_ 4/device.js:19:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot r",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [AVAILABILITY] Failed to set available: Cannot read  ",
+        "context": "KGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:20:41.425Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [BACKGROUND] Failed to start background init: Cannot  ",
+        "context": "eless_ 3/device.js:19:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot r",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [AVAILABILITY] Failed to set available: Cannot read  ",
+        "context": "KGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:21:21.163Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [BACKGROUND] Failed to start background init: Cannot  ",
+        "context": "ency_sos/device.js:16:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot r",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [AVAILABILITY] Failed to set available: Cannot read  ",
+        "context": "KGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') ❌ [AVAILABILITY] Failed to set available: Cannot read   properties of undefined (reading 'resolve') 2025-10-30T09:23:06.467Z [err] [ManagerDrivers]   [Driv",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [BACKGROUND] Failed to start background init: Cannot  ",
+        "context": "or_ soil/device.js:16:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init: Cannot   read properties of undefined (reading 'resolve') 2025-10-30T09:23:16.585Z [err] [ManagerDrivers]",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Tuya EF00 Manager  ",
+        "context": "anagerDrivers]   [Driver:climate_sensor_soil] [Device:17e289d5-b553-4cf8- b09a-fe93eb9022ca] [SOIL] ❌  Tuya EF00 Manager   initialization timed out! 2025-10-30T09:23:16.586Z [err] [ManagerDrivers]   [Driver:climate_sensor_",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [BACKGROUND] Failed to start background init:  ",
+        "context": "r_ radar/device.js:23:7) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init:   _runBackgroundInitialization is not defined unhandledRejection: ReferenceError: setAvailable is not",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [AVAILABILITY] Failed to set available: setAvailable  ",
+        "context": "r_ radar/device.js:23:7) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [AVAILABILITY] Failed to set available: setAvailable   is not defined 2025-10-30T11:46:14.828Z [err] [ManagerDrivers]   [Driver:climate_sensor_soil] [Devi",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [BACKGROUND] Failed to start background init:  ",
+        "context": "or_ soil/device.js:23:7) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init:   _runBackgroundInitialization is not defined unhandledRejection: ReferenceError: setAvailable is not",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [AVAILABILITY] Failed to set available: setAvailable  ",
+        "context": "or_ soil/device.js:23:7) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [AVAILABILITY] Failed to set available: setAvailable   is not defined 2025-10-30T11:46:47.083Z [err] [ManagerDrivers]   [Driver:button_wireless_3] [Device",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [BACKGROUND] Failed to start background init:  ",
+        "context": "eless_ 3/device.js:19:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init:   _runBackgroundInitialization is not defined unhandledRejection: ReferenceError: setAvailable is not",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [AVAILABILITY] Failed to set available: setAvailable  ",
+        "context": "eless_ 3/device.js:19:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [AVAILABILITY] Failed to set available: setAvailable   is not defined 2025-10-30T11:47:11.315Z [err] [ManagerDrivers]   [Driver:button_wireless_4] [Device",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌ [BACKGROUND] Failed to start background init:  ",
+        "context": "eless_ 4/device.js:19:5) at async /app/node_modules/homey- zigbeedriver/lib/ZigBeeDevice. js:976:11 ❌ [BACKGROUND] Failed to start background init:   _runBackgroundInitialization is not defined unhandledRejection: ReferenceError: setAvailable is not",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  ALL methods failed to  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:1187bedd-cd69- 4436-93e7-96e3391efc8c] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T15:50:15.018Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:1187bedd-cd69- 4436-93e7-96e3391efc8c] [IAS] ❌  Cannot get IEEE   address! 2025-10-30T15:50:15.019Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:11",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  ALL methods failed to  ",
+        "context": "nagerDrivers]   [Driver:presence_sensor_radar] [Device:92aa9f11-4631- 445d-83f9-96ced20ad421] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T15:50:15.195Z [err] [ManagerDrivers]   [Driver:climate_monitor_temp_ h",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "nagerDrivers]   [Driver:presence_sensor_radar] [Device:92aa9f11-4631- 445d-83f9-96ced20ad421] [IAS] ❌  Cannot get IEEE   address! 2025-10-30T15:50:15.200Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:9",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Tuya DP setup failed:  ",
+        "context": "anagerDrivers]   [Driver:climate_sensor_soil] [Device:a91de14f-cd87-498c- 8fea-b103ac571583] [SOIL] ❌  Tuya DP setup failed:   TypeError: this.tuyaEF00Manager.on is not a function at TuyaSoilTesterTempHumidDevice. setupTuyaDPL",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  ALL methods failed to  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:b8eed647-0cff- 4b3f-b50f-22d17f243a26] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T15:53:31.406Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:b8eed647-0cff- 4b3f-b50f-22d17f243a26] [IAS] ❌  Cannot get IEEE   address! 2025-10-30T15:53:31.407Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:b8",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Tuya DP setup failed:  ",
+        "context": "anagerDrivers]   [Driver:climate_sensor_soil] [Device:b837d6cc-7615-481e- 9faa-48a7ca346b26] [SOIL] ❌  Tuya DP setup failed:   TypeError: this.tuyaEF00Manager.on is not a function at TuyaSoilTesterTempHumidDevice. setupTuyaDPL",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  ALL methods failed to  ",
+        "context": "nagerDrivers]   [Driver:presence_sensor_radar] [Device:688acbba-30af- 4b8a-9dc4-8ae6679f33b9] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T15:59:10.303Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar]",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "nagerDrivers]   [Driver:presence_sensor_radar] [Device:688acbba-30af- 4b8a-9dc4-8ae6679f33b9] [IAS] ❌  Cannot get IEEE   address! 2025-10-30T15:59:10.303Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:6",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Battery failed:  ",
+        "context": "Drivers]   [Driver:button_wireless_3] [Device:1f0a245f-77ea-4ce1- 9e46-c43fcb06ebfa] [INITIAL-READ] ❌  Battery failed:   setCapabilityValue is not defined 2025-10-30T16:19:31.970Z [log] [ManagerDrivers]   [Driver:button_",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  ALL methods failed to  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:b8eed647-0cff- 4b3f-b50f-22d17f243a26] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T16:14:28.970Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:b8eed647-0cff- 4b3f-b50f-22d17f243a26] [IAS] ❌  Cannot get IEEE   address! 2025-10-30T16:14:28.971Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:b8",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  ALL methods failed to  ",
+        "context": "nagerDrivers]   [Driver:presence_sensor_radar] [Device:688acbba-30af- 4b8a-9dc4-8ae6679f33b9] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T16:14:29.160Z [err] [ManagerDrivers]   [Driver:climate_monitor_temp_ h",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "nagerDrivers]   [Driver:presence_sensor_radar] [Device:688acbba-30af- 4b8a-9dc4-8ae6679f33b9] [IAS] ❌  Cannot get IEEE   address! 2025-10-30T16:14:29.167Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:6",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Tuya DP setup failed:  ",
+        "context": "anagerDrivers]   [Driver:climate_sensor_soil] [Device:b837d6cc-7615-481e- 9faa-48a7ca346b26] [SOIL] ❌  Tuya DP setup failed:   TypeError: this.tuyaEF00Manager.on is not a function at TuyaSoilTesterTempHumidDevice. setupTuyaDPL",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  ALL methods failed to  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:0ee08bb1-f820- 4a97-addf-9f60b0a9043a] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T16:17:11.659Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:0ee08bb1-f820- 4a97-addf-9f60b0a9043a] [IAS] ❌  Cannot get IEEE   address! 2025-10-30T16:17:11.660Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:0e",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  ALL methods failed to  ",
+        "context": "nagerDrivers]   [Driver:presence_sensor_radar] [Device:fe330859-fc51- 4258-95d8-eded3b1c7985] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T16:18:24.523Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar]",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "nagerDrivers]   [Driver:presence_sensor_radar] [Device:fe330859-fc51- 4258-95d8-eded3b1c7985] [IAS] ❌  Cannot get IEEE   address! 2025-10-30T16:18:24.525Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:f",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Tuya DP setup failed:  ",
+        "context": "anagerDrivers]   [Driver:climate_sensor_soil] [Device:882225f6-8b81-4d36- 9edc-88fb89727ddf] [SOIL] ❌  Tuya DP setup failed:   TypeError: this.tuyaEF00Manager.on is not a function at TuyaSoilTesterTempHumidDevice. setupTuyaDPL",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  ALL methods failed to  ",
+        "context": "nagerDrivers]   [Driver:presence_sensor_radar] [Device:9dbe2c70-3e76- 4d86-bd48-8a768b460a53] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T19:23:26.898Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar]",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "nagerDrivers]   [Driver:presence_sensor_radar] [Device:9dbe2c70-3e76- 4d86-bd48-8a768b460a53] [IAS] ❌  Cannot get IEEE   address! 2025-10-30T19:28:02.052Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:2a",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  ALL methods failed to  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:2a8d82e9-9aa2- 4cf3-956b-783cbd227c50] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T19:28:02.053Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:2a8d82e9-9aa2- 4cf3-956b-783cbd227c50] [IAS] ❌  Cannot get IEEE   address! uncaughtException: TypeError: this.tuyaEF00Manager.requestDP is not a   function at /app/d",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  ALL methods failed to  ",
+        "context": "nagerDrivers]   [Driver:presence_sensor_radar] [Device:9dbe2c70-3e76- 4d86-bd48-8a768b460a53] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T19:30:31.103Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar]",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "nagerDrivers]   [Driver:presence_sensor_radar] [Device:9dbe2c70-3e76- 4d86-bd48-8a768b460a53] [IAS] ❌  Cannot get IEEE   address! 2025-10-30T19:30:33.209Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:2a",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  ALL methods failed to  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:2a8d82e9-9aa2- 4cf3-956b-783cbd227c50] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T19:30:33.210Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:2a8d82e9-9aa2- 4cf3-956b-783cbd227c50] [IAS] ❌  Cannot get IEEE   address! You can manage your email settings in the Homey Developer Tools. [Texte des messages précé",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  ALL methods failed to  ",
+        "context": "nagerDrivers]   [Driver:presence_sensor_radar] [Device:9dbe2c70-3e76- 4d86-bd48-8a768b460a53] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T19:23:26.898Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar]",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "nagerDrivers]   [Driver:presence_sensor_radar] [Device:9dbe2c70-3e76- 4d86-bd48-8a768b460a53] [IAS] ❌  Cannot get IEEE   address! 2025-10-30T19:28:02.052Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:2a",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  ALL methods failed to  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:2a8d82e9-9aa2- 4cf3-956b-783cbd227c50] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T19:28:02.053Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:2a8d82e9-9aa2- 4cf3-956b-783cbd227c50] [IAS] ❌  Cannot get IEEE   address! uncaughtException: TypeError: this.tuyaEF00Manager.requestDP is not a   function at /app/d",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  ALL methods failed to  ",
+        "context": "nagerDrivers]   [Driver:presence_sensor_radar] [Device:9dbe2c70-3e76- 4d86-bd48-8a768b460a53] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T19:30:31.103Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar]",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "nagerDrivers]   [Driver:presence_sensor_radar] [Device:9dbe2c70-3e76- 4d86-bd48-8a768b460a53] [IAS] ❌  Cannot get IEEE   address! 2025-10-30T19:30:33.209Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:2a",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  ALL methods failed to  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:2a8d82e9-9aa2- 4cf3-956b-783cbd227c50] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-30T19:30:33.210Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:2a8d82e9-9aa2- 4cf3-956b-783cbd227c50] [IAS] ❌  Cannot get IEEE   address! You can manage your email settings in the Homey Developer Tools. [Texte des messages précé",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Exception:\nTypeError: this.tuyaEF00Manager.requestDP is not a  ",
+        "context": "ncy_sos] [Device:2a8d82e9-9aa2- 4cf3-956b-783cbd227c50] [IAS] ❌  Cannot get IEEE   address! uncaughtException: TypeError: this.tuyaEF00Manager.requestDP is not a   function at /app/drivers/climate_sensor_ soil/device.js:150:32 at Array.forEach ( ) at Timeout._onT",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Exception:\nTypeError: this.tuyaEF00Manager.requestDP is not a  ",
+        "context": "ncy_sos] [Device:2a8d82e9-9aa2- 4cf3-956b-783cbd227c50] [IAS] ❌  Cannot get IEEE   address! uncaughtException: TypeError: this.tuyaEF00Manager.requestDP is not a   function at /app/drivers/climate_sensor_ soil/device.js:150:32 at Array.forEach ( ) at Timeout._onT",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout is not defined",
+        "context": "e_sensor_radar] [Device:688acbba-30af- 4b8a-9dc4-8ae6679f33b9] Error details: ReferenceError:   withTimeout is not defined at ZigbeeTimeout. withTimeoutAndDefault   (/app/lib/ZigbeeTimeout.js:34: 20) at ZigbeeTimeout.readA",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (/app/node_modules/zigbee-",
+        "context": "ver/lib/ZigBeeDevice. js:976:11 unhandledRejection: Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout (node:internal/timers:588:17) at process.processT",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (node:internal/timers:588:17)",
+        "context": "Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout (node:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) 2025-10-30T15:50:40.042Z [err] [UniversalTuya",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (/app/node_modules/zigbee-",
+        "context": "TuyaZigbeeApp]   UNHANDLED REJECTION at: Promise {  Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout (node:internal/timers:588:17) at process.processT",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (node:internal/timers:588:17)",
+        "context": "Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout (node:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) } reason: Error: Timeout: Expected Response a",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (/app/node_modules/zigbee-",
+        "context": "rocessTimers (node:internal/timers:523:7) } reason: Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout (node:internal/timers:588:17) at process.processT",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (node:internal/timers:588:17)",
+        "context": "Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout (node:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) unhandledRejection: Error: Timeout: Expected",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (/app/node_modules/zigbee-",
+        "context": "rs (node:internal/timers:523:7) unhandledRejection: Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout (node:internal/timers:588:17) at process.processT",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (node:internal/timers:588:17)",
+        "context": "Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout (node:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) 2025-10-30T15:50:40.121Z [err] [UniversalTuya",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (/app/node_modules/zigbee-",
+        "context": "TuyaZigbeeApp]   UNHANDLED REJECTION at: Promise {  Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout (node:internal/timers:588:17) at process.processT",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (node:internal/timers:588:17)",
+        "context": "Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout (node:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) } reason: Error: Timeout: Expected Response a",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (/app/node_modules/zigbee-",
+        "context": "rocessTimers (node:internal/timers:523:7) } reason: Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout (node:internal/timers:588:17) at process.processT",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (node:internal/timers:588:17)",
+        "context": "Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout (node:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) 2025-10-30T15:52:50.918Z [err] [ManagerDriver",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (/app/node_modules/zigbee-",
+        "context": "ver/lib/ZigBeeDevice. js:976:11 unhandledRejection: Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout (node:internal/timers:588:17) at process.processT",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (node:internal/timers:588:17)",
+        "context": "Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout (node:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) 2025-10-30T16:14:53.944Z [err] [UniversalTuya",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (/app/node_modules/zigbee-",
+        "context": "TuyaZigbeeApp]   UNHANDLED REJECTION at: Promise {  Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout (node:internal/timers:588:17) at process.processT",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (node:internal/timers:588:17)",
+        "context": "Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout (node:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) } reason: Error: Timeout: Expected Response a",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (/app/node_modules/zigbee-",
+        "context": "rocessTimers (node:internal/timers:523:7) } reason: Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout (node:internal/timers:588:17) at process.processT",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (node:internal/timers:588:17)",
+        "context": "Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout (node:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) unhandledRejection: Error: Timeout: Expected",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (/app/node_modules/zigbee-",
+        "context": "rs (node:internal/timers:523:7) unhandledRejection: Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout (node:internal/timers:588:17) at process.processT",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (node:internal/timers:588:17)",
+        "context": "Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout (node:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) 2025-10-30T16:14:53.990Z [err] [UniversalTuya",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (/app/node_modules/zigbee-",
+        "context": "TuyaZigbeeApp]   UNHANDLED REJECTION at: Promise {  Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout (node:internal/timers:588:17) at process.processT",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (node:internal/timers:588:17)",
+        "context": "Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout (node:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) } reason: Error: Timeout: Expected Response a",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (/app/node_modules/zigbee-",
+        "context": "rocessTimers (node:internal/timers:523:7) } reason: Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout (node:internal/timers:588:17) at process.processT",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (node:internal/timers:588:17)",
+        "context": "Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout (node:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) unhandledRejection: Error: Impossible de join",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (/app/drivers/climate_sensor_",
+        "context": "function at /app/drivers/climate_sensor_ soil/device.js:150:32 at Array.forEach ( ) at Timeout._onTimeout (/app/drivers/climate_sensor_ soil/device.js:149:25) at listOnTimeout (node:internal/timers:588:17) at process.processTimers (nod",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (node:internal/timers:588:17)",
+        "context": "ray.forEach ( ) at Timeout._onTimeout (/app/drivers/climate_sensor_ soil/device.js:149:25) at listOnTimeout (node:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) ⚠ The app has crashed. TypeError: this.tuyaEF",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (/app/drivers/climate_sensor_",
+        "context": "function at /app/drivers/climate_sensor_ soil/device.js:150:32 at Array.forEach ( ) at Timeout._onTimeout (/app/drivers/climate_sensor_ soil/device.js:149:25) at listOnTimeout (node:internal/timers:588:17) at process.processTimers (nod",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (node:internal/timers:588:17)",
+        "context": "ray.forEach ( ) at Timeout._onTimeout (/app/drivers/climate_sensor_ soil/device.js:149:25) at listOnTimeout (node:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) 2025-10-30T19:30:27.949Z [err] [ManagerDriver",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (/app/drivers/climate_sensor_",
+        "context": "function at /app/drivers/climate_sensor_ soil/device.js:150:32 at Array.forEach ( ) at Timeout._onTimeout (/app/drivers/climate_sensor_ soil/device.js:149:25) at listOnTimeout (node:internal/timers:588:17) at process.processTimers (nod",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (node:internal/timers:588:17)",
+        "context": "ray.forEach ( ) at Timeout._onTimeout (/app/drivers/climate_sensor_ soil/device.js:149:25) at listOnTimeout (node:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) ⚠ The app has crashed. TypeError: this.tuyaEF",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (/app/drivers/climate_sensor_",
+        "context": "function at /app/drivers/climate_sensor_ soil/device.js:150:32 at Array.forEach ( ) at Timeout._onTimeout (/app/drivers/climate_sensor_ soil/device.js:149:25) at listOnTimeout (node:internal/timers:588:17) at process.processTimers (nod",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "Timeout (node:internal/timers:588:17)",
+        "context": "ray.forEach ( ) at Timeout._onTimeout (/app/drivers/climate_sensor_ soil/device.js:149:25) at listOnTimeout (node:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) 2025-10-30T19:30:27.949Z [err] [ManagerDriver",
+        "pdf": "13.pdf"
+      }
+    ],
+    "warnings": [],
+    "crashes": [
+      {
+        "error": "crash",
+        "context": "umidity] [Device:c4d89393- e3ec-465e- bf44-dc12c76109a7] Battery type: CR2032 stderr: ⚠ The app has crashed. Error: A Capability with ID homey:app:com.dlnraja.tuya. zigbee:fan_speed already exists. at Mana",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "crash",
+        "context": "t (node:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) ⚠ The app has crashed. TypeError: this.tuyaEF00Manager.requestDP is not a   function at /app/drivers/climate_sensor_ so",
+        "pdf": "13.pdf"
+      },
+      {
+        "error": "crash",
+        "context": "t (node:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) ⚠ The app has crashed. TypeError: this.tuyaEF00Manager.requestDP is not a   function at /app/drivers/climate_sensor_ so",
+        "pdf": "13.pdf"
+      }
+    ],
+    "device_issues": [],
+    "cluster_errors": [],
+    "capability_errors": [],
+    "zigbee_errors": [],
+    "flow_issues": []
+  },
+  "device_info": {
+    "manufacturers": [
+      "_TZE284_vvmbj46n",
+      "_TZE284_oitavov2",
+      "_TZ3000_bczr4e10",
+      "_TZ3000_bgtzm4ny",
+      "_TZ3000_0dumfk2z"
+    ],
+    "models": [
+      "TS0215",
+      "TS0601",
+      "TS0043",
+      "TS0044"
+    ],
+    "clusters": [],
+    "datapoints": [
+      "0"
+    ],
+    "endpoints": [
+      "1",
+      "3",
+      "4",
+      "2"
+    ],
+    "error_codes": []
+  },
+  "critical_issues": [],
+  "improvements": [
+    {
+      "type": "manufacturer_support",
+      "action": "Add manufacturer ID _TZE284_vvmbj46n to appropriate driver",
+      "priority": "HIGH"
+    },
+    {
+      "type": "manufacturer_support",
+      "action": "Add manufacturer ID _TZE284_oitavov2 to appropriate driver",
+      "priority": "HIGH"
+    },
+    {
+      "type": "manufacturer_support",
+      "action": "Add manufacturer ID _TZ3000_bczr4e10 to appropriate driver",
+      "priority": "HIGH"
+    },
+    {
+      "type": "manufacturer_support",
+      "action": "Add manufacturer ID _TZ3000_bgtzm4ny to appropriate driver",
+      "priority": "HIGH"
+    },
+    {
+      "type": "manufacturer_support",
+      "action": "Add manufacturer ID _TZ3000_0dumfk2z to appropriate driver",
+      "priority": "HIGH"
+    },
+    {
+      "type": "tuya_datapoints",
+      "action": "Map datapoints 0 in Tuya driver",
+      "priority": "MEDIUM"
+    },
+    {
+      "type": "error_handling",
+      "action": "Improve error handling and logging",
+      "priority": "LOW"
+    }
+  ]
+}

@@ -1,5488 +1,2342 @@
 [
   {
-    "driver_id": "air_quality_comprehensive",
+    "driver": "air_quality_comprehensive",
     "name": "Comprehensive Air Monitor",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_01gpyda5",
-      "_TZ3000_0dumfk2z",
-      "_TZ3000_0ghwhypc",
-      "_TZ3000_0ht8dnxj",
-      "_TZ3000_0s1izerx",
-      "_TZ3000_49qchf10",
-      "_TZ3000_4rbqgcuv",
-      "_TZ3000_4uf3d0ax",
-      "_TZ3000_8gs8h2e4",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_gjnozsaz",
-      "_TZ3000_h1ipgkwn",
-      "_TZ3000_ji4araar",
-      "_TZ3000_jr2atpww",
-      "_TZ3000_kpatq5pq",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_kqvb8qa8",
-      "_TZ3000_krajfo4p",
-      "_TZ3000_ljhbw1c9",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_m7wtqkfw",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_nnwehhst",
-      "_TZ3000_odygigth",
-      "_TZ3000_pmz6mjyu",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_rqbjepe8",
-      "_TZ3000_tqlv4ug4",
-      "_TZ3000_tx5b5gp3",
-      "_TZ3000_vjhcenzo",
-      "_TZ3000_vsasbzkf",
-      "_TZ3000_w0qqde0g",
-      "_TZ3000_wrhhi5h2",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_xkwalgne",
-      "_TZ3000_ya9ekqwp",
-      "_TZ3000_zhhcsbrz",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_ejwkn2h2"
-    ],
-    "models": [
-      "TS0005",
-      "TS0006",
-      "TS0501",
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0012",
-      "TS0013"
-    ],
-    "manufacturer_count": 43,
-    "model_count": 9,
-    "capabilities": [
-      "measure_temperature",
-      "measure_humidity",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_temperature|measure_humidity|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "air_quality_monitor",
+    "driver": "air_quality_monitor",
     "name": "Air Quality Monitor Pro (INTERNAL)",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ1800_ejwkn2h2",
-      "_TZ1800_fcdjzz3s",
-      "_TZ2000_a476raq2",
-      "_TZ2000_avdnvykf",
-      "_TZ2000_hjsgdkfl",
-      "_TZ3000_bvrlqyj7",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_ssp0maqm"
-    ],
-    "models": [
-      "TS0014"
-    ],
-    "manufacturer_count": 8,
-    "model_count": 1,
-    "capabilities": [
-      "measure_co2",
-      "measure_temperature",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_co2|measure_temperature|measure_battery|measure_humidity",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "air_quality_monitor_advanced",
+    "driver": "air_quality_monitor_advanced",
     "name": "Air Quality Monitor",
     "class": "sensor",
-    "manufacturers": [],
-    "models": [
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044"
-    ],
-    "manufacturer_count": 0,
-    "model_count": 4,
-    "capabilities": [
-      "measure_pm25",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_pm25|measure_battery|measure_temperature|measure_humidity",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "air_quality_pm25",
+    "driver": "air_quality_pm25",
     "name": "Pm25 Detector",
     "class": "sensor",
-    "manufacturers": [
-      "_TZE200_dwcarsat",
-      "_TZE200_ryfmq5rl",
-      "_TZE284_sgabhwa6",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0601"
-    ],
-    "manufacturer_count": 6,
-    "model_count": 1,
-    "capabilities": [
-      "measure_temperature",
-      "measure_pm25",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_temperature|measure_pm25|measure_battery|measure_humidity",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "blind_roller_controller",
+    "driver": "blind_roller_controller",
     "name": "Roller Blind Controller",
     "class": "sensor",
-    "manufacturers": [
-      "_TZE200_5zbp6j0u",
-      "_TZE200_cowvfni3",
-      "_TZE200_fctwhugx",
-      "_TZE200_nogaemzt",
-      "_TZE200_xuzcvlku",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0601",
-      "TS130F"
-    ],
-    "manufacturer_count": 7,
-    "model_count": 2,
-    "capabilities": [
-      "alarm_generic",
-      "windowcoverings_state"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_generic|windowcoverings_state|windowcoverings_set|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "bulb_dimmable",
+    "driver": "bulb_dimmable",
     "name": "Smart Bulb Dimmer",
     "class": "light",
-    "manufacturers": [
-      "lumi.light.aqcn02",
-      "lumi.light.cb2acn"
-    ],
-    "models": [
-      "E11-G13",
-      "E11-G23",
-      "E11-N13",
-      "E11-N14",
-      "E12-N14",
-      "E1C-NB6",
-      "E1C-NB7"
-    ],
-    "manufacturer_count": 2,
-    "model_count": 7,
-    "capabilities": [
-      "onoff",
-      "dim",
-      "light_hue",
-      "light_saturation",
-      "light_temperature",
-      "light_mode"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|dim|light_hue|light_saturation|light_temperature|light_mode",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "bulb_rgb",
+    "driver": "bulb_rgb",
     "name": "Smart Bulb Rgb",
     "class": "light",
-    "manufacturers": [
-      "_TZ3000_kdpxju99",
-      "_TZ3000_obacbukl",
-      "_TZ3000_odygigth",
-      "lumi.light.cwopcn02",
-      "lumi.light.cwopcn03",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
-    ],
-    "models": [
-      "TS0505A",
-      "TS0505B"
-    ],
-    "manufacturer_count": 9,
-    "model_count": 2,
-    "capabilities": [
-      "onoff",
-      "dim",
-      "light_hue",
-      "light_saturation",
-      "light_temperature",
-      "light_mode"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|dim|light_hue|light_saturation|light_temperature|light_mode",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "bulb_rgbw",
+    "driver": "bulb_rgbw",
     "name": "Smart Bulb Bulb Rgbw",
     "class": "light",
-    "manufacturers": [
-      "_TZ3000_kdpxju99",
-      "_TZ3000_obacbukl",
-      "_TZ3000_odygigth",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
-    ],
-    "models": [
-      "TS0502A",
-      "TS0502B",
-      "TS0505A",
-      "TS0505B",
-      "ZB-CL01",
-      "generic"
-    ],
-    "manufacturer_count": 7,
-    "model_count": 6,
-    "capabilities": [
-      "onoff",
-      "light_hue",
-      "light_saturation",
-      "light_temperature",
-      "light_mode",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|light_hue|light_saturation|light_temperature|light_mode|dim",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "bulb_tunable_white",
+    "driver": "bulb_tunable_white",
     "name": "Bulb Tunable",
     "class": "light",
-    "manufacturers": [
-      "_TZ3210_ngqk6jia",
-      "_TZ3210_p9ao60da",
-      "_TZ3000_obacbukl",
-      "_TZ3000_kdpxju99",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
-    ],
-    "models": [
-      "TS0502B",
-      "TS0502A"
-    ],
-    "manufacturer_count": 8,
-    "model_count": 2,
-    "capabilities": [
-      "onoff",
-      "dim",
-      "light_hue",
-      "light_saturation",
-      "light_temperature",
-      "light_mode"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|dim|light_hue|light_saturation|light_temperature|light_mode",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "bulb_white",
+    "driver": "bulb_white",
     "name": "Smart Bulb White",
     "class": "light",
-    "manufacturers": [
-      "_TZ3210_ngqk6jia",
-      "_TZ3210_p9ao60da",
-      "_TZ3000_obacbukl",
-      "_TZ3000_kdpxju99",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
-    ],
-    "models": [
-      "TS0502B",
-      "TS0502A"
-    ],
-    "manufacturer_count": 8,
-    "model_count": 2,
-    "capabilities": [
-      "onoff",
-      "dim",
-      "light_hue",
-      "light_saturation",
-      "light_temperature",
-      "light_mode"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|dim|light_hue|light_saturation|light_temperature|light_mode",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "button_emergency_advanced",
+    "driver": "button_emergency_advanced",
     "name": "Sos Emergency Button",
     "class": "button",
-    "manufacturers": [],
-    "models": [
-      "TS0041",
-      "default"
-    ],
-    "manufacturer_count": 0,
-    "model_count": 2,
-    "capabilities": [
-      "alarm_generic"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_generic|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "button_emergency_sos",
+    "driver": "button_emergency_sos",
     "name": "Sos Emergency Button",
     "class": "button",
-    "manufacturers": [
-      "_TZ3000_0dumfk2z",
-      "_TZ3000_26fmupbb",
-      "_TZ3000_4uuaja4a",
-      "_TZ3000_8rppvwda",
-      "_TZ3000_a7ouggvs",
-      "_TZ3000_mmtwjmaq",
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_axpdxqgu",
-      "_TZ3000_cehuw1lw",
-      "_TZ3000_cphmq0q7",
-      "_TZ3000_dbou1ap4",
-      "_TZ3000_el5kt5im",
-      "_TZ3000_eo3dttwe",
-      "_TZ3000_f97vq5mn",
-      "_TZ3000_fa9mlvja",
-      "_TZ3000_fkp5zyho",
-      "_TZ3000_fllyghyj",
-      "_TZ3000_fsiepnrh",
-      "_TZ3000_g5xawfcq",
-      "_TZ3000_itb0omhv",
-      "_TZ3000_iystcadi",
-      "_TZ3000_ji4araar",
-      "_TZ3000_mcxw5ehu",
-      "_TZ3000_n2egfsli",
-      "_TZ3000_obacbukl",
-      "_TZ3000_odygigth",
-      "_TZ3000_oikiyf3b",
-      "_TZ3000_owgcnkrh",
-      "_TZ3000_p6ju8myv",
-      "_TZ3000_peszejy7",
-      "_TZ3000_pzui3skt",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_tk3s5tyg",
-      "_TZ3000_uim07oem",
-      "_TZ3000_vp6clf9d",
-      "_TZ3000_wkai4ga5",
-      "_TZ3000_xabckq1v",
-      "_TZ3000_zsh6uat3",
-      "lumi.remote.b186acn01",
-      "lumi.remote.b186acn02",
-      "lumi.remote.b286acn01",
-      "lumi.remote.b286acn02",
-      "lumi.remote.b486opcn01",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
-    ],
-    "models": [
-      "TS0041",
-      "TS0215A"
-    ],
-    "manufacturer_count": 47,
-    "model_count": 2,
-    "capabilities": [
-      "alarm_generic",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_generic|measure_battery",
+    "batteries": "CR2032",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "button_remote_1",
+    "driver": "button_remote_1",
     "name": "Wireless Switch 1button",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_18ejxno0",
-      "_TZ3000_1dd0d5yi",
-      "_TZ3000_402jjyro",
-      "_TZ3000_46t1rvdu",
-      "_TZ3000_4rbqgcuv",
-      "_TZ3000_4ugnzsli",
-      "_TZ3000_6axxqqi2",
-      "_TZ3000_6ygjfyll",
-      "_TZ3000_7d8yme6f",
-      "_TZ3000_8bxrzyxz",
-      "_TZ3000_bczr4e10",
-      "_TZ3000_bsvqrux3",
-      "_TZ3000_dku2cfsc",
-      "_TZ3000_ebar5p3z",
-      "_TZ3000_h4wnrtck",
-      "_TZ3000_hgu1dlak",
-      "_TZ3000_hhiodade",
-      "_TZ3000_jl7qyupf",
-      "_TZ3000_ke_x0oo3",
-      "_TZ3000_kjfzuycl",
-      "_TZ3000_lf56vpxj",
-      "_TZ3000_ltiqubue",
-      "_TZ3000_majwnphg",
-      "_TZ3000_msl6wxk9",
-      "_TZ3000_nnwehhst",
-      "_TZ3000_npzfdcof",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_otvn3lne",
-      "_TZ3000_pdevogdj",
-      "_TZ3000_qmi1cfuq",
-      "_TZ3000_rmjr4ufz",
-      "_TZ3000_tqlv4ug4",
-      "_TZ3000_vd43bbfq",
-      "_TZ3000_vjhcenzo",
-      "_TZ3000_wxtp7c5y",
-      "_TZ3000_zmy1waw6",
-      "_TZ3000_zmy4lslw",
-      "lumi.ctrl_ln1",
-      "lumi.ctrl_ln2",
-      "lumi.ctrl_neutral1",
-      "lumi.ctrl_neutral2",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
-    ],
-    "models": [
-      "TS0041"
-    ],
-    "manufacturer_count": 45,
-    "model_count": 1,
-    "capabilities": [
-      "alarm_generic"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_generic|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "button_remote_2",
+    "driver": "button_remote_2",
     "name": "Wireless Switch 2button",
     "class": "button",
-    "manufacturers": [
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
-    ],
-    "models": [
-      "TS0041"
-    ],
-    "manufacturer_count": 5,
-    "model_count": 1,
-    "capabilities": [
-      "onoff",
-      "onoff.button2",
-      "alarm_generic"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.button2|alarm_generic|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "button_remote_3",
+    "driver": "button_remote_3",
     "name": "Wireless Switch 3button",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_2mbfxlzr",
-      "_TZ3000_arfwfgoa",
-      "_TZ3000_bi6lpsew",
-      "_TZ3000_bvrlqyj7",
-      "_TZ3000_dfgbtub0",
-      "_TZ3000_ixla93vd",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
-    ],
-    "models": [
-      "TS0041"
-    ],
-    "manufacturer_count": 10,
-    "model_count": 1,
-    "capabilities": [
-      "onoff",
-      "onoff.button2",
-      "onoff.button3"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.button2|onoff.button3|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "button_remote_4",
+    "driver": "button_remote_4",
     "name": "Wireless Switch 4button",
     "class": "button",
-    "manufacturers": [
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_abrsvsou",
-      "_TZ3000_an5rjiwd",
-      "_TZ3000_csflgqj2",
-      "_TZ3000_mrpevh8p",
-      "_TZ3000_pcqjmcud",
-      "_TZ3000_qja6nq5z",
-      "_TZ3000_uri7ongn",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
-    ],
-    "models": [
-      "TS0041"
-    ],
-    "manufacturer_count": 12,
-    "model_count": 1,
-    "capabilities": [
-      "onoff",
-      "onoff.button2",
-      "onoff.button3",
-      "onoff.button4",
-      "alarm_generic"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.button2|onoff.button3|onoff.button4|alarm_generic|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "button_remote_6",
+    "driver": "button_remote_6",
     "name": "Wireless Switch 6button",
     "class": "button",
-    "manufacturers": [
-      "lumi.remote.b686opcn01"
-    ],
-    "models": [
-      "TS0041"
-    ],
-    "manufacturer_count": 1,
-    "model_count": 1,
-    "capabilities": [
-      "onoff",
-      "onoff.button2",
-      "onoff.button3",
-      "onoff.button4",
-      "onoff.button5",
-      "onoff.button6",
-      "alarm_generic"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.button2|onoff.button3|onoff.button4|onoff.button5|onoff.button6|alarm_generic|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "button_remote_8",
+    "driver": "button_remote_8",
     "name": "Wireless Switch 8button",
     "class": "button",
-    "manufacturers": [],
-    "models": [
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044"
-    ],
-    "manufacturer_count": 0,
-    "model_count": 4,
-    "capabilities": [
-      "onoff",
-      "onoff.button2",
-      "onoff.button3",
-      "onoff.button4",
-      "onoff.button5",
-      "onoff.button6",
-      "onoff.button7",
-      "onoff.button8",
-      "alarm_generic"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.button2|onoff.button3|onoff.button4|onoff.button5|onoff.button6|onoff.button7|onoff.button8|alarm_generic|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "button_shortcut",
+    "driver": "button_shortcut",
     "name": "Shortcut Button (OTHER)",
     "class": "button",
-    "manufacturers": [],
-    "models": [
-      "TS0041",
-      "TS004F",
-      "TS0215A"
-    ],
-    "manufacturer_count": 0,
-    "model_count": 3,
-    "capabilities": [
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "button_wireless",
+    "driver": "button_wireless",
     "name": "Wireless Button (Universal)",
     "class": "button",
-    "manufacturers": [],
-    "models": [
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044"
-    ],
-    "manufacturer_count": 0,
-    "model_count": 4,
-    "capabilities": [
-      "alarm_generic",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_generic|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "button_wireless_1",
+    "driver": "button_wireless_1",
     "name": "1-Buttons Wireless Controller",
     "class": "button",
-    "manufacturers": [
-      "_TZ3000_26fmupbb",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_a7ouggvs",
-      "_TZ3000_adkvzooy",
-      "_TZ3000_bi6lpsew",
-      "_TZ3000_czuyt8lz",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_tk3s5tya",
-      "_TZ3000_vp6clf9d",
-      "_TZ3000_xabckq1v",
-      "_TZ3400_tk3s5tyg",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
-    ],
-    "models": [
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044"
-    ],
-    "manufacturer_count": 15,
-    "model_count": 4,
-    "capabilities": [
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "button_wireless_2",
+    "driver": "button_wireless_2",
     "name": "2-Buttons Wireless Controller",
     "class": "button",
-    "manufacturers": [
-      "_TZ3000_26fmupbb",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_a7ouggvs",
-      "_TZ3000_adkvzooy",
-      "_TZ3000_bi6lpsew",
-      "_TZ3000_d0ypg4o2",
-      "_TZ3000_fq1sxfrj",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_vp6clf9d",
-      "_TZ3000_xabckq1v",
-      "_TZ3400_key8kk7r",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
-    ],
-    "models": [
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044"
-    ],
-    "manufacturer_count": 15,
-    "model_count": 4,
-    "capabilities": [
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "button_wireless_3",
+    "driver": "button_wireless_3",
     "name": "3-Button Wireless Controller",
     "class": "button",
-    "manufacturers": [
-      "_TZ3000_a7ouggvs",
-      "_TZ3000_adkvzooy",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_bczr4e10",
-      "_TZ3000_bi6lpsew",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_rrjr1q0u",
-      "_TZ3000_vp6clf9d",
-      "_TZ3000_w8jwkczz",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_xabckq1v"
-    ],
-    "models": [
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044",
-      "TS004F"
-    ],
-    "manufacturer_count": 13,
-    "model_count": 5,
-    "capabilities": [
-      "measure_battery",
-      "alarm_generic"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_battery|alarm_generic",
+    "batteries": "CR2450",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "button_wireless_4",
+    "driver": "button_wireless_4",
     "name": "4-Buttons Wireless Controller",
     "class": "button",
-    "manufacturers": [
-      "_TZ3000_a7ouggvs",
-      "_TZ3000_adkvzooy",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_bgtzm4ny",
-      "_TZ3000_bi6lpsew",
-      "_TZ3000_ee8nrt2l",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_pcqjmcud",
-      "_TZ3000_rrjr1q0u",
-      "_TZ3000_tk3s5tyg",
-      "_TZ3000_vp6clf9d",
-      "_TZ3000_w8jwkczz",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_xabckq1v"
-    ],
-    "models": [
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044",
-      "TS004F"
-    ],
-    "manufacturer_count": 16,
-    "model_count": 5,
-    "capabilities": [
-      "measure_battery",
-      "alarm_generic"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_battery|alarm_generic",
+    "batteries": "CR2450",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "button_wireless_6",
+    "driver": "button_wireless_6",
     "name": "6-Buttons Wireless Controller",
     "class": "button",
-    "manufacturers": [
-      "_TZ3000_a7ouggvs",
-      "_TZ3000_adkvzooy",
-      "_TZ3000_bi6lpsew",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_vp6clf9d",
-      "_TZ3000_xabckq1v",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
-    ],
-    "models": [
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044"
-    ],
-    "manufacturer_count": 10,
-    "model_count": 4,
-    "capabilities": [
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "button_wireless_8",
+    "driver": "button_wireless_8",
     "name": "8-Buttons Wireless Controller",
     "class": "button",
-    "manufacturers": [
-      "_TZ3000_a7ouggvs",
-      "_TZ3000_adkvzooy",
-      "_TZ3000_bi6lpsew",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_vp6clf9d",
-      "_TZ3000_xabckq1v",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
-    ],
-    "models": [
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044"
-    ],
-    "manufacturer_count": 10,
-    "model_count": 4,
-    "capabilities": [
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "ceiling_fan",
+    "driver": "ceiling_fan",
     "name": "Ceiling Fan",
     "class": "light",
-    "manufacturers": [
-      "_TZE200_eevqq1uv",
-      "_TZE200_3towulqd",
-      "_TZE284_1emhi5mm",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0601"
-    ],
-    "manufacturer_count": 6,
-    "model_count": 1,
-    "capabilities": [
-      "onoff",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|dim|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "climate_monitor",
+    "driver": "climate_monitor",
     "name": "Temperature Humidity",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_ywagc4rj",
-      "_TZ3000_zl1kmjqx",
-      "_TZE200_7hfcudw5",
-      "_TZE200_a8sdabtg",
-      "_TZE200_bjawzodf",
-      "_TZE200_bq5c8xfe",
-      "_TZE200_dwcarsat",
-      "_TZE200_locansqn",
-      "_TZE200_nw1r9hp6",
-      "_TZE200_qoy0ekbd",
-      "_TZE200_whpb9yts",
-      "_TZE200_zl1kmjqx",
-      "lumi.sensor_ht",
-      "lumi.weather",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu"
-    ],
-    "models": [
-      "TS0201",
-      "TS0601"
-    ],
-    "manufacturer_count": 20,
-    "model_count": 2,
-    "capabilities": [
-      "measure_temperature",
-      "measure_humidity",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_temperature|measure_humidity|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "climate_monitor_co2",
+    "driver": "climate_monitor_co2",
     "name": "Co2 Temp Humidity",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_ywagc4rj",
-      "_TZ3000_zl1kmjqx",
-      "_TZE200_7bztmfm1",
-      "_TZE200_81isopgh",
-      "_TZE200_9cxuhakf",
-      "_TZE200_a8sdabtg",
-      "_TZE200_azqp6ssj",
-      "_TZE200_b6wax7g0",
-      "_TZE200_c88teujp",
-      "_TZE200_ckud7u2l",
-      "_TZE200_cwbvmsar",
-      "_TZE200_m9skfctm",
-      "_TZE200_rxq4iti9",
-      "_TZE200_ryfmq5rl",
-      "_TZE200_ye5jkfsb",
-      "_TZE200_yvx5lh6k",
-      "_TZE200_yw7cahqs",
-      "_TZE200_znbl8dj5",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0201",
-      "TS0601"
-    ],
-    "manufacturer_count": 25,
-    "model_count": 2,
-    "capabilities": [
-      "measure_temperature",
-      "measure_humidity",
-      "alarm_co",
-      "alarm_co2",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_temperature|measure_humidity|alarm_co|alarm_co2|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "climate_monitor_temp_humidity",
+    "driver": "climate_monitor_temp_humidity",
     "name": "Climate Monitor",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_fllyghyj",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ywagc4rj",
-      "_TZ3000_zl1kmjqx",
-      "_TZE200_a8sdabtg",
-      "_TZE200_bjawzodf",
-      "_TZE200_cirvgep4",
-      "_TZE200_locansqn",
-      "_TZE200_vzqtvljm",
-      "_TZE200_whpb9yts",
-      "_TZE204_upagmta9",
-      "_TZE284_sgabhwa6",
-      "_TZE284_vvmbj46n",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0201",
-      "TS0601"
-    ],
-    "manufacturer_count": 19,
-    "model_count": 2,
-    "capabilities": [
-      "measure_temperature",
-      "measure_battery",
-      "measure_humidity"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_temperature|measure_battery|measure_humidity",
+    "batteries": "CR2032",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "climate_sensor_soil",
+    "driver": "climate_sensor_soil",
     "name": "Soil Tester Temp Humid",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_qomxlryd",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ywagc4rj",
-      "_TZ3000_zl1kmjqx",
-      "_TZE200_a8sdabtg",
-      "_TZE200_c7emyjom",
-      "_TZE200_ga1maeof",
-      "_TZE200_myd45weu",
-      "_TZE200_ycrd8ywq",
-      "_TZE204_c7emyjom",
-      "_TZE204_myd45weu",
-      "_TZE284_oitavov2",
-      "_TZE200_cowvfni3",
-      "_TZE200_qoy0ekbd",
-      "_TZ3000_26fmupbb",
-      "_TZ3000_n2egfsli",
-      "_TZ3000_4ugnzsli"
-    ],
-    "models": [
-      "TS0201",
-      "TS0601",
-      "TS0203"
-    ],
-    "manufacturer_count": 21,
-    "model_count": 3,
-    "capabilities": [
-      "measure_temperature",
-      "measure_humidity",
-      "measure_battery",
-      "measure_humidity.soil",
-      "alarm_contact"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_temperature|measure_humidity|measure_battery|measure_humidity.soil|alarm_contact",
+    "batteries": "CR2032",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "climate_sensor_temp_humidity_advanced",
+    "driver": "climate_sensor_temp_humidity_advanced",
     "name": "Temp Humid Sensor Advanced",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_ywagc4rj",
-      "_TZ3000_zl1kmjqx",
-      "_TZE200_a8sdabtg",
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd",
-      "_TZ3000_26fmupbb",
-      "_TZ3000_n2egfsli",
-      "_TZ3000_4ugnzsli"
-    ],
-    "models": [
-      "TS0201",
-      "TS0601",
-      "TS0203"
-    ],
-    "manufacturer_count": 14,
-    "model_count": 3,
-    "capabilities": [
-      "alarm_motion",
-      "measure_temperature",
-      "measure_humidity",
-      "measure_battery",
-      "alarm_contact"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|measure_temperature|measure_humidity|measure_battery|alarm_contact",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "contact_sensor",
+    "driver": "contact_sensor",
     "name": "Contact Sensor",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_26fmupbb",
-      "_TZ3000_n2egfsli",
-      "_TZ3000_402jjyro",
-      "_TZ3000_msl2rxjn",
-      "_TZ3000_oxslv1c9",
-      "lumi.sensor_magnet",
-      "lumi.sensor_magnet.aq2",
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_4ugnzsli"
-    ],
-    "models": [
-      "TS0203"
-    ],
-    "manufacturer_count": 13,
-    "model_count": 1,
-    "capabilities": [
-      "alarm_contact",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_contact|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "contact_sensor_basic",
+    "driver": "contact_sensor_basic",
     "name": "Contact Sensor Basic",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_26fmupbb",
-      "_TZ3000_402jjyro",
-      "_TZ3000_msl2rxjn",
-      "_TZ3000_n2egfsli",
-      "_TZ3000_oxslv1c9",
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_4ugnzsli"
-    ],
-    "models": [
-      "TS0203"
-    ],
-    "manufacturer_count": 11,
-    "model_count": 1,
-    "capabilities": [
-      "alarm_motion",
-      "alarm_contact",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|alarm_contact|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "contact_sensor_multipurpose",
+    "driver": "contact_sensor_multipurpose",
     "name": "Generic Multipurpose Sensor",
     "class": "sensor",
-    "manufacturers": [
-      "_SAMSUNG_generic",
-      "_TZ3000_26fmupbb",
-      "_TZ3000_402jjyro",
-      "_TZ3000_msl2rxjn",
-      "_TZ3000_n2egfsli",
-      "_TZ3000_oxslv1c9",
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_4ugnzsli"
-    ],
-    "models": [
-      "TS0203"
-    ],
-    "manufacturer_count": 12,
-    "model_count": 1,
-    "capabilities": [
-      "alarm_generic",
-      "alarm_contact"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_generic|alarm_contact|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "contact_sensor_vibration",
+    "driver": "contact_sensor_vibration",
     "name": "Contact & Vibration Sensor",
     "class": "sensor",
-    "manufacturers": [
-      "HOBEIAN",
-      "_TZ3000_26fmupbb",
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_n2egfsli",
-      "_TZ3000_4ugnzsli"
-    ],
-    "models": [
-      "ZG-102ZM",
-      "TS0203"
-    ],
-    "manufacturer_count": 9,
-    "model_count": 2,
-    "capabilities": [
-      "alarm_contact",
-      "alarm_tamper",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_contact|alarm_tamper|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "curtain_motor",
+    "driver": "curtain_motor",
     "name": "Smart Curtain Motor (INTERNAL)",
     "class": "windowcoverings",
-    "manufacturers": [
-      "_TZE200_5zbp6j0u",
-      "_TZE200_nogaemzt",
-      "_TZE200_xuzcvlku",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd",
-      "_TZE200_nv6nxo0c"
-    ],
-    "models": [
-      "TS0601",
-      "TS130F"
-    ],
-    "manufacturer_count": 7,
-    "model_count": 2,
-    "capabilities": [
-      "windowcoverings_state",
-      "windowcoverings_set",
-      "windowcoverings_tilt_set",
-      "measure_battery",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "windowcoverings_state|windowcoverings_set|windowcoverings_tilt_set|measure_battery|dim",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "curtain_motor_advanced",
+    "driver": "curtain_motor_advanced",
     "name": "Curtain Motor",
     "class": "windowcoverings",
-    "manufacturers": [
-      "_TZE200_5zbp6j0u",
-      "_TZE200_nogaemzt",
-      "_TZE200_xuzcvlku",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0601",
-      "TS130F"
-    ],
-    "manufacturer_count": 6,
-    "model_count": 2,
-    "capabilities": [
-      "windowcoverings_set",
-      "windowcoverings_state"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "windowcoverings_set|windowcoverings_state|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "dimmer_touch",
+    "driver": "curtain_motor_ts0601",
+    "name": "Zigbee Curtain Motor",
+    "class": "windowcoverings",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "windowcoverings_set|windowcoverings_state",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "dimmer_2ch_ts1101",
+    "name": "2-Channel Dimmer Module",
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|dim",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "dimmer_touch",
     "name": "Dimmer Touch",
     "class": "light",
-    "manufacturers": [
-      "_TZ3000_7ed9cqgi",
-      "_TZ3000_7ysdnebc",
-      "_TZ3000_92chsky7",
-      "_TZ3000_ktuoyvt5",
-      "_TZ3000_vzopcetz",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
-    ],
-    "models": [
-      "TS110E",
-      "TS110F"
-    ],
-    "manufacturer_count": 9,
-    "model_count": 2,
-    "capabilities": [
-      "onoff",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|dim|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "dimmer_touch_1gang",
+    "driver": "dimmer_touch_1gang",
     "name": "Dimmer 1gang Touch",
     "class": "light",
-    "manufacturers": [],
-    "models": [
-      "TS110E",
-      "TS110F"
-    ],
-    "manufacturer_count": 0,
-    "model_count": 2,
-    "capabilities": [
-      "onoff",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|dim|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "dimmer_wall",
+    "driver": "dimmer_wall",
     "name": "Dimmer Dimmer",
     "class": "light",
-    "manufacturers": [],
-    "models": [
-      "TS110E",
-      "TS110F"
-    ],
-    "manufacturer_count": 0,
-    "model_count": 2,
-    "capabilities": [
-      "onoff",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|dim",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "dimmer_wall_1gang",
+    "driver": "dimmer_wall_1gang",
     "name": "Dimmer 1gang",
     "class": "light",
-    "manufacturers": [],
-    "models": [
-      "TS110E",
-      "TS110F"
-    ],
-    "manufacturer_count": 0,
-    "model_count": 2,
-    "capabilities": [
-      "onoff",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|dim",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "dimmer_wireless",
+    "driver": "dimmer_wireless",
     "name": "Dimmer Wireless",
     "class": "light",
-    "manufacturers": [
-      "_TZ3000_49qchf10",
-      "_TZ3000_kdpxju99",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
-    ],
-    "models": [
-      "TS110E",
-      "TS110F"
-    ],
-    "manufacturer_count": 6,
-    "model_count": 2,
-    "capabilities": [
-      "onoff",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|dim|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "door_controller",
-    "name": "Door Controller",
-    "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd",
-      "_TZ3000_26fmupbb",
-      "_TZ3000_n2egfsli",
-      "_TZ3000_4ugnzsli"
-    ],
-    "models": [
-      "TS0601",
-      "TS0203"
-    ],
-    "manufacturer_count": 11,
-    "model_count": 2,
-    "capabilities": [
-      "alarm_motion",
-      "alarm_contact",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
-    "driver_id": "doorbell",
+    "driver": "doorbell",
     "name": "Doorbell Doorbell",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_26fmupbb",
-      "_TZ3000_n2egfsli",
-      "_TZ3000_4ugnzsli"
-    ],
-    "models": [
-      "TS0211",
-      "TS0203"
-    ],
-    "manufacturer_count": 8,
-    "model_count": 2,
-    "capabilities": [
-      "alarm_motion",
-      "alarm_contact",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|alarm_contact|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "doorbell_button",
+    "driver": "doorbell_button",
     "name": "Smart Doorbell Camera (INTERNAL)",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_5e2f3n2h",
-      "_TZ3000_7tbsruql",
-      "_TZ3000_8nkb7mof",
-      "_TZ3000_9eeavbk5",
-      "_TZ3000_9hpxg80k",
-      "_TZ3000_a33rw7ou",
-      "_TZ3000_aaifmpuq",
-      "_TZ3000_ali1q8p0",
-      "_TZ3000_au1rjicn",
-      "_TZ3000_bffkdmp8",
-      "_TZ3000_bmg14ax2",
-      "_TZ3000_bn4t9du1",
-      "_TZ3000_bpkijo14",
-      "_TZ3000_bzxlofth",
-      "_TZ3000_cfnprab5",
-      "_TZ3000_cymsnfvf",
-      "_TZ3000_ddcqbtgs",
-      "_TZ3000_decxrtwa",
-      "_TZ3000_dlhhrhs8",
-      "_TZ3000_dpo1ysak",
-      "_TZ3000_dziaict4",
-      "_TZ3000_ebar6ljy",
-      "_TZ3000_hkcpblrs",
-      "_TZ3000_osu834un",
-      "_TZ3000_oxslv1c9",
-      "_TZ3000_qomxlryd",
-      "_TZ3000_rgchmad8",
-      "_TZ3000_yxqnffam",
-      "_TZ3000_zfmxvprs",
-      "_TZ3000_zgrffiwg",
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_26fmupbb",
-      "_TZ3000_n2egfsli",
-      "_TZ3000_4ugnzsli"
-    ],
-    "models": [
-      "TS0041",
-      "TS0203"
-    ],
-    "manufacturer_count": 38,
-    "model_count": 2,
-    "capabilities": [
-      "locked",
-      "measure_battery",
-      "alarm_contact",
-      "alarm_generic",
-      "volume_set"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "locked|measure_battery|alarm_contact|alarm_generic|volume_set",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "doorbell_camera",
+    "driver": "doorbell_camera",
     "name": "Doorbell Camera",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_26fmupbb",
-      "_TZ3000_n2egfsli",
-      "_TZ3000_4ugnzsli"
-    ],
-    "models": [
-      "TS0211",
-      "TS0203"
-    ],
-    "manufacturer_count": 8,
-    "model_count": 2,
-    "capabilities": [
-      "alarm_motion",
-      "alarm_contact",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|alarm_contact|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "garage_door_controller",
+    "driver": "door_controller",
+    "name": "Door Controller",
+    "class": "sensor",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|alarm_contact|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "garage_door_controller",
     "name": "Garage Door Controller",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd",
-      "_TZ3000_26fmupbb",
-      "_TZ3000_n2egfsli",
-      "_TZ3000_4ugnzsli"
-    ],
-    "models": [
-      "TS0601",
-      "TS0203"
-    ],
-    "manufacturer_count": 11,
-    "model_count": 2,
-    "capabilities": [
-      "alarm_motion",
-      "alarm_contact",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|alarm_contact|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "gas_detector",
+    "driver": "gas_detector",
     "name": "Gas Detector",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_mwd3c2at",
-      "_TZ3000_tk3s5tyg",
-      "_TZE200_wfxuhoea",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0601"
-    ],
-    "manufacturer_count": 10,
-    "model_count": 1,
-    "capabilities": [
-      "alarm_motion",
-      "alarm_co",
-      "alarm_co2",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|alarm_co|alarm_co2|measure_battery|onoff",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "gas_sensor",
+    "driver": "gas_sensor",
     "name": "Gas Sensor Ts0601",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_mwd3c2at",
-      "_TZ3000_tk3s5tyg",
-      "_TZE200_ezqy5pvh",
-      "_TZE200_ux5v4tgb",
-      "_TZE200_yojqa8xn",
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd",
-      "_TZ3000_26fmupbb",
-      "_TZ3000_n2egfsli",
-      "_TZ3000_4ugnzsli"
-    ],
-    "models": [
-      "TS0601",
-      "TS0203"
-    ],
-    "manufacturer_count": 16,
-    "model_count": 2,
-    "capabilities": [
-      "alarm_co",
-      "alarm_co2",
-      "measure_battery",
-      "alarm_contact"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_co|alarm_co2|measure_battery|alarm_contact|onoff",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "gateway_zigbee_bridge",
+    "driver": "gateway_zigbee_bridge",
     "name": "Zbbridge",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_ksw8qtmt",
-      "_TZ3000_2xlvlnez",
-      "_TZ3000_o1jzcxou",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
-    ],
-    "models": [],
-    "manufacturer_count": 7,
-    "model_count": 0,
-    "capabilities": [
-      "alarm_generic"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_generic|onoff|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "gateway_zigbee_hub",
+    "driver": "gateway_zigbee_hub",
     "name": "Zigbee Gateway Hub",
     "class": "sensor",
-    "manufacturers": [
-      "_TZE200_bjzrowv2",
-      "_TZE200_vm1gyrso",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0601"
-    ],
-    "manufacturer_count": 5,
-    "model_count": 1,
-    "capabilities": [
-      "alarm_generic"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_generic|onoff|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "humidity_controller",
+    "driver": "humidity_controller",
     "name": "Humidity Controller",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_zl1kmjqx",
-      "_TZ3000_yd2e749y",
-      "_TZ3000_fllyghyj",
-      "_TZE200_locansqn",
-      "_TZE200_bjawzodf",
-      "_TZE284_aagrxlbd",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0201",
-      "TS0601"
-    ],
-    "manufacturer_count": 9,
-    "model_count": 2,
-    "capabilities": [
-      "measure_temperature",
-      "measure_humidity",
-      "measure_battery",
-      "windowcoverings_state"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_temperature|measure_humidity|measure_battery|windowcoverings_state|onoff",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "hvac_air_conditioner",
+    "driver": "hvac_air_conditioner",
     "name": "Air Conditioner (Smart)",
     "class": "thermostat",
-    "manufacturers": [
-      "_TZE200_zuhszj9s",
-      "_TZE200_husqqvux"
-    ],
-    "models": [],
-    "manufacturer_count": 2,
-    "model_count": 0,
-    "capabilities": [
-      "onoff",
-      "target_temperature",
-      "measure_temperature",
-      "thermostat_mode",
-      "fan_speed",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|target_temperature|measure_temperature|thermostat_mode|fan_speed|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "hvac_dehumidifier",
+    "driver": "hvac_dehumidifier",
     "name": "Dehumidifier (Smart)",
     "class": "sensor",
-    "manufacturers": [
-      "_TZE200_oisqyl4o"
-    ],
-    "models": [],
-    "manufacturer_count": 1,
-    "model_count": 0,
-    "capabilities": [
-      "onoff",
-      "target_humidity",
-      "measure_humidity",
-      "measure_temperature",
-      "measure_power",
-      "alarm_water",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|target_humidity|measure_humidity|measure_temperature|measure_power|alarm_water|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "led_strip",
+    "driver": "led_strip",
     "name": "LED Strip Led Strip",
     "class": "light",
-    "manufacturers": [
-      "_TZ3000_5bsf8vaj",
-      "_TZ3000_9cpuaca6",
-      "_TZ3000_dl4pxp1r",
-      "_TZ3000_gek6snaj",
-      "_TZ3000_i8l0nqdu",
-      "_TZ3000_kdpxju99",
-      "_TZ3000_obacbukl",
-      "_TZ3000_odygigth",
-      "_TZ3000_qqjaziws",
-      "_TZ3000_riwp3k79",
-      "_TZ3000_ukuvyhaa",
-      "_TZ3000_utagpnzs",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
-    ],
-    "models": [
-      "TS0503A",
-      "TS0503B",
-      "TS0504B",
-      "TS0505B"
-    ],
-    "manufacturer_count": 16,
-    "model_count": 4,
-    "capabilities": [
-      "onoff",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|dim|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "led_strip_advanced",
+    "driver": "led_strip_advanced",
     "name": "Led Strip Advanced",
     "class": "light",
-    "manufacturers": [
-      "_TZ3000_kdpxju99",
-      "_TZ3000_obacbukl",
-      "_TZ3000_odygigth",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
-    ],
-    "models": [
-      "TS0505B"
-    ],
-    "manufacturer_count": 7,
-    "model_count": 1,
-    "capabilities": [
-      "onoff",
-      "dim",
-      "light_hue",
-      "light_saturation",
-      "light_temperature",
-      "light_mode"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|dim|light_hue|light_saturation|light_temperature|light_mode",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "led_strip_basic",
+    "driver": "led_strip_basic",
     "name": "Led Strip Basic",
-    "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_kdpxju99",
-      "_TZ3000_obacbukl",
-      "_TZ3000_odygigth",
-      "_TZE200_bqcqqjpb",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
-    ],
-    "models": [
-      "TS0505B"
-    ],
-    "manufacturer_count": 8,
-    "model_count": 1,
-    "capabilities": [
-      "alarm_generic",
-      "onoff",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "class": "light",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_battery|alarm_generic|onoff|dim",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A, INTERNAL",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "led_strip_outdoor_rgb",
+    "driver": "led_strip_outdoor_rgb",
     "name": "Led Strip Outdoor Color",
     "class": "light",
-    "manufacturers": [
-      "_TZ3000_kdpxju99",
-      "_TZ3000_obacbukl",
-      "_TZ3000_odygigth",
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_26fmupbb",
-      "_TZ3000_n2egfsli",
-      "_TZ3000_4ugnzsli"
-    ],
-    "models": [
-      "TS0505A",
-      "TS0505B",
-      "TS0203"
-    ],
-    "manufacturer_count": 11,
-    "model_count": 3,
-    "capabilities": [
-      "onoff",
-      "dim",
-      "light_hue",
-      "light_saturation",
-      "light_temperature",
-      "light_mode",
-      "alarm_contact"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|dim|light_hue|light_saturation|light_temperature|light_mode|alarm_contact",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "led_strip_pro",
+    "driver": "led_strip_pro",
     "name": "Led Strip Pro",
-    "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_kdpxju99",
-      "_TZ3000_obacbukl",
-      "_TZ3000_odygigth",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
-    ],
-    "models": [
-      "TS0505B"
-    ],
-    "manufacturer_count": 7,
-    "model_count": 1,
-    "capabilities": [
-      "alarm_generic",
-      "onoff",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "class": "light",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_battery|alarm_generic|onoff|dim",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A, INTERNAL",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "led_strip_rgbw",
+    "driver": "led_strip_rgbw",
     "name": "Led Strip Rgbw",
     "class": "light",
-    "manufacturers": [
-      "_TZ3000_12sxjap4",
-      "_TZ3000_hlijwsai",
-      "_TZ3000_kdpxju99",
-      "_TZ3000_keabpigv",
-      "_TZ3000_obacbukl",
-      "_TZ3000_odygigth",
-      "_TZ3000_qd7hej8u",
-      "_TZ3210_r0xgkft5",
-      "_TZ3210_sroezl0s",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
-    ],
-    "models": [
-      "TS0505A",
-      "TS0505B"
-    ],
-    "manufacturer_count": 13,
-    "model_count": 2,
-    "capabilities": [
-      "onoff",
-      "light_hue",
-      "light_saturation",
-      "light_temperature",
-      "light_mode",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|light_hue|light_saturation|light_temperature|light_mode|dim",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "light_controller_outdoor",
+    "driver": "light_controller_outdoor",
     "name": "Outdoor Light Controller",
-    "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_26fmupbb",
-      "_TZ3000_n2egfsli",
-      "_TZ3000_4ugnzsli"
-    ],
-    "models": [
-      "TS0001",
-      "TS0011",
-      "TS0012",
-      "TS0203"
-    ],
-    "manufacturer_count": 11,
-    "model_count": 4,
-    "capabilities": [
-      "alarm_contact",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "class": "light",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_battery|alarm_contact|onoff|dim|light_hue|light_saturation|light_temperature",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A, INTERNAL",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "lock_smart",
+    "driver": "lock_smart",
     "name": "Lock Smart",
     "class": "lock",
-    "manufacturers": [
-      "_TZE200_mgstdyz3",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0601"
-    ],
-    "manufacturer_count": 4,
-    "model_count": 1,
-    "capabilities": [
-      "locked",
-      "lock_mode",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "locked|lock_mode|measure_battery|onoff",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "lock_smart_basic",
+    "driver": "lock_smart_advanced",
+    "name": "Smart Lock Advanced",
+    "class": "lock",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "locked|lock_mode|alarm_tamper|measure_battery|lock_status|onoff",
+    "batteries": "",
+    "connectivity": "",
+    "platforms": ""
+  },
+  {
+    "driver": "lock_smart_basic",
     "name": "Lock Basic",
     "class": "sensor",
-    "manufacturers": [
-      "_TZE200_ar0slwnd",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0601"
-    ],
-    "manufacturer_count": 4,
-    "model_count": 1,
-    "capabilities": [
-      "alarm_motion",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|measure_battery|onoff",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "lock_smart_fingerprint",
+    "driver": "lock_smart_fingerprint",
     "name": "Lock Fingerprint",
     "class": "lock",
-    "manufacturers": [
-      "_TZE200_bmzphld8",
-      "_TZE200_eaac7dkw",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0601"
-    ],
-    "manufacturer_count": 5,
-    "model_count": 1,
-    "capabilities": [
-      "locked",
-      "lock_mode",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "locked|lock_mode|measure_battery|onoff",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "module_dimmer_timer",
+    "driver": "mmwave_radar_10g",
+    "name": "10G mmWave Radar Multi-Sensor",
+    "class": "sensor",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|measure_temperature|measure_humidity|measure_luminance|measure_battery",
+    "batteries": "CR2450",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "module_dimmer_timer",
     "name": "Dimmer Switch Timer Module",
     "class": "light",
-    "manufacturers": [],
-    "models": [
-      "TS110E",
-      "TS110F"
-    ],
-    "manufacturer_count": 0,
-    "model_count": 2,
-    "capabilities": [
-      "onoff",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|dim|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "module_mini",
+    "driver": "module_mini",
     "name": "Avatto Mini",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_ji4araar",
-      "_TZ3000_tqlv4ug4",
-      "_TZ3000_h1ipgkwn",
-      "_TZ3000_w0qqde0g",
-      "_TZ3000_gjnozsaz",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea"
-    ],
-    "models": [
-      "TS0001"
-    ],
-    "manufacturer_count": 9,
-    "model_count": 1,
-    "capabilities": [
-      "alarm_generic"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_generic|onoff|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "module_mini_switch",
+    "driver": "module_mini_switch",
     "name": "Mini Switch",
-    "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_tgddllx4",
-      "_TZ3000_vmpbygs5",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_1obwwnmq",
-      "_TZ3000_w0qqde0g",
-      "_TZ3000_vzopcetz",
-      "_TZ3000_g5xawfcq"
-    ],
-    "models": [
-      "TS0001",
-      "TS0011",
-      "TS011F"
-    ],
-    "manufacturer_count": 14,
-    "model_count": 3,
-    "capabilities": [
-      "alarm_generic",
-      "onoff",
-      "measure_power",
-      "measure_voltage",
-      "measure_current"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_battery|alarm_generic|onoff|measure_power|measure_voltage|measure_current",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A, INTERNAL",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "motion_sensor",
+    "driver": "moes_co_detector",
+    "name": "MOES Carbon Monoxide Detector",
+    "class": "sensor",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_co|measure_battery|test",
+    "batteries": "CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "motion_sensor",
     "name": "Motion Sensor",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_mmtwjmaq",
-      "_TZ3000_kmh5qpmb",
-      "_TZE200_3towulqd",
-      "_TZ3000_msl6wxk9",
-      "_TZ3000_mcxw5ehu",
-      "_TZ3040_bb6xaihh",
-      "lumi.motion.ac01",
-      "lumi.motion.ac02",
-      "lumi.motion.agl04",
-      "lumi.sensor_motion",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0202",
-      "TS0601"
-    ],
-    "manufacturer_count": 17,
-    "model_count": 2,
-    "capabilities": [
-      "alarm_motion",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|measure_battery|measure_luminance",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "motion_sensor_mmwave",
+    "driver": "motion_sensor_mmwave",
     "name": "Motion Sensor Mmwave Basic",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_mcxw5ehu",
-      "_TZ3000_mmtwjmaq",
-      "_TZ3000_msl6wxk9",
-      "_TZ3040_bb6xaihh",
-      "_TZE200_3towulqd",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0202",
-      "TS0601"
-    ],
-    "manufacturer_count": 13,
-    "model_count": 2,
-    "capabilities": [
-      "alarm_motion",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|measure_battery|measure_luminance",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "motion_sensor_multi",
+    "driver": "motion_sensor_multi",
     "name": "Motion Temp Humidity Illumination Multi",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_mmtwjmaq",
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_mcxw5ehu",
-      "_TZ3000_msl6wxk9",
-      "_TZ3040_bb6xaihh",
-      "_TZE200_3towulqd",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0202",
-      "TS0601"
-    ],
-    "manufacturer_count": 13,
-    "model_count": 2,
-    "capabilities": [
-      "alarm_motion",
-      "measure_temperature",
-      "measure_humidity",
-      "measure_luminance",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|measure_temperature|measure_humidity|measure_luminance|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "motion_sensor_outdoor",
+    "driver": "motion_sensor_outdoor",
     "name": "Outdoor Sensor",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_mcxw5ehu",
-      "_TZ3000_mmtwjmaq",
-      "_TZ3000_msl6wxk9",
-      "_TZ3040_bb6xaihh",
-      "_TZE200_3towulqd",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0202",
-      "TS0601"
-    ],
-    "manufacturer_count": 13,
-    "model_count": 2,
-    "capabilities": [
-      "alarm_contact",
-      "measure_battery",
-      "alarm_motion"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_contact|measure_battery|alarm_motion|measure_luminance",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "motion_sensor_pir",
+    "driver": "motion_sensor_pir",
     "name": "Motion Sensor",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_bsvqrk3b",
-      "_TZ3000_hgu1dlak",
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_mcxw5ehu",
-      "_TZ3000_mmtwjmaq",
-      "_TZ3000_msl6wxk9",
-      "_TZ3000_ww6drja5",
-      "_TZ3040_bb6xaihh",
-      "_TZE200_3towulqd",
-      "_TYZB01_qeqvmvti",
-      "_TYZB01_tv3wxhcz",
-      "lumi.motion.agl02",
-      "lumi.sensor_motion.aq2",
-      "lumi.sensor_motion.aq2b",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "SNZB-03",
-      "TS0202",
-      "TS0601"
-    ],
-    "manufacturer_count": 20,
-    "model_count": 3,
-    "capabilities": [
-      "alarm_motion",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|measure_battery|measure_luminance",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "motion_sensor_pir_advanced",
+    "driver": "motion_sensor_pir_advanced",
     "name": "Pir Sensor Advanced",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_mcxw5ehu",
-      "_TZ3000_mmtwjmaq",
-      "_TZ3000_msl6wxk9",
-      "_TZ3040_bb6xaihh",
-      "_TZE200_3towulqd",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0202",
-      "TS0601"
-    ],
-    "manufacturer_count": 13,
-    "model_count": 2,
-    "capabilities": [
-      "alarm_motion",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|measure_battery|measure_luminance",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "motion_sensor_pir_radar",
+    "driver": "motion_sensor_pir_radar",
     "name": "Pir Radar Illumination Sensor",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_mcxw5ehu",
-      "_TZ3000_mmtwjmaq",
-      "_TZ3000_msl6wxk9",
-      "_TZ3040_bb6xaihh",
-      "_TZE200_3towulqd",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0202",
-      "TS0601"
-    ],
-    "manufacturer_count": 13,
-    "model_count": 2,
-    "capabilities": [
-      "alarm_motion",
-      "measure_luminance",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|measure_luminance|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "motion_sensor_radar_advanced",
+    "driver": "motion_sensor_radar_advanced",
     "name": "Radar Motion Sensor Advanced",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_mcxw5ehu",
-      "_TZ3000_mmtwjmaq",
-      "_TZ3000_msl6wxk9",
-      "_TZ3040_bb6xaihh",
-      "_TZE200_3towulqd",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0202",
-      "TS0601"
-    ],
-    "manufacturer_count": 13,
-    "model_count": 2,
-    "capabilities": [
-      "alarm_motion",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|measure_battery|measure_luminance",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "motion_sensor_radar_mmwave",
+    "driver": "motion_sensor_radar_mmwave",
     "name": "Radar Motion Sensor Mmwave",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_mcxw5ehu",
-      "_TZ3000_mmtwjmaq",
-      "_TZ3000_msl6wxk9",
-      "_TZ3040_bb6xaihh",
-      "_TZE200_3towulqd",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZE204_qasjif9e",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0202",
-      "TS0601"
-    ],
-    "manufacturer_count": 14,
-    "model_count": 2,
-    "capabilities": [
-      "alarm_motion",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|measure_battery|measure_luminance",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "pir_sensor_3in1",
+    "driver": "pir_sensor_3in1",
     "name": "PIR Sensor 3-in-1",
     "class": "sensor",
-    "manufacturers": [
-      "HOBEIAN",
-      "_TZE200_3towulqd",
-      "_TZE200_ppuj1vem",
-      "_TZE200_pay2byax",
-      "_TZE200_mrf6vtua",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "ZG-204ZV",
-      "TS0601"
-    ],
-    "manufacturer_count": 8,
-    "model_count": 2,
-    "capabilities": [
-      "alarm_motion",
-      "measure_temperature",
-      "measure_humidity",
-      "measure_luminance",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|measure_temperature|measure_humidity|measure_luminance|measure_battery",
+    "batteries": "INTERNAL",
+    "connectivity": "",
+    "platforms": ""
   },
   {
-    "driver_id": "plug_dimmer",
+    "driver": "plug_dimmer",
     "name": "Smart Plug Dimmer",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_8nkb7mof",
-      "_TZ3000_cehuw1lw",
-      "_TZ3000_g5xawfcq",
-      "_TZ3000_okaz9tjs",
-      "_TZ3000_tvuarksa",
-      "_TZ3000_typdpbpg",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_1obwwnmq",
-      "_TZ3000_w0qqde0g",
-      "_TZ3000_vzopcetz"
-    ],
-    "models": [
-      "TS011F",
-      "TS0121",
-      "TS110E",
-      "TS110F"
-    ],
-    "manufacturer_count": 13,
-    "model_count": 4,
-    "capabilities": [
-      "onoff",
-      "dim",
-      "measure_current",
-      "measure_voltage",
-      "meter_power"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|measure_current|measure_voltage|meter_power",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "plug_energy_advanced",
+    "driver": "plug_energy_advanced",
     "name": "Energy Plug Advanced",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_8nkb7mof",
-      "_TZ3000_cehuw1lw",
-      "_TZ3000_g5xawfcq",
-      "_TZ3000_okaz9tjs",
-      "_TZ3000_tvuarksa",
-      "_TZ3000_typdpbpg",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_1obwwnmq",
-      "_TZ3000_w0qqde0g",
-      "_TZ3000_vzopcetz"
-    ],
-    "models": [
-      "TS011F",
-      "TS0121"
-    ],
-    "manufacturer_count": 13,
-    "model_count": 2,
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_voltage",
-      "measure_current"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|measure_power|meter_power|measure_voltage|measure_current",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "plug_energy_monitor",
+    "driver": "plug_energy_monitor",
     "name": "Plug Energy Monitor",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_ww6drja5",
-      "_TZ3000_g5xawfcq",
-      "_TZ3000_8nkb7mof",
-      "_TZ3000_cehuw1lw",
-      "_TZ3000_okaz9tjs",
-      "_TZ3000_tvuarksa",
-      "_TZ3000_typdpbpg",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_1obwwnmq",
-      "_TZ3000_w0qqde0g",
-      "_TZ3000_vzopcetz",
-      "_TZ3210_fgwhjm9j"
-    ],
-    "models": [
-      "TS011F",
-      "TS0121"
-    ],
-    "manufacturer_count": 14,
-    "model_count": 2,
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_voltage",
-      "measure_current"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|measure_power|meter_power|measure_voltage|measure_current",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "plug_energy_monitor_advanced",
+    "driver": "plug_energy_monitor_advanced",
     "name": "Energy Monitoring Plug Advanced",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_8nkb7mof",
-      "_TZ3000_cehuw1lw",
-      "_TZ3000_g5xawfcq",
-      "_TZ3000_okaz9tjs",
-      "_TZ3000_tvuarksa",
-      "_TZ3000_typdpbpg",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_1obwwnmq",
-      "_TZ3000_w0qqde0g",
-      "_TZ3000_vzopcetz"
-    ],
-    "models": [
-      "TS011F",
-      "TS0121"
-    ],
-    "manufacturer_count": 13,
-    "model_count": 2,
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_voltage",
-      "measure_current"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|measure_power|meter_power|measure_voltage|measure_current",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "plug_energy_smart",
+    "driver": "plug_energy_smart",
     "name": "Smart Plug Energy",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_8nkb7mof",
-      "_TZ3000_cehuw1lw",
-      "_TZ3000_g5xawfcq",
-      "_TZ3000_okaz9tjs",
-      "_TZ3000_tvuarksa",
-      "_TZ3000_typdpbpg",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_1obwwnmq",
-      "_TZ3000_w0qqde0g",
-      "_TZ3000_vzopcetz"
-    ],
-    "models": [
-      "TS011F",
-      "TS0121"
-    ],
-    "manufacturer_count": 13,
-    "model_count": 2,
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_voltage",
-      "measure_current"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|measure_power|meter_power|measure_voltage|measure_current",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "plug_outdoor",
+    "driver": "plug_outdoor",
     "name": "Outdoor Plug",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_8nkb7mof",
-      "_TZ3000_cehuw1lw",
-      "_TZ3000_g5xawfcq",
-      "_TZ3000_okaz9tjs",
-      "_TZ3000_tvuarksa",
-      "_TZ3000_typdpbpg",
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_1obwwnmq",
-      "_TZ3000_w0qqde0g",
-      "_TZ3000_vzopcetz",
-      "_TZ3000_26fmupbb",
-      "_TZ3000_n2egfsli",
-      "_TZ3000_4ugnzsli"
-    ],
-    "models": [
-      "TS011F",
-      "TS0121",
-      "TS0203"
-    ],
-    "manufacturer_count": 17,
-    "model_count": 3,
-    "capabilities": [
-      "onoff",
-      "alarm_contact",
-      "measure_current",
-      "measure_voltage",
-      "meter_power"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|alarm_contact|measure_current|measure_voltage|meter_power",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "plug_outlet",
+    "driver": "plug_outlet",
     "name": "Smart Plug Outlet",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_8nkb7mof",
-      "_TZ3000_cehuw1lw",
-      "_TZ3000_g5xawfcq",
-      "_TZ3000_okaz9tjs",
-      "_TZ3000_tvuarksa",
-      "_TZ3000_typdpbpg",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_1obwwnmq",
-      "_TZ3000_w0qqde0g",
-      "_TZ3000_vzopcetz"
-    ],
-    "models": [
-      "TS0115",
-      "TS011F",
-      "TS0121"
-    ],
-    "manufacturer_count": 13,
-    "model_count": 3,
-    "capabilities": [
-      "onoff",
-      "measure_current",
-      "measure_voltage",
-      "meter_power"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|measure_current|measure_voltage|meter_power|measure_power",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "plug_power_meter",
+    "driver": "plug_power_meter",
     "name": "Power Meter Socket",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_8nkb7mof",
-      "_TZ3000_cehuw1lw",
-      "_TZ3000_g5xawfcq",
-      "_TZ3000_okaz9tjs",
-      "_TZ3000_tvuarksa",
-      "_TZ3000_typdpbpg",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_1obwwnmq",
-      "_TZ3000_w0qqde0g",
-      "_TZ3000_vzopcetz"
-    ],
-    "models": [
-      "TS011F",
-      "TS0121"
-    ],
-    "manufacturer_count": 13,
-    "model_count": 2,
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_voltage",
-      "measure_current"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|measure_power|meter_power|measure_voltage|measure_current",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "plug_power_meter_16a",
+    "driver": "plug_power_meter_16a",
     "name": "Smart Plug Power Meter 16a",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_8nkb7mof",
-      "_TZ3000_cehuw1lw",
-      "_TZ3000_g5xawfcq",
-      "_TZ3000_okaz9tjs",
-      "_TZ3000_tvuarksa",
-      "_TZ3000_typdpbpg",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_1obwwnmq",
-      "_TZ3000_w0qqde0g",
-      "_TZ3000_vzopcetz"
-    ],
-    "models": [
-      "TS011F",
-      "TS0121"
-    ],
-    "manufacturer_count": 13,
-    "model_count": 2,
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_voltage",
-      "measure_current"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|measure_power|meter_power|measure_voltage|measure_current",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "plug_smart",
+    "driver": "plug_smart",
     "name": "Plug Smart",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_2xlvlnez",
-      "_TZ3000_3ooaz3ng",
-      "_TZ3000_5f43h46r",
-      "_TZ3000_8nkb7mof",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_cehuw1lw",
-      "_TZ3000_cphmq0q7",
-      "_TZ3000_ew3ldmgx",
-      "_TZ3000_g5xawfcq",
-      "_TZ3000_kdi2o9m6",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_okaz9tjs",
-      "_TZ3000_plyvnuf5",
-      "_TZ3000_tvuarksa",
-      "_TZ3000_typdpbpg",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_1obwwnmq",
-      "_TZ3000_w0qqde0g",
-      "_TZ3000_vzopcetz"
-    ],
-    "models": [
-      "S26R2ZB",
-      "TS011F",
-      "TS0121"
-    ],
-    "manufacturer_count": 20,
-    "model_count": 3,
-    "capabilities": [
-      "alarm_generic",
-      "onoff",
-      "measure_current",
-      "measure_voltage",
-      "meter_power"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_battery|alarm_generic|onoff|measure_current|measure_voltage|meter_power|measure_power",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A, INTERNAL",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "plug_smart_advanced",
+    "driver": "plug_smart_advanced",
     "name": "Smart Plug",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_8nkb7mof",
-      "_TZ3000_cehuw1lw",
-      "_TZ3000_g5xawfcq",
-      "_TZ3000_okaz9tjs",
-      "_TZ3000_tvuarksa",
-      "_TZ3000_typdpbpg",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_1obwwnmq",
-      "_TZ3000_w0qqde0g",
-      "_TZ3000_vzopcetz"
-    ],
-    "models": [
-      "TS011F",
-      "TS0121"
-    ],
-    "manufacturer_count": 13,
-    "model_count": 2,
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_voltage",
-      "measure_current"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|measure_power|meter_power|measure_voltage|measure_current",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "plug_smart_basic",
+    "driver": "plug_smart_basic",
     "name": "Plug Basic",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_8nkb7mof",
-      "_TZ3000_cehuw1lw",
-      "_TZ3000_g5xawfcq",
-      "_TZ3000_okaz9tjs",
-      "_TZ3000_tvuarksa",
-      "_TZ3000_typdpbpg",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_1obwwnmq",
-      "_TZ3000_w0qqde0g",
-      "_TZ3000_vzopcetz"
-    ],
-    "models": [
-      "TS011F",
-      "TS0121"
-    ],
-    "manufacturer_count": 13,
-    "model_count": 2,
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_voltage",
-      "measure_current"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|measure_power|meter_power|measure_voltage|measure_current",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "presence_sensor_radar",
+    "driver": "presence_sensor_radar",
     "name": "Presence Sensor Radar",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_mmtwjmaq",
-      "_TZ3000_ww6drja5",
-      "_TZE200_0u3bj3rc",
-      "_TZE200_ar0slwnd",
-      "_TZE200_holel4dk",
-      "_TZE200_mx6u6l4y",
-      "_TZE200_rhgsbacq",
-      "_TZE200_sfiy5tfs",
-      "_TZE200_v6ossqfy",
-      "_TZE204_clrdrnya",
-      "_TZE204_mtoaryre",
-      "_TZE204_qasjif9e",
-      "_TZE204_sxm7l9xa",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd",
-      "_TZ3000_kmh5qpmb",
-      "_TZE200_3towulqd"
-    ],
-    "models": [
-      "TS0601",
-      "TS0202"
-    ],
-    "manufacturer_count": 21,
-    "model_count": 2,
-    "capabilities": [
-      "alarm_motion",
-      "measure_luminance",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|measure_luminance|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A, INTERNAL",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "radiator_valve",
+    "driver": "radiator_valve",
     "name": "Radiator Valve",
     "class": "thermostat",
-    "manufacturers": [
-      "_TZE200_5toc8efa",
-      "_TZE200_hue3yfsn",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0601"
-    ],
-    "manufacturer_count": 5,
-    "model_count": 1,
-    "capabilities": [
-      "target_temperature",
-      "measure_temperature",
-      "thermostat_mode"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "target_temperature|measure_temperature|thermostat_mode|onoff|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "radiator_valve_smart",
+    "driver": "radiator_valve_smart",
     "name": "Smart Radiator Valve",
     "class": "thermostat",
-    "manufacturers": [
-      "_TZE200_b6wax7g0",
-      "_TZE200_9gvruqf5",
-      "_TZE284_aao6qtcs",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0601"
-    ],
-    "manufacturer_count": 6,
-    "model_count": 1,
-    "capabilities": [
-      "target_temperature",
-      "measure_temperature",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "target_temperature|measure_temperature|measure_battery|onoff",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "scene_controller_4button",
+    "driver": "rgb_led_controller",
+    "name": "RGB LED Strip Controller",
+    "class": "light",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|dim|light_hue|light_saturation",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "scene_controller_4button",
     "name": "Wireless Scene Controller 4button",
     "class": "button",
-    "manufacturers": [
-      "lumi.curtain",
-      "lumi.curtain.aq2",
-      "lumi.curtain.hagl04"
-    ],
-    "models": [
-      "TS0041"
-    ],
-    "manufacturer_count": 3,
-    "model_count": 1,
-    "capabilities": [
-      "onoff",
-      "onoff.button2",
-      "onoff.button3",
-      "onoff.button4",
-      "alarm_generic",
-      "windowcoverings_state"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.button2|onoff.button3|onoff.button4|alarm_generic|windowcoverings_state|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "scene_controller_wireless",
+    "driver": "scene_controller_wireless",
     "name": "Scene Controller (CR2032/CR2450)",
     "class": "sensor",
-    "manufacturers": [],
-    "models": [
-      "TS0044",
-      "TS004F"
-    ],
-    "manufacturer_count": 0,
-    "model_count": 2,
-    "capabilities": [
-      "onoff",
-      "measure_battery",
-      "windowcoverings_state"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_battery|windowcoverings_state",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "shutter_roller_controller",
+    "driver": "sensor_air_quality_full",
+    "name": "Air Quality Monitor Full",
+    "class": "sensor",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_temperature|measure_humidity|measure_co2|measure_voc|measure_pm25|measure_pm10|measure_hcho|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA",
+    "connectivity": "",
+    "platforms": ""
+  },
+  {
+    "driver": "sensor_mmwave_presence_advanced",
+    "name": "mmWave Presence Sensor Advanced",
+    "class": "sensor",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|measure_luminance|measure_distance|presence_sensitivity|presence_timeout|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA",
+    "connectivity": "",
+    "platforms": ""
+  },
+  {
+    "driver": "sensor_soil_moisture",
+    "name": "Soil Moisture Sensor",
+    "class": "sensor",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_moisture|measure_temperature|measure_humidity|measure_battery|alarm_battery|onoff",
+    "batteries": "OTHER",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "shutter_roller_controller",
     "name": "Roller Shutter Controller",
     "class": "sensor",
-    "manufacturers": [
-      "_TZE200_fctwhugx",
-      "_TZE200_cowvfni3",
-      "_TZ3000_vd43bbfq",
-      "_TZE200_zpzndjez",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS130F",
-      "TS0601"
-    ],
-    "manufacturer_count": 6,
-    "model_count": 2,
-    "capabilities": [
-      "alarm_generic",
-      "windowcoverings_state"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_generic|windowcoverings_state|onoff|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "shutter_roller_switch",
+    "driver": "shutter_roller_switch",
     "name": "Roller Shutter Switch",
     "class": "windowcoverings",
-    "manufacturers": [
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014",
-      "TS0601",
-      "TS130F"
-    ],
-    "manufacturer_count": 16,
-    "model_count": 9,
-    "capabilities": [
-      "windowcoverings_set",
-      "onoff"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "windowcoverings_set|onoff",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "siren",
+    "driver": "siren",
     "name": "Siren Siren",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_26fmupbb",
-      "_TZ3000_d0yl2hsy",
-      "_TZ3000_d0yu2xgi",
-      "_TZ3000_ssp0maqm",
-      "_TZ3000_t13n5zo0",
-      "_TZ3000_t6jsgizp",
-      "_TZE200_t1blo2bj",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
-    ],
-    "models": [
-      "TS0219",
-      "TS0601_siren"
-    ],
-    "manufacturer_count": 11,
-    "model_count": 2,
-    "capabilities": [
-      "alarm_motion",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|measure_battery|onoff|alarm_generic",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "siren_outdoor",
+    "driver": "siren_alarm_advanced",
+    "name": "Smart Siren Alarm Advanced",
+    "class": "sensor",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_battery|alarm_generic|alarm_temperature|alarm_humidity|measure_temperature|measure_humidity|volume_set|onoff",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A, INTERNAL",
+    "connectivity": "",
+    "platforms": ""
+  },
+  {
+    "driver": "siren_outdoor",
     "name": "Outdoor Siren",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_26fmupbb",
-      "_TZ3000_d0yu2xgi",
-      "_TZE200_t1blo2bj",
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_n2egfsli",
-      "_TZ3000_4ugnzsli"
-    ],
-    "models": [
-      "TS0219",
-      "TS0601_siren",
-      "TS0203"
-    ],
-    "manufacturer_count": 10,
-    "model_count": 3,
-    "capabilities": [
-      "alarm_motion",
-      "alarm_contact",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|alarm_contact|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "smoke_detector_advanced",
+    "driver": "smart_knob_ts004f",
+    "name": "Smart Knob (Rotary Controller)",
+    "class": "button",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "",
+    "batteries": "CR2450",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "smoke_detector_advanced",
     "name": "Smart Smoke Detector Advanced",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_mwd3c2at",
-      "_TZ3000_tk3s5tyg",
-      "_TZE200_dq1mfjug",
-      "_TZE200_ntcy3xu1",
-      "_TZE200_rccxox8p",
-      "_TZE200_t5p1vj8r",
-      "_TZE200_uebojraa",
-      "_TZE200_vzekyi4c",
-      "_TZE200_yh7aoahi",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
-    ],
-    "models": [
-      "TS0205"
-    ],
-    "manufacturer_count": 13,
-    "model_count": 1,
-    "capabilities": [
-      "alarm_smoke",
-      "alarm_fire",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_smoke|alarm_fire|measure_battery|onoff",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "smoke_detector_climate",
+    "driver": "smoke_detector_climate",
     "name": "Smoke Temp Humid Sensor",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_mwd3c2at",
-      "_TZ3000_tk3s5tyg",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0201",
-      "TS0205",
-      "TS0601"
-    ],
-    "manufacturer_count": 9,
-    "model_count": 3,
-    "capabilities": [
-      "alarm_motion",
-      "measure_temperature",
-      "measure_humidity",
-      "alarm_smoke",
-      "alarm_fire",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|measure_temperature|measure_humidity|alarm_smoke|alarm_fire|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "smoke_detector_temp_humidity",
+    "driver": "smoke_detector_temp_humidity",
     "name": "Smoke Detector Temp Humidity Advanced",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_mwd3c2at",
-      "_TZ3000_tk3s5tyg",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
-    ],
-    "models": [
-      "TS0205"
-    ],
-    "manufacturer_count": 6,
-    "model_count": 1,
-    "capabilities": [
-      "measure_temperature",
-      "measure_humidity",
-      "alarm_smoke",
-      "alarm_fire",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_temperature|measure_humidity|alarm_smoke|alarm_fire|measure_battery|onoff",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "solar_panel_controller",
+    "driver": "socket_ts011f",
+    "name": "Power Monitoring Socket",
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|measure_power|meter_power|measure_voltage|measure_current",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "soil_moisture_sensor",
+    "name": "Soil Moisture Sensor",
+    "class": "sensor",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_temperature|measure_humidity.soil|measure_battery",
+    "batteries": "CR2032",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "solar_panel_controller",
     "name": "Solar Panel Controller",
     "class": "sensor",
-    "manufacturers": [
-      "_TZE200_lsanae15",
-      "_TZE284_sgabhwa6",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0601"
-    ],
-    "manufacturer_count": 5,
-    "model_count": 1,
-    "capabilities": [
-      "alarm_generic",
-      "windowcoverings_state"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_generic|windowcoverings_state|onoff|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "sound_controller",
+    "driver": "sound_controller",
     "name": "Sound Controller ()",
     "class": "button",
-    "manufacturers": [
-      "_TZE200_9yapgbuv",
-      "_TZE284_rccgwzz8",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0601"
-    ],
-    "manufacturer_count": 5,
-    "model_count": 1,
-    "capabilities": [
-      "measure_battery",
-      "windowcoverings_state"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_battery|windowcoverings_state|onoff",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "spot_light_smart",
+    "driver": "spot_light_smart",
     "name": "Smart Spot",
     "class": "light",
-    "manufacturers": [],
-    "models": [
-      "TS0501A"
-    ],
-    "manufacturer_count": 0,
-    "model_count": 1,
-    "capabilities": [
-      "onoff",
-      "dim",
-      "light_hue",
-      "light_saturation",
-      "light_temperature",
-      "light_mode"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|dim|light_hue|light_saturation|light_temperature|light_mode",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "switch_1gang",
+    "driver": "switch_1gang",
     "name": "1-Gang Smart Switch",
     "class": "socket",
-    "manufacturers": [
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014"
-    ],
-    "manufacturer_count": 13,
-    "model_count": 7,
-    "capabilities": [
-      "onoff",
-      "dim",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "switch_2gang",
+    "driver": "switch_2gang",
     "name": "2-Gang Smart Switch",
     "class": "socket",
-    "manufacturers": [
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_h1ipgkwn",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_qmi1cfuq",
-      "_TZ3000_18ejxno0",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014"
-    ],
-    "manufacturer_count": 18,
-    "model_count": 8,
-    "capabilities": [
-      "onoff",
-      "onoff.gang2",
-      "measure_battery",
-      "measure_power",
-      "measure_voltage",
-      "measure_current"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.gang2|measure_power|measure_voltage|measure_current",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "switch_2gang_alt",
+    "driver": "switch_2gang_alt",
     "name": "2-Gang Switch",
     "class": "socket",
-    "manufacturers": [
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_qmi1cfuq",
-      "_TZ3000_18ejxno0",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014"
-    ],
-    "manufacturer_count": 17,
-    "model_count": 8,
-    "capabilities": [
-      "onoff",
-      "onoff.gang2",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.gang2",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "switch_3gang",
+    "driver": "switch_3gang",
     "name": "3-Gang Smart Switch",
     "class": "socket",
-    "manufacturers": [
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014"
-    ],
-    "manufacturer_count": 13,
-    "model_count": 7,
-    "capabilities": [
-      "onoff",
-      "onoff.gang2",
-      "onoff.gang3",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.gang2|onoff.gang3",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "switch_4gang",
+    "driver": "switch_4gang",
     "name": "4-Gang Smart Switch",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_mdj7kra9",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea"
-    ],
-    "models": [
-      "TS0001",
-      "TS0011"
-    ],
-    "manufacturer_count": 9,
-    "model_count": 2,
-    "capabilities": [
-      "onoff",
-      "onoff.button2",
-      "onoff.button3",
-      "onoff.button4",
-      "button.2",
-      "button.3",
-      "button.4",
-      "dim",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.button2|onoff.button3|onoff.button4|button.2|button.3|button.4",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "switch_basic_1gang",
+    "driver": "switch_basic_1gang",
     "name": "Switch 1gang",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_4js9lo5d",
-      "_TZ3000_fisb3ajo",
-      "_TZ3000_ji4araar",
-      "_TZ3000_kdi2o9m6",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_lvhy15ix",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_rk2yzt0u",
-      "_TZ3000_skueekg3",
-      "_TZ3000_vjhcenzw",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011"
-    ],
-    "manufacturer_count": 26,
-    "model_count": 6,
-    "capabilities": [
-      "onoff",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "switch_basic_2gang",
+    "driver": "switch_basic_2gang",
     "name": "Switch 2gang",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_kpatq5pq",
-      "_TZ3000_npzfykbs",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea"
-    ],
-    "models": [
-      "TS0001",
-      "TS0011"
-    ],
-    "manufacturer_count": 12,
-    "model_count": 2,
-    "capabilities": [
-      "onoff",
-      "onoff.gang2"
-    ],
-    "power_source": "ac",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.gang2",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "switch_basic_5gang",
+    "driver": "switch_basic_2gang_usb",
+    "name": "Basic Switch 2-gang + USB (TS0002)",
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff.l1|onoff.l2",
+    "batteries": "",
+    "connectivity": "",
+    "platforms": ""
+  },
+  {
+    "driver": "switch_basic_5gang",
     "name": "Switch 5gang",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011"
-    ],
-    "manufacturer_count": 19,
-    "model_count": 6,
-    "capabilities": [
-      "onoff",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "switch_generic_1gang",
+    "driver": "switch_generic_1gang",
     "name": "Smart Switch 1gang",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_mgusv51k",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011"
-    ],
-    "manufacturer_count": 20,
-    "model_count": 6,
-    "capabilities": [
-      "onoff",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "switch_internal_1gang",
+    "driver": "switch_generic_3gang",
+    "name": "Smart Switch 3gang",
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.gang2|onoff.gang3",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "switch_internal_1gang",
     "name": "Roller Shutter Switch Advanced (INTERNAL)",
-    "class": "sensor",
-    "manufacturers": [
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014"
-    ],
-    "manufacturer_count": 13,
-    "model_count": 7,
-    "capabilities": [
-      "windowcoverings_state",
-      "windowcoverings_set",
-      "button.up",
-      "button.down",
-      "button.stop",
-      "measure_power",
-      "onoff",
-      "dim",
-      "windowcoverings_tilt_set",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "class": "windowcoverings",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_battery|windowcoverings_state|windowcoverings_set|button.up|button.down|button.stop|measure_power|onoff|windowcoverings_tilt_set",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A, INTERNAL",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "switch_remote",
+    "driver": "switch_remote",
     "name": "Remote Switch",
     "class": "button",
-    "manufacturers": [
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_qmi1cfuq",
-      "_TZ3000_18ejxno0",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014",
-      "TS0041"
-    ],
-    "manufacturer_count": 17,
-    "model_count": 9,
-    "capabilities": [
-      "alarm_generic",
-      "onoff"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_battery|alarm_generic|onoff",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "switch_smart_1gang",
+    "driver": "switch_smart_1gang",
     "name": "Smart Switch 1gang",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011"
-    ],
-    "manufacturer_count": 19,
-    "model_count": 6,
-    "capabilities": [
-      "onoff",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "switch_touch_1gang",
-    "name": "1-Gang Touch Switch",
+    "driver": "switch_smart_3gang",
+    "name": "Smart Switch 3gang",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011"
-    ],
-    "manufacturer_count": 19,
-    "model_count": 6,
-    "capabilities": [
-      "onoff"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.gang2|onoff.gang3",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "switch_touch_1gang_basic",
-    "name": "Touch Switch 1gang",
-    "class": "socket",
-    "manufacturers": [
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011"
-    ],
-    "manufacturer_count": 19,
-    "model_count": 6,
-    "capabilities": [
-      "onoff",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
-    "driver_id": "switch_touch_3gang",
-    "name": "3-Gang Touch Switch",
-    "class": "socket",
-    "manufacturers": [
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011"
-    ],
-    "manufacturer_count": 19,
-    "model_count": 6,
-    "capabilities": [
-      "onoff",
-      "onoff.switch_2",
-      "onoff.switch_3"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
-    "driver_id": "switch_touch_3gang_basic",
-    "name": "Touch Switch 3gang",
-    "class": "socket",
-    "manufacturers": [
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011"
-    ],
-    "manufacturer_count": 19,
-    "model_count": 6,
-    "capabilities": [
-      "onoff",
-      "onoff.button2",
-      "onoff.button3"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
-    "driver_id": "switch_wall_1gang",
-    "name": "1-Gang Wall Switch",
-    "class": "socket",
-    "manufacturers": [
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_5ucujjts",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_ji4araar",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_npzfdzhq",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_o4cjetlm",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_tgddllx4",
-      "_TZ3000_uxuxkcvd",
-      "_TZ3000_w0qqde0g",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_yujkchbz",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011"
-    ],
-    "manufacturer_count": 26,
-    "model_count": 6,
-    "capabilities": [
-      "onoff",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
-    "driver_id": "switch_wall_1gang_basic",
-    "name": "Wall Switch 1gang",
-    "class": "socket",
-    "manufacturers": [
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011"
-    ],
-    "manufacturer_count": 19,
-    "model_count": 6,
-    "capabilities": [
-      "onoff",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
-    "driver_id": "switch_wall_2gang",
-    "name": "2-Gang Wall Switch",
-    "class": "socket",
-    "manufacturers": [
-      "_TZ3000_18ejxno0",
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_4zf0crgo",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_h1ipgkwn",
-      "_TZ3000_ji4araar",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_l9brjwau",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_lwlhprgx",
-      "_TZ3000_neo2aqj4",
-      "_TZ3000_nPGIPl5D",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_ruxexjfz",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmlunnhy",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "lumi.ctrl_ln2",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_qmi1cfuq",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011",
-      "TS0012"
-    ],
-    "manufacturer_count": 30,
-    "model_count": 8,
-    "capabilities": [
-      "onoff",
-      "onoff.gang2",
-      "measure_battery",
-      "measure_power",
-      "measure_voltage",
-      "measure_current"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
-    "driver_id": "switch_wall_2gang_bseed",
-    "name": "Wall Switch 2 Gang (BSEED)",
-    "class": "socket",
-    "manufacturers": [
-      "_TZ3000_l9brjwau"
-    ],
-    "models": [
-      "TS0002"
-    ],
-    "manufacturer_count": 1,
-    "model_count": 1,
-    "capabilities": [
-      "onoff",
-      "onoff.gang2"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
-    "driver_id": "switch_wall_3gang",
-    "name": "3-Gang Wall Switch",
-    "class": "socket",
-    "manufacturers": [
-      "_TZ3000_18ejxno0",
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_4xfqlgqo",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_excgg5kb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_mlswgkc3",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_odygigth",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011",
-      "TS0013"
-    ],
-    "manufacturer_count": 24,
-    "model_count": 7,
-    "capabilities": [
-      "onoff",
-      "onoff.switch_2",
-      "onoff.switch_3",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
-    "driver_id": "switch_wall_3gang_basic",
-    "name": "Wall Switch 3gang",
-    "class": "socket",
-    "manufacturers": [
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011",
-      "TS0013"
-    ],
-    "manufacturer_count": 19,
-    "model_count": 7,
-    "capabilities": [
-      "onoff",
-      "onoff.button2",
-      "onoff.button3"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
-    "driver_id": "switch_wall_4gang",
-    "name": "4-Gang Wall Switch",
-    "class": "socket",
-    "manufacturers": [
-      "_TZ3000_1obwwnmq",
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_excgg5kb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_tygpud44",
-      "_TZ3000_vzopcetz",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011",
-      "TS0014"
-    ],
-    "manufacturer_count": 23,
-    "model_count": 7,
-    "capabilities": [
-      "onoff",
-      "onoff.switch_2",
-      "onoff.switch_3",
-      "onoff.switch_4",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
-    "driver_id": "switch_wall_4gang_basic",
-    "name": "Wall Switch 4gang",
-    "class": "socket",
-    "manufacturers": [
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011",
-      "TS0014"
-    ],
-    "manufacturer_count": 19,
-    "model_count": 7,
-    "capabilities": [
-      "onoff",
-      "onoff.button2",
-      "onoff.button3",
-      "onoff.button4",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
-  },
-  {
-    "driver_id": "switch_wall_4gang_smart",
+    "driver": "switch_smart_4gang",
     "name": "Smart Switch 4gang",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011",
-      "TS0014"
-    ],
-    "manufacturer_count": 19,
-    "model_count": 7,
-    "capabilities": [
-      "onoff",
-      "onoff.button2",
-      "onoff.button3",
-      "onoff.button4",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.gang2|onoff.gang3|onoff.gang4",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "switch_wall_5gang",
+    "driver": "switch_touch_1gang",
+    "name": "1-Gang Touch Switch",
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "switch_touch_1gang_basic",
+    "name": "Touch Switch 1gang",
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "switch_touch_2gang",
+    "name": "Touch Switch 2gang",
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.gang2|measure_power|measure_voltage|measure_current",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "switch_touch_3gang",
+    "name": "3-Gang Touch Switch",
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.switch_2|onoff.switch_3",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "switch_touch_3gang_basic",
+    "name": "Touch Switch 3gang",
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.button2|onoff.button3",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "switch_touch_4gang",
+    "name": "Touch Switch 4gang",
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.gang2|onoff.gang3|onoff.gang4",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "switch_wall_1gang",
+    "name": "1-Gang Wall Switch",
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "switch_wall_1gang_basic",
+    "name": "Wall Switch 1gang",
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "switch_wall_2gang",
+    "name": "2-Gang Wall Switch",
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.gang2|measure_power|measure_voltage|measure_current",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "switch_wall_2gang_basic",
+    "name": "Wall Switch 2gang",
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.gang2",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "switch_wall_2gang_bseed",
+    "name": "Wall Switch 2 Gang (BSEED)",
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.gang2",
+    "batteries": "",
+    "connectivity": "",
+    "platforms": ""
+  },
+  {
+    "driver": "switch_wall_2gang_smart",
+    "name": "Smart Switch 2gang",
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.gang2|measure_power|measure_voltage|measure_current",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "switch_wall_3gang",
+    "name": "3-Gang Wall Switch",
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.switch_2|onoff.switch_3",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "switch_wall_3gang_basic",
+    "name": "Wall Switch 3gang",
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.button2|onoff.button3",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "switch_wall_4gang",
+    "name": "4-Gang Wall Switch",
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.switch_2|onoff.switch_3|onoff.switch_4",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "switch_wall_4gang_basic",
+    "name": "Wall Switch 4gang",
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.button2|onoff.button3|onoff.button4",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "switch_wall_4gang_smart",
+    "name": "Smart Switch 4gang",
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.button2|onoff.button3|onoff.button4",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "switch_wall_5gang",
     "name": "Wall Switch 5gang",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011",
-      "TS0015"
-    ],
-    "manufacturer_count": 19,
-    "model_count": 7,
-    "capabilities": [
-      "onoff",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "switch_wall_6gang",
+    "driver": "switch_wall_6gang",
     "name": "6-Gang Wall Switch",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011",
-      "TS0016"
-    ],
-    "manufacturer_count": 19,
-    "model_count": 7,
-    "capabilities": [
-      "onoff",
-      "onoff.switch_2",
-      "onoff.switch_3",
-      "onoff.switch_4",
-      "onoff.switch_5",
-      "onoff.switch_6"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.switch_2|onoff.switch_3|onoff.switch_4|onoff.switch_5|onoff.switch_6",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "switch_wall_6gang_basic",
+    "driver": "switch_wall_6gang_basic",
     "name": "Wall Switch 6gang",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011",
-      "TS0016"
-    ],
-    "manufacturer_count": 19,
-    "model_count": 7,
-    "capabilities": [
-      "onoff",
-      "onoff.button2",
-      "onoff.button3",
-      "onoff.button4",
-      "onoff.button5",
-      "onoff.button6",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.button2|onoff.button3|onoff.button4|onoff.button5|onoff.button6",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "switch_wall_6gang_smart",
+    "driver": "switch_wall_6gang_smart",
     "name": "Smart Switch 6gang",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011",
-      "TS0016"
-    ],
-    "manufacturer_count": 19,
-    "model_count": 7,
-    "capabilities": [
-      "onoff",
-      "onoff.button2",
-      "onoff.button3",
-      "onoff.button4",
-      "onoff.button5",
-      "onoff.button6",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.button2|onoff.button3|onoff.button4|onoff.button5|onoff.button6",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "switch_wall_8gang_smart",
+    "driver": "switch_wall_7gang",
+    "name": "Wall Switch 7-Gang",
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.gang2|onoff.gang3|onoff.gang4|onoff.gang5|onoff.gang6|onoff.gang7",
+    "batteries": "",
+    "connectivity": "",
+    "platforms": ""
+  },
+  {
+    "driver": "switch_wall_8gang",
+    "name": "Wall Switch 8-Gang",
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.gang2|onoff.gang3|onoff.gang4|onoff.gang5|onoff.gang6|onoff.gang7|onoff.gang8",
+    "batteries": "",
+    "connectivity": "",
+    "platforms": ""
+  },
+  {
+    "driver": "switch_wall_8gang_smart",
     "name": "Smart Switch 8gang",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_ji4araar",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_yw8z2axp",
-      "_TZ3000_zmy1waw6",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_zmy4lslw",
-      "_TZ3000_ejwkn2h2",
-      "_TZ3000_nnwehhst"
-    ],
-    "models": [
-      "TS0001",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011"
-    ],
-    "manufacturer_count": 19,
-    "model_count": 6,
-    "capabilities": [
-      "onoff",
-      "onoff.button2",
-      "onoff.button3",
-      "onoff.button4",
-      "onoff.button5",
-      "onoff.button6",
-      "onoff.button7",
-      "onoff.button8",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.button2|onoff.button3|onoff.button4|onoff.button5|onoff.button6|onoff.button7|onoff.button8",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "switch_wireless",
+    "driver": "switch_wireless",
     "name": "Wireless Switch",
     "class": "button",
-    "manufacturers": [
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea"
-    ],
-    "models": [
-      "SNZB-01",
-      "TS0001",
-      "TS0011"
-    ],
-    "manufacturer_count": 8,
-    "model_count": 3,
-    "capabilities": [
-      "alarm_generic",
-      "onoff"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_generic|onoff|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "switch_wireless_1gang",
-    "name": "Wireless Switch 1gang",
+    "driver": "switch_wireless_1gang",
+    "name": "Wired Switch 1-gang (TS0001/TS0011)",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_5bpeda8u",
-      "_TZ3000_a7ouggvs",
-      "_TZ3000_bi6lpsew",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_s0i14ubi",
-      "_TZ3000_vp6clf9d",
-      "_TZ3000_xabckq1v",
-      "_TZ3000_xrqsdxq6",
-      "_TZ3000_yj6k7vfo",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea"
-    ],
-    "models": [
-      "TS0001",
-      "TS0011",
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044"
-    ],
-    "manufacturer_count": 17,
-    "model_count": 6,
-    "capabilities": [
-      "onoff",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "switch_wireless_4button_alt",
+    "driver": "switch_wireless_2gang",
+    "name": "Wireless Switch 2gang",
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.gang2|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "switch_wireless_4button_alt",
     "name": "4-Button Remote STYRBAR (OTHER)",
     "class": "button",
-    "manufacturers": [
-      "_TZ3000_a7ouggvs",
-      "_TZ3000_adkvzooy",
-      "_TZ3000_bi6lpsew",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_vp6clf9d",
-      "_TZ3000_xabckq1v",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea"
-    ],
-    "models": [
-      "STYRBAR",
-      "TS0001",
-      "TS0011",
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044"
-    ],
-    "manufacturer_count": 14,
-    "model_count": 7,
-    "capabilities": [
-      "onoff",
-      "onoff.button2",
-      "onoff.button3",
-      "onoff.button4",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.button2|onoff.button3|onoff.button4|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "switch_wireless_5button",
+    "driver": "switch_wireless_4gang",
+    "name": "Wireless Switch 4gang",
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.gang2|onoff.gang3|onoff.gang4|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "switch_wireless_5button",
     "name": "Wireless Switch 5button",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_a7ouggvs",
-      "_TZ3000_adkvzooy",
-      "_TZ3000_bi6lpsew",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_vp6clf9d",
-      "_TZ3000_xabckq1v",
-      "lumi.ctrl_ln1",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_xkap8wtb",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_mx3vgyea"
-    ],
-    "models": [
-      "TS0001",
-      "TS0011",
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044"
-    ],
-    "manufacturer_count": 14,
-    "model_count": 6,
-    "capabilities": [
-      "onoff",
-      "dim"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "temperature_sensor",
+    "driver": "switch_wireless_6gang",
+    "name": "Wireless Switch 6gang",
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.gang2|onoff.gang3|onoff.gang4|onoff.gang5|onoff.gang6|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "temperature_sensor",
     "name": "Temperature Sensor",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_ywagc4rj",
-      "_TZ3000_zl1kmjqx",
-      "_TZE200_a8sdabtg",
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd",
-      "_TZ3000_26fmupbb",
-      "_TZ3000_n2egfsli",
-      "_TZ3000_4ugnzsli"
-    ],
-    "models": [
-      "TS0201",
-      "TS0601",
-      "TS0203"
-    ],
-    "manufacturer_count": 14,
-    "model_count": 3,
-    "capabilities": [
-      "alarm_motion",
-      "measure_temperature",
-      "measure_battery",
-      "alarm_contact",
-      "alarm_temperature"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|measure_temperature|measure_battery|alarm_contact|alarm_temperature|onoff",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "temperature_sensor_advanced",
+    "driver": "temperature_sensor_advanced",
     "name": "Temperature Sensor Advanced",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_ywagc4rj",
-      "_TZ3000_zl1kmjqx",
-      "_TZE200_a8sdabtg",
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd",
-      "_TZ3000_26fmupbb",
-      "_TZ3000_n2egfsli",
-      "_TZ3000_4ugnzsli"
-    ],
-    "models": [
-      "TS0201",
-      "TS0601",
-      "TS0203"
-    ],
-    "manufacturer_count": 14,
-    "model_count": 3,
-    "capabilities": [
-      "alarm_motion",
-      "measure_temperature",
-      "measure_battery",
-      "alarm_contact",
-      "alarm_temperature"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|measure_temperature|measure_battery|alarm_contact|alarm_temperature|onoff",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "thermostat_advanced",
+    "driver": "temp_humidity_ts0201",
+    "name": "Temperature and Humidity Sensor",
+    "class": "sensor",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "measure_temperature|measure_humidity|measure_battery",
+    "batteries": "CR2450",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "thermostat_advanced",
     "name": "Smart Thermostat (INTERNAL)",
     "class": "thermostat",
-    "manufacturers": [
-      "_TZE200_0dvm9mva",
-      "_TZE200_a4bpgplm",
-      "_TZE200_aoclfnxz",
-      "_TZE200_ztvwu4nk",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0601"
-    ],
-    "manufacturer_count": 7,
-    "model_count": 1,
-    "capabilities": [
-      "target_temperature",
-      "measure_temperature",
-      "thermostat_mode",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "target_temperature|measure_temperature|thermostat_mode|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "thermostat_smart",
+    "driver": "thermostat_smart",
     "name": "Thermostat Basic (CR2032/AAA)",
     "class": "thermostat",
-    "manufacturers": [
-      "_TZE200_cwbvmsar",
-      "_TZE200_locansqn",
-      "_TZE284_aagrxlbd",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0601"
-    ],
-    "manufacturer_count": 6,
-    "model_count": 1,
-    "capabilities": [
-      "target_temperature",
-      "measure_temperature",
-      "thermostat_mode",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "target_temperature|measure_temperature|thermostat_mode|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "thermostat_temperature_control",
+    "driver": "thermostat_temperature_control",
     "name": "Temperature Controller (CR2032/AAA)",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_zl1kmjqx",
-      "_TZ3000_yd2e749y",
-      "_TZ3000_fllyghyj",
-      "_TZE200_cwbvmsar",
-      "_TZE200_locansqn",
-      "_TZE284_aagrxlbd",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0201",
-      "TS0601"
-    ],
-    "manufacturer_count": 9,
-    "model_count": 2,
-    "capabilities": [
-      "target_temperature",
-      "measure_temperature",
-      "measure_humidity",
-      "measure_battery",
-      "alarm_generic",
-      "alarm_temperature"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "target_temperature|measure_temperature|measure_humidity|measure_battery|alarm_generic|alarm_temperature",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "usb_outlet_1gang",
+    "driver": "thermostat_trv_advanced",
+    "name": "Smart TRV Advanced",
+    "class": "thermostat",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "target_temperature|measure_temperature|thermostat_mode|child_lock|window_detection|valve_position|measure_battery|anti_scale",
+    "batteries": "",
+    "connectivity": "",
+    "platforms": ""
+  },
+  {
+    "driver": "thermostat_ts0601",
+    "name": "Zigbee Thermostat",
+    "class": "thermostat",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "target_temperature|measure_temperature|thermostat_mode",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "usb_c_pd_socket",
+    "name": "Wall Socket USB-C PD",
+    "class": "socket",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|measure_power|meter_power",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "usb_outlet_1gang",
     "name": "USB Outlet - 1 Gang",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_ww6drja5",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_1obwwnmq",
-      "_TZ3000_w0qqde0g",
-      "_TZ3000_vzopcetz",
-      "_TZ3000_g5xawfcq"
-    ],
-    "models": [
-      "TS0115",
-      "TS011F",
-      "TS0121"
-    ],
-    "manufacturer_count": 8,
-    "model_count": 3,
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_voltage",
-      "measure_current"
-    ],
-    "power_source": "ac",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|measure_power|meter_power|measure_voltage|measure_current",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "usb_outlet_2port",
-    "name": "USB Outlet - 2 Ports",
+    "driver": "usb_outlet_2port",
+    "name": "⚡ USB Outlet 2-Port (1 AC + 2 USB) - NOT DIMMER!",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_1obwwnmq",
-      "_TZ3000_w0qqde0g",
-      "_TZ3000_gjnozsaz",
-      "_TZ3000_8gs8h2e4",
-      "_TZ3000_vzopcetz",
-      "_TZ3000_g5xawfcq",
-      "_TZ3000_h1ipgkwn"
-    ],
-    "models": [
-      "TS011F"
-    ],
-    "manufacturer_count": 7,
-    "model_count": 1,
-    "capabilities": [
-      "onoff",
-      "onoff.usb2",
-      "measure_power",
-      "meter_power",
-      "measure_voltage",
-      "measure_current",
-      "led_mode"
-    ],
-    "power_source": "ac",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.usb2|measure_power|meter_power|measure_voltage|measure_current|led_mode",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "usb_outlet_3gang",
+    "driver": "usb_outlet_3gang",
     "name": "USB Outlet - 3 Gang",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_rdtixbnu",
-      "_TZ3000_typdpbpg",
-      "_TZ3000_typdpdpg",
-      "_TZ3000_vtscrpmw",
-      "_TZ3000_zloso4jk",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_1obwwnmq",
-      "_TZ3000_w0qqde0g",
-      "_TZ3000_vzopcetz",
-      "_TZ3000_g5xawfcq"
-    ],
-    "models": [
-      "TS0115",
-      "TS011F",
-      "TS0121"
-    ],
-    "manufacturer_count": 13,
-    "model_count": 3,
-    "capabilities": [
-      "onoff",
-      "onoff.usb2",
-      "onoff.usb3",
-      "measure_power",
-      "meter_power",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|onoff.usb2|onoff.usb3|measure_power|meter_power|measure_current|measure_voltage",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "usb_outlet_advanced",
+    "driver": "usb_outlet_advanced",
     "name": "Usb Outlet Advanced",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_ww6drja5",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_1obwwnmq",
-      "_TZ3000_w0qqde0g",
-      "_TZ3000_vzopcetz",
-      "_TZ3000_g5xawfcq"
-    ],
-    "models": [
-      "TS0115",
-      "TS011F",
-      "TS0121"
-    ],
-    "manufacturer_count": 8,
-    "model_count": 3,
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_voltage",
-      "measure_current"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|measure_power|meter_power|measure_voltage|measure_current",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "usb_outlet_basic",
+    "driver": "usb_outlet_basic",
     "name": "Usb Outlet",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_ww6drja5",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZ3000_1obwwnmq",
-      "_TZ3000_w0qqde0g",
-      "_TZ3000_vzopcetz",
-      "_TZ3000_g5xawfcq"
-    ],
-    "models": [
-      "TS0115",
-      "TS011F",
-      "TS0121"
-    ],
-    "manufacturer_count": 8,
-    "model_count": 3,
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_voltage",
-      "measure_current"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|measure_power|meter_power|measure_voltage|measure_current",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "valve_smart",
+    "driver": "valve_smart",
     "name": "Valve Smart",
     "class": "sensor",
-    "manufacturers": [
-      "_TZE200_fzo2pocs",
-      "_TZE200_5zbp6j0u",
-      "_TZE200_fdtjuw7u"
-    ],
-    "models": [],
-    "manufacturer_count": 3,
-    "model_count": 0,
-    "capabilities": [
-      "alarm_generic"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_generic|onoff|measure_battery",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "wall_touch_1gang",
+    "driver": "wall_touch_1gang",
     "name": "Wall Touch Button 1 Gang",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_xabckq1v",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_kjfzuycl"
-    ],
-    "models": [
-      "TS0041"
-    ],
-    "manufacturer_count": 4,
-    "model_count": 1,
-    "capabilities": [
-      "onoff.button1",
-      "measure_temperature",
-      "measure_battery",
-      "alarm_tamper"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff.button1|measure_temperature|alarm_tamper|onoff",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "wall_touch_2gang",
+    "driver": "wall_touch_2gang",
     "name": "Wall Touch Button 2 Gang",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_xabckq1v",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_kjfzuycl"
-    ],
-    "models": [
-      "TS0042"
-    ],
-    "manufacturer_count": 4,
-    "model_count": 1,
-    "capabilities": [
-      "onoff.button1",
-      "onoff.button2",
-      "measure_temperature",
-      "measure_battery",
-      "alarm_tamper"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff.button1|onoff.button2|measure_temperature|alarm_tamper|onoff",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "wall_touch_3gang",
+    "driver": "wall_touch_3gang",
     "name": "Wall Touch Button 3 Gang",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_xabckq1v",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_kjfzuycl"
-    ],
-    "models": [
-      "TS004F",
-      "TS0043",
-      "TS0044"
-    ],
-    "manufacturer_count": 4,
-    "model_count": 3,
-    "capabilities": [
-      "onoff.button1",
-      "onoff.button2",
-      "onoff.button3",
-      "measure_temperature",
-      "measure_battery",
-      "alarm_tamper"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff.button1|onoff.button2|onoff.button3|measure_temperature|alarm_tamper|onoff",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "wall_touch_4gang",
+    "driver": "wall_touch_4gang",
     "name": "Wall Touch Button 4 Gang",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_xabckq1v",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_kjfzuycl"
-    ],
-    "models": [
-      "TS0044",
-      "TS004F"
-    ],
-    "manufacturer_count": 4,
-    "model_count": 2,
-    "capabilities": [
-      "onoff.button1",
-      "onoff.button2",
-      "onoff.button3",
-      "onoff.button4",
-      "measure_temperature",
-      "measure_battery",
-      "alarm_tamper"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff.button1|onoff.button2|onoff.button3|onoff.button4|measure_temperature|alarm_tamper|onoff",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "wall_touch_5gang",
+    "driver": "wall_touch_5gang",
     "name": "Wall Touch Button 5 Gang",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_xabckq1v",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_kjfzuycl"
-    ],
-    "models": [
-      "TS0044",
-      "TS004F"
-    ],
-    "manufacturer_count": 4,
-    "model_count": 2,
-    "capabilities": [
-      "onoff.button1",
-      "onoff.button2",
-      "onoff.button3",
-      "onoff.button4",
-      "onoff.button5",
-      "measure_temperature",
-      "measure_battery",
-      "alarm_tamper"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff.button1|onoff.button2|onoff.button3|onoff.button4|onoff.button5|measure_temperature|alarm_tamper|onoff",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "wall_touch_6gang",
+    "driver": "wall_touch_6gang",
     "name": "Wall Touch Button 6 Gang",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_xabckq1v",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_kjfzuycl"
-    ],
-    "models": [
-      "TS0044",
-      "TS004F"
-    ],
-    "manufacturer_count": 4,
-    "model_count": 2,
-    "capabilities": [
-      "onoff.button1",
-      "onoff.button2",
-      "onoff.button3",
-      "onoff.button4",
-      "onoff.button5",
-      "onoff.button6",
-      "measure_temperature",
-      "measure_battery",
-      "alarm_tamper"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff.button1|onoff.button2|onoff.button3|onoff.button4|onoff.button5|onoff.button6|measure_temperature|alarm_tamper|onoff",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "wall_touch_7gang",
+    "driver": "wall_touch_7gang",
     "name": "Wall Touch Button 7 Gang",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_xabckq1v",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_kjfzuycl"
-    ],
-    "models": [
-      "TS0044",
-      "TS004F"
-    ],
-    "manufacturer_count": 4,
-    "model_count": 2,
-    "capabilities": [
-      "onoff.button1",
-      "onoff.button2",
-      "onoff.button3",
-      "onoff.button4",
-      "onoff.button5",
-      "onoff.button6",
-      "onoff.button7",
-      "measure_temperature",
-      "measure_battery",
-      "alarm_tamper"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff.button1|onoff.button2|onoff.button3|onoff.button4|onoff.button5|onoff.button6|onoff.button7|measure_temperature|alarm_tamper|onoff",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "wall_touch_8gang",
+    "driver": "wall_touch_8gang",
     "name": "Wall Touch Button 8 Gang",
     "class": "socket",
-    "manufacturers": [
-      "_TZ3000_xabckq1v",
-      "_TZ3000_lupfd8zu",
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_kjfzuycl"
-    ],
-    "models": [
-      "TS0044",
-      "TS004F"
-    ],
-    "manufacturer_count": 4,
-    "model_count": 2,
-    "capabilities": [
-      "onoff.button1",
-      "onoff.button2",
-      "onoff.button3",
-      "onoff.button4",
-      "onoff.button5",
-      "onoff.button6",
-      "onoff.button7",
-      "onoff.button8",
-      "measure_temperature",
-      "measure_battery",
-      "alarm_tamper"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff.button1|onoff.button2|onoff.button3|onoff.button4|onoff.button5|onoff.button6|onoff.button7|onoff.button8|measure_temperature|alarm_tamper|onoff",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "water_leak_sensor",
+    "driver": "water_leak_sensor",
     "name": "Water Leak Sensor",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_kyb656no",
-      "_TZE200_qq9mpfhw",
-      "_TZ3000_k4ej3ww2",
-      "_TZ3000_upgcbody",
-      "_TZE200_htnnfasr",
-      "_TZE200_sh1btabb",
-      "lumi.sensor_wleak",
-      "lumi.sensor_wleak.aq1",
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd",
-      "_TZ3000_26fmupbb",
-      "_TZ3000_n2egfsli",
-      "_TZ3000_4ugnzsli"
-    ],
-    "models": [
-      "TS0207",
-      "TS0601",
-      "q9mpfhw",
-      "TS0203"
-    ],
-    "manufacturer_count": 19,
-    "model_count": 4,
-    "capabilities": [
-      "alarm_motion",
-      "measure_temperature",
-      "alarm_water",
-      "measure_battery",
-      "alarm_contact"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|measure_temperature|alarm_water|measure_battery|alarm_contact|onoff",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "water_leak_sensor_temp_humidity",
+    "driver": "water_leak_sensor_temp_humidity",
     "name": "Temp Humid Sensor Leak Detector",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_k4ej3ww2",
-      "_TZ3000_kyb656no",
-      "_TZE200_htnnfasr",
-      "_TZE200_sh1btabb",
-      "_TZ3000_kmh5qpmb",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd",
-      "_TZ3000_26fmupbb",
-      "_TZ3000_n2egfsli",
-      "_TZ3000_4ugnzsli"
-    ],
-    "models": [
-      "TS0207",
-      "TS0601",
-      "TS0203"
-    ],
-    "manufacturer_count": 15,
-    "model_count": 3,
-    "capabilities": [
-      "alarm_motion",
-      "measure_temperature",
-      "measure_humidity",
-      "alarm_water",
-      "measure_battery",
-      "alarm_contact"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|measure_temperature|measure_humidity|alarm_water|measure_battery|alarm_contact|onoff",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "water_valve",
+    "driver": "water_valve",
     "name": "Water Valve",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_k4ej3ww2",
-      "_TZ3000_kyb656no",
-      "_TZE200_htnnfasr",
-      "_TZE200_jthf7vb6",
-      "_TZE200_sh1btabb",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0207",
-      "TS0601"
-    ],
-    "manufacturer_count": 12,
-    "model_count": 2,
-    "capabilities": [
-      "alarm_motion",
-      "measure_temperature",
-      "alarm_water",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|measure_temperature|alarm_water|measure_battery|onoff",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "water_valve_controller",
+    "driver": "water_valve_controller",
     "name": "Smart Water Valve Controller",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_k4ej3ww2",
-      "_TZ3000_kyb656no",
-      "_TZE200_htnnfasr",
-      "_TZE200_sh1btabb",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0207",
-      "TS0601"
-    ],
-    "manufacturer_count": 11,
-    "model_count": 2,
-    "capabilities": [
-      "onoff",
-      "meter_water",
-      "alarm_water",
-      "measure_battery",
-      "measure_temperature"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff|meter_water|alarm_water|measure_battery|measure_temperature",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
   },
   {
-    "driver_id": "water_valve_smart",
+    "driver": "water_valve_smart",
     "name": "Water Valve Smart",
     "class": "sensor",
-    "manufacturers": [
-      "_TZ3000_k4ej3ww2",
-      "_TZ3000_kyb656no",
-      "_TZE200_htnnfasr",
-      "_TZE200_sh1btabb",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZE200_cowvfni3",
-      "_TZE200_myd45weu",
-      "_TZE200_qoy0ekbd"
-    ],
-    "models": [
-      "TS0207",
-      "TS0601"
-    ],
-    "manufacturer_count": 11,
-    "model_count": 2,
-    "capabilities": [
-      "alarm_motion",
-      "measure_temperature",
-      "alarm_water",
-      "measure_battery"
-    ],
-    "power_source": "battery",
-    "clusters": []
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|measure_temperature|alarm_water|measure_battery|onoff",
+    "batteries": "CR2032, CR2450, AAA, AA, CR123A",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "zg_204zv_multi_sensor",
+    "name": "Multi-Sensor (Motion, Temp, Humidity, Light)",
+    "class": "sensor",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "alarm_motion|measure_temperature|measure_humidity|measure_luminance|measure_battery",
+    "batteries": "CR2450",
+    "connectivity": "zigbee",
+    "platforms": "local"
+  },
+  {
+    "driver": "zigbee_universal",
+    "name": "Universal Zigbee Device",
+    "class": "other",
+    "category": "",
+    "manufacturerNames": "",
+    "productIds": "",
+    "capabilities": "onoff",
+    "batteries": "",
+    "connectivity": "zigbee",
+    "platforms": "local"
   }
 ]

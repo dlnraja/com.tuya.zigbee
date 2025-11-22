@@ -1,0 +1,74 @@
+{
+  "pdf": "4.pdf",
+  "errors": {
+    "errors": [
+      {
+        "error": "cannot  \nmigrate",
+        "context": "r:switch_basic_1gang] [Device:f7bd797c-2bc7-4d77- b067-53d551a928e5] This is an INVALID DRIVER ID - cannot   migrate 2025-11-12T00:35:05.262Z [err] [ManagerDrivers]   [Driver:switch_basic_1gang] [Device:f7bd797c-2bc7",
+        "pdf": "4.pdf"
+      },
+      {
+        "error": "cannot  \nmigrate",
+        "context": "r:switch_basic_1gang] [Device:0cd27abb-955c-4a0d- ad24-8dff6e19ffac] This is an INVALID DRIVER ID - cannot   migrate 2025-11-12T21:31:50.761Z [err] [ManagerDrivers]   [Driver:switch_basic_1gang] [Device:0cd27abb-955c",
+        "pdf": "4.pdf"
+      },
+      {
+        "error": "❌  Buttons MUST NOT have:  ",
+        "context": "nagerDrivers]   [Driver:button_emergency_ advanced] [Device:e107628d- 3836-4741- 9615-e28116734697] ❌  Buttons MUST NOT have:   onoff, dim, alarm_motion, etc. 2025-11-12T21:36:52.209Z [log] [ManagerDrivers]   [Driver:button_eme",
+        "pdf": "4.pdf"
+      },
+      {
+        "error": "❌  Target driver not  ",
+        "context": "rivers]   [Driver:switch_basic_1gang] [Device:f7bd797c-2bc7-4d77- b067-53d551a928e5] [SAFE-MIGRATE] ❌  Target driver not   found: usb_outlet 2025-11-12T00:35:05.262Z [err] [ManagerDrivers]   [Driver:switch_basic_1gang] [De",
+        "pdf": "4.pdf"
+      },
+      {
+        "error": "❌  Target driver not  ",
+        "context": "rivers]   [Driver:switch_basic_1gang] [Device:0cd27abb-955c-4a0d- ad24-8dff6e19ffac] [SAFE-MIGRATE] ❌  Target driver not   found: usb_outlet 2025-11-12T21:31:50.761Z [err] [ManagerDrivers]   [Driver:switch_basic_1gang] [De",
+        "pdf": "4.pdf"
+      },
+      {
+        "error": "INVALID DRIVER ID - cannot  ",
+        "context": "gerDrivers]   [Driver:switch_basic_1gang] [Device:f7bd797c-2bc7-4d77- b067-53d551a928e5] This is an INVALID DRIVER ID - cannot   migrate 2025-11-12T00:35:05.262Z [err] [ManagerDrivers]   [Driver:switch_basic_1gang] [Device:f7bd7",
+        "pdf": "4.pdf"
+      },
+      {
+        "error": "INVALID DRIVER ID - cannot  ",
+        "context": "gerDrivers]   [Driver:switch_basic_1gang] [Device:0cd27abb-955c-4a0d- ad24-8dff6e19ffac] This is an INVALID DRIVER ID - cannot   migrate 2025-11-12T21:31:50.761Z [err] [ManagerDrivers]   [Driver:switch_basic_1gang] [Device:0cd27",
+        "pdf": "4.pdf"
+      }
+    ],
+    "warnings": [],
+    "crashes": [],
+    "device_issues": [],
+    "cluster_errors": [],
+    "capability_errors": [],
+    "zigbee_errors": [],
+    "flow_issues": []
+  },
+  "device_info": {
+    "manufacturers": [
+      "_TZ3000_0dumfk2z"
+    ],
+    "models": [
+      "TS0215"
+    ],
+    "clusters": [],
+    "datapoints": [],
+    "endpoints": [],
+    "error_codes": []
+  },
+  "critical_issues": [],
+  "improvements": [
+    {
+      "type": "manufacturer_support",
+      "action": "Add manufacturer ID _TZ3000_0dumfk2z to appropriate driver",
+      "priority": "HIGH"
+    },
+    {
+      "type": "error_handling",
+      "action": "Improve error handling and logging",
+      "priority": "LOW"
+    }
+  ]
+}
