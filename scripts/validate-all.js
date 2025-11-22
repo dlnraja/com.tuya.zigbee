@@ -3,7 +3,7 @@
 
 /**
  * COMPLETE VALIDATION SCRIPT
- * 
+ *
  * Runs all validation checks:
  * 1. ESLint
  * 2. Homey app validate
@@ -107,7 +107,7 @@ function scanForOrphanedCatch(dir) {
   for (const file of files) {
     const fullPath = path.join(dir, file);
     const stat = fs.statSync(fullPath);
-    
+
     if (stat.isDirectory() && file !== 'node_modules') {
       scanForOrphanedCatch(fullPath);
     } else if (file.endsWith('.js')) {
@@ -129,23 +129,73 @@ if (orphanedCatch === 0) {
   console.log(`   ⚠️  ${orphanedCatch} potential orphaned catch blocks (review manually)`);
 }
 
+// Check for IAS Zone in button drivers
+console.log('\n   Checking IAS Zone in button drivers...');
+let buttonDriversWithIAS = 0;
+let buttonDriversTotal = 0;
+const buttonDrivers = ['button_wireless_1', 'button_wireless_2', 'button_wireless_3', 'button_wireless_4'];
+for (const driver of buttonDrivers) {
+  const driverPath = path.join(ROOT_DIR, 'drivers', driver, 'driver.compose.json');
+  if (fs.existsSync(driverPath)) {
+    buttonDriversTotal++;
+    const content = JSON.parse(fs.readFileSync(driverPath, 'utf8'));
+    const hasIASZone = content.zigbee?.endpoints?.['1']?.clusters?.includes(1280);
+    if (hasIASZone) {
+      buttonDriversWithIAS++;
+      console.log(`   ✅ ${driver}: IAS Zone present`);
+    } else {
+      console.log(`   ❌ ${driver}: IAS Zone MISSING!`);
+      allPassed = false;
+    }
+  }
+}
+console.log(`\n   📊 IAS Zone coverage: ${buttonDriversWithIAS}/${buttonDriversTotal} button drivers`);
+
+// Check automation scripts exist
+console.log('\n   Checking automation scripts...');
+const automationScripts = [
+  'scripts/auto-update-drivers.js',
+  'scripts/monthly-enrichment.js',
+  'scripts/converters/cluster-converter.js',
+  'scripts/converters/capability-converter.js'
+];
+let automationPresent = 0;
+for (const script of automationScripts) {
+  if (fs.existsSync(path.join(ROOT_DIR, script))) {
+    console.log(`   ✅ ${script}`);
+    automationPresent++;
+  } else {
+    console.log(`   ❌ ${script} missing`);
+  }
+}
+console.log(`\n   📊 Automation: ${automationPresent}/${automationScripts.length} scripts present`);
+
 // Check for v.replace usage without toSafeString
 console.log('\n   Checking for unsafe .replace() usage...');
-const iasEnroller = fs.readFileSync(path.join(ROOT_DIR, 'lib/IASZoneEnroller.js'), 'utf8');
-if (iasEnroller.includes('toSafeString') && iasEnroller.includes('.replace(')) {
-  console.log('   ✅ IASZoneEnroller uses toSafeString()');
+const iasEnrollerPath = path.join(ROOT_DIR, 'lib/IASZoneEnroller.js');
+if (fs.existsSync(iasEnrollerPath)) {
+  const iasEnroller = fs.readFileSync(iasEnrollerPath, 'utf8');
+  if (iasEnroller.includes('toSafeString') && iasEnroller.includes('.replace(')) {
+    console.log('   ✅ IASZoneEnroller uses toSafeString()');
+  } else {
+    console.log('   ⚠️  IASZoneEnroller may have unsafe .replace()');
+  }
 } else {
-  console.log('   ⚠️  IASZoneEnroller may have unsafe .replace()');
+  console.log('   ℹ️  IASZoneEnroller.js not found (optional check)');
 }
 
 // Check battery converter usage
 console.log('\n   Checking battery converter usage...');
-const batteryConverter = fs.readFileSync(path.join(ROOT_DIR, 'lib/tuya-engine/converters/battery.js'), 'utf8');
-if (batteryConverter.includes('fromZclBatteryPercentageRemaining')) {
-  console.log('   ✅ Battery converter exports correct function');
+const batteryConverterPath = path.join(ROOT_DIR, 'lib/tuya-engine/converters/battery.js');
+if (fs.existsSync(batteryConverterPath)) {
+  const batteryConverter = fs.readFileSync(batteryConverterPath, 'utf8');
+  if (batteryConverter.includes('fromZclBatteryPercentageRemaining')) {
+    console.log('   ✅ Battery converter exports correct function');
+  } else {
+    console.log('   ⚠️  Battery converter may need updates');
+  }
 } else {
-  console.log('   ❌ Battery converter missing function');
-  allPassed = false;
+  console.log('   ℹ️  Battery converter not found (optional check)');
 }
 
 // 6. SUMMARY

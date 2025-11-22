@@ -1,0 +1,192 @@
+{
+  "pdf": "12.pdf",
+  "errors": {
+    "errors": [
+      {
+        "error": "failed to  \nget IEEE address!",
+        "context": "[Driver:button_emergency_sos] [Device:bb158b3e-284a- 4593-a900-ff019f2aaa34] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-31T20:58:08.032Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:bb158b3e-28",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "failed to  \nget IEEE address!",
+        "context": "[Driver:presence_sensor_radar] [Device:1f55575e-79ed- 4d59-a667-732ae10d3304] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-31T21:02:19.634Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:1f55575e-7",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "failed to  \nget IEEE address!",
+        "context": "[Driver:presence_sensor_radar] [Device:1f55575e-79ed- 4d59-a667-732ae10d3304] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-31T22:35:07.923Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:1f55575e-7",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "failed to  \nget IEEE address!",
+        "context": "[Driver:button_emergency_sos] [Device:bb158b3e-284a- 4593-a900-ff019f2aaa34] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-31T22:35:09.828Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:bb158b3e-28",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "failed to  \nget IEEE address!",
+        "context": "[Driver:button_emergency_sos] [Device:20ca15ce-2176- 46be-be05-37c205082e11] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-31T22:38:07.244Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:20ca15ce-21",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "failed to  \nget IEEE address!",
+        "context": "[Driver:presence_sensor_radar] [Device:f88913de-03d3- 43af-a816-a9fdfa93d75b] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-31T22:40:39.620Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:f88913de-0",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "Cannot read zoneState:  ",
+        "context": "nagerDrivers]   [Driver:presence_sensor_radar] [Device:1f55575e-79ed- 4d59-a667-732ae10d3304] [IAS] Cannot read zoneState:   Cannot read properties of undefined (reading 'resolve') 2025-10-31T21:02:19.633Z [log] [ManagerDriv",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading 'resolve')",
+        "context": "resence_sensor_radar] [Device:1f55575e-79ed- 4d59-a667-732ae10d3304] [IAS] Cannot read zoneState:   Cannot read properties of undefined (reading 'resolve') 2025-10-31T21:02:19.633Z [log] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:1f55575e-7",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading 'resolve')",
+        "context": "nce_sensor_radar] [Device:1f55575e-79ed- 4d59-a667-732ae10d3304] [IAS] Basic cluster read failed:   Cannot read properties of undefined (reading 'resolve') 2025-10-31T21:02:19.634Z [log] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:1f55575e-7",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading  ",
+        "context": "or_radar] [Device:1f55575e-79ed- 4d59-a667-732ae10d3304] [INITIAL-READ] ⚠  Luminance read   failed: Cannot read properties of undefined (reading   'resolve') 2025-10-31T21:02:20.621Z [log] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "gerDrivers]   [Driver:button_emergency_sos] [Device:bb158b3e-284a- 4593-a900-ff019f2aaa34] [IAS] ❌  Cannot get IEEE   address! 2025-10-31T21:02:19.633Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:1",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "erDrivers]   [Driver:presence_sensor_radar] [Device:1f55575e-79ed- 4d59-a667-732ae10d3304] [IAS] ❌  Cannot get IEEE   address! You can manage your email settings in the Homey Developer Tools. Homey <noreply@homey .app",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "Cannot read zoneState:  ",
+        "context": "nagerDrivers]   [Driver:presence_sensor_radar] [Device:f88913de-03d3- 43af-a816-a9fdfa93d75b] [IAS] Cannot read zoneState:   Cannot read properties of undefined (reading 'resolve') 2025-10-31T22:40:39.619Z [log] [ManagerDriv",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading 'resolve')",
+        "context": "resence_sensor_radar] [Device:f88913de-03d3- 43af-a816-a9fdfa93d75b] [IAS] Cannot read zoneState:   Cannot read properties of undefined (reading 'resolve') 2025-10-31T22:40:39.619Z [log] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:f88913de-0",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading 'resolve')",
+        "context": "nce_sensor_radar] [Device:f88913de-03d3- 43af-a816-a9fdfa93d75b] [IAS] Basic cluster read failed:   Cannot read properties of undefined (reading 'resolve') 2025-10-31T22:40:39.620Z [log] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:f88913de-0",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "Cannot read properties of undefined (reading  ",
+        "context": "or_radar] [Device:f88913de-03d3- 43af-a816-a9fdfa93d75b] [INITIAL-READ] ⚠  Luminance read   failed: Cannot read properties of undefined (reading   'resolve') 2025-10-31T22:40:41.647Z [log] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "erDrivers]   [Driver:presence_sensor_radar] [Device:1f55575e-79ed- 4d59-a667-732ae10d3304] [IAS] ❌  Cannot get IEEE   address! 2025-10-31T22:35:09.828Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:bb",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "gerDrivers]   [Driver:button_emergency_sos] [Device:bb158b3e-284a- 4593-a900-ff019f2aaa34] [IAS] ❌  Cannot get IEEE   address! 2025-10-31T22:38:07.243Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:20",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "gerDrivers]   [Driver:button_emergency_sos] [Device:20ca15ce-2176- 46be-be05-37c205082e11] [IAS] ❌  Cannot get IEEE   address! 2025-10-31T22:40:39.620Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:f",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "Cannot get IEEE  ",
+        "context": "erDrivers]   [Driver:presence_sensor_radar] [Device:f88913de-03d3- 43af-a816-a9fdfa93d75b] [IAS] ❌  Cannot get IEEE   address! You can manage your email settings in the Homey Developer Tools. [Texte des messages précé",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "❌  ALL methods failed to  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:bb158b3e-284a- 4593-a900-ff019f2aaa34] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-31T20:58:08.032Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:bb158b3e-284a- 4593-a900-ff019f2aaa34] [IAS] ❌  Cannot get IEEE   address! 2025-10-31T21:02:19.633Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:1",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "❌  ALL methods failed to  ",
+        "context": "nagerDrivers]   [Driver:presence_sensor_radar] [Device:1f55575e-79ed- 4d59-a667-732ae10d3304] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-31T21:02:19.634Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar]",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "nagerDrivers]   [Driver:presence_sensor_radar] [Device:1f55575e-79ed- 4d59-a667-732ae10d3304] [IAS] ❌  Cannot get IEEE   address! You can manage your email settings in the Homey Developer Tools. Homey <noreply@homey .app",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "❌  ALL methods failed to  ",
+        "context": "nagerDrivers]   [Driver:presence_sensor_radar] [Device:1f55575e-79ed- 4d59-a667-732ae10d3304] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-31T22:35:07.923Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar]",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "nagerDrivers]   [Driver:presence_sensor_radar] [Device:1f55575e-79ed- 4d59-a667-732ae10d3304] [IAS] ❌  Cannot get IEEE   address! 2025-10-31T22:35:09.828Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:bb",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "❌  ALL methods failed to  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:bb158b3e-284a- 4593-a900-ff019f2aaa34] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-31T22:35:09.828Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:bb158b3e-284a- 4593-a900-ff019f2aaa34] [IAS] ❌  Cannot get IEEE   address! 2025-10-31T22:38:07.243Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [Device:20",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "❌  ALL methods failed to  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:20ca15ce-2176- 46be-be05-37c205082e11] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-31T22:38:07.244Z [err] [ManagerDrivers]   [Driver:button_emergency_sos] [",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "anagerDrivers]   [Driver:button_emergency_sos] [Device:20ca15ce-2176- 46be-be05-37c205082e11] [IAS] ❌  Cannot get IEEE   address! 2025-10-31T22:40:39.620Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:f",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "❌  ALL methods failed to  ",
+        "context": "nagerDrivers]   [Driver:presence_sensor_radar] [Device:f88913de-03d3- 43af-a816-a9fdfa93d75b] [IAS] ❌  ALL methods failed to   get IEEE address! 2025-10-31T22:40:39.620Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar]",
+        "pdf": "12.pdf"
+      },
+      {
+        "error": "❌  Cannot get IEEE  ",
+        "context": "nagerDrivers]   [Driver:presence_sensor_radar] [Device:f88913de-03d3- 43af-a816-a9fdfa93d75b] [IAS] ❌  Cannot get IEEE   address! You can manage your email settings in the Homey Developer Tools. [Texte des messages précé",
+        "pdf": "12.pdf"
+      }
+    ],
+    "warnings": [],
+    "crashes": [],
+    "device_issues": [],
+    "cluster_errors": [],
+    "capability_errors": [],
+    "zigbee_errors": [],
+    "flow_issues": []
+  },
+  "device_info": {
+    "manufacturers": [],
+    "models": [],
+    "clusters": [],
+    "datapoints": [],
+    "endpoints": [
+      "1"
+    ],
+    "error_codes": []
+  },
+  "critical_issues": [],
+  "improvements": [
+    {
+      "type": "error_handling",
+      "action": "Improve error handling and logging",
+      "priority": "LOW"
+    }
+  ]
+}

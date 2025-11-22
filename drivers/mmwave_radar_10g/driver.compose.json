@@ -1,0 +1,46 @@
+{
+  "name": {
+    "en": "10G mmWave Radar Multi-Sensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_luminance",
+    "measure_battery"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_ar0slwnd",
+      "_TZE200_sfiy5tfs"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184,
+          1280,
+          1
+        ],
+        "bindings": [
+          1280
+        ]
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2450"
+    ]
+  }
+}

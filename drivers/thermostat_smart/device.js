@@ -174,10 +174,6 @@ class ThermostatHybridDevice extends BaseHybridDevice {
     await this.setAvailable().catch(err => this.error(err));
   }
 
-  catch(err) {
-    this.error('Battery change detection error:', err);
-  }
-}
   // ========================================
   // FLOW METHODS - Auto-generated
   // ========================================
@@ -186,14 +182,14 @@ class ThermostatHybridDevice extends BaseHybridDevice {
    * Trigger flow with context data
    */
   async triggerFlowCard(cardId, tokens = {}) {
-  try {
-    const flowCard = this.homey.flow.getDeviceTriggerCard(cardId);
-    await flowCard.trigger(this, tokens).catch(err => this.error(err));
-    this.log(`[OK] Flow triggered: ${cardId}`, tokens);
-  } catch (err) {
-    this.error(`[ERROR] Flow trigger error: ${cardId}`, err);
+    try {
+      const flowCard = this.homey.flow.getDeviceTriggerCard(cardId);
+      await flowCard.trigger(this, tokens).catch(err => this.error(err));
+      this.log(`[OK] Flow triggered: ${cardId}`, tokens);
+    } catch (err) {
+      this.error(`[ERROR] Flow trigger error: ${cardId}`, err);
+    }
   }
-}
 
   /**
    * Check if any alarm is active

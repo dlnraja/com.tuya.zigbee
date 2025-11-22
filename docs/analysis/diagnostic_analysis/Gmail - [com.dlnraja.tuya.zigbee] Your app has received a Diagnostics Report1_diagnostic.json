@@ -1,0 +1,84 @@
+{
+  "pdf": "Gmail - [com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report1.pdf",
+  "errors": {
+    "errors": [
+      {
+        "error": "Error: Timeout: Expected Response",
+        "context": "] [Device:22e2404b- 05f4-4ab3- b1c2-396449c98e78] [BATTERY] Error configuring   standard reporting: Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout",
+        "pdf": "Gmail - [com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report1.pdf"
+      },
+      {
+        "error": "Error: Timeout: Expected Response",
+        "context": "] [Device:22e2404b- 05f4-4ab3- b1c2-396449c98e78] [BATTERY] Error configuring   standard reporting: Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout",
+        "pdf": "Gmail - [com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report1.pdf"
+      },
+      {
+        "error": "Timeout (/app/node_modules/zigbee-",
+        "context": "] [BATTERY] Error configuring   standard reporting: Error: Timeout: Expected Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout (node:internal/timers:588:17) at process.processT",
+        "pdf": "Gmail - [com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report1.pdf"
+      },
+      {
+        "error": "Timeout (node:internal/timers:588:17)",
+        "context": "Response at Timeout._onTimeout (/app/node_modules/zigbee- clusters/lib/Cluster.js:966: 16) at listOnTimeout (node:internal/timers:588:17) at process.processTimers (node:internal/timers:523:7) You can manage your email settings in the Hom",
+        "pdf": "Gmail - [com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report1.pdf"
+      }
+    ],
+    "warnings": [],
+    "crashes": [],
+    "device_issues": [],
+    "cluster_errors": [],
+    "capability_errors": [],
+    "zigbee_errors": [],
+    "flow_issues": []
+  },
+  "device_info": {
+    "manufacturers": [
+      "_TZE200_rhgsbacq",
+      "_TZ3000_bgtzm4ny"
+    ],
+    "models": [
+      "TS0601",
+      "TS0044"
+    ],
+    "clusters": [
+      "0xEF00"
+    ],
+    "datapoints": [
+      "15",
+      "2",
+      "1",
+      "4",
+      "202"
+    ],
+    "endpoints": [],
+    "error_codes": []
+  },
+  "critical_issues": [],
+  "improvements": [
+    {
+      "type": "manufacturer_support",
+      "action": "Add manufacturer ID _TZE200_rhgsbacq to appropriate driver",
+      "priority": "HIGH"
+    },
+    {
+      "type": "manufacturer_support",
+      "action": "Add manufacturer ID _TZ3000_bgtzm4ny to appropriate driver",
+      "priority": "HIGH"
+    },
+    {
+      "type": "cluster_support",
+      "action": "Ensure cluster 0xEF00 is properly handled",
+      "priority": "MEDIUM"
+    },
+    {
+      "type": "tuya_datapoints",
+      "action": "Map datapoints 1, 15, 2, 202, 4 in Tuya driver",
+      "priority": "MEDIUM"
+    },
+    {
+      "type": "error_handling",
+      "action": "Improve error handling and logging",
+      "priority": "LOW"
+    }
+  ]
+}
