@@ -1,6 +1,6 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const ButtonDevice = require('../../lib/devices/ButtonDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
 /**
@@ -8,24 +8,27 @@ const { CLUSTER } = require('zigbee-clusters');
  * Auto-détecte: nombre de boutons, type de batterie
  * Supporte: 1-8 boutons, CR2032/CR2450/AAA/AA
  */
-class UniversalWirelessButtonDevice extends ZigBeeDevice {
+class UniversalWirelessButtonDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
-    this.log('🔄 Initializing Universal Wireless Button');
+    // Initialize hybrid base (power detection)
+    await super.onNodeInit({ zclNode });
+
+    this.log('[SYNC] Initializing Universal Wireless Button');
     
     try {
       // ==========================================
       // STEP 1: DETECT BUTTON COUNT
       // ==========================================
       const buttonCount = await this.detectButtonCount(zclNode).catch(err => this.error(err));
-      this.log(`✅ Detected ${buttonCount} button(s)`);
+      this.log(`[OK] Detected ${buttonCount} button(s)`);
       await this.setStoreValue('button_count', buttonCount).catch(err => this.error(err));
       
       // ==========================================
       // STEP 2: DETECT POWER TYPE & BATTERY
       // ==========================================
       const hasBattery = await this.detectBattery(zclNode).catch(err => this.error(err));
-      this.log(`✅ Battery powered: ${hasBattery}`);
+      this.log(`[OK] Battery powered: ${hasBattery}`);
       await this.setStoreValue('has_battery', hasBattery).catch(err => this.error(err));
       
       // ==========================================
@@ -42,7 +45,7 @@ class UniversalWirelessButtonDevice extends ZigBeeDevice {
       
       await this.configureButtonClusters(zclNode, buttonCount).catch(err => this.error(err));
       
-      this.log('✅ Universal Wireless Button initialized successfully');
+      this.log('[OK] Universal Wireless Button initialized successfully');
       
     } catch (err) {
       this.error('Initialization error:', err);
@@ -52,7 +55,6 @@ class UniversalWirelessButtonDevice extends ZigBeeDevice {
   /**
    * Détecte automatiquement le nombre de boutons
    */
-  }
   async detectButtonCount(zclNode) {
     // Check user setting first
     const settingCount = this.getSetting('button_count');
@@ -75,7 +77,6 @@ class UniversalWirelessButtonDevice extends ZigBeeDevice {
   /**
    * Détecte si le device a une batterie
    */
-  }
   async detectBattery(zclNode) {
     try {
       const endpoint = zclNode.endpoints[1];
@@ -103,7 +104,6 @@ class UniversalWirelessButtonDevice extends ZigBeeDevice {
   /**
    * Configure les capabilities dynamiquement
    */
-  }
   async setupDynamicCapabilities(buttonCount, hasBattery) {
     this.log(`Setting up capabilities: ${buttonCount} buttons, battery: ${hasBattery}`);
     
@@ -145,7 +145,6 @@ class UniversalWirelessButtonDevice extends ZigBeeDevice {
   /**
    * Configure battery reporting
    */
-  }
   async configureBatteryReporting(zclNode) {
     try {
       const endpoint = zclNode.endpoints[1];
@@ -161,7 +160,7 @@ class UniversalWirelessButtonDevice extends ZigBeeDevice {
           // Check low battery threshold
           const threshold = this.getSetting('battery_threshold') || 20;
           if (percentage <= threshold) {
-            this.log(`⚠️ Low battery: ${percentage}% (threshold: ${threshold}%)`);
+            this.log(`[WARN] Low battery: ${percentage}% (threshold: ${threshold}%)`);
           }
           
           return percentage;
@@ -184,7 +183,7 @@ class UniversalWirelessButtonDevice extends ZigBeeDevice {
         this.log('Battery reporting config failed (may not be supported):', err.message);
       });
       
-      this.log('✅ Battery reporting configured');
+      this.log('[OK] Battery reporting configured');
       
     } catch (err) {
       this.error('Battery configuration error:', err);
@@ -194,7 +193,6 @@ class UniversalWirelessButtonDevice extends ZigBeeDevice {
   /**
    * Configure button clusters
    */
-  }
   async configureButtonClusters(zclNode, buttonCount) {
     for (let i = 1; i <= buttonCount; i++) {
       const endpoint = zclNode.endpoints[i];
@@ -236,7 +234,6 @@ class UniversalWirelessButtonDevice extends ZigBeeDevice {
   /**
    * Handle settings changes
    */
-  }
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     this.log('Settings changed:', changedKeys);
     
