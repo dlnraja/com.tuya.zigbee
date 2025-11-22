@@ -1,0 +1,47 @@
+{
+  "name": {
+    "en": "Multi-Sensor (Motion, Temp, Humidity, Light)"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_luminance",
+    "measure_battery"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "HOBEIAN",
+      "_TZE200_3towulqd"
+    ],
+    "productId": [
+      "ZG-204ZV",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1280,
+          61184
+        ],
+        "bindings": [
+          1280
+        ]
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2450"
+    ]
+  }
+}

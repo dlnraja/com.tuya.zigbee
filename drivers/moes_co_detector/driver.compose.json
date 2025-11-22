@@ -1,0 +1,48 @@
+{
+  "name": {
+    "en": "MOES Carbon Monoxide Detector"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_co",
+    "measure_battery",
+    "test"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_rjxqso4a",
+      "_TZE284_rjxqso4a"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          61184,
+          1
+        ],
+        "bindings": []
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR123A"
+    ]
+  },
+  "icon": "/assets/icon.svg",
+  "images": {
+    "small": "/drivers/co_detector/assets/images/small.png",
+    "large": "/drivers/co_detector/assets/images/large.png"
+  }
+}

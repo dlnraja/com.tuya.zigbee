@@ -1,0 +1,73 @@
+{
+  "pdf": "7.pdf",
+  "errors": {
+    "errors": [
+      {
+        "error": "Error: configuring attribute  ",
+        "context": "[err] [ManagerDrivers]   [Driver:switch_basic_1gang] [Device:986bbdd1-a3cc-4c72- b9eb-0dec157079c7] Error: configuring attribute   reporting (endpoint: 1, cluster: onOff) { onOff: {   minInterval: 0, maxInterval: 300, minChange: 0",
+        "pdf": "7.pdf"
+      },
+      {
+        "error": "Error: Zigbee est en cours de démarrage. Patientez une  ",
+        "context": "ing (endpoint: 1, cluster: onOff) { onOff: {   minInterval: 0, maxInterval: 300, minChange: 0 } }   Error: Zigbee est en cours de démarrage. Patientez une   minute et réessayez. at Remote Process at HomeyClient.emit (/app/assets/app/node_modules/ @athombv/",
+        "pdf": "7.pdf"
+      },
+      {
+        "error": "Error: configuring attribute  ",
+        "context": "[err] [ManagerDrivers]   [Driver:switch_basic_1gang] [Device:986bbdd1-a3cc-4c72- b9eb-0dec157079c7] Error: configuring attribute   reporting (endpoint: 1, cluster: onOff) { onOff: {   minInterval: 0, maxInterval: 300, minChange: 0",
+        "pdf": "7.pdf"
+      },
+      {
+        "error": "Error: Zigbee est en cours de démarrage. Patientez une  ",
+        "context": "ing (endpoint: 1, cluster: onOff) { onOff: {   minInterval: 0, maxInterval: 300, minChange: 0 } }   Error: Zigbee est en cours de démarrage. Patientez une   minute et réessayez. at Remote Process at HomeyClient.emit (/app/assets/app/node_modules/ @athombv/",
+        "pdf": "7.pdf"
+      },
+      {
+        "error": "❌  Buttons MUST NOT have: onoff, dim,  ",
+        "context": "[log] [ManagerDrivers]   [Driver:button_wireless_4] [Device:248e99e7-7807-476a- b8c7-bc4f3b538b77] ❌  Buttons MUST NOT have: onoff, dim,   alarm_motion, etc. 2025-11-06T20:53:07.275Z [log] [ManagerDrivers]   [Driver:button_wireless_4] [De",
+        "pdf": "7.pdf"
+      },
+      {
+        "error": "❌\n2025-11-06T22:29:37.014Z [log] [ManagerDrivers]  ",
+        "context": "[Device:6d67bc27-a6e2- 4399-abfa-bffca81b0f7a] [PROTOCOL-ROUTER] Tuya cluster   (0xEF00): NOT FOUND ❌ 2025-11-06T22:29:37.014Z [log] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:6d67bc27-a6e2- 4399-abfa-bffca81b0f7a] [PROTOCOL-ROUTER] ✅",
+        "pdf": "7.pdf"
+      },
+      {
+        "error": "❌  Incorrect: measure_battery",
+        "context": "g] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:6d67bc27-a6e2- 4399-abfa-bffca81b0f7a] ❌  Incorrect: measure_battery 2025-11-06T22:29:37.019Z [log] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:6d67bc27-a",
+        "pdf": "7.pdf"
+      },
+      {
+        "error": "❌  Removed incorrect capability:  ",
+        "context": "g] [ManagerDrivers]   [Driver:presence_sensor_radar] [Device:6d67bc27-a6e2- 4399-abfa-bffca81b0f7a] ❌  Removed incorrect capability:   measure_battery 2025-11-06T22:29:37.115Z [log] [ManagerDrivers]   [Driver:presence_sensor_radar] [D",
+        "pdf": "7.pdf"
+      }
+    ],
+    "warnings": [],
+    "crashes": [],
+    "device_issues": [],
+    "cluster_errors": [],
+    "capability_errors": [],
+    "zigbee_errors": [],
+    "flow_issues": []
+  },
+  "device_info": {
+    "manufacturers": [],
+    "models": [],
+    "clusters": [],
+    "datapoints": [],
+    "endpoints": [
+      "1",
+      "4"
+    ],
+    "error_codes": []
+  },
+  "critical_issues": [],
+  "improvements": [
+    {
+      "type": "error_handling",
+      "action": "Improve error handling and logging",
+      "priority": "LOW"
+    }
+  ]
+}

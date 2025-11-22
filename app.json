@@ -1,14 +1,15 @@
 {
-  "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-20",
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-21",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "4.9.352",
+  "version": "4.11.0",
+  "lastPublishDatetime": "2025-11-22T00:00:00.000Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "Community-maintained Universal Zigbee app with 186 unified hybrid drivers and 18,000+ manufacturer IDs. 100% local control, no cloud required. Intelligent auto-detection of power source and battery type. Advanced energy management with flow cards. SDK3 compliant.",
+    "en": "Community-maintained Universal Zigbee app with 198 unified drivers (12 new auto-generated!) and 18,200+ manufacturer IDs. 100% local control, no cloud required. Intelligent IAS Zone with exponential backoff. Advanced Tuya DP support. SDK3 compliant with automated enrichment.",
     "fr": "Application Zigbee universelle avec 186 drivers hybrides unifiés et 18,000+ manufacturer IDs. Contrôle 100% local, sans cloud. Détection automatique intelligente de la source d'alimentation et du type de batterie. Gestion énergétique avancée avec cartes de flux. Conforme SDK3."
   },
   "category": "appliances",

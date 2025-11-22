@@ -1,0 +1,28 @@
+name: Monthly Driver Enrichment
+
+"on":
+  schedule:
+    - cron: "0 2 1 * *"
+  workflow_dispatch:
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Run enrichment
+        run: node scripts/monthly-enrichment.js
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          commit-message: "chore: monthly driver enrichment"
+          title: "🔄 Monthly Driver Updates"
+          body: "Automated driver enrichment from Blakadder/Zigbee2MQTT"
+          branch: "auto/monthly-update"

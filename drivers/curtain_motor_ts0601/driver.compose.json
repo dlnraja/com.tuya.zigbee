@@ -1,0 +1,33 @@
+{
+  "name": {
+    "en": "Zigbee Curtain Motor"
+  },
+  "class": "windowcoverings",
+  "capabilities": [
+    "windowcoverings_set",
+    "windowcoverings_state"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_nv6nxo0c"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ],
+        "bindings": []
+      }
+    }
+  }
+}

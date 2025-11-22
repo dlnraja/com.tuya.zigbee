@@ -1,0 +1,75 @@
+{
+  "pdf": "27.pdf",
+  "errors": {
+    "errors": [
+      {
+        "error": "Error:  \nCannot find module 'homey-zigbeedriver'",
+        "context": "0-06T15:20:13.537Z [err] [ManagerDrivers] Error   Initializing Driver wireless_switch_6gang_cr2032: Error:   Cannot find module 'homey-zigbeedriver' Require stack: - /app/drivers/wireless_switch_ 6gang_cr2032/driver.js - /node_modules/@athombv/home",
+        "pdf": "27.pdf"
+      },
+      {
+        "error": "Error: Cannot find module  ",
+        "context": "index.js' ] } 2025-10-06T15:20:13.540Z [err] [ManagerDrivers] Error   Initializing Driver zbbridge: Error: Cannot find module   'homey-zigbeedriver' Require stack: - /app/drivers/zbbridge/driver. js - /node_modules/@athombv/hom",
+        "pdf": "27.pdf"
+      },
+      {
+        "error": "Error: Cannot  ",
+        "context": "] } 2025-10-06T15:20:13.544Z [err] [ManagerDrivers] Error   Initializing Driver zigbee_gateway_hub: Error: Cannot   find module 'homey-zigbeedriver' Require stack: - /app/drivers/zigbee_gateway_ hub/driver.js - /nod",
+        "pdf": "27.pdf"
+      },
+      {
+        "error": "Error:  \nCannot find module 'homey-zigbeedriver'",
+        "context": "0-06T15:20:13.537Z [err] [ManagerDrivers] Error   Initializing Driver wireless_switch_6gang_cr2032: Error:   Cannot find module 'homey-zigbeedriver' Require stack: - /app/drivers/wireless_switch_ 6gang_cr2032/driver.js - /node_modules/@athombv/home",
+        "pdf": "27.pdf"
+      },
+      {
+        "error": "Error: Cannot find module  ",
+        "context": "index.js' ] } 2025-10-06T15:20:13.540Z [err] [ManagerDrivers] Error   Initializing Driver zbbridge: Error: Cannot find module   'homey-zigbeedriver' Require stack: - /app/drivers/zbbridge/driver. js - /node_modules/@athombv/hom",
+        "pdf": "27.pdf"
+      },
+      {
+        "error": "Error: Cannot  ",
+        "context": "] } 2025-10-06T15:20:13.544Z [err] [ManagerDrivers] Error   Initializing Driver zigbee_gateway_hub: Error: Cannot   find module 'homey-zigbeedriver' Require stack: - /app/drivers/zigbee_gateway_ hub/driver.js - /nod",
+        "pdf": "27.pdf"
+      },
+      {
+        "error": "Cannot find module 'homey-zigbeedriver'",
+        "context": "0:13.537Z [err] [ManagerDrivers] Error   Initializing Driver wireless_switch_6gang_cr2032: Error:   Cannot find module 'homey-zigbeedriver' Require stack: - /app/drivers/wireless_switch_ 6gang_cr2032/driver.js - /node_modules/@athombv/home",
+        "pdf": "27.pdf"
+      },
+      {
+        "error": "Cannot find module  ",
+        "context": "s' ] } 2025-10-06T15:20:13.540Z [err] [ManagerDrivers] Error   Initializing Driver zbbridge: Error: Cannot find module   'homey-zigbeedriver' Require stack: - /app/drivers/zbbridge/driver. js - /node_modules/@athombv/hom",
+        "pdf": "27.pdf"
+      },
+      {
+        "error": "Cannot  \nfind module 'homey-zigbeedriver'",
+        "context": "5-10-06T15:20:13.544Z [err] [ManagerDrivers] Error   Initializing Driver zigbee_gateway_hub: Error: Cannot   find module 'homey-zigbeedriver' Require stack: - /app/drivers/zigbee_gateway_ hub/driver.js - /node_modules/@athombv/homey- apps-sd",
+        "pdf": "27.pdf"
+      }
+    ],
+    "warnings": [],
+    "crashes": [],
+    "device_issues": [],
+    "cluster_errors": [],
+    "capability_errors": [],
+    "zigbee_errors": [],
+    "flow_issues": []
+  },
+  "device_info": {
+    "manufacturers": [],
+    "models": [],
+    "clusters": [],
+    "datapoints": [],
+    "endpoints": [],
+    "error_codes": []
+  },
+  "critical_issues": [],
+  "improvements": [
+    {
+      "type": "error_handling",
+      "action": "Improve error handling and logging",
+      "priority": "LOW"
+    }
+  ]
+}

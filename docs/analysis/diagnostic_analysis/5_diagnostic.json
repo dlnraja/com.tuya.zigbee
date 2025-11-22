@@ -1,0 +1,77 @@
+{
+  "pdf": "5.pdf",
+  "errors": {
+    "errors": [
+      {
+        "error": "Error: Cannot find module '../../TS0601_EMERGENCY_FIX'",
+        "context": "11T16:07:50.351Z [err] [ManagerDrivers]   [Driver:climate_sensor_soil] Error Initializing Device:   Error: Cannot find module '../../TS0601_EMERGENCY_FIX' Require stack: - /app/lib/devices/ BaseHybridDevice.js - /app/drivers/climate_sensor_ soil/device.j",
+        "pdf": "5.pdf"
+      },
+      {
+        "error": "Error: Cannot find module  ",
+        "context": "T16:07:50.379Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar] Error Initializing   Device: Error: Cannot find module   '../../TS0601_EMERGENCY_FIX' Require stack: - /app/lib/devices/ BaseHybridDevice.js - /app/drivers/",
+        "pdf": "5.pdf"
+      },
+      {
+        "error": "Error: Cannot find module '../../TS0601_EMERGENCY_FIX'",
+        "context": "-11T16:07:50.391Z [err] [ManagerDrivers]   [Driver:switch_basic_1gang] Error Initializing Device:   Error: Cannot find module '../../TS0601_EMERGENCY_FIX' Require stack: - /app/lib/devices/ BaseHybridDevice.js - /app/lib/devices/SwitchDevice. js - /app/d",
+        "pdf": "5.pdf"
+      },
+      {
+        "error": "Error: Cannot find module '../../TS0601_EMERGENCY_FIX'",
+        "context": "11T16:07:50.351Z [err] [ManagerDrivers]   [Driver:climate_sensor_soil] Error Initializing Device:   Error: Cannot find module '../../TS0601_EMERGENCY_FIX' Require stack: - /app/lib/devices/ BaseHybridDevice.js - /app/drivers/climate_sensor_ soil/device.j",
+        "pdf": "5.pdf"
+      },
+      {
+        "error": "Error: Cannot find module  ",
+        "context": "T16:07:50.379Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar] Error Initializing   Device: Error: Cannot find module   '../../TS0601_EMERGENCY_FIX' Require stack: - /app/lib/devices/ BaseHybridDevice.js - /app/drivers/",
+        "pdf": "5.pdf"
+      },
+      {
+        "error": "Error: Cannot find module '../../TS0601_EMERGENCY_FIX'",
+        "context": "-11T16:07:50.391Z [err] [ManagerDrivers]   [Driver:switch_basic_1gang] Error Initializing Device:   Error: Cannot find module '../../TS0601_EMERGENCY_FIX' Require stack: - /app/lib/devices/ BaseHybridDevice.js - /app/lib/devices/SwitchDevice. js - /app/d",
+        "pdf": "5.pdf"
+      },
+      {
+        "error": "Cannot find module '../../TS0601_EMERGENCY_FIX'",
+        "context": "7:50.351Z [err] [ManagerDrivers]   [Driver:climate_sensor_soil] Error Initializing Device:   Error: Cannot find module '../../TS0601_EMERGENCY_FIX' Require stack: - /app/lib/devices/ BaseHybridDevice.js - /app/drivers/climate_sensor_ soil/device.j",
+        "pdf": "5.pdf"
+      },
+      {
+        "error": "Cannot find module  ",
+        "context": "50.379Z [err] [ManagerDrivers]   [Driver:presence_sensor_radar] Error Initializing   Device: Error: Cannot find module   '../../TS0601_EMERGENCY_FIX' Require stack: - /app/lib/devices/ BaseHybridDevice.js - /app/drivers/",
+        "pdf": "5.pdf"
+      },
+      {
+        "error": "Cannot find module '../../TS0601_EMERGENCY_FIX'",
+        "context": "07:50.391Z [err] [ManagerDrivers]   [Driver:switch_basic_1gang] Error Initializing Device:   Error: Cannot find module '../../TS0601_EMERGENCY_FIX' Require stack: - /app/lib/devices/ BaseHybridDevice.js - /app/lib/devices/SwitchDevice. js - /app/d",
+        "pdf": "5.pdf"
+      }
+    ],
+    "warnings": [],
+    "crashes": [],
+    "device_issues": [],
+    "cluster_errors": [],
+    "capability_errors": [],
+    "zigbee_errors": [],
+    "flow_issues": []
+  },
+  "device_info": {
+    "manufacturers": [],
+    "models": [
+      "TS0601"
+    ],
+    "clusters": [],
+    "datapoints": [],
+    "endpoints": [],
+    "error_codes": []
+  },
+  "critical_issues": [],
+  "improvements": [
+    {
+      "type": "error_handling",
+      "action": "Improve error handling and logging",
+      "priority": "LOW"
+    }
+  ]
+}
