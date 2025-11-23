@@ -1,16 +1,16 @@
 {
-  "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-21",
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-23",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "4.11.0",
-  "lastPublishDatetime": "2025-11-22T00:00:00.000Z",
+  "version": "5.0.0",
+  "lastPublishDatetime": "2025-11-23T00:00:00.000Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "Community-maintained Universal Zigbee app with 198 unified drivers (12 new auto-generated!) and 18,200+ manufacturer IDs. 100% local control, no cloud required. Intelligent IAS Zone with exponential backoff. Advanced Tuya DP support. SDK3 compliant with automated enrichment.",
-    "fr": "Application Zigbee universelle avec 186 drivers hybrides unifiés et 18,000+ manufacturer IDs. Contrôle 100% local, sans cloud. Détection automatique intelligente de la source d'alimentation et du type de batterie. Gestion énergétique avancée avec cartes de flux. Conforme SDK3."
+    "en": "V5.0.0 AUDIT V2 Edition: Ultra DP System with auto-mapping, 219 drivers, 18,200+ manufacturer IDs. BatteryManagerV4 (7 technologies), TuyaDPMapper (22 patterns), DP Discovery mode, Time Sync. 100% local, no cloud. Aligned with Homey guidelines + Z2M/LocalTuya/HA best practices. Production ready!",
+    "fr": "V5.0.0 Édition AUDIT V2: Système DP Ultra avec auto-mapping, 219 drivers, 18,200+ manufacturer IDs. BatteryManagerV4 (7 technologies), TuyaDPMapper (22 patterns), mode DP Discovery, Sync horloge. 100% local, sans cloud. Conforme directives Homey + meilleures pratiques Z2M/LocalTuya/HA."
   },
   "category": "appliances",
   "permissions": [],
