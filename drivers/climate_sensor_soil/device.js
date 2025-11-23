@@ -3,6 +3,7 @@
 const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
 const TuyaDPMapper = require('../../lib/tuya/TuyaDPMapper');
 const BatteryManagerV4 = require('../../lib/BatteryManagerV4');
+const TuyaDPDeviceHelper = require('../../lib/TuyaDPDeviceHelper');
 
 /**
  * TuyaSoilTesterTempHumidDevice - Unified Hybrid Driver
@@ -58,7 +59,7 @@ class TuyaSoilTesterTempHumidDevice extends BaseHybridDevice {
 
       // Only setup standard Zigbee if NOT Tuya DP
       if (!this.isTuyaDevice) {
-        this.log('[STANDARD] Using standard Zigbee clusters');
+        TuyaDPDeviceHelper.logClusterAction(this, 'configure');
         // Setup standard sensor reporting
         await this.setupSensorReporting();
         // Setup IAS Zone
@@ -66,6 +67,11 @@ class TuyaSoilTesterTempHumidDevice extends BaseHybridDevice {
         // Setup sensor capabilities
         await this.setupTemperatureSensor();
         await this.setupHumiditySensor();
+      } else {
+        // CURSOR PHASE 6: Skip standard ZCL config for Tuya DP devices
+        TuyaDPDeviceHelper.logClusterAction(this, 'skip');
+        this.log('[TUYA-DP] Device type:', TuyaDPDeviceHelper.getDeviceType(this));
+        this.log('[TUYA-DP] Behavior:', TuyaDPDeviceHelper.getExpectedBehavior(this));
       }
 
       // Safe set available
