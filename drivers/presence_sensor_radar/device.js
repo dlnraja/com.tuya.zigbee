@@ -1,6 +1,8 @@
 'use strict';
 
 const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
+const TuyaDPMapper = require('../../lib/tuya/TuyaDPMapper');
+const BatteryManagerV4 = require('../../lib/BatteryManagerV4');
 
 /**
  * PresenceSensorRadarDevice - Unified Hybrid Driver
@@ -37,6 +39,18 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
 
         // Init Tuya DP engine BEFORE base
         await this._initTuyaDpEngine();
+
+        // 🆕 AUDIT V2 VAGUE 2: Auto DP Mapping
+        this.log('[RADAR-V4] 🤖 Starting auto DP mapping...');
+        await TuyaDPMapper.autoSetup(this, zclNode).catch(err => {
+          this.log('[RADAR-V4] ⚠️  Auto-mapping failed:', err.message);
+        });
+
+        // 🆕 AUDIT V2 VAGUE 2: Battery Manager V4
+        this.batteryManagerV4 = new BatteryManagerV4(this, 'CR2032');
+        await this.batteryManagerV4.startMonitoring().catch(err => {
+          this.log('[RADAR-V4] ⚠️  Battery V4 init failed:', err.message);
+        });
       }
 
       // Initialize base (power detection + dynamic capabilities)
