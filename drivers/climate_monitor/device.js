@@ -1,6 +1,10 @@
 'use strict';
 
 const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
+const TuyaDPMapper = require('../../lib/tuya/TuyaDPMapper');
+const TuyaDPDiscovery = require('../../lib/tuya/TuyaDPDiscovery');
+const TuyaTimeSyncManager = require('../../lib/tuya/TuyaTimeSyncManager');
+const BatteryManagerV4 = require('../../lib/BatteryManagerV4');
 
 /**
  * ClimateMonitorDevice - Enhanced SDK3 Climate Monitor
@@ -30,12 +34,40 @@ const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
 class ClimateMonitorDevice extends BaseHybridDevice {
 
   async onNodeInit({ zclNode }) {
-    this.log('[TEMP]  ClimateMonitorDevice initializing (SDK3)...');
+    this.log('[CLIMATE-V4] 🌡️  ClimateMonitorDevice initializing (ULTRA VERSION)...');
 
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit({ zclNode }).catch(err => this.error(err));
 
-    // Setup Tuya DP listeners for climate data
+    // 🆕 V4: AUTO DP MAPPING (intelligent!)
+    if (this.tuyaEF00Manager) {
+      this.log('[CLIMATE-V4] 🤖 Starting auto DP mapping...');
+      await TuyaDPMapper.autoSetup(this, zclNode).catch(err => {
+        this.log('[CLIMATE-V4] ⚠️  Auto-mapping failed:', err.message);
+      });
+    }
+
+    // 🆕 V4: TIME SYNC MANAGER (pour affichage date/heure)
+    this.timeSyncManager = new TuyaTimeSyncManager(this);
+    await this.timeSyncManager.initialize(zclNode).catch(err => {
+      this.log('[CLIMATE-V4] ⚠️  Time sync init failed:', err.message);
+    });
+
+    // 🆕 V4: BATTERY MANAGER V4 (ultra-précis avec courbes voltage)
+    this.batteryManagerV4 = new BatteryManagerV4(this, 'AAA'); // Climate sensors = AAA
+    await this.batteryManagerV4.startMonitoring().catch(err => {
+      this.log('[CLIMATE-V4] ⚠️  Battery V4 init failed:', err.message);
+    });
+
+    // 🆕 V4: DP DISCOVERY MODE (si debug activé)
+    const settings = this.getSettings();
+    if (settings.dp_discovery_mode === true) {
+      this.dpDiscovery = new TuyaDPDiscovery(this);
+      this.dpDiscovery.startDiscovery();
+      this.log('[CLIMATE-V4] 🔍 DP Discovery active - interact with device!');
+    }
+
+    // Setup Tuya DP listeners for climate data (legacy support)
     if (this.tuyaEF00Manager && this.tuyaEF00Manager.tuyaCluster) {
       await this.setupClimateListeners();
     }
@@ -43,18 +75,14 @@ class ClimateMonitorDevice extends BaseHybridDevice {
     // Setup climate sensing (temperature & humidity)
     await this.setupClimateSensing();
 
-    // Setup multi-protocol battery detection
-    await this.setupMultiProtocolBattery();
-
-    // Setup time synchronization
-    await this.setupTimeSync();
-
     // Setup backlight button control
     await this.setupBacklightButton();
 
-    this.log('[OK] ClimateMonitorDevice ready');
+    this.log('[CLIMATE-V4] ✅ ClimateMonitor ready (V4 ULTRA)');
     this.log(`   Power source: ${this.powerType || 'unknown'}`);
     this.log(`   Model: ${this.getData().manufacturerName}`);
+    this.log(`   Battery type: ${this.batteryManagerV4?.batteryType || 'unknown'}`);
+    this.log(`   Time sync: ${this.timeSyncManager ? 'enabled' : 'disabled'}`);
   }
 
   /**
@@ -524,9 +552,25 @@ class ClimateMonitorDevice extends BaseHybridDevice {
   }
 
   async onDeleted() {
-    this.log('ClimateMonitorDevice deleted');
+    this.log('[CLIMATE-V4] ClimateMonitorDevice deleted - cleanup...');
 
-    // Clear time sync interval
+    // 🆕 V4: Stop Time Sync Manager
+    if (this.timeSyncManager) {
+      this.timeSyncManager.cleanup();
+    }
+
+    // 🆕 V4: Stop Battery Manager V4
+    if (this.batteryManagerV4) {
+      this.batteryManagerV4.stopMonitoring();
+    }
+
+    // 🆕 V4: Stop DP Discovery
+    if (this.dpDiscovery && this.dpDiscovery.enabled) {
+      const report = this.dpDiscovery.stopDiscovery();
+      this.log('[CLIMATE-V4] Final DP discovery report saved');
+    }
+
+    // Clear legacy time sync interval
     if (this.timeSyncInterval) {
       clearInterval(this.timeSyncInterval);
     }
