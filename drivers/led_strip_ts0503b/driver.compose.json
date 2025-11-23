@@ -1,0 +1,40 @@
+{
+  "name": {
+    "en": "RGB LED Strip Controller (TS0503B)",
+    "fr": "Contrôleur LED RGB (TS0503B)"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3210_0zabbfa"
+    ],
+    "productId": [
+      "TS0503B"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          0x0300
+        ],
+        "bindings": [
+          6,
+          8,
+          0x0300
+        ]
+      }
+    }
+  },
+  "id": "led_strip_ts0503b"
+}
