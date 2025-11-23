@@ -1,0 +1,64 @@
+{
+  "name": {
+    "en": "Wireless Button (TS0044 - 4 buttons)",
+    "fr": "Bouton sans fil (TS0044 - 4 boutons)"
+  },
+  "class": "button",
+  "capabilities": [
+    "measure_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_xabckq1v",
+      "_TZ3000_vp6clf9d"
+    ],
+    "productId": [
+      "TS0044"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "2": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "3": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "4": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  },
+  "id": "button_ts0044"
+}
