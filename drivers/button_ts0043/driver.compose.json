@@ -1,0 +1,55 @@
+{
+  "name": {
+    "en": "Wireless Button (TS0043 - 3 buttons)",
+    "fr": "Bouton sans fil (TS0043 - 3 boutons)"
+  },
+  "class": "button",
+  "capabilities": [
+    "measure_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_vp6clf9d",
+      "_TZ3000_xabckq1v"
+    ],
+    "productId": [
+      "TS0043"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "2": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "3": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  },
+  "id": "button_ts0043"
+}
