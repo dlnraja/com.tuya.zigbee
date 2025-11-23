@@ -1,0 +1,25 @@
+{
+  "triggers": [
+    {
+      "id": "button_1_pressed",
+      "title": {
+        "en": "Button 1 pressed",
+        "fr": "Bouton 1 appuyé"
+      }
+    },
+    {
+      "id": "button_2_pressed",
+      "title": {
+        "en": "Button 2 pressed",
+        "fr": "Bouton 2 appuyé"
+      }
+    },
+    {
+      "id": "button_3_pressed",
+      "title": {
+        "en": "Button 3 pressed",
+        "fr": "Bouton 3 appuyé"
+      }
+    }
+  ]
+}
