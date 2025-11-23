@@ -291,8 +291,10 @@ class ClimateMonitorDevice extends BaseHybridDevice {
           }
         });
 
-        // Request initial battery status
-        await endpoint.clusters[61184].command('dataQuery', { dp: 101 }).catch(() => { });
+        // Request initial battery status (NEW API: dpValues instead of dp)
+        await endpoint.clusters[61184].command('dataQuery', {
+          dpValues: [{ dp: 101 }]
+        }).catch(() => { });
 
         this.log('[OK] Battery: Tuya Custom (cluster 61184, DP 101)');
         this.batteryMethod = 'tuya_custom';
