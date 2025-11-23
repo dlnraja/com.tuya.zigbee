@@ -3,6 +3,7 @@
 const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
 const TuyaDPMapper = require('../../lib/tuya/TuyaDPMapper');
 const BatteryManagerV4 = require('../../lib/BatteryManagerV4');
+const TuyaDPDeviceHelper = require('../../lib/TuyaDPDeviceHelper');
 
 /**
  * PresenceSensorRadarDevice - Unified Hybrid Driver
@@ -58,7 +59,7 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
 
       // Only setup standard Zigbee if NOT Tuya DP
       if (!this.isTuyaDevice) {
-        this.log('[RADAR] 🔧 Setting up standard Zigbee device...');
+        TuyaDPDeviceHelper.logClusterAction(this, 'configure');
         // THEN setup (zclNode now exists)
         await this.setupAttributeReporting();
 
@@ -67,6 +68,11 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
 
         // Setup sensor capabilities (SDK3)
         await this.registerLuminanceCapability();
+      } else {
+        // CURSOR PHASE 6: Skip standard ZCL config for Tuya DP devices
+        TuyaDPDeviceHelper.logClusterAction(this, 'skip');
+        this.log('[TUYA-DP] Device type:', TuyaDPDeviceHelper.getDeviceType(this));
+        this.log('[TUYA-DP] Behavior:', TuyaDPDeviceHelper.getExpectedBehavior(this));
       }
 
       // Safe set available
