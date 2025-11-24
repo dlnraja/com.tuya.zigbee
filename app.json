@@ -1,16 +1,16 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.0.1",
-  "lastPublishDatetime": "2025-11-24T00:00:00.000Z",
+  "version": "5.0.2",
+  "lastPublishDatetime": "2025-11-24T18:00:00.000Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.0.1 CURSOR Implementation: Ultra DP System + Tuya DP separation (no more timeouts!), 20 button drivers with alarm_battery, TuyaDPDeviceHelper module. 219 drivers, 18,200+ manufacturer IDs. BatteryManagerV4, TuyaDPMapper (22 patterns), DP Discovery. 100% local, Homey guidelines compliant. Production ready!",
-    "fr": "V5.0.1 Implémentation CURSOR: Système DP Ultra + séparation Tuya DP (plus de timeouts!), 20 button drivers avec alarm_battery, module TuyaDPDeviceHelper. 219 drivers, 18,200+ manufacturer IDs. BatteryManagerV4, TuyaDPMapper (22 patterns), DP Discovery. 100% local, conforme directives Homey."
+    "en": "V5.0.2 CRITICAL FIX: TS0601 initialization order corrected (no more crashes!). Ultra DP System + Tuya DP separation, 20 button drivers with alarm_battery, TuyaDPDeviceHelper module. 219 drivers, 18,200+ manufacturer IDs. BatteryManagerV4, TuyaDPMapper (22 patterns), DP Discovery. 100% local, Homey guidelines compliant. Production ready!",
+    "fr": "V5.0.2 CORRECTIF CRITIQUE: Ordre d'initialisation TS0601 corrigé (plus de crashes!). Système DP Ultra + séparation Tuya DP, 20 button drivers avec alarm_battery, module TuyaDPDeviceHelper. 219 drivers, 18,200+ manufacturer IDs. BatteryManagerV4, TuyaDPMapper (22 patterns), DP Discovery. 100% local, conforme directives Homey."
   },
   "category": "appliances",
   "permissions": [],
