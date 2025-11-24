@@ -2,8 +2,10 @@
 
 const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
 const TuyaDPMapper = require('../../lib/tuya/TuyaDPMapper');
+const TuyaDPDatabase = require('../../lib/tuya/TuyaDPDatabase');
 const BatteryManagerV4 = require('../../lib/BatteryManagerV4');
 const TuyaDPDeviceHelper = require('../../lib/TuyaDPDeviceHelper');
+const { initTuyaDpEngineSafe, hasValidEF00Manager, logEF00Status } = require('../../lib/tuya/TuyaEF00Base');
 
 /**
  * PresenceSensorRadarDevice - Unified Hybrid Driver
@@ -44,13 +46,10 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
 
       // THEN setup V4 systems AFTER base initialization
       if (isTS0601) {
-        // 🆕 v5.0.1: Auto DP Mapping (uses tuyaEF00Manager)
-        this.log('[RADAR-V4] 🤖 Starting auto DP mapping...');
-        await TuyaDPMapper.autoSetup(this, zclNode).catch(err => {
-          this.log('[RADAR-V4] ⚠️  Auto-mapping failed:', err.message);
-        });
+        // 🆕 v5.0.3: PHASE 1 - Safe EF00 Manager initialization
+        await this._initTuyaDpEngine(zclNode);
 
-        // 🆕 v5.0.1: Battery Manager V4
+        // 🆕 v5.0.3: Battery Manager V4 (PHASE 5 - battery pipeline)
         this.log('[RADAR-V4] 🔋 Starting Battery Manager V4...');
         this.batteryManagerV4 = new BatteryManagerV4(this, 'CR2032');
         await this.batteryManagerV4.startMonitoring().catch(err => {

@@ -2,8 +2,10 @@
 
 const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
 const TuyaDPMapper = require('../../lib/tuya/TuyaDPMapper');
+const TuyaDPDatabase = require('../../lib/tuya/TuyaDPDatabase');
 const BatteryManagerV4 = require('../../lib/BatteryManagerV4');
 const TuyaDPDeviceHelper = require('../../lib/TuyaDPDeviceHelper');
+const { initTuyaDpEngineSafe, hasValidEF00Manager, logEF00Status } = require('../../lib/tuya/TuyaEF00Base');
 
 /**
  * TuyaSoilTesterTempHumidDevice - Unified Hybrid Driver
@@ -44,13 +46,10 @@ class TuyaSoilTesterTempHumidDevice extends BaseHybridDevice {
 
       // THEN setup V4 systems AFTER base initialization
       if (isTS0601) {
-        // 🆕 v5.0.1: Auto DP Mapping (uses tuyaEF00Manager)
-        this.log('[SOIL-V4] 🤖 Starting auto DP mapping...');
-        await TuyaDPMapper.autoSetup(this, zclNode).catch(err => {
-          this.log('[SOIL-V4] ⚠️  Auto-mapping failed:', err.message);
-        });
+        // 🆕 v5.0.3: PHASE 1 - Safe EF00 Manager initialization
+        await this._initTuyaDpEngine(zclNode);
 
-        // 🆕 v5.0.1: Battery Manager V4
+        // 🆕 v5.0.3: Battery Manager V4 (PHASE 5 - battery pipeline)
         this.log('[SOIL-V4] 🔋 Starting Battery Manager V4...');
         this.batteryManagerV4 = new BatteryManagerV4(this, 'CR2032');
         await this.batteryManagerV4.startMonitoring().catch(err => {
@@ -92,13 +91,77 @@ class TuyaSoilTesterTempHumidDevice extends BaseHybridDevice {
   }
 
   /**
-   * DEPRECATED: Legacy Tuya DP engine (v4.x)
-   * v5.0.1: Now using TuyaDPMapper.autoSetup() instead
-   * Kept for backward compatibility only
+   * Initialize Tuya DP Engine with safe EF00 manager access
+   * v5.0.3 - PHASE 1: Safe initialization to prevent crashes
    */
-  async _initTuyaDpEngine() {
-    this.log('[SOIL] ⚠️  _initTuyaDpEngine() is deprecated, use TuyaDPMapper.autoSetup()');
-    // No-op - TuyaDPMapper handles everything now
+  async _initTuyaDpEngine(zclNode) {
+    try {
+      this.log('[SOIL] 🔧 Initializing Tuya DP engine...');
+
+      // PHASE 1: Use safe EF00 manager initialization
+      const manager = await initTuyaDpEngineSafe(this, zclNode);
+
+      if (!manager) {
+        this.log('[SOIL] ⚠️  EF00 manager not available, skipping DP setup');
+        this.log('[SOIL] ℹ️  Device will work with standard Zigbee if available');
+        return;
+      }
+
+      // Log manager status for diagnostics
+      logEF00Status(this);
+
+      // PHASE 3: Get DP configuration (from settings or database)
+      let dpConfig = null;
+      const dpConfigRaw = this.getSetting('tuya_dp_configuration');
+
+      if (dpConfigRaw && typeof dpConfigRaw === 'string') {
+        try {
+          dpConfig = JSON.parse(dpConfigRaw);
+          this.log('[SOIL] ✅ DP config loaded from settings');
+        } catch (e) {
+          this.error('[SOIL] ❌ Failed to parse tuya_dp_configuration JSON:', e);
+        }
+      }
+
+      // Fallback: Query central DP database
+      if (!dpConfig) {
+        dpConfig = TuyaDPDatabase.getProfileForDevice
+          ? TuyaDPDatabase.getProfileForDevice(this)
+          : null;
+
+        if (dpConfig) {
+          this.log('[SOIL] ✅ DP config loaded from database');
+        }
+      }
+
+      // If still no config, use safe defaults for soil sensor
+      if (!dpConfig) {
+        this.log('[SOIL] ℹ️  No DP config found, using safe defaults');
+        dpConfig = {
+          '1': 'measure_temperature',
+          '2': 'measure_humidity',
+          '3': 'measure_humidity.soil',
+          '4': 'measure_battery',
+          '5': 'alarm_contact'
+        };
+      }
+
+      this.log('[SOIL] 📊 DP Map:', JSON.stringify(dpConfig));
+
+      // Setup DP listeners with safe manager
+      await this.setupTuyaDPListeners(manager, dpConfig);
+
+      // Auto-setup with TuyaDPMapper
+      this.log('[SOIL-V4] 🤖 Starting auto DP mapping...');
+      await TuyaDPMapper.autoSetup(this, zclNode).catch(err => {
+        this.log('[SOIL-V4] ⚠️  Auto-mapping failed:', err.message);
+      });
+
+      this.log('[SOIL] ✅ Tuya DP engine initialized successfully');
+
+    } catch (err) {
+      this.error('[SOIL] ❌ Failed to init Tuya DP engine:', err);
+    }
   }
 
   /**
@@ -112,15 +175,19 @@ class TuyaSoilTesterTempHumidDevice extends BaseHybridDevice {
   }
 
   /**
-   * DEPRECATED: Legacy DP listener setup (v4.x)
-   * v5.0.1: TuyaDPMapper.autoSetup() handles all listener registration
-   * Kept for backward compatibility only
+   * Setup Tuya DP listeners for soil sensor
+   * v5.0.3 - PHASE 3: Safe DP listener setup with fallback
    */
-  async setupTuyaDPListeners() {
-    this.log('[SOIL] ⚠️  setupTuyaDPListeners() is deprecated, use TuyaDPMapper.autoSetup()');
-    // No-op - TuyaDPMapper handles everything now
+  async setupTuyaDPListeners(manager, dpConfig) {
+    // PHASE 3: Guard against missing manager
+    if (!manager || !hasValidEF00Manager(this)) {
+      this.log('[SOIL] ⚠️  EF00 manager missing in setupTuyaDPListeners, skipping');
+      return;
+    }
 
     try {
+      this.log('[SOIL] 🔌 Setting up Tuya DP listeners...');
+
       // Register DP listeners
       // DP 1 = Temperature (divide by 10)
       this.tuyaEF00Manager.on('dp-1', (value) => {
