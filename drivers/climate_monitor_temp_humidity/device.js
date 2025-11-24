@@ -34,13 +34,15 @@ class ClimateMonitorDevice extends BaseHybridDevice {
       this.usesTuyaDPBattery = true; // Battery via DP 4
       this.hasTuyaCluster = true;
       this.isTuyaDevice = true;
-
-      // Init Tuya DP engine BEFORE base
-      await this._initTuyaDpEngine();
     }
 
-    // Initialize base (auto power detection + dynamic capabilities)
+    // Initialize base FIRST (creates tuyaEF00Manager if TS0601)
     await super.onNodeInit({ zclNode }).catch(err => this.error(err));
+
+    // THEN setup V4 systems AFTER base initialization
+    if (isTS0601 && this.tuyaEF00Manager) {
+      this.log('[CLIMATE-V4] 🤖 TuyaEF00Manager available, DP events will be handled automatically');
+    }
 
     // Only setup standard Zigbee if NOT Tuya DP
     if (!this.isTuyaDevice) {
@@ -89,95 +91,48 @@ class ClimateMonitorDevice extends BaseHybridDevice {
   }
 
   /**
-   * Initialize Tuya DP engine with mapping from settings
-   * CRITICAL: Must be called BEFORE super.onNodeInit() for TS0601
+   * DEPRECATED: Legacy Tuya DP engine (v4.x)
+   * v5.0.1: Now using TuyaDPMapper.autoSetup() instead
+   * Kept for backward compatibility only
    */
   async _initTuyaDpEngine() {
-    this.log('[TS0601] 🔧 Initializing Tuya DP engine...');
-
-    const dpConfigRaw = this.getSetting('tuya_dp_configuration');
-    let dpMap = {};
-
-    try {
-      if (dpConfigRaw) dpMap = JSON.parse(dpConfigRaw);
-    } catch (err) {
-      this.error('[TS0601] Invalid tuya_dp_configuration JSON', err, dpConfigRaw);
-    }
-
-    this.dpMap = dpMap; // ex: { "1": "temperature", "2": "humidity", "4": "battery_percentage" }
-    this.log('[TS0601] DP Map loaded:', JSON.stringify(this.dpMap));
-
-    // Register with TuyaEF00Manager if available
-    if (this.tuyaEF00Manager) {
-      this.log('[TS0601] Registering with TuyaEF00Manager...');
-      // TuyaEF00Manager should emit dp-X events
-      Object.keys(this.dpMap).forEach(dpId => {
-        const eventName = `dp-${dpId}`;
-        this.tuyaEF00Manager.on(eventName, (value) => {
-          this._onDataPoint(parseInt(dpId), value);
-        });
-        this.log(`[TS0601] Listening to: ${eventName}`);
-      });
-    } else {
-      this.log('[TS0601] ⚠️  No TuyaEF00Manager - trying direct cluster access');
-      await this.setupTuyaDataPoints();
-    }
-
-    this.log('[TS0601] Tuya DP engine initialized with map:', this.dpMap);
+    this.log('[CLIMATE] ⚠️  _initTuyaDpEngine() is deprecated, use TuyaDPMapper.autoSetup()');
+    // No-op - TuyaDPMapper handles everything now
   }
 
   /**
-   * Handle individual DataPoint value
-   * Maps DP to capability using tuya_dp_configuration
+   * DEPRECATED: Legacy DP handler (v4.x)
+   * v5.0.1: TuyaDPMapper handles all DP mapping automatically
+   * Kept for backward compatibility only
    */
   _onDataPoint(dpId, value) {
-    const role = this.dpMap[String(dpId)];
-    this.log('[TS0601-CLIMATE] DP', dpId, 'role', role, 'value', value);
-
-    switch (role) {
-      case 'temperature': {
-        // souvent valeur ×10
-        const temp = value / 10;
-        this.setCapabilityValue('measure_temperature', temp).catch(this.error);
-        break;
-      }
-
-      case 'humidity': {
-        this.setCapabilityValue('measure_humidity', value).catch(this.error);
-        break;
-      }
-
-      case 'battery_percentage': {
-        this.setCapabilityValue('measure_battery', value).catch(this.error);
-        break;
-      }
-
-      case 'max_temp_alarm':
-      case 'min_temp_alarm':
-      case 'max_humidity_alarm':
-      case 'min_humidity_alarm':
-      case 'temp_unit_convert': {
-        // optionnel : stocker en settings / log debug
-        this.log(`[TS0601-CLIMATE] Alarm/Config DP ${dpId}:`, value);
-        break;
-      }
-
-      default:
-        this.log('[TS0601-CLIMATE] Unhandled DP', dpId, 'role', role, 'value', value);
-    }
+    this.log('[CLIMATE] ⚠️  Legacy _onDataPoint() called - TuyaDPMapper should handle this');
+    this.log('[CLIMATE] DP', dpId, '=', value);
   }
 
   /**
-   * Setup Tuya TS0601 DataPoints - Homey SDK3 Native Approach
-   * Fallback when TuyaEF00Manager not available
+   * DEPRECATED: Legacy DP listener setup (v4.x)
+   * v5.0.1: TuyaDPMapper.autoSetup() handles all listener registration
+   * Kept for backward compatibility only
    */
   async setupTuyaDataPoints() {
-    this.log('[TUYA] 🔧 Setting up Tuya DataPoint listeners (Homey SDK3)...');
+    this.log('[CLIMATE] ⚠️  setupTuyaDataPoints() is deprecated, use TuyaDPMapper.autoSetup()');
+
+    // Safety check to prevent null prototype error
+    if (!this.tuyaCluster) {
+      this.log('[TUYA] ⚠️  No tuyaCluster available');
+      return;
+    }
 
     try {
       this.log('[TUYA] 📌 Cluster:', this.tuyaCluster);
       this.log('[TUYA] 📌 Type:', typeof this.tuyaCluster);
-      this.log('[TUYA] 📌 Available methods:', Object.getOwnPropertyNames(Object.getPrototypeOf(this.tuyaCluster)));
+
+      // SAFETY: Check if prototype exists before accessing
+      const proto = Object.getPrototypeOf(this.tuyaCluster);
+      if (proto) {
+        this.log('[TUYA] 📌 Available methods:', Object.getOwnPropertyNames(proto));
+      }
 
       // Listen for dataReport command (Tuya devices send this)
       this.log('[TUYA] 📡 Registering dataReport listener...');
