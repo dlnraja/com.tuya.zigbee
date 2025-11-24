@@ -37,25 +37,26 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
         this.usesTuyaDPBattery = true; // Battery via DP (if present)
         this.hasTuyaCluster = true;
         this.isTuyaDevice = true;
+      }
 
-        // Init Tuya DP engine BEFORE base
-        await this._initTuyaDpEngine();
+      // Initialize base FIRST (creates tuyaEF00Manager if TS0601)
+      await super.onNodeInit({ zclNode }).catch(err => this.error(err));
 
-        // 🆕 AUDIT V2 VAGUE 2: Auto DP Mapping
+      // THEN setup V4 systems AFTER base initialization
+      if (isTS0601) {
+        // 🆕 v5.0.1: Auto DP Mapping (uses tuyaEF00Manager)
         this.log('[RADAR-V4] 🤖 Starting auto DP mapping...');
         await TuyaDPMapper.autoSetup(this, zclNode).catch(err => {
           this.log('[RADAR-V4] ⚠️  Auto-mapping failed:', err.message);
         });
 
-        // 🆕 AUDIT V2 VAGUE 2: Battery Manager V4
+        // 🆕 v5.0.1: Battery Manager V4
+        this.log('[RADAR-V4] 🔋 Starting Battery Manager V4...');
         this.batteryManagerV4 = new BatteryManagerV4(this, 'CR2032');
         await this.batteryManagerV4.startMonitoring().catch(err => {
           this.log('[RADAR-V4] ⚠️  Battery V4 init failed:', err.message);
         });
       }
-
-      // Initialize base (power detection + dynamic capabilities)
-      await super.onNodeInit({ zclNode }).catch(err => this.error(err));
 
       // Only setup standard Zigbee if NOT Tuya DP
       if (!this.isTuyaDevice) {

@@ -37,25 +37,26 @@ class TuyaSoilTesterTempHumidDevice extends BaseHybridDevice {
         this.usesTuyaDPBattery = true; // Battery via DP 4
         this.hasTuyaCluster = true;
         this.isTuyaDevice = true;
+      }
 
-        // Init Tuya DP engine BEFORE base
-        await this._initTuyaDpEngine();
+      // Initialize base FIRST (creates tuyaEF00Manager if TS0601)
+      await super.onNodeInit({ zclNode }).catch(err => this.error(err));
 
-        // 🆕 AUDIT V2 VAGUE 2: Auto DP Mapping
+      // THEN setup V4 systems AFTER base initialization
+      if (isTS0601) {
+        // 🆕 v5.0.1: Auto DP Mapping (uses tuyaEF00Manager)
         this.log('[SOIL-V4] 🤖 Starting auto DP mapping...');
         await TuyaDPMapper.autoSetup(this, zclNode).catch(err => {
           this.log('[SOIL-V4] ⚠️  Auto-mapping failed:', err.message);
         });
 
-        // 🆕 AUDIT V2 VAGUE 2: Battery Manager V4
+        // 🆕 v5.0.1: Battery Manager V4
+        this.log('[SOIL-V4] 🔋 Starting Battery Manager V4...');
         this.batteryManagerV4 = new BatteryManagerV4(this, 'CR2032');
         await this.batteryManagerV4.startMonitoring().catch(err => {
           this.log('[SOIL-V4] ⚠️  Battery V4 init failed:', err.message);
         });
       }
-
-      // Initialize base (power detection + dynamic capabilities)
-      await super.onNodeInit({ zclNode }).catch(err => this.error(err));
 
       // Only setup standard Zigbee if NOT Tuya DP
       if (!this.isTuyaDevice) {
@@ -91,107 +92,33 @@ class TuyaSoilTesterTempHumidDevice extends BaseHybridDevice {
   }
 
   /**
-   * Initialize Tuya DP engine with mapping from settings
-   * v4.9.342 - User patch implementation
+   * DEPRECATED: Legacy Tuya DP engine (v4.x)
+   * v5.0.1: Now using TuyaDPMapper.autoSetup() instead
+   * Kept for backward compatibility only
    */
   async _initTuyaDpEngine() {
-    const dpConfigRaw = this.getSetting('tuya_dp_configuration');
-    let dpMap = {};
-
-    try {
-      if (dpConfigRaw) {
-        dpMap = JSON.parse(dpConfigRaw);
-      }
-    } catch (err) {
-      this.error('[TS0601] Invalid tuya_dp_configuration JSON', err, dpConfigRaw);
-    }
-
-    this.dpMap = dpMap; // ex: { "1": "temperature", "2": "soil_humidity", "4": "battery_percentage" }
-    this.log('[TS0601] DP Map loaded:', JSON.stringify(this.dpMap));
-
-    // Register with TuyaEF00Manager if available
-    if (this.tuyaEF00Manager) {
-      this.log('[TS0601] Registering with TuyaEF00Manager...');
-      // TuyaEF00Manager should emit dp-X events
-      Object.keys(this.dpMap).forEach(dpId => {
-        const eventName = `dp-${dpId}`;
-        this.tuyaEF00Manager.on(eventName, (value) => {
-          this._onDataPoint(parseInt(dpId), value);
-        });
-        this.log(`[TS0601] Listening to: ${eventName}`);
-      });
-    } else {
-      this.log('[TS0601] ⚠️  No TuyaEF00Manager - trying fallback setup');
-      await this.setupTuyaDPListeners();
-    }
-
-    this.log('[TS0601] Tuya DP engine initialized with map:', this.dpMap);
+    this.log('[SOIL] ⚠️  _initTuyaDpEngine() is deprecated, use TuyaDPMapper.autoSetup()');
+    // No-op - TuyaDPMapper handles everything now
   }
 
   /**
-   * Handle individual DataPoint value
-   * Maps DP to capability using tuya_dp_configuration
+   * DEPRECATED: Legacy DP handler (v4.x)
+   * v5.0.1: TuyaDPMapper handles all DP mapping automatically
+   * Kept for backward compatibility only
    */
   _onDataPoint(dpId, value) {
-    const role = this.dpMap[String(dpId)];
-    this.log('[TS0601-SOIL] DP', dpId, 'role', role, 'value', value);
-
-    switch (role) {
-      case 'temperature': {
-        const temp = value / 10;
-        this.setCapabilityValue('measure_temperature', temp).catch(this.error);
-        break;
-      }
-
-      case 'soil_humidity': {
-        this.setCapabilityValue('measure_humidity.soil', value).catch(this.error);
-        break;
-      }
-
-      case 'battery_percentage': {
-        this.setCapabilityValue('measure_battery', value).catch(this.error);
-        break;
-      }
-
-      case 'battery_state': {
-        // tu peux mapper vers alarm_battery ou juste logger
-        this.log(`[TS0601-SOIL] Battery state DP ${dpId}:`, value);
-        break;
-      }
-
-      default:
-        this.log('[TS0601-SOIL] Unhandled DP', dpId, 'role', role, 'value', value);
-    }
+    this.log('[SOIL] ⚠️  Legacy _onDataPoint() called - TuyaDPMapper should handle this');
+    this.log('[SOIL] DP', dpId, '=', value);
   }
 
   /**
-   * Setup Tuya DP listeners for soil sensor (TS0601 devices)
-   * Fallback when TuyaEF00Manager not available
+   * DEPRECATED: Legacy DP listener setup (v4.x)
+   * v5.0.1: TuyaDPMapper.autoSetup() handles all listener registration
+   * Kept for backward compatibility only
    */
   async setupTuyaDPListeners() {
-    this.log('[SOIL] Setting up Tuya DP listeners...');
-
-    // CRITICAL FIX: Wait for tuyaEF00Manager to be initialized
-    // It's initialized in background, so we need to wait for it
-    if (!this.tuyaEF00Manager) {
-      this.log('[WARN] tuyaEF00Manager not created, device may not be TS0601');
-      throw new Error('tuyaEF00Manager not initialized');
-    }
-
-    // Wait for initialization to complete (max 8 seconds) - non-blocking fallback
-    let retries = 0;
-    while (!this.tuyaEF00Manager.tuyaCluster && retries < 80) {
-      await new Promise(resolve => setTimeout(resolve, 100));
-      retries++;
-    }
-
-    if (!this.tuyaEF00Manager.tuyaCluster) {
-      this.log('[WARN] Tuya EF00 Manager init timed out or not present, device may not be TS0601');
-      this.log('[INFO] Falling back to generic cluster parsing');
-      throw new Error('Tuya EF00 not available');
-    }
-
-    this.log('[SOIL] ✅ Tuya EF00 Manager is ready');
+    this.log('[SOIL] ⚠️  setupTuyaDPListeners() is deprecated, use TuyaDPMapper.autoSetup()');
+    // No-op - TuyaDPMapper handles everything now
 
     try {
       // Register DP listeners
