@@ -1,5 +1,46 @@
 # Changelog
 
+## [5.0.4] - 2025-11-25
+
+### 🔴 CRITICAL HOTFIX - Button/Remote Flows Fixed
+
+**Emergency fix based on diagnostic report 3ced0ade-a8bb-41a8-8e7c-017e3e7fa801**
+
+#### Bug Fixed:
+- ✅ **Button/Remote devices flows not working** (switch_wireless_1gang, TS0041)
+  - App was trying to configure onOff attribute reporting on button devices
+  - Buttons SEND commands, they don't RECEIVE state updates!
+  - This caused timeout errors during initialization
+  - Result: Flows didn't trigger when button pressed
+
+#### Root Cause:
+- Cluster auto-configurator didn't detect button/remote devices
+- Attempted to configure onOff/level reporting like normal switches
+- Wireless buttons (TS0041-TS0044, TS0001-TS0004) timed out
+- Device initialization failed → flows broken
+
+#### Solution:
+- Added button/remote detection in `lib/utils/cluster-configurator.js`
+- Skip onOff/level reporting for button/remote/wireless switch devices
+- Detection by driver name (wireless, button, remote) AND model ID
+- Buttons only use command sending (no attribute reporting needed)
+
+#### Files Modified:
+- `lib/utils/cluster-configurator.js` - Added isButtonDevice detection and skip logic
+
+#### Impact:
+- 🟢 All wireless button/remote devices now initialize correctly
+- 🟢 Flows trigger properly when buttons pressed
+- 🟢 No more timeout errors on button initialization
+- 🟢 Battery-powered wireless switches work as expected
+
+#### Affected Devices:
+- All switch_wireless_* drivers (1-4 gang)
+- All button_* drivers
+- Model IDs: TS0041, TS0042, TS0043, TS0044, TS0001-TS0004
+
+---
+
 ## [5.0.3] - 2025-11-24
 
 ### 🔧 ULTRA-HOTFIX - TuyaEF00Base Module & 6-Phase Cursor Implementation
