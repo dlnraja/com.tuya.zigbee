@@ -1,5 +1,77 @@
 # Changelog
 
+## [5.0.5] - 2025-11-25
+
+### 🎯 FLOWS & STABILITY PACK - Complete Button/Remote Support
+
+**Comprehensive fix for wireless buttons + IAS Zone stability**
+
+#### 🎛️ Button/Remote Flows - NOW WORKING!
+
+**Problem:** Wireless buttons (TS0041-TS0044) didn't trigger flows
+**Root Cause:** Buttons SEND commands but app tried to configure attribute reporting
+**Impact:** All wireless button/remote devices couldn't be used in flows
+
+**Solution:**
+- ✅ Created `lib/ButtonRemoteManager.js` (180 lines)
+  - Binds to onOff/levelControl/scenes clusters
+  - Listens for ZCL COMMANDS (not attributes!)
+  - Translates to Homey flow triggers
+- ✅ Added flow trigger card: "Button [[button]] [[scene]] pressed"
+  - Supports: single, double, long, dim_up, dim_down, dim_stop
+  - Works with all switch_wireless_* drivers
+- ✅ Fixed `drivers/switch_wireless_1gang/device.js`
+  - Removed duplicate onNodeInit calls
+  - Integrated ButtonRemoteManager.attach()
+  - Flows now trigger correctly!
+
+**Files Modified:**
+- `lib/ButtonRemoteManager.js` - NEW: Button/remote command manager
+- `app.json` - Added "remote_button_pressed" flow card
+- `drivers/switch_wireless_1gang/device.js` - ButtonRemoteManager integration
+
+#### 🔐 IAS Zone - Startup Resilience
+
+**Problem:** Crash "Zigbee is aan het opstarten" during Homey boot
+**Root Cause:** IAS Zone enrollment attempted before Zigbee stack ready
+
+**Solution:**
+- ✅ Detect "Zigbee is starting up" error
+- ✅ Auto-retry after 30s delay
+- ✅ Graceful degradation (no crash)
+- ✅ Cleanup timeout on device deletion
+
+**Files Modified:**
+- `drivers/motion_sensor_radar_mmwave/device.js` - IAS Zone retry logic
+
+#### 📊 Impact
+
+**Wireless Buttons/Remotes:**
+- 🟢 TS0041-TS0044 flows now work
+- 🟢 TS0001-TS0004 flows now work
+- 🟢 All switch_wireless_* drivers fixed
+- 🟢 Single/double/long press detected
+
+**IAS Zone:**
+- 🟢 No more crashes during Homey startup
+- 🟢 Auto-retry ensures eventual enrollment
+- 🟢 Radar motion sensors stable
+
+#### 🎯 Affected Devices
+
+**Button/Remote Drivers:**
+- switch_wireless_1gang (TS0041)
+- switch_wireless_2gang (TS0042)
+- switch_wireless_3gang (TS0043)
+- switch_wireless_4gang (TS0044)
+- button_wireless_* (all variants)
+
+**IAS Zone Devices:**
+- motion_sensor_radar_mmwave
+- Other IAS Zone sensors
+
+---
+
 ## [5.0.4] - 2025-11-25
 
 ### 🔴 CRITICAL HOTFIX - Button/Remote Flows Fixed
