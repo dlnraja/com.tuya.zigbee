@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.0.4",
+  "version": "5.0.5",
   "lastPublishDatetime": "2025-11-24T19:00:00.000Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -25,6 +25,118 @@
   "brandColor": "#00E6A0",
   "flow": {
     "triggers": [
+      {
+        "id": "remote_button_pressed",
+        "title": {
+          "en": "Button pressed",
+          "fr": "Bouton appuyé"
+        },
+        "titleFormatted": {
+          "en": "Button [[button]] [[scene]] pressed",
+          "fr": "Bouton [[button]] [[scene]] appuyé"
+        },
+        "hint": {
+          "en": "Triggered when a wireless button/remote is pressed. Scene can be: single, double, long, dim_up, dim_down, scene_1, etc.",
+          "fr": "Déclenché quand un bouton/télécommande sans fil est pressé. Scène peut être: single, double, long, dim_up, dim_down, scene_1, etc."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wireless_1gang|switch_wireless_2gang|switch_wireless_3gang|switch_wireless_4gang|button_wireless_1|button_wireless_2|button_wireless_3|button_wireless_4"
+          },
+          {
+            "name": "button",
+            "type": "dropdown",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Button 1",
+                  "fr": "Bouton 1"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Button 2",
+                  "fr": "Bouton 2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Button 3",
+                  "fr": "Bouton 3"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Button 4",
+                  "fr": "Bouton 4"
+                }
+              }
+            ]
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "title": {
+              "en": "Action",
+              "fr": "Action"
+            },
+            "values": [
+              {
+                "id": "single",
+                "label": {
+                  "en": "Single press",
+                  "fr": "Appui simple"
+                }
+              },
+              {
+                "id": "double",
+                "label": {
+                  "en": "Double press",
+                  "fr": "Double appui"
+                }
+              },
+              {
+                "id": "long",
+                "label": {
+                  "en": "Long press",
+                  "fr": "Appui long"
+                }
+              },
+              {
+                "id": "dim_up",
+                "label": {
+                  "en": "Dim up",
+                  "fr": "Augmenter"
+                }
+              },
+              {
+                "id": "dim_down",
+                "label": {
+                  "en": "Dim down",
+                  "fr": "Diminuer"
+                }
+              },
+              {
+                "id": "dim_stop",
+                "label": {
+                  "en": "Dim stop",
+                  "fr": "Arrêter"
+                }
+              }
+            ]
+          }
+        ]
+      },
       {
         "id": "air_quality_comprehensive_comprehensive_air_monitor_measure_temperature_changed",
         "title": {
