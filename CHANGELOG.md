@@ -1,5 +1,52 @@
 # Changelog
 
+## [5.0.8] - 2025-11-26
+
+### 🐛 BUG FIXES - GitHub Issues & Community Forum Feedback
+
+**Based on GitHub issues #75, #76, #77, #78 and Homey Community Forum reports**
+
+#### Issue #78: TS0601_TZE200_9yapgbuv Incorrectly Defined as Sound Controller
+- **Problem:** ZTH02 temp/humidity sensor was being paired as "Sound Controller"
+- **Fix:** Removed `_TZE200_9yapgbuv` from `sound_controller` driver
+- **Result:** Device now pairs correctly with `climate_monitor_temp_humidity`
+
+#### Issue #77: Avatto TRV06 Thermostat Radiator Valve Not Recognized
+- **Problem:** `_TZE200_hvaxb2tc` TRV paired as "Unknown Zigbee Device"
+- **Fix:** Added 25+ TRV manufacturer IDs to `thermostat_trv_tuya` driver:
+  - `_TZE200_hvaxb2tc`, `_TZE200_aoclfnxz`, `_TZE200_kly8gjlz`, `_TZE200_kds0pqet`
+  - `_TZE200_bvu2wnxz`, `_TZE200_sur6q7ko`, `_TZE200_lllliz3p`, `_TZE200_mudxchsu`
+  - `_TZE200_hue3yfsn`, `_TZE200_lnbfnyxd`, `_TZE200_wlosfena`, `_TZE200_cwnjrr72`
+  - `_TZE200_7yoranx2`, `_TZE200_e9ba97vf`, `_TZE200_husqqvux`, `_TZE200_kfvq6avy`
+  - `_TZE200_cpmgn2cf`, `_TZE204_cjbofhxw`, and more
+- **Result:** Avatto TRV06 and many other TRVs now pair correctly
+
+#### Issue #76: TS0044 4-Button Remote Not Working
+- **Problem:** `_TZ3000_u3nv1jwk` 4-button remote paired as generic device
+- **Fix:** Added 6 new manufacturer IDs to `button_ts0044` driver:
+  - `_TZ3000_u3nv1jwk`, `_TZ3000_a7ouggvs`, `_TZ3000_rrjr1q0u`
+  - `_TZ3000_abci1hiu`, `_TZ3000_dfgbtub0`, `_TZ3000_w4thianr`
+- **Result:** 4-button scene switches now pair with correct driver
+
+#### Issue #75 & Forum: ZG-204ZL Motion Sensor
+- **Status:** Already supported in `motion_sensor_multi` driver
+- **Verification:** HOBEIAN manufacturer and ZG-204ZL product ID present
+- **Note:** If pairing as generic, try removing and re-pairing after update
+
+#### Files Modified:
+- `drivers/sound_controller/driver.compose.json` - Removed incorrect manufacturer ID
+- `drivers/thermostat_trv_tuya/driver.compose.json` - Added 25+ TRV IDs
+- `drivers/button_ts0044/driver.compose.json` - Added 6 new manufacturer IDs
+- `app.json` - Version 5.0.8, updated descriptions
+
+#### Impact:
+- 🟢 TS0601 temp/humidity sensors pair correctly
+- 🟢 Avatto TRV06 and other TRVs fully supported
+- 🟢 TS0044 4-button remotes work out of the box
+- 🟢 Better device recognition from community feedback
+
+---
+
 ## [5.0.7] - 2025-11-26
 
 ### 🚀 NEW FEATURE - Zigbee Green Power & 2025 Devices Support
