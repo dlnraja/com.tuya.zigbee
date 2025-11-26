@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.0.6",
+  "version": "5.0.7",
   "lastPublishDatetime": "2025-11-24T19:00:00.000Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.0.3 ULTRA-HOTFIX: TuyaEF00Base module + hardened DP config (bulletproof!). TS0601 init order fixed, null-safe DP setup, battery pipeline guaranteed. Ultra DP System, 20 button drivers with alarm_battery, TuyaDPDeviceHelper. 219 drivers, 18,200+ manufacturer IDs. BatteryManagerV4, TuyaDPMapper (22 patterns). 100% local, production ready!",
-    "fr": "V5.0.3 ULTRA-CORRECTIF: Module TuyaEF00Base + config DP sécurisée (incassable!). Ordre init TS0601 fixé, setup DP null-safe, batterie garantie. Système DP Ultra, 20 button drivers avec alarm_battery, TuyaDPDeviceHelper. 219 drivers, 18,200+ manufacturer IDs. BatteryManagerV4, TuyaDPMapper (22 patterns). 100% local, production!"
+    "en": "V5.0.7 NEW: Zigbee Green Power & 2025 Devices! GreenPowerManager for energy-harvesting switches (Philips Hue Tap, Friends of Hue, Linptech). NewDevices2025 database (50+ new Tuya/Aqara/IKEA models). Zigbee 4.0 ready. 219 drivers, 18,200+ manufacturer IDs. BatteryManagerV4, TuyaDPMapper, ButtonRemoteManager. 100% local!",
+    "fr": "V5.0.7 NOUVEAU: Zigbee Green Power & Appareils 2025! GreenPowerManager pour interrupteurs auto-alimentés (Philips Hue Tap, Friends of Hue, Linptech). Base NewDevices2025 (50+ nouveaux modèles Tuya/Aqara/IKEA). Prêt Zigbee 4.0. 219 drivers, 18,200+ manufacturer IDs. BatteryManagerV4, TuyaDPMapper, ButtonRemoteManager. 100% local!"
   },
   "category": "appliances",
   "permissions": [],
@@ -131,6 +131,101 @@
                 "label": {
                   "en": "Dim stop",
                   "fr": "Arrêter"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "green_power_action",
+        "title": {
+          "en": "Green Power action received",
+          "fr": "Action Green Power reçue"
+        },
+        "titleFormatted": {
+          "en": "[[action_type]] action from Green Power device",
+          "fr": "Action [[action_type]] du device Green Power"
+        },
+        "hint": {
+          "en": "Triggered when a Green Power device (energy-harvesting switch like Philips Hue Tap, Friends of Hue, Linptech self-powered) sends an action.",
+          "fr": "Déclenché quand un device Green Power (interrupteur auto-alimenté comme Philips Hue Tap, Friends of Hue, Linptech) envoie une action."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=green_power_switch"
+          },
+          {
+            "name": "action_type",
+            "type": "dropdown",
+            "title": {
+              "en": "Action type",
+              "fr": "Type d'action"
+            },
+            "values": [
+              {
+                "id": "on",
+                "label": {
+                  "en": "On",
+                  "fr": "Allumer"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Éteindre"
+                }
+              },
+              {
+                "id": "toggle",
+                "label": {
+                  "en": "Toggle",
+                  "fr": "Basculer"
+                }
+              },
+              {
+                "id": "dim_up",
+                "label": {
+                  "en": "Dim up",
+                  "fr": "Augmenter"
+                }
+              },
+              {
+                "id": "dim_down",
+                "label": {
+                  "en": "Dim down",
+                  "fr": "Diminuer"
+                }
+              },
+              {
+                "id": "scene_0",
+                "label": {
+                  "en": "Scene 0",
+                  "fr": "Scène 0"
+                }
+              },
+              {
+                "id": "scene_1",
+                "label": {
+                  "en": "Scene 1",
+                  "fr": "Scène 1"
+                }
+              },
+              {
+                "id": "scene_2",
+                "label": {
+                  "en": "Scene 2",
+                  "fr": "Scène 2"
+                }
+              },
+              {
+                "id": "scene_3",
+                "label": {
+                  "en": "Scene 3",
+                  "fr": "Scène 3"
                 }
               }
             ]

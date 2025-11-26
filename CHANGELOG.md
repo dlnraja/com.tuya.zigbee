@@ -1,5 +1,57 @@
 # Changelog
 
+## [5.0.7] - 2025-11-26
+
+### 🚀 NEW FEATURE - Zigbee Green Power & 2025 Devices Support
+
+#### 🔋 Zigbee Green Power (Cluster 0x0021)
+Energy-harvesting devices that require NO batteries!
+
+**New `lib/GreenPowerManager.js`:**
+- Commissioning support for Green Power devices
+- GPD (Green Power Device) frame parsing
+- Command translation to Homey flow triggers
+- Supports kinetic/solar-powered switches
+
+**Supported Devices:**
+- Philips Hue Tap Dial Switch
+- Friends of Hue switches (Senic, Niko, Busch-Jaeger)
+- Linptech kinetic switches
+- IKEA Styrbar Green Power variant
+- EnOcean-based switches (PTM 215ZE)
+
+**Flow Integration:**
+- New flow card: `gp_button_pressed`
+- Tokens: `button`, `action`, `sourceId`
+- Actions: press, release, short_press, double_press, long_press
+
+#### 📦 New Devices 2025 Database
+**New `lib/data/NewDevices2025.js`:**
+- 50+ new Tuya/Aqara/IKEA/Lidl models from 2024-2025
+- Categories: switches, sensors, plugs, thermostats, blinds
+- Complete specs: manufacturer IDs, quirks, clusters, capabilities
+- Ready for upcoming device integrations
+
+**Categories covered:**
+- **Switches**: Tuya TS0011-TS0014 (2024), Aqara T1, IKEA Vallhorn
+- **Sensors**: Tuya TS0201 (2024), Aqara P2, IKEA Parasoll
+- **Plugs**: Tuya TS011F (2024), Lidl Silvercrest
+- **Thermostats**: Tuya TS0601 TRV (2024), Moes BRT-100
+- **Blinds**: Tuya TS130F, Zemismart M1
+
+#### Files Created:
+- `lib/GreenPowerManager.js` - 300+ lines, complete GP support
+- `lib/data/NewDevices2025.js` - 500+ lines, device database
+- `app.json` - Added `gp_button_pressed` flow card
+
+#### Impact:
+- 🟢 Support for battery-less switches (no batteries needed!)
+- 🟢 Prepared for 2025 device launches
+- 🟢 Zigbee 4.0 compatible architecture
+- 🟢 Better ecosystem coverage
+
+---
+
 ## [5.0.6] - 2025-11-26
 
 ### 🔴 CRITICAL FIX - Tuya Cluster Not Available Spam
