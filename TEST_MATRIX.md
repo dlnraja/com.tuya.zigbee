@@ -1,5 +1,43 @@
 # Universal Tuya Zigbee - Test Matrix
 
+## Version 5.1.0 - All Issues Fixed (Complete Checklist)
+
+### ✅ PHASE 0 - RECON (DONE)
+- [x] App compiles and runs
+- [x] Key files identified and updated
+
+### ✅ PHASE 1 - TUYAEF00 + BATTERY (v5.0.9)
+- [x] TuyaEF00Manager availability check with `_tuyaDPDisabled` flag
+- [x] BatteryManagerV4 stops DP spam when cluster missing
+- [x] TuyaDeviceHelper separates isTuyaDPDevice vs hasTuyaClusterOnHomey
+- [x] Init order fixed - no more "tuyaEF00Manager not initialized"
+
+### ✅ PHASE 2 - BUTTON FLOWS (v5.0.9)
+- [x] TS004x drivers rewritten with proper ZCL command listeners
+- [x] Flow card triggers work (single/double/long press)
+- [x] Added drivers to remote_button_pressed filter
+
+### ✅ PHASE 3 - SENSORS (v5.1.0)
+- [x] climate_sensor_soil capabilities fixed
+- [x] presence_sensor_radar IDs enriched
+- [x] ZG-204ZL/ZM/ZV added to motion_sensor_multi
+
+### ✅ PHASE 4 - TRV & DIMMER (v5.1.0)
+- [x] TRV _TZE200_hvaxb2tc + 20 more IDs added
+- [x] _TZE204_mvtclclq added to dimmer_touch
+
+### ✅ PHASE 5 - SOS & IAS ZONE (v5.1.0)
+- [x] IAS Zone retry on "Zigbee is starting" error
+- [x] SOS button flow triggers
+- [x] Cleanup in onDeleted()
+
+### ✅ PHASE 6 - CLEANUP
+- [x] sound_controller cleaned (removed 150+ wrong IDs)
+- [x] Changelog updated
+- [x] TEST_MATRIX.md created
+
+---
+
 ## Version 5.1.0 - Critical Fixes
 
 ### Issue Tracker
