@@ -24,9 +24,13 @@
   - `_TZE200_qc4fpmcn`, `_TZE200_5toc8efa`, `_TZE200_ggog7ooh`
   - `_TZE204_aoclfnxz`, `_TZE204_ckud7u2l`, `_TZE204_2ekuz3dz`
 
-##### Issue #78: _TZE200_9yapgbuv (Wrong Device Type)
-- Removed from sound_controller (was incorrectly mapped)
-- Properly in `climate_monitor_temp_humidity` driver
+##### Issue #78: _TZE200_9yapgbuv (Wrong Device Type) - CRITICAL FIX
+- **Removed 150+ INCORRECT manufacturer IDs from sound_controller**
+- These IDs belonged to: climate sensors, presence sensors, TRVs, motion sensors
+- `_TZE200_9yapgbuv` is now correctly in `climate_monitor_temp_humidity`
+- sound_controller now only has 6 valid chime/siren IDs
+- Fixed class: `button` → `speaker`
+- Fixed capabilities: removed battery, added volume_set
 
 #### Driver Enrichment (from JohanBendz/Zigbee2MQTT)
 
