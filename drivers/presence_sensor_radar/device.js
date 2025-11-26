@@ -5,6 +5,7 @@ const TuyaDPMapper = require('../../lib/tuya/TuyaDPMapper');
 const TuyaDPDatabase = require('../../lib/tuya/TuyaDPDatabase');
 const BatteryManagerV4 = require('../../lib/BatteryManagerV4');
 const TuyaDPDeviceHelper = require('../../lib/TuyaDPDeviceHelper');
+const TuyaDeviceHelper = require('../../lib/utils/TuyaDeviceHelper');
 const { initTuyaDpEngineSafe, hasValidEF00Manager, logEF00Status } = require('../../lib/tuya/TuyaEF00Base');
 
 /**
@@ -46,12 +47,20 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
 
       // THEN setup V4 systems AFTER base initialization
       if (isTS0601) {
+        // v5.0.9: Log device analysis FIRST
+        TuyaDeviceHelper.logDeviceInfo(this, zclNode);
+
         // 🆕 v5.0.3: PHASE 1 - Safe EF00 Manager initialization
         await this._initTuyaDpEngine(zclNode);
 
-        // 🆕 v5.0.3: Battery Manager V4 (PHASE 5 - battery pipeline)
+        // v5.0.9: Battery Manager V4 with proper useTuyaDP flag
+        // Only enable Tuya DP battery if cluster is actually available
         this.log('[RADAR-V4] 🔋 Starting Battery Manager V4...');
-        this.batteryManagerV4 = new BatteryManagerV4(this, 'CR2032');
+        this.log(`[RADAR-V4] Tuya cluster available: ${this._tuyaClusterAvailable}`);
+
+        this.batteryManagerV4 = new BatteryManagerV4(this, 'CR2032', {
+          useTuyaDP: this._tuyaClusterAvailable === true
+        });
         await this.batteryManagerV4.startMonitoring().catch(err => {
           this.log('[RADAR-V4] ⚠️  Battery V4 init failed:', err.message);
         });
