@@ -4,7 +4,7 @@ const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
 const TuyaDPMapper = require('../../lib/tuya/TuyaDPMapper');
 const TuyaDPDatabase = require('../../lib/tuya/TuyaDPDatabase');
 const BatteryManagerV4 = require('../../lib/BatteryManagerV4');
-const TuyaDPDeviceHelper = require('../../lib/TuyaDPDeviceHelper');
+const TuyaDPDeviceHelper = require('../../lib/tuya/TuyaDPDeviceHelper');
 const TuyaDeviceHelper = require('../../lib/utils/TuyaDeviceHelper');
 const { initTuyaDpEngineSafe, hasValidEF00Manager, logEF00Status } = require('../../lib/tuya/TuyaEF00Base');
 
