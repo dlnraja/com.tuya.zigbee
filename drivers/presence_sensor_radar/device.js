@@ -95,53 +95,102 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
 
 
   /**
-   * Initialize Tuya DP engine with mapping from settings
-   * v4.9.342 - User patch implementation
+   * Initialize Tuya DP engine with safe EF00 manager access
+   * v5.0.6 - CRITICAL FIX: Use initTuyaDpEngineSafe() like climate_sensor_soil
    */
-  async _initTuyaDpEngine() {
-    const dpConfigRaw = this.getSetting('tuya_dp_configuration');
-    const dpDebugMode = this.getSetting('dp_debug_mode');
-    let dpMap = {};
-
+  async _initTuyaDpEngine(zclNode) {
     try {
-      if (dpConfigRaw) {
-        dpMap = JSON.parse(dpConfigRaw);
+      this.log('[RADAR] 🔧 Initializing Tuya DP engine...');
+
+      // v5.0.6: PHASE 1 - Safe EF00 Manager initialization
+      const manager = await initTuyaDpEngineSafe(this, zclNode);
+
+      if (!manager) {
+        this.log('[RADAR] ⚠️  EF00 manager not available, skipping DP setup');
+        this.log('[RADAR] ℹ️  Device will work with standard Zigbee if available');
+        // Mark that Tuya cluster is NOT available for BatteryManagerV4
+        this._tuyaClusterAvailable = false;
+        return;
       }
-    } catch (err) {
-      this.error('[TS0601] Invalid tuya_dp_configuration JSON', err, dpConfigRaw);
-    }
 
-    this.dpMap = dpMap;
-    this.dpDebugMode = dpDebugMode;
-    this.log('[TS0601] DP Map loaded:', JSON.stringify(this.dpMap));
-    this.log('[TS0601] Debug mode:', dpDebugMode);
+      // Mark that Tuya cluster IS available
+      this._tuyaClusterAvailable = true;
 
-    // Register with TuyaEF00Manager if available
-    if (this.tuyaEF00Manager) {
-      this.log('[TS0601] Registering with TuyaEF00Manager...');
+      // Log manager status for diagnostics
+      logEF00Status(this);
+
+      // Get DP configuration from settings or database
+      const dpConfigRaw = this.getSetting('tuya_dp_configuration');
+      const dpDebugMode = this.getSetting('dp_debug_mode');
+      let dpMap = {};
+
+      try {
+        if (dpConfigRaw) {
+          dpMap = JSON.parse(dpConfigRaw);
+        }
+      } catch (err) {
+        this.error('[RADAR] Invalid tuya_dp_configuration JSON:', err.message);
+      }
+
+      // Fallback to database if no settings
+      if (!dpMap || !Object.keys(dpMap).length) {
+        dpMap = TuyaDPDatabase.getProfileForDevice
+          ? TuyaDPDatabase.getProfileForDevice(this)
+          : null;
+
+        if (dpMap) {
+          this.log('[RADAR] ✅ DP config loaded from database');
+        }
+      }
+
+      // Use safe defaults for presence sensor if nothing found
+      if (!dpMap || !Object.keys(dpMap).length) {
+        this.log('[RADAR] ℹ️  No DP config found, using safe defaults for radar');
+        dpMap = {
+          '1': 'presence',
+          '4': 'battery_percentage',
+          '9': 'sensitivity',
+          '10': 'detection_delay',
+          '12': 'distance'
+        };
+      }
+
+      this.dpMap = dpMap;
+      this.dpDebugMode = dpDebugMode;
+      this.log('[RADAR] 📊 DP Map:', JSON.stringify(this.dpMap));
+      this.log('[RADAR] Debug mode:', dpDebugMode);
+
+      // Register with TuyaEF00Manager
+      this.log('[RADAR] 🔌 Registering DP listeners...');
 
       // If debug mode, listen to ALL DPs
       if (dpDebugMode) {
-        this.log('[TS0601] 🐛 DEBUG MODE: Listening to ALL DP events');
-        // Listen to raw dataReport for debugging
-        this.tuyaEF00Manager.on('dataReport', (data) => {
-          this.log('[TS0601-RADAR][DP-DEBUG] Raw dataReport:', JSON.stringify(data));
+        this.log('[RADAR] 🐛 DEBUG MODE: Listening to ALL DP events');
+        manager.on('dataReport', (data) => {
+          this.log('[RADAR-DEBUG] Raw dataReport:', JSON.stringify(data));
         });
       }
 
       // Register listeners for known DPs
       Object.keys(this.dpMap).forEach(dpId => {
         const eventName = `dp-${dpId}`;
-        this.tuyaEF00Manager.on(eventName, (value) => {
+        manager.on(eventName, (value) => {
           this._onDataPoint(parseInt(dpId), value);
         });
-        this.log(`[TS0601] Listening to: ${eventName}`);
+        this.log(`[RADAR] ✅ Listening: ${eventName} → ${this.dpMap[dpId]}`);
       });
-    } else {
-      this.log('[TS0601] ⚠️  No TuyaEF00Manager - direct cluster access needed');
-    }
 
-    this.log('[TS0601] Tuya DP engine initialized with map:', this.dpMap);
+      // Auto-setup with TuyaDPMapper
+      await TuyaDPMapper.autoSetup(this, zclNode).catch(err => {
+        this.log('[RADAR] ⚠️  Auto-mapping failed:', err.message);
+      });
+
+      this.log('[RADAR] ✅ Tuya DP engine initialized successfully');
+
+    } catch (err) {
+      this.error('[RADAR] ❌ Failed to init Tuya DP engine:', err);
+      this._tuyaClusterAvailable = false;
+    }
   }
 
   /**

@@ -1,5 +1,67 @@
 # Changelog
 
+## [5.0.6] - 2025-11-26
+
+### 🔴 CRITICAL FIX - Tuya Cluster Not Available Spam
+
+**Based on diagnostic report 497ccbcc-18e0-4c43-a4c9-eb0a4ae0fb5a**
+
+#### Bug Fixed:
+- ✅ **"Tuya cluster not available" error spam in logs**
+  - BatteryManagerV4 was spamming requestDP() even when Tuya cluster not attached
+  - Errors appeared every 5 minutes for presence_sensor_radar, climate_sensor_soil
+  - Root cause: Drivers missing proper Tuya cluster availability flag
+
+#### Root Cause Analysis:
+```
+Error: Tuya cluster not available
+  at TuyaEF00Manager.requestDP (lib/tuya/TuyaEF00Manager.js:371)
+  at BatteryManagerV4.tryTuyaDP (lib/BatteryManagerV4.js:296)
+```
+- `presence_sensor_radar` was NOT using `initTuyaDpEngineSafe()` (missed in v5.0.3)
+- `TuyaEF00Manager.requestDP()` was throwing errors instead of returning false
+- `BatteryManagerV4` was polling even when cluster not available
+
+#### Solution:
+1. **Fixed `presence_sensor_radar/device.js`:**
+   - Now uses `initTuyaDpEngineSafe()` like other TS0601 drivers
+   - Sets `_tuyaClusterAvailable` flag for BatteryManagerV4
+
+2. **Fixed `TuyaEF00Manager.requestDP()`:**
+   - No longer throws errors when cluster missing
+   - Logs once per session instead of spamming
+   - Returns false gracefully
+
+3. **Fixed `BatteryManagerV4`:**
+   - Checks `_tuyaClusterAvailable` flag before polling
+   - Stops polling if initial requests fail
+   - No more error spam in logs
+
+4. **Added flag to other drivers:**
+   - `climate_sensor_soil/device.js` - added `_tuyaClusterAvailable`
+   - `climate_monitor_temp_humidity/device.js` - added `_tuyaClusterAvailable`
+
+#### Files Modified:
+- `drivers/presence_sensor_radar/device.js` - Complete rewrite of `_initTuyaDpEngine()`
+- `lib/tuya/TuyaEF00Manager.js` - Graceful handling of missing cluster
+- `lib/BatteryManagerV4.js` - Check cluster availability before polling
+- `drivers/climate_sensor_soil/device.js` - Added `_tuyaClusterAvailable` flag
+- `drivers/climate_monitor_temp_humidity/device.js` - Added `_tuyaClusterAvailable` flag
+
+#### Impact:
+- 🟢 No more error spam in logs
+- 🟢 Battery devices work correctly (passive reporting)
+- 🟢 Cleaner diagnostic reports
+- 🟢 Better user experience
+
+#### Affected Devices:
+- presence_sensor_radar (TS0601, _TZE200_rhgsbacq)
+- climate_sensor_soil (TS0601)
+- climate_monitor_temp_humidity (TS0601)
+- All TS0601 Tuya DP devices
+
+---
+
 ## [5.0.5] - 2025-11-25
 
 ### 🎯 FLOWS & STABILITY PACK - Complete Button/Remote Support
