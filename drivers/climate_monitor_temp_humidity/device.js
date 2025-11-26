@@ -108,8 +108,13 @@ class ClimateMonitorDevice extends BaseHybridDevice {
       if (!manager) {
         this.log('[CLIMATE] ⚠️  EF00 manager not available, skipping DP setup');
         this.log('[CLIMATE] ℹ️  Device will work with standard Zigbee if available');
+        // v5.0.6: Mark that Tuya cluster is NOT available for BatteryManagerV4
+        this._tuyaClusterAvailable = false;
         return;
       }
+
+      // v5.0.6: Mark that Tuya cluster IS available
+      this._tuyaClusterAvailable = true;
 
       // Log manager status for diagnostics
       logEF00Status(this);
