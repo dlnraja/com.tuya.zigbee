@@ -1,5 +1,71 @@
 # Changelog
 
+## [5.1.0] - 2025-11-27
+
+### 🎯 GitHub Issues Fixed (#75-78) + Forum Reports + Driver Enrichment
+
+#### Issue Fixes
+
+##### Issue #75: ZG-204ZL Motion Sensor (Generic Device)
+- Added `ZG-204ZL`, `ZG-204ZM`, `ZG-204ZV`, `IH-K665` to `motion_sensor_multi` productIds
+- HOBEIAN manufacturer already supported
+
+##### Issue #76: TS0044 _TZ3000_u3nv1jwk (Missing Fingerprint)
+- Added `_TZ3000_u3nv1jwk` + 10 more TS0044 manufacturer IDs:
+  - `_TZ3000_wkai4ga5`, `_TZ3000_ufhtxr59`, `_TZ3000_ee8nrt2l`
+  - `_TZ3000_uaa99arv`, `_TZ3000_a4xycprs`, `_TZ3000_jcspr0tp`
+  - `_TZ3000_pcqjmcud`, `_TZ3000_qgwcxxws`, `_TZ3000_owgcnkrh`, `_TZ3000_4fjiwweb`
+
+##### Issue #77: Avatto TRV06 _TZE200_hvaxb2tc
+- Already in `thermostat_trv_tuya` driver
+- Added 20+ more TRV manufacturer IDs (Moes, Saswell, etc.):
+  - `_TZE200_fhn3negr`, `_TZE200_rtrmfadk`, `_TZE200_c88teujp`
+  - `_TZE200_azqp6ssj`, `_TZE200_ywdxldoj`, `_TZE200_4eeyebrt`
+  - `_TZE200_qc4fpmcn`, `_TZE200_5toc8efa`, `_TZE200_ggog7ooh`
+  - `_TZE204_aoclfnxz`, `_TZE204_ckud7u2l`, `_TZE204_2ekuz3dz`
+
+##### Issue #78: _TZE200_9yapgbuv (Wrong Device Type)
+- Removed from sound_controller (was incorrectly mapped)
+- Properly in `climate_monitor_temp_humidity` driver
+
+#### Driver Enrichment (from JohanBendz/Zigbee2MQTT)
+
+##### contact_sensor
+- +30 manufacturer IDs (TUYATEC-*, _TZ1800_*, etc.)
+- +5 productIds: RH3001, TY0203, DoorWindow-Sensor-ZB3.0, MCT-340 E, DS01
+
+##### plug_energy_monitor
+- +50 TS011F/TS0121 manufacturer IDs
+- Blitzwolf, Silvercrest, Lidl, Neo, Zemismart, Lonsonho variants
+
+##### smoke_detector_advanced
+- FIXED: Removed incorrect `onoff` capability
+- +4 manufacturer IDs
+
+##### water_leak_sensor
+- FIXED: Removed incorrect capabilities (alarm_motion, alarm_contact, onoff)
+
+##### climate_sensor_soil
+- FIXED: Removed incorrect `alarm_contact` capability
+
+##### presence_sensor_radar
+- +10 radar manufacturer IDs (_TZE200/201/202/203_ztc6ggyl, etc.)
+
+#### Code Organization
+- Reorganized `lib/` folder structure:
+  - Battery files → `lib/battery/`
+  - Tuya files → `lib/tuya/`
+  - Flow files → `lib/flow/`
+  - Diagnostic files → `lib/diagnostics/`
+  - Manager files → `lib/managers/`
+  - Zigbee files → `lib/zigbee/`
+  - Helper files → `lib/helpers/`
+- Removed backup files (*.backup-*)
+- Updated all imports in BaseHybridDevice.js
+- Added TEST_MATRIX.md for tracking issues/devices
+
+---
+
 ## [5.0.9] - 2025-11-26
 
 ### 🔧 MAJOR FIX - Tuya DP Cluster Spam & Button Flow Triggers
