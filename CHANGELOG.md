@@ -1,5 +1,69 @@
 # Changelog
 
+## [5.0.9] - 2025-11-26
+
+### 🔧 MAJOR FIX - Tuya DP Cluster Spam & Button Flow Triggers
+
+**Based on user diagnostic analysis of v5.0.x issues**
+
+#### P0: Critical Fixes (Tuya Cluster Spam)
+
+##### BatteryManagerV4 Complete Refactor
+- **Problem:** `requestDP()` spamming errors when Tuya cluster not available
+- **Root Cause:** `isTuyaDPDevice` vs `hasTuyaClusterOnHomey` not separated
+- **Fix:** New `_tuyaDPDisabled` flag that permanently disables DP polling if:
+  - `useTuyaDP: false` option passed
+  - No tuyaEF00Manager available
+  - `_tuyaClusterAvailable === false`
+  - Initial DP test fails
+- **Result:** No more "Tuya cluster not available" spam in logs
+
+##### New TuyaDeviceHelper Utility (`lib/utils/TuyaDeviceHelper.js`)
+- `isTuyaDPDevice(meta)` - Is device a Tuya DP protocol device? (TS0601 + _TZE* etc)
+- `hasTuyaClusterOnHomey(zclNode)` - Does Homey expose 0xEF00 cluster?
+- `determineBatteryMethod()` - Choose best battery method for device
+- `logDeviceInfo()` - Detailed device analysis logging
+
+##### Driver Fixes
+- `presence_sensor_radar/device.js` - Uses TuyaDeviceHelper, passes correct `useTuyaDP` to BatteryManagerV4
+- `climate_sensor_soil/device.js` - Same fixes applied
+
+#### P1: Button Flow Triggers
+
+##### TS004x Button Drivers Rewritten
+- **Problem:** Buttons not triggering flows (used non-existent `registerCommandListener`)
+- **Fix:** Complete rewrite using proper ZCL command listeners:
+  - `button_ts0041/device.js` - 1-button switch
+  - `button_ts0043/device.js` - 3-button switch
+  - `button_ts0044/device.js` - 4-button switch
+- **Pattern:**
+  - Bind onOff cluster per endpoint
+  - Listen for `command` events
+  - Map: `on`=single, `off`=double, `toggle`=long
+  - Trigger `remote_button_pressed` flow card
+
+##### Flow Card Filter Updated
+- Added `button_ts0044|button_ts0043|button_ts0042|button_ts0041` to filter
+
+#### Files Modified
+- `lib/BatteryManagerV4.js` - Major refactor with `_tuyaDPDisabled`
+- `lib/utils/TuyaDeviceHelper.js` - NEW FILE
+- `drivers/presence_sensor_radar/device.js` - TuyaDeviceHelper integration
+- `drivers/climate_sensor_soil/device.js` - TuyaDeviceHelper integration
+- `drivers/button_ts0041/device.js` - Complete rewrite
+- `drivers/button_ts0043/device.js` - Complete rewrite
+- `drivers/button_ts0044/device.js` - Complete rewrite
+- `app.json` - Flow card filter, version 5.0.9
+
+#### Impact
+- 🟢 No more Tuya cluster spam in logs
+- 🟢 Battery reporting works correctly (ZCL fallback when DP unavailable)
+- 🟢 TS004x button flows trigger on press
+- 🟢 Proper separation of device protocol vs cluster availability
+- 🟢 Diagnostic logs much cleaner
+
+---
+
 ## [5.0.8] - 2025-11-26
 
 ### 🐛 BUG FIXES - GitHub Issues & Community Forum Feedback
