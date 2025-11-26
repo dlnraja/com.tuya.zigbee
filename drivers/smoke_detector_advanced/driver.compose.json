@@ -6,9 +6,7 @@
   "class": "sensor",
   "capabilities": [
     "alarm_smoke",
-    "alarm_fire",
-    "measure_battery",
-    "onoff"
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
@@ -37,7 +35,11 @@
       "_TZE200_t5p1vj8r",
       "_TZE200_uebojraa",
       "_TZE200_vzekyi4c",
-      "_TZE200_yh7aoahi"
+      "_TZE200_yh7aoahi",
+      "_TYZB01_dsjszp0x",
+      "_TZE200_m9skfctm",
+      "_TYZB01_wqcac7lo",
+      "_TZE204_ntcy3xu1"
     ],
     "endpoints": {
       "1": {
@@ -63,7 +65,8 @@
       }
     },
     "productId": [
-      "TS0205"
+      "TS0205",
+      "TS0601"
     ]
   },
   "settings": [
