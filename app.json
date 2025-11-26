@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.0.7",
+  "version": "5.0.8",
   "lastPublishDatetime": "2025-11-24T19:00:00.000Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.0.7 NEW: Zigbee Green Power & 2025 Devices! GreenPowerManager for energy-harvesting switches (Philips Hue Tap, Friends of Hue, Linptech). NewDevices2025 database (50+ new Tuya/Aqara/IKEA models). Zigbee 4.0 ready. 219 drivers, 18,200+ manufacturer IDs. BatteryManagerV4, TuyaDPMapper, ButtonRemoteManager. 100% local!",
-    "fr": "V5.0.7 NOUVEAU: Zigbee Green Power & Appareils 2025! GreenPowerManager pour interrupteurs auto-alimentés (Philips Hue Tap, Friends of Hue, Linptech). Base NewDevices2025 (50+ nouveaux modèles Tuya/Aqara/IKEA). Prêt Zigbee 4.0. 219 drivers, 18,200+ manufacturer IDs. BatteryManagerV4, TuyaDPMapper, ButtonRemoteManager. 100% local!"
+    "en": "V5.0.8 FIXES: GitHub Issues & Forum Feedback! Fixed TS0601_TZE200_9yapgbuv (temp/humidity, not sound controller). Added TS0044 4-button remote (_TZ3000_u3nv1jwk). Added Avatto TRV06 thermostat (_TZE200_hvaxb2tc). 25+ new TRV manufacturer IDs. 219 drivers, 18,200+ manufacturer IDs. 100% local!",
+    "fr": "V5.0.8 CORRECTIFS: Issues GitHub & Retours Forum! Corrigé TS0601_TZE200_9yapgbuv (capteur temp/humid, pas contrôleur son). Ajouté télécommande 4 boutons TS0044 (_TZ3000_u3nv1jwk). Ajouté thermostat Avatto TRV06 (_TZE200_hvaxb2tc). 25+ IDs fabricants TRV. 219 drivers, 18,200+ manufacturer IDs. 100% local!"
   },
   "category": "appliances",
   "permissions": [],
