@@ -5,12 +5,8 @@
   },
   "class": "sensor",
   "capabilities": [
-    "alarm_motion",
-    "measure_temperature",
     "alarm_water",
-    "measure_battery",
-    "alarm_contact",
-    "onoff"
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
