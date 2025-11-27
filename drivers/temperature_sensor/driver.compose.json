@@ -26,6 +26,7 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "Shelly",
       "_TZ3000_rusu2vzb",
       "_TZ2000_xogb73am",
       "_TZ3000_0hkmcrza",
@@ -60,7 +61,8 @@
     "productId": [
       "TS0201",
       "TS0601",
-      "TS0203"
+      "TS0203",
+      "BLU-HT-ZB"
     ],
     "endpoints": {
       "1": {

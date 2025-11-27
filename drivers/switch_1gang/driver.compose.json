@@ -11,7 +11,14 @@
       "TS0011",
       "TS0012",
       "TS0013",
-      "TS0014"
+      "TS0014",
+      "Mini1",
+      "Mini1PM",
+      "1",
+      "1PM",
+      "S4SW-001X8EU",
+      "S4SW-001X16EU",
+      "S4SW-001P16EU"
     ],
     "endpoints": {
       "1": {
@@ -35,6 +42,7 @@
       }
     },
     "manufacturerName": [
+      "Shelly",
       "_TZ3000_18ejxno0",
       "_TZ3000_3u4hripk",
       "_TZ3000_4rbqgcuv",

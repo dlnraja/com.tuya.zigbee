@@ -18,6 +18,7 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "Shelly",
       "_TZ3000_3ooaz3ng",
       "_TYZB01_iuepbmpv",
       "_TZ3000_g5xawfcq",
@@ -51,7 +52,8 @@
     ],
     "productId": [
       "TS011F",
-      "TS0121"
+      "TS0121",
+      "EM-Mini"
     ],
     "endpoints": {
       "1": {
