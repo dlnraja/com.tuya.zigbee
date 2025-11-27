@@ -1114,5 +1114,8 @@
   },
   "5.2.0": {
     "en": "🔧 UNIFIED DEVICE DATA ACCESS\n\nNEW: DeviceDataHelper.js\n- getModelId(device) - works with ALL property name variations\n- getManufacturer(device) - works with ALL property name variations  \n- isTuyaDPDevice(device) - reliable Tuya DP detection\n\nFILES UPDATED:\n- lib/helpers/DeviceDataHelper.js (NEW)\n- lib/tuya/TuyaEF00Manager.js - uses helper\n- lib/tuya/TS0601_EMERGENCY_FIX.js - uses helper\n- lib/utils/battery-reader.js - uses helper\n- lib/utils/safe-auto-migrate.js - uses helper\n- Moved 32 .md files to docs/\n\nTUYA DP DEVICES NOW WORKING:\n✅ TS0601 presence sensors\n✅ TS0601 soil sensors  \n✅ TS0601 climate sensors\n✅ Battery via DP 4/14/15\n✅ Temperature via DP 1/3\n✅ Humidity via DP 2/5\n✅ Motion via DP 1"
+  },
+  "5.2.1": {
+    "en": "🧹 CAPABILITY CLEANUP SYSTEM\n\nNEW: CapabilityCleanup.js\nAutomatically removes wrong capabilities:\n\nRULES:\n- Sensors: Remove onoff, dim\n- Switches: Remove dim (unless dimmer driver)\n- Buttons: Remove onoff (they send events, not states)\n- USB outlets: Remove dim\n\nMODEL-SPECIFIC:\n- TS0002/_TZ3000_h1ipgkwn: Remove dim (it's USB outlet)\n- TS0601 presence sensors: Remove onoff, alarm_contact\n- TS0601 soil/climate: Remove onoff, alarm_contact\n- TS0215A buttons: Remove onoff\n\nThis fixes the issues where devices have wrong capabilities\nshowing in Homey UI (like a slider on a simple switch)."
   }
 }
