@@ -43,7 +43,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_wireless_1gang|switch_wireless_2gang|switch_wireless_3gang|switch_wireless_4gang|button_wireless_1|button_wireless_2|button_wireless_3|button_wireless_4|button_ts0044|button_ts0043|button_ts0042|button_ts0041"
+            "filter": "driver_id=switch_wireless_1gang|switch_wireless_2gang|switch_wireless_3gang|switch_wireless_4gang|switch_wireless_5button|switch_wireless_6gang|switch_wireless_4button_alt|switch_wireless|switch_remote|button_wireless_1|button_wireless_1_v2|button_wireless_2|button_wireless_3|button_wireless_4|button_wireless_6|button_wireless_8|button_wireless|button_ts0044|button_ts0043|button_ts0042|button_ts0041|button_remote_1|button_remote_2|button_remote_3|button_remote_4|button_remote_6|button_remote_8|button_shortcut|button_emergency_sos|button_emergency_advanced|scene_controller_4button|scene_controller_wireless|smart_knob_ts004f|doorbell_button|wireless_button"
           },
           {
             "name": "button",
