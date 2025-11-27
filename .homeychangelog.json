@@ -1108,5 +1108,8 @@
   },
   "5.1.8": {
     "en": "🔧 MASSIVE IMPORT PATH FIX\n\nFixed 150+ broken module imports across all drivers:\n\nDRIVER FIXES (114 files):\n✅ BatteryManagerV2: ../../lib/BatteryManagerV2 → ../../lib/battery/BatteryManagerV2\n✅ BatteryManagerV3: ../../lib/BatteryManagerV3 → ../../lib/battery/BatteryManagerV3\n✅ FallbackSystem: ../../lib/FallbackSystem → ../../lib/helpers/FallbackSystem\n✅ TuyaDataPointEngine: ../../lib/TuyaDataPointEngine → ../../lib/tuya/TuyaDataPointEngine\n✅ TuyaSpecificClusterDevice: ../../lib/TuyaSpecificClusterDevice → ../../lib/tuya/TuyaSpecificClusterDevice\n✅ TuyaDataPointsComplete: ../../lib/TuyaDataPointsComplete → ../../lib/tuya/TuyaDataPointsComplete\n✅ TuyaSpecificDevice: ../../lib/TuyaSpecificDevice → ../../lib/tuya/TuyaSpecificDevice\n✅ ReportingConfig: ../../lib/ReportingConfig → ../../lib/utils/ReportingConfig\n\nSTUB FILES CREATED:\n✅ lib/IASZoneEnroller.js - Backward compatibility wrapper\n✅ utils/tuya-cluster-handler.js - Tuya cluster stub\n\nAll 219 drivers should now initialize without MODULE_NOT_FOUND errors!"
+  },
+  "5.1.9": {
+    "en": "🔧 TUYA DP DETECTION FIX\n\nFixed isTuyaDP() returning false for TS0601 devices.\n\nRoot cause: getData() property name mismatch\n- Was using: zb_product_id, zb_manufacturer_name\n- Now also checks: modelId, productId, manufacturerName, manufacturer\n\nFiles fixed:\n- lib/utils/battery-reader.js\n- lib/utils/safe-auto-migrate.js\n\nResult:\n✅ TS0601 devices now correctly detected as Tuya DP\n✅ Battery managed via TuyaEF00Manager (DP 4/14/15)\n✅ No more 'Standard Zigbee' false detection for Tuya DP devices"
   }
 }
