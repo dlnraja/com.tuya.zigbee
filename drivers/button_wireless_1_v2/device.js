@@ -1,7 +1,7 @@
 'use strict';
 
 const HybridDriverSystem = require('../../lib/HybridDriverSystem');
-const BatteryManagerV2 = require('../../lib/battery/BatteryManagerV2');
+const BatteryManagerV4 = require('../../lib/BatteryManagerV4');
 
 /**
  * TS0041 - Wireless Button (1 button) V2
@@ -22,7 +22,7 @@ class ButtonWireless1V2 extends HybridDevice {
     await super.onNodeInit({ zclNode });
 
     // Initialize battery manager
-    this.batteryManager = new BatteryManagerV2(this);
+    this.batteryManager = new BatteryManagerV4(this);
     await this.batteryManager.startMonitoring();
 
     // Register button scene triggers
