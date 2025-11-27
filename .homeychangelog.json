@@ -1099,5 +1099,8 @@
   },
   "5.1.5": {
     "en": "🔧 IMPORT PATHS VERIFIED & FIXED\n\nAll module import paths have been verified and corrected:\n\n✅ app.js imports:\n- FlowCardManager: ./lib/flow/FlowCardManager\n- UnknownDeviceHandler: ./lib/helpers/UnknownDeviceHandler\n- SystemLogsCollector: ./lib/diagnostics/SystemLogsCollector\n- DeviceIdentificationDatabase: ./lib/helpers/DeviceIdentificationDatabase\n\n✅ lib/zigbee/registerClusters.js:\n- TuyaManufacturerCluster: ../tuya/TuyaManufacturerCluster\n- TuyaSpecificCluster: ../tuya/TuyaSpecificCluster\n\nApp should now start without module errors!"
+  },
+  "5.1.6": {
+    "en": "🔧 COMPREHENSIVE IMPORT PATH FIX\n\nAll module import paths verified and corrected:\n\n✅ app.js - 13 imports verified\n✅ lib/tuya/TuyaEF00Manager.js - TuyaDPParser path fixed\n✅ lib/tuya/TuyaMultiGangManager.js - TuyaDPParser path fixed  \n✅ lib/tuya/TuyaZigbeeDevice.js - 3 imports fixed\n✅ lib/tuya/TuyaSpecificDevice.js - BaseHybridDevice path fixed\n✅ lib/managers/SmartDriverAdaptation.js - 10 imports fixed\n✅ lib/utils/battery-reader.js - device_helpers path fixed\n✅ lib/utils/safe-auto-migrate.js - device_helpers path fixed\n✅ lib/helpers/device_helpers.js - safe-auto-migrate path fixed\n✅ lib/zigbee/registerClusters.js - 2 Tuya cluster paths fixed\n\nApp should now start without ANY module errors!"
   }
 }
