@@ -1096,5 +1096,8 @@
   },
   "5.1.4": {
     "en": "🔧 CRITICAL FIX\n\n⚠️ Fixed app crash on startup\n- Corrected FlowCardManager import path\n- Was: './lib/FlowCardManager'\n- Now: './lib/flow/FlowCardManager'\n\nApp should now start correctly. Sorry for the inconvenience!"
+  },
+  "5.1.5": {
+    "en": "🔧 IMPORT PATHS VERIFIED & FIXED\n\nAll module import paths have been verified and corrected:\n\n✅ app.js imports:\n- FlowCardManager: ./lib/flow/FlowCardManager\n- UnknownDeviceHandler: ./lib/helpers/UnknownDeviceHandler\n- SystemLogsCollector: ./lib/diagnostics/SystemLogsCollector\n- DeviceIdentificationDatabase: ./lib/helpers/DeviceIdentificationDatabase\n\n✅ lib/zigbee/registerClusters.js:\n- TuyaManufacturerCluster: ../tuya/TuyaManufacturerCluster\n- TuyaSpecificCluster: ../tuya/TuyaSpecificCluster\n\nApp should now start without module errors!"
   }
 }
