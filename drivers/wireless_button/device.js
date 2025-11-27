@@ -1,7 +1,7 @@
 'use strict';
 
 const HybridDriverSystem = require('../../lib/HybridDriverSystem');
-const BatteryManagerV2 = require('../../lib/BatteryManagerV2');
+const BatteryManagerV2 = require('../../lib/battery/BatteryManagerV2');
 
 /**
  * wireless_button - Auto-generated Hybrid Driver

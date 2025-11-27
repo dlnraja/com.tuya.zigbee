@@ -2,7 +2,7 @@
 
 // MIGRATED TO HYBRID SYSTEM v2.0
 const HybridDriverSystem = require('../../lib/HybridDriverSystem');
-const BatteryManagerV2 = require('../../lib/BatteryManagerV2');
+const BatteryManagerV2 = require('../../lib/battery/BatteryManagerV2');
 
 /**
  * switch_2gang_alt - Hybrid-Enhanced Driver
@@ -21,7 +21,7 @@ const HybridDevice = HybridDriverSystem.createHybridDevice();
 const SwitchDevice = require('../../lib/devices/SwitchDevice');
 const batteryConverter = require('../../lib/tuya-engine/converters/battery');
 const IASZoneEnroller = require('../../lib/IASZoneEnroller');
-const FallbackSystem = require('../../lib/FallbackSystem');
+const FallbackSystem = require('../../lib/helpers/FallbackSystem');
 
 class TuyaZigbeeDevice extends HybridDevice {
 
