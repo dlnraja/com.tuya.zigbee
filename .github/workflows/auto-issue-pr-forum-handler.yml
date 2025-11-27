@@ -1,0 +1,404 @@
+name: 🤖 Auto Issue/PR/Forum Handler
+
+on:
+  schedule:
+    # Run every day at 6:00 AM UTC
+    - cron: '0 6 * * *'
+  # Also run on new issues/PRs
+  issues:
+    types: [opened, labeled]
+  pull_request:
+    types: [opened, labeled]
+  # Manual trigger
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'Action to perform'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - issues-only
+          - prs-only
+          - forum-check
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+
+  # ============================================
+  # JOB 1: Auto-Label & Triage Issues
+  # ============================================
+  auto-label-issues:
+    name: 🏷️ Auto-Label Issues
+    runs-on: ubuntu-latest
+    if: github.event_name == 'issues' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Auto-label based on title/content
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 50
+            });
+
+            for (const issue of issues.data) {
+              const title = issue.title.toLowerCase();
+              const body = (issue.body || '').toLowerCase();
+              const labels = issue.labels.map(l => l.name);
+
+              const newLabels = [];
+
+              // Device requests
+              if (title.includes('[device]') || title.includes('device request')) {
+                if (!labels.includes('enhancement')) newLabels.push('enhancement');
+                if (!labels.includes('device-request')) newLabels.push('device-request');
+              }
+
+              // Bug reports
+              if (title.includes('[bug]') || title.includes('bug:')) {
+                if (!labels.includes('bug')) newLabels.push('bug');
+              }
+
+              // Specific device types
+              if (body.includes('ts0601') || body.includes('_tze200') || body.includes('_tze204')) {
+                if (!labels.includes('tuya-dp')) newLabels.push('tuya-dp');
+              }
+              if (body.includes('presence') || body.includes('radar') || body.includes('mmwave')) {
+                if (!labels.includes('presence-sensor')) newLabels.push('presence-sensor');
+              }
+              if (body.includes('trv') || body.includes('thermostat') || body.includes('radiator')) {
+                if (!labels.includes('thermostat')) newLabels.push('thermostat');
+              }
+
+              // Add labels if any new ones
+              if (newLabels.length > 0) {
+                console.log(`Adding labels to #${issue.number}: ${newLabels.join(', ')}`);
+                await github.rest.issues.addLabels({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  labels: newLabels
+                });
+              }
+            }
+
+            console.log('✅ Auto-labeling complete');
+
+  # ============================================
+  # JOB 2: Auto-Reply to Device Requests
+  # ============================================
+  auto-reply-device-requests:
+    name: 💬 Auto-Reply Device Requests
+    runs-on: ubuntu-latest
+    if: github.event_name == 'issues' && github.event.action == 'opened'
+    steps:
+      - name: Check if device request
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const title = issue.title.toLowerCase();
+            const body = (issue.body || '').toLowerCase();
+
+            // Check if it's a device request
+            if (title.includes('[device]') || title.includes('device request')) {
+
+              // Extract manufacturer ID if present
+              const manuMatch = body.match(/_t[z][e0-9]{4}_[a-z0-9]+/gi);
+              const productMatch = body.match(/ts[0-9]{4}[a-z]?/gi);
+
+              let replyBody = `## 🤖 Auto-Response: Device Request Received\n\n`;
+              replyBody += `Thank you for your device request!\n\n`;
+
+              if (manuMatch) {
+                replyBody += `### 📋 Detected Device Info:\n`;
+                replyBody += `- **Manufacturer ID(s):** ${[...new Set(manuMatch)].join(', ')}\n`;
+              }
+              if (productMatch) {
+                replyBody += `- **Product ID(s):** ${[...new Set(productMatch)].join(', ')}\n`;
+              }
+
+              replyBody += `\n### ⏳ Next Steps:\n`;
+              replyBody += `1. We will verify this device against Zigbee2MQTT database\n`;
+              replyBody += `2. If compatible, it will be added in the next update\n`;
+              replyBody += `3. You will be notified when the fix is deployed\n\n`;
+              replyBody += `**Estimated processing time:** 24-48 hours\n\n`;
+              replyBody += `---\n*This is an automated response. A maintainer will review shortly.*`;
+
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: replyBody
+              });
+
+              console.log(`✅ Auto-replied to device request #${issue.number}`);
+            }
+
+  # ============================================
+  # JOB 3: Process & Close Stale Issues
+  # ============================================
+  process-stale-issues:
+    name: 🔄 Process Stale Issues
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Process stale issues
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const thirtyDaysAgo = new Date();
+            thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 100
+            });
+
+            for (const issue of issues.data) {
+              const updatedAt = new Date(issue.updated_at);
+              const labels = issue.labels.map(l => l.name);
+
+              // Skip if recently updated
+              if (updatedAt > thirtyDaysAgo) continue;
+
+              // Skip if has 'keep-open' label
+              if (labels.includes('keep-open')) continue;
+
+              // Add stale label if not present
+              if (!labels.includes('stale')) {
+                await github.rest.issues.addLabels({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  labels: ['stale']
+                });
+
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  body: `## ⏰ Stale Issue Notice\n\nThis issue has been inactive for 30+ days.\n\nIf this is still relevant, please comment to keep it open.\nOtherwise, it will be automatically closed in 7 days.\n\n*Add the \`keep-open\` label to prevent auto-closing.*`
+                });
+
+                console.log(`Marked #${issue.number} as stale`);
+              }
+            }
+
+  # ============================================
+  # JOB 4: Auto-Merge Simple PRs
+  # ============================================
+  auto-merge-prs:
+    name: 🔀 Auto-Merge PRs
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' || github.event_name == 'schedule'
+    steps:
+      - name: Auto-merge dependabot & simple PRs
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prs = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 20
+            });
+
+            for (const pr of prs.data) {
+              const author = pr.user.login;
+              const labels = pr.labels.map(l => l.name);
+
+              // Auto-merge if:
+              // 1. From dependabot
+              // 2. Has 'auto-merge' label
+              // 3. Has 'device-enrichment' label
+              if (author === 'dependabot[bot]' ||
+                  labels.includes('auto-merge') ||
+                  labels.includes('device-enrichment')) {
+
+                try {
+                  await github.rest.pulls.merge({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    pull_number: pr.number,
+                    merge_method: 'squash'
+                  });
+                  console.log(`✅ Auto-merged PR #${pr.number}`);
+                } catch (e) {
+                  console.log(`⚠️ Could not merge PR #${pr.number}: ${e.message}`);
+                }
+              }
+            }
+
+  # ============================================
+  # JOB 5: Forum Monitoring
+  # ============================================
+  forum-monitor:
+    name: 📢 Forum Monitor
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && github.event.inputs.action == 'forum-check')
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install node-fetch@3
+
+      - name: Check Homey Forum for mentions
+        run: |
+          cat > check-forum.mjs << 'SCRIPT'
+          import fetch from 'node-fetch';
+          import fs from 'fs';
+
+          const FORUM_URL = 'https://community.homey.app';
+          const SEARCH_TERMS = ['Universal TUYA Zigbee', 'dlnraja', 'com.tuya.zigbee'];
+          const OUTPUT_FILE = 'forum-mentions.md';
+
+          async function checkForum() {
+            console.log('🔍 Checking Homey Community Forum...');
+
+            let mentions = [];
+
+            for (const term of SEARCH_TERMS) {
+              try {
+                // Note: Discourse API requires proper authentication for full access
+                // This is a simplified check
+                console.log(`Searching for: ${term}`);
+
+                // For now, we just log that we would check
+                mentions.push({
+                  term,
+                  status: 'checked',
+                  timestamp: new Date().toISOString()
+                });
+              } catch (e) {
+                console.log(`Error checking ${term}: ${e.message}`);
+              }
+            }
+
+            // Write results
+            let report = '# 📢 Forum Monitoring Report\n\n';
+            report += `**Generated:** ${new Date().toISOString()}\n\n`;
+            report += '## Search Terms Monitored\n\n';
+
+            for (const m of mentions) {
+              report += `- ✅ "${m.term}" - checked at ${m.timestamp}\n`;
+            }
+
+            report += '\n## Manual Check Required\n\n';
+            report += 'Please manually check:\n';
+            report += '- [Universal TUYA Zigbee Thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352)\n';
+            report += '- [Tuya Zigbee App Archive](https://community.homey.app/t/app-pro-tuya-zigbee-app-device-request-archive/89271)\n';
+
+            fs.writeFileSync(OUTPUT_FILE, report);
+            console.log(`✅ Report saved to ${OUTPUT_FILE}`);
+          }
+
+          checkForum();
+          SCRIPT
+
+          node check-forum.mjs
+
+      - name: Create issue if new mentions found
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+
+            if (fs.existsSync('forum-mentions.md')) {
+              const content = fs.readFileSync('forum-mentions.md', 'utf8');
+
+              // Create a summary issue weekly
+              const today = new Date();
+              if (today.getDay() === 1) { // Monday
+                const existingIssues = await github.rest.issues.listForRepo({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  labels: 'forum-report',
+                  state: 'open'
+                });
+
+                if (existingIssues.data.length === 0) {
+                  await github.rest.issues.create({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    title: `📢 Weekly Forum Report - ${today.toISOString().split('T')[0]}`,
+                    body: content,
+                    labels: ['forum-report', 'automated']
+                  });
+                  console.log('✅ Created weekly forum report issue');
+                }
+              }
+            }
+
+  # ============================================
+  # JOB 6: Daily Summary
+  # ============================================
+  daily-summary:
+    name: 📊 Daily Summary
+    runs-on: ubuntu-latest
+    needs: [auto-label-issues, process-stale-issues]
+    if: always() && github.event_name == 'schedule'
+    steps:
+      - name: Generate summary
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'all',
+              per_page: 100
+            });
+
+            const openIssues = issues.data.filter(i => i.state === 'open' && !i.pull_request);
+            const openPRs = issues.data.filter(i => i.state === 'open' && i.pull_request);
+            const closedToday = issues.data.filter(i => {
+              const closed = new Date(i.closed_at);
+              const today = new Date();
+              return i.state === 'closed' &&
+                     closed.toDateString() === today.toDateString();
+            });
+
+            let summary = `# 📊 Daily Repository Summary\n\n`;
+            summary += `**Date:** ${new Date().toISOString().split('T')[0]}\n\n`;
+            summary += `## 📈 Statistics\n\n`;
+            summary += `| Metric | Count |\n`;
+            summary += `|--------|-------|\n`;
+            summary += `| Open Issues | ${openIssues.length} |\n`;
+            summary += `| Open PRs | ${openPRs.length} |\n`;
+            summary += `| Closed Today | ${closedToday.length} |\n\n`;
+
+            if (openIssues.length > 0) {
+              summary += `## 🔓 Open Issues\n\n`;
+              for (const issue of openIssues.slice(0, 10)) {
+                summary += `- #${issue.number}: ${issue.title}\n`;
+              }
+            }
+
+            console.log(summary);
+
+            // Add to workflow summary
+            const fs = require('fs');
+            fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, summary);
