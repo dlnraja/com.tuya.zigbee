@@ -1123,5 +1123,8 @@
   },
   "5.2.3": {
     "en": "🔄 UNIFIED BATTERY MANAGEMENT\n\nAll 115 drivers migrated from BatteryManagerV2/V3 to BatteryManagerV4:\n\nBEFORE:\n- 114 drivers using BatteryManagerV2\n- 1 driver using BatteryManagerV3\n- 24 drivers using BatteryManagerV4\n\nAFTER:\n- 0 drivers using BatteryManagerV2\n- 0 drivers using BatteryManagerV3  \n- 142 drivers using BatteryManagerV4\n\nBatteryManagerV4 features:\n✅ Voltage-based calculations with discharge curves\n✅ Auto-detection battery type (CR2032, AAA, AA, Li-ion)\n✅ Smart polling intervals by device type\n✅ Multi-source: Tuya DP → ZCL 0x0001 → Voltage calc\n✅ No fake values\n\nShim files kept for backward compatibility."
+  },
+  "5.2.4": {
+    "en": "⚡ USB OUTLET AUTO-ADAPTATION\n\nPROBLEM: TS0002/_TZ3000_h1ipgkwn paired as 'switch_basic_1gang'\nwith 'dim' capability (wrong!). It's actually a USB outlet.\n\nSOLUTION: Automatic adaptation at device startup:\n\n1. AutonomousMigrationManager now detects USB outlets\n   - TS0002 + _TZ3000_h1ipgkwn → usb_outlet type\n   - Adds onoff.usb2 capability (second USB port)\n   - Removes dim capability\n\n2. CapabilityCleanup enhanced\n   - Removes dim from switch drivers\n   - Adds onoff.usb2 for USB outlets\n\nRESULT:\n✅ USB outlet now has: onoff, onoff.usb2\n✅ No more dim slider on switches\n✅ Both USB ports controllable"
   }
 }

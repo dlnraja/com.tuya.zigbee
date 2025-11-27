@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.2.3",
+  "version": "5.2.4",
   "lastPublishDatetime": "2025-11-24T19:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.2.3: All 115 drivers migrated to BatteryManagerV4. Unified battery management. 219 drivers.",
-    "fr": "V5.2.3: 115 drivers migrés vers BatteryManagerV4. Gestion batterie unifiée. 219 drivers."
+    "en": "V5.2.4: USB outlet auto-adaptation! TS0002/_TZ3000_h1ipgkwn correctly handled. 219 drivers.",
+    "fr": "V5.2.4: Auto-adaptation USB outlet! TS0002/_TZ3000_h1ipgkwn correctement géré. 219 drivers."
   },
   "category": "appliances",
   "permissions": [],
