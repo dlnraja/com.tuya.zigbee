@@ -3,7 +3,9 @@
     "en": "Smart Knob (Rotary Controller)"
   },
   "class": "button",
-  "capabilities": [],
+  "capabilities": [
+    "measure_battery"
+  ],
   "platforms": [
     "local"
   ],
