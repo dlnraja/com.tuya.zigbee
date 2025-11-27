@@ -1,7 +1,7 @@
 'use strict';
 
 const Homey = require('homey');
-const { registerCustomClusters } = require('./lib/registerClusters');
+const { registerCustomClusters } = require('./lib/zigbee/registerClusters');
 const FlowCardManager = require('./lib/FlowCardManager');
 const CapabilityManager = require('./lib/utils/CapabilityManager');
 const AdvancedAnalytics = require('./lib/analytics/AdvancedAnalytics');

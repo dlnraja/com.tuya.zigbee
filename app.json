@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "lastPublishDatetime": "2025-11-24T19:00:00.000Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.1.0: Fixed Issues #75-78! ZG-204ZL/ZM/ZV motion sensors, TS0044 fingerprints, Avatto TRV06, _TZE200_9yapgbuv climate sensor. Enriched 50+ TS011F plugs, 20+ TRV, 30+ contact sensors. Reorganized lib/ structure. 219 drivers, 18,500+ IDs. 100% local!",
-    "fr": "V5.1.0: Corrigé Issues #75-78! Capteurs mouvement ZG-204ZL/ZM/ZV, empreintes TS0044, Avatto TRV06, capteur climat _TZE200_9yapgbuv. Enrichi 50+ prises TS011F, 20+ TRV, 30+ capteurs contact. Structure lib/ réorganisée. 219 drivers, 18,500+ IDs. 100% local!"
+    "en": "V5.1.1: CRITICAL FIX - App crash resolved! Fixed module path + SDK3 deprecated API. All Homey models supported (2018-2023). 219 drivers, 18,500+ IDs. 100% local Zigbee!",
+    "fr": "V5.1.1: CORRECTIF CRITIQUE - Crash app résolu! Chemin module + API SDK3 dépréciée corrigés. Tous modèles Homey supportés (2018-2023). 219 drivers, 18,500+ IDs. 100% Zigbee local!"
   },
   "category": "appliances",
   "permissions": [],
