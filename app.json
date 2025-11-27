@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.1.8",
+  "version": "5.1.9",
   "lastPublishDatetime": "2025-11-24T19:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.1.8: Fixed 150+ driver imports! All modules now load correctly. 219 drivers. 100% local!",
-    "fr": "V5.1.8: 150+ imports drivers corrigés! Tous modules chargent. 219 drivers. 100% local!"
+    "en": "V5.1.9: Fixed Tuya DP detection! TS0601 devices now correctly identified. 219 drivers. 100% local!",
+    "fr": "V5.1.9: Détection Tuya DP corrigée! TS0601 correctement identifiés. 219 drivers. 100% local!"
   },
   "category": "appliances",
   "permissions": [],
