@@ -5,7 +5,7 @@ const IASZoneEnroller = require('../../lib/IASZoneEnroller');
 const batteryConverter = require('../../lib/tuya-engine/converters/battery');
 const { CLUSTER } = require('zigbee-clusters');
 const TuyaClusterHandler = require('../../utils/tuya-cluster-handler');
-const FallbackSystem = require('../../lib/FallbackSystem');
+const FallbackSystem = require('../../lib/helpers/FallbackSystem');
 
 class WaterValveSmartHybridDevice extends BaseHybridDevice {
 
