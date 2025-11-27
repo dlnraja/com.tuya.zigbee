@@ -2,7 +2,7 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const TuyaEF00Manager = require('../../lib/tuya/TuyaEF00Manager');
-const BatteryManagerV3 = require('../../lib/BatteryManagerV3');
+const BatteryManagerV3 = require('../../lib/battery/BatteryManagerV3');
 
 /**
  * TRV Thermostat - TS0601

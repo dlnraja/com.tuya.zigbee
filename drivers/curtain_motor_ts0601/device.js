@@ -2,7 +2,7 @@
 
 // MIGRATED TO HYBRID SYSTEM v2.0
 const HybridDriverSystem = require('../../lib/HybridDriverSystem');
-const BatteryManagerV2 = require('../../lib/BatteryManagerV2');
+const BatteryManagerV2 = require('../../lib/battery/BatteryManagerV2');
 
 /**
  * curtain_motor_ts0601 - Hybrid-Enhanced Driver
@@ -18,7 +18,7 @@ const HybridDevice = HybridDriverSystem.createHybridDevice();
 
 'use strict';
 
-const { TuyaSpecificClusterDevice } = require('../../lib/TuyaSpecificClusterDevice');
+const { TuyaSpecificClusterDevice } = require('../../lib/tuya/TuyaSpecificClusterDevice');
 
 /**
  * Zigbee Curtain Motor

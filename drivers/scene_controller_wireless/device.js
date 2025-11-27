@@ -2,7 +2,7 @@
 
 // MIGRATED TO HYBRID SYSTEM v2.0
 const HybridDriverSystem = require('../../lib/HybridDriverSystem');
-const BatteryManagerV2 = require('../../lib/BatteryManagerV2');
+const BatteryManagerV2 = require('../../lib/battery/BatteryManagerV2');
 
 /**
  * scene_controller_wireless - Hybrid-Enhanced Driver
@@ -23,7 +23,7 @@ const IASZoneEnroller = require('../../lib/IASZoneEnroller');
 const { CLUSTER } = require('zigbee-clusters');
 const TuyaClusterHandler = require('../../utils/tuya-cluster-handler');
 const { fromZclBatteryPercentageRemaining } = require('../../lib/tuya-engine/converters/battery');
-const FallbackSystem = require('../../lib/FallbackSystem');
+const FallbackSystem = require('../../lib/helpers/FallbackSystem');
 
 class SceneControllerDevice extends HybridDevice {
 
