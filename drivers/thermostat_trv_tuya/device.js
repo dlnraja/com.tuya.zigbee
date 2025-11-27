@@ -2,7 +2,7 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const TuyaEF00Manager = require('../../lib/tuya/TuyaEF00Manager');
-const BatteryManagerV3 = require('../../lib/battery/BatteryManagerV3');
+const BatteryManagerV4 = require('../../lib/BatteryManagerV4');
 
 /**
  * TRV Thermostat - TS0601
@@ -27,7 +27,7 @@ class TRVTuyaDevice extends ZigBeeDevice {
     this.setupDPListeners();
 
     // Battery Manager V3
-    this.batteryManager = new BatteryManagerV3(this);
+    this.batteryManager = new BatteryManagerV4(this);
     await this.batteryManager.startMonitoring();
 
     // Capability listeners
