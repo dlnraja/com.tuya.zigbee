@@ -1087,5 +1087,8 @@
   },
   "5.1.1": {
     "en": "🔥 CRITICAL FIX - App Crash Resolved!\n\n✅ FIXED: Cannot find module './lib/registerClusters'\n- Corrected import path to './lib/zigbee/registerClusters'\n- Affected: All Homey models (2018-2023)\n\n✅ FIXED: Deprecated registerAttrReportListener\n- Replaced with SDK3-compliant cluster events\n- Methods: setupMotionSensor, setupContactSensor, setupClimateSensor, setupTuyaDp\n\n✅ Tested On:\n- Homey Pro (Early 2023) - homey5q\n- Homey Pro (Early 2019) - homey3d/homey3s\n- Homey (Early 2018) - homey2s\n\nThis fix resolves crashes reported by users on 26-27 Nov 2025."
+  },
+  "5.1.2": {
+    "en": "🏠 SHELLY ZIGBEE SUPPORT!\n\n✅ NEW: Shelly Gen4 Switches\n- Shelly 1 Gen4 / 1PM Gen4\n- Shelly 2PM Gen4 (2-channel)\n- Shelly Mini 1 / Mini 1PM\n\n✅ NEW: Shelly Sensors\n- Shelly BLU H&T ZB (Temp & Humidity)\n- Shelly WS90 Weather Station\n- Shelly EM Mini (Energy Monitor)\n\n✅ NEW: Shelly Cover\n- Shelly 2PM Cover Mode\n\nAll Shelly Zigbee devices use standard ZCL clusters.\n100% local control - no cloud required!"
   }
 }
