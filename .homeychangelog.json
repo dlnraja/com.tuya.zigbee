@@ -1117,5 +1117,8 @@
   },
   "5.2.1": {
     "en": "🧹 CAPABILITY CLEANUP SYSTEM\n\nNEW: CapabilityCleanup.js\nAutomatically removes wrong capabilities:\n\nRULES:\n- Sensors: Remove onoff, dim\n- Switches: Remove dim (unless dimmer driver)\n- Buttons: Remove onoff (they send events, not states)\n- USB outlets: Remove dim\n\nMODEL-SPECIFIC:\n- TS0002/_TZ3000_h1ipgkwn: Remove dim (it's USB outlet)\n- TS0601 presence sensors: Remove onoff, alarm_contact\n- TS0601 soil/climate: Remove onoff, alarm_contact\n- TS0215A buttons: Remove onoff\n\nThis fixes the issues where devices have wrong capabilities\nshowing in Homey UI (like a slider on a simple switch)."
+  },
+  "5.2.2": {
+    "en": "🔧 BATTERYMANAGER SHIMS + TUYA DP FIX\n\nNEW SHIM FILES:\n- lib/BatteryManagerV2.js → delegates to V4\n- lib/BatteryManagerV3.js → delegates to V4\n\nThese shims fix 'Cannot find module ../../lib/BatteryManagerV2' errors\nfor any driver still using the old import path.\n\nTUYA DP BATTERY FIX:\n- battery-reader.js now uses DeviceDataHelper\n- isTuyaDPDevice() checks all property variations\n- Logs model/manufacturer for debugging\n- Returns stored battery for Tuya DP if available\n\nIMPORT PATHS NOW SUPPORTED:\n✅ ../../lib/BatteryManagerV2 (shim → V4)\n✅ ../../lib/BatteryManagerV3 (shim → V4)\n✅ ../../lib/BatteryManagerV4 (direct)\n✅ ../../lib/battery/BatteryManagerV2 (original)\n✅ ../../lib/battery/BatteryManagerV3 (original)\n✅ ../../lib/battery/BatteryManager (original)"
   }
 }
