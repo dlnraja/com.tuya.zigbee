@@ -2,7 +2,7 @@
 
 // MIGRATED TO HYBRID SYSTEM v2.0
 const HybridDriverSystem = require('../../lib/HybridDriverSystem');
-const BatteryManagerV2 = require('../../lib/BatteryManagerV2');
+const BatteryManagerV2 = require('../../lib/battery/BatteryManagerV2');
 
 /**
  * sensor_mmwave_presence_advanced - Hybrid-Enhanced Driver
@@ -19,7 +19,7 @@ const HybridDevice = HybridDriverSystem.createHybridDevice();
 'use strict';
 
 
-const TuyaDataPointsComplete = require('../../lib/TuyaDataPointsComplete');
+const TuyaDataPointsComplete = require('../../lib/tuya/TuyaDataPointsComplete');
 
 class SensorMmwavePresenceAdvancedDevice extends HybridDevice {
   

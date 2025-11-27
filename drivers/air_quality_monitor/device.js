@@ -2,7 +2,7 @@
 
 // MIGRATED TO HYBRID SYSTEM v2.0
 const HybridDriverSystem = require('../../lib/HybridDriverSystem');
-const BatteryManagerV2 = require('../../lib/BatteryManagerV2');
+const BatteryManagerV2 = require('../../lib/battery/BatteryManagerV2');
 
 /**
  * air_quality_monitor - Hybrid-Enhanced Driver
@@ -23,7 +23,7 @@ const SensorDevice = require('../../lib/devices/SensorDevice');
 const batteryConverter = require('../../lib/tuya-engine/converters/battery');
 const { CLUSTER } = require('zigbee-clusters');
 const TuyaClusterHandler = require('../../utils/tuya-cluster-handler');
-// const FallbackSystem = require('../../lib/FallbackSystem'); // Deprecated
+// const FallbackSystem = require('../../lib/helpers/FallbackSystem'); // Deprecated
 
 class AirQualityMonitorProBatteryDevice extends HybridDevice {
 

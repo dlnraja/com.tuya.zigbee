@@ -2,7 +2,7 @@
 
 // MIGRATED TO HYBRID SYSTEM v2.0
 const HybridDriverSystem = require('../../lib/HybridDriverSystem');
-const BatteryManagerV2 = require('../../lib/BatteryManagerV2');
+const BatteryManagerV2 = require('../../lib/battery/BatteryManagerV2');
 
 /**
  * usb_outlet_3gang - Hybrid-Enhanced Driver
@@ -20,7 +20,7 @@ const HybridDevice = HybridDriverSystem.createHybridDevice();
 
 const { CLUSTER } = require('zigbee-clusters');
 const SwitchDevice = require('../../lib/devices/SwitchDevice');
-const ReportingConfig = require('../../lib/ReportingConfig');
+const ReportingConfig = require('../../lib/utils/ReportingConfig');
 
 /**
  * UsbOutlet3GangDevice - SDK3 Compliant 3-Port USB Outlet
