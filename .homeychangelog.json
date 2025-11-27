@@ -1102,5 +1102,8 @@
   },
   "5.1.6": {
     "en": "🔧 COMPREHENSIVE IMPORT PATH FIX\n\nAll module import paths verified and corrected:\n\n✅ app.js - 13 imports verified\n✅ lib/tuya/TuyaEF00Manager.js - TuyaDPParser path fixed\n✅ lib/tuya/TuyaMultiGangManager.js - TuyaDPParser path fixed  \n✅ lib/tuya/TuyaZigbeeDevice.js - 3 imports fixed\n✅ lib/tuya/TuyaSpecificDevice.js - BaseHybridDevice path fixed\n✅ lib/managers/SmartDriverAdaptation.js - 10 imports fixed\n✅ lib/utils/battery-reader.js - device_helpers path fixed\n✅ lib/utils/safe-auto-migrate.js - device_helpers path fixed\n✅ lib/helpers/device_helpers.js - safe-auto-migrate path fixed\n✅ lib/zigbee/registerClusters.js - 2 Tuya cluster paths fixed\n\nApp should now start without ANY module errors!"
+  },
+  "5.1.7": {
+    "en": "🤖 AUTONOMOUS DRIVER ADAPTATION\n\nNEW: AutonomousMigrationManager\nSDK3 cannot change drivers programmatically, but this system:\n\n✅ Auto-detects correct driver from clusters\n✅ Adds missing capabilities dynamically\n✅ Configures cluster bindings automatically\n✅ Sets up data routing for all sensors\n✅ 100% autonomous - no user intervention\n\nFixes:\n- Wrong driver assignment now auto-corrected\n- Missing capabilities added at startup\n- Sensor data routed to correct capabilities\n- Battery reporting configured automatically\n\nSupported auto-adaptations:\n- Switches (1-8 gang)\n- Dimmers\n- Sensors (motion, contact, water, smoke)\n- Climate sensors (temp, humidity)\n- Energy monitors\n- Covers/curtains"
   }
 }

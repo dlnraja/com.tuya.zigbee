@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.1.6",
+  "version": "5.1.7",
   "lastPublishDatetime": "2025-11-24T19:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.1.6: All import paths fixed. No more module errors. 219 drivers. 100% local!",
-    "fr": "V5.1.6: Tous chemins imports corrigés. Plus d'erreurs module. 219 drivers. 100% local!"
+    "en": "V5.1.7: Autonomous driver adaptation! Auto-fixes capabilities & data routing. 219 drivers. 100% local!",
+    "fr": "V5.1.7: Adaptation autonome drivers! Auto-corrige capabilities & routage data. 219 drivers. 100% local!"
   },
   "category": "appliances",
   "permissions": [],
