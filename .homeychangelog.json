@@ -1126,5 +1126,8 @@
   },
   "5.2.4": {
     "en": "⚡ USB OUTLET AUTO-ADAPTATION\n\nPROBLEM: TS0002/_TZ3000_h1ipgkwn paired as 'switch_basic_1gang'\nwith 'dim' capability (wrong!). It's actually a USB outlet.\n\nSOLUTION: Automatic adaptation at device startup:\n\n1. AutonomousMigrationManager now detects USB outlets\n   - TS0002 + _TZ3000_h1ipgkwn → usb_outlet type\n   - Adds onoff.usb2 capability (second USB port)\n   - Removes dim capability\n\n2. CapabilityCleanup enhanced\n   - Removes dim from switch drivers\n   - Adds onoff.usb2 for USB outlets\n\nRESULT:\n✅ USB outlet now has: onoff, onoff.usb2\n✅ No more dim slider on switches\n✅ Both USB ports controllable"
+  },
+  "5.2.5": {
+    "en": "🔋 BATTERY MANAGER V5 - ULTIMATE PRECISION\n\nNEW: BatteryManagerV5.js consolidating all previous versions\n\nBATTERY TYPES SUPPORTED (15+):\nLithium Coin Cells:\n- CR2032 (220mAh) - Buttons, remotes\n- CR2450 (620mAh) - Motion sensors\n- CR2477 (1000mAh) - Large sensors\n- CR123A (1500mAh) - Photo cells\n- CR1632 (140mAh) - Small devices\n\nAlkaline:\n- AAA (1200mAh) - Single cell\n- AA (2850mAh) - Single cell\n- C (8000mAh) - Large devices\n- D (17000mAh) - Very large\n- 9V (565mAh) - 6-cell stack\n\nMulti-Cell Configurations:\n- 2xAAA (3V) - Climate sensors\n- 2xAA (3V) - TRVs, thermostats\n- 4xAAA (6V) - Smart locks\n\nRechargeable:\n- Li-ion (2600mAh) - Radar sensors\n- Li-polymer (1200mAh) - Compact devices\n- 18650 (3400mAh) - High capacity\n\nFEATURES:\n- Precise discharge curves per chemistry\n- Temperature compensation (-0.002 to -0.004 V/°C)\n- Smart smoothing (no jumps > 5%)\n- Health monitoring (drain rate, days remaining)\n- Auto battery type detection from driver name\n- Multi-source: Tuya DP → ZCL → Voltage calc"
   }
 }
