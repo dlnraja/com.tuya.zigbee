@@ -1,5 +1,27 @@
 # Changelog
 
+## [5.1.1] - 2025-11-27
+
+### 🔥 CRITICAL FIX - App Crash Resolved
+
+#### Bug Fixes
+
+##### Cannot find module './lib/registerClusters'
+- **Fixed:** Corrected import path from `./lib/registerClusters` to `./lib/zigbee/registerClusters`
+- **Affected:** All Homey models (2018-2023)
+
+##### Deprecated registerAttrReportListener
+- **Fixed:** Replaced deprecated API with SDK3-compliant cluster events
+- **Methods fixed:** setupMotionSensor, setupContactSensor, setupClimateSensor, setupTuyaDp
+- **New pattern:** `cluster.on('attr.attributeName', callback)` with try/catch
+
+#### Tested On
+- Homey Pro (Early 2023) - homey5q
+- Homey Pro (Early 2019) - homey3d/homey3s
+- Homey (Early 2018) - homey2s
+
+---
+
 ## [5.1.0] - 2025-11-27
 
 ### 🎯 GitHub Issues Fixed (#75-78) + Forum Reports + Driver Enrichment
