@@ -1,7 +1,7 @@
 'use strict';
 
 const HybridDriverSystem = require('../../lib/HybridDriverSystem');
-const BatteryManagerV2 = require('../../lib/battery/BatteryManagerV2');
+const BatteryManagerV4 = require('../../lib/BatteryManagerV4');
 
 /**
  * wireless_button - Auto-generated Hybrid Driver
@@ -28,7 +28,7 @@ class WirelessButtonDevice extends HybridDevice {
 
     
     // Initialize battery manager
-    this.batteryManager = new BatteryManagerV2(this);
+    this.batteryManager = new BatteryManagerV4(this);
     await this.batteryManager.startMonitoring();
     
 
