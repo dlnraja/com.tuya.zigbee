@@ -2,7 +2,7 @@
 
 // MIGRATED TO HYBRID SYSTEM v2.0
 const HybridDriverSystem = require('../../lib/HybridDriverSystem');
-const BatteryManagerV2 = require('../../lib/battery/BatteryManagerV2');
+const BatteryManagerV4 = require('../../lib/BatteryManagerV4');
 
 /**
  * button_remote_8 - Hybrid-Enhanced Driver

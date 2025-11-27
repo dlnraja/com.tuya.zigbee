@@ -1,7 +1,7 @@
 'use strict';
 
 const HybridDriverSystem = require('../../lib/HybridDriverSystem');
-const BatteryManagerV2 = require('../../lib/battery/BatteryManagerV2');
+const BatteryManagerV4 = require('../../lib/BatteryManagerV4');
 
 /**
  * zigbee_universal - Auto-generated Hybrid Driver
