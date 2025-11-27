@@ -1093,5 +1093,8 @@
   },
   "5.1.3": {
     "en": "⚡ ENHANCED ENERGY MANAGEMENT!\n\n✅ NEW: EnergyManager Library\n- Power threshold alerts (configurable)\n- Overload protection (16A/3680W default)\n- Standby detection (<2W)\n- Daily/session energy tracking\n- Peak power statistics\n- Cost calculation support\n\n✅ NEW: Flow Card Triggers\n- Power exceeds threshold\n- Overload detected (CRITICAL)\n- Device entered standby\n- Device exited standby\n- Voltage too low\n- Voltage too high\n\n✅ NEW: Flow Card Conditions\n- Power is above X watts\n- Power is below X watts\n- Device is in standby\n\n✅ NEW: Flow Card Actions\n- Reset energy meter\n\nAll energy monitoring devices now have comprehensive flow support!"
+  },
+  "5.1.4": {
+    "en": "🔧 CRITICAL FIX\n\n⚠️ Fixed app crash on startup\n- Corrected FlowCardManager import path\n- Was: './lib/FlowCardManager'\n- Now: './lib/flow/FlowCardManager'\n\nApp should now start correctly. Sorry for the inconvenience!"
   }
 }
