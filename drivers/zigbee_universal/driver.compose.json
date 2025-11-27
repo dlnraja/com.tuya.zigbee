@@ -16,7 +16,11 @@
       "_TZE200_*",
       "_TZE204_*"
     ],
-    "productId": [],
+    "productId": [
+      "TS0001",
+      "TS0011",
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
