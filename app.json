@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.2.24",
+  "version": "5.2.25",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.2.24: Ultimate enrichment - 129+ manufacturer IDs from GitHub/Forums/ZHA/z2m. 212 drivers.",
-    "fr": "V5.2.24: Enrichissement complet - 129+ IDs fabricants de GitHub/Forums/ZHA/z2m. 212 drivers."
+    "en": "V5.2.25: OTA firmware updates, device health monitoring, 9 new flow cards. 212 drivers.",
+    "fr": "V5.2.25: Mises à jour OTA, surveillance santé appareils, 9 nouvelles flow cards. 212 drivers."
   },
   "category": "appliances",
   "permissions": [],
@@ -39,6 +39,60 @@
   },
   "flow": {
     "triggers": [
+      {
+        "id": "device_offline",
+        "title": {
+          "en": "Device went offline",
+          "fr": "Appareil hors ligne",
+          "nl": "Apparaat offline",
+          "de": "Gerät offline"
+        },
+        "hint": {
+          "en": "Triggered when a device becomes unavailable",
+          "fr": "Déclenché quand un appareil devient indisponible"
+        },
+        "tokens": [
+          {
+            "name": "device_name",
+            "type": "string",
+            "title": {
+              "en": "Device name",
+              "fr": "Nom appareil"
+            }
+          },
+          {
+            "name": "last_seen",
+            "type": "string",
+            "title": {
+              "en": "Last seen",
+              "fr": "Dernière activité"
+            }
+          }
+        ]
+      },
+      {
+        "id": "device_online",
+        "title": {
+          "en": "Device came online",
+          "fr": "Appareil en ligne",
+          "nl": "Apparaat online",
+          "de": "Gerät online"
+        },
+        "hint": {
+          "en": "Triggered when a device becomes available again",
+          "fr": "Déclenché quand un appareil redevient disponible"
+        },
+        "tokens": [
+          {
+            "name": "device_name",
+            "type": "string",
+            "title": {
+              "en": "Device name",
+              "fr": "Nom appareil"
+            }
+          }
+        ]
+      },
       {
         "tokens": [
           {
@@ -161,6 +215,138 @@
           "fr": "Déclenché quand la tension est trop basse",
           "en": "Triggered when voltage drops below safe range"
         }
+      },
+      {
+        "id": "low_battery_warning",
+        "title": {
+          "en": "Low battery warning",
+          "fr": "Avertissement batterie faible",
+          "nl": "Lage batterij waarschuwing",
+          "de": "Warnung: Niedriger Batteriestand"
+        },
+        "hint": {
+          "en": "Triggered when a device battery is below 20%",
+          "fr": "Déclenché quand la batterie d'un appareil est inférieure à 20%"
+        },
+        "tokens": [
+          {
+            "name": "device_name",
+            "type": "string",
+            "title": {
+              "en": "Device name",
+              "fr": "Nom appareil"
+            }
+          },
+          {
+            "name": "battery_level",
+            "type": "number",
+            "title": {
+              "en": "Battery level",
+              "fr": "Niveau batterie"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ota_update_available",
+        "title": {
+          "en": "Firmware update available",
+          "fr": "Mise à jour firmware disponible",
+          "nl": "Firmware update beschikbaar",
+          "de": "Firmware-Update verfügbar"
+        },
+        "hint": {
+          "en": "Triggered when a firmware update is available for a device",
+          "fr": "Déclenché quand une mise à jour firmware est disponible"
+        },
+        "tokens": [
+          {
+            "name": "device_name",
+            "type": "string",
+            "title": {
+              "en": "Device name",
+              "fr": "Nom appareil"
+            }
+          },
+          {
+            "name": "current_version",
+            "type": "string",
+            "title": {
+              "en": "Current version",
+              "fr": "Version actuelle"
+            }
+          },
+          {
+            "name": "new_version",
+            "type": "string",
+            "title": {
+              "en": "New version",
+              "fr": "Nouvelle version"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ota_update_completed",
+        "title": {
+          "en": "Firmware update completed",
+          "fr": "Mise à jour firmware terminée",
+          "nl": "Firmware update voltooid",
+          "de": "Firmware-Update abgeschlossen"
+        },
+        "hint": {
+          "en": "Triggered when a firmware update has been successfully installed",
+          "fr": "Déclenché quand une mise à jour a été installée avec succès"
+        },
+        "tokens": [
+          {
+            "name": "device_name",
+            "type": "string",
+            "title": {
+              "en": "Device name",
+              "fr": "Nom appareil"
+            }
+          },
+          {
+            "name": "version",
+            "type": "string",
+            "title": {
+              "en": "Installed version",
+              "fr": "Version installée"
+            }
+          }
+        ]
+      },
+      {
+        "id": "zigbee_signal_weak",
+        "title": {
+          "en": "Zigbee signal weak",
+          "fr": "Signal Zigbee faible",
+          "nl": "Zwak Zigbee signaal",
+          "de": "Schwaches Zigbee-Signal"
+        },
+        "hint": {
+          "en": "Triggered when a device has weak signal (LQI below 50)",
+          "fr": "Déclenché quand un appareil a un signal faible (LQI < 50)"
+        },
+        "tokens": [
+          {
+            "name": "device_name",
+            "type": "string",
+            "title": {
+              "en": "Device name",
+              "fr": "Nom appareil"
+            }
+          },
+          {
+            "name": "signal_strength",
+            "type": "number",
+            "title": {
+              "en": "Signal strength (LQI)",
+              "fr": "Force du signal (LQI)"
+            }
+          }
+        ]
       },
       {
         "id": "co2_level_changed",
@@ -12402,6 +12588,26 @@
     ],
     "conditions": [
       {
+        "id": "device_is_online",
+        "title": {
+          "en": "Device is online",
+          "fr": "L'appareil est en ligne",
+          "nl": "Apparaat is online",
+          "de": "Gerät ist online"
+        },
+        "hint": {
+          "en": "Check if the device is currently available",
+          "fr": "Vérifier si l'appareil est actuellement disponible"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          }
+        ]
+      },
+      {
         "title": {
           "fr": "Appareil en veille",
           "en": "Device is in standby"
@@ -14321,6 +14527,26 @@
     ],
     "actions": [
       {
+        "id": "device_identify",
+        "title": {
+          "en": "Identify device (blink/beep)",
+          "fr": "Identifier appareil (clignoter/biper)",
+          "nl": "Identificeer apparaat",
+          "de": "Gerät identifizieren"
+        },
+        "hint": {
+          "en": "Make the device blink or beep to identify it",
+          "fr": "Faire clignoter ou biper l'appareil pour l'identifier"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          }
+        ]
+      },
+      {
         "title": {
           "fr": "Réinitialiser le compteur",
           "en": "Reset energy meter"
@@ -14329,6 +14555,19 @@
         "hint": {
           "fr": "Réinitialise le compteur de consommation à zéro",
           "en": "Reset the energy consumption counter to zero"
+        }
+      },
+      {
+        "id": "ota_check_updates",
+        "title": {
+          "en": "Check for firmware updates",
+          "fr": "Vérifier les mises à jour firmware",
+          "nl": "Controleer op firmware updates",
+          "de": "Nach Firmware-Updates suchen"
+        },
+        "hint": {
+          "en": "Check if there are firmware updates available for all devices",
+          "fr": "Vérifier si des mises à jour sont disponibles pour tous les appareils"
         }
       },
       {

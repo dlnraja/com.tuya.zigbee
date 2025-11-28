@@ -1169,5 +1169,9 @@
   "5.2.24": {
     "fr": "Enrichissement Ultime - Ajout 129+ IDs fabricants de GitHub issues (#79 moteur rideau), PRs (#46 AM25), forums, bases ZHA et zigbee2mqtt. Correction capteur sol, capteur climat.",
     "en": "Ultimate Enrichment - Added 129+ manufacturer IDs from GitHub issues (#79 curtain motor), PRs (#46 AM25), forums, ZHA and zigbee2mqtt databases. Fixed soil sensor, climate sensor misidentification."
+  },
+  "5.2.25": {
+    "fr": "Mises a jour OTA - Support complet OTA avec verification auto, suivi progression. Sante Appareils - 9 nouvelles flow cards pour hors ligne/en ligne, batterie faible, signal faible, identification.",
+    "en": "OTA Firmware Updates - Full OTA update support with auto-check, progress tracking. Device Health - 9 new flow cards for device offline/online, low battery, weak signal, device identify."
   }
 }
