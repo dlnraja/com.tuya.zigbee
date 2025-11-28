@@ -1,5 +1,11 @@
 # Changelog
 
+## [5.2.22] - 2025-11-28
+
+### Fix Publish (Changelog Format)
+- **Fixed:** Added .homeychangelog folder with proper version files
+- **Note:** Homey CLI requires `.homeychangelog/{version}.txt` format
+
 ## [5.2.21] - 2025-11-28
 
 ### Fix Publish (Changelog Required)
