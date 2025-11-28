@@ -37,13 +37,18 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_dbou1ap4",
+      "_TZ3000_w58g68s3",
+      "_TZB210_quinzf3w",
+      "_TZB210_aavhaadb"
     ],
     "productId": [
       "TS0503A",
       "TS0503B",
       "TS0504B",
-      "TS0505B"
+      "TS0505B",
+      "TS0505A"
     ],
     "endpoints": {
       "1": {
@@ -57,7 +62,8 @@
           1
         ],
         "bindings": [
-          1]
+          1
+        ]
       }
     },
     "learnmode": {
@@ -325,5 +331,3 @@
     }
   ]
 }
-
-

@@ -1,5 +1,15 @@
 # Changelog
 
+## [5.2.24] - 2025-11-28
+
+### Ultimate Enrichment (129+ Manufacturer IDs)
+- **Sources:** GitHub Issues, PRs, Forums, ZHA, Zigbee2mqtt databases
+- **Issue #79:** Added _TZE200_uj3f4wr5 curtain motor support
+- **PR #46:** Added AM25 tubular motor (_TZE200_nv6nxo0c)
+- **Forum fixes:** Fixed _TZ3000_akqdg6g7 climate sensor misidentification
+- **Soil sensor:** Added _TZE284_oitavov2 from DutchDuke report
+- **24 drivers enriched** with comprehensive manufacturer IDs
+
 ## [5.2.23] - 2025-11-28
 
 ### Unbranded Drivers (Major Reorganization)
