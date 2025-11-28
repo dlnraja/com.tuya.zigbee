@@ -1,0 +1,63 @@
+{
+  "triggers": [
+    {
+      "id": "aqara_motion_detected",
+      "title": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté"
+      }
+    },
+    {
+      "id": "aqara_motion_cleared",
+      "title": {
+        "en": "Motion cleared",
+        "fr": "Plus de mouvement"
+      }
+    },
+    {
+      "id": "aqara_motion_luminance_changed",
+      "title": {
+        "en": "Light level changed",
+        "fr": "Niveau lumière changé"
+      },
+      "tokens": [
+        {
+          "name": "lux",
+          "type": "number",
+          "title": {
+            "en": "Lux",
+            "fr": "Lux"
+          },
+          "example": 200
+        }
+      ]
+    },
+    {
+      "id": "aqara_motion_battery_changed",
+      "title": {
+        "en": "Battery changed",
+        "fr": "Batterie changée"
+      },
+      "tokens": [
+        {
+          "name": "battery",
+          "type": "number",
+          "title": {
+            "en": "%",
+            "fr": "%"
+          },
+          "example": 80
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "aqara_motion_is_detected",
+      "title": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté"
+      }
+    }
+  ]
+}
