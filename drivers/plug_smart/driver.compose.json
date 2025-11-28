@@ -7,7 +7,6 @@
   "capabilities": [
     "measure_battery",
     "alarm_generic",
-    "onoff",
     "measure_current",
     "measure_voltage",
     "meter_power",
@@ -57,13 +56,13 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "identify",
-          "groups",
-          "scenes",
-          "onOff",
-          "metering",
-          "electricalMeasurement",
+          0,
+          3,
+          4,
+          5,
+          6,
+          1794,
+          2820,
           61184,
           1
         ],

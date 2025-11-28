@@ -5,7 +5,6 @@
   },
   "class": "light",
   "capabilities": [
-    "onoff",
     "dim",
     "light_hue",
     "light_saturation",
@@ -59,13 +58,13 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "identify",
-          "groups",
-          "scenes",
-          "onOff",
-          "levelControl",
-          "colorControl",
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          768,
           61184,
           1280
         ],

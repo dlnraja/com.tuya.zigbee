@@ -10,7 +10,7 @@
     "alarm_smoke",
     "alarm_fire",
     "measure_battery",
-    "onoff"
+    6
   ],
   "energy": {
     "batteries": [
@@ -37,11 +37,11 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "powerConfiguration",
-          "temperatureMeasurement",
-          "relativeHumidity",
-          "manuSpecificTuya",
+          0,
+          1,
+          1026,
+          1029,
+          61184,
           61184,
           1
         ],
