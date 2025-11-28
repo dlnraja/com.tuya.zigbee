@@ -1,5 +1,41 @@
 # Changelog
 
+## [5.2.21] - 2025-11-28
+
+### Fix Publish (Changelog Required)
+- **Fixed:** Added changelog entries for automated publishing
+- **Note:** Athom action requires CHANGELOG.md entry for each version
+
+## [5.2.20] - 2025-11-28
+
+### Fix Publish Workflow
+- **Fixed:** Use official Athom GitHub Action for publishing
+- **Fixed:** Authentication issues with CLI in CI/CD
+- **Improved:** More reliable automated publishing
+
+## [5.2.19] - 2025-11-28
+
+### Environmental Sensors (Netatmo Alternatives)
+- **New:** Weather Station Outdoor (temperature, humidity, pressure, luminance)
+- **New:** Air Quality / CO2 Sensor with alerting
+- **New:** Rain Sensor (weather detection)
+- **New:** Formaldehyde/VOC Sensor
+- **New:** Noise/Sound Level Sensor
+- **Added:** Flow cards for all environmental sensors
+
+## [5.2.18] - 2025-11-28
+
+### New Brands Support
+- **New:** Lidl/Silvercrest devices
+  - Smart Plug (HG06337, HG06338, HG08673)
+  - Motion Sensor (HG06335, HG08164)
+  - Color Bulb (HG06106, HG06467, HG07834)
+  - Contact Sensor (HG06336)
+- **New:** BlitzWolf Smart Plug (BW-SHP13, BW-SHP15)
+- **New:** Zemismart Switch (ZM-CSW002-D)
+- **New:** MOES Smart Knob (TS004F, ERS-10TZBVK-AA)
+- **Added:** Comprehensive Flow cards for all brands
+
 ## [5.2.10] - 2025-11-28
 
 ### Enhanced Diagnostics & Battery Device Handling
