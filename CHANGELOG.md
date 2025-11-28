@@ -1,5 +1,14 @@
 # Changelog
 
+## [5.2.23] - 2025-11-28
+
+### Unbranded Drivers (Major Reorganization)
+- **Merged:** 20+ branded drivers into generic categories
+- **Brands merged:** Lidl/Silvercrest, Aqara, Philips Hue, IKEA, BlitzWolf, MOES, Shelly, Sonoff, Zemismart
+- **Enriched:** All generic drivers with comprehensive manufacturer IDs
+- **Fixed:** plug_smart class (sensor → socket), bulb_rgbw capabilities
+- **Total:** 212 drivers with improved device detection
+
 ## [5.2.22] - 2025-11-28
 
 ### Fix Publish (Changelog Format)
