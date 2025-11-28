@@ -1,0 +1,91 @@
+{
+  "name": {
+    "en": "Sonoff Zigbee Switch",
+    "fr": "Interrupteur Sonoff Zigbee"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "meter_power"
+  ],
+  "capabilitiesOptions": {},
+  "energy": {
+    "approximation": {
+      "usageOn": 0,
+      "usageOff": 0
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "SONOFF",
+      "sonoff",
+      "ITEAD",
+      "eWeLink"
+    ],
+    "productId": [
+      "ZBMINI",
+      "ZBMINI-L",
+      "ZBMINI-L2",
+      "BASICZBR3",
+      "S26R2ZB",
+      "S31ZB",
+      "S40ZBTPB",
+      "ZBMINIL2",
+      "01MINIZB"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          2820
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "power_on_behavior",
+      "type": "dropdown",
+      "label": {
+        "en": "Power-on Behavior",
+        "fr": "Comportement au démarrage"
+      },
+      "value": "previous",
+      "values": [
+        {
+          "id": "off",
+          "label": {
+            "en": "Off",
+            "fr": "Éteint"
+          }
+        },
+        {
+          "id": "on",
+          "label": {
+            "en": "On",
+            "fr": "Allumé"
+          }
+        },
+        {
+          "id": "previous",
+          "label": {
+            "en": "Previous state",
+            "fr": "État précédent"
+          }
+        }
+      ]
+    }
+  ],
+  "images": {
+    "small": "drivers/sonoff_switch/assets/images/small.png",
+    "large": "drivers/sonoff_switch/assets/images/large.png"
+  }
+}
