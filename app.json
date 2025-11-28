@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.2.23",
+  "version": "5.2.24",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.2.23: Unbranded drivers, merged 20+ brand drivers (Lidl, Aqara, Philips, IKEA, etc.). 212 drivers.",
-    "fr": "V5.2.23: Drivers génériques, fusion 20+ marques (Lidl, Aqara, Philips, IKEA, etc.). 212 drivers."
+    "en": "V5.2.24: Ultimate enrichment - 129+ manufacturer IDs from GitHub/Forums/ZHA/z2m. 212 drivers.",
+    "fr": "V5.2.24: Enrichissement complet - 129+ IDs fabricants de GitHub/Forums/ZHA/z2m. 212 drivers."
   },
   "category": "appliances",
   "permissions": [],
@@ -21926,7 +21926,13 @@
           "innr",
           "Innr",
           "OSRAM",
-          "LEDVANCE"
+          "LEDVANCE",
+          "_TZ3210_s1x06gja",
+          "_TZ3210_gs9shyqa",
+          "_TZ3210_wdexaypg",
+          "_TZ3210_pagajpog",
+          "_TZ3210_r5afgmkl",
+          "_TZ3210_rwy3hagt"
         ],
         "productId": [
           "TS0502A",
@@ -21959,7 +21965,9 @@
           "LED1649C5",
           "RB 285 C",
           "RB 250 C",
-          "Classic A60 RGBW"
+          "Classic A60 RGBW",
+          "TS0504B",
+          "ZB-TDA9-RCW-E"
         ],
         "endpoints": {
           "1": {
@@ -26324,13 +26332,24 @@
           "_TZ3000_u3nv1jwk",
           "_TZ3000_vn88ezar",
           "_TZ3000_wkai4ga5",
-          "_TZ3000_yj6k7vfo"
+          "_TZ3000_yj6k7vfo",
+          "_TZE284_1lvln0x6",
+          "_TZ3000_bi6lpsew",
+          "_TZ3000_fkvaniuu",
+          "_TZ3000_peszejy7",
+          "_TZ3000_ixla93vd",
+          "_TZ3000_rrjr1q0u",
+          "_TZ3000_abrsvsou",
+          "_TZ3400_keyjhapk",
+          "_TZ3400_key8kk7r"
         ],
         "productId": [
           "TS0041",
           "TS0042",
           "TS0043",
-          "TS0044"
+          "TS0044",
+          "TS004F",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -30701,7 +30720,12 @@
           "_TZE200_locansqn",
           "_TZE200_bq5c8xfe",
           "_TZE200_pisltm67",
-          "Nous"
+          "Nous",
+          "_TZ3000_akqdg6g7",
+          "_TZ3000_bguser20",
+          "_TZ3000_ywagc4rj",
+          "_TZ3000_itnrsufe",
+          "_TZ3000_zl1kmjqx"
         ],
         "productId": [
           "TS0201",
@@ -30713,7 +30737,8 @@
           "TS0601",
           "RSH-TH01",
           "ZTH01",
-          "ZTH02"
+          "ZTH02",
+          "TT001ZAV20"
         ],
         "endpoints": {
           "1": {
@@ -31506,7 +31531,9 @@
           "Allterco",
           "_TZ3000_hgu1dlak",
           "Nous",
-          "LSC"
+          "LSC",
+          "_TZ3000_bzxloft2",
+          "_TZ3000_xpq2nmkr"
         ],
         "productId": [
           "TS0203",
@@ -31522,7 +31549,9 @@
           "MCCGQ01LM",
           "SHDW-1",
           "SHDW-2",
-          "ZP-DW-03"
+          "ZP-DW-03",
+          "DS02",
+          "IH-K009"
         ],
         "endpoints": {
           "1": {
@@ -33505,10 +33534,31 @@
       ],
       "zigbee": {
         "manufacturerName": [
-          "_TZE200_nv6nxo0c"
+          "_TZE200_nv6nxo0c",
+          "_TZE200_uj3f4wr5",
+          "_TZE200_fzo2pocs",
+          "_TZE200_5sbebbzs",
+          "_TZE200_zah67ekh",
+          "_TZE200_gubdgai2",
+          "_TZE200_r0jdjrvi",
+          "_TZE200_cpbo62rn",
+          "_TZE200_wmcdj3aq",
+          "_TZE200_cowvfni3",
+          "_TZE200_zpzndjez",
+          "_TZE200_fdtjuw7u",
+          "_TZE200_bqcqqjpb",
+          "_TZE200_iossyxra",
+          "_TZE200_68nvbio9",
+          "_TZE204_guvc7pdy",
+          "_TZE204_r0jdjrvi",
+          "_TZE204_zpzndjez",
+          "_TZE204_zah67ekh",
+          "_TZE284_4qznlkbu"
         ],
         "productId": [
-          "TS0601"
+          "TS0601",
+          "AM25",
+          "M515EGB"
         ],
         "endpoints": {
           "1": {
@@ -34542,11 +34592,18 @@
         "manufacturerName": [
           "_TZ3210_ngqk6jia",
           "_TZ3210_zxbtub8r",
-          "_TZ3000_ktuoyvt5"
+          "_TZ3000_ktuoyvt5",
+          "_TZ3000_7ysdnebc",
+          "_TZ3000_sfc7ztze",
+          "_TZ3000_fjgwfl3z",
+          "_TZ3000_sdklhkrs",
+          "_TZB210_wjz9epjd"
         ],
         "productId": [
           "TS110E",
-          "TS110F"
+          "TS110F",
+          "TS0101",
+          "TS0111"
         ],
         "endpoints": {
           "1": {
@@ -34864,7 +34921,10 @@
           "_TZ3000_qzjcsmar",
           "_TZ3000_rrjr1q0u",
           "IKEA of Sweden",
-          "IKEA"
+          "IKEA",
+          "_TZ3000_kdi2o9m6",
+          "_TZ3000_oborybow",
+          "_TZ3000_ja5osu5g"
         ],
         "productId": [
           "TS110E",
@@ -34876,7 +34936,9 @@
           "TS0042",
           "TRADFRI remote control",
           "E1524",
-          "E1812"
+          "E1812",
+          "TS004F",
+          "Dimmer-Remote"
         ],
         "endpoints": {
           "1": {
@@ -36677,11 +36739,18 @@
           "_TZ3000_rcuyhwe3",
           "_TZ3000_s8r1qoyq",
           "_TZ3000_uvti8nkd",
-          "_TZ3000_v7chgqso"
+          "_TZ3000_v7chgqso",
+          "_TZE200_nklqjk62",
+          "_TZE200_wfxuhoea",
+          "_TZE204_nklqjk62",
+          "_TZE200_iuk8kupi",
+          "_TZ3000_ycdqsmpd"
         ],
         "productId": [
           "TS0601",
-          "TS0203"
+          "TS0203",
+          "GD01",
+          "Garage-Door"
         ],
         "endpoints": {
           "1": {
@@ -37028,7 +37097,11 @@
           "_TZE200_ggev5fsl",
           "_TZE200_yojqa8xn",
           "_TZE284_aao6qtcs",
-          "TuYa"
+          "TuYa",
+          "_TZE200_rccxox8p",
+          "_TZE200_vzekyi4c",
+          "_TZE200_dq1mfjug",
+          "_TZE204_dq1mfjug"
         ],
         "endpoints": {
           "1": {
@@ -37061,7 +37134,8 @@
           "TS0601",
           "CO-Detector",
           "Gas-Detector",
-          "CO2-Sensor"
+          "CO2-Sensor",
+          "TS0205"
         ]
       },
       "settings": [
@@ -38353,7 +38427,18 @@
           "_TZE200_kfvq6avy",
           "_TZE200_b6wax7g0",
           "Moes",
-          "MOES"
+          "MOES",
+          "_TZE200_aoclfnxz",
+          "_TZE200_2atgpdho",
+          "_TZE200_c88teujp",
+          "_TZE200_ywdxldoj",
+          "_TZE200_cwnjrr72",
+          "_TZE200_pvvbommb",
+          "_TZE200_9sfg7gm0",
+          "_TZE200_2ekuz3dz",
+          "_TZE204_ckud7u2l",
+          "_TZE204_aoclfnxz",
+          "_TZE284_sgabhwa6"
         ],
         "productId": [
           "eTRV0100",
@@ -38363,7 +38448,11 @@
           "SEA801-Zigbee",
           "SEA802",
           "eT093WRO-1",
-          "HY369RT"
+          "HY369RT",
+          "TRV",
+          "TV01",
+          "TV02",
+          "ME167"
         ],
         "endpoints": {
           "1": {
@@ -38879,10 +38968,15 @@
       "zigbee": {
         "manufacturerName": [
           "_TZE200_zuhszj9s",
-          "_TZE200_husqqvux"
+          "_TZE200_husqqvux",
+          "_TZE200_ckud7u2l",
+          "_TZE204_ckud7u2l",
+          "_TZE204_zuhszj9s"
         ],
         "productId": [
-          "TS0601"
+          "TS0601",
+          "IR-AC",
+          "AC-Controller"
         ],
         "endpoints": {
           "1": {
@@ -39246,10 +39340,15 @@
           "_TZE200_44xpctxy",
           "_TZE204_44xpctxy",
           "_TZE200_bgjfxh3o",
-          "_TZE204_bgjfxh3o"
+          "_TZE204_bgjfxh3o",
+          "_TZE200_myd45weu",
+          "_TZE200_c88teujp",
+          "_TZE204_oisqyl4o",
+          "_TZE204_myd45weu"
         ],
         "productId": [
-          "TS0601"
+          "TS0601",
+          "Dehumidifier"
         ],
         "endpoints": {
           "1": {
@@ -39572,13 +39671,18 @@
           "_TZ3000_kqvb5akv",
           "_TZ3000_ww6drja5",
           "_TZ3000_ltt60asa",
-          "_TZ3000_akqdg6g7"
+          "_TZ3000_akqdg6g7",
+          "_TZ3000_dbou1ap4",
+          "_TZ3000_w58g68s3",
+          "_TZB210_quinzf3w",
+          "_TZB210_aavhaadb"
         ],
         "productId": [
           "TS0503A",
           "TS0503B",
           "TS0504B",
-          "TS0505B"
+          "TS0505B",
+          "TS0505A"
         ],
         "endpoints": {
           "1": {
@@ -44209,7 +44313,8 @@
           "_TZE200_bh3n6gk8",
           "Nous",
           "LSC",
-          "_TZ3000_h4wnrtck"
+          "_TZ3000_h4wnrtck",
+          "HOBEIAN"
         ],
         "productId": [
           "TS0202",
@@ -44228,7 +44333,10 @@
           "E1525",
           "E1745",
           "TS0210",
-          "ZP-PIR-03"
+          "ZP-PIR-03",
+          "ZG-204ZL",
+          "ZG-204ZV",
+          "IH012-RT01"
         ],
         "endpoints": {
           "1": {
@@ -50494,7 +50602,12 @@
           "LSC",
           "_TZ3000_b28wrpvx",
           "SONOFF",
-          "eWeLink"
+          "eWeLink",
+          "_TZ3000_upjrxmsr",
+          "_TZ3000_g1pzicmq",
+          "_TZ3000_4rbqgcuv",
+          "_TZ3000_1h2x4akh",
+          "_TZ3000_zloso4jk"
         ],
         "productId": [
           "S26R2ZB",
@@ -50512,7 +50625,9 @@
           "ZP-SP-01",
           "A1Z",
           "A3Z",
-          "A4Z"
+          "A4Z",
+          "SP-EUZ01",
+          "SP-EUR01"
         ],
         "endpoints": {
           "1": {
@@ -51476,7 +51591,11 @@
           "_TZE200_mrf6vtua",
           "_TZE204_mrf6vtua",
           "_TZE284_4qznlkbu",
-          "_TZE284_n5q2t8na"
+          "_TZE284_n5q2t8na",
+          "_TZE200_auin8mzr",
+          "_TZE204_auin8mzr",
+          "_TZE200_ges7h5mj",
+          "_TZE204_ges7h5mj"
         ],
         "productId": [
           "TS0202",
@@ -51486,7 +51605,8 @@
           "TS0601",
           "ZY-M100",
           "MTG275-ZB-RL",
-          "ZP-HPS-01"
+          "ZP-HPS-01",
+          "HPS-01"
         ],
         "endpoints": {
           "1": {
@@ -54604,11 +54724,19 @@
           "_TZ3000_kqvb5akv",
           "_TZ3000_ww6drja5",
           "_TZ3000_ltt60asa",
-          "_TZ3000_akqdg6g7"
+          "_TZ3000_akqdg6g7",
+          "_TZ3000_fwuelqs5",
+          "_TZE200_d0yu2xgi",
+          "_TYZB01_dsjszp0x",
+          "_TZ3000_ab7hfuil",
+          "_TZ3000_xr3htd96"
         ],
         "productId": [
           "TS0219",
-          "TS0601_siren"
+          "TS0601_siren",
+          "TS0601",
+          "Siren",
+          "SA01"
         ],
         "endpoints": {
           "1": {
@@ -55419,12 +55547,14 @@
           "MOES",
           "_TZ3000_csflgqj2",
           "_TZ3000_arfwfgre",
-          "TuYa"
+          "TuYa",
+          "_TZ3000_w8jwkczz"
         ],
         "productId": [
           "TS004F",
           "ERS-10TZBVK-AA",
-          "Smart Knob"
+          "Smart Knob",
+          "Smart-Knob"
         ],
         "endpoints": {
           "1": {
@@ -55510,7 +55640,9 @@
           "_TZ3000_0fkmfxwg",
           "_TZ3000_hhiodade",
           "_TYZB01_j9xxahcl",
-          "_TYZB01_dqkv3x8x"
+          "_TYZB01_dqkv3x8x",
+          "_TZE200_m8iikwas",
+          "_TZ3000_ysvspchy"
         ],
         "endpoints": {
           "1": {
@@ -55537,7 +55669,9 @@
         },
         "productId": [
           "TS0205",
-          "TS0601"
+          "TS0601",
+          "SD01",
+          "SD02"
         ]
       },
       "settings": [
@@ -56616,10 +56750,17 @@
         "manufacturerName": [
           "_TZE200_myd45weu",
           "_TZE200_ga1maeof",
-          "_TZE200_n5fxyyjw"
+          "_TZE200_n5fxyyjw",
+          "_TZE284_oitavov2",
+          "_TZE200_9yapgbuv",
+          "_TZE200_hhrtiq0x",
+          "_TZE204_myd45weu",
+          "_TZE284_sgabhwa6"
         ],
         "productId": [
-          "TS0601"
+          "TS0601",
+          "Soil-Sensor",
+          "SZWS"
         ],
         "endpoints": {
           "1": {
@@ -57883,7 +58024,8 @@
           "TS0013",
           "TS0014",
           "2PM",
-          "S4SW-002P16EU-COVER"
+          "S4SW-002P16EU-COVER",
+          "SM-SW302-2CH"
         ],
         "learnmode": {
           "image": "/drivers/switch_2gang/assets/learnmode.svg",
@@ -57923,7 +58065,18 @@
           "_TZ3000_ji4araar",
           "_TZ3000_jl7qyupf",
           "_TZ3000_kgxej1dv",
-          "_TZ3000_kqvb5akv"
+          "_TZ3000_kqvb5akv",
+          "_TZ3000_h1ipgkwn",
+          "_TZ3000_zmy1waw6",
+          "_TZ3000_wkr3jqmr",
+          "_TZ3000_bvrlqyj7",
+          "_TZ3000_pmz6mjyu",
+          "_TZ3000_ltt60asa",
+          "_TZ3000_7vcdo2vn",
+          "_TZ3000_4js6g1cw",
+          "_TZ3000_tribakzk",
+          "_TZ3000_atp3bews",
+          "_TYZB01_vkwryfdr"
         ],
         "endpoints": {
           "1": {
@@ -61885,7 +62038,10 @@
           "_TZ3000_hktqahrq",
           "_TZ3000_mx3vgyea",
           "_TZ3000_46t1rvdu",
-          "_TZ3000_5ng23zjs"
+          "_TZ3000_5ng23zjs",
+          "_TZ3000_zmlunnhy",
+          "_TZ3000_qmi1cfuq",
+          "_TZ3000_rmjr4ufz"
         ],
         "productId": [
           "TS0001",
@@ -61900,7 +62056,8 @@
           "ZBMINI",
           "ZBMINIL2",
           "S31ZB",
-          "ZM-CSW002-D"
+          "ZM-CSW002-D",
+          "TS0012"
         ],
         "learnmode": {
           "image": "/drivers/switch_smart_1gang/assets/learnmode.svg",
@@ -80489,13 +80646,20 @@
           "_TZ3000_nlsszmzl",
           "_TZ3000_o9f2zqln",
           "_TZ3000_okohwwap",
-          "_TZ3000_oxslv1c9"
+          "_TZ3000_oxslv1c9",
+          "_TZ3000_upgcbody",
+          "_TZ3000_fxjo6gfe",
+          "_TZ3000_qdmnmddg",
+          "_TYZB01_sqmd19i1"
         ],
         "productId": [
           "TS0207",
           "TS0601",
           "q9mpfhw",
-          "TS0203"
+          "TS0203",
+          "WL01",
+          "WL02",
+          "IH-K665"
         ],
         "endpoints": {
           "1": {
@@ -81167,7 +81331,15 @@
           "_TZ3210_fgwhjm9j",
           "_TZ3210_tgvtvdoc",
           "_TZE200_2aaelwxk",
-          "_TZE200_2ekuz3dz"
+          "_TZE200_2ekuz3dz",
+          "_TZE200_81isopgh",
+          "_TZE200_htnnfasr",
+          "_TZE200_akjefhj5",
+          "_TZE200_sh1btabb",
+          "_TZE204_81isopgh",
+          "_TZE200_vrjkcam9",
+          "_TZ3000_5f43h46r",
+          "_TZ3000_yz38gdra"
         ],
         "endpoints": {
           "1": {
@@ -81193,7 +81365,10 @@
         },
         "productId": [
           "TS0207",
-          "TS0601"
+          "TS0601",
+          "SWV01",
+          "Valve",
+          "Water-Valve"
         ]
       },
       "settings": [

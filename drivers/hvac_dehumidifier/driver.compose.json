@@ -75,10 +75,15 @@
       "_TZE200_44xpctxy",
       "_TZE204_44xpctxy",
       "_TZE200_bgjfxh3o",
-      "_TZE204_bgjfxh3o"
+      "_TZE204_bgjfxh3o",
+      "_TZE200_myd45weu",
+      "_TZE200_c88teujp",
+      "_TZE204_oisqyl4o",
+      "_TZE204_myd45weu"
     ],
     "productId": [
-      "TS0601"
+      "TS0601",
+      "Dehumidifier"
     ],
     "endpoints": {
       "1": {
@@ -92,7 +97,8 @@
           1
         ],
         "bindings": [
-          1]
+          1
+        ]
       }
     },
     "learnmode": {
@@ -361,5 +367,3 @@
     }
   ]
 }
-
-
