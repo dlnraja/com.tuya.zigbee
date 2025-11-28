@@ -1165,5 +1165,9 @@
   "5.2.23": {
     "en": "Unbranded Drivers - Merged 20+ brand drivers (Lidl, Aqara, Philips Hue, IKEA, BlitzWolf, MOES, Shelly, Sonoff, Zemismart) into generic categories. 212 drivers with enriched manufacturer IDs.",
     "fr": "Drivers Generiques - Fusion 20+ marques (Lidl, Aqara, Philips Hue, IKEA, BlitzWolf, MOES, Shelly, Sonoff, Zemismart) en categories generiques. 212 drivers avec IDs enrichis."
+  },
+  "5.2.24": {
+    "fr": "Enrichissement Ultime - Ajout 129+ IDs fabricants de GitHub issues (#79 moteur rideau), PRs (#46 AM25), forums, bases ZHA et zigbee2mqtt. Correction capteur sol, capteur climat.",
+    "en": "Ultimate Enrichment - Added 129+ manufacturer IDs from GitHub issues (#79 curtain motor), PRs (#46 AM25), forums, ZHA and zigbee2mqtt databases. Fixed soil sensor, climate sensor misidentification."
   }
 }
