@@ -1,0 +1,196 @@
+[
+  {
+    "name": "Tuya Zigbee",
+    "appId": "com.tuya.zigbee",
+    "storeUrl": "https://homey.app/fr-fr/app/com.tuya.zigbee/",
+    "github": "https://github.com/JohanBendz/com.tuya.zigbee",
+    "protocols": [
+      "Zigbee",
+      "Tuya DP"
+    ],
+    "keyManufacturers": [
+      "_TZ3000_",
+      "_TZE200_",
+      "_TZE284_"
+    ],
+    "categories": [
+      "smart_plug",
+      "motion_sensor",
+      "safety"
+    ],
+    "notes": "Référence historique Tuya DP avec 500+ DPs et profils."
+  },
+  {
+    "name": "Universal Tuya Zigbee",
+    "appId": "com.dlnraja.tuya.zigbee",
+    "storeUrl": "https://homey.app/fr-fr/app/com.dlnraja.tuya.zigbee/",
+    "github": "https://github.com/TheLostHomeyAppRepositories/com.tuya.zigbee-dlnraja",
+    "protocols": [
+      "Zigbee",
+      "Tuya DP"
+    ],
+    "keyManufacturers": [
+      "_TZ3000_",
+      "_TZE200_",
+      "_TZE284_",
+      "_TZE204_"
+    ],
+    "categories": [
+      "smart_plug",
+      "motion_sensor",
+      "curtain",
+      "thermostat"
+    ],
+    "notes": "Branché sur TuyaDPUltimate + BatteryManagerV5 pour tous les DPs Tuya."
+  },
+  {
+    "name": "HomeControl Zigbee",
+    "appId": "no.homecontrol",
+    "storeUrl": "https://homey.app/fr-fr/app/no.homecontrol/",
+    "github": null,
+    "protocols": [
+      "Zigbee",
+      "ZHA"
+    ],
+    "keyManufacturers": [
+      "innr",
+      "IKEA of Sweden"
+    ],
+    "categories": [
+      "smart_plug",
+      "smart_plug",
+      "motion_sensor"
+    ],
+    "notes": "App hugest pour ampoules GU10/E27, remotes, baston de l’écosystème INNR."
+  },
+  {
+    "name": "deCONZ / HomeyCONZ",
+    "appId": "com.madmonkey.homeyconz",
+    "storeUrl": "https://homey.app/fr-fr/app/com.madmonkey.homeyconz/",
+    "github": "https://github.com/MadMonkey87/HomeyCONZ",
+    "protocols": [
+      "Zigbee",
+      "ZHA"
+    ],
+    "keyManufacturers": [
+      "Philips",
+      "IKEA of Sweden",
+      "Xiaomi"
+    ],
+    "categories": [
+      "smart_plug",
+      "motion_sensor",
+      "curtain",
+      "climate_sensor"
+    ],
+    "notes": "Pont deCONZ, bonne source d’inspiration pour les flows multi-manufacturiers."
+  },
+  {
+    "name": "IKEA TRÅDFRI",
+    "appId": "com.ikea.tradfri",
+    "storeUrl": "https://homey.app/fr-fr/app/com.ikea.tradfri/",
+    "github": "https://github.com/athombv/com.ikea.tradfri-example",
+    "protocols": [
+      "Zigbee",
+      "ZLL"
+    ],
+    "keyManufacturers": [
+      "IKEA of Sweden"
+    ],
+    "categories": [
+      "smart_plug",
+      "curtain",
+      "smart_plug"
+    ],
+    "notes": "Référence pour les contrôleurs IKEA, OTA, binding, scenes."
+  },
+  {
+    "name": "Philips Hue (Zigbee)",
+    "appId": "nl.philips.hue",
+    "storeUrl": "https://homey.app/fr-fr/app/nl.philips.hue/",
+    "github": null,
+    "protocols": [
+      "Zigbee",
+      "ZLL"
+    ],
+    "keyManufacturers": [
+      "Philips",
+      "Signify Netherlands B.V."
+    ],
+    "categories": [
+      "smart_plug",
+      "lighting"
+    ],
+    "notes": "Éclairage multi-scènes, gradient, entertainment. Pas de repo officiel."
+  },
+  {
+    "name": "Shelly",
+    "appId": "cloud.shelly",
+    "storeUrl": "https://homey.app/fr-fr/app/cloud.shelly/",
+    "github": null,
+    "protocols": [
+      "Wi-Fi",
+      "Cloud"
+    ],
+    "keyManufacturers": [
+      "Shelly"
+    ],
+    "categories": [
+      "smart_plug",
+      "smart_plug",
+      "energy"
+    ],
+    "notes": "App cloud, utile pour l’énergie; non Zigbee mais souvent combiné."
+  },
+  {
+    "name": "Sonos",
+    "appId": "com.sonos",
+    "storeUrl": "https://homey.app/fr-fr/app/com.sonos/",
+    "github": "https://github.com/athombv/com.sonos",
+    "protocols": [
+      "Wi-Fi",
+      "Cloud"
+    ],
+    "keyManufacturers": [
+      "Sonos"
+    ],
+    "categories": [
+      "smart_audio"
+    ],
+    "notes": "Flow-rich, utile pour les scénarios lumière + audio."
+  },
+  {
+    "name": "Aqara",
+    "appId": "com.xiaomi-mi",
+    "storeUrl": "https://homey.app/fr-fr/app/com.xiaomi-mi/",
+    "github": "https://github.com/athombv/com.xiaomi-mi",
+    "protocols": [
+      "Zigbee",
+      "Xiaomi proprietary"
+    ],
+    "keyManufacturers": [
+      "LUMI",
+      "Xiaomi",
+      "Aqara"
+    ],
+    "categories": [
+      "climate_sensor",
+      "motion_sensor",
+      "smart_plug",
+      "safety"
+    ],
+    "notes": "Bonne référence pour les capteurs Xiaomi / opple."
+  },
+  {
+    "name": "HomeyScript",
+    "appId": "com.athom.homeyscript",
+    "storeUrl": "https://homey.app/fr-fr/app/com.athom.homeyscript/",
+    "github": "https://github.com/athombv/homeyscript",
+    "protocols": [],
+    "keyManufacturers": [],
+    "categories": [
+      "automation_tool"
+    ],
+    "notes": "Pas un device Zigbee mais essentiel pour flows avancés."
+  }
+]
