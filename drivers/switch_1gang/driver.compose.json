@@ -1,6 +1,8 @@
 {
   "class": "socket",
-  "capabilities": ["onoff"],
+  "capabilities": [
+    "onoff"
+  ],
   "zigbee": {
     "productId": [
       "TS0001",
@@ -16,7 +18,17 @@
       "1PM",
       "S4SW-001X8EU",
       "S4SW-001X16EU",
-      "S4SW-001P16EU"
+      "S4SW-001P16EU",
+      "TS0005",
+      "TS0006",
+      "SHSW-1",
+      "Shelly1",
+      "BASICZBR3",
+      "ZBMINI",
+      "ZBMINIL2",
+      "S31ZB",
+      "ZM-CSW002-D",
+      "TS0041"
     ],
     "endpoints": {
       "1": {
@@ -70,7 +82,64 @@
       "_TZ3000_lrgccsxm",
       "_TZ3000_ltt60asa",
       "_TZ3000_lupfd8zu",
-      "_TZ3000_lvhy15ix"
+      "_TZ3000_lvhy15ix",
+      "_TZ3000_4fjiwweb",
+      "_TZ3000_4js9lo5d",
+      "_TZ3000_fisb3ajo",
+      "_TZ3000_ji4araar",
+      "_TZ3000_kdi2o9m6",
+      "_TZ3000_ly9apzky",
+      "_TZ3000_majwnphg",
+      "_TZ3000_mgusv51k",
+      "_TZ3000_mmkbptmx",
+      "_TZ3000_mw1pqqqt",
+      "Allterco",
+      "SONOFF",
+      "eWeLink",
+      "_TZ3000_7ysdnebc",
+      "_TZ3000_ksw8qtmt",
+      "Zemismart",
+      "_TZ3000_txpitre5",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_tqlv4ez4",
+      "_TZ3000_4uf3d0ax",
+      "_TZ3000_pmvbt5hh",
+      "_TZ3000_npzfdcof",
+      "_TZ3000_hktqahrq",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_46t1rvdu",
+      "_TZ3000_5ng23zjs",
+      "_TZ3000_zmlunnhy",
+      "_TZ3000_qmi1cfuq",
+      "_TZ3000_rmjr4ufz",
+      "_TZ3000_5ucujjts",
+      "_TZ3000_4upl1fcj",
+      "_TZ3000_5bpeda8u",
+      "_TZ3000_8rppvwda",
+      "_TZ3000_fa9mlvja",
+      "_TZ3000_itb0omhv",
+      "_TZ3000_kjfzuycl",
+      "_TZ3000_mrpevh8p",
+      "_TZ3000_q68478x7",
+      "_TZ3000_qgwcxxws",
+      "_TZ3000_vn88ezar",
+      "_TZ3000_xabckq1v",
+      "_TZ3000_yj6k7vfo",
+      "_TZ3000_ovyaisip",
+      "_TZ3000_p26flek3",
+      "_TZ3000_pk8tgtdb",
+      "_TZ3000_prd023wy",
+      "_TZ3000_prits6g4",
+      "_TZ3000_tqlv4ug4",
+      "_TZ3000_w0ypwa1f",
+      "_TZ3000_x3ewpzyr",
+      "_TZ3000_y4che4dc",
+      "_TZ3000_ysdv91bk",
+      "_TZ3000_zw7yf6yk",
+      "_TZ3210_fgwhjm9j",
+      "_TZ3210_fhx7lk3d",
+      "_TZ3210_j4pdtz9v",
+      "lumi.ctrl_ln1"
     ]
   },
   "images": {
@@ -364,4 +433,3 @@
     }
   ]
 }
-

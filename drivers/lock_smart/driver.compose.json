@@ -7,7 +7,8 @@
   "capabilities": [
     "locked",
     "lock_mode",
-    "measure_battery"],
+    "measure_battery"
+  ],
   "energy": {
     "batteries": [
       "CR2032",
@@ -51,7 +52,11 @@
       "_TZE200_dcrrztpa",
       "_TZE200_dq8bu0pt",
       "_TZE200_e3oitdyu",
-      "_TZE200_f91miyhj"
+      "_TZE200_f91miyhj",
+      "_TZE200_ar0slwnd",
+      "_TZ3000_*",
+      "_TZE200_*",
+      "_TZE200_bmzphld8"
     ],
     "productId": [
       "TS0601"
@@ -335,4 +340,3 @@
     }
   ]
 }
-
