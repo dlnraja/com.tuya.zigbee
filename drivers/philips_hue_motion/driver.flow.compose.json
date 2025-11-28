@@ -1,0 +1,85 @@
+{
+  "triggers": [
+    {
+      "id": "hue_motion_detected",
+      "title": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté"
+      }
+    },
+    {
+      "id": "hue_motion_cleared",
+      "title": {
+        "en": "Motion cleared",
+        "fr": "Plus de mouvement"
+      }
+    },
+    {
+      "id": "hue_motion_luminance_changed",
+      "title": {
+        "en": "Light level changed",
+        "fr": "Niveau lumière changé"
+      },
+      "tokens": [
+        {
+          "name": "lux",
+          "type": "number",
+          "title": {
+            "en": "Lux",
+            "fr": "Lux"
+          },
+          "example": 500
+        }
+      ]
+    },
+    {
+      "id": "hue_motion_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "°C",
+            "fr": "°C"
+          },
+          "example": 22
+        }
+      ]
+    },
+    {
+      "id": "hue_motion_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "hue_motion_is_detected",
+      "title": {
+        "en": "Motion is detected",
+        "fr": "Mouvement en cours"
+      }
+    },
+    {
+      "id": "hue_motion_luminance_below",
+      "title": {
+        "en": "Light level below",
+        "fr": "Niveau lumière inférieur à"
+      },
+      "args": [
+        {
+          "name": "lux",
+          "type": "number",
+          "min": 0,
+          "max": 10000
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": {
+    "en": "BlitzWolf Smart Plug",
+    "fr": "Prise connectée BlitzWolf"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "meter_power"
+  ],
+  "energy": {
+    "approximation": {
+      "usageOn": 0,
+      "usageOff": 0
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_dpo1ysak",
+      "_TZ3000_amdymr7l",
+      "_TZ3000_typdpdpg",
+      "BlitzWolf"
+    ],
+    "productId": [
+      "BW-SHP13",
+      "BW-SHP15",
+      "TS0121",
+      "TS011F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          2820
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/blitzwolf_smart_plug/assets/images/small.png",
+    "large": "drivers/blitzwolf_smart_plug/assets/images/large.png"
+  }
+}
