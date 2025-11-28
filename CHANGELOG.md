@@ -1,5 +1,60 @@
 # Changelog
 
+## [5.2.10] - 2025-11-28
+
+### Enhanced Diagnostics & Battery Device Handling
+
+#### New Features
+
+##### DeviceDiagnostics Tool
+- **New:** Comprehensive diagnostic tool for all devices
+- **Features:**
+  - Full device health check (capabilities, clusters, battery, communication)
+  - Automatic health score calculation (0-100)
+  - Recommendations for fixing detected issues
+  - KPI collection for monitoring
+
+##### RetryWithBackoff Utility
+- **New:** Smart retry logic with exponential backoff
+- **Presets:** Battery devices, mains devices, sleepy devices, Tuya TS0601
+- **Features:**
+  - Configurable max retries, delays, and timeouts
+  - Jitter for avoiding thundering herd
+  - Device-type specific presets
+
+##### Passive Mode for TS0601 Devices
+- **New:** When Tuya cluster 0xEF00 not directly accessible, falls back to passive mode
+- **Features:**
+  - ZCL frame listeners on all available clusters
+  - Manual DP frame parsing
+  - Capabilities updated when device wakes up
+  - Pre-configured DP mappings for common devices
+
+#### Bug Fixes
+
+##### Cluster 0xEF00 Detection
+- **Fixed:** Enhanced cluster detection with multiple naming conventions
+- **Patterns checked:** `tuya`, `tuyaManufacturer`, `61184`, `0xEF00`
+- **Fallback:** Direct bind attempt for TS0601 devices
+
+##### Battery Device Timeout Handling
+- **Fixed:** Shorter timeouts (3s) for battery devices vs mains (8s)
+- **Fixed:** No retry spam for sleeping devices
+- **Fixed:** Clear logs indicating passive mode activation
+
+##### TS0601 Emergency Fix
+- **Added:** More manufacturers: `_TZE200_3towulqd`, `_TZE200_9yapgbuv`, `_TZE204_mvtclclq`
+- **Added:** DP mappings for ZG-204ZV, ZTH01, BSEED USB outlet
+
+#### Developer Tools
+
+##### BaseHybridDevice Methods
+- `runDiagnostics()` - Full device analysis
+- `getRecommendations()` - AI-suggested fixes
+- `getKPIs()` - Device monitoring data
+
+---
+
 ## [5.1.1] - 2025-11-27
 
 ### 🔥 CRITICAL FIX - App Crash Resolved

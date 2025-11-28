@@ -1,0 +1,124 @@
+{
+  "name": {
+    "en": "BSEED Double Socket + USB (TS0601)",
+    "fr": "BSEED Double Prise + USB (TS0601)"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "onoff.gang2",
+    "onoff.usb"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Socket 1",
+        "fr": "Prise 1"
+      }
+    },
+    "onoff.gang2": {
+      "title": {
+        "en": "Socket 2",
+        "fr": "Prise 2"
+      }
+    },
+    "onoff.usb": {
+      "title": {
+        "en": "USB Port",
+        "fr": "Port USB"
+      }
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageConstant": 2
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE204_mvtclclq",
+      "_TZE200_mvtclclq",
+      "_TZE200_bseed2g",
+      "_TZE204_bseed3g",
+      "_TZE200_2usb_socket",
+      "_TZE204_2usb_socket"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          61184
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the button for 5 seconds until the LED blinks rapidly.",
+        "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "tuya_dp_configuration",
+      "type": "label",
+      "label": {
+        "en": "Tuya Datapoint Configuration",
+        "fr": "Configuration Tuya Datapoint"
+      },
+      "value": "{\n  \"1\": \"socket_1\",\n  \"2\": \"socket_2\",\n  \"3\": \"usb_port\"\n}"
+    },
+    {
+      "id": "dp_debug_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "DP Debug Mode",
+        "fr": "Mode Debug DP"
+      },
+      "value": false,
+      "hint": {
+        "en": "Log all Tuya DP data for troubleshooting",
+        "fr": "Logger toutes les données Tuya DP pour diagnostic"
+      }
+    },
+    {
+      "id": "independent_control",
+      "type": "checkbox",
+      "label": {
+        "en": "Independent Socket Control",
+        "fr": "Contrôle Indépendant des Prises"
+      },
+      "value": true,
+      "hint": {
+        "en": "Control each socket independently",
+        "fr": "Contrôler chaque prise indépendamment"
+      }
+    }
+  ],
+  "id": "usb_outlet_bseed",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

@@ -189,6 +189,14 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
         this.log(`[RADAR] ✅ Listening: ${eventName} → ${this.dpMap[dpId]}`);
       });
 
+      // v5.2.10: PATCH 4 - Listen to dpReport for ALL incoming DPs
+      manager.on('dpReport', ({ dpId, value, dpType }) => {
+        this.log(`[TUYA-DP] presence_sensor_radar DP report: DP${dpId} = ${JSON.stringify(value)} (type: ${dpType})`);
+        // Process DP even if not in dpMap (for discovery)
+        this._handleTuyaDP(dpId, value);
+      });
+      this.log('[RADAR] ✅ dpReport listener registered for all DPs');
+
       // Auto-setup with TuyaDPMapper
       await TuyaDPMapper.autoSetup(this, zclNode).catch(err => {
         this.log('[RADAR] ⚠️  Auto-mapping failed:', err.message);
@@ -251,6 +259,56 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
         } else {
           this.log('[TS0601-RADAR] Unhandled DP', dpId, 'role', role, 'value', value);
         }
+    }
+  }
+
+  /**
+   * v5.2.10: PATCH 4 - Handle Tuya DP with explicit mapping for _TZE200_rhgsbacq
+   * This provides a fallback mapping when dpMap doesn't have the DP
+   */
+  _handleTuyaDP(dpId, value) {
+    // Known DPs for _TZE200_rhgsbacq presence radar
+    // Based on Zigbee2MQTT and Tuya documentation
+    const RADAR_DP_MAP = {
+      1: { capability: 'alarm_motion', parser: (v) => Boolean(v) },
+      4: { capability: 'measure_battery', parser: (v) => v },
+      9: { capability: 'radar_sensitivity', parser: (v) => v, isConfig: true },
+      10: { capability: 'detection_delay', parser: (v) => v, isConfig: true },
+      12: { capability: 'target_distance', parser: (v) => v / 100, isConfig: true }, // cm to m
+      15: { capability: 'measure_battery', parser: (v) => v },
+      101: { capability: 'radar_sensitivity', parser: (v) => v, isConfig: true },
+      102: { capability: 'illuminance_threshold', parser: (v) => v, isConfig: true },
+      103: { capability: 'measure_luminance', parser: (v) => v },
+      104: { capability: 'fading_time', parser: (v) => v, isConfig: true }
+    };
+
+    const mapping = RADAR_DP_MAP[dpId];
+
+    if (mapping) {
+      const { capability, parser, isConfig } = mapping;
+      const parsedValue = parser ? parser(value) : value;
+
+      if (isConfig) {
+        // Config values - just log them
+        this.log(`[TUYA-DP] 📊 Config DP${dpId} (${capability}): ${parsedValue}`);
+        this.setStoreValue(`config_${capability}`, parsedValue).catch(() => { });
+      } else {
+        // Capability values - update if capability exists
+        this.log(`[TUYA-DP] ✅ DP${dpId} → ${capability} = ${parsedValue}`);
+
+        if (this.hasCapability(capability)) {
+          this.setCapabilityValue(capability, parsedValue).catch(err => {
+            this.error(`[TUYA-DP] ❌ Failed to set ${capability}:`, err.message);
+          });
+        } else {
+          this.log(`[TUYA-DP] ⚠️ Missing capability ${capability}, storing value`);
+          this.setStoreValue(`dp_${dpId}_value`, parsedValue).catch(() => { });
+        }
+      }
+    } else {
+      // Unknown DP - store for debugging
+      this.log(`[TUYA-DP] ℹ️ Unknown DP${dpId} = ${JSON.stringify(value)}`);
+      this.setStoreValue(`unknown_dp_${dpId}`, value).catch(() => { });
     }
   }
 
