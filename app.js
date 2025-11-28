@@ -14,6 +14,8 @@ const DiagnosticAPI = require('./lib/diagnostics/DiagnosticAPI');
 const { LogBuffer } = require('./lib/utils/LogBuffer');
 const SuggestionEngine = require('./lib/smartadapt/SuggestionEngine');
 const { processMigrationQueue } = require('./lib/utils/migration-queue'); // ✅ FIX CRITIQUE
+const OTAUpdateManager = require('./lib/ota/OTAUpdateManager'); // 📦 OTA Firmware Updates
+const QuirksDatabase = require('./lib/quirks/QuirksDatabase'); // 🔧 Device Quirks
 
 class UniversalTuyaZigbeeApp extends Homey.App {
   _flowCardsRegistered = false;
@@ -28,6 +30,8 @@ class UniversalTuyaZigbeeApp extends Homey.App {
   diagnosticAPI = null; // 🔬 For MCP/AI integration
   logBuffer = null; // 📝 MCP-accessible log buffer
   suggestionEngine = null; // 🤖 Non-destructive Smart-Adapt
+  otaManager = null; // 📦 OTA Firmware Update Manager
+  quirksDatabase = null; // 🔧 Device Quirks Database
   developerDebugMode = false; // 🔍 AUDIT V2: Contrôle verbosity logs
   experimentalSmartAdapt = false; // ⚠️ AUDIT V2: Modifications capabilities opt-in
 
@@ -122,6 +126,14 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     this.suggestionEngine = new SuggestionEngine(this.homey, this.logBuffer);
     this.log('✅ SuggestionEngine initialized (non-destructive mode)');
 
+    // 📦 Initialize OTA Firmware Update Manager
+    this.otaManager = new OTAUpdateManager(this.homey);
+    this.log('✅ OTA Update Manager initialized');
+
+    // 🔧 Initialize Quirks Database
+    this.quirksDatabase = QuirksDatabase;
+    this.log('✅ Quirks Database initialized');
+
     // DISABLED: SDK3 doesn't allow overriding this.log (read-only property)
     // this._setupDiagnosticLogging();
     // DiagnosticAPI and LogBuffer still work via direct calls
@@ -129,11 +141,14 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     // Register additional global flow cards
     this.registerFlowCards();
 
+    // Register OTA flow cards
+    this.registerOTAFlowCards();
+
     // Initialize Homey Insights
     await this.initializeInsights();
 
     this.log('✅ Universal Tuya Zigbee App has been initialized');
-    this.log('🚀 Advanced systems: Analytics, Discovery, Performance, Unknown Device Detection, System Logs, Intelligent ID Database');
+    this.log('🚀 Advanced systems: Analytics, Discovery, Performance, OTA, Quirks, System Logs, Intelligent ID Database');
 
     // Log capability stats
     const stats = this.capabilityManager.getStats();
@@ -318,6 +333,134 @@ class UniversalTuyaZigbeeApp extends Homey.App {
   }
 
   /**
+   * Register OTA Firmware Update Flow Cards
+   */
+  registerOTAFlowCards() {
+    this.log('📦 Registering OTA Flow Cards...');
+
+    try {
+      // TRIGGER: OTA update available
+      this.homey.flow.getTriggerCard('ota_update_available')
+        .registerRunListener(async (args, state) => {
+          return true; // Always allow trigger
+        });
+
+      // TRIGGER: OTA update completed
+      this.homey.flow.getTriggerCard('ota_update_completed')
+        .registerRunListener(async (args, state) => {
+          return true;
+        });
+
+      // ACTION: Check for firmware updates
+      this.homey.flow.getActionCard('ota_check_updates')
+        .registerRunListener(async (args) => {
+          this.log('[OTA] Checking for updates via flow action...');
+
+          // Get all devices
+          const devices = Object.values(this.homey.drivers.getDrivers())
+            .flatMap(driver => Object.values(driver.getDevices()));
+
+          let updatesFound = 0;
+
+          for (const device of devices) {
+            try {
+              const update = await this.otaManager.checkUpdate(device);
+              if (update.available) {
+                updatesFound++;
+
+                // Trigger the update available flow
+                await this.homey.flow.getTriggerCard('ota_update_available')
+                  .trigger({
+                    device_name: device.getName(),
+                    current_version: String(update.currentVersion),
+                    new_version: String(update.newVersion)
+                  });
+              }
+            } catch (err) {
+              // Continue with next device
+            }
+          }
+
+          this.log(`[OTA] Found ${updatesFound} updates available`);
+          return true;
+        });
+
+      this.log('✅ OTA Flow Cards registered (3 cards)');
+
+      // Device Health Flow Cards
+      // TRIGGER: Device offline
+      this.homey.flow.getTriggerCard('device_offline')
+        .registerRunListener(async (args, state) => true);
+
+      // TRIGGER: Device online
+      this.homey.flow.getTriggerCard('device_online')
+        .registerRunListener(async (args, state) => true);
+
+      // TRIGGER: Low battery warning
+      this.homey.flow.getTriggerCard('low_battery_warning')
+        .registerRunListener(async (args, state) => true);
+
+      // TRIGGER: Zigbee signal weak
+      this.homey.flow.getTriggerCard('zigbee_signal_weak')
+        .registerRunListener(async (args, state) => true);
+
+      // ACTION: Identify device
+      this.homey.flow.getActionCard('device_identify')
+        .registerRunListener(async (args) => {
+          const device = args.device;
+          this.log(`[IDENTIFY] Identifying device: ${device.getName()}`);
+
+          try {
+            // Try to identify via Zigbee Identify cluster
+            const endpoint = device.zclNode?.endpoints?.[1];
+            if (endpoint?.clusters?.identify) {
+              await endpoint.clusters.identify.identify({ identifyTime: 10 });
+              this.log(`[IDENTIFY] Device ${device.getName()} is blinking`);
+            } else if (device.hasCapability('onoff')) {
+              // Fallback: toggle on/off
+              const original = device.getCapabilityValue('onoff');
+              await device.setCapabilityValue('onoff', !original);
+              await new Promise(r => setTimeout(r, 500));
+              await device.setCapabilityValue('onoff', original);
+              await new Promise(r => setTimeout(r, 500));
+              await device.setCapabilityValue('onoff', !original);
+              await new Promise(r => setTimeout(r, 500));
+              await device.setCapabilityValue('onoff', original);
+            }
+            return true;
+          } catch (err) {
+            this.error(`[IDENTIFY] Failed to identify ${device.getName()}:`, err.message);
+            return false;
+          }
+        });
+
+      // CONDITION: Device is online
+      this.homey.flow.getConditionCard('device_is_online')
+        .registerRunListener(async (args) => {
+          return args.device.getAvailable();
+        });
+
+      this.log('✅ Device Health Flow Cards registered (6 cards)');
+    } catch (err) {
+      this.error('⚠️  Error registering OTA flow cards:', err.message);
+    }
+  }
+
+  /**
+   * Get OTA Update Manager (for external access)
+   */
+  getOTAManager() {
+    return this.otaManager;
+  }
+
+  /**
+   * Get Quirks Database (for external access)
+   */
+  getQuirksDatabase() {
+    return this.quirksDatabase;
+  }
+
+  /**
    * Setup diagnostic logging to capture all logs for MCP/AI
    */
   _setupDiagnosticLogging() {
@@ -476,7 +619,23 @@ class UniversalTuyaZigbeeApp extends Homey.App {
         decimals: 1
       }).catch(() => { });
 
-      this.log('✅ Homey Insights initialized (4 logs)');
+      // OTA update tracking insight
+      await this.homey.insights.createLog('ota_updates', {
+        title: { en: 'OTA Updates Available', fr: 'Mises à jour OTA disponibles' },
+        type: 'number',
+        units: '',
+        decimals: 0
+      }).catch(() => { });
+
+      // Device offline count insight
+      await this.homey.insights.createLog('devices_offline', {
+        title: { en: 'Devices Offline', fr: 'Appareils hors ligne' },
+        type: 'number',
+        units: '',
+        decimals: 0
+      }).catch(() => { });
+
+      this.log('✅ Homey Insights initialized (6 logs)');
     } catch (err) {
       this.error('⚠️  Error initializing insights:', err.message);
     }
