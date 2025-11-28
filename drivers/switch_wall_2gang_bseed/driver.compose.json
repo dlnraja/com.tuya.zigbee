@@ -5,7 +5,6 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff",
     "onoff.gang2"
   ],
   "capabilitiesOptions": {
@@ -58,11 +57,11 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "identify",
-          "groups",
-          "scenes",
-          "onOff",
+          0,
+          3,
+          4,
+          5,
+          6,
           61184
         ],
         "bindings": [
@@ -71,9 +70,9 @@
       },
       "2": {
         "clusters": [
-          "groups",
-          "scenes",
-          "onOff"
+          4,
+          5,
+          6
         ],
         "bindings": [
           6

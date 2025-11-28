@@ -5,7 +5,6 @@
   },
   "class": "light",
   "capabilities": [
-    "onoff",
     "dim"
   ],
   "energy": {
@@ -28,12 +27,12 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "identify",
-          "groups",
-          "scenes",
-          "onOff",
-          "levelControl",
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
           61184
         ],
         "bindings": [

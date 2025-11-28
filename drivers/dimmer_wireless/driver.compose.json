@@ -5,7 +5,6 @@
   },
   "class": "light",
   "capabilities": [
-    "onoff",
     "dim",
     "measure_battery"
   ],
@@ -37,12 +36,12 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "powerConfiguration",
-          "identify",
-          "scenes",
-          "onOff",
-          "levelControl",
+          0,
+          1,
+          3,
+          5,
+          6,
+          8,
           61184,
           1
         ],

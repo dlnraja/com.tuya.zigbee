@@ -5,7 +5,6 @@
   },
   "class": "light",
   "capabilities": [
-    "onoff",
     "dim",
     "measure_battery"
   ],
@@ -60,13 +59,13 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "identify",
-          "groups",
-          "scenes",
-          "onOff",
-          "levelControl",
-          "manuSpecificTuya",
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          61184,
           61184,
           1
         ],

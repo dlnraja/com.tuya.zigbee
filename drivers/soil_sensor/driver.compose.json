@@ -1,0 +1,49 @@
+{
+  "name": {
+    "en": "Soil Sensor",
+    "fr": "Capteur de Sol"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "AAA",
+      "AAA"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_myd45weu",
+      "_TZE200_ga1maeof",
+      "_TZE200_n5fxyyjw"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ],
+        "bindings": []
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/soil_sensor/assets/images/small.png",
+    "large": "drivers/soil_sensor/assets/images/large.png",
+    "xlarge": "drivers/soil_sensor/assets/images/xlarge.png"
+  },
+  "id": "soil_sensor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}

@@ -6,7 +6,6 @@
   },
   "class": "speaker",
   "capabilities": [
-    "onoff",
     "volume_set"
   ],
   "platforms": [
@@ -35,10 +34,10 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "powerConfiguration",
-          "onOff",
-          "levelControl",
+          0,
+          1,
+          6,
+          8,
           61184,
           1280,
           0,

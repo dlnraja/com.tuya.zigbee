@@ -1,7 +1,6 @@
 {
   "class": "socket",
   "capabilities": [
-    "onoff",
     "onoff.button2",
     "onoff.button3",
     "onoff.button4",
@@ -17,11 +16,11 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "groups",
-          "scenes",
-          "onOff",
-          "levelControl",
+          0,
+          4,
+          5,
+          6,
+          8,
           61184
         ],
         "bindings": [
@@ -30,11 +29,11 @@
       },
       "2": {
         "clusters": [
-          "basic",
-          "identify",
-          "groups",
-          "scenes",
-          "onOff"
+          0,
+          3,
+          4,
+          5,
+          6
         ],
         "bindings": [
           6
@@ -42,11 +41,11 @@
       },
       "3": {
         "clusters": [
-          "basic",
-          "identify",
-          "groups",
-          "scenes",
-          "onOff"
+          0,
+          3,
+          4,
+          5,
+          6
         ],
         "bindings": [
           6
@@ -54,11 +53,11 @@
       },
       "4": {
         "clusters": [
-          "basic",
-          "identify",
-          "groups",
-          "scenes",
-          "onOff"
+          0,
+          3,
+          4,
+          5,
+          6
         ],
         "bindings": [
           6

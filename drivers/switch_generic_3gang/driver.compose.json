@@ -5,7 +5,6 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff",
     "onoff.gang2",
     "onoff.gang3"
   ],
@@ -58,10 +57,10 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "groups",
-          "scenes",
-          "onOff",
+          0,
+          4,
+          5,
+          6,
           61184
         ],
         "bindings": [
@@ -70,10 +69,10 @@
       },
       "2": {
         "clusters": [
-          "basic",
-          "groups",
-          "scenes",
-          "onOff"
+          0,
+          4,
+          5,
+          6
         ],
         "bindings": [
           6
@@ -81,10 +80,10 @@
       },
       "3": {
         "clusters": [
-          "basic",
-          "groups",
-          "scenes",
-          "onOff"
+          0,
+          4,
+          5,
+          6
         ],
         "bindings": [
           6

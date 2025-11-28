@@ -7,7 +7,6 @@
   "capabilities": [
     "alarm_generic",
     "windowcoverings_state",
-    "onoff",
     "measure_battery"
   ],
   "energy": {
@@ -62,7 +61,7 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
+          0,
           "windowCovering",
           61184,
           1

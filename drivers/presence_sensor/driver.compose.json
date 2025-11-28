@@ -1,0 +1,52 @@
+{
+  "name": {
+    "en": "Presence Sensor",
+    "fr": "Capteur de Présence"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "measure_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2450"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_mcxw5ehu",
+      "_TZ3000_6ygjfyll",
+      "_TZ3040_bb6xaihh",
+      "_TYZB01_tvjnodlq"
+    ],
+    "productId": [
+      "TS0202",
+      "RH3040"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1280
+        ],
+        "bindings": [
+          1280
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/presence_sensor/assets/images/small.png",
+    "large": "drivers/presence_sensor/assets/images/large.png",
+    "xlarge": "drivers/presence_sensor/assets/images/xlarge.png"
+  },
+  "id": "presence_sensor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}
