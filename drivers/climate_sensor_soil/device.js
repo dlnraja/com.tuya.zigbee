@@ -245,6 +245,13 @@ class TuyaSoilTesterTempHumidDevice extends BaseHybridDevice {
         }
       });
 
+      // v5.2.11: Listen to ALL dpReport events for comprehensive logging
+      this.tuyaEF00Manager.on('dpReport', ({ dpId, value, dpType }) => {
+        this.log(`[TUYA-DP] climate_sensor_soil DP report: DP${dpId} = ${JSON.stringify(value)} (type: ${dpType})`);
+        this._handleTuyaDP(dpId, value);
+      });
+      this.log('[SOIL] ✅ dpReport listener registered');
+
       this.log('[SOIL] ✅ Tuya DP listeners configured');
 
       // Request initial values - FORCE device to send data
@@ -513,6 +520,40 @@ class TuyaSoilTesterTempHumidDevice extends BaseHybridDevice {
 
     } catch (err) {
       this.error('IAS Zone setup failed:', err);
+    }
+  }
+
+  /**
+   * v5.2.11: Handle Tuya DP with explicit mapping for soil sensors
+   */
+  _handleTuyaDP(dpId, value) {
+    const SOIL_DP_MAP = {
+      1: { capability: 'measure_temperature', parser: v => v / 10 },
+      2: { capability: 'measure_humidity', parser: v => v },
+      3: { capability: 'measure_humidity.soil', parser: v => v },
+      4: { capability: 'measure_battery', parser: v => v },
+      5: { capability: 'alarm_contact', parser: v => Boolean(v) }
+    };
+
+    const mapping = SOIL_DP_MAP[dpId];
+
+    if (mapping) {
+      const { capability, parser } = mapping;
+      const parsedValue = parser ? parser(value) : value;
+
+      this.log(`[TUYA-DP] ✅ DP${dpId} → ${capability} = ${parsedValue}`);
+
+      if (this.hasCapability(capability)) {
+        this.setCapabilityValue(capability, parsedValue).catch(err => {
+          this.error(`[TUYA-DP] ❌ Failed to set ${capability}:`, err.message);
+        });
+      } else {
+        this.log(`[TUYA-DP] ⚠️ Missing capability ${capability}, storing value`);
+        this.setStoreValue(`dp_${dpId}_value`, parsedValue).catch(() => { });
+      }
+    } else {
+      this.log(`[TUYA-DP] ℹ️ Unknown DP${dpId} = ${JSON.stringify(value)}`);
+      this.setStoreValue(`unknown_dp_${dpId}`, value).catch(() => { });
     }
   }
 

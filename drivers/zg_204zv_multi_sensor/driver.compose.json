@@ -19,7 +19,15 @@
   "zigbee": {
     "manufacturerName": [
       "HOBEIAN",
-      "_TZE200_3towulqd"
+      "_TZE200_3towulqd",
+      "_TZE200_ppuj1vem",
+      "_TZE200_7hfcudw5",
+      "_TZE200_mchxve9o",
+      "_TZE200_n8dljorx",
+      "_TZE200_nhk3bpxq",
+      "_TZE200_xq4hgafz",
+      "_TZE204_n8dljorx",
+      "_TZE204_mchxve9o"
     ],
     "productId": [
       "ZG-204ZV",
@@ -43,5 +51,30 @@
     "batteries": [
       "CR2450"
     ]
-  }
+  },
+  "settings": [
+    {
+      "id": "tuya_dp_configuration",
+      "type": "label",
+      "label": {
+        "en": "Tuya Datapoint Configuration",
+        "fr": "Configuration Tuya Datapoint"
+      },
+      "value": "{\n  \"1\": \"presence\",\n  \"3\": \"temperature\",\n  \"4\": \"humidity\",\n  \"9\": \"illuminance\",\n  \"15\": \"battery\"\n}"
+    },
+    {
+      "id": "dp_debug_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "DP Debug Mode",
+        "fr": "Mode Debug DP"
+      },
+      "value": false,
+      "hint": {
+        "en": "Log all Tuya DP data for troubleshooting",
+        "fr": "Logger toutes les données Tuya DP pour diagnostic"
+      }
+    }
+  ],
+  "id": "zg_204zv_multi_sensor"
 }
