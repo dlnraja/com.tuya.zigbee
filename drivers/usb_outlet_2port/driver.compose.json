@@ -140,9 +140,7 @@
     "devices": {
       "port2": {
         "class": "socket",
-        "capabilities": [
-          6
-        ],
+        "capabilities": ["onoff"],
         "name": {
           "en": "USB Port 2",
           "nl": "USB Poort 2",
@@ -300,3 +298,4 @@
     }
   ]
 }
+

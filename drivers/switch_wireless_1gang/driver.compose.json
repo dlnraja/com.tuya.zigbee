@@ -4,9 +4,7 @@
     "fr": "Interrupteur Filaire 1-gang (TS0001/TS0011)"
   },
   "class": "socket",
-  "capabilities": [
-    6
-  ],
+  "capabilities": ["onoff"],
   "energy": {
     "approximation": {
       "usageConstant": 5
@@ -329,3 +327,4 @@
     }
   ]
 }
+

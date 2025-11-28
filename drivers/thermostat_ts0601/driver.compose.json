@@ -30,5 +30,10 @@
         "bindings": []
       }
     }
+  },
+  "images": {
+    "large": "drivers/thermostat_ts0601/assets/images/large.png",
+    "xlarge": "drivers/thermostat_ts0601/assets/images/xlarge.png",
+    "small": "drivers/thermostat_ts0601/assets/images/small.png"
   }
 }

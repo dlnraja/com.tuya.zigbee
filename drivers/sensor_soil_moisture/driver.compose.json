@@ -16,9 +16,7 @@
     "measure_temperature",
     "measure_humidity",
     "measure_battery",
-    "alarm_battery",
-    6
-  ],
+    "alarm_battery"],
   "capabilitiesOptions": {
     "measure_moisture": {
       "title": {
@@ -234,3 +232,4 @@
     ]
   }
 }
+

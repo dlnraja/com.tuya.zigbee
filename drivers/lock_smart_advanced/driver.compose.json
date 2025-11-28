@@ -8,12 +8,17 @@
     "locked",
     "lock_mode",
     "alarm_tamper",
-    "measure_battery",
-    "lock_status",
-    6
+    "measure_battery"
   ],
   "capabilitiesOptions": {},
-  "energy": {},
+  "energy": {
+    "batteries": [
+      "AA",
+      "AA",
+      "AA",
+      "AA"
+    ]
+  },
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_*",
@@ -66,7 +71,10 @@
     {
       "id": "auto_lock",
       "type": "checkbox",
-      "value": false
+      "value": false,
+      "label": {
+        "en": "Auto Lock"
+      }
     },
     {
       "id": "auto_lock_time",
@@ -74,11 +82,15 @@
       "value": 5,
       "min": 0,
       "max": 600,
-      "units": "s"
+      "units": "s",
+      "label": {
+        "en": "Auto Lock Time"
+      }
     }
   ],
   "images": {
-    "small": "./drivers/lock_smart_advanced/assets/icon.svg",
-    "large": "./drivers/lock_smart_advanced/assets/icon.svg"
+    "small": "drivers/lock_smart_advanced/assets/images/small.png",
+    "large": "drivers/lock_smart_advanced/assets/images/large.png",
+    "xlarge": "drivers/lock_smart_advanced/assets/images/xlarge.png"
   }
 }

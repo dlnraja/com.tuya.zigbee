@@ -11,9 +11,7 @@
     "da": "1-Gang Væg Kontakt"
   },
   "class": "socket",
-  "capabilities": [
-    6
-  ],
+  "capabilities": ["onoff"],
   "capabilitiesOptions": {
     "onoff": {
       "title": {
@@ -353,3 +351,4 @@
     }
   ]
 }
+

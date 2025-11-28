@@ -11,8 +11,7 @@
     "alarm_humidity",
     "measure_temperature",
     "measure_humidity",
-    "volume_set",
-    6
+    "volume_set"
   ],
   "capabilitiesOptions": {},
   "energy": {
@@ -74,6 +73,9 @@
     {
       "id": "melody",
       "type": "dropdown",
+      "label": {
+        "en": "Melody"
+      },
       "value": "1",
       "values": [
         {
@@ -99,6 +101,9 @@
     {
       "id": "duration",
       "type": "number",
+      "label": {
+        "en": "Duration"
+      },
       "value": 60,
       "min": 1,
       "max": 600,
@@ -106,7 +111,10 @@
     },
     {
       "id": "volume",
-      "type": "slider",
+      "type": "number",
+      "label": {
+        "en": "Volume"
+      },
       "value": 50,
       "min": 0,
       "max": 100,
@@ -115,22 +123,29 @@
     {
       "id": "temp_alarm_min",
       "type": "number",
+      "label": {
+        "en": "Min Temperature Alarm"
+      },
       "value": 0,
       "min": -20,
       "max": 50,
-      "units": "°C"
+      "units": "C"
     },
     {
       "id": "temp_alarm_max",
       "type": "number",
+      "label": {
+        "en": "Max Temperature Alarm"
+      },
       "value": 40,
       "min": 0,
       "max": 80,
-      "units": "°C"
+      "units": "C"
     }
   ],
   "images": {
-    "small": "./drivers/siren_alarm_advanced/assets/icon.svg",
-    "large": "./drivers/siren_alarm_advanced/assets/icon.svg"
+    "small": "drivers/siren_alarm_advanced/assets/images/small.png",
+    "large": "drivers/siren_alarm_advanced/assets/images/small.png"
   }
 }
+

@@ -76,5 +76,10 @@
       }
     }
   ],
-  "id": "zg_204zv_multi_sensor"
+  "id": "zg_204zv_multi_sensor",
+  "images": {
+    "large": "drivers/zg_204zv_multi_sensor/assets/images/large.png",
+    "xlarge": "drivers/zg_204zv_multi_sensor/assets/images/xlarge.png",
+    "small": "drivers/zg_204zv_multi_sensor/assets/images/small.png"
+  }
 }

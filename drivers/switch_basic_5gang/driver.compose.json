@@ -4,9 +4,7 @@
     "fr": "Switch 5gang"
   },
   "class": "socket",
-  "capabilities": [
-    6
-  ],
+  "capabilities": ["onoff"],
   "energy": {
     "approximation": {
       "usageConstant": 0.5
@@ -365,3 +363,4 @@
     }
   ]
 }
+

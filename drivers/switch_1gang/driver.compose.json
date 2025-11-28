@@ -1,8 +1,6 @@
 {
   "class": "socket",
-  "capabilities": [
-    6
-  ],
+  "capabilities": ["onoff"],
   "zigbee": {
     "productId": [
       "TS0001",
@@ -366,3 +364,4 @@
     }
   ]
 }
+
