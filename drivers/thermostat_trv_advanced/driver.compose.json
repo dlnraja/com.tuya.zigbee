@@ -68,6 +68,10 @@
     {
       "id": "temp_offset",
       "type": "number",
+      "label": {
+        "en": "Temperature Offset",
+        "fr": "Décalage Température"
+      },
       "value": 0,
       "min": -5,
       "max": 5,
@@ -76,16 +80,28 @@
     {
       "id": "window_detection",
       "type": "checkbox",
+      "label": {
+        "en": "Window Detection",
+        "fr": "Détection Fenêtre"
+      },
       "value": true
     },
     {
       "id": "anti_scale",
       "type": "checkbox",
+      "label": {
+        "en": "Anti-Scale",
+        "fr": "Anti-Calcaire"
+      },
       "value": true
     },
     {
       "id": "frost_protection",
       "type": "number",
+      "label": {
+        "en": "Frost Protection Temperature",
+        "fr": "Température Protection Gel"
+      },
       "value": 5,
       "min": 0,
       "max": 10
