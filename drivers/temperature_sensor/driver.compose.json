@@ -8,7 +8,8 @@
     "alarm_motion",
     "measure_temperature",
     "measure_battery",
-    "alarm_contact"],
+    "alarm_contact"
+  ],
   "energy": {
     "batteries": [
       "CR2032",
@@ -53,7 +54,8 @@
       "_TZ3000_ltt60asa",
       "_TZ3000_n2egfsli",
       "_TZ3000_okohwwap",
-      "_TZ3000_oxslv1c9"
+      "_TZ3000_oxslv1c9",
+      "_TZ3000_zbeacon"
     ],
     "productId": [
       "TS0201",
@@ -345,4 +347,3 @@
     }
   ]
 }
-
