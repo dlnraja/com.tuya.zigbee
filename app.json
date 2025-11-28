@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.2.15",
+  "version": "5.2.16",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -20248,6 +20248,375 @@
     },
     {
       "name": {
+        "en": "Aqara Temperature & Humidity Sensor",
+        "fr": "Capteur température & humidité Aqara"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_pressure",
+        "measure_battery"
+      ],
+      "capabilitiesOptions": {},
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "LUMI",
+          "lumi",
+          "aqara",
+          "Xiaomi"
+        ],
+        "productId": [
+          "lumi.weather",
+          "lumi.sensor_ht",
+          "lumi.sensor_ht.agl02",
+          "lumi.airmonitor.acn01",
+          "WSDCGQ11LM",
+          "WSDCGQ01LM"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1026,
+              1029,
+              1027
+            ],
+            "bindings": [
+              1026,
+              1029,
+              1027
+            ]
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset",
+            "fr": "Décalage température"
+          },
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "units": "°C"
+        },
+        {
+          "id": "humidity_offset",
+          "type": "number",
+          "label": {
+            "en": "Humidity Offset",
+            "fr": "Décalage humidité"
+          },
+          "value": 0,
+          "min": -20,
+          "max": 20,
+          "units": "%"
+        }
+      ],
+      "images": {
+        "small": "drivers/aqara_climate_sensor/assets/images/small.png",
+        "large": "drivers/aqara_climate_sensor/assets/images/large.png"
+      },
+      "id": "aqara_climate_sensor"
+    },
+    {
+      "name": {
+        "en": "Aqara Door/Window Sensor",
+        "fr": "Capteur porte/fenêtre Aqara"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_contact",
+        "measure_battery"
+      ],
+      "capabilitiesOptions": {
+        "alarm_contact": {
+          "title": {
+            "en": "Open",
+            "fr": "Ouvert"
+          }
+        }
+      },
+      "energy": {
+        "batteries": [
+          "CR1632",
+          "CR2032"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "LUMI",
+          "lumi",
+          "aqara",
+          "Xiaomi"
+        ],
+        "productId": [
+          "lumi.sensor_magnet",
+          "lumi.sensor_magnet.aq2",
+          "lumi.magnet.ac01",
+          "lumi.magnet.agl02",
+          "MCCGQ11LM",
+          "MCCGQ01LM",
+          "MCCGQ14LM"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1280
+            ],
+            "bindings": [
+              1280
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/aqara_contact_sensor/assets/images/small.png",
+        "large": "drivers/aqara_contact_sensor/assets/images/large.png"
+      },
+      "id": "aqara_contact_sensor"
+    },
+    {
+      "name": {
+        "en": "Aqara Motion Sensor",
+        "fr": "Capteur de mouvement Aqara"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_luminance",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2450"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "LUMI",
+          "lumi",
+          "aqara",
+          "Xiaomi"
+        ],
+        "productId": [
+          "lumi.sensor_motion",
+          "lumi.sensor_motion.aq2",
+          "lumi.motion.agl02",
+          "lumi.motion.agl04",
+          "RTCGQ11LM",
+          "RTCGQ01LM",
+          "RTCGQ12LM",
+          "RTCGQ14LM"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1030,
+              1024,
+              1280
+            ],
+            "bindings": [
+              1030,
+              1024
+            ]
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "motion_sensitivity",
+          "type": "dropdown",
+          "label": {
+            "en": "Motion Sensitivity",
+            "fr": "Sensibilité mouvement"
+          },
+          "value": "medium",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low",
+                "fr": "Faible"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium",
+                "fr": "Moyenne"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High",
+                "fr": "Élevée"
+              }
+            }
+          ]
+        },
+        {
+          "id": "motion_reset_time",
+          "type": "number",
+          "label": {
+            "en": "Motion Reset Time",
+            "fr": "Temps de réinitialisation"
+          },
+          "value": 60,
+          "min": 10,
+          "max": 600,
+          "units": "s"
+        }
+      ],
+      "images": {
+        "small": "drivers/aqara_motion_sensor/assets/images/small.png",
+        "large": "drivers/aqara_motion_sensor/assets/images/large.png"
+      },
+      "id": "aqara_motion_sensor"
+    },
+    {
+      "name": {
+        "en": "Aqara Presence Sensor FP1",
+        "fr": "Capteur de présence Aqara FP1"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_luminance",
+        "measure_battery"
+      ],
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Presence detected",
+            "fr": "Présence détectée"
+          }
+        }
+      },
+      "energy": {
+        "batteries": [
+          "CR2450"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "aqara",
+          "LUMI",
+          "lumi"
+        ],
+        "productId": [
+          "lumi.motion.ac01",
+          "lumi.motion.ac02",
+          "lumi.sensor_motion.aq2"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1030,
+              1024,
+              1280
+            ],
+            "bindings": [
+              1030,
+              1024
+            ]
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "detection_sensitivity",
+          "type": "dropdown",
+          "label": {
+            "en": "Detection Sensitivity",
+            "fr": "Sensibilité de détection"
+          },
+          "value": "medium",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low",
+                "fr": "Faible"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium",
+                "fr": "Moyenne"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High",
+                "fr": "Élevée"
+              }
+            }
+          ]
+        },
+        {
+          "id": "approach_distance",
+          "type": "dropdown",
+          "label": {
+            "en": "Approach Distance",
+            "fr": "Distance d'approche"
+          },
+          "value": "medium",
+          "values": [
+            {
+              "id": "far",
+              "label": {
+                "en": "Far (3m)",
+                "fr": "Loin (3m)"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium (2m)",
+                "fr": "Moyenne (2m)"
+              }
+            },
+            {
+              "id": "near",
+              "label": {
+                "en": "Near (1m)",
+                "fr": "Proche (1m)"
+              }
+            }
+          ]
+        }
+      ],
+      "images": {
+        "small": "drivers/aqara_presence_fp1/assets/images/small.png",
+        "large": "drivers/aqara_presence_fp1/assets/images/large.png"
+      },
+      "id": "aqara_presence_fp1"
+    },
+    {
+      "name": {
         "en": "Roller Blind Controller",
         "fr": "Roller Blind Controller"
       },
@@ -38541,6 +38910,90 @@
     },
     {
       "name": {
+        "en": "IKEA TRÅDFRI Motion Sensor",
+        "fr": "Capteur mouvement IKEA TRÅDFRI"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "IKEA of Sweden",
+          "IKEA",
+          "ikea"
+        ],
+        "productId": [
+          "TRADFRI motion sensor",
+          "TRADFRI Motion Sensor",
+          "E1745",
+          "E1525/E1745"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              32,
+              1030,
+              4096
+            ],
+            "bindings": [
+              1030
+            ]
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "motion_sensitivity",
+          "type": "dropdown",
+          "label": {
+            "en": "Motion Sensitivity",
+            "fr": "Sensibilité mouvement"
+          },
+          "value": "medium",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low",
+                "fr": "Faible"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium",
+                "fr": "Moyenne"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High",
+                "fr": "Élevée"
+              }
+            }
+          ]
+        }
+      ],
+      "images": {
+        "small": "drivers/ikea_motion_sensor/assets/images/small.png",
+        "large": "drivers/ikea_motion_sensor/assets/images/large.png"
+      },
+      "id": "ikea_motion_sensor"
+    },
+    {
+      "name": {
         "en": "LED Strip Led Strip",
         "fr": "LED Strip Led Strip"
       },
@@ -55808,6 +56261,98 @@
           "template": "add_devices"
         }
       ]
+    },
+    {
+      "name": {
+        "en": "Sonoff Zigbee Switch",
+        "fr": "Interrupteur Sonoff Zigbee"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power"
+      ],
+      "capabilitiesOptions": {},
+      "energy": {
+        "approximation": {
+          "usageOn": 0,
+          "usageOff": 0
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "SONOFF",
+          "sonoff",
+          "ITEAD",
+          "eWeLink"
+        ],
+        "productId": [
+          "ZBMINI",
+          "ZBMINI-L",
+          "ZBMINI-L2",
+          "BASICZBR3",
+          "S26R2ZB",
+          "S31ZB",
+          "S40ZBTPB",
+          "ZBMINIL2",
+          "01MINIZB"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              2820
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "power_on_behavior",
+          "type": "dropdown",
+          "label": {
+            "en": "Power-on Behavior",
+            "fr": "Comportement au démarrage"
+          },
+          "value": "previous",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Off",
+                "fr": "Éteint"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "On",
+                "fr": "Allumé"
+              }
+            },
+            {
+              "id": "previous",
+              "label": {
+                "en": "Previous state",
+                "fr": "État précédent"
+              }
+            }
+          ]
+        }
+      ],
+      "images": {
+        "small": "drivers/sonoff_switch/assets/images/small.png",
+        "large": "drivers/sonoff_switch/assets/images/large.png"
+      },
+      "id": "sonoff_switch"
     },
     {
       "id": "sound_controller",
