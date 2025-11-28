@@ -1,0 +1,34 @@
+{
+  "triggers": [
+    {
+      "id": "lidl_contact_opened",
+      "title": {
+        "en": "Door/window opened",
+        "fr": "Porte/fenêtre ouverte"
+      }
+    },
+    {
+      "id": "lidl_contact_closed",
+      "title": {
+        "en": "Door/window closed",
+        "fr": "Porte/fenêtre fermée"
+      }
+    },
+    {
+      "id": "lidl_contact_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "lidl_contact_is_open",
+      "title": {
+        "en": "Door/window is open",
+        "fr": "Porte/fenêtre ouverte"
+      }
+    }
+  ]
+}

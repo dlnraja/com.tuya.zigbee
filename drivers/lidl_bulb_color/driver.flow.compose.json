@@ -1,0 +1,110 @@
+{
+  "triggers": [
+    {
+      "id": "lidl_bulb_turned_on",
+      "title": {
+        "en": "Light turned on",
+        "fr": "Lumière allumée"
+      }
+    },
+    {
+      "id": "lidl_bulb_turned_off",
+      "title": {
+        "en": "Light turned off",
+        "fr": "Lumière éteinte"
+      }
+    },
+    {
+      "id": "lidl_bulb_dim_changed",
+      "title": {
+        "en": "Brightness changed",
+        "fr": "Luminosité changée"
+      },
+      "tokens": [
+        {
+          "name": "dim",
+          "type": "number",
+          "title": {
+            "en": "Brightness %",
+            "fr": "Luminosité %"
+          },
+          "example": 75
+        }
+      ]
+    },
+    {
+      "id": "lidl_bulb_color_changed",
+      "title": {
+        "en": "Color changed",
+        "fr": "Couleur changée"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "lidl_bulb_is_on",
+      "title": {
+        "en": "Light is on",
+        "fr": "Lumière allumée"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "lidl_bulb_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      }
+    },
+    {
+      "id": "lidl_bulb_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Éteindre"
+      }
+    },
+    {
+      "id": "lidl_bulb_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer"
+      }
+    },
+    {
+      "id": "lidl_bulb_set_brightness",
+      "title": {
+        "en": "Set brightness",
+        "fr": "Définir luminosité"
+      },
+      "args": [
+        {
+          "name": "brightness",
+          "type": "range",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "label": "%",
+          "labelMultiplier": 100
+        }
+      ]
+    },
+    {
+      "id": "lidl_bulb_set_temperature",
+      "title": {
+        "en": "Set color temperature",
+        "fr": "Définir température couleur"
+      },
+      "args": [
+        {
+          "name": "temperature",
+          "type": "range",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "label": "K"
+        }
+      ]
+    }
+  ]
+}

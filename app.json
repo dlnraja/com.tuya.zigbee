@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.2.17",
+  "version": "5.2.18",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -443,6 +443,126 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=air_quality_pm25"
+          }
+        ]
+      },
+      {
+        "id": "aqara_contact_opened",
+        "title": {
+          "en": "Opened",
+          "fr": "Ouvert"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aqara_contact_sensor"
+          }
+        ]
+      },
+      {
+        "id": "aqara_contact_closed",
+        "title": {
+          "en": "Closed",
+          "fr": "Fermé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aqara_contact_sensor"
+          }
+        ]
+      },
+      {
+        "id": "aqara_contact_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aqara_contact_sensor"
+          }
+        ]
+      },
+      {
+        "id": "aqara_motion_detected",
+        "title": {
+          "en": "Motion detected",
+          "fr": "Mouvement détecté"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aqara_motion_sensor"
+          }
+        ]
+      },
+      {
+        "id": "aqara_motion_cleared",
+        "title": {
+          "en": "Motion cleared",
+          "fr": "Plus de mouvement"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aqara_motion_sensor"
+          }
+        ]
+      },
+      {
+        "id": "aqara_motion_luminance_changed",
+        "title": {
+          "en": "Light level changed",
+          "fr": "Niveau lumière changé"
+        },
+        "tokens": [
+          {
+            "name": "lux",
+            "type": "number",
+            "title": {
+              "en": "Lux",
+              "fr": "Lux"
+            },
+            "example": 200
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aqara_motion_sensor"
+          }
+        ]
+      },
+      {
+        "id": "aqara_motion_battery_changed",
+        "title": {
+          "en": "Battery changed",
+          "fr": "Batterie changée"
+        },
+        "tokens": [
+          {
+            "name": "battery",
+            "type": "number",
+            "title": {
+              "en": "%",
+              "fr": "%"
+            },
+            "example": 80
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aqara_motion_sensor"
           }
         ]
       },
@@ -5185,6 +5305,109 @@
         ]
       },
       {
+        "id": "trv_target_temperature_changed",
+        "title": {
+          "en": "Target temperature changed",
+          "fr": "Température cible changée"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "°C",
+              "fr": "°C"
+            },
+            "example": 21
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heating_controller_trv"
+          }
+        ]
+      },
+      {
+        "id": "trv_temperature_changed",
+        "title": {
+          "en": "Temperature changed",
+          "fr": "Température changée"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "°C",
+              "fr": "°C"
+            },
+            "example": 20.5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heating_controller_trv"
+          }
+        ]
+      },
+      {
+        "id": "trv_mode_changed",
+        "title": {
+          "en": "Mode changed",
+          "fr": "Mode changé"
+        },
+        "tokens": [
+          {
+            "name": "mode",
+            "type": "string",
+            "title": {
+              "en": "Mode",
+              "fr": "Mode"
+            },
+            "example": "heat"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heating_controller_trv"
+          }
+        ]
+      },
+      {
+        "id": "trv_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heating_controller_trv"
+          }
+        ]
+      },
+      {
+        "id": "trv_window_opened",
+        "title": {
+          "en": "Window opened detected",
+          "fr": "Fenêtre ouverte détectée"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heating_controller_trv"
+          }
+        ]
+      },
+      {
         "id": "humidity_controller_measure_temperature_changed",
         "title": {
           "en": "Temperature changed",
@@ -5695,6 +5918,260 @@
         ]
       },
       {
+        "id": "lidl_bulb_turned_on",
+        "title": {
+          "en": "Light turned on",
+          "fr": "Lumière allumée"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lidl_bulb_color"
+          }
+        ]
+      },
+      {
+        "id": "lidl_bulb_turned_off",
+        "title": {
+          "en": "Light turned off",
+          "fr": "Lumière éteinte"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lidl_bulb_color"
+          }
+        ]
+      },
+      {
+        "id": "lidl_bulb_dim_changed",
+        "title": {
+          "en": "Brightness changed",
+          "fr": "Luminosité changée"
+        },
+        "tokens": [
+          {
+            "name": "dim",
+            "type": "number",
+            "title": {
+              "en": "Brightness %",
+              "fr": "Luminosité %"
+            },
+            "example": 75
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lidl_bulb_color"
+          }
+        ]
+      },
+      {
+        "id": "lidl_bulb_color_changed",
+        "title": {
+          "en": "Color changed",
+          "fr": "Couleur changée"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lidl_bulb_color"
+          }
+        ]
+      },
+      {
+        "id": "lidl_contact_opened",
+        "title": {
+          "en": "Door/window opened",
+          "fr": "Porte/fenêtre ouverte"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lidl_contact_sensor"
+          }
+        ]
+      },
+      {
+        "id": "lidl_contact_closed",
+        "title": {
+          "en": "Door/window closed",
+          "fr": "Porte/fenêtre fermée"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lidl_contact_sensor"
+          }
+        ]
+      },
+      {
+        "id": "lidl_contact_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lidl_contact_sensor"
+          }
+        ]
+      },
+      {
+        "id": "lidl_motion_detected",
+        "title": {
+          "en": "Motion detected",
+          "fr": "Mouvement détecté"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lidl_motion_sensor"
+          }
+        ]
+      },
+      {
+        "id": "lidl_motion_cleared",
+        "title": {
+          "en": "Motion cleared",
+          "fr": "Mouvement terminé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lidl_motion_sensor"
+          }
+        ]
+      },
+      {
+        "id": "lidl_motion_battery_changed",
+        "title": {
+          "en": "Battery level changed",
+          "fr": "Niveau batterie changé"
+        },
+        "tokens": [
+          {
+            "name": "battery",
+            "type": "number",
+            "title": {
+              "en": "Battery %",
+              "fr": "Batterie %"
+            },
+            "example": 80
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lidl_motion_sensor"
+          }
+        ]
+      },
+      {
+        "id": "lidl_motion_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lidl_motion_sensor"
+          }
+        ]
+      },
+      {
+        "id": "lidl_plug_turned_on",
+        "title": {
+          "en": "Turned on",
+          "fr": "Allumé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lidl_smart_plug"
+          }
+        ]
+      },
+      {
+        "id": "lidl_plug_turned_off",
+        "title": {
+          "en": "Turned off",
+          "fr": "Éteint"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lidl_smart_plug"
+          }
+        ]
+      },
+      {
+        "id": "lidl_plug_power_changed",
+        "title": {
+          "en": "Power changed",
+          "fr": "Puissance changée"
+        },
+        "tokens": [
+          {
+            "name": "power",
+            "type": "number",
+            "title": {
+              "en": "Power (W)",
+              "fr": "Puissance (W)"
+            },
+            "example": 100
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lidl_smart_plug"
+          }
+        ]
+      },
+      {
+        "id": "lidl_plug_energy_changed",
+        "title": {
+          "en": "Energy changed",
+          "fr": "Énergie changée"
+        },
+        "tokens": [
+          {
+            "name": "energy",
+            "type": "number",
+            "title": {
+              "en": "Energy (kWh)",
+              "fr": "Énergie (kWh)"
+            },
+            "example": 1.5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lidl_smart_plug"
+          }
+        ]
+      },
+      {
         "id": "light_controller_outdoor_outdoor_light_controller_alarm_contact_true",
         "title": {
           "en": "Contact alarm activated",
@@ -6086,6 +6563,101 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=module_mini_switch"
+          }
+        ]
+      },
+      {
+        "id": "moes_knob_rotated_left",
+        "title": {
+          "en": "Rotated left",
+          "fr": "Tourné à gauche"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=moes_smart_knob"
+          }
+        ]
+      },
+      {
+        "id": "moes_knob_rotated_right",
+        "title": {
+          "en": "Rotated right",
+          "fr": "Tourné à droite"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=moes_smart_knob"
+          }
+        ]
+      },
+      {
+        "id": "moes_knob_pressed",
+        "title": {
+          "en": "Button pressed",
+          "fr": "Bouton appuyé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=moes_smart_knob"
+          }
+        ]
+      },
+      {
+        "id": "moes_knob_double_pressed",
+        "title": {
+          "en": "Button double pressed",
+          "fr": "Double appui"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=moes_smart_knob"
+          }
+        ]
+      },
+      {
+        "id": "moes_knob_long_pressed",
+        "title": {
+          "en": "Button held",
+          "fr": "Appui long"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=moes_smart_knob"
+          }
+        ]
+      },
+      {
+        "id": "moes_knob_brightness_changed",
+        "title": {
+          "en": "Brightness level changed",
+          "fr": "Niveau luminosité changé"
+        },
+        "tokens": [
+          {
+            "name": "brightness",
+            "type": "number",
+            "title": {
+              "en": "Brightness",
+              "fr": "Luminosité"
+            },
+            "example": 75
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=moes_smart_knob"
           }
         ]
       },
@@ -6865,6 +7437,179 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=motion_sensor_radar_mmwave"
+          }
+        ]
+      },
+      {
+        "id": "hue_bulb_turned_on",
+        "title": {
+          "en": "Light turned on",
+          "fr": "Lumière allumée"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=philips_hue_bulb"
+          }
+        ]
+      },
+      {
+        "id": "hue_bulb_turned_off",
+        "title": {
+          "en": "Light turned off",
+          "fr": "Lumière éteinte"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=philips_hue_bulb"
+          }
+        ]
+      },
+      {
+        "id": "hue_bulb_dim_changed",
+        "title": {
+          "en": "Brightness changed",
+          "fr": "Luminosité changée"
+        },
+        "tokens": [
+          {
+            "name": "dim",
+            "type": "number",
+            "title": {
+              "en": "Brightness %",
+              "fr": "Luminosité %"
+            },
+            "example": 75
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=philips_hue_bulb"
+          }
+        ]
+      },
+      {
+        "id": "hue_bulb_color_changed",
+        "title": {
+          "en": "Color changed",
+          "fr": "Couleur changée"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=philips_hue_bulb"
+          }
+        ]
+      },
+      {
+        "id": "hue_bulb_temperature_changed",
+        "title": {
+          "en": "Color temperature changed",
+          "fr": "Température couleur changée"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=philips_hue_bulb"
+          }
+        ]
+      },
+      {
+        "id": "hue_motion_detected",
+        "title": {
+          "en": "Motion detected",
+          "fr": "Mouvement détecté"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=philips_hue_motion"
+          }
+        ]
+      },
+      {
+        "id": "hue_motion_cleared",
+        "title": {
+          "en": "Motion cleared",
+          "fr": "Plus de mouvement"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=philips_hue_motion"
+          }
+        ]
+      },
+      {
+        "id": "hue_motion_luminance_changed",
+        "title": {
+          "en": "Light level changed",
+          "fr": "Niveau lumière changé"
+        },
+        "tokens": [
+          {
+            "name": "lux",
+            "type": "number",
+            "title": {
+              "en": "Lux",
+              "fr": "Lux"
+            },
+            "example": 500
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=philips_hue_motion"
+          }
+        ]
+      },
+      {
+        "id": "hue_motion_temperature_changed",
+        "title": {
+          "en": "Temperature changed",
+          "fr": "Température changée"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "°C",
+              "fr": "°C"
+            },
+            "example": 22
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=philips_hue_motion"
+          }
+        ]
+      },
+      {
+        "id": "hue_motion_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=philips_hue_motion"
           }
         ]
       },
@@ -12137,6 +12882,34 @@
         }
       },
       {
+        "id": "aqara_contact_is_open",
+        "title": {
+          "en": "Is open",
+          "fr": "Est ouvert"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aqara_contact_sensor"
+          }
+        ]
+      },
+      {
+        "id": "aqara_motion_is_detected",
+        "title": {
+          "en": "Motion detected",
+          "fr": "Mouvement détecté"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aqara_motion_sensor"
+          }
+        ]
+      },
+      {
         "id": "bulb_dimmable_smart_bulb_dimmer_is_on",
         "title": {
           "en": "Is turned !{{on|off}}",
@@ -12486,6 +13259,66 @@
         }
       },
       {
+        "id": "trv_mode_is",
+        "title": {
+          "en": "Mode is",
+          "fr": "Mode est"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heating_controller_trv"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto"
+                }
+              },
+              {
+                "id": "heat",
+                "label": {
+                  "en": "Heat",
+                  "fr": "Chauffage"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Éteint"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "trv_temperature_above",
+        "title": {
+          "en": "Temperature above",
+          "fr": "Température supérieure à"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heating_controller_trv"
+          },
+          {
+            "name": "temperature",
+            "type": "number",
+            "min": 5,
+            "max": 30
+          }
+        ]
+      },
+      {
         "id": "hvac_air_conditioner_air_conditioner_hybrid_is_on",
         "title": {
           "en": "Is turned !{{on|off}}",
@@ -12616,6 +13449,62 @@
         ]
       },
       {
+        "id": "lidl_bulb_is_on",
+        "title": {
+          "en": "Light is on",
+          "fr": "Lumière allumée"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lidl_bulb_color"
+          }
+        ]
+      },
+      {
+        "id": "lidl_contact_is_open",
+        "title": {
+          "en": "Door/window is open",
+          "fr": "Porte/fenêtre ouverte"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lidl_contact_sensor"
+          }
+        ]
+      },
+      {
+        "id": "lidl_motion_is_detected",
+        "title": {
+          "en": "Motion is detected",
+          "fr": "Mouvement détecté"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lidl_motion_sensor"
+          }
+        ]
+      },
+      {
+        "id": "lidl_plug_is_on",
+        "title": {
+          "en": "Is turned on",
+          "fr": "Est allumé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lidl_smart_plug"
+          }
+        ]
+      },
+      {
         "id": "lock_smart_is_locked",
         "title": {
           "en": "Is !{{locked|unlocked}}",
@@ -12677,6 +13566,54 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=module_mini_switch"
+          }
+        ]
+      },
+      {
+        "id": "hue_bulb_is_on",
+        "title": {
+          "en": "Light is on",
+          "fr": "Lumière allumée"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=philips_hue_bulb"
+          }
+        ]
+      },
+      {
+        "id": "hue_motion_is_detected",
+        "title": {
+          "en": "Motion is detected",
+          "fr": "Mouvement en cours"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=philips_hue_motion"
+          }
+        ]
+      },
+      {
+        "id": "hue_motion_luminance_below",
+        "title": {
+          "en": "Light level below",
+          "fr": "Niveau lumière inférieur à"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=philips_hue_motion"
+          },
+          {
+            "name": "lux",
+            "type": "number",
+            "min": 0,
+            "max": 10000
           }
         ]
       },
@@ -14793,6 +15730,81 @@
         }
       },
       {
+        "id": "trv_set_target_temperature",
+        "title": {
+          "en": "Set target temperature",
+          "fr": "Définir température cible"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heating_controller_trv"
+          },
+          {
+            "name": "temperature",
+            "type": "number",
+            "min": 5,
+            "max": 30,
+            "step": 0.5
+          }
+        ]
+      },
+      {
+        "id": "trv_set_mode",
+        "title": {
+          "en": "Set mode",
+          "fr": "Définir mode"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heating_controller_trv"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto"
+                }
+              },
+              {
+                "id": "heat",
+                "label": {
+                  "en": "Heat",
+                  "fr": "Chauffage"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Éteint"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "trv_boost",
+        "title": {
+          "en": "Activate boost mode",
+          "fr": "Activer mode boost"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heating_controller_trv"
+          }
+        ]
+      },
+      {
         "id": "hvac_air_conditioner_air_conditioner_hybrid_turn_on",
         "title": {
           "en": "Turn on",
@@ -15202,6 +16214,135 @@
         ]
       },
       {
+        "id": "lidl_bulb_turn_on",
+        "title": {
+          "en": "Turn on",
+          "fr": "Allumer"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lidl_bulb_color"
+          }
+        ]
+      },
+      {
+        "id": "lidl_bulb_turn_off",
+        "title": {
+          "en": "Turn off",
+          "fr": "Éteindre"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lidl_bulb_color"
+          }
+        ]
+      },
+      {
+        "id": "lidl_bulb_toggle",
+        "title": {
+          "en": "Toggle",
+          "fr": "Basculer"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lidl_bulb_color"
+          }
+        ]
+      },
+      {
+        "id": "lidl_bulb_set_brightness",
+        "title": {
+          "en": "Set brightness",
+          "fr": "Définir luminosité"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lidl_bulb_color"
+          },
+          {
+            "name": "brightness",
+            "type": "range",
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "label": "%",
+            "labelMultiplier": 100
+          }
+        ]
+      },
+      {
+        "id": "lidl_bulb_set_temperature",
+        "title": {
+          "en": "Set color temperature",
+          "fr": "Définir température couleur"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lidl_bulb_color"
+          },
+          {
+            "name": "temperature",
+            "type": "range",
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "label": "K"
+          }
+        ]
+      },
+      {
+        "id": "lidl_plug_turn_on",
+        "title": {
+          "en": "Turn on",
+          "fr": "Allumer"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lidl_smart_plug"
+          }
+        ]
+      },
+      {
+        "id": "lidl_plug_turn_off",
+        "title": {
+          "en": "Turn off",
+          "fr": "Éteindre"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lidl_smart_plug"
+          }
+        ]
+      },
+      {
+        "id": "lidl_plug_toggle",
+        "title": {
+          "en": "Toggle on/off",
+          "fr": "Basculer"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lidl_smart_plug"
+          }
+        ]
+      },
+      {
         "id": "lock_smart_lock",
         "title": {
           "en": "Lock",
@@ -15360,6 +16501,129 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=module_mini_switch"
+          }
+        ]
+      },
+      {
+        "id": "hue_bulb_turn_on",
+        "title": {
+          "en": "Turn on",
+          "fr": "Allumer"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=philips_hue_bulb"
+          }
+        ]
+      },
+      {
+        "id": "hue_bulb_turn_off",
+        "title": {
+          "en": "Turn off",
+          "fr": "Éteindre"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=philips_hue_bulb"
+          }
+        ]
+      },
+      {
+        "id": "hue_bulb_toggle",
+        "title": {
+          "en": "Toggle",
+          "fr": "Basculer"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=philips_hue_bulb"
+          }
+        ]
+      },
+      {
+        "id": "hue_bulb_set_brightness",
+        "title": {
+          "en": "Set brightness",
+          "fr": "Définir luminosité"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=philips_hue_bulb"
+          },
+          {
+            "name": "brightness",
+            "type": "range",
+            "min": 0,
+            "max": 1,
+            "step": 0.01
+          }
+        ]
+      },
+      {
+        "id": "hue_bulb_set_color",
+        "title": {
+          "en": "Set color",
+          "fr": "Définir couleur"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=philips_hue_bulb"
+          },
+          {
+            "name": "color",
+            "type": "color"
+          }
+        ]
+      },
+      {
+        "id": "hue_bulb_set_temperature",
+        "title": {
+          "en": "Set color temperature",
+          "fr": "Définir température"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=philips_hue_bulb"
+          },
+          {
+            "name": "temperature",
+            "type": "range",
+            "min": 0,
+            "max": 1,
+            "step": 0.01
+          }
+        ]
+      },
+      {
+        "id": "hue_bulb_dim_relative",
+        "title": {
+          "en": "Dim relative",
+          "fr": "Variation relative"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=philips_hue_bulb"
+          },
+          {
+            "name": "brightness_change",
+            "type": "range",
+            "min": -1,
+            "max": 1,
+            "step": 0.05
           }
         ]
       },
@@ -20936,6 +22200,58 @@
           "template": "add_devices"
         }
       ]
+    },
+    {
+      "name": {
+        "en": "BlitzWolf Smart Plug",
+        "fr": "Prise connectée BlitzWolf"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power"
+      ],
+      "energy": {
+        "approximation": {
+          "usageOn": 0,
+          "usageOff": 0
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_dpo1ysak",
+          "_TZ3000_amdymr7l",
+          "_TZ3000_typdpdpg",
+          "BlitzWolf"
+        ],
+        "productId": [
+          "BW-SHP13",
+          "BW-SHP15",
+          "TS0121",
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              2820
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/blitzwolf_smart_plug/assets/images/small.png",
+        "large": "drivers/blitzwolf_smart_plug/assets/images/large.png"
+      },
+      "id": "blitzwolf_smart_plug"
     },
     {
       "name": {
@@ -41247,6 +42563,370 @@
     },
     {
       "name": {
+        "en": "Lidl/Silvercrest Color Bulb",
+        "fr": "Ampoule couleur Lidl/Silvercrest"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature",
+        "light_hue",
+        "light_saturation"
+      ],
+      "energy": {
+        "approximation": {
+          "usageOn": 9,
+          "usageOff": 0.5
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_odygigth",
+          "_TZ3000_49qchf10",
+          "_TZ3210_sln7ah6r",
+          "_TZ3210_wuheik5l",
+          "LIDL Silvercrest",
+          "Silvercrest"
+        ],
+        "productId": [
+          "HG06106A",
+          "HG06106B",
+          "HG06106C",
+          "HG06492A",
+          "HG06492B",
+          "HG06492C",
+          "HG06467",
+          "HG07834A",
+          "HG07834B",
+          "TS0505A",
+          "TS0505B"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8,
+              768
+            ],
+            "bindings": [
+              6,
+              8,
+              768
+            ]
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "transition_time",
+          "type": "number",
+          "label": {
+            "en": "Transition Time",
+            "fr": "Temps de transition"
+          },
+          "value": 400,
+          "min": 0,
+          "max": 5000,
+          "units": "ms"
+        },
+        {
+          "id": "power_on_behavior",
+          "type": "dropdown",
+          "label": {
+            "en": "Power-on Behavior",
+            "fr": "Comportement démarrage"
+          },
+          "value": "previous",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Off",
+                "fr": "Éteint"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "On",
+                "fr": "Allumé"
+              }
+            },
+            {
+              "id": "previous",
+              "label": {
+                "en": "Previous",
+                "fr": "Précédent"
+              }
+            }
+          ]
+        }
+      ],
+      "images": {
+        "small": "drivers/lidl_bulb_color/assets/images/small.png",
+        "large": "drivers/lidl_bulb_color/assets/images/large.png"
+      },
+      "id": "lidl_bulb_color"
+    },
+    {
+      "name": {
+        "en": "Lidl/Silvercrest Door/Window Sensor",
+        "fr": "Capteur porte/fenêtre Lidl/Silvercrest"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_contact",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_decxrtwa",
+          "_TZ3000_2mbfxlzr",
+          "_TZ3000_402jjyro",
+          "LIDL Silvercrest",
+          "Silvercrest"
+        ],
+        "productId": [
+          "HG06336",
+          "TS0203"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1280
+            ],
+            "bindings": [
+              1280
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/lidl_contact_sensor/assets/images/small.png",
+        "large": "drivers/lidl_contact_sensor/assets/images/large.png"
+      },
+      "id": "lidl_contact_sensor"
+    },
+    {
+      "name": {
+        "en": "Lidl/Silvercrest Motion Sensor",
+        "fr": "Capteur mouvement Lidl/Silvercrest"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "AAA",
+          "AAA"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_mcxw5ehu",
+          "_TZ3000_6ygjfyll",
+          "_TZ3000_kmh5qpmb",
+          "LIDL Silvercrest",
+          "Silvercrest"
+        ],
+        "productId": [
+          "HG06335",
+          "HG08164",
+          "TS0202"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1280
+            ],
+            "bindings": [
+              1280
+            ]
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "motion_sensitivity",
+          "type": "dropdown",
+          "label": {
+            "en": "Motion Sensitivity",
+            "fr": "Sensibilité"
+          },
+          "value": "medium",
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low",
+                "fr": "Faible"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium",
+                "fr": "Moyenne"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High",
+                "fr": "Élevée"
+              }
+            }
+          ]
+        }
+      ],
+      "images": {
+        "small": "drivers/lidl_motion_sensor/assets/images/small.png",
+        "large": "drivers/lidl_motion_sensor/assets/images/large.png"
+      },
+      "id": "lidl_motion_sensor"
+    },
+    {
+      "name": {
+        "en": "Lidl/Silvercrest Smart Plug",
+        "fr": "Prise connectée Lidl/Silvercrest"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power"
+      ],
+      "energy": {
+        "approximation": {
+          "usageOn": 0,
+          "usageOff": 0
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_kdi2o9m6",
+          "_TZ3000_plyvnuf5",
+          "_TZ3000_wamqdr3f",
+          "_TZ3000_00mk2xzy",
+          "_TZ3000_g5xawfcq",
+          "LIDL Silvercrest",
+          "Silvercrest"
+        ],
+        "productId": [
+          "HG06337",
+          "HG06338",
+          "HG08673",
+          "TS0121",
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              2820
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "power_on_behavior",
+          "type": "dropdown",
+          "label": {
+            "en": "Power-on Behavior",
+            "fr": "Comportement au démarrage"
+          },
+          "value": "previous",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Off",
+                "fr": "Éteint"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "On",
+                "fr": "Allumé"
+              }
+            },
+            {
+              "id": "previous",
+              "label": {
+                "en": "Previous state",
+                "fr": "État précédent"
+              }
+            }
+          ]
+        },
+        {
+          "id": "led_indicator",
+          "type": "dropdown",
+          "label": {
+            "en": "LED Indicator",
+            "fr": "Indicateur LED"
+          },
+          "value": "on",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Off",
+                "fr": "Éteint"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "On when active",
+                "fr": "Allumé si actif"
+              }
+            },
+            {
+              "id": "inverted",
+              "label": {
+                "en": "On when off",
+                "fr": "Allumé si éteint"
+              }
+            }
+          ]
+        }
+      ],
+      "images": {
+        "small": "drivers/lidl_smart_plug/assets/images/small.png",
+        "large": "drivers/lidl_smart_plug/assets/images/large.png"
+      },
+      "id": "lidl_smart_plug"
+    },
+    {
+      "name": {
         "en": "Outdoor Light Controller",
         "fr": "Outdoor Light Controller"
       },
@@ -43867,6 +45547,55 @@
         "xlarge": "drivers/moes_co_detector/assets/images/xlarge.png"
       },
       "id": "moes_co_detector"
+    },
+    {
+      "name": {
+        "en": "MOES Smart Knob",
+        "fr": "Bouton intelligent MOES"
+      },
+      "class": "remote",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_4fjiwweb",
+          "_TZ3000_uri7ez5r",
+          "_TZE200_abcdefgh",
+          "MOES"
+        ],
+        "productId": [
+          "TS004F",
+          "ERS-10TZBVK-AA"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              4,
+              6,
+              8,
+              4096
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/moes_smart_knob/assets/images/small.png",
+        "large": "drivers/moes_smart_knob/assets/images/large.png"
+      },
+      "id": "moes_smart_knob"
     },
     {
       "name": {
@@ -82218,6 +83947,49 @@
         "zigbee"
       ],
       "id": "wireless_button"
+    },
+    {
+      "name": {
+        "en": "Zemismart Zigbee Switch",
+        "fr": "Interrupteur Zemismart Zigbee"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_18ejxno0",
+          "_TZ3000_zmy1waw6",
+          "_TZE200_aqnazj70",
+          "Zemismart"
+        ],
+        "productId": [
+          "ZM-CSW002-D",
+          "TS0001",
+          "TS0002",
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/zemismart_switch/assets/images/small.png",
+        "large": "drivers/zemismart_switch/assets/images/large.png"
+      },
+      "id": "zemismart_switch"
     },
     {
       "name": {
