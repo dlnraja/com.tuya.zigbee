@@ -92,10 +92,10 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "groups",
-          "scenes",
-          "manuSpecificTuya",
+          0,
+          4,
+          5,
+          61184,
           61184,
           1280,
           1

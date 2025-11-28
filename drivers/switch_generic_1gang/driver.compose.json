@@ -5,7 +5,7 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff"
+    6
   ],
   "energy": {
     "approximation": {
@@ -56,11 +56,11 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "groups",
-          "scenes",
-          "onOff",
-          "levelControl",
+          0,
+          4,
+          5,
+          6,
+          8,
           61184
         ],
         "bindings": [

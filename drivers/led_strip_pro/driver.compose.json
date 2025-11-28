@@ -7,7 +7,6 @@
   "capabilities": [
     "measure_battery",
     "alarm_generic",
-    "onoff",
     "dim"
   ],
   "energy": {
@@ -36,13 +35,13 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "groups",
-          "scenes",
-          "onOff",
-          "levelControl",
-          "colorControl",
-          "manuSpecificTuya",
+          0,
+          4,
+          5,
+          6,
+          8,
+          768,
+          61184,
           61184,
           1
         ],

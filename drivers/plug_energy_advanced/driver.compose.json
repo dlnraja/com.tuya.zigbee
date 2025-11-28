@@ -5,7 +5,6 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff",
     "measure_power",
     "meter_power",
     "measure_voltage",
@@ -39,14 +38,14 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "identify",
-          "groups",
-          "scenes",
-          "onOff",
-          "metering",
-          "electricalMeasurement",
-          "manuSpecificTuya",
+          0,
+          3,
+          4,
+          5,
+          6,
+          1794,
+          2820,
+          61184,
           61184
         ],
         "bindings": [

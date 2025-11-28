@@ -59,14 +59,11 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "powerConfiguration",
-          "temperatureMeasurement",
-          "iasZone",
-          "manuSpecificTuya",
-          61184,
+          0,
+          1,
+          1026,
           1280,
-          1
+          61184
         ],
         "bindings": [
           1,

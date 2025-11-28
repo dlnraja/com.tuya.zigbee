@@ -41,9 +41,9 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "powerConfiguration",
-          "onOff",
+          0,
+          1,
+          6,
           1280,
           0,
           1,

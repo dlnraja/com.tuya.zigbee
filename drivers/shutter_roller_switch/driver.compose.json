@@ -6,7 +6,7 @@
   "class": "windowcoverings",
   "capabilities": [
     "windowcoverings_set",
-    "onoff"
+    6
   ],
   "energy": {
     "approximation": {
@@ -60,7 +60,7 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
+          0,
           "windowCovering",
           61184
         ],

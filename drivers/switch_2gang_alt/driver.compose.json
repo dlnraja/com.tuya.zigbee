@@ -4,7 +4,6 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff",
     "onoff.gang2"
   ],
   "zigbee": {
@@ -53,10 +52,10 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "groups",
-          "scenes",
-          "onOff",
+          0,
+          4,
+          5,
+          6,
           61184
         ],
         "bindings": [
@@ -65,10 +64,10 @@
       },
       "2": {
         "clusters": [
-          "basic",
-          "groups",
-          "scenes",
-          "onOff"
+          0,
+          4,
+          5,
+          6
         ],
         "bindings": [
           6
