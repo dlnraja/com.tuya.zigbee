@@ -1,0 +1,137 @@
+{
+  "name": {
+    "en": "Zigbee TRV Heating Controller",
+    "fr": "Contrôleur chauffage TRV Zigbee"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature",
+    "thermostat_mode",
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "target_temperature": {
+      "min": 5,
+      "max": 30,
+      "step": 0.5
+    },
+    "thermostat_mode": {
+      "values": [
+        {
+          "id": "auto",
+          "title": {
+            "en": "Auto",
+            "fr": "Auto"
+          }
+        },
+        {
+          "id": "heat",
+          "title": {
+            "en": "Heat",
+            "fr": "Chauffage"
+          }
+        },
+        {
+          "id": "off",
+          "title": {
+            "en": "Off",
+            "fr": "Éteint"
+          }
+        }
+      ]
+    }
+  },
+  "energy": {
+    "batteries": [
+      "AA",
+      "AA"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Danfoss",
+      "DANFOSS",
+      "eCozy",
+      "Eurotronic",
+      "Saswell",
+      "TUYATEC",
+      "_TZE200_ckud7u2l",
+      "_TZE200_zuhszj9s",
+      "_TZE200_kfvq6avy",
+      "_TZE200_b6wax7g0",
+      "Moes",
+      "MOES"
+    ],
+    "productId": [
+      "eTRV0100",
+      "SPZB0001",
+      "TS0601",
+      "TRV001",
+      "SEA801-Zigbee",
+      "SEA802",
+      "eT093WRO-1",
+      "HY369RT"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          513,
+          516,
+          61184
+        ],
+        "bindings": [
+          513
+        ]
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "window_detection",
+      "type": "checkbox",
+      "label": {
+        "en": "Window Detection",
+        "fr": "Détection fenêtre"
+      },
+      "value": true
+    },
+    {
+      "id": "child_lock",
+      "type": "checkbox",
+      "label": {
+        "en": "Child Lock",
+        "fr": "Verrouillage enfant"
+      },
+      "value": false
+    },
+    {
+      "id": "valve_calibration",
+      "type": "checkbox",
+      "label": {
+        "en": "Auto Valve Calibration",
+        "fr": "Calibrage automatique vanne"
+      },
+      "value": true
+    },
+    {
+      "id": "temperature_offset",
+      "type": "number",
+      "label": {
+        "en": "Temperature Offset",
+        "fr": "Décalage température"
+      },
+      "value": 0,
+      "min": -5,
+      "max": 5,
+      "units": "°C"
+    }
+  ],
+  "images": {
+    "small": "drivers/heating_controller_trv/assets/images/small.png",
+    "large": "drivers/heating_controller_trv/assets/images/large.png"
+  }
+}

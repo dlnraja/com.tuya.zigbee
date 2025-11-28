@@ -1,0 +1,86 @@
+{
+  "name": {
+    "en": "IKEA TRÅDFRI Bulb",
+    "fr": "Ampoule IKEA TRÅDFRI"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature"
+  ],
+  "energy": {
+    "approximation": {
+      "usageOn": 9,
+      "usageOff": 0.5
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "IKEA of Sweden",
+      "IKEA",
+      "ikea"
+    ],
+    "productId": [
+      "TRADFRI bulb E27 WS opal 980lm",
+      "TRADFRI bulb E27 WS clear 950lm",
+      "TRADFRI bulb E27 W opal 1000lm",
+      "TRADFRI bulb E27 opal 1000lm",
+      "TRADFRI bulb E14 WS opal 400lm",
+      "TRADFRI bulb E14 W op/ch 400lm",
+      "TRADFRI bulb GU10 WS 400lm",
+      "TRADFRI bulb GU10 W 400lm",
+      "TRADFRI bulb E27 CWS opal 600lm",
+      "TRADFRI bulb E14 CWS opal 600lm",
+      "LED1545G12",
+      "LED1546G12",
+      "LED1623G12",
+      "LED1649C5",
+      "LED1650R5",
+      "LED1732G11",
+      "LED1836G9",
+      "LED1837R5",
+      "LED1842G3",
+      "LED1923R5",
+      "LED1924G9",
+      "LED1925G6"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          768,
+          4096
+        ],
+        "bindings": [
+          6,
+          8,
+          768
+        ]
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "transition_time",
+      "type": "number",
+      "label": {
+        "en": "Transition Time",
+        "fr": "Temps de transition"
+      },
+      "value": 500,
+      "min": 0,
+      "max": 5000,
+      "units": "ms"
+    }
+  ],
+  "images": {
+    "small": "drivers/ikea_tradfri_bulb/assets/images/small.png",
+    "large": "drivers/ikea_tradfri_bulb/assets/images/large.png"
+  }
+}
