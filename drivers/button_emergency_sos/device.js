@@ -43,10 +43,6 @@ class SosEmergencyButtonDevice extends HybridDevice {
     this.log('SosEmergencyButtonDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
-  async onDeleted() {
-    this.log('SosEmergencyButtonDevice deleted');
-    await super.onDeleted().catch(err => this.error(err));
-  }
   /**
    * IAS Zone Enrollment for SOS Emergency Button
    * CRITICAL: Required for button press detection

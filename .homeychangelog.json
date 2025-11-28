@@ -1138,5 +1138,8 @@
   },
   "5.2.8": {
     "en": "📡 COMPLETE ZIGBEE PROTOCOL SUPPORT\n\nNEW: lib/protocol/ZigbeeProtocolComplete.js\n\nZIGBEE VERSIONS:\n- Zigbee 1.0, 1.1, 1.2, 3.0, PRO\n- Full backward compatibility\n\nZIGBEE PROFILES:\n- ZHA (Home Automation) - 0x0104\n- ZLL (Light Link) - 0xC05E\n- SE (Smart Energy) - 0x0109\n- GP (Green Power) - 0xA1E0\n- RF4CE - 0x0001\n- Zigbee 3.0 Base Device\n\n30+ PROPRIETARY PROTOCOLS:\n├── TUYA: 0xEF00, 0xE000, 0xE001, 0xED00\n├── XIAOMI/AQARA: 0xFCC0\n├── IKEA TRÅDFRI: 0xFC7C\n├── PHILIPS HUE: 0xFC00\n├── OSRAM/LEDVANCE: 0xFC0F\n├── LEGRAND: 0xFC01\n├── SCHNEIDER: 0xFC03\n├── DANFOSS: 0xFC04\n├── EUROTRONIC: 0xFC00\n├── BOSCH: 0xFCA0\n├── DEVELCO: 0xFC10\n├── SALUS: 0xFC02\n├── SINOPE: 0xFF01\n├── HEIMAN: 0xFC81\n├── SONOFF: 0xFC11\n└── + INNR, SENGLED, LIDL, MOES, BSEED, NOUS...\n\n300+ MANUFACTURERS DATABASE:\n- All Tuya prefixes (_TZ3000_, _TZE200_, etc.)\n- Major brands (IKEA, Philips, Xiaomi, etc.)\n- 100+ other manufacturers\n\nRELATED PROTOCOLS:\n- Thread (Matter)\n- Bluetooth Mesh\n- EnOcean (Green Power)\n- Matter bridging"
+  },
+  "5.2.9": {
+    "en": "🧠 MANUFACTURER CATALOG INTELLIGENCE\n\nNEW: lib/helpers/ManufacturerCatalog.js + device helper flow support\n\nFeatures:\n- Maps 300+ manufacturer prefixes to categories (plugs, motion, climate, safety, buttons, curtains, thermostats)\n- Auto-adds category capability sets (energy, measurement, safety alarms)\n- Flow metadata per category (plug switched, motion detected, safety alarm)\n- Helper ensureManufacturerCategoryCapabilities() integrates into device helpers for automatic capability/flow setup"
   }
 }
