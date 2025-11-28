@@ -1,0 +1,60 @@
+{
+  "name": {
+    "en": "Zigbee Formaldehyde/VOC Sensor",
+    "fr": "Capteur formaldéhyde/VOC Zigbee"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_co2",
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "energy": {
+    "approximation": {
+      "usageOn": 1,
+      "usageOff": 0.5
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_dwcarsat",
+      "_TZE200_8ygsuhe1",
+      "_TZE200_yvx5lh6k",
+      "_TZE200_rbbx5mfq",
+      "TUYATEC"
+    ],
+    "productId": [
+      "TS0601",
+      "AIRQ01",
+      "VOC01"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          61184
+        ],
+        "bindings": []
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "voc_threshold",
+      "type": "number",
+      "label": {
+        "en": "VOC Alert Threshold",
+        "fr": "Seuil alerte VOC"
+      },
+      "value": 500,
+      "min": 100,
+      "max": 2000,
+      "units": "ppb"
+    }
+  ],
+  "images": {
+    "small": "drivers/formaldehyde_sensor/assets/images/small.png",
+    "large": "drivers/formaldehyde_sensor/assets/images/large.png"
+  }
+}

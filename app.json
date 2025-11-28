@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.2.18",
+  "version": "5.2.19",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -161,6 +161,134 @@
           "fr": "Déclenché quand la tension est trop basse",
           "en": "Triggered when voltage drops below safe range"
         }
+      },
+      {
+        "id": "co2_level_changed",
+        "title": {
+          "en": "CO2 level changed",
+          "fr": "Niveau CO2 changé"
+        },
+        "tokens": [
+          {
+            "name": "co2",
+            "type": "number",
+            "title": {
+              "en": "CO2 (ppm)",
+              "fr": "CO2 (ppm)"
+            },
+            "example": 800
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=air_quality_co2"
+          }
+        ]
+      },
+      {
+        "id": "co2_alert_on",
+        "title": {
+          "en": "CO2 alert triggered",
+          "fr": "Alerte CO2 déclenchée"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=air_quality_co2"
+          }
+        ]
+      },
+      {
+        "id": "co2_alert_off",
+        "title": {
+          "en": "CO2 returned to normal",
+          "fr": "CO2 revenu à la normale"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=air_quality_co2"
+          }
+        ]
+      },
+      {
+        "id": "air_temperature_changed",
+        "title": {
+          "en": "Temperature changed",
+          "fr": "Température changée"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "°C",
+              "fr": "°C"
+            },
+            "example": 22
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=air_quality_co2"
+          }
+        ]
+      },
+      {
+        "id": "air_humidity_changed",
+        "title": {
+          "en": "Humidity changed",
+          "fr": "Humidité changée"
+        },
+        "tokens": [
+          {
+            "name": "humidity",
+            "type": "number",
+            "title": {
+              "en": "%",
+              "fr": "%"
+            },
+            "example": 50
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=air_quality_co2"
+          }
+        ]
+      },
+      {
+        "id": "pm25_changed",
+        "title": {
+          "en": "PM2.5 level changed",
+          "fr": "Niveau PM2.5 changé"
+        },
+        "tokens": [
+          {
+            "name": "pm25",
+            "type": "number",
+            "title": {
+              "en": "µg/m³",
+              "fr": "µg/m³"
+            },
+            "example": 25
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=air_quality_co2"
+          }
+        ]
       },
       {
         "id": "air_quality_comprehensive_comprehensive_air_monitor_measure_temperature_changed",
@@ -12823,6 +12951,95 @@
             "filter": "driver_id=water_valve_smart"
           }
         ]
+      },
+      {
+        "id": "outdoor_temperature_changed",
+        "title": {
+          "en": "Outdoor temperature changed",
+          "fr": "Température extérieure changée"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "°C",
+              "fr": "°C"
+            },
+            "example": 15
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=weather_station_outdoor"
+          }
+        ]
+      },
+      {
+        "id": "outdoor_humidity_changed",
+        "title": {
+          "en": "Outdoor humidity changed",
+          "fr": "Humidité extérieure changée"
+        },
+        "tokens": [
+          {
+            "name": "humidity",
+            "type": "number",
+            "title": {
+              "en": "%",
+              "fr": "%"
+            },
+            "example": 65
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=weather_station_outdoor"
+          }
+        ]
+      },
+      {
+        "id": "pressure_changed",
+        "title": {
+          "en": "Barometric pressure changed",
+          "fr": "Pression atmosphérique changée"
+        },
+        "tokens": [
+          {
+            "name": "pressure",
+            "type": "number",
+            "title": {
+              "en": "mbar",
+              "fr": "mbar"
+            },
+            "example": 1013
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=weather_station_outdoor"
+          }
+        ]
+      },
+      {
+        "id": "weather_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=weather_station_outdoor"
+          }
+        ]
       }
     ],
     "conditions": [
@@ -12880,6 +13097,60 @@
           "fr": "La puissance est inférieure à [[threshold]] W",
           "en": "Power is below [[threshold]] W"
         }
+      },
+      {
+        "id": "co2_above",
+        "title": {
+          "en": "CO2 level is above",
+          "fr": "Niveau CO2 supérieur à"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=air_quality_co2"
+          },
+          {
+            "name": "co2",
+            "type": "number",
+            "min": 400,
+            "max": 5000
+          }
+        ]
+      },
+      {
+        "id": "co2_below",
+        "title": {
+          "en": "CO2 level is below",
+          "fr": "Niveau CO2 inférieur à"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=air_quality_co2"
+          },
+          {
+            "name": "co2",
+            "type": "number",
+            "min": 400,
+            "max": 5000
+          }
+        ]
+      },
+      {
+        "id": "air_quality_good",
+        "title": {
+          "en": "Air quality is good",
+          "fr": "Qualité air bonne"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=air_quality_co2"
+          }
+        ]
       },
       {
         "id": "aqara_contact_is_open",
@@ -14750,6 +15021,74 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=water_valve_controller"
+          }
+        ]
+      },
+      {
+        "id": "outdoor_temp_above",
+        "title": {
+          "en": "Outdoor temperature above",
+          "fr": "Température extérieure supérieure à"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=weather_station_outdoor"
+          },
+          {
+            "name": "temperature",
+            "type": "number",
+            "min": -40,
+            "max": 60
+          }
+        ]
+      },
+      {
+        "id": "outdoor_temp_below",
+        "title": {
+          "en": "Outdoor temperature below",
+          "fr": "Température extérieure inférieure à"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=weather_station_outdoor"
+          },
+          {
+            "name": "temperature",
+            "type": "number",
+            "min": -40,
+            "max": 60
+          }
+        ]
+      },
+      {
+        "id": "pressure_rising",
+        "title": {
+          "en": "Pressure is rising (good weather)",
+          "fr": "Pression en hausse (beau temps)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=weather_station_outdoor"
+          }
+        ]
+      },
+      {
+        "id": "pressure_falling",
+        "title": {
+          "en": "Pressure is falling (bad weather)",
+          "fr": "Pression en baisse (mauvais temps)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=weather_station_outdoor"
           }
         ]
       }
@@ -20159,6 +20498,111 @@
     ]
   },
   "drivers": [
+    {
+      "name": {
+        "en": "Zigbee Air Quality / CO2 Sensor",
+        "fr": "Capteur qualité air / CO2 Zigbee"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_co2",
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_generic"
+      ],
+      "capabilitiesOptions": {
+        "measure_co2": {
+          "title": {
+            "en": "CO2 Level",
+            "fr": "Niveau CO2"
+          },
+          "units": "ppm"
+        },
+        "alarm_generic": {
+          "title": {
+            "en": "CO2 Alert",
+            "fr": "Alerte CO2"
+          }
+        }
+      },
+      "energy": {
+        "approximation": {
+          "usageOn": 1,
+          "usageOff": 0.5
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_dwcarsat",
+          "_TZE200_ryfmq5rl",
+          "_TZE200_ogkdpgy2",
+          "_TZE200_yvx5lh6k",
+          "_TZE204_laokfqwu",
+          "_TZE200_7bztmfm1",
+          "TUYATEC",
+          "Tuya"
+        ],
+        "productId": [
+          "TS0601",
+          "ZG-204ZM",
+          "CO2M"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              61184
+            ],
+            "bindings": []
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "co2_threshold",
+          "type": "number",
+          "label": {
+            "en": "CO2 Alert Threshold",
+            "fr": "Seuil alerte CO2"
+          },
+          "value": 1000,
+          "min": 400,
+          "max": 5000,
+          "units": "ppm"
+        },
+        {
+          "id": "temperature_unit",
+          "type": "dropdown",
+          "label": {
+            "en": "Temperature Unit",
+            "fr": "Unité température"
+          },
+          "value": "celsius",
+          "values": [
+            {
+              "id": "celsius",
+              "label": {
+                "en": "Celsius",
+                "fr": "Celsius"
+              }
+            },
+            {
+              "id": "fahrenheit",
+              "label": {
+                "en": "Fahrenheit",
+                "fr": "Fahrenheit"
+              }
+            }
+          ]
+        }
+      ],
+      "images": {
+        "small": "drivers/air_quality_co2/assets/images/small.png",
+        "large": "drivers/air_quality_co2/assets/images/large.png"
+      },
+      "id": "air_quality_co2"
+    },
     {
       "name": {
         "en": "Comprehensive Air Monitor",
@@ -37470,6 +37914,67 @@
     },
     {
       "name": {
+        "en": "Zigbee Formaldehyde/VOC Sensor",
+        "fr": "Capteur formaldéhyde/VOC Zigbee"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_co2",
+        "measure_temperature",
+        "measure_humidity"
+      ],
+      "energy": {
+        "approximation": {
+          "usageOn": 1,
+          "usageOff": 0.5
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_dwcarsat",
+          "_TZE200_8ygsuhe1",
+          "_TZE200_yvx5lh6k",
+          "_TZE200_rbbx5mfq",
+          "TUYATEC"
+        ],
+        "productId": [
+          "TS0601",
+          "AIRQ01",
+          "VOC01"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              61184
+            ],
+            "bindings": []
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "voc_threshold",
+          "type": "number",
+          "label": {
+            "en": "VOC Alert Threshold",
+            "fr": "Seuil alerte VOC"
+          },
+          "value": 500,
+          "min": 100,
+          "max": 2000,
+          "units": "ppb"
+        }
+      ],
+      "images": {
+        "small": "drivers/formaldehyde_sensor/assets/images/small.png",
+        "large": "drivers/formaldehyde_sensor/assets/images/large.png"
+      },
+      "id": "formaldehyde_sensor"
+    },
+    {
+      "name": {
         "en": "Garage Door Controller",
         "fr": "Garage Door Controller"
       },
@@ -48700,6 +49205,79 @@
     },
     {
       "name": {
+        "en": "Zigbee Noise/Sound Sensor",
+        "fr": "Capteur bruit/son Zigbee"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_luminance",
+        "alarm_generic"
+      ],
+      "capabilitiesOptions": {
+        "measure_luminance": {
+          "title": {
+            "en": "Noise Level",
+            "fr": "Niveau sonore"
+          },
+          "units": "dB"
+        },
+        "alarm_generic": {
+          "title": {
+            "en": "Noise Alert",
+            "fr": "Alerte bruit"
+          }
+        }
+      },
+      "energy": {
+        "approximation": {
+          "usageOn": 0.5,
+          "usageOff": 0.2
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_nnrfa68v",
+          "_TZE200_wukb7rhc",
+          "_TZE204_nnrfa68v",
+          "TUYATEC"
+        ],
+        "productId": [
+          "TS0601",
+          "NOISE01"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              61184
+            ],
+            "bindings": []
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "noise_threshold",
+          "type": "number",
+          "label": {
+            "en": "Noise Alert Threshold",
+            "fr": "Seuil alerte bruit"
+          },
+          "value": 70,
+          "min": 30,
+          "max": 120,
+          "units": "dB"
+        }
+      ],
+      "images": {
+        "small": "drivers/noise_sensor/assets/images/small.png",
+        "large": "drivers/noise_sensor/assets/images/large.png"
+      },
+      "id": "noise_sensor"
+    },
+    {
+      "name": {
         "en": "Philips Hue Bulb",
         "fr": "Ampoule Philips Hue"
       },
@@ -54174,6 +54752,71 @@
           "template": "add_devices"
         }
       ]
+    },
+    {
+      "name": {
+        "en": "Zigbee Rain Sensor",
+        "fr": "Capteur de pluie Zigbee"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_water",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "capabilitiesOptions": {
+        "alarm_water": {
+          "title": {
+            "en": "Raining",
+            "fr": "Pluie"
+          }
+        },
+        "measure_humidity": {
+          "title": {
+            "en": "Rain Level",
+            "fr": "Niveau pluie"
+          },
+          "units": "%"
+        }
+      },
+      "energy": {
+        "batteries": [
+          "AAA",
+          "AAA"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_n8dljorx",
+          "_TZE200_mja3fuja",
+          "_TZ3000_k1msavlx",
+          "TUYATEC"
+        ],
+        "productId": [
+          "TS0207",
+          "TS0601",
+          "RH3001"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1280,
+              61184
+            ],
+            "bindings": [
+              1280
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/rain_sensor/assets/images/small.png",
+        "large": "drivers/rain_sensor/assets/images/large.png"
+      },
+      "id": "rain_sensor"
     },
     {
       "name": {
@@ -83890,6 +84533,111 @@
           "template": "add_devices"
         }
       ]
+    },
+    {
+      "name": {
+        "en": "Zigbee Weather Station (Outdoor)",
+        "fr": "Station météo Zigbee (Extérieur)"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_pressure",
+        "measure_luminance",
+        "measure_battery"
+      ],
+      "capabilitiesOptions": {
+        "measure_temperature": {
+          "title": {
+            "en": "Outdoor Temperature",
+            "fr": "Température extérieure"
+          }
+        }
+      },
+      "energy": {
+        "batteries": [
+          "AA",
+          "AA"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_qaaysllp",
+          "_TZ3000_fllyghyj",
+          "_TZE200_locansqn",
+          "_TZE200_pisltm67",
+          "_TZE200_lve3dvpy",
+          "TUYATEC",
+          "Tuya"
+        ],
+        "productId": [
+          "TS0201",
+          "TS0601",
+          "TH01",
+          "WSD500A"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1026,
+              1029,
+              1027,
+              1024
+            ],
+            "bindings": [
+              1026,
+              1029
+            ]
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset",
+            "fr": "Décalage température"
+          },
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "units": "°C"
+        },
+        {
+          "id": "humidity_offset",
+          "type": "number",
+          "label": {
+            "en": "Humidity Offset",
+            "fr": "Décalage humidité"
+          },
+          "value": 0,
+          "min": -20,
+          "max": 20,
+          "units": "%"
+        },
+        {
+          "id": "report_interval",
+          "type": "number",
+          "label": {
+            "en": "Report Interval",
+            "fr": "Intervalle de rapport"
+          },
+          "value": 300,
+          "min": 60,
+          "max": 3600,
+          "units": "s"
+        }
+      ],
+      "images": {
+        "small": "drivers/weather_station_outdoor/assets/images/small.png",
+        "large": "drivers/weather_station_outdoor/assets/images/large.png"
+      },
+      "id": "weather_station_outdoor"
     },
     {
       "name": {
