@@ -1173,5 +1173,9 @@
   "5.2.25": {
     "fr": "Mises a jour OTA - Support complet OTA avec verification auto, suivi progression. Sante Appareils - 9 nouvelles flow cards pour hors ligne/en ligne, batterie faible, signal faible, identification.",
     "en": "OTA Firmware Updates - Full OTA update support with auto-check, progress tracking. Device Health - 9 new flow cards for device offline/online, low battery, weak signal, device identify."
+  },
+  "5.2.26": {
+    "fr": "Integration Issues Upstream - Ajout 45+ IDs fabricants des issues JohanBendz #1267-#1319. Couverture complete capteurs climat, presence radar, prises, moteurs rideaux, capteurs sol, detecteurs fumee.",
+    "en": "Upstream Issues Integration - Added 45+ manufacturer IDs from JohanBendz issues #1267-#1319. Full coverage for climate sensors, radar presence, plugs, curtain motors, soil sensors, smoke detectors."
   }
 }

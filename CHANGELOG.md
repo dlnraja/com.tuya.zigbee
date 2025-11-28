@@ -1,5 +1,18 @@
 # Changelog
 
+## [5.2.26] - 2025-11-28
+
+### Upstream Issues Integration (45+ Manufacturer IDs)
+- **Source:** JohanBendz/com.tuya.zigbee issues #1267-#1319
+- **Climate sensors:** _TZ3000_bgsigers, _TZE200_rxq4iti9
+- **Presence/Radar:** _TZE204_iaeejhvf, _TZE200_rhgsbacq, _TZ321C_fkzihax8
+- **Plugs:** _TZ3210_cehuw1lw, _TZ3210_fgwhjm9j, _TZ3000_uwaort14, _TZ3000_dd8wwzcy
+- **Curtain motors:** _TZ3210_dwytrmda, _TZE200_ol5jlkkr
+- **Soil sensor:** _TZE284_myd45weu
+- **Smoke detectors:** _TZE284_n4ttsck2, _TZE284_gyzlwu5q
+- **Weather station:** HOBEIAN ZG-223Z, _TZE200_u6x1zyv2
+- **34 drivers enriched** with comprehensive manufacturer IDs
+
 ## [5.2.25] - 2025-11-28
 
 ### OTA Firmware Updates & Device Health Monitoring
