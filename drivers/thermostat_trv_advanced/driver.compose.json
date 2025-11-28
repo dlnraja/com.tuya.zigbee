@@ -108,7 +108,10 @@
     }
   ],
   "images": {
-    "small": "./drivers/thermostat_trv_advanced/assets/icon.svg",
-    "large": "./drivers/thermostat_trv_advanced/assets/icon.svg"
+    "small": "drivers/thermostat_trv_advanced/assets/images/small.png",
+    "large": "drivers/thermostat_trv_advanced/assets/images/small.png"
   }
 }
+
+
+

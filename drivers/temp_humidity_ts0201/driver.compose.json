@@ -71,5 +71,10 @@
         "step": 1
       }
     }
-  ]
+  ],
+  "images": {
+    "large": "drivers/temp_humidity_ts0201/assets/images/large.png",
+    "xlarge": "drivers/temp_humidity_ts0201/assets/images/xlarge.png",
+    "small": "drivers/temp_humidity_ts0201/assets/images/small.png"
+  }
 }

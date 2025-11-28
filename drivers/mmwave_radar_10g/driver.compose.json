@@ -42,5 +42,10 @@
     "batteries": [
       "CR2450"
     ]
+  },
+  "images": {
+    "large": "drivers/mmwave_radar_10g/assets/images/large.png",
+    "xlarge": "drivers/mmwave_radar_10g/assets/images/xlarge.png",
+    "small": "drivers/mmwave_radar_10g/assets/images/small.png"
   }
 }

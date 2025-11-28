@@ -5,9 +5,7 @@
   },
   "class": "windowcoverings",
   "capabilities": [
-    "windowcoverings_set",
-    6
-  ],
+    "windowcoverings_set"],
   "energy": {
     "approximation": {
       "usageConstant": 0.5
@@ -61,7 +59,7 @@
       "1": {
         "clusters": [
           0,
-          "windowCovering",
+          258,
           61184
         ],
         "bindings": [
@@ -334,3 +332,5 @@
     }
   ]
 }
+
+

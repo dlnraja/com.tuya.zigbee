@@ -35,5 +35,10 @@
       }
     }
   },
-  "id": "led_strip_ts0503b"
+  "id": "led_strip_ts0503b",
+  "images": {
+    "large": "drivers/led_strip_ts0503b/assets/images/large.png",
+    "xlarge": "drivers/led_strip_ts0503b/assets/images/xlarge.png",
+    "small": "drivers/led_strip_ts0503b/assets/images/small.png"
+  }
 }

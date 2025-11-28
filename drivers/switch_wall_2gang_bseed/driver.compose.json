@@ -30,7 +30,6 @@
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_atp7xmd9",
-
       "_TZ3000_irrmjcgi",
       "_TZ3000_jcfje0kb",
       "_TZ3000_kgxej1dv",
@@ -71,8 +70,7 @@
       "2": {
         "clusters": [
           4,
-          5,
-          6
+          5
         ],
         "bindings": [
           6
@@ -117,5 +115,10 @@
         "fr": "Délai entre les commandes de gang pour éviter les conflits firmware"
       }
     }
-  ]
+  ],
+  "images": {
+    "large": "drivers/switch_wall_2gang_bseed/assets/images/large.png",
+    "xlarge": "drivers/switch_wall_2gang_bseed/assets/images/xlarge.png",
+    "small": "drivers/switch_wall_2gang_bseed/assets/images/small.png"
+  }
 }

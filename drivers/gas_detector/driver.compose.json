@@ -8,9 +8,7 @@
     "alarm_motion",
     "alarm_co",
     "alarm_co2",
-    "measure_battery",
-    6
-  ],
+    "measure_battery"],
   "energy": {
     "batteries": [
       "CR2032",
@@ -344,3 +342,4 @@
     }
   ]
 }
+

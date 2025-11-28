@@ -45,9 +45,10 @@
       }
     }
   },
-  "icon": "/assets/icon.svg",
+  "icon": "/assets/images/small.png",
   "images": {
     "small": "/drivers/rgb_led_controller/assets/images/small.png",
     "large": "/drivers/rgb_led_controller/assets/images/large.png"
   }
 }
+

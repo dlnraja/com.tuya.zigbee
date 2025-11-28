@@ -40,5 +40,10 @@
     "onoff": {
       "setOnDim": false
     }
+  },
+  "images": {
+    "large": "drivers/dimmer_2ch_ts1101/assets/images/large.png",
+    "xlarge": "drivers/dimmer_2ch_ts1101/assets/images/xlarge.png",
+    "small": "drivers/dimmer_2ch_ts1101/assets/images/small.png"
   }
 }

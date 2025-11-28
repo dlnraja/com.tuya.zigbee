@@ -37,5 +37,10 @@
     "batteries": [
       "CR2032"
     ]
+  },
+  "images": {
+    "large": "drivers/soil_moisture_sensor/assets/images/large.png",
+    "xlarge": "drivers/soil_moisture_sensor/assets/images/xlarge.png",
+    "small": "drivers/soil_moisture_sensor/assets/images/small.png"
   }
 }

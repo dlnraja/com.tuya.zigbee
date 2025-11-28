@@ -119,5 +119,10 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ]
+  ],
+  "images": {
+    "large": "drivers/usb_outlet_bseed/assets/images/large.png",
+    "xlarge": "drivers/usb_outlet_bseed/assets/images/xlarge.png",
+    "small": "drivers/usb_outlet_bseed/assets/images/small.png"
+  }
 }

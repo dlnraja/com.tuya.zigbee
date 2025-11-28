@@ -9,9 +9,7 @@
     "measure_humidity",
     "alarm_smoke",
     "alarm_fire",
-    "measure_battery",
-    6
-  ],
+    "measure_battery"],
   "energy": {
     "batteries": [
       "CR2032",
@@ -318,3 +316,5 @@
     }
   ]
 }
+
+
