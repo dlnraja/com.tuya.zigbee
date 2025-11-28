@@ -1,0 +1,86 @@
+{
+  "triggers": [
+    {
+      "id": "lidl_plug_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "Allumé"
+      }
+    },
+    {
+      "id": "lidl_plug_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Éteint"
+      }
+    },
+    {
+      "id": "lidl_plug_power_changed",
+      "title": {
+        "en": "Power changed",
+        "fr": "Puissance changée"
+      },
+      "tokens": [
+        {
+          "name": "power",
+          "type": "number",
+          "title": {
+            "en": "Power (W)",
+            "fr": "Puissance (W)"
+          },
+          "example": 100
+        }
+      ]
+    },
+    {
+      "id": "lidl_plug_energy_changed",
+      "title": {
+        "en": "Energy changed",
+        "fr": "Énergie changée"
+      },
+      "tokens": [
+        {
+          "name": "energy",
+          "type": "number",
+          "title": {
+            "en": "Energy (kWh)",
+            "fr": "Énergie (kWh)"
+          },
+          "example": 1.5
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "lidl_plug_is_on",
+      "title": {
+        "en": "Is turned on",
+        "fr": "Est allumé"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "lidl_plug_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      }
+    },
+    {
+      "id": "lidl_plug_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Éteindre"
+      }
+    },
+    {
+      "id": "lidl_plug_toggle",
+      "title": {
+        "en": "Toggle on/off",
+        "fr": "Basculer"
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": {
+    "en": "Zemismart Zigbee Switch",
+    "fr": "Interrupteur Zemismart Zigbee"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_18ejxno0",
+      "_TZ3000_zmy1waw6",
+      "_TZE200_aqnazj70",
+      "Zemismart"
+    ],
+    "productId": [
+      "ZM-CSW002-D",
+      "TS0001",
+      "TS0002",
+      "TS011F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/zemismart_switch/assets/images/small.png",
+    "large": "drivers/zemismart_switch/assets/images/large.png"
+  }
+}

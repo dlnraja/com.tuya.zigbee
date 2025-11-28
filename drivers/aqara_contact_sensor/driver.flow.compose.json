@@ -1,0 +1,34 @@
+{
+  "triggers": [
+    {
+      "id": "aqara_contact_opened",
+      "title": {
+        "en": "Opened",
+        "fr": "Ouvert"
+      }
+    },
+    {
+      "id": "aqara_contact_closed",
+      "title": {
+        "en": "Closed",
+        "fr": "Fermé"
+      }
+    },
+    {
+      "id": "aqara_contact_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "aqara_contact_is_open",
+      "title": {
+        "en": "Is open",
+        "fr": "Est ouvert"
+      }
+    }
+  ]
+}
