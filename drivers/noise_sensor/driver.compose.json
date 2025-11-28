@@ -1,0 +1,72 @@
+{
+  "name": {
+    "en": "Zigbee Noise/Sound Sensor",
+    "fr": "Capteur bruit/son Zigbee"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_luminance",
+    "alarm_generic"
+  ],
+  "capabilitiesOptions": {
+    "measure_luminance": {
+      "title": {
+        "en": "Noise Level",
+        "fr": "Niveau sonore"
+      },
+      "units": "dB"
+    },
+    "alarm_generic": {
+      "title": {
+        "en": "Noise Alert",
+        "fr": "Alerte bruit"
+      }
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 0.5,
+      "usageOff": 0.2
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_nnrfa68v",
+      "_TZE200_wukb7rhc",
+      "_TZE204_nnrfa68v",
+      "TUYATEC"
+    ],
+    "productId": [
+      "TS0601",
+      "NOISE01"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          61184
+        ],
+        "bindings": []
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "noise_threshold",
+      "type": "number",
+      "label": {
+        "en": "Noise Alert Threshold",
+        "fr": "Seuil alerte bruit"
+      },
+      "value": 70,
+      "min": 30,
+      "max": 120,
+      "units": "dB"
+    }
+  ],
+  "images": {
+    "small": "drivers/noise_sensor/assets/images/small.png",
+    "large": "drivers/noise_sensor/assets/images/large.png"
+  }
+}
