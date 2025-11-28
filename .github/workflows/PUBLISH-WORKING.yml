@@ -1,41 +1,40 @@
 name: 🚀 PUBLISH WORKING (Correct Method)
 
-'on':
+"on":
   workflow_dispatch:
     inputs:
       skip_validation:
-        description: 'Skip validation'
+        description: "Skip validation"
         required: false
         type: boolean
         default: false
   push:
     tags:
-      - 'v*.*.*'
+      - "v*.*.*"
 
 env:
   HOMEY_API_TOKEN: ${{ secrets.HOMEY_PAT }}
 
 jobs:
-  
   publish:
     name: 🚀 Publish to Homey App Store
     runs-on: ubuntu-latest
     steps:
       - name: ✅ Checkout
         uses: actions/checkout@v4
-        
+
       - name: ✅ Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
-          
+          node-version: "22"
+
       - name: 📦 Get Version
         id: version
         run: |
           VERSION=$(node -p "require('./app.json').version")
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "📦 Version: $VERSION"
-          
+
       - name: 🔑 Check HOMEY_PAT
         run: |
           if [ -z "${{ secrets.HOMEY_PAT }}" ]; then
@@ -50,20 +49,20 @@ jobs:
             exit 1
           fi
           echo "✅ HOMEY_PAT configured"
-          
+
       - name: 📦 Install Dependencies
         run: |
           echo "📦 Installing app dependencies..."
           npm install
           echo "✅ Dependencies installed"
-          
+
       - name: 📦 Install Homey CLI
         run: |
           echo "📦 Installing Homey CLI..."
           npm install -g homey@latest
           homey --version
           echo "✅ Homey CLI installed"
-          
+
       - name: ✅ Validate App
         if: ${{ !inputs.skip_validation }}
         run: |
@@ -73,7 +72,7 @@ jobs:
             exit 0
           }
         continue-on-error: true
-        
+
       - name: 🏗️ Build App
         run: |
           echo "🏗️ Building app..."
@@ -82,69 +81,23 @@ jobs:
             exit 0
           }
         continue-on-error: true
-        
+
       - name: 🚀 Publish to Homey App Store
         id: publish
+        uses: athombv/github-action-homey-app-publish@master
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+
+      - name: 📋 Show Publish URL
+        if: success()
         run: |
-          echo "🚀 Publishing v${{ steps.version.outputs.version }}..."
+          echo "✅ App published successfully!"
           echo ""
-          echo "ℹ️  Using HOMEY_API_TOKEN from environment"
-          echo "ℹ️  The CLI will authenticate automatically"
+          echo "🔗 Manage your app at: ${{ steps.publish.outputs.url }}"
           echo ""
-          
-          # The CLI uses HOMEY_API_TOKEN env var automatically - NO LOGIN NEEDED!
-          # Use expect to handle interactive prompts
-          sudo apt-get update -qq
-          sudo apt-get install -y expect
-          
-          expect << 'EOF' 2>&1 | tee publish.log
-          set timeout 300
-          log_user 1
-          
-          spawn homey app publish
-          
-          expect {
-            -re "(uncommitted changes|Are you sure)" {
-              send "y\r"
-              exp_continue
-            }
-            -re "(version number|current)" {
-              send "n\r"
-              exp_continue
-            }
-            -re "(published|Successfully published)" {
-              puts "\n✅ App published successfully!"
-              exit 0
-            }
-            timeout {
-              puts "\n⏱️ Timeout after 5 minutes"
-              exit 1
-            }
-            eof {
-              puts "\nℹ️ Process ended"
-            }
-          }
-          EOF
-          
-          EXIT_CODE=$?
-          echo "Exit code: $EXIT_CODE"
-          
-          # Check for success indicators in log
-          if [ $EXIT_CODE -eq 0 ]; then
-            echo "✅ EXPECT returned success (0)"
-            echo "published=true" >> $GITHUB_OUTPUT
-            exit 0
-          elif grep -qi "published\|successfully" publish.log; then
-            echo "✅ Found 'published' in log"
-            echo "published=true" >> $GITHUB_OUTPUT
-            exit 0
-          else
-            echo "❌ Publish failed"
-            echo "=== FULL LOG ==="
-            cat publish.log
-            exit 1
-          fi
-          
+          echo "## ✅ Published!" >> $GITHUB_STEP_SUMMARY
+          echo "Manage your app at: ${{ steps.publish.outputs.url }}" >> $GITHUB_STEP_SUMMARY
+
       - name: 📝 Create GitHub Release
         if: success() && (startsWith(github.ref, 'refs/tags/') || github.event_name == 'workflow_dispatch')
         uses: softprops/action-gh-release@v2
@@ -153,29 +106,29 @@ jobs:
           name: Release v${{ steps.version.outputs.version }}
           body: |
             # 🎉 Release v${{ steps.version.outputs.version }}
-            
+
             ## ✅ Status
             - ✅ Published to Homey App Store (Draft)
             - ✅ GitHub Release created
-            
+
             ## 📋 Next Steps
-            
+
             1. **Go to Developer Dashboard:**
                https://tools.developer.homey.app
-            
+
             2. **Navigate to:** Apps SDK → My Apps → com.dlnraja.tuya.zigbee
-            
+
             3. **Choose publish option:**
                - **Test:** For testing only (via test link)
                - **Live:** Submit for certification → Public release
-            
+
             4. **Submit for certification** to make it publicly available
-            
+
             ## 🔗 Links
             - [Developer Tools](https://tools.developer.homey.app)
             - [Homey App Store](https://apps.homey.app/app/com.dlnraja.tuya.zigbee)
             - [Changelog](CHANGELOG.md)
-            
+
             ## 📖 Documentation
             See [Homey Apps Documentation](https://apps.developer.homey.app/the-basics/publishing) for details.
           files: |
@@ -186,7 +139,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         continue-on-error: true
-        
+
       - name: 📤 Upload Publish Log
         if: always()
         uses: actions/upload-artifact@v4
@@ -195,7 +148,7 @@ jobs:
           path: publish.log
           retention-days: 30
         continue-on-error: true
-        
+
       - name: 📊 Summary
         if: always()
         run: |
@@ -203,7 +156,7 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "## 📦 Version: v${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          
+
           if [ "${{ steps.publish.outcome }}" == "success" ]; then
             echo "## ✅ SUCCESS!" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
@@ -246,7 +199,7 @@ jobs:
             echo "3. Run validation: \`homey app validate --level publish\`" >> $GITHUB_STEP_SUMMARY
             echo "4. Check publish log artifact" >> $GITHUB_STEP_SUMMARY
           fi
-          
+
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "---" >> $GITHUB_STEP_SUMMARY
           echo "*Workflow: PUBLISH-WORKING.yml*" >> $GITHUB_STEP_SUMMARY
