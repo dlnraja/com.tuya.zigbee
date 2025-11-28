@@ -7,9 +7,6 @@
   "capabilities": [
     "alarm_motion",
     "measure_luminance",
-    "measure_distance",
-    "presence_sensitivity",
-    "presence_timeout",
     "measure_battery"
   ],
   "capabilitiesOptions": {},
@@ -113,4 +110,3 @@
     "large": "drivers/sensor_mmwave_presence_advanced/assets/images/small.png"
   }
 }
-
