@@ -1,0 +1,11 @@
+en:
+Fix Publish Workflow
+- Use official Athom GitHub Action for publishing
+- Fixed authentication issues with CLI in CI/CD
+- More reliable automated publishing
+
+fr:
+Correction du Workflow de Publication
+- Utilisation de l'action GitHub Athom officielle
+- Correction des problèmes d'authentification CLI en CI/CD
+- Publication automatique plus fiable
