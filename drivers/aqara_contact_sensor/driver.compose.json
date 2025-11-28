@@ -1,0 +1,59 @@
+{
+  "name": {
+    "en": "Aqara Door/Window Sensor",
+    "fr": "Capteur porte/fenêtre Aqara"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_contact",
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "alarm_contact": {
+      "title": {
+        "en": "Open",
+        "fr": "Ouvert"
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR1632",
+      "CR2032"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "LUMI",
+      "lumi",
+      "aqara",
+      "Xiaomi"
+    ],
+    "productId": [
+      "lumi.sensor_magnet",
+      "lumi.sensor_magnet.aq2",
+      "lumi.magnet.ac01",
+      "lumi.magnet.agl02",
+      "MCCGQ11LM",
+      "MCCGQ01LM",
+      "MCCGQ14LM"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          1280
+        ],
+        "bindings": [
+          1280
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/aqara_contact_sensor/assets/images/small.png",
+    "large": "drivers/aqara_contact_sensor/assets/images/large.png"
+  }
+}
