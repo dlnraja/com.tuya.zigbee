@@ -1,0 +1,104 @@
+{
+  "name": {
+    "en": "Zigbee Air Quality / CO2 Sensor",
+    "fr": "Capteur qualité air / CO2 Zigbee"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_co2",
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_generic"
+  ],
+  "capabilitiesOptions": {
+    "measure_co2": {
+      "title": {
+        "en": "CO2 Level",
+        "fr": "Niveau CO2"
+      },
+      "units": "ppm"
+    },
+    "alarm_generic": {
+      "title": {
+        "en": "CO2 Alert",
+        "fr": "Alerte CO2"
+      }
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 1,
+      "usageOff": 0.5
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_dwcarsat",
+      "_TZE200_ryfmq5rl",
+      "_TZE200_ogkdpgy2",
+      "_TZE200_yvx5lh6k",
+      "_TZE204_laokfqwu",
+      "_TZE200_7bztmfm1",
+      "TUYATEC",
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601",
+      "ZG-204ZM",
+      "CO2M"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          61184
+        ],
+        "bindings": []
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "co2_threshold",
+      "type": "number",
+      "label": {
+        "en": "CO2 Alert Threshold",
+        "fr": "Seuil alerte CO2"
+      },
+      "value": 1000,
+      "min": 400,
+      "max": 5000,
+      "units": "ppm"
+    },
+    {
+      "id": "temperature_unit",
+      "type": "dropdown",
+      "label": {
+        "en": "Temperature Unit",
+        "fr": "Unité température"
+      },
+      "value": "celsius",
+      "values": [
+        {
+          "id": "celsius",
+          "label": {
+            "en": "Celsius",
+            "fr": "Celsius"
+          }
+        },
+        {
+          "id": "fahrenheit",
+          "label": {
+            "en": "Fahrenheit",
+            "fr": "Fahrenheit"
+          }
+        }
+      ]
+    }
+  ],
+  "images": {
+    "small": "drivers/air_quality_co2/assets/images/small.png",
+    "large": "drivers/air_quality_co2/assets/images/large.png"
+  }
+}
