@@ -112,10 +112,15 @@
   "zigbee": {
     "manufacturerName": [
       "_TZE200_zuhszj9s",
-      "_TZE200_husqqvux"
+      "_TZE200_husqqvux",
+      "_TZE200_ckud7u2l",
+      "_TZE204_ckud7u2l",
+      "_TZE204_zuhszj9s"
     ],
     "productId": [
-      "TS0601"
+      "TS0601",
+      "IR-AC",
+      "AC-Controller"
     ],
     "endpoints": {
       "1": {
@@ -402,6 +407,3 @@
     }
   ]
 }
-
-
-
