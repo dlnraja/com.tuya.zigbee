@@ -1,15 +1,16 @@
 {
   "name": {
-    "en": "Smart Bulb Bulb Rgbw",
-    "fr": "Smart Bulb Bulb Rgbw"
+    "en": "Smart RGB/RGBW Bulb",
+    "fr": "Ampoule Connectée RGB/RGBW"
   },
   "class": "light",
   "capabilities": [
+    "onoff",
+    "dim",
     "light_hue",
     "light_saturation",
     "light_temperature",
-    "light_mode",
-    "dim"
+    "light_mode"
   ],
   "energy": {
     "approximation": {
@@ -24,7 +25,26 @@
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_49qchf10",
+      "_TZ3210_sln7ah6r",
+      "_TZ3210_wuheik5l",
+      "LIDL Silvercrest",
+      "Silvercrest",
+      "Philips",
+      "Signify Netherlands B.V.",
+      "IKEA of Sweden",
+      "IKEA",
+      "_TZ3210_alproto2",
+      "_TZ3210_zfblruvv",
+      "_TZ3210_mjas4mds",
+      "_TZ3210_it1u8ahz",
+      "_TZ3210_dxrjkpi4",
+      "_TZB210_rkgngb5o",
+      "innr",
+      "Innr",
+      "OSRAM",
+      "LEDVANCE"
     ],
     "productId": [
       "TS0502A",
@@ -32,7 +52,32 @@
       "TS0505A",
       "TS0505B",
       "ZB-CL01",
-      "generic"
+      "generic",
+      "HG06106A",
+      "HG06106B",
+      "HG06106C",
+      "HG06492A",
+      "HG06492B",
+      "HG06492C",
+      "HG06467",
+      "HG07834A",
+      "HG07834B",
+      "LCT001",
+      "LCT007",
+      "LCT010",
+      "LCT014",
+      "LCT015",
+      "LCT016",
+      "LCA001",
+      "LCA002",
+      "LCA003",
+      "TRADFRI bulb E27 CWS opal 600lm",
+      "TRADFRI bulb E14 WS opal 400lm",
+      "LED1624G9",
+      "LED1649C5",
+      "RB 285 C",
+      "RB 250 C",
+      "Classic A60 RGBW"
     ],
     "endpoints": {
       "1": {
@@ -314,4 +359,3 @@
     }
   ]
 }
-

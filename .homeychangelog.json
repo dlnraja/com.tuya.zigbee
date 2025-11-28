@@ -1161,5 +1161,9 @@
   "5.2.18": {
     "en": "New Brands: Lidl/Silvercrest, BlitzWolf, Zemismart, MOES Smart Knob + Flow cards",
     "fr": "Nouvelles marques: Lidl/Silvercrest, BlitzWolf, Zemismart, MOES + Cartes Flow"
+  },
+  "5.2.23": {
+    "en": "Unbranded Drivers - Merged 20+ brand drivers (Lidl, Aqara, Philips Hue, IKEA, BlitzWolf, MOES, Shelly, Sonoff, Zemismart) into generic categories. 212 drivers with enriched manufacturer IDs.",
+    "fr": "Drivers Generiques - Fusion 20+ marques (Lidl, Aqara, Philips Hue, IKEA, BlitzWolf, MOES, Shelly, Sonoff, Zemismart) en categories generiques. 212 drivers avec IDs enrichis."
   }
 }
