@@ -70,17 +70,7 @@
       }
     }
   },
-  "settings": [
-    {
-      "id": "child_lock",
-      "type": "checkbox",
-      "label": {
-        "en": "Child Lock",
-        "fr": "Verrouillage Enfant"
-      },
-      "value": false
-    }
-  ],
+  "settings": [],
   "id": "thermostat_trv_tuya",
   "images": {
     "large": "drivers/thermostat_trv_tuya/assets/images/large.png",

@@ -9,8 +9,7 @@
     "measure_power",
     "meter_power",
     "measure_voltage",
-    "measure_current",
-    "led_mode"
+    "measure_current"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -31,16 +30,6 @@
         "de": "Anschluss 2",
         "it": "Porta 2",
         "es": "Puerto 2"
-      }
-    },
-    "led_mode": {
-      "title": {
-        "en": "LED Indicator",
-        "fr": "Indicateur LED",
-        "nl": "LED Indicator",
-        "de": "LED Anzeige",
-        "it": "Indicatore LED",
-        "es": "Indicador LED"
       }
     },
     "measure_voltage": {
@@ -140,7 +129,9 @@
     "devices": {
       "port2": {
         "class": "socket",
-        "capabilities": ["onoff"],
+        "capabilities": [
+          "onoff"
+        ],
         "name": {
           "en": "USB Port 2",
           "nl": "USB Poort 2",
@@ -298,4 +289,3 @@
     }
   ]
 }
-

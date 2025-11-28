@@ -8,14 +8,15 @@
     "target_temperature",
     "measure_temperature",
     "thermostat_mode",
-    "child_lock",
-    "window_detection",
-    "valve_position",
-    "measure_battery",
-    "anti_scale"
+    "measure_battery"
   ],
   "capabilitiesOptions": {},
-  "energy": {},
+  "energy": {
+    "batteries": [
+      "AA",
+      "AAA"
+    ]
+  },
   "zigbee": {
     "manufacturerName": [
       "_TYST11_KGbxAXL2",
@@ -78,24 +79,6 @@
       "units": "°C"
     },
     {
-      "id": "window_detection",
-      "type": "checkbox",
-      "label": {
-        "en": "Window Detection",
-        "fr": "Détection Fenêtre"
-      },
-      "value": true
-    },
-    {
-      "id": "anti_scale",
-      "type": "checkbox",
-      "label": {
-        "en": "Anti-Scale",
-        "fr": "Anti-Calcaire"
-      },
-      "value": true
-    },
-    {
       "id": "frost_protection",
       "type": "number",
       "label": {
@@ -109,9 +92,6 @@
   ],
   "images": {
     "small": "drivers/thermostat_trv_advanced/assets/images/small.png",
-    "large": "drivers/thermostat_trv_advanced/assets/images/small.png"
+    "large": "drivers/thermostat_trv_advanced/assets/images/large.png"
   }
 }
-
-
-
