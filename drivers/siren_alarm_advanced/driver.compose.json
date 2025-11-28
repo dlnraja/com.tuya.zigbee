@@ -7,8 +7,6 @@
   "capabilities": [
     "measure_battery",
     "alarm_generic",
-    "alarm_temperature",
-    "alarm_humidity",
     "measure_temperature",
     "measure_humidity",
     "volume_set"
@@ -145,7 +143,6 @@
   ],
   "images": {
     "small": "drivers/siren_alarm_advanced/assets/images/small.png",
-    "large": "drivers/siren_alarm_advanced/assets/images/small.png"
+    "large": "drivers/siren_alarm_advanced/assets/images/large.png"
   }
 }
-
