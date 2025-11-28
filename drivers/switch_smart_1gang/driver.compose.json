@@ -4,7 +4,9 @@
     "fr": "Smart Switch 1gang"
   },
   "class": "socket",
-  "capabilities": ["onoff"],
+  "capabilities": [
+    "onoff"
+  ],
   "energy": {
     "approximation": {
       "usageConstant": 0.5
@@ -41,7 +43,24 @@
       "_TZ3000_ly9apzky",
       "_TZ3000_majwnphg",
       "_TZ3000_mmkbptmx",
-      "_TZ3000_mw1pqqqt"
+      "_TZ3000_mw1pqqqt",
+      "Shelly",
+      "Allterco",
+      "SONOFF",
+      "eWeLink",
+      "_TZ3000_7ysdnebc",
+      "_TZ3000_ksw8qtmt",
+      "Zemismart",
+      "_TZ3000_txpitre5",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_tqlv4ez4",
+      "_TZ3000_4uf3d0ax",
+      "_TZ3000_pmvbt5hh",
+      "_TZ3000_npzfdcof",
+      "_TZ3000_hktqahrq",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_46t1rvdu",
+      "_TZ3000_5ng23zjs"
     ],
     "productId": [
       "TS0001",
@@ -49,7 +68,14 @@
       "TS0004",
       "TS0005",
       "TS0006",
-      "TS0011"
+      "TS0011",
+      "SHSW-1",
+      "Shelly1",
+      "BASICZBR3",
+      "ZBMINI",
+      "ZBMINIL2",
+      "S31ZB",
+      "ZM-CSW002-D"
     ],
     "learnmode": {
       "image": "/drivers/switch_smart_1gang/assets/learnmode.svg",
@@ -331,4 +357,3 @@
     }
   ]
 }
-

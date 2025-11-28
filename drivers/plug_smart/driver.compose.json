@@ -1,28 +1,20 @@
 {
   "name": {
-    "en": "Plug Smart",
-    "fr": "Plug Smart"
+    "en": "Smart Plug with Energy Monitoring",
+    "fr": "Prise Connectée avec Mesure Énergie"
   },
-  "class": "sensor",
+  "class": "socket",
   "capabilities": [
-    "measure_battery",
-    "alarm_generic",
-    "measure_current",
-    "measure_voltage",
+    "onoff",
+    "measure_power",
     "meter_power",
-    "measure_power"
+    "measure_current",
+    "measure_voltage"
   ],
   "energy": {
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "AAA",
-      "AA",
-      "CR123A",
-      "INTERNAL"
-    ],
     "approximation": {
-      "usageConstant": 0.5
+      "usageOn": 0,
+      "usageOff": 0
     }
   },
   "zigbee": {
@@ -46,12 +38,45 @@
       "_TZ3000_ww6drja5",
       "_TZ3000_1obwwnmq",
       "_TZ3000_w0qqde0g",
-      "_TZ3000_vzopcetz"
+      "_TZ3000_vzopcetz",
+      "_TZ3000_wamqdr3f",
+      "_TZ3000_00mk2xzy",
+      "LIDL Silvercrest",
+      "Silvercrest",
+      "BlitzWolf",
+      "_TZ3000_rdtixbnu",
+      "_TZ3000_2xlvlnvp",
+      "_TZ3000_cymsnfvf",
+      "_TZ3000_9hpxg80k",
+      "_TZ3000_wxtp7c5y",
+      "_TZ3000_o005nuxx",
+      "_TZ3000_ksw8qtmt",
+      "_TZ3000_7ysdnebc",
+      "_TZ3000_dpo1ysak",
+      "_TZ3000_gjnozsaz",
+      "Nous",
+      "LSC",
+      "_TZ3000_b28wrpvx",
+      "SONOFF",
+      "eWeLink"
     ],
     "productId": [
       "S26R2ZB",
       "TS011F",
-      "TS0121"
+      "TS0121",
+      "HG06337",
+      "HG06338",
+      "HG08673",
+      "BW-SHP13",
+      "BW-SHP15",
+      "TS0001",
+      "BASICZBR3",
+      "S31ZB",
+      "SP-EUC01",
+      "ZP-SP-01",
+      "A1Z",
+      "A3Z",
+      "A4Z"
     ],
     "endpoints": {
       "1": {
@@ -336,4 +361,3 @@
     }
   ]
 }
-

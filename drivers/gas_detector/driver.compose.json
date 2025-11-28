@@ -8,7 +8,8 @@
     "alarm_motion",
     "alarm_co",
     "alarm_co2",
-    "measure_battery"],
+    "measure_battery"
+  ],
   "energy": {
     "batteries": [
       "CR2032",
@@ -52,7 +53,15 @@
       "_TZE200_bcusnqt8",
       "_TZE200_bjawzodf",
       "_TZE200_bjzrowv2",
-      "_TZE200_cf1sl3tj"
+      "_TZE200_cf1sl3tj",
+      "_TZE200_m6kdujme",
+      "_TZE200_5d3vhjro",
+      "MOES",
+      "_TZE200_auin8mzr",
+      "_TZE200_ggev5fsl",
+      "_TZE200_yojqa8xn",
+      "_TZE284_aao6qtcs",
+      "TuYa"
     ],
     "endpoints": {
       "1": {
@@ -82,7 +91,10 @@
       }
     },
     "productId": [
-      "TS0601"
+      "TS0601",
+      "CO-Detector",
+      "Gas-Detector",
+      "CO2-Sensor"
     ]
   },
   "settings": [
@@ -342,4 +354,3 @@
     }
   ]
 }
-
