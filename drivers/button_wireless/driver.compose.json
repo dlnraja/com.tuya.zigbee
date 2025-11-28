@@ -61,10 +61,10 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "powerConfiguration",
-          "identify",
-          "onOff",
+          0,
+          1,
+          3,
+          6,
           1280,
           0,
           1,
@@ -78,9 +78,9 @@
       },
       "2": {
         "clusters": [
-          "basic",
-          "identify",
-          "onOff"
+          0,
+          3,
+          6
         ],
         "bindings": [
           1,
@@ -89,9 +89,9 @@
       },
       "3": {
         "clusters": [
-          "basic",
-          "identify",
-          "onOff"
+          0,
+          3,
+          6
         ],
         "bindings": [
           1,
@@ -100,9 +100,9 @@
       },
       "4": {
         "clusters": [
-          "basic",
-          "identify",
-          "onOff"
+          0,
+          3,
+          6
         ],
         "bindings": [
           1,
@@ -111,9 +111,9 @@
       },
       "5": {
         "clusters": [
-          "basic",
-          "identify",
-          "onOff"
+          0,
+          3,
+          6
         ],
         "bindings": [
           1,
@@ -122,9 +122,9 @@
       },
       "6": {
         "clusters": [
-          "basic",
-          "identify",
-          "onOff"
+          0,
+          3,
+          6
         ],
         "bindings": [
           1,
@@ -133,9 +133,9 @@
       },
       "7": {
         "clusters": [
-          "basic",
-          "identify",
-          "onOff"
+          0,
+          3,
+          6
         ],
         "bindings": [
           1,
@@ -144,9 +144,9 @@
       },
       "8": {
         "clusters": [
-          "basic",
-          "identify",
-          "onOff"
+          0,
+          3,
+          6
         ],
         "bindings": [
           1,

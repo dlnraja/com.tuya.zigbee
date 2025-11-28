@@ -72,10 +72,10 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "powerConfiguration",
-          "temperatureMeasurement",
-          "iasZone",
+          0,
+          1,
+          1026,
+          1280,
           61184,
           1280,
           1

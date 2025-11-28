@@ -10,8 +10,7 @@
     "measure_humidity",
     "alarm_water",
     "measure_battery",
-    "alarm_contact",
-    "onoff"
+    "alarm_contact"
   ],
   "energy": {
     "batteries": [
@@ -46,11 +45,11 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "powerConfiguration",
-          "temperatureMeasurement",
-          "iasZone",
-          "relativeHumidity",
+          0,
+          1,
+          1026,
+          1280,
+          1029,
           61184,
           1280,
           1

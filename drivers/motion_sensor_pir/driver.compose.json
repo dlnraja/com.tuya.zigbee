@@ -72,12 +72,12 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "powerConfiguration",
-          "illuminanceMeasurement",
-          "occupancySensing",
-          "iasZone",
-          "manuSpecificTuya",
+          0,
+          1,
+          1024,
+          1030,
+          1280,
+          61184,
           61184,
           1280,
           1

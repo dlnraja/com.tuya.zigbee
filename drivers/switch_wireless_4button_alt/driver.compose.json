@@ -6,7 +6,6 @@
   },
   "class": "button",
   "capabilities": [
-    "onoff",
     "onoff.button2",
     "onoff.button3",
     "onoff.button4",
@@ -68,10 +67,10 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "powerConfiguration",
-          "onOff",
-          "levelControl",
+          0,
+          1,
+          6,
+          8,
           61184,
           1280,
           0,
@@ -85,11 +84,11 @@
       },
       "2": {
         "clusters": [
-          "basic",
-          "identify",
-          "groups",
-          "scenes",
-          "onOff"
+          0,
+          3,
+          4,
+          5,
+          6
         ],
         "bindings": [
           6
@@ -97,11 +96,11 @@
       },
       "3": {
         "clusters": [
-          "basic",
-          "identify",
-          "groups",
-          "scenes",
-          "onOff"
+          0,
+          3,
+          4,
+          5,
+          6
         ],
         "bindings": [
           6
@@ -109,11 +108,11 @@
       },
       "4": {
         "clusters": [
-          "basic",
-          "identify",
-          "groups",
-          "scenes",
-          "onOff"
+          0,
+          3,
+          4,
+          5,
+          6
         ],
         "bindings": [
           6

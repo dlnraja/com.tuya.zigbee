@@ -7,7 +7,7 @@
     "target_temperature",
     "measure_temperature",
     "measure_battery",
-    "onoff"
+    6
   ],
   "platforms": [
     "local"
@@ -58,11 +58,11 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "identify",
+          0,
+          3,
           "thermostat",
-          "temperatureMeasurement",
-          "manuSpecificTuya",
+          1026,
+          61184,
           61184,
           1
         ],

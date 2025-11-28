@@ -7,7 +7,6 @@
   "capabilities": [
     "alarm_motion",
     "measure_battery",
-    "onoff",
     "alarm_generic"
   ],
   "energy": {
@@ -43,11 +42,11 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "identify",
-          "groups",
-          "scenes",
-          "iasZone",
+          0,
+          3,
+          4,
+          5,
+          1280,
           61184,
           1280,
           1

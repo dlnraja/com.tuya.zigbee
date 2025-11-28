@@ -5,7 +5,6 @@
   },
   "class": "button",
   "capabilities": [
-    "onoff",
     "onoff.button2",
     "onoff.button3",
     "onoff.button4",
@@ -55,10 +54,10 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "powerConfiguration",
-          "identify",
-          "onOff",
+          0,
+          1,
+          3,
+          6,
           1280,
           0,
           1,

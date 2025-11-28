@@ -7,7 +7,6 @@
   "capabilities": [
     "alarm_generic",
     "windowcoverings_state",
-    "onoff",
     "measure_battery"
   ],
   "energy": {
@@ -61,13 +60,13 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "powerConfiguration",
-          "identify",
-          "onOff",
-          "metering",
-          "electricalMeasurement",
-          "manuSpecificTuya",
+          0,
+          1,
+          3,
+          6,
+          1794,
+          2820,
+          61184,
           61184,
           1
         ],

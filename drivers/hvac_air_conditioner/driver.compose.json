@@ -8,7 +8,6 @@
   },
   "class": "thermostat",
   "capabilities": [
-    "onoff",
     "target_temperature",
     "measure_temperature",
     "thermostat_mode",
@@ -121,12 +120,12 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "groups",
-          "scenes",
-          "onOff",
+          0,
+          4,
+          5,
+          6,
           "thermostat",
-          "manuSpecificTuya",
+          61184,
           61184,
           1
         ],

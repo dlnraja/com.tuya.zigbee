@@ -6,7 +6,6 @@
   "class": "sensor",
   "capabilities": [
     "alarm_generic",
-    "onoff",
     "measure_battery"
   ],
   "energy": {
@@ -33,10 +32,10 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "powerConfiguration",
-          "onOff",
-          "manuSpecificTuya",
+          0,
+          1,
+          6,
+          61184,
           61184,
           1
         ],

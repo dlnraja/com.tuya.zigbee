@@ -9,7 +9,7 @@
     "alarm_co",
     "alarm_co2",
     "measure_battery",
-    "onoff"
+    6
   ],
   "energy": {
     "batteries": [
@@ -59,13 +59,13 @@
     "endpoints": {
       "1": {
         "clusters": [
-          "basic",
-          "identify",
-          "groups",
-          "scenes",
-          "onOff",
-          "iasZone",
-          "manuSpecificTuya",
+          0,
+          3,
+          4,
+          5,
+          6,
+          1280,
+          61184,
           61184,
           1280,
           1

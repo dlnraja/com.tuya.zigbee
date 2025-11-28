@@ -5,7 +5,6 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff",
     "measure_current",
     "measure_voltage",
     "meter_power"
@@ -40,13 +39,13 @@
     "endpoints": {
       "11": {
         "clusters": [
-          "basic",
-          "identify",
-          "groups",
-          "scenes",
-          "onOff",
-          "levelControl",
-          "0x1000",
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          4096,
           "0xFC03"
         ],
         "bindings": [
