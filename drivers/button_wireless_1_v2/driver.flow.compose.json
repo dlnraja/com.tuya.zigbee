@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "button_1_pressed",
+      "id": "button_wireless_1_v2_pressed",
       "title": {
         "en": "Button pressed",
         "fr": "Bouton appuyé",
@@ -40,7 +40,7 @@
       ]
     },
     {
-      "id": "button_1_double",
+      "id": "button_wireless_1_v2_double",
       "title": {
         "en": "Button double pressed",
         "fr": "Bouton double-cliqué",
@@ -79,7 +79,7 @@
       ]
     },
     {
-      "id": "button_1_long_press_start",
+      "id": "button_wireless_1_v2_long_press_start",
       "title": {
         "en": "Button long press started",
         "fr": "Appui long démarré",
@@ -129,7 +129,7 @@
       ]
     },
     {
-      "id": "button_1_long_press_stop",
+      "id": "button_wireless_1_v2_long_press_stop",
       "title": {
         "en": "Button long press stopped",
         "fr": "Appui long arrêté",
