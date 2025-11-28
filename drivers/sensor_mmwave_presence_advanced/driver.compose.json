@@ -80,7 +80,10 @@
             "en": "High"
           }
         }
-      ]
+      ],
+      "label": {
+        "en": "Sensitivity"
+      }
     },
     {
       "id": "detection_distance",
@@ -88,7 +91,10 @@
       "value": 6,
       "min": 1,
       "max": 10,
-      "units": "m"
+      "units": "m",
+      "label": {
+        "en": "Detection Distance"
+      }
     },
     {
       "id": "timeout",
@@ -96,11 +102,15 @@
       "value": 60,
       "min": 0,
       "max": 3600,
-      "units": "s"
+      "units": "s",
+      "label": {
+        "en": "Timeout"
+      }
     }
   ],
   "images": {
-    "small": "./drivers/sensor_mmwave_presence_advanced/assets/icon.svg",
-    "large": "./drivers/sensor_mmwave_presence_advanced/assets/icon.svg"
+    "small": "drivers/sensor_mmwave_presence_advanced/assets/images/small.png",
+    "large": "drivers/sensor_mmwave_presence_advanced/assets/images/small.png"
   }
 }
+

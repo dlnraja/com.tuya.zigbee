@@ -8,9 +8,7 @@
     "measure_temperature",
     "measure_humidity",
     "measure_battery",
-    "windowcoverings_state",
-    6
-  ],
+    "windowcoverings_state"],
   "energy": {
     "batteries": [
       "CR2032",
@@ -336,3 +334,4 @@
     }
   ]
 }
+

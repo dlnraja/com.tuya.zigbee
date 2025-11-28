@@ -77,5 +77,10 @@
         ]
       }
     }
+  },
+  "images": {
+    "large": "drivers/socket_ts011f/assets/images/large.png",
+    "xlarge": "drivers/socket_ts011f/assets/images/xlarge.png",
+    "small": "drivers/socket_ts011f/assets/images/small.png"
   }
 }

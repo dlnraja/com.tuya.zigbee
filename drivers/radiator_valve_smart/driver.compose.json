@@ -6,9 +6,7 @@
   "capabilities": [
     "target_temperature",
     "measure_temperature",
-    "measure_battery",
-    6
-  ],
+    "measure_battery"],
   "platforms": [
     "local"
   ],
@@ -60,7 +58,7 @@
         "clusters": [
           0,
           3,
-          "thermostat",
+          513,
           1026,
           61184,
           61184,
@@ -371,3 +369,6 @@
     }
   ]
 }
+
+
+

@@ -50,5 +50,10 @@
     "batteries": [
       "CR2450"
     ]
+  },
+  "images": {
+    "large": "drivers/smart_knob_ts004f/assets/images/large.png",
+    "xlarge": "drivers/smart_knob_ts004f/assets/images/xlarge.png",
+    "small": "drivers/smart_knob_ts004f/assets/images/small.png"
   }
 }

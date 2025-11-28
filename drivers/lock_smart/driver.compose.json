@@ -7,9 +7,7 @@
   "capabilities": [
     "locked",
     "lock_mode",
-    "measure_battery",
-    6
-  ],
+    "measure_battery"],
   "energy": {
     "batteries": [
       "CR2032",
@@ -337,3 +335,4 @@
     }
   ]
 }
+

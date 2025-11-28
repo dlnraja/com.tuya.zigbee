@@ -29,5 +29,10 @@
         "bindings": []
       }
     }
+  },
+  "images": {
+    "large": "drivers/curtain_motor_ts0601/assets/images/large.png",
+    "xlarge": "drivers/curtain_motor_ts0601/assets/images/xlarge.png",
+    "small": "drivers/curtain_motor_ts0601/assets/images/small.png"
   }
 }

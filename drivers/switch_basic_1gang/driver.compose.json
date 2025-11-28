@@ -4,9 +4,7 @@
     "fr": "Switch 1gang"
   },
   "class": "socket",
-  "capabilities": [
-    6
-  ],
+  "capabilities": ["onoff"],
   "energy": {
     "approximation": {
       "usageConstant": 0.5
@@ -109,3 +107,5 @@
     }
   ]
 }
+
+

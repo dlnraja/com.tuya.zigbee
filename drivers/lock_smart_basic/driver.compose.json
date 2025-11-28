@@ -6,9 +6,7 @@
   "class": "sensor",
   "capabilities": [
     "alarm_motion",
-    "measure_battery",
-    6
-  ],
+    "measure_battery"],
   "energy": {
     "batteries": [
       "CR2032",
@@ -339,3 +337,4 @@
     }
   ]
 }
+

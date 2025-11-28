@@ -20293,7 +20293,7 @@
           "1": {
             "clusters": [
               0,
-              "windowCovering",
+              258,
               3,
               61184,
               1
@@ -23592,8 +23592,7 @@
             "clusters": [
               0,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6,
@@ -23604,8 +23603,7 @@
             "clusters": [
               0,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6,
@@ -25392,14 +25390,18 @@
           "1": {
             "clusters": [
               0,
-              1,
-              6
+              1
             ],
             "bindings": [
               6
             ]
           }
         }
+      },
+      "images": {
+        "small": "drivers/button_ts0041/assets/images/small.png",
+        "large": "drivers/button_ts0041/assets/images/large.png",
+        "xlarge": "drivers/button_ts0041/assets/images/xlarge.png"
       },
       "id": "button_ts0041"
     },
@@ -25430,8 +25432,7 @@
           "1": {
             "clusters": [
               0,
-              1,
-              6
+              1
             ],
             "bindings": [
               6
@@ -25439,8 +25440,7 @@
           },
           "2": {
             "clusters": [
-              0,
-              6
+              0
             ],
             "bindings": [
               6
@@ -25448,14 +25448,18 @@
           },
           "3": {
             "clusters": [
-              0,
-              6
+              0
             ],
             "bindings": [
               6
             ]
           }
         }
+      },
+      "images": {
+        "small": "drivers/button_ts0043/assets/images/small.png",
+        "large": "drivers/button_ts0043/assets/images/large.png",
+        "xlarge": "drivers/button_ts0043/assets/images/xlarge.png"
       },
       "id": "button_ts0043"
     },
@@ -25502,8 +25506,7 @@
           "1": {
             "clusters": [
               0,
-              1,
-              6
+              1
             ],
             "bindings": [
               6
@@ -25511,8 +25514,7 @@
           },
           "2": {
             "clusters": [
-              0,
-              6
+              0
             ],
             "bindings": [
               6
@@ -25520,8 +25522,7 @@
           },
           "3": {
             "clusters": [
-              0,
-              6
+              0
             ],
             "bindings": [
               6
@@ -25529,8 +25530,7 @@
           },
           "4": {
             "clusters": [
-              0,
-              6
+              0
             ],
             "bindings": [
               6
@@ -25538,7 +25538,12 @@
           }
         }
       },
-      "id": "button_ts0044"
+      "id": "button_ts0044",
+      "images": {
+        "small": "drivers/button_ts0044/assets/images/small.png",
+        "large": "drivers/button_ts0044/assets/images/large.png",
+        "xlarge": "drivers/button_ts0044/assets/images/xlarge.png"
+      }
     },
     {
       "name": {
@@ -25621,78 +25626,64 @@
           "2": {
             "clusters": [
               0,
-              3,
-              6
+              3
             ],
             "bindings": [
-              1,
-              6
+              1
             ]
           },
           "3": {
             "clusters": [
               0,
-              3,
-              6
+              3
             ],
             "bindings": [
-              1,
-              6
+              1
             ]
           },
           "4": {
             "clusters": [
               0,
-              3,
-              6
+              3
             ],
             "bindings": [
-              1,
-              6
+              1
             ]
           },
           "5": {
             "clusters": [
               0,
-              3,
-              6
+              3
             ],
             "bindings": [
-              1,
-              6
+              1
             ]
           },
           "6": {
             "clusters": [
               0,
-              3,
-              6
+              3
             ],
             "bindings": [
-              1,
-              6
+              1
             ]
           },
           "7": {
             "clusters": [
               0,
-              3,
-              6
+              3
             ],
             "bindings": [
-              1,
-              6
+              1
             ]
           },
           "8": {
             "clusters": [
               0,
-              3,
-              6
+              3
             ],
             "bindings": [
-              1,
-              6
+              1
             ]
           }
         },
@@ -26566,8 +26557,7 @@
             "clusters": [
               0,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6,
@@ -27765,8 +27755,7 @@
             "clusters": [
               0,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6,
@@ -27777,8 +27766,7 @@
             "clusters": [
               0,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6,
@@ -27789,8 +27777,7 @@
             "clusters": [
               0,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6,
@@ -27801,8 +27788,7 @@
             "clusters": [
               0,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6,
@@ -27813,8 +27799,7 @@
             "clusters": [
               0,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6,
@@ -28204,8 +28189,7 @@
             "clusters": [
               0,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6,
@@ -28216,8 +28200,7 @@
             "clusters": [
               0,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6,
@@ -28228,8 +28211,7 @@
             "clusters": [
               0,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6,
@@ -28240,8 +28222,7 @@
             "clusters": [
               0,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6,
@@ -28252,8 +28233,7 @@
             "clusters": [
               0,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6,
@@ -28264,8 +28244,7 @@
             "clusters": [
               0,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6,
@@ -28276,8 +28255,7 @@
             "clusters": [
               0,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6,
@@ -28966,8 +28944,7 @@
               1
             ],
             "bindings": [
-              1,
-              6
+              1
             ]
           }
         },
@@ -29648,8 +29625,8 @@
             "clusters": [
               0,
               1,
-              "thermostat",
-              "0x0204",
+              513,
+              516,
               1026,
               61184,
               3,
@@ -32467,7 +32444,7 @@
           "1": {
             "clusters": [
               0,
-              "windowCovering",
+              258,
               3,
               61184,
               1
@@ -32774,6 +32751,11 @@
           }
         }
       },
+      "images": {
+        "large": "drivers/curtain_motor_ts0601/assets/images/large.png",
+        "xlarge": "drivers/curtain_motor_ts0601/assets/images/xlarge.png",
+        "small": "drivers/curtain_motor_ts0601/assets/images/small.png"
+      },
       "id": "curtain_motor_ts0601"
     },
     {
@@ -32818,6 +32800,11 @@
         "onoff": {
           "setOnDim": false
         }
+      },
+      "images": {
+        "large": "drivers/dimmer_2ch_ts1101/assets/images/large.png",
+        "xlarge": "drivers/dimmer_2ch_ts1101/assets/images/xlarge.png",
+        "small": "drivers/dimmer_2ch_ts1101/assets/images/small.png"
       },
       "id": "dimmer_2ch_ts1101"
     },
@@ -36143,8 +36130,7 @@
         "alarm_motion",
         "alarm_co",
         "alarm_co2",
-        "measure_battery",
-        6
+        "measure_battery"
       ],
       "energy": {
         "batteries": [
@@ -36489,8 +36475,7 @@
         "alarm_co",
         "alarm_co2",
         "measure_battery",
-        "alarm_contact",
-        6
+        "alarm_contact"
       ],
       "energy": {
         "batteries": [
@@ -37459,8 +37444,7 @@
         "measure_temperature",
         "measure_humidity",
         "measure_battery",
-        "windowcoverings_state",
-        6
+        "windowcoverings_state"
       ],
       "energy": {
         "batteries": [
@@ -37913,7 +37897,7 @@
               4,
               5,
               6,
-              "thermostat",
+              513,
               61184,
               61184,
               1
@@ -38285,8 +38269,7 @@
               1
             ],
             "bindings": [
-              1,
-              6
+              1
             ]
           }
         },
@@ -38615,8 +38598,7 @@
               1
             ],
             "bindings": [
-              1,
-              6
+              1
             ]
           }
         },
@@ -40578,7 +40560,12 @@
           }
         }
       },
-      "id": "led_strip_ts0503b"
+      "id": "led_strip_ts0503b",
+      "images": {
+        "large": "drivers/led_strip_ts0503b/assets/images/large.png",
+        "xlarge": "drivers/led_strip_ts0503b/assets/images/xlarge.png",
+        "small": "drivers/led_strip_ts0503b/assets/images/small.png"
+      }
     },
     {
       "name": {
@@ -40940,8 +40927,7 @@
       "capabilities": [
         "locked",
         "lock_mode",
-        "measure_battery",
-        6
+        "measure_battery"
       ],
       "energy": {
         "batteries": [
@@ -41280,12 +41266,17 @@
         "locked",
         "lock_mode",
         "alarm_tamper",
-        "measure_battery",
-        "lock_status",
-        6
+        "measure_battery"
       ],
       "capabilitiesOptions": {},
-      "energy": {},
+      "energy": {
+        "batteries": [
+          "AA",
+          "AA",
+          "AA",
+          "AA"
+        ]
+      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_*",
@@ -41338,7 +41329,10 @@
         {
           "id": "auto_lock",
           "type": "checkbox",
-          "value": false
+          "value": false,
+          "label": {
+            "en": "Auto Lock"
+          }
         },
         {
           "id": "auto_lock_time",
@@ -41346,12 +41340,16 @@
           "value": 5,
           "min": 0,
           "max": 600,
-          "units": "s"
+          "units": "s",
+          "label": {
+            "en": "Auto Lock Time"
+          }
         }
       ],
       "images": {
-        "small": "./drivers/lock_smart_advanced/assets/icon.svg",
-        "large": "./drivers/lock_smart_advanced/assets/icon.svg"
+        "small": "drivers/lock_smart_advanced/assets/images/small.png",
+        "large": "drivers/lock_smart_advanced/assets/images/large.png",
+        "xlarge": "drivers/lock_smart_advanced/assets/images/xlarge.png"
       },
       "id": "lock_smart_advanced"
     },
@@ -41363,8 +41361,7 @@
       "class": "sensor",
       "capabilities": [
         "alarm_motion",
-        "measure_battery",
-        6
+        "measure_battery"
       ],
       "energy": {
         "batteries": [
@@ -41705,8 +41702,7 @@
       "capabilities": [
         "locked",
         "lock_mode",
-        "measure_battery",
-        6
+        "measure_battery"
       ],
       "energy": {
         "batteries": [
@@ -42083,6 +42079,11 @@
         "batteries": [
           "CR2450"
         ]
+      },
+      "images": {
+        "large": "drivers/mmwave_radar_10g/assets/images/large.png",
+        "xlarge": "drivers/mmwave_radar_10g/assets/images/xlarge.png",
+        "small": "drivers/mmwave_radar_10g/assets/images/small.png"
       },
       "id": "mmwave_radar_10g"
     },
@@ -42833,8 +42834,7 @@
               0,
               3,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6
@@ -43148,8 +43148,7 @@
       "class": "sensor",
       "capabilities": [
         "alarm_co",
-        "measure_battery",
-        "test"
+        "measure_battery"
       ],
       "platforms": [
         "local"
@@ -43183,10 +43182,11 @@
           "CR123A"
         ]
       },
-      "icon": "/assets/icon.svg",
+      "icon": "/assets/images/small.png",
       "images": {
-        "small": "/drivers/co_detector/assets/images/small.png",
-        "large": "/drivers/co_detector/assets/images/large.png"
+        "small": "drivers/moes_co_detector/assets/images/small.png",
+        "large": "drivers/moes_co_detector/assets/images/large.png",
+        "xlarge": "drivers/moes_co_detector/assets/images/xlarge.png"
       },
       "id": "moes_co_detector"
     },
@@ -46517,7 +46517,7 @@
               6,
               8,
               4096,
-              "0xFC03"
+              64515
             ],
             "bindings": [
               6,
@@ -51115,8 +51115,7 @@
       "capabilities": [
         "target_temperature",
         "measure_temperature",
-        "measure_battery",
-        6
+        "measure_battery"
       ],
       "platforms": [
         "local"
@@ -51169,7 +51168,7 @@
             "clusters": [
               0,
               3,
-              "thermostat",
+              513,
               1026,
               61184,
               61184,
@@ -51527,7 +51526,7 @@
           }
         }
       },
-      "icon": "/assets/icon.svg",
+      "icon": "/assets/images/small.png",
       "images": {
         "small": "/drivers/rgb_led_controller/assets/images/small.png",
         "large": "/drivers/rgb_led_controller/assets/images/large.png"
@@ -51621,12 +51620,10 @@
               0,
               3,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
-              1,
-              6
+              1
             ]
           },
           "3": {
@@ -51634,12 +51631,10 @@
               0,
               3,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
-              1,
-              6
+              1
             ]
           },
           "4": {
@@ -51647,12 +51642,10 @@
               0,
               3,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
-              1,
-              6
+              1
             ]
           }
         },
@@ -52299,10 +52292,7 @@
         "measure_temperature",
         "measure_humidity",
         "measure_co2",
-        "measure_voc",
         "measure_pm25",
-        "measure_pm10",
-        "measure_hcho",
         "measure_battery"
       ],
       "capabilitiesOptions": {},
@@ -52354,7 +52344,10 @@
           "value": 1000,
           "min": 400,
           "max": 5000,
-          "units": "ppm"
+          "units": "ppm",
+          "label": {
+            "en": "Co2 Threshold"
+          }
         },
         {
           "id": "voc_threshold",
@@ -52362,7 +52355,10 @@
           "value": 500,
           "min": 0,
           "max": 2000,
-          "units": "ppb"
+          "units": "ppb",
+          "label": {
+            "en": "Voc Threshold"
+          }
         },
         {
           "id": "pm25_threshold",
@@ -52370,12 +52366,15 @@
           "value": 35,
           "min": 0,
           "max": 500,
-          "units": "µg/m³"
+          "units": "µg/m³",
+          "label": {
+            "en": "Pm25 Threshold"
+          }
         }
       ],
       "images": {
-        "small": "./drivers/sensor_air_quality_full/assets/icon.svg",
-        "large": "./drivers/sensor_air_quality_full/assets/icon.svg"
+        "small": "drivers/sensor_air_quality_full/assets/images/small.png",
+        "large": "drivers/sensor_air_quality_full/assets/images/small.png"
       },
       "id": "sensor_air_quality_full"
     },
@@ -52461,7 +52460,10 @@
                 "en": "High"
               }
             }
-          ]
+          ],
+          "label": {
+            "en": "Sensitivity"
+          }
         },
         {
           "id": "detection_distance",
@@ -52469,7 +52471,10 @@
           "value": 6,
           "min": 1,
           "max": 10,
-          "units": "m"
+          "units": "m",
+          "label": {
+            "en": "Detection Distance"
+          }
         },
         {
           "id": "timeout",
@@ -52477,12 +52482,15 @@
           "value": 60,
           "min": 0,
           "max": 3600,
-          "units": "s"
+          "units": "s",
+          "label": {
+            "en": "Timeout"
+          }
         }
       ],
       "images": {
-        "small": "./drivers/sensor_mmwave_presence_advanced/assets/icon.svg",
-        "large": "./drivers/sensor_mmwave_presence_advanced/assets/icon.svg"
+        "small": "drivers/sensor_mmwave_presence_advanced/assets/images/small.png",
+        "large": "drivers/sensor_mmwave_presence_advanced/assets/images/small.png"
       },
       "id": "sensor_mmwave_presence_advanced"
     },
@@ -52504,8 +52512,7 @@
         "measure_temperature",
         "measure_humidity",
         "measure_battery",
-        "alarm_battery",
-        6
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "measure_moisture": {
@@ -52784,7 +52791,7 @@
           "1": {
             "clusters": [
               0,
-              "windowCovering",
+              258,
               61184,
               1
             ],
@@ -53065,8 +53072,7 @@
       },
       "class": "windowcoverings",
       "capabilities": [
-        "windowcoverings_set",
-        6
+        "windowcoverings_set"
       ],
       "energy": {
         "approximation": {
@@ -53121,7 +53127,7 @@
           "1": {
             "clusters": [
               0,
-              "windowCovering",
+              258,
               61184
             ],
             "bindings": [
@@ -53733,8 +53739,7 @@
         "alarm_humidity",
         "measure_temperature",
         "measure_humidity",
-        "volume_set",
-        6
+        "volume_set"
       ],
       "capabilitiesOptions": {},
       "energy": {
@@ -53796,6 +53801,9 @@
         {
           "id": "melody",
           "type": "dropdown",
+          "label": {
+            "en": "Melody"
+          },
           "value": "1",
           "values": [
             {
@@ -53821,6 +53829,9 @@
         {
           "id": "duration",
           "type": "number",
+          "label": {
+            "en": "Duration"
+          },
           "value": 60,
           "min": 1,
           "max": 600,
@@ -53828,7 +53839,10 @@
         },
         {
           "id": "volume",
-          "type": "slider",
+          "type": "number",
+          "label": {
+            "en": "Volume"
+          },
           "value": 50,
           "min": 0,
           "max": 100,
@@ -53837,23 +53851,29 @@
         {
           "id": "temp_alarm_min",
           "type": "number",
+          "label": {
+            "en": "Min Temperature Alarm"
+          },
           "value": 0,
           "min": -20,
           "max": 50,
-          "units": "°C"
+          "units": "C"
         },
         {
           "id": "temp_alarm_max",
           "type": "number",
+          "label": {
+            "en": "Max Temperature Alarm"
+          },
           "value": 40,
           "min": 0,
           "max": 80,
-          "units": "°C"
+          "units": "C"
         }
       ],
       "images": {
-        "small": "./drivers/siren_alarm_advanced/assets/icon.svg",
-        "large": "./drivers/siren_alarm_advanced/assets/icon.svg"
+        "small": "drivers/siren_alarm_advanced/assets/images/small.png",
+        "large": "drivers/siren_alarm_advanced/assets/images/small.png"
       },
       "id": "siren_alarm_advanced"
     },
@@ -54257,6 +54277,11 @@
           "CR2450"
         ]
       },
+      "images": {
+        "large": "drivers/smart_knob_ts004f/assets/images/large.png",
+        "xlarge": "drivers/smart_knob_ts004f/assets/images/xlarge.png",
+        "small": "drivers/smart_knob_ts004f/assets/images/small.png"
+      },
       "id": "smart_knob_ts004f"
     },
     {
@@ -54319,7 +54344,7 @@
               0,
               4,
               5,
-              "manuSpecificTuya2",
+              61185,
               61184,
               61184,
               1
@@ -54954,8 +54979,7 @@
         "measure_humidity",
         "alarm_smoke",
         "alarm_fire",
-        "measure_battery",
-        6
+        "measure_battery"
       ],
       "energy": {
         "batteries": [
@@ -55343,6 +55367,11 @@
           }
         }
       },
+      "images": {
+        "large": "drivers/socket_ts011f/assets/images/large.png",
+        "xlarge": "drivers/socket_ts011f/assets/images/xlarge.png",
+        "small": "drivers/socket_ts011f/assets/images/small.png"
+      },
       "id": "socket_ts011f"
     },
     {
@@ -55384,6 +55413,11 @@
         "batteries": [
           "CR2032"
         ]
+      },
+      "images": {
+        "large": "drivers/soil_moisture_sensor/assets/images/large.png",
+        "xlarge": "drivers/soil_moisture_sensor/assets/images/xlarge.png",
+        "small": "drivers/soil_moisture_sensor/assets/images/small.png"
       },
       "id": "soil_moisture_sensor"
     },
@@ -56219,7 +56253,7 @@
     {
       "class": "socket",
       "capabilities": [
-        6
+        "onoff"
       ],
       "zigbee": {
         "productId": [
@@ -56627,8 +56661,7 @@
               0,
               3,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6
@@ -57111,8 +57144,7 @@
             "clusters": [
               0,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6
@@ -57456,8 +57488,7 @@
             "clusters": [
               0,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6
@@ -57467,8 +57498,7 @@
             "clusters": [
               0,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6
@@ -57854,8 +57884,7 @@
               0,
               3,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6
@@ -57866,8 +57895,7 @@
               0,
               3,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6
@@ -57878,8 +57906,7 @@
               0,
               3,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6
@@ -58252,7 +58279,7 @@
       },
       "class": "socket",
       "capabilities": [
-        6
+        "onoff"
       ],
       "energy": {
         "approximation": {
@@ -58777,8 +58804,7 @@
               0,
               3,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6
@@ -58789,8 +58815,7 @@
               0,
               3,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6
@@ -58813,7 +58838,7 @@
       },
       "class": "socket",
       "capabilities": [
-        6
+        "onoff"
       ],
       "energy": {
         "approximation": {
@@ -59180,7 +59205,7 @@
       },
       "class": "socket",
       "capabilities": [
-        6
+        "onoff"
       ],
       "energy": {
         "approximation": {
@@ -59581,8 +59606,7 @@
             "clusters": [
               0,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6
@@ -59592,8 +59616,7 @@
             "clusters": [
               0,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6
@@ -59946,7 +59969,7 @@
           "1": {
             "clusters": [
               0,
-              "windowCovering",
+              258,
               61184,
               1
             ],
@@ -60281,8 +60304,7 @@
       "class": "button",
       "capabilities": [
         "measure_battery",
-        "alarm_generic",
-        6
+        "alarm_generic"
       ],
       "energy": {
         "batteries": [
@@ -60634,7 +60656,7 @@
       },
       "class": "socket",
       "capabilities": [
-        6
+        "onoff"
       ],
       "energy": {
         "approximation": {
@@ -61735,7 +61757,7 @@
       },
       "class": "socket",
       "capabilities": [
-        6
+        "onoff"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -62077,7 +62099,7 @@
       },
       "class": "socket",
       "capabilities": [
-        6
+        "onoff"
       ],
       "energy": {
         "approximation": {
@@ -63905,7 +63927,7 @@
       },
       "class": "socket",
       "capabilities": [
-        6
+        "onoff"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -64253,7 +64275,7 @@
       },
       "class": "socket",
       "capabilities": [
-        6
+        "onoff"
       ],
       "energy": {
         "approximation": {
@@ -65387,8 +65409,7 @@
           "2": {
             "clusters": [
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6
@@ -65434,6 +65455,11 @@
           }
         }
       ],
+      "images": {
+        "large": "drivers/switch_wall_2gang_bseed/assets/images/large.png",
+        "xlarge": "drivers/switch_wall_2gang_bseed/assets/images/xlarge.png",
+        "small": "drivers/switch_wall_2gang_bseed/assets/images/small.png"
+      },
       "id": "switch_wall_2gang_bseed"
     },
     {
@@ -67709,7 +67735,7 @@
       },
       "class": "socket",
       "capabilities": [
-        6
+        "onoff"
       ],
       "energy": {
         "approximation": {
@@ -69384,6 +69410,9 @@
         {
           "id": "power_on_behavior",
           "type": "dropdown",
+          "label": {
+            "en": "Power On Behavior"
+          },
           "value": "previous",
           "values": [
             {
@@ -69409,6 +69438,9 @@
         {
           "id": "switch_type",
           "type": "dropdown",
+          "label": {
+            "en": "Switch Type"
+          },
           "value": "toggle",
           "values": [
             {
@@ -69433,8 +69465,8 @@
         }
       ],
       "images": {
-        "small": "./drivers/switch_wall_7gang/assets/icon.svg",
-        "large": "./drivers/switch_wall_7gang/assets/icon.svg"
+        "small": "drivers/switch_wall_7gang/assets/images/small.png",
+        "large": "drivers/switch_wall_7gang/assets/images/small.png"
       },
       "id": "switch_wall_7gang"
     },
@@ -69529,8 +69561,8 @@
       },
       "settings": [],
       "images": {
-        "small": "./drivers/switch_wall_8gang/assets/icon.svg",
-        "large": "./drivers/switch_wall_8gang/assets/icon.svg"
+        "small": "drivers/switch_wall_8gang/assets/images/small.png",
+        "large": "drivers/switch_wall_8gang/assets/images/small.png"
       },
       "id": "switch_wall_8gang"
     },
@@ -70339,7 +70371,7 @@
       },
       "class": "socket",
       "capabilities": [
-        6
+        "onoff"
       ],
       "energy": {
         "approximation": {
@@ -70746,8 +70778,7 @@
             "clusters": [
               0,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6,
@@ -71123,8 +71154,7 @@
               0,
               3,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6
@@ -71135,8 +71165,7 @@
               0,
               3,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6
@@ -71147,8 +71176,7 @@
               0,
               3,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6
@@ -71535,7 +71563,7 @@
               0,
               1,
               6,
-              "0xE000",
+              57344,
               3,
               61184,
               1
@@ -71546,20 +71574,17 @@
           },
           "2": {
             "clusters": [
-              1,
-              6
+              1
             ]
           },
           "3": {
             "clusters": [
-              1,
-              6
+              1
             ]
           },
           "4": {
             "clusters": [
-              1,
-              6
+              1
             ]
           }
         },
@@ -71938,8 +71963,7 @@
               0,
               3,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6
@@ -71950,8 +71974,7 @@
               0,
               3,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6
@@ -71962,8 +71985,7 @@
               0,
               3,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6
@@ -71974,8 +71996,7 @@
               0,
               3,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6
@@ -72336,8 +72357,7 @@
               0,
               3,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6
@@ -72348,8 +72368,7 @@
               0,
               3,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6
@@ -72360,8 +72379,7 @@
               0,
               3,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6
@@ -72372,8 +72390,7 @@
               0,
               3,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6
@@ -72384,8 +72401,7 @@
               0,
               3,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6
@@ -72769,6 +72785,11 @@
           }
         }
       ],
+      "images": {
+        "large": "drivers/temp_humidity_ts0201/assets/images/large.png",
+        "xlarge": "drivers/temp_humidity_ts0201/assets/images/xlarge.png",
+        "small": "drivers/temp_humidity_ts0201/assets/images/small.png"
+      },
       "id": "temp_humidity_ts0201"
     },
     {
@@ -72782,8 +72803,7 @@
         "measure_temperature",
         "measure_battery",
         "alarm_contact",
-        "alarm_temperature",
-        6
+        "alarm_temperature"
       ],
       "energy": {
         "batteries": [
@@ -73132,8 +73152,7 @@
         "measure_temperature",
         "measure_battery",
         "alarm_contact",
-        "alarm_temperature",
-        6
+        "alarm_temperature"
       ],
       "energy": {
         "batteries": [
@@ -73550,8 +73569,8 @@
             "clusters": [
               0,
               1,
-              "thermostat",
-              "0x0204",
+              513,
+              516,
               1026,
               61184,
               3,
@@ -73907,8 +73926,8 @@
             "clusters": [
               0,
               1,
-              "thermostat",
-              "0x0204",
+              513,
+              516,
               1026,
               61184,
               3,
@@ -74713,6 +74732,10 @@
         {
           "id": "temp_offset",
           "type": "number",
+          "label": {
+            "en": "Temperature Offset",
+            "fr": "Décalage Température"
+          },
           "value": 0,
           "min": -5,
           "max": 5,
@@ -74721,24 +74744,36 @@
         {
           "id": "window_detection",
           "type": "checkbox",
+          "label": {
+            "en": "Window Detection",
+            "fr": "Détection Fenêtre"
+          },
           "value": true
         },
         {
           "id": "anti_scale",
           "type": "checkbox",
+          "label": {
+            "en": "Anti-Scale",
+            "fr": "Anti-Calcaire"
+          },
           "value": true
         },
         {
           "id": "frost_protection",
           "type": "number",
+          "label": {
+            "en": "Frost Protection Temperature",
+            "fr": "Température Protection Gel"
+          },
           "value": 5,
           "min": 0,
           "max": 10
         }
       ],
       "images": {
-        "small": "./drivers/thermostat_trv_advanced/assets/icon.svg",
-        "large": "./drivers/thermostat_trv_advanced/assets/icon.svg"
+        "small": "drivers/thermostat_trv_advanced/assets/images/small.png",
+        "large": "drivers/thermostat_trv_advanced/assets/images/small.png"
       },
       "id": "thermostat_trv_advanced"
     },
@@ -74825,7 +74860,12 @@
           "value": false
         }
       ],
-      "id": "thermostat_trv_tuya"
+      "id": "thermostat_trv_tuya",
+      "images": {
+        "large": "drivers/thermostat_trv_tuya/assets/images/large.png",
+        "xlarge": "drivers/thermostat_trv_tuya/assets/images/xlarge.png",
+        "small": "drivers/thermostat_trv_tuya/assets/images/small.png"
+      }
     },
     {
       "name": {
@@ -74860,6 +74900,11 @@
           }
         }
       },
+      "images": {
+        "large": "drivers/thermostat_ts0601/assets/images/large.png",
+        "xlarge": "drivers/thermostat_ts0601/assets/images/xlarge.png",
+        "small": "drivers/thermostat_ts0601/assets/images/small.png"
+      },
       "id": "thermostat_ts0601"
     },
     {
@@ -74893,6 +74938,11 @@
             "bindings": []
           }
         }
+      },
+      "images": {
+        "large": "drivers/usb_c_pd_socket/assets/images/large.png",
+        "xlarge": "drivers/usb_c_pd_socket/assets/images/xlarge.png",
+        "small": "drivers/usb_c_pd_socket/assets/images/small.png"
       },
       "id": "usb_c_pd_socket"
     },
@@ -75235,7 +75285,7 @@
           "port2": {
             "class": "socket",
             "capabilities": [
-              6
+              "onoff"
             ],
             "name": {
               "en": "USB Port 2",
@@ -75474,8 +75524,7 @@
             "clusters": [
               0,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6,
@@ -75486,8 +75535,7 @@
             "clusters": [
               0,
               4,
-              5,
-              6
+              5
             ],
             "bindings": [
               6,
@@ -76382,7 +76430,12 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ]
+      ],
+      "images": {
+        "large": "drivers/usb_outlet_bseed/assets/images/large.png",
+        "xlarge": "drivers/usb_outlet_bseed/assets/images/xlarge.png",
+        "small": "drivers/usb_outlet_bseed/assets/images/small.png"
+      }
     },
     {
       "name": {
@@ -80993,8 +81046,7 @@
               1,
               3,
               4,
-              5,
-              6
+              5
             ],
             "bindings": []
           }
@@ -81090,7 +81142,12 @@
           }
         }
       ],
-      "id": "zg_204zv_multi_sensor"
+      "id": "zg_204zv_multi_sensor",
+      "images": {
+        "large": "drivers/zg_204zv_multi_sensor/assets/images/large.png",
+        "xlarge": "drivers/zg_204zv_multi_sensor/assets/images/xlarge.png",
+        "small": "drivers/zg_204zv_multi_sensor/assets/images/small.png"
+      }
     },
     {
       "name": {
@@ -81122,8 +81179,7 @@
               1,
               3,
               4,
-              5,
-              6
+              5
             ],
             "bindings": []
           }
