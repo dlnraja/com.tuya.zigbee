@@ -1,5 +1,16 @@
 # Changelog
 
+## [5.2.25] - 2025-11-28
+
+### OTA Firmware Updates & Device Health Monitoring
+- **OTA Manager:** Full firmware update support with progress tracking
+- **OTA Flow Cards:** `ota_update_available`, `ota_update_completed`, `ota_check_updates`
+- **Device Health:** `device_offline`, `device_online`, `low_battery_warning`, `zigbee_signal_weak`
+- **Actions:** `device_identify` (blink/beep to locate device)
+- **Conditions:** `device_is_online` (check device availability)
+- **Insights:** OTA updates tracking, devices offline count
+- **Quirks Database:** Device-specific workarounds integrated
+
 ## [5.2.24] - 2025-11-28
 
 ### Ultimate Enrichment (129+ Manufacturer IDs)
