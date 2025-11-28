@@ -52388,9 +52388,6 @@
       "capabilities": [
         "alarm_motion",
         "measure_luminance",
-        "measure_distance",
-        "presence_sensitivity",
-        "presence_timeout",
         "measure_battery"
       ],
       "capabilitiesOptions": {},
@@ -52491,7 +52488,8 @@
       ],
       "images": {
         "small": "drivers/sensor_mmwave_presence_advanced/assets/images/small.png",
-        "large": "drivers/sensor_mmwave_presence_advanced/assets/images/small.png"
+        "large": "drivers/sensor_mmwave_presence_advanced/assets/images/large.png",
+        "xlarge": "drivers/sensor_mmwave_presence_advanced/assets/images/xlarge.png"
       },
       "id": "sensor_mmwave_presence_advanced"
     },
@@ -53736,8 +53734,6 @@
       "capabilities": [
         "measure_battery",
         "alarm_generic",
-        "alarm_temperature",
-        "alarm_humidity",
         "measure_temperature",
         "measure_humidity",
         "volume_set"
@@ -53874,7 +53870,7 @@
       ],
       "images": {
         "small": "drivers/siren_alarm_advanced/assets/images/small.png",
-        "large": "drivers/siren_alarm_advanced/assets/images/small.png"
+        "large": "drivers/siren_alarm_advanced/assets/images/large.png"
       },
       "id": "siren_alarm_advanced"
     },
@@ -69467,7 +69463,7 @@
       ],
       "images": {
         "small": "drivers/switch_wall_7gang/assets/images/small.png",
-        "large": "drivers/switch_wall_7gang/assets/images/small.png"
+        "large": "drivers/switch_wall_7gang/assets/images/large.png"
       },
       "id": "switch_wall_7gang"
     },
@@ -69563,7 +69559,7 @@
       "settings": [],
       "images": {
         "small": "drivers/switch_wall_8gang/assets/images/small.png",
-        "large": "drivers/switch_wall_8gang/assets/images/small.png"
+        "large": "drivers/switch_wall_8gang/assets/images/large.png"
       },
       "id": "switch_wall_8gang"
     },
@@ -72803,8 +72799,7 @@
         "alarm_motion",
         "measure_temperature",
         "measure_battery",
-        "alarm_contact",
-        "alarm_temperature"
+        "alarm_contact"
       ],
       "energy": {
         "batteries": [
@@ -73152,8 +73147,7 @@
         "alarm_motion",
         "measure_temperature",
         "measure_battery",
-        "alarm_contact",
-        "alarm_temperature"
+        "alarm_contact"
       ],
       "energy": {
         "batteries": [
@@ -74298,8 +74292,7 @@
         "measure_temperature",
         "measure_humidity",
         "measure_battery",
-        "alarm_generic",
-        "alarm_temperature"
+        "alarm_generic"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -74673,14 +74666,15 @@
         "target_temperature",
         "measure_temperature",
         "thermostat_mode",
-        "child_lock",
-        "window_detection",
-        "valve_position",
-        "measure_battery",
-        "anti_scale"
+        "measure_battery"
       ],
       "capabilitiesOptions": {},
-      "energy": {},
+      "energy": {
+        "batteries": [
+          "AA",
+          "AAA"
+        ]
+      },
       "zigbee": {
         "manufacturerName": [
           "_TYST11_KGbxAXL2",
@@ -74743,24 +74737,6 @@
           "units": "°C"
         },
         {
-          "id": "window_detection",
-          "type": "checkbox",
-          "label": {
-            "en": "Window Detection",
-            "fr": "Détection Fenêtre"
-          },
-          "value": true
-        },
-        {
-          "id": "anti_scale",
-          "type": "checkbox",
-          "label": {
-            "en": "Anti-Scale",
-            "fr": "Anti-Calcaire"
-          },
-          "value": true
-        },
-        {
           "id": "frost_protection",
           "type": "number",
           "label": {
@@ -74774,7 +74750,7 @@
       ],
       "images": {
         "small": "drivers/thermostat_trv_advanced/assets/images/small.png",
-        "large": "drivers/thermostat_trv_advanced/assets/images/small.png"
+        "large": "drivers/thermostat_trv_advanced/assets/images/large.png"
       },
       "id": "thermostat_trv_advanced"
     },
@@ -74850,17 +74826,7 @@
           }
         }
       },
-      "settings": [
-        {
-          "id": "child_lock",
-          "type": "checkbox",
-          "label": {
-            "en": "Child Lock",
-            "fr": "Verrouillage Enfant"
-          },
-          "value": false
-        }
-      ],
+      "settings": [],
       "id": "thermostat_trv_tuya",
       "images": {
         "large": "drivers/thermostat_trv_tuya/assets/images/large.png",
@@ -75154,8 +75120,7 @@
         "measure_power",
         "meter_power",
         "measure_voltage",
-        "measure_current",
-        "led_mode"
+        "measure_current"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -75176,16 +75141,6 @@
             "de": "Anschluss 2",
             "it": "Porta 2",
             "es": "Puerto 2"
-          }
-        },
-        "led_mode": {
-          "title": {
-            "en": "LED Indicator",
-            "fr": "Indicateur LED",
-            "nl": "LED Indicator",
-            "de": "LED Anzeige",
-            "it": "Indicatore LED",
-            "es": "Indicador LED"
           }
         },
         "measure_voltage": {
