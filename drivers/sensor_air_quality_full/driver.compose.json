@@ -8,10 +8,7 @@
     "measure_temperature",
     "measure_humidity",
     "measure_co2",
-    "measure_voc",
     "measure_pm25",
-    "measure_pm10",
-    "measure_hcho",
     "measure_battery"
   ],
   "capabilitiesOptions": {},
@@ -63,7 +60,10 @@
       "value": 1000,
       "min": 400,
       "max": 5000,
-      "units": "ppm"
+      "units": "ppm",
+      "label": {
+        "en": "Co2 Threshold"
+      }
     },
     {
       "id": "voc_threshold",
@@ -71,7 +71,10 @@
       "value": 500,
       "min": 0,
       "max": 2000,
-      "units": "ppb"
+      "units": "ppb",
+      "label": {
+        "en": "Voc Threshold"
+      }
     },
     {
       "id": "pm25_threshold",
@@ -79,11 +82,15 @@
       "value": 35,
       "min": 0,
       "max": 500,
-      "units": "µg/m³"
+      "units": "µg/m³",
+      "label": {
+        "en": "Pm25 Threshold"
+      }
     }
   ],
   "images": {
-    "small": "./drivers/sensor_air_quality_full/assets/icon.svg",
-    "large": "./drivers/sensor_air_quality_full/assets/icon.svg"
+    "small": "drivers/sensor_air_quality_full/assets/images/small.png",
+    "large": "drivers/sensor_air_quality_full/assets/images/small.png"
   }
 }
+

@@ -25,14 +25,18 @@
       "1": {
         "clusters": [
           0,
-          1,
-          6
+          1
         ],
         "bindings": [
           6
         ]
       }
     }
+  },
+  "images": {
+    "small": "drivers/button_ts0041/assets/images/small.png",
+    "large": "drivers/button_ts0041/assets/images/large.png",
+    "xlarge": "drivers/button_ts0041/assets/images/xlarge.png"
   },
   "id": "button_ts0041"
 }

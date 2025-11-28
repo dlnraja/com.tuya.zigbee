@@ -81,5 +81,10 @@
       "value": false
     }
   ],
-  "id": "thermostat_trv_tuya"
+  "id": "thermostat_trv_tuya",
+  "images": {
+    "large": "drivers/thermostat_trv_tuya/assets/images/large.png",
+    "xlarge": "drivers/thermostat_trv_tuya/assets/images/xlarge.png",
+    "small": "drivers/thermostat_trv_tuya/assets/images/small.png"
+  }
 }

@@ -82,6 +82,9 @@
     {
       "id": "power_on_behavior",
       "type": "dropdown",
+      "label": {
+        "en": "Power On Behavior"
+      },
       "value": "previous",
       "values": [
         {
@@ -107,6 +110,9 @@
     {
       "id": "switch_type",
       "type": "dropdown",
+      "label": {
+        "en": "Switch Type"
+      },
       "value": "toggle",
       "values": [
         {
@@ -131,7 +137,8 @@
     }
   ],
   "images": {
-    "small": "./drivers/switch_wall_7gang/assets/icon.svg",
-    "large": "./drivers/switch_wall_7gang/assets/icon.svg"
+    "small": "drivers/switch_wall_7gang/assets/images/small.png",
+    "large": "drivers/switch_wall_7gang/assets/images/small.png"
   }
 }
+

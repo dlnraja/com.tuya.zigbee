@@ -6,9 +6,7 @@
   "class": "button",
   "capabilities": [
     "measure_battery",
-    "alarm_generic",
-    6
-  ],
+    "alarm_generic"],
   "energy": {
     "batteries": [
       "CR2032",
@@ -352,3 +350,4 @@
     }
   ]
 }
+

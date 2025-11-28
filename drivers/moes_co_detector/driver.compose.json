@@ -5,8 +5,7 @@
   "class": "sensor",
   "capabilities": [
     "alarm_co",
-    "measure_battery",
-    "test"
+    "measure_battery"
   ],
   "platforms": [
     "local"
@@ -40,9 +39,11 @@
       "CR123A"
     ]
   },
-  "icon": "/assets/icon.svg",
+  "icon": "/assets/images/small.png",
   "images": {
-    "small": "/drivers/co_detector/assets/images/small.png",
-    "large": "/drivers/co_detector/assets/images/large.png"
+    "small": "drivers/moes_co_detector/assets/images/small.png",
+    "large": "drivers/moes_co_detector/assets/images/large.png",
+    "xlarge": "drivers/moes_co_detector/assets/images/xlarge.png"
   }
 }
+
