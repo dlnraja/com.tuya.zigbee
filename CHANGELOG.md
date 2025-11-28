@@ -1,5 +1,19 @@
 # Changelog
 
+## [5.2.27] - 2025-11-28
+
+### MAJOR DRIVER CONSOLIDATION (212 → 60 drivers)
+- **152 drivers merged** into unified categories
+- **Switches:** 1-8 gang variants consolidated (switch_1gang to switch_wall_8gang)
+- **Buttons:** Remote/wireless variants merged (button_wireless_1 to button_wireless_8)
+- **Motion sensors:** PIR/radar/mmwave unified
+- **Plugs:** Smart/energy/outdoor variants merged
+- **Climate sensors:** All temp/humidity variants unified
+- **Thermostats:** All TRV/smart variants merged into thermostat_ts0601
+- **LED strips:** Basic/pro/outdoor merged
+- **Locks:** Basic/advanced/fingerprint unified
+- **All manufacturer IDs preserved** during merge
+
 ## [5.2.26] - 2025-11-28
 
 ### Upstream Issues Integration (45+ Manufacturer IDs)

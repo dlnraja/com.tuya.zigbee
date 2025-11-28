@@ -1177,5 +1177,9 @@
   "5.2.26": {
     "fr": "Integration Issues Upstream - Ajout 45+ IDs fabricants des issues JohanBendz #1267-#1319. Couverture complete capteurs climat, presence radar, prises, moteurs rideaux, capteurs sol, detecteurs fumee.",
     "en": "Upstream Issues Integration - Added 45+ manufacturer IDs from JohanBendz issues #1267-#1319. Full coverage for climate sensors, radar presence, plugs, curtain motors, soil sensors, smoke detectors."
+  },
+  "5.2.27": {
+    "fr": "CONSOLIDATION MAJEURE - 152 drivers fusionnes en 60 categories. Interrupteurs (1-8 gangs unifies), boutons, capteurs mouvement, prises, thermostats consolides. Tous les IDs preserves.",
+    "en": "MAJOR CONSOLIDATION - 152 duplicate drivers merged into 60 clean categories. Switches (1-8 gang unified), buttons, motion sensors, plugs, thermostats all consolidated. All manufacturer IDs preserved."
   }
 }

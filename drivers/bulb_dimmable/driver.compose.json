@@ -19,7 +19,10 @@
   "zigbee": {
     "manufacturerName": [
       "lumi.light.aqcn02",
-      "lumi.light.cb2acn"
+      "lumi.light.cb2acn",
+      "_TZ3000_dbou1ap4",
+      "_TZ3000_obacbukl",
+      "_TZ3000_9cpuaca6"
     ],
     "productId": [
       "E11-G13",
@@ -28,7 +31,8 @@
       "E11-N14",
       "E12-N14",
       "E1C-NB6",
-      "E1C-NB7"
+      "E1C-NB7",
+      "TS0501A"
     ],
     "endpoints": {
       "1": {
@@ -312,4 +316,3 @@
     }
   ]
 }
-

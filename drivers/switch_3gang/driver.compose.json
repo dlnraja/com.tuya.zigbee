@@ -12,7 +12,12 @@
       "TS0011",
       "TS0012",
       "TS0013",
-      "TS0014"
+      "TS0014",
+      "TS0005",
+      "TS0006",
+      "TS004F",
+      "TS0043",
+      "TS0044"
     ],
     "endpoints": {
       "1": {
@@ -31,7 +36,8 @@
         "clusters": [
           0,
           4,
-          5],
+          5
+        ],
         "bindings": [
           6
         ]
@@ -40,7 +46,8 @@
         "clusters": [
           0,
           4,
-          5],
+          5
+        ],
         "bindings": [
           6
         ]
@@ -82,7 +89,28 @@
       "_TZ3000_lrgccsxm",
       "_TZ3000_ltt60asa",
       "_TZ3000_lupfd8zu",
-      "_TZ3000_lvhy15ix"
+      "_TZ3000_lvhy15ix",
+      "_TZ3000_4fjiwweb",
+      "_TZ3000_ji4araar",
+      "_TZ3000_ly9apzky",
+      "_TZ3000_majwnphg",
+      "_TZ3000_mmkbptmx",
+      "_TZ3000_mw1pqqqt",
+      "_TZ3000_4xfqlgqo",
+      "_TZ3000_excgg5kb",
+      "_TZ3000_5tqxpine",
+      "_TZ3000_a4xycprs",
+      "_TZ3000_bczr4e10",
+      "_TZ3000_dziaict4",
+      "_TZ3000_ee8nrt2l",
+      "_TZ3000_jcspr0tp",
+      "_TZ3000_kfu8zapd",
+      "_TZ3000_kjfzuycl",
+      "_TZ3000_mh9px7cq",
+      "_TZ3000_qzjcsmar",
+      "_TZ3000_u3nv1jwk",
+      "_TZ3000_wkai4ga5",
+      "_TZ3000_xabckq1v"
     ]
   },
   "images": {
@@ -391,4 +419,3 @@
     }
   ]
 }
-
