@@ -1,35 +1,35 @@
 {
   "triggers": [
     {
-      "id": "presence_detected",
+      "id": "motion_sensor_radar_mmwave_presence_detected",
       "title": {
         "en": "Presence detected",
         "fr": "Présence détectée"
       }
     },
     {
-      "id": "presence_cleared",
+      "id": "motion_sensor_radar_mmwave_presence_cleared",
       "title": {
         "en": "Presence cleared",
         "fr": "Présence disparue"
       }
     },
     {
-      "id": "motion_detected",
+      "id": "motion_sensor_radar_mmwave_motion_detected",
       "title": {
         "en": "Motion detected",
         "fr": "Mouvement détecté"
       }
     },
     {
-      "id": "no_motion",
+      "id": "motion_sensor_radar_mmwave_no_motion",
       "title": {
         "en": "No motion",
         "fr": "Aucun mouvement"
       }
     },
     {
-      "id": "illuminance_changed",
+      "id": "motion_sensor_radar_mmwave_illuminance_changed",
       "title": {
         "en": "Illuminance changed",
         "fr": "Luminosité changée"
@@ -47,7 +47,7 @@
       ]
     },
     {
-      "id": "temperature_changed",
+      "id": "motion_sensor_radar_mmwave_temperature_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée"
@@ -65,7 +65,7 @@
       ]
     },
     {
-      "id": "humidity_changed",
+      "id": "motion_sensor_radar_mmwave_humidity_changed",
       "title": {
         "en": "Humidity changed",
         "fr": "Humidité changée"
@@ -83,7 +83,7 @@
       ]
     },
     {
-      "id": "target_distance_changed",
+      "id": "motion_sensor_radar_mmwave_target_distance_changed",
       "title": {
         "en": "Target distance changed",
         "fr": "Distance cible changée"
@@ -101,14 +101,14 @@
       ]
     },
     {
-      "id": "battery_low",
+      "id": "motion_sensor_radar_mmwave_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible"
       }
     },
     {
-      "id": "battery_changed",
+      "id": "motion_sensor_radar_mmwave_battery_changed",
       "title": {
         "en": "Battery level changed",
         "fr": "Niveau batterie changé"
@@ -128,14 +128,14 @@
   ],
   "conditions": [
     {
-      "id": "is_presence_detected",
+      "id": "motion_sensor_radar_mmwave_is_presence_detected",
       "title": {
         "en": "Presence is !{{detected|not detected}}",
         "fr": "Présence !{{détectée|non détectée}}"
       }
     },
     {
-      "id": "illuminance_above",
+      "id": "motion_sensor_radar_mmwave_illuminance_above",
       "title": {
         "en": "Illuminance is above",
         "fr": "Luminosité supérieure à"
@@ -159,7 +159,7 @@
       ]
     },
     {
-      "id": "illuminance_below",
+      "id": "motion_sensor_radar_mmwave_illuminance_below",
       "title": {
         "en": "Illuminance is below",
         "fr": "Luminosité inférieure à"
@@ -183,7 +183,7 @@
       ]
     },
     {
-      "id": "temperature_above",
+      "id": "motion_sensor_radar_mmwave_temperature_above",
       "title": {
         "en": "Temperature is above",
         "fr": "Température supérieure à"
@@ -207,7 +207,7 @@
       ]
     },
     {
-      "id": "target_distance_less_than",
+      "id": "motion_sensor_radar_mmwave_target_distance_less_than",
       "title": {
         "en": "Target distance is less than",
         "fr": "Distance cible inférieure à"
@@ -233,7 +233,7 @@
   ],
   "actions": [
     {
-      "id": "set_radar_sensitivity",
+      "id": "motion_sensor_radar_mmwave_set_radar_sensitivity",
       "title": {
         "en": "Set radar sensitivity",
         "fr": "Définir sensibilité radar"
@@ -257,7 +257,7 @@
       ]
     },
     {
-      "id": "set_detection_range",
+      "id": "motion_sensor_radar_mmwave_set_detection_range",
       "title": {
         "en": "Set detection range",
         "fr": "Définir plage de détection"
@@ -292,7 +292,7 @@
       ]
     },
     {
-      "id": "set_fading_time",
+      "id": "motion_sensor_radar_mmwave_set_fading_time",
       "title": {
         "en": "Set fading time",
         "fr": "Définir délai d'absence"
@@ -316,7 +316,7 @@
       ]
     },
     {
-      "id": "set_detection_delay",
+      "id": "motion_sensor_radar_mmwave_set_detection_delay",
       "title": {
         "en": "Set detection delay",
         "fr": "Définir délai de détection"
