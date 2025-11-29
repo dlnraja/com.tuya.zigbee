@@ -171,6 +171,7 @@ This app is built on the incredible work of the Zigbee open-source community.
 - **@Patrickske1** - Curtain motor issue report
 
 📄 **Full credits:** See [CREDITS.md](./CREDITS.md)
+🏭 **Brands database:** See [BRANDS.md](./BRANDS.md)
 
 ---
 

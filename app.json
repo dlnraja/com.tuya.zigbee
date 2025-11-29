@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.2.47",
+  "version": "5.2.48",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,7 +9,7 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.2.47: EXHAUSTIVE FLOW CARDS (570 total: 345 triggers, 77 conditions, 148 actions). All 60 drivers now have complete flow support. V5.2.46: Multi-Gang USB Socket support (2-gang + 2 USB). V5.2.45: Enhanced flow cards (triggers, conditions, actions) for radar/presence sensors. V5.2.44: Full credits & sources (CREDITS.md, README.md). 1372+ devices from 15+ sources. Thanks to Zigbee2MQTT (@Koenkk), ZHA (@dmulcahey), Blakadder, JohanBendz, SmartThings, Jeedom, and Homey Community (@Laborhexe, @Jocke_Svensson, @SunBeech). V5.2.43: UNBRANDED. V5.2.42: ZG-204ZM 5-in-1 multi-sensor (temp+hum+lux). V5.2.41: +14 radar sensors from community. V5.2.40: FP300-like radar features. V5.2.39: Major driver enhancements (Tuya DP support). V5.2.38: Add curtain motor + TS011F 20A plug. V5.2.37: Fix ZG-204ZM radar Tuya DP support + illuminance. V5.2.36: Fix TS0044 4-button remote + ZG-204ZM radar. V5.2.35: Fix TS0201 battery + TS0201 support. MEGA database enrichment - 1365 Tuya devices from Zigbee2MQTT fresh pull. 228 switches, 179 lights, 113 covers, 106 thermostats, 85 climate sensors, 77 presence sensors, 69 energy meters.",
+    "en": "V5.2.48: Complete BRANDS.md (529+ vendors, 100+ Tuya brands). V5.2.47: EXHAUSTIVE FLOW CARDS (570 total: 345 triggers, 77 conditions, 148 actions). All 60 drivers now have complete flow support. V5.2.46: Multi-Gang USB Socket support (2-gang + 2 USB). V5.2.45: Enhanced flow cards (triggers, conditions, actions) for radar/presence sensors. V5.2.44: Full credits & sources (CREDITS.md, README.md). 1372+ devices from 15+ sources. Thanks to Zigbee2MQTT (@Koenkk), ZHA (@dmulcahey), Blakadder, JohanBendz, SmartThings, Jeedom, and Homey Community (@Laborhexe, @Jocke_Svensson, @SunBeech). V5.2.43: UNBRANDED. V5.2.42: ZG-204ZM 5-in-1 multi-sensor (temp+hum+lux). V5.2.41: +14 radar sensors from community. V5.2.40: FP300-like radar features. V5.2.39: Major driver enhancements (Tuya DP support). V5.2.38: Add curtain motor + TS011F 20A plug. V5.2.37: Fix ZG-204ZM radar Tuya DP support + illuminance. V5.2.36: Fix TS0044 4-button remote + ZG-204ZM radar. V5.2.35: Fix TS0201 battery + TS0201 support. MEGA database enrichment - 1365 Tuya devices from Zigbee2MQTT fresh pull. 228 switches, 179 lights, 113 covers, 106 thermostats, 85 climate sensors, 77 presence sensors, 69 energy meters.",
     "fr": "V5.2.34: Enrichissement MEGA BDD - 1365 appareils Tuya de Zigbee2MQTT. 228 switches, 179 lumières, 113 volets, 106 thermostats, 85 capteurs climat, 77 présence, 69 compteurs énergie."
   },
   "category": "appliances",
