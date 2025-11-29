@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "co2_level_changed",
+      "id": "air_quality_co2_co2_level_changed",
       "title": {
         "en": "CO2 level changed",
         "fr": "Niveau CO2 changé"
@@ -19,21 +19,21 @@
       ]
     },
     {
-      "id": "co2_alert_on",
+      "id": "air_quality_co2_co2_alert_on",
       "title": {
         "en": "CO2 alert triggered",
         "fr": "Alerte CO2 déclenchée"
       }
     },
     {
-      "id": "co2_alert_off",
+      "id": "air_quality_co2_co2_alert_off",
       "title": {
         "en": "CO2 returned to normal",
         "fr": "CO2 revenu à la normale"
       }
     },
     {
-      "id": "air_temperature_changed",
+      "id": "air_quality_co2_air_temperature_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée"
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "id": "air_humidity_changed",
+      "id": "air_quality_co2_air_humidity_changed",
       "title": {
         "en": "Humidity changed",
         "fr": "Humidité changée"
@@ -69,7 +69,7 @@
       ]
     },
     {
-      "id": "pm25_changed",
+      "id": "air_quality_co2_pm25_changed",
       "title": {
         "en": "PM2.5 level changed",
         "fr": "Niveau PM2.5 changé"
@@ -89,7 +89,7 @@
   ],
   "conditions": [
     {
-      "id": "co2_above",
+      "id": "air_quality_co2_co2_above",
       "title": {
         "en": "CO2 level is above",
         "fr": "Niveau CO2 supérieur à"
@@ -108,7 +108,7 @@
       ]
     },
     {
-      "id": "co2_below",
+      "id": "air_quality_co2_co2_below",
       "title": {
         "en": "CO2 level is below",
         "fr": "Niveau CO2 inférieur à"
@@ -127,7 +127,7 @@
       ]
     },
     {
-      "id": "air_quality_good",
+      "id": "air_quality_co2_air_quality_good",
       "title": {
         "en": "Air quality is good",
         "fr": "Qualité air bonne"

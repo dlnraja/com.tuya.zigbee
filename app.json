@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.2.46",
+  "version": "5.2.47",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,7 +9,7 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.2.46: Multi-Gang USB Socket support (2-gang + 2 USB). V5.2.45: Enhanced flow cards (triggers, conditions, actions) for radar/presence sensors. V5.2.44: Full credits & sources (CREDITS.md, README.md). 1372+ devices from 15+ sources. Thanks to Zigbee2MQTT (@Koenkk), ZHA (@dmulcahey), Blakadder, JohanBendz, SmartThings, Jeedom, and Homey Community (@Laborhexe, @Jocke_Svensson, @SunBeech). V5.2.43: UNBRANDED. V5.2.42: ZG-204ZM 5-in-1 multi-sensor (temp+hum+lux). V5.2.41: +14 radar sensors from community. V5.2.40: FP300-like radar features. V5.2.39: Major driver enhancements (Tuya DP support). V5.2.38: Add curtain motor + TS011F 20A plug. V5.2.37: Fix ZG-204ZM radar Tuya DP support + illuminance. V5.2.36: Fix TS0044 4-button remote + ZG-204ZM radar. V5.2.35: Fix TS0201 battery + TS0201 support. MEGA database enrichment - 1365 Tuya devices from Zigbee2MQTT fresh pull. 228 switches, 179 lights, 113 covers, 106 thermostats, 85 climate sensors, 77 presence sensors, 69 energy meters.",
+    "en": "V5.2.47: EXHAUSTIVE FLOW CARDS (570 total: 345 triggers, 77 conditions, 148 actions). All 60 drivers now have complete flow support. V5.2.46: Multi-Gang USB Socket support (2-gang + 2 USB). V5.2.45: Enhanced flow cards (triggers, conditions, actions) for radar/presence sensors. V5.2.44: Full credits & sources (CREDITS.md, README.md). 1372+ devices from 15+ sources. Thanks to Zigbee2MQTT (@Koenkk), ZHA (@dmulcahey), Blakadder, JohanBendz, SmartThings, Jeedom, and Homey Community (@Laborhexe, @Jocke_Svensson, @SunBeech). V5.2.43: UNBRANDED. V5.2.42: ZG-204ZM 5-in-1 multi-sensor (temp+hum+lux). V5.2.41: +14 radar sensors from community. V5.2.40: FP300-like radar features. V5.2.39: Major driver enhancements (Tuya DP support). V5.2.38: Add curtain motor + TS011F 20A plug. V5.2.37: Fix ZG-204ZM radar Tuya DP support + illuminance. V5.2.36: Fix TS0044 4-button remote + ZG-204ZM radar. V5.2.35: Fix TS0201 battery + TS0201 support. MEGA database enrichment - 1365 Tuya devices from Zigbee2MQTT fresh pull. 228 switches, 179 lights, 113 covers, 106 thermostats, 85 climate sensors, 77 presence sensors, 69 energy meters.",
     "fr": "V5.2.34: Enrichissement MEGA BDD - 1365 appareils Tuya de Zigbee2MQTT. 228 switches, 179 lumières, 113 volets, 106 thermostats, 85 capteurs climat, 77 présence, 69 compteurs énergie."
   },
   "category": "appliances",
@@ -349,7 +349,7 @@
         ]
       },
       {
-        "id": "co2_level_changed",
+        "id": "air_quality_co2_co2_level_changed",
         "title": {
           "en": "CO2 level changed",
           "fr": "Niveau CO2 changé"
@@ -374,7 +374,7 @@
         ]
       },
       {
-        "id": "co2_alert_on",
+        "id": "air_quality_co2_co2_alert_on",
         "title": {
           "en": "CO2 alert triggered",
           "fr": "Alerte CO2 déclenchée"
@@ -388,7 +388,7 @@
         ]
       },
       {
-        "id": "co2_alert_off",
+        "id": "air_quality_co2_co2_alert_off",
         "title": {
           "en": "CO2 returned to normal",
           "fr": "CO2 revenu à la normale"
@@ -402,7 +402,7 @@
         ]
       },
       {
-        "id": "air_temperature_changed",
+        "id": "air_quality_co2_air_temperature_changed",
         "title": {
           "en": "Temperature changed",
           "fr": "Température changée"
@@ -427,7 +427,7 @@
         ]
       },
       {
-        "id": "air_humidity_changed",
+        "id": "air_quality_co2_air_humidity_changed",
         "title": {
           "en": "Humidity changed",
           "fr": "Humidité changée"
@@ -452,7 +452,7 @@
         ]
       },
       {
-        "id": "pm25_changed",
+        "id": "air_quality_co2_pm25_changed",
         "title": {
           "en": "PM2.5 level changed",
           "fr": "Niveau PM2.5 changé"
@@ -852,6 +852,76 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=button_emergency_sos"
+          }
+        ]
+      },
+      {
+        "id": "button_wireless_button_pressed",
+        "title": {
+          "en": "Button pressed",
+          "fr": "Bouton appuyé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless"
+          }
+        ]
+      },
+      {
+        "id": "button_wireless_button_double_pressed",
+        "title": {
+          "en": "Button double pressed",
+          "fr": "Double appui bouton"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless"
+          }
+        ]
+      },
+      {
+        "id": "button_wireless_button_long_pressed",
+        "title": {
+          "en": "Button long pressed",
+          "fr": "Appui long bouton"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless"
+          }
+        ]
+      },
+      {
+        "id": "button_wireless_button_released",
+        "title": {
+          "en": "Button released",
+          "fr": "Bouton relâché"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless"
+          }
+        ]
+      },
+      {
+        "id": "button_wireless_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless"
           }
         ]
       },
@@ -2971,6 +3041,126 @@
         ]
       },
       {
+        "id": "climate_sensor_temperature_changed",
+        "title": {
+          "en": "Temperature changed",
+          "fr": "Température changée"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature (°C)",
+              "fr": "Température (°C)"
+            },
+            "example": 22.5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=climate_sensor"
+          }
+        ]
+      },
+      {
+        "id": "climate_sensor_humidity_changed",
+        "title": {
+          "en": "Humidity changed",
+          "fr": "Humidité changée"
+        },
+        "tokens": [
+          {
+            "name": "humidity",
+            "type": "number",
+            "title": {
+              "en": "Humidity (%)",
+              "fr": "Humidité (%)"
+            },
+            "example": 55
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=climate_sensor"
+          }
+        ]
+      },
+      {
+        "id": "climate_sensor_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=climate_sensor"
+          }
+        ]
+      },
+      {
+        "id": "climate_sensor_temperature_alarm_high",
+        "title": {
+          "en": "Temperature too high",
+          "fr": "Température trop haute"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=climate_sensor"
+          }
+        ]
+      },
+      {
+        "id": "climate_sensor_temperature_alarm_low",
+        "title": {
+          "en": "Temperature too low",
+          "fr": "Température trop basse"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=climate_sensor"
+          }
+        ]
+      },
+      {
+        "id": "climate_sensor_humidity_alarm_high",
+        "title": {
+          "en": "Humidity too high",
+          "fr": "Humidité trop haute"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=climate_sensor"
+          }
+        ]
+      },
+      {
+        "id": "climate_sensor_humidity_alarm_low",
+        "title": {
+          "en": "Humidity too low",
+          "fr": "Humidité trop basse"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=climate_sensor"
+          }
+        ]
+      },
+      {
         "id": "contact_sensor_contact_sensor_alarm_contact_true",
         "title": {
           "en": "Contact alarm activated",
@@ -3123,6 +3313,59 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=curtain_motor"
+          }
+        ]
+      },
+      {
+        "id": "dimmer_2ch_ts1101_dim_changed",
+        "title": {
+          "en": "Dim level changed",
+          "fr": "Niveau dim changé"
+        },
+        "tokens": [
+          {
+            "name": "dim",
+            "type": "number",
+            "title": {
+              "en": "Dim level (%)",
+              "fr": "Niveau dim (%)"
+            },
+            "example": 50
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dimmer_2ch_ts1101"
+          }
+        ]
+      },
+      {
+        "id": "dimmer_2ch_ts1101_turned_on",
+        "title": {
+          "en": "Turned on",
+          "fr": "Allumé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dimmer_2ch_ts1101"
+          }
+        ]
+      },
+      {
+        "id": "dimmer_2ch_ts1101_turned_off",
+        "title": {
+          "en": "Turned off",
+          "fr": "Éteint"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dimmer_2ch_ts1101"
           }
         ]
       },
@@ -3398,6 +3641,84 @@
         ]
       },
       {
+        "id": "formaldehyde_sensor_formaldehyde_changed",
+        "title": {
+          "en": "Formaldehyde level changed",
+          "fr": "Niveau formaldéhyde changé"
+        },
+        "tokens": [
+          {
+            "name": "formaldehyde",
+            "type": "number",
+            "title": {
+              "en": "Formaldehyde (μg/m³)",
+              "fr": "Formaldéhyde (μg/m³)"
+            },
+            "example": 25
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=formaldehyde_sensor"
+          }
+        ]
+      },
+      {
+        "id": "formaldehyde_sensor_voc_changed",
+        "title": {
+          "en": "VOC level changed",
+          "fr": "Niveau COV changé"
+        },
+        "tokens": [
+          {
+            "name": "voc",
+            "type": "number",
+            "title": {
+              "en": "VOC (ppb)",
+              "fr": "COV (ppb)"
+            },
+            "example": 100
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=formaldehyde_sensor"
+          }
+        ]
+      },
+      {
+        "id": "formaldehyde_sensor_air_quality_alert",
+        "title": {
+          "en": "Air quality alert",
+          "fr": "Alerte qualité air"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=formaldehyde_sensor"
+          }
+        ]
+      },
+      {
+        "id": "formaldehyde_sensor_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=formaldehyde_sensor"
+          }
+        ]
+      },
+      {
         "id": "gas_detector_alarm_motion_true",
         "title": {
           "en": "Motion detected",
@@ -3584,6 +3905,62 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=gas_sensor"
+          }
+        ]
+      },
+      {
+        "id": "gateway_zigbee_bridge_device_joined",
+        "title": {
+          "en": "Device joined network",
+          "fr": "Appareil rejoint le réseau"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=gateway_zigbee_bridge"
+          }
+        ]
+      },
+      {
+        "id": "gateway_zigbee_bridge_device_left",
+        "title": {
+          "en": "Device left network",
+          "fr": "Appareil quitté le réseau"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=gateway_zigbee_bridge"
+          }
+        ]
+      },
+      {
+        "id": "gateway_zigbee_bridge_connection_lost",
+        "title": {
+          "en": "Connection lost",
+          "fr": "Connexion perdue"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=gateway_zigbee_bridge"
+          }
+        ]
+      },
+      {
+        "id": "gateway_zigbee_bridge_connection_restored",
+        "title": {
+          "en": "Connection restored",
+          "fr": "Connexion rétablie"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=gateway_zigbee_bridge"
           }
         ]
       },
@@ -4086,7 +4463,7 @@
         ]
       },
       {
-        "id": "presence_detected",
+        "id": "motion_sensor_radar_mmwave_presence_detected",
         "title": {
           "en": "Presence detected",
           "fr": "Présence détectée"
@@ -4100,7 +4477,7 @@
         ]
       },
       {
-        "id": "presence_cleared",
+        "id": "motion_sensor_radar_mmwave_presence_cleared",
         "title": {
           "en": "Presence cleared",
           "fr": "Présence disparue"
@@ -4114,7 +4491,7 @@
         ]
       },
       {
-        "id": "motion_detected",
+        "id": "motion_sensor_radar_mmwave_motion_detected",
         "title": {
           "en": "Motion detected",
           "fr": "Mouvement détecté"
@@ -4128,7 +4505,7 @@
         ]
       },
       {
-        "id": "no_motion",
+        "id": "motion_sensor_radar_mmwave_no_motion",
         "title": {
           "en": "No motion",
           "fr": "Aucun mouvement"
@@ -4142,7 +4519,7 @@
         ]
       },
       {
-        "id": "illuminance_changed",
+        "id": "motion_sensor_radar_mmwave_illuminance_changed",
         "title": {
           "en": "Illuminance changed",
           "fr": "Luminosité changée"
@@ -4167,7 +4544,7 @@
         ]
       },
       {
-        "id": "temperature_changed",
+        "id": "motion_sensor_radar_mmwave_temperature_changed",
         "title": {
           "en": "Temperature changed",
           "fr": "Température changée"
@@ -4192,7 +4569,7 @@
         ]
       },
       {
-        "id": "humidity_changed",
+        "id": "motion_sensor_radar_mmwave_humidity_changed",
         "title": {
           "en": "Humidity changed",
           "fr": "Humidité changée"
@@ -4217,7 +4594,7 @@
         ]
       },
       {
-        "id": "target_distance_changed",
+        "id": "motion_sensor_radar_mmwave_target_distance_changed",
         "title": {
           "en": "Target distance changed",
           "fr": "Distance cible changée"
@@ -4242,7 +4619,7 @@
         ]
       },
       {
-        "id": "battery_low",
+        "id": "motion_sensor_radar_mmwave_battery_low",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible"
@@ -4256,7 +4633,7 @@
         ]
       },
       {
-        "id": "battery_changed",
+        "id": "motion_sensor_radar_mmwave_battery_changed",
         "title": {
           "en": "Battery level changed",
           "fr": "Niveau batterie changé"
@@ -4558,6 +4935,154 @@
         ]
       },
       {
+        "id": "rain_sensor_rain_detected",
+        "title": {
+          "en": "Rain detected",
+          "fr": "Pluie détectée"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=rain_sensor"
+          }
+        ]
+      },
+      {
+        "id": "rain_sensor_rain_stopped",
+        "title": {
+          "en": "Rain stopped",
+          "fr": "Pluie arrêtée"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=rain_sensor"
+          }
+        ]
+      },
+      {
+        "id": "rain_sensor_rain_intensity_changed",
+        "title": {
+          "en": "Rain intensity changed",
+          "fr": "Intensité pluie changée"
+        },
+        "tokens": [
+          {
+            "name": "intensity",
+            "type": "number",
+            "title": {
+              "en": "Intensity",
+              "fr": "Intensité"
+            },
+            "example": 50
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=rain_sensor"
+          }
+        ]
+      },
+      {
+        "id": "rain_sensor_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=rain_sensor"
+          }
+        ]
+      },
+      {
+        "id": "shutter_roller_controller_position_changed",
+        "title": {
+          "en": "Position changed",
+          "fr": "Position changée"
+        },
+        "tokens": [
+          {
+            "name": "position",
+            "type": "number",
+            "title": {
+              "en": "Position (%)",
+              "fr": "Position (%)"
+            },
+            "example": 50
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=shutter_roller_controller"
+          }
+        ]
+      },
+      {
+        "id": "shutter_roller_controller_fully_opened",
+        "title": {
+          "en": "Fully opened",
+          "fr": "Complètement ouvert"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=shutter_roller_controller"
+          }
+        ]
+      },
+      {
+        "id": "shutter_roller_controller_fully_closed",
+        "title": {
+          "en": "Fully closed",
+          "fr": "Complètement fermé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=shutter_roller_controller"
+          }
+        ]
+      },
+      {
+        "id": "shutter_roller_controller_started_moving",
+        "title": {
+          "en": "Started moving",
+          "fr": "Démarrage mouvement"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=shutter_roller_controller"
+          }
+        ]
+      },
+      {
+        "id": "shutter_roller_controller_stopped_moving",
+        "title": {
+          "en": "Stopped moving",
+          "fr": "Arrêt mouvement"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=shutter_roller_controller"
+          }
+        ]
+      },
+      {
         "id": "siren_alarm_motion_true",
         "title": {
           "en": "Motion detected",
@@ -4702,6 +5227,98 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=smoke_detector_advanced"
+          }
+        ]
+      },
+      {
+        "id": "soil_sensor_soil_moisture_changed",
+        "title": {
+          "en": "Soil moisture changed",
+          "fr": "Humidité sol changée"
+        },
+        "tokens": [
+          {
+            "name": "moisture",
+            "type": "number",
+            "title": {
+              "en": "Moisture (%)",
+              "fr": "Humidité (%)"
+            },
+            "example": 45
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=soil_sensor"
+          }
+        ]
+      },
+      {
+        "id": "soil_sensor_soil_temperature_changed",
+        "title": {
+          "en": "Soil temperature changed",
+          "fr": "Température sol changée"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature (°C)",
+              "fr": "Température (°C)"
+            },
+            "example": 18
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=soil_sensor"
+          }
+        ]
+      },
+      {
+        "id": "soil_sensor_soil_dry",
+        "title": {
+          "en": "Soil is dry",
+          "fr": "Sol sec"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=soil_sensor"
+          }
+        ]
+      },
+      {
+        "id": "soil_sensor_soil_wet",
+        "title": {
+          "en": "Soil is wet",
+          "fr": "Sol humide"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=soil_sensor"
+          }
+        ]
+      },
+      {
+        "id": "soil_sensor_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=soil_sensor"
           }
         ]
       },
@@ -4949,6 +5566,426 @@
         ]
       },
       {
+        "id": "switch_wall_7gang_gang1_turned_on",
+        "title": {
+          "en": "Gang 1 turned on",
+          "fr": "Gang 1 allumé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_gang1_turned_off",
+        "title": {
+          "en": "Gang 1 turned off",
+          "fr": "Gang 1 éteint"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_gang2_turned_on",
+        "title": {
+          "en": "Gang 2 turned on",
+          "fr": "Gang 2 allumé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_gang2_turned_off",
+        "title": {
+          "en": "Gang 2 turned off",
+          "fr": "Gang 2 éteint"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_gang3_turned_on",
+        "title": {
+          "en": "Gang 3 turned on",
+          "fr": "Gang 3 allumé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_gang3_turned_off",
+        "title": {
+          "en": "Gang 3 turned off",
+          "fr": "Gang 3 éteint"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_gang4_turned_on",
+        "title": {
+          "en": "Gang 4 turned on",
+          "fr": "Gang 4 allumé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_gang4_turned_off",
+        "title": {
+          "en": "Gang 4 turned off",
+          "fr": "Gang 4 éteint"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_gang5_turned_on",
+        "title": {
+          "en": "Gang 5 turned on",
+          "fr": "Gang 5 allumé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_gang5_turned_off",
+        "title": {
+          "en": "Gang 5 turned off",
+          "fr": "Gang 5 éteint"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_gang6_turned_on",
+        "title": {
+          "en": "Gang 6 turned on",
+          "fr": "Gang 6 allumé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_gang6_turned_off",
+        "title": {
+          "en": "Gang 6 turned off",
+          "fr": "Gang 6 éteint"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_gang7_turned_on",
+        "title": {
+          "en": "Gang 7 turned on",
+          "fr": "Gang 7 allumé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_gang7_turned_off",
+        "title": {
+          "en": "Gang 7 turned off",
+          "fr": "Gang 7 éteint"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_gang1_turned_on",
+        "title": {
+          "en": "Gang 1 turned on",
+          "fr": "Gang 1 allumé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_gang1_turned_off",
+        "title": {
+          "en": "Gang 1 turned off",
+          "fr": "Gang 1 éteint"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_gang2_turned_on",
+        "title": {
+          "en": "Gang 2 turned on",
+          "fr": "Gang 2 allumé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_gang2_turned_off",
+        "title": {
+          "en": "Gang 2 turned off",
+          "fr": "Gang 2 éteint"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_gang3_turned_on",
+        "title": {
+          "en": "Gang 3 turned on",
+          "fr": "Gang 3 allumé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_gang3_turned_off",
+        "title": {
+          "en": "Gang 3 turned off",
+          "fr": "Gang 3 éteint"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_gang4_turned_on",
+        "title": {
+          "en": "Gang 4 turned on",
+          "fr": "Gang 4 allumé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_gang4_turned_off",
+        "title": {
+          "en": "Gang 4 turned off",
+          "fr": "Gang 4 éteint"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_gang5_turned_on",
+        "title": {
+          "en": "Gang 5 turned on",
+          "fr": "Gang 5 allumé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_gang5_turned_off",
+        "title": {
+          "en": "Gang 5 turned off",
+          "fr": "Gang 5 éteint"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_gang6_turned_on",
+        "title": {
+          "en": "Gang 6 turned on",
+          "fr": "Gang 6 allumé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_gang6_turned_off",
+        "title": {
+          "en": "Gang 6 turned off",
+          "fr": "Gang 6 éteint"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_gang7_turned_on",
+        "title": {
+          "en": "Gang 7 turned on",
+          "fr": "Gang 7 allumé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_gang7_turned_off",
+        "title": {
+          "en": "Gang 7 turned off",
+          "fr": "Gang 7 éteint"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_gang8_turned_on",
+        "title": {
+          "en": "Gang 8 turned on",
+          "fr": "Gang 8 allumé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_gang8_turned_off",
+        "title": {
+          "en": "Gang 8 turned off",
+          "fr": "Gang 8 éteint"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
         "id": "switch_wireless_onoff_true",
         "title": "Turned on",
         "tokens": [
@@ -4963,6 +6000,109 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_wireless"
+          }
+        ]
+      },
+      {
+        "id": "thermostat_ts0601_target_temperature_changed",
+        "title": {
+          "en": "Target temperature changed",
+          "fr": "Température cible changée"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature (°C)",
+              "fr": "Température (°C)"
+            },
+            "example": 21
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=thermostat_ts0601"
+          }
+        ]
+      },
+      {
+        "id": "thermostat_ts0601_temperature_changed",
+        "title": {
+          "en": "Temperature changed",
+          "fr": "Température changée"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature (°C)",
+              "fr": "Température (°C)"
+            },
+            "example": 22.5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=thermostat_ts0601"
+          }
+        ]
+      },
+      {
+        "id": "thermostat_ts0601_mode_changed",
+        "title": {
+          "en": "Mode changed",
+          "fr": "Mode changé"
+        },
+        "tokens": [
+          {
+            "name": "mode",
+            "type": "string",
+            "title": {
+              "en": "Mode",
+              "fr": "Mode"
+            },
+            "example": "heat"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=thermostat_ts0601"
+          }
+        ]
+      },
+      {
+        "id": "thermostat_ts0601_heating_started",
+        "title": {
+          "en": "Heating started",
+          "fr": "Chauffage démarré"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=thermostat_ts0601"
+          }
+        ]
+      },
+      {
+        "id": "thermostat_ts0601_heating_stopped",
+        "title": {
+          "en": "Heating stopped",
+          "fr": "Chauffage arrêté"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=thermostat_ts0601"
           }
         ]
       },
@@ -5363,7 +6503,7 @@
         ]
       },
       {
-        "id": "outdoor_temperature_changed",
+        "id": "weather_station_outdoor_outdoor_temperature_changed",
         "title": {
           "en": "Outdoor temperature changed",
           "fr": "Température extérieure changée"
@@ -5388,7 +6528,7 @@
         ]
       },
       {
-        "id": "outdoor_humidity_changed",
+        "id": "weather_station_outdoor_outdoor_humidity_changed",
         "title": {
           "en": "Outdoor humidity changed",
           "fr": "Humidité extérieure changée"
@@ -5413,7 +6553,7 @@
         ]
       },
       {
-        "id": "pressure_changed",
+        "id": "weather_station_outdoor_pressure_changed",
         "title": {
           "en": "Barometric pressure changed",
           "fr": "Pression atmosphérique changée"
@@ -5438,7 +6578,7 @@
         ]
       },
       {
-        "id": "weather_battery_low",
+        "id": "weather_station_outdoor_weather_battery_low",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible"
@@ -5535,7 +6675,7 @@
         }
       },
       {
-        "id": "co2_above",
+        "id": "air_quality_co2_co2_above",
         "title": {
           "en": "CO2 level is above",
           "fr": "Niveau CO2 supérieur à"
@@ -5559,7 +6699,7 @@
         ]
       },
       {
-        "id": "co2_below",
+        "id": "air_quality_co2_co2_below",
         "title": {
           "en": "CO2 level is below",
           "fr": "Niveau CO2 inférieur à"
@@ -5583,7 +6723,7 @@
         ]
       },
       {
-        "id": "air_quality_good",
+        "id": "air_quality_co2_air_quality_good",
         "title": {
           "en": "Air quality is good",
           "fr": "Qualité air bonne"
@@ -5687,6 +6827,31 @@
         ]
       },
       {
+        "id": "button_wireless_battery_above",
+        "title": {
+          "en": "Battery level is above",
+          "fr": "Niveau batterie supérieur à"
+        },
+        "titleFormatted": {
+          "en": "Battery level is above [[level]]%",
+          "fr": "Niveau batterie supérieur à [[level]]%"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless"
+          },
+          {
+            "name": "level",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 10
+          }
+        ]
+      },
+      {
         "id": "ceiling_fan_is_on",
         "title": {
           "en": "Is turned !{{on|off}}",
@@ -5705,6 +6870,161 @@
         ]
       },
       {
+        "id": "climate_sensor_temperature_above",
+        "title": {
+          "en": "Temperature is above",
+          "fr": "Température supérieure à"
+        },
+        "titleFormatted": {
+          "en": "Temperature is above [[temp]]°C",
+          "fr": "Température supérieure à [[temp]]°C"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=climate_sensor"
+          },
+          {
+            "name": "temp",
+            "type": "number",
+            "min": -40,
+            "max": 80,
+            "step": 0.5,
+            "title": {
+              "en": "Temperature",
+              "fr": "Température"
+            }
+          }
+        ]
+      },
+      {
+        "id": "climate_sensor_temperature_below",
+        "title": {
+          "en": "Temperature is below",
+          "fr": "Température inférieure à"
+        },
+        "titleFormatted": {
+          "en": "Temperature is below [[temp]]°C",
+          "fr": "Température inférieure à [[temp]]°C"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=climate_sensor"
+          },
+          {
+            "name": "temp",
+            "type": "number",
+            "min": -40,
+            "max": 80,
+            "step": 0.5,
+            "title": {
+              "en": "Temperature",
+              "fr": "Température"
+            }
+          }
+        ]
+      },
+      {
+        "id": "climate_sensor_humidity_above",
+        "title": {
+          "en": "Humidity is above",
+          "fr": "Humidité supérieure à"
+        },
+        "titleFormatted": {
+          "en": "Humidity is above [[humidity]]%",
+          "fr": "Humidité supérieure à [[humidity]]%"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=climate_sensor"
+          },
+          {
+            "name": "humidity",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "title": {
+              "en": "Humidity (%)",
+              "fr": "Humidité (%)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "climate_sensor_humidity_below",
+        "title": {
+          "en": "Humidity is below",
+          "fr": "Humidité inférieure à"
+        },
+        "titleFormatted": {
+          "en": "Humidity is below [[humidity]]%",
+          "fr": "Humidité inférieure à [[humidity]]%"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=climate_sensor"
+          },
+          {
+            "name": "humidity",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "title": {
+              "en": "Humidity (%)",
+              "fr": "Humidité (%)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "dimmer_2ch_ts1101_is_on",
+        "title": {
+          "en": "Dimmer is !{{on|off}}",
+          "fr": "Variateur est !{{allumé|éteint}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dimmer_2ch_ts1101"
+          }
+        ]
+      },
+      {
+        "id": "dimmer_2ch_ts1101_dim_above",
+        "title": {
+          "en": "Dim level is above",
+          "fr": "Niveau dim supérieur à"
+        },
+        "titleFormatted": {
+          "en": "Dim level is above [[level]]%",
+          "fr": "Niveau dim supérieur à [[level]]%"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dimmer_2ch_ts1101"
+          },
+          {
+            "name": "level",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 5
+          }
+        ]
+      },
+      {
         "id": "dimmer_wall_1gang_dimmer_1gang_is_on",
         "title": {
           "en": "Is turned !{{on|off}}",
@@ -5719,6 +7039,59 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=dimmer_wall_1gang"
+          }
+        ]
+      },
+      {
+        "id": "formaldehyde_sensor_formaldehyde_above",
+        "title": {
+          "en": "Formaldehyde is above",
+          "fr": "Formaldéhyde supérieur à"
+        },
+        "titleFormatted": {
+          "en": "Formaldehyde is above [[level]] μg/m³",
+          "fr": "Formaldéhyde supérieur à [[level]] μg/m³"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=formaldehyde_sensor"
+          },
+          {
+            "name": "level",
+            "type": "number",
+            "min": 0,
+            "max": 1000,
+            "step": 10
+          }
+        ]
+      },
+      {
+        "id": "formaldehyde_sensor_air_quality_good",
+        "title": {
+          "en": "Air quality is !{{good|poor}}",
+          "fr": "Qualité air !{{bonne|mauvaise}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=formaldehyde_sensor"
+          }
+        ]
+      },
+      {
+        "id": "gateway_zigbee_bridge_is_connected",
+        "title": {
+          "en": "Gateway is !{{connected|disconnected}}",
+          "fr": "Passerelle !{{connectée|déconnectée}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=gateway_zigbee_bridge"
           }
         ]
       },
@@ -5842,7 +7215,7 @@
         ]
       },
       {
-        "id": "is_presence_detected",
+        "id": "motion_sensor_radar_mmwave_is_presence_detected",
         "title": {
           "en": "Presence is !{{detected|not detected}}",
           "fr": "Présence !{{détectée|non détectée}}"
@@ -5856,7 +7229,7 @@
         ]
       },
       {
-        "id": "illuminance_above",
+        "id": "motion_sensor_radar_mmwave_illuminance_above",
         "title": {
           "en": "Illuminance is above",
           "fr": "Luminosité supérieure à"
@@ -5885,7 +7258,7 @@
         ]
       },
       {
-        "id": "illuminance_below",
+        "id": "motion_sensor_radar_mmwave_illuminance_below",
         "title": {
           "en": "Illuminance is below",
           "fr": "Luminosité inférieure à"
@@ -5914,7 +7287,7 @@
         ]
       },
       {
-        "id": "temperature_above",
+        "id": "motion_sensor_radar_mmwave_temperature_above",
         "title": {
           "en": "Temperature is above",
           "fr": "Température supérieure à"
@@ -5943,7 +7316,7 @@
         ]
       },
       {
-        "id": "target_distance_less_than",
+        "id": "motion_sensor_radar_mmwave_target_distance_less_than",
         "title": {
           "en": "Target distance is less than",
           "fr": "Distance cible inférieure à"
@@ -5997,6 +7370,173 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=plug_smart"
+          }
+        ]
+      },
+      {
+        "id": "rain_sensor_is_raining",
+        "title": {
+          "en": "It is !{{raining|not raining}}",
+          "fr": "Il !{{pleut|ne pleut pas}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=rain_sensor"
+          }
+        ]
+      },
+      {
+        "id": "rain_sensor_rain_intensity_above",
+        "title": {
+          "en": "Rain intensity is above",
+          "fr": "Intensité pluie supérieure à"
+        },
+        "titleFormatted": {
+          "en": "Rain intensity is above [[intensity]]",
+          "fr": "Intensité pluie supérieure à [[intensity]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=rain_sensor"
+          },
+          {
+            "name": "intensity",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 10
+          }
+        ]
+      },
+      {
+        "id": "shutter_roller_controller_is_open",
+        "title": {
+          "en": "Shutter is !{{open|closed}}",
+          "fr": "Volet est !{{ouvert|fermé}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=shutter_roller_controller"
+          }
+        ]
+      },
+      {
+        "id": "shutter_roller_controller_position_above",
+        "title": {
+          "en": "Position is above",
+          "fr": "Position supérieure à"
+        },
+        "titleFormatted": {
+          "en": "Position is above [[position]]%",
+          "fr": "Position supérieure à [[position]]%"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=shutter_roller_controller"
+          },
+          {
+            "name": "position",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 5
+          }
+        ]
+      },
+      {
+        "id": "shutter_roller_controller_is_moving",
+        "title": {
+          "en": "Shutter is !{{moving|stopped}}",
+          "fr": "Volet !{{en mouvement|arrêté}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=shutter_roller_controller"
+          }
+        ]
+      },
+      {
+        "id": "soil_sensor_moisture_above",
+        "title": {
+          "en": "Soil moisture is above",
+          "fr": "Humidité sol supérieure à"
+        },
+        "titleFormatted": {
+          "en": "Soil moisture is above [[moisture]]%",
+          "fr": "Humidité sol supérieure à [[moisture]]%"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=soil_sensor"
+          },
+          {
+            "name": "moisture",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1
+          }
+        ]
+      },
+      {
+        "id": "soil_sensor_moisture_below",
+        "title": {
+          "en": "Soil moisture is below",
+          "fr": "Humidité sol inférieure à"
+        },
+        "titleFormatted": {
+          "en": "Soil moisture is below [[moisture]]%",
+          "fr": "Humidité sol inférieure à [[moisture]]%"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=soil_sensor"
+          },
+          {
+            "name": "moisture",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1
+          }
+        ]
+      },
+      {
+        "id": "soil_sensor_temperature_above",
+        "title": {
+          "en": "Soil temperature is above",
+          "fr": "Température sol supérieure à"
+        },
+        "titleFormatted": {
+          "en": "Soil temperature is above [[temp]]°C",
+          "fr": "Température sol supérieure à [[temp]]°C"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=soil_sensor"
+          },
+          {
+            "name": "temp",
+            "type": "number",
+            "min": -20,
+            "max": 60,
+            "step": 1
           }
         ]
       },
@@ -6109,6 +7649,272 @@
         ]
       },
       {
+        "id": "switch_wall_7gang_gang1_is_on",
+        "title": {
+          "en": "Gang 1 is !{{on|off}}",
+          "fr": "Gang 1 est !{{allumé|éteint}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_gang2_is_on",
+        "title": {
+          "en": "Gang 2 is !{{on|off}}",
+          "fr": "Gang 2 est !{{allumé|éteint}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_gang3_is_on",
+        "title": {
+          "en": "Gang 3 is !{{on|off}}",
+          "fr": "Gang 3 est !{{allumé|éteint}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_gang4_is_on",
+        "title": {
+          "en": "Gang 4 is !{{on|off}}",
+          "fr": "Gang 4 est !{{allumé|éteint}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_gang5_is_on",
+        "title": {
+          "en": "Gang 5 is !{{on|off}}",
+          "fr": "Gang 5 est !{{allumé|éteint}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_gang6_is_on",
+        "title": {
+          "en": "Gang 6 is !{{on|off}}",
+          "fr": "Gang 6 est !{{allumé|éteint}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_gang7_is_on",
+        "title": {
+          "en": "Gang 7 is !{{on|off}}",
+          "fr": "Gang 7 est !{{allumé|éteint}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_all_on",
+        "title": {
+          "en": "All gangs are on",
+          "fr": "Tous les gangs sont allumés"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_all_off",
+        "title": {
+          "en": "All gangs are off",
+          "fr": "Tous les gangs sont éteints"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_gang1_is_on",
+        "title": {
+          "en": "Gang 1 is !{{on|off}}",
+          "fr": "Gang 1 !{{allumé|éteint}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_gang2_is_on",
+        "title": {
+          "en": "Gang 2 is !{{on|off}}",
+          "fr": "Gang 2 !{{allumé|éteint}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_gang3_is_on",
+        "title": {
+          "en": "Gang 3 is !{{on|off}}",
+          "fr": "Gang 3 !{{allumé|éteint}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_gang4_is_on",
+        "title": {
+          "en": "Gang 4 is !{{on|off}}",
+          "fr": "Gang 4 !{{allumé|éteint}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_gang5_is_on",
+        "title": {
+          "en": "Gang 5 is !{{on|off}}",
+          "fr": "Gang 5 !{{allumé|éteint}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_gang6_is_on",
+        "title": {
+          "en": "Gang 6 is !{{on|off}}",
+          "fr": "Gang 6 !{{allumé|éteint}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_gang7_is_on",
+        "title": {
+          "en": "Gang 7 is !{{on|off}}",
+          "fr": "Gang 7 !{{allumé|éteint}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_gang8_is_on",
+        "title": {
+          "en": "Gang 8 is !{{on|off}}",
+          "fr": "Gang 8 !{{allumé|éteint}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_all_on",
+        "title": {
+          "en": "All gangs are on",
+          "fr": "Tous allumés"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_all_off",
+        "title": {
+          "en": "All gangs are off",
+          "fr": "Tous éteints"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
         "id": "switch_wireless_is_on",
         "title": "Is !{{on|off}}",
         "args": [
@@ -6116,6 +7922,100 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_wireless"
+          }
+        ]
+      },
+      {
+        "id": "thermostat_ts0601_is_heating",
+        "title": {
+          "en": "Thermostat is !{{heating|not heating}}",
+          "fr": "Thermostat !{{chauffe|ne chauffe pas}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=thermostat_ts0601"
+          }
+        ]
+      },
+      {
+        "id": "thermostat_ts0601_temperature_above_target",
+        "title": {
+          "en": "Temperature is above target",
+          "fr": "Température supérieure à la cible"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=thermostat_ts0601"
+          }
+        ]
+      },
+      {
+        "id": "thermostat_ts0601_temperature_below_target",
+        "title": {
+          "en": "Temperature is below target",
+          "fr": "Température inférieure à la cible"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=thermostat_ts0601"
+          }
+        ]
+      },
+      {
+        "id": "thermostat_ts0601_mode_is",
+        "title": {
+          "en": "Mode is",
+          "fr": "Mode est"
+        },
+        "titleFormatted": {
+          "en": "Mode is [[mode]]",
+          "fr": "Mode est [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=thermostat_ts0601"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Arrêt"
+                }
+              },
+              {
+                "id": "heat",
+                "label": {
+                  "en": "Heat",
+                  "fr": "Chauffage"
+                }
+              },
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "fr": "Auto"
+                }
+              },
+              {
+                "id": "cool",
+                "label": {
+                  "en": "Cool",
+                  "fr": "Refroidissement"
+                }
+              }
+            ]
           }
         ]
       },
@@ -6138,7 +8038,7 @@
         ]
       },
       {
-        "id": "outdoor_temp_above",
+        "id": "weather_station_outdoor_outdoor_temp_above",
         "title": {
           "en": "Outdoor temperature above",
           "fr": "Température extérieure supérieure à"
@@ -6162,7 +8062,7 @@
         ]
       },
       {
-        "id": "outdoor_temp_below",
+        "id": "weather_station_outdoor_outdoor_temp_below",
         "title": {
           "en": "Outdoor temperature below",
           "fr": "Température extérieure inférieure à"
@@ -6186,7 +8086,7 @@
         ]
       },
       {
-        "id": "pressure_rising",
+        "id": "weather_station_outdoor_pressure_rising",
         "title": {
           "en": "Pressure is rising (good weather)",
           "fr": "Pression en hausse (beau temps)"
@@ -6200,7 +8100,7 @@
         ]
       },
       {
-        "id": "pressure_falling",
+        "id": "weather_station_outdoor_pressure_falling",
         "title": {
           "en": "Pressure is falling (bad weather)",
           "fr": "Pression en baisse (mauvais temps)"
@@ -6763,6 +8663,101 @@
         }
       },
       {
+        "id": "dimmer_2ch_ts1101_turn_on",
+        "title": {
+          "en": "Turn on",
+          "fr": "Allumer"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dimmer_2ch_ts1101"
+          }
+        ]
+      },
+      {
+        "id": "dimmer_2ch_ts1101_turn_off",
+        "title": {
+          "en": "Turn off",
+          "fr": "Éteindre"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dimmer_2ch_ts1101"
+          }
+        ]
+      },
+      {
+        "id": "dimmer_2ch_ts1101_toggle",
+        "title": {
+          "en": "Toggle",
+          "fr": "Basculer"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dimmer_2ch_ts1101"
+          }
+        ]
+      },
+      {
+        "id": "dimmer_2ch_ts1101_set_dim",
+        "title": {
+          "en": "Set dim level",
+          "fr": "Définir niveau dim"
+        },
+        "titleFormatted": {
+          "en": "Set dim level to [[level]]%",
+          "fr": "Définir niveau dim à [[level]]%"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dimmer_2ch_ts1101"
+          },
+          {
+            "name": "level",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 5
+          }
+        ]
+      },
+      {
+        "id": "dimmer_2ch_ts1101_dim_up",
+        "title": {
+          "en": "Dim up",
+          "fr": "Augmenter luminosité"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dimmer_2ch_ts1101"
+          }
+        ]
+      },
+      {
+        "id": "dimmer_2ch_ts1101_dim_down",
+        "title": {
+          "en": "Dim down",
+          "fr": "Diminuer luminosité"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dimmer_2ch_ts1101"
+          }
+        ]
+      },
+      {
         "id": "dimmer_wall_1gang_dimmer_1gang_turn_on",
         "title": {
           "en": "Turn on",
@@ -6834,6 +8829,34 @@
           "en": "Set brightness to [[brightness]]%",
           "fr": "Régler la luminosité à [[brightness]]%"
         }
+      },
+      {
+        "id": "gateway_zigbee_bridge_permit_join",
+        "title": {
+          "en": "Permit joining",
+          "fr": "Autoriser l'appairage"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=gateway_zigbee_bridge"
+          }
+        ]
+      },
+      {
+        "id": "gateway_zigbee_bridge_disable_join",
+        "title": {
+          "en": "Disable joining",
+          "fr": "Désactiver l'appairage"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=gateway_zigbee_bridge"
+          }
+        ]
       },
       {
         "id": "hvac_air_conditioner_air_conditioner_hybrid_turn_on",
@@ -7167,7 +9190,7 @@
         ]
       },
       {
-        "id": "set_radar_sensitivity",
+        "id": "motion_sensor_radar_mmwave_set_radar_sensitivity",
         "title": {
           "en": "Set radar sensitivity",
           "fr": "Définir sensibilité radar"
@@ -7196,7 +9219,7 @@
         ]
       },
       {
-        "id": "set_detection_range",
+        "id": "motion_sensor_radar_mmwave_set_detection_range",
         "title": {
           "en": "Set detection range",
           "fr": "Définir plage de détection"
@@ -7236,7 +9259,7 @@
         ]
       },
       {
-        "id": "set_fading_time",
+        "id": "motion_sensor_radar_mmwave_set_fading_time",
         "title": {
           "en": "Set fading time",
           "fr": "Définir délai d'absence"
@@ -7265,7 +9288,7 @@
         ]
       },
       {
-        "id": "set_detection_delay",
+        "id": "motion_sensor_radar_mmwave_set_detection_delay",
         "title": {
           "en": "Set detection delay",
           "fr": "Définir délai de détection"
@@ -7396,6 +9419,73 @@
           "en": "Set temperature to [[temperature]]°C",
           "fr": "Régler la température à [[temperature]]°C"
         }
+      },
+      {
+        "id": "shutter_roller_controller_open",
+        "title": {
+          "en": "Open",
+          "fr": "Ouvrir"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=shutter_roller_controller"
+          }
+        ]
+      },
+      {
+        "id": "shutter_roller_controller_close",
+        "title": {
+          "en": "Close",
+          "fr": "Fermer"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=shutter_roller_controller"
+          }
+        ]
+      },
+      {
+        "id": "shutter_roller_controller_stop",
+        "title": {
+          "en": "Stop",
+          "fr": "Arrêter"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=shutter_roller_controller"
+          }
+        ]
+      },
+      {
+        "id": "shutter_roller_controller_set_position",
+        "title": {
+          "en": "Set position",
+          "fr": "Définir position"
+        },
+        "titleFormatted": {
+          "en": "Set position to [[position]]%",
+          "fr": "Définir position à [[position]]%"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=shutter_roller_controller"
+          },
+          {
+            "name": "position",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 5
+          }
+        ]
       },
       {
         "id": "switch_1gang_smart_switch_1gang_hybrid_turn_on",
@@ -7743,6 +9833,580 @@
         ]
       },
       {
+        "id": "switch_wall_7gang_turn_on_gang1",
+        "title": {
+          "en": "Turn on Gang 1",
+          "fr": "Allumer Gang 1"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_turn_off_gang1",
+        "title": {
+          "en": "Turn off Gang 1",
+          "fr": "Éteindre Gang 1"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_toggle_gang1",
+        "title": {
+          "en": "Toggle Gang 1",
+          "fr": "Basculer Gang 1"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_turn_on_gang2",
+        "title": {
+          "en": "Turn on Gang 2",
+          "fr": "Allumer Gang 2"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_turn_off_gang2",
+        "title": {
+          "en": "Turn off Gang 2",
+          "fr": "Éteindre Gang 2"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_toggle_gang2",
+        "title": {
+          "en": "Toggle Gang 2",
+          "fr": "Basculer Gang 2"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_turn_on_gang3",
+        "title": {
+          "en": "Turn on Gang 3",
+          "fr": "Allumer Gang 3"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_turn_off_gang3",
+        "title": {
+          "en": "Turn off Gang 3",
+          "fr": "Éteindre Gang 3"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_toggle_gang3",
+        "title": {
+          "en": "Toggle Gang 3",
+          "fr": "Basculer Gang 3"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_turn_on_gang4",
+        "title": {
+          "en": "Turn on Gang 4",
+          "fr": "Allumer Gang 4"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_turn_off_gang4",
+        "title": {
+          "en": "Turn off Gang 4",
+          "fr": "Éteindre Gang 4"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_toggle_gang4",
+        "title": {
+          "en": "Toggle Gang 4",
+          "fr": "Basculer Gang 4"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_turn_on_gang5",
+        "title": {
+          "en": "Turn on Gang 5",
+          "fr": "Allumer Gang 5"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_turn_off_gang5",
+        "title": {
+          "en": "Turn off Gang 5",
+          "fr": "Éteindre Gang 5"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_toggle_gang5",
+        "title": {
+          "en": "Toggle Gang 5",
+          "fr": "Basculer Gang 5"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_turn_on_gang6",
+        "title": {
+          "en": "Turn on Gang 6",
+          "fr": "Allumer Gang 6"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_turn_off_gang6",
+        "title": {
+          "en": "Turn off Gang 6",
+          "fr": "Éteindre Gang 6"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_toggle_gang6",
+        "title": {
+          "en": "Toggle Gang 6",
+          "fr": "Basculer Gang 6"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_turn_on_gang7",
+        "title": {
+          "en": "Turn on Gang 7",
+          "fr": "Allumer Gang 7"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_turn_off_gang7",
+        "title": {
+          "en": "Turn off Gang 7",
+          "fr": "Éteindre Gang 7"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_toggle_gang7",
+        "title": {
+          "en": "Toggle Gang 7",
+          "fr": "Basculer Gang 7"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_turn_on_all",
+        "title": {
+          "en": "Turn on all",
+          "fr": "Tout allumer"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_7gang_turn_off_all",
+        "title": {
+          "en": "Turn off all",
+          "fr": "Tout éteindre"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_7gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_turn_on_gang1",
+        "title": {
+          "en": "Turn on Gang 1",
+          "fr": "Allumer Gang 1"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_turn_off_gang1",
+        "title": {
+          "en": "Turn off Gang 1",
+          "fr": "Éteindre Gang 1"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_turn_on_gang2",
+        "title": {
+          "en": "Turn on Gang 2",
+          "fr": "Allumer Gang 2"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_turn_off_gang2",
+        "title": {
+          "en": "Turn off Gang 2",
+          "fr": "Éteindre Gang 2"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_turn_on_gang3",
+        "title": {
+          "en": "Turn on Gang 3",
+          "fr": "Allumer Gang 3"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_turn_off_gang3",
+        "title": {
+          "en": "Turn off Gang 3",
+          "fr": "Éteindre Gang 3"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_turn_on_gang4",
+        "title": {
+          "en": "Turn on Gang 4",
+          "fr": "Allumer Gang 4"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_turn_off_gang4",
+        "title": {
+          "en": "Turn off Gang 4",
+          "fr": "Éteindre Gang 4"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_turn_on_gang5",
+        "title": {
+          "en": "Turn on Gang 5",
+          "fr": "Allumer Gang 5"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_turn_off_gang5",
+        "title": {
+          "en": "Turn off Gang 5",
+          "fr": "Éteindre Gang 5"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_turn_on_gang6",
+        "title": {
+          "en": "Turn on Gang 6",
+          "fr": "Allumer Gang 6"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_turn_off_gang6",
+        "title": {
+          "en": "Turn off Gang 6",
+          "fr": "Éteindre Gang 6"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_turn_on_gang7",
+        "title": {
+          "en": "Turn on Gang 7",
+          "fr": "Allumer Gang 7"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_turn_off_gang7",
+        "title": {
+          "en": "Turn off Gang 7",
+          "fr": "Éteindre Gang 7"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_turn_on_gang8",
+        "title": {
+          "en": "Turn on Gang 8",
+          "fr": "Allumer Gang 8"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_turn_off_gang8",
+        "title": {
+          "en": "Turn off Gang 8",
+          "fr": "Éteindre Gang 8"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_turn_on_all",
+        "title": {
+          "en": "Turn on all",
+          "fr": "Tout allumer"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_8gang_turn_off_all",
+        "title": {
+          "en": "Turn off all",
+          "fr": "Tout éteindre"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_wall_8gang"
+          }
+        ]
+      },
+      {
         "id": "switch_wireless_turn_on",
         "title": "Turn on",
         "args": [
@@ -7772,6 +10436,138 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_wireless"
+          }
+        ]
+      },
+      {
+        "id": "thermostat_ts0601_set_target_temperature",
+        "title": {
+          "en": "Set target temperature",
+          "fr": "Définir température cible"
+        },
+        "titleFormatted": {
+          "en": "Set target temperature to [[temperature]]°C",
+          "fr": "Définir température cible à [[temperature]]°C"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=thermostat_ts0601"
+          },
+          {
+            "name": "temperature",
+            "type": "number",
+            "min": 5,
+            "max": 35,
+            "step": 0.5,
+            "title": {
+              "en": "Temperature",
+              "fr": "Température"
+            }
+          }
+        ]
+      },
+      {
+        "id": "thermostat_ts0601_set_mode",
+        "title": {
+          "en": "Set mode",
+          "fr": "Définir mode"
+        },
+        "titleFormatted": {
+          "en": "Set mode to [[mode]]",
+          "fr": "Définir mode à [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=thermostat_ts0601"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Arrêt"
+                }
+              },
+              {
+                "id": "heat",
+                "label": {
+                  "en": "Heat",
+                  "fr": "Chauffage"
+                }
+              },
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "fr": "Auto"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "thermostat_ts0601_increase_temperature",
+        "title": {
+          "en": "Increase temperature",
+          "fr": "Augmenter température"
+        },
+        "titleFormatted": {
+          "en": "Increase temperature by [[degrees]]°C",
+          "fr": "Augmenter température de [[degrees]]°C"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=thermostat_ts0601"
+          },
+          {
+            "name": "degrees",
+            "type": "number",
+            "min": 0.5,
+            "max": 5,
+            "step": 0.5,
+            "title": {
+              "en": "Degrees",
+              "fr": "Degrés"
+            }
+          }
+        ]
+      },
+      {
+        "id": "thermostat_ts0601_decrease_temperature",
+        "title": {
+          "en": "Decrease temperature",
+          "fr": "Diminuer température"
+        },
+        "titleFormatted": {
+          "en": "Decrease temperature by [[degrees]]°C",
+          "fr": "Diminuer température de [[degrees]]°C"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=thermostat_ts0601"
+          },
+          {
+            "name": "degrees",
+            "type": "number",
+            "min": 0.5,
+            "max": 5,
+            "step": 0.5,
+            "title": {
+              "en": "Degrees",
+              "fr": "Degrés"
+            }
           }
         ]
       },

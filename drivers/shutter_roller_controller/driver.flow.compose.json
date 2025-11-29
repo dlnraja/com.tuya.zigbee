@@ -1,0 +1,129 @@
+{
+  "triggers": [
+    {
+      "id": "shutter_roller_controller_position_changed",
+      "title": {
+        "en": "Position changed",
+        "fr": "Position changée"
+      },
+      "tokens": [
+        {
+          "name": "position",
+          "type": "number",
+          "title": {
+            "en": "Position (%)",
+            "fr": "Position (%)"
+          },
+          "example": 50
+        }
+      ]
+    },
+    {
+      "id": "shutter_roller_controller_fully_opened",
+      "title": {
+        "en": "Fully opened",
+        "fr": "Complètement ouvert"
+      }
+    },
+    {
+      "id": "shutter_roller_controller_fully_closed",
+      "title": {
+        "en": "Fully closed",
+        "fr": "Complètement fermé"
+      }
+    },
+    {
+      "id": "shutter_roller_controller_started_moving",
+      "title": {
+        "en": "Started moving",
+        "fr": "Démarrage mouvement"
+      }
+    },
+    {
+      "id": "shutter_roller_controller_stopped_moving",
+      "title": {
+        "en": "Stopped moving",
+        "fr": "Arrêt mouvement"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "shutter_roller_controller_is_open",
+      "title": {
+        "en": "Shutter is !{{open|closed}}",
+        "fr": "Volet est !{{ouvert|fermé}}"
+      }
+    },
+    {
+      "id": "shutter_roller_controller_position_above",
+      "title": {
+        "en": "Position is above",
+        "fr": "Position supérieure à"
+      },
+      "titleFormatted": {
+        "en": "Position is above [[position]]%",
+        "fr": "Position supérieure à [[position]]%"
+      },
+      "args": [
+        {
+          "name": "position",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "shutter_roller_controller_is_moving",
+      "title": {
+        "en": "Shutter is !{{moving|stopped}}",
+        "fr": "Volet !{{en mouvement|arrêté}}"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "shutter_roller_controller_open",
+      "title": {
+        "en": "Open",
+        "fr": "Ouvrir"
+      }
+    },
+    {
+      "id": "shutter_roller_controller_close",
+      "title": {
+        "en": "Close",
+        "fr": "Fermer"
+      }
+    },
+    {
+      "id": "shutter_roller_controller_stop",
+      "title": {
+        "en": "Stop",
+        "fr": "Arrêter"
+      }
+    },
+    {
+      "id": "shutter_roller_controller_set_position",
+      "title": {
+        "en": "Set position",
+        "fr": "Définir position"
+      },
+      "titleFormatted": {
+        "en": "Set position to [[position]]%",
+        "fr": "Définir position à [[position]]%"
+      },
+      "args": [
+        {
+          "name": "position",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 5
+        }
+      ]
+    }
+  ]
+}
