@@ -37,6 +37,9 @@ class RadarMotionSensorMmwaveDevice extends BaseHybridDevice {
     // Setup standard ZCL clusters for additional sensors
     await this._setupZCLClusters({ hasTemperature, hasHumidity, hasIlluminance, hasBattery });
 
+    // Register flow cards for advanced features
+    await this._registerFlowCards().catch(err => this.log('[RADAR] Flow cards registration skipped:', err.message));
+
     this.log('RadarMotionSensorMmwaveDevice initialized - Power source:', this.powerSource || 'unknown');
   }
 
@@ -625,6 +628,100 @@ class RadarMotionSensorMmwaveDevice extends BaseHybridDevice {
 
     } catch (err) {
       this.error('IAS Zone setup failed:', err);
+    }
+  }
+
+  /**
+   * Register flow card handlers for advanced radar features
+   */
+  async _registerFlowCards() {
+    this.log('[RADAR] Registering flow cards...');
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // CONDITION HANDLERS
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    // Is presence detected
+    this.homey.flow.getConditionCard('is_presence_detected')
+      .registerRunListener(async () => {
+        return this.getCapabilityValue('alarm_motion') === true;
+      });
+
+    // Illuminance above threshold
+    this.homey.flow.getConditionCard('illuminance_above')
+      .registerRunListener(async (args) => {
+        const lux = this.getCapabilityValue('measure_luminance') || 0;
+        return lux > args.lux;
+      });
+
+    // Illuminance below threshold
+    this.homey.flow.getConditionCard('illuminance_below')
+      .registerRunListener(async (args) => {
+        const lux = this.getCapabilityValue('measure_luminance') || 0;
+        return lux < args.lux;
+      });
+
+    // Temperature above threshold
+    this.homey.flow.getConditionCard('temperature_above')
+      .registerRunListener(async (args) => {
+        const temp = this.getCapabilityValue('measure_temperature') || 0;
+        return temp > args.temp;
+      });
+
+    // Target distance less than
+    this.homey.flow.getConditionCard('target_distance_less_than')
+      .registerRunListener(async (args) => {
+        const distance = this._targetDistance || 0;
+        return distance < args.distance;
+      });
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // ACTION HANDLERS
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    // Set radar sensitivity
+    this.homey.flow.getActionCard('set_radar_sensitivity')
+      .registerRunListener(async (args) => {
+        await this.setRadarSensitivity(args.sensitivity);
+        return true;
+      });
+
+    // Set detection range
+    this.homey.flow.getActionCard('set_detection_range')
+      .registerRunListener(async (args) => {
+        await this.setDetectionRange(args.min, args.max);
+        return true;
+      });
+
+    // Set fading time
+    this.homey.flow.getActionCard('set_fading_time')
+      .registerRunListener(async (args) => {
+        await this.setFadingTime(args.seconds);
+        return true;
+      });
+
+    // Set detection delay
+    this.homey.flow.getActionCard('set_detection_delay')
+      .registerRunListener(async (args) => {
+        await this.setDetectionDelay(args.seconds);
+        return true;
+      });
+
+    this.log('[RADAR] Flow cards registered');
+  }
+
+  /**
+   * Trigger flow cards based on sensor events
+   */
+  async _triggerFlow(flowId, tokens = {}) {
+    try {
+      const card = this.homey.flow.getDeviceTriggerCard(flowId);
+      if (card) {
+        await card.trigger(this, tokens);
+        this.log(`[RADAR] Triggered flow: ${flowId}`, tokens);
+      }
+    } catch (err) {
+      this.log(`[RADAR] Flow trigger error (${flowId}):`, err.message);
     }
   }
 

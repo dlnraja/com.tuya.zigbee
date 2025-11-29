@@ -146,19 +146,36 @@ This application relies heavily on the incredible work of the Zigbee open-source
 ### Forum Contributors (community.homey.app)
 | Username | Contribution |
 |----------|--------------|
-| **@Laborhexe** | ZG-204ZM device interview, testing, bug reports |
-| **@Jocke_Svensson** | Testing, feedback |
-| **@SunBeech** | Forum support, formatting help |
-| **@Cam** | Testing, device reports |
-| **@telenut** | Device testing |
-| **@DidierVU** | French translations |
+| **@Laborhexe** | ZG-204ZM device interview, multi-sensor discovery, testing |
+| **@Jocke_Svensson** | Extensive testing, feedback, device reports |
+| **@SunBeech** | Forum support, formatting help, community assistance |
+| **@Cam** | Device testing, issue reports |
+| **@telenut** | Device testing, feedback |
+| **@DidierVU** | French translations, testing |
 | **@Patrickske1** | Curtain motor issue report (#79) |
+| **@Peter_Oskam** | SDK3 IAS Zone patterns, testing |
+| **@caseda** | Technical guidance, Homey SDK expertise |
+| **@TedTolboom** | Original Tuya drivers inspiration |
+| **@Darek** | Polish devices testing |
+| **@Mike_Hoevenaars** | TRV testing |
+| **@Marcel_Ubels** | Energy monitoring testing |
+| **@M.Westenberg** | Technical assistance |
+| **@Edwin_D** | TS011F plug testing |
+| **@robertklep** | Homey SDK3 guidance |
+| **@Jamie** | Early testing and feedback |
+| **@bakkepansen** | Nordic devices testing |
+| **@Ton.de.Wolf** | Dutch community support |
+| **@CFRembo** | Device reports |
+| **@Rocodamelsansen** | Testing |
+| **@Jeroenvg** | Netherlands testing |
+| **@RonnyW** | German devices testing |
+| **@HenkHomey** | Testing and feedback |
 
 ### GitHub Contributors
 | Username | Contribution |
 |----------|--------------|
 | **@dlnraja** | App creator & maintainer |
-| Issue reporters | Device support requests |
+| All issue reporters | Device support requests, bug reports |
 
 ---
 
