@@ -94,6 +94,10 @@
         "en": "CO2 level is above",
         "fr": "Niveau CO2 supérieur à"
       },
+      "titleFormatted": {
+        "en": "CO2 level is above [[co2]] ppm",
+        "fr": "Niveau CO2 supérieur à [[co2]] ppm"
+      },
       "args": [
         {
           "name": "co2",
@@ -108,6 +112,10 @@
       "title": {
         "en": "CO2 level is below",
         "fr": "Niveau CO2 inférieur à"
+      },
+      "titleFormatted": {
+        "en": "CO2 level is below [[co2]] ppm",
+        "fr": "Niveau CO2 inférieur à [[co2]] ppm"
       },
       "args": [
         {

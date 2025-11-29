@@ -1,5 +1,119 @@
 # Changelog
 
+## [5.2.33] - 2025-11-29
+
+### Massive Database Enrichment + Auto-Update System
+
+#### New Files
+- `lib/data/SourceCredits.js` - Attribution des sources et contributeurs
+- `lib/data/DatabaseUpdater.js` - Mise à jour automatique depuis toutes les sources
+- `CREDITS.md` - Documentation des crédits et sources
+
+#### Data Sources (8 sources)
+| Source | Update Interval | Data |
+|--------|-----------------|------|
+| Zigbee2MQTT | 24h | 4797+ devices, DP mappings |
+| Zigbee-OTA | 6h | Firmware images, SHA512 |
+| ZHA Quirks | 24h | TuyaQuirkBuilder patterns |
+| Blakadder | 24h | Device compatibility |
+| deCONZ | 24h | Device descriptors |
+| Fairecasoimeme OTA | 12h | Alternative firmware |
+| Tuya Developer | 7 days | Official DP docs |
+| Zigbee Alliance | Reference | ZCL specifications |
+
+#### DeviceFingerprintDB Enriched
+- **103 devices** in fingerprint database
+- **26 climate sensors** (ZTH01-08, SZTH02)
+- **11 presence/radar** (ZY-M100, ZG-204ZM)
+- **11 water leak** (Meian, Moes, Niceboy, Nous)
+- **10 smart plugs** (TS011F, TS0121)
+- **5 curtain motors** (AM25, covers)
+- **3 thermostats** (TRV, Avatto, Saswell)
+- New `getStatistics()` function
+
+#### Contributors Credited
+- Koenkk (Zigbee2MQTT, Zigbee-OTA)
+- dmulcahey, Adminiuga, puddly (ZHA/zigpy)
+- Blakadder (Device database)
+- Dresden Elektronik (deCONZ)
+- 162+ OTA contributors
+
+## [5.2.32] - 2025-11-29
+
+### Tuya/Xiaomi OTA Provider (Zigbee2MQTT Integration)
+- **Source:** https://www.zigbee2mqtt.io/advanced/more/tuya_xiaomi_ota_url.html
+- **New file:** `lib/ota/TuyaXiaomiOTAProvider.js`
+
+#### Features
+- **Zigbee-OTA repository** integration (github.com/Koenkk/zigbee-OTA)
+- **Manufacturer codes:**
+  - Tuya: `0x1141` (4417), `0x1002` (4098)
+  - Xiaomi: `0x115F` (4447)
+  - Aqara: `0x1037` (4151)
+  - Lumi: `0x1136` (4406)
+- **SHA512 hash verification** for downloaded images
+- **OTA header parsing** (magic number `0x0BEEF11E`)
+- **6-hour cache** with automatic refresh
+
+#### API Methods
+- `fetchOTAIndex()` - Get full OTA index from repository
+- `getTuyaImages()` - Filter Tuya-only firmware images
+- `getXiaomiImages()` - Filter Xiaomi/Aqara images
+- `findImage(mfrCode, imageType, currentVersion, modelId)` - Find specific update
+- `downloadImage(url, sha512)` - Download with verification
+- `parseOTAHeader(buffer)` - Parse OTA file header
+- `checkForUpdate(device)` - Check Homey device for updates
+
+#### OTA Index Structure
+```json
+{
+  "fileName": "image.ota",
+  "fileVersion": 123,
+  "fileSize": 204794,
+  "url": "https://raw.githubusercontent.com/.../image.ota",
+  "manufacturerCode": 4417,
+  "imageType": 0,
+  "sha512": "44e421aec...",
+  "otaHeaderString": "Device Name",
+  "modelId": "TS0601"
+}
+```
+
+## [5.2.31] - 2025-11-28
+
+### Enriched Device Database from Zigbee2MQTT/ZHA
+- **DeviceFingerprintDB.js:** Complete rewrite with authoritative data
+- **Data Sources:** zigbee2mqtt.io, ZHA quirks, Tuya developer docs, GitHub issues
+
+#### Climate Sensors (ZTH05Z)
+- `_TZE284_vvmbj46n`: Full DP mapping (1-20)
+- Temperature ÷10, humidity, battery, temperature/humidity alarms
+- Report intervals (1-120 min), sensitivity settings
+
+#### Soil Sensors (QT-07S)
+- `_TZE284_oitavov2`: DP3=moisture, DP5=temp÷10, DP15=battery
+- `_TZE284_aao3yzhs`, `_TZE284_sgabhwa6` variants added
+
+#### Presence Sensors (ZY-M100)
+- `_TZE200_ar0slwnd`: 5.8GHz mmWave radar
+- DP mapping: presence, sensitivity (0-9), min/max range (0-9.5m)
+- Fading time (0-1500s), detection delay (0-10s), illuminance
+
+#### SOS Buttons (TS0215A)
+- IAS Zone cluster 0x0500 for button press (action: emergency)
+- genPowerCfg cluster 1 for battery % and voltage
+- All `_TZ3000_*` variants mapped
+
+#### 2-Gang Switches (TS0002)
+- `_TZ3000_h1ipgkwn`: Dual endpoint (EP1+EP2)
+- Settings: power_on_behavior, countdown, switch_type, backlight
+- Mains powered, NO battery capability
+
+#### New Utility Functions
+- `convertDPValue()`: Auto-convert with divideBy10/divideBy100
+- `getEnrichedDPMapping()`: Full metadata per DP
+- `getPowerInfo()`, `getClusters()`, `getCapabilities()`
+
 ## [5.2.27] - 2025-11-28
 
 ### MAJOR DRIVER CONSOLIDATION (212 → 60 drivers)
