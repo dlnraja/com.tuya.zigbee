@@ -16,6 +16,7 @@ const SuggestionEngine = require('./lib/smartadapt/SuggestionEngine');
 const { processMigrationQueue } = require('./lib/utils/migration-queue'); // ✅ FIX CRITIQUE
 const OTAUpdateManager = require('./lib/ota/OTAUpdateManager'); // 📦 OTA Firmware Updates
 const QuirksDatabase = require('./lib/quirks/QuirksDatabase'); // 🔧 Device Quirks
+const EmergencyDeviceFix = require('./lib/emergency/EmergencyDeviceFix'); // 🚨 Emergency Fix System
 
 class UniversalTuyaZigbeeApp extends Homey.App {
   _flowCardsRegistered = false;
@@ -171,6 +172,12 @@ class UniversalTuyaZigbeeApp extends Homey.App {
       this.log('[MIGRATION-WORKER] 🔄 Starting...');
       const processed = await processMigrationQueue(this.homey);
       this.log(`[MIGRATION-WORKER] ✅ Processed ${processed} migrations`);
+
+      // 🚨 v5.2.30: Run emergency device fix after migrations
+      this.log('[EMERGENCY-FIX] 🚨 Running emergency device fixes...');
+      const fixResults = await EmergencyDeviceFix.runAll(this.homey);
+      this.log(`[EMERGENCY-FIX] ✅ Fixed: migrations=${fixResults.migrationFixed}, devices=${fixResults.devicesFixed}, DPs=${fixResults.dpRequestsSent}`);
+
     } catch (err) {
       this.error('[MIGRATION-WORKER] ❌ Error:', err.message);
     }
