@@ -96,24 +96,140 @@ class RadarMotionSensorMmwaveDevice extends BaseHybridDevice {
   }
 
   /**
-   * Handle incoming Tuya DP for radar sensors
+   * Handle incoming Tuya DP for radar sensors (FP300-like features)
+   *
+   * Extended DP Mapping (Zigbee2MQTT ZY-M100/ZG-204ZM):
+   * - DP 1: presence (boolean)
+   * - DP 2: radar_sensitivity (0-9) [ZY-M100]
+   * - DP 3: minimum_range (m * 100) [ZY-M100]
+   * - DP 4: maximum_range (m * 100) [ZY-M100]
+   * - DP 9: sensitivity (0-9) [ZG-204ZM]
+   * - DP 15: battery (%)
+   * - DP 101: illuminance (lux) / detection_delay (s * 10)
+   * - DP 102: detection_delay (s * 10) / fading_time (s * 10)
+   * - DP 103: fading_time (s * 10) / target_distance (cm)
+   * - DP 104: target_distance (cm) / illuminance (lux)
+   * - DP 105: illuminance (lux) [some models]
+   * - DP 106: illuminance threshold
+   * - DP 107: presence_state (enum)
+   * - DP 108: motion_state (enum)
    */
   _handleRadarDP(dpId, value) {
     this.log(`[RADAR] 📊 DP${dpId} = ${value}`);
 
     switch (dpId) {
+      // ═══════════════════════════════════════════════════════════════
+      // PRESENCE DETECTION
+      // ═══════════════════════════════════════════════════════════════
       case 1: // Presence (boolean)
         const presence = Boolean(value);
         this.log(`[RADAR] 👤 Presence: ${presence ? 'DETECTED' : 'clear'}`);
         if (this.hasCapability('alarm_motion')) {
           this.setCapabilityValue('alarm_motion', presence).catch(this.error);
         }
+        // Trigger flow
+        this._triggerPresenceFlow(presence);
         break;
 
-      case 9: // Sensitivity (0-9)
-        this.log(`[RADAR] 📐 Sensitivity: ${value}`);
+      case 107: // Presence state (enum: none=0, presence=1, move=2)
+        const presenceStates = { 0: 'none', 1: 'presence', 2: 'move' };
+        const pState = presenceStates[value] || 'unknown';
+        this.log(`[RADAR] 👤 Presence state: ${pState}`);
+        if (this.hasCapability('alarm_motion')) {
+          this.setCapabilityValue('alarm_motion', value > 0).catch(this.error);
+        }
         break;
 
+      case 108: // Motion state (enum: none=0, small=1, large=2)
+        const motionStates = { 0: 'none', 1: 'small_move', 2: 'large_move' };
+        this.log(`[RADAR] 🏃 Motion state: ${motionStates[value] || value}`);
+        break;
+
+      // ═══════════════════════════════════════════════════════════════
+      // SENSITIVITY & RANGE (FP300-like)
+      // ═══════════════════════════════════════════════════════════════
+      case 2: // Radar sensitivity (ZY-M100 style: 0-9)
+      case 9: // Sensitivity (ZG-204ZM style: 0-9)
+        this.log(`[RADAR] 📐 Sensitivity: ${value}/9`);
+        this.setStoreValue('radar_sensitivity', value).catch(this.error);
+        break;
+
+      case 3: // Minimum range (m * 100, e.g., 150 = 1.5m)
+        const minRange = value / 100;
+        this.log(`[RADAR] 📏 Min range: ${minRange}m`);
+        this.setStoreValue('minimum_range', minRange).catch(this.error);
+        break;
+
+      case 4: // Maximum range (m * 100, e.g., 600 = 6m)
+        const maxRange = value / 100;
+        this.log(`[RADAR] 📏 Max range: ${maxRange}m`);
+        this.setStoreValue('maximum_range', maxRange).catch(this.error);
+        break;
+
+      // ═══════════════════════════════════════════════════════════════
+      // TIMING PARAMETERS
+      // ═══════════════════════════════════════════════════════════════
+      case 101: // Detection delay (s * 10) OR Illuminance depending on model
+        if (value > 1000) {
+          // Likely illuminance
+          this.log(`[RADAR] 💡 Illuminance: ${value} lux`);
+          if (this.hasCapability('measure_luminance')) {
+            this.setCapabilityValue('measure_luminance', value).catch(this.error);
+          }
+        } else {
+          // Detection delay
+          const detDelay = value / 10;
+          this.log(`[RADAR] ⏱️ Detection delay: ${detDelay}s`);
+          this.setStoreValue('detection_delay', detDelay).catch(this.error);
+        }
+        break;
+
+      case 102: // Fading time (s * 10) - absence delay
+        const fadingTime = value / 10;
+        this.log(`[RADAR] ⏱️ Fading time: ${fadingTime}s (absence delay)`);
+        this.setStoreValue('fading_time', fadingTime).catch(this.error);
+        break;
+
+      // ═══════════════════════════════════════════════════════════════
+      // TARGET DISTANCE (FP300-like)
+      // ═══════════════════════════════════════════════════════════════
+      case 103: // Target distance (cm) OR fading time
+      case 104: // Target distance (cm) OR illuminance
+        if (value <= 1000) {
+          // Target distance in cm
+          const distanceM = value / 100;
+          this.log(`[RADAR] 📍 Target distance: ${distanceM}m`);
+          if (this.hasCapability('measure_distance')) {
+            this.setCapabilityValue('measure_distance', distanceM).catch(this.error);
+          }
+          this.setStoreValue('target_distance', distanceM).catch(this.error);
+        } else {
+          // Illuminance
+          this.log(`[RADAR] 💡 Illuminance: ${value} lux`);
+          if (this.hasCapability('measure_luminance')) {
+            this.setCapabilityValue('measure_luminance', value).catch(this.error);
+          }
+        }
+        break;
+
+      // ═══════════════════════════════════════════════════════════════
+      // ILLUMINANCE
+      // ═══════════════════════════════════════════════════════════════
+      case 105: // Illuminance (lux)
+        this.log(`[RADAR] 💡 Illuminance: ${value} lux`);
+        if (this.hasCapability('measure_luminance')) {
+          this.setCapabilityValue('measure_luminance', value).catch(this.error);
+        }
+        break;
+
+      case 106: // Illuminance threshold (for light automation)
+        this.log(`[RADAR] 💡 Illuminance threshold: ${value} lux`);
+        this.setStoreValue('illuminance_threshold', value).catch(this.error);
+        break;
+
+      // ═══════════════════════════════════════════════════════════════
+      // BATTERY
+      // ═══════════════════════════════════════════════════════════════
       case 15: // Battery (%)
         const battery = Math.min(100, Math.max(0, value));
         this.log(`[RADAR] 🔋 Battery: ${battery}%`);
@@ -122,30 +238,24 @@ class RadarMotionSensorMmwaveDevice extends BaseHybridDevice {
         }
         break;
 
-      case 101: // Illuminance (lux)
-        this.log(`[RADAR] 💡 Illuminance: ${value} lux`);
-        if (this.hasCapability('measure_luminance')) {
-          this.setCapabilityValue('measure_luminance', value).catch(this.error);
-        }
-        break;
-
-      case 102: // Detection delay
-        this.log(`[RADAR] ⏱️ Detection delay: ${value}s`);
-        break;
-
-      case 103: // Fading time
-        this.log(`[RADAR] ⏱️ Fading time: ${value}s`);
-        break;
-
-      case 104: // Alternative illuminance DP
-        this.log(`[RADAR] 💡 Illuminance (DP104): ${value} lux`);
-        if (this.hasCapability('measure_luminance')) {
-          this.setCapabilityValue('measure_luminance', value).catch(this.error);
-        }
-        break;
-
       default:
         this.log(`[RADAR] ❓ Unknown DP${dpId} = ${value}`);
+    }
+  }
+
+  /**
+   * Trigger presence flow cards
+   */
+  async _triggerPresenceFlow(presence) {
+    try {
+      const cardId = presence ? 'radar_presence_detected' : 'radar_presence_cleared';
+      const triggerCard = this.homey.flow.getDeviceTriggerCard(cardId);
+      if (triggerCard) {
+        await triggerCard.trigger(this);
+        this.log(`[RADAR] Flow triggered: ${cardId}`);
+      }
+    } catch (err) {
+      // Card may not exist
     }
   }
 
@@ -157,12 +267,112 @@ class RadarMotionSensorMmwaveDevice extends BaseHybridDevice {
 
     // Use TuyaEF00Manager if available
     if (this.tuyaEF00Manager) {
-      const dps = [1, 9, 15, 101]; // presence, sensitivity, battery, illuminance
+      // Extended DP list for FP300-like features
+      const dps = [1, 2, 3, 4, 9, 15, 101, 102, 103, 104, 105];
       for (const dp of dps) {
         await this.tuyaEF00Manager.getData(dp).catch(err => {
-          this.log(`[RADAR] DP${dp} request failed:`, err.message);
+          this.log(`[RADAR] DP${dp} request failed (may not exist):`, err.message);
         });
-        await new Promise(r => setTimeout(r, 500));
+        await new Promise(r => setTimeout(r, 300));
+      }
+    }
+  }
+
+  /**
+   * Set radar sensitivity (0-9) - FP300-like feature
+   */
+  async setRadarSensitivity(sensitivity) {
+    const value = Math.max(0, Math.min(9, Math.round(sensitivity)));
+    this.log(`[RADAR] Setting sensitivity to ${value}`);
+    await this._sendRadarDP(2, 'value', value);
+    await this._sendRadarDP(9, 'value', value); // Try both DPs
+  }
+
+  /**
+   * Set detection range (min/max in meters) - FP300-like feature
+   */
+  async setDetectionRange(minRange, maxRange) {
+    this.log(`[RADAR] Setting range: ${minRange}m - ${maxRange}m`);
+    await this._sendRadarDP(3, 'value', Math.round(minRange * 100));
+    await this._sendRadarDP(4, 'value', Math.round(maxRange * 100));
+  }
+
+  /**
+   * Set fading time (absence delay in seconds) - FP300-like feature
+   */
+  async setFadingTime(seconds) {
+    this.log(`[RADAR] Setting fading time to ${seconds}s`);
+    await this._sendRadarDP(102, 'value', Math.round(seconds * 10));
+  }
+
+  /**
+   * Set detection delay (seconds) - FP300-like feature
+   */
+  async setDetectionDelay(seconds) {
+    this.log(`[RADAR] Setting detection delay to ${seconds}s`);
+    await this._sendRadarDP(101, 'value', Math.round(seconds * 10));
+  }
+
+  /**
+   * Send Tuya DP command
+   */
+  async _sendRadarDP(dp, dataType, value) {
+    try {
+      if (this.tuyaEF00Manager) {
+        await this.tuyaEF00Manager.setData(dp, value);
+        return;
+      }
+
+      const endpoint = this.zclNode?.endpoints?.[1];
+      const tuyaCluster = endpoint?.clusters?.tuya ||
+        endpoint?.clusters?.manuSpecificTuya ||
+        endpoint?.clusters?.[61184];
+
+      if (!tuyaCluster) return;
+
+      const seq = Date.now() % 65535;
+      let dataBuffer;
+
+      if (dataType === 'value') {
+        dataBuffer = Buffer.alloc(8);
+        dataBuffer.writeUInt8(dp, 0);
+        dataBuffer.writeUInt8(2, 1); // type: value
+        dataBuffer.writeUInt16BE(4, 2);
+        dataBuffer.writeUInt32BE(value, 4);
+      } else {
+        dataBuffer = Buffer.from([dp, 1, 0, 1, value ? 1 : 0]);
+      }
+
+      await tuyaCluster.dataRequest({ seq, dpValues: dataBuffer });
+      this.log(`[RADAR] Sent DP${dp} = ${value}`);
+    } catch (err) {
+      this.error('[RADAR] Send DP error:', err.message);
+    }
+  }
+
+  /**
+   * Handle settings changes - FP300-like configuration
+   */
+  async onSettings({ oldSettings, newSettings, changedKeys }) {
+    this.log('[RADAR] Settings changed:', changedKeys);
+
+    for (const key of changedKeys) {
+      switch (key) {
+        case 'radar_sensitivity':
+          await this.setRadarSensitivity(newSettings.radar_sensitivity);
+          break;
+        case 'minimum_range':
+          await this.setDetectionRange(newSettings.minimum_range, newSettings.maximum_range || 6);
+          break;
+        case 'maximum_range':
+          await this.setDetectionRange(newSettings.minimum_range || 0, newSettings.maximum_range);
+          break;
+        case 'fading_time':
+          await this.setFadingTime(newSettings.fading_time);
+          break;
+        case 'detection_delay':
+          await this.setDetectionDelay(newSettings.detection_delay);
+          break;
       }
     }
   }
