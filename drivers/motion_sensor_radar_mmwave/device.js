@@ -15,10 +15,156 @@ class RadarMotionSensorMmwaveDevice extends BaseHybridDevice {
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit({ zclNode }).catch(err => this.error(err));
 
-    // Setup IAS Zone (SDK3 - based on Peter's success patterns)
-    await this.setupIASZone();
+    // Detect protocol: Tuya DP (0xEF00) vs IAS Zone
+    const endpoint = zclNode?.endpoints?.[1];
+    const hasTuyaCluster = !!(endpoint?.clusters?.tuya || endpoint?.clusters?.manuSpecificTuya || endpoint?.clusters?.[61184]);
+    const hasIASZone = !!endpoint?.clusters?.iasZone;
+
+    this.log(`[RADAR] Protocol detection: Tuya DP=${hasTuyaCluster}, IAS Zone=${hasIASZone}`);
+
+    if (hasTuyaCluster) {
+      // ZG-204ZM, _TZE200_rhgsbacq use Tuya DP protocol
+      await this._setupTuyaDPListener();
+    } else if (hasIASZone) {
+      // Setup IAS Zone (SDK3 - based on Peter's success patterns)
+      await this.setupIASZone();
+    }
 
     this.log('RadarMotionSensorMmwaveDevice initialized - Power source:', this.powerSource || 'unknown');
+  }
+
+  /**
+   * Setup Tuya DP listener for radar sensors (ZG-204ZM, _TZE200_rhgsbacq)
+   *
+   * DP Mapping from DeviceFingerprintDB:
+   * - DP 1: presence (boolean) -> alarm_motion
+   * - DP 9: sensitivity (0-9)
+   * - DP 15: battery (%)
+   * - DP 101: illuminance (lux) -> measure_luminance
+   */
+  async _setupTuyaDPListener() {
+    this.log('[RADAR] Setting up Tuya DP listener for radar sensor...');
+
+    const endpoint = this.zclNode?.endpoints?.[1];
+    if (!endpoint) {
+      this.log('[RADAR] ⚠️ No endpoint 1 found');
+      return;
+    }
+
+    // Find Tuya cluster
+    const tuyaCluster = endpoint.clusters?.tuya
+      || endpoint.clusters?.manuSpecificTuya
+      || endpoint.clusters?.[61184];
+
+    if (!tuyaCluster) {
+      this.log('[RADAR] ⚠️ No Tuya cluster found');
+      return;
+    }
+
+    this.log('[RADAR] ✅ Tuya cluster found, configuring DP listener...');
+
+    // Listen for DP reports via TuyaEF00Manager (if integrated)
+    if (this.tuyaEF00Manager) {
+      this.tuyaEF00Manager.on('dpReport', ({ dpId, value }) => {
+        this._handleRadarDP(dpId, value);
+      });
+      this.log('[RADAR] ✅ Using TuyaEF00Manager');
+      return;
+    }
+
+    // Fallback: Direct cluster listener
+    if (typeof tuyaCluster.on === 'function') {
+      tuyaCluster.on('dataReport', (data) => {
+        this.log('[RADAR] 📥 Raw dataReport:', JSON.stringify(data));
+        if (data && data.dp !== undefined) {
+          this._handleRadarDP(data.dp, data.value);
+        }
+      });
+    }
+
+    // Property-based listener
+    tuyaCluster.onDataReport = (data) => {
+      if (data && data.dp !== undefined) {
+        this._handleRadarDP(data.dp, data.value);
+      }
+    };
+
+    this.log('[RADAR] ✅ Tuya DP listener configured');
+
+    // Request initial data
+    this._requestRadarDPs();
+  }
+
+  /**
+   * Handle incoming Tuya DP for radar sensors
+   */
+  _handleRadarDP(dpId, value) {
+    this.log(`[RADAR] 📊 DP${dpId} = ${value}`);
+
+    switch (dpId) {
+      case 1: // Presence (boolean)
+        const presence = Boolean(value);
+        this.log(`[RADAR] 👤 Presence: ${presence ? 'DETECTED' : 'clear'}`);
+        if (this.hasCapability('alarm_motion')) {
+          this.setCapabilityValue('alarm_motion', presence).catch(this.error);
+        }
+        break;
+
+      case 9: // Sensitivity (0-9)
+        this.log(`[RADAR] 📐 Sensitivity: ${value}`);
+        break;
+
+      case 15: // Battery (%)
+        const battery = Math.min(100, Math.max(0, value));
+        this.log(`[RADAR] 🔋 Battery: ${battery}%`);
+        if (this.hasCapability('measure_battery')) {
+          this.setCapabilityValue('measure_battery', battery).catch(this.error);
+        }
+        break;
+
+      case 101: // Illuminance (lux)
+        this.log(`[RADAR] 💡 Illuminance: ${value} lux`);
+        if (this.hasCapability('measure_luminance')) {
+          this.setCapabilityValue('measure_luminance', value).catch(this.error);
+        }
+        break;
+
+      case 102: // Detection delay
+        this.log(`[RADAR] ⏱️ Detection delay: ${value}s`);
+        break;
+
+      case 103: // Fading time
+        this.log(`[RADAR] ⏱️ Fading time: ${value}s`);
+        break;
+
+      case 104: // Alternative illuminance DP
+        this.log(`[RADAR] 💡 Illuminance (DP104): ${value} lux`);
+        if (this.hasCapability('measure_luminance')) {
+          this.setCapabilityValue('measure_luminance', value).catch(this.error);
+        }
+        break;
+
+      default:
+        this.log(`[RADAR] ❓ Unknown DP${dpId} = ${value}`);
+    }
+  }
+
+  /**
+   * Request initial DP values from radar sensor
+   */
+  async _requestRadarDPs() {
+    this.log('[RADAR] Requesting initial DP values...');
+
+    // Use TuyaEF00Manager if available
+    if (this.tuyaEF00Manager) {
+      const dps = [1, 9, 15, 101]; // presence, sensitivity, battery, illuminance
+      for (const dp of dps) {
+        await this.tuyaEF00Manager.getData(dp).catch(err => {
+          this.log(`[RADAR] DP${dp} request failed:`, err.message);
+        });
+        await new Promise(r => setTimeout(r, 500));
+      }
+    }
   }
 
 
