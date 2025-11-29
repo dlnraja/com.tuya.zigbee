@@ -1,0 +1,223 @@
+# 🏭 Zigbee Brands & Manufacturers Database
+
+## 📊 Statistics
+- **Total Vendors (Zigbee2MQTT):** 529+
+- **Total Devices Supported:** 4797+
+- **Tuya White-Label Brands:** 100+
+
+---
+
+## 🔷 TUYA WHITE-LABEL BRANDS
+
+Tuya provides a platform that enables OEMs to create smart home devices. These brands use Tuya's Zigbee modules with manufacturer IDs like `_TZ3000_*`, `_TZE200_*`, `_TZE204_*`, etc.
+
+### Premium Tuya Brands
+| Brand | Country | Products | Website |
+|-------|---------|----------|---------|
+| **Moes** | China | TRV, Switches, Sensors | moes.co |
+| **Zemismart** | China | Curtains, Switches, Plugs | zemismart.com |
+| **BSEED** | China | Wall Switches, Sockets | bfrankelectron.com |
+| **Lonsonho** | China | Switches, Dimmers, Plugs | lonsonho.com |
+| **Aubess** | China | Sensors, Switches | - |
+| **Girier** | China | Dimmers, Switches | girier.com |
+| **Avatto** | China | TRV, Thermostats | avatto.com |
+| **Blitzwolf** | China | Plugs, Power Strips | blitzwolf.com |
+
+### European Retail Brands (Tuya-based)
+| Brand | Country | Retailer | Products |
+|-------|---------|----------|----------|
+| **Silvercrest** | Germany | Lidl | Plugs, Sensors, Bulbs |
+| **Livarno Lux** | Germany | Lidl | LED Bulbs, Strips |
+| **Melinera** | Germany | Lidl | Decorative Lighting |
+| **Malmbergs** | Sweden | - | Lighting, Plugs |
+| **Nedis** | Netherlands | - | Smart Home Range |
+| **Nous** | - | - | Plugs, Sensors |
+| **Woox** | Netherlands | - | Security, Sensors |
+| **Immax Neo** | Czech | - | Full Smart Home |
+| **Niceboy** | Czech | - | Sensors |
+| **TESLA Smart** | Czech | - | Sensors, Plugs |
+
+### Other Tuya White-Label Brands
+| Brand | Products |
+|-------|----------|
+| Smart9 | Switches, Dimmers |
+| Luminea | Bulbs |
+| Tenky | Sensors |
+| Tongou | DIN Rail Relays |
+| UseeLink | Power Strips |
+| YANDHI | - |
+| eWeLight | Bulbs |
+| GiEX | Soil Sensors |
+| Hangzlou | Water Sensors |
+| ONENUO | Water Sensors |
+| Samotech | Dimmers |
+| LoraTap | Buttons, Remotes |
+| Candeo | Dimmers |
+| CASAIA | Sensors |
+| Alice | Sockets |
+
+---
+
+## 🔶 NATIVE ZIGBEE BRANDS (Non-Tuya)
+
+### Major Ecosystem Brands
+| Brand | Protocol | Products | Notes |
+|-------|----------|----------|-------|
+| **Philips Hue** | Zigbee 3.0 | Bulbs, Strips, Accessories | Proprietary bridge |
+| **IKEA TRÅDFRI** | Zigbee 3.0 | Bulbs, Plugs, Blinds | Open ecosystem |
+| **Aqara** | Zigbee 3.0 | Sensors, Switches, Hubs | Xiaomi ecosystem |
+| **Xiaomi Mi** | Zigbee | Sensors (older) | Via Aqara hub |
+| **Sonoff** | Zigbee 3.0 | Switches, Sensors, Dongle | eWeLink app |
+| **OSRAM/LEDVANCE** | Zigbee | Bulbs | LIGHTIFY |
+| **Innr** | Zigbee 3.0 | Bulbs, Strips | Hue compatible |
+| **Gledopto** | Zigbee | LED Controllers | RGB/RGBW |
+| **HEIMAN** | Zigbee | Safety Sensors | Smoke, CO, Gas |
+| **Develco** | Zigbee | Professional | Commercial |
+
+### Chinese Ecosystem Brands
+| Brand | Products |
+|-------|----------|
+| **Aqara** | Full smart home range |
+| **Xiaomi Mijia** | Sensors, switches |
+| **Yeelight** | Smart lighting |
+| **Konke** | Sensors |
+| **Livolo** | Touch switches |
+
+### European Brands
+| Brand | Country | Products |
+|-------|---------|----------|
+| **ELKO** | Norway | Switches |
+| **Schneider Electric** | France | Wiser system |
+| **Legrand** | France | Switches |
+| **Busch-Jaeger** | Germany | Switches |
+| **BTicino** | Italy | Switches |
+| **Danfoss** | Denmark | TRV |
+| **Eurotronic** | Germany | TRV |
+| **Dresden Elektronik** | Germany | ConBee, Phoscon |
+
+### American Brands
+| Brand | Products |
+|-------|----------|
+| **Centralite** | Sensors |
+| **SmartThings** | Sensors (Samsung) |
+| **Iris** | Sensors (Lowe's - discontinued) |
+| **Sengled** | Bulbs |
+| **GE/Jasco** | Switches |
+| **Lutron** | Dimmers (proprietary) |
+| **Kwikset** | Smart locks |
+| **Yale** | Smart locks |
+| **Schlage** | Smart locks |
+
+---
+
+## 📋 MANUFACTURER NAME PREFIXES
+
+### Tuya Prefixes
+| Prefix | Description | Example |
+|--------|-------------|---------|
+| `_TZ3000_*` | Tuya Zigbee 3.0 | `_TZ3000_kdi2o9m6` |
+| `_TZ3210_*` | Tuya Zigbee 3.0 variant | `_TZ3210_fgwhjm9j` |
+| `_TZ3400_*` | Tuya Zigbee variant | `_TZ3400_keyjhapk` |
+| `_TZE200_*` | Tuya DP (TS0601) | `_TZE200_ztc6ggyl` |
+| `_TZE204_*` | Tuya DP variant | `_TZE204_qasjif9e` |
+| `_TZE284_*` | Tuya DP variant | `_TZE284_sgabhwa6` |
+| `_TYZB01_*` | Tuya Zigbee v1 | `_TYZB01_kvwjujy9` |
+| `_TYST11_*` | Tuya legacy | `_TYST11_qq9mpfhw` |
+| `TUYATEC-*` | Tuya Tech | `TUYATEC-g3gl6cgy` |
+
+### Model ID Patterns
+| ModelId | Device Type |
+|---------|-------------|
+| `TS0001` | 1-gang switch |
+| `TS0002` | 2-gang switch |
+| `TS0003` | 3-gang switch |
+| `TS0004` | 4-gang switch |
+| `TS0011` | 1-gang switch module |
+| `TS0012` | 2-gang switch module |
+| `TS0013` | 3-gang switch module |
+| `TS0014` | 4-gang switch module |
+| `TS0041` | 1-button remote |
+| `TS0042` | 2-button remote |
+| `TS0043` | 3-button remote |
+| `TS0044` | 4-button remote |
+| `TS0101` | Outdoor plug |
+| `TS011F` | Smart plug (various) |
+| `TS0115` | Power strip |
+| `TS0121` | Smart plug with metering |
+| `TS0201` | Temperature/humidity sensor |
+| `TS0202` | Motion sensor |
+| `TS0203` | Door/window sensor |
+| `TS0205` | Smoke sensor |
+| `TS0207` | Water leak sensor |
+| `TS0222` | Light sensor |
+| `TS0225` | Presence sensor |
+| `TS0501*` | Dimmers |
+| `TS0502*` | CCT lights |
+| `TS0503*` | RGB lights |
+| `TS0504*` | RGBW lights |
+| `TS0505*` | RGBCCT lights |
+| `TS0601` | Tuya DP device (varies) |
+| `TS110*` | Dimmers |
+| `TS130F` | Curtain motor |
+
+---
+
+## 🌐 DATA SOURCES
+
+### Primary Sources
+| Source | URL | Data |
+|--------|-----|------|
+| **Zigbee2MQTT** | github.com/Koenkk/zigbee2mqtt | 4797+ devices |
+| **Zigbee2MQTT Converters** | github.com/Koenkk/zigbee-herdsman-converters | Device definitions |
+| **ZHA Device Handlers** | github.com/zigpy/zha-device-handlers | Quirks |
+| **Blakadder DB** | zigbee.blakadder.com | Compatibility matrix |
+
+### Secondary Sources
+| Source | URL |
+|--------|-----|
+| **JohanBendz Tuya** | github.com/JohanBendz/com.tuya.zigbee |
+| **SmartThings Community** | community.smartthings.com |
+| **Home Assistant Forum** | community.home-assistant.io |
+| **Tuya Developer** | developer.tuya.com |
+
+---
+
+## 📊 DEVICE CATEGORIES
+
+| Category | Tuya Devices | Native Devices |
+|----------|--------------|----------------|
+| 💡 **Lighting** | 179 | 500+ |
+| 🎛️ **Switches** | 228 | 300+ |
+| 🔌 **Plugs** | 76 | 200+ |
+| 🌡️ **Climate Sensors** | 85 | 100+ |
+| 🚪 **Contact Sensors** | 65 | 150+ |
+| 👤 **Presence/Motion** | 86 | 200+ |
+| 🪟 **Covers/Blinds** | 115 | 100+ |
+| 🏠 **Thermostats/TRV** | 106 | 50+ |
+| 🚨 **Safety Sensors** | 45 | 80+ |
+| ⚡ **Energy Meters** | 69 | 50+ |
+| 🎮 **Remotes/Buttons** | 58 | 100+ |
+
+---
+
+## 🔗 USEFUL LINKS
+
+### Device Databases
+- https://www.zigbee2mqtt.io/supported-devices/
+- https://zigbee.blakadder.com/
+- https://www.phoscon.de/en/conbee2/compatible
+
+### Documentation
+- https://www.zigbee2mqtt.io/advanced/support-new-devices/02_support_new_tuya_devices.html
+- https://developer.tuya.com/en/docs/iot/
+- https://github.com/zigpy/zha-device-handlers/wiki
+
+### Communities
+- https://community.home-assistant.io/
+- https://community.smartthings.com/
+- https://community.homey.app/
+
+---
+
+*Last updated: 2025-11-29*
+*Data sources: Zigbee2MQTT, Blakadder, JohanBendz, SmartThings*

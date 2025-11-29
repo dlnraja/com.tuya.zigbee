@@ -241,6 +241,29 @@ https://www.matteralpha.com
 | **Categories** | 27 |
 | **Sources Used** | 15+ |
 | **Contributors Credited** | 50+ |
+| **Flow Cards** | 570 |
+| **Drivers** | 60 |
+| **Vendors Supported** | 529+ |
+
+---
+
+## 🏭 SUPPORTED BRANDS
+
+### Tuya White-Label Brands (100+)
+**Premium:** Moes, Zemismart, BSEED, Lonsonho, Aubess, Girier, Avatto, Blitzwolf
+
+**European Retail:** Silvercrest (Lidl), Livarno Lux, Malmbergs, Nedis, Nous, Woox, Immax Neo, Niceboy, TESLA Smart
+
+**Others:** Smart9, Luminea, Tenky, Tongou, UseeLink, eWeLight, GiEX, Hangzlou, ONENUO, Samotech, LoraTap, Candeo, CASAIA, Alice
+
+### Native Zigbee Brands
+**Major:** Philips Hue, IKEA TRÅDFRI, Aqara, Xiaomi, Sonoff, OSRAM, Innr, Gledopto, HEIMAN
+
+**European:** ELKO, Schneider Electric, Legrand, Busch-Jaeger, BTicino, Danfoss, Eurotronic
+
+**American:** Centralite, SmartThings, Sengled, GE/Jasco, Kwikset, Yale, Schlage
+
+📋 **Full brands list:** See [BRANDS.md](./BRANDS.md)
 
 ---
 
