@@ -1185,5 +1185,9 @@
   "5.2.28": {
     "en": "HOTFIX - Driver migration alias system for consolidated drivers. Added climate sensor _TZE284_vvmbj46n (ZTH05Z). Fixed climate_sensor_soil alias.",
     "fr": "CORRECTIF - Systeme alias migration pour drivers consolides. Ajout capteur climatique _TZE284_vvmbj46n (ZTH05Z)."
+  },
+  "5.2.29": {
+    "en": "DEVICE HANDLER FIXES - Soil sensor _TZE284_oitavov2 DP handling for temp/humidity/battery. SOS button _TZ3000_0dumfk2z battery via DP101. Switch 2-gang mains-powered (no battery). New DeviceFingerprintDB for consolidated device knowledge.",
+    "fr": "CORRECTIONS HANDLERS - Capteur sol _TZE284_oitavov2 DPs temp/humidite/batterie. Bouton SOS _TZ3000_0dumfk2z batterie DP101. Switch 2-gang secteur. Nouvelle base empreintes appareils."
   }
 }
