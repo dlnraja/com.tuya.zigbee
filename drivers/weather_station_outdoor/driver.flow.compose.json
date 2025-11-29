@@ -69,6 +69,10 @@
         "en": "Outdoor temperature above",
         "fr": "Température extérieure supérieure à"
       },
+      "titleFormatted": {
+        "en": "Outdoor temperature is above [[temperature]]°C",
+        "fr": "Température extérieure supérieure à [[temperature]]°C"
+      },
       "args": [
         {
           "name": "temperature",
@@ -83,6 +87,10 @@
       "title": {
         "en": "Outdoor temperature below",
         "fr": "Température extérieure inférieure à"
+      },
+      "titleFormatted": {
+        "en": "Outdoor temperature is below [[temperature]]°C",
+        "fr": "Température extérieure inférieure à [[temperature]]°C"
       },
       "args": [
         {

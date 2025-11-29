@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.2.30",
+  "version": "5.2.33",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.2.30: Emergency fix system - Auto-repair migrations, force DP collection, fix problematic devices on startup.",
-    "fr": "V5.2.30: Système correction urgence - Réparation auto migrations, collecte DP forcée, correction appareils au démarrage."
+    "en": "V5.2.33: Massive database enrichment - 103 devices from Zigbee2MQTT, ZHA quirks, Blakadder & Tuya docs. Includes climate sensors, radar presence, soil sensors, TRV thermostats, curtain motors.",
+    "fr": "V5.2.33: Enrichissement massif BDD - 103 appareils de Zigbee2MQTT, ZHA quirks, Blakadder & Tuya docs. Capteurs climat, présence radar, sol, TRV, moteurs rideaux."
   },
   "category": "appliances",
   "permissions": [],
@@ -5347,6 +5347,12 @@
           "nl": "Apparaat is online",
           "de": "Gerät ist online"
         },
+        "titleFormatted": {
+          "en": "[[device]] is online",
+          "fr": "[[device]] est en ligne",
+          "nl": "[[device]] is online",
+          "de": "[[device]] ist online"
+        },
         "hint": {
           "en": "Check if the device is currently available",
           "fr": "Vérifier si l'appareil est actuellement disponible"
@@ -5420,6 +5426,10 @@
           "en": "CO2 level is above",
           "fr": "Niveau CO2 supérieur à"
         },
+        "titleFormatted": {
+          "en": "CO2 level is above [[co2]] ppm",
+          "fr": "Niveau CO2 supérieur à [[co2]] ppm"
+        },
         "args": [
           {
             "type": "device",
@@ -5439,6 +5449,10 @@
         "title": {
           "en": "CO2 level is below",
           "fr": "Niveau CO2 inférieur à"
+        },
+        "titleFormatted": {
+          "en": "CO2 level is below [[co2]] ppm",
+          "fr": "Niveau CO2 inférieur à [[co2]] ppm"
         },
         "args": [
           {
@@ -5885,6 +5899,10 @@
           "en": "Outdoor temperature above",
           "fr": "Température extérieure supérieure à"
         },
+        "titleFormatted": {
+          "en": "Outdoor temperature is above [[temperature]]°C",
+          "fr": "Température extérieure supérieure à [[temperature]]°C"
+        },
         "args": [
           {
             "type": "device",
@@ -5904,6 +5922,10 @@
         "title": {
           "en": "Outdoor temperature below",
           "fr": "Température extérieure inférieure à"
+        },
+        "titleFormatted": {
+          "en": "Outdoor temperature is below [[temperature]]°C",
+          "fr": "Température extérieure inférieure à [[temperature]]°C"
         },
         "args": [
           {
@@ -5956,6 +5978,12 @@
           "fr": "Identifier appareil (clignoter/biper)",
           "nl": "Identificeer apparaat",
           "de": "Gerät identifizieren"
+        },
+        "titleFormatted": {
+          "en": "Identify [[device]]",
+          "fr": "Identifier [[device]]",
+          "nl": "Identificeer [[device]]",
+          "de": "[[device]] identifizieren"
         },
         "hint": {
           "en": "Make the device blink or beep to identify it",
