@@ -1,39 +1,29 @@
 'use strict';
 
-// MIGRATED TO HYBRID SYSTEM v2.0
-const HybridDriverSystem = require('../../lib/HybridDriverSystem');
-const BatteryManagerV4 = require('../../lib/BatteryManagerV4');
+const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
 
 /**
- * switch_2gang - Hybrid-Enhanced Driver
+ * Switch 2-Gang Device - Mains Powered
  *
- * MIGRATION: Original driver enhanced with Hybrid System
- * - Auto-adaptive capabilities
- * - Energy-aware management
- * - Smart detection
+ * Supported: TS0002 _TZ3000_h1ipgkwn and variants
+ *
+ * Protocol: Standard Zigbee OnOff clusters
+ * Power: Mains powered (NO battery)
  */
+class SmartSwitch2gangHybridDevice extends BaseHybridDevice {
 
-// Create hybrid base
-const HybridDevice = HybridDriverSystem.createHybridDevice();
-
-'use strict';
-
-const SwitchDevice = require('../../lib/devices/SwitchDevice');
-const IASZoneEnroller = require('../../lib/IASZoneEnroller');
-const batteryConverter = require('../../lib/tuya-engine/converters/battery');
-const FallbackSystem = require('../../lib/helpers/FallbackSystem');
-
-class SmartSwitch2gangHybridDevice extends HybridDevice {
+  // Force mains powered - NO battery management
+  get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
-    // Hybrid system initialization
-    await super.onNodeInit({ zclNode });
+    this.log('═══════════════════════════════════════════════════');
+    this.log('[SWITCH-2GANG] Initializing (Mains Powered)...');
+    this.log('═══════════════════════════════════════════════════');
 
-    // Original initialization below:
-    // Initialize hybrid base (power detection)
-    await super.onNodeInit({ zclNode });
+    // Initialize base
+    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
 
-    this.log('smart_switch_2gang_hybrid device initialized');
+    this.log('[SWITCH-2GANG] ✅ Initialized');
 
     // Register capabilities
     // Register on/off capability
