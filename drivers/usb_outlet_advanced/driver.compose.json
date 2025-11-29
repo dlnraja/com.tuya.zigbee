@@ -1,15 +1,45 @@
 {
   "name": {
-    "en": "Usb Outlet Advanced",
-    "fr": "Usb Outlet Advanced"
+    "en": "Multi-Gang USB Socket",
+    "fr": "Prise Multi-Gang USB"
   },
   "class": "socket",
   "capabilities": [
+    "onoff",
+    "onoff.socket2",
+    "onoff.usb1",
+    "onoff.usb2",
     "measure_power",
     "meter_power",
     "measure_voltage",
     "measure_current"
   ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Socket 1",
+        "fr": "Prise 1"
+      }
+    },
+    "onoff.socket2": {
+      "title": {
+        "en": "Socket 2",
+        "fr": "Prise 2"
+      }
+    },
+    "onoff.usb1": {
+      "title": {
+        "en": "USB 1",
+        "fr": "USB 1"
+      }
+    },
+    "onoff.usb2": {
+      "title": {
+        "en": "USB 2",
+        "fr": "USB 2"
+      }
+    }
+  },
   "energy": {
     "approximation": {
       "usageConstant": 0.5
