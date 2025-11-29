@@ -8,6 +8,9 @@ This application relies heavily on the incredible work of the Zigbee open-source
 > *"Standing on the shoulders of giants"* - This app is a tribute to all the developers, testers,
 > and contributors who have spent countless hours reverse-engineering Zigbee devices and sharing their knowledge.
 
+> **Philosophy:** S'appuyer sur les bases de données communautaires existantes est la meilleure approche.
+> Ces projets open-source recensent des milliers d'appareils et constituent une ressource inestimable.
+
 ---
 
 ## 📦 PRIMARY DATA SOURCES
@@ -25,6 +28,10 @@ This application relies heavily on the incredible work of the Zigbee open-source
 **Key Contributors:**
 - [@Koenkk](https://github.com/Koenkk) - Creator & Lead Maintainer
 - [@Nerivec](https://github.com/Nerivec) - Core Developer
+- [@tube0013](https://github.com/tube0013) - Major Contributor, Device Support
+- [@kiwinick](https://github.com/kiwinick) - Device Definitions
+- [@hedger](https://github.com/hedger) - Core Development
+- [@robertsLando](https://github.com/robertsLando) - Core Development
 - [@sjorge](https://github.com/sjorge) - Major Contributor
 - [@arteck](https://github.com/arteck) - Tuya Device Expert
 - [@Hedda](https://github.com/Hedda) - Documentation

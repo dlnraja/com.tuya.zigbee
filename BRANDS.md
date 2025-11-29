@@ -61,18 +61,21 @@ Tuya provides a platform that enables OEMs to create smart home devices. These b
 ## 🔶 NATIVE ZIGBEE BRANDS (Non-Tuya)
 
 ### Major Ecosystem Brands
-| Brand | Protocol | Products | Notes |
-|-------|----------|----------|-------|
-| **Philips Hue** | Zigbee 3.0 | Bulbs, Strips, Accessories | Proprietary bridge |
-| **IKEA TRÅDFRI** | Zigbee 3.0 | Bulbs, Plugs, Blinds | Open ecosystem |
-| **Aqara** | Zigbee 3.0 | Sensors, Switches, Hubs | Xiaomi ecosystem |
-| **Xiaomi Mi** | Zigbee | Sensors (older) | Via Aqara hub |
-| **Sonoff** | Zigbee 3.0 | Switches, Sensors, Dongle | eWeLink app |
-| **OSRAM/LEDVANCE** | Zigbee | Bulbs | LIGHTIFY |
-| **Innr** | Zigbee 3.0 | Bulbs, Strips | Hue compatible |
-| **Gledopto** | Zigbee | LED Controllers | RGB/RGBW |
-| **HEIMAN** | Zigbee | Safety Sensors | Smoke, CO, Gas |
-| **Develco** | Zigbee | Professional | Commercial |
+| Brand | Protocol | Products | Proprietary Overlay? |
+|-------|----------|----------|---------------------|
+| **Aqara** | Zigbee 3.0 | Sensors, Switches, Hubs | ✅ Oui (rapports batterie, commandes) |
+| **Sonoff / ITEAD** | Zigbee 3.0 | Prises, Switches, Dongles | ❌ Non (standard) |
+| **Tuya / Moes** | Zigbee 3.0 | Prises, Switches, Variateurs | ✅ Oui (mesure énergie, commandes) |
+| **Philips Hue** | Zigbee 3.0 | Bulbs, Strips, Accessories | ✅ Oui (mises à jour firmware) |
+| **IKEA TRÅDFRI** | Zigbee 3.0 | Bulbs, Plugs, Blinds | ❌ Non (standard) |
+| **Innr** | Zigbee 3.0 | Bulbs, Strips | ❌ Non (standard) |
+| **Gledopto** | Zigbee | LED Controllers RGB/RGBW | ✅ Oui (gestion couleurs) |
+| **Samsung SmartThings** | Zigbee | Capteurs, Prises, Hubs | ✅ Oui (intégration écosystème) |
+| **Schneider Electric / Wiser** | Zigbee | Switches, Variateurs | ❌ Non (standard) |
+| **Legrand / Bticino** | Zigbee | Switches, Prises, Modules | ❌ Non (standard) |
+| **OSRAM/LEDVANCE** | Zigbee | Bulbs | ❌ Non (LIGHTIFY) |
+| **HEIMAN** | Zigbee | Safety Sensors | ❌ Non (standard) |
+| **Develco** | Zigbee | Professional | ❌ Non (commercial) |
 
 ### Chinese Ecosystem Brands
 | Brand | Products |
@@ -164,6 +167,15 @@ Tuya provides a platform that enables OEMs to create smart home devices. These b
 
 ## 🌐 DATA SOURCES
 
+### 🗃️ Sources Principales pour les Drivers Zigbee
+
+| Source | Description | Contributeurs Clés |
+|--------|-------------|-------------------|
+| **Zigbee2MQTT** | **Source la plus exhaustive** : 4797 appareils de 529 fabricants. Inclut les "converters" pour gérer les surcouches propriétaires. | **@Koenkk** (créateur), **@tube0013**, **@kiwinick**, **@hedger**, **@robertsLando** |
+| **Blakadder Database** | Base communautaire alternative, compatible ZHA, Z2M et autres. 2693+ appareils. | **@blakadder** (créateur) |
+| **CSA (Connectivity Standards Alliance)** | Organisation officielle derrière la norme Zigbee. Spécifications techniques et liste des membres. | [csa-iot.org](https://csa-iot.org/all-solutions/zigbee/) |
+| **ZHA Device Handlers** | Quirks pour Home Assistant | **@dmulcahey** (créateur), **@Adminiuga**, **@puddly** |
+
 ### Primary Sources
 | Source | URL | Data |
 |--------|-----|------|
@@ -171,6 +183,7 @@ Tuya provides a platform that enables OEMs to create smart home devices. These b
 | **Zigbee2MQTT Converters** | github.com/Koenkk/zigbee-herdsman-converters | Device definitions |
 | **ZHA Device Handlers** | github.com/zigpy/zha-device-handlers | Quirks |
 | **Blakadder DB** | zigbee.blakadder.com | Compatibility matrix |
+| **CSA** | csa-iot.org | Official Zigbee specs |
 
 ### Secondary Sources
 | Source | URL |
@@ -219,5 +232,28 @@ Tuya provides a platform that enables OEMs to create smart home devices. These b
 
 ---
 
+## 💡 COMMENT INTÉGRER CES SOURCES
+
+Pour l'application Universal Tuya Zigbee :
+
+1. **Consulter régulièrement les dépôts** : Les listes de Zigbee2MQTT et Blakadder sont constamment mises à jour avec de nouveaux appareils et correctifs.
+
+2. **Étudier les "converters" et "quirks"** : Le code source de Zigbee2MQTT est une mine d'or pour comprendre comment gérer les surcouches propriétaires des fabricants comme Tuya ou Aqara.
+
+3. **Adapter la logique** : L'adaptation de cette logique peut résoudre les problèmes de données et de batterie.
+
+4. **Contribuer en retour** : Si vous parvenez à ajouter le support d'un appareil manquant, soumettez une "pull request" à ces projets.
+
+### 🔧 Gestion des Surcouches Propriétaires
+
+| Fabricant | Type de Surcouche | Solution |
+|-----------|-------------------|----------|
+| **Tuya** | DP (DataPoints) via cluster 0xEF00 | Converters Z2M, TuyaQuirkBuilder ZHA |
+| **Aqara** | Rapports batterie custom | Quirks ZHA spécifiques |
+| **Gledopto** | Gestion couleurs non-standard | Converters dédiés |
+| **Philips Hue** | Firmware updates | OTA repository |
+
+---
+
 *Last updated: 2025-11-29*
-*Data sources: Zigbee2MQTT, Blakadder, JohanBendz, SmartThings*
+*Data sources: Zigbee2MQTT, Blakadder, JohanBendz, SmartThings, CSA*
