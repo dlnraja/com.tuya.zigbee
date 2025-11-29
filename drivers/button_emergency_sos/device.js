@@ -1,46 +1,138 @@
 'use strict';
 
-// MIGRATED TO HYBRID SYSTEM v2.0
-const HybridDriverSystem = require('../../lib/HybridDriverSystem');
-const BatteryManagerV4 = require('../../lib/BatteryManagerV4');
+const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
 
 /**
- * button_emergency_sos - Hybrid-Enhanced Driver
+ * SOS Emergency Button Device - Enhanced
  *
- * MIGRATION: Original driver enhanced with Hybrid System
- * - Auto-adaptive capabilities
- * - Energy-aware management
- * - Smart detection
+ * Supported: TS0215A _TZ3000_0dumfk2z
+ *
+ * Protocol: IAS Zone for button press + Tuya DP or genPowerCfg for battery
+ *
+ * DP Mapping (from settings tuya_dp_configuration):
+ * - DP 1: button_press
+ * - DP 101: battery_percentage
  */
+class SosEmergencyButtonDevice extends BaseHybridDevice {
 
-// Create hybrid base
-const HybridDevice = HybridDriverSystem.createHybridDevice();
-
-'use strict';
-
-const ButtonDevice = require('../../lib/devices/ButtonDevice');
-
-/**
- * SosEmergencyButtonDevice - Unified Hybrid Driver
- * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
- * Dynamically manages capabilities based on power source
- */
-class SosEmergencyButtonDevice extends HybridDevice {
+  // Force battery powered
+  get mainsPowered() { return false; }
 
   async onNodeInit({ zclNode }) {
-    // Hybrid system initialization
-    await super.onNodeInit({ zclNode });
+    this.log('═══════════════════════════════════════════════════');
+    this.log('[SOS-BUTTON] Initializing...');
+    this.log('═══════════════════════════════════════════════════');
 
-    // Original initialization below:
-    this.log('SosEmergencyButtonDevice initializing...');
-
-    // Initialize base FIRST (auto power detection + dynamic capabilities)
+    // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit({ zclNode }).catch(err => this.error(err));
 
-    // THEN setup IAS Zone (zclNode now exists)
+    // Parse DP configuration from settings
+    this._parseDPConfiguration();
+
+    // Setup IAS Zone for button press detection
     await this.setupIasZone();
 
-    this.log('SosEmergencyButtonDevice initialized - Power source:', this.powerSource || 'unknown');
+    // Setup Tuya DP listener for battery
+    await this._setupTuyaDPListener();
+
+    this.log('[SOS-BUTTON] ✅ Initialized');
+  }
+
+  /**
+   * Parse DP configuration from settings
+   */
+  _parseDPConfiguration() {
+    try {
+      const configJson = this.getSetting('tuya_dp_configuration') || '{}';
+      this.dpConfig = JSON.parse(configJson);
+      this.log('[SOS-BUTTON] 📋 DP Config:', this.dpConfig);
+    } catch (err) {
+      this.error('[SOS-BUTTON] Invalid tuya_dp_configuration JSON:', err.message);
+      this.dpConfig = { '1': 'button_press', '101': 'battery_percentage' };
+    }
+  }
+
+  /**
+   * Setup Tuya DP listener for battery reports
+   */
+  async _setupTuyaDPListener() {
+    this.log('[SOS-BUTTON] Setting up Tuya DP listener...');
+
+    // Listen for dpReport events from TuyaEF00Manager
+    if (this.tuyaEF00Manager) {
+      this.tuyaEF00Manager.on('dpReport', ({ dpId, value }) => {
+        this._handleSOSDP(dpId, value);
+      });
+      this.log('[SOS-BUTTON] ✅ Using TuyaEF00Manager for DP handling');
+      return;
+    }
+
+    // Fallback: Direct cluster listener
+    const endpoint = this.zclNode?.endpoints?.[1];
+    if (!endpoint) return;
+
+    const tuyaCluster = endpoint.clusters.tuya
+      || endpoint.clusters.tuyaSpecific
+      || endpoint.clusters[61184];
+
+    if (tuyaCluster && typeof tuyaCluster.on === 'function') {
+      tuyaCluster.on('dataReport', (data) => {
+        if (data && data.dp !== undefined) {
+          this._handleSOSDP(data.dp, data.value);
+        }
+      });
+      this.log('[SOS-BUTTON] ✅ Direct Tuya cluster listener configured');
+    }
+  }
+
+  /**
+   * Handle incoming Tuya DP
+   */
+  _handleSOSDP(dpId, value) {
+    const mapping = this.dpConfig[String(dpId)];
+    this.log(`[SOS-BUTTON] 📊 DP${dpId} = ${value} (mapping: ${mapping || 'unknown'})`);
+
+    if (mapping === 'button_press') {
+      this.log('[SOS-BUTTON] 🆘 BUTTON PRESSED via DP!');
+      this._triggerButtonPress();
+    } else if (mapping === 'battery_percentage') {
+      this._setBattery(value);
+    } else {
+      // Try default mappings
+      if (dpId === 1) {
+        this._triggerButtonPress();
+      } else if (dpId === 101 || dpId === 15 || dpId === 4) {
+        this._setBattery(value);
+      }
+    }
+  }
+
+  /**
+   * Trigger button press flow
+   */
+  _triggerButtonPress() {
+    if (this.driver.sosButtonPressedTrigger) {
+      this.driver.sosButtonPressedTrigger.trigger(this, {}, {}).catch(this.error);
+    }
+
+    if (this.hasCapability('alarm_generic')) {
+      this.setCapabilityValue('alarm_generic', true).catch(this.error);
+      setTimeout(() => {
+        this.setCapabilityValue('alarm_generic', false).catch(this.error);
+      }, 5000);
+    }
+  }
+
+  /**
+   * Set battery capability
+   */
+  _setBattery(value) {
+    const battery = Math.min(100, Math.max(0, value));
+    this.log(`[SOS-BUTTON] 🔋 Battery: ${battery}%`);
+
+    if (this.hasCapability('measure_battery')) {
+      this.setCapabilityValue('measure_battery', battery).catch(this.error);
+    }
   }
 
   /**
