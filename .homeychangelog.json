@@ -1189,5 +1189,9 @@
   "5.2.29": {
     "en": "DEVICE HANDLER FIXES - Soil sensor _TZE284_oitavov2 DP handling for temp/humidity/battery. SOS button _TZ3000_0dumfk2z battery via DP101. Switch 2-gang mains-powered (no battery). New DeviceFingerprintDB for consolidated device knowledge.",
     "fr": "CORRECTIONS HANDLERS - Capteur sol _TZE284_oitavov2 DPs temp/humidite/batterie. Bouton SOS _TZ3000_0dumfk2z batterie DP101. Switch 2-gang secteur. Nouvelle base empreintes appareils."
+  },
+  "5.2.30": {
+    "fr": "SYSTEME CORRECTION URGENCE - Reparation auto migrations au demarrage. Collecte DP forcee pour appareils silencieux. Correction capabilities pour tous les devices problematiques.",
+    "en": "EMERGENCY FIX SYSTEM - Auto-repair stuck migrations on startup. Force DP collection for silent devices. Fix capabilities for _TZE284_vvmbj46n, _TZE284_oitavov2, _TZE200_rhgsbacq, _TZ3000_0dumfk2z. DeviceFingerprintDB integration."
   }
 }
