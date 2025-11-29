@@ -15,22 +15,136 @@ class RadarMotionSensorMmwaveDevice extends BaseHybridDevice {
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit({ zclNode }).catch(err => this.error(err));
 
-    // Detect protocol: Tuya DP (0xEF00) vs IAS Zone
+    // Detect available clusters
     const endpoint = zclNode?.endpoints?.[1];
     const hasTuyaCluster = !!(endpoint?.clusters?.tuya || endpoint?.clusters?.manuSpecificTuya || endpoint?.clusters?.[61184]);
     const hasIASZone = !!endpoint?.clusters?.iasZone;
+    const hasTemperature = !!endpoint?.clusters?.temperatureMeasurement;
+    const hasHumidity = !!endpoint?.clusters?.relativeHumidity;
+    const hasIlluminance = !!endpoint?.clusters?.illuminanceMeasurement;
+    const hasBattery = !!endpoint?.clusters?.powerConfiguration;
 
-    this.log(`[RADAR] Protocol detection: Tuya DP=${hasTuyaCluster}, IAS Zone=${hasIASZone}`);
+    this.log(`[RADAR] Clusters: Tuya=${hasTuyaCluster}, IAS=${hasIASZone}, Temp=${hasTemperature}, Hum=${hasHumidity}, Lux=${hasIlluminance}, Batt=${hasBattery}`);
 
+    // Setup Tuya DP for presence (primary)
     if (hasTuyaCluster) {
-      // ZG-204ZM, _TZE200_rhgsbacq use Tuya DP protocol
       await this._setupTuyaDPListener();
     } else if (hasIASZone) {
-      // Setup IAS Zone (SDK3 - based on Peter's success patterns)
       await this.setupIASZone();
     }
 
+    // ZG-204ZM is a 5-in-1 multi-sensor like Aqara FP300!
+    // Setup standard ZCL clusters for additional sensors
+    await this._setupZCLClusters({ hasTemperature, hasHumidity, hasIlluminance, hasBattery });
+
     this.log('RadarMotionSensorMmwaveDevice initialized - Power source:', this.powerSource || 'unknown');
+  }
+
+  /**
+   * Setup standard ZCL clusters for multi-sensor support
+   * ZG-204ZM (_TZE200_rhgsbacq) has: temperature, humidity, illuminance, battery
+   * Similar to Aqara FP300 5-in-1 sensor
+   */
+  async _setupZCLClusters({ hasTemperature, hasHumidity, hasIlluminance, hasBattery }) {
+    const { CLUSTER } = require('zigbee-clusters');
+
+    // Temperature (cluster 1026)
+    if (hasTemperature && this.hasCapability('measure_temperature')) {
+      this.log('[RADAR] Setting up temperature cluster...');
+      this.registerCapability('measure_temperature', CLUSTER.TEMPERATURE_MEASUREMENT, {
+        get: 'measuredValue',
+        report: 'measuredValue',
+        reportParser: value => value !== -32768 ? Math.round(value) / 100 : null
+      });
+    }
+
+    // Humidity (cluster 1029)
+    if (hasHumidity && this.hasCapability('measure_humidity')) {
+      this.log('[RADAR] Setting up humidity cluster...');
+      this.registerCapability('measure_humidity', CLUSTER.RELATIVE_HUMIDITY_MEASUREMENT, {
+        get: 'measuredValue',
+        report: 'measuredValue',
+        reportParser: value => value !== 32768 ? Math.round(value) / 100 : null
+      });
+    }
+
+    // Illuminance (cluster 1024)
+    if (hasIlluminance && this.hasCapability('measure_luminance')) {
+      this.log('[RADAR] Setting up illuminance cluster (ZCL)...');
+      this.registerCapability('measure_luminance', CLUSTER.ILLUMINANCE_MEASUREMENT, {
+        get: 'measuredValue',
+        report: 'measuredValue',
+        reportParser: value => value > 0 ? Math.round(Math.pow(10, (value - 1) / 10000)) : 0
+      });
+    }
+
+    // Battery (cluster 1)
+    if (hasBattery && this.hasCapability('measure_battery')) {
+      this.log('[RADAR] Setting up battery cluster...');
+      this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
+        get: 'batteryPercentageRemaining',
+        report: 'batteryPercentageRemaining',
+        reportParser: value => Math.round(value / 2) // 0-200 -> 0-100%
+      });
+    }
+
+    // Configure attribute reporting for all clusters
+    try {
+      const reportingConfig = [];
+
+      if (hasTemperature) {
+        reportingConfig.push({
+          endpointId: 1,
+          cluster: CLUSTER.TEMPERATURE_MEASUREMENT,
+          attributeName: 'measuredValue',
+          minInterval: 60,
+          maxInterval: 3600,
+          minChange: 50 // 0.5°C
+        });
+      }
+
+      if (hasHumidity) {
+        reportingConfig.push({
+          endpointId: 1,
+          cluster: CLUSTER.RELATIVE_HUMIDITY_MEASUREMENT,
+          attributeName: 'measuredValue',
+          minInterval: 60,
+          maxInterval: 3600,
+          minChange: 100 // 1%
+        });
+      }
+
+      if (hasIlluminance) {
+        reportingConfig.push({
+          endpointId: 1,
+          cluster: CLUSTER.ILLUMINANCE_MEASUREMENT,
+          attributeName: 'measuredValue',
+          minInterval: 60,
+          maxInterval: 3600,
+          minChange: 500
+        });
+      }
+
+      if (hasBattery) {
+        reportingConfig.push({
+          endpointId: 1,
+          cluster: CLUSTER.POWER_CONFIGURATION,
+          attributeName: 'batteryPercentageRemaining',
+          minInterval: 3600,
+          maxInterval: 43200,
+          minChange: 2
+        });
+      }
+
+      if (reportingConfig.length > 0) {
+        await this.configureAttributeReporting(reportingConfig).catch(err => {
+          this.log('[RADAR] Reporting config failed (non-critical):', err.message);
+        });
+        this.log('[RADAR] ZCL reporting configured');
+      }
+    } catch (err) {
+      this.log('[RADAR] ZCL setup error:', err.message);
+    }
   }
 
   /**

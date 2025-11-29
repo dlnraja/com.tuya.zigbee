@@ -6,8 +6,10 @@
   "class": "sensor",
   "capabilities": [
     "alarm_motion",
-    "measure_battery",
-    "measure_luminance"
+    "measure_temperature",
+    "measure_humidity",
+    "measure_luminance",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [

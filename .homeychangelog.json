@@ -1,4 +1,8 @@
 {
+  "5.2.42": {
+    "en": "🎯 ZG-204ZM 5-IN-1 MULTI-SENSOR (Like Aqara FP300!)\n\nThanks to Laborhexe's device interview, discovered ZG-204ZM has:\n\n📊 Standard ZCL Clusters:\n- 1026 (temperatureMeasurement): 22.5°C\n- 1029 (relativeHumidity): 54.3%\n- 1024 (illuminanceMeasurement): 1 lux\n- 1 (powerConfiguration): 100% battery\n- 1280 (iasZone): motion sensor\n- 61184 (tuya): Tuya DP protocol\n\n✅ New Capabilities:\n- measure_temperature\n- measure_humidity\n- measure_luminance (ZCL + Tuya DP)\n- measure_battery (ZCL)\n- alarm_motion (Tuya DP)\n\n🔧 Driver Updates:\n- _setupZCLClusters() for standard clusters\n- Dual protocol: Tuya DP + ZCL\n- Automatic attribute reporting\n\n📋 Affected: _TZE200_rhgsbacq (ZG-204ZM, ZG-204ZL)\n\n👥 Thanks: Laborhexe (Community Forum)",
+    "fr": "🎯 ZG-204ZM MULTI-CAPTEUR 5-EN-1 (Comme Aqara FP300!)\n\nGrâce à l'interview de Laborhexe:\n- Température + Humidité + Luminosité\n- Batterie + Présence\n- Double protocole: Tuya DP + ZCL standard"
+  },
   "5.2.41": {
     "en": "📦 DATABASE EXPANSION\n\n+14 radar/presence sensors from community sources:\n- _TZE201_ztc6ggyl, _TZE202_ztc6ggyl, _TZE203_ztc6ggyl\n- _TZE204_qasjif9e, _TZE204_ijxvkhd0\n- _TZE200_sgpeacqp, _TZE204_xsm7l9xa\n- _TZE200_wukb7rhc, _TZE200_xpq2rzhq\n- _TZE200_holel4dk, _TZE200_jva8ink8\n- _TZE200_lyetpprm, _TZE204_ztqnh5cg\n- _TZE204_7gclukjs, _TZE200_2aaelwxk\n\n📊 Database: 1372 devices\n📚 Sources: JohanBendz/com.tuya.zigbee, Zigbee2MQTT, SmartThings Community",
     "fr": "📦 EXPANSION BDD\n\n+14 capteurs radar/présence:\n- ZY-M100 variantes\n- Nouveaux modèles communauté\n\n📊 Base: 1372 appareils"
