@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.2.38",
+  "version": "5.2.39",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,7 +9,7 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.2.38: Add curtain motor + TS011F 20A plug. V5.2.37: Fix ZG-204ZM radar Tuya DP support + illuminance. V5.2.36: Fix TS0044 4-button remote + ZG-204ZM radar. V5.2.35: Fix TS0201 battery + TS0201 support. MEGA database enrichment - 1365 Tuya devices from Zigbee2MQTT fresh pull. 228 switches, 179 lights, 113 covers, 106 thermostats, 85 climate sensors, 77 presence sensors, 69 energy meters.",
+    "en": "V5.2.39: Major driver enhancements (Tuya DP support). V5.2.38: Add curtain motor + TS011F 20A plug. V5.2.37: Fix ZG-204ZM radar Tuya DP support + illuminance. V5.2.36: Fix TS0044 4-button remote + ZG-204ZM radar. V5.2.35: Fix TS0201 battery + TS0201 support. MEGA database enrichment - 1365 Tuya devices from Zigbee2MQTT fresh pull. 228 switches, 179 lights, 113 covers, 106 thermostats, 85 climate sensors, 77 presence sensors, 69 energy meters.",
     "fr": "V5.2.34: Enrichissement MEGA BDD - 1365 appareils Tuya de Zigbee2MQTT. 228 switches, 179 lumières, 113 volets, 106 thermostats, 85 capteurs climat, 77 présence, 69 compteurs énergie."
   },
   "category": "appliances",
