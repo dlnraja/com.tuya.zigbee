@@ -1181,5 +1181,9 @@
   "5.2.27": {
     "fr": "CONSOLIDATION MAJEURE - 152 drivers fusionnes en 60 categories. Interrupteurs (1-8 gangs unifies), boutons, capteurs mouvement, prises, thermostats consolides. Tous les IDs preserves.",
     "en": "MAJOR CONSOLIDATION - 152 duplicate drivers merged into 60 clean categories. Switches (1-8 gang unified), buttons, motion sensors, plugs, thermostats all consolidated. All manufacturer IDs preserved."
+  },
+  "5.2.28": {
+    "en": "HOTFIX - Driver migration alias system for consolidated drivers. Added climate sensor _TZE284_vvmbj46n (ZTH05Z). Fixed climate_sensor_soil alias.",
+    "fr": "CORRECTIF - Systeme alias migration pour drivers consolides. Ajout capteur climatique _TZE284_vvmbj46n (ZTH05Z)."
   }
 }
