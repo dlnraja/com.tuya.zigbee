@@ -1,0 +1,680 @@
+{
+  "sensor": [
+    {
+      "zigbeeModels": [
+        "TS0204"
+      ],
+      "model": "TS0204",
+      "vendor": "Tuya",
+      "description": "Gas sensor"
+    },
+    {
+      "zigbeeModels": [
+        "TS020C"
+      ],
+      "model": "TS020C",
+      "vendor": "Tuya",
+      "description": "PIR sensor"
+    },
+    {
+      "zigbeeModels": [
+        "TS0205"
+      ],
+      "model": "TS0205",
+      "vendor": "Tuya",
+      "description": "Smoke sensor"
+    },
+    {
+      "zigbeeModels": [
+        "TS0203",
+        "ZG-102Z"
+      ],
+      "model": "TS0203",
+      "vendor": "Tuya",
+      "description": "Door/window sensor"
+    },
+    {
+      "zigbeeModels": [
+        "TS0202"
+      ],
+      "model": "TS0202",
+      "vendor": "Tuya",
+      "description": "Motion sensor"
+    },
+    {
+      "zigbeeModels": [
+        "ZG-204Z"
+      ],
+      "model": "IH012-RT01",
+      "vendor": "Tuya",
+      "description": "Motion sensor"
+    },
+    {
+      "zigbeeModels": [
+        "TS0207",
+        "FNB54-WTS08ML1.0",
+        "ZG-222Z"
+      ],
+      "model": "TS0207_water_leak_detector",
+      "vendor": "Tuya",
+      "description": "Water leak detector"
+    },
+    {
+      "zigbeeModels": [
+        "TS0201",
+        "SNTZ003",
+        "TY0201"
+      ],
+      "model": "TS0201",
+      "vendor": "Tuya",
+      "description": "Temperature & humidity sensor with display"
+    },
+    {
+      "zigbeeModels": [
+        "SM0212"
+      ],
+      "model": "SM0212",
+      "vendor": "Tuya",
+      "description": "Gas sensor"
+    },
+    {
+      "zigbeeModels": [
+        "5p1vj8r"
+      ],
+      "model": "TS0601_smoke_4",
+      "vendor": "Tuya",
+      "description": "Smoke sensor"
+    },
+    {
+      "zigbeeModels": [
+        "RH3040"
+      ],
+      "model": "RH3040",
+      "vendor": "Tuya",
+      "description": "PIR sensor"
+    },
+    {
+      "zigbeeModels": [
+        "RH3052"
+      ],
+      "model": "TT001ZAV20",
+      "vendor": "Tuya",
+      "description": "Temperature & humidity sensor"
+    },
+    {
+      "zigbeeModels": [
+        "q9mpfhw"
+      ],
+      "model": "SNTZ009",
+      "vendor": "Tuya",
+      "description": "Water leak sensor"
+    },
+    {
+      "zigbeeModels": [
+        "TS0210"
+      ],
+      "model": "TS0210",
+      "vendor": "Tuya",
+      "description": "Vibration sensor"
+    },
+    {
+      "zigbeeModels": [
+        "ZG-227Z",
+        "ZG-227ZL"
+      ],
+      "model": "ZG-227ZL",
+      "vendor": "Tuya",
+      "description": "Temperature & humidity LCD sensor"
+    },
+    {
+      "zigbeeModels": [
+        "ZG-102ZL"
+      ],
+      "model": "ZG-102ZL",
+      "vendor": "Tuya",
+      "description": "Luminance door sensor"
+    },
+    {
+      "zigbeeModels": [
+        "ZG-225Z"
+      ],
+      "model": "ZG-225Z",
+      "vendor": "Tuya",
+      "description": "Gas sensor"
+    },
+    {
+      "zigbeeModels": [
+        "ZG-204ZL"
+      ],
+      "model": "ZG-204ZL",
+      "vendor": "Tuya",
+      "description": "Luminance motion sensor"
+    },
+    {
+      "zigbeeModels": [
+        "ZG-204ZM"
+      ],
+      "model": "ZG-204ZM",
+      "vendor": "Tuya",
+      "description": "PIR 24Ghz human presence sensor"
+    },
+    {
+      "zigbeeModels": [
+        "SM0202"
+      ],
+      "model": "SM0202",
+      "vendor": "Tuya",
+      "description": "Motion sensor"
+    },
+    {
+      "zigbeeModels": [
+        "ZG-103Z"
+      ],
+      "model": "ZG-103Z",
+      "vendor": "Tuya",
+      "description": "Vibration sensor"
+    },
+    {
+      "zigbeeModels": [
+        "ZG-102ZM"
+      ],
+      "model": "ZG-102ZM",
+      "vendor": "HOBEIAN",
+      "description": "Vibration sensor"
+    },
+    {
+      "zigbeeModels": [
+        "ZG-223Z"
+      ],
+      "model": "ZG-223Z",
+      "vendor": "HOBEIAN",
+      "description": "Rainwater detection sensor"
+    },
+    {
+      "zigbeeModels": [
+        "ZG-303Z"
+      ],
+      "model": "CS-201Z",
+      "vendor": "COOLO",
+      "description": "Soil moisture sensor"
+    },
+    {
+      "zigbeeModels": [
+        "ZG-204ZH"
+      ],
+      "model": "ZG-204ZH",
+      "vendor": "HOBEIAN",
+      "description": "PIR 24Ghz human presence sensor"
+    },
+    {
+      "zigbeeModels": [
+        "ZG-204ZK"
+      ],
+      "model": "ZG-204ZK",
+      "vendor": "HOBEIAN",
+      "description": "24Ghz human presence sensor"
+    }
+  ],
+  "plug": [
+    {
+      "zigbeeModels": [
+        "TS0111"
+      ],
+      "model": "TS0111",
+      "vendor": "Tuya",
+      "description": "Socket"
+    },
+    {
+      "zigbeeModels": [
+        "TS0115"
+      ],
+      "model": "TS0115",
+      "vendor": "Tuya",
+      "description": "Multiprise with 4 AC outlets and 2 USB super charging ports (10A or 16A)"
+    },
+    {
+      "zigbeeModels": [
+        "E220-KR4N0Z0-HA",
+        "JZ-ZB-004"
+      ],
+      "model": "E220-KR4N0Z0-HA",
+      "vendor": "Tuya",
+      "description": "Multiprise with 4 AC outlets and 2 USB super charging ports (16A)"
+    }
+  ],
+  "remote": [
+    {
+      "zigbeeModels": [
+        "TS0218"
+      ],
+      "model": "TS0218",
+      "vendor": "Tuya",
+      "description": "Button"
+    },
+    {
+      "zigbeeModels": [
+        "ZG-101Z"
+      ],
+      "model": "ZG-101Z",
+      "vendor": "Loginovo",
+      "description": "SOS button"
+    }
+  ],
+  "light": [
+    {
+      "zigbeeModels": [
+        "CK-BL702-AL-01(7009_Z102LG03-1)",
+        "CK-BL702-AL-01(7009_Z102LG04-1)",
+        "CK-BL702-AL-01(7009_Z102LG04-2)"
+      ],
+      "model": "CK-BL702-AL-01",
+      "vendor": "Tuya",
+      "description": "Zigbee LED bulb"
+    },
+    {
+      "zigbeeModels": [
+        "TS0505"
+      ],
+      "model": "TS0505",
+      "vendor": "Tuya",
+      "description": " GU10 zbeacon Zigbee LED bulb"
+    },
+    {
+      "zigbeeModels": [
+        "TS0505B"
+      ],
+      "model": "TS0505B_1",
+      "vendor": "Tuya",
+      "description": "Zigbee RGB+CCT light"
+    },
+    {
+      "zigbeeModels": [
+        "TS0503B"
+      ],
+      "model": "TS0503B",
+      "vendor": "Tuya",
+      "description": "Zigbee RGB light"
+    },
+    {
+      "zigbeeModels": [
+        "TS0504B"
+      ],
+      "model": "TS0504B",
+      "vendor": "Tuya",
+      "description": "Zigbee RGBW light"
+    },
+    {
+      "zigbeeModels": [
+        "TS0224"
+      ],
+      "model": "TS0224",
+      "vendor": "Tuya",
+      "description": "Smart light & sound siren"
+    },
+    {
+      "zigbeeModels": [
+        "TS0901"
+      ],
+      "model": "TS0901",
+      "vendor": "Tuya",
+      "description": "Battery powered light"
+    }
+  ],
+  "switch": [
+    {
+      "zigbeeModels": [
+        "SM0001"
+      ],
+      "model": "SM0001",
+      "vendor": "Tuya",
+      "description": "Switch"
+    },
+    {
+      "zigbeeModels": [
+        "TS130F"
+      ],
+      "model": "TS130F",
+      "vendor": "Tuya",
+      "description": "Curtain/blind switch"
+    },
+    {
+      "zigbeeModels": [
+        "qnazj70",
+        "kjintbl"
+      ],
+      "model": "TS0601_switch",
+      "vendor": "Tuya",
+      "description": "1, 2, 3 or 4 gang switch"
+    },
+    {
+      "zigbeeModels": [
+        "ZG-302Z1"
+      ],
+      "model": "TS0601_switch_1_gang",
+      "vendor": "Tuya",
+      "description": "1 gang switch"
+    },
+    {
+      "zigbeeModels": [
+        "ZG-302Z2"
+      ],
+      "model": "TS0601_switch_2_gang",
+      "vendor": "Tuya",
+      "description": "2 gang switch"
+    },
+    {
+      "zigbeeModels": [
+        "ZG-302Z3"
+      ],
+      "model": "TS0601_switch_3_gang",
+      "vendor": "Tuya",
+      "description": "3 gang switch"
+    },
+    {
+      "zigbeeModels": [
+        "TS0041"
+      ],
+      "model": "TS0041",
+      "vendor": "Tuya",
+      "description": "Wireless switch with 1 button"
+    },
+    {
+      "zigbeeModels": [
+        "TS0041A"
+      ],
+      "model": "TS0041A",
+      "vendor": "Tuya",
+      "description": "Wireless switch with 1 button"
+    },
+    {
+      "zigbeeModels": [
+        "TS0042"
+      ],
+      "model": "TS0042",
+      "vendor": "Tuya",
+      "description": "Wireless switch with 2 buttons"
+    },
+    {
+      "zigbeeModels": [
+        "TS0043"
+      ],
+      "model": "TS0043",
+      "vendor": "Tuya",
+      "description": "Wireless switch with 3 buttons"
+    },
+    {
+      "zigbeeModels": [
+        "TS0044"
+      ],
+      "model": "TS0044",
+      "vendor": "Tuya",
+      "description": "Wireless switch with 4 buttons"
+    },
+    {
+      "zigbeeModels": [
+        "TS0001"
+      ],
+      "model": "TS0001",
+      "vendor": "Tuya",
+      "description": "1 gang switch"
+    },
+    {
+      "zigbeeModels": [
+        "TS0003"
+      ],
+      "model": "TS0003",
+      "vendor": "Tuya",
+      "description": "3 gang switch"
+    },
+    {
+      "zigbeeModels": [
+        "TS0011"
+      ],
+      "model": "TS0011",
+      "vendor": "Tuya",
+      "description": "Smart light switch - 1 gang"
+    },
+    {
+      "zigbeeModels": [
+        "TS0012"
+      ],
+      "model": "TS0012",
+      "vendor": "Tuya",
+      "description": "Smart light switch - 2 gang"
+    },
+    {
+      "zigbeeModels": [
+        "TS0013"
+      ],
+      "model": "TS0013",
+      "vendor": "Tuya",
+      "description": "Smart light switch - 3 gang without neutral wire"
+    },
+    {
+      "zigbeeModels": [
+        "TS0014"
+      ],
+      "model": "TS0014",
+      "vendor": "Tuya",
+      "description": "Smart light switch - 4 gang without neutral wire"
+    },
+    {
+      "zigbeeModels": [
+        "HY0017",
+        "005f0c3b"
+      ],
+      "model": "U86KCJ-ZP",
+      "vendor": "Tuya",
+      "description": "Smart 6 key scene wall switch"
+    },
+    {
+      "zigbeeModels": [
+        "TS0026"
+      ],
+      "model": "TS0026",
+      "vendor": "Tuya",
+      "description": "6 button scene wall switch"
+    },
+    {
+      "zigbeeModels": [
+        "TS0004"
+      ],
+      "model": "TS0004",
+      "vendor": "Tuya",
+      "description": "Smart light switch - 4 gang with neutral wire"
+    },
+    {
+      "zigbeeModels": [
+        "TS0006"
+      ],
+      "model": "TS0006",
+      "vendor": "Tuya",
+      "description": "6 gang switch module with neutral wire"
+    },
+    {
+      "zigbeeModels": [
+        "TS0046"
+      ],
+      "model": "TS0046",
+      "vendor": "Tuya",
+      "description": "Wireless switch with 6 buttons"
+    },
+    {
+      "zigbeeModels": [
+        "TS0105"
+      ],
+      "model": "TS0105",
+      "vendor": "Tuya",
+      "description": "3 gang switch"
+    },
+    {
+      "zigbeeModels": [
+        "ZG-302ZM"
+      ],
+      "model": "ZG-302ZM",
+      "vendor": "HOBEIAN",
+      "description": "Motion sensing switch"
+    },
+    {
+      "zigbeeModels": [
+        "ZG-305Z"
+      ],
+      "model": "SM-PW801EZ",
+      "vendor": "Coswall",
+      "description": "2 gang switch with USB"
+    }
+  ],
+  "cover": [
+    {
+      "zigbeeModels": [
+        "TS0301"
+      ],
+      "model": "TS0301",
+      "vendor": "Tuya",
+      "description": "Cover"
+    },
+    {
+      "zigbeeModels": [
+        "TS0503A"
+      ],
+      "model": "TYZS1L",
+      "vendor": "Tuya",
+      "description": "Led strip controller HSB"
+    },
+    {
+      "zigbeeModels": [
+        "TS0502A"
+      ],
+      "model": "TS0502A",
+      "vendor": "Tuya",
+      "description": "Light controller"
+    },
+    {
+      "zigbeeModels": [
+        "TS0502B"
+      ],
+      "model": "TS0502B",
+      "vendor": "Tuya",
+      "description": "Light controller"
+    },
+    {
+      "zigbeeModels": [
+        "TS0504A"
+      ],
+      "model": "TS0504A",
+      "vendor": "Tuya",
+      "description": "RGBW LED controller"
+    },
+    {
+      "zigbeeModels": [
+        "TS0505A"
+      ],
+      "model": "TS0505A",
+      "vendor": "Tuya",
+      "description": "RGB+CCT light controller"
+    },
+    {
+      "zigbeeModels": [
+        "owvfni3\\u0000",
+        "owvfni3",
+        "u1rkty3",
+        "aabybja",
+        "mcdj3aq",
+        "mcdj3aq\\u0000"
+      ],
+      "model": "TS0601_cover_1",
+      "vendor": "Tuya",
+      "description": "Curtain motor/roller blind motor/window pusher/tubular motor"
+    },
+    {
+      "zigbeeModels": [
+        "HY0080"
+      ],
+      "model": "U86KWF-ZPSJ",
+      "vendor": "Tuya",
+      "description": "Environment controller"
+    },
+    {
+      "zigbeeModels": [
+        "6dfgetq"
+      ],
+      "model": "D3-DPWK-TY",
+      "vendor": "Tuya",
+      "description": "HVAC controller"
+    },
+    {
+      "zigbeeModels": [
+        "TS030F"
+      ],
+      "model": "TS030F",
+      "vendor": "Tuya",
+      "description": "Smart blind controller"
+    }
+  ],
+  "thermostat": [
+    {
+      "zigbeeModels": [
+        "kud7u2l"
+      ],
+      "model": "07732L",
+      "vendor": "Immax",
+      "description": "Radiator valve with thermostat"
+    }
+  ],
+  "dimmer": [
+    {
+      "zigbeeModels": [
+        "gq8b1uv"
+      ],
+      "model": "gq8b1uv",
+      "vendor": "Tuya",
+      "description": "Zigbee smart dimmer"
+    },
+    {
+      "zigbeeModels": [
+        "TS0052"
+      ],
+      "model": "TS0052",
+      "vendor": "Tuya",
+      "description": "Zigbee dimmer module 1 channel"
+    }
+  ],
+  "siren": [
+    {
+      "zigbeeModels": [
+        "TS0216"
+      ],
+      "model": "TS0216",
+      "vendor": "Tuya",
+      "description": "Sound and flash siren"
+    }
+  ],
+  "other": [
+    {
+      "zigbeeModels": [
+        "ZG-101ZD"
+      ],
+      "model": "ERS-10TZBVK-AA",
+      "vendor": "Tuya",
+      "description": "Smart knob"
+    },
+    {
+      "zigbeeModels": [
+        "ZG-204ZV"
+      ],
+      "model": "ZG-204ZV",
+      "vendor": "HOBEIAN",
+      "description": "Millimeter wave motion detection"
+    }
+  ],
+  "valve": [
+    {
+      "zigbeeModels": [
+        "TS0049"
+      ],
+      "model": "TS0049",
+      "vendor": "Tuya",
+      "description": "Water valve"
+    }
+  ]
+}

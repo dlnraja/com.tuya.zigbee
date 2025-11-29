@@ -1,0 +1,1858 @@
+{
+  "TS0204_gas_sensor": {
+    "driverId": "gas_sensor",
+    "type": "gas_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0204"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Gas sensor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS020C_motion_sensor": {
+    "driverId": "motion_sensor",
+    "type": "motion_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS020C"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "PIR sensor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0205_smoke_detector_advanced": {
+    "driverId": "smoke_detector_advanced",
+    "type": "smoke_detector",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0205"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Smoke sensor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0111_plug_1socket": {
+    "driverId": "plug_1socket",
+    "type": "plug",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0111"
+    ],
+    "manufacturerNames": [
+      "_TYZB01_ymcdbl3u"
+    ],
+    "productNames": [
+      "Socket"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0218_switch_wireless": {
+    "driverId": "switch_wireless",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0218"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Button"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0203_contact_sensor": {
+    "driverId": "contact_sensor",
+    "type": "contact_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0203"
+    ],
+    "manufacturerNames": [
+      "_TZ3210_jowhpxop",
+      "_TZ3000_pjb1ua0m"
+    ],
+    "productNames": [
+      "Door/window sensor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "ZG-102Z_contact_sensor": {
+    "driverId": "contact_sensor",
+    "type": "contact_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "ZG-102Z"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Door/window sensor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "CK-BL702-AL-01(7009_Z102LG03-1)_light_dimmable": {
+    "driverId": "light_dimmable",
+    "type": "light",
+    "powerSource": "mains",
+    "modelIds": [
+      "CK-BL702-AL-01(7009_Z102LG03-1)"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Zigbee LED bulb"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "CK-BL702-AL-01(7009_Z102LG04-1)_light_dimmable": {
+    "driverId": "light_dimmable",
+    "type": "light",
+    "powerSource": "mains",
+    "modelIds": [
+      "CK-BL702-AL-01(7009_Z102LG04-1)"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Zigbee LED bulb"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "CK-BL702-AL-01(7009_Z102LG04-2)_light_dimmable": {
+    "driverId": "light_dimmable",
+    "type": "light",
+    "powerSource": "mains",
+    "modelIds": [
+      "CK-BL702-AL-01(7009_Z102LG04-2)"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Zigbee LED bulb"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "SM0001_switch_1gang": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "SM0001"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Switch"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0505_light_dimmable": {
+    "driverId": "light_dimmable",
+    "type": "light",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0505"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      " GU10 zbeacon Zigbee LED bulb"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0505B_light_dimmable": {
+    "driverId": "light_dimmable",
+    "type": "light",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0505B"
+    ],
+    "manufacturerNames": [
+      "_TZ3210_iystcadi",
+      "_TZ3210_it1u8ahz",
+      "_TZB210_3zfp8mki",
+      "_TZB210_gj0ccsar",
+      "_TZ3210_bfwvfyx1"
+    ],
+    "productNames": [
+      "Zigbee RGB+CCT light"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0503B_light_dimmable": {
+    "driverId": "light_dimmable",
+    "type": "light",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0503B"
+    ],
+    "manufacturerNames": [
+      "_TZB210_lmqquxus"
+    ],
+    "productNames": [
+      "Zigbee RGB light"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0504B_light_dimmable": {
+    "driverId": "light_dimmable",
+    "type": "light",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0504B"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Zigbee RGBW light"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0202_motion_sensor": {
+    "driverId": "motion_sensor",
+    "type": "motion_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0202"
+    ],
+    "manufacturerNames": [
+      "_TYZB01_vwqnz1sn",
+      "_TZ3210_cwamkvua",
+      "_TYZB01_jytabjkb",
+      "_TZ3000_lltemgsf",
+      "_TYZB01_5nr7ncpl",
+      "_TZ3000_mg4dy6z6",
+      "_TZ3000_bsvqrxru",
+      "_TZ3040_fwxuzcf4",
+      "_TZ3040_msl6wxk9",
+      "_TZ3000_mcxw5ehu",
+      "_TZ3000_6ygjfyll",
+      "_TZ3040_6ygjfyll",
+      "_TZ3000_msl6wxk9",
+      "_TZ3000_o4mkahkc"
+    ],
+    "productNames": [
+      "Motion sensor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "ZG-204Z_motion_sensor": {
+    "driverId": "motion_sensor",
+    "type": "motion_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "ZG-204Z"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Motion sensor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0207_water_leak_sensor": {
+    "driverId": "water_leak_sensor",
+    "type": "water_leak_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0207"
+    ],
+    "manufacturerNames": [
+      "_TZ3000_m0vaazab",
+      "_TZ3000_ufttklsz",
+      "_TZ3000_nkkl7uzv",
+      "_TZ3000_misw04hq",
+      "_TZ3000_nlsszmzl",
+      "_TZ3000_gszjt2xx",
+      "_TZ3000_wlquqiiz",
+      "_TZ3000_5k5vh43t",
+      "_TZ3000_kxlmv9ag",
+      "_TZ3000_wmlc9p9z",
+      "_TZ3000_shopg9ss",
+      "_TZ3000_n0lphcok",
+      "_TZ3000_r80pzsb9",
+      "_TZ3210_tgvtvdoc",
+      "_TZ3210_p68kms0l"
+    ],
+    "productNames": [
+      "Water leak detector"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "FNB54-WTS08ML1.0_water_leak_sensor": {
+    "driverId": "water_leak_sensor",
+    "type": "water_leak_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "FNB54-WTS08ML1.0"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Water leak detector"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "ZG-222Z_water_leak_sensor": {
+    "driverId": "water_leak_sensor",
+    "type": "water_leak_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "ZG-222Z"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Water leak detector"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS130F_switch_1gang": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS130F"
+    ],
+    "manufacturerNames": [
+      "_TZ3000_1dd0d5yi"
+    ],
+    "productNames": [
+      "Curtain/blind switch"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "qnazj70_switch_1gang": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "qnazj70"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "1, 2, 3 or 4 gang switch"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "kjintbl_switch_1gang": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "kjintbl"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "1, 2, 3 or 4 gang switch"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0301_cover_motor": {
+    "driverId": "cover_motor",
+    "type": "cover",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0301"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Cover"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "ZG-302Z1_switch_1gang": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "ZG-302Z1"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "1 gang switch"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "ZG-302Z2_switch_1gang": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "ZG-302Z2"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "2 gang switch"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "ZG-302Z3_switch_1gang": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "ZG-302Z3"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "3 gang switch"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0503A_cover_motor": {
+    "driverId": "cover_motor",
+    "type": "cover",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0503A"
+    ],
+    "manufacturerNames": [
+      "_TZ3000_obacbukl"
+    ],
+    "productNames": [
+      "Led strip controller HSB"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0502A_cover_motor": {
+    "driverId": "cover_motor",
+    "type": "cover",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0502A"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Light controller"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0502B_cover_motor": {
+    "driverId": "cover_motor",
+    "type": "cover",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0502B"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Light controller"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0504A_cover_motor": {
+    "driverId": "cover_motor",
+    "type": "cover",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0504A"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "RGBW LED controller"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0505A_cover_motor": {
+    "driverId": "cover_motor",
+    "type": "cover",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0505A"
+    ],
+    "manufacturerNames": [
+      "_TZ3000_sosdczdl"
+    ],
+    "productNames": [
+      "RGB+CCT light controller"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0201_climate_sensor": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0201"
+    ],
+    "manufacturerNames": [
+      "_TZ3000_bguser20",
+      "_TZ3000_yd2e749y",
+      "_TZ3000_6uzkisv2",
+      "_TZ3000_xr3htd96",
+      "_TZ3000_fllyghyj",
+      "_TZ3000_saiqcn0y",
+      "_TZ3000_bjawzodf",
+      "_TZ3000_dowj6gyi",
+      "_TZ3000_8ybe88nf",
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_qaaysllp",
+      "_TZ3000_itnrsufe",
+      "_TZE200_iq4ygaai",
+      "_TZE200_01fvxamo"
+    ],
+    "productNames": [
+      "Temperature & humidity sensor with display"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "SNTZ003_climate_sensor": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "SNTZ003"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Temperature & humidity sensor with display"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TY0201_climate_sensor": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TY0201"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Temperature & humidity sensor with display"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0041_switch_1gang": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0041"
+    ],
+    "manufacturerNames": [
+      "_TZ3000_fa9mlvja"
+    ],
+    "productNames": [
+      "Wireless switch with 1 button"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0041A_switch_1gang": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0041A"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Wireless switch with 1 button"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0042_switch_1gang": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0042"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Wireless switch with 2 buttons"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0043_switch_1gang": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0043"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Wireless switch with 3 buttons"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0044_switch_1gang": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0044"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Wireless switch with 4 buttons"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0001_switch_1gang": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0001"
+    ],
+    "manufacturerNames": [
+      "_TZ3000_hktqahrq",
+      "_TZ3000_q6a3tepg",
+      "_TZ3000_skueekg3",
+      "_TZ3000_npzfdcof",
+      "_TZ3000_5ng23zjs",
+      "_TZ3000_rmjr4ufz",
+      "_TZ3000_v7gnj3ad",
+      "_TZ3000_3a9beq8a",
+      "_TZ3000_ark8nv4y",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fdxihpp7",
+      "_TZ3000_qsp2pwtf",
+      "_TZ3000_kycczpw8",
+      "_TZ3000_46t1rvdu",
+      "_TZ3000_bhcpnvud",
+      "_TZ3000_i9oy2rdq",
+      "_TZ3000_o4cjetlm",
+      "_TZ3000_iedbgyxt",
+      "_TZ3000_h3noz0a5",
+      "_TYZB01_4tlksk8a",
+      "_TZ3000_5ucujjts",
+      "_TZ3000_h8ngtlxy",
+      "_TZ3000_w0ypwa1f",
+      "_TZ3000_wpueorev",
+      "_TZ3000_cmcjbqup",
+      "_TZ3000_n0lphcok",
+      "_TZ3000_wn65ixz9",
+      "_TZ3210_fhx7lk3d",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_qnejhcsu",
+      "_TZ3000_x3ewpzyr",
+      "_TZ3000_mkhkxx1p",
+      "_TZ3000_tgddllx4",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_q8r0bbvy",
+      "_TZ3000_g92baclx",
+      "_TZ3000_qlai3277",
+      "_TZ3000_qaabwu5c",
+      "_TZ3000_qorepo2x",
+      "_TZ3000_ikuxinvo",
+      "_TZ3000_hzlsaltw",
+      "_TZ3000_jsfzkftc",
+      "_TZ3000_0ghwhypc",
+      "_TZ3000_1adss9de",
+      "_TZ3000_myaaknbq",
+      "_TZ3000_cpozgbrx",
+      "_TZ3000_drc9tuqb",
+      "_TZ3000_gbshwgag",
+      "_TZ3000_tqlv4ug4",
+      "_TZ3000_gjrubzje",
+      "_TZ3000_tygpxwqa",
+      "_TZ3000_4rbqgcuv",
+      "_TZ3000_veu2v775",
+      "_TZ3000_prits6g4",
+      "_TZ3000_afgzktgb",
+      "_TZ3000_pgq7ormg",
+      "_TZ3000_bmqxalil",
+      "_TZ3000_w1tcofu8",
+      "_TZ3000_ma3mhpx2",
+      "_TZ3000_wijoqjk1",
+      "_TZ3000_65ajyxua",
+      "_TZ3000_qq9ahj6z",
+      "_TZ3210_dse8ogfy",
+      "_TZ3210_j4pdtz9v",
+      "_TZ3210_7vgttna6",
+      "_TZ3000_qvmiyxuk",
+      "_TZE21C_dohbhb5k"
+    ],
+    "productNames": [
+      "1 gang switch"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0003_switch_1gang": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0003"
+    ],
+    "manufacturerNames": [
+      "_TYZB01_u9kkqh5o",
+      "_TZ3000_rhkfbfcv",
+      "_TZ3000_empogkya",
+      "_TZ3000_lubfc1t5",
+      "_TZ3000_lsunm46z",
+      "_TZ3000_v4l4b0lp",
+      "_TZ3000_uilitwsy",
+      "_TZ3000_66fekqhh",
+      "_TZ3000_ok0ggpk7",
+      "_TZ3000_aknpkt02",
+      "_TZ3000_fawk5xjv",
+      "_TZ3000_bvij6kod",
+      "_TZ3000_aracgljk",
+      "_TZ3000_dyzkbcip",
+      "_TZ3000_4o16jdca",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_hbic3ka3",
+      "_TZ3000_lvhy15ix",
+      "_TZ3000_mhhxxjrs",
+      "_TZ3000_pf7swkqp",
+      "_TZ3000_ju82pu2b",
+      "_TZ3000_vsasbzkf",
+      "_TZ3000_nnwehhst",
+      "_TZ3000_pv4puuxi",
+      "_TZ3000_avky2mvc",
+      "_TZ3000_785olaiq",
+      "_TZ3000_qxcnwv26",
+      "_TZ3000_g9chy2ib"
+    ],
+    "productNames": [
+      "3 gang switch"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "owvfni3\\u0000_contact_sensor": {
+    "driverId": "contact_sensor",
+    "type": "contact_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "owvfni3\\u0000"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Curtain motor/roller blind motor/window pusher/tubular motor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "owvfni3_contact_sensor": {
+    "driverId": "contact_sensor",
+    "type": "contact_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "owvfni3"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Curtain motor/roller blind motor/window pusher/tubular motor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "u1rkty3_contact_sensor": {
+    "driverId": "contact_sensor",
+    "type": "contact_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "u1rkty3"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Curtain motor/roller blind motor/window pusher/tubular motor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "aabybja_contact_sensor": {
+    "driverId": "contact_sensor",
+    "type": "contact_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "aabybja"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Curtain motor/roller blind motor/window pusher/tubular motor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "mcdj3aq_contact_sensor": {
+    "driverId": "contact_sensor",
+    "type": "contact_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "mcdj3aq"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Curtain motor/roller blind motor/window pusher/tubular motor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "mcdj3aq\\u0000_contact_sensor": {
+    "driverId": "contact_sensor",
+    "type": "contact_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "mcdj3aq\\u0000"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Curtain motor/roller blind motor/window pusher/tubular motor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "kud7u2l_thermostat_ts0601": {
+    "driverId": "thermostat_ts0601",
+    "type": "thermostat",
+    "powerSource": "mains",
+    "modelIds": [
+      "kud7u2l"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Radiator valve with thermostat"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Immax"
+  },
+  "SM0212_gas_sensor": {
+    "driverId": "gas_sensor",
+    "type": "gas_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "SM0212"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Gas sensor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "5p1vj8r_smoke_detector_advanced": {
+    "driverId": "smoke_detector_advanced",
+    "type": "smoke_detector",
+    "powerSource": "mains",
+    "modelIds": [
+      "5p1vj8r"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Smoke sensor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "RH3040_motion_sensor": {
+    "driverId": "motion_sensor",
+    "type": "motion_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "RH3040"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "PIR sensor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0115_plug_1socket": {
+    "driverId": "plug_1socket",
+    "type": "plug",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0115"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Multiprise with 4 AC outlets and 2 USB super charging ports (10A or 16A)"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "RH3052_climate_sensor": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "RH3052"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Temperature & humidity sensor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0011_switch_1gang": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0011"
+    ],
+    "manufacturerNames": [
+      "_TYZB01_rifa0wlb",
+      "_TZ3000_uaa34g7v",
+      "_TZ3000_l8fsgo6p",
+      "_TZ3000_qmi1cfuq",
+      "_TZ3000_txpirhfq",
+      "_TZ3000_ji4araar",
+      "_TZ3000_gzvniqjb"
+    ],
+    "productNames": [
+      "Smart light switch - 1 gang"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0012_switch_1gang": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0012"
+    ],
+    "manufacturerNames": [
+      "_TZ3000_biakwrag",
+      "_TZ3000_jl7qyupf",
+      "_TZ3000_nPGIPl5D",
+      "_TZ3000_kpatq5pq",
+      "_TZ3000_ljhbw1c9",
+      "_TZ3000_4zf0crgo"
+    ],
+    "productNames": [
+      "Smart light switch - 2 gang"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0013_switch_1gang": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0013"
+    ],
+    "manufacturerNames": [
+      "_TZ3000_ypgri8yz",
+      "_TZ3000_sznawwyw"
+    ],
+    "productNames": [
+      "Smart light switch - 3 gang without neutral wire"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0014_switch_1gang": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0014"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Smart light switch - 4 gang without neutral wire"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "gq8b1uv_dimmer_1gang": {
+    "driverId": "dimmer_1gang",
+    "type": "dimmer",
+    "powerSource": "mains",
+    "modelIds": [
+      "gq8b1uv"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Zigbee smart dimmer"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "HY0017_switch_wireless": {
+    "driverId": "switch_wireless",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "HY0017"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Smart 6 key scene wall switch"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "005f0c3b_switch_wireless": {
+    "driverId": "switch_wireless",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "005f0c3b"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Smart 6 key scene wall switch"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0026_switch_wireless": {
+    "driverId": "switch_wireless",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0026"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "6 button scene wall switch"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "q9mpfhw_water_leak_sensor": {
+    "driverId": "water_leak_sensor",
+    "type": "water_leak_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "q9mpfhw"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Water leak sensor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0004_switch_1gang": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0004"
+    ],
+    "manufacturerNames": [
+      "_TZ3000_ltt60asa",
+      "_TZ3000_mmkbptmx",
+      "_TZ3000_liygxtcq",
+      "_TZ3000_ncb6mkx8",
+      "_TZ3000_5ajpkyq6",
+      "_TZ3000_knoj8lpk"
+    ],
+    "productNames": [
+      "Smart light switch - 4 gang with neutral wire"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0006_switch_1gang": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0006"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "6 gang switch module with neutral wire"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "HY0080_cover_motor": {
+    "driverId": "cover_motor",
+    "type": "cover",
+    "powerSource": "mains",
+    "modelIds": [
+      "HY0080"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Environment controller"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "6dfgetq_cover_motor": {
+    "driverId": "cover_motor",
+    "type": "cover",
+    "powerSource": "mains",
+    "modelIds": [
+      "6dfgetq"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "HVAC controller"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "E220-KR4N0Z0-HA_plug_1socket": {
+    "driverId": "plug_1socket",
+    "type": "plug",
+    "powerSource": "mains",
+    "modelIds": [
+      "E220-KR4N0Z0-HA"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Multiprise with 4 AC outlets and 2 USB super charging ports (16A)"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "JZ-ZB-004_plug_1socket": {
+    "driverId": "plug_1socket",
+    "type": "plug",
+    "powerSource": "mains",
+    "modelIds": [
+      "JZ-ZB-004"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Multiprise with 4 AC outlets and 2 USB super charging ports (16A)"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0216_siren_alarm": {
+    "driverId": "siren_alarm",
+    "type": "siren",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0216"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Sound and flash siren"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0210_vibration_sensor": {
+    "driverId": "vibration_sensor",
+    "type": "vibration_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0210"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Vibration sensor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0046_switch_1gang": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0046"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Wireless switch with 6 buttons"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "ZG-101ZD_zigbee_universal": {
+    "driverId": "zigbee_universal",
+    "type": "other",
+    "powerSource": "mains",
+    "modelIds": [
+      "ZG-101ZD"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Smart knob"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0052_dimmer_1gang": {
+    "driverId": "dimmer_1gang",
+    "type": "dimmer",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0052"
+    ],
+    "manufacturerNames": [
+      "_TZ3000_zjtxnoft",
+      "_TZ3000_kvwrdf47"
+    ],
+    "productNames": [
+      "Zigbee dimmer module 1 channel"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "ZG-227Z_climate_sensor": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "ZG-227Z"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Temperature & humidity LCD sensor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "ZG-227ZL_climate_sensor": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "ZG-227ZL"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Temperature & humidity LCD sensor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "ZG-102ZL_contact_sensor": {
+    "driverId": "contact_sensor",
+    "type": "contact_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "ZG-102ZL"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Luminance door sensor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "ZG-225Z_gas_sensor": {
+    "driverId": "gas_sensor",
+    "type": "gas_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "ZG-225Z"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Gas sensor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "ZG-204ZL_motion_sensor": {
+    "driverId": "motion_sensor",
+    "type": "motion_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "ZG-204ZL"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Luminance motion sensor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "ZG-204ZM_motion_sensor": {
+    "driverId": "motion_sensor",
+    "type": "motion_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "ZG-204ZM"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "PIR 24Ghz human presence sensor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0049_water_valve_smart": {
+    "driverId": "water_valve_smart",
+    "type": "valve",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0049"
+    ],
+    "manufacturerNames": [
+      "_TZ3290_ixd9mvv4",
+      "_TZ3000_kz1anoi8"
+    ],
+    "productNames": [
+      "Water valve"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS0224_light_dimmable": {
+    "driverId": "light_dimmable",
+    "type": "light",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0224"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Smart light & sound siren"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "TS030F_cover_motor": {
+    "driverId": "cover_motor",
+    "type": "cover",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS030F"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Smart blind controller"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "SM0202_motion_sensor": {
+    "driverId": "motion_sensor",
+    "type": "motion_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "SM0202"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Motion sensor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "ZG-101Z_switch_wireless": {
+    "driverId": "switch_wireless",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "ZG-101Z"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "SOS button"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Loginovo"
+  },
+  "TS0105_switch_1gang": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0105"
+    ],
+    "manufacturerNames": [
+      "_TZE600_ogyg1y6b"
+    ],
+    "productNames": [
+      "3 gang switch"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "ZG-103Z_vibration_sensor": {
+    "driverId": "vibration_sensor",
+    "type": "vibration_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "ZG-103Z"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Vibration sensor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "ZG-302ZM_motion_sensor": {
+    "driverId": "motion_sensor",
+    "type": "motion_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "ZG-302ZM"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Motion sensing switch"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "HOBEIAN"
+  },
+  "TS0901_light_dimmable": {
+    "driverId": "light_dimmable",
+    "type": "light",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0901"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Battery powered light"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "ZG-102ZM_vibration_sensor": {
+    "driverId": "vibration_sensor",
+    "type": "vibration_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "ZG-102ZM"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Vibration sensor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "HOBEIAN"
+  },
+  "ZG-204ZV_motion_sensor": {
+    "driverId": "motion_sensor",
+    "type": "motion_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "ZG-204ZV"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Millimeter wave motion detection"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "HOBEIAN"
+  },
+  "ZG-223Z_zigbee_universal": {
+    "driverId": "zigbee_universal",
+    "type": "other",
+    "powerSource": "mains",
+    "modelIds": [
+      "ZG-223Z"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Rainwater detection sensor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "HOBEIAN"
+  },
+  "ZG-303Z_soil_sensor": {
+    "driverId": "soil_sensor",
+    "type": "soil_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "ZG-303Z"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "Soil moisture sensor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "COOLO"
+  },
+  "ZG-305Z_switch_1gang": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "ZG-305Z"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "2 gang switch with USB"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Coswall"
+  },
+  "ZG-204ZH_motion_sensor": {
+    "driverId": "motion_sensor",
+    "type": "motion_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "ZG-204ZH"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "PIR 24Ghz human presence sensor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "HOBEIAN"
+  },
+  "ZG-204ZK_motion_sensor": {
+    "driverId": "motion_sensor",
+    "type": "motion_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "ZG-204ZK"
+    ],
+    "manufacturerNames": [],
+    "productNames": [
+      "24Ghz human presence sensor"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "HOBEIAN"
+  },
+  "TS0601__TZE200_dwcarsat": {
+    "driverId": "air_quality_co2",
+    "type": "air_quality",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ],
+    "manufacturerNames": [
+      "_TZE200_dwcarsat"
+    ],
+    "productNames": [
+      "CO2 sensor"
+    ],
+    "source": "zigbee2mqtt"
+  },
+  "TS0601__TZE200_yvx5lh6k": {
+    "driverId": "air_quality_co2",
+    "type": "air_quality",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ],
+    "manufacturerNames": [
+      "_TZE200_yvx5lh6k"
+    ],
+    "productNames": [
+      "Air quality sensor"
+    ],
+    "source": "zigbee2mqtt"
+  },
+  "TS0601__TZE200_ryfmq5rl": {
+    "driverId": "air_quality_co2",
+    "type": "air_quality",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ],
+    "manufacturerNames": [
+      "_TZE200_ryfmq5rl"
+    ],
+    "productNames": [
+      "CO2 sensor"
+    ],
+    "source": "zigbee2mqtt"
+  },
+  "TS0601__TZE204_laokfqwu": {
+    "driverId": "air_quality_co2",
+    "type": "air_quality",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ],
+    "manufacturerNames": [
+      "_TZE204_laokfqwu"
+    ],
+    "productNames": [
+      "CO2 sensor"
+    ],
+    "source": "zigbee2mqtt"
+  },
+  "TS0601__TZE200_aoclfnxz": {
+    "driverId": "thermostat_ts0601",
+    "type": "thermostat",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ],
+    "manufacturerNames": [
+      "_TZE200_aoclfnxz"
+    ],
+    "productNames": [
+      "TRV thermostat"
+    ],
+    "source": "zigbee2mqtt"
+  },
+  "TS0601__TZE200_2atgpdho": {
+    "driverId": "thermostat_ts0601",
+    "type": "thermostat",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ],
+    "manufacturerNames": [
+      "_TZE200_2atgpdho"
+    ],
+    "productNames": [
+      "Floor heating thermostat"
+    ],
+    "source": "zigbee2mqtt"
+  },
+  "TS0601__TZE200_g9a3awaj": {
+    "driverId": "thermostat_ts0601",
+    "type": "thermostat",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ],
+    "manufacturerNames": [
+      "_TZE200_g9a3awaj"
+    ],
+    "productNames": [
+      "Radiator valve"
+    ],
+    "source": "zigbee2mqtt"
+  },
+  "TS0601__TZE200_ar0slwnd": {
+    "driverId": "presence_sensor_radar",
+    "type": "presence",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ],
+    "manufacturerNames": [
+      "_TZE200_ar0slwnd"
+    ],
+    "productNames": [
+      "Presence sensor"
+    ],
+    "source": "zigbee2mqtt"
+  },
+  "TS0601__TZE200_sfiy5tfs": {
+    "driverId": "presence_sensor_radar",
+    "type": "presence",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ],
+    "manufacturerNames": [
+      "_TZE200_sfiy5tfs"
+    ],
+    "productNames": [
+      "Human presence detector"
+    ],
+    "source": "zigbee2mqtt"
+  },
+  "TS0601__TZE200_ztc6ggyl": {
+    "driverId": "presence_sensor_radar",
+    "type": "presence",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ],
+    "manufacturerNames": [
+      "_TZE200_ztc6ggyl"
+    ],
+    "productNames": [
+      "mmWave radar"
+    ],
+    "source": "zigbee2mqtt"
+  },
+  "TS0601__TZE204_ztc6ggyl": {
+    "driverId": "presence_sensor_radar",
+    "type": "presence",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ],
+    "manufacturerNames": [
+      "_TZE204_ztc6ggyl"
+    ],
+    "productNames": [
+      "mmWave presence sensor"
+    ],
+    "source": "zigbee2mqtt"
+  },
+  "TS0601__TZE200_ikvncluo": {
+    "driverId": "presence_sensor_radar",
+    "type": "presence",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ],
+    "manufacturerNames": [
+      "_TZE200_ikvncluo"
+    ],
+    "productNames": [
+      "Presence detector"
+    ],
+    "source": "zigbee2mqtt"
+  },
+  "TS0601__TZE200_cowvfni3": {
+    "driverId": "cover_motor",
+    "type": "cover",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ],
+    "manufacturerNames": [
+      "_TZE200_cowvfni3"
+    ],
+    "productNames": [
+      "Curtain motor"
+    ],
+    "source": "zigbee2mqtt"
+  },
+  "TS0601__TZE200_wmcdj3aq": {
+    "driverId": "cover_motor",
+    "type": "cover",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ],
+    "manufacturerNames": [
+      "_TZE200_wmcdj3aq"
+    ],
+    "productNames": [
+      "Roller blind motor"
+    ],
+    "source": "zigbee2mqtt"
+  },
+  "TS0601__TZE200_fzo2pocs": {
+    "driverId": "cover_motor",
+    "type": "cover",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ],
+    "manufacturerNames": [
+      "_TZE200_fzo2pocs"
+    ],
+    "productNames": [
+      "Curtain controller"
+    ],
+    "source": "zigbee2mqtt"
+  },
+  "TS0601__TZE200_sh1btabb": {
+    "driverId": "water_valve_smart",
+    "type": "valve",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ],
+    "manufacturerNames": [
+      "_TZE200_sh1btabb"
+    ],
+    "productNames": [
+      "Irrigation controller"
+    ],
+    "source": "zigbee2mqtt"
+  },
+  "TS0601__TZE200_htnnfasr": {
+    "driverId": "water_valve_smart",
+    "type": "valve",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ],
+    "manufacturerNames": [
+      "_TZE200_htnnfasr"
+    ],
+    "productNames": [
+      "Water valve"
+    ],
+    "source": "zigbee2mqtt"
+  },
+  "TS0601__TZE200_myd45weu": {
+    "driverId": "soil_sensor",
+    "type": "soil_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0601"
+    ],
+    "manufacturerNames": [
+      "_TZE200_myd45weu"
+    ],
+    "productNames": [
+      "Soil sensor"
+    ],
+    "source": "zigbee2mqtt"
+  },
+  "TS0601__TZE200_ga1maeof": {
+    "driverId": "soil_sensor",
+    "type": "soil_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0601"
+    ],
+    "manufacturerNames": [
+      "_TZE200_ga1maeof"
+    ],
+    "productNames": [
+      "Plant sensor"
+    ],
+    "source": "zigbee2mqtt"
+  },
+  "TS0601__TZE200_wfxuhoea": {
+    "driverId": "garage_door",
+    "type": "garage",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ],
+    "manufacturerNames": [
+      "_TZE200_wfxuhoea"
+    ],
+    "productNames": [
+      "Garage door controller"
+    ],
+    "source": "zigbee2mqtt"
+  },
+  "TS0601__TZE200_nklqjk62": {
+    "driverId": "garage_door",
+    "type": "garage",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ],
+    "manufacturerNames": [
+      "_TZE200_nklqjk62"
+    ],
+    "productNames": [
+      "Garage door opener"
+    ],
+    "source": "zigbee2mqtt"
+  }
+}
