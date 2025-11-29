@@ -1,6 +1,6 @@
 # 🌐 Universal Zigbee Device App for Homey
 
-![Version](https://img.shields.io/badge/version-5.2.43-blue)
+![Version](https://img.shields.io/badge/version-5.2.50-blue)
 ![Devices](https://img.shields.io/badge/devices-1372+-green)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
 ![License](https://img.shields.io/badge/license-GPL--3.0-red)
@@ -136,42 +136,97 @@ tuya_repair/
 
 This app is built on the incredible work of the Zigbee open-source community.
 
-### 🔷 Primary Sources
+### Canonical Data Sources
 
-| Source | Repository | Maintainer |
-|--------|------------|------------|
-| **Zigbee2MQTT** | [github.com/Koenkk/zigbee2mqtt](https://github.com/Koenkk/zigbee2mqtt) | [@Koenkk](https://github.com/Koenkk) |
-| **ZHA Quirks** | [github.com/zigpy/zha-device-handlers](https://github.com/zigpy/zha-device-handlers) | [@dmulcahey](https://github.com/dmulcahey) |
-| **Blakadder DB** | [zigbee.blakadder.com](https://zigbee.blakadder.com) | [@blakadder](https://github.com/blakadder) |
-| **JohanBendz Tuya** | [github.com/JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) | [@JohanBendz](https://github.com/JohanBendz) |
+- **Zigbee2MQTT – Supported devices & converters**
+  Project: https://github.com/Koenkk/zigbee2mqtt
+  Docs: https://www.zigbee2mqtt.io/supported-devices/
+  Used for:
+  - Discovering thousands of Zigbee devices (switches, sensors, TRVs, plugs, LED controllers, etc.).
+  - Mapping vendors, models, `zigbeeModel[]` and capabilities.
+  - Understanding Tuya / `_TZE200_*` / `_TZ3000_*` behaviour and DP mappings.
 
-### 🔶 Secondary Sources
+- **Blakadder – Zigbee Device Compatibility Repository**
+  Project: https://github.com/blakadder/zigbee
+  Website: https://zigbee.blakadder.com
+  Used for:
+  - Cross-checking rebranded Tuya devices against their "true" identity.
+  - Comparing support status across Zigbee2MQTT, ZHA, deCONZ, and other stacks.
 
-| Source | Link |
-|--------|------|
-| **Tuya Developer** | [developer.tuya.com](https://developer.tuya.com) |
-| **SmartThings Edge** | [community.smartthings.com](https://community.smartthings.com) |
-| **deCONZ/Phoscon** | [github.com/dresden-elektronik](https://github.com/dresden-elektronik/deconz-rest-plugin) |
-| **Jeedom Zigbee** | [github.com/jeedom/plugin-zigbee](https://github.com/jeedom/plugin-zigbee) |
-| **Zigbee-OTA** | [github.com/Koenkk/zigbee-OTA](https://github.com/Koenkk/zigbee-OTA) |
+- **Home Assistant ZHA / zigpy / zha-device-handlers**
+  Stack: https://github.com/zigpy/zigpy
+  Quirks: https://github.com/zigpy/zha-device-handlers
+  Used for:
+  - Reading device signatures (manufacturer, model, endpoints, clusters).
+  - Studying custom quirks and manufacturer-specific behaviour (Aqara, Tuya, Hue, etc.).
 
-### 👥 Key Contributors
+- **Connectivity Standards Alliance (CSA) – Certified Zigbee products**
+  Website: https://csa-iot.org
+  Used for:
+  - Verifying Zigbee-certified products and understanding "clean" Zigbee 3.0 profiles.
+  - Identifying major brands (Philips Hue, IKEA, Legrand, Schneider Electric, Bosch, etc.).
 
-**Zigbee2MQTT Team:**
-- [@Koenkk](https://github.com/Koenkk) - Creator & Lead Maintainer
-- [@Nerivec](https://github.com/Nerivec), [@sjorge](https://github.com/sjorge), [@arteck](https://github.com/arteck)
+### Manufacturers & Brands (Non-Exhaustive)
 
-**ZHA Team:**
-- [@dmulcahey](https://github.com/dmulcahey) - Creator
-- [@Adminiuga](https://github.com/Adminiuga), [@puddly](https://github.com/puddly)
+Universal Tuya Zigbee aims to be compatible with as many Zigbee devices as possible,
+including both **native Zigbee 3.0** devices and devices using **proprietary overlays**
+(e.g. Tuya DPs, manufacturer-specific clusters).
 
-**Homey Community:**
-- **@Laborhexe** - ZG-204ZM device interview
-- **@Jocke_Svensson**, **@SunBeech**, **@Cam**, **@telenut** - Testing
-- **@Patrickske1** - Curtain motor issue report
+Typical vendors and ecosystems covered through the above data sources include:
+
+- **Tuya-based brands:** Tuya, Moes, Avatto, Zemismart, BlitzWolf and many Aliexpress rebrands
+  (with manufacturer names such as `_TZE200_*`, `_TZ3000_*`, `_TZE284_*`, etc.).
+- **"Classic" Zigbee brands:** Philips Hue / Signify, IKEA TRÅDFRI, Aqara / Lumi, Xiaomi MiJia,
+  Sonoff / ITEAD, Gledopto, Innr, Osram / LEDVANCE / Sylvania.
+- **Professional / residential automation:** Schneider Electric Wiser, Legrand, Niko, Bosch, Siemens.
+- **Ecosystems and hubs:** Samsung SmartThings, Amazon Echo (with embedded Zigbee hub), and more.
+
+Because these lists evolve weekly, **Universal Tuya Zigbee does not hard-code a frozen list of
+manufacturer names**. Instead, it relies on the above projects as the **living, authoritative
+source of truth**, and periodically re-aligns its fingerprints, drivers and Tuya DP mappings.
+
+### Credits & Thanks
+
+A massive thank you to the maintainers and contributors of the following projects:
+
+- **Koenkk** and all contributors to **Zigbee2MQTT**
+- **blakadder** and contributors to the Zigbee Device Compatibility Repository
+- The **zigpy** / **ZHA** / **zha-device-handlers** maintainers and community
+- The **CSA (Connectivity Standards Alliance)** for maintaining the Zigbee specifications
+- All developers and testers who share device logs, diagnostics reports, fingerprints,
+  and crash-logs for the Universal Tuya Zigbee app (Homey Community & GitHub issues)
+
+Without their work, maintaining a "universal" Zigbee driver set would simply not be possible.
 
 📄 **Full credits:** See [CREDITS.md](./CREDITS.md)
 🏭 **Brands database:** See [BRANDS.md](./BRANDS.md)
+
+---
+
+## 🇫🇷 Sources Zigbee & Remerciements (FR)
+
+Universal Tuya Zigbee ne cherche **pas** à recréer l'écosystème Zigbee tout seul dans son coin.
+L'application s'appuie sur le travail incroyable de projets open-source et organismes de standardisation
+qui maintiennent des **bases de données vivantes** des appareils Zigbee.
+
+### Sources de Données de Référence
+- **Zigbee2MQTT** – Appareils supportés & converters (https://www.zigbee2mqtt.io)
+- **Blakadder** – Base de compatibilité Zigbee (https://zigbee.blakadder.com)
+- **ZHA / zigpy** – Quirks Home Assistant (https://github.com/zigpy/zha-device-handlers)
+- **CSA** – Produits Zigbee certifiés (https://csa-iot.org)
+
+### Fabricants & Marques Couverts
+- **Marques Tuya:** Tuya, Moes, Avatto, Zemismart, BlitzWolf (manufacturerName: `_TZE200_*`, `_TZ3000_*`, `_TZE284_*`)
+- **Marques Zigbee classiques:** Philips Hue, IKEA TRÅDFRI, Aqara, Xiaomi, Sonoff, Gledopto, Innr, Osram
+- **Domotique pro:** Schneider Electric Wiser, Legrand, Niko, Bosch, Siemens
+- **Écosystèmes:** Samsung SmartThings, Amazon Echo avec hub Zigbee
+
+Ces listes évoluent chaque semaine. **Universal Tuya Zigbee ne fige pas une liste de manufacturerName en dur**,
+mais s'appuie sur ces projets comme **sources de vérité vivantes**.
+
+### Remerciements
+Merci aux mainteneurs : **Koenkk** (Zigbee2MQTT), **blakadder**, l'équipe **zigpy/ZHA**, la **CSA**,
+et tous les testeurs de la communauté Homey.
 
 ---
 
