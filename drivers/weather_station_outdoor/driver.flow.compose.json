@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "outdoor_temperature_changed",
+      "id": "weather_station_outdoor_outdoor_temperature_changed",
       "title": {
         "en": "Outdoor temperature changed",
         "fr": "Température extérieure changée"
@@ -19,7 +19,7 @@
       ]
     },
     {
-      "id": "outdoor_humidity_changed",
+      "id": "weather_station_outdoor_outdoor_humidity_changed",
       "title": {
         "en": "Outdoor humidity changed",
         "fr": "Humidité extérieure changée"
@@ -37,7 +37,7 @@
       ]
     },
     {
-      "id": "pressure_changed",
+      "id": "weather_station_outdoor_pressure_changed",
       "title": {
         "en": "Barometric pressure changed",
         "fr": "Pression atmosphérique changée"
@@ -55,7 +55,7 @@
       ]
     },
     {
-      "id": "weather_battery_low",
+      "id": "weather_station_outdoor_weather_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible"
@@ -64,7 +64,7 @@
   ],
   "conditions": [
     {
-      "id": "outdoor_temp_above",
+      "id": "weather_station_outdoor_outdoor_temp_above",
       "title": {
         "en": "Outdoor temperature above",
         "fr": "Température extérieure supérieure à"
@@ -83,7 +83,7 @@
       ]
     },
     {
-      "id": "outdoor_temp_below",
+      "id": "weather_station_outdoor_outdoor_temp_below",
       "title": {
         "en": "Outdoor temperature below",
         "fr": "Température extérieure inférieure à"
@@ -102,14 +102,14 @@
       ]
     },
     {
-      "id": "pressure_rising",
+      "id": "weather_station_outdoor_pressure_rising",
       "title": {
         "en": "Pressure is rising (good weather)",
         "fr": "Pression en hausse (beau temps)"
       }
     },
     {
-      "id": "pressure_falling",
+      "id": "weather_station_outdoor_pressure_falling",
       "title": {
         "en": "Pressure is falling (bad weather)",
         "fr": "Pression en baisse (mauvais temps)"
