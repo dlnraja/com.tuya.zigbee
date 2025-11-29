@@ -90,6 +90,95 @@
   },
   "settings": [
     {
+      "type": "group",
+      "label": {
+        "en": "🎯 Radar Detection (FP300-like)",
+        "fr": "🎯 Détection Radar (FP300-like)"
+      },
+      "children": [
+        {
+          "id": "radar_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Radar Sensitivity",
+            "fr": "Sensibilité Radar"
+          },
+          "value": 7,
+          "min": 0,
+          "max": 9,
+          "step": 1,
+          "hint": {
+            "en": "Detection sensitivity (0=lowest, 9=highest). Higher values detect smaller movements.",
+            "fr": "Sensibilité de détection (0=min, 9=max). Valeurs élevées détectent les petits mouvements."
+          }
+        },
+        {
+          "id": "minimum_range",
+          "type": "number",
+          "label": {
+            "en": "Minimum Range (m)",
+            "fr": "Distance Minimum (m)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 9.5,
+          "step": 0.5,
+          "hint": {
+            "en": "Minimum detection distance in meters. Objects closer will be ignored.",
+            "fr": "Distance minimale de détection en mètres. Objets plus proches seront ignorés."
+          }
+        },
+        {
+          "id": "maximum_range",
+          "type": "number",
+          "label": {
+            "en": "Maximum Range (m)",
+            "fr": "Distance Maximum (m)"
+          },
+          "value": 6,
+          "min": 0.5,
+          "max": 9.5,
+          "step": 0.5,
+          "hint": {
+            "en": "Maximum detection distance in meters (up to 9.5m for most sensors).",
+            "fr": "Distance maximale de détection en mètres (jusqu'à 9.5m pour la plupart)."
+          }
+        },
+        {
+          "id": "detection_delay",
+          "type": "number",
+          "label": {
+            "en": "Detection Delay (s)",
+            "fr": "Délai de Détection (s)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 10,
+          "step": 0.5,
+          "hint": {
+            "en": "Delay before reporting presence (0=instant). Helps avoid false positives.",
+            "fr": "Délai avant de signaler une présence (0=instantané). Évite les faux positifs."
+          }
+        },
+        {
+          "id": "fading_time",
+          "type": "number",
+          "label": {
+            "en": "Absence Delay / Fading Time (s)",
+            "fr": "Délai d'Absence (s)"
+          },
+          "value": 60,
+          "min": 0.5,
+          "max": 1500,
+          "step": 5,
+          "hint": {
+            "en": "Time before clearing presence after no movement detected. Like FP300 absence delay.",
+            "fr": "Temps avant de signaler l'absence après aucun mouvement. Similaire au délai FP300."
+          }
+        }
+      ]
+    },
+    {
       "id": "power_source",
       "type": "dropdown",
       "label": {
