@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.2.28",
+  "version": "5.2.29",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.2.28: Fixed migration alias for consolidated drivers. Added _TZE284_vvmbj46n climate sensor support.",
-    "fr": "V5.2.28: Correction alias migration pour drivers consolidés. Ajout capteur climatique _TZE284_vvmbj46n."
+    "en": "V5.2.29: Major device handler fixes - Soil sensor DP handling, SOS button battery, Switch mains-powered, Device Fingerprint DB.",
+    "fr": "V5.2.29: Corrections majeures - Capteur sol DP, batterie SOS, Switch secteur, Base empreintes appareils."
   },
   "category": "appliances",
   "permissions": [],
