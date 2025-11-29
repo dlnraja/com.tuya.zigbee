@@ -17,6 +17,8 @@ const { processMigrationQueue } = require('./lib/utils/migration-queue'); // ✅
 const OTAUpdateManager = require('./lib/ota/OTAUpdateManager'); // 📦 OTA Firmware Updates
 const QuirksDatabase = require('./lib/quirks/QuirksDatabase'); // 🔧 Device Quirks
 const EmergencyDeviceFix = require('./lib/emergency/EmergencyDeviceFix'); // 🚨 Emergency Fix System
+const DatabaseUpdater = require('./lib/data/DatabaseUpdater'); // 🔄 Auto-update from sources
+const SourceCredits = require('./lib/data/SourceCredits'); // 📜 Source attributions
 
 class UniversalTuyaZigbeeApp extends Homey.App {
   _flowCardsRegistered = false;
@@ -33,6 +35,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
   suggestionEngine = null; // 🤖 Non-destructive Smart-Adapt
   otaManager = null; // 📦 OTA Firmware Update Manager
   quirksDatabase = null; // 🔧 Device Quirks Database
+  databaseUpdater = null; // 🔄 Auto-update from all sources
   developerDebugMode = false; // 🔍 AUDIT V2: Contrôle verbosity logs
   experimentalSmartAdapt = false; // ⚠️ AUDIT V2: Modifications capabilities opt-in
 
@@ -130,6 +133,17 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     // 📦 Initialize OTA Firmware Update Manager
     this.otaManager = new OTAUpdateManager(this.homey);
     this.log('✅ OTA Update Manager initialized');
+
+    // 🔄 Initialize Database Updater (auto-fetch from Zigbee2MQTT, ZHA, etc.)
+    this.databaseUpdater = new DatabaseUpdater(this.homey);
+    this.log('✅ Database Updater initialized');
+    this.log(`📜 Data sources: ${SourceCredits.getAllSources().length} (${SourceCredits.getContributors().length} contributors)`);
+
+    // Schedule auto-updates in background (non-blocking)
+    setTimeout(() => {
+      this.databaseUpdater.scheduleAutoUpdates();
+      this.log('📅 Auto-updates scheduled for all data sources');
+    }, 60000); // Start after 1 minute
 
     // 🔧 Initialize Quirks Database
     this.quirksDatabase = QuirksDatabase;
