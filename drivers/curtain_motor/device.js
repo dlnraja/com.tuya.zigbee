@@ -15,24 +15,182 @@ class SmartCurtainMotorDevice extends BaseHybridDevice {
 
     this.log('Smart Curtain Motor device initialized');
 
+    // Detect protocol: Tuya DP (TS0601) vs Standard ZCL (TS0302/TS130F)
+    const endpoint = zclNode?.endpoints?.[1];
+    const hasTuyaCluster = !!(endpoint?.clusters?.tuya || endpoint?.clusters?.manuSpecificTuya || endpoint?.clusters?.[61184]);
+    const hasWindowCovering = !!endpoint?.clusters?.closuresWindowCovering;
 
-    // Register window coverings capabilities
-    // TODO: Consider debouncing capability updates for better performance
-    this.registerCapability('windowcoverings_state', 258);
-    this.registerCapability('windowcoverings_set', 258);
+    this.log(`[CURTAIN] Protocol: Tuya DP=${hasTuyaCluster}, WindowCovering=${hasWindowCovering}`);
 
-    // TODO: Wrap in try/catch
-    await this.configureAttributeReporting([
-      {
+    if (hasTuyaCluster) {
+      // TS0601 Tuya DP protocol
+      await this._setupTuyaDPCurtain();
+    } else if (hasWindowCovering) {
+      // Standard ZCL Window Covering cluster (258)
+      this.registerCapability('windowcoverings_state', 258);
+      this.registerCapability('windowcoverings_set', 258);
+
+      await this.configureAttributeReporting([{
         endpointId: 1,
-        cluster: {
+        cluster: { id: 258, attributes: ['currentPositionLiftPercentage'] }
+      }]).catch(this.error);
+    }
+  }
 
-          id: 258,
-          attributes: ['currentPositionLiftPercentage']
+  /**
+   * Setup Tuya DP listener for TS0601 curtain motors
+   *
+   * DP Mapping (Zigbee2MQTT tuya.ts):
+   * - DP 1: control (enum: open=0, stop=1, close=2)
+   * - DP 2: position (0-100%)
+   * - DP 3: position (alternative, inverted)
+   * - DP 5: direction setting
+   * - DP 7: work_state (enum: opening=0, closing=1, stop=2)
+   * - DP 103: position (some models)
+   */
+  async _setupTuyaDPCurtain() {
+    this.log('[CURTAIN] Setting up Tuya DP for curtain motor...');
 
+    const endpoint = this.zclNode?.endpoints?.[1];
+    if (!endpoint) return;
+
+    const tuyaCluster = endpoint.clusters?.tuya || endpoint.clusters?.manuSpecificTuya || endpoint.clusters?.[61184];
+    if (!tuyaCluster) {
+      this.log('[CURTAIN] No Tuya cluster found');
+      return;
+    }
+
+    // Register capability listener for position
+    if (this.hasCapability('windowcoverings_set')) {
+      this.registerCapabilityListener('windowcoverings_set', async (value) => {
+        const position = Math.round(value * 100);
+        this.log(`[CURTAIN] Setting position to ${position}%`);
+        await this._sendTuyaDP(2, 'value', position);
+      });
+    }
+
+    // Register capability listener for state
+    if (this.hasCapability('windowcoverings_state')) {
+      this.registerCapabilityListener('windowcoverings_state', async (value) => {
+        this.log(`[CURTAIN] Setting state to ${value}`);
+        const control = value === 'up' ? 0 : value === 'down' ? 2 : 1; // open=0, close=2, stop=1
+        await this._sendTuyaDP(1, 'enum', control);
+      });
+    }
+
+    // Listen for DP reports
+    if (this.tuyaEF00Manager) {
+      this.tuyaEF00Manager.on('dpReport', ({ dpId, value }) => {
+        this._handleCurtainDP(dpId, value);
+      });
+    }
+
+    // Direct cluster listener
+    if (typeof tuyaCluster.on === 'function') {
+      tuyaCluster.on('dataReport', (data) => {
+        this.log('[CURTAIN] Raw dataReport:', JSON.stringify(data));
+        if (data?.dp !== undefined) {
+          this._handleCurtainDP(data.dp, data.value);
         }
+      });
+    }
+
+    tuyaCluster.onDataReport = (data) => {
+      if (data?.dp !== undefined) {
+        this._handleCurtainDP(data.dp, data.value);
       }
-    ]).catch(this.error);
+    };
+
+    this.log('[CURTAIN] Tuya DP listener configured');
+  }
+
+  /**
+   * Handle incoming Tuya DP for curtain motors
+   */
+  _handleCurtainDP(dpId, value) {
+    this.log(`[CURTAIN] DP${dpId} = ${value}`);
+
+    switch (dpId) {
+      case 1: // Control command feedback
+        const stateMap = { 0: 'up', 1: 'idle', 2: 'down' };
+        const state = stateMap[value] || 'idle';
+        this.log(`[CURTAIN] Control: ${state}`);
+        if (this.hasCapability('windowcoverings_state')) {
+          this.setCapabilityValue('windowcoverings_state', state).catch(this.error);
+        }
+        break;
+
+      case 2: // Position (0-100)
+      case 3: // Alternative position DP
+      case 103: // Some models use DP103
+        const position = Math.max(0, Math.min(100, value)) / 100;
+        this.log(`[CURTAIN] Position: ${Math.round(position * 100)}%`);
+        if (this.hasCapability('windowcoverings_set')) {
+          this.setCapabilityValue('windowcoverings_set', position).catch(this.error);
+        }
+        if (this.hasCapability('dim')) {
+          this.setCapabilityValue('dim', position).catch(this.error);
+        }
+        break;
+
+      case 5: // Direction setting
+        this.log(`[CURTAIN] Direction: ${value}`);
+        break;
+
+      case 7: // Work state
+        const workStateMap = { 0: 'up', 1: 'down', 2: 'idle' };
+        const workState = workStateMap[value] || 'idle';
+        this.log(`[CURTAIN] Work state: ${workState}`);
+        if (this.hasCapability('windowcoverings_state')) {
+          this.setCapabilityValue('windowcoverings_state', workState).catch(this.error);
+        }
+        break;
+
+      default:
+        this.log(`[CURTAIN] Unknown DP${dpId} = ${value}`);
+    }
+  }
+
+  /**
+   * Send Tuya DP command
+   */
+  async _sendTuyaDP(dp, dataType, value) {
+    try {
+      const endpoint = this.zclNode?.endpoints?.[1];
+      const tuyaCluster = endpoint?.clusters?.tuya || endpoint?.clusters?.manuSpecificTuya || endpoint?.clusters?.[61184];
+
+      if (!tuyaCluster) {
+        this.error('[CURTAIN] No Tuya cluster for sending');
+        return;
+      }
+
+      // Use TuyaEF00Manager if available
+      if (this.tuyaEF00Manager) {
+        await this.tuyaEF00Manager.setData(dp, value);
+        return;
+      }
+
+      // Direct send
+      const seq = Date.now() % 65535;
+      let dataBuffer;
+
+      if (dataType === 'enum') {
+        dataBuffer = Buffer.from([dp, 4, 0, 1, value]);
+      } else if (dataType === 'value') {
+        dataBuffer = Buffer.alloc(8);
+        dataBuffer.writeUInt8(dp, 0);
+        dataBuffer.writeUInt8(2, 1); // type: value
+        dataBuffer.writeUInt16BE(4, 2); // length
+        dataBuffer.writeUInt32BE(value, 4);
+      } else {
+        dataBuffer = Buffer.from([dp, 1, 0, 1, value ? 1 : 0]);
+      }
+
+      await tuyaCluster.dataRequest({ seq, dpValues: dataBuffer });
+      this.log(`[CURTAIN] Sent DP${dp} = ${value}`);
+    } catch (err) {
+      this.error('[CURTAIN] Send DP error:', err.message);
+    }
   }
 
 
