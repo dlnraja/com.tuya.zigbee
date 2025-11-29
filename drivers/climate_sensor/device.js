@@ -42,9 +42,10 @@ class ClimateSensorDevice extends BaseHybridDevice {
     // Initialize base (power detection + dynamic capabilities)
     await super.onNodeInit({ zclNode }).catch(err => this.error(err));
 
-    // Get manufacturer name
+    // Get manufacturer name and model
     const mfr = this.getSetting('zb_manufacturerName') || '_TZE284_vvmbj46n';
-    this.log(`[CLIMATE-SENSOR] Manufacturer: ${mfr}`);
+    const modelId = this.getSetting('zb_modelId') || 'TS0601';
+    this.log(`[CLIMATE-SENSOR] Manufacturer: ${mfr}, Model: ${modelId}`);
 
     // Get fingerprint from enriched database
     this._fingerprint = DeviceFingerprintDB.getFingerprint(mfr);
@@ -52,17 +53,154 @@ class ClimateSensorDevice extends BaseHybridDevice {
       this.log(`[CLIMATE-SENSOR] 📋 Using fingerprint: ${this._fingerprint.productNames?.join(', ') || 'Climate Sensor'}`);
     }
 
-    // Store DP values for debugging
-    this._dpValues = {};
-    this._dpLastUpdate = null;
+    // Detect device type: TS0201 uses standard ZCL, TS0601 uses Tuya DP
+    const isStandardZCL = modelId === 'TS0201' || modelId.startsWith('TS02');
+    this._isStandardZCL = isStandardZCL;
+    this.log(`[CLIMATE-SENSOR] Protocol: ${isStandardZCL ? 'Standard ZCL' : 'Tuya DP (0xEF00)'}`);
 
-    // Setup Tuya DP listener
-    await this._setupTuyaDPListener();
-
-    // Request initial data
-    this._requestInitialDPs();
+    if (isStandardZCL) {
+      // TS0201: Standard ZCL clusters for temperature, humidity, battery
+      await this._setupStandardZCLListeners();
+    } else {
+      // TS0601: Tuya DP protocol
+      this._dpValues = {};
+      this._dpLastUpdate = null;
+      await this._setupTuyaDPListener();
+      this._requestInitialDPs();
+    }
 
     this.log('[CLIMATE-SENSOR] ✅ Initialized');
+  }
+
+  /**
+   * Setup standard ZCL cluster listeners for TS0201 devices
+   * Uses msTemperatureMeasurement (0x0402), msRelativeHumidity (0x0405), genPowerCfg (0x0001)
+   */
+  async _setupStandardZCLListeners() {
+    this.log('[CLIMATE-SENSOR] Setting up standard ZCL listeners for TS0201...');
+
+    const endpoint = this.zclNode?.endpoints?.[1];
+    if (!endpoint) {
+      this.log('[CLIMATE-SENSOR] ⚠️ No endpoint 1 found');
+      return;
+    }
+
+    // Temperature cluster (0x0402)
+    const tempCluster = endpoint.clusters?.temperatureMeasurement || endpoint.clusters?.msTemperatureMeasurement;
+    if (tempCluster) {
+      this.log('[CLIMATE-SENSOR] ✅ Temperature cluster found');
+      try {
+        // Read initial value
+        const tempData = await tempCluster.readAttributes(['measuredValue']).catch(() => null);
+        if (tempData?.measuredValue != null) {
+          const temp = Math.round((tempData.measuredValue / 100) * 10) / 10;
+          this.log(`[CLIMATE-SENSOR] 🌡️ Initial temperature: ${temp}°C`);
+          if (this.hasCapability('measure_temperature')) {
+            await this.setCapabilityValue('measure_temperature', temp).catch(this.error);
+          }
+        }
+
+        // Setup reporting
+        if (typeof tempCluster.configureReporting === 'function') {
+          await tempCluster.configureReporting({
+            measuredValue: { minInterval: 60, maxInterval: 3600, minChange: 10 }
+          }).catch(err => this.log('[CLIMATE-SENSOR] Temperature reporting config failed:', err.message));
+        }
+
+        // Listen for reports
+        tempCluster.on('attr.measuredValue', (value) => {
+          const temp = Math.round((value / 100) * 10) / 10;
+          this.log(`[CLIMATE-SENSOR] 🌡️ Temperature report: ${temp}°C`);
+          if (this.hasCapability('measure_temperature')) {
+            this.setCapabilityValue('measure_temperature', temp).catch(this.error);
+          }
+        });
+      } catch (err) {
+        this.log('[CLIMATE-SENSOR] Temperature setup error:', err.message);
+      }
+    }
+
+    // Humidity cluster (0x0405)
+    const humCluster = endpoint.clusters?.relativeHumidity || endpoint.clusters?.msRelativeHumidity;
+    if (humCluster) {
+      this.log('[CLIMATE-SENSOR] ✅ Humidity cluster found');
+      try {
+        // Read initial value
+        const humData = await humCluster.readAttributes(['measuredValue']).catch(() => null);
+        if (humData?.measuredValue != null) {
+          const hum = Math.round(humData.measuredValue / 100);
+          this.log(`[CLIMATE-SENSOR] 💧 Initial humidity: ${hum}%`);
+          if (this.hasCapability('measure_humidity')) {
+            await this.setCapabilityValue('measure_humidity', hum).catch(this.error);
+          }
+        }
+
+        // Setup reporting
+        if (typeof humCluster.configureReporting === 'function') {
+          await humCluster.configureReporting({
+            measuredValue: { minInterval: 60, maxInterval: 3600, minChange: 100 }
+          }).catch(err => this.log('[CLIMATE-SENSOR] Humidity reporting config failed:', err.message));
+        }
+
+        // Listen for reports
+        humCluster.on('attr.measuredValue', (value) => {
+          const hum = Math.round(value / 100);
+          this.log(`[CLIMATE-SENSOR] 💧 Humidity report: ${hum}%`);
+          if (this.hasCapability('measure_humidity')) {
+            this.setCapabilityValue('measure_humidity', hum).catch(this.error);
+          }
+        });
+      } catch (err) {
+        this.log('[CLIMATE-SENSOR] Humidity setup error:', err.message);
+      }
+    }
+
+    // Battery cluster (0x0001 genPowerCfg)
+    const powerCluster = endpoint.clusters?.powerConfiguration || endpoint.clusters?.genPowerCfg;
+    if (powerCluster) {
+      this.log('[CLIMATE-SENSOR] ✅ Power/Battery cluster found');
+      try {
+        // Read initial battery
+        const batteryData = await powerCluster.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']).catch(() => null);
+        if (batteryData?.batteryPercentageRemaining != null) {
+          const battery = Math.round(batteryData.batteryPercentageRemaining / 2);
+          this.log(`[CLIMATE-SENSOR] 🔋 Initial battery: ${battery}%`);
+          if (this.hasCapability('measure_battery')) {
+            await this.setCapabilityValue('measure_battery', battery).catch(this.error);
+          }
+        } else if (batteryData?.batteryVoltage != null) {
+          // Fallback to voltage
+          const voltage = batteryData.batteryVoltage / 10;
+          const battery = Math.max(0, Math.min(100, Math.round((voltage - 2.0) / 1.2 * 100)));
+          this.log(`[CLIMATE-SENSOR] 🔋 Initial battery (from voltage ${voltage}V): ${battery}%`);
+          if (this.hasCapability('measure_battery')) {
+            await this.setCapabilityValue('measure_battery', battery).catch(this.error);
+          }
+        }
+
+        // Setup battery reporting
+        if (typeof powerCluster.configureReporting === 'function') {
+          await powerCluster.configureReporting({
+            batteryPercentageRemaining: { minInterval: 3600, maxInterval: 43200, minChange: 2 }
+          }).catch(err => this.log('[CLIMATE-SENSOR] Battery reporting config failed:', err.message));
+        }
+
+        // Listen for battery reports
+        powerCluster.on('attr.batteryPercentageRemaining', (value) => {
+          const battery = Math.round(value / 2);
+          this.log(`[CLIMATE-SENSOR] 🔋 Battery report: ${battery}%`);
+          if (this.hasCapability('measure_battery')) {
+            this.setCapabilityValue('measure_battery', battery).catch(this.error);
+          }
+        });
+      } catch (err) {
+        this.log('[CLIMATE-SENSOR] Battery setup error:', err.message);
+      }
+    } else {
+      this.log('[CLIMATE-SENSOR] ⚠️ No battery cluster found - device may not report battery');
+    }
+
+    this.log('[CLIMATE-SENSOR] ✅ Standard ZCL listeners configured');
   }
 
   /**
