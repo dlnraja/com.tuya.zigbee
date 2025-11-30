@@ -1,4 +1,8 @@
 {
+  "5.2.74": {
+    "en": "🔧 ADD: Soil Sensor _TZE284_vvmbj46n Support\n\n**From Diagnostic Report:**\n- Added _TZE284_vvmbj46n to soil_sensor driver fingerprints\n- Added passive DP mappings for this device\n- DPs: 1=air_temp, 2=air_humidity, 3=soil_temp, 4=soil_moisture, 14/15=battery\n\n**Note:** Users with this device on climate_sensor need to:\n1. Remove device from Homey\n2. Re-pair and select 'Soil Sensor' driver",
+    "fr": "🔧 AJOUT: Support Capteur Sol _TZE284_vvmbj46n\n\n- Fingerprint + mappings DP ajoutés\n- Re-appairer le device si sur climate_sensor"
+  },
   "5.2.73": {
     "en": "🔧 IMPROVE: Battery & Migration Robustness\n\n**battery-reporting-manager:**\n- Timeout errors now INFO level (not ERROR) for sleeping devices\n- Added battery_last_update timestamp tracking\n- Non-blocking: continues even if initial read fails\n\n**AutonomousMigrationManager:**\n- Added _isDeviceAvailable() guard for deleted/ghost devices\n- Handles 'Not Found: Device with ID' errors gracefully\n- Prevents log spam from migration on removed devices\n\n**Impact:** Cleaner logs, better diagnostics for battery devices",
     "fr": "🔧 AMÉLIORATION: Robustesse Batterie & Migration\n\n- Timeouts batterie = info (pas erreur)\n- Tracking battery_last_update\n- Protection devices supprimés dans migration"
