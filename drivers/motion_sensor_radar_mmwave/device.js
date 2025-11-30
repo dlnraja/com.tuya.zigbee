@@ -236,8 +236,19 @@ class RadarMotionSensorMmwaveDevice extends BaseHybridDevice {
    * - DP 107: presence_state (enum)
    * - DP 108: motion_state (enum)
    */
+  /**
+   * v5.2.91: Handle incoming Tuya DP with timestamp updates
+   * Fixes "56 years ago" issue by storing proper timestamps
+   */
   _handleRadarDP(dpId, value) {
-    this.log(`[RADAR] 📊 DP${dpId} = ${value}`);
+    this.log('[RADAR-DP] ═══════════════════════════════════════════════════════');
+    this.log(`[RADAR-DP] 📥 RECEIVED: DP${dpId} = ${value} (type: ${typeof value})`);
+
+    // v5.2.91: Store timestamp for ALL DPs to fix "56 years ago"
+    const now = Date.now();
+    this.setStoreValue('last_dp_update', now).catch(() => { });
+    this.setStoreValue(`dp_${dpId}_time`, now).catch(() => { });
+    this.setStoreValue(`dp_${dpId}_value`, value).catch(() => { });
 
     switch (dpId) {
       // ═══════════════════════════════════════════════════════════════
@@ -245,9 +256,13 @@ class RadarMotionSensorMmwaveDevice extends BaseHybridDevice {
       // ═══════════════════════════════════════════════════════════════
       case 1: // Presence (boolean)
         const presence = Boolean(value);
-        this.log(`[RADAR] 👤 Presence: ${presence ? 'DETECTED' : 'clear'}`);
+        this.log(`[RADAR-DP] 👤 Presence: ${presence ? 'DETECTED' : 'clear'}`);
         if (this.hasCapability('alarm_motion')) {
-          this.setCapabilityValue('alarm_motion', presence).catch(this.error);
+          this.setCapabilityValue('alarm_motion', presence)
+            .then(() => this.log(`[RADAR-DP] ✅ alarm_motion = ${presence}`))
+            .catch(err => this.error(`[RADAR-DP] ❌ Failed:`, err.message));
+          // Store motion timestamp
+          this.setStoreValue('last_motion_update', now).catch(() => { });
         }
         // Trigger flow
         this._triggerPresenceFlow(presence);
@@ -382,16 +397,34 @@ class RadarMotionSensorMmwaveDevice extends BaseHybridDevice {
         break;
 
       // ═══════════════════════════════════════════════════════════════
-      // BATTERY (ZG-204ZM uses DP 15 for battery)
+      // ILLUMINANCE (DP 12 for some radar models like _TZE200_rhgsbacq)
+      // v5.2.91: Added explicit DP12 handling for illuminance
+      // ═══════════════════════════════════════════════════════════════
+      case 12: // Illuminance (lux) - direct
+        this.log(`[RADAR-DP] 💡 Illuminance (DP12): ${value} lux`);
+        if (this.hasCapability('measure_luminance')) {
+          this.setCapabilityValue('measure_luminance', value)
+            .then(() => this.log(`[RADAR-DP] ✅ measure_luminance = ${value} lux`))
+            .catch(err => this.error(`[RADAR-DP] ❌ Failed:`, err.message));
+          this.setStoreValue('last_lux_update', now).catch(() => { });
+        }
+        break;
+
+      // ═══════════════════════════════════════════════════════════════
+      // BATTERY (DP 4 or DP 15)
+      // v5.2.91: Enhanced logging
       // ═══════════════════════════════════════════════════════════════
       case 15: // Battery (%)
         const battery = Math.min(100, Math.max(0, value));
-        this.log(`[RADAR] 🔋 Battery: ${battery}%`);
+        this.log(`[RADAR-DP] 🔋 Battery (DP15): ${battery}%`);
         // v5.2.62: Mark that we received a REAL battery DP
         this.setStoreValue('has_received_battery_dp', true).catch(() => { });
         this.setStoreValue('last_battery_percent', battery).catch(() => { });
+        this.setStoreValue('last_battery_update', now).catch(() => { });
         if (this.hasCapability('measure_battery')) {
-          this.setCapabilityValue('measure_battery', battery).catch(this.error);
+          this.setCapabilityValue('measure_battery', battery)
+            .then(() => this.log(`[RADAR-DP] ✅ measure_battery = ${battery}%`))
+            .catch(err => this.error(`[RADAR-DP] ❌ Failed:`, err.message));
         }
         break;
 
