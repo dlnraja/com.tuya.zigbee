@@ -1,4 +1,8 @@
 {
+  "5.2.76": {
+    "en": "🔧 CRITICAL FIXES: Multiple Bug Corrections\n\n**1. ERR_OUT_OF_RANGE Battery Reporting:**\n- Fixed maxInterval exceeding uint16 max (65535)\n- ZigpyIntegration: 86400 → 43200\n\n**2. IAS Zone Bitmap Parsing:**\n- CRITICAL: alarm1 was always false even with motion\n- Fixed: Now properly reads Bitmap object properties\n- 3 fallback methods: direct access, numeric, string parsing\n\n**3. Flow Card Invalid ID Errors:**\n- switch_2gang_turned_on/off now tries multiple fallback IDs\n- Silent handling when no flow cards defined\n\n**4. Missing Function Error:**\n- calculatePercentageFromVoltage crash fixed\n- Added typeof check before calling method\n\n**Impact:** Motion detection, battery reporting, and flows now work correctly",
+    "fr": "🔧 CORRECTIONS CRITIQUES\n\n- ERR_OUT_OF_RANGE batterie\n- IAS Zone alarm1 toujours false corrigé\n- Flow Cards switch_2gang\n- calculatePercentageFromVoltage crash"
+  },
   "5.2.75": {
     "en": "🔧 FIX: Soil Sensor DP Listener Enhancement\n\n**Problem:** Soil sensors not receiving DP data despite queries being sent\n\n**Root Cause:** DP events not being routed to device handler\n\n**Fix:** Enhanced _setupTuyaDPListener() with 4 fallback methods:\n1. TuyaEF00Manager dpReport event\n2. TuyaEF00Manager individual dp-X events\n3. Direct Tuya cluster dataReport\n4. ZCL raw frame parser (last resort)\n\n**Also Added:**\n- _parseTuyaRawData() for multiple data formats\n- _parseTuyaRawFrame() for raw ZCL frames\n- Detailed logging to track DP reception\n\n**Impact:** Soil sensors should now receive temperature/humidity/battery data",
     "fr": "🔧 FIX: Amélioration Listener DP Capteur Sol\n\n- 4 méthodes fallback pour recevoir les DPs\n- Parser raw frame ZCL\n- Logs détaillés"
