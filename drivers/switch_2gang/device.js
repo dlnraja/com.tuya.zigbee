@@ -302,14 +302,29 @@ class SmartSwitch2gangHybridDevice extends BaseHybridDevice {
       }
     }
 
-    // OnOff triggers
+    // v5.2.76: OnOff triggers with robust error handling
     if (capabilityId === 'onoff') {
-      const triggerId = value ? `${driverId}_turned_on` : `${driverId}_turned_off`;
-      try {
-        await this.homey.flow.getDeviceTriggerCard(triggerId).trigger(this).catch(err => this.error(err));
-        this.log(`Triggered: ${triggerId}`);
-      } catch (error) {
-        this.error(`Error triggering onoff:`, error.message);
+      // Try multiple trigger ID formats
+      const triggerIds = value
+        ? [`${driverId}_turned_on`, 'turned_on', 'switch_turned_on']
+        : [`${driverId}_turned_off`, 'turned_off', 'switch_turned_off'];
+
+      let triggered = false;
+      for (const triggerId of triggerIds) {
+        try {
+          const card = this.homey.flow.getDeviceTriggerCard(triggerId);
+          if (card) {
+            await card.trigger(this).catch(() => { });
+            this.log(`[FLOW] ✅ Triggered: ${triggerId}`);
+            triggered = true;
+            break;
+          }
+        } catch (err) {
+          // Card doesn't exist, try next
+        }
+      }
+      if (!triggered) {
+        this.log(`[FLOW] ℹ️ No flow card found for onoff=${value} (normal if no flows defined)`);
       }
     }
   }
