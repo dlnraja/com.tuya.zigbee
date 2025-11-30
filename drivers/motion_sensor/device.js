@@ -88,19 +88,26 @@ class MotionSensorDevice extends BaseHybridDevice {
         this.log('[IAS] 🚨 Zone notification received:', payload);
 
         if (payload && payload.zoneStatus !== undefined) {
-          // CRITICAL: Convert Bitmap to number before bitwise operations
-          let status = payload.zoneStatus;
-          if (status && typeof status.valueOf === 'function') {
-            status = status.valueOf();
-          }
-          if (typeof status !== 'number') {
-            status = Number(status) || 0;
+          // v5.2.66: Fix Bitmap parsing - check alarm1 property directly
+          const status = payload.zoneStatus;
+          let motionDetected = false;
+
+          // Method 1: Direct property access (zigbee-clusters Bitmap)
+          if (typeof status === 'object' && status !== null) {
+            // Check alarm1 property directly on Bitmap object
+            motionDetected = status.alarm1 === true || status['alarm1'] === true;
+            // Fallback: check bits property if available
+            if (!motionDetected && typeof status.bits === 'number') {
+              motionDetected = (status.bits & 0x01) !== 0;
+            }
+            this.log('[IAS] Bitmap alarm1:', status.alarm1, 'bits:', status.bits);
+          } else if (typeof status === 'number') {
+            // Method 2: Already a number
+            motionDetected = (status & 0x01) !== 0;
+            this.log('[IAS] Numeric status:', status);
           }
 
-          this.log('[IAS] zoneStatus numeric value:', status);
-
-          // Check alarm1 bit (motion/alarm detected)
-          const motionDetected = (status & 0x01) !== 0;
+          this.log('[IAS] Motion detected:', motionDetected);
           const previousState = this.getCapabilityValue('alarm_motion');
 
           // Update capability
@@ -143,15 +150,17 @@ class MotionSensorDevice extends BaseHybridDevice {
       endpoint.clusters.iasZone.onZoneStatus = async (zoneStatus) => {
         this.log('[IAS] Zone attribute report:', zoneStatus);
 
-        let status = zoneStatus;
-        if (status && typeof status.valueOf === 'function') {
-          status = status.valueOf();
-        }
-        if (typeof status !== 'number') {
-          status = Number(status) || 0;
+        // v5.2.66: Fix Bitmap parsing - same fix as onZoneStatusChangeNotification
+        let motionDetected = false;
+        if (typeof zoneStatus === 'object' && zoneStatus !== null) {
+          motionDetected = zoneStatus.alarm1 === true || zoneStatus['alarm1'] === true;
+          if (!motionDetected && typeof zoneStatus.bits === 'number') {
+            motionDetected = (zoneStatus.bits & 0x01) !== 0;
+          }
+        } else if (typeof zoneStatus === 'number') {
+          motionDetected = (zoneStatus & 0x01) !== 0;
         }
 
-        const motionDetected = (status & 0x01) !== 0;
         try {
           await this.setCapabilityValue('alarm_motion', motionDetected);
           this.log(`[IAS] ✅ alarm_motion = ${motionDetected} (via attribute)`);
