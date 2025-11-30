@@ -5,10 +5,21 @@
   },
   "class": "sensor",
   "capabilities": [
+    "measure_co2",
+    "measure_pm25",
     "measure_temperature",
     "measure_humidity",
-    "measure_battery"
+    "measure_battery",
+    "alarm_generic"
   ],
+  "capabilitiesOptions": {
+    "alarm_generic": {
+      "title": {
+        "en": "Air Quality Alert",
+        "fr": "Alerte Qualité Air"
+      }
+    }
+  },
   "energy": {
     "batteries": [
       "CR2032",
