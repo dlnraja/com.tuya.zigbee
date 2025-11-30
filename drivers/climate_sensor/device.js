@@ -4,136 +4,257 @@ const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
 const DeviceFingerprintDB = require('../../lib/tuya/DeviceFingerprintDB');
 
 /**
- * Climate Sensor Device - Enhanced TS0601 Support
+ * Climate Sensor Device - v5.2.91 ULTRA DEBUG VERSION
  *
- * Supported Manufacturers (from DeviceFingerprintDB):
- * - _TZE284_vvmbj46n (ZTH05Z)
- * - _TZE200_vvmbj46n (ZTH05)
- * - _TZE284_znlqjmih
+ * CRITICAL: TS0601/_TZE devices have PHANTOM ZCL clusters!
+ * They advertise temperatureMeasurement, relativeHumidity, powerConfiguration
+ * but these clusters DON'T RESPOND → Timeout errors!
  *
- * Protocol: Tuya DataPoints (DP) over cluster 0xEF00
- *
- * Full DP Mapping from Zigbee2MQTT:
- * - DP 1:  Temperature (value ÷ 10) °C
- * - DP 2:  Humidity (%)
- * - DP 4:  Battery (%)
- * - DP 9:  Temperature unit (celsius/fahrenheit)
- * - DP 10: Max temperature alarm (÷10)
- * - DP 11: Min temperature alarm (÷10)
- * - DP 12: Max humidity alarm
- * - DP 13: Min humidity alarm
- * - DP 14: Temperature alarm (lower_alarm/upper_alarm/cancel)
- * - DP 15: Humidity alarm (lower_alarm/upper_alarm/cancel)
- * - DP 17: Temperature periodic report (min, 1-120)
- * - DP 18: Humidity periodic report (min, 1-120)
- * - DP 19: Temperature sensitivity (÷10, 0.3-1)
- * - DP 20: Humidity sensitivity (3-10)
+ * v5.2.91: Added comprehensive debug logging throughout
  */
 class ClimateSensorDevice extends BaseHybridDevice {
 
   // Force battery powered
   get mainsPowered() { return false; }
 
-  async onNodeInit({ zclNode }) {
-    this.log('═══════════════════════════════════════════════════');
-    this.log('[CLIMATE-SENSOR] Initializing...');
-    this.log('═══════════════════════════════════════════════════');
+  /**
+   * v5.2.91: BLOCK ALL ZCL for Tuya DP - with detailed logging
+   */
+  async registerAllCapabilitiesWithReporting() {
+    this.log('╔═══════════════════════════════════════════════════════════════════╗');
+    this.log('║ [ZCL-GUARD] registerAllCapabilitiesWithReporting() INTERCEPTED!  ║');
+    this.log('╚═══════════════════════════════════════════════════════════════════╝');
 
-    // Initialize base (power detection + dynamic capabilities)
-    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
+    const protocolInfo = this._detectProtocolSafe();
+    this.log('[ZCL-GUARD] Protocol detection result:', JSON.stringify(protocolInfo));
 
-    // Get manufacturer name and model
-    const mfr = this.getSetting('zb_manufacturerName') || '_TZE284_vvmbj46n';
-    const modelId = this.getSetting('zb_modelId') || 'TS0601';
-    this.log(`[CLIMATE-SENSOR] Manufacturer: ${mfr}, Model: ${modelId}`);
-
-    // Get fingerprint from enriched database
-    this._fingerprint = DeviceFingerprintDB.getFingerprint(mfr);
-    if (this._fingerprint) {
-      this.log(`[CLIMATE-SENSOR] 📋 Using fingerprint: ${this._fingerprint.productNames?.join(', ') || 'Climate Sensor'}`);
+    if (protocolInfo.isTuyaDP) {
+      this.log('[ZCL-GUARD] ════════════════════════════════════════════════════════');
+      this.log('[ZCL-GUARD] 🛑 BLOCKED! This is a Tuya DP device');
+      this.log('[ZCL-GUARD] 🛑 ZCL clusters are PHANTOM - they do NOT respond!');
+      this.log('[ZCL-GUARD] 🛑 Skipping ALL ZCL: readAttributes, configureReporting');
+      this.log('[ZCL-GUARD] ✅ Data will arrive via Tuya DP events (cluster 0xEF00)');
+      this.log('[ZCL-GUARD] ════════════════════════════════════════════════════════');
+      return; // ❌ NO ZCL OPERATIONS!
     }
 
-    // Detect device type: TS0201/SONOFF use standard ZCL, TS0601 uses Tuya DP
-    // v5.2.69: Added SONOFF SNZB-02/02D/02P detection
-    // v5.2.81: Added HYBRID mode for TS0601 with standard clusters!
-    const isSONOFF = mfr === 'SONOFF' || mfr === 'eWeLink' || modelId.startsWith('SNZB');
-    const isStandardZCL = modelId === 'TS0201' || modelId.startsWith('TS02') || isSONOFF;
+    this.log('[ZCL-GUARD] ✅ Not a Tuya DP device - proceeding with ZCL registration');
+    return super.registerAllCapabilitiesWithReporting();
+  }
 
-    // v5.2.88: CRITICAL FIX - Check _isPureTuyaDP from base class
-    // TS0601/_TZE devices advertise phantom ZCL clusters that DON'T RESPOND!
-    // We must NOT try ZCL for these devices or we get timeouts
-    const isPureTuyaDP = this._isPureTuyaDP || modelId === 'TS0601' || mfr.startsWith('_TZE');
+  /**
+   * v5.2.91: Also override registerCapability to catch any sneaky ZCL calls
+   */
+  async registerCapability(capabilityId, clusterId, opts) {
+    const protocolInfo = this._detectProtocolSafe();
 
-    // v5.2.81: Check if TS0601 has standard clusters available (HYBRID mode)
-    // v5.2.88: BUT only use HYBRID mode if NOT a pure Tuya DP device!
-    const endpoint = zclNode?.endpoints?.[1];
-    const hasStandardTemp = !!(endpoint?.clusters?.temperatureMeasurement || endpoint?.clusters?.msTemperatureMeasurement);
-    const hasStandardHumidity = !!(endpoint?.clusters?.relativeHumidity || endpoint?.clusters?.msRelativeHumidity);
-    const hasStandardBattery = !!(endpoint?.clusters?.powerConfiguration || endpoint?.clusters?.genPowerCfg);
-
-    // v5.2.88: HYBRID mode is DISABLED for pure Tuya DP devices!
-    // These phantom clusters cause timeouts and don't provide data
-    const isTS0601WithStandardClusters = false; // DISABLED - was causing all the timeouts!
-
-    this._isStandardZCL = isStandardZCL && !isPureTuyaDP;
-    this._isHybridMode = false; // v5.2.88: DISABLED - phantom clusters don't work
-
-    if (isPureTuyaDP) {
-      this.log('[CLIMATE-SENSOR] ════════════════════════════════════════════════════════');
-      this.log('[CLIMATE-SENSOR] 🔶 PURE TUYA DP DEVICE DETECTED!');
-      this.log('[CLIMATE-SENSOR] ════════════════════════════════════════════════════════');
-      this.log(`[CLIMATE-SENSOR] Model: ${modelId}, Manufacturer: ${mfr}`);
-      this.log('[CLIMATE-SENSOR] ⚠️ Standard clusters are PHANTOM (advertised but don\'t respond)');
-      this.log('[CLIMATE-SENSOR] ⚠️ Skipping ALL ZCL operations to avoid timeouts!');
-      this.log('[CLIMATE-SENSOR] ✅ Using Tuya DP protocol exclusively');
-    } else if (isStandardZCL) {
-      this.log(`[CLIMATE-SENSOR] Protocol: Standard ZCL${isSONOFF ? ' (SONOFF)' : ''}`);
+    if (protocolInfo.isTuyaDP) {
+      this.log(`[ZCL-GUARD] 🛑 registerCapability(${capabilityId}) BLOCKED - Tuya DP device`);
+      return; // Don't register ZCL capabilities for Tuya DP
     }
 
-    // v5.2.88: ONLY use ZCL for non-Tuya devices (TS0201, SONOFF, etc.)
-    if (isStandardZCL && !isPureTuyaDP) {
-      // TS0201 or SONOFF: Use standard ZCL clusters
-      await this._setupStandardZCLListeners();
-    } else {
-      // TS0601: Pure Tuya DP protocol (no standard clusters available)
-      this._dpValues = {};
-      this._dpLastUpdate = null;
+    return super.registerCapability(capabilityId, clusterId, opts);
+  }
 
-      // v5.2.87: Wait for TuyaEF00Manager to be initialized before setting up listeners
-      // The base class initializes it in background, so we need to wait or retry
-      this.log('[CLIMATE-SENSOR] 🔄 Waiting for TuyaEF00Manager initialization...');
+  /**
+   * v5.2.91: Safe protocol detection with detailed logging
+   */
+  _detectProtocolSafe() {
+    try {
+      const settings = this.getSettings?.() || {};
+      const store = this.getStore?.() || {};
+      const data = this.getData?.() || {};
 
-      // Setup DP listener with retry
-      const setupWithRetry = async (attempts = 0) => {
-        if (this.tuyaEF00Manager?._isInitialized || this.tuyaEF00Manager?.dpMappings) {
-          this.log('[CLIMATE-SENSOR] ✅ TuyaEF00Manager ready - setting up listeners');
-          await this._setupTuyaDPListener();
-          this._requestInitialDPs();
-        } else if (attempts < 10) {
-          // Wait and retry (up to 10 seconds)
-          setTimeout(() => setupWithRetry(attempts + 1), 1000);
-        } else {
-          // Fallback: setup anyway with direct cluster listener
-          this.log('[CLIMATE-SENSOR] ⚠️ TuyaEF00Manager not ready - using direct cluster listener');
-          await this._setupTuyaDPListener();
-          this._requestInitialDPs();
+      // Try multiple sources for model/manufacturer
+      const modelId = settings.zb_modelId || store.modelId || data.modelId || '';
+      const mfr = settings.zb_manufacturerName || store.manufacturerName || data.manufacturerName || '';
+
+      // Detection logic
+      const isTuyaDP = modelId === 'TS0601' || mfr.startsWith('_TZE');
+      const isSONOFF = mfr === 'SONOFF' || mfr === 'eWeLink' || modelId.startsWith('SNZB');
+      const isStandardZCL = (modelId === 'TS0201' || modelId.startsWith('TS02') || isSONOFF) && !isTuyaDP;
+
+      const result = {
+        protocol: isTuyaDP ? 'TUYA_DP' : 'ZCL',
+        isTuyaDP,
+        isStandardZCL,
+        isSONOFF,
+        modelId,
+        mfr,
+        _sources: {
+          settings_modelId: settings.zb_modelId,
+          store_modelId: store.modelId,
+          data_modelId: data.modelId,
+          settings_mfr: settings.zb_manufacturerName,
+          store_mfr: store.manufacturerName
         }
       };
 
-      // Start immediately and also schedule retry
-      await this._setupTuyaDPListener();
-      this._requestInitialDPs();
+      return result;
+    } catch (err) {
+      this.error('[PROTOCOL] Detection failed:', err.message);
+      // Default to Tuya DP to be safe (avoid timeouts)
+      return { protocol: 'TUYA_DP', isTuyaDP: true, isStandardZCL: false, modelId: '', mfr: '' };
+    }
+  }
 
-      // Also listen for background init completion
-      setTimeout(() => {
-        if (this.tuyaEF00Manager?.dpMappings) {
-          this.log('[CLIMATE-SENSOR] 📡 Re-registering DP listeners after background init');
-          this._registerDPFromManager();
-        }
-      }, 6000);
+  async onNodeInit({ zclNode }) {
+    this.log('');
+    this.log('╔═══════════════════════════════════════════════════════════════════╗');
+    this.log('║           CLIMATE SENSOR v5.2.91 - ULTRA DEBUG MODE              ║');
+    this.log('╚═══════════════════════════════════════════════════════════════════╝');
+    this.log('');
+
+    // v5.2.91: Detect protocol BEFORE any other operation
+    const protocolInfo = this._detectProtocolSafe();
+    this._protocolInfo = protocolInfo;
+
+    this.log('[INIT] ═══════════════════════════════════════════════════════════');
+    this.log('[INIT] DEVICE IDENTIFICATION:');
+    this.log('[INIT]   Model ID:     ', protocolInfo.modelId || '(empty)');
+    this.log('[INIT]   Manufacturer: ', protocolInfo.mfr || '(empty)');
+    this.log('[INIT]   Protocol:     ', protocolInfo.protocol);
+    this.log('[INIT]   isTuyaDP:     ', protocolInfo.isTuyaDP);
+    this.log('[INIT]   isStandardZCL:', protocolInfo.isStandardZCL);
+    this.log('[INIT]   Data sources: ', JSON.stringify(protocolInfo._sources));
+    this.log('[INIT] ═══════════════════════════════════════════════════════════');
+
+    // Force _isPureTuyaDP BEFORE super.onNodeInit()
+    if (protocolInfo.isTuyaDP) {
+      this._isPureTuyaDP = true;
+      this._blockZCL = true; // Extra flag for safety
+      this.log('[INIT] 🔶 _isPureTuyaDP = true (set BEFORE super.onNodeInit)');
+      this.log('[INIT] 🔶 _blockZCL = true (extra safety flag)');
     }
 
-    this.log('[CLIMATE-SENSOR] ✅ Initialized');
+    // Log available clusters BEFORE init
+    this._logAvailableClusters(zclNode, 'BEFORE super.onNodeInit');
+
+    // Initialize base - ZCL operations will be blocked by our overrides
+    this.log('[INIT] Calling super.onNodeInit()...');
+    await super.onNodeInit({ zclNode }).catch(err => {
+      this.error('[INIT] super.onNodeInit() ERROR:', err.message);
+    });
+    this.log('[INIT] super.onNodeInit() completed');
+
+    // Get fingerprint
+    this._fingerprint = DeviceFingerprintDB.getFingerprint(protocolInfo.mfr);
+    if (this._fingerprint) {
+      this.log(`[INIT] 📋 Fingerprint: ${this._fingerprint.productNames?.join(', ') || 'Climate Sensor'}`);
+    }
+
+    // Route based on protocol
+    if (protocolInfo.isTuyaDP) {
+      this.log('');
+      this.log('[MODE] ╔═══════════════════════════════════════════════════════════╗');
+      this.log('[MODE] ║         🔶 TUYA DP MODE - NO ZCL OPERATIONS! 🔶          ║');
+      this.log('[MODE] ╚═══════════════════════════════════════════════════════════╝');
+      this.log('');
+      await this._setupTuyaDpOnly();
+    } else if (protocolInfo.isStandardZCL) {
+      this.log('');
+      this.log('[MODE] ╔═══════════════════════════════════════════════════════════╗');
+      this.log('[MODE] ║              📡 STANDARD ZCL MODE 📡                      ║');
+      this.log('[MODE] ╚═══════════════════════════════════════════════════════════╝');
+      this.log('');
+      await this._setupStandardZclMode();
+    } else {
+      this.log('[MODE] ⚠️ Unknown mode - defaulting to Tuya DP');
+      await this._setupTuyaDpOnly();
+    }
+
+    this.log('');
+    this.log('[INIT] ✅ Initialization complete');
+    this.log('[INIT] Waiting for data via', protocolInfo.isTuyaDP ? 'Tuya DP events' : 'ZCL reports');
+    this.log('');
+  }
+
+  /**
+   * v5.2.91: Log available clusters for debugging
+   */
+  _logAvailableClusters(zclNode, context) {
+    this.log(`[CLUSTERS] ═══════════════════════════════════════════════════════`);
+    this.log(`[CLUSTERS] Available clusters (${context}):`);
+
+    try {
+      const endpoints = zclNode?.endpoints || {};
+      for (const [epId, ep] of Object.entries(endpoints)) {
+        const clusters = ep?.clusters || {};
+        const clusterNames = Object.keys(clusters);
+        this.log(`[CLUSTERS]   Endpoint ${epId}: ${clusterNames.join(', ') || '(none)'}`);
+
+        // Check specific clusters
+        if (clusters.temperatureMeasurement) this.log(`[CLUSTERS]     ⚠️ temperatureMeasurement present (PHANTOM for Tuya!)`);
+        if (clusters.relativeHumidity) this.log(`[CLUSTERS]     ⚠️ relativeHumidity present (PHANTOM for Tuya!)`);
+        if (clusters.powerConfiguration) this.log(`[CLUSTERS]     ⚠️ powerConfiguration present (PHANTOM for Tuya!)`);
+        if (clusters.tuya || clusters.manuSpecificTuya || clusters[61184]) {
+          this.log(`[CLUSTERS]     ✅ Tuya cluster (0xEF00) present - THIS IS THE REAL DATA SOURCE`);
+        }
+      }
+    } catch (err) {
+      this.log(`[CLUSTERS] Error listing clusters:`, err.message);
+    }
+    this.log(`[CLUSTERS] ═══════════════════════════════════════════════════════`);
+  }
+
+  /**
+   * v5.2.91: Setup for Tuya DP devices - NO ZCL AT ALL!
+   */
+  async _setupTuyaDpOnly() {
+    this.log('[TUYA-DP] ═══════════════════════════════════════════════════════');
+    this.log('[TUYA-DP] Setting up Tuya DP only mode...');
+    this.log('[TUYA-DP] ❌ NO getAttribute() calls will be made');
+    this.log('[TUYA-DP] ❌ NO configureReporting() calls will be made');
+    this.log('[TUYA-DP] ✅ Data will arrive via Tuya DP events (cluster 0xEF00)');
+    this.log('[TUYA-DP] ═══════════════════════════════════════════════════════');
+
+    this._dpValues = {};
+    this._dpLastUpdate = null;
+    this._dpReceivedCount = 0;
+
+    // Setup DP listeners immediately
+    this.log('[TUYA-DP] Setting up DP listeners...');
+    await this._setupTuyaDPListener();
+
+    // Also setup delayed re-registration after TuyaEF00Manager init
+    this.log('[TUYA-DP] Scheduling delayed DP re-registration (3s)...');
+    setTimeout(() => {
+      this.log('[TUYA-DP] ⏰ Delayed callback triggered');
+      if (this.tuyaEF00Manager) {
+        this.log('[TUYA-DP]   tuyaEF00Manager exists');
+        this.log('[TUYA-DP]   dpMappings:', this.tuyaEF00Manager.dpMappings ? 'YES' : 'NO');
+        this.log('[TUYA-DP]   _isInitialized:', this.tuyaEF00Manager._isInitialized);
+        this._registerDPFromManager();
+      } else {
+        this.log('[TUYA-DP]   ⚠️ tuyaEF00Manager not available');
+      }
+      this._requestInitialDPs();
+    }, 3000);
+
+    // Additional delayed check at 10s
+    setTimeout(() => {
+      this.log('[TUYA-DP] ⏰ 10s status check:');
+      this.log('[TUYA-DP]   DPs received:', this._dpReceivedCount);
+      this.log('[TUYA-DP]   DP values:', JSON.stringify(this._dpValues));
+      this.log('[TUYA-DP]   Last update:', this._dpLastUpdate ? new Date(this._dpLastUpdate).toISOString() : 'never');
+
+      if (this._dpReceivedCount === 0) {
+        this.log('[TUYA-DP]   ⚠️ No DPs received yet - device may be sleeping');
+        this.log('[TUYA-DP]   ℹ️ Battery devices wake up periodically (every 1-60 min)');
+      }
+    }, 10000);
+
+    this.log('[TUYA-DP] ✅ Tuya DP setup complete');
+  }
+
+  /**
+   * v5.2.91: Setup for standard ZCL devices (TS0201, SONOFF)
+   */
+  async _setupStandardZclMode() {
+    this.log('[ZCL] Setting up standard ZCL mode...');
+    this.log('[ZCL] This device supports real ZCL clusters');
+    await this._setupStandardZCLListeners();
+    this.log('[ZCL] ✅ Standard ZCL setup complete');
   }
 
   /**
@@ -342,112 +463,156 @@ class ClimateSensorDevice extends BaseHybridDevice {
   }
 
   /**
-   * Handle incoming Tuya DP using enriched fingerprint
+   * v5.2.91: Handle incoming Tuya DP with detailed logging
    */
   _handleClimateDP(dpId, value) {
-    this.log(`[CLIMATE-SENSOR] 📊 DP${dpId} = ${value}`);
+    // v5.2.91: Increment counter for status tracking
+    this._dpReceivedCount = (this._dpReceivedCount || 0) + 1;
+
+    this.log('[DP-HANDLER] ═══════════════════════════════════════════════════════');
+    this.log(`[DP-HANDLER] 📥 RECEIVED: DP${dpId} = ${value} (type: ${typeof value})`);
+    this.log(`[DP-HANDLER] Total DPs received: ${this._dpReceivedCount}`);
 
     // Store for debugging
+    this._dpValues = this._dpValues || {};
     this._dpValues[dpId] = value;
     this._dpLastUpdate = Date.now();
 
-    // Use fingerprint for conversion if available
-    const mfr = this.getSetting('zb_manufacturerName') || '_TZE284_vvmbj46n';
-    const convertedValue = DeviceFingerprintDB.convertDPValue(mfr, dpId, value);
+    // Store timestamp in store for Homey UI
+    this.setStoreValue('last_dp_update', Date.now()).catch(() => { });
+    this.setStoreValue(`dp_${dpId}_value`, value).catch(() => { });
+    this.setStoreValue(`dp_${dpId}_time`, Date.now()).catch(() => { });
 
-    // DP Mapping (comprehensive)
+    // DP Mapping (comprehensive for climate sensors)
     switch (dpId) {
       case 1: // Temperature (÷10)
+        this.log('[DP-HANDLER] → Mapping: Temperature');
         this._setTemperature(value);
         break;
 
       case 2: // Humidity
+        this.log('[DP-HANDLER] → Mapping: Humidity');
         this._setHumidity(value);
         break;
 
-      case 4: // Battery
+      case 4: // Battery (primary)
+        this.log('[DP-HANDLER] → Mapping: Battery (DP4)');
         this._setBattery(value);
         break;
 
       case 9: // Temperature unit
-        this.log(`[CLIMATE-SENSOR] 🌡️ Unit: ${value === 0 ? 'Celsius' : 'Fahrenheit'}`);
+        this.log(`[DP-HANDLER] → Mapping: Temp unit = ${value === 0 ? 'Celsius' : 'Fahrenheit'}`);
         break;
 
       case 10: // Max temp alarm
       case 11: // Min temp alarm
-        this.log(`[CLIMATE-SENSOR] ⚠️ Temp alarm ${dpId === 10 ? 'max' : 'min'}: ${value / 10}°C`);
+        this.log(`[DP-HANDLER] → Mapping: Temp alarm ${dpId === 10 ? 'max' : 'min'}: ${value / 10}°C`);
         break;
 
       case 12: // Max humidity alarm
       case 13: // Min humidity alarm
-        this.log(`[CLIMATE-SENSOR] ⚠️ Humidity alarm ${dpId === 12 ? 'max' : 'min'}: ${value}%`);
+        this.log(`[DP-HANDLER] → Mapping: Humidity alarm ${dpId === 12 ? 'max' : 'min'}: ${value}%`);
         break;
 
       case 14: // Temperature alarm state
-      case 15: // Humidity alarm state
-        const alarmStates = ['lower_alarm', 'upper_alarm', 'cancel'];
-        this.log(`[CLIMATE-SENSOR] 🚨 ${dpId === 14 ? 'Temp' : 'Humidity'} alarm: ${alarmStates[value] || value}`);
+        const tempAlarmStates = ['lower_alarm', 'upper_alarm', 'cancel'];
+        this.log(`[DP-HANDLER] → Mapping: Temp alarm state: ${tempAlarmStates[value] || value}`);
+        break;
+
+      case 15: // BATTERY (alternative) OR Humidity alarm state
+        // v5.2.91: FIX - DP15 is battery for many climate sensors!
+        // If value is 0-100, it's likely battery. If 0-2, it's alarm state.
+        if (value >= 0 && value <= 100 && value > 2) {
+          this.log('[DP-HANDLER] → Mapping: Battery (DP15 - alternative)');
+          this._setBattery(value);
+        } else {
+          const humAlarmStates = ['lower_alarm', 'upper_alarm', 'cancel'];
+          this.log(`[DP-HANDLER] → Mapping: Humidity alarm state: ${humAlarmStates[value] || value}`);
+        }
         break;
 
       case 17: // Temp report interval
       case 18: // Humidity report interval
-        this.log(`[CLIMATE-SENSOR] ⏱️ ${dpId === 17 ? 'Temp' : 'Humidity'} report interval: ${value} min`);
+        this.log(`[DP-HANDLER] → Mapping: ${dpId === 17 ? 'Temp' : 'Humidity'} report interval: ${value} min`);
         break;
 
       case 19: // Temp sensitivity
-        this.log(`[CLIMATE-SENSOR] 📐 Temp sensitivity: ${value / 10}°C`);
+        this.log(`[DP-HANDLER] → Mapping: Temp sensitivity: ${value / 10}°C`);
         break;
 
       case 20: // Humidity sensitivity
-        this.log(`[CLIMATE-SENSOR] 📐 Humidity sensitivity: ${value}%`);
+        this.log(`[DP-HANDLER] → Mapping: Humidity sensitivity: ${value}%`);
         break;
 
       default:
-        this.log(`[CLIMATE-SENSOR] ❓ Unknown DP${dpId} = ${value}`);
+        this.log(`[DP-HANDLER] → Mapping: ❓ UNKNOWN DP${dpId} = ${value}`);
+        this.log(`[DP-HANDLER]   This may be a device-specific DP not yet mapped`);
     }
+
+    this.log('[DP-HANDLER] ═══════════════════════════════════════════════════════');
   }
 
   /**
-   * Set temperature capability
+   * v5.2.91: Set temperature capability with detailed logging
    */
   _setTemperature(value) {
-    // Temperature is sent as value × 10
+    // Temperature is sent as value × 10 (e.g., 234 = 23.4°C)
     let temp = value;
     if (Math.abs(value) > 100) {
       temp = value / 10;
     }
-    this.log(`[CLIMATE-SENSOR] 🌡️ Temperature: ${temp}°C`);
+
+    this.log(`[SET-TEMP] 🌡️ Raw value: ${value} → Converted: ${temp}°C`);
 
     if (this.hasCapability('measure_temperature')) {
-      this.setCapabilityValue('measure_temperature', temp).catch(this.error);
+      this.setCapabilityValue('measure_temperature', temp)
+        .then(() => this.log(`[SET-TEMP] ✅ measure_temperature = ${temp}°C`))
+        .catch(err => this.error(`[SET-TEMP] ❌ Failed:`, err.message));
+    } else {
+      this.log('[SET-TEMP] ⚠️ Device does not have measure_temperature capability');
     }
   }
 
   /**
-   * Set humidity capability
+   * v5.2.91: Set humidity capability with detailed logging
    */
   _setHumidity(value) {
     const humidity = Math.min(100, Math.max(0, value));
-    this.log(`[CLIMATE-SENSOR] 💧 Humidity: ${humidity}%`);
+
+    this.log(`[SET-HUM] 💧 Raw value: ${value} → Clamped: ${humidity}%`);
 
     if (this.hasCapability('measure_humidity')) {
-      this.setCapabilityValue('measure_humidity', humidity).catch(this.error);
+      this.setCapabilityValue('measure_humidity', humidity)
+        .then(() => this.log(`[SET-HUM] ✅ measure_humidity = ${humidity}%`))
+        .catch(err => this.error(`[SET-HUM] ❌ Failed:`, err.message));
+    } else {
+      this.log('[SET-HUM] ⚠️ Device does not have measure_humidity capability');
     }
   }
 
   /**
-   * Set battery capability
+   * v5.2.91: Set battery capability with detailed logging
    */
   _setBattery(value) {
     const battery = Math.min(100, Math.max(0, value));
-    this.log(`[CLIMATE-SENSOR] 🔋 Battery: ${battery}%`);
+
+    this.log(`[SET-BATT] 🔋 Raw value: ${value} → Clamped: ${battery}%`);
+
+    // Store in store for persistence
+    this.setStoreValue('last_battery_percent', battery).catch(() => { });
+    this.setStoreValue('last_battery_update', Date.now()).catch(() => { });
 
     if (this.hasCapability('measure_battery')) {
-      this.setCapabilityValue('measure_battery', battery).catch(this.error);
+      this.setCapabilityValue('measure_battery', battery)
+        .then(() => this.log(`[SET-BATT] ✅ measure_battery = ${battery}%`))
+        .catch(err => this.error(`[SET-BATT] ❌ Failed:`, err.message));
+    } else {
+      this.log('[SET-BATT] ⚠️ Device does not have measure_battery capability');
     }
 
     // Forward to BatteryManager if available
     if (this.batteryManager && typeof this.batteryManager.onTuyaDPBattery === 'function') {
+      this.log('[SET-BATT] 📤 Forwarding to BatteryManager');
       this.batteryManager.onTuyaDPBattery({ dpId: 4, value: battery });
     }
   }

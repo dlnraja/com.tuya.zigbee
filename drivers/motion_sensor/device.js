@@ -3,22 +3,66 @@
 const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
 
 /**
- * MotionSensorDevice - Unified Hybrid Driver
+ * MotionSensorDevice - v5.2.91 Enhanced Debug Version
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
 class MotionSensorDevice extends BaseHybridDevice {
 
   async onNodeInit({ zclNode }) {
-    this.log('MotionSensorDevice initializing...');
+    this.log('');
+    this.log('╔═══════════════════════════════════════════════════════════════════╗');
+    this.log('║           MOTION SENSOR v5.2.91 - DEBUG MODE                      ║');
+    this.log('╚═══════════════════════════════════════════════════════════════════╝');
+    this.log('');
+
+    // Log device info
+    const settings = this.getSettings?.() || {};
+    const modelId = settings.zb_modelId || '';
+    const mfr = settings.zb_manufacturerName || '';
+    this.log(`[INIT] Model: ${modelId}, Manufacturer: ${mfr}`);
+
+    // Log available clusters
+    this._logClusters(zclNode);
 
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
+    this.log('[INIT] Calling super.onNodeInit()...');
+    await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
+    this.log('[INIT] super.onNodeInit() completed');
 
     // Setup IAS Zone (SDK3 - based on Peter's success patterns)
     await this.setupIASZone();
 
-    this.log('MotionSensorDevice initialized - Power source:', this.powerSource || 'unknown');
+    this.log('[INIT] ✅ MotionSensorDevice initialized');
+    this.log('[INIT] Power source:', this.powerSource || 'unknown');
+    this.log('');
+  }
+
+  /**
+   * v5.2.91: Log available clusters for debugging
+   */
+  _logClusters(zclNode) {
+    this.log('[CLUSTERS] ═══════════════════════════════════════════════════════');
+    try {
+      const endpoints = zclNode?.endpoints || {};
+      for (const [epId, ep] of Object.entries(endpoints)) {
+        const clusters = ep?.clusters || {};
+        const clusterNames = Object.keys(clusters);
+        this.log(`[CLUSTERS] Endpoint ${epId}: ${clusterNames.join(', ') || '(none)'}`);
+
+        // Check specific clusters
+        if (clusters.iasZone) this.log(`[CLUSTERS]   ✅ iasZone present`);
+        if (clusters.illuminanceMeasurement) this.log(`[CLUSTERS]   ✅ illuminanceMeasurement present`);
+        if (clusters.powerConfiguration) this.log(`[CLUSTERS]   ✅ powerConfiguration present`);
+        else this.log(`[CLUSTERS]   ⚠️ NO powerConfiguration - battery via Tuya DP only`);
+        if (clusters.tuya || clusters.manuSpecificTuya || clusters[61184]) {
+          this.log(`[CLUSTERS]   ✅ Tuya cluster (0xEF00) present`);
+        }
+      }
+    } catch (err) {
+      this.log(`[CLUSTERS] Error:`, err.message);
+    }
+    this.log('[CLUSTERS] ═══════════════════════════════════════════════════════');
   }
 
 
