@@ -48,54 +48,148 @@ class SoilSensorDevice extends BaseHybridDevice {
 
   /**
    * Setup Tuya DP listener for cluster 0xEF00
+   * v5.2.75: Enhanced listener setup - multiple fallback methods
    */
   async _setupTuyaDPListener() {
     this.log('[SOIL-SENSOR] Setting up Tuya DP listener...');
 
-    // Listen for dpReport events from TuyaEF00Manager (if integrated)
+    let listenerCount = 0;
+
+    // Method 1: TuyaEF00Manager dpReport event
     if (this.tuyaEF00Manager) {
       this.tuyaEF00Manager.on('dpReport', ({ dpId, value }) => {
+        this.log(`[SOIL-SENSOR] 📥 TuyaEF00Manager dpReport: DP${dpId} = ${value}`);
         this._handleSoilDP(dpId, value);
       });
-      this.log('[SOIL-SENSOR] ✅ Using TuyaEF00Manager for DP handling');
-      return;
+      listenerCount++;
+      this.log('[SOIL-SENSOR] ✅ TuyaEF00Manager dpReport listener registered');
     }
 
-    // Fallback: Direct cluster listener
-    const endpoint = this.zclNode?.endpoints?.[1];
-    if (!endpoint) {
-      this.log('[SOIL-SENSOR] ⚠️ No endpoint 1 found');
-      return;
-    }
-
-    // Find Tuya cluster
-    const tuyaCluster = endpoint.clusters.tuya
-      || endpoint.clusters.tuyaSpecific
-      || endpoint.clusters.manuSpecificTuya
-      || endpoint.clusters[61184];
-
-    if (tuyaCluster) {
-      // Listen for dataReport
-      if (typeof tuyaCluster.on === 'function') {
-        tuyaCluster.on('dataReport', (data) => {
-          this.log('[SOIL-SENSOR] 📥 Raw dataReport:', JSON.stringify(data));
-          if (data && data.dp !== undefined) {
-            this._handleSoilDP(data.dp, data.value);
-          }
+    // Method 2: TuyaEF00Manager individual DP events (dp-1, dp-2, etc.)
+    if (this.tuyaEF00Manager) {
+      const dpIds = [1, 2, 3, 4, 5, 6, 7, 14, 15, 101];
+      dpIds.forEach(dpId => {
+        this.tuyaEF00Manager.on(`dp-${dpId}`, (value) => {
+          this.log(`[SOIL-SENSOR] 📥 TuyaEF00Manager dp-${dpId}: ${value}`);
+          this._handleSoilDP(dpId, value);
         });
-      }
+      });
+      listenerCount++;
+      this.log('[SOIL-SENSOR] ✅ TuyaEF00Manager individual DP listeners registered');
+    }
 
-      // Also try onDataReport property
-      tuyaCluster.onDataReport = (data) => {
-        this.log('[SOIL-SENSOR] 📥 onDataReport:', JSON.stringify(data));
-        if (data && data.dp !== undefined) {
-          this._handleSoilDP(data.dp, data.value);
+    // Method 3: Direct cluster listener (fallback)
+    const endpoint = this.zclNode?.endpoints?.[1];
+    if (endpoint) {
+      // Find Tuya cluster by various names
+      const tuyaCluster = endpoint.clusters.tuya
+        || endpoint.clusters.tuyaSpecific
+        || endpoint.clusters.manuSpecificTuya
+        || endpoint.clusters[61184]
+        || endpoint.clusters['61184'];
+
+      if (tuyaCluster) {
+        // dataReport event
+        if (typeof tuyaCluster.on === 'function') {
+          tuyaCluster.on('dataReport', (data) => {
+            this.log('[SOIL-SENSOR] 📥 Direct dataReport:', JSON.stringify(data));
+            this._parseTuyaRawData(data);
+          });
+          listenerCount++;
         }
-      };
 
-      this.log('[SOIL-SENSOR] ✅ Direct Tuya cluster listener configured');
-    } else {
-      this.log('[SOIL-SENSOR] ⚠️ No Tuya cluster found - device may not report data');
+        // onDataReport property
+        const originalHandler = tuyaCluster.onDataReport;
+        tuyaCluster.onDataReport = (data) => {
+          this.log('[SOIL-SENSOR] 📥 Direct onDataReport:', JSON.stringify(data));
+          this._parseTuyaRawData(data);
+          if (originalHandler) originalHandler.call(tuyaCluster, data);
+        };
+        listenerCount++;
+
+        this.log('[SOIL-SENSOR] ✅ Direct Tuya cluster listeners configured');
+      } else {
+        this.log('[SOIL-SENSOR] ⚠️ No Tuya cluster found on endpoint 1');
+      }
+    }
+
+    // Method 4: ZCL raw frame listener (last resort)
+    if (this.zclNode) {
+      this.zclNode.on('frame', (endpointId, clusterId, frame, meta) => {
+        if (clusterId === 0xEF00 || clusterId === 61184) {
+          this.log('[SOIL-SENSOR] 📥 ZCL frame on 0xEF00:', JSON.stringify(frame));
+          this._parseTuyaRawFrame(frame);
+        }
+      });
+      listenerCount++;
+      this.log('[SOIL-SENSOR] ✅ ZCL raw frame listener registered');
+    }
+
+    this.log(`[SOIL-SENSOR] 📡 Total listeners registered: ${listenerCount}`);
+
+    if (listenerCount === 0) {
+      this.log('[SOIL-SENSOR] ❌ NO LISTENERS - device may not report data!');
+    }
+  }
+
+  /**
+   * Parse raw Tuya data from various formats
+   */
+  _parseTuyaRawData(data) {
+    if (!data) return;
+
+    // Handle different data formats
+    if (data.dp !== undefined && data.value !== undefined) {
+      this._handleSoilDP(data.dp, data.value);
+    } else if (data.dpId !== undefined && data.dpValue !== undefined) {
+      this._handleSoilDP(data.dpId, data.dpValue);
+    } else if (Array.isArray(data)) {
+      // Array of DPs
+      data.forEach(item => {
+        if (item.dp !== undefined && item.value !== undefined) {
+          this._handleSoilDP(item.dp, item.value);
+        }
+      });
+    }
+  }
+
+  /**
+   * Parse raw ZCL frame for Tuya DP data
+   */
+  _parseTuyaRawFrame(frame) {
+    try {
+      if (!frame || !frame.data) return;
+
+      const buf = Buffer.from(frame.data);
+      if (buf.length < 6) return;
+
+      // Tuya frame format: seq(2) + cmd(1) + dpId(1) + dpType(1) + len(2) + data(n)
+      let offset = 0;
+      while (offset + 4 < buf.length) {
+        const dpId = buf.readUInt8(offset + 2);
+        const dpType = buf.readUInt8(offset + 3);
+        const dpLen = buf.readUInt16BE(offset + 4);
+
+        if (offset + 6 + dpLen > buf.length) break;
+
+        let value;
+        if (dpLen === 1) {
+          value = buf.readUInt8(offset + 6);
+        } else if (dpLen === 2) {
+          value = buf.readUInt16BE(offset + 6);
+        } else if (dpLen === 4) {
+          value = buf.readUInt32BE(offset + 6);
+        }
+
+        if (value !== undefined) {
+          this.log(`[SOIL-SENSOR] 📥 Parsed frame: DP${dpId} type=${dpType} len=${dpLen} value=${value}`);
+          this._handleSoilDP(dpId, value);
+        }
+
+        offset += 6 + dpLen;
+      }
+    } catch (err) {
+      this.log('[SOIL-SENSOR] Frame parse error:', err.message);
     }
   }
 
