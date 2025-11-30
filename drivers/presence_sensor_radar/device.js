@@ -278,32 +278,63 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
   }
 
   /**
-   * v5.2.10: PATCH 4 - Handle Tuya DP with explicit mapping for _TZE200_rhgsbacq
-   * This provides a fallback mapping when dpMap doesn't have the DP
+   * v5.2.64: ENHANCED - Handle Tuya DP with explicit mapping
+   * Sources: zigbee-herdsman-converters, ZHA quirks, SmartHomeScene reviews
+   * Supports: ZG-204ZM, ZG-205Z, WZ-M100, ZY-M100-24G
    */
   _handleTuyaDP(dpId, value) {
-    // Known DPs for _TZE200_rhgsbacq, ZG-204ZM presence radar
-    // Based on Zigbee2MQTT, SmartHomeScene review, and Tuya documentation
+    // Unified DP map for all presence sensors
+    // Based on: zigbee-herdsman-converters/tuya.ts, ZHA quirks, community research
     const RADAR_DP_MAP = {
+      // === COMMON DPs (most devices) ===
       1: { capability: 'alarm_motion', parser: (v) => Boolean(v) },
-      4: { capability: 'measure_battery', parser: (v) => v, isBattery: true },
-      9: { capability: 'radar_sensitivity', parser: (v) => v, isConfig: true },
-      10: { capability: 'detection_delay', parser: (v) => v, isConfig: true },
-      12: { capability: 'target_distance', parser: (v) => v / 100, isConfig: true }, // cm to m
-      15: { capability: 'measure_battery', parser: (v) => v, isBattery: true },
-      101: { capability: 'radar_sensitivity', parser: (v) => v, isConfig: true },
-      102: { capability: 'illuminance_threshold', parser: (v) => v, isConfig: true },
-      103: { capability: 'measure_luminance', parser: (v) => v },
-      104: { capability: 'fading_time', parser: (v) => v, isConfig: true },
-      // ZG-204ZM specific (SmartHomeScene review)
+      2: { capability: 'radar_sensitivity', parser: (v) => v, isConfig: true }, // WZ-M100, ZY-M100
+      3: { capability: 'minimum_range', parser: (v) => v / 100, isConfig: true }, // WZ-M100 (cm→m)
+      // DP 4: max_range for WZ-M100, battery for others - handled dynamically
+      5: { capability: 'maximum_range', parser: (v) => v / 100, isConfig: true }, // Alternative max_range
+      6: { capability: 'self_test', parser: (v) => ['testing', 'success', 'failure', 'other', 'comm_fault', 'radar_fault'][v] || 'unknown', isConfig: true },
+      9: { capability: 'target_distance', parser: (v) => v / 100, isConfig: true }, // cm to m
+
+      // === BATTERY DPs ===
+      // Note: DP 4 can be battery OR max_range depending on device - check hasCapability
+      14: { capability: 'measure_battery', parser: (v) => v, isBattery: true }, // Soil sensors
+      15: { capability: 'measure_battery', parser: (v) => v, isBattery: true }, // ZG-204ZM
+
+      // === ZY-M100 / WZ-M100 specific (24GHz) ===
+      101: { capability: 'presence_timeout', parser: (v) => v, isConfig: true }, // seconds
+      102: { capability: 'motion_state', parser: (v) => ['none', 'small', 'medium', 'large', 'static'][v] || 'unknown', isConfig: true },
+      103: { capability: 'measure_luminance', parser: (v) => v }, // Some devices
+      104: { capability: 'measure_luminance', parser: (v) => v }, // ZY-M100-24G
+
+      // === ZG-204ZM specific (PIR+mmWave battery) ===
       107: { capability: 'presence_state', parser: (v) => ['none', 'presence', 'move'][v] || 'unknown', isConfig: true },
       108: { capability: 'motion_state', parser: (v) => ['none', 'small', 'large', 'static'][v] || 'unknown', isConfig: true },
       109: { capability: 'led_indicator', parser: (v) => Boolean(v), isConfig: true },
       110: { capability: 'static_detection_distance', parser: (v) => v / 10, isConfig: true }, // 0-10m
-      111: { capability: 'static_detection_sensitivity', parser: (v) => v, isConfig: true } // 0-10
+      111: { capability: 'static_detection_sensitivity', parser: (v) => v, isConfig: true }, // 0-10
+
+      // === ZG-205Z specific (5.8GHz/24GHz USB) ===
+      // Uses similar DPs to ZY-M100 but different structure
+      // DP 1: presence (bool), DP 2: sensitivity (1-10), DP 3: static_sensitivity (1-10)
+      // DP 4: detection_range, DP 101: motion_state, DP 102: fading_time, DP 104: illuminance
+
+      // === _TZE204_laokfqwu (WZ-M100 variant) - from ZHA quirks ===
+      // DP 1: occupancy, DP 2: sensitivity, DP 3: min_range (/100)
+      // DP 4: max_range (/100), DP 6: self_test, DP 9: target_distance (/100)
+      // DP 101: detection_delay (*100), DP 102: fading_time (*100), DP 103: illuminance
     };
 
-    const mapping = RADAR_DP_MAP[dpId];
+    // Special handling for DP 4 (can be max_range OR battery depending on device)
+    let mapping = RADAR_DP_MAP[dpId];
+    if (dpId === 4) {
+      // If device has battery capability and value is 0-100, it's likely battery
+      // If value is > 100 (cm), it's likely max_range
+      if (this.hasCapability('measure_battery') && value <= 100) {
+        mapping = { capability: 'measure_battery', parser: (v) => v, isBattery: true };
+      } else {
+        mapping = { capability: 'maximum_range', parser: (v) => v / 100, isConfig: true };
+      }
+    }
 
     if (mapping) {
       const { capability, parser, isConfig, isBattery } = mapping;
