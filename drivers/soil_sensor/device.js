@@ -43,7 +43,11 @@ class SoilSensorDevice extends BaseHybridDevice {
     // Request initial data
     this._requestInitialDPs();
 
+    // v5.2.78: Explain battery device behavior to user
     this.log('[SOIL-SENSOR] ✅ Initialized');
+    this.log('[SOIL-SENSOR] ℹ️ Battery device - may not respond to active queries');
+    this.log('[SOIL-SENSOR] ℹ️ Data will arrive when device wakes up (every 15-60 minutes)');
+    this.log('[SOIL-SENSOR] ℹ️ First data may take up to 1 hour after pairing');
   }
 
   /**
