@@ -59,39 +59,41 @@ class ClimateSensorDevice extends BaseHybridDevice {
     const isSONOFF = mfr === 'SONOFF' || mfr === 'eWeLink' || modelId.startsWith('SNZB');
     const isStandardZCL = modelId === 'TS0201' || modelId.startsWith('TS02') || isSONOFF;
 
+    // v5.2.88: CRITICAL FIX - Check _isPureTuyaDP from base class
+    // TS0601/_TZE devices advertise phantom ZCL clusters that DON'T RESPOND!
+    // We must NOT try ZCL for these devices or we get timeouts
+    const isPureTuyaDP = this._isPureTuyaDP || modelId === 'TS0601' || mfr.startsWith('_TZE');
+
     // v5.2.81: Check if TS0601 has standard clusters available (HYBRID mode)
+    // v5.2.88: BUT only use HYBRID mode if NOT a pure Tuya DP device!
     const endpoint = zclNode?.endpoints?.[1];
     const hasStandardTemp = !!(endpoint?.clusters?.temperatureMeasurement || endpoint?.clusters?.msTemperatureMeasurement);
     const hasStandardHumidity = !!(endpoint?.clusters?.relativeHumidity || endpoint?.clusters?.msRelativeHumidity);
     const hasStandardBattery = !!(endpoint?.clusters?.powerConfiguration || endpoint?.clusters?.genPowerCfg);
-    const isTS0601WithStandardClusters = modelId === 'TS0601' && (hasStandardTemp || hasStandardHumidity);
 
-    this._isStandardZCL = isStandardZCL;
-    this._isHybridMode = isTS0601WithStandardClusters;
+    // v5.2.88: HYBRID mode is DISABLED for pure Tuya DP devices!
+    // These phantom clusters cause timeouts and don't provide data
+    const isTS0601WithStandardClusters = false; // DISABLED - was causing all the timeouts!
 
-    if (isTS0601WithStandardClusters) {
+    this._isStandardZCL = isStandardZCL && !isPureTuyaDP;
+    this._isHybridMode = false; // v5.2.88: DISABLED - phantom clusters don't work
+
+    if (isPureTuyaDP) {
       this.log('[CLIMATE-SENSOR] ════════════════════════════════════════════════════════');
-      this.log('[CLIMATE-SENSOR] 🔄 HYBRID MODE DETECTED!');
+      this.log('[CLIMATE-SENSOR] 🔶 PURE TUYA DP DEVICE DETECTED!');
       this.log('[CLIMATE-SENSOR] ════════════════════════════════════════════════════════');
-      this.log(`[CLIMATE-SENSOR] Standard clusters: temp=${hasStandardTemp}, humidity=${hasStandardHumidity}, battery=${hasStandardBattery}`);
-      this.log('[CLIMATE-SENSOR] Protocol: HYBRID (Standard ZCL + Tuya DP fallback)');
-    } else {
-      this.log(`[CLIMATE-SENSOR] Protocol: ${isStandardZCL ? 'Standard ZCL' : 'Tuya DP (0xEF00)'}${isSONOFF ? ' (SONOFF)' : ''}`);
+      this.log(`[CLIMATE-SENSOR] Model: ${modelId}, Manufacturer: ${mfr}`);
+      this.log('[CLIMATE-SENSOR] ⚠️ Standard clusters are PHANTOM (advertised but don\'t respond)');
+      this.log('[CLIMATE-SENSOR] ⚠️ Skipping ALL ZCL operations to avoid timeouts!');
+      this.log('[CLIMATE-SENSOR] ✅ Using Tuya DP protocol exclusively');
+    } else if (isStandardZCL) {
+      this.log(`[CLIMATE-SENSOR] Protocol: Standard ZCL${isSONOFF ? ' (SONOFF)' : ''}`);
     }
 
-    if (isStandardZCL || isTS0601WithStandardClusters) {
-      // TS0201 or TS0601 with standard clusters: Use ZCL
+    // v5.2.88: ONLY use ZCL for non-Tuya devices (TS0201, SONOFF, etc.)
+    if (isStandardZCL && !isPureTuyaDP) {
+      // TS0201 or SONOFF: Use standard ZCL clusters
       await this._setupStandardZCLListeners();
-
-      // v5.2.81: For HYBRID mode, also setup Tuya DP as fallback
-      if (isTS0601WithStandardClusters) {
-        this.log('[CLIMATE-SENSOR] 📡 Setting up Tuya DP fallback...');
-        this._dpValues = {};
-        this._dpLastUpdate = null;
-        await this._setupTuyaDPListener();
-        // Don't request DPs actively - wait for device to report
-        this.log('[CLIMATE-SENSOR] ✅ HYBRID setup complete');
-      }
     } else {
       // TS0601: Pure Tuya DP protocol (no standard clusters available)
       this._dpValues = {};
