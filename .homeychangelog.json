@@ -1,4 +1,8 @@
 {
+  "5.2.71": {
+    "en": "🔧 FIX: Capability Mapping Audit\n\n**gas_detector:**\n- FIXED: Was using alarm_motion instead of alarm_generic for gas detection\n- Added capabilitiesOptions to show 'Gas Alarm' title\n\n**air_quality_comprehensive:**\n- ADDED: measure_co2, measure_pm25 capabilities\n- ADDED: Tuya DP handler for air quality monitors\n- DPs: 2/19=CO2, 18/20=PM2.5, 21=TVOC\n\n**Drivers Audited:** 60 total\n- 11 sensor drivers checked\n- 2 drivers fixed",
+    "fr": "🔧 FIX: Audit Mapping Capabilities\n\n- gas_detector: alarm_motion → alarm_generic\n- air_quality: +CO2, +PM2.5, +Tuya DP handler"
+  },
   "5.2.70": {
     "en": "🔧 FIX: Soil Sensor _TZE284_oitavov2 Data Not Reporting\n\n**Problem:** Soil sensor not receiving temperature/humidity/battery data\n\n**Root Cause:**\n- Duplicate entry in DeviceFingerprintDB incorrectly mapped as plug_1socket\n- Missing passive DP mappings for _TZE284_oitavov2\n\n**Fix:**\n- Removed incorrect duplicate fingerprint entry\n- Added _TZE284_oitavov2 to PASSIVE_DP_MAPPINGS in TuyaEF00Manager\n- DP mappings: 1=air_temp, 2=air_humidity, 3=soil_temp, 4=soil_moisture, 14/15=battery\n\n**Source:** User diagnostic report (Homey v12.9.0)",
     "fr": "🔧 FIX: Capteur sol _TZE284_oitavov2 ne remonte pas les données\n\n- Suppression entrée dupliquée incorrecte\n- Ajout mappings DP passif"
