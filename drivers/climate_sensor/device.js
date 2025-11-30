@@ -96,11 +96,64 @@ class ClimateSensorDevice extends BaseHybridDevice {
       // TS0601: Pure Tuya DP protocol (no standard clusters available)
       this._dpValues = {};
       this._dpLastUpdate = null;
+
+      // v5.2.87: Wait for TuyaEF00Manager to be initialized before setting up listeners
+      // The base class initializes it in background, so we need to wait or retry
+      this.log('[CLIMATE-SENSOR] 🔄 Waiting for TuyaEF00Manager initialization...');
+
+      // Setup DP listener with retry
+      const setupWithRetry = async (attempts = 0) => {
+        if (this.tuyaEF00Manager?._isInitialized || this.tuyaEF00Manager?.dpMappings) {
+          this.log('[CLIMATE-SENSOR] ✅ TuyaEF00Manager ready - setting up listeners');
+          await this._setupTuyaDPListener();
+          this._requestInitialDPs();
+        } else if (attempts < 10) {
+          // Wait and retry (up to 10 seconds)
+          setTimeout(() => setupWithRetry(attempts + 1), 1000);
+        } else {
+          // Fallback: setup anyway with direct cluster listener
+          this.log('[CLIMATE-SENSOR] ⚠️ TuyaEF00Manager not ready - using direct cluster listener');
+          await this._setupTuyaDPListener();
+          this._requestInitialDPs();
+        }
+      };
+
+      // Start immediately and also schedule retry
       await this._setupTuyaDPListener();
       this._requestInitialDPs();
+
+      // Also listen for background init completion
+      setTimeout(() => {
+        if (this.tuyaEF00Manager?.dpMappings) {
+          this.log('[CLIMATE-SENSOR] 📡 Re-registering DP listeners after background init');
+          this._registerDPFromManager();
+        }
+      }, 6000);
     }
 
     this.log('[CLIMATE-SENSOR] ✅ Initialized');
+  }
+
+  /**
+   * v5.2.87: Register DP handlers from TuyaEF00Manager after it's initialized
+   */
+  _registerDPFromManager() {
+    if (!this.tuyaEF00Manager) return;
+
+    // Re-register dpReport listener
+    this.tuyaEF00Manager.on('dpReport', ({ dpId, value }) => {
+      this._handleClimateDP(dpId, value);
+    });
+
+    // Also listen to individual DP events
+    [1, 2, 4, 9, 14, 15].forEach(dp => {
+      this.tuyaEF00Manager.on(`dp-${dp}`, (value) => {
+        this.log(`[CLIMATE-SENSOR] 📥 DP${dp} event: ${value}`);
+        this._handleClimateDP(dp, value);
+      });
+    });
+
+    this.log('[CLIMATE-SENSOR] ✅ DP listeners registered from TuyaEF00Manager');
   }
 
   /**

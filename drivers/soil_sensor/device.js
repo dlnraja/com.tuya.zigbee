@@ -43,6 +43,14 @@ class SoilSensorDevice extends BaseHybridDevice {
     // Request initial data
     this._requestInitialDPs();
 
+    // v5.2.87: Re-register DP listeners after TuyaEF00Manager background init completes
+    setTimeout(() => {
+      if (this.tuyaEF00Manager?.dpMappings || this.tuyaEF00Manager?._isInitialized) {
+        this.log('[SOIL-SENSOR] 📡 Re-registering DP listeners after background init');
+        this._registerDPFromManager();
+      }
+    }, 6000);
+
     // v5.2.78: Explain battery device behavior to user
     this.log('[SOIL-SENSOR] ✅ Initialized');
     this.log('[SOIL-SENSOR] ℹ️ Battery device - may not respond to active queries');
@@ -180,6 +188,30 @@ class SoilSensorDevice extends BaseHybridDevice {
     }
 
     this.log('[SOIL-SENSOR] ════════════════════════════════════════════════════════');
+  }
+
+  /**
+   * v5.2.87: Register DP handlers from TuyaEF00Manager after it's initialized
+   */
+  _registerDPFromManager() {
+    if (!this.tuyaEF00Manager) return;
+
+    // Re-register dpReport listener
+    this.tuyaEF00Manager.on('dpReport', ({ dpId, value }) => {
+      this.log(`[SOIL-SENSOR] 📥 Delayed dpReport: DP${dpId} = ${value}`);
+      this._handleSoilDP(dpId, value);
+    });
+
+    // Also listen to individual DP events
+    const dpIds = [1, 2, 3, 4, 5, 6, 7, 14, 15, 101];
+    dpIds.forEach(dp => {
+      this.tuyaEF00Manager.on(`dp-${dp}`, (value) => {
+        this.log(`[SOIL-SENSOR] 📥 Delayed dp-${dp}: ${value}`);
+        this._handleSoilDP(dp, value);
+      });
+    });
+
+    this.log('[SOIL-SENSOR] ✅ DP listeners registered from TuyaEF00Manager');
   }
 
   /**
