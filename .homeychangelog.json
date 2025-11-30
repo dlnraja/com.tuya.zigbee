@@ -1,4 +1,8 @@
 {
+  "5.2.79": {
+    "en": "🔧 IMPROVE: Soil Sensor Data Watchdog & Logging\n\n**1. Data Watchdog Timer:**\n- Alerts after 30 minutes if no data received\n- Logs possible causes and solutions\n- Suggests: press button, move closer, check battery\n\n**2. Enhanced Listener Logging:**\n- Clear visual separators in logs\n- Error handling with fallback info\n- Shows total listeners registered\n- Confirms when listeners are ready\n\n**Impact:** Users will now understand why no data and what to do",
+    "fr": "🔧 AMÉLIORATION: Watchdog & Logging Capteur Sol\n\n- Alerte après 30min sans données\n- Logging amélioré des listeners\n- Solutions suggérées à l'utilisateur"
+  },
   "5.2.78": {
     "en": "🔧 FIX: Ghost Device Errors & Battery Device Info\n\n**1. Ghost Device Migration Fix:**\n- Added guard in migrateCapabilities() to detect deleted devices\n- Checks device data and availability BEFORE attempting changes\n- Stops migration immediately on 'Not Found' errors\n- No more 'Failed to add alarm_battery: Device with ID xxx' spam\n\n**2. Battery Device Behavior Info:**\n- Soil sensors now log explanatory messages:\n  - 'Battery device - may not respond to active queries'\n  - 'Data will arrive when device wakes up (every 15-60 minutes)'\n  - 'First data may take up to 1 hour after pairing'\n\n**Impact:** Cleaner logs, better user understanding of battery devices",
     "fr": "🔧 FIX: Erreurs Ghost Device\n\n- Garde ajoutée dans migrateCapabilities()\n- Plus d'erreurs 'Device with ID xxx'\n- Messages explicatifs pour capteurs sol sur pile"
