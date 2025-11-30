@@ -110,10 +110,34 @@ class SosEmergencyButtonDevice extends BaseHybridDevice {
   /**
    * Trigger button press flow
    */
-  _triggerButtonPress() {
+  /**
+   * v5.2.61: Unified trigger for SOS button press
+   */
+  _triggerSOSPressed() {
+    this.log('[SOS-BUTTON] 🆘 TRIGGERING FLOW CARD!');
+
+    // Try driver-level trigger first
     if (this.driver.sosButtonPressedTrigger) {
-      this.driver.sosButtonPressedTrigger.trigger(this, {}, {}).catch(this.error);
+      this.driver.sosButtonPressedTrigger.trigger(this, {}, {})
+        .then(() => this.log('[FLOW] ✅ Triggered via driver'))
+        .catch(err => this.log('[FLOW] ⚠️ Driver trigger failed:', err.message));
     }
+
+    // Also try direct flow card access
+    try {
+      const trigger = this.homey.flow.getDeviceTriggerCard('button_emergency_sos_pressed');
+      if (trigger) {
+        trigger.trigger(this, {}, {})
+          .then(() => this.log('[FLOW] ✅ Triggered via direct access'))
+          .catch(err => this.log('[FLOW] ⚠️ Direct trigger failed:', err.message));
+      }
+    } catch (err) {
+      this.log('[FLOW] Direct flow access error:', err.message);
+    }
+  }
+
+  _triggerButtonPress() {
+    this._triggerSOSPressed();
 
     if (this.hasCapability('alarm_generic')) {
       this.setCapabilityValue('alarm_generic', true).catch(this.error);
@@ -191,10 +215,8 @@ class SosEmergencyButtonDevice extends BaseHybridDevice {
       endpoint.clusters.iasZone.onZoneStatusChangeNotification = (payload) => {
         this.log('[ALARM] SOS BUTTON PRESSED!', payload);
 
-        // Trigger flow card
-        if (this.driver.sosButtonPressedTrigger) {
-          this.driver.sosButtonPressedTrigger.trigger(this, {}, {}).catch(this.error);
-        }
+        // Trigger flow card - v5.2.61: Use correct flow card ID
+        this._triggerSOSPressed();
 
         // Update capability
         if (this.hasCapability('alarm_generic')) {
@@ -210,9 +232,7 @@ class SosEmergencyButtonDevice extends BaseHybridDevice {
       // Also setup attribute listener (SDK3 property assignment)
       endpoint.clusters.iasZone.onZoneStatus = (zoneStatus) => {
         this.log('[ALARM] SOS Zone Status Changed:', zoneStatus);
-        if (this.driver.sosButtonPressedTrigger) {
-          this.driver.sosButtonPressedTrigger.trigger(this, {}, {}).catch(this.error);
-        }
+        this._triggerSOSPressed();
       };
 
       // Battery reporting
