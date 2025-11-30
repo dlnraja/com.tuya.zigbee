@@ -283,54 +283,75 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
    * Supports: ZG-204ZM, ZG-205Z, WZ-M100, ZY-M100-24G
    */
   _handleTuyaDP(dpId, value) {
-    // Unified DP map for all presence sensors
+    // v5.2.68: Enhanced DP map with temperature/humidity support
     // Based on: zigbee-herdsman-converters/tuya.ts, ZHA quirks, community research
+    const mfr = this.getSetting('zb_manufacturerName') || '';
+
+    // Device-specific DP interpretation
+    // _TZE200_rhgsbacq (3-in-1 PIR): DP2=temp, DP3=humidity, DP4=battery
+    // WZ-M100/ZY-M100 (radar): DP2=sensitivity, DP3=min_range, DP4=max_range
+    const is3in1PIR = ['_TZE200_rhgsbacq', '_TZE200_auin8mzr', '_TZE200_ztc6ggyl'].includes(mfr);
+
     const RADAR_DP_MAP = {
       // === COMMON DPs (most devices) ===
       1: { capability: 'alarm_motion', parser: (v) => Boolean(v) },
-      2: { capability: 'radar_sensitivity', parser: (v) => v, isConfig: true }, // WZ-M100, ZY-M100
-      3: { capability: 'minimum_range', parser: (v) => v / 100, isConfig: true }, // WZ-M100 (cm→m)
-      // DP 4: max_range for WZ-M100, battery for others - handled dynamically
-      5: { capability: 'maximum_range', parser: (v) => v / 100, isConfig: true }, // Alternative max_range
+
+      // === DP 2/3: Device-dependent (temp/humidity for 3-in-1, config for radar) ===
+      // Handled dynamically below
+
+      // === BATTERY/CONFIG DPs ===
+      5: { capability: 'maximum_range', parser: (v) => v / 100, isConfig: true },
       6: { capability: 'self_test', parser: (v) => ['testing', 'success', 'failure', 'other', 'comm_fault', 'radar_fault'][v] || 'unknown', isConfig: true },
-      9: { capability: 'target_distance', parser: (v) => v / 100, isConfig: true }, // cm to m
+      9: { capability: 'target_distance', parser: (v) => v / 100, isConfig: true },
 
       // === BATTERY DPs ===
-      // Note: DP 4 can be battery OR max_range depending on device - check hasCapability
-      14: { capability: 'measure_battery', parser: (v) => v, isBattery: true }, // Soil sensors
-      15: { capability: 'measure_battery', parser: (v) => v, isBattery: true }, // ZG-204ZM
+      14: { capability: 'measure_battery', parser: (v) => v, isBattery: true },
+      15: { capability: 'measure_battery', parser: (v) => v, isBattery: true },
 
       // === ZY-M100 / WZ-M100 specific (24GHz) ===
-      101: { capability: 'presence_timeout', parser: (v) => v, isConfig: true }, // seconds
+      101: { capability: 'presence_timeout', parser: (v) => v, isConfig: true },
       102: { capability: 'motion_state', parser: (v) => ['none', 'small', 'medium', 'large', 'static'][v] || 'unknown', isConfig: true },
-      103: { capability: 'measure_luminance', parser: (v) => v }, // Some devices
-      104: { capability: 'measure_luminance', parser: (v) => v }, // ZY-M100-24G
+      103: { capability: 'measure_luminance', parser: (v) => v },
+      104: { capability: 'measure_luminance', parser: (v) => v },
 
       // === ZG-204ZM specific (PIR+mmWave battery) ===
+      105: { capability: 'measure_temperature', parser: (v) => v / 10 }, // ZG-204ZM temp
+      106: { capability: 'measure_humidity', parser: (v) => v },         // ZG-204ZM humidity
       107: { capability: 'presence_state', parser: (v) => ['none', 'presence', 'move'][v] || 'unknown', isConfig: true },
       108: { capability: 'motion_state', parser: (v) => ['none', 'small', 'large', 'static'][v] || 'unknown', isConfig: true },
       109: { capability: 'led_indicator', parser: (v) => Boolean(v), isConfig: true },
-      110: { capability: 'static_detection_distance', parser: (v) => v / 10, isConfig: true }, // 0-10m
-      111: { capability: 'static_detection_sensitivity', parser: (v) => v, isConfig: true }, // 0-10
-
-      // === ZG-205Z specific (5.8GHz/24GHz USB) ===
-      // Uses similar DPs to ZY-M100 but different structure
-      // DP 1: presence (bool), DP 2: sensitivity (1-10), DP 3: static_sensitivity (1-10)
-      // DP 4: detection_range, DP 101: motion_state, DP 102: fading_time, DP 104: illuminance
-
-      // === _TZE204_laokfqwu (WZ-M100 variant) - from ZHA quirks ===
-      // DP 1: occupancy, DP 2: sensitivity, DP 3: min_range (/100)
-      // DP 4: max_range (/100), DP 6: self_test, DP 9: target_distance (/100)
-      // DP 101: detection_delay (*100), DP 102: fading_time (*100), DP 103: illuminance
+      110: { capability: 'static_detection_distance', parser: (v) => v / 10, isConfig: true },
+      111: { capability: 'static_detection_sensitivity', parser: (v) => v, isConfig: true },
     };
 
-    // Special handling for DP 4 (can be max_range OR battery depending on device)
+    // Dynamic DP 2/3/4 handling based on device type
     let mapping = RADAR_DP_MAP[dpId];
+
+    // DP 2: Temperature for 3-in-1 PIR, sensitivity for radar
+    if (dpId === 2) {
+      if (is3in1PIR && this.hasCapability('measure_temperature')) {
+        mapping = { capability: 'measure_temperature', parser: (v) => v / 10 };
+        this.log(`[DP2] Temperature: ${value / 10}°C (3-in-1 PIR mode)`);
+      } else {
+        mapping = { capability: 'radar_sensitivity', parser: (v) => v, isConfig: true };
+      }
+    }
+
+    // DP 3: Humidity for 3-in-1 PIR, min_range for radar
+    if (dpId === 3) {
+      if (is3in1PIR && this.hasCapability('measure_humidity')) {
+        mapping = { capability: 'measure_humidity', parser: (v) => v };
+        this.log(`[DP3] Humidity: ${value}% (3-in-1 PIR mode)`);
+      } else {
+        mapping = { capability: 'minimum_range', parser: (v) => v / 100, isConfig: true };
+      }
+    }
+
+    // DP 4: Battery for 3-in-1 PIR/ZG-204ZM, max_range for radar
     if (dpId === 4) {
-      // If device has battery capability and value is 0-100, it's likely battery
-      // If value is > 100 (cm), it's likely max_range
-      if (this.hasCapability('measure_battery') && value <= 100) {
+      if ((is3in1PIR || this.hasCapability('measure_battery')) && value <= 100) {
         mapping = { capability: 'measure_battery', parser: (v) => v, isBattery: true };
+        this.log(`[DP4] Battery: ${value}%`);
       } else {
         mapping = { capability: 'maximum_range', parser: (v) => v / 100, isConfig: true };
       }
