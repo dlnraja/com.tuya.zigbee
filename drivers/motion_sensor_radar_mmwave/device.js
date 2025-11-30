@@ -335,18 +335,22 @@ class RadarMotionSensorMmwaveDevice extends BaseHybridDevice {
         break;
 
       // ═══════════════════════════════════════════════════════════════
-      // ILLUMINANCE
+      // TEMPERATURE & HUMIDITY (ZG-204ZM 5-in-1 sensor)
+      // v5.2.68: Fixed - DP 105/106 are temp/humidity, NOT illuminance
       // ═══════════════════════════════════════════════════════════════
-      case 105: // Illuminance (lux)
-        this.log(`[RADAR] 💡 Illuminance: ${value} lux`);
-        if (this.hasCapability('measure_luminance')) {
-          this.setCapabilityValue('measure_luminance', value).catch(this.error);
+      case 105: // Temperature (value / 10 = °C)
+        const temperature = value / 10;
+        this.log(`[RADAR] 🌡️ Temperature: ${temperature}°C`);
+        if (this.hasCapability('measure_temperature')) {
+          this.setCapabilityValue('measure_temperature', temperature).catch(this.error);
         }
         break;
 
-      case 106: // Illuminance threshold (for light automation)
-        this.log(`[RADAR] 💡 Illuminance threshold: ${value} lux`);
-        this.setStoreValue('illuminance_threshold', value).catch(this.error);
+      case 106: // Humidity (%)
+        this.log(`[RADAR] 💧 Humidity: ${value}%`);
+        if (this.hasCapability('measure_humidity')) {
+          this.setCapabilityValue('measure_humidity', value).catch(this.error);
+        }
         break;
 
       // ═══════════════════════════════════════════════════════════════
