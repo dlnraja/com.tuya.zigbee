@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.2.55",
+  "version": "5.2.56",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -4382,7 +4382,7 @@
         ]
       },
       {
-        "id": "motion_sensor_motion_sensor_alarm_motion_true",
+        "id": "motion_sensor_motion_detected",
         "title": {
           "en": "Motion detected",
           "fr": "Mouvement détecté"
@@ -4396,10 +4396,10 @@
         ]
       },
       {
-        "id": "motion_sensor_motion_sensor_alarm_motion_false",
+        "id": "motion_sensor_motion_cleared",
         "title": {
-          "en": "No motion",
-          "fr": "Aucun mouvement"
+          "en": "Motion cleared",
+          "fr": "Mouvement terminé"
         },
         "args": [
           {
@@ -4410,7 +4410,7 @@
         ]
       },
       {
-        "id": "motion_sensor_motion_sensor_alarm_battery_true",
+        "id": "motion_sensor_battery_low",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible"
@@ -4424,21 +4424,7 @@
         ]
       },
       {
-        "id": "motion_sensor_motion_sensor_alarm_battery_false",
-        "title": {
-          "en": "Battery OK",
-          "fr": "Batterie OK"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=motion_sensor"
-          }
-        ]
-      },
-      {
-        "id": "motion_sensor_motion_sensor_measure_battery_changed",
+        "id": "motion_sensor_battery_changed",
         "title": {
           "en": "Battery level changed",
           "fr": "Niveau batterie changé"
@@ -4452,6 +4438,31 @@
               "fr": "Batterie (%)"
             },
             "example": 75
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=motion_sensor"
+          }
+        ]
+      },
+      {
+        "id": "motion_sensor_luminance_changed",
+        "title": {
+          "en": "Luminance changed",
+          "fr": "Luminosité changée"
+        },
+        "tokens": [
+          {
+            "name": "lux",
+            "type": "number",
+            "title": {
+              "en": "Luminance (lux)",
+              "fr": "Luminosité (lux)"
+            },
+            "example": 500
           }
         ],
         "args": [
@@ -7211,6 +7222,20 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=module_mini_switch"
+          }
+        ]
+      },
+      {
+        "id": "motion_sensor_motion_active",
+        "title": {
+          "en": "Motion !{{is|is not}} detected",
+          "fr": "Mouvement !{{est|n'est pas}} détecté"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=motion_sensor"
           }
         ]
       },

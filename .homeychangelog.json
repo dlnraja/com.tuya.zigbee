@@ -1,4 +1,8 @@
 {
+  "5.2.56": {
+    "en": "🌱 Added soil sensor fingerprint _TZE284_vvmbj46n\n\nThis TS0601 soil moisture/temperature sensor was being recommended for migration but fingerprint was missing.\n\nNow properly detected and added to soil_sensor driver.",
+    "fr": "🌱 Ajout fingerprint capteur de sol _TZE284_vvmbj46n"
+  },
   "5.2.55": {
     "en": "🚶 FIX: Motion Sensor (ZG-204ZL) - Complete overhaul\n\n**Problems reported by @Cam:**\n- Battery always 100%\n- 'Last motion' showing '56 years ago' (Unix epoch 0)\n- Flows not triggering\n- Luminance not updating\n\n**Fixes:**\n1. **IAS Zone handler** - Complete rewrite with proper Bitmap→number conversion\n2. **Flow triggers** - Simplified IDs, proper triggering on motion state change:\n   - `motion_sensor_motion_detected`\n   - `motion_sensor_motion_cleared`\n   - `motion_sensor_luminance_changed`\n3. **Flow conditions** - Added `motion_sensor_motion_active`\n4. **Illuminance** - Added cluster listener for lux updates\n\n**Affected devices:**\n- HOBEIAN ZG-204ZL\n- HOBEIAN ZG-204ZM\n- All IAS Zone motion sensors",
     "fr": "🚶 FIX: Capteur de mouvement (ZG-204ZL)\n\n**Corrections:**\n- Parsing IAS Zone corrigé\n- Flow triggers fonctionnels\n- Luminance fonctionne"
