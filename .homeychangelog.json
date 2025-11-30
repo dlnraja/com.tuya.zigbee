@@ -1,4 +1,8 @@
 {
+  "5.2.57": {
+    "en": "🐛 Multiple bug fixes from diagnostics\n\n**1. IAS Zone in motion_sensor_radar_mmwave:**\n- Same Bitmap→number fix as motion_sensor\n- `Bitmap [ alarm1 ]` now correctly → `true`\n\n**2. ERR_OUT_OF_RANGE (maxInterval: 86400):**\n- Fixed PowerSourceDetector.js: all intervals now ≤65535\n- Added safety cap in BatteryMonitoringMixin.js\n\n**3. _TZE284_vvmbj46n (soil sensor):**\n- Removed from climate_sensor driver\n- Now only in soil_sensor driver\n- User must re-pair device to get correct driver",
+    "fr": "🐛 Corrections multiples\n\n- IAS Zone radar fixé\n- maxInterval capé à 65535\n- _TZE284_vvmbj46n → soil_sensor uniquement"
+  },
   "5.2.56": {
     "en": "🌱 Added soil sensor fingerprint _TZE284_vvmbj46n\n\nThis TS0601 soil moisture/temperature sensor was being recommended for migration but fingerprint was missing.\n\nNow properly detected and added to soil_sensor driver.",
     "fr": "🌱 Ajout fingerprint capteur de sol _TZE284_vvmbj46n"
