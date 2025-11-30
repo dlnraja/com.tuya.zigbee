@@ -573,29 +573,32 @@ class RadarMotionSensorMmwaveDevice extends BaseHybridDevice {
       // Step 3: Setup Zone Status Change listener (property assignment)
       // SDK3: Use .onZoneStatusChangeNotification property, NOT .on() event
       endpoint.clusters.iasZone.onZoneStatusChangeNotification = async (payload) => {
-        this.log('[MSG] Zone notification received:', payload);
+        this.log('[IAS] 🚨 Zone notification received:', payload);
 
         if (payload && payload.zoneStatus !== undefined) {
-          // Convert Bitmap to value if needed
+          // CRITICAL: Convert Bitmap to number before bitwise operations
           let status = payload.zoneStatus;
           if (status && typeof status.valueOf === 'function') {
             status = status.valueOf();
           }
+          // CRITICAL FIX: Ensure status is actually a number
+          if (typeof status !== 'number') {
+            status = Number(status) || 0;
+          }
+
+          this.log('[IAS] zoneStatus numeric value:', status);
 
           // Check alarm1 bit (motion/alarm detected)
-          const alarm = (status & 0x01) !== 0;
+          const motionDetected = (status & 0x01) !== 0;
 
-          await (async () => {
-            this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_motion'} = ${alarm}`);
-            try {
-              await this.setCapabilityValue('alarm_motion', alarm);
-              this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'alarm_motion'}`);
-            } catch (err) {
-              this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'alarm_motion'}`, err.message);
-              throw err;
-            }
-          })().catch(this.error);
-          this.log(`${alarm ? '[ALARM]' : '[OK]'} Alarm: ${alarm ? 'TRIGGERED' : 'cleared'}`);
+          try {
+            await this.setCapabilityValue('alarm_motion', motionDetected);
+            this.log(`[IAS] ✅ alarm_motion = ${motionDetected}`);
+          } catch (err) {
+            this.error('[IAS] ❌ Failed to set alarm_motion:', err.message);
+          }
+
+          this.log(`[IAS] ${motionDetected ? '🚶 MOTION DETECTED!' : '✅ Motion cleared'}`);
         }
       };
 
@@ -604,24 +607,23 @@ class RadarMotionSensorMmwaveDevice extends BaseHybridDevice {
       // Step 4: Setup Zone Status attribute listener (property assignment)
       // Alternative listener for attribute reports
       endpoint.clusters.iasZone.onZoneStatus = async (zoneStatus) => {
-        this.log('[DATA] Zone attribute report:', zoneStatus);
+        this.log('[IAS] Zone attribute report:', zoneStatus);
 
         let status = zoneStatus;
         if (status && typeof status.valueOf === 'function') {
           status = status.valueOf();
         }
+        if (typeof status !== 'number') {
+          status = Number(status) || 0;
+        }
 
-        const alarm = (status & 0x01) !== 0;
-        await (async () => {
-          this.log(`📝 [DIAG] setCapabilityValue: ${'alarm_motion'} = ${alarm}`);
-          try {
-            await this.setCapabilityValue('alarm_motion', alarm);
-            this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'alarm_motion'}`);
-          } catch (err) {
-            this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'alarm_motion'}`, err.message);
-            throw err;
-          }
-        })().catch(this.error);
+        const motionDetected = (status & 0x01) !== 0;
+        try {
+          await this.setCapabilityValue('alarm_motion', motionDetected);
+          this.log(`[IAS] ✅ alarm_motion = ${motionDetected} (via attribute)`);
+        } catch (err) {
+          this.error('[IAS] ❌ Failed to set alarm_motion:', err.message);
+        }
       };
 
       this.log('[OK] IAS Zone configured successfully (SDK3 latest method)');
