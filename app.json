@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.2.65",
+  "version": "5.2.66",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -16724,7 +16724,23 @@
           "_SAMSUNG_generic",
           "_TZ3000_bmfw9ykl",
           "_TZ3000_jqge2fjx",
-          "_TZ3000_lqpt3mvr"
+          "_TZ3000_lqpt3mvr",
+          "_TZ1800_ejwkn2h2",
+          "_TZ3000_ebar6ljy",
+          "_TZ3000_6jeesvrt",
+          "_TZ3000_bmg14ax2",
+          "_TZ3000_bzxlofth",
+          "_TZ3000_7tbsruql",
+          "_TZ3000_osu834un",
+          "_TZ3000_7d8yme6f",
+          "_TZ3000_rgchmad8",
+          "_TZ3000_au1rjicn",
+          "_TZ3000_zgrffiwg",
+          "_TZ3000_cea5xugq",
+          "_TZ3000_qrldbmfn",
+          "_TZ3000_8yhypbo7",
+          "_TZ3000_9eeavbk5",
+          "_TYZB01_xph99wvr"
         ],
         "productId": [
           "TS0203",
@@ -22307,7 +22323,13 @@
           "_TZE200_nhk3bpxq",
           "_TZE200_xq4hgafz",
           "_TZE204_n8dljorx",
-          "_TZE204_mchxve9o"
+          "_TZE204_mchxve9o",
+          "_TZ1800_fcdjzz3s",
+          "_TYZB01_jytabjkb",
+          "_TYZB01_dl7cejts",
+          "_TYZB01_dr6sduka",
+          "_TZE200_1ibpyhdc",
+          "_TZE200_ttcovulf"
         ],
         "productId": [
           "TS0202",
@@ -22334,7 +22356,9 @@
           "TS0041",
           "SNZB-03",
           "ZG-204ZM",
-          "IH-K665"
+          "IH-K665",
+          "TY0202",
+          "RH3040"
         ],
         "endpoints": {
           "1": {
@@ -23558,7 +23582,11 @@
           "_TZ3000_y4ona9me",
           "_TZ3000_qeuvnohg",
           "_TZ3000_jak16dll",
-          "_TZ3210_7jnk7l3k"
+          "_TZ3210_7jnk7l3k",
+          "_TZ3000_cayepv1a",
+          "_TZ3000_lepzuhto",
+          "_TZ3000_qystbcjg",
+          "_TZ3000_b28wrpvx"
         ],
         "productId": [
           "S26R2ZB",
@@ -25923,7 +25951,9 @@
           "_TZE200_6kijc7nd",
           "_TZE200_8viydiwr",
           "_TZE200_a4bpgplm",
-          "_TZE200_a7sghmms"
+          "_TZE200_a7sghmms",
+          "_TZE284_g2e6cpnw",
+          "_TZE200_9cqcpkgb"
         ],
         "productId": [
           "TS0601",
