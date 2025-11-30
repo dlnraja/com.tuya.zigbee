@@ -48,92 +48,138 @@ class SoilSensorDevice extends BaseHybridDevice {
     this.log('[SOIL-SENSOR] ℹ️ Battery device - may not respond to active queries');
     this.log('[SOIL-SENSOR] ℹ️ Data will arrive when device wakes up (every 15-60 minutes)');
     this.log('[SOIL-SENSOR] ℹ️ First data may take up to 1 hour after pairing');
+
+    // v5.2.79: Data watchdog - alert if no data after 30 minutes
+    this._startDataWatchdog();
+  }
+
+  /**
+   * v5.2.79: Start data watchdog timer
+   * Alerts user if no DP data received after timeout
+   */
+  _startDataWatchdog() {
+    const WATCHDOG_TIMEOUT = 30 * 60 * 1000; // 30 minutes
+
+    this._watchdogTimer = this.homey.setTimeout(() => {
+      if (!this._dpLastUpdate) {
+        this.log('[SOIL-SENSOR] ⚠️ ════════════════════════════════════════════════════════');
+        this.log('[SOIL-SENSOR] ⚠️ NO DATA RECEIVED after 30 minutes!');
+        this.log('[SOIL-SENSOR] ⚠️ ════════════════════════════════════════════════════════');
+        this.log('[SOIL-SENSOR] ℹ️ Possible causes:');
+        this.log('[SOIL-SENSOR]    1. Sensor is still sleeping (battery conservation)');
+        this.log('[SOIL-SENSOR]    2. Sensor is out of Zigbee range');
+        this.log('[SOIL-SENSOR]    3. Sensor battery is depleted');
+        this.log('[SOIL-SENSOR] ℹ️ Try:');
+        this.log('[SOIL-SENSOR]    - Press the sensor button briefly to wake it');
+        this.log('[SOIL-SENSOR]    - Move sensor closer to Homey or a Zigbee router');
+        this.log('[SOIL-SENSOR]    - Check/replace the battery');
+        this.log('[SOIL-SENSOR] ⚠️ ════════════════════════════════════════════════════════');
+      } else {
+        const elapsed = Date.now() - this._dpLastUpdate;
+        this.log(`[SOIL-SENSOR] ✅ Data watchdog OK - last update ${Math.round(elapsed / 1000)}s ago`);
+      }
+    }, WATCHDOG_TIMEOUT);
   }
 
   /**
    * Setup Tuya DP listener for cluster 0xEF00
    * v5.2.75: Enhanced listener setup - multiple fallback methods
+   * v5.2.79: Added better error handling and logging
    */
   async _setupTuyaDPListener() {
+    this.log('[SOIL-SENSOR] ════════════════════════════════════════════════════════');
     this.log('[SOIL-SENSOR] Setting up Tuya DP listener...');
+    this.log('[SOIL-SENSOR] ════════════════════════════════════════════════════════');
 
     let listenerCount = 0;
 
-    // Method 1: TuyaEF00Manager dpReport event
-    if (this.tuyaEF00Manager) {
-      this.tuyaEF00Manager.on('dpReport', ({ dpId, value }) => {
-        this.log(`[SOIL-SENSOR] 📥 TuyaEF00Manager dpReport: DP${dpId} = ${value}`);
-        this._handleSoilDP(dpId, value);
-      });
-      listenerCount++;
-      this.log('[SOIL-SENSOR] ✅ TuyaEF00Manager dpReport listener registered');
-    }
+    try {
 
-    // Method 2: TuyaEF00Manager individual DP events (dp-1, dp-2, etc.)
-    if (this.tuyaEF00Manager) {
-      const dpIds = [1, 2, 3, 4, 5, 6, 7, 14, 15, 101];
-      dpIds.forEach(dpId => {
-        this.tuyaEF00Manager.on(`dp-${dpId}`, (value) => {
-          this.log(`[SOIL-SENSOR] 📥 TuyaEF00Manager dp-${dpId}: ${value}`);
+      // Method 1: TuyaEF00Manager dpReport event
+      if (this.tuyaEF00Manager) {
+        this.tuyaEF00Manager.on('dpReport', ({ dpId, value }) => {
+          this.log(`[SOIL-SENSOR] 📥 TuyaEF00Manager dpReport: DP${dpId} = ${value}`);
           this._handleSoilDP(dpId, value);
         });
-      });
-      listenerCount++;
-      this.log('[SOIL-SENSOR] ✅ TuyaEF00Manager individual DP listeners registered');
-    }
-
-    // Method 3: Direct cluster listener (fallback)
-    const endpoint = this.zclNode?.endpoints?.[1];
-    if (endpoint) {
-      // Find Tuya cluster by various names
-      const tuyaCluster = endpoint.clusters.tuya
-        || endpoint.clusters.tuyaSpecific
-        || endpoint.clusters.manuSpecificTuya
-        || endpoint.clusters[61184]
-        || endpoint.clusters['61184'];
-
-      if (tuyaCluster) {
-        // dataReport event
-        if (typeof tuyaCluster.on === 'function') {
-          tuyaCluster.on('dataReport', (data) => {
-            this.log('[SOIL-SENSOR] 📥 Direct dataReport:', JSON.stringify(data));
-            this._parseTuyaRawData(data);
-          });
-          listenerCount++;
-        }
-
-        // onDataReport property
-        const originalHandler = tuyaCluster.onDataReport;
-        tuyaCluster.onDataReport = (data) => {
-          this.log('[SOIL-SENSOR] 📥 Direct onDataReport:', JSON.stringify(data));
-          this._parseTuyaRawData(data);
-          if (originalHandler) originalHandler.call(tuyaCluster, data);
-        };
         listenerCount++;
-
-        this.log('[SOIL-SENSOR] ✅ Direct Tuya cluster listeners configured');
-      } else {
-        this.log('[SOIL-SENSOR] ⚠️ No Tuya cluster found on endpoint 1');
+        this.log('[SOIL-SENSOR] ✅ TuyaEF00Manager dpReport listener registered');
       }
-    }
 
-    // Method 4: ZCL raw frame listener (last resort)
-    if (this.zclNode) {
-      this.zclNode.on('frame', (endpointId, clusterId, frame, meta) => {
-        if (clusterId === 0xEF00 || clusterId === 61184) {
-          this.log('[SOIL-SENSOR] 📥 ZCL frame on 0xEF00:', JSON.stringify(frame));
-          this._parseTuyaRawFrame(frame);
+      // Method 2: TuyaEF00Manager individual DP events (dp-1, dp-2, etc.)
+      if (this.tuyaEF00Manager) {
+        const dpIds = [1, 2, 3, 4, 5, 6, 7, 14, 15, 101];
+        dpIds.forEach(dpId => {
+          this.tuyaEF00Manager.on(`dp-${dpId}`, (value) => {
+            this.log(`[SOIL-SENSOR] 📥 TuyaEF00Manager dp-${dpId}: ${value}`);
+            this._handleSoilDP(dpId, value);
+          });
+        });
+        listenerCount++;
+        this.log('[SOIL-SENSOR] ✅ TuyaEF00Manager individual DP listeners registered');
+      }
+
+      // Method 3: Direct cluster listener (fallback)
+      const endpoint = this.zclNode?.endpoints?.[1];
+      if (endpoint) {
+        // Find Tuya cluster by various names
+        const tuyaCluster = endpoint.clusters.tuya
+          || endpoint.clusters.tuyaSpecific
+          || endpoint.clusters.manuSpecificTuya
+          || endpoint.clusters[61184]
+          || endpoint.clusters['61184'];
+
+        if (tuyaCluster) {
+          // dataReport event
+          if (typeof tuyaCluster.on === 'function') {
+            tuyaCluster.on('dataReport', (data) => {
+              this.log('[SOIL-SENSOR] 📥 Direct dataReport:', JSON.stringify(data));
+              this._parseTuyaRawData(data);
+            });
+            listenerCount++;
+          }
+
+          // onDataReport property
+          const originalHandler = tuyaCluster.onDataReport;
+          tuyaCluster.onDataReport = (data) => {
+            this.log('[SOIL-SENSOR] 📥 Direct onDataReport:', JSON.stringify(data));
+            this._parseTuyaRawData(data);
+            if (originalHandler) originalHandler.call(tuyaCluster, data);
+          };
+          listenerCount++;
+
+          this.log('[SOIL-SENSOR] ✅ Direct Tuya cluster listeners configured');
+        } else {
+          this.log('[SOIL-SENSOR] ⚠️ No Tuya cluster found on endpoint 1');
         }
-      });
-      listenerCount++;
-      this.log('[SOIL-SENSOR] ✅ ZCL raw frame listener registered');
+      }
+
+      // Method 4: ZCL raw frame listener (last resort)
+      if (this.zclNode) {
+        this.zclNode.on('frame', (endpointId, clusterId, frame, meta) => {
+          if (clusterId === 0xEF00 || clusterId === 61184) {
+            this.log('[SOIL-SENSOR] 📥 ZCL frame on 0xEF00:', JSON.stringify(frame));
+            this._parseTuyaRawFrame(frame);
+          }
+        });
+        listenerCount++;
+        this.log('[SOIL-SENSOR] ✅ ZCL raw frame listener registered');
+      }
+
+      this.log(`[SOIL-SENSOR] 📡 Total listeners registered: ${listenerCount}`);
+
+      if (listenerCount === 0) {
+        this.log('[SOIL-SENSOR] ❌ NO LISTENERS - device may not report data!');
+        this.log('[SOIL-SENSOR] ℹ️ This may be normal for passive Tuya DP devices');
+        this.log('[SOIL-SENSOR] ℹ️ Data will arrive when device wakes up');
+      } else {
+        this.log('[SOIL-SENSOR] ✅ Listeners ready - waiting for device data...');
+      }
+    } catch (err) {
+      this.error('[SOIL-SENSOR] ❌ Listener setup error:', err.message);
+      this.log('[SOIL-SENSOR] ℹ️ Will rely on TuyaEF00Manager for data reception');
     }
 
-    this.log(`[SOIL-SENSOR] 📡 Total listeners registered: ${listenerCount}`);
-
-    if (listenerCount === 0) {
-      this.log('[SOIL-SENSOR] ❌ NO LISTENERS - device may not report data!');
-    }
+    this.log('[SOIL-SENSOR] ════════════════════════════════════════════════════════');
   }
 
   /**
