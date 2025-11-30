@@ -350,14 +350,36 @@ class RadarMotionSensorMmwaveDevice extends BaseHybridDevice {
         break;
 
       // ═══════════════════════════════════════════════════════════════
-      // BATTERY
+      // BATTERY (ZG-204ZM uses DP 15 for battery)
       // ═══════════════════════════════════════════════════════════════
       case 15: // Battery (%)
         const battery = Math.min(100, Math.max(0, value));
         this.log(`[RADAR] 🔋 Battery: ${battery}%`);
+        // v5.2.62: Mark that we received a REAL battery DP
+        this.setStoreValue('has_received_battery_dp', true).catch(() => { });
+        this.setStoreValue('last_battery_percent', battery).catch(() => { });
         if (this.hasCapability('measure_battery')) {
           this.setCapabilityValue('measure_battery', battery).catch(this.error);
         }
+        break;
+
+      // ═══════════════════════════════════════════════════════════════
+      // ZG-204ZM SPECIFIC - from SmartHomeScene review
+      // ═══════════════════════════════════════════════════════════════
+      case 109: // LED indicator (on/off)
+        this.log(`[RADAR] 💡 LED indicator: ${value ? 'ON' : 'OFF'}`);
+        this.setStoreValue('led_indicator', Boolean(value)).catch(this.error);
+        break;
+
+      case 110: // Static detection distance (0-10m in 0.1m increments)
+        const staticDist = value / 10;
+        this.log(`[RADAR] 📏 Static detection distance: ${staticDist}m`);
+        this.setStoreValue('static_detection_distance', staticDist).catch(this.error);
+        break;
+
+      case 111: // Static detection sensitivity (0-10)
+        this.log(`[RADAR] 📐 Static detection sensitivity: ${value}/10`);
+        this.setStoreValue('static_detection_sensitivity', value).catch(this.error);
         break;
 
       default:
