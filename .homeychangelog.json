@@ -1,4 +1,8 @@
 {
+  "5.2.72": {
+    "en": "🔧 FIX: Multiple Diagnostic Report Issues\n\n**motion_sensor_radar_mmwave (_TZE200_rhgsbacq):**\n- FIXED: DP 2/3 now correctly map to humidity/temperature for 3-in-1 PIR devices\n- Added _is3in1PIR() detection for dynamic DP routing\n- Devices: _TZE200_rhgsbacq, _TZE200_auin8mzr, _TZE200_ztc6ggyl, _TZE200_3towulqd\n\n**button_wireless:**\n- FIXED: Flow triggers were not being called on button press\n- Added flow trigger calls for commandOn and commandToggle events\n\n**Source:** User diagnostic report (Homey v12.9.0)",
+    "fr": "🔧 FIX: Problèmes rapport diagnostic\n\n- motion_sensor_radar_mmwave: DP 2/3 = temp/humidity pour PIR 3-en-1\n- button_wireless: Ajout triggers flow manquants"
+  },
   "5.2.71": {
     "en": "🔧 FIX: Capability Mapping Audit\n\n**gas_detector:**\n- FIXED: Was using alarm_motion instead of alarm_generic for gas detection\n- Added capabilitiesOptions to show 'Gas Alarm' title\n\n**air_quality_comprehensive:**\n- ADDED: measure_co2, measure_pm25 capabilities\n- ADDED: Tuya DP handler for air quality monitors\n- DPs: 2/19=CO2, 18/20=PM2.5, 21=TVOC\n\n**Drivers Audited:** 60 total\n- 11 sensor drivers checked\n- 2 drivers fixed",
     "fr": "🔧 FIX: Audit Mapping Capabilities\n\n- gas_detector: alarm_motion → alarm_generic\n- air_quality: +CO2, +PM2.5, +Tuya DP handler"

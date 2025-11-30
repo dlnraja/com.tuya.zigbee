@@ -268,18 +268,46 @@ class RadarMotionSensorMmwaveDevice extends BaseHybridDevice {
         break;
 
       // ═══════════════════════════════════════════════════════════════
-      // SENSITIVITY & RANGE (FP300-like)
+      // DP 2: HUMIDITY (3-in-1 PIR) or SENSITIVITY (radar)
+      // v5.2.72: Dynamic handling for _TZE200_rhgsbacq 3-in-1 PIR
       // ═══════════════════════════════════════════════════════════════
-      case 2: // Radar sensitivity (ZY-M100 style: 0-9)
+      case 2:
+        // Check if this is a 3-in-1 PIR device (humidity on DP2)
+        if (this._is3in1PIR() && value >= 0 && value <= 100) {
+          this.log(`[RADAR] 💧 Humidity (3-in-1 PIR): ${value}%`);
+          if (this.hasCapability('measure_humidity')) {
+            this.setCapabilityValue('measure_humidity', value).catch(this.error);
+          }
+        } else {
+          // Radar sensitivity (ZY-M100 style: 0-9)
+          this.log(`[RADAR] 📐 Sensitivity: ${value}/9`);
+          this.setStoreValue('radar_sensitivity', value).catch(this.error);
+        }
+        break;
+
       case 9: // Sensitivity (ZG-204ZM style: 0-9)
         this.log(`[RADAR] 📐 Sensitivity: ${value}/9`);
         this.setStoreValue('radar_sensitivity', value).catch(this.error);
         break;
 
-      case 3: // Minimum range (m * 100, e.g., 150 = 1.5m)
-        const minRange = value / 100;
-        this.log(`[RADAR] 📏 Min range: ${minRange}m`);
-        this.setStoreValue('minimum_range', minRange).catch(this.error);
+      // ═══════════════════════════════════════════════════════════════
+      // DP 3: TEMPERATURE (3-in-1 PIR) or MIN RANGE (radar)
+      // v5.2.72: Dynamic handling for _TZE200_rhgsbacq 3-in-1 PIR
+      // ═══════════════════════════════════════════════════════════════
+      case 3:
+        // Check if this is a 3-in-1 PIR device (temperature on DP3)
+        if (this._is3in1PIR() && value > -500 && value < 1000) {
+          const temp3in1 = value / 10;
+          this.log(`[RADAR] 🌡️ Temperature (3-in-1 PIR): ${temp3in1}°C`);
+          if (this.hasCapability('measure_temperature')) {
+            this.setCapabilityValue('measure_temperature', temp3in1).catch(this.error);
+          }
+        } else {
+          // Minimum range (m * 100, e.g., 150 = 1.5m)
+          const minRange = value / 100;
+          this.log(`[RADAR] 📏 Min range: ${minRange}m`);
+          this.setStoreValue('minimum_range', minRange).catch(this.error);
+        }
         break;
 
       case 4: // Maximum range (m * 100, e.g., 600 = 6m)
@@ -389,6 +417,30 @@ class RadarMotionSensorMmwaveDevice extends BaseHybridDevice {
       default:
         this.log(`[RADAR] ❓ Unknown DP${dpId} = ${value}`);
     }
+  }
+
+  /**
+   * v5.2.72: Check if device is a 3-in-1 PIR (motion + temp + humidity)
+   * These devices use DP2=humidity, DP3=temperature instead of radar config
+   */
+  _is3in1PIR() {
+    const manufacturer = this.getStoreValue('manufacturer')
+      || this.getSetting('zb_manufacturer_name')
+      || '';
+
+    // Known 3-in-1 PIR devices with temp/humidity
+    const PIR_3IN1_MANUFACTURERS = [
+      '_TZE200_rhgsbacq',  // 3-in-1 PIR with temp/humidity
+      '_TZE200_auin8mzr',  // Similar 3-in-1
+      '_TZE200_ztc6ggyl',  // Similar 3-in-1
+      '_TZE200_3towulqd',  // ZG-204ZV with temp/humidity
+    ];
+
+    const is3in1 = PIR_3IN1_MANUFACTURERS.some(m => manufacturer.includes(m));
+    if (is3in1) {
+      this.log(`[RADAR] ✅ Detected 3-in-1 PIR device: ${manufacturer}`);
+    }
+    return is3in1;
   }
 
   /**
