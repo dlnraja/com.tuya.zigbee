@@ -1,4 +1,8 @@
 {
+  "5.2.73": {
+    "en": "🔧 IMPROVE: Battery & Migration Robustness\n\n**battery-reporting-manager:**\n- Timeout errors now INFO level (not ERROR) for sleeping devices\n- Added battery_last_update timestamp tracking\n- Non-blocking: continues even if initial read fails\n\n**AutonomousMigrationManager:**\n- Added _isDeviceAvailable() guard for deleted/ghost devices\n- Handles 'Not Found: Device with ID' errors gracefully\n- Prevents log spam from migration on removed devices\n\n**Impact:** Cleaner logs, better diagnostics for battery devices",
+    "fr": "🔧 AMÉLIORATION: Robustesse Batterie & Migration\n\n- Timeouts batterie = info (pas erreur)\n- Tracking battery_last_update\n- Protection devices supprimés dans migration"
+  },
   "5.2.72": {
     "en": "🔧 FIX: Multiple Diagnostic Report Issues\n\n**motion_sensor_radar_mmwave (_TZE200_rhgsbacq):**\n- FIXED: DP 2/3 now correctly map to humidity/temperature for 3-in-1 PIR devices\n- Added _is3in1PIR() detection for dynamic DP routing\n- Devices: _TZE200_rhgsbacq, _TZE200_auin8mzr, _TZE200_ztc6ggyl, _TZE200_3towulqd\n\n**button_wireless:**\n- FIXED: Flow triggers were not being called on button press\n- Added flow trigger calls for commandOn and commandToggle events\n\n**Source:** User diagnostic report (Homey v12.9.0)",
     "fr": "🔧 FIX: Problèmes rapport diagnostic\n\n- motion_sensor_radar_mmwave: DP 2/3 = temp/humidity pour PIR 3-en-1\n- button_wireless: Ajout triggers flow manquants"
