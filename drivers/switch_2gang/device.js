@@ -25,10 +25,8 @@ class SmartSwitch2gangHybridDevice extends BaseHybridDevice {
 
     this.log('[SWITCH-2GANG] ✅ Initialized');
 
-    // Register capabilities
-    // Register on/off capability
-    // TODO: Consider debouncing capability updates for better performance
-    this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));
+    // v5.2.86: Register ALL gang capabilities
+    await this._setupGangCapabilities(zclNode);
 
     // Mark device as available
     try {
@@ -36,21 +34,113 @@ class SmartSwitch2gangHybridDevice extends BaseHybridDevice {
     } catch (err) { this.error('Await error:', err); }
   }
 
-  async onCapabilityOnoff(value, opts) {
-    this.log('onCapabilityOnoff:', value);
+  /**
+   * v5.2.86: Setup all gang capabilities with proper listeners
+   */
+  async _setupGangCapabilities(zclNode) {
+    // Gang 1 (endpoint 1) - capability: onoff
+    if (this.hasCapability('onoff')) {
+      this.registerCapabilityListener('onoff', async (value) => {
+        return this._setGangState(1, value);
+      });
+      await this._setupGangReporting(zclNode, 1, 'onoff');
+      this.log('[SWITCH-2GANG] ✅ Gang 1 (onoff) registered');
+    }
+
+    // Gang 2 (endpoint 2) - capability: onoff.gang2
+    if (this.hasCapability('onoff.gang2')) {
+      this.registerCapabilityListener('onoff.gang2', async (value) => {
+        return this._setGangState(2, value);
+      });
+      await this._setupGangReporting(zclNode, 2, 'onoff.gang2');
+      this.log('[SWITCH-2GANG] ✅ Gang 2 (onoff.gang2) registered');
+    }
+
+    // Gang 3 (endpoint 3) - capability: onoff.gang3 (if exists)
+    if (this.hasCapability('onoff.gang3')) {
+      this.registerCapabilityListener('onoff.gang3', async (value) => {
+        return this._setGangState(3, value);
+      });
+      await this._setupGangReporting(zclNode, 3, 'onoff.gang3');
+      this.log('[SWITCH-2GANG] ✅ Gang 3 (onoff.gang3) registered');
+    }
+
+    // Gang 4 (endpoint 4) - capability: onoff.gang4 (if exists)
+    if (this.hasCapability('onoff.gang4')) {
+      this.registerCapabilityListener('onoff.gang4', async (value) => {
+        return this._setGangState(4, value);
+      });
+      await this._setupGangReporting(zclNode, 4, 'onoff.gang4');
+      this.log('[SWITCH-2GANG] ✅ Gang 4 (onoff.gang4) registered');
+    }
+  }
+
+  /**
+   * v5.2.86: Set gang state
+   */
+  async _setGangState(gang, value) {
+    this.log(`[SWITCH-2GANG] Setting gang ${gang} to ${value}`);
 
     try {
-      if (value) {
-        await this.zclNode.endpoints[1].clusters.onOff.setOn().catch(err => this.error(err));
-      } else {
-        await this.zclNode.endpoints[1].clusters.onOff.setOff().catch(err => this.error(err));
+      const endpoint = this.zclNode?.endpoints?.[gang];
+      if (!endpoint?.clusters?.onOff) {
+        this.error(`[SWITCH-2GANG] No onOff cluster on endpoint ${gang}`);
+        return;
       }
 
-      return Promise.resolve();
+      if (value) {
+        await endpoint.clusters.onOff.setOn();
+      } else {
+        await endpoint.clusters.onOff.setOff();
+      }
+      this.log(`[SWITCH-2GANG] ✅ Gang ${gang} set to ${value}`);
     } catch (error) {
-      this.error('Error setting onoff:', error);
-      return Promise.reject(error);
+      this.error(`[SWITCH-2GANG] Error setting gang ${gang}:`, error.message);
+      throw error;
     }
+  }
+
+  /**
+   * v5.2.86: Setup reporting for a gang
+   */
+  async _setupGangReporting(zclNode, gang, capabilityId) {
+    try {
+      const endpoint = zclNode?.endpoints?.[gang];
+      if (!endpoint?.clusters?.onOff) {
+        this.log(`[SWITCH-2GANG] ⚠️ No onOff cluster on endpoint ${gang}`);
+        return;
+      }
+
+      // Setup attribute listener for state changes
+      endpoint.clusters.onOff.on('attr.onOff', (value) => {
+        this.log(`[SWITCH-2GANG] 📡 Gang ${gang} state: ${value}`);
+        this.setCapabilityValue(capabilityId, !!value).catch(this.error);
+      });
+
+      // Read initial state
+      try {
+        const attrs = await endpoint.clusters.onOff.readAttributes(['onOff']).catch(() => null);
+        if (attrs?.onOff !== undefined) {
+          await this.setCapabilityValue(capabilityId, !!attrs.onOff);
+          this.log(`[SWITCH-2GANG] ✅ Gang ${gang} initial state: ${!!attrs.onOff}`);
+        }
+      } catch (err) {
+        this.log(`[SWITCH-2GANG] ⚠️ Could not read initial state for gang ${gang}`);
+      }
+
+      // Configure reporting
+      await endpoint.clusters.onOff.configureReporting({
+        onOff: { minInterval: 0, maxInterval: 3600, minChange: 1 }
+      }).catch(() => { });
+
+    } catch (err) {
+      this.error(`[SWITCH-2GANG] Reporting setup failed for gang ${gang}:`, err.message);
+    }
+  }
+
+  // Legacy method kept for compatibility
+  async onCapabilityOnoff(value, opts) {
+    return this._setGangState(1, value);
   }
 
   async onDeleted() {
