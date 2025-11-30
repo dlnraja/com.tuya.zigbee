@@ -1,4 +1,8 @@
 {
+  "5.2.60": {
+    "en": "🔧 MAINS vs BATTERY device detection\n\n**Problems fixed:**\n\n1️⃣ **Mains-powered devices** (switches, plugs, dimmers):\n- No more 'battery via DP' messages for TS0002 switches\n- Added `isMainsPowered()` detection function\n- Battery reporting skipped for mains devices\n\n2️⃣ **Fake 100% battery eliminated:**\n- No stored value used until REAL battery DP received\n- Added `has_received_battery_dp` tracking flag\n- Shows '⏳ Waiting for battery DP' instead of fake 100%\n\n**Result:**\n- TS0002 / switch_2gang → 'Mains-powered - no battery needed'\n- TS0601 soil_sensor → 'Waiting for DP 4/14/15/101'\n- Only shows battery when confirmed real data received",
+    "fr": "🔧 Détection SECTEUR vs BATTERIE\n\n- Switches/prises = secteur, pas de gestion batterie\n- Plus de faux 100% batterie\n- Attend vrai DP avant d'afficher batterie"
+  },
   "5.2.59": {
     "en": "🔧 CRITICAL FIX: TS0002/TS0003 wrongly detected as Tuya DP\n\n**Bug:** Standard Zigbee switches (TS0001-TS0004, TS0011-TS0014) were being detected as 'Tuya DP devices' causing wrong battery handling.\n\n**Fixes:**\n1. **isTuyaDPDevice()** - Added exclusion list for standard Zigbee models\n   - TS0001-TS0004: Standard switches\n   - TS0011-TS0014: No-neutral switches\n   - TS0101-TS0121: Plugs/outlets\n   - TS0201-TS0207: Sensors\n   - TS0501-TS0505: Dimmers\n\n2. **Battery cluster** - Fixed remaining genPowerCfg → powerConfiguration\n\n**Result:**\n- TS0002 / _TZ3000_* → Standard Zigbee (correct)\n- TS0601 / _TZE* → Tuya DP (correct)",
     "fr": "🔧 FIX CRITIQUE: TS0002/TS0003 mal détectés comme Tuya DP\n\n- Liste d'exclusion pour modèles Zigbee standard\n- TS0001-TS0004 = switches standard, PAS Tuya DP"
