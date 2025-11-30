@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.2.50",
+  "version": "5.2.51",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -5376,7 +5376,7 @@
         ]
       },
       {
-        "id": "switch_2gang_smart_switch_2gang_hybrid_turned_on",
+        "id": "switch_2gang_turned_on",
         "title": {
           "en": "Turned on",
           "fr": "Allumé"
@@ -5390,7 +5390,7 @@
         ]
       },
       {
-        "id": "switch_2gang_smart_switch_2gang_hybrid_turned_off",
+        "id": "switch_2gang_turned_off",
         "title": {
           "en": "Turned off",
           "fr": "Éteint"
@@ -7559,7 +7559,7 @@
         ]
       },
       {
-        "id": "switch_2gang_smart_switch_2gang_hybrid_is_on",
+        "id": "switch_2gang_is_on",
         "title": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
@@ -9561,7 +9561,7 @@
         }
       },
       {
-        "id": "switch_2gang_smart_switch_2gang_hybrid_turn_on",
+        "id": "switch_2gang_turn_on",
         "title": {
           "en": "Turn on",
           "fr": "Allumer"
@@ -9575,7 +9575,7 @@
         ]
       },
       {
-        "id": "switch_2gang_smart_switch_2gang_hybrid_turn_off",
+        "id": "switch_2gang_turn_off",
         "title": {
           "en": "Turn off",
           "fr": "Éteindre"
@@ -9589,7 +9589,7 @@
         ]
       },
       {
-        "id": "switch_2gang_smart_switch_2gang_hybrid_toggle",
+        "id": "switch_2gang_toggle",
         "title": {
           "en": "Toggle on or off",
           "fr": "Basculer"
