@@ -282,26 +282,39 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
    * This provides a fallback mapping when dpMap doesn't have the DP
    */
   _handleTuyaDP(dpId, value) {
-    // Known DPs for _TZE200_rhgsbacq presence radar
-    // Based on Zigbee2MQTT and Tuya documentation
+    // Known DPs for _TZE200_rhgsbacq, ZG-204ZM presence radar
+    // Based on Zigbee2MQTT, SmartHomeScene review, and Tuya documentation
     const RADAR_DP_MAP = {
       1: { capability: 'alarm_motion', parser: (v) => Boolean(v) },
-      4: { capability: 'measure_battery', parser: (v) => v },
+      4: { capability: 'measure_battery', parser: (v) => v, isBattery: true },
       9: { capability: 'radar_sensitivity', parser: (v) => v, isConfig: true },
       10: { capability: 'detection_delay', parser: (v) => v, isConfig: true },
       12: { capability: 'target_distance', parser: (v) => v / 100, isConfig: true }, // cm to m
-      15: { capability: 'measure_battery', parser: (v) => v },
+      15: { capability: 'measure_battery', parser: (v) => v, isBattery: true },
       101: { capability: 'radar_sensitivity', parser: (v) => v, isConfig: true },
       102: { capability: 'illuminance_threshold', parser: (v) => v, isConfig: true },
       103: { capability: 'measure_luminance', parser: (v) => v },
-      104: { capability: 'fading_time', parser: (v) => v, isConfig: true }
+      104: { capability: 'fading_time', parser: (v) => v, isConfig: true },
+      // ZG-204ZM specific (SmartHomeScene review)
+      107: { capability: 'presence_state', parser: (v) => ['none', 'presence', 'move'][v] || 'unknown', isConfig: true },
+      108: { capability: 'motion_state', parser: (v) => ['none', 'small', 'large', 'static'][v] || 'unknown', isConfig: true },
+      109: { capability: 'led_indicator', parser: (v) => Boolean(v), isConfig: true },
+      110: { capability: 'static_detection_distance', parser: (v) => v / 10, isConfig: true }, // 0-10m
+      111: { capability: 'static_detection_sensitivity', parser: (v) => v, isConfig: true } // 0-10
     };
 
     const mapping = RADAR_DP_MAP[dpId];
 
     if (mapping) {
-      const { capability, parser, isConfig } = mapping;
+      const { capability, parser, isConfig, isBattery } = mapping;
       const parsedValue = parser ? parser(value) : value;
+
+      // v5.2.62: Track real battery DP reception
+      if (isBattery) {
+        this.setStoreValue('has_received_battery_dp', true).catch(() => { });
+        this.setStoreValue('last_battery_percent', parsedValue).catch(() => { });
+        this.log(`[TUYA-DP] 🔋 Real battery DP${dpId} received: ${parsedValue}%`);
+      }
 
       if (isConfig) {
         // Config values - just log them
