@@ -1,4 +1,8 @@
 {
+  "5.2.70": {
+    "en": "🔧 FIX: Soil Sensor _TZE284_oitavov2 Data Not Reporting\n\n**Problem:** Soil sensor not receiving temperature/humidity/battery data\n\n**Root Cause:**\n- Duplicate entry in DeviceFingerprintDB incorrectly mapped as plug_1socket\n- Missing passive DP mappings for _TZE284_oitavov2\n\n**Fix:**\n- Removed incorrect duplicate fingerprint entry\n- Added _TZE284_oitavov2 to PASSIVE_DP_MAPPINGS in TuyaEF00Manager\n- DP mappings: 1=air_temp, 2=air_humidity, 3=soil_temp, 4=soil_moisture, 14/15=battery\n\n**Source:** User diagnostic report (Homey v12.9.0)",
+    "fr": "🔧 FIX: Capteur sol _TZE284_oitavov2 ne remonte pas les données\n\n- Suppression entrée dupliquée incorrecte\n- Ajout mappings DP passif"
+  },
   "5.2.69": {
     "en": "📦 ADD: SONOFF Climate Sensors Support\n\n**New Devices:**\n- SONOFF SNZB-02 (Temperature & Humidity)\n- SONOFF SNZB-02D (with LCD Display)\n- SONOFF SNZB-02P (Pro version)\n\n**Changes:**\n- Added SONOFF/eWeLink manufacturer fingerprints\n- Auto-detect SONOFF devices for Standard ZCL protocol\n- Protocol detection: TS0201/SNZB = ZCL, TS0601 = Tuya DP\n\n**Note:** SONOFF sensors use standard Zigbee clusters, not Tuya DP.",
     "fr": "📦 AJOUT: Support capteurs SONOFF\n\n- SNZB-02, SNZB-02D, SNZB-02P\n- Détection auto protocole ZCL vs Tuya DP"
