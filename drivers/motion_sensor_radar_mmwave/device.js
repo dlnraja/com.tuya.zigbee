@@ -29,7 +29,12 @@ class RadarMotionSensorMmwaveDevice extends BaseHybridDevice {
     // Setup Tuya DP for presence (primary)
     if (hasTuyaCluster) {
       await this._setupTuyaDPListener();
-    } else if (hasIASZone) {
+    }
+
+    // v5.2.61: HYBRID DEVICE FIX - Setup IAS Zone ALSO for hybrid devices!
+    // _TZE200_rhgsbacq, ZG-204ZM have BOTH Tuya DP AND IAS Zone cluster
+    if (hasIASZone) {
+      this.log('[RADAR] 🔀 IAS Zone cluster detected - setting up alongside Tuya DP');
       await this.setupIASZone();
     }
 

@@ -84,6 +84,21 @@ class PresenceSensorRadarDevice extends BaseHybridDevice {
         this.log('[TUYA-DP] Behavior:', TuyaDPDeviceHelper.getExpectedBehavior(this));
       }
 
+      // v5.2.61: HYBRID DEVICE FIX - Setup IAS Zone even for Tuya devices that have it!
+      // _TZE200_rhgsbacq has BOTH Tuya DP AND IAS Zone cluster
+      const hasIASZone = zclNode?.endpoints?.[1]?.clusters?.iasZone;
+      if (hasIASZone) {
+        this.log('[RADAR] 🔀 Hybrid device detected - setting up IAS Zone alongside Tuya DP');
+        await this.setupIASZone();
+      }
+
+      // v5.2.61: Also setup illuminance if available (standard ZCL cluster)
+      const hasIlluminance = zclNode?.endpoints?.[1]?.clusters?.illuminanceMeasurement;
+      if (hasIlluminance) {
+        this.log('[RADAR] 💡 Illuminance cluster detected - setting up listener');
+        await this.registerLuminanceCapability();
+      }
+
       // Safe set available
       if (typeof this._safeResolveAvailable === 'function') {
         this._safeResolveAvailable(true);
