@@ -54,6 +54,7 @@ class SosEmergencyButtonDevice extends BaseHybridDevice {
 
   /**
    * Setup Tuya DP listener for battery reports
+   * v5.2.85: Enhanced with initial battery request
    */
   async _setupTuyaDPListener() {
     this.log('[SOS-BUTTON] Setting up Tuya DP listener...');
@@ -63,7 +64,24 @@ class SosEmergencyButtonDevice extends BaseHybridDevice {
       this.tuyaEF00Manager.on('dpReport', ({ dpId, value }) => {
         this._handleSOSDP(dpId, value);
       });
+
+      // v5.2.85: Also listen to datapoint events
+      this.tuyaEF00Manager.on('datapoint', ({ dp, value }) => {
+        this._handleSOSDP(dp, value);
+      });
+
+      // v5.2.85: Listen to specific battery DPs
+      [4, 15, 101, 33, 35].forEach(dp => {
+        this.tuyaEF00Manager.on(`dp-${dp}`, (value) => {
+          this.log(`[SOS-BUTTON] 🔋 Battery DP${dp} received: ${value}`);
+          this._setBattery(value);
+        });
+      });
+
       this.log('[SOS-BUTTON] ✅ Using TuyaEF00Manager for DP handling');
+
+      // v5.2.85: Request initial battery DP
+      this._requestBatteryDP();
       return;
     }
 
@@ -83,6 +101,29 @@ class SosEmergencyButtonDevice extends BaseHybridDevice {
       });
       this.log('[SOS-BUTTON] ✅ Direct Tuya cluster listener configured');
     }
+  }
+
+  /**
+   * v5.2.85: Request battery DP from device
+   */
+  async _requestBatteryDP() {
+    this.log('[SOS-BUTTON] 🔋 Requesting battery DP...');
+
+    // Try to request common battery DPs
+    const batteryDPs = [101, 4, 15, 33, 35];
+
+    for (const dp of batteryDPs) {
+      try {
+        if (this.tuyaEF00Manager && typeof this.tuyaEF00Manager.getData === 'function') {
+          await this.tuyaEF00Manager.getData(dp).catch(() => { });
+          this.log(`[SOS-BUTTON] 📤 Requested DP${dp}`);
+        }
+      } catch (err) {
+        // Silent fail - device might not respond immediately
+      }
+    }
+
+    this.log('[SOS-BUTTON] ℹ️ Battery DPs requested (device may respond on next wake)');
   }
 
   /**
