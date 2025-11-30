@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.2.71",
+  "version": "5.2.72",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -10779,10 +10779,21 @@
       },
       "class": "sensor",
       "capabilities": [
+        "measure_co2",
+        "measure_pm25",
         "measure_temperature",
         "measure_humidity",
-        "measure_battery"
+        "measure_battery",
+        "alarm_generic"
       ],
+      "capabilitiesOptions": {
+        "alarm_generic": {
+          "title": {
+            "en": "Air Quality Alert",
+            "fr": "Alerte Qualité Air"
+          }
+        }
+      },
       "energy": {
         "batteries": [
           "CR2032",
@@ -18632,11 +18643,19 @@
       },
       "class": "sensor",
       "capabilities": [
-        "alarm_motion",
+        "alarm_generic",
         "alarm_co",
         "alarm_co2",
         "measure_battery"
       ],
+      "capabilitiesOptions": {
+        "alarm_generic": {
+          "title": {
+            "en": "Gas Alarm",
+            "fr": "Alarme Gaz"
+          }
+        }
+      },
       "energy": {
         "batteries": [
           "CR2032",
