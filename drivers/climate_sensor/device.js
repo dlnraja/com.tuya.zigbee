@@ -53,10 +53,12 @@ class ClimateSensorDevice extends BaseHybridDevice {
       this.log(`[CLIMATE-SENSOR] 📋 Using fingerprint: ${this._fingerprint.productNames?.join(', ') || 'Climate Sensor'}`);
     }
 
-    // Detect device type: TS0201 uses standard ZCL, TS0601 uses Tuya DP
-    const isStandardZCL = modelId === 'TS0201' || modelId.startsWith('TS02');
+    // Detect device type: TS0201/SONOFF use standard ZCL, TS0601 uses Tuya DP
+    // v5.2.69: Added SONOFF SNZB-02/02D/02P detection
+    const isSONOFF = mfr === 'SONOFF' || mfr === 'eWeLink' || modelId.startsWith('SNZB');
+    const isStandardZCL = modelId === 'TS0201' || modelId.startsWith('TS02') || isSONOFF;
     this._isStandardZCL = isStandardZCL;
-    this.log(`[CLIMATE-SENSOR] Protocol: ${isStandardZCL ? 'Standard ZCL' : 'Tuya DP (0xEF00)'}`);
+    this.log(`[CLIMATE-SENSOR] Protocol: ${isStandardZCL ? 'Standard ZCL' : 'Tuya DP (0xEF00)'}${isSONOFF ? ' (SONOFF)' : ''}`);
 
     if (isStandardZCL) {
       // TS0201: Standard ZCL clusters for temperature, humidity, battery
