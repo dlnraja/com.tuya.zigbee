@@ -6,6 +6,8 @@
   "class": "sensor",
   "capabilities": [
     "alarm_motion",
+    "measure_temperature",
+    "measure_humidity",
     "measure_luminance",
     "measure_battery"
   ],

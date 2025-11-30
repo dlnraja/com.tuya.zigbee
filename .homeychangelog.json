@@ -1,4 +1,8 @@
 {
+  "5.2.68": {
+    "en": "🔧 FIX: Temperature/Humidity for 3-in-1 PIR & ZG-204ZM sensors\n\n**Problem:** _TZE200_rhgsbacq shows 'no data' for temp/humidity/motion\n**Problem:** ZG-204ZM shows 'no data' for temp/humidity\n\n**Root Cause:**\n- Tuya DPs 2/3 (temp/humidity for 3-in-1 PIR) were mapped to radar config\n- Tuya DPs 105/106 (temp/humidity for ZG-204ZM) were mapped to illuminance\n\n**Fix:**\n- presence_sensor_radar: Dynamic DP 2/3 mapping for _TZE200_rhgsbacq\n- motion_sensor_radar_mmwave: DP 105=temperature, DP 106=humidity\n- Added measure_temperature/humidity capabilities to presence_sensor_radar\n\n**Affected Devices:**\n- _TZE200_rhgsbacq (3-in-1 PIR with temp/humidity)\n- _TZE200_auin8mzr, _TZE200_ztc6ggyl (similar 3-in-1)\n- ZG-204ZM (5-in-1 mmWave+PIR sensor)",
+    "fr": "🔧 FIX: Température/Humidité pour capteurs 3-en-1 PIR et ZG-204ZM\n\n- _TZE200_rhgsbacq: DPs 2/3 = temp/humidity\n- ZG-204ZM: DPs 105/106 = temp/humidity"
+  },
   "5.2.67": {
     "en": "🔧 FIX: Climate Sensor vs Soil Sensor Distinction\n\n**Problem:** _TZE284_vvmbj46n was incorrectly assigned to soil_sensor\n\n**Fix:**\n- `_TZE284_vvmbj46n` → **climate_sensor** (temp+humidity LCD monitor)\n- `_TZE284_oitavov2` → **soil_sensor** (soil probe with 4 measurements)\n\n**Changes:**\n- Removed _TZE284_vvmbj46n from soil_sensor fingerprints\n- Added _TZE284_vvmbj46n to climate_sensor fingerprints\n- Updated device_helpers.js overrides with correct driver recommendations\n\n**Note:** Users with wrongly paired devices should remove and re-pair.",
     "fr": "🔧 FIX: Distinction Climate Sensor vs Soil Sensor\n\n- _TZE284_vvmbj46n → climate_sensor (moniteur LCD)\n- _TZE284_oitavov2 → soil_sensor (sonde sol)"
