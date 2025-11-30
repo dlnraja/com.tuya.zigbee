@@ -15,11 +15,85 @@ class TuyaComprehensiveAirMonitorDevice extends BaseHybridDevice {
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit({ zclNode }).catch(err => this.error(err));
 
+    // v5.2.71: Setup Tuya DP for air quality monitors
+    await this._setupTuyaDP();
+
     // Setup sensor capabilities (SDK3)
     await this.setupTemperatureSensor();
     await this.setupHumiditySensor();
 
     this.log('TuyaComprehensiveAirMonitorDevice initialized - Power source:', this.powerSource || 'unknown');
+  }
+
+  /**
+   * v5.2.71: Setup Tuya DP handler for air quality monitors
+   * Common DPs: 18=PM2.5, 19=CO2, 20=TVOC, 21=formaldehyde
+   */
+  async _setupTuyaDP() {
+    if (this.tuyaEF00Manager) {
+      this.tuyaEF00Manager.on('dpReport', ({ dpId, value }) => {
+        this._handleAirQualityDP(dpId, value);
+      });
+      this.log('[AIR-QUALITY] ✅ Tuya DP listener configured');
+    }
+  }
+
+  _handleAirQualityDP(dpId, value) {
+    this.log(`[AIR-QUALITY] 📊 DP${dpId} = ${value}`);
+
+    switch (dpId) {
+      case 2: // CO2 (ppm)
+      case 19: // CO2 alt
+        if (this.hasCapability('measure_co2')) {
+          this.setCapabilityValue('measure_co2', value).catch(this.error);
+          this.log(`[AIR-QUALITY] 🌬️ CO2: ${value} ppm`);
+        }
+        break;
+
+      case 18: // PM2.5 (µg/m³)
+      case 20: // PM2.5 alt
+        if (this.hasCapability('measure_pm25')) {
+          this.setCapabilityValue('measure_pm25', value).catch(this.error);
+          this.log(`[AIR-QUALITY] 🌫️ PM2.5: ${value} µg/m³`);
+        }
+        break;
+
+      case 1: // Temperature (value / 10)
+      case 18: // Temperature alt
+        if (this.hasCapability('measure_temperature') && value > -500 && value < 1000) {
+          const temp = value > 100 || value < -40 ? value / 10 : value;
+          this.setCapabilityValue('measure_temperature', temp).catch(this.error);
+          this.log(`[AIR-QUALITY] 🌡️ Temperature: ${temp}°C`);
+        }
+        break;
+
+      case 2: // Humidity
+      case 19: // Humidity alt
+        if (this.hasCapability('measure_humidity') && value >= 0 && value <= 100) {
+          this.setCapabilityValue('measure_humidity', value).catch(this.error);
+          this.log(`[AIR-QUALITY] 💧 Humidity: ${value}%`);
+        }
+        break;
+
+      case 21: // TVOC (ppb or index)
+        this.log(`[AIR-QUALITY] 🧪 TVOC: ${value}`);
+        // Store for potential future custom capability
+        this.setStoreValue('tvoc_value', value).catch(() => { });
+        break;
+
+      case 4:  // Battery
+      case 14:
+      case 15:
+        if (this.hasCapability('measure_battery')) {
+          const battery = Math.min(100, Math.max(0, value));
+          this.setCapabilityValue('measure_battery', battery).catch(this.error);
+          this.log(`[AIR-QUALITY] 🔋 Battery: ${battery}%`);
+        }
+        break;
+
+      default:
+        this.log(`[AIR-QUALITY] ❓ Unknown DP${dpId} = ${value}`);
+    }
   }
 
 

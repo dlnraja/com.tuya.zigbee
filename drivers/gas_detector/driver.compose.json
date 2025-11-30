@@ -5,11 +5,19 @@
   },
   "class": "sensor",
   "capabilities": [
-    "alarm_motion",
+    "alarm_generic",
     "alarm_co",
     "alarm_co2",
     "measure_battery"
   ],
+  "capabilitiesOptions": {
+    "alarm_generic": {
+      "title": {
+        "en": "Gas Alarm",
+        "fr": "Alarme Gaz"
+      }
+    }
+  },
   "energy": {
     "batteries": [
       "CR2032",
