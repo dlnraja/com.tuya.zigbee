@@ -1,24 +1,21 @@
-# Documentation
+# 📚 Documentation Index
 
-Documentation complète du projet : rapports, guides, analyses.
+## 🚀 Active Workflows
 
-## Organisation
+- **MASTER-publish.yml** - Main publish workflow
+- **MASTER-cleanup-organize.yml** - Cleanup & organization
+- **MASTER-auto-fix-monitor.yml** - Auto-fix & monitoring
 
-### Rapports de session
-- **SESSION_REPORT_*.md** - Rapports détaillés des sessions de travail
-- **FINAL_SESSION_*.md** - Résumés finaux de sessions
+## 📖 Guides
 
-### Documentation technique
-- **MASTER_SYSTEM_GUIDE.md** - Guide système complet
-- **BATTERY_*.md** - Documentation gestion batterie
-- **PROJECT_*.md** - Documentation projet
+See [guides/](guides/) for:
+- Publish guides
+- Configuration guides
+- Troubleshooting
 
-### Analyses et diagnostics
-- **DIAGNOSTIC_*.md** - Analyses des diagnostics
-- **PDF_*.md** - Analyses des PDFs
-- **ISSUES_*.md** - Problèmes résolus
+## 🔧 Archived
 
-### Notes de release
-- **RELEASE_NOTES_*.md** - Notes de version
+Old workflows and docs in:
+- `.github/workflows/archive/` - Old workflows
+- `docs/archive/` - Old documentation
 
-Voir README.md à la racine pour documentation générale.
