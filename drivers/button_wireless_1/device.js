@@ -1,51 +1,36 @@
 'use strict';
 
-// MIGRATED TO HYBRID SYSTEM v2.0
-const HybridDriverSystem = require('../../lib/HybridDriverSystem');
-const BatteryManagerV4 = require('../../lib/BatteryManagerV4');
-
-/**
- * button_wireless_1 - Hybrid-Enhanced Driver
- *
- * MIGRATION: Original driver enhanced with Hybrid System
- * - Auto-adaptive capabilities
- * - Energy-aware management
- * - Smart detection
- */
-
-// Create hybrid base
-const HybridDevice = HybridDriverSystem.createHybridDevice();
-
-'use strict';
-
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
 /**
- * Button1GangDevice - Unified 1-button wireless controller
+ * Button1GangDevice - v5.2.92 Fixed
+ *
+ * FIX: Was incorrectly extending HybridDevice (detected as SWITCH)
+ * NOW: Properly extends ButtonDevice for button functionality
+ *
+ * Handles single/double/long press for 1 button
  * Auto-detects battery type (CR2032/CR2450/AAA)
- * Handles single/double/long press for each button
  */
-class Button1GangDevice extends HybridDevice {
+class Button1GangDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
-    // Hybrid system initialization
-    await super.onNodeInit({ zclNode });
+    this.log('');
+    this.log('╔═══════════════════════════════════════════════════════════════════╗');
+    this.log('║           BUTTON 1-GANG v5.2.92 - FIXED                           ║');
+    this.log('╚═══════════════════════════════════════════════════════════════════╝');
 
-    // Original initialization below:
-    this.log('Button1GangDevice initializing...');
-    
-    // Set button count for this device
+    // Set button count BEFORE calling super
     this.buttonCount = 1;
-    
-    // Initialize base (power detection + button detection)
-    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
-    
-    this.log('Button1GangDevice initialized - 1 button ready');
+
+    // Initialize ButtonDevice (handles button detection + battery)
+    await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
+
+    this.log('[INIT] ✅ Button1GangDevice initialized - 1 button ready');
   }
 
   async onDeleted() {
     this.log('Button1GangDevice deleted');
-    
+
     // Cleanup timers
     if (this._clickState) {
       if (this._clickState.clickTimer) {
@@ -55,10 +40,12 @@ class Button1GangDevice extends HybridDevice {
         clearTimeout(this._clickState.longPressTimer);
       }
     }
+
+    // Call parent cleanup
+    if (super.onDeleted) {
+      await super.onDeleted();
+    }
   }
 }
-
-module.exports = Button1GangDevice;
-
 
 module.exports = Button1GangDevice;

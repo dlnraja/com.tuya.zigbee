@@ -1,64 +1,35 @@
 'use strict';
 
-// MIGRATED TO HYBRID SYSTEM v2.0
-const HybridDriverSystem = require('../../lib/HybridDriverSystem');
-const BatteryManagerV4 = require('../../lib/BatteryManagerV4');
-
-/**
- * button_wireless_8 - Hybrid-Enhanced Driver
- *
- * MIGRATION: Original driver enhanced with Hybrid System
- * - Auto-adaptive capabilities
- * - Energy-aware management
- * - Smart detection
- */
-
-// Create hybrid base
-const HybridDevice = HybridDriverSystem.createHybridDevice();
-
-'use strict';
-
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
 /**
- * Button8GangDevice - Unified 8-button wireless controller
- * Auto-detects battery type (CR2032/CR2450/AAA)
- * Handles single/double/long press for each button
+ * Button8GangDevice - v5.2.92 Fixed
+ *
+ * FIX: Was incorrectly extending HybridDevice (detected as SWITCH)
+ * NOW: Properly extends ButtonDevice for button functionality
+ *
+ * Handles single/double/long press for 8 buttons
  */
-class Button8GangDevice extends HybridDevice {
+class Button8GangDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
-    // Hybrid system initialization
-    await super.onNodeInit({ zclNode });
+    this.log('╔═══════════════════════════════════════════════════════════════════╗');
+    this.log('║           BUTTON 8-GANG v5.2.92 - FIXED                           ║');
+    this.log('╚═══════════════════════════════════════════════════════════════════╝');
 
-    // Original initialization below:
-    this.log('Button8GangDevice initializing...');
-    
-    // Set button count for this device
     this.buttonCount = 8;
-    
-    // Initialize base (power detection + button detection)
-    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
-    
-    this.log('Button8GangDevice initialized - 8 buttons ready');
+    await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
+    this.log('[INIT] ✅ Button8GangDevice initialized - 8 buttons ready');
   }
 
   async onDeleted() {
     this.log('Button8GangDevice deleted');
-    
-    // Cleanup timers
     if (this._clickState) {
-      if (this._clickState.clickTimer) {
-        clearTimeout(this._clickState.clickTimer);
-      }
-      if (this._clickState.longPressTimer) {
-        clearTimeout(this._clickState.longPressTimer);
-      }
+      if (this._clickState.clickTimer) clearTimeout(this._clickState.clickTimer);
+      if (this._clickState.longPressTimer) clearTimeout(this._clickState.longPressTimer);
     }
+    if (super.onDeleted) await super.onDeleted();
   }
 }
-
-module.exports = Button8GangDevice;
-
 
 module.exports = Button8GangDevice;
