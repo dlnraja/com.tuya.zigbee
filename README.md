@@ -1,12 +1,12 @@
 # 🌐 Universal Zigbee Device App for Homey
 
-![Version](https://img.shields.io/badge/version-5.3.13-blue)
-![Devices](https://img.shields.io/badge/devices-3611+-green)
+![Version](https://img.shields.io/badge/version-5.3.14-blue)
+![Devices](https://img.shields.io/badge/devices-4217+-green)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
 ![License](https://img.shields.io/badge/license-GPL--3.0-red)
 ![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)
 
-**The most comprehensive Universal Zigbee app for Homey with 3,611+ device IDs across 60 drivers.**
+**The most comprehensive Universal Zigbee app for Homey with 4,217+ device IDs across 79 drivers.**
 
 🏠 **100% Local Control** - No Cloud Required
 🔋 **Auto-Detection** - Power Source, Battery Type, Protocol
@@ -20,35 +20,43 @@
 
 | Metric | Value |
 |--------|-------|
-| **Total Device IDs** | 3,611+ |
-| **Drivers** | 60 |
-| **SVG Icons** | 60 |
-| **Enrichment Scripts** | 17 |
+| **Total Device IDs** | 4,217+ |
+| **Product IDs** | 349 |
+| **Manufacturer IDs** | 3,868 |
+| **Drivers** | 79 |
+| **SVG Icons** | 79 |
+| **Enrichment Scripts** | 50+ |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
 | **Last Updated** | 2025-12-02 |
-| **Data Sources** | 15+ |
+| **Data Sources** | 7 (auto-updated daily) |
 
-### 📦 Top 10 Drivers by Device IDs
+### 📦 Top 15 Drivers by Device IDs
 
-| # | Driver | IDs |
-|---|--------|-----|
-| 1 | `climate_sensor` | 661 |
-| 2 | `switch_1gang` | 449 |
-| 3 | `plug_smart` | 174 |
-| 4 | `switch_2gang` | 105 |
-| 5 | `contact_sensor` | 91 |
-| 6 | `presence_sensor_radar` | 87 |
-| 7 | `switch_4gang` | 82 |
-| 8 | `curtain_motor` | 81 |
-| 9 | `motion_sensor` | 79 |
-| 10 | `thermostat_ts0601` | 78 |
+| # | Driver | Total IDs |
+|---|--------|-----------|
+| 1 | `climate_sensor` | 814 |
+| 2 | `switch_1gang` | 522 |
+| 3 | `plug_smart` | 213 |
+| 4 | `contact_sensor` | 113 |
+| 5 | `switch_2gang` | 111 |
+| 6 | `motion_sensor` | 108 |
+| 7 | `presence_sensor_radar` | 103 |
+| 8 | `curtain_motor` | 90 |
+| 9 | `switch_4gang` | 89 |
+| 10 | `siren` | 82 |
+| 11 | `thermostat_ts0601` | 79 |
+| 12 | `plug_energy_monitor` | 78 |
+| 13 | `air_quality_comprehensive` | 75 |
+| 14 | `button_wireless_1` | 75 |
+| 15 | `shutter_roller_controller` | 72 |
 
 ---
 
-## 🚀 Latest Updates - v5.3.13
+## 🚀 Latest Updates - v5.3.14
 
 ### ✨ Recent Features
+- **v5.3.14** - MEGA REORGANIZATION: 57 drivers fixed, 4217 IDs, daily auto-discovery
 - **v5.3.13** - CRITICAL BUG FIXES: Wireless button, rain sensor, curtain motor
 - **v5.3.12** - Climax Technology security devices (13 models)
 - **v5.3.11** - Worldwide Zigbee brands database (50+ brands)
