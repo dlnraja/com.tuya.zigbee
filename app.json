@@ -3317,7 +3317,7 @@
         ]
       },
       {
-        "id": "dimmer_2ch_ts1101_dim_changed",
+        "id": "dimmer_dual_channel_dim_changed",
         "title": {
           "en": "Dim level changed",
           "fr": "Niveau dim changé"
@@ -3342,7 +3342,7 @@
         ]
       },
       {
-        "id": "dimmer_2ch_ts1101_turned_on",
+        "id": "dimmer_dual_channel_turned_on",
         "title": {
           "en": "Turned on",
           "fr": "Allumé"
@@ -3356,7 +3356,7 @@
         ]
       },
       {
-        "id": "dimmer_2ch_ts1101_turned_off",
+        "id": "dimmer_dual_channel_turned_off",
         "title": {
           "en": "Turned off",
           "fr": "Éteint"
@@ -6015,7 +6015,7 @@
         ]
       },
       {
-        "id": "thermostat_ts0601_target_temperature_changed",
+        "id": "thermostat_tuya_dp_target_temperature_changed",
         "title": {
           "en": "Target temperature changed",
           "fr": "Température cible changée"
@@ -6040,7 +6040,7 @@
         ]
       },
       {
-        "id": "thermostat_ts0601_temperature_changed",
+        "id": "thermostat_tuya_dp_temperature_changed",
         "title": {
           "en": "Temperature changed",
           "fr": "Température changée"
@@ -6065,7 +6065,7 @@
         ]
       },
       {
-        "id": "thermostat_ts0601_mode_changed",
+        "id": "thermostat_tuya_dp_mode_changed",
         "title": {
           "en": "Mode changed",
           "fr": "Mode changé"
@@ -6090,7 +6090,7 @@
         ]
       },
       {
-        "id": "thermostat_ts0601_heating_started",
+        "id": "thermostat_tuya_dp_heating_started",
         "title": {
           "en": "Heating started",
           "fr": "Chauffage démarré"
@@ -6104,7 +6104,7 @@
         ]
       },
       {
-        "id": "thermostat_ts0601_heating_stopped",
+        "id": "thermostat_tuya_dp_heating_stopped",
         "title": {
           "en": "Heating stopped",
           "fr": "Chauffage arrêté"
@@ -6997,7 +6997,7 @@
         ]
       },
       {
-        "id": "dimmer_2ch_ts1101_is_on",
+        "id": "dimmer_dual_channel_is_on",
         "title": {
           "en": "Dimmer is !{{on|off}}",
           "fr": "Variateur est !{{allumé|éteint}}"
@@ -7011,7 +7011,7 @@
         ]
       },
       {
-        "id": "dimmer_2ch_ts1101_dim_above",
+        "id": "dimmer_dual_channel_dim_above",
         "title": {
           "en": "Dim level is above",
           "fr": "Niveau dim supérieur à"
@@ -7951,7 +7951,7 @@
         ]
       },
       {
-        "id": "thermostat_ts0601_is_heating",
+        "id": "thermostat_tuya_dp_is_heating",
         "title": {
           "en": "Thermostat is !{{heating|not heating}}",
           "fr": "Thermostat !{{chauffe|ne chauffe pas}}"
@@ -7965,7 +7965,7 @@
         ]
       },
       {
-        "id": "thermostat_ts0601_temperature_above_target",
+        "id": "thermostat_tuya_dp_temperature_above_target",
         "title": {
           "en": "Temperature is above target",
           "fr": "Température supérieure à la cible"
@@ -7979,7 +7979,7 @@
         ]
       },
       {
-        "id": "thermostat_ts0601_temperature_below_target",
+        "id": "thermostat_tuya_dp_temperature_below_target",
         "title": {
           "en": "Temperature is below target",
           "fr": "Température inférieure à la cible"
@@ -7993,7 +7993,7 @@
         ]
       },
       {
-        "id": "thermostat_ts0601_mode_is",
+        "id": "thermostat_tuya_dp_mode_is",
         "title": {
           "en": "Mode is",
           "fr": "Mode est"
@@ -8688,7 +8688,7 @@
         }
       },
       {
-        "id": "dimmer_2ch_ts1101_turn_on",
+        "id": "dimmer_dual_channel_turn_on",
         "title": {
           "en": "Turn on",
           "fr": "Allumer"
@@ -8702,7 +8702,7 @@
         ]
       },
       {
-        "id": "dimmer_2ch_ts1101_turn_off",
+        "id": "dimmer_dual_channel_turn_off",
         "title": {
           "en": "Turn off",
           "fr": "Éteindre"
@@ -8716,7 +8716,7 @@
         ]
       },
       {
-        "id": "dimmer_2ch_ts1101_toggle",
+        "id": "dimmer_dual_channel_toggle",
         "title": {
           "en": "Toggle",
           "fr": "Basculer"
@@ -8730,7 +8730,7 @@
         ]
       },
       {
-        "id": "dimmer_2ch_ts1101_set_dim",
+        "id": "dimmer_dual_channel_set_dim",
         "title": {
           "en": "Set dim level",
           "fr": "Définir niveau dim"
@@ -8755,7 +8755,7 @@
         ]
       },
       {
-        "id": "dimmer_2ch_ts1101_dim_up",
+        "id": "dimmer_dual_channel_dim_up",
         "title": {
           "en": "Dim up",
           "fr": "Augmenter luminosité"
@@ -8769,7 +8769,7 @@
         ]
       },
       {
-        "id": "dimmer_2ch_ts1101_dim_down",
+        "id": "dimmer_dual_channel_dim_down",
         "title": {
           "en": "Dim down",
           "fr": "Diminuer luminosité"
@@ -10465,7 +10465,7 @@
         ]
       },
       {
-        "id": "thermostat_ts0601_set_target_temperature",
+        "id": "thermostat_tuya_dp_set_target_temperature",
         "title": {
           "en": "Set target temperature",
           "fr": "Définir température cible"
@@ -10494,7 +10494,7 @@
         ]
       },
       {
-        "id": "thermostat_ts0601_set_mode",
+        "id": "thermostat_tuya_dp_set_mode",
         "title": {
           "en": "Set mode",
           "fr": "Définir mode"
@@ -10539,7 +10539,7 @@
         ]
       },
       {
-        "id": "thermostat_ts0601_increase_temperature",
+        "id": "thermostat_tuya_dp_increase_temperature",
         "title": {
           "en": "Increase temperature",
           "fr": "Augmenter température"
@@ -10568,7 +10568,7 @@
         ]
       },
       {
-        "id": "thermostat_ts0601_decrease_temperature",
+        "id": "thermostat_tuya_dp_decrease_temperature",
         "title": {
           "en": "Decrease temperature",
           "fr": "Diminuer température"
@@ -11210,10 +11210,7 @@
               6,
               8,
               768,
-              61184,
-              61184,
-              "genOnOff",
-              "genLevelCtrl"
+              61184
             ],
             "bindings": [
               1
@@ -11524,11 +11521,7 @@
               6,
               8,
               768,
-              61184,
-              61184,
-              "genOnOff",
-              "genLevelCtrl",
-              "lightingColorCtrl"
+              61184
             ],
             "bindings": [
               1
@@ -17312,10 +17305,7 @@
               0,
               1,
               1026,
-              1029,
-              "msTemperatureMeasurement",
-              "msRelativeHumidity",
-              "genPowerCfg"
+              1029
             ],
             "bindings": [
               1026,
@@ -17530,15 +17520,13 @@
           "1": {
             "clusters": [
               0,
+              1,
               3,
               4,
               5,
               6,
-              61184,
               1280,
-              1,
-              "ssIasZone",
-              "genPowerCfg"
+              61184
             ],
             "bindings": [
               1,
@@ -17956,9 +17944,9 @@
         "endpoints": {
           "1": {
             "clusters": [
-              61184,
               1,
-              "closuresWindowCovering"
+              258,
+              61184
             ],
             "bindings": [
               1
@@ -18336,9 +18324,9 @@
         }
       },
       "images": {
-        "large": "drivers/dimmer_2ch_ts1101/assets/images/large.png",
-        "xlarge": "drivers/dimmer_2ch_ts1101/assets/images/xlarge.png",
-        "small": "drivers/dimmer_2ch_ts1101/assets/images/small.png"
+        "large": "drivers/dimmer_dual_channel/assets/images/large.png",
+        "xlarge": "drivers/dimmer_dual_channel/assets/images/xlarge.png",
+        "small": "drivers/dimmer_dual_channel/assets/images/small.png"
       },
       "id": "dimmer_dual_channel"
     },
@@ -18426,9 +18414,7 @@
               5,
               6,
               8,
-              61184,
-              "genOnOff",
-              "genLevelCtrl"
+              61184
             ],
             "bindings": [
               1
@@ -23369,16 +23355,15 @@
           "1": {
             "clusters": [
               0,
+              1,
               3,
               4,
               5,
               6,
-              61184,
+              1024,
+              1030,
               1280,
-              1,
-              "msOccupancySensing",
-              "msIlluminanceMeasurement",
-              "genPowerCfg"
+              61184
             ],
             "bindings": [
               1,
@@ -24737,17 +24722,14 @@
           "1": {
             "clusters": [
               0,
+              1,
               3,
               4,
               5,
               6,
               1794,
               2820,
-              61184,
-              1,
-              "genOnOff",
-              "haElectricalMeasurement",
-              "seMetering"
+              61184
             ],
             "bindings": [
               1
@@ -25961,7 +25943,15 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA"
+        ]
+      }
     },
     {
       "name": {
@@ -26002,7 +25992,15 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA"
+        ]
+      }
     },
     {
       "name": {
@@ -26044,7 +26042,15 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA"
+        ]
+      }
     },
     {
       "name": {
@@ -26087,7 +26093,15 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA"
+        ]
+      }
     },
     {
       "name": {
@@ -26133,7 +26147,15 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA"
+        ]
+      }
     },
     {
       "name": {
@@ -27087,14 +27109,12 @@
           "1": {
             "clusters": [
               0,
+              1,
               4,
               5,
-              61185,
+              1280,
               61184,
-              61184,
-              1,
-              "ssIasZone",
-              "genPowerCfg"
+              61185
             ],
             "bindings": [
               1
@@ -27487,8 +27507,7 @@
               5,
               6,
               8,
-              61184,
-              "genOnOff"
+              61184
             ],
             "bindings": [
               1
@@ -31529,9 +31548,9 @@
         }
       },
       "images": {
-        "large": "drivers/thermostat_ts0601/assets/images/large.png",
-        "xlarge": "drivers/thermostat_ts0601/assets/images/xlarge.png",
-        "small": "drivers/thermostat_ts0601/assets/images/small.png"
+        "large": "drivers/thermostat_tuya_dp/assets/images/large.png",
+        "xlarge": "drivers/thermostat_tuya_dp/assets/images/xlarge.png",
+        "small": "drivers/thermostat_tuya_dp/assets/images/small.png"
       },
       "id": "thermostat_tuya_dp"
     },
@@ -31950,9 +31969,9 @@
         }
       },
       "images": {
-        "small": "drivers/valve_4/assets/images/small.png",
-        "large": "drivers/valve_4/assets/images/large.png",
-        "xlarge": "drivers/valve_4/assets/images/xlarge.png"
+        "small": "drivers/valve_irrigation/assets/images/small.png",
+        "large": "drivers/valve_irrigation/assets/images/large.png",
+        "xlarge": "drivers/valve_irrigation/assets/images/xlarge.png"
       },
       "id": "valve_irrigation",
       "platforms": [
@@ -31991,9 +32010,9 @@
         }
       },
       "images": {
-        "small": "drivers/valve_1/assets/images/small.png",
-        "large": "drivers/valve_1/assets/images/large.png",
-        "xlarge": "drivers/valve_1/assets/images/xlarge.png"
+        "small": "drivers/valve_single/assets/images/small.png",
+        "large": "drivers/valve_single/assets/images/large.png",
+        "xlarge": "drivers/valve_single/assets/images/xlarge.png"
       },
       "id": "valve_single",
       "platforms": [
@@ -32928,5 +32947,167 @@
       ],
       "id": "zigbee_universal"
     }
-  ]
+  ],
+  "capabilities": {
+    "alarm_gas": {
+      "type": "boolean",
+      "title": {
+        "en": "Gas Alarm",
+        "fr": "Alarme Gaz"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "icon": "/assets/capabilities/gas.svg",
+      "uiComponent": "sensor"
+    },
+    "alarm_motor": {
+      "type": "boolean",
+      "title": {
+        "en": "Motor Alarm",
+        "fr": "Alarme Moteur"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "uiComponent": "sensor"
+    },
+    "alarm_vibration": {
+      "type": "boolean",
+      "title": {
+        "en": "Vibration Alarm",
+        "fr": "Alarme Vibration"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "icon": "/assets/capabilities/vibration.svg",
+      "uiComponent": "sensor"
+    },
+    "fan_speed": {
+      "type": "enum",
+      "title": {
+        "en": "Fan Speed",
+        "fr": "Vitesse Ventilateur"
+      },
+      "values": [
+        {
+          "id": "auto",
+          "title": {
+            "en": "Auto",
+            "fr": "Auto"
+          }
+        },
+        {
+          "id": "low",
+          "title": {
+            "en": "Low",
+            "fr": "Bas"
+          }
+        },
+        {
+          "id": "medium",
+          "title": {
+            "en": "Medium",
+            "fr": "Moyen"
+          }
+        },
+        {
+          "id": "high",
+          "title": {
+            "en": "High",
+            "fr": "Haut"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker"
+    },
+    "lock_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Lock Mode",
+        "fr": "Mode Verrou"
+      },
+      "values": [
+        {
+          "id": "normal",
+          "title": {
+            "en": "Normal",
+            "fr": "Normal"
+          }
+        },
+        {
+          "id": "privacy",
+          "title": {
+            "en": "Privacy",
+            "fr": "Privé"
+          }
+        },
+        {
+          "id": "passage",
+          "title": {
+            "en": "Passage",
+            "fr": "Passage"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker"
+    },
+    "measure_voc": {
+      "type": "number",
+      "title": {
+        "en": "VOC",
+        "fr": "COV"
+      },
+      "units": {
+        "en": "ppb",
+        "fr": "ppb"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "icon": "/assets/capabilities/voc.svg",
+      "uiComponent": "sensor",
+      "min": 0,
+      "max": 10000
+    },
+    "target_humidity": {
+      "type": "number",
+      "title": {
+        "en": "Target Humidity",
+        "fr": "Humidité Cible"
+      },
+      "units": {
+        "en": "%",
+        "fr": "%"
+      },
+      "getable": true,
+      "setable": true,
+      "min": 30,
+      "max": 80,
+      "step": 5,
+      "uiComponent": "slider"
+    },
+    "valve_position": {
+      "type": "number",
+      "title": {
+        "en": "Valve Position",
+        "fr": "Position Vanne"
+      },
+      "units": {
+        "en": "%",
+        "fr": "%"
+      },
+      "getable": true,
+      "setable": true,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "uiComponent": "slider"
+    }
+  }
 }

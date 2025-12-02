@@ -12,15 +12,26 @@
   "capabilitiesOptions": {
     "windowcoverings_set": {
       "title": {
-        "en": "Position",
-        "fr": "Position"
+        "en": "Position"
+      },
+      "units": {
+        "en": "%"
       }
     },
-    "windowcoverings_state": {
+    "windowcoverings_tilt_set": {
       "title": {
-        "en": "State",
-        "fr": "État"
+        "en": "Tilt"
+      },
+      "units": {
+        "en": "%"
       }
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie"
+      },
+      "preventInsights": false
     }
   },
   "platforms": [
@@ -131,9 +142,9 @@
     "endpoints": {
       "1": {
         "clusters": [
-          61184,
           1,
-          "closuresWindowCovering"
+          258,
+          61184
         ],
         "bindings": [
           1
@@ -372,31 +383,6 @@
       }
     }
   ],
-  "capabilitiesOptions": {
-    "windowcoverings_set": {
-      "title": {
-        "en": "Position"
-      },
-      "units": {
-        "en": "%"
-      }
-    },
-    "windowcoverings_tilt_set": {
-      "title": {
-        "en": "Tilt"
-      },
-      "units": {
-        "en": "%"
-      }
-    },
-    "measure_battery": {
-      "title": {
-        "en": "Battery",
-        "fr": "Batterie"
-      },
-      "preventInsights": false
-    }
-  },
   "energy": {
     "batteries": [
       "CR2032",
