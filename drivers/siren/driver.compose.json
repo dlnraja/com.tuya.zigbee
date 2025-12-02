@@ -7,7 +7,8 @@
   "capabilities": [
     "alarm_motion",
     "measure_battery",
-    "alarm_generic"
+    "alarm_generic",
+    "onoff"
   ],
   "energy": {
     "batteries": [
@@ -36,7 +37,6 @@
       "_TZ3000_akqdg6g7",
       "_TZ3000_fwuelqs5",
       "_TZE200_d0yu2xgi",
-      "_TYZB01_dsjszp0x",
       "_TZ3000_ab7hfuil",
       "_TZ3000_xr3htd96",
       "_TZ3000_0dumfk2z",
@@ -44,7 +44,6 @@
       "_TZ3000_gntwytxo",
       "_TZ3000_xyz",
       "_TZ3210_fgwhjm9j",
-      "_TZE200_*",
       "_TZE200_2aaelwxk",
       "_TZE200_2ekuz3dz",
       "_TZE200_2se8efxh",
@@ -106,7 +105,8 @@
       "TS0601",
       "Siren",
       "SA01",
-      "TS0203"
+      "TS0203",
+      "TS0216"
     ],
     "endpoints": {
       "1": {
