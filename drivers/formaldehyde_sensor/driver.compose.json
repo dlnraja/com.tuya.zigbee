@@ -7,7 +7,8 @@
   "capabilities": [
     "measure_co2",
     "measure_temperature",
-    "measure_humidity"
+    "measure_humidity",
+    "measure_pm25"
   ],
   "energy": {
     "approximation": {
@@ -55,5 +56,6 @@
   "images": {
     "small": "drivers/formaldehyde_sensor/assets/images/small.png",
     "large": "drivers/formaldehyde_sensor/assets/images/large.png"
-  }
+  },
+  "capabilitiesOptions": {}
 }

@@ -10,7 +10,14 @@
     "onoff.gang4",
     "onoff.gang5",
     "onoff.gang6",
-    "onoff.gang7"
+    "onoff.gang7",
+    "onoff",
+    "onoff.1",
+    "onoff.2",
+    "onoff.3",
+    "onoff.4",
+    "onoff.5",
+    "onoff.6"
   ],
   "capabilitiesOptions": {
     "onoff.gang2": {
@@ -41,6 +48,36 @@
     "onoff.gang7": {
       "title": {
         "en": "Gang 7"
+      }
+    },
+    "onoff.1": {
+      "title": {
+        "en": "Switch 2"
+      }
+    },
+    "onoff.2": {
+      "title": {
+        "en": "Switch 3"
+      }
+    },
+    "onoff.3": {
+      "title": {
+        "en": "Switch 4"
+      }
+    },
+    "onoff.4": {
+      "title": {
+        "en": "Switch 5"
+      }
+    },
+    "onoff.5": {
+      "title": {
+        "en": "Switch 6"
+      }
+    },
+    "onoff.6": {
+      "title": {
+        "en": "Switch 7"
       }
     }
   },

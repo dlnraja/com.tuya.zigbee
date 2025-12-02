@@ -6,14 +6,16 @@
     "nl": "Luchtontvochtigger (Smart)",
     "de": "Luftentfeuchter (Smart)"
   },
-  "class": "sensor",
+  "class": "fan",
   "capabilities": [
     "target_humidity",
     "measure_humidity",
     "measure_temperature",
     "measure_power",
     "alarm_water",
-    "measure_battery"
+    "measure_battery",
+    "onoff",
+    "target_temperature"
   ],
   "capabilitiesOptions": {
     "onoff": {

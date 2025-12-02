@@ -2,9 +2,10 @@
   "name": {
     "en": "2-Channel Dimmer Module"
   },
-  "class": "socket",
+  "class": "light",
   "capabilities": [
-    "dim"
+    "dim",
+    "onoff"
   ],
   "platforms": [
     "local"

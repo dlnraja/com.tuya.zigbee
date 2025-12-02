@@ -3,10 +3,11 @@
     "en": "Ceiling Fan",
     "fr": "Ceiling Fan"
   },
-  "class": "light",
+  "class": "fan",
   "capabilities": [
     "dim",
-    "measure_battery"
+    "measure_battery",
+    "onoff"
   ],
   "energy": {
     "batteries": [
@@ -339,5 +340,6 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ]
+  ],
+  "capabilitiesOptions": {}
 }

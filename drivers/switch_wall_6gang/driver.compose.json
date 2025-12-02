@@ -16,13 +16,44 @@
     "onoff.switch_3",
     "onoff.switch_4",
     "onoff.switch_5",
-    "onoff.switch_6"
+    "onoff.switch_6",
+    "onoff",
+    "onoff.1",
+    "onoff.2",
+    "onoff.3",
+    "onoff.4",
+    "onoff.5"
   ],
   "capabilitiesOptions": {
     "onoff": {
       "title": {
         "en": "Switch 1",
         "fr": "Interrupteur 1"
+      }
+    },
+    "onoff.1": {
+      "title": {
+        "en": "Switch 2"
+      }
+    },
+    "onoff.2": {
+      "title": {
+        "en": "Switch 3"
+      }
+    },
+    "onoff.3": {
+      "title": {
+        "en": "Switch 4"
+      }
+    },
+    "onoff.4": {
+      "title": {
+        "en": "Switch 5"
+      }
+    },
+    "onoff.5": {
+      "title": {
+        "en": "Switch 6"
       }
     }
   },
