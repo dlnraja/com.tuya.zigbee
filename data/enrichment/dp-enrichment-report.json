@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-12-02T08:08:19.016Z",
+  "timestamp": "2025-12-02T09:20:48.443Z",
   "driversEnriched": 31,
   "enrichments": [
     {
@@ -150,9 +150,7 @@
         "onoff",
         "dim"
       ],
-      "missingCapabilities": [
-        "onoff"
-      ]
+      "missingCapabilities": []
     },
     {
       "driverName": "dimmer_wall_1gang",
@@ -238,9 +236,7 @@
       "suggestedCapabilities": [
         "alarm_gas"
       ],
-      "missingCapabilities": [
-        "alarm_gas"
-      ]
+      "missingCapabilities": []
     },
     {
       "driverName": "module_mini_switch",
@@ -307,7 +303,6 @@
         "onoff.5"
       ],
       "missingCapabilities": [
-        "onoff",
         "onoff.1",
         "onoff.2",
         "onoff.3",
@@ -492,9 +487,7 @@
         "measure_voltage",
         "meter_power"
       ],
-      "missingCapabilities": [
-        "onoff"
-      ]
+      "missingCapabilities": []
     },
     {
       "driverName": "plug_smart",
@@ -764,9 +757,7 @@
         "windowcoverings_state",
         "windowcoverings_set"
       ],
-      "missingCapabilities": [
-        "windowcoverings_set"
-      ]
+      "missingCapabilities": []
     },
     {
       "driverName": "siren",
@@ -839,9 +830,7 @@
         "measure_battery",
         "alarm_battery"
       ],
-      "missingCapabilities": [
-        "alarm_battery"
-      ]
+      "missingCapabilities": []
     },
     {
       "driverName": "soil_sensor",
@@ -1082,9 +1071,6 @@
         "onoff.5"
       ],
       "missingCapabilities": [
-        "onoff",
-        "onoff.1",
-        "onoff.2",
         "onoff.3",
         "onoff.4",
         "onoff.5"
@@ -1155,10 +1141,6 @@
         "onoff.5"
       ],
       "missingCapabilities": [
-        "onoff",
-        "onoff.1",
-        "onoff.2",
-        "onoff.3",
         "onoff.4",
         "onoff.5"
       ]
@@ -1228,10 +1210,6 @@
         "onoff.5"
       ],
       "missingCapabilities": [
-        "onoff.1",
-        "onoff.2",
-        "onoff.3",
-        "onoff.4",
         "onoff.5"
       ]
     },
@@ -1299,14 +1277,7 @@
         "onoff.4",
         "onoff.5"
       ],
-      "missingCapabilities": [
-        "onoff",
-        "onoff.1",
-        "onoff.2",
-        "onoff.3",
-        "onoff.4",
-        "onoff.5"
-      ]
+      "missingCapabilities": []
     },
     {
       "driverName": "switch_wall_7gang",
@@ -1372,14 +1343,7 @@
         "onoff.4",
         "onoff.5"
       ],
-      "missingCapabilities": [
-        "onoff",
-        "onoff.1",
-        "onoff.2",
-        "onoff.3",
-        "onoff.4",
-        "onoff.5"
-      ]
+      "missingCapabilities": []
     },
     {
       "driverName": "switch_wall_8gang",
@@ -1445,14 +1409,7 @@
         "onoff.4",
         "onoff.5"
       ],
-      "missingCapabilities": [
-        "onoff",
-        "onoff.1",
-        "onoff.2",
-        "onoff.3",
-        "onoff.4",
-        "onoff.5"
-      ]
+      "missingCapabilities": []
     },
     {
       "driverName": "switch_wireless",

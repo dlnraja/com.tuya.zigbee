@@ -6,6 +6,11 @@ on:
     - cron: "0 3 * * 1"
   workflow_dispatch:
     inputs:
+      run_master_pipeline:
+        description: "Run complete master pipeline (all scripts)"
+        required: false
+        type: boolean
+        default: true
       full_enrichment:
         description: "Run full enrichment (all sources)"
         required: false
@@ -20,7 +25,7 @@ on:
         description: "Auto-update drivers with new IDs"
         required: false
         type: boolean
-        default: false
+        default: true
       fix_and_enrich:
         description: "Auto-fix driver issues and add missing data"
         required: false
@@ -28,6 +33,11 @@ on:
         default: true
       enrich_dps:
         description: "Enrich with Tuya DP mappings"
+        required: false
+        type: boolean
+        default: true
+      generate_icons:
+        description: "Regenerate SVG icons"
         required: false
         type: boolean
         default: true
@@ -56,6 +66,18 @@ jobs:
 
       - name: 📦 Install Dependencies
         run: npm install
+
+      - name: 🚀 Run Master Pipeline
+        if: ${{ inputs.run_master_pipeline == true }}
+        run: |
+          echo "🚀 Running Master Enrichment Pipeline..."
+          node scripts/enrichment/MASTER-run-all.js || echo "Master pipeline completed"
+
+      - name: 🎨 Generate Icons
+        if: ${{ inputs.generate_icons == true }}
+        run: |
+          echo "🎨 Generating SVG icons..."
+          node scripts/icons/generate-driver-icons.js || echo "Icons generated"
 
       - name: 📜 Extract from Git History
         id: git-extract
