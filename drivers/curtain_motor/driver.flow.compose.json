@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "curtain_motor_internal_windowcoverings_set_changed",
+      "id": "curtain_motor_windowcoverings_set_changed",
       "title": {
         "en": "Position changed",
         "fr": "Position changée"
@@ -19,7 +19,7 @@
       ]
     },
     {
-      "id": "curtain_motor_internal_dim_changed",
+      "id": "curtain_motor_dim_changed",
       "title": {
         "en": "Brightness changed",
         "fr": "Luminosité changée"
@@ -37,7 +37,7 @@
       ]
     },
     {
-      "id": "curtain_motor_internal_measure_battery_changed",
+      "id": "curtain_motor_measure_battery_changed",
       "title": {
         "en": "Battery level changed",
         "fr": "Niveau batterie changé"
@@ -57,7 +57,7 @@
   ],
   "actions": [
     {
-      "id": "curtain_motor_internal_set_windowcoverings_set",
+      "id": "curtain_motor_set_windowcoverings_set",
       "title": {
         "en": "Set position to...",
         "fr": "Régler la position à..."
@@ -83,21 +83,21 @@
       }
     },
     {
-      "id": "curtain_motor_internal_windowcoverings_open",
+      "id": "curtain_motor_windowcoverings_open",
       "title": {
         "en": "Open",
         "fr": "Ouvrir"
       }
     },
     {
-      "id": "curtain_motor_internal_windowcoverings_close",
+      "id": "curtain_motor_windowcoverings_close",
       "title": {
         "en": "Close",
         "fr": "Fermer"
       }
     },
     {
-      "id": "curtain_motor_internal_set_dim",
+      "id": "curtain_motor_set_dim",
       "title": {
         "en": "Set brightness to...",
         "fr": "Régler la luminosité à..."
