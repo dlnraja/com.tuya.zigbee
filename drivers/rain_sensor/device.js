@@ -126,6 +126,51 @@ class RainSensorDevice extends BaseHybridDevice {
     } catch (err) {
       this.log('[RAIN-DP] Direct listener setup failed:', err.message);
     }
+
+    // v5.2.96: Request initial DP1 (rain detection) with 30s retry
+    this._requestInitialRainDP();
+  }
+
+  /**
+   * v5.2.96: Request initial rain DP with retry logic
+   * Battery devices may miss the first poll window
+   */
+  async _requestInitialRainDP() {
+    this.log('[RAIN-DP] 📡 Requesting initial rain DP...');
+
+    const requestDP1 = async () => {
+      if (this.tuyaEF00Manager) {
+        try {
+          await this.tuyaEF00Manager.getData(1); // Rain detection
+          this.log('[RAIN-DP] ✅ DP1 request sent');
+        } catch (err) {
+          this.log('[RAIN-DP] ⏳ DP1 timeout (normal for battery devices)');
+        }
+      }
+    };
+
+    // First attempt after 5s
+    setTimeout(requestDP1, 5000);
+
+    // Second attempt after 30s (catch missed poll window)
+    setTimeout(async () => {
+      // Only retry if no data received yet
+      const lastUpdate = await this.getStoreValue('last_dp_update');
+      if (!lastUpdate) {
+        this.log('[RAIN-DP] 🔄 30s retry - no data received yet...');
+        await requestDP1();
+      }
+    }, 30000);
+
+    // Third attempt after 60s (final retry)
+    setTimeout(async () => {
+      const lastUpdate = await this.getStoreValue('last_dp_update');
+      if (!lastUpdate) {
+        this.log('[RAIN-DP] 🔄 60s final retry...');
+        await requestDP1();
+        this.log('[RAIN-DP] ⚠️ Device may be in deep sleep - will respond on next trigger');
+      }
+    }, 60000);
   }
 
   /**
