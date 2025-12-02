@@ -1,0 +1,42 @@
+{
+  "name": {
+    "en": "Smart Heater",
+    "fr": "Chauffage Connecté"
+  },
+  "class": "heater",
+  "capabilities": [
+    "onoff",
+    "target_temperature",
+    "thermostat_mode",
+    "measure_temperature"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_aoclfnxz",
+      "_TZE200_2ekuz3dz"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/smart_heater/assets/images/small.png",
+    "large": "drivers/smart_heater/assets/images/large.png",
+    "xlarge": "drivers/smart_heater/assets/images/xlarge.png"
+  },
+  "id": "smart_heater",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}
