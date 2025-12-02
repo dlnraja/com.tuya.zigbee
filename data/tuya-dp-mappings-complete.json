@@ -1,0 +1,479 @@
+{
+  "_comment": "Complete Tuya DP Mappings - All known datapoints",
+  "version": "1.0.0",
+  "lastUpdated": "2025-12-02",
+  "datapoints": {
+    "1": {
+      "type": "bool",
+      "capabilities": [
+        "alarm_water",
+        "alarm_smoke",
+        "onoff"
+      ],
+      "description": "Universal on/off or alarm state"
+    },
+    "2": {
+      "type": "enum",
+      "capabilities": [
+        "windowcoverings_state"
+      ],
+      "values": {
+        "0": "open",
+        "1": "stop",
+        "2": "close"
+      },
+      "description": "Cover state control"
+    },
+    "3": {
+      "type": "enum",
+      "capabilities": [
+        "windowcoverings_tilt_set"
+      ],
+      "range": [
+        0,
+        100
+      ],
+      "description": "Tilt position 0-100%"
+    },
+    "4": {
+      "type": "value",
+      "capabilities": [
+        "target_temperature"
+      ],
+      "divider": 10,
+      "description": "Target temperature (÷10)"
+    },
+    "5": {
+      "type": "bool",
+      "capabilities": [
+        "alarm_motor"
+      ],
+      "description": "Motor over-current alarm"
+    },
+    "6": {
+      "type": "bool",
+      "capabilities": [
+        "onoff"
+      ],
+      "description": "Secondary on/off"
+    },
+    "7": {
+      "type": "value",
+      "capabilities": [
+        "dim"
+      ],
+      "range": [
+        0,
+        1000
+      ],
+      "divider": 10,
+      "description": "Brightness 0-1000"
+    },
+    "9": {
+      "type": "enum",
+      "capabilities": [
+        "sensitivity"
+      ],
+      "description": "Sensitivity level for rain/motion"
+    },
+    "10": {
+      "type": "bool",
+      "capabilities": [
+        "alarm_motion"
+      ],
+      "description": "Motion detected"
+    },
+    "12": {
+      "type": "value",
+      "capabilities": [
+        "meter_power"
+      ],
+      "divider": 100,
+      "description": "Energy consumed"
+    },
+    "13": {
+      "type": "value",
+      "capabilities": [
+        "measure_power"
+      ],
+      "divider": 10,
+      "description": "Current power"
+    },
+    "14": {
+      "type": "value",
+      "capabilities": [
+        "windowcoverings_set"
+      ],
+      "range": [
+        0,
+        100
+      ],
+      "description": "Cover position 0-100%"
+    },
+    "15": {
+      "type": "enum",
+      "capabilities": [
+        "thermostat_mode"
+      ],
+      "values": {
+        "0": "auto",
+        "1": "manual",
+        "2": "off"
+      },
+      "description": "Thermostat mode"
+    },
+    "16": {
+      "type": "value",
+      "capabilities": [
+        "measure_temperature"
+      ],
+      "divider": 10,
+      "description": "Current temperature (÷10)"
+    },
+    "17": {
+      "type": "value",
+      "capabilities": [
+        "measure_humidity"
+      ],
+      "divider": 10,
+      "description": "Current humidity (÷10)"
+    },
+    "18": {
+      "type": "value",
+      "capabilities": [
+        "measure_voltage"
+      ],
+      "divider": 10,
+      "description": "Voltage (÷10)"
+    },
+    "19": {
+      "type": "value",
+      "capabilities": [
+        "measure_current"
+      ],
+      "divider": 1000,
+      "description": "Current (÷1000)"
+    },
+    "20": {
+      "type": "bool",
+      "capabilities": [
+        "alarm_contact"
+      ],
+      "description": "Contact sensor state"
+    },
+    "21": {
+      "type": "value",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "description": "Battery percentage"
+    },
+    "24": {
+      "type": "value",
+      "capabilities": [
+        "light_temperature"
+      ],
+      "range": [
+        0,
+        1000
+      ],
+      "description": "Color temperature"
+    },
+    "25": {
+      "type": "string",
+      "capabilities": [
+        "light_hue",
+        "light_saturation"
+      ],
+      "description": "HSV color string"
+    },
+    "101": {
+      "type": "value",
+      "capabilities": [
+        "measure_temperature"
+      ],
+      "divider": 10,
+      "description": "Temperature sensor (÷10)"
+    },
+    "102": {
+      "type": "value",
+      "capabilities": [
+        "measure_humidity"
+      ],
+      "divider": 10,
+      "description": "Humidity sensor (÷10)"
+    },
+    "103": {
+      "type": "value",
+      "capabilities": [
+        "measure_pressure"
+      ],
+      "divider": 100,
+      "description": "Pressure (÷100)"
+    },
+    "104": {
+      "type": "value",
+      "capabilities": [
+        "measure_wind_speed"
+      ],
+      "divider": 10,
+      "description": "Wind speed (÷10)"
+    },
+    "105": {
+      "type": "value",
+      "capabilities": [
+        "measure_uv"
+      ],
+      "divider": 100,
+      "description": "UV index (÷100)"
+    },
+    "106": {
+      "type": "raw",
+      "capabilities": [
+        "scene_data"
+      ],
+      "description": "Scene data (8 bytes)"
+    },
+    "107": {
+      "type": "string",
+      "capabilities": [
+        "schedule"
+      ],
+      "description": "Schedule JSON compressed"
+    },
+    "108": {
+      "type": "bool",
+      "capabilities": [
+        "child_lock"
+      ],
+      "description": "Child lock enabled"
+    },
+    "109": {
+      "type": "enum",
+      "capabilities": [
+        "fan_mode"
+      ],
+      "values": {
+        "0": "low",
+        "1": "medium",
+        "2": "high",
+        "3": "turbo"
+      },
+      "description": "Fan mode"
+    },
+    "110": {
+      "type": "bool",
+      "capabilities": [
+        "fan_oscillate"
+      ],
+      "description": "Fan oscillation"
+    },
+    "111": {
+      "type": "value",
+      "capabilities": [
+        "light_temperature"
+      ],
+      "range": [
+        0,
+        100
+      ],
+      "description": "Light temperature 0-100%"
+    },
+    "112": {
+      "type": "value",
+      "capabilities": [
+        "light_hue"
+      ],
+      "range": [
+        0,
+        360
+      ],
+      "description": "Light hue 0-360°"
+    },
+    "113": {
+      "type": "value",
+      "capabilities": [
+        "light_saturation"
+      ],
+      "range": [
+        0,
+        1000
+      ],
+      "divider": 1000,
+      "description": "Light saturation 0-1000‰"
+    },
+    "116": {
+      "type": "value",
+      "capabilities": [
+        "measure_co2"
+      ],
+      "description": "CO2 level ppm"
+    },
+    "117": {
+      "type": "value",
+      "capabilities": [
+        "measure_tvoc"
+      ],
+      "description": "TVOC level"
+    },
+    "118": {
+      "type": "value",
+      "capabilities": [
+        "measure_eco2"
+      ],
+      "description": "eCO2 level"
+    },
+    "120": {
+      "type": "bool",
+      "capabilities": [
+        "onoff"
+      ],
+      "description": "RCBO main switch"
+    },
+    "121": {
+      "type": "bool",
+      "capabilities": [
+        "alarm_generic"
+      ],
+      "description": "RCBO trip alarm"
+    },
+    "122": {
+      "type": "value",
+      "capabilities": [
+        "measure_voltage"
+      ],
+      "description": "RCBO voltage"
+    },
+    "123": {
+      "type": "value",
+      "capabilities": [
+        "measure_current"
+      ],
+      "description": "RCBO current"
+    },
+    "124": {
+      "type": "value",
+      "capabilities": [
+        "measure_power"
+      ],
+      "description": "RCBO power"
+    },
+    "125": {
+      "type": "value",
+      "capabilities": [
+        "meter_power"
+      ],
+      "description": "RCBO energy"
+    },
+    "126": {
+      "type": "value",
+      "capabilities": [
+        "measure_leakage_current"
+      ],
+      "description": "RCBO leakage current"
+    },
+    "127": {
+      "type": "enum",
+      "capabilities": [
+        "trip_reason"
+      ],
+      "description": "RCBO trip reason"
+    }
+  },
+  "clusters": {
+    "0x0000": {
+      "name": "Basic",
+      "capabilities": []
+    },
+    "0x0001": {
+      "name": "PowerCfg",
+      "capabilities": [
+        "measure_battery"
+      ]
+    },
+    "0x0003": {
+      "name": "Identify",
+      "capabilities": []
+    },
+    "0x0006": {
+      "name": "OnOff",
+      "capabilities": [
+        "onoff",
+        "button"
+      ]
+    },
+    "0x0008": {
+      "name": "LevelCtrl",
+      "capabilities": [
+        "dim",
+        "valve_position"
+      ]
+    },
+    "0x0101": {
+      "name": "DoorLock",
+      "capabilities": [
+        "locked"
+      ]
+    },
+    "0x0102": {
+      "name": "WindowCovering",
+      "capabilities": [
+        "windowcoverings_state",
+        "windowcoverings_set",
+        "windowcoverings_tilt_set"
+      ]
+    },
+    "0x0202": {
+      "name": "FanCtrl",
+      "capabilities": [
+        "fan_speed",
+        "fan_mode"
+      ]
+    },
+    "0x0300": {
+      "name": "ColorCtrl",
+      "capabilities": [
+        "light_hue",
+        "light_saturation",
+        "light_temperature"
+      ]
+    },
+    "0x0500": {
+      "name": "IasZone",
+      "capabilities": [
+        "alarm_motion",
+        "alarm_contact",
+        "alarm_water",
+        "alarm_smoke",
+        "alarm_co",
+        "alarm_gas"
+      ]
+    },
+    "0x0502": {
+      "name": "IasWd",
+      "capabilities": [
+        "volume_set"
+      ]
+    },
+    "0x0702": {
+      "name": "Metering",
+      "capabilities": [
+        "meter_power"
+      ]
+    },
+    "0x0B04": {
+      "name": "ElecMeas",
+      "capabilities": [
+        "measure_power",
+        "measure_voltage",
+        "measure_current"
+      ]
+    },
+    "0xEF00": {
+      "name": "TuyaSpecific",
+      "capabilities": [
+        "*"
+      ]
+    }
+  }
+}

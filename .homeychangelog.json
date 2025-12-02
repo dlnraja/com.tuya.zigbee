@@ -1,4 +1,8 @@
 {
+  "5.3.8": {
+    "en": "🚀 v5.3.8 - 79 DRIVERS + COMPLETE DP MAPPINGS - 1869 IDs!\n\n**New Drivers Added (+19):**\n- scene_switch_1 to scene_switch_6\n- switch_plug_1, switch_plug_2\n- valve_1, valve_4\n- co_sensor, vibration_sensor\n- thermostat_4ch, smart_heater\n- power_meter, energy_meter_3phase\n- led_controller_rgb, led_controller_cct\n- smart_rcbo, curtain_motor_tilt\n\n**Complete DP Mappings:**\n- All 40+ Tuya DataPoints documented\n- DP 1-127 fully mapped\n- Air Quality DPs (116-118)\n- RCBO DPs (120-127)\n\n**New Files:**\n- data/tuya-dp-mappings-complete.json\n- scripts/enrichment/add-missing-drivers.js\n\n**Stats:**\n- 79 drivers (was 60)\n- 1869 device IDs (was 1864)\n- 40+ DP mappings\n- 14 Zigbee clusters",
+    "fr": "🚀 v5.3.8 - 79 drivers + mappings DP complets!\n\n- 19 nouveaux drivers\n- 1869 IDs (était 1864)\n- Mappings DP 1-127 complets"
+  },
   "5.3.7": {
     "en": "🌐 v5.3.7 - FULL HOMEY ECOSYSTEM SCAN - 1864 IDs!\n\n**Repositories Scanned (24):**\n- JohanBendz: com.tuya.zigbee, com.philips.hue.zigbee\n- Athom BV: ikea, xiaomi, aqara, osram, innr, sengled, paulmann, ubisys, siterwell\n- Community: gledopto, heiman, lidl, namron, thing.zigbee\n- Sources: zigbee-herdsman-converters, zha-device-handlers, deconz\n\n**Data Analyzed:**\n- 1989 issues (open + closed)\n- 266 PRs (open + closed + merged)\n- 30 branches\n- All forks scanned\n\n**Added +2 IDs:**\n- _tz3000_nsa76jai\n- _tze204_srmahpw\n\n**New Script:**\n- fetch-all-homey-ecosystem.js\n\n**Total:** 1864 device IDs",
     "fr": "🌐 v5.3.7 - Scan complet Homey - 1864 IDs!\n\n- 24 repositories analysés\n- 1989 issues + 266 PRs\n- Total: 1864 IDs"

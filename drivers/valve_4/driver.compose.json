@@ -1,0 +1,41 @@
+{
+  "name": {
+    "en": "Smart Valve 4-Way",
+    "fr": "Vanne Connectée 4 Voies"
+  },
+  "class": "other",
+  "capabilities": [
+    "valve_position.1",
+    "valve_position.2",
+    "valve_position.3",
+    "valve_position.4"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_kdi2o9m6"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/valve_4/assets/images/small.png",
+    "large": "drivers/valve_4/assets/images/large.png",
+    "xlarge": "drivers/valve_4/assets/images/xlarge.png"
+  },
+  "id": "valve_4",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}

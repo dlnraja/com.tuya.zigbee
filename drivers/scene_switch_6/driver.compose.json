@@ -1,0 +1,46 @@
+{
+  "name": {
+    "en": "Scene Switch 6-Gang",
+    "fr": "Interrupteur Scène 6 Boutons"
+  },
+  "class": "button",
+  "capabilities": [
+    "button.1",
+    "button.2",
+    "button.3",
+    "button.4",
+    "button.5",
+    "button.6",
+    "measure_battery"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_msl6wxk9",
+      "_TZ3000_u3oupgdy"
+    ],
+    "productId": [
+      "TS0046"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          6
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/scene_switch_6/assets/images/small.png",
+    "large": "drivers/scene_switch_6/assets/images/large.png",
+    "xlarge": "drivers/scene_switch_6/assets/images/xlarge.png"
+  },
+  "id": "scene_switch_6",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}
