@@ -1,0 +1,51 @@
+{
+  "name": {
+    "en": "Power Meter",
+    "fr": "Compteur Électrique"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_power",
+    "meter_power",
+    "measure_voltage",
+    "measure_current"
+  ],
+  "energy": {
+    "batteries": [
+      "AAA",
+      "AAA"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_byfdwktr",
+      "_TZ3000_qeuvnohg"
+    ],
+    "productId": [
+      "TS011F",
+      "TS0121"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6,
+          2820,
+          1794
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/power_meter/assets/images/small.png",
+    "large": "drivers/power_meter/assets/images/large.png",
+    "xlarge": "drivers/power_meter/assets/images/xlarge.png"
+  },
+  "id": "power_meter",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}

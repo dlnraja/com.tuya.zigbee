@@ -1,0 +1,44 @@
+{
+  "name": {
+    "en": "LED Controller CCT",
+    "fr": "Contrôleur LED CCT"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature",
+    "light_mode"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_9hpxg80k",
+      "_TZ3000_obacbukl"
+    ],
+    "productId": [
+      "TS0502"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6,
+          8,
+          768
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/led_controller_cct/assets/images/small.png",
+    "large": "drivers/led_controller_cct/assets/images/large.png",
+    "xlarge": "drivers/led_controller_cct/assets/images/xlarge.png"
+  },
+  "id": "led_controller_cct",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}

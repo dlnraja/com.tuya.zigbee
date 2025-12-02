@@ -1,0 +1,47 @@
+{
+  "name": {
+    "en": "Thermostat 4-Channel",
+    "fr": "Thermostat 4 Canaux"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "target_temperature.1",
+    "target_temperature.2",
+    "target_temperature.3",
+    "target_temperature.4",
+    "measure_temperature.1",
+    "measure_temperature.2",
+    "measure_temperature.3",
+    "measure_temperature.4",
+    "thermostat_mode"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_mudxchsu",
+      "_TZE200_zion52ef"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/thermostat_4ch/assets/images/small.png",
+    "large": "drivers/thermostat_4ch/assets/images/large.png",
+    "xlarge": "drivers/thermostat_4ch/assets/images/xlarge.png"
+  },
+  "id": "thermostat_4ch",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}

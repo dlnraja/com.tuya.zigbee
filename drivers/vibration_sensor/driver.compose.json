@@ -1,0 +1,49 @@
+{
+  "name": {
+    "en": "Vibration Sensor",
+    "fr": "Capteur de Vibration"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_vibration",
+    "measure_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "AAA",
+      "AAA"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_bmg14ax2",
+      "_TZ3000_rcuyhwe3"
+    ],
+    "productId": [
+      "TS0209",
+      "TS0210"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          257,
+          1280
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/vibration_sensor/assets/images/small.png",
+    "large": "drivers/vibration_sensor/assets/images/large.png",
+    "xlarge": "drivers/vibration_sensor/assets/images/xlarge.png"
+  },
+  "id": "vibration_sensor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}
