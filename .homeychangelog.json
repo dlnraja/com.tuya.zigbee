@@ -1,4 +1,8 @@
 {
+  "5.3.7": {
+    "en": "🌐 v5.3.7 - FULL HOMEY ECOSYSTEM SCAN - 1864 IDs!\n\n**Repositories Scanned (24):**\n- JohanBendz: com.tuya.zigbee, com.philips.hue.zigbee\n- Athom BV: ikea, xiaomi, aqara, osram, innr, sengled, paulmann, ubisys, siterwell\n- Community: gledopto, heiman, lidl, namron, thing.zigbee\n- Sources: zigbee-herdsman-converters, zha-device-handlers, deconz\n\n**Data Analyzed:**\n- 1989 issues (open + closed)\n- 266 PRs (open + closed + merged)\n- 30 branches\n- All forks scanned\n\n**Added +2 IDs:**\n- _tz3000_nsa76jai\n- _tze204_srmahpw\n\n**New Script:**\n- fetch-all-homey-ecosystem.js\n\n**Total:** 1864 device IDs",
+    "fr": "🌐 v5.3.7 - Scan complet Homey - 1864 IDs!\n\n- 24 repositories analysés\n- 1989 issues + 266 PRs\n- Total: 1864 IDs"
+  },
   "5.3.6": {
     "en": "🚀 v5.3.6 - MASTER PIPELINE v2.0\n\n**Complete Enrichment System:**\n- MASTER-run-all.js: Runs all 10 scripts in sequence\n- Automated pipeline with reports\n- Full verification of all 60 drivers\n\n**Pipeline Steps:**\n1. Parse Z2M Tuya\n2. Fetch All Sources (ZHA, deCONZ)\n3. Fetch JohanBendz Ecosystem\n4. Intelligent Merge\n5. Merge All Sources\n6. Auto-Fix Driver Issues\n7. Complete All Drivers\n8. Enrich DP Mappings\n9. Generate Icons\n10. Verify Drivers\n\n**GitHub Actions Updated:**\n- run_master_pipeline option\n- generate_icons option\n- update_drivers: true by default\n\n**Stats:**\n- 60 drivers verified\n- 1862 device IDs\n- 60 SVG icons\n- 17 enrichment scripts",
     "fr": "🚀 v5.3.6 - Pipeline Master v2.0\n\n- Script master exécutant 10 scripts\n- GitHub Actions mis à jour\n- 60 drivers vérifiés"
