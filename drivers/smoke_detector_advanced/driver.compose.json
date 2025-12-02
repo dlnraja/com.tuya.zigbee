@@ -6,7 +6,8 @@
   "class": "sensor",
   "capabilities": [
     "alarm_smoke",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "energy": {
     "batteries": [
@@ -368,5 +369,6 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ]
+  ],
+  "capabilitiesOptions": {}
 }

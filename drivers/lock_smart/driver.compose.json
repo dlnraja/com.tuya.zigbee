@@ -7,7 +7,8 @@
   "capabilities": [
     "locked",
     "lock_mode",
-    "measure_battery"
+    "measure_battery",
+    "alarm_tamper"
   ],
   "energy": {
     "batteries": [
@@ -336,5 +337,6 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ]
+  ],
+  "capabilitiesOptions": {}
 }

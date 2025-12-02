@@ -3,11 +3,13 @@
     "en": "Roller Shutter Controller",
     "fr": "Roller Shutter Controller"
   },
-  "class": "sensor",
+  "class": "blinds",
   "capabilities": [
     "alarm_generic",
     "windowcoverings_state",
-    "measure_battery"
+    "measure_battery",
+    "windowcoverings_set",
+    "windowcoverings_tilt_set"
   ],
   "energy": {
     "batteries": [
@@ -382,5 +384,6 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ]
+  ],
+  "capabilitiesOptions": {}
 }
