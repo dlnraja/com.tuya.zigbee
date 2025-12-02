@@ -94,6 +94,38 @@
         ]
       },
       {
+        "id": "device_wake_up",
+        "title": {
+          "en": "Device woke up",
+          "fr": "Appareil réveillé",
+          "nl": "Apparaat ontwaakt",
+          "de": "Gerät aufgewacht"
+        },
+        "hint": {
+          "en": "Triggered when a sleeping battery device wakes up and sends data",
+          "fr": "Déclenché quand un appareil batterie se réveille et envoie des données"
+        },
+        "tokens": [
+          {
+            "name": "device_name",
+            "type": "string",
+            "title": {
+              "en": "Device name",
+              "fr": "Nom appareil"
+            }
+          },
+          {
+            "name": "battery_level",
+            "type": "number",
+            "title": {
+              "en": "Battery level",
+              "fr": "Niveau batterie"
+            },
+            "example": 85
+          }
+        ]
+      },
+      {
         "tokens": [
           {
             "title": {
@@ -314,6 +346,39 @@
               "en": "Installed version",
               "fr": "Version installée"
             }
+          }
+        ]
+      },
+      {
+        "id": "tuya_dp_received",
+        "title": {
+          "en": "Tuya DP received",
+          "fr": "DP Tuya reçu",
+          "nl": "Tuya DP ontvangen",
+          "de": "Tuya DP empfangen"
+        },
+        "hint": {
+          "en": "Triggered when a Tuya datapoint is received from the device",
+          "fr": "Déclenché quand un datapoint Tuya est reçu de l'appareil"
+        },
+        "tokens": [
+          {
+            "name": "dp_id",
+            "type": "number",
+            "title": {
+              "en": "DP ID",
+              "fr": "ID DP"
+            },
+            "example": 1
+          },
+          {
+            "name": "dp_value",
+            "type": "string",
+            "title": {
+              "en": "DP Value",
+              "fr": "Valeur DP"
+            },
+            "example": "true"
           }
         ]
       },
