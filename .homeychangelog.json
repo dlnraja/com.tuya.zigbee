@@ -1,4 +1,8 @@
 {
+  "5.3.23": {
+    "en": "🔋 v5.3.23 - Complete Battery Coverage (79/79 drivers)\n\n**Final fix:**\nAdded `alarm_battery` + `energy.batteries` to switch_1-4gang drivers.\n\n**Result:**\n✅ 79/79 drivers now have `measure_battery`\n✅ 79/79 drivers now have `alarm_battery`\n✅ 79/79 drivers have `energy.batteries` defined\n\n**Status Indicator applies EVERYWHERE!**\nAll devices can now show battery % on tile via:\nDevice Settings → Status Indicator → Battery",
+    "fr": "🔋 v5.3.23 - Couverture batterie complète (79/79 drivers)\n\n- alarm_battery ajouté aux switch_1-4gang\n- 79/79 drivers avec measure_battery + alarm_battery\n- Indicateur d'état batterie disponible partout"
+  },
   "5.3.22": {
     "en": "🔋 v5.3.22 - Battery on ALL Drivers (Intelligent Hybrid)\n\n**Philosophy:**\nAll drivers are INTELLIGENT HYBRIDS - battery capabilities by DEFAULT.\nThe smart power detection will REMOVE battery if device is AC/DC powered.\n\n**Added to 32 drivers:**\n- Switches: wall 5-8 gang, plug 1/2\n- Lights: bulbs (dimmable, RGB, RGBW, white), LED controllers, strips\n- Energy: meters, plugs, power monitors\n- Climate: thermostats, smart heater\n- Other: valves, curtain tilt, zigbee_universal\n\n**How it works:**\n1. Device pairs → Has measure_battery + alarm_battery\n2. Smart detection runs → Detects AC/DC power\n3. If mains-powered → Battery capabilities auto-removed\n4. If battery-powered → Capabilities remain active",
     "fr": "🔋 v5.3.22 - Batterie sur TOUS les drivers\n\n- Philosophie: drivers hybrides intelligents\n- 32 drivers mis à jour avec measure_battery + alarm_battery\n- La détection intelligente retire les capabilities si AC/DC"
