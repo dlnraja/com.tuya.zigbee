@@ -9,18 +9,43 @@ const FallbackSystem = require('../../lib/helpers/FallbackSystem');
 class SmartCurtainMotorDevice extends BaseHybridDevice {
 
   async onNodeInit({ zclNode }) {
+    this.log('');
+    this.log('╔═══════════════════════════════════════════════════════════════════╗');
+    this.log('║           CURTAIN MOTOR v5.2.96 - POWER DETECTION                 ║');
+    this.log('╚═══════════════════════════════════════════════════════════════════╝');
+
     try {
       await super.onNodeInit({ zclNode }).catch(err => this.error(err));
     } catch (err) { this.error('Await error:', err); }
-
-    this.log('Smart Curtain Motor device initialized');
 
     // Detect protocol: Tuya DP (TS0601) vs Standard ZCL (TS0302/TS130F)
     const endpoint = zclNode?.endpoints?.[1];
     const hasTuyaCluster = !!(endpoint?.clusters?.tuya || endpoint?.clusters?.manuSpecificTuya || endpoint?.clusters?.[61184]);
     const hasWindowCovering = !!endpoint?.clusters?.closuresWindowCovering;
+    const hasBatteryCluster = !!endpoint?.clusters?.powerConfiguration;
 
     this.log(`[CURTAIN] Protocol: Tuya DP=${hasTuyaCluster}, WindowCovering=${hasWindowCovering}`);
+    this.log(`[CURTAIN] Power: Battery cluster=${hasBatteryCluster}`);
+
+    // v5.2.96: Detect power source - most curtain motors are MAINS powered
+    if (!hasBatteryCluster) {
+      this.log('[CURTAIN] ⚡ MAINS POWERED - No battery cluster detected');
+      this.powerType = 'MAINS';
+
+      // Remove measure_battery if incorrectly present
+      if (this.hasCapability('measure_battery')) {
+        this.log('[CURTAIN] ➖ Removing incorrect measure_battery capability');
+        await this.removeCapability('measure_battery').catch(() => { });
+      }
+    } else {
+      this.log('[CURTAIN] 🔋 BATTERY POWERED - Battery cluster present');
+      this.powerType = 'BATTERY';
+
+      // Add measure_battery if missing
+      if (!this.hasCapability('measure_battery')) {
+        await this.addCapability('measure_battery').catch(() => { });
+      }
+    }
 
     if (hasTuyaCluster) {
       // TS0601 Tuya DP protocol
@@ -102,6 +127,21 @@ class SmartCurtainMotorDevice extends BaseHybridDevice {
     };
 
     this.log('[CURTAIN] Tuya DP listener configured');
+
+    // v5.2.96: Request initial position after 3s (mains devices respond quickly)
+    setTimeout(async () => {
+      this.log('[CURTAIN] 📡 Requesting initial position...');
+      try {
+        // Request position DP
+        if (this.tuyaEF00Manager) {
+          await this.tuyaEF00Manager.getData(2).catch(() => { }); // Position
+          await this.tuyaEF00Manager.getData(1).catch(() => { }); // Control state
+        }
+        this.log('[CURTAIN] ✅ Initial DP request sent');
+      } catch (err) {
+        this.log('[CURTAIN] ⚠️ Initial DP request failed (will retry on device wake)');
+      }
+    }, 3000);
   }
 
   /**
