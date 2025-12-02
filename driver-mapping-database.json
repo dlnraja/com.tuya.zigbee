@@ -1,20 +1,251 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Universal Tuya Zigbee - Driver Mapping Database",
-  "description": "Centralized database for manufacturer/model to driver mapping",
-  "version": "4.9.324",
-  "lastUpdated": "2025-11-09",
-  
+  "description": "Centralized database for manufacturer/model to driver mapping - Enriched from JohanBendz PRs + Zigbee2MQTT",
+  "version": "5.2.97",
+  "lastUpdated": "2025-12-02",
+  "sources": [
+    "JohanBendz/com.tuya.zigbee PRs",
+    "Zigbee2MQTT tuya.ts",
+    "Community diagnostics"
+  ],
   "devices": {
     "TS0601": {
       "description": "Tuya DP devices (cluster 0xEF00)",
       "type": "tuya_dp",
       "cluster": "0xEF00",
       "manufacturers": {
+        "_TZE284_gyzlwu5q": {
+          "name": "Smoke + Temp + Humidity Sensor",
+          "driver": "sensor_smoke_climate",
+          "source": "JohanBendz PR",
+          "capabilities": [
+            "alarm_smoke",
+            "measure_temperature",
+            "measure_humidity",
+            "measure_battery"
+          ],
+          "dps": {
+            "1": {
+              "capability": "alarm_smoke",
+              "parser": "boolean"
+            },
+            "2": {
+              "capability": "measure_temperature",
+              "parser": "divide_by_10",
+              "unit": "°C"
+            },
+            "3": {
+              "capability": "measure_humidity",
+              "parser": "identity",
+              "unit": "%"
+            },
+            "15": {
+              "capability": "measure_battery",
+              "parser": "identity",
+              "unit": "%"
+            }
+          }
+        },
+        "_TZE200_y8jijhba": {
+          "name": "PIR Motion Sensor",
+          "driver": "motion_sensor_2",
+          "source": "JohanBendz PR",
+          "capabilities": [
+            "alarm_motion",
+            "measure_battery"
+          ],
+          "dps": {
+            "1": {
+              "capability": "alarm_motion",
+              "parser": "boolean"
+            },
+            "4": {
+              "capability": "measure_battery",
+              "parser": "identity",
+              "unit": "%"
+            }
+          }
+        },
+        "_TZE200_2aaelwxk": {
+          "name": "Radar Presence Sensor",
+          "driver": "sensor_presence_radar",
+          "source": "JohanBendz PR",
+          "capabilities": [
+            "alarm_motion",
+            "target_distance",
+            "radar_sensitivity"
+          ],
+          "dps": {
+            "1": {
+              "capability": "alarm_motion",
+              "parser": "boolean"
+            },
+            "9": {
+              "capability": "target_distance",
+              "parser": "divide_by_100",
+              "unit": "m"
+            },
+            "101": {
+              "capability": "radar_sensitivity",
+              "parser": "identity"
+            }
+          }
+        },
+        "_TZE204_iaeejhvf": {
+          "name": "Radar Presence Sensor 10G",
+          "driver": "sensor_presence_radar",
+          "source": "JohanBendz Issue",
+          "capabilities": [
+            "alarm_motion",
+            "measure_luminance",
+            "measure_temperature",
+            "measure_humidity"
+          ],
+          "dps": {
+            "1": {
+              "capability": "alarm_motion",
+              "parser": "boolean"
+            },
+            "104": {
+              "capability": "measure_luminance",
+              "parser": "identity",
+              "unit": "lux"
+            },
+            "105": {
+              "capability": "measure_temperature",
+              "parser": "divide_by_10",
+              "unit": "°C"
+            },
+            "106": {
+              "capability": "measure_humidity",
+              "parser": "identity",
+              "unit": "%"
+            }
+          }
+        },
+        "_TZE200_nv6nxo0c": {
+          "name": "Moes Curtain Motor",
+          "driver": "curtain_motor",
+          "source": "JohanBendz Issue",
+          "capabilities": [
+            "windowcoverings_state",
+            "windowcoverings_set"
+          ],
+          "dps": {
+            "1": {
+              "capability": "windowcoverings_state",
+              "parser": "curtain_control"
+            },
+            "2": {
+              "capability": "windowcoverings_set",
+              "parser": "divide_by_100"
+            }
+          }
+        },
+        "_TZE200_ol5jlkkr": {
+          "name": "Curtain Motor",
+          "driver": "curtain_motor",
+          "source": "JohanBendz Issue",
+          "capabilities": [
+            "windowcoverings_state",
+            "windowcoverings_set"
+          ],
+          "dps": {
+            "1": {
+              "capability": "windowcoverings_state",
+              "parser": "curtain_control"
+            },
+            "2": {
+              "capability": "windowcoverings_set",
+              "parser": "divide_by_100"
+            }
+          }
+        },
+        "_TZE200_dq8bu0pt": {
+          "name": "4 Gang Wall Switch",
+          "driver": "switch_4_gang",
+          "source": "JohanBendz Issue",
+          "capabilities": [
+            "onoff",
+            "onoff.2",
+            "onoff.3",
+            "onoff.4"
+          ],
+          "dps": {
+            "1": {
+              "capability": "onoff",
+              "parser": "boolean"
+            },
+            "2": {
+              "capability": "onoff.2",
+              "parser": "boolean"
+            },
+            "3": {
+              "capability": "onoff.3",
+              "parser": "boolean"
+            },
+            "4": {
+              "capability": "onoff.4",
+              "parser": "boolean"
+            }
+          }
+        },
+        "_TZE200_dcrrztpa": {
+          "name": "Wall Socket with USB-C PD",
+          "driver": "socket_usb",
+          "source": "JohanBendz Issue",
+          "capabilities": [
+            "onoff",
+            "measure_power"
+          ],
+          "dps": {
+            "1": {
+              "capability": "onoff",
+              "parser": "boolean"
+            },
+            "9": {
+              "capability": "measure_power",
+              "parser": "divide_by_10",
+              "unit": "W"
+            }
+          }
+        },
+        "_TZE200_rxq4iti9": {
+          "name": "Temperature Humidity Sensor",
+          "driver": "sensor_climate_tuya",
+          "source": "JohanBendz Issue",
+          "capabilities": [
+            "measure_temperature",
+            "measure_humidity",
+            "measure_battery"
+          ],
+          "dps": {
+            "1": {
+              "capability": "measure_temperature",
+              "parser": "divide_by_10",
+              "unit": "°C"
+            },
+            "2": {
+              "capability": "measure_humidity",
+              "parser": "identity",
+              "unit": "%"
+            },
+            "4": {
+              "capability": "measure_battery",
+              "parser": "identity",
+              "unit": "%"
+            }
+          }
+        },
         "_TZE284_vvmbj46n": {
           "name": "Climate Monitor",
           "driver": "sensor_climate_tuya",
-          "capabilities": ["measure_temperature", "measure_humidity", "measure_battery"],
+          "capabilities": [
+            "measure_temperature",
+            "measure_humidity",
+            "measure_battery"
+          ],
           "dps": {
             "1": {
               "capability": "measure_temperature",
@@ -40,7 +271,13 @@
         "_TZE200_rhgsbacq": {
           "name": "Presence Radar Sensor",
           "driver": "sensor_presence_radar",
-          "capabilities": ["alarm_motion", "target_distance", "radar_sensitivity", "illuminance_threshold", "measure_battery"],
+          "capabilities": [
+            "alarm_motion",
+            "target_distance",
+            "radar_sensitivity",
+            "illuminance_threshold",
+            "measure_battery"
+          ],
           "dps": {
             "1": {
               "capability": "alarm_motion",
@@ -76,7 +313,13 @@
         "_TZE284_oitavov2": {
           "name": "Soil Tester (Temperature + Humidity + Moisture)",
           "driver": "sensor_soil_tuya",
-          "capabilities": ["measure_temperature", "measure_humidity", "measure_temperature.soil", "measure_humidity.soil", "measure_battery"],
+          "capabilities": [
+            "measure_temperature",
+            "measure_humidity",
+            "measure_temperature.soil",
+            "measure_humidity.soil",
+            "measure_battery"
+          ],
           "dps": {
             "1": {
               "capability": "measure_temperature",
@@ -115,7 +358,6 @@
         }
       }
     },
-    
     "TS0002": {
       "description": "2-gang switch (standard Zigbee)",
       "type": "standard_zigbee",
@@ -123,15 +365,36 @@
         "_TZ3000_h1ipgkwn": {
           "name": "2-Gang USB Switch/Outlet",
           "driver": "switch_2_gang",
-          "capabilities": ["onoff", "onoff.gang2", "measure_power", "measure_voltage", "measure_current", "meter_power"],
+          "capabilities": [
+            "onoff",
+            "onoff.gang2",
+            "measure_power",
+            "measure_voltage",
+            "measure_current",
+            "meter_power"
+          ],
           "endpoints": {
             "1": {
-              "clusters": ["onOff", "electricalMeasurement", "metering"],
-              "capabilities": ["onoff", "measure_power", "measure_voltage", "measure_current", "meter_power"]
+              "clusters": [
+                "onOff",
+                "electricalMeasurement",
+                "metering"
+              ],
+              "capabilities": [
+                "onoff",
+                "measure_power",
+                "measure_voltage",
+                "measure_current",
+                "meter_power"
+              ]
             },
             "2": {
-              "clusters": ["onOff"],
-              "capabilities": ["onoff.gang2"]
+              "clusters": [
+                "onOff"
+              ],
+              "capabilities": [
+                "onoff.gang2"
+              ]
             }
           },
           "polling": {
@@ -141,7 +404,6 @@
         }
       }
     },
-    
     "TS0043": {
       "description": "3-button wireless remote (standard Zigbee)",
       "type": "standard_zigbee",
@@ -149,18 +411,27 @@
         "_TZ3000_bczr4e10": {
           "name": "3-Button Wireless Controller",
           "driver": "button_wireless_3",
-          "capabilities": ["measure_battery"],
+          "capabilities": [
+            "measure_battery"
+          ],
           "endpoints": {
             "1": {
-              "clusters": ["onOff", "genPowerCfg"],
+              "clusters": [
+                "onOff",
+                "genPowerCfg"
+              ],
               "button": 1
             },
             "2": {
-              "clusters": ["onOff"],
+              "clusters": [
+                "onOff"
+              ],
               "button": 2
             },
             "3": {
-              "clusters": ["onOff"],
+              "clusters": [
+                "onOff"
+              ],
               "button": 3
             }
           },
@@ -176,7 +447,6 @@
         }
       }
     },
-    
     "TS0044": {
       "description": "4-button wireless remote (standard Zigbee)",
       "type": "standard_zigbee",
@@ -184,12 +454,35 @@
         "_TZ3000_bgtzm4ny": {
           "name": "4-Button Wireless Controller",
           "driver": "button_wireless_4",
-          "capabilities": ["measure_battery"],
+          "capabilities": [
+            "measure_battery"
+          ],
           "endpoints": {
-            "1": {"clusters": ["onOff", "genPowerCfg"], "button": 1},
-            "2": {"clusters": ["onOff"], "button": 2},
-            "3": {"clusters": ["onOff"], "button": 3},
-            "4": {"clusters": ["onOff"], "button": 4}
+            "1": {
+              "clusters": [
+                "onOff",
+                "genPowerCfg"
+              ],
+              "button": 1
+            },
+            "2": {
+              "clusters": [
+                "onOff"
+              ],
+              "button": 2
+            },
+            "3": {
+              "clusters": [
+                "onOff"
+              ],
+              "button": 3
+            },
+            "4": {
+              "clusters": [
+                "onOff"
+              ],
+              "button": 4
+            }
           },
           "battery": {
             "type": "CR2032",
@@ -203,7 +496,6 @@
         }
       }
     },
-    
     "TS0215A": {
       "description": "SOS Emergency Button (IAS Zone)",
       "type": "standard_zigbee_ias",
@@ -211,10 +503,16 @@
         "_TZ3000_0dumfk2z": {
           "name": "SOS Emergency Button",
           "driver": "button_sos",
-          "capabilities": ["alarm_generic", "measure_battery"],
+          "capabilities": [
+            "alarm_generic",
+            "measure_battery"
+          ],
           "endpoints": {
             "1": {
-              "clusters": ["ssIasZone", "genPowerCfg"],
+              "clusters": [
+                "ssIasZone",
+                "genPowerCfg"
+              ],
               "iasZone": true
             }
           },
@@ -231,7 +529,6 @@
       }
     }
   },
-  
   "parsers": {
     "identity": {
       "description": "Return value as-is",
@@ -254,7 +551,6 @@
       "function": "v => typeof v === 'number' ? v / 1000 : v"
     }
   },
-  
   "driver_rules": {
     "usb_outlet": {
       "deprecated": true,
@@ -267,12 +563,16 @@
     },
     "button_wireless": {
       "note": "Buttons are CONTROLLERS, not CONTROLLED",
-      "capabilities": ["measure_battery"],
-      "forbidden_capabilities": ["onoff", "dim"],
+      "capabilities": [
+        "measure_battery"
+      ],
+      "forbidden_capabilities": [
+        "onoff",
+        "dim"
+      ],
       "reason": "Buttons send commands, they don't receive them"
     }
   },
-  
   "detection_priority": {
     "order": [
       "button_remote_wireless",
@@ -303,28 +603,37 @@
       }
     }
   },
-  
   "common_issues": {
     "battery_not_showing": {
-      "devices": ["TS0043", "TS0044", "TS0215A"],
+      "devices": [
+        "TS0043",
+        "TS0044",
+        "TS0215A"
+      ],
       "cause": "Battery reports on wake only",
       "solution": "Press button to wake device",
       "fixed_in": "v4.9.322"
     },
     "ts0601_no_data": {
-      "devices": ["TS0601 sensors"],
+      "devices": [
+        "TS0601 sensors"
+      ],
       "cause": "Cluster 0xEF00 not detected or listeners not setup",
       "solution": "Emergency fix forces detection",
       "fixed_in": "v4.9.323"
     },
     "usb_outlet_wrong_driver": {
-      "devices": ["USB outlets/switches"],
+      "devices": [
+        "USB outlets/switches"
+      ],
       "cause": "usb_outlet driver does not exist",
       "solution": "Map to switch_X_gang drivers",
       "fixed_in": "v4.9.324"
     },
     "migration_queue_crash": {
-      "devices": ["All devices"],
+      "devices": [
+        "All devices"
+      ],
       "cause": "Invalid homey instance parameter",
       "solution": "Pass device.homey as first parameter",
       "fixed_in": "v4.9.322"
