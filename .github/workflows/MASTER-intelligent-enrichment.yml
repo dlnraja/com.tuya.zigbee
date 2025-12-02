@@ -196,6 +196,58 @@ jobs:
           echo "forum_count=$FORUM_COUNT" >> $GITHUB_OUTPUT
           echo "   Found $FORUM_COUNT manufacturer IDs from forum"
 
+      - name: 🌐 Fetch Blakadder Database
+        id: blakadder-extract
+        run: |
+          echo "🌐 Fetching Blakadder Zigbee Database..."
+
+          # Fetch Blakadder device pages
+          > /tmp/blakadder_manufacturer_ids.txt
+
+          # Main Tuya page
+          curl -sL "https://zigbee.blakadder.com/tuya.html" 2>/dev/null | \
+            grep -oE '_TZ[E0-9]{1,4}_[a-z0-9]+' >> /tmp/blakadder_manufacturer_ids.txt || true
+
+          # Zigbee2MQTT devices page
+          curl -sL "https://zigbee.blakadder.com/zigbee2mqtt.html" 2>/dev/null | \
+            grep -oE '_TZ[E0-9]{1,4}_[a-z0-9]+' >> /tmp/blakadder_manufacturer_ids.txt || true
+
+          # Also fetch TS* model IDs
+          curl -sL "https://zigbee.blakadder.com/" 2>/dev/null | \
+            grep -oE 'TS0[0-9]{3}[A-Z]?' >> /tmp/blakadder_manufacturer_ids.txt || true
+
+          cat /tmp/blakadder_manufacturer_ids.txt | tr '[:upper:]' '[:lower:]' | sort -u > /tmp/blakadder_unique.txt
+          mv /tmp/blakadder_unique.txt /tmp/blakadder_manufacturer_ids.txt
+
+          BLAKADDER_COUNT=$(wc -l < /tmp/blakadder_manufacturer_ids.txt)
+          echo "blakadder_count=$BLAKADDER_COUNT" >> $GITHUB_OUTPUT
+          echo "   Found $BLAKADDER_COUNT IDs from Blakadder"
+
+      - name: 🔗 Fetch deCONZ Data
+        id: deconz-extract
+        run: |
+          echo "🔗 Fetching deCONZ device definitions..."
+
+          > /tmp/deconz_manufacturer_ids.txt
+
+          # Get deCONZ Tuya DDF files
+          curl -sL "https://api.github.com/repos/dresden-elektronik/deconz-rest-plugin/contents/devices/tuya" \
+            -H "Accept: application/vnd.github.v3+json" 2>/dev/null | \
+            jq -r '.[].download_url' 2>/dev/null | head -30 > /tmp/deconz_files.txt || true
+
+          while read url; do
+            if [ -n "$url" ] && [ "$url" != "null" ]; then
+              curl -sL "$url" 2>/dev/null | grep -oE '_TZ[E0-9]{1,4}_[a-z0-9]+' >> /tmp/deconz_manufacturer_ids.txt || true
+            fi
+          done < /tmp/deconz_files.txt
+
+          cat /tmp/deconz_manufacturer_ids.txt | tr '[:upper:]' '[:lower:]' | sort -u > /tmp/deconz_unique.txt
+          mv /tmp/deconz_unique.txt /tmp/deconz_manufacturer_ids.txt
+
+          DECONZ_COUNT=$(wc -l < /tmp/deconz_manufacturer_ids.txt)
+          echo "deconz_count=$DECONZ_COUNT" >> $GITHUB_OUTPUT
+          echo "   Found $DECONZ_COUNT IDs from deCONZ"
+
       - name: 🔀 Merge All Sources
         id: merge
         run: |
@@ -240,7 +292,9 @@ jobs:
               "zigbee2mqtt": ${{ steps.z2m-extract.outputs.z2m_count || 0 }},
               "zha": ${{ steps.zha-extract.outputs.zha_count || 0 }},
               "johanbendz": ${{ steps.johan-extract.outputs.johan_count || 0 }},
-              "forum": ${{ steps.forum-scrape.outputs.forum_count || 0 }}
+              "forum": ${{ steps.forum-scrape.outputs.forum_count || 0 }},
+              "blakadder": ${{ steps.blakadder-extract.outputs.blakadder_count || 0 }},
+              "deconz": ${{ steps.deconz-extract.outputs.deconz_count || 0 }}
             },
             "totals": {
               "all_discovered": ${{ steps.merge.outputs.total_count || 0 }},
@@ -314,7 +368,22 @@ jobs:
         run: |
           echo "🔄 Running complete enrichment pipeline..."
 
-          # Parse Z2M
+          # Parse Z2M for Tuya DPs
+          node scripts/enrichment/parse-z2m-tuya-dps.js || echo "parse-z2m-tuya-dps skipped"
+
+          # Fetch Blakadder devices
+          node scripts/enrichment/fetch-blakadder-devices.js || echo "fetch-blakadder skipped"
+
+          # Auto-discover new devices
+          node scripts/enrichment/auto-discover-devices.js || echo "auto-discover skipped"
+
+          # Enrich discovered devices
+          node scripts/enrichment/enrich-new-devices.js || echo "enrich-new skipped"
+
+          # Add to drivers
+          node scripts/enrichment/add-to-drivers.js || echo "add-to-drivers skipped"
+
+          # Parse Z2M (legacy)
           node scripts/enrichment/parse-z2m-tuya.js || echo "parse-z2m skipped"
 
           # Intelligent merge
@@ -355,6 +424,8 @@ jobs:
           echo "| ZHA | ${{ steps.zha-extract.outputs.zha_count || 0 }} |" >> $GITHUB_STEP_SUMMARY
           echo "| JohanBendz | ${{ steps.johan-extract.outputs.johan_count || 0 }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Homey Forum | ${{ steps.forum-scrape.outputs.forum_count || 0 }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Blakadder | ${{ steps.blakadder-extract.outputs.blakadder_count || 0 }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| deCONZ | ${{ steps.deconz-extract.outputs.deconz_count || 0 }} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "## Results" >> $GITHUB_STEP_SUMMARY
           echo "- **Total Discovered:** ${{ steps.merge.outputs.total_count || 0 }}" >> $GITHUB_STEP_SUMMARY
