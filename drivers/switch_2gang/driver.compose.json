@@ -6,7 +6,8 @@
     "measure_voltage",
     "measure_current",
     "onoff",
-    "onoff.1"
+    "onoff.1",
+    "alarm_battery"
   ],
   "zigbee": {
     "productId": [
@@ -438,7 +439,10 @@
   "energy": {
     "approximation": {
       "usageConstant": 0.5
-    }
+    },
+    "batteries": [
+      "OTHER"
+    ]
   },
   "pair": [
     {
