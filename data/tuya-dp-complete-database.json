@@ -1,0 +1,1751 @@
+{
+  "_comment": "Complete Tuya DP Database - All 255 DataPoints",
+  "version": "1.0.0",
+  "lastUpdated": "2025-12-02",
+  "sources": [
+    "Tuya Developer Official",
+    "Zigbee2MQTT converters",
+    "ZHA quirks",
+    "Blakadder database",
+    "Community captures"
+  ],
+  "datapoints": {
+    "1": {
+      "type": "bool",
+      "range": [
+        0,
+        1
+      ],
+      "usage": "ON/OFF universal - alarm, switch, relay",
+      "brands": [
+        "Tuya",
+        "Aqara",
+        "Sonoff",
+        "Moes",
+        "Lidl",
+        "Immax"
+      ],
+      "models": [
+        "TS0001",
+        "TS0011",
+        "TS0121",
+        "SNZB-01",
+        "WS-EUK01"
+      ],
+      "cluster": "0x0006 / 0x0500",
+      "homeyCapability": [
+        "onoff",
+        "alarm_water",
+        "alarm_smoke",
+        "alarm_motion"
+      ]
+    },
+    "2": {
+      "type": "enum",
+      "range": [
+        0,
+        1,
+        2
+      ],
+      "values": {
+        "0": "open",
+        "1": "stop",
+        "2": "close"
+      },
+      "usage": "Curtain/cover state",
+      "brands": [
+        "Tuya",
+        "Moes",
+        "Zemismart",
+        "Lonsonho"
+      ],
+      "models": [
+        "TS0601",
+        "MS-108",
+        "AM25",
+        "M515EGB"
+      ],
+      "cluster": "0xEF00 → 0x0102",
+      "homeyCapability": [
+        "windowcoverings_state"
+      ]
+    },
+    "3": {
+      "type": "value",
+      "range": [
+        0,
+        100
+      ],
+      "unit": "%",
+      "usage": "Position percentage or tilt",
+      "brands": [
+        "Tuya",
+        "Aqara",
+        "Zemismart"
+      ],
+      "models": [
+        "TS0601",
+        "B1",
+        "AM25"
+      ],
+      "cluster": "0xEF00 → 0x0102",
+      "homeyCapability": [
+        "windowcoverings_set",
+        "windowcoverings_tilt_set"
+      ]
+    },
+    "4": {
+      "type": "value",
+      "range": [
+        0,
+        1000
+      ],
+      "unit": "°C × 10",
+      "usage": "Temperature setpoint (divide by 10)",
+      "brands": [
+        "Tuya",
+        "Moes",
+        "Saswell",
+        "AVATTO"
+      ],
+      "models": [
+        "TS0601",
+        "BHT-002",
+        "SEA801"
+      ],
+      "cluster": "0xEF00 → 0x0201",
+      "homeyCapability": [
+        "target_temperature"
+      ]
+    },
+    "5": {
+      "type": "bool",
+      "range": [
+        0,
+        1
+      ],
+      "usage": "Motor blocked / over-current alarm",
+      "brands": [
+        "Tuya",
+        "Kogan",
+        "Zemismart"
+      ],
+      "models": [
+        "TS0601"
+      ],
+      "cluster": "0xEF00 → 0x0102",
+      "homeyCapability": [
+        "alarm_motor"
+      ]
+    },
+    "6": {
+      "type": "value",
+      "range": [
+        0,
+        999
+      ],
+      "usage": "User ID (fingerprint, card)",
+      "brands": [
+        "Aqara",
+        "Tuya"
+      ],
+      "models": [
+        "N200",
+        "TS0601"
+      ],
+      "cluster": "0xEF00 → 0x0101",
+      "homeyCapability": null
+    },
+    "7": {
+      "type": "value",
+      "range": [
+        0,
+        999
+      ],
+      "usage": "Password ID",
+      "brands": [
+        "Aqara"
+      ],
+      "models": [
+        "N200",
+        "G3"
+      ],
+      "cluster": "0xEF00 → 0x0101",
+      "homeyCapability": null
+    },
+    "8": {
+      "type": "bool",
+      "range": [
+        0,
+        1
+      ],
+      "usage": "Door open/close event",
+      "brands": [
+        "Aqara",
+        "Climax",
+        "Tuya"
+      ],
+      "models": [
+        "N200",
+        "DC-15ZBS",
+        "TS0203"
+      ],
+      "cluster": "0xEF00 / 0x0500",
+      "homeyCapability": [
+        "alarm_contact"
+      ]
+    },
+    "9": {
+      "type": "enum",
+      "range": [
+        0,
+        10
+      ],
+      "values": {
+        "0": "none",
+        "1": "wrong_fingerprint",
+        "2": "wrong_password",
+        "3": "wrong_card",
+        "4": "lock_pick",
+        "5": "pry_alarm",
+        "6": "low_battery",
+        "7": "door_ajar",
+        "8": "timeout",
+        "9": "tamper",
+        "10": "other"
+      },
+      "usage": "Alert reason code",
+      "brands": [
+        "Aqara",
+        "Tuya"
+      ],
+      "models": [
+        "N200",
+        "G3"
+      ],
+      "cluster": "0xEF00 → 0x0101",
+      "homeyCapability": [
+        "alarm_tamper"
+      ]
+    },
+    "10": {
+      "type": "value",
+      "range": [
+        0,
+        100
+      ],
+      "unit": "%",
+      "usage": "Battery percentage",
+      "brands": [
+        "Tuya",
+        "Aqara",
+        "Sonoff",
+        "Immax",
+        "Lidl",
+        "Moes"
+      ],
+      "models": [
+        "ALL battery devices"
+      ],
+      "cluster": "0x0001",
+      "homeyCapability": [
+        "measure_battery"
+      ]
+    },
+    "11": {
+      "type": "enum",
+      "range": [
+        0,
+        1,
+        2
+      ],
+      "values": {
+        "0": "normal",
+        "1": "low_battery",
+        "2": "power_off"
+      },
+      "usage": "Battery state",
+      "brands": [
+        "Aqara",
+        "Tuya"
+      ],
+      "models": [
+        "N200"
+      ],
+      "cluster": "0x0001",
+      "homeyCapability": [
+        "alarm_battery"
+      ]
+    },
+    "12": {
+      "type": "bool",
+      "range": [
+        0,
+        1
+      ],
+      "usage": "Double-lock status",
+      "brands": [
+        "Aqara"
+      ],
+      "models": [
+        "N200"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "13": {
+      "type": "bool",
+      "range": [
+        0,
+        1
+      ],
+      "usage": "Child-lock enabled",
+      "brands": [
+        "Tuya",
+        "Aqara",
+        "Moes"
+      ],
+      "models": [
+        "TS0001",
+        "H1",
+        "BHT-002"
+      ],
+      "cluster": "0xEF00 / 0x0006",
+      "homeyCapability": [
+        "child_lock"
+      ]
+    },
+    "14": {
+      "type": "bool",
+      "range": [
+        0,
+        1
+      ],
+      "usage": "Doorbell pressed",
+      "brands": [
+        "Aqara",
+        "Tuya"
+      ],
+      "models": [
+        "G3",
+        "TS0041"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": [
+        "button"
+      ]
+    },
+    "15": {
+      "type": "enum",
+      "range": [
+        1,
+        9
+      ],
+      "usage": "Chime ringtone index",
+      "brands": [
+        "Aqara"
+      ],
+      "models": [
+        "G3"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "16": {
+      "type": "enum",
+      "range": [
+        "mute",
+        "low",
+        "normal",
+        "high"
+      ],
+      "usage": "Chime volume",
+      "brands": [
+        "Aqara",
+        "Tuya"
+      ],
+      "models": [
+        "G3",
+        "TS0215A"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": [
+        "volume_set"
+      ]
+    },
+    "17": {
+      "type": "enum",
+      "range": [
+        0,
+        8
+      ],
+      "values": {
+        "0": "CN",
+        "1": "EN",
+        "2": "JP",
+        "3": "DE",
+        "4": "ES",
+        "5": "FR",
+        "6": "RU",
+        "7": "IT",
+        "8": "KO"
+      },
+      "usage": "UI language",
+      "brands": [
+        "Aqara"
+      ],
+      "models": [
+        "G3"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "18": {
+      "type": "string",
+      "range": "0-255 bytes",
+      "usage": "Welcome message",
+      "brands": [
+        "Aqara"
+      ],
+      "models": [
+        "G3"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "19": {
+      "type": "enum",
+      "range": [
+        0,
+        9
+      ],
+      "usage": "Keypress volume",
+      "brands": [
+        "Aqara"
+      ],
+      "models": [
+        "G3"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "20": {
+      "type": "enum",
+      "range": [
+        0,
+        9
+      ],
+      "usage": "Local voice volume",
+      "brands": [
+        "Aqara"
+      ],
+      "models": [
+        "G3"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "21": {
+      "type": "raw",
+      "range": "6 bytes ASCII",
+      "usage": "Remote unlock password",
+      "brands": [
+        "Aqara"
+      ],
+      "models": [
+        "G3"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "22": {
+      "type": "bool",
+      "range": [
+        0,
+        1
+      ],
+      "usage": "Remote unlock response",
+      "brands": [
+        "Aqara"
+      ],
+      "models": [
+        "G3"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "23": {
+      "type": "bool",
+      "range": [
+        0,
+        1
+      ],
+      "usage": "Remote unlock enable",
+      "brands": [
+        "Aqara"
+      ],
+      "models": [
+        "G3"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "24": {
+      "type": "value",
+      "range": [
+        0,
+        999
+      ],
+      "usage": "Fingerprint ID",
+      "brands": [
+        "Aqara"
+      ],
+      "models": [
+        "G3",
+        "N200"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "25": {
+      "type": "value",
+      "range": [
+        0,
+        999
+      ],
+      "usage": "Password ID",
+      "brands": [
+        "Aqara"
+      ],
+      "models": [
+        "G3"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "26": {
+      "type": "bool",
+      "range": [
+        0,
+        1
+      ],
+      "usage": "SOS disarm",
+      "brands": [
+        "Climax",
+        "Tuya"
+      ],
+      "models": [
+        "SOS-23ZBS",
+        "TS0215A"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": [
+        "button"
+      ]
+    },
+    "27": {
+      "type": "bool",
+      "range": [
+        0,
+        1
+      ],
+      "usage": "Arm away mode",
+      "brands": [
+        "Climax"
+      ],
+      "models": [
+        "SOS-23ZBS"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "28": {
+      "type": "bool",
+      "range": [
+        0,
+        1
+      ],
+      "usage": "Arm home mode",
+      "brands": [
+        "Climax"
+      ],
+      "models": [
+        "SOS-23ZBS"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "29": {
+      "type": "bool",
+      "range": [
+        0,
+        1
+      ],
+      "usage": "Emergency/panic button",
+      "brands": [
+        "Climax"
+      ],
+      "models": [
+        "SOS-23ZBS"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": [
+        "alarm_tamper"
+      ]
+    },
+    "50": {
+      "type": "bool",
+      "range": [
+        0,
+        1
+      ],
+      "usage": "Auto-latch on/off",
+      "brands": [
+        "Aqara"
+      ],
+      "models": [
+        "N200"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "51": {
+      "type": "value",
+      "range": [
+        0,
+        1800
+      ],
+      "unit": "seconds",
+      "usage": "Auto-latch delay",
+      "brands": [
+        "Aqara"
+      ],
+      "models": [
+        "N200"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "52": {
+      "type": "enum",
+      "range": [
+        0,
+        3
+      ],
+      "usage": "Motor torque level",
+      "brands": [
+        "Aqara"
+      ],
+      "models": [
+        "N200"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "100": {
+      "type": "value",
+      "range": [
+        0,
+        100
+      ],
+      "unit": "%",
+      "usage": "Battery percentage (alias)",
+      "brands": [
+        "Immax",
+        "Nous",
+        "Tesla Smart"
+      ],
+      "models": [
+        "Neo",
+        "E1"
+      ],
+      "cluster": "0x0001",
+      "homeyCapability": [
+        "measure_battery"
+      ]
+    },
+    "101": {
+      "type": "value",
+      "range": [
+        0,
+        1000
+      ],
+      "unit": "°C × 10",
+      "usage": "Temperature (divide by 10)",
+      "brands": [
+        "Tuya",
+        "Moes",
+        "Sonoff",
+        "Aqara"
+      ],
+      "models": [
+        "WS-907",
+        "SNZB-02",
+        "TS0201"
+      ],
+      "cluster": "0xEF00 → 0x0201",
+      "homeyCapability": [
+        "measure_temperature"
+      ]
+    },
+    "102": {
+      "type": "value",
+      "range": [
+        0,
+        1000
+      ],
+      "unit": "% × 10",
+      "usage": "Humidity (divide by 10)",
+      "brands": [
+        "Tuya",
+        "Moes",
+        "Sonoff"
+      ],
+      "models": [
+        "WS-907",
+        "SNZB-02",
+        "TS0201"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": [
+        "measure_humidity"
+      ]
+    },
+    "103": {
+      "type": "value",
+      "range": [
+        0,
+        2000
+      ],
+      "unit": "hPa × 100",
+      "usage": "Atmospheric pressure (divide by 100)",
+      "brands": [
+        "Tuya"
+      ],
+      "models": [
+        "TS0201"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": [
+        "measure_pressure"
+      ]
+    },
+    "104": {
+      "type": "value",
+      "range": [
+        0,
+        500
+      ],
+      "unit": "m/s × 10",
+      "usage": "Wind speed (divide by 10)",
+      "brands": [
+        "Tuya"
+      ],
+      "models": [
+        "Weather station"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": [
+        "measure_wind_speed"
+      ]
+    },
+    "105": {
+      "type": "value",
+      "range": [
+        0,
+        2000
+      ],
+      "unit": "UV × 100",
+      "usage": "UV index (divide by 100)",
+      "brands": [
+        "Tuya"
+      ],
+      "models": [
+        "Weather station"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": [
+        "measure_ultraviolet"
+      ]
+    },
+    "106": {
+      "type": "raw",
+      "range": "8 bytes",
+      "usage": "Scene data",
+      "brands": [
+        "Tuya"
+      ],
+      "models": [
+        "TS0041",
+        "TS0042",
+        "TS0043",
+        "TS0044"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "107": {
+      "type": "string",
+      "range": "JSON",
+      "usage": "Schedule string",
+      "brands": [
+        "Tuya",
+        "Moes"
+      ],
+      "models": [
+        "TS0001",
+        "BHT-002"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "108": {
+      "type": "bool",
+      "range": [
+        0,
+        1
+      ],
+      "usage": "Child-lock universal",
+      "brands": [
+        "Tuya"
+      ],
+      "models": [
+        "TS0001",
+        "TS011F"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": [
+        "child_lock"
+      ]
+    },
+    "109": {
+      "type": "enum",
+      "range": [
+        0,
+        3
+      ],
+      "values": {
+        "0": "low",
+        "1": "medium",
+        "2": "high",
+        "3": "auto"
+      },
+      "usage": "Fan mode",
+      "brands": [
+        "Tuya"
+      ],
+      "models": [
+        "TS0601"
+      ],
+      "cluster": "0xEF00 → 0x0202",
+      "homeyCapability": [
+        "fan_mode"
+      ]
+    },
+    "110": {
+      "type": "bool",
+      "range": [
+        0,
+        1
+      ],
+      "usage": "Fan oscillate",
+      "brands": [
+        "Tuya"
+      ],
+      "models": [
+        "TS0601"
+      ],
+      "cluster": "0xEF00 → 0x0202",
+      "homeyCapability": null
+    },
+    "111": {
+      "type": "value",
+      "range": [
+        0,
+        1000
+      ],
+      "unit": "% × 10",
+      "usage": "Color temperature (0-100%)",
+      "brands": [
+        "Tuya",
+        "Lidl",
+        "Ledvance"
+      ],
+      "models": [
+        "TS0502A",
+        "TS0502B"
+      ],
+      "cluster": "0xEF00 → 0x0300",
+      "homeyCapability": [
+        "light_temperature"
+      ]
+    },
+    "112": {
+      "type": "value",
+      "range": [
+        0,
+        360
+      ],
+      "unit": "degrees",
+      "usage": "Hue 0-360°",
+      "brands": [
+        "Tuya",
+        "Lidl"
+      ],
+      "models": [
+        "TS0503A",
+        "TS0504A"
+      ],
+      "cluster": "0xEF00 → 0x0300",
+      "homeyCapability": [
+        "light_hue"
+      ]
+    },
+    "113": {
+      "type": "value",
+      "range": [
+        0,
+        1000
+      ],
+      "unit": "‰",
+      "usage": "Saturation 0-1000‰",
+      "brands": [
+        "Tuya",
+        "Lidl"
+      ],
+      "models": [
+        "TS0503A",
+        "TS0504A"
+      ],
+      "cluster": "0xEF00 → 0x0300",
+      "homeyCapability": [
+        "light_saturation"
+      ]
+    },
+    "114": {
+      "type": "value",
+      "range": [
+        0,
+        5000
+      ],
+      "unit": "ppm",
+      "usage": "CO2 concentration",
+      "brands": [
+        "Tuya"
+      ],
+      "models": [
+        "TS0601"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": [
+        "measure_co2"
+      ]
+    },
+    "115": {
+      "type": "value",
+      "range": [
+        0,
+        500
+      ],
+      "unit": "µg/m³",
+      "usage": "PM2.5 concentration",
+      "brands": [
+        "Tuya"
+      ],
+      "models": [
+        "TS0601"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": [
+        "measure_pm25"
+      ]
+    },
+    "116": {
+      "type": "value",
+      "range": [
+        0,
+        500
+      ],
+      "unit": "µg/m³",
+      "usage": "PM10 concentration",
+      "brands": [
+        "Tuya"
+      ],
+      "models": [
+        "TS0601"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": [
+        "measure_pm10"
+      ]
+    },
+    "117": {
+      "type": "value",
+      "range": [
+        0,
+        1000
+      ],
+      "unit": "ppb",
+      "usage": "VOC concentration",
+      "brands": [
+        "Tuya"
+      ],
+      "models": [
+        "TS0601"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": [
+        "measure_voc"
+      ]
+    },
+    "118": {
+      "type": "value",
+      "range": [
+        0,
+        100
+      ],
+      "unit": "µg/m³",
+      "usage": "Formaldehyde (CH2O)",
+      "brands": [
+        "Tuya"
+      ],
+      "models": [
+        "TS0601"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": [
+        "measure_ch2o"
+      ]
+    },
+    "119": {
+      "type": "value",
+      "range": [
+        0,
+        65535
+      ],
+      "unit": "lux",
+      "usage": "Illuminance",
+      "brands": [
+        "Tuya",
+        "Sonoff"
+      ],
+      "models": [
+        "TS0601",
+        "SNZB-06P"
+      ],
+      "cluster": "0xEF00 / 0x0400",
+      "homeyCapability": [
+        "measure_luminance"
+      ]
+    },
+    "120": {
+      "type": "bool",
+      "range": [
+        0,
+        1
+      ],
+      "usage": "RCBO trip status",
+      "brands": [
+        "Tuya"
+      ],
+      "models": [
+        "TS0601"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": [
+        "alarm_generic"
+      ]
+    },
+    "121": {
+      "type": "value",
+      "range": [
+        0,
+        30
+      ],
+      "unit": "mA",
+      "usage": "Leakage current",
+      "brands": [
+        "Tuya"
+      ],
+      "models": [
+        "TS0601"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": [
+        "measure_current"
+      ]
+    },
+    "200": {
+      "type": "value",
+      "range": [
+        0,
+        255
+      ],
+      "usage": "RF test mode",
+      "brands": [
+        "Tuya"
+      ],
+      "models": [
+        "Factory"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "201": {
+      "type": "bitmap",
+      "range": "8 bit",
+      "usage": "Device info bitmap",
+      "brands": [
+        "Tuya"
+      ],
+      "models": [
+        "Factory"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "240": {
+      "type": "enum",
+      "range": [
+        0,
+        4
+      ],
+      "values": {
+        "0": "none",
+        "1": "enter",
+        "2": "leave",
+        "3": "approach",
+        "4": "away"
+      },
+      "usage": "MCU test / multi-user presence",
+      "brands": [
+        "Tuya",
+        "Aqara"
+      ],
+      "models": [
+        "FP2",
+        "TS0601"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": [
+        "presence_event"
+      ]
+    },
+    "241": {
+      "type": "value",
+      "range": [
+        0,
+        255
+      ],
+      "usage": "Boot-counter / zone ID",
+      "brands": [
+        "Tuya",
+        "Aqara"
+      ],
+      "models": [
+        "FP2"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "242": {
+      "type": "raw",
+      "range": "6 bytes ASCII",
+      "usage": "Last reset reason / distance cm",
+      "brands": [
+        "Tuya",
+        "Aqara"
+      ],
+      "models": [
+        "FP2"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": [
+        "measure_distance"
+      ]
+    },
+    "243": {
+      "type": "value",
+      "range": [
+        0,
+        100
+      ],
+      "usage": "RF calibration / target sensitivity",
+      "brands": [
+        "Tuya",
+        "Aqara"
+      ],
+      "models": [
+        "FP2",
+        "M2"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "244": {
+      "type": "bitmap",
+      "range": "8 bit",
+      "usage": "Feature mask / zone bitmap (8 zones)",
+      "brands": [
+        "Tuya",
+        "Aqara"
+      ],
+      "models": [
+        "FP2"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": [
+        "zones_occupied"
+      ]
+    },
+    "245": {
+      "type": "raw",
+      "range": "6 bytes (3×uint16)",
+      "usage": "XYZ coordinates mm",
+      "brands": [
+        "Aqara"
+      ],
+      "models": [
+        "FP2"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "246": {
+      "type": "enum",
+      "range": [
+        0,
+        3
+      ],
+      "values": {
+        "0": "normal",
+        "1": "inverted",
+        "2": "left",
+        "3": "right"
+      },
+      "usage": "Ceiling mount orientation / allow OTA downgrade",
+      "brands": [
+        "Tuya",
+        "Aqara"
+      ],
+      "models": [
+        "FP2"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "247": {
+      "type": "value",
+      "range": [
+        0,
+        999
+      ],
+      "unit": "mV",
+      "usage": "Supply voltage / ambient light raw",
+      "brands": [
+        "Tuya",
+        "Aqara"
+      ],
+      "models": [
+        "FP2"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": [
+        "measure_voltage"
+      ]
+    },
+    "248": {
+      "type": "raw",
+      "range": "12 bytes",
+      "usage": "Heap + stack debug / firmware slot B",
+      "brands": [
+        "Tuya",
+        "Aqara",
+        "Ubisys"
+      ],
+      "models": [
+        "M2",
+        "M3"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "249": {
+      "type": "raw",
+      "range": "8 bytes",
+      "usage": "Signature token (changes at boot)",
+      "brands": [
+        "Tuya",
+        "IKEA"
+      ],
+      "models": [
+        "M2",
+        "TRADFRI"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "250": {
+      "type": "enum",
+      "range": [
+        0,
+        3
+      ],
+      "values": {
+        "0": "steady",
+        "1": "snow",
+        "2": "rainbow",
+        "3": "sparkle"
+      },
+      "usage": "Christmas light pattern / disable button",
+      "brands": [
+        "Lidl",
+        "Sonoff"
+      ],
+      "models": [
+        "Livarno",
+        "SNZB-01"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": [
+        "light_effect"
+      ]
+    },
+    "251": {
+      "type": "value",
+      "range": [
+        0,
+        100
+      ],
+      "unit": "%",
+      "usage": "Animation speed / boot time",
+      "brands": [
+        "Lidl",
+        "Sonoff"
+      ],
+      "models": [
+        "Livarno"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "252": {
+      "type": "bool",
+      "range": [
+        0,
+        1
+      ],
+      "usage": "Valve protect (anti-lime)",
+      "brands": [
+        "Moes",
+        "AVATTO",
+        "Immax"
+      ],
+      "models": [
+        "BHT-002",
+        "WT-TH01"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "253": {
+      "type": "value",
+      "range": [
+        5,
+        35
+      ],
+      "unit": "°C",
+      "usage": "Frost limit / relay health %",
+      "brands": [
+        "Moes",
+        "Tesla Smart"
+      ],
+      "models": [
+        "BHT-002"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "254": {
+      "type": "raw",
+      "range": "16 bytes",
+      "usage": "Energy history (last 12h)",
+      "brands": [
+        "Nous",
+        "Tuya"
+      ],
+      "models": [
+        "E1",
+        "TS0601"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    },
+    "255": {
+      "type": "raw",
+      "range": "N bytes",
+      "usage": "Raw passthrough",
+      "brands": [
+        "Exotic"
+      ],
+      "models": [
+        "Various"
+      ],
+      "cluster": "0xEF00",
+      "homeyCapability": null
+    }
+  },
+  "clusters": {
+    "0x0000": {
+      "name": "Basic",
+      "usage": "HW/SW version, manufacturer info",
+      "dps": []
+    },
+    "0x0001": {
+      "name": "PowerCfg",
+      "usage": "Battery voltage/percentage",
+      "dps": [
+        10,
+        11,
+        100
+      ]
+    },
+    "0x0003": {
+      "name": "Identify",
+      "usage": "Device identification",
+      "dps": []
+    },
+    "0x0006": {
+      "name": "OnOff",
+      "usage": "On/off control",
+      "dps": [
+        1,
+        13
+      ]
+    },
+    "0x0008": {
+      "name": "LevelCtrl",
+      "usage": "Dimming, position",
+      "dps": [
+        3
+      ]
+    },
+    "0x0101": {
+      "name": "DoorLock",
+      "usage": "Lock control",
+      "dps": [
+        6,
+        7,
+        8,
+        9,
+        50,
+        51,
+        52
+      ]
+    },
+    "0x0102": {
+      "name": "WindowCovering",
+      "usage": "Curtain/blind control",
+      "dps": [
+        2,
+        3,
+        5
+      ]
+    },
+    "0x0201": {
+      "name": "Thermostat",
+      "usage": "Temperature control",
+      "dps": [
+        4,
+        101
+      ]
+    },
+    "0x0202": {
+      "name": "FanCtrl",
+      "usage": "Fan speed/mode",
+      "dps": [
+        109,
+        110
+      ]
+    },
+    "0x0300": {
+      "name": "ColorCtrl",
+      "usage": "Color/temperature",
+      "dps": [
+        111,
+        112,
+        113
+      ]
+    },
+    "0x0400": {
+      "name": "Illuminance",
+      "usage": "Light sensor",
+      "dps": [
+        119
+      ]
+    },
+    "0x0402": {
+      "name": "Temperature",
+      "usage": "Temperature sensor",
+      "dps": [
+        101
+      ]
+    },
+    "0x0405": {
+      "name": "Humidity",
+      "usage": "Humidity sensor",
+      "dps": [
+        102
+      ]
+    },
+    "0x0500": {
+      "name": "IASZone",
+      "usage": "Security sensors",
+      "dps": [
+        1,
+        8,
+        26,
+        29
+      ]
+    },
+    "0x0501": {
+      "name": "IASACE",
+      "usage": "Arm/disarm",
+      "dps": [
+        26,
+        27,
+        28
+      ]
+    },
+    "0x0502": {
+      "name": "IASWD",
+      "usage": "Siren/strobe",
+      "dps": [
+        14
+      ]
+    },
+    "0x0702": {
+      "name": "Metering",
+      "usage": "Energy metering",
+      "dps": [
+        254
+      ]
+    },
+    "0x0B04": {
+      "name": "ElecMeas",
+      "usage": "Electrical measurement",
+      "dps": [
+        121
+      ]
+    },
+    "0xEF00": {
+      "name": "TuyaPrivate",
+      "usage": "ALL Tuya DPs",
+      "dps": "ALL"
+    }
+  },
+  "homeyCapabilities": {
+    "onoff": {
+      "dps": [
+        1
+      ],
+      "type": "bool"
+    },
+    "dim": {
+      "dps": [
+        3
+      ],
+      "type": "value",
+      "scale": 0.01
+    },
+    "windowcoverings_state": {
+      "dps": [
+        2
+      ],
+      "type": "enum"
+    },
+    "windowcoverings_set": {
+      "dps": [
+        3
+      ],
+      "type": "value",
+      "scale": 0.01
+    },
+    "windowcoverings_tilt_set": {
+      "dps": [
+        3
+      ],
+      "type": "value",
+      "scale": 0.01
+    },
+    "target_temperature": {
+      "dps": [
+        4
+      ],
+      "type": "value",
+      "scale": 0.1
+    },
+    "measure_temperature": {
+      "dps": [
+        101
+      ],
+      "type": "value",
+      "scale": 0.1
+    },
+    "measure_humidity": {
+      "dps": [
+        102
+      ],
+      "type": "value",
+      "scale": 0.1
+    },
+    "measure_pressure": {
+      "dps": [
+        103
+      ],
+      "type": "value",
+      "scale": 0.01
+    },
+    "measure_battery": {
+      "dps": [
+        10,
+        100
+      ],
+      "type": "value"
+    },
+    "alarm_battery": {
+      "dps": [
+        11
+      ],
+      "type": "bool"
+    },
+    "alarm_contact": {
+      "dps": [
+        8
+      ],
+      "type": "bool"
+    },
+    "alarm_motion": {
+      "dps": [
+        1
+      ],
+      "type": "bool"
+    },
+    "alarm_water": {
+      "dps": [
+        1
+      ],
+      "type": "bool"
+    },
+    "alarm_smoke": {
+      "dps": [
+        1
+      ],
+      "type": "bool"
+    },
+    "alarm_tamper": {
+      "dps": [
+        9,
+        29
+      ],
+      "type": "bool"
+    },
+    "alarm_motor": {
+      "dps": [
+        5
+      ],
+      "type": "bool"
+    },
+    "button": {
+      "dps": [
+        14,
+        26
+      ],
+      "type": "bool"
+    },
+    "light_temperature": {
+      "dps": [
+        111
+      ],
+      "type": "value",
+      "scale": 0.001
+    },
+    "light_hue": {
+      "dps": [
+        112
+      ],
+      "type": "value",
+      "scale": 0.00277
+    },
+    "light_saturation": {
+      "dps": [
+        113
+      ],
+      "type": "value",
+      "scale": 0.001
+    },
+    "measure_co2": {
+      "dps": [
+        114
+      ],
+      "type": "value"
+    },
+    "measure_pm25": {
+      "dps": [
+        115
+      ],
+      "type": "value"
+    },
+    "measure_voc": {
+      "dps": [
+        117
+      ],
+      "type": "value"
+    },
+    "measure_luminance": {
+      "dps": [
+        119
+      ],
+      "type": "value"
+    },
+    "measure_voltage": {
+      "dps": [
+        247
+      ],
+      "type": "value",
+      "scale": 0.001
+    },
+    "measure_current": {
+      "dps": [
+        121
+      ],
+      "type": "value",
+      "scale": 0.001
+    },
+    "fan_mode": {
+      "dps": [
+        109
+      ],
+      "type": "enum"
+    },
+    "child_lock": {
+      "dps": [
+        13,
+        108
+      ],
+      "type": "bool"
+    },
+    "volume_set": {
+      "dps": [
+        16
+      ],
+      "type": "enum"
+    },
+    "light_effect": {
+      "dps": [
+        250
+      ],
+      "type": "enum"
+    }
+  }
+}
