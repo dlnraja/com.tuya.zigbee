@@ -1,4 +1,8 @@
 {
+  "5.3.22": {
+    "en": "🔋 v5.3.22 - Battery on ALL Drivers (Intelligent Hybrid)\n\n**Philosophy:**\nAll drivers are INTELLIGENT HYBRIDS - battery capabilities by DEFAULT.\nThe smart power detection will REMOVE battery if device is AC/DC powered.\n\n**Added to 32 drivers:**\n- Switches: wall 5-8 gang, plug 1/2\n- Lights: bulbs (dimmable, RGB, RGBW, white), LED controllers, strips\n- Energy: meters, plugs, power monitors\n- Climate: thermostats, smart heater\n- Other: valves, curtain tilt, zigbee_universal\n\n**How it works:**\n1. Device pairs → Has measure_battery + alarm_battery\n2. Smart detection runs → Detects AC/DC power\n3. If mains-powered → Battery capabilities auto-removed\n4. If battery-powered → Capabilities remain active",
+    "fr": "🔋 v5.3.22 - Batterie sur TOUS les drivers\n\n- Philosophie: drivers hybrides intelligents\n- 32 drivers mis à jour avec measure_battery + alarm_battery\n- La détection intelligente retire les capabilities si AC/DC"
+  },
   "5.3.21": {
     "en": "💡 v5.3.21 - Battery Status Indicator Hint\n\n**Enhancement:**\nAdded helpful tip in device logs for battery-powered devices:\n\n\"To show battery % on device tile:\nDevice Settings → Status Indicator → Select 'Battery'\"\n\n**Note:**\nThe Status Indicator is a USER setting in Homey - apps cannot set it by default.\nUsers must manually select which capability to show on the device tile.",
     "fr": "💡 v5.3.21 - Conseil Indicateur Batterie\n\n- Conseil ajouté dans les logs: Device Settings → Status Indicator → Battery\n- L'indicateur d'état est un choix utilisateur, pas configurable par l'app"

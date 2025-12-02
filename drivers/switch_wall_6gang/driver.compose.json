@@ -22,7 +22,9 @@
     "onoff.2",
     "onoff.3",
     "onoff.4",
-    "onoff.5"
+    "onoff.5",
+    "measure_battery",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -60,7 +62,10 @@
   "energy": {
     "approximation": {
       "usageConstant": 0.5
-    }
+    },
+    "batteries": [
+      "OTHER"
+    ]
   },
   "zigbee": {
     "manufacturerName": [

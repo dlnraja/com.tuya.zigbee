@@ -9,12 +9,17 @@
     "onoff.1",
     "onoff.2",
     "onoff.3",
-    "onoff.4"
+    "onoff.4",
+    "measure_battery",
+    "alarm_battery"
   ],
   "energy": {
     "approximation": {
       "usageConstant": 0.5
-    }
+    },
+    "batteries": [
+      "OTHER"
+    ]
   },
   "zigbee": {
     "manufacturerName": [
