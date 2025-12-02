@@ -1,0 +1,44 @@
+{
+  "name": {
+    "en": "Scene Switch 3-Gang",
+    "fr": "Interrupteur Scène 3 Boutons"
+  },
+  "class": "button",
+  "capabilities": [
+    "button.1",
+    "button.2",
+    "button.3",
+    "measure_battery"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_gbm10jnj",
+      "_TZ3000_qzjcsmar",
+      "_TZ3000_rrjr1q0u"
+    ],
+    "productId": [
+      "TS0043"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          6
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/scene_switch_3/assets/images/small.png",
+    "large": "drivers/scene_switch_3/assets/images/large.png",
+    "xlarge": "drivers/scene_switch_3/assets/images/xlarge.png"
+  },
+  "id": "scene_switch_3",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}

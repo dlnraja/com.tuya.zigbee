@@ -16,14 +16,13 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "ClimaxTechnology",
       "_TZ3000_nbm3pjii",
-      "_TZ3000_xr3htd96",
-      "ClimaxTechnology"
+      "_TZ3000_xr3htd96"
     ],
     "productId": [
-      "TS0203",
-      "TS0601",
-      "CO-8ZBS"
+      "CO-8ZBS",
+      "TS0601"
     ],
     "endpoints": {
       "1": {

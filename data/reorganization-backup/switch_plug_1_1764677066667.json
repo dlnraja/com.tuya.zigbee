@@ -1,0 +1,45 @@
+{
+  "name": {
+    "en": "Smart Plug 1-Gang",
+    "fr": "Prise Connectée 1 Gang"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "meter_power"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_gjnozsaz",
+      "_TZ3000_3ooaz3ng",
+      "_TZ3000_w0qqde0g"
+    ],
+    "productId": [
+      "TS011F",
+      "TS0121"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6,
+          2820,
+          1794
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/switch_plug_1/assets/images/small.png",
+    "large": "drivers/switch_plug_1/assets/images/large.png",
+    "xlarge": "drivers/switch_plug_1/assets/images/xlarge.png"
+  },
+  "id": "switch_plug_1",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}

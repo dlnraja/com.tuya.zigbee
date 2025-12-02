@@ -48,6 +48,7 @@
       "_TZE200_2se8efxh",
       "_TZE200_3p5ydos3",
       "_TZE200_4mh6tyyo",
+      "_TZE200_5d3vhjro",
       "_TZE200_68nvbio9",
       "_TZE200_6kijc7nd",
       "_TZE200_8viydiwr",
@@ -58,21 +59,20 @@
       "_TZE200_akjefhj5",
       "_TZE200_amp6tsvy",
       "_TZE200_arge1ptm",
+      "_TZE200_auin8mzr",
       "_TZE200_b6wax7g0",
       "_TZE200_bcusnqt8",
       "_TZE200_bjawzodf",
       "_TZE200_bjzrowv2",
       "_TZE200_cf1sl3tj",
-      "_TZE200_m6kdujme",
-      "_TZE200_5d3vhjro",
-      "_TZE200_auin8mzr",
+      "_TZE200_dq1mfjug",
       "_TZE200_ggev5fsl",
-      "_TZE200_yojqa8xn",
-      "_TZE284_aao6qtcs",
+      "_TZE200_m6kdujme",
       "_TZE200_rccxox8p",
       "_TZE200_vzekyi4c",
-      "_TZE200_dq1mfjug",
-      "_TZE204_dq1mfjug"
+      "_TZE200_yojqa8xn",
+      "_TZE204_dq1mfjug",
+      "_TZE284_aao6qtcs"
     ],
     "endpoints": {
       "1": {
@@ -102,11 +102,10 @@
       }
     },
     "productId": [
-      "TS0601",
       "CO-Detector",
-      "Gas-Detector",
       "CO2-Sensor",
-      "TS0205"
+      "Gas-Detector",
+      "TS0601"
     ]
   },
   "settings": [
