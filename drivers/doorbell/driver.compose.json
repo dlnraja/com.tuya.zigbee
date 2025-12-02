@@ -3,11 +3,12 @@
     "en": "Doorbell Doorbell",
     "fr": "Doorbell Doorbell"
   },
-  "class": "sensor",
+  "class": "doorbell",
   "capabilities": [
     "alarm_motion",
     "alarm_contact",
-    "measure_battery"
+    "measure_battery",
+    "alarm_generic"
   ],
   "energy": {
     "batteries": [
@@ -361,5 +362,6 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ]
+  ],
+  "capabilitiesOptions": {}
 }

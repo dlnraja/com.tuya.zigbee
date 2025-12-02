@@ -6,7 +6,11 @@
     "onoff.button4",
     "button.2",
     "button.3",
-    "button.4"
+    "button.4",
+    "onoff",
+    "onoff.1",
+    "onoff.2",
+    "onoff.3"
   ],
   "zigbee": {
     "productId": [
@@ -433,6 +437,21 @@
         "fr": "Batterie"
       },
       "preventInsights": false
+    },
+    "onoff.1": {
+      "title": {
+        "en": "Switch 2"
+      }
+    },
+    "onoff.2": {
+      "title": {
+        "en": "Switch 3"
+      }
+    },
+    "onoff.3": {
+      "title": {
+        "en": "Switch 4"
+      }
     }
   },
   "id": "switch_4gang",
