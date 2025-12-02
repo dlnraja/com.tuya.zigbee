@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.3.21",
+  "version": "5.3.22",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -10760,7 +10760,9 @@
         "measure_co2",
         "measure_temperature",
         "measure_humidity",
-        "alarm_generic"
+        "alarm_generic",
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "measure_co2": {
@@ -10781,7 +10783,10 @@
         "approximation": {
           "usageOn": 1,
           "usageOff": 0.5
-        }
+        },
+        "batteries": [
+          "OTHER"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -11287,12 +11292,17 @@
         "light_saturation",
         "light_temperature",
         "light_mode",
-        "onoff"
+        "onoff",
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "batteries": [
+          "OTHER"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -11605,12 +11615,17 @@
         "light_saturation",
         "light_temperature",
         "light_mode",
-        "onoff"
+        "onoff",
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "batteries": [
+          "OTHER"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -11922,12 +11937,17 @@
         "light_hue",
         "light_saturation",
         "light_temperature",
-        "light_mode"
+        "light_mode",
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "batteries": [
+          "OTHER"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -12281,12 +12301,17 @@
         "light_saturation",
         "light_temperature",
         "light_mode",
-        "onoff"
+        "onoff",
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "batteries": [
+          "OTHER"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -12595,12 +12620,17 @@
         "light_saturation",
         "light_temperature",
         "light_mode",
-        "onoff"
+        "onoff",
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "batteries": [
+          "OTHER"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -18362,7 +18392,9 @@
         "windowcoverings_state",
         "windowcoverings_set",
         "windowcoverings_tilt_set",
-        "alarm_motor"
+        "alarm_motor",
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -18393,7 +18425,12 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "energy": {
+        "batteries": [
+          "OTHER"
+        ]
+      }
     },
     {
       "name": {
@@ -18402,7 +18439,9 @@
       "class": "light",
       "capabilities": [
         "dim",
-        "onoff"
+        "onoff",
+        "measure_battery",
+        "alarm_battery"
       ],
       "platforms": [
         "local"
@@ -18444,6 +18483,11 @@
         "xlarge": "drivers/dimmer_dual_channel/assets/images/xlarge.png",
         "small": "drivers/dimmer_dual_channel/assets/images/small.png"
       },
+      "energy": {
+        "batteries": [
+          "OTHER"
+        ]
+      },
       "id": "dimmer_dual_channel"
     },
     {
@@ -18454,12 +18498,17 @@
       "class": "light",
       "capabilities": [
         "dim",
-        "onoff"
+        "onoff",
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "batteries": [
+          "OTHER"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -19525,7 +19574,9 @@
         "measure_current",
         "measure_power.phase1",
         "measure_power.phase2",
-        "measure_power.phase3"
+        "measure_power.phase3",
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -19575,13 +19626,18 @@
         "measure_co2",
         "measure_temperature",
         "measure_humidity",
-        "measure_pm25"
+        "measure_pm25",
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
           "usageOn": 1,
           "usageOff": 0.5
-        }
+        },
+        "batteries": [
+          "OTHER"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -21452,7 +21508,9 @@
         "onoff",
         "dim",
         "light_temperature",
-        "light_mode"
+        "light_mode",
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -21484,7 +21542,12 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "energy": {
+        "batteries": [
+          "OTHER"
+        ]
+      }
     },
     {
       "name": {
@@ -21498,7 +21561,9 @@
         "light_hue",
         "light_saturation",
         "light_temperature",
-        "light_mode"
+        "light_mode",
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -21531,7 +21596,12 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "energy": {
+        "batteries": [
+          "OTHER"
+        ]
+      }
     },
     {
       "name": {
@@ -21883,12 +21953,17 @@
         "light_saturation",
         "light_temperature",
         "light_mode",
-        "onoff"
+        "onoff",
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "batteries": [
+          "OTHER"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -22198,12 +22273,17 @@
         "light_temperature",
         "light_mode",
         "dim",
-        "onoff"
+        "onoff",
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "batteries": [
+          "OTHER"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -24234,12 +24314,17 @@
         "meter_power",
         "measure_voltage",
         "measure_current",
-        "onoff"
+        "onoff",
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "batteries": [
+          "OTHER"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -24618,13 +24703,18 @@
         "measure_power",
         "meter_power",
         "measure_current",
-        "measure_voltage"
+        "measure_voltage",
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
           "usageOn": 0,
           "usageOff": 0
-        }
+        },
+        "batteries": [
+          "OTHER"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -25137,7 +25227,9 @@
         "measure_power",
         "meter_power",
         "measure_voltage",
-        "measure_current"
+        "measure_current",
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -27081,7 +27173,9 @@
         "onoff",
         "target_temperature",
         "thermostat_mode",
-        "measure_temperature"
+        "measure_temperature",
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -27111,7 +27205,12 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "energy": {
+        "batteries": [
+          "OTHER"
+        ]
+      }
     },
     {
       "name": {
@@ -27125,7 +27224,9 @@
         "measure_power",
         "meter_power",
         "measure_current",
-        "measure_voltage"
+        "measure_voltage",
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -27155,7 +27256,12 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "energy": {
+        "batteries": [
+          "OTHER"
+        ]
+      }
     },
     {
       "name": {
@@ -29846,7 +29952,9 @@
       "capabilities": [
         "onoff",
         "measure_power",
-        "meter_power"
+        "meter_power",
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -29877,7 +29985,12 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "energy": {
+        "batteries": [
+          "OTHER"
+        ]
+      }
     },
     {
       "name": {
@@ -29889,7 +30002,9 @@
         "onoff.1",
         "onoff.2",
         "measure_power",
-        "meter_power"
+        "meter_power",
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -29919,7 +30034,12 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "energy": {
+        "batteries": [
+          "OTHER"
+        ]
+      }
     },
     {
       "name": {
@@ -29932,12 +30052,17 @@
         "onoff.1",
         "onoff.2",
         "onoff.3",
-        "onoff.4"
+        "onoff.4",
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "batteries": [
+          "OTHER"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -30356,7 +30481,9 @@
         "onoff.2",
         "onoff.3",
         "onoff.4",
-        "onoff.5"
+        "onoff.5",
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -30394,7 +30521,10 @@
       "energy": {
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "batteries": [
+          "OTHER"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -30793,7 +30923,9 @@
         "onoff.3",
         "onoff.4",
         "onoff.5",
-        "onoff.6"
+        "onoff.6",
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "onoff.gang2": {
@@ -30857,7 +30989,11 @@
           }
         }
       },
-      "energy": {},
+      "energy": {
+        "batteries": [
+          "OTHER"
+        ]
+      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_4fjiwweb",
@@ -30989,7 +31125,9 @@
         "onoff.4",
         "onoff.5",
         "onoff.6",
-        "onoff.7"
+        "onoff.7",
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "onoff.gang2": {
@@ -31063,7 +31201,11 @@
           }
         }
       },
-      "energy": {},
+      "energy": {
+        "batteries": [
+          "OTHER"
+        ]
+      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_3u4hripk",
@@ -31542,7 +31684,9 @@
         "measure_temperature.2",
         "measure_temperature.3",
         "measure_temperature.4",
-        "thermostat_mode"
+        "thermostat_mode",
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -31572,7 +31716,12 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "energy": {
+        "batteries": [
+          "OTHER"
+        ]
+      }
     },
     {
       "name": {
@@ -31583,7 +31732,9 @@
       "capabilities": [
         "target_temperature",
         "measure_temperature",
-        "thermostat_mode"
+        "thermostat_mode",
+        "measure_battery",
+        "alarm_battery"
       ],
       "platforms": [
         "local"
@@ -31690,6 +31841,11 @@
         "xlarge": "drivers/thermostat_tuya_dp/assets/images/xlarge.png",
         "small": "drivers/thermostat_tuya_dp/assets/images/small.png"
       },
+      "energy": {
+        "batteries": [
+          "OTHER"
+        ]
+      },
       "id": "thermostat_tuya_dp"
     },
     {
@@ -31706,7 +31862,9 @@
         "measure_power",
         "meter_power",
         "measure_voltage",
-        "measure_current"
+        "measure_current",
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -31737,7 +31895,10 @@
       "energy": {
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "batteries": [
+          "OTHER"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -32088,7 +32249,9 @@
         "valve_position.1",
         "valve_position.2",
         "valve_position.3",
-        "valve_position.4"
+        "valve_position.4",
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -32117,7 +32280,12 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "energy": {
+        "batteries": [
+          "OTHER"
+        ]
+      }
     },
     {
       "name": {
@@ -32127,7 +32295,9 @@
       "class": "other",
       "capabilities": [
         "onoff",
-        "valve_position"
+        "valve_position",
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -32158,7 +32328,12 @@
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "energy": {
+        "batteries": [
+          "OTHER"
+        ]
+      }
     },
     {
       "name": {
@@ -33055,9 +33230,15 @@
       },
       "class": "socket",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "measure_battery",
+        "alarm_battery"
       ],
-      "energy": {},
+      "energy": {
+        "batteries": [
+          "OTHER"
+        ]
+      },
       "zigbee": {
         "manufacturerName": [],
         "productId": [

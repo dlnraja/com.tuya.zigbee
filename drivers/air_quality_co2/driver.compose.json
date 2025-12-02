@@ -8,7 +8,9 @@
     "measure_co2",
     "measure_temperature",
     "measure_humidity",
-    "alarm_generic"
+    "alarm_generic",
+    "measure_battery",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "measure_co2": {
@@ -29,7 +31,10 @@
     "approximation": {
       "usageOn": 1,
       "usageOff": 0.5
-    }
+    },
+    "batteries": [
+      "OTHER"
+    ]
   },
   "zigbee": {
     "manufacturerName": [

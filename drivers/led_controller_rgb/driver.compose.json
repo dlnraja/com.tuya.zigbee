@@ -10,7 +10,9 @@
     "light_hue",
     "light_saturation",
     "light_temperature",
-    "light_mode"
+    "light_mode",
+    "measure_battery",
+    "alarm_battery"
   ],
   "zigbee": {
     "manufacturerName": [
@@ -43,5 +45,10 @@
   ],
   "connectivity": [
     "zigbee"
-  ]
+  ],
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
+  }
 }

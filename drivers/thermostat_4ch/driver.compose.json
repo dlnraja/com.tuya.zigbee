@@ -13,7 +13,9 @@
     "measure_temperature.2",
     "measure_temperature.3",
     "measure_temperature.4",
-    "thermostat_mode"
+    "thermostat_mode",
+    "measure_battery",
+    "alarm_battery"
   ],
   "zigbee": {
     "manufacturerName": [
@@ -43,5 +45,10 @@
   ],
   "connectivity": [
     "zigbee"
-  ]
+  ],
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
+  }
 }

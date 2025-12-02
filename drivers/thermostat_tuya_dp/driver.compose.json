@@ -7,7 +7,9 @@
   "capabilities": [
     "target_temperature",
     "measure_temperature",
-    "thermostat_mode"
+    "thermostat_mode",
+    "measure_battery",
+    "alarm_battery"
   ],
   "platforms": [
     "local"
@@ -113,5 +115,10 @@
     "large": "drivers/thermostat_tuya_dp/assets/images/large.png",
     "xlarge": "drivers/thermostat_tuya_dp/assets/images/xlarge.png",
     "small": "drivers/thermostat_tuya_dp/assets/images/small.png"
+  },
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
   }
 }
