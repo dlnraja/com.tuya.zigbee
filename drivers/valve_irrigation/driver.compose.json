@@ -27,11 +27,11 @@
     }
   },
   "images": {
-    "small": "drivers/valve_4/assets/images/small.png",
-    "large": "drivers/valve_4/assets/images/large.png",
-    "xlarge": "drivers/valve_4/assets/images/xlarge.png"
+    "small": "drivers/valve_irrigation/assets/images/small.png",
+    "large": "drivers/valve_irrigation/assets/images/large.png",
+    "xlarge": "drivers/valve_irrigation/assets/images/xlarge.png"
   },
-  "id": "valve_4",
+  "id": "valve_irrigation",
   "platforms": [
     "local"
   ],

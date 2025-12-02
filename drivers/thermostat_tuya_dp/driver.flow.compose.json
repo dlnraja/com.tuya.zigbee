@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "thermostat_ts0601_target_temperature_changed",
+      "id": "thermostat_tuya_dp_target_temperature_changed",
       "title": {
         "en": "Target temperature changed",
         "fr": "Température cible changée"
@@ -19,7 +19,7 @@
       ]
     },
     {
-      "id": "thermostat_ts0601_temperature_changed",
+      "id": "thermostat_tuya_dp_temperature_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée"
@@ -37,7 +37,7 @@
       ]
     },
     {
-      "id": "thermostat_ts0601_mode_changed",
+      "id": "thermostat_tuya_dp_mode_changed",
       "title": {
         "en": "Mode changed",
         "fr": "Mode changé"
@@ -55,14 +55,14 @@
       ]
     },
     {
-      "id": "thermostat_ts0601_heating_started",
+      "id": "thermostat_tuya_dp_heating_started",
       "title": {
         "en": "Heating started",
         "fr": "Chauffage démarré"
       }
     },
     {
-      "id": "thermostat_ts0601_heating_stopped",
+      "id": "thermostat_tuya_dp_heating_stopped",
       "title": {
         "en": "Heating stopped",
         "fr": "Chauffage arrêté"
@@ -71,28 +71,28 @@
   ],
   "conditions": [
     {
-      "id": "thermostat_ts0601_is_heating",
+      "id": "thermostat_tuya_dp_is_heating",
       "title": {
         "en": "Thermostat is !{{heating|not heating}}",
         "fr": "Thermostat !{{chauffe|ne chauffe pas}}"
       }
     },
     {
-      "id": "thermostat_ts0601_temperature_above_target",
+      "id": "thermostat_tuya_dp_temperature_above_target",
       "title": {
         "en": "Temperature is above target",
         "fr": "Température supérieure à la cible"
       }
     },
     {
-      "id": "thermostat_ts0601_temperature_below_target",
+      "id": "thermostat_tuya_dp_temperature_below_target",
       "title": {
         "en": "Temperature is below target",
         "fr": "Température inférieure à la cible"
       }
     },
     {
-      "id": "thermostat_ts0601_mode_is",
+      "id": "thermostat_tuya_dp_mode_is",
       "title": {
         "en": "Mode is",
         "fr": "Mode est"
@@ -141,7 +141,7 @@
   ],
   "actions": [
     {
-      "id": "thermostat_ts0601_set_target_temperature",
+      "id": "thermostat_tuya_dp_set_target_temperature",
       "title": {
         "en": "Set target temperature",
         "fr": "Définir température cible"
@@ -165,7 +165,7 @@
       ]
     },
     {
-      "id": "thermostat_ts0601_set_mode",
+      "id": "thermostat_tuya_dp_set_mode",
       "title": {
         "en": "Set mode",
         "fr": "Définir mode"
@@ -205,7 +205,7 @@
       ]
     },
     {
-      "id": "thermostat_ts0601_increase_temperature",
+      "id": "thermostat_tuya_dp_increase_temperature",
       "title": {
         "en": "Increase temperature",
         "fr": "Augmenter température"
@@ -229,7 +229,7 @@
       ]
     },
     {
-      "id": "thermostat_ts0601_decrease_temperature",
+      "id": "thermostat_tuya_dp_decrease_temperature",
       "title": {
         "en": "Decrease temperature",
         "fr": "Diminuer température"
