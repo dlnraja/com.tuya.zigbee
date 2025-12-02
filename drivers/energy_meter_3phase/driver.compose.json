@@ -11,7 +11,9 @@
     "measure_current",
     "measure_power.phase1",
     "measure_power.phase2",
-    "measure_power.phase3"
+    "measure_power.phase3",
+    "measure_battery",
+    "alarm_battery"
   ],
   "energy": {
     "batteries": [

@@ -8,7 +8,9 @@
     "valve_position.1",
     "valve_position.2",
     "valve_position.3",
-    "valve_position.4"
+    "valve_position.4",
+    "measure_battery",
+    "alarm_battery"
   ],
   "zigbee": {
     "manufacturerName": [
@@ -37,5 +39,10 @@
   ],
   "connectivity": [
     "zigbee"
-  ]
+  ],
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
+  }
 }
