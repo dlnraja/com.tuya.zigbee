@@ -3,11 +3,12 @@
     "en": "Door Controller",
     "fr": "Door Controller"
   },
-  "class": "sensor",
+  "class": "lock",
   "capabilities": [
     "alarm_motion",
     "alarm_contact",
-    "measure_battery"
+    "measure_battery",
+    "locked"
   ],
   "energy": {
     "batteries": [
@@ -340,5 +341,6 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ]
+  ],
+  "capabilitiesOptions": {}
 }

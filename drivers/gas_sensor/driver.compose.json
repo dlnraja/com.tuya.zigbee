@@ -8,7 +8,9 @@
     "alarm_co",
     "alarm_co2",
     "measure_battery",
-    "alarm_contact"],
+    "alarm_contact",
+    "alarm_gas"
+  ],
   "energy": {
     "batteries": [
       "CR2032",
@@ -310,6 +312,6 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ]
+  ],
+  "capabilitiesOptions": {}
 }
-

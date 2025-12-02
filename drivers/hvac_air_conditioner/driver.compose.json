@@ -12,7 +12,8 @@
     "measure_temperature",
     "thermostat_mode",
     "fan_speed",
-    "measure_battery"
+    "measure_battery",
+    "onoff"
   ],
   "capabilitiesOptions": {
     "onoff": {

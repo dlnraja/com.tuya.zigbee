@@ -6,7 +6,10 @@
   "class": "light",
   "capabilities": [
     "dim",
-    "measure_battery"
+    "measure_battery",
+    "onoff",
+    "light_hue",
+    "light_saturation"
   ],
   "energy": {
     "batteries": [
@@ -330,5 +333,6 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ]
+  ],
+  "capabilitiesOptions": {}
 }

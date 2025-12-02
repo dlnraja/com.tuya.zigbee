@@ -2,7 +2,10 @@
   "class": "socket",
   "capabilities": [
     "onoff.gang2",
-    "onoff.gang3"
+    "onoff.gang3",
+    "onoff",
+    "onoff.1",
+    "onoff.2"
   ],
   "zigbee": {
     "productId": [
@@ -374,6 +377,16 @@
         "fr": "Batterie"
       },
       "preventInsights": false
+    },
+    "onoff.1": {
+      "title": {
+        "en": "Switch 2"
+      }
+    },
+    "onoff.2": {
+      "title": {
+        "en": "Switch 3"
+      }
     }
   },
   "id": "switch_3gang",

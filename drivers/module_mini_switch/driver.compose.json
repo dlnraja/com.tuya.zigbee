@@ -9,7 +9,9 @@
     "alarm_generic",
     "measure_power",
     "measure_voltage",
-    "measure_current"
+    "measure_current",
+    "onoff",
+    "meter_power"
   ],
   "energy": {
     "batteries": [
@@ -399,5 +401,6 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ]
+  ],
+  "capabilitiesOptions": {}
 }

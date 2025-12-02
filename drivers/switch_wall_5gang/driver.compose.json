@@ -5,7 +5,11 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "onoff.1",
+    "onoff.2",
+    "onoff.3",
+    "onoff.4"
   ],
   "energy": {
     "approximation": {
@@ -391,5 +395,27 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ]
+  ],
+  "capabilitiesOptions": {
+    "onoff.1": {
+      "title": {
+        "en": "Switch 2"
+      }
+    },
+    "onoff.2": {
+      "title": {
+        "en": "Switch 3"
+      }
+    },
+    "onoff.3": {
+      "title": {
+        "en": "Switch 4"
+      }
+    },
+    "onoff.4": {
+      "title": {
+        "en": "Switch 5"
+      }
+    }
+  }
 }
