@@ -1,0 +1,44 @@
+{
+  "name": {
+    "en": "Smart Plug 2-Gang",
+    "fr": "Prise Connectée 2 Gangs"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff.1",
+    "onoff.2",
+    "measure_power",
+    "meter_power"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_txpirhfq",
+      "_TZ3000_1hwjutgo"
+    ],
+    "productId": [
+      "TS011F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6,
+          2820,
+          1794
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/switch_plug_2/assets/images/small.png",
+    "large": "drivers/switch_plug_2/assets/images/large.png",
+    "xlarge": "drivers/switch_plug_2/assets/images/xlarge.png"
+  },
+  "id": "switch_plug_2",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}

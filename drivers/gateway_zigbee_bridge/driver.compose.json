@@ -22,15 +22,15 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_ksw8qtmt",
-      "_TZ3000_2xlvlnez",
-      "_TZ3000_o1jzcxou",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
       "_TZ3000_1o6x1bl0",
+      "_TZ3000_2xlvlnez",
+      "_TZ3000_akqdg6g7",
       "_TZ3000_gntwytxo",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_ksw8qtmt",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_o1jzcxou",
+      "_TZ3000_ww6drja5",
       "_TZ3000_xyz",
       "_TZ3210_fgwhjm9j",
       "_TZE200_2aaelwxk",
@@ -61,8 +61,6 @@
       "_TZE200_f91miyhj"
     ],
     "productId": [
-      "TS0001",
-      "TS0011",
       "TS0601"
     ],
     "endpoints": {

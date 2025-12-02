@@ -31,13 +31,9 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_ocjlo4ea",
-      "_TZ3000_t6jriawg",
-      "_TZ3000_fxvjhdyl",
-      "_TZ3000_eit7p838",
-      "_TZ3000_85czd6fy",
-      "_TZ3000_0s9gukzt",
+      "ClimaxTechnology",
       "_TZ3000_0hkmcrza",
+      "_TZ3000_0s9gukzt",
       "_TZ3000_1bwpjvlz",
       "_TZ3000_1o6x1bl0",
       "_TZ3000_26fmupbb",
@@ -47,6 +43,7 @@
       "_TZ3000_4uvovz4r",
       "_TZ3000_5k5vh43t",
       "_TZ3000_6zvw8ham",
+      "_TZ3000_85czd6fy",
       "_TZ3000_a33rw7ou",
       "_TZ3000_akqdg6g7",
       "_TZ3000_au2o5e6q",
@@ -55,7 +52,10 @@
       "_TZ3000_bzt33cyu",
       "_TZ3000_c8zfad4a",
       "_TZ3000_cqlnswn0",
+      "_TZ3000_eit7p838",
       "_TZ3000_fllyghyj",
+      "_TZ3000_fxjo6gfe",
+      "_TZ3000_fxvjhdyl",
       "_TZ3000_gntwytxo",
       "_TZ3000_hkcpblrs",
       "_TZ3000_k4ej3ww2",
@@ -69,25 +69,24 @@
       "_TZ3000_nkkl7uzv",
       "_TZ3000_nlsszmzl",
       "_TZ3000_o9f2zqln",
+      "_TZ3000_ocjlo4ea",
       "_TZ3000_okohwwap",
       "_TZ3000_oxslv1c9",
-      "_TZ3000_upgcbody",
-      "_TZ3000_fxjo6gfe",
       "_TZ3000_qdmnmddg",
       "_TZ3000_sq510a",
-      "ClimaxTechnology"
+      "_TZ3000_t6jriawg",
+      "_TZ3000_upgcbody"
     ],
     "productId": [
+      "IH-K665",
+      "SNZB-03",
+      "SQ510A",
       "TS0207",
       "TS0601",
-      "q9mpfhw",
-      "TS0203",
       "WL01",
       "WL02",
-      "IH-K665",
-      "SQ510A",
-      "SNZB-03",
-      "WLS-15ZBS"
+      "WLS-15ZBS",
+      "q9mpfhw"
     ],
     "endpoints": {
       "1": {

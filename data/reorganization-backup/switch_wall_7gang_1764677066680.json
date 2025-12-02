@@ -1,0 +1,194 @@
+{
+  "name": {
+    "en": "Wall Switch 7-Gang",
+    "fr": "Interrupteur mural 7 gangs"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff.gang2",
+    "onoff.gang3",
+    "onoff.gang4",
+    "onoff.gang5",
+    "onoff.gang6",
+    "onoff.gang7",
+    "onoff",
+    "onoff.1",
+    "onoff.2",
+    "onoff.3",
+    "onoff.4",
+    "onoff.5",
+    "onoff.6"
+  ],
+  "capabilitiesOptions": {
+    "onoff.gang2": {
+      "title": {
+        "en": "Gang 2"
+      }
+    },
+    "onoff.gang3": {
+      "title": {
+        "en": "Gang 3"
+      }
+    },
+    "onoff.gang4": {
+      "title": {
+        "en": "Gang 4"
+      }
+    },
+    "onoff.gang5": {
+      "title": {
+        "en": "Gang 5"
+      }
+    },
+    "onoff.gang6": {
+      "title": {
+        "en": "Gang 6"
+      }
+    },
+    "onoff.gang7": {
+      "title": {
+        "en": "Gang 7"
+      }
+    },
+    "onoff.1": {
+      "title": {
+        "en": "Switch 2"
+      }
+    },
+    "onoff.2": {
+      "title": {
+        "en": "Switch 3"
+      }
+    },
+    "onoff.3": {
+      "title": {
+        "en": "Switch 4"
+      }
+    },
+    "onoff.4": {
+      "title": {
+        "en": "Switch 5"
+      }
+    },
+    "onoff.5": {
+      "title": {
+        "en": "Switch 6"
+      }
+    },
+    "onoff.6": {
+      "title": {
+        "en": "Switch 7"
+      }
+    }
+  },
+  "energy": {},
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_4fjiwweb",
+      "_TZ3000_5tqxpine",
+      "_TZ3000_a4xycprs",
+      "_TZ3000_dziaict4",
+      "_TZ3000_ee8nrt2l",
+      "_TZ3000_jcspr0tp",
+      "_TZ3000_kfu8zapd",
+      "_TZ3000_kjfzuycl",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_mh9px7cq",
+      "_TZ3000_u3nv1jwk",
+      "_TZ3000_wkai4ga5",
+      "_TZ3000_xabckq1v"
+    ],
+    "productId": [
+      "TS0007",
+      "TS0044",
+      "TS004F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          61184
+        ]
+      },
+      "2": {
+        "clusters": []
+      },
+      "3": {
+        "clusters": []
+      },
+      "4": {
+        "clusters": []
+      },
+      "5": {
+        "clusters": []
+      },
+      "6": {
+        "clusters": []
+      },
+      "7": {
+        "clusters": []
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "power_on_behavior",
+      "type": "dropdown",
+      "label": {
+        "en": "Power On Behavior"
+      },
+      "value": "previous",
+      "values": [
+        {
+          "id": "previous",
+          "label": {
+            "en": "Previous state"
+          }
+        },
+        {
+          "id": "on",
+          "label": {
+            "en": "Always ON"
+          }
+        },
+        {
+          "id": "off",
+          "label": {
+            "en": "Always OFF"
+          }
+        }
+      ]
+    },
+    {
+      "id": "switch_type",
+      "type": "dropdown",
+      "label": {
+        "en": "Switch Type"
+      },
+      "value": "toggle",
+      "values": [
+        {
+          "id": "toggle",
+          "label": {
+            "en": "Toggle"
+          }
+        },
+        {
+          "id": "state",
+          "label": {
+            "en": "State"
+          }
+        },
+        {
+          "id": "momentary",
+          "label": {
+            "en": "Momentary"
+          }
+        }
+      ]
+    }
+  ],
+  "images": {
+    "small": "drivers/switch_wall_7gang/assets/images/small.png",
+    "large": "drivers/switch_wall_7gang/assets/images/large.png"
+  }
+}
