@@ -1,4 +1,8 @@
 {
+  "5.3.5": {
+    "en": "🎨 v5.3.5 - PROFESSIONAL SVG ICONS - 60 Drivers!\n\n**Icon Design System:**\n- Clean, modern SVG icons for all 60 drivers\n- Color-coded by category\n- Homey design language\n\n**Color Categories:**\n- 🌡️ Sensors: Blues & Cyans (#00BCD4, #2196F3)\n- 💡 Lights: Yellows & Oranges (#FFC107, #FFEB3B)\n- 🔌 Switches/Plugs: Greens (#4CAF50, #8BC34A)\n- 🪟 Curtains: Purples (#9C27B0, #673AB7)\n- 🌡️ Thermostats: Reds (#F44336, #E91E63)\n- 🔔 Security: Reds & Browns (#D32F2F, #795548)\n- 🎛️ Buttons: Gray (#607D8B)\n\n**New Script:**\n- scripts/icons/generate-driver-icons.js\n\n**Total:** 1862 device IDs + 60 professional icons",
+    "fr": "🎨 v5.3.5 - Icônes SVG professionnelles!\n\n- 60 icônes modernes créées\n- Couleurs par catégorie\n- Design cohérent Homey"
+  },
   "5.3.4": {
     "en": "🔍 v5.3.4 - JOHANBENDZ ECOSYSTEM - 1862 IDs!\n\n**Sources Analyzed:**\n- com.tuya.zigbee: ALL branches (SDK3, master, dev)\n- com.philips.hue.zigbee\n- 164 forks scanned\n- 1314 issues (open + closed)\n- 177 PRs (open + closed + merged)\n\n**Added +44 IDs:**\n- switch_1gang: +26 IDs\n- plug_smart: +10 IDs\n- climate_sensor: +8 IDs\n\n**New Scripts:**\n- fetch-johanbendz-ecosystem.js\n- fetch-homey-zigbee-apps.js\n\n**Total:** 1862 device IDs",
     "fr": "🔍 v5.3.4 - Écosystème JohanBendz - 1862 IDs!\n\n- 164 forks analysés\n- 1314 issues + 177 PRs\n- +44 nouveaux IDs\n- Total: 1862 IDs"
