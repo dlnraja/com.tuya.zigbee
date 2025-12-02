@@ -1,4 +1,8 @@
 {
+  "5.3.21": {
+    "en": "💡 v5.3.21 - Battery Status Indicator Hint\n\n**Enhancement:**\nAdded helpful tip in device logs for battery-powered devices:\n\n\"To show battery % on device tile:\nDevice Settings → Status Indicator → Select 'Battery'\"\n\n**Note:**\nThe Status Indicator is a USER setting in Homey - apps cannot set it by default.\nUsers must manually select which capability to show on the device tile.",
+    "fr": "💡 v5.3.21 - Conseil Indicateur Batterie\n\n- Conseil ajouté dans les logs: Device Settings → Status Indicator → Battery\n- L'indicateur d'état est un choix utilisateur, pas configurable par l'app"
+  },
   "5.3.20": {
     "en": "🔘 v5.3.20 - FIX: Long Press Not Working on Tuya Buttons\n\n**Problem:**\nLong press (hold) not detected on TS004F, TS0041-44 buttons. Only single and double click worked.\n\n**Root Cause:**\nTuya buttons use proprietary command 0xFD (253) on onOff cluster:\n- Payload 0x00 = single press\n- Payload 0x01 = double press\n- Payload 0x02 = **long press/hold**\n\nOur code was NOT listening for this command!\n\n**Fix:**\n- Added Tuya 0xFD command detection in ButtonDevice.js\n- Added TUYA_PRESS_TYPES mapping (0-5 → single/double/long)\n- Multiple payload format support\n- Unified scene recall handling\n\n**For TS004F users:**\nTo enable long press, switch device to EVENT mode:\nHold buttons 2+4 for 6 seconds until LED 3 flashes.",
     "fr": "🔘 v5.3.20 - Fix: Long Press boutons Tuya\n\n- Commande Tuya 0xFD ajoutée (single/double/hold)\n- Pour TS004F: maintenir boutons 2+4 pendant 6s pour activer le mode EVENT"
