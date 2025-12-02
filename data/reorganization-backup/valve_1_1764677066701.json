@@ -1,0 +1,42 @@
+{
+  "name": {
+    "en": "Smart Valve 1-Way",
+    "fr": "Vanne Connectée 1 Voie"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "valve_position"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_tvuarksa",
+      "_TZ3000_o4cjetlm"
+    ],
+    "productId": [
+      "TS000A",
+      "TS0001"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6,
+          8
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/valve_1/assets/images/small.png",
+    "large": "drivers/valve_1/assets/images/large.png",
+    "xlarge": "drivers/valve_1/assets/images/xlarge.png"
+  },
+  "id": "valve_1",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}

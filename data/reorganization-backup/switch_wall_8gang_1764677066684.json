@@ -1,0 +1,186 @@
+{
+  "name": {
+    "en": "Wall Switch 8-Gang",
+    "fr": "Interrupteur mural 8 gangs"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff.gang2",
+    "onoff.gang3",
+    "onoff.gang4",
+    "onoff.gang5",
+    "onoff.gang6",
+    "onoff.gang7",
+    "onoff.gang8",
+    "onoff",
+    "onoff.1",
+    "onoff.2",
+    "onoff.3",
+    "onoff.4",
+    "onoff.5",
+    "onoff.6",
+    "onoff.7"
+  ],
+  "capabilitiesOptions": {
+    "onoff.gang2": {
+      "title": {
+        "en": "Gang 2"
+      }
+    },
+    "onoff.gang3": {
+      "title": {
+        "en": "Gang 3"
+      }
+    },
+    "onoff.gang4": {
+      "title": {
+        "en": "Gang 4"
+      }
+    },
+    "onoff.gang5": {
+      "title": {
+        "en": "Gang 5"
+      }
+    },
+    "onoff.gang6": {
+      "title": {
+        "en": "Gang 6"
+      }
+    },
+    "onoff.gang7": {
+      "title": {
+        "en": "Gang 7"
+      }
+    },
+    "onoff.gang8": {
+      "title": {
+        "en": "Gang 8"
+      }
+    },
+    "onoff.1": {
+      "title": {
+        "en": "Switch 2"
+      }
+    },
+    "onoff.2": {
+      "title": {
+        "en": "Switch 3"
+      }
+    },
+    "onoff.3": {
+      "title": {
+        "en": "Switch 4"
+      }
+    },
+    "onoff.4": {
+      "title": {
+        "en": "Switch 5"
+      }
+    },
+    "onoff.5": {
+      "title": {
+        "en": "Switch 6"
+      }
+    },
+    "onoff.6": {
+      "title": {
+        "en": "Switch 7"
+      }
+    },
+    "onoff.7": {
+      "title": {
+        "en": "Switch 8"
+      }
+    }
+  },
+  "energy": {},
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_3u4hripk",
+      "_TZ3000_4fjiwweb",
+      "_TZ3000_4rbqgcuv",
+      "_TZ3000_5ftkaulg",
+      "_TZ3000_6axxqqi2",
+      "_TZ3000_7jx5ypra",
+      "_TZ3000_8n7lqbm0",
+      "_TZ3000_akqdg6g7",
+      "_TZ3000_bzzgvet0",
+      "_TZ3000_cygcaxvv",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_empogkya",
+      "_TZ3000_eqsair32",
+      "_TZ3000_f09j9qjb",
+      "_TZ3000_fdxihpp7",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_hbic3ka3",
+      "_TZ3000_hhiodade",
+      "_TZ3000_imaccztn",
+      "_TZ3000_ji4araar",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_kycczpw8",
+      "_TZ3000_lmcp6b0a",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_lvhy15ix",
+      "_TZ3000_ly9apzky",
+      "_TZ3000_majwnphg",
+      "_TZ3000_mmkbptmx",
+      "_TZ3000_mw1pqqqt",
+      "_TZ3000_5tqxpine",
+      "_TZ3000_a4xycprs",
+      "_TZ3000_dziaict4",
+      "_TZ3000_ee8nrt2l",
+      "_TZ3000_jcspr0tp",
+      "_TZ3000_kfu8zapd",
+      "_TZ3000_kjfzuycl",
+      "_TZ3000_mh9px7cq",
+      "_TZ3000_u3nv1jwk",
+      "_TZ3000_wkai4ga5",
+      "_TZ3000_xabckq1v"
+    ],
+    "productId": [
+      "TS0008",
+      "TS0001",
+      "TS0003",
+      "TS0004",
+      "TS0005",
+      "TS0006",
+      "TS0011",
+      "TS0044",
+      "TS004F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          61184
+        ]
+      },
+      "2": {
+        "clusters": []
+      },
+      "3": {
+        "clusters": []
+      },
+      "4": {
+        "clusters": []
+      },
+      "5": {
+        "clusters": []
+      },
+      "6": {
+        "clusters": []
+      },
+      "7": {
+        "clusters": []
+      },
+      "8": {
+        "clusters": []
+      }
+    }
+  },
+  "settings": [],
+  "images": {
+    "small": "drivers/switch_wall_8gang/assets/images/small.png",
+    "large": "drivers/switch_wall_8gang/assets/images/large.png"
+  }
+}

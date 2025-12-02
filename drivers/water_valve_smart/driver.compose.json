@@ -29,6 +29,7 @@
       "_TZ3000_3dfewsk1",
       "_TZ3000_4qaowtdo",
       "_TZ3000_4uvovz4r",
+      "_TZ3000_5f43h46r",
       "_TZ3000_5k5vh43t",
       "_TZ3000_akqdg6g7",
       "_TZ3000_bfopm9ga",
@@ -49,25 +50,24 @@
       "_TZ3000_ww6drja5",
       "_TZ3000_ww9i3e0y",
       "_TZ3000_xyz",
+      "_TZ3000_yz38gdra",
       "_TZ3210_fgwhjm9j",
       "_TZ3210_tgvtvdoc",
       "_TZE200_2aaelwxk",
       "_TZE200_2ekuz3dz",
       "_TZE200_2se8efxh",
       "_TZE200_3p5ydos3",
-      "_TZE284_wt66haax",
-      "_TZE204_wt66haax",
-      "_TZE200_81isopgh",
-      "_TZE200_htnnfasr",
-      "_TZE200_akjefhj5",
-      "_TZE200_sh1btabb",
-      "_TZE204_81isopgh",
-      "_TZE200_vrjkcam9",
-      "_TZ3000_5f43h46r",
-      "_TZ3000_yz38gdra",
-      "_TZE200_fzo2pocs",
       "_TZE200_5zbp6j0u",
-      "_TZE200_fdtjuw7u"
+      "_TZE200_81isopgh",
+      "_TZE200_akjefhj5",
+      "_TZE200_fdtjuw7u",
+      "_TZE200_fzo2pocs",
+      "_TZE200_htnnfasr",
+      "_TZE200_sh1btabb",
+      "_TZE200_vrjkcam9",
+      "_TZE204_81isopgh",
+      "_TZE204_wt66haax",
+      "_TZE284_wt66haax"
     ],
     "endpoints": {
       "1": {
@@ -92,9 +92,8 @@
       }
     },
     "productId": [
-      "TS0207",
-      "TS0601",
       "SWV01",
+      "TS0601",
       "Valve",
       "Water-Valve"
     ]
