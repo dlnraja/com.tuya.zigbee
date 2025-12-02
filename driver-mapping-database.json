@@ -289,6 +289,11 @@
               "parser": "divide_by_100",
               "unit": "m"
             },
+            "15": {
+              "capability": "measure_battery",
+              "parser": "identity",
+              "unit": "%"
+            },
             "101": {
               "capability": "radar_sensitivity",
               "parser": "identity",
@@ -298,11 +303,6 @@
               "capability": "illuminance_threshold",
               "parser": "identity",
               "unit": "lux"
-            },
-            "15": {
-              "capability": "measure_battery",
-              "parser": "identity",
-              "unit": "%"
             }
           },
           "polling": {
@@ -638,5 +638,406 @@
       "solution": "Pass device.homey as first parameter",
       "fixed_in": "v4.9.322"
     }
+  },
+  "tuyaDpMappings": {
+    "climate_sensor": {
+      "1": {
+        "name": "temperature",
+        "type": "value",
+        "factor": 10,
+        "capability": "measure_temperature"
+      },
+      "2": {
+        "name": "humidity",
+        "type": "value",
+        "capability": "measure_humidity"
+      },
+      "4": {
+        "name": "battery",
+        "type": "value",
+        "capability": "measure_battery"
+      }
+    },
+    "motion_sensor": {
+      "1": {
+        "name": "occupancy",
+        "type": "bool",
+        "capability": "alarm_motion"
+      },
+      "4": {
+        "name": "battery",
+        "type": "value",
+        "capability": "measure_battery"
+      },
+      "9": {
+        "name": "illuminance",
+        "type": "value",
+        "capability": "measure_luminance"
+      },
+      "12": {
+        "name": "sensitivity",
+        "type": "enum",
+        "capability": "motion_sensitivity"
+      }
+    },
+    "motion_sensor_radar_mmwave": {
+      "1": {
+        "name": "presence",
+        "type": "bool",
+        "capability": "alarm_motion"
+      },
+      "2": {
+        "name": "sensitivity",
+        "type": "value",
+        "capability": "radar_sensitivity"
+      },
+      "3": {
+        "name": "minimum_range",
+        "type": "value",
+        "factor": 100,
+        "capability": "radar_min_range"
+      },
+      "4": {
+        "name": "maximum_range",
+        "type": "value",
+        "factor": 100,
+        "capability": "radar_max_range"
+      },
+      "9": {
+        "name": "illuminance",
+        "type": "value",
+        "capability": "measure_luminance"
+      },
+      "101": {
+        "name": "detection_delay",
+        "type": "value",
+        "factor": 10,
+        "capability": "radar_detection_delay"
+      },
+      "102": {
+        "name": "fading_time",
+        "type": "value",
+        "factor": 10,
+        "capability": "radar_fading_time"
+      },
+      "103": {
+        "name": "cli_mode",
+        "type": "enum"
+      },
+      "104": {
+        "name": "temperature",
+        "type": "value",
+        "factor": 10,
+        "capability": "measure_temperature"
+      },
+      "105": {
+        "name": "humidity",
+        "type": "value",
+        "capability": "measure_humidity"
+      },
+      "106": {
+        "name": "self_test",
+        "type": "enum"
+      }
+    },
+    "contact_sensor": {
+      "1": {
+        "name": "contact",
+        "type": "bool",
+        "capability": "alarm_contact"
+      },
+      "4": {
+        "name": "battery",
+        "type": "value",
+        "capability": "measure_battery"
+      }
+    },
+    "curtain_motor": {
+      "1": {
+        "name": "state",
+        "type": "enum",
+        "values": [
+          "open",
+          "stop",
+          "close"
+        ],
+        "capability": "windowcoverings_state"
+      },
+      "2": {
+        "name": "position",
+        "type": "value",
+        "capability": "windowcoverings_set"
+      },
+      "3": {
+        "name": "position",
+        "type": "value",
+        "capability": "windowcoverings_set"
+      },
+      "5": {
+        "name": "direction",
+        "type": "enum",
+        "values": [
+          "forward",
+          "back"
+        ]
+      },
+      "7": {
+        "name": "work_state",
+        "type": "enum",
+        "values": [
+          "opening",
+          "closing"
+        ]
+      }
+    },
+    "switch": {
+      "1": {
+        "name": "state_l1",
+        "type": "bool",
+        "capability": "onoff"
+      },
+      "2": {
+        "name": "state_l2",
+        "type": "bool",
+        "capability": "onoff.1"
+      },
+      "3": {
+        "name": "state_l3",
+        "type": "bool",
+        "capability": "onoff.2"
+      },
+      "4": {
+        "name": "state_l4",
+        "type": "bool",
+        "capability": "onoff.3"
+      },
+      "5": {
+        "name": "state_l5",
+        "type": "bool",
+        "capability": "onoff.4"
+      },
+      "6": {
+        "name": "state_l6",
+        "type": "bool",
+        "capability": "onoff.5"
+      },
+      "7": {
+        "name": "countdown_l1",
+        "type": "value"
+      },
+      "13": {
+        "name": "power_on_behavior_l1",
+        "type": "enum",
+        "values": [
+          "off",
+          "on",
+          "previous"
+        ]
+      }
+    },
+    "dimmer": {
+      "1": {
+        "name": "state",
+        "type": "bool",
+        "capability": "onoff"
+      },
+      "2": {
+        "name": "brightness",
+        "type": "value",
+        "factor": 10,
+        "capability": "dim"
+      },
+      "3": {
+        "name": "min_brightness",
+        "type": "value"
+      },
+      "4": {
+        "name": "max_brightness",
+        "type": "value"
+      },
+      "5": {
+        "name": "mode",
+        "type": "enum",
+        "values": [
+          "white",
+          "color",
+          "scene"
+        ]
+      }
+    },
+    "plug": {
+      "1": {
+        "name": "state",
+        "type": "bool",
+        "capability": "onoff"
+      },
+      "9": {
+        "name": "countdown",
+        "type": "value"
+      },
+      "17": {
+        "name": "current",
+        "type": "value",
+        "factor": 1000,
+        "capability": "measure_current"
+      },
+      "18": {
+        "name": "power",
+        "type": "value",
+        "factor": 10,
+        "capability": "measure_power"
+      },
+      "19": {
+        "name": "voltage",
+        "type": "value",
+        "factor": 10,
+        "capability": "measure_voltage"
+      },
+      "20": {
+        "name": "energy",
+        "type": "value",
+        "factor": 100,
+        "capability": "meter_power"
+      }
+    },
+    "thermostat": {
+      "1": {
+        "name": "state",
+        "type": "bool",
+        "capability": "onoff"
+      },
+      "2": {
+        "name": "mode",
+        "type": "enum",
+        "values": [
+          "auto",
+          "heat",
+          "manual"
+        ]
+      },
+      "16": {
+        "name": "current_heating_setpoint",
+        "type": "value",
+        "factor": 10,
+        "capability": "target_temperature"
+      },
+      "24": {
+        "name": "local_temperature",
+        "type": "value",
+        "factor": 10,
+        "capability": "measure_temperature"
+      },
+      "27": {
+        "name": "local_temperature_calibration",
+        "type": "value",
+        "factor": 10
+      },
+      "40": {
+        "name": "child_lock",
+        "type": "bool"
+      }
+    },
+    "water_leak": {
+      "1": {
+        "name": "water_leak",
+        "type": "bool",
+        "capability": "alarm_water"
+      },
+      "4": {
+        "name": "battery",
+        "type": "value",
+        "capability": "measure_battery"
+      }
+    },
+    "smoke": {
+      "1": {
+        "name": "smoke",
+        "type": "bool",
+        "capability": "alarm_smoke"
+      },
+      "4": {
+        "name": "battery",
+        "type": "value",
+        "capability": "measure_battery"
+      },
+      "14": {
+        "name": "battery_low",
+        "type": "bool",
+        "capability": "alarm_battery"
+      }
+    },
+    "gas": {
+      "1": {
+        "name": "gas",
+        "type": "bool",
+        "capability": "alarm_gas"
+      },
+      "2": {
+        "name": "gas_value",
+        "type": "value"
+      }
+    },
+    "siren": {
+      "1": {
+        "name": "alarm",
+        "type": "bool",
+        "capability": "alarm_generic"
+      },
+      "5": {
+        "name": "volume",
+        "type": "enum",
+        "values": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "7": {
+        "name": "duration",
+        "type": "value"
+      },
+      "13": {
+        "name": "alarm_state",
+        "type": "enum"
+      },
+      "101": {
+        "name": "power",
+        "type": "bool",
+        "capability": "onoff"
+      }
+    }
+  },
+  "exposeToCapability": {
+    "temperature": "measure_temperature",
+    "humidity": "measure_humidity",
+    "soil_moisture": "measure_humidity",
+    "illuminance": "measure_luminance",
+    "illuminance_lux": "measure_luminance",
+    "battery": "measure_battery",
+    "battery_low": "alarm_battery",
+    "occupancy": "alarm_motion",
+    "presence": "alarm_motion",
+    "contact": "alarm_contact",
+    "water_leak": "alarm_water",
+    "smoke": "alarm_smoke",
+    "carbon_monoxide": "alarm_co",
+    "co2": "measure_co2",
+    "gas": "alarm_gas",
+    "power": "measure_power",
+    "voltage": "measure_voltage",
+    "current": "measure_current",
+    "energy": "meter_power",
+    "state": "onoff",
+    "brightness": "dim",
+    "color_temp": "light_temperature",
+    "position": "windowcoverings_set",
+    "target_temperature": "target_temperature",
+    "local_temperature": "measure_temperature",
+    "current_heating_setpoint": "target_temperature",
+    "sensitivity": "radar_sensitivity",
+    "detection_delay": "radar_detection_delay",
+    "fading_time": "radar_fading_time",
+    "minimum_range": "radar_min_range",
+    "maximum_range": "radar_max_range"
   }
 }

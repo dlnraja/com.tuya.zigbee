@@ -5,7 +5,8 @@
   },
   "class": "light",
   "capabilities": [
-    "dim"
+    "dim",
+    "onoff"
   ],
   "energy": {
     "approximation": {
@@ -21,7 +22,7 @@
       "_TZ3000_sfc7ztze",
       "_TZ3000_fjgwfl3z",
       "_TZ3000_sdklhkrs",
-      "_TZB210_wjz9epjd",
+      "_tz3210_wjz9epjd",
       "_TZ3000_7ed9cqgi",
       "_TZ3000_92chsky7",
       "_TZ3000_vzopcetz",
@@ -37,13 +38,9 @@
       "_TZ3210_weaqkhab",
       "_TZ3000_49qchf10",
       "_TZ3000_kdpxju99",
-      "Philips",
-      "Signify Netherlands B.V.",
       "_TZ3000_8kzqqzu4",
       "_TZ3000_qzjcsmar",
       "_TZ3000_rrjr1q0u",
-      "IKEA of Sweden",
-      "IKEA",
       "_TZ3000_kdi2o9m6",
       "_TZ3000_oborybow",
       "_TZ3000_ja5osu5g",
@@ -54,7 +51,7 @@
       "_TZ3210_3mpwqzuu",
       "_TZ3000_zjtxnoft",
       "_TZE204_5cuocqty",
-      "_tzb210_rkgngb5o",
+      "_tz3210_rkgngb5o",
       "_tze200_a0syesf5",
       "_tze200_ykgar0ow",
       "_tze200_0hb4rdnp",
@@ -87,7 +84,9 @@
           5,
           6,
           8,
-          61184
+          61184,
+          "genOnOff",
+          "genLevelCtrl"
         ],
         "bindings": [
           1

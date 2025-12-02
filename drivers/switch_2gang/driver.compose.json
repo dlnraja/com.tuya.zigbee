@@ -4,7 +4,9 @@
     "onoff.gang2",
     "measure_power",
     "measure_voltage",
-    "measure_current"
+    "measure_current",
+    "onoff",
+    "onoff.1"
   ],
   "zigbee": {
     "productId": [
@@ -24,7 +26,8 @@
       "TS0041",
       "TS0042",
       "TS0043",
-      "TS0044"
+      "TS0044",
+      "TS0601"
     ],
     "learnmode": {
       "image": "/drivers/switch_2gang/assets/learnmode.svg",
@@ -33,7 +36,6 @@
       }
     },
     "manufacturerName": [
-      "Shelly",
       "_TZ3000_xk5udnd6",
       "_TZ3000_18ejxno0",
       "_TZ3000_3u4hripk",
@@ -75,7 +77,6 @@
       "_TZ3000_4js6g1cw",
       "_TZ3000_tribakzk",
       "_TZ3000_atp3bews",
-      "_TYZB01_vkwryfdr",
       "_TZ3000_bseed",
       "_TZ3000_kpatq5pq",
       "_TZ3000_kycczpw8",
@@ -102,7 +103,6 @@
       "_TZ3210_fgwhjm9j",
       "_TZ3210_fhx7lk3d",
       "_TZ3210_j4pdtz9v",
-      "lumi.ctrl_ln1",
       "_TZ3000_lmlsduws",
       "_TZ3000_lugaswf8",
       "_TZ3000_mklgayek",
