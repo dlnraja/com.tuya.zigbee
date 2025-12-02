@@ -26,8 +26,9 @@ const CONFIG = {
 };
 
 // Classification rules - Product IDs to Driver mapping
+// Updated: 2025-12-02 - All driver names are UNBRANDED (no product numbers)
 const PRODUCT_RULES = {
-  // Switches by gang count
+  // ============ SWITCHES ============
   'TS0001': 'switch_1gang',
   'TS0011': 'switch_1gang',
   'TS0002': 'switch_2gang',
@@ -36,49 +37,70 @@ const PRODUCT_RULES = {
   'TS0013': 'switch_3gang',
   'TS0004': 'switch_4gang',
   'TS0014': 'switch_4gang',
-  'TS0005': 'switch_4gang', // 5-gang goes to 4gang as fallback
-  'TS0006': 'switch_4gang', // 6-gang goes to 4gang as fallback
+  'TS0005': 'switch_wall_5gang',
+  'TS0006': 'switch_wall_6gang',
 
-  // Buttons/Remotes - MUST go to button drivers
+  // ============ BUTTONS/REMOTES ============
   'TS0041': 'button_wireless_1',
   'TS0042': 'button_wireless_2',
   'TS0043': 'button_wireless_3',
   'TS0044': 'button_wireless_4',
 
-  // Plugs
+  // ============ PLUGS ============
   'TS011F': 'plug_smart',
   'TS0121': 'plug_smart',
   'SP-EUC01': 'plug_smart',
+  'S31ZB': 'plug_smart',
 
-  // Sensors
+  // ============ SENSORS ============
   'TS0201': 'climate_sensor',
   'TS0202': 'motion_sensor',
   'TS0203': 'contact_sensor',
   'TS0205': 'smoke_detector_advanced',
   'TS0207': 'water_leak_sensor',
+  'TS0210': 'vibration_sensor',
 
-  // Covers - TS0601 depends on manufacturer
+  // ============ COVERS ============
   'TS130F': 'curtain_motor',
   'TS0302': 'curtain_motor',
 
-  // Dimmers
+  // ============ DIMMERS ============
   'TS0101': 'dimmer_wall_1gang',
   'TS110F': 'dimmer_wall_1gang',
   'TS110E': 'dimmer_wall_1gang',
+  'TS1101': 'dimmer_dual_channel',
 
-  // RGB Lights
-  'TS0502A': 'bulb_rgbw',
-  'TS0502B': 'bulb_rgbw',
+  // ============ LIGHTS ============
+  'TS0501A': 'bulb_dimmable',
+  'TS0501B': 'bulb_dimmable',
+  'TS0502A': 'bulb_tunable_white',
+  'TS0502B': 'bulb_tunable_white',
   'TS0503A': 'bulb_rgb',
-  'TS0504A': 'led_strip_rgbw',
+  'TS0503B': 'bulb_rgb',
+  'TS0504A': 'bulb_rgbw',
+  'TS0504B': 'led_strip_rgbw',
+  'TS0505A': 'bulb_rgbw',
+  'TS0505B': 'bulb_rgbw',
 
-  // Sonoff/Shelly specific
+  // ============ THERMOSTATS ============
+  // Note: TS0601 depends on manufacturer - see TS0601_PATTERNS
+  'BHT-002': 'thermostat_tuya_dp',
+  'BRT-100': 'thermostat_tuya_dp',
+  'SEA801': 'thermostat_tuya_dp',
+  'ME167': 'thermostat_tuya_dp',
+
+  // ============ VALVES ============
+  'TS0001-valve': 'valve_single',
+
+  // ============ SONOFF/SHELLY ============
   'BASICZBR3': 'switch_1gang',
   'ZBMINI': 'switch_1gang',
   'ZBMINIL2': 'switch_1gang',
-  'S31ZB': 'plug_smart',
   'SHSW-1': 'switch_1gang',
-  'Shelly1': 'switch_1gang'
+  'Shelly1': 'switch_1gang',
+
+  // ============ AIR QUALITY ============
+  'TS0601-air': 'air_quality_comprehensive'
 };
 
 // Manufacturer patterns for TS0601 disambiguation
@@ -137,9 +159,9 @@ function getTS0601Driver(manufacturerName) {
       if (mfr === pattern.toLowerCase()) {
         switch (category) {
           case 'curtain': return 'curtain_motor';
-          case 'thermostat': return 'thermostat_ts0601';
+          case 'thermostat': return 'thermostat_tuya_dp';
           case 'presence': return 'presence_sensor_radar';
-          case 'air_quality': return 'air_quality_co2';
+          case 'air_quality': return 'air_quality_comprehensive';
         }
       }
     }

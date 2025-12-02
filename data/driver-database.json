@@ -1,0 +1,1086 @@
+{
+  "_meta": {
+    "generated": "2025-12-02T12:29:18.354Z",
+    "totalDrivers": 79,
+    "version": "5.3.14",
+    "totalProductIds": 349,
+    "totalManufacturerIds": 3868,
+    "grandTotal": 4217
+  },
+  "drivers": {
+    "air_quality_co2": {
+      "class": "sensor",
+      "capabilities": [
+        "measure_co2",
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_generic"
+      ],
+      "productIdCount": 3,
+      "manufacturerIdCount": 31,
+      "totalIds": 34,
+      "hasIcon": true
+    },
+    "air_quality_comprehensive": {
+      "class": "sensor",
+      "capabilities": [
+        "measure_co2",
+        "measure_pm25",
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery",
+        "alarm_generic",
+        "measure_voc"
+      ],
+      "productIdCount": 3,
+      "manufacturerIdCount": 72,
+      "totalIds": 75,
+      "hasIcon": true
+    },
+    "bulb_dimmable": {
+      "class": "light",
+      "capabilities": [
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode",
+        "onoff"
+      ],
+      "productIdCount": 9,
+      "manufacturerIdCount": 3,
+      "totalIds": 12,
+      "hasIcon": true
+    },
+    "bulb_rgb": {
+      "class": "light",
+      "capabilities": [
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode",
+        "onoff"
+      ],
+      "productIdCount": 4,
+      "manufacturerIdCount": 7,
+      "totalIds": 11,
+      "hasIcon": true
+    },
+    "bulb_rgbw": {
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode"
+      ],
+      "productIdCount": 33,
+      "manufacturerIdCount": 22,
+      "totalIds": 55,
+      "hasIcon": true
+    },
+    "bulb_tunable_white": {
+      "class": "light",
+      "capabilities": [
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode",
+        "onoff"
+      ],
+      "productIdCount": 0,
+      "manufacturerIdCount": 8,
+      "totalIds": 8,
+      "hasIcon": true
+    },
+    "bulb_white": {
+      "class": "light",
+      "capabilities": [
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode",
+        "onoff"
+      ],
+      "productIdCount": 0,
+      "manufacturerIdCount": 8,
+      "totalIds": 8,
+      "hasIcon": true
+    },
+    "button_emergency_sos": {
+      "class": "sensor",
+      "capabilities": [
+        "alarm_generic",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "productIdCount": 2,
+      "manufacturerIdCount": 34,
+      "totalIds": 36,
+      "hasIcon": true
+    },
+    "button_wireless": {
+      "class": "sensor",
+      "capabilities": [
+        "alarm_generic",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "productIdCount": 3,
+      "manufacturerIdCount": 34,
+      "totalIds": 37,
+      "hasIcon": true
+    },
+    "button_wireless_1": {
+      "class": "button",
+      "capabilities": [
+        "button",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "productIdCount": 6,
+      "manufacturerIdCount": 69,
+      "totalIds": 75,
+      "hasIcon": true
+    },
+    "button_wireless_2": {
+      "class": "sensor",
+      "capabilities": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "productIdCount": 1,
+      "manufacturerIdCount": 38,
+      "totalIds": 39,
+      "hasIcon": true
+    },
+    "button_wireless_3": {
+      "class": "sensor",
+      "capabilities": [
+        "measure_battery",
+        "alarm_battery",
+        "alarm_generic"
+      ],
+      "productIdCount": 2,
+      "manufacturerIdCount": 38,
+      "totalIds": 40,
+      "hasIcon": true
+    },
+    "button_wireless_4": {
+      "class": "sensor",
+      "capabilities": [
+        "measure_battery",
+        "alarm_battery",
+        "alarm_generic"
+      ],
+      "productIdCount": 2,
+      "manufacturerIdCount": 48,
+      "totalIds": 50,
+      "hasIcon": true
+    },
+    "button_wireless_6": {
+      "class": "sensor",
+      "capabilities": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "productIdCount": 1,
+      "manufacturerIdCount": 34,
+      "totalIds": 35,
+      "hasIcon": true
+    },
+    "button_wireless_8": {
+      "class": "sensor",
+      "capabilities": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "productIdCount": 0,
+      "manufacturerIdCount": 34,
+      "totalIds": 34,
+      "hasIcon": true
+    },
+    "ceiling_fan": {
+      "class": "fan",
+      "capabilities": [
+        "dim",
+        "measure_battery",
+        "onoff"
+      ],
+      "productIdCount": 1,
+      "manufacturerIdCount": 30,
+      "totalIds": 31,
+      "hasIcon": true
+    },
+    "climate_sensor": {
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "productIdCount": 20,
+      "manufacturerIdCount": 794,
+      "totalIds": 814,
+      "hasIcon": true
+    },
+    "co_sensor": {
+      "class": "sensor",
+      "capabilities": [
+        "alarm_co",
+        "measure_battery"
+      ],
+      "productIdCount": 2,
+      "manufacturerIdCount": 3,
+      "totalIds": 5,
+      "hasIcon": true
+    },
+    "contact_sensor": {
+      "class": "sensor",
+      "capabilities": [
+        "alarm_contact",
+        "measure_battery"
+      ],
+      "productIdCount": 21,
+      "manufacturerIdCount": 92,
+      "totalIds": 113,
+      "hasIcon": true
+    },
+    "curtain_motor": {
+      "class": "curtain",
+      "capabilities": [
+        "windowcoverings_state",
+        "windowcoverings_set",
+        "windowcoverings_tilt_set"
+      ],
+      "productIdCount": 8,
+      "manufacturerIdCount": 82,
+      "totalIds": 90,
+      "hasIcon": true
+    },
+    "curtain_motor_tilt": {
+      "class": "windowcoverings",
+      "capabilities": [
+        "windowcoverings_state",
+        "windowcoverings_set",
+        "windowcoverings_tilt_set",
+        "alarm_motor"
+      ],
+      "productIdCount": 1,
+      "manufacturerIdCount": 2,
+      "totalIds": 3,
+      "hasIcon": true
+    },
+    "dimmer_dual_channel": {
+      "class": "light",
+      "capabilities": [
+        "dim",
+        "onoff"
+      ],
+      "productIdCount": 1,
+      "manufacturerIdCount": 1,
+      "totalIds": 2,
+      "hasIcon": true
+    },
+    "dimmer_wall_1gang": {
+      "class": "light",
+      "capabilities": [
+        "dim",
+        "onoff"
+      ],
+      "productIdCount": 13,
+      "manufacturerIdCount": 43,
+      "totalIds": 56,
+      "hasIcon": true
+    },
+    "door_controller": {
+      "class": "lock",
+      "capabilities": [
+        "alarm_motion",
+        "alarm_contact",
+        "measure_battery",
+        "locked"
+      ],
+      "productIdCount": 3,
+      "manufacturerIdCount": 30,
+      "totalIds": 33,
+      "hasIcon": true
+    },
+    "doorbell": {
+      "class": "doorbell",
+      "capabilities": [
+        "alarm_motion",
+        "alarm_contact",
+        "measure_battery",
+        "alarm_generic"
+      ],
+      "productIdCount": 2,
+      "manufacturerIdCount": 51,
+      "totalIds": 53,
+      "hasIcon": true
+    },
+    "energy_meter_3phase": {
+      "class": "sensor",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current",
+        "measure_power.phase1",
+        "measure_power.phase2",
+        "measure_power.phase3"
+      ],
+      "productIdCount": 1,
+      "manufacturerIdCount": 2,
+      "totalIds": 3,
+      "hasIcon": true
+    },
+    "formaldehyde_sensor": {
+      "class": "sensor",
+      "capabilities": [
+        "measure_co2",
+        "measure_temperature",
+        "measure_humidity",
+        "measure_pm25"
+      ],
+      "productIdCount": 3,
+      "manufacturerIdCount": 4,
+      "totalIds": 7,
+      "hasIcon": true
+    },
+    "gas_detector": {
+      "class": "sensor",
+      "capabilities": [
+        "alarm_generic",
+        "alarm_co",
+        "alarm_co2",
+        "measure_battery",
+        "alarm_gas"
+      ],
+      "productIdCount": 4,
+      "manufacturerIdCount": 40,
+      "totalIds": 44,
+      "hasIcon": true
+    },
+    "gas_sensor": {
+      "class": "sensor",
+      "capabilities": [
+        "alarm_co",
+        "alarm_co2",
+        "measure_battery",
+        "alarm_contact",
+        "alarm_gas"
+      ],
+      "productIdCount": 1,
+      "manufacturerIdCount": 2,
+      "totalIds": 3,
+      "hasIcon": true
+    },
+    "gateway_zigbee_bridge": {
+      "class": "other",
+      "capabilities": [
+        "alarm_generic",
+        "measure_battery"
+      ],
+      "productIdCount": 1,
+      "manufacturerIdCount": 37,
+      "totalIds": 38,
+      "hasIcon": true
+    },
+    "hvac_air_conditioner": {
+      "class": "thermostat",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "thermostat_mode",
+        "fan_speed",
+        "measure_battery",
+        "onoff"
+      ],
+      "productIdCount": 3,
+      "manufacturerIdCount": 5,
+      "totalIds": 8,
+      "hasIcon": true
+    },
+    "hvac_dehumidifier": {
+      "class": "fan",
+      "capabilities": [
+        "target_humidity",
+        "measure_humidity",
+        "measure_temperature",
+        "measure_power",
+        "alarm_water",
+        "measure_battery",
+        "onoff",
+        "target_temperature"
+      ],
+      "productIdCount": 2,
+      "manufacturerIdCount": 11,
+      "totalIds": 13,
+      "hasIcon": true
+    },
+    "led_controller_cct": {
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature",
+        "light_mode"
+      ],
+      "productIdCount": 1,
+      "manufacturerIdCount": 2,
+      "totalIds": 3,
+      "hasIcon": true
+    },
+    "led_controller_rgb": {
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode"
+      ],
+      "productIdCount": 2,
+      "manufacturerIdCount": 2,
+      "totalIds": 4,
+      "hasIcon": true
+    },
+    "led_strip": {
+      "class": "light",
+      "capabilities": [
+        "dim",
+        "measure_battery",
+        "onoff",
+        "light_hue",
+        "light_saturation"
+      ],
+      "productIdCount": 4,
+      "manufacturerIdCount": 21,
+      "totalIds": 25,
+      "hasIcon": true
+    },
+    "led_strip_advanced": {
+      "class": "light",
+      "capabilities": [
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode",
+        "onoff"
+      ],
+      "productIdCount": 1,
+      "manufacturerIdCount": 7,
+      "totalIds": 8,
+      "hasIcon": true
+    },
+    "led_strip_rgbw": {
+      "class": "light",
+      "capabilities": [
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode",
+        "dim",
+        "onoff"
+      ],
+      "productIdCount": 5,
+      "manufacturerIdCount": 62,
+      "totalIds": 67,
+      "hasIcon": true
+    },
+    "lock_smart": {
+      "class": "lock",
+      "capabilities": [
+        "locked",
+        "lock_mode",
+        "measure_battery",
+        "alarm_tamper"
+      ],
+      "productIdCount": 1,
+      "manufacturerIdCount": 32,
+      "totalIds": 33,
+      "hasIcon": true
+    },
+    "module_mini_switch": {
+      "class": "socket",
+      "capabilities": [
+        "measure_battery",
+        "alarm_generic",
+        "measure_power",
+        "measure_voltage",
+        "measure_current",
+        "onoff",
+        "meter_power"
+      ],
+      "productIdCount": 0,
+      "manufacturerIdCount": 42,
+      "totalIds": 42,
+      "hasIcon": true
+    },
+    "motion_sensor": {
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery",
+        "measure_luminance"
+      ],
+      "productIdCount": 28,
+      "manufacturerIdCount": 80,
+      "totalIds": 108,
+      "hasIcon": true
+    },
+    "motion_sensor_radar_mmwave": {
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_temperature",
+        "measure_humidity",
+        "measure_luminance",
+        "measure_battery"
+      ],
+      "productIdCount": 2,
+      "manufacturerIdCount": 55,
+      "totalIds": 57,
+      "hasIcon": true
+    },
+    "plug_energy_monitor": {
+      "class": "socket",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current",
+        "onoff"
+      ],
+      "productIdCount": 5,
+      "manufacturerIdCount": 73,
+      "totalIds": 78,
+      "hasIcon": true
+    },
+    "plug_smart": {
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_current",
+        "measure_voltage"
+      ],
+      "productIdCount": 21,
+      "manufacturerIdCount": 192,
+      "totalIds": 213,
+      "hasIcon": true
+    },
+    "power_meter": {
+      "class": "sensor",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "productIdCount": 0,
+      "manufacturerIdCount": 2,
+      "totalIds": 2,
+      "hasIcon": true
+    },
+    "presence_sensor_radar": {
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_temperature",
+        "measure_humidity",
+        "measure_luminance",
+        "measure_battery"
+      ],
+      "productIdCount": 16,
+      "manufacturerIdCount": 87,
+      "totalIds": 103,
+      "hasIcon": true
+    },
+    "radiator_valve": {
+      "class": "thermostat",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "thermostat_mode",
+        "measure_battery"
+      ],
+      "productIdCount": 13,
+      "manufacturerIdCount": 44,
+      "totalIds": 57,
+      "hasIcon": true
+    },
+    "rain_sensor": {
+      "class": "sensor",
+      "capabilities": [
+        "alarm_water",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "productIdCount": 2,
+      "manufacturerIdCount": 11,
+      "totalIds": 13,
+      "hasIcon": true
+    },
+    "scene_switch_1": {
+      "class": "button",
+      "capabilities": [
+        "button",
+        "measure_battery"
+      ],
+      "productIdCount": 0,
+      "manufacturerIdCount": 3,
+      "totalIds": 3,
+      "hasIcon": true
+    },
+    "scene_switch_2": {
+      "class": "button",
+      "capabilities": [
+        "button.1",
+        "button.2",
+        "measure_battery"
+      ],
+      "productIdCount": 0,
+      "manufacturerIdCount": 3,
+      "totalIds": 3,
+      "hasIcon": true
+    },
+    "scene_switch_3": {
+      "class": "button",
+      "capabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "measure_battery"
+      ],
+      "productIdCount": 0,
+      "manufacturerIdCount": 3,
+      "totalIds": 3,
+      "hasIcon": true
+    },
+    "scene_switch_4": {
+      "class": "button",
+      "capabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4",
+        "measure_battery"
+      ],
+      "productIdCount": 0,
+      "manufacturerIdCount": 3,
+      "totalIds": 3,
+      "hasIcon": true
+    },
+    "scene_switch_6": {
+      "class": "button",
+      "capabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4",
+        "button.5",
+        "button.6",
+        "measure_battery"
+      ],
+      "productIdCount": 1,
+      "manufacturerIdCount": 2,
+      "totalIds": 3,
+      "hasIcon": true
+    },
+    "shutter_roller_controller": {
+      "class": "blinds",
+      "capabilities": [
+        "alarm_generic",
+        "windowcoverings_state",
+        "measure_battery",
+        "windowcoverings_set",
+        "windowcoverings_tilt_set"
+      ],
+      "productIdCount": 1,
+      "manufacturerIdCount": 71,
+      "totalIds": 72,
+      "hasIcon": true
+    },
+    "siren": {
+      "class": "other",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery",
+        "alarm_generic",
+        "onoff"
+      ],
+      "productIdCount": 7,
+      "manufacturerIdCount": 75,
+      "totalIds": 82,
+      "hasIcon": true
+    },
+    "smart_heater": {
+      "class": "heater",
+      "capabilities": [
+        "onoff",
+        "target_temperature",
+        "thermostat_mode",
+        "measure_temperature"
+      ],
+      "productIdCount": 1,
+      "manufacturerIdCount": 2,
+      "totalIds": 3,
+      "hasIcon": true
+    },
+    "smart_rcbo": {
+      "class": "other",
+      "capabilities": [
+        "onoff",
+        "alarm_generic",
+        "measure_power",
+        "meter_power",
+        "measure_current",
+        "measure_voltage"
+      ],
+      "productIdCount": 1,
+      "manufacturerIdCount": 2,
+      "totalIds": 3,
+      "hasIcon": true
+    },
+    "smoke_detector_advanced": {
+      "class": "sensor",
+      "capabilities": [
+        "alarm_smoke",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "productIdCount": 5,
+      "manufacturerIdCount": 58,
+      "totalIds": 63,
+      "hasIcon": true
+    },
+    "soil_sensor": {
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "productIdCount": 5,
+      "manufacturerIdCount": 30,
+      "totalIds": 35,
+      "hasIcon": true
+    },
+    "switch_1gang": {
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "productIdCount": 17,
+      "manufacturerIdCount": 505,
+      "totalIds": 522,
+      "hasIcon": true
+    },
+    "switch_2gang": {
+      "class": "socket",
+      "capabilities": [
+        "onoff.gang2",
+        "measure_power",
+        "measure_voltage",
+        "measure_current",
+        "onoff",
+        "onoff.1"
+      ],
+      "productIdCount": 6,
+      "manufacturerIdCount": 105,
+      "totalIds": 111,
+      "hasIcon": true
+    },
+    "switch_3gang": {
+      "class": "socket",
+      "capabilities": [
+        "onoff.gang2",
+        "onoff.gang3",
+        "onoff",
+        "onoff.1",
+        "onoff.2"
+      ],
+      "productIdCount": 4,
+      "manufacturerIdCount": 51,
+      "totalIds": 55,
+      "hasIcon": true
+    },
+    "switch_4gang": {
+      "class": "socket",
+      "capabilities": [
+        "onoff.button2",
+        "onoff.button3",
+        "onoff.button4",
+        "button.2",
+        "button.3",
+        "button.4",
+        "onoff",
+        "onoff.1",
+        "onoff.2",
+        "onoff.3"
+      ],
+      "productIdCount": 7,
+      "manufacturerIdCount": 82,
+      "totalIds": 89,
+      "hasIcon": true
+    },
+    "switch_plug_1": {
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power"
+      ],
+      "productIdCount": 0,
+      "manufacturerIdCount": 3,
+      "totalIds": 3,
+      "hasIcon": true
+    },
+    "switch_plug_2": {
+      "class": "socket",
+      "capabilities": [
+        "onoff.1",
+        "onoff.2",
+        "measure_power",
+        "meter_power"
+      ],
+      "productIdCount": 0,
+      "manufacturerIdCount": 2,
+      "totalIds": 2,
+      "hasIcon": true
+    },
+    "switch_wall_5gang": {
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.1",
+        "onoff.2",
+        "onoff.3",
+        "onoff.4"
+      ],
+      "productIdCount": 2,
+      "manufacturerIdCount": 52,
+      "totalIds": 54,
+      "hasIcon": true
+    },
+    "switch_wall_6gang": {
+      "class": "socket",
+      "capabilities": [
+        "onoff.switch_2",
+        "onoff.switch_3",
+        "onoff.switch_4",
+        "onoff.switch_5",
+        "onoff.switch_6",
+        "onoff",
+        "onoff.1",
+        "onoff.2",
+        "onoff.3",
+        "onoff.4",
+        "onoff.5"
+      ],
+      "productIdCount": 2,
+      "manufacturerIdCount": 52,
+      "totalIds": 54,
+      "hasIcon": true
+    },
+    "switch_wall_7gang": {
+      "class": "socket",
+      "capabilities": [
+        "onoff.gang2",
+        "onoff.gang3",
+        "onoff.gang4",
+        "onoff.gang5",
+        "onoff.gang6",
+        "onoff.gang7",
+        "onoff",
+        "onoff.1",
+        "onoff.2",
+        "onoff.3",
+        "onoff.4",
+        "onoff.5",
+        "onoff.6"
+      ],
+      "productIdCount": 2,
+      "manufacturerIdCount": 13,
+      "totalIds": 15,
+      "hasIcon": true
+    },
+    "switch_wall_8gang": {
+      "class": "socket",
+      "capabilities": [
+        "onoff.gang2",
+        "onoff.gang3",
+        "onoff.gang4",
+        "onoff.gang5",
+        "onoff.gang6",
+        "onoff.gang7",
+        "onoff.gang8",
+        "onoff",
+        "onoff.1",
+        "onoff.2",
+        "onoff.3",
+        "onoff.4",
+        "onoff.5",
+        "onoff.6",
+        "onoff.7"
+      ],
+      "productIdCount": 2,
+      "manufacturerIdCount": 41,
+      "totalIds": 43,
+      "hasIcon": true
+    },
+    "switch_wireless": {
+      "class": "sensor",
+      "capabilities": [
+        "alarm_generic",
+        "measure_battery"
+      ],
+      "productIdCount": 2,
+      "manufacturerIdCount": 61,
+      "totalIds": 63,
+      "hasIcon": true
+    },
+    "thermostat_4ch": {
+      "class": "thermostat",
+      "capabilities": [
+        "target_temperature.1",
+        "target_temperature.2",
+        "target_temperature.3",
+        "target_temperature.4",
+        "measure_temperature.1",
+        "measure_temperature.2",
+        "measure_temperature.3",
+        "measure_temperature.4",
+        "thermostat_mode"
+      ],
+      "productIdCount": 1,
+      "manufacturerIdCount": 2,
+      "totalIds": 3,
+      "hasIcon": true
+    },
+    "thermostat_tuya_dp": {
+      "class": "thermostat",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "thermostat_mode"
+      ],
+      "productIdCount": 1,
+      "manufacturerIdCount": 78,
+      "totalIds": 79,
+      "hasIcon": true
+    },
+    "usb_outlet_advanced": {
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.socket2",
+        "onoff.usb1",
+        "onoff.usb2",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "productIdCount": 3,
+      "manufacturerIdCount": 49,
+      "totalIds": 52,
+      "hasIcon": true
+    },
+    "valve_irrigation": {
+      "class": "other",
+      "capabilities": [
+        "valve_position.1",
+        "valve_position.2",
+        "valve_position.3",
+        "valve_position.4"
+      ],
+      "productIdCount": 1,
+      "manufacturerIdCount": 1,
+      "totalIds": 2,
+      "hasIcon": true
+    },
+    "valve_single": {
+      "class": "other",
+      "capabilities": [
+        "onoff",
+        "valve_position"
+      ],
+      "productIdCount": 1,
+      "manufacturerIdCount": 2,
+      "totalIds": 3,
+      "hasIcon": true
+    },
+    "vibration_sensor": {
+      "class": "sensor",
+      "capabilities": [
+        "alarm_vibration",
+        "measure_battery"
+      ],
+      "productIdCount": 2,
+      "manufacturerIdCount": 2,
+      "totalIds": 4,
+      "hasIcon": true
+    },
+    "water_leak_sensor": {
+      "class": "sensor",
+      "capabilities": [
+        "alarm_water",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "productIdCount": 9,
+      "manufacturerIdCount": 45,
+      "totalIds": 54,
+      "hasIcon": true
+    },
+    "water_valve_smart": {
+      "class": "other",
+      "capabilities": [
+        "alarm_motion",
+        "measure_temperature",
+        "alarm_water",
+        "measure_battery",
+        "onoff"
+      ],
+      "productIdCount": 4,
+      "manufacturerIdCount": 43,
+      "totalIds": 47,
+      "hasIcon": true
+    },
+    "weather_station_outdoor": {
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_pressure",
+        "measure_luminance",
+        "measure_battery"
+      ],
+      "productIdCount": 4,
+      "manufacturerIdCount": 6,
+      "totalIds": 10,
+      "hasIcon": true
+    },
+    "zigbee_universal": {
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "productIdCount": 1,
+      "manufacturerIdCount": 0,
+      "totalIds": 1,
+      "hasIcon": true
+    }
+  }
+}
