@@ -9,7 +9,8 @@
     "measure_humidity",
     "measure_pressure",
     "measure_luminance",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "measure_temperature": {

@@ -1,4 +1,8 @@
 {
+  "5.3.19": {
+    "en": "🔋 v5.3.19 - ADD: alarm_battery to all battery-powered drivers\n\n**Enhancement:**\nAdded `alarm_battery` capability (low battery warning indicator) to all 37 drivers that have `measure_battery`.\n\n**Drivers Updated:**\nclimate_sensor, soil_sensor, contact_sensor, motion_sensor, presence_sensor_radar, curtain_motor, vibration_sensor, water_valve_smart, rain_sensor, doorbell, siren, lock_smart, scene_switch_*, button_*, and more.\n\n**Note:** Switches (1-4 gang) are mains-powered and don't need battery indicators.",
+    "fr": "🔋 v5.3.19 - Ajout alarm_battery\n\n- Indicateur batterie faible ajouté à 37 drivers\n- Tous les appareils sur batterie ont maintenant alarm_battery"
+  },
   "5.3.18": {
     "en": "🐛 v5.3.18 - FIX: Moes TS004F Smart Knob\n\n**User Report (Thunder):**\nTS004F (_TZ3000_ja5osu5g) was pairing as dimmer with onoff capability instead of button with single/double/long press.\n\n**Root Cause:**\nManufacturer ID was in BOTH `button_wireless_1` AND `dimmer_wall_1gang` drivers → Homey picked dimmer first.\n\n**Fix:**\n- Removed `_TZ3000_ja5osu5g` from dimmer_wall_1gang\n- Removed `TS004F` productId from dimmer_wall_1gang\n- Added device to fingerprint database with correct type\n\n**Action Required:**\nUser must DELETE device and RE-PAIR for correct driver assignment.",
     "fr": "🐛 v5.3.18 - Fix: Bouton Moes TS004F\n\n- Conflit driver corrigé (dimmer vs button)\n- Supprimer et réappairer le device requis"
