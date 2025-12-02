@@ -41,9 +41,6 @@
       "_TZ3000_vzopcetz",
       "_TZ3000_wamqdr3f",
       "_TZ3000_00mk2xzy",
-      "LIDL Silvercrest",
-      "Silvercrest",
-      "BlitzWolf",
       "_TZ3000_rdtixbnu",
       "_TZ3000_2xlvlnvp",
       "_TZ3000_cymsnfvf",
@@ -54,8 +51,6 @@
       "_TZ3000_7ysdnebc",
       "_TZ3000_dpo1ysak",
       "_TZ3000_gjnozsaz",
-      "Nous",
-      "LSC",
       "_TZ3000_b28wrpvx",
       "SONOFF",
       "eWeLink",
@@ -118,7 +113,6 @@
       "_TZ3000_cayepv1a",
       "_TZ3000_lepzuhto",
       "_TZ3000_qystbcjg",
-      "_TZ3000_b28wrpvx",
       "_TZ3000_iiacqpdz",
       "_TZ3000_lqb7lcq9",
       "_TZ3000_mvvw8wnx",
@@ -214,7 +208,8 @@
       "TS0115",
       "TS0203",
       "TS110E",
-      "TS110F"
+      "TS110F",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -227,7 +222,10 @@
           1794,
           2820,
           61184,
-          1
+          1,
+          "genOnOff",
+          "haElectricalMeasurement",
+          "seMetering"
         ],
         "bindings": [
           1

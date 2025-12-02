@@ -22,7 +22,6 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "Shelly",
       "_TZ3000_1o6x1bl0",
       "_TZ3000_gntwytxo",
       "_TZ3000_xyz",
@@ -103,7 +102,7 @@
       "_tze204_zuq5xxib",
       "_tze200_eegnwoyw",
       "_tze600_ogyg1y6b",
-      "_tzb000_42ha4rsc"
+      "_tz3000_42ha4rsc"
     ],
     "productId": [
       "TS0601",
@@ -118,7 +117,8 @@
       "1": {
         "clusters": [
           61184,
-          1
+          1,
+          "closuresWindowCovering"
         ],
         "bindings": [
           1

@@ -1,4 +1,8 @@
 {
+  "5.3.2": {
+    "en": "🔧 v5.3.2 - DRIVER VERIFICATION & DP ENRICHMENT\n\n**Auto-Fix Applied:**\n- Fixed 136 invalid manufacturer ID formats\n- Added 15 missing product IDs (TS0xxx)\n- Added 5 missing capabilities\n- Added 22 missing Zigbee clusters\n- 40 drivers modified\n\n**Tuya DP Mappings Added:**\n- 31 drivers enriched with datapoint mappings\n- Complete DP database for: climate, motion, radar, contact, curtain, switch, dimmer, plug, thermostat, water, smoke, gas, siren\n\n**New Scripts:**\n- verify-and-enrich-drivers.js\n- auto-fix-and-enrich.js\n- enrich-from-z2m-detailed.js\n\n**GitHub Action Updated:**\n- Added fix_and_enrich option\n- Added enrich_dps option\n- Complete enrichment pipeline\n\n**Total:** 1807 device IDs",
+    "fr": "🔧 v5.3.2 - Vérification et enrichissement des drivers\n\n- 136 IDs invalides corrigés\n- 31 drivers enrichis avec mappings DP\n- Total: 1807 IDs"
+  },
   "5.3.1": {
     "en": "🔗 v5.3.1 - 1802 DEVICE IDs!\n\n**Community Sources Enrichment:**\n- ZHA Device Handlers: 446 IDs (51 Python files)\n- deCONZ REST Plugin: 268 IDs (82 JSON files)\n\n**Added +134 IDs:**\n- climate_sensor: +93 IDs\n- switch_1gang: +31 IDs\n- plug_smart: +10 IDs\n\n**Total Progress:**\n- v5.2.98: 781 IDs\n- v5.2.99: 1577 IDs (+Z2M)\n- v5.3.0: 1668 IDs (+local backups)\n- v5.3.1: 1802 IDs (+ZHA/deCONZ)\n\n**Sources Used:**\n- github.com/zigpy/zha-device-handlers\n- github.com/dresden-elektronik/deconz-rest-plugin",
     "fr": "🔗 v5.3.1 - 1802 IDs d'appareils!\n\n- +134 IDs de ZHA et deCONZ\n- Total: 1802 IDs uniques"

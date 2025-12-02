@@ -28,7 +28,9 @@
       "ZBMINIL2",
       "S31ZB",
       "ZM-CSW002-D",
-      "TS0041"
+      "TS0041",
+      "TS000F",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -38,7 +40,8 @@
           5,
           6,
           8,
-          61184
+          61184,
+          "genOnOff"
         ],
         "bindings": [
           1
@@ -52,7 +55,6 @@
       }
     },
     "manufacturerName": [
-      "Shelly",
       "_TZ3000_18ejxno0",
       "_TZ3000_3u4hripk",
       "_TZ3000_4rbqgcuv",
@@ -93,12 +95,10 @@
       "_TZ3000_mgusv51k",
       "_TZ3000_mmkbptmx",
       "_TZ3000_mw1pqqqt",
-      "Allterco",
       "SONOFF",
       "eWeLink",
       "_TZ3000_7ysdnebc",
       "_TZ3000_ksw8qtmt",
-      "Zemismart",
       "_TZ3000_txpitre5",
       "_TZ3000_zmy4lslw",
       "_TZ3000_tqlv4ez4",
@@ -139,7 +139,6 @@
       "_TZ3210_fgwhjm9j",
       "_TZ3210_fhx7lk3d",
       "_TZ3210_j4pdtz9v",
-      "lumi.ctrl_ln1",
       "_TZ3000_hafsqare",
       "_TZ3000_cdamjqm9",
       "_TZ3000_e8cquwdk",
