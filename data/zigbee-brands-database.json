@@ -2,8 +2,41 @@
   "_comment": "Complete Zigbee Brands Database - Worldwide",
   "version": "1.0.0",
   "lastUpdated": "2025-12-02",
-  "totalBrands": 50,
+  "totalBrands": 51,
   "brands": [
+    {
+      "name": "Climax Technology",
+      "website": "https://climax.com.tw",
+      "region": "TW",
+      "categories": [
+        "sensor",
+        "plug",
+        "shutter",
+        "siren",
+        "smoke",
+        "co",
+        "energy"
+      ],
+      "manufacturerPrefixes": [
+        "ClimaxTechnology"
+      ],
+      "models": [
+        "IR-9ZBS",
+        "DC-15ZBS",
+        "RS-23ZBS",
+        "WLS-15ZBS",
+        "SD-8SCZBS",
+        "CO-8ZBS",
+        "PSM-29ZBSR",
+        "PSS-23ZBS",
+        "PRL-1ZBS",
+        "SCM-5ZBS",
+        "SRAC-23ZBS",
+        "EMD-1ZBS",
+        "VST-862-ZBS"
+      ],
+      "certification": "CSA-IOT Zigbee HA 1.2"
+    },
     {
       "name": "AduroSmart",
       "website": "https://adurosmart.com",
