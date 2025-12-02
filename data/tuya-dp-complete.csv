@@ -1,0 +1,73 @@
+DP,Type,Range,Unit,Usage,Brands,Models,Cluster,HomeyCapability
+1,bool,"0,1",,ON/OFF universal - alarm switch relay,"Tuya,Aqara,Sonoff,Moes,Lidl,Immax","TS0001,TS0011,TS0121,SNZB-01,WS-EUK01","0x0006,0x0500","onoff,alarm_water,alarm_smoke,alarm_motion"
+2,enum,"0,1,2",,Curtain state (0=open 1=stop 2=close),"Tuya,Moes,Zemismart,Lonsonho","TS0601,MS-108,AM25,M515EGB",0xEF00→0x0102,windowcoverings_state
+3,value,0-100,%,Position or tilt percentage,"Tuya,Aqara,Zemismart","TS0601,B1,AM25",0xEF00→0x0102,"windowcoverings_set,windowcoverings_tilt_set"
+4,value,0-1000,°C×10,Temperature setpoint (÷10),"Tuya,Moes,Saswell,AVATTO","TS0601,BHT-002,SEA801",0xEF00→0x0201,target_temperature
+5,bool,"0,1",,Motor blocked / over-current,"Tuya,Kogan,Zemismart",TS0601,0xEF00→0x0102,alarm_motor
+6,value,0-999,,User ID (fingerprint/card),"Aqara,Tuya","N200,TS0601",0xEF00→0x0101,
+7,value,0-999,,Password ID,Aqara,"N200,G3",0xEF00→0x0101,
+8,bool,"0,1",,Door open/close event,"Aqara,Climax,Tuya","N200,DC-15ZBS,TS0203","0xEF00,0x0500",alarm_contact
+9,enum,0-10,,Alert reason (tamper/pry/low-bat),"Aqara,Tuya","N200,G3",0xEF00→0x0101,alarm_tamper
+10,value,0-100,%,Battery percentage,"Tuya,Aqara,Sonoff,Immax,Lidl,Moes",ALL battery devices,0x0001,measure_battery
+11,enum,"0,1,2",,Battery state (low/power-off),"Aqara,Tuya",N200,0x0001,alarm_battery
+12,bool,"0,1",,Double-lock status,Aqara,N200,0xEF00,
+13,bool,"0,1",,Child-lock enabled,"Tuya,Aqara,Moes","TS0001,H1,BHT-002","0xEF00,0x0006",child_lock
+14,bool,"0,1",,Doorbell pressed,"Aqara,Tuya","G3,TS0041",0xEF00,button
+15,enum,1-9,,Chime ringtone index,Aqara,G3,0xEF00,
+16,enum,"mute,low,normal,high",,Chime volume,"Aqara,Tuya","G3,TS0215A",0xEF00,volume_set
+17,enum,0-8,,UI language (CN/EN/JP/DE/ES/FR/RU/IT/KO),Aqara,G3,0xEF00,
+18,string,0-255B,,Welcome message,Aqara,G3,0xEF00,
+19,enum,0-9,,Keypress volume,Aqara,G3,0xEF00,
+20,enum,0-9,,Local voice volume,Aqara,G3,0xEF00,
+21,raw,6B ASCII,,Remote unlock password,Aqara,G3,0xEF00,
+22,bool,"0,1",,Remote unlock response,Aqara,G3,0xEF00,
+23,bool,"0,1",,Remote unlock enable,Aqara,G3,0xEF00,
+24,value,0-999,,Fingerprint ID,Aqara,"G3,N200",0xEF00,
+25,value,0-999,,Password ID,Aqara,G3,0xEF00,
+26,bool,"0,1",,SOS disarm,"Climax,Tuya","SOS-23ZBS,TS0215A",0xEF00,button
+27,bool,"0,1",,Arm away mode,Climax,SOS-23ZBS,0xEF00,
+28,bool,"0,1",,Arm home mode,Climax,SOS-23ZBS,0xEF00,
+29,bool,"0,1",,Emergency/panic button,Climax,SOS-23ZBS,0xEF00,alarm_tamper
+50,bool,"0,1",,Auto-latch on/off,Aqara,N200,0xEF00,
+51,value,0-1800,seconds,Auto-latch delay,Aqara,N200,0xEF00,
+52,enum,0-3,,Motor torque level,Aqara,N200,0xEF00,
+100,value,0-100,%,Battery percentage (alias),"Immax,Nous,Tesla Smart","Neo,E1",0x0001,measure_battery
+101,value,0-1000,°C×10,Temperature (÷10),"Tuya,Moes,Sonoff,Aqara","WS-907,SNZB-02,TS0201",0xEF00→0x0201,measure_temperature
+102,value,0-1000,%×10,Humidity (÷10),"Tuya,Moes,Sonoff","WS-907,SNZB-02,TS0201",0xEF00,measure_humidity
+103,value,0-2000,hPa×100,Pressure (÷100),Tuya,TS0201,0xEF00,measure_pressure
+104,value,0-500,m/s×10,Wind speed (÷10),Tuya,Weather station,0xEF00,measure_wind_speed
+105,value,0-2000,UV×100,UV index (÷100),Tuya,Weather station,0xEF00,measure_ultraviolet
+106,raw,8B,,Scene data,Tuya,"TS0041,TS0042,TS0043,TS0044",0xEF00,
+107,string,JSON,,Schedule string,"Tuya,Moes","TS0001,BHT-002",0xEF00,
+108,bool,"0,1",,Child-lock universal,Tuya,"TS0001,TS011F",0xEF00,child_lock
+109,enum,0-3,,Fan mode (low/med/high/auto),Tuya,TS0601,0xEF00→0x0202,fan_mode
+110,bool,"0,1",,Fan oscillate,Tuya,TS0601,0xEF00→0x0202,
+111,value,0-1000,%×10,Color temperature,"Tuya,Lidl,Ledvance","TS0502A,TS0502B",0xEF00→0x0300,light_temperature
+112,value,0-360,degrees,Hue 0-360°,"Tuya,Lidl","TS0503A,TS0504A",0xEF00→0x0300,light_hue
+113,value,0-1000,‰,Saturation,"Tuya,Lidl","TS0503A,TS0504A",0xEF00→0x0300,light_saturation
+114,value,0-5000,ppm,CO2 concentration,Tuya,TS0601,0xEF00,measure_co2
+115,value,0-500,µg/m³,PM2.5 concentration,Tuya,TS0601,0xEF00,measure_pm25
+116,value,0-500,µg/m³,PM10 concentration,Tuya,TS0601,0xEF00,measure_pm10
+117,value,0-1000,ppb,VOC concentration,Tuya,TS0601,0xEF00,measure_voc
+118,value,0-100,µg/m³,Formaldehyde (CH2O),Tuya,TS0601,0xEF00,measure_ch2o
+119,value,0-65535,lux,Illuminance,"Tuya,Sonoff","TS0601,SNZB-06P","0xEF00,0x0400",measure_luminance
+120,bool,"0,1",,RCBO trip status,Tuya,TS0601,0xEF00,alarm_generic
+121,value,0-30,mA,Leakage current,Tuya,TS0601,0xEF00,measure_current
+200,value,0-255,,RF test mode,Tuya,Factory,0xEF00,
+201,bitmap,8bit,,Device info bitmap,Tuya,Factory,0xEF00,
+240,enum,0-4,,MCU test / presence event,"Tuya,Aqara","FP2,TS0601",0xEF00,presence_event
+241,value,0-255,,Boot-counter / zone ID,"Tuya,Aqara",FP2,0xEF00,
+242,raw,6B,,Reset reason / distance cm,"Tuya,Aqara",FP2,0xEF00,measure_distance
+243,value,0-100,,RF calib / target sensitivity,"Tuya,Aqara","FP2,M2",0xEF00,
+244,bitmap,8bit,,Feature mask / zone bitmap,"Tuya,Aqara",FP2,0xEF00,zones_occupied
+245,raw,6B,,XYZ coordinates mm,Aqara,FP2,0xEF00,
+246,enum,0-3,,Mount orientation / OTA downgrade,"Tuya,Aqara",FP2,0xEF00,
+247,value,0-999,mV,Supply voltage / ambient light,"Tuya,Aqara",FP2,0xEF00,measure_voltage
+248,raw,12B,,Heap/stack debug,"Tuya,Aqara,Ubisys","M2,M3",0xEF00,
+249,raw,8B,,Signature token,"Tuya,IKEA","M2,TRADFRI",0xEF00,
+250,enum,0-3,,Xmas pattern / disable button,"Lidl,Sonoff","Livarno,SNZB-01",0xEF00,light_effect
+251,value,0-100,%,Animation speed / boot time,"Lidl,Sonoff",Livarno,0xEF00,
+252,bool,"0,1",,Valve protect (anti-lime),"Moes,AVATTO,Immax","BHT-002,WT-TH01",0xEF00,
+253,value,5-35,°C,Frost limit,"Moes,Tesla Smart",BHT-002,0xEF00,
+254,raw,16B,,Energy history (12h),"Nous,Tuya","E1,TS0601",0xEF00,
+255,raw,NB,,Raw passthrough,Exotic,Various,0xEF00,
