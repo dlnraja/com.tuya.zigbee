@@ -1,4 +1,8 @@
 {
+  "5.3.4": {
+    "en": "🔍 v5.3.4 - JOHANBENDZ ECOSYSTEM - 1862 IDs!\n\n**Sources Analyzed:**\n- com.tuya.zigbee: ALL branches (SDK3, master, dev)\n- com.philips.hue.zigbee\n- 164 forks scanned\n- 1314 issues (open + closed)\n- 177 PRs (open + closed + merged)\n\n**Added +44 IDs:**\n- switch_1gang: +26 IDs\n- plug_smart: +10 IDs\n- climate_sensor: +8 IDs\n\n**New Scripts:**\n- fetch-johanbendz-ecosystem.js\n- fetch-homey-zigbee-apps.js\n\n**Total:** 1862 device IDs",
+    "fr": "🔍 v5.3.4 - Écosystème JohanBendz - 1862 IDs!\n\n- 164 forks analysés\n- 1314 issues + 177 PRs\n- +44 nouveaux IDs\n- Total: 1862 IDs"
+  },
   "5.3.3": {
     "en": "🎯 v5.3.3 - COMPLETE DRIVERS ENRICHMENT - 1818 IDs!\n\n**Capabilities Completed:**\n- 41 drivers updated\n- 58 missing capabilities added\n- All device classes verified\n- Energy configurations added\n\n**New IDs Added:**\n- +11 rare prefix IDs (_tz1800, _tz3218, _tz3290, _tz6210)\n\n**Drivers Now Complete:**\n- climate_sensor: 664 IDs\n- switch_1gang: 429 IDs\n- plug_smart: 172 IDs\n- contact_sensor: 104 IDs\n- motion_sensor: 97 IDs\n- presence_sensor_radar: 92 IDs\n- curtain_motor: 82 IDs\n- And 53 more drivers...\n\n**New Scripts:**\n- complete-all-drivers.js\n- fetch-blakadder.js\n- fetch-smartthings.js\n\n**Total:** 1818 device IDs",
     "fr": "🎯 v5.3.3 - Enrichissement complet - 1818 IDs!\n\n- 58 capabilities ajoutées\n- 41 drivers mis à jour\n- Total: 1818 IDs"
