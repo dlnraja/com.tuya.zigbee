@@ -1,12 +1,12 @@
 # 🌐 Universal Zigbee Device App for Homey
 
-![Version](https://img.shields.io/badge/version-5.2.50-blue)
-![Devices](https://img.shields.io/badge/devices-1372+-green)
+![Version](https://img.shields.io/badge/version-5.3.13-blue)
+![Devices](https://img.shields.io/badge/devices-3611+-green)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
 ![License](https://img.shields.io/badge/license-GPL--3.0-red)
 ![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)
 
-**The most comprehensive Universal Zigbee app for Homey with 1372+ devices from the entire Zigbee ecosystem.**
+**The most comprehensive Universal Zigbee app for Homey with 3,611+ device IDs across 60 drivers.**
 
 🏠 **100% Local Control** - No Cloud Required
 🔋 **Auto-Detection** - Power Source, Battery Type, Protocol
@@ -20,44 +20,50 @@
 
 | Metric | Value |
 |--------|-------|
-| **Total Devices** | 1372+ |
-| **Categories** | 27 |
+| **Total Device IDs** | 3,611+ |
+| **Drivers** | 60 |
+| **SVG Icons** | 60 |
+| **Enrichment Scripts** | 17 |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2025-11-29 |
+| **Last Updated** | 2025-12-02 |
 | **Data Sources** | 15+ |
 
-### 📦 Devices by Category
+### 📦 Top 10 Drivers by Device IDs
 
-| Category | Emoji | Count |
-|----------|-------|-------|
-| Switches | 🎛️ | 228 |
-| Lighting | 💡 | 179 |
-| Covers | 🪟 | 115 |
-| Thermostats | 🏠 | 106 |
-| Climate Sensors | 🌡️ | 85 |
-| Presence/Radar | 👤 | 86 |
-| Smart Plugs | 🔌 | 76 |
-| Energy Meters | ⚡ | 69 |
-| Contact Sensors | 🚪 | 65 |
-| Remotes/Buttons | 🎮 | 58 |
-| Safety Sensors | 🚨 | 45 |
-| Other | 📡 | 260+ |
+| # | Driver | IDs |
+|---|--------|-----|
+| 1 | `climate_sensor` | 661 |
+| 2 | `switch_1gang` | 449 |
+| 3 | `plug_smart` | 174 |
+| 4 | `switch_2gang` | 105 |
+| 5 | `contact_sensor` | 91 |
+| 6 | `presence_sensor_radar` | 87 |
+| 7 | `switch_4gang` | 82 |
+| 8 | `curtain_motor` | 81 |
+| 9 | `motion_sensor` | 79 |
+| 10 | `thermostat_ts0601` | 78 |
 
 ---
 
-## 🚀 Latest Updates - v5.2.43
+## 🚀 Latest Updates - v5.3.13
 
 ### ✨ Recent Features
-- **v5.2.43** - UNBRANDED: Generic drivers organized by category
-- **v5.2.42** - ZG-204ZM 5-in-1 multi-sensor (like Aqara FP300)
-- **v5.2.41** - +14 radar sensors from community
-- **v5.2.40** - FP300-like radar features (sensitivity, range, fading time)
-- **v5.2.39** - Major driver enhancements (curtain, TRV, plug)
-- **v5.2.38** - Curtain motor + TS011F 20A plug support
-- **v5.2.37** - ZG-204ZM radar Tuya DP support
-- **v5.2.36** - TS0044 4-button remote fix
-- **v5.2.35** - TS0201 battery fix
+- **v5.3.13** - CRITICAL BUG FIXES: Wireless button, rain sensor, curtain motor
+- **v5.3.12** - Climax Technology security devices (13 models)
+- **v5.3.11** - Worldwide Zigbee brands database (50+ brands)
+- **v5.3.10** - 2000+ IDs milestone from Z2M brand files
+- **v5.3.9** - MEGA source fetch enrichment
+
+### 📁 Data Sources
+- ✅ Zigbee2MQTT (tuya.ts + brand files)
+- ✅ ZHA Device Handlers (quirks)
+- ✅ deCONZ REST Plugin
+- ✅ JohanBendz (164 forks, 1314 issues, 177 PRs)
+- ✅ Blakadder Database
+- ✅ Homey Community Forum
+- ✅ Tuya Developer Portal
+- ✅ Complete DP Database (255 DPs documented)
 
 ### 🔧 Technical Highlights
 - **Dual Protocol Support** - Tuya DP (0xEF00) + Standard ZCL
