@@ -21,16 +21,17 @@ const CONFIG = {
 };
 
 // Device type detection patterns
+// Updated: 2025-12-02 - UNBRANDED driver names (no product numbers)
 const DEVICE_PATTERNS = {
-  // Switches
+  // ============ SWITCHES ============
   switch_1gang: {
-    patterns: ['TS0001', 'TS0011', '_TZ3000_.*switch', '_TZE200_.*switch'],
-    keywords: ['switch', '1gang', '1-gang', 'relay'],
+    patterns: ['TS0001', 'TS0011', '_TZ3000_.*switch'],
+    keywords: ['switch', '1gang', '1-gang', 'relay', 'single'],
     class: 'socket'
   },
   switch_2gang: {
-    patterns: ['TS0002', 'TS0012', '_TZ3000_.*2gang'],
-    keywords: ['2gang', '2-gang', 'dual'],
+    patterns: ['TS0002', 'TS0012'],
+    keywords: ['2gang', '2-gang', 'dual', 'double'],
     class: 'socket'
   },
   switch_3gang: {
@@ -43,91 +44,170 @@ const DEVICE_PATTERNS = {
     keywords: ['4gang', '4-gang', 'quad'],
     class: 'socket'
   },
-
-  // Plugs
-  plug_smart: {
-    patterns: ['TS011F', 'TS0121', '_TZ3000_.*plug'],
-    keywords: ['plug', 'outlet', 'socket'],
+  switch_wall_5gang: {
+    patterns: ['TS0005', 'TS0015'],
+    keywords: ['5gang', '5-gang'],
+    class: 'socket'
+  },
+  switch_wall_6gang: {
+    patterns: ['TS0006', 'TS0016'],
+    keywords: ['6gang', '6-gang'],
     class: 'socket'
   },
 
-  // Sensors
+  // ============ BUTTONS ============
+  button_wireless_1: {
+    patterns: ['TS0041'],
+    keywords: ['1-button', '1button', 'single button'],
+    class: 'button'
+  },
+  button_wireless_2: {
+    patterns: ['TS0042'],
+    keywords: ['2-button', '2button', 'dual button'],
+    class: 'button'
+  },
+  button_wireless_3: {
+    patterns: ['TS0043'],
+    keywords: ['3-button', '3button', 'triple button'],
+    class: 'button'
+  },
+  button_wireless_4: {
+    patterns: ['TS0044'],
+    keywords: ['4-button', '4button', 'quad button'],
+    class: 'button'
+  },
+
+  // ============ PLUGS ============
+  plug_smart: {
+    patterns: ['TS011F', 'TS0121', 'S31ZB', '_TZ3000_.*plug'],
+    keywords: ['plug', 'outlet', 'socket'],
+    class: 'socket'
+  },
+  plug_energy_monitor: {
+    patterns: ['TS011F.*energy', '_TZ3000_.*meter'],
+    keywords: ['energy', 'power meter', 'monitoring'],
+    class: 'socket'
+  },
+
+  // ============ SENSORS ============
   climate_sensor: {
     patterns: ['TS0201', '_TZ3000_.*temp', '_TZE200_.*temp'],
-    keywords: ['temperature', 'humidity', 'climate', 'weather'],
+    keywords: ['temperature', 'humidity', 'climate', 'weather', 'thermo'],
     class: 'sensor'
   },
   contact_sensor: {
     patterns: ['TS0203', '_TZ3000_.*door', '_TZ3000_.*window'],
-    keywords: ['door', 'window', 'contact', 'magnet'],
+    keywords: ['door', 'window', 'contact', 'magnet', 'open', 'close'],
     class: 'sensor'
   },
   motion_sensor: {
     patterns: ['TS0202', '_TZ3000_.*motion', '_TZ3000_.*pir'],
-    keywords: ['motion', 'pir', 'occupancy'],
+    keywords: ['motion', 'pir', 'occupancy', 'movement'],
     class: 'sensor'
   },
   water_leak_sensor: {
     patterns: ['TS0207', '_TZ3000_.*water', '_TZ3000_.*leak'],
-    keywords: ['water', 'leak', 'flood'],
+    keywords: ['water', 'leak', 'flood', 'moisture'],
     class: 'sensor'
   },
-  smoke_detector: {
+  smoke_detector_advanced: {
     patterns: ['TS0205', '_TZ3000_.*smoke'],
     keywords: ['smoke', 'fire'],
     class: 'sensor'
   },
-
-  // Presence
-  presence_sensor_radar: {
-    patterns: ['_TZE200_.*presence', '_TZE204_.*presence', '_TZ3210_.*radar'],
-    keywords: ['presence', 'radar', 'mmwave', 'human'],
+  vibration_sensor: {
+    patterns: ['TS0210', '_TZ3000_.*vibr'],
+    keywords: ['vibration', 'shock'],
     class: 'sensor'
   },
 
-  // Curtains
+  // ============ PRESENCE ============
+  presence_sensor_radar: {
+    patterns: ['_TZE200_.*presence', '_TZE204_.*presence', '_TZ3210_.*radar'],
+    keywords: ['presence', 'radar', 'mmwave', 'human', 'occupancy'],
+    class: 'sensor'
+  },
+
+  // ============ COVERS ============
   curtain_motor: {
-    patterns: ['TS0601.*cover', '_TZE200_.*curtain', '_TZE200_.*blind'],
-    keywords: ['curtain', 'blind', 'shade', 'roller', 'cover'],
+    patterns: ['TS0601.*cover', '_TZE200_.*curtain', '_TZE200_.*blind', 'TS130F'],
+    keywords: ['curtain', 'blind', 'shade', 'roller', 'cover', 'shutter'],
+    class: 'windowcoverings'
+  },
+  shutter_roller_controller: {
+    patterns: ['TS0302'],
+    keywords: ['shutter', 'roller'],
     class: 'windowcoverings'
   },
 
-  // Thermostats
-  thermostat_ts0601: {
-    patterns: ['_TZE200_.*thermo', '_TZE204_.*thermo', 'BHT-002', 'BRT-100'],
-    keywords: ['thermostat', 'heating', 'trv', 'valve'],
+  // ============ THERMOSTATS ============
+  thermostat_tuya_dp: {
+    patterns: ['_TZE200_.*thermo', '_TZE204_.*thermo', 'BHT-002', 'BRT-100', 'SEA801'],
+    keywords: ['thermostat', 'heating', 'trv', 'radiator'],
+    class: 'thermostat'
+  },
+  radiator_valve: {
+    patterns: ['_TZE200_.*trv', '_TZE200_.*valve'],
+    keywords: ['trv', 'radiator valve', 'heating valve'],
     class: 'thermostat'
   },
 
-  // Lighting
-  light_dimmer: {
-    patterns: ['TS0101', 'TS110F', '_TZ3000_.*dim'],
+  // ============ DIMMERS ============
+  dimmer_wall_1gang: {
+    patterns: ['TS0101', 'TS110F', 'TS110E', '_TZ3000_.*dim'],
     keywords: ['dimmer', 'brightness'],
     class: 'light'
   },
-  light_rgb: {
-    patterns: ['TS0503', 'TS0504', '_TZ3000_.*rgb'],
-    keywords: ['rgb', 'color', 'led strip'],
-    class: 'light'
-  },
-  light_cct: {
-    patterns: ['TS0502', '_TZ3000_.*cct'],
-    keywords: ['cct', 'color temperature', 'white'],
+  dimmer_dual_channel: {
+    patterns: ['TS1101'],
+    keywords: ['dual dimmer', '2ch dimmer', 'two channel'],
     class: 'light'
   },
 
-  // Buttons
-  button_wireless: {
-    patterns: ['TS0041', 'TS0042', 'TS0043', 'TS0044'],
-    keywords: ['button', 'remote', 'scene'],
-    class: 'button'
+  // ============ LIGHTS ============
+  bulb_dimmable: {
+    patterns: ['TS0501A', 'TS0501B'],
+    keywords: ['dimmable bulb', 'white bulb'],
+    class: 'light'
+  },
+  bulb_tunable_white: {
+    patterns: ['TS0502A', 'TS0502B'],
+    keywords: ['cct', 'color temperature', 'tunable white'],
+    class: 'light'
+  },
+  bulb_rgb: {
+    patterns: ['TS0503A', 'TS0503B', '_TZ3000_.*rgb'],
+    keywords: ['rgb', 'color'],
+    class: 'light'
+  },
+  bulb_rgbw: {
+    patterns: ['TS0504A', 'TS0505A', 'TS0505B'],
+    keywords: ['rgbw', 'rgbcct', 'full color'],
+    class: 'light'
+  },
+  led_strip_rgbw: {
+    patterns: ['TS0504B', '_TZ3000_.*strip'],
+    keywords: ['led strip', 'strip light'],
+    class: 'light'
   },
 
-  // Air Quality
-  air_quality_co2: {
-    patterns: ['_TZE200_.*co2', '_TZE200_.*air'],
-    keywords: ['co2', 'air quality', 'voc', 'pm25'],
+  // ============ AIR QUALITY ============
+  air_quality_comprehensive: {
+    patterns: ['_TZE200_.*co2', '_TZE200_.*air', '_TZE200_.*voc'],
+    keywords: ['co2', 'air quality', 'voc', 'pm25', 'formaldehyde'],
     class: 'sensor'
+  },
+
+  // ============ VALVES ============
+  valve_single: {
+    patterns: ['_TZE200_.*valve'],
+    keywords: ['valve', 'water valve', 'gas valve'],
+    class: 'socket'
+  },
+  valve_irrigation: {
+    patterns: ['_TZE200_.*irrigation'],
+    keywords: ['irrigation', 'garden', 'sprinkler'],
+    class: 'socket'
   }
 };
 
@@ -191,8 +271,8 @@ function classifyDevice(device) {
     return { driver: 'climate_sensor', class: 'sensor', confidence: 'prefix' };
   }
   if (id.startsWith('ts0601') || id.startsWith('_tze')) {
-    // TS0601 devices need more context - default to climate if unsure
-    return { driver: 'thermostat_ts0601', class: 'thermostat', confidence: 'fallback' };
+    // TS0601 devices need more context - default to thermostat if unsure
+    return { driver: 'thermostat_tuya_dp', class: 'thermostat', confidence: 'fallback' };
   }
 
   // Unknown
