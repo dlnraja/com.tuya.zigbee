@@ -1,0 +1,5803 @@
+{
+  "timestamp": "2025-12-02T07:24:35.356Z",
+  "dryRun": false,
+  "stats": {
+    "added": 833,
+    "skipped": 328,
+    "unknown": 49
+  },
+  "byDriver": {
+    "climate_sensor": 452,
+    "switch_1gang": 228,
+    "plug_smart": 46,
+    "dimmer_wall_1gang": 7,
+    "motion_sensor": 6,
+    "curtain_motor": 31,
+    "thermostat": 33,
+    "smoke_detector_advanced": 3,
+    "contact_sensor": 12,
+    "motion_sensor_radar_mmwave": 6,
+    "button_wireless_1": 4,
+    "rain_sensor": 5
+  },
+  "dpMappings": {
+    "1": [
+      {
+        "z2m": "occupancy",
+        "homey": "alarm_motion"
+      },
+      {
+        "z2m": "water_consumed",
+        "homey": "water_consumed"
+      },
+      {
+        "z2m": "state_l1",
+        "homey": "state_l1"
+      },
+      {
+        "z2m": "action",
+        "homey": "action"
+      },
+      {
+        "z2m": "temperature",
+        "homey": "measure_temperature"
+      },
+      {
+        "z2m": "contact",
+        "homey": "alarm_contact"
+      },
+      {
+        "z2m": "gas",
+        "homey": "alarm_gas"
+      },
+      {
+        "z2m": "state",
+        "homey": "onoff"
+      },
+      {
+        "z2m": "state_right",
+        "homey": "state_right"
+      },
+      {
+        "z2m": "presence",
+        "homey": "alarm_motion"
+      },
+      {
+        "z2m": "system_mode",
+        "homey": "system_mode"
+      },
+      {
+        "z2m": "preset",
+        "homey": "preset"
+      },
+      {
+        "z2m": "smoke",
+        "homey": "alarm_smoke"
+      },
+      {
+        "z2m": "energy",
+        "homey": "meter_power"
+      },
+      {
+        "z2m": "type",
+        "homey": "type"
+      },
+      {
+        "z2m": "tds",
+        "homey": "tds"
+      },
+      {
+        "z2m": "air_quality",
+        "homey": "air_quality"
+      },
+      {
+        "z2m": "state_all",
+        "homey": "state_all"
+      },
+      {
+        "z2m": "vibration",
+        "homey": "vibration"
+      },
+      {
+        "z2m": "switch_1",
+        "homey": "switch_1"
+      },
+      {
+        "z2m": "water_warning",
+        "homey": "water_warning"
+      },
+      {
+        "z2m": "preheat",
+        "homey": "preheat"
+      },
+      {
+        "z2m": "liquid_state",
+        "homey": "liquid_state"
+      },
+      {
+        "z2m": "valve_1",
+        "homey": "valve_1"
+      },
+      {
+        "z2m": "air_switch",
+        "homey": "air_switch"
+      },
+      {
+        "z2m": "rainwater",
+        "homey": "rainwater"
+      },
+      {
+        "z2m": "presence_state",
+        "homey": "presence_state"
+      },
+      {
+        "z2m": "state_usb_a",
+        "homey": "state_usb_a"
+      }
+    ],
+    "2": [
+      {
+        "z2m": "month_consumption",
+        "homey": "month_consumption"
+      },
+      {
+        "z2m": "state_l2",
+        "homey": "state_l2"
+      },
+      {
+        "z2m": "action",
+        "homey": "action"
+      },
+      {
+        "z2m": "humidity",
+        "homey": "measure_humidity"
+      },
+      {
+        "z2m": "battery",
+        "homey": "measure_battery"
+      },
+      {
+        "z2m": "illuminance",
+        "homey": "measure_luminance"
+      },
+      {
+        "z2m": "gas_value",
+        "homey": "gas_value"
+      },
+      {
+        "z2m": "illuminance_level",
+        "homey": "illuminance_level"
+      },
+      {
+        "z2m": "brightness",
+        "homey": "dim"
+      },
+      {
+        "z2m": "brightness_l1",
+        "homey": "brightness_l1"
+      },
+      {
+        "z2m": "state_light",
+        "homey": "state_light"
+      },
+      {
+        "z2m": "system_mode",
+        "homey": "system_mode"
+      },
+      {
+        "z2m": "position",
+        "homey": "windowcoverings_set"
+      },
+      {
+        "z2m": "state",
+        "homey": "onoff"
+      },
+      {
+        "z2m": "preset",
+        "homey": "preset"
+      },
+      {
+        "z2m": "current_heating_setpoint",
+        "homey": "current_heating_setpoint"
+      },
+      {
+        "z2m": "mode",
+        "homey": "mode"
+      },
+      {
+        "z2m": "smoke_concentration",
+        "homey": "smoke_concentration"
+      },
+      {
+        "z2m": "produced_energy",
+        "homey": "produced_energy"
+      },
+      {
+        "z2m": "radar_sensitivity",
+        "homey": "radar_sensitivity"
+      },
+      {
+        "z2m": "sensitivity",
+        "homey": "sensitivity"
+      },
+      {
+        "z2m": "large_motion_detection_sensitivity",
+        "homey": "large_motion_detection_sensitivity"
+      },
+      {
+        "z2m": "static_detection_sensitivity",
+        "homey": "static_detection_sensitivity"
+      },
+      {
+        "z2m": "countdown",
+        "homey": "countdown"
+      },
+      {
+        "z2m": "power_on_behavior",
+        "homey": "power_on_behavior"
+      },
+      {
+        "z2m": "move_sensitivity",
+        "homey": "move_sensitivity"
+      },
+      {
+        "z2m": "presence_sensitivity",
+        "homey": "presence_sensitivity"
+      },
+      {
+        "z2m": "energy_produced",
+        "homey": "energy_produced"
+      },
+      {
+        "z2m": "temperature",
+        "homey": "measure_temperature"
+      },
+      {
+        "z2m": "co2",
+        "homey": "co2"
+      },
+      {
+        "z2m": "switch_2",
+        "homey": "switch_2"
+      },
+      {
+        "z2m": "liquid_depth",
+        "homey": "liquid_depth"
+      },
+      {
+        "z2m": "valve_2",
+        "homey": "valve_2"
+      },
+      {
+        "z2m": "motion_detection_sensitivity",
+        "homey": "motion_detection_sensitivity"
+      },
+      {
+        "z2m": "countdown_hours",
+        "homey": "countdown_hours"
+      },
+      {
+        "z2m": "pilot_wire_mode",
+        "homey": "pilot_wire_mode"
+      },
+      {
+        "z2m": "state_usb_c",
+        "homey": "state_usb_c"
+      }
+    ],
+    "3": [
+      {
+        "z2m": "daily_consumption",
+        "homey": "daily_consumption"
+      },
+      {
+        "z2m": "state_l3",
+        "homey": "state_l3"
+      },
+      {
+        "z2m": "battery_state",
+        "homey": "battery_state"
+      },
+      {
+        "z2m": "soil_moisture",
+        "homey": "soil_moisture"
+      },
+      {
+        "z2m": "min_brightness",
+        "homey": "min_brightness"
+      },
+      {
+        "z2m": "brightness",
+        "homey": "dim"
+      },
+      {
+        "z2m": "min_brightness_l1",
+        "homey": "min_brightness_l1"
+      },
+      {
+        "z2m": "state_left",
+        "homey": "state_left"
+      },
+      {
+        "z2m": "position",
+        "homey": "windowcoverings_set"
+      },
+      {
+        "z2m": "running_state",
+        "homey": "running_state"
+      },
+      {
+        "z2m": "local_temperature",
+        "homey": "local_temperature"
+      },
+      {
+        "z2m": "working_status",
+        "homey": "working_status"
+      },
+      {
+        "z2m": "garage_door_contact",
+        "homey": "garage_door_contact"
+      },
+      {
+        "z2m": "action",
+        "homey": "action"
+      },
+      {
+        "z2m": "minimum_range",
+        "homey": "minimum_range"
+      },
+      {
+        "z2m": "battery",
+        "homey": "measure_battery"
+      },
+      {
+        "z2m": "mov_minimum_distance",
+        "homey": "mov_minimum_distance"
+      },
+      {
+        "z2m": "fan_speed",
+        "homey": "fan_speed"
+      },
+      {
+        "z2m": "calibration",
+        "homey": "calibration"
+      },
+      {
+        "z2m": "detection_distance_min",
+        "homey": "detection_distance_min"
+      },
+      {
+        "z2m": "shield_range",
+        "homey": "shield_range"
+      },
+      {
+        "z2m": "min_distance",
+        "homey": "min_distance"
+      },
+      {
+        "z2m": "switch_3",
+        "homey": "switch_3"
+      },
+      {
+        "z2m": "heating_demand",
+        "homey": "heating_demand"
+      },
+      {
+        "z2m": "closest_detection_distance",
+        "homey": "closest_detection_distance"
+      },
+      {
+        "z2m": "near_detection",
+        "homey": "near_detection"
+      },
+      {
+        "z2m": "speed",
+        "homey": "speed"
+      },
+      {
+        "z2m": "work_state",
+        "homey": "work_state"
+      },
+      {
+        "z2m": "state_plug_1",
+        "homey": "state_plug_1"
+      }
+    ],
+    "4": [
+      {
+        "z2m": "battery",
+        "homey": "measure_battery"
+      },
+      {
+        "z2m": "report_period",
+        "homey": "report_period"
+      },
+      {
+        "z2m": "state_l4",
+        "homey": "state_l4"
+      },
+      {
+        "z2m": "light_type",
+        "homey": "light_type"
+      },
+      {
+        "z2m": "light_type_l1",
+        "homey": "light_type_l1"
+      },
+      {
+        "z2m": "preset",
+        "homey": "preset"
+      },
+      {
+        "z2m": "opening_mode",
+        "homey": "opening_mode"
+      },
+      {
+        "z2m": "current_heating_setpoint",
+        "homey": "current_heating_setpoint"
+      },
+      {
+        "z2m": "boost_heating",
+        "homey": "boost_heating"
+      },
+      {
+        "z2m": "tamper",
+        "homey": "alarm_tamper"
+      },
+      {
+        "z2m": "action",
+        "homey": "action"
+      },
+      {
+        "z2m": "maximum_range",
+        "homey": "maximum_range"
+      },
+      {
+        "z2m": "large_motion_detection_distance",
+        "homey": "large_motion_detection_distance"
+      },
+      {
+        "z2m": "static_detection_distance",
+        "homey": "static_detection_distance"
+      },
+      {
+        "z2m": "error_status",
+        "homey": "error_status"
+      },
+      {
+        "z2m": "detection_distance_max",
+        "homey": "detection_distance_max"
+      },
+      {
+        "z2m": "detection_range",
+        "homey": "detection_range"
+      },
+      {
+        "z2m": "max_distance",
+        "homey": "max_distance"
+      },
+      {
+        "z2m": "eco_mode",
+        "homey": "eco_mode"
+      },
+      {
+        "z2m": "distance",
+        "homey": "distance"
+      },
+      {
+        "z2m": "boost",
+        "homey": "boost"
+      },
+      {
+        "z2m": "largest_movement_detection_distance",
+        "homey": "largest_movement_detection_distance"
+      },
+      {
+        "z2m": "far_detection",
+        "homey": "far_detection"
+      },
+      {
+        "z2m": "state_plug_2",
+        "homey": "state_plug_2"
+      },
+      {
+        "z2m": "system_mode",
+        "homey": "system_mode"
+      }
+    ],
+    "5": [
+      {
+        "z2m": "fault",
+        "homey": "fault"
+      },
+      {
+        "z2m": "temperature",
+        "homey": "measure_temperature"
+      },
+      {
+        "z2m": "max_brightness",
+        "homey": "max_brightness"
+      },
+      {
+        "z2m": "max_brightness_l1",
+        "homey": "max_brightness_l1"
+      },
+      {
+        "z2m": "state_l5",
+        "homey": "state_l5"
+      },
+      {
+        "z2m": "motor_direction",
+        "homey": "motor_direction"
+      },
+      {
+        "z2m": "reverse_direction",
+        "homey": "reverse_direction"
+      },
+      {
+        "z2m": "local_temperature",
+        "homey": "local_temperature"
+      },
+      {
+        "z2m": "boost_time",
+        "homey": "boost_time"
+      },
+      {
+        "z2m": "alarm_volume",
+        "homey": "alarm_volume"
+      },
+      {
+        "z2m": "status_indication",
+        "homey": "status_indication"
+      },
+      {
+        "z2m": "volume",
+        "homey": "volume"
+      },
+      {
+        "z2m": "tamper",
+        "homey": "alarm_tamper"
+      },
+      {
+        "z2m": "alarm_ringtone",
+        "homey": "alarm_ringtone"
+      },
+      {
+        "z2m": "action",
+        "homey": "action"
+      },
+      {
+        "z2m": "fan_mode",
+        "homey": "fan_mode"
+      }
+    ],
+    "6": [
+      {
+        "z2m": "temperature",
+        "homey": "measure_temperature"
+      },
+      {
+        "z2m": "alarm_ringtone",
+        "homey": "alarm_ringtone"
+      },
+      {
+        "z2m": "countdown",
+        "homey": "countdown"
+      },
+      {
+        "z2m": "countdown_l1",
+        "homey": "countdown_l1"
+      },
+      {
+        "z2m": "state_l6",
+        "homey": "state_l6"
+      },
+      {
+        "z2m": "battery",
+        "homey": "measure_battery"
+      },
+      {
+        "z2m": "running_state",
+        "homey": "running_state"
+      },
+      {
+        "z2m": "ring",
+        "homey": "ring"
+      },
+      {
+        "z2m": "voltage",
+        "homey": "measure_voltage"
+      },
+      {
+        "z2m": "current",
+        "homey": "measure_current"
+      },
+      {
+        "z2m": "power",
+        "homey": "measure_power"
+      },
+      {
+        "z2m": "power_type",
+        "homey": "power_type"
+      },
+      {
+        "z2m": "equipment_status",
+        "homey": "equipment_status"
+      },
+      {
+        "z2m": "sensitivity",
+        "homey": "sensitivity"
+      },
+      {
+        "z2m": "action",
+        "homey": "action"
+      }
+    ],
+    "7": [
+      {
+        "z2m": "countdown_l1",
+        "homey": "countdown_l1"
+      },
+      {
+        "z2m": "temperature",
+        "homey": "measure_temperature"
+      },
+      {
+        "z2m": "humidity",
+        "homey": "measure_humidity"
+      },
+      {
+        "z2m": "alarm_time",
+        "homey": "alarm_time"
+      },
+      {
+        "z2m": "state_l2",
+        "homey": "state_l2"
+      },
+      {
+        "z2m": "countdown",
+        "homey": "countdown"
+      },
+      {
+        "z2m": "work_state",
+        "homey": "work_state"
+      },
+      {
+        "z2m": "position",
+        "homey": "windowcoverings_set"
+      },
+      {
+        "z2m": "child_lock",
+        "homey": "child_lock"
+      },
+      {
+        "z2m": "window",
+        "homey": "window"
+      },
+      {
+        "z2m": "backlight_mode",
+        "homey": "backlight_mode"
+      },
+      {
+        "z2m": "state_l7",
+        "homey": "state_l7"
+      },
+      {
+        "z2m": "duration",
+        "homey": "duration"
+      },
+      {
+        "z2m": "battery",
+        "homey": "measure_battery"
+      },
+      {
+        "z2m": "tilt",
+        "homey": "tilt"
+      },
+      {
+        "z2m": "max_set",
+        "homey": "max_set"
+      },
+      {
+        "z2m": "action",
+        "homey": "action"
+      },
+      {
+        "z2m": "countdown_usb_a",
+        "homey": "countdown_usb_a"
+      }
+    ],
+    "8": [
+      {
+        "z2m": "countdown_l2",
+        "homey": "countdown_l2"
+      },
+      {
+        "z2m": "humidity",
+        "homey": "measure_humidity"
+      },
+      {
+        "z2m": "self_test",
+        "homey": "self_test"
+      },
+      {
+        "z2m": "brightness_l2",
+        "homey": "brightness_l2"
+      },
+      {
+        "z2m": "position",
+        "homey": "windowcoverings_set"
+      },
+      {
+        "z2m": "open_window",
+        "homey": "open_window"
+      },
+      {
+        "z2m": "window_detection",
+        "homey": "window_detection"
+      },
+      {
+        "z2m": "window_check",
+        "homey": "window_check"
+      },
+      {
+        "z2m": "temperature",
+        "homey": "measure_temperature"
+      },
+      {
+        "z2m": "motor_steering",
+        "homey": "motor_steering"
+      },
+      {
+        "z2m": "state_l8",
+        "homey": "state_l8"
+      },
+      {
+        "z2m": "valve_state",
+        "homey": "valve_state"
+      },
+      {
+        "z2m": "temperature_scale",
+        "homey": "temperature_scale"
+      },
+      {
+        "z2m": "mini_set",
+        "homey": "mini_set"
+      },
+      {
+        "z2m": "min_set",
+        "homey": "min_set"
+      },
+      {
+        "z2m": "action",
+        "homey": "action"
+      },
+      {
+        "z2m": "countdown_usb_c",
+        "homey": "countdown_usb_c"
+      }
+    ],
+    "9": [
+      {
+        "z2m": "countdown_l3",
+        "homey": "countdown_l3"
+      },
+      {
+        "z2m": "temperature_unit",
+        "homey": "temperature_unit"
+      },
+      {
+        "z2m": "self_test_result",
+        "homey": "self_test_result"
+      },
+      {
+        "z2m": "min_brightness_l2",
+        "homey": "min_brightness_l2"
+      },
+      {
+        "z2m": "sensitivity",
+        "homey": "sensitivity"
+      },
+      {
+        "z2m": "position",
+        "homey": "windowcoverings_set"
+      },
+      {
+        "z2m": "max_temperature_limit",
+        "homey": "max_temperature_limit"
+      },
+      {
+        "z2m": "max_temperature",
+        "homey": "max_temperature"
+      },
+      {
+        "z2m": "self_test",
+        "homey": "self_test"
+      },
+      {
+        "z2m": "fault",
+        "homey": "fault"
+      },
+      {
+        "z2m": "child_lock",
+        "homey": "child_lock"
+      },
+      {
+        "z2m": "target_distance",
+        "homey": "target_distance"
+      },
+      {
+        "z2m": "power",
+        "homey": "measure_power"
+      },
+      {
+        "z2m": "countdown_l1",
+        "homey": "countdown_l1"
+      },
+      {
+        "z2m": "distance",
+        "homey": "distance"
+      },
+      {
+        "z2m": "closest_target_distance",
+        "homey": "closest_target_distance"
+      },
+      {
+        "z2m": "target_distance_closest",
+        "homey": "target_distance_closest"
+      },
+      {
+        "z2m": "countdown_plug_1",
+        "homey": "countdown_plug_1"
+      }
+    ],
+    "10": [
+      {
+        "z2m": "countdown_l4",
+        "homey": "countdown_l4"
+      },
+      {
+        "z2m": "battery",
+        "homey": "measure_battery"
+      },
+      {
+        "z2m": "max_temperature_alarm",
+        "homey": "max_temperature_alarm"
+      },
+      {
+        "z2m": "preheat",
+        "homey": "preheat"
+      },
+      {
+        "z2m": "light_type_l2",
+        "homey": "light_type_l2"
+      },
+      {
+        "z2m": "delay_time",
+        "homey": "delay_time"
+      },
+      {
+        "z2m": "min_temperature_limit",
+        "homey": "min_temperature_limit"
+      },
+      {
+        "z2m": "frost_protection",
+        "homey": "frost_protection"
+      },
+      {
+        "z2m": "min_temperature",
+        "homey": "min_temperature"
+      },
+      {
+        "z2m": "fault",
+        "homey": "fault"
+      },
+      {
+        "z2m": "frost",
+        "homey": "frost"
+      },
+      {
+        "z2m": "keep_time",
+        "homey": "keep_time"
+      },
+      {
+        "z2m": "countdown_l2",
+        "homey": "countdown_l2"
+      },
+      {
+        "z2m": "ph",
+        "homey": "ph"
+      },
+      {
+        "z2m": "countdown_plug_2",
+        "homey": "countdown_plug_2"
+      }
+    ],
+    "11": [
+      {
+        "z2m": "min_temperature_alarm",
+        "homey": "min_temperature_alarm"
+      },
+      {
+        "z2m": "fault_alarm",
+        "homey": "fault_alarm"
+      },
+      {
+        "z2m": "fault",
+        "homey": "fault"
+      },
+      {
+        "z2m": "max_brightness_l2",
+        "homey": "max_brightness_l2"
+      },
+      {
+        "z2m": "motor_direction",
+        "homey": "motor_direction"
+      },
+      {
+        "z2m": "device_fault",
+        "homey": "device_fault"
+      },
+      {
+        "z2m": "faultalarm",
+        "homey": "faultalarm"
+      },
+      {
+        "z2m": "motion_state",
+        "homey": "motion_state"
+      },
+      {
+        "z2m": "countdown",
+        "homey": "countdown"
+      },
+      {
+        "z2m": "power_on_behavior",
+        "homey": "power_on_behavior"
+      },
+      {
+        "z2m": "countdown_l3",
+        "homey": "countdown_l3"
+      },
+      {
+        "z2m": "countdown_l5",
+        "homey": "countdown_l5"
+      },
+      {
+        "z2m": "human_motion_state",
+        "homey": "human_motion_state"
+      },
+      {
+        "z2m": "ec",
+        "homey": "ec"
+      },
+      {
+        "z2m": "switch_prepayment",
+        "homey": "switch_prepayment"
+      },
+      {
+        "z2m": "max_temperature_f",
+        "homey": "max_temperature_f"
+      },
+      {
+        "z2m": "energy_consumed",
+        "homey": "energy_consumed"
+      },
+      {
+        "z2m": "unknown",
+        "homey": "unknown"
+      },
+      {
+        "z2m": "power",
+        "homey": "measure_power"
+      },
+      {
+        "z2m": "direction",
+        "homey": "direction"
+      }
+    ],
+    "12": [
+      {
+        "z2m": "illuminance",
+        "homey": "measure_luminance"
+      },
+      {
+        "z2m": "max_humidity_alarm",
+        "homey": "max_humidity_alarm"
+      },
+      {
+        "z2m": "lifecycle",
+        "homey": "lifecycle"
+      },
+      {
+        "z2m": "countdown_l2",
+        "homey": "countdown_l2"
+      },
+      {
+        "z2m": "motor_fault",
+        "homey": "motor_fault"
+      },
+      {
+        "z2m": "child_lock",
+        "homey": "child_lock"
+      },
+      {
+        "z2m": "fading_time",
+        "homey": "fading_time"
+      },
+      {
+        "z2m": "countdown_l4",
+        "homey": "countdown_l4"
+      },
+      {
+        "z2m": "countdown_l6",
+        "homey": "countdown_l6"
+      },
+      {
+        "z2m": "detection_delay",
+        "homey": "detection_delay"
+      },
+      {
+        "z2m": "departure_delay",
+        "homey": "departure_delay"
+      },
+      {
+        "z2m": "clear_energy",
+        "homey": "clear_energy"
+      },
+      {
+        "z2m": "min_temperature_f",
+        "homey": "min_temperature_f"
+      },
+      {
+        "z2m": "light_mode",
+        "homey": "light_mode"
+      }
+    ],
+    "13": [
+      {
+        "z2m": "state",
+        "homey": "onoff"
+      },
+      {
+        "z2m": "min_humidity_alarm",
+        "homey": "min_humidity_alarm"
+      },
+      {
+        "z2m": "alarm_switch",
+        "homey": "alarm_switch"
+      },
+      {
+        "z2m": "state_master",
+        "homey": "state_master"
+      },
+      {
+        "z2m": "battery",
+        "homey": "measure_battery"
+      },
+      {
+        "z2m": "large_motion_detection_distance",
+        "homey": "large_motion_detection_distance"
+      },
+      {
+        "z2m": "countdown_l1",
+        "homey": "countdown_l1"
+      },
+      {
+        "z2m": "countdown_l5",
+        "homey": "countdown_l5"
+      },
+      {
+        "z2m": "alarm",
+        "homey": "alarm"
+      },
+      {
+        "z2m": "radar_range",
+        "homey": "radar_range"
+      },
+      {
+        "z2m": "detection_range",
+        "homey": "detection_range"
+      },
+      {
+        "z2m": "test1",
+        "homey": "test1"
+      },
+      {
+        "z2m": "countdown_1",
+        "homey": "countdown_1"
+      }
+    ],
+    "14": [
+      {
+        "z2m": "auto_clean",
+        "homey": "auto_clean"
+      },
+      {
+        "z2m": "power_on_behavior",
+        "homey": "power_on_behavior"
+      },
+      {
+        "z2m": "temperature_alarm",
+        "homey": "temperature_alarm"
+      },
+      {
+        "z2m": "battery_state",
+        "homey": "battery_state"
+      },
+      {
+        "z2m": "window_detection",
+        "homey": "window_detection"
+      },
+      {
+        "z2m": "alarm_switch",
+        "homey": "alarm_switch"
+      },
+      {
+        "z2m": "battery_low",
+        "homey": "alarm_battery"
+      },
+      {
+        "z2m": "small_motion_detection_distance",
+        "homey": "small_motion_detection_distance"
+      },
+      {
+        "z2m": "countdown_l2",
+        "homey": "countdown_l2"
+      },
+      {
+        "z2m": "countdown_l6",
+        "homey": "countdown_l6"
+      },
+      {
+        "z2m": "battery_level",
+        "homey": "battery_level"
+      },
+      {
+        "z2m": "power_outage_memory",
+        "homey": "power_outage_memory"
+      },
+      {
+        "z2m": "charge_energy",
+        "homey": "charge_energy"
+      },
+      {
+        "z2m": "countdown_2",
+        "homey": "countdown_2"
+      },
+      {
+        "z2m": "relay_status",
+        "homey": "relay_status"
+      },
+      {
+        "z2m": "battery_value",
+        "homey": "battery_value"
+      }
+    ],
+    "15": [
+      {
+        "z2m": "indicator_mode",
+        "homey": "indicator_mode"
+      },
+      {
+        "z2m": "humidity_alarm",
+        "homey": "humidity_alarm"
+      },
+      {
+        "z2m": "battery",
+        "homey": "measure_battery"
+      },
+      {
+        "z2m": "state_l3",
+        "homey": "state_l3"
+      },
+      {
+        "z2m": "min_temperature",
+        "homey": "min_temperature"
+      },
+      {
+        "z2m": "window",
+        "homey": "window"
+      },
+      {
+        "z2m": "max_temperature_limit",
+        "homey": "max_temperature_limit"
+      },
+      {
+        "z2m": "large_motion_detection_sensitivity",
+        "homey": "large_motion_detection_sensitivity"
+      },
+      {
+        "z2m": "power_factor",
+        "homey": "power_factor"
+      },
+      {
+        "z2m": "countdown_l7",
+        "homey": "countdown_l7"
+      },
+      {
+        "z2m": "radar_sensitivity",
+        "homey": "radar_sensitivity"
+      },
+      {
+        "z2m": "leakage_current",
+        "homey": "leakage_current"
+      },
+      {
+        "z2m": "leakage",
+        "homey": "leakage"
+      },
+      {
+        "z2m": "window_open",
+        "homey": "window_open"
+      }
+    ],
+    "16": [
+      {
+        "z2m": "meter_id",
+        "homey": "meter_id"
+      },
+      {
+        "z2m": "backlight_switch",
+        "homey": "backlight_switch"
+      },
+      {
+        "z2m": "silence",
+        "homey": "silence"
+      },
+      {
+        "z2m": "state",
+        "homey": "onoff"
+      },
+      {
+        "z2m": "alarm_state",
+        "homey": "alarm_state"
+      },
+      {
+        "z2m": "backlight_mode",
+        "homey": "backlight_mode"
+      },
+      {
+        "z2m": "brightness_l3",
+        "homey": "brightness_l3"
+      },
+      {
+        "z2m": "current_heating_setpoint",
+        "homey": "current_heating_setpoint"
+      },
+      {
+        "z2m": "set_limits",
+        "homey": "set_limits"
+      },
+      {
+        "z2m": "open_window_temperature",
+        "homey": "open_window_temperature"
+      },
+      {
+        "z2m": "border",
+        "homey": "border"
+      },
+      {
+        "z2m": "max_temperature",
+        "homey": "max_temperature"
+      },
+      {
+        "z2m": "local_temperature",
+        "homey": "local_temperature"
+      },
+      {
+        "z2m": "min_temperature_limit",
+        "homey": "min_temperature_limit"
+      },
+      {
+        "z2m": "small_motion_detection_sensitivity",
+        "homey": "small_motion_detection_sensitivity"
+      },
+      {
+        "z2m": "clear_energy",
+        "homey": "clear_energy"
+      },
+      {
+        "z2m": "countdown_l8",
+        "homey": "countdown_l8"
+      },
+      {
+        "z2m": "presence_sensitivity",
+        "homey": "presence_sensitivity"
+      },
+      {
+        "z2m": "radar_sensitivity",
+        "homey": "radar_sensitivity"
+      },
+      {
+        "z2m": "backlight",
+        "homey": "backlight"
+      },
+      {
+        "z2m": "schedule",
+        "homey": "schedule"
+      },
+      {
+        "z2m": "switch_backlight",
+        "homey": "switch_backlight"
+      }
+    ],
+    "17": [
+      {
+        "z2m": "temperature_periodic_report",
+        "homey": "temperature_periodic_report"
+      },
+      {
+        "z2m": "min_brightness_l3",
+        "homey": "min_brightness_l3"
+      },
+      {
+        "z2m": "open_window_time",
+        "homey": "open_window_time"
+      },
+      {
+        "z2m": "schedule_monday",
+        "homey": "schedule_monday"
+      },
+      {
+        "z2m": "alarm",
+        "homey": "alarm"
+      },
+      {
+        "z2m": "self_test",
+        "homey": "self_test"
+      },
+      {
+        "z2m": "alarm_switch",
+        "homey": "alarm_switch"
+      },
+      {
+        "z2m": "high_temperature_threshold",
+        "homey": "high_temperature_threshold"
+      },
+      {
+        "z2m": "high_temperature_breaker",
+        "homey": "high_temperature_breaker"
+      },
+      {
+        "z2m": "overload_breaker",
+        "homey": "overload_breaker"
+      },
+      {
+        "z2m": "overload_threshold",
+        "homey": "overload_threshold"
+      },
+      {
+        "z2m": "leakage_threshold",
+        "homey": "leakage_threshold"
+      },
+      {
+        "z2m": "leakage_breaker",
+        "homey": "leakage_breaker"
+      },
+      {
+        "z2m": "backlight_mode",
+        "homey": "backlight_mode"
+      },
+      {
+        "z2m": "window",
+        "homey": "window"
+      },
+      {
+        "z2m": "action",
+        "homey": "action"
+      }
+    ],
+    "18": [
+      {
+        "z2m": "reverse_water_consumed",
+        "homey": "reverse_water_consumed"
+      },
+      {
+        "z2m": "humidity_periodic_report",
+        "homey": "humidity_periodic_report"
+      },
+      {
+        "z2m": "light_type_l3",
+        "homey": "light_type_l3"
+      },
+      {
+        "z2m": "backlight",
+        "homey": "backlight"
+      },
+      {
+        "z2m": "schedule_tuesday",
+        "homey": "schedule_tuesday"
+      },
+      {
+        "z2m": "min_temperature",
+        "homey": "min_temperature"
+      },
+      {
+        "z2m": "carbon_monoxide",
+        "homey": "alarm_co"
+      },
+      {
+        "z2m": "current",
+        "homey": "measure_current"
+      },
+      {
+        "z2m": "over_current_threshold",
+        "homey": "over_current_threshold"
+      },
+      {
+        "z2m": "over_current_breaker",
+        "homey": "over_current_breaker"
+      },
+      {
+        "z2m": "over_voltage_threshold",
+        "homey": "over_voltage_threshold"
+      },
+      {
+        "z2m": "over_voltage_breaker",
+        "homey": "over_voltage_breaker"
+      },
+      {
+        "z2m": "under_voltage_threshold",
+        "homey": "under_voltage_threshold"
+      },
+      {
+        "z2m": "under_voltage_breaker",
+        "homey": "under_voltage_breaker"
+      },
+      {
+        "z2m": "insufficient_balance_threshold",
+        "homey": "insufficient_balance_threshold"
+      },
+      {
+        "z2m": "insufficient_balance_breaker",
+        "homey": "insufficient_balance_breaker"
+      },
+      {
+        "z2m": "meter_id",
+        "homey": "meter_id"
+      },
+      {
+        "z2m": "mode_l1",
+        "homey": "mode_l1"
+      },
+      {
+        "z2m": "data_report_duration",
+        "homey": "data_report_duration"
+      },
+      {
+        "z2m": "temperature",
+        "homey": "measure_temperature"
+      },
+      {
+        "z2m": "open_window_active",
+        "homey": "open_window_active"
+      },
+      {
+        "z2m": "max_temperature_f",
+        "homey": "max_temperature_f"
+      }
+    ],
+    "19": [
+      {
+        "z2m": "temperature_sensitivity",
+        "homey": "temperature_sensitivity"
+      },
+      {
+        "z2m": "max_brightness_l3",
+        "homey": "max_brightness_l3"
+      },
+      {
+        "z2m": "state_l1",
+        "homey": "state_l1"
+      },
+      {
+        "z2m": "max_temperature",
+        "homey": "max_temperature"
+      },
+      {
+        "z2m": "factory_reset",
+        "homey": "factory_reset"
+      },
+      {
+        "z2m": "schedule_wednesday",
+        "homey": "schedule_wednesday"
+      },
+      {
+        "z2m": "local_temperature_calibration",
+        "homey": "local_temperature_calibration"
+      },
+      {
+        "z2m": "power",
+        "homey": "measure_power"
+      },
+      {
+        "z2m": "upper_temp",
+        "homey": "upper_temp"
+      },
+      {
+        "z2m": "mode_l2",
+        "homey": "mode_l2"
+      },
+      {
+        "z2m": "detection_distance",
+        "homey": "detection_distance"
+      },
+      {
+        "z2m": "dis_current",
+        "homey": "dis_current"
+      },
+      {
+        "z2m": "co",
+        "homey": "co"
+      },
+      {
+        "z2m": "target_distance",
+        "homey": "target_distance"
+      },
+      {
+        "z2m": "humidity",
+        "homey": "measure_humidity"
+      },
+      {
+        "z2m": "installation_height",
+        "homey": "installation_height"
+      }
+    ],
+    "20": [
+      {
+        "z2m": "humidity_sensitivity",
+        "homey": "humidity_sensitivity"
+      },
+      {
+        "z2m": "countdown_l3",
+        "homey": "countdown_l3"
+      },
+      {
+        "z2m": "state_l2",
+        "homey": "state_l2"
+      },
+      {
+        "z2m": "schedule_thursday",
+        "homey": "schedule_thursday"
+      },
+      {
+        "z2m": "click_control",
+        "homey": "click_control"
+      },
+      {
+        "z2m": "voltage",
+        "homey": "measure_voltage"
+      },
+      {
+        "z2m": "clear_fault",
+        "homey": "clear_fault"
+      },
+      {
+        "z2m": "mode_l3",
+        "homey": "mode_l3"
+      },
+      {
+        "z2m": "illuminance",
+        "homey": "measure_luminance"
+      },
+      {
+        "z2m": "min_temperature_f",
+        "homey": "min_temperature_f"
+      },
+      {
+        "z2m": "fault",
+        "homey": "fault"
+      }
+    ],
+    "21": [
+      {
+        "z2m": "flow_rate",
+        "homey": "flow_rate"
+      },
+      {
+        "z2m": "backlight_mode",
+        "homey": "backlight_mode"
+      },
+      {
+        "z2m": "current",
+        "homey": "measure_current"
+      },
+      {
+        "z2m": "indicator_mode",
+        "homey": "indicator_mode"
+      },
+      {
+        "z2m": "state_l3",
+        "homey": "state_l3"
+      },
+      {
+        "z2m": "holiday_temperature",
+        "homey": "holiday_temperature"
+      },
+      {
+        "z2m": "schedule_friday",
+        "homey": "schedule_friday"
+      },
+      {
+        "z2m": "leakage_test",
+        "homey": "leakage_test"
+      },
+      {
+        "z2m": "mode_l4",
+        "homey": "mode_l4"
+      },
+      {
+        "z2m": "ringtone",
+        "homey": "ringtone"
+      },
+      {
+        "z2m": "liquid_depth_max",
+        "homey": "liquid_depth_max"
+      },
+      {
+        "z2m": "local_temperature_f",
+        "homey": "local_temperature_f"
+      }
+    ],
+    "22": [
+      {
+        "z2m": "temperature",
+        "homey": "measure_temperature"
+      },
+      {
+        "z2m": "power",
+        "homey": "measure_power"
+      },
+      {
+        "z2m": "state_l4",
+        "homey": "state_l4"
+      },
+      {
+        "z2m": "energy_wh",
+        "homey": "energy_wh"
+      },
+      {
+        "z2m": "schedule_saturday",
+        "homey": "schedule_saturday"
+      },
+      {
+        "z2m": "liquid_level_percent",
+        "homey": "liquid_level_percent"
+      }
+    ],
+    "23": [
+      {
+        "z2m": "voltage",
+        "homey": "measure_voltage"
+      },
+      {
+        "z2m": "state_l5",
+        "homey": "state_l5"
+      },
+      {
+        "z2m": "schedule_sunday",
+        "homey": "schedule_sunday"
+      },
+      {
+        "z2m": "working_day",
+        "homey": "working_day"
+      },
+      {
+        "z2m": "temperature_calibration",
+        "homey": "temperature_calibration"
+      },
+      {
+        "z2m": "produced_energy",
+        "homey": "produced_energy"
+      },
+      {
+        "z2m": "power_outage_memory",
+        "homey": "power_outage_memory"
+      },
+      {
+        "z2m": "temperature",
+        "homey": "measure_temperature"
+      }
+    ],
+    "24": [
+      {
+        "z2m": "state_l6",
+        "homey": "state_l6"
+      },
+      {
+        "z2m": "local_temperature",
+        "homey": "local_temperature"
+      },
+      {
+        "z2m": "comfort_temperature",
+        "homey": "comfort_temperature"
+      },
+      {
+        "z2m": "state_l1",
+        "homey": "state_l1"
+      },
+      {
+        "z2m": "light_mode",
+        "homey": "light_mode"
+      },
+      {
+        "z2m": "humidity_calibration",
+        "homey": "humidity_calibration"
+      },
+      {
+        "z2m": "device_temperature",
+        "homey": "device_temperature"
+      },
+      {
+        "z2m": "total_energy",
+        "homey": "total_energy"
+      },
+      {
+        "z2m": "humidity",
+        "homey": "measure_humidity"
+      }
+    ],
+    "25": [
+      {
+        "z2m": "eco_temperature",
+        "homey": "eco_temperature"
+      },
+      {
+        "z2m": "window_state",
+        "homey": "window_state"
+      },
+      {
+        "z2m": "state_l2",
+        "homey": "state_l2"
+      },
+      {
+        "z2m": "valve_duration_l1",
+        "homey": "valve_duration_l1"
+      },
+      {
+        "z2m": "sleep",
+        "homey": "sleep"
+      }
+    ],
+    "26": [
+      {
+        "z2m": "voltage",
+        "homey": "measure_voltage"
+      },
+      {
+        "z2m": "deadzone_temperature",
+        "homey": "deadzone_temperature"
+      },
+      {
+        "z2m": "state_l3",
+        "homey": "state_l3"
+      },
+      {
+        "z2m": "error_status",
+        "homey": "error_status"
+      },
+      {
+        "z2m": "valve_duration_l2",
+        "homey": "valve_duration_l2"
+      },
+      {
+        "z2m": "min_temperature",
+        "homey": "min_temperature"
+      }
+    ],
+    "27": [
+      {
+        "z2m": "local_temperature_calibration",
+        "homey": "local_temperature_calibration"
+      },
+      {
+        "z2m": "temperature_correction",
+        "homey": "temperature_correction"
+      },
+      {
+        "z2m": "state_l4",
+        "homey": "state_l4"
+      },
+      {
+        "z2m": "power_on_behavior",
+        "homey": "power_on_behavior"
+      }
+    ],
+    "28": [
+      {
+        "z2m": "fan_mode",
+        "homey": "fan_mode"
+      },
+      {
+        "z2m": "schedule_monday",
+        "homey": "schedule_monday"
+      },
+      {
+        "z2m": "schedule_wednesday",
+        "homey": "schedule_wednesday"
+      },
+      {
+        "z2m": "factory_reset",
+        "homey": "factory_reset"
+      }
+    ],
+    "29": [
+      {
+        "z2m": "schedule_tuesday",
+        "homey": "schedule_tuesday"
+      },
+      {
+        "z2m": "schedule_thursday",
+        "homey": "schedule_thursday"
+      },
+      {
+        "z2m": "power",
+        "homey": "measure_power"
+      },
+      {
+        "z2m": "power_on_behavior_l1",
+        "homey": "power_on_behavior_l1"
+      },
+      {
+        "z2m": "window_detection",
+        "homey": "window_detection"
+      }
+    ],
+    "30": [
+      {
+        "z2m": "child_lock",
+        "homey": "child_lock"
+      },
+      {
+        "z2m": "schedule_wednesday",
+        "homey": "schedule_wednesday"
+      },
+      {
+        "z2m": "schedule_friday",
+        "homey": "schedule_friday"
+      },
+      {
+        "z2m": "power_on_behavior_l2",
+        "homey": "power_on_behavior_l2"
+      },
+      {
+        "z2m": "power_reactive",
+        "homey": "power_reactive"
+      },
+      {
+        "z2m": "swing_mode",
+        "homey": "swing_mode"
+      }
+    ],
+    "31": [
+      {
+        "z2m": "working_day",
+        "homey": "working_day"
+      },
+      {
+        "z2m": "schedule_thursday",
+        "homey": "schedule_thursday"
+      },
+      {
+        "z2m": "schedule_saturday",
+        "homey": "schedule_saturday"
+      },
+      {
+        "z2m": "power_on_behavior_l3",
+        "homey": "power_on_behavior_l3"
+      }
+    ],
+    "32": [
+      {
+        "z2m": "holiday_temperature",
+        "homey": "holiday_temperature"
+      },
+      {
+        "z2m": "schedule_friday",
+        "homey": "schedule_friday"
+      },
+      {
+        "z2m": "schedule_sunday",
+        "homey": "schedule_sunday"
+      },
+      {
+        "z2m": "sensor",
+        "homey": "sensor"
+      },
+      {
+        "z2m": "ac_frequency",
+        "homey": "ac_frequency"
+      },
+      {
+        "z2m": "power_on_behavior_l4",
+        "homey": "power_on_behavior_l4"
+      }
+    ],
+    "33": [
+      {
+        "z2m": "schedule_saturday",
+        "homey": "schedule_saturday"
+      },
+      {
+        "z2m": "schedule_monday",
+        "homey": "schedule_monday"
+      },
+      {
+        "z2m": "power_on_behavior_l5",
+        "homey": "power_on_behavior_l5"
+      }
+    ],
+    "34": [
+      {
+        "z2m": "battery",
+        "homey": "measure_battery"
+      },
+      {
+        "z2m": "schedule_sunday",
+        "homey": "schedule_sunday"
+      },
+      {
+        "z2m": "schedule_tuesday",
+        "homey": "schedule_tuesday"
+      },
+      {
+        "z2m": "max_temperature",
+        "homey": "max_temperature"
+      },
+      {
+        "z2m": "humidity",
+        "homey": "measure_humidity"
+      },
+      {
+        "z2m": "power_on_behavior_l6",
+        "homey": "power_on_behavior_l6"
+      }
+    ],
+    "35": [
+      {
+        "z2m": "error_status",
+        "homey": "error_status"
+      },
+      {
+        "z2m": "battery_low",
+        "homey": "alarm_battery"
+      },
+      {
+        "z2m": "fault_alarm",
+        "homey": "fault_alarm"
+      }
+    ],
+    "36": [
+      {
+        "z2m": "frost_protection",
+        "homey": "frost_protection"
+      },
+      {
+        "z2m": "running_state",
+        "homey": "running_state"
+      },
+      {
+        "z2m": "backlight_switch",
+        "homey": "backlight_switch"
+      },
+      {
+        "z2m": "valve",
+        "homey": "valve"
+      },
+      {
+        "z2m": "show_weather",
+        "homey": "show_weather"
+      }
+    ],
+    "37": [
+      {
+        "z2m": "boost_time",
+        "homey": "boost_time"
+      },
+      {
+        "z2m": "boost_heating",
+        "homey": "boost_heating"
+      },
+      {
+        "z2m": "indicator_switch",
+        "homey": "indicator_switch"
+      },
+      {
+        "z2m": "adaptive_start",
+        "homey": "adaptive_start"
+      },
+      {
+        "z2m": "show_screen",
+        "homey": "show_screen"
+      }
+    ],
+    "38": [
+      {
+        "z2m": "boost_timeset_countdown",
+        "homey": "boost_timeset_countdown"
+      },
+      {
+        "z2m": "local_temperature",
+        "homey": "local_temperature"
+      },
+      {
+        "z2m": "power_on_behavior",
+        "homey": "power_on_behavior"
+      }
+    ],
+    "39": [
+      {
+        "z2m": "scale_protection",
+        "homey": "scale_protection"
+      },
+      {
+        "z2m": "child_lock",
+        "homey": "child_lock"
+      },
+      {
+        "z2m": "switch_scale",
+        "homey": "switch_scale"
+      },
+      {
+        "z2m": "factory_reset",
+        "homey": "factory_reset"
+      },
+      {
+        "z2m": "max_temperature_limit",
+        "homey": "max_temperature_limit"
+      },
+      {
+        "z2m": "power_on_behavior_l1",
+        "homey": "power_on_behavior_l1"
+      }
+    ],
+    "40": [
+      {
+        "z2m": "child_lock",
+        "homey": "child_lock"
+      },
+      {
+        "z2m": "eco_mode",
+        "homey": "eco_mode"
+      },
+      {
+        "z2m": "open_window_sensing_time",
+        "homey": "open_window_sensing_time"
+      },
+      {
+        "z2m": "local_temperature_f",
+        "homey": "local_temperature_f"
+      },
+      {
+        "z2m": "power_on_behavior_l2",
+        "homey": "power_on_behavior_l2"
+      }
+    ],
+    "41": [
+      {
+        "z2m": "holiday_start_stop",
+        "homey": "holiday_start_stop"
+      },
+      {
+        "z2m": "current_heating_setpoint_f",
+        "homey": "current_heating_setpoint_f"
+      },
+      {
+        "z2m": "power_on_behavior_l3",
+        "homey": "power_on_behavior_l3"
+      }
+    ],
+    "42": [
+      {
+        "z2m": "holiday_temperature",
+        "homey": "holiday_temperature"
+      },
+      {
+        "z2m": "power_on_behavior_l4",
+        "homey": "power_on_behavior_l4"
+      }
+    ],
+    "43": [
+      {
+        "z2m": "sensor_choose",
+        "homey": "sensor_choose"
+      },
+      {
+        "z2m": "sensor",
+        "homey": "sensor"
+      },
+      {
+        "z2m": "sensor_mode",
+        "homey": "sensor_mode"
+      }
+    ],
+    "44": [
+      {
+        "z2m": "current_heating_setpoint_f",
+        "homey": "current_heating_setpoint_f"
+      }
+    ],
+    "45": [
+      {
+        "z2m": "error_status",
+        "homey": "error_status"
+      },
+      {
+        "z2m": "open_window_drop_limit",
+        "homey": "open_window_drop_limit"
+      }
+    ],
+    "46": [
+      {
+        "z2m": "holiday_start_stop",
+        "homey": "holiday_start_stop"
+      },
+      {
+        "z2m": "open_window_temperature_f",
+        "homey": "open_window_temperature_f"
+      },
+      {
+        "z2m": "temperature_scale",
+        "homey": "temperature_scale"
+      },
+      {
+        "z2m": "temperature_unit",
+        "homey": "temperature_unit"
+      }
+    ],
+    "47": [
+      {
+        "z2m": "local_temperature_calibration",
+        "homey": "local_temperature_calibration"
+      },
+      {
+        "z2m": "valve_state",
+        "homey": "valve_state"
+      },
+      {
+        "z2m": "open_window_off_time",
+        "homey": "open_window_off_time"
+      }
+    ],
+    "48": [
+      {
+        "z2m": "valve_testing",
+        "homey": "valve_testing"
+      },
+      {
+        "z2m": "week_schedule",
+        "homey": "week_schedule"
+      },
+      {
+        "z2m": "temp_tolerance",
+        "homey": "temp_tolerance"
+      }
+    ],
+    "49": [
+      {
+        "z2m": "running_state",
+        "homey": "running_state"
+      },
+      {
+        "z2m": "system_mode",
+        "homey": "system_mode"
+      },
+      {
+        "z2m": "valve",
+        "homey": "valve"
+      }
+    ],
+    "50": [
+      {
+        "z2m": "current_heating_setpoint",
+        "homey": "current_heating_setpoint"
+      },
+      {
+        "z2m": "power_factor",
+        "homey": "power_factor"
+      },
+      {
+        "z2m": "power_rating",
+        "homey": "power_rating"
+      },
+      {
+        "z2m": "occupied_heating_setpoint",
+        "homey": "occupied_heating_setpoint"
+      }
+    ],
+    "52": [
+      {
+        "z2m": "frost_protection",
+        "homey": "frost_protection"
+      }
+    ],
+    "53": [
+      {
+        "z2m": "min_temperature_limit",
+        "homey": "min_temperature_limit"
+      }
+    ],
+    "54": [
+      {
+        "z2m": "switch_delay",
+        "homey": "switch_delay"
+      }
+    ],
+    "55": [
+      {
+        "z2m": "display_brightness",
+        "homey": "display_brightness"
+      }
+    ],
+    "57": [
+      {
+        "z2m": "switch_type",
+        "homey": "switch_type"
+      }
+    ],
+    "58": [
+      {
+        "z2m": "run_mode",
+        "homey": "run_mode"
+      }
+    ],
+    "59": [
+      {
+        "z2m": "battery",
+        "homey": "measure_battery"
+      }
+    ],
+    "61": [
+      {
+        "z2m": "week_program_periods",
+        "homey": "week_program_periods"
+      }
+    ],
+    "68": [
+      {
+        "z2m": "programming_mode",
+        "homey": "programming_mode"
+      }
+    ],
+    "100": [
+      {
+        "z2m": "brightness_value",
+        "homey": "brightness_value"
+      }
+    ],
+    "101": [
+      {
+        "z2m": "sensitivity",
+        "homey": "sensitivity"
+      },
+      {
+        "z2m": "child_lock",
+        "homey": "child_lock"
+      },
+      {
+        "z2m": "action",
+        "homey": "action"
+      },
+      {
+        "z2m": "opening_state",
+        "homey": "opening_state"
+      },
+      {
+        "z2m": "illuminance",
+        "homey": "measure_luminance"
+      },
+      {
+        "z2m": "temperature_alarm",
+        "homey": "temperature_alarm"
+      },
+      {
+        "z2m": "schedule",
+        "homey": "schedule"
+      },
+      {
+        "z2m": "motor_direction",
+        "homey": "motor_direction"
+      },
+      {
+        "z2m": "battery",
+        "homey": "measure_battery"
+      },
+      {
+        "z2m": "comfort_temperature",
+        "homey": "comfort_temperature"
+      },
+      {
+        "z2m": "opening_mode",
+        "homey": "opening_mode"
+      },
+      {
+        "z2m": "boost_timeset_countdown",
+        "homey": "boost_timeset_countdown"
+      },
+      {
+        "z2m": "schedule_monday",
+        "homey": "schedule_monday"
+      },
+      {
+        "z2m": "pi_heating_demand",
+        "homey": "pi_heating_demand"
+      },
+      {
+        "z2m": "local_temperature_calibration",
+        "homey": "local_temperature_calibration"
+      },
+      {
+        "z2m": "max_temperature_limit",
+        "homey": "max_temperature_limit"
+      },
+      {
+        "z2m": "boost_heating",
+        "homey": "boost_heating"
+      },
+      {
+        "z2m": "test",
+        "homey": "test"
+      },
+      {
+        "z2m": "humidity",
+        "homey": "measure_humidity"
+      },
+      {
+        "z2m": "energy",
+        "homey": "meter_power"
+      },
+      {
+        "z2m": "total_energy",
+        "homey": "total_energy"
+      },
+      {
+        "z2m": "switch_sensitivity",
+        "homey": "switch_sensitivity"
+      },
+      {
+        "z2m": "running_state",
+        "homey": "running_state"
+      },
+      {
+        "z2m": "backlight",
+        "homey": "backlight"
+      },
+      {
+        "z2m": "detection_delay",
+        "homey": "detection_delay"
+      },
+      {
+        "z2m": "alarm_time",
+        "homey": "alarm_time"
+      },
+      {
+        "z2m": "motion_state",
+        "homey": "motion_state"
+      },
+      {
+        "z2m": "energy_a",
+        "homey": "energy_a"
+      },
+      {
+        "z2m": "state",
+        "homey": "onoff"
+      },
+      {
+        "z2m": "rain_sensor_status",
+        "homey": "rain_sensor_status"
+      },
+      {
+        "z2m": "fan_speed",
+        "homey": "fan_speed"
+      },
+      {
+        "z2m": "state_l1",
+        "homey": "state_l1"
+      },
+      {
+        "z2m": "state_l2",
+        "homey": "state_l2"
+      },
+      {
+        "z2m": "ac_frequency",
+        "homey": "ac_frequency"
+      },
+      {
+        "z2m": "current_a",
+        "homey": "current_a"
+      },
+      {
+        "z2m": "find_switch",
+        "homey": "find_switch"
+      },
+      {
+        "z2m": "entry_filter_time",
+        "homey": "entry_filter_time"
+      },
+      {
+        "z2m": "gate_enable_01",
+        "homey": "gate_enable_01"
+      },
+      {
+        "z2m": "manual_mode",
+        "homey": "manual_mode"
+      },
+      {
+        "z2m": "orp",
+        "homey": "orp"
+      },
+      {
+        "z2m": "indicator",
+        "homey": "indicator"
+      },
+      {
+        "z2m": "schedule_sunday",
+        "homey": "schedule_sunday"
+      },
+      {
+        "z2m": "target_distance",
+        "homey": "target_distance"
+      },
+      {
+        "z2m": "x",
+        "homey": "x"
+      },
+      {
+        "z2m": "switch1",
+        "homey": "switch1"
+      },
+      {
+        "z2m": "presence",
+        "homey": "alarm_motion"
+      },
+      {
+        "z2m": "occupancy",
+        "homey": "alarm_motion"
+      },
+      {
+        "z2m": "system_mode",
+        "homey": "system_mode"
+      },
+      {
+        "z2m": "movement_timeout",
+        "homey": "movement_timeout"
+      },
+      {
+        "z2m": "entry_sensitivity",
+        "homey": "entry_sensitivity"
+      },
+      {
+        "z2m": "boost_time",
+        "homey": "boost_time"
+      },
+      {
+        "z2m": "contact",
+        "homey": "alarm_contact"
+      },
+      {
+        "z2m": "illuminance_sampling",
+        "homey": "illuminance_sampling"
+      },
+      {
+        "z2m": "static_sensitivity",
+        "homey": "static_sensitivity"
+      },
+      {
+        "z2m": "voltage",
+        "homey": "measure_voltage"
+      },
+      {
+        "z2m": "week_program",
+        "homey": "week_program"
+      },
+      {
+        "z2m": "illuminance_trigger",
+        "homey": "illuminance_trigger"
+      }
+    ],
+    "102": [
+      {
+        "z2m": "hold_time",
+        "homey": "hold_time"
+      },
+      {
+        "z2m": "backlight",
+        "homey": "backlight"
+      },
+      {
+        "z2m": "vibration",
+        "homey": "vibration"
+      },
+      {
+        "z2m": "light",
+        "homey": "light"
+      },
+      {
+        "z2m": "illuminance_average_20min",
+        "homey": "illuminance_average_20min"
+      },
+      {
+        "z2m": "humidity_alarm",
+        "homey": "humidity_alarm"
+      },
+      {
+        "z2m": "set_upper_limit",
+        "homey": "set_upper_limit"
+      },
+      {
+        "z2m": "eco_temperature",
+        "homey": "eco_temperature"
+      },
+      {
+        "z2m": "factory_reset",
+        "homey": "factory_reset"
+      },
+      {
+        "z2m": "open_window_temperature",
+        "homey": "open_window_temperature"
+      },
+      {
+        "z2m": "schedule_tuesday",
+        "homey": "schedule_tuesday"
+      },
+      {
+        "z2m": "position",
+        "homey": "windowcoverings_set"
+      },
+      {
+        "z2m": "schedule_monday",
+        "homey": "schedule_monday"
+      },
+      {
+        "z2m": "deadzone_temperature",
+        "homey": "deadzone_temperature"
+      },
+      {
+        "z2m": "boost_time",
+        "homey": "boost_time"
+      },
+      {
+        "z2m": "illuminance",
+        "homey": "measure_luminance"
+      },
+      {
+        "z2m": "produced_energy",
+        "homey": "produced_energy"
+      },
+      {
+        "z2m": "temperature",
+        "homey": "measure_temperature"
+      },
+      {
+        "z2m": "floor_temp_protection",
+        "homey": "floor_temp_protection"
+      },
+      {
+        "z2m": "frost_protection",
+        "homey": "frost_protection"
+      },
+      {
+        "z2m": "occupancy",
+        "homey": "alarm_motion"
+      },
+      {
+        "z2m": "fading_time",
+        "homey": "fading_time"
+      },
+      {
+        "z2m": "alarm_volume",
+        "homey": "alarm_volume"
+      },
+      {
+        "z2m": "alarm",
+        "homey": "alarm"
+      },
+      {
+        "z2m": "illuminance_interval",
+        "homey": "illuminance_interval"
+      },
+      {
+        "z2m": "power_factor_a",
+        "homey": "power_factor_a"
+      },
+      {
+        "z2m": "rain_sensor_switch",
+        "homey": "rain_sensor_switch"
+      },
+      {
+        "z2m": "state_l1",
+        "homey": "state_l1"
+      },
+      {
+        "z2m": "voltage",
+        "homey": "measure_voltage"
+      },
+      {
+        "z2m": "voltage_a",
+        "homey": "voltage_a"
+      },
+      {
+        "z2m": "current_b",
+        "homey": "current_b"
+      },
+      {
+        "z2m": "update_frequency",
+        "homey": "update_frequency"
+      },
+      {
+        "z2m": "energy_flow",
+        "homey": "energy_flow"
+      },
+      {
+        "z2m": "action",
+        "homey": "action"
+      },
+      {
+        "z2m": "illuminance_treshold_max",
+        "homey": "illuminance_treshold_max"
+      },
+      {
+        "z2m": "presence_sensitivity",
+        "homey": "presence_sensitivity"
+      },
+      {
+        "z2m": "departure_delay",
+        "homey": "departure_delay"
+      },
+      {
+        "z2m": "gate_enable_02",
+        "homey": "gate_enable_02"
+      },
+      {
+        "z2m": "energy_produced_a",
+        "homey": "energy_produced_a"
+      },
+      {
+        "z2m": "keep_time",
+        "homey": "keep_time"
+      },
+      {
+        "z2m": "free_chlorine",
+        "homey": "free_chlorine"
+      },
+      {
+        "z2m": "over_voltage_setting",
+        "homey": "over_voltage_setting"
+      },
+      {
+        "z2m": "local_temperature",
+        "homey": "local_temperature"
+      },
+      {
+        "z2m": "running_state",
+        "homey": "running_state"
+      },
+      {
+        "z2m": "external_temperature_input",
+        "homey": "external_temperature_input"
+      },
+      {
+        "z2m": "state_l2",
+        "homey": "state_l2"
+      },
+      {
+        "z2m": "y",
+        "homey": "y"
+      },
+      {
+        "z2m": "switch2",
+        "homey": "switch2"
+      },
+      {
+        "z2m": "sensitivity",
+        "homey": "sensitivity"
+      },
+      {
+        "z2m": "soil_calibration",
+        "homey": "soil_calibration"
+      },
+      {
+        "z2m": "reclosing_allowed_times",
+        "homey": "reclosing_allowed_times"
+      },
+      {
+        "z2m": "local_temperature_calibration",
+        "homey": "local_temperature_calibration"
+      },
+      {
+        "z2m": "idle_timeout",
+        "homey": "idle_timeout"
+      },
+      {
+        "z2m": "entry_distance",
+        "homey": "entry_distance"
+      },
+      {
+        "z2m": "temperature_accuracy",
+        "homey": "temperature_accuracy"
+      },
+      {
+        "z2m": "state",
+        "homey": "onoff"
+      },
+      {
+        "z2m": "motion_sensitivity",
+        "homey": "motion_sensitivity"
+      },
+      {
+        "z2m": "current",
+        "homey": "measure_current"
+      },
+      {
+        "z2m": "work_state",
+        "homey": "work_state"
+      },
+      {
+        "z2m": "led_bright_l1",
+        "homey": "led_bright_l1"
+      },
+      {
+        "z2m": "turbo",
+        "homey": "turbo"
+      },
+      {
+        "z2m": "scene_switch",
+        "homey": "scene_switch"
+      },
+      {
+        "z2m": "presence_time",
+        "homey": "presence_time"
+      }
+    ],
+    "103": [
+      {
+        "z2m": "light_interval",
+        "homey": "light_interval"
+      },
+      {
+        "z2m": "on_color",
+        "homey": "on_color"
+      },
+      {
+        "z2m": "alarm_siren",
+        "homey": "alarm_siren"
+      },
+      {
+        "z2m": "illuminance_maximum_today",
+        "homey": "illuminance_maximum_today"
+      },
+      {
+        "z2m": "max_temperature_alarm",
+        "homey": "max_temperature_alarm"
+      },
+      {
+        "z2m": "upper_stroke_limit",
+        "homey": "upper_stroke_limit"
+      },
+      {
+        "z2m": "tilt_mode",
+        "homey": "tilt_mode"
+      },
+      {
+        "z2m": "holiday_temperature",
+        "homey": "holiday_temperature"
+      },
+      {
+        "z2m": "set_upper_limit",
+        "homey": "set_upper_limit"
+      },
+      {
+        "z2m": "schedule_wednesday",
+        "homey": "schedule_wednesday"
+      },
+      {
+        "z2m": "schedule_tuesday",
+        "homey": "schedule_tuesday"
+      },
+      {
+        "z2m": "schedule_monday",
+        "homey": "schedule_monday"
+      },
+      {
+        "z2m": "humidity_calibration",
+        "homey": "humidity_calibration"
+      },
+      {
+        "z2m": "power",
+        "homey": "measure_power"
+      },
+      {
+        "z2m": "temperature",
+        "homey": "measure_temperature"
+      },
+      {
+        "z2m": "floor_low_protection",
+        "homey": "floor_low_protection"
+      },
+      {
+        "z2m": "factory_reset",
+        "homey": "factory_reset"
+      },
+      {
+        "z2m": "illuminance",
+        "homey": "measure_luminance"
+      },
+      {
+        "z2m": "name_l1",
+        "homey": "name_l1"
+      },
+      {
+        "z2m": "static_detection_distance",
+        "homey": "static_detection_distance"
+      },
+      {
+        "z2m": "opening_mode",
+        "homey": "opening_mode"
+      },
+      {
+        "z2m": "motion_false_detection",
+        "homey": "motion_false_detection"
+      },
+      {
+        "z2m": "battery_state",
+        "homey": "battery_state"
+      },
+      {
+        "z2m": "child_lock",
+        "homey": "child_lock"
+      },
+      {
+        "z2m": "current",
+        "homey": "measure_current"
+      },
+      {
+        "z2m": "current_a",
+        "homey": "current_a"
+      },
+      {
+        "z2m": "power_a",
+        "homey": "power_a"
+      },
+      {
+        "z2m": "voltage_a",
+        "homey": "voltage_a"
+      },
+      {
+        "z2m": "voltage_l1",
+        "homey": "voltage_l1"
+      },
+      {
+        "z2m": "action",
+        "homey": "action"
+      },
+      {
+        "z2m": "illuminance_treshold_min",
+        "homey": "illuminance_treshold_min"
+      },
+      {
+        "z2m": "cline",
+        "homey": "cline"
+      },
+      {
+        "z2m": "gate_enable_03",
+        "homey": "gate_enable_03"
+      },
+      {
+        "z2m": "energy_b",
+        "homey": "energy_b"
+      },
+      {
+        "z2m": "deadzone_temperature",
+        "homey": "deadzone_temperature"
+      },
+      {
+        "z2m": "fading_time",
+        "homey": "fading_time"
+      },
+      {
+        "z2m": "under_voltage_setting",
+        "homey": "under_voltage_setting"
+      },
+      {
+        "z2m": "temperature_sensor",
+        "homey": "temperature_sensor"
+      },
+      {
+        "z2m": "none_delay_time",
+        "homey": "none_delay_time"
+      },
+      {
+        "z2m": "state_l3",
+        "homey": "state_l3"
+      },
+      {
+        "z2m": "z",
+        "homey": "z"
+      },
+      {
+        "z2m": "switch3",
+        "homey": "switch3"
+      },
+      {
+        "z2m": "trigger_hold",
+        "homey": "trigger_hold"
+      },
+      {
+        "z2m": "current_heating_setpoint",
+        "homey": "current_heating_setpoint"
+      },
+      {
+        "z2m": "local_temperature_calibration_f",
+        "homey": "local_temperature_calibration_f"
+      },
+      {
+        "z2m": "departure_delay",
+        "homey": "departure_delay"
+      },
+      {
+        "z2m": "eco_temperature",
+        "homey": "eco_temperature"
+      },
+      {
+        "z2m": "brightness",
+        "homey": "dim"
+      },
+      {
+        "z2m": "motion_state",
+        "homey": "motion_state"
+      },
+      {
+        "z2m": "temperature_sensibility",
+        "homey": "temperature_sensibility"
+      },
+      {
+        "z2m": "week_program_1",
+        "homey": "week_program_1"
+      },
+      {
+        "z2m": "speed",
+        "homey": "speed"
+      },
+      {
+        "z2m": "soil_sampling",
+        "homey": "soil_sampling"
+      },
+      {
+        "z2m": "led_bright_l2",
+        "homey": "led_bright_l2"
+      },
+      {
+        "z2m": "quiet",
+        "homey": "quiet"
+      },
+      {
+        "z2m": "version",
+        "homey": "version"
+      },
+      {
+        "z2m": "buzzer_mute",
+        "homey": "buzzer_mute"
+      },
+      {
+        "z2m": "presence_delay",
+        "homey": "presence_delay"
+      }
+    ],
+    "104": [
+      {
+        "z2m": "off_color",
+        "homey": "off_color"
+      },
+      {
+        "z2m": "close_signal",
+        "homey": "close_signal"
+      },
+      {
+        "z2m": "cleaning_reminder",
+        "homey": "cleaning_reminder"
+      },
+      {
+        "z2m": "min_temperature_alarm",
+        "homey": "min_temperature_alarm"
+      },
+      {
+        "z2m": "illuminance",
+        "homey": "measure_luminance"
+      },
+      {
+        "z2m": "middle_stroke_limit",
+        "homey": "middle_stroke_limit"
+      },
+      {
+        "z2m": "local_temperature_calibration",
+        "homey": "local_temperature_calibration"
+      },
+      {
+        "z2m": "set_bottom_limit",
+        "homey": "set_bottom_limit"
+      },
+      {
+        "z2m": "comfort_temperature",
+        "homey": "comfort_temperature"
+      },
+      {
+        "z2m": "schedule_thursday",
+        "homey": "schedule_thursday"
+      },
+      {
+        "z2m": "schedule_wednesday",
+        "homey": "schedule_wednesday"
+      },
+      {
+        "z2m": "schedule_tuesday",
+        "homey": "schedule_tuesday"
+      },
+      {
+        "z2m": "report_interval",
+        "homey": "report_interval"
+      },
+      {
+        "z2m": "window_open_detection_time",
+        "homey": "window_open_detection_time"
+      },
+      {
+        "z2m": "working_day",
+        "homey": "working_day"
+      },
+      {
+        "z2m": "name_l2",
+        "homey": "name_l2"
+      },
+      {
+        "z2m": "interval_time",
+        "homey": "interval_time"
+      },
+      {
+        "z2m": "static_detection_sensitivity",
+        "homey": "static_detection_sensitivity"
+      },
+      {
+        "z2m": "position",
+        "homey": "windowcoverings_set"
+      },
+      {
+        "z2m": "medium_motion_detection_distance",
+        "homey": "medium_motion_detection_distance"
+      },
+      {
+        "z2m": "valve_status_l1",
+        "homey": "valve_status_l1"
+      },
+      {
+        "z2m": "power",
+        "homey": "measure_power"
+      },
+      {
+        "z2m": "power_a",
+        "homey": "power_a"
+      },
+      {
+        "z2m": "power_b",
+        "homey": "power_b"
+      },
+      {
+        "z2m": "current_a",
+        "homey": "current_a"
+      },
+      {
+        "z2m": "current_l1",
+        "homey": "current_l1"
+      },
+      {
+        "z2m": "action",
+        "homey": "action"
+      },
+      {
+        "z2m": "presence",
+        "homey": "alarm_motion"
+      },
+      {
+        "z2m": "detection_delay",
+        "homey": "detection_delay"
+      },
+      {
+        "z2m": "gate_enable_04",
+        "homey": "gate_enable_04"
+      },
+      {
+        "z2m": "energy_produced_b",
+        "homey": "energy_produced_b"
+      },
+      {
+        "z2m": "min_temperature_limit",
+        "homey": "min_temperature_limit"
+      },
+      {
+        "z2m": "over_current_setting",
+        "homey": "over_current_setting"
+      },
+      {
+        "z2m": "max_temperature_limit",
+        "homey": "max_temperature_limit"
+      },
+      {
+        "z2m": "indicator",
+        "homey": "indicator"
+      },
+      {
+        "z2m": "state_l4",
+        "homey": "state_l4"
+      },
+      {
+        "z2m": "sensitivity",
+        "homey": "sensitivity"
+      },
+      {
+        "z2m": "auto_on",
+        "homey": "auto_on"
+      },
+      {
+        "z2m": "temperature_calibration",
+        "homey": "temperature_calibration"
+      },
+      {
+        "z2m": "reclosing_enable",
+        "homey": "reclosing_enable"
+      },
+      {
+        "z2m": "presence_timeout",
+        "homey": "presence_timeout"
+      },
+      {
+        "z2m": "deadzone_temperature",
+        "homey": "deadzone_temperature"
+      },
+      {
+        "z2m": "valve_1",
+        "homey": "valve_1"
+      },
+      {
+        "z2m": "entry_filter_time",
+        "homey": "entry_filter_time"
+      },
+      {
+        "z2m": "humidity_calibration",
+        "homey": "humidity_calibration"
+      },
+      {
+        "z2m": "battery",
+        "homey": "measure_battery"
+      },
+      {
+        "z2m": "energy_today",
+        "homey": "energy_today"
+      },
+      {
+        "z2m": "week_program_2",
+        "homey": "week_program_2"
+      },
+      {
+        "z2m": "dot_mode",
+        "homey": "dot_mode"
+      },
+      {
+        "z2m": "soil_calibration",
+        "homey": "soil_calibration"
+      },
+      {
+        "z2m": "detection_cycle",
+        "homey": "detection_cycle"
+      }
+    ],
+    "105": [
+      {
+        "z2m": "transmission_power",
+        "homey": "transmission_power"
+      },
+      {
+        "z2m": "rain_intensity",
+        "homey": "rain_intensity"
+      },
+      {
+        "z2m": "max_humidity_alarm",
+        "homey": "max_humidity_alarm"
+      },
+      {
+        "z2m": "lower_stroke_limit",
+        "homey": "lower_stroke_limit"
+      },
+      {
+        "z2m": "auto_temperature",
+        "homey": "auto_temperature"
+      },
+      {
+        "z2m": "motor_speed",
+        "homey": "motor_speed"
+      },
+      {
+        "z2m": "eco_temperature",
+        "homey": "eco_temperature"
+      },
+      {
+        "z2m": "schedule_friday",
+        "homey": "schedule_friday"
+      },
+      {
+        "z2m": "schedule_thursday",
+        "homey": "schedule_thursday"
+      },
+      {
+        "z2m": "schedule_wednesday",
+        "homey": "schedule_wednesday"
+      },
+      {
+        "z2m": "ac_frequency",
+        "homey": "ac_frequency"
+      },
+      {
+        "z2m": "window_open_detection_temp",
+        "homey": "window_open_detection_temp"
+      },
+      {
+        "z2m": "dp105",
+        "homey": "dp105"
+      },
+      {
+        "z2m": "tumble_switch",
+        "homey": "tumble_switch"
+      },
+      {
+        "z2m": "name_l3",
+        "homey": "name_l3"
+      },
+      {
+        "z2m": "presence",
+        "homey": "alarm_motion"
+      },
+      {
+        "z2m": "detection_delay",
+        "homey": "detection_delay"
+      },
+      {
+        "z2m": "mode",
+        "homey": "mode"
+      },
+      {
+        "z2m": "button_left",
+        "homey": "button_left"
+      },
+      {
+        "z2m": "medium_motion_detection_sensitivity",
+        "homey": "medium_motion_detection_sensitivity"
+      },
+      {
+        "z2m": "valve_status_l2",
+        "homey": "valve_status_l2"
+      },
+      {
+        "z2m": "voltage_b",
+        "homey": "voltage_b"
+      },
+      {
+        "z2m": "power_a",
+        "homey": "power_a"
+      },
+      {
+        "z2m": "power_l1",
+        "homey": "power_l1"
+      },
+      {
+        "z2m": "state",
+        "homey": "onoff"
+      },
+      {
+        "z2m": "presence_timeout",
+        "homey": "presence_timeout"
+      },
+      {
+        "z2m": "light_switch",
+        "homey": "light_switch"
+      },
+      {
+        "z2m": "entry_sensitivity",
+        "homey": "entry_sensitivity"
+      },
+      {
+        "z2m": "gate_enable_05",
+        "homey": "gate_enable_05"
+      },
+      {
+        "z2m": "current",
+        "homey": "measure_current"
+      },
+      {
+        "z2m": "max_temperature_limit",
+        "homey": "max_temperature_limit"
+      },
+      {
+        "z2m": "backlightvalue",
+        "homey": "backlightvalue"
+      },
+      {
+        "z2m": "over_power_setting",
+        "homey": "over_power_setting"
+      },
+      {
+        "z2m": "schedule_saturday",
+        "homey": "schedule_saturday"
+      },
+      {
+        "z2m": "schedule_tuesday",
+        "homey": "schedule_tuesday"
+      },
+      {
+        "z2m": "state_l5",
+        "homey": "state_l5"
+      },
+      {
+        "z2m": "battery",
+        "homey": "measure_battery"
+      },
+      {
+        "z2m": "auto_off",
+        "homey": "auto_off"
+      },
+      {
+        "z2m": "humidity_calibration",
+        "homey": "humidity_calibration"
+      },
+      {
+        "z2m": "timer",
+        "homey": "timer"
+      },
+      {
+        "z2m": "move_sensitivity",
+        "homey": "move_sensitivity"
+      },
+      {
+        "z2m": "deadzone_temperature_f",
+        "homey": "deadzone_temperature_f"
+      },
+      {
+        "z2m": "valve_2",
+        "homey": "valve_2"
+      },
+      {
+        "z2m": "far_movement_sensitivity",
+        "homey": "far_movement_sensitivity"
+      },
+      {
+        "z2m": "block_time",
+        "homey": "block_time"
+      },
+      {
+        "z2m": "frost_protection_temperature",
+        "homey": "frost_protection_temperature"
+      },
+      {
+        "z2m": "charge_state",
+        "homey": "charge_state"
+      },
+      {
+        "z2m": "temperature_calibration",
+        "homey": "temperature_calibration"
+      },
+      {
+        "z2m": "adjustment_mode",
+        "homey": "adjustment_mode"
+      },
+      {
+        "z2m": "energy_yesterday",
+        "homey": "energy_yesterday"
+      },
+      {
+        "z2m": "week_program_3",
+        "homey": "week_program_3"
+      },
+      {
+        "z2m": "led_bright_l3",
+        "homey": "led_bright_l3"
+      },
+      {
+        "z2m": "produced_energy",
+        "homey": "produced_energy"
+      }
+    ],
+    "106": [
+      {
+        "z2m": "vibration_limit",
+        "homey": "vibration_limit"
+      },
+      {
+        "z2m": "min_humidity_alarm",
+        "homey": "min_humidity_alarm"
+      },
+      {
+        "z2m": "motor_working_mode",
+        "homey": "motor_working_mode"
+      },
+      {
+        "z2m": "boost_heating",
+        "homey": "boost_heating"
+      },
+      {
+        "z2m": "schedule",
+        "homey": "schedule"
+      },
+      {
+        "z2m": "schedule_saturday",
+        "homey": "schedule_saturday"
+      },
+      {
+        "z2m": "schedule_friday",
+        "homey": "schedule_friday"
+      },
+      {
+        "z2m": "schedule_thursday",
+        "homey": "schedule_thursday"
+      },
+      {
+        "z2m": "window_open_delay_time",
+        "homey": "window_open_delay_time"
+      },
+      {
+        "z2m": "sensor",
+        "homey": "sensor"
+      },
+      {
+        "z2m": "tumble_alarm_time",
+        "homey": "tumble_alarm_time"
+      },
+      {
+        "z2m": "name_l4",
+        "homey": "name_l4"
+      },
+      {
+        "z2m": "radar_sensitivity",
+        "homey": "radar_sensitivity"
+      },
+      {
+        "z2m": "fading_time",
+        "homey": "fading_time"
+      },
+      {
+        "z2m": "button_right",
+        "homey": "button_right"
+      },
+      {
+        "z2m": "illuminance",
+        "homey": "measure_luminance"
+      },
+      {
+        "z2m": "current_b",
+        "homey": "current_b"
+      },
+      {
+        "z2m": "delay",
+        "homey": "delay"
+      },
+      {
+        "z2m": "motion_sensitivity",
+        "homey": "motion_sensitivity"
+      },
+      {
+        "z2m": "light_linkage",
+        "homey": "light_linkage"
+      },
+      {
+        "z2m": "entry_distance_indentation",
+        "homey": "entry_distance_indentation"
+      },
+      {
+        "z2m": "gate_enable_06",
+        "homey": "gate_enable_06"
+      },
+      {
+        "z2m": "voltage",
+        "homey": "measure_voltage"
+      },
+      {
+        "z2m": "schedule_sunday",
+        "homey": "schedule_sunday"
+      },
+      {
+        "z2m": "ph_max",
+        "homey": "ph_max"
+      },
+      {
+        "z2m": "high_temperature_protection_state",
+        "homey": "high_temperature_protection_state"
+      },
+      {
+        "z2m": "schedule_wednesday",
+        "homey": "schedule_wednesday"
+      },
+      {
+        "z2m": "state_l6",
+        "homey": "state_l6"
+      },
+      {
+        "z2m": "temperature_unit",
+        "homey": "temperature_unit"
+      },
+      {
+        "z2m": "cycle_schedule",
+        "homey": "cycle_schedule"
+      },
+      {
+        "z2m": "temporary_leaving",
+        "homey": "temporary_leaving"
+      },
+      {
+        "z2m": "restore_factory",
+        "homey": "restore_factory"
+      },
+      {
+        "z2m": "manual_mode",
+        "homey": "manual_mode"
+      },
+      {
+        "z2m": "dry",
+        "homey": "dry"
+      },
+      {
+        "z2m": "power_on_behavior",
+        "homey": "power_on_behavior"
+      },
+      {
+        "z2m": "device_mode_type",
+        "homey": "device_mode_type"
+      },
+      {
+        "z2m": "week_program_4",
+        "homey": "week_program_4"
+      },
+      {
+        "z2m": "illuminance_calibration",
+        "homey": "illuminance_calibration"
+      },
+      {
+        "z2m": "child_lock",
+        "homey": "child_lock"
+      }
+    ],
+    "107": [
+      {
+        "z2m": "setup_mode",
+        "homey": "setup_mode"
+      },
+      {
+        "z2m": "temperature_sensitivity",
+        "homey": "temperature_sensitivity"
+      },
+      {
+        "z2m": "factory_reset",
+        "homey": "factory_reset"
+      },
+      {
+        "z2m": "window_open",
+        "homey": "window_open"
+      },
+      {
+        "z2m": "system_mode",
+        "homey": "system_mode"
+      },
+      {
+        "z2m": "heating_stop",
+        "homey": "heating_stop"
+      },
+      {
+        "z2m": "schedule_sunday",
+        "homey": "schedule_sunday"
+      },
+      {
+        "z2m": "schedule_saturday",
+        "homey": "schedule_saturday"
+      },
+      {
+        "z2m": "schedule_friday",
+        "homey": "schedule_friday"
+      },
+      {
+        "z2m": "humidity_control",
+        "homey": "humidity_control"
+      },
+      {
+        "z2m": "temperature_delta",
+        "homey": "temperature_delta"
+      },
+      {
+        "z2m": "deadzone_temperature",
+        "homey": "deadzone_temperature"
+      },
+      {
+        "z2m": "scene_name_l1",
+        "homey": "scene_name_l1"
+      },
+      {
+        "z2m": "maximum_range",
+        "homey": "maximum_range"
+      },
+      {
+        "z2m": "vacation",
+        "homey": "vacation"
+      },
+      {
+        "z2m": "indicator",
+        "homey": "indicator"
+      },
+      {
+        "z2m": "power_b",
+        "homey": "power_b"
+      },
+      {
+        "z2m": "max_range",
+        "homey": "max_range"
+      },
+      {
+        "z2m": "indicator_light",
+        "homey": "indicator_light"
+      },
+      {
+        "z2m": "breaker_mode",
+        "homey": "breaker_mode"
+      },
+      {
+        "z2m": "gate_enable_07",
+        "homey": "gate_enable_07"
+      },
+      {
+        "z2m": "current_a",
+        "homey": "current_a"
+      },
+      {
+        "z2m": "ph_min",
+        "homey": "ph_min"
+      },
+      {
+        "z2m": "temperature_setting",
+        "homey": "temperature_setting"
+      },
+      {
+        "z2m": "schedule_thursday",
+        "homey": "schedule_thursday"
+      },
+      {
+        "z2m": "low_temperature_protection_state",
+        "homey": "low_temperature_protection_state"
+      },
+      {
+        "z2m": "detection_distance_max",
+        "homey": "detection_distance_max"
+      },
+      {
+        "z2m": "move_detection_max",
+        "homey": "move_detection_max"
+      },
+      {
+        "z2m": "switch_type",
+        "homey": "switch_type"
+      },
+      {
+        "z2m": "state_l7",
+        "homey": "state_l7"
+      },
+      {
+        "z2m": "soil_moisture",
+        "homey": "soil_moisture"
+      },
+      {
+        "z2m": "reclose_recover_seconds",
+        "homey": "reclose_recover_seconds"
+      },
+      {
+        "z2m": "breath_sensitivity",
+        "homey": "breath_sensitivity"
+      },
+      {
+        "z2m": "led_indicator",
+        "homey": "led_indicator"
+      },
+      {
+        "z2m": "illuminance",
+        "homey": "measure_luminance"
+      },
+      {
+        "z2m": "fault",
+        "homey": "fault"
+      },
+      {
+        "z2m": "illuminance_interval",
+        "homey": "illuminance_interval"
+      },
+      {
+        "z2m": "color_temp",
+        "homey": "light_temperature"
+      },
+      {
+        "z2m": "energy",
+        "homey": "meter_power"
+      },
+      {
+        "z2m": "week_program_5",
+        "homey": "week_program_5"
+      },
+      {
+        "z2m": "temperature_calibration",
+        "homey": "temperature_calibration"
+      },
+      {
+        "z2m": "led_bright_l4",
+        "homey": "led_bright_l4"
+      }
+    ],
+    "108": [
+      {
+        "z2m": "vibration_siren",
+        "homey": "vibration_siren"
+      },
+      {
+        "z2m": "humidity_sensitivity",
+        "homey": "humidity_sensitivity"
+      },
+      {
+        "z2m": "schedule_monday",
+        "homey": "schedule_monday"
+      },
+      {
+        "z2m": "position",
+        "homey": "windowcoverings_set"
+      },
+      {
+        "z2m": "schedule_sunday",
+        "homey": "schedule_sunday"
+      },
+      {
+        "z2m": "schedule_saturday",
+        "homey": "schedule_saturday"
+      },
+      {
+        "z2m": "upper_humidity_limit",
+        "homey": "upper_humidity_limit"
+      },
+      {
+        "z2m": "scene_name_l2",
+        "homey": "scene_name_l2"
+      },
+      {
+        "z2m": "minimum_range",
+        "homey": "minimum_range"
+      },
+      {
+        "z2m": "sensitivity",
+        "homey": "sensitivity"
+      },
+      {
+        "z2m": "small_detection_distance",
+        "homey": "small_detection_distance"
+      },
+      {
+        "z2m": "voltage_c",
+        "homey": "voltage_c"
+      },
+      {
+        "z2m": "power_factor_a",
+        "homey": "power_factor_a"
+      },
+      {
+        "z2m": "power_factor_l1",
+        "homey": "power_factor_l1"
+      },
+      {
+        "z2m": "action",
+        "homey": "action"
+      },
+      {
+        "z2m": "detection_method",
+        "homey": "detection_method"
+      },
+      {
+        "z2m": "breaker_status",
+        "homey": "breaker_status"
+      },
+      {
+        "z2m": "gate_enable_08",
+        "homey": "gate_enable_08"
+      },
+      {
+        "z2m": "power_a",
+        "homey": "power_a"
+      },
+      {
+        "z2m": "schedule_friday",
+        "homey": "schedule_friday"
+      },
+      {
+        "z2m": "ec_max",
+        "homey": "ec_max"
+      },
+      {
+        "z2m": "leakage_setting",
+        "homey": "leakage_setting"
+      },
+      {
+        "z2m": "schedule_wednesday",
+        "homey": "schedule_wednesday"
+      },
+      {
+        "z2m": "detection_distance_min",
+        "homey": "detection_distance_min"
+      },
+      {
+        "z2m": "move_detection_min",
+        "homey": "move_detection_min"
+      },
+      {
+        "z2m": "state_l8",
+        "homey": "state_l8"
+      },
+      {
+        "z2m": "trigger_switch",
+        "homey": "trigger_switch"
+      },
+      {
+        "z2m": "battery",
+        "homey": "measure_battery"
+      },
+      {
+        "z2m": "random_timing",
+        "homey": "random_timing"
+      },
+      {
+        "z2m": "largest_presence_detection_distance",
+        "homey": "largest_presence_detection_distance"
+      },
+      {
+        "z2m": "debug_mode",
+        "homey": "debug_mode"
+      },
+      {
+        "z2m": "boost_heating",
+        "homey": "boost_heating"
+      },
+      {
+        "z2m": "countdown",
+        "homey": "countdown"
+      },
+      {
+        "z2m": "indicator",
+        "homey": "indicator"
+      },
+      {
+        "z2m": "week_program_1",
+        "homey": "week_program_1"
+      },
+      {
+        "z2m": "week_program_6",
+        "homey": "week_program_6"
+      }
+    ],
+    "109": [
+      {
+        "z2m": "alarm_siren_duration",
+        "homey": "alarm_siren_duration"
+      },
+      {
+        "z2m": "schedule_periodic",
+        "homey": "schedule_periodic"
+      },
+      {
+        "z2m": "schedule_wednesday",
+        "homey": "schedule_wednesday"
+      },
+      {
+        "z2m": "schedule_sunday",
+        "homey": "schedule_sunday"
+      },
+      {
+        "z2m": "energy_reactive",
+        "homey": "energy_reactive"
+      },
+      {
+        "z2m": "schedule_weekday",
+        "homey": "schedule_weekday"
+      },
+      {
+        "z2m": "schedule_holiday",
+        "homey": "schedule_holiday"
+      },
+      {
+        "z2m": "scene_name_l3",
+        "homey": "scene_name_l3"
+      },
+      {
+        "z2m": "target_distance",
+        "homey": "target_distance"
+      },
+      {
+        "z2m": "alarm_switch",
+        "homey": "alarm_switch"
+      },
+      {
+        "z2m": "small_detection_sensitivity",
+        "homey": "small_detection_sensitivity"
+      },
+      {
+        "z2m": "current_c",
+        "homey": "current_c"
+      },
+      {
+        "z2m": "energy_a",
+        "homey": "energy_a"
+      },
+      {
+        "z2m": "energy_l1",
+        "homey": "energy_l1"
+      },
+      {
+        "z2m": "action",
+        "homey": "action"
+      },
+      {
+        "z2m": "distance",
+        "homey": "distance"
+      },
+      {
+        "z2m": "presence_illuminance_switch",
+        "homey": "presence_illuminance_switch"
+      },
+      {
+        "z2m": "status_indication",
+        "homey": "status_indication"
+      },
+      {
+        "z2m": "gate_enable_09",
+        "homey": "gate_enable_09"
+      },
+      {
+        "z2m": "power_factor_a",
+        "homey": "power_factor_a"
+      },
+      {
+        "z2m": "schedule_thursday",
+        "homey": "schedule_thursday"
+      },
+      {
+        "z2m": "ec_min",
+        "homey": "ec_min"
+      },
+      {
+        "z2m": "schedule_tuesday",
+        "homey": "schedule_tuesday"
+      },
+      {
+        "z2m": "local_temperature_calibration",
+        "homey": "local_temperature_calibration"
+      },
+      {
+        "z2m": "schedule_saturday",
+        "homey": "schedule_saturday"
+      },
+      {
+        "z2m": "breath_detection_max",
+        "homey": "breath_detection_max"
+      },
+      {
+        "z2m": "state_l9",
+        "homey": "state_l9"
+      },
+      {
+        "z2m": "humidity",
+        "homey": "measure_humidity"
+      },
+      {
+        "z2m": "switch_inching",
+        "homey": "switch_inching"
+      },
+      {
+        "z2m": "move_maximum_range",
+        "homey": "move_maximum_range"
+      },
+      {
+        "z2m": "near_presence_sensitivity",
+        "homey": "near_presence_sensitivity"
+      },
+      {
+        "z2m": "debug_distance",
+        "homey": "debug_distance"
+      },
+      {
+        "z2m": "motor_direction",
+        "homey": "motor_direction"
+      },
+      {
+        "z2m": "temperature_unit",
+        "homey": "temperature_unit"
+      },
+      {
+        "z2m": "week_program_2",
+        "homey": "week_program_2"
+      },
+      {
+        "z2m": "week_program_7",
+        "homey": "week_program_7"
+      },
+      {
+        "z2m": "led_warm_l1",
+        "homey": "led_warm_l1"
+      }
+    ],
+    "110": [
+      {
+        "z2m": "vibration_siren_duration",
+        "homey": "vibration_siren_duration"
+      },
+      {
+        "z2m": "temperature_f",
+        "homey": "temperature_f"
+      },
+      {
+        "z2m": "schedule_friday",
+        "homey": "schedule_friday"
+      },
+      {
+        "z2m": "motor_thrust",
+        "homey": "motor_thrust"
+      },
+      {
+        "z2m": "holiday_mode",
+        "homey": "holiday_mode"
+      },
+      {
+        "z2m": "power_reactive",
+        "homey": "power_reactive"
+      },
+      {
+        "z2m": "backlight_mode",
+        "homey": "backlight_mode"
+      },
+      {
+        "z2m": "scene_name_l4",
+        "homey": "scene_name_l4"
+      },
+      {
+        "z2m": "keep_sensitivity",
+        "homey": "keep_sensitivity"
+      },
+      {
+        "z2m": "fading_time",
+        "homey": "fading_time"
+      },
+      {
+        "z2m": "update_frequency",
+        "homey": "update_frequency"
+      },
+      {
+        "z2m": "micro_minimum_distance",
+        "homey": "micro_minimum_distance"
+      },
+      {
+        "z2m": "power_c",
+        "homey": "power_c"
+      },
+      {
+        "z2m": "energy_produced_a",
+        "homey": "energy_produced_a"
+      },
+      {
+        "z2m": "energy_produced_l1",
+        "homey": "energy_produced_l1"
+      },
+      {
+        "z2m": "action",
+        "homey": "action"
+      },
+      {
+        "z2m": "presence_timeout",
+        "homey": "presence_timeout"
+      },
+      {
+        "z2m": "illuminance_threshold",
+        "homey": "illuminance_threshold"
+      },
+      {
+        "z2m": "gate_enable_10",
+        "homey": "gate_enable_10"
+      },
+      {
+        "z2m": "current_b",
+        "homey": "current_b"
+      },
+      {
+        "z2m": "schedule_wednesday",
+        "homey": "schedule_wednesday"
+      },
+      {
+        "z2m": "orp_max",
+        "homey": "orp_max"
+      },
+      {
+        "z2m": "event",
+        "homey": "event"
+      },
+      {
+        "z2m": "schedule_monday",
+        "homey": "schedule_monday"
+      },
+      {
+        "z2m": "temperature_return_difference",
+        "homey": "temperature_return_difference"
+      },
+      {
+        "z2m": "schedule_sunday",
+        "homey": "schedule_sunday"
+      },
+      {
+        "z2m": "last_event",
+        "homey": "last_event"
+      },
+      {
+        "z2m": "breath_detection_min",
+        "homey": "breath_detection_min"
+      },
+      {
+        "z2m": "state_l10",
+        "homey": "state_l10"
+      },
+      {
+        "z2m": "soil_warning",
+        "homey": "soil_warning"
+      },
+      {
+        "z2m": "move_minimum_range",
+        "homey": "move_minimum_range"
+      },
+      {
+        "z2m": "near_movement_sensitivity",
+        "homey": "near_movement_sensitivity"
+      },
+      {
+        "z2m": "debug_countdown",
+        "homey": "debug_countdown"
+      },
+      {
+        "z2m": "mode",
+        "homey": "mode"
+      },
+      {
+        "z2m": "battery",
+        "homey": "measure_battery"
+      },
+      {
+        "z2m": "week_program_3",
+        "homey": "week_program_3"
+      },
+      {
+        "z2m": "open_window",
+        "homey": "open_window"
+      },
+      {
+        "z2m": "led_warm_l2",
+        "homey": "led_warm_l2"
+      }
+    ],
+    "111": [
+      {
+        "z2m": "magnetic_status",
+        "homey": "magnetic_status"
+      },
+      {
+        "z2m": "schedule_sunday",
+        "homey": "schedule_sunday"
+      },
+      {
+        "z2m": "display_brightness",
+        "homey": "display_brightness"
+      },
+      {
+        "z2m": "screen_orientation",
+        "homey": "screen_orientation"
+      },
+      {
+        "z2m": "power_factor",
+        "homey": "power_factor"
+      },
+      {
+        "z2m": "dp111",
+        "homey": "dp111"
+      },
+      {
+        "z2m": "detection_delay",
+        "homey": "detection_delay"
+      },
+      {
+        "z2m": "keysound",
+        "homey": "keysound"
+      },
+      {
+        "z2m": "motionless_minimum_distance",
+        "homey": "motionless_minimum_distance"
+      },
+      {
+        "z2m": "energy_b",
+        "homey": "energy_b"
+      },
+      {
+        "z2m": "countdown",
+        "homey": "countdown"
+      },
+      {
+        "z2m": "power",
+        "homey": "measure_power"
+      },
+      {
+        "z2m": "action",
+        "homey": "action"
+      },
+      {
+        "z2m": "presence_sensitivity",
+        "homey": "presence_sensitivity"
+      },
+      {
+        "z2m": "breaker_polarity",
+        "homey": "breaker_polarity"
+      },
+      {
+        "z2m": "gate_enable_11",
+        "homey": "gate_enable_11"
+      },
+      {
+        "z2m": "ac_frequency",
+        "homey": "ac_frequency"
+      },
+      {
+        "z2m": "power_b",
+        "homey": "power_b"
+      },
+      {
+        "z2m": "schedule_tuesday",
+        "homey": "schedule_tuesday"
+      },
+      {
+        "z2m": "minimum_range",
+        "homey": "minimum_range"
+      },
+      {
+        "z2m": "orp_min",
+        "homey": "orp_min"
+      },
+      {
+        "z2m": "deadzone_temperature",
+        "homey": "deadzone_temperature"
+      },
+      {
+        "z2m": "min_temperature_limit",
+        "homey": "min_temperature_limit"
+      },
+      {
+        "z2m": "state_l11",
+        "homey": "state_l11"
+      },
+      {
+        "z2m": "backlight",
+        "homey": "backlight"
+      },
+      {
+        "z2m": "temperature_sampling",
+        "homey": "temperature_sampling"
+      },
+      {
+        "z2m": "breath_maximum_range",
+        "homey": "breath_maximum_range"
+      },
+      {
+        "z2m": "far_presence_sensitivity",
+        "homey": "far_presence_sensitivity"
+      },
+      {
+        "z2m": "scene_preset",
+        "homey": "scene_preset"
+      },
+      {
+        "z2m": "temperature",
+        "homey": "measure_temperature"
+      },
+      {
+        "z2m": "week_program_4",
+        "homey": "week_program_4"
+      },
+      {
+        "z2m": "open_window_temperature",
+        "homey": "open_window_temperature"
+      },
+      {
+        "z2m": "water_warning",
+        "homey": "water_warning"
+      },
+      {
+        "z2m": "led_warm_l3",
+        "homey": "led_warm_l3"
+      },
+      {
+        "z2m": "dimmer_name_l1",
+        "homey": "dimmer_name_l1"
+      }
+    ],
+    "112": [
+      {
+        "z2m": "schedule_tuesday",
+        "homey": "schedule_tuesday"
+      },
+      {
+        "z2m": "antifrost_temperature",
+        "homey": "antifrost_temperature"
+      },
+      {
+        "z2m": "radar_scene",
+        "homey": "radar_scene"
+      },
+      {
+        "z2m": "battery_low",
+        "homey": "alarm_battery"
+      },
+      {
+        "z2m": "reset_setting",
+        "homey": "reset_setting"
+      },
+      {
+        "z2m": "power_factor_b",
+        "homey": "power_factor_b"
+      },
+      {
+        "z2m": "voltage_b",
+        "homey": "voltage_b"
+      },
+      {
+        "z2m": "energy_a",
+        "homey": "energy_a"
+      },
+      {
+        "z2m": "voltage_l2",
+        "homey": "voltage_l2"
+      },
+      {
+        "z2m": "state_l7",
+        "homey": "state_l7"
+      },
+      {
+        "z2m": "presence",
+        "homey": "alarm_motion"
+      },
+      {
+        "z2m": "block_time",
+        "homey": "block_time"
+      },
+      {
+        "z2m": "configuration_gate",
+        "homey": "configuration_gate"
+      },
+      {
+        "z2m": "voltage",
+        "homey": "measure_voltage"
+      },
+      {
+        "z2m": "schedule_monday",
+        "homey": "schedule_monday"
+      },
+      {
+        "z2m": "maximum_range",
+        "homey": "maximum_range"
+      },
+      {
+        "z2m": "free_chlorine_max",
+        "homey": "free_chlorine_max"
+      },
+      {
+        "z2m": "auto_reclosing",
+        "homey": "auto_reclosing"
+      },
+      {
+        "z2m": "high_temperature_protection_setting",
+        "homey": "high_temperature_protection_setting"
+      },
+      {
+        "z2m": "eco_temperature",
+        "homey": "eco_temperature"
+      },
+      {
+        "z2m": "clear_fault",
+        "homey": "clear_fault"
+      },
+      {
+        "z2m": "state_l12",
+        "homey": "state_l12"
+      },
+      {
+        "z2m": "power_outage_memory",
+        "homey": "power_outage_memory"
+      },
+      {
+        "z2m": "soil_sampling",
+        "homey": "soil_sampling"
+      },
+      {
+        "z2m": "breath_minimum_range",
+        "homey": "breath_minimum_range"
+      },
+      {
+        "z2m": "local_temperature_calibration_f",
+        "homey": "local_temperature_calibration_f"
+      },
+      {
+        "z2m": "occupancy",
+        "homey": "alarm_motion"
+      },
+      {
+        "z2m": "sensor",
+        "homey": "sensor"
+      },
+      {
+        "z2m": "fixed_window_sash",
+        "homey": "fixed_window_sash"
+      },
+      {
+        "z2m": "action",
+        "homey": "action"
+      },
+      {
+        "z2m": "motion_detection_mode",
+        "homey": "motion_detection_mode"
+      },
+      {
+        "z2m": "week_program_5",
+        "homey": "week_program_5"
+      },
+      {
+        "z2m": "window_time",
+        "homey": "window_time"
+      },
+      {
+        "z2m": "led_warm_l4",
+        "homey": "led_warm_l4"
+      },
+      {
+        "z2m": "dimmer_name_l2",
+        "homey": "dimmer_name_l2"
+      }
+    ],
+    "113": [
+      {
+        "z2m": "schedule_thursday",
+        "homey": "schedule_thursday"
+      },
+      {
+        "z2m": "screen_orientation",
+        "homey": "screen_orientation"
+      },
+      {
+        "z2m": "heating_stop",
+        "homey": "heating_stop"
+      },
+      {
+        "z2m": "battery",
+        "homey": "measure_battery"
+      },
+      {
+        "z2m": "duration",
+        "homey": "duration"
+      },
+      {
+        "z2m": "breathe_false_detection",
+        "homey": "breathe_false_detection"
+      },
+      {
+        "z2m": "current_b",
+        "homey": "current_b"
+      },
+      {
+        "z2m": "energy_produced_a",
+        "homey": "energy_produced_a"
+      },
+      {
+        "z2m": "current_l2",
+        "homey": "current_l2"
+      },
+      {
+        "z2m": "state_l8",
+        "homey": "state_l8"
+      },
+      {
+        "z2m": "find_switch",
+        "homey": "find_switch"
+      },
+      {
+        "z2m": "parameter_setting_result",
+        "homey": "parameter_setting_result"
+      },
+      {
+        "z2m": "move_threshold",
+        "homey": "move_threshold"
+      },
+      {
+        "z2m": "ac_frequency",
+        "homey": "ac_frequency"
+      },
+      {
+        "z2m": "free_chlorine_min",
+        "homey": "free_chlorine_min"
+      },
+      {
+        "z2m": "restore_default",
+        "homey": "restore_default"
+      },
+      {
+        "z2m": "low_temperature_protection_setting",
+        "homey": "low_temperature_protection_setting"
+      },
+      {
+        "z2m": "brightness",
+        "homey": "dim"
+      },
+      {
+        "z2m": "factory_reset",
+        "homey": "factory_reset"
+      },
+      {
+        "z2m": "switch_mode_l1_l2",
+        "homey": "switch_mode_l1_l2"
+      },
+      {
+        "z2m": "state_l13",
+        "homey": "state_l13"
+      },
+      {
+        "z2m": "auto_on",
+        "homey": "auto_on"
+      },
+      {
+        "z2m": "switch_type",
+        "homey": "switch_type"
+      },
+      {
+        "z2m": "humidity",
+        "homey": "measure_humidity"
+      },
+      {
+        "z2m": "cline",
+        "homey": "cline"
+      },
+      {
+        "z2m": "week_program_6",
+        "homey": "week_program_6"
+      },
+      {
+        "z2m": "window_timeout",
+        "homey": "window_timeout"
+      },
+      {
+        "z2m": "cover_position_l1",
+        "homey": "cover_position_l1"
+      },
+      {
+        "z2m": "dimmer_name_l3",
+        "homey": "dimmer_name_l3"
+      }
+    ],
+    "114": [
+      {
+        "z2m": "schedule_saturday",
+        "homey": "schedule_saturday"
+      },
+      {
+        "z2m": "mode",
+        "homey": "mode"
+      },
+      {
+        "z2m": "position",
+        "homey": "windowcoverings_set"
+      },
+      {
+        "z2m": "local_temperature_calibration",
+        "homey": "local_temperature_calibration"
+      },
+      {
+        "z2m": "motion_direction",
+        "homey": "motion_direction"
+      },
+      {
+        "z2m": "trigger_sensitivity",
+        "homey": "trigger_sensitivity"
+      },
+      {
+        "z2m": "handlesound",
+        "homey": "handlesound"
+      },
+      {
+        "z2m": "time",
+        "homey": "time"
+      },
+      {
+        "z2m": "power_b",
+        "homey": "power_b"
+      },
+      {
+        "z2m": "energy_b",
+        "homey": "energy_b"
+      },
+      {
+        "z2m": "power_l2",
+        "homey": "power_l2"
+      },
+      {
+        "z2m": "switch_mode_l1",
+        "homey": "switch_mode_l1"
+      },
+      {
+        "z2m": "factory_parameters",
+        "homey": "factory_parameters"
+      },
+      {
+        "z2m": "presence_threshold",
+        "homey": "presence_threshold"
+      },
+      {
+        "z2m": "over_current_threshold",
+        "homey": "over_current_threshold"
+      },
+      {
+        "z2m": "max_temperature",
+        "homey": "max_temperature"
+      },
+      {
+        "z2m": "display_brightness",
+        "homey": "display_brightness"
+      },
+      {
+        "z2m": "current_threshold",
+        "homey": "current_threshold"
+      },
+      {
+        "z2m": "small_move_detection_max",
+        "homey": "small_move_detection_max"
+      },
+      {
+        "z2m": "switch_mode_l3_l4",
+        "homey": "switch_mode_l3_l4"
+      },
+      {
+        "z2m": "state_l14",
+        "homey": "state_l14"
+      },
+      {
+        "z2m": "trigger_hold",
+        "homey": "trigger_hold"
+      },
+      {
+        "z2m": "valve_control_type",
+        "homey": "valve_control_type"
+      },
+      {
+        "z2m": "status_indication",
+        "homey": "status_indication"
+      },
+      {
+        "z2m": "schedule_monday",
+        "homey": "schedule_monday"
+      },
+      {
+        "z2m": "window_detection",
+        "homey": "window_detection"
+      },
+      {
+        "z2m": "week_program_7",
+        "homey": "week_program_7"
+      },
+      {
+        "z2m": "device_mode_type",
+        "homey": "device_mode_type"
+      },
+      {
+        "z2m": "cover_position_l2",
+        "homey": "cover_position_l2"
+      },
+      {
+        "z2m": "dimmer_name_l4",
+        "homey": "dimmer_name_l4"
+      }
+    ],
+    "115": [
+      {
+        "z2m": "online",
+        "homey": "online"
+      },
+      {
+        "z2m": "switch_deviation_eco",
+        "homey": "switch_deviation_eco"
+      },
+      {
+        "z2m": "programming_mode",
+        "homey": "programming_mode"
+      },
+      {
+        "z2m": "motion_speed",
+        "homey": "motion_speed"
+      },
+      {
+        "z2m": "alarm_time",
+        "homey": "alarm_time"
+      },
+      {
+        "z2m": "battery_state",
+        "homey": "battery_state"
+      },
+      {
+        "z2m": "energy_a",
+        "homey": "energy_a"
+      },
+      {
+        "z2m": "energy_produced_b",
+        "homey": "energy_produced_b"
+      },
+      {
+        "z2m": "switch_mode_l2",
+        "homey": "switch_mode_l2"
+      },
+      {
+        "z2m": "sensor",
+        "homey": "sensor"
+      },
+      {
+        "z2m": "nearest_target_gate",
+        "homey": "nearest_target_gate"
+      },
+      {
+        "z2m": "over_voltage_threshold",
+        "homey": "over_voltage_threshold"
+      },
+      {
+        "z2m": "small_move_detection_min",
+        "homey": "small_move_detection_min"
+      },
+      {
+        "z2m": "switch_mode_l5_l6",
+        "homey": "switch_mode_l5_l6"
+      },
+      {
+        "z2m": "state_l15",
+        "homey": "state_l15"
+      },
+      {
+        "z2m": "auto_off",
+        "homey": "auto_off"
+      },
+      {
+        "z2m": "position",
+        "homey": "windowcoverings_set"
+      },
+      {
+        "z2m": "radar_sensitivity",
+        "homey": "radar_sensitivity"
+      },
+      {
+        "z2m": "schedule_tuesday",
+        "homey": "schedule_tuesday"
+      },
+      {
+        "z2m": "set_temp_switch",
+        "homey": "set_temp_switch"
+      },
+      {
+        "z2m": "radiators_without_integrated_regulation",
+        "homey": "radiators_without_integrated_regulation"
+      },
+      {
+        "z2m": "voltage",
+        "homey": "measure_voltage"
+      },
+      {
+        "z2m": "cover_position_l3",
+        "homey": "cover_position_l3"
+      },
+      {
+        "z2m": "curtain_name_l1",
+        "homey": "curtain_name_l1"
+      }
+    ],
+    "116": [
+      {
+        "z2m": "open_window_temperature",
+        "homey": "open_window_temperature"
+      },
+      {
+        "z2m": "screen_orientation",
+        "homey": "screen_orientation"
+      },
+      {
+        "z2m": "eco_temperature",
+        "homey": "eco_temperature"
+      },
+      {
+        "z2m": "fall_down_status",
+        "homey": "fall_down_status"
+      },
+      {
+        "z2m": "alarm_volume",
+        "homey": "alarm_volume"
+      },
+      {
+        "z2m": "energy_c",
+        "homey": "energy_c"
+      },
+      {
+        "z2m": "switch_mode_l3",
+        "homey": "switch_mode_l3"
+      },
+      {
+        "z2m": "target_countdown",
+        "homey": "target_countdown"
+      },
+      {
+        "z2m": "under_voltage_threshold",
+        "homey": "under_voltage_threshold"
+      },
+      {
+        "z2m": "sensor_mode",
+        "homey": "sensor_mode"
+      },
+      {
+        "z2m": "move_sensitivity",
+        "homey": "move_sensitivity"
+      },
+      {
+        "z2m": "state_l16",
+        "homey": "state_l16"
+      },
+      {
+        "z2m": "frost_temperature",
+        "homey": "frost_temperature"
+      },
+      {
+        "z2m": "shield_range",
+        "homey": "shield_range"
+      },
+      {
+        "z2m": "schedule_wednesday",
+        "homey": "schedule_wednesday"
+      },
+      {
+        "z2m": "antifrost",
+        "homey": "antifrost"
+      },
+      {
+        "z2m": "current",
+        "homey": "measure_current"
+      },
+      {
+        "z2m": "cover_position_l4",
+        "homey": "cover_position_l4"
+      },
+      {
+        "z2m": "power",
+        "homey": "measure_power"
+      },
+      {
+        "z2m": "curtain_name_l2",
+        "homey": "curtain_name_l2"
+      }
+    ],
+    "117": [
+      {
+        "z2m": "open_window_time",
+        "homey": "open_window_time"
+      },
+      {
+        "z2m": "comfort_temperature",
+        "homey": "comfort_temperature"
+      },
+      {
+        "z2m": "static_dwell_alarm",
+        "homey": "static_dwell_alarm"
+      },
+      {
+        "z2m": "working_mode",
+        "homey": "working_mode"
+      },
+      {
+        "z2m": "energy_b",
+        "homey": "energy_b"
+      },
+      {
+        "z2m": "power_factor_b",
+        "homey": "power_factor_b"
+      },
+      {
+        "z2m": "energy_produced_c",
+        "homey": "energy_produced_c"
+      },
+      {
+        "z2m": "power_factor_l2",
+        "homey": "power_factor_l2"
+      },
+      {
+        "z2m": "switch_mode_l4",
+        "homey": "switch_mode_l4"
+      },
+      {
+        "z2m": "target_velocity",
+        "homey": "target_velocity"
+      },
+      {
+        "z2m": "salinity",
+        "homey": "salinity"
+      },
+      {
+        "z2m": "leakage_threshold",
+        "homey": "leakage_threshold"
+      },
+      {
+        "z2m": "small_move_sensitivity",
+        "homey": "small_move_sensitivity"
+      },
+      {
+        "z2m": "power_on_behavior",
+        "homey": "power_on_behavior"
+      },
+      {
+        "z2m": "frost_temperature_f",
+        "homey": "frost_temperature_f"
+      },
+      {
+        "z2m": "detection_range",
+        "homey": "detection_range"
+      },
+      {
+        "z2m": "schedule_thursday",
+        "homey": "schedule_thursday"
+      },
+      {
+        "z2m": "eco_temperature",
+        "homey": "eco_temperature"
+      },
+      {
+        "z2m": "energy",
+        "homey": "meter_power"
+      },
+      {
+        "z2m": "led_switch_l1",
+        "homey": "led_switch_l1"
+      },
+      {
+        "z2m": "curtain_name_l3",
+        "homey": "curtain_name_l3"
+      }
+    ],
+    "118": [
+      {
+        "z2m": "boost_time",
+        "homey": "boost_time"
+      },
+      {
+        "z2m": "boost_timeset_countdown",
+        "homey": "boost_timeset_countdown"
+      },
+      {
+        "z2m": "fault_code",
+        "homey": "fault_code"
+      },
+      {
+        "z2m": "fall_sensitivity",
+        "homey": "fall_sensitivity"
+      },
+      {
+        "z2m": "auto1",
+        "homey": "auto1"
+      },
+      {
+        "z2m": "energy_b",
+        "homey": "energy_b"
+      },
+      {
+        "z2m": "power_factor_a",
+        "homey": "power_factor_a"
+      },
+      {
+        "z2m": "energy_l2",
+        "homey": "energy_l2"
+      },
+      {
+        "z2m": "switch_mode_l5",
+        "homey": "switch_mode_l5"
+      },
+      {
+        "z2m": "debug_switch",
+        "homey": "debug_switch"
+      },
+      {
+        "z2m": "temperature_threshold",
+        "homey": "temperature_threshold"
+      },
+      {
+        "z2m": "breath_sensitivity",
+        "homey": "breath_sensitivity"
+      },
+      {
+        "z2m": "switch_type_l1_l8",
+        "homey": "switch_type_l1_l8"
+      },
+      {
+        "z2m": "auto_time",
+        "homey": "auto_time"
+      },
+      {
+        "z2m": "equipment_status",
+        "homey": "equipment_status"
+      },
+      {
+        "z2m": "schedule_friday",
+        "homey": "schedule_friday"
+      },
+      {
+        "z2m": "comfort_temperature",
+        "homey": "comfort_temperature"
+      },
+      {
+        "z2m": "led_switch_l2",
+        "homey": "led_switch_l2"
+      },
+      {
+        "z2m": "curtain_name_l4",
+        "homey": "curtain_name_l4"
+      }
+    ],
+    "119": [
+      {
+        "z2m": "comfort_temperature",
+        "homey": "comfort_temperature"
+      },
+      {
+        "z2m": "auto2",
+        "homey": "auto2"
+      },
+      {
+        "z2m": "energy_produced_b",
+        "homey": "energy_produced_b"
+      },
+      {
+        "z2m": "power_factor_b",
+        "homey": "power_factor_b"
+      },
+      {
+        "z2m": "energy_produced_l2",
+        "homey": "energy_produced_l2"
+      },
+      {
+        "z2m": "switch_mode_l6",
+        "homey": "switch_mode_l6"
+      },
+      {
+        "z2m": "led_mode",
+        "homey": "led_mode"
+      },
+      {
+        "z2m": "over_power_threshold",
+        "homey": "over_power_threshold"
+      },
+      {
+        "z2m": "unknown_119",
+        "homey": "unknown_119"
+      },
+      {
+        "z2m": "switch_type_l9_l16",
+        "homey": "switch_type_l9_l16"
+      },
+      {
+        "z2m": "power_on_delay_power_on_time",
+        "homey": "power_on_delay_power_on_time"
+      },
+      {
+        "z2m": "screen_orientation",
+        "homey": "screen_orientation"
+      },
+      {
+        "z2m": "target_distance",
+        "homey": "target_distance"
+      },
+      {
+        "z2m": "schedule_saturday",
+        "homey": "schedule_saturday"
+      },
+      {
+        "z2m": "antifrost_temperature",
+        "homey": "antifrost_temperature"
+      },
+      {
+        "z2m": "energy_today",
+        "homey": "energy_today"
+      },
+      {
+        "z2m": "led_switch_l3",
+        "homey": "led_switch_l3"
+      },
+      {
+        "z2m": "curtain_switch_l1",
+        "homey": "curtain_switch_l1"
+      }
+    ],
+    "120": [
+      {
+        "z2m": "eco_temperature",
+        "homey": "eco_temperature"
+      },
+      {
+        "z2m": "calibrate",
+        "homey": "calibrate"
+      },
+      {
+        "z2m": "auto3",
+        "homey": "auto3"
+      },
+      {
+        "z2m": "power_factor_a",
+        "homey": "power_factor_a"
+      },
+      {
+        "z2m": "power_factor_c",
+        "homey": "power_factor_c"
+      },
+      {
+        "z2m": "switch_mode_l7",
+        "homey": "switch_mode_l7"
+      },
+      {
+        "z2m": "delay_time",
+        "homey": "delay_time"
+      },
+      {
+        "z2m": "unknown_120",
+        "homey": "unknown_120"
+      },
+      {
+        "z2m": "switch_mode_l11_l12",
+        "homey": "switch_mode_l11_l12"
+      },
+      {
+        "z2m": "multi_control_link",
+        "homey": "multi_control_link"
+      },
+      {
+        "z2m": "distance_report_mode",
+        "homey": "distance_report_mode"
+      },
+      {
+        "z2m": "schedule_sunday",
+        "homey": "schedule_sunday"
+      },
+      {
+        "z2m": "light",
+        "homey": "light"
+      },
+      {
+        "z2m": "energy_yesterday",
+        "homey": "energy_yesterday"
+      },
+      {
+        "z2m": "led_switch_l4",
+        "homey": "led_switch_l4"
+      },
+      {
+        "z2m": "curtain_switch_l2",
+        "homey": "curtain_switch_l2"
+      }
+    ],
+    "121": [
+      {
+        "z2m": "holiday_temperature",
+        "homey": "holiday_temperature"
+      },
+      {
+        "z2m": "battery",
+        "homey": "measure_battery"
+      },
+      {
+        "z2m": "energy_c",
+        "homey": "energy_c"
+      },
+      {
+        "z2m": "power_factor_b",
+        "homey": "power_factor_b"
+      },
+      {
+        "z2m": "voltage_c",
+        "homey": "voltage_c"
+      },
+      {
+        "z2m": "switch_mode_l8",
+        "homey": "switch_mode_l8"
+      },
+      {
+        "z2m": "block_time",
+        "homey": "block_time"
+      },
+      {
+        "z2m": "unknown_121",
+        "homey": "unknown_121"
+      },
+      {
+        "z2m": "switch_mode_l13_l14",
+        "homey": "switch_mode_l13_l14"
+      },
+      {
+        "z2m": "holiday_time",
+        "homey": "holiday_time"
+      },
+      {
+        "z2m": "state_l1",
+        "homey": "state_l1"
+      },
+      {
+        "z2m": "curtain_switch_l3",
+        "homey": "curtain_switch_l3"
+      }
+    ],
+    "122": [
+      {
+        "z2m": "frost_protection",
+        "homey": "frost_protection"
+      },
+      {
+        "z2m": "target_distance",
+        "homey": "target_distance"
+      },
+      {
+        "z2m": "motion_detection_mode",
+        "homey": "motion_detection_mode"
+      },
+      {
+        "z2m": "power_factor_c",
+        "homey": "power_factor_c"
+      },
+      {
+        "z2m": "update_frequency",
+        "homey": "update_frequency"
+      },
+      {
+        "z2m": "current_c",
+        "homey": "current_c"
+      },
+      {
+        "z2m": "light_mode_l1",
+        "homey": "light_mode_l1"
+      },
+      {
+        "z2m": "judge_logic",
+        "homey": "judge_logic"
+      },
+      {
+        "z2m": "unknown_122",
+        "homey": "unknown_122"
+      },
+      {
+        "z2m": "switch_mode_l15_l16",
+        "homey": "switch_mode_l15_l16"
+      },
+      {
+        "z2m": "state_l2",
+        "homey": "state_l2"
+      },
+      {
+        "z2m": "curtain_switch_l4",
+        "homey": "curtain_switch_l4"
+      }
+    ],
+    "123": [
+      {
+        "z2m": "minimum_range",
+        "homey": "minimum_range"
+      },
+      {
+        "z2m": "motion_detection_sensitivity",
+        "homey": "motion_detection_sensitivity"
+      },
+      {
+        "z2m": "calibration_voltage",
+        "homey": "calibration_voltage"
+      },
+      {
+        "z2m": "power_c",
+        "homey": "power_c"
+      },
+      {
+        "z2m": "light_mode_l2",
+        "homey": "light_mode_l2"
+      },
+      {
+        "z2m": "noise_collect_status",
+        "homey": "noise_collect_status"
+      },
+      {
+        "z2m": "start_noise_collect",
+        "homey": "start_noise_collect"
+      },
+      {
+        "z2m": "boost_timeset_countdown",
+        "homey": "boost_timeset_countdown"
+      },
+      {
+        "z2m": "state_l3",
+        "homey": "state_l3"
+      },
+      {
+        "z2m": "dimmer_switch_l1",
+        "homey": "dimmer_switch_l1"
+      }
+    ],
+    "124": [
+      {
+        "z2m": "calibration_ac_frequency",
+        "homey": "calibration_ac_frequency"
+      },
+      {
+        "z2m": "light_mode_l3",
+        "homey": "light_mode_l3"
+      },
+      {
+        "z2m": "device_control",
+        "homey": "device_control"
+      },
+      {
+        "z2m": "overcurrent_event_threshold_time",
+        "homey": "overcurrent_event_threshold_time"
+      },
+      {
+        "z2m": "state_l4",
+        "homey": "state_l4"
+      },
+      {
+        "z2m": "dimmer_switch_l2",
+        "homey": "dimmer_switch_l2"
+      }
+    ],
+    "125": [
+      {
+        "z2m": "calibration_current_a",
+        "homey": "calibration_current_a"
+      },
+      {
+        "z2m": "light_mode_l4",
+        "homey": "light_mode_l4"
+      },
+      {
+        "z2m": "illuminance",
+        "homey": "measure_luminance"
+      },
+      {
+        "z2m": "test5",
+        "homey": "test5"
+      },
+      {
+        "z2m": "system_mode",
+        "homey": "system_mode"
+      },
+      {
+        "z2m": "state",
+        "homey": "onoff"
+      },
+      {
+        "z2m": "forward_electricity",
+        "homey": "forward_electricity"
+      },
+      {
+        "z2m": "time_threshold_of_lost_flow_event",
+        "homey": "time_threshold_of_lost_flow_event"
+      },
+      {
+        "z2m": "temperature_antifreeze",
+        "homey": "temperature_antifreeze"
+      },
+      {
+        "z2m": "led_switch_name_l1",
+        "homey": "led_switch_name_l1"
+      },
+      {
+        "z2m": "dimmer_switch_l3",
+        "homey": "dimmer_switch_l3"
+      }
+    ],
+    "126": [
+      {
+        "z2m": "calibration_power_a",
+        "homey": "calibration_power_a"
+      },
+      {
+        "z2m": "power_factor_c",
+        "homey": "power_factor_c"
+      },
+      {
+        "z2m": "light_mode_l5",
+        "homey": "light_mode_l5"
+      },
+      {
+        "z2m": "presence_sensitivity",
+        "homey": "presence_sensitivity"
+      },
+      {
+        "z2m": "auto_mode",
+        "homey": "auto_mode"
+      },
+      {
+        "z2m": "led_switch_name_l2",
+        "homey": "led_switch_name_l2"
+      },
+      {
+        "z2m": "dimmer_switch_l4",
+        "homey": "dimmer_switch_l4"
+      }
+    ],
+    "127": [
+      {
+        "z2m": "hysteresis",
+        "homey": "hysteresis"
+      },
+      {
+        "z2m": "energy_c",
+        "homey": "energy_c"
+      },
+      {
+        "z2m": "light_mode_l6",
+        "homey": "light_mode_l6"
+      },
+      {
+        "z2m": "move_sensitivity",
+        "homey": "move_sensitivity"
+      },
+      {
+        "z2m": "status",
+        "homey": "status"
+      },
+      {
+        "z2m": "manual_mode",
+        "homey": "manual_mode"
+      },
+      {
+        "z2m": "led_switch_name_l3",
+        "homey": "led_switch_name_l3"
+      },
+      {
+        "z2m": "thermostat",
+        "homey": "thermostat"
+      }
+    ],
+    "128": [
+      {
+        "z2m": "energy_produced_c",
+        "homey": "energy_produced_c"
+      },
+      {
+        "z2m": "light_mode_l7",
+        "homey": "light_mode_l7"
+      },
+      {
+        "z2m": "scene_mode",
+        "homey": "scene_mode"
+      },
+      {
+        "z2m": "preset",
+        "homey": "preset"
+      },
+      {
+        "z2m": "mode_state",
+        "homey": "mode_state"
+      },
+      {
+        "z2m": "led_switch_name_l4",
+        "homey": "led_switch_name_l4"
+      },
+      {
+        "z2m": "thermostat_name",
+        "homey": "thermostat_name"
+      }
+    ],
+    "129": [
+      {
+        "z2m": "light_mode_l8",
+        "homey": "light_mode_l8"
+      },
+      {
+        "z2m": "illuminance_report",
+        "homey": "illuminance_report"
+      },
+      {
+        "z2m": "update_frequency",
+        "homey": "update_frequency"
+      },
+      {
+        "z2m": "child_lock",
+        "homey": "child_lock"
+      },
+      {
+        "z2m": "cover_name_l1",
+        "homey": "cover_name_l1"
+      }
+    ],
+    "130": [
+      {
+        "z2m": "calibration_current_b",
+        "homey": "calibration_current_b"
+      },
+      {
+        "z2m": "power_on_behavior_l7",
+        "homey": "power_on_behavior_l7"
+      },
+      {
+        "z2m": "move_detect",
+        "homey": "move_detect"
+      },
+      {
+        "z2m": "error_status",
+        "homey": "error_status"
+      },
+      {
+        "z2m": "cover_name_l2",
+        "homey": "cover_name_l2"
+      }
+    ],
+    "131": [
+      {
+        "z2m": "current",
+        "homey": "measure_current"
+      },
+      {
+        "z2m": "calibration_power_b",
+        "homey": "calibration_power_b"
+      },
+      {
+        "z2m": "power_on_behavior_l8",
+        "homey": "power_on_behavior_l8"
+      },
+      {
+        "z2m": "distance_report",
+        "homey": "distance_report"
+      },
+      {
+        "z2m": "temperature",
+        "homey": "measure_temperature"
+      },
+      {
+        "z2m": "switch_mode_l1",
+        "homey": "switch_mode_l1"
+      },
+      {
+        "z2m": "cover_name_l3",
+        "homey": "cover_name_l3"
+      }
+    ],
+    "132": [
+      {
+        "z2m": "ac_frequency",
+        "homey": "ac_frequency"
+      },
+      {
+        "z2m": "speed_report",
+        "homey": "speed_report"
+      },
+      {
+        "z2m": "switch_mode_l2",
+        "homey": "switch_mode_l2"
+      },
+      {
+        "z2m": "cover_name_l4",
+        "homey": "cover_name_l4"
+      }
+    ],
+    "133": [
+      {
+        "z2m": "temperature",
+        "homey": "measure_temperature"
+      },
+      {
+        "z2m": "cover_state_l1",
+        "homey": "cover_state_l1"
+      }
+    ],
+    "134": [
+      {
+        "z2m": "device_status",
+        "homey": "device_status"
+      },
+      {
+        "z2m": "relay_status_for_power_on",
+        "homey": "relay_status_for_power_on"
+      },
+      {
+        "z2m": "cover_state_l2",
+        "homey": "cover_state_l2"
+      }
+    ],
+    "135": [
+      {
+        "z2m": "ac_frequency_high_precision",
+        "homey": "ac_frequency_high_precision"
+      },
+      {
+        "z2m": "cover_state_l3",
+        "homey": "cover_state_l3"
+      }
+    ],
+    "136": [
+      {
+        "z2m": "frost_protection",
+        "homey": "frost_protection"
+      },
+      {
+        "z2m": "cover_state_l4",
+        "homey": "cover_state_l4"
+      }
+    ],
+    "137": [
+      {
+        "z2m": "antifrost",
+        "homey": "antifrost"
+      },
+      {
+        "z2m": "switch_name_l1",
+        "homey": "switch_name_l1"
+      }
+    ],
+    "138": [
+      {
+        "z2m": "window_detection",
+        "homey": "window_detection"
+      },
+      {
+        "z2m": "switch_name_l2",
+        "homey": "switch_name_l2"
+      }
+    ],
+    "139": [
+      {
+        "z2m": "window_opening_mode",
+        "homey": "window_opening_mode"
+      },
+      {
+        "z2m": "switch_name_l3",
+        "homey": "switch_name_l3"
+      }
+    ],
+    "140": [
+      {
+        "z2m": "window_opening_mode_duration",
+        "homey": "window_opening_mode_duration"
+      },
+      {
+        "z2m": "switch_name_l4",
+        "homey": "switch_name_l4"
+      }
+    ],
+    "141": [
+      {
+        "z2m": "state",
+        "homey": "onoff"
+      },
+      {
+        "z2m": "reset_consumption",
+        "homey": "reset_consumption"
+      },
+      {
+        "z2m": "mode",
+        "homey": "mode"
+      },
+      {
+        "z2m": "scene_name_l1",
+        "homey": "scene_name_l1"
+      }
+    ],
+    "142": [
+      {
+        "z2m": "brightness",
+        "homey": "dim"
+      },
+      {
+        "z2m": "power_rating",
+        "homey": "power_rating"
+      },
+      {
+        "z2m": "scene_name_l2",
+        "homey": "scene_name_l2"
+      }
+    ],
+    "143": [
+      {
+        "z2m": "min_brightness",
+        "homey": "min_brightness"
+      },
+      {
+        "z2m": "overcurrent_recloser",
+        "homey": "overcurrent_recloser"
+      },
+      {
+        "z2m": "holiday_start_stop",
+        "homey": "holiday_start_stop"
+      },
+      {
+        "z2m": "scene_name_l3",
+        "homey": "scene_name_l3"
+      }
+    ],
+    "144": [
+      {
+        "z2m": "max_brightness",
+        "homey": "max_brightness"
+      },
+      {
+        "z2m": "leakage_recloser",
+        "homey": "leakage_recloser"
+      },
+      {
+        "z2m": "mode_switching",
+        "homey": "mode_switching"
+      },
+      {
+        "z2m": "scene_name_l4",
+        "homey": "scene_name_l4"
+      }
+    ],
+    "145": [
+      {
+        "z2m": "overpower_recloser",
+        "homey": "overpower_recloser"
+      },
+      {
+        "z2m": "scene_name_l5",
+        "homey": "scene_name_l5"
+      }
+    ],
+    "146": [
+      {
+        "z2m": "scene_name_l6",
+        "homey": "scene_name_l6"
+      }
+    ],
+    "147": [
+      {
+        "z2m": "scene_name_l7",
+        "homey": "scene_name_l7"
+      }
+    ],
+    "148": [
+      {
+        "z2m": "scene_name_l8",
+        "homey": "scene_name_l8"
+      }
+    ],
+    "149": [
+      {
+        "z2m": "backlight_switch",
+        "homey": "backlight_switch"
+      }
+    ],
+    "152": [
+      {
+        "z2m": "display_brightness",
+        "homey": "display_brightness"
+      }
+    ],
+    "153": [
+      {
+        "z2m": "mode",
+        "homey": "mode"
+      }
+    ],
+    "154": [
+      {
+        "z2m": "switch_deviation_eco",
+        "homey": "switch_deviation_eco"
+      }
+    ],
+    "182": [
+      {
+        "z2m": "target_distance",
+        "homey": "target_distance"
+      }
+    ]
+  }
+}
