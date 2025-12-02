@@ -1,4 +1,8 @@
 {
+  "5.3.9": {
+    "en": "🔥 v5.3.9 - MEGA SOURCE FETCH - 1964 IDs!\n\n**8 Sources Fetched:**\n- Zigbee-OTA Index (790 firmwares)\n- Zigbee-OTA Downgrade (253 firmwares)\n- Z2M Tuya Converters (1710 devices)\n- Z2M ModernExtend API\n- Z2M Tuya Extend\n- ZHA Tuya Quirks\n- Blakadder Index\n\n**Data Extracted:**\n- 1309 manufacturer IDs\n- 67 model IDs\n- 118 vendors\n- 50 clusters\n- 112 datapoints\n- 210 OTA firmwares\n\n**Added +95 IDs:**\n- switch_1gang: +33 IDs\n- climate_sensor: +62 IDs\n\n**New Script:**\n- MEGA-fetch-all-sources.js\n\n**Reports Generated:**\n- mega-source-report.json\n- mega-source-ids.csv\n\n**Total:** 1964 device IDs (was 1869)",
+    "fr": "🔥 v5.3.9 - Mega Fetch Sources - 1964 IDs!\n\n- 8 sources analysées\n- +95 nouveaux IDs\n- Total: 1964 IDs"
+  },
   "5.3.8": {
     "en": "🚀 v5.3.8 - 79 DRIVERS + COMPLETE DP MAPPINGS - 1869 IDs!\n\n**New Drivers Added (+19):**\n- scene_switch_1 to scene_switch_6\n- switch_plug_1, switch_plug_2\n- valve_1, valve_4\n- co_sensor, vibration_sensor\n- thermostat_4ch, smart_heater\n- power_meter, energy_meter_3phase\n- led_controller_rgb, led_controller_cct\n- smart_rcbo, curtain_motor_tilt\n\n**Complete DP Mappings:**\n- All 40+ Tuya DataPoints documented\n- DP 1-127 fully mapped\n- Air Quality DPs (116-118)\n- RCBO DPs (120-127)\n\n**New Files:**\n- data/tuya-dp-mappings-complete.json\n- scripts/enrichment/add-missing-drivers.js\n\n**Stats:**\n- 79 drivers (was 60)\n- 1869 device IDs (was 1864)\n- 40+ DP mappings\n- 14 Zigbee clusters",
     "fr": "🚀 v5.3.8 - 79 drivers + mappings DP complets!\n\n- 19 nouveaux drivers\n- 1869 IDs (était 1864)\n- Mappings DP 1-127 complets"
