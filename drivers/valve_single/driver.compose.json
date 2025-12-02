@@ -27,11 +27,11 @@
     }
   },
   "images": {
-    "small": "drivers/valve_1/assets/images/small.png",
-    "large": "drivers/valve_1/assets/images/large.png",
-    "xlarge": "drivers/valve_1/assets/images/xlarge.png"
+    "small": "drivers/valve_single/assets/images/small.png",
+    "large": "drivers/valve_single/assets/images/large.png",
+    "xlarge": "drivers/valve_single/assets/images/xlarge.png"
   },
-  "id": "valve_1",
+  "id": "valve_single",
   "platforms": [
     "local"
   ],
