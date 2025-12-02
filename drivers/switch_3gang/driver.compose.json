@@ -5,7 +5,8 @@
     "onoff.gang3",
     "onoff",
     "onoff.1",
-    "onoff.2"
+    "onoff.2",
+    "alarm_battery"
   ],
   "zigbee": {
     "productId": [
@@ -402,7 +403,10 @@
   "energy": {
     "approximation": {
       "usageConstant": 0.5
-    }
+    },
+    "batteries": [
+      "OTHER"
+    ]
   },
   "pair": [
     {

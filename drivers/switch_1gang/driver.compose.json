@@ -1,7 +1,8 @@
 {
   "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "alarm_battery"
   ],
   "zigbee": {
     "productId": [
@@ -821,7 +822,10 @@
   "energy": {
     "approximation": {
       "usageConstant": 0.5
-    }
+    },
+    "batteries": [
+      "OTHER"
+    ]
   },
   "pair": [
     {
