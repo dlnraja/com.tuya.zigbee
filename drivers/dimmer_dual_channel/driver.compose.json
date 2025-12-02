@@ -5,7 +5,9 @@
   "class": "light",
   "capabilities": [
     "dim",
-    "onoff"
+    "onoff",
+    "measure_battery",
+    "alarm_battery"
   ],
   "platforms": [
     "local"
@@ -46,5 +48,10 @@
     "large": "drivers/dimmer_dual_channel/assets/images/large.png",
     "xlarge": "drivers/dimmer_dual_channel/assets/images/xlarge.png",
     "small": "drivers/dimmer_dual_channel/assets/images/small.png"
+  },
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
   }
 }

@@ -19,7 +19,9 @@
     "onoff.4",
     "onoff.5",
     "onoff.6",
-    "onoff.7"
+    "onoff.7",
+    "measure_battery",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "onoff.gang2": {
@@ -93,7 +95,11 @@
       }
     }
   },
-  "energy": {},
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
+  },
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_3u4hripk",

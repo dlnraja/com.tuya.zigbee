@@ -9,12 +9,17 @@
     "meter_power",
     "measure_voltage",
     "measure_current",
-    "onoff"
+    "onoff",
+    "measure_battery",
+    "alarm_battery"
   ],
   "energy": {
     "approximation": {
       "usageConstant": 0.5
-    }
+    },
+    "batteries": [
+      "OTHER"
+    ]
   },
   "zigbee": {
     "manufacturerName": [

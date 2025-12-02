@@ -6,7 +6,9 @@
   "class": "other",
   "capabilities": [
     "onoff",
-    "valve_position"
+    "valve_position",
+    "measure_battery",
+    "alarm_battery"
   ],
   "zigbee": {
     "manufacturerName": [
@@ -37,5 +39,10 @@
   ],
   "connectivity": [
     "zigbee"
-  ]
+  ],
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
+  }
 }
