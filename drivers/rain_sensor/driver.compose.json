@@ -32,22 +32,21 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_n8dljorx",
-      "_TZE200_mja3fuja",
       "_TZ3000_k1msavlx",
-      "_TZ3210_tgvtvdoc",
       "_TZ3000_qdmnmddg",
       "_TZ3000_upgcbody",
-      "_tz3000_zrm3oxsh",
-      "_tze284_iilebqoo",
+      "_TZ3210_tgvtvdoc",
+      "_TZE200_mja3fuja",
+      "_TZE200_n8dljorx",
       "_tz3000_abaplimj",
+      "_tz3000_abjodzas",
       "_tz3000_awvmkayh",
-      "_tz3000_abjodzas"
+      "_tz3000_zrm3oxsh",
+      "_tze284_iilebqoo"
     ],
     "productId": [
-      "TS0207",
-      "TS0601",
-      "RH3001"
+      "RH3001",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
