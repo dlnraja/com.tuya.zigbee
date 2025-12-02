@@ -3,27 +3,37 @@ name: 🧠 MASTER Intelligent Enrichment
 on:
   schedule:
     # Run every Monday at 3:00 AM UTC
-    - cron: '0 3 * * 1'
+    - cron: "0 3 * * 1"
   workflow_dispatch:
     inputs:
       full_enrichment:
-        description: 'Run full enrichment (all sources)'
+        description: "Run full enrichment (all sources)"
         required: false
         type: boolean
         default: true
       scrape_forum:
-        description: 'Scrape Homey Forum posts'
+        description: "Scrape Homey Forum posts"
         required: false
         type: boolean
         default: true
       update_drivers:
-        description: 'Auto-update drivers with new IDs'
+        description: "Auto-update drivers with new IDs"
         required: false
         type: boolean
         default: false
+      fix_and_enrich:
+        description: "Auto-fix driver issues and add missing data"
+        required: false
+        type: boolean
+        default: true
+      enrich_dps:
+        description: "Enrich with Tuya DP mappings"
+        required: false
+        type: boolean
+        default: true
 
 env:
-  NODE_VERSION: '22'
+  NODE_VERSION: "22"
 
 jobs:
   enrichment:
@@ -37,7 +47,7 @@ jobs:
       - name: ✅ Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Full history for git analysis
+          fetch-depth: 0 # Full history for git analysis
 
       - name: 📦 Setup Node.js
         uses: actions/setup-node@v4
@@ -265,6 +275,37 @@ jobs:
           // Save categorized IDs
           fs.writeFileSync('/tmp/categorized_ids.json', JSON.stringify(categories, null, 2));
           SCRIPT
+
+      - name: 🔧 Auto-Fix Driver Issues
+        if: ${{ inputs.fix_and_enrich != 'false' }}
+        run: |
+          echo "🔧 Running auto-fix and enrich..."
+          node scripts/enrichment/auto-fix-and-enrich.js || echo "Script not found, skipping"
+
+      - name: 📊 Enrich with DP Mappings
+        if: ${{ inputs.enrich_dps != 'false' }}
+        run: |
+          echo "📊 Running DP enrichment..."
+          node scripts/enrichment/enrich-from-z2m-detailed.js || echo "Script not found, skipping"
+
+      - name: 🔄 Run All Enrichment Scripts
+        run: |
+          echo "🔄 Running complete enrichment pipeline..."
+
+          # Parse Z2M
+          node scripts/enrichment/parse-z2m-tuya.js || echo "parse-z2m skipped"
+
+          # Intelligent merge
+          node scripts/enrichment/intelligent-merge.js --apply || echo "intelligent-merge skipped"
+
+          # Fetch all sources
+          node scripts/enrichment/fetch-all-sources.js || echo "fetch-all-sources skipped"
+
+          # Merge all sources
+          node scripts/enrichment/merge-all-sources.js --apply || echo "merge-all-sources skipped"
+
+          # Verify drivers
+          node scripts/enrichment/verify-and-enrich-drivers.js || echo "verify skipped"
 
       - name: 💾 Commit Changes
         run: |

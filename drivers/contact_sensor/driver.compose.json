@@ -54,27 +54,15 @@
       "_TZ3000_yfekcy3n",
       "_TZ3000_decxrtwa",
       "_TZ3000_2mbfxlzr",
-      "LIDL Silvercrest",
-      "Silvercrest",
-      "LUMI",
-      "lumi",
-      "Xiaomi",
-      "aqara",
-      "Shelly",
-      "Allterco",
       "_TZ3000_hgu1dlak",
-      "Nous",
-      "LSC",
       "_TZ3000_bzxloft2",
       "_TZ3000_xpq2nmkr",
-      "HOBEIAN",
       "_TZ3000_yxqnffam",
       "_TZ3000_zutizvyk",
       "_TZ3000_zutizvykTS0203",
       "_TZE200_pay2byax",
       "_TZ3000_o4mkahkc",
       "_TZ3000_fa9mlvja",
-      "_SAMSUNG_generic",
       "_TZ3000_bmfw9ykl",
       "_TZ3000_jqge2fjx",
       "_TZ3000_lqpt3mvr",
@@ -93,7 +81,6 @@
       "_TZ3000_qrldbmfn",
       "_TZ3000_8yhypbo7",
       "_TZ3000_9eeavbk5",
-      "_TYZB01_xph99wvr",
       "_TZ3000_2dlwlvex",
       "_TZ3000_amdymr7l",
       "_TZ3000_br3laukf",
@@ -125,7 +112,7 @@
       "_tz3000_bwlvyjwk",
       "_tz3000_taspddvq",
       "_tz3210_zbabx9wh",
-      "_tzb210_zmppwawa"
+      "_tz3210_zmppwawa"
     ],
     "productId": [
       "TS0203",
@@ -146,7 +133,8 @@
       "IH-K009",
       "ZG-102ZL",
       "ZG-102ZM",
-      "TS0210"
+      "TS0210",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -158,7 +146,9 @@
           6,
           61184,
           1280,
-          1
+          1,
+          "ssIasZone",
+          "genPowerCfg"
         ],
         "bindings": [
           1,
