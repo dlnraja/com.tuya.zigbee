@@ -17,18 +17,38 @@ class RainSensorDevice extends BaseHybridDevice {
   async onNodeInit({ zclNode }) {
     this.log('');
     this.log('╔═══════════════════════════════════════════════════════════════════╗');
-    this.log('║           RAIN SENSOR v5.2.92 - ENHANCED                          ║');
+    this.log('║           RAIN SENSOR v5.2.93 - UNKNOWN DEVICE HANDLING           ║');
     this.log('╚═══════════════════════════════════════════════════════════════════╝');
 
-    // Get device info
+    // Get device info from multiple sources
     const settings = this.getSettings?.() || {};
-    const modelId = settings.zb_modelId || this.getStoreValue?.('modelId') || 'unknown';
-    const mfr = settings.zb_manufacturerName || this.getStoreValue?.('manufacturerName') || 'unknown';
-    this.log(`[INIT] Model: ${modelId}, Manufacturer: ${mfr}`);
+    const store = this.getStore?.() || {};
+    const data = this.getData?.() || {};
+
+    const modelId = settings.zb_modelId || store.modelId || data.modelId || 'unknown';
+    const mfr = settings.zb_manufacturerName || store.manufacturerName || data.manufacturerName || 'unknown';
+
+    this.log(`[INIT] Model: ${modelId}`);
+    this.log(`[INIT] Manufacturer: ${mfr}`);
+
+    // v5.2.93: Check if device is truly known
+    this._isUnknownDevice = (modelId === 'unknown' || mfr === 'unknown');
+
+    if (this._isUnknownDevice) {
+      this.log('[INIT] ⚠️ ════════════════════════════════════════════════════════════');
+      this.log('[INIT] ⚠️ UNKNOWN DEVICE - Cannot guarantee rain sensor functionality');
+      this.log('[INIT] ⚠️ ════════════════════════════════════════════════════════════');
+      this.log('[INIT] ℹ️ This device was paired but model/manufacturer are unknown.');
+      this.log('[INIT] ℹ️ Rain detection may not work without a proper DP profile.');
+      this.log('[INIT] ℹ️ Please enable DP logging and trigger the sensor to help us');
+      this.log('[INIT] ℹ️ create a proper profile for this device.');
+      this.log('[INIT] ⚠️ ════════════════════════════════════════════════════════════');
+    }
 
     // Store for DP mapping
     this.setStoreValue('modelId', modelId).catch(() => { });
     this.setStoreValue('manufacturerName', mfr).catch(() => { });
+    this.setStoreValue('isUnknownDevice', this._isUnknownDevice).catch(() => { });
 
     // Log available clusters
     this._logClusters(zclNode);
@@ -42,7 +62,13 @@ class RainSensorDevice extends BaseHybridDevice {
     // Setup IAS Zone if available (some rain sensors use this)
     await this._setupIASZone(zclNode);
 
-    this.log('[INIT] ✅ RainSensorDevice initialized');
+    // Log final status
+    if (this._isUnknownDevice) {
+      this.log('[INIT] ⚠️ RainSensorDevice initialized (UNKNOWN DEVICE - limited functionality)');
+      this.log('[INIT] ℹ️ Waiting for DP data to learn device capabilities...');
+    } else {
+      this.log('[INIT] ✅ RainSensorDevice initialized');
+    }
   }
 
   /**
