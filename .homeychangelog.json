@@ -1,4 +1,8 @@
 {
+  "5.3.1": {
+    "en": "🔗 v5.3.1 - 1802 DEVICE IDs!\n\n**Community Sources Enrichment:**\n- ZHA Device Handlers: 446 IDs (51 Python files)\n- deCONZ REST Plugin: 268 IDs (82 JSON files)\n\n**Added +134 IDs:**\n- climate_sensor: +93 IDs\n- switch_1gang: +31 IDs\n- plug_smart: +10 IDs\n\n**Total Progress:**\n- v5.2.98: 781 IDs\n- v5.2.99: 1577 IDs (+Z2M)\n- v5.3.0: 1668 IDs (+local backups)\n- v5.3.1: 1802 IDs (+ZHA/deCONZ)\n\n**Sources Used:**\n- github.com/zigpy/zha-device-handlers\n- github.com/dresden-elektronik/deconz-rest-plugin",
+    "fr": "🔗 v5.3.1 - 1802 IDs d'appareils!\n\n- +134 IDs de ZHA et deCONZ\n- Total: 1802 IDs uniques"
+  },
   "5.3.0": {
     "en": "🎉 v5.3.0 - 1668 DEVICE IDs!\n\n**Local Backup Enrichment:**\n- Scanned 13,083 files from local backups\n- Extracted 538 unique IDs from:\n  - backup-ultimate-20250904\n  - backup tuya (11,460 files)\n  - com.tuya.zigbee-SDK3\n\n**Added +91 IDs:**\n- switch_1gang: +68 IDs\n- climate_sensor: +18 IDs\n- plug_smart: +5 IDs\n\n**Total Progress:**\n- v5.2.98: 781 IDs\n- v5.2.99: 1577 IDs (+796 from Z2M)\n- v5.3.0: 1668 IDs (+91 from local backups)\n\n**New Script:**\n- scripts/enrichment/extract-local-backups.js\n- scripts/enrichment/merge-local-backups.js",
     "fr": "🎉 v5.3.0 - 1668 IDs d'appareils!\n\n- +91 IDs des backups locaux\n- 13,083 fichiers scannés\n- Total: 1668 IDs uniques"
