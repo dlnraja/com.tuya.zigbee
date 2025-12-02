@@ -7,9 +7,22 @@
   "capabilities": [
     "windowcoverings_state",
     "windowcoverings_set",
-    "windowcoverings_tilt_set",
-    "dim"
+    "windowcoverings_tilt_set"
   ],
+  "capabilitiesOptions": {
+    "windowcoverings_set": {
+      "title": {
+        "en": "Position",
+        "fr": "Position"
+      }
+    },
+    "windowcoverings_state": {
+      "title": {
+        "en": "State",
+        "fr": "État"
+      }
+    }
+  },
   "platforms": [
     "local"
   ],
