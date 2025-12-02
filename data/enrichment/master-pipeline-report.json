@@ -1,0 +1,67 @@
+{
+  "timestamp": "2025-12-02T09:20:54.534Z",
+  "duration": "13.9s",
+  "initialIds": 1862,
+  "finalIds": 1862,
+  "newIds": 0,
+  "scripts": [
+    {
+      "name": "Parse Z2M Tuya",
+      "script": "parse-z2m-tuya.js",
+      "optional": true,
+      "success": true
+    },
+    {
+      "name": "Fetch All Sources",
+      "script": "fetch-all-sources.js",
+      "optional": true,
+      "success": true
+    },
+    {
+      "name": "Fetch JohanBendz Ecosystem",
+      "script": "fetch-johanbendz-ecosystem.js",
+      "optional": true,
+      "success": true
+    },
+    {
+      "name": "Intelligent Merge",
+      "script": "intelligent-merge.js",
+      "args": "--apply",
+      "optional": true,
+      "success": true
+    },
+    {
+      "name": "Merge All Sources",
+      "script": "merge-all-sources.js",
+      "args": "--apply",
+      "optional": true,
+      "success": true
+    },
+    {
+      "name": "Auto-Fix Driver Issues",
+      "script": "auto-fix-and-enrich.js",
+      "success": true
+    },
+    {
+      "name": "Complete All Drivers",
+      "script": "complete-all-drivers.js",
+      "success": true
+    },
+    {
+      "name": "Enrich DP Mappings",
+      "script": "enrich-from-z2m-detailed.js",
+      "success": true
+    },
+    {
+      "name": "Generate Icons",
+      "script": "../icons/generate-driver-icons.js",
+      "dir": "./scripts/enrichment",
+      "success": true
+    },
+    {
+      "name": "Verify Drivers",
+      "script": "verify-and-enrich-drivers.js",
+      "success": true
+    }
+  ]
+}
