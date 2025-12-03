@@ -1,11 +1,13 @@
 'use strict';
 
-const Homey = require('homey');
+const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class Valve4Driver extends Homey.Driver {
+class ValveIrrigationDriver extends ZigBeeDriver {
+
   async onInit() {
-    this.log('Smart Valve 4-Way Driver initialized');
+    this.log('ValveIrrigationDriver initialized');
   }
+
 }
 
-module.exports = Valve4Driver;
+module.exports = ValveIrrigationDriver;

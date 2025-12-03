@@ -1,15 +1,13 @@
 'use strict';
 
-const { Driver } = require('homey');
+const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class GenericDriver extends Driver {
+class HvacAirConditionerDriver extends ZigBeeDriver {
+
   async onInit() {
-    this.log('Driver has been initialized');
+    this.log('HvacAirConditionerDriver initialized');
   }
 
-  async onPairListDevices() {
-    return [];
-  }
 }
 
-module.exports = GenericDriver;
+module.exports = HvacAirConditionerDriver;

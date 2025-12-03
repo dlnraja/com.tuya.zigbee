@@ -1,11 +1,13 @@
 'use strict';
 
-const Homey = require('homey');
+const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class CurtainMotorTiltDriver extends Homey.Driver {
+class CurtainMotorTiltDriver extends ZigBeeDriver {
+
   async onInit() {
-    this.log('Curtain Motor with Tilt Driver initialized');
+    this.log('CurtainMotorTiltDriver initialized');
   }
+
 }
 
 module.exports = CurtainMotorTiltDriver;

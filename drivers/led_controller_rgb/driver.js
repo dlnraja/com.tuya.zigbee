@@ -1,11 +1,13 @@
 'use strict';
 
-const Homey = require('homey');
+const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class LedControllerRgbDriver extends Homey.Driver {
+class LedControllerRgbDriver extends ZigBeeDriver {
+
   async onInit() {
-    this.log('LED Controller RGB Driver initialized');
+    this.log('LedControllerRgbDriver initialized');
   }
+
 }
 
 module.exports = LedControllerRgbDriver;

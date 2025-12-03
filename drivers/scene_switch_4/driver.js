@@ -1,11 +1,13 @@
 'use strict';
 
-const Homey = require('homey');
+const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class SceneSwitch4Driver extends Homey.Driver {
+class SceneSwitch4Driver extends ZigBeeDriver {
+
   async onInit() {
-    this.log('Scene Switch 4-Gang Driver initialized');
+    this.log('SceneSwitch4Driver initialized');
   }
+
 }
 
 module.exports = SceneSwitch4Driver;

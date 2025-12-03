@@ -1,11 +1,13 @@
 'use strict';
 
-const Homey = require('homey');
+const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class PowerMeterDriver extends Homey.Driver {
+class PowerMeterDriver extends ZigBeeDriver {
+
   async onInit() {
-    this.log('Power Meter Driver initialized');
+    this.log('PowerMeterDriver initialized');
   }
+
 }
 
 module.exports = PowerMeterDriver;

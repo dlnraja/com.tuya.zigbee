@@ -1,11 +1,13 @@
 'use strict';
 
-const Homey = require('homey');
+const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class CoSensorDriver extends Homey.Driver {
+class CoSensorDriver extends ZigBeeDriver {
+
   async onInit() {
-    this.log('CO Sensor Driver initialized');
+    this.log('CoSensorDriver initialized');
   }
+
 }
 
 module.exports = CoSensorDriver;

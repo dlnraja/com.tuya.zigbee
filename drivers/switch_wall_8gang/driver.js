@@ -1,12 +1,13 @@
 'use strict';
 
-const { Driver } = require('homey');
+const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class SwitchWall8gangDriver extends Driver {
-  
+class SwitchWall8gangDriver extends ZigBeeDriver {
+
   async onInit() {
-    this.log('Wall Switch 8-Gang driver has been initialized');
+    this.log('SwitchWall8gangDriver initialized');
   }
+
 }
 
 module.exports = SwitchWall8gangDriver;
