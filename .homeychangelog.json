@@ -1,4 +1,8 @@
 {
+  "5.3.27": {
+    "en": "🔧 v5.3.27 - kkossev/Hubitat Enrichment\n\n**Source:** https://github.com/kkossev/Hubitat\n\n**Manufacturer IDs Added:**\n- _TYST11_7hfcudw5 (4-in-1 Multi-Sensor)\n- _TYST11_i5j6ifxj (4-in-1 Multi-Sensor)\n- _TYZB01_sqmd19i1 (Water Leak Sensor TS0207)\n\n**Device Types:**\n- Motion + Illuminance + Temp + Humidity sensors\n- Water leak/flood detectors",
+    "fr": "🔧 v5.3.27 - Enrichissement kkossev/Hubitat\n\n- 3 IDs fabricant ajoutés\n- Capteurs 4-en-1 et détecteurs de fuite"
+  },
   "5.3.26": {
     "en": "📦 v5.3.26 - JohanBendz Issues Batch Fix\n\n**Devices Added from JohanBendz Issues:**\n\n✅ #1317 - MatSee Plus PJ-1203A Energy Monitor\n✅ #1320 - TS0222 Smart Light Sensor (_TZ3000_hy6ncvmw)\n\n**Already Supported (verified):**\n- #1321 - _TZE200_ghynnvos PIR → motion_sensor\n- #1318 - _TZ3000_bgsigers Temp/Hum → climate_sensor\n- #1316 - SC400ZB-EU Curtain → curtain_motor\n- #1314 - _TZE204_iaeejhvf Radar → presence_sensor_radar\n- #1313 - _TZ3210_dwytrmda Curtain → curtain_motor\n- #1312 - _TZ3210_cehuw1lw Socket → plug_smart\n- #1311 - _TZ3000_7ysdnebc Dimmer → dimmer_dual_channel\n- #1310 - _TZE200_9xfjixap Thermostat → thermostat_tuya_dp",
     "fr": "📦 v5.3.26 - Correctifs Issues JohanBendz\n\n- MatSee Plus PJ-1203A ajouté\n- TS0222 capteur lumière ajouté\n- 10 issues vérifiées/supportées"
