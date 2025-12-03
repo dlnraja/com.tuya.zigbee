@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.3.41",
+  "version": "5.3.42",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.3.41: HEIMAN + SONOFF/eWeLink COMPLETE ECOSYSTEM - 90 new devices. Full security catalog + NSPanel/iHost support. 500+ devices total.",
-    "fr": "V5.3.41: ÉCOSYSTÈME COMPLET HEIMAN + SONOFF/eWeLink - 90 nouveaux appareils. Catalogue sécurité + support NSPanel/iHost. 500+ appareils total."
+    "en": "V5.3.42: eWeLink CUBE API V2 LOCAL - 246 devices from Aqara, IKEA, Philips Hue, Tuya, Sengled, Innr, LEDVANCE. 750+ devices total.",
+    "fr": "V5.3.42: eWeLink CUBE API V2 LOCAL - 246 appareils Aqara, IKEA, Philips Hue, Tuya, Sengled, Innr, LEDVANCE. 750+ appareils total."
   },
   "category": "appliances",
   "permissions": [],
@@ -12321,6 +12321,222 @@
           {
             "manufacturerName": "eWeLink",
             "modelId": "ZBBULBRGBCW"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LWA001"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LWA004"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LWA007"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LWA009"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LWA011"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LWB006"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LWB010"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LWB014"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LWE002"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LWG001"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LWG004"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LWO003"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LWV001"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LCA001"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LCA003"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LCE002"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LCG002"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LCT001"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LCT007"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LCT010"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LCT012"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LCT014"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LCT015"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LCT024"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LST002"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LTA001"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LTA004"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LTE002"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LTG002"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LTV002"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LTW001"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LTW004"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LTW010"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LTW012"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LTW013"
+          },
+          {
+            "manufacturerName": "_TZ3210_sroezl0s",
+            "modelId": "TS0505B"
+          },
+          {
+            "manufacturerName": "_TZ3210_mja6r5ix",
+            "modelId": "TS0505B"
+          },
+          {
+            "manufacturerName": "_TZ3210_zrvk7xep",
+            "modelId": "TS0504B"
+          },
+          {
+            "manufacturerName": "_TZ3210_s9lumfhn",
+            "modelId": "TS0502B"
+          },
+          {
+            "manufacturerName": "_TZ3000_f3saf1j1",
+            "modelId": "TS0501B"
+          },
+          {
+            "manufacturerName": "_TZ3210_leyz4rju",
+            "modelId": "TS0504B"
+          },
+          {
+            "manufacturerName": "_TZ3210_r5afgmkl",
+            "modelId": "TS0505B"
+          },
+          {
+            "manufacturerName": "innr",
+            "modelId": "RB 285 C"
+          },
+          {
+            "manufacturerName": "innr",
+            "modelId": "RB 265"
+          },
+          {
+            "manufacturerName": "innr",
+            "modelId": "RS 225"
+          },
+          {
+            "manufacturerName": "innr",
+            "modelId": "BY 285 C"
+          },
+          {
+            "manufacturerName": "innr",
+            "modelId": "SP 220"
+          },
+          {
+            "manufacturerName": "innr",
+            "modelId": "FL 130 C"
+          },
+          {
+            "manufacturerName": "_TZ3000_kdi2o9m6",
+            "modelId": "TS0505B"
+          },
+          {
+            "manufacturerName": "_TZ3000_odygigth",
+            "modelId": "TS0505B"
+          },
+          {
+            "manufacturerName": "_TZ3000_49qchf10",
+            "modelId": "TS0502A"
+          },
+          {
+            "manufacturerName": "Lidl",
+            "modelId": "HG06467"
+          },
+          {
+            "manufacturerName": "Lidl",
+            "modelId": "HG06106A"
+          },
+          {
+            "manufacturerName": "Lidl",
+            "modelId": "HG06104A"
           }
         ]
       },
@@ -12677,6 +12893,154 @@
           {
             "manufacturerName": "eWeLink",
             "modelId": "ZBBULBCW"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "TRADFRI bulb E27 WS opal 980lm"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "TRADFRI bulb E27 WS opal 1000lm"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "TRADFRI bulb E27 W opal 1000lm"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "TRADFRI bulb E27 CWS opal 600lm"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "TRADFRI bulb E14 WS opal 400lm"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "TRADFRI bulb E14 W op/ch 400lm"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "TRADFRI bulb GU10 WS 400lm"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "TRADFRI bulb GU10 W 400lm"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "LED1545G12"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "LED1546G12"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "LED1623G12"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "LED1624G9"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "LED1650R5"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "LED1733G7"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "LED1836G9"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "LED1837R5"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "LED1842G3"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "LED1923R5"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "LED1924G9"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "LED1925G6"
+          },
+          {
+            "manufacturerName": "sengled",
+            "modelId": "E11-G13"
+          },
+          {
+            "manufacturerName": "sengled",
+            "modelId": "E11-G23"
+          },
+          {
+            "manufacturerName": "sengled",
+            "modelId": "E11-N1EA"
+          },
+          {
+            "manufacturerName": "sengled",
+            "modelId": "E12-N1E"
+          },
+          {
+            "manufacturerName": "sengled",
+            "modelId": "E21-N1EA"
+          },
+          {
+            "manufacturerName": "Sengled",
+            "modelId": "E11-U2E"
+          },
+          {
+            "manufacturerName": "Sengled",
+            "modelId": "E11-U3E"
+          },
+          {
+            "manufacturerName": "lk",
+            "modelId": "ZB-CL01"
+          },
+          {
+            "manufacturerName": "lk",
+            "modelId": "ZB-CCT01"
+          },
+          {
+            "manufacturerName": "Linkind",
+            "modelId": "ZS110040078"
+          },
+          {
+            "manufacturerName": "Linkind",
+            "modelId": "ZS130000178"
+          },
+          {
+            "manufacturerName": "Linkind",
+            "modelId": "ZS110050078"
+          },
+          {
+            "manufacturerName": "LEDVANCE",
+            "modelId": "A60 TW Value II"
+          },
+          {
+            "manufacturerName": "LEDVANCE",
+            "modelId": "Outdoor Plug"
+          },
+          {
+            "manufacturerName": "LEDVANCE",
+            "modelId": "SMART+ Spot GU10"
+          },
+          {
+            "manufacturerName": "OSRAM",
+            "modelId": "Classic A60 W clear"
+          },
+          {
+            "manufacturerName": "OSRAM",
+            "modelId": "Plug 01"
           }
         ]
       },
@@ -14388,6 +14752,42 @@
           {
             "manufacturerName": "eWeLink",
             "modelId": "WB-01"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "WXKG11LM"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "WXKG12LM"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "WRS-R02"
+          },
+          {
+            "manufacturerName": "LUMI",
+            "modelId": "lumi.sensor_switch.aq2"
+          },
+          {
+            "manufacturerName": "LUMI",
+            "modelId": "lumi.sensor_switch.aq3"
+          },
+          {
+            "manufacturerName": "LUMI",
+            "modelId": "lumi.remote.b1acn01"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "WXCJKG11LM"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "WXCJKG12LM"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "WXCJKG13LM"
           }
         ]
       },
@@ -15584,7 +15984,105 @@
               1280
             ]
           }
-        }
+        },
+        "devices": [
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "TRADFRI remote control"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "TRADFRI on/off switch"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "TRADFRI motion sensor"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "TRADFRI wireless dimmer"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "STYRBAR remote control N2"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "SYMFONISK Sound Controller"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "RODRET Dimmer"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "SOMRIG shortcut button"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "E1524/E1810"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "E1743"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "E1744"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "E1745"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "E1746"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "E1766"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "E1812"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "E2001/E2002"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "E2123"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "RWL020"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "RWL021"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "RWL022"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "ROM001"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "RDM001"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "RDM002"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "RDM004"
+          }
+        ]
       },
       "images": {
         "small": "drivers/button_wireless_4/assets/images/small.png",
@@ -18720,6 +19218,58 @@
           {
             "manufacturerName": "eWeLink",
             "modelId": "SNZB-02LD"
+          },
+          {
+            "manufacturerName": "_TZ3000_qaaysllp",
+            "modelId": "TS0201"
+          },
+          {
+            "manufacturerName": "_TZ3000_bguser20",
+            "modelId": "TS0201"
+          },
+          {
+            "manufacturerName": "_TZ3000_xr3htd96",
+            "modelId": "TS0201"
+          },
+          {
+            "manufacturerName": "_TZ3000_fllyghyj",
+            "modelId": "TS0201"
+          },
+          {
+            "manufacturerName": "_TZ3000_dowj6gyi",
+            "modelId": "TS0201"
+          },
+          {
+            "manufacturerName": "_TZ2000_a476raq2",
+            "modelId": "TS0201"
+          },
+          {
+            "manufacturerName": "_TYZB01_kvwjujy9",
+            "modelId": "TS0201"
+          },
+          {
+            "manufacturerName": "_TZ3000_kmh5qpmb",
+            "modelId": "TS0202"
+          },
+          {
+            "manufacturerName": "_TZ3000_mcxw5ehu",
+            "modelId": "TS0202"
+          },
+          {
+            "manufacturerName": "_TZ3000_msl6wxk9",
+            "modelId": "TS0202"
+          },
+          {
+            "manufacturerName": "_TZ3000_26fmupbb",
+            "modelId": "TS0203"
+          },
+          {
+            "manufacturerName": "_TZ3000_n2egfsli",
+            "modelId": "TS0203"
+          },
+          {
+            "manufacturerName": "_TZ3000_ebar6ljy",
+            "modelId": "TS0203"
           }
         ]
       },
@@ -19616,6 +20166,78 @@
           {
             "manufacturerName": "eWeLink",
             "modelId": "ZB-CUR"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "ZNCLDJ12LM"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "ZNCLDJ11LM"
+          },
+          {
+            "manufacturerName": "LUMI",
+            "modelId": "lumi.curtain"
+          },
+          {
+            "manufacturerName": "LUMI",
+            "modelId": "lumi.curtain.hagl04"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "ZNCLBL01LM"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "FYRTUR block-out roller blind"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "KADRILJ roller blind"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "PRAKTLYSING cellular blind"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "E1757"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "E2103"
+          },
+          {
+            "manufacturerName": "_TZ3000_fccpjz5z",
+            "modelId": "TS130F"
+          },
+          {
+            "manufacturerName": "_TZ3000_vd43bbfq",
+            "modelId": "TS130F"
+          },
+          {
+            "manufacturerName": "_TZ3000_1dd0d5yi",
+            "modelId": "TS130F"
+          },
+          {
+            "manufacturerName": "_TZE200_cowvfni3",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE200_wmcdj3aq",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "SOMFY",
+            "modelId": "Sonesse 30"
+          },
+          {
+            "manufacturerName": "SOMFY",
+            "modelId": "Zigbee smart plug"
+          },
+          {
+            "manufacturerName": "SOMFY",
+            "modelId": "Temp Sensor"
           }
         ]
       },
@@ -20190,6 +20812,22 @@
           {
             "manufacturerName": "eWeLink",
             "modelId": "ZBDIM"
+          },
+          {
+            "manufacturerName": "_TZ3000_kdi2o9m6",
+            "modelId": "TS110E"
+          },
+          {
+            "manufacturerName": "_TZ3210_ngqk6jia",
+            "modelId": "TS110E"
+          },
+          {
+            "manufacturerName": "_TZE200_dfxkcots",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZ3000_7ysdnebc",
+            "modelId": "TS0052"
           }
         ]
       },
@@ -23652,7 +24290,21 @@
             "nl": "Houd de aan/uit-knop 5 seconden ingedrukt totdat de LED snel knippert",
             "de": "Halten Sie die Ein-/Aus-Taste 5 Sekunden lang gedrückt, bis die LED schnell blinkt"
           }
-        }
+        },
+        "devices": [
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "STARKVIND Air purifier"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "E2006"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "E2007"
+          }
+        ]
       },
       "metadata": {
         "app": {
@@ -24878,6 +25530,24 @@
           "TS0504B",
           "TS0505A",
           "TS0505B"
+        ],
+        "devices": [
+          {
+            "manufacturerName": "Paulmann",
+            "modelId": "500.45"
+          },
+          {
+            "manufacturerName": "Paulmann",
+            "modelId": "50049"
+          },
+          {
+            "manufacturerName": "Paulmann",
+            "modelId": "50064"
+          },
+          {
+            "manufacturerName": "Paulmann",
+            "modelId": "371000001"
+          }
         ]
       },
       "settings": [
@@ -26209,6 +26879,74 @@
           {
             "manufacturerName": "HEIMAN",
             "modelId": "SWHM-M1"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "RTCGQ14LM"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "RTCGQ11LM"
+          },
+          {
+            "manufacturerName": "LUMI",
+            "modelId": "lumi.sensor_motion.aq2"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "MCCGQ14LM"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "MCCGQ11LM"
+          },
+          {
+            "manufacturerName": "LUMI",
+            "modelId": "lumi.sensor_magnet.aq2"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "WSDCGQ12LM"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "WSDCGQ11LM"
+          },
+          {
+            "manufacturerName": "LUMI",
+            "modelId": "lumi.weather"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "SJCGQ11LM"
+          },
+          {
+            "manufacturerName": "LUMI",
+            "modelId": "lumi.sensor_wleak.aq1"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "DJT11LM"
+          },
+          {
+            "manufacturerName": "LUMI",
+            "modelId": "lumi.vibration.aq1"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "SML001"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "SML002"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "SML003"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "SML004"
           }
         ]
       },
@@ -27104,6 +27842,34 @@
           {
             "manufacturerName": "eWeLink",
             "modelId": "SPM-Main"
+          },
+          {
+            "manufacturerName": "_TZ3000_g5xawfcq",
+            "modelId": "TS011F"
+          },
+          {
+            "manufacturerName": "_TZ3000_cphmq0q7",
+            "modelId": "TS011F"
+          },
+          {
+            "manufacturerName": "_TZ3000_ew3ldmgx",
+            "modelId": "TS011F"
+          },
+          {
+            "manufacturerName": "_TZ3000_dpo1ysak",
+            "modelId": "TS011F"
+          },
+          {
+            "manufacturerName": "_TZ3000_cehuw1lw",
+            "modelId": "TS011F"
+          },
+          {
+            "manufacturerName": "_TZ3000_w0qqde0g",
+            "modelId": "TS011F"
+          },
+          {
+            "manufacturerName": "_TZ3000_u5u4cakc",
+            "modelId": "TS011F"
           }
         ]
       },
@@ -27753,6 +28519,94 @@
           {
             "manufacturerName": "SONOFF",
             "modelId": "S40ZB"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "SP-EUC01"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "QBCZ11LM"
+          },
+          {
+            "manufacturerName": "LUMI",
+            "modelId": "lumi.plug"
+          },
+          {
+            "manufacturerName": "LUMI",
+            "modelId": "lumi.plug.maeu01"
+          },
+          {
+            "manufacturerName": "LUMI",
+            "modelId": "lumi.plug.mmeu01"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "TRADFRI control outlet"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "E1603/E1702/E1708"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "ASKVADER on/off switch"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "E1836"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LOM001"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LOM002"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LOM003"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LOM005"
+          },
+          {
+            "manufacturerName": "Signify Netherlands B.V.",
+            "modelId": "LOM001"
+          },
+          {
+            "manufacturerName": "Develco Products A/S",
+            "modelId": "IOTSMART"
+          },
+          {
+            "manufacturerName": "Develco",
+            "modelId": "SPLZB-131"
+          },
+          {
+            "manufacturerName": "Develco",
+            "modelId": "EMIZB-132"
+          },
+          {
+            "manufacturerName": "Centralite",
+            "modelId": "3400-D"
+          },
+          {
+            "manufacturerName": "Centralite",
+            "modelId": "3210-L"
+          },
+          {
+            "manufacturerName": "Centralite",
+            "modelId": "3315-S"
+          },
+          {
+            "manufacturerName": "Centralite",
+            "modelId": "3325-S"
+          },
+          {
+            "manufacturerName": "Centralite",
+            "modelId": "3326-L"
           }
         ]
       },
@@ -28709,6 +29563,22 @@
           {
             "manufacturerName": "SONOFF",
             "modelId": "SWV"
+          },
+          {
+            "manufacturerName": "Schneider Electric",
+            "modelId": "EER40030"
+          },
+          {
+            "manufacturerName": "Schneider Electric",
+            "modelId": "EER50000"
+          },
+          {
+            "manufacturerName": "Schneider Electric",
+            "modelId": "EER42000"
+          },
+          {
+            "manufacturerName": "Schneider Electric",
+            "modelId": "EER51000"
           }
         ]
       },
@@ -29327,6 +30197,18 @@
           {
             "manufacturerName": "HEIMAN",
             "modelId": "KeyFob-EF-3.0"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "MFKZQ01LM"
+          },
+          {
+            "manufacturerName": "LUMI",
+            "modelId": "lumi.sensor_cube.aqgl01"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "CTP-R01"
           }
         ]
       },
@@ -32840,6 +33722,114 @@
           {
             "manufacturerName": "eWeLink",
             "modelId": "TX-3C"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "SSM-U01"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "SSM-U02"
+          },
+          {
+            "manufacturerName": "LUMI",
+            "modelId": "lumi.switch.n0agl1"
+          },
+          {
+            "manufacturerName": "LUMI",
+            "modelId": "lumi.switch.b1nacn02"
+          },
+          {
+            "manufacturerName": "LUMI",
+            "modelId": "lumi.switch.b2nacn02"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "WS-EUK01"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "WS-EUK02"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "WS-EUK03"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "WS-EUK04"
+          },
+          {
+            "manufacturerName": "LUMI",
+            "modelId": "lumi.switch.l0agl1"
+          },
+          {
+            "manufacturerName": "LUMI",
+            "modelId": "lumi.switch.n4acn4"
+          },
+          {
+            "manufacturerName": "_TZ3000_npzfdcof",
+            "modelId": "TS0001"
+          },
+          {
+            "manufacturerName": "_TZ3000_tqlv4ez4",
+            "modelId": "TS0001"
+          },
+          {
+            "manufacturerName": "_TZ3000_hktqahrq",
+            "modelId": "TS0002"
+          },
+          {
+            "manufacturerName": "_TZ3000_01gpyda5",
+            "modelId": "TS0002"
+          },
+          {
+            "manufacturerName": "_TZ3000_vjhcxlbz",
+            "modelId": "TS0003"
+          },
+          {
+            "manufacturerName": "_TZ3000_odzoiovu",
+            "modelId": "TS0003"
+          },
+          {
+            "manufacturerName": "_TZ3000_excgg5kb",
+            "modelId": "TS0004"
+          },
+          {
+            "manufacturerName": "NodOn",
+            "modelId": "SIN-4-1-20"
+          },
+          {
+            "manufacturerName": "NodOn",
+            "modelId": "SIN-4-2-20"
+          },
+          {
+            "manufacturerName": "NodOn",
+            "modelId": "SIN-4-FP-20"
+          },
+          {
+            "manufacturerName": "NodOn",
+            "modelId": "SIN-4-RS-20"
+          },
+          {
+            "manufacturerName": "Schneider Electric",
+            "modelId": "CCTFR6100"
+          },
+          {
+            "manufacturerName": "Schneider Electric",
+            "modelId": "CCTFR6200"
+          },
+          {
+            "manufacturerName": "Schneider Electric",
+            "modelId": "CCTFR6400"
+          },
+          {
+            "manufacturerName": "Schneider Electric",
+            "modelId": "CCTFR6700"
+          },
+          {
+            "manufacturerName": "Schneider Electric",
+            "modelId": "CCTFR6500"
           }
         ]
       },
