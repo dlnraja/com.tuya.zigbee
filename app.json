@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.3.29",
+  "version": "5.3.30",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -4074,6 +4074,115 @@
         ]
       },
       {
+        "id": "generic_tuya_measure_battery_changed",
+        "title": {
+          "en": "Battery level changed",
+          "fr": "Niveau batterie changé"
+        },
+        "tokens": [
+          {
+            "name": "battery",
+            "type": "number",
+            "title": {
+              "en": "Battery (%)",
+              "fr": "Batterie (%)"
+            },
+            "example": 75
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_tuya"
+          }
+        ]
+      },
+      {
+        "id": "generic_tuya_measure_temperature_changed",
+        "title": {
+          "en": "Temperature changed",
+          "fr": "Température changée"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature (°C)",
+              "fr": "Température (°C)"
+            },
+            "example": 22.5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_tuya"
+          }
+        ]
+      },
+      {
+        "id": "generic_tuya_measure_humidity_changed",
+        "title": {
+          "en": "Humidity changed",
+          "fr": "Humidité changée"
+        },
+        "tokens": [
+          {
+            "name": "humidity",
+            "type": "number",
+            "title": {
+              "en": "Humidity (%)",
+              "fr": "Humidité (%)"
+            },
+            "example": 65
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_tuya"
+          }
+        ]
+      },
+      {
+        "id": "generic_tuya_dp_received",
+        "title": {
+          "en": "Data Point received",
+          "fr": "Point de données reçu"
+        },
+        "tokens": [
+          {
+            "name": "dp",
+            "type": "number",
+            "title": {
+              "en": "DP Number",
+              "fr": "Numéro DP"
+            },
+            "example": 1
+          },
+          {
+            "name": "value",
+            "type": "string",
+            "title": {
+              "en": "Value",
+              "fr": "Valeur"
+            },
+            "example": "100"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_tuya"
+          }
+        ]
+      },
+      {
         "id": "hvac_air_conditioner_air_conditioner_hybrid_turned_on",
         "title": {
           "en": "Turned on",
@@ -7216,6 +7325,35 @@
         ]
       },
       {
+        "id": "generic_tuya_battery_above",
+        "title": {
+          "en": "Battery is above...",
+          "fr": "Batterie au-dessus de..."
+        },
+        "titleFormatted": {
+          "en": "Battery is above [[level]]%",
+          "fr": "Batterie au-dessus de [[level]]%"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_tuya"
+          },
+          {
+            "name": "level",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "title": {
+              "en": "Level (%)",
+              "fr": "Niveau (%)"
+            }
+          }
+        ]
+      },
+      {
         "id": "hvac_air_conditioner_air_conditioner_hybrid_is_on",
         "title": {
           "en": "Is turned !{{on|off}}",
@@ -8989,6 +9127,35 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=gateway_zigbee_bridge"
+          }
+        ]
+      },
+      {
+        "id": "generic_tuya_request_dp",
+        "title": {
+          "en": "Request Data Point",
+          "fr": "Demander Point de Données"
+        },
+        "titleFormatted": {
+          "en": "Request DP [[dp]]",
+          "fr": "Demander DP [[dp]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_tuya"
+          },
+          {
+            "name": "dp",
+            "type": "number",
+            "min": 1,
+            "max": 255,
+            "step": 1,
+            "title": {
+              "en": "DP Number",
+              "fr": "Numéro DP"
+            }
           }
         ]
       },
@@ -20716,6 +20883,125 @@
         }
       ],
       "capabilitiesOptions": {}
+    },
+    {
+      "name": {
+        "en": "Generic Tuya Device (TS0601)",
+        "fr": "Appareil Tuya Générique (TS0601)"
+      },
+      "class": "other",
+      "images": {
+        "small": "/drivers/generic_tuya/assets/images/small.png",
+        "large": "/drivers/generic_tuya/assets/images/large.png",
+        "xlarge": "/drivers/generic_tuya/assets/images/xlarge.png"
+      },
+      "capabilities": [
+        "measure_battery",
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_battery"
+      ],
+      "capabilitiesOptions": {
+        "measure_temperature": {
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          }
+        },
+        "measure_humidity": {
+          "title": {
+            "en": "Humidity",
+            "fr": "Humidité"
+          }
+        }
+      },
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_unknown",
+          "_TZE204_unknown",
+          "_TZE284_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              61184
+            ],
+            "bindings": []
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/generic_tuya/assets/learnmode.svg",
+          "instruction": {
+            "en": "Generic Tuya TS0601 device.\n\n1. Press and hold the reset button for 5+ seconds\n2. The LED should start blinking\n3. The device will be detected automatically\n\nNote: This is a fallback driver for unknown TS0601 devices. Data points will be auto-discovered.",
+            "fr": "Appareil Tuya TS0601 générique.\n\n1. Appuyez et maintenez le bouton reset pendant 5+ secondes\n2. La LED devrait clignoter\n3. L'appareil sera détecté automatiquement\n\nNote: Driver de secours pour TS0601 inconnus. Les points de données seront auto-découverts."
+          }
+        }
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Device Information",
+            "fr": "Informations Appareil"
+          },
+          "children": [
+            {
+              "id": "device_manufacturer",
+              "type": "label",
+              "label": {
+                "en": "Manufacturer",
+                "fr": "Fabricant"
+              },
+              "value": "Unknown"
+            },
+            {
+              "id": "device_model",
+              "type": "label",
+              "label": {
+                "en": "Model ID",
+                "fr": "ID Modèle"
+              },
+              "value": "TS0601"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Discovered Data Points",
+            "fr": "Points de Données Découverts"
+          },
+          "children": [
+            {
+              "id": "discovered_dps",
+              "type": "label",
+              "label": {
+                "en": "Active DPs",
+                "fr": "DPs Actifs"
+              },
+              "value": "None yet - waiting for device data"
+            }
+          ]
+        }
+      ],
+      "id": "generic_tuya"
     },
     {
       "id": "hvac_air_conditioner",
