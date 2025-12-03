@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.3.45: CRITICAL FIX - Missing driver.js files causing 'must extend ZigBeeDriver' errors. Fixed 6 drivers.",
-    "fr": "V5.3.45: CORRECTIF CRITIQUE - Fichiers driver.js manquants causant erreurs 'must extend ZigBeeDriver'. 6 drivers corrigés."
+    "en": "V5.3.45: CRITICAL FIX - Missing driver.js + Enhanced Tuya DP listener for ZTH05Z climate sensors.",
+    "fr": "V5.3.45: CORRECTIF CRITIQUE - driver.js manquants + Listener Tuya DP amélioré pour capteurs ZTH05Z."
   },
   "category": "appliances",
   "permissions": [],
