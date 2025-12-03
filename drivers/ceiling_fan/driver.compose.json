@@ -7,7 +7,6 @@
   "capabilities": [
     "dim",
     "measure_battery",
-    "alarm_battery",
     "onoff",
     "fan_speed"
   ],
