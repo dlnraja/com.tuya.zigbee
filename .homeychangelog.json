@@ -1,4 +1,8 @@
 {
+  "5.3.30": {
+    "en": "🏗️ v5.3.30 - JohanBendz Analysis Implementation\n\n**New Features:**\n\n📦 **Generic Tuya Driver (TS0601)**\n- Fallback driver for unknown TS0601 devices\n- Auto-discovery of Data Points\n- Heuristic DP → Capability mapping\n- Default values to prevent null KPIs\n\n🔋 **BatteryRouter Helper**\n- Smart battery source selection\n- ZCL vs Tuya DP auto-detection\n- Voltage (DP 247) support for USB devices\n- Graceful fallbacks\n\n🚨 **IASZoneEnhanced Manager**\n- SDK-compliant zone enrollment\n- Status change notifications\n- Multi-sensor support (motion, contact, water, smoke)\n- Tamper & battery low detection\n\n**Based on:**\n- JohanBendz/com.tuya.zigbee issues analysis\n- Homey Apps SDK documentation\n- Zigbee2MQTT converters",
+    "fr": "🏗️ v5.3.30 - Implémentation Analyse JohanBendz\n\n- Driver Generic Tuya (TS0601 inconnus)\n- BatteryRouter intelligent\n- IASZoneEnhanced amélioré\n- Documentation SDK intégrée"
+  },
   "5.3.29": {
     "en": "🔧 v5.3.29 - Critical Time Sync Bug Fix\n\n**Bug Fixed:**\n- `tuyaCluster.dataRequest is not a function` error\n- Time sync now uses correct SDK3 methods (setData/command)\n- Proper fallback chain for different cluster implementations\n\n**Details:**\n- SDK3 Tuya cluster doesn't have dataRequest method\n- Now tries: setData() → command('setData') → silent skip\n- Non-critical failure (time sync optional for operation)\n\n**Source:** JohanBendz/com.tuya.zigbee analysis",
     "fr": "🔧 v5.3.29 - Correctif Time Sync Critique\n\n- Erreur dataRequest corrigée\n- Méthodes SDK3 correctes utilisées\n- Fallback gracieux si non supporté"
