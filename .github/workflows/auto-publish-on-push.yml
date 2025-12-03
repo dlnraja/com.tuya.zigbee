@@ -1,0 +1,92 @@
+# ============================================================================
+# 🚀 AUTO-PUBLISH ON PUSH - No Questions Asked!
+# ============================================================================
+# Publishes automatically when pushing to master branch
+# No interactive prompts - fully automated
+#
+# SETUP REQUIRED:
+# 1. Get token: https://tools.developer.homey.app/me
+# 2. Add secret: Settings → Secrets → HOMEY_PAT
+# ============================================================================
+
+name: 🚀 Auto-Publish on Push
+
+on:
+  push:
+    branches:
+      - master
+      - main
+    paths-ignore:
+      - "**.md"
+      - ".github/workflows/*.disabled"
+      - "docs/**"
+
+permissions:
+  contents: write
+
+env:
+  NODE_VERSION: "20"
+
+jobs:
+  publish:
+    name: 🚀 Validate & Publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: 📦 Get App Info
+        id: info
+        run: |
+          VERSION=$(node -p "require('./app.json').version")
+          NAME=$(node -p "require('./app.json').name.en")
+          ID=$(node -p "require('./app.json').id")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "name=$NAME" >> $GITHUB_OUTPUT
+          echo "id=$ID" >> $GITHUB_OUTPUT
+          echo "📦 $NAME v$VERSION ($ID)"
+
+      - name: 🔍 Validate (Athom Official)
+        uses: athombv/github-action-homey-app-validate@v1
+        with:
+          level: publish
+
+      - name: 🔑 Check HOMEY_PAT
+        id: check_pat
+        run: |
+          if [ -z "${{ secrets.HOMEY_PAT }}" ]; then
+            echo "has_pat=false" >> $GITHUB_OUTPUT
+            echo "⚠️ HOMEY_PAT not configured - skipping publish"
+          else
+            echo "has_pat=true" >> $GITHUB_OUTPUT
+            echo "✅ HOMEY_PAT configured"
+          fi
+
+      - name: 🚀 Publish (Athom Official)
+        if: steps.check_pat.outputs.has_pat == 'true'
+        uses: athombv/github-action-homey-app-publish@v1
+        id: publish
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+
+      - name: ✅ Summary
+        run: |
+          echo "## 🎉 ${{ steps.info.outputs.name }} v${{ steps.info.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.check_pat.outputs.has_pat }}" == "true" ]; then
+            echo "✅ **Published to Homey App Store!**" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "🔗 [Manage Build](${{ steps.publish.outputs.url }})" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "⚠️ **Validation passed but not published**" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "To enable auto-publish:" >> $GITHUB_STEP_SUMMARY
+            echo "1. Go to [tools.developer.homey.app/me](https://tools.developer.homey.app/me)" >> $GITHUB_STEP_SUMMARY
+            echo "2. Copy your **Personal Access Token**" >> $GITHUB_STEP_SUMMARY
+            echo "3. Add as GitHub Secret: **HOMEY_PAT**" >> $GITHUB_STEP_SUMMARY
+          fi
