@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.3.47",
+  "version": "5.3.48",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.3.47: SDK COMPLIANCE - Removed alarm_battery from 76 drivers (SDK best practice).",
-    "fr": "V5.3.47: CONFORMITÉ SDK - alarm_battery retiré de 76 drivers (best practice SDK)."
+    "en": "V5.3.48: SDK FULL COMPLIANCE - Light drivers with registerMultipleCapabilityListener + setOnDim.",
+    "fr": "V5.3.48: CONFORMITÉ SDK COMPLÈTE - Drivers lumière avec registerMultipleCapabilityListener + setOnDim."
   },
   "category": "appliances",
   "permissions": [],
@@ -11846,7 +11846,11 @@
           "template": "add_devices"
         }
       ],
-      "capabilitiesOptions": {}
+      "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": true
+        }
+      }
     },
     {
       "name": {
@@ -12195,7 +12199,11 @@
           "template": "add_devices"
         }
       ],
-      "capabilitiesOptions": {}
+      "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": true
+        }
+      }
     },
     {
       "name": {
@@ -12813,7 +12821,12 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ]
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": true
+        }
+      }
     },
     {
       "name": {
@@ -13321,7 +13334,11 @@
           "template": "add_devices"
         }
       ],
-      "capabilitiesOptions": {}
+      "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": true
+        }
+      }
     },
     {
       "name": {
@@ -13666,7 +13683,11 @@
           "template": "add_devices"
         }
       ],
-      "capabilitiesOptions": {}
+      "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": true
+        }
+      }
     },
     {
       "name": {
@@ -20804,7 +20825,7 @@
       },
       "capabilitiesOptions": {
         "onoff": {
-          "setOnDim": false
+          "setOnDim": true
         },
         "dim": {
           "title": {
@@ -21242,7 +21263,12 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ]
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": true
+        }
+      }
     },
     {
       "name": {
@@ -24803,6 +24829,11 @@
         "batteries": [
           "OTHER"
         ]
+      },
+      "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": true
+        }
       }
     },
     {
@@ -24882,6 +24913,11 @@
         "batteries": [
           "OTHER"
         ]
+      },
+      "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": true
+        }
       }
     },
     {
@@ -25236,7 +25272,11 @@
           "template": "add_devices"
         }
       ],
-      "capabilitiesOptions": {}
+      "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": true
+        }
+      }
     },
     {
       "name": {
@@ -25566,7 +25606,11 @@
           "template": "add_devices"
         }
       ],
-      "capabilitiesOptions": {}
+      "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": true
+        }
+      }
     },
     {
       "name": {
@@ -26006,7 +26050,11 @@
           "template": "add_devices"
         }
       ],
-      "capabilitiesOptions": {}
+      "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": true
+        }
+      }
     },
     {
       "name": {

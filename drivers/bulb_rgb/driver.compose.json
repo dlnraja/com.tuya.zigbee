@@ -345,5 +345,9 @@
       "template": "add_devices"
     }
   ],
-  "capabilitiesOptions": {}
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": true
+    }
+  }
 }
