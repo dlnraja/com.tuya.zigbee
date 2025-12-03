@@ -9,7 +9,8 @@
     "windowcoverings_set",
     "windowcoverings_tilt_set",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "dim"
   ],
   "capabilitiesOptions": {
     "windowcoverings_set": {
@@ -174,10 +175,13 @@
         "clusters": [
           1,
           258,
-          61184
+          61184,
+          6,
+          8
         ],
         "bindings": [
-          1
+          1,
+          258
         ]
       }
     },

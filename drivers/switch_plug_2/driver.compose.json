@@ -10,7 +10,8 @@
     "measure_power",
     "meter_power",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "onoff"
   ],
   "zigbee": {
     "manufacturerName": [
@@ -25,6 +26,9 @@
           6,
           2820,
           1794
+        ],
+        "bindings": [
+          6
         ]
       }
     }
@@ -45,5 +49,17 @@
     "batteries": [
       "OTHER"
     ]
+  },
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Outlet 1"
+      }
+    },
+    "onoff.1": {
+      "title": {
+        "en": "Outlet 2"
+      }
+    }
   }
 }

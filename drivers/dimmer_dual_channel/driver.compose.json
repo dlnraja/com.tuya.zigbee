@@ -7,7 +7,9 @@
     "dim",
     "onoff",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "onoff.1",
+    "dim.1"
   ],
   "platforms": [
     "local"
@@ -53,6 +55,21 @@
   "capabilitiesOptions": {
     "onoff": {
       "setOnDim": false
+    },
+    "dim": {
+      "title": {
+        "en": "Brightness 1"
+      }
+    },
+    "onoff.1": {
+      "title": {
+        "en": "Channel 2"
+      }
+    },
+    "dim.1": {
+      "title": {
+        "en": "Brightness 2"
+      }
     }
   },
   "images": {

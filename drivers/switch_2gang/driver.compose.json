@@ -7,7 +7,8 @@
     "measure_current",
     "onoff",
     "onoff.1",
-    "alarm_battery"
+    "alarm_battery",
+    "meter_power"
   ],
   "zigbee": {
     "productId": [
@@ -148,7 +149,9 @@
           4,
           5,
           6,
-          61184
+          61184,
+          2820,
+          1794
         ],
         "bindings": [
           6

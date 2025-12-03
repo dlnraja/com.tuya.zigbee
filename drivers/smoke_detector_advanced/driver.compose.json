@@ -11,10 +11,7 @@
   ],
   "energy": {
     "batteries": [
-      "CR2032",
-      "CR2450",
-      "AAA",
-      "AA",
+      "CR2",
       "CR123A"
     ],
     "approximation": {
@@ -94,7 +91,8 @@
           61185
         ],
         "bindings": [
-          1
+          1,
+          1280
         ]
       }
     },

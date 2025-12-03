@@ -18,7 +18,8 @@
       "usageOff": 0.5
     },
     "batteries": [
-      "OTHER"
+      "CR2450",
+      "AAA"
     ]
   },
   "zigbee": {
@@ -38,9 +39,14 @@
         "clusters": [
           0,
           3,
-          61184
+          61184,
+          1026,
+          1029,
+          1
         ],
-        "bindings": []
+        "bindings": [
+          1
+        ]
       }
     }
   },

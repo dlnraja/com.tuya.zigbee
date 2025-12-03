@@ -1,4 +1,8 @@
 {
+  "5.3.35": {
+    "en": "🔧 v5.3.35 - HYBRID DRIVER ENRICHMENT\n\n**All 80 drivers now enriched with:**\n\n📡 **ZCL Clusters (Zigbee standard)**\n- Numeric cluster IDs for SDK3 compatibility\n- Proper cluster bindings configured\n- Temperature, Humidity, Power, IAS Zone, etc.\n\n⚡ **Tuya Data Points (DP)**\n- TS0601 proprietary protocol support\n- All common DPs mapped (switches, sensors, thermostats)\n- Hybrid operation: ZCL + Tuya simultaneously\n\n🔋 **Energy & Battery**\n- energy.batteries configured for all battery devices\n- Valid battery types: CR2032, CR2450, AAA, AA, etc.\n\n📊 **Capabilities Options**\n- Multi-gang switches with proper channel titles\n- Clear labeling for multi-outlet devices\n\n**Scripts Created:**\n- HYBRID_DRIVER_ENRICHMENT.js\n- HYBRID_DRIVER_ENRICHMENT_PART2.js",
+    "fr": "🔧 v5.3.35 - ENRICHISSEMENT HYBRIDE\n\n- 80 drivers enrichis avec clusters ZCL + Tuya DPs\n- Opération hybride: ZCL et Tuya simultanément\n- Batteries configurées pour tous les appareils\n- Labels clairs pour switches multi-gang"
+  },
   "5.3.34": {
     "en": "📦 v5.3.34 - Clean Release with Proper Changelog\n\n**Includes all fixes from v5.3.32-33:**\n\n🔧 **v5.3.33 Fix:**\n- CRASH FIX: expected_cluster_id_number\n- SDK3 numeric cluster IDs in BatteryRouter\n\n🚀 **v5.3.32 Features:**\n- MEGA TS0601 ENRICHMENT\n- 1210 devices analyzed from Zigbee2MQTT\n- 50+ drivers enriched with 3000+ manufacturer IDs\n- Maximum device coverage achieved\n\n**Published via GitHub Actions**",
     "fr": "📦 v5.3.34 - Release propre avec changelog correct\n\n- Inclut tous les correctifs v5.3.32-33\n- Fix crash expected_cluster_id_number\n- MEGA enrichissement TS0601\n- Publié via GitHub Actions"
