@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.3.25",
+  "version": "5.3.26",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -16626,6 +16626,7 @@
         "manufacturerName": [
           "ClimaxTechnology",
           "SONOFF",
+          "_TZ3000_hy6ncvmw",
           "_TZ2000_a476raq2",
           "_TZ2000_xogb73am",
           "_TZ3000_0hkmcrza",
@@ -17421,6 +17422,7 @@
         ],
         "productId": [
           "BLU-HT-ZB",
+          "TS0222",
           "RS-23ZBS",
           "RSH-TH01",
           "SNZB-02",
@@ -24330,6 +24332,7 @@
       "zigbee": {
         "manufacturerName": [
           "ClimaxTechnology",
+          "MatSee Plus",
           "_TZ3000_0zfrhq4i",
           "_TZ3000_1h2x4akh",
           "_TZ3000_1o6x1bl0",
@@ -24408,6 +24411,7 @@
           "ATMS1602Z",
           "EM-Mini",
           "EMD-1ZBS",
+          "PJ-1203A",
           "TS0601"
         ],
         "endpoints": {
