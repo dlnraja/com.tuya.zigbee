@@ -1,4 +1,8 @@
 {
+  "5.3.28": {
+    "en": "💧 v5.3.28 - Water Leak Sensors Enrichment (kkossev)\n\n**Source:** kkossev/Hubitat Water Leak Driver v1.1.4\n\n**+13 Manufacturer IDs Added:**\n- _TYST11_qq9mpfhw (NEO Coolcam)\n- _TYZB01_o63ssaah (Blitzwolf BW-IS5)\n- _TZ3000_2wcynpml, _TZ3000_arw23zcs\n- _TZ3000_awvmkayh, _TZ3000_d16y6col\n- _TZ3000_it1hm1cr, _TZ3000_js34cuma\n- _TZ3000_qhozxs2b, _TZ3000_rurvxhcx\n- _TZ3000_wuep9zng, _TZ3000_ww9i3e0y\n- _TZE200_jthf7vb6 (WLS-100z)\n\n**Models:** TS0207, TS0601",
+    "fr": "💧 v5.3.28 - Enrichissement Capteurs Fuite (kkossev)\n\n- +13 IDs fabricant ajoutés\n- NEO Coolcam, Blitzwolf, Tuya TS0207"
+  },
   "5.3.27": {
     "en": "🔧 v5.3.27 - kkossev/Hubitat Enrichment\n\n**Source:** https://github.com/kkossev/Hubitat\n\n**Manufacturer IDs Added:**\n- _TYST11_7hfcudw5 (4-in-1 Multi-Sensor)\n- _TYST11_i5j6ifxj (4-in-1 Multi-Sensor)\n- _TYZB01_sqmd19i1 (Water Leak Sensor TS0207)\n\n**Device Types:**\n- Motion + Illuminance + Temp + Humidity sensors\n- Water leak/flood detectors",
     "fr": "🔧 v5.3.27 - Enrichissement kkossev/Hubitat\n\n- 3 IDs fabricant ajoutés\n- Capteurs 4-en-1 et détecteurs de fuite"
