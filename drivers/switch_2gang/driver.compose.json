@@ -165,7 +165,33 @@
           6
         ]
       }
-    }
+    },
+    "devices": [
+      {
+        "manufacturerName": "SONOFF",
+        "modelId": "ZBM5-2-80"
+      },
+      {
+        "manufacturerName": "SONOFF",
+        "modelId": "ZBM5-2-86"
+      },
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "ZBM5-2-80"
+      },
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "ZBM5-2-86"
+      },
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "ZB-SW02"
+      },
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "ZBSW02"
+      }
+    ]
   },
   "images": {
     "small": "drivers/switch_2gang/assets/images/small.png",

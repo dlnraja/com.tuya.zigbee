@@ -162,7 +162,37 @@
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
-    }
+    },
+    "devices": [
+      {
+        "manufacturerName": "SONOFF",
+        "modelId": "SNZB-04"
+      },
+      {
+        "manufacturerName": "SONOFF",
+        "modelId": "SNZB-04P"
+      },
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "SNZB-04"
+      },
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "SNZB-04P"
+      },
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "DS01"
+      },
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "DS-01"
+      },
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "WDS01"
+      }
+    ]
   },
   "settings": [
     {

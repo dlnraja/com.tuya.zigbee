@@ -95,6 +95,24 @@
       "TS0601",
       "Valve",
       "Water-Valve"
+    ],
+    "devices": [
+      {
+        "manufacturerName": "SONOFF",
+        "modelId": "SWV"
+      },
+      {
+        "manufacturerName": "SONOFF",
+        "modelId": "SWV-NH"
+      },
+      {
+        "manufacturerName": "SONOFF",
+        "modelId": "SWV-BSP"
+      },
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "SWV"
+      }
     ]
   },
   "settings": [

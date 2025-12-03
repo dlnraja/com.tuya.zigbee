@@ -154,7 +154,33 @@
         "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
         "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
       }
-    }
+    },
+    "devices": [
+      {
+        "manufacturerName": "SONOFF",
+        "modelId": "SNZB-01"
+      },
+      {
+        "manufacturerName": "SONOFF",
+        "modelId": "SNZB-01P"
+      },
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "SNZB-01"
+      },
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "SNZB-01P"
+      },
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "WB01"
+      },
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "WB-01"
+      }
+    ]
   },
   "images": {
     "small": "drivers/button_wireless_1/assets/images/small.png",
