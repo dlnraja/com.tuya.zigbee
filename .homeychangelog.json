@@ -1,4 +1,8 @@
 {
+  "5.3.29": {
+    "en": "🔧 v5.3.29 - Critical Time Sync Bug Fix\n\n**Bug Fixed:**\n- `tuyaCluster.dataRequest is not a function` error\n- Time sync now uses correct SDK3 methods (setData/command)\n- Proper fallback chain for different cluster implementations\n\n**Details:**\n- SDK3 Tuya cluster doesn't have dataRequest method\n- Now tries: setData() → command('setData') → silent skip\n- Non-critical failure (time sync optional for operation)\n\n**Source:** JohanBendz/com.tuya.zigbee analysis",
+    "fr": "🔧 v5.3.29 - Correctif Time Sync Critique\n\n- Erreur dataRequest corrigée\n- Méthodes SDK3 correctes utilisées\n- Fallback gracieux si non supporté"
+  },
   "5.3.28": {
     "en": "💧 v5.3.28 - Water Leak Sensors Enrichment (kkossev)\n\n**Source:** kkossev/Hubitat Water Leak Driver v1.1.4\n\n**+13 Manufacturer IDs Added:**\n- _TYST11_qq9mpfhw (NEO Coolcam)\n- _TYZB01_o63ssaah (Blitzwolf BW-IS5)\n- _TZ3000_2wcynpml, _TZ3000_arw23zcs\n- _TZ3000_awvmkayh, _TZ3000_d16y6col\n- _TZ3000_it1hm1cr, _TZ3000_js34cuma\n- _TZ3000_qhozxs2b, _TZ3000_rurvxhcx\n- _TZ3000_wuep9zng, _TZ3000_ww9i3e0y\n- _TZE200_jthf7vb6 (WLS-100z)\n\n**Models:** TS0207, TS0601",
     "fr": "💧 v5.3.28 - Enrichissement Capteurs Fuite (kkossev)\n\n- +13 IDs fabricant ajoutés\n- NEO Coolcam, Blitzwolf, Tuya TS0207"
