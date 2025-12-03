@@ -75,5 +75,10 @@
     "batteries": [
       "OTHER"
     ]
+  },
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": true
+    }
   }
 }
