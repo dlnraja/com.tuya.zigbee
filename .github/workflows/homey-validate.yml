@@ -11,24 +11,24 @@ on:
   push:
     branches: [master, main, develop]
     paths:
-      - 'app.json'
-      - '.homeycompose/**'
-      - 'drivers/**'
-      - 'lib/**'
-      - '*.js'
+      - "app.json"
+      - ".homeycompose/**"
+      - "drivers/**"
+      - "lib/**"
+      - "*.js"
   pull_request:
     branches: [master, main]
   workflow_dispatch:
     inputs:
       level:
-        description: 'Validation level'
+        description: "Validation level"
         required: true
         type: choice
         options:
           - debug
           - publish
           - verified
-        default: 'publish'
+        default: "publish"
 
 jobs:
   validate:
@@ -48,7 +48,7 @@ jobs:
           echo "📦 App: $NAME v$VERSION"
 
       - name: 🔍 Validate (Official Athom Action)
-        uses: athombv/github-action-homey-app-validate@master
+        uses: athombv/github-action-homey-app-validate@v1
         with:
           level: ${{ inputs.level || 'publish' }}
 

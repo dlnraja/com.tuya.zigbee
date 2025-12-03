@@ -30,13 +30,13 @@ jobs:
   validate:
     name: 🔍 Validate
     runs-on: ubuntu-latest
-    if: ${{ !inputs.skip_validation }}
+    if: ${{ github.event_name == 'workflow_dispatch' && !inputs.skip_validation || github.event_name == 'push' }}
     steps:
       - name: 📥 Checkout
         uses: actions/checkout@v4
 
       - name: 🔍 Validate (Official Athom Action)
-        uses: athombv/github-action-homey-app-validate@master
+        uses: athombv/github-action-homey-app-validate@v1
         with:
           level: publish
 
@@ -82,7 +82,7 @@ jobs:
           echo "✅ HOMEY_PAT configured"
 
       - name: 🚀 Publish (Official Athom Action)
-        uses: athombv/github-action-homey-app-publish@master
+        uses: athombv/github-action-homey-app-publish@v1
         id: publish
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
