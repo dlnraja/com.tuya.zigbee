@@ -7,8 +7,7 @@
   "capabilities": [
     "onoff",
     "valve_position",
-    "measure_battery",
-    "alarm_battery"
+    "measure_battery"
   ],
   "zigbee": {
     "manufacturerName": [
