@@ -1,0 +1,85 @@
+# ============================================================================
+# 📦 HOMEY APP VERSION - Official Athom Action
+# ============================================================================
+# Source: https://github.com/athombv/github-action-homey-app-version
+# Docs: https://apps.developer.homey.app/app-store/publishing
+# ============================================================================
+
+name: 📦 Update Version
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version bump type"
+        required: true
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+        default: "patch"
+      changelog:
+        description: "Changelog entry (English)"
+        required: true
+        type: string
+
+# Required for pushing commits and creating releases
+permissions:
+  contents: write
+
+jobs:
+  update-version:
+    name: 📦 Update Version
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.update.outputs.version }}
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      - name: 📦 Get Current Version
+        id: current
+        run: |
+          VERSION=$(node -p "require('./app.json').version")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "📦 Current version: v$VERSION"
+
+      - name: 📦 Update Version (Official Athom Action)
+        uses: athombv/github-action-homey-app-version@master
+        id: update
+        with:
+          version: ${{ inputs.version }}
+          changelog: ${{ inputs.changelog }}
+
+      - name: 📝 Commit & Push
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "🔖 Bump version to v${{ steps.update.outputs.version }}"
+          git tag "v${{ steps.update.outputs.version }}"
+          git push origin HEAD --tags
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 📝 Create GitHub Release
+        run: |
+          gh release create "v${{ steps.update.outputs.version }}" \
+            --title "v${{ steps.update.outputs.version }}" \
+            --notes "${{ inputs.changelog }}" \
+            --generate-notes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
+
+      - name: ✅ Summary
+        run: |
+          echo "## 📦 Version Updated" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Previous:** v${{ steps.current.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**New:** v${{ steps.update.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Type:** ${{ inputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Changelog" >> $GITHUB_STEP_SUMMARY
+          echo "${{ inputs.changelog }}" >> $GITHUB_STEP_SUMMARY
