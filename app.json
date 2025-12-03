@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.3.37",
+  "version": "5.3.38",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.3.37: HEIMAN COMPLETE + All Sirens/Strobes/Alarms - 158 devices (smoke, gas, CO, water leak, fog machines). V5.3.36: SONOFF 132 devices. 100% local Zigbee.",
-    "fr": "V5.3.37: HEIMAN COMPLET + Sirènes/Strobes/Alarmes - 158 appareils (fumée, gaz, CO, fuite eau, machines à brouillard). 100% local Zigbee."
+    "en": "V5.3.38: SONOFF ZCL Library + NSPanel Pro Guide + Complete device fingerprints. 290+ devices from SONOFF/eWeLink/HEIMAN. 100% local Zigbee.",
+    "fr": "V5.3.38: Bibliothèque SONOFF ZCL + Guide NSPanel Pro + Empreintes complètes. 290+ appareils SONOFF/eWeLink/HEIMAN. 100% local Zigbee."
   },
   "category": "appliances",
   "permissions": [],
