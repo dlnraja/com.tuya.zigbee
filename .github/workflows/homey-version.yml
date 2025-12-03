@@ -46,7 +46,7 @@ jobs:
           echo "📦 Current version: v$VERSION"
 
       - name: 📦 Update Version (Official Athom Action)
-        uses: athombv/github-action-homey-app-version@master
+        uses: athombv/github-action-homey-app-version@v1
         id: update
         with:
           version: ${{ inputs.version }}
@@ -67,8 +67,7 @@ jobs:
         run: |
           gh release create "v${{ steps.update.outputs.version }}" \
             --title "v${{ steps.update.outputs.version }}" \
-            --notes "${{ inputs.changelog }}" \
-            --generate-notes
+            --notes "${{ inputs.changelog }}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ github.token }}
