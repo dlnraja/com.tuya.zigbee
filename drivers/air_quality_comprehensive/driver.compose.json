@@ -136,7 +136,29 @@
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
-    }
+    },
+    "devices": [
+      {
+        "manufacturerName": "HEIMAN",
+        "modelId": "HS3AQ"
+      },
+      {
+        "manufacturerName": "HEIMAN",
+        "modelId": "HS3AQ-E"
+      },
+      {
+        "manufacturerName": "HEIMAN",
+        "modelId": "AQMonitor-N"
+      },
+      {
+        "manufacturerName": "HEIMAN",
+        "modelId": "AQMonitor-N-3.0"
+      },
+      {
+        "manufacturerName": "Heiman",
+        "modelId": "HS3AQ"
+      }
+    ]
   },
   "settings": [
     {
