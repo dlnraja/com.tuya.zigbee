@@ -157,5 +157,90 @@ class Driver extends ZigBeeDriver {
 
 ---
 
+## 🔧 Zigbee Developer Tools
+
+Access: https://developer.athom.com/tools/zigbee
+
+### Nodes Table Properties
+
+| Property | Description | Usage |
+|----------|-------------|-------|
+| **Node ID** | Random identifier | Table reference |
+| **IEEE Address** | Unique device ID | Device identification |
+| **Network Address** | Current network address | Routing |
+| **Type** | Router or EndDevice | Router = mains, EndDevice = battery |
+| **Online** | Responds to ping | Refresh to update |
+| **Receive When Idle** | Can receive anytime | Only routers = true |
+| **Manufacturer** | `manufacturerName` | **Use in driver manifest!** |
+| **Model ID** | `productId` | **Use in driver manifest!** |
+| **Route** | Last known route | Network path |
+
+### Interview Process
+
+The **Interview** button retrieves:
+- `modelId` and `manufacturerName` for driver manifest
+- `endpointDescriptors` - all endpoints and their clusters
+- `endpoints` - detailed cluster info (commands, attributes, reporting config)
+
+> ⚠️ EndDevices (battery) are slower to interview - they sleep most of the time.
+
+### Device Types
+
+| Type | Power | Routing | Receive When Idle |
+|------|-------|---------|-------------------|
+| **Router** | Mains | Yes (repeater) | Yes |
+| **EndDevice** | Battery | No | No (sleepy) |
+
+### System Information
+
+| Property | Description |
+|----------|-------------|
+| Channel | Current Zigbee channel (11-26) |
+| Pan ID | Personal Area Network ID |
+| Extended PAN ID | Extended PAN ID |
+| IEEE Address | Homey's unique Zigbee ID |
+| Network Key | Encryption key for Zigbee traffic |
+| Network Address | Always 0 (Homey is coordinator) |
+
+### Getting Device Fingerprints
+
+1. Pair device as "Basic Zigbee Device"
+2. Go to Zigbee Developer Tools
+3. Find device in Nodes Table
+4. Note **Manufacturer** → `manufacturerName`
+5. Note **Model ID** → `productId`
+6. Click **Interview** for cluster details
+
+### Example Fingerprint Discovery
+
+```
+Nodes Table:
+  Manufacturer: _TZE284_vvmbj46n
+  Model ID: TS0601
+  Type: EndDevice
+
+Interview Result:
+  endpointDescriptors:
+    endpoint 1:
+      clusters: [0, 1, 61184]  // Basic, PowerConfig, Tuya
+```
+
+→ Driver manifest:
+```json
+{
+  "zigbee": {
+    "manufacturerName": "_TZE284_vvmbj46n",
+    "productId": ["TS0601"],
+    "endpoints": {
+      "1": {
+        "clusters": [0, 1, 61184]
+      }
+    }
+  }
+}
+```
+
+---
+
 *Generated from Homey Apps SDK Documentation analysis*
 *App Version: 5.3.46*
