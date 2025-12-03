@@ -1,0 +1,813 @@
+{
+  "timestamp": "2025-12-03T06:57:52.507Z",
+  "source": "sonoff-fingerprint-extract.js",
+  "devices": {
+    "SNZB-01": {
+      "category": "sensors",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "SNZB-01",
+        "WB01",
+        "WB-01"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [
+            0,
+            1,
+            3,
+            6,
+            18
+          ],
+          "bindings": [
+            1,
+            6
+          ]
+        }
+      },
+      "capabilities": [
+        "measure_battery"
+      ],
+      "batteryType": "CR2450",
+      "description": "Wireless Button"
+    },
+    "SNZB-01P": {
+      "category": "sensors",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "SNZB-01P"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [
+            0,
+            1,
+            3,
+            6,
+            18
+          ],
+          "bindings": [
+            1,
+            6
+          ]
+        }
+      },
+      "capabilities": [
+        "measure_battery"
+      ],
+      "batteryType": "CR2450",
+      "description": "Wireless Button Pro"
+    },
+    "SNZB-02": {
+      "category": "sensors",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "SNZB-02",
+        "TH01"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [
+            0,
+            1,
+            3,
+            1026,
+            1029
+          ],
+          "bindings": [
+            1,
+            1026,
+            1029
+          ]
+        }
+      },
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "batteryType": "CR2450",
+      "description": "Temperature & Humidity Sensor"
+    },
+    "SNZB-02D": {
+      "category": "sensors",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "SNZB-02D"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [
+            0,
+            1,
+            3,
+            1026,
+            1029
+          ],
+          "bindings": [
+            1,
+            1026,
+            1029
+          ]
+        }
+      },
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "batteryType": "CR2450",
+      "description": "Temperature & Humidity Sensor with LCD"
+    },
+    "SNZB-02P": {
+      "category": "sensors",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "SNZB-02P"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [
+            0,
+            1,
+            3,
+            1026,
+            1029
+          ],
+          "bindings": [
+            1,
+            1026,
+            1029
+          ]
+        }
+      },
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "batteryType": "CR2450",
+      "description": "Temperature & Humidity Sensor Pro"
+    },
+    "SNZB-03": {
+      "category": "sensors",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "SNZB-03",
+        "MS01"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [
+            0,
+            1,
+            3,
+            1280
+          ],
+          "bindings": [
+            1,
+            1280
+          ]
+        }
+      },
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery"
+      ],
+      "batteryType": "CR2450",
+      "description": "Motion Sensor (PIR)"
+    },
+    "SNZB-03P": {
+      "category": "sensors",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "SNZB-03P"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [
+            0,
+            1,
+            3,
+            1024,
+            1280
+          ],
+          "bindings": [
+            1,
+            1280
+          ]
+        }
+      },
+      "capabilities": [
+        "alarm_motion",
+        "measure_luminance",
+        "measure_battery"
+      ],
+      "batteryType": "CR2450",
+      "description": "Motion Sensor Pro with Lux"
+    },
+    "SNZB-04": {
+      "category": "sensors",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "SNZB-04",
+        "DS01"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [
+            0,
+            1,
+            3,
+            1280
+          ],
+          "bindings": [
+            1,
+            1280
+          ]
+        }
+      },
+      "capabilities": [
+        "alarm_contact",
+        "measure_battery"
+      ],
+      "batteryType": "CR2032",
+      "description": "Door/Window Contact Sensor"
+    },
+    "SNZB-04P": {
+      "category": "sensors",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "SNZB-04P"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [
+            0,
+            1,
+            3,
+            1280
+          ],
+          "bindings": [
+            1,
+            1280
+          ]
+        }
+      },
+      "capabilities": [
+        "alarm_contact",
+        "measure_battery"
+      ],
+      "batteryType": "CR2032",
+      "description": "Door/Window Contact Sensor Pro"
+    },
+    "SNZB-05P": {
+      "category": "sensors",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "SNZB-05P"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [
+            0,
+            1,
+            3,
+            1280
+          ],
+          "bindings": [
+            1,
+            1280
+          ]
+        }
+      },
+      "capabilities": [
+        "alarm_water",
+        "measure_battery"
+      ],
+      "batteryType": "CR2450",
+      "description": "Water Leak Sensor"
+    },
+    "SNZB-06P": {
+      "category": "sensors",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "SNZB-06P"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [
+            0,
+            1,
+            3,
+            1024,
+            1030
+          ],
+          "bindings": [
+            1
+          ]
+        }
+      },
+      "capabilities": [
+        "alarm_motion",
+        "measure_luminance"
+      ],
+      "batteryType": null,
+      "description": "Human Presence Sensor (mmWave)"
+    },
+    "ZBMINI": {
+      "category": "switches",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "ZBMINI",
+        "01MINIZB"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [
+            0,
+            3,
+            4,
+            5,
+            6
+          ],
+          "bindings": [
+            6
+          ]
+        }
+      },
+      "capabilities": [
+        "onoff"
+      ],
+      "description": "Zigbee Mini Smart Switch"
+    },
+    "ZBMINI-L": {
+      "category": "switches",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "ZBMINI-L"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [
+            0,
+            3,
+            4,
+            5,
+            6
+          ],
+          "bindings": [
+            6
+          ]
+        }
+      },
+      "capabilities": [
+        "onoff"
+      ],
+      "description": "Zigbee Mini No Neutral"
+    },
+    "ZBMINI-L2": {
+      "category": "switches",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "ZBMINI-L2",
+        "ZBMINIL2"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [
+            0,
+            3,
+            4,
+            5,
+            6
+          ],
+          "bindings": [
+            6
+          ]
+        }
+      },
+      "capabilities": [
+        "onoff"
+      ],
+      "description": "Zigbee Mini No Neutral V2"
+    },
+    "ZBMINIR2": {
+      "category": "switches",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "ZBMINIR2"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [
+            0,
+            3,
+            4,
+            5,
+            6
+          ],
+          "bindings": [
+            6
+          ]
+        }
+      },
+      "capabilities": [
+        "onoff"
+      ],
+      "description": "Zigbee Mini R2"
+    },
+    "BASICZBR3": {
+      "category": "switches",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "BASICZBR3"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [
+            0,
+            3,
+            4,
+            5,
+            6
+          ],
+          "bindings": [
+            6
+          ]
+        }
+      },
+      "capabilities": [
+        "onoff"
+      ],
+      "description": "Zigbee DIY Relay"
+    },
+    "S31ZB": {
+      "category": "plugs",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "S31ZB",
+        "S31 Lite zb",
+        "S31 Lite ZB"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [
+            0,
+            3,
+            4,
+            5,
+            6,
+            1794,
+            2820
+          ],
+          "bindings": [
+            6
+          ]
+        }
+      },
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "description": "Smart Plug US with Energy Monitor"
+    },
+    "S40ZB": {
+      "category": "plugs",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "S40ZBTPB",
+        "S40 Lite zb",
+        "S40ZB"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [
+            0,
+            3,
+            4,
+            5,
+            6,
+            1794,
+            2820
+          ],
+          "bindings": [
+            6
+          ]
+        }
+      },
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power"
+      ],
+      "description": "Smart Plug EU 16A"
+    },
+    "S26R2ZB": {
+      "category": "plugs",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "S26R2ZB"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [
+            0,
+            3,
+            4,
+            5,
+            6
+          ],
+          "bindings": [
+            6
+          ]
+        }
+      },
+      "capabilities": [
+        "onoff"
+      ],
+      "description": "Smart Plug R2 EU"
+    },
+    "S60ZB": {
+      "category": "plugs",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "S60ZB",
+        "S60ZBTPE",
+        "S60ZBTPF"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [
+            0,
+            3,
+            4,
+            5,
+            6,
+            1794,
+            2820
+          ],
+          "bindings": [
+            6
+          ]
+        }
+      },
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power"
+      ],
+      "description": "iPlug Smart Plug Series"
+    },
+    "TRVZB": {
+      "category": "climate",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "TRVZB"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [
+            0,
+            1,
+            3,
+            4,
+            5,
+            513,
+            516
+          ],
+          "bindings": [
+            1
+          ]
+        }
+      },
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "measure_battery"
+      ],
+      "batteryType": "AA",
+      "description": "Thermostatic Radiator Valve"
+    },
+    "ZBCurtain": {
+      "category": "climate",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "ZBCurtain"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [
+            0,
+            3,
+            4,
+            5,
+            258
+          ],
+          "bindings": []
+        }
+      },
+      "capabilities": [
+        "windowcoverings_state",
+        "windowcoverings_set"
+      ],
+      "description": "Smart Curtain Motor"
+    },
+    "SWV": {
+      "category": "climate",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "SWV",
+        "SWV-NH",
+        "SWV-BSP"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [
+            0,
+            1,
+            3,
+            6
+          ],
+          "bindings": [
+            1,
+            6
+          ]
+        }
+      },
+      "capabilities": [
+        "onoff",
+        "measure_battery"
+      ],
+      "batteryType": "AA",
+      "description": "Smart Water Valve"
+    },
+    "NSPanel Pro": {
+      "category": "gateways",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "NSPanel Pro",
+        "NSPanel Pro 86",
+        "NSPanel Pro 120"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [],
+          "bindings": []
+        }
+      },
+      "capabilities": [],
+      "description": "Smart Panel Pro with Zigbee Gateway"
+    },
+    "ZBBridge": {
+      "category": "gateways",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "ZBBridge",
+        "ZBBridge-P",
+        "ZB Bridge Pro"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [],
+          "bindings": []
+        }
+      },
+      "capabilities": [],
+      "description": "Zigbee Bridge"
+    },
+    "ZBBridge-U": {
+      "category": "gateways",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "ZBBridge-U"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [],
+          "bindings": []
+        }
+      },
+      "capabilities": [],
+      "description": "Zigbee Bridge Ultra"
+    },
+    "iHost": {
+      "category": "gateways",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "iHost"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [],
+          "bindings": []
+        }
+      },
+      "capabilities": [],
+      "description": "Smart Home Hub"
+    },
+    "ZBDongle": {
+      "category": "gateways",
+      "manufacturerName": [
+        "eWeLink",
+        "SONOFF"
+      ],
+      "productId": [
+        "ZBDongle-E",
+        "ZBDongle-P"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [],
+          "bindings": []
+        }
+      },
+      "capabilities": [],
+      "description": "Zigbee USB Dongle"
+    }
+  }
+}
