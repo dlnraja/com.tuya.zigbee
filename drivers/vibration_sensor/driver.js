@@ -1,11 +1,13 @@
 'use strict';
 
-const Homey = require('homey');
+const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class VibrationSensorDriver extends Homey.Driver {
+class VibrationSensorDriver extends ZigBeeDriver {
+
   async onInit() {
-    this.log('Vibration Sensor Driver initialized');
+    this.log('VibrationSensorDriver initialized');
   }
+
 }
 
 module.exports = VibrationSensorDriver;

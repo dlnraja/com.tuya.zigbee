@@ -1,24 +1,13 @@
 'use strict';
 
-const { Driver } = require('homey');
+const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class UniversalWirelessButtonDriver extends Driver {
+class ButtonWirelessDriver extends ZigBeeDriver {
 
   async onInit() {
-    this.log('Universal Wireless Button Driver initialized');
-  }
-
-  async onPair(session) {
-    session.setHandler('showView', async (viewId) => {
-      this.log(`Pairing view: ${viewId}`);
-    });
-
-    session.setHandler('list_devices', async () => {
-      this.log('Listing devices during pairing...');
-      return [];
-    });
+    this.log('ButtonWirelessDriver initialized');
   }
 
 }
 
-module.exports = UniversalWirelessButtonDriver;
+module.exports = ButtonWirelessDriver;

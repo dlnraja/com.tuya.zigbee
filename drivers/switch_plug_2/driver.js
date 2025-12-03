@@ -1,11 +1,13 @@
 'use strict';
 
-const Homey = require('homey');
+const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class SwitchPlug2Driver extends Homey.Driver {
+class SwitchPlug2Driver extends ZigBeeDriver {
+
   async onInit() {
-    this.log('Smart Plug 2-Gang Driver initialized');
+    this.log('SwitchPlug2Driver initialized');
   }
+
 }
 
 module.exports = SwitchPlug2Driver;
