@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.3.43",
+  "version": "5.3.44",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.3.43: ZCL NATIVE ARCHITECTURE - IAS Zone/WD clusters, Tuya DP protocol, Universal device support. 800+ devices.",
-    "fr": "V5.3.43: ARCHITECTURE ZCL NATIVE - Clusters IAS Zone/WD, protocole Tuya DP, support universel. 800+ appareils."
+    "en": "V5.3.44: ZIGBEE2MQTT OFFICIAL - 127 devices from zigbee-herdsman-converters. Exact fingerprints for HEIMAN, SONOFF, Tuya.",
+    "fr": "V5.3.44: ZIGBEE2MQTT OFFICIEL - 127 appareils de zigbee-herdsman-converters. Fingerprints exacts HEIMAN, SONOFF, Tuya."
   },
   "category": "appliances",
   "permissions": [],
@@ -13867,6 +13867,22 @@
           {
             "manufacturerName": "HEIMAN",
             "modelId": "HS2EB-3.0"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SOS-EM"
+          },
+          {
+            "manufacturerName": "_TZ3000_fkp7yfbz",
+            "modelId": "TS0215A"
+          },
+          {
+            "manufacturerName": "_TZ3000_co4gqbha",
+            "modelId": "TS0215A"
+          },
+          {
+            "manufacturerName": "_TYZB02_key8kk7r",
+            "modelId": "TS0215A"
           }
         ]
       },
@@ -14814,6 +14830,10 @@
           {
             "manufacturerName": "IKEA of Sweden",
             "modelId": "E1812"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "SNZB-01M"
           }
         ]
       },
@@ -19308,6 +19328,30 @@
           {
             "manufacturerName": "Aqara",
             "modelId": "WSDCGQ12LM"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HT-EM"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "TH-EM"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "TH-T_V14"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HT-N"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HT-EF-3.0"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "SNZB-02-DR2"
           }
         ]
       },
@@ -19490,6 +19534,30 @@
           {
             "manufacturerName": "Develco",
             "modelId": "COZB-120"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "CO_V15"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "CO_V16"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "CO_YDLV10"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "CO_CTPG"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "1ccaa94c49a84abaa9e38687913947ba"
+          },
+          {
+            "manufacturerName": "_TZE200_7qmdqwmj",
+            "modelId": "TS0601"
           }
         ]
       },
@@ -19767,6 +19835,22 @@
           {
             "manufacturerName": "Aqara",
             "modelId": "MCCGQ14LM"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS8DS-EF2-3.0"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "D1-EF2-3.0"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "DOOR_TPV13"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "DOOR_TPV12"
           }
         ]
       },
@@ -22266,6 +22350,26 @@
           },
           {
             "manufacturerName": "_TZ3000_ztfj8m",
+            "modelId": "TS0205"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "d90d7c61c44d468a8e906ca0841e0a0c"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "GAS_V15"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HY0022"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "RH3070"
+          },
+          {
+            "manufacturerName": "_TZ3000_eiqjkquz",
             "modelId": "TS0205"
           }
         ]
@@ -26403,6 +26507,22 @@
           {
             "manufacturerName": "eWeLink",
             "modelId": "BASICZBR3"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "SA-003-Zigbee"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBMicro"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "MINI-ZB2GS"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "MINI-ZB2GS-L"
           }
         ]
       },
@@ -27029,6 +27149,14 @@
           {
             "manufacturerName": "IKEA of Sweden",
             "modelId": "TRADFRI motion sensor"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "PIR_TPV13"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "PIRILLSensor-EF-3.0"
           }
         ]
       },
@@ -27960,6 +28088,50 @@
           {
             "manufacturerName": "Develco",
             "modelId": "EMIZB-132"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SmartPlug"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SmartPlug-EF-3.0"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SmartPlug-N"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "E_Socket"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "S26R2ZB"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "S31ZB"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "S40ZBTPB"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "S40ZBTPF"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "S60ZBTPF"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "S60ZBTPG"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "SA-029-1"
           }
         ]
       },
@@ -30311,6 +30483,18 @@
           {
             "manufacturerName": "Aqara",
             "modelId": "CTP-R01"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "RC-N"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "RC-EM"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SceneSwitch-EM-3.0"
           }
         ]
       },
@@ -31412,6 +31596,14 @@
           {
             "manufacturerName": "SONOFF",
             "modelId": "SNZB-Siren"
+          },
+          {
+            "manufacturerName": "_TYZB01_8scntis1",
+            "modelId": "TS0216"
+          },
+          {
+            "manufacturerName": "_TYZB01_4obovpbi",
+            "modelId": "TS0216"
           }
         ]
       },
@@ -32104,6 +32296,34 @@
           {
             "manufacturerName": "Heiman",
             "modelId": "SmokeSensor-EM"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SMOK_HV14"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "FB56-SMF02HM1.4"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "b5db59bfd81e4f1f95dc57fdbba17931"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "98293058552c49f38ad0748541ee96ba"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "319fa36e7384414a9ea62cba8f6e7626"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "c3442b4ac59b4ba1a83119d938f283ab"
+          },
+          {
+            "manufacturerName": "_TZ3000_rte1qmaj",
+            "modelId": "TS0205"
           }
         ]
       },
@@ -38653,6 +38873,22 @@
           },
           {
             "manufacturerName": "_TZ3000_mugyhz0q",
+            "modelId": "TS0207"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "WaterSensor-EF-3.0"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "WaterSensor2-EF-3.0"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "WATER_TPV13"
+          },
+          {
+            "manufacturerName": "_TZ3000_kxfbo3d9",
             "modelId": "TS0207"
           }
         ]
