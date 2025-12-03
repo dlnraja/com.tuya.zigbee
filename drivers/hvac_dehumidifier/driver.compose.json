@@ -116,7 +116,21 @@
         "nl": "Houd de aan/uit-knop 5 seconden ingedrukt totdat de LED snel knippert",
         "de": "Halten Sie die Ein-/Aus-Taste 5 Sekunden lang gedrückt, bis die LED schnell blinkt"
       }
-    }
+    },
+    "devices": [
+      {
+        "manufacturerName": "IKEA of Sweden",
+        "modelId": "STARKVIND Air purifier"
+      },
+      {
+        "manufacturerName": "IKEA of Sweden",
+        "modelId": "E2006"
+      },
+      {
+        "manufacturerName": "IKEA of Sweden",
+        "modelId": "E2007"
+      }
+    ]
   },
   "metadata": {
     "app": {
