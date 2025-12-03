@@ -1,4 +1,8 @@
 {
+  "5.3.31": {
+    "en": "🔌 v5.3.31 - BaseHybridDevice Integration\n\n**Integrated Helpers:**\n\n🔋 **BatteryRouter in BaseHybridDevice**\n- Auto-resolves battery source (ZCL vs Tuya DP)\n- Configures reporting automatically\n- Sets default KPI values on init\n\n🚨 **IASZoneEnhanced in BaseHybridDevice**\n- SDK-compliant zone enrollment\n- Auto-initializes for IAS devices\n- Status change notifications active\n\n**Technical:**\n- All helpers safely loaded with try/catch\n- Non-blocking initialization\n- Graceful fallbacks on errors",
+    "fr": "🔌 v5.3.31 - Intégration BaseHybridDevice\n\n- BatteryRouter automatique\n- IASZoneEnhanced automatique\n- Initialisation non-bloquante"
+  },
   "5.3.30": {
     "en": "🏗️ v5.3.30 - JohanBendz Analysis Implementation\n\n**New Features:**\n\n📦 **Generic Tuya Driver (TS0601)**\n- Fallback driver for unknown TS0601 devices\n- Auto-discovery of Data Points\n- Heuristic DP → Capability mapping\n- Default values to prevent null KPIs\n\n🔋 **BatteryRouter Helper**\n- Smart battery source selection\n- ZCL vs Tuya DP auto-detection\n- Voltage (DP 247) support for USB devices\n- Graceful fallbacks\n\n🚨 **IASZoneEnhanced Manager**\n- SDK-compliant zone enrollment\n- Status change notifications\n- Multi-sensor support (motion, contact, water, smoke)\n- Tamper & battery low detection\n\n**Based on:**\n- JohanBendz/com.tuya.zigbee issues analysis\n- Homey Apps SDK documentation\n- Zigbee2MQTT converters",
     "fr": "🏗️ v5.3.30 - Implémentation Analyse JohanBendz\n\n- Driver Generic Tuya (TS0601 inconnus)\n- BatteryRouter intelligent\n- IASZoneEnhanced amélioré\n- Documentation SDK intégrée"
