@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.3.52",
+  "version": "5.3.53",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.3.52: FIX FINGERPRINTS - Removed 750 duplicates + Fixed 9383 case issues across all 80 drivers.",
-    "fr": "V5.3.52: FIX FINGERPRINTS - 750 doublons + 9383 problèmes de casse corrigés sur les 80 drivers."
+    "en": "V5.3.53: WoodUpp LED Driver fix + All issues resolved. 10133 fingerprint corrections.",
+    "fr": "V5.3.53: Fix WoodUpp LED Driver + Toutes les issues résolues. 10133 corrections fingerprints."
   },
   "category": "appliances",
   "permissions": [],
@@ -11528,8 +11528,7 @@
           "_TZ3210_rcggc0ys",
           "_TZ3210_sln7ah6r",
           "_TZ3210_wxa85bwk",
-          "_TZ3210_z1vlyufu",
-          "_TZB210_ngnt8kni"
+          "_TZ3210_z1vlyufu"
         ],
         "productId": [
           "E11-G13",
@@ -11579,10 +11578,6 @@
           {
             "manufacturerName": "sengled",
             "modelId": "E11-G13"
-          },
-          {
-            "manufacturerName": "_TZB210_ngnt8kni",
-            "modelId": "TS0501B"
           }
         ]
       },
@@ -24153,9 +24148,11 @@
           "_TZ3210_p9ao60da",
           "_TZ3210_r0xgkft5",
           "_TZ3210_zrvxvydd",
-          "_TZb210_endmggws"
+          "_TZB210_endmggws",
+          "_TZB210_ngnt8kni"
         ],
         "productId": [
+          "TS0501B",
           "TS0502"
         ],
         "endpoints": {
@@ -24181,6 +24178,10 @@
           {
             "manufacturerName": "eWeLink",
             "modelId": "ZBCCT"
+          },
+          {
+            "manufacturerName": "_TZB210_ngnt8kni",
+            "modelId": "TS0501B"
           }
         ]
       },
