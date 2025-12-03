@@ -1,4 +1,8 @@
 {
+  "5.3.25": {
+    "en": "📡 v5.3.25 - Add HOBEIAN ZG-204ZL PIR Sensor Support\n\n**Device Added:**\n- HOBEIAN ZG-204ZL - PIR Motion Sensor with Lux\n- HOBEIAN ZG-204Z - PIR Motion Sensor\n\n**Features:**\n- Motion detection (alarm_motion)\n- Illuminance measurement (measure_luminance)\n- Battery level (measure_battery + alarm_battery)\n\n**Clusters:**\n- IAS Zone (1280) - Motion\n- Illuminance Measurement (1024) - Lux\n- Power Configuration (1) - Battery\n\nFixes: JohanBendz/com.tuya.zigbee#1267, #1275",
+    "fr": "📡 v5.3.25 - Support HOBEIAN ZG-204ZL\n\n- Capteur PIR avec luminosité ajouté\n- Détection mouvement + lux + batterie"
+  },
   "5.3.24": {
     "en": "⚙️ v5.3.24 - GitHub Actions: Official Athom Workflows\n\n**Complete CI/CD Refactoring:**\nReplaced all custom workflows with official Athom GitHub Actions.\n\n**New Workflows:**\n- `homey-validate.yml` - App validation\n- `homey-version.yml` - Version bumping\n- `homey-publish.yml` - App publishing\n- `homey-ci-cd.yml` - Complete pipeline\n\n**Authentication:**\nUses official `personal_access_token` method from:\nhttps://tools.developer.homey.app/me\n\n**Actions Used:**\n- athombv/github-action-homey-app-validate\n- athombv/github-action-homey-app-version\n- athombv/github-action-homey-app-publish\n\nDocs: https://apps.developer.homey.app/app-store/publishing",
     "fr": "⚙️ v5.3.24 - GitHub Actions officiels Athom\n\n- Workflows refactorisés avec actions Athom officielles\n- Authentification via Personal Access Token\n- CI/CD complet: validate → version → publish"
