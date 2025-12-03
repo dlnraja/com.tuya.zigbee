@@ -98,7 +98,37 @@
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
-    }
+    },
+    "devices": [
+      {
+        "manufacturerName": "HEIMAN",
+        "modelId": "SOS-EF"
+      },
+      {
+        "manufacturerName": "HEIMAN",
+        "modelId": "SOS-EF-3.0"
+      },
+      {
+        "manufacturerName": "HEIMAN",
+        "modelId": "HS2EB"
+      },
+      {
+        "manufacturerName": "HEIMAN",
+        "modelId": "HS2EB-E"
+      },
+      {
+        "manufacturerName": "HEIMAN",
+        "modelId": "RC-EM"
+      },
+      {
+        "manufacturerName": "Heiman",
+        "modelId": "SOS-EF"
+      },
+      {
+        "manufacturerName": "Heiman",
+        "modelId": "HS2EB"
+      }
+    ]
   },
   "settings": [
     {
