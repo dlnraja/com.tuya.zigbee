@@ -1495,7 +1495,57 @@
           1
         ]
       }
-    }
+    },
+    "devices": [
+      {
+        "manufacturerName": "SONOFF",
+        "modelId": "SNZB-02"
+      },
+      {
+        "manufacturerName": "SONOFF",
+        "modelId": "SNZB-02D"
+      },
+      {
+        "manufacturerName": "SONOFF",
+        "modelId": "SNZB-02P"
+      },
+      {
+        "manufacturerName": "SONOFF",
+        "modelId": "SNZB-02WD"
+      },
+      {
+        "manufacturerName": "SONOFF",
+        "modelId": "SNZB-02LD"
+      },
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "SNZB-02"
+      },
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "SNZB-02D"
+      },
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "SNZB-02P"
+      },
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "TH01"
+      },
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "TH-01"
+      },
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "ZTH01"
+      },
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "ZTH02"
+      }
+    ]
   },
   "images": {
     "small": "drivers/climate_sensor/assets/images/small.png",

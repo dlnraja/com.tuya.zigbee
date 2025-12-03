@@ -135,7 +135,29 @@
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
-    }
+    },
+    "devices": [
+      {
+        "manufacturerName": "HEIMAN",
+        "modelId": "HS2WD-E"
+      },
+      {
+        "manufacturerName": "HEIMAN",
+        "modelId": "HS2WD"
+      },
+      {
+        "manufacturerName": "HEIMAN",
+        "modelId": "SRHMP-I1"
+      },
+      {
+        "manufacturerName": "Heiman",
+        "modelId": "HS2WD-E"
+      },
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "ZB-SIR"
+      }
+    ]
   },
   "settings": [
     {
