@@ -27,7 +27,12 @@
         "clusters": [
           0,
           1,
-          6
+          6,
+          5
+        ],
+        "bindings": [
+          6,
+          1
         ]
       }
     }
@@ -46,10 +51,8 @@
   ],
   "energy": {
     "batteries": [
-      "CR2032",
       "CR2450",
-      "AAA",
-      "AA"
+      "AAA"
     ]
   }
 }

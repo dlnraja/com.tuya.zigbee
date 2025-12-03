@@ -7,12 +7,13 @@
   "capabilities": [
     "alarm_vibration",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "alarm_tamper"
   ],
   "energy": {
     "batteries": [
-      "AAA",
-      "AAA"
+      "CR2032",
+      "CR2450"
     ]
   },
   "zigbee": {
@@ -31,6 +32,10 @@
           1,
           257,
           1280
+        ],
+        "bindings": [
+          1280,
+          1
         ]
       }
     }

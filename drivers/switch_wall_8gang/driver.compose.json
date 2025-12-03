@@ -93,6 +93,11 @@
       "title": {
         "en": "Switch 8"
       }
+    },
+    "onoff": {
+      "title": {
+        "en": "Switch 1"
+      }
     }
   },
   "energy": {
@@ -151,7 +156,11 @@
     "endpoints": {
       "1": {
         "clusters": [
-          61184
+          61184,
+          6
+        ],
+        "bindings": [
+          6
         ]
       },
       "2": {

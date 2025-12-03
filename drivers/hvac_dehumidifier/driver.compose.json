@@ -16,7 +16,8 @@
     "measure_battery",
     "alarm_battery",
     "onoff",
-    "target_temperature"
+    "target_temperature",
+    "fan_speed"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -97,10 +98,13 @@
           6,
           61184,
           61184,
-          1
+          1,
+          1029,
+          514
         ],
         "bindings": [
-          1
+          1,
+          6
         ]
       }
     },

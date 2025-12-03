@@ -10,7 +10,8 @@
     "alarm_battery",
     "onoff",
     "light_hue",
-    "light_saturation"
+    "light_saturation",
+    "light_mode"
   ],
   "energy": {
     "batteries": [
@@ -74,10 +75,15 @@
           5,
           6,
           61184,
-          1
+          1,
+          8,
+          768
         ],
         "bindings": [
-          1
+          1,
+          6,
+          8,
+          768
         ]
       }
     },

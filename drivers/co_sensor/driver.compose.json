@@ -7,11 +7,13 @@
   "capabilities": [
     "alarm_co",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "measure_co"
   ],
   "energy": {
     "batteries": [
-      "AAA",
+      "CR2",
+      "CR123A",
       "AAA"
     ]
   },
@@ -31,6 +33,10 @@
           0,
           1,
           1280
+        ],
+        "bindings": [
+          1280,
+          1
         ]
       }
     }

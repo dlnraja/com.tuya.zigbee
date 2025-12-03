@@ -8,7 +8,8 @@
     "dim",
     "onoff",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "measure_power"
   ],
   "energy": {
     "approximation": {
@@ -107,10 +108,13 @@
           5,
           6,
           8,
-          61184
+          61184,
+          2820
         ],
         "bindings": [
-          1
+          1,
+          6,
+          8
         ]
       }
     },

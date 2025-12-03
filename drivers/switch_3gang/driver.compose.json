@@ -6,7 +6,9 @@
     "onoff",
     "onoff.1",
     "onoff.2",
-    "alarm_battery"
+    "alarm_battery",
+    "measure_power",
+    "meter_power"
   ],
   "zigbee": {
     "productId": [
@@ -22,10 +24,12 @@
           4,
           5,
           6,
-          61184
+          61184,
+          2820
         ],
         "bindings": [
-          1
+          1,
+          6
         ]
       },
       "2": {
