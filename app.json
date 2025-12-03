@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.3.32",
+  "version": "5.3.33",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.3.32: MEGA TS0601 ENRICHMENT - 1210 devices from Zigbee2MQTT analyzed, 50+ drivers enriched with 3000+ manufacturer IDs. Maximum device coverage: climate sensors (1438 IDs), switches (651+ IDs), presence/radar (100+ IDs), TRV/thermostats (121 IDs). All TS0601 categories covered. V5.2.50: Complete README. V5.2.47: 570 flow cards. V5.2.44: 1372+ devices from 15+ sources. 100% local Zigbee, no cloud required.",
-    "fr": "V5.3.32: MEGA ENRICHISSEMENT TS0601 - 1210 appareils Zigbee2MQTT analysés, 50+ drivers enrichis avec 3000+ IDs fabricants. Couverture maximale: capteurs climat (1438 IDs), switches (651+ IDs), présence/radar (100+ IDs), TRV/thermostats (121 IDs). 100% local Zigbee, aucun cloud requis."
+    "en": "V5.3.33: FIX CRASH expected_cluster_id_number - Use numeric CLUSTER constants in BatteryRouter. V5.3.32: MEGA TS0601 ENRICHMENT - 1210 devices analyzed, 50+ drivers enriched with 3000+ manufacturer IDs. 100% local Zigbee, no cloud.",
+    "fr": "V5.3.33: FIX CRASH expected_cluster_id_number - Clusters numériques dans BatteryRouter. V5.3.32: MEGA ENRICHISSEMENT TS0601 - 1210 appareils analysés, 50+ drivers, 3000+ IDs. 100% local Zigbee."
   },
   "category": "appliances",
   "permissions": [],
