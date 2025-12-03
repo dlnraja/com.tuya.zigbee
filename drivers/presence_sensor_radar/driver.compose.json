@@ -158,7 +158,17 @@
           1280
         ]
       }
-    }
+    },
+    "devices": [
+      {
+        "manufacturerName": "SONOFF",
+        "modelId": "SNZB-06P"
+      },
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "SNZB-06P"
+      }
+    ]
   },
   "settings": [
     {

@@ -109,6 +109,28 @@
       "SD02",
       "TS0205",
       "TS0601"
+    ],
+    "devices": [
+      {
+        "manufacturerName": "HEIMAN",
+        "modelId": "HS1SA"
+      },
+      {
+        "manufacturerName": "HEIMAN",
+        "modelId": "HS1SA-M"
+      },
+      {
+        "manufacturerName": "HEIMAN",
+        "modelId": "HS3SA"
+      },
+      {
+        "manufacturerName": "Heiman",
+        "modelId": "SmokeSensor-N"
+      },
+      {
+        "manufacturerName": "Heiman",
+        "modelId": "SmokeSensor-N-3.0"
+      }
     ]
   },
   "settings": [

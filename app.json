@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.3.35",
+  "version": "5.3.36",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.3.35: HYBRID DRIVER ENRICHMENT - All 80 drivers enriched with ZCL clusters + Tuya DPs. V5.3.33: FIX CRASH. V5.3.32: MEGA TS0601 - 3000+ manufacturer IDs. 100% local Zigbee.",
-    "fr": "V5.3.35: ENRICHISSEMENT HYBRIDE - 80 drivers avec clusters ZCL + Tuya DPs. V5.3.33: FIX CRASH. V5.3.32: MEGA TS0601 - 3000+ IDs. 100% local Zigbee."
+    "en": "V5.3.36: SONOFF + eWeLink + HEIMAN - 132 devices added (SNZB sensors, ZBMINI switches, TRV, NSPanel Pro, sirens). V5.3.35: Hybrid enrichment. 100% local Zigbee.",
+    "fr": "V5.3.36: SONOFF + eWeLink + HEIMAN - 132 appareils (capteurs SNZB, switches ZBMINI, TRV, NSPanel Pro, sirènes). 100% local Zigbee."
   },
   "category": "appliances",
   "permissions": [],
@@ -12282,7 +12282,17 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        }
+        },
+        "devices": [
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZB-BULB-RGBCW"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBBULBRGBCW"
+          }
+        ]
       },
       "settings": [
         {
@@ -12628,7 +12638,17 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        }
+        },
+        "devices": [
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZB-BULB-CW"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBBULBCW"
+          }
+        ]
       },
       "settings": [
         {
@@ -14215,7 +14235,33 @@
             "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
             "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
           }
-        }
+        },
+        "devices": [
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "SNZB-01"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "SNZB-01P"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "SNZB-01"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "SNZB-01P"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "WB01"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "WB-01"
+          }
+        ]
       },
       "images": {
         "small": "drivers/button_wireless_1/assets/images/small.png",
@@ -18425,7 +18471,57 @@
               1
             ]
           }
-        }
+        },
+        "devices": [
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "SNZB-02"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "SNZB-02D"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "SNZB-02P"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "SNZB-02WD"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "SNZB-02LD"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "SNZB-02"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "SNZB-02D"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "SNZB-02P"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "TH01"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "TH-01"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZTH01"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZTH02"
+          }
+        ]
       },
       "images": {
         "small": "drivers/climate_sensor/assets/images/small.png",
@@ -18481,7 +18577,21 @@
               1
             ]
           }
-        }
+        },
+        "devices": [
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1CA"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1CA-M"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "COSensor-N"
+          }
+        ]
       },
       "images": {
         "small": "drivers/co_sensor/assets/images/small.png",
@@ -18660,7 +18770,37 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        }
+        },
+        "devices": [
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "SNZB-04"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "SNZB-04P"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "SNZB-04"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "SNZB-04P"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "DS01"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "DS-01"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "WDS01"
+          }
+        ]
       },
       "settings": [
         {
@@ -19111,7 +19251,21 @@
           "instruction": {
             "en": "Follow the pairing instructions for your Smart Curtain Motor."
           }
-        }
+        },
+        "devices": [
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "ZBCurtain"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBCurtain"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZB-CUR"
+          }
+        ]
       },
       "settings": [
         {
@@ -19675,7 +19829,17 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        }
+        },
+        "devices": [
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZB-DIM"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBDIM"
+          }
+        ]
       },
       "settings": [
         {
@@ -20880,6 +21044,24 @@
           "CO2-Sensor",
           "Gas-Detector",
           "TS0601"
+        ],
+        "devices": [
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1CG"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1CG-M"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS3CG"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "GasSensor-N"
+          }
         ]
       },
       "settings": [
@@ -21544,7 +21726,65 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        }
+        },
+        "devices": [
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "NSPanel Pro"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "NSPanel Pro 86"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "NSPanel Pro 120"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "NSPanel Pro"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "ZBBridge"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "ZBBridge-P"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "ZBBridge-U"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "ZB Bridge Pro"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "ZBDongle-E"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "ZBDongle-P"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBBridge"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBBridge-U"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "iHost"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "iHost"
+          }
+        ]
       },
       "settings": [
         {
@@ -23132,7 +23372,17 @@
               768
             ]
           }
-        }
+        },
+        "devices": [
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZB-CCT"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBCCT"
+          }
+        ]
       },
       "images": {
         "small": "drivers/led_controller_cct/assets/images/small.png",
@@ -23202,7 +23452,17 @@
               768
             ]
           }
-        }
+        },
+        "devices": [
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZB-RGBCW"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBRGBCW"
+          }
+        ]
       },
       "images": {
         "small": "drivers/led_controller_rgb/assets/images/small.png",
@@ -25248,7 +25508,33 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        }
+        },
+        "devices": [
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "SNZB-03"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "SNZB-03P"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "SNZB-03"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "SNZB-03P"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "MS01"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "MS-01"
+          }
+        ]
       },
       "settings": [
         {
@@ -26125,7 +26411,25 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        }
+        },
+        "devices": [
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "S31ZB"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "S40ZBTPB"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "SPM-Main"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "SPM-Main"
+          }
+        ]
       },
       "settings": [
         {
@@ -26656,7 +26960,65 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        }
+        },
+        "devices": [
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "S26R2ZB"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "S31ZB"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "S31 Lite zb"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "S40ZBTPB"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "S40 Lite zb"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "S60ZB"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "S60ZBTPE"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "S60ZBTPF"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "S26R2ZB"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "S31ZB"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "S40ZB"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "SA-003-Zigbee"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZB-PLUG"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBPLUG"
+          }
+        ]
       },
       "settings": [
         {
@@ -27128,7 +27490,17 @@
               1280
             ]
           }
-        }
+        },
+        "devices": [
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "SNZB-06P"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "SNZB-06P"
+          }
+        ]
       },
       "settings": [
         {
@@ -27564,7 +27936,17 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        }
+        },
+        "devices": [
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "TRVZB"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "TRVZB"
+          }
+        ]
       },
       "settings": [
         {
@@ -28711,7 +29093,29 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        }
+        },
+        "devices": [
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS2WD-E"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS2WD"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SRHMP-I1"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "HS2WD-E"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZB-SIR"
+          }
+        ]
       },
       "settings": [
         {
@@ -29197,6 +29601,28 @@
           "SD02",
           "TS0205",
           "TS0601"
+        ],
+        "devices": [
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1SA"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1SA-M"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS3SA"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "SmokeSensor-N"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "SmokeSensor-N-3.0"
+          }
         ]
       },
       "settings": [
@@ -30835,6 +31261,64 @@
           "_tze284_lbhh5o6z",
           "_tze284_tdhnhhiy",
           "_tze284_znvwzxkq"
+        ],
+        "devices": [
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "ZBMINI"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "ZBMINI-L"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "ZBMINI-L2"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "ZBMINIR2"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "ZBMINIL2"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBMINI"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBMINI-L"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBMINI-L2"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "ZBM5-1-80"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "ZBM5-1-86"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBM5-1-80"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBM5-1-86"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZB-SW01"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBSW01"
+          }
         ]
       },
       "images": {
@@ -31298,7 +31782,33 @@
               6
             ]
           }
-        }
+        },
+        "devices": [
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "ZBM5-2-80"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "ZBM5-2-86"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBM5-2-80"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBM5-2-86"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZB-SW02"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBSW02"
+          }
+        ]
       },
       "images": {
         "small": "drivers/switch_2gang/assets/images/small.png",
@@ -31727,6 +32237,32 @@
           "_TZ3000_u3oupgdy",
           "_TZ3000_wkai4ga5",
           "_TZ3000_xabckq1v"
+        ],
+        "devices": [
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "ZBM5-3-80"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "ZBM5-3-86"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBM5-3-80"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBM5-3-86"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZB-SW03"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBSW03"
+          }
         ]
       },
       "images": {
@@ -32213,6 +32749,16 @@
           "_TZ3210_fhx7lk3d",
           "_TZ3210_j4pdtz9v",
           "_TZE200_dq8bu0pt"
+        ],
+        "devices": [
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZB-SW04"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBSW04"
+          }
         ]
       },
       "images": {
@@ -35305,7 +35851,21 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        }
+        },
+        "devices": [
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "SNZB-05P"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "SNZB-05P"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "WL01"
+          }
+        ]
       },
       "settings": [
         {
@@ -35661,6 +36221,24 @@
           "TS0601",
           "Valve",
           "Water-Valve"
+        ],
+        "devices": [
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "SWV"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "SWV-NH"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "SWV-BSP"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "SWV"
+          }
         ]
       },
       "settings": [

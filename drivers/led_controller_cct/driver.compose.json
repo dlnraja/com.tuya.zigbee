@@ -42,7 +42,17 @@
           768
         ]
       }
-    }
+    },
+    "devices": [
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "ZB-CCT"
+      },
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "ZBCCT"
+      }
+    ]
   },
   "images": {
     "small": "drivers/led_controller_cct/assets/images/small.png",

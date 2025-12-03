@@ -190,7 +190,21 @@
       "instruction": {
         "en": "Follow the pairing instructions for your Smart Curtain Motor."
       }
-    }
+    },
+    "devices": [
+      {
+        "manufacturerName": "SONOFF",
+        "modelId": "ZBCurtain"
+      },
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "ZBCurtain"
+      },
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "ZB-CUR"
+      }
+    ]
   },
   "settings": [
     {
