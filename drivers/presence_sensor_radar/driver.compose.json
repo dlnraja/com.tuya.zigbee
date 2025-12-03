@@ -10,7 +10,8 @@
     "measure_humidity",
     "measure_luminance",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "measure_distance"
   ],
   "zigbee": {
     "manufacturerName": [
@@ -148,7 +149,8 @@
           3,
           1030,
           61184,
-          1280
+          1280,
+          1024
         ],
         "bindings": [
           0,

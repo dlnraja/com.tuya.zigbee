@@ -10,7 +10,8 @@
     "measure_battery",
     "alarm_battery",
     "windowcoverings_set",
-    "windowcoverings_tilt_set"
+    "windowcoverings_tilt_set",
+    "dim"
   ],
   "energy": {
     "batteries": [
@@ -128,10 +129,13 @@
           0,
           258,
           61184,
-          1
+          1,
+          6,
+          8
         ],
         "bindings": [
-          1
+          1,
+          258
         ]
       }
     },

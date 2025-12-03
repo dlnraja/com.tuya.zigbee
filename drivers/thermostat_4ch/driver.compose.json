@@ -15,7 +15,13 @@
     "measure_temperature.4",
     "thermostat_mode",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "onoff",
+    "onoff.1",
+    "onoff.2",
+    "onoff.3",
+    "target_temperature",
+    "measure_temperature"
   ],
   "zigbee": {
     "manufacturerName": [
@@ -69,7 +75,12 @@
       "1": {
         "clusters": [
           0,
-          61184
+          61184,
+          6,
+          513
+        ],
+        "bindings": [
+          513
         ]
       }
     }
@@ -90,5 +101,27 @@
     "batteries": [
       "OTHER"
     ]
+  },
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Zone 1"
+      }
+    },
+    "onoff.1": {
+      "title": {
+        "en": "Zone 2"
+      }
+    },
+    "onoff.2": {
+      "title": {
+        "en": "Zone 3"
+      }
+    },
+    "onoff.3": {
+      "title": {
+        "en": "Zone 4"
+      }
+    }
   }
 }
