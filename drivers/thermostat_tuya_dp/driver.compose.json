@@ -8,8 +8,7 @@
     "target_temperature",
     "measure_temperature",
     "thermostat_mode",
-    "measure_battery",
-    "alarm_battery"
+    "measure_battery"
   ],
   "platforms": [
     "local"
