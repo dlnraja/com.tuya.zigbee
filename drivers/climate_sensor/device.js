@@ -414,6 +414,7 @@ class ClimateSensorDevice extends BaseHybridDevice {
 
   /**
    * Setup Tuya DP listener for cluster 0xEF00
+   * v5.3.45: Enhanced with multiple listener patterns for better compatibility
    */
   async _setupTuyaDPListener() {
     this.log('[CLIMATE-SENSOR] Setting up Tuya DP listener...');
@@ -421,44 +422,180 @@ class ClimateSensorDevice extends BaseHybridDevice {
     // Listen for dpReport events from TuyaEF00Manager (if integrated)
     if (this.tuyaEF00Manager) {
       this.tuyaEF00Manager.on('dpReport', ({ dpId, value }) => {
+        this.log(`[CLIMATE-SENSOR] 📥 dpReport from Manager: DP${dpId} = ${value}`);
         this._handleClimateDP(dpId, value);
       });
+
+      // Also listen to individual DP events
+      [1, 2, 4, 9, 14, 15, 17, 18, 19, 20].forEach(dp => {
+        this.tuyaEF00Manager.on(`dp-${dp}`, (value) => {
+          this.log(`[CLIMATE-SENSOR] 📥 dp-${dp} event: ${value}`);
+          this._handleClimateDP(dp, value);
+        });
+      });
+
       this.log('[CLIMATE-SENSOR] ✅ Using TuyaEF00Manager for DP handling');
-      return;
     }
 
-    // Fallback: Direct cluster listener
+    // v5.3.45: ALWAYS setup direct cluster listener as backup
     const endpoint = this.zclNode?.endpoints?.[1];
     if (!endpoint) {
       this.log('[CLIMATE-SENSOR] ⚠️ No endpoint 1 found');
       return;
     }
 
-    // Find Tuya cluster
+    // Find Tuya cluster with all possible names
     const tuyaCluster = endpoint.clusters.tuya
       || endpoint.clusters.tuyaSpecific
       || endpoint.clusters.manuSpecificTuya
-      || endpoint.clusters[61184];
+      || endpoint.clusters.tuyaManufacturer
+      || endpoint.clusters['61184']
+      || endpoint.clusters[61184]
+      || endpoint.clusters['0xEF00']
+      || endpoint.clusters[0xEF00];
 
     if (tuyaCluster) {
+      this.log('[CLIMATE-SENSOR] ✅ Found Tuya cluster, setting up listeners...');
+
+      // Method 1: dataReport event
       if (typeof tuyaCluster.on === 'function') {
         tuyaCluster.on('dataReport', (data) => {
-          this.log('[CLIMATE-SENSOR] 📥 Raw dataReport:', JSON.stringify(data));
-          if (data && data.dp !== undefined) {
-            this._handleClimateDP(data.dp, data.value);
-          }
+          this.log('[CLIMATE-SENSOR] 📥 dataReport event:', JSON.stringify(data));
+          this._parseTuyaDataReport(data);
         });
+
+        tuyaCluster.on('response', (data) => {
+          this.log('[CLIMATE-SENSOR] 📥 response event:', JSON.stringify(data));
+          this._parseTuyaDataReport(data);
+        });
+
+        tuyaCluster.on('data', (data) => {
+          this.log('[CLIMATE-SENSOR] 📥 data event:', JSON.stringify(data));
+          this._parseTuyaDataReport(data);
+        });
+
+        this.log('[CLIMATE-SENSOR] ✅ Cluster event listeners registered');
       }
 
-      tuyaCluster.onDataReport = (data) => {
-        if (data && data.dp !== undefined) {
-          this._handleClimateDP(data.dp, data.value);
-        }
-      };
+      // Method 2: Direct callback assignment
+      if (tuyaCluster.onDataReport === undefined) {
+        tuyaCluster.onDataReport = (data) => {
+          this.log('[CLIMATE-SENSOR] 📥 onDataReport callback:', JSON.stringify(data));
+          this._parseTuyaDataReport(data);
+        };
+      }
 
       this.log('[CLIMATE-SENSOR] ✅ Direct Tuya cluster listener configured');
     } else {
-      this.log('[CLIMATE-SENSOR] ⚠️ No Tuya cluster found');
+      this.log('[CLIMATE-SENSOR] ⚠️ No Tuya cluster found by name');
+      this.log('[CLIMATE-SENSOR] Available clusters:', Object.keys(endpoint.clusters || {}).join(', '));
+    }
+
+    // v5.3.45: Setup raw frame listener on endpoint for maximum compatibility
+    if (endpoint && typeof endpoint.on === 'function') {
+      endpoint.on('frame', (frame) => {
+        // Check if frame is from Tuya cluster (0xEF00 = 61184)
+        if (frame && (frame.cluster === 0xEF00 || frame.cluster === 61184)) {
+          this.log('[CLIMATE-SENSOR] 📥 Raw Tuya frame:', {
+            cluster: frame.cluster,
+            command: frame.command,
+            dataHex: frame.data?.toString?.('hex')
+          });
+          this._parseTuyaRawFrame(frame.data);
+        }
+      });
+      this.log('[CLIMATE-SENSOR] ✅ Raw frame listener registered');
+    }
+
+    // v5.3.45: Listen to all clusters for any data
+    for (const [clusterName, cluster] of Object.entries(endpoint.clusters || {})) {
+      if (cluster && typeof cluster.on === 'function') {
+        cluster.on('attr', (attrId, value) => {
+          this.log(`[CLIMATE-SENSOR] 📥 Attr from ${clusterName}: ${attrId} = ${value}`);
+        });
+      }
+    }
+  }
+
+  /**
+   * v5.3.45: Parse Tuya data report from various sources
+   */
+  _parseTuyaDataReport(data) {
+    if (!data) return;
+
+    // Try different data formats
+    const dp = data.dpId ?? data.dp ?? data.datapoint;
+    const value = data.dpValue ?? data.value ?? data.data;
+
+    if (dp !== undefined && value !== undefined) {
+      this._handleClimateDP(dp, value);
+    } else if (data.datapoints && Array.isArray(data.datapoints)) {
+      // Multiple DPs in one report
+      for (const dpData of data.datapoints) {
+        const dpId = dpData.dp ?? dpData.dpId;
+        const dpValue = dpData.value ?? dpData.dpValue;
+        if (dpId !== undefined) {
+          this._handleClimateDP(dpId, dpValue);
+        }
+      }
+    } else if (Buffer.isBuffer(data) || (data.data && Buffer.isBuffer(data.data))) {
+      // Raw buffer - parse as Tuya frame
+      this._parseTuyaRawFrame(Buffer.isBuffer(data) ? data : data.data);
+    }
+  }
+
+  /**
+   * v5.3.45: Parse raw Tuya frame buffer
+   * Format: [status:1][transid:1][dp:1][type:1][len:2][value:N]...
+   */
+  _parseTuyaRawFrame(buffer) {
+    if (!buffer || buffer.length < 6) return;
+
+    try {
+      let offset = 2; // Skip status and transid
+
+      while (offset < buffer.length - 4) {
+        const dp = buffer[offset];
+        const type = buffer[offset + 1];
+        const len = (buffer[offset + 2] << 8) | buffer[offset + 3];
+
+        if (offset + 4 + len > buffer.length) break;
+
+        const valueBuffer = buffer.slice(offset + 4, offset + 4 + len);
+        let value;
+
+        // Parse based on type
+        switch (type) {
+          case 0x00: // RAW
+            value = valueBuffer;
+            break;
+          case 0x01: // BOOL
+            value = valueBuffer[0] !== 0;
+            break;
+          case 0x02: // VALUE (4-byte big-endian)
+            value = valueBuffer.readUInt32BE?.(0) ??
+              ((valueBuffer[0] << 24) | (valueBuffer[1] << 16) | (valueBuffer[2] << 8) | valueBuffer[3]);
+            break;
+          case 0x03: // STRING
+            value = valueBuffer.toString('utf8');
+            break;
+          case 0x04: // ENUM
+            value = valueBuffer[0];
+            break;
+          case 0x05: // BITMAP
+            value = valueBuffer.readUInt32BE?.(0) ?? 0;
+            break;
+          default:
+            value = valueBuffer;
+        }
+
+        this.log(`[CLIMATE-SENSOR] 📥 Parsed DP${dp} (type=${type}): ${value}`);
+        this._handleClimateDP(dp, value);
+
+        offset += 4 + len;
+      }
+    } catch (err) {
+      this.error('[CLIMATE-SENSOR] Raw frame parse error:', err.message);
     }
   }
 
