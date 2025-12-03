@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.3.42",
+  "version": "5.3.43",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.3.42: eWeLink CUBE API V2 LOCAL - 246 devices from Aqara, IKEA, Philips Hue, Tuya, Sengled, Innr, LEDVANCE. 750+ devices total.",
-    "fr": "V5.3.42: eWeLink CUBE API V2 LOCAL - 246 appareils Aqara, IKEA, Philips Hue, Tuya, Sengled, Innr, LEDVANCE. 750+ appareils total."
+    "en": "V5.3.43: ZCL NATIVE ARCHITECTURE - IAS Zone/WD clusters, Tuya DP protocol, Universal device support. 800+ devices.",
+    "fr": "V5.3.43: ARCHITECTURE ZCL NATIVE - Clusters IAS Zone/WD, protocole Tuya DP, support universel. 800+ appareils."
   },
   "category": "appliances",
   "permissions": [],
@@ -11572,7 +11572,21 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        }
+        },
+        "devices": [
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "TRADFRI bulb E27 W opal 1000lm"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LWB010"
+          },
+          {
+            "manufacturerName": "sengled",
+            "modelId": "E11-G13"
+          }
+        ]
       },
       "settings": [
         {
@@ -12537,6 +12551,10 @@
           {
             "manufacturerName": "Lidl",
             "modelId": "HG06104A"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "TRADFRI bulb E27 CWS opal 600lm"
           }
         ]
       },
@@ -13041,6 +13059,10 @@
           {
             "manufacturerName": "OSRAM",
             "modelId": "Plug 01"
+          },
+          {
+            "manufacturerName": "Philips",
+            "modelId": "LTA001"
           }
         ]
       },
@@ -14788,6 +14810,10 @@
           {
             "manufacturerName": "Aqara",
             "modelId": "WXCJKG13LM"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "E1812"
           }
         ]
       },
@@ -16081,6 +16107,10 @@
           {
             "manufacturerName": "Philips",
             "modelId": "RDM004"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "WXCJKG12LM"
           }
         ]
       },
@@ -19270,6 +19300,14 @@
           {
             "manufacturerName": "_TZ3000_ebar6ljy",
             "modelId": "TS0203"
+          },
+          {
+            "manufacturerName": "LUMI",
+            "modelId": "lumi.weather"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "WSDCGQ12LM"
           }
         ]
       },
@@ -19444,6 +19482,14 @@
           {
             "manufacturerName": "HEIMAN",
             "modelId": "HS3CA-E"
+          },
+          {
+            "manufacturerName": "_TZE200_vq5chjgh",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "Develco",
+            "modelId": "COZB-120"
           }
         ]
       },
@@ -19701,6 +19747,26 @@
           {
             "manufacturerName": "HEIMAN",
             "modelId": "SWHM-D1"
+          },
+          {
+            "manufacturerName": "_TZ3000_26fmupbb",
+            "modelId": "TS0203"
+          },
+          {
+            "manufacturerName": "_TZ3000_n2egfsli",
+            "modelId": "TS0203"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "E1766"
+          },
+          {
+            "manufacturerName": "LUMI",
+            "modelId": "lumi.sensor_magnet.aq2"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "MCCGQ14LM"
           }
         ]
       },
@@ -22197,6 +22263,10 @@
           {
             "manufacturerName": "HEIMAN",
             "modelId": "GASSensor-EM"
+          },
+          {
+            "manufacturerName": "_TZ3000_ztfj8m",
+            "modelId": "TS0205"
           }
         ]
       },
@@ -26947,6 +27017,18 @@
           {
             "manufacturerName": "Philips",
             "modelId": "SML004"
+          },
+          {
+            "manufacturerName": "_TZ3000_kmh5qpmb",
+            "modelId": "TS0202"
+          },
+          {
+            "manufacturerName": "_TZ3000_mcxw5ehu",
+            "modelId": "TS0202"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "TRADFRI motion sensor"
           }
         ]
       },
@@ -27870,6 +27952,14 @@
           {
             "manufacturerName": "_TZ3000_u5u4cakc",
             "modelId": "TS011F"
+          },
+          {
+            "manufacturerName": "Develco",
+            "modelId": "SPLZB-131"
+          },
+          {
+            "manufacturerName": "Develco",
+            "modelId": "EMIZB-132"
           }
         ]
       },
@@ -29093,6 +29183,14 @@
           {
             "manufacturerName": "eWeLink",
             "modelId": "SNZB-06"
+          },
+          {
+            "manufacturerName": "_TZE200_ikvncluo",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE204_qasjmygd",
+            "modelId": "TS0601"
           }
         ]
       },
@@ -29579,6 +29677,10 @@
           {
             "manufacturerName": "Schneider Electric",
             "modelId": "EER51000"
+          },
+          {
+            "manufacturerName": "_TZE200_ckud7u2l",
+            "modelId": "TS0601"
           }
         ]
       },
@@ -31298,6 +31400,18 @@
           {
             "manufacturerName": "SONOFF",
             "modelId": "ZB-SIR"
+          },
+          {
+            "manufacturerName": "_TZ3000_fwqnjhky",
+            "modelId": "TS0216"
+          },
+          {
+            "manufacturerName": "_TZ3000_ab3awvjc",
+            "modelId": "TS0219"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "SNZB-Siren"
           }
         ]
       },
@@ -33830,6 +33944,10 @@
           {
             "manufacturerName": "Schneider Electric",
             "modelId": "CCTFR6500"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBMINIL2"
           }
         ]
       },
@@ -34319,6 +34437,22 @@
           {
             "manufacturerName": "eWeLink",
             "modelId": "ZBSW02"
+          },
+          {
+            "manufacturerName": "_TZ3000_hktqahrq",
+            "modelId": "TS0002"
+          },
+          {
+            "manufacturerName": "_TZ3000_01gpyda5",
+            "modelId": "TS0002"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "SSM-U02"
+          },
+          {
+            "manufacturerName": "LUMI",
+            "modelId": "lumi.switch.b2nacn02"
           }
         ]
       },
@@ -34774,6 +34908,14 @@
           {
             "manufacturerName": "eWeLink",
             "modelId": "ZBSW03"
+          },
+          {
+            "manufacturerName": "_TZ3000_vjhcxlbz",
+            "modelId": "TS0003"
+          },
+          {
+            "manufacturerName": "_TZ3000_odzoiovu",
+            "modelId": "TS0003"
           }
         ]
       },
@@ -38508,6 +38650,10 @@
           {
             "manufacturerName": "HEIMAN",
             "modelId": "HS3WL-E"
+          },
+          {
+            "manufacturerName": "_TZ3000_mugyhz0q",
+            "modelId": "TS0207"
           }
         ]
       },
