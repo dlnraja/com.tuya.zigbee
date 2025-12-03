@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.3.36",
+  "version": "5.3.37",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.3.36: SONOFF + eWeLink + HEIMAN - 132 devices added (SNZB sensors, ZBMINI switches, TRV, NSPanel Pro, sirens). V5.3.35: Hybrid enrichment. 100% local Zigbee.",
-    "fr": "V5.3.36: SONOFF + eWeLink + HEIMAN - 132 appareils (capteurs SNZB, switches ZBMINI, TRV, NSPanel Pro, sirènes). 100% local Zigbee."
+    "en": "V5.3.37: HEIMAN COMPLETE + All Sirens/Strobes/Alarms - 158 devices (smoke, gas, CO, water leak, fog machines). V5.3.36: SONOFF 132 devices. 100% local Zigbee.",
+    "fr": "V5.3.37: HEIMAN COMPLET + Sirènes/Strobes/Alarmes - 158 appareils (fumée, gaz, CO, fuite eau, machines à brouillard). 100% local Zigbee."
   },
   "category": "appliances",
   "permissions": [],
@@ -11194,7 +11194,29 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        }
+        },
+        "devices": [
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS3AQ"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS3AQ-E"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "AQMonitor-N"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "AQMonitor-N-3.0"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "HS3AQ"
+          }
+        ]
       },
       "settings": [
         {
@@ -13354,7 +13376,37 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        }
+        },
+        "devices": [
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SOS-EF"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SOS-EF-3.0"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS2EB"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS2EB-E"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "RC-EM"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "SOS-EF"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "HS2EB"
+          }
+        ]
       },
       "settings": [
         {
@@ -18520,6 +18572,42 @@
           {
             "manufacturerName": "eWeLink",
             "modelId": "ZTH02"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1HT"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1HT-E"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1HT-M"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS3HT"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "TempSensor-N"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "TempSensor-N-3.0"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "TH01-ZB"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "HS1HT"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "TempSensor-N"
           }
         ]
       },
@@ -18590,6 +18678,54 @@
           {
             "manufacturerName": "Heiman",
             "modelId": "COSensor-N"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1CA-E"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS3CA"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "COSensor-N"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "COSensor-N-3.0"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "COSensor-EF-3.0"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "HS1CA"
+          },
+          {
+            "manufacturerName": "_TZE200_pbdlrmfb",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE204_pbdlrmfb",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZ3000_zl1kmjqx",
+            "modelId": "TS0205"
+          },
+          {
+            "manufacturerName": "Develco Products A/S",
+            "modelId": "COSZB-110"
+          },
+          {
+            "manufacturerName": "Develco",
+            "modelId": "COSZB-110"
+          },
+          {
+            "manufacturerName": "frient A/S",
+            "modelId": "COSZB-110"
           }
         ]
       },
@@ -18799,6 +18935,42 @@
           {
             "manufacturerName": "eWeLink",
             "modelId": "WDS01"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1DS"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1DS-E"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1DS-M"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS3DS"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "DoorSensor-N"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "DoorSensor-N-3.0"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "DoorSensor-EF-3.0"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "HS1DS"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "DoorSensor-N"
           }
         ]
       },
@@ -20544,7 +20716,25 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        }
+        },
+        "devices": [
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS2DB"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS2DB-E"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS2DB-E-3.0"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "HS2DB"
+          }
+        ]
       },
       "settings": [
         {
@@ -21061,6 +21251,62 @@
           {
             "manufacturerName": "Heiman",
             "modelId": "GasSensor-N"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1CG-E"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "GASSensor-N"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "GASSensor-N-3.0"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "GASSensor-EF-3.0"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "HS1CG"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "GASSensor-N"
+          },
+          {
+            "manufacturerName": "_TZE200_yojqa8xn",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE200_ggev5fsl",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE204_ggev5fsl",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE200_rjxqso4a",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE204_rjxqso4a",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZ3000_8nysnv3b",
+            "modelId": "TS0205"
+          },
+          {
+            "manufacturerName": "LUMI",
+            "modelId": "lumi.sensor_gas.acn02"
+          },
+          {
+            "manufacturerName": "Xiaomi",
+            "modelId": "lumi.sensor_natgas"
           }
         ]
       },
@@ -21783,6 +22029,26 @@
           {
             "manufacturerName": "eWeLink",
             "modelId": "iHost"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1GW"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1GW-E"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1GW-M"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS3GW"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "HS1GW"
           }
         ]
       },
@@ -25533,6 +25799,46 @@
           {
             "manufacturerName": "eWeLink",
             "modelId": "MS-01"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1MS"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1MS-E"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1MS-M"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS3MS"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "PIRSensor-N"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "PIRSensor-N-3.0"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "PIRSensor-EF-3.0"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "IASZone:MotionSensor"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "HS1MS"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "PIRSensor-N"
           }
         ]
       },
@@ -27017,6 +27323,26 @@
           {
             "manufacturerName": "eWeLink",
             "modelId": "ZBPLUG"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS2SK"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS2SK-E"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS2SK-EF-3.0"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SmartPlug-N"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "HS2SK"
           }
         ]
       },
@@ -28470,7 +28796,29 @@
               1
             ]
           }
-        }
+        },
+        "devices": [
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS2RC"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS2RC-E"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS2RC-N"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "RC-EF-3.0"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "HS2RC"
+          }
+        ]
       },
       "images": {
         "small": "drivers/scene_switch_4/assets/images/small.png",
@@ -29114,6 +29462,154 @@
           {
             "manufacturerName": "eWeLink",
             "modelId": "ZB-SIR"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "WarningDevice"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "WarningDevice-EF-3.0"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS2WD-E-3.0"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SWHM-I1"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "WarningDevice"
+          },
+          {
+            "manufacturerName": "_TZ3000_fabws1w2",
+            "modelId": "TS0216"
+          },
+          {
+            "manufacturerName": "_TZ3000_d0yu2xgi",
+            "modelId": "TS0216"
+          },
+          {
+            "manufacturerName": "_TZ3000_fwfwifin",
+            "modelId": "TS0216"
+          },
+          {
+            "manufacturerName": "_TZ3000_8r5u7wkh",
+            "modelId": "TS0216"
+          },
+          {
+            "manufacturerName": "_TZ3000_hv9cqcci",
+            "modelId": "TS0216"
+          },
+          {
+            "manufacturerName": "_TZE200_nlrfgpny",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE200_t1blo2bj",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE204_nlrfgpny",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE200_d0ypnbvn",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE204_d0ypnbvn",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "NEO",
+            "modelId": "NAS-AB02B0"
+          },
+          {
+            "manufacturerName": "NEO",
+            "modelId": "NAS-AB02B2"
+          },
+          {
+            "manufacturerName": "Develco Products A/S",
+            "modelId": "SIRZB-110"
+          },
+          {
+            "manufacturerName": "Develco",
+            "modelId": "SIRZB-110"
+          },
+          {
+            "manufacturerName": "frient A/S",
+            "modelId": "SIRZB-110"
+          },
+          {
+            "manufacturerName": "Smartenit, Inc",
+            "modelId": "ZBALMRM"
+          },
+          {
+            "manufacturerName": "Smartenit",
+            "modelId": "ZBALRM"
+          },
+          {
+            "manufacturerName": "Third Reality, Inc",
+            "modelId": "RTS500A"
+          },
+          {
+            "manufacturerName": "SMaBiT",
+            "modelId": "AV2010/29A"
+          },
+          {
+            "manufacturerName": "IMMAX",
+            "modelId": "07504L"
+          },
+          {
+            "manufacturerName": "IMOU",
+            "modelId": "ZS-01"
+          },
+          {
+            "manufacturerName": "ORVIBO",
+            "modelId": "SN10ZW"
+          },
+          {
+            "manufacturerName": "Climax",
+            "modelId": "BX-IS"
+          },
+          {
+            "manufacturerName": "Climax",
+            "modelId": "SOLSW"
+          },
+          {
+            "manufacturerName": "Visonic",
+            "modelId": "MCW-S"
+          },
+          {
+            "manufacturerName": "LDS",
+            "modelId": "ZBS-101"
+          },
+          {
+            "manufacturerName": "Zipato",
+            "modelId": "miniKeypad"
+          },
+          {
+            "manufacturerName": "_TZE200_5sbebbzs",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE204_5sbebbzs",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "URBSFog",
+            "modelId": "FOG-01"
+          },
+          {
+            "manufacturerName": "PROTECT",
+            "modelId": "SG-FOG"
+          },
+          {
+            "manufacturerName": "BANDIT",
+            "modelId": "FOG-GEN"
           }
         ]
       },
@@ -29622,6 +30118,90 @@
           {
             "manufacturerName": "Heiman",
             "modelId": "SmokeSensor-N-3.0"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1SA-E"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS2SA-EF-3.0"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SmokeSensor-N"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SmokeSensor-N-3.0"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SmokeSensor-EF-3.0"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SMOK_V15"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SMOK_V16"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SMOK_YDLV10"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "HS1SA"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "HS3SA"
+          },
+          {
+            "manufacturerName": "_TZE200_ntcy3xu1",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE200_uebojraa",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE200_yojqa8xn",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE204_ntcy3xu1",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZ3000_ytf0x5wm",
+            "modelId": "TS0205"
+          },
+          {
+            "manufacturerName": "Develco Products A/S",
+            "modelId": "SMSZB-120"
+          },
+          {
+            "manufacturerName": "Develco",
+            "modelId": "SMSZB-120"
+          },
+          {
+            "manufacturerName": "frient A/S",
+            "modelId": "SMSZB-120"
+          },
+          {
+            "manufacturerName": "Third Reality, Inc",
+            "modelId": "RTS500A-SMOKE"
+          },
+          {
+            "manufacturerName": "LUMI",
+            "modelId": "lumi.sensor_smoke"
+          },
+          {
+            "manufacturerName": "Xiaomi",
+            "modelId": "lumi.sensor_smoke"
           }
         ]
       },
@@ -35864,6 +36444,66 @@
           {
             "manufacturerName": "eWeLink",
             "modelId": "WL01"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1WL"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1WL-E"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1WL-M"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS3WL"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "WaterSensor-N"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "WaterSensor-N-3.0"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "HS1WL"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "WaterSensor-N"
+          },
+          {
+            "manufacturerName": "_TZ3000_kyb656no",
+            "modelId": "TS0207"
+          },
+          {
+            "manufacturerName": "_TZ3000_upgcbody",
+            "modelId": "TS0207"
+          },
+          {
+            "manufacturerName": "_TZ3000_awvmkayh",
+            "modelId": "TS0207"
+          },
+          {
+            "manufacturerName": "_TYZB01_sqmd19i1",
+            "modelId": "TS0207"
+          },
+          {
+            "manufacturerName": "LUMI",
+            "modelId": "lumi.sensor_wleak.aq1"
+          },
+          {
+            "manufacturerName": "LUMI",
+            "modelId": "lumi.flood.agl02"
+          },
+          {
+            "manufacturerName": "Xiaomi",
+            "modelId": "lumi.sensor_wleak"
           }
         ]
       },
