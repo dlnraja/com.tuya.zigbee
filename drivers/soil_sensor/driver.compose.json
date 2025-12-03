@@ -13,7 +13,7 @@
   "energy": {
     "batteries": [
       "AAA",
-      "AAA"
+      "CR2032"
     ]
   },
   "zigbee": {
@@ -646,9 +646,14 @@
       "1": {
         "clusters": [
           0,
-          61184
+          61184,
+          1032,
+          1026,
+          1
         ],
-        "bindings": []
+        "bindings": [
+          1
+        ]
       }
     }
   },

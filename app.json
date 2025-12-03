@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.3.34",
+  "version": "5.3.35",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.3.33: FIX CRASH expected_cluster_id_number - Use numeric CLUSTER constants in BatteryRouter. V5.3.32: MEGA TS0601 ENRICHMENT - 1210 devices analyzed, 50+ drivers enriched with 3000+ manufacturer IDs. 100% local Zigbee, no cloud.",
-    "fr": "V5.3.33: FIX CRASH expected_cluster_id_number - Clusters numériques dans BatteryRouter. V5.3.32: MEGA ENRICHISSEMENT TS0601 - 1210 appareils analysés, 50+ drivers, 3000+ IDs. 100% local Zigbee."
+    "en": "V5.3.35: HYBRID DRIVER ENRICHMENT - All 80 drivers enriched with ZCL clusters + Tuya DPs. V5.3.33: FIX CRASH. V5.3.32: MEGA TS0601 - 3000+ manufacturer IDs. 100% local Zigbee.",
+    "fr": "V5.3.35: ENRICHISSEMENT HYBRIDE - 80 drivers avec clusters ZCL + Tuya DPs. V5.3.33: FIX CRASH. V5.3.32: MEGA TS0601 - 3000+ IDs. 100% local Zigbee."
   },
   "category": "appliances",
   "permissions": [],
@@ -10952,6 +10952,7 @@
           "usageOff": 0.5
         },
         "batteries": [
+          "AAA",
           "OTHER"
         ]
       },
@@ -10999,9 +11000,14 @@
             "clusters": [
               0,
               3,
-              61184
+              61184,
+              1026,
+              1029,
+              1
             ],
-            "bindings": []
+            "bindings": [
+              1
+            ]
           }
         }
       },
@@ -11524,7 +11530,9 @@
               61184
             ],
             "bindings": [
-              1
+              1,
+              6,
+              8
             ]
           }
         },
@@ -11865,7 +11873,10 @@
               61184
             ],
             "bindings": [
-              1
+              1,
+              6,
+              8,
+              768
             ]
           }
         },
@@ -12254,10 +12265,14 @@
               4,
               5,
               6,
-              61184
+              61184,
+              8,
+              768
             ],
             "bindings": [
-              6
+              6,
+              8,
+              768
             ]
           }
         },
@@ -12600,7 +12615,10 @@
               61184
             ],
             "bindings": [
-              1
+              1,
+              6,
+              8,
+              768
             ]
           }
         },
@@ -12944,7 +12962,9 @@
               61184
             ],
             "bindings": [
-              1
+              1,
+              6,
+              8
             ]
           }
         },
@@ -13227,7 +13247,8 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032"
+          "CR2032",
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -14011,10 +14032,7 @@
       "energy": {
         "batteries": [
           "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -14077,10 +14095,7 @@
       "energy": {
         "batteries": [
           "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -14493,10 +14508,7 @@
       "energy": {
         "batteries": [
           "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -14884,6 +14896,7 @@
       },
       "energy": {
         "batteries": [
+          "CR2032",
           "CR2450"
         ],
         "approximation": {
@@ -14955,7 +14968,9 @@
               0,
               1,
               3,
-              1280
+              1280,
+              6,
+              5
             ],
             "bindings": [
               1,
@@ -15293,7 +15308,9 @@
       },
       "energy": {
         "batteries": [
-          "CR2450"
+          "CR2032",
+          "CR2450",
+          "AAA"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -15381,7 +15398,9 @@
               0,
               1,
               3,
-              1280
+              1280,
+              6,
+              5
             ],
             "bindings": [
               1,
@@ -15718,11 +15737,8 @@
       },
       "energy": {
         "batteries": [
-          "CR2032",
           "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
+          "AAA"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -16149,11 +16165,8 @@
       },
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
           "AAA",
-          "AA",
-          "CR123A"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -16576,7 +16589,8 @@
         "dim",
         "measure_battery",
         "alarm_battery",
-        "onoff"
+        "onoff",
+        "fan_speed"
       ],
       "energy": {
         "batteries": [
@@ -16637,12 +16651,14 @@
               8,
               61184,
               61184,
-              1
+              1,
+              514
             ],
             "bindings": [
               1,
               6,
-              8
+              8,
+              514
             ]
           }
         },
@@ -16927,7 +16943,8 @@
       "energy": {
         "batteries": [
           "AAA",
-          "AAA"
+          "CR2032",
+          "CR2450"
         ]
       },
       "zigbee": {
@@ -18404,7 +18421,8 @@
             ],
             "bindings": [
               1026,
-              1029
+              1029,
+              1
             ]
           }
         }
@@ -18431,11 +18449,13 @@
       "capabilities": [
         "alarm_co",
         "measure_battery",
-        "alarm_battery"
+        "alarm_battery",
+        "measure_co"
       ],
       "energy": {
         "batteries": [
-          "AAA",
+          "CR2",
+          "CR123A",
           "AAA"
         ]
       },
@@ -18455,6 +18475,10 @@
               0,
               1,
               1280
+            ],
+            "bindings": [
+              1280,
+              1
             ]
           }
         }
@@ -18486,10 +18510,8 @@
       "energy": {
         "batteries": [
           "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
+          "CR1632",
+          "AAA"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -18908,7 +18930,8 @@
         "windowcoverings_set",
         "windowcoverings_tilt_set",
         "measure_battery",
-        "alarm_battery"
+        "alarm_battery",
+        "dim"
       ],
       "capabilitiesOptions": {
         "windowcoverings_set": {
@@ -19073,10 +19096,13 @@
             "clusters": [
               1,
               258,
-              61184
+              61184,
+              6,
+              8
             ],
             "bindings": [
-              1
+              1,
+              258
             ]
           }
         },
@@ -19412,6 +19438,9 @@
               0,
               258,
               61184
+            ],
+            "bindings": [
+              258
             ]
           }
         }
@@ -19443,7 +19472,9 @@
         "dim",
         "onoff",
         "measure_battery",
-        "alarm_battery"
+        "alarm_battery",
+        "onoff.1",
+        "dim.1"
       ],
       "platforms": [
         "local"
@@ -19489,6 +19520,21 @@
       "capabilitiesOptions": {
         "onoff": {
           "setOnDim": false
+        },
+        "dim": {
+          "title": {
+            "en": "Brightness 1"
+          }
+        },
+        "onoff.1": {
+          "title": {
+            "en": "Channel 2"
+          }
+        },
+        "dim.1": {
+          "title": {
+            "en": "Brightness 2"
+          }
         }
       },
       "images": {
@@ -19513,7 +19559,8 @@
         "dim",
         "onoff",
         "measure_battery",
-        "alarm_battery"
+        "alarm_battery",
+        "measure_power"
       ],
       "energy": {
         "approximation": {
@@ -19612,10 +19659,13 @@
               5,
               6,
               8,
-              61184
+              61184,
+              2820
             ],
             "bindings": [
-              1
+              1,
+              6,
+              8
             ]
           }
         },
@@ -19899,11 +19949,8 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
           "AA",
-          "CR123A"
+          "AAA"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -20245,11 +20292,8 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
+          "OTHER",
+          "OTHER"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -20634,6 +20678,9 @@
               61184,
               2820,
               1794
+            ],
+            "bindings": [
+              2820
             ]
           }
         }
@@ -20671,7 +20718,8 @@
           "usageOff": 0.5
         },
         "batteries": [
-          "OTHER"
+          "CR2450",
+          "AAA"
         ]
       },
       "zigbee": {
@@ -20691,9 +20739,14 @@
             "clusters": [
               0,
               3,
-              61184
+              61184,
+              1026,
+              1029,
+              1
             ],
-            "bindings": []
+            "bindings": [
+              1
+            ]
           }
         }
       },
@@ -21102,11 +21155,8 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
           "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
+          "AAA"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -21415,7 +21465,8 @@
       "capabilities": [
         "alarm_generic",
         "measure_battery",
-        "alarm_battery"
+        "alarm_battery",
+        "onoff"
       ],
       "energy": {
         "batteries": [
@@ -21787,7 +21838,6 @@
       "energy": {
         "batteries": [
           "CR2032",
-          "CR2450",
           "AAA",
           "AA"
         ],
@@ -22386,7 +22436,8 @@
               513,
               61184,
               61184,
-              1
+              1,
+              514
             ],
             "bindings": [
               1,
@@ -22679,7 +22730,8 @@
         "measure_battery",
         "alarm_battery",
         "onoff",
-        "target_temperature"
+        "target_temperature",
+        "fan_speed"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -22760,10 +22812,13 @@
               6,
               61184,
               61184,
-              1
+              1,
+              1029,
+              514
             ],
             "bindings": [
-              1
+              1,
+              6
             ]
           }
         },
@@ -23070,6 +23125,11 @@
               6,
               8,
               768
+            ],
+            "bindings": [
+              6,
+              8,
+              768
             ]
           }
         }
@@ -23135,6 +23195,11 @@
               6,
               8,
               768
+            ],
+            "bindings": [
+              6,
+              8,
+              768
             ]
           }
         }
@@ -23169,7 +23234,8 @@
         "alarm_battery",
         "onoff",
         "light_hue",
-        "light_saturation"
+        "light_saturation",
+        "light_mode"
       ],
       "energy": {
         "batteries": [
@@ -23233,10 +23299,15 @@
               5,
               6,
               61184,
-              1
+              1,
+              8,
+              768
             ],
             "bindings": [
-              1
+              1,
+              6,
+              8,
+              768
             ]
           }
         },
@@ -23561,7 +23632,10 @@
               61184
             ],
             "bindings": [
-              1
+              1,
+              6,
+              8,
+              768
             ]
           }
         },
@@ -23938,10 +24012,14 @@
               4,
               5,
               6,
-              61184
+              61184,
+              8,
+              768
             ],
             "bindings": [
-              6
+              6,
+              8,
+              768
             ]
           }
         },
@@ -24268,11 +24346,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
+          "AA"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -24323,10 +24397,12 @@
               3,
               61184,
               61184,
-              1
+              1,
+              257
             ],
             "bindings": [
-              1
+              1,
+              257
             ]
           }
         },
@@ -25013,11 +25089,9 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
           "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
+          "CR123A",
+          "AAA"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -25536,7 +25610,9 @@
               61184,
               61184,
               1280,
-              1
+              1,
+              1026,
+              1029
             ],
             "bindings": [
               1,
@@ -26037,7 +26113,9 @@
               61184
             ],
             "bindings": [
-              1
+              1,
+              6,
+              2820
             ]
           }
         },
@@ -26567,7 +26645,8 @@
               61184
             ],
             "bindings": [
-              1
+              1,
+              6
             ]
           }
         },
@@ -26869,6 +26948,9 @@
               6,
               2820,
               1794
+            ],
+            "bindings": [
+              2820
             ]
           }
         }
@@ -26898,7 +26980,8 @@
         "measure_humidity",
         "measure_luminance",
         "measure_battery",
-        "alarm_battery"
+        "alarm_battery",
+        "measure_distance"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -27036,7 +27119,8 @@
               3,
               1030,
               61184,
-              1280
+              1280,
+              1024
             ],
             "bindings": [
               0,
@@ -27331,11 +27415,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
+          "AA"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -27469,10 +27549,12 @@
               6,
               61184,
               61184,
-              1
+              1,
+              513
             ],
             "bindings": [
-              1
+              1,
+              513
             ]
           }
         },
@@ -27771,7 +27853,7 @@
       "energy": {
         "batteries": [
           "AAA",
-          "AAA"
+          "AA"
         ]
       },
       "zigbee": {
@@ -27802,7 +27884,8 @@
               61184
             ],
             "bindings": [
-              1280
+              1280,
+              1
             ]
           }
         }
@@ -27836,7 +27919,12 @@
             "clusters": [
               0,
               1,
-              6
+              6,
+              5
+            ],
+            "bindings": [
+              6,
+              1
             ]
           }
         }
@@ -27855,10 +27943,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA"
+          "CR2032"
         ]
       }
     },
@@ -27886,7 +27971,12 @@
             "clusters": [
               0,
               1,
-              6
+              6,
+              5
+            ],
+            "bindings": [
+              6,
+              1
             ]
           }
         }
@@ -27906,9 +27996,7 @@
       "energy": {
         "batteries": [
           "CR2032",
-          "CR2450",
-          "AAA",
-          "AA"
+          "CR2450"
         ]
       }
     },
@@ -27937,7 +28025,12 @@
             "clusters": [
               0,
               1,
-              6
+              6,
+              5
+            ],
+            "bindings": [
+              6,
+              1
             ]
           }
         }
@@ -27957,9 +28050,7 @@
       "energy": {
         "batteries": [
           "CR2032",
-          "CR2450",
-          "AAA",
-          "AA"
+          "CR2450"
         ]
       }
     },
@@ -27989,7 +28080,12 @@
             "clusters": [
               0,
               1,
-              6
+              6,
+              5
+            ],
+            "bindings": [
+              6,
+              1
             ]
           }
         }
@@ -28008,10 +28104,8 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
           "CR2450",
-          "AAA",
-          "AA"
+          "AAA"
         ]
       }
     },
@@ -28044,7 +28138,12 @@
             "clusters": [
               0,
               1,
-              6
+              6,
+              5
+            ],
+            "bindings": [
+              6,
+              1
             ]
           }
         }
@@ -28063,10 +28162,8 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
           "CR2450",
-          "AAA",
-          "AA"
+          "AAA"
         ]
       }
     },
@@ -28082,7 +28179,8 @@
         "measure_battery",
         "alarm_battery",
         "windowcoverings_set",
-        "windowcoverings_tilt_set"
+        "windowcoverings_tilt_set",
+        "dim"
       ],
       "energy": {
         "batteries": [
@@ -28200,10 +28298,13 @@
               0,
               258,
               61184,
-              1
+              1,
+              6,
+              8
             ],
             "bindings": [
-              1
+              1,
+              258
             ]
           }
         },
@@ -28488,11 +28589,8 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
+          "OTHER",
+          "OTHER"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -28595,13 +28693,15 @@
               1280,
               61184,
               1280,
-              1
+              1,
+              1282
             ],
             "bindings": [
               1,
               5,
               1280,
-              1280
+              1280,
+              1282
             ]
           }
         },
@@ -28883,7 +28983,8 @@
         "thermostat_mode",
         "measure_temperature",
         "measure_battery",
-        "alarm_battery"
+        "alarm_battery",
+        "measure_power"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -28897,7 +28998,14 @@
           "1": {
             "clusters": [
               0,
-              61184
+              61184,
+              6,
+              513,
+              2820
+            ],
+            "bindings": [
+              6,
+              513
             ]
           }
         }
@@ -28948,7 +29056,14 @@
           "1": {
             "clusters": [
               0,
-              61184
+              61184,
+              6,
+              2820,
+              1794
+            ],
+            "bindings": [
+              6,
+              2820
             ]
           }
         }
@@ -28984,10 +29099,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
+          "CR2",
           "CR123A"
         ],
         "approximation": {
@@ -29067,7 +29179,8 @@
               61185
             ],
             "bindings": [
-              1
+              1,
+              1280
             ]
           }
         },
@@ -29359,7 +29472,7 @@
       "energy": {
         "batteries": [
           "AAA",
-          "AAA"
+          "CR2032"
         ]
       },
       "zigbee": {
@@ -29992,9 +30105,14 @@
           "1": {
             "clusters": [
               0,
-              61184
+              61184,
+              1032,
+              1026,
+              1
             ],
-            "bindings": []
+            "bindings": [
+              1
+            ]
           }
         }
       },
@@ -30015,7 +30133,11 @@
       "class": "socket",
       "capabilities": [
         "onoff",
-        "alarm_battery"
+        "alarm_battery",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
       ],
       "zigbee": {
         "productId": [
@@ -30045,10 +30167,13 @@
               5,
               6,
               8,
-              61184
+              61184,
+              2820,
+              1794
             ],
             "bindings": [
-              1
+              1,
+              6
             ]
           }
         },
@@ -31015,7 +31140,8 @@
         "measure_current",
         "onoff",
         "onoff.1",
-        "alarm_battery"
+        "alarm_battery",
+        "meter_power"
       ],
       "zigbee": {
         "productId": [
@@ -31156,7 +31282,9 @@
               4,
               5,
               6,
-              61184
+              61184,
+              2820,
+              1794
             ],
             "bindings": [
               6
@@ -31489,7 +31617,9 @@
         "onoff",
         "onoff.1",
         "onoff.2",
-        "alarm_battery"
+        "alarm_battery",
+        "measure_power",
+        "meter_power"
       ],
       "zigbee": {
         "productId": [
@@ -31505,10 +31635,12 @@
               4,
               5,
               6,
-              61184
+              61184,
+              2820
             ],
             "bindings": [
-              1
+              1,
+              6
             ]
           },
           "2": {
@@ -31929,7 +32061,8 @@
         "onoff.1",
         "onoff.2",
         "onoff.3",
-        "alarm_battery"
+        "alarm_battery",
+        "measure_power"
       ],
       "zigbee": {
         "productId": [
@@ -31949,10 +32082,12 @@
               5,
               6,
               8,
-              61184
+              61184,
+              2820
             ],
             "bindings": [
-              1
+              1,
+              6
             ]
           },
           "2": {
@@ -32440,6 +32575,9 @@
               6,
               2820,
               1794
+            ],
+            "bindings": [
+              6
             ]
           }
         }
@@ -32474,7 +32612,8 @@
         "measure_power",
         "meter_power",
         "measure_battery",
-        "alarm_battery"
+        "alarm_battery",
+        "onoff"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -32489,6 +32628,9 @@
               6,
               2820,
               1794
+            ],
+            "bindings": [
+              6
             ]
           }
         }
@@ -32509,6 +32651,18 @@
         "batteries": [
           "OTHER"
         ]
+      },
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Outlet 1"
+          }
+        },
+        "onoff.1": {
+          "title": {
+            "en": "Outlet 2"
+          }
+        }
       }
     },
     {
@@ -32923,6 +33077,11 @@
         "onoff.4": {
           "title": {
             "en": "Switch 5"
+          }
+        },
+        "onoff": {
+          "title": {
+            "en": "Switch 1"
           }
         }
       }
@@ -33457,6 +33616,11 @@
           "title": {
             "en": "Switch 7"
           }
+        },
+        "onoff": {
+          "title": {
+            "en": "Switch 1"
+          }
         }
       },
       "energy": {
@@ -33487,7 +33651,11 @@
         "endpoints": {
           "1": {
             "clusters": [
-              61184
+              61184,
+              6
+            ],
+            "bindings": [
+              6
             ]
           },
           "2": {
@@ -33669,6 +33837,11 @@
           "title": {
             "en": "Switch 8"
           }
+        },
+        "onoff": {
+          "title": {
+            "en": "Switch 1"
+          }
         }
       },
       "energy": {
@@ -33727,7 +33900,11 @@
         "endpoints": {
           "1": {
             "clusters": [
-              61184
+              61184,
+              6
+            ],
+            "bindings": [
+              6
             ]
           },
           "2": {
@@ -33773,11 +33950,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
+          "CR2032"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -33869,7 +34042,8 @@
             ],
             "bindings": [
               1,
-              1280
+              1280,
+              6
             ]
           }
         },
@@ -34156,7 +34330,13 @@
         "measure_temperature.4",
         "thermostat_mode",
         "measure_battery",
-        "alarm_battery"
+        "alarm_battery",
+        "onoff",
+        "onoff.1",
+        "onoff.2",
+        "onoff.3",
+        "target_temperature",
+        "measure_temperature"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -34210,7 +34390,12 @@
           "1": {
             "clusters": [
               0,
-              61184
+              61184,
+              6,
+              513
+            ],
+            "bindings": [
+              513
             ]
           }
         }
@@ -34231,6 +34416,28 @@
         "batteries": [
           "OTHER"
         ]
+      },
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Zone 1"
+          }
+        },
+        "onoff.1": {
+          "title": {
+            "en": "Zone 2"
+          }
+        },
+        "onoff.2": {
+          "title": {
+            "en": "Zone 3"
+          }
+        },
+        "onoff.3": {
+          "title": {
+            "en": "Zone 4"
+          }
+        }
       }
     },
     {
@@ -34383,9 +34590,13 @@
           "1": {
             "clusters": [
               0,
-              61184
+              61184,
+              513,
+              516
             ],
-            "bindings": []
+            "bindings": [
+              513
+            ]
           }
         }
       },
@@ -34417,7 +34628,9 @@
         "measure_voltage",
         "measure_current",
         "measure_battery",
-        "alarm_battery"
+        "alarm_battery",
+        "onoff.1",
+        "onoff.2"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -34442,6 +34655,16 @@
           "title": {
             "en": "USB 2",
             "fr": "USB 2"
+          }
+        },
+        "onoff.1": {
+          "title": {
+            "en": "Outlet 2"
+          }
+        },
+        "onoff.2": {
+          "title": {
+            "en": "OTHER"
           }
         }
       },
@@ -34526,7 +34749,8 @@
               61184
             ],
             "bindings": [
-              1
+              1,
+              6
             ]
           }
         },
@@ -34807,7 +35031,8 @@
         "valve_position.3",
         "valve_position.4",
         "measure_battery",
-        "alarm_battery"
+        "alarm_battery",
+        "onoff"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -34820,7 +35045,12 @@
           "1": {
             "clusters": [
               0,
-              61184
+              61184,
+              6,
+              1
+            ],
+            "bindings": [
+              6
             ]
           }
         }
@@ -34839,7 +35069,7 @@
       ],
       "energy": {
         "batteries": [
-          "OTHER"
+          "AA"
         ]
       }
     },
@@ -34868,7 +35098,11 @@
             "clusters": [
               0,
               6,
-              8
+              8,
+              1
+            ],
+            "bindings": [
+              6
             ]
           }
         }
@@ -34887,7 +35121,7 @@
       ],
       "energy": {
         "batteries": [
-          "OTHER"
+          "AA"
         ]
       }
     },
@@ -34900,12 +35134,13 @@
       "capabilities": [
         "alarm_vibration",
         "measure_battery",
-        "alarm_battery"
+        "alarm_battery",
+        "alarm_tamper"
       ],
       "energy": {
         "batteries": [
-          "AAA",
-          "AAA"
+          "CR2032",
+          "CR2450"
         ]
       },
       "zigbee": {
@@ -34924,6 +35159,10 @@
               1,
               257,
               1280
+            ],
+            "bindings": [
+              1280,
+              1
             ]
           }
         }
@@ -34964,9 +35203,7 @@
         "batteries": [
           "CR2032",
           "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
+          "AAA"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -35343,11 +35580,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
+          "AA"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -35406,11 +35639,13 @@
               1,
               1026,
               1280,
-              61184
+              61184,
+              6
             ],
             "bindings": [
               1,
-              1280
+              1280,
+              6
             ]
           }
         },
@@ -35710,7 +35945,7 @@
       },
       "energy": {
         "batteries": [
-          "AA",
+          "AAA",
           "AA"
         ]
       },
@@ -36319,7 +36554,8 @@
             ],
             "bindings": [
               1026,
-              1029
+              1029,
+              1
             ]
           }
         }
@@ -36379,10 +36615,16 @@
       "capabilities": [
         "onoff",
         "measure_battery",
-        "alarm_battery"
+        "alarm_battery",
+        "dim",
+        "measure_temperature",
+        "measure_humidity"
       ],
       "energy": {
         "batteries": [
+          "CR2032",
+          "AAA",
+          "AA",
           "OTHER"
         ]
       },
@@ -36780,7 +37022,12 @@
               1,
               3,
               4,
-              5
+              5,
+              6,
+              8,
+              1026,
+              1029,
+              61184
             ],
             "bindings": []
           }
