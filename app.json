@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.3.39",
+  "version": "5.3.40",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.3.39: HEIMAN IAS Library - Complete siren/strobe/detector support. IAS Zone + IAS WD clusters. 290+ devices. 100% local Zigbee.",
-    "fr": "V5.3.39: Bibliothèque HEIMAN IAS - Support complet sirènes/strobes/détecteurs. Clusters IAS Zone + WD. 290+ appareils. 100% local Zigbee."
+    "en": "V5.3.40: MEGA ALARM ENRICHMENT - 163 sirens/strobes/fog machines/detectors added. Complete HEIMAN + Tuya + Develco + Neo catalog. 450+ devices.",
+    "fr": "V5.3.40: MEGA ENRICHISSEMENT ALARMES - 163 sirènes/strobes/machines à brouillard/détecteurs. Catalogue complet HEIMAN + Tuya + Develco + Neo. 450+ appareils."
   },
   "category": "appliances",
   "permissions": [],
@@ -13405,6 +13405,70 @@
           {
             "manufacturerName": "Heiman",
             "modelId": "HS2EB"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1EB"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1EB-E"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SOSButton-N"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SOSButton-EM"
+          },
+          {
+            "manufacturerName": "_TZ3000_peszejy7",
+            "modelId": "TS0215A"
+          },
+          {
+            "manufacturerName": "_TZ3000_0dumfk2z",
+            "modelId": "TS0215A"
+          },
+          {
+            "manufacturerName": "_TZ3000_fsiepnrh",
+            "modelId": "TS0215A"
+          },
+          {
+            "manufacturerName": "_TZ3000_p6ju8myv",
+            "modelId": "TS0215A"
+          },
+          {
+            "manufacturerName": "_TZ3000_4fsgukof",
+            "modelId": "TS0215A"
+          },
+          {
+            "manufacturerName": "_TZ3000_sos_btn",
+            "modelId": "TS0215A"
+          },
+          {
+            "manufacturerName": "_TZE200_sos_btn",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "frient A/S",
+            "modelId": "PBZB-110"
+          },
+          {
+            "manufacturerName": "Develco",
+            "modelId": "PBZB-110"
+          },
+          {
+            "manufacturerName": "Centralite",
+            "modelId": "3455-L"
+          },
+          {
+            "manufacturerName": "Sercomm",
+            "modelId": "SZ-DWS04"
+          },
+          {
+            "manufacturerName": "Samjin",
+            "modelId": "button"
           }
         ]
       },
@@ -18726,6 +18790,50 @@
           {
             "manufacturerName": "frient A/S",
             "modelId": "COSZB-110"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "COSensor-EM"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SSHM-C1"
+          },
+          {
+            "manufacturerName": "_TZE200_nh9m9gmr",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE200_rjxqso4a",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE200_vrcd9gke",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE204_nh9m9gmr",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "Develco Products A/S",
+            "modelId": "COZB-120"
+          },
+          {
+            "manufacturerName": "frient A/S",
+            "modelId": "COZB-120"
+          },
+          {
+            "manufacturerName": "Visonic",
+            "modelId": "MCT-442"
+          },
+          {
+            "manufacturerName": "Hive",
+            "modelId": "MOT004"
+          },
+          {
+            "manufacturerName": "First Alert",
+            "modelId": "ZCOMBO-G"
           }
         ]
       },
@@ -21307,6 +21415,54 @@
           {
             "manufacturerName": "Xiaomi",
             "modelId": "lumi.sensor_natgas"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "GASSensor-EN"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SSHM-G1"
+          },
+          {
+            "manufacturerName": "_TZE200_ybwa4kj0",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE200_auin8mzr",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE200_h1yeqgkt",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE200_cpm9kybz",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE204_ybwa4kj0",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZ3210_gas_sensor",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "Develco Products A/S",
+            "modelId": "GSZB-120"
+          },
+          {
+            "manufacturerName": "frient A/S",
+            "modelId": "GSZB-120"
+          },
+          {
+            "manufacturerName": "Konke",
+            "modelId": "KCTCD"
+          },
+          {
+            "manufacturerName": "Neo",
+            "modelId": "NAS-GD03B0"
           }
         ]
       },
@@ -28817,6 +28973,74 @@
           {
             "manufacturerName": "Heiman",
             "modelId": "HS2RC"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS2AW"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS2AW-E"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "KeyFob-N"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "KeyFob-EF"
+          },
+          {
+            "manufacturerName": "Centralite",
+            "modelId": "3400-D"
+          },
+          {
+            "manufacturerName": "Yale",
+            "modelId": "YRD226ZB"
+          },
+          {
+            "manufacturerName": "Yale",
+            "modelId": "YRD256ZB"
+          },
+          {
+            "manufacturerName": "Nuki",
+            "modelId": "Keypad 2.0"
+          },
+          {
+            "manufacturerName": "Zipato",
+            "modelId": "miniKeypad"
+          },
+          {
+            "manufacturerName": "Linkind",
+            "modelId": "ZS130000178"
+          },
+          {
+            "manufacturerName": "_TZE200_keypad01",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE204_keypad01",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZ3000_keypad01",
+            "modelId": "TS0215A"
+          },
+          {
+            "manufacturerName": "frient A/S",
+            "modelId": "KPZB-110"
+          },
+          {
+            "manufacturerName": "Develco",
+            "modelId": "KPZB-110"
+          },
+          {
+            "manufacturerName": "Iris",
+            "modelId": "3460-L"
+          },
+          {
+            "manufacturerName": "UEI",
+            "modelId": "KPZB"
           }
         ]
       },
@@ -29610,6 +29834,290 @@
           {
             "manufacturerName": "BANDIT",
             "modelId": "FOG-GEN"
+          },
+          {
+            "manufacturerName": "_TZ3000_bpkijo14",
+            "modelId": "TS0216"
+          },
+          {
+            "manufacturerName": "_TZ3000_ww6drja5",
+            "modelId": "TS0216"
+          },
+          {
+            "manufacturerName": "_TZ3000_cqbfxhya",
+            "modelId": "TS0216"
+          },
+          {
+            "manufacturerName": "_TZ3000_c8zfad4a",
+            "modelId": "TS0216"
+          },
+          {
+            "manufacturerName": "_TZ3000_1bwpjvlz",
+            "modelId": "TS0216"
+          },
+          {
+            "manufacturerName": "_TZ3210_0bas5ki4",
+            "modelId": "TS0216"
+          },
+          {
+            "manufacturerName": "_TZ3000_v7chgqso",
+            "modelId": "TS0219"
+          },
+          {
+            "manufacturerName": "_TZ3000_ab7hfuil",
+            "modelId": "TS0219"
+          },
+          {
+            "manufacturerName": "_TZ3000_ssp0maqm",
+            "modelId": "TS0219"
+          },
+          {
+            "manufacturerName": "_TZ3000_gntwytxo",
+            "modelId": "TS0219"
+          },
+          {
+            "manufacturerName": "_TZE204_t1blo2bj",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE200_bq5c8xfe",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE200_sur6q7ko",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE200_ux8btoz2",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "NEO",
+            "modelId": "NAS-AB06B2"
+          },
+          {
+            "manufacturerName": "frient A/S",
+            "modelId": "SIRZB-111"
+          },
+          {
+            "manufacturerName": "Smartenit",
+            "modelId": "ZBMLC30"
+          },
+          {
+            "manufacturerName": "Third Reality, Inc",
+            "modelId": "3RSS009Z"
+          },
+          {
+            "manufacturerName": "IMMAX",
+            "modelId": "07505L"
+          },
+          {
+            "manufacturerName": "SMaBiT",
+            "modelId": "AV2010/30"
+          },
+          {
+            "manufacturerName": "Centralite",
+            "modelId": "3400-D"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "SNZB-SIR"
+          },
+          {
+            "manufacturerName": "Linkind",
+            "modelId": "ZS130000078"
+          },
+          {
+            "manufacturerName": "AduroSmart",
+            "modelId": "81849"
+          },
+          {
+            "manufacturerName": "Bitron",
+            "modelId": "AV2010/29"
+          },
+          {
+            "manufacturerName": "Bitron",
+            "modelId": "AV2010/24"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS2WD-O"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SRHMP-O1"
+          },
+          {
+            "manufacturerName": "Develco",
+            "modelId": "SIRZB-120"
+          },
+          {
+            "manufacturerName": "frient A/S",
+            "modelId": "SIRZB-120"
+          },
+          {
+            "manufacturerName": "Climax",
+            "modelId": "BX-OSS"
+          },
+          {
+            "manufacturerName": "Climax",
+            "modelId": "SRN-23ZBS"
+          },
+          {
+            "manufacturerName": "Visonic",
+            "modelId": "SR-720"
+          },
+          {
+            "manufacturerName": "_TZE200_outdoor",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "NEO",
+            "modelId": "NAS-AB06O1"
+          },
+          {
+            "manufacturerName": "Climax",
+            "modelId": "FL-1ZBS"
+          },
+          {
+            "manufacturerName": "ClimaxTechnology",
+            "modelId": "BX-FL"
+          },
+          {
+            "manufacturerName": "Visonic",
+            "modelId": "MCW-B"
+          },
+          {
+            "manufacturerName": "Visonic",
+            "modelId": "SR-740"
+          },
+          {
+            "manufacturerName": "LDS",
+            "modelId": "ZBS-102"
+          },
+          {
+            "manufacturerName": "Zipato",
+            "modelId": "PH-PSE02"
+          },
+          {
+            "manufacturerName": "ORVIBO",
+            "modelId": "SF10ZW"
+          },
+          {
+            "manufacturerName": "ORVIBO",
+            "modelId": "SW20ZW"
+          },
+          {
+            "manufacturerName": "_TZ3000_strobe01",
+            "modelId": "TS0216"
+          },
+          {
+            "manufacturerName": "_TZE200_strobe01",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZ3210_strobe01",
+            "modelId": "TS0216"
+          },
+          {
+            "manufacturerName": "Sercomm",
+            "modelId": "XHS2-SE"
+          },
+          {
+            "manufacturerName": "Enbrighten",
+            "modelId": "43080"
+          },
+          {
+            "manufacturerName": "Ecolink",
+            "modelId": "FLS-ZWAVE-PL"
+          },
+          {
+            "manufacturerName": "Nortek",
+            "modelId": "PD300Z-2"
+          },
+          {
+            "manufacturerName": "URBSFog",
+            "modelId": "FOG-02"
+          },
+          {
+            "manufacturerName": "URBSFog",
+            "modelId": "FOG-03"
+          },
+          {
+            "manufacturerName": "PROTECT",
+            "modelId": "SG-FOG-P"
+          },
+          {
+            "manufacturerName": "PROTECT",
+            "modelId": "SG-FOG-S"
+          },
+          {
+            "manufacturerName": "BANDIT",
+            "modelId": "FOG-320"
+          },
+          {
+            "manufacturerName": "BANDIT",
+            "modelId": "FOG-DB"
+          },
+          {
+            "manufacturerName": "SmokeScreen",
+            "modelId": "SS-01"
+          },
+          {
+            "manufacturerName": "SmokeScreen",
+            "modelId": "SS-PRO"
+          },
+          {
+            "manufacturerName": "FogScape",
+            "modelId": "FS-100"
+          },
+          {
+            "manufacturerName": "FogScape",
+            "modelId": "FS-200"
+          },
+          {
+            "manufacturerName": "DenseFog",
+            "modelId": "DF-ZB01"
+          },
+          {
+            "manufacturerName": "DenseFog",
+            "modelId": "DF-ZB02"
+          },
+          {
+            "manufacturerName": "Concept",
+            "modelId": "FOG-SEC"
+          },
+          {
+            "manufacturerName": "Concept",
+            "modelId": "CL-FOG"
+          },
+          {
+            "manufacturerName": "_TZE200_fog01",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE204_fog01",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE200_security_fog",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "SmokeCloak",
+            "modelId": "SC-100"
+          },
+          {
+            "manufacturerName": "SmokeCloak",
+            "modelId": "SC-200"
+          },
+          {
+            "manufacturerName": "FogCannon",
+            "modelId": "FC-ZB"
+          },
+          {
+            "manufacturerName": "FogCannon",
+            "modelId": "FC-PRO"
           }
         ]
       },
@@ -30202,6 +30710,86 @@
           {
             "manufacturerName": "Xiaomi",
             "modelId": "lumi.sensor_smoke"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS2SA"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS2SA-EF"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SmokeSensor-EM"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SSHM-I1"
+          },
+          {
+            "manufacturerName": "_TZE200_m9skfctm",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE200_rccxox8p",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE200_dq1mfjug",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE200_vzekyi4c",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZ3210_up3pngle",
+            "modelId": "TS0205"
+          },
+          {
+            "manufacturerName": "_TYZB01_dsjszp0x",
+            "modelId": "TS0205"
+          },
+          {
+            "manufacturerName": "frient A/S",
+            "modelId": "SMSZB-121"
+          },
+          {
+            "manufacturerName": "Heimann",
+            "modelId": "HS1SA"
+          },
+          {
+            "manufacturerName": "IKEA of Sweden",
+            "modelId": "PARASOLL smoke"
+          },
+          {
+            "manufacturerName": "Visonic",
+            "modelId": "MCT-427"
+          },
+          {
+            "manufacturerName": "Hive",
+            "modelId": "MOT003"
+          },
+          {
+            "manufacturerName": "Konke",
+            "modelId": "KCTSD"
+          },
+          {
+            "manufacturerName": "Samsung",
+            "modelId": "F-SMD-1"
+          },
+          {
+            "manufacturerName": "CentraLite",
+            "modelId": "3400"
+          },
+          {
+            "manufacturerName": "Siterwell",
+            "modelId": "GS361A-H04"
+          },
+          {
+            "manufacturerName": "Ecolink",
+            "modelId": "FF-ZWAVE5-ECO"
           }
         ]
       },
@@ -36504,6 +37092,70 @@
           {
             "manufacturerName": "Xiaomi",
             "modelId": "lumi.sensor_wleak"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "WaterSensor-EM"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SWHM-W1"
+          },
+          {
+            "manufacturerName": "_TZ3000_85czd6fy",
+            "modelId": "TS0207"
+          },
+          {
+            "manufacturerName": "_TZ3000_kstbkt6a",
+            "modelId": "TS0207"
+          },
+          {
+            "manufacturerName": "_TZ3000_lf56vpxj",
+            "modelId": "TS0207"
+          },
+          {
+            "manufacturerName": "_TZ3000_wr0bfxrk",
+            "modelId": "TS0207"
+          },
+          {
+            "manufacturerName": "_TZ3000_water_sensor",
+            "modelId": "TS0207"
+          },
+          {
+            "manufacturerName": "_TZE200_water_leak",
+            "modelId": "TS0601"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "SNZB-05"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "SNZB-05"
+          },
+          {
+            "manufacturerName": "Develco Products A/S",
+            "modelId": "FLSZB-110"
+          },
+          {
+            "manufacturerName": "frient A/S",
+            "modelId": "FLSZB-110"
+          },
+          {
+            "manufacturerName": "Aqara",
+            "modelId": "SJCGQ11LM"
+          },
+          {
+            "manufacturerName": "Samsung",
+            "modelId": "F-WTR-UK-V1"
+          },
+          {
+            "manufacturerName": "Konke",
+            "modelId": "KCTWD"
+          },
+          {
+            "manufacturerName": "Neo",
+            "modelId": "NAS-WS01B"
           }
         ]
       },

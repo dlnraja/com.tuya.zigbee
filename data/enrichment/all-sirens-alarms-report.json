@@ -1,0 +1,69 @@
+{
+  "timestamp": "2025-12-03T13:11:28.905Z",
+  "results": {
+    "totalAdded": 163,
+    "totalSkipped": 94,
+    "categories": {
+      "sirenIndoor": {
+        "driver": "siren",
+        "deviceCount": 59,
+        "added": 26,
+        "skipped": 33
+      },
+      "sirenOutdoor": {
+        "driver": "siren",
+        "deviceCount": 9,
+        "added": 9,
+        "skipped": 0
+      },
+      "strobeLights": {
+        "driver": "siren",
+        "deviceCount": 21,
+        "added": 15,
+        "skipped": 6
+      },
+      "fogMachines": {
+        "driver": "siren",
+        "deviceCount": 24,
+        "added": 21,
+        "skipped": 3
+      },
+      "smokeDetectors": {
+        "driver": "smoke_detector_advanced",
+        "deviceCount": 34,
+        "added": 20,
+        "skipped": 14
+      },
+      "coDetectors": {
+        "driver": "co_sensor",
+        "deviceCount": 19,
+        "added": 11,
+        "skipped": 8
+      },
+      "gasDetectors": {
+        "driver": "gas_detector",
+        "deviceCount": 21,
+        "added": 12,
+        "skipped": 9
+      },
+      "waterLeakSensors": {
+        "driver": "water_leak_sensor",
+        "deviceCount": 28,
+        "added": 16,
+        "skipped": 12
+      },
+      "emergencyButtons": {
+        "driver": "button_emergency_sos",
+        "deviceCount": 22,
+        "added": 16,
+        "skipped": 6
+      },
+      "alarmPanels": {
+        "driver": "scene_switch_4",
+        "deviceCount": 20,
+        "added": 17,
+        "skipped": 3
+      }
+    }
+  }
+}
