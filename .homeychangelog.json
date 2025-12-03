@@ -1,4 +1,8 @@
 {
+  "5.3.24": {
+    "en": "⚙️ v5.3.24 - GitHub Actions: Official Athom Workflows\n\n**Complete CI/CD Refactoring:**\nReplaced all custom workflows with official Athom GitHub Actions.\n\n**New Workflows:**\n- `homey-validate.yml` - App validation\n- `homey-version.yml` - Version bumping\n- `homey-publish.yml` - App publishing\n- `homey-ci-cd.yml` - Complete pipeline\n\n**Authentication:**\nUses official `personal_access_token` method from:\nhttps://tools.developer.homey.app/me\n\n**Actions Used:**\n- athombv/github-action-homey-app-validate\n- athombv/github-action-homey-app-version\n- athombv/github-action-homey-app-publish\n\nDocs: https://apps.developer.homey.app/app-store/publishing",
+    "fr": "⚙️ v5.3.24 - GitHub Actions officiels Athom\n\n- Workflows refactorisés avec actions Athom officielles\n- Authentification via Personal Access Token\n- CI/CD complet: validate → version → publish"
+  },
   "5.3.23": {
     "en": "🔋 v5.3.23 - Complete Battery Coverage (79/79 drivers)\n\n**Final fix:**\nAdded `alarm_battery` + `energy.batteries` to switch_1-4gang drivers.\n\n**Result:**\n✅ 79/79 drivers now have `measure_battery`\n✅ 79/79 drivers now have `alarm_battery`\n✅ 79/79 drivers have `energy.batteries` defined\n\n**Status Indicator applies EVERYWHERE!**\nAll devices can now show battery % on tile via:\nDevice Settings → Status Indicator → Battery",
     "fr": "🔋 v5.3.23 - Couverture batterie complète (79/79 drivers)\n\n- alarm_battery ajouté aux switch_1-4gang\n- 79/79 drivers avec measure_battery + alarm_battery\n- Indicateur d'état batterie disponible partout"

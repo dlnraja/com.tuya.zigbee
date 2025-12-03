@@ -1,0 +1,214 @@
+# ============================================================================
+# 🎯 HOMEY CI/CD - Complete Pipeline (Official Athom Actions)
+# ============================================================================
+# Uses ONLY official Athom GitHub Actions from:
+# - https://github.com/athombv/github-action-homey-app-validate
+# - https://github.com/athombv/github-action-homey-app-version
+# - https://github.com/athombv/github-action-homey-app-publish
+#
+# Documentation: https://apps.developer.homey.app/app-store/publishing
+#
+# SETUP:
+# 1. Get token: https://tools.developer.homey.app/me
+# 2. Add secret: Settings → Secrets → HOMEY_PAT
+# ============================================================================
+
+name: 🎯 Homey CI/CD
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "Action to perform"
+        required: true
+        type: choice
+        options:
+          - validate
+          - publish
+          - version-patch
+          - version-minor
+          - version-major
+        default: "validate"
+      changelog:
+        description: "Changelog (for version updates)"
+        required: false
+        type: string
+        default: "Bug fixes and improvements"
+
+permissions:
+  contents: write
+
+env:
+  NODE_VERSION: "20"
+
+jobs:
+  # ─────────────────────────────────────────────────────────────────────────
+  # VALIDATE
+  # ─────────────────────────────────────────────────────────────────────────
+  validate:
+    name: 🔍 Validate
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.info.outputs.version }}
+      name: ${{ steps.info.outputs.name }}
+      id: ${{ steps.info.outputs.id }}
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      - name: 📦 Get App Info
+        id: info
+        run: |
+          VERSION=$(node -p "require('./app.json').version")
+          NAME=$(node -p "require('./app.json').name.en")
+          ID=$(node -p "require('./app.json').id")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "name=$NAME" >> $GITHUB_OUTPUT
+          echo "id=$ID" >> $GITHUB_OUTPUT
+          echo "📦 $NAME v$VERSION ($ID)"
+
+      - name: 🔍 Validate (Athom Official)
+        uses: athombv/github-action-homey-app-validate@master
+        with:
+          level: publish
+
+      - name: ✅ Validation Summary
+        run: |
+          echo "## ✅ Validation Passed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Property | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|----------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| App | ${{ steps.info.outputs.name }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Version | v${{ steps.info.outputs.version }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| ID | \`${{ steps.info.outputs.id }}\` |" >> $GITHUB_STEP_SUMMARY
+
+  # ─────────────────────────────────────────────────────────────────────────
+  # VERSION UPDATE (optional)
+  # ─────────────────────────────────────────────────────────────────────────
+  version:
+    name: 📦 Update Version
+    runs-on: ubuntu-latest
+    needs: [validate]
+    if: |
+      needs.validate.result == 'success' &&
+      (inputs.action == 'version-patch' || inputs.action == 'version-minor' || inputs.action == 'version-major')
+    outputs:
+      new_version: ${{ steps.update.outputs.version }}
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      - name: 📦 Determine Version Type
+        id: type
+        run: |
+          case "${{ inputs.action }}" in
+            version-patch) echo "type=patch" >> $GITHUB_OUTPUT ;;
+            version-minor) echo "type=minor" >> $GITHUB_OUTPUT ;;
+            version-major) echo "type=major" >> $GITHUB_OUTPUT ;;
+          esac
+
+      - name: 📦 Update Version (Athom Official)
+        uses: athombv/github-action-homey-app-version@master
+        id: update
+        with:
+          version: ${{ steps.type.outputs.type }}
+          changelog: ${{ inputs.changelog }}
+
+      - name: 📝 Commit & Push
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "🔖 v${{ steps.update.outputs.version }}: ${{ inputs.changelog }}"
+          git tag "v${{ steps.update.outputs.version }}"
+          git push origin HEAD --tags
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: ✅ Version Summary
+        run: |
+          echo "## 📦 Version Updated" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**New Version:** v${{ steps.update.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Changelog:** ${{ inputs.changelog }}" >> $GITHUB_STEP_SUMMARY
+
+  # ─────────────────────────────────────────────────────────────────────────
+  # PUBLISH
+  # ─────────────────────────────────────────────────────────────────────────
+  publish:
+    name: 🚀 Publish
+    runs-on: ubuntu-latest
+    needs: [validate, version]
+    if: |
+      always() &&
+      needs.validate.result == 'success' &&
+      (needs.version.result == 'success' || needs.version.result == 'skipped') &&
+      inputs.action == 'publish'
+    outputs:
+      url: ${{ steps.publish.outputs.url }}
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - name: 🔑 Check HOMEY_PAT
+        run: |
+          if [ -z "${{ secrets.HOMEY_PAT }}" ]; then
+            echo "::error::HOMEY_PAT not configured!"
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "## ❌ Authentication Required" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### Setup Instructions:" >> $GITHUB_STEP_SUMMARY
+            echo "1. Go to [tools.developer.homey.app/me](https://tools.developer.homey.app/me)" >> $GITHUB_STEP_SUMMARY
+            echo "2. Copy your **Personal Access Token**" >> $GITHUB_STEP_SUMMARY
+            echo "3. Add as GitHub Secret: **HOMEY_PAT**" >> $GITHUB_STEP_SUMMARY
+            exit 1
+          fi
+
+      - name: 🚀 Publish (Athom Official)
+        uses: athombv/github-action-homey-app-publish@master
+        id: publish
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+
+      - name: ✅ Publish Summary
+        run: |
+          echo "## 🎉 Published to Homey App Store!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** v${{ needs.validate.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🔗 Links" >> $GITHUB_STEP_SUMMARY
+          echo "- [Manage Release](${{ steps.publish.outputs.url }})" >> $GITHUB_STEP_SUMMARY
+          echo "- [App Store](https://homey.app/a/${{ needs.validate.outputs.id }})" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📋 Next Steps" >> $GITHUB_STEP_SUMMARY
+          echo "1. Review the uploaded version" >> $GITHUB_STEP_SUMMARY
+          echo "2. Submit for Test or Live certification" >> $GITHUB_STEP_SUMMARY
+
+  # ─────────────────────────────────────────────────────────────────────────
+  # GITHUB RELEASE
+  # ─────────────────────────────────────────────────────────────────────────
+  release:
+    name: 📝 GitHub Release
+    runs-on: ubuntu-latest
+    needs: [validate, publish]
+    if: needs.publish.result == 'success'
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      - name: 📝 Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ needs.validate.outputs.version }}
+          name: 🎉 v${{ needs.validate.outputs.version }}
+          body: |
+            ## Release v${{ needs.validate.outputs.version }}
+
+            Published to Homey App Store.
+
+            **Manage:** ${{ needs.publish.outputs.url }}
+          draft: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
