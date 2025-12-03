@@ -48,7 +48,17 @@
           768
         ]
       }
-    }
+    },
+    "devices": [
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "ZB-RGBCW"
+      },
+      {
+        "manufacturerName": "eWeLink",
+        "modelId": "ZBRGBCW"
+      }
+    ]
   },
   "images": {
     "small": "drivers/led_controller_rgb/assets/images/small.png",

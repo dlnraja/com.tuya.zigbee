@@ -39,7 +39,21 @@
           1
         ]
       }
-    }
+    },
+    "devices": [
+      {
+        "manufacturerName": "HEIMAN",
+        "modelId": "HS1CA"
+      },
+      {
+        "manufacturerName": "HEIMAN",
+        "modelId": "HS1CA-M"
+      },
+      {
+        "manufacturerName": "Heiman",
+        "modelId": "COSensor-N"
+      }
+    ]
   },
   "images": {
     "small": "drivers/co_sensor/assets/images/small.png",

@@ -107,6 +107,24 @@
       "CO2-Sensor",
       "Gas-Detector",
       "TS0601"
+    ],
+    "devices": [
+      {
+        "manufacturerName": "HEIMAN",
+        "modelId": "HS1CG"
+      },
+      {
+        "manufacturerName": "HEIMAN",
+        "modelId": "HS1CG-M"
+      },
+      {
+        "manufacturerName": "HEIMAN",
+        "modelId": "HS3CG"
+      },
+      {
+        "manufacturerName": "Heiman",
+        "modelId": "GasSensor-N"
+      }
     ]
   },
   "settings": [
