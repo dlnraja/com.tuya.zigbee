@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.3.40",
+  "version": "5.3.41",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.3.40: MEGA ALARM ENRICHMENT - 163 sirens/strobes/fog machines/detectors added. Complete HEIMAN + Tuya + Develco + Neo catalog. 450+ devices.",
-    "fr": "V5.3.40: MEGA ENRICHISSEMENT ALARMES - 163 sirènes/strobes/machines à brouillard/détecteurs. Catalogue complet HEIMAN + Tuya + Develco + Neo. 450+ appareils."
+    "en": "V5.3.41: HEIMAN + SONOFF/eWeLink COMPLETE ECOSYSTEM - 90 new devices. Full security catalog + NSPanel/iHost support. 500+ devices total.",
+    "fr": "V5.3.41: ÉCOSYSTÈME COMPLET HEIMAN + SONOFF/eWeLink - 90 nouveaux appareils. Catalogue sécurité + support NSPanel/iHost. 500+ appareils total."
   },
   "category": "appliances",
   "permissions": [],
@@ -11215,6 +11215,14 @@
           {
             "manufacturerName": "Heiman",
             "modelId": "HS3AQ"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "AQSensor-N"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "AQSensor-EM"
           }
         ]
       },
@@ -13469,6 +13477,10 @@
           {
             "manufacturerName": "Samjin",
             "modelId": "button"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS2EB-3.0"
           }
         ]
       },
@@ -18672,6 +18684,42 @@
           {
             "manufacturerName": "Heiman",
             "modelId": "TempSensor-N"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1HT-N"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS3HT-E"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "TempHumiditySensor-N"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "TempHumiditySensor-N-3.0"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "TempHumiditySensor-EM"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SWHM-TH1"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "TempHumiditySensor-N"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "SNZB-02WD"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "SNZB-02LD"
           }
         ]
       },
@@ -18834,6 +18882,18 @@
           {
             "manufacturerName": "First Alert",
             "modelId": "ZCOMBO-G"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1CA-N"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "HS1CA-E"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS3CA-E"
           }
         ]
       },
@@ -19079,6 +19139,18 @@
           {
             "manufacturerName": "Heiman",
             "modelId": "DoorSensor-N"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS3DS-E"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "DoorSensor-EM"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SWHM-D1"
           }
         ]
       },
@@ -20841,6 +20913,14 @@
           {
             "manufacturerName": "Heiman",
             "modelId": "HS2DB"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "DoorBell-N"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "DoorBell-EM"
           }
         ]
       },
@@ -21463,6 +21543,22 @@
           {
             "manufacturerName": "Neo",
             "modelId": "NAS-GD03B0"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1CG-N"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "HS1CG-E"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS3CG-E"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "GASSensor-EM"
           }
         ]
       },
@@ -22205,6 +22301,70 @@
           {
             "manufacturerName": "Heiman",
             "modelId": "HS1GW"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1GW-N"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS2GW"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS2GW-E"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "Gateway-N"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "NSPanel Pro 86"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "NSPanel Pro 120"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "NSPanel"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "NSPanel-EU"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "NSPanel-US"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "NSPanel"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBBridge-P"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZB Bridge Pro"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBDongle-E"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBDongle-P"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "iHost-4"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "eWeLink Cube"
           }
         ]
       },
@@ -25462,7 +25622,49 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        }
+        },
+        "devices": [
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBMINI"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBMINI-L"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBMINI-L2"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBMINIL2"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBMINIR2"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "ZBMINI"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "ZBMINI-L"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "ZBMINI-L2"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "01MINIZB"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "BASICZBR3"
+          }
+        ]
       },
       "settings": [
         {
@@ -25995,6 +26197,18 @@
           {
             "manufacturerName": "Heiman",
             "modelId": "PIRSensor-N"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS3MS-E"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "PIRSensor-EM"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SWHM-M1"
           }
         ]
       },
@@ -27499,6 +27713,46 @@
           {
             "manufacturerName": "Heiman",
             "modelId": "HS2SK"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS2SK-N"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "SmartPlug-EM"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "S31 Lite zb"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "S31 Lite ZB"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "S40ZBTPB"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "S40 Lite zb"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "S60ZB"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "S60ZBTPE"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "S60ZBTPF"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "S40ZB"
           }
         ]
       },
@@ -27981,6 +28235,10 @@
           {
             "manufacturerName": "eWeLink",
             "modelId": "SNZB-06P"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "SNZB-06"
           }
         ]
       },
@@ -28427,6 +28685,30 @@
           {
             "manufacturerName": "eWeLink",
             "modelId": "TRVZB"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBCurtain"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "ZBCurtain"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "SWV"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "SWV-NH"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "SWV-BSP"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "SWV"
           }
         ]
       },
@@ -29041,6 +29323,10 @@
           {
             "manufacturerName": "UEI",
             "modelId": "KPZB"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "KeyFob-EF-3.0"
           }
         ]
       },
@@ -30118,6 +30404,18 @@
           {
             "manufacturerName": "FogCannon",
             "modelId": "FC-PRO"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "WarningDevice-EF"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "SNZB-SIR"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "ZB-SIR"
           }
         ]
       },
@@ -30790,6 +31088,26 @@
           {
             "manufacturerName": "Ecolink",
             "modelId": "FF-ZWAVE5-ECO"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1SA-N"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "HS1SA-E"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS2SA-E"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS3SA-E"
+          },
+          {
+            "manufacturerName": "Heiman",
+            "modelId": "SmokeSensor-EM"
           }
         ]
       },
@@ -32486,6 +32804,42 @@
           {
             "manufacturerName": "eWeLink",
             "modelId": "ZBSW01"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBM5-1"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBM5-2"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "ZBM5-3"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "ZBM5-1"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "ZBM5-2"
+          },
+          {
+            "manufacturerName": "SONOFF",
+            "modelId": "ZBM5-3"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "TX-1C"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "TX-2C"
+          },
+          {
+            "manufacturerName": "eWeLink",
+            "modelId": "TX-3C"
           }
         ]
       },
@@ -37156,6 +37510,14 @@
           {
             "manufacturerName": "Neo",
             "modelId": "NAS-WS01B"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS1WL-N"
+          },
+          {
+            "manufacturerName": "HEIMAN",
+            "modelId": "HS3WL-E"
           }
         ]
       },
