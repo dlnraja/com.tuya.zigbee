@@ -13,8 +13,7 @@
   "class": "button",
   "capabilities": [
     "button",
-    "measure_battery",
-    "alarm_battery"
+    "measure_battery"
   ],
   "capabilitiesOptions": {
     "measure_battery": {

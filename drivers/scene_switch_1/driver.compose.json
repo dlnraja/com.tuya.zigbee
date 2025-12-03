@@ -6,8 +6,7 @@
   "class": "button",
   "capabilities": [
     "button",
-    "measure_battery",
-    "alarm_battery"
+    "measure_battery"
   ],
   "zigbee": {
     "manufacturerName": [

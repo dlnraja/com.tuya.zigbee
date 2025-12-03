@@ -2,6 +2,18 @@
 
 Based on official Homey Apps SDK Documentation (December 2024)
 
+## 📚 Official SDK Resources
+
+| Resource | URL |
+|----------|-----|
+| Apps SDK Guide | https://apps.developer.homey.app |
+| SDK v3 Reference | https://apps-sdk-v3.developer.homey.app |
+| Zigbee Dev Tools | https://developer.athom.com/tools/zigbee |
+| Device Capabilities | https://apps.developer.homey.app/the-basics/devices/capabilities |
+| Best Practices | https://apps.developer.homey.app/the-basics/devices/best-practices |
+
+---
+
 ## ✅ Already Compliant
 
 ### 1. Driver Structure
@@ -238,6 +250,185 @@ Interview Result:
     }
   }
 }
+```
+
+---
+
+## 🔋 Battery Best Practices (SDK Official)
+
+### Rule: Never use BOTH `measure_battery` AND `alarm_battery`
+
+> "Never give your driver both the `measure_battery` and the `alarm_battery` capabilities. This creates duplicate UI components and Flow cards."
+
+**Correct:**
+```json
+{
+  "capabilities": ["measure_battery", "measure_temperature"]
+}
+```
+
+**Incorrect:**
+```json
+{
+  "capabilities": ["measure_battery", "alarm_battery", "measure_temperature"]
+}
+```
+
+### Battery Type Specification
+
+All battery devices MUST specify the `energy.batteries` array:
+
+```json
+{
+  "energy": {
+    "batteries": ["AAA", "AAA"]
+  }
+}
+```
+
+**Valid Battery Types:**
+- `LS14250`, `C`, `AA`, `AAA`, `AAAA`
+- `A23`, `A27`, `PP3`
+- `CR123A`, `CR2`, `CR1632`, `CR2032`, `CR2430`, `CR2450`, `CR2477`, `CR3032`, `CR14250`
+- `INTERNAL`, `OTHER`
+
+---
+
+## 💡 Light Best Practices (SDK Official)
+
+### Device Class Selection
+
+| Use Case | Device Class |
+|----------|--------------|
+| Light bulbs, LED strips | `light` |
+| Smart plugs, wall outlets | `socket` |
+| Multi-purpose modules | `socket` (user can change) |
+
+### Capability Coupling (onoff + dim)
+
+Use `registerMultipleCapabilityListener` to debounce onoff+dim:
+
+```javascript
+this.registerMultipleCapabilityListener(['onoff', 'dim'], async ({ onoff, dim }) => {
+  if (dim > 0 && onoff === false) {
+    await device.turnOff();
+  } else if (dim <= 0 && onoff === true) {
+    await device.turnOn();
+  } else {
+    await device.setOnOffAndDim({ onoff, dim });
+  }
+}, 500); // 500ms debounce
+```
+
+### setOnDim Capability Option
+
+```json
+{
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": true
+    }
+  }
+}
+```
+
+---
+
+## 📊 Capability Options Reference
+
+### All Capabilities
+| Option | Description |
+|--------|-------------|
+| `title` | Custom title (2-3 words max) |
+| `preventInsights` | Disable Insights generation |
+| `preventTag` | Disable Flow Tag generation |
+
+### Boolean Capabilities (`onoff`, `alarm_*`)
+| Option | Description |
+|--------|-------------|
+| `insightsTitleTrue` | Timeline title when true |
+| `insightsTitleFalse` | Timeline title when false |
+| `titleTrue` | Sensor UI title when true |
+| `titleFalse` | Sensor UI title when false |
+
+### Number Capabilities (`measure_*`)
+| Option | Description |
+|--------|-------------|
+| `units` | Unit string (e.g., "°C") |
+| `decimals` | Decimal places in UI |
+| `min` | Minimum value |
+| `max` | Maximum value |
+| `step` | Step size |
+
+### Zone Activity (Alarms)
+| Option | Description |
+|--------|-------------|
+| `zoneActivity` | `true`/`false` - trigger zone activity |
+
+---
+
+## 🎨 UI Components Reference
+
+| Component | Type | Capabilities |
+|-----------|------|--------------|
+| `toggle` | boolean | `onoff` |
+| `slider` | number | `dim`, `volume_set` |
+| `sensor` | any | `measure_*`, `alarm_*` |
+| `thermostat` | number | `target_temperature` + `measure_temperature` |
+| `color` | number | `light_hue`, `light_saturation`, `light_temperature` |
+| `battery` | number | `measure_battery` OR `alarm_battery` |
+| `picker` | enum | `thermostat_mode` |
+| `button` | boolean | `button`, `volume_up` |
+| `null` | hidden | Any capability to hide |
+
+---
+
+## 🔧 Device API Methods
+
+### Capability Management
+```javascript
+// Set capability value
+await this.setCapabilityValue('measure_temperature', 22.5);
+
+// Listen for capability changes from user/Flow
+this.registerCapabilityListener('onoff', async (value, opts) => {
+  // Send command to device
+});
+
+// Multiple capabilities (debounced)
+this.registerMultipleCapabilityListener(['dim', 'light_hue'], async (values, opts) => {
+  // Combined handling
+}, 500);
+
+// Add/remove capabilities dynamically
+await this.addCapability('measure_humidity');
+await this.removeCapability('alarm_battery');
+```
+
+### Device Status
+```javascript
+// Availability
+await this.setAvailable();
+await this.setUnavailable('Device offline');
+
+// Warning (persistent until unset)
+await this.setWarning('Low battery');
+await this.unsetWarning();
+
+// Last seen (Homey v12.6.1+)
+this.setLastSeenAt();
+```
+
+### Storage
+```javascript
+// Settings (user-visible)
+const value = this.getSetting('poll_interval');
+await this.setSettings({ poll_interval: 60 });
+
+// Store (internal, hidden)
+const cached = this.getStoreValue('last_state');
+await this.setStoreValue('last_state', state);
+await this.unsetStoreValue('old_key');
 ```
 
 ---
