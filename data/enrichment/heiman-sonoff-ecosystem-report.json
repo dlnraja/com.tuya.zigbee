@@ -1,0 +1,121 @@
+{
+  "timestamp": "2025-12-03T13:20:39.522Z",
+  "heiman": {
+    "totalEntries": 148,
+    "added": 40,
+    "skipped": 108,
+    "categories": {
+      "smokeDetectors": {
+        "added": 5,
+        "skipped": 15
+      },
+      "coDetectors": {
+        "added": 3,
+        "skipped": 11
+      },
+      "gasDetectors": {
+        "added": 4,
+        "skipped": 10
+      },
+      "waterLeakSensors": {
+        "added": 2,
+        "skipped": 10
+      },
+      "sirens": {
+        "added": 1,
+        "skipped": 11
+      },
+      "contactSensors": {
+        "added": 3,
+        "skipped": 8
+      },
+      "motionSensors": {
+        "added": 3,
+        "skipped": 8
+      },
+      "climateSensors": {
+        "added": 7,
+        "skipped": 4
+      },
+      "emergencyButtons": {
+        "added": 1,
+        "skipped": 10
+      },
+      "remoteControls": {
+        "added": 1,
+        "skipped": 8
+      },
+      "airQuality": {
+        "added": 2,
+        "skipped": 3
+      },
+      "smartPlugs": {
+        "added": 2,
+        "skipped": 4
+      },
+      "doorbells": {
+        "added": 2,
+        "skipped": 3
+      },
+      "gateways": {
+        "added": 4,
+        "skipped": 3
+      }
+    }
+  },
+  "sonoff": {
+    "totalEntries": 100,
+    "added": 50,
+    "skipped": 50,
+    "categories": {
+      "buttons": {
+        "added": 0,
+        "skipped": 6
+      },
+      "tempHumidity": {
+        "added": 2,
+        "skipped": 7
+      },
+      "motion": {
+        "added": 0,
+        "skipped": 5
+      },
+      "contact": {
+        "added": 0,
+        "skipped": 6
+      },
+      "water": {
+        "added": 0,
+        "skipped": 4
+      },
+      "presence": {
+        "added": 1,
+        "skipped": 2
+      },
+      "miniSwitches": {
+        "added": 10,
+        "skipped": 0
+      },
+      "wallSwitches": {
+        "added": 9,
+        "skipped": 0
+      },
+      "smartPlugs": {
+        "added": 8,
+        "skipped": 6
+      },
+      "climate": {
+        "added": 6,
+        "skipped": 2
+      },
+      "gateways": {
+        "added": 12,
+        "skipped": 10
+      },
+      "sirens": {
+        "added": 2,
+        "skipped": 2
+      }
+    }
+  }
+}
