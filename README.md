@@ -1,6 +1,6 @@
 # 🌐 Universal Zigbee Device App for Homey
 
-![Version](https://img.shields.io/badge/version-5.3.14-blue)
+![Version](https://img.shields.io/badge/version-5.3.68-blue)
 ![Devices](https://img.shields.io/badge/devices-4217+-green)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
 ![License](https://img.shields.io/badge/license-GPL--3.0-red)
@@ -28,7 +28,7 @@
 | **Enrichment Scripts** | 50+ |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2025-12-02 |
+| **Last Updated** | 2025-12-04 |
 | **Data Sources** | 7 (auto-updated daily) |
 
 ### 📦 Top 15 Drivers by Device IDs
@@ -53,15 +53,15 @@
 
 ---
 
-## 🚀 Latest Updates - v5.3.14
+## 🚀 Latest Updates - v5.3.68
 
 ### ✨ Recent Features
-- **v5.3.14** - MEGA REORGANIZATION: 57 drivers fixed, 4217 IDs, daily auto-discovery
-- **v5.3.13** - CRITICAL BUG FIXES: Wireless button, rain sensor, curtain motor
-- **v5.3.12** - Climax Technology security devices (13 models)
-- **v5.3.11** - Worldwide Zigbee brands database (50+ brands)
-- **v5.3.10** - 2000+ IDs milestone from Z2M brand files
-- **v5.3.9** - MEGA source fetch enrichment
+- **v5.3.68** - FIX: Phantom devices + notification spam stopped
+- **v5.3.67** - Simplified changelog messages
+- **v5.3.66** - FIX: Curtain motor capability migration
+- **v5.3.65** - MASSIVE REFACTOR: 47+ drivers migrated to HybridBase classes
+- **v5.3.62** - FIX: Invalid capability errors resolved
+- **v5.3.61** - FIX: Memory leak + MaxListeners warnings
 
 ### 📁 Data Sources
 - ✅ Zigbee2MQTT (tuya.ts + brand files)
@@ -249,9 +249,10 @@ et tous les testeurs de la communauté Homey.
 ### 🏠 Homey Platform
 | | |
 |---|---|
-| **App Store** | [homey.app/a/com.dlnraja.tuya.zigbee/](https://homey.app/a/com.dlnraja.tuya.zigbee/) |
-| **Test App** | [homey.app/a/com.dlnraja.tuya.zigbee/test/](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) |
-| **Forum** | [community.homey.app](https://community.homey.app/) |
+| **App Store** | [Universal Tuya Zigbee](https://homey.app/a/com.dlnraja.tuya.zigbee/) |
+| **Test App** | [Universal Tuya Zigbee (Test)](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) |
+| **Forum** | [Community Thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352) |
+| **Device Finder** | [Smart Device Finder](https://dlnraja.github.io/com.tuya.zigbee/) |
 
 ### 💻 Development
 | | |
@@ -304,6 +305,44 @@ This project uses data from various open-source projects. All licenses are respe
 
 ---
 
-**Made with ❤️ by the Zigbee community**
+---
 
-*Last updated: 2025-11-29*
+## ☕ Support This Project
+
+This app is developed in my free time, powered by passion and coffee!
+
+If you find it useful and want to support continued development:
+
+| Method | Link |
+|--------|------|
+| **PayPal** | [💳 @dlnraja](https://paypal.me/dlnraja) |
+| **Revolut** | [💱 Revolut.Me](https://revolut.me/dylanoul) |
+
+💡 **100% optional** — Your feedback and bug reports are equally valuable!
+
+---
+
+## 📩 Report Issues / Send Diagnostics
+
+### Method 1: From Homey App
+1. Go to **Settings → Apps → Universal Tuya Zigbee**
+2. Click **Send Diagnostics Report**
+3. Add a description of your issue
+
+### Method 2: GitHub Issues
+1. Go to [GitHub Issues](https://github.com/dlnraja/com.tuya.zigbee/issues)
+2. Click **New Issue**
+3. Include: Device model, manufacturerName, error messages
+
+### What to include:
+- Device name and model number
+- `manufacturerName` (e.g., `_TZE200_xxx`)
+- `modelId` (e.g., `TS0601`)
+- Error messages from logs
+- Screenshot if applicable
+
+---
+
+**Made with ❤️ by Dylan Rajasekaram & the Zigbee community**
+
+*Last updated: 2025-12-04*
