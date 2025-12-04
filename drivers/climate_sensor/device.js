@@ -97,12 +97,15 @@ class ClimateSensorDevice extends HybridSensorBase {
   }
 
   /**
-   * Override onTuyaStatus for additional climate-specific logging
+   * v5.3.82: Override onTuyaStatus for additional climate-specific logging
    */
   onTuyaStatus(status) {
-    this.log('[CLIMATE] 📥 Tuya data received!');
+    this.log('[CLIMATE] ╔════════════════════════════════════════════════════════╗');
+    this.log('[CLIMATE] ║ 📥 TUYA DATA RECEIVED!                                 ║');
+    this.log('[CLIMATE] ╚════════════════════════════════════════════════════════╝');
+    this.log('[CLIMATE] Raw status:', JSON.stringify(status));
 
-    // Call parent handler
+    // Call parent handler (now properly defined in HybridSensorBase!)
     super.onTuyaStatus(status);
 
     // Log current capability values after processing
@@ -110,7 +113,11 @@ class ClimateSensorDevice extends HybridSensorBase {
       const temp = this.getCapabilityValue('measure_temperature');
       const hum = this.getCapabilityValue('measure_humidity');
       const bat = this.getCapabilityValue('measure_battery');
-      this.log(`[CLIMATE] 📊 Current values: temp=${temp}°C, hum=${hum}%, bat=${bat}%`);
+      this.log('[CLIMATE] ╔════════════════════════════════════════════════════════╗');
+      this.log(`[CLIMATE] ║ 📊 Temperature: ${temp !== null ? temp + '°C' : 'waiting...'}`);
+      this.log(`[CLIMATE] ║ 💧 Humidity:    ${hum !== null ? hum + '%' : 'waiting...'}`);
+      this.log(`[CLIMATE] ║ 🔋 Battery:     ${bat !== null ? bat + '%' : 'waiting...'}`);
+      this.log('[CLIMATE] ╚════════════════════════════════════════════════════════╝');
     }, 100);
   }
 }
