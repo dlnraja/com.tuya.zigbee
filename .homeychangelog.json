@@ -1,4 +1,8 @@
 {
+  "5.3.95": {
+    "en": "🔧 v5.3.95 - FIX Switch Capability Mismatch\n\n**FIX:** 'Missing Capability Listener: onoff.gang2' error\n\n**Cause:** HybridSwitchBase used 'onoff.2' but driver.compose.json defined 'onoff.gang2'\n\n**Fixed:** All switch capability names now match between device.js and driver.compose.json\n\n**For users:** Re-pair your multi-gang switches after updating.",
+    "fr": "🔧 v5.3.95 - FIX Erreur Capabilities Switch\n\nCorrection erreur 'Missing Capability Listener'. Ré-appairez vos switches multi-gang."
+  },
   "5.3.94": {
     "en": "🐛 v5.3.94 - Critical Bug Fixes\n\n**FIX #1:** Double division bug - Temperature showing 0.22 instead of 22.3°C, Humidity showing 0.5 instead of 50%\n\n**FIX #2:** SOS Emergency Button error - 'Invalid Capability: alarm_generic' - replaced with alarm_tamper\n\n**Affected devices:** All climate sensors, motion sensors with temp/humidity, SOS buttons",
     "fr": "🐛 v5.3.94 - Corrections Bugs Critiques\n\nFIX: Bug double division température/humidité. FIX: Erreur alarm_generic bouton SOS."
