@@ -1,4 +1,8 @@
 {
+  "5.3.56": {
+    "en": "🔧 v5.3.56 - SDK3 COMPATIBILITY FIX\n\n**Bug Reports:**\n- Curtain motors: 'tuyaCluster.dataRequest is not a function'\n- Rain sensors: Time sync failing\n\n**Root Cause:**\nHomey SDK3 doesn't provide `dataRequest()` method on Tuya cluster. Code was calling non-existent methods.\n\n**Fix Applied:**\n- Added proper typeof checks before calling dataRequest\n- Added fallback methods: setData(), sendCommand()\n- Created _buildTuyaPayload() helper for SDK3 compatibility\n- TuyaDPManager_Enhanced: Fixed requestDP method\n- TuyaSpecificClusterDevice: Fixed sendTuyaCommand method\n\n**Impact:**\n- Curtain motors now work with TS0601 protocol\n- Rain sensors time sync no longer crashes\n- All Tuya DP commands now have proper fallbacks",
+    "fr": "🔧 v5.3.56 - FIX COMPATIBILITÉ SDK3\n\nFix pour 'dataRequest is not a function' sur curtain motors et rain sensors.\nAjout de fallbacks pour SDK3: setData(), sendCommand()."
+  },
   "5.3.55": {
     "en": "🔧 v5.3.55 - FIX ZG-204ZM PAIRING\n\n**Bug Report:**\nUser reported ZG-204ZM (_TZE200_rhgsbacq) is added as 'generic zigbee' instead of motion sensor.\n\n**Root Cause:**\nFingerprint `_TZE200_rhgsbacq` was duplicated in 5 drivers! Homey couldn't decide which driver to use.\n\n**Fix Applied:**\nRemoved fingerprint from 4 incorrect drivers:\n- climate_sensor\n- presence_sensor_radar\n- soil_sensor\n- weather_station_outdoor\n\n**Kept in:**\n- motion_sensor_radar_mmwave (correct driver for ZG-204ZM)\n\n**Impact:**\n- ZG-204ZM now pairs correctly as radar motion sensor\n- No more 'generic zigbee' pairing",
     "fr": "🔧 v5.3.55 - FIX APPAIRAGE ZG-204ZM\n\nFingerprint _TZE200_rhgsbacq supprimé de 4 drivers incorrects.\nMaintenant uniquement dans motion_sensor_radar_mmwave."
