@@ -1,18 +1,21 @@
 'use strict';
 
-const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
+const { AutoAdaptiveDevice } = require('../../lib/dynamic');
 const DeviceFingerprintDB = require('../../lib/tuya/DeviceFingerprintDB');
 
 /**
- * Climate Sensor Device - v5.2.91 ULTRA DEBUG VERSION
+ * Climate Sensor Device - v5.3.58 AUTO-ADAPTIVE VERSION
+ *
+ * NOW USES AutoAdaptiveDevice for guaranteed data reception!
  *
  * CRITICAL: TS0601/_TZE devices have PHANTOM ZCL clusters!
  * They advertise temperatureMeasurement, relativeHumidity, powerConfiguration
  * but these clusters DON'T RESPOND → Timeout errors!
  *
+ * v5.3.58: Switched to AutoAdaptiveDevice for multi-path DP listening
  * v5.2.91: Added comprehensive debug logging throughout
  */
-class ClimateSensorDevice extends BaseHybridDevice {
+class ClimateSensorDevice extends AutoAdaptiveDevice {
 
   // Force battery powered
   get mainsPowered() { return false; }

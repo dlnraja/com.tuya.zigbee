@@ -1,9 +1,11 @@
 'use strict';
 
-const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
+const { AutoAdaptiveDevice } = require('../../lib/dynamic');
 
 /**
- * Soil Sensor Device - Enhanced TS0601 Support
+ * Soil Sensor Device - v5.3.58 AUTO-ADAPTIVE VERSION
+ *
+ * NOW USES AutoAdaptiveDevice for guaranteed data reception!
  *
  * Supported Manufacturers:
  * - _TZE284_oitavov2 (Primary)
@@ -11,16 +13,16 @@ const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
  *
  * Protocol: Tuya DataPoints (DP) over cluster 0xEF00
  *
- * Known DP Mappings (varies by manufacturer):
- * - DP 3: Temperature (value / 10)
- * - DP 4: Humidity / Soil Moisture (%)
- * - DP 5: Temperature alt (value / 10)
- * - DP 6: Humidity alt (%)
- * - DP 7: Soil moisture (%)
- * - DP 14/15: Battery (%)
- * - DP 101: Battery alt (%)
+ * Known DP Mappings (from Zigbee2MQTT):
+ * - DP 3: Soil Moisture (%)
+ * - DP 5: Temperature (value / 10)
+ * - DP 9: Temperature unit
+ * - DP 14: Battery state (enum)
+ * - DP 15: Battery (%)
+ *
+ * v5.3.58: Switched to AutoAdaptiveDevice for multi-path DP listening
  */
-class SoilSensorDevice extends BaseHybridDevice {
+class SoilSensorDevice extends AutoAdaptiveDevice {
 
   // Force mains powered = false for soil sensors
   get mainsPowered() { return false; }
