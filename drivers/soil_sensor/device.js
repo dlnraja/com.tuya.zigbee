@@ -17,35 +17,37 @@ class SoilSensorDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.3.97: COMPLETE DP mappings from Z2M research
-   * Note: Temperature uses /100 (not /10) based on user reports!
+   * v5.3.99: CORRECTED from ZHA quirks
+   * Source: https://community.home-assistant.io/t/troubleshooting-tze284-temp-humid-sensor-custom-quirk-in-zha/828046
+   *
+   * CRITICAL: DP 3 = Soil Moisture, DP 5 = Temperature (ZHA SoilManufCluster)
+   * Converter uses x*100 which means raw values are in whole units
    */
   get dpMappings() {
     return {
       // ═══════════════════════════════════════════════════════════════════
-      // SOIL TEMPERATURE (DP 3) - /100 based on HA community feedback
+      // v5.3.99: CORRECTED FROM ZHA QUIRKS
+      // DP 3 = SOIL MOISTURE (not temperature!)
+      // DP 5 = TEMPERATURE (not moisture!)
       // ═══════════════════════════════════════════════════════════════════
-      3: { capability: 'measure_temperature', divisor: 100 },
+      3: { capability: 'measure_humidity', divisor: 1 },       // Soil Moisture %
+      5: { capability: 'measure_temperature', divisor: 10 },   // Soil Temperature
 
       // ═══════════════════════════════════════════════════════════════════
-      // SOIL MOISTURE (DP 5) - Value in 0.1% units, so /10
+      // BATTERY (DP 4, 15) - ZHA quirk shows x*2 multiplier!
+      // Device reports HALF the actual battery percentage
       // ═══════════════════════════════════════════════════════════════════
-      5: { capability: 'measure_humidity', divisor: 10 },
+      4: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(v * 2, 100) },
+      15: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(v * 2, 100) },
+      102: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(v * 2, 100) },
 
       // ═══════════════════════════════════════════════════════════════════
-      // BATTERY (DP 4, 15, 102)
+      // ADDITIONAL DPs
       // ═══════════════════════════════════════════════════════════════════
-      4: { capability: 'measure_battery', divisor: 1 },
-      15: { capability: 'measure_battery', divisor: 1 },
-      102: { capability: 'measure_battery', divisor: 1 }, // Some models
+      110: { capability: null, setting: 'unknown_110' },
 
       // ═══════════════════════════════════════════════════════════════════
-      // ADDITIONAL DPs (from Z2M pull request)
-      // ═══════════════════════════════════════════════════════════════════
-      110: { capability: null, setting: 'unknown_110' }, // Unknown - might be sensor EC or other
-
-      // ═══════════════════════════════════════════════════════════════════
-      // BUTTON PRESS (if device has button)
+      // BUTTON PRESS
       // ═══════════════════════════════════════════════════════════════════
       101: { capability: 'button', transform: () => true },
     };

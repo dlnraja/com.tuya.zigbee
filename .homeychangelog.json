@@ -1,4 +1,8 @@
 {
+  "5.3.99": {
+    "en": "🔬 v5.3.99 - ZHA Quirks Analysis\n\n**Source:** HA Community ZHA Quirks thread\n\n**BATTERY FIX (ALL SENSORS):**\n• Device reports HALF the actual battery %\n• Now multiplied by 2 (max 100%)\n• Affects: climate sensors, soil sensors, presence sensors\n\n**SOIL SENSOR FIX:**\n• DP 3 = Soil MOISTURE (was incorrectly mapped to temperature)\n• DP 5 = Soil TEMPERATURE (was incorrectly mapped to moisture)\n• Values now display correctly!\n\n**DP Corrections:**\n| Device | DP | Before | After |\n|--------|----|---------|---------|\n| All | 4 | Battery raw | Battery × 2 |\n| Soil | 3 | Temperature | Moisture |\n| Soil | 5 | Moisture | Temperature |",
+    "fr": "🔬 v5.3.99 - Analyse ZHA Quirks\n\nFix batterie (×2) et capteur sol (DP3=humidité, DP5=température)."
+  },
   "5.3.98": {
     "en": "🕐 v5.3.98 - FIX Timezone Issue\n\n**Based on Z2M Discussion #26036:**\nUser reported 'hour is not good - shows sun time not Paris UTC'\n\n**FIX:**\n• Time sync now sends BOTH formats:\n  - DP 0x24: Local time (year, month, day, hour, minute, second, weekday)\n  - DP 0x1C: UTC timestamp + timezone offset in minutes\n• Logs show timezone offset (e.g., UTC+1 for Paris)\n• Climate monitors should now display correct local time\n\n**For _TZE284_vvmbj46n users:**\n1. Update to v5.3.98\n2. Re-pair the climate monitor\n3. Wait for device to wake up and receive time sync\n4. Check the display - should show correct Paris time",
     "fr": "🕐 v5.3.98 - FIX Problème Fuseau Horaire\n\nBasé sur Z2M Discussion #26036. Time sync envoie maintenant l'offset UTC. Les capteurs climatiques afficheront l'heure locale correcte."

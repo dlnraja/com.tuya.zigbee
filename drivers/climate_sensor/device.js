@@ -56,9 +56,10 @@ class ClimateSensorDevice extends HybridSensorBase {
       5: { capability: 'measure_humidity', divisor: 1 },        // Soil moisture %
 
       // ═══════════════════════════════════════════════════════════════════
-      // BATTERY (multiple DPs used by different manufacturers)
+      // BATTERY (DP 4) - v5.3.99: ZHA quirk shows x*2 multiplier!
+      // Device reports HALF the actual battery percentage
       // ═══════════════════════════════════════════════════════════════════
-      4: { capability: 'measure_battery', divisor: 1 },         // Battery % (0-100)
+      4: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(v * 2, 100) },
 
       // ═══════════════════════════════════════════════════════════════════
       // v5.3.97: _TZE284_vvmbj46n SPECIFIC DPs (from Z2M)
