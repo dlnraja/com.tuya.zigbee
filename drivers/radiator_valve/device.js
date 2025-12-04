@@ -1,13 +1,13 @@
 'use strict';
 
-const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
+const { AutoAdaptiveDevice } = require('../../lib/dynamic');
 
 /**
  * RadiatorValveDevice - Unified Hybrid Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class RadiatorValveDevice extends BaseHybridDevice {
+class RadiatorValveDevice extends AutoAdaptiveDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('RadiatorValveDevice initializing...');
