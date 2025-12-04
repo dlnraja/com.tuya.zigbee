@@ -1,12 +1,11 @@
 'use strict';
+const { HybridThermostatBase } = require('../../lib/devices');
 
-const { AutoAdaptiveDevice } = require('../../lib/dynamic');
-
-class Thermostat4chDevice extends AutoAdaptiveDevice {
+class Thermostat4ChDevice extends HybridThermostatBase {
+  get mainsPowered() { return true; }
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
-    this.log('Thermostat 4-Channel initialized');
+    this.log('[THERMOSTAT-4CH] ✅ Ready');
   }
 }
-
-module.exports = Thermostat4chDevice;
+module.exports = Thermostat4ChDevice;

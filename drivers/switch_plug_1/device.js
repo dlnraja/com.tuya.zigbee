@@ -1,12 +1,10 @@
 'use strict';
+const { HybridPlugBase } = require('../../lib/devices');
 
-const { AutoAdaptiveDevice } = require('../../lib/dynamic');
-
-class SwitchPlug1Device extends AutoAdaptiveDevice {
+class SwitchPlug1Device extends HybridPlugBase {
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
-    this.log('Smart Plug 1-Gang initialized');
+    this.log('[SWITCH-PLUG-1] ✅ Ready');
   }
 }
-
 module.exports = SwitchPlug1Device;

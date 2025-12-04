@@ -1,12 +1,11 @@
 'use strict';
+const { HybridSwitchBase } = require('../../lib/devices');
 
-const { AutoAdaptiveDevice } = require('../../lib/dynamic');
-
-class SceneSwitch3Device extends AutoAdaptiveDevice {
+class SceneSwitch3Device extends HybridSwitchBase {
+  get gangCount() { return 3; }
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
-    this.log('Scene Switch 3-Gang initialized');
+    this.log('[SCENE-3] ✅ Ready');
   }
 }
-
 module.exports = SceneSwitch3Device;
