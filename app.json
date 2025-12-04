@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.3.69",
+  "version": "5.3.70",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.3.69: CRITICAL - Prevent phantom device creation at source",
-    "fr": "V5.3.69: CRITIQUE - Empêcher création d'appareils fantômes à la source"
+    "en": "V5.3.70: FIX Tuya DP temperature/humidity + phantom devices",
+    "fr": "V5.3.70: FIX Tuya DP température/humidité + appareils fantômes"
   },
   "category": "appliances",
   "permissions": [],
