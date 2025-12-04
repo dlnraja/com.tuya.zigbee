@@ -173,12 +173,59 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     // v5.3.63: Scan for phantom sub-devices and mark them unavailable
     this._scanForPhantomDevices();
 
-    // ✅ FIX CRITIQUE: Worker migration queue (60s delay)
+    // v5.3.68: Clear old migration queue on startup (prevents notification spam)
+    this._clearMigrationQueue();
+
+    // ✅ FIX CRITIQUE: Worker migration queue (60s delay) - DISABLED in v5.3.68
+    // Migration notifications were confusing users with "undefined → soil_sensor"
+    // Users should delete phantom devices manually instead
+    /*
     setTimeout(() => {
       this.processMigrations().catch(err => {
         this.error('[MIGRATION-WORKER] Error:', err.message);
       });
-    }, 60000); // Wait 60s for Zigbee to be ready
+    }, 60000);
+    */
+  }
+
+  /**
+   * v5.3.68: Clear migration queue to stop notification spam
+   */
+  async _clearMigrationQueue() {
+    try {
+      await this.homey.settings.set('__migration_queue__', []);
+      this.log('[MIGRATION] ✅ Migration queue cleared');
+    } catch (err) {
+      this.log('[MIGRATION] Could not clear queue:', err.message);
+    }
+  }
+
+  /**
+   * v5.3.68: Delete a device programmatically (used by phantom device cleanup)
+   */
+  async deleteDevice(device) {
+    try {
+      const deviceId = device?.getData?.()?.id;
+      if (!deviceId) {
+        this.log('[DELETE] No device ID found');
+        return false;
+      }
+
+      // SDK3: Use the driver's deleteDevice if available
+      const driver = device?.driver;
+      if (driver && typeof driver.getDevice === 'function') {
+        // Unfortunately SDK3 doesn't provide direct device deletion API
+        // Best we can do is mark unavailable and prompt user
+        await device.setUnavailable('❌ Appareil fantôme - supprimez manuellement').catch(() => { });
+        this.log(`[DELETE] Device ${deviceId} marked for manual deletion`);
+        return true;
+      }
+
+      return false;
+    } catch (err) {
+      this.error('[DELETE] Error:', err.message);
+      return false;
+    }
   }
 
   /**
