@@ -408,24 +408,14 @@
   "capabilitiesOptions": {
     "onoff": {
       "title": {
-        "en": "Gang 1"
+        "en": "Gang 1",
+        "fr": "Gang 1"
       }
     },
     "onoff.gang2": {
       "title": {
-        "en": "Gang 2"
-      }
-    },
-    "measure_battery": {
-      "title": {
-        "en": "Battery",
-        "fr": "Batterie"
-      },
-      "preventInsights": false
-    },
-    "onoff.1": {
-      "title": {
-        "en": "Switch 2"
+        "en": "Gang 2",
+        "fr": "Gang 2"
       }
     }
   },
