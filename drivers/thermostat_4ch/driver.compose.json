@@ -5,22 +5,19 @@
   },
   "class": "thermostat",
   "capabilities": [
-    "target_temperature.1",
-    "target_temperature.2",
-    "target_temperature.3",
-    "target_temperature.4",
-    "measure_temperature.1",
-    "measure_temperature.2",
-    "measure_temperature.3",
-    "measure_temperature.4",
-    "thermostat_mode",
-    "measure_battery",
     "onoff",
-    "onoff.1",
-    "onoff.2",
-    "onoff.3",
+    "onoff.ch2",
+    "onoff.ch3",
+    "onoff.ch4",
     "target_temperature",
-    "measure_temperature"
+    "target_temperature.ch2",
+    "target_temperature.ch3",
+    "target_temperature.ch4",
+    "measure_temperature",
+    "measure_temperature.ch2",
+    "measure_temperature.ch3",
+    "measure_temperature.ch4",
+    "thermostat_mode"
   ],
   "zigbee": {
     "manufacturerName": [
