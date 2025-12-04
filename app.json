@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.3.54",
+  "version": "5.3.55",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.3.54: FIX MOTION SENSORS - Multi-path Tuya DP listener for _TZE200_rhgsbacq (ZG-204ZM).",
-    "fr": "V5.3.54: FIX CAPTEURS MOUVEMENT - Listener Tuya DP multi-chemin pour _TZE200_rhgsbacq (ZG-204ZM)."
+    "en": "V5.3.55: FIX ZG-204ZM - Removed duplicate fingerprint from 4 wrong drivers. Now pairs correctly.",
+    "fr": "V5.3.55: FIX ZG-204ZM - Fingerprint dupliqué supprimé de 4 mauvais drivers. Appairage correct maintenant."
   },
   "category": "appliances",
   "permissions": [],
@@ -17989,7 +17989,6 @@
           "_TZE200_r32ctezx",
           "_TZE200_rccxox8p",
           "_TZE200_rhblgy0z",
-          "_TZE200_rhgsbacq",
           "_TZE200_rks0sgb7",
           "_TZE200_rtrmfadk",
           "_TZE200_ryfmq5rl",
@@ -28638,7 +28637,6 @@
           "_TZE200_mrf6vtua",
           "_TZE200_pnyz5qpy",
           "_TZE200_qomxlryd",
-          "_TZE200_rhgsbacq",
           "_TZE200_sbyx0lm6",
           "_TZE200_sfiy5tfs",
           "_TZE200_sfiy8puu",
@@ -32190,7 +32188,6 @@
           "_TZE200_rbbx5mfq",
           "_TZE200_rccxox8p",
           "_TZE200_rhblgy0z",
-          "_TZE200_rhgsbacq",
           "_TZE200_rks0sgb7",
           "_TZE200_rtrmfadk",
           "_TZE200_ryfmq5rl",
@@ -38945,7 +38942,6 @@
           "_TZE200_rbbx5mfq",
           "_TZE200_rccxox8p",
           "_TZE200_rhblgy0z",
-          "_TZE200_rhgsbacq",
           "_TZE200_rks0sgb7",
           "_TZE200_rtrmfadk",
           "_TZE200_ryfmq5rl",
