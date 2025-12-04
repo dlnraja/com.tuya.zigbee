@@ -45,15 +45,15 @@ class ClimateSensorDevice extends HybridSensorBase {
       18: { capability: 'measure_temperature', divisor: 10 },   // Alternative temp DP
 
       // ═══════════════════════════════════════════════════════════════════
-      // HUMIDITY (most common DPs)
+      // HUMIDITY (DP 2) - Standard for TH05Z climate sensors
       // ═══════════════════════════════════════════════════════════════════
       2: { capability: 'measure_humidity', divisor: 1 },        // Standard: direct %
 
       // ═══════════════════════════════════════════════════════════════════
-      // SOIL SENSORS (some climate sensors are actually soil sensors)
+      // v5.4.01: REMOVED soil sensor DPs from climate sensor
+      // Soil sensors should use the soil_sensor driver, not climate_sensor
+      // This prevents confusion between TH05Z (DP 1,2,4) and Soil (DP 3,5,15)
       // ═══════════════════════════════════════════════════════════════════
-      3: { capability: 'measure_temperature', divisor: 10 },    // Soil temperature
-      5: { capability: 'measure_humidity', divisor: 1 },        // Soil moisture %
 
       // ═══════════════════════════════════════════════════════════════════
       // BATTERY (DP 4) - v5.3.99: ZHA quirk shows x*2 multiplier!
