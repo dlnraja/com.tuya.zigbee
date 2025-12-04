@@ -1,27 +1,11 @@
 'use strict';
+const { HybridSwitchBase } = require('../../lib/devices');
 
-const { AutoAdaptiveDevice } = require('../../lib/dynamic');
-
-/**
- * MiniSwitchDevice - Unified Hybrid Driver
- * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
- * Dynamically manages capabilities based on power source
- */
-class MiniSwitchDevice extends AutoAdaptiveDevice {
-
+class ModuleMiniSwitchDevice extends HybridSwitchBase {
+  get gangCount() { return 1; }
   async onNodeInit({ zclNode }) {
-    this.log('MiniSwitchDevice initializing...');
-    
-    // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
-    
-    this.log('MiniSwitchDevice initialized - Power source:', this.powerSource || 'unknown');
-  }
-
-  async onDeleted() {
-    this.log('MiniSwitchDevice deleted');
-    await super.onDeleted().catch(err => this.error(err));
+    await super.onNodeInit({ zclNode });
+    this.log('[MINI-SWITCH] ✅ Ready');
   }
 }
-
-module.exports = MiniSwitchDevice;
+module.exports = ModuleMiniSwitchDevice;

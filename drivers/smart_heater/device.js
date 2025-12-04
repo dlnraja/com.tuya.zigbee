@@ -1,12 +1,12 @@
 'use strict';
+const { HybridThermostatBase } = require('../../lib/devices');
 
-const { AutoAdaptiveDevice } = require('../../lib/dynamic');
-
-class SmartHeaterDevice extends AutoAdaptiveDevice {
+class SmartHeaterDevice extends HybridThermostatBase {
+  get mainsPowered() { return true; }
+  get thermostatCapabilities() { return ['onoff', 'target_temperature', 'measure_temperature']; }
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
-    this.log('Smart Heater initialized');
+    this.log('[HEATER] ✅ Ready');
   }
 }
-
 module.exports = SmartHeaterDevice;
