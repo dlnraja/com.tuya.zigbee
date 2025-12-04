@@ -1,4 +1,8 @@
 {
+  "5.3.88": {
+    "en": "✅ v5.3.88 - STABLE\n\nSame as v5.3.87 - republish for Homey App Store.",
+    "fr": "✅ v5.3.88 - STABLE\n\nIdentique à v5.3.87 - republication."
+  },
   "5.3.87": {
     "en": "✅ v5.3.87 - STABLE RELEASE\n\n**Status:** ✅ STABLE - Recommended version\n\n**What works:**\n• Climate sensors initialize correctly\n• No more phantom devices on new pairing\n• Battery/temperature/humidity data received\n• All 80+ drivers functional\n\n**For users:**\n1. Update to v5.3.87\n2. Delete existing phantom devices (❌ PHANTOM)\n3. Re-pair sensors if needed\n4. Wait 15-60 min for battery sensors to report\n\n**Changelog cleaned:** Old versions now indicate if bugs were fixed later.",
     "fr": "✅ v5.3.87 - VERSION STABLE\n\nVersion recommandée. Capteurs climatiques fonctionnels.\nSupprimez les fantômes, re-pairez si nécessaire."
