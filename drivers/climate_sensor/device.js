@@ -3,7 +3,7 @@
 const { HybridSensorBase } = require('../../lib/devices');
 
 /**
- * Climate Sensor Device - v5.3.70 COMPLETE TUYA DP FIX
+ * Climate Sensor Device - v5.3.85 PHANTOM FIX
  *
  * Uses HybridSensorBase for:
  * - Anti-double init

@@ -3,7 +3,7 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 /**
- * ClimateSensorDriver - v5.3.79 ANTI-PHANTOM FIX
+ * ClimateSensorDriver - v5.3.85 ANTI-PHANTOM FIX
  *
  * CRITICAL: This driver prevents phantom sub-device creation.
  *
@@ -19,7 +19,7 @@ class ClimateSensorDriver extends ZigBeeDriver {
 
   async onInit() {
     this.log('╔══════════════════════════════════════════════════════════════╗');
-    this.log('║    CLIMATE SENSOR DRIVER v5.3.79 - ANTI-PHANTOM FIX         ║');
+    this.log('║    CLIMATE SENSOR DRIVER v5.3.85 - ANTI-PHANTOM FIX         ║');
     this.log('╚══════════════════════════════════════════════════════════════╝');
 
     // Track IEEE addresses to prevent duplicates
