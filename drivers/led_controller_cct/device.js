@@ -1,6 +1,6 @@
 'use strict';
 
-const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
+const { AutoAdaptiveDevice } = require('../../lib/dynamic');
 
 /**
  * LedControllerCctDevice - SDK Compliant Light Driver
@@ -9,7 +9,7 @@ const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
  * as per Homey SDK Best Practices:
  * https://apps.developer.homey.app/the-basics/devices/best-practices/lights
  */
-class LedControllerCctDevice extends BaseHybridDevice {
+class LedControllerCctDevice extends AutoAdaptiveDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('LedControllerCctDevice initializing...');

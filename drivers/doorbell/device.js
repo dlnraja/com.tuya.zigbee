@@ -1,13 +1,13 @@
 'use strict';
 
-const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
+const { AutoAdaptiveDevice } = require('../../lib/dynamic');
 
 /**
  * TuyaDoorbellDevice - Unified Hybrid Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class TuyaDoorbellDevice extends BaseHybridDevice {
+class TuyaDoorbellDevice extends AutoAdaptiveDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('TuyaDoorbellDevice initializing...');

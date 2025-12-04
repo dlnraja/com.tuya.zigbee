@@ -1,6 +1,6 @@
 'use strict';
 
-const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
+const { AutoAdaptiveDevice } = require('../../lib/dynamic');
 
 /**
  * Switch 2-Gang Device - Mains Powered
@@ -10,7 +10,7 @@ const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
  * Protocol: Standard Zigbee OnOff clusters
  * Power: Mains powered (NO battery)
  */
-class SmartSwitch2gangHybridDevice extends BaseHybridDevice {
+class SmartSwitch2gangHybridDevice extends AutoAdaptiveDevice {
 
   // Force mains powered - NO battery management
   get mainsPowered() { return true; }
