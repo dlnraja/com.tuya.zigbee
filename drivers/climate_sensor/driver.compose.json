@@ -7,8 +7,17 @@
   "capabilities": [
     "measure_temperature",
     "measure_humidity",
-    "measure_battery"
+    "measure_battery",
+    "button"
   ],
+  "capabilitiesOptions": {
+    "button": {
+      "title": {
+        "en": "Button",
+        "fr": "Bouton"
+      }
+    }
+  },
   "energy": {
     "batteries": [
       "AAA",
