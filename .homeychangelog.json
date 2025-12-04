@@ -152,8 +152,7 @@
     "fr": "📦 v5.3.34 - Release propre avec changelog correct\n\n- Inclut tous les correctifs v5.3.32-33\n- Fix crash expected_cluster_id_number\n- MEGA enrichissement TS0601\n- Publié via GitHub Actions"
   },
   "5.3.33": {
-    "en": "🔧 v5.3.33 - CRASH FIX: expected_cluster_id_number\n\n**Bug Fixed:**\n- TypeError: expected_cluster_id_number crash\n- Affected: ClimateSensorDevice, TuyaGasSensorTs0601Device\n\n**Root Cause:**\nSDK3 requires NUMERIC cluster IDs, not string names.\n\n**Fixes Applied:**\n- BatteryRouter.js: 'genPowerCfg' → CLUSTER.POWER_CONFIGURATION (1)\n- BaseHybridDevice.js: 'relativeHumidity' → 1029\n\n**Technical:**\nHomey SDK3 zigbee-clusters requires numeric cluster IDs in registerCapability() calls.",
-    "fr": "🔧 v5.3.33 - FIX CRASH: expected_cluster_id_number\n\n- Crash TypeError corrigé\n- SDK3 requiert des IDs cluster numériques\n- BatteryRouter et BaseHybridDevice corrigés"
+    "en": "idbygghbb b"
   },
   "5.3.32": {
     "en": "🚀 v5.3.32 - MEGA TS0601 ENRICHMENT\n\n**Massive Database Update:**\n- 1210 devices from Zigbee2MQTT analyzed\n- 50+ drivers enriched\n- 3000+ manufacturer IDs added\n\n**Coverage by Category:**\n- Climate Sensors: 1438 IDs (maximum coverage!)\n- Switches: 651+ IDs (1-6 gang)\n- Soil Sensors: 616 IDs\n- Presence/Radar: 100+ IDs\n- Thermostats/TRV: 121 IDs\n- Plugs/Energy: 280+ IDs\n- Motion Sensors: 91 IDs\n\n**TS0601 Categories Covered:**\n✅ Climate, Soil, Thermostats, TRV\n✅ Curtains, Presence, Motion, Dimmers\n✅ Multi-gang switches (1-6), Gas sensors\n✅ LED controllers, SOS buttons\n\n**Scripts Created:**\n- MEGA_TS0601_ENRICHMENT.js\n- ADDITIONAL_ENRICHMENT.js",
@@ -1758,7 +1757,7 @@
     "fr": "SYSTEME CORRECTION URGENCE - Reparation auto migrations au demarrage. Collecte DP forcee pour appareils silencieux. Correction capabilities pour tous les devices problematiques.",
     "en": "EMERGENCY FIX SYSTEM - Auto-repair stuck migrations on startup. Force DP collection for silent devices. Fix capabilities for _TZE284_vvmbj46n, _TZE284_oitavov2, _TZE200_rhgsbacq, _TZ3000_0dumfk2z. DeviceFingerprintDB integration."
   },
-  "5.3.33": {
-    "en": "idbygghbb b"
+  "5.3.84": {
+    "en": "fix duplicate device"
   }
 }
