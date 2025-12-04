@@ -1,4 +1,8 @@
 {
+  "5.3.86": {
+    "en": "🔧 v5.3.86 - FIX CRITICAL BUG\n\n**Fixed:**\n• TypeError: onMapDeviceClass is not a function\n• Climate sensors now initialize properly\n• All devices should receive data now\n\n**Cause:**\nThe onMapDeviceClass override in driver.js was broken.\nsuper.onMapDeviceClass() doesn't exist in ZigBeeDriver.\n\n**For users:**\nUpdate to v5.3.86 - climate sensors should work immediately.",
+    "fr": "🔧 v5.3.86 - FIX BUG CRITIQUE\n\nCorrection du TypeError onMapDeviceClass.\nLes capteurs climatiques s'initialisent correctement maintenant."
+  },
   "5.3.85": {
     "en": "🚨 v5.3.85 - AGGRESSIVE PHANTOM FIX\n\n**Critical Fix:**\nPhantom devices now COMPLETELY BLOCKED from initializing.\n\n**What's Fixed:**\n• Phantom devices throw error immediately on init\n• Prevents memory leaks (51+ listeners warning)\n• Prevents CPU/RAM waste from phantom device loops\n• Clear error message: PHANTOM_DEVICE_BLOCKED\n\n**Root Cause:**\nSDK3 cannot delete devices programmatically.\nPrevious 'auto-delete' was misleading - it only marked unavailable.\n\n**For users with existing phantoms:**\n1. Update to v5.3.85\n2. Phantoms will show '❌ PHANTOM' and stop working\n3. DELETE ALL phantom devices manually from Homey app\n4. Re-pair your sensor (only 1 device created)\n\n**Technical:**\n• HybridSensorBase throws Error on phantom detect\n• This stops all initialization and event listeners\n• No more MaxListenersExceededWarning",
     "fr": "🚨 v5.3.85 - FIX PHANTOM AGRESSIF\n\nLes appareils fantômes sont maintenant COMPLÈTEMENT BLOQUÉS.\nIls affichent '❌ PHANTOM' et doivent être supprimés manuellement.\nCorrige les fuites mémoire et les warnings de listeners."

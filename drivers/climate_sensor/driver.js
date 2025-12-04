@@ -73,17 +73,10 @@ class ClimateSensorDriver extends ZigBeeDriver {
     return filteredDevices;
   }
 
-  /**
-   * v5.3.79: Track registered devices
-   */
-  onMapDeviceClass(device) {
-    const ieee = device?.settings?.zb_ieee_address || device?.data?.ieeeAddress;
-    if (ieee) {
-      this._registeredIeeeAddresses?.add(ieee);
-      this.log(`[REGISTER] Tracking IEEE: ${ieee}`);
-    }
-    return super.onMapDeviceClass(device);
-  }
 }
+
+// NOTE: Removed onMapDeviceClass override - it was causing:
+// TypeError: (intermediate value).onMapDeviceClass is not a function
+// The default ZigBeeDriver behavior is sufficient.
 
 module.exports = ClimateSensorDriver;
