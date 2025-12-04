@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.3.75",
+  "version": "5.3.76",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.3.75: 7 dimming strategies for LED (Issue #83)",
-    "fr": "V5.3.75: 7 stratégies dimming pour LED (Issue #83)"
+    "en": "V5.3.76: Merge JohanBendz PRs + 7 dimming strategies",
+    "fr": "V5.3.76: Fusion PRs JohanBendz + 7 stratégies dimming"
   },
   "category": "appliances",
   "permissions": [],
@@ -14737,7 +14737,8 @@
           "_TZ3000_j61x9rxn",
           "_TZ3290_8xzb2ghn",
           "_TZ3290_rlkmy85q4pzoxobl",
-          "_TZ3290_uc8lwbi2"
+          "_TZ3290_uc8lwbi2",
+          "_TZ3000_an5rjiwd"
         ],
         "productId": [
           "ERS-10TZBVK-AA",
@@ -17367,7 +17368,8 @@
           "_TZE200_dcrrztpa",
           "_TZE200_dq8bu0pt",
           "_TZE200_e3oitdyu",
-          "_TZE200_eevqq1uv"
+          "_TZE200_eevqq1uv",
+          "_TZE204_lawxy9e2"
         ],
         "productId": [
           "TS0601"
@@ -25164,7 +25166,8 @@
           "_TZ3210_trm3l2aw",
           "_TZ3210_zrvxvydd",
           "_TZE200_pay2byax",
-          "_TZb210_endmggws"
+          "_TZb210_endmggws",
+          "_TZ3210_eejm8dcr"
         ],
         "endpoints": {
           "1": {
@@ -28768,7 +28771,10 @@
           "_TZE204_ztqnh5cg",
           "_TZE284_4qznlkbu",
           "_TZE284_n5q2t8na",
-          "_TZ3210_fkzihax8"
+          "_TZ3210_fkzihax8",
+          "_TZE200_rhgsbacq",
+          "_TZE200_kb5noeto",
+          "_TZE200_pay2byax"
         ],
         "productId": [
           "ATMS1602Z",
