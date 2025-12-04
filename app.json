@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.3.84",
+  "version": "5.3.85",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.3.82: COMPLETE FIX - All drivers + onTuyaStatus handler",
-    "fr": "V5.3.82: FIX COMPLET - Tous drivers + handler onTuyaStatus"
+    "en": "V5.3.85: AGGRESSIVE PHANTOM FIX - Blocks phantom device initialization",
+    "fr": "V5.3.85: FIX PHANTOM AGRESSIF - Bloque l'initialisation des appareils fantômes"
   },
   "category": "appliances",
   "permissions": [],
