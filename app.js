@@ -1,5 +1,10 @@
 'use strict';
 
+// v5.3.62: Prevent MaxListenersExceededWarning for apps with many devices
+// This is a global fix that applies to ALL EventEmitters in the app
+const { EventEmitter } = require('events');
+EventEmitter.defaultMaxListeners = 50;
+
 const Homey = require('homey');
 const { registerCustomClusters } = require('./lib/zigbee/registerClusters');
 const FlowCardManager = require('./lib/flow/FlowCardManager');
@@ -68,7 +73,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     this.log('Universal Tuya Zigbee App is initializing...');
     this.log(`📊 Mode: ${this.developerDebugMode ? 'DEVELOPER (verbose)' : 'PRODUCTION (minimal logs)'}`);
     this.log(`🤖 Smart-Adapt: ${this.experimentalSmartAdapt ? 'EXPERIMENTAL (modifies)' : 'READ-ONLY (safe)'}`);
-
+    this.log(`🔧 MaxListeners: ${EventEmitter.defaultMaxListeners} (prevents warnings with many devices)`);
 
     // Initialize CapabilityManager for safe capability creation
     this.capabilityManager = new CapabilityManager(this.homey);
