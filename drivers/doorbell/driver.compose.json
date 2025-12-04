@@ -100,29 +100,7 @@
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
-    },
-    "devices": [
-      {
-        "manufacturerName": "HEIMAN",
-        "modelId": "HS2DB"
-      },
-      {
-        "manufacturerName": "HEIMAN",
-        "modelId": "HS2DB-E"
-      },
-      {
-        "manufacturerName": "HEIMAN",
-        "modelId": "HS2DB-E-3.0"
-      },
-      {
-        "manufacturerName": "HEIMAN",
-        "modelId": "DoorBell-N"
-      },
-      {
-        "manufacturerName": "HEIMAN",
-        "modelId": "DoorBell-EM"
-      }
-    ]
+    }
   },
   "settings": [
     {
