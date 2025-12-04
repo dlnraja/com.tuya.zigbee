@@ -1,33 +1,39 @@
 'use strict';
 
-const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
+const { AutoAdaptiveDevice } = require('../../lib/dynamic');
 
 /**
- * GENERIC TUYA DEVICE (TS0601)
+ * GENERIC TUYA DEVICE (TS0601) - v5.3.57
  *
  * Fallback driver for unknown Tuya TS0601 devices.
+ * NOW USES AutoAdaptiveDevice for full auto-discovery!
+ *
  * Features:
  * - Auto-discovery of Data Points (DPs)
+ * - DYNAMIC capability creation from DPs
+ * - DYNAMIC flow card registration
  * - Heuristic mapping of DPs to capabilities
  * - Passive listening (battery devices sleep)
  * - Default values to prevent null KPIs
+ * - Self-learning: remembers discoveries across restarts
  *
  * Based on JohanBendz/com.tuya.zigbee analysis
  * Source: https://github.com/JohanBendz/com.tuya.zigbee
  */
-class GenericTuyaDevice extends BaseHybridDevice {
+class GenericTuyaDevice extends AutoAdaptiveDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('');
     this.log('╔═══════════════════════════════════════════════════════════════════╗');
-    this.log('║           GENERIC TUYA TS0601 - AUTO-DISCOVERY v5.3.30            ║');
+    this.log('║      GENERIC TUYA TS0601 - AUTO-ADAPTIVE v5.3.57                  ║');
+    this.log('║      🔄 Dynamic Capability + Flow Card System                     ║');
     this.log('╚═══════════════════════════════════════════════════════════════════╝');
 
     // Mark as unknown device for special handling
     await this.setStoreValue('tuya_unknown', true).catch(() => { });
     await this.setStoreValue('discovery_mode', true).catch(() => { });
 
-    // Initialize parent (handles Tuya EF00 setup)
+    // Initialize AutoAdaptiveDevice (handles Tuya EF00 + dynamic discovery)
     try {
       await super.onNodeInit({ zclNode }).catch(err => this.error('[GENERIC] Parent init error:', err));
     } catch (err) {
@@ -40,18 +46,35 @@ class GenericTuyaDevice extends BaseHybridDevice {
     const model = settings.zb_modelId || 'TS0601';
 
     this.log(`[GENERIC] Device: ${manufacturer} / ${model}`);
-    this.log('[GENERIC] Mode: Auto-discovery + Passive listening');
+    this.log('[GENERIC] Mode: AUTO-ADAPTIVE + Dynamic Discovery');
 
     // Set default values to avoid null KPIs
     await this._setDefaultValues();
 
-    // Setup DP discovery listener
+    // Legacy DP discovery (now handled by AutoAdaptiveDevice, but keep for compatibility)
     this._setupDPDiscovery();
 
     // Request common DPs after delay (for mains-powered devices)
     setTimeout(() => this._requestCommonDPs(), 5000);
 
-    this.log('[GENERIC] ✅ Initialization complete - waiting for device data');
+    // Log auto-adaptive status
+    const status = this.getAutoAdaptiveStatus();
+    this.log('[GENERIC] 🔄 Auto-Adaptive Status:');
+    this.log(`[GENERIC]    Discovered DPs: ${status.discoveries.length}`);
+    this.log(`[GENERIC]    Capabilities: ${status.capabilities.join(', ')}`);
+
+    this.log('[GENERIC] ✅ Initialization complete - auto-adapting to device data');
+  }
+
+  /**
+   * Override: Handle device-specific DP processing
+   */
+  async _handleDeviceSpecificDP(dpId, value, mapping) {
+    // Log discovery for unknown devices
+    this.log(`[GENERIC] 📊 DP${dpId} → ${mapping.capability} = ${value}`);
+
+    // Store discovery timestamp
+    await this.setStoreValue(`dp_${dpId}_discovered`, Date.now()).catch(() => { });
   }
 
   /**
