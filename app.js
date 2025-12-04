@@ -170,6 +170,9 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     const stats = this.capabilityManager.getStats();
     this.log(`📊 Capabilities managed: ${stats.created}`);
 
+    // v5.3.63: Scan for phantom sub-devices and mark them unavailable
+    this._scanForPhantomDevices();
+
     // ✅ FIX CRITIQUE: Worker migration queue (60s delay)
     setTimeout(() => {
       this.processMigrations().catch(err => {
@@ -195,6 +198,80 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
     } catch (err) {
       this.error('[MIGRATION-WORKER] ❌ Error:', err.message);
+    }
+  }
+
+  /**
+   * v5.3.63: Scan all devices for phantom sub-devices and mark them unavailable
+   * Phantom devices have a subDeviceId but shouldn't exist (e.g., climate sensors)
+   */
+  async _scanForPhantomDevices() {
+    try {
+      this.log('[PHANTOM-SCAN] 🔍 Scanning for phantom sub-devices...');
+
+      const drivers = this.homey.drivers.getDrivers();
+      let phantomCount = 0;
+      let realCount = 0;
+
+      // Drivers that should NEVER have sub-devices
+      const noSubDeviceDrivers = [
+        'climate_sensor',
+        'motion_sensor',
+        'contact_sensor',
+        'water_leak_sensor',
+        'smoke_sensor',
+        'gas_sensor',
+        'co_sensor',
+        'plug_smart',
+        'plug_energy_monitor',
+        'bulb_dimmable',
+        'bulb_rgb',
+        'bulb_rgbw',
+        'bulb_white',
+        'bulb_tunable_white',
+        'led_strip',
+        'radiator_valve',
+        'thermostat'
+      ];
+
+      for (const driver of Object.values(drivers)) {
+        const driverId = driver.id || '';
+        const devices = driver.getDevices() || [];
+
+        for (const device of devices) {
+          try {
+            const data = device.getData?.() || {};
+            const hasSubDeviceId = data.subDeviceId !== undefined;
+            const isNoSubDeviceDriver = noSubDeviceDrivers.some(d => driverId.includes(d));
+
+            if (hasSubDeviceId && isNoSubDeviceDriver) {
+              phantomCount++;
+              this.log(`[PHANTOM-SCAN] ⚠️ PHANTOM: ${device.getName?.()} (subDeviceId: ${data.subDeviceId})`);
+
+              // Mark as unavailable with clear message
+              if (typeof device.setUnavailable === 'function') {
+                device.setUnavailable(
+                  `⚠️ Appareil fantôme (subDevice ${data.subDeviceId}). Supprimez cet appareil.`
+                ).catch(() => { });
+              }
+            } else {
+              realCount++;
+            }
+          } catch (err) {
+            // Skip devices that error
+          }
+        }
+      }
+
+      if (phantomCount > 0) {
+        this.log(`[PHANTOM-SCAN] ⚠️ Found ${phantomCount} phantom devices - marked as unavailable`);
+        this.log(`[PHANTOM-SCAN] ✅ ${realCount} real devices OK`);
+        this.log(`[PHANTOM-SCAN] ℹ️ User should DELETE phantom devices from Homey app`);
+      } else {
+        this.log(`[PHANTOM-SCAN] ✅ No phantom devices found (${realCount} devices OK)`);
+      }
+    } catch (err) {
+      this.error('[PHANTOM-SCAN] Error:', err.message);
     }
   }
 
