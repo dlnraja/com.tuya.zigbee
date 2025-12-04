@@ -1,7 +1,11 @@
 {
+  "5.3.90": {
+    "en": "✅ v5.3.90 - FIX 2-CHANNEL DIMMER (Complete)\n\n**Forum Report:** TS1101 shows \"On | Channel 2 | On\" (duplicates)\n\n**Root cause:** Capability names mismatch + missing titles\n\n**Fixed:**\n• Renamed capabilities: onoff.channel2, dim.channel2\n• Added proper titles: \"Channel 1\", \"Channel 2\"\n• Removed unnecessary measure_battery\n• Added Danish translations (da)\n\n**Now shows:** Channel 1 | Brightness 1 | Channel 2 | Brightness 2\n\n**For users:** Re-pair your TS1101 dimmer.",
+    "fr": "✅ v5.3.90 - FIX DIMMER 2 CANAUX (Complet)\n\nCorrection des doublons \"On | Channel 2 | On\".\nRé-appairez votre dimmer TS1101."
+  },
   "5.3.89": {
-    "en": "✅ v5.3.89 - FIX 2-CHANNEL DIMMER\n\n**Forum Report:** TS1101 / _TZ3000_7ysdnebc only shows 1 channel\n\n**Fixed:**\n• Complete rewrite of dimmer_dual_channel driver\n• Channel 1: endpoint 1 (onoff, dim)\n• Channel 2: endpoint 2 (onoff.1, dim.1)\n• Added endpoint 2 bindings in driver config\n\n**For users:**\nRe-pair your TS1101 dimmer after updating.",
-    "fr": "✅ v5.3.89 - FIX DIMMER 2 CANAUX\n\nCorrection du dimmer TS1101 qui n'affichait qu'un seul canal.\nRé-appairez après mise à jour."
+    "en": "⚠️ v5.3.89 - INCOMPLETE FIX\n\n**Issue:** Still showing duplicate \"On\" entries.\n**Fixed in:** v5.3.90",
+    "fr": "⚠️ v5.3.89 - FIX INCOMPLET\n\nCorrigé dans v5.3.90."
   },
   "5.3.88": {
     "en": "✅ v5.3.88 - STABLE\n\nSame as v5.3.87.",

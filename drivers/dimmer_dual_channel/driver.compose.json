@@ -1,14 +1,14 @@
 {
   "name": {
-    "en": "2-Channel Dimmer Module"
+    "en": "2-Channel Dimmer Module",
+    "da": "2-kanals dæmpermodul"
   },
   "class": "light",
   "capabilities": [
-    "dim",
     "onoff",
-    "measure_battery",
-    "onoff.1",
-    "dim.1"
+    "dim",
+    "onoff.channel2",
+    "dim.channel2"
   ],
   "platforms": [
     "local"
@@ -67,21 +67,27 @@
   },
   "capabilitiesOptions": {
     "onoff": {
-      "setOnDim": true
+      "title": {
+        "en": "Channel 1",
+        "da": "Kanal 1"
+      }
     },
     "dim": {
       "title": {
-        "en": "Brightness 1"
+        "en": "Brightness 1",
+        "da": "Lysstyrke 1"
       }
     },
-    "onoff.1": {
+    "onoff.channel2": {
       "title": {
-        "en": "Channel 2"
+        "en": "Channel 2",
+        "da": "Kanal 2"
       }
     },
-    "dim.1": {
+    "dim.channel2": {
       "title": {
-        "en": "Brightness 2"
+        "en": "Brightness 2",
+        "da": "Lysstyrke 2"
       }
     }
   },
@@ -89,10 +95,5 @@
     "large": "drivers/dimmer_dual_channel/assets/images/large.png",
     "xlarge": "drivers/dimmer_dual_channel/assets/images/xlarge.png",
     "small": "drivers/dimmer_dual_channel/assets/images/small.png"
-  },
-  "energy": {
-    "batteries": [
-      "OTHER"
-    ]
   }
 }
