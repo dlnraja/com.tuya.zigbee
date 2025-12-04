@@ -1,6 +1,6 @@
 'use strict';
 
-const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
+const { AutoAdaptiveDevice } = require('../../lib/dynamic');
 const TuyaDPMapper = require('../../lib/tuya/TuyaDPMapper');
 const TuyaDPDatabase = require('../../lib/tuya/TuyaDPDatabase');
 const BatteryManagerV4 = require('../../lib/BatteryManagerV4');
@@ -9,11 +9,16 @@ const TuyaDeviceHelper = require('../../lib/utils/TuyaDeviceHelper');
 const { initTuyaDpEngineSafe, hasValidEF00Manager, logEF00Status } = require('../../lib/tuya/TuyaEF00Base');
 
 /**
- * PresenceSensorRadarDevice - Unified Hybrid Driver
+ * PresenceSensorRadarDevice - v5.3.58 AUTO-ADAPTIVE VERSION
+ *
+ * NOW USES AutoAdaptiveDevice for guaranteed data reception!
+ *
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
+ *
+ * v5.3.58: Switched to AutoAdaptiveDevice for multi-path DP listening
  */
-class PresenceSensorRadarDevice extends BaseHybridDevice {
+class PresenceSensorRadarDevice extends AutoAdaptiveDevice {
 
   async onNodeInit({ zclNode }) {
     try {

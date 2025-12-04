@@ -1,18 +1,22 @@
 'use strict';
 
-const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
+const { AutoAdaptiveDevice } = require('../../lib/dynamic');
 
 /**
- * RainSensorDevice - v5.2.92 Enhanced
+ * RainSensorDevice - v5.3.58 AUTO-ADAPTIVE VERSION
+ *
+ * NOW USES AutoAdaptiveDevice for guaranteed data reception!
  *
  * Tuya Rain/Water Leak Sensors typically use:
- * - DP 1: Rain/Water detected (boolean)
+ * - DP 1: Rain/Water detected (boolean) → alarm_water
  * - DP 4 or DP 15: Battery level (%)
  * - DP 101: Sensitivity level (optional)
  *
  * Some devices may also use IAS Zone cluster (0x0500)
+ *
+ * v5.3.58: Switched to AutoAdaptiveDevice for multi-path DP listening
  */
-class RainSensorDevice extends BaseHybridDevice {
+class RainSensorDevice extends AutoAdaptiveDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('');

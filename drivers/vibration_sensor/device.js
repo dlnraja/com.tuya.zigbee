@@ -1,11 +1,18 @@
 'use strict';
 
-const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
+const { AutoAdaptiveDevice } = require('../../lib/dynamic');
 
-class VibrationSensorDevice extends BaseHybridDevice {
+/**
+ * VibrationSensorDevice - v5.3.58 AUTO-ADAPTIVE VERSION
+ *
+ * NOW USES AutoAdaptiveDevice for guaranteed data reception!
+ *
+ * v5.3.58: Switched to AutoAdaptiveDevice for multi-path DP listening
+ */
+class VibrationSensorDevice extends AutoAdaptiveDevice {
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
-    this.log('Vibration Sensor initialized');
+    this.log('Vibration Sensor initialized (AUTO-ADAPTIVE)');
   }
 }
 
