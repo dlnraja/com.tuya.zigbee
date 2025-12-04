@@ -201,31 +201,35 @@ class UniversalTuyaZigbeeApp extends Homey.App {
   }
 
   /**
-   * v5.3.68: Delete a device programmatically (used by phantom device cleanup)
+   * v5.3.85: Mark phantom device as unavailable (SDK3 cannot delete programmatically)
+   * NOTE: Homey SDK3 does NOT support programmatic device deletion!
+   * Users MUST delete phantom devices manually from the Homey app.
    */
-  async deleteDevice(device) {
+  async markPhantomDevice(device) {
     try {
-      const deviceId = device?.getData?.()?.id;
-      if (!deviceId) {
-        this.log('[DELETE] No device ID found');
-        return false;
-      }
+      const deviceData = device?.getData?.();
+      const deviceName = device?.getName?.() || 'Unknown';
+      const subDeviceId = deviceData?.subDeviceId;
 
-      // SDK3: Use the driver's deleteDevice if available
-      const driver = device?.driver;
-      if (driver && typeof driver.getDevice === 'function') {
-        // Unfortunately SDK3 doesn't provide direct device deletion API
-        // Best we can do is mark unavailable and prompt user
-        await device.setUnavailable('❌ Appareil fantôme - supprimez manuellement').catch(() => { });
-        this.log(`[DELETE] Device ${deviceId} marked for manual deletion`);
-        return true;
-      }
+      this.error(`[PHANTOM] ❌ Phantom device detected: "${deviceName}" (subDeviceId: ${subDeviceId})`);
+      this.error('[PHANTOM] ❌ SDK3 cannot delete devices programmatically!');
+      this.error('[PHANTOM] ❌ User must delete this device manually from Homey app');
 
-      return false;
+      // Mark as unavailable with clear message
+      await device.setUnavailable('❌ PHANTOM - Supprimez manuellement dans l\'app Homey').catch(() => { });
+
+      return true;
     } catch (err) {
-      this.error('[DELETE] Error:', err.message);
+      this.error('[PHANTOM] Error marking device:', err.message);
       return false;
     }
+  }
+
+  /**
+   * @deprecated Use markPhantomDevice instead
+   */
+  async deleteDevice(device) {
+    return this.markPhantomDevice(device);
   }
 
   /**
