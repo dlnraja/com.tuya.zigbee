@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.3.56",
+  "version": "5.3.57",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.3.56: FIX SDK3 + FLOW CARDS - dataRequest fallbacks, safe flow triggering for curtain motors.",
-    "fr": "V5.3.56: FIX SDK3 + FLOW CARDS - Fallbacks dataRequest, déclenchement flow sécurisé pour moteurs rideaux."
+    "en": "V5.3.57: FIX CLIMATE/SOIL SENSORS - Removed duplicate fingerprints (_TZE284_vvmbj46n, _TZE284_oitavov2).",
+    "fr": "V5.3.57: FIX CAPTEURS CLIMAT/SOL - Fingerprints dupliqués supprimés (_TZE284_vvmbj46n, _TZE284_oitavov2)."
   },
   "category": "appliances",
   "permissions": [],
@@ -17817,7 +17817,6 @@
           "_TZE284_d7lpruvi",
           "_TZE284_dhke3p9w",
           "_TZE284_myd45weu",
-          "_TZE284_oitavov2",
           "_TZE284_sgabhwa6",
           "_TZE284_upagmta9",
           "_TZE284_utkemkbs",
@@ -31983,7 +31982,6 @@
           "_TZE284_nt4pquef",
           "_TZE284_oitavov2",
           "_TZE284_sgabhwa6",
-          "_TZE284_vvmbj46n",
           "_TZE284_wckqztdq",
           "_TZE200_01fvxamo",
           "_TZE200_0hg58wyk",
@@ -39254,7 +39252,6 @@
           "_TZE284_ny94onlb",
           "_TZE284_o9ofysmo",
           "_TZE284_ogx8u5z6",
-          "_TZE284_oitavov2",
           "_TZE284_p3dbf6qs",
           "_TZE284_pcdmj88b",
           "_TZE284_pglpvdar",
@@ -39275,7 +39272,6 @@
           "_TZE284_vjpaih9f",
           "_TZE284_vmcgja59",
           "_TZE284_vuwtqx0t",
-          "_TZE284_vvmbj46n",
           "_TZE284_wbhaespm",
           "_TZE284_wckqztdq",
           "_TZE284_xc3vwx5a",
