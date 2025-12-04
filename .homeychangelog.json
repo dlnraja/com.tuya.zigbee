@@ -1,4 +1,8 @@
 {
+  "5.4.1": {
+    "en": "🔀 v5.4.1 - Clean Driver Separation\n\n**Source:** HA Community thread showing user confusion\n\n**Issue:** Users were applying soil sensor quirks to climate sensors\n\n**Fix:** Removed soil sensor DPs from climate sensor driver\n\n**Correct Mappings:**\n\n| Driver | Device | DPs |\n|--------|--------|-----|\n| `climate_sensor` | TH05Z (_TZE284_vvmbj46n) | DP1=temp, DP2=humidity, DP4=battery |\n| `soil_sensor` | Soil (_TZE284_aao3yzhs) | DP3=moisture, DP5=temp, DP15=battery |\n\n**Important:** If you have a soil sensor paired as climate sensor, delete and re-pair it choosing 'Soil Sensor' driver.",
+    "fr": "🔀 v5.4.1 - Séparation Propre des Drivers\n\nSuppression des DPs sol du capteur climat. Capteurs sol doivent utiliser le driver soil_sensor."
+  },
   "5.4.0": {
     "en": "📡 v5.4.0 - OpenHAB Zigbee Reporting Integration\n\n**Sources:** OpenHAB ZigBee Binding, Z2M, Hubitat\n\n**NEW: Smart Reporting Configuration**\nAutomatic optimal intervals based on sensor type and power source:\n\n| Capability | Battery Device | Mains Device |\n|------------|----------------|---------------|\n| Temperature | 5-60 min, 0.5°C change | 1-30 min |\n| Humidity | 5-60 min, 2% change | 1-30 min |\n| Battery | 10 min - 6 hours | Same |\n| Motion | Immediate, 5 min max | Same |\n| Illuminance | 1-30 min | Same |\n\n**How it works:**\n• `minInterval`: Don't report more often than this\n• `maxInterval`: Force report even without change\n• `minChange`: Minimum delta to trigger report\n\n**Note:** Standard ZCL devices only. Tuya EF00 devices use their own protocol.",
     "fr": "📡 v5.4.0 - Intégration OpenHAB Zigbee Reporting\n\nConfiguration automatique des intervalles de reporting optimaux selon le type de capteur."
