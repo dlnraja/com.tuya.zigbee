@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.3.77",
+  "version": "5.3.78",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.3.77: TUYA DP dimming for LED (Issue #83)",
-    "fr": "V5.3.77: Dimming TUYA DP pour LED (Issue #83)"
+    "en": "V5.3.78: FIX phantom devices in ALL sensor drivers",
+    "fr": "V5.3.78: FIX appareils fantômes dans TOUS les capteurs"
   },
   "category": "appliances",
   "permissions": [],
@@ -31451,6 +31451,7 @@
           "usageConstant": 0.5
         }
       },
+      "subDevices": [],
       "zigbee": {
         "manufacturerName": [
           "ClimaxTechnology",
@@ -37825,6 +37826,7 @@
           "CR2450"
         ]
       },
+      "subDevices": [],
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_bmg14ax2",
@@ -37890,6 +37892,7 @@
           "usageConstant": 0.5
         }
       },
+      "subDevices": [],
       "zigbee": {
         "manufacturerName": [
           "ClimaxTechnology",
