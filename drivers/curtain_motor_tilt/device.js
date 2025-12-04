@@ -1,12 +1,11 @@
 'use strict';
+const { HybridCoverBase } = require('../../lib/devices');
 
-const { AutoAdaptiveDevice } = require('../../lib/dynamic');
-
-class CurtainMotorTiltDevice extends AutoAdaptiveDevice {
+class CurtainMotorTiltDevice extends HybridCoverBase {
+  get coverCapabilities() { return ['windowcoverings_state', 'windowcoverings_set', 'windowcoverings_tilt_set']; }
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
-    this.log('Curtain Motor with Tilt initialized');
+    this.log('[CURTAIN-TILT] ✅ Ready');
   }
 }
-
 module.exports = CurtainMotorTiltDevice;
