@@ -1,4 +1,8 @@
 {
+  "5.3.93": {
+    "en": "🔥 v5.3.93 - TRUE HYBRID MODE\n\n**MAJOR CHANGE:** All sensors now listen to ALL protocols simultaneously:\n• Tuya DP (0xEF00)\n• ZCL Standard clusters\n• IAS Zone (contact, motion, smoke, water)\n• Raw frames\n\n**Why?** Some devices send data via MULTIPLE protocols. Now we catch EVERYTHING!\n\n**Smart tracking:** After 4 hours, logs show which protocols actually sent data.\n\n**Result:** Maximum compatibility with ANY device format.",
+    "fr": "🔥 v5.3.93 - MODE HYBRIDE RÉEL\n\nTous les capteurs écoutent TOUS les protocoles simultanément. Compatibilité maximale!"
+  },
   "5.3.92": {
     "en": "✅ v5.3.92 - Improved Tuya Cluster Detection\n\n**Fix:** Protocol detection now also checks for Tuya cluster presence on firstInit when device settings may be empty.\n\n**For climate sensors:** Battery-powered sensors are 'sleepy devices' - they only report data every 30 min to 2 hours. Please wait for data or briefly press the sensor button to wake it.",
     "fr": "✅ v5.3.92 - Amélioration Détection Cluster Tuya\n\nLes capteurs à batterie sont des 'sleepy devices' - ils reportent toutes les 30 min à 2h."
