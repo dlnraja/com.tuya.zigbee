@@ -36,10 +36,14 @@ class ClimateSensorDevice extends HybridSensorBase {
    *
    * Sources: Z2M, ZHA, Tuya IoT documentation
    */
+  /**
+   * v5.3.97: UPDATED FROM ZIGBEE2MQTT - Complete DP mappings
+   * Source: https://github.com/Koenkk/zigbee2mqtt/issues/26078
+   */
   get dpMappings() {
     return {
       // ═══════════════════════════════════════════════════════════════════
-      // TEMPERATURE (most common DPs)
+      // TEMPERATURE (most common DPs) - From Z2M _TZE284_vvmbj46n
       // ═══════════════════════════════════════════════════════════════════
       1: { capability: 'measure_temperature', divisor: 10 },    // Standard: value/10 = °C
       18: { capability: 'measure_temperature', divisor: 10 },   // Alternative temp DP
@@ -48,7 +52,6 @@ class ClimateSensorDevice extends HybridSensorBase {
       // HUMIDITY (most common DPs)
       // ═══════════════════════════════════════════════════════════════════
       2: { capability: 'measure_humidity', divisor: 1 },        // Standard: direct %
-      19: { capability: 'measure_humidity', divisor: 1 },       // Alternative humidity DP
 
       // ═══════════════════════════════════════════════════════════════════
       // SOIL SENSORS (some climate sensors are actually soil sensors)
@@ -60,18 +63,32 @@ class ClimateSensorDevice extends HybridSensorBase {
       // BATTERY (multiple DPs used by different manufacturers)
       // ═══════════════════════════════════════════════════════════════════
       4: { capability: 'measure_battery', divisor: 1 },         // Battery % (0-100)
-      15: { capability: 'measure_battery', divisor: 1 },        // Alternative battery
-      101: { capability: 'measure_battery', divisor: 1 },       // _TZE284 battery
-      14: { capability: 'alarm_battery', transform: (v) => v === 1 }, // Low battery alarm
 
       // ═══════════════════════════════════════════════════════════════════
-      // ADDITIONAL DPs (less common but documented)
+      // v5.3.97: _TZE284_vvmbj46n SPECIFIC DPs (from Z2M)
+      // ═══════════════════════════════════════════════════════════════════
+      9: { capability: null, setting: 'temperature_unit' },     // 0=C, 1=F
+      10: { capability: null, setting: 'max_temp_alarm', divisor: 10 },
+      11: { capability: null, setting: 'min_temp_alarm', divisor: 10 },
+      12: { capability: null, setting: 'max_humidity_alarm' },
+      13: { capability: null, setting: 'min_humidity_alarm' },
+      14: { capability: 'alarm_generic', transform: (v) => v === 0 || v === 1 }, // Temp alarm state
+      15: { capability: 'alarm_generic.humidity', transform: (v) => v === 0 || v === 1 }, // Humidity alarm
+      17: { capability: null, setting: 'temp_report_interval' },  // Minutes
+      19: { capability: null, setting: 'temp_sensitivity', divisor: 10 },
+      20: { capability: null, setting: 'humidity_sensitivity' },
+
+      // ═══════════════════════════════════════════════════════════════════
+      // BUTTON PRESS (common for devices with buttons)
+      // ═══════════════════════════════════════════════════════════════════
+      101: { capability: 'button', transform: () => true },     // Button press
+      102: { capability: 'button', transform: () => true },     // Alternative button
+
+      // ═══════════════════════════════════════════════════════════════════
+      // ADDITIONAL DPs (fallbacks)
       // ═══════════════════════════════════════════════════════════════════
       6: { capability: 'measure_temperature', divisor: 10 },    // Some _TZE204 models
       7: { capability: 'measure_humidity', divisor: 1 },        // Some _TZE204 models
-      9: { capability: 'measure_temperature', divisor: 10 },    // Rare variants
-      10: { capability: 'measure_humidity', divisor: 1 },       // Rare variants
-      102: { capability: 'measure_temperature', divisor: 10 },  // _TZE284 temp (some)
       103: { capability: 'measure_humidity', divisor: 1 },      // _TZE284 humidity (some)
     };
   }

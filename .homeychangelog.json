@@ -1,4 +1,8 @@
 {
+  "5.3.97": {
+    "en": "📚 v5.3.97 - Z2M Research Integration\n\n**CLIMATE SENSOR (_TZE284_vvmbj46n):**\n• Updated ALL DPs from Zigbee2MQTT documentation\n• DP 1: Temperature (÷10)\n• DP 2: Humidity\n• DP 4: Battery\n• DP 9-20: Settings (alarms, sensitivity, intervals)\n• DP 101-102: Button press detection\n\n**RADAR PRESENCE SENSOR (_TZE200_rhgsbacq):**\n• DP 1: Presence/Motion\n• DP 2-3: Humidity/Temperature\n• DP 4,15: Battery\n• DP 9-12: Radar settings (sensitivity, range, illuminance)\n• DP 101-106: Advanced settings\n\n**Source:** Zigbee2MQTT converters & GitHub issues",
+    "fr": "📚 v5.3.97 - Intégration Recherche Z2M\n\nMise à jour TOUS les DPs depuis la documentation Zigbee2MQTT."
+  },
   "5.3.96": {
     "en": "🚀 v5.3.96 - MEGA FIX (All Issues)\n\n**TIME SYNC:**\n• Now sends time sync EVERY time device wakes up (receives data)\n• Climate monitors will finally get correct date/time!\n\n**BUTTON DETECTION:**\n• Detects button presses on ALL devices (DP 101-110, 120-121)\n• Works for climate monitors, USB devices, sensors\n\n**LED STATE:**\n• Tracks LED on/off state (DP 13, 101)\n• USB device LED status now visible\n\n**PRESENCE/MOTION:**\n• Fixed alarm_motion not triggering (DP 1)\n• Radar sensors now properly detect presence\n\n**BATTERY:**\n• Multiple DP support (4, 14, 15, 100, 101)\n• Better battery detection for all devices\n\n**ILLUMINANCE:**\n• Fixed lux reading (DP 12, 103)\n• Radar sensors show proper light levels",
     "fr": "🚀 v5.3.96 - MEGA FIX\n\nSync heure automatique au réveil. Détection boutons/LED/présence/batterie améliorée."
