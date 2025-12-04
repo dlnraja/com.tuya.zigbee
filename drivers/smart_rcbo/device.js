@@ -1,12 +1,11 @@
 'use strict';
+const { HybridPlugBase } = require('../../lib/devices');
 
-const { AutoAdaptiveDevice } = require('../../lib/dynamic');
-
-class SmartRcboDevice extends AutoAdaptiveDevice {
+class SmartRCBODevice extends HybridPlugBase {
+  get plugCapabilities() { return ['onoff', 'measure_power', 'meter_power']; }
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
-    this.log('Smart RCBO initialized');
+    this.log('[RCBO] ✅ Ready');
   }
 }
-
-module.exports = SmartRcboDevice;
+module.exports = SmartRCBODevice;

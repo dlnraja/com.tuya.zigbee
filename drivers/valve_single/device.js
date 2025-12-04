@@ -1,12 +1,11 @@
 'use strict';
+const { HybridPlugBase } = require('../../lib/devices');
 
-const { AutoAdaptiveDevice } = require('../../lib/dynamic');
-
-class Valve1Device extends AutoAdaptiveDevice {
+class ValveSingleDevice extends HybridPlugBase {
+  get plugCapabilities() { return ['onoff']; }
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
-    this.log('Smart Valve 1-Way initialized');
+    this.log('[VALVE] ✅ Ready');
   }
 }
-
-module.exports = Valve1Device;
+module.exports = ValveSingleDevice;

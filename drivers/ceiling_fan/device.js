@@ -1,27 +1,21 @@
 'use strict';
+const { HybridLightBase } = require('../../lib/devices');
 
-const { AutoAdaptiveDevice } = require('../../lib/dynamic');
+class CeilingFanDevice extends HybridLightBase {
+  get mainsPowered() { return true; }
+  get lightCapabilities() { return ['onoff', 'dim']; }
 
-/**
- * CeilingFanDevice - Unified Hybrid Driver
- * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
- * Dynamically manages capabilities based on power source
- */
-class CeilingFanDevice extends AutoAdaptiveDevice {
+  get dpMappings() {
+    return {
+      1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
+      3: { capability: 'dim', divisor: 100 }, // Fan speed 0-100
+      9: { capability: 'onoff.light', transform: (v) => v === 1 }
+    };
+  }
 
   async onNodeInit({ zclNode }) {
-    this.log('CeilingFanDevice initializing...');
-    
-    // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
-    
-    this.log('CeilingFanDevice initialized - Power source:', this.powerSource || 'unknown');
-  }
-
-  async onDeleted() {
-    this.log('CeilingFanDevice deleted');
-    await super.onDeleted().catch(err => this.error(err));
+    await super.onNodeInit({ zclNode });
+    this.log('[FAN] ✅ Ready');
   }
 }
-
 module.exports = CeilingFanDevice;
