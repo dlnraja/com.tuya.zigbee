@@ -105,65 +105,7 @@
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
-    },
-    "devices": [
-      {
-        "manufacturerName": "eWeLink",
-        "modelId": "ZBMINI"
-      },
-      {
-        "manufacturerName": "eWeLink",
-        "modelId": "ZBMINI-L"
-      },
-      {
-        "manufacturerName": "eWeLink",
-        "modelId": "ZBMINI-L2"
-      },
-      {
-        "manufacturerName": "eWeLink",
-        "modelId": "ZBMINIL2"
-      },
-      {
-        "manufacturerName": "eWeLink",
-        "modelId": "ZBMINIR2"
-      },
-      {
-        "manufacturerName": "SONOFF",
-        "modelId": "ZBMINI"
-      },
-      {
-        "manufacturerName": "SONOFF",
-        "modelId": "ZBMINI-L"
-      },
-      {
-        "manufacturerName": "SONOFF",
-        "modelId": "ZBMINI-L2"
-      },
-      {
-        "manufacturerName": "eWeLink",
-        "modelId": "01MINIZB"
-      },
-      {
-        "manufacturerName": "eWeLink",
-        "modelId": "BASICZBR3"
-      },
-      {
-        "manufacturerName": "eWeLink",
-        "modelId": "SA-003-Zigbee"
-      },
-      {
-        "manufacturerName": "eWeLink",
-        "modelId": "ZBMicro"
-      },
-      {
-        "manufacturerName": "eWeLink",
-        "modelId": "MINI-ZB2GS"
-      },
-      {
-        "manufacturerName": "eWeLink",
-        "modelId": "MINI-ZB2GS-L"
-      }
-    ]
+    }
   },
   "settings": [
     {
